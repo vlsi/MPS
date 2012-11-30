@@ -4,14 +4,13 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.logging.Logger;
 
 public class ShowErrorMessage_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ShowErrorMessage_Action.class);
 
   public ShowErrorMessage_Action() {
     super("Show Error Message", "", ICON);
@@ -53,4 +52,6 @@ public class ShowErrorMessage_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "ShowErrorMessage", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ShowErrorMessage_Action.class);
 }

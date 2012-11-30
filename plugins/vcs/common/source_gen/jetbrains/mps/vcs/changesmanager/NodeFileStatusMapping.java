@@ -30,9 +30,9 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.util.SNodeOperations;
-import jetbrains.mps.vcs.diff.ChangeSet;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.vcs.diff.ChangeSet;
 
 public class NodeFileStatusMapping extends AbstractProjectComponent {
   private final CurrentDifferenceRegistry myRegistry;
@@ -92,7 +92,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
             return FileStatus.MERGED_WITH_CONFLICTS;
           }
           CurrentDifference diff = myRegistry.getCurrentDifference(md);
-          List<ModelChange> modelChanges = check_onkh7z_a0d0b0a0a0a0f(diff.getChangeSet());
+          List<ModelChange> modelChanges = check_onkh7z_a0d0b0a0a0a0j(diff.getChangeSet());
           final SNodeId rootId = root.getNodeId();
           List<ModelChange> rootChanges = ListSequence.fromList(modelChanges).where(new IWhereFilter<ModelChange>() {
             public boolean accept(ModelChange ch) {
@@ -161,13 +161,6 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     }
   }
 
-  private static List<ModelChange> check_onkh7z_a0d0b0a0a0a0f(ChangeSet checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelChanges();
-    }
-    return null;
-  }
-
   private class MyGlobalListener extends CurrentDifferenceAdapter {
     private List<SNodePointer> myAffectedRoots = ListSequence.fromList(new ArrayList<SNodePointer>());
 
@@ -199,5 +192,12 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
     public void changeRemoved(@NotNull ModelChange change) {
       addAffectedRoot(change);
     }
+  }
+
+  private static List<ModelChange> check_onkh7z_a0d0b0a0a0a0j(ChangeSet checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelChanges();
+    }
+    return null;
   }
 }

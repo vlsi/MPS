@@ -4,8 +4,6 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -22,10 +20,11 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class CleanModule_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(CleanModule_Action.class);
 
   public CleanModule_Action() {
     super("Clean Compiled Java Files", "", ICON);
@@ -91,4 +90,6 @@ public class CleanModule_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(CleanModule_Action.class);
 }

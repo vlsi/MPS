@@ -5,9 +5,6 @@ package org.jetbrains.mps.samples.money.runtime;
 import java.math.BigDecimal;
 
 public class Money {
-  private BigDecimal myAmount;
-  private String myCurrency;
-
   public Money(BigDecimal amount, String currency) {
     this.setAmount(amount);
     this.setCurrency(currency);
@@ -43,6 +40,8 @@ public class Money {
     }
   }
 
+  private BigDecimal myAmount;
+
   public BigDecimal getAmount() {
     return this.myAmount;
   }
@@ -50,6 +49,8 @@ public class Money {
   private void setAmount(BigDecimal value) {
     this.myAmount = value;
   }
+
+  private String myCurrency;
 
   public String getCurrency() {
     return this.myCurrency;

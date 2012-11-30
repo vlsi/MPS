@@ -4,8 +4,6 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.make.IMakeService;
@@ -20,10 +18,11 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class TextPreviewModel_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(TextPreviewModel_Action.class);
 
   public TextPreviewModel_Action() {
     super("Preview Generated Text", "", ICON);
@@ -101,4 +100,6 @@ public class TextPreviewModel_Action extends BaseAction {
     }
     return md instanceof EditableSModelDescriptor && !(((EditableSModelDescriptor) md).isReadOnly());
   }
+
+  protected static Log log = LogFactory.getLog(TextPreviewModel_Action.class);
 }

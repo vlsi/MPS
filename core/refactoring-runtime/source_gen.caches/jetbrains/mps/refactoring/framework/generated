@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5nw7x2swonyzdcucqetvgablzejck5d">
+<dependencies version="2" modelHash="-5v8lg7uqv6zznebjwvvf3xjd5s9q3e8">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -10,49 +10,49 @@
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" />
   <dep model="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="72jgettirgdze5zodlg3xz1jp5r3et8" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="br0zbuysk1h237dalzeuxqn1fmdj2bn" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-uvseejb8lftjizgrik03igcx568a80" />
-  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="bzguxf77z5i5drsvtyrnl130mgbuv7u" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-2rqveg90ftfn2b12k9dvrnr9oxg6a6s" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="7eedhcqhmzsq08m7y6wvw2wm8ydq2af" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-5dul3q8la0zppk5iut9862z0at95zo" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8w030na880sdk0wef94zwzf291mucgl" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="dyivxyl7ggp1hn8w3reiw526z2j4lwa" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="589i1a30w14tb27o4oeb4fctp6vpon4" />
   <dep model="r:00000000-0000-4000-0000-011c89590319(jetbrains.mps.lang.refactoring.structure)" hash="-50n8ztwtgwnnz8d8gxkk5rvdi3ee8mc" />
   <dep model="r:00000000-0000-4000-0000-011c8959032f(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.main@generator)" hash="7aah9a8kn7cjvuxmx1deo2kbopkbkt7" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-a7expmn7xxet6s6dkjq7420bsxmootx" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-1a09jt7jbhqsowj5e1kon6zt37wf3e1" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6f9jb5k2icdty624yqk3hbqvsk65dq5" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-1ql72tag8hnjjy0vluh15zpnkl16kqr" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-dtcjnjk6lww15wxj6oyv44k28fu5g1d" />
-  <dep model="r:d2766b06-4f01-4d0c-929f-9fe2b1a7c0dc(jetbrains.mps.refactoring)" hash="-5ct652zr7y83v132ngv1xnvjyx4tbjy" />
-  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-alf2ogeiijb2ox8l3f57xq8a4vsqut" />
+  <dep model="r:d2766b06-4f01-4d0c-929f-9fe2b1a7c0dc(jetbrains.mps.refactoring)" hash="-1qb2j0p7uulpc4ku0lhnygkrtare5ux" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
   <common hash="-48e6e89gefe8ukbsvkxblw49ngvz0p5" />
-  <source id="4792031542972804301" name="AbstractLoggableRefactoring" hash="edpgph59cu30961ow459zsyrm1rv97k">
+  <source id="4792031542972804301" name="AbstractLoggableRefactoring" hash="-b6edylv7svl0gxzgab6xmr7itb3og0t">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="AbstractLoggableRefactoring.java" />
   </source>
-  <source id="4792031542972804548" name="BaseLoggableRefactoring" hash="-3d1umxfdsquo5rdkiyjh03slz03bu1l">
+  <source id="4792031542972804548" name="BaseLoggableRefactoring" hash="-d3yqjo2tf9ov3kz5nguqxcd7fg8xyxl">
     <file name="BaseLoggableRefactoring.java" />
   </source>
-  <source id="4792031542972804556" name="BaseRefactoring" hash="-9v5dp8cvmzlhtxbn6e7q6254cful3hy">
+  <source id="4792031542972804556" name="BaseRefactoring" hash="-39np4tjc6jdz1nojpa0hi93v4xlxyy2">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BaseRefactoring.java" />
   </source>
-  <source id="4792031542972804734" name="InvalidInputValueException" hash="-on198j2t1ziwfpqd3hxypu36butp74">
+  <source id="4792031542972804734" name="InvalidInputValueException" hash="8puqrwzokr4m8jx7e1uq4pblqgl56kr">
     <file name="InvalidInputValueException.java" />
   </source>
-  <source id="4792031542972804745" name="RefactoringLoggingFailedException" hash="-a37hwjb5ffsq42o10r38d1jxensovfk">
+  <source id="4792031542972804745" name="RefactoringLoggingFailedException" hash="-6eag0gu5s74tgt3mxiu94t1fztzrmco">
     <file name="RefactoringLoggingFailedException.java" />
   </source>
-  <source id="4792031542972804756" name="OldLoggableRefactoringAdapter" hash="96rspmtk2wzdttw3aj0t6paetz9trjx">
+  <source id="4792031542972804756" name="OldLoggableRefactoringAdapter" hash="-7wzb7dtzsr74qmseocvifh7qnrigunl">
     <dep root="4792031542972804867" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="OldLoggableRefactoringAdapter.java" />
   </source>
-  <source id="4792031542972804794" name="BaseGeneratedRefactoring" hash="-5ciukj7p9x5tertz5sgcotkozkl400k">
+  <source id="4792031542972804794" name="BaseGeneratedRefactoring" hash="7zrg4121a9xeca4w7geboulk6lutwl9">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="BaseGeneratedRefactoring.java" />
   </source>
-  <source id="4792031542972804826" name="ILoggableRefactoring" hash="cn2b7v0za9126efrlwn7mtwl105octx">
+  <source id="4792031542972804826" name="ILoggableRefactoring" hash="-9z05rsk0r7n73berui98eadjwuvwgz9">
     <file name="ILoggableRefactoring.java" />
   </source>
-  <source id="4792031542972804837" name="RefactoringUtil" hash="-ac9v52ccciudrj6pqh0e5e55a9wmdy6">
+  <source id="4792031542972804837" name="RefactoringUtil" hash="-8x4dkmhk6oly1s81qjsoso0zbgkzaro">
     <dep root="4792031542972815535" />
     <dep root="4792031542972815662" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -69,7 +69,7 @@
     <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" />
     <file name="RefactoringUtil.java" />
   </source>
-  <source id="4792031542972809445" name="RefactoringNodeMembersAccessModifier" hash="-bl1uoxmptwctk6lqvlx6xo6ost83pjf">
+  <source id="4792031542972809445" name="RefactoringNodeMembersAccessModifier" hash="eoynorusb2o5ehhxaussinuqto2lim2">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
@@ -77,17 +77,17 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="RefactoringNodeMembersAccessModifier.java" />
   </source>
-  <source id="4792031542972804867" name="OldRefactoringAdapter" hash="eg599xu9xp695br30bfikqt8rz61tzm">
+  <source id="4792031542972804867" name="OldRefactoringAdapter" hash="cm8k2dh88xd1jtn0yt5p1vn946yfxue">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="OldRefactoringAdapter.java" />
   </source>
-  <source id="4792031542972811406" name="IDescendantsProvider" hash="-4ka7ol2e2k55y43o67aanxau69nv4wy">
+  <source id="4792031542972811406" name="IDescendantsProvider" hash="-87h132r3li534owrvfegxcbevhab8rg">
     <file name="IDescendantsProvider.java" />
   </source>
-  <source id="4792031542972811415" name="RefactoringContext" hash="-2a1c5f97ocilz9ortqr2c87hfkrtfq9">
+  <source id="4792031542972811415" name="RefactoringContext" hash="-ro3htxjp00pvf1vvd3e0lysv7eys68">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -110,20 +110,20 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="RefactoringContext.java" />
   </source>
-  <source id="4792031542972804300" name="RefactoringTarget" hash="b75vrii35618yw4tpsbelkjeoe9l5ek">
+  <source id="4792031542972804300" name="RefactoringTarget" hash="-c6f0lhqoiqq8wk8jcy1o6pra9srw7hr">
     <file name="RefactoringTarget.java" />
   </source>
-  <source id="4792031542972815535" name="IRefactoringTarget" hash="-h5cduuxq7rbln3bm8o7c3tk9wye7xe">
+  <source id="4792031542972815535" name="IRefactoringTarget" hash="anc4culc5wm80bv27fxax2ewyh86wsi">
     <file name="IRefactoringTarget.java" />
   </source>
-  <source id="4792031542972815559" name="ConceptAncestorsProvider" hash="30e2tsicsayx8adopj9q08ponuwro35">
+  <source id="4792031542972815559" name="ConceptAncestorsProvider" hash="-bjpcnhi2jwco5u9tbsifmj9dgk3g759">
     <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
     <file name="ConceptAncestorsProvider.java" />
   </source>
-  <source id="4792031542972815662" name="IRefactoring" hash="aylrnhy2bcddiglzxhjha18fwwbde1d">
+  <source id="4792031542972815662" name="IRefactoring" hash="dv401k4slrw1576ab8psx7hxpzm96pr">
     <file name="IRefactoring.java" />
   </source>
 </dependencies>

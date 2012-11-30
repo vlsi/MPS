@@ -1,113 +1,113 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1650638035896359074" modelId="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)">
-    <nodeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFieldPrefix" />
-    <nodeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFieldSuffix" />
-    <nodeInfo nodeId="7650945208787767405" fileName="CodeStyleSettings.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStaticFieldPrefix" />
-    <nodeInfo nodeId="7650945208787767412" fileName="CodeStyleSettings.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStaticFieldSuffix" />
-    <nodeInfo nodeId="7650945208787767419" fileName="CodeStyleSettings.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameterPrefix" />
-    <nodeInfo nodeId="7650945208787767426" fileName="CodeStyleSettings.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameterSuffix" />
-    <nodeInfo nodeId="7650945208787767433" fileName="CodeStyleSettings.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLocalVariablePrefix" />
-    <nodeInfo nodeId="7650945208787767440" fileName="CodeStyleSettings.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLocalVariableSuffix" />
-    <nodeInfo nodeId="7650945208787767447" fileName="CodeStyleSettings.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLineSeparator" />
-    <nodeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="29" startPosition="34" endLine="30" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="33" startPosition="44" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="37" startPosition="34" endLine="38" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="41" startPosition="44" endLine="42" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7650945208787767405" fileName="CodeStyleSettings.java" startLine="45" startPosition="40" endLine="46" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7650945208787767405" fileName="CodeStyleSettings.java" startLine="49" startPosition="50" endLine="50" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7650945208787767412" fileName="CodeStyleSettings.java" startLine="53" startPosition="40" endLine="54" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7650945208787767412" fileName="CodeStyleSettings.java" startLine="57" startPosition="50" endLine="58" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFieldPrefix" />
+    <nodeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="21" startPosition="34" endLine="22" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="25" startPosition="44" endLine="26" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFieldSuffix" />
+    <nodeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="31" startPosition="34" endLine="32" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="35" startPosition="44" endLine="36" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7650945208787767405" fileName="CodeStyleSettings.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStaticFieldPrefix" />
+    <nodeInfo nodeId="7650945208787767405" fileName="CodeStyleSettings.java" startLine="41" startPosition="40" endLine="42" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7650945208787767405" fileName="CodeStyleSettings.java" startLine="45" startPosition="50" endLine="46" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7650945208787767412" fileName="CodeStyleSettings.java" startLine="49" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myStaticFieldSuffix" />
+    <nodeInfo nodeId="7650945208787767412" fileName="CodeStyleSettings.java" startLine="51" startPosition="40" endLine="52" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7650945208787767412" fileName="CodeStyleSettings.java" startLine="55" startPosition="50" endLine="56" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7650945208787767419" fileName="CodeStyleSettings.java" startLine="59" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameterPrefix" />
     <nodeInfo nodeId="7650945208787767419" fileName="CodeStyleSettings.java" startLine="61" startPosition="38" endLine="62" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7650945208787767419" fileName="CodeStyleSettings.java" startLine="65" startPosition="48" endLine="66" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7650945208787767426" fileName="CodeStyleSettings.java" startLine="69" startPosition="38" endLine="70" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7650945208787767426" fileName="CodeStyleSettings.java" startLine="73" startPosition="48" endLine="74" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7650945208787767433" fileName="CodeStyleSettings.java" startLine="77" startPosition="42" endLine="78" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7650945208787767433" fileName="CodeStyleSettings.java" startLine="81" startPosition="52" endLine="82" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7650945208787767440" fileName="CodeStyleSettings.java" startLine="85" startPosition="42" endLine="86" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7650945208787767440" fileName="CodeStyleSettings.java" startLine="89" startPosition="52" endLine="90" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7650945208787767447" fileName="CodeStyleSettings.java" startLine="93" startPosition="36" endLine="94" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7650945208787767447" fileName="CodeStyleSettings.java" startLine="97" startPosition="46" endLine="98" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1650638035896359076" fileName="CodeStyleSettings.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CodeStyleSettings#()V" />
-    <nodeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldPrefix#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFieldPrefix#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldSuffix#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFieldSuffix#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7650945208787767405" fileName="CodeStyleSettings.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStaticFieldPrefix#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7650945208787767405" fileName="CodeStyleSettings.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setStaticFieldPrefix#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7650945208787767412" fileName="CodeStyleSettings.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStaticFieldSuffix#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7650945208787767412" fileName="CodeStyleSettings.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setStaticFieldSuffix#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7650945208787767426" fileName="CodeStyleSettings.java" startLine="69" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myParameterSuffix" />
+    <nodeInfo nodeId="7650945208787767426" fileName="CodeStyleSettings.java" startLine="71" startPosition="38" endLine="72" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7650945208787767426" fileName="CodeStyleSettings.java" startLine="75" startPosition="48" endLine="76" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7650945208787767433" fileName="CodeStyleSettings.java" startLine="79" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLocalVariablePrefix" />
+    <nodeInfo nodeId="7650945208787767433" fileName="CodeStyleSettings.java" startLine="81" startPosition="42" endLine="82" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7650945208787767433" fileName="CodeStyleSettings.java" startLine="85" startPosition="52" endLine="86" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7650945208787767440" fileName="CodeStyleSettings.java" startLine="89" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLocalVariableSuffix" />
+    <nodeInfo nodeId="7650945208787767440" fileName="CodeStyleSettings.java" startLine="91" startPosition="42" endLine="92" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7650945208787767440" fileName="CodeStyleSettings.java" startLine="95" startPosition="52" endLine="96" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7650945208787767447" fileName="CodeStyleSettings.java" startLine="99" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLineSeparator" />
+    <nodeInfo nodeId="7650945208787767447" fileName="CodeStyleSettings.java" startLine="101" startPosition="36" endLine="102" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7650945208787767447" fileName="CodeStyleSettings.java" startLine="105" startPosition="46" endLine="106" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1650638035896359076" fileName="CodeStyleSettings.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CodeStyleSettings#()V" />
+    <nodeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldPrefix#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFieldPrefix#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldSuffix#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFieldSuffix#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7650945208787767405" fileName="CodeStyleSettings.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStaticFieldPrefix#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7650945208787767405" fileName="CodeStyleSettings.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setStaticFieldPrefix#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7650945208787767412" fileName="CodeStyleSettings.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStaticFieldSuffix#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7650945208787767412" fileName="CodeStyleSettings.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setStaticFieldSuffix#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="7650945208787767419" fileName="CodeStyleSettings.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameterPrefix#()Ljava/lang/String;" />
     <nodeInfo nodeId="7650945208787767419" fileName="CodeStyleSettings.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setParameterPrefix#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7650945208787767426" fileName="CodeStyleSettings.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameterSuffix#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7650945208787767426" fileName="CodeStyleSettings.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setParameterSuffix#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7650945208787767433" fileName="CodeStyleSettings.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocalVariablePrefix#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7650945208787767433" fileName="CodeStyleSettings.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setLocalVariablePrefix#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7650945208787767440" fileName="CodeStyleSettings.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocalVariableSuffix#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7650945208787767440" fileName="CodeStyleSettings.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setLocalVariableSuffix#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7650945208787767447" fileName="CodeStyleSettings.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLineSeparator#()Ljava/lang/String;" />
-    <nodeInfo nodeId="7650945208787767447" fileName="CodeStyleSettings.java" startLine="97" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setLineSeparator#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="5036277047286165620" fileName="CodeStyleSettings.java" startLine="22" startPosition="41" endLine="26" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5036277047286161914" fileName="CodeStyleSettings.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLineSeparatorValue#()Ljava/lang/String;" />
-    <scopeInfo nodeId="1650638035896359079" fileName="CodeStyleSettings.java" startLine="18" startPosition="30" endLine="18" endPosition="30" />
-    <scopeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="29" startPosition="34" endLine="30" endPosition="30" />
-    <scopeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="33" startPosition="44" endLine="34" endPosition="31" />
-    <scopeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="37" startPosition="34" endLine="38" endPosition="30" />
-    <scopeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="41" startPosition="44" endLine="42" endPosition="31" />
-    <scopeInfo nodeId="7650945208787767405" fileName="CodeStyleSettings.java" startLine="45" startPosition="40" endLine="46" endPosition="36" />
-    <scopeInfo nodeId="7650945208787767405" fileName="CodeStyleSettings.java" startLine="49" startPosition="50" endLine="50" endPosition="37" />
-    <scopeInfo nodeId="7650945208787767412" fileName="CodeStyleSettings.java" startLine="53" startPosition="40" endLine="54" endPosition="36" />
-    <scopeInfo nodeId="7650945208787767412" fileName="CodeStyleSettings.java" startLine="57" startPosition="50" endLine="58" endPosition="37" />
+    <nodeInfo nodeId="7650945208787767426" fileName="CodeStyleSettings.java" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParameterSuffix#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7650945208787767426" fileName="CodeStyleSettings.java" startLine="75" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setParameterSuffix#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7650945208787767433" fileName="CodeStyleSettings.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocalVariablePrefix#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7650945208787767433" fileName="CodeStyleSettings.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setLocalVariablePrefix#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7650945208787767440" fileName="CodeStyleSettings.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocalVariableSuffix#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7650945208787767440" fileName="CodeStyleSettings.java" startLine="95" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setLocalVariableSuffix#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7650945208787767447" fileName="CodeStyleSettings.java" startLine="101" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLineSeparator#()Ljava/lang/String;" />
+    <nodeInfo nodeId="7650945208787767447" fileName="CodeStyleSettings.java" startLine="105" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setLineSeparator#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="5036277047286165620" fileName="CodeStyleSettings.java" startLine="12" startPosition="41" endLine="16" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5036277047286161914" fileName="CodeStyleSettings.java" startLine="11" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLineSeparatorValue#()Ljava/lang/String;" />
+    <scopeInfo nodeId="1650638035896359079" fileName="CodeStyleSettings.java" startLine="8" startPosition="30" endLine="8" endPosition="30" />
+    <scopeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="21" startPosition="34" endLine="22" endPosition="30" />
+    <scopeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="25" startPosition="44" endLine="26" endPosition="31" />
+    <scopeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="31" startPosition="34" endLine="32" endPosition="30" />
+    <scopeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="35" startPosition="44" endLine="36" endPosition="31" />
+    <scopeInfo nodeId="7650945208787767405" fileName="CodeStyleSettings.java" startLine="41" startPosition="40" endLine="42" endPosition="36" />
+    <scopeInfo nodeId="7650945208787767405" fileName="CodeStyleSettings.java" startLine="45" startPosition="50" endLine="46" endPosition="37" />
+    <scopeInfo nodeId="7650945208787767412" fileName="CodeStyleSettings.java" startLine="51" startPosition="40" endLine="52" endPosition="36" />
+    <scopeInfo nodeId="7650945208787767412" fileName="CodeStyleSettings.java" startLine="55" startPosition="50" endLine="56" endPosition="37" />
     <scopeInfo nodeId="7650945208787767419" fileName="CodeStyleSettings.java" startLine="61" startPosition="38" endLine="62" endPosition="34" />
     <scopeInfo nodeId="7650945208787767419" fileName="CodeStyleSettings.java" startLine="65" startPosition="48" endLine="66" endPosition="35" />
-    <scopeInfo nodeId="7650945208787767426" fileName="CodeStyleSettings.java" startLine="69" startPosition="38" endLine="70" endPosition="34" />
-    <scopeInfo nodeId="7650945208787767426" fileName="CodeStyleSettings.java" startLine="73" startPosition="48" endLine="74" endPosition="35" />
-    <scopeInfo nodeId="7650945208787767433" fileName="CodeStyleSettings.java" startLine="77" startPosition="42" endLine="78" endPosition="38" />
-    <scopeInfo nodeId="7650945208787767433" fileName="CodeStyleSettings.java" startLine="81" startPosition="52" endLine="82" endPosition="39" />
-    <scopeInfo nodeId="7650945208787767440" fileName="CodeStyleSettings.java" startLine="85" startPosition="42" endLine="86" endPosition="38" />
-    <scopeInfo nodeId="7650945208787767440" fileName="CodeStyleSettings.java" startLine="89" startPosition="52" endLine="90" endPosition="39" />
-    <scopeInfo nodeId="7650945208787767447" fileName="CodeStyleSettings.java" startLine="93" startPosition="36" endLine="94" endPosition="32" />
-    <scopeInfo nodeId="7650945208787767447" fileName="CodeStyleSettings.java" startLine="97" startPosition="46" endLine="98" endPosition="33" />
-    <scopeInfo nodeId="1650638035896359076" fileName="CodeStyleSettings.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="33" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="7650945208787767426" fileName="CodeStyleSettings.java" startLine="71" startPosition="38" endLine="72" endPosition="34" />
+    <scopeInfo nodeId="7650945208787767426" fileName="CodeStyleSettings.java" startLine="75" startPosition="48" endLine="76" endPosition="35" />
+    <scopeInfo nodeId="7650945208787767433" fileName="CodeStyleSettings.java" startLine="81" startPosition="42" endLine="82" endPosition="38" />
+    <scopeInfo nodeId="7650945208787767433" fileName="CodeStyleSettings.java" startLine="85" startPosition="52" endLine="86" endPosition="39" />
+    <scopeInfo nodeId="7650945208787767440" fileName="CodeStyleSettings.java" startLine="91" startPosition="42" endLine="92" endPosition="38" />
+    <scopeInfo nodeId="7650945208787767440" fileName="CodeStyleSettings.java" startLine="95" startPosition="52" endLine="96" endPosition="39" />
+    <scopeInfo nodeId="7650945208787767447" fileName="CodeStyleSettings.java" startLine="101" startPosition="36" endLine="102" endPosition="32" />
+    <scopeInfo nodeId="7650945208787767447" fileName="CodeStyleSettings.java" startLine="105" startPosition="46" endLine="106" endPosition="33" />
+    <scopeInfo nodeId="1650638035896359076" fileName="CodeStyleSettings.java" startLine="8" startPosition="0" endLine="10" endPosition="0" />
+    <scopeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="7650945208787739443" fileName="CodeStyleSettings.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="7650945208787739443" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
-    <scopeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
+    <scopeInfo nodeId="7650945208787767398" fileName="CodeStyleSettings.java" startLine="35" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="7650945208787767398" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="7650945208787767405" fileName="CodeStyleSettings.java" startLine="45" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="7650945208787767405" fileName="CodeStyleSettings.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
+    <scopeInfo nodeId="7650945208787767405" fileName="CodeStyleSettings.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="7650945208787767405" fileName="CodeStyleSettings.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="7650945208787767405" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="7650945208787767412" fileName="CodeStyleSettings.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="7650945208787767412" fileName="CodeStyleSettings.java" startLine="57" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="7650945208787767412" fileName="CodeStyleSettings.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="7650945208787767412" fileName="CodeStyleSettings.java" startLine="55" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="7650945208787767412" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="7650945208787767419" fileName="CodeStyleSettings.java" startLine="61" startPosition="0" endLine="64" endPosition="0" />
     <scopeInfo nodeId="7650945208787767419" fileName="CodeStyleSettings.java" startLine="65" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="7650945208787767419" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="7650945208787767426" fileName="CodeStyleSettings.java" startLine="69" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="7650945208787767426" fileName="CodeStyleSettings.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="7650945208787767426" fileName="CodeStyleSettings.java" startLine="71" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="7650945208787767426" fileName="CodeStyleSettings.java" startLine="75" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="7650945208787767426" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="7650945208787767433" fileName="CodeStyleSettings.java" startLine="77" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="7650945208787767433" fileName="CodeStyleSettings.java" startLine="81" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="7650945208787767433" fileName="CodeStyleSettings.java" startLine="81" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="7650945208787767433" fileName="CodeStyleSettings.java" startLine="85" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="7650945208787767433" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="7650945208787767440" fileName="CodeStyleSettings.java" startLine="85" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="7650945208787767440" fileName="CodeStyleSettings.java" startLine="89" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="7650945208787767440" fileName="CodeStyleSettings.java" startLine="91" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="7650945208787767440" fileName="CodeStyleSettings.java" startLine="95" startPosition="0" endLine="98" endPosition="0">
       <varInfo nodeId="7650945208787767440" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="7650945208787767447" fileName="CodeStyleSettings.java" startLine="93" startPosition="0" endLine="96" endPosition="0" />
-    <scopeInfo nodeId="7650945208787767447" fileName="CodeStyleSettings.java" startLine="97" startPosition="0" endLine="100" endPosition="0">
+    <scopeInfo nodeId="7650945208787767447" fileName="CodeStyleSettings.java" startLine="101" startPosition="0" endLine="104" endPosition="0" />
+    <scopeInfo nodeId="7650945208787767447" fileName="CodeStyleSettings.java" startLine="105" startPosition="0" endLine="108" endPosition="0">
       <varInfo nodeId="7650945208787767447" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="5036277047286161917" fileName="CodeStyleSettings.java" startLine="22" startPosition="41" endLine="26" endPosition="6" />
-    <scopeInfo nodeId="5036277047286161914" fileName="CodeStyleSettings.java" startLine="21" startPosition="0" endLine="28" endPosition="0" />
-    <unitInfo nodeId="1650638035896359074" fileName="CodeStyleSettings.java" startLine="7" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.CodeStyleSettings" />
+    <scopeInfo nodeId="5036277047286161917" fileName="CodeStyleSettings.java" startLine="12" startPosition="41" endLine="16" endPosition="6" />
+    <scopeInfo nodeId="5036277047286161914" fileName="CodeStyleSettings.java" startLine="11" startPosition="0" endLine="18" endPosition="0" />
+    <unitInfo nodeId="1650638035896359074" fileName="CodeStyleSettings.java" startLine="7" startPosition="0" endLine="109" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.CodeStyleSettings" />
   </root>
   <root nodeId="644116965567343729" modelId="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)">
     <nodeInfo nodeId="920705696368452801" fileName="CodeStyleSettingsRegistry.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myProjectToSettingsMap" />
@@ -201,8 +201,8 @@
     <nodeInfo nodeId="8432634623182692177" fileName="OverridingMethodsFinder.java" startLine="145" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="canOverride#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="8432634623182692191" fileName="OverridingMethodsFinder.java" startLine="149" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="canBeOverriden#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="8432634623182692217" fileName="OverridingMethodsFinder.java" startLine="153" startPosition="66" endLine="156" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3685988995356018859" fileName="OverridingMethodsFinder.java" startLine="168" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_cdkq07_a0a0a1#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="3685988995356058547" fileName="OverridingMethodsFinder.java" startLine="172" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_cdkq07_a0a0a2#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="3685988995356018859" fileName="OverridingMethodsFinder.java" startLine="168" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_cdkq07_a0a0a8#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="3685988995356058547" fileName="OverridingMethodsFinder.java" startLine="172" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_cdkq07_a0a0a9#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="8432634623182691873" fileName="OverridingMethodsFinder.java" startLine="58" startPosition="106" endLine="62" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8432634623182692242" fileName="OverridingMethodsFinder.java" startLine="160" startPosition="87" endLine="164" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8432634623182692151" fileName="OverridingMethodsFinder.java" startLine="136" startPosition="239" endLine="141" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -358,15 +358,15 @@
       <varInfo nodeId="8432634623182691851" varName="nameToMethodsMap" />
       <varInfo nodeId="8432634623182691856" varName="visitedClassifiers" />
     </scopeInfo>
-    <unitInfo nodeId="8432634623182692314" fileName="OverridingMethodsFinder.java" startLine="36" startPosition="72" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$9" />
-    <unitInfo nodeId="8432634623182691906" fileName="OverridingMethodsFinder.java" startLine="66" startPosition="104" endLine="70" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$1" />
-    <unitInfo nodeId="8432634623182691915" fileName="OverridingMethodsFinder.java" startLine="70" startPosition="19" endLine="74" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$2" />
-    <unitInfo nodeId="8432634623182691924" fileName="OverridingMethodsFinder.java" startLine="74" startPosition="22" endLine="78" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$3" />
-    <unitInfo nodeId="8432634623182691967" fileName="OverridingMethodsFinder.java" startLine="86" startPosition="178" endLine="90" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$4" />
-    <unitInfo nodeId="8432634623182691976" fileName="OverridingMethodsFinder.java" startLine="90" startPosition="19" endLine="94" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$5" />
-    <unitInfo nodeId="8432634623182691985" fileName="OverridingMethodsFinder.java" startLine="94" startPosition="22" endLine="98" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$6" />
-    <unitInfo nodeId="8432634623182692115" fileName="OverridingMethodsFinder.java" startLine="107" startPosition="273" endLine="111" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$8" />
-    <unitInfo nodeId="8432634623182692084" fileName="OverridingMethodsFinder.java" startLine="117" startPosition="82" endLine="121" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$7" />
+    <unitInfo nodeId="8432634623182692314" fileName="OverridingMethodsFinder.java" startLine="36" startPosition="72" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$1" />
+    <unitInfo nodeId="8432634623182691906" fileName="OverridingMethodsFinder.java" startLine="66" startPosition="104" endLine="70" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$2" />
+    <unitInfo nodeId="8432634623182691915" fileName="OverridingMethodsFinder.java" startLine="70" startPosition="19" endLine="74" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$3" />
+    <unitInfo nodeId="8432634623182691924" fileName="OverridingMethodsFinder.java" startLine="74" startPosition="22" endLine="78" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$4" />
+    <unitInfo nodeId="8432634623182691967" fileName="OverridingMethodsFinder.java" startLine="86" startPosition="178" endLine="90" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$5" />
+    <unitInfo nodeId="8432634623182691976" fileName="OverridingMethodsFinder.java" startLine="90" startPosition="19" endLine="94" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$6" />
+    <unitInfo nodeId="8432634623182691985" fileName="OverridingMethodsFinder.java" startLine="94" startPosition="22" endLine="98" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$7" />
+    <unitInfo nodeId="8432634623182692115" fileName="OverridingMethodsFinder.java" startLine="107" startPosition="273" endLine="111" endPosition="5" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$9" />
+    <unitInfo nodeId="8432634623182692084" fileName="OverridingMethodsFinder.java" startLine="117" startPosition="82" endLine="121" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder$8" />
     <unitInfo nodeId="8432634623182691821" fileName="OverridingMethodsFinder.java" startLine="27" startPosition="0" endLine="176" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.OverridingMethodsFinder" />
   </root>
 </debugInfo>

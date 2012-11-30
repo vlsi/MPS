@@ -4,8 +4,6 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.make.IMakeService;
@@ -21,10 +19,11 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class MakeNamespace_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(MakeNamespace_Action.class);
   private boolean cleanMake;
 
   public MakeNamespace_Action(boolean cleanMake_par) {
@@ -119,4 +118,6 @@ public class MakeNamespace_Action extends BaseAction {
     }
     return modules;
   }
+
+  protected static Log log = LogFactory.getLog(MakeNamespace_Action.class);
 }

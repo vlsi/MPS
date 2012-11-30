@@ -5,7 +5,6 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -14,10 +13,10 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.logging.Logger;
 
 public class GoToNode_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("node.png");
-  private static Logger LOG = Logger.getLogger(GoToNode_Action.class);
 
   public GoToNode_Action() {
     super("Go to Source Node", "go to source node", ICON);
@@ -61,4 +60,6 @@ public class GoToNode_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "GoToNode", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(GoToNode_Action.class);
 }

@@ -44,7 +44,7 @@ public class TraceInfoUtil {
       return null;
     }
     UnitPositionInfo unitInfoForPosition = getUnitInfoForPosition(info, position, file);
-    return check_4iwlxm_a3a0(unitInfoForPosition);
+    return check_4iwlxm_a3a1(unitInfoForPosition);
   }
 
   @Nullable
@@ -95,12 +95,12 @@ public class TraceInfoUtil {
   @ToRemove(version = 3.0)
   @Nullable
   public static String getUnitName(SNode node) {
-    return check_4iwlxm_a0a4(TraceDown.unitNames((SNode) node));
+    return check_4iwlxm_a0a5(TraceDown.unitNames((SNode) node));
   }
 
   @Nullable
   public static SNode getNode(@NonNls String className, final String file, final int position) {
-    return check_4iwlxm_a0a5(getAllTraceableNodes(className, file, position));
+    return check_4iwlxm_a0a6(getAllTraceableNodes(className, file, position));
   }
 
   /**
@@ -308,21 +308,21 @@ public class TraceInfoUtil {
     });
   }
 
-  private static String check_4iwlxm_a3a0(UnitPositionInfo checkedDotOperand) {
+  private static String check_4iwlxm_a3a1(UnitPositionInfo checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getUnitName();
     }
     return null;
   }
 
-  private static String check_4iwlxm_a0a4(Iterable<String> checkedDotOperand) {
+  private static String check_4iwlxm_a0a5(Iterable<String> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return Sequence.fromIterable(checkedDotOperand).first();
     }
     return null;
   }
 
-  private static SNode check_4iwlxm_a0a5(List<SNode> checkedDotOperand) {
+  private static SNode check_4iwlxm_a0a6(List<SNode> checkedDotOperand) {
     if (null != checkedDotOperand) {
       return ListSequence.fromList(checkedDotOperand).first();
     }

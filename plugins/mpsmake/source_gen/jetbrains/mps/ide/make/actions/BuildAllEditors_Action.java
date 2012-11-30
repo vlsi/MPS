@@ -4,8 +4,6 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -23,10 +21,11 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.IOperationContext;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class BuildAllEditors_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(BuildAllEditors_Action.class);
 
   public BuildAllEditors_Action() {
     super("Rebuild All Editors", "", ICON);
@@ -86,4 +85,6 @@ public class BuildAllEditors_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(BuildAllEditors_Action.class);
 }

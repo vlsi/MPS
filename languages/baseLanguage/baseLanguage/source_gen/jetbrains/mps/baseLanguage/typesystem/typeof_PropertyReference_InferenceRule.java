@@ -29,7 +29,7 @@ public class typeof_PropertyReference_InferenceRule extends AbstractInferenceRul
       {
         SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(propertyReference);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1201468086542", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1201468086552", true), (SNode) _quotation_createNode_jcpbj3_a0b0b0a(SNodeOperations.getAncestor(property, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)), false, false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "1201468086552", true), (SNode) _quotation_createNode_jcpbj3_a0b0b0b(SNodeOperations.getAncestor(property, "jetbrains.mps.baseLanguage.structure.Classifier", false, false)), false, false, _info_12389875345);
       }
     }
   }
@@ -49,7 +49,7 @@ public class typeof_PropertyReference_InferenceRule extends AbstractInferenceRul
     return false;
   }
 
-  private static SNode _quotation_createNode_jcpbj3_a0b0b0a(Object parameter_1) {
+  private static SNode _quotation_createNode_jcpbj3_a0b0b0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("classifier", (SNode) parameter_1);

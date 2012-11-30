@@ -10,10 +10,10 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern1;
@@ -27,13 +27,13 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "7668447476859461630", 0, null);
       _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-      typeCheckingContext.createLessThanInequality((SNode) _quotation_createNode_9szvhv_a0a0a(((SNode) status.getPattern1().getFieldValue("patternVar_CONCEPT"))), (SNode) ((SNode) status.getPattern2().getFieldValue("patternVar_ELEMENT")), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) _quotation_createNode_9szvhv_a0a0d(((SNode) status.getPattern1().getFieldValue("patternVar_CONCEPT"))), (SNode) ((SNode) status.getPattern2().getFieldValue("patternVar_ELEMENT")), false, true, _info_12389875345);
     }
   }
 
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
-    result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) _quotation_createNode_9szvhv_a0a0b0b(((SNode) status.getPattern1().getFieldValue("patternVar_CONCEPT"))), (SNode) ((SNode) status.getPattern2().getFieldValue("patternVar_ELEMENT")), true);
+    result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) _quotation_createNode_9szvhv_a0a0b0e(((SNode) status.getPattern1().getFieldValue("patternVar_CONCEPT"))), (SNode) ((SNode) status.getPattern2().getFieldValue("patternVar_ELEMENT")), true);
     return result_14532009;
   }
 
@@ -43,7 +43,7 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
 
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
-      GeneratedMatchingPattern pattern = new nlist_subtypeOf_list_of_nodes_InequationReplacementRule.Pattern_9szvhv_a0a0a0a3();
+      GeneratedMatchingPattern pattern = new nlist_subtypeOf_list_of_nodes_InequationReplacementRule.Pattern_9szvhv_a0a0a0a6();
       this.myMatchingPattern1 = pattern;
       boolean b = pattern.match(node);
       return new IsApplicableStatus(b, pattern);
@@ -52,7 +52,7 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
 
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
-      GeneratedMatchingPattern pattern = new nlist_subtypeOf_list_of_nodes_InequationReplacementRule.Pattern_9szvhv_a0a0a0a4();
+      GeneratedMatchingPattern pattern = new nlist_subtypeOf_list_of_nodes_InequationReplacementRule.Pattern_9szvhv_a0a0a0a7();
       this.myMatchingPattern2 = pattern;
       boolean b = pattern.match(node);
       return new IsApplicableStatus(b, pattern);
@@ -67,24 +67,10 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
     return "jetbrains.mps.baseLanguage.collections.structure.ListType";
   }
 
-  private static SNode _quotation_createNode_9szvhv_a0a0a(Object parameter_1) {
-    SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);
-    return quotedNode_2;
-  }
-
-  private static SNode _quotation_createNode_9szvhv_a0a0b0b(Object parameter_1) {
-    SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);
-    return quotedNode_2;
-  }
-
-  public static class Pattern_9szvhv_a0a0a0a3 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_9szvhv_a0a0a0a6 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_CONCEPT;
 
-    public Pattern_9szvhv_a0a0a0a3() {
+    public Pattern_9szvhv_a0a0a0a6() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -120,10 +106,10 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
     }
   }
 
-  public static class Pattern_9szvhv_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_9szvhv_a0a0a0a7 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_ELEMENT;
 
-    public Pattern_9szvhv_a0a0a0a4() {
+    public Pattern_9szvhv_a0a0a0a7() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -166,5 +152,19 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
 
     public void performActions(Object o) {
     }
+  }
+
+  private static SNode _quotation_createNode_9szvhv_a0a0d(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);
+    return quotedNode_2;
+  }
+
+  private static SNode _quotation_createNode_9szvhv_a0a0b0e(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);
+    return quotedNode_2;
   }
 }

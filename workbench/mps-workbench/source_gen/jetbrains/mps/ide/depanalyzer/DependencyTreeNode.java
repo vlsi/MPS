@@ -30,7 +30,7 @@ public class DependencyTreeNode extends MPSTreeNode {
   }
 
   public IModule getModule() {
-    return check_akkfj9_a0a1(myLink);
+    return check_akkfj9_a0a4(myLink);
   }
 
   public void setDepLeaf() {
@@ -56,20 +56,20 @@ public class DependencyTreeNode extends MPSTreeNode {
 
   public void doubleClick() {
     if (myLinkedNode == null) {
-      ProjectPane.getInstance(check_akkfj9_a0a0a0a5(((DependencyPathTree) getTree()), this)).selectModule(getModule(), false);
+      ProjectPane.getInstance(check_akkfj9_a0a0a0a8(((DependencyPathTree) getTree()), this)).selectModule(getModule(), false);
     } else {
       getTree().selectNode(myLinkedNode);
     }
   }
 
-  private static IModule check_akkfj9_a0a1(DependencyUtil.Link checkedDotOperand) {
+  private static IModule check_akkfj9_a0a4(DependencyUtil.Link checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.module;
     }
     return null;
   }
 
-  private static Project check_akkfj9_a0a0a0a5(DependencyPathTree checkedDotOperand, DependencyTreeNode checkedDotThisExpression) {
+  private static Project check_akkfj9_a0a0a0a8(DependencyPathTree checkedDotOperand, DependencyTreeNode checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getProject();
     }

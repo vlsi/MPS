@@ -41,20 +41,20 @@ public class UIDemo_GWT {
 
   protected Panel createComponent(Panel panel) {
     this.rootPanel = panel;
-    final DockLayoutPanel widget_lh9rry_a0b0d = new DockLayoutPanel(Style.Unit.EM);
-    final String groupName_lh9rry_a0b0b0d = "defaultGroup";
-    final StackLayoutPanel widget_lh9rry_a0a0a1a3 = new StackLayoutPanel(Style.Unit.EM);
-    final String groupName_lh9rry_a0b0c0b0d = "defaultGroup";
-    final VerticalPanel widget_lh9rry_a0a0a0a0b0d = new _FunctionTypes._return_P1_E0<VerticalPanel, StackLayoutPanel>() {
+    final DockLayoutPanel widget_lh9rry_a0b0h = new DockLayoutPanel(Style.Unit.EM);
+    final String groupName_lh9rry_a0b0b0h = "defaultGroup";
+    final StackLayoutPanel widget_lh9rry_a0a0a1a7 = new StackLayoutPanel(Style.Unit.EM);
+    final String groupName_lh9rry_a0b0c0b0h = "defaultGroup";
+    final VerticalPanel widget_lh9rry_a0a0a0a0b0h = new _FunctionTypes._return_P1_E0<VerticalPanel, StackLayoutPanel>() {
       public VerticalPanel invoke(StackLayoutPanel context_lh9rry_a) {
         VerticalPanel vp = new VerticalPanel();
         vp.setWidth("100%");
         return vp;
       }
-    }.invoke(widget_lh9rry_a0a0a1a3);
-    final String groupName_lh9rry_a0b0c0c0b0d = "defaultGroup";
-    widget_lh9rry_a0a0a0a0b0d.setLayoutData("Panels");
-    final VerticalPanel widget_lh9rry_a0a0a0a0a0a1a3 = new _FunctionTypes._return_P0_E0<VerticalPanel>() {
+    }.invoke(widget_lh9rry_a0a0a1a7);
+    final String groupName_lh9rry_a0b0c0c0b0h = "defaultGroup";
+    widget_lh9rry_a0a0a0a0b0h.setLayoutData("Panels");
+    final VerticalPanel widget_lh9rry_a0a0a0a0a0a1a7 = new _FunctionTypes._return_P0_E0<VerticalPanel>() {
       public VerticalPanel invoke() {
         VerticalPanel vp = new VerticalPanel();
         vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
@@ -62,20 +62,20 @@ public class UIDemo_GWT {
         return vp;
       }
     }.invoke();
-    final String groupName_lh9rry_a0b0d0c0c0b0d = "defaultGroup";
-    new PanelsDemo_GWT(this).buildUI(widget_lh9rry_a0a0a0a0a0a1a3);
-    widget_lh9rry_a0a0a0a0b0d.add(widget_lh9rry_a0a0a0a0a0a1a3);
-    widget_lh9rry_a0a0a1a3.add(widget_lh9rry_a0a0a0a0b0d, new Label((String) widget_lh9rry_a0a0a0a0b0d.getLayoutData()), 2);
-    final VerticalPanel widget_lh9rry_b0a0a0a0b0d = new _FunctionTypes._return_P1_E0<VerticalPanel, StackLayoutPanel>() {
+    final String groupName_lh9rry_a0b0d0c0c0b0h = "defaultGroup";
+    new PanelsDemo_GWT(this).buildUI(widget_lh9rry_a0a0a0a0a0a1a7);
+    widget_lh9rry_a0a0a0a0b0h.add(widget_lh9rry_a0a0a0a0a0a1a7);
+    widget_lh9rry_a0a0a1a7.add(widget_lh9rry_a0a0a0a0b0h, new Label((String) widget_lh9rry_a0a0a0a0b0h.getLayoutData()), 2);
+    final VerticalPanel widget_lh9rry_b0a0a0a0b0h = new _FunctionTypes._return_P1_E0<VerticalPanel, StackLayoutPanel>() {
       public VerticalPanel invoke(StackLayoutPanel context_lh9rry_a_0) {
         VerticalPanel vp = new VerticalPanel();
         vp.setWidth("100%");
         return vp;
       }
-    }.invoke(widget_lh9rry_a0a0a1a3);
-    final String groupName_lh9rry_a0g0c0c0b0d = "defaultGroup";
-    widget_lh9rry_b0a0a0a0b0d.setLayoutData("Controls");
-    final VerticalPanel widget_lh9rry_a0a1a0a0a0a1a3 = new _FunctionTypes._return_P0_E0<VerticalPanel>() {
+    }.invoke(widget_lh9rry_a0a0a1a7);
+    final String groupName_lh9rry_a0g0c0c0b0h = "defaultGroup";
+    widget_lh9rry_b0a0a0a0b0h.setLayoutData("Controls");
+    final VerticalPanel widget_lh9rry_a0a1a0a0a0a1a7 = new _FunctionTypes._return_P0_E0<VerticalPanel>() {
       public VerticalPanel invoke() {
         VerticalPanel vp = new VerticalPanel();
         vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
@@ -83,20 +83,20 @@ public class UIDemo_GWT {
         return vp;
       }
     }.invoke();
-    final String groupName_lh9rry_a0b0i0c0c0b0d = "defaultGroup";
-    new ControlsDemo_GWT(this).buildUI(widget_lh9rry_a0a1a0a0a0a1a3);
-    widget_lh9rry_b0a0a0a0b0d.add(widget_lh9rry_a0a1a0a0a0a1a3);
-    widget_lh9rry_a0a0a1a3.add(widget_lh9rry_b0a0a0a0b0d, new Label((String) widget_lh9rry_b0a0a0a0b0d.getLayoutData()), 2);
-    final VerticalPanel widget_lh9rry_c0a0a0a0b0d = new _FunctionTypes._return_P1_E0<VerticalPanel, StackLayoutPanel>() {
+    final String groupName_lh9rry_a0b0i0c0c0b0h = "defaultGroup";
+    new ControlsDemo_GWT(this).buildUI(widget_lh9rry_a0a1a0a0a0a1a7);
+    widget_lh9rry_b0a0a0a0b0h.add(widget_lh9rry_a0a1a0a0a0a1a7);
+    widget_lh9rry_a0a0a1a7.add(widget_lh9rry_b0a0a0a0b0h, new Label((String) widget_lh9rry_b0a0a0a0b0h.getLayoutData()), 2);
+    final VerticalPanel widget_lh9rry_c0a0a0a0b0h = new _FunctionTypes._return_P1_E0<VerticalPanel, StackLayoutPanel>() {
       public VerticalPanel invoke(StackLayoutPanel context_lh9rry_a_1) {
         VerticalPanel vp = new VerticalPanel();
         vp.setWidth("100%");
         return vp;
       }
-    }.invoke(widget_lh9rry_a0a0a1a3);
-    final String groupName_lh9rry_a0l0c0c0b0d = "defaultGroup";
-    widget_lh9rry_c0a0a0a0b0d.setLayoutData("Windows");
-    final VerticalPanel widget_lh9rry_a0a2a0a0a0a1a3 = new _FunctionTypes._return_P0_E0<VerticalPanel>() {
+    }.invoke(widget_lh9rry_a0a0a1a7);
+    final String groupName_lh9rry_a0l0c0c0b0h = "defaultGroup";
+    widget_lh9rry_c0a0a0a0b0h.setLayoutData("Windows");
+    final VerticalPanel widget_lh9rry_a0a2a0a0a0a1a7 = new _FunctionTypes._return_P0_E0<VerticalPanel>() {
       public VerticalPanel invoke() {
         VerticalPanel vp = new VerticalPanel();
         vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
@@ -104,20 +104,20 @@ public class UIDemo_GWT {
         return vp;
       }
     }.invoke();
-    final String groupName_lh9rry_a0b0n0c0c0b0d = "defaultGroup";
-    new WindowsDemo_GWT(this).buildUI(widget_lh9rry_a0a2a0a0a0a1a3);
-    widget_lh9rry_c0a0a0a0b0d.add(widget_lh9rry_a0a2a0a0a0a1a3);
-    widget_lh9rry_a0a0a1a3.add(widget_lh9rry_c0a0a0a0b0d, new Label((String) widget_lh9rry_c0a0a0a0b0d.getLayoutData()), 2);
-    final VerticalPanel widget_lh9rry_d0a0a0a0b0d = new _FunctionTypes._return_P1_E0<VerticalPanel, StackLayoutPanel>() {
+    final String groupName_lh9rry_a0b0n0c0c0b0h = "defaultGroup";
+    new WindowsDemo_GWT(this).buildUI(widget_lh9rry_a0a2a0a0a0a1a7);
+    widget_lh9rry_c0a0a0a0b0h.add(widget_lh9rry_a0a2a0a0a0a1a7);
+    widget_lh9rry_a0a0a1a7.add(widget_lh9rry_c0a0a0a0b0h, new Label((String) widget_lh9rry_c0a0a0a0b0h.getLayoutData()), 2);
+    final VerticalPanel widget_lh9rry_d0a0a0a0b0h = new _FunctionTypes._return_P1_E0<VerticalPanel, StackLayoutPanel>() {
       public VerticalPanel invoke(StackLayoutPanel context_lh9rry_a_2) {
         VerticalPanel vp = new VerticalPanel();
         vp.setWidth("100%");
         return vp;
       }
-    }.invoke(widget_lh9rry_a0a0a1a3);
-    final String groupName_lh9rry_a0q0c0c0b0d = "defaultGroup";
-    widget_lh9rry_d0a0a0a0b0d.setLayoutData("\u0422\u044b\u0440\u044b\u043f\u044b\u0440\u044b");
-    final VerticalPanel widget_lh9rry_a0a3a0a0a0a1a3 = new _FunctionTypes._return_P0_E0<VerticalPanel>() {
+    }.invoke(widget_lh9rry_a0a0a1a7);
+    final String groupName_lh9rry_a0q0c0c0b0h = "defaultGroup";
+    widget_lh9rry_d0a0a0a0b0h.setLayoutData("\u0422\u044b\u0440\u044b\u043f\u044b\u0440\u044b");
+    final VerticalPanel widget_lh9rry_a0a3a0a0a0a1a7 = new _FunctionTypes._return_P0_E0<VerticalPanel>() {
       public VerticalPanel invoke() {
         VerticalPanel vp = new VerticalPanel();
         vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
@@ -125,28 +125,28 @@ public class UIDemo_GWT {
         return vp;
       }
     }.invoke();
-    final String groupName_lh9rry_a0b0s0c0c0b0d = "defaultGroup";
-    final RadioButton widget_lh9rry_a0a0a0d0a0a0a0b0d = new RadioButton(groupName_lh9rry_a0b0s0c0c0b0d);
-    widget_lh9rry_a0a0a0d0a0a0a0b0d.setText("Stage 1");
-    widget_lh9rry_a0a3a0a0a0a1a3.add(widget_lh9rry_a0a0a0d0a0a0a0b0d);
-    final RadioButton widget_lh9rry_b0a0a0d0a0a0a0b0d = new RadioButton(groupName_lh9rry_a0b0s0c0c0b0d);
-    widget_lh9rry_b0a0a0d0a0a0a0b0d.setText("Stage 2");
-    widget_lh9rry_a0a3a0a0a0a1a3.add(widget_lh9rry_b0a0a0d0a0a0a0b0d);
-    final RadioButton widget_lh9rry_c0a0a0d0a0a0a0b0d = new RadioButton(groupName_lh9rry_a0b0s0c0c0b0d);
-    widget_lh9rry_c0a0a0d0a0a0a0b0d.setText("Stage 3");
-    widget_lh9rry_a0a3a0a0a0a1a3.add(widget_lh9rry_c0a0a0d0a0a0a0b0d);
-    widget_lh9rry_d0a0a0a0b0d.add(widget_lh9rry_a0a3a0a0a0a1a3);
-    widget_lh9rry_a0a0a1a3.add(widget_lh9rry_d0a0a0a0b0d, new Label((String) widget_lh9rry_d0a0a0a0b0d.getLayoutData()), 2);
-    final VerticalPanel widget_lh9rry_e0a0a0a0b0d = new _FunctionTypes._return_P1_E0<VerticalPanel, StackLayoutPanel>() {
+    final String groupName_lh9rry_a0b0s0c0c0b0h = "defaultGroup";
+    final RadioButton widget_lh9rry_a0a0a0d0a0a0a0b0h = new RadioButton(groupName_lh9rry_a0b0s0c0c0b0h);
+    widget_lh9rry_a0a0a0d0a0a0a0b0h.setText("Stage 1");
+    widget_lh9rry_a0a3a0a0a0a1a7.add(widget_lh9rry_a0a0a0d0a0a0a0b0h);
+    final RadioButton widget_lh9rry_b0a0a0d0a0a0a0b0h = new RadioButton(groupName_lh9rry_a0b0s0c0c0b0h);
+    widget_lh9rry_b0a0a0d0a0a0a0b0h.setText("Stage 2");
+    widget_lh9rry_a0a3a0a0a0a1a7.add(widget_lh9rry_b0a0a0d0a0a0a0b0h);
+    final RadioButton widget_lh9rry_c0a0a0d0a0a0a0b0h = new RadioButton(groupName_lh9rry_a0b0s0c0c0b0h);
+    widget_lh9rry_c0a0a0d0a0a0a0b0h.setText("Stage 3");
+    widget_lh9rry_a0a3a0a0a0a1a7.add(widget_lh9rry_c0a0a0d0a0a0a0b0h);
+    widget_lh9rry_d0a0a0a0b0h.add(widget_lh9rry_a0a3a0a0a0a1a7);
+    widget_lh9rry_a0a0a1a7.add(widget_lh9rry_d0a0a0a0b0h, new Label((String) widget_lh9rry_d0a0a0a0b0h.getLayoutData()), 2);
+    final VerticalPanel widget_lh9rry_e0a0a0a0b0h = new _FunctionTypes._return_P1_E0<VerticalPanel, StackLayoutPanel>() {
       public VerticalPanel invoke(StackLayoutPanel context_lh9rry_a_3) {
         VerticalPanel vp = new VerticalPanel();
         vp.setWidth("100%");
         return vp;
       }
-    }.invoke(widget_lh9rry_a0a0a1a3);
-    final String groupName_lh9rry_a0v0c0c0b0d = "defaultGroup";
-    widget_lh9rry_e0a0a0a0b0d.setLayoutData("\u0401\u043c\u0430\u0451");
-    final VerticalPanel widget_lh9rry_a0a4a0a0a0a1a3 = new _FunctionTypes._return_P0_E0<VerticalPanel>() {
+    }.invoke(widget_lh9rry_a0a0a1a7);
+    final String groupName_lh9rry_a0v0c0c0b0h = "defaultGroup";
+    widget_lh9rry_e0a0a0a0b0h.setLayoutData("\u0401\u043c\u0430\u0451");
+    final VerticalPanel widget_lh9rry_a0a4a0a0a0a1a7 = new _FunctionTypes._return_P0_E0<VerticalPanel>() {
       public VerticalPanel invoke() {
         VerticalPanel vp = new VerticalPanel();
         vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
@@ -154,47 +154,47 @@ public class UIDemo_GWT {
         return vp;
       }
     }.invoke();
-    final String groupName_lh9rry_a0b0x0c0c0b0d = "defaultGroup";
-    final RadioButton widget_lh9rry_a0a0a0e0a0a0a0b0d = new RadioButton(groupName_lh9rry_a0b0x0c0c0b0d);
-    widget_lh9rry_a0a0a0e0a0a0a0b0d.setText("Stage 1");
-    widget_lh9rry_a0a4a0a0a0a1a3.add(widget_lh9rry_a0a0a0e0a0a0a0b0d);
-    final RadioButton widget_lh9rry_b0a0a0e0a0a0a0b0d = new RadioButton(groupName_lh9rry_a0b0x0c0c0b0d);
-    widget_lh9rry_b0a0a0e0a0a0a0b0d.setText("Stage 2");
-    widget_lh9rry_a0a4a0a0a0a1a3.add(widget_lh9rry_b0a0a0e0a0a0a0b0d);
-    final RadioButton widget_lh9rry_c0a0a0e0a0a0a0b0d = new RadioButton(groupName_lh9rry_a0b0x0c0c0b0d);
-    widget_lh9rry_c0a0a0e0a0a0a0b0d.setText("Stage 3");
-    widget_lh9rry_a0a4a0a0a0a1a3.add(widget_lh9rry_c0a0a0e0a0a0a0b0d);
-    widget_lh9rry_e0a0a0a0b0d.add(widget_lh9rry_a0a4a0a0a0a1a3);
-    widget_lh9rry_a0a0a1a3.add(widget_lh9rry_e0a0a0a0b0d, new Label((String) widget_lh9rry_e0a0a0a0b0d.getLayoutData()), 2);
-    widget_lh9rry_a0b0d.addWest(widget_lh9rry_a0a0a1a3, 16);
-    widget_lh9rry_a0a0a1a3.setWidth("100%");
-    widget_lh9rry_a0a0a1a3.setHeight("100%");
-    this.demoContainer = widget_lh9rry_a0b0d;
-    return widget_lh9rry_a0b0d;
+    final String groupName_lh9rry_a0b0x0c0c0b0h = "defaultGroup";
+    final RadioButton widget_lh9rry_a0a0a0e0a0a0a0b0h = new RadioButton(groupName_lh9rry_a0b0x0c0c0b0h);
+    widget_lh9rry_a0a0a0e0a0a0a0b0h.setText("Stage 1");
+    widget_lh9rry_a0a4a0a0a0a1a7.add(widget_lh9rry_a0a0a0e0a0a0a0b0h);
+    final RadioButton widget_lh9rry_b0a0a0e0a0a0a0b0h = new RadioButton(groupName_lh9rry_a0b0x0c0c0b0h);
+    widget_lh9rry_b0a0a0e0a0a0a0b0h.setText("Stage 2");
+    widget_lh9rry_a0a4a0a0a0a1a7.add(widget_lh9rry_b0a0a0e0a0a0a0b0h);
+    final RadioButton widget_lh9rry_c0a0a0e0a0a0a0b0h = new RadioButton(groupName_lh9rry_a0b0x0c0c0b0h);
+    widget_lh9rry_c0a0a0e0a0a0a0b0h.setText("Stage 3");
+    widget_lh9rry_a0a4a0a0a0a1a7.add(widget_lh9rry_c0a0a0e0a0a0a0b0h);
+    widget_lh9rry_e0a0a0a0b0h.add(widget_lh9rry_a0a4a0a0a0a1a7);
+    widget_lh9rry_a0a0a1a7.add(widget_lh9rry_e0a0a0a0b0h, new Label((String) widget_lh9rry_e0a0a0a0b0h.getLayoutData()), 2);
+    widget_lh9rry_a0b0h.addWest(widget_lh9rry_a0a0a1a7, 16);
+    widget_lh9rry_a0a0a1a7.setWidth("100%");
+    widget_lh9rry_a0a0a1a7.setHeight("100%");
+    this.demoContainer = widget_lh9rry_a0b0h;
+    return widget_lh9rry_a0b0h;
   }
 
   private void tab1(TabLayoutPanel tpane) {
-    final HorizontalPanel widget_lh9rry_a0a0e = new _FunctionTypes._return_P0_E0<HorizontalPanel>() {
+    final HorizontalPanel widget_lh9rry_a0a0i = new _FunctionTypes._return_P0_E0<HorizontalPanel>() {
       public HorizontalPanel invoke() {
         HorizontalPanel hp = new HorizontalPanel();
         return hp;
       }
     }.invoke();
-    final String groupName_lh9rry_a0b0a0e = "defaultGroup";
-    final RadioButton widget_lh9rry_a0a0a0a4 = new RadioButton(groupName_lh9rry_a0b0a0e);
-    widget_lh9rry_a0a0a0a4.setText("Stage 1");
-    widget_lh9rry_a0a0e.add(widget_lh9rry_a0a0a0a4);
-    final RadioButton widget_lh9rry_b0a0a0a4 = new RadioButton(groupName_lh9rry_a0b0a0e);
-    widget_lh9rry_b0a0a0a4.setText("Stage 2");
-    widget_lh9rry_a0a0e.add(widget_lh9rry_b0a0a0a4);
-    final RadioButton widget_lh9rry_c0a0a0a4 = new RadioButton(groupName_lh9rry_a0b0a0e);
-    widget_lh9rry_c0a0a0a4.setText("Stage 3");
-    widget_lh9rry_a0a0e.add(widget_lh9rry_c0a0a0a4);
-    tpane.add(widget_lh9rry_a0a0e, "Radiobuttons");
+    final String groupName_lh9rry_a0b0a0i = "defaultGroup";
+    final RadioButton widget_lh9rry_a0a0a0a8 = new RadioButton(groupName_lh9rry_a0b0a0i);
+    widget_lh9rry_a0a0a0a8.setText("Stage 1");
+    widget_lh9rry_a0a0i.add(widget_lh9rry_a0a0a0a8);
+    final RadioButton widget_lh9rry_b0a0a0a8 = new RadioButton(groupName_lh9rry_a0b0a0i);
+    widget_lh9rry_b0a0a0a8.setText("Stage 2");
+    widget_lh9rry_a0a0i.add(widget_lh9rry_b0a0a0a8);
+    final RadioButton widget_lh9rry_c0a0a0a8 = new RadioButton(groupName_lh9rry_a0b0a0i);
+    widget_lh9rry_c0a0a0a8.setText("Stage 3");
+    widget_lh9rry_a0a0i.add(widget_lh9rry_c0a0a0a8);
+    tpane.add(widget_lh9rry_a0a0i, "Radiobuttons");
   }
 
   private void tab2(TabLayoutPanel tpane) {
-    final VerticalPanel widget_lh9rry_a0a0f = new _FunctionTypes._return_P0_E0<VerticalPanel>() {
+    final VerticalPanel widget_lh9rry_a0a0j = new _FunctionTypes._return_P0_E0<VerticalPanel>() {
       public VerticalPanel invoke() {
         VerticalPanel vp = new VerticalPanel();
         vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
@@ -202,11 +202,11 @@ public class UIDemo_GWT {
         return vp;
       }
     }.invoke();
-    final String groupName_lh9rry_a0b0a0f = "defaultGroup";
-    final CheckBox widget_lh9rry_a0a0a0a5 = new CheckBox();
-    widget_lh9rry_a0a0a0a5.setText("kino");
-    widget_lh9rry_a0a0a0a5.setValue(this.bo.isKino());
-    widget_lh9rry_a0a0a0a5.addValueChangeHandler(new ValueChangeHandler<Boolean>() {
+    final String groupName_lh9rry_a0b0a0j = "defaultGroup";
+    final CheckBox widget_lh9rry_a0a0a0a9 = new CheckBox();
+    widget_lh9rry_a0a0a0a9.setText("kino");
+    widget_lh9rry_a0a0a0a9.setValue(this.bo.isKino());
+    widget_lh9rry_a0a0a0a9.addValueChangeHandler(new ValueChangeHandler<Boolean>() {
       public void onValueChange(ValueChangeEvent<Boolean> e) {
         Executor<Boolean> ex = new Executor<Boolean>() {
           public void doIt(Boolean value) {
@@ -216,11 +216,11 @@ public class UIDemo_GWT {
         ex.doIt(e.getValue());
       }
     });
-    widget_lh9rry_a0a0f.add(widget_lh9rry_a0a0a0a5);
-    final CheckBox widget_lh9rry_b0a0a0a5 = new CheckBox();
-    widget_lh9rry_b0a0a0a5.setText("vino");
-    widget_lh9rry_b0a0a0a5.setValue(this.bo.isVino());
-    widget_lh9rry_b0a0a0a5.addValueChangeHandler(new ValueChangeHandler<Boolean>() {
+    widget_lh9rry_a0a0j.add(widget_lh9rry_a0a0a0a9);
+    final CheckBox widget_lh9rry_b0a0a0a9 = new CheckBox();
+    widget_lh9rry_b0a0a0a9.setText("vino");
+    widget_lh9rry_b0a0a0a9.setValue(this.bo.isVino());
+    widget_lh9rry_b0a0a0a9.addValueChangeHandler(new ValueChangeHandler<Boolean>() {
       public void onValueChange(ValueChangeEvent<Boolean> e) {
         Executor<Boolean> ex = new Executor<Boolean>() {
           public void doIt(Boolean value) {
@@ -230,11 +230,11 @@ public class UIDemo_GWT {
         ex.doIt(e.getValue());
       }
     });
-    widget_lh9rry_a0a0f.add(widget_lh9rry_b0a0a0a5);
-    final CheckBox widget_lh9rry_c0a0a0a5 = new CheckBox();
-    widget_lh9rry_c0a0a0a5.setText("domino");
-    widget_lh9rry_c0a0a0a5.setValue(this.bo.isDomino());
-    widget_lh9rry_c0a0a0a5.addValueChangeHandler(new ValueChangeHandler<Boolean>() {
+    widget_lh9rry_a0a0j.add(widget_lh9rry_b0a0a0a9);
+    final CheckBox widget_lh9rry_c0a0a0a9 = new CheckBox();
+    widget_lh9rry_c0a0a0a9.setText("domino");
+    widget_lh9rry_c0a0a0a9.setValue(this.bo.isDomino());
+    widget_lh9rry_c0a0a0a9.addValueChangeHandler(new ValueChangeHandler<Boolean>() {
       public void onValueChange(ValueChangeEvent<Boolean> e) {
         Executor<Boolean> ex = new Executor<Boolean>() {
           public void doIt(Boolean value) {
@@ -244,7 +244,7 @@ public class UIDemo_GWT {
         ex.doIt(e.getValue());
       }
     });
-    widget_lh9rry_a0a0f.add(widget_lh9rry_c0a0a0a5);
-    tpane.add(widget_lh9rry_a0a0f, "Checkboxes");
+    widget_lh9rry_a0a0j.add(widget_lh9rry_c0a0a0a9);
+    tpane.add(widget_lh9rry_a0a0j, "Checkboxes");
   }
 }

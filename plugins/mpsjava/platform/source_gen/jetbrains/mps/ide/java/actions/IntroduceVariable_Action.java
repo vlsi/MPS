@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceLocalVariableRefactoring;
@@ -21,10 +20,10 @@ import jetbrains.mps.ide.java.platform.refactorings.LocalVariableIntroducer;
 import java.awt.Frame;
 import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JOptionPane;
+import jetbrains.mps.logging.Logger;
 
 public class IntroduceVariable_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(IntroduceVariable_Action.class);
 
   public IntroduceVariable_Action() {
     super("Introduce Variable...", "", ICON);
@@ -102,4 +101,6 @@ public class IntroduceVariable_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "IntroduceVariable", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(IntroduceVariable_Action.class);
 }

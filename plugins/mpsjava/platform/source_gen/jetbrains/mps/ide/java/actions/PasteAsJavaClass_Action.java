@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SModel;
@@ -19,10 +18,10 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.logging.Logger;
 
 public class PasteAsJavaClass_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(PasteAsJavaClass_Action.class);
 
   public PasteAsJavaClass_Action() {
     super("Paste as Java Class", "", ICON);
@@ -81,4 +80,6 @@ public class PasteAsJavaClass_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "PasteAsJavaClass", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(PasteAsJavaClass_Action.class);
 }

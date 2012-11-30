@@ -361,29 +361,29 @@
     <scopeInfo nodeId="2896881808974479831" fileName="StandardDialogs.java" startLine="296" startPosition="40" endLine="297" endPosition="49" />
     <scopeInfo nodeId="5249055041137646133" fileName="StandardDialogs.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="7793469387662786899" fileName="StandardDialogs.java" startLine="339" startPosition="79" endLine="346" endPosition="0">
-      <varInfo nodeId="7793469387662786899" varName="result_960thj_a0a0a2a1a0a0a4" />
-      <varInfo nodeId="7793469387662786899" varName="result_960thj_a0a2a1a0a0a4" />
-      <varInfo nodeId="7793469387662786899" varName="result_960thj_a1a0a2a1a0a0a4" />
+      <varInfo nodeId="7793469387662786899" varName="result_960thj_a0a0a2a1a0a0a5" />
+      <varInfo nodeId="7793469387662786899" varName="result_960thj_a0a2a1a0a0a5" />
+      <varInfo nodeId="7793469387662786899" varName="result_960thj_a1a0a2a1a0a0a5" />
     </scopeInfo>
     <scopeInfo nodeId="901357770590758372" fileName="StandardDialogs.java" startLine="193" startPosition="46" endLine="228" endPosition="36">
       <varInfo nodeId="901357770590758376" varName="dialog" />
-      <varInfo nodeId="901357770590758372" varName="result_960thj_a0a0a1a0a0a2" />
-      <varInfo nodeId="901357770590758372" varName="result_960thj_a0a0a2" />
-      <varInfo nodeId="901357770590758372" varName="result_960thj_a0a1a0a0a2" />
-      <varInfo nodeId="901357770590758372" varName="result_960thj_a0a1a1a0a0a2" />
-      <varInfo nodeId="901357770590758372" varName="result_960thj_a0a2a1a0a0a2" />
-      <varInfo nodeId="901357770590758372" varName="result_960thj_a0a3a1a0a0a2" />
-      <varInfo nodeId="901357770590758372" varName="result_960thj_a0a4a1a0a0a2" />
-      <varInfo nodeId="901357770590758372" varName="result_960thj_a1a0a0a2" />
-      <varInfo nodeId="901357770590758372" varName="result_960thj_a1a0a1a0a0a2" />
-      <varInfo nodeId="901357770590758372" varName="result_960thj_a1a1a0a0a2" />
-      <varInfo nodeId="901357770590758372" varName="result_960thj_a1a1a1a0a0a2" />
-      <varInfo nodeId="901357770590758372" varName="result_960thj_a1a2a1a0a0a2" />
-      <varInfo nodeId="901357770590758372" varName="result_960thj_a1a3a1a0a0a2" />
-      <varInfo nodeId="901357770590758372" varName="result_960thj_a1a4a1a0a0a2" />
-      <varInfo nodeId="901357770590758372" varName="result_960thj_a2a1a0a0a2" />
-      <varInfo nodeId="901357770590758372" varName="result_960thj_a3a1a0a0a2" />
-      <varInfo nodeId="901357770590758372" varName="result_960thj_a4a1a0a0a2" />
+      <varInfo nodeId="901357770590758372" varName="result_960thj_a0a0a1a0a0a3" />
+      <varInfo nodeId="901357770590758372" varName="result_960thj_a0a0a3" />
+      <varInfo nodeId="901357770590758372" varName="result_960thj_a0a1a0a0a3" />
+      <varInfo nodeId="901357770590758372" varName="result_960thj_a0a1a1a0a0a3" />
+      <varInfo nodeId="901357770590758372" varName="result_960thj_a0a2a1a0a0a3" />
+      <varInfo nodeId="901357770590758372" varName="result_960thj_a0a3a1a0a0a3" />
+      <varInfo nodeId="901357770590758372" varName="result_960thj_a0a4a1a0a0a3" />
+      <varInfo nodeId="901357770590758372" varName="result_960thj_a1a0a0a3" />
+      <varInfo nodeId="901357770590758372" varName="result_960thj_a1a0a1a0a0a3" />
+      <varInfo nodeId="901357770590758372" varName="result_960thj_a1a1a0a0a3" />
+      <varInfo nodeId="901357770590758372" varName="result_960thj_a1a1a1a0a0a3" />
+      <varInfo nodeId="901357770590758372" varName="result_960thj_a1a2a1a0a0a3" />
+      <varInfo nodeId="901357770590758372" varName="result_960thj_a1a3a1a0a0a3" />
+      <varInfo nodeId="901357770590758372" varName="result_960thj_a1a4a1a0a0a3" />
+      <varInfo nodeId="901357770590758372" varName="result_960thj_a2a1a0a0a3" />
+      <varInfo nodeId="901357770590758372" varName="result_960thj_a3a1a0a0a3" />
+      <varInfo nodeId="901357770590758372" varName="result_960thj_a4a1a0a0a3" />
     </scopeInfo>
     <scopeInfo nodeId="901357770590758372" fileName="StandardDialogs.java" startLine="193" startPosition="0" endLine="230" endPosition="0" />
     <scopeInfo nodeId="901357770590758370" fileName="StandardDialogs.java" startLine="191" startPosition="118" endLine="230" endPosition="15" />
@@ -393,71 +393,71 @@
     </scopeInfo>
     <scopeInfo nodeId="901357770590757542" fileName="StandardDialogs.java" startLine="121" startPosition="49" endLine="186" endPosition="36">
       <varInfo nodeId="901357770590757546" varName="dialog" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a0a1a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a0a2a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a0a3a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a0a4a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a1a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a1a1a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a1a2a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a1a4a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a2a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a2a2a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a3a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a3a2a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a4a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a0a1a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a0a2a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a0a3a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a0a4a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a1a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a1a1a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a1a2a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a1a4a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a2a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a2a2a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a3a2a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a4a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a2a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a2a2a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a3a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a3a2a0a0a1" />
-      <varInfo nodeId="901357770590757542" varName="result_960thj_a4a0a0a1" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a0a1a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a0a2a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a0a3a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a0a4a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a1a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a1a1a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a1a2a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a1a4a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a2a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a2a2a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a3a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a3a2a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a0a4a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a0a1a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a0a2a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a0a3a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a0a4a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a1a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a1a1a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a1a2a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a1a4a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a2a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a2a2a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a3a2a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a1a4a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a2a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a2a2a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a3a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a3a2a0a0a2" />
+      <varInfo nodeId="901357770590757542" varName="result_960thj_a4a0a0a2" />
     </scopeInfo>
     <scopeInfo nodeId="901357770590757542" fileName="StandardDialogs.java" startLine="121" startPosition="0" endLine="188" endPosition="0" />
     <scopeInfo nodeId="901357770590751352" fileName="StandardDialogs.java" startLine="328" startPosition="45" endLine="395" endPosition="36">
       <varInfo nodeId="901357770590751356" varName="dialog" />
       <varInfo nodeId="6673009040134307444" varName="myModel" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a0a1a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a0a2a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a0a3a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a1a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a1a2a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a2a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a3a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a3a1a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a4a1a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a5a1a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a6a1a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a0a1a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a0a2a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a0a3a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a1a2a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a2a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a3a1a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a4a1a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a5a1a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a6a1a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a2a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a3a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a3a1a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a4a1a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a5a1a0a0a4" />
-      <varInfo nodeId="901357770590751352" varName="result_960thj_a6a1a0a0a4" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a0a1a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a0a2a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a0a3a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a1a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a1a2a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a2a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a3a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a3a1a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a4a1a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a5a1a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a0a6a1a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a0a1a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a0a2a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a0a3a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a1a2a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a2a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a3a1a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a4a1a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a5a1a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a1a6a1a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a2a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a3a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a3a1a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a4a1a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a5a1a0a0a5" />
+      <varInfo nodeId="901357770590751352" varName="result_960thj_a6a1a0a0a5" />
     </scopeInfo>
     <scopeInfo nodeId="901357770590757540" fileName="StandardDialogs.java" startLine="119" startPosition="127" endLine="188" endPosition="15" />
     <scopeInfo nodeId="901357770590751352" fileName="StandardDialogs.java" startLine="328" startPosition="0" endLine="397" endPosition="0" />
@@ -472,95 +472,95 @@
     </scopeInfo>
     <scopeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="235" startPosition="48" endLine="321" endPosition="36">
       <varInfo nodeId="901357770590749723" varName="dialog" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a0a1a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a0a2a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a0a3a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a0a4a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a1a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a1a1a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a1a2a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a1a3a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a1a4a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a2a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a2a1a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a2a2a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a2a4a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a3a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a3a1a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a4a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a0a1a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a0a2a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a0a3a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a0a4a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a1a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a1a1a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a1a2a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a1a3a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a1a4a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a2a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a2a1a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a2a2a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a2a4a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a3a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a3a1a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a4a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a2a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a2a1a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a2a2a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a2a4a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a3a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a3a1a0a0a3" />
-      <varInfo nodeId="901357770590749719" varName="result_960thj_a4a0a0a3" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a0a1a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a0a2a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a0a3a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a0a4a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a1a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a1a1a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a1a2a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a1a3a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a1a4a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a2a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a2a1a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a2a2a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a2a4a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a3a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a3a1a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a0a4a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a0a1a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a0a2a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a0a3a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a0a4a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a1a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a1a1a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a1a2a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a1a3a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a1a4a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a2a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a2a1a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a2a2a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a2a4a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a3a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a3a1a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a1a4a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a2a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a2a1a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a2a2a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a2a4a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a3a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a3a1a0a0a4" />
+      <varInfo nodeId="901357770590749719" varName="result_960thj_a4a0a0a4" />
     </scopeInfo>
     <scopeInfo nodeId="901357770590749719" fileName="StandardDialogs.java" startLine="235" startPosition="0" endLine="323" endPosition="0" />
     <scopeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="25" startPosition="48" endLine="114" endPosition="36">
       <varInfo nodeId="3201642974934182608" varName="dialog" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a0a1a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a0a2a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a0a3a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a0a4a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a1a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a1a1a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a1a2a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a1a3a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a2a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a2a1a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a2a2a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a2a3a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a3a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a3a1a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a3a2a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a4a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a4a1a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a0a1a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a0a2a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a0a3a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a0a4a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a1a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a1a1a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a1a2a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a1a3a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a2a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a2a1a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a2a2a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a2a3a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a3a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a3a1a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a3a2a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a4a1a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a2a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a2a1a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a2a2a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a2a3a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a3a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a3a1a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a3a2a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a4a0a0a0" />
-      <varInfo nodeId="3201642974933960752" varName="result_960thj_a4a1a0a0a0" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a0a1a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a0a2a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a0a3a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a0a4a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a1a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a1a1a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a1a2a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a1a3a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a2a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a2a1a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a2a2a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a2a3a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a3a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a3a1a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a3a2a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a4a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a0a4a1a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a0a1a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a0a2a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a0a3a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a0a4a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a1a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a1a1a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a1a2a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a1a3a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a2a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a2a1a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a2a2a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a2a3a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a3a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a3a1a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a3a2a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a1a4a1a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a2a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a2a1a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a2a2a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a2a3a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a3a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a3a1a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a3a2a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a4a0a0a1" />
+      <varInfo nodeId="3201642974933960752" varName="result_960thj_a4a1a0a0a1" />
     </scopeInfo>
     <scopeInfo nodeId="901357770590749717" fileName="StandardDialogs.java" startLine="233" startPosition="124" endLine="323" endPosition="15" />
     <scopeInfo nodeId="3201642974933960752" fileName="StandardDialogs.java" startLine="25" startPosition="0" endLine="116" endPosition="0" />
@@ -677,22 +677,22 @@
     <nodeInfo nodeId="262971659834063147" fileName="StandardComponents.java" startLine="283" startPosition="10" endLine="284" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="262971659834118147" fileName="StandardComponents.java" startLine="284" startPosition="67" endLine="285" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="262971659834063147" fileName="StandardComponents.java" startLine="285" startPosition="36" endLine="286" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="293" startPosition="39" endLine="294" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="294" startPosition="95" endLine="295" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="295" startPosition="81" endLine="296" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="296" startPosition="64" endLine="297" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="297" startPosition="53" endLine="298" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="293" startPosition="39" endLine="294" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="294" startPosition="96" endLine="295" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="295" startPosition="82" endLine="296" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="296" startPosition="66" endLine="297" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="297" startPosition="54" endLine="298" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="300" startPosition="47" endLine="301" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="301" startPosition="150" endLine="302" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="302" startPosition="170" endLine="303" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="305" startPosition="10" endLine="306" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7355563316698764175" fileName="StandardComponents.java" startLine="306" startPosition="75" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="307" startPosition="0" endLine="308" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="308" startPosition="116" endLine="309" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="309" startPosition="63" endLine="310" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="310" startPosition="116" endLine="311" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7355563316698764193" fileName="StandardComponents.java" startLine="311" startPosition="63" endLine="312" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="312" startPosition="36" endLine="313" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="305" startPosition="10" endLine="306" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7355563316698764175" fileName="StandardComponents.java" startLine="306" startPosition="77" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="307" startPosition="0" endLine="308" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="308" startPosition="117" endLine="309" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="309" startPosition="65" endLine="310" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="310" startPosition="117" endLine="311" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7355563316698764193" fileName="StandardComponents.java" startLine="311" startPosition="65" endLine="312" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="312" startPosition="37" endLine="313" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6329333649353043948" fileName="StandardComponents.java" startLine="320" startPosition="38" endLine="321" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6329333649353043948" fileName="StandardComponents.java" startLine="321" startPosition="94" endLine="322" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6329333649353043948" fileName="StandardComponents.java" startLine="322" startPosition="92" endLine="323" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -842,19 +842,19 @@
     <nodeInfo nodeId="3489707970361006766" fileName="StandardComponents.java" startLine="560" startPosition="65" endLine="561" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3489707970361006776" fileName="StandardComponents.java" startLine="561" startPosition="132" endLine="562" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4060390951635974989" fileName="StandardComponents.java" startLine="565" startPosition="162" endLine="566" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4060390951635972883" fileName="StandardComponents.java" startLine="577" startPosition="0" endLine="578" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myObject" />
-    <nodeInfo nodeId="4060390951635972886" fileName="StandardComponents.java" startLine="578" startPosition="0" endLine="579" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPropName" />
-    <nodeInfo nodeId="4060390951635972889" fileName="StandardComponents.java" startLine="579" startPosition="0" endLine="580" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCheckboxCaption" />
-    <nodeInfo nodeId="4060390951635972892" fileName="StandardComponents.java" startLine="580" startPosition="0" endLine="581" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsInternal" />
-    <nodeInfo nodeId="4060390951635972904" fileName="StandardComponents.java" startLine="582" startPosition="87" endLine="583" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="4060390951635972920" fileName="StandardComponents.java" startLine="586" startPosition="107" endLine="587" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4060390951635972926" fileName="StandardComponents.java" startLine="587" startPosition="24" endLine="588" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4060390951635972932" fileName="StandardComponents.java" startLine="588" startPosition="28" endLine="589" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4060390951635972938" fileName="StandardComponents.java" startLine="589" startPosition="42" endLine="590" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4060390951635972948" fileName="StandardComponents.java" startLine="593" startPosition="31" endLine="594" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4060390951635972956" fileName="StandardComponents.java" startLine="597" startPosition="33" endLine="598" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4060390951635972964" fileName="StandardComponents.java" startLine="601" startPosition="40" endLine="602" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4060390951635972972" fileName="StandardComponents.java" startLine="605" startPosition="33" endLine="606" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4060390951635972883" fileName="StandardComponents.java" startLine="570" startPosition="0" endLine="571" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myObject" />
+    <nodeInfo nodeId="4060390951635972886" fileName="StandardComponents.java" startLine="571" startPosition="0" endLine="572" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPropName" />
+    <nodeInfo nodeId="4060390951635972889" fileName="StandardComponents.java" startLine="572" startPosition="0" endLine="573" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCheckboxCaption" />
+    <nodeInfo nodeId="4060390951635972892" fileName="StandardComponents.java" startLine="573" startPosition="0" endLine="574" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsInternal" />
+    <nodeInfo nodeId="4060390951635972904" fileName="StandardComponents.java" startLine="575" startPosition="87" endLine="576" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="4060390951635972920" fileName="StandardComponents.java" startLine="579" startPosition="107" endLine="580" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4060390951635972926" fileName="StandardComponents.java" startLine="580" startPosition="24" endLine="581" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4060390951635972932" fileName="StandardComponents.java" startLine="581" startPosition="28" endLine="582" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4060390951635972938" fileName="StandardComponents.java" startLine="582" startPosition="42" endLine="583" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4060390951635972948" fileName="StandardComponents.java" startLine="586" startPosition="31" endLine="587" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4060390951635972956" fileName="StandardComponents.java" startLine="590" startPosition="33" endLine="591" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4060390951635972964" fileName="StandardComponents.java" startLine="594" startPosition="40" endLine="595" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4060390951635972972" fileName="StandardComponents.java" startLine="598" startPosition="33" endLine="599" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4060390951635972976" fileName="StandardComponents.java" startLine="100" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="StandardComponents#()V" />
     <nodeInfo nodeId="1747818952411874067" fileName="StandardComponents.java" startLine="143" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createLanguagesPanel#(Ljetbrains/mps/workbench/dialogs/project/IBindedDialog;Ljava/lang/String;Ljava/util/List;)Ljavax/swing/JPanel;" />
     <nodeInfo nodeId="262971659834063147" fileName="StandardComponents.java" startLine="237" startPosition="56" endLine="240" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -870,24 +870,24 @@
     <nodeInfo nodeId="4060390951635974778" fileName="StandardComponents.java" startLine="515" startPosition="58" endLine="518" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4060390951635974930" fileName="StandardComponents.java" startLine="539" startPosition="101" endLine="542" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4060390951635974969" fileName="StandardComponents.java" startLine="565" startPosition="0" endLine="568" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createConstraints#(IIIIDDII)Ljava/awt/GridBagConstraints;" />
-    <nodeInfo nodeId="4060390951635972895" fileName="StandardComponents.java" startLine="582" startPosition="0" endLine="585" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckboxDescriptor#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="4060390951635972944" fileName="StandardComponents.java" startLine="593" startPosition="0" endLine="596" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getObject#()Ljava/lang/Object;" />
-    <nodeInfo nodeId="4060390951635972952" fileName="StandardComponents.java" startLine="597" startPosition="0" endLine="600" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4060390951635972960" fileName="StandardComponents.java" startLine="601" startPosition="0" endLine="604" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCheckboxCaption#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4060390951635972968" fileName="StandardComponents.java" startLine="605" startPosition="0" endLine="608" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInternal#()Z" />
+    <nodeInfo nodeId="4060390951635972895" fileName="StandardComponents.java" startLine="575" startPosition="0" endLine="578" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckboxDescriptor#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="4060390951635972944" fileName="StandardComponents.java" startLine="586" startPosition="0" endLine="589" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getObject#()Ljava/lang/Object;" />
+    <nodeInfo nodeId="4060390951635972952" fileName="StandardComponents.java" startLine="590" startPosition="0" endLine="593" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPropName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4060390951635972960" fileName="StandardComponents.java" startLine="594" startPosition="0" endLine="597" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCheckboxCaption#()Ljava/lang/String;" />
+    <nodeInfo nodeId="4060390951635972968" fileName="StandardComponents.java" startLine="598" startPosition="0" endLine="601" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInternal#()Z" />
     <nodeInfo nodeId="262971659834063147" fileName="StandardComponents.java" startLine="243" startPosition="31" endLine="247" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4060390951635973381" fileName="StandardComponents.java" startLine="370" startPosition="66" endLine="374" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4060390951635973448" fileName="StandardComponents.java" startLine="385" startPosition="33" endLine="389" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="461" startPosition="52" endLine="465" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4060390951635972879" fileName="StandardComponents.java" startLine="569" startPosition="81" endLine="573" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4060390951635972879" fileName="StandardComponents.java" startLine="603" startPosition="81" endLine="607" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="262971659834063147" fileName="StandardComponents.java" startLine="247" startPosition="16" endLine="252" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="262971659834063147" fileName="StandardComponents.java" startLine="256" startPosition="0" endLine="261" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="300" startPosition="0" endLine="305" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljetbrains/mps/project/structure/modules/StubSolution;)Z" />
     <nodeInfo nodeId="4060390951635973396" fileName="StandardComponents.java" startLine="375" startPosition="20" endLine="380" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="461" startPosition="0" endLine="467" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doRemove#(Lcom/intellij/openapi/actionSystem/AnActionEvent;)V" />
-    <nodeInfo nodeId="4060390951635972879" fileName="StandardComponents.java" startLine="569" startPosition="0" endLine="575" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_wf5hwp_a0b0g0e0a0a0a6a0a0a0a0i#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4060390951635972909" fileName="StandardComponents.java" startLine="586" startPosition="0" endLine="592" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckboxDescriptor#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Z)V" />
-    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="298" startPosition="64" endLine="305" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4060390951635972909" fileName="StandardComponents.java" startLine="579" startPosition="0" endLine="585" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CheckboxDescriptor#(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Z)V" />
+    <nodeInfo nodeId="4060390951635972879" fileName="StandardComponents.java" startLine="603" startPosition="0" endLine="609" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="neq_wf5hwp_a0b0g0e0a0a0a6a0a0a0a0j#(Ljava/lang/Object;Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="298" startPosition="66" endLine="305" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4060390951635974915" fileName="StandardComponents.java" startLine="538" startPosition="0" endLine="545" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="actionPerformed#(Ljava/awt/event/ActionEvent;)V" />
     <nodeInfo nodeId="262971659834063147" fileName="StandardComponents.java" startLine="265" startPosition="89" endLine="273" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="459" startPosition="68" endLine="467" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -970,11 +970,11 @@
     <scopeInfo nodeId="4060390951635974785" fileName="StandardComponents.java" startLine="516" startPosition="63" endLine="517" endPosition="17" />
     <scopeInfo nodeId="4060390951635974934" fileName="StandardComponents.java" startLine="540" startPosition="24" endLine="541" endPosition="17" />
     <scopeInfo nodeId="4060390951635974988" fileName="StandardComponents.java" startLine="565" startPosition="162" endLine="566" endPosition="133" />
-    <scopeInfo nodeId="4060390951635972903" fileName="StandardComponents.java" startLine="582" startPosition="87" endLine="583" endPosition="53" />
-    <scopeInfo nodeId="4060390951635972947" fileName="StandardComponents.java" startLine="593" startPosition="31" endLine="594" endPosition="22" />
-    <scopeInfo nodeId="4060390951635972955" fileName="StandardComponents.java" startLine="597" startPosition="33" endLine="598" endPosition="24" />
-    <scopeInfo nodeId="4060390951635972963" fileName="StandardComponents.java" startLine="601" startPosition="40" endLine="602" endPosition="31" />
-    <scopeInfo nodeId="4060390951635972971" fileName="StandardComponents.java" startLine="605" startPosition="33" endLine="606" endPosition="26" />
+    <scopeInfo nodeId="4060390951635972903" fileName="StandardComponents.java" startLine="575" startPosition="87" endLine="576" endPosition="53" />
+    <scopeInfo nodeId="4060390951635972947" fileName="StandardComponents.java" startLine="586" startPosition="31" endLine="587" endPosition="22" />
+    <scopeInfo nodeId="4060390951635972955" fileName="StandardComponents.java" startLine="590" startPosition="33" endLine="591" endPosition="24" />
+    <scopeInfo nodeId="4060390951635972963" fileName="StandardComponents.java" startLine="594" startPosition="40" endLine="595" endPosition="31" />
+    <scopeInfo nodeId="4060390951635972971" fileName="StandardComponents.java" startLine="598" startPosition="33" endLine="599" endPosition="26" />
     <scopeInfo nodeId="4060390951635972976" fileName="StandardComponents.java" startLine="100" startPosition="0" endLine="102" endPosition="0" />
     <scopeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="462" startPosition="60" endLine="464" endPosition="57" />
     <scopeInfo nodeId="1747818952411874067" fileName="StandardComponents.java" startLine="143" startPosition="0" endLine="146" endPosition="0">
@@ -1010,21 +1010,21 @@
       <varInfo nodeId="4060390951635974980" varName="weightx" />
       <varInfo nodeId="4060390951635974982" varName="weighty" />
     </scopeInfo>
-    <scopeInfo nodeId="4060390951635972895" fileName="StandardComponents.java" startLine="582" startPosition="0" endLine="585" endPosition="0">
+    <scopeInfo nodeId="4060390951635972895" fileName="StandardComponents.java" startLine="575" startPosition="0" endLine="578" endPosition="0">
       <varInfo nodeId="4060390951635972901" varName="checkboxCaption" />
       <varInfo nodeId="4060390951635972897" varName="object" />
       <varInfo nodeId="4060390951635972899" varName="propName" />
     </scopeInfo>
-    <scopeInfo nodeId="4060390951635972944" fileName="StandardComponents.java" startLine="593" startPosition="0" endLine="596" endPosition="0" />
-    <scopeInfo nodeId="4060390951635972952" fileName="StandardComponents.java" startLine="597" startPosition="0" endLine="600" endPosition="0" />
-    <scopeInfo nodeId="4060390951635972960" fileName="StandardComponents.java" startLine="601" startPosition="0" endLine="604" endPosition="0" />
-    <scopeInfo nodeId="4060390951635972968" fileName="StandardComponents.java" startLine="605" startPosition="0" endLine="608" endPosition="0" />
+    <scopeInfo nodeId="4060390951635972944" fileName="StandardComponents.java" startLine="586" startPosition="0" endLine="589" endPosition="0" />
+    <scopeInfo nodeId="4060390951635972952" fileName="StandardComponents.java" startLine="590" startPosition="0" endLine="593" endPosition="0" />
+    <scopeInfo nodeId="4060390951635972960" fileName="StandardComponents.java" startLine="594" startPosition="0" endLine="597" endPosition="0" />
+    <scopeInfo nodeId="4060390951635972968" fileName="StandardComponents.java" startLine="598" startPosition="0" endLine="601" endPosition="0" />
     <scopeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="461" startPosition="52" endLine="465" endPosition="13" />
     <scopeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="461" startPosition="52" endLine="465" endPosition="13">
       <varInfo nodeId="3416087927885130128" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="4060390951635972879" fileName="StandardComponents.java" startLine="569" startPosition="81" endLine="573" endPosition="7" />
-    <scopeInfo nodeId="4060390951635972919" fileName="StandardComponents.java" startLine="586" startPosition="107" endLine="590" endPosition="32" />
+    <scopeInfo nodeId="4060390951635972919" fileName="StandardComponents.java" startLine="579" startPosition="107" endLine="583" endPosition="32" />
+    <scopeInfo nodeId="4060390951635972879" fileName="StandardComponents.java" startLine="603" startPosition="81" endLine="607" endPosition="7" />
     <scopeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="300" startPosition="0" endLine="305" endPosition="0">
       <varInfo nodeId="7355563316698764162" varName="ss" />
     </scopeInfo>
@@ -1034,55 +1034,55 @@
     <scopeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="461" startPosition="0" endLine="467" endPosition="0">
       <varInfo nodeId="3416087927885130128" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="4060390951635972879" fileName="StandardComponents.java" startLine="569" startPosition="0" endLine="575" endPosition="0">
-      <varInfo nodeId="4060390951635972879" varName="a" />
-      <varInfo nodeId="4060390951635972879" varName="b" />
-    </scopeInfo>
-    <scopeInfo nodeId="4060390951635972909" fileName="StandardComponents.java" startLine="586" startPosition="0" endLine="592" endPosition="0">
+    <scopeInfo nodeId="4060390951635972909" fileName="StandardComponents.java" startLine="579" startPosition="0" endLine="585" endPosition="0">
       <varInfo nodeId="4060390951635972915" varName="checkboxCaption" />
       <varInfo nodeId="4060390951635972917" varName="isInternal" />
       <varInfo nodeId="4060390951635972911" varName="object" />
       <varInfo nodeId="4060390951635972913" varName="propName" />
     </scopeInfo>
+    <scopeInfo nodeId="4060390951635972879" fileName="StandardComponents.java" startLine="603" startPosition="0" endLine="609" endPosition="0">
+      <varInfo nodeId="4060390951635972879" varName="a" />
+      <varInfo nodeId="4060390951635972879" varName="b" />
+    </scopeInfo>
     <scopeInfo nodeId="7355563316698764000" fileName="StandardComponents.java" startLine="197" startPosition="38" endLine="204" endPosition="36">
-      <varInfo nodeId="7355563316698764000" varName="result_wf5hwp_a0a0a0a6" />
-      <varInfo nodeId="7355563316698764000" varName="result_wf5hwp_a0a0a6" />
-      <varInfo nodeId="7355563316698764000" varName="result_wf5hwp_a1a0a0a6" />
+      <varInfo nodeId="7355563316698764000" varName="result_wf5hwp_a0a0a0a7" />
+      <varInfo nodeId="7355563316698764000" varName="result_wf5hwp_a0a0a7" />
+      <varInfo nodeId="7355563316698764000" varName="result_wf5hwp_a1a0a0a7" />
     </scopeInfo>
     <scopeInfo nodeId="6329333649353043948" fileName="StandardComponents.java" startLine="320" startPosition="38" endLine="327" endPosition="37">
-      <varInfo nodeId="6329333649353043948" varName="result_wf5hwp_a0a0a01" />
-      <varInfo nodeId="6329333649353043948" varName="result_wf5hwp_a0a0a0a01" />
-      <varInfo nodeId="6329333649353043948" varName="result_wf5hwp_a1a0a0a01" />
+      <varInfo nodeId="6329333649353043948" varName="result_wf5hwp_a0a0a0a11" />
+      <varInfo nodeId="6329333649353043948" varName="result_wf5hwp_a0a0a11" />
+      <varInfo nodeId="6329333649353043948" varName="result_wf5hwp_a1a0a0a11" />
     </scopeInfo>
     <scopeInfo nodeId="4060390951635973524" fileName="StandardComponents.java" startLine="401" startPosition="50" endLine="408" endPosition="46">
       <varInfo nodeId="4060390951635973526" varName="chooser" />
       <varInfo nodeId="4060390951635973536" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="7355563316698764465" fileName="StandardComponents.java" startLine="500" startPosition="38" endLine="507" endPosition="37">
-      <varInfo nodeId="7355563316698764465" varName="result_wf5hwp_a0a0a0a81" />
-      <varInfo nodeId="7355563316698764465" varName="result_wf5hwp_a0a0a81" />
-      <varInfo nodeId="7355563316698764465" varName="result_wf5hwp_a1a0a0a81" />
+      <varInfo nodeId="7355563316698764465" varName="result_wf5hwp_a0a0a0a91" />
+      <varInfo nodeId="7355563316698764465" varName="result_wf5hwp_a0a0a91" />
+      <varInfo nodeId="7355563316698764465" varName="result_wf5hwp_a1a0a0a91" />
     </scopeInfo>
     <scopeInfo nodeId="4060390951635974915" fileName="StandardComponents.java" startLine="538" startPosition="0" endLine="545" endPosition="0">
       <varInfo nodeId="4060390951635974918" varName="e" />
     </scopeInfo>
     <scopeInfo nodeId="7355563316698763744" fileName="StandardComponents.java" startLine="149" startPosition="38" endLine="158" endPosition="36">
-      <varInfo nodeId="7355563316698763744" varName="result_wf5hwp_a0a0a0a3" />
-      <varInfo nodeId="7355563316698763744" varName="result_wf5hwp_a0a0a3" />
-      <varInfo nodeId="7355563316698763744" varName="result_wf5hwp_a1a0a0a3" />
-      <varInfo nodeId="7355563316698763744" varName="result_wf5hwp_a2a0a0a3" />
+      <varInfo nodeId="7355563316698763744" varName="result_wf5hwp_a0a0a0a4" />
+      <varInfo nodeId="7355563316698763744" varName="result_wf5hwp_a0a0a4" />
+      <varInfo nodeId="7355563316698763744" varName="result_wf5hwp_a1a0a0a4" />
+      <varInfo nodeId="7355563316698763744" varName="result_wf5hwp_a2a0a0a4" />
     </scopeInfo>
     <scopeInfo nodeId="7355563316698763930" fileName="StandardComponents.java" startLine="165" startPosition="38" endLine="174" endPosition="36">
-      <varInfo nodeId="7355563316698763930" varName="result_wf5hwp_a0a0a0a4" />
-      <varInfo nodeId="7355563316698763930" varName="result_wf5hwp_a0a0a4" />
-      <varInfo nodeId="7355563316698763930" varName="result_wf5hwp_a1a0a0a4" />
-      <varInfo nodeId="7355563316698763930" varName="result_wf5hwp_a2a0a0a4" />
+      <varInfo nodeId="7355563316698763930" varName="result_wf5hwp_a0a0a0a5" />
+      <varInfo nodeId="7355563316698763930" varName="result_wf5hwp_a0a0a5" />
+      <varInfo nodeId="7355563316698763930" varName="result_wf5hwp_a1a0a0a5" />
+      <varInfo nodeId="7355563316698763930" varName="result_wf5hwp_a2a0a0a5" />
     </scopeInfo>
     <scopeInfo nodeId="7355563316698763965" fileName="StandardComponents.java" startLine="181" startPosition="38" endLine="190" endPosition="36">
-      <varInfo nodeId="7355563316698763965" varName="result_wf5hwp_a0a0a0a5" />
-      <varInfo nodeId="7355563316698763965" varName="result_wf5hwp_a0a0a5" />
-      <varInfo nodeId="7355563316698763965" varName="result_wf5hwp_a1a0a0a5" />
-      <varInfo nodeId="7355563316698763965" varName="result_wf5hwp_a2a0a0a5" />
+      <varInfo nodeId="7355563316698763965" varName="result_wf5hwp_a0a0a0a6" />
+      <varInfo nodeId="7355563316698763965" varName="result_wf5hwp_a0a0a6" />
+      <varInfo nodeId="7355563316698763965" varName="result_wf5hwp_a1a0a0a6" />
+      <varInfo nodeId="7355563316698763965" varName="result_wf5hwp_a2a0a0a6" />
     </scopeInfo>
     <scopeInfo nodeId="7355563316698764000" fileName="StandardComponents.java" startLine="197" startPosition="0" endLine="206" endPosition="0" />
     <scopeInfo nodeId="6329333649353043948" fileName="StandardComponents.java" startLine="320" startPosition="0" endLine="329" endPosition="0" />
@@ -1107,10 +1107,10 @@
       <varInfo nodeId="3489707970361006686" varName="panel" />
     </scopeInfo>
     <scopeInfo nodeId="7355563316698764024" fileName="StandardComponents.java" startLine="211" startPosition="39" endLine="221" endPosition="36">
-      <varInfo nodeId="7355563316698764024" varName="result_wf5hwp_a0a0a0a7" />
-      <varInfo nodeId="7355563316698764024" varName="result_wf5hwp_a0a0a7" />
-      <varInfo nodeId="7355563316698764024" varName="result_wf5hwp_a2a0a0a7" />
-      <varInfo nodeId="7355563316698764024" varName="result_wf5hwp_a3a0a0a7" />
+      <varInfo nodeId="7355563316698764024" varName="result_wf5hwp_a0a0a0a8" />
+      <varInfo nodeId="7355563316698764024" varName="result_wf5hwp_a0a0a8" />
+      <varInfo nodeId="7355563316698764024" varName="result_wf5hwp_a2a0a0a8" />
+      <varInfo nodeId="7355563316698764024" varName="result_wf5hwp_a3a0a0a8" />
     </scopeInfo>
     <scopeInfo nodeId="4060390951635974777" fileName="StandardComponents.java" startLine="515" startPosition="58" endLine="525" endPosition="10">
       <varInfo nodeId="4060390951635974800" varName="cb" />
@@ -1119,11 +1119,11 @@
       <varInfo nodeId="4060390951635974814" varName="propObj" />
     </scopeInfo>
     <scopeInfo nodeId="7355563316698763895" fileName="StandardComponents.java" startLine="127" startPosition="38" endLine="138" endPosition="36">
-      <varInfo nodeId="7355563316698763895" varName="result_wf5hwp_a0a0a0a1" />
-      <varInfo nodeId="7355563316698763895" varName="result_wf5hwp_a0a0a1" />
-      <varInfo nodeId="7355563316698763895" varName="result_wf5hwp_a1a0a0a1" />
-      <varInfo nodeId="7355563316698763895" varName="result_wf5hwp_a2a0a0a1" />
-      <varInfo nodeId="7355563316698763895" varName="result_wf5hwp_a3a0a0a1" />
+      <varInfo nodeId="7355563316698763895" varName="result_wf5hwp_a0a0a0a2" />
+      <varInfo nodeId="7355563316698763895" varName="result_wf5hwp_a0a0a2" />
+      <varInfo nodeId="7355563316698763895" varName="result_wf5hwp_a1a0a0a2" />
+      <varInfo nodeId="7355563316698763895" varName="result_wf5hwp_a2a0a0a2" />
+      <varInfo nodeId="7355563316698763895" varName="result_wf5hwp_a3a0a0a2" />
     </scopeInfo>
     <scopeInfo nodeId="7355563316698763744" fileName="StandardComponents.java" startLine="149" startPosition="0" endLine="160" endPosition="0" />
     <scopeInfo nodeId="7355563316698763930" fileName="StandardComponents.java" startLine="165" startPosition="0" endLine="176" endPosition="0" />
@@ -1183,21 +1183,21 @@
     </scopeInfo>
     <scopeInfo nodeId="1809539929827629323" fileName="StandardComponents.java" startLine="209" startPosition="118" endLine="223" endPosition="15" />
     <scopeInfo nodeId="8175648731696670213" fileName="StandardComponents.java" startLine="334" startPosition="39" endLine="348" endPosition="37">
-      <varInfo nodeId="8175648731696670213" varName="result_wf5hwp_a0a0a0a0l" />
-      <varInfo nodeId="8175648731696670213" varName="result_wf5hwp_a0a0a0l" />
-      <varInfo nodeId="8175648731696670213" varName="result_wf5hwp_a1a0a0a0l" />
-      <varInfo nodeId="8175648731696670213" varName="result_wf5hwp_a3a0a0a0l" />
-      <varInfo nodeId="8175648731696670213" varName="result_wf5hwp_a4a0a0a0l" />
-      <varInfo nodeId="8175648731696670213" varName="result_wf5hwp_a5a0a0a0l" />
+      <varInfo nodeId="8175648731696670213" varName="result_wf5hwp_a0a0a0a0m" />
+      <varInfo nodeId="8175648731696670213" varName="result_wf5hwp_a0a0a0m" />
+      <varInfo nodeId="8175648731696670213" varName="result_wf5hwp_a1a0a0a0m" />
+      <varInfo nodeId="8175648731696670213" varName="result_wf5hwp_a3a0a0a0m" />
+      <varInfo nodeId="8175648731696670213" varName="result_wf5hwp_a4a0a0a0m" />
+      <varInfo nodeId="8175648731696670213" varName="result_wf5hwp_a5a0a0a0m" />
     </scopeInfo>
     <scopeInfo nodeId="7355563316698763848" fileName="StandardComponents.java" startLine="105" startPosition="38" endLine="120" endPosition="36">
-      <varInfo nodeId="7355563316698763848" varName="result_wf5hwp_a0a0a0" />
-      <varInfo nodeId="7355563316698763848" varName="result_wf5hwp_a0a0a0a0" />
-      <varInfo nodeId="7355563316698763848" varName="result_wf5hwp_a1a0a0a0" />
-      <varInfo nodeId="7355563316698763848" varName="result_wf5hwp_a2a0a0a0" />
-      <varInfo nodeId="7355563316698763848" varName="result_wf5hwp_a3a0a0a0" />
-      <varInfo nodeId="7355563316698763848" varName="result_wf5hwp_a4a0a0a0" />
-      <varInfo nodeId="7355563316698763848" varName="result_wf5hwp_a5a0a0a0" />
+      <varInfo nodeId="7355563316698763848" varName="result_wf5hwp_a0a0a0a1" />
+      <varInfo nodeId="7355563316698763848" varName="result_wf5hwp_a0a0a1" />
+      <varInfo nodeId="7355563316698763848" varName="result_wf5hwp_a1a0a0a1" />
+      <varInfo nodeId="7355563316698763848" varName="result_wf5hwp_a2a0a0a1" />
+      <varInfo nodeId="7355563316698763848" varName="result_wf5hwp_a3a0a0a1" />
+      <varInfo nodeId="7355563316698763848" varName="result_wf5hwp_a4a0a0a1" />
+      <varInfo nodeId="7355563316698763848" varName="result_wf5hwp_a5a0a0a1" />
     </scopeInfo>
     <scopeInfo nodeId="4060390951635973075" fileName="StandardComponents.java" startLine="125" startPosition="172" endLine="140" endPosition="15" />
     <scopeInfo nodeId="4060390951635973125" fileName="StandardComponents.java" startLine="147" startPosition="0" endLine="162" endPosition="0">
@@ -1253,13 +1253,13 @@
       <varInfo nodeId="4060390951635974758" varName="list" />
       <varInfo nodeId="4060390951635974756" varName="owner" />
     </scopeInfo>
-    <scopeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="293" startPosition="39" endLine="313" endPosition="36">
-      <varInfo nodeId="7355563316698764162" varName="result_wf5hwp_a0a0a0a9" />
-      <varInfo nodeId="7355563316698764162" varName="result_wf5hwp_a0a0a9" />
-      <varInfo nodeId="7355563316698764162" varName="result_wf5hwp_a1a0a0a9" />
-      <varInfo nodeId="7355563316698764162" varName="result_wf5hwp_a2a0a0a9" />
-      <varInfo nodeId="7355563316698764162" varName="result_wf5hwp_a4a0a0a9" />
-      <varInfo nodeId="7355563316698764162" varName="result_wf5hwp_a5a0a0a9" />
+    <scopeInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="293" startPosition="39" endLine="313" endPosition="37">
+      <varInfo nodeId="7355563316698764162" varName="result_wf5hwp_a0a0a01" />
+      <varInfo nodeId="7355563316698764162" varName="result_wf5hwp_a0a0a0a01" />
+      <varInfo nodeId="7355563316698764162" varName="result_wf5hwp_a1a0a0a01" />
+      <varInfo nodeId="7355563316698764162" varName="result_wf5hwp_a2a0a0a01" />
+      <varInfo nodeId="7355563316698764162" varName="result_wf5hwp_a4a0a0a01" />
+      <varInfo nodeId="7355563316698764162" varName="result_wf5hwp_a5a0a0a01" />
     </scopeInfo>
     <scopeInfo nodeId="4060390951635974861" fileName="StandardComponents.java" startLine="532" startPosition="0" endLine="552" endPosition="0">
       <varInfo nodeId="4060390951635974866" varName="caption" />
@@ -1330,11 +1330,11 @@
     <scopeInfo nodeId="262971659834063147" fileName="StandardComponents.java" startLine="236" startPosition="0" endLine="283" endPosition="0" />
     <scopeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="440" startPosition="38" endLine="489" endPosition="37">
       <varInfo nodeId="3416087927885134967" varName="jlist" />
-      <varInfo nodeId="3416087927885130128" varName="result_wf5hwp_a0a0a0a61" />
-      <varInfo nodeId="3416087927885130128" varName="result_wf5hwp_a0a0a61" />
-      <varInfo nodeId="3416087927885130128" varName="result_wf5hwp_a3a0a0a61" />
-      <varInfo nodeId="3416087927885130128" varName="result_wf5hwp_a4a0a0a61" />
-      <varInfo nodeId="3416087927885130128" varName="result_wf5hwp_a5a0a0a61" />
+      <varInfo nodeId="3416087927885130128" varName="result_wf5hwp_a0a0a0a71" />
+      <varInfo nodeId="3416087927885130128" varName="result_wf5hwp_a0a0a71" />
+      <varInfo nodeId="3416087927885130128" varName="result_wf5hwp_a3a0a0a71" />
+      <varInfo nodeId="3416087927885130128" varName="result_wf5hwp_a4a0a0a71" />
+      <varInfo nodeId="3416087927885130128" varName="result_wf5hwp_a5a0a0a71" />
     </scopeInfo>
     <scopeInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="440" startPosition="0" endLine="491" endPosition="0" />
     <scopeInfo nodeId="4060390951635974480" fileName="StandardComponents.java" startLine="438" startPosition="172" endLine="491" endPosition="15" />
@@ -1345,10 +1345,10 @@
       <varInfo nodeId="4060390951635974478" varName="properties" />
     </scopeInfo>
     <scopeInfo nodeId="262971659834063147" fileName="StandardComponents.java" startLine="228" startPosition="38" endLine="286" endPosition="36">
-      <varInfo nodeId="262971659834063147" varName="result_wf5hwp_a0a0a0a8" />
-      <varInfo nodeId="262971659834063147" varName="result_wf5hwp_a0a0a8" />
-      <varInfo nodeId="262971659834063147" varName="result_wf5hwp_a1a0a0a8" />
-      <varInfo nodeId="262971659834063147" varName="result_wf5hwp_a3a0a0a8" />
+      <varInfo nodeId="262971659834063147" varName="result_wf5hwp_a0a0a0a9" />
+      <varInfo nodeId="262971659834063147" varName="result_wf5hwp_a0a0a9" />
+      <varInfo nodeId="262971659834063147" varName="result_wf5hwp_a1a0a0a9" />
+      <varInfo nodeId="262971659834063147" varName="result_wf5hwp_a3a0a0a9" />
       <varInfo nodeId="8156633209091368682" varName="uiList" />
     </scopeInfo>
     <scopeInfo nodeId="262971659834063147" fileName="StandardComponents.java" startLine="228" startPosition="0" endLine="288" endPosition="0" />
@@ -1362,7 +1362,7 @@
     <unitInfo nodeId="262971659834063147" fileName="StandardComponents.java" startLine="248" startPosition="118" endLine="252" endPosition="15" unitName="jetbrains.mps.ide.properties.StandardComponents$10" />
     <unitInfo nodeId="262971659834063147" fileName="StandardComponents.java" startLine="257" startPosition="181" endLine="261" endPosition="15" unitName="jetbrains.mps.ide.properties.StandardComponents$10" />
     <unitInfo nodeId="262971659834063147" fileName="StandardComponents.java" startLine="268" startPosition="66" endLine="272" endPosition="21" unitName="jetbrains.mps.ide.properties.StandardComponents$10" />
-    <unitInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="299" startPosition="53" endLine="305" endPosition="9" unitName="jetbrains.mps.ide.properties.StandardComponents$10" />
+    <unitInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="299" startPosition="54" endLine="305" endPosition="9" unitName="jetbrains.mps.ide.properties.StandardComponents$10" />
     <unitInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="460" startPosition="64" endLine="467" endPosition="9" unitName="jetbrains.mps.ide.properties.StandardComponents$14" />
     <unitInfo nodeId="4060390951635974914" fileName="StandardComponents.java" startLine="537" startPosition="38" endLine="545" endPosition="5" unitName="jetbrains.mps.ide.properties.StandardComponents$15" />
     <unitInfo nodeId="7355563316698764000" fileName="StandardComponents.java" startLine="196" startPosition="15" endLine="206" endPosition="5" unitName="jetbrains.mps.ide.properties.StandardComponents$6" />
@@ -1379,7 +1379,7 @@
     <unitInfo nodeId="8175648731696670213" fileName="StandardComponents.java" startLine="333" startPosition="31" endLine="350" endPosition="5" unitName="jetbrains.mps.ide.properties.StandardComponents$11" />
     <unitInfo nodeId="7355563316698763848" fileName="StandardComponents.java" startLine="104" startPosition="15" endLine="122" endPosition="5" unitName="jetbrains.mps.ide.properties.StandardComponents$1" />
     <unitInfo nodeId="7355563316698764162" fileName="StandardComponents.java" startLine="292" startPosition="15" endLine="315" endPosition="5" unitName="jetbrains.mps.ide.properties.StandardComponents$9" />
-    <unitInfo nodeId="4060390951635972881" fileName="StandardComponents.java" startLine="576" startPosition="0" endLine="609" endPosition="0" unitName="jetbrains.mps.ide.properties.StandardComponents$CheckboxDescriptor" />
+    <unitInfo nodeId="4060390951635972881" fileName="StandardComponents.java" startLine="569" startPosition="0" endLine="602" endPosition="0" unitName="jetbrains.mps.ide.properties.StandardComponents$CheckboxDescriptor" />
     <unitInfo nodeId="262971659834063147" fileName="StandardComponents.java" startLine="235" startPosition="63" endLine="283" endPosition="9" unitName="jetbrains.mps.ide.properties.StandardComponents$9" />
     <unitInfo nodeId="3416087927885130128" fileName="StandardComponents.java" startLine="439" startPosition="15" endLine="491" endPosition="5" unitName="jetbrains.mps.ide.properties.StandardComponents$13" />
     <unitInfo nodeId="262971659834063147" fileName="StandardComponents.java" startLine="227" startPosition="15" endLine="288" endPosition="5" unitName="jetbrains.mps.ide.properties.StandardComponents$8" />

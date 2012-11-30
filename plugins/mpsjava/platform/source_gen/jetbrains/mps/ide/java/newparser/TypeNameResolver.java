@@ -14,13 +14,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class TypeNameResolver {
   private String myPackage;
@@ -99,23 +99,23 @@ public class TypeNameResolver {
   public SNode resolveShortTypeName(String name) {
 
     if ("void".equals(name)) {
-      return _quotation_createNode_lmecd1_a0a1a9();
+      return _quotation_createNode_lmecd1_a0a1a51();
     } else if ("int".equals(name)) {
-      return _quotation_createNode_lmecd1_a0a0b0j();
+      return _quotation_createNode_lmecd1_a0a0b0p();
     } else if ("long".equals(name)) {
-      return _quotation_createNode_lmecd1_a0a1b0j();
+      return _quotation_createNode_lmecd1_a0a1b0p();
     } else if ("short".equals(name)) {
-      return _quotation_createNode_lmecd1_a0a2b0j();
+      return _quotation_createNode_lmecd1_a0a2b0p();
     } else if ("byte".equals(name)) {
-      return _quotation_createNode_lmecd1_a0a3b0j();
+      return _quotation_createNode_lmecd1_a0a3b0p();
     } else if ("float".equals(name)) {
-      return _quotation_createNode_lmecd1_a0a4b0j();
+      return _quotation_createNode_lmecd1_a0a4b0p();
     } else if ("double".equals(name)) {
-      return _quotation_createNode_lmecd1_a0a5b0j();
+      return _quotation_createNode_lmecd1_a0a5b0p();
     } else if ("boolean".equals(name)) {
-      return _quotation_createNode_lmecd1_a0a6b0j();
+      return _quotation_createNode_lmecd1_a0a6b0p();
     } else if ("char".equals(name)) {
-      return _quotation_createNode_lmecd1_a0a7b0j();
+      return _quotation_createNode_lmecd1_a0a7b0p();
     }
 
     // see if it's a type variable 
@@ -248,60 +248,6 @@ public class TypeNameResolver {
     return null;
   }
 
-  private static SNode _quotation_createNode_lmecd1_a0a1a9() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_lmecd1_a0a0b0j() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_lmecd1_a0a1b0j() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_lmecd1_a0a2b0j() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShortType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_lmecd1_a0a3b0j() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_lmecd1_a0a4b0j() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_lmecd1_a0a5b0j() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_lmecd1_a0a6b0j() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_lmecd1_a0a7b0j() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
-  }
-
   public static class Import {
     private boolean myIsStatic = false;
     private String myPackage;
@@ -382,5 +328,59 @@ public class TypeNameResolver {
         return typeVarRef;
       }
     }
+  }
+
+  private static SNode _quotation_createNode_lmecd1_a0a1a51() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_lmecd1_a0a0b0p() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_lmecd1_a0a1b0p() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_lmecd1_a0a2b0p() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShortType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_lmecd1_a0a3b0p() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ByteType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_lmecd1_a0a4b0p() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_lmecd1_a0a5b0p() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DoubleType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_lmecd1_a0a6b0p() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_lmecd1_a0a7b0p() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }

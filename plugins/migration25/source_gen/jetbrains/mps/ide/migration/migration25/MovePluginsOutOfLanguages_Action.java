@@ -4,18 +4,17 @@ package jetbrains.mps.ide.migration.migration25;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.MPSProject;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class MovePluginsOutOfLanguages_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(MovePluginsOutOfLanguages_Action.class);
 
   public MovePluginsOutOfLanguages_Action() {
     super("Move Plugins Out of Languages", "", ICON);
@@ -59,4 +58,6 @@ public class MovePluginsOutOfLanguages_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(MovePluginsOutOfLanguages_Action.class);
 }

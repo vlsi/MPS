@@ -4,7 +4,6 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -13,10 +12,10 @@ import jetbrains.mps.nodeEditor.selection.SingularSelection;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.logging.Logger;
 
 public class SelectLeft_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(SelectLeft_Action.class);
 
   public SelectLeft_Action() {
     super("Left with Selection", "", ICON);
@@ -63,4 +62,6 @@ public class SelectLeft_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "SelectLeft", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(SelectLeft_Action.class);
 }

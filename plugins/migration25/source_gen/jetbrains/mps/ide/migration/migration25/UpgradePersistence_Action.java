@@ -4,8 +4,6 @@ package jetbrains.mps.ide.migration.migration25;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -23,10 +21,11 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class UpgradePersistence_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(UpgradePersistence_Action.class);
 
   public UpgradePersistence_Action() {
     super("Upgrade Persistence", "", ICON);
@@ -107,4 +106,6 @@ public class UpgradePersistence_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(UpgradePersistence_Action.class);
 }

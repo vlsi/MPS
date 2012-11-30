@@ -61,7 +61,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
   @Override
   public boolean equals(Object object) {
-    return eq_5ytd5s_a0a0f(myLowLevelName, ((VariableDescription) object).myLowLevelName);
+    return eq_5ytd5s_a0a0m(myLowLevelName, ((VariableDescription) object).myLowLevelName);
   }
 
   public static SNode createDebuggedType(SNode lowType, SNode highType) {
@@ -76,7 +76,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
     return result;
   }
 
-  private static boolean eq_5ytd5s_a0a0f(Object a, Object b) {
+  private static boolean eq_5ytd5s_a0a0m(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

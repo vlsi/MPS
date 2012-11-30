@@ -17,7 +17,7 @@ public class supertypesOf_EnumeratorType_IteratorType_SubtypingRule extends Subt
   }
 
   public SNode getSubOrSuperType(SNode enumeratorType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_8595bd_a0a0(SLinkOperations.getTarget(enumeratorType, "elementType", true));
+    return _quotation_createNode_8595bd_a0a1(SLinkOperations.getTarget(enumeratorType, "elementType", true));
   }
 
   public String getApplicableConceptFQName() {
@@ -35,7 +35,7 @@ public class supertypesOf_EnumeratorType_IteratorType_SubtypingRule extends Subt
     return false;
   }
 
-  private static SNode _quotation_createNode_8595bd_a0a0(Object parameter_1) {
+  private static SNode _quotation_createNode_8595bd_a0a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.IteratorType", null, null, GlobalScope.getInstance(), false);

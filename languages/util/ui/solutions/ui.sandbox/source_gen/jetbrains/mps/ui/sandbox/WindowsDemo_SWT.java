@@ -33,10 +33,10 @@ public class WindowsDemo_SWT {
   }
 
   public void buildUI(Composite menu) {
-    final Link widget_le4s0b_a0a0a = new Link(menu, SWT.NONE);
-    widget_le4s0b_a0a0a.setText("<A>" + "Dialog" + "</A>");
-    widget_le4s0b_a0a0a.setData("historyToken", "dialog");
-    widget_le4s0b_a0a0a.addSelectionListener(new SelectionAdapter() {
+    final Link widget_le4s0b_a0a0c = new Link(menu, SWT.NONE);
+    widget_le4s0b_a0a0c.setText("<A>" + "Dialog" + "</A>");
+    widget_le4s0b_a0a0c.setData("historyToken", "dialog");
+    widget_le4s0b_a0a0c.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
         _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
@@ -61,10 +61,10 @@ public class WindowsDemo_SWT {
       it.next();
       it.remove();
     }
-    final TabFolder widget_le4s0b_b0b0b = new TabFolder(dc, SWT.BORDER);
-    final Composite widget_le4s0b_a0a1a1a1 = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
+    final TabFolder widget_le4s0b_b0b0d = new TabFolder(dc, SWT.BORDER);
+    final Composite widget_le4s0b_a0a1a1a3 = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
       public Composite invoke(Composite context_le4s0b_a) {
-        Composite cmp = new Composite(widget_le4s0b_b0b0b, SWT.NONE);
+        Composite cmp = new Composite(widget_le4s0b_b0b0d, SWT.NONE);
         RowLayout rlt = new RowLayout(SWT.HORIZONTAL);
         rlt.wrap = true;
         rlt.fill = false;
@@ -72,10 +72,10 @@ public class WindowsDemo_SWT {
         cmp.setLayout(rlt);
         return cmp;
       }
-    }.invoke(widget_le4s0b_b0b0b);
-    final Button widget_le4s0b_a0a0a0b0b0b = new Button(widget_le4s0b_a0a1a1a1, SWT.PUSH);
-    widget_le4s0b_a0a0a0b0b0b.setText("Dialog");
-    widget_le4s0b_a0a0a0b0b0b.addSelectionListener(new SelectionAdapter() {
+    }.invoke(widget_le4s0b_b0b0d);
+    final Button widget_le4s0b_a0a0a0b0b0d = new Button(widget_le4s0b_a0a1a1a3, SWT.PUSH);
+    widget_le4s0b_a0a0a0b0b0d.setText("Dialog");
+    widget_le4s0b_a0a0a0b0b0d.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
         _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
@@ -89,14 +89,14 @@ public class WindowsDemo_SWT {
     //  with SWT items are not added to container
     new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        TabItem ti = new TabItem(widget_le4s0b_b0b0b, SWT.NONE);
+        TabItem ti = new TabItem(widget_le4s0b_b0b0d, SWT.NONE);
         ti.setText("Dialog");
-        ti.setControl((Control) widget_le4s0b_a0a1a1a1);
+        ti.setControl((Control) widget_le4s0b_a0a1a1a3);
       }
     }.invoke();
-    final Composite widget_le4s0b_b0a1a1a1 = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
+    final Composite widget_le4s0b_b0a1a1a3 = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
       public Composite invoke(Composite context_le4s0b_a_0) {
-        Composite cmp = new Composite(widget_le4s0b_b0b0b, SWT.NONE);
+        Composite cmp = new Composite(widget_le4s0b_b0b0d, SWT.NONE);
         RowLayout rlt = new RowLayout(SWT.HORIZONTAL);
         rlt.wrap = true;
         rlt.fill = false;
@@ -104,10 +104,10 @@ public class WindowsDemo_SWT {
         cmp.setLayout(rlt);
         return cmp;
       }
-    }.invoke(widget_le4s0b_b0b0b);
-    final Button widget_le4s0b_a0a1a0b0b0b = new Button(widget_le4s0b_b0a1a1a1, SWT.PUSH);
-    widget_le4s0b_a0a1a0b0b0b.setText("Form");
-    widget_le4s0b_a0a1a0b0b0b.addSelectionListener(new SelectionAdapter() {
+    }.invoke(widget_le4s0b_b0b0d);
+    final Button widget_le4s0b_a0a1a0b0b0d = new Button(widget_le4s0b_b0a1a1a3, SWT.PUSH);
+    widget_le4s0b_a0a1a0b0b0d.setText("Form");
+    widget_le4s0b_a0a1a0b0b0d.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
         _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
@@ -121,144 +121,144 @@ public class WindowsDemo_SWT {
     //  with SWT items are not added to container
     new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        TabItem ti = new TabItem(widget_le4s0b_b0b0b, SWT.NONE);
+        TabItem ti = new TabItem(widget_le4s0b_b0b0d, SWT.NONE);
         ti.setText("Form");
-        ti.setControl((Control) widget_le4s0b_b0a1a1a1);
+        ti.setControl((Control) widget_le4s0b_b0a1a1a3);
       }
     }.invoke();
-    widget_le4s0b_b0b0b.setLayoutData(DockLayoutData.CENTER);
+    widget_le4s0b_b0b0d.setLayoutData(DockLayoutData.CENTER);
     dc.layout();
   }
 
   public void showDialog() {
-    final Shell widget_le4s0b_a0a0c = new StubDialog(this.uidemo.getRootPanel(), SWT.NONE).getShell();
-    final StubDialog STUB_DIALOG_le4s0b_a0b0a0c = StubDialog.getStubDialog(widget_le4s0b_a0a0c);
-    final Composite widget_le4s0b_a0b0c = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
+    final Shell widget_le4s0b_a0a0e = new StubDialog(this.uidemo.getRootPanel(), SWT.NONE).getShell();
+    final StubDialog STUB_DIALOG_le4s0b_a0b0a0e = StubDialog.getStubDialog(widget_le4s0b_a0a0e);
+    final Composite widget_le4s0b_a0b0e = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
       public Composite invoke(Composite context_le4s0b_a_1) {
-        Composite cmp = new Composite(widget_le4s0b_a0a0c, SWT.NONE);
+        Composite cmp = new Composite(widget_le4s0b_a0a0e, SWT.NONE);
         cmp.setLayout(new FillLayout());
         return cmp;
       }
-    }.invoke(widget_le4s0b_a0a0c);
-    final Button widget_le4s0b_a0a0a1a2 = new Button(widget_le4s0b_a0b0c, SWT.PUSH);
-    widget_le4s0b_a0a0a1a2.setText("FOO");
-    widget_le4s0b_a0a0a1a2.addSelectionListener(new SelectionAdapter() {
+    }.invoke(widget_le4s0b_a0a0e);
+    final Button widget_le4s0b_a0a0a1a4 = new Button(widget_le4s0b_a0b0e, SWT.PUSH);
+    widget_le4s0b_a0a0a1a4.setText("FOO");
+    widget_le4s0b_a0a0a1a4.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
         _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
-            widget_le4s0b_a0a0c.dispose();
+            widget_le4s0b_a0a0e.dispose();
           }
         };
         h.invoke(e);
       }
     });
     //  with SWT items are not added to container
-    StubDialog.getStubDialog(widget_le4s0b_a0a0c).open();
+    StubDialog.getStubDialog(widget_le4s0b_a0a0e).open();
   }
 
   public void showForm() {
-    final Shell widget_le4s0b_a0a0d = new StubDialog(this.uidemo.getRootPanel(), SWT.NONE).getShell();
-    final StubDialog STUB_DIALOG_le4s0b_a0b0a0d = StubDialog.getStubDialog(widget_le4s0b_a0a0d);
-    final Composite widget_le4s0b_a0b0d = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
+    final Shell widget_le4s0b_a0a0f = new StubDialog(this.uidemo.getRootPanel(), SWT.NONE).getShell();
+    final StubDialog STUB_DIALOG_le4s0b_a0b0a0f = StubDialog.getStubDialog(widget_le4s0b_a0a0f);
+    final Composite widget_le4s0b_a0b0f = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
       public Composite invoke(Composite context_le4s0b_a_2) {
-        Composite cmp = new Composite(widget_le4s0b_a0a0d, SWT.NONE);
+        Composite cmp = new Composite(widget_le4s0b_a0a0f, SWT.NONE);
         cmp.setLayout(new GridLayout());
         return cmp;
       }
-    }.invoke(widget_le4s0b_a0a0d);
-    final Label widget_le4s0b_a0a0a1a3 = new Label(widget_le4s0b_a0b0d, SWT.CENTER);
-    widget_le4s0b_a0a0a1a3.setText("Foo");
+    }.invoke(widget_le4s0b_a0a0f);
+    final Label widget_le4s0b_a0a0a1a5 = new Label(widget_le4s0b_a0b0f, SWT.CENTER);
+    widget_le4s0b_a0a0a1a5.setText("Foo");
     {
-      GridData data_a0d0c0b0d = new GridData();
-      widget_le4s0b_a0a0a1a3.setLayoutData(data_a0d0c0b0d);
-      data_a0d0c0b0d.grabExcessHorizontalSpace = true;
-      data_a0d0c0b0d.grabExcessVerticalSpace = true;
-      GridLayoutUtil.setCell(widget_le4s0b_a0a0a1a3, 0, 0);
+      GridData data_a0d0c0b0f = new GridData();
+      widget_le4s0b_a0a0a1a5.setLayoutData(data_a0d0c0b0f);
+      data_a0d0c0b0f.grabExcessHorizontalSpace = true;
+      data_a0d0c0b0f.grabExcessVerticalSpace = true;
+      GridLayoutUtil.setCell(widget_le4s0b_a0a0a1a5, 0, 0);
     }
-    final Text widget_le4s0b_b0a0a1a3 = new Text(widget_le4s0b_a0b0d, SWT.SINGLE);
-    widget_le4s0b_b0a0a1a3.setText(uidemo.bo.getBar());
+    final Text widget_le4s0b_b0a0a1a5 = new Text(widget_le4s0b_a0b0f, SWT.SINGLE);
+    widget_le4s0b_b0a0a1a5.setText(uidemo.bo.getBar());
     {
-      GridData data_a0h0c0b0d = new GridData();
-      widget_le4s0b_b0a0a1a3.setLayoutData(data_a0h0c0b0d);
-      data_a0h0c0b0d.horizontalSpan = 2;
-      data_a0h0c0b0d.grabExcessHorizontalSpace = true;
-      data_a0h0c0b0d.grabExcessVerticalSpace = true;
-      data_a0h0c0b0d.horizontalAlignment = SWT.FILL;
-      data_a0h0c0b0d.verticalAlignment = SWT.CENTER;
-      GridLayoutUtil.setCell(widget_le4s0b_b0a0a1a3, 1, 0);
+      GridData data_a0h0c0b0f = new GridData();
+      widget_le4s0b_b0a0a1a5.setLayoutData(data_a0h0c0b0f);
+      data_a0h0c0b0f.horizontalSpan = 2;
+      data_a0h0c0b0f.grabExcessHorizontalSpace = true;
+      data_a0h0c0b0f.grabExcessVerticalSpace = true;
+      data_a0h0c0b0f.horizontalAlignment = SWT.FILL;
+      data_a0h0c0b0f.verticalAlignment = SWT.CENTER;
+      GridLayoutUtil.setCell(widget_le4s0b_b0a0a1a5, 1, 0);
       // <node> 
     }
-    final Button widget_le4s0b_c0a0a1a3 = new Button(widget_le4s0b_a0b0d, SWT.PUSH);
-    widget_le4s0b_c0a0a1a3.setText("<-  / <->");
-    widget_le4s0b_c0a0a1a3.addSelectionListener(new SelectionAdapter() {
+    final Button widget_le4s0b_c0a0a1a5 = new Button(widget_le4s0b_a0b0f, SWT.PUSH);
+    widget_le4s0b_c0a0a1a5.setText("<-  / <->");
+    widget_le4s0b_c0a0a1a5.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
         _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
-            widget_le4s0b_a0a0d.dispose();
+            widget_le4s0b_a0a0f.dispose();
           }
         };
         h.invoke(e);
       }
     });
     {
-      GridData data_a0m0c0b0d = new GridData();
-      widget_le4s0b_c0a0a1a3.setLayoutData(data_a0m0c0b0d);
-      data_a0m0c0b0d.grabExcessHorizontalSpace = true;
-      data_a0m0c0b0d.grabExcessVerticalSpace = true;
-      data_a0m0c0b0d.horizontalAlignment = SWT.BEGINNING;
-      data_a0m0c0b0d.verticalAlignment = SWT.FILL;
-      GridLayoutUtil.setCell(widget_le4s0b_c0a0a1a3, 2, 1);
+      GridData data_a0m0c0b0f = new GridData();
+      widget_le4s0b_c0a0a1a5.setLayoutData(data_a0m0c0b0f);
+      data_a0m0c0b0f.grabExcessHorizontalSpace = true;
+      data_a0m0c0b0f.grabExcessVerticalSpace = true;
+      data_a0m0c0b0f.horizontalAlignment = SWT.BEGINNING;
+      data_a0m0c0b0f.verticalAlignment = SWT.FILL;
+      GridLayoutUtil.setCell(widget_le4s0b_c0a0a1a5, 2, 1);
       // <node> 
     }
-    final Button widget_le4s0b_d0a0a1a3 = new Button(widget_le4s0b_a0b0d, SWT.PUSH);
-    widget_le4s0b_d0a0a1a3.setText(" -> / <->");
-    widget_le4s0b_d0a0a1a3.addSelectionListener(new SelectionAdapter() {
+    final Button widget_le4s0b_d0a0a1a5 = new Button(widget_le4s0b_a0b0f, SWT.PUSH);
+    widget_le4s0b_d0a0a1a5.setText(" -> / <->");
+    widget_le4s0b_d0a0a1a5.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
         _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
-            widget_le4s0b_a0a0d.dispose();
+            widget_le4s0b_a0a0f.dispose();
           }
         };
         h.invoke(e);
       }
     });
     {
-      GridData data_a0r0c0b0d = new GridData();
-      widget_le4s0b_d0a0a1a3.setLayoutData(data_a0r0c0b0d);
-      data_a0r0c0b0d.grabExcessHorizontalSpace = true;
-      data_a0r0c0b0d.grabExcessVerticalSpace = true;
-      data_a0r0c0b0d.horizontalAlignment = SWT.END;
-      data_a0r0c0b0d.verticalAlignment = SWT.FILL;
-      GridLayoutUtil.setCell(widget_le4s0b_d0a0a1a3, 2, 2);
+      GridData data_a0r0c0b0f = new GridData();
+      widget_le4s0b_d0a0a1a5.setLayoutData(data_a0r0c0b0f);
+      data_a0r0c0b0f.grabExcessHorizontalSpace = true;
+      data_a0r0c0b0f.grabExcessVerticalSpace = true;
+      data_a0r0c0b0f.horizontalAlignment = SWT.END;
+      data_a0r0c0b0f.verticalAlignment = SWT.FILL;
+      GridLayoutUtil.setCell(widget_le4s0b_d0a0a1a5, 2, 2);
       // <node> 
     }
-    final Button widget_le4s0b_e0a0a1a3 = new Button(widget_le4s0b_a0b0d, SWT.PUSH);
-    widget_le4s0b_e0a0a1a3.setText(" -  / <->");
-    widget_le4s0b_e0a0a1a3.addSelectionListener(new SelectionAdapter() {
+    final Button widget_le4s0b_e0a0a1a5 = new Button(widget_le4s0b_a0b0f, SWT.PUSH);
+    widget_le4s0b_e0a0a1a5.setText(" -  / <->");
+    widget_le4s0b_e0a0a1a5.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
         _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
           public void invoke(SelectionEvent event) {
-            widget_le4s0b_a0a0d.dispose();
+            widget_le4s0b_a0a0f.dispose();
           }
         };
         h.invoke(e);
       }
     });
     {
-      GridData data_a0w0c0b0d = new GridData();
-      widget_le4s0b_e0a0a1a3.setLayoutData(data_a0w0c0b0d);
-      data_a0w0c0b0d.grabExcessHorizontalSpace = true;
-      data_a0w0c0b0d.grabExcessVerticalSpace = true;
-      data_a0w0c0b0d.horizontalAlignment = SWT.CENTER;
-      data_a0w0c0b0d.verticalAlignment = SWT.FILL;
-      GridLayoutUtil.setCell(widget_le4s0b_e0a0a1a3, 2, 3);
+      GridData data_a0w0c0b0f = new GridData();
+      widget_le4s0b_e0a0a1a5.setLayoutData(data_a0w0c0b0f);
+      data_a0w0c0b0f.grabExcessHorizontalSpace = true;
+      data_a0w0c0b0f.grabExcessVerticalSpace = true;
+      data_a0w0c0b0f.horizontalAlignment = SWT.CENTER;
+      data_a0w0c0b0f.verticalAlignment = SWT.FILL;
+      GridLayoutUtil.setCell(widget_le4s0b_e0a0a1a5, 2, 3);
       // <node> 
     }
     //  with SWT items are not added to container
-    StubDialog.getStubDialog(widget_le4s0b_a0a0d).open();
+    StubDialog.getStubDialog(widget_le4s0b_a0a0f).open();
   }
 }

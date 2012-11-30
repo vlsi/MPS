@@ -4,7 +4,6 @@ package jetbrains.mps.ide.findusages.caches;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
-import jetbrains.mps.logging.Logger;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.stubs.util.JavaStubModelDataSource;
 import org.jetbrains.annotations.NotNull;
@@ -38,10 +37,9 @@ import jetbrains.mps.ide.findusages.ConcreteFilesGlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
+import jetbrains.mps.logging.Logger;
 
 public class StubModelsFastFindSupport implements ApplicationComponent, FastFindSupport {
-  private static Logger LOG = Logger.getLogger(StubModelsFastFindSupport.class);
-
   public StubModelsFastFindSupport() {
   }
 
@@ -149,4 +147,6 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
     }
     return result;
   }
+
+  private static Logger LOG = Logger.getLogger(StubModelsFastFindSupport.class);
 }

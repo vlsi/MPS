@@ -73,10 +73,10 @@ public class ListMigrationUtil {
 
   private static boolean isApplicableMethod(SNode node, String name, List<ParameterType> params) {
     SNode declaration = SLinkOperations.getTarget(node, "baseMethodDeclaration", false);
-    if (neq_gtz9m1_a0b0f(SPropertyOperations.getString(declaration, "name"), name)) {
+    if (neq_gtz9m1_a0b0g(SPropertyOperations.getString(declaration, "name"), name)) {
       return false;
     }
-    if (!(eq_gtz9m1_a0a2a5(SModelOperations.getModelName(SNodeOperations.getModel(declaration)), "java.util"))) {
+    if (!(eq_gtz9m1_a0a2a6(SModelOperations.getModelName(SNodeOperations.getModel(declaration)), "java.util"))) {
       return false;
     }
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).count() != ListSequence.fromList(params).count()) {
@@ -133,14 +133,14 @@ public class ListMigrationUtil {
     return false;
   }
 
-  private static boolean neq_gtz9m1_a0b0f(Object a, Object b) {
+  private static boolean neq_gtz9m1_a0b0g(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean eq_gtz9m1_a0a2a5(Object a, Object b) {
+  private static boolean eq_gtz9m1_a0a2a6(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

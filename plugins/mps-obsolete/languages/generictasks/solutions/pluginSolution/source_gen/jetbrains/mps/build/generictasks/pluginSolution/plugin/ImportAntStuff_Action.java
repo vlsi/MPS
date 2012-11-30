@@ -4,7 +4,6 @@ package jetbrains.mps.build.generictasks.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -14,10 +13,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.build.generictasks.taskfromjar.Generator;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.logging.Logger;
 
 public class ImportAntStuff_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ImportAntStuff_Action.class);
 
   public ImportAntStuff_Action() {
     super("Import Ant Stuff", "", ICON);
@@ -72,4 +71,6 @@ public class ImportAntStuff_Action extends BaseAction {
     assert model != null;
     new Generator().generateTasks(model.getSModel(), m, ImportAntStuffUtil.getAllModels(l));
   }
+
+  private static Logger LOG = Logger.getLogger(ImportAntStuff_Action.class);
 }

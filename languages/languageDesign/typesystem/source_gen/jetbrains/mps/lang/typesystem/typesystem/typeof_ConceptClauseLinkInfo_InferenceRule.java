@@ -21,14 +21,14 @@ public class typeof_ConceptClauseLinkInfo_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(ccInfo, "targetNode", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240325103445", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240325103447", true), (SNode) _quotation_createNode_157var_a0a0a(), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240325103447", true), (SNode) _quotation_createNode_157var_a0a0b(), false, true, _info_12389875345);
     }
     SNode link = SLinkOperations.getTarget(ccInfo, "linkDeclaration", false);
     if ((link != null) && (SPropertyOperations.hasValue(link, "sourceCardinality", "0..n", "0..1") || SPropertyOperations.hasValue(link, "sourceCardinality", "1..n", "0..1"))) {
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(ccInfo, "childIndex", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240657953140", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240657953142", true), (SNode) _quotation_createNode_157var_a0a0c0a(), false, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)", "1240657953142", true), (SNode) _quotation_createNode_157var_a0a0c0b(), false, true, _info_12389875345);
       }
     }
   }
@@ -48,13 +48,13 @@ public class typeof_ConceptClauseLinkInfo_InferenceRule extends AbstractInferenc
     return false;
   }
 
-  private static SNode _quotation_createNode_157var_a0a0a() {
+  private static SNode _quotation_createNode_157var_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_157var_a0a0c0a() {
+  private static SNode _quotation_createNode_157var_a0a0c0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

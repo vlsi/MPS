@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dwnc1uxdi7zkjv697jz5vpm8qitmsze">
+<dependencies version="2" modelHash="-5gvq92stax1wece6j29af5v8lmomc3t">
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.icons(MPS.Platform/jetbrains.mps.ide.icons@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-uvseejb8lftjizgrik03igcx568a80" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8w030na880sdk0wef94zwzf291mucgl" />
   <common hash="-b4srk189jgoj2j4zi09xwbui7ws3adv" />
-  <source id="5797068448049410884" name="Icons" hash="e5map3cw83k2f7ub1uob2gj16qsy5q8">
+  <source id="5797068448049410884" name="Icons" hash="8g38y1pn26syf80wao57n7sj0fr29rs">
     <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.icons(MPS.Platform/jetbrains.mps.ide.icons@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Icons.java" />

@@ -130,7 +130,7 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
           nodeToSelect = ListSequence.fromList(SLinkOperations.getTargets(prevLine, "part", true)).last();
           int index = ListSequence.fromList(SLinkOperations.getTargets(prevLine, "part", true)).count() - 1;
           ListSequence.fromList(SLinkOperations.getTargets(prevLine, "part", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)));
-          if (SNodeOperations.isInstanceOf(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && isNotEmpty_yh032p_a0a6a0a0h0d1(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
+          if (SNodeOperations.isInstanceOf(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && isNotEmpty_yh032p_a0a6a0a0h0e2(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
             caret = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
           } else {
             caret = 0;
@@ -147,7 +147,7 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
         if (SNodeOperations.isInstanceOf(SNodeOperations.getPrevSibling(node), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) {
           nodeToSelect = SNodeOperations.getPrevSibling(node);
           SNode linePart = SNodeOperations.cast(nodeToSelect, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart");
-          if (isEmpty_yh032p_a0c0b0a7a3b(SPropertyOperations.getString(linePart, "text"))) {
+          if (isEmpty_yh032p_a0c0b0a7a4c(SPropertyOperations.getString(linePart, "text"))) {
             SNodeOperations.deleteNode(nodeToSelect);
             nodeToSelect = node;
           } else {
@@ -167,11 +167,11 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
       return " BACK_SPACE";
     }
 
-    public static boolean isNotEmpty_yh032p_a0a6a0a0h0d1(String str) {
+    public static boolean isNotEmpty_yh032p_a0a6a0a0h0e2(String str) {
       return str != null && str.length() > 0;
     }
 
-    public static boolean isEmpty_yh032p_a0c0b0a7a3b(String str) {
+    public static boolean isEmpty_yh032p_a0c0b0a7a4c(String str) {
       return str == null || str.length() == 0;
     }
   }
@@ -209,9 +209,9 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
       final Wrappers._T<SNode> nodeToSelect = new Wrappers._T<SNode>(null);
       final Wrappers._int caret = new Wrappers._int(-1);
       EditorCell_Label selectedCell = ((EditorCell_Label) editorContext.getSelectedCell());
-      if (isNotEmpty_yh032p_a0d0d2(selectedCell.getSelectedText())) {
+      if (isNotEmpty_yh032p_a0d0e3(selectedCell.getSelectedText())) {
         selectedCell.deleteSelection();
-        if (isEmpty_yh032p_a0b0d0d2(selectedCell.getText())) {
+        if (isEmpty_yh032p_a0b0d0e3(selectedCell.getText())) {
           if ((SNodeOperations.getNextSibling(node) == null)) {
             CommentLine_Behavior.call_tryMergeToRight_439148907936414403(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.javadoc.structure.CommentLine"), SNodeOperations.getIndexInParent(node));
           } else {
@@ -251,7 +251,7 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
                 nodeToSelect.value = ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)).last();
                 int index = SNodeOperations.getIndexInParent(node);
                 ListSequence.fromList(SLinkOperations.getTargets(curLine, "part", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(nextLine, "part", true)));
-                if (SNodeOperations.isInstanceOf(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && isNotEmpty_yh032p_a0a5a0a0a0a1a0a0e0a3a3c(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
+                if (SNodeOperations.isInstanceOf(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart") && isNotEmpty_yh032p_a0a5a0a0a0a1a0a0e0a3a4d(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
                   caret.value = SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text").length();
                 } else {
                   caret.value = 0;
@@ -269,7 +269,7 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
           //  Caret is at the end of text part inside comment line 
           if (SNodeOperations.isInstanceOf(SNodeOperations.getNextSibling(node), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart")) {
             nodeToSelect.value = SNodeOperations.getNextSibling(node);
-            if (isEmpty_yh032p_a0b0b0a4a0d0d2(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
+            if (isEmpty_yh032p_a0b0b0a4a0d0e3(SPropertyOperations.getString(SNodeOperations.cast(nodeToSelect.value, "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text"))) {
               SNodeOperations.deleteNode(nodeToSelect.value);
               nodeToSelect.value = node;
             } else {
@@ -294,19 +294,19 @@ public class TextCommentLinePart_KeyMap extends EditorCellKeyMap {
       return " DELETE";
     }
 
-    public static boolean isEmpty_yh032p_a0b0d0d2(String str) {
+    public static boolean isEmpty_yh032p_a0b0d0e3(String str) {
       return str == null || str.length() == 0;
     }
 
-    public static boolean isNotEmpty_yh032p_a0a5a0a0a0a1a0a0e0a3a3c(String str) {
+    public static boolean isNotEmpty_yh032p_a0a5a0a0a0a1a0a0e0a3a4d(String str) {
       return str != null && str.length() > 0;
     }
 
-    public static boolean isEmpty_yh032p_a0b0b0a4a0d0d2(String str) {
+    public static boolean isEmpty_yh032p_a0b0b0a4a0d0e3(String str) {
       return str == null || str.length() == 0;
     }
 
-    public static boolean isNotEmpty_yh032p_a0d0d2(String str) {
+    public static boolean isNotEmpty_yh032p_a0d0e3(String str) {
       return str != null && str.length() > 0;
     }
   }

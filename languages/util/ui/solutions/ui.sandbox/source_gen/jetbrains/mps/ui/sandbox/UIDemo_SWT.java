@@ -43,34 +43,34 @@ public class UIDemo_SWT {
 
   protected Composite createComponent(final Shell panel) {
     this.rootPanel = panel;
-    final Composite widget_lh9w84_a0b0d = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
+    final Composite widget_lh9w84_a0b0h = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
       public Composite invoke(Composite context_lh9w84_a) {
         Composite cmp = new Composite(panel, SWT.NONE);
         cmp.setLayout(new DockLayout());
         return cmp;
       }
     }.invoke(panel);
-    final ExpandBar widget_lh9w84_a0a0a1a3 = new ExpandBar(widget_lh9w84_a0b0d, SWT.V_SCROLL);
-    final ExpandController ec_lh9w84_a0b0c0b0d = new ExpandController(widget_lh9w84_a0a0a1a3);
-    final Composite widget_lh9w84_a0a0a0a0b0d = new _FunctionTypes._return_P1_E0<Composite, ExpandBar>() {
+    final ExpandBar widget_lh9w84_a0a0a1a7 = new ExpandBar(widget_lh9w84_a0b0h, SWT.V_SCROLL);
+    final ExpandController ec_lh9w84_a0b0c0b0h = new ExpandController(widget_lh9w84_a0a0a1a7);
+    final Composite widget_lh9w84_a0a0a0a0b0h = new _FunctionTypes._return_P1_E0<Composite, ExpandBar>() {
       public Composite invoke(ExpandBar context_lh9w84_a_0) {
-        Composite cmp = new Composite(widget_lh9w84_a0a0a1a3, SWT.NONE);
+        Composite cmp = new Composite(widget_lh9w84_a0a0a1a7, SWT.NONE);
         cmp.setLayout(new FillLayout());
         return cmp;
       }
-    }.invoke(widget_lh9w84_a0a0a1a3);
-    final ExpandItem eitem_lh9w84_a0b0c0c0b0d = new _FunctionTypes._return_P0_E0<ExpandItem>() {
+    }.invoke(widget_lh9w84_a0a0a1a7);
+    final ExpandItem eitem_lh9w84_a0b0c0c0b0h = new _FunctionTypes._return_P0_E0<ExpandItem>() {
       public ExpandItem invoke() {
-        ExpandItem ei = new ExpandItem((ExpandBar) widget_lh9w84_a0a0a0a0b0d.getParent(), SWT.NONE);
-        ei.setControl(widget_lh9w84_a0a0a0a0b0d);
+        ExpandItem ei = new ExpandItem((ExpandBar) widget_lh9w84_a0a0a0a0b0h.getParent(), SWT.NONE);
+        ei.setControl(widget_lh9w84_a0a0a0a0b0h);
         ei.setHeight(1 << 9);
         return ei;
       }
     }.invoke();
-    eitem_lh9w84_a0b0c0c0b0d.setText("Panels");
-    final Composite widget_lh9w84_a0a0a0a0a0a1a3 = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
+    eitem_lh9w84_a0b0c0c0b0h.setText("Panels");
+    final Composite widget_lh9w84_a0a0a0a0a0a1a7 = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
       public Composite invoke(Composite context_lh9w84_a_1) {
-        Composite cmp = new Composite(widget_lh9w84_a0a0a0a0b0d, SWT.NONE);
+        Composite cmp = new Composite(widget_lh9w84_a0a0a0a0b0h, SWT.NONE);
         RowLayout rlt = new RowLayout(SWT.VERTICAL);
         rlt.wrap = false;
         rlt.fill = false;
@@ -78,29 +78,29 @@ public class UIDemo_SWT {
         cmp.setLayout(rlt);
         return cmp;
       }
-    }.invoke(widget_lh9w84_a0a0a0a0b0d);
-    new PanelsDemo_SWT(this).buildUI(widget_lh9w84_a0a0a0a0a0a1a3);
+    }.invoke(widget_lh9w84_a0a0a0a0b0h);
+    new PanelsDemo_SWT(this).buildUI(widget_lh9w84_a0a0a0a0a0a1a7);
     //  with SWT items are not added to container
     //  with SWT items are not added to container
-    final Composite widget_lh9w84_b0a0a0a0b0d = new _FunctionTypes._return_P1_E0<Composite, ExpandBar>() {
+    final Composite widget_lh9w84_b0a0a0a0b0h = new _FunctionTypes._return_P1_E0<Composite, ExpandBar>() {
       public Composite invoke(ExpandBar context_lh9w84_a_2) {
-        Composite cmp = new Composite(widget_lh9w84_a0a0a1a3, SWT.NONE);
+        Composite cmp = new Composite(widget_lh9w84_a0a0a1a7, SWT.NONE);
         cmp.setLayout(new FillLayout());
         return cmp;
       }
-    }.invoke(widget_lh9w84_a0a0a1a3);
-    final ExpandItem eitem_lh9w84_a0g0c0c0b0d = new _FunctionTypes._return_P0_E0<ExpandItem>() {
+    }.invoke(widget_lh9w84_a0a0a1a7);
+    final ExpandItem eitem_lh9w84_a0g0c0c0b0h = new _FunctionTypes._return_P0_E0<ExpandItem>() {
       public ExpandItem invoke() {
-        ExpandItem ei = new ExpandItem((ExpandBar) widget_lh9w84_b0a0a0a0b0d.getParent(), SWT.NONE);
-        ei.setControl(widget_lh9w84_b0a0a0a0b0d);
+        ExpandItem ei = new ExpandItem((ExpandBar) widget_lh9w84_b0a0a0a0b0h.getParent(), SWT.NONE);
+        ei.setControl(widget_lh9w84_b0a0a0a0b0h);
         ei.setHeight(1 << 9);
         return ei;
       }
     }.invoke();
-    eitem_lh9w84_a0g0c0c0b0d.setText("Controls");
-    final Composite widget_lh9w84_a0a1a0a0a0a1a3 = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
+    eitem_lh9w84_a0g0c0c0b0h.setText("Controls");
+    final Composite widget_lh9w84_a0a1a0a0a0a1a7 = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
       public Composite invoke(Composite context_lh9w84_a_3) {
-        Composite cmp = new Composite(widget_lh9w84_b0a0a0a0b0d, SWT.NONE);
+        Composite cmp = new Composite(widget_lh9w84_b0a0a0a0b0h, SWT.NONE);
         RowLayout rlt = new RowLayout(SWT.VERTICAL);
         rlt.wrap = false;
         rlt.fill = false;
@@ -108,29 +108,29 @@ public class UIDemo_SWT {
         cmp.setLayout(rlt);
         return cmp;
       }
-    }.invoke(widget_lh9w84_b0a0a0a0b0d);
-    new ControlsDemo_SWT(this).buildUI(widget_lh9w84_a0a1a0a0a0a1a3);
+    }.invoke(widget_lh9w84_b0a0a0a0b0h);
+    new ControlsDemo_SWT(this).buildUI(widget_lh9w84_a0a1a0a0a0a1a7);
     //  with SWT items are not added to container
     //  with SWT items are not added to container
-    final Composite widget_lh9w84_c0a0a0a0b0d = new _FunctionTypes._return_P1_E0<Composite, ExpandBar>() {
+    final Composite widget_lh9w84_c0a0a0a0b0h = new _FunctionTypes._return_P1_E0<Composite, ExpandBar>() {
       public Composite invoke(ExpandBar context_lh9w84_a_4) {
-        Composite cmp = new Composite(widget_lh9w84_a0a0a1a3, SWT.NONE);
+        Composite cmp = new Composite(widget_lh9w84_a0a0a1a7, SWT.NONE);
         cmp.setLayout(new FillLayout());
         return cmp;
       }
-    }.invoke(widget_lh9w84_a0a0a1a3);
-    final ExpandItem eitem_lh9w84_a0l0c0c0b0d = new _FunctionTypes._return_P0_E0<ExpandItem>() {
+    }.invoke(widget_lh9w84_a0a0a1a7);
+    final ExpandItem eitem_lh9w84_a0l0c0c0b0h = new _FunctionTypes._return_P0_E0<ExpandItem>() {
       public ExpandItem invoke() {
-        ExpandItem ei = new ExpandItem((ExpandBar) widget_lh9w84_c0a0a0a0b0d.getParent(), SWT.NONE);
-        ei.setControl(widget_lh9w84_c0a0a0a0b0d);
+        ExpandItem ei = new ExpandItem((ExpandBar) widget_lh9w84_c0a0a0a0b0h.getParent(), SWT.NONE);
+        ei.setControl(widget_lh9w84_c0a0a0a0b0h);
         ei.setHeight(1 << 9);
         return ei;
       }
     }.invoke();
-    eitem_lh9w84_a0l0c0c0b0d.setText("Windows");
-    final Composite widget_lh9w84_a0a2a0a0a0a1a3 = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
+    eitem_lh9w84_a0l0c0c0b0h.setText("Windows");
+    final Composite widget_lh9w84_a0a2a0a0a0a1a7 = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
       public Composite invoke(Composite context_lh9w84_a_5) {
-        Composite cmp = new Composite(widget_lh9w84_c0a0a0a0b0d, SWT.NONE);
+        Composite cmp = new Composite(widget_lh9w84_c0a0a0a0b0h, SWT.NONE);
         RowLayout rlt = new RowLayout(SWT.VERTICAL);
         rlt.wrap = false;
         rlt.fill = false;
@@ -138,29 +138,29 @@ public class UIDemo_SWT {
         cmp.setLayout(rlt);
         return cmp;
       }
-    }.invoke(widget_lh9w84_c0a0a0a0b0d);
-    new WindowsDemo_SWT(this).buildUI(widget_lh9w84_a0a2a0a0a0a1a3);
+    }.invoke(widget_lh9w84_c0a0a0a0b0h);
+    new WindowsDemo_SWT(this).buildUI(widget_lh9w84_a0a2a0a0a0a1a7);
     //  with SWT items are not added to container
     //  with SWT items are not added to container
-    final Composite widget_lh9w84_d0a0a0a0b0d = new _FunctionTypes._return_P1_E0<Composite, ExpandBar>() {
+    final Composite widget_lh9w84_d0a0a0a0b0h = new _FunctionTypes._return_P1_E0<Composite, ExpandBar>() {
       public Composite invoke(ExpandBar context_lh9w84_a_6) {
-        Composite cmp = new Composite(widget_lh9w84_a0a0a1a3, SWT.NONE);
+        Composite cmp = new Composite(widget_lh9w84_a0a0a1a7, SWT.NONE);
         cmp.setLayout(new FillLayout());
         return cmp;
       }
-    }.invoke(widget_lh9w84_a0a0a1a3);
-    final ExpandItem eitem_lh9w84_a0q0c0c0b0d = new _FunctionTypes._return_P0_E0<ExpandItem>() {
+    }.invoke(widget_lh9w84_a0a0a1a7);
+    final ExpandItem eitem_lh9w84_a0q0c0c0b0h = new _FunctionTypes._return_P0_E0<ExpandItem>() {
       public ExpandItem invoke() {
-        ExpandItem ei = new ExpandItem((ExpandBar) widget_lh9w84_d0a0a0a0b0d.getParent(), SWT.NONE);
-        ei.setControl(widget_lh9w84_d0a0a0a0b0d);
+        ExpandItem ei = new ExpandItem((ExpandBar) widget_lh9w84_d0a0a0a0b0h.getParent(), SWT.NONE);
+        ei.setControl(widget_lh9w84_d0a0a0a0b0h);
         ei.setHeight(1 << 9);
         return ei;
       }
     }.invoke();
-    eitem_lh9w84_a0q0c0c0b0d.setText("\u0422\u044b\u0440\u044b\u043f\u044b\u0440\u044b");
-    final Composite widget_lh9w84_a0a3a0a0a0a1a3 = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
+    eitem_lh9w84_a0q0c0c0b0h.setText("\u0422\u044b\u0440\u044b\u043f\u044b\u0440\u044b");
+    final Composite widget_lh9w84_a0a3a0a0a0a1a7 = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
       public Composite invoke(Composite context_lh9w84_a_7) {
-        Composite cmp = new Composite(widget_lh9w84_d0a0a0a0b0d, SWT.NONE);
+        Composite cmp = new Composite(widget_lh9w84_d0a0a0a0b0h, SWT.NONE);
         RowLayout rlt = new RowLayout(SWT.VERTICAL);
         rlt.wrap = false;
         rlt.fill = false;
@@ -168,37 +168,37 @@ public class UIDemo_SWT {
         cmp.setLayout(rlt);
         return cmp;
       }
-    }.invoke(widget_lh9w84_d0a0a0a0b0d);
-    final Button widget_lh9w84_a0a0a0d0a0a0a0b0d = new Button(widget_lh9w84_a0a3a0a0a0a1a3, SWT.RADIO);
-    widget_lh9w84_a0a0a0d0a0a0a0b0d.setText("Stage 1");
+    }.invoke(widget_lh9w84_d0a0a0a0b0h);
+    final Button widget_lh9w84_a0a0a0d0a0a0a0b0h = new Button(widget_lh9w84_a0a3a0a0a0a1a7, SWT.RADIO);
+    widget_lh9w84_a0a0a0d0a0a0a0b0h.setText("Stage 1");
     //  with SWT items are not added to container
-    final Button widget_lh9w84_b0a0a0d0a0a0a0b0d = new Button(widget_lh9w84_a0a3a0a0a0a1a3, SWT.RADIO);
-    widget_lh9w84_b0a0a0d0a0a0a0b0d.setText("Stage 2");
+    final Button widget_lh9w84_b0a0a0d0a0a0a0b0h = new Button(widget_lh9w84_a0a3a0a0a0a1a7, SWT.RADIO);
+    widget_lh9w84_b0a0a0d0a0a0a0b0h.setText("Stage 2");
     //  with SWT items are not added to container
-    final Button widget_lh9w84_c0a0a0d0a0a0a0b0d = new Button(widget_lh9w84_a0a3a0a0a0a1a3, SWT.RADIO);
-    widget_lh9w84_c0a0a0d0a0a0a0b0d.setText("Stage 3");
+    final Button widget_lh9w84_c0a0a0d0a0a0a0b0h = new Button(widget_lh9w84_a0a3a0a0a0a1a7, SWT.RADIO);
+    widget_lh9w84_c0a0a0d0a0a0a0b0h.setText("Stage 3");
     //  with SWT items are not added to container
     //  with SWT items are not added to container
     //  with SWT items are not added to container
-    final Composite widget_lh9w84_e0a0a0a0b0d = new _FunctionTypes._return_P1_E0<Composite, ExpandBar>() {
+    final Composite widget_lh9w84_e0a0a0a0b0h = new _FunctionTypes._return_P1_E0<Composite, ExpandBar>() {
       public Composite invoke(ExpandBar context_lh9w84_a_8) {
-        Composite cmp = new Composite(widget_lh9w84_a0a0a1a3, SWT.NONE);
+        Composite cmp = new Composite(widget_lh9w84_a0a0a1a7, SWT.NONE);
         cmp.setLayout(new FillLayout());
         return cmp;
       }
-    }.invoke(widget_lh9w84_a0a0a1a3);
-    final ExpandItem eitem_lh9w84_a0v0c0c0b0d = new _FunctionTypes._return_P0_E0<ExpandItem>() {
+    }.invoke(widget_lh9w84_a0a0a1a7);
+    final ExpandItem eitem_lh9w84_a0v0c0c0b0h = new _FunctionTypes._return_P0_E0<ExpandItem>() {
       public ExpandItem invoke() {
-        ExpandItem ei = new ExpandItem((ExpandBar) widget_lh9w84_e0a0a0a0b0d.getParent(), SWT.NONE);
-        ei.setControl(widget_lh9w84_e0a0a0a0b0d);
+        ExpandItem ei = new ExpandItem((ExpandBar) widget_lh9w84_e0a0a0a0b0h.getParent(), SWT.NONE);
+        ei.setControl(widget_lh9w84_e0a0a0a0b0h);
         ei.setHeight(1 << 9);
         return ei;
       }
     }.invoke();
-    eitem_lh9w84_a0v0c0c0b0d.setText("\u0401\u043c\u0430\u0451");
-    final Composite widget_lh9w84_a0a4a0a0a0a1a3 = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
+    eitem_lh9w84_a0v0c0c0b0h.setText("\u0401\u043c\u0430\u0451");
+    final Composite widget_lh9w84_a0a4a0a0a0a1a7 = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
       public Composite invoke(Composite context_lh9w84_a_9) {
-        Composite cmp = new Composite(widget_lh9w84_e0a0a0a0b0d, SWT.NONE);
+        Composite cmp = new Composite(widget_lh9w84_e0a0a0a0b0h, SWT.NONE);
         RowLayout rlt = new RowLayout(SWT.VERTICAL);
         rlt.wrap = false;
         rlt.fill = false;
@@ -206,25 +206,25 @@ public class UIDemo_SWT {
         cmp.setLayout(rlt);
         return cmp;
       }
-    }.invoke(widget_lh9w84_e0a0a0a0b0d);
-    final Button widget_lh9w84_a0a0a0e0a0a0a0b0d = new Button(widget_lh9w84_a0a4a0a0a0a1a3, SWT.RADIO);
-    widget_lh9w84_a0a0a0e0a0a0a0b0d.setText("Stage 1");
+    }.invoke(widget_lh9w84_e0a0a0a0b0h);
+    final Button widget_lh9w84_a0a0a0e0a0a0a0b0h = new Button(widget_lh9w84_a0a4a0a0a0a1a7, SWT.RADIO);
+    widget_lh9w84_a0a0a0e0a0a0a0b0h.setText("Stage 1");
     //  with SWT items are not added to container
-    final Button widget_lh9w84_b0a0a0e0a0a0a0b0d = new Button(widget_lh9w84_a0a4a0a0a0a1a3, SWT.RADIO);
-    widget_lh9w84_b0a0a0e0a0a0a0b0d.setText("Stage 2");
+    final Button widget_lh9w84_b0a0a0e0a0a0a0b0h = new Button(widget_lh9w84_a0a4a0a0a0a1a7, SWT.RADIO);
+    widget_lh9w84_b0a0a0e0a0a0a0b0h.setText("Stage 2");
     //  with SWT items are not added to container
-    final Button widget_lh9w84_c0a0a0e0a0a0a0b0d = new Button(widget_lh9w84_a0a4a0a0a0a1a3, SWT.RADIO);
-    widget_lh9w84_c0a0a0e0a0a0a0b0d.setText("Stage 3");
+    final Button widget_lh9w84_c0a0a0e0a0a0a0b0h = new Button(widget_lh9w84_a0a4a0a0a0a1a7, SWT.RADIO);
+    widget_lh9w84_c0a0a0e0a0a0a0b0h.setText("Stage 3");
     //  with SWT items are not added to container
     //  with SWT items are not added to container
     //  with SWT items are not added to container
-    widget_lh9w84_a0a0a1a3.setLayoutData(DockLayoutData.WEST);
-    this.demoContainer = widget_lh9w84_a0b0d;
-    return widget_lh9w84_a0b0d;
+    widget_lh9w84_a0a0a1a7.setLayoutData(DockLayoutData.WEST);
+    this.demoContainer = widget_lh9w84_a0b0h;
+    return widget_lh9w84_a0b0h;
   }
 
   private void tab1(final TabFolder tpane) {
-    final Composite widget_lh9w84_a0a0e = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
+    final Composite widget_lh9w84_a0a0i = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
       public Composite invoke(Composite context_lh9w84_a_10) {
         Composite cmp = new Composite(tpane, SWT.NONE);
         RowLayout rlt = new RowLayout(SWT.HORIZONTAL);
@@ -235,26 +235,26 @@ public class UIDemo_SWT {
         return cmp;
       }
     }.invoke(tpane);
-    final Button widget_lh9w84_a0a0a0a4 = new Button(widget_lh9w84_a0a0e, SWT.RADIO);
-    widget_lh9w84_a0a0a0a4.setText("Stage 1");
+    final Button widget_lh9w84_a0a0a0a8 = new Button(widget_lh9w84_a0a0i, SWT.RADIO);
+    widget_lh9w84_a0a0a0a8.setText("Stage 1");
     //  with SWT items are not added to container
-    final Button widget_lh9w84_b0a0a0a4 = new Button(widget_lh9w84_a0a0e, SWT.RADIO);
-    widget_lh9w84_b0a0a0a4.setText("Stage 2");
+    final Button widget_lh9w84_b0a0a0a8 = new Button(widget_lh9w84_a0a0i, SWT.RADIO);
+    widget_lh9w84_b0a0a0a8.setText("Stage 2");
     //  with SWT items are not added to container
-    final Button widget_lh9w84_c0a0a0a4 = new Button(widget_lh9w84_a0a0e, SWT.RADIO);
-    widget_lh9w84_c0a0a0a4.setText("Stage 3");
+    final Button widget_lh9w84_c0a0a0a8 = new Button(widget_lh9w84_a0a0i, SWT.RADIO);
+    widget_lh9w84_c0a0a0a8.setText("Stage 3");
     //  with SWT items are not added to container
     new _FunctionTypes._void_P0_E0() {
       public void invoke() {
         TabItem ti = new TabItem(tpane, SWT.NONE);
         ti.setText("Radiobuttons");
-        ti.setControl((Control) widget_lh9w84_a0a0e);
+        ti.setControl((Control) widget_lh9w84_a0a0i);
       }
     }.invoke();
   }
 
   private void tab2(final TabFolder tpane) {
-    final Composite widget_lh9w84_a0a0f = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
+    final Composite widget_lh9w84_a0a0j = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
       public Composite invoke(Composite context_lh9w84_a_11) {
         Composite cmp = new Composite(tpane, SWT.NONE);
         RowLayout rlt = new RowLayout(SWT.VERTICAL);
@@ -265,42 +265,42 @@ public class UIDemo_SWT {
         return cmp;
       }
     }.invoke(tpane);
-    final Button widget_lh9w84_a0a0a0a5 = new Button(widget_lh9w84_a0a0f, SWT.CHECK);
-    widget_lh9w84_a0a0a0a5.setText("kino");
-    widget_lh9w84_a0a0a0a5.setSelection(this.bo.isKino());
-    widget_lh9w84_a0a0a0a5.addSelectionListener(new SelectionAdapter() {
+    final Button widget_lh9w84_a0a0a0a9 = new Button(widget_lh9w84_a0a0j, SWT.CHECK);
+    widget_lh9w84_a0a0a0a9.setText("kino");
+    widget_lh9w84_a0a0a0a9.setSelection(this.bo.isKino());
+    widget_lh9w84_a0a0a0a9.addSelectionListener(new SelectionAdapter() {
       public void widgetSelected(SelectionEvent e) {
         new _FunctionTypes._void_P1_E0<Boolean>() {
           public void invoke(Boolean value) {
             bo.setKino(value);
           }
-        }.invoke(widget_lh9w84_a0a0a0a5.getSelection());
+        }.invoke(widget_lh9w84_a0a0a0a9.getSelection());
       }
     });
     //  with SWT items are not added to container
-    final Button widget_lh9w84_b0a0a0a5 = new Button(widget_lh9w84_a0a0f, SWT.CHECK);
-    widget_lh9w84_b0a0a0a5.setText("vino");
-    widget_lh9w84_b0a0a0a5.setSelection(this.bo.isVino());
-    widget_lh9w84_b0a0a0a5.addSelectionListener(new SelectionAdapter() {
+    final Button widget_lh9w84_b0a0a0a9 = new Button(widget_lh9w84_a0a0j, SWT.CHECK);
+    widget_lh9w84_b0a0a0a9.setText("vino");
+    widget_lh9w84_b0a0a0a9.setSelection(this.bo.isVino());
+    widget_lh9w84_b0a0a0a9.addSelectionListener(new SelectionAdapter() {
       public void widgetSelected(SelectionEvent e) {
         new _FunctionTypes._void_P1_E0<Boolean>() {
           public void invoke(Boolean value) {
             bo.setVino(value);
           }
-        }.invoke(widget_lh9w84_b0a0a0a5.getSelection());
+        }.invoke(widget_lh9w84_b0a0a0a9.getSelection());
       }
     });
     //  with SWT items are not added to container
-    final Button widget_lh9w84_c0a0a0a5 = new Button(widget_lh9w84_a0a0f, SWT.CHECK);
-    widget_lh9w84_c0a0a0a5.setText("domino");
-    widget_lh9w84_c0a0a0a5.setSelection(this.bo.isDomino());
-    widget_lh9w84_c0a0a0a5.addSelectionListener(new SelectionAdapter() {
+    final Button widget_lh9w84_c0a0a0a9 = new Button(widget_lh9w84_a0a0j, SWT.CHECK);
+    widget_lh9w84_c0a0a0a9.setText("domino");
+    widget_lh9w84_c0a0a0a9.setSelection(this.bo.isDomino());
+    widget_lh9w84_c0a0a0a9.addSelectionListener(new SelectionAdapter() {
       public void widgetSelected(SelectionEvent e) {
         new _FunctionTypes._void_P1_E0<Boolean>() {
           public void invoke(Boolean value) {
             bo.setDomino(value);
           }
-        }.invoke(widget_lh9w84_c0a0a0a5.getSelection());
+        }.invoke(widget_lh9w84_c0a0a0a9.getSelection());
       }
     });
     //  with SWT items are not added to container
@@ -308,7 +308,7 @@ public class UIDemo_SWT {
       public void invoke() {
         TabItem ti = new TabItem(tpane, SWT.NONE);
         ti.setText("Checkboxes");
-        ti.setControl((Control) widget_lh9w84_a0a0f);
+        ti.setControl((Control) widget_lh9w84_a0a0j);
       }
     }.invoke();
   }

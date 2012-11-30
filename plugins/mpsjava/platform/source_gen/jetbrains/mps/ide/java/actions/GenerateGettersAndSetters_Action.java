@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
@@ -24,13 +23,13 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class GenerateGettersAndSetters_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(GenerateGettersAndSetters_Action.class);
 
   public GenerateGettersAndSetters_Action() {
     super("Getter and Setter", "", ICON);
@@ -138,6 +137,8 @@ public class GenerateGettersAndSetters_Action extends BaseAction {
       }
     });
   }
+
+  private static Logger LOG = Logger.getLogger(GenerateGettersAndSetters_Action.class);
 
   private static SNode _quotation_createNode_5trf1k_a0a4a41a0(Object parameter_1, Object parameter_2, Object parameter_3) {
     SNode quotedNode_4 = null;

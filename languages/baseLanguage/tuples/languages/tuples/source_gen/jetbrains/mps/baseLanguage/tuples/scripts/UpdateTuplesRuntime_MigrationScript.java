@@ -71,7 +71,7 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
             extendIfc = _quotation_createNode_yti4yq_a0a0l0b0a0(ListSequence.fromList(typerefs).cut(1).toListSequence(), ifc);
           }
 
-          ifc = _quotation_createNode_yti4yq_a0n0b0a0(extendIfc, methods, typedecls, "_" + i);
+          ifc = _quotation_createNode_yti4yq_a0n0b0a0(extendIfc, typedecls, "_" + i, methods);
 
           List<SNode> extParams = ListSequence.fromList(typerefs).select(new ISelector<SNode, SNode>() {
             public SNode select(SNode tr) {
@@ -181,23 +181,23 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
     SNode quotedNode_12 = null;
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Interface", null, null, GlobalScope.getInstance(), false);
     quotedNode_5.setProperty("nonStatic", "true");
-    quotedNode_5.setProperty("name", (String) parameter_4);
+    quotedNode_5.setProperty("name", (String) parameter_3);
     quotedNode_6 = (SNode) parameter_1;
     if (quotedNode_6 != null) {
       quotedNode_5.addChild("extendedInterface", HUtil.copyIfNecessary(quotedNode_6));
     }
+    quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
+    quotedNode_5.addChild("visibility", quotedNode_7);
     {
       List<SNode> nodes = (List<SNode>) parameter_2;
       for (SNode child : nodes) {
-        quotedNode_5.addChild("method", HUtil.copyIfNecessary(child));
+        quotedNode_5.addChild("typeVariableDeclaration", HUtil.copyIfNecessary(child));
       }
     }
-    quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.addChild("visibility", quotedNode_8);
     {
-      List<SNode> nodes = (List<SNode>) parameter_3;
+      List<SNode> nodes = (List<SNode>) parameter_4;
       for (SNode child : nodes) {
-        quotedNode_5.addChild("typeVariableDeclaration", HUtil.copyIfNecessary(child));
+        quotedNode_5.addChild("member", HUtil.copyIfNecessary(child));
       }
     }
     return quotedNode_5;

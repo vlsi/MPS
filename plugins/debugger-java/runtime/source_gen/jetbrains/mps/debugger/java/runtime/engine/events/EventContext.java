@@ -32,7 +32,7 @@ public class EventContext implements Context {
         return it instanceof LocatableEvent;
       }
     });
-    myThreadReference = check_gqjtnu_a0f0a(event);
+    myThreadReference = check_gqjtnu_a0f0e(event);
   }
 
   @Override
@@ -69,7 +69,7 @@ public class EventContext implements Context {
     return myEventSet;
   }
 
-  private static ThreadReference check_gqjtnu_a0f0a(LocatableEvent checkedDotOperand) {
+  private static ThreadReference check_gqjtnu_a0f0e(LocatableEvent checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.thread();
     }

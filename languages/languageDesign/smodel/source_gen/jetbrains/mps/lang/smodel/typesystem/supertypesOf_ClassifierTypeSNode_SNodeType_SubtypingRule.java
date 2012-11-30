@@ -4,25 +4,24 @@ package jetbrains.mps.lang.smodel.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER_qc0dd6_a0a0a0a0b0c0a0a0a0a0a0c = new SNodePointer("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)", "~SNode");
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
   public supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode type, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_qc0dd6_a0a0();
+    return _quotation_createNode_qc0dd6_a0a2();
   }
 
   public String getApplicableConceptFQName() {
@@ -31,7 +30,7 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      GeneratedMatchingPattern pattern = new supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule.Pattern_qc0dd6_a0a0a0a2();
+      GeneratedMatchingPattern pattern = new supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule.Pattern_qc0dd6_a0a0a0a4();
       this.myMatchingPattern = pattern;
       boolean b = pattern.match(argument);
       return new IsApplicableStatus(b, pattern);
@@ -42,14 +41,8 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
     return true;
   }
 
-  private static SNode _quotation_createNode_qc0dd6_a0a0() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
-  }
-
-  public static class Pattern_qc0dd6_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_qc0dd6_a0a0a0a2() {
+  public static class Pattern_qc0dd6_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_qc0dd6_a0a0a0a4() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -60,7 +53,7 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_qc0dd6_a0a0a0a0b0c0a0a0a0a0a0c;
+          SNodePointer pointer = SNODE_POINTER_qc0dd6_a0a0a0a0b0c0a0a0a0a0a0e;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_supertypesOf_ClassifierTypeSNode_SNodeType_semtjk_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -83,4 +76,12 @@ public class supertypesOf_ClassifierTypeSNode_SNodeType_SubtypingRule extends Su
     public void performActions(Object o) {
     }
   }
+
+  private static SNode _quotation_createNode_qc0dd6_a0a2() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
+  }
+
+  private static SNodePointer SNODE_POINTER_qc0dd6_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)", "~SNode");
 }

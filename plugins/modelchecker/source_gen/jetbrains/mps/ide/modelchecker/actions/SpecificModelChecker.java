@@ -45,7 +45,7 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
         Set<IErrorReporter> iErrorReporters = checker.getErrors(rootNode, operationContext);
         for (IErrorReporter errorReporter : SetSequence.fromSet(iErrorReporters)) {
           final IErrorReporter reporter = errorReporter;
-          final QuickFix_Runtime quickFix = check_7763bz_a0b0c0d0d0a(check_7763bz_a0a1a2a3a3a0(errorReporter));
+          final QuickFix_Runtime quickFix = check_7763bz_a0b0c0d0d0c(check_7763bz_a0a1a2a3a3a2(errorReporter));
           IModelCheckerFix fix = null;
           if (quickFix != null) {
             fix = new IModelCheckerFix() {
@@ -65,14 +65,14 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
     return results;
   }
 
-  private static QuickFix_Runtime check_7763bz_a0b0c0d0d0a(QuickFixProvider checkedDotOperand) {
+  private static QuickFix_Runtime check_7763bz_a0b0c0d0d0c(QuickFixProvider checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getQuickFix();
     }
     return null;
   }
 
-  private static QuickFixProvider check_7763bz_a0a1a2a3a3a0(IErrorReporter checkedDotOperand) {
+  private static QuickFixProvider check_7763bz_a0a1a2a3a3a2(IErrorReporter checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getIntentionProvider();
     }

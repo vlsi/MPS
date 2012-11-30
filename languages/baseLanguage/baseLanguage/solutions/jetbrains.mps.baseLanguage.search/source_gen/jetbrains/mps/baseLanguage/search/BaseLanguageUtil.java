@@ -26,10 +26,10 @@ public class BaseLanguageUtil {
   }
 
   public static SNode getSuperclass(SNode subClass) {
-    return SNodeOperations.cast(check_b9g70l_a0a0b(SLinkOperations.getTarget(subClass, "superclass", true)), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    return SNodeOperations.cast(check_b9g70l_a0a0c(SLinkOperations.getTarget(subClass, "superclass", true)), "jetbrains.mps.baseLanguage.structure.ClassConcept");
   }
 
-  private static SNode check_b9g70l_a0a0b(SNode checkedDotOperand) {
+  private static SNode check_b9g70l_a0a0c(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTarget(checkedDotOperand, "classifier", false);
     }

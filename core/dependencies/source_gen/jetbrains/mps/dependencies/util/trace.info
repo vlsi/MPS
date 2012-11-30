@@ -143,8 +143,8 @@
       <varInfo nodeId="4067778876497063054" varName="path" />
       <varInfo nodeId="4067778876497063059" varName="visited" />
     </scopeInfo>
-    <unitInfo nodeId="4067778876497062991" fileName="ModuleGraph.java" startLine="75" startPosition="50" endLine="79" endPosition="5" unitName="jetbrains.mps.dependencies.util.ModuleGraph$1" />
-    <unitInfo nodeId="4067778876497063158" fileName="ModuleGraph.java" startLine="31" startPosition="21" endLine="41" endPosition="5" unitName="jetbrains.mps.dependencies.util.ModuleGraph$2" />
+    <unitInfo nodeId="4067778876497062991" fileName="ModuleGraph.java" startLine="75" startPosition="50" endLine="79" endPosition="5" unitName="jetbrains.mps.dependencies.util.ModuleGraph$2" />
+    <unitInfo nodeId="4067778876497063158" fileName="ModuleGraph.java" startLine="31" startPosition="21" endLine="41" endPosition="5" unitName="jetbrains.mps.dependencies.util.ModuleGraph$1" />
     <unitInfo nodeId="4067778876497063078" fileName="ModuleGraph.java" startLine="100" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.dependencies.util.ModuleGraph$ModuleVertex" />
     <unitInfo nodeId="4067778876497062867" fileName="ModuleGraph.java" startLine="26" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.dependencies.util.ModuleGraph" />
   </root>

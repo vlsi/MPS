@@ -21,7 +21,7 @@ import javax.swing.JComponent;
   public static final String WIDGET_ID = "TransientModelsWidget";
   @NotNull
   private final StatusBar myStatusBar;
-  private final Icon myIcon = IconContainer.ICON_a1;
+  private final Icon myIcon = IconContainer.ICON_a2;
   private CustomIconWrapper myComponent;
 
   public TransientModelsWidget(StatusBar bar) {

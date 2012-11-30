@@ -49,7 +49,7 @@ public class CommitNumberSubcolumn extends AnnotationAspectSubcolumn {
     }, true).toListSequence();
     revisionNumbers = ListSequence.fromList(revisionNumbers).sort(new ISelector<VcsRevisionNumber, Date>() {
       public Date select(VcsRevisionNumber rn) {
-        return check_efout7_a0a0a0a0f0b(MapSequence.fromMap(revisionNumberToRevision).get(rn));
+        return check_efout7_a0a0a0a0f0e(MapSequence.fromMap(revisionNumberToRevision).get(rn));
       }
     }, true).toListSequence();
     for (int i = 0; i < ListSequence.fromList(revisionNumbers).count(); i++) {
@@ -73,7 +73,7 @@ public class CommitNumberSubcolumn extends AnnotationAspectSubcolumn {
     return true;
   }
 
-  private static Date check_efout7_a0a0a0a0f0b(VcsFileRevision checkedDotOperand) {
+  private static Date check_efout7_a0a0a0a0f0e(VcsFileRevision checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getRevisionDate();
     }

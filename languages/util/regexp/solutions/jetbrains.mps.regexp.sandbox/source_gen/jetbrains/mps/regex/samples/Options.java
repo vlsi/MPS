@@ -6,17 +6,17 @@ import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 
 /*package*/ class Options {
-  private static Pattern REGEXP_3flcu7_a0a0a0a = Pattern.compile("abcde", 32);
-
   public Options() {
   }
 
   /*package*/ void test() {
     {
-      Pattern _pattern_0 = REGEXP_3flcu7_a0a0a0a;
+      Pattern _pattern_0 = REGEXP_3flcu7_a0a0a0b;
       Matcher _matcher_0 = _pattern_0.matcher("abc");
       if (_matcher_0.matches()) {
       }
     }
   }
+
+  private static Pattern REGEXP_3flcu7_a0a0a0b = Pattern.compile("abcde", 32);
 }

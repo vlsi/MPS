@@ -6,6 +6,11 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
@@ -17,18 +22,39 @@ import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.nodeEditor.FocusPolicy;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
-import jetbrains.mps.smodel.SModel;
 
 public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_uvxm5p_a(editorContext, node);
+  }
+
+  public static class MatchingLabelStyleClassItem_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Item {
+    public MatchingLabelStyleClassItem_generic_cellMenu_a0c0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "hasNoLabel", "" + (true));
+    }
+
+    public String getMatchingText() {
+      return "null";
+    }
+  }
+
+  public static class MatchingLabelStyleClassItem_generic_cellMenu_a0d0 extends AbstractCellMenuPart_Generic_Item {
+    public MatchingLabelStyleClassItem_generic_cellMenu_a0d0() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "hasNoLabel", "" + (false));
+    }
+
+    public String getMatchingText() {
+      return "label name";
+    }
   }
 
   private EditorCell createCollection_uvxm5p_a(EditorContext editorContext, SNode node) {
@@ -119,31 +145,5 @@ public class MatchingLabelStyleClassItem_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_uvxm5p_a4a(SNode node, EditorContext editorContext, IScope scope) {
     return SLinkOperations.getTarget(node, "query", true) != null;
-  }
-
-  public static class MatchingLabelStyleClassItem_generic_cellMenu_a0c0 extends AbstractCellMenuPart_Generic_Item {
-    public MatchingLabelStyleClassItem_generic_cellMenu_a0c0() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "hasNoLabel", "" + (true));
-    }
-
-    public String getMatchingText() {
-      return "null";
-    }
-  }
-
-  public static class MatchingLabelStyleClassItem_generic_cellMenu_a0d0 extends AbstractCellMenuPart_Generic_Item {
-    public MatchingLabelStyleClassItem_generic_cellMenu_a0d0() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "hasNoLabel", "" + (false));
-    }
-
-    public String getMatchingText() {
-      return "label name";
-    }
   }
 }

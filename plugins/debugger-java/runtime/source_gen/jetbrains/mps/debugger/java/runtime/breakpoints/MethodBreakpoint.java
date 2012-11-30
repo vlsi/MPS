@@ -141,7 +141,7 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
       return false;
     }
 
-    return eq_spo82x_a0d0j(myLocation, ((MethodBreakpoint) o).myLocation);
+    return eq_spo82x_a0d0p(myLocation, ((MethodBreakpoint) o).myLocation);
   }
 
   @Override
@@ -154,7 +154,7 @@ public class MethodBreakpoint extends JavaBreakpoint implements ILocationBreakpo
     return result;
   }
 
-  private static boolean eq_spo82x_a0d0j(Object a, Object b) {
+  private static boolean eq_spo82x_a0d0p(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

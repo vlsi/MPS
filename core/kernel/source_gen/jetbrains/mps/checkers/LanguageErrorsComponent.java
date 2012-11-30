@@ -28,9 +28,9 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.AbstractNodesReadListener;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import jetbrains.mps.project.IModule;
 
 public class LanguageErrorsComponent {
   private Map<SNode, Set<IErrorReporter>> myNodesToErrors = new HashMap<SNode, Set<IErrorReporter>>();
@@ -162,7 +162,7 @@ public class LanguageErrorsComponent {
     Set<SNode> frontier = new HashSet<SNode>(1);
     SetSequence.fromSet(frontier).addElement(root);
     Set<SNode> newFrontier = new HashSet<SNode>(1);
-    IScope scope = check_29uvfh_a0h0j(check_29uvfh_a0a7a9(check_29uvfh_a0a0h0j(SNodeOperations.getModel(root))));
+    IScope scope = check_29uvfh_a0h0v(check_29uvfh_a0a7a12(check_29uvfh_a0a0h0v(SNodeOperations.getModel(root))));
     while (!(SetSequence.fromSet(frontier).isEmpty())) {
       for (SNode node : frontier) {
         if (!(myCheckedRoot) || SetSequence.fromSet(myInvalidNodes).contains(node)) {
@@ -292,27 +292,6 @@ public class LanguageErrorsComponent {
     return (Result) result[0];
   }
 
-  private static IScope check_29uvfh_a0h0j(IModule checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getScope();
-    }
-    return null;
-  }
-
-  private static IModule check_29uvfh_a0a7a9(SModelDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-
-  private static SModelDescriptor check_29uvfh_a0a0h0j(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModelDescriptor();
-    }
-    return null;
-  }
-
   public class MyModelListener extends SModelAdapter {
     public MyModelListener() {
     }
@@ -353,5 +332,26 @@ public class LanguageErrorsComponent {
     public void modelDeleted(SModelDescriptor descriptor) {
       processModelRemoved(descriptor);
     }
+  }
+
+  private static IScope check_29uvfh_a0h0v(IModule checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getScope();
+    }
+    return null;
+  }
+
+  private static IModule check_29uvfh_a0a7a12(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+
+  private static SModelDescriptor check_29uvfh_a0a0h0v(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelDescriptor();
+    }
+    return null;
   }
 }

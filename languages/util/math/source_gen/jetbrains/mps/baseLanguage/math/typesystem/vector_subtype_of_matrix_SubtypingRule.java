@@ -18,7 +18,7 @@ public class vector_subtype_of_matrix_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public SNode getSubOrSuperType(SNode vectorType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_exb2lq_a0a0(SLinkOperations.getTarget(vectorType, "elementType", true), "" + SPropertyOperations.getInteger(vectorType, "height"));
+    return _quotation_createNode_exb2lq_a0a1(SLinkOperations.getTarget(vectorType, "elementType", true), "" + SPropertyOperations.getInteger(vectorType, "height"));
   }
 
   public String getApplicableConceptFQName() {
@@ -36,7 +36,7 @@ public class vector_subtype_of_matrix_SubtypingRule extends SubtypingRule_Runtim
     return false;
   }
 
-  private static SNode _quotation_createNode_exb2lq_a0a0(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_exb2lq_a0a1(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);

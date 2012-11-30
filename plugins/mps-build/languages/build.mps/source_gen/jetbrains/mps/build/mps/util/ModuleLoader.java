@@ -252,11 +252,11 @@ public class ModuleLoader {
   private boolean checkModuleReference(ModuleDescriptor md) {
     boolean success = true;
     ModuleReference moduleReference = md.getModuleReference();
-    if (neq_a6ewnz_a0c0h(SPropertyOperations.getString(myModule, "name"), moduleReference.getModuleFqName())) {
+    if (neq_a6ewnz_a0c0p(SPropertyOperations.getString(myModule, "name"), moduleReference.getModuleFqName())) {
       report("name in import doesn't match file content " + SPropertyOperations.getString(myModule, "name") + ", should be: " + moduleReference.getModuleFqName(), myOriginalModule);
       success = false;
     }
-    if (neq_a6ewnz_a0d0h(SPropertyOperations.getString(myModule, "uuid"), moduleReference.getModuleId().toString())) {
+    if (neq_a6ewnz_a0d0p(SPropertyOperations.getString(myModule, "uuid"), moduleReference.getModuleId().toString())) {
       report("module id in import doesn't match file content " + SPropertyOperations.getString(myModule, "name") + ", should be: " + moduleReference.getModuleId().toString(), myOriginalModule);
       success = false;
     }
@@ -608,7 +608,7 @@ public class ModuleLoader {
               SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true) :
               it
             );
-            return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a1a0a0a0a0b0d0r0q(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), relPath);
+            return SNodeOperations.isInstanceOf(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a1a0a0a0a0b0d0r0y(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(dep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true), "virtual_getRelativePath_5481553824944787371", new Object[]{}), relPath);
           }
         }))) {
           report("jar stub library should be extracted into build script: " + relPath, myOriginalModule);
@@ -777,34 +777,6 @@ public class ModuleLoader {
     genContext.showErrorMessage(node, message);
   }
 
-  private static boolean neq_a6ewnz_a0c0h(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
-  }
-
-  private static boolean neq_a6ewnz_a0d0h(Object a, Object b) {
-    return !((a != null ?
-      a.equals(b) :
-      a == b
-    ));
-  }
-
-  private static boolean eq_a6ewnz_a0a1a0a0a0a0b0d0r0q(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_a6ewnz_a0c0f0d0a1(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
   public static class ModuleLoaderException extends RuntimeException {
     private SNode node;
 
@@ -852,7 +824,7 @@ public class ModuleLoader {
             continue;
           }
 
-          if (eq_a6ewnz_a0c0f0d0a1(SPropertyOperations.getString(macro, "name"), macroName)) {
+          if (eq_a6ewnz_a0c0f0d0c13(SPropertyOperations.getString(macro, "name"), macroName)) {
             found = SNodeOperations.cast(macro, "jetbrains.mps.build.structure.BuildFolderMacro");
             break;
           }
@@ -882,5 +854,33 @@ public class ModuleLoader {
     public String shrinkPath(@Nullable String string) {
       throw new UnsupportedOperationException("cannot shrink");
     }
+  }
+
+  private static boolean neq_a6ewnz_a0c0p(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
+  }
+
+  private static boolean neq_a6ewnz_a0d0p(Object a, Object b) {
+    return !((a != null ?
+      a.equals(b) :
+      a == b
+    ));
+  }
+
+  private static boolean eq_a6ewnz_a0a1a0a0a0a0b0d0r0y(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_a6ewnz_a0c0f0d0c13(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

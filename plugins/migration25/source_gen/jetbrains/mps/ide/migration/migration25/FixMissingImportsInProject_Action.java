@@ -4,8 +4,6 @@ package jetbrains.mps.ide.migration.migration25;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -37,10 +35,11 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class FixMissingImportsInProject_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(FixMissingImportsInProject_Action.class);
 
   public FixMissingImportsInProject_Action() {
     super("Fix Missing Imports", "", ICON);
@@ -123,4 +122,6 @@ public class FixMissingImportsInProject_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(FixMissingImportsInProject_Action.class);
 }

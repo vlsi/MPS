@@ -33,7 +33,7 @@ public class typeof_BaseMappingRule_InferenceRule extends AbstractInferenceRule_
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1200922039515", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) _quotation_createNode_dxi99s_a0b0a0a(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nodeToCheck, "virtual_getTemplateType_1213877498511", new Object[]{})), (SNode) _quotation_createNode_dxi99s_a0b0a0a_0(SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, "labelDeclaration", false), "targetConcept", false)), false, false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) _quotation_createNode_dxi99s_a0b0a0b(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), nodeToCheck, "virtual_getTemplateType_1213877498511", new Object[]{})), (SNode) _quotation_createNode_dxi99s_a0b0a0b_0(SLinkOperations.getTarget(SLinkOperations.getTarget(nodeToCheck, "labelDeclaration", false), "targetConcept", false)), false, false, _info_12389875345);
       }
     }
   }
@@ -53,14 +53,14 @@ public class typeof_BaseMappingRule_InferenceRule extends AbstractInferenceRule_
     return false;
   }
 
-  private static SNode _quotation_createNode_dxi99s_a0b0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_dxi99s_a0b0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_dxi99s_a0b0a0a_0(Object parameter_1) {
+  private static SNode _quotation_createNode_dxi99s_a0b0a0b_0(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);

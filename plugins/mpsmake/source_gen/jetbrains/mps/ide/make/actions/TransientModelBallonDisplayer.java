@@ -29,9 +29,9 @@ import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.notification.impl.NotificationSettings;
+import jetbrains.mps.make.MakeNotification;
 import javax.swing.JComponent;
 import com.intellij.openapi.wm.StatusBar;
-import jetbrains.mps.make.MakeNotification;
 
 public class TransientModelBallonDisplayer implements Disposable {
   private static final String ID = "Saving Transient Models Is On";
@@ -71,11 +71,11 @@ public class TransientModelBallonDisplayer implements Disposable {
 
     Disposer.register(this, balloon);
 
-    Component component = check_45eojt_a0j0d(myWidget);
+    Component component = check_45eojt_a0j0i(myWidget);
     if (component != null && component.isShowing()) {
       showForComponent(component, balloon);
     } else {
-      component = check_45eojt_a0a0a01a3(WindowManager.getInstance().getStatusBar(myProject));
+      component = check_45eojt_a0a0a01a8(WindowManager.getInstance().getStatusBar(myProject));
       if (component != null && component.isShowing()) {
         showForComponent(component, balloon);
       } else {
@@ -124,20 +124,6 @@ public class TransientModelBallonDisplayer implements Disposable {
     ));
   }
 
-  private static JComponent check_45eojt_a0j0d(TransientModelsWidget checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getComponent();
-    }
-    return null;
-  }
-
-  private static JComponent check_45eojt_a0a0a01a3(StatusBar checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getComponent();
-    }
-    return null;
-  }
-
   private class MyMakeNotificationListener implements IMakeNotificationListener {
     private volatile boolean mySessionJustOpened;
 
@@ -168,5 +154,19 @@ public class TransientModelBallonDisplayer implements Disposable {
 
     public void sessionClosed(MakeNotification notification) {
     }
+  }
+
+  private static JComponent check_45eojt_a0j0i(TransientModelsWidget checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getComponent();
+    }
+    return null;
+  }
+
+  private static JComponent check_45eojt_a0a0a01a8(StatusBar checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getComponent();
+    }
+    return null;
   }
 }

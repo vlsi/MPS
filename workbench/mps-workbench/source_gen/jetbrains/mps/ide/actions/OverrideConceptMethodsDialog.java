@@ -102,7 +102,7 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
           String aRole = SNodeOperations.getContainingLinkRole(a);
           String bRole = SNodeOperations.getContainingLinkRole(b);
 
-          if (neq_6zqknj_a0d0c0a0a0a0d0a(aRole, bRole)) {
+          if (neq_6zqknj_a0d0c0a0a0a0d0l(aRole, bRole)) {
             return aRole.compareTo(bRole);
           }
 
@@ -129,7 +129,7 @@ public class OverrideConceptMethodsDialog extends GroupedNodesChooser {
     }).toGenericArray(SNodePointer.class);
   }
 
-  private static boolean neq_6zqknj_a0d0c0a0a0a0d0a(Object a, Object b) {
+  private static boolean neq_6zqknj_a0d0c0a0a0a0d0l(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

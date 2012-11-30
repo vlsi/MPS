@@ -4,25 +4,24 @@ package jetbrains.mps.baseLanguage.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
-  private static SNodePointer SNODE_POINTER_9ehkah_a0a0a0a0b0c0a0a0a0a0a0c = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Boolean");
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
   public Boolean_extends_boolean_2_SubtypingRule() {
   }
 
   public SNode getSubOrSuperType(SNode boolType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_9ehkah_a0a0();
+    return _quotation_createNode_9ehkah_a0a2();
   }
 
   public String getApplicableConceptFQName() {
@@ -31,7 +30,7 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      GeneratedMatchingPattern pattern = new Boolean_extends_boolean_2_SubtypingRule.Pattern_9ehkah_a0a0a0a2();
+      GeneratedMatchingPattern pattern = new Boolean_extends_boolean_2_SubtypingRule.Pattern_9ehkah_a0a0a0a4();
       this.myMatchingPattern = pattern;
       boolean b = pattern.match(argument);
       return new IsApplicableStatus(b, pattern);
@@ -42,14 +41,8 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
     return true;
   }
 
-  private static SNode _quotation_createNode_9ehkah_a0a0() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
-  }
-
-  public static class Pattern_9ehkah_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_9ehkah_a0a0a0a2() {
+  public static class Pattern_9ehkah_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_9ehkah_a0a0a0a4() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -60,7 +53,7 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
           return false;
         }
         {
-          SNodePointer pointer = SNODE_POINTER_9ehkah_a0a0a0a0b0c0a0a0a0a0a0c;
+          SNodePointer pointer = SNODE_POINTER_9ehkah_a0a0a0a0b0c0a0a0a0a0a0e;
           if (!(PatternUtil.matchReferentWithNode(pointer, nodeToMatch_Boolean_extends_boolean_2_7vgvj3_a0a.getReferenceTarget("classifier")))) {
             return false;
           }
@@ -83,4 +76,12 @@ public class Boolean_extends_boolean_2_SubtypingRule extends SubtypingRule_Runti
     public void performActions(Object o) {
     }
   }
+
+  private static SNode _quotation_createNode_9ehkah_a0a2() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
+  }
+
+  private static SNodePointer SNODE_POINTER_9ehkah_a0a0a0a0b0c0a0a0a0a0a0e = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Boolean");
 }

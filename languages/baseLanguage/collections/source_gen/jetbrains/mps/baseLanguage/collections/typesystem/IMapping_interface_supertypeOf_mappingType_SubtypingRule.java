@@ -20,7 +20,7 @@ public class IMapping_interface_supertypeOf_mappingType_SubtypingRule extends Su
   }
 
   public SNode getSubOrSuperType(SNode mappingType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_chrt0k_a0a0(SLinkOperations.getTarget(mappingType, "keyType", true), SLinkOperations.getTarget(mappingType, "valueType", true));
+    return _quotation_createNode_chrt0k_a0a1(SLinkOperations.getTarget(mappingType, "keyType", true), SLinkOperations.getTarget(mappingType, "valueType", true));
   }
 
   public String getApplicableConceptFQName() {
@@ -38,7 +38,7 @@ public class IMapping_interface_supertypeOf_mappingType_SubtypingRule extends Su
     return true;
   }
 
-  private static SNode _quotation_createNode_chrt0k_a0a0(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_chrt0k_a0a1(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;

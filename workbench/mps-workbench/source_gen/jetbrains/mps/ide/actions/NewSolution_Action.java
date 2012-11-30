@@ -5,7 +5,6 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -20,10 +19,10 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.logging.Logger;
 
 public class NewSolution_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("solution.png");
-  private static Logger LOG = Logger.getLogger(NewSolution_Action.class);
 
   public NewSolution_Action() {
     super("Solution", "", ICON);
@@ -89,4 +88,6 @@ public class NewSolution_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "NewSolution", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(NewSolution_Action.class);
 }

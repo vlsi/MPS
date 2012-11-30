@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-v01qrkic4whbqqp9vsyg0clnbor6by">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-uvseejb8lftjizgrik03igcx568a80" />
+<dependencies version="2" modelHash="9fatffbuvzfjbuz3td0qz6nlvtdy2av">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8w030na880sdk0wef94zwzf291mucgl" />
   <common hash="th874tzqmyules596nwk57nqsulzcw" />
-  <source id="5231630840089786268" name="TypesystemChecker" hash="eca68yud0d9sgvh64gqefefu85vs4n">
+  <source id="5231630840089786268" name="TypesystemChecker" hash="4gmefnm3fbrlbqlkllsk3ghyxe8maop">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TypesystemChecker.java" />
   </source>
-  <source id="3364928926666865010" name="TypesystemCheckerComponent" hash="-ci686su81hslbpodblol1ktv8jot71h">
+  <source id="3364928926666865010" name="TypesystemCheckerComponent" hash="-6d3qnm5gknqijt6gjd1g7mwt029tblb">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TypesystemCheckerComponent.java" />
   </source>

@@ -26,7 +26,7 @@ public class supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule exte
     if (SNodeOperations.isInstanceOf(elemType, "jetbrains.mps.baseLanguage.structure.PrimitiveType")) {
       elemType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), elemType, "virtual_getUnboxedType_1213877337320", new Object[]{});
     }
-    return _quotation_createNode_gxg199_a2a0(elemType);
+    return _quotation_createNode_gxg199_a2a1(elemType);
   }
 
   public String getApplicableConceptFQName() {
@@ -44,7 +44,7 @@ public class supertypesOf_SequenceType_ClassifierTypeIterable_SubtypingRule exte
     return true;
   }
 
-  private static SNode _quotation_createNode_gxg199_a2a0(Object parameter_1) {
+  private static SNode _quotation_createNode_gxg199_a2a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

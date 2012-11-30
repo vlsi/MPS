@@ -20,7 +20,7 @@ public class any_type_subtypeOf_LowerBoundType_SubtypingRule extends SubtypingRu
     if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.LowerBoundType")) {
       return null;
     }
-    return _quotation_createNode_rqn411_a1a0(type);
+    return _quotation_createNode_rqn411_a1a1(type);
   }
 
   public String getApplicableConceptFQName() {
@@ -38,7 +38,7 @@ public class any_type_subtypeOf_LowerBoundType_SubtypingRule extends SubtypingRu
     return false;
   }
 
-  private static SNode _quotation_createNode_rqn411_a1a0(Object parameter_1) {
+  private static SNode _quotation_createNode_rqn411_a1a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", null, null, GlobalScope.getInstance(), false);

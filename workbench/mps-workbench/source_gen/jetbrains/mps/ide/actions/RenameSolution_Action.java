@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -13,10 +12,10 @@ import jetbrains.mps.project.Solution;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.refactoring.RenameSolutionDialog;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.logging.Logger;
 
 public class RenameSolution_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(RenameSolution_Action.class);
 
   public RenameSolution_Action() {
     super("Rename Solution", "", ICON);
@@ -71,4 +70,6 @@ public class RenameSolution_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "RenameSolution", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(RenameSolution_Action.class);
 }

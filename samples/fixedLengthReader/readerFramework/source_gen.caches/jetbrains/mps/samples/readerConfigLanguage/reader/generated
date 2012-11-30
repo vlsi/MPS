@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="6ekzsrphrg81hvkdslf2ccm027wx5bt">
+<dependencies version="2" modelHash="-1kr0439l1vrao7ru0bczzefgdukbh1q">
   <common hash="-cu37p8fnmjbt1urze9qxx2381jkw3rc" />
-  <source id="3515521059660696290" name="ReaderStrategy" hash="-3wl5bh5biwsgyinnjpg871p8g7jf0gj">
+  <source id="3515521059660696290" name="ReaderStrategy" hash="dzs76wu9eejal04y7p0i66cymmaff1x">
     <file name="ReaderStrategy.java" />
   </source>
-  <source id="3515521059660696316" name="Reader" hash="1zkfple3fxksq4dehabeomek1skztn4">
+  <source id="3515521059660696316" name="Reader" hash="-xe50j0te57rmmgjdyqpw8wk15f1v9l">
     <file name="Reader.java" />
   </source>
 </dependencies>

@@ -15,7 +15,7 @@ public class int_extends_long_SubtypingRule extends SubtypingRule_Runtime implem
   }
 
   public SNode getSubOrSuperType(SNode intType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_z16tdf_a0a0();
+    return _quotation_createNode_z16tdf_a0a1();
   }
 
   public String getApplicableConceptFQName() {
@@ -33,7 +33,7 @@ public class int_extends_long_SubtypingRule extends SubtypingRule_Runtime implem
     return false;
   }
 
-  private static SNode _quotation_createNode_z16tdf_a0a0() {
+  private static SNode _quotation_createNode_z16tdf_a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

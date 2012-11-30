@@ -15,13 +15,13 @@ import java.awt.Color;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import javax.swing.Action;
-import jetbrains.mps.smodel.SNodePointer;
 import javax.swing.Scrollable;
 import java.awt.BorderLayout;
 import java.awt.event.MouseAdapter;
 import java.awt.Graphics;
 import java.awt.Dimension;
 import java.awt.Rectangle;
+import jetbrains.mps.smodel.SNodePointer;
 
 public class ShowCFGDialog extends DialogWrapper {
   private JScrollPane myScrollPane;
@@ -41,7 +41,7 @@ public class ShowCFGDialog extends DialogWrapper {
       public void mousePressed(MouseEvent event, final IBlock block) {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
-            SNode node = check_wx2hhz_a0a0a0a0a0a0a0a8a0(block.getSourceNode());
+            SNode node = check_wx2hhz_a0a0a0a0a0a0a0a8a3(block.getSourceNode());
             if (node != null) {
               NavigationSupport.getInstance().openNode(operationContext, node, true, true);
             }
@@ -63,13 +63,6 @@ public class ShowCFGDialog extends DialogWrapper {
 
   protected Action[] createActions() {
     return new Action[0];
-  }
-
-  private static SNode check_wx2hhz_a0a0a0a0a0a0a0a8a0(SNodePointer checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getNode();
-    }
-    return null;
   }
 
   private class MyComponent extends JComponent implements Scrollable {
@@ -115,5 +108,12 @@ public class ShowCFGDialog extends DialogWrapper {
     public boolean getScrollableTracksViewportHeight() {
       return false;
     }
+  }
+
+  private static SNode check_wx2hhz_a0a0a0a0a0a0a0a8a3(SNodePointer checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getNode();
+    }
+    return null;
   }
 }

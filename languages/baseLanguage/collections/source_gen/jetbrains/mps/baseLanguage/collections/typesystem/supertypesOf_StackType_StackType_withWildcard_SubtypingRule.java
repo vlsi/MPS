@@ -15,7 +15,7 @@ public class supertypesOf_StackType_StackType_withWildcard_SubtypingRule extends
   }
 
   public SNode getSubOrSuperType(SNode stackType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_p2tngs_a0a0();
+    return _quotation_createNode_p2tngs_a0a1();
   }
 
   public String getApplicableConceptFQName() {
@@ -37,7 +37,7 @@ public class supertypesOf_StackType_StackType_withWildcard_SubtypingRule extends
     return true;
   }
 
-  private static SNode _quotation_createNode_p2tngs_a0a0() {
+  private static SNode _quotation_createNode_p2tngs_a0a1() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.StackType", null, null, GlobalScope.getInstance(), false);

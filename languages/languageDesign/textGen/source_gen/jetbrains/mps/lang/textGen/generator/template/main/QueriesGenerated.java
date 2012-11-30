@@ -78,20 +78,12 @@ public class QueriesGenerated {
     return !(TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(_context.getNode(), "value", true)), _quotation_createNode_x583g4_b0a0a0m()));
   }
 
-  public static Object propertyMacro_GetPropertyValue_8063439325683021801(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "encoding", true), "jetbrains.mps.lang.textGen.structure.EncodingLiteral"), "encoding");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1233679994384(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1234790549495(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1234804322215(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+  public static Object propertyMacro_GetPropertyValue_8063439325683021801(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "encoding", true), "jetbrains.mps.lang.textGen.structure.EncodingLiteral"), "encoding");
   }
 
   public static Object propertyMacro_GetPropertyValue_1233930145391(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -100,6 +92,14 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1237212089067(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SModelOperations.getModelName(SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "baseTextGen", false))) + "." + SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "baseTextGen", false), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234790549495(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1234804322215(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_1237213071541(final IOperationContext operationContext, final PropertyMacroContext _context) {

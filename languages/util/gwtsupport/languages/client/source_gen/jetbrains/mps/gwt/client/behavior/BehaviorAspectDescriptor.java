@@ -7,13 +7,11 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.gwt.client.structure.CaseSensitive", "jetbrains.mps.gwt.client.structure.DefaultExcludes", "jetbrains.mps.gwt.client.structure.EntryPoint", "jetbrains.mps.gwt.client.structure.Exclude", "jetbrains.mps.gwt.client.structure.Excludes", "jetbrains.mps.gwt.client.structure.GWTModule", "jetbrains.mps.gwt.client.structure.Include", "jetbrains.mps.gwt.client.structure.Includes", "jetbrains.mps.gwt.client.structure.Inherits", "jetbrains.mps.gwt.client.structure.Path", "jetbrains.mps.gwt.client.structure.Pattern", "jetbrains.mps.gwt.client.structure.Public", "jetbrains.mps.gwt.client.structure.RenameTo", "jetbrains.mps.gwt.client.structure.Source", "jetbrains.mps.gwt.client.structure.SuperSource"};
-
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 5:
         return new GWTModule_BehaviorDescriptor();
       case 2:
@@ -48,4 +46,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
+
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.gwt.client.structure.CaseSensitive", "jetbrains.mps.gwt.client.structure.DefaultExcludes", "jetbrains.mps.gwt.client.structure.EntryPoint", "jetbrains.mps.gwt.client.structure.Exclude", "jetbrains.mps.gwt.client.structure.Excludes", "jetbrains.mps.gwt.client.structure.GWTModule", "jetbrains.mps.gwt.client.structure.Include", "jetbrains.mps.gwt.client.structure.Includes", "jetbrains.mps.gwt.client.structure.Inherits", "jetbrains.mps.gwt.client.structure.Path", "jetbrains.mps.gwt.client.structure.Pattern", "jetbrains.mps.gwt.client.structure.Public", "jetbrains.mps.gwt.client.structure.RenameTo", "jetbrains.mps.gwt.client.structure.Source", "jetbrains.mps.gwt.client.structure.SuperSource"};
 }

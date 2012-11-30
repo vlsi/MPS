@@ -43,7 +43,7 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
 
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
-      GeneratedMatchingPattern pattern = new list_covariant_with_extends_InequationReplacementRule.Pattern_2juelu_a0a0a0a3();
+      GeneratedMatchingPattern pattern = new list_covariant_with_extends_InequationReplacementRule.Pattern_2juelu_a0a0a0a6();
       this.myMatchingPattern1 = pattern;
       boolean b = pattern.match(node);
       return new IsApplicableStatus(b, pattern);
@@ -52,7 +52,7 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
 
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
-      GeneratedMatchingPattern pattern = new list_covariant_with_extends_InequationReplacementRule.Pattern_2juelu_a0a0a0a4();
+      GeneratedMatchingPattern pattern = new list_covariant_with_extends_InequationReplacementRule.Pattern_2juelu_a0a0a0a7();
       this.myMatchingPattern2 = pattern;
       boolean b = pattern.match(node);
       return new IsApplicableStatus(b, pattern);
@@ -67,10 +67,10 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
     return "jetbrains.mps.baseLanguage.collections.structure.ListType";
   }
 
-  public static class Pattern_2juelu_a0a0a0a3 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_2juelu_a0a0a0a6 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_sub;
 
-    public Pattern_2juelu_a0a0a0a3() {
+    public Pattern_2juelu_a0a0a0a6() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -115,10 +115,10 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
     }
   }
 
-  public static class Pattern_2juelu_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
+  public static class Pattern_2juelu_a0a0a0a7 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ SNode patternVar_super;
 
-    public Pattern_2juelu_a0a0a0a4() {
+    public Pattern_2juelu_a0a0a0a7() {
     }
 
     public boolean match(SNode nodeToMatch) {

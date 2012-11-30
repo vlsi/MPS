@@ -318,7 +318,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   }
 
   private Object _getData(String id) {
-    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a41(this.getCurrentNode(), this);
+    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a13(this.getCurrentNode(), this);
     if (operation == null) {
       return null;
     }
@@ -406,45 +406,17 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
   }
 
   private void showDetails(MPSTreeNode treeNode) {
-    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a91(treeNode);
+    AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a63(treeNode);
     myDetailsTree.setOperation(operation);
   }
 
   private void showDetails(Collection<? extends MPSTreeNode> treeNodes) {
     List<AbstractOperation> operations = new ArrayList<AbstractOperation>();
     for (MPSTreeNode treeNode : treeNodes) {
-      AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a1a02(treeNode);
+      AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a1a73(treeNode);
       operations.add(operation);
     }
     myDetailsTree.setOperations(operations);
-  }
-
-  private static Object check_kyyn1p_a0a0a4c(MPSTreeNode checkedDotOperand, TypeSystemTraceTree.DetailsTree checkedDotThisExpression) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getUserObject();
-    }
-    return null;
-  }
-
-  private static Object check_kyyn1p_a0a0a41(MPSTreeNode checkedDotOperand, TypeSystemTraceTree checkedDotThisExpression) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getUserObject();
-    }
-    return null;
-  }
-
-  private static Object check_kyyn1p_a0a0a91(MPSTreeNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getUserObject();
-    }
-    return null;
-  }
-
-  private static Object check_kyyn1p_a0a0a1a02(MPSTreeNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getUserObject();
-    }
-    return null;
   }
 
   private class ShowDetailsUpdater implements TreeSelectionListener {
@@ -613,7 +585,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
     }
 
     private Object _getData(String id) {
-      AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a4c(this.getCurrentNode(), this);
+      AbstractOperation operation = (AbstractOperation) check_kyyn1p_a0a0a6ob(this.getCurrentNode(), this);
       if (operation == null) {
         return null;
       }
@@ -670,5 +642,33 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
         }
       }
     }
+  }
+
+  private static Object check_kyyn1p_a0a0a13(MPSTreeNode checkedDotOperand, TypeSystemTraceTree checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getUserObject();
+    }
+    return null;
+  }
+
+  private static Object check_kyyn1p_a0a0a63(MPSTreeNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getUserObject();
+    }
+    return null;
+  }
+
+  private static Object check_kyyn1p_a0a0a1a73(MPSTreeNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getUserObject();
+    }
+    return null;
+  }
+
+  private static Object check_kyyn1p_a0a0a6ob(MPSTreeNode checkedDotOperand, TypeSystemTraceTree.DetailsTree checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getUserObject();
+    }
+    return null;
   }
 }

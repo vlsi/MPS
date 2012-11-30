@@ -40,7 +40,7 @@ public class typeof_DivOperationFraction_InferenceRule extends AbstractInference
             final SNode rightType = typeCheckingContext.getRepresentative(rightExpressionType_typevar_1418611629041884929);
             typeCheckingContext.whenConcrete(rightType, new Runnable() {
               public void run() {
-                SNode opType = typeCheckingContext.getOverloadedOperationType(_quotation_createNode_ladpqm_a0a0a0a0e0a(), typeCheckingContext.getExpandedNode(leftType), typeCheckingContext.getExpandedNode(rightType));
+                SNode opType = typeCheckingContext.getOverloadedOperationType(_quotation_createNode_ladpqm_a0a0a0a0e0b(), typeCheckingContext.getExpandedNode(leftType), typeCheckingContext.getExpandedNode(rightType));
                 if ((opType != null)) {
                   {
                     SNode _nodeToCheck_1029348928467 = fraction;
@@ -76,7 +76,7 @@ public class typeof_DivOperationFraction_InferenceRule extends AbstractInference
     return false;
   }
 
-  private static SNode _quotation_createNode_ladpqm_a0a0a0a0e0a() {
+  private static SNode _quotation_createNode_ladpqm_a0a0a0a0e0b() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

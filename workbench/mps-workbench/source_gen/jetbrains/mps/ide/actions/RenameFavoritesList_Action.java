@@ -5,7 +5,6 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
@@ -17,10 +16,10 @@ import jetbrains.mps.ide.projectPane.favorites.FavoritesProjectPane;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.ide.projectPane.favorites.MPSFavoritesManager;
 import java.util.List;
+import jetbrains.mps.logging.Logger;
 
 public class RenameFavoritesList_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("menu-replace.png");
-  private static Logger LOG = Logger.getLogger(RenameFavoritesList_Action.class);
 
   public RenameFavoritesList_Action() {
     super("Rename Favorites List", "", ICON);
@@ -80,4 +79,6 @@ public class RenameFavoritesList_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "RenameFavoritesList", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(RenameFavoritesList_Action.class);
 }

@@ -30,7 +30,7 @@ public class check_UsingStatement_NonTypesystemRule extends AbstractNonTypesyste
 outer:
     for (SNode resource : SLinkOperations.getTargets(usingStatement, "resource", true)) {
       SNode type = TypeChecker.getInstance().getTypeOf(resource);
-      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_o2kqy_b0a1a0a0())) {
+      if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_o2kqy_b0a1a0a1())) {
         continue;
       }
       SNode classifierType = TypeChecker.getInstance().getRuntimeSupport().coerce_(type, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), false, typeCheckingContext);
@@ -70,7 +70,7 @@ outer:
     return false;
   }
 
-  private static SNode _quotation_createNode_o2kqy_b0a1a0a0() {
+  private static SNode _quotation_createNode_o2kqy_b0a1a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~Closeable")));

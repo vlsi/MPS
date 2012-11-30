@@ -16,7 +16,7 @@ public class UnitPositionInfo extends PositionInfo {
 
   public UnitPositionInfo(@NotNull Element element) throws DataConversionException {
     super(element);
-    myUnitName = check_9jw0bh_a0b0b(element.getAttribute(UnitPositionInfo.UNIT_NAME));
+    myUnitName = check_9jw0bh_a0b0d(element.getAttribute(UnitPositionInfo.UNIT_NAME));
   }
 
   @Override
@@ -54,7 +54,7 @@ public class UnitPositionInfo extends PositionInfo {
     return myUnitName.compareTo(upi.myUnitName);
   }
 
-  private static String check_9jw0bh_a0b0b(Attribute checkedDotOperand) {
+  private static String check_9jw0bh_a0b0d(Attribute checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getValue();
     }

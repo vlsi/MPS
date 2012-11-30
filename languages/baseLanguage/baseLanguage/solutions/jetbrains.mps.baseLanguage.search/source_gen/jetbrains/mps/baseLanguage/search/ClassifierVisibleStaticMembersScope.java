@@ -23,10 +23,10 @@ public class ClassifierVisibleStaticMembersScope extends ClassifierVisibleMember
     if (classifier == null) {
       return null;
     }
-    return _quotation_createNode_ctg1ot_a1a0(classifier);
+    return _quotation_createNode_ctg1ot_a1a1(classifier);
   }
 
-  private static SNode _quotation_createNode_ctg1ot_a1a0(Object parameter_1) {
+  private static SNode _quotation_createNode_ctg1ot_a1a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("classifier", (SNode) parameter_1);

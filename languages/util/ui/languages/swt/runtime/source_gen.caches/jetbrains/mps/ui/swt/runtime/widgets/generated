@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-bbw1j7sbel6vml77yiwkpo5blcwchoa">
+<dependencies version="2" modelHash="-7s1337wl11380i7iw76ev61zew5gled">
   <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt(jetbrains.mps.ui.swt.runtime/org.eclipse.swt@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-uvseejb8lftjizgrik03igcx568a80" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-8w030na880sdk0wef94zwzf291mucgl" />
   <common hash="-dqpv554ddf38uubjoeldp3f8xt9ijqi" />
-  <source id="9003987136928267844" name="ControlIterator" hash="-4l0yagibmuoq0sy6nv79gnu56kwlqx7">
+  <source id="9003987136928267844" name="ControlIterator" hash="-566kxwf1rwbx4xrzl7egb4o7vqkyra0">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ControlIterator.java" />
   </source>
-  <source id="9201869079511503267" name="ExpandController" hash="db3z0lyatulrowtlx5sthuvx7z9tcsv">
+  <source id="9201869079511503267" name="ExpandController" hash="c3pknghx1etnha0zfax69qtvk8gihuu">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ExpandController.java" />
   </source>
-  <source id="4983682755224323286" name="StubDialog" hash="-ee6fhjgrhur4p74gzqg31fkxyalvra2">
+  <source id="4983682755224323286" name="StubDialog" hash="-c21qk62aewg7jwmg3l76j912fmetqmk">
     <dep model="f:java_stub#69934240-945d-492b-83e7-39bda70200e7#org.eclipse.swt(jetbrains.mps.ui.swt.runtime/org.eclipse.swt@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="StubDialog.java" />

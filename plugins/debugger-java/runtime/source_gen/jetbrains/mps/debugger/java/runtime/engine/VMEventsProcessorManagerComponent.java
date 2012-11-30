@@ -55,7 +55,7 @@ public class VMEventsProcessorManagerComponent implements ProjectComponent {
 
   public EventsProcessor getEventsProcessor(final DebugSession session) {
     synchronized (myEventProcessorToSessionMap) {
-      EventsProcessor processor = check_4p75cp_a0a0a0f(MapSequence.fromMap(myEventProcessorToSessionMap).findFirst(new IWhereFilter<IMapping<EventsProcessor, DebugSession>>() {
+      EventsProcessor processor = check_4p75cp_a0a0a0k(MapSequence.fromMap(myEventProcessorToSessionMap).findFirst(new IWhereFilter<IMapping<EventsProcessor, DebugSession>>() {
         public boolean accept(IMapping<EventsProcessor, DebugSession> it) {
           return it.value() == session;
         }
@@ -118,13 +118,6 @@ public class VMEventsProcessorManagerComponent implements ProjectComponent {
     return project.getComponent(VMEventsProcessorManagerComponent.class);
   }
 
-  private static EventsProcessor check_4p75cp_a0a0a0f(IMapping<EventsProcessor, DebugSession> checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.key();
-    }
-    return null;
-  }
-
   private class MyDebugProcessesMulticaster implements DebugProcessListener {
     private MyDebugProcessesMulticaster() {
     }
@@ -160,5 +153,12 @@ public class VMEventsProcessorManagerComponent implements ProjectComponent {
         listener.paused(suspendContext);
       }
     }
+  }
+
+  private static EventsProcessor check_4p75cp_a0a0a0k(IMapping<EventsProcessor, DebugSession> checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.key();
+    }
+    return null;
   }
 }

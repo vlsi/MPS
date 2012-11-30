@@ -20,9 +20,6 @@ public class MPSInstance_Configuration_Editor extends SettingsEditorEx<MPSInstan
   private FieldWithPathChooseDialog myConfigurationPath = new FieldWithPathChooseDialog();
   private ProjectChooser myProjectChooser = new ProjectChooser();
 
-  public MPSInstance_Configuration_Editor() {
-  }
-
   public void disposeEditor() {
   }
 
@@ -61,5 +58,8 @@ public class MPSInstance_Configuration_Editor extends SettingsEditorEx<MPSInstan
     mySystemPath.setText(configuration.expandPath(configuration.getSystemPath()));
     myConfigurationPath.setText(configuration.expandPath(configuration.getConfigurationPath()));
     myProjectChooser.reset(configuration.getOpenCurrentProject(), configuration.expandPath(configuration.getProjectToOpen()));
+  }
+
+  public MPSInstance_Configuration_Editor() {
   }
 }

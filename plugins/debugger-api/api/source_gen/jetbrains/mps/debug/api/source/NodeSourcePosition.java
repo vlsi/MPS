@@ -25,14 +25,14 @@ public class NodeSourcePosition extends SourcePosition {
 
     NodeSourcePosition nodePosition = ((NodeSourcePosition) object);
 
-    return eq_1z1n6b_a0e0b(myNode, nodePosition.myNode);
+    return eq_1z1n6b_a0e0d(myNode, nodePosition.myNode);
   }
 
   public SNode getNode() {
     return myNode.getNode();
   }
 
-  private static boolean eq_1z1n6b_a0e0b(Object a, Object b) {
+  private static boolean eq_1z1n6b_a0e0d(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

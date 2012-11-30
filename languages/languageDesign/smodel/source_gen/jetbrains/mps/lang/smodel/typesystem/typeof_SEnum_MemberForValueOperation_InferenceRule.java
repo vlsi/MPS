@@ -20,7 +20,7 @@ public class typeof_SEnum_MemberForValueOperation_InferenceRule extends Abstract
     {
       SNode _nodeToCheck_1029348928467 = operation;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240333106575", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240333106577", true), (SNode) _quotation_createNode_2jv26p_a0a0a(SEnumOperation_Behavior.call_getEnum_1240931322043(operation)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1240333106577", true), (SNode) _quotation_createNode_2jv26p_a0a0b(SEnumOperation_Behavior.call_getEnum_1240931322043(operation)), _info_12389875345);
     }
   }
 
@@ -39,7 +39,7 @@ public class typeof_SEnum_MemberForValueOperation_InferenceRule extends Abstract
     return false;
   }
 
-  private static SNode _quotation_createNode_2jv26p_a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_2jv26p_a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SEnumMemberType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReferenceTarget("enum", (SNode) parameter_1);

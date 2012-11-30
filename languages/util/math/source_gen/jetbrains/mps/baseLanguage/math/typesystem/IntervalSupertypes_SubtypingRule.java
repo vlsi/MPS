@@ -20,7 +20,7 @@ public class IntervalSupertypes_SubtypingRule extends SubtypingRule_Runtime impl
   }
 
   public SNode getSubOrSuperType(SNode intervalType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_7ws3t7_a0a0(SLinkOperations.getTarget(intervalType, "elementType", true));
+    return _quotation_createNode_7ws3t7_a0a1(SLinkOperations.getTarget(intervalType, "elementType", true));
   }
 
   public String getApplicableConceptFQName() {
@@ -38,7 +38,7 @@ public class IntervalSupertypes_SubtypingRule extends SubtypingRule_Runtime impl
     return false;
   }
 
-  private static SNode _quotation_createNode_7ws3t7_a0a0(Object parameter_1) {
+  private static SNode _quotation_createNode_7ws3t7_a0a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

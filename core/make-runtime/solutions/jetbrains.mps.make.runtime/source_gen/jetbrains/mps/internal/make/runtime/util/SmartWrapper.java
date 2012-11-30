@@ -44,7 +44,7 @@ public class SmartWrapper<T> {
     if (!(that instanceof SmartWrapper)) {
       return false;
     }
-    return eq_awov2t_a0c0d(this.towrap, ((SmartWrapper) that).towrap);
+    return eq_awov2t_a0c0h(this.towrap, ((SmartWrapper) that).towrap);
   }
 
   @Override
@@ -57,7 +57,7 @@ public class SmartWrapper<T> {
     return h;
   }
 
-  private static boolean eq_awov2t_a0c0d(Object a, Object b) {
+  private static boolean eq_awov2t_a0c0h(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

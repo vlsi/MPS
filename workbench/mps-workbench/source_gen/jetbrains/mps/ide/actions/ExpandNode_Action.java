@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -15,10 +14,10 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ui.MPSTree;
 import javax.swing.tree.TreePath;
 import jetbrains.mps.ide.ui.MPSTreeNode;
+import jetbrains.mps.logging.Logger;
 
 public class ExpandNode_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ExpandNode_Action.class);
 
   public ExpandNode_Action() {
     super("Expand All", "", ICON);
@@ -68,4 +67,6 @@ public class ExpandNode_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "ExpandNode", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ExpandNode_Action.class);
 }

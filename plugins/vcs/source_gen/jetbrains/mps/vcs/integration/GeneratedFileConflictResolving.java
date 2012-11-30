@@ -15,8 +15,8 @@ import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vcs.merge.MergeProvider;
 import com.intellij.openapi.vcs.FileStatus;
-import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFileAdapter;
+import com.intellij.openapi.vcs.AbstractVcs;
 
 public class GeneratedFileConflictResolving extends AbstractProjectComponent {
   private ProjectLevelVcsManager myVcsManager;
@@ -48,7 +48,7 @@ public class GeneratedFileConflictResolving extends AbstractProjectComponent {
         return;
       }
 
-      MergeProvider mergeProvider = check_tqtyvq_a0d0a0c(myVcsManager.getVcsFor(file));
+      MergeProvider mergeProvider = check_tqtyvq_a0d0a0h(myVcsManager.getVcsFor(file));
       if (mergeProvider != null) {
         FileStatus status = myFileStatusManager.getStatus(file);
         if (status == FileStatus.MERGED_WITH_CONFLICTS || status == FileStatus.MERGED_WITH_BOTH_CONFLICTS || status == FileStatus.MERGED_WITH_PROPERTY_CONFLICTS) {
@@ -57,13 +57,6 @@ public class GeneratedFileConflictResolving extends AbstractProjectComponent {
         }
       }
     }
-  }
-
-  private static MergeProvider check_tqtyvq_a0d0a0c(AbstractVcs checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getMergeProvider();
-    }
-    return null;
   }
 
   private class MyFileListener extends VirtualFileAdapter {
@@ -79,5 +72,12 @@ public class GeneratedFileConflictResolving extends AbstractProjectComponent {
     public void beforeFileDeletion(VirtualFileEvent event) {
       resolveIfNeeded(event);
     }
+  }
+
+  private static MergeProvider check_tqtyvq_a0d0a0h(AbstractVcs checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getMergeProvider();
+    }
+    return null;
   }
 }

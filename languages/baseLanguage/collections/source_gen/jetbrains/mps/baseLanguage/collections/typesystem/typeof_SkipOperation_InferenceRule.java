@@ -21,7 +21,7 @@ public class typeof_SkipOperation_InferenceRule extends AbstractInferenceRule_Ru
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(op, "elementsToSkip", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184847107857", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184847100456", true), (SNode) _quotation_createNode_kphkc8_a0a0a(), true, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1184847100456", true), (SNode) _quotation_createNode_kphkc8_a0a0b(), true, true, _info_12389875345);
       }
     }
     RulesFunctions_Collections.setInputSequenceType(typeCheckingContext, op, op);
@@ -42,7 +42,7 @@ public class typeof_SkipOperation_InferenceRule extends AbstractInferenceRule_Ru
     return false;
   }
 
-  private static SNode _quotation_createNode_kphkc8_a0a0a() {
+  private static SNode _quotation_createNode_kphkc8_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

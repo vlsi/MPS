@@ -99,6 +99,11 @@ public class QueriesGenerated {
     return !(SPropertyOperations.hasValue(_context.getNode(), "unit", "KWH", "USD_KWH"));
   }
 
+  public static Object propertyMacro_GetPropertyValue_1197662782219(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    String prefix = NameUtil.capitalize(NameUtil.shortNameFromLongName(_context.getInputModel().getLongName()));
+    return prefix + "RegistryBuilder";
+  }
+
   public static Object propertyMacro_GetPropertyValue_1197663015302(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return NameUtil.decapitalize(SPropertyOperations.getString(_context.getNode(), "name"));
   }
@@ -119,11 +124,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1197663161045(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return "setUp" + SPropertyOperations.getString(_context.getNode(), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1197662782219(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    String prefix = NameUtil.capitalize(NameUtil.shortNameFromLongName(_context.getInputModel().getLongName()));
-    return prefix + "RegistryBuilder";
   }
 
   public static Object propertyMacro_GetPropertyValue_1197670869156(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -265,8 +265,6 @@ public class QueriesGenerated {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _2_quantity;
-              private Iterator<SNode> _2_quantity_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -302,6 +300,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private SNode _2_quantity;
+              private Iterator<SNode> _2_quantity_it;
             };
           }
         };
@@ -317,8 +318,6 @@ __switch__:
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _2_postingRule;
-              private Iterator<SNode> _2_postingRule_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -354,6 +353,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private SNode _2_postingRule;
+              private Iterator<SNode> _2_postingRule_it;
             };
           }
         };

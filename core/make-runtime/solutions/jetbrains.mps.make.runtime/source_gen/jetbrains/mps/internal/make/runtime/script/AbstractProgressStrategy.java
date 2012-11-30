@@ -42,13 +42,6 @@ public abstract class AbstractProgressStrategy {
     return current;
   }
 
-  private static boolean eq_idfyc1_a0a0b0n0(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
   public class Work implements IProgress {
     private AbstractProgressStrategy.Work prev;
     private String name;
@@ -133,7 +126,7 @@ public abstract class AbstractProgressStrategy {
     public AbstractProgressStrategy.Work matchingOrTotal(String name) {
       AbstractProgressStrategy.Work wrk = this;
       while (wrk.prev != null) {
-        if (eq_idfyc1_a0a0b0n0(wrk.name, name)) {
+        if (eq_idfyc1_a0a0b0u01(wrk.name, name)) {
           return wrk;
         }
         wrk = wrk.prev;
@@ -186,5 +179,12 @@ public abstract class AbstractProgressStrategy {
     public int workLeft() {
       return lastProgress().workLeft();
     }
+  }
+
+  private static boolean eq_idfyc1_a0a0b0u01(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

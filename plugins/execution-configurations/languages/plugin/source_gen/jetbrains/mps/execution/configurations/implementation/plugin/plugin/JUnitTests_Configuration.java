@@ -4,12 +4,9 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitSettings_Configuration;
 import jetbrains.mps.baseLanguage.execution.api.JavaRunParameters_Configuration;
-import com.intellij.openapi.project.Project;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
 import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
@@ -20,6 +17,7 @@ import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes2;
 import java.util.List;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.project.ProjectHelper;
+import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.execution.configurations.RunProfileState;
 import com.intellij.execution.Executor;
@@ -30,17 +28,14 @@ import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
-  protected static Log log = LogFactory.getLog(JUnitTests_Configuration.class);
   @NotNull
   private JUnitTests_Configuration.MyState myState = new JUnitTests_Configuration.MyState();
   private JUnitSettings_Configuration myJUnitSettings = new JUnitSettings_Configuration();
   private JavaRunParameters_Configuration myJavaRunParameters = new JavaRunParameters_Configuration();
-
-  public JUnitTests_Configuration(Project project, JUnitTests_Configuration_Factory factory, String name) {
-    super(project, factory, name);
-  }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
     this.getJUnitSettings().checkConfiguration();
@@ -142,11 +137,11 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
   }
 
   public void migrate() {
-    if (isNotEmpty_p90f5h_a0a0q(this.getModel())) {
+    if (isNotEmpty_p90f5h_a0a0t(this.getModel())) {
       this.getJUnitSettings().setModel(this.getModel());
       this.setModel(null);
     }
-    if (isNotEmpty_p90f5h_a0b0q(this.getModule())) {
+    if (isNotEmpty_p90f5h_a0b0t(this.getModule())) {
       this.getJUnitSettings().setModule(this.getModule());
       this.setModule(null);
     }
@@ -179,6 +174,36 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
       }
     }
     return clone;
+  }
+
+  public class MyState {
+    public String myModel;
+    public String myModule;
+    public ClonableList<String> myTestCases = new ClonableList<String>();
+    public ClonableList<String> myTestMethods = new ClonableList<String>();
+    public JUnitRunTypes2 myRunType;
+
+    public MyState() {
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+      JUnitTests_Configuration.MyState state = new JUnitTests_Configuration.MyState();
+      state.myModel = myModel;
+      state.myModule = myModule;
+      if (myTestCases != null) {
+        state.myTestCases = myTestCases.clone();
+      }
+      if (myTestMethods != null) {
+        state.myTestMethods = myTestMethods.clone();
+      }
+      state.myRunType = myRunType;
+      return state;
+    }
+  }
+
+  public JUnitTests_Configuration(Project project, JUnitTests_Configuration_Factory factory, String name) {
+    super(project, factory, name);
   }
 
   @Nullable
@@ -216,37 +241,13 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     return new Object[]{this.getTestsToMake()};
   }
 
-  public static boolean isNotEmpty_p90f5h_a0a0q(String str) {
+  protected static Log log = LogFactory.getLog(JUnitTests_Configuration.class);
+
+  public static boolean isNotEmpty_p90f5h_a0a0t(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_p90f5h_a0b0q(String str) {
+  public static boolean isNotEmpty_p90f5h_a0b0t(String str) {
     return str != null && str.length() > 0;
-  }
-
-  public class MyState {
-    public String myModel;
-    public String myModule;
-    public ClonableList<String> myTestCases = new ClonableList<String>();
-    public ClonableList<String> myTestMethods = new ClonableList<String>();
-    public JUnitRunTypes2 myRunType;
-
-    public MyState() {
-    }
-
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-      JUnitTests_Configuration.MyState state = new JUnitTests_Configuration.MyState();
-      state.myModel = myModel;
-      state.myModule = myModule;
-      if (myTestCases != null) {
-        state.myTestCases = myTestCases.clone();
-      }
-      if (myTestMethods != null) {
-        state.myTestMethods = myTestMethods.clone();
-      }
-      state.myRunType = myRunType;
-      return state;
-    }
   }
 }
