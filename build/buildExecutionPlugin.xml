@@ -8,7 +8,6 @@
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
   <property name="artifacts.buildCoreEx" location="${build.dir}/artifacts/buildCoreEx" />
   <property name="artifacts.buildTroveCollections" location="${build.dir}/artifacts/buildTroveCollections" />
-  <property name="artifacts.buildUI" location="${build.dir}/artifacts/buildUI" />
   <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
   <property name="artifacts.buildDebuggerPlugin" location="${build.dir}/artifacts/buildDebuggerPlugin" />
   <property name="artifacts.IDEA" location="${idea_home}" />
@@ -302,7 +301,6 @@
     <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildUI.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildDebuggerPlugin.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
@@ -346,7 +344,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
-        <fileset file="${artifacts.buildUI}/lib/mps-ui.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-ui.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-api/lib/debugger-api.jar" />
         <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-java/lib/debugger-java.jar" />
@@ -390,7 +388,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-execution-api/lib/execution-api.jar" />
-        <fileset file="${artifacts.buildUI}/lib/mps-ui.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-ui.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-api/lib/debugger-api.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
@@ -447,7 +445,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-execution-api/lib/execution-api.jar" />
-        <fileset file="${artifacts.buildUI}/lib/mps-ui.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-ui.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-api/lib/debugger-api.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.execution.commands" />
@@ -511,7 +509,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
-        <fileset file="${artifacts.buildUI}/lib/mps-ui.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-ui.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-test.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-backend.jar" />
@@ -579,7 +577,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-execution-api/lib/execution-api.jar" />
-        <fileset file="${artifacts.buildUI}/lib/mps-ui.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-ui.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-api/lib/debugger-api.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.execution.commands" />
@@ -643,7 +641,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
-        <fileset file="${artifacts.buildUI}/lib/mps-ui.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-ui.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-execution-api/lib/execution-api.jar" />
         <pathelement path="${build.tmp}/java/out/execution-languages" />
@@ -692,7 +690,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
-        <fileset file="${artifacts.buildUI}/lib/mps-ui.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-ui.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-12.0.jar" />

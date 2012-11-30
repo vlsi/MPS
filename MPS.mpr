@@ -123,7 +123,6 @@
       <modulePath path="${project}/languages/core/stub/MPS.Editor/Editor.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/MPS.OpenAPI/OpenAPI.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/MPS.Platform/Platform.msd" folder="core.stub" />
-      <modulePath path="${project}/languages/core/stub/MPS.UI/UI.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/MPS.Workbench/Workbench.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/Testbench/Testbench.msd" folder="core.stub" />
       <modulePath path="${project}/languages/languageDesign/access/access.mpl" folder="core.language-design" />
