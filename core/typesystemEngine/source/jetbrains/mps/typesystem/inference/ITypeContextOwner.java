@@ -15,5 +15,9 @@
  */
 package jetbrains.mps.typesystem.inference;
 
+import jetbrains.mps.smodel.SNode;
+
 public interface ITypeContextOwner {
+  TypeCheckingContext createTypecheckingContext (SNode sNode, TypeContextManager typeContextManager);
+
 }

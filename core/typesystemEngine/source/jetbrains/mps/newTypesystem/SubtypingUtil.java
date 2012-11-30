@@ -18,6 +18,7 @@ package jetbrains.mps.newTypesystem;
 import gnu.trove.THashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 
@@ -85,7 +86,7 @@ public class SubtypingUtil {
     }.doEliminate(types);
   }
 
-  public static SNode createLeastCommonSupertype(List<SNode> types, TypeCheckingContextNew context) {
+  public static SNode createLeastCommonSupertype(List<SNode> types, TypeCheckingContext context) {
     if (types.isEmpty()) return  null;
     if (types.size() == 1) return types.iterator().next();
     if (types.size() > 1) {
@@ -99,7 +100,7 @@ public class SubtypingUtil {
     return LatticeUtil.meetNodes(new THashSet<SNode>(SubtypingUtil.leastCommonSuperTypes(types, context)));
   }
 
-  public static List<SNode> leastCommonSuperTypes(List<SNode> types, TypeCheckingContextNew context) {
+  public static List<SNode> leastCommonSuperTypes(List<SNode> types, TypeCheckingContext context) {
     if (types.size() == 0) {
       return null;
     }
@@ -124,7 +125,7 @@ public class SubtypingUtil {
     return SubtypingUtil.eliminateSuperTypes(types);
   }
 
-  private static Set<SNode> leastCommonSuperTypes(SNode left, SNode right, TypeCheckingContextNew context) {
+  private static Set<SNode> leastCommonSuperTypes(SNode left, SNode right, TypeCheckingContext context) {
     StructuralNodeSet<?> frontier = new StructuralNodeSet();
     StructuralNodeSet<?> newFrontier = new StructuralNodeSet();
     StructuralNodeSet<?> yetPassed = new StructuralNodeSet();

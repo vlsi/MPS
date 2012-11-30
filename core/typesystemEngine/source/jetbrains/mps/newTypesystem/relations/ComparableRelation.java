@@ -22,6 +22,7 @@ import jetbrains.mps.newTypesystem.state.blocks.RelationBlock;
 import jetbrains.mps.newTypesystem.state.blocks.RelationKind;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystemEngine.util.LatticeUtil;
 
 import java.util.*;
@@ -40,7 +41,7 @@ public class ComparableRelation extends AbstractRelation {
       return false;
     }
     // TODO: why not use global TypeChecker? there can be the only one, after all
-    SubTypingManagerNew subTypingManager = (SubTypingManagerNew) state.getTypeCheckingContext().getTypeChecker().getSubtypingManager();
+    SubTypingManagerNew subTypingManager = (SubTypingManagerNew) TypeChecker.getInstance().getSubtypingManager();
     nodes = SubtypingUtil.eliminateSuperTypes(nodes);
     List<SNode> types = new LinkedList<SNode>();
     SNode result = null;

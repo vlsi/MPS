@@ -13,37 +13,28 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem;
+package jetbrains.mps.newTypesystem.context.component;
 
 import gnu.trove.THashSet;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.AbstractNodesReadListener;
-import jetbrains.mps.smodel.LanguageHierarchyCache;
-import jetbrains.mps.smodel.LanguageHierarchyCache.CacheChangeListener;
 import jetbrains.mps.smodel.LanguageHierarchyCache.CacheReadAccessListener;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
-import jetbrains.mps.util.annotation.UseCarefully;
 
 import java.util.Set;
 
-public abstract class CheckingComponent {
-  protected boolean myInvalidationWasPerformed = false;
-  protected boolean myCacheWasRebuilt = false;
-  protected TypeChecker myTypeChecker;
-  protected NodeTypesComponent myNodeTypesComponent;
-  protected boolean myIsChecked = false;
-  protected MyLanguageCacheListener myLanguageCacheListener = new MyLanguageCacheListener();
+/*package*/ abstract class CachingTypecheckingComponent extends SimpleTypecheckingComponent {
 
-  protected Set<SNode> myCurrentNodesToInvalidate = new THashSet<SNode>();
+  private boolean myInvalidationWasPerformed = false;
+  private boolean myCacheWasRebuilt = false;
+  private boolean myInvalidationResult = false;
 
-  @UseCarefully
-  public void setChecked() {
-    myIsChecked = true;
-  }
+  private Set<SNode> myCurrentNodesToInvalidate = new THashSet<SNode>();
 
-  public boolean isChecked() {
-    return myIsChecked && !doInvalidate();
+  protected CachingTypecheckingComponent(TypeChecker typeChecker, State state, SimpleTypechecking component) {
+    super(state, component);
   }
 
   protected abstract boolean doInvalidate();
@@ -61,12 +52,29 @@ public abstract class CheckingComponent {
     setInvalidationWasPerformed(false);
   }
 
-  protected boolean isIncrementalMode() {
-    return myNodeTypesComponent.getTypeCheckingContext().isIncrementalMode();
+  @Override
+  public void clear() {
+    myIsChecked = false;
   }
 
-  public void dispose() {
-    LanguageHierarchyCache.getInstance().removeCacheChangeListener(myLanguageCacheListener);
+  public void clearNodeTypes() {
+    myCurrentNodesToInvalidate.clear();
+  }
+
+  protected boolean isInvalidationWasPerformed() {
+    return myInvalidationWasPerformed;
+  }
+
+  protected boolean isCacheWasRebuilt() {
+    return myCacheWasRebuilt;
+  }
+
+  protected boolean isInvalidationResult() {
+    return myInvalidationResult;
+  }
+
+  protected Set<SNode> getCurrentNodesToInvalidate() {
+    return new THashSet<SNode>(myCurrentNodesToInvalidate);
   }
 
   /*
@@ -131,6 +139,12 @@ public abstract class CheckingComponent {
     }
   }
 
+
+  protected void setInvalidationResult(boolean result) {
+    myCacheWasRebuilt = false;
+    myInvalidationWasPerformed = true;
+    myInvalidationResult = result;
+  }
   /*
    *  Single-threaded.
    */
@@ -157,10 +171,5 @@ public abstract class CheckingComponent {
     }
   }
 
-  private class MyLanguageCacheListener implements CacheChangeListener {
-    public void languageCacheChanged() {
-      setCacheWasRebuild(true);
-      setInvalidationWasPerformed(false);
-    }
-  }
+
 }

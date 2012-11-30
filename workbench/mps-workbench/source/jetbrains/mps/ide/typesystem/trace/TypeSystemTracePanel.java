@@ -4,6 +4,7 @@ package jetbrains.mps.ide.typesystem.trace;
 
 import javax.swing.JPanel;
 import com.intellij.openapi.Disposable;
+import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.tools.BaseTool;
 import jetbrains.mps.ide.ui.MPSTree;
@@ -14,7 +15,7 @@ import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import java.awt.Color;
-import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
+
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import com.intellij.ui.components.JBScrollPane;
@@ -39,6 +40,7 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
   private EditorComponent myEditorComponent;
   private BaseTool myTool;
   private MPSTree myDetailsTree;
+  private TypecheckingContextTracker myContextTracker;
 
   public TypeSystemTracePanel(BaseTool tool) {
     this.setLayout(new BorderLayout());
@@ -57,13 +59,13 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
     return Color.WHITE;
   }
 
-  public void showTraceForNode(TypeCheckingContextNew t, final IOperationContext operationContext, SNode node, EditorComponent editorComponent, boolean rebuild) {
-    if (rebuild) {
-      t.checkRootInTraceMode(true);
-    }
+  public void showTraceForNode(IncrementalTypecheckingContext incrementalTypecheckingContext, final IOperationContext operationContext, SNode node, EditorComponent editorComponent, boolean rebuild) {
+//    if (rebuild) {
+//      incrementalTypecheckingContext.checkRootInTraceMode(true);
+//    }
     cleanUp();
     myEditorComponent = editorComponent;
-    myTraceTree = new TypeSystemTraceTree(operationContext, t, node, this, editorComponent);
+    myTraceTree = new TypeSystemTraceTree(operationContext, node, this, editorComponent);
     // TODO: refactor into a separate class 
     this.myDetailsTree = myTraceTree.getDetailsTree();
     myStateTree = new TypeSystemStateTree(operationContext, myTraceTree.getState(), editorComponent);
@@ -224,7 +226,7 @@ public class TypeSystemTracePanel extends JPanel implements Disposable {
     }
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        showTraceForNode((TypeCheckingContextNew) myEditorComponent.getTypeCheckingContext(), myEditorComponent.getOperationContext(), selectedNode, myEditorComponent, checkRoot);
+        showTraceForNode((IncrementalTypecheckingContext) myEditorComponent.getTypeCheckingContext(), myEditorComponent.getOperationContext(), selectedNode, myEditorComponent, checkRoot);
       }
     });
     this.validate();

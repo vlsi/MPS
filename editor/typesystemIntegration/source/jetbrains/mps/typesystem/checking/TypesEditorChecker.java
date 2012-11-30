@@ -22,7 +22,8 @@ import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.newTypesystem.NodeTypesComponent;
+import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
+import jetbrains.mps.newTypesystem.context.component.IncrementalTypechecking;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
@@ -35,7 +36,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
+import jetbrains.mps.typesystem.inference.ITypecheckingAction;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.WeakSet;
@@ -50,19 +53,29 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
   private WeakSet<QuickFix_Runtime> myOnceExecutedQuickFixes = new WeakSet<QuickFix_Runtime>();
   private boolean myMessagesChanged = false;
 
-  public Set<EditorMessage> createMessages(final SNode node, List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext) {
+  public Set<EditorMessage> createMessages(final SNode rootNode, List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext) {
     myMessagesChanged = false;
     final Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
-    final TypeCheckingContext context = ((EditorComponent) editorContext.getEditorComponent()).getTypeCheckingContext();
-    if (context == null) return messages;
-    context.runTypeCheckingAction(new Runnable() {
+    TypeContextManager.getInstance().runTypeCheckingAction(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), rootNode, new ITypecheckingAction() {
+      @Override
+      public void run(final TypeCheckingContext context) {
+        doCreateMessages(context, wasCheckedOnce, editorContext, rootNode, messages);
+      }
+    });
+    return messages;
+  }
+
+  private void doCreateMessages(final TypeCheckingContext context, final boolean wasCheckedOnce, final EditorContext editorContext, final SNode rootNode, final Set<EditorMessage> messages) {
+    if (context == null || !(context instanceof IncrementalTypecheckingContext)) return;
+
+    ((IncrementalTypecheckingContext)context).runTypeCheckingAction(new Runnable() {
       @Override
       public void run() {
-        NodeTypesComponent typesComponent = context.getBaseNodeTypesComponent();
+        IncrementalTypechecking typesComponent = context.getBaseNodeTypesComponent();
         if (!wasCheckedOnce || !context.isCheckedRoot(true) || context.messagesChanged(editorContext.getEditorComponent().getClass())) {
           try {
             myMessagesChanged = true;
-            context.checkIfNotChecked(node, false);
+            context.checkIfNotChecked(rootNode, false);
           } catch (Throwable t) {
             LOG.error(t);
             typesComponent.setCheckedTypesystem();
@@ -75,7 +88,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
           try {
             myMessagesChanged = true;
             context.setIsNonTypesystemComputation();
-            typesComponent.applyNonTypesystemRulesToRoot(editorContext.getOperationContext());
+            typesComponent.applyNonTypesystemRulesToRoot(editorContext.getOperationContext(), context);
             typesComponent.setCheckedNonTypesystem();
           } catch (Throwable t) {
             LOG.error(t);
@@ -172,7 +185,6 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
         }
       }
     });
-    return messages;
   }
 
   protected boolean isPropertyEventDramatical(SModelPropertyEvent event) {

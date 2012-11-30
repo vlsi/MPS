@@ -84,7 +84,7 @@ public class InequalityBlock extends RelationBlock {
   }
 
   private boolean processReplacementRules(final SNode subType, final SNode superType) {
-    final TypeChecker typeChecker = myState.getTypeCheckingContext().getTypeChecker();
+    final TypeChecker typeChecker = TypeChecker.getInstance();
 
     List<Pair<InequationReplacementRule_Runtime, IsApplicable2Status>> replacementRules =
       LanguageScopeExecutor.execWithTwoLanguageScope(subType.getLanguage(), superType.getLanguage(),
@@ -124,7 +124,7 @@ public class InequalityBlock extends RelationBlock {
     if (processReplacementRules(subType, superType)) {
       return;
     }
-    final SubTypingManagerNew subTyping = myState.getTypeCheckingContext().getSubTyping();
+    final SubTypingManagerNew subTyping = (SubTypingManagerNew) TypeChecker.getInstance().getSubtypingManager();
     myState.executeOperation(new CheckSubTypeOperation(subType, superType, new Runnable() {
       public void run() {
         if (!calcIsSubtype(subTyping, subType, superType)) {

@@ -20,12 +20,13 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.newTypesystem.NodeTypesComponent;
+import jetbrains.mps.newTypesystem.context.component.IncrementalTypechecking;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -43,10 +44,10 @@ public class AffectingRulesFinder implements IFinder {
 
     ITypeContextOwner owner = new MyTypeContextOwner();
     TypeContextManager manager = TypeContextManager.getInstance();
-    TypeCheckingContext context = manager.getOrCreateContext(root, owner, true);
-    NodeTypesComponent component = context.getBaseNodeTypesComponent();
 
+    TypeCheckingContext context = manager.acquireTypecheckingContext(root, owner);
     try{
+      IncrementalTypechecking component = context.getBaseNodeTypesComponent();
       List<SearchResult<SNode>> rules = new ArrayList<SearchResult<SNode>>();
       if (component == null) return createResult(term, rules);
 
@@ -64,7 +65,7 @@ public class AffectingRulesFinder implements IFinder {
       }
       return createResult(term, rules);
     } finally {
-      manager.removeOwnerForRootNodeContext(root,owner);
+      manager.releaseTypecheckingContext(root,owner);
     }
   }
 
@@ -73,6 +74,6 @@ public class AffectingRulesFinder implements IFinder {
   }
 
 
-  private static class MyTypeContextOwner implements ITypeContextOwner {
+  private static class MyTypeContextOwner extends DefaultTypecheckingContextOwner {
   }
 }

@@ -28,7 +28,6 @@
   <import index="wpmh" modelUID="r:80bd416f-3ae2-40ea-8a6b-f0c4572f9ff8(jetbrains.mps.ide.actions.nodes)" version="-1" />
   <import index="yrws" modelUID="r:478bf62d-84fb-4fba-aeda-183fb2769e64(jetbrains.mps.ide.dialogs.project.creation)" version="-1" />
   <import index="5wna" modelUID="r:3decc57d-6015-4d6c-ad86-7f2134c013b6(jetbrains.mps.ide.findusages.findalgorithm.finders.specific)" version="-1" />
-  <import index="b88i" modelUID="r:baaecce4-d235-4862-b71c-c60e946df6fa(jetbrains.mps.ide.typesystem.trace)" version="-1" />
   <import index="ai6y" modelUID="f:java_stub#cac2fef0-41a6-4fcd-923f-f893d536b2ab#jetbrains.mps.ide.devkit.components(jetbrains.mps.ide.mpsdevkit/jetbrains.mps.ide.devkit.components@java_stub)" version="-1" />
   <import index="gcfa" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.projectPane(MPS.Workbench/jetbrains.mps.ide.projectPane@java_stub)" version="-1" />
   <import index="vsqj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project(MPS.Core/jetbrains.mps.project@java_stub)" version="-1" />
@@ -40,8 +39,6 @@
   <import index="g9ly" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.view(MPS.Core/jetbrains.mps.ide.findusages.view@java_stub)" version="-1" />
   <import index="xxyd" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.refactoring(MPS.Workbench/jetbrains.mps.ide.refactoring@java_stub)" version="-1" />
   <import index="ltb7" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.moduleRepositoryViewer(MPS.Workbench/jetbrains.mps.ide.moduleRepositoryViewer@java_stub)" version="-1" />
-  <import index="mzqo" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.dialogs(MPS.Workbench/jetbrains.mps.ide.dialogs@java_stub)" version="-1" />
-  <import index="n8sb" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.project.structure.model(MPS.Core/jetbrains.mps.project.structure.model@java_stub)" version="-1" />
   <import index="5fm0" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.ide.findusages.model(MPS.Core/jetbrains.mps.ide.findusages.model@java_stub)" version="-1" />
   <import index="ekwn" modelUID="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)" version="-1" />
   <import index="hzgq" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.modelRepositoryViewer(MPS.Workbench/jetbrains.mps.ide.modelRepositoryViewer@java_stub)" version="-1" />
@@ -50,7 +47,6 @@
   <import index="y5px" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator(MPS.Core/jetbrains.mps.generator@java_stub)" version="-1" />
   <import index="ua2a" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)" version="-1" />
   <import index="cu2c" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" version="-1" />
-  <import index="uekr" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.newTypesystem(MPS.Core/jetbrains.mps.newTypesystem@java_stub)" version="-1" />
   <import index="ueyo" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.workbench.editors(MPS.Workbench/jetbrains.mps.workbench.editors@java_stub)" version="-1" />
   <import index="4rt1" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.workbench.dialogs(MPS.Workbench/jetbrains.mps.workbench.dialogs@java_stub)" version="-1" />
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
@@ -91,8 +87,6 @@
   <import index="pvwh" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.action(MPS.Platform/jetbrains.mps.workbench.action@java_stub)" version="-1" />
   <import index="x609" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.progress(MPS.Platform/jetbrains.mps.progress@java_stub)" version="-1" />
   <import index="q9wm" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.ide(MPS.Platform/com.intellij.ide@java_stub)" version="-1" />
-  <import index="aw8c" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.ui.components(MPS.Platform/com.intellij.ui.components@java_stub)" version="-1" />
-  <import index="btw8" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.ui(MPS.Platform/com.intellij.ui@java_stub)" version="-1" />
   <import index="ph2v" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.project(MPS.Platform/com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="ai1m" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.icons(MPS.Platform/jetbrains.mps.ide.icons@java_stub)" version="-1" />
   <import index="1d7m" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.ide.editor(MPS.Editor/jetbrains.mps.ide.editor@java_stub)" version="-1" />
@@ -107,6 +101,8 @@
   <import index="t3eg" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.language(MPS.OpenAPI/org.jetbrains.mps.openapi.language@java_stub)" version="-1" />
   <import index="unno" modelUID="r:61e3d524-8c49-4491-b5e3-f6d6e9364527(jetbrains.mps.util)" version="-1" />
   <import index="vmom" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.ui.dialogs.properties.choosers(MPS.Platform/jetbrains.mps.ide.ui.dialogs.properties.choosers@java_stub)" version="-1" />
+  <import index="q6mk" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.newTypesystem.context(MPS.Core/jetbrains.mps.newTypesystem.context@java_stub)" version="-1" />
+  <import index="u6hn" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.typesystem.trace(MPS.Workbench/jetbrains.mps.ide.typesystem.trace@java_stub)" version="-1" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="35" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -6281,12 +6277,12 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8513716958726547176">
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8513716958726547177">
                 <property name="name" nameId="tpck.1169194664001" value="tcc" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8513716958726547178">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uekr.~TypeCheckingContextNew" resolveInfo="TypeCheckingContextNew" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="675643977210454108">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="q6mk.~IncrementalTypecheckingContext" resolveInfo="IncrementalTypecheckingContext" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="8513716958726547179">
-                  <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8513716958726547180">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uekr.~TypeCheckingContextNew" resolveInfo="TypeCheckingContextNew" />
+                  <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="675643977210454416">
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="q6mk.~IncrementalTypecheckingContext" resolveInfo="IncrementalTypecheckingContext" />
                   </node>
                   <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8513716958726547181">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8513716958726547164" resolveInfo="typeCheckingContext" />
@@ -6362,8 +6358,8 @@
             </node>
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="8513716958726547210">
-            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8513716958726547211">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uekr.~TypeCheckingContextNew" resolveInfo="TypeCheckingContextNew" />
+            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="675643977210448158">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="q6mk.~IncrementalTypecheckingContext" resolveInfo="IncrementalTypecheckingContext" />
             </node>
             <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8513716958726547212">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8513716958726547164" resolveInfo="typeCheckingContext" />
@@ -6428,12 +6424,12 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="8513716958726547117">
               <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="8513716958726547118">
                 <property name="name" nameId="tpck.1169194664001" value="tcc" />
-                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8513716958726547119">
-                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uekr.~TypeCheckingContextNew" resolveInfo="TypeCheckingContextNew" />
+                <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="675643977210457711">
+                  <link role="classifier" roleId="tpee.1107535924139" targetNodeId="q6mk.~IncrementalTypecheckingContext" resolveInfo="IncrementalTypecheckingContext" />
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.CastExpression" typeId="tpee.1070534934090" id="8513716958726547120">
-                  <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8513716958726547121">
-                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uekr.~TypeCheckingContextNew" resolveInfo="TypeCheckingContextNew" />
+                  <node role="type" roleId="tpee.1070534934091" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="675643977210457713">
+                    <link role="classifier" roleId="tpee.1107535924139" targetNodeId="q6mk.~IncrementalTypecheckingContext" resolveInfo="IncrementalTypecheckingContext" />
                   </node>
                   <node role="expression" roleId="tpee.1070534934092" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8513716958726547122">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8513716958726547105" resolveInfo="typeCheckingContext" />
@@ -6507,8 +6503,8 @@
             </node>
           </node>
           <node role="condition" roleId="tpee.1068580123160" type="tpee.InstanceOfExpression" typeId="tpee.1081256982272" id="8513716958726547151">
-            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8513716958726547152">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uekr.~TypeCheckingContextNew" resolveInfo="TypeCheckingContextNew" />
+            <node role="classType" roleId="tpee.1081256993305" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="675643977210456791">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="q6mk.~IncrementalTypecheckingContext" resolveInfo="IncrementalTypecheckingContext" />
             </node>
             <node role="leftExpression" roleId="tpee.1081256993304" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8513716958726547153">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8513716958726547105" resolveInfo="typeCheckingContext" />
@@ -6539,8 +6535,8 @@
       <property name="name" nameId="tpck.1169194664001" value="buildTrace" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8513716958726547052">
         <property name="name" nameId="tpck.1169194664001" value="t" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8513716958726547053">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="uekr.~TypeCheckingContextNew" resolveInfo="TypeCheckingContextNew" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="675643977210549941">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="q6mk.~IncrementalTypecheckingContext" resolveInfo="IncrementalTypecheckingContext" />
         </node>
       </node>
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="8513716958726547054">
@@ -6577,7 +6573,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8513716958726547069">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="b88i.866755926374576435" resolveInfo="showTraceForNode" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="u6hn.~TypeSystemTracePanel%dshowTraceForNode(jetbrains%dmps%dnewTypesystem%dcontext%dIncrementalTypecheckingContext,jetbrains%dmps%dsmodel%dIOperationContext,jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dnodeEditor%dEditorComponent,boolean)%cvoid" resolveInfo="showTraceForNode" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="8513716958726547070">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8513716958726547052" resolveInfo="t" />
               </node>
@@ -6601,10 +6597,10 @@
     </node>
     <node role="fieldDeclaration" roleId="tp4k.6547237850567462849" type="tp4f.DefaultClassifierFieldDeclaration" typeId="tp4f.1213999088275" id="8513716958726547076">
       <property name="name" nameId="tpck.1169194664001" value="myPanel" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8513716958726547077" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="866755926374579178">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="b88i.866755926374576370" resolveInfo="TypeSystemTracePanel" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="675643977212161997">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="u6hn.~TypeSystemTracePanel" resolveInfo="TypeSystemTracePanel" />
       </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8513716958726547077" />
     </node>
     <node role="getComponentBlock" roleId="tp4k.1214307129846" type="tp4k.GetComponentBlock" typeId="tp4k.1214307303872" id="8513716958726547079">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8513716958726547080">
@@ -6624,7 +6620,7 @@
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="8513716958726547088">
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8513716958726547089">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="8513716958726547090">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="b88i.866755926374576385" resolveInfo="TypeSystemTracePanel" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="u6hn.~TypeSystemTracePanel%d&lt;init&gt;(jetbrains%dmps%dide%dtools%dBaseTool)" resolveInfo="TypeSystemTracePanel" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="4003595587718153842" />
               </node>
             </node>
@@ -6685,7 +6681,7 @@
                                   </node>
                                 </node>
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2537645168794100403">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="b88i.7812713049443706831" resolveInfo="cleanUp" />
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="u6hn.~TypeSystemTracePanel%dcleanUp()%cvoid" resolveInfo="cleanUp" />
                                 </node>
                               </node>
                             </node>

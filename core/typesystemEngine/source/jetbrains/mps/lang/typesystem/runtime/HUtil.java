@@ -49,11 +49,12 @@ public class HUtil {
       // so it should not copy attributes, for instance generator macros of a certain type
       SNode copy = CopyUtil.copy(node, new THashMap<SNode, SNode>(1), false);
 
-      if (typeCheckingContext != null) {
-        if (isRuntimeTypeVariable(copy)) {
-          typeCheckingContext.registerTypeVariable(copy);
-        }
-      }
+// DEADC0DE
+//      if (typeCheckingContext != null) {
+//        if (isRuntimeTypeVariable(copy)) {
+//          typeCheckingContext.registerTypeVariable(copy);
+//        }
+//      }
       return copy;
     } else {
       return node;

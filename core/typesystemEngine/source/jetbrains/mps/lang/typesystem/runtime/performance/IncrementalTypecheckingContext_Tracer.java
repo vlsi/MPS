@@ -15,13 +15,14 @@
  */
 package jetbrains.mps.lang.typesystem.runtime.performance;
 
-import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
+import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Computable;
 
-public class TypeCheckingContext_Tracer extends TypeCheckingContextNew {
-  public TypeCheckingContext_Tracer(SNode rootNode, TypeChecker typeChecker) {
+public class IncrementalTypecheckingContext_Tracer extends IncrementalTypecheckingContext {
+
+  public IncrementalTypecheckingContext_Tracer(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
   }
 
@@ -29,18 +30,19 @@ public class TypeCheckingContext_Tracer extends TypeCheckingContextNew {
   public SNode getTypeOf(final SNode node, final TypeChecker typeChecker) {
     return typeChecker.computeWithTrace(new Computable<SNode>() {
       public SNode compute() {
-        return TypeCheckingContext_Tracer.super.getTypeOf(node, typeChecker);
+        return IncrementalTypecheckingContext_Tracer.super.getTypeOf(node, typeChecker);
       }
     }, "type computing");
   }
 
   @Override
-  protected SNode getTypeOf_generationMode(final SNode node) {
-    return getTypeChecker().computeWithTrace(new Computable<SNode>(){
+  public SNode getTypeOf_generationMode(final SNode node) {
+    return TypeChecker.getInstance().computeWithTrace(new Computable<SNode>(){
       @Override
       public SNode compute() {
-        return TypeCheckingContext_Tracer.super.getTypeOf_generationMode(node);
+        return IncrementalTypecheckingContext_Tracer.super.getTypeOf_generationMode(node);
       }
     }, "type computing");
   }
+
 }

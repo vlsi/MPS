@@ -10925,7 +10925,7 @@
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="8922140744663445429">
             <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="8922140744663445430">
               <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="8922140744663445629">
-                <property name="text" nameId="3ior.4903714810883755350" value="META_INF" />
+                <property name="text" nameId="3ior.4903714810883755350" value="META-INF" />
               </node>
             </node>
             <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_File" typeId="3ior.9126048691955220717" id="8922140744663460546">
@@ -10961,8 +10961,15 @@
               <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_CompileOutputOf" typeId="3ior.2591537044435828004" id="8922140744663453070">
                 <link role="module" roleId="3ior.2591537044435828006" targetNodeId="8132953435260018366" resolveInfo="execution-api" />
               </node>
-              <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_FolderWithSources" typeId="kdzh.2105528055260548241" id="8922140744663453663">
-                <link role="module" roleId="kdzh.1692280246134781713" targetNodeId="2569834391839970968" resolveInfo="jetbrains.mps.execution.api" />
+              <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="8183981908872856135">
+                <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="8183981908872863622">
+                  <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="8183981908872863628">
+                    <property name="text" nameId="3ior.4903714810883755350" value="modules" />
+                  </node>
+                </node>
+                <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_FolderWithSources" typeId="kdzh.2105528055260548241" id="8922140744663453663">
+                  <link role="module" roleId="kdzh.1692280246134781713" targetNodeId="2569834391839970968" resolveInfo="jetbrains.mps.execution.api" />
+                </node>
               </node>
             </node>
           </node>
