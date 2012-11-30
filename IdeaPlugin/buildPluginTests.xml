@@ -119,11 +119,13 @@
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-core.jar" />
+        <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-common.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-plugin.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/mps-backend.jar" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-12.0.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -135,7 +137,6 @@
         <fileset file="${artifacts.IDEA}/lib/asm.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/asm-tree-3.3.jar" />
         <fileset file="${artifacts.buildPlugin}/mps-core/lib/diffutils-1.2.1.jar" />
-        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>

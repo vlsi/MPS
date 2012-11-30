@@ -10,7 +10,7 @@
       <maximumStackSize value="2" />
       <properties>
         <property name="home.idea_ce" value="$APPLICATION_HOME_DIR$/" />
-        <property name="plugin.version" value="MPS-25.0.SNAPSHOT" />
+        <property name="plugin.version" value="MPS-3.0.SNAPSHOT" />
         <property name="home.idea_ce.plugins" value="$IDEA_PLUGINS_FOLDER$/" />
         <property name="plugin.prefix" value="" />
       </properties>
