@@ -107,7 +107,6 @@ public class ModuleRuntimeLibrariesImporter {
     for (ModuleReference moduleReference : projectLibs2Create.keySet()) {
       Collection<VirtualFile> libraryFiles = projectLibs2Create.get(moduleReference);
       Library projectLibrary = createProjectLibrary(moduleReference.getModuleFqName(), libraryFiles);
-      SolutionLibrariesIndex.getInstance(project).addLibrary(projectLibrary, moduleReference);
       myModifiableRootModel.addLibraryEntry(projectLibrary);
     }
   }

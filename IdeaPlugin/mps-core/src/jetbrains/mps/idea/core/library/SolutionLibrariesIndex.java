@@ -19,7 +19,6 @@ package jetbrains.mps.idea.core.library;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.roots.LibraryOrderEntry;
 import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.roots.RootProvider;
 import com.intellij.openapi.roots.RootProvider.RootSetChangedListener;
@@ -30,21 +29,22 @@ import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.messages.Topic;
 import jetbrains.mps.idea.core.project.SolutionIdea;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
-import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.*;
-import java.util.Map.Entry;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 public class SolutionLibrariesIndex implements ProjectComponent, Disposable {
   private final ProjectLibraryTable myProjectLibraryTable;
   private final Project myProject;
-  private final Map<Library, Set<ModuleReference>> mySolutionLibraries = new LinkedHashMap<Library, Set<ModuleReference>>();
   private final SolutionLibrariesIndex.MyListener myListener = new MyListener();
 
   public SolutionLibrariesIndex(Project project, ProjectLibraryTable table) {
@@ -67,7 +67,6 @@ public class SolutionLibrariesIndex implements ProjectComponent, Disposable {
       public void run() {
         for (final Library library : myProjectLibraryTable.getLibraries()) {
           if (SolutionLibraryType.isSolutionLibrary(library)) {
-            addLibraryImpl(library);
             addRootsListener(library);
           }
         }
@@ -80,8 +79,6 @@ public class SolutionLibrariesIndex implements ProjectComponent, Disposable {
     library.getRootProvider().addRootSetChangedListener(new RootSetChangedListener() {
       @Override
       public void rootSetChanged(RootProvider wrapper) {
-        mySolutionLibraries.remove(library);
-        addLibrary(library);
         myProject.getMessageBus().syncPublisher(SolutionLibraryListener.LIBRARY_LISTENER_TOPIC).libraryChanged(library);
       }
     }, SolutionLibrariesIndex.this);
@@ -90,9 +87,6 @@ public class SolutionLibrariesIndex implements ProjectComponent, Disposable {
   @Override
   public void disposeComponent() {
     Disposer.dispose(this);
-    for (Library library : myProjectLibraryTable.getLibraries()) {
-      mySolutionLibraries.remove(library);
-    }
     myProjectLibraryTable.removeListener(myListener);
   }
 
@@ -105,55 +99,46 @@ public class SolutionLibrariesIndex implements ProjectComponent, Disposable {
   @NotNull
   public Collection<Library> getLibraries(ModuleReference reference) {
     Set<Library> libraries = new HashSet<Library>();
-    for (Entry<Library, Set<ModuleReference>> entry : mySolutionLibraries.entrySet()) {
-      if (entry.getValue().contains(reference)) {
-        libraries.add(entry.getKey());
+    for (Library library : myProjectLibraryTable.getLibraries()) {
+      if (hasModule(library, reference)) {
+        libraries.add(library);
       }
     }
     return libraries;
   }
 
-  @NotNull
-  public Set<ModuleReference> getModules(Library library) {
-    Set<ModuleReference> moduleReferences = mySolutionLibraries.get(library);
-    if (moduleReferences == null) {
-      return new HashSet<ModuleReference>();
-    }
-    return moduleReferences;
+  private boolean hasModule(Library library, ModuleReference reference) {
+    IModule module = ModuleRepositoryFacade.getInstance().getModule(reference);
+    return hasModule(library, module);
   }
 
-  private void addLibrary(final Library newLibrary) {
+  private boolean hasModule(Library library, IModule module) {
+    if (!(module instanceof Solution) || (module instanceof SolutionIdea) || (module instanceof StubSolution)) {
+      return false;
+    }
+    Solution solution = (Solution) module;
+    VirtualFile solutionBundleHome = SolutionLibraryType.getJarFile(solution.getBundleHome().getPath());
+    if (solutionBundleHome == null) {
+      return false;
+    }
+    return Arrays.asList(library.getFiles(OrderRootType.CLASSES)).contains(solutionBundleHome);
+  }
+
+  @NotNull
+  public Set<ModuleReference> getModules(final Library library) {
+    final Set<ModuleReference> modules = new HashSet<ModuleReference>();
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        addLibraryImpl(newLibrary);
-      }
-    });
-  }
-
-  private void addLibraryImpl(Library newLibrary) {
-    VirtualFile[] files = newLibrary.getFiles(OrderRootType.CLASSES);
-    Collection<Solution> allModules = ModuleRepositoryFacade.getInstance().getAllModules(Solution.class);
-    for (VirtualFile file : files) {
-      for (Solution solution : allModules) {
-        if (!(solution instanceof SolutionIdea) && !(solution instanceof StubSolution)) {
-          VirtualFile solutionBundleHome = SolutionLibraryType.getJarFile(solution.getBundleHome().getPath());
-          if (solutionBundleHome != null && solutionBundleHome.equals(file)) {
-            addLibrary(newLibrary, solution.getModuleReference());
-            // we do not break, since there can be several solutions in a bundle
+        Collection<Solution> allSolutions = ModuleRepositoryFacade.getInstance().getAllModules(Solution.class);
+        for (Solution solution : allSolutions) {
+          if (hasModule(library, solution)) {
+            modules.add(solution.getModuleReference());
           }
         }
       }
-    }
-  }
-
-  public void addLibrary(Library library, ModuleReference reference) {
-    Set<ModuleReference> references = mySolutionLibraries.get(library);
-    if (references == null) {
-      references = new LinkedHashSet<ModuleReference>();
-      mySolutionLibraries.put(library, references);
-    }
-    references.add(reference);
+    });
+    return modules;
   }
 
   public static SolutionLibrariesIndex getInstance(Project project) {
@@ -169,7 +154,6 @@ public class SolutionLibrariesIndex implements ProjectComponent, Disposable {
     @Override
     public void afterLibraryAdded(final Library newLibrary) {
       if (SolutionLibraryType.isSolutionLibrary(newLibrary)) {
-        addLibrary(newLibrary);
         addRootsListener(newLibrary);
       }
     }
@@ -184,7 +168,6 @@ public class SolutionLibrariesIndex implements ProjectComponent, Disposable {
 
     @Override
     public void afterLibraryRemoved(Library library) {
-      mySolutionLibraries.remove(library); // don't care if its a solution lib
     }
   }
 
