@@ -53,8 +53,5 @@
     <group id="FindMenuGroup" popup="true">
       <add-to-group group-id="EditCreateDeleteGroup" anchor="before" relative-to-action="EditSelectGroup"/>
     </group>
-
-    <!--fix analyze stacktrace MPS-17182 (idea console wants print action)-->
-    <action id="Print" class="com.intellij.codeEditor.printing.PrintAction" icon="AllIcons.Graph.Print"/>
   </actions>
 </component>
