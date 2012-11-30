@@ -21,7 +21,6 @@ import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import java.io.File;
-import jetbrains.mps.ide.dialogs.BaseDialog;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -114,8 +113,8 @@ public class NewGeneratorDialog extends DialogWrapper {
     return myResult;
   }
 
-  @BaseDialog.Button(position = 0, name = "OK", mnemonic = 'O', defaultButton = true)
-  public void buttonOK() {
+  @Override
+  protected void doOKAction() {
     final String templateModelsPath = myTemplateModelsDir.getText();
     if (templateModelsPath.length() == 0) {
       setErrorText("No template models root");
@@ -149,11 +148,7 @@ public class NewGeneratorDialog extends DialogWrapper {
     });
 
     myResult = newGenerator.value;
-  }
-
-  @BaseDialog.Button(position = 1, name = "Cancel", mnemonic = 'C')
-  public void buttonCancel() {
-    dispose();
+    super.doOKAction();
   }
 
   protected void dispose() {
