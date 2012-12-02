@@ -50,7 +50,7 @@ public class ThreadWatcher implements Output {
         "(Reference.*)|" +
         "(Periodic task.*)|" +
         "(Java2D.*)|" +
-        "(LowMemoryWatcher)|" +
+        "(LowMemoryWatcher janitor)|" +
         "(Timer\\-.*)|" +
         "(FS Sync.*)|" +
         "(timed reference disposer)|" +
