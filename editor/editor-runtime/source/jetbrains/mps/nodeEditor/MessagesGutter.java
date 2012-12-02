@@ -327,11 +327,11 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
   }
 
   private int getMessagesAreaShift() {
-    return Math.max(0, getDecrButtonHeight() - scrollbar.getBounds().y);
+    return Math.max(0, getDecrementButtonHeight() - scrollbar.getBounds().y);
   }
 
   private int getMessagesAreaHeight() {
-    return scrollbar.getHeight() - getIncrButtonHeight() - Math.max(getDecrButtonHeight(), scrollbar.getBounds().y);
+    return scrollbar.getHeight() - getIncrementButtonHeight() - Math.max(getDecrementButtonHeight(), scrollbar.getBounds().y);
   }
 
   private int getMessageHeight(SimpleEditorMessage msg) {

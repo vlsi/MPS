@@ -14,6 +14,9 @@
   <applicationService serviceInterface="com.intellij.execution.ui.layout.impl.RunnerLayoutSettings"
                       serviceImplementation="com.intellij.execution.ui.layout.impl.RunnerLayoutSettings"/>
 
+  <applicationService serviceInterface="com.intellij.codeEditor.printing.PrintSettings"
+                      serviceImplementation="com.intellij.codeEditor.printing.PrintSettings"/>
+  <exportable serviceInterface="com.intellij.codeEditor.printing.PrintSettings"/>
   <projectService serviceInterface="com.intellij.psi.search.PsiSearchHelper"
                   serviceImplementation="jetbrains.mps.EmptyPsiSearchHelper"/>
 

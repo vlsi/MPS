@@ -1,4 +1,4 @@
 plugin.version=MPS-25.0.SNAPSHOT
 plugin.prefix=
-home.idea_ce=/Applications/IntelliJ IDEA 11 CE.app
-home.idea_ce.plugins=/Users/evgeny/Library/Application Support/IdeaIC11
+home.idea_ce=/Applications/IDEA12 IC.app
+home.idea_ce.plugins=/Users/evgeny/Library/Application Support/IdeaIC12

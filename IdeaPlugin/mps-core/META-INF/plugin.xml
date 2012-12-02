@@ -21,7 +21,7 @@
   <description>MPS Core</description>
   <version>3.0</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="122.746" />
+  <idea-version since-build="123.1" />
 
   <application-components>
     <component>
@@ -56,11 +56,11 @@
     -->
   </application-components>
 
-  <xi:include href="../classes/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="../classes/META-INF/MPSEditor.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="../classes/jetbrains/mps/ide/platform/actions/PlatformActions.xml"
+  <xi:include href="../../../workbench/mps-platform/source/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="../../../workbench/mps-editor/source/META-INF/MPSEditor.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="../../../workbench/mps-platform/source_gen/jetbrains/mps/ide/platform/actions/PlatformActions.xml"
               xpointer="xpointer(/components/*)"/>
-  <xi:include href="../classes/jetbrains/mps/ide/editor/actions/MPSEditorActions.xml"
+  <xi:include href="../../../workbench/mps-editor/source_gen/jetbrains/mps/ide/editor/actions/MPSEditorActions.xml"
               xpointer="xpointer(/components/*)"/>
 
   <project-components>
@@ -98,6 +98,7 @@
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <renameHandler implementation="jetbrains.mps.idea.core.refactoring.ModelRenameHandler"/>
     <moduleRendererFactory implementation="jetbrains.mps.idea.core.navigation.MpsRendererFactory" order="first"/>
+    <compileServer.plugin classpath="jps/mps-jps-plugin.jar;mps-common.jar;mps-backend.jar;mps-core.jar;mps-openapi.jar;mps-collections.jar;mps-closures.jar;mps-tuples.jar"/>
   </extensions>
 
   <actions>

@@ -3418,7 +3418,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       ScrollBarUI barUI = getUI();
       Insets insets = getInsets();
       if (barUI instanceof ButtonlessScrollBarUI) {
-        return insets.top + ((ButtonlessScrollBarUI) barUI).getDecrButtonHeight();
+        return insets.top + ((ButtonlessScrollBarUI) barUI).getDecrementButtonHeight();
       } else if (barUI instanceof BasicScrollBarUI) {
         try {
           JButton decrButtonValue = (JButton) decrButtonField.get(barUI);
@@ -3442,7 +3442,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       ScrollBarUI barUI = getUI();
       Insets insets = getInsets();
       if (barUI instanceof ButtonlessScrollBarUI) {
-        return insets.top + ((ButtonlessScrollBarUI) barUI).getIncrButtonHeight();
+        return insets.top + ((ButtonlessScrollBarUI) barUI).getIncrementButtonHeight();
       } else if (barUI instanceof BasicScrollBarUI) {
         try {
           JButton incrButtonValue = (JButton) incrButtonField.get(barUI);
