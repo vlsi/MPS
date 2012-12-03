@@ -6927,13 +6927,10 @@
         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Arrays%dasList(java%dlang%dObject%d%d%d)%cjava%dutil%dList" resolveInfo="asList" />
         <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="k7g3.~Arrays" resolveInfo="Arrays" />
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7211226859971706322">
-          <property name="value" nameId="tpee.1070475926801" value="xstream.jar" />
+          <property name="value" nameId="tpee.1070475926801" value="xstream-1.4.3.jar" />
         </node>
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7211226859971706318">
-          <property name="value" nameId="tpee.1070475926801" value="guava-11.0.1.jar" />
-        </node>
-        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3765650546605132155">
-          <property name="value" nameId="tpee.1070475926801" value="org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
+          <property name="value" nameId="tpee.1070475926801" value="guava-12.0.jar" />
         </node>
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4452305126578631431">
           <property name="value" nameId="tpee.1070475926801" value="jdom.jar" />
@@ -6946,9 +6943,6 @@
         </node>
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4452305126578631434">
           <property name="value" nameId="tpee.1070475926801" value="annotations.jar" />
-        </node>
-        <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4452305126578631435">
-          <property name="value" nameId="tpee.1070475926801" value="commons-lang-2.4.jar" />
         </node>
         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="4452305126578631436">
           <property name="value" nameId="tpee.1070475926801" value="commons-logging-1.1.1.jar" />
