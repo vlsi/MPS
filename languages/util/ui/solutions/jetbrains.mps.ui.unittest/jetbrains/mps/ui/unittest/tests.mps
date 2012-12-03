@@ -25,9 +25,9 @@
       <property name="testCaseName" nameId="tpe3.1171931851045" value="Widgets_noCtx" />
     </node>
     <node type="tpe3.BTestCase" typeId="tpe3.1171931851043" id="3633072329222756248">
-      <property name="testCaseName" nameId="tpe3.1171931851045" value="UITestBase" />
       <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
       <property name="abstractClass" nameId="tpee.1075300953594" value="true" />
+      <property name="testCaseName" nameId="tpe3.1171931851045" value="UITestBase" />
     </node>
     <node type="tpe3.BTestCase" typeId="tpe3.1171931851043" id="3633072329222757661">
       <property name="testCaseName" nameId="tpe3.1171931851045" value="Widgets_ctx" />
@@ -1010,12 +1010,18 @@
     </node>
   </root>
   <root id="5520428330967866691">
-    <node role="field" roleId="tpee.1068390468199" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="5520428330967866782">
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5520428330967866692" />
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="5520428330967866782">
       <property name="name" nameId="tpck.1169194664001" value="foo" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="5520428330967866783" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="5520428330967866785" />
     </node>
-    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5520428330967866777">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="5520428330967866693">
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5520428330967866694" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5520428330967866695" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5520428330967866696" />
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5520428330967866777">
       <property name="name" nameId="tpck.1169194664001" value="getFoo" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.StringType" typeId="tpee.1225271177708" id="5520428330967866781" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5520428330967866779" />
@@ -1030,7 +1036,7 @@
         </node>
       </node>
     </node>
-    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5520428330967866790">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5520428330967866790">
       <property name="name" nameId="tpck.1169194664001" value="setFoo" />
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5520428330967866794">
         <property name="name" nameId="tpck.1169194664001" value="val" />
@@ -1053,12 +1059,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5520428330967866692" />
-    <node role="constructor" roleId="tpee.1068390468201" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="5520428330967866693">
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5520428330967866694" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5520428330967866695" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5520428330967866696" />
     </node>
   </root>
   <root id="6876714382652043622">

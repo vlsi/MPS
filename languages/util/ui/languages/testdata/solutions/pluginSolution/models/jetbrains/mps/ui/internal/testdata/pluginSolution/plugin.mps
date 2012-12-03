@@ -39,7 +39,7 @@
                     <property name="value" nameId="tpee.1070475926801" value="jetbrains.mps.ui.internal.testdata" />
                   </node>
                   <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5487985028841950126" />
-                  <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5487985028841950127">
+                  <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5487985028841950127">
                     <property name="name" nameId="tpck.1169194664001" value="getEventHandlerTemplatesModel" />
                     <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5487985028841950128">
                       <property name="name" nameId="tpck.1169194664001" value="base" />
@@ -63,7 +63,7 @@
                       <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
                     </node>
                   </node>
-                  <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5487985028841950138">
+                  <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5487985028841950138">
                     <property name="name" nameId="tpck.1169194664001" value="getWidgetTemplatesModel" />
                     <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5487985028841950139">
                       <property name="name" nameId="tpck.1169194664001" value="base" />

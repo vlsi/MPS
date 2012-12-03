@@ -1082,7 +1082,7 @@
                           <property name="value" nameId="tpee.1068580123138" value="true" />
                         </node>
                       </node>
-                      <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5610619299013225658">
+                      <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5610619299013225658">
                         <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
                         <property name="name" nameId="tpck.1169194664001" value="isExcluded" />
                         <node role="returnType" roleId="tpee.1068580123133" type="tpee.BooleanType" typeId="tpee.1070534644030" id="5610619299013225659" />

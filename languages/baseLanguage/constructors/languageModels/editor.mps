@@ -204,7 +204,7 @@
                     <link role="classifier" roleId="tpee.1170346070688" targetNodeId="9a8.~AbstractCellProvider" resolveInfo="AbstractCellProvider" />
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~AbstractCellProvider%d&lt;init&gt;()" resolveInfo="AbstractCellProvider" />
                     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6820702584720060139" />
-                    <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6820702584720060140">
+                    <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6820702584720060140">
                       <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
                       <property name="name" nameId="tpck.1169194664001" value="createEditorCell" />
                       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6820702584720060141" />
@@ -231,7 +231,14 @@
                                   <link role="classifier" roleId="tpee.1170346070688" targetNodeId="o70u.~RefNodeListHandler" resolveInfo="RefNodeListHandler" />
                                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="o70u.~RefNodeListHandler%d&lt;init&gt;(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString,jetbrains%dmps%dopenapi%deditor%dEditorContext)" resolveInfo="RefNodeListHandler" />
                                   <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6820702584720069044" />
-                                  <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6820702584720069045">
+                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="6820702584720079747" />
+                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6820702584720079759">
+                                    <property name="value" nameId="tpee.1070475926801" value="element" />
+                                  </node>
+                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6820702584720079756">
+                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6820702584720060143" resolveInfo="editorContext" />
+                                  </node>
+                                  <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6820702584720069045">
                                     <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
                                     <property name="name" nameId="tpck.1169194664001" value="createNodeToInsert" />
                                     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6820702584720069046" />
@@ -256,7 +263,7 @@
                                       </node>
                                     </node>
                                   </node>
-                                  <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6820702584720069074">
+                                  <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6820702584720069074">
                                     <property name="name" nameId="tpck.1169194664001" value="createNodeCell" />
                                     <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6820702584720070179">
                                       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jsgz.~EditorCell" resolveInfo="EditorCell" />
@@ -322,7 +329,7 @@
                                       </node>
                                     </node>
                                   </node>
-                                  <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6820702584720070202">
+                                  <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6820702584720070202">
                                     <property name="name" nameId="tpck.1169194664001" value="createEmptyCell" />
                                     <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="6820702584720070266">
                                       <property name="name" nameId="tpck.1169194664001" value="editorContext" />
@@ -377,7 +384,7 @@
                                       </node>
                                     </node>
                                   </node>
-                                  <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6820702584720070206">
+                                  <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6820702584720070206">
                                     <property name="name" nameId="tpck.1169194664001" value="installElementCellActions" />
                                     <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="6820702584720070207" />
                                     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="6820702584720070208" />
@@ -561,7 +568,7 @@
                                       </node>
                                     </node>
                                   </node>
-                                  <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6820702584720070412">
+                                  <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="6820702584720070412">
                                     <property name="name" nameId="tpck.1169194664001" value="createSeparatorCell" />
                                     <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6820702584720070416">
                                       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="jsgz.~EditorCell" resolveInfo="EditorCell" />
@@ -670,13 +677,6 @@
                                         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="srng.~EditorContext" resolveInfo="EditorContext" />
                                       </node>
                                     </node>
-                                  </node>
-                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpc2.ConceptFunctionParameter_node" typeId="tpc2.1142886811589" id="6820702584720079747" />
-                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6820702584720079759">
-                                    <property name="value" nameId="tpee.1070475926801" value="element" />
-                                  </node>
-                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6820702584720079756">
-                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="6820702584720060143" resolveInfo="editorContext" />
                                   </node>
                                 </node>
                               </node>
