@@ -180,7 +180,7 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
     //workaround for context acquiers
     focusManager.doWhenFocusSettlesDown(new Runnable() {
       public void run() {
-        TreePath path = getPathForLocation(e.getX(), e.getY());
+        TreePath path = getClosestPathForLocation(e.getX(), e.getY());
         if (path == null) return;
 
         Object lastPathComponent = path.getLastPathComponent();
