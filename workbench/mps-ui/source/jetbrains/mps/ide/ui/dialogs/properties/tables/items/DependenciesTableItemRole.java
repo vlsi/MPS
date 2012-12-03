@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.ui.dialogs.properties.tables.models;
+package jetbrains.mps.ide.ui.dialogs.properties.tables.items;
 
 
 import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;

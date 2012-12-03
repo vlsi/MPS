@@ -47,7 +47,7 @@
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" version="-1" />
   <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
   <import index="88zw" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.module(MPS.OpenAPI/org.jetbrains.mps.openapi.module@java_stub)" version="-1" />
-  <import index="vm9s" modelUID="f:java_stub#267ff2fa-bd8d-467e-8bfe-73a9c242da8b#jetbrains.mps.ide.ui.dialogs.properties.choosers(MPS.UI/jetbrains.mps.ide.ui.dialogs.properties.choosers@java_stub)" version="-1" />
+  <import index="vmom" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.ui.dialogs.properties.choosers(MPS.Platform/jetbrains.mps.ide.ui.dialogs.properties.choosers@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="fb9u" modelUID="r:0194e190-08ef-44f6-ab95-d9cffdb7e27b(jetbrains.mps.execution.settings.structure)" version="0" implicit="yes" />
   <import index="pxpg" modelUID="r:5a550369-d6d9-4c89-a89b-1bb748dc20b3(jetbrains.mps.baseLanguage.checkedDots.structure)" version="-1" implicit="yes" />
@@ -66,8 +66,8 @@
     <node type="tphr.ComponentDeclaration" typeId="tphr.1202387718766" id="6062668769034852876">
       <property name="stub" nameId="tphr.1202393242164" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ModelChooserComponent" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="chooser" />
       <property name="actionComponent" nameId="tphr.1202744343014" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="chooser" />
       <link role="extendedComponent" roleId="tphr.1202393246965" targetNodeId="tpht.1202816402995" resolveInfo="Panel" />
       <link role="mapTo" roleId="tphr.1202393168541" targetNodeId="6062668769034852749" resolveInfo="ModelChooser" />
     </node>
@@ -82,8 +82,8 @@
     <node type="tphr.ComponentDeclaration" typeId="tphr.1202387718766" id="6062668769034853016">
       <property name="stub" nameId="tphr.1202393242164" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ModuleChooserComponent" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="chooser" />
       <property name="actionComponent" nameId="tphr.1202744343014" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="chooser" />
       <link role="mapTo" roleId="tphr.1202393168541" targetNodeId="6062668769034852880" resolveInfo="ModuleChooser" />
       <link role="extendedComponent" roleId="tphr.1202393246965" targetNodeId="tpht.1202816402995" resolveInfo="Panel" />
     </node>
@@ -102,8 +102,8 @@
     <node type="tphr.ComponentDeclaration" typeId="tphr.1202387718766" id="6062668769034854227">
       <property name="stub" nameId="tphr.1202393242164" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="ListPanel_Component" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="ui" />
       <property name="actionComponent" nameId="tphr.1202744343014" value="true" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="ui" />
       <link role="extendedComponent" roleId="tphr.1202393246965" targetNodeId="tpht.1202816402995" resolveInfo="Panel" />
       <link role="mapTo" roleId="tphr.1202393168541" targetNodeId="6062668769034854228" resolveInfo="ListPanel" />
     </node>
@@ -207,8 +207,8 @@
                               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SModelReference" resolveInfo="SModelReference" />
                             </node>
                             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6062668769034852788">
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="vm9s.~CommonChoosers" resolveInfo="CommonChoosers" />
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vm9s.~CommonChoosers%dshowDialogModelChooser(com%dintellij%dopenapi%dproject%dProject,java%dutil%dList,java%dutil%dList)%cjetbrains%dmps%dsmodel%dSModelReference" resolveInfo="showDialogModelChooser" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="vmom.~CommonChoosers" resolveInfo="CommonChoosers" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vmom.~CommonChoosers%dshowDialogModelChooser(com%dintellij%dopenapi%dproject%dProject,java%dutil%dList,java%dutil%dList)%cjetbrains%dmps%dsmodel%dSModelReference" resolveInfo="showDialogModelChooser" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5882519022999965938" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6062668769034852790">
                                 <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="6062668769034852791">
@@ -506,8 +506,8 @@
                               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="kqhl.~ModuleReference" resolveInfo="ModuleReference" />
                             </node>
                             <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="6062668769034852919">
-                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="vm9s.~CommonChoosers" resolveInfo="CommonChoosers" />
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vm9s.~CommonChoosers%dshowDialogModuleChooser(com%dintellij%dopenapi%dproject%dProject,java%dlang%dString,java%dutil%dList,java%dutil%dList)%cjetbrains%dmps%dproject%dstructure%dmodules%dModuleReference" resolveInfo="showDialogModuleChooser" />
+                              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="vmom.~CommonChoosers" resolveInfo="CommonChoosers" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vmom.~CommonChoosers%dshowDialogModuleChooser(com%dintellij%dopenapi%dproject%dProject,java%dlang%dString,java%dutil%dList,java%dutil%dList)%cjetbrains%dmps%dproject%dstructure%dmodules%dModuleReference" resolveInfo="showDialogModuleChooser" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="5882519022999965948" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="6062668769034852921">
                                 <property name="value" nameId="tpee.1070475926801" value="" />

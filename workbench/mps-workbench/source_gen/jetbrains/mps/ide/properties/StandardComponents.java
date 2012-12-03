@@ -96,7 +96,9 @@ import com.intellij.openapi.ui.ComboBox;
 import javax.swing.DefaultComboBoxModel;
 import java.awt.Insets;
 
+@Deprecated
 public class StandardComponents {
+  @Deprecated
   public StandardComponents() {
   }
 
