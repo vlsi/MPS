@@ -9,6 +9,7 @@ import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -86,8 +87,8 @@ public class NewTemplateInSwitchDefault_Intention implements IntentionFactory {
       }
       SNode t = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", null);
       SPropertyOperations.set(t, "name", name);
-      t.setProperty(SNodeUtil.property_BaseConcept_virtualPackage, SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
-      // make reference 
+      SNodeAccessUtil.setProperty(t, SNodeUtil.property_BaseConcept_virtualPackage, SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
+      // make reference
       SNode tr = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", null);
       SLinkOperations.setTarget(tr, "template", t, false);
       SLinkOperations.setTarget(node, "defaultConsequence", tr, true);

@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.SReference;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_1190931376940(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -571,7 +572,7 @@ public class QueriesGenerated {
       }
       SNode propertyNode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.pattern.structure.GeneratorInternal_PropertyDescriptor");
       SPropertyOperations.set(propertyNode, "name", name);
-      SPropertyOperations.set(propertyNode, "value", _context.getNode().getProperty(name));
+      SPropertyOperations.set(propertyNode, "value", SNodeAccessUtil.getProperty(_context.getNode(), name));
       SLinkOperations.setTarget(propertyNode, "mainNode", _context.getNode(), false);
       ListSequence.fromList(result).addElement(propertyNode);
     }

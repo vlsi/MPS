@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class OverrideImplementMethodsHelper {
   private Project myProject;
@@ -171,7 +172,7 @@ public class OverrideImplementMethodsHelper {
   private static SNode _quotation_createNode_tfz3o4_a0a0a0a5a8(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("variableDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
 
@@ -179,7 +180,7 @@ public class OverrideImplementMethodsHelper {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SuperMethodCall", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "baseMethodDeclaration", (SNode) parameter_1);
     {
       List<SNode> nodes = (List<SNode>) parameter_2;
       for (SNode child : nodes) {

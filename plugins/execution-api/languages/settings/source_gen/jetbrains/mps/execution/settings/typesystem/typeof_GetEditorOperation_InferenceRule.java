@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class typeof_GetEditorOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_GetEditorOperation_InferenceRule() {
@@ -49,14 +50,14 @@ public class typeof_GetEditorOperation_InferenceRule extends AbstractInferenceRu
   private static SNode _quotation_createNode_89tbzo_a0b0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("persistentConfiguration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "persistentConfiguration", (SNode) parameter_1);
     return quotedNode_2;
   }
 
   private static SNode _quotation_createNode_89tbzo_a0c0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.SettingsEditorType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("configuration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "configuration", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

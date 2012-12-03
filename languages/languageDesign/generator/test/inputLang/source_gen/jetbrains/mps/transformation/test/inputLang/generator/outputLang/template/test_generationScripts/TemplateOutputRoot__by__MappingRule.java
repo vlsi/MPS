@@ -14,6 +14,7 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class TemplateOutputRoot__by__MappingRule implements TemplateDeclaration {
   public TemplateOutputRoot__by__MappingRule() {
@@ -28,8 +29,8 @@ public class TemplateOutputRoot__by__MappingRule implements TemplateDeclaration 
     try {
       environment.getTracer().pushTemplateNode(templateNode_d5hm2j_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195168984336");
-      tnode1.setProperty("name", "OutputRoot_by_MappingRule");
-      tnode1.setProperty("text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1195598330258(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "OutputRoot by MappingRule", propertyMacro_d5hm2j_c0b0b0a3a1a2, context, environment.getGenerator()))));
+      SNodeAccessUtil.setProperty(tnode1, "name", "OutputRoot_by_MappingRule");
+      SNodeAccessUtil.setProperty(tnode1, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1195598330258(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "OutputRoot by MappingRule", propertyMacro_d5hm2j_c0b0b0a3a1a2, context, environment.getGenerator()))));
 
       {
         Collection<SNode> tlist2 = null;

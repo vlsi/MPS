@@ -13,6 +13,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import java.util.List;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_SubtypingRule() {
@@ -41,7 +42,7 @@ public class namedTupleDeclaration_ClassifierType_supertypeOf_namedTupleType_Sub
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReferenceTarget("classifier", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_2);
     {
       List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {

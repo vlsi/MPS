@@ -17,6 +17,7 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class CollectionAppendPart_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -66,7 +67,7 @@ public class CollectionAppendPart_Editor extends DefaultNodeEditor {
     editorCell.setCellId("Collection_wfu8o0_a0");
     editorCell.addEditorCell(this.createConstant_wfu8o0_a0a(editorContext, node));
     editorCell.addEditorCell(this.createConstant_wfu8o0_b0a(editorContext, node));
-    if (node.hasProperty("separator")) {
+    if (SNodeAccessUtil.hasProperty(node, "separator")) {
       editorCell.addEditorCell(this.createNonEmptyProperty_wfu8o0_c0a(editorContext, node));
     }
     return editorCell;

@@ -23,6 +23,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ConstraintsChecker extends AbstractConstraintsChecker {
   public ConstraintsChecker() {
@@ -123,7 +124,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
         LOG.error("Property declaration has a null name, declaration id: " + p.getSNodeId() + ", model: " + SNodeOperations.getModel(p).getSModelFqName());
         continue;
       }
-      final String value = ps.fromInternalValue(node.getProperty(propertyName));
+      final String value = ps.fromInternalValue(SNodeAccessUtil.getProperty(node, propertyName));
       final PropertyConstraintsDescriptor propertyDescriptor = newDescriptor.getProperty(propertyName);
       boolean canSetValue = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {

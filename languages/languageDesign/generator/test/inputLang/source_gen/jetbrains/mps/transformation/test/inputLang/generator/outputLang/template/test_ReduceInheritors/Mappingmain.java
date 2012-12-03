@@ -23,6 +23,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.impl.AbandonRuleInputException;
 import jetbrains.mps.generator.GenerationTracerUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   private final Collection<TemplateReductionRule> rules;
@@ -121,7 +122,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       try {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a5q);
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206461864724");
-        tnode1.setProperty("text", "output from InputNode_B");
+        SNodeAccessUtil.setProperty(tnode1, "text", "output from InputNode_B");
 
       } finally {
         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
@@ -169,7 +170,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       try {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a5r);
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460444836");
-        tnode1.setProperty("text", "output from InputNode_A");
+        SNodeAccessUtil.setProperty(tnode1, "text", "output from InputNode_A");
 
       } finally {
         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
@@ -217,7 +218,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       try {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a5s);
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460409521");
-        tnode1.setProperty("text", "output from base InputNode");
+        SNodeAccessUtil.setProperty(tnode1, "text", "output from base InputNode");
 
       } finally {
         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));

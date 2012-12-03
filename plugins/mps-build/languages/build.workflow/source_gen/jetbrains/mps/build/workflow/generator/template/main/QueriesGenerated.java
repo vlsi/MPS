@@ -35,6 +35,7 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_6896005762093594382(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -479,7 +480,7 @@ public class QueriesGenerated {
         if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a37.getConcept().getId()))) {
           return false;
         }
-        if (!("src".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a37.getProperty("tagName")))) {
+        if (!("src".equals(SNodeAccessUtil.getProperty(nodeToMatch_QueriesGenerated_x583g4_a0a0a37, "tagName")))) {
           return false;
         }
         {
@@ -495,10 +496,10 @@ public class QueriesGenerated {
               if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0vc.getConcept().getId()))) {
                 return false;
               }
-              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0vc.getProperty("shortEmptyNotation")))) {
+              if (!("true".equals(SNodeAccessUtil.getProperty(nodeToMatch_QueriesGenerated_x583g4_a0a0a0vc, "shortEmptyNotation")))) {
                 return false;
               }
-              if (!("pathelement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0vc.getProperty("tagName")))) {
+              if (!("pathelement".equals(SNodeAccessUtil.getProperty(nodeToMatch_QueriesGenerated_x583g4_a0a0a0vc, "tagName")))) {
                 return false;
               }
               {
@@ -514,7 +515,7 @@ public class QueriesGenerated {
                     if (!("jetbrains.mps.core.xml.structure.XmlAttribute".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a37.getConcept().getId()))) {
                       return false;
                     }
-                    if (!("path".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a37.getProperty("attrName")))) {
+                    if (!("path".equals(SNodeAccessUtil.getProperty(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a37, "attrName")))) {
                       return false;
                     }
                     {
@@ -571,7 +572,7 @@ public class QueriesGenerated {
         if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a47.getConcept().getId()))) {
           return false;
         }
-        if (!("path".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a47.getProperty("tagName")))) {
+        if (!("path".equals(SNodeAccessUtil.getProperty(nodeToMatch_QueriesGenerated_x583g4_a0a0a47, "tagName")))) {
           return false;
         }
         {
@@ -587,10 +588,10 @@ public class QueriesGenerated {
               if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0wc.getConcept().getId()))) {
                 return false;
               }
-              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0wc.getProperty("shortEmptyNotation")))) {
+              if (!("true".equals(SNodeAccessUtil.getProperty(nodeToMatch_QueriesGenerated_x583g4_a0a0a0wc, "shortEmptyNotation")))) {
                 return false;
               }
-              if (!("pathelement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0wc.getProperty("tagName")))) {
+              if (!("pathelement".equals(SNodeAccessUtil.getProperty(nodeToMatch_QueriesGenerated_x583g4_a0a0a0wc, "tagName")))) {
                 return false;
               }
               {
@@ -606,7 +607,7 @@ public class QueriesGenerated {
                     if (!("jetbrains.mps.core.xml.structure.XmlAttribute".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a47.getConcept().getId()))) {
                       return false;
                     }
-                    if (!("location".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a47.getProperty("attrName")))) {
+                    if (!("location".equals(SNodeAccessUtil.getProperty(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a47, "attrName")))) {
                       return false;
                     }
                     {
@@ -663,7 +664,7 @@ public class QueriesGenerated {
         if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a57.getConcept().getId()))) {
           return false;
         }
-        if (!("classpath".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a57.getProperty("tagName")))) {
+        if (!("classpath".equals(SNodeAccessUtil.getProperty(nodeToMatch_QueriesGenerated_x583g4_a0a0a57, "tagName")))) {
           return false;
         }
         {
@@ -679,10 +680,10 @@ public class QueriesGenerated {
               if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0xc.getConcept().getId()))) {
                 return false;
               }
-              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0xc.getProperty("shortEmptyNotation")))) {
+              if (!("true".equals(SNodeAccessUtil.getProperty(nodeToMatch_QueriesGenerated_x583g4_a0a0a0xc, "shortEmptyNotation")))) {
                 return false;
               }
-              if (!("pathelement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0xc.getProperty("tagName")))) {
+              if (!("pathelement".equals(SNodeAccessUtil.getProperty(nodeToMatch_QueriesGenerated_x583g4_a0a0a0xc, "tagName")))) {
                 return false;
               }
               {
@@ -698,7 +699,7 @@ public class QueriesGenerated {
                     if (!("jetbrains.mps.core.xml.structure.XmlAttribute".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a57.getConcept().getId()))) {
                       return false;
                     }
-                    if (!("path".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a57.getProperty("attrName")))) {
+                    if (!("path".equals(SNodeAccessUtil.getProperty(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a57, "attrName")))) {
                       return false;
                     }
                     {
@@ -755,7 +756,7 @@ public class QueriesGenerated {
         if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a67.getConcept().getId()))) {
           return false;
         }
-        if (!("classpath".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a67.getProperty("tagName")))) {
+        if (!("classpath".equals(SNodeAccessUtil.getProperty(nodeToMatch_QueriesGenerated_x583g4_a0a0a67, "tagName")))) {
           return false;
         }
         {
@@ -771,10 +772,10 @@ public class QueriesGenerated {
               if (!("jetbrains.mps.core.xml.structure.XmlElement".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0yc.getConcept().getId()))) {
                 return false;
               }
-              if (!("true".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0yc.getProperty("shortEmptyNotation")))) {
+              if (!("true".equals(SNodeAccessUtil.getProperty(nodeToMatch_QueriesGenerated_x583g4_a0a0a0yc, "shortEmptyNotation")))) {
                 return false;
               }
-              if (!("path".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0yc.getProperty("tagName")))) {
+              if (!("path".equals(SNodeAccessUtil.getProperty(nodeToMatch_QueriesGenerated_x583g4_a0a0a0yc, "tagName")))) {
                 return false;
               }
               {
@@ -790,7 +791,7 @@ public class QueriesGenerated {
                     if (!("jetbrains.mps.core.xml.structure.XmlAttribute".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a67.getConcept().getId()))) {
                       return false;
                     }
-                    if (!("refid".equals(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a67.getProperty("attrName")))) {
+                    if (!("refid".equals(SNodeAccessUtil.getProperty(nodeToMatch_QueriesGenerated_x583g4_a0a0a0a67, "attrName")))) {
                       return false;
                     }
                     {

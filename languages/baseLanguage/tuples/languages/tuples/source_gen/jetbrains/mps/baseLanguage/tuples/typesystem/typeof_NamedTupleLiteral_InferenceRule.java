@@ -25,6 +25,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_NamedTupleLiteral_InferenceRule() {
@@ -94,7 +95,7 @@ public class typeof_NamedTupleLiteral_InferenceRule extends AbstractInferenceRul
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReferenceTarget("classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_1);
     {
       List<SNode> nodes = (List<SNode>) parameter_2;
       for (SNode child : nodes) {

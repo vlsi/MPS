@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static boolean dropRootRule_Condition_8590671622325733980(final IOperationContext operationContext, final DropRootRuleContext _context) {
@@ -162,7 +163,7 @@ public class QueriesGenerated {
   private static SNode _quotation_createNode_x583g4_a0a0a0a0r(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("value", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
 
@@ -175,7 +176,7 @@ public class QueriesGenerated {
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", null, null, GlobalScope.getInstance(), false);
     quotedNode_3.setReference("key", SReference.create("key", quotedNode_3, SModelReference.fromString("r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)"), SNodeId.fromString("8590671622324574704")));
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("value", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_4, "value", (String) parameter_1);
     quotedNode_3.addChild("value", quotedNode_4);
     quotedNode_2.addChild("value", quotedNode_3);
     return quotedNode_2;
@@ -184,7 +185,7 @@ public class QueriesGenerated {
   private static SNode _quotation_createNode_x583g4_a0a0a0a0a0d0w(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("value", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
 

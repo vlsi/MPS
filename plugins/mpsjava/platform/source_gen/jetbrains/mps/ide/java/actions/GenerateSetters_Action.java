@@ -27,6 +27,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class GenerateSetters_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -148,7 +149,7 @@ public class GenerateSetters_Action extends BaseAction {
     SNode quotedNode_13 = null;
     SNode quotedNode_14 = null;
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("name", (String) parameter_4);
+    SNodeAccessUtil.setProperty(quotedNode_5, "name", (String) parameter_4);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
     quotedNode_5.addChild("returnType", quotedNode_6);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
@@ -166,13 +167,13 @@ public class GenerateSetters_Action extends BaseAction {
     quotedNode_8.addChild("statement", quotedNode_10);
     quotedNode_5.addChild("body", quotedNode_8);
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_9.setProperty("name", (String) parameter_3);
+    SNodeAccessUtil.setProperty(quotedNode_9, "name", (String) parameter_3);
     quotedNode_11 = (SNode) parameter_2;
     if (quotedNode_11 != null) {
       quotedNode_9.addChild("type", HUtil.copyIfNecessary(quotedNode_11));
     }
     quotedNode_5.addChild("parameter", quotedNode_9);
-    quotedNode_13.setReferenceTarget("variableDeclaration", quotedNode_9);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_13, "variableDeclaration", quotedNode_9);
     return quotedNode_5;
   }
 }

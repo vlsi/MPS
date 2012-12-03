@@ -18,6 +18,7 @@ import jetbrains.mps.generator.GenerationTracerUtil;
 import java.util.Collection;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.IfMacroContext;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarationWeavingAware {
   public Templatereduce__ExecuteFinderExpression() {
@@ -40,7 +41,7 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
         try {
           environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a5a1a2);
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c8959035c/5140158946217876026");
-          tnode2.setProperty("value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5140158946217876028(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "", propertyMacro_qubm7t_c0b0b0a2a1a5a1a2, context, environment.getGenerator()))));
+          SNodeAccessUtil.setProperty(tnode2, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5140158946217876028(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "", propertyMacro_qubm7t_c0b0b0a2a1a5a1a2, context, environment.getGenerator()))));
 
         } finally {
           environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode2));
@@ -140,7 +141,7 @@ public class Templatereduce__ExecuteFinderExpression implements TemplateDeclarat
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_qubm7t_a0a0a1a4a1a4a1a1a1a8a1a2);
                       environment.nodeCopied(context, tnode13, "tpl/r:00000000-0000-4000-0000-011c8959035c/7810572934689511366");
-                      tnode13.setProperty("value", "1");
+                      SNodeAccessUtil.setProperty(tnode13, "value", "1");
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode13));

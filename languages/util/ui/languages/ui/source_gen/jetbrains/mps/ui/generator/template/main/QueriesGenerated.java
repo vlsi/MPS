@@ -33,6 +33,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1251509410704061444(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -828,7 +829,7 @@ public class QueriesGenerated {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("name", (String) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_3, "name", (String) parameter_2);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("type", HUtil.copyIfNecessary(quotedNode_4));

@@ -21,6 +21,7 @@ import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Layout_Behavior {
   public static void init(SNode thisNode) {
@@ -169,11 +170,11 @@ public class Layout_Behavior {
     SNode quotedNode_5 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Path", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("name", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_3, "name", (String) parameter_1);
     quotedNode_2.addChild("macro", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.CompositePathComponent", null, null, GlobalScope.getInstance(), false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("path", "artifacts");
+    SNodeAccessUtil.setProperty(quotedNode_5, "path", "artifacts");
     quotedNode_4.addChild("pathComponent", quotedNode_5);
     quotedNode_2.addChild("compositePathComponent", quotedNode_4);
     return quotedNode_2;
@@ -186,11 +187,11 @@ public class Layout_Behavior {
     SNode quotedNode_5 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Path", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("name", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_3, "name", (String) parameter_1);
     quotedNode_2.addChild("macro", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.CompositePathComponent", null, null, GlobalScope.getInstance(), false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("path", "build");
+    SNodeAccessUtil.setProperty(quotedNode_5, "path", "build");
     quotedNode_4.addChild("pathComponent", quotedNode_5);
     quotedNode_2.addChild("compositePathComponent", quotedNode_4);
     return quotedNode_2;

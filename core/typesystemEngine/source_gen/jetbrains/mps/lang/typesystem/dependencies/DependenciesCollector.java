@@ -17,6 +17,7 @@ import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class DependenciesCollector {
   public DependenciesCollector() {
@@ -146,13 +147,13 @@ public class DependenciesCollector {
     SNode quotedNode_9 = null;
     SNode quotedNode_10 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("name", "getNode");
+    SNodeAccessUtil.setProperty(quotedNode_1, "name", "getNode");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.addChild("visibility", quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.addChild("returnType", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("name", "targetNode");
+    SNodeAccessUtil.setProperty(quotedNode_4, "name", "targetNode");
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_4.addChild("type", quotedNode_6);
     quotedNode_1.addChild("parameter", quotedNode_4);
@@ -166,8 +167,8 @@ public class DependenciesCollector {
     quotedNode_7.addChild("expression", quotedNode_8);
     quotedNode_5.addChild("statement", quotedNode_7);
     quotedNode_1.addChild("body", quotedNode_5);
-    quotedNode_9.setReferenceTarget("variableDeclaration", quotedNode_4);
-    quotedNode_10.setReferenceTarget("variableDeclaration", quotedNode_4);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_9, "variableDeclaration", quotedNode_4);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_10, "variableDeclaration", quotedNode_4);
     return quotedNode_1;
   }
 
@@ -183,13 +184,13 @@ public class DependenciesCollector {
     SNode quotedNode_9 = null;
     SNode quotedNode_10 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("name", "getNode");
+    SNodeAccessUtil.setProperty(quotedNode_1, "name", "getNode");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.addChild("visibility", quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.addChild("returnType", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("name", "targetNode");
+    SNodeAccessUtil.setProperty(quotedNode_4, "name", "targetNode");
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_4.addChild("type", quotedNode_6);
     quotedNode_1.addChild("parameter", quotedNode_4);
@@ -203,8 +204,8 @@ public class DependenciesCollector {
     quotedNode_7.addChild("expression", quotedNode_8);
     quotedNode_5.addChild("statement", quotedNode_7);
     quotedNode_1.addChild("body", quotedNode_5);
-    quotedNode_9.setReferenceTarget("variableDeclaration", quotedNode_4);
-    quotedNode_10.setReferenceTarget("variableDeclaration", quotedNode_4);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_9, "variableDeclaration", quotedNode_4);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_10, "variableDeclaration", quotedNode_4);
     return quotedNode_1;
   }
 
@@ -220,13 +221,13 @@ public class DependenciesCollector {
     SNode quotedNode_9 = null;
     SNode quotedNode_10 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("name", "getNode");
+    SNodeAccessUtil.setProperty(quotedNode_1, "name", "getNode");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.addChild("visibility", quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.addChild("returnType", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("name", "targetNode");
+    SNodeAccessUtil.setProperty(quotedNode_4, "name", "targetNode");
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_4.addChild("type", quotedNode_6);
     quotedNode_1.addChild("parameter", quotedNode_4);
@@ -240,8 +241,8 @@ public class DependenciesCollector {
     quotedNode_7.addChild("expression", quotedNode_8);
     quotedNode_5.addChild("statement", quotedNode_7);
     quotedNode_1.addChild("body", quotedNode_5);
-    quotedNode_9.setReferenceTarget("variableDeclaration", quotedNode_4);
-    quotedNode_10.setReferenceTarget("variableDeclaration", quotedNode_4);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_9, "variableDeclaration", quotedNode_4);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_10, "variableDeclaration", quotedNode_4);
     return quotedNode_1;
   }
 
@@ -257,13 +258,13 @@ public class DependenciesCollector {
     SNode quotedNode_9 = null;
     SNode quotedNode_10 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("name", "getNode");
+    SNodeAccessUtil.setProperty(quotedNode_1, "name", "getNode");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.addChild("visibility", quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.addChild("returnType", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("name", "targetNode");
+    SNodeAccessUtil.setProperty(quotedNode_4, "name", "targetNode");
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_4.addChild("type", quotedNode_6);
     quotedNode_1.addChild("parameter", quotedNode_4);
@@ -277,8 +278,8 @@ public class DependenciesCollector {
     quotedNode_7.addChild("expression", quotedNode_8);
     quotedNode_5.addChild("statement", quotedNode_7);
     quotedNode_1.addChild("body", quotedNode_5);
-    quotedNode_9.setReferenceTarget("variableDeclaration", quotedNode_4);
-    quotedNode_10.setReferenceTarget("variableDeclaration", quotedNode_4);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_9, "variableDeclaration", quotedNode_4);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_10, "variableDeclaration", quotedNode_4);
     return quotedNode_1;
   }
 }

@@ -14,6 +14,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class NonEmptyProperty_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -28,7 +29,7 @@ public class NonEmptyProperty_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_vbxoaj_a");
     editorCell.addEditorCell(this.createComponent_vbxoaj_a0(editorContext, node));
-    if (node.hasProperty("value")) {
+    if (SNodeAccessUtil.hasProperty(node, "value")) {
       editorCell.addEditorCell(this.createNonEmptyProperty_vbxoaj_b0(editorContext, node));
     }
     return editorCell;

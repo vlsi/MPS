@@ -17,6 +17,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class supertypesOf_SNodeListType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_SNodeListType_SubtypingRule() {
@@ -56,7 +57,7 @@ public class supertypesOf_SNodeListType_SubtypingRule extends SubtypingRule_Runt
   private static SNode _quotation_createNode_f6ipu3_a0a0a1a2a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("elementConcept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "elementConcept", (SNode) parameter_1);
     return quotedNode_2;
   }
 
@@ -71,7 +72,7 @@ public class supertypesOf_SNodeListType_SubtypingRule extends SubtypingRule_Runt
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReferenceTarget("concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "concept", (SNode) parameter_1);
     quotedNode_2.addChild("elementType", quotedNode_3);
     return quotedNode_2;
   }

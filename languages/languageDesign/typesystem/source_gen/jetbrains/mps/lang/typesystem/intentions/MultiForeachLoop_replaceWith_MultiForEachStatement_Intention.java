@@ -8,6 +8,7 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -115,7 +116,7 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention implem
     SNode quotedNode_5 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MultiForEachPair", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariable", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("name", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_4, "name", (String) parameter_1);
     quotedNode_3.addChild("variable", quotedNode_4);
     quotedNode_5 = (SNode) parameter_2;
     if (quotedNode_5 != null) {
@@ -147,7 +148,7 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention implem
   private static SNode _quotation_createNode_kx76k7_a0a0a0a0d0a(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.MultiForEachVariableReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("variable", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variable", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

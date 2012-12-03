@@ -21,6 +21,7 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.MacroHelper;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class EditorUtil {
   public EditorUtil() {
@@ -45,7 +46,7 @@ public class EditorUtil {
   }
 
   public static JComponent createSelectButton(final SNode sourceNode, final String propertyName, final EditorContext context, final boolean files, @NotNull final _FunctionTypes._return_P1_E0<? extends String, ? super String> shrinkPath, @NotNull _FunctionTypes._return_P1_E0<? extends String, ? super String> expandPath) {
-    String filename = expandPath.invoke(sourceNode.getProperty(propertyName));
+    String filename = expandPath.invoke(SNodeAccessUtil.getProperty(sourceNode, propertyName));
     final File baseFile = (filename == null ?
       null :
       new File(filename)
@@ -74,7 +75,7 @@ public class EditorUtil {
         final String pathToShow = shrinkPath.invoke(result.getPath());
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            sourceNode.setProperty(propertyName, pathToShow);
+            SNodeAccessUtil.setProperty(sourceNode, propertyName, pathToShow);
           }
         });
       }

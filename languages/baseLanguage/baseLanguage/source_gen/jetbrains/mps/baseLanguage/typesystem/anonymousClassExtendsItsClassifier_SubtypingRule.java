@@ -14,6 +14,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public anonymousClassExtendsItsClassifier_SubtypingRule() {
@@ -58,7 +59,7 @@ public class anonymousClassExtendsItsClassifier_SubtypingRule extends SubtypingR
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReferenceTarget("classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_1);
     {
       List<SNode> nodes = (List<SNode>) parameter_2;
       for (SNode child : nodes) {

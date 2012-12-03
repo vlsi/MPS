@@ -12,6 +12,7 @@ import jetbrains.mps.openapi.editor.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -100,8 +101,8 @@ public class NewTemplateInInlineSwitchCase_Intention implements IntentionFactory
       SNode t = SNodeFactoryOperations.createNewRootNode(SNodeOperations.getModel(node), "jetbrains.mps.lang.generator.structure.TemplateDeclaration", null);
       SPropertyOperations.set(t, "name", name);
       SLinkOperations.setTarget(t, "applicableConcept", applicableConcept, false);
-      t.setProperty(SNodeUtil.property_BaseConcept_virtualPackage, SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
-      // make reference 
+      SNodeAccessUtil.setProperty(t, SNodeUtil.property_BaseConcept_virtualPackage, SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
+      // make reference
       SNode tr = SNodeFactoryOperations.setNewChild(node, "caseConsequence", "jetbrains.mps.lang.generator.structure.TemplateDeclarationReference");
       SLinkOperations.setTarget(tr, "template", t, false);
     }

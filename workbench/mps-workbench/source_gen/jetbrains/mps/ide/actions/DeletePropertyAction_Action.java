@@ -13,6 +13,7 @@ import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class DeletePropertyAction_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -64,7 +65,7 @@ public class DeletePropertyAction_Action extends BaseAction {
       TreeNode parent = ((TreeNode) MapSequence.fromMap(_params).get("node")).getParent();
       PropertiesTreeNode propsNode = (PropertiesTreeNode) parent;
       PropertyTreeNode propNode = (PropertyTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
-      propsNode.getSNode().setProperty(propNode.getProperty(), null);
+      SNodeAccessUtil.setProperty(propsNode.getSNode(), propNode.getProperty(), null);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "DeletePropertyAction", t);
     }

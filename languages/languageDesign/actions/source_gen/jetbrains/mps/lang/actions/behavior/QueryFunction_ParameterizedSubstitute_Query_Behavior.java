@@ -9,6 +9,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueryFunction_ParameterizedSubstitute_Query_Behavior {
   public static void init(SNode thisNode) {
@@ -39,7 +40,7 @@ public class QueryFunction_ParameterizedSubstitute_Query_Behavior {
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReferenceTarget("conceptDeclaraton", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "conceptDeclaraton", (SNode) parameter_1);
     quotedNode_2.addChild("elementType", quotedNode_3);
     return quotedNode_2;
   }

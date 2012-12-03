@@ -8,6 +8,7 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -126,7 +127,7 @@ public class CreateMethodDeclaration_Intention implements IntentionFactory {
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("name", (String) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_3, "name", (String) parameter_2);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("returnType", HUtil.copyIfNecessary(quotedNode_4));
@@ -147,7 +148,7 @@ public class CreateMethodDeclaration_Intention implements IntentionFactory {
   private static SNode _quotation_createNode_v1wtfy_a0a9a0(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "baseMethodDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

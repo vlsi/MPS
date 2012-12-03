@@ -46,6 +46,7 @@ import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import javax.swing.Icon;
 import javax.swing.tree.TreeNode;
@@ -119,7 +120,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       myPackage = null;
       if (node != null) {
         SNode root = node.getTopmostAncestor();
-        myPackage = root.getProperty(SNodeUtil.property_BaseConcept_virtualPackage);
+        myPackage = SNodeAccessUtil.getProperty(root, SNodeUtil.property_BaseConcept_virtualPackage);
       }
     }
 
@@ -221,7 +222,7 @@ public class CreateRootNodeGroup extends BaseGroup {
         @Override
         public void run() {
           final SNode node = NodeFactoryManager.createNode(myNodeConcept.getNode(), null, null, myModelDescriptor.getSModel(), myScope);
-          node.setProperty(SModelTreeNode.PACK, myPackage);
+          SNodeAccessUtil.setProperty(node, SModelTreeNode.PACK, myPackage);
           myModelDescriptor.getSModel().addRoot(node);
 
           ModelAccess.instance().runWriteInEDT(new Runnable() {

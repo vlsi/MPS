@@ -23,6 +23,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesystemRule_Runtime implements NonTypesystemRule_Runtime {
   public check_CaughtWasThrown_NonTypesystemRule() {
@@ -109,14 +110,14 @@ public class check_CaughtWasThrown_NonTypesystemRule extends AbstractNonTypesyst
   private static SNode _quotation_createNode_r5g8rc_a0a0a0a0a0d0a1a1a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
 
   private static SNode _quotation_createNode_r5g8rc_b0a0a0a0a0d0a1a1a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

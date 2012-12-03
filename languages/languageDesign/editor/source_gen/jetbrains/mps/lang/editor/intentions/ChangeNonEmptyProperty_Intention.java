@@ -8,6 +8,7 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -83,7 +84,7 @@ public class ChangeNonEmptyProperty_Intention implements IntentionFactory {
         property.addChild(role, child);
       }
       for (Map.Entry<String, String> propertyEntry : SetSequence.fromSet(SNodeOperations.getProperties(node).entrySet())) {
-        property.setProperty(propertyEntry.getKey(), propertyEntry.getValue());
+        SNodeAccessUtil.setProperty(property, propertyEntry.getKey(), propertyEntry.getValue());
       }
       for (SReference reference : ListSequence.fromList(node.getReferences())) {
         property.setReference(reference.getRole(), reference);

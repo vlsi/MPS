@@ -41,6 +41,7 @@ import jetbrains.mps.vcs.diff.changes.DoNotGenerateOptionChange;
 import jetbrains.mps.vcs.diff.changes.ModelVersionChange;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ChangeSetBuilder {
   private SModel myOldModel;
@@ -75,10 +76,10 @@ public class ChangeSetBuilder {
       }
     }
 
-    String oldPresentableValue = propertySupport.fromInternalValue(oldNode.getProperty(name));
-    String newPresentableValue = propertySupport.fromInternalValue(newNode.getProperty(name));
+    String oldPresentableValue = propertySupport.fromInternalValue(SNodeAccessUtil.getProperty(oldNode, name));
+    String newPresentableValue = propertySupport.fromInternalValue(SNodeAccessUtil.getProperty(newNode, name));
     if (!(EqualUtil.equals(oldPresentableValue, newPresentableValue))) {
-      ListSequence.fromList(myNewChanges).addElement(new SetPropertyChange(myChangeSet, oldNode.getSNodeId(), name, newNode.getProperty(name)));
+      ListSequence.fromList(myNewChanges).addElement(new SetPropertyChange(myChangeSet, oldNode.getSNodeId(), name, SNodeAccessUtil.getProperty(newNode, name)));
     }
   }
 

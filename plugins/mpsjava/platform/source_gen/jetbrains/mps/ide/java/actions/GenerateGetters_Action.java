@@ -27,6 +27,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class GenerateGetters_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -142,7 +143,7 @@ public class GenerateGetters_Action extends BaseAction {
     SNode quotedNode_8 = null;
     SNode quotedNode_9 = null;
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("name", (String) parameter_3);
+    SNodeAccessUtil.setProperty(quotedNode_4, "name", (String) parameter_3);
     quotedNode_5 = (SNode) parameter_1;
     if (quotedNode_5 != null) {
       quotedNode_4.addChild("returnType", HUtil.copyIfNecessary(quotedNode_5));

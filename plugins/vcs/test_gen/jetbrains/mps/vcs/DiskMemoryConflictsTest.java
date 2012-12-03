@@ -9,6 +9,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.junit.Test;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.smodel.SModelRepository;
@@ -109,9 +110,9 @@ public class DiskMemoryConflictsTest {
             SNode node = modelDescriptor.getSModel().getNodeById("6010389230754495469");
             Assert.assertNotNull(node);
             if (nameToWrite == null) {
-              result[0] = node.getProperty("name");
+              result[0] = SNodeAccessUtil.getProperty(node, "name");
             } else {
-              node.setProperty("name", nameToWrite);
+              SNodeAccessUtil.setProperty(node, "name", nameToWrite);
             }
           } catch (Throwable ignored) {
           }

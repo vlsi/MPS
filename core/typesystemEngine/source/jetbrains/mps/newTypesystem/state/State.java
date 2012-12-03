@@ -56,6 +56,7 @@ import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.containers.ManyToManyMap;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -493,7 +494,7 @@ public class State {
     SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable",
       null, GlobalScope.getInstance(), false);
     //todo this code should be moved into MPS
-    typeVar.setProperty(SNodeUtil.property_INamedConcept_name, myVariableIdentifier.getNewVarName());
+    SNodeAccessUtil.setProperty(typeVar, SNodeUtil.property_INamedConcept_name, myVariableIdentifier.getNewVarName());
     return typeVar;
   }
 

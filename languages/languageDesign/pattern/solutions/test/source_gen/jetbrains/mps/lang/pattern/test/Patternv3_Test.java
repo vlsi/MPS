@@ -4,6 +4,7 @@ package jetbrains.mps.lang.pattern.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.TestCase;
@@ -167,7 +168,7 @@ public class Patternv3_Test extends BaseTransformationTest4 {
       quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
       quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
       quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-      quotedNode_4.setProperty("value", "d");
+      SNodeAccessUtil.setProperty(quotedNode_4, "value", "d");
       quotedNode_3.addChild("actualArgument", quotedNode_4);
       quotedNode_1.addChild("operation", quotedNode_3);
       return quotedNode_1;
@@ -176,7 +177,7 @@ public class Patternv3_Test extends BaseTransformationTest4 {
     private static SNode _quotation_createNode_oo3baa_a6a2c() {
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-      quotedNode_1.setProperty("value", "d");
+      SNodeAccessUtil.setProperty(quotedNode_1, "value", "d");
       return quotedNode_1;
     }
   }

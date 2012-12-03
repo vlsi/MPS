@@ -9,6 +9,7 @@ import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -110,7 +111,7 @@ public class NewTemplateInCreateRootRule_Intention implements IntentionFactory {
             return;
           }
           SPropertyOperations.set(SNodeOperations.cast(root, "jetbrains.mps.lang.core.structure.INamedConcept"), "name", name.value);
-          root.setProperty(SNodeUtil.property_BaseConcept_virtualPackage, SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
+          SNodeAccessUtil.setProperty(root, SNodeUtil.property_BaseConcept_virtualPackage, SPropertyOperations.getString(SNodeOperations.cast(SNodeOperations.getContainingRoot(node), "jetbrains.mps.lang.core.structure.BaseConcept"), "virtualPackage"));
           SLinkOperations.setTarget(rule, "templateNode", SNodeOperations.cast(root, "jetbrains.mps.lang.core.structure.INamedConcept"), false);
         }
       });

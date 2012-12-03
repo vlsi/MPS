@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 @Deprecated
 public class SLinkOperations {
@@ -56,7 +57,7 @@ public class SLinkOperations {
           }
         }
       } else {
-        node.setReferenceTarget(role, targetNode);
+        SNodeAccessUtil.setReferenceTarget(node, role, targetNode);
       }
     }
     return targetNode;

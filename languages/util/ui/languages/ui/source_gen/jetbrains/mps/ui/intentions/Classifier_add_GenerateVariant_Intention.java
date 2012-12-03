@@ -6,6 +6,7 @@ import jetbrains.mps.intentions.IntentionFactory;
 import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collection;
@@ -177,7 +178,7 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
   private static SNode _quotation_createNode_3484lm_a0a3a0(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("value", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
 }

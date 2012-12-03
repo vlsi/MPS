@@ -29,6 +29,7 @@ import jetbrains.mps.util.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import javax.swing.*;
 import javax.swing.tree.DefaultTreeModel;
@@ -124,7 +125,7 @@ public class SModelTreeNode extends MPSTreeNodeEx {
       return null;
     }
 
-    String nodePackage = node.getProperty(PACK);
+    String nodePackage = SNodeAccessUtil.getProperty(node, PACK);
 
     if (nodePackage != null && !"".equals(nodePackage)) {
       String[] packages = nodePackage.split("\\.");

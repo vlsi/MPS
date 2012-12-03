@@ -15,6 +15,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.ypath.design.IGenericFeatureDesign;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class SNODE_GEN_Design {
   public static class Design_Feature_child extends IGenericParameterizedFeatureDesign.Stub<SNode> implements IGenericParameterizedFeatureDesign<SNode> {
@@ -58,7 +59,7 @@ public class SNODE_GEN_Design {
     private static SNode _quotation_createNode_iaikir_a2a0a(Object parameter_1) {
       SNode quotedNode_2 = null;
       quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-      quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);
+      SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
       return quotedNode_2;
     }
   }
@@ -104,7 +105,7 @@ public class SNODE_GEN_Design {
     private static SNode _quotation_createNode_iaikir_a2a0b(Object parameter_1) {
       SNode quotedNode_2 = null;
       quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-      quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);
+      SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
       return quotedNode_2;
     }
   }

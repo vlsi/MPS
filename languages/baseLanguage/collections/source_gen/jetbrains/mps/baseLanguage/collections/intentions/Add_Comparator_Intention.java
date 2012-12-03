@@ -9,6 +9,7 @@ import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -96,14 +97,14 @@ public class Add_Comparator_Intention implements IntentionFactory {
     SNode quotedNode_8 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("name", "a");
+    SNodeAccessUtil.setProperty(quotedNode_4, "name", "a");
     quotedNode_7 = (SNode) parameter_1;
     if (quotedNode_7 != null) {
       quotedNode_4.addChild("type", HUtil.copyIfNecessary(quotedNode_7));
     }
     quotedNode_3.addChild("parameter", quotedNode_4);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("name", "b");
+    SNodeAccessUtil.setProperty(quotedNode_5, "name", "b");
     quotedNode_8 = (SNode) parameter_2;
     if (quotedNode_8 != null) {
       quotedNode_5.addChild("type", HUtil.copyIfNecessary(quotedNode_8));

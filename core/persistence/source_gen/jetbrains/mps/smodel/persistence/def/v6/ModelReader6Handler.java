@@ -5,6 +5,8 @@ package jetbrains.mps.smodel.persistence.def.v6;
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import java.util.Stack;
+
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.xml.sax.Locator;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModelHeader;
@@ -433,7 +435,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("property".equals(tagName)) {
         String[] child = (String[]) value;
         if (child[1] != null) {
-          result.setProperty(fieldhelper.readName(child[0]), child[1]);
+          SNodeAccessUtil.setProperty(result, fieldhelper.readName(child[0]), child[1]);
         }
         return;
       }

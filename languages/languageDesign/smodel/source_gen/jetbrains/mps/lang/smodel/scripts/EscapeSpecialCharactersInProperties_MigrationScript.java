@@ -10,6 +10,7 @@ import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class EscapeSpecialCharactersInProperties_MigrationScript extends BaseMigrationScript {
   public EscapeSpecialCharactersInProperties_MigrationScript(IOperationContext operationContext) {
@@ -43,7 +44,7 @@ public class EscapeSpecialCharactersInProperties_MigrationScript extends BaseMig
           }
           String escapedValue = NameUtil.escapeInvisibleCharacters(property.value());
           if (!(property.value().equals(escapedValue))) {
-            node.setProperty(property.key(), escapedValue);
+            SNodeAccessUtil.setProperty(node, property.key(), escapedValue);
           }
         }
       }

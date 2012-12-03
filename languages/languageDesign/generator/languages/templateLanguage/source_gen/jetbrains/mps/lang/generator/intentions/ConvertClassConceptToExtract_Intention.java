@@ -10,6 +10,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -93,10 +94,10 @@ public class ConvertClassConceptToExtract_Intention implements IntentionFactory 
         newNode.addChild(child.getRoleInParent(), mapping.get(child));
       }
       for (SReference reference : node.getReferences()) {
-        newNode.setReferenceTarget(reference.getRole(), reference.getTargetNode());
+        SNodeAccessUtil.setReferenceTarget(newNode, reference.getRole(), reference.getTargetNode());
       }
       for (String propertyName : jetbrains.mps.util.SNodeOperations.getProperties(node).keySet()) {
-        newNode.setProperty(propertyName, node.getProperty(propertyName));
+        SNodeAccessUtil.setProperty(newNode, propertyName, SNodeAccessUtil.getProperty(node, propertyName));
       }
       SNodeOperations.replaceWithAnother(node, newNode);
     }

@@ -4,6 +4,7 @@ package jetbrains.mps.testRead.SNodeReadTest;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import java.util.Set;
@@ -234,12 +235,12 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
       this.addNodeById("8150353254540236549");
       this.addNodeById("4195712261513743410");
       SNode sNode = SNodeOperations.cast(this.getNodeById("4195712261513743413"), "jetbrains.mps.baseLanguage.structure.IfStatement");
-      sNode.setProperty("forceOneLine", "true");
+      SNodeAccessUtil.setProperty(sNode, "forceOneLine", "true");
 
       StatCountNodeReadAccessInEditorListener listener = new StatCountNodeReadAccessInEditorListener(sNode);
       NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listener);
 
-      sNode.getProperty("forceOneLine");
+      SNodeAccessUtil.getProperty(sNode, "forceOneLine");
 
       this.assertMethod("public final java.lang.String jetbrains.mps.smodel.SNode.getProperty(java.lang.String)", listener.getResults().o1);
     }
@@ -309,7 +310,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
       StatCountNodeReadAccessInEditorListener listener = new StatCountNodeReadAccessInEditorListener(sNode);
       NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listener);
 
-      sNode.hasProperty("forceOneLine");
+      SNodeAccessUtil.hasProperty(sNode, "forceOneLine");
 
       this.assertMethod("public final boolean jetbrains.mps.smodel.SNode.hasProperty(java.lang.String)", listener.getResults().o1);
     }
@@ -370,7 +371,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
       StatCountNodeReadAccessInEditorListener listener = new StatCountNodeReadAccessInEditorListener(sNode);
       NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listener);
 
-      sNode.setProperty("forceOneLine", "true");
+      SNodeAccessUtil.setProperty(sNode, "forceOneLine", "true");
 
       this.assertMethod("public void jetbrains.mps.smodel.SNode.setProperty(java.lang.String,java.lang.String)", listener.getResults().o1);
     }
@@ -398,7 +399,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
       StatCountNodeReadAccessInEditorListener listener = new StatCountNodeReadAccessInEditorListener(sNode);
       NodeReadAccessCasterInEditor.setCellBuildNodeReadAccessListener(listener);
 
-      sNode.setReferenceTarget("localVariableDeclaration", SNodeOperations.cast(this.getNodeById("4195712261513781527"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
+      SNodeAccessUtil.setReferenceTarget(sNode, "localVariableDeclaration", SNodeOperations.cast(this.getNodeById("4195712261513781527"), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration"));
 
       this.assertMethod("public void jetbrains.mps.smodel.SNode.setReferenceTarget(java.lang.String,org.jetbrains.mps.openapi.model.SNode)", listener.getResults().o1);
     }

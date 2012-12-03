@@ -52,6 +52,7 @@ import jetbrains.mps.build.util.FetchDependenciesProcessor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_5248329904288166450(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -454,7 +455,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8055294676438890975(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("folderName");
+    return SNodeAccessUtil.getProperty(_context.getNode(), "folderName");
   }
 
   public static Object propertyMacro_GetPropertyValue_1659807394254872723(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1495,7 +1496,7 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_5680938682773841635(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return _context.getNode().getProperty("suffix");
+    return SNodeAccessUtil.getProperty(_context.getNode(), "suffix");
   }
 
   public static Object templateArgumentQuery_144710003695561027(final IOperationContext operationContext, final TemplateQueryContext _context) {

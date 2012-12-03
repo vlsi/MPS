@@ -20,6 +20,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
   public UpdateTuplesRuntime_MigrationScript(IOperationContext operationContext) {
@@ -98,14 +99,14 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
   private static SNode _quotation_createNode_yti4yq_a0a0a1a1a0a(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("name", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, "name", (String) parameter_1);
     return quotedNode_2;
   }
 
   private static SNode _quotation_createNode_yti4yq_a0a0a4a1a0a(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
 
@@ -117,10 +118,10 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
     SNode quotedNode_8 = null;
     SNode quotedNode_9 = null;
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("isAbstract", "true");
-    quotedNode_4.setProperty("name", (String) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_4, "isAbstract", "true");
+    SNodeAccessUtil.setProperty(quotedNode_4, "name", (String) parameter_2);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("name", "value");
+    SNodeAccessUtil.setProperty(quotedNode_5, "name", "value");
     quotedNode_9 = (SNode) parameter_1;
     if (quotedNode_9 != null) {
       quotedNode_5.addChild("type", HUtil.copyIfNecessary(quotedNode_9));
@@ -143,8 +144,8 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("isAbstract", "true");
-    quotedNode_3.setProperty("name", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_3, "isAbstract", "true");
+    SNodeAccessUtil.setProperty(quotedNode_3, "name", (String) parameter_1);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
     quotedNode_3.addChild("visibility", quotedNode_4);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
@@ -160,7 +161,7 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReferenceTarget("classifier", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_2);
     {
       List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {
@@ -180,8 +181,8 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
     SNode quotedNode_11 = null;
     SNode quotedNode_12 = null;
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Interface", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("nonStatic", "true");
-    quotedNode_5.setProperty("name", (String) parameter_3);
+    SNodeAccessUtil.setProperty(quotedNode_5, "nonStatic", "true");
+    SNodeAccessUtil.setProperty(quotedNode_5, "name", (String) parameter_3);
     quotedNode_6 = (SNode) parameter_1;
     if (quotedNode_6 != null) {
       quotedNode_5.addChild("extendedInterface", HUtil.copyIfNecessary(quotedNode_6));
@@ -224,12 +225,12 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
     SNode quotedNode_11 = null;
     SNode quotedNode_12 = null;
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("isAbstract", "true");
-    quotedNode_5.setProperty("name", "assign");
+    SNodeAccessUtil.setProperty(quotedNode_5, "isAbstract", "true");
+    SNodeAccessUtil.setProperty(quotedNode_5, "name", "assign");
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6.setProperty("name", "from");
+    SNodeAccessUtil.setProperty(quotedNode_6, "name", "from");
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_10.setReferenceTarget("classifier", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_10, "classifier", (SNode) parameter_2);
     {
       List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {
@@ -243,7 +244,7 @@ public class UpdateTuplesRuntime_MigrationScript extends BaseMigrationScript {
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_5.addChild("body", quotedNode_8);
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_9.setReferenceTarget("classifier", (SNode) parameter_4);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_9, "classifier", (SNode) parameter_4);
     {
       List<SNode> nodes = (List<SNode>) parameter_3;
       for (SNode child : nodes) {

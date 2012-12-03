@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_2663453265347375465(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -169,7 +170,7 @@ public class QueriesGenerated {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.modeling.structure.ExpressionWithUnit", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("unit", (String) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_3, "unit", (String) parameter_2);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("expression", HUtil.copyIfNecessary(quotedNode_4));
@@ -181,7 +182,7 @@ public class QueriesGenerated {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.modeling.structure.ExpressionWithUnit", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("unit", (String) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_3, "unit", (String) parameter_2);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("expression", HUtil.copyIfNecessary(quotedNode_4));

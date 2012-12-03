@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.Iterator;
 import java.util.Queue;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class SNodeOperations {
   public SNodeOperations() {
@@ -67,7 +68,7 @@ public class SNodeOperations {
   public static Map<String, String> getProperties(SNode node) {
     Map<String, String> result = new HashMap<String, String>();
     for (String name : Sequence.fromIterable(node.getPropertyNames())) {
-      result.put(name, node.getProperty(name));
+      result.put(name, SNodeAccessUtil.getProperty((jetbrains.mps.smodel.SNode) node,name));
     }
     return result;
   }

@@ -4,6 +4,7 @@ package jetbrains.mps.smodel.test.reflection;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.Assert;
@@ -242,7 +243,7 @@ public class SNodeGetReferencesOperation_Test extends BaseTransformationTest4 {
 
     public String addUnspecifiedReference(SNode input, SNode referenceTarget) {
       String referenceName = "unspecifiedReference";
-      input.setReferenceTarget(referenceName, referenceTarget);
+      SNodeAccessUtil.setReferenceTarget(input, referenceName, referenceTarget);
       return referenceName;
     }
   }

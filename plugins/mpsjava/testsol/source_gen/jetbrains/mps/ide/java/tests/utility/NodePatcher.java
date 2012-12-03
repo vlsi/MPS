@@ -20,6 +20,7 @@ import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class NodePatcher {
   public NodePatcher() {
@@ -39,7 +40,7 @@ public class NodePatcher {
    */
   public static void fixNonStatic(SNode node) {
     for (SNode cls : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.Classifier", true, new String[]{}))) {
-      if (cls.getProperty("nonStatic") == null) {
+      if (SNodeAccessUtil.getProperty(cls, "nonStatic") == null) {
         SPropertyOperations.set(cls, "nonStatic", "" + (true));
       }
     }

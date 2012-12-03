@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class NamedTupleDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -116,7 +117,7 @@ public class NamedTupleDeclaration_Behavior {
   private static SNode _quotation_createNode_ds5lpv_a0a0a0a3(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
 
@@ -124,7 +125,7 @@ public class NamedTupleDeclaration_Behavior {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.tuples.structure.NamedTupleType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReferenceTarget("classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_1);
     {
       List<SNode> nodes = (List<SNode>) parameter_2;
       for (SNode child : nodes) {

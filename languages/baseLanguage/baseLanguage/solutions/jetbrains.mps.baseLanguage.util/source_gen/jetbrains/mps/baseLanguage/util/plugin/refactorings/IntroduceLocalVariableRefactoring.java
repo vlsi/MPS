@@ -12,6 +12,7 @@ import java.util.List;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactoring {
   public IntroduceLocalVariableRefactoring() {
@@ -89,7 +90,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
     SNode quotedNode_7 = null;
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("name", (String) parameter_3);
+    SNodeAccessUtil.setProperty(quotedNode_5, "name", (String) parameter_3);
     quotedNode_6 = (SNode) parameter_1;
     if (quotedNode_6 != null) {
       quotedNode_5.addChild("type", HUtil.copyIfNecessary(quotedNode_6));

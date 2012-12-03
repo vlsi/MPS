@@ -12,6 +12,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Templateweave__InputRoot implements TemplateDeclarationWeavingAware {
   public Templateweave__InputRoot() {
@@ -26,7 +27,7 @@ public class Templateweave__InputRoot implements TemplateDeclarationWeavingAware
     try {
       environment.getTracer().pushTemplateNode(templateNode_ww46pe_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/8417539822878724216");
-      tnode1.setProperty("text", "weaved N1");
+      SNodeAccessUtil.setProperty(tnode1, "text", "weaved N1");
 
     } finally {
       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
@@ -40,7 +41,7 @@ public class Templateweave__InputRoot implements TemplateDeclarationWeavingAware
     try {
       environment.getTracer().pushTemplateNode(templateNode_ww46pe_a0a0a1a3);
       environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c895905f9/8417539822878724215");
-      tnode2.setProperty("text", "weaved N2");
+      SNodeAccessUtil.setProperty(tnode2, "text", "weaved N2");
 
     } finally {
       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode2));

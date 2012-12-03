@@ -15,6 +15,8 @@ import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+
 import java.util.Collection;
 
 public class Templateweave__ChildConceptWeave implements TemplateDeclarationWeavingAware {
@@ -30,7 +32,7 @@ public class Templateweave__ChildConceptWeave implements TemplateDeclarationWeav
     try {
       environment.getTracer().pushTemplateNode(templateNode_asyc93_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008522549");
-      tnode1.setProperty("name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008522555(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "method", propertyMacro_asyc93_c0b0b0a2a1a2, context, environment.getGenerator()))));
+      SNodeAccessUtil.setProperty(tnode1, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008522555(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "method", propertyMacro_asyc93_c0b0b0a2a1a2, context, environment.getGenerator()))));
 
       {
         final SNode tnode2 = new SNode("jetbrains.mps.baseLanguage.structure.VoidType");
@@ -115,7 +117,7 @@ public class Templateweave__ChildConceptWeave implements TemplateDeclarationWeav
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_asyc93_a0a0a1a3a1a4a1a4a1a3a1a3a1a6a1a2);
                               environment.nodeCopied(context, tnode10, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008526314");
-                              tnode10.setProperty("value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008526320(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "name", propertyMacro_asyc93_c0b0b0a2a1a3a1a4a1a4a1a3a1a3a1a6a1a2, context, environment.getGenerator()))));
+                              SNodeAccessUtil.setProperty(tnode10, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008526320(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "name", propertyMacro_asyc93_c0b0b0a2a1a3a1a4a1a4a1a3a1a3a1a6a1a2, context, environment.getGenerator()))));
 
                             } finally {
                               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode10));
@@ -131,7 +133,7 @@ public class Templateweave__ChildConceptWeave implements TemplateDeclarationWeav
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_asyc93_a0a0a1a4a1a4a1a4a1a3a1a3a1a6a1a2);
                               environment.nodeCopied(context, tnode11, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008526304");
-                              tnode11.setProperty("value", "I'm");
+                              SNodeAccessUtil.setProperty(tnode11, "value", "I'm");
 
                             } finally {
                               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode11));

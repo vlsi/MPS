@@ -9,6 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class BuildLayout_Tar_Behavior {
   public static void init(SNode thisNode) {
@@ -51,12 +52,12 @@ public class BuildLayout_Tar_Behavior {
     SNode quotedNode_5 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfAntStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("shortEmptyNotation", "true");
-    quotedNode_3.setProperty("tagName", "mkdir");
+    SNodeAccessUtil.setProperty(quotedNode_3, "shortEmptyNotation", "true");
+    SNodeAccessUtil.setProperty(quotedNode_3, "tagName", "mkdir");
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("attrName", "dir");
+    SNodeAccessUtil.setProperty(quotedNode_4, "attrName", "dir");
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("text", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_5, "text", (String) parameter_1);
     quotedNode_4.addChild("value", quotedNode_5);
     quotedNode_3.addChild("attributes", quotedNode_4);
     quotedNode_2.addChild("element", quotedNode_3);
@@ -74,24 +75,24 @@ public class BuildLayout_Tar_Behavior {
     SNode quotedNode_11 = null;
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfAntStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlElement", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("shortEmptyNotation", "true");
-    quotedNode_5.setProperty("tagName", "untar");
+    SNodeAccessUtil.setProperty(quotedNode_5, "shortEmptyNotation", "true");
+    SNodeAccessUtil.setProperty(quotedNode_5, "tagName", "untar");
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6.setProperty("attrName", "src");
+    SNodeAccessUtil.setProperty(quotedNode_6, "attrName", "src");
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
-    quotedNode_9.setProperty("text", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_9, "text", (String) parameter_1);
     quotedNode_6.addChild("value", quotedNode_9);
     quotedNode_5.addChild("attributes", quotedNode_6);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
-    quotedNode_7.setProperty("attrName", "dest");
+    SNodeAccessUtil.setProperty(quotedNode_7, "attrName", "dest");
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
-    quotedNode_10.setProperty("text", (String) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_10, "text", (String) parameter_2);
     quotedNode_7.addChild("value", quotedNode_10);
     quotedNode_5.addChild("attributes", quotedNode_7);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
-    quotedNode_8.setProperty("attrName", "compression");
+    SNodeAccessUtil.setProperty(quotedNode_8, "attrName", "compression");
     quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
-    quotedNode_11.setProperty("text", (String) parameter_3);
+    SNodeAccessUtil.setProperty(quotedNode_11, "text", (String) parameter_3);
     quotedNode_8.addChild("value", quotedNode_11);
     quotedNode_5.addChild("attributes", quotedNode_8);
     quotedNode_4.addChild("element", quotedNode_5);

@@ -14,6 +14,7 @@ import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Templategen__static__method implements TemplateDeclarationWeavingAware {
   public Templategen__static__method() {
@@ -29,7 +30,7 @@ public class Templategen__static__method implements TemplateDeclarationWeavingAw
     try {
       environment.getTracer().pushTemplateNode(templateNode_tq9j2a_a0a0a2a2);
       environment.nodeCopied(context1, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724041");
-      tnode2.setProperty("name", "fact");
+      SNodeAccessUtil.setProperty(tnode2, "name", "fact");
 
       {
         final SNode tnode3 = new SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
@@ -75,7 +76,7 @@ public class Templategen__static__method implements TemplateDeclarationWeavingAw
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_tq9j2a_a0a0a1a3a1a3a1a3a1a3a1a5a2a2);
                           environment.nodeCopied(context1, tnode8, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724069");
-                          tnode8.setProperty("value", "1");
+                          SNodeAccessUtil.setProperty(tnode8, "value", "1");
 
                         } finally {
                           environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode8));
@@ -131,7 +132,7 @@ public class Templategen__static__method implements TemplateDeclarationWeavingAw
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_tq9j2a_a0a0a1a4a1a4a1a3a1a5a2a2);
                       environment.nodeCopied(context1, tnode11, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724066");
-                      tnode11.setProperty("value", "0");
+                      SNodeAccessUtil.setProperty(tnode11, "value", "0");
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode11));
@@ -206,7 +207,7 @@ public class Templategen__static__method implements TemplateDeclarationWeavingAw
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_tq9j2a_a0a0a1a3a1a4a1a4a1a3a1a4a1a5a2a2);
                               environment.nodeCopied(context1, tnode17, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724055");
-                              tnode17.setProperty("value", "1");
+                              SNodeAccessUtil.setProperty(tnode17, "value", "1");
 
                             } finally {
                               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode17));
@@ -298,7 +299,7 @@ public class Templategen__static__method implements TemplateDeclarationWeavingAw
         try {
           environment.getTracer().pushTemplateNode(templateNode_tq9j2a_a0a0a1a7a2a2);
           environment.nodeCopied(context1, tnode20, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980724048");
-          tnode20.setProperty("name", "e");
+          SNodeAccessUtil.setProperty(tnode20, "name", "e");
 
           {
             final SNode tnode21 = new SNode("jetbrains.mps.baseLanguage.structure.IntegerType");
@@ -337,7 +338,7 @@ public class Templategen__static__method implements TemplateDeclarationWeavingAw
     try {
       environment.getTracer().pushTemplateNode(templateNode_tq9j2a_a0a0a1a3);
       environment.nodeCopied(context, tnode22, "tpl/r:00000000-0000-4000-0000-011c89590606/5955416080080987354");
-      tnode22.setProperty("name", "worker");
+      SNodeAccessUtil.setProperty(tnode22, "name", "worker");
 
       {
         final SNode tnode23 = new SNode("jetbrains.mps.baseLanguage.structure.VoidType");
@@ -405,7 +406,7 @@ public class Templategen__static__method implements TemplateDeclarationWeavingAw
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_tq9j2a_a0a0a1a4a1a3a1a3a1a6a1a3);
                       environment.nodeCopied(context, tnode28, "tpl/r:00000000-0000-4000-0000-011c89590606/5955416080080987361");
-                      tnode28.setProperty("value", "3");
+                      SNodeAccessUtil.setProperty(tnode28, "value", "3");
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode28));

@@ -29,6 +29,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class GenerateEqualsAndHashCode_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -228,7 +229,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     SNode quotedNode_39 = null;
     SNode quotedNode_40 = null;
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("name", "equals");
+    SNodeAccessUtil.setProperty(quotedNode_5, "name", "equals");
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
     quotedNode_5.addChild("returnType", quotedNode_6);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
@@ -238,7 +239,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_29 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_29.setProperty("value", "true");
+    SNodeAccessUtil.setProperty(quotedNode_29, "value", "true");
     quotedNode_21.addChild("expression", quotedNode_29);
     quotedNode_16.addChild("statement", quotedNode_21);
     quotedNode_11.addChild("ifTrue", quotedNode_16);
@@ -255,7 +256,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_30 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_30.setProperty("value", "false");
+    SNodeAccessUtil.setProperty(quotedNode_30, "value", "false");
     quotedNode_24.addChild("expression", quotedNode_30);
     quotedNode_18.addChild("statement", quotedNode_24);
     quotedNode_12.addChild("ifTrue", quotedNode_18);
@@ -290,13 +291,13 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_8.addChild("statement", quotedNode_13);
     quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_20.setProperty("name", "that");
+    SNodeAccessUtil.setProperty(quotedNode_20, "name", "that");
     quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_27.setReferenceTarget("classifier", (SNode) parameter_3);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_27, "classifier", (SNode) parameter_3);
     quotedNode_20.addChild("type", quotedNode_27);
     quotedNode_28 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_35 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_35.setReferenceTarget("classifier", (SNode) parameter_4);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_35, "classifier", (SNode) parameter_4);
     quotedNode_28.addChild("type", quotedNode_35);
     quotedNode_36 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, null, GlobalScope.getInstance(), false);
     quotedNode_28.addChild("expression", quotedNode_36);
@@ -305,7 +306,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_8.addChild("statement", quotedNode_14);
     quotedNode_5.addChild("body", quotedNode_8);
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_9.setProperty("name", "o");
+    SNodeAccessUtil.setProperty(quotedNode_9, "name", "o");
     quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_15.setReference("classifier", SReference.create("classifier", quotedNode_15, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
     quotedNode_9.addChild("type", quotedNode_15);
@@ -313,10 +314,10 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
     quotedNode_10.setReference("annotation", SReference.create("annotation", quotedNode_10, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Override")));
     quotedNode_5.addChild("annotation", quotedNode_10);
-    quotedNode_23.setReferenceTarget("variableDeclaration", quotedNode_9);
-    quotedNode_31.setReferenceTarget("variableDeclaration", quotedNode_9);
-    quotedNode_36.setReferenceTarget("variableDeclaration", quotedNode_9);
-    quotedNode_39.setReferenceTarget("variableDeclaration", quotedNode_9);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_23, "variableDeclaration", quotedNode_9);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_31, "variableDeclaration", quotedNode_9);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_36, "variableDeclaration", quotedNode_9);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_39, "variableDeclaration", quotedNode_9);
     return quotedNode_5;
   }
 
@@ -336,13 +337,13 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_10.setProperty("value", "false");
+    SNodeAccessUtil.setProperty(quotedNode_10, "value", "false");
     quotedNode_7.addChild("expression", quotedNode_10);
     quotedNode_5.addChild("statement", quotedNode_7);
     quotedNode_4.addChild("ifTrue", quotedNode_5);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_8.setProperty("value", "0");
+    SNodeAccessUtil.setProperty(quotedNode_8, "value", "0");
     quotedNode_6.addChild("rightExpression", quotedNode_8);
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
     quotedNode_9.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_9, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Float.compare(float,float):int")));
@@ -381,7 +382,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IfStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_7.setProperty("value", "0");
+    SNodeAccessUtil.setProperty(quotedNode_7, "value", "0");
     quotedNode_5.addChild("rightExpression", quotedNode_7);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
     quotedNode_8.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_8, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Double.compare(double,double):int")));
@@ -405,7 +406,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_12.setProperty("value", "false");
+    SNodeAccessUtil.setProperty(quotedNode_12, "value", "false");
     quotedNode_9.addChild("expression", quotedNode_12);
     quotedNode_6.addChild("statement", quotedNode_9);
     quotedNode_4.addChild("ifTrue", quotedNode_6);
@@ -442,7 +443,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_12.setProperty("value", "false");
+    SNodeAccessUtil.setProperty(quotedNode_12, "value", "false");
     quotedNode_9.addChild("expression", quotedNode_12);
     quotedNode_6.addChild("statement", quotedNode_9);
     quotedNode_4.addChild("ifTrue", quotedNode_6);
@@ -484,7 +485,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_11.setProperty("value", "false");
+    SNodeAccessUtil.setProperty(quotedNode_11, "value", "false");
     quotedNode_8.addChild("expression", quotedNode_11);
     quotedNode_6.addChild("statement", quotedNode_8);
     quotedNode_4.addChild("ifTrue", quotedNode_6);
@@ -516,7 +517,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_14.setProperty("value", "false");
+    SNodeAccessUtil.setProperty(quotedNode_14, "value", "false");
     quotedNode_10.addChild("expression", quotedNode_14);
     quotedNode_8.addChild("statement", quotedNode_10);
     quotedNode_7.addChild("ifTrue", quotedNode_8);
@@ -596,7 +597,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_14.setProperty("value", "false");
+    SNodeAccessUtil.setProperty(quotedNode_14, "value", "false");
     quotedNode_10.addChild("expression", quotedNode_14);
     quotedNode_8.addChild("statement", quotedNode_10);
     quotedNode_7.addChild("ifTrue", quotedNode_8);
@@ -660,7 +661,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("value", "true");
+    SNodeAccessUtil.setProperty(quotedNode_2, "value", "true");
     quotedNode_1.addChild("expression", quotedNode_2);
     return quotedNode_1;
   }
@@ -672,7 +673,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("name", "hashCode");
+    SNodeAccessUtil.setProperty(quotedNode_1, "name", "hashCode");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.addChild("returnType", quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
@@ -692,11 +693,11 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     SNode quotedNode_4 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("name", "result");
+    SNodeAccessUtil.setProperty(quotedNode_2, "name", "result");
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.addChild("type", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("value", "0");
+    SNodeAccessUtil.setProperty(quotedNode_4, "value", "0");
     quotedNode_2.addChild("initializer", quotedNode_4);
     quotedNode_1.addChild("localVariableDeclaration", quotedNode_2);
     return quotedNode_1;
@@ -708,7 +709,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     SNode quotedNode_3 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("name", "temp");
+    SNodeAccessUtil.setProperty(quotedNode_2, "name", "temp");
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.addChild("type", quotedNode_3);
     quotedNode_1.addChild("localVariableDeclaration", quotedNode_2);
@@ -721,7 +722,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     SNode quotedNode_4 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.MulExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("value", "31");
+    SNodeAccessUtil.setProperty(quotedNode_3, "value", "31");
     quotedNode_2.addChild("leftExpression", quotedNode_3);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
@@ -760,7 +761,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShiftRightExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_17.setProperty("value", "32");
+    SNodeAccessUtil.setProperty(quotedNode_17, "value", "32");
     quotedNode_16.addChild("rightExpression", quotedNode_17);
     quotedNode_18 = (SNode) parameter_2;
     if (quotedNode_18 != null) {
@@ -845,12 +846,12 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
     quotedNode_7.addChild("ifTrue", quotedNode_8);
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LongLiteral", null, null, GlobalScope.getInstance(), false);
-    quotedNode_9.setProperty("value", "0L");
+    SNodeAccessUtil.setProperty(quotedNode_9, "value", "0L");
     quotedNode_7.addChild("ifFalse", quotedNode_9);
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatingPointConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_13.setProperty("value", "0.0");
+    SNodeAccessUtil.setProperty(quotedNode_13, "value", "0.0");
     quotedNode_12.addChild("rightExpression", quotedNode_13);
     quotedNode_14 = (SNode) parameter_3;
     if (quotedNode_14 != null) {
@@ -897,7 +898,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ShiftRightExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_17.setProperty("value", "32");
+    SNodeAccessUtil.setProperty(quotedNode_17, "value", "32");
     quotedNode_16.addChild("rightExpression", quotedNode_17);
     quotedNode_18 = (SNode) parameter_3;
     if (quotedNode_18 != null) {
@@ -980,11 +981,11 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     }
     quotedNode_11.addChild("ifTrue", quotedNode_12);
     quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_13.setProperty("value", "0");
+    SNodeAccessUtil.setProperty(quotedNode_13, "value", "0");
     quotedNode_11.addChild("ifFalse", quotedNode_13);
     quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_16.setProperty("value", "0.0f");
+    SNodeAccessUtil.setProperty(quotedNode_16, "value", "0.0f");
     quotedNode_14.addChild("rightExpression", quotedNode_16);
     quotedNode_17 = (SNode) parameter_4;
     if (quotedNode_17 != null) {
@@ -1028,7 +1029,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_12.setProperty("value", "0");
+    SNodeAccessUtil.setProperty(quotedNode_12, "value", "0");
     quotedNode_11.addChild("ifFalse", quotedNode_12);
     quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
@@ -1082,7 +1083,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_12.setProperty("value", "0");
+    SNodeAccessUtil.setProperty(quotedNode_12, "value", "0");
     quotedNode_11.addChild("ifFalse", quotedNode_12);
     quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
     quotedNode_13.setReference("classConcept", SReference.create("classConcept", quotedNode_13, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Arrays")));
@@ -1135,7 +1136,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_12.setProperty("value", "0");
+    SNodeAccessUtil.setProperty(quotedNode_12, "value", "0");
     quotedNode_11.addChild("ifFalse", quotedNode_12);
     quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
@@ -1200,7 +1201,7 @@ public class GenerateEqualsAndHashCode_Action extends BaseAction {
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TernaryOperatorExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_12.setProperty("value", "0");
+    SNodeAccessUtil.setProperty(quotedNode_12, "value", "0");
     quotedNode_11.addChild("ifFalse", quotedNode_12);
     quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);

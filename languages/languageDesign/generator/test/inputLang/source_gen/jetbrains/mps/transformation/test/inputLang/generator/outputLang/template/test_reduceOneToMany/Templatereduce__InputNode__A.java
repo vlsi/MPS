@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingAware {
   public Templatereduce__InputNode__A() {
@@ -43,7 +44,7 @@ public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingA
           try {
             environment.getTracer().pushTemplateNode(templateNode_b8tv7e_a0a0a3a2a2a1a2);
             environment.nodeCopied(context1, tnode2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/3893401255414100171");
-            tnode2.setProperty("text", "child #1");
+            SNodeAccessUtil.setProperty(tnode2, "text", "child #1");
 
           } finally {
             environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode2));
@@ -69,7 +70,7 @@ public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingA
     try {
       environment.getTracer().pushTemplateNode(templateNode_b8tv7e_a0a0a1a3);
       environment.nodeCopied(context, tnode3, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1391450457158185608");
-      tnode3.setProperty("text", "child #2");
+      SNodeAccessUtil.setProperty(tnode3, "text", "child #2");
 
     } finally {
       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode3));

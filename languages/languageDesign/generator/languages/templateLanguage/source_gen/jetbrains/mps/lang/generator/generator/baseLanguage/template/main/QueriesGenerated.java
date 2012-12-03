@@ -45,6 +45,7 @@ import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_3076445114127780910(final IOperationContext operationContext, final CreateRootRuleContext _context) {
@@ -216,11 +217,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4155486055398183492(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("propertyName");
+    return SNodeAccessUtil.getProperty(_context.getNode(), "propertyName");
   }
 
   public static Object propertyMacro_GetPropertyValue_4155486055398183502(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return NameUtil.escapeString(_context.getNode().getProperty("propertyValue"));
+    return NameUtil.escapeString(SNodeAccessUtil.getProperty(_context.getNode(), "propertyValue"));
   }
 
   public static Object propertyMacro_GetPropertyValue_4155486055398183606(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -231,39 +232,39 @@ public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_2053864656213145643(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String role = AttributeOperations.getPropertyName(_context.getNode());
     SNode original = SNodeOperations.getParent(_context.getNode());
-    return original.getProperty(role);
+    return SNodeAccessUtil.getProperty(original, role);
   }
 
   public static Object propertyMacro_GetPropertyValue_3691177885151651502(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("role");
+    return SNodeAccessUtil.getProperty(_context.getNode(), "role");
   }
 
   public static Object propertyMacro_GetPropertyValue_4155486055398183723(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("role");
+    return SNodeAccessUtil.getProperty(_context.getNode(), "role");
   }
 
   public static Object propertyMacro_GetPropertyValue_4155486055398183735(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("targetModel");
+    return SNodeAccessUtil.getProperty(_context.getNode(), "targetModel");
   }
 
   public static Object propertyMacro_GetPropertyValue_4155486055398183746(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("targetNodeId");
+    return SNodeAccessUtil.getProperty(_context.getNode(), "targetNodeId");
   }
 
   public static Object propertyMacro_GetPropertyValue_4155486055398184008(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("role");
+    return SNodeAccessUtil.getProperty(_context.getNode(), "role");
   }
 
   public static Object propertyMacro_GetPropertyValue_4155486055398184031(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("templateNodeId");
+    return SNodeAccessUtil.getProperty(_context.getNode(), "templateNodeId");
   }
 
   public static Object propertyMacro_GetPropertyValue_4155486055398184040(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Integer.valueOf(_context.getNode().getProperty("parentIndex"));
+    return Integer.valueOf(SNodeAccessUtil.getProperty(_context.getNode(), "parentIndex"));
   }
 
   public static Object propertyMacro_GetPropertyValue_4565390460241594511(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("resolveInfo");
+    return SNodeAccessUtil.getProperty(_context.getNode(), "resolveInfo");
   }
 
   public static Object propertyMacro_GetPropertyValue_1503590073461987862(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1789,15 +1790,15 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_2053864656213145666(final IOperationContext operationContext, final IfMacroContext _context) {
     String role = AttributeOperations.getPropertyName(_context.getNode());
     SNode original = SNodeOperations.getParent(_context.getNode());
-    return original.getProperty(role) != null;
+    return SNodeAccessUtil.getProperty(original, role) != null;
   }
 
   public static boolean ifMacro_Condition_4155486055398183990(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0fp(_context.getNode().getProperty("kind"), "normal");
+    return eq_x583g4_a0a0fp(SNodeAccessUtil.getProperty(_context.getNode(), "kind"), "normal");
   }
 
   public static boolean ifMacro_Condition_4155486055398184018(final IOperationContext operationContext, final IfMacroContext _context) {
-    return eq_x583g4_a0a0gp(_context.getNode().getProperty("kind"), "parentIndex");
+    return eq_x583g4_a0a0gp(SNodeAccessUtil.getProperty(_context.getNode(), "kind"), "parentIndex");
   }
 
   public static boolean ifMacro_Condition_1246578104714225920(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -3571,8 +3572,8 @@ public class QueriesGenerated {
         continue;
       }
       SNode propertyNode = SModelOperations.createNewNode(_context.getInputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-      propertyNode.setProperty("propertyName", name);
-      propertyNode.setProperty("propertyValue", _context.getNode().getProperty(name));
+      SNodeAccessUtil.setProperty(propertyNode, "propertyName", name);
+      SNodeAccessUtil.setProperty(propertyNode, "propertyValue", SNodeAccessUtil.getProperty(_context.getNode(), name));
       ListSequence.fromList(result).addElement(propertyNode);
     }
     return result;
@@ -3616,16 +3617,16 @@ public class QueriesGenerated {
           counter++;
         }
         SNode referenceNode = SModelOperations.createNewNode(_context.getInputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-        referenceNode.setProperty("role", reference.getRole());
+        SNodeAccessUtil.setProperty(referenceNode, "role", reference.getRole());
         referenceNode.setReferent("originalNode", _context.getNode(), false);
         if (current != null) {
           // return parent N (counter) 
-          referenceNode.setProperty("kind", "parentIndex");
-          referenceNode.setProperty("parentIndex", Integer.toString(counter));
+          SNodeAccessUtil.setProperty(referenceNode, "kind", "parentIndex");
+          SNodeAccessUtil.setProperty(referenceNode, "parentIndex", Integer.toString(counter));
         } else {
           // internal reference 
-          referenceNode.setProperty("kind", "internal");
-          referenceNode.setProperty("templateNodeId", GeneratorUtil.getTemplateNodeId(_context.getOriginalCopiedInputNode(targetNode)));
+          SNodeAccessUtil.setProperty(referenceNode, "kind", "internal");
+          SNodeAccessUtil.setProperty(referenceNode, "templateNodeId", GeneratorUtil.getTemplateNodeId(_context.getOriginalCopiedInputNode(targetNode)));
         }
 
         String resolveInfo = null;
@@ -3638,15 +3639,15 @@ public class QueriesGenerated {
         if (resolveInfo == null) {
           resolveInfo = "";
         }
-        referenceNode.setProperty("resolveInfo", resolveInfo);
+        SNodeAccessUtil.setProperty(referenceNode, "resolveInfo", resolveInfo);
         ListSequence.fromList(result).addElement(referenceNode);
 
       } else {
         SNode referenceNode = SModelOperations.createNewNode(_context.getInputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-        referenceNode.setProperty("kind", "normal");
-        referenceNode.setProperty("targetModel", reference.getTargetSModelReference().toString());
-        referenceNode.setProperty("role", reference.getRole());
-        referenceNode.setProperty("targetNodeId", targetNode.getSNodeId().toString());
+        SNodeAccessUtil.setProperty(referenceNode, "kind", "normal");
+        SNodeAccessUtil.setProperty(referenceNode, "targetModel", reference.getTargetSModelReference().toString());
+        SNodeAccessUtil.setProperty(referenceNode, "role", reference.getRole());
+        SNodeAccessUtil.setProperty(referenceNode, "targetNodeId", targetNode.getSNodeId().toString());
         ListSequence.fromList(result).addElement(referenceNode);
       }
     }

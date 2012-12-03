@@ -4,6 +4,7 @@ package jetbrains.mps.lang.core.typesystem;
 
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class RemoveUnknownReference_QuickFix extends QuickFix_Runtime {
   public RemoveUnknownReference_QuickFix() {
@@ -14,6 +15,6 @@ public class RemoveUnknownReference_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    node.setReferenceTarget(((String) RemoveUnknownReference_QuickFix.this.getField("role")[0]), null);
+    SNodeAccessUtil.setReferenceTarget(node, ((String) this.getField("role")[0]), null);
   }
 }

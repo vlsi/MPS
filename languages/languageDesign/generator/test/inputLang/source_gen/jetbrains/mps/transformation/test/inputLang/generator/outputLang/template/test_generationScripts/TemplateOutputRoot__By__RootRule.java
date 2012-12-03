@@ -12,6 +12,7 @@ import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class TemplateOutputRoot__By__RootRule implements TemplateDeclaration {
   public TemplateOutputRoot__By__RootRule() {
@@ -26,8 +27,8 @@ public class TemplateOutputRoot__By__RootRule implements TemplateDeclaration {
     try {
       environment.getTracer().pushTemplateNode(templateNode_l7bj61_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195166061402");
-      tnode1.setProperty("name", "OutputRoot_By_RootRule");
-      tnode1.setProperty("text", "OutputRoot by RootRule");
+      SNodeAccessUtil.setProperty(tnode1, "name", "OutputRoot_By_RootRule");
+      SNodeAccessUtil.setProperty(tnode1, "text", "OutputRoot by RootRule");
 
     } finally {
       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));

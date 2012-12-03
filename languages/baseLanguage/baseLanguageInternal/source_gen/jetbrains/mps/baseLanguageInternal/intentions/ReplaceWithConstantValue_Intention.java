@@ -8,6 +8,7 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -83,7 +84,7 @@ public class ReplaceWithConstantValue_Intention implements IntentionFactory {
   private static SNode _quotation_createNode_y7ts2x_a0a0a(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.ConstantValue", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("constant", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "constant", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

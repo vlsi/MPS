@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static void mappingScript_CodeBlock_5916922432461069146(final IOperationContext operationContext, final MappingScriptContext _context) {
@@ -61,7 +62,7 @@ public class QueriesGenerated {
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
     quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)"), SNodeId.fromString("4474271214082913336")));
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("value", "true");
+    SNodeAccessUtil.setProperty(quotedNode_5, "value", "true");
     quotedNode_3.addChild("actualArgument", quotedNode_5);
     quotedNode_2.addChild("operation", quotedNode_3);
     quotedNode_4 = (SNode) parameter_1;
@@ -75,9 +76,9 @@ public class QueriesGenerated {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandParameterAssignment", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("parameterDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "parameterDeclaration", (SNode) parameter_1);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("value", "");
+    SNodeAccessUtil.setProperty(quotedNode_3, "value", "");
     quotedNode_2.addChild("value", quotedNode_3);
     return quotedNode_2;
   }

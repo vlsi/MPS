@@ -12,6 +12,7 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
   private SNode myNode;
@@ -36,7 +37,7 @@ public class EnumPropertySubstituteInfo extends AbstractNodeSubstituteInfo {
         protected SNode doSubstitute(String pattern) {
           String propertyName = SPropertyOperations.getString(myPropertyDeclaration, "name");
           assert propertyName != null;
-          getSourceNode().setProperty(propertyName, SPropertyOperations.getString(enumMemberDeclaration, "internalValue"));
+          SNodeAccessUtil.setProperty(getSourceNode(), propertyName, SPropertyOperations.getString(enumMemberDeclaration, "internalValue"));
           return null;
         }
       });

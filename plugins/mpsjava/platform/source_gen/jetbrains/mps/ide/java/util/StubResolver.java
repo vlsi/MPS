@@ -40,6 +40,7 @@ import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.IListSequence;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class StubResolver {
   private static final String JAVA_STUB = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
@@ -158,7 +159,7 @@ public class StubResolver {
           LOG.error("more than 1 possible resolution for " + SLinkOperations.getResolveInfo(ref) + " in model " + modelRef.getLongName());
         }
         if (ListSequence.fromList(resolved).count() > 0) {
-          node.setReferenceTarget(SLinkOperations.getRole(ref), ListSequence.fromList(resolved).first());
+          SNodeAccessUtil.setReferenceTarget(node, SLinkOperations.getRole(ref), ListSequence.fromList(resolved).first());
           ListSequence.fromList(toResolve).removeElement(ref);
           ++cnt;
           found = true;

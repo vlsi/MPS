@@ -32,6 +32,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.generator.impl.DefaultTemplateContext;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   private final Collection<TemplateReductionRule> rules;
@@ -399,7 +400,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a3a2a2a1a8a2a5v);
                   environment.nodeCopied(context13, tnode14, "tpl/r:00000000-0000-4000-0000-011c8959035c/4192433084863763933");
-                  tnode14.setProperty("value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4192433084863763942(environment.getOperationContext(), new PropertyMacroContext(context13.getInput(), "", propertyMacro_417xrn_c0b0b0a2a3a2a2a1a8a2a5v, context13, environment.getGenerator()))));
+                  SNodeAccessUtil.setProperty(tnode14, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_4192433084863763942(environment.getOperationContext(), new PropertyMacroContext(context13.getInput(), "", propertyMacro_417xrn_c0b0b0a2a3a2a2a1a8a2a5v, context13, environment.getGenerator()))));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode14));
@@ -495,7 +496,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a5a3a2a2a1a5a2a5w);
                       environment.nodeCopied(context2, tnode4, "tpl/r:00000000-0000-4000-0000-011c8959035c/6366407517031517849");
-                      tnode4.setProperty("value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6366407517031517851(environment.getOperationContext(), new PropertyMacroContext(context2.getInput(), "", propertyMacro_417xrn_c0b0b0a2a1a5a3a2a2a1a5a2a5w, context2, environment.getGenerator()))));
+                      SNodeAccessUtil.setProperty(tnode4, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6366407517031517851(environment.getOperationContext(), new PropertyMacroContext(context2.getInput(), "", propertyMacro_417xrn_c0b0b0a2a1a5a3a2a2a1a5a2a5w, context2, environment.getGenerator()))));
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode4));

@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class AbstractAction_Constraints extends BaseConstraintsDescriptor {
   public AbstractAction_Constraints() {
@@ -30,7 +31,7 @@ public class AbstractAction_Constraints extends BaseConstraintsDescriptor {
       public Object getValue(SNode node, IScope scope) {
         String propertyName = "resolveInfo";
         {
-          String id = node.getProperty("id");
+          String id = SNodeAccessUtil.getProperty(node, "id");
           id = (id == null ?
             node.getSNodeId().toString() :
             id

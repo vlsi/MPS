@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class StubUtil {
   public StubUtil() {
@@ -65,7 +66,7 @@ public class StubUtil {
         SModelReference oldModelReference = reference.getTargetSModelReference();
         SNodeOperations.getModel(targetNode).deleteModelImport(oldModelReference);
 
-        targetNode.setReferenceTarget(role, candidate);
+        SNodeAccessUtil.setReferenceTarget(targetNode, role, candidate);
         StubRefUtil.addRequiredImports(SNodeOperations.getModel(targetNode), candidate);
         return;
       }
@@ -87,7 +88,7 @@ public class StubUtil {
       SModelReference oldModelReference = reference.getTargetSModelReference();
       SNodeOperations.getModel(node).deleteModelImport(oldModelReference);
 
-      node.setReferenceTarget(role, candidate);
+      SNodeAccessUtil.setReferenceTarget(node, role, candidate);
       StubRefUtil.addRequiredImports(SNodeOperations.getModel(node), candidate);
     } else {
       findAndReplace(node, role, new _FunctionTypes._return_P1_E0<String, SNode>() {

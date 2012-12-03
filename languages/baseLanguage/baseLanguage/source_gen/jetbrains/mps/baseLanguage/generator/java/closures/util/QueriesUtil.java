@@ -17,6 +17,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesUtil {
   public QueriesUtil() {
@@ -83,7 +84,7 @@ public class QueriesUtil {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialFieldReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("fieldName", "_enclosingClass");
+    SNodeAccessUtil.setProperty(quotedNode_1, "fieldName", "_enclosingClass");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.addChild("instance", quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", null, null, GlobalScope.getInstance(), false);

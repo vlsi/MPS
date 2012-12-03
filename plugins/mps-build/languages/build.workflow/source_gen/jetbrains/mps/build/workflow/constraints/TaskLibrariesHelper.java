@@ -24,6 +24,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class TaskLibrariesHelper {
   private SNode project;
@@ -65,7 +66,7 @@ public class TaskLibrariesHelper {
       for (SReference ref : n.getReferences()) {
         SNode targetNode = ref.getTargetNodeSilently();
         if (map.containsKey(targetNode)) {
-          n.setReferenceTarget(ref.getRole(), map.get(targetNode));
+          SNodeAccessUtil.setReferenceTarget(n, ref.getRole(), map.get(targetNode));
         } else {
           SNode containingRoot = targetNode.getTopmostAncestor();
           if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(containingRoot, "jetbrains.mps.build.workflow.structure.BwfTaskLibrary")) {

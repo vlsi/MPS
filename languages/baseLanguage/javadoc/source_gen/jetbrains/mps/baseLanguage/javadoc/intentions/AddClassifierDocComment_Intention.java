@@ -9,6 +9,7 @@ import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -109,7 +110,7 @@ public class AddClassifierDocComment_Intention implements IntentionFactory {
   private static SNode _quotation_createNode_peeqac_a0b0f0a(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.DocTypeParameterReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("param", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "param", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

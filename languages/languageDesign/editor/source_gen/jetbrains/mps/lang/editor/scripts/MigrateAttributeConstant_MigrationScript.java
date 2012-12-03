@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class MigrateAttributeConstant_MigrationScript extends BaseMigrationScript {
   public MigrateAttributeConstant_MigrationScript(IOperationContext operationContext) {
@@ -72,9 +73,9 @@ public class MigrateAttributeConstant_MigrationScript extends BaseMigrationScrip
     SNode quotedNode_8 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.ConceptBehavior", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("isAbstract", "false");
-    quotedNode_3.setProperty("name", "getStyleAttribute");
-    quotedNode_3.setProperty("isVirtual", "false");
+    SNodeAccessUtil.setProperty(quotedNode_3, "isAbstract", "false");
+    SNodeAccessUtil.setProperty(quotedNode_3, "name", "getStyleAttribute");
+    SNodeAccessUtil.setProperty(quotedNode_3, "isVirtual", "false");
     quotedNode_3.setReference("overriddenMethod", SReference.create("overriddenMethod", quotedNode_3, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)"), SNodeId.fromString("2554389230519612632")));
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
     quotedNode_3.addChild("visibility", quotedNode_4);

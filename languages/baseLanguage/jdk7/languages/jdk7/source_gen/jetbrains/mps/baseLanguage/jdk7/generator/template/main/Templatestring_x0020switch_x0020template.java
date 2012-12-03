@@ -20,6 +20,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Templatestring_x0020switch_x0020template implements TemplateDeclarationWeavingAware {
   public Templatestring_x0020switch_x0020template() {
@@ -60,7 +61,7 @@ public class Templatestring_x0020switch_x0020template implements TemplateDeclara
                   try {
                     environment.getTracer().pushTemplateNode(templateNode_wjpymb_a0a0a1a3a3a2a2a1a3a1a2);
                     environment.nodeCopied(context2, tnode4, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/400642802550422212");
-                    tnode4.setProperty("value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_400642802550422214(environment.getOperationContext(), new PropertyMacroContext(context2.getInput(), "42", propertyMacro_wjpymb_c0b0b0a2a1a3a3a2a2a1a3a1a2, context2, environment.getGenerator()))));
+                    SNodeAccessUtil.setProperty(tnode4, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_400642802550422214(environment.getOperationContext(), new PropertyMacroContext(context2.getInput(), "42", propertyMacro_wjpymb_c0b0b0a2a1a3a3a2a2a1a3a1a2, context2, environment.getGenerator()))));
 
                   } finally {
                     environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode4));
@@ -133,8 +134,8 @@ public class Templatestring_x0020switch_x0020template implements TemplateDeclara
             try {
               environment.getTracer().pushTemplateNode(templateNode_wjpymb_a0a0a1a5a1a5a1a2);
               environment.nodeCopied(context, tnode11, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/3708576844065083856");
-              tnode11.setProperty("makeUnique", "true");
-              tnode11.setProperty("fieldName", "stringSwitchCases");
+              SNodeAccessUtil.setProperty(tnode11, "makeUnique", "true");
+              SNodeAccessUtil.setProperty(tnode11, "fieldName", "stringSwitchCases");
 
               {
                 final SNode tnode12 = new SNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression");

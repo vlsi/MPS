@@ -65,6 +65,7 @@ import jetbrains.mps.build.packaging.generator.util.CheckFullDependencyUtil;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_1224770908054(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -219,7 +220,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5640794902512695297(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getProperty("mref");
+    return SNodeAccessUtil.getProperty(_context.getNode(), "mref");
   }
 
   public static Object propertyMacro_GetPropertyValue_1902360454495868335(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1330,12 +1331,12 @@ public class QueriesGenerated {
     List<SNode> res = new ArrayList<SNode>();
     for (IModule m : new GlobalModuleDependenciesManager(Module_Behavior.call_getModule_1213877515148(_context.getNode())).getModules(GlobalModuleDependenciesManager.Deptype.COMPILE)) {
       SNode propertyNode = SConceptOperations.createNewNode("jetbrains.mps.lang.core.structure.BaseConcept", null);
-      propertyNode.setProperty(MREF, m.getModuleReference().toString());
+      SNodeAccessUtil.setProperty(propertyNode, MREF, m.getModuleReference().toString());
       ListSequence.fromList(res).addElement(propertyNode);
     }
     return ListSequence.fromList(res).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return it.getProperty(MREF);
+        return SNodeAccessUtil.getProperty(it, MREF);
       }
     }, true);
   }
@@ -1778,56 +1779,56 @@ __switch__:
   private static SNode _quotation_createNode_x583g4_a0a0a0a0kk(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("path", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, "path", (String) parameter_1);
     return quotedNode_2;
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a0a0lk(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("path", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, "path", (String) parameter_1);
     return quotedNode_2;
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a0a0nk(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("path", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, "path", (String) parameter_1);
     return quotedNode_2;
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a0a0ok(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("path", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, "path", (String) parameter_1);
     return quotedNode_2;
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a0a0rk(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("path", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, "path", (String) parameter_1);
     return quotedNode_2;
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a0a0sk(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("path", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, "path", (String) parameter_1);
     return quotedNode_2;
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a0a0tk(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("path", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, "path", (String) parameter_1);
     return quotedNode_2;
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a0a0uk(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("path", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, "path", (String) parameter_1);
     return quotedNode_2;
   }
 

@@ -15,6 +15,7 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class TemplateOutputRoot implements TemplateDeclaration {
   public TemplateOutputRoot() {
@@ -29,8 +30,8 @@ public class TemplateOutputRoot implements TemplateDeclaration {
     try {
       environment.getTracer().pushTemplateNode(templateNode_q702qm_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460153890");
-      tnode1.setProperty("name", "OutputRoot");
-      tnode1.setProperty("text", "root in Reduce Inheritors test (expect: A, B, B)");
+      SNodeAccessUtil.setProperty(tnode1, "name", "OutputRoot");
+      SNodeAccessUtil.setProperty(tnode1, "text", "root in Reduce Inheritors test (expect: A, B, B)");
 
       {
         Collection<SNode> tlist2 = null;
@@ -101,7 +102,7 @@ public class TemplateOutputRoot implements TemplateDeclaration {
         try {
           environment.getTracer().pushTemplateNode(templateNode_q702qm_a0a0a1a7a1a2);
           environment.nodeCopied(context, tnode7, "tpl/r:00000000-0000-4000-0000-011c895905f9/8014813979421777297");
-          tnode7.setProperty("text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_8014813979421777301(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "foobar", propertyMacro_q702qm_c0b0b0a2a1a7a1a2, context, environment.getGenerator()))));
+          SNodeAccessUtil.setProperty(tnode7, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_8014813979421777301(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "foobar", propertyMacro_q702qm_c0b0b0a2a1a7a1a2, context, environment.getGenerator()))));
 
         } finally {
           environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode7));

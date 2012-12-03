@@ -28,6 +28,7 @@ import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   private final Collection<TemplateReductionRule> rules;
@@ -161,7 +162,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
             try {
               environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a5a1a5a2a5p);
               environment.nodeCopied(context, tnode7, "tpl/r:75f95d80-1d60-4222-8b1e-a09f089fee3e/7980748436587793601");
-              tnode7.setProperty("name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7980748436587793603(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "var", propertyMacro_417xrn_c0b0b0a2a5a1a5a2a5p, context, environment.getGenerator()))));
+              SNodeAccessUtil.setProperty(tnode7, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7980748436587793603(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "var", propertyMacro_417xrn_c0b0b0a2a5a1a5a2a5p, context, environment.getGenerator()))));
 
             } finally {
               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode7));

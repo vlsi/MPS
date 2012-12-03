@@ -12,6 +12,8 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+
 import java.util.Collection;
 
 public class Templateweave__InputNode__A implements TemplateDeclarationWeavingAware {
@@ -27,7 +29,7 @@ public class Templateweave__InputNode__A implements TemplateDeclarationWeavingAw
     try {
       environment.getTracer().pushTemplateNode(templateNode_nu2nvy_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905fa/1218740073391");
-      tnode1.setProperty("text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1218740165112(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "_text_", propertyMacro_nu2nvy_c0b0b0a2a1a2, context, environment.getGenerator()))));
+      SNodeAccessUtil.setProperty(tnode1, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1218740165112(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "_text_", propertyMacro_nu2nvy_c0b0b0a2a1a2, context, environment.getGenerator()))));
 
     } finally {
       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));

@@ -21,6 +21,7 @@ import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class TemplateFindUsagesDescriptor implements TemplateDeclaration {
   public TemplateFindUsagesDescriptor() {
@@ -35,7 +36,7 @@ public class TemplateFindUsagesDescriptor implements TemplateDeclaration {
     try {
       environment.getTracer().pushTemplateNode(templateNode_a7jb2i_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c8959035c/7991477654791670136");
-      tnode1.setProperty("name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7991477654791693978(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "FindUsagesDescriptor", propertyMacro_a7jb2i_c0b0b0a2a1a2, context, environment.getGenerator()))));
+      SNodeAccessUtil.setProperty(tnode1, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7991477654791693978(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "FindUsagesDescriptor", propertyMacro_a7jb2i_c0b0b0a2a1a2, context, environment.getGenerator()))));
 
       {
         final SNode tnode2 = new SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
@@ -135,7 +136,7 @@ public class TemplateFindUsagesDescriptor implements TemplateDeclaration {
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_a7jb2i_a0a0a1a4a1a3a1a4a1a3a1a5a1a6a1a2);
                               environment.nodeCopied(context, tnode11, "tpl/r:00000000-0000-4000-0000-011c8959035c/7991477654791670145");
-                              tnode11.setProperty("value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7991477654791670147(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "fqName", propertyMacro_a7jb2i_c0b0b0a2a1a4a1a3a1a4a1a3a1a5a1a6a1a2, context, environment.getGenerator()))));
+                              SNodeAccessUtil.setProperty(tnode11, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7991477654791670147(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "fqName", propertyMacro_a7jb2i_c0b0b0a2a1a4a1a3a1a4a1a3a1a5a1a6a1a2, context, environment.getGenerator()))));
 
                             } finally {
                               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode11));
@@ -151,7 +152,7 @@ public class TemplateFindUsagesDescriptor implements TemplateDeclaration {
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_a7jb2i_a0a0a1a5a1a3a1a4a1a3a1a5a1a6a1a2);
                               environment.nodeCopied(context, tnode12, "tpl/r:00000000-0000-4000-0000-011c8959035c/7991477654791670160");
-                              tnode12.setProperty("value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7991477654791670162(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "id", propertyMacro_a7jb2i_c0b0b0a2a1a5a1a3a1a4a1a3a1a5a1a6a1a2, context, environment.getGenerator()))));
+                              SNodeAccessUtil.setProperty(tnode12, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7991477654791670162(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "id", propertyMacro_a7jb2i_c0b0b0a2a1a5a1a3a1a4a1a3a1a5a1a6a1a2, context, environment.getGenerator()))));
 
                             } finally {
                               environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode12));
@@ -193,7 +194,7 @@ public class TemplateFindUsagesDescriptor implements TemplateDeclaration {
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_a7jb2i_a0a0a1a5a1a5a1a3a1a5a1a6a1a2);
                           environment.nodeCopied(context, tnode14, "tpl/r:00000000-0000-4000-0000-011c8959035c/7991477654791670180");
-                          tnode14.setProperty("value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7991477654791670182(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "modelRef", propertyMacro_a7jb2i_c0b0b0a2a1a5a1a5a1a3a1a5a1a6a1a2, context, environment.getGenerator()))));
+                          SNodeAccessUtil.setProperty(tnode14, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7991477654791670182(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "modelRef", propertyMacro_a7jb2i_c0b0b0a2a1a5a1a5a1a3a1a5a1a6a1a2, context, environment.getGenerator()))));
 
                         } finally {
                           environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode14));
@@ -245,8 +246,8 @@ public class TemplateFindUsagesDescriptor implements TemplateDeclaration {
         try {
           environment.getTracer().pushTemplateNode(templateNode_a7jb2i_a0a0a1a7a1a2);
           environment.nodeCopied(context, tnode15, "tpl/r:00000000-0000-4000-0000-011c8959035c/7991477654791670195");
-          tnode15.setProperty("isAbstract", "false");
-          tnode15.setProperty("name", "init");
+          SNodeAccessUtil.setProperty(tnode15, "isAbstract", "false");
+          SNodeAccessUtil.setProperty(tnode15, "name", "init");
 
           {
             final SNode tnode16 = new SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
@@ -359,7 +360,7 @@ public class TemplateFindUsagesDescriptor implements TemplateDeclaration {
                               try {
                                 environment.getTracer().pushTemplateNode(templateNode_a7jb2i_a0a0a1a5a1a3a3a2a2a1a3a1a7a1a7a1a2);
                                 environment.nodeCopied(context19, tnode24, "tpl/r:00000000-0000-4000-0000-011c8959035c/7991477654791670211");
-                                tnode24.setProperty("value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7991477654791670213(environment.getOperationContext(), new PropertyMacroContext(context19.getInput(), "nodeId", propertyMacro_a7jb2i_c0b0b0a2a1a5a1a3a3a2a2a1a3a1a7a1a7a1a2, context19, environment.getGenerator()))));
+                                SNodeAccessUtil.setProperty(tnode24, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_7991477654791670213(environment.getOperationContext(), new PropertyMacroContext(context19.getInput(), "nodeId", propertyMacro_a7jb2i_c0b0b0a2a1a5a1a3a3a2a2a1a3a1a7a1a7a1a2, context19, environment.getGenerator()))));
 
                               } finally {
                                 environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode24));

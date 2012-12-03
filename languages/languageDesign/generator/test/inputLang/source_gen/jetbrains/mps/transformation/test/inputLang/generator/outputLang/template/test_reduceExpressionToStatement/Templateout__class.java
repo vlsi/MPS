@@ -13,6 +13,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Templateout__class implements TemplateDeclaration {
   public Templateout__class() {
@@ -27,7 +28,7 @@ public class Templateout__class implements TemplateDeclaration {
     try {
       environment.getTracer().pushTemplateNode(templateNode_lohefm_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f8/1209150125542");
-      tnode1.setProperty("name", "out_class");
+      SNodeAccessUtil.setProperty(tnode1, "name", "out_class");
 
       {
         final SNode tnode2 = new SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
@@ -49,7 +50,7 @@ public class Templateout__class implements TemplateDeclaration {
         try {
           environment.getTracer().pushTemplateNode(templateNode_lohefm_a0a0a1a5a1a2);
           environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c895905f8/1209150155196");
-          tnode3.setProperty("name", "method");
+          SNodeAccessUtil.setProperty(tnode3, "name", "method");
 
           {
             final SNode tnode4 = new SNode("jetbrains.mps.baseLanguage.structure.VoidType");

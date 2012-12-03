@@ -20,6 +20,7 @@ import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class TemplateOutputRoot__2 implements TemplateDeclaration {
   public TemplateOutputRoot__2() {
@@ -34,8 +35,8 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
     try {
       environment.getTracer().pushTemplateNode(templateNode_ewlaka_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202338159177");
-      tnode1.setProperty("name", "OutputRoot_2");
-      tnode1.setProperty("text", "'getPrevInputTest' output root (2)");
+      SNodeAccessUtil.setProperty(tnode1, "name", "OutputRoot_2");
+      SNodeAccessUtil.setProperty(tnode1, "text", "'getPrevInputTest' output root (2)");
 
       {
         final List<SNode> tlist2 = new ArrayList();
@@ -84,7 +85,7 @@ public class TemplateOutputRoot__2 implements TemplateDeclaration {
                           try {
                             environment.getTracer().pushTemplateNode(templateNode_ewlaka_a0a0a3a2a2a3a2a2a3a2a2a1a5a1a2);
                             environment.nodeCopied(context4, tnode5, "tpl/r:00000000-0000-4000-0000-011c895905f7/1202338467041");
-                            tnode5.setProperty("text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202338467126(environment.getOperationContext(), new PropertyMacroContext(context4.getInput(), "_text_", propertyMacro_ewlaka_c0b0b0a2a3a2a2a3a2a2a3a2a2a1a5a1a2, context4, environment.getGenerator()))));
+                            SNodeAccessUtil.setProperty(tnode5, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_1202338467126(environment.getOperationContext(), new PropertyMacroContext(context4.getInput(), "_text_", propertyMacro_ewlaka_c0b0b0a2a3a2a2a3a2a2a3a2a2a1a5a1a2, context4, environment.getGenerator()))));
 
                             {
                               final List<SNode> tlist6 = new ArrayList();

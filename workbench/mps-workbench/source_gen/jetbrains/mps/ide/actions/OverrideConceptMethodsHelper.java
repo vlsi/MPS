@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class OverrideConceptMethodsHelper {
   private SNode myClassConcept;
@@ -111,7 +112,7 @@ public class OverrideConceptMethodsHelper {
   private static SNode _quotation_createNode_7wts1u_a0a0a0a2a0e0g(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("variableDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
 
@@ -122,10 +123,10 @@ public class OverrideConceptMethodsHelper {
     SNode quotedNode_7 = null;
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.behavior.structure.SuperNodeExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setReferenceTarget("superConcept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_5, "superConcept", (SNode) parameter_1);
     quotedNode_4.addChild("operand", quotedNode_5);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_3);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_6, "baseMethodDeclaration", (SNode) parameter_3);
     {
       List<SNode> nodes = (List<SNode>) parameter_2;
       for (SNode child : nodes) {

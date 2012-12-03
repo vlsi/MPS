@@ -22,6 +22,7 @@ import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class TemplateLanguage implements TemplateDeclaration {
   public TemplateLanguage() {
@@ -36,7 +37,7 @@ public class TemplateLanguage implements TemplateDeclaration {
     try {
       environment.getTracer().pushTemplateNode(templateNode_gw04jt_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/9020561928507177266");
-      tnode1.setProperty("name", "Language");
+      SNodeAccessUtil.setProperty(tnode1, "name", "Language");
 
       {
         final SNode tnode2 = new SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
@@ -74,7 +75,7 @@ public class TemplateLanguage implements TemplateDeclaration {
         try {
           environment.getTracer().pushTemplateNode(templateNode_gw04jt_a0a0a1a6a1a2);
           environment.nodeCopied(context, tnode4, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/9020561928507315543");
-          tnode4.setProperty("name", "MODULE_REFERENCE");
+          SNodeAccessUtil.setProperty(tnode4, "name", "MODULE_REFERENCE");
 
           {
             final SNode tnode5 = new SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
@@ -120,7 +121,7 @@ public class TemplateLanguage implements TemplateDeclaration {
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_gw04jt_a0a0a1a5a1a6a1a6a1a2);
                   environment.nodeCopied(context, tnode8, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/9020561928507315547");
-                  tnode8.setProperty("value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_9020561928507315549(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "module.reference", propertyMacro_gw04jt_c0b0b0a2a1a5a1a6a1a6a1a2, context, environment.getGenerator()))));
+                  SNodeAccessUtil.setProperty(tnode8, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_9020561928507315549(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "module.reference", propertyMacro_gw04jt_c0b0b0a2a1a5a1a6a1a6a1a2, context, environment.getGenerator()))));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode8));
@@ -229,10 +230,10 @@ public class TemplateLanguage implements TemplateDeclaration {
         try {
           environment.getTracer().pushTemplateNode(templateNode_gw04jt_a0a0a1a8a1a2);
           environment.nodeCopied(context, tnode14, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5102832340571708646");
-          tnode14.setProperty("isDeprecated", "false");
-          tnode14.setProperty("isAbstract", "false");
-          tnode14.setProperty("name", "getNamespace");
-          tnode14.setProperty("isFinal", "false");
+          SNodeAccessUtil.setProperty(tnode14, "isDeprecated", "false");
+          SNodeAccessUtil.setProperty(tnode14, "isAbstract", "false");
+          SNodeAccessUtil.setProperty(tnode14, "name", "getNamespace");
+          SNodeAccessUtil.setProperty(tnode14, "isFinal", "false");
 
           {
             final SNode tnode15 = new SNode("jetbrains.mps.baseLanguage.structure.StringType");
@@ -266,7 +267,7 @@ public class TemplateLanguage implements TemplateDeclaration {
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_gw04jt_a0a0a1a3a1a3a1a8a1a8a1a2);
                       environment.nodeCopied(context, tnode18, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5102832340571708653");
-                      tnode18.setProperty("value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5102832340571708655(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "", propertyMacro_gw04jt_c0b0b0a2a1a3a1a3a1a8a1a8a1a2, context, environment.getGenerator()))));
+                      SNodeAccessUtil.setProperty(tnode18, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5102832340571708655(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "", propertyMacro_gw04jt_c0b0b0a2a1a3a1a3a1a8a1a8a1a2, context, environment.getGenerator()))));
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode18));
@@ -324,10 +325,10 @@ public class TemplateLanguage implements TemplateDeclaration {
         try {
           environment.getTracer().pushTemplateNode(templateNode_gw04jt_a0a0a1a9a1a2);
           environment.nodeCopied(context, tnode20, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5828571963818867328");
-          tnode20.setProperty("isDeprecated", "false");
-          tnode20.setProperty("isAbstract", "false");
-          tnode20.setProperty("name", "getTypesystem");
-          tnode20.setProperty("isFinal", "false");
+          SNodeAccessUtil.setProperty(tnode20, "isDeprecated", "false");
+          SNodeAccessUtil.setProperty(tnode20, "isAbstract", "false");
+          SNodeAccessUtil.setProperty(tnode20, "name", "getTypesystem");
+          SNodeAccessUtil.setProperty(tnode20, "isFinal", "false");
 
           {
             final SNode tnode21 = new SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
@@ -381,7 +382,7 @@ public class TemplateLanguage implements TemplateDeclaration {
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_gw04jt_a0a0a1a1a1a3a1a3a1a9a1a9a1a2);
                           environment.nodeCopied(context, tnode26, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5828571963818873437");
-                          tnode26.setProperty("fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5828571963818937562(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "typesystem.TypsystemDescriptor", propertyMacro_gw04jt_c0b0b0a2a1a1a1a3a1a3a1a9a1a9a1a2, context, environment.getGenerator()))));
+                          SNodeAccessUtil.setProperty(tnode26, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5828571963818937562(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "typesystem.TypsystemDescriptor", propertyMacro_gw04jt_c0b0b0a2a1a1a1a3a1a3a1a9a1a9a1a2, context, environment.getGenerator()))));
 
                           {
                             final SNode tnode27 = new SNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
@@ -474,10 +475,10 @@ public class TemplateLanguage implements TemplateDeclaration {
         try {
           environment.getTracer().pushTemplateNode(templateNode_gw04jt_a0a0a1a01a1a2);
           environment.nodeCopied(context, tnode31, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2838795720286867752");
-          tnode31.setProperty("isDeprecated", "false");
-          tnode31.setProperty("isAbstract", "false");
-          tnode31.setProperty("name", "getFindUsages");
-          tnode31.setProperty("isFinal", "false");
+          SNodeAccessUtil.setProperty(tnode31, "isDeprecated", "false");
+          SNodeAccessUtil.setProperty(tnode31, "isAbstract", "false");
+          SNodeAccessUtil.setProperty(tnode31, "name", "getFindUsages");
+          SNodeAccessUtil.setProperty(tnode31, "isFinal", "false");
 
           {
             final SNode tnode32 = new SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
@@ -531,7 +532,7 @@ public class TemplateLanguage implements TemplateDeclaration {
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_gw04jt_a0a0a1a1a1a3a1a3a1a9a1a01a1a2);
                           environment.nodeCopied(context, tnode37, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2838795720286867766");
-                          tnode37.setProperty("fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2838795720286867776(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "findUsages.FindUsagesDescriptor", propertyMacro_gw04jt_c0b0b0a2a1a1a1a3a1a3a1a9a1a01a1a2, context, environment.getGenerator()))));
+                          SNodeAccessUtil.setProperty(tnode37, "fqClassName", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2838795720286867776(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "findUsages.FindUsagesDescriptor", propertyMacro_gw04jt_c0b0b0a2a1a1a1a3a1a3a1a9a1a01a1a2, context, environment.getGenerator()))));
 
                           {
                             final SNode tnode38 = new SNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
@@ -624,7 +625,7 @@ public class TemplateLanguage implements TemplateDeclaration {
         try {
           environment.getTracer().pushTemplateNode(templateNode_gw04jt_a0a0a1a11a1a2);
           environment.nodeCopied(context, tnode42, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5102832340571716521");
-          tnode42.setProperty("name", "getGenerators");
+          SNodeAccessUtil.setProperty(tnode42, "name", "getGenerators");
 
           {
             final SNode tnode43 = new SNode("jetbrains.mps.baseLanguage.structure.ClassifierType");
@@ -798,7 +799,7 @@ public class TemplateLanguage implements TemplateDeclaration {
                                           try {
                                             environment.getTracer().pushTemplateNode(templateNode_gw04jt_a0a0a1a6a2a0b0d0c0c0b0f0b0b0b0d0b0d0b0g0b0l0b0c);
                                             environment.nodeCopied(context50, tnode57, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/5554116809065233241");
-                                            tnode57.setProperty("value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5554116809065233243(environment.getOperationContext(), new PropertyMacroContext(context50.getInput(), null, propertyMacro_gw04jt_c0b0b0a2a1a6a2a0b0d0c0c0b0f0b0b0b0d0b0d0b0g0b0l0b0c, context50, environment.getGenerator()))));
+                                            SNodeAccessUtil.setProperty(tnode57, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_5554116809065233243(environment.getOperationContext(), new PropertyMacroContext(context50.getInput(), null, propertyMacro_gw04jt_c0b0b0a2a1a6a2a0b0d0c0c0b0f0b0b0b0d0b0d0b0g0b0l0b0c, context50, environment.getGenerator()))));
 
                                           } finally {
                                             environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode57));

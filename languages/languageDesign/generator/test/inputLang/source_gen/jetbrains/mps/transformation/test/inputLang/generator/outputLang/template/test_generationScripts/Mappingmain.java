@@ -24,6 +24,7 @@ import jetbrains.mps.generator.impl.AbandonRuleInputException;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.template.CreateRootRuleContext;
 import jetbrains.mps.generator.impl.DefaultTemplateContext;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Mappingmain implements TemplateMappingConfiguration {
   private final Collection<TemplateReductionRule> rules;
@@ -131,7 +132,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         try {
           environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a2a5t);
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195172462490");
-          tnode2.setProperty("text", "<input option : 1>");
+          SNodeAccessUtil.setProperty(tnode2, "text", "<input option : 1>");
 
         } finally {
           environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode2));
@@ -144,7 +145,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         try {
           environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a0c0f91);
           environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c895905f6/1195172359599");
-          tnode3.setProperty("text", "<input option : default>");
+          SNodeAccessUtil.setProperty(tnode3, "text", "<input option : default>");
 
         } finally {
           environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode3));

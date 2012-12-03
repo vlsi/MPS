@@ -13,6 +13,7 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Templatemap__RootConcept implements TemplateDeclaration {
   public Templatemap__RootConcept() {
@@ -27,7 +28,7 @@ public class Templatemap__RootConcept implements TemplateDeclaration {
     try {
       environment.getTracer().pushTemplateNode(templateNode_56x90y_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008490321");
-      tnode1.setProperty("name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008490331(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "map_RootConcept", propertyMacro_56x90y_c0b0b0a2a1a2, context, environment.getGenerator()))));
+      SNodeAccessUtil.setProperty(tnode1, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008490331(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "map_RootConcept", propertyMacro_56x90y_c0b0b0a2a1a2, context, environment.getGenerator()))));
 
       {
         final SNode tnode2 = new SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");

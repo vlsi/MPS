@@ -17,6 +17,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import java.util.Collection;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class TemplateprocessStatement implements TemplateDeclarationWeavingAware {
   private String myName;
@@ -70,7 +71,7 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_slzep9_a0a0a1a3a1a3a1a3a1a8);
                   environment.nodeCopied(context, tnode4, "tpl/r:00000000-0000-4000-0000-011c89590606/2681305894288695068");
-                  tnode4.setProperty("text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2681305894288695070(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "aa", propertyMacro_slzep9_c0b0b0a2a1a3a1a3a1a3a1a8, context, environment.getGenerator()))));
+                  SNodeAccessUtil.setProperty(tnode4, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2681305894288695070(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "aa", propertyMacro_slzep9_c0b0b0a2a1a3a1a3a1a3a1a8, context, environment.getGenerator()))));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode4));
@@ -86,7 +87,7 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_slzep9_a0a0a1a4a1a3a1a3a1a8);
                   environment.nodeCopied(context, tnode5, "tpl/r:00000000-0000-4000-0000-011c89590606/2163819695913280742");
-                  tnode5.setProperty("text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2163819695913280744(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "ss", propertyMacro_slzep9_c0b0b0a2a1a4a1a3a1a3a1a8, context, environment.getGenerator()))));
+                  SNodeAccessUtil.setProperty(tnode5, "text", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2163819695913280744(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "ss", propertyMacro_slzep9_c0b0b0a2a1a4a1a3a1a3a1a8, context, environment.getGenerator()))));
 
                 } finally {
                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode5));
@@ -117,7 +118,7 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_slzep9_a0a0a1a3a1a4a1a3a1a8);
                   environment.nodeCopied(context, tnode7, "tpl/r:00000000-0000-4000-0000-011c89590606/2681305894288695033");
-                  tnode7.setProperty("name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2681305894288695040(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "nvar", propertyMacro_slzep9_c0b0b0a2a1a3a1a4a1a3a1a8, context, environment.getGenerator()))));
+                  SNodeAccessUtil.setProperty(tnode7, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_2681305894288695040(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "nvar", propertyMacro_slzep9_c0b0b0a2a1a3a1a4a1a3a1a8, context, environment.getGenerator()))));
 
                   {
                     final SNode tnode8 = new SNode("jetbrains.mps.baseLanguage.structure.IntegerType");
@@ -205,7 +206,7 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_slzep9_a0a0a1a3a1a3a1a3a1a9);
                   environment.nodeCopied(context, tnode14, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980649133");
-                  tnode14.setProperty("name", "e");
+                  SNodeAccessUtil.setProperty(tnode14, "name", "e");
 
                   {
                     final SNode tnode15 = new SNode("jetbrains.mps.baseLanguage.structure.IntegerType");
@@ -273,7 +274,7 @@ public class TemplateprocessStatement implements TemplateDeclarationWeavingAware
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_slzep9_a0a0a1a4a1a3a1a4a1a3a1a9);
                       environment.nodeCopied(context, tnode19, "tpl/r:00000000-0000-4000-0000-011c89590606/3392060900980649141");
-                      tnode19.setProperty("value", "5");
+                      SNodeAccessUtil.setProperty(tnode19, "value", "5");
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode19));

@@ -4,6 +4,7 @@ package jetbrains.mps.lang.pattern.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.TestCase;
@@ -193,7 +194,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
       quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null, null, GlobalScope.getInstance(), false);
       quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
-      quotedNode_5.setProperty("name", "s");
+      SNodeAccessUtil.setProperty(quotedNode_5, "name", "s");
       quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
       quotedNode_5.addChild("type", quotedNode_8);
       quotedNode_2.addChild("localVariableDeclaration", quotedNode_5);
@@ -211,7 +212,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
       quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
       quotedNode_15.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_15, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
       quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-      quotedNode_16.setProperty("value", " ");
+      SNodeAccessUtil.setProperty(quotedNode_16, "value", " ");
       quotedNode_15.addChild("actualArgument", quotedNode_16);
       quotedNode_13.addChild("operation", quotedNode_15);
       quotedNode_10.addChild("expression", quotedNode_13);
@@ -226,7 +227,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
       quotedNode_1.addChild("statement", quotedNode_3);
       quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Statement", null, null, GlobalScope.getInstance(), false);
       quotedNode_1.addChild("statement", quotedNode_4);
-      quotedNode_12.setReferenceTarget("variableDeclaration", quotedNode_5);
+      SNodeAccessUtil.setReferenceTarget(quotedNode_12, "variableDeclaration", quotedNode_5);
       return quotedNode_1;
     }
 
@@ -250,7 +251,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
       quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
       quotedNode_6.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_6, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
       quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-      quotedNode_7.setProperty("value", " ");
+      SNodeAccessUtil.setProperty(quotedNode_7, "value", " ");
       quotedNode_6.addChild("actualArgument", quotedNode_7);
       quotedNode_4.addChild("operation", quotedNode_6);
       quotedNode_3.addChild("expression", quotedNode_4);

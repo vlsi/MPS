@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class fixContainerName_QuickFix extends QuickFix_Runtime {
   public fixContainerName_QuickFix() {
@@ -37,7 +38,7 @@ public class fixContainerName_QuickFix extends QuickFix_Runtime {
   private static SNode _quotation_createNode_8v9hl7_a0a0a0c0a(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildTextStringPart", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("text", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, "text", (String) parameter_1);
     return quotedNode_2;
   }
 }

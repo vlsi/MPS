@@ -23,6 +23,7 @@ import jetbrains.mps.util.InternUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.List;
@@ -107,7 +108,7 @@ public class ModelReader6 implements IModelReader {
       String propertyName = myHelper.readName(element.getAttributeValue(ModelPersistence.NAME));
       String propertyValue = element.getAttributeValue(ModelPersistence.VALUE);
       if (propertyValue != null) {
-        node.setProperty(propertyName, propertyValue);
+        SNodeAccessUtil.setProperty(node, propertyName, propertyValue);
       }
     }
 
