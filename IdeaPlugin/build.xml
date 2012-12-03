@@ -23,26 +23,37 @@
   <property name="ideaPath" value="${home.idea_ce}"/>
 
   <path id="ant.libraries">
-    <fileset dir="${ideaPath}/lib/ant/lib">
-      <include name="*.jar"/>
-    </fileset>
+    <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
   </path>
 
   <target name="prepare" depends="buildCore">
     <delete dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib" flatten="true">
-      <resources>
-        <file file="${base_dir}/lib/asm.jar"/>
-        <file file="${base_dir}/lib/diffutils-1.2.1.jar"/>
-        <!-- hack for jdk in case of running from sources -->
-        <file file="${base_dir}/languages/core/stub/JDK/JDK.msd"/>
-      </resources>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCore/mps-core/lib"/>
     </copy>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/languages">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCore/mps-core/languages"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCoreEx/languages"/>
     </copy>
+    <mkdir dir="build/tmp/prepare/java/out/mps-test-ex"/>
+    <javac destdir="build/tmp/prepare/java/out/mps-test-ex" fork="true" memorymaximumsize="256m" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none"/>
+      <src>
+        <path location="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/testSrc"/>
+        <path location="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen"/>
+        <path location="${base_dir}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen"/>
+      </src>
+      <classpath>
+        <fileset dir="${base_dir}/IdeaPlugin/mps-core/lib" includes="*.jar"/>
+        <fileset dir="${ideaPath}/lib" includes="*.jar"/>
+        <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
+      </classpath>
+    </javac>
+    <jar destfile="${base_dir}/IdeaPlugin/mps-core/lib/mps-test-ex.jar">
+      <fileset dir="build/tmp/prepare/java/out/mps-test-ex"/>
+    </jar>
   </target>
 
   <target name="clean">

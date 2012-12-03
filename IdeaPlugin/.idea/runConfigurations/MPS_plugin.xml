@@ -23,6 +23,11 @@
     <RunnerSettings RunnerId="Run" />
     <ConfigurationWrapper RunnerId="Debug" />
     <ConfigurationWrapper RunnerId="Run" />
-    <method />
+    <method>
+      <option name="BuildArtifacts" enabled="true">
+        <artifact name="mps-common:jar" />
+        <artifact name="mps-jps-plugin:jar" />
+      </option>
+    </method>
   </configuration>
 </component>

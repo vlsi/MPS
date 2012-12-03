@@ -53,12 +53,12 @@
     </node>
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="7518060231983298939">
       <property name="id" nameId="tp4k.5023285075122009366" value="a" />
-      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="a" />
       <property name="descripttion" nameId="tp4k.5023285075122009368" value="a" />
+      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="a" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="a" />
-      <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="a" />
       <property name="name" nameId="tpck.1169194664001" value="a" />
-      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="a" />
+      <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="a" />
+      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="123.1" />
       <property name="version" nameId="tp4k.5023285075122009369" value="a" />
     </node>
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690968033253" />

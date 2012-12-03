@@ -38,36 +38,36 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="watches" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8643693251546861633">
-      <property name="name" nameId="tpck.1169194664001" value="AddWatchAction" />
-      <property name="caption" nameId="tp4k.1205250923097" value="New Watch..." />
-      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="description" nameId="tp4k.1213273179528" value="New Watch..." />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
+      <property name="description" nameId="tp4k.1213273179528" value="New Watch..." />
+      <property name="name" nameId="tpck.1169194664001" value="AddWatchAction" />
+      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="watches" />
+      <property name="caption" nameId="tp4k.1205250923097" value="New Watch..." />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8643693251546861699">
-      <property name="name" nameId="tpck.1169194664001" value="RemoveWatchAction" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Remove Watch" />
-      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="RemoveWatchAction" />
+      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="watches" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Remove Watch" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8643693251546861757">
-      <property name="name" nameId="tpck.1169194664001" value="EditWatchAction" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Edit Watch" />
-      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="EditWatchAction" />
+      <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="watches" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Edit Watch" />
     </node>
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="3585489156472415414">
       <property name="id" nameId="tp4k.5023285075122009366" value="just.a.mock.descriptor" />
-      <property name="name" nameId="tpck.1169194664001" value="name" />
-      <property name="descripttion" nameId="tp4k.5023285075122009368" value="description" />
-      <property name="version" nameId="tp4k.5023285075122009369" value="version" />
-      <property name="vendor" nameId="tp4k.5023285075122009371" value="vendor" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="url" />
-      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="idea.ver" />
+      <property name="descripttion" nameId="tp4k.5023285075122009368" value="description" />
+      <property name="vendor" nameId="tp4k.5023285075122009371" value="vendor" />
       <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="mock" />
+      <property name="name" nameId="tpck.1169194664001" value="name" />
+      <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="123.1" />
+      <property name="version" nameId="tp4k.5023285075122009369" value="version" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="9133858534420786537">
       <property name="name" nameId="tpck.1169194664001" value="WatchesToolbarActions" />
@@ -81,9 +81,9 @@
       <property name="name" nameId="tpck.1169194664001" value="JavaWatchableNodeActions" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="4893181994832024376">
+      <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="CopyStackTraceToClipboard" />
       <property name="caption" nameId="tp4k.1205250923097" value="Copy Stacktrace to Clipboard" />
-      <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
     </node>
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690968011948" />
   </roots>
