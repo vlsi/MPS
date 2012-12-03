@@ -63,7 +63,7 @@ public abstract class RelationBlock extends Block {
   }
 
   public boolean isCheckOnly() {
-    return !(myState.getTypeCheckingContext() instanceof InferenceTypecheckingContext) && myRelationKind.isCheckOnly();
+    return !(getState().getTypeCheckingContext() instanceof InferenceTypecheckingContext) && myRelationKind.isCheckOnly();
   }
 
   @Override

@@ -22,6 +22,7 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.newTypesystem.state.TargetState;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -45,9 +46,9 @@ import java.util.Set;
  * Time: 10:07 AM
  * To change this template use File | Settings | File Templates.
  */
-/*package*/ class SimpleTypecheckingComponent {
+/*package*/ public class SimpleTypecheckingComponent {
 
-  protected final State myState;
+  private final State myState;
   protected Queue<SNode> myQueue = new LinkedList<SNode>();
   protected boolean myIsChecked = false;
   protected SimpleTypechecking myTypechecking;
@@ -85,7 +86,7 @@ import java.util.Set;
   }
 
   protected void setTargetNode(SNode initialNode) {
-    myState.setTargetNode(initialNode);
+    assert false;
   }
 
 
@@ -214,17 +215,6 @@ import java.util.Set;
   }
 
   protected SNode typeCalculated(SNode initialNode) {
-    if (myState.getInequalitySystem() != null) {
-      SNode expectedType = myState.getInequalitySystem().getExpectedType();
-      if (expectedType != null && !TypesUtil.hasVariablesInside(expectedType) && !HUtil.isRuntimeHoleType(expectedType)) {
-        return expectedType;
-      }
-    } else {
-      if (initialNode == null) return null;
-      if (!myState.isTargetTypeCalculated()) return null;
-      SNode type = myState.expand(getType(initialNode));
-      if (type != null && !TypesUtil.hasVariablesInside(type)) return type;
-    }
     return null;
   }
 
@@ -240,7 +230,7 @@ import java.util.Set;
     SNode prevNode = null;
     SNode node = initialNode;
     long start = System.currentTimeMillis();
-    myState.setTargetNode(initialNode);
+    setTarget(initialNode);
     while (node != null) {
       Collection<SNode> additionalNodes = givenAdditionalNodes;
       if (prevNode != null) {
@@ -252,9 +242,7 @@ import java.util.Set;
       if (type == null) {
         if (node.getModel() != null && node.getModel().isRoot(node)) {
           //System.out.println("Root: " + initialNode.getDebugText());
-          if (myState.getInequalitySystem() == null) {
-            computeTypes(node,true, true, Collections.<SNode>emptyList(), true, initialNode);
-          }
+          computeTypes(initialNode, node);
           type = getType(initialNode);
           if (type == null && node != initialNode) {
             TypeSystemComponent.LOG.error("No typesystem rule for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(initialNode) + " in root " + initialNode.getTopmostAncestor() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new SNodePointer(initialNode));
@@ -269,6 +257,14 @@ import java.util.Set;
       }
     }
     return type;
+  }
+
+  protected void computeTypes(SNode initialNode, SNode node) {
+    /*do nothing*/
+  }
+
+  protected void setTarget(SNode initialNode) {
+    /*do nothing*/
   }
 
   public void clear() {

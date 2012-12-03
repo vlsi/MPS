@@ -64,8 +64,8 @@ public class IncrementalTypechecking extends SimpleTypechecking {
   }
 
   @Override
-  protected TypeSystemComponent createTypeSystemComponent(State state) {
-    return new TypeSystemComponent(TypeChecker.getInstance(), state, this);
+  protected TypeSystemComponent createTypecheckingComponent() {
+    return new TypeSystemComponent(TypeChecker.getInstance(), getState(), this);
   }
 
   @Override

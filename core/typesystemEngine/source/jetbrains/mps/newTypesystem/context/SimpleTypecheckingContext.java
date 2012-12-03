@@ -19,7 +19,11 @@ import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.newTypesystem.context.component.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.context.component.SimpleTypechecking;
+import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent;
+import jetbrains.mps.newTypesystem.context.component.TargetTypeheckingComponent;
 import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
+import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.newTypesystem.state.TargetState;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -45,11 +49,17 @@ public class SimpleTypecheckingContext extends BaseTypecheckingContext {
 
   public SimpleTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
-    setTypechecking(createNodeTypesComponent());
+    setTypechecking(createTypechecking());
   }
 
-  protected SimpleTypechecking createNodeTypesComponent() {
+
+  protected SimpleTypechecking createTypechecking() {
     return new SimpleTypechecking(getNode(), getState());
+  }
+
+  @Override
+  protected State createState() {
+    return new State(this);
   }
 
   @Override

@@ -19,8 +19,10 @@ import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.lang.typesystem.runtime.performance.IncrementalTypecheckingContext_Tracer;
+import jetbrains.mps.newTypesystem.context.HoleTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.InferenceTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.SimpleTypecheckingContext;
+import jetbrains.mps.newTypesystem.context.TargetTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.TracingTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
 import jetbrains.mps.newTypesystem.TypesUtil;
@@ -215,6 +217,11 @@ public class TypeContextManager implements CoreComponent {
     }
   }
 
+  public HoleTypecheckingContext createHoleTypecheckingContext(SNode node) {
+    ModelAccess.assertLegalRead();
+    return new HoleTypecheckingContext(node, myTypeChecker);
+  }
+
   public TypeCheckingContext createInferenceTypeCheckingContext(SNode node) {
     ModelAccess.assertLegalRead();
     return new InferenceTypecheckingContext(node, myTypeChecker);
@@ -340,7 +347,7 @@ public class TypeContextManager implements CoreComponent {
 
   private TypeCheckingContext createTypeCheckingContextForResolve(SNode node) {
     SNode root = node.getTopmostAncestor();
-    return new SimpleTypecheckingContext(root, myTypeChecker);
+    return new TargetTypecheckingContext(root, myTypeChecker);
   }
 
   private Set<SNode> getMyResolveNodes() {
@@ -373,7 +380,7 @@ public class TypeContextManager implements CoreComponent {
       if (myTypeChecker.isGenerationMode()) {
         TypeCheckingContext context = myTypeChecker.hasPerformanceTracer() ?
           new IncrementalTypecheckingContext_Tracer(node, myTypeChecker) :
-          new SimpleTypecheckingContext(node, myTypeChecker);
+          new TargetTypecheckingContext(node, myTypeChecker);
         if (context == null) return null;
         try {
           return context.getTypeOf_generationMode(node);

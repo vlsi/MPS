@@ -42,15 +42,21 @@ import java.util.Set;
 public class SimpleTypechecking {
 
   protected final SNode myRootNode;
+  private final State myState;
   private final SimpleTypecheckingComponent myTypecheckingComponent;
 
   public SimpleTypechecking(SNode node, State state) {
     myRootNode = node;
-    myTypecheckingComponent = createTypeSystemComponent(state);
+    myState = state;
+    myTypecheckingComponent = createTypecheckingComponent();
   }
 
-  protected SimpleTypecheckingComponent createTypeSystemComponent(State state) {
-    return new SimpleTypecheckingComponent(state, this);
+  protected State getState() {
+    return myState;
+  }
+
+  protected SimpleTypecheckingComponent createTypecheckingComponent() {
+    return new SimpleTypecheckingComponent(getState(), this);
   }
 
   public SNode getNode() {
@@ -64,22 +70,6 @@ public class SimpleTypechecking {
   protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
     SNode result = getTypecheckingComponent().computeTypesForNode_special(initialNode, givenAdditionalNodes);
     return result;
-  }
-
-  public InequalitySystem computeInequalitiesForHole(SNode hole, boolean holeIsAType) {
-    State state = myTypecheckingComponent.getState();
-    if (state == null) return null;
-    try {
-      state.initHole(hole);
-      computeTypesForNode_special(hole.getParent(), Collections.singleton(hole));
-      state.getInequalitySystem().expandAll(state.getEquations());
-      /* for (String s : state.getInequalitySystem().getPresentation()) {
-         System.out.println(s);
-       } */
-      return state.getInequalitySystem();
-    } finally {
-      state.disposeHole();
-    }
   }
 
   public SNode computeTypesForNodeDuringGeneration(SNode initialNode) {
@@ -151,4 +141,5 @@ public class SimpleTypechecking {
   public void applyNonTypesystemRulesToRoot(IOperationContext context, TypeCheckingContext typeCheckingContext) {
     // do nothing
   }
+
 }

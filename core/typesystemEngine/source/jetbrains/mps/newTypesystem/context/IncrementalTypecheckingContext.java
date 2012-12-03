@@ -24,6 +24,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.context.component.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.SNodeOperations;
@@ -44,8 +45,14 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext {
     super(rootNode, typeChecker);
   }
 
+
   @Override
-  protected IncrementalTypechecking createNodeTypesComponent() {
+  protected State createState() {
+    return new State(this);
+  }
+
+  @Override
+  protected IncrementalTypechecking createTypechecking() {
     return new IncrementalTypechecking(getNode(), getState());
   }
 
@@ -130,7 +137,7 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext {
 
   @Override
   public boolean isIncrementalMode() {
-    return !myTypeChecker.isGenerationMode() && getState().getInequalitySystem() == null;
+    return false; /*!myTypeChecker.isGenerationMode() && getState().getInequalitySystem() == null;*/
   }
 
   public void runTypeCheckingAction(Runnable r) {

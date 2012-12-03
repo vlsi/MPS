@@ -139,7 +139,7 @@ import java.util.*;
 
   @Override
   public Map<SNode, List<IErrorReporter>> getNodesToErrorsMap() {
-    return myState.getNodeMaps().getNodesToErrors();
+    return getState().getNodeMaps().getNodesToErrors();
   }
 
   @Override
@@ -169,7 +169,6 @@ import java.util.*;
 
   @Override
   protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
-    assert myState.getInequalitySystem() != null;
     return computeTypesForNode_special_(initialNode, givenAdditionalNodes);
   }
 
@@ -217,7 +216,7 @@ import java.util.*;
 
   @Override
   public void addError(SNode node, IErrorReporter reporter) {
-    myState.addError(node, reporter, null);
+    getState().addError(node, reporter, null);
   }
 
   @Override
@@ -251,7 +250,7 @@ import java.util.*;
 
   @Override
   protected boolean isIncrementalMode() {
-    return myState.getTypeCheckingContext().isIncrementalMode();
+    return getState().getTypeCheckingContext().isIncrementalMode();
   }
 
   private class MyAccessTracking extends AccessTracking {

@@ -52,10 +52,10 @@ public abstract class BaseTypecheckingContext extends TypeCheckingContext {
   public BaseTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
     myRootNode = rootNode;
     myTypeChecker = typeChecker;
-    myState = new State(this);
-
+    myState = createState();
   }
 
+  protected abstract State createState();
 
   public State getState() {
     assert myState != null;
