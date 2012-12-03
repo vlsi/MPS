@@ -12,7 +12,6 @@ import com.intellij.openapi.application.ApplicationManager;
 
 public class Debuggers implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(Debuggers.class);
-
   private final List<IDebugger> myDebuggers = new ArrayList<IDebugger>();
 
   public Debuggers() {

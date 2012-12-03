@@ -12,7 +12,6 @@ import jetbrains.mps.debug.api.programState.IWatchable;
 
 public abstract class AbstractUiState {
   protected static final int NO_FRAME = -1;
-
   protected final AbstractDebugSession myAbstractDebugSession;
 
   protected AbstractUiState(AbstractDebugSession session) {

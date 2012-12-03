@@ -20,8 +20,11 @@ import jetbrains.mps.baseLanguage.tuples.behavior.NamedTupleDeclaration_Behavior
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.generator.template.helpers.TupleDeclarationUtil;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.baseLanguage.closures.constraints.ClassifierTypeUtil;
@@ -334,7 +337,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1604260043160917367(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a0oc(), "classifier", false), "staticInnerClassifiers", true)).findFirst(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a0oc(), "classifier", false))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("_" + ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.structure.ArrayCreator"), "componentType", true), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType", true)).count());
       }
@@ -342,7 +345,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_1604260043160917473(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a0pc(), "classifier", false), "staticInnerClassifiers", true)).findFirst(new IWhereFilter<SNode>() {
+    return Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(SLinkOperations.getTarget(_quotation_createNode_x583g4_a0a0a0pc(), "classifier", false))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return SPropertyOperations.getString(it, "name").equals("_" + ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.baseLanguage.structure.ArrayCreator"), "componentType", true), "jetbrains.mps.baseLanguage.tuples.structure.IndexedTupleType"), "componentType", true)).count());
       }
@@ -610,7 +613,7 @@ public class QueriesGenerated {
     });
     for (SNode cc : ifcs) {
       if (SPropertyOperations.getString(cc, "nestedName").equals("MultiTuple._" + cmpSize)) {
-        return ListSequence.fromList(SLinkOperations.getTargets(cc, "constructor", true)).first();
+        return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(cc)).first();
       }
     }
     return null;

@@ -244,7 +244,6 @@ public class RunMigrationScriptsDialog extends JDialog {
     private static final int NONE = 0;
     private static final int ASC = 1;
     private static final int DESC = 2;
-
     private int mySortedColumn = -1;
     private int mySortingOrder = NONE;
     private int[] myViewToModelMap;

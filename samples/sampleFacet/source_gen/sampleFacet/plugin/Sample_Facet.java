@@ -70,7 +70,6 @@ public class Sample_Facet extends IFacet.Stub {
   public static class Target_readParams implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IMResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("sampleFacet.Sample.readParams");
 
     public Target_readParams() {
@@ -210,7 +209,6 @@ public class Sample_Facet extends IFacet.Stub {
   public static class Target_reportFiles implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("sampleFacet.Sample.reportFiles");
 
     public Target_reportFiles() {

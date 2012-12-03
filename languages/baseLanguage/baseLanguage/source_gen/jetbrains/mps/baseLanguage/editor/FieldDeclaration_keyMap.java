@@ -71,7 +71,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode g;
       g = _quotation_createNode_bsktda_a0b0a0(SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)), node, FieldDeclaration_Behavior.call_getGetterName_1213877243782(node));
-      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "method", true)).addElement(g);
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "member", true)).addElement(g);
     }
 
     public String getKeyStroke() {
@@ -151,7 +151,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
     private void execute_internal(final KeyEvent keyEvent, final EditorContext editorContext, final SNode node, final List<SNode> selectedNodes) {
       SNode s;
       s = _quotation_createNode_bsktda_a0b0a1(node, FieldDeclaration_Behavior.call_getSetterName_1213877243861(node), SNodeOperations.copyNode(SLinkOperations.getTarget(node, "type", true)), SPropertyOperations.getString(node, "name"));
-      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "method", true)).addElement(s);
+      ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false), "member", true)).addElement(s);
     }
 
     public String getKeyStroke() {

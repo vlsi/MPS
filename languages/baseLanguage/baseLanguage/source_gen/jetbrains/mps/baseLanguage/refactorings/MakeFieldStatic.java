@@ -59,7 +59,7 @@ public class MakeFieldStatic extends BaseRefactoring {
   public void refactor(final RefactoringContext refactoringContext) {
     SNode newDeclaration = _quotation_createNode_so6etp_a0a0a(SNodeOperations.copyNode(SLinkOperations.getTarget(((SNode) refactoringContext.getParameter("declaration")), "visibility", true)), SNodeOperations.copyNode(SLinkOperations.getTarget(((SNode) refactoringContext.getParameter("declaration")), "type", true)), SPropertyOperations.getString(((SNode) refactoringContext.getParameter("declaration")), "name"));
     SNode declarationClassifier = SNodeOperations.getAncestor(((SNode) refactoringContext.getParameter("declaration")), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    ListSequence.fromList(SLinkOperations.getTargets(declarationClassifier, "staticField", true)).addElement(newDeclaration);
+    ListSequence.fromList(SLinkOperations.getTargets(declarationClassifier, "member", true)).addElement(newDeclaration);
     for (SearchResult<SNode> result : ListSequence.fromList(((SearchResults<SNode>) refactoringContext.getParameter("usages")).getSearchResults())) {
       SNode usage = result.getObject();
       SNode replacing;

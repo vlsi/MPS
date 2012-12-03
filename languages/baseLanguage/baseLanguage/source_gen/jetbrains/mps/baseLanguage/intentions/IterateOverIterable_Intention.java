@@ -26,7 +26,6 @@ import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 public class IterateOverIterable_Intention implements IntentionFactory {
   private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0b0a0a0a7 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
   private static SNodePointer SNODE_POINTER_w1n2qe_a0a0a0a0b0c0a0a0a0a0a0b0 = new SNodePointer("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Iterable");
-
   private Collection<IntentionExecutable> myCachedExecutable;
 
   public IterateOverIterable_Intention() {

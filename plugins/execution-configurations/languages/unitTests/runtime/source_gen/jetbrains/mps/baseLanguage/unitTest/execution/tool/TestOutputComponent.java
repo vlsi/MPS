@@ -31,7 +31,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 public class TestOutputComponent implements TestView {
   private static final int MAX_SIZE = 10000;
   private static Logger LOG = Logger.getLogger(TestOutputComponent.class);
-
   private final JComponent myComponent;
   private final ConsoleView myConsoleView;
   private final TestOutputComponent.CompositeMessage myRootMessage = new TestOutputComponent.RootMessage();

@@ -61,7 +61,6 @@ public class Generator__Facet extends IFacet.Stub {
   public static class Target_Configure implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("Generator_.Configure");
 
     public Target_Configure() {
@@ -164,7 +163,6 @@ public class Generator__Facet extends IFacet.Stub {
   public static class Target_Generate implements ITargetEx {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("Generator_.Generate");
 
     public Target_Generate() {

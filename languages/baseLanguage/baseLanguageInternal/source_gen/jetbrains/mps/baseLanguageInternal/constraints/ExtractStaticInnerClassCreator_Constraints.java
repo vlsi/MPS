@@ -23,6 +23,8 @@ import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 
 public class ExtractStaticInnerClassCreator_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_4gp7p5_a0a3a0a0a1a0b0a1a0 = new SNodePointer("r:1ce54900-c35b-4aa5-b24f-b47c871a6d6f(jetbrains.mps.baseLanguageInternal.constraints)", "5822086619725599108");
@@ -70,7 +72,7 @@ public class ExtractStaticInnerClassCreator_Constraints extends BaseConstraintsD
             );
             for (SNode n : SNodeOperations.getAncestors(context, "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassExpression", false)) {
               if ((SLinkOperations.getTarget(n, "innerClass", true) != null)) {
-                ListSequence.fromList(res).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(n, "innerClass", true), "constructor", true)));
+                ListSequence.fromList(res).addSequence(Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SLinkOperations.getTarget(n, "innerClass", true))));
               }
             }
             return res;

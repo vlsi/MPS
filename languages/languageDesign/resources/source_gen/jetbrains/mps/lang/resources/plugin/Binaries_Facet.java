@@ -82,7 +82,6 @@ public class Binaries_Facet extends IFacet.Stub {
   public static class Target_copyBinaries implements ITargetEx2 {
     private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IMResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
-
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.lang.resources.Binaries.copyBinaries");
 
     public Target_copyBinaries() {

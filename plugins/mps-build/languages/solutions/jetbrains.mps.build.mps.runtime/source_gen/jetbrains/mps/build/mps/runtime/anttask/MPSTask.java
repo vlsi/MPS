@@ -31,7 +31,6 @@ public class MPSTask extends Task {
   public static final String CONFIGURATION_NAME = "configuration.name";
   public static final String BUILD_NUMBER = "build.number";
   public static final String MPS_HOME = "mps.home";
-
   private File myMpsHome = null;
   private boolean myFork = true;
   private boolean myUsePropertiesAsMacro = false;

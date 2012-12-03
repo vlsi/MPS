@@ -22,7 +22,6 @@ import com.sun.jdi.InternalException;
 
 public class LineBreakpoint extends JavaBreakpoint implements ILocationBreakpoint {
   private static final Logger LOG = Logger.getLogger(LineBreakpoint.class);
-
   protected final BreakpointLocation myLocation;
 
   public LineBreakpoint(@NotNull SNodePointer nodePointer, Project project) {

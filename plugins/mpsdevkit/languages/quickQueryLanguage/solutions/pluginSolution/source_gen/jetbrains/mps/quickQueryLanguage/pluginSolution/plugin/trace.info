@@ -760,49 +760,49 @@
   </root>
   <root nodeId="5487985028841944176" modelId="r:3a778ef5-24fe-4aa0-8558-f81e64e33ac0(jetbrains.mps.quickQueryLanguage.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
-    <nodeInfo nodeId="5487985028841944177" fileName="RunReplacement_Tool.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="23" startPosition="47" endLine="24" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="27" startPosition="37" endLine="28" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841944246" fileName="RunReplacement_Tool.java" startLine="28" startPosition="24" endLine="29" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841944183" fileName="RunReplacement_Tool.java" startLine="32" startPosition="46" endLine="33" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841944203" fileName="RunReplacement_Tool.java" startLine="38" startPosition="25" endLine="39" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5487985028841944228" fileName="RunReplacement_Tool.java" startLine="41" startPosition="62" endLine="42" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RunReplacement_Tool#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="5487985028841944180" fileName="RunReplacement_Tool.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="closeTab#(Ljetbrains/mps/quickQueryLanguage/pluginSolution/plugin/ReplacementView;)V" />
-    <nodeInfo nodeId="5487985028841944226" fileName="RunReplacement_Tool.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#(Ljavax/swing/JComponent;)V" />
-    <nodeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="5487985028841944218" fileName="RunReplacement_Tool.java" startLine="39" startPosition="187" endLine="44" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841944201" fileName="RunReplacement_Tool.java" startLine="38" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="5487985028841944200" fileName="RunReplacement_Tool.java" startLine="36" startPosition="72" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5487985028841944193" fileName="RunReplacement_Tool.java" startLine="36" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addTab#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Ljetbrains/mps/quickQueryLanguage/runtime/Query;)V" />
-    <scopeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="23" startPosition="47" endLine="24" endPosition="75" />
-    <scopeInfo nodeId="5487985028841944182" fileName="RunReplacement_Tool.java" startLine="32" startPosition="46" endLine="33" endPosition="59" />
-    <scopeInfo nodeId="5487985028841944227" fileName="RunReplacement_Tool.java" startLine="41" startPosition="62" endLine="42" endPosition="27" />
-    <scopeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="27" startPosition="37" endLine="29" endPosition="49" />
-    <scopeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+    <nodeInfo nodeId="5487985028841944177" fileName="RunReplacement_Tool.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="22" startPosition="47" endLine="23" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="26" startPosition="37" endLine="27" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841944246" fileName="RunReplacement_Tool.java" startLine="27" startPosition="24" endLine="28" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841944183" fileName="RunReplacement_Tool.java" startLine="31" startPosition="46" endLine="32" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841944203" fileName="RunReplacement_Tool.java" startLine="37" startPosition="25" endLine="38" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5487985028841944228" fileName="RunReplacement_Tool.java" startLine="40" startPosition="62" endLine="41" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RunReplacement_Tool#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="5487985028841944180" fileName="RunReplacement_Tool.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="closeTab#(Ljetbrains/mps/quickQueryLanguage/pluginSolution/plugin/ReplacementView;)V" />
+    <nodeInfo nodeId="5487985028841944226" fileName="RunReplacement_Tool.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="disposeComponent#(Ljavax/swing/JComponent;)V" />
+    <nodeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="26" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="5487985028841944218" fileName="RunReplacement_Tool.java" startLine="38" startPosition="187" endLine="43" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841944201" fileName="RunReplacement_Tool.java" startLine="37" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="5487985028841944200" fileName="RunReplacement_Tool.java" startLine="35" startPosition="72" endLine="45" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5487985028841944193" fileName="RunReplacement_Tool.java" startLine="35" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addTab#(Ljetbrains/mps/ide/findusages/model/SearchQuery;Ljetbrains/mps/quickQueryLanguage/runtime/Query;)V" />
+    <scopeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="22" startPosition="47" endLine="23" endPosition="75" />
+    <scopeInfo nodeId="5487985028841944182" fileName="RunReplacement_Tool.java" startLine="31" startPosition="46" endLine="32" endPosition="59" />
+    <scopeInfo nodeId="5487985028841944227" fileName="RunReplacement_Tool.java" startLine="40" startPosition="62" endLine="41" endPosition="27" />
+    <scopeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="26" startPosition="37" endLine="28" endPosition="49" />
+    <scopeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="5487985028841944176" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841944180" fileName="RunReplacement_Tool.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="5487985028841944180" fileName="RunReplacement_Tool.java" startLine="31" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="5487985028841944190" varName="view" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841944226" fileName="RunReplacement_Tool.java" startLine="41" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="5487985028841944226" fileName="RunReplacement_Tool.java" startLine="40" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="5487985028841944226" varName="component" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="27" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="26" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="5487985028841944176" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841944202" fileName="RunReplacement_Tool.java" startLine="38" startPosition="25" endLine="44" endPosition="11">
+    <scopeInfo nodeId="5487985028841944202" fileName="RunReplacement_Tool.java" startLine="37" startPosition="25" endLine="43" endPosition="11">
       <varInfo nodeId="5487985028841944204" varName="view" />
     </scopeInfo>
-    <scopeInfo nodeId="5487985028841944201" fileName="RunReplacement_Tool.java" startLine="38" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="5487985028841944199" fileName="RunReplacement_Tool.java" startLine="36" startPosition="72" endLine="46" endPosition="7" />
-    <scopeInfo nodeId="5487985028841944193" fileName="RunReplacement_Tool.java" startLine="36" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="5487985028841944201" fileName="RunReplacement_Tool.java" startLine="37" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="5487985028841944199" fileName="RunReplacement_Tool.java" startLine="35" startPosition="72" endLine="45" endPosition="7" />
+    <scopeInfo nodeId="5487985028841944193" fileName="RunReplacement_Tool.java" startLine="35" startPosition="0" endLine="47" endPosition="0">
       <varInfo nodeId="5487985028841944196" varName="query" />
       <varInfo nodeId="5487985028841944194" varName="searchQuery" />
     </scopeInfo>
-    <unitInfo nodeId="5487985028841944226" fileName="RunReplacement_Tool.java" startLine="40" startPosition="156" endLine="44" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.RunReplacement_Tool$2" />
-    <unitInfo nodeId="5487985028841944201" fileName="RunReplacement_Tool.java" startLine="37" startPosition="45" endLine="46" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.RunReplacement_Tool$1" />
-    <unitInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="18" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.RunReplacement_Tool" />
+    <unitInfo nodeId="5487985028841944226" fileName="RunReplacement_Tool.java" startLine="39" startPosition="156" endLine="43" endPosition="9" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.RunReplacement_Tool$2" />
+    <unitInfo nodeId="5487985028841944201" fileName="RunReplacement_Tool.java" startLine="36" startPosition="45" endLine="45" endPosition="5" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.RunReplacement_Tool$1" />
+    <unitInfo nodeId="5487985028841944176" fileName="RunReplacement_Tool.java" startLine="18" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.RunReplacement_Tool" />
   </root>
   <root nodeId="7162597690967871525" modelId="r:3a778ef5-24fe-4aa0-8558-f81e64e33ac0(jetbrains.mps.quickQueryLanguage.pluginSolution.plugin)">
     <nodeInfo nodeId="7162597690967871525" fileName="PluginSolution_ApplicationPlugin.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myId" />

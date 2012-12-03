@@ -29,7 +29,6 @@ import java.util.List;
       return new ConceptAndSuperConceptsCache(key, element);
     }
   };
-
   @NotNull
   private SNode myTopConcept;
 

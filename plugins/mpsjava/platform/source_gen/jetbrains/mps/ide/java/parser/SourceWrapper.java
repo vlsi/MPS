@@ -9,8 +9,10 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public abstract class SourceWrapper {
@@ -112,7 +114,7 @@ public abstract class SourceWrapper {
 
     @Override
     public List<SNode> getOurNodesFromClassifier(SNode classifier) {
-      return SLinkOperations.getTargets(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(classifier, "method", true)).first(), "body", true), "statement", true);
+      return SLinkOperations.getTargets(SLinkOperations.getTarget(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).first(), "body", true), "statement", true);
     }
   }
 
@@ -126,10 +128,10 @@ public abstract class SourceWrapper {
     @Override
     public List<SNode> getOurNodesFromClassifier(SNode classifier) {
       List<SNode> result = new ArrayList<SNode>();
-      ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classifier, "method", true))).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classifier, "staticField", true))).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classifier, "staticInnerClassifiers", true)));
+      ListSequence.fromList(result).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{}))).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_staticFields_5292274854859223538", new Object[]{}))).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classifier, "jetbrains.mps.baseLanguage.structure.Classifier", "call_nestedClassifiers_5292274854859193142", new Object[]{})));
       SNode classs = SNodeOperations.as(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept");
       if ((classs != null)) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classs, "field", true))).addSequence(ListSequence.fromList(SLinkOperations.getTargets(classs, "staticMethod", true)));
+        ListSequence.fromList(result).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classs, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_fields_5292274854859383272", new Object[]{}))).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classs, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_staticMethods_5292274854859435867", new Object[]{})));
       }
       return result;
     }

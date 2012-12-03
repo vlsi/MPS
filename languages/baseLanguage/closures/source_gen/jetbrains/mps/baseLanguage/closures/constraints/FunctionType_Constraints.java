@@ -17,7 +17,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 
 public class FunctionType_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_yerj9w_a0a1a0a0a1a0b0a1a0 = new SNodePointer("r:00000000-0000-4000-0000-011c89590334(jetbrains.mps.baseLanguage.closures.constraints)", "100821637069106758");
@@ -43,7 +44,7 @@ public class FunctionType_Constraints extends BaseConstraintsDescriptor {
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             return ListSequence.fromList(SModelOperations.getNodesIncludingImported(_context.getModel(), operationContext.getScope(), "jetbrains.mps.baseLanguage.structure.Interface")).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode ifc) {
-                return (int) ListSequence.fromList(SLinkOperations.getTargets(ifc, "method", true)).count() == 1;
+                return (int) Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(ifc)).count() == 1;
               }
             });
           }

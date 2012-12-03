@@ -10,6 +10,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -158,7 +160,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1171986734537(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "staticField", true);
+    return Classifier_Behavior.call_staticFields_5292274854859223538(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_1171932074411(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -166,7 +168,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_1171985035236(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "method", true);
+    return Classifier_Behavior.call_methods_5292274854859311639(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_9110034126561014534(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -174,7 +176,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_4326291070220018649(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "field", true);
+    return ClassConcept_Behavior.call_fields_5292274854859383272(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_9110034126561076473(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

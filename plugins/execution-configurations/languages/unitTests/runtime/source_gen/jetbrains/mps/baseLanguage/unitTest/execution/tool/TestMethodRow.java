@@ -10,7 +10,6 @@ public class TestMethodRow implements TestStatisticsRow {
   private static final int SUCCEED = 0;
   private static final int FAILED = 1;
   private static final int ERRORED = 2;
-
   private final String myTestCaseName;
   private final String myTestMethodName;
   private long myStartTime = -1;

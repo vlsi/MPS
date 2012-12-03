@@ -10,9 +10,17 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.baseLanguage.scopes.ClassifierScopes;
+import jetbrains.mps.smodel.SNode;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.runtime.CheckingNodeContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
 
 public class Interface_Constraints extends BaseConstraintsDescriptor {
   private static SNodePointer breakingNode_y7fug_a0a0a0a0a1 = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "7898359107948137248");
+  private static SNodePointer canBeParentBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902c1(jetbrains.mps.baseLanguage.constraints)", "2949815620934480594");
 
   public Interface_Constraints() {
     super("jetbrains.mps.baseLanguage.structure.Interface");
@@ -36,5 +44,29 @@ public class Interface_Constraints extends BaseConstraintsDescriptor {
         return ClassifierScopes.getVisibleInterfacesScope(_context.getContextNode(), operationContext.getScope());
       }
     };
+  }
+
+  @Override
+  public boolean hasOwnCanBeParentMethod() {
+    return true;
+  }
+
+  @Override
+  public boolean canBeParent(SNode node, @Nullable SNode childNode, SNode childConcept, SNode link, IOperationContext operationContext, @Nullable CheckingNodeContext checkingNodeContext) {
+    boolean result = static_canBeAParent(node, childNode, childConcept, link, operationContext);
+
+    if (!(result) && checkingNodeContext != null) {
+      checkingNodeContext.setBreakingNode(canBeParentBreakingPoint);
+    }
+
+    return result;
+  }
+
+  public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
+    if (SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
+      SNode memberConcept = (SNode) childConcept;
+      return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(memberConcept)), "virtual_canBeInterfaceMember_2949815620938109095", new Object[]{});
+    }
+    return true;
   }
 }

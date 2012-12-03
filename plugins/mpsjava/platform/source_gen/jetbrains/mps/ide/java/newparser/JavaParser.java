@@ -292,7 +292,6 @@ public class JavaParser {
 
   public static class JavaParseResult {
     public static final JavaParser.JavaParseResult UNKNOWN_ERROR = new JavaParser.JavaParseResult(new ArrayList<SNode>(), "Parse failed and return no errors");
-
     @NotNull
     private List<SNode> nodes;
     private String pakage;

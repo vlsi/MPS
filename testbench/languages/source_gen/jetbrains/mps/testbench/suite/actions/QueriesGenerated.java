@@ -31,6 +31,7 @@ import jetbrains.mps.baseLanguage.search.IClassifiersSearchScope;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.baseLanguage.search.ReachableClassifiersScope;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -152,7 +153,7 @@ public class QueriesGenerated {
                   operationContext.getScope()
                 )).getNodes(new Condition<SNode>() {
                   public boolean met(SNode cls) {
-                    return ListSequence.fromList(SLinkOperations.getTargets(cls, "method", true)).translate(new ITranslator2<SNode, SNode>() {
+                    return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(cls)).translate(new ITranslator2<SNode, SNode>() {
                       public Iterable<SNode> translate(SNode m) {
                         return SLinkOperations.getTargets(m, "annotation", true);
                       }

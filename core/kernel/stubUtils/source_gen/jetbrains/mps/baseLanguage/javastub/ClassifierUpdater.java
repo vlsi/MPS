@@ -44,7 +44,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ClassifierUpdater {
   private static Logger LOG = Logger.getLogger(ClassifierUpdater.class);
-
   private SModel cm;
   private SNode myClassifier;
   private final boolean mySkipPrivate;
@@ -183,7 +182,7 @@ public class ClassifierUpdater {
         ListSequence.fromList(SLinkOperations.getTargets(decl, "annotation", true)).addElement(createAnnotation(annotation));
       }
 
-      ListSequence.fromList(SLinkOperations.getTargets(cls, "field", true)).addElement(decl);
+      ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(decl);
     }
   }
 
@@ -221,7 +220,7 @@ public class ClassifierUpdater {
           }
         }
 
-        ListSequence.fromList(SLinkOperations.getTargets(cls, "staticField", true)).addElement(decl);
+        ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(decl);
       }
     }
   }
@@ -290,7 +289,7 @@ public class ClassifierUpdater {
         ListSequence.fromList(SLinkOperations.getTargets(constructor, "throwsItem", true)).addElement(getTypeByASMType(exception, constructor, cls));
       }
 
-      ListSequence.fromList(SLinkOperations.getTargets(cls, "constructor", true)).addElement(constructor);
+      ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(constructor);
     }
   }
 
@@ -314,7 +313,7 @@ public class ClassifierUpdater {
       SLinkOperations.setTarget(md, "visibility", createVisibility(m), true);
       this.updateBaseMethod(m, md, cls);
 
-      ListSequence.fromList(SLinkOperations.getTargets(cls, "method", true)).addElement(md);
+      ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(md);
     }
   }
 
@@ -337,7 +336,7 @@ public class ClassifierUpdater {
       SLinkOperations.setTarget(md, "visibility", createVisibility(m), true);
       updateBaseMethod(m, md, cls);
 
-      ListSequence.fromList(SLinkOperations.getTargets(cls, "staticMethod", true)).addElement(md);
+      ListSequence.fromList(SLinkOperations.getTargets(cls, "member", true)).addElement(md);
     }
   }
 

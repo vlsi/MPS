@@ -40,7 +40,6 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 
 public class FileMPSProject extends Project {
   private static Logger LOG = Logger.getLogger(FileMPSProject.class);
-
   private String myErrors;
   private FileMPSProject.ProjectDescriptor myDescriptor;
 

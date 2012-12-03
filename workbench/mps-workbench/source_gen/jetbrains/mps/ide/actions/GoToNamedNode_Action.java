@@ -13,7 +13,6 @@ import java.util.Map;
 public class GoToNamedNode_Action extends BaseAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(GoToNamedNode_Action.class);
-
   private AnAction action;
 
   public GoToNamedNode_Action(AnAction action_par) {

@@ -16,7 +16,6 @@ import com.intellij.openapi.util.InvalidDataException;
 
 public class PersonEditor_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   protected static Log log = LogFactory.getLog(PersonEditor_Configuration.class);
-
   @NotNull
   private PersonEditor_Configuration.MyState myState = new PersonEditor_Configuration.MyState();
   private SettingsEditorEx<PersonEditor_Configuration> myEditorEx;

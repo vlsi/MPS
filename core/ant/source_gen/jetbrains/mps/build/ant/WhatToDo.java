@@ -31,7 +31,6 @@ public class WhatToDo {
   private static final String ELEMENT_PROPERTY = "property";
   private static final String PATH = "path";
   private static final String VALUE = "value";
-
   private final Set<File> myModels = new LinkedHashSet<File>();
   private final Set<File> myModules = new LinkedHashSet<File>();
   private final Set<File> myExcludedFromDiff = new LinkedHashSet<File>();

@@ -15,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.List;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Iterator;
 import java.util.Map;
@@ -64,7 +65,7 @@ public class VisibleClassConstructorsScope extends Scope {
     }
 
     // resolve only by name 
-    List<SNode> constructors = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "constructor", true)).toListSequence();
+    List<SNode> constructors = Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).toListSequence();
     if ((int) ListSequence.fromList(constructors).count() == 1) {
       return ListSequence.fromList(constructors).first();
     }

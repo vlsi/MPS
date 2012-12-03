@@ -48,7 +48,6 @@ public class RequestManager implements IRequestManager {
   private static final Logger LOG = Logger.getLogger(RequestManager.class);
   private static final Object REQUESTOR = new Object();
   private static final Object CLASS_NAME = new Object();
-
   private final Map<Requestor, Set<EventRequest>> myRequestorToBelongedRequests = new HashMap<Requestor, Set<EventRequest>>();
   private EventRequestManager myEventRequestManager;
   private EventsProcessor myDebugEventsProcessor;

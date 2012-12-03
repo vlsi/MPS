@@ -8,11 +8,13 @@ import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
@@ -38,7 +40,7 @@ public class GenerateMainMethod_Action extends BaseAction {
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
     SNode classConcept = GenerateMainMethod_Action.this.getClassConcept(_params);
-    return !(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "staticMethod", true)).any(new IWhereFilter<SNode>() {
+    return !(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), classConcept, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_staticMethods_5292274854859435867", new Object[]{})).any(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return "main".equals(SPropertyOperations.getString(it, "name")) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType") && (int) ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).count() == 1 && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).first(), "type", true), "jetbrains.mps.baseLanguage.structure.ArrayType");
       }
@@ -76,7 +78,7 @@ public class GenerateMainMethod_Action extends BaseAction {
     try {
       SNode classConcept = GenerateMainMethod_Action.this.getClassConcept(_params);
       SNode methodNode = _quotation_createNode_fb0mnr_a0b0a();
-      ListSequence.fromList(SLinkOperations.getTargets(classConcept, "staticMethod", true)).addElement(methodNode);
+      ListSequence.fromList(SLinkOperations.getTargets(classConcept, "member", true)).addElement(methodNode);
       ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).select(SLinkOperations.getTarget(methodNode, "body", true));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GenerateMainMethod", t);

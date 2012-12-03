@@ -3560,10 +3560,12 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1166649349906" resolveInfo="newClass" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="1166649237824">
-                <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.1068390468201" />
+                <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.5375687026011219971" />
               </node>
             </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tp25.LinkList_AddNewChildOperation" typeId="tp25.1139184414036" id="1166649242794" />
+            <node role="operation" roleId="tpee.1197027833540" type="tp25.LinkList_AddNewChildOperation" typeId="tp25.1139184414036" id="1166649242794">
+              <link role="concept" roleId="tp25.1139877738879" targetNodeId="tpee.1068580123140" resolveInfo="ConstructorDeclaration" />
+            </node>
           </node>
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1166649357812">
@@ -3575,10 +3577,12 @@
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1166649349906" resolveInfo="newClass" />
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="1166649357816">
-                    <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.1068390468201" />
+                    <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.5375687026011219971" />
                   </node>
                 </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tp25.LinkList_AddNewChildOperation" typeId="tp25.1139184414036" id="1166649357817" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.LinkList_AddNewChildOperation" typeId="tp25.1139184414036" id="1166649357817">
+                  <link role="concept" roleId="tp25.1139877738879" targetNodeId="tpee.1068580123140" resolveInfo="ConstructorDeclaration" />
+                </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="1166649370711">
                 <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.1068580123134" />

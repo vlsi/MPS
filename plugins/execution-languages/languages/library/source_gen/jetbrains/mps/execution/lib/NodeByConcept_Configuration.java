@@ -21,7 +21,6 @@ import jetbrains.mps.smodel.SNodePointer;
 
 public class NodeByConcept_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   private static Logger LOG = Logger.getLogger(NodeByConcept_Configuration.class);
-
   @NotNull
   private NodeByConcept_Configuration.MyState myState = new NodeByConcept_Configuration.MyState();
   private final String myConcept;

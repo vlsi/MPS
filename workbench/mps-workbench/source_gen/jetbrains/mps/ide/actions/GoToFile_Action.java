@@ -14,7 +14,6 @@ import com.intellij.featureStatistics.FeatureUsageTracker;
 public class GoToFile_Action extends BaseAction {
   private static final Icon ICON = null;
   private static Logger LOG = Logger.getLogger(GoToFile_Action.class);
-
   private AnAction action;
 
   public GoToFile_Action(AnAction action_par) {

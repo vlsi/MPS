@@ -44,10 +44,6 @@ public class InternalAnonymousClass_TextGen extends SNodeTextGen {
       }
     }
     this.append(")");
-    if ((SLinkOperations.getTarget(node, "instanceInitializer", true) == null) && ListSequence.fromList(SLinkOperations.getTargets(node, "field", true)).isEmpty() && ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isEmpty()) {
-      this.append(" {}");
-      return;
-    }
     this.append(" ");
     BaseClassConceptTextGen.membersWithBrackets(node, false, this);
     if (getBuffer().hasPositionsSupport()) {

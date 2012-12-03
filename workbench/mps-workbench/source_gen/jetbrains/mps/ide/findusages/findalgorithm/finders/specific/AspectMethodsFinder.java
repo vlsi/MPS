@@ -67,7 +67,6 @@ public class AspectMethodsFinder implements IFinder {
   public static class AspectMethodsHolder implements IHolder<AspectMethodsFinder.AspectMethodQueryData> {
     private static final String METHOD_NAME = "method_name";
     private static final String MODEL_NAME = "model_name";
-
     private AspectMethodsFinder.AspectMethodQueryData myData = new AspectMethodsFinder.AspectMethodQueryData();
 
     public AspectMethodsHolder() {

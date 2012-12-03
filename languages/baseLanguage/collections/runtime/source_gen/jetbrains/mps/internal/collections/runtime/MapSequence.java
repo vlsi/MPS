@@ -12,7 +12,6 @@ import jetbrains.mps.internal.collections.runtime.impl.NullMapSequence;
 
 public class MapSequence<U, V> extends Sequence<IMapping<U, V>> implements IMapSequence<U, V>, Map<U, V>, Serializable {
   private static final long serialVersionUID = 4362668497945620393L;
-
   private Map<U, V> map;
 
   protected MapSequence(Map<U, V> map) {

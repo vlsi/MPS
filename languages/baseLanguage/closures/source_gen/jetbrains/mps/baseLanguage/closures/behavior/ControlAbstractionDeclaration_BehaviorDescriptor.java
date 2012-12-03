@@ -8,8 +8,9 @@ import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.HasAnnotation_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.HasAnnotation_Behavior;
-import java.util.List;
+import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
+import java.util.List;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class ControlAbstractionDeclaration_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor, HasAnnotation_BehaviorDescriptor {
@@ -18,6 +19,10 @@ public class ControlAbstractionDeclaration_BehaviorDescriptor extends GenericDec
 
   public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return HasAnnotation_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
+  }
+
+  public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
+    return ClassifierMember_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
   }
 
   public List<SNode> virtual_getChildrenToDisplayIntention_4025276038182319200(SNode thisNode) {
@@ -38,6 +43,14 @@ public class ControlAbstractionDeclaration_BehaviorDescriptor extends GenericDec
 
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
+  }
+
+  public boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
+    return ClassifierMember_Behavior.virtual_needsEmptyLineAfter_641490355014298838(thisNode);
+  }
+
+  public boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
+    return ClassifierMember_Behavior.virtual_needsEmptyLineBefore_641490355014296733(thisNode);
   }
 
   public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {

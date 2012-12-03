@@ -65,8 +65,7 @@ public class LocalMethodCallsMigration {
           ListSequence.fromList(SNodeOperations.getChildren(result, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "typeArgument"))).addElement(copy);
         }
 
-        // copy  
-        result.setId(node.getSNodeId());
+        // copy 
         return result;
       }
 

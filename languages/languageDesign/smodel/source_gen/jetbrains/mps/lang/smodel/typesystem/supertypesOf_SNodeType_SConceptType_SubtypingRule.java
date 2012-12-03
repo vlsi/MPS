@@ -22,7 +22,6 @@ import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class supertypesOf_SNodeType_SConceptType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   private static SNodePointer SNODE_POINTER_6gcjzy_a0a0a0a0b0c0a0a0a0a0a0c = new SNodePointer("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1169125787135");
-
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
   public supertypesOf_SNodeType_SConceptType_SubtypingRule() {

@@ -38,8 +38,8 @@
       <property name="name" nameId="tpck.1169194664001" value="Query_" />
     </node>
     <node type="tpf8.TemplateSwitch" typeId="tpf8.1112730859144" id="3668957831723397503">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
       <property name="name" nameId="tpck.1169194664001" value="switch_Feedback_Creator" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="3353120829256498386">
       <property name="name" nameId="tpck.1169194664001" value="reduce_JobDefinition" />
@@ -47,8 +47,8 @@
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="q9ra.2360002718792625579" resolveInfo="JobDefinition" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="5537134633111714222">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
       <property name="name" nameId="tpck.1169194664001" value="reduce_ConfigDefinition" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="job" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="q9ra.1977954644795375332" resolveInfo="ConfigDefinition" />
     </node>
   </roots>
@@ -653,6 +653,9 @@
                       <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1977954644795311579">
                         <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1977954644795311580">
                           <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1977954644795311581">
+                            <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_ConceptMethodCall" typeId="tp25.1179409122411" id="2752112839363164366">
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="tpek.5292274854859503373" resolveInfo="constructors" />
+                            </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1977954644795311582">
                               <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="1977954644795311583" />
                               <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOutputByLabelAndInput" typeId="tpf3.1216860049627" id="1977954644795311584">
@@ -664,9 +667,6 @@
                                   </node>
                                 </node>
                               </node>
-                            </node>
-                            <node role="operation" roleId="tpee.1197027833540" type="tp25.SLinkListAccess" typeId="tp25.1138056282393" id="1977954644795311588">
-                              <link role="link" roleId="tp25.1138056546658" targetNodeId="tpee.1068390468201" />
                             </node>
                           </node>
                           <node role="operation" roleId="tpee.1197027833540" type="tp2q.GetFirstOperation" typeId="tp2q.1165525191778" id="1977954644795311589" />
@@ -2473,15 +2473,15 @@
     </node>
     <node role="defaultConsequence" roleId="tpf8.1168558750579" type="tpf8.DismissTopMappingRule" typeId="tpf8.1168559512253" id="3668957831723418815">
       <node role="generatorMessage" roleId="tpf8.1169669152123" type="tpf8.GeneratorMessage" typeId="tpf8.1169670156577" id="3668957831723418816">
-        <property name="messageType" nameId="tpf8.1169670356567" value="error" />
         <property name="messageText" nameId="tpf8.1169670173015" value="unknown feedback type; don't know what to do" />
+        <property name="messageType" nameId="tpf8.1169670356567" value="error" />
       </node>
     </node>
   </root>
   <root id="3353120829256498386">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="3353120829256498390">
-      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="Context" />
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3353120829256498396">
         <property name="name" nameId="tpck.1169194664001" value="context" />
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3353120829256498397" />
@@ -2700,8 +2700,8 @@
   </root>
   <root id="5537134633111714222">
     <node role="contentNode" roleId="tpf8.1092060348987" type="tpee.ClassConcept" typeId="tpee.1068390468198" id="5537134633111714224">
-      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="Context" />
+      <property name="nonStatic" nameId="tpee.521412098689998745" value="true" />
       <node role="method" roleId="tpee.1107880067339" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5537134633111714230">
         <property name="name" nameId="tpck.1169194664001" value="context" />
         <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5537134633111714231" />

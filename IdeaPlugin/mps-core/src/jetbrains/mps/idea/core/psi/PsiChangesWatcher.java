@@ -37,6 +37,7 @@ import java.util.*;
 public class PsiChangesWatcher implements ProjectComponent {
 
   private final static long DELAY = 300; // milliseconds
+  private final Object LOCK = new Object();
 
   private Project myProject;
   private PsiManager myPsiManager;
@@ -54,11 +55,15 @@ public class PsiChangesWatcher implements ProjectComponent {
   }
 
   public void addListener(PsiListener listener) {
-    myListeners.add(listener);
+    synchronized (LOCK) {
+      myListeners.add(listener);
+    }
   }
 
   public void removeListener(PsiListener listener) {
-    myListeners.remove(listener);
+    synchronized (LOCK) {
+      myListeners.remove(listener);
+    }
   }
 
   @Override
@@ -186,17 +191,17 @@ public class PsiChangesWatcher implements ProjectComponent {
   }
 
   private static class PsiChangeData implements PsiEvent {
-    Set<PsiFile> created = new HashSet<PsiFile>();
-    Set<PsiFile> removed = new HashSet<PsiFile>();
+    Set<PsiFileSystemItem> created = new HashSet<PsiFileSystemItem>();
+    Set<PsiFileSystemItem> removed = new HashSet<PsiFileSystemItem>();
     Map<PsiFile,Set<PsiElement>> changed = new HashMap<PsiFile,Set<PsiElement>>();
 
     @Override
-    public Iterable<PsiFile> getCreated() {
+    public Iterable<PsiFileSystemItem> getCreated() {
       return created;
     }
 
     @Override
-    public Iterable<PsiFile> getRemoved() {
+    public Iterable<PsiFileSystemItem> getRemoved() {
       return removed;
     }
 
@@ -217,6 +222,7 @@ public class PsiChangesWatcher implements ProjectComponent {
     @Override
     public void run() {
       // notify our listeners
+      //  FIXME use runWriteInEDT ?
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
         @Override
         public void run() {

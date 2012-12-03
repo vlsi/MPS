@@ -27,7 +27,6 @@ public class SNodeTransferable implements Transferable {
   private static final int STRING = 1;
   private static final int PLAIN_TEXT = 2;
   private static final DataFlavor[] flavors = {SModelDataFlavor.sNode, DataFlavor.stringFlavor, DataFlavor.plainTextFlavor};
-
   private List<SNode> mySNodes = new ArrayList<SNode>();
   @Nullable
   private ModuleReference mySourceModule;

@@ -17,7 +17,6 @@ import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   private static SNodePointer SNODE_POINTER_24ecqj_a0a0a0a0b0c0a0a0a0a0a0c = new SNodePointer("r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)", "6543581031674024971");
-
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
 
   public supertypesOf_IEnumerator_SubtypingRule() {

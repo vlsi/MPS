@@ -18,7 +18,6 @@ public class RootDependencies implements Comparable<RootDependencies> {
   private static final String DEPEND_CLASS = "classNode";
   private static final String DEPEND_CLASS_NAME = "dependClassName";
   private static final String EXTENDS_CLASS_NAME = "extendsClassName";
-
   private List<String> myDependNodes = new InternAwareStringList(2);
   private List<String> myExtendsNodes = new InternAwareStringList(2);
   private String myClassName;

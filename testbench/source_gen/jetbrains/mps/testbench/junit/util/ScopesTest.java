@@ -24,7 +24,6 @@ import org.jetbrains.mps.openapi.model.SModel;
 public class ScopesTest {
   private static Project ourProject;
   private static List<SNode[]> ourNodesToCheck = new ArrayList<SNode[]>();
-
   private SNode myNode;
 
   public ScopesTest(SNode node) {

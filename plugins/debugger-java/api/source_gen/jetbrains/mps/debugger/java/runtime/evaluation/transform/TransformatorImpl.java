@@ -34,7 +34,6 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
   public static final String LTYPE = "_ltype";
   public static final String RTYPE = "_rtype";
   public static final String CTYPE = "_ctype";
-
   private final SModel myModel;
   private final SNode myWhatToEvaluate;
 

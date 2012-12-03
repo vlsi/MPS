@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.core.project;
 
 import com.intellij.openapi.module.Module;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 /**
@@ -24,5 +25,6 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
  */
 
 public interface ModelRootContributor {
+  @NotNull
   Iterable<ModelRoot> getModelRoots(Module module);
 }

@@ -13,7 +13,6 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 
 /*package*/ class CurrentDifferenceBroadcaster implements CurrentDifferenceListener {
   protected static Log log = LogFactory.getLog(CurrentDifferenceBroadcaster.class);
-
   private List<CurrentDifferenceListener> myListeners = ListSequence.fromList(new ArrayList<CurrentDifferenceListener>());
   private SimpleCommandQueue myCommandQueue;
 

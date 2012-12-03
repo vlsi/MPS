@@ -9,20 +9,20 @@ import jetbrains.mps.smodel.SNode;
 import java.util.Map;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -31,7 +31,6 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ConvertAnonymousRefactoring {
   private static final Set<String> ROLES_NOT_TO_COPY = SetSequence.fromSetAndArray(new HashSet<String>(), "visibility");
-
   private SNode myClassToRefactor;
   private String myNameForInnerClass;
   private Map<SNode, SNode> myInnerFields;
@@ -48,7 +47,7 @@ public class ConvertAnonymousRefactoring {
     collectInformation();
     SNode creator = SNodeOperations.as(SNodeOperations.getParent(myClassToRefactor), "jetbrains.mps.baseLanguage.structure.AnonymousClassCreator");
     if ((creator != null)) {
-      SNodeOperations.replaceWithAnother(creator, makeInnerConstructorInvocation(ListSequence.fromList(SLinkOperations.getTargets(makeInnerClass(), "constructor", true)).first()));
+      SNodeOperations.replaceWithAnother(creator, makeInnerConstructorInvocation(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), makeInnerClass(), "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).first()));
     }
   }
 
@@ -111,7 +110,7 @@ public class ConvertAnonymousRefactoring {
 
   private SNode makeInnerClass() {
     SNode innerClass = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null);
-    ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(this.myClassToRefactor, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "staticInnerClassifiers", true)).addElement(innerClass);
+    ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(this.myClassToRefactor, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "member", true)).addElement(innerClass);
     SPropertyOperations.set(innerClass, "name", this.myNameForInnerClass);
     SLinkOperations.setTarget(innerClass, "visibility", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrivateVisibility", null), true);
     this.chooseNonStaticForInnerClass(innerClass);
@@ -124,14 +123,14 @@ public class ConvertAnonymousRefactoring {
   }
 
   private void makeInnerConstructor(SNode innerClass) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(innerClass, "constructor", true)).isEmpty()) {
+    if (Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), innerClass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).isEmpty()) {
       SNode ctor = SModelOperations.createNewNode(SNodeOperations.getModel(innerClass), null, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
-      ListSequence.fromList(SLinkOperations.getTargets(innerClass, "constructor", true)).addElement(ctor);
+      ListSequence.fromList(SLinkOperations.getTargets(innerClass, "member", true)).addElement(ctor);
       SLinkOperations.setNewChild(ctor, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
       SLinkOperations.setNewChild(ctor, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
       SLinkOperations.setNewChild(ctor, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
     }
-    SNode innerConstructor = ListSequence.fromList(SLinkOperations.getTargets(innerClass, "constructor", true)).first();
+    SNode innerConstructor = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), innerClass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).first();
     this.addParametersToConstructor(innerConstructor);
     this.makeConstructorBody(innerConstructor);
   }
@@ -178,7 +177,7 @@ public class ConvertAnonymousRefactoring {
   }
 
   private void addFieldsToInnerClass(SNode innerClass) {
-    ListSequence.fromList(SLinkOperations.getTargets(innerClass, "field", true)).addSequence(Sequence.fromIterable(MapSequence.fromMap(this.myInnerFields).values()));
+    ListSequence.fromList(SLinkOperations.getTargets(innerClass, "member", true)).addSequence(Sequence.fromIterable(MapSequence.fromMap(this.myInnerFields).values()));
     for (SNode varReference : Sequence.fromIterable(this.getExternalReferences(innerClass))) {
       SNodeOperations.replaceWithAnother(varReference, _quotation_createNode_qy1soj_a0a0a1a21(innerClass, MapSequence.fromMap(this.myInnerFields).get(SLinkOperations.getTarget(varReference, "variableDeclaration", false))));
     }

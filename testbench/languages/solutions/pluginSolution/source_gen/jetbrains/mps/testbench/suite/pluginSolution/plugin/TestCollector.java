@@ -21,6 +21,8 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
@@ -101,7 +103,7 @@ public class TestCollector {
                 public boolean accept(SNode cann) {
                   return SLinkOperations.getTarget(cann, "annotation", false) == ignoreAnn;
                 }
-              })) && ListSequence.fromList(SLinkOperations.getTargets(cls, "method", true)).translate(new ITranslator2<SNode, SNode>() {
+              })) && Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(cls)).translate(new ITranslator2<SNode, SNode>() {
                 public Iterable<SNode> translate(SNode m) {
                   return SLinkOperations.getTargets(m, "annotation", true);
                 }

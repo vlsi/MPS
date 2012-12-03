@@ -5,7 +5,6 @@ package jetbrains.mps.debugger.java.run.sandbox;
 
 public class DerivedClass extends BaseClass {
   private static Integer myStaticField = 239;
-
   private Integer myNonStaticField = 239;
 
   public DerivedClass() {

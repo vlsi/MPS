@@ -44,7 +44,6 @@ import jetbrains.mps.internal.collections.runtime.IListSequence;
 public class StubResolver {
   private static final String JAVA_STUB = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
   private static Logger LOG = Logger.getLogger(StubResolver.class);
-
   private Set<SModelReference> myUsedModels;
 
   public StubResolver() {

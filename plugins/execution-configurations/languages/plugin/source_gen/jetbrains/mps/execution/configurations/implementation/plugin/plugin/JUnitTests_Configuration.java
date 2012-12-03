@@ -33,7 +33,6 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 
 public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   protected static Log log = LogFactory.getLog(JUnitTests_Configuration.class);
-
   @NotNull
   private JUnitTests_Configuration.MyState myState = new JUnitTests_Configuration.MyState();
   private JUnitSettings_Configuration myJUnitSettings = new JUnitSettings_Configuration();

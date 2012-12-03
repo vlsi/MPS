@@ -30,7 +30,6 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 @Deprecated
 public class ReachableClassifiersScope extends AbstractClassifiersScope {
   private static Logger LOG = Logger.getLogger(ReachableClassifiersScope.class);
-
   private IScope myScope;
   private SModel myModel;
 

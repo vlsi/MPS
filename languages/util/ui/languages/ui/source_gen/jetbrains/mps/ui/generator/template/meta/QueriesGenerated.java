@@ -17,6 +17,7 @@ import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -179,7 +180,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_600037073069870919(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "method", true);
+    return Classifier_Behavior.call_methods_5292274854859311639(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_600037073069870945(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

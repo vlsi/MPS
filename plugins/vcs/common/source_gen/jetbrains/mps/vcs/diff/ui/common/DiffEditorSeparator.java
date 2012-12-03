@@ -29,7 +29,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class DiffEditorSeparator extends JComponent implements TooltipComponent {
   private static final int WIDTH = 30;
-
   private ChangeGroupLayout myChangeGroupLayout;
   private Map<ChangeGroup, Tuples._2<Bounds, Bounds>> myGroupsWithBounds;
   private Map<ChangeGroup, String> myChangeGroupDescriptions;

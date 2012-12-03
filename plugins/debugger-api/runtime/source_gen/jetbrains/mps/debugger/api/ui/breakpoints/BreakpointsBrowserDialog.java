@@ -52,7 +52,6 @@ import javax.swing.Action;
 
 public class BreakpointsBrowserDialog extends DialogWrapper implements DataProvider {
   private static final String COMMAND_SHOW_NODE = "COMMAND_SHOW_NODE";
-
   private final JPanel myMainPanel;
   private JComponent myPropertiesEditorPanel;
   private final IOperationContext myContext;

@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 import javax.swing.Icon;
 import java.util.List;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
@@ -14,6 +15,10 @@ public class StaticMethodDeclaration_BehaviorDescriptor extends MethodDeclaratio
 
   public boolean virtual_canBeAnnotated_1233076312117(SNode thisNode) {
     return StaticMethodDeclaration_Behavior.virtual_canBeAnnotated_1233076312117(thisNode);
+  }
+
+  public boolean virtual_canBeInterfaceMember_2949815620938109095(SConcept thisConcept) {
+    return ClassifierMember_Behavior.virtual_canBeInterfaceMember_2949815620938109095(thisConcept);
   }
 
   public Icon virtual_getAdditionalIcon_5017341185733863694(SNode thisNode) {
@@ -42,6 +47,14 @@ public class StaticMethodDeclaration_BehaviorDescriptor extends MethodDeclaratio
 
   public boolean virtual_isVisible_8083692786967482069(SNode thisNode, SNode contextClassifier, SNode contextNode) {
     return ClassifierMember_Behavior.virtual_isVisible_8083692786967482069(thisNode, contextClassifier, contextNode);
+  }
+
+  public boolean virtual_needsEmptyLineAfter_641490355014298838(SNode thisNode) {
+    return StaticMethodDeclaration_Behavior.virtual_needsEmptyLineAfter_641490355014298838(thisNode);
+  }
+
+  public boolean virtual_needsEmptyLineBefore_641490355014296733(SNode thisNode) {
+    return StaticMethodDeclaration_Behavior.virtual_needsEmptyLineBefore_641490355014296733(thisNode);
   }
 
   public void virtual_populateMember_7405920559687254644(SNode thisNode, MembersPopulatingContext context, SNode classifier) {

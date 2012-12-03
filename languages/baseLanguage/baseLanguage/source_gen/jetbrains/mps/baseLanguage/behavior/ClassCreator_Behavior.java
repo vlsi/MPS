@@ -43,7 +43,7 @@ public class ClassCreator_Behavior {
         }
       }
     }
-    return SLinkOperations.getTargets(classConcept, "constructor", true);
+    return ClassConcept_Behavior.call_constructors_5292274854859503373(classConcept);
   }
 
   public static boolean virtual_isInTypeInferenceContext_4837286298388660615(SNode thisNode) {

@@ -28,7 +28,6 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class JUnitSettings_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   private static Logger LOG = Logger.getLogger(JUnitSettings_Configuration.class);
-
   @NotNull
   private JUnitSettings_Configuration.MyState myState = new JUnitSettings_Configuration.MyState();
   private SettingsEditorEx<JUnitSettings_Configuration> myEditorEx;

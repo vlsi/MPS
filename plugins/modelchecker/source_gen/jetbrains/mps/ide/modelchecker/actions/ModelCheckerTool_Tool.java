@@ -30,7 +30,6 @@ import jetbrains.mps.plugins.tool.IComponentDisposer;
 
 public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
   private static final Icon ICON = IconUtil.getIcon("modelChecker.png");
-
   private Project myProject;
 
   public ModelCheckerTool_Tool(Project project) {

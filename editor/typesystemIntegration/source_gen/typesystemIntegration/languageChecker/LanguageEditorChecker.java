@@ -42,7 +42,6 @@ import jetbrains.mps.util.NameUtil;
 
 public class LanguageEditorChecker extends BaseEditorChecker {
   private static Logger LOG = Logger.getLogger(LanguageEditorChecker.class);
-
   private boolean myMessagesChanged = false;
   private Set<AbstractConstraintsChecker> myRules = SetSequence.fromSet(new HashSet<AbstractConstraintsChecker>());
   private Map<SNodePointer, LanguageErrorsComponent> myNodePointersToComponents = MapSequence.fromMap(new HashMap<SNodePointer, LanguageErrorsComponent>());

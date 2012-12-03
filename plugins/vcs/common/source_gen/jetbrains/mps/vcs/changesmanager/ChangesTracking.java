@@ -71,7 +71,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 
 public class ChangesTracking {
   protected static Log log = LogFactory.getLog(ChangesTracking.class);
-
   private Project myProject;
   private CurrentDifference myDifference;
   private SimpleCommandQueue myQueue;

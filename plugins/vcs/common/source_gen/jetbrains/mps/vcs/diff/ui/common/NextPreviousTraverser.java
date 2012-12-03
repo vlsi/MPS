@@ -38,7 +38,6 @@ public class NextPreviousTraverser {
   private static final Icon PREVIOUS_ICON = IconLoader.getIcon("/actions/previousOccurence.png");
   private static final Icon NEXT_ICON = IconLoader.getIcon("/actions/nextOccurence.png");
   protected static Log log = LogFactory.getLog(NextPreviousTraverser.class);
-
   private List<ChangeGroupLayout> myChangeGroupLayouts;
   private EditorComponent myLastEditor;
   private NextPreviousTraverser.TheAction myPreviousAction = new NextPreviousTraverser.TheAction(true);

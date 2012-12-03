@@ -15,7 +15,6 @@ import com.intellij.openapi.util.InvalidDataException;
 
 public class JavaRunParameters_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   private static Logger LOG = Logger.getLogger(JavaRunParameters_Configuration.class);
-
   @NotNull
   private JavaRunParameters_Configuration.MyState myState = new JavaRunParameters_Configuration.MyState();
   private SettingsEditorEx<JavaRunParameters_Configuration> myEditorEx;

@@ -85,7 +85,6 @@ public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer rootMappingRule_417xrn_a0a0h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1698302279987270979");
   private static SNodePointer rootMappingRule_417xrn_b0b0a0a4h = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "1698302279987270979");
   private static SNodePointer createRootRule_417xrn_a0a0i = new SNodePointer("r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508(jetbrains.mps.lang.descriptor.generator.template.main@generator)", "8780540425167303917");
-
   private final Collection<TemplateReductionRule> rules;
   private final Collection<TemplateCreateRootRule> createRules;
   private final Collection<TemplateRootMappingRule> rootRules;

@@ -32,7 +32,6 @@ import jetbrains.mps.project.IModule;
 
 public class LanguagesKeymapManager implements ApplicationComponent {
   private static final Logger LOG = Logger.getLogger(LanguagesKeymapManager.class);
-
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
     public void unload() {
       clearCaches();

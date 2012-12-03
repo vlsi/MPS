@@ -25,7 +25,6 @@ import com.intellij.openapi.project.Project;
 public class NewAspectModel_Action extends BaseAction {
   private static final Icon ICON = null;
   protected static Log log = LogFactory.getLog(NewAspectModel_Action.class);
-
   private LanguageAspect aspect;
 
   public NewAspectModel_Action(LanguageAspect aspect_par) {

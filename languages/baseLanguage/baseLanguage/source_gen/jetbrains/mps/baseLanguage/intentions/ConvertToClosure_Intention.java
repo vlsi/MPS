@@ -11,6 +11,8 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -67,7 +69,7 @@ public class ConvertToClosure_Intention implements IntentionFactory {
     }
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface")) {
       SNode parentInterface = SNodeOperations.cast(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface");
-      return (int) ListSequence.fromList(SLinkOperations.getTargets(parentInterface, "method", true)).count() == 1;
+      return (int) Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(parentInterface)).count() == 1;
     }
     return false;
   }
@@ -93,10 +95,10 @@ public class ConvertToClosure_Intention implements IntentionFactory {
 
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode closureLiteral = SNodeFactoryOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null);
-      if (ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).isNotEmpty()) {
-        SLinkOperations.setTarget(closureLiteral, "body", SLinkOperations.getTarget(ListSequence.fromList(SLinkOperations.getTargets(node, "method", true)).first(), "body", true), true);
+      if (Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).isNotEmpty()) {
+        SLinkOperations.setTarget(closureLiteral, "body", SLinkOperations.getTarget(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(node)).first(), "body", true), true);
       }
-      SNode method = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"), "method", true)).first();
+      SNode method = Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.cast(SLinkOperations.getTarget(node, "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface"))).first();
       ListSequence.fromList(SLinkOperations.getTargets(closureLiteral, "parameter", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)));
       SNodeOperations.replaceWithAnother(SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.GenericNewExpression", false, false), closureLiteral);
     }

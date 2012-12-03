@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.baseLanguage.closures.behavior.FunctionMethodDeclaration_Behavior;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -82,7 +83,7 @@ public class ClosureLiteralAdapterBuilder {
   }
 
   private SNode getAdapterClassFunctionType(SNode cls) {
-    return FunctionMethodDeclaration_Behavior.call_functionType_2857237956452412451(SNodeOperations.cast(Sequence.fromIterable(SLinkOperations.getTargets(cls, "method", true)).findFirst(new IWhereFilter<SNode>() {
+    return FunctionMethodDeclaration_Behavior.call_functionType_2857237956452412451(SNodeOperations.cast(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(cls)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode md) {
         return SNodeOperations.isInstanceOf(md, "jetbrains.mps.baseLanguage.closures.structure.FunctionMethodDeclaration");
       }

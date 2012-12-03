@@ -17,8 +17,10 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -51,16 +53,16 @@ public class ActionDataParameterDeclaration_Constraints extends BaseConstraintsD
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
             List<SNode> dataKeys = new ArrayList<SNode>();
-            ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_lb7xg4_a0a0a0b0a0(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
-            ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_lb7xg4_a0a0a0c0a0(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
-            ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_lb7xg4_a0a0a0d0a0(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
+            ListSequence.fromList(dataKeys).addSequence(Sequence.fromIterable(Classifier_Behavior.call_staticFields_5292274854859223538(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_lb7xg4_a0a0a0b0a0(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+            ListSequence.fromList(dataKeys).addSequence(Sequence.fromIterable(Classifier_Behavior.call_staticFields_5292274854859223538(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_lb7xg4_a0a0a0c0a0(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
+            ListSequence.fromList(dataKeys).addSequence(Sequence.fromIterable(Classifier_Behavior.call_staticFields_5292274854859223538(SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_lb7xg4_a0a0a0d0a0(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
 
             // add MPSDataKeys if mps.workbench is imported 
             for (SModelDescriptor importedModel : SModelOperations.allImportedModels(_context.getModel(), operationContext.getScope())) {
               if (importedModel.getLongName().equals("jetbrains.mps.workbench")) {
                 for (SNode root : importedModel.getSModel().roots()) {
                   if (SNodeOperations.isInstanceOf(root, "jetbrains.mps.baseLanguage.structure.ClassConcept") && "MPSDataKeys".equals(SPropertyOperations.getString(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "name"))) {
-                    ListSequence.fromList(dataKeys).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "staticField", true)));
+                    ListSequence.fromList(dataKeys).addSequence(Sequence.fromIterable(Classifier_Behavior.call_staticFields_5292274854859223538(SNodeOperations.cast(root, "jetbrains.mps.baseLanguage.structure.ClassConcept"))));
                   }
                 }
                 importedModel.getSModel().roots();

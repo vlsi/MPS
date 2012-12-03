@@ -28,7 +28,6 @@ import com.intellij.notification.NotificationDisplayType;
 
 public class MergeDriverNotification {
   private static final String SUPPRESSED_PROPERTY_NAME = "merge.driver.suppressed.notification";
-
   private Project myProject;
   private AbstractInstaller.State myCompositeState;
   private Notification myLastNotification;

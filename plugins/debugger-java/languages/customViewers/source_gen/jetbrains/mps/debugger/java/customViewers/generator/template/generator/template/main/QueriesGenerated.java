@@ -12,6 +12,8 @@ import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder
 import jetbrains.mps.debugger.java.customViewers.behavior.HighLevelCustomViewer_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -68,7 +70,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_8275758777999533505(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "watchable", false), "watchable"), "constructor", true)).first();
+    return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(_context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "watchable", false), "watchable"))).first();
   }
 
   public static boolean ifMacro_Condition_4089989733346843275(final IOperationContext operationContext, final IfMacroContext _context) {

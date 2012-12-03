@@ -11,7 +11,6 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 
 public class GeneratorProperties extends ModuleProperties {
   public static final String GENERATE_TEMPLATES = "generateTemplates";
-
   private List<ModuleReference> myDepGenerators;
   private List<MappingPriorityRule> myPriorityRules;
   private boolean myGenerateTemplates;

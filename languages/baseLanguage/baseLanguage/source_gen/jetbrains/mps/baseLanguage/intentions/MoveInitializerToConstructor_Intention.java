@@ -14,6 +14,8 @@ import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -94,7 +96,7 @@ public class MoveInitializerToConstructor_Intention implements IntentionFactory 
       SNodeFactoryOperations.setNewChild(lValue, "operand", "jetbrains.mps.baseLanguage.structure.ThisExpression");
       SLinkOperations.setTarget(SNodeFactoryOperations.setNewChild(lValue, "operation", "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", node, false);
       // 
-      for (SNode constr : ListSequence.fromList(SLinkOperations.getTargets(classNode, "constructor", true))) {
+      for (SNode constr : Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(classNode))) {
         ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(constr, "body", true), "statement", true)).insertElement(0, SNodeOperations.copyNode(assignmentStmt));
       }
       // 

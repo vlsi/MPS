@@ -43,7 +43,6 @@ public class JavaApplication_Kind implements ConfigurationType {
     }
   }.invoke();
   protected static Log log = LogFactory.getLog(JavaApplication_Kind.class);
-
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
 
   public JavaApplication_Kind() {

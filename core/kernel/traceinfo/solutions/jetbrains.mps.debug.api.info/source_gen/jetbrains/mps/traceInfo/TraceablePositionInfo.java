@@ -11,7 +11,6 @@ import org.jdom.Attribute;
 public class TraceablePositionInfo extends PositionInfo {
   private static String CONCEPT_FQ_NAME = "conceptFqName";
   private static String PROPERTY_STRING = "propertyString";
-
   private String myConceptFqName;
   private String myPropertyString;
 

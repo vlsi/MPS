@@ -15,7 +15,6 @@ import com.intellij.ide.util.PropertiesComponent;
   public static String SHORTEN_NAMES = ShowShortenNames.KEY;
   public static String COLORS = ShowAnnotationColorsAction.KEY;
   private static Map<String, String> KEYS_TO_TITLES = MapSequence.<String, String>fromMapAndKeysArray(new HashMap<String, String>(), SHORTEN_NAMES, COLORS).withValues("Short names", "Colors");
-
   private AnnotationColumn myColumn;
   private String myKey;
 
