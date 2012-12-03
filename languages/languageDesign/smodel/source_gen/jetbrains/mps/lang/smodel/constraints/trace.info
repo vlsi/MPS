@@ -1470,59 +1470,193 @@
     <unitInfo nodeId="6407023681583036864" fileName="NodeAttributeQualifier_Constraints.java" startLine="23" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.NodeAttributeQualifier_Constraints" />
   </root>
   <root nodeId="8405512791876074475" modelId="r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)">
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="25" startPosition="44" endLine="26" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="30" startPosition="43" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="35" startPosition="200" endLine="36" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="36" startPosition="96" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="38" startPosition="51" endLine="39" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="40" startPosition="5" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="41" startPosition="0" endLine="42" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="46" startPosition="83" endLine="47" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="50" startPosition="44" endLine="51" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8405512791876074499" fileName="SLinkImplicitSelect_Constraints.java" startLine="59" startPosition="142" endLine="60" endPosition="488" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="64" startPosition="61" endLine="65" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="69" startPosition="7" endLine="70" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8405512791876074478" fileName="SLinkImplicitSelect_Constraints.java" startLine="73" startPosition="148" endLine="74" endPosition="345" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="77" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="78" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_f4oi2a_a0a1a0a0a1a0b0a1a3" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SLinkImplicitSelect_Constraints#()V" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="37" startPosition="0" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="34" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="56" startPosition="56" endLine="67" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="54" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="47" startPosition="75" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="45" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
-    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="25" startPosition="44" endLine="26" endPosition="69" />
-    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="30" startPosition="43" endLine="31" endPosition="16" />
-    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="38" startPosition="51" endLine="39" endPosition="67" />
-    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="50" startPosition="44" endLine="51" endPosition="20" />
-    <scopeInfo nodeId="8405512791876074491" fileName="SLinkImplicitSelect_Constraints.java" startLine="59" startPosition="142" endLine="60" endPosition="488" />
-    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="64" startPosition="61" endLine="65" endPosition="58" />
-    <scopeInfo nodeId="8405512791876074477" fileName="SLinkImplicitSelect_Constraints.java" startLine="73" startPosition="148" endLine="74" endPosition="345" />
-    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="27" startPosition="44" endLine="28" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="32" startPosition="43" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="37" startPosition="200" endLine="38" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="38" startPosition="96" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="40" startPosition="51" endLine="41" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="42" startPosition="5" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="43" startPosition="0" endLine="44" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="48" startPosition="83" endLine="49" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="52" startPosition="44" endLine="53" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8405512791876074499" fileName="SLinkImplicitSelect_Constraints.java" startLine="61" startPosition="142" endLine="62" endPosition="583" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="66" startPosition="61" endLine="67" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="71" startPosition="7" endLine="72" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8150898248368826514" fileName="SLinkImplicitSelect_Constraints.java" startLine="75" startPosition="148" endLine="76" endPosition="311" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="80" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="patternVar_nodeType" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="86" startPosition="7" endLine="87" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="87" startPosition="78" endLine="88" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="89" startPosition="174" endLine="90" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="92" startPosition="9" endLine="93" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="94" startPosition="163" endLine="95" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="97" startPosition="11" endLine="98" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="99" startPosition="13" endLine="100" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="100" startPosition="85" endLine="101" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="102" startPosition="165" endLine="103" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="104" startPosition="15" endLine="105" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="104" startPosition="15" endLine="105" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="109" startPosition="7" endLine="110" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="113" startPosition="40" endLine="114" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="118" startPosition="69" endLine="119" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="124" startPosition="52" endLine="125" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="126" startPosition="7" endLine="127" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="135" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="patternVar_nodeType" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="141" startPosition="7" endLine="142" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="142" startPosition="74" endLine="143" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="144" startPosition="170" endLine="145" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="147" startPosition="9" endLine="148" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="149" startPosition="161" endLine="150" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="152" startPosition="11" endLine="153" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="154" startPosition="13" endLine="155" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="155" startPosition="81" endLine="156" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="157" startPosition="161" endLine="158" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="159" startPosition="15" endLine="160" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="159" startPosition="15" endLine="160" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="164" startPosition="7" endLine="165" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="168" startPosition="40" endLine="169" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="173" startPosition="69" endLine="174" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="179" startPosition="52" endLine="180" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="181" startPosition="7" endLine="182" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="189" startPosition="0" endLine="190" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="canBeChildBreakingPoint" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="190" startPosition="0" endLine="191" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="breakingNode_f4oi2a_a0a1a0a0a1a0b0a1a3" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="82" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Pattern_f4oi2a_a1a0a0a0a0a0a0a0b0a1a0b0d#()V" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="130" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="137" startPosition="0" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Pattern_f4oi2a_a1a0a0a4#()V" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="185" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="performActions#(Ljava/lang/Object;)V" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SLinkImplicitSelect_Constraints#()V" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="39" startPosition="0" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="75" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="static_canBeAChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="88" startPosition="86" endLine="91" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="93" startPosition="83" endLine="96" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="101" startPosition="143" endLine="104" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="113" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAntiquotations#()Z" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="117" startPosition="71" endLine="120" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="123" startPosition="51" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="123" startPosition="51" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="143" startPosition="82" endLine="146" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="148" startPosition="85" endLine="151" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="156" startPosition="135" endLine="159" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="168" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasAntiquotations#()Z" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="172" startPosition="71" endLine="175" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="178" startPosition="51" endLine="181" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="178" startPosition="51" endLine="181" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnCanBeChildMethod#()Z" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasOwnScopeProvider#()Z" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="65" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSearchScopeValidatorNode#()Ljetbrains/mps/smodel/SNodePointer;" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="101" startPosition="143" endLine="105" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="156" startPosition="135" endLine="160" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="117" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="172" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fillFieldValuesFrom#(Ljetbrains/mps/lang/pattern/GeneratedMatchingPattern;)V" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="123" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="178" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFieldValue#(Ljava/lang/String;)Ljava/lang/Object;" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="98" startPosition="216" endLine="106" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="153" startPosition="210" endLine="161" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="36" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canBeChild#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/CheckingNodeContext;)Z" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="58" startPosition="56" endLine="69" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="96" startPosition="11" endLine="107" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="151" startPosition="11" endLine="162" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="93" startPosition="83" endLine="107" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="148" startPosition="85" endLine="162" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="56" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getScopeProvider#()Ljetbrains/mps/smodel/runtime/ReferenceScopeProvider;" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="91" startPosition="9" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="91" startPosition="9" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="146" startPosition="9" endLine="163" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="146" startPosition="9" endLine="163" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="88" startPosition="86" endLine="108" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="143" startPosition="82" endLine="163" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="49" startPosition="75" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="85" startPosition="45" endLine="109" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="140" startPosition="45" endLine="164" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="47" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNotDefaultReferences#()Ljava/util/Map;" />
+    <nodeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="85" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="match#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="140" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="match#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="82" startPosition="55" endLine="82" endPosition="55" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="130" startPosition="42" endLine="130" endPosition="42" />
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="137" startPosition="38" endLine="137" endPosition="38" />
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="185" startPosition="42" endLine="185" endPosition="42" />
+    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="27" startPosition="44" endLine="28" endPosition="69" />
+    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="32" startPosition="43" endLine="33" endPosition="16" />
+    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="40" startPosition="51" endLine="41" endPosition="67" />
+    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="52" startPosition="44" endLine="53" endPosition="20" />
+    <scopeInfo nodeId="8405512791876074491" fileName="SLinkImplicitSelect_Constraints.java" startLine="61" startPosition="142" endLine="62" endPosition="583" />
+    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="66" startPosition="61" endLine="67" endPosition="58" />
+    <scopeInfo nodeId="8405512791876074477" fileName="SLinkImplicitSelect_Constraints.java" startLine="75" startPosition="148" endLine="76" endPosition="311" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="89" startPosition="174" endLine="90" endPosition="23" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="94" startPosition="163" endLine="95" endPosition="25" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="102" startPosition="165" endLine="103" endPosition="29" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="104" startPosition="15" endLine="105" endPosition="131" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="113" startPosition="40" endLine="114" endPosition="19" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="118" startPosition="69" endLine="119" endPosition="83" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="124" startPosition="52" endLine="125" endPosition="35" />
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="144" startPosition="170" endLine="145" endPosition="23" />
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="149" startPosition="161" endLine="150" endPosition="25" />
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="157" startPosition="161" endLine="158" endPosition="29" />
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="159" startPosition="15" endLine="160" endPosition="127" />
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="168" startPosition="40" endLine="169" endPosition="19" />
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="173" startPosition="69" endLine="174" endPosition="83" />
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="179" startPosition="52" endLine="180" endPosition="35" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="82" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="130" startPosition="0" endLine="132" endPosition="0">
+      <varInfo nodeId="8150898248365627398" varName="o" />
+    </scopeInfo>
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="137" startPosition="0" endLine="139" endPosition="0" />
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="185" startPosition="0" endLine="187" endPosition="0">
+      <varInfo nodeId="8150898248368826518" varName="o" />
+    </scopeInfo>
+    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="75" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="8405512791876074475" varName="childConcept" />
       <varInfo nodeId="8405512791876074475" varName="link" />
       <varInfo nodeId="8405512791876074475" varName="node" />
       <varInfo nodeId="8405512791876074475" varName="operationContext" />
       <varInfo nodeId="8405512791876074475" varName="parentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="113" startPosition="0" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="117" startPosition="71" endLine="120" endPosition="7" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="123" startPosition="51" endLine="126" endPosition="7" />
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="168" startPosition="0" endLine="171" endPosition="0" />
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="172" startPosition="71" endLine="175" endPosition="7" />
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="178" startPosition="51" endLine="181" endPosition="7" />
+    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="31" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="51" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="8405512791876074475" varName="_context" />
       <varInfo nodeId="8405512791876074475" varName="operationContext" />
     </scopeInfo>
-    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="35" startPosition="200" endLine="42" endPosition="18">
+    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="65" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="101" startPosition="143" endLine="105" endPosition="131" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="123" startPosition="51" endLine="127" endPosition="18" />
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="156" startPosition="135" endLine="160" endPosition="127" />
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="178" startPosition="51" endLine="182" endPosition="18" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="117" startPosition="0" endLine="122" endPosition="0">
+      <varInfo nodeId="8150898248365627398" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="172" startPosition="0" endLine="177" endPosition="0">
+      <varInfo nodeId="8150898248368826518" varName="pattern" />
+    </scopeInfo>
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="99" startPosition="13" endLine="105" endPosition="131">
+      <varInfo nodeId="8150898248365627398" varName="nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="123" startPosition="0" endLine="129" endPosition="0">
+      <varInfo nodeId="8150898248365627398" varName="fieldName" />
+    </scopeInfo>
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="154" startPosition="13" endLine="160" endPosition="127">
+      <varInfo nodeId="8150898248368826518" varName="nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="178" startPosition="0" endLine="184" endPosition="0">
+      <varInfo nodeId="8150898248368826518" varName="fieldName" />
+    </scopeInfo>
+    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="37" startPosition="200" endLine="44" endPosition="18">
       <varInfo nodeId="8405512791876074475" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="34" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="97" startPosition="11" endLine="106" endPosition="13">
+      <varInfo nodeId="8150898248365627398" varName="childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="152" startPosition="11" endLine="161" endPosition="13">
+      <varInfo nodeId="8150898248368826518" varName="childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a" />
+    </scopeInfo>
+    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="36" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="8405512791876074475" varName="checkingNodeContext" />
       <varInfo nodeId="8405512791876074475" varName="childConcept" />
       <varInfo nodeId="8405512791876074475" varName="link" />
@@ -1530,15 +1664,43 @@
       <varInfo nodeId="8405512791876074475" varName="operationContext" />
       <varInfo nodeId="8405512791876074475" varName="parentNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="56" startPosition="56" endLine="67" endPosition="10" />
-    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="54" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="46" startPosition="83" endLine="70" endPosition="22">
+    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="58" startPosition="56" endLine="69" endPosition="10" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="93" startPosition="83" endLine="107" endPosition="11" />
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="148" startPosition="85" endLine="162" endPosition="11" />
+    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="56" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="92" startPosition="9" endLine="107" endPosition="11">
+      <varInfo nodeId="8150898248365627398" varName="childRole_SLinkImplicitSelect_Constraints_f4oi2a_" />
+    </scopeInfo>
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="147" startPosition="9" endLine="162" endPosition="11">
+      <varInfo nodeId="8150898248368826518" varName="childRole_SLinkImplicitSelect_Constraints_f4oi2a__0" />
+    </scopeInfo>
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="91" startPosition="9" endLine="108" endPosition="9" />
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="146" startPosition="9" endLine="163" endPosition="9" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="88" startPosition="86" endLine="108" endPosition="9" />
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="143" startPosition="82" endLine="163" endPosition="9" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="86" startPosition="7" endLine="108" endPosition="9">
+      <varInfo nodeId="8150898248365627398" varName="nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="141" startPosition="7" endLine="163" endPosition="9">
+      <varInfo nodeId="8150898248368826518" varName="nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0" />
+    </scopeInfo>
+    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="48" startPosition="83" endLine="72" endPosition="22">
       <varInfo nodeId="8405512791876074475" varName="references" />
     </scopeInfo>
-    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="45" startPosition="0" endLine="72" endPosition="0" />
-    <unitInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="57" startPosition="19" endLine="67" endPosition="9" unitName="jetbrains.mps.lang.smodel.constraints.SLinkImplicitSelect_Constraints$2" />
-    <unitInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="48" startPosition="31" endLine="69" endPosition="5" unitName="jetbrains.mps.lang.smodel.constraints.SLinkImplicitSelect_Constraints$1" />
-    <unitInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="24" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.SLinkImplicitSelect_Constraints" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="85" startPosition="45" endLine="110" endPosition="18" />
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="140" startPosition="45" endLine="165" endPosition="18" />
+    <scopeInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="47" startPosition="0" endLine="74" endPosition="0" />
+    <scopeInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="85" startPosition="0" endLine="112" endPosition="0">
+      <varInfo nodeId="8150898248365627398" varName="nodeToMatch" />
+    </scopeInfo>
+    <scopeInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="140" startPosition="0" endLine="167" endPosition="0">
+      <varInfo nodeId="8150898248368826518" varName="nodeToMatch" />
+    </scopeInfo>
+    <unitInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="59" startPosition="19" endLine="69" endPosition="9" unitName="jetbrains.mps.lang.smodel.constraints.SLinkImplicitSelect_Constraints$2" />
+    <unitInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="50" startPosition="31" endLine="71" endPosition="5" unitName="jetbrains.mps.lang.smodel.constraints.SLinkImplicitSelect_Constraints$1" />
+    <unitInfo nodeId="8150898248365627398" fileName="SLinkImplicitSelect_Constraints.java" startLine="79" startPosition="0" endLine="133" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.SLinkImplicitSelect_Constraints$Pattern_f4oi2a_a1a0a0a0a0a0a0a0b0a1a0b0d" />
+    <unitInfo nodeId="8150898248368826518" fileName="SLinkImplicitSelect_Constraints.java" startLine="134" startPosition="0" endLine="188" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.SLinkImplicitSelect_Constraints$Pattern_f4oi2a_a1a0a0a4" />
+    <unitInfo nodeId="8405512791876074475" fileName="SLinkImplicitSelect_Constraints.java" startLine="26" startPosition="0" endLine="192" endPosition="0" unitName="jetbrains.mps.lang.smodel.constraints.SLinkImplicitSelect_Constraints" />
   </root>
 </debugInfo>
 
