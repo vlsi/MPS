@@ -27,6 +27,10 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.typesystem.inference.ITypechecking;
+import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.WindowsUtil;
 
@@ -158,12 +162,17 @@ public class NodeSubstituteChooser implements KeyboardHandler {
     myChooserActivated = b;
   }
 
-  private List<INodeSubstituteAction> getMatchingActions(String pattern, boolean strictMatching) {
-    if (myIsSmart) {
-      return myNodeSubstituteInfo.getSmartMatchingActions(pattern, strictMatching, myContextCell);
-    } else {
-      return myNodeSubstituteInfo.getMatchingActions(pattern, strictMatching);
-    }
+  private List<INodeSubstituteAction> getMatchingActions(final String pattern, final boolean strictMatching) {
+    return TypeContextManager.getInstance().runTypeCheckingComputation(myEditorComponent, myEditorComponent.getEditedNode().getTopmostAncestor(), new Computation<List<INodeSubstituteAction>>() {
+      @Override
+      public List<INodeSubstituteAction> compute(TypeCheckingContext context) {
+        if (myIsSmart) {
+          return myNodeSubstituteInfo.getSmartMatchingActions(pattern, strictMatching, myContextCell);
+        } else {
+          return myNodeSubstituteInfo.getMatchingActions(pattern, strictMatching);
+        }
+      }
+    });
   }
 
   private void rebuildMenuEntries() {

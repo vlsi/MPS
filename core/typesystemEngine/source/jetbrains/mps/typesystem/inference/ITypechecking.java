@@ -22,8 +22,14 @@ package jetbrains.mps.typesystem.inference;
  * Time: 2:50 PM
  * To change this template use File | Settings | File Templates.
  */
-public interface ITypecheckingAction {
+public interface ITypechecking {
 
-  void run(TypeCheckingContext context);
+  interface Action {
+    void run(TypeCheckingContext context);
+  }
+
+  interface Computation<T> {
+    T compute(TypeCheckingContext context);
+  }
 
 }

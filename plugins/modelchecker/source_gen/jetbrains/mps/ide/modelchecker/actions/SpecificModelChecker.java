@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.typesystem.inference.ITypecheckingAction;
+import jetbrains.mps.typesystem.inference.ITypechecking;
 import java.util.Set;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -48,7 +48,7 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
         break;
       }
       for (final SNode rootNode : SModelOperations.getRoots(model, null)) {
-        TypeContextManager.getInstance().runTypeCheckingAction(this, rootNode, new ITypecheckingAction() {
+        TypeContextManager.getInstance().runTypeCheckingAction(this, rootNode, new ITypechecking.Action() {
           public void run(TypeCheckingContext p0) {
             Set<IErrorReporter> iErrorReporters = checker.getErrors(rootNode, operationContext);
             for (IErrorReporter errorReporter : SetSequence.fromSet(iErrorReporters)) {
