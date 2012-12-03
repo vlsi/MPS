@@ -84,12 +84,7 @@ public class JavaParser {
 
           List<SNode> roots = new ArrayList<SNode>();
           for (ASTNode astNode : astTypes) {
-            try {
-              ListSequence.fromList(roots).addElement(converter.convertRoot(astNode));
-            } catch (ReflectException e) {
-              // reflect exception will go away completely 
-              throw new RuntimeException(e);
-            }
+            ListSequence.fromList(roots).addElement(converter.convertRoot(astNode));
           }
           resultNodes = roots;
         }
@@ -111,11 +106,7 @@ public class JavaParser {
         ASTNode[] astNodes = util.parseClassBodyDeclarations(source, 0, source.length, settings, true, recovery);
         // type decl (inner), field, method 
         if (astNodes != null && astNodes.length > 0) {
-          try {
-            resultNodes = converter.convertClassContents(astNodes, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null));
-          } catch (ReflectException e) {
-            throw new RuntimeException(e);
-          }
+          resultNodes = converter.convertClassContents(astNodes, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null));
         }
 
         break;
@@ -132,12 +123,8 @@ public class JavaParser {
 
         if (stmts != null && stmts.length > 0) {
           // TODO construct typeResolver from parent node context 
-          try {
-            SNode stmtList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
-            resultNodes = ((FullASTConverter) converter).convertStatementsOf(absMethod, stmtList);
-          } catch (ReflectException e) {
-            throw new RuntimeException(e);
-          }
+          SNode stmtList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
+          resultNodes = ((FullASTConverter) converter).convertStatementsOf(absMethod, stmtList);
         }
 
         break;

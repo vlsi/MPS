@@ -129,9 +129,9 @@ public class DirParser {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           SModel mdl = registerModelForPackage(finalPkg);
-          mdl.addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class).getModuleReference());
 
           if (mdl != null) {
+            mdl.addLanguage(ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.baseLanguage", Language.class).getModuleReference());
             for (SNode r : ListSequence.fromList(roots)) {
               SModelOperations.addRootNode(mdl, r);
             }

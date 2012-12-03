@@ -64,7 +64,7 @@ public class ASTConverter {
     myOnlyStubs = onlyStubs;
   }
 
-  public SNode convertRoot(ASTNode node) throws JavaParseException, ReflectException {
+  public SNode convertRoot(ASTNode node) throws JavaParseException {
 
     if (node instanceof TypeDeclaration) {
       TypeDeclaration decl = (TypeDeclaration) node;
@@ -81,7 +81,7 @@ public class ASTConverter {
     }
   }
 
-  public SNode convertTypeDecl(TypeDeclaration x) throws JavaParseException, ReflectException {
+  public SNode convertTypeDecl(TypeDeclaration x) throws JavaParseException {
 
     SNode cls;
 
@@ -324,13 +324,13 @@ public class ASTConverter {
     return fDecl;
   }
 
-  public SNode convertMethod(AbstractMethodDeclaration x, SNode container) throws JavaParseException, ReflectException {
+  public SNode convertMethod(AbstractMethodDeclaration x, SNode container) throws JavaParseException {
     // false = we don't attach the method to the container for external clients 
     // they'll do it themselves 
     return convertMethod(container, x, false);
   }
 
-  private SNode convertMethod(SNode cls, AbstractMethodDeclaration method, boolean attach) throws JavaParseException, ReflectException {
+  private SNode convertMethod(SNode cls, AbstractMethodDeclaration method, boolean attach) throws JavaParseException {
     SNode result = null;
 
     SNodeId sNodeId = cls.getSNodeId();
@@ -379,7 +379,7 @@ public class ASTConverter {
     return result;
   }
 
-  public List<SNode> convertClassContents(ASTNode[] astNodes, SNode container) throws JavaParseException, ReflectException {
+  public List<SNode> convertClassContents(ASTNode[] astNodes, SNode container) throws JavaParseException {
     List<SNode> result = new ArrayList<SNode>();
     SNode node;
 
@@ -430,7 +430,7 @@ public class ASTConverter {
     return tvar;
   }
 
-  public void convertAnnotations(Annotation[] annos, SNode result) {
+  public void convertAnnotations(Annotation[] annos, SNode result) throws JavaParseException {
     if (annos != null) {
       for (Annotation anno : annos) {
         SLinkOperations.getTargets(result, "annotation", true).add(convertAnnotation(anno));
@@ -438,7 +438,7 @@ public class ASTConverter {
     }
   }
 
-  public SNode convertAnnotation(Annotation anno) {
+  public SNode convertAnnotation(Annotation anno) throws JavaParseException {
     TypeReference typRef = anno.type;
 
     String name;
@@ -463,7 +463,7 @@ public class ASTConverter {
     return node;
   }
 
-  private SNode convertMethodGuts(@NotNull AbstractMethodDeclaration x, @Nullable String idPrefix, @NotNull SNode result) throws JavaParseException, ReflectException {
+  private SNode convertMethodGuts(@NotNull AbstractMethodDeclaration x, @Nullable String idPrefix, @NotNull SNode result) throws JavaParseException {
 
     StringBuilder idBuilder = (idPrefix == null ?
       null :
@@ -715,12 +715,12 @@ public class ASTConverter {
     return myJavadocs;
   }
 
-  protected void handleMethodBody(SNode result, AbstractMethodDeclaration method) throws ReflectException {
+  protected void handleMethodBody(SNode result, AbstractMethodDeclaration method) throws JavaParseException {
     // ignore by default: only stub structure 
     SLinkOperations.setTarget(result, "body", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
   }
 
-  public SNode convertExpression(Expression x) {
+  public SNode convertExpression(Expression x) throws JavaParseException {
     // maybe only something for annotations 
     return null;
   }
