@@ -38,6 +38,7 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.util.List;
 
 public class DefaultModelRootEntry implements ModelRootEntry {
@@ -104,6 +105,7 @@ public class DefaultModelRootEntry implements ModelRootEntry {
       myTreePanel = new JPanel(new BorderLayout());
       updateTree();
       final JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myTreePanel);
+      scrollPane.setPreferredSize(new Dimension(250,300));
       panel.add(scrollPane,
         new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, null, null, null));
 

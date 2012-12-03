@@ -78,4 +78,16 @@ public class ModelDependTableModel extends DependTableModel<ModelProperties> {
     }
     return list;
   }
+
+  @Override
+  public int getColumnCount() {return 2;}
+
+  @Override
+  public int getExportColumnIndex() {return -1;}
+
+  @Override
+  public int getItemColumnIndex() {return 0;}
+
+  @Override
+  public int getRoleColumnIndex() {return 1;}
 }

@@ -172,4 +172,28 @@ public class ModuleDependTableModel extends DependTableModel<ModuleDescriptor> {
 
     return set;
   }
+
+  @Override
+  public int getColumnCount() {
+    if(myItem instanceof DevkitDescriptor) return 2;
+    return super.getColumnCount();
+  }
+
+  @Override
+  public int getRoleColumnIndex() {
+    if(myItem instanceof DevkitDescriptor) return -1;
+    return super.getRoleColumnIndex();
+  }
+
+  @Override
+  public int getItemColumnIndex() {
+    if(myItem instanceof DevkitDescriptor) return 0;
+    return super.getItemColumnIndex();
+  }
+
+  @Override
+  public int getExportColumnIndex() {
+    if(myItem instanceof DevkitDescriptor) return -1;
+    return super.getExportColumnIndex();
+  }
 }

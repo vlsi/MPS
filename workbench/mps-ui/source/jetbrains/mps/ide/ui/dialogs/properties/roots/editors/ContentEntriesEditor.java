@@ -53,6 +53,7 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Point;
@@ -145,8 +146,9 @@ public class ContentEntriesEditor {
 
     myEditorsListPanel = new ScrollablePanel(new VerticalStackLayout());
     myEditorsListPanel.setBackground(BACKGROUND_COLOR);
-    JScrollPane myScrollPane = ScrollPaneFactory.createScrollPane(myEditorsListPanel);
-    entriesPanel.add(new ToolbarPanel(myScrollPane, group), BorderLayout.CENTER);
+    JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myEditorsListPanel);
+    scrollPane.setPreferredSize(new Dimension(250,300));
+    entriesPanel.add(new ToolbarPanel(scrollPane, group), BorderLayout.CENTER);
 
     Splitter splitter = new Splitter(false);
     splitter.setHonorComponentsMinimumSize(true);

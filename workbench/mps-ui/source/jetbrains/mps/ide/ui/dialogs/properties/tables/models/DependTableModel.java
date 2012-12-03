@@ -31,9 +31,6 @@ public abstract class DependTableModel<T> extends AbstractTableModel implements 
 
   public static final String EXPORT_COLUMN_NAME = PropertiesBundle.message("mps.properties.configurable.tablemodel.dependency.column.export");
   private static final String ROLE_COLUMN_NAME = PropertiesBundle.message("mps.properties.configurable.tablemodel.dependency.column.scope");
-  public static final int EXPORT_COLUMN = 0;
-  public static final int ITEM_COLUMN = 1;
-  public static final int ROLE_COLUMN = 2;
 
   public DependTableModel(T item) {
     myItem = item;
@@ -68,20 +65,20 @@ public abstract class DependTableModel<T> extends AbstractTableModel implements 
 
   @Override
   public String getColumnName(int column) {
-    if(column == ROLE_COLUMN)
+    if(column == this.getRoleColumnIndex())
       return ROLE_COLUMN_NAME;
-    if(column == EXPORT_COLUMN)
+    if(column == this.getExportColumnIndex())
       return EXPORT_COLUMN_NAME;
     return "";
   }
 
   @Override
   public Class<?> getColumnClass(int columnIndex) {
-    if(columnIndex == ITEM_COLUMN)
+    if(columnIndex == this.getItemColumnIndex())
       return DependenciesTableItem.class;
-    if(columnIndex == EXPORT_COLUMN)
+    if(columnIndex == this.getExportColumnIndex())
       return Boolean.class;
-    if(columnIndex == ROLE_COLUMN)
+    if(columnIndex == this.getRoleColumnIndex())
       return String.class;
     return super.getColumnClass(columnIndex);
   }
@@ -89,11 +86,11 @@ public abstract class DependTableModel<T> extends AbstractTableModel implements 
   @Override
   public Object getValueAt(int rowIndex, int columnIndex) {
     DependenciesTableItem<?> item = myTableItems.get(rowIndex);
-    if(columnIndex == ITEM_COLUMN)
+    if(columnIndex == this.getItemColumnIndex())
       return item.getItem();
-    if(columnIndex == ROLE_COLUMN)
+    if(columnIndex == this.getRoleColumnIndex())
       return item.getRole().toString();
-    if(columnIndex == EXPORT_COLUMN && item.isReExportable()) {
+    if(columnIndex == this.getExportColumnIndex() && item.isReExportable()) {
       return item.isReExport();
     }
 
@@ -103,7 +100,7 @@ public abstract class DependTableModel<T> extends AbstractTableModel implements 
   @Override
   public boolean isCellEditable(int rowIndex, int columnIndex) {
     final DependenciesTableItem<?> item = myTableItems.get(rowIndex);
-    if(columnIndex == EXPORT_COLUMN)
+    if(columnIndex == this.getExportColumnIndex())
       return item != null && item.getRole() == DependenciesTableItemRole.DEPEND;
     return false;
   }
@@ -111,7 +108,11 @@ public abstract class DependTableModel<T> extends AbstractTableModel implements 
   @Override
   public void setValueAt(Object aValue, int rowIndex, int columnIndex) {
     final DependenciesTableItem<?> item = myTableItems.get(rowIndex);
-    if (columnIndex == EXPORT_COLUMN && aValue instanceof Boolean)
+    if (columnIndex == this.getExportColumnIndex() && aValue instanceof Boolean)
       item.setReExport((Boolean)aValue);
   }
+
+  public int getExportColumnIndex() {return 0;}
+  public int getItemColumnIndex() {return 1;}
+  public int getRoleColumnIndex() {return 2;}
 }

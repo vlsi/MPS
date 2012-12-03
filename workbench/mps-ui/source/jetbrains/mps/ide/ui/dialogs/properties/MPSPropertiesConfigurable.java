@@ -175,20 +175,6 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
    */
   protected void save() {}
 
-  private void setFixedColumnWidth(JBTable table, final int columnIndex) {
-    final FontMetrics fontMetrics = table.getFontMetrics(table.getFont());
-    int width = fontMetrics.stringWidth(table.getColumnName(columnIndex)) + 20;
-    final TableColumn column = table.getTableHeader().getColumnModel().getColumn(columnIndex);
-    if(table.getModel() instanceof DependTableModel && columnIndex == DependTableModel.ROLE_COLUMN) {
-      for (DependenciesTableItemRole itemRole : DependenciesTableItemRole.values()) {
-        width = Math.max(width, fontMetrics.stringWidth(itemRole.toString()) + 20);
-      }
-    }
-    column.setWidth(width);
-    column.setPreferredWidth(width);
-    column.setMaxWidth(width);
-    column.setMinWidth(width);
-  }
 
   //Tab classes
 
@@ -324,8 +310,20 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
 
       tableDepend.getSelectionModel().setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
 
-      setFixedColumnWidth(tableDepend, DependTableModel.EXPORT_COLUMN);
-      setFixedColumnWidth(tableDepend, DependTableModel.ROLE_COLUMN);
+      TableColumn column = null;
+      if(myDependTableModel.getExportColumnIndex() >= 0) {
+        column = tableDepend.getTableHeader().getColumnModel().getColumn(myDependTableModel.getExportColumnIndex());
+        column.setPreferredWidth(5);
+      }
+      if(myDependTableModel.getRoleColumnIndex() >= 0) {
+        column = tableDepend.getTableHeader().getColumnModel().getColumn(myDependTableModel.getRoleColumnIndex());
+        column.setPreferredWidth(10);
+      }
+      if(myDependTableModel.getItemColumnIndex() >= 0) {
+        column = tableDepend.getTableHeader().getColumnModel().getColumn(myDependTableModel.getItemColumnIndex());
+        column.setPreferredWidth(300);
+      }
+
 
       tableDepend.addMouseListener(new MouseAdapter() {
         public void mouseClicked(MouseEvent e) {
@@ -383,6 +381,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
           myDependTableModel.fireTableDataChanged();
         }
       });
+      decorator.setPreferredSize(new Dimension(500, 300));
 
       JPanel table = decorator.createPanel();
       table.setBorder(IdeBorderFactory.createBorder());
@@ -494,6 +493,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
           myUsedLangsTableModel.fireTableRowsDeleted(first, last);
         }
       });
+      decorator.setPreferredSize(new Dimension(500, 300));
 
       JPanel table = decorator.createPanel();
       table.setBorder(IdeBorderFactory.createBorder());
