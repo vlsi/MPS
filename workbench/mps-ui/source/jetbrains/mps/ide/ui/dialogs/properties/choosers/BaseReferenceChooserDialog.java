@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.ui.dialogs.properties.choosers;
 
 import com.intellij.ide.DataManager;
-import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.Callback;
+import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent.MultiElementsCallback;
 import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
@@ -41,6 +41,7 @@ public abstract class BaseReferenceChooserDialog<T> extends DialogWrapper {
   protected boolean myOkDone = false;
   protected boolean myIsMultipleSelection = false;
   private Project myProject;
+  private List<Object> mySelectedElements;
 
   BaseReferenceChooserDialog(Project project, Collection<? extends T> modules, @Nullable Collection<? extends T> nonProjectModules, String entityString, boolean multiSelection) {
     super(project);
@@ -66,10 +67,12 @@ public abstract class BaseReferenceChooserDialog<T> extends DialogWrapper {
     BaseMPSChooseModel<T> goToModuleModel = getMPSChooseModel(myProject, entityString);
 
     myChooser = MpsPopupFactory.createPanelForPackage(goToModuleModel, !myNonProjectReferences.isEmpty());
-    myChooser.invoke(new Callback() {
-      public void elementChosen(Object element) {
+    myChooser.invoke(new MultiElementsCallback() {
+      @Override
+      public void elementsChosen(List<Object> elements) {
         if (!myOkDone) {
           myOkDone = true;
+          mySelectedElements = elements;
           doOKAction();
         }
       }
@@ -80,6 +83,8 @@ public abstract class BaseReferenceChooserDialog<T> extends DialogWrapper {
     List<T> result = new ArrayList<T>();
     if (myIsCancelled) return result;
     List<Object> choosen = Collections.unmodifiableList(myChooser.getChosenElements());
+    if(choosen.isEmpty() && mySelectedElements != null)
+      choosen = mySelectedElements;
     for (Object item : choosen) {
       if (checkType(item)) {
         result.add(convert(item));

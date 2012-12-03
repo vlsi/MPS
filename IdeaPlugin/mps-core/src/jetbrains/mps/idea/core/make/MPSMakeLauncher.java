@@ -27,14 +27,16 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.Key;
 import jetbrains.mps.build.ant.AntBootstrap;
 import jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker;
-import jetbrains.mps.ide.messages.MessagesViewTool;
-import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.util.PathManager;
 import org.apache.tools.ant.util.JavaEnvUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Scanner;
+import java.util.Set;
 
 public class MPSMakeLauncher {
 
@@ -138,7 +140,7 @@ public class MPSMakeLauncher {
     if ("true".equalsIgnoreCase(System.getProperty("mps.make.debug"))) {
       commandLine.add("-Xdebug");
       commandLine.add("-Xrunjdwp:transport=dt_socket,server=y,suspend=y,address=5006");
-    } else if("true".equalsIgnoreCase(System.getProperty("mps.make.profile"))) {
+    } else if ("true".equalsIgnoreCase(System.getProperty("mps.make.profile"))) {
       commandLine.add("-agentpath:/Applications/YourKit_Java_Profiler_10.0.5.app/bin/mac/libyjpagent.jnilib=onexit=snapshot,sampling,disableall");
     }
 

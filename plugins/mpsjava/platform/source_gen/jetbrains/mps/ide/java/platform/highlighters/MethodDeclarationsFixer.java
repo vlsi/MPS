@@ -16,6 +16,10 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.typesystem.inference.ITypeContextOwner;
+import jetbrains.mps.typesystem.inference.ITypechecking;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.event.SModelEventVisitor;
@@ -74,7 +78,16 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     super.doDispose();
   }
 
-  public Set<EditorMessage> createMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, final EditorContext editorContext) {
+  @Override
+  protected Set<EditorMessage> createMessages(final SNode rootNode, final List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext) {
+    return TypeContextManager.getInstance().runTypeCheckingComputation((ITypeContextOwner) editorContext.getEditorComponent(), rootNode, new ITypechecking.Computation() {
+      public Object compute(TypeCheckingContext p0) {
+        return doCreateMessages(rootNode, events, wasCheckedOnce, editorContext);
+      }
+    });
+  }
+
+  public Set<EditorMessage> doCreateMessages(SNode rootNode, List<SModelEvent> events, boolean wasCheckedOnce, final EditorContext editorContext) {
     if (DISABLED) {
       return new HashSet<EditorMessage>();
     }
@@ -240,7 +253,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     } else {
       return resolveMethodByCandidatesAndTypes(methodCall, Sequence.fromIterable(((Iterable<SNode>) scope.getAvailableElements(name))).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
-          return eq_vo5uqs_a0a0a0a0a1a0a0e0r(SPropertyOperations.getString(it, "name"), name);
+          return eq_vo5uqs_a0a0a0a0a1a0a0e0s(SPropertyOperations.getString(it, "name"), name);
         }
       }), null);
     }
@@ -368,7 +381,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
     clearCaches();
   }
 
-  private static boolean eq_vo5uqs_a0a0a0a0a1a0a0e0r(Object a, Object b) {
+  private static boolean eq_vo5uqs_a0a0a0a0a1a0a0e0s(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

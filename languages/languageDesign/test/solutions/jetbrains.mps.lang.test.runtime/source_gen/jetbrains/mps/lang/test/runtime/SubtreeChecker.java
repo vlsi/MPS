@@ -7,7 +7,7 @@ import junit.framework.Assert;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
-import jetbrains.mps.typesystem.inference.ITypecheckingAction;
+import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -45,7 +45,7 @@ public class SubtreeChecker {
     Assert.assertFalse("should be false (never used anyway)", allowErrors || allowWarnings);
     ITypeContextOwner owner = new DefaultTypecheckingContextOwner();
     SNode containingRoot = node.getTopmostAncestor();
-    TypeContextManager.getInstance().runTypeCheckingAction(owner, containingRoot, new ITypecheckingAction() {
+    TypeContextManager.getInstance().runTypeCheckingAction(owner, containingRoot, new ITypechecking.Action() {
       public void run(TypeCheckingContext typeCheckingContext) {
         typeCheckingContext.checkIfNotChecked(node, true);
         for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {

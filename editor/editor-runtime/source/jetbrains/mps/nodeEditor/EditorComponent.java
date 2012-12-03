@@ -113,6 +113,8 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
+import jetbrains.mps.typesystem.inference.ITypechecking;
+import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
@@ -2504,8 +2506,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
     // 1st - try to do substitution with current pattern (if cursor at the end of text)
     if (trySubstituteNow) {
-      List<INodeSubstituteAction> matchingActions = isSmart ? substituteInfo.getSmartMatchingActions(pattern, false, editorCell) :
-        substituteInfo.getMatchingActions(pattern, false);
+      List<INodeSubstituteAction> matchingActions = getMatchingActions(editorCell, substituteInfo, isSmart, pattern);
       if (matchingActions.size() == 1 && pattern.length() > 0) {
         matchingActions.get(0).substitute(this.getEditorContext(), pattern);
         return true;
@@ -2519,6 +2520,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myNodeSubstituteChooser.setContextCell(editorCell);
     myNodeSubstituteChooser.setVisible(true);
     return true;
+  }
+
+  private List<INodeSubstituteAction> getMatchingActions(final EditorCell editorCell, final NodeSubstituteInfo substituteInfo, final boolean isSmart, final String pattern) {
+    return TypeContextManager.getInstance().runTypeCheckingComputation(this, myNode.getTopmostAncestor(), new Computation<List<INodeSubstituteAction>>() {
+      @Override
+      public List<INodeSubstituteAction> compute(TypeCheckingContext context) {
+        return isSmart ? substituteInfo.getSmartMatchingActions(pattern, false, editorCell) :
+          substituteInfo.getMatchingActions(pattern, false);
+      }
+    });
   }
 
   private void deactivateSubstituteChooser() {
@@ -3418,7 +3429,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       ScrollBarUI barUI = getUI();
       Insets insets = getInsets();
       if (barUI instanceof ButtonlessScrollBarUI) {
-        return insets.top + ((ButtonlessScrollBarUI) barUI).getDecrButtonHeight();
+        return insets.top + ((ButtonlessScrollBarUI) barUI).getDecrementButtonHeight();
       } else if (barUI instanceof BasicScrollBarUI) {
         try {
           JButton decrButtonValue = (JButton) decrButtonField.get(barUI);
@@ -3442,7 +3453,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       ScrollBarUI barUI = getUI();
       Insets insets = getInsets();
       if (barUI instanceof ButtonlessScrollBarUI) {
-        return insets.top + ((ButtonlessScrollBarUI) barUI).getIncrButtonHeight();
+        return insets.top + ((ButtonlessScrollBarUI) barUI).getIncrementButtonHeight();
       } else if (barUI instanceof BasicScrollBarUI) {
         try {
           JButton incrButtonValue = (JButton) incrButtonField.get(barUI);

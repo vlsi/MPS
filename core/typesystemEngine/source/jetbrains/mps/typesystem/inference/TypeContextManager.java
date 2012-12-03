@@ -40,6 +40,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import jetbrains.mps.smodel.event.SModelRootEvent;
+import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Triplet;
 import org.jetbrains.annotations.NotNull;
@@ -164,7 +165,7 @@ public class TypeContextManager implements CoreComponent {
     INSTANCE = null;
   }
 
-  public void runTypeCheckingAction(SNode rootNode, ITypecheckingAction r) {
+  public void runTypeCheckingAction(SNode rootNode, ITypechecking.Action r) {
     final ITypeContextOwner contextOwner = myTypecheckingContextOwner.get();
     TypeCheckingContext context = acquireTypecheckingContext(rootNode, contextOwner);
     try{
@@ -175,12 +176,25 @@ public class TypeContextManager implements CoreComponent {
     }
   }
 
-  public void runTypeCheckingAction(@NotNull final ITypeContextOwner contextOwner, SNode rootNode, ITypecheckingAction r) {
+  public void runTypeCheckingAction(@NotNull final ITypeContextOwner contextOwner, SNode rootNode, ITypechecking.Action r) {
     ITypeContextOwner savedOwner = myTypecheckingContextOwner.get();
     myTypecheckingContextOwner.set(contextOwner);
     TypeCheckingContext context = acquireTypecheckingContext(rootNode, contextOwner);
     try{
       r.run(context);
+    }
+    finally {
+      releaseTypecheckingContext(rootNode, contextOwner);
+      myTypecheckingContextOwner.set(savedOwner);
+    }
+  }
+
+  public <T> T runTypeCheckingComputation(@NotNull final ITypeContextOwner contextOwner, SNode rootNode, Computation<T> r) {
+    ITypeContextOwner savedOwner = myTypecheckingContextOwner.get();
+    myTypecheckingContextOwner.set(contextOwner);
+    TypeCheckingContext context = acquireTypecheckingContext(rootNode, contextOwner);
+    try{
+      return r.compute(context);
     }
     finally {
       releaseTypecheckingContext(rootNode, contextOwner);

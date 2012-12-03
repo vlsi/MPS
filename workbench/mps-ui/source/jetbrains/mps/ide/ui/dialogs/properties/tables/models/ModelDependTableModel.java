@@ -16,8 +16,9 @@
 package jetbrains.mps.ide.ui.dialogs.properties.tables.models;
 
 import jetbrains.mps.ide.ui.dialogs.properties.ModelProperties;
+import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
+import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItemRole;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModelReference;
 
 import java.util.ArrayList;
@@ -30,14 +31,13 @@ public class ModelDependTableModel extends DependTableModel<ModelProperties> {
   }
 
   @Override
-  protected void init() {
-    IScope scope = myItem.getModelDescriptor().getModule().getScope();
+  public void init() {
     for(SModelReference reference : myItem.getImportedModels()) {
-      myTableItems.add(new ModelDepTableItem(reference, DependenciesTableItemRole.IMPORT, scope));
+      myTableItems.add(new DependenciesTableItem<org.jetbrains.mps.openapi.model.SModelReference>(reference, DependenciesTableItemRole.IMPORT));
     }
 
     for(ModuleReference moduleReference : myItem.getLanguagesEngagedOnGeneration()) {
-      myTableItems.add(new ModuleDepTableItem(moduleReference, DependenciesTableItemRole.ENGAGE_ON_GEN));
+      myTableItems.add(new DependenciesTableItem<ModuleReference>(moduleReference, DependenciesTableItemRole.ENGAGE_ON_GEN));
     }
   }
 
@@ -62,8 +62,8 @@ public class ModelDependTableModel extends DependTableModel<ModelProperties> {
   public List<SModelReference> getImportedModels() {
     List<SModelReference> list = new ArrayList<SModelReference>();
     for(DependenciesTableItem<?> item : myTableItems) {
-      if(item instanceof ModelDepTableItem && item.getRole() == DependenciesTableItemRole.IMPORT) {
-        ModelDepTableItem modelDepTableItem = (ModelDepTableItem) item;
+      if(item.getItem() instanceof org.jetbrains.mps.openapi.model.SModelReference && item.getRole() == DependenciesTableItemRole.IMPORT) {
+        DependenciesTableItem<org.jetbrains.mps.openapi.model.SModelReference> modelDepTableItem = (DependenciesTableItem<org.jetbrains.mps.openapi.model.SModelReference>) item;
         list.add((SModelReference)modelDepTableItem.getItem());
       }
     }
@@ -73,9 +73,21 @@ public class ModelDependTableModel extends DependTableModel<ModelProperties> {
   public List<ModuleReference>  getLanguagesEngagedOnGeneration() {
     List<ModuleReference> list = new ArrayList<ModuleReference>();
     for(DependenciesTableItem<?> item : myTableItems) {
-      if(item instanceof ModuleDepTableItem && item.getRole() == DependenciesTableItemRole.ENGAGE_ON_GEN)
-        list.add(((ModuleDepTableItem)item).getItem());
+      if(item.getItem() instanceof ModuleReference && item.getRole() == DependenciesTableItemRole.ENGAGE_ON_GEN)
+        list.add((ModuleReference)item.getItem());
     }
     return list;
   }
+
+  @Override
+  public int getColumnCount() {return 2;}
+
+  @Override
+  public int getExportColumnIndex() {return -1;}
+
+  @Override
+  public int getItemColumnIndex() {return 0;}
+
+  @Override
+  public int getRoleColumnIndex() {return 1;}
 }

@@ -20,7 +20,7 @@
   <description>Allows importing sources from Java into MPS</description>
   <version>3.0</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="122.746" />
+  <idea-version since-build="123.1" />
 
   <xi:include href="../platform/classes/jetbrains/mps/ide/java/actions/JavaActions.xml" xpointer="xpointer(/components/*)"/>
   <xi:include href="../workbench/classes/jetbrains/mps/ide/java/workbench/actions/JavaWorkbenchActions.xml"
@@ -58,5 +58,6 @@
     <mps.VisibleModuleMask mask="jetbrains\.mps\.xml.*"/>
     <mps.modelRootFactory rootType="java_class_stub" className="jetbrains.mps.ide.java.stubs.JavaClassStubModelRootFactory"/>
     <mps.modelRootSettings rootType="java_class_stub" className="jetbrains.mps.ide.java.stubs.JavaClassStubModelRootSettingsProvider"/>
+    <mps.modelRootEntry rootType="java_class_stub" className="jetbrains.mps.ide.java.ui.JavaClassStubsModelRootEntry"/>
   </extensions>
 </idea-plugin>

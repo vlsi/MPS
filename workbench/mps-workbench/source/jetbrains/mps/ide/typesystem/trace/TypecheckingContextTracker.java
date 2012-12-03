@@ -21,7 +21,7 @@ import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.TargetState;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
-import jetbrains.mps.typesystem.inference.ITypecheckingAction;
+import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 
@@ -57,7 +57,7 @@ public class TypecheckingContextTracker implements ITypeContextOwner {
 
   private TypeCheckingContext initContext() {
     final TypeCheckingContext context = TypeContextManager.getInstance().acquireTypecheckingContext(myRootNode, this);
-    TypeContextManager.getInstance().runTypeCheckingAction(this, myRootNode, new ITypecheckingAction() {
+    TypeContextManager.getInstance().runTypeCheckingAction(this, myRootNode, new ITypechecking.Action() {
       @Override
       public void run(TypeCheckingContext context) {
         context.checkRootInTraceMode(true);
