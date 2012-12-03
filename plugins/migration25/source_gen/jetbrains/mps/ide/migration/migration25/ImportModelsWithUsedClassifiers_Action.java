@@ -66,7 +66,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       MPSProject mpsProject = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class);
-      List<IModule> allModules = ListSequence.fromListWithValues(new ArrayList<IModule>(), mpsProject.getModules());
+      List<IModule> allModules = ListSequence.fromListWithValues(new ArrayList<IModule>(), mpsProject.getModulesWithGenerators());
       for (IModule module : ListSequence.fromList(allModules)) {
         ModuleDescriptor descriptor = module.getModuleDescriptor();
         if (descriptor == null) {
