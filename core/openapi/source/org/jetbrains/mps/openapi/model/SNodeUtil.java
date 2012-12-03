@@ -84,10 +84,4 @@ public class SNodeUtil {
     }
     return roleText + " " + node.getConcept().getName() + " " + nameText + " in " + modelName;
   }
-
-
-  public static boolean isAttribute(SNode node) {
-    //AttributeOperations.isAttribute(node)
-    return false;
-  }
 }

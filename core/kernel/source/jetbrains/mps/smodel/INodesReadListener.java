@@ -18,6 +18,7 @@ package jetbrains.mps.smodel;
 public interface INodesReadListener {
   public void nodeChildReadAccess(SNode node, String childRole, SNode child);
 
+  //todo remove value as it's not used
   public void nodePropertyReadAccess(SNode node, String propertyName, String value);
 
   public void propertyExistenceAccess(SNode node, String propertyName);
