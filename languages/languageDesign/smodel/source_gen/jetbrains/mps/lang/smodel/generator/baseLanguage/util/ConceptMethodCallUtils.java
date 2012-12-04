@@ -4,9 +4,10 @@ package jetbrains.mps.lang.smodel.generator.baseLanguage.util;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionKind;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class ConceptMethodCallUtils {
   private ConceptMethodCallUtils() {
@@ -15,18 +16,33 @@ public class ConceptMethodCallUtils {
   public static boolean callShouldBeByReflection(SModel originalModel) {
     // should be by reflection in "compile in IDEA modules" 
     // method calls impossible in modules without kind == PLUGIN_* 
-    IModule module = originalModel.getModelDescriptor().getModule();
-    if (module == null) {
+    IModule module = check_bta47p_a0c0b(originalModel.getModelDescriptor());
+    ModuleDescriptor moduleDescriptor = check_bta47p_a0d0b(module);
+    if (moduleDescriptor == null) {
       return false;
     }
-    if (!(module instanceof Solution)) {
+    if (!(moduleDescriptor instanceof SolutionDescriptor)) {
       return false;
     }
-    if (((SolutionDescriptor) module.getModuleDescriptor()).getKind() == SolutionKind.NONE) {
+    if (((SolutionDescriptor) moduleDescriptor).getKind() == SolutionKind.NONE) {
       // looks like this solution uses behavior method call 
       // so someone who uses it outside mps should have mps-core in dependencies 
       return true;
     }
     return !(module.isCompileInMPS());
+  }
+
+  private static IModule check_bta47p_a0c0b(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+
+  private static ModuleDescriptor check_bta47p_a0d0b(IModule checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModuleDescriptor();
+    }
+    return null;
   }
 }
