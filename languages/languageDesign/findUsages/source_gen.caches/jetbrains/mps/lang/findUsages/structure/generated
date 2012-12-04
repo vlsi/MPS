@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-arxdp9kreaehspruhomdzlbhiojknt1">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-5eyahre7o2euianqwook3qm0v9tuosh" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-5dul3q8la0zppk5iut9862z0at95zo" />
+<dependencies version="2" modelHash="6dqdk03i6g2alzf0j4pz8fwo4xiya4x">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-amw3yujjoknpk9rcm46zq6ty6idm23v" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-33tlavyfw081dpoo7kr33x973l53rit" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="7uo2xyrudgr0a3zexm421hjdcsbok1q" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-35bqvqn2fitqy45kz2fa6tlhimeui2d" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-baumsvy45qwk0i0m1tzx9fili68fouh" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
   <dep model="r:31be9f37-1a76-49a2-a444-bd006ff675c1(jetbrains.mps.lang.checkedName.structure)" hash="60b6ox1q136tykeqjkfgdkqt4lyz2i8" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3t350ymnztu1bi083p2mhorjil0w76j" />
   <common hash="-7vpjla4xmww3pudsykfbonby515jo1t">
@@ -33,13 +33,13 @@
     <file name="FindUsages_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1197044488840" name="FindBlock" hash="-8sf0ev91c00wibmkfwbweoquycoul59">
+  <source id="1197044488840" name="FindBlock" hash="-8davr0uhs4q0wq9vkaxax0nhmtq3ncg">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1197044488845" name="FinderDeclaration" hash="5qpefndqrq4h1ppkiuy1oh836y1tlft">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1197044488852" name="IsApplicableBlock" hash="-8tup4w4lltnky778ba219751gctn3qs">
+  <source id="1197044488852" name="IsApplicableBlock" hash="c5j0rt5xt6hzc6emysdxmwyx37816y7">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1197386047362" name="ConceptFunctionParameter_node" hash="aopfgkk09bjotfv7veq3va671as2p5y">
@@ -54,16 +54,16 @@
   <source id="1206197741569" name="ExecuteFinderExpression" hash="-893dypk0uwqex5zi556p1ah2x5z6yiz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1206461221942" name="CategorizeBlock" hash="-d1ghtl0y6c5puwy9e68mxn5xdk64prd">
+  <source id="1206461221942" name="CategorizeBlock" hash="-bevjr9hb1tac9a4svr91ioxeiaeh1v3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1206461516825" name="SearchedNodesBlock" hash="9grnq4471bniest98b6269nfaybj4mo">
+  <source id="1206461516825" name="SearchedNodesBlock" hash="-aocl4a884mppoegc401bf28kca1t7sx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1207141825411" name="CheckCancelledStatusStatement" hash="-6irtoi9smy1g3ct91rzie71az4wpfwy">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1216396788049" name="IsVisibleBlock" hash="82bhuhzbjbbsez4o2hp0n4vrfoj6rao">
+  <source id="1216396788049" name="IsVisibleBlock" hash="-34vibrtxmh5hb0tlwr3qlf7638d0ueb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1218978086674" name="AbstractFinderDeclaration" hash="1c0zu1t3krmdfoqceozgmcnsx03wgoc">

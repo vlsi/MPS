@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-50n8ztwtgwnnz8d8gxkk5rvdi3ee8mc">
+<dependencies version="2" modelHash="5uob9nw5qtk520lyf631of8khi1ul4x">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-5eyahre7o2euianqwook3qm0v9tuosh" />
-  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-5dul3q8la0zppk5iut9862z0at95zo" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-amw3yujjoknpk9rcm46zq6ty6idm23v" />
+  <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-33tlavyfw081dpoo7kr33x973l53rit" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="7uo2xyrudgr0a3zexm421hjdcsbok1q" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-35bqvqn2fitqy45kz2fa6tlhimeui2d" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-baumsvy45qwk0i0m1tzx9fili68fouh" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3t350ymnztu1bi083p2mhorjil0w76j" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
   <common hash="-9ny5vo2wr8w303hmgu5tep1cgypylan">
@@ -126,25 +126,25 @@
   <source id="1189694022607" name="IsApplicableClause" hash="-7u1zqlirdqc8fpi6rm0uylrbt6kw5ah">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1189694053795" name="DoRefactorClause" hash="-6jxhyj86e7w934svkrik5x5mgzwg39s">
+  <source id="1189694053795" name="DoRefactorClause" hash="a6ttt66op65b91zmwtb56wjym69a6k8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1189694084608" name="RequiredAdditionalArgumentReference" hash="-2pk71i67payd729h8p6r0vv7xlbdeoh">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1189694434958" name="UpdateModelClause" hash="-bt1uob6s8ahowalk83yvh11huhymjnf">
+  <source id="1189694434958" name="UpdateModelClause" hash="-6n5qoxftlr10h8xx8j4mx7l45nchc0">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1189694741717" name="ConceptFunctionParameter_SModel" hash="-8lvdhjg01l1441ihg6d41w49i5u31zb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1191591349007" name="GetModelsToGenerateClause" hash="-9ulmknf0ajvom7aqk9w1xfyuty72mq4">
+  <source id="1191591349007" name="GetModelsToGenerateClause" hash="5gv9n5dptjiabsabbpqlk3zsis74srp">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1192792808079" name="RequiredUserEnteredArgument" hash="5988xo9tbwc54igc20ev69iv7ew9tvc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1192793302394" name="FilterArgumentClause" hash="bcqw43ukpvm459sfov55epczrmbv2pl">
+  <source id="1192793302394" name="FilterArgumentClause" hash="-8p35x2fl9hw2uyii63ccociuk4i5muw">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1192793411861" name="ConceptFunctionParameter_UserArgument" hash="-ce3k9rqi79uvlhxym7nvmx37oq7fdh3">
@@ -186,13 +186,13 @@
   <source id="1199620920737" name="MoveNodesToNodeExpression" hash="-9nrs79ik3wdzlzk1nla3bolszo4nucx">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1200932465350" name="AffectedNodesClause" hash="3b2zn2y2fxqyqo155aysdldpba7cv0g">
+  <source id="1200932465350" name="AffectedNodesClause" hash="-68vmizz9clp7sxwptliusf5ww8uwil6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1204722970897" name="DeleteFeatureOperation" hash="c9nloahy9avct9h8x9bhpbzws50v94b">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1209559069560" name="IsApplicableToModelClause" hash="-8gv41ay0e56so98ioyjroglcj2y5txl">
+  <source id="1209559069560" name="IsApplicableToModelClause" hash="-5j3ley5v62c9occ7un6fyc5xzfgsrgm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1209559114970" name="ConceptFunctionParameter_Model" hash="21c8fv40biftmbdp04c9tojklasjopl">
@@ -209,7 +209,7 @@
     <file name="RefactoringTargetKind_Enum.java" />
     <file name="RefactoringTargetKind_Enum_PropertySupport.java" />
   </source>
-  <source id="1210941725884" name="GetModelsToUpdateClause" hash="87ref5ir665d8vsi63alzd1ig4q6ra5">
+  <source id="1210941725884" name="GetModelsToUpdateClause" hash="-a7seu1bmyc6a7splvedhjuil2hd87fa">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1212242396240" name="ExecuteFindersExpression" hash="7y0x4ail2vv69wz9oge0147v5cmi6ff">
@@ -260,13 +260,13 @@
   <source id="6895093993902310764" name="NodeTarget" hash="10q8vnftwrj7ljr1u0ihzhpy750et51">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6895093993902310769" name="IsApplicableToModuleClause" hash="-5rjiw6rcctno5wj2i0y2ce4euwju5ys">
+  <source id="6895093993902310769" name="IsApplicableToModuleClause" hash="-7bft647ryk0d9bu8o9igdsqkr17y61p">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6895093993902310775" name="ConceptFunctionParameter_Module" hash="dlrmtx40hmxq7kdo8i2gwerayx2n6oi">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6895093993902310808" name="IsApplicableToNodeClause" hash="diusspjbcbz08b8uuweu3ek2yckypm2">
+  <source id="6895093993902310808" name="IsApplicableToNodeClause" hash="30zgnzfxr01ksfdp6zhe5duj5thrlmr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6895093993902310814" name="ConceptFunctionParameter_SNode" hash="n3i6mxmdslp6tx6kesne54m74mze53">
@@ -287,13 +287,13 @@
   <source id="5497648299878398634" name="RefactoringFieldReference" hash="-7hor4vo1nrp5lsvkgad39i4jne89vbm">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5497648299878741970" name="InitClause" hash="-bso2ujjybsorut588gs3bbq46tzhsst">
+  <source id="5497648299878741970" name="InitClause" hash="8614boyf81uidkex40g6ue8tbi26idc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="5497648299878742011" name="MPSParameterChooser" hash="-9kmzrz1tw8ja1m2eb24oesse74lytmp">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5497648299878742016" name="FilterParameterClause" hash="816vh4gmlg4wps8qanen25g3ktps4wy">
+  <source id="5497648299878742016" name="FilterParameterClause" hash="3xzmdrmqiwfmiwmqmidp36nwxqh6uuz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="5497648299878742024" name="ConceptFunctionParameter_RefactoringParameter" hash="6p798gj9w15jt10cfp5ogmhj48arrw4">
@@ -302,13 +302,13 @@
   <source id="5497648299878742029" name="CustomParameterChooser" hash="-17l9oezzu9g691b2ely4vd5o4czwf37">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5497648299878742031" name="CommitClause" hash="luib6ok4vbkm8yhiiik2qf1nzu0pps">
+  <source id="5497648299878742031" name="CommitClause" hash="crkzg6lfkgytfi7mx2o64tqzg0ffnle">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="6895093993902236229" name="Refactoring" hash="628am7vmvybri6stpekrgp2gy22nix9">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2058726427123891188" name="DoWhenDoneClause" hash="9a95q28rhw4dawre8xgx1dcdusg9nlo">
+  <source id="2058726427123891188" name="DoWhenDoneClause" hash="44fgha3wbqkqtcv2kc0rivscairbna6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="478744034994715997" name="RefactoringArgument" hash="-8vwmyay28xmtsok4vwiqruabd8mkkqg">
@@ -320,7 +320,7 @@
   <source id="7573235936722759491" name="RefactoringParameterChooser" hash="-da329q2ipc5toe0y87kfuxk9roe8598">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="7573235936722759511" name="InitialPropertyValueClause" hash="-1mf0qynm8zhkuyawwhodpfm5urhomup">
+  <source id="7573235936722759511" name="InitialPropertyValueClause" hash="8c2ifgn79dw9jlc56opxghakupmualq">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="7953996722066252909" name="ContextMemberOperation" hash="bib1v254dh848tf8dixpzma9d0cya4l">
@@ -353,7 +353,7 @@
   <source id="7953996722066536522" name="ContextType" hash="-67uo6suqwew2revldnyoam6al1glts2">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1682834381185132063" name="ModelsToGenerateClause" hash="-5ghxlotrn03726qhoowc3xpav2aqbw">
+  <source id="1682834381185132063" name="ModelsToGenerateClause" hash="-d6sq2l3fsbjv60z76fh6ami4lbmrjbo">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="3644668945279694356" name="SettingsRefactoringContext_ConceptFunctionParameter" hash="7heeyioldnjr7hml0o1ms96bypyshzb">

@@ -1094,20 +1094,11 @@
         <link role="method" roleId="tpce.8080932314785812847" targetNodeId="r3rn.3044950653914716992" resolveInfo="getAllowedSubstituends" />
       </node>
     </node>
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="7255837154369627533">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="7255837154369627529" resolveInfo="allowedSubstituends" />
-      <link role="target" roleId="tpce.1105736807942" targetNodeId="7255837154369354272" resolveInfo="ExponentialOperation" />
-    </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1262430001741720055">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
     </node>
   </root>
-  <root id="7255837154369580413">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="7255837154369627531">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="7255837154369627529" resolveInfo="allowedSubstituends" />
-      <link role="target" roleId="tpce.1105736807942" targetNodeId="7255837154369580413" resolveInfo="MatrixExponentialOperation" />
-    </node>
-  </root>
+  <root id="7255837154369580413" />
   <root id="7255837154369797715" />
 </model>
 

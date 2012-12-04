@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dg824hv44ew4x96r90bd6kgdjmb43go">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-5eyahre7o2euianqwook3qm0v9tuosh" />
+<dependencies version="2" modelHash="-bmr69ospb7ur1vpa8q5nhpyvcstamer">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-amw3yujjoknpk9rcm46zq6ty6idm23v" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="7uo2xyrudgr0a3zexm421hjdcsbok1q" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-35bqvqn2fitqy45kz2fa6tlhimeui2d" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-baumsvy45qwk0i0m1tzx9fili68fouh" />
-  <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="538iq417rn4d5mracksel94iuntv50x" />
-  <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="-84wlrmxj5l9lm3yb4vfvp6xpn4ekgu3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
+  <dep model="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" hash="dsrw7wjykeo6axkppc9aed21cm4ctnh" />
+  <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="-acs1znq6d4zmq0jt0ai12tqya72tq9" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3t350ymnztu1bi083p2mhorjil0w76j" />
   <common hash="66lnxdoypd04p98u6updzyllgp0mvr4">
     <dep root="481983775135178819" />
@@ -29,19 +29,19 @@
     <file name="Standalone_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="481983775135178819" name="ProjectPluginDisposeBlock" hash="-75mavgk4ushfu15j0qj9dl04egv8d0g">
+  <source id="481983775135178819" name="ProjectPluginDisposeBlock" hash="-1qg3og9qb0o29axlnvt0nkh32y10szz">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="481983775135178825" name="ProjectPluginInitBlock" hash="77mdbu0rvy7wefzspedjxkcg9lrevv1">
+  <source id="481983775135178825" name="ProjectPluginInitBlock" hash="-7i17i36ie7l2jzsnco358nami5fwguc">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="481983775135178831" name="ApplicationPluginType" hash="2qed3z6wgx2rqfis0y5awwsffwmrl1m">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="481983775135178834" name="ProjectPluginDeclaration" hash="-emlmvc5dgw9r65gj3xyjczc9u5ofgvs">
+  <source id="481983775135178834" name="ProjectPluginDeclaration" hash="2c3vbtoqi66k93jqwx7nsc2b9av66zj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="481983775135178840" name="ApplicationPluginDeclaration" hash="-43mmbb1b0lx3ts0ndj2easz3zlyzmro">
+  <source id="481983775135178840" name="ApplicationPluginDeclaration" hash="254tb1wc3n6f99gflitw09781hj8yg5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="481983775135178846" name="ApplicationPluginDisposeBlock" hash="ekiba1qn705lr2os0pqpt4ujseao6na">

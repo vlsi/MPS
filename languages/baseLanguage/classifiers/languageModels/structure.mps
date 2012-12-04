@@ -132,10 +132,6 @@
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1219229880090">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpee.1178549954367" resolveInfo="IVisible" />
     </node>
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="1205922182858">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1205921683134" resolveInfo="operationConcept" />
-      <link role="target" roleId="tpce.1105736807942" targetNodeId="1205769149993" resolveInfo="DefaultClassifierMethodCallOperation" />
-    </node>
   </root>
   <root id="1205769149993">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1205770614681">
@@ -157,10 +153,6 @@
   <root id="1213999088275">
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1213999088276">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1205752032448" resolveInfo="IMember" />
-    </node>
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="1213999297620">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1205921683134" resolveInfo="operationConcept" />
-      <link role="target" roleId="tpce.1105736807942" targetNodeId="1213999117680" resolveInfo="DefaultClassifierFieldAccessOperation" />
     </node>
   </root>
   <root id="1213999117680">

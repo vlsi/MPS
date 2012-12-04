@@ -28,16 +28,16 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068390468198">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Class declaration" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/classType.png" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Class declaration" />
       <property name="name" nameId="tpck.1169194664001" value="ClassConcept" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="class" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1107461130800" resolveInfo="Classifier" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068498886292">
-      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="parameter" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/parameter.png" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="parameter" />
       <property name="name" nameId="tpck.1169194664001" value="ParameterDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431474542" resolveInfo="VariableDeclaration" />
@@ -98,8 +98,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1179362310214" resolveInfo="IntegerLiteral" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068581242863">
-      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="local variable declaration" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/variable.png" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="local variable declaration" />
       <property name="name" nameId="tpck.1169194664001" value="LocalVariableDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="&lt;type&gt; &lt;var&gt;" />
@@ -157,8 +157,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1164118113764" resolveInfo="PrimitiveType" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1070462154015">
-      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="static field declaration" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/fieldNew.png" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="static field declaration" />
       <property name="name" nameId="tpck.1169194664001" value="StaticFieldDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="static field" />
@@ -340,8 +340,8 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1083245097125">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Enumeration class declaration" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/enumType.png" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Enumeration class declaration" />
       <property name="name" nameId="tpck.1169194664001" value="EnumClass" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="enum" />
@@ -394,8 +394,8 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1107796713796">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Interface declaration" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/interfaceType.png" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Interface declaration" />
       <property name="name" nameId="tpck.1169194664001" value="Interface" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="interface" />
@@ -593,8 +593,8 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1170345865475">
       <property name="rootable" nameId="tpce.1096454100552" value="false" />
-      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="anonymous class" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/anonymousClass.png" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="anonymous class" />
       <property name="name" nameId="tpck.1169194664001" value="AnonymousClass" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068390468198" resolveInfo="ClassConcept" />
@@ -686,8 +686,8 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1188206331916">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Annotation declaration" />
       <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/annotationtype.png" />
+      <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Annotation declaration" />
       <property name="name" nameId="tpck.1169194664001" value="Annotation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="@interface" />
@@ -3902,11 +3902,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
     </node>
   </root>
-  <root id="2403002034744051110">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="2403002034744175482">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
-    </node>
-  </root>
+  <root id="2403002034744051110" />
   <root id="2323553266850475941">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2323553266850475953">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />

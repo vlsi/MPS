@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-5eyahre7o2euianqwook3qm0v9tuosh">
+<dependencies version="2" modelHash="-amw3yujjoknpk9rcm46zq6ty6idm23v">
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="7uo2xyrudgr0a3zexm421hjdcsbok1q" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-35bqvqn2fitqy45kz2fa6tlhimeui2d" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-baumsvy45qwk0i0m1tzx9fili68fouh" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3t350ymnztu1bi083p2mhorjil0w76j" />
   <common hash="-ba4e5p73t42agbvtgpfhd35wq3mw1tc">
     <dep root="1047408822409601647" />
@@ -67,7 +67,7 @@
   <source id="201537367881071930" name="IMetaLevelChanger" hash="3h0q6sxz2r7qigogt22lrdltrh4nump">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="5425021671150136555" name="ExportScope" hash="chqzizaasdapccq6lnnfzxieeawhpx9">
+  <source id="5425021671150136555" name="ExportScope" hash="-7hxmoohfnh3gdmfw58ryz3jxc7wsz1m">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="2565736246230036150" name="ExportScopePublic" hash="7gqhncy26l662wim79pw4ev0rcynt1e">
@@ -103,7 +103,7 @@
   <source id="3393165121846091587" name="ISuppressErrors" hash="-2f282jh5shmkfje4hxrufpm0494v1m5">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4222318806802425298" name="SuppressErrorsAnnotation" hash="4tq443d5p1nftq45k2etzepjwcxy81k">
+  <source id="4222318806802425298" name="SuppressErrorsAnnotation" hash="ab7gc37yq8tnpzej9woo20rbq3p41zf">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1835621062190663819" name="IDontSubstituteByDefault" hash="-b9stbvtxzbtb0fenasj84y9i8njzbwv">
