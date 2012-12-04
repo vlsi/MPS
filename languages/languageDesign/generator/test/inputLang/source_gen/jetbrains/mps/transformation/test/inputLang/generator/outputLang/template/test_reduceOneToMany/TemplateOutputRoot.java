@@ -10,10 +10,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.GenerationTracerUtil;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class TemplateOutputRoot implements TemplateDeclaration {
   public TemplateOutputRoot() {

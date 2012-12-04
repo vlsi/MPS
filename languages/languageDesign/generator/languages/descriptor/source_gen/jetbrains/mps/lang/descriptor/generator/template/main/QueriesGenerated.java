@@ -41,7 +41,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.generator.template.TemplateQueryContextWithMacro;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateModule;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_8780540425167326385(final IOperationContext operationContext, final CreateRootRuleContext _context) {
@@ -129,7 +128,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1250389701475432571(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeAccessUtil.getProperty(_context.getNode(), "aa");
+    return _context.getNode().getProperty("aa");
   }
 
   public static Object propertyMacro_GetPropertyValue_5102832340571646536(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -335,7 +334,7 @@ public class QueriesGenerated {
     }, true).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
         SNode n = SConceptOperations.createNewNode("jetbrains.mps.lang.core.structure.BaseConcept", null);
-        SNodeAccessUtil.setProperty(n, "aa", it);
+        n.setProperty("aa", it);
         return n;
       }
     });

@@ -34,8 +34,8 @@ import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_6896005762093594382(final IOperationContext operationContext, final BaseMappingRuleContext _context) {

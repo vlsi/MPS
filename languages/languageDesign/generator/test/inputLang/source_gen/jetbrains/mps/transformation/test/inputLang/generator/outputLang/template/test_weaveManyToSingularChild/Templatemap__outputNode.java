@@ -10,9 +10,9 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Templatemap__outputNode implements TemplateDeclaration {
   public Templatemap__outputNode() {

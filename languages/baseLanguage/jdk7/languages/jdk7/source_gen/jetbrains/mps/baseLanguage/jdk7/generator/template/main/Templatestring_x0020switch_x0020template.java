@@ -13,6 +13,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import java.util.Collection;
@@ -20,7 +21,6 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Templatestring_x0020switch_x0020template implements TemplateDeclarationWeavingAware {
   public Templatestring_x0020switch_x0020template() {
@@ -61,7 +61,7 @@ public class Templatestring_x0020switch_x0020template implements TemplateDeclara
                   try {
                     environment.getTracer().pushTemplateNode(templateNode_wjpymb_a0a0a1a3a3a2a2a1a3a1a2);
                     environment.nodeCopied(context2, tnode4, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/400642802550422212");
-                    SNodeAccessUtil.setProperty(tnode4, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_400642802550422214(environment.getOperationContext(), new PropertyMacroContext(context2.getInput(), "42", propertyMacro_wjpymb_c0b0b0a2a1a3a3a2a2a1a3a1a2, context2, environment.getGenerator()))));
+                    SNodeAccessUtil.setProperty(tnode4, "value", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_400642802550422214(environment.getOperationContext(), new PropertyMacroContext(context2.getInput(), "42", propertyMacro_wjpymb_c0b0c0c0b0d0d0c0c0b0d0b0c, context2, environment.getGenerator()))));
 
                   } finally {
                     environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode4));
@@ -250,7 +250,7 @@ public class Templatestring_x0020switch_x0020template implements TemplateDeclara
   private static SNodePointer loopMacroRef_wjpymb_a0a0a1a3a1a2 = new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550422239");
   private static SNodePointer templateNode_wjpymb_a0a0a3a2a2a1a3a1a2 = new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550422211");
   private static SNodePointer templateNode_wjpymb_a0a0a1a3a3a2a2a1a3a1a2 = new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550422212");
-  private static SNodePointer propertyMacro_wjpymb_c0b0b0a2a1a3a3a2a2a1a3a1a2 = new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550422213");
+  private static SNodePointer propertyMacro_wjpymb_c0b0c0c0b0d0d0c0c0b0d0b0c = new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550422213");
   private static SNodePointer copySrcMacro_wjpymb_a0a0a1a4a3a2a2a1a3a1a2 = new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "400642802550422231");
   private static SNodePointer copySrcMacro_wjpymb_a0a0a1a4a1a2 = new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "8297320321098371692");
   private static SNodePointer templateNode_wjpymb_a0a0a1a5a1a2 = new SNodePointer("r:23911370-3645-4974-be70-79d5cfba7db1(jetbrains.mps.baseLanguage.jdk7.generator.template.main@generator)", "3708576844065051160");

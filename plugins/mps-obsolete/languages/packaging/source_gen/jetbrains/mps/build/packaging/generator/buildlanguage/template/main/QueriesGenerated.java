@@ -220,7 +220,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5640794902512695297(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeAccessUtil.getProperty(_context.getNode(), "mref");
+    return _context.getNode().getProperty("mref");
   }
 
   public static Object propertyMacro_GetPropertyValue_1902360454495868335(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1331,12 +1331,12 @@ public class QueriesGenerated {
     List<SNode> res = new ArrayList<SNode>();
     for (IModule m : new GlobalModuleDependenciesManager(Module_Behavior.call_getModule_1213877515148(_context.getNode())).getModules(GlobalModuleDependenciesManager.Deptype.COMPILE)) {
       SNode propertyNode = SConceptOperations.createNewNode("jetbrains.mps.lang.core.structure.BaseConcept", null);
-      SNodeAccessUtil.setProperty(propertyNode, MREF, m.getModuleReference().toString());
+      propertyNode.setProperty(MREF, m.getModuleReference().toString());
       ListSequence.fromList(res).addElement(propertyNode);
     }
     return ListSequence.fromList(res).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SNodeAccessUtil.getProperty(it, MREF);
+        return it.getProperty(MREF);
       }
     }, true);
   }

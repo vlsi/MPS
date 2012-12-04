@@ -52,7 +52,6 @@ import jetbrains.mps.build.util.FetchDependenciesProcessor;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.util.Pair;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static boolean baseMappingRule_Condition_5248329904288166450(final IOperationContext operationContext, final BaseMappingRuleContext _context) {
@@ -455,7 +454,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_8055294676438890975(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeAccessUtil.getProperty(_context.getNode(), "folderName");
+    return _context.getNode().getProperty("folderName");
   }
 
   public static Object propertyMacro_GetPropertyValue_1659807394254872723(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1496,7 +1495,7 @@ public class QueriesGenerated {
   }
 
   public static Object templateArgumentQuery_5680938682773841635(final IOperationContext operationContext, final TemplateQueryContext _context) {
-    return SNodeAccessUtil.getProperty(_context.getNode(), "suffix");
+    return _context.getNode().getProperty("suffix");
   }
 
   public static Object templateArgumentQuery_144710003695561027(final IOperationContext operationContext, final TemplateQueryContext _context) {
@@ -1641,8 +1640,8 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     for (Tuples._2<SNode, String> jarInFolder : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getExternalJarsInFolder()) {
       SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-      loopnode.setReferent("targetJar", jarInFolder._0(), false);
-      loopnode.setProperty("suffix", jarInFolder._1(), false);
+      loopnode.setReferenceTarget("targetJar", jarInFolder._0());
+      loopnode.setProperty("suffix", jarInFolder._1());
       ListSequence.fromList(result).addElement(loopnode);
     }
     return result;
@@ -1718,7 +1717,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     for (String fname : folders) {
       SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-      loopnode.setProperty("folderName", fname, false);
+      loopnode.setProperty("folderName", fname);
       ListSequence.fromList(result).addElement(loopnode);
     }
     return result;

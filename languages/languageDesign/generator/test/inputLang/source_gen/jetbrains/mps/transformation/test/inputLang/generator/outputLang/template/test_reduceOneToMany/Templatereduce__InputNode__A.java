@@ -14,8 +14,8 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
-import jetbrains.mps.generator.runtime.TemplateUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.generator.runtime.TemplateUtil;
 
 public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingAware {
   public Templatereduce__InputNode__A() {

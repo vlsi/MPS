@@ -37,6 +37,7 @@
     <classNode dependClassName="jetbrains.mps.ui.generator.template.helper.SessionObjects" />
     <classNode dependClassName="jetbrains.mps.ui.modeling.behavior.UIObjectFactory_Behavior" />
     <classNode dependClassName="jetbrains.mps.ui.modeling.behavior.UIObjectTemplate_Behavior" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
   </dependency>
 </dependenciesRoot>
 

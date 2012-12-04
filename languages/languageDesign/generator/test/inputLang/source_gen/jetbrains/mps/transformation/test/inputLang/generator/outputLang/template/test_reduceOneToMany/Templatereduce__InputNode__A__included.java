@@ -9,10 +9,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Templatereduce__InputNode__A__included implements TemplateDeclarationWeavingAware {
   public Templatereduce__InputNode__A__included() {

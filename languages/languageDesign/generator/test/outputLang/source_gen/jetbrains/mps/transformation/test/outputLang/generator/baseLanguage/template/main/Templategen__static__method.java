@@ -9,12 +9,12 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Templategen__static__method implements TemplateDeclarationWeavingAware {
   public Templategen__static__method() {
