@@ -10,12 +10,15 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.List;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import java.util.List;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class AddOperationParameter_Intention implements IntentionFactory {
@@ -57,7 +60,7 @@ public class AddOperationParameter_Intention implements IntentionFactory {
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
     if (ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).isEmpty()) {
-      return ListSequence.fromList(SLinkOperations.getConceptLinkTargets(node, "applicableParameter")).isNotEmpty();
+      return ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getApplicableParameter_3044950653914717056", new Object[]{})).isNotEmpty();
     }
     return false;
   }
@@ -82,7 +85,7 @@ public class AddOperationParameter_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      List<SNode> applicableParms = SLinkOperations.getConceptLinkTargets(node, "applicableParameter");
+      List<SNode> applicableParms = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getApplicableParameter_3044950653914717056", new Object[]{});
       if ((int) ListSequence.fromList(applicableParms).count() == 1) {
         ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).addElement(SNodeFactoryOperations.createNewNode(NameUtil.nodeFQName(((SNode) ListSequence.fromList(applicableParms).first())), null));
       } else {

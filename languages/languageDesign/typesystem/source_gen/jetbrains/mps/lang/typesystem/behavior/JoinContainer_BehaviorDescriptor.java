@@ -4,10 +4,16 @@ package jetbrains.mps.lang.typesystem.behavior;
 
 import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
+import java.util.List;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public class JoinContainer_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public JoinContainer_BehaviorDescriptor() {
+  }
+
+  public List<SNode> virtual_getAttributed_3044950653914717013(SConcept thisConcept) {
+    return JoinContainer_Behavior.virtual_getAttributed_3044950653914717013(thisConcept);
   }
 
   public String virtual_getRole_1262430001741497900(SConcept thisConcept) {

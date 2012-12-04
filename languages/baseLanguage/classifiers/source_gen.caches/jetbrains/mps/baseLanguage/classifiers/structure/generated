@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-eutdh4phmfxtdaud8b7rwy6r9xxcg0l">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="72jgettirgdze5zodlg3xz1jp5r3et8" />
+<dependencies version="2" modelHash="-84wlrmxj5l9lm3yb4vfvp6xpn4ekgu3">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-5eyahre7o2euianqwook3qm0v9tuosh" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="7uo2xyrudgr0a3zexm421hjdcsbok1q" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-87z6bgddy8ivkyr9ddyvqnv3hm4pw2y" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-35bqvqn2fitqy45kz2fa6tlhimeui2d" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-baumsvy45qwk0i0m1tzx9fili68fouh" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3t350ymnztu1bi083p2mhorjil0w76j" />
-  <common hash="1hwb2xn8jz3sfrik0vfki06v1zroo6i">
+  <common hash="-8soze5k0le3otyjy54eb4zpg3kkfopd">
     <dep root="1029302639053433191" />
     <dep root="1205751982837" />
     <dep root="1205752032448" />
@@ -30,7 +30,7 @@
   <source id="1205751982837" name="IClassifier" hash="328gfb4ydvey5rpt6rlu4uzwywlf26q">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="1205752032448" name="IMember" hash="awirijtd9j29tlb3xi7e5xxcar4wtsb">
+  <source id="1205752032448" name="IMember" hash="-bn9q7ob1gd7pzf0kjax8n61snjnwejj">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1205752174734" name="IClassifierPart" hash="ea6vw7w613otrjew2yf1g2km4q06gt4">

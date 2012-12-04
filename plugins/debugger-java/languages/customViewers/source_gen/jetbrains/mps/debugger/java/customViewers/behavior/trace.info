@@ -1,31 +1,99 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.BehaviorAspectDescriptor" />
-  <unitInfo fileName="CanWrapHighLevelValue_ConceptFunction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.CanWrapHighLevelValue_ConceptFunction_BehaviorDescriptor" />
+  <unitInfo fileName="CanWrapHighLevelValue_ConceptFunction_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.CanWrapHighLevelValue_ConceptFunction_BehaviorDescriptor" />
   <unitInfo fileName="CustomWatchable_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.CustomWatchable_BehaviorDescriptor" />
   <unitInfo fileName="CustomWatchablesContainer_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.CustomWatchablesContainer_BehaviorDescriptor" />
-  <unitInfo fileName="GetHighLevelValuePresentation_ConceptFunction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.GetHighLevelValuePresentation_ConceptFunction_BehaviorDescriptor" />
-  <unitInfo fileName="GetHighLevelWatchablesBlock_ConceptFunction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.GetHighLevelWatchablesBlock_ConceptFunction_BehaviorDescriptor" />
+  <unitInfo fileName="GetHighLevelValuePresentation_ConceptFunction_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.GetHighLevelValuePresentation_ConceptFunction_BehaviorDescriptor" />
+  <unitInfo fileName="GetHighLevelWatchablesBlock_ConceptFunction_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.GetHighLevelWatchablesBlock_ConceptFunction_BehaviorDescriptor" />
   <unitInfo fileName="HighLevelCustomViewer_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.HighLevelCustomViewer_BehaviorDescriptor" />
   <unitInfo fileName="HighLevelValue_ConceptFunctionParameter_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.HighLevelValue_ConceptFunctionParameter_BehaviorDescriptor" />
   <unitInfo fileName="HighLevelWatchableCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.HighLevelWatchableCreator_BehaviorDescriptor" />
-  <unitInfo fileName="ToProcessMethod_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.ToProcessMethod_BehaviorDescriptor" />
+  <unitInfo fileName="ToProcessMethod_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.ToProcessMethod_BehaviorDescriptor" />
   <unitInfo fileName="WatchableListType_BehaviorDescriptor.java" startLine="12" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.WatchableListType_BehaviorDescriptor" />
   <unitInfo fileName="WatchableType_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.WatchableType_BehaviorDescriptor" />
   <unitInfo fileName="WatchablesListCreator_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.WatchablesListCreator_BehaviorDescriptor" />
   <root nodeId="1262430001741718612" modelId="r:6272afbe-d407-4921-b9d6-fcdba8c77d3c(jetbrains.mps.debugger.java.customViewers.behavior)">
-    <nodeInfo nodeId="1262430001741718611" fileName="ToProcessMethod_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741718612" fileName="ToProcessMethod_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1262430001741718612" fileName="ToProcessMethod_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1262430001741718614" fileName="ToProcessMethod_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
-    <scopeInfo nodeId="1262430001741718609" fileName="ToProcessMethod_Behavior.java" startLine="12" startPosition="82" endLine="13" endPosition="29" />
-    <scopeInfo nodeId="1262430001741718612" fileName="ToProcessMethod_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
+    <nodeInfo nodeId="1262430001741718611" fileName="ToProcessMethod_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914725013" fileName="ToProcessMethod_Behavior.java" startLine="21" startPosition="93" endLine="22" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914725023" fileName="ToProcessMethod_Behavior.java" startLine="22" startPosition="71" endLine="23" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914725028" fileName="ToProcessMethod_Behavior.java" startLine="23" startPosition="277" endLine="24" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914725032" fileName="ToProcessMethod_Behavior.java" startLine="24" startPosition="164" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718612" fileName="ToProcessMethod_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741718612" fileName="ToProcessMethod_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1262430001741718612" fileName="ToProcessMethod_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="1262430001741718614" fileName="ToProcessMethod_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="1262430001741718609" fileName="ToProcessMethod_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="29" />
+    <scopeInfo nodeId="1262430001741718612" fileName="ToProcessMethod_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="1262430001741718612" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741718612" fileName="ToProcessMethod_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="1262430001741718612" fileName="ToProcessMethod_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1262430001741718612" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741718612" fileName="ToProcessMethod_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.ToProcessMethod_Behavior" />
+    <scopeInfo nodeId="3044950653914725012" fileName="ToProcessMethod_Behavior.java" startLine="21" startPosition="93" endLine="25" endPosition="18">
+      <varInfo nodeId="3044950653914725014" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="1262430001741718612" fileName="ToProcessMethod_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0">
+      <varInfo nodeId="1262430001741718612" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="1262430001741718612" fileName="ToProcessMethod_Behavior.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.ToProcessMethod_Behavior" />
+  </root>
+  <root nodeId="3044950653914722670" modelId="r:6272afbe-d407-4921-b9d6-fcdba8c77d3c(jetbrains.mps.debugger.java.customViewers.behavior)">
+    <nodeInfo nodeId="3044950653914722649" fileName="GetHighLevelWatchablesBlock_ConceptFunction_Behavior.java" startLine="17" startPosition="117" endLine="18" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914722659" fileName="GetHighLevelWatchablesBlock_ConceptFunction_Behavior.java" startLine="18" startPosition="71" endLine="19" endPosition="306" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914722664" fileName="GetHighLevelWatchablesBlock_ConceptFunction_Behavior.java" startLine="19" startPosition="306" endLine="20" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914722668" fileName="GetHighLevelWatchablesBlock_ConceptFunction_Behavior.java" startLine="20" startPosition="186" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914722670" fileName="GetHighLevelWatchablesBlock_ConceptFunction_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3044950653914722670" fileName="GetHighLevelWatchablesBlock_ConceptFunction_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="3044950653914722672" fileName="GetHighLevelWatchablesBlock_ConceptFunction_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="3044950653914722670" fileName="GetHighLevelWatchablesBlock_ConceptFunction_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="3044950653914722670" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3044950653914722648" fileName="GetHighLevelWatchablesBlock_ConceptFunction_Behavior.java" startLine="17" startPosition="117" endLine="21" endPosition="18">
+      <varInfo nodeId="3044950653914722650" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3044950653914722670" fileName="GetHighLevelWatchablesBlock_ConceptFunction_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="3044950653914722670" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="3044950653914722670" fileName="GetHighLevelWatchablesBlock_ConceptFunction_Behavior.java" startLine="13" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.GetHighLevelWatchablesBlock_ConceptFunction_Behavior" />
+  </root>
+  <root nodeId="3044950653914724911" modelId="r:6272afbe-d407-4921-b9d6-fcdba8c77d3c(jetbrains.mps.debugger.java.customViewers.behavior)">
+    <nodeInfo nodeId="3044950653914724890" fileName="CanWrapHighLevelValue_ConceptFunction_Behavior.java" startLine="17" startPosition="117" endLine="18" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914724900" fileName="CanWrapHighLevelValue_ConceptFunction_Behavior.java" startLine="18" startPosition="71" endLine="19" endPosition="306" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914724905" fileName="CanWrapHighLevelValue_ConceptFunction_Behavior.java" startLine="19" startPosition="306" endLine="20" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914724909" fileName="CanWrapHighLevelValue_ConceptFunction_Behavior.java" startLine="20" startPosition="186" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914724911" fileName="CanWrapHighLevelValue_ConceptFunction_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3044950653914724911" fileName="CanWrapHighLevelValue_ConceptFunction_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="3044950653914724913" fileName="CanWrapHighLevelValue_ConceptFunction_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="3044950653914724911" fileName="CanWrapHighLevelValue_ConceptFunction_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="3044950653914724911" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3044950653914724889" fileName="CanWrapHighLevelValue_ConceptFunction_Behavior.java" startLine="17" startPosition="117" endLine="21" endPosition="18">
+      <varInfo nodeId="3044950653914724891" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3044950653914724911" fileName="CanWrapHighLevelValue_ConceptFunction_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="3044950653914724911" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="3044950653914724911" fileName="CanWrapHighLevelValue_ConceptFunction_Behavior.java" startLine="13" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.CanWrapHighLevelValue_ConceptFunction_Behavior" />
+  </root>
+  <root nodeId="3044950653914726521" modelId="r:6272afbe-d407-4921-b9d6-fcdba8c77d3c(jetbrains.mps.debugger.java.customViewers.behavior)">
+    <nodeInfo nodeId="3044950653914726500" fileName="GetHighLevelValuePresentation_ConceptFunction_Behavior.java" startLine="17" startPosition="117" endLine="18" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914726510" fileName="GetHighLevelValuePresentation_ConceptFunction_Behavior.java" startLine="18" startPosition="71" endLine="19" endPosition="306" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914726515" fileName="GetHighLevelValuePresentation_ConceptFunction_Behavior.java" startLine="19" startPosition="306" endLine="20" endPosition="186" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914726519" fileName="GetHighLevelValuePresentation_ConceptFunction_Behavior.java" startLine="20" startPosition="186" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914726521" fileName="GetHighLevelValuePresentation_ConceptFunction_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3044950653914726521" fileName="GetHighLevelValuePresentation_ConceptFunction_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="3044950653914726523" fileName="GetHighLevelValuePresentation_ConceptFunction_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="3044950653914726521" fileName="GetHighLevelValuePresentation_ConceptFunction_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="3044950653914726521" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="3044950653914726499" fileName="GetHighLevelValuePresentation_ConceptFunction_Behavior.java" startLine="17" startPosition="117" endLine="21" endPosition="18">
+      <varInfo nodeId="3044950653914726501" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="3044950653914726521" fileName="GetHighLevelValuePresentation_ConceptFunction_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="3044950653914726521" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="3044950653914726521" fileName="GetHighLevelValuePresentation_ConceptFunction_Behavior.java" startLine="13" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.debugger.java.customViewers.behavior.GetHighLevelValuePresentation_ConceptFunction_Behavior" />
   </root>
   <root nodeId="4246614868163974535" modelId="r:6272afbe-d407-4921-b9d6-fcdba8c77d3c(jetbrains.mps.debugger.java.customViewers.behavior)">
     <nodeInfo nodeId="4246614868163975403" fileName="WatchableListType_Behavior.java" startLine="18" startPosition="127" endLine="19" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

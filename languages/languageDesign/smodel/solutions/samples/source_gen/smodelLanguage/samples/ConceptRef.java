@@ -9,7 +9,6 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import java.util.List;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
 
@@ -37,7 +36,7 @@ public class ConceptRef {
   }
 
   public void concept_conceptLinkTargets(SNode conceptFunctionConcept) {
-    List<SNode> applicableParams = SLinkOperations.getConceptLinkTargets(conceptFunctionConcept, "applicableConceptFunctionParameter");
+    List<SNode> applicableParams = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), new SConceptNodeAdapter(NameUtil.nodeFQName(conceptFunctionConcept)), "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
   }
 
   public void concept_types() {

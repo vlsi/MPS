@@ -2274,6 +2274,10 @@
     <node role="conceptLinkDeclaration" roleId="tpce.1137532086877" type="tpce.ReferenceConceptLinkDeclaration" typeId="tpce.1105741578420" id="3358009230509381714">
       <property name="name" nameId="tpck.1169194664001" value="availableFor" />
       <link role="targetType" roleId="tpce.1105736621938" targetNodeId="tpce.1169125787135" resolveInfo="AbstractConceptDeclaration" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3044950653914717032" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="3044950653914717031">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tp2z.3044950653914717035" resolveInfo="getAvailableFor" />
+      </node>
     </node>
   </root>
   <root id="1237783176940" />

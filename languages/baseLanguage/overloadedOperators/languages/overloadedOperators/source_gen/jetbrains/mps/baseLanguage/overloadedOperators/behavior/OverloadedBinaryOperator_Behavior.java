@@ -8,6 +8,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.List;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class OverloadedBinaryOperator_Behavior {
   public static void init(SNode thisNode) {
@@ -25,5 +29,13 @@ public class OverloadedBinaryOperator_Behavior {
       operatorName = "customOperator_" + SLinkOperations.getTarget(thisNode, "operator", true).getSNodeId().toString();
     }
     return "apply_" + operatorName + "_" + NameUtil.toValidIdentifier(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "leftType", true), "virtual_getPresentation_1213877396640", new Object[]{})) + "_" + NameUtil.toValidIdentifier(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "rightType", true), "virtual_getPresentation_1213877396640", new Object[]{}));
+  }
+
+  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{})));
+    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)", "483844232470668960"));
+    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:a258f9a5-18d3-4bea-a833-20735290774c(jetbrains.mps.baseLanguage.overloadedOperators.structure)", "7789383629180756961"));
+    return result;
   }
 }

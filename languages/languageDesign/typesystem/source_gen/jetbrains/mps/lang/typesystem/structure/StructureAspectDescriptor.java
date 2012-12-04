@@ -160,7 +160,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
       case 72:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.NormalTypeClause", "jetbrains.mps.lang.typesystem.structure.TypeClause", false, new String[]{"jetbrains.mps.lang.typesystem.structure.TypeClause"}, new String[]{}, new String[]{});
       case 73:
-        return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.OperationContextExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.OperationContextExpression", "jetbrains.mps.baseLanguage.structure.Expression", false, new String[]{"jetbrains.mps.baseLanguage.structure.Expression", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 74:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.typesystem.structure.Operation_parameter", "jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", false, new String[]{"jetbrains.mps.baseLanguage.structure.ConceptFunctionParameter", "jetbrains.mps.lang.core.structure.IDontSubstituteByDefault"}, new String[]{}, new String[]{});
       case 75:

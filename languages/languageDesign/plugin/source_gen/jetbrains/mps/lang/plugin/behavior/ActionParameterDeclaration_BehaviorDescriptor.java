@@ -7,6 +7,8 @@ import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_BehaviorDescripto
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
+import java.util.List;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class ActionParameterDeclaration_BehaviorDescriptor extends FieldDeclaration_BehaviorDescriptor implements IMember_BehaviorDescriptor, ActionParameter_BehaviorDescriptor {
   public ActionParameterDeclaration_BehaviorDescriptor() {
@@ -34,6 +36,10 @@ public class ActionParameterDeclaration_BehaviorDescriptor extends FieldDeclarat
 
   public SNode virtual_getOperationConcept_1213877352972(SNode thisNode) {
     return IMember_Behavior.virtual_getOperationConcept_1213877352972(thisNode);
+  }
+
+  public List<SNode> virtual_getOperationConcept_3044950653914717125(SConcept thisConcept) {
+    return ActionParameterDeclaration_Behavior.virtual_getOperationConcept_3044950653914717125(thisConcept);
   }
 
   public SNode virtual_getType_1171743928471337193(SNode thisNode) {
