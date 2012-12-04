@@ -16,8 +16,14 @@
 package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
+import jetbrains.mps.util.io.ModelInputStream;
+import jetbrains.mps.util.io.ModelOutputStream;
 
-import java.util.*;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 public class GeneratorDescriptor extends ModuleDescriptor {
   private String myGeneratorUID;
@@ -63,5 +69,43 @@ public class GeneratorDescriptor extends ModuleDescriptor {
       super.updateModuleRefs(),
       RefUpdateUtil.updateModuleRefs(myDepGenerators),
       RefUpdateUtil.updateMappingPriorityRules(myPriorityRules));
+  }
+
+  @Override
+  protected int getHeaderMarker() {
+    return 0x45459797;
+  }
+
+  @Override
+  public void save(ModelOutputStream stream) throws IOException {
+    super.save(stream);
+    stream.writeString(myGeneratorUID);
+
+    stream.writeInt(myDepGenerators.size());
+    for (ModuleReference ref : myDepGenerators) {
+      stream.writeModuleReference(ref);
+    }
+
+    stream.writeInt(myPriorityRules.size());
+    for (MappingPriorityRule rule : myPriorityRules) {
+      rule.save(stream);
+    }
+  }
+
+  @Override
+  public void load(ModelInputStream stream) throws IOException {
+    super.load(stream);
+    myGeneratorUID = stream.readString();
+
+    myDepGenerators.clear();
+    for (int size = stream.readInt(); size > 0; size--) {
+      myDepGenerators.add(stream.readModuleReference());
+    }
+
+    for (int size = stream.readInt(); size > 0; size--) {
+      MappingPriorityRule rule = new MappingPriorityRule();
+      rule.load(stream);
+      myPriorityRules.add(rule);
+    }
   }
 }

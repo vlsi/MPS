@@ -17,6 +17,7 @@ package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
+import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 

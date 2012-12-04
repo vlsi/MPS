@@ -24,9 +24,12 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * evgeny, 11/3/12
@@ -36,6 +39,7 @@ class SLibrary implements FileSystemListener, MPSModuleOwner {
   private final IFile file;
   private final ClassLoader parent;
   private final boolean isHidden;
+  private AtomicReference<List<ModuleHandle>> myHandles = new AtomicReference<List<ModuleHandle>>();
 
   SLibrary(IFile file, ClassLoader parent, boolean hidden) {
     this.file = file;
@@ -45,6 +49,12 @@ class SLibrary implements FileSystemListener, MPSModuleOwner {
 
   public IFile getFile() {
     return file;
+  }
+
+  public List<ModuleHandle> getHandles() {
+    List<ModuleHandle> moduleHandles = myHandles.get();
+    if (moduleHandles == null) return Collections.emptyList();
+    return moduleHandles;
   }
 
   void attach(boolean refreshFiles) {
@@ -88,16 +98,17 @@ class SLibrary implements FileSystemListener, MPSModuleOwner {
   void update(boolean refreshFiles) {
     ModelAccess.assertLegalWrite();
 
-    List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(file, refreshFiles);
-    List<IModule> loaded = new ArrayList<IModule>();
+    List<ModuleHandle> moduleHandles = Collections.unmodifiableList(ModulesMiner.getInstance().collectModules(file, refreshFiles));
+    myHandles.set(moduleHandles);
+    List<SModule> loaded = new ArrayList<SModule>();
     for (ModuleHandle moduleHandle : moduleHandles) {
-      IModule module = ModuleRepositoryFacade.createModule(moduleHandle, this);
+      SModule module = ModuleRepositoryFacade.createModule(moduleHandle, this);
       if (module != null) {
         loaded.add(module);
       }
     }
-    for (IModule module : loaded) {
-      module.onModuleLoad();
+    for (SModule module : loaded) {
+      ((IModule) module).onModuleLoad();
     }
   }
 

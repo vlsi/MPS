@@ -22,6 +22,9 @@ import java.util.Iterator;
 import java.util.List;
 
 public class MappingConfig_RefSet extends MappingConfig_AbstractRef {
+
+  public static final int PERSISTENCE_ID = 0x55550003;
+
   private List<MappingConfig_AbstractRef> myRefs;
 
   public MappingConfig_RefSet() {

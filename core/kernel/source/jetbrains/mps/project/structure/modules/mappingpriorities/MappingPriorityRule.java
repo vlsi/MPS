@@ -17,6 +17,10 @@ package jetbrains.mps.project.structure.modules.mappingpriorities;
 
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
+import jetbrains.mps.util.io.ModelInputStream;
+import jetbrains.mps.util.io.ModelOutputStream;
+
+import java.io.IOException;
 
 public class MappingPriorityRule implements TemplateMappingPriorityRule {
   public static final String LEFT = "left";
@@ -71,5 +75,17 @@ public class MappingPriorityRule implements TemplateMappingPriorityRule {
       myRight.updateReferences(),
       myLeft.updateReferences()
     );
+  }
+
+  public void save(ModelOutputStream stream) throws IOException {
+    stream.writeString(myType.name());
+    MappingConfig_AbstractRef.save(myLeft, stream);
+    MappingConfig_AbstractRef.save(myRight, stream);
+  }
+
+  public void load(ModelInputStream stream) throws IOException {
+    myType = RuleType.valueOf(stream.readString());
+    myLeft = MappingConfig_AbstractRef.load(stream);
+    myRight = MappingConfig_AbstractRef.load(stream);
   }
 }

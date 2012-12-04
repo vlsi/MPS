@@ -15,6 +15,10 @@
  */
 package jetbrains.mps.project.structure.modules;
 
+import jetbrains.mps.util.io.ModelInputStream;
+import jetbrains.mps.util.io.ModelOutputStream;
+
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -60,5 +64,35 @@ public class DeploymentDescriptor extends ModuleDescriptor {
 
   public List<String> getLibraries() {
     return myLibraries;
+  }
+
+  @Override
+  protected int getHeaderMarker() {
+    return 0xabababa;
+  }
+
+  @Override
+  public void save(ModelOutputStream stream) throws IOException {
+    super.save(stream);
+    stream.writeString(mySourcesJar);
+    stream.writeString(myDescriptorFile);
+    stream.writeString(myType);
+
+    stream.writeStrings(myRuntime);
+    stream.writeStrings(myLibraries);
+  }
+
+  @Override
+  public void load(ModelInputStream stream) throws IOException {
+    super.load(stream);
+    mySourcesJar = stream.readString();
+    myDescriptorFile = stream.readString();
+    myType = stream.readString();
+
+    myRuntime.clear();
+    myRuntime.addAll(stream.readStrings());
+
+    myLibraries.clear();
+    myLibraries.addAll(stream.readStrings());
   }
 }

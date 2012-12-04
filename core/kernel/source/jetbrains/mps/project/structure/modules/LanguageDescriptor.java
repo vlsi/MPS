@@ -16,7 +16,10 @@
 package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.util.io.ModelInputStream;
+import jetbrains.mps.util.io.ModelOutputStream;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
@@ -88,5 +91,68 @@ public class LanguageDescriptor extends ModuleDescriptor {
       RefUpdateUtil.updateModuleRefs(myRuntimeModules),
       RefUpdateUtil.updateModuleRefs(myExtendedLanguages)
     );
+  }
+
+  @Override
+  protected int getHeaderMarker() {
+    return 0x123abcd;
+  }
+
+  @Override
+  public void save(ModelOutputStream stream) throws IOException {
+    super.save(stream);
+    stream.writeString(myGenPath);
+
+    stream.writeInt(myAccessoryModels.size());
+    for (SModelReference ref : myAccessoryModels) {
+      stream.writeModelReference(ref);
+    }
+
+    stream.writeInt(myGenerators.size());
+    for (GeneratorDescriptor gen : myGenerators) {
+      gen.save(stream);
+    }
+
+    stream.writeInt(myExtendedLanguages.size());
+    for (ModuleReference ref : myExtendedLanguages) {
+      stream.writeModuleReference(ref);
+    }
+
+    stream.writeInt(myRuntimeModules.size());
+    for (ModuleReference ref : myRuntimeModules) {
+      stream.writeModuleReference(ref);
+    }
+
+    stream.writeByte(0xac);
+  }
+
+  @Override
+  public void load(ModelInputStream stream) throws IOException {
+    super.load(stream);
+    myGenPath = stream.readString();
+
+    myAccessoryModels.clear();
+    for (int size = stream.readInt(); size > 0; size--) {
+      myAccessoryModels.add(stream.readModelReference());
+    }
+
+    myGenerators.clear();
+    for (int size = stream.readInt(); size > 0; size--) {
+      GeneratorDescriptor desc = new GeneratorDescriptor();
+      desc.load(stream);
+      myGenerators.add(desc);
+    }
+
+    myExtendedLanguages.clear();
+    for (int size = stream.readInt(); size > 0; size--) {
+      myExtendedLanguages.add(stream.readModuleReference());
+    }
+
+    myRuntimeModules.clear();
+    for (int size = stream.readInt(); size > 0; size--) {
+      myRuntimeModules.add(stream.readModuleReference());
+    }
+
+    if (stream.readByte() != 0xac) throw new IOException("bad stream");
   }
 }

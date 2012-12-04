@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.persistence.binary;
+package jetbrains.mps.util.io;
 
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -26,6 +26,7 @@ import java.io.DataInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
@@ -40,6 +41,18 @@ public class ModelInputStream extends DataInputStream {
 
   public ModelInputStream(InputStream in) {
     super(new BufferedInputStream(in, 65536));
+  }
+
+  public Collection<String> readStrings() throws IOException {
+    int size = readInt();
+    if (size == -1) {
+      return null;
+    }
+    List<String> result = new ArrayList<String>(size);
+    for (; size > 0; size--) {
+      result.add(readString());
+    }
+    return result;
   }
 
   public String readString() throws IOException {

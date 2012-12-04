@@ -19,12 +19,13 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.RefUpdateUtil;
 import jetbrains.mps.smodel.SModelReference;
 
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
+
+  public static final int PERSISTENCE_ID = 0x55550004;
+
   private ModuleReference myGenerator;
   private MappingConfig_AbstractRef myMappingConfig;
 
@@ -63,7 +64,7 @@ public class MappingConfig_ExternalRef extends MappingConfig_AbstractRef {
 
   @Override
   public boolean updateReferences() {
-    Set<ModuleReference> set = new HashSet<ModuleReference> ();
+    Set<ModuleReference> set = new HashSet<ModuleReference>();
     set.add(myGenerator);
     boolean result = RefUpdateUtil.updateModuleRefs(set);
     myGenerator = set.iterator().next();

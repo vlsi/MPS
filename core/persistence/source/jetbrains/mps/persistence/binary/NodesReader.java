@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.io.ModelInputStream;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;

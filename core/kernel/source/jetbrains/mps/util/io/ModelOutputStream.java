@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.persistence.binary;
+package jetbrains.mps.util.io;
 
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -31,6 +31,7 @@ import java.io.BufferedOutputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
@@ -40,9 +41,9 @@ import java.util.UUID;
  */
 public class ModelOutputStream extends DataOutputStream {
 
-  private Map<String,Integer> stringToIndex = new HashMap<String, Integer>();
-  private Map<SModelReference,Integer> modelrefToIndex = new HashMap<SModelReference, Integer>();
-  private Map<ModuleReference,Integer> moduleRefToIndex = new HashMap<ModuleReference, Integer>();
+  private Map<String, Integer> stringToIndex = new HashMap<String, Integer>();
+  private Map<SModelReference, Integer> modelrefToIndex = new HashMap<SModelReference, Integer>();
+  private Map<ModuleReference, Integer> moduleRefToIndex = new HashMap<ModuleReference, Integer>();
   private int myStringIndex = 0;
   private int myRefIndex = 0;
   private int myModuleRefIndex = 0;
@@ -51,14 +52,23 @@ public class ModelOutputStream extends DataOutputStream {
     super(new BufferedOutputStream(out, 65536));
   }
 
+  public void writeStrings(@Nullable Collection<String> c) throws IOException {
+    writeInt(c == null ? -1 : c.size());
+    if (c != null) {
+      for (String s : c) {
+        writeString(s);
+      }
+    }
+  }
+
   public void writeString(@Nullable String s) throws IOException {
     if (s == null) {
       writeByte(0x70);
     } else {
       Integer index = stringToIndex.get(s);
-      if(index == null) {
+      if (index == null) {
         stringToIndex.put(s, myStringIndex++);
-        while(s.length() > 16384) {
+        while (s.length() > 16384) {
           String prefix = s.substring(0, 16384);
           writeByte(42);
           writeUTF(prefix);
@@ -80,7 +90,7 @@ public class ModelOutputStream extends DataOutputStream {
       Integer index = moduleRefToIndex.get(ref);
       if (index == null) {
         moduleRefToIndex.put(ref, myModuleRefIndex++);
-        if(ref.getModuleId() != null) {
+        if (ref.getModuleId() != null) {
           writeByte(0x17);
           writeModuleID(ref.getModuleId());
         } else {
@@ -97,12 +107,12 @@ public class ModelOutputStream extends DataOutputStream {
   public void writeModuleID(ModuleId id) throws IOException {
     if (id == null) {
       writeByte(0x70);
-    } else if(id instanceof ModuleId.Regular) {
+    } else if (id instanceof ModuleId.Regular) {
       writeByte(0x48);
-      UUID uuid = ((ModuleId.Regular)id).getUUID();
+      UUID uuid = ((ModuleId.Regular) id).getUUID();
       writeLong(uuid.getMostSignificantBits());
       writeLong(uuid.getLeastSignificantBits());
-    } else if(id instanceof ModuleId.Foreign) {
+    } else if (id instanceof ModuleId.Foreign) {
       writeByte(0x47);
       writeString(((ModuleId.Foreign) id).getName());
     } else {
@@ -110,14 +120,15 @@ public class ModelOutputStream extends DataOutputStream {
     }
 
   }
+
   public void writeModelReference(SModelReference ref) throws IOException {
     if (ref == null) {
       writeByte(0x70);
     } else {
       Integer index = modelrefToIndex.get(ref);
-      if(index == null) {
+      if (index == null) {
         modelrefToIndex.put(ref, myRefIndex++);
-        if(ref.getSModelId() != null) {
+        if (ref.getSModelId() != null) {
           writeByte(7);
           writeModelID(ref.getSModelId());
         } else {
@@ -134,12 +145,12 @@ public class ModelOutputStream extends DataOutputStream {
   public void writeModelID(SModelId id) throws IOException {
     if (id == null) {
       writeByte(0x70);
-    } else if(id instanceof RegularSModelId) {
+    } else if (id instanceof RegularSModelId) {
       writeByte(0x28);
-      UUID uuid = ((RegularSModelId)id).getId();
+      UUID uuid = ((RegularSModelId) id).getId();
       writeLong(uuid.getMostSignificantBits());
       writeLong(uuid.getLeastSignificantBits());
-    } else if(id instanceof ForeignSModelId) {
+    } else if (id instanceof ForeignSModelId) {
       writeByte(0x27);
       writeString(((ForeignSModelId) id).getId());
     } else {
@@ -151,10 +162,10 @@ public class ModelOutputStream extends DataOutputStream {
   public void writeNodeId(SNodeId id) throws IOException {
     if (id == null) {
       writeByte(0x70);
-    } else if(id instanceof Regular) {
+    } else if (id instanceof Regular) {
       writeByte(0x18);
-      writeLong(((Regular)id).getId());
-    } else if(id instanceof Foreign) {
+      writeLong(((Regular) id).getId());
+    } else if (id instanceof Foreign) {
       writeByte(0x17);
       writeString(id.toString());
     } else {
