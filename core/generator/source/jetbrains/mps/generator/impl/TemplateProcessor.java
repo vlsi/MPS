@@ -36,6 +36,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -174,7 +175,7 @@ public class TemplateProcessor {
         );
         outputNode.setReference(postponedReference.getRole(), postponedReference);
       } else {
-        outputNode.setReferenceTarget(reference.getRole(), templateReferentNode);
+        SNodeAccessUtil.setReferenceTarget(outputNode, reference.getRole(), templateReferentNode);
       }
     }
 

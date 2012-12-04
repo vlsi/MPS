@@ -61,6 +61,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 
@@ -663,7 +664,7 @@ public class ConceptPropertiesHelper {
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("value", "true");
+    SNodeAccessUtil.setProperty(quotedNode_2, "value", "true");
     quotedNode_1.addChild("expression", quotedNode_2);
     return quotedNode_1;
   }
@@ -954,14 +955,14 @@ public class ConceptPropertiesHelper {
   private static SNode _quotation_createNode_azpnkk_a0a0a0c0bb(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Component", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("editorComponent", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "editorComponent", (SNode) parameter_1);
     return quotedNode_2;
   }
 
   private static SNode _quotation_createNode_azpnkk_a0a0a0a2a72(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Component", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("editorComponent", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "editorComponent", (SNode) parameter_1);
     return quotedNode_2;
   }
 

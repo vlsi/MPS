@@ -12,6 +12,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.script.runtime.StubRefUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
@@ -64,7 +65,7 @@ public class Mps25ApiMigrationStandalone_MigrationScript extends BaseMigrationSc
     SNode quotedNode_10 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.standalone.structure.GetToolInProjectOperation", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setReferenceTarget("tool", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_4, "tool", (SNode) parameter_1);
     quotedNode_3.addChild("operation", quotedNode_4);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_6 = (SNode) parameter_2;

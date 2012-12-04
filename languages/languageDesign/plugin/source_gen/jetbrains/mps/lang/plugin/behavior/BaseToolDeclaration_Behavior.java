@@ -11,6 +11,7 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.checkedName.PropertyReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
@@ -54,7 +55,7 @@ public class BaseToolDeclaration_Behavior {
   private static SNode _quotation_createNode_7ol7e8_a0a3(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.plugin.structure.ToolType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("tool", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "tool", (SNode) parameter_1);
     return quotedNode_2;
   }
 

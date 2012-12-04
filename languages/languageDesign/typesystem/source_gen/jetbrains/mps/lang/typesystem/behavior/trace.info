@@ -633,32 +633,32 @@
     <unitInfo nodeId="1268659616153695021" fileName="AbstractSubtypingRule_Behavior.java" startLine="12" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.AbstractSubtypingRule_Behavior" />
   </root>
   <root nodeId="160921426017537691" modelId="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)">
-    <nodeInfo nodeId="160921426017537700" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="19" startPosition="78" endLine="20" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="20" startPosition="30" endLine="21" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="21" startPosition="159" endLine="22" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="22" startPosition="68" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="160921426017537691" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="20" startPosition="30" endLine="22" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="20" startPosition="30" endLine="22" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="160921426017537691" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="19" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_fiyp4x_a0a0#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="160921426017537693" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="12" startPosition="43" endLine="12" endPosition="43" />
-    <scopeInfo nodeId="160921426017537697" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="229" />
-    <scopeInfo nodeId="160921426017537691" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="12" startPosition="0" endLine="14" endPosition="0">
+    <nodeInfo nodeId="160921426017537700" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="20" startPosition="78" endLine="21" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="21" startPosition="30" endLine="22" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="22" startPosition="159" endLine="23" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="23" startPosition="85" endLine="24" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="160921426017537691" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="21" startPosition="30" endLine="23" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="21" startPosition="30" endLine="23" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="160921426017537691" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getExpectedReturnType_1213877374441#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="20" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_fiyp4x_a0a0#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="160921426017537693" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="160921426017537697" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="16" startPosition="83" endLine="17" endPosition="229" />
+    <scopeInfo nodeId="160921426017537691" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="160921426017537691" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="20" startPosition="30" endLine="22" endPosition="68" />
-    <scopeInfo nodeId="160921426017537691" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+    <scopeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="21" startPosition="30" endLine="23" endPosition="85" />
+    <scopeInfo nodeId="160921426017537691" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="160921426017537691" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="19" startPosition="78" endLine="23" endPosition="24">
+    <scopeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="20" startPosition="78" endLine="24" endPosition="24">
       <varInfo nodeId="160921426017537702" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="19" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="160921426017537702" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="20" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="160921426017537702" varName="parameter_1" />
     </scopeInfo>
-    <unitInfo nodeId="160921426017537691" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="11" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.DependentComputationItem_FindMasterBlock_Behavior" />
+    <unitInfo nodeId="160921426017537691" fileName="DependentComputationItem_FindMasterBlock_Behavior.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.typesystem.behavior.DependentComputationItem_FindMasterBlock_Behavior" />
   </root>
   <root nodeId="3350570190399391695" modelId="r:00000000-0000-4000-0000-011c895902ad(jetbrains.mps.lang.typesystem.behavior)">
     <nodeInfo nodeId="3350570190399462396" fileName="WhenConcreteVariableDeclaration_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

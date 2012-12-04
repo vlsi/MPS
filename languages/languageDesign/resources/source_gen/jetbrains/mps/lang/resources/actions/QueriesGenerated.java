@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static List<INodeSubstituteAction> nodeSubstituteActionsBuilder_ActionsFactory_Expression_8814893218132458892(final IOperationContext operationContext, final NodeSubstituteActionsFactoryContext _context) {
@@ -57,7 +58,7 @@ public class QueriesGenerated {
   private static SNode _quotation_createNode_u7cy7b_a0a0a0a(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.resources.structure.IconResourceReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("declaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "declaration", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

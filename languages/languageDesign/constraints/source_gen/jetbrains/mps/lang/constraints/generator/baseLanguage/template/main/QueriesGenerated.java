@@ -31,6 +31,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_6490356536635245644(final IOperationContext operationContext, final CreateRootRuleContext _context) {
@@ -503,7 +504,7 @@ public class QueriesGenerated {
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("value", "true");
+    SNodeAccessUtil.setProperty(quotedNode_3, "value", "true");
     quotedNode_2.addChild("expression", quotedNode_3);
     quotedNode_1.addChild("statement", quotedNode_2);
     return quotedNode_1;

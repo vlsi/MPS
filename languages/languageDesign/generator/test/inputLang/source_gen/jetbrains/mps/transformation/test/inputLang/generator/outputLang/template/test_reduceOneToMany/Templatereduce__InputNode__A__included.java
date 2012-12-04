@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateUtil;
@@ -26,7 +27,7 @@ public class Templatereduce__InputNode__A__included implements TemplateDeclarati
     try {
       environment.getTracer().pushTemplateNode(templateNode_11yy5k_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480251692");
-      tnode1.setProperty("text", "child included #1");
+      SNodeAccessUtil.setProperty(tnode1, "text", "child included #1");
 
     } finally {
       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
@@ -40,7 +41,7 @@ public class Templatereduce__InputNode__A__included implements TemplateDeclarati
     try {
       environment.getTracer().pushTemplateNode(templateNode_11yy5k_a0a0a1a3);
       environment.nodeCopied(context, tnode2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480277769");
-      tnode2.setProperty("text", "child included #2");
+      SNodeAccessUtil.setProperty(tnode2, "text", "child included #2");
 
     } finally {
       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode2));

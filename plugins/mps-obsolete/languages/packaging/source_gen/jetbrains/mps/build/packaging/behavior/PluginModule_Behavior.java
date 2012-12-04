@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class PluginModule_Behavior {
   public static void init(SNode thisNode) {
@@ -68,7 +69,7 @@ public class PluginModule_Behavior {
   private static SNode _quotation_createNode_yq0j9l_a2a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("name", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, "name", (String) parameter_1);
     return quotedNode_2;
   }
 }

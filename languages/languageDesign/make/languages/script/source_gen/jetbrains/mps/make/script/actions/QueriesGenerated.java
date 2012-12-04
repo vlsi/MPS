@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_Statement_2360002718792651973(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
@@ -280,7 +281,7 @@ public class QueriesGenerated {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.ReportFeedbackStatement", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("feedback", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, "feedback", (String) parameter_1);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.addChild("message", quotedNode_3);
     return quotedNode_2;
@@ -302,7 +303,7 @@ public class QueriesGenerated {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.AdvanceWorkStatement", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("workStatement", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "workStatement", (SNode) parameter_1);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Expression", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.addChild("amount", quotedNode_3);
     return quotedNode_2;
@@ -311,7 +312,7 @@ public class QueriesGenerated {
   private static SNode _quotation_createNode_kz2qu0_a0a0a4a(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.make.script.structure.FinishWorkStatement", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("workStatement", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "workStatement", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

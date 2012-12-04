@@ -13,6 +13,7 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.MPSCore;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import jetbrains.mps.smodel.SReference;
@@ -75,10 +76,10 @@ public class ChangeSetBuilder {
       }
     }
 
-    String oldPresentableValue = propertySupport.fromInternalValue(oldNode.getProperty(name));
-    String newPresentableValue = propertySupport.fromInternalValue(newNode.getProperty(name));
+    String oldPresentableValue = propertySupport.fromInternalValue(SNodeAccessUtil.getProperty(oldNode, name));
+    String newPresentableValue = propertySupport.fromInternalValue(SNodeAccessUtil.getProperty(newNode, name));
     if (!(EqualUtil.equals(oldPresentableValue, newPresentableValue))) {
-      ListSequence.fromList(myNewChanges).addElement(new SetPropertyChange(myChangeSet, oldNode.getSNodeId(), name, newNode.getProperty(name)));
+      ListSequence.fromList(myNewChanges).addElement(new SetPropertyChange(myChangeSet, oldNode.getSNodeId(), name, SNodeAccessUtil.getProperty(newNode, name)));
     }
   }
 

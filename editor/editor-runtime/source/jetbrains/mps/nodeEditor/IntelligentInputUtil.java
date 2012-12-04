@@ -29,6 +29,10 @@ import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.SideTransformHintSubstituteActionsHelper;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.typesystem.inference.ITypeContextOwner;
+import jetbrains.mps.typesystem.inference.ITypechecking;
+import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
@@ -44,20 +48,28 @@ public class IntelligentInputUtil {
 
     return editorContext.executeCommand(new Computable<Boolean>() {
       public Boolean compute() {
-        if (cell instanceof EditorCell_STHint) {
-          EditorCell_STHint rtHintCell = (EditorCell_STHint) cell;
-          return processSTHintCell(rtHintCell, editorContext, pattern);
-        }
+        return TypeContextManager.getInstance().runTypeCheckingComputation(
+          (ITypeContextOwner)editorContext.getEditorComponent(),
+          editorContext.getEditorComponent().getEditedNode().getTopmostAncestor(),
+          new Computation<Boolean>() {
+          @Override
+          public Boolean compute(TypeCheckingContext context) {
+            if (cell instanceof EditorCell_STHint) {
+              EditorCell_STHint rtHintCell = (EditorCell_STHint) cell;
+              return processSTHintCell(rtHintCell, editorContext, pattern);
+            }
 
-        if (side == CellSide.LEFT) {
-          String head = "" + pattern.charAt(0);
-          String smallPattern = pattern.substring(1);
-          return processCellAtStart(cell, editorContext, head, smallPattern);
-        } else {
-          String smallPattern = pattern.substring(0, pattern.length() - 1);
-          String tail = pattern.substring(pattern.length() - 1, pattern.length());
-          return processCellAtEnd(cell, editorContext, smallPattern, tail);
-        }
+            if (side == CellSide.LEFT) {
+              String head = "" + pattern.charAt(0);
+              String smallPattern = pattern.substring(1);
+              return processCellAtStart(cell, editorContext, head, smallPattern);
+            } else {
+              String smallPattern = pattern.substring(0, pattern.length() - 1);
+              String tail = pattern.substring(pattern.length() - 1, pattern.length());
+              return processCellAtEnd(cell, editorContext, smallPattern, tail);
+            }
+          }
+        });
       }
     });
   }

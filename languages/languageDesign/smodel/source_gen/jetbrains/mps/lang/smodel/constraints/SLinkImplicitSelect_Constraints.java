@@ -16,10 +16,12 @@ import jetbrains.mps.smodel.runtime.base.BaseReferenceScopeProvider;
 import jetbrains.mps.smodel.runtime.ReferenceConstraintsContext;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 
 public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
   public SLinkImplicitSelect_Constraints() {
@@ -57,7 +59,7 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
         return new BaseReferenceScopeProvider() {
           @Override
           public Object createSearchScopeOrListOfNodes(final IOperationContext operationContext, final ReferenceConstraintsContext _context) {
-            return AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeListType"), true), "elementConcept", false));
+            return AbstractConceptDeclaration_Behavior.call_getLinkDeclarations_1213877394480(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.as(_context.getEnclosingNode(), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), new SLinkImplicitSelect_Constraints.Pattern_f4oi2a_a1a0a0a0a0a0a0a0b0a1a0b0d(), true), "elementType", true), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false));
           }
 
           @Override
@@ -71,7 +73,117 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.as(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.lang.smodel.structure.SNodeListType"), true) != null);
+    return (TypeChecker.getInstance().getRuntimeSupport().coerce_(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SNodeOperations.as(parentNode, "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true)), new SLinkImplicitSelect_Constraints.Pattern_f4oi2a_a1a0a0a4(), true) != null);
+  }
+
+  public static class Pattern_f4oi2a_a1a0a0a0a0a0a0a0b0a1a0b0d extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ SNode patternVar_nodeType;
+
+    public Pattern_f4oi2a_a1a0a0a0a0a0a0a0b0a1a0b0d() {
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0;
+        nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0.getConcept().getId()))) {
+          return false;
+        }
+        {
+          String childRole_SLinkImplicitSelect_Constraints_f4oi2a_ = "elementType";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0, childRole_SLinkImplicitSelect_Constraints_f4oi2a_, 1))) {
+            return false;
+          }
+          {
+            SNode childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a = nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0.getChildren(childRole_SLinkImplicitSelect_Constraints_f4oi2a_).get(0);
+            {
+              SNode nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a;
+              nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a = childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a;
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a.getConcept().getId()))) {
+                return false;
+              }
+              patternVar_nodeType = nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a.getReferenceTarget("concept");
+            }
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return false;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
+        patternVar_nodeType = (SNode) pattern.getFieldValue("patternVar_nodeType");
+      }
+    }
+
+    public Object getFieldValue(String fieldName) {
+      if ("patternVar_nodeType".equals(fieldName)) {
+        return patternVar_nodeType;
+      }
+      return null;
+    }
+
+    public void performActions(Object o) {
+    }
+  }
+
+  public static class Pattern_f4oi2a_a1a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ SNode patternVar_nodeType;
+
+    public Pattern_f4oi2a_a1a0a0a4() {
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0;
+        nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0 = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.collections.structure.SequenceType".equals(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0.getConcept().getId()))) {
+          return false;
+        }
+        {
+          String childRole_SLinkImplicitSelect_Constraints_f4oi2a__0 = "elementType";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0, childRole_SLinkImplicitSelect_Constraints_f4oi2a__0, 1))) {
+            return false;
+          }
+          {
+            SNode childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a = nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0.getChildren(childRole_SLinkImplicitSelect_Constraints_f4oi2a__0).get(0);
+            {
+              SNode nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a;
+              nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a = childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a;
+              if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a.getConcept().getId()))) {
+                return false;
+              }
+              patternVar_nodeType = nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a.getReferenceTarget("concept");
+            }
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return false;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
+        patternVar_nodeType = (SNode) pattern.getFieldValue("patternVar_nodeType");
+      }
+    }
+
+    public Object getFieldValue(String fieldName) {
+      if ("patternVar_nodeType".equals(fieldName)) {
+        return patternVar_nodeType;
+      }
+      return null;
+    }
+
+    public void performActions(Object o) {
+    }
   }
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:00000000-0000-4000-0000-011c895902fb(jetbrains.mps.lang.smodel.constraints)", "8405512791876074476");

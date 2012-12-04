@@ -17,6 +17,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class Mps25JavaApiMigration_MigrationScript extends BaseMigrationScript {
@@ -82,7 +83,7 @@ public class Mps25JavaApiMigration_MigrationScript extends BaseMigrationScript {
     SNode quotedNode_18 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("nonStatic", "true");
+    SNodeAccessUtil.setProperty(quotedNode_3, "nonStatic", "true");
     quotedNode_3.setReference("classifier", SReference.create("classifier", quotedNode_3, SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)"), SNodeId.fromString("~DefaultEditorMessage")));
     quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)"), SNodeId.fromString("~DefaultEditorMessage.<init>(jetbrains.mps.smodel.SNode,java.awt.Color,java.lang.String,jetbrains.mps.nodeEditor.EditorMessageOwner)")));
     {
@@ -94,28 +95,28 @@ public class Mps25JavaApiMigration_MigrationScript extends BaseMigrationScript {
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
     quotedNode_3.addChild("visibility", quotedNode_5);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6.setProperty("isDeprecated", "false");
-    quotedNode_6.setProperty("isAbstract", "false");
-    quotedNode_6.setProperty("name", "paint");
-    quotedNode_6.setProperty("isFinal", "false");
+    SNodeAccessUtil.setProperty(quotedNode_6, "isDeprecated", "false");
+    SNodeAccessUtil.setProperty(quotedNode_6, "isAbstract", "false");
+    SNodeAccessUtil.setProperty(quotedNode_6, "name", "paint");
+    SNodeAccessUtil.setProperty(quotedNode_6, "isFinal", "false");
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
     quotedNode_6.addChild("visibility", quotedNode_7);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
     quotedNode_6.addChild("returnType", quotedNode_8);
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_9.setProperty("name", "graphics");
+    SNodeAccessUtil.setProperty(quotedNode_9, "name", "graphics");
     quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_14.setReference("classifier", SReference.create("classifier", quotedNode_14, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)"), SNodeId.fromString("~Graphics")));
     quotedNode_9.addChild("type", quotedNode_14);
     quotedNode_6.addChild("parameter", quotedNode_9);
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_10.setProperty("name", "component");
+    SNodeAccessUtil.setProperty(quotedNode_10, "name", "component");
     quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_15.setReference("classifier", SReference.create("classifier", quotedNode_15, SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor(MPS.Editor/jetbrains.mps.nodeEditor@java_stub)"), SNodeId.fromString("~EditorComponent")));
     quotedNode_10.addChild("type", quotedNode_15);
     quotedNode_6.addChild("parameter", quotedNode_10);
     quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_11.setProperty("name", "cell");
+    SNodeAccessUtil.setProperty(quotedNode_11, "name", "cell");
     quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_16.setReference("classifier", SReference.create("classifier", quotedNode_16, SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.cells(MPS.Editor/jetbrains.mps.nodeEditor.cells@java_stub)"), SNodeId.fromString("~EditorCell")));
     quotedNode_11.addChild("type", quotedNode_16);
@@ -123,7 +124,7 @@ public class Mps25JavaApiMigration_MigrationScript extends BaseMigrationScript {
     quotedNode_12 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SingleLineComment", null, null, GlobalScope.getInstance(), false);
     quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TextCommentPart", null, null, GlobalScope.getInstance(), false);
-    quotedNode_18.setProperty("text", "nothing");
+    SNodeAccessUtil.setProperty(quotedNode_18, "text", "nothing");
     quotedNode_17.addChild("commentPart", quotedNode_18);
     quotedNode_12.addChild("statement", quotedNode_17);
     quotedNode_6.addChild("body", quotedNode_12);

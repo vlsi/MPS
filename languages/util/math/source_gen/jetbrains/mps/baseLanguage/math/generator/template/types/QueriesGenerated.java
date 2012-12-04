@@ -23,6 +23,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueriesGenerated {
@@ -1992,7 +1993,7 @@ public class QueriesGenerated {
   private static SNode _quotation_createNode_x583g4_a0a0a0pg() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("value", "0");
+    SNodeAccessUtil.setProperty(quotedNode_1, "value", "0");
     return quotedNode_1;
   }
 
@@ -2136,7 +2137,7 @@ public class QueriesGenerated {
       quotedNode_2.addChild("rightExpression", HUtil.copyIfNecessary(quotedNode_3));
     }
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("value", "0");
+    SNodeAccessUtil.setProperty(quotedNode_4, "value", "0");
     quotedNode_2.addChild("leftExpression", quotedNode_4);
     return quotedNode_2;
   }
@@ -2151,7 +2152,7 @@ public class QueriesGenerated {
       quotedNode_2.addChild("rightExpression", HUtil.copyIfNecessary(quotedNode_3));
     }
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("value", "0");
+    SNodeAccessUtil.setProperty(quotedNode_4, "value", "0");
     quotedNode_2.addChild("leftExpression", quotedNode_4);
     return quotedNode_2;
   }
@@ -2159,7 +2160,7 @@ public class QueriesGenerated {
   private static SNode _quotation_createNode_x583g4_a0a653() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("value", "1");
+    SNodeAccessUtil.setProperty(quotedNode_1, "value", "1");
     return quotedNode_1;
   }
 
@@ -2173,7 +2174,7 @@ public class QueriesGenerated {
       quotedNode_2.addChild("rightExpression", HUtil.copyIfNecessary(quotedNode_3));
     }
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("value", "0");
+    SNodeAccessUtil.setProperty(quotedNode_4, "value", "0");
     quotedNode_2.addChild("leftExpression", quotedNode_4);
     return quotedNode_2;
   }
@@ -2181,14 +2182,14 @@ public class QueriesGenerated {
   private static SNode _quotation_createNode_x583g4_a0a0a853() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("value", "1");
+    SNodeAccessUtil.setProperty(quotedNode_1, "value", "1");
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0a0un() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("value", "-1");
+    SNodeAccessUtil.setProperty(quotedNode_1, "value", "-1");
     return quotedNode_1;
   }
 }

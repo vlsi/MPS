@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.generator.GenerationTracerUtil;
@@ -27,8 +28,8 @@ public class TemplateOutputRoot implements TemplateDeclaration {
     try {
       environment.getTracer().pushTemplateNode(templateNode_q702qm_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/3893401255414086886");
-      tnode1.setProperty("name", "OutputRoot");
-      tnode1.setProperty("text", "chilren were generated from a single child in input node.");
+      SNodeAccessUtil.setProperty(tnode1, "name", "OutputRoot");
+      SNodeAccessUtil.setProperty(tnode1, "text", "chilren were generated from a single child in input node.");
 
       {
         Collection<SNode> tlist2 = null;

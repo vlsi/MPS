@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class StaticFieldReference_DeleteDot {
   public static void setCellActions(EditorCell editorCell, SNode node, EditorContext context) {
@@ -35,7 +36,7 @@ public class StaticFieldReference_DeleteDot {
     private static SNode _quotation_createNode_65e73j_a0a0a0a(Object parameter_1) {
       SNode quotedNode_2 = null;
       quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AbstractClassifierReference", null, null, GlobalScope.getInstance(), false);
-      quotedNode_2.setReferenceTarget("classifier", (SNode) parameter_1);
+      SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
       return quotedNode_2;
     }
   }

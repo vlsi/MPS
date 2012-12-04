@@ -31,6 +31,7 @@ import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.PatternUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.util.*;
 import java.util.regex.Matcher;
@@ -215,7 +216,7 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
     public SNode doSubstitute(String pattern) {
       String propertyName = myPropertyName;
       assert propertyName != null;
-      getSourceNode().setProperty(propertyName, myPostfixGroup.getMatchingText(pattern, myPostfix));
+      SNodeAccessUtil.setProperty(getSourceNode(), propertyName, myPostfixGroup.getMatchingText(pattern, myPostfix));
 
       myEditorContext.flushEvents();
 

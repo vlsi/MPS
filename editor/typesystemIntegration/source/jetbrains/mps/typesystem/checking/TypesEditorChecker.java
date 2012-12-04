@@ -36,7 +36,8 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
-import jetbrains.mps.typesystem.inference.ITypecheckingAction;
+import jetbrains.mps.typesystem.inference.ITypechecking;
+import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.NameUtil;
@@ -55,14 +56,14 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
 
   public Set<EditorMessage> createMessages(final SNode rootNode, List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext) {
     myMessagesChanged = false;
-    final Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
-    TypeContextManager.getInstance().runTypeCheckingAction(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), rootNode, new ITypecheckingAction() {
+    return TypeContextManager.getInstance().runTypeCheckingComputation(((EditorComponent) editorContext.getEditorComponent()).getTypecheckingContextOwner(), rootNode, new Computation<Set<EditorMessage>>() {
       @Override
-      public void run(final TypeCheckingContext context) {
+      public Set<EditorMessage> compute(final TypeCheckingContext context) {
+        final Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
         doCreateMessages(context, wasCheckedOnce, editorContext, rootNode, messages);
+        return messages;
       }
     });
-    return messages;
   }
 
   private void doCreateMessages(final TypeCheckingContext context, final boolean wasCheckedOnce, final EditorContext editorContext, final SNode rootNode, final Set<EditorMessage> messages) {

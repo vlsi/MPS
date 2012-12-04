@@ -5,6 +5,7 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 
@@ -48,11 +49,11 @@ public interface IAttributeDescriptor {
     }
 
     public boolean match(@NotNull SNode attribute) {
-      return super.match(attribute) && (myLinkRole == null || myLinkRole.equals(attribute.getProperty("linkRole")));
+      return super.match(attribute) && (myLinkRole == null || myLinkRole.equals(SNodeAccessUtil.getProperty(attribute, "linkRole")));
     }
 
     public void update(@NotNull SNode attribute) {
-      attribute.setProperty("linkRole", myLinkRole);
+      SNodeAccessUtil.setProperty(attribute, "linkRole", myLinkRole);
     }
   }
 
@@ -65,11 +66,11 @@ public interface IAttributeDescriptor {
     }
 
     public boolean match(@NotNull SNode attribute) {
-      return super.match(attribute) && (myPropertyName == null || myPropertyName.equals(attribute.getProperty("propertyName")));
+      return super.match(attribute) && (myPropertyName == null || myPropertyName.equals(SNodeAccessUtil.getProperty(attribute, "propertyName")));
     }
 
     public void update(@NotNull SNode attribute) {
-      attribute.setProperty("propertyName", myPropertyName);
+      SNodeAccessUtil.setProperty(attribute, "propertyName", myPropertyName);
     }
   }
 

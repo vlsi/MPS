@@ -9,6 +9,7 @@ import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.checkedName.PropertyReference;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class FixNamingPolicy_QuickFix extends QuickFix_Runtime {
   public FixNamingPolicy_QuickFix() {
@@ -23,9 +24,9 @@ public class FixNamingPolicy_QuickFix extends QuickFix_Runtime {
       SPropertyOperations.set(s, "value", NameUtil.captionPartWithNamingPolicy(SPropertyOperations.getString(s, "value")));
     }
     for (PropertyReference p : BehaviorReflection.invokeVirtual((Class<List<PropertyReference>>) ((Class) Object.class), ((SNode) FixNamingPolicy_QuickFix.this.getField("nodeToFix")[0]), "virtual_getPropertiesToCheck_4844813484172611445", new Object[]{})) {
-      String value = p.getNode().getProperty(p.getProperty());
+      String value = SNodeAccessUtil.getProperty(p.getNode(), p.getProperty());
       String newValue = NameUtil.captionWithNamingPolicy(value);
-      p.getNode().setProperty(p.getProperty(), newValue);
+      SNodeAccessUtil.setProperty(p.getNode(), p.getProperty(), newValue);
     }
   }
 }
