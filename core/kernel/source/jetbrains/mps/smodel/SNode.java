@@ -734,22 +734,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(conceptFqName));
   }
 
-  public String getConceptProperty(String propertyName) {
-    SNode conceptProperty = findConceptProperty(propertyName);
-    Object o = SNodeUtil.getConceptPropertyValue(conceptProperty);
-    return o != null ? o.toString() : null;
-  }
-
-  public SNode findConceptProperty(String propertyName) {
-    SNode conceptDeclaration;
-    if (myConceptFqName.equals(SNodeUtil.concept_ConceptDeclaration) || myConceptFqName.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
-      conceptDeclaration = this;
-    } else {
-      conceptDeclaration = SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
-    }
-    return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
-  }
-
   public SModel getModel() {
     ModelAccess.assertLegalRead(this);
     assertDisposed();
@@ -1221,6 +1205,36 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       res.add(child);
     }
     return res;
+  }
+
+  @Deprecated
+  /**
+   * Not supposed to be used. Concept properties were eliminated in MPS 3.0
+   * by converting to BaseConcept properties mostly, and considering other
+   * cases individually
+   * @Deprecated in 3.0
+   */
+  public String getConceptProperty(String propertyName) {
+    SNode conceptProperty = findConceptProperty(propertyName);
+    Object o = SNodeUtil.getConceptPropertyValue(conceptProperty);
+    return o != null ? o.toString() : null;
+  }
+
+  @Deprecated
+  /**
+   * Not supposed to be used. Concept properties were eliminated in MPS 3.0
+   * by converting to BaseConcept properties mostly, and considering other
+   * cases individually
+   * @Deprecated in 3.0
+   */
+  public SNode findConceptProperty(String propertyName) {
+    SNode conceptDeclaration;
+    if (myConceptFqName.equals(SNodeUtil.concept_ConceptDeclaration) || myConceptFqName.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
+      conceptDeclaration = this;
+    } else {
+      conceptDeclaration = SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
+    }
+    return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
   }
 
   @Deprecated
