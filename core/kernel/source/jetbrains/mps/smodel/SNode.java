@@ -917,12 +917,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   //--------private classes-------
 
-  private static class InProgressThreadLocal extends ThreadLocal<Set<Pair<SNode, String>>> {
-    protected Set<Pair<SNode, String>> initialValue() {
-      return new HashSet<Pair<SNode, String>>();
-    }
-  }
-
   private static class ChildrenList extends AbstractImmutableList<SNode> {
     public ChildrenList(SNode first) {
       super(first);
