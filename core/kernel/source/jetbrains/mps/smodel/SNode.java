@@ -27,7 +27,6 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.containers.EmptyIterable;
@@ -178,7 +177,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     } else {
       myProperties[index + 1] = propertyValue;
     }
-    
+
     SModel model = getModel();
     if (model == null) return;
 
@@ -188,7 +187,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       model.firePropertyChangedEvent(this, propertyName, oldValue, propertyValue);
     }
   }
-  
+
   final public SNode getParent() {
     //todo: ModelAccess.assertLegalRead(this);
     return treeParent();
@@ -764,19 +763,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myModel;
   }
 
-  @Deprecated
-  /**
-   * Inline content in java code, use migration in MPS
-   * @Deprecated in 3.0
-   */
-  public void putProperties(SNode fromNode) {
-    if (fromNode == null) return;
-    if (fromNode.myProperties == null) return;
-    int len = fromNode.myProperties.length;
-    myProperties = new String[len];
-    System.arraycopy(fromNode.myProperties, 0, myProperties, 0, len);
-  }
-
   //--------seems these methods are not needed-------
 
   private int getPropertyIndex(String propertyName) {
@@ -1021,6 +1007,17 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Inline content in java code, not supposed to be used in MPS
+   * @Deprecated in 3.0
+   */
+  public void putProperties(SNode fromNode) {
+    for (String name : fromNode.getPropertyNames()) {
+      setProperty(name, fromNode.getProperty(name));
+    }
+  }
 
   @Deprecated
   /**
