@@ -46,11 +46,6 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
   }
 
   @Override
-  protected State createState() {
-    return new State(this);
-  }
-
-  @Override
   protected IncrementalTypechecking createTypechecking() {
     return new IncrementalTypechecking(getNode(), getState());
   }

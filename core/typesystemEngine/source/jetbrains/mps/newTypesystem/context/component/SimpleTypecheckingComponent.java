@@ -224,8 +224,12 @@ import java.util.Set;
     solveInequalitiesAndExpandTypes(finalExpansion);
   }
 
-  protected final SNode computeTypesForNode_special_(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
+  protected SNode computeTypesForNode_special_(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
     assert myFullyCheckedNodes.isEmpty();
+    return computeTypesForNode_special__(initialNode, givenAdditionalNodes);
+  }
+
+  protected SNode computeTypesForNode_special__(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
     SNode type = null;
     SNode prevNode = null;
     SNode node = initialNode;
