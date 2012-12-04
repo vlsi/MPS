@@ -619,12 +619,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   //-----------TO IMPLEMENT VIA OTHER METHODS--------------
   //-------------------------------------------------------
 
-  public String getConceptProperty(String propertyName) {
-    SNode conceptProperty = findConceptProperty(propertyName);
-    Object o = SNodeUtil.getConceptPropertyValue(conceptProperty);
-    return o != null ? o.toString() : null;
-  }
-
   //----root, deleted, etc.---
 
   /*
@@ -738,6 +732,12 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   public boolean isInstanceOfConcept(String conceptFqName) {
     return getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(conceptFqName));
+  }
+
+  public String getConceptProperty(String propertyName) {
+    SNode conceptProperty = findConceptProperty(propertyName);
+    Object o = SNodeUtil.getConceptPropertyValue(conceptProperty);
+    return o != null ? o.toString() : null;
   }
 
   public SNode findConceptProperty(String propertyName) {
