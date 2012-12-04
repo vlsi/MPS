@@ -705,6 +705,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   public void setConceptFqName(@NotNull String conceptFQName) {
     myConceptFqName = InternUtil.intern(conceptFQName);
+    //MihMuh: that's strange since we try not to mark models as changed after refactorings
     SModelRepository.getInstance().markChanged(getModel());
   }
 
