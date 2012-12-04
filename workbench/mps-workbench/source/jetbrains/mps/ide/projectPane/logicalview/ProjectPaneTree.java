@@ -27,8 +27,8 @@ import jetbrains.mps.ide.projectPane.logicalview.highlighting.ProjectPaneTreeHig
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import javax.swing.tree.TreePath;
 import java.awt.datatransfer.DataFlavor;
@@ -151,7 +151,7 @@ public class ProjectPaneTree extends ProjectTree implements LogicalViewTree {
               String searchedPack = treeNode.getFullPackage();
               if (treeNode.getChildCount() == 0 || searchedPack == null) continue;
               for (final SNode node : contextDescriptor.getSModel().roots()) {
-                String nodePack = node.getProperty(SNodeUtil.property_BaseConcept_virtualPackage);
+                String nodePack = SNodeAccessUtil.getProperty(node, SNodeUtil.property_BaseConcept_virtualPackage);
                 if (nodePack == null) continue;
                 if (!nodePack.startsWith(searchedPack)) continue;
 

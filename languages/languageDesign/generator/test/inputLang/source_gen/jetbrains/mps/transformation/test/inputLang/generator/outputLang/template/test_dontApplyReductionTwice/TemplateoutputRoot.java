@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
@@ -26,15 +27,15 @@ public class TemplateoutputRoot implements TemplateDeclaration {
     try {
       environment.getTracer().pushTemplateNode(templateNode_9pkn2m_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f5/1209605205934");
-      tnode1.setProperty("name", "outputRoot");
-      tnode1.setProperty("text", "output for 'don't apply reduction rule twice' test");
+      SNodeAccessUtil.setProperty(tnode1, "name", "outputRoot");
+      SNodeAccessUtil.setProperty(tnode1, "text", "output for 'don't apply reduction rule twice' test");
 
       {
         final SNode tnode2 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode_forDontApplyReductionTwice_test");
         try {
           environment.getTracer().pushTemplateNode(templateNode_9pkn2m_a0a0a1a5a1a2);
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c895905f5/1209605724998");
-          tnode2.setProperty("text", "this is OutputNode_forDontApplyReductionTwice_test actually");
+          SNodeAccessUtil.setProperty(tnode2, "text", "this is OutputNode_forDontApplyReductionTwice_test actually");
 
         } finally {
           environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode2));

@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 @MPSLaunch
 public class AddParameter_Test extends BaseTransformationTest4 {
@@ -42,7 +43,7 @@ public class AddParameter_Test extends BaseTransformationTest4 {
       SNode quotedNode_1 = null;
       SNode quotedNode_2 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-      quotedNode_1.setProperty("name", "a");
+      SNodeAccessUtil.setProperty(quotedNode_1, "name", "a");
       quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CharType", null, null, GlobalScope.getInstance(), false);
       quotedNode_1.addChild("type", quotedNode_2);
       return quotedNode_1;

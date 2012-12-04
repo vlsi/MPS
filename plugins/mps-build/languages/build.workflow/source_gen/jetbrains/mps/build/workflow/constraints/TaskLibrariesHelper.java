@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.CopyUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -65,7 +66,7 @@ public class TaskLibrariesHelper {
       for (SReference ref : n.getReferences()) {
         SNode targetNode = ref.getTargetNodeSilently();
         if (map.containsKey(targetNode)) {
-          n.setReferenceTarget(ref.getRole(), map.get(targetNode));
+          SNodeAccessUtil.setReferenceTarget(n, ref.getRole(), map.get(targetNode));
         } else {
           SNode containingRoot = targetNode.getTopmostAncestor();
           if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(containingRoot, "jetbrains.mps.build.workflow.structure.BwfTaskLibrary")) {

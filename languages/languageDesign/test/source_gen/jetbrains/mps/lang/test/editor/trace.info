@@ -1505,282 +1505,282 @@
     <unitInfo nodeId="1215604450654" fileName="NodeOperationsContainer_Editor.java" startLine="27" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.lang.test.editor.NodeOperationsContainer_Editor" />
   </root>
   <root nodeId="1215607090776" modelId="r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)">
-    <nodeInfo nodeId="1215607090776" fileName="TypesCheckOperation_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215607090776" fileName="TypesCheckOperation_Editor.java" startLine="24" startPosition="82" endLine="25" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="28" startPosition="89" endLine="29" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="29" startPosition="99" endLine="30" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="29" startPosition="99" endLine="30" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="30" startPosition="48" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="30" startPosition="48" endLine="31" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="32" startPosition="44" endLine="33" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="34" startPosition="5" endLine="35" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="38" startPosition="91" endLine="39" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="39" startPosition="96" endLine="40" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="39" startPosition="96" endLine="40" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="40" startPosition="50" endLine="41" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="40" startPosition="50" endLine="41" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="41" startPosition="83" endLine="42" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="41" startPosition="83" endLine="42" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="42" startPosition="81" endLine="43" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="42" startPosition="81" endLine="43" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215607090776" fileName="TypesCheckOperation_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215607090776" fileName="TypesCheckOperation_Editor.java" startLine="25" startPosition="82" endLine="26" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="29" startPosition="89" endLine="30" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="30" startPosition="99" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="30" startPosition="99" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="33" startPosition="61" endLine="34" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="35" startPosition="5" endLine="36" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="39" startPosition="91" endLine="40" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="40" startPosition="96" endLine="41" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="40" startPosition="96" endLine="41" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="41" startPosition="50" endLine="42" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="41" startPosition="50" endLine="42" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="42" startPosition="83" endLine="43" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="42" startPosition="83" endLine="43" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="43" startPosition="81" endLine="44" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="43" startPosition="81" endLine="44" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="44" startPosition="81" endLine="45" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="44" startPosition="81" endLine="45" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="45" startPosition="81" endLine="46" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="45" startPosition="81" endLine="46" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="46" startPosition="81" endLine="47" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="50" startPosition="88" endLine="51" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="51" startPosition="97" endLine="52" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="52" startPosition="47" endLine="53" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="53" startPosition="77" endLine="54" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="54" startPosition="34" endLine="55" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="501631557342352978" fileName="TypesCheckOperation_Editor.java" startLine="58" startPosition="90" endLine="59" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="501631557342352978" fileName="TypesCheckOperation_Editor.java" startLine="59" startPosition="101" endLine="60" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="501631557342352978" fileName="TypesCheckOperation_Editor.java" startLine="59" startPosition="101" endLine="60" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="501631557342352978" fileName="TypesCheckOperation_Editor.java" startLine="60" startPosition="49" endLine="61" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="501631557342352978" fileName="TypesCheckOperation_Editor.java" startLine="61" startPosition="34" endLine="62" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="852155438140865207" fileName="TypesCheckOperation_Editor.java" startLine="65" startPosition="88" endLine="66" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="852155438140865207" fileName="TypesCheckOperation_Editor.java" startLine="66" startPosition="99" endLine="67" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="852155438140865207" fileName="TypesCheckOperation_Editor.java" startLine="66" startPosition="99" endLine="67" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140865207" fileName="TypesCheckOperation_Editor.java" startLine="67" startPosition="47" endLine="68" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140865207" fileName="TypesCheckOperation_Editor.java" startLine="68" startPosition="34" endLine="69" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="852155438140946398" fileName="TypesCheckOperation_Editor.java" startLine="72" startPosition="88" endLine="73" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="852155438140946398" fileName="TypesCheckOperation_Editor.java" startLine="73" startPosition="101" endLine="74" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="852155438140946398" fileName="TypesCheckOperation_Editor.java" startLine="73" startPosition="101" endLine="74" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140946398" fileName="TypesCheckOperation_Editor.java" startLine="74" startPosition="47" endLine="75" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140946398" fileName="TypesCheckOperation_Editor.java" startLine="75" startPosition="34" endLine="76" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="79" startPosition="88" endLine="80" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="80" startPosition="82" endLine="81" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="81" startPosition="38" endLine="82" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="82" startPosition="40" endLine="83" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="83" startPosition="40" endLine="84" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="84" startPosition="26" endLine="85" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="85" startPosition="58" endLine="86" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="87" startPosition="5" endLine="88" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="88" startPosition="42" endLine="89" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="90" startPosition="5" endLine="91" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="91" startPosition="73" endLine="92" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="92" startPosition="57" endLine="93" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="94" startPosition="35" endLine="95" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="95" startPosition="72" endLine="96" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="96" startPosition="78" endLine="97" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="98" startPosition="10" endLine="99" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="102" startPosition="88" endLine="103" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="103" startPosition="82" endLine="104" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="104" startPosition="36" endLine="105" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="105" startPosition="49" endLine="106" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="106" startPosition="26" endLine="107" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="107" startPosition="58" endLine="108" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="109" startPosition="5" endLine="110" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="110" startPosition="42" endLine="111" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="112" startPosition="5" endLine="113" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="113" startPosition="73" endLine="114" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="114" startPosition="57" endLine="115" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="116" startPosition="35" endLine="117" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="117" startPosition="72" endLine="118" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="118" startPosition="78" endLine="119" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="120" startPosition="10" endLine="121" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="124" startPosition="88" endLine="125" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="125" startPosition="82" endLine="126" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="126" startPosition="38" endLine="127" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="127" startPosition="51" endLine="128" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="128" startPosition="26" endLine="129" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="129" startPosition="58" endLine="130" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="131" startPosition="5" endLine="132" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="132" startPosition="42" endLine="133" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="134" startPosition="5" endLine="135" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="135" startPosition="73" endLine="136" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="136" startPosition="57" endLine="137" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="138" startPosition="35" endLine="139" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="139" startPosition="72" endLine="140" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="140" startPosition="78" endLine="141" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="142" startPosition="10" endLine="143" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="146" startPosition="96" endLine="147" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="147" startPosition="82" endLine="148" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="148" startPosition="38" endLine="149" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="149" startPosition="51" endLine="150" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="150" startPosition="40" endLine="151" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="151" startPosition="26" endLine="152" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="152" startPosition="58" endLine="153" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="152" startPosition="58" endLine="153" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="153" startPosition="53" endLine="154" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="154" startPosition="73" endLine="155" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="155" startPosition="57" endLine="156" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="157" startPosition="35" endLine="158" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="158" startPosition="72" endLine="159" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="159" startPosition="78" endLine="160" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="161" startPosition="10" endLine="162" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="51" startPosition="97" endLine="53" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1215607090776" fileName="TypesCheckOperation_Editor.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1215607090776" fileName="TypesCheckOperation_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="31" startPosition="81" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="31" startPosition="81" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="151" startPosition="26" endLine="154" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="86" startPosition="51" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="108" startPosition="49" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="130" startPosition="51" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="85" startPosition="58" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="107" startPosition="58" endLine="112" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="129" startPosition="58" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="501631557342352978" fileName="TypesCheckOperation_Editor.java" startLine="58" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_649p0a_a0_0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="852155438140865207" fileName="TypesCheckOperation_Editor.java" startLine="65" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_649p0a_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="852155438140946398" fileName="TypesCheckOperation_Editor.java" startLine="72" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_649p0a_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="93" startPosition="59" endLine="99" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="115" startPosition="59" endLine="121" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="137" startPosition="59" endLine="143" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="156" startPosition="59" endLine="162" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="50" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_649p0a_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="84" startPosition="26" endLine="91" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="106" startPosition="26" endLine="113" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="128" startPosition="26" endLine="135" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="28" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_649p0a_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="38" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_649p0a_a_0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="146" startPosition="0" endLine="164" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNonEmptyProperty_649p0a_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="102" startPosition="0" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_649p0a_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="124" startPosition="0" endLine="145" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_649p0a_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="79" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_649p0a_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <scopeInfo nodeId="1215607090776" fileName="TypesCheckOperation_Editor.java" startLine="20" startPosition="79" endLine="21" endPosition="63" />
-    <scopeInfo nodeId="1215607090776" fileName="TypesCheckOperation_Editor.java" startLine="24" startPosition="82" endLine="25" endPosition="65" />
-    <scopeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="29" startPosition="99" endLine="30" endPosition="48" />
-    <scopeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="30" startPosition="48" endLine="31" endPosition="81" />
-    <scopeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="32" startPosition="44" endLine="33" endPosition="91" />
-    <scopeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="39" startPosition="96" endLine="40" endPosition="50" />
-    <scopeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="40" startPosition="50" endLine="41" endPosition="83" />
-    <scopeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="41" startPosition="83" endLine="42" endPosition="81" />
-    <scopeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="42" startPosition="81" endLine="43" endPosition="81" />
+    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="46" startPosition="81" endLine="47" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="46" startPosition="81" endLine="47" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="47" startPosition="81" endLine="48" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="51" startPosition="88" endLine="52" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="52" startPosition="97" endLine="53" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="53" startPosition="47" endLine="54" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="54" startPosition="77" endLine="55" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="55" startPosition="34" endLine="56" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="501631557342352978" fileName="TypesCheckOperation_Editor.java" startLine="59" startPosition="90" endLine="60" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="501631557342352978" fileName="TypesCheckOperation_Editor.java" startLine="60" startPosition="101" endLine="61" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="501631557342352978" fileName="TypesCheckOperation_Editor.java" startLine="60" startPosition="101" endLine="61" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="501631557342352978" fileName="TypesCheckOperation_Editor.java" startLine="61" startPosition="49" endLine="62" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="501631557342352978" fileName="TypesCheckOperation_Editor.java" startLine="62" startPosition="34" endLine="63" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="852155438140865207" fileName="TypesCheckOperation_Editor.java" startLine="66" startPosition="88" endLine="67" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="852155438140865207" fileName="TypesCheckOperation_Editor.java" startLine="67" startPosition="99" endLine="68" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="852155438140865207" fileName="TypesCheckOperation_Editor.java" startLine="67" startPosition="99" endLine="68" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="852155438140865207" fileName="TypesCheckOperation_Editor.java" startLine="68" startPosition="47" endLine="69" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="852155438140865207" fileName="TypesCheckOperation_Editor.java" startLine="69" startPosition="34" endLine="70" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="852155438140946398" fileName="TypesCheckOperation_Editor.java" startLine="73" startPosition="88" endLine="74" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="852155438140946398" fileName="TypesCheckOperation_Editor.java" startLine="74" startPosition="101" endLine="75" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="852155438140946398" fileName="TypesCheckOperation_Editor.java" startLine="74" startPosition="101" endLine="75" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="852155438140946398" fileName="TypesCheckOperation_Editor.java" startLine="75" startPosition="47" endLine="76" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="852155438140946398" fileName="TypesCheckOperation_Editor.java" startLine="76" startPosition="34" endLine="77" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="80" startPosition="88" endLine="81" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="81" startPosition="82" endLine="82" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="82" startPosition="38" endLine="83" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="83" startPosition="40" endLine="84" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="84" startPosition="40" endLine="85" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="85" startPosition="26" endLine="86" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="86" startPosition="58" endLine="87" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="88" startPosition="5" endLine="89" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="89" startPosition="42" endLine="90" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="91" startPosition="5" endLine="92" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="92" startPosition="73" endLine="93" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="93" startPosition="57" endLine="94" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="95" startPosition="35" endLine="96" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="96" startPosition="72" endLine="97" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="97" startPosition="78" endLine="98" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="99" startPosition="10" endLine="100" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="103" startPosition="88" endLine="104" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="104" startPosition="82" endLine="105" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="105" startPosition="36" endLine="106" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="106" startPosition="49" endLine="107" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="107" startPosition="26" endLine="108" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="108" startPosition="58" endLine="109" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="110" startPosition="5" endLine="111" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="111" startPosition="42" endLine="112" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="113" startPosition="5" endLine="114" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="114" startPosition="73" endLine="115" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="115" startPosition="57" endLine="116" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="117" startPosition="35" endLine="118" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="118" startPosition="72" endLine="119" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="119" startPosition="78" endLine="120" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="121" startPosition="10" endLine="122" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="125" startPosition="88" endLine="126" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="126" startPosition="82" endLine="127" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="127" startPosition="38" endLine="128" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="128" startPosition="51" endLine="129" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="129" startPosition="26" endLine="130" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="130" startPosition="58" endLine="131" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="132" startPosition="5" endLine="133" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="133" startPosition="42" endLine="134" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="135" startPosition="5" endLine="136" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="136" startPosition="73" endLine="137" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="137" startPosition="57" endLine="138" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="139" startPosition="35" endLine="140" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="140" startPosition="72" endLine="141" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="141" startPosition="78" endLine="142" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="143" startPosition="10" endLine="144" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="147" startPosition="96" endLine="148" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="148" startPosition="82" endLine="149" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="149" startPosition="38" endLine="150" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="150" startPosition="51" endLine="151" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="151" startPosition="40" endLine="152" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="152" startPosition="26" endLine="153" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="153" startPosition="58" endLine="154" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="153" startPosition="58" endLine="154" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="154" startPosition="53" endLine="155" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="155" startPosition="73" endLine="156" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="156" startPosition="57" endLine="157" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="158" startPosition="35" endLine="159" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="159" startPosition="72" endLine="160" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="160" startPosition="78" endLine="161" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="162" startPosition="10" endLine="163" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="52" startPosition="97" endLine="54" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1215607090776" fileName="TypesCheckOperation_Editor.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1215607090776" fileName="TypesCheckOperation_Editor.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createInspectedCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="32" startPosition="81" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="32" startPosition="81" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="152" startPosition="26" endLine="155" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="87" startPosition="51" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="109" startPosition="49" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="131" startPosition="51" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="86" startPosition="58" endLine="91" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="108" startPosition="58" endLine="113" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="130" startPosition="58" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="501631557342352978" fileName="TypesCheckOperation_Editor.java" startLine="59" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_649p0a_a0_0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="852155438140865207" fileName="TypesCheckOperation_Editor.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_649p0a_c0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="852155438140946398" fileName="TypesCheckOperation_Editor.java" startLine="73" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_649p0a_e0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="94" startPosition="59" endLine="100" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="116" startPosition="59" endLine="122" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="138" startPosition="59" endLine="144" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="157" startPosition="59" endLine="163" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="51" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createConstant_649p0a_a0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="85" startPosition="26" endLine="92" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="107" startPosition="26" endLine="114" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="129" startPosition="26" endLine="136" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="29" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_649p0a_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="39" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createCollection_649p0a_a_0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="147" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createNonEmptyProperty_649p0a_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="103" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_649p0a_d0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="125" startPosition="0" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_649p0a_f0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="80" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createProperty_649p0a_b0#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="1215607090776" fileName="TypesCheckOperation_Editor.java" startLine="21" startPosition="79" endLine="22" endPosition="63" />
+    <scopeInfo nodeId="1215607090776" fileName="TypesCheckOperation_Editor.java" startLine="25" startPosition="82" endLine="26" endPosition="65" />
+    <scopeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="30" startPosition="99" endLine="31" endPosition="48" />
+    <scopeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="31" startPosition="48" endLine="32" endPosition="81" />
+    <scopeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="33" startPosition="61" endLine="34" endPosition="91" />
+    <scopeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="40" startPosition="96" endLine="41" endPosition="50" />
+    <scopeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="41" startPosition="50" endLine="42" endPosition="83" />
+    <scopeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="42" startPosition="83" endLine="43" endPosition="81" />
     <scopeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="43" startPosition="81" endLine="44" endPosition="81" />
     <scopeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="44" startPosition="81" endLine="45" endPosition="81" />
     <scopeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="45" startPosition="81" endLine="46" endPosition="81" />
-    <scopeInfo nodeId="501631557342352978" fileName="TypesCheckOperation_Editor.java" startLine="59" startPosition="101" endLine="60" endPosition="49" />
-    <scopeInfo nodeId="852155438140865207" fileName="TypesCheckOperation_Editor.java" startLine="66" startPosition="99" endLine="67" endPosition="47" />
-    <scopeInfo nodeId="852155438140946398" fileName="TypesCheckOperation_Editor.java" startLine="73" startPosition="101" endLine="74" endPosition="47" />
-    <scopeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="152" startPosition="58" endLine="153" endPosition="53" />
-    <scopeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="51" startPosition="97" endLine="53" endPosition="77" />
-    <scopeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="87" startPosition="5" endLine="89" endPosition="62">
+    <scopeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="46" startPosition="81" endLine="47" endPosition="81" />
+    <scopeInfo nodeId="501631557342352978" fileName="TypesCheckOperation_Editor.java" startLine="60" startPosition="101" endLine="61" endPosition="49" />
+    <scopeInfo nodeId="852155438140865207" fileName="TypesCheckOperation_Editor.java" startLine="67" startPosition="99" endLine="68" endPosition="47" />
+    <scopeInfo nodeId="852155438140946398" fileName="TypesCheckOperation_Editor.java" startLine="74" startPosition="101" endLine="75" endPosition="47" />
+    <scopeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="153" startPosition="58" endLine="154" endPosition="53" />
+    <scopeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="52" startPosition="97" endLine="54" endPosition="77" />
+    <scopeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="88" startPosition="5" endLine="90" endPosition="62">
       <varInfo nodeId="501631557342352975" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="109" startPosition="5" endLine="111" endPosition="62">
+    <scopeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="110" startPosition="5" endLine="112" endPosition="62">
       <varInfo nodeId="852155438140865209" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="131" startPosition="5" endLine="133" endPosition="62">
+    <scopeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="132" startPosition="5" endLine="134" endPosition="62">
       <varInfo nodeId="852155438140946399" varName="style" />
     </scopeInfo>
-    <scopeInfo nodeId="1215607090776" fileName="TypesCheckOperation_Editor.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="1215607090776" fileName="TypesCheckOperation_Editor.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="1215607090776" varName="editorContext" />
       <varInfo nodeId="1215607090776" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1215607090776" fileName="TypesCheckOperation_Editor.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="1215607090776" fileName="TypesCheckOperation_Editor.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1215607090776" varName="editorContext" />
       <varInfo nodeId="1215607090776" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="31" startPosition="81" endLine="34" endPosition="5" />
-    <scopeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="94" startPosition="35" endLine="97" endPosition="105">
+    <scopeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="32" startPosition="81" endLine="35" endPosition="5" />
+    <scopeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="95" startPosition="35" endLine="98" endPosition="105">
       <varInfo nodeId="501631557342352975" varName="manager" />
       <varInfo nodeId="501631557342352975" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="116" startPosition="35" endLine="119" endPosition="105">
+    <scopeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="117" startPosition="35" endLine="120" endPosition="105">
       <varInfo nodeId="852155438140865209" varName="manager" />
       <varInfo nodeId="852155438140865209" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="138" startPosition="35" endLine="141" endPosition="105">
+    <scopeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="139" startPosition="35" endLine="142" endPosition="105">
       <varInfo nodeId="852155438140946399" varName="manager" />
       <varInfo nodeId="852155438140946399" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="151" startPosition="26" endLine="154" endPosition="73" />
-    <scopeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="157" startPosition="35" endLine="160" endPosition="105">
+    <scopeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="152" startPosition="26" endLine="155" endPosition="73" />
+    <scopeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="158" startPosition="35" endLine="161" endPosition="105">
       <varInfo nodeId="1381629087548449153" varName="manager" />
       <varInfo nodeId="1381629087548449153" varName="opContext" />
     </scopeInfo>
-    <scopeInfo nodeId="501631557342352978" fileName="TypesCheckOperation_Editor.java" startLine="58" startPosition="90" endLine="62" endPosition="22">
+    <scopeInfo nodeId="501631557342352978" fileName="TypesCheckOperation_Editor.java" startLine="59" startPosition="90" endLine="63" endPosition="22">
       <varInfo nodeId="501631557342352978" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="852155438140865207" fileName="TypesCheckOperation_Editor.java" startLine="65" startPosition="88" endLine="69" endPosition="22">
+    <scopeInfo nodeId="852155438140865207" fileName="TypesCheckOperation_Editor.java" startLine="66" startPosition="88" endLine="70" endPosition="22">
       <varInfo nodeId="852155438140865207" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="852155438140946398" fileName="TypesCheckOperation_Editor.java" startLine="72" startPosition="88" endLine="76" endPosition="22">
+    <scopeInfo nodeId="852155438140946398" fileName="TypesCheckOperation_Editor.java" startLine="73" startPosition="88" endLine="77" endPosition="22">
       <varInfo nodeId="852155438140946398" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="50" startPosition="88" endLine="55" endPosition="22">
+    <scopeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="51" startPosition="88" endLine="56" endPosition="22">
       <varInfo nodeId="1381629087548445813" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="85" startPosition="58" endLine="90" endPosition="5" />
-    <scopeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="107" startPosition="58" endLine="112" endPosition="5" />
-    <scopeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="129" startPosition="58" endLine="134" endPosition="5" />
-    <scopeInfo nodeId="501631557342352978" fileName="TypesCheckOperation_Editor.java" startLine="58" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="86" startPosition="58" endLine="91" endPosition="5" />
+    <scopeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="108" startPosition="58" endLine="113" endPosition="5" />
+    <scopeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="130" startPosition="58" endLine="135" endPosition="5" />
+    <scopeInfo nodeId="501631557342352978" fileName="TypesCheckOperation_Editor.java" startLine="59" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="501631557342352978" varName="editorContext" />
       <varInfo nodeId="501631557342352978" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="852155438140865207" fileName="TypesCheckOperation_Editor.java" startLine="65" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="852155438140865207" fileName="TypesCheckOperation_Editor.java" startLine="66" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="852155438140865207" varName="editorContext" />
       <varInfo nodeId="852155438140865207" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="852155438140946398" fileName="TypesCheckOperation_Editor.java" startLine="72" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="852155438140946398" fileName="TypesCheckOperation_Editor.java" startLine="73" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="852155438140946398" varName="editorContext" />
       <varInfo nodeId="852155438140946398" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="28" startPosition="89" endLine="35" endPosition="22">
+    <scopeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="29" startPosition="89" endLine="36" endPosition="22">
       <varInfo nodeId="1381629087548445812" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="50" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="1381629087548445813" fileName="TypesCheckOperation_Editor.java" startLine="51" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="1381629087548445813" varName="editorContext" />
       <varInfo nodeId="1381629087548445813" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="84" startPosition="26" endLine="91" endPosition="73" />
-    <scopeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="106" startPosition="26" endLine="113" endPosition="73" />
-    <scopeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="128" startPosition="26" endLine="135" endPosition="73" />
-    <scopeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="28" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="85" startPosition="26" endLine="92" endPosition="73" />
+    <scopeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="107" startPosition="26" endLine="114" endPosition="73" />
+    <scopeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="129" startPosition="26" endLine="136" endPosition="73" />
+    <scopeInfo nodeId="1381629087548445812" fileName="TypesCheckOperation_Editor.java" startLine="29" startPosition="0" endLine="38" endPosition="0">
       <varInfo nodeId="1381629087548445812" varName="editorContext" />
       <varInfo nodeId="1381629087548445812" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="38" startPosition="91" endLine="47" endPosition="22">
+    <scopeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="39" startPosition="91" endLine="48" endPosition="22">
       <varInfo nodeId="852155438140865204" varName="editorCell" />
     </scopeInfo>
-    <scopeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="38" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="852155438140865204" fileName="TypesCheckOperation_Editor.java" startLine="39" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="852155438140865204" varName="editorContext" />
       <varInfo nodeId="852155438140865204" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="146" startPosition="96" endLine="162" endPosition="22">
+    <scopeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="147" startPosition="96" endLine="163" endPosition="22">
       <varInfo nodeId="1381629087548449153" varName="attributeConcept" />
       <varInfo nodeId="1381629087548449153" varName="attributeKind" />
       <varInfo nodeId="1381629087548449153" varName="editorCell" />
       <varInfo nodeId="1381629087548449153" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="146" startPosition="0" endLine="164" endPosition="0">
+    <scopeInfo nodeId="1381629087548449153" fileName="TypesCheckOperation_Editor.java" startLine="147" startPosition="0" endLine="165" endPosition="0">
       <varInfo nodeId="1381629087548449153" varName="editorContext" />
       <varInfo nodeId="1381629087548449153" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="102" startPosition="88" endLine="121" endPosition="22">
+    <scopeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="103" startPosition="88" endLine="122" endPosition="22">
       <varInfo nodeId="852155438140865209" varName="attributeConcept" />
       <varInfo nodeId="852155438140865209" varName="attributeKind" />
       <varInfo nodeId="852155438140865209" varName="editorCell" />
       <varInfo nodeId="852155438140865209" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="124" startPosition="88" endLine="143" endPosition="22">
+    <scopeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="125" startPosition="88" endLine="144" endPosition="22">
       <varInfo nodeId="852155438140946399" varName="attributeConcept" />
       <varInfo nodeId="852155438140946399" varName="attributeKind" />
       <varInfo nodeId="852155438140946399" varName="editorCell" />
       <varInfo nodeId="852155438140946399" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="79" startPosition="88" endLine="99" endPosition="22">
+    <scopeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="80" startPosition="88" endLine="100" endPosition="22">
       <varInfo nodeId="501631557342352975" varName="attributeConcept" />
       <varInfo nodeId="501631557342352975" varName="attributeKind" />
       <varInfo nodeId="501631557342352975" varName="editorCell" />
       <varInfo nodeId="501631557342352975" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="102" startPosition="0" endLine="123" endPosition="0">
+    <scopeInfo nodeId="852155438140865209" fileName="TypesCheckOperation_Editor.java" startLine="103" startPosition="0" endLine="124" endPosition="0">
       <varInfo nodeId="852155438140865209" varName="editorContext" />
       <varInfo nodeId="852155438140865209" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="124" startPosition="0" endLine="145" endPosition="0">
+    <scopeInfo nodeId="852155438140946399" fileName="TypesCheckOperation_Editor.java" startLine="125" startPosition="0" endLine="146" endPosition="0">
       <varInfo nodeId="852155438140946399" varName="editorContext" />
       <varInfo nodeId="852155438140946399" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="79" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="501631557342352975" fileName="TypesCheckOperation_Editor.java" startLine="80" startPosition="0" endLine="102" endPosition="0">
       <varInfo nodeId="501631557342352975" varName="editorContext" />
       <varInfo nodeId="501631557342352975" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1215607090776" fileName="TypesCheckOperation_Editor.java" startLine="19" startPosition="0" endLine="165" endPosition="0" unitName="jetbrains.mps.lang.test.editor.TypesCheckOperation_Editor" />
+    <unitInfo nodeId="1215607090776" fileName="TypesCheckOperation_Editor.java" startLine="20" startPosition="0" endLine="166" endPosition="0" unitName="jetbrains.mps.lang.test.editor.TypesCheckOperation_Editor" />
   </root>
   <root nodeId="1215611856135" modelId="r:00000000-0000-4000-0000-011c89590384(jetbrains.mps.lang.test.editor)">
     <nodeInfo nodeId="1215611856135" fileName="CheckDataFlowOperation_Editor.java" startLine="13" startPosition="79" endLine="14" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

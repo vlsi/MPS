@@ -25,8 +25,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.project.GlobalScope;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
@@ -66,7 +66,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       MPSProject mpsProject = ((Project) MapSequence.fromMap(_params).get("project")).getComponent(MPSProject.class);
-      List<IModule> allModules = ListSequence.fromListWithValues(new ArrayList<IModule>(), mpsProject.getModules());
+      List<IModule> allModules = ListSequence.fromListWithValues(new ArrayList<IModule>(), mpsProject.getModulesWithGenerators());
       for (IModule module : ListSequence.fromList(allModules)) {
         ModuleDescriptor descriptor = module.getModuleDescriptor();
         if (descriptor == null) {
@@ -80,19 +80,19 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
 
           SModel model = modelDescriptor.getSModel();
           Set<SModelReference> dependencies = SetSequence.fromSet(new HashSet<SModelReference>());
-          // collect dependencies by classifiers 
-          // collect model dependencies from ClassifierType 
-          // todo: classifier extends and implements references? 
-          for (SNode classifierType : ListSequence.fromList(SModelOperations.getNodes(model, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
-            SNode classifier = SLinkOperations.getTarget(classifierType, "classifier", false);
-            if ((classifier != null)) {
-              SetSequence.fromSet(dependencies).addElement(SNodeOperations.getModel(classifier).getSModelReference());
+          for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
+            for (SReference ref : ListSequence.fromList(node.getReferences())) {
+              SModelReference mref = check_rft9c_a0a0a0e0d0c0a(check_rft9c_a0a0a0a4a3a2a0(ref.getTargetNodeSilently()));
+              if (mref == null) {
+                continue;
+              }
+              SetSequence.fromSet(dependencies).addElement(mref);
             }
           }
           // remove all imported already models 
           SetSequence.fromSet(dependencies).removeElement(modelDescriptor.getSModelReference());
-          for (SModel.ImportElement importedElement : ListSequence.fromList(model.importedModels())) {
-            SetSequence.fromSet(dependencies).removeElement(importedElement.getModelReference());
+          for (SModelDescriptor importedModel : ListSequence.fromList(jetbrains.mps.smodel.SModelOperations.allImportedModels(model, GlobalScope.getInstance()))) {
+            SetSequence.fromSet(dependencies).removeElement(importedModel.getSModelReference());
           }
           // add new dependencies to model 
           for (SModelReference modelToImport : SetSequence.fromSet(dependencies)) {
@@ -108,4 +108,18 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
   }
 
   protected static Log log = LogFactory.getLog(ImportModelsWithUsedClassifiers_Action.class);
+
+  private static SModelReference check_rft9c_a0a0a0e0d0c0a(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSModelReference();
+    }
+    return null;
+  }
+
+  private static SModel check_rft9c_a0a0a0a4a3a2a0(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModel();
+    }
+    return null;
+  }
 }

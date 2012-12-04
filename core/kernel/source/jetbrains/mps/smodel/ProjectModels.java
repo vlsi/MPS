@@ -44,7 +44,7 @@ public class ProjectModels {
 
     protected SModel createModel() {
       return new SModel(this.getSModelReference()) {
-        protected boolean canFireEvent() {
+        public boolean canFireEvent() {
           return myCanFireEvents;
         }
       };

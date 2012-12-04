@@ -26,6 +26,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class convert_test_case_to_unittest_case_Intention implements IntentionFactory {
@@ -131,7 +132,7 @@ public class convert_test_case_to_unittest_case_Intention implements IntentionFa
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.TestMethod", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("methodName", (String) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_3, "methodName", (String) parameter_2);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
     quotedNode_3.addChild("returnType", quotedNode_4);
     quotedNode_5 = (SNode) parameter_1;

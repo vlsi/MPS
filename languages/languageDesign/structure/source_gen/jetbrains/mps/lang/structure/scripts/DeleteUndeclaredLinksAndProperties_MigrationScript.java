@@ -41,7 +41,7 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
       public void doUpdateInstanceNode(SNode node) {
         for (String propname : SetSequence.fromSet(SNodeOperations.getProperties(node).keySet())) {
           if (node.getPropertyDeclaration(propname) == null) {
-            node.setProperty(propname, null, false);
+            node.setProperty(propname, null);
           }
         }
       }

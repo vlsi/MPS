@@ -8,6 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_ReplaceNode_CustomNodeConcept;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
@@ -66,7 +67,7 @@ public class AbstractInequationStatement_Editor extends DefaultNodeEditor {
       editorCell.addEditorCell(this.createCollection_ka3b3c_b0(editorContext, node));
     }
     editorCell.addEditorCell(this.createConstant_ka3b3c_c0(editorContext, node));
-    if (node.hasProperty("label")) {
+    if (SNodeAccessUtil.hasProperty(node, "label")) {
       editorCell.addEditorCell(this.createNonEmptyProperty_ka3b3c_d0(editorContext, node));
     }
     return editorCell;

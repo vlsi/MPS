@@ -16,6 +16,7 @@
 package jetbrains.mps.checkedName;
 
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class PropertyReference {
   private SNode myNode;
@@ -35,10 +36,10 @@ public class PropertyReference {
   }
 
   public String getValue(){
-    return myNode.getProperty(myProperty);
+    return SNodeAccessUtil.getProperty(myNode, myProperty);
   }
 
   public void setValue(String value){
-    myNode.setProperty(myProperty,value);
+    SNodeAccessUtil.setProperty(myNode, myProperty, value);
   }
 }

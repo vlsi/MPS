@@ -25,6 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -98,7 +99,7 @@ public class TodoViewer extends JPanel {
 
     @NotNull
     public String getPresentation(SNode node) {
-      return "<font color=blue>" + node.getProperty("text") + "</font>";
+      return "<font color=blue>" + SNodeAccessUtil.getProperty(node, "text") + "</font>";
     }
 
     public String getResultsText(TextOptions options) {

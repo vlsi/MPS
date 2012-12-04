@@ -9,6 +9,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode extendsClassName="jetbrains.mps.lang.script.runtime.BaseMigrationScript" />
   </dependency>
   <dependency className="jetbrains.mps.lang.smodel.scripts.MigrateAbstractConceptDeclarationMethodOnConceptVariable_MigrationScript" file="MigrateAbstractConceptDeclarationMethodOnConceptVariable_MigrationScript.java">

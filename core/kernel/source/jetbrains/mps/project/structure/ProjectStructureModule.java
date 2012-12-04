@@ -337,7 +337,7 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       super(modelReference, new ForeignNodeIdMap());
     }
 
-    protected boolean canFireEvent() {
+    public boolean canFireEvent() {
       return false;
     }
 

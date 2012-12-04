@@ -510,7 +510,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("property".equals(tagName)) {
         String[] child = (String[]) value;
         if (child[1] != null) {
-          result.setProperty(fieldhelper.readName(child[0]), child[1], false);
+          result.setProperty(fieldhelper.readName(child[0]), child[1]);
           fieldlinkMap.addNameLocation(fieldhelper.readLinkId(child[2]), result, child[0]);
         }
         return;

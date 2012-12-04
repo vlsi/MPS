@@ -21,6 +21,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 @MPSLaunch
 public class PatternListPattern_Test extends BaseTransformationTest4 {
@@ -180,10 +181,10 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
       quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
       quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object.wait(long,int):void")));
       quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-      quotedNode_4.setProperty("value", "10");
+      SNodeAccessUtil.setProperty(quotedNode_4, "value", "10");
       quotedNode_3.addChild("actualArgument", quotedNode_4);
       quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-      quotedNode_5.setProperty("value", "10");
+      SNodeAccessUtil.setProperty(quotedNode_5, "value", "10");
       quotedNode_3.addChild("actualArgument", quotedNode_5);
       quotedNode_1.addChild("operation", quotedNode_3);
       return quotedNode_1;
@@ -192,14 +193,14 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
     private static SNode _quotation_createNode_i79cpz_a0a2a6a2c() {
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-      quotedNode_1.setProperty("value", "10");
+      SNodeAccessUtil.setProperty(quotedNode_1, "value", "10");
       return quotedNode_1;
     }
 
     private static SNode _quotation_createNode_i79cpz_a0a3a6a2c() {
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-      quotedNode_1.setProperty("value", "10");
+      SNodeAccessUtil.setProperty(quotedNode_1, "value", "10");
       return quotedNode_1;
     }
   }

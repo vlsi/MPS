@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope;
 import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.util.Collections;
 import java.util.List;
@@ -86,7 +87,7 @@ public class NodePaster {
   public void pasteAsRoots(SModel model, String dstPackage) {
     pasteAsRoots(model);
     for (SNode node : myPasteNodes) {
-      node.setProperty(SNode.PACK, dstPackage);
+      SNodeAccessUtil.setProperty(node, SNode.PACK, dstPackage);
     }
   }
 

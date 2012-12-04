@@ -15,6 +15,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class typeof_EnclosingContextCompartmentExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_EnclosingContextCompartmentExpression_InferenceRule() {
@@ -55,8 +56,8 @@ public class typeof_EnclosingContextCompartmentExpression_InferenceRule extends 
   private static SNode _quotation_createNode_1zd8ev_a0d0b(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReferenceTarget("container", (SNode) parameter_1);
-    quotedNode_3.setReferenceTarget("uiObject", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "container", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "uiObject", (SNode) parameter_2);
     return quotedNode_3;
   }
 }

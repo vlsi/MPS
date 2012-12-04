@@ -15,6 +15,7 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.generator.impl.AbandonRuleInputException;
 import java.util.Collections;
 import jetbrains.mps.generator.GenerationTracerUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class SwitchcustomStatement implements TemplateSwitchMapping {
   private final Iterable<TemplateReductionRule> rules;
@@ -127,7 +128,7 @@ public class SwitchcustomStatement implements TemplateSwitchMapping {
       try {
         environment.getTracer().pushTemplateNode(templateNode_68cped_a0a0a2a5i);
         environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/8371596541809090625");
-        tnode1.setProperty("value", "1");
+        SNodeAccessUtil.setProperty(tnode1, "value", "1");
 
       } finally {
         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));

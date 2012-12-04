@@ -47,7 +47,7 @@ public class IFeature_Constraints extends BaseConstraintsDescriptor {
             }
           }
         }
-        node.setProperty("default", String.valueOf((SPropertyOperations.getBoolean(propertyValue))), false);
+        node.setProperty("default", String.valueOf((SPropertyOperations.getBoolean(propertyValue))));
       }
     });
     return properties;

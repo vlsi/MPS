@@ -159,7 +159,7 @@ public class ModelWriter4 implements IModelWriter {
       Element propertyElement = new Element(ModelPersistence.PROPERTY);
       element.addContent(propertyElement);
       propertyElement.setAttribute(ModelPersistence.NAME, VersionUtil.formVersionedString(propertyName, modelVersion));
-      DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.VALUE, node.getPersistentProperty(propertyName));
+      DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.VALUE, node.getProperty(propertyName));
     }
 
     // references ...

@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+
 class RemoveReferenceAtUndoableAction extends SNodeUndoableAction {
   private String myRole;
   private SReference myReference;
@@ -30,6 +32,6 @@ class RemoveReferenceAtUndoableAction extends SNodeUndoableAction {
   }
 
   protected void doRedo() {
-    getAffectedNode().setReferenceTarget(myRole, null);
+    SNodeAccessUtil.setReferenceTarget(getAffectedNode(), myRole, null);
   }
 }

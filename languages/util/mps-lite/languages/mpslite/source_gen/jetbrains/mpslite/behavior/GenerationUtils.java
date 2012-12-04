@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class GenerationUtils {
   public GenerationUtils() {
@@ -86,9 +87,9 @@ public class GenerationUtils {
     SNode quotedNode_20 = null;
     SNode quotedNode_21 = null;
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setReferenceTarget("applicableConcept", (SNode) parameter_3);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_4, "applicableConcept", (SNode) parameter_3);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setReferenceTarget("concept", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_5, "concept", (SNode) parameter_2);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler", null, null, GlobalScope.getInstance(), false);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, GlobalScope.getInstance(), false);
@@ -107,7 +108,7 @@ public class GenerationUtils {
     quotedNode_19 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result", null, null, GlobalScope.getInstance(), false);
     quotedNode_16.addChild("operand", quotedNode_19);
     quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SLinkAccess", null, null, GlobalScope.getInstance(), false);
-    quotedNode_20.setReferenceTarget("link", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_20, "link", (SNode) parameter_1);
     quotedNode_16.addChild("operation", quotedNode_20);
     quotedNode_12.addChild("operand", quotedNode_16);
     quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation", null, null, GlobalScope.getInstance(), false);
@@ -146,10 +147,10 @@ public class GenerationUtils {
     SNode quotedNode_20 = null;
     SNode quotedNode_21 = null;
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActionsBuilder", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("side", "left");
-    quotedNode_4.setReferenceTarget("applicableConcept", (SNode) parameter_3);
+    SNodeAccessUtil.setProperty(quotedNode_4, "side", "left");
+    SNodeAccessUtil.setReferenceTarget(quotedNode_4, "applicableConcept", (SNode) parameter_3);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptRightTransformPart", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setReferenceTarget("concept", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_5, "concept", (SNode) parameter_2);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.QueryFunction_SideTransform_ConceptHandler", null, null, GlobalScope.getInstance(), false);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, GlobalScope.getInstance(), false);
@@ -168,7 +169,7 @@ public class GenerationUtils {
     quotedNode_19 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.actions.structure.ConceptFunctionParameter_result", null, null, GlobalScope.getInstance(), false);
     quotedNode_16.addChild("operand", quotedNode_19);
     quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SLinkAccess", null, null, GlobalScope.getInstance(), false);
-    quotedNode_20.setReferenceTarget("link", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_20, "link", (SNode) parameter_1);
     quotedNode_16.addChild("operation", quotedNode_20);
     quotedNode_12.addChild("operand", quotedNode_16);
     quotedNode_17 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Link_SetTargetOperation", null, null, GlobalScope.getInstance(), false);

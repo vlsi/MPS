@@ -16,6 +16,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.List;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
@@ -63,8 +64,8 @@ public class typeof_InternalNewExpression_InferenceRule extends AbstractInferenc
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("fqClassName", (String) parameter_1);
-    quotedNode_4.setReferenceTarget("classifier", (SNode) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_4, "fqClassName", (String) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_4, "classifier", (SNode) parameter_2);
     {
       List<SNode> nodes = (List<SNode>) parameter_3;
       for (SNode child : nodes) {

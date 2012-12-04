@@ -28,6 +28,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IVariableConverter_Runtime;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.*;
@@ -210,7 +211,7 @@ public class Equations {
         if (newNode != oldNode) {
           String role = reference.getRole();
           node.setReference(role, null);
-          node.setReferenceTarget(role, newNode);
+          SNodeAccessUtil.setReferenceTarget(node, role, newNode);
         }
       }
     }

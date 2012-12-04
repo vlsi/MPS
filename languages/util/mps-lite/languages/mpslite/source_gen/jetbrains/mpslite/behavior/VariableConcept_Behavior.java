@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
@@ -98,7 +99,7 @@ public class VariableConcept_Behavior {
   private static SNode _quotation_createNode_mkovpu_a0a0h0c() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.structure.structure.PropertyDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("name", "_");
+    SNodeAccessUtil.setProperty(quotedNode_1, "name", "_");
     quotedNode_1.setReference("dataType", SReference.create("dataType", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1082983041843")));
     return quotedNode_1;
   }
@@ -106,7 +107,7 @@ public class VariableConcept_Behavior {
   private static SNode _quotation_createNode_mkovpu_a0a0a2a6(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.ConceptReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
 
@@ -192,12 +193,12 @@ public class VariableConcept_Behavior {
     SNode quotedNode_84 = null;
     SNode quotedNode_85 = null;
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.NodeReferentConstraint", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6.setReferenceTarget("applicableLink", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_6, "applicableLink", (SNode) parameter_1);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.constraints.structure.ConstraintFunction_ReferentSearchScope_Factory", null, null, GlobalScope.getInstance(), false);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_13.setProperty("name", "result");
+    SNodeAccessUtil.setProperty(quotedNode_13, "name", "result");
     quotedNode_18 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, GlobalScope.getInstance(), false);
     quotedNode_28 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_18.addChild("elementType", quotedNode_28);
@@ -212,7 +213,7 @@ public class VariableConcept_Behavior {
     quotedNode_8.addChild("statement", quotedNode_9);
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_14.setProperty("name", "currentStatement");
+    SNodeAccessUtil.setProperty(quotedNode_14, "name", "currentStatement");
     quotedNode_20 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_14.addChild("type", quotedNode_20);
     quotedNode_21 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
@@ -221,7 +222,7 @@ public class VariableConcept_Behavior {
     quotedNode_31 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation", null, null, GlobalScope.getInstance(), false);
     quotedNode_40 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Concept", null, null, GlobalScope.getInstance(), false);
     quotedNode_54 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.RefConcept_Reference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_54.setReferenceTarget("conceptDeclaration", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_54, "conceptDeclaration", (SNode) parameter_2);
     quotedNode_40.addChild("conceptArgument", quotedNode_54);
     quotedNode_31.addChild("parameter", quotedNode_40);
     quotedNode_41 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion", null, null, GlobalScope.getInstance(), false);
@@ -240,7 +241,7 @@ public class VariableConcept_Behavior {
     quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_32 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_32.setProperty("name", "currentBlock");
+    SNodeAccessUtil.setProperty(quotedNode_32, "name", "currentBlock");
     quotedNode_42 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_32.addChild("type", quotedNode_42);
     quotedNode_43 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
@@ -316,14 +317,14 @@ public class VariableConcept_Behavior {
     quotedNode_82.addChild("operand", quotedNode_83);
     quotedNode_84 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", null, null, GlobalScope.getInstance(), false);
     quotedNode_85 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.RefConcept_Reference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_85.setReferenceTarget("conceptDeclaration", (SNode) parameter_4);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_85, "conceptDeclaration", (SNode) parameter_4);
     quotedNode_84.addChild("conceptArgument", quotedNode_85);
     quotedNode_82.addChild("operation", quotedNode_84);
     quotedNode_77.addChild("expression", quotedNode_82);
     quotedNode_71.addChild("statement", quotedNode_77);
     quotedNode_62.addChild("body", quotedNode_71);
     quotedNode_72 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_72.setProperty("name", "it");
+    SNodeAccessUtil.setProperty(quotedNode_72, "name", "it");
     quotedNode_78 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UndefinedType", null, null, GlobalScope.getInstance(), false);
     quotedNode_72.addChild("type", quotedNode_78);
     quotedNode_62.addChild("parameter", quotedNode_72);
@@ -331,7 +332,7 @@ public class VariableConcept_Behavior {
     quotedNode_36.addChild("operation", quotedNode_50);
     quotedNode_26.addChild("iterable", quotedNode_36);
     quotedNode_37 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_37.setProperty("name", "statement");
+    SNodeAccessUtil.setProperty(quotedNode_37, "name", "statement");
     quotedNode_51 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     quotedNode_37.addChild("type", quotedNode_51);
     quotedNode_26.addChild("variable", quotedNode_37);
@@ -344,7 +345,7 @@ public class VariableConcept_Behavior {
     quotedNode_64 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_GetAncestorOperation", null, null, GlobalScope.getInstance(), false);
     quotedNode_73 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Concept", null, null, GlobalScope.getInstance(), false);
     quotedNode_79 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.RefConcept_Reference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_79.setReferenceTarget("conceptDeclaration", (SNode) parameter_5);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_79, "conceptDeclaration", (SNode) parameter_5);
     quotedNode_73.addChild("conceptArgument", quotedNode_79);
     quotedNode_64.addChild("parameter", quotedNode_73);
     quotedNode_74 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.OperationParm_Inclusion", null, null, GlobalScope.getInstance(), false);
@@ -363,18 +364,18 @@ public class VariableConcept_Behavior {
     quotedNode_8.addChild("statement", quotedNode_12);
     quotedNode_7.addChild("body", quotedNode_8);
     quotedNode_6.addChild("searchScopeFactory", quotedNode_7);
-    quotedNode_17.setReferenceTarget("variableDeclaration", quotedNode_13);
-    quotedNode_23.setReferenceTarget("variableDeclaration", quotedNode_14);
-    quotedNode_45.setReferenceTarget("variableDeclaration", quotedNode_32);
-    quotedNode_53.setReferenceTarget("variableDeclaration", quotedNode_14);
-    quotedNode_55.setReferenceTarget("variableDeclaration", quotedNode_14);
-    quotedNode_60.setReferenceTarget("variableDeclaration", quotedNode_32);
-    quotedNode_63.setReferenceTarget("variableDeclaration", quotedNode_32);
-    quotedNode_66.setReferenceTarget("variableDeclaration", quotedNode_14);
-    quotedNode_67.setReferenceTarget("variableDeclaration", quotedNode_37);
-    quotedNode_69.setReferenceTarget("variableDeclaration", quotedNode_13);
-    quotedNode_80.setReferenceTarget("variableDeclaration", quotedNode_37);
-    quotedNode_83.setReferenceTarget("variableDeclaration", quotedNode_72);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_17, "variableDeclaration", quotedNode_13);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_23, "variableDeclaration", quotedNode_14);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_45, "variableDeclaration", quotedNode_32);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_53, "variableDeclaration", quotedNode_14);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_55, "variableDeclaration", quotedNode_14);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_60, "variableDeclaration", quotedNode_32);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_63, "variableDeclaration", quotedNode_32);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_66, "variableDeclaration", quotedNode_14);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_67, "variableDeclaration", quotedNode_37);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_69, "variableDeclaration", quotedNode_13);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_80, "variableDeclaration", quotedNode_37);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_83, "variableDeclaration", quotedNode_72);
     return quotedNode_6;
   }
 }
