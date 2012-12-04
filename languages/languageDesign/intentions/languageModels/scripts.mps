@@ -11,7 +11,7 @@
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="2127765886921302554">
       <property name="title" nameId="tp33.1177457669450" value="Update Execute and Description Blocks in ParameterizedIntentionDeclaration instances" />
       <property name="name" nameId="tpck.1169194664001" value="MigrateParameterizedIntentionDeclaration" />
-      <property name="toBuild" nameId="tp33.5299416737274925397" value="3.0" />
+      <property name="toBuild" nameId="tp33.5299416737274925397" value="MPS 3.0" />
       <property name="type" nameId="tp33.5299416737274925395" value="migration" />
     </node>
   </roots>
