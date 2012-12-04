@@ -108,6 +108,8 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
   public void changed(DataSource source, Iterable<String> files) {
     ModelAccess.assertLegalWrite();
 
+    LOG.info("got change event");
+
     for (String fileName : Sequence.fromIterable(files)) {
       IFile file = myDataSource.getFile(fileName);
       if (file == null) {

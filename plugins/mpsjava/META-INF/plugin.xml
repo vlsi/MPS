@@ -61,5 +61,6 @@
     <mps.modelRootEntry rootType="java_class_stub" className="jetbrains.mps.ide.java.ui.JavaClassStubsModelRootEntry"/>
     <mps.modelRootFactory rootType="java_source_stubs" className="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRootFactory"/>
     <mps.modelRootSettings rootType="java_source_stubs" className="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRootSettingsProvider"/>
+    <mps.modelRootEntry rootType="java_source_stubs" className="jetbrains.mps.ide.java.ui.JavaSourceStubsModelRootEntry"/>
   </extensions>
 </idea-plugin>
