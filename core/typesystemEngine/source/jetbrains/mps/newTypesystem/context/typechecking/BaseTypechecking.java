@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.context.component;
+package jetbrains.mps.newTypesystem.context.typechecking;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -39,13 +40,13 @@ import java.util.Set;
  * Time: 3:24 PM
  * To change this template use File | Settings | File Templates.
  */
-public class SimpleTypechecking<STATE extends State, COMP extends SimpleTypecheckingComponent> {
+public class BaseTypechecking<STATE extends State, COMP extends SimpleTypecheckingComponent> {
 
   protected final SNode myRootNode;
   private final STATE myState;
   private final COMP myTypecheckingComponent;
 
-  public SimpleTypechecking(SNode node, STATE state) {
+  public BaseTypechecking(SNode node, STATE state) {
     myRootNode = node;
     myState = state;
     myTypecheckingComponent = createTypecheckingComponent();

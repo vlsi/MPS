@@ -17,13 +17,11 @@ package jetbrains.mps.newTypesystem.context;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.newTypesystem.context.component.IncrementalTypechecking;
-import jetbrains.mps.newTypesystem.context.component.SimpleTypechecking;
+import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
+import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent;
-import jetbrains.mps.newTypesystem.context.component.TargetTypeheckingComponent;
 import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.newTypesystem.state.TargetState;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -45,7 +43,7 @@ import java.util.Set;
  */
 public class SimpleTypecheckingContext<
     STATE extends State,
-    TCHECK extends SimpleTypechecking<STATE, ? extends SimpleTypecheckingComponent<STATE>>>
+    TCHECK extends BaseTypechecking<STATE, ? extends SimpleTypecheckingComponent<STATE>>>
   extends BaseTypecheckingContext {
 
   private TCHECK myTypechecking;
@@ -59,7 +57,7 @@ public class SimpleTypecheckingContext<
 
   @SuppressWarnings("unchecked")
   protected TCHECK createTypechecking() {
-    return (TCHECK) new SimpleTypechecking<STATE, SimpleTypecheckingComponent<STATE>>(getNode(), getState());
+    return (TCHECK) new BaseTypechecking<STATE, SimpleTypecheckingComponent<STATE>>(getNode(), getState());
   }
 
   @SuppressWarnings("unchecked")
@@ -178,7 +176,7 @@ public class SimpleTypecheckingContext<
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
     EquationInfo info = new EquationInfo(node, "typeOf", ruleModel, ruleId);
     if (node == null) return null;
-    SimpleTypechecking currentTypesComponent = getTypechecking();   //first, in current component
+    BaseTypechecking currentTypesComponent = getTypechecking();   //first, in current component
     if (currentTypesComponent != null) {
       //--- for incremental algorithm:
       currentTypesComponent.addNodeToFrontier(node);

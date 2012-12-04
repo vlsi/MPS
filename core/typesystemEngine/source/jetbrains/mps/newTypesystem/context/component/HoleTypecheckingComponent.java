@@ -17,8 +17,8 @@ package jetbrains.mps.newTypesystem.context.component;
 
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.newTypesystem.TypesUtil;
+import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.state.HoleState;
-import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 
 import java.util.Collection;
@@ -33,7 +33,7 @@ import java.util.Collections;
  */
 public class HoleTypecheckingComponent extends SimpleTypecheckingComponent<HoleState>{
 
-  public HoleTypecheckingComponent(HoleState state, SimpleTypechecking component) {
+  public HoleTypecheckingComponent(HoleState state, BaseTypechecking component) {
     super(state, component);
   }
 
@@ -56,7 +56,7 @@ public class HoleTypecheckingComponent extends SimpleTypecheckingComponent<HoleS
   }
 
   @Override
-  protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
+  public SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
     assert getState().getInequalitySystem() != null;
     return computeTypesForNode_special_(initialNode, givenAdditionalNodes);
   }

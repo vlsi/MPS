@@ -15,9 +15,8 @@
  */
 package jetbrains.mps.newTypesystem.context.component;
 
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.newTypesystem.TypesUtil;
-import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.state.TargetState;
 import jetbrains.mps.smodel.SNode;
 
@@ -30,7 +29,7 @@ import jetbrains.mps.smodel.SNode;
  */
 public class TargetTypeheckingComponent extends SimpleTypecheckingComponent<TargetState> {
 
-  public TargetTypeheckingComponent(TargetState state, SimpleTypechecking component) {
+  public TargetTypeheckingComponent(TargetState state, BaseTypechecking component) {
     super(state, component);
   }
 

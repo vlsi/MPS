@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.context.component;
+package jetbrains.mps.newTypesystem.context.typechecking;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
@@ -23,6 +23,10 @@ import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.newTypesystem.context.component.ITypeErrorComponent;
+import jetbrains.mps.newTypesystem.context.component.IncrementalTypecheckingComponent;
+import jetbrains.mps.newTypesystem.context.component.NonTypeSystemComponent;
+import jetbrains.mps.newTypesystem.context.component.TypeSystemComponent;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.*;
@@ -36,7 +40,7 @@ import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.*;
 
-public class IncrementalTypechecking extends SimpleTypechecking<State, TypeSystemComponent> {
+public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemComponent> {
 
   private List<SModelEvent> myEvents;
 
@@ -271,6 +275,10 @@ public class IncrementalTypechecking extends SimpleTypechecking<State, TypeSyste
     myModelListenerManager.track(node);
   }
 
+  public void updateGCedNodes() {
+    getModelListenerManager().updateGCedNodes();
+  }
+
   private class MyModelListener extends SModelAdapter {
     public void eventFired(SModelEvent event) {
       myEvents.add(event);
@@ -315,7 +323,7 @@ public class IncrementalTypechecking extends SimpleTypechecking<State, TypeSyste
       markDependentOnPropertyNodesForInvalidation(event.getNode(), event.getPropertyName());
     }
 
-    private void markDependentNodesForInvalidation(SNode eventNode, CachingTypecheckingComponent component) {
+    private void markDependentNodesForInvalidation(SNode eventNode, IncrementalTypecheckingComponent component) {
       component.addNodeToInvalidate(eventNode);
     }
 
@@ -334,7 +342,7 @@ public class IncrementalTypechecking extends SimpleTypechecking<State, TypeSyste
     }
   }
 
-  class MyModelListenerManager {
+  private class MyModelListenerManager {
     private ReferenceQueue<SNode> myReferenceQueue = new ReferenceQueue<SNode>();
     private Map<SModelDescriptor, Integer> myNodesCount = new THashMap<SModelDescriptor, Integer>();
     private Map<WeakReference, SModelDescriptor> myDescriptors = new THashMap<WeakReference, SModelDescriptor>();

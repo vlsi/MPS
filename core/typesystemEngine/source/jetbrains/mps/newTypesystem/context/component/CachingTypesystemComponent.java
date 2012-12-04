@@ -15,8 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.context.component;
 
-import com.sun.jmx.snmp.internal.SnmpDecryptedPdu;
-import jetbrains.mps.newTypesystem.TypesUtil;
+import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 
@@ -30,7 +29,7 @@ import java.util.Collection;
  * To change this template use File | Settings | File Templates.
  */
 public class CachingTypesystemComponent extends SimpleTypecheckingComponent<State> {
-  public CachingTypesystemComponent(State state, SimpleTypechecking component) {
+  public CachingTypesystemComponent(State state, BaseTypechecking component) {
     super(state, component);
   }
 

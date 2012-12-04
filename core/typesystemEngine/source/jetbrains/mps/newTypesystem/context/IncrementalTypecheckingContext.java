@@ -21,7 +21,7 @@ import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.newTypesystem.context.component.IncrementalTypechecking;
+import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
 import jetbrains.mps.newTypesystem.state.State;

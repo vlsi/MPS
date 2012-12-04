@@ -15,10 +15,8 @@
  */
 package jetbrains.mps.newTypesystem.context;
 
-import jetbrains.mps.newTypesystem.context.component.HoleTypechecking;
-import jetbrains.mps.newTypesystem.context.component.SimpleTypechecking;
+import jetbrains.mps.newTypesystem.context.typechecking.HoleTypechecking;
 import jetbrains.mps.newTypesystem.state.HoleState;
-import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 

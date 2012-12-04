@@ -13,10 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.context.component;
+package jetbrains.mps.newTypesystem.context.typechecking;
 
+import jetbrains.mps.newTypesystem.context.component.HoleTypecheckingComponent;
 import jetbrains.mps.newTypesystem.state.HoleState;
-import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
 
@@ -29,7 +29,7 @@ import java.util.Collections;
  * Time: 11:43 AM
  * To change this template use File | Settings | File Templates.
  */
-public class HoleTypechecking extends SimpleTypechecking<HoleState, HoleTypecheckingComponent> {
+public class HoleTypechecking extends BaseTypechecking<HoleState, HoleTypecheckingComponent> {
 
   public HoleTypechecking(SNode node, HoleState state) {
     super(node, state);

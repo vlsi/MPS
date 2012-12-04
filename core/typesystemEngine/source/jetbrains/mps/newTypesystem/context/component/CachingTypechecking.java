@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.context.component;
 
+import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 
@@ -25,7 +26,7 @@ import jetbrains.mps.smodel.SNode;
  * Time: 11:22 AM
  * To change this template use File | Settings | File Templates.
  */
-public class CachingTypechecking extends SimpleTypechecking<State, CachingTypesystemComponent>{
+public class CachingTypechecking extends BaseTypechecking<State, CachingTypesystemComponent> {
 
   public CachingTypechecking(SNode node, State state) {
     super(node, state);

@@ -17,12 +17,10 @@ package jetbrains.mps.newTypesystem.context.component;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.newTypesystem.TypesUtil;
+import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.newTypesystem.state.TargetState;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -51,13 +49,13 @@ import java.util.Set;
   private final STATE myState;
   protected Queue<SNode> myQueue = new LinkedList<SNode>();
   protected boolean myIsChecked = false;
-  protected SimpleTypechecking myTypechecking;
+  protected BaseTypechecking myTypechecking;
   protected Set<SNode> myNodes = new THashSet<SNode>();
   protected Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
   protected Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
 
 
-  public SimpleTypecheckingComponent(STATE state, SimpleTypechecking component) {
+  public SimpleTypecheckingComponent(STATE state, BaseTypechecking component) {
     myState = state;
     myTypechecking = component;
   }
@@ -81,7 +79,7 @@ import java.util.Set;
     // do nothing
   }
 
-  protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
+  public SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
     return computeTypesForNode_special_(initialNode, givenAdditionalNodes);
   }
 
@@ -132,7 +130,7 @@ import java.util.Set;
     return myIsChecked && !doInvalidate();
   }
 
-  protected SimpleTypechecking getTypechecking() {
+  protected BaseTypechecking getTypechecking() {
     return myTypechecking;
   }
 

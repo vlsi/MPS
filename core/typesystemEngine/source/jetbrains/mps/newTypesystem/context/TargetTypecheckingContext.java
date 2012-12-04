@@ -15,10 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.context;
 
-import jetbrains.mps.newTypesystem.context.component.SimpleTypechecking;
-import jetbrains.mps.newTypesystem.context.component.TargetTypechecking;
-import jetbrains.mps.newTypesystem.context.component.TargetTypeheckingComponent;
-import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.newTypesystem.context.typechecking.TargetTypechecking;
 import jetbrains.mps.newTypesystem.state.TargetState;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;

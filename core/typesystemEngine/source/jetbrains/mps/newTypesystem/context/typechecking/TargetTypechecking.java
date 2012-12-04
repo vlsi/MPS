@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.context.component;
+package jetbrains.mps.newTypesystem.context.typechecking;
 
-import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.newTypesystem.context.component.TargetTypeheckingComponent;
 import jetbrains.mps.newTypesystem.state.TargetState;
 import jetbrains.mps.smodel.SNode;
 
@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.SNode;
  * Time: 1:26 PM
  * To change this template use File | Settings | File Templates.
  */
-public class TargetTypechecking extends SimpleTypechecking<TargetState, TargetTypeheckingComponent> {
+public class TargetTypechecking extends BaseTypechecking<TargetState, TargetTypeheckingComponent> {
   public TargetTypechecking(SNode node, TargetState state) {
     super(node, state);
   }

@@ -21,6 +21,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.LanguageHierarchyCache.CacheChangeListener;
@@ -33,7 +34,7 @@ import java.util.*;
 /*
  *   Non-reenterable.
  */
-/*package*/ class TypeSystemComponent extends CachingTypecheckingComponent<State> implements ITypeErrorComponent {
+/*package*/ public class TypeSystemComponent extends IncrementalTypecheckingComponent<State> implements ITypeErrorComponent {
   protected static final Logger LOG = Logger.getLogger(TypeSystemComponent.class);
 
   private Map<SNode, Set<SNode>> myNodesToDependentNodes_A;
@@ -168,7 +169,7 @@ import java.util.*;
   }
 
   @Override
-  protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
+  public SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
     return computeTypesForNode_special_(initialNode, givenAdditionalNodes);
   }
 
@@ -199,7 +200,7 @@ import java.util.*;
 
   //"type affected" means that *type* of this node depends on this set
   // used to decide whether call "type will be recalculated" if node from set invalidated
-  void addDependentNodesTypeSystem(@NotNull SNode sNode, Set<SNode> nodesToDependOn, boolean typesAffected) {
+  public void addDependentNodesTypeSystem(@NotNull SNode sNode, Set<SNode> nodesToDependOn, boolean typesAffected) {
     Map<SNode, Set<SNode>> dependencies = typesAffected ? myNodesToDependentNodes_A : myNodesToDependentNodes_B;
     for (SNode nodeToDependOn : nodesToDependOn) {
       if (nodeToDependOn == null) continue;
@@ -221,7 +222,7 @@ import java.util.*;
 
   @Override
   protected void performActionsAfterChecking() {
-    getTypechecking().getModelListenerManager().updateGCedNodes();
+    getTypechecking().updateGCedNodes();
     TypeChecker.getInstance().addTypeRecalculatedListener(getTypechecking().getTypeRecalculatedListener());//method checks if already exists
     LanguageHierarchyCache.getInstance().addCacheChangeListener(myLanguageCacheListener);
   }
