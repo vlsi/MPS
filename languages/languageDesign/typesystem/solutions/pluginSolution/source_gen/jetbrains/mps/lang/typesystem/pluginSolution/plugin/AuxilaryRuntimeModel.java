@@ -37,7 +37,7 @@ public class AuxilaryRuntimeModel {
         protected void performUndoableAction(SNodeUndoableAction action) {
         }
 
-        protected boolean canFireEvent() {
+        public boolean canFireEvent() {
           return false;
         }
       };

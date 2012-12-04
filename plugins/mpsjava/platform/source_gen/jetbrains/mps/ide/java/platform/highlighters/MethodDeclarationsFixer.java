@@ -80,8 +80,8 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
 
   @Override
   protected Set<EditorMessage> createMessages(final SNode rootNode, final List<SModelEvent> events, final boolean wasCheckedOnce, final EditorContext editorContext) {
-    return TypeContextManager.getInstance().runTypeCheckingComputation((ITypeContextOwner) editorContext.getEditorComponent(), rootNode, new ITypechecking.Computation() {
-      public Object compute(TypeCheckingContext p0) {
+    return TypeContextManager.getInstance().runTypeCheckingComputation((ITypeContextOwner) editorContext.getEditorComponent(), rootNode, new ITypechecking.Computation<Set<EditorMessage>>() {
+      public Set<EditorMessage> compute(TypeCheckingContext p0) {
         return doCreateMessages(rootNode, events, wasCheckedOnce, editorContext);
       }
     });

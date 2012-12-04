@@ -60,7 +60,7 @@ public class TypesEditorChecker extends EditorCheckerAdapter {
       @Override
       public Set<EditorMessage> compute(final TypeCheckingContext context) {
         final Set<EditorMessage> messages = new LinkedHashSet<EditorMessage>();
-        doCreateMessages(context, wasCheckedOnce, editorContext, rootNode, new LinkedHashSet<EditorMessage>());
+        doCreateMessages(context, wasCheckedOnce, editorContext, rootNode, messages);
         return messages;
       }
     });

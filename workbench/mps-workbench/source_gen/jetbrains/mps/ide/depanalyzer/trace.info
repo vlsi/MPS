@@ -429,8 +429,8 @@
     <unitInfo nodeId="4584053716645504515" fileName="ModuleDependencyNode.java" startLine="25" startPosition="0" endLine="177" endPosition="0" unitName="jetbrains.mps.ide.depanalyzer.ModuleDependencyNode" />
   </root>
   <root nodeId="6059554334738541128" modelId="r:e9e5ee4e-8216-40bc-b13e-6f1480c626c5(jetbrains.mps.ide.depanalyzer)">
-    <nodeInfo nodeId="209150240168770322" fileName="ModuleDependenciesView.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLeftTree" />
-    <nodeInfo nodeId="209150240168804813" fileName="ModuleDependenciesView.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRightTree" />
+    <nodeInfo nodeId="8150898248362568762" fileName="ModuleDependenciesView.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myLeftTree" />
+    <nodeInfo nodeId="8150898248364139410" fileName="ModuleDependenciesView.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRightTree" />
     <nodeInfo nodeId="5660841153991296776" fileName="ModuleDependenciesView.java" startLine="47" startPosition="65" endLine="48" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="6059554334738559566" fileName="ModuleDependenciesView.java" startLine="48" startPosition="30" endLine="49" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6059554334738559576" fileName="ModuleDependenciesView.java" startLine="49" startPosition="45" endLine="50" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
