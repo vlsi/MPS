@@ -20,6 +20,7 @@ import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
 import jetbrains.mps.smodel.SNode;
@@ -30,7 +31,7 @@ import jetbrains.mps.util.Pair;
 
 import java.util.*;
 
-class NonTypeSystemComponent extends CachingTypecheckingComponent implements ITypeErrorComponent {
+class NonTypeSystemComponent extends CachingTypecheckingComponent<State> implements ITypeErrorComponent {
 
   private Set<Pair<SNode, String>> myCurrentPropertiesToInvalidate = new HashSet<Pair<SNode, String>>();
   private Set<SNode> myCurrentTypedTermsToInvalidate = new HashSet<SNode>();

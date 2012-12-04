@@ -31,15 +31,10 @@ import java.util.Collections;
  * Time: 11:30 AM
  * To change this template use File | Settings | File Templates.
  */
-public class HoleTypecheckingComponent extends SimpleTypecheckingComponent{
+public class HoleTypecheckingComponent extends SimpleTypecheckingComponent<HoleState>{
 
   public HoleTypecheckingComponent(HoleState state, SimpleTypechecking component) {
     super(state, component);
-  }
-
-  @Override
-  HoleState getState() {
-    return (HoleState) super.getState();
   }
 
   @Override

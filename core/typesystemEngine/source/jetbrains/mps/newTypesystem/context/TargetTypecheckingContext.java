@@ -30,20 +30,15 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
  * Time: 1:24 PM
  * To change this template use File | Settings | File Templates.
  */
-public class TargetTypecheckingContext extends SimpleTypecheckingContext {
+public class TargetTypecheckingContext extends SimpleTypecheckingContext<TargetState, TargetTypechecking> {
 
   public TargetTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
   }
 
   @Override
-  protected State createState() {
+  protected TargetState createState() {
     return new TargetState(this);
-  }
-
-  @Override
-  public TargetState getState() {
-    return (TargetState) super.getState();
   }
 
   @Override

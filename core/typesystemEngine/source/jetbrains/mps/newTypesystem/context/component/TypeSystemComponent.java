@@ -33,7 +33,7 @@ import java.util.*;
 /*
  *   Non-reenterable.
  */
-/*package*/ class TypeSystemComponent extends CachingTypecheckingComponent implements ITypeErrorComponent {
+/*package*/ class TypeSystemComponent extends CachingTypecheckingComponent<State> implements ITypeErrorComponent {
   protected static final Logger LOG = Logger.getLogger(TypeSystemComponent.class);
 
   private Map<SNode, Set<SNode>> myNodesToDependentNodes_A;

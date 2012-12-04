@@ -25,7 +25,7 @@ import jetbrains.mps.util.Pair;
 
 import java.util.Set;
 
-/*package*/ abstract class CachingTypecheckingComponent extends SimpleTypecheckingComponent {
+/*package*/ abstract class CachingTypecheckingComponent<STATE extends State> extends SimpleTypecheckingComponent<STATE> {
 
   private boolean myInvalidationWasPerformed = false;
   private boolean myCacheWasRebuilt = false;
@@ -33,7 +33,7 @@ import java.util.Set;
 
   private Set<SNode> myCurrentNodesToInvalidate = new THashSet<SNode>();
 
-  protected CachingTypecheckingComponent(TypeChecker typeChecker, State state, SimpleTypechecking component) {
+  protected CachingTypecheckingComponent(TypeChecker typeChecker, STATE state, SimpleTypechecking component) {
     super(state, component);
   }
 

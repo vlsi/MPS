@@ -29,28 +29,18 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
  * Time: 11:48 AM
  * To change this template use File | Settings | File Templates.
  */
-public class HoleTypecheckingContext extends SimpleTypecheckingContext {
+public class HoleTypecheckingContext extends SimpleTypecheckingContext<HoleState, HoleTypechecking> {
   public HoleTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
   }
 
   @Override
-  protected State createState() {
+  protected HoleState createState() {
     return new HoleState(this);
   }
 
   @Override
-  public HoleState getState() {
-    return (HoleState) super.getState();
-  }
-
-  @Override
-  protected SimpleTypechecking createTypechecking() {
+  protected HoleTypechecking createTypechecking() {
     return new HoleTypechecking(getNode(), getState());
-  }
-
-  @Override
-  public HoleTypechecking getTypechecking() {
-    return (HoleTypechecking) super.getTypechecking();
   }
 }

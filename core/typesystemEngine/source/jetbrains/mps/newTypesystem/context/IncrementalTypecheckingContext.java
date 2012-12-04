@@ -32,7 +32,7 @@ import jetbrains.mps.util.SNodeOperations;
 import java.util.HashMap;
 import java.util.Map;
 
-public class IncrementalTypecheckingContext extends SimpleTypecheckingContext {
+public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<State, IncrementalTypechecking> {
   private static Logger LOG = Logger.getLogger(IncrementalTypecheckingContext.class);
 
   private boolean myIsNonTypesystemComputation = false;
@@ -45,7 +45,6 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext {
     super(rootNode, typeChecker);
   }
 
-
   @Override
   protected State createState() {
     return new State(this);
@@ -56,15 +55,9 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext {
     return new IncrementalTypechecking(getNode(), getState());
   }
 
-  @Override
-  public IncrementalTypechecking getTypechecking() {
-    return (IncrementalTypechecking) super.getTypechecking();
-  }
-
   public boolean isSingleTypeComputation() {
     return false;
   }
-
 
   public TypeChecker getTypeChecker() {
     return myTypeChecker;
@@ -74,12 +67,10 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext {
     return (SubTypingManagerNew) myTypeChecker.getSubtypingManager();
   }
 
-
   @Override
   public void clear() {
     getTypechecking().clear();
   }
-
 
   @Override
   public final IncrementalTypechecking getBaseNodeTypesComponent() {

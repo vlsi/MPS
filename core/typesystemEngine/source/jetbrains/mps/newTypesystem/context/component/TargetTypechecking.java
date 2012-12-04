@@ -26,14 +26,9 @@ import jetbrains.mps.smodel.SNode;
  * Time: 1:26 PM
  * To change this template use File | Settings | File Templates.
  */
-public class TargetTypechecking extends SimpleTypechecking {
+public class TargetTypechecking extends SimpleTypechecking<TargetState, TargetTypeheckingComponent> {
   public TargetTypechecking(SNode node, TargetState state) {
     super(node, state);
-  }
-
-  @Override
-  protected TargetState getState() {
-    return (TargetState) super.getState();
   }
 
   @Override

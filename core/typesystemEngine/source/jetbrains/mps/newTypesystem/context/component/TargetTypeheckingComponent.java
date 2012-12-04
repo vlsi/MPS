@@ -28,22 +28,16 @@ import jetbrains.mps.smodel.SNode;
  * Time: 11:25 AM
  * To change this template use File | Settings | File Templates.
  */
-public class TargetTypeheckingComponent extends SimpleTypecheckingComponent {
+public class TargetTypeheckingComponent extends SimpleTypecheckingComponent<TargetState> {
 
   public TargetTypeheckingComponent(TargetState state, SimpleTypechecking component) {
     super(state, component);
   }
 
   @Override
-  TargetState getState() {
-    return (TargetState) super.getState();
-  }
-
-  @Override
   protected void setTargetNode(SNode initialNode) {
     getState().setTargetNode(initialNode);
   }
-
 
   @Override
   protected void setTarget(SNode initialNode) {

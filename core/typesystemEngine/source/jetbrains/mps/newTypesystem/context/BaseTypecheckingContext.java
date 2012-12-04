@@ -39,7 +39,7 @@ import java.util.List;
  * Time: 2:10 PM
  * To change this template use File | Settings | File Templates.
  */
-public abstract class BaseTypecheckingContext extends TypeCheckingContext {
+public abstract class BaseTypecheckingContext<STATE extends State> extends TypeCheckingContext {
 
   protected final Object TYPECHECKING_LOCK = new Object();
 
@@ -47,19 +47,9 @@ public abstract class BaseTypecheckingContext extends TypeCheckingContext {
 
   protected TypeChecker myTypeChecker;
 
-  private State myState;
-
   public BaseTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
     myRootNode = rootNode;
     myTypeChecker = typeChecker;
-    myState = createState();
-  }
-
-  protected abstract State createState();
-
-  public State getState() {
-    assert myState != null;
-    return myState;
   }
 
   @Override

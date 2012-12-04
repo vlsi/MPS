@@ -46,9 +46,9 @@ import java.util.Set;
  * Time: 10:07 AM
  * To change this template use File | Settings | File Templates.
  */
-/*package*/ public class SimpleTypecheckingComponent {
+/*package*/ public class SimpleTypecheckingComponent<STATE extends State> {
 
-  private final State myState;
+  private final STATE myState;
   protected Queue<SNode> myQueue = new LinkedList<SNode>();
   protected boolean myIsChecked = false;
   protected SimpleTypechecking myTypechecking;
@@ -57,7 +57,7 @@ import java.util.Set;
   protected Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
 
 
-  public SimpleTypecheckingComponent(State state, SimpleTypechecking component) {
+  public SimpleTypecheckingComponent(STATE state, SimpleTypechecking component) {
     myState = state;
     myTypechecking = component;
   }
@@ -271,7 +271,7 @@ import java.util.Set;
 
   }
 
-  /*package*/ State getState() {
+  /*package*/ STATE getState() {
     return myState;
   }
 

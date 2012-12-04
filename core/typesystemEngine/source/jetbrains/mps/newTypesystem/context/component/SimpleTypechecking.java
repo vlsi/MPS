@@ -39,31 +39,32 @@ import java.util.Set;
  * Time: 3:24 PM
  * To change this template use File | Settings | File Templates.
  */
-public class SimpleTypechecking {
+public class SimpleTypechecking<STATE extends State, COMP extends SimpleTypecheckingComponent> {
 
   protected final SNode myRootNode;
-  private final State myState;
-  private final SimpleTypecheckingComponent myTypecheckingComponent;
+  private final STATE myState;
+  private final COMP myTypecheckingComponent;
 
-  public SimpleTypechecking(SNode node, State state) {
+  public SimpleTypechecking(SNode node, STATE state) {
     myRootNode = node;
     myState = state;
     myTypecheckingComponent = createTypecheckingComponent();
   }
 
-  protected State getState() {
+  protected STATE getState() {
     return myState;
   }
 
-  protected SimpleTypecheckingComponent createTypecheckingComponent() {
-    return new SimpleTypecheckingComponent(getState(), this);
+  @SuppressWarnings("unchecked")
+  protected COMP createTypecheckingComponent() {
+    return (COMP) new SimpleTypecheckingComponent<STATE>(getState(), this);
   }
 
   public SNode getNode() {
     return myRootNode;
   }
 
-  protected SimpleTypecheckingComponent getTypecheckingComponent() {
+  protected COMP getTypecheckingComponent() {
     return myTypecheckingComponent;
   }
 

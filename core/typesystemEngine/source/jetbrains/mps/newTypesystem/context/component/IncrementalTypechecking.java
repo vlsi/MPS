@@ -36,7 +36,7 @@ import java.lang.ref.ReferenceQueue;
 import java.lang.ref.WeakReference;
 import java.util.*;
 
-public class IncrementalTypechecking extends SimpleTypechecking {
+public class IncrementalTypechecking extends SimpleTypechecking<State, TypeSystemComponent> {
 
   private List<SModelEvent> myEvents;
 
@@ -68,13 +68,7 @@ public class IncrementalTypechecking extends SimpleTypechecking {
     return new TypeSystemComponent(TypeChecker.getInstance(), getState(), this);
   }
 
-  @Override
-  protected TypeSystemComponent getTypecheckingComponent() {
-    return (TypeSystemComponent) super.getTypecheckingComponent();
-  }
-
   public void clear() {
-
     clearNodesTypes();
     myNonTypeSystemComponent.clear();
     getTypecheckingComponent().clear();

@@ -43,30 +43,43 @@ import java.util.Set;
  * Time: 3:35 PM
  * To change this template use File | Settings | File Templates.
  */
-public class SimpleTypecheckingContext extends BaseTypecheckingContext {
+public class SimpleTypecheckingContext<
+    STATE extends State,
+    TCHECK extends SimpleTypechecking<STATE, ? extends SimpleTypecheckingComponent<STATE>>>
+  extends BaseTypecheckingContext {
 
-  private SimpleTypechecking myTypechecking;
+  private TCHECK myTypechecking;
+  private STATE myState;
 
   public SimpleTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
+    myState = createState();
     setTypechecking(createTypechecking());
   }
 
-
-  protected SimpleTypechecking createTypechecking() {
-    return new SimpleTypechecking(getNode(), getState());
+  @SuppressWarnings("unchecked")
+  protected TCHECK createTypechecking() {
+    return (TCHECK) new SimpleTypechecking<STATE, SimpleTypecheckingComponent<STATE>>(getNode(), getState());
   }
 
-  @Override
-  protected State createState() {
-    return new State(this);
+  @SuppressWarnings("unchecked")
+  protected STATE createState() {
+    return (STATE) new State(this);
+  }
+
+  public STATE getState() {
+    assert myState != null;
+    return myState;
+  }
+
+  public TCHECK getTypechecking() {
+    return myTypechecking;
   }
 
   @Override
   public boolean isSingleTypeComputation() {
     return true;
   }
-
 
   @Override
   public void addDependencyForCurrent(SNode node) {
@@ -101,6 +114,7 @@ public class SimpleTypecheckingContext extends BaseTypecheckingContext {
     return result;
   }
 
+
   @Override
   public SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
     Pair<SNode, Boolean> pair = typeChecker.getTypeComputedForCompletion(node);
@@ -111,7 +125,6 @@ public class SimpleTypecheckingContext extends BaseTypecheckingContext {
     typeChecker.putTypeComputedForCompletion(node, resultType);
     return resultType;
   }
-
 
   @Override
   public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
@@ -150,11 +163,7 @@ public class SimpleTypecheckingContext extends BaseTypecheckingContext {
     return null;
   }
 
-  public SimpleTypechecking getTypechecking() {
-    return myTypechecking;
-  }
-
-  protected final void setTypechecking(SimpleTypechecking typechecking) {
+  protected final void setTypechecking(TCHECK typechecking) {
     assert myTypechecking == null;
     assert typechecking != null;
     myTypechecking = typechecking;

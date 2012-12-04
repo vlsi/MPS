@@ -29,19 +29,14 @@ import java.util.Collections;
  * Time: 11:43 AM
  * To change this template use File | Settings | File Templates.
  */
-public class HoleTypechecking extends SimpleTypechecking {
+public class HoleTypechecking extends SimpleTypechecking<HoleState, HoleTypecheckingComponent> {
 
   public HoleTypechecking(SNode node, HoleState state) {
     super(node, state);
   }
 
   @Override
-  protected HoleState getState() {
-    return (HoleState) super.getState();
-  }
-
-  @Override
-  protected SimpleTypecheckingComponent createTypecheckingComponent() {
+  protected HoleTypecheckingComponent createTypecheckingComponent() {
     return new HoleTypecheckingComponent(getState(), this);
   }
 
