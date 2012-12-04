@@ -34,7 +34,6 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.HackSNodeUtil;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -363,7 +362,7 @@ public class RefactoringContext {
               node.delete();
             } else {
               String newConceptFQName = newConceptFeature.getConceptFQName();
-              HackSNodeUtil.setConceptFqName(node, newConceptFQName);
+              node.setConceptFqName(newConceptFQName);
             }
           }
         }
@@ -428,7 +427,9 @@ public class RefactoringContext {
           String newName = null;
           if (!(delete)) {
             newName = newConceptFeature.getFeatureName();
-            HackSNodeUtil.changePropertyName(node, oldName, newName);
+            String val = node.getProperty(oldName);
+            node.setProperty(oldName, null);
+            node.setProperty(newName, val);
           } else {
             node.setProperty(oldName, null);
           }

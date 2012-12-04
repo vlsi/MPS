@@ -27,7 +27,6 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.util.annotation.UseCarefully;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import jetbrains.mps.util.containers.EmptyIterable;
 import org.jetbrains.annotations.NotNull;
@@ -630,6 +629,16 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myModel != null && myModel.isDisposed();
   }
 
+  public void setId(@Nullable SNodeId id) {
+    if (EqualUtil.equals(id, myId)) return;
+
+    if (myModel == null) {
+      myId = id;
+    } else {
+      LOG.error("can't set id to registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this), new Throwable());
+    }
+  }
+
   //----------------------------------------------------------
   //-----------WORKING WITH CONCEPT ON A NODE LEVEL-----------
   //----------------------------------------------------------
@@ -656,26 +665,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   //----------------USAGES IN REFACTORINGS ONLY---------------
   //----------------------------------------------------------
 
-  public void setId(@Nullable SNodeId id) {
-    if (EqualUtil.equals(id, myId)) return;
-
-    if (myModel == null) {
-      myId = id;
-    } else {
-      LOG.error("can't set id to registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this), new Throwable());
-    }
-  }
-
-  void changePropertyName(String oldPropertyName, String newPropertyName) {
-    //todo make undo?
-    if (myProperties == null) return;
-    int index = getPropertyIndex(oldPropertyName);
-    if (index == -1) return;
-    myProperties[index] = newPropertyName;
-  }
-
-  @UseCarefully
-  void setConceptFqName(@NotNull String conceptFQName) {
+  public void setConceptFqName(@NotNull String conceptFQName) {
     myConceptFqName = InternUtil.intern(conceptFQName);
     SModelRepository.getInstance().markChanged(getModel());
   }
@@ -1005,6 +995,16 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     for (String name : fromNode.getPropertyNames()) {
       setProperty(name, fromNode.getProperty(name));
     }
+  }
+
+  @Deprecated
+  /**
+   * Inline. Not supposed to be used
+   * @Deprecated in 3.0
+   */
+  public void changePropertyName(String oldPropertyName, String newPropertyName) {
+    setProperty(newPropertyName, getProperty(oldPropertyName));
+    setProperty(oldPropertyName, null);
   }
 
   @Deprecated

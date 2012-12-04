@@ -20,7 +20,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.HackSNodeUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
@@ -96,7 +95,7 @@ public class ModelLinkMap {
       public void invoke(SNode node) {
         String modelName = newPtr.getModelReference().getLongName();
         String name = NameUtil.shortNameFromLongName(node.getConcept().getId());
-        HackSNodeUtil.setConceptFqName(node, NameUtil.longNameFromNamespaceAndShortName(modelName, name));
+        node.setConceptFqName(NameUtil.longNameFromNamespaceAndShortName(modelName, name));
       }
     });
     move(myNodeRoleMap, oldPtr, newPtr, new _FunctionTypes._void_P1_E0<SNode>() {
@@ -147,7 +146,7 @@ public class ModelLinkMap {
     res |= setProp(myNodeTypeMap, ptr, new _FunctionTypes._void_P1_E0<SNode>() {
       public void invoke(SNode node) {
         String modelName = NameUtil.namespaceFromConceptFQName(node.getConcept().getId());
-        HackSNodeUtil.setConceptFqName(node, NameUtil.conceptFQNameFromNamespaceAndShortName(modelName, name));
+        node.setConceptFqName(NameUtil.conceptFQNameFromNamespaceAndShortName(modelName, name));
       }
     });
     res |= setProp(myPropNameMap, ptr, new _FunctionTypes._void_P1_E0<Pair<SNode, String>>() {
@@ -220,8 +219,7 @@ public class ModelLinkMap {
         ListSequence.fromList(MapSequence.fromMap(myNodeTypeMap).get(ptr)).visitAll(new IVisitor<SNode>() {
           public void visit(SNode node) {
             String name = NameUtil.shortNameFromLongName(node.getConcept().getId());
-            HackSNodeUtil.setConceptFqName(node, NameUtil.longNameFromNamespaceAndShortName(newModel.getLongName(), name));
-
+            node.setConceptFqName(NameUtil.longNameFromNamespaceAndShortName(newModel.getLongName(), name));
           }
         });
       }
