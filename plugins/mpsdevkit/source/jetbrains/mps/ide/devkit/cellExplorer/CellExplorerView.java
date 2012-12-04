@@ -338,7 +338,7 @@ public class CellExplorerView extends BaseProjectTool {
   private class KeyMapTreeNode extends MPSTreeNode {
     public KeyMapTreeNode(EditorCellKeyMap keyMap) {
       super(null);
-
+      setNodeIdentifier("KeyMaps");
 
       List<Pair<EditorCellKeyMapAction, EditorCellKeyMap.ActionKey>> list =
         new ArrayList<Pair<EditorCellKeyMapAction, EditorCellKeyMap.ActionKey>>(keyMap.getAllActionsAndKeys());
