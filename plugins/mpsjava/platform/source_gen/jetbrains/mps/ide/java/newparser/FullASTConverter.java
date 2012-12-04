@@ -116,47 +116,55 @@ public class FullASTConverter extends ASTConverter {
     super(cud, typeResolver, false);
   }
 
-  public SNode convertStatement(Statement s) throws JavaParseException {
-    if (s instanceof AssertStatement) {
-      return convertStatement((AssertStatement) s);
-    } else if (s instanceof Block) {
-      return convertStatement((Block) s);
-    } else if (s instanceof BreakStatement) {
-      return convertStatement((BreakStatement) s);
-    } else if (s instanceof ContinueStatement) {
-      return convertStatement((ContinueStatement) s);
-    } else if (s instanceof DoStatement) {
-      return convertStatement((DoStatement) s);
-    } else if (s instanceof EmptyStatement) {
-      return convertStatement((EmptyStatement) s);
-    } else if (s instanceof ExplicitConstructorCall) {
-      return convertStatement((ExplicitConstructorCall) s);
-    } else if (s instanceof Expression) {
-      return convertStatement((Expression) s);
-    } else if (s instanceof ForStatement) {
-      return convertStatement((ForStatement) s);
-    } else if (s instanceof ForeachStatement) {
-      return convertStatement((ForeachStatement) s);
-    } else if (s instanceof IfStatement) {
-      return convertStatement((IfStatement) s);
-    } else if (s instanceof LabeledStatement) {
-      return convertStatement((LabeledStatement) s);
-    } else if (s instanceof LocalDeclaration) {
-      return convertStatement((LocalDeclaration) s);
-    } else if (s instanceof ReturnStatement) {
-      return convertStatement((ReturnStatement) s);
-    } else if (s instanceof SwitchStatement) {
-      return convertStatement((SwitchStatement) s);
-    } else if (s instanceof SynchronizedStatement) {
-      return convertStatement((SynchronizedStatement) s);
-    } else if (s instanceof ThrowStatement) {
-      return convertStatement((ThrowStatement) s);
-    } else if (s instanceof TryStatement) {
-      return convertStatement((TryStatement) s);
-    } else if (s instanceof TypeDeclaration) {
-      return convertStatement((TypeDeclaration) s);
-    } else if (s instanceof WhileStatement) {
-      return convertStatement((WhileStatement) s);
+  public SNode convertStatementWrap(Statement x) throws JavaParseException {
+    SNode s = convertStatement(x);
+    if ((s != null)) {
+      MapSequence.fromMap(myPositions).put(s, x.sourceEnd());
+    }
+    return s;
+  }
+
+  public SNode convertStatement(Statement x) throws JavaParseException {
+    if (x instanceof AssertStatement) {
+      return convertStatement((AssertStatement) x);
+    } else if (x instanceof Block) {
+      return convertStatement((Block) x);
+    } else if (x instanceof BreakStatement) {
+      return convertStatement((BreakStatement) x);
+    } else if (x instanceof ContinueStatement) {
+      return convertStatement((ContinueStatement) x);
+    } else if (x instanceof DoStatement) {
+      return convertStatement((DoStatement) x);
+    } else if (x instanceof EmptyStatement) {
+      return convertStatement((EmptyStatement) x);
+    } else if (x instanceof ExplicitConstructorCall) {
+      return convertStatement((ExplicitConstructorCall) x);
+    } else if (x instanceof Expression) {
+      return convertStatement((Expression) x);
+    } else if (x instanceof ForStatement) {
+      return convertStatement((ForStatement) x);
+    } else if (x instanceof ForeachStatement) {
+      return convertStatement((ForeachStatement) x);
+    } else if (x instanceof IfStatement) {
+      return convertStatement((IfStatement) x);
+    } else if (x instanceof LabeledStatement) {
+      return convertStatement((LabeledStatement) x);
+    } else if (x instanceof LocalDeclaration) {
+      return convertStatement((LocalDeclaration) x);
+    } else if (x instanceof ReturnStatement) {
+      return convertStatement((ReturnStatement) x);
+    } else if (x instanceof SwitchStatement) {
+      return convertStatement((SwitchStatement) x);
+    } else if (x instanceof SynchronizedStatement) {
+      return convertStatement((SynchronizedStatement) x);
+    } else if (x instanceof ThrowStatement) {
+      return convertStatement((ThrowStatement) x);
+    } else if (x instanceof TryStatement) {
+      return convertStatement((TryStatement) x);
+    } else if (x instanceof TypeDeclaration) {
+      return convertStatement((TypeDeclaration) x);
+    } else if (x instanceof WhileStatement) {
+      return convertStatement((WhileStatement) x);
     } else {
       return null;
     }
@@ -165,7 +173,6 @@ public class FullASTConverter extends ASTConverter {
 
   @Override
   protected void handleMethodBody(SNode result, AbstractMethodDeclaration x) throws JavaParseException {
-    // ignore by default: only stub structure 
     addBlock(SLinkOperations.getTarget(result, "body", true), x.declarationSourceStart, x.declarationSourceEnd);
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(result, "body", true), "statement", true)).addSequence(ListSequence.fromList(convertStatements(x.statements)));
   }
@@ -174,7 +181,7 @@ public class FullASTConverter extends ASTConverter {
     List<SNode> result = new ArrayList<SNode>();
     if (ss != null) {
       for (Statement stmt : ss) {
-        SNode statement = convertStatement(stmt);
+        SNode statement = convertStatementWrap(stmt);
         if (statement != null) {
           result.add(statement);
         }
@@ -237,7 +244,9 @@ public class FullASTConverter extends ASTConverter {
     } else if (x instanceof UnaryExpression) {
       return convertExpression((UnaryExpression) x);
     } else {
-      System.out.println("Unknown expression: " + x.getClass().getName());
+      if (x != null) {
+        LOG.error("Unknown expression type: " + x.getClass().getName());
+      }
       return null;
     }
 
@@ -257,7 +266,7 @@ public class FullASTConverter extends ASTConverter {
         return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null);
       } else {
         // import token as string constant even if it was an error in literal 
-        return _quotation_createNode_f46ocm_a1a0c0n(NameUtil.escapeString(new String(((Literal) x).source())));
+        return _quotation_createNode_f46ocm_a1a0c0o(NameUtil.escapeString(new String(((Literal) x).source())));
       }
     }
 
@@ -267,7 +276,7 @@ public class FullASTConverter extends ASTConverter {
     List<SNode> expressionStatements = new ArrayList<SNode>();
     if (statements != null) {
       for (int i = 0, n = statements.length; i < n; ++i) {
-        SNode statement = convertStatement(statements[i]);
+        SNode statement = convertStatementWrap(statements[i]);
         if ((statement != null)) {
           ListSequence.fromList(expressionStatements).addElement(SNodeOperations.cast(statement, "jetbrains.mps.baseLanguage.structure.ExpressionStatement"));
         }
@@ -344,7 +353,7 @@ public class FullASTConverter extends ASTConverter {
         if ((currentSwitchCase != null)) {
           // advance end of case block 
           getBlock(currentSwitchCase).setEndPos(stmt.sourceEnd);
-          ListSequence.fromList(SLinkOperations.getTargets(currentSwitchCase, "statement", true)).addElement(convertStatement(stmt));
+          ListSequence.fromList(SLinkOperations.getTargets(currentSwitchCase, "statement", true)).addElement(convertStatementWrap(stmt));
         }
       }
       // adjust end of last case block up to the end of switch statement 
@@ -374,7 +383,7 @@ public class FullASTConverter extends ASTConverter {
 
   /*package*/ SNode convertStatement(DoStatement x) throws JavaParseException {
     SNode loopTest = convertExpressionWrap(x.condition);
-    SNode loopBody = convertStatement(x.action);
+    SNode loopBody = convertStatementWrap(x.action);
     SNode doWhileStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DoWhileStatement", null);
     SLinkOperations.setTarget(doWhileStatement, "condition", loopTest, true);
     SNode body = getStatementListFromStatement(loopBody, x.action);
@@ -422,7 +431,7 @@ public class FullASTConverter extends ASTConverter {
 
   /*package*/ SNode convertStatement(ForeachStatement x) throws JavaParseException {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ForeachStatement", null);
-    SNode action = convertStatement(x.action);
+    SNode action = convertStatementWrap(x.action);
     SNode body = getStatementListFromStatement(action, x.action);
 
 
@@ -446,7 +455,7 @@ public class FullASTConverter extends ASTConverter {
       }
     })) {
       // we don't support for ( a=5, b=6; ...) {} in baseLanguage, workaround here 
-      result = _quotation_createNode_f46ocm_a0b0d0cb(init, forStatement);
+      result = _quotation_createNode_f46ocm_a0b0d0db(init, forStatement);
     } else if (!(init.isEmpty())) {
       boolean first = true;
       for (SNode statement : init) {
@@ -478,7 +487,7 @@ public class FullASTConverter extends ASTConverter {
         ListSequence.fromList(SLinkOperations.getTargets(forStatement, "iteration", true)).addElement(expression);
       }
     }
-    SNode loopBody = convertStatement(x.action);
+    SNode loopBody = convertStatementWrap(x.action);
     SNode body = getStatementListFromStatement(loopBody, x.action);
     SLinkOperations.setTarget(forStatement, "body", body, true);
     return result;
@@ -487,8 +496,8 @@ public class FullASTConverter extends ASTConverter {
   /*package*/ SNode convertStatement(IfStatement x) throws JavaParseException {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
     SLinkOperations.setTarget(result, "condition", convertExpressionWrap(x.condition), true);
-    SNode thenStmt = convertStatement(x.thenStatement);
-    SLinkOperations.setTarget(result, "ifFalseStatement", convertStatement(x.elseStatement), true);
+    SNode thenStmt = convertStatementWrap(x.thenStatement);
+    SLinkOperations.setTarget(result, "ifFalseStatement", convertStatementWrap(x.elseStatement), true);
     SNode ifTrue = getStatementListFromStatement(thenStmt, x.thenStatement);
     // adjust start of the "if" statement list block to get comments from "if (...)" there 
     getBlock(ifTrue).setStartPos(x.sourceStart);
@@ -499,7 +508,7 @@ public class FullASTConverter extends ASTConverter {
   }
 
   /*package*/ SNode convertStatement(LabeledStatement x) throws JavaParseException {
-    SNode statement = convertStatement(x.statement);
+    SNode statement = convertStatementWrap(x.statement);
     if ((statement == null)) {
       return null;
     }
@@ -580,7 +589,7 @@ public class FullASTConverter extends ASTConverter {
 
   /*package*/ SNode convertStatement(WhileStatement x) throws JavaParseException {
     SNode loopTest = convertExpressionWrap(x.condition);
-    SNode loopBody = convertStatement(x.action);
+    SNode loopBody = convertStatementWrap(x.action);
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.WhileStatement", null);
     SLinkOperations.setTarget(result, "condition", loopTest, true);
     SLinkOperations.setTarget(result, "body", getStatementListFromStatement(loopBody, x.action), true);
@@ -1211,11 +1220,11 @@ public class FullASTConverter extends ASTConverter {
    */
   public SNode convertExpressionAdHoc(Expression exp) {
     if (exp instanceof TrueLiteral) {
-      return _quotation_createNode_f46ocm_a0a0a77();
+      return _quotation_createNode_f46ocm_a0a0a87();
     } else if (exp instanceof FalseLiteral) {
-      return _quotation_createNode_f46ocm_a0a0a0zc();
+      return _quotation_createNode_f46ocm_a0a0a0ad();
     } else if (exp instanceof StringLiteral) {
-      return _quotation_createNode_f46ocm_a0a1a0zc(new String(((StringLiteral) exp).source()));
+      return _quotation_createNode_f46ocm_a0a1a0ad(new String(((StringLiteral) exp).source()));
     } else if (exp instanceof ArrayInitializer) {
       SNode arr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayLiteral", null);
       for (Expression e : ((ArrayInitializer) exp).expressions) {
@@ -1249,7 +1258,7 @@ public class FullASTConverter extends ASTConverter {
 
     } else if (exp instanceof SingleNameReference) {
       // FIXME 
-      return _quotation_createNode_f46ocm_a1a4a0zc();
+      return _quotation_createNode_f46ocm_a1a4a0ad();
     } else {
       throw new RuntimeException("This kind of expression is not supported yet: " + exp.getClass().getName());
     }
@@ -1469,14 +1478,14 @@ public class FullASTConverter extends ASTConverter {
 
 
 
-  private static SNode _quotation_createNode_f46ocm_a1a0c0n(Object parameter_1) {
+  private static SNode _quotation_createNode_f46ocm_a1a0c0o(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_f46ocm_a0b0d0cb(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_f46ocm_a0b0d0db(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -1504,27 +1513,27 @@ public class FullASTConverter extends ASTConverter {
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_f46ocm_a0a0a77() {
+  private static SNode _quotation_createNode_f46ocm_a0a0a87() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_1, "value", "true");
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_f46ocm_a0a0a0zc() {
+  private static SNode _quotation_createNode_f46ocm_a0a0a0ad() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_f46ocm_a0a1a0zc(Object parameter_1) {
+  private static SNode _quotation_createNode_f46ocm_a0a1a0ad(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_f46ocm_a1a4a0zc() {
+  private static SNode _quotation_createNode_f46ocm_a1a4a0ad() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_1, "value", "NOT SUPPORTED YET");
