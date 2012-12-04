@@ -29,7 +29,6 @@ import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 import jetbrains.mps.ide.ui.smodel.SModelTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
@@ -115,7 +114,7 @@ public abstract class ProjectTreeFindHelper {
             if (object == finalCurrentTreeNode) return true;
             if (!(object instanceof PackageNode)) return false;
             String pack = ((PackageNode) object).getFullPackage();
-            String vp = node.getTopmostAncestor().getPersistentProperty(SNodeUtil.property_BaseConcept_virtualPackage);
+            String vp = node.getTopmostAncestor().getProperty(SNodeUtil.property_BaseConcept_virtualPackage);
             return vp != null && vp.startsWith(pack);
           }
         }, new Condition<MPSTreeNode>() {

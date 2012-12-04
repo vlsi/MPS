@@ -123,7 +123,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     assertDisposed();
 
     firePropertyReadAccessInEditor(propertyName, true);
-    String property_internal = getPersistentProperty(propertyName);
+    String property_internal = getProperty(propertyName);
     return !SModelUtil_new.isEmptyPropertyValue(property_internal);
   }
 
@@ -354,7 +354,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   public String getPresentation() {
     if (SNodeOperations.isUnknown(this)) {
-      String persistentName = getPersistentProperty(SNodeUtil.property_INamedConcept_name);
+      String persistentName = getProperty(SNodeUtil.property_INamedConcept_name);
       if (persistentName == null) {
         return "?" + NameUtil.shortNameFromLongName(getConceptFqName()) + "?";
       }
@@ -372,7 +372,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     String s = null;
     try {
-      s = getPersistentProperty(SNodeUtil.property_BaseConcept_alias);
+      s = getProperty(SNodeUtil.property_BaseConcept_alias);
       if (s == null) {
         s = getPresentation();
       }
@@ -618,11 +618,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   //-------------------------------------------------------
   //-----------TO IMPLEMENT VIA OTHER METHODS--------------
   //-------------------------------------------------------
-
-  @Deprecated
-  public String getPersistentProperty(String propertyName) {
-    return getProperty(propertyName);
-  }
 
   public String getConceptProperty(String propertyName) {
     SNode conceptProperty = findConceptProperty(propertyName);
@@ -1010,6 +1005,15 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Deprecated
   /**
+   * Inline
+   * @Deprecated in 3.0
+   */
+  public String getPersistentProperty(String propertyName) {
+    return getProperty(propertyName);
+  }
+
+  @Deprecated
+  /**
    * Inline content in java code, not supposed to be used in MPS
    * @Deprecated in 3.0
    */
@@ -1141,7 +1145,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       return resolveInfo;
     }
     // tmp hack
-    return getPersistentProperty(SNodeUtil.property_INamedConcept_name);
+    return getProperty(SNodeUtil.property_INamedConcept_name);
   }
 
   @Deprecated
@@ -1151,7 +1155,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public String getPresentation(boolean detailed) {
     if (SNodeOperations.isUnknown(this)) {
-      String persistentName = getPersistentProperty(SNodeUtil.property_INamedConcept_name);
+      String persistentName = getProperty(SNodeUtil.property_INamedConcept_name);
       if (persistentName == null) {
         return "?" + NameUtil.shortNameFromLongName(getConceptFqName()) + "?";
       }

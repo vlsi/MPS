@@ -153,7 +153,7 @@ public class ModelLinkMap {
     res |= setProp(myPropNameMap, ptr, new _FunctionTypes._void_P1_E0<Pair<SNode, String>>() {
       public void invoke(Pair<SNode, String> prop) {
         // todo: rename correspondent property attribute role 
-        String value = prop.o1.getPersistentProperty(prop.o2);
+        String value = prop.o1.getProperty(prop.o2);
         prop.o1.setProperty(prop.o2, null);
         prop.o2 = name;
         prop.o1.setProperty(name, value);

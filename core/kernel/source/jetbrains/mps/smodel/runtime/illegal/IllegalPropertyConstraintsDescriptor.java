@@ -41,7 +41,7 @@ public class IllegalPropertyConstraintsDescriptor implements PropertyConstraints
 
   @Override
   public Object getValue(SNode node, IScope scope) {
-    return node.getPersistentProperty(name);
+    return node.getProperty(name);
   }
 
   @Override

@@ -150,7 +150,7 @@ public class BasePropertyConstraintsDescriptor implements PropertyConstraintsDis
 
   @Override
   public Object getValue(SNode node, IScope scope) {
-    return getterDescriptor != null ? getterDescriptor.getValue(node, scope) : node.getPersistentProperty(getName());
+    return getterDescriptor != null ? getterDescriptor.getValue(node, scope) : node.getProperty(getName());
   }
 
   @Override
