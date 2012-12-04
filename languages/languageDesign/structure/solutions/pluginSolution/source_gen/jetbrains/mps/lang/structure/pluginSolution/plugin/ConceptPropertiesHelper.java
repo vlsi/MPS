@@ -59,6 +59,7 @@ import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
@@ -714,7 +715,7 @@ public class ConceptPropertiesHelper {
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReferenceTarget("concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "concept", (SNode) parameter_1);
     quotedNode_2.addChild("elementType", quotedNode_3);
     return quotedNode_2;
   }
@@ -728,7 +729,7 @@ public class ConceptPropertiesHelper {
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", null, null, GlobalScope.getInstance(), false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setReferenceTarget("concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_5, "concept", (SNode) parameter_1);
     quotedNode_4.addChild("elementType", quotedNode_5);
     quotedNode_3.addChild("creator", quotedNode_4);
     quotedNode_2.addChild("expression", quotedNode_3);
@@ -745,17 +746,17 @@ public class ConceptPropertiesHelper {
     SNode quotedNode_9 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("name", "result");
+    SNodeAccessUtil.setProperty(quotedNode_4, "name", "result");
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", null, null, GlobalScope.getInstance(), false);
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_9.setReferenceTarget("concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_9, "concept", (SNode) parameter_1);
     quotedNode_7.addChild("elementType", quotedNode_9);
     quotedNode_5.addChild("creator", quotedNode_7);
     quotedNode_4.addChild("initializer", quotedNode_5);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, GlobalScope.getInstance(), false);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_8.setReferenceTarget("concept", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_8, "concept", (SNode) parameter_2);
     quotedNode_6.addChild("elementType", quotedNode_8);
     quotedNode_4.addChild("type", quotedNode_6);
     quotedNode_3.addChild("localVariableDeclaration", quotedNode_4);
@@ -869,7 +870,7 @@ public class ConceptPropertiesHelper {
     SNode quotedNode_10 = null;
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("name", "result");
+    SNodeAccessUtil.setProperty(quotedNode_5, "name", "result");
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_8 = (SNode) parameter_1;
     if (quotedNode_8 != null) {
@@ -882,7 +883,7 @@ public class ConceptPropertiesHelper {
     quotedNode_5.addChild("initializer", quotedNode_6);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, GlobalScope.getInstance(), false);
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_10.setReferenceTarget("concept", (SNode) parameter_3);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_10, "concept", (SNode) parameter_3);
     quotedNode_7.addChild("elementType", quotedNode_10);
     quotedNode_5.addChild("type", quotedNode_7);
     quotedNode_4.addChild("localVariableDeclaration", quotedNode_5);
@@ -956,7 +957,7 @@ public class ConceptPropertiesHelper {
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("value", "true");
+    SNodeAccessUtil.setProperty(quotedNode_2, "value", "true");
     quotedNode_1.addChild("expression", quotedNode_2);
     return quotedNode_1;
   }
@@ -1247,14 +1248,14 @@ public class ConceptPropertiesHelper {
   private static SNode _quotation_createNode_azpnkk_a0a0a0c0gb(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Component", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("editorComponent", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "editorComponent", (SNode) parameter_1);
     return quotedNode_2;
   }
 
   private static SNode _quotation_createNode_azpnkk_a0a0a0a2a23(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_Component", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("editorComponent", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "editorComponent", (SNode) parameter_1);
     return quotedNode_2;
   }
 

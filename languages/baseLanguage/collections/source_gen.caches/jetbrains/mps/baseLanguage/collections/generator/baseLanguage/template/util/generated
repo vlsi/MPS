@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-akf8lf8l1y628kc0jzyjwqanxjjik6a">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2anmzw7asy5ivjcl6r9zcmzlohrc45z" />
+  <common hash="-xav8c4arne52thdpaa0zbthwoftk5q" />
+  <source id="1241087826068" name="Keys" hash="-79p0ahwwzglutk2vltvxqbq2y40dr6t">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="Keys.java" />
+  </source>
+  <source id="3444116434173277154" name="Values" hash="8k7xik6qypwfokjtymrjoakr0w2rl1z">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="Values.java" />
+  </source>
+</dependencies>
+

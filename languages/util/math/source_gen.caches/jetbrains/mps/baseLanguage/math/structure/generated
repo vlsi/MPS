@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="4wntwoaeb91hspg0q75qobtylhrreft">
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="7eedhcqhmzsq08m7y6wvw2wm8ydq2af" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="7uo2xyrudgr0a3zexm421hjdcsbok1q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2anmzw7asy5ivjcl6r9zcmzlohrc45z" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-baumsvy45qwk0i0m1tzx9fili68fouh" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3t350ymnztu1bi083p2mhorjil0w76j" />
+  <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
+  <common hash="28id6p8kd9pf3rv0lm7xw3hhaojxms5">
+    <dep root="1235747354980" />
+    <dep root="1235747354984" />
+    <dep root="1235747354988" />
+    <dep root="1235747354994" />
+    <dep root="1236426954905" />
+    <dep root="1236426976680" />
+    <dep root="1236427936913" />
+    <dep root="1236428466848" />
+    <dep root="1236428480583" />
+    <dep root="1236428482381" />
+    <dep root="1236428507726" />
+    <dep root="1236428893250" />
+    <dep root="1236439460603" />
+    <dep root="1236589239536" />
+    <dep root="1236589266912" />
+    <dep root="1237100849157" />
+    <dep root="1237106070629" />
+    <dep root="1237106079927" />
+    <dep root="1237107700024" />
+    <dep root="1237108887116" />
+    <dep root="1237214346477" />
+    <dep root="1237218038292" />
+    <dep root="1238325050905" />
+    <dep root="1238326494701" />
+    <dep root="1238328560395" />
+    <dep root="1238338031059" />
+    <dep root="1238343594087" />
+    <dep root="1238344212558" />
+    <dep root="1238344223606" />
+    <dep root="1238344256342" />
+    <dep root="1238344268031" />
+    <dep root="1238345083695" />
+    <dep root="1238402702427" />
+    <dep root="1238940192891" />
+    <dep root="1238940210376" />
+    <dep root="1238940230440" />
+    <dep root="1238940287286" />
+    <dep root="1418611629041138655" />
+    <dep root="1418611629042457276" />
+    <dep root="1418611629042457277" />
+    <dep root="1904947163751448715" />
+    <dep root="263012178968580053" />
+    <dep root="3922637823318870907" />
+    <dep root="4815887568697030517" />
+    <dep root="4815887568697030518" />
+    <dep root="4815887568697232005" />
+    <dep root="5853558151363197539" />
+    <dep root="6219660258344738888" />
+    <dep root="6219660258344759890" />
+    <dep root="6219660258344759893" />
+    <dep root="6219660258345553845" />
+    <dep root="6219660258345570625" />
+    <dep root="6389121991274611498" />
+    <dep root="6389121991274611513" />
+    <dep root="7255837154369354272" />
+    <dep root="7255837154369580413" />
+    <dep root="7255837154369797715" />
+    <dep root="8365454432008500948" />
+    <dep root="920952925470358962" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="Math_Language.java" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="1235747354980" name="InIntervalExpression" hash="b69f89xo0ku91dhhr7j55tdkmxob1c7">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1235747354984" name="IntervalContainsExpression" hash="-uli9o1g4djhhvq35mnbuff8g8fpvpu">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1235747354988" name="IntervalLiteral" hash="cz39t9khfof0xbgwzugjka3iv1zvsxj">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1235747354994" name="IntervalType" hash="dwq7x3sxub73o34qy8uke89bzujtq9a">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1238338031059" name="PowExpression" hash="4r90mulbnb6xrkmefxqia56oy37tk6n">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4815887568697232005" name="MatrixConstructor" hash="39pr5ydcm4634femx6d4gvlbhq8pnsb">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4815887568697030517" name="VectorType" hash="-402en8in8yqfi7medsry0jnpzdet2xf">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="920952925470358962" name="MatrixNorm" hash="d9b40c21zp50eb20d1dy9pv60jcsj4y">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="4815887568697030518" name="MatrixType" hash="3g6vyssn7kawe7sizz3rmglotw2ovtx">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5853558151363197539" name="MatrixOrVectorType" hash="-33mi0efocimpl7jrc5171yqj8ezj2v8">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1904947163751448715" name="MathContext" hash="-c6z1z8mfxncw4opfpbku03w61fbl8m1">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="3922637823318870907" name="MatrixZero" hash="8hlwnttxyveugy1hi06fazvie66qw5v">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1238326494701" name="LiteralI" hash="-npwut3blrk6hdc1jd1ffcr5krsbdbp">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1238940287286" name="DecimalMinusExpression" hash="3e8bxw6awidhykq0jyx9d71hb33vfnq">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1236426976680" name="MathSymbolIndex" hash="-36vcfo5a44gp7jkuh6c5ac6x12fjnba">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1238402702427" name="DecimalBinaryOperation" hash="-9asdcq0p1z326tr83juw6iuxmmwq4nl">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1238343594087" name="MathFuncExpression" hash="d14ipr50s9zyuvl72aewwuxsiysod6f">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1238402737615" name="RoundingMode" hash="-7bytea4t9v1eyjj8xk1o3weedkshjg5">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="RoundingMode.java" />
+    <file name="RoundingMode_PropertySupport.java" />
+  </source>
+  <source id="1238344212558" name="SineExpression" hash="9jldsy96fdnae7qcxd4bm5iuyprm0uq">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1238940210376" name="DecimalMulExpression" hash="-36bmlq6226h8tfqz74gt3eh5olzl3jv">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="8365454432008500948" name="TransposeOperation" hash="2tspm5gbdtrsm6xrgls7rgd8qgczoj0">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6219660258344738888" name="MatrixInitializer" hash="6667mzb6mvhwi8ndzdappkulyueos2k">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1418611629042457277" name="LinearSolveOperation" hash="-63av56eqv72l2rzc9x1bjzpgnv4y6bh">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1237214346477" name="MathTypeCast" hash="dqqm654i9jei8yzy2eqlxibquebikc8">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1238344256342" name="TangentExpression" hash="-1yysdj22lue72djghbmy2hohpsqjdr">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1237100849157" name="DivExpressionFraction" hash="-7tvej3j0xf0dme0jtmn8ge9d5aucjs0">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1238325050905" name="AbsExpression" hash="-6m5t7nnxbhf8zv4ug3nhuo2xqk1dtf1">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1236589239536" name="MathSymbolFromToIndex" hash="-6byvafmt89zb7ysxs3hwtq93nvhl29y">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1238344268031" name="LogExpression" hash="-5xrdb5pl155bdhg13kp9caegyqjgjsa">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1238940192891" name="DecimalDivExpression" hash="-8nl9yzpmujjnf8gog67drimbdeue6a9">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1236428507726" name="ExtrSymbol" hash="-13pypb5wfuw9gelmfo58e8kgrdwos79">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1237214452656" name="CastTargetDescriptor" hash="36j97k95m417vh901ponfsu9xnmaj3y">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="CastTargetDescriptor.java" />
+    <file name="CastTargetDescriptor_PropertySupport.java" />
+  </source>
+  <source id="1236427936913" name="MathSymbolIndexReference" hash="-agnnh1j8v2xdvw9re83t731bfhty4sr">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1418611629041138655" name="MatrixUnit" hash="axmrcr2o0ro6hfd3s3l6qh8lt6p3zoq">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="263012178968580053" name="Determinant" hash="4jtvwpb682mpykdc12cpf7sqo6i4rnq">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1236428466848" name="BigProdExpression" hash="-c0awphixhycckpf5gimxk22v60u11zf">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1236439460603" name="BigSumExpression" hash="-3warvi5jaunzr4r30hme5ge4a1zh1eo">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1418611629042457276" name="MatrixInverseOperation" hash="-b9h3k7d0wcz8v21xavl0wfprbguzzun">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1238344223606" name="CosineExpression" hash="-2hxk6u9b3yy7avnmvicf6jwhbs3zfkd">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1237106070629" name="BigDecimalType" hash="1ft5ezbly3bjgoxs5vitcadu7sf2sr4">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1237108887116" name="BigComplexType" hash="1en6frilhmh764qmia56jxurho019ue">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1236428482381" name="BigMinExpression" hash="a7kz6l9ixwg27ldv3j9v78htnf91oz1">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1236428893250" name="ArithmSymbol" hash="alfj1rdm2f3l575zuuglodijirz7vxl">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1236426954905" name="MathSymbol" hash="-3qoetkebm43ev1rejrkjjar1k08aqt7">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1238328560395" name="ComplexLiteral" hash="-c0g3wt0whbcw9rzopkvkyywbg0ykfz1">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1238404910647" name="PrecisionSetting" hash="vuyy83iu1q1e9bmldn35o1om7ldj98">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="PrecisionSetting.java" />
+    <file name="PrecisionSetting_PropertySupport.java" />
+  </source>
+  <source id="1237107700024" name="ComplexType" hash="-8w90adm2k4bx2uwkvh6y5mt4381wej1">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6389121991274611513" name="MatrixIndexWildcard" hash="3kze6voamn3u0oy7mrd6p7kgvhdnr7s">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6219660258345553845" name="VectorInitializer" hash="-dl34pxvh2dqdk8y2mz5ksytkx9m4m82">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1237106079927" name="BigIntegerType" hash="cla3p29xrg7ak7r0hgghrlyemhmkfa1">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1238345083695" name="ExponentExpression" hash="-3d513rqxk1gqo3tszv204ag9dcbndrk">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="758819215871666038" name="MatrixNormKind" hash="-3s1ie4rg1mggfupmdcnnycga1b63wxw">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
+    <file name="MatrixNormKind.java" />
+    <file name="MatrixNormKind_PropertySupport.java" />
+  </source>
+  <source id="1236428480583" name="BigMaxExpression" hash="2c7envrkuw913zvpyjtj5tgicn30lw5">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1236589266912" name="AbstractIndex" hash="-evdhsswbs8c283ginhmjvps12mq4dxr">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1238940230440" name="DecimalPlusExpression" hash="aaky4iy0yiyp6cl6n19d9fq8d06lo1q">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6219660258345570625" name="MatrixOrVectorInitializer" hash="-bcqox3qitqxbgaytvdkgw1rqa1l0ekf">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6219660258344759893" name="MatrixInitializerIndex" hash="-ega8v8tn7jluk0inx0zdq4r4gh9unaj">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6389121991274611498" name="MatrixElementAccessExpression" hash="-bq7dvexmwdj6fu60ckh87k8c3bgr7gc">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="6219660258344759890" name="MatrixInitializerIndexReference" hash="9ntf6qr92442187mcsxbky2bwmulqse">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1237218038292" name="MathPrimitiveType" hash="-1648ft6s1x7nf5k6m1gpuseuwreqlxr">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7255837154369354272" name="ExponentialOperation" hash="-6kzcaqlcv8eijjp32qzpv6mkflxtjw8">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7255837154369580413" name="MatrixExponentialOperation" hash="-59kfi764ol3ka2bn67wgabq9yi7s4ur">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="7255837154369797715" name="ConjugateOperation" hash="-1xjlzhwhebpog03tnh5bsjxohkk5nqt">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+</dependencies>
+

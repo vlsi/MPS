@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-5q68xjnujhoqg3chnqyk0uy1o7nm28b">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2anmzw7asy5ivjcl6r9zcmzlohrc45z" />
+  <common hash="-cmx4ool5z9sswxe7qcv5asyac3gjvcs" />
+  <source id="3432969378036015275" name="CustomViewersManager" hash="ayh396eji637o1rs25x4paoxiudzauh">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="CustomViewersManager.java" />
+  </source>
+</dependencies>
+

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="8jnpi8j90vgv7wjxkblctlt5ktrkpm1">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2anmzw7asy5ivjcl6r9zcmzlohrc45z" />
+  <common hash="36qiayxlpjgt51kp8atl8qcsodsiwdd" />
+  <source id="2295870045929265527" name="ParentTreeTraversal" hash="7itb7cd22dmzviyvuwfxw8hw01pdcnq">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ParentTreeTraversal.java" />
+  </source>
+  <source id="2295870045929265830" name="FilteredTreeTraversal" hash="-4qun38o700e379njmqb4jkvkm7egin2">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="FilteredTreeTraversal.java" />
+  </source>
+  <source id="2295870045929266007" name="AncestorsOrThisTreeTraversal" hash="-bbjsejgdcu25maq2lckhfcxuvq2xjhn">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="AncestorsOrThisTreeTraversal.java" />
+  </source>
+  <source id="2295870045929265519" name="AbstractTreeTraversal" hash="-clrlehv4wsd3efttctdd57ipy5kzcdn">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="AbstractTreeTraversal.java" />
+  </source>
+  <source id="2295870045929265509" name="AbstractChainTreeTraversal" hash="6dsg7iv0n4irrpwx690i5bqvbpmjna9">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="AbstractChainTreeTraversal.java" />
+  </source>
+  <source id="2295870045929266780" name="StartTreeTraversal" hash="-2as5javna8mqpimqm87c3hj3e59dnt6">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="StartTreeTraversal.java" />
+  </source>
+  <source id="2295870045929267113" name="DescedantsOrThisTreeTraversal" hash="14vg25mb34rkhbsd05174z95sebiwgy">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="DescedantsOrThisTreeTraversal.java" />
+  </source>
+  <source id="2295870045929268322" name="SiblingsTreeTraversal" hash="3k89flaeblm6yfrv6l9809tiqqf70p5">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="SiblingsTreeTraversal.java" />
+  </source>
+  <source id="2295870045929268602" name="ChildrenTreeTraversal" hash="17vjnibw183fzkics9n9x0fvfuppskg">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ChildrenTreeTraversal.java" />
+  </source>
+</dependencies>
+

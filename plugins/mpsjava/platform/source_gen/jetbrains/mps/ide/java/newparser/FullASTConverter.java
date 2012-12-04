@@ -1513,13 +1513,6 @@ public class FullASTConverter extends ASTConverter {
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_f46ocm_a0a0a87() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setProperty(quotedNode_1, "value", "true");
-    return quotedNode_1;
-  }
-
   private static SNode _quotation_createNode_f46ocm_a0a0a0ad() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
@@ -1531,6 +1524,13 @@ public class FullASTConverter extends ASTConverter {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
+  }
+
+  private static SNode _quotation_createNode_f46ocm_a0a0a87() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setProperty(quotedNode_1, "value", "true");
+    return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_f46ocm_a1a4a0ad() {

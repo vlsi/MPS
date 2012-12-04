@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-cmlc64r8cy9o8r5pl51g2vytixbtzr">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2anmzw7asy5ivjcl6r9zcmzlohrc45z" />
+  <common hash="78slikkme4zt6shjhbsaoamogf1w2cx" />
+  <source id="2295870045929265710" name="CompositeFilter" hash="-hkr2ezfb36f2fakg0u5sfowwdq2mt7">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="CompositeFilter.java" />
+  </source>
+  <source id="2295870045929265520" name="ITreePath" hash="-5pwacyeg7j60v1yv69c6xt1mkn7m7lf">
+    <file name="ITreePath.java" />
+  </source>
+  <source id="2295870045929266247" name="TraversalAxis" hash="dn5a6nkrjdbrz08wuwlzlaxwnzi88l5">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="TraversalAxis.java" />
+  </source>
+  <source id="2295870045929265511" name="IFeatureDescriptor" hash="-1q5trsm9neb7gjqv3o0ix8wqiyx1aay">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="IFeatureDescriptor.java" />
+  </source>
+  <source id="2295870045929265512" name="IFilter" hash="-6i1skm89s41ldlh8e171lxkjxrmieht">
+    <file name="IFilter.java" />
+  </source>
+  <source id="2295870045929267447" name="TreeTraversalFactory" hash="bdned5e5tyvkp31vmt21w3vmu0i84zm">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="TreeTraversalFactory.java" />
+  </source>
+  <source id="2295870045929265522" name="TreePath" hash="eocgkvtu7jvggd57886hanv9khanvzc">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="TreePath.java" />
+  </source>
+  <source id="2295870045929265510" name="ITreeTraversal" hash="5qasnndqfjc9uo3two427sdvfanpioy">
+    <file name="ITreeTraversal.java" />
+  </source>
+  <source id="2295870045929265513" name="ISiblingsFilter" hash="6y0b98pma1q6ukulds8qxngi1wl9xk6">
+    <file name="ISiblingsFilter.java" />
+  </source>
+</dependencies>
+

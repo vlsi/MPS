@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="5k9fxrfenzuc1jwibpocrsmj9uyw15b">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="7eedhcqhmzsq08m7y6wvw2wm8ydq2af" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2anmzw7asy5ivjcl6r9zcmzlohrc45z" />
+  <dep model="r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)" hash="-1m0murw4flo7p8t2wh02n5btejpjqcp" />
+  <dep model="r:b40e53b8-8ee8-490c-ac75-eb2133c3f7c1(jetbrains.mps.traceInfo.tracemacro.testlang.typesystem)" hash="-9l6lsoo00jb1mrbxy82at3jborzmpxq" />
+  <common>
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:75f95d80-1d60-4222-8b1e-a09f089fee3e(jetbrains.mps.traceInfo.tracemacro.testlang.generator.template.main@generator)" />
+    <dep model="r:b40e53b8-8ee8-490c-ac75-eb2133c3f7c1(jetbrains.mps.traceInfo.tracemacro.testlang.typesystem)" />
+    <file name="Generator.java" />
+    <file name="Language.java" />
+  </common>
+</dependencies>
+

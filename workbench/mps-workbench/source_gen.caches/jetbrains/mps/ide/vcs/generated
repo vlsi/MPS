@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="7j3zf532e22mnwbgbr7f76b7p5zu62k">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2anmzw7asy5ivjcl6r9zcmzlohrc45z" />
+  <common hash="-3cwiz9k84j5esefbz1lw0hu0ar5tx6h" />
+  <source id="5015601397718077769" name="SourceRevision" hash="-bfjskb8a9d99js1b7npvtlhg6k5bx9d">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="SourceRevision.java" />
+  </source>
+  <source id="5015601397718560603" name="ExtendedDefaultVcsRootPolicy" hash="emdarodlid0t81p3q3upypua6g7j748">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="ExtendedDefaultVcsRootPolicy.java" />
+  </source>
+</dependencies>
+

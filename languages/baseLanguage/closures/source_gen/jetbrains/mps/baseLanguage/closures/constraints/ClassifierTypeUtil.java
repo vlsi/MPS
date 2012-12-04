@@ -222,12 +222,12 @@ with_meet:
     } else if (covariant) {
       return (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.UpperBoundType") ?
         SNodeOperations.copyNode(type) :
-        _quotation_createNode_zgotlq_a0a0a0a9(SNodeOperations.copyNode(type))
+        _quotation_createNode_zgotlq_a0a0a0a9_0(SNodeOperations.copyNode(type))
       );
     } else {
       return (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.LowerBoundType") ?
         SNodeOperations.copyNode(type) :
-        _quotation_createNode_zgotlq_a0a0a0a9_0(SNodeOperations.copyNode(type))
+        _quotation_createNode_zgotlq_a0a0a0a9(SNodeOperations.copyNode(type))
       );
     }
   }
@@ -300,17 +300,6 @@ with_meet:
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_zgotlq_a0a0e0a0j(Object parameter_1) {
-    SNode quotedNode_2 = null;
-    SNode quotedNode_3 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3 = (SNode) parameter_1;
-    if (quotedNode_3 != null) {
-      quotedNode_2.addChild("bound", HUtil.copyIfNecessary(quotedNode_3));
-    }
-    return quotedNode_2;
-  }
-
   private static SNode _quotation_createNode_zgotlq_a0a0a4a0a9(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -322,7 +311,7 @@ with_meet:
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_zgotlq_a0a0a0a9(Object parameter_1) {
+  private static SNode _quotation_createNode_zgotlq_a0a0e0a0j(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, GlobalScope.getInstance(), false);
@@ -333,10 +322,21 @@ with_meet:
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_zgotlq_a0a0a0a9_0(Object parameter_1) {
+  private static SNode _quotation_createNode_zgotlq_a0a0a0a9(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = (SNode) parameter_1;
+    if (quotedNode_3 != null) {
+      quotedNode_2.addChild("bound", HUtil.copyIfNecessary(quotedNode_3));
+    }
+    return quotedNode_2;
+  }
+
+  private static SNode _quotation_createNode_zgotlq_a0a0a0a9_0(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = (SNode) parameter_1;
     if (quotedNode_3 != null) {
       quotedNode_2.addChild("bound", HUtil.copyIfNecessary(quotedNode_3));

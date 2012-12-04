@@ -300,11 +300,11 @@
       <varInfo nodeId="3995997045458364642" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="3995997045458364616" fileName="StubRootChooser.java" startLine="30" startPosition="0" endLine="88" endPosition="0" />
-    <unitInfo nodeId="3995997045458364726" fileName="StubRootChooser.java" startLine="55" startPosition="110" endLine="59" endPosition="7" unitName="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser$2" />
-    <unitInfo nodeId="3995997045458364751" fileName="StubRootChooser.java" startLine="64" startPosition="83" endLine="68" endPosition="7" unitName="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser$3" />
-    <unitInfo nodeId="3995997045458364789" fileName="StubRootChooser.java" startLine="71" startPosition="87" endLine="75" endPosition="9" unitName="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser$4" />
-    <unitInfo nodeId="3995997045458364689" fileName="StubRootChooser.java" startLine="46" startPosition="92" endLine="52" endPosition="9" unitName="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser$1" />
-    <unitInfo nodeId="3995997045458364811" fileName="StubRootChooser.java" startLine="76" startPosition="92" endLine="82" endPosition="9" unitName="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser$5" />
+    <unitInfo nodeId="3995997045458364726" fileName="StubRootChooser.java" startLine="55" startPosition="110" endLine="59" endPosition="7" unitName="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser$1" />
+    <unitInfo nodeId="3995997045458364751" fileName="StubRootChooser.java" startLine="64" startPosition="83" endLine="68" endPosition="7" unitName="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser$2" />
+    <unitInfo nodeId="3995997045458364789" fileName="StubRootChooser.java" startLine="71" startPosition="87" endLine="75" endPosition="9" unitName="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser$3" />
+    <unitInfo nodeId="3995997045458364689" fileName="StubRootChooser.java" startLine="46" startPosition="92" endLine="52" endPosition="9" unitName="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser$5" />
+    <unitInfo nodeId="3995997045458364811" fileName="StubRootChooser.java" startLine="76" startPosition="92" endLine="82" endPosition="9" unitName="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser$4" />
     <unitInfo nodeId="3995997045458364579" fileName="StubRootChooser.java" startLine="21" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.ide.ui.dialogs.properties.creators.StubRootChooser" />
   </root>
 </debugInfo>

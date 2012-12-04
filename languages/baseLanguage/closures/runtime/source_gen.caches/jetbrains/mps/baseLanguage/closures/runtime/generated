@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-civmjgp9lyvc1592lp0bed4tl3qfjvc">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-2anmzw7asy5ivjcl6r9zcmzlohrc45z" />
+  <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" hash="-bsx9nqeu3phtzjl7qheg3fy1r62vv3m" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6f9jb5k2icdty624yqk3hbqvsk65dq5" />
+  <common hash="ck279f12g1oqiexil3kmpylrkeivhou">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
+    <file name="_UnrestrictedClosures.java" />
+  </common>
+  <source id="8649343297855554552" name="AdapterClass" hash="6qnve1j1xevnr3iljiia4v1laxxcupp">
+    <file name="AdapterClass.java" />
+  </source>
+  <source id="3812443517665722597" name="Outcome" hash="-gxxhcl24a7bh5us7wgsw8f4modxsrz">
+    <file name="Outcome.java" />
+  </source>
+  <source id="3812443517665722609" name="Nothing" hash="8lxfnhdpk21go1blhq7nkumchoazktn">
+    <file name="Nothing.java" />
+  </source>
+  <source id="3812443517665722615" name="Wrappers" hash="67i91hpdgmu6myz4wug8e1du26csf5i">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="Wrappers.java" />
+  </source>
+  <source id="3812443517665722868" name="DelayedException" hash="79jsccsag4icr2o6sqeu8ad9t337nro">
+    <file name="DelayedException.java" />
+  </source>
+  <source id="3812443517665722916" name="YieldingIterator" hash="-1j99n4rehhv7idoxv8i9mvpmy6uzi1g">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="YieldingIterator.java" />
+  </source>
+  <source id="4914003190800642467" name="Result" hash="8on3kovikvemdenwghnrm6la6praa09">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="Result.java" />
+  </source>
+  <source id="5571879668402581510" name="_FunctionTypes" hash="4nr4wrb2wwsll2mt4emb8j4ed0qpo3u">
+    <file name="_FunctionTypes.java" />
+  </source>
+  <source id="3216938209400119778" name="_UnrestrictedFunctionTypes" hash="-710hos556xlc9bxrhjdm33ayay2fqwa">
+    <file name="_UnrestrictedFunctionTypes.java" />
+  </source>
+</dependencies>
+

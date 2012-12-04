@@ -398,10 +398,10 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new UnknownLocalCall_BehaviorDescriptor();
       case 179:
         return new UnknownDotCall_BehaviorDescriptor();
-      case 124:
-        return new PlaceholderMember_BehaviorDescriptor();
       case 108:
         return new Modifier_BehaviorDescriptor();
+      case 124:
+        return new PlaceholderMember_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
