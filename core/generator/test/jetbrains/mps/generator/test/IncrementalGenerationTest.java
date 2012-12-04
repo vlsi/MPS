@@ -43,8 +43,8 @@ public class IncrementalGenerationTest extends GenerationTestBase {
           Assert.assertNotNull("No root in model", root);
 
           SNode found = null;
-          for(SNode md : root.getChildren("method")) {
-            if(md.getName().equals("testRename2")) {
+          for(SNode md : root.getChildren("member")) {
+            if(md.getName().equals("testRename2") && md.getConcept().getId().equals("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
               found = md;
             }
           }
