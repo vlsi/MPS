@@ -35,6 +35,11 @@ public class HoleTypecheckingContext extends SimpleTypecheckingContext {
   }
 
   @Override
+  protected State createState() {
+    return new HoleState(this);
+  }
+
+  @Override
   public HoleState getState() {
     return (HoleState) super.getState();
   }
