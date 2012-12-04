@@ -99,6 +99,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.generator.baseLanguage.template.main.TemplateQuotedNode__to__statementList" file="TemplateQuotedNode__to__statementList.java">
@@ -127,6 +128,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware" />
   </dependency>
 </dependenciesRoot>
