@@ -693,7 +693,7 @@ public class ConceptPropertiesHelper {
 
     final Set<SearchResult<SNode>> allUsages = SetSequence.fromSet(new HashSet<SearchResult<SNode>>());
     for (SNode usage : SetSequence.fromSet(usages)) {
-      if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.structure.structure.ConceptProperty") || SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.structure.structure.ConceptLink")) {
+      if ((SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.structure.structure.ConceptProperty") || SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.structure.structure.ConceptLink")) && (SNodeOperations.getAncestor(usage, "jetbrains.mps.lang.structure.structure.ConceptDeclaration", false, false) != null)) {
         SetSequence.fromSet(conceptPropertiesAndLinks).addElement(usage);
         SetSequence.fromSet(allUsages).addElement(new SearchResult<SNode>(usage, ""));
       }
