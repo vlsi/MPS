@@ -1,3 +1,7 @@
+Be specific about when a read and write action lock is needed.
+Specify how to assert the required lock is present.
+Point to default implementations that can be build upon.
+
 SModel should contain current SModel, SModelDescriptor, SModelHeader
 references should not be resolvable by name
 all classes are prefixed with "S"

@@ -15,6 +15,19 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+/**
+ * There are several types of dependencies between two modules.
+ * <ul>
+ * <li>DEFAULT - the dependency is resolved and is available on the classpath during the code generation, compilation and run phases</li></li>
+ * <li>DESIGN - the dependency between models ??? that has effect only during editing and is removed during generation</li>
+ * <li>COMPILE - the dependency is resolved and is available on the classpath during the compilation and run phases</li>
+ * <li>RUNTIME -  the dependency is only required when running the application, and should not be available on the classpath during compilation</li>
+ * <li>PROVIDED - the dependency is resolved and is available on the classpath during code generation and compilation, but is not included on the classpath at runtime.
+ * This dependency scope is useful, when you have some container that provides the dependency at runtime.</li>
+ * <li>EXTENDS - the dependency between two languages that further enhances the DEFAULT dependency by allowing language extension</li>
+ * <li>GENERATES_INTO - the dependency between languages that indicates that he source language will be generated into the target language and thus the generated code needs the dependencies of the target language.</li>
+ * </ul>
+ */
 public enum SDependencyKind {
   DEFAULT, EXTENDS, GENERATES_INTO, DESIGN, COMPILE, RUNTIME, PROVIDED
 }

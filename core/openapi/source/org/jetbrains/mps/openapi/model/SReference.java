@@ -18,10 +18,17 @@ package org.jetbrains.mps.openapi.model;
 import org.jetbrains.mps.annotations.Immutable;
 import org.jetbrains.mps.openapi.language.SLink;
 
+/**
+ * Represents reference between nodes. Nodes are organized in AST with references going across the tree hierarchy
+ * and connecting nodes from different branches or trees.
+ */
 @Immutable
 public interface SReference {
   String getRole();
 
+  /**
+   * Gets the associated Link - an abstract meta-definition for the reference
+   */
   SLink getLink();
 
   SNode getSourceNode();
@@ -31,5 +38,9 @@ public interface SReference {
 // TODO conflict with StaticReference.getTargetModel
 //  SModel getTargetModel();
 
+  /**
+   * Retrieves the textual representation of the reference.
+   * The returned text identifies the target node, so that it can be resolved.
+   */
   String getText();
 }

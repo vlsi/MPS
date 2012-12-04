@@ -18,16 +18,23 @@ package org.jetbrains.mps.openapi.model;
 import org.jetbrains.mps.openapi.module.SRepository;
 
 /**
- * evgeny, 10/6/12
+ * Represents a unique reference to a model, which remains valid across subsequent read and write actions.
  */
 public interface SModelReference {
 
+  /**
+   * Retrieves an identifier, which is unique within a module.
+   */
   SModelId getModelId();
 
-  /*
-   * Includes stereotype.
+  /**
+   * The returned name of the model includes a stereotype, such as 'generator' or 'tests', separated by the '@' character,
+   * e.g. jetbrains.mps.sample.generator.main@generator
    */
   String getModelName();
 
+  /**
+   * Resolves the model from within the given repository
+   */
   SModel resolve(SRepository repo);
 }

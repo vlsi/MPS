@@ -16,7 +16,7 @@
 package org.jetbrains.mps.openapi.persistence;
 
 /**
- * evgeny, 11/2/12
+ *
  */
 public interface MultiStreamDataSourceListener extends DataSourceListener {
 

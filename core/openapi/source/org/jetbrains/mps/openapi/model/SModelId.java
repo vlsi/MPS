@@ -17,6 +17,9 @@ package org.jetbrains.mps.openapi.model;
 
 import org.jetbrains.mps.annotations.Immutable;
 
+/**
+ * Uniquely identifies a model within a module
+ */
 @Immutable
 public interface SModelId {
 }

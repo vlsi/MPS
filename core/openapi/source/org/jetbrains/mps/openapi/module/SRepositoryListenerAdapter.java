@@ -16,7 +16,7 @@
 package org.jetbrains.mps.openapi.module;
 
 /**
- * evgeny, 10/5/12
+ * A convenience empty implementation of the SRepositoryListener interface.
  */
 public class SRepositoryListenerAdapter implements SRepositoryListener {
 

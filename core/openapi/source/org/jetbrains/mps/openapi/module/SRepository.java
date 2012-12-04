@@ -15,14 +15,27 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+/**
+ * A storage for modules
+ */
 public interface SRepository {
 
   SModule getModule(SModuleId ref);
 
   Iterable<SModule> getModules();
 
+  /**
+   * Modifications to properties of modules and other elements stored in a repository must only be performed from within a managed command.
+   *
+   * @param r The command that the repository should invoke on its own behalf
+   */
   void applyChanges(Runnable r);
 
+  /**
+   * Indicates, whether the repository is just having changes applied to it through the applyChanges() method.
+   * This method is typically called from within repository-updating methods to check whether updating is allowed.
+   * The method should also check that a read/write action lock is being held by the current thread.
+   */
   boolean isUpdating();
 
   void addRepositoryListener(SRepositoryListener listener);

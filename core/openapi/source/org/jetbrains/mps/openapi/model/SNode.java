@@ -23,14 +23,29 @@ public interface SNode {
 
   //common properties
 
+  /**
+   * Uniquely identifies the node within its containing model. May also be null.
+   */
   SNodeId getSNodeId();
 
+  /**
+   * Uniquely identifies the node globally. Never changes between subsequent read and write actions.
+   */
   SNodeReference getReference();
 
+  /**
+   * The concept that this node represents
+   */
   SConcept getConcept();
 
+  /**
+   * A string representing the node
+   */
   String getPresentation();
 
+  /**
+   * The name of the node. For INamed concepts identical with the INamed.name
+   */
   String getName();
 
   SModel getContainingModel();
@@ -40,18 +55,18 @@ public interface SNode {
   void addChild(String role, SNode child);
 
   /**
-   * Inserts the given node as a child of current after anchor node in specified role.<br/>
-   * If the given role is multiple, this method inserts a new child.<br/>
-   * If the given role is single and currently has no children in it, a new child is added.
-   * Last parameter is ignored in this case.<br/>
-   * If the given role is single and currently has a child in it, the current child is replaced
-   * with a new one. Last parameter is ignored in this case.<br/>
+   * Inserts the given node as a child of the current node of the specified role directly behind the anchor node.<br/>
+   * If the specified role has cardinality greater than one, this method inserts a new child.<br/>
+   * If the specified role accepts only one child element and there is no child in it, a new child is added.
+   * The last parameter is ignored in this case.<br/>
+   * If the specified role accepts only one child element and there is a child in it, the current child is replaced
+   * with the new one. The last parameter is ignored in this case.<br/>
    *
    * @param role   a role to insert new child into
    * @param child  a node to insert
    * @param anchor a new child node will be inserted after this node. If specified,
-   *               anchor must be in the same role as inserted child. If not specified,
-   *               a new child is inserted into first position in the given role
+   *               the anchor must be in the same role as the inserted child. If not specified,
+   *               a new child is inserted into the first position of the given role
    */
   void insertChild(String role, SNode child, @Nullable SNode anchor);
 
@@ -88,16 +103,34 @@ public interface SNode {
 
   // refs
 
+  /**
+   * Sets a reference of the given role to a particular node
+   */
   void setReferenceTarget(String role, @Nullable SNode target);
 
   SNode getReferenceTarget(String role);
 
-  //to work with invalid code
+  // SReferences
 
+  /**
+   * Retrieves an SReference of the given role to a node.
+   * Since SReference can refer to nodes by name and resolve them dynamically, this method may be able to help you resolve
+   * the target node even when working with invalid code.
+   */
   SReference getReference(String role);
 
+  /**
+   * Sets a reference of the given role to a node that is resolved from the SReference.
+   * Since SReference can refer to nodes by name and resolve them dynamically, this method may be able to resolve
+   * the target node even when working with invalid code.
+   */
   void setReference(String role, SReference reference);
 
+  /**
+   * Retrieves all SReferences from the node.
+   * Since SReference can refer to nodes by name and resolve them dynamically, this method may be able to help you resolve
+   * the target nodes even when working with invalid code.
+   */
   public Iterable<? extends SReference> getReferences();
 
   // props

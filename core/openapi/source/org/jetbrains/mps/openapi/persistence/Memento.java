@@ -15,27 +15,55 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+/**
+ * Represents the configuration information for a ModelRoot stored in a module file.???file
+ * Mementos, in essence, resemble hierarchically organized hashmaps. The actual contents of the mementos and the shape
+ * of the hierarchy are a responsibility of the owning ModelRoot.
+ */
 public interface Memento {
 
+  /**
+   * Returns the value of type for the memento. The value of null is returned if no type has been set.
+   */
   String getType();
 
   String get(String key);
 
   void put(String key, String value);
 
+  /**
+   * Retrieves a read-only collection of registered property keys.
+   * Since the collection is backed by the original collection, new properties must not be added while iterating.
+   */
   Iterable<String> getKeys();
 
   String getText();
 
   void setText(String text);
 
+  /**
+   * Retrieves a point-time read-only copy of all the children mementos of the specified type.
+   * Subsequent modifications to the original list of children of the current memento
+   * will not have any impact on the returned collection.
+   */
   Iterable<Memento> getChildren(String type);
 
   Memento getChild(String type);
 
+  /**
+   * Retrieves a point-time read-only copy of all the children mementos.
+   * Subsequent modifications to the original list of children of the current memento
+   * will not have any impact on the returned collection.
+   */
   Iterable<Memento> getChildren();
 
+  /**
+   * Creates and registers a new child memento.
+   */
   Memento createChild(String type);
 
+  /**
+   * Returns a deep copy of the current memento and its children
+   */
   Memento copy();
 }

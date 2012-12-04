@@ -21,18 +21,28 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 
 import java.io.IOException;
 
+/**
+ * Represents a model. Models are loaded lazily when needed.
+ */
 public interface SModel {
 
+  /**
+   * Returns the id of the model valid within the containing module.
+   */
   SModelId getModelId();
 
   /*
-   * Includes stereotype.
+   * The returned name of the model includes a stereotype, such as 'generator' or 'tests', separated by the '@' character,
+   * e.g. jetbrains.mps.sample.generator.main@generator
    */
   String getModelName();
 
   @NotNull
   SModelReference getModelReference();
 
+  /**
+   * Retrieves the owning module
+   */
   SModule getModule();
 
   Iterable<? extends SNode> getRootNodes();
@@ -41,14 +51,29 @@ public interface SModel {
 
   SNode getNode(SNodeId id);
 
+  /**
+   * The data source that loaded this model
+   */
   @NotNull
   DataSource getSource();
 
   boolean isLoaded();
 
+  /**
+   * When owning a read action lock, this method will load the model from the storage.
+   * Does nothing if already loaded.
+   * The load() method is called automatically on a not-loaded model whenever elements from it are being resolved.
+   */
   void load() throws IOException;
 
+  /**
+   * When owning a write action lock, this method will save the model into the storage.
+   */
   void save() throws IOException;
 
+  /**
+   * When owning a write action lock, this method will discard the in-memory representation of the model.
+   * A modified model is first saved into the storage so that the changes are preserved.
+   */
   void unload();
 }

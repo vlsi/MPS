@@ -15,5 +15,9 @@
  */
 package org.jetbrains.mps.openapi.module;
 
+/**
+ * A repository-wide unique id of a module ???
+ * Use SNodeId details, simalarly for other IDs
+ */
 public interface SModuleId {
 }
