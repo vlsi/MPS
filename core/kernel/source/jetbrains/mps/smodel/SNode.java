@@ -709,16 +709,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     SModelRepository.getInstance().markChanged(getModel());
   }
 
-  public void changeModel(SModel newModel) {
-    if (myModel == newModel) return;
-    LOG.assertLog(myModel == null, "couldn't change model of registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
-
-    myModel = newModel;
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      child.changeModel(newModel);
-    }
-  }
-
   //--------------
 
   public boolean isInstanceOfConcept(String conceptFqName) {
@@ -977,6 +967,21 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Not supposed to be used. Make private
+   * @Deprecated in 3.0
+   */
+  public void changeModel(SModel newModel) {
+    if (myModel == newModel) return;
+    LOG.assertLog(myModel == null, "couldn't change model of registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
+
+    myModel = newModel;
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+      child.changeModel(newModel);
+    }
+  }
 
   @Deprecated
   /**

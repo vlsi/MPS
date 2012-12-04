@@ -2949,9 +2949,6 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1963440973928800175">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="dp1x.6299533519672652247" resolveInfo="createNodeData" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1963440973928800176">
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4193578441191921109" resolveInfo="model" />
-                  </node>
                 </node>
               </node>
             </node>

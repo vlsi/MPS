@@ -9,7 +9,6 @@ import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SModel;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.HashSet;
@@ -30,7 +29,6 @@ public class SNodeTransferable implements Transferable {
   private List<SNode> mySNodes = new ArrayList<SNode>();
   @Nullable
   private ModuleReference mySourceModule;
-  private SModel myModelProperties;
   private Set<SModelReference> myNecessaryModels = new HashSet<SModelReference>();
   private Set<ModuleReference> myNecessaryLanguages = new HashSet<ModuleReference>();
   private String myText = "";
@@ -98,12 +96,11 @@ public class SNodeTransferable implements Transferable {
       null :
       module.getModuleReference()
     );
-    myModelProperties = pasteNodeData.getModelProperties();
     myNecessaryModels = pasteNodeData.getNecessaryModels();
     myNecessaryLanguages = pasteNodeData.getNecessaryLanguages();
   }
 
-  public PasteNodeData createNodeData(SModel sModel) {
+  public PasteNodeData createNodeData() {
     Set<ModuleReference> necessaryLanguages = myNecessaryLanguages;
     Set<SModelReference> necessaryImports = myNecessaryModels;
     if (necessaryImports == null) {
@@ -116,7 +113,7 @@ public class SNodeTransferable implements Transferable {
       null :
       MPSModuleRepository.getInstance().getModule(mySourceModule)
     );
-    return CopyPasteUtil.createNodeDataOut(mySNodes, module, sModel, myModelProperties, new HashSet<ModuleReference>(necessaryLanguages), new HashSet<SModelReference>(necessaryImports));
+    return CopyPasteUtil.createNodeDataOut(mySNodes, module, new HashSet<ModuleReference>(necessaryLanguages), new HashSet<SModelReference>(necessaryImports));
   }
 
   public boolean containsNodes() {

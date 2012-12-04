@@ -52,7 +52,7 @@ public class JavaCopyPasteDataConverter implements ApplicationComponent, CopyPas
     String text = TextPasteUtil.getStringFromClipboard();
     if (text != null && text.length() > MIN_TEXT_LENGTH_TO_CONVERT) {
       SNodeTransferable transferable = new SNodeTransferable(JavaPaster.getStatementsFromJavaText(text, model, null, project), text);
-      return transferable.createNodeData(model);
+      return transferable.createNodeData();
     }
     return null;
   }
