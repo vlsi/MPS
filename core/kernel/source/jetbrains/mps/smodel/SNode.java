@@ -390,9 +390,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     if (ourMemberAccessModifier != null) {
       role = ourMemberAccessModifier.getNewChildRole(myModel, myConceptFqName, role);
     }
-    SNode parentOfChild = ((SNode) child).getParent();
+    SNode schild = (SNode) child;
+    SNode parentOfChild = schild.getParent();
     if (parentOfChild != null) {
-      throw new RuntimeException(org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(((SNode) child)) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(parentOfChild) + "\n" +
+      throw new RuntimeException(org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(schild) + " already has parent: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(parentOfChild) + "\n" +
         "Couldn't add it to: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this));
     }
 
@@ -402,22 +403,22 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     ModelChange.assertLegalNodeChange(myModel, this);
 
-    children_insertAfter(((SNode) anchor), ((SNode) child));
-    ((SNode) child).setRoleInParent(role);
+    children_insertAfter(((SNode) anchor), schild);
+    schild.setRoleInParent(role);
 
     SModel model = getModel();
     if (model != null) {
-      ((SNode) child).registerInModel(model);
-    } else {
-      ((SNode) child).changeModel(model);
+      schild.registerInModel(model);
+    } else if (schild.getModel() != null) {
+      schild.clearModel();
     }
 
     if (model == null) return;
 
-    model.performUndoableAction(new InsertChildAtUndoableAction(this, ((SNode) anchor), role, ((SNode) child)));
+    model.performUndoableAction(new InsertChildAtUndoableAction(this, ((SNode) anchor), role, schild));
 
     if (ModelChange.needFireEvents(model, this)) {
-      model.fireChildAddedEvent(this, role, ((SNode) child), ((SNode) anchor));
+      model.fireChildAddedEvent(this, role, schild, ((SNode) anchor));
     }
   }
 
@@ -725,6 +726,13 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   //--------seems these methods are not needed-------
 
+  private void clearModel() {
+    myModel = null;
+    for (SNode child : getChildren()) {
+      child.clearModel();
+    }
+  }
+
   private int getPropertyIndex(String propertyName) {
     if (myProperties == null) return -1;
     for (int i = 0; i < myProperties.length; i += 2) {
@@ -970,7 +978,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Deprecated
   /**
-   * Not supposed to be used. Make private
+   * Not supposed to be used
    * @Deprecated in 3.0
    */
   public void changeModel(SModel newModel) {
