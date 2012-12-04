@@ -132,6 +132,7 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.impl.StringConstant" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.newparser.DirParser" file="DirParser.java">
     <classNode dependClassName="java.io.File" />

@@ -18,6 +18,7 @@ package jetbrains.mps.persistence.binary;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -99,7 +100,7 @@ public class NodesWriter {
   protected void writeProperties(SNode node, ModelOutputStream os) throws IOException {
     final Map<String, String> properties = new HashMap<String, String>();
     for (String name : node.getPropertyNames()) {
-      properties.put(name, node.getProperty(name));
+      properties.put(name, SNodeAccessUtil.getProperty(node, name));
     }
     os.writeInt(properties.size());
     for (Entry<String, String> entry : properties.entrySet()) {

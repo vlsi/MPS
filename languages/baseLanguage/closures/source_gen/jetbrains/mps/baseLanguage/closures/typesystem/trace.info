@@ -976,56 +976,56 @@
     <unitInfo nodeId="1202742148675" fileName="FunctionType_subtypeOf_ClassifierType_InequationReplacementRule.java" startLine="28" startPosition="0" endLine="169" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.FunctionType_subtypeOf_ClassifierType_InequationReplacementRule" />
   </root>
   <root nodeId="1202756468112" modelId="r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)">
-    <nodeInfo nodeId="1858552893540297278" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="21" startPosition="73" endLine="22" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1858552893540297269" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="23" startPosition="12" endLine="24" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="28" startPosition="46" endLine="29" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="33" startPosition="5" endLine="34" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="34" startPosition="119" endLine="35" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="39" startPosition="27" endLine="40" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="43" startPosition="82" endLine="44" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="44" startPosition="30" endLine="45" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="45" startPosition="165" endLine="46" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="46" startPosition="71" endLine="47" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="supertypesOf_FunctionType_SubtypingRule#()V" />
-    <nodeInfo nodeId="100821637069106816" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="23" startPosition="10" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="44" startPosition="30" endLine="46" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="44" startPosition="30" endLine="46" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
-    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="32" startPosition="68" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="100821637069106799" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="20" startPosition="112" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8hodjs_a0a0a0a1#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="20" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="17" startPosition="52" endLine="17" endPosition="52" />
-    <scopeInfo nodeId="100821637069106800" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="21" startPosition="73" endLine="22" endPosition="84" />
-    <scopeInfo nodeId="100821637069106817" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="23" startPosition="12" endLine="24" endPosition="140" />
-    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="28" startPosition="46" endLine="29" endPosition="72" />
-    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="39" startPosition="27" endLine="40" endPosition="16" />
-    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="33" startPosition="5" endLine="35" endPosition="45">
+    <nodeInfo nodeId="1858552893540297278" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="22" startPosition="73" endLine="23" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1858552893540297269" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="24" startPosition="12" endLine="25" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="29" startPosition="46" endLine="30" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="34" startPosition="5" endLine="35" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="35" startPosition="119" endLine="36" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="40" startPosition="27" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="44" startPosition="82" endLine="45" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="45" startPosition="30" endLine="46" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="46" startPosition="165" endLine="47" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="47" startPosition="88" endLine="48" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="supertypesOf_FunctionType_SubtypingRule#()V" />
+    <nodeInfo nodeId="100821637069106816" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="24" startPosition="10" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="45" startPosition="30" endLine="47" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="45" startPosition="30" endLine="47" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isWeak#()Z" />
+    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="100821637069106799" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="21" startPosition="112" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="44" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_8hodjs_a0a0a0a1#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSubOrSuperType#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="18" startPosition="52" endLine="18" endPosition="52" />
+    <scopeInfo nodeId="100821637069106800" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="22" startPosition="73" endLine="23" endPosition="84" />
+    <scopeInfo nodeId="100821637069106817" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="24" startPosition="12" endLine="25" endPosition="140" />
+    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="29" startPosition="46" endLine="30" endPosition="72" />
+    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="40" startPosition="27" endLine="41" endPosition="16" />
+    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="34" startPosition="5" endLine="36" endPosition="45">
       <varInfo nodeId="1202756468112" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="44" startPosition="30" endLine="46" endPosition="71" />
-    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="32" startPosition="68" endLine="36" endPosition="5" />
-    <scopeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="43" startPosition="82" endLine="47" endPosition="24">
+    <scopeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="45" startPosition="30" endLine="47" endPosition="88" />
+    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="44" startPosition="82" endLine="48" endPosition="24">
       <varInfo nodeId="1858552893540297284" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="1202756468113" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="20" startPosition="112" endLine="25" endPosition="5" />
-    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="32" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="1202756468113" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="21" startPosition="112" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="33" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="1202756468112" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="43" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="1858552893540297284" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="44" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="1858552893540297284" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="20" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1202756468112" varName="ft" />
       <varInfo nodeId="1202756468112" varName="status" />
       <varInfo nodeId="1202756468112" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="16" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_FunctionType_SubtypingRule" />
+    <unitInfo nodeId="1202756468112" fileName="supertypesOf_FunctionType_SubtypingRule.java" startLine="17" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.baseLanguage.closures.typesystem.supertypesOf_FunctionType_SubtypingRule" />
   </root>
   <root nodeId="1203019074088" modelId="r:00000000-0000-4000-0000-011c89590337(jetbrains.mps.baseLanguage.closures.typesystem)">
     <nodeInfo nodeId="1203019343525" fileName="wildcardtype_comparable_ComparisonRule.java" startLine="15" startPosition="86" endLine="16" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

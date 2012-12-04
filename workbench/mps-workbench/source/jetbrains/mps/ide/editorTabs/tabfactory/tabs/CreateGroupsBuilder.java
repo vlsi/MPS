@@ -29,6 +29,7 @@ import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.StringUtil;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -108,8 +109,8 @@ public class CreateGroupsBuilder {
 
       final Runnable r2 = new Runnable() {
         public void run() {
-          String mainPack = myBaseNode.getNode().getProperty(SNode.PACK);
-          created[0].setProperty(SNode.PACK, mainPack);
+          String mainPack = SNodeAccessUtil.getProperty(myBaseNode.getNode(), SNode.PACK);
+          SNodeAccessUtil.setProperty(created[0], SNode.PACK, mainPack);
           myCallback.changeNode(created[0]);
         }
       };

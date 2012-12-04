@@ -30,6 +30,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.PresentationManager;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import javax.swing.JComponent;
 import javax.swing.JScrollPane;
@@ -149,7 +150,7 @@ public class NodeExplorerComponent {
     protected void doInit() {
       SNode node = myNode.getNode();
       for (String name : node.getPropertyNames()) {
-        TextTreeNode tn = new TextTreeNode(name + " : " + node.getProperty(name));
+        TextTreeNode tn = new TextTreeNode(name + " : " + SNodeAccessUtil.getProperty(node, name));
         tn.setIcon(Icons.DEFAULT_ICON);
         add(tn);
       }

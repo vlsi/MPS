@@ -582,76 +582,76 @@
     <unitInfo nodeId="1213877401222" fileName="EnumMemberReference_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior.EnumMemberReference_Behavior" />
   </root>
   <root nodeId="1213877403605" modelId="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)">
-    <nodeInfo nodeId="1213877403608" fileName="_LinkAccessT_Behavior.java" startLine="16" startPosition="80" endLine="17" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877403622" fileName="_LinkAccessT_Behavior.java" startLine="21" startPosition="74" endLine="22" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877403629" fileName="_LinkAccessT_Behavior.java" startLine="23" startPosition="5" endLine="24" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877403639" fileName="_LinkAccessT_Behavior.java" startLine="27" startPosition="78" endLine="28" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877403648" fileName="_LinkAccessT_Behavior.java" startLine="30" startPosition="76" endLine="31" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877403658" fileName="_LinkAccessT_Behavior.java" startLine="32" startPosition="14" endLine="33" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877403668" fileName="_LinkAccessT_Behavior.java" startLine="35" startPosition="12" endLine="36" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877403673" fileName="_LinkAccessT_Behavior.java" startLine="37" startPosition="5" endLine="38" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877403688" fileName="_LinkAccessT_Behavior.java" startLine="38" startPosition="143" endLine="39" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="42" startPosition="80" endLine="43" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="43" startPosition="30" endLine="44" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="44" startPosition="159" endLine="45" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="45" startPosition="68" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="49" startPosition="78" endLine="50" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="50" startPosition="30" endLine="51" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="51" startPosition="163" endLine="52" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="52" startPosition="75" endLine="53" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877403605" fileName="_LinkAccessT_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1213877403656" fileName="_LinkAccessT_Behavior.java" startLine="32" startPosition="12" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877403666" fileName="_LinkAccessT_Behavior.java" startLine="35" startPosition="10" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="43" startPosition="30" endLine="45" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="43" startPosition="30" endLine="45" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="50" startPosition="30" endLine="52" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="50" startPosition="30" endLine="52" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1213877403605" fileName="_LinkAccessT_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getClassExpression_1213877337357#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1213877403617" fileName="_LinkAccessT_Behavior.java" startLine="20" startPosition="75" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877403646" fileName="_LinkAccessT_Behavior.java" startLine="29" startPosition="66" endLine="34" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877403605" fileName="_LinkAccessT_Behavior.java" startLine="20" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPublicType_1213877443338#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="42" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_bquv25_a0a0a1#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="49" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_bquv25_a1a1#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1213877403644" fileName="_LinkAccessT_Behavior.java" startLine="28" startPosition="56" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213877403605" fileName="_LinkAccessT_Behavior.java" startLine="27" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1213877403694" fileName="_LinkAccessT_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="1213877403607" fileName="_LinkAccessT_Behavior.java" startLine="16" startPosition="80" endLine="17" endPosition="281" />
-    <scopeInfo nodeId="1213877403621" fileName="_LinkAccessT_Behavior.java" startLine="21" startPosition="74" endLine="22" endPosition="110" />
-    <scopeInfo nodeId="1213877403647" fileName="_LinkAccessT_Behavior.java" startLine="30" startPosition="76" endLine="31" endPosition="28" />
-    <scopeInfo nodeId="1213877403657" fileName="_LinkAccessT_Behavior.java" startLine="32" startPosition="14" endLine="33" endPosition="31" />
-    <scopeInfo nodeId="1213877403667" fileName="_LinkAccessT_Behavior.java" startLine="35" startPosition="12" endLine="36" endPosition="29" />
-    <scopeInfo nodeId="1213877403605" fileName="_LinkAccessT_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="1213877403608" fileName="_LinkAccessT_Behavior.java" startLine="17" startPosition="80" endLine="18" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877403622" fileName="_LinkAccessT_Behavior.java" startLine="22" startPosition="74" endLine="23" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877403629" fileName="_LinkAccessT_Behavior.java" startLine="24" startPosition="5" endLine="25" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877403639" fileName="_LinkAccessT_Behavior.java" startLine="28" startPosition="78" endLine="29" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877403648" fileName="_LinkAccessT_Behavior.java" startLine="31" startPosition="76" endLine="32" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877403658" fileName="_LinkAccessT_Behavior.java" startLine="33" startPosition="14" endLine="34" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877403668" fileName="_LinkAccessT_Behavior.java" startLine="36" startPosition="12" endLine="37" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877403673" fileName="_LinkAccessT_Behavior.java" startLine="38" startPosition="5" endLine="39" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877403688" fileName="_LinkAccessT_Behavior.java" startLine="39" startPosition="143" endLine="40" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="43" startPosition="80" endLine="44" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="44" startPosition="30" endLine="45" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="45" startPosition="159" endLine="46" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="46" startPosition="85" endLine="47" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="50" startPosition="78" endLine="51" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="51" startPosition="30" endLine="52" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="52" startPosition="163" endLine="53" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="53" startPosition="92" endLine="54" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877403605" fileName="_LinkAccessT_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1213877403656" fileName="_LinkAccessT_Behavior.java" startLine="33" startPosition="12" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877403666" fileName="_LinkAccessT_Behavior.java" startLine="36" startPosition="10" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="44" startPosition="30" endLine="46" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="44" startPosition="30" endLine="46" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="51" startPosition="30" endLine="53" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="51" startPosition="30" endLine="53" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213877403605" fileName="_LinkAccessT_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getClassExpression_1213877337357#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1213877403617" fileName="_LinkAccessT_Behavior.java" startLine="21" startPosition="75" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877403646" fileName="_LinkAccessT_Behavior.java" startLine="30" startPosition="66" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877403605" fileName="_LinkAccessT_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPublicType_1213877443338#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_bquv25_a0a0a1#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="50" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_bquv25_a1a1#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1213877403644" fileName="_LinkAccessT_Behavior.java" startLine="29" startPosition="56" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1213877403605" fileName="_LinkAccessT_Behavior.java" startLine="28" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPresentation_1213877396640#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <scopeInfo nodeId="1213877403694" fileName="_LinkAccessT_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="1213877403607" fileName="_LinkAccessT_Behavior.java" startLine="17" startPosition="80" endLine="18" endPosition="281" />
+    <scopeInfo nodeId="1213877403621" fileName="_LinkAccessT_Behavior.java" startLine="22" startPosition="74" endLine="23" endPosition="110" />
+    <scopeInfo nodeId="1213877403647" fileName="_LinkAccessT_Behavior.java" startLine="31" startPosition="76" endLine="32" endPosition="28" />
+    <scopeInfo nodeId="1213877403657" fileName="_LinkAccessT_Behavior.java" startLine="33" startPosition="14" endLine="34" endPosition="31" />
+    <scopeInfo nodeId="1213877403667" fileName="_LinkAccessT_Behavior.java" startLine="36" startPosition="12" endLine="37" endPosition="29" />
+    <scopeInfo nodeId="1213877403605" fileName="_LinkAccessT_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="1213877403605" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="43" startPosition="30" endLine="45" endPosition="68" />
-    <scopeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="50" startPosition="30" endLine="52" endPosition="75" />
-    <scopeInfo nodeId="1213877403605" fileName="_LinkAccessT_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+    <scopeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="44" startPosition="30" endLine="46" endPosition="85" />
+    <scopeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="51" startPosition="30" endLine="53" endPosition="92" />
+    <scopeInfo nodeId="1213877403605" fileName="_LinkAccessT_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1213877403605" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877403616" fileName="_LinkAccessT_Behavior.java" startLine="20" startPosition="75" endLine="24" endPosition="106" />
-    <scopeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="42" startPosition="80" endLine="46" endPosition="24">
+    <scopeInfo nodeId="1213877403616" fileName="_LinkAccessT_Behavior.java" startLine="21" startPosition="75" endLine="25" endPosition="106" />
+    <scopeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="43" startPosition="80" endLine="47" endPosition="24">
       <varInfo nodeId="1213877403623" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="49" startPosition="78" endLine="53" endPosition="24">
+    <scopeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="50" startPosition="78" endLine="54" endPosition="24">
       <varInfo nodeId="1213877403630" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877403645" fileName="_LinkAccessT_Behavior.java" startLine="29" startPosition="66" endLine="34" endPosition="7" />
-    <scopeInfo nodeId="1213877403605" fileName="_LinkAccessT_Behavior.java" startLine="20" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="1213877403645" fileName="_LinkAccessT_Behavior.java" startLine="30" startPosition="66" endLine="35" endPosition="7" />
+    <scopeInfo nodeId="1213877403605" fileName="_LinkAccessT_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="1213877403605" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="42" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1213877403623" fileName="_LinkAccessT_Behavior.java" startLine="43" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="1213877403623" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="49" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="1213877403630" fileName="_LinkAccessT_Behavior.java" startLine="50" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="1213877403630" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877403638" fileName="_LinkAccessT_Behavior.java" startLine="27" startPosition="78" endLine="39" endPosition="25">
+    <scopeInfo nodeId="1213877403638" fileName="_LinkAccessT_Behavior.java" startLine="28" startPosition="78" endLine="40" endPosition="25">
       <varInfo nodeId="1213877403640" varName="sb" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877403605" fileName="_LinkAccessT_Behavior.java" startLine="27" startPosition="0" endLine="41" endPosition="0">
+    <scopeInfo nodeId="1213877403605" fileName="_LinkAccessT_Behavior.java" startLine="28" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="1213877403605" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1213877403605" fileName="_LinkAccessT_Behavior.java" startLine="12" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior._LinkAccessT_Behavior" />
+    <unitInfo nodeId="1213877403605" fileName="_LinkAccessT_Behavior.java" startLine="13" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.smodel.behavior._LinkAccessT_Behavior" />
   </root>
   <root nodeId="1213877437822" modelId="r:00000000-0000-4000-0000-011c895902fa(jetbrains.mps.lang.smodel.behavior)">
     <nodeInfo nodeId="1213877437826" fileName="Node_ConceptMethodCall_Behavior.java" startLine="16" startPosition="80" endLine="17" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

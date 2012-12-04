@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.packaging.behavior.Layout_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
   public DirctoriesInLayout_MigrationScript(IOperationContext operationContext) {
@@ -108,14 +109,14 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
     SNode quotedNode_7 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Path", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("name", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_4, "name", (String) parameter_1);
     quotedNode_3.addChild("macro", quotedNode_4);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.CompositePathComponent", null, null, GlobalScope.getInstance(), false);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6.setProperty("path", "..");
+    SNodeAccessUtil.setProperty(quotedNode_6, "path", "..");
     quotedNode_5.addChild("pathComponent", quotedNode_6);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
-    quotedNode_7.setProperty("path", (String) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_7, "path", (String) parameter_2);
     quotedNode_5.addChild("pathComponent", quotedNode_7);
     quotedNode_3.addChild("compositePathComponent", quotedNode_5);
     return quotedNode_3;
@@ -128,11 +129,11 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
     SNode quotedNode_5 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Path", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("name", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_3, "name", (String) parameter_1);
     quotedNode_2.addChild("macro", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.CompositePathComponent", null, null, GlobalScope.getInstance(), false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("path", "artifacts");
+    SNodeAccessUtil.setProperty(quotedNode_5, "path", "artifacts");
     quotedNode_4.addChild("pathComponent", quotedNode_5);
     quotedNode_2.addChild("compositePathComponent", quotedNode_4);
     return quotedNode_2;
@@ -145,11 +146,11 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
     SNode quotedNode_6 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Path", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("name", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_4, "name", (String) parameter_1);
     quotedNode_3.addChild("macro", quotedNode_4);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.CompositePathComponent", null, null, GlobalScope.getInstance(), false);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathComponent", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6.setProperty("path", (String) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_6, "path", (String) parameter_2);
     quotedNode_5.addChild("pathComponent", quotedNode_6);
     quotedNode_3.addChild("compositePathComponent", quotedNode_5);
     return quotedNode_3;
@@ -161,7 +162,7 @@ public class DirctoriesInLayout_MigrationScript extends BaseMigrationScript {
     SNode quotedNode_4 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.Path", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("name", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_3, "name", (String) parameter_1);
     quotedNode_2.addChild("macro", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.CompositePathComponent", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.addChild("compositePathComponent", quotedNode_4);

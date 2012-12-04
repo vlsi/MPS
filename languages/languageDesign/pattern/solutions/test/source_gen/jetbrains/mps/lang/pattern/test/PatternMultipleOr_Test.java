@@ -17,6 +17,7 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 @MPSLaunch
 public class PatternMultipleOr_Test extends BaseTransformationTest4 {
@@ -453,10 +454,10 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
       quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AndExpression", null, null, GlobalScope.getInstance(), false);
       quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.EqualsExpression", null, null, GlobalScope.getInstance(), false);
       quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-      quotedNode_6.setProperty("value", "3");
+      SNodeAccessUtil.setProperty(quotedNode_6, "value", "3");
       quotedNode_4.addChild("rightExpression", quotedNode_6);
       quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-      quotedNode_7.setProperty("value", "4");
+      SNodeAccessUtil.setProperty(quotedNode_7, "value", "4");
       quotedNode_4.addChild("leftExpression", quotedNode_7);
       quotedNode_2.addChild("rightExpression", quotedNode_4);
       quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NotEqualsExpression", null, null, GlobalScope.getInstance(), false);

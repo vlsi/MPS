@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ApiTransformations {
   public ApiTransformations() {
@@ -729,7 +730,7 @@ public class ApiTransformations {
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.setReferent(java.lang.String,jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SReference")));
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("value", "role");
+    SNodeAccessUtil.setProperty(quotedNode_4, "value", "role");
     quotedNode_2.addChild("actualArgument", quotedNode_4);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, null, GlobalScope.getInstance(), false);
@@ -1130,7 +1131,7 @@ public class ApiTransformations {
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
     quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.getChildren(boolean):java.util.List")));
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("value", "true");
+    SNodeAccessUtil.setProperty(quotedNode_5, "value", "true");
     quotedNode_3.addChild("actualArgument", quotedNode_5);
     quotedNode_1.addChild("operation", quotedNode_3);
     return quotedNode_1;
@@ -1266,7 +1267,7 @@ public class ApiTransformations {
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClassCreator", null, null, GlobalScope.getInstance(), false);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnonymousClass", null, null, GlobalScope.getInstance(), false);
-    quotedNode_7.setProperty("nonStatic", "true");
+    SNodeAccessUtil.setProperty(quotedNode_7, "nonStatic", "true");
     quotedNode_7.setReference("classifier", SReference.create("classifier", quotedNode_7, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)"), SNodeId.fromString("~Condition")));
     quotedNode_7.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_7, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object.<init>()")));
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
@@ -1455,7 +1456,7 @@ public class ApiTransformations {
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
     quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.isInstanceOfConcept(java.lang.String):boolean")));
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("value", "abc");
+    SNodeAccessUtil.setProperty(quotedNode_5, "value", "abc");
     quotedNode_3.addChild("actualArgument", quotedNode_5);
     quotedNode_1.addChild("operation", quotedNode_3);
     return quotedNode_1;
@@ -1962,7 +1963,7 @@ public class ApiTransformations {
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.FindFirstOperation", null, null, GlobalScope.getInstance(), false);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null, null, GlobalScope.getInstance(), false);
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SmartClosureParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_9.setProperty("name", "it");
+    SNodeAccessUtil.setProperty(quotedNode_9, "name", "it");
     quotedNode_13 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UndefinedType", null, null, GlobalScope.getInstance(), false);
     quotedNode_9.addChild("type", quotedNode_13);
     quotedNode_6.addChild("parameter", quotedNode_9);
@@ -2004,7 +2005,7 @@ public class ApiTransformations {
     quotedNode_8.addChild("operand", quotedNode_12);
     quotedNode_5.addChild("operand", quotedNode_8);
     quotedNode_3.addChild("operand", quotedNode_5);
-    quotedNode_22.setReferenceTarget("variableDeclaration", quotedNode_9);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_22, "variableDeclaration", quotedNode_9);
     return quotedNode_3;
   }
 
@@ -2284,7 +2285,7 @@ public class ApiTransformations {
     quotedNode_5.addChild("expression", quotedNode_8);
     quotedNode_3.addChild("actualArgument", quotedNode_5);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6.setProperty("value", "");
+    SNodeAccessUtil.setProperty(quotedNode_6, "value", "");
     quotedNode_3.addChild("actualArgument", quotedNode_6);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", null, null, GlobalScope.getInstance(), false);
@@ -2366,7 +2367,7 @@ public class ApiTransformations {
     quotedNode_5.addChild("expression", quotedNode_9);
     quotedNode_3.addChild("actualArgument", quotedNode_5);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6.setProperty("value", "");
+    SNodeAccessUtil.setProperty(quotedNode_6, "value", "");
     quotedNode_3.addChild("actualArgument", quotedNode_6);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", null, null, GlobalScope.getInstance(), false);
@@ -2378,7 +2379,7 @@ public class ApiTransformations {
     quotedNode_7.addChild("expression", quotedNode_10);
     quotedNode_3.addChild("actualArgument", quotedNode_7);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_8.setProperty("value", "true");
+    SNodeAccessUtil.setProperty(quotedNode_8, "value", "true");
     quotedNode_3.addChild("actualArgument", quotedNode_8);
     quotedNode_1.addChild("operation", quotedNode_3);
     return quotedNode_1;
@@ -2574,7 +2575,7 @@ public class ApiTransformations {
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.addChild("actualArgument", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("value", "concept");
+    SNodeAccessUtil.setProperty(quotedNode_4, "value", "concept");
     quotedNode_2.addChild("actualArgument", quotedNode_4);
     quotedNode_1.addChild("creator", quotedNode_2);
     return quotedNode_1;
@@ -2609,10 +2610,10 @@ public class ApiTransformations {
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.addChild("actualArgument", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("value", "concept");
+    SNodeAccessUtil.setProperty(quotedNode_4, "value", "concept");
     quotedNode_2.addChild("actualArgument", quotedNode_4);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("value", "false");
+    SNodeAccessUtil.setProperty(quotedNode_5, "value", "false");
     quotedNode_2.addChild("actualArgument", quotedNode_5);
     quotedNode_1.addChild("creator", quotedNode_2);
     return quotedNode_1;

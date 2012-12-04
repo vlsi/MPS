@@ -16,6 +16,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class typeof_InternalClassCreator_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_InternalClassCreator_InferenceRule() {
@@ -60,8 +61,8 @@ public class typeof_InternalClassCreator_InferenceRule extends AbstractInference
   private static SNode _quotation_createNode_dg32ga_a0c0b(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("fqClassName", (String) parameter_1);
-    quotedNode_3.setReferenceTarget("classifier", (SNode) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_3, "fqClassName", (String) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_2);
     return quotedNode_3;
   }
 }

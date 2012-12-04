@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.xml.BreakParseSAXException;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.logging.Logger;
 
@@ -433,7 +434,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("property".equals(tagName)) {
         String[] child = (String[]) value;
         if (child[1] != null) {
-          result.setProperty(fieldhelper.readName(child[0]), child[1]);
+          SNodeAccessUtil.setProperty(result, fieldhelper.readName(child[0]), child[1]);
         }
         return;
       }

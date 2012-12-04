@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+
 class PropertyChangeUndoableAction extends SNodeUndoableAction {
   private String myProperty;
   private String myOldValue;
@@ -28,10 +30,10 @@ class PropertyChangeUndoableAction extends SNodeUndoableAction {
   }
 
   protected void doUndo() {
-    getAffectedNode().setProperty(myProperty, myOldValue);
+    SNodeAccessUtil.setProperty(getAffectedNode(), myProperty, myOldValue);
   }
 
   protected void doRedo() {
-    getAffectedNode().setProperty(myProperty, myNewValue);
+    SNodeAccessUtil.setProperty(getAffectedNode(), myProperty, myNewValue);
   }
 }

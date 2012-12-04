@@ -14,6 +14,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
   public static void init(SNode thisNode) {
@@ -69,7 +70,7 @@ public class ConstraintFunction_ReferentSearchScope_Factory_Behavior {
     quotedNode_2.addChild("argument", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setReferenceTarget("concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_5, "concept", (SNode) parameter_1);
     quotedNode_4.addChild("elementType", quotedNode_5);
     quotedNode_2.addChild("argument", quotedNode_4);
     return quotedNode_2;

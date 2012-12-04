@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ExtractIconsUtil {
   public ExtractIconsUtil() {
@@ -88,7 +89,7 @@ public class ExtractIconsUtil {
   private static SNode _quotation_createNode_st4ewd_a0a3a0a1a1a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.resources.structure.IconResourceReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("declaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "declaration", (SNode) parameter_1);
     return quotedNode_2;
   }
 

@@ -12,6 +12,7 @@ import jetbrains.mps.ide.ui.smodel.PropertyTreeNode;
 import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.logging.Logger;
 
 public class DeletePropertyAction_Action extends BaseAction {
@@ -64,7 +65,7 @@ public class DeletePropertyAction_Action extends BaseAction {
       TreeNode parent = ((TreeNode) MapSequence.fromMap(_params).get("node")).getParent();
       PropertiesTreeNode propsNode = (PropertiesTreeNode) parent;
       PropertyTreeNode propNode = (PropertyTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
-      propsNode.getSNode().setProperty(propNode.getProperty(), null);
+      SNodeAccessUtil.setProperty(propsNode.getSNode(), propNode.getProperty(), null);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "DeletePropertyAction", t);
     }

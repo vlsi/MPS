@@ -188,22 +188,22 @@
     <unitInfo nodeId="1556973682253870204" fileName="RemoveUnknownChildren_QuickFix.java" startLine="10" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.RemoveUnknownChildren_QuickFix" />
   </root>
   <root nodeId="1556973682253873271" modelId="r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)">
-    <nodeInfo nodeId="1556973682253873279" fileName="RemoveUnknownReference_QuickFix.java" startLine="12" startPosition="44" endLine="13" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1556973682253873308" fileName="RemoveUnknownReference_QuickFix.java" startLine="16" startPosition="35" endLine="17" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1556973682253873271" fileName="RemoveUnknownReference_QuickFix.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveUnknownReference_QuickFix#()V" />
-    <nodeInfo nodeId="1556973682253873271" fileName="RemoveUnknownReference_QuickFix.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1556973682253873271" fileName="RemoveUnknownReference_QuickFix.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="1556973682253873271" fileName="RemoveUnknownReference_QuickFix.java" startLine="9" startPosition="44" endLine="9" endPosition="44" />
-    <scopeInfo nodeId="1556973682253873278" fileName="RemoveUnknownReference_QuickFix.java" startLine="12" startPosition="44" endLine="13" endPosition="122" />
-    <scopeInfo nodeId="1556973682253873273" fileName="RemoveUnknownReference_QuickFix.java" startLine="16" startPosition="35" endLine="17" endPosition="103" />
-    <scopeInfo nodeId="1556973682253873271" fileName="RemoveUnknownReference_QuickFix.java" startLine="9" startPosition="0" endLine="11" endPosition="0" />
-    <scopeInfo nodeId="1556973682253873271" fileName="RemoveUnknownReference_QuickFix.java" startLine="12" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="1556973682253873279" fileName="RemoveUnknownReference_QuickFix.java" startLine="13" startPosition="44" endLine="14" endPosition="122" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1556973682253873308" fileName="RemoveUnknownReference_QuickFix.java" startLine="17" startPosition="35" endLine="18" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1556973682253873271" fileName="RemoveUnknownReference_QuickFix.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveUnknownReference_QuickFix#()V" />
+    <nodeInfo nodeId="1556973682253873271" fileName="RemoveUnknownReference_QuickFix.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1556973682253873271" fileName="RemoveUnknownReference_QuickFix.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;)V" />
+    <scopeInfo nodeId="1556973682253873271" fileName="RemoveUnknownReference_QuickFix.java" startLine="10" startPosition="44" endLine="10" endPosition="44" />
+    <scopeInfo nodeId="1556973682253873278" fileName="RemoveUnknownReference_QuickFix.java" startLine="13" startPosition="44" endLine="14" endPosition="122" />
+    <scopeInfo nodeId="1556973682253873273" fileName="RemoveUnknownReference_QuickFix.java" startLine="17" startPosition="35" endLine="18" endPosition="120" />
+    <scopeInfo nodeId="1556973682253873271" fileName="RemoveUnknownReference_QuickFix.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="1556973682253873271" fileName="RemoveUnknownReference_QuickFix.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="1556973682253873271" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1556973682253873271" fileName="RemoveUnknownReference_QuickFix.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+    <scopeInfo nodeId="1556973682253873271" fileName="RemoveUnknownReference_QuickFix.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1556973682253873271" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1556973682253873271" fileName="RemoveUnknownReference_QuickFix.java" startLine="8" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.RemoveUnknownReference_QuickFix" />
+    <unitInfo nodeId="1556973682253873271" fileName="RemoveUnknownReference_QuickFix.java" startLine="9" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.lang.core.typesystem.RemoveUnknownReference_QuickFix" />
   </root>
   <root nodeId="1556973682253891011" modelId="r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)">
     <nodeInfo nodeId="1556973682253891019" fileName="RemoveUnnecessaryChildrenInSingleRole_QuickFix.java" startLine="16" startPosition="44" endLine="17" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

@@ -9,6 +9,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateUtil;
@@ -26,7 +27,7 @@ public class Templatereduce__InputNode__A__switch implements TemplateDeclaration
     try {
       environment.getTracer().pushTemplateNode(templateNode_mkvwhw_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480311958");
-      tnode1.setProperty("text", "child switch #1");
+      SNodeAccessUtil.setProperty(tnode1, "text", "child switch #1");
 
     } finally {
       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode1));
@@ -40,7 +41,7 @@ public class Templatereduce__InputNode__A__switch implements TemplateDeclaration
     try {
       environment.getTracer().pushTemplateNode(templateNode_mkvwhw_a0a0a1a3);
       environment.nodeCopied(context, tnode2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480311960");
-      tnode2.setProperty("text", "child switch #2");
+      SNodeAccessUtil.setProperty(tnode2, "text", "child switch #2");
 
     } finally {
       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode2));
