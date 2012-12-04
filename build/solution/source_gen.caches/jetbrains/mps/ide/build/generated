@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9qbhktkpsdkypofxpq92bpqq4file5z">
+<dependencies version="2" modelHash="-4j4os3uut5mkyrbfvz2li30ofxzaps">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="72jgettirgdze5zodlg3xz1jp5r3et8" />
   <dep model="r:0353b795-df17-4050-9687-ee47eeb7094f(jetbrains.mps.build.mps.structure)" hash="-daiy37cmqzt83qrpmy86zorgjzud226" />
   <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" hash="cx9o2mswo0hix0o4ezzvmzf4makw4ed" />
@@ -39,7 +39,7 @@
   <source id="7181125477683264500" name="IDEA" hash="-9a6mgnf2z81qx9tffuog8atjg3kmdki">
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
   </source>
-  <source id="5148601452480491524" name="buildPlugin" hash="cd38gstq5bn8ite9aaw2w0ixzlax66o">
+  <source id="5148601452480491524" name="buildPlugin" hash="5bjor2v2dvtym2wl3bnso10ae3gdxgg">
     <dep root="6503539749405386437" />
     <dep root="7181125477683264500" />
     <dep root="7926701909975931624" />
@@ -95,7 +95,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildTroveCollections.xml" />
   </source>
-  <source id="6391307088354381121" name="buildPlugins" hash="-c4z1thqksq0oil647gu6z15bth95xqu">
+  <source id="6391307088354381121" name="buildPlugins" hash="93c2oqx3c2pqztkdc0ox36lqfspvzvj">
     <dep root="2569834391839970845" />
     <dep root="4301118715654819483" />
     <dep root="6503539749405386437" />
