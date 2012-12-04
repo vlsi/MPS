@@ -639,6 +639,44 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
+  void unRegisterFromModel() {
+    if (myModel == null) return;
+
+    if (!myModel.isUpdateMode()) {
+      for (SReference ref : myReferences) {
+        ref.makeDirect();
+      }
+    }
+
+    myModel.unregisterNode(this);
+
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+      child.unRegisterFromModel();
+    }
+
+    myModel = null;
+  }
+
+  void registerInModel(SModel model) {
+    if (model != myModel) {
+      if (myModel != null) {
+        LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getSModelReference() + "'");
+        return;
+      }
+    }
+
+    model.registerNode(this);
+    myModel = model;
+
+    for (SReference ref : myReferences) {
+      ref.makeIndirect();
+    }
+
+    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
+      child.registerInModel(model);
+    }
+  }
+
   //----------------------------------------------------------
   //-----------WORKING WITH CONCEPT ON A NODE LEVEL-----------
   //----------------------------------------------------------
@@ -677,44 +715,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     myModel = newModel;
     for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
       child.changeModel(newModel);
-    }
-  }
-
-  void unRegisterFromModel() {
-    if (myModel == null) return;
-
-    if (!myModel.isUpdateMode()) {
-      for (SReference ref : myReferences) {
-        ref.makeDirect();
-      }
-    }
-
-    myModel.unregisterNode(this);
-
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      child.unRegisterFromModel();
-    }
-
-    myModel = null;
-  }
-
-  void registerInModel(SModel model) {
-    if (model != myModel) {
-      if (myModel != null) {
-        LOG.errorWithTrace("couldn't register node which is already registered in '" + myModel.getSModelReference() + "'");
-        return;
-      }
-    }
-
-    model.registerNode(this);
-    myModel = model;
-
-    for (SReference ref : myReferences) {
-      ref.makeIndirect();
-    }
-
-    for (SNode child = firstChild(); child != null; child = child.nextSibling()) {
-      child.registerInModel(model);
     }
   }
 
