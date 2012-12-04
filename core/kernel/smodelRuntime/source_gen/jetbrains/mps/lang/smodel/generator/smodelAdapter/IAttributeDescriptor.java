@@ -5,9 +5,9 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public interface IAttributeDescriptor {
   public boolean match(@NotNull SNode attribute);

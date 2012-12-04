@@ -4,11 +4,10 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNode;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-
 import java.util.List;
 import java.util.Collection;
 import java.util.Iterator;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 /*package*/ abstract class AbstractSNodeList extends ArrayList<SNode> {
   protected final SNode myReferenceContainer;
