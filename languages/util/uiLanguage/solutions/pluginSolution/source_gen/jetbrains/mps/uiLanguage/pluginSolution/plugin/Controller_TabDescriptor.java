@@ -12,6 +12,7 @@ import jetbrains.mps.uiLanguage.behavior.ComponentDeclaration_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SNodeUtil;
 
 public class Controller_TabDescriptor extends RelationDescriptor {
@@ -60,8 +61,8 @@ public class Controller_TabDescriptor extends RelationDescriptor {
     SNode controller = SConceptOperations.createNewNode("jetbrains.mps.uiLanguage.structure.ComponentController", null);
     SLinkOperations.setTarget(controller, "component", node, false);
     SModelOperations.addRootNode(SNodeOperations.getModel(node), controller);
-    String virtualPackage = node.getProperty(SNodeUtil.property_BaseConcept_virtualPackage);
-    controller.setProperty(SNodeUtil.property_BaseConcept_virtualPackage, virtualPackage);
+    String virtualPackage = SNodeAccessUtil.getProperty(node, SNodeUtil.property_BaseConcept_virtualPackage);
+    SNodeAccessUtil.setProperty(controller, SNodeUtil.property_BaseConcept_virtualPackage, virtualPackage);
     return controller;
   }
 }

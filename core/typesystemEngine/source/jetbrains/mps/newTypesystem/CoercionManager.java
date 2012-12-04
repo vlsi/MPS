@@ -21,6 +21,7 @@ import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.typesystemEngine.util.CoerceUtil;
@@ -41,24 +42,24 @@ public class CoercionManager {
   }
 
 
-  public SNode coerceSubTypingNew(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final State state) {
+  public SNode coerceSubTypingNew(final SNode subtype, final IMatchingPattern pattern, final boolean isWeak, final TypeCheckingContext context) {
     if (subtype == null) return null;
     if (pattern.match(subtype)) return subtype;
     if (!CoerceUtil.canBeCoerced(subtype, pattern.getConceptFQName())) return null;
     if ("jetbrains.mps.lang.typesystem.structure.MeetType".equals(subtype.getConcept().getId())) {
       List<SNode> children = subtype.getChildren("argument");
       for (SNode child : children) {
-        SNode result = coerceSubTypingNew(child, pattern, isWeak, state);
+        SNode result = coerceSubTypingNew(child, pattern, isWeak, context);
         if (result != null) return result;
       }
       return null;
     }
-    final TypeCheckingContextNew typeCheckingContext = state == null ? null : state.getTypeCheckingContext();
+    final TypeCheckingContext typeCheckingContext = context;
     if ("jetbrains.mps.lang.typesystem.structure.JoinType".equals(subtype.getConcept().getId())) {
       List<SNode> children = subtype.getChildren("argument");
 
       SNode lcs = SubtypingUtil.createLeastCommonSupertype(children, typeCheckingContext);
-      return coerceSubTypingNew(lcs, pattern, isWeak, state);
+      return coerceSubTypingNew(lcs, pattern, isWeak, context);
     }
 
     //asking the cache

@@ -3396,29 +3396,28 @@
     </node>
   </root>
   <root id="1173787596138">
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1053275602486034283">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="eupq.~TestCase" resolveInfo="TestCase" />
-    </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1209031757292" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="9074471975326013017">
       <property name="name" nameId="tpck.1169194664001" value="LOGGING_INITIALIZED" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="9074471975326013018" />
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.BooleanType" typeId="tpee.1070534644030" id="9074471975326013020" />
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="9074471975326013022">
         <property name="value" nameId="tpee.1068580123138" value="false" />
       </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="9074471975326013018" />
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="4352197520301895370">
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="4352197520301895371" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4352197520301895372" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="4352197520301895373" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="4352197520301895372" />
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="5450502488469342474">
       <property name="name" nameId="tpck.1169194664001" value="setUp" />
-      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5450502488469342475" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5450502488469342476" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5450502488469342477">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="9074471975326013024">
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="9074471975326013028">
+            <node role="expression" roleId="tpee.1081516765348" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="9074471975326013030">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9074471975326013017" resolveInfo="LOGGING_INITIALIZED" />
+            </node>
+          </node>
           <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="9074471975326013025">
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5450502488469480747">
               <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="5450502488469480749">
@@ -3437,14 +3436,15 @@
               </node>
             </node>
           </node>
-          <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="9074471975326013028">
-            <node role="expression" roleId="tpee.1081516765348" type="tpee.LocalStaticFieldReference" typeId="tpee.1172008963197" id="9074471975326013030">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="9074471975326013017" resolveInfo="LOGGING_INITIALIZED" />
-            </node>
-          </node>
         </node>
       </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5450502488469342476" />
+      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5450502488469342475" />
     </node>
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1053275602486034283">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="eupq.~TestCase" resolveInfo="TestCase" />
+    </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1209031757292" />
   </root>
   <root id="1173879639365">
     <node role="testMethodList" roleId="tpe3.1171931851044" type="tpe3.TestMethodList" typeId="tpe3.1171931858461" id="1173879639366">
@@ -3948,22 +3948,19 @@
             </node>
             <node role="actual" roleId="tpe3.8427750732757990725" type="tp6x.InlineFormatDateTimeExpression" typeId="tp6x.5034322243093083314" id="2890840340813202533">
               <node role="formatToken" roleId="tp6x.5034322243093093770" type="tp6x.DateTimePropertyFormatToken" typeId="tp6x.1173959836330" id="2890840340813207789">
-                <link role="dateTimePropertyFormatConfiguration" roleId="tp6x.1173966637440" targetNodeId="tp6y.1173955922497" resolveInfo="hour" />
-                <link role="dateTimePropertyFormatType" roleId="tp6x.1173959975857" targetNodeId="tp6y.1173955922498" resolveInfo="00~23" />
+                <link role="dateTimePropertyFormatConfiguration" roleId="tp6x.1173966637440" targetNodeId="tp6y.1173955922497" />
               </node>
               <node role="formatToken" roleId="tp6x.5034322243093093770" type="tp6x.LiteralFormatToken" typeId="tp6x.1169495318439" id="2890840340813207791">
                 <property name="value" nameId="tp6x.1169495350409" value=":" />
               </node>
               <node role="formatToken" roleId="tp6x.5034322243093093770" type="tp6x.DateTimePropertyFormatToken" typeId="tp6x.1173959836330" id="2890840340813207792">
-                <link role="dateTimePropertyFormatConfiguration" roleId="tp6x.1173966637440" targetNodeId="tp6y.1173956355145" resolveInfo="minute" />
-                <link role="dateTimePropertyFormatType" roleId="tp6x.1173959975857" targetNodeId="tp6y.1173956355146" resolveInfo="00~59" />
+                <link role="dateTimePropertyFormatConfiguration" roleId="tp6x.1173966637440" targetNodeId="tp6y.1173956355145" />
               </node>
               <node role="formatToken" roleId="tp6x.5034322243093093770" type="tp6x.LiteralFormatToken" typeId="tp6x.1169495318439" id="2890840340813202543">
                 <property name="value" nameId="tp6x.1169495350409" value=":" />
               </node>
               <node role="formatToken" roleId="tp6x.5034322243093093770" type="tp6x.DateTimePropertyFormatToken" typeId="tp6x.1173959836330" id="2890840340813207794">
-                <link role="dateTimePropertyFormatConfiguration" roleId="tp6x.1173966637440" targetNodeId="tp6y.1173956423307" resolveInfo="second" />
-                <link role="dateTimePropertyFormatType" roleId="tp6x.1173959975857" targetNodeId="tp6y.1173956423308" resolveInfo="00~59" />
+                <link role="dateTimePropertyFormatConfiguration" roleId="tp6x.1173966637440" targetNodeId="tp6y.1173956423307" />
               </node>
               <node role="datetime" roleId="tp6x.5034322243093093769" type="tp6x.InTimezoneExpression" typeId="tp6x.2639623922402691276" id="2890840340813202505">
                 <node role="timezone" roleId="tp6x.2639623922402691641" type="tp6x.TimeZoneIDExpression" typeId="tp6x.4555537781927648369" id="6915032103346197455">

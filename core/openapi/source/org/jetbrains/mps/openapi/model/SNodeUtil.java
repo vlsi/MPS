@@ -67,10 +67,10 @@ public class SNodeUtil {
     String modelName;
     try {
       if ("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration".equals(node.getConcept().getId())) {
-        String role = node.getProperty("role");
+        String role = SNodeAccessUtil.getProperty((jetbrains.mps.smodel.SNode) node,"role");
         nameText = (role == null) ? "<no role>" : '"' + role + '"';
       } else {
-        String name = node.getProperty("name");
+        String name = SNodeAccessUtil.getProperty((jetbrains.mps.smodel.SNode) node,"role");;
         nameText = (name == null) ? "<no name>" : '"' + name + '"';
       }
       nameText = nameText + "[" + node.getSNodeId() + "]";
@@ -83,11 +83,5 @@ public class SNodeUtil {
       modelName = "<??model??>";
     }
     return roleText + " " + node.getConcept().getName() + " " + nameText + " in " + modelName;
-  }
-
-
-  public static boolean isAttribute(SNode node) {
-    //AttributeOperations.isAttribute(node)
-    return false;
   }
 }

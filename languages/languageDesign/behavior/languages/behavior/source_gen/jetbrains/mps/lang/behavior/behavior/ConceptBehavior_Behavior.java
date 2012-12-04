@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ConceptBehavior_Behavior {
@@ -230,8 +231,8 @@ public class ConceptBehavior_Behavior {
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_2);
-    quotedNode_4.setReferenceTarget("concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_4, "baseMethodDeclaration", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_4, "concept", (SNode) parameter_1);
     {
       List<SNode> nodes = (List<SNode>) parameter_3;
       for (SNode child : nodes) {

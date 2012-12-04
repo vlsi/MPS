@@ -62,6 +62,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.search.ConceptAndSuperConceptsScope" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
     <classNode extendsClassName="jetbrains.mps.checkers.AbstractConstraintsChecker" />
   </dependency>
   <dependency className="jetbrains.mps.checkers.ErrorReportUtil" file="ErrorReportUtil.java">

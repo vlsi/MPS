@@ -18,7 +18,7 @@ public class typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule extends 
   }
 
   public SNode getSubOrSuperType(SNode refType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_d1kmw7_a0a0();
+    return _quotation_createNode_d1kmw7_a0a1();
   }
 
   public String getApplicableConceptFQName() {
@@ -36,7 +36,7 @@ public class typeof_PropertyRefType_isSubtype_PropertyRef_SubtypingRule extends 
     return false;
   }
 
-  private static SNode _quotation_createNode_d1kmw7_a0a0() {
+  private static SNode _quotation_createNode_d1kmw7_a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.checkedName(MPS.Editor/jetbrains.mps.checkedName@java_stub)"), SNodeId.fromString("~PropertyReference")));

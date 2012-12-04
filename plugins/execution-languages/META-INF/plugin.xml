@@ -5,18 +5,31 @@
   <description>Languages and libraries for implementing execution configurations for MPS</description>
   <version>3.0</version>
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
-  <idea-version since-build="122.746" />
+  <idea-version since-build="123.1" />
   
   <depends>jetbrains.mps.debugger-java</depends>
   <depends>jetbrains.mps.debugger-api</depends>
+  <depends>jetbrains.mps.execution-api</depends>
+
+  <project-components>
+    <component>
+      <implementation-class>jetbrains.mps.execution.impl.configurations.RunConfigurationsStateManager
+      </implementation-class>
+    </component>
+  </project-components>
+
   <application-components>
     <component>
       <implementation-class>jetbrains.mps.execution.languages.plugin.Languages_PluginInitializer</implementation-class>
     </component>
   </application-components>
-  
+
   <extensions defaultExtensionNs="com.intellij">
-    <mps.LanguageLibrary dir="/" />
-    <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter" />
+    <mps.LanguageLibrary dir="/"/>
+    <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
+    <programRunner id="defaultRunRunner"
+                   implementation="jetbrains.mps.execution.impl.configurations.runners.MPSProgramRunner"/>
+    <stepsBeforeRunProvider
+            implementation="jetbrains.mps.execution.impl.configurations.runners.LegacyBeforeTaskProvider"/>
   </extensions>
 </idea-plugin>

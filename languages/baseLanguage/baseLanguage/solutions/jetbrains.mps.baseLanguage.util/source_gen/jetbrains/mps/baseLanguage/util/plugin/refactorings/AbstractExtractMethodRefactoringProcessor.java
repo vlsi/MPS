@@ -11,7 +11,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class AbstractExtractMethodRefactoringProcessor implements IExtractMethodRefactoringProcessor {
   protected SNode myNode;
@@ -65,11 +64,6 @@ public class AbstractExtractMethodRefactoringProcessor implements IExtractMethod
   }
 
   public static void universalAddMethod(SNode container, SNode method) {
-    SNode concept = SNodeOperations.getConceptDeclaration(method);
-    for (SNode link : ListSequence.fromList(BehaviorReflection.invokeNonVirtual((Class<List<SNode>>) ((Class) Object.class), SNodeOperations.getConceptDeclaration(container), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_getLinkDeclarations_1213877394480", new Object[]{}))) {
-      if (SLinkOperations.getTarget(link, "target", false) == concept) {
-        container.addChild(SPropertyOperations.getString(link, "role"), method);
-      }
-    }
+    MoveRefactoringUtils.addNodeAtLink(container, method);
   }
 }

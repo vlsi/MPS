@@ -49,7 +49,7 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
                   {
                     SNode _nodeToCheck_1029348928467 = tpoe;
                     EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595143", 0, null);
-                    typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595148", true), (SNode) _quotation_createNode_knbqle_a0a0c0c0a0b0a0a(targetType), _info_12389875345);
+                    typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895905aa(jetbrains.mps.ypath.typesystem)", "1223982595148", true), (SNode) _quotation_createNode_knbqle_a0a0c0c0a0b0a0b(targetType), _info_12389875345);
                   }
                 }
               }
@@ -94,7 +94,7 @@ public class typeof_TreePathOperationExpression_InferenceRule extends AbstractIn
     return false;
   }
 
-  private static SNode _quotation_createNode_knbqle_a0a0c0c0a0b0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_knbqle_a0a0c0c0a0b0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ypath.structure.TreePathType", null, null, GlobalScope.getInstance(), false);

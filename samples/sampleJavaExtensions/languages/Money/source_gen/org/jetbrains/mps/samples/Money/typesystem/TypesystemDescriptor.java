@@ -34,40 +34,6 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
 
   public static class CustomOverloadedOperationsTypesProvider_b extends OverloadedOperationsTypesProvider {
     public CustomOverloadedOperationsTypesProvider_b(String conceptFQ) {
-      this.myLeftOperandType = _quotation_createNode_3ist9o_a0a0a0();
-      this.myRightOperandType = _quotation_createNode_3ist9o_a0b0a0();
-      this.myOperationConceptFQName = conceptFQ;
-      this.myLeftTypeIsExact = false;
-      this.myRightTypeIsExact = false;
-      this.myRightIsStrong = false;
-      this.myLeftIsStrong = false;
-    }
-
-    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return _quotation_createNode_3ist9o_a0a0a();
-    }
-
-    private static SNode _quotation_createNode_3ist9o_a0a0a() {
-      SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
-      return quotedNode_1;
-    }
-
-    private static SNode _quotation_createNode_3ist9o_a0a0a0() {
-      SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("org.jetbrains.mps.samples.Money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
-      return quotedNode_1;
-    }
-
-    private static SNode _quotation_createNode_3ist9o_a0b0a0() {
-      SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("org.jetbrains.mps.samples.Money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
-      return quotedNode_1;
-    }
-  }
-
-  public static class CustomOverloadedOperationsTypesProvider_a extends OverloadedOperationsTypesProvider {
-    public CustomOverloadedOperationsTypesProvider_a(String conceptFQ) {
       this.myLeftOperandType = _quotation_createNode_3ist9o_a0a0a1();
       this.myRightOperandType = _quotation_createNode_3ist9o_a0b0a1();
       this.myOperationConceptFQName = conceptFQ;
@@ -78,13 +44,7 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
-      return _quotation_createNode_3ist9o_a0a0b();
-    }
-
-    private static SNode _quotation_createNode_3ist9o_a0a0b() {
-      SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("org.jetbrains.mps.samples.Money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
-      return quotedNode_1;
+      return _quotation_createNode_3ist9o_a0a1b();
     }
 
     private static SNode _quotation_createNode_3ist9o_a0a0a1() {
@@ -94,6 +54,46 @@ public class TypesystemDescriptor extends BaseHelginsDescriptor {
     }
 
     private static SNode _quotation_createNode_3ist9o_a0b0a1() {
+      SNode quotedNode_1 = null;
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("org.jetbrains.mps.samples.Money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
+      return quotedNode_1;
+    }
+
+    private static SNode _quotation_createNode_3ist9o_a0a1b() {
+      SNode quotedNode_1 = null;
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
+      return quotedNode_1;
+    }
+  }
+
+  public static class CustomOverloadedOperationsTypesProvider_a extends OverloadedOperationsTypesProvider {
+    public CustomOverloadedOperationsTypesProvider_a(String conceptFQ) {
+      this.myLeftOperandType = _quotation_createNode_3ist9o_a0a0a2();
+      this.myRightOperandType = _quotation_createNode_3ist9o_a0b0a2();
+      this.myOperationConceptFQName = conceptFQ;
+      this.myLeftTypeIsExact = false;
+      this.myRightTypeIsExact = false;
+      this.myRightIsStrong = false;
+      this.myLeftIsStrong = false;
+    }
+
+    public SNode getOperationType(SNode operation, SNode leftOperandType, SNode rightOperandType) {
+      return _quotation_createNode_3ist9o_a0a1c();
+    }
+
+    private static SNode _quotation_createNode_3ist9o_a0a0a2() {
+      SNode quotedNode_1 = null;
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("org.jetbrains.mps.samples.Money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
+      return quotedNode_1;
+    }
+
+    private static SNode _quotation_createNode_3ist9o_a0b0a2() {
+      SNode quotedNode_1 = null;
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("org.jetbrains.mps.samples.Money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
+      return quotedNode_1;
+    }
+
+    private static SNode _quotation_createNode_3ist9o_a0a1c() {
       SNode quotedNode_1 = null;
       quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("org.jetbrains.mps.samples.Money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
       return quotedNode_1;

@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.util.List;
 
@@ -49,11 +50,12 @@ public class HUtil {
       // so it should not copy attributes, for instance generator macros of a certain type
       SNode copy = CopyUtil.copy(node, new THashMap<SNode, SNode>(1), false);
 
-      if (typeCheckingContext != null) {
-        if (isRuntimeTypeVariable(copy)) {
-          typeCheckingContext.registerTypeVariable(copy);
-        }
-      }
+// DEADC0DE
+//      if (typeCheckingContext != null) {
+//        if (isRuntimeTypeVariable(copy)) {
+//          typeCheckingContext.registerTypeVariable(copy);
+//        }
+//      }
       return copy;
     } else {
       return node;
@@ -109,7 +111,7 @@ public class HUtil {
   @Deprecated
   public static String getErrorText(SNode node) {
     if (isRuntimeErrorType(node)) {
-      return node.getProperty("errorText");
+      return SNodeAccessUtil.getProperty(node, "errorText");
     } else {
       return null;
     }

@@ -20,7 +20,7 @@ public class typeof_Postcondition_InferenceRule extends AbstractInferenceRule_Ru
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(postcondition, "expression", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:25ace809-bc3a-401e-bad3-caa877e546fb(jetbrains.mps.baseLanguage.contracts.typesystem)", "6302815655306053229", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:25ace809-bc3a-401e-bad3-caa877e546fb(jetbrains.mps.baseLanguage.contracts.typesystem)", "6302815655306033504", true), (SNode) _quotation_createNode_iae1dt_a0a0a(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:25ace809-bc3a-401e-bad3-caa877e546fb(jetbrains.mps.baseLanguage.contracts.typesystem)", "6302815655306033504", true), (SNode) _quotation_createNode_iae1dt_a0a0b(), _info_12389875345);
     }
   }
 
@@ -39,7 +39,7 @@ public class typeof_Postcondition_InferenceRule extends AbstractInferenceRule_Ru
     return false;
   }
 
-  private static SNode _quotation_createNode_iae1dt_a0a0a() {
+  private static SNode _quotation_createNode_iae1dt_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

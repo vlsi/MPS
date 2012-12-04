@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import java.util.Collection;
 import java.util.Iterator;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 /*package*/ abstract class AbstractSNodeList extends ArrayList<SNode> {
   protected final SNode myReferenceContainer;
@@ -197,12 +198,12 @@ import java.util.Iterator;
 
     @Override
     protected void doRemoveReference(SNode node) {
-      myReferenceContainer.setReferenceTarget(myRole, null);
+      SNodeAccessUtil.setReferenceTarget(myReferenceContainer, myRole, null);
     }
 
     @Override
     protected void doAddReference(SNode node) {
-      myReferenceContainer.setReferenceTarget(myRole, node);
+      SNodeAccessUtil.setReferenceTarget(myReferenceContainer, myRole, node);
     }
 
     @Override

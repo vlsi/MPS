@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.internal.collections.runtime.IMapping;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ConvertAnonymousRefactoring {
@@ -125,7 +126,7 @@ public class ConvertAnonymousRefactoring {
   private void makeInnerConstructor(SNode innerClass) {
     if (Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), innerClass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).isEmpty()) {
       SNode ctor = SModelOperations.createNewNode(SNodeOperations.getModel(innerClass), null, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
-      ListSequence.fromList(SLinkOperations.getTargets(innerClass, "member", true)).addElement(ctor);
+      MemberInsertingUtils.insertClassifierMemberInBestPlace(innerClass, ctor);
       SLinkOperations.setNewChild(ctor, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
       SLinkOperations.setNewChild(ctor, "visibility", "jetbrains.mps.baseLanguage.structure.PublicVisibility");
       SLinkOperations.setNewChild(ctor, "returnType", "jetbrains.mps.baseLanguage.structure.VoidType");
@@ -177,7 +178,9 @@ public class ConvertAnonymousRefactoring {
   }
 
   private void addFieldsToInnerClass(SNode innerClass) {
-    ListSequence.fromList(SLinkOperations.getTargets(innerClass, "member", true)).addSequence(Sequence.fromIterable(MapSequence.fromMap(this.myInnerFields).values()));
+    for (SNode field : Sequence.fromIterable(MapSequence.fromMap(this.myInnerFields).values())) {
+      MemberInsertingUtils.insertClassifierMemberInBestPlace(innerClass, field);
+    }
     for (SNode varReference : Sequence.fromIterable(this.getExternalReferences(innerClass))) {
       SNodeOperations.replaceWithAnother(varReference, _quotation_createNode_qy1soj_a0a0a1a02(innerClass, MapSequence.fromMap(this.myInnerFields).get(SLinkOperations.getTarget(varReference, "variableDeclaration", false))));
     }
@@ -253,7 +256,7 @@ public class ConvertAnonymousRefactoring {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("name", (String) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_3, "name", (String) parameter_2);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("type", HUtil.copyIfNecessary(quotedNode_4));
@@ -266,8 +269,8 @@ public class ConvertAnonymousRefactoring {
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("isFinal", "true");
-    quotedNode_3.setProperty("name", (String) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_3, "isFinal", "true");
+    SNodeAccessUtil.setProperty(quotedNode_3, "name", (String) parameter_2);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", null, null, GlobalScope.getInstance(), false);
     quotedNode_3.addChild("visibility", quotedNode_4);
     quotedNode_5 = (SNode) parameter_1;
@@ -301,10 +304,10 @@ public class ConvertAnonymousRefactoring {
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_8.setReferenceTarget("classConcept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_8, "classConcept", (SNode) parameter_1);
     quotedNode_6.addChild("operand", quotedNode_8);
     quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, null, GlobalScope.getInstance(), false);
-    quotedNode_9.setReferenceTarget("fieldDeclaration", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_9, "fieldDeclaration", (SNode) parameter_2);
     quotedNode_6.addChild("operation", quotedNode_9);
     quotedNode_5.addChild("lValue", quotedNode_6);
     quotedNode_7 = (SNode) parameter_3;
@@ -321,10 +324,10 @@ public class ConvertAnonymousRefactoring {
     SNode quotedNode_5 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setReferenceTarget("classConcept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_4, "classConcept", (SNode) parameter_1);
     quotedNode_3.addChild("operand", quotedNode_4);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setReferenceTarget("fieldDeclaration", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_5, "fieldDeclaration", (SNode) parameter_2);
     quotedNode_3.addChild("operation", quotedNode_5);
     return quotedNode_3;
   }
@@ -332,7 +335,7 @@ public class ConvertAnonymousRefactoring {
   private static SNode _quotation_createNode_qy1soj_a0a0w(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
 
@@ -342,7 +345,7 @@ public class ConvertAnonymousRefactoring {
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "baseMethodDeclaration", (SNode) parameter_1);
     {
       List<SNode> nodes = (List<SNode>) parameter_2;
       for (SNode child : nodes) {
@@ -355,7 +358,7 @@ public class ConvertAnonymousRefactoring {
   private static SNode _quotation_createNode_qy1soj_a0a0a2a32(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
 

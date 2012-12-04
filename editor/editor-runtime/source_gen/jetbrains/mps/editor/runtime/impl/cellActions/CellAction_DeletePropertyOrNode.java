@@ -5,6 +5,7 @@ package jetbrains.mps.editor.runtime.impl.cellActions;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class CellAction_DeletePropertyOrNode extends EditorCellAction {
   private SNode mySemanticNode;
@@ -20,8 +21,8 @@ public class CellAction_DeletePropertyOrNode extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
-    if (mySemanticNode.getProperty(myPropertyName) != null) {
-      mySemanticNode.setProperty(myPropertyName, null);
+    if (SNodeAccessUtil.getProperty(mySemanticNode, myPropertyName) != null) {
+      SNodeAccessUtil.setProperty(mySemanticNode, myPropertyName, null);
     } else {
       CellAction_DeleteEasily deleteAction = new CellAction_DeleteEasily(mySemanticNode);
       if (deleteAction.canExecute(context)) {

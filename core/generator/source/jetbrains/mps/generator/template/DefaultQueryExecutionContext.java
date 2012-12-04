@@ -26,6 +26,7 @@ import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.QueryMethodGenerated;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -145,7 +146,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
       throw new GenerationFailureException();
     }
 
-    String templateValue = templateNode.getProperty(propertyName);
+    String templateValue = SNodeAccessUtil.getProperty(templateNode, propertyName);
     String methodName = TemplateFunctionMethodName.propertyMacro_GetPropertyValue(function);
     try {
       Object macroValue = QueryMethodGenerated.invoke(
@@ -154,7 +155,7 @@ public class DefaultQueryExecutionContext implements QueryExecutionContext {
         new PropertyMacroContext(inputNode, templateValue, propertyMacro, context, generator),
         propertyMacro.getModel());
       String propertyValue = macroValue == null ? null : String.valueOf(macroValue);
-      outputNode.setProperty(propertyName, propertyValue);
+      SNodeAccessUtil.setProperty(outputNode, propertyName, propertyValue);
     } catch (Throwable t) {
       generator.getLogger().handleException(t);
       generator.showErrorMessage(inputNode, templateNode, propertyMacro, "cannot evaluate property macro, exception was thrown");

@@ -4,7 +4,6 @@ package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
-import jetbrains.mps.logging.Logger;
 import java.util.Stack;
 import org.xml.sax.Locator;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -19,11 +18,12 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.xml.BreakParseSAXException;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.logging.Logger;
 
 public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
   private static String[] EMPTY_ARRAY = new String[0];
-  private static Logger LOG = Logger.getLogger(ModelReader6Handler.class);
   private ModelReader6Handler.ModelElementHandler modelhandler = new ModelReader6Handler.ModelElementHandler();
   private ModelReader6Handler.PersistenceElementHandler persistencehandler = new ModelReader6Handler.PersistenceElementHandler();
   private ModelReader6Handler.Tag_with_namespaceElementHandler tag_with_namespacehandler = new ModelReader6Handler.Tag_with_namespaceElementHandler();
@@ -434,7 +434,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("property".equals(tagName)) {
         String[] child = (String[]) value;
         if (child[1] != null) {
-          result.setProperty(fieldhelper.readName(child[0]), child[1]);
+          SNodeAccessUtil.setProperty(result, fieldhelper.readName(child[0]), child[1]);
         }
         return;
       }
@@ -519,4 +519,6 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
       super.handleAttribute(resultObject, name, value);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ModelReader6Handler.class);
 }

@@ -32,7 +32,7 @@ public class check_CompositeWithParentScopeExpression_NonTypesystemRule extends 
       }
     }
     SNode type = TypeChecker.getInstance().getTypeOf(expr);
-    if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_f3933j_b0a0a0d0a()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_f3933j_b0a0a0d0a_0()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_f3933j_b0a0a3a0()))) {
+    if (!(TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_f3933j_b0a0a0d0b()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_f3933j_b0a0a0d0b_0()) || TypeChecker.getInstance().getSubtypingManager().isSubtype(type, _quotation_createNode_f3933j_b0a0a3a1()))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(expr, "Parameter should be subtype of Scope or node<> or sequence<node<>>", "r:c2d05fc3-fe25-4093-95ce-8e3356e61084(jetbrains.mps.lang.scopes.typesystem)", "8077936094962969415", null, errorTarget);
@@ -55,7 +55,7 @@ public class check_CompositeWithParentScopeExpression_NonTypesystemRule extends 
     return false;
   }
 
-  private static SNode _quotation_createNode_f3933j_b0a0a3a0() {
+  private static SNode _quotation_createNode_f3933j_b0a0a3a1() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);
@@ -64,14 +64,14 @@ public class check_CompositeWithParentScopeExpression_NonTypesystemRule extends 
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_f3933j_b0a0a0d0a() {
+  private static SNode _quotation_createNode_f3933j_b0a0a0d0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)"), SNodeId.fromString("3734116213129862372")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_f3933j_b0a0a0d0a_0() {
+  private static SNode _quotation_createNode_f3933j_b0a0a0d0b_0() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

@@ -95,6 +95,7 @@
     <classNode dependClassName="jetbrains.mps.traceInfo.TraceablePositionInfo" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
   </dependency>
 </dependenciesRoot>
 

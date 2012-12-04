@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4;
 
 public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
@@ -490,7 +491,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("property".equals(tagName)) {
         String[] child = (String[]) value;
         if (child[1] != null) {
-          result.setProperty(VersionUtil.getPropertyName(child[0], result, fieldversionsInfo), child[1]);
+          SNodeAccessUtil.setProperty(result, VersionUtil.getPropertyName(child[0], result, fieldversionsInfo), child[1]);
         }
         return;
       }

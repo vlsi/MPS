@@ -54,11 +54,6 @@
                  implementationClass="jetbrains.mps.workbench.dataExtraction.runConfig.LocationRule"/>
 
     <editorTabTitleProvider implementation="jetbrains.mps.ide.editor.tabs.EditorTabTitleProviderImpl"/>
-
-    <!--run configurations-->
-    <programRunner id="defaultRunRunner" implementation="jetbrains.mps.execution.impl.configurations.runners.MPSProgramRunner"/>
-
-    <stepsBeforeRunProvider implementation="jetbrains.mps.execution.impl.configurations.runners.LegacyBeforeTaskProvider"/>
   </extensions>
 
 </idea-plugin>

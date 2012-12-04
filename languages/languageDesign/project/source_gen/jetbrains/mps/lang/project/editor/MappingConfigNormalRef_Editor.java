@@ -88,10 +88,10 @@ public class MappingConfigNormalRef_Editor extends DefaultNodeEditor {
   }
 
   private static boolean renderingCondition_x6ljyw_a1a(SNode node, EditorContext editorContext, IScope scope) {
-    return neq_x6ljyw_a0a0a(SPropertyOperations.getString(node, "modelUID"), "*");
+    return neq_x6ljyw_a0a0g(SPropertyOperations.getString(node, "modelUID"), "*");
   }
 
-  private static boolean neq_x6ljyw_a0a0a(Object a, Object b) {
+  private static boolean neq_x6ljyw_a0a0g(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b

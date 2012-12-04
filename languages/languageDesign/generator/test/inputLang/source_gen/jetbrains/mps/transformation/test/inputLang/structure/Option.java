@@ -12,22 +12,12 @@ public enum Option {
   drop_it("drop it", "drop_it");
 
   private String myName;
-  private String myValue;
-
-  Option(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -57,5 +47,16 @@ public enum Option {
       return Option.drop_it;
     }
     return Option.getDefault();
+  }
+
+  private String myValue;
+
+  Option(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

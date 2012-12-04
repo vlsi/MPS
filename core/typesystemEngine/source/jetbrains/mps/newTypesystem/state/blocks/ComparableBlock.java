@@ -20,6 +20,7 @@ import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 
@@ -41,7 +42,7 @@ public class ComparableBlock extends RelationBlock {
       return;
     }
 
-    SubTypingManagerNew subTyping = myState.getTypeCheckingContext().getSubTyping();
+    SubTypingManagerNew subTyping = (SubTypingManagerNew) TypeChecker.getInstance().getSubtypingManager();
     // if subType or superType
     boolean isWeak = myRelationKind.isWeak();
     if (subTyping.isComparable(left, right, isWeak)) {

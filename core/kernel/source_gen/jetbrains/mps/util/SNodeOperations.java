@@ -181,7 +181,9 @@ public class SNodeOperations {
   }
 
   public static void copyProperties(SNode from, final SNode to) {
-    ((jetbrains.mps.smodel.SNode) to).putProperties(((jetbrains.mps.smodel.SNode) from));
+    for (String name : Sequence.fromIterable(from.getPropertyNames())) {
+      to.setProperty(name, from.getProperty(name));
+    }
   }
 
   public static Language getLanguage(SNode node) {

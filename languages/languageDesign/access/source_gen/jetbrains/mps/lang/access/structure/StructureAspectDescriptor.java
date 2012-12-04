@@ -8,13 +8,11 @@ import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
-  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", "jetbrains.mps.lang.access.structure.CommandClosureLiteral", "jetbrains.mps.lang.access.structure.ExecuteCommandInEDTStatement", "jetbrains.mps.lang.access.structure.ExecuteCommandStatement", "jetbrains.mps.lang.access.structure.ExecuteEDTCommandStatement", "jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement", "jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement", "jetbrains.mps.lang.access.structure.IExecuteCommandStatementSync"};
-
   public StructureAspectDescriptor() {
   }
 
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
         return new CompiledConceptDescriptor("jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", "jetbrains.mps.baseLanguage.structure.Statement", false, new String[]{"jetbrains.mps.baseLanguage.structure.Statement"}, new String[]{}, new String[]{});
       case 1:
@@ -37,4 +35,6 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
+
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.lang.access.structure.BaseExecuteCommandStatement", "jetbrains.mps.lang.access.structure.BaseExecuteCommandStatementSync", "jetbrains.mps.lang.access.structure.CommandClosureLiteral", "jetbrains.mps.lang.access.structure.ExecuteCommandInEDTStatement", "jetbrains.mps.lang.access.structure.ExecuteCommandStatement", "jetbrains.mps.lang.access.structure.ExecuteEDTCommandStatement", "jetbrains.mps.lang.access.structure.ExecuteLightweightCommandStatement", "jetbrains.mps.lang.access.structure.ExecuteWriteActionStatement", "jetbrains.mps.lang.access.structure.IExecuteCommandStatementSync"};
 }

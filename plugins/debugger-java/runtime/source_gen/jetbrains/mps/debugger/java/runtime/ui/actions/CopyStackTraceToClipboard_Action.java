@@ -4,8 +4,6 @@ package jetbrains.mps.debugger.java.runtime.ui.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -13,10 +11,11 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.io.StringWriter;
 import java.io.PrintWriter;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class CopyStackTraceToClipboard_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(CopyStackTraceToClipboard_Action.class);
 
   public CopyStackTraceToClipboard_Action() {
     super("Copy Stacktrace to Clipboard", "", ICON);
@@ -64,4 +63,6 @@ public class CopyStackTraceToClipboard_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(CopyStackTraceToClipboard_Action.class);
 }

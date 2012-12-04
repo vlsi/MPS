@@ -6,6 +6,11 @@ import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -16,11 +21,6 @@ import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Item;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.IOperationContext;
 
 public class SimpleCanRunAndDebug extends AbstractCellProvider {
   public SimpleCanRunAndDebug(SNode node) {
@@ -39,6 +39,58 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
   public EditorCell createEditorCell(jetbrains.mps.nodeEditor.EditorContext editorContext) {
     // This method was added in MPS 3.0 for the compatibility with prev. generated code 
     return createEditorCell((EditorContext) editorContext);
+  }
+
+  public static class RunConfigurationExecutor_generic_cellMenu_a0b1a extends AbstractCellMenuPart_Generic_Item {
+    public RunConfigurationExecutor_generic_cellMenu_a0b1a() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "canRun", "" + (false));
+    }
+
+    public String getMatchingText() {
+      return "can't run";
+    }
+  }
+
+  public static class RunConfigurationExecutor_generic_cellMenu_a0c1a extends AbstractCellMenuPart_Generic_Item {
+    public RunConfigurationExecutor_generic_cellMenu_a0c1a() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "canRun", "" + (true));
+    }
+
+    public String getMatchingText() {
+      return "run";
+    }
+  }
+
+  public static class RunConfigurationExecutor_generic_cellMenu_a0a3a extends AbstractCellMenuPart_Generic_Item {
+    public RunConfigurationExecutor_generic_cellMenu_a0a3a() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "canDebug", "" + (false));
+    }
+
+    public String getMatchingText() {
+      return "can't debug";
+    }
+  }
+
+  public static class RunConfigurationExecutor_generic_cellMenu_a0b3a extends AbstractCellMenuPart_Generic_Item {
+    public RunConfigurationExecutor_generic_cellMenu_a0b3a() {
+    }
+
+    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "canDebug", "" + (true));
+    }
+
+    public String getMatchingText() {
+      return "debug";
+    }
   }
 
   private EditorCell createCollection_o92gz8_a(EditorContext editorContext, SNode node) {
@@ -160,57 +212,5 @@ public class SimpleCanRunAndDebug extends AbstractCellProvider {
 
   private static boolean renderingCondition_o92gz8_a1d0(SNode node, EditorContext editorContext, IScope scope) {
     return !(SPropertyOperations.getBoolean(node, "canDebug"));
-  }
-
-  public static class RunConfigurationExecutor_generic_cellMenu_a0b1a extends AbstractCellMenuPart_Generic_Item {
-    public RunConfigurationExecutor_generic_cellMenu_a0b1a() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "canRun", "" + (false));
-    }
-
-    public String getMatchingText() {
-      return "can't run";
-    }
-  }
-
-  public static class RunConfigurationExecutor_generic_cellMenu_a0c1a extends AbstractCellMenuPart_Generic_Item {
-    public RunConfigurationExecutor_generic_cellMenu_a0c1a() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "canRun", "" + (true));
-    }
-
-    public String getMatchingText() {
-      return "run";
-    }
-  }
-
-  public static class RunConfigurationExecutor_generic_cellMenu_a0a3a extends AbstractCellMenuPart_Generic_Item {
-    public RunConfigurationExecutor_generic_cellMenu_a0a3a() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "canDebug", "" + (false));
-    }
-
-    public String getMatchingText() {
-      return "can't debug";
-    }
-  }
-
-  public static class RunConfigurationExecutor_generic_cellMenu_a0b3a extends AbstractCellMenuPart_Generic_Item {
-    public RunConfigurationExecutor_generic_cellMenu_a0b3a() {
-    }
-
-    public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "canDebug", "" + (true));
-    }
-
-    public String getMatchingText() {
-      return "debug";
-    }
   }
 }

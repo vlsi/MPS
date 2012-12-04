@@ -26,41 +26,42 @@ import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.components.JBLabel;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
+import com.intellij.util.EventDispatcher;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
+import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryEditor;
 
 import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
+import java.awt.Dimension;
 import java.util.List;
 
-public class DefaultModelRootEntry extends ModelRootEntry<DefaultModelRoot> {
+public class DefaultModelRootEntry implements ModelRootEntry {
 
-  private JBLabel myLabel;
+  private DefaultModelRoot myModelRoot;
+  private EventDispatcher<ModelRootEntryListener> myEventDispatcher = EventDispatcher.create(ModelRootEntryListener.class);
 
-  public DefaultModelRootEntry() {
-    super();
-  }
-
-  public DefaultModelRootEntry(DefaultModelRoot defaultModelRoot) {
-    super(defaultModelRoot);
-    initUI();
+  @Override
+  public DefaultModelRoot getModelRoot() {
+    if(myModelRoot.getPath() == null)
+      myModelRoot.setPath("");
+    return myModelRoot;
   }
 
   @Override
-  public EntryEditor createEditor() {
-    return new DefaultModelRootEntryEditor();
+  public void setModelRoot(ModelRoot modelRoot) {
+    if(!(modelRoot instanceof DefaultModelRoot))
+      throw new ClassCastException("Can't convert " + modelRoot.getClass().getCanonicalName() + " to " + DefaultModelRoot.class.getCanonicalName());
+    myModelRoot = (DefaultModelRoot)modelRoot;
   }
 
   @Override
-  public JComponent createDetailsComponent() {
-    myLabel = new JBLabel();
-    myLabel.setText(getDetailsText());
-    return myLabel;
-  }
-
-  private String getDetailsText() {
+  public String getDetailsText() {
     final StringBuilder messageText = new StringBuilder();
     messageText.append("<html>");
     messageText.append("Type : ").append(myModelRoot.getType()).append("<br>");
@@ -68,38 +69,56 @@ public class DefaultModelRootEntry extends ModelRootEntry<DefaultModelRoot> {
     return messageText.toString();
   }
 
+  @Nullable
   @Override
-  protected void updateDetailsComponent() {
-    myLabel.setText(getDetailsText());
+  public JComponent getDetailsComponent() {
+    return null;
   }
 
   @Override
-  public DefaultModelRoot getModelRoot() {
-    if(myModelRoot.getPath() == null)
-      myModelRoot.setPath("");
-    return super.getModelRoot();
+  public boolean isValid() {
+    return (new java.io.File(myModelRoot.getPath())).exists();
   }
 
-  private class DefaultModelRootEntryEditor extends EntryEditor {
+  @Override
+  public ModelRootEntryEditor getEditor() {
+    return new DefaultModelRootEntryEditor(myModelRoot);
+  }
 
+  @Override
+  public void addModelRootEntryListener(ModelRootEntryListener listener) {
+    myEventDispatcher.addListener(listener);
+  }
+
+  private class DefaultModelRootEntryEditor implements ModelRootEntryEditor {
     private JPanel myTreePanel;
+    private DefaultModelRoot myModelRoot;
+
+    public DefaultModelRootEntryEditor(DefaultModelRoot modelRoot) {
+      myModelRoot = modelRoot;
+    }
 
     @Override
-    protected void initUI() {
+    public JComponent createComponent() {
       JPanel panel = new JPanel(new GridLayoutManager(1,1));
 
       myTreePanel = new JPanel(new BorderLayout());
       updateTree();
       final JScrollPane scrollPane = ScrollPaneFactory.createScrollPane(myTreePanel);
+      scrollPane.setPreferredSize(new Dimension(250,300));
       panel.add(scrollPane,
         new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, null, null, null));
 
-      myEditorComponent = panel;
+      return panel;
     }
+
 
     private void updateTree() {
       FileSystemTreeImpl fileSystemTree = new FileSystemTreeImpl(null, FileChooserDescriptorFactory.createSingleFolderDescriptor());
       AbstractTreeUi ui = fileSystemTree.getTreeBuilder().getUi();
+//      String rootPath = MPSModuleRepository.getInstance().getModuleById(myModelRoot.getModule().getModuleId()).getBundleHome().getPath();
+//      ui.setRootNode(new DirectoryTreeNode(rootPath, null, null));
+
 
       String path = myModelRoot.getPath() == null ? "" : myModelRoot.getPath();
       VirtualFile virtualFile = VirtualFileManager.getInstance().findFileByUrl(
@@ -121,8 +140,8 @@ public class DefaultModelRootEntry extends ModelRootEntry<DefaultModelRoot> {
           @Override
           public void selectionChanged(List<VirtualFile> selection) {
             if (selection.size() > 0) {
-              DefaultModelRootEntry.this.getModelRoot().setPath(selection.get(0).getPath());
-              DefaultModelRootEntry.this.reset();
+              myModelRoot.setPath(selection.get(0).getPath());
+              myEventDispatcher.getMulticaster().fireDataChanged();
             }
           }
         }, new Disposable() {

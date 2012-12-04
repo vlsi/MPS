@@ -204,7 +204,7 @@ public class SModel {
 
   //---------loading state--------
 
-  protected boolean canFireEvent() {
+  public boolean canFireEvent() {
     return isRegistered() && !isUpdateMode();
   }
 

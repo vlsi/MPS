@@ -14,6 +14,6 @@ public class RemoveUndeclaredProperty_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    node.setProperty(((String) RemoveUndeclaredProperty_QuickFix.this.getField("propertyName")[0]), null, false);
+    node.setProperty(((String) RemoveUndeclaredProperty_QuickFix.this.getField("propertyName")[0]), null);
   }
 }

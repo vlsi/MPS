@@ -14,8 +14,6 @@ import jetbrains.mps.generator.runtime.GenerationException;
 import jetbrains.mps.generator.impl.DismissTopMappingRuleException;
 
 public class Switchbetter__switch3 implements TemplateSwitchMapping {
-  private static SNodePointer conseq_r4cs19_a0a0a3_0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809075905");
-
   public Switchbetter__switch3() {
   }
 
@@ -32,10 +30,12 @@ public class Switchbetter__switch3 implements TemplateSwitchMapping {
   }
 
   public Collection<SNode> applyDefault(final TemplateExecutionEnvironment environment, SNodePointer templateSwitch, String mappingLabel, final TemplateContext context) throws GenerationException {
-    environment.getTracer().pushRuleConsequence(conseq_r4cs19_a0a0a3_0);
+    environment.getTracer().pushRuleConsequence(conseq_r4cs19_a0a0a4_0);
     throw new DismissTopMappingRuleException(DismissTopMappingRuleException.MessageType.info);
   }
 
   public void processNull(TemplateExecutionEnvironment environment, SNodePointer templateSwitch, TemplateContext context) {
   }
+
+  private static SNodePointer conseq_r4cs19_a0a0a4_0 = new SNodePointer("r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_reduceOneToMany@generator)", "8371596541809075905");
 }

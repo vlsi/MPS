@@ -41,13 +41,13 @@ public class IllegalPropertyConstraintsDescriptor implements PropertyConstraints
 
   @Override
   public Object getValue(SNode node, IScope scope) {
-    return node.getPersistentProperty(name);
+    return node.getProperty(name);
   }
 
   @Override
   public void setValue(SNode node, String value, IScope scope) {
 //    throw new UnsupportedOperationException("Unsupported set value for " + container.getConcept().getId() + "." + getName() + " property");
-    node.setProperty(name, value, false);
+    node.setProperty(name, value);
   }
 
   @Override

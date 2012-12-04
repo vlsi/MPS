@@ -132,7 +132,9 @@
     <classNode dependClassName="jetbrains.mps.lang.test.matcher.NodesMatcher" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.ITypeContextOwner" />
+    <classNode dependClassName="jetbrains.mps.typesystem.inference.ITypechecking" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeCheckingContext" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeContextManager" />
@@ -192,7 +194,6 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.newTypesystem.TypeCheckingContextNew" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.TypesUtil" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.operation.AbstractOperation" />
     <classNode dependClassName="jetbrains.mps.newTypesystem.state.State" />

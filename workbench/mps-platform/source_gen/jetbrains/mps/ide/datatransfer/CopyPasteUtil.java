@@ -19,6 +19,7 @@ import jetbrains.mps.datatransfer.CopyPasteManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.StaticReference;
@@ -67,7 +68,7 @@ public class CopyPasteUtil {
 
   public static PasteNodeData createNodeDataIn(List<SNode> sourceNodes, Map<SNode, Set<SNode>> sourceNodesAndAttributes) {
     if (sourceNodes.isEmpty()) {
-      return PasteNodeData.emptyPasteNodeData(null, null);
+      return PasteNodeData.emptyPasteNodeData(null);
     }
     SModel model = sourceNodes.get(0).getModel();
     IModule module = model.getModelDescriptor().getModule();
@@ -81,11 +82,7 @@ public class CopyPasteUtil {
     }
     HashSet<SModelReference> necessaryModels = new HashSet<SModelReference>();
     HashSet<ModuleReference> necessaryLanguages = new HashSet<ModuleReference>();
-    SModel fakeModel = CopyPasteUtil.copyModelProperties(model);
     CopyPasteUtil.processImportsAndLanguages(necessaryModels, necessaryLanguages, sourceNodesToNewNodes, allReferences);
-    for (SNode copiedNode : result) {
-      copiedNode.changeModel(fakeModel);
-    }
     CopyPasteUtil.processReferencesIn(sourceNodesToNewNodes, allReferences);
     Map<SNode, SNode> newNodesToSourceNodes = new HashMap<SNode, SNode>();
     for (Map.Entry<SNode, SNode> entry : sourceNodesToNewNodes.entrySet()) {
@@ -94,12 +91,12 @@ public class CopyPasteUtil {
     for (SNode newNode : result) {
       CopyPasteManager.getInstance().preProcessNode(newNode, newNodesToSourceNodes);
     }
-    return new PasteNodeData(result, null, module, fakeModel, necessaryLanguages, necessaryModels);
+    return new PasteNodeData(result, null, module, necessaryLanguages, necessaryModels);
   }
 
-  public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, IModule sourceModule, SModel model, SModel modelProperties, Set<ModuleReference> necessaryLanguages, Set<SModelReference> necessaryModels) {
+  public static PasteNodeData createNodeDataOut(List<SNode> sourceNodes, IModule sourceModule, Set<ModuleReference> necessaryLanguages, Set<SModelReference> necessaryModels) {
     if (sourceNodes.isEmpty()) {
-      return PasteNodeData.emptyPasteNodeData(null, null);
+      return PasteNodeData.emptyPasteNodeData(null);
     }
     List<SNode> result = new ArrayList<SNode>();
     Set<SReference> referencesRequireResolve = new HashSet<SReference>();
@@ -111,17 +108,16 @@ public class CopyPasteUtil {
       SNode nodeToPaste = CopyPasteUtil.copyNode_internal(sourceNode, null, sourceNodesToNewNodes, allReferences);
       result.add(nodeToPaste);
     }
-    for (SNode nodeToPaste : result) {
-      nodeToPaste.changeModel(null);
-    }
     CopyPasteUtil.processReferencesOut(sourceNodesToNewNodes, allReferences, referencesRequireResolve);
-    return new PasteNodeData(result, referencesRequireResolve, sourceModule, modelProperties, necessaryLanguages, necessaryModels);
+    return new PasteNodeData(result, referencesRequireResolve, sourceModule, necessaryLanguages, necessaryModels);
   }
 
   private static SNode copyNode_internal(SNode sourceNode, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
     SNode targetNode = new SNode(InternUtil.intern(sourceNode.getConcept().getId()));
     targetNode.setId(SNodeId.fromString(sourceNode.getSNodeId().toString()));
-    targetNode.putProperties(sourceNode);
+    for (String name : SetSequence.fromSet(sourceNode.getPropertyNames())) {
+      targetNode.setProperty(name, sourceNode.getProperty(name));
+    }
     sourceNodesToNewNodes.put(sourceNode, targetNode);
     List<SReference> references = sourceNode.getReferences();
     for (SReference reference : references) {
@@ -298,20 +294,20 @@ public class CopyPasteUtil {
       break;
     }
     if (content == null) {
-      return PasteNodeData.emptyPasteNodeData(module, model);
+      return PasteNodeData.emptyPasteNodeData(module);
     }
     if (content.isDataFlavorSupported(SModelDataFlavor.sNode)) {
       SNodeTransferable nodeTransferable;
       try {
         nodeTransferable = (SNodeTransferable) content.getTransferData(SModelDataFlavor.sNode);
-        return nodeTransferable.createNodeData(model);
+        return nodeTransferable.createNodeData();
       } catch (UnsupportedFlavorException e) {
         LOG.error("Exception", e);
       } catch (IOException e) {
         LOG.error("Exception", e);
       }
     }
-    return PasteNodeData.emptyPasteNodeData(module, model);
+    return PasteNodeData.emptyPasteNodeData(module);
   }
 
   public static SNode getNodeFromClipboard(SModel model) {
@@ -360,13 +356,6 @@ public class CopyPasteUtil {
 
   @Nullable
   public static Runnable addImportsWithDialog(PasteNodeData pasteNodeData, SModel targetModel, IOperationContext context) {
-    // shows dialog if necessary and pasted nodes were taken not from the same model 
-    SModel oldModelProperties = pasteNodeData.getModelProperties();
-    //  no dialog if copying from the same model 
-    if (oldModelProperties != null && targetModel.getLongName().equals(oldModelProperties.getLongName())) {
-      return null;
-    }
-
     return CopyPasteUtil.addImportsWithDialog(pasteNodeData.getSourceModule(), targetModel, pasteNodeData.getNecessaryLanguages(), pasteNodeData.getNecessaryModels(), context);
   }
 

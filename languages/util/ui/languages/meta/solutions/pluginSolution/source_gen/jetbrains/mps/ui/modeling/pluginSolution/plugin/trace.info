@@ -230,8 +230,8 @@
   </root>
   <root nodeId="5487985028841949378" modelId="r:0a9deb81-2d1f-49f8-8be8-9229fe099b78(jetbrains.mps.ui.modeling.pluginSolution.plugin)">
     <nodeInfo nodeId="5487985028841949379" fileName="EditorExtensionHelper.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY" />
-    <nodeInfo nodeId="5487985028841949386" fileName="EditorExtensionHelper.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="uiObjectTemplateProvider" />
-    <nodeInfo nodeId="5487985028841949391" fileName="EditorExtensionHelper.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="eventHandlerProvider" />
+    <nodeInfo nodeId="8150898248365061087" fileName="EditorExtensionHelper.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="uiObjectTemplateProvider" />
+    <nodeInfo nodeId="8150898248365127645" fileName="EditorExtensionHelper.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="eventHandlerProvider" />
     <nodeInfo nodeId="5487985028841949396" fileName="EditorExtensionHelper.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="templatesBase" />
     <nodeInfo nodeId="5487985028841949662" fileName="EditorExtensionHelper.java" startLine="24" startPosition="54" endLine="25" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5487985028841949403" fileName="EditorExtensionHelper.java" startLine="28" startPosition="22" endLine="29" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

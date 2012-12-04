@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<language namespace="jetbrains.mps.baseLanguage.doubleDispatch" uuid="7db4447f-913e-4b81-bd75-c9a473319ac6">
+<language namespace="jetbrains.mps.baseLanguage.doubleDispatch" uuid="7db4447f-913e-4b81-bd75-c9a473319ac6" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot path="${module}/languageModels" />
   </models>
@@ -25,7 +25,6 @@
   </generators>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">8b851d7a-07be-4a1c-b815-1fb38e1fa4cc(jetbrains.mps.graphLayout.graph)</dependency>
     <dependency reexport="false">d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)</dependency>
   </dependencies>
   <usedLanguages>

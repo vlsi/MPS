@@ -37,6 +37,7 @@ import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
@@ -571,7 +572,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         );
         outputNode.setReference(reference.getRole(), reference);
       } else if (inputTargetNode.getModel() != null) {
-        outputNode.setReferenceTarget(inputReference.getRole(), inputTargetNode);
+        SNodeAccessUtil.setReferenceTarget(outputNode, inputReference.getRole(), inputTargetNode);
       } else {
         myLogger.error(inputNode, "broken reference '" + inputReference.getRole() + "' in " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(inputNode) + " (unregistered target node)",
           GeneratorUtil.describeIfExists(inputNode, "input node"));

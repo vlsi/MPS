@@ -14,6 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class supertypesOf_ContainerType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_ContainerType_SubtypingRule() {
@@ -23,14 +24,14 @@ public class supertypesOf_ContainerType_SubtypingRule extends SubtypingRule_Runt
     List<SNode> res = new ArrayList<SNode>();
     if ((SLinkOperations.getTarget(ct, "container", false) != null)) {
       if ((SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "container", false), "specializes", false) != null)) {
-        ListSequence.fromList(res).addElement(_quotation_createNode_d3sbvm_a0a0a0a1a0(SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "container", false), "specializes", false), SNodeOperations.as(SNodeOperations.getParent(SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "container", false), "specializes", false)), "jetbrains.mps.ui.modeling.structure.UIObject")));
+        ListSequence.fromList(res).addElement(_quotation_createNode_d3sbvm_a0a0a0a1a1(SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "container", false), "specializes", false), SNodeOperations.as(SNodeOperations.getParent(SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "container", false), "specializes", false)), "jetbrains.mps.ui.modeling.structure.UIObject")));
       }
-      ListSequence.fromList(res).addElement(_quotation_createNode_d3sbvm_a0a1a1a0(SLinkOperations.getTarget(ct, "uiObject", false)));
+      ListSequence.fromList(res).addElement(_quotation_createNode_d3sbvm_a0a1a1a1(SLinkOperations.getTarget(ct, "uiObject", false)));
     }
     if ((SLinkOperations.getTarget(ct, "uiObject", false) != null)) {
-      ListSequence.fromList(res).addElement(_quotation_createNode_d3sbvm_a0a0a2a0(SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "uiObject", false), "extends", false)));
+      ListSequence.fromList(res).addElement(_quotation_createNode_d3sbvm_a0a0a2a1(SLinkOperations.getTarget(SLinkOperations.getTarget(ct, "uiObject", false), "extends", false)));
     }
-    ListSequence.fromList(res).addElement(_quotation_createNode_d3sbvm_a0a3a0(SLinkOperations.getTarget(ct, "uiObject", false)));
+    ListSequence.fromList(res).addElement(_quotation_createNode_d3sbvm_a0a3a1(SLinkOperations.getTarget(ct, "uiObject", false)));
     return res;
   }
 
@@ -49,32 +50,32 @@ public class supertypesOf_ContainerType_SubtypingRule extends SubtypingRule_Runt
     return false;
   }
 
-  private static SNode _quotation_createNode_d3sbvm_a0a0a0a1a0(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_d3sbvm_a0a0a0a1a1(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReferenceTarget("container", (SNode) parameter_1);
-    quotedNode_3.setReferenceTarget("uiObject", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "container", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "uiObject", (SNode) parameter_2);
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_d3sbvm_a0a1a1a0(Object parameter_1) {
+  private static SNode _quotation_createNode_d3sbvm_a0a1a1a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("uiObject", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "uiObject", (SNode) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_d3sbvm_a0a0a2a0(Object parameter_1) {
+  private static SNode _quotation_createNode_d3sbvm_a0a0a2a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("uiObject", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "uiObject", (SNode) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_d3sbvm_a0a3a0(Object parameter_1) {
+  private static SNode _quotation_createNode_d3sbvm_a0a3a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.UIObjectType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("uiObject", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "uiObject", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

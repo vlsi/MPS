@@ -14,13 +14,14 @@ import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
+import jetbrains.mps.lang.pattern.runtime.PatternUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 @MPSLaunch
 public class Patternv1_Test extends BaseTransformationTest4 {
@@ -43,8 +44,8 @@ public class Patternv1_Test extends BaseTransformationTest4 {
     }
 
     public boolean match() {
-      SNode nodeToMatch = _quotation_createNode_o71ow3_a0a0b0();
-      GeneratedMatchingPattern pattern = new Patternv1_Test.TestBody.Pattern_o71ow3_a0a1a1a();
+      SNode nodeToMatch = _quotation_createNode_o71ow3_a0a0c2();
+      GeneratedMatchingPattern pattern = new Patternv1_Test.TestBody.Pattern_o71ow3_a0a1a2c();
       boolean matchNeeded = true;
       boolean matches = pattern.match(nodeToMatch);
       if (matchNeeded != matches) {
@@ -56,59 +57,22 @@ public class Patternv1_Test extends BaseTransformationTest4 {
       {
         List<SNode> list = (List<SNode>) pattern.getFieldValue("patternVar_list");
         int i = 0;
-        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_o71ow3_a0a2a6a1a())));
+        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_o71ow3_a0a2a6a2c())));
         i++;
-        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_o71ow3_a0a3a6a1a())));
+        Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), list.get(i)), ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_o71ow3_a0a3a6a2c())));
         i++;
       }
       return true;
     }
 
-    private static SNode _quotation_createNode_o71ow3_a0a0b0() {
-      SNode quotedNode_1 = null;
-      SNode quotedNode_2 = null;
-      SNode quotedNode_3 = null;
-      SNode quotedNode_4 = null;
-      SNode quotedNode_5 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
-      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
-      quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~System")));
-      quotedNode_2.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~System.out")));
-      quotedNode_1.addChild("operand", quotedNode_2);
-      quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
-      quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object.wait(long,int):void")));
-      quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-      quotedNode_4.setProperty("value", "10");
-      quotedNode_3.addChild("actualArgument", quotedNode_4);
-      quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-      quotedNode_5.setProperty("value", "10");
-      quotedNode_3.addChild("actualArgument", quotedNode_5);
-      quotedNode_1.addChild("operation", quotedNode_3);
-      return quotedNode_1;
-    }
-
-    private static SNode _quotation_createNode_o71ow3_a0a2a6a1a() {
-      SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-      quotedNode_1.setProperty("value", "10");
-      return quotedNode_1;
-    }
-
-    private static SNode _quotation_createNode_o71ow3_a0a3a6a1a() {
-      SNode quotedNode_1 = null;
-      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-      quotedNode_1.setProperty("value", "10");
-      return quotedNode_1;
-    }
-
-    public static class Pattern_o71ow3_a0a1a1a extends GeneratedMatchingPattern implements IMatchingPattern {
+    public static class Pattern_o71ow3_a0a1a2c extends GeneratedMatchingPattern implements IMatchingPattern {
       /*package*/ List<SNode> patternVar_list;
       /*package*/ SNode patternVar_ignore;
       /*package*/ SNode patternVar_field;
       /*package*/ SNode patternVar_className;
       /*package*/ SNode patternVar_method;
 
-      public Pattern_o71ow3_a0a1a1a() {
+      public Pattern_o71ow3_a0a1a2c() {
       }
 
       public boolean match(SNode nodeToMatch) {
@@ -201,6 +165,43 @@ public class Patternv1_Test extends BaseTransformationTest4 {
 
       public void performActions(Object o) {
       }
+    }
+
+    private static SNode _quotation_createNode_o71ow3_a0a0c2() {
+      SNode quotedNode_1 = null;
+      SNode quotedNode_2 = null;
+      SNode quotedNode_3 = null;
+      SNode quotedNode_4 = null;
+      SNode quotedNode_5 = null;
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
+      quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null, null, GlobalScope.getInstance(), false);
+      quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~System")));
+      quotedNode_2.setReference("variableDeclaration", SReference.create("variableDeclaration", quotedNode_2, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~System.out")));
+      quotedNode_1.addChild("operand", quotedNode_2);
+      quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
+      quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object.wait(long,int):void")));
+      quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
+      SNodeAccessUtil.setProperty(quotedNode_4, "value", "10");
+      quotedNode_3.addChild("actualArgument", quotedNode_4);
+      quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
+      SNodeAccessUtil.setProperty(quotedNode_5, "value", "10");
+      quotedNode_3.addChild("actualArgument", quotedNode_5);
+      quotedNode_1.addChild("operation", quotedNode_3);
+      return quotedNode_1;
+    }
+
+    private static SNode _quotation_createNode_o71ow3_a0a2a6a2c() {
+      SNode quotedNode_1 = null;
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
+      SNodeAccessUtil.setProperty(quotedNode_1, "value", "10");
+      return quotedNode_1;
+    }
+
+    private static SNode _quotation_createNode_o71ow3_a0a3a6a2c() {
+      SNode quotedNode_1 = null;
+      quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
+      SNodeAccessUtil.setProperty(quotedNode_1, "value", "10");
+      return quotedNode_1;
     }
   }
 }

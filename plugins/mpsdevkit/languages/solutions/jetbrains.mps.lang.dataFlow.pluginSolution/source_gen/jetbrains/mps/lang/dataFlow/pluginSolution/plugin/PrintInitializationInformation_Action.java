@@ -4,7 +4,6 @@ package jetbrains.mps.lang.dataFlow.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -16,10 +15,10 @@ import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
 import jetbrains.mps.lang.dataFlow.framework.VarSet;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.InitializedVariablesAnalyzer;
+import jetbrains.mps.logging.Logger;
 
 public class PrintInitializationInformation_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(PrintInitializationInformation_Action.class);
 
   public PrintInitializationInformation_Action() {
     super("Print DFA Initialization Information", "", ICON);
@@ -66,4 +65,6 @@ public class PrintInitializationInformation_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "PrintInitializationInformation", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(PrintInitializationInformation_Action.class);
 }

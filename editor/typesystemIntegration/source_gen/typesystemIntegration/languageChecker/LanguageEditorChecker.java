@@ -30,9 +30,12 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.typesystem.inference.ITypeContextOwner;
+import jetbrains.mps.typesystem.inference.ITypechecking;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
@@ -147,7 +150,15 @@ public class LanguageEditorChecker extends BaseEditorChecker {
     return true;
   }
 
-  public Set<EditorMessage> createMessages(SNode node, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext) {
+  public Set<EditorMessage> createMessages(final SNode node, final List<SModelEvent> list, final boolean wasCheckedOnce, final EditorContext editorContext) {
+    return TypeContextManager.getInstance().runTypeCheckingComputation((ITypeContextOwner) editorContext.getEditorComponent(), node, new ITypechecking.Computation<Set<EditorMessage>>() {
+      public Set<EditorMessage> compute(TypeCheckingContext p0) {
+        return doCreateMessages(node, list, wasCheckedOnce, editorContext);
+      }
+    });
+  }
+
+  public Set<EditorMessage> doCreateMessages(SNode node, List<SModelEvent> list, boolean wasCheckedOnce, EditorContext editorContext) {
     myMessagesChanged = false;
     EditorComponent editorComponent = (EditorComponent) editorContext.getEditorComponent();
     SNode sNode = editorComponent.getEditedNode();

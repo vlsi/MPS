@@ -11,22 +11,12 @@ public enum Result {
   failure("failure", "FAILURE");
 
   private String myName;
-  private String myValue;
-
-  Result(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -52,5 +42,16 @@ public enum Result {
       return Result.failure;
     }
     return Result.getDefault();
+  }
+
+  private String myValue;
+
+  Result(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

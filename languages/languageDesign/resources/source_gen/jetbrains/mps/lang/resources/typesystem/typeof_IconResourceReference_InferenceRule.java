@@ -22,7 +22,7 @@ public class typeof_IconResourceReference_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = irr;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)", "8974276187400030217", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)", "8974276187400030222", true), (SNode) _quotation_createNode_xe6v4m_a0a0a(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:cafe8450-2876-42f2-9c43-75da10155c47(jetbrains.mps.lang.resources.typesystem)", "8974276187400030222", true), (SNode) _quotation_createNode_xe6v4m_a0a0b(), _info_12389875345);
     }
   }
 
@@ -41,7 +41,7 @@ public class typeof_IconResourceReference_InferenceRule extends AbstractInferenc
     return false;
   }
 
-  private static SNode _quotation_createNode_xe6v4m_a0a0a() {
+  private static SNode _quotation_createNode_xe6v4m_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#javax.swing(JDK/javax.swing@java_stub)"), SNodeId.fromString("~Icon")));

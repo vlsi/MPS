@@ -4,12 +4,9 @@ package jetbrains.mps.execution.lib;
 
 import jetbrains.mps.execution.api.settings.IPersistentConfiguration;
 import jetbrains.mps.execution.api.settings.ITemplatePersistentConfiguration;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import com.intellij.execution.configurations.RuntimeConfigurationException;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jdom.Element;
@@ -17,20 +14,14 @@ import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
 import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.execution.api.settings.SettingsEditorEx;
+import jetbrains.mps.logging.Logger;
 
 public class Node_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
-  private static Logger LOG = Logger.getLogger(Node_Configuration.class);
   @NotNull
   private Node_Configuration.MyState myState = new Node_Configuration.MyState();
-  private final SNode myConcept;
-  private final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myIsValid;
-  private SettingsEditorEx<Node_Configuration> myEditorEx;
-
-  public Node_Configuration(SNode concept, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> isValid) {
-    myConcept = concept;
-    myIsValid = isValid;
-  }
 
   public void checkConfiguration() throws RuntimeConfigurationException {
     {
@@ -124,6 +115,31 @@ public class Node_Configuration implements IPersistentConfiguration, ITemplatePe
     return clone;
   }
 
+  public class MyState {
+    public String myNodeId;
+    public String myModelId;
+
+    public MyState() {
+    }
+
+    @Override
+    public Object clone() throws CloneNotSupportedException {
+      Node_Configuration.MyState state = new Node_Configuration.MyState();
+      state.myNodeId = myNodeId;
+      state.myModelId = myModelId;
+      return state;
+    }
+  }
+
+  public Node_Configuration(SNode concept, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> isValid) {
+    myConcept = concept;
+    myIsValid = isValid;
+  }
+
+  private final SNode myConcept;
+  private final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> myIsValid;
+  private SettingsEditorEx<Node_Configuration> myEditorEx;
+
   public Node_Configuration createCloneTemplate() {
     return new Node_Configuration(myConcept, myIsValid);
   }
@@ -139,26 +155,12 @@ public class Node_Configuration implements IPersistentConfiguration, ITemplatePe
     return myEditorEx;
   }
 
+  private static Logger LOG = Logger.getLogger(Node_Configuration.class);
+
   private static SNode check_q2vl_a0a0a1a0(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNode();
     }
     return null;
-  }
-
-  public class MyState {
-    public String myNodeId;
-    public String myModelId;
-
-    public MyState() {
-    }
-
-    @Override
-    public Object clone() throws CloneNotSupportedException {
-      Node_Configuration.MyState state = new Node_Configuration.MyState();
-      state.myNodeId = myNodeId;
-      state.myModelId = myModelId;
-      return state;
-    }
   }
 }

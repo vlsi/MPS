@@ -34,6 +34,7 @@
     <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="module" module-name="modelchecker" />
     <orderEntry type="module" module-name="persistence" />
+    <orderEntry type="module" module-name="mps-ui" />
   </component>
 </module>
 

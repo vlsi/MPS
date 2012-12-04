@@ -7,6 +7,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import java.util.Iterator;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodeOperations;
@@ -56,7 +57,7 @@ public class SLinkOperations {
           }
         }
       } else {
-        node.setReferenceTarget(role, targetNode);
+        SNodeAccessUtil.setReferenceTarget(node, role, targetNode);
       }
     }
     return targetNode;

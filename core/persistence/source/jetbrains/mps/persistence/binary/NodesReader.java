@@ -116,7 +116,7 @@ public class NodesReader {
     for (; properties > 0; properties--) {
       String key = is.readString();
       String value = is.readString();
-      node.setProperty(InternUtil.intern(key), InternUtil.intern(value), false);
+      node.setProperty(InternUtil.intern(key), InternUtil.intern(value));
     }
   }
 

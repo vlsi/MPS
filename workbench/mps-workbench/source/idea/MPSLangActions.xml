@@ -9,6 +9,17 @@
       <action id="CreateRunConfiguration" class="com.intellij.execution.actions.CreateAction"/>
     </group>
 
+    <group id="PrintExportGroup">
+      <separator/>
+      <action id="ExportToHTML" class="com.intellij.codeEditor.printing.ExportToHTMLAction"/>
+      <action id="Print" class="com.intellij.codeEditor.printing.PrintAction" icon="AllIcons.Graph.Print"/>
+      <!-- MPS patch
+      <reference ref="AddToFavorites"/>
+      -->
+
+      <add-to-group group-id="FileMenu" anchor="after" relative-to-action="InvalidateCaches"/>
+    </group>
+
     <!-- Code -->
     <group id="CodeMenu" popup="true">
       <add-to-group group-id="MainMenu" anchor="after" relative-to-action="GoToMenu"/>

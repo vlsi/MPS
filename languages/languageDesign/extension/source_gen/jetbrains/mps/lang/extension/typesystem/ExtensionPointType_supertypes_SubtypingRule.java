@@ -23,7 +23,7 @@ public class ExtensionPointType_supertypes_SubtypingRule extends SubtypingRule_R
   }
 
   public List<SNode> getSubOrSuperTypes(SNode ept, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_bg8j1f_a0a0a0(SLinkOperations.getTarget(SLinkOperations.getTarget(ept, "extensionPoint", false), "objectType", true)));
+    return ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_bg8j1f_a0a0a1(SLinkOperations.getTarget(SLinkOperations.getTarget(ept, "extensionPoint", false), "objectType", true)));
   }
 
   public String getApplicableConceptFQName() {
@@ -41,7 +41,7 @@ public class ExtensionPointType_supertypes_SubtypingRule extends SubtypingRule_R
     return true;
   }
 
-  private static SNode _quotation_createNode_bg8j1f_a0a0a0(Object parameter_1) {
+  private static SNode _quotation_createNode_bg8j1f_a0a0a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

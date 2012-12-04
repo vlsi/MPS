@@ -20,12 +20,12 @@ public class typeof_NList_CopyWithTraceOperation_InferenceRule extends AbstractI
     {
       SNode _nodeToCheck_1029348928467 = operation;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8456500c-6587-4a83-9f3b-ee95eb04cd7e(jetbrains.mps.lang.traceable.operations.typesystem)", "2603522263179374388", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8456500c-6587-4a83-9f3b-ee95eb04cd7e(jetbrains.mps.lang.traceable.operations.typesystem)", "2603522263179374365", true), (SNode) _quotation_createNode_h7rq16_a0a0a(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8456500c-6587-4a83-9f3b-ee95eb04cd7e(jetbrains.mps.lang.traceable.operations.typesystem)", "2603522263179374365", true), (SNode) _quotation_createNode_h7rq16_a0a0b(), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(operation, "argument", true);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8456500c-6587-4a83-9f3b-ee95eb04cd7e(jetbrains.mps.lang.traceable.operations.typesystem)", "2603522263179406444", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8456500c-6587-4a83-9f3b-ee95eb04cd7e(jetbrains.mps.lang.traceable.operations.typesystem)", "2603522263179374400", true), (SNode) _quotation_createNode_h7rq16_a0b0a(), false, false, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8456500c-6587-4a83-9f3b-ee95eb04cd7e(jetbrains.mps.lang.traceable.operations.typesystem)", "2603522263179374400", true), (SNode) _quotation_createNode_h7rq16_a0b0b(), false, false, _info_12389875345);
     }
   }
 
@@ -44,7 +44,7 @@ public class typeof_NList_CopyWithTraceOperation_InferenceRule extends AbstractI
     return false;
   }
 
-  private static SNode _quotation_createNode_h7rq16_a0a0a() {
+  private static SNode _quotation_createNode_h7rq16_a0a0b() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, GlobalScope.getInstance(), false);
@@ -53,7 +53,7 @@ public class typeof_NList_CopyWithTraceOperation_InferenceRule extends AbstractI
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_h7rq16_a0b0a() {
+  private static SNode _quotation_createNode_h7rq16_a0b0b() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, GlobalScope.getInstance(), false);

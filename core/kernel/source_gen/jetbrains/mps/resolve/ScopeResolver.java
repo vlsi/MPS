@@ -16,6 +16,7 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ScopeResolver implements IResolver {
   private static final Logger LOG = Logger.getLogger(ScopeResolver.class);
@@ -47,7 +48,7 @@ public class ScopeResolver implements IResolver {
               if (!(SNodeOperations.isInstanceOf(node, NameUtil.nodeFQName(referentConcept)))) {
                 continue;
               }
-              if (resolveInfo.equals(node.getName()) || resolveInfo.equals(node.getProperty("nestedName"))) {
+              if (resolveInfo.equals(node.getName()) || resolveInfo.equals(SNodeAccessUtil.getProperty(node, "nestedName"))) {
                 if (result == null) {
                   result = node;
                 } else {

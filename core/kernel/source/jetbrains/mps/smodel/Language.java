@@ -354,7 +354,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
 
   private String getConceptName(SNode node) {
     if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(node))) return null;
-    return node.getPersistentProperty(SNodeUtil.property_INamedConcept_name);
+    return node.getProperty(SNodeUtil.property_INamedConcept_name);
   }
 
   public void save() {

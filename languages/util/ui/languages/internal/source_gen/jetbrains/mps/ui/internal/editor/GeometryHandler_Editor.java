@@ -6,6 +6,14 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
+import jetbrains.mps.nodeEditor.cells.ModelAccessor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.EqualUtil;
+import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -18,18 +26,42 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
-import jetbrains.mps.nodeEditor.cells.ModelAccessor;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.nodeEditor.CellActionType;
-import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
 
 public class GeometryHandler_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_l8zkiy_a(editorContext, node);
+  }
+
+  public static class _Inline_l8zkiy_a2a0 extends InlineCellProvider {
+    public _Inline_l8zkiy_a2a0() {
+      super();
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext) {
+      return this.createEditorCell(editorContext, this.getSNode());
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+      return this.createReadOnlyModelAccessor_l8zkiy_a0c0a(editorContext, node);
+    }
+
+    private EditorCell createReadOnlyModelAccessor_l8zkiy_a0c0a(final EditorContext editorContext, final SNode node) {
+      EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
+        public String getText() {
+          return SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
+        }
+
+        public void setText(String s) {
+        }
+
+        public boolean isValidText(String s) {
+          return EqualUtil.equals(s, getText());
+        }
+      }, node);
+      editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
+      editorCell.setCellId("ReadOnlyModelAccessor_l8zkiy_a0c0a");
+      return editorCell;
+    }
   }
 
   private EditorCell createCollection_l8zkiy_a(EditorContext editorContext, SNode node) {
@@ -142,37 +174,5 @@ public class GeometryHandler_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  public static class _Inline_l8zkiy_a2a0 extends InlineCellProvider {
-    public _Inline_l8zkiy_a2a0() {
-      super();
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return this.createEditorCell(editorContext, this.getSNode());
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createReadOnlyModelAccessor_l8zkiy_a0c0a(editorContext, node);
-    }
-
-    private EditorCell createReadOnlyModelAccessor_l8zkiy_a0c0a(final EditorContext editorContext, final SNode node) {
-      EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
-        public String getText() {
-          return SPropertyOperations.getString(SNodeOperations.as(SNodeOperations.getParent(node), "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
-        }
-
-        public void setText(String s) {
-        }
-
-        public boolean isValidText(String s) {
-          return EqualUtil.equals(s, getText());
-        }
-      }, node);
-      editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());
-      editorCell.setCellId("ReadOnlyModelAccessor_l8zkiy_a0c0a");
-      return editorCell;
-    }
   }
 }

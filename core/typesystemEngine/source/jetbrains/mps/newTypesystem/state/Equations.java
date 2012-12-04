@@ -26,7 +26,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.IVariableConverter_Runtime;
+import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 import java.util.*;
@@ -209,14 +211,14 @@ public class Equations {
         if (newNode != oldNode) {
           String role = reference.getRole();
           node.setReference(role, null);
-          node.setReferenceTarget(role, newNode);
+          SNodeAccessUtil.setReferenceTarget(node, role, newNode);
         }
       }
     }
   }
 
   private SNode convertReferentVariable(SNode sourceNode, String role, SNode variable) {
-    IVariableConverter_Runtime converter = myState.getTypeCheckingContext().getTypeChecker().getRulesManager().getVariableConverter(sourceNode, role, variable, false);
+    IVariableConverter_Runtime converter = TypeChecker.getInstance().getRulesManager().getVariableConverter(sourceNode, role, variable, false);
     if (converter == null) return variable;
     return converter.convert(sourceNode, role, variable, false);
   }

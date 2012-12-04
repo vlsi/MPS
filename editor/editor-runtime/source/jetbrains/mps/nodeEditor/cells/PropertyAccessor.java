@@ -19,6 +19,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.Hack;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class PropertyAccessor implements ModelAccessor {
   private SNode myNode;
@@ -77,13 +78,13 @@ public class PropertyAccessor implements ModelAccessor {
         if (myNode == null) {
           return null;
         }
-        return myNode.getProperty(myPropertyName);
+        return SNodeAccessUtil.getProperty(myNode, myPropertyName);
       }
     });
   }
 
   protected void doSetValue(String newText) {
-    myNode.setProperty(myPropertyName, newText);
+    SNodeAccessUtil.setProperty(myNode, myPropertyName, newText);
   }
 
   @Hack

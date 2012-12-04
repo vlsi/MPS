@@ -13,7 +13,7 @@ import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeEvent;
 import com.intellij.openapi.wm.ex.ToolWindowEx;
 import com.intellij.openapi.util.Disposer;
-import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
+import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -45,7 +45,7 @@ public class TraceTool_Tool extends GeneratedTool {
     super.dispose();
   }
 
-  public void buildTrace(TypeCheckingContextNew t, final IOperationContext operationContext, SNode node, EditorComponent editorComponent, boolean rebuild) {
+  public void buildTrace(IncrementalTypecheckingContext t, final IOperationContext operationContext, SNode node, EditorComponent editorComponent, boolean rebuild) {
     TraceTool_Tool.this.myPanel.showTraceForNode(t, operationContext, node, editorComponent, rebuild);
   }
 

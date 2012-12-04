@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -24,10 +23,10 @@ import jetbrains.mps.ide.dataFlow.presentation.GraphCreator;
 import jetbrains.mps.ide.dataFlow.presentation.ShowCFGDialog;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.logging.Logger;
 
 public class ShowNullDFA_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ShowNullDFA_Action.class);
 
   public ShowNullDFA_Action() {
     super("Show Nullable DFA", "", ICON);
@@ -89,4 +88,6 @@ public class ShowNullDFA_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "ShowNullDFA", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ShowNullDFA_Action.class);
 }

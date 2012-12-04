@@ -11,22 +11,12 @@ public enum Side {
   left("left", "left");
 
   private String myName;
-  private String myValue;
-
-  Side(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -52,5 +42,16 @@ public enum Side {
       return Side.left;
     }
     return Side.getDefault();
+  }
+
+  private String myValue;
+
+  Side(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

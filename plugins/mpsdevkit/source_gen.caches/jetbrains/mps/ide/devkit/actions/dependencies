@@ -1403,7 +1403,7 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.TraceTool_Tool" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.newTypesystem.TypeCheckingContextNew" />
+    <classNode dependClassName="jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
@@ -1428,7 +1428,7 @@
     <classNode dependClassName="jetbrains.mps.ide.devkit.actions.TraceTool_Tool" />
     <classNode dependClassName="jetbrains.mps.ide.editor.MPSEditorDataKeys" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
-    <classNode dependClassName="jetbrains.mps.newTypesystem.TypeCheckingContextNew" />
+    <classNode dependClassName="jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.plugins.projectplugins.ProjectPluginManager" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
@@ -1502,7 +1502,7 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JComponent" />
     <classNode dependClassName="jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel" />
-    <classNode dependClassName="jetbrains.mps.newTypesystem.TypeCheckingContextNew" />
+    <classNode dependClassName="jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

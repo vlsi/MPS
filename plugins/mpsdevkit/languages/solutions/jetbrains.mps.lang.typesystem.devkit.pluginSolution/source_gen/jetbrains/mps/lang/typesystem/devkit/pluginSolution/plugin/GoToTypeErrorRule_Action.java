@@ -4,7 +4,6 @@ package jetbrains.mps.lang.typesystem.devkit.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.errors.IErrorReporter;
@@ -16,10 +15,10 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.GoToTypeErrorRuleUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.logging.Logger;
 
 public class GoToTypeErrorRule_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(GoToTypeErrorRule_Action.class);
 
   public GoToTypeErrorRule_Action() {
     super("Go to Rule Which Caused Error", "", ICON);
@@ -76,4 +75,6 @@ public class GoToTypeErrorRule_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "GoToTypeErrorRule", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(GoToTypeErrorRule_Action.class);
 }

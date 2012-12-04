@@ -15,21 +15,27 @@
  */
 package jetbrains.mps.smodel.runtime.base;
 
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.*;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.annotations.NotNull;
 
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -93,7 +99,7 @@ public abstract class BaseBehaviorDescriptor implements BehaviorDescriptor {
         while (!concepts.isEmpty()) {
           List<SNode> newFrontier = new ArrayList<SNode>();
           for (SNode currentConcept : concepts) {
-            assert currentConcept != null;
+            assert currentConcept != null : conceptFqName;
             if (processed.contains(currentConcept)) {
               continue;
             }

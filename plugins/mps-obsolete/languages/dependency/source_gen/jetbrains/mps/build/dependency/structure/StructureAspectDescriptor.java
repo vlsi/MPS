@@ -8,13 +8,11 @@ import jetbrains.mps.smodel.runtime.impl.CompiledConceptDescriptor;
 import jetbrains.mps.smodel.runtime.interpreted.StructureAspectInterpreted;
 
 public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.StructureAspectDescriptor {
-  private static String[] stringSwitchCases_1htk8d_a0a0a = new String[]{"jetbrains.mps.build.dependency.structure.Cycle", "jetbrains.mps.build.dependency.structure.CycleReference", "jetbrains.mps.build.dependency.structure.Macros", "jetbrains.mps.build.dependency.structure.ModuleDescription", "jetbrains.mps.build.dependency.structure.PathHolder", "jetbrains.mps.build.dependency.structure.ProjectDescription", "jetbrains.mps.build.dependency.structure.ProjectDescriptionReference"};
-
   public StructureAspectDescriptor() {
   }
 
   public ConceptDescriptor getDescriptor(String conceptFqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0b, conceptFqName)) {
       case 0:
         return new CompiledConceptDescriptor("jetbrains.mps.build.dependency.structure.Cycle", "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{"jetbrains.mps.lang.core.structure.BaseConcept", "jetbrains.mps.lang.core.structure.INamedConcept"}, new String[]{}, new String[]{});
       case 1:
@@ -33,4 +31,6 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
         return StructureAspectInterpreted.getInstance().getDescriptor(conceptFqName);
     }
   }
+
+  private static String[] stringSwitchCases_1htk8d_a0a0b = new String[]{"jetbrains.mps.build.dependency.structure.Cycle", "jetbrains.mps.build.dependency.structure.CycleReference", "jetbrains.mps.build.dependency.structure.Macros", "jetbrains.mps.build.dependency.structure.ModuleDescription", "jetbrains.mps.build.dependency.structure.PathHolder", "jetbrains.mps.build.dependency.structure.ProjectDescription", "jetbrains.mps.build.dependency.structure.ProjectDescriptionReference"};
 }

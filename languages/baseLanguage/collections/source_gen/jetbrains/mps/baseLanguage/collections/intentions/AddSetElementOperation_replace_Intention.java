@@ -11,12 +11,12 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class AddSetElementOperation_replace_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -63,17 +63,6 @@ public class AddSetElementOperation_replace_Intention implements IntentionFactor
     return myCachedExecutable;
   }
 
-  private static SNode _quotation_createNode_1vref4_a0a0a0(Object parameter_1) {
-    SNode quotedNode_2 = null;
-    SNode quotedNode_3 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AddElementOperation", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3 = (SNode) parameter_1;
-    if (quotedNode_3 != null) {
-      quotedNode_2.addChild("argument", HUtil.copyIfNecessary(quotedNode_3));
-    }
-    return quotedNode_2;
-  }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
@@ -89,5 +78,16 @@ public class AddSetElementOperation_replace_Intention implements IntentionFactor
     public IntentionDescriptor getDescriptor() {
       return AddSetElementOperation_replace_Intention.this;
     }
+  }
+
+  private static SNode _quotation_createNode_1vref4_a0a0a0(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.AddElementOperation", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = (SNode) parameter_1;
+    if (quotedNode_3 != null) {
+      quotedNode_2.addChild("argument", HUtil.copyIfNecessary(quotedNode_3));
+    }
+    return quotedNode_2;
   }
 }

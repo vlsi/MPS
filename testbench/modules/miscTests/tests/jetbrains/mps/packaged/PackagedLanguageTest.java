@@ -22,6 +22,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -71,10 +72,10 @@ public class PackagedLanguageTest {
     Assert.assertNotNull(structureModel);
     Assert.assertEquals(1, structureModel.rootsCount());
     SNode root = structureModel.rootsIterator().next();
-    Assert.assertEquals(PACKAGED_CONCEPT, root.getProperty("name"));
+    Assert.assertEquals(PACKAGED_CONCEPT, SNodeAccessUtil.getProperty(root, "name"));
     final SNode propertyDeclaration = root.getChild("propertyDeclaration");
     Assert.assertNotNull(propertyDeclaration);
-    Assert.assertEquals("someProperty", propertyDeclaration.getProperty("name"));
+    Assert.assertEquals("someProperty", SNodeAccessUtil.getProperty(propertyDeclaration, "name"));
   }
 
   private void checkEditorModelLoaded() {
@@ -109,9 +110,20 @@ public class PackagedLanguageTest {
     Assert.assertNotNull(libraryModel);
     Assert.assertEquals(1, libraryModel.rootsCount());
     final SNode root = libraryModel.rootsIterator().next();
-    Assert.assertEquals("DummyLibraryClass", root.getProperty("name"));
-    final SNode method = root.getChild("staticMethod");
+    Assert.assertEquals("DummyLibraryClass", SNodeAccessUtil.getProperty(root, "name"));
+
+    SNode method = null;
+    for (SNode child : root.getChildren("member")) {
+      if (child.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
+        if (method == null) {
+          method = child;
+        } else {
+          method = null;
+          break;
+        }
+      }
+    }
     Assert.assertNotNull(method);
-    Assert.assertEquals("doSomething", method.getProperty("name"));
+    Assert.assertEquals("doSomething", SNodeAccessUtil.getProperty(method, "name"));
   }
 }
