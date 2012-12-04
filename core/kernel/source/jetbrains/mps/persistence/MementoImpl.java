@@ -56,7 +56,7 @@ public class MementoImpl implements Memento {
 
   @Override
   public Iterable<String> getKeys() {
-    return values == null ? Collections.<String>emptyList() : values.keySet();
+    return values == null ? Collections.<String>emptyList() : Collections.unmodifiableCollection(values.keySet());
   }
 
   @Override
@@ -74,7 +74,7 @@ public class MementoImpl implements Memento {
     if (children == null) return Collections.emptySet();
     List<Memento> mementos = children.get(type);
     if (mementos == null) return Collections.emptySet();
-    return Collections.unmodifiableList(mementos);
+    return Collections.unmodifiableList(new ArrayList<Memento>(mementos));
   }
 
   @Override
@@ -87,12 +87,12 @@ public class MementoImpl implements Memento {
 
   @Override
   public Iterable<Memento> getChildren() {
-    List<Memento> mementos = new ArrayList<Memento>();
     if (children == null) return Collections.emptyList();
+    List<Memento> mementos = new ArrayList<Memento>();
     for (List<Memento> mementoList : children.values()) {
       mementos.addAll(mementoList);
     }
-    return mementos;
+    return Collections.unmodifiableList(mementos);
   }
 
   @Override
