@@ -65,6 +65,7 @@
     <copy file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" todir="${build.layout}/mps-core/lib" />
     <copy file="${artifacts.buildCore}/mps-core/lib/mps-platform.jar" todir="${build.layout}/mps-core/lib" />
     <copy file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" todir="${build.layout}/mps-core/lib" />
+    <copy file="${artifacts.buildCore}/mps-core/lib/mps-ui.jar" todir="${build.layout}/mps-core/lib" />
     <mkdir dir="${build.layout}/mps-core/lib/jps" />
     <jar destfile="${build.layout}/mps-core/lib/jps/mps-jps-plugin.jar">
       <fileset dir="${build.tmp}/java/out/mps-jps-plugin" />
