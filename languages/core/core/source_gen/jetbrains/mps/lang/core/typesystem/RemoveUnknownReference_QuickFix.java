@@ -15,6 +15,6 @@ public class RemoveUnknownReference_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    SNodeAccessUtil.setReferenceTarget(node, ((String) this.getField("role")[0]), null);
+    SNodeAccessUtil.setReferenceTarget(node, ((String) RemoveUnknownReference_QuickFix.this.getField("role")[0]), null);
   }
 }

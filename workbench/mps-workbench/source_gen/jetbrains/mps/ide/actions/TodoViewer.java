@@ -25,6 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -34,7 +35,6 @@ import java.util.Arrays;
 import org.jdom.Element;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class TodoViewer extends JPanel {
   public static final Icon TODO_ICON = new ImageIcon(TodoViewer.class.getResource("todo.png"));

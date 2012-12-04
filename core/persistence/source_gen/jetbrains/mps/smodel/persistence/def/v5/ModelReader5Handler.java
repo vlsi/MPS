@@ -5,8 +5,6 @@ package jetbrains.mps.smodel.persistence.def.v5;
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import java.util.Stack;
-
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.xml.sax.Locator;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.SModelVersionsInfo;
@@ -25,6 +23,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4;
 
 public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {

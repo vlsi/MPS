@@ -20,10 +20,10 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
 import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ConstraintsChecker extends AbstractConstraintsChecker {
   public ConstraintsChecker() {

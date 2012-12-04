@@ -12,10 +12,10 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.script.runtime.StubRefUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Mps25ApiMigrationStandalone_MigrationScript extends BaseMigrationScript {
   public Mps25ApiMigrationStandalone_MigrationScript(IOperationContext operationContext) {

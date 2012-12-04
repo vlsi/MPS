@@ -17,6 +17,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.CopyUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -24,7 +25,6 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Queue;
 import jetbrains.mps.internal.collections.runtime.QueueSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class TaskLibrariesHelper {
   private SNode project;

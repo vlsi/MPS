@@ -60,10 +60,10 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class BuildGeneratorImpl extends AbstractBuildGenerator {
   private static final String ICONS = "icons";
@@ -585,7 +585,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     SNode quotedNode_50 = null;
     quotedNode_14 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Branding", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_14, "minor", "0");
-    SNodeAccessUtil.setProperty(quotedNode_14, "name", "Standalone");
+    SNodeAccessUtil.setProperty(quotedNode_14, "name", "MPS");
     SNodeAccessUtil.setProperty(quotedNode_14, "major", "1");
     quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildStringNotEmpty", null, null, GlobalScope.getInstance(), false);
     quotedNode_29 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildVarRefStringPart", null, null, GlobalScope.getInstance(), false);

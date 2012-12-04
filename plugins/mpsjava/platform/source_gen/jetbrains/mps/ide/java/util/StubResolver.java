@@ -39,8 +39,8 @@ import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.IListSequence;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.logging.Logger;
 
 public class StubResolver {
   private static final String JAVA_STUB = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);

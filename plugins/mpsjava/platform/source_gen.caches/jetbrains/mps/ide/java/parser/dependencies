@@ -341,6 +341,7 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.lookup.SourceTypeBinding" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.lookup.SyntheticMethodBinding" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.lookup.TypeBinding" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.parser.ReferentsCreator" file="ReferentsCreator.java">
     <classNode dependClassName="java.lang.Override" />

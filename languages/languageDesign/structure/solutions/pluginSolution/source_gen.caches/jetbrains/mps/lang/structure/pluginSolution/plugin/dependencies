@@ -88,6 +88,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
   </dependency>
   <dependency className="jetbrains.mps.lang.structure.pluginSolution.plugin.ConceptPropertiesMigrationDialog" file="ConceptPropertiesMigrationDialog.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />

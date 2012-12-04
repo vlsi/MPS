@@ -12,8 +12,8 @@ import java.util.Map;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ConstructorInvocationStatement_Behavior {
   public static void init(SNode thisNode) {

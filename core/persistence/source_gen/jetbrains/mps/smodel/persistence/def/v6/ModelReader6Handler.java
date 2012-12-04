@@ -5,8 +5,6 @@ package jetbrains.mps.smodel.persistence.def.v6;
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import java.util.Stack;
-
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.xml.sax.Locator;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.SModelHeader;
@@ -20,6 +18,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.xml.BreakParseSAXException;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.logging.Logger;
 

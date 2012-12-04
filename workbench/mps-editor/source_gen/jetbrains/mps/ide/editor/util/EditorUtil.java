@@ -9,6 +9,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.io.File;
 import javax.swing.JButton;
 import javax.swing.AbstractAction;
@@ -21,7 +22,6 @@ import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.MacroHelper;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class EditorUtil {
   public EditorUtil() {

@@ -12,8 +12,8 @@ import jetbrains.mps.ide.ui.smodel.PropertyTreeNode;
 import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.logging.Logger;
 
 public class DeletePropertyAction_Action extends BaseAction {
   private static final Icon ICON = null;
