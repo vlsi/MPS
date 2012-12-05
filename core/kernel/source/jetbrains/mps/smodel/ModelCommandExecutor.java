@@ -59,6 +59,8 @@ public interface ModelCommandExecutor extends org.jetbrains.mps.openapi.module.M
 
   void executeCommand(Runnable r, Project project);
 
+  void runCommandInEDT(@NotNull Runnable r, @NotNull Project p);
+
   /**
    * use runWriteActionInCommand(final Computable<T> c, Project project)
    */
