@@ -9,7 +9,9 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.Set;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
+import com.intellij.openapi.vfs.LocalFileSystem;
 import java.util.Map;
+import jetbrains.mps.vfs.IFile;
 
 public class FileSystemListenersContainer {
   private Object LOCK = new Object();
@@ -38,6 +40,7 @@ public class FileSystemListenersContainer {
         curr = curr.child(s, true);
       }
       curr.listeners.add(listener);
+      curr.watchIt(listener.getFileToListen());
     }
   }
 
@@ -89,6 +92,7 @@ public class FileSystemListenersContainer {
 
   private class Node {
     private final Set<FileSystemListener> listeners = new ConcurrentHashSet<FileSystemListener>();
+    private LocalFileSystem.WatchRequest watchRequest = null;
     private final String pathPart;
     private final Map<String, FileSystemListenersContainer.Node> children = new ConcurrentHashMap<String, FileSystemListenersContainer.Node>();
     private final FileSystemListenersContainer.Node parent;
@@ -107,12 +111,20 @@ public class FileSystemListenersContainer {
       return child;
     }
 
+    private void watchIt(IFile fullPath) {
+      watchRequest = LocalFileSystem.getInstance().addRootToWatch(fullPath.getPath(), true);
+      if (parent != null && parent.watchRequest == null && fullPath.getParent() != null) {
+        parent.watchRequest = LocalFileSystem.getInstance().addRootToWatch(fullPath.getParent().getPath(), false);
+      }
+    }
+
     private void deleteIfEmpty() {
       if (parent == null || !(listeners.isEmpty()) || !(children.isEmpty())) {
         return;
       }
 
       parent.children.remove(pathPart);
+      LocalFileSystem.getInstance().removeWatchedRoot(watchRequest);
       parent.deleteIfEmpty();
     }
 
