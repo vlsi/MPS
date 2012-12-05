@@ -21,16 +21,16 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.DefaultSimpleSubstituteAction;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.action.SideTransformActionsBuilderContext;
+import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
+import java.util.regex.Pattern;
+import java.util.regex.Matcher;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
-import java.util.regex.Pattern;
-import java.util.regex.Matcher;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
@@ -339,96 +339,76 @@ public class QueriesGenerated {
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1175165206848(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      final String[] lastPattern = new String[1];
-      List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
-        }
-
-        private SNode substitute(SNode result, String pattern) {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
           SNode findMatchExpression = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.FindMatchExpression");
           SLinkOperations.setTarget(findMatchExpression, "inputExpression", _context.getSourceNode(), true);
           return findMatchExpression;
         }
-      }, operationContext);
-      for (final INodeSubstituteAction action : list) {
-        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
-          @Override
-          public SNode substitute(@Nullable EditorContext context, String pattern) {
-            lastPattern[0] = pattern;
-            return super.substitute(context, pattern);
-          }
-        });
-      }
-    }
-    {
-      final String[] lastPattern = new String[1];
-      List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+
+        public String getMatchingText(String pattern) {
+          return "=~";
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
+    }
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
           SNode matchRegexpExpression = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.MatchRegexpExpression");
           SLinkOperations.setTarget(matchRegexpExpression, "inputExpression", _context.getSourceNode(), true);
           return matchRegexpExpression;
         }
-      }, operationContext);
-      for (final INodeSubstituteAction action : list) {
-        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
-          @Override
-          public SNode substitute(@Nullable EditorContext context, String pattern) {
-            lastPattern[0] = pattern;
-            return super.substitute(context, pattern);
-          }
-        });
-      }
-    }
-    {
-      final String[] lastPattern = new String[1];
-      List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+
+        public String getMatchingText(String pattern) {
+          return "matches";
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
+    }
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
           SNode node = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.ReplaceWithRegexpExpression");
           SLinkOperations.setTarget(node, "expr", _context.getSourceNode(), true);
           return node;
         }
-      }, operationContext);
-      for (final INodeSubstituteAction action : list) {
-        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
-          @Override
-          public SNode substitute(@Nullable EditorContext context, String pattern) {
-            lastPattern[0] = pattern;
-            return super.substitute(context, pattern);
-          }
-        });
-      }
-    }
-    {
-      final String[] lastPattern = new String[1];
-      List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.SplitExpression"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
+
+        public String getMatchingText(String pattern) {
+          return "replace with regexp";
         }
 
-        private SNode substitute(SNode result, String pattern) {
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
+    }
+    {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.SplitExpression");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
           SNode node = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.regexp.structure.SplitExpression");
           SLinkOperations.setTarget(node, "expr", _context.getSourceNode(), true);
           return node;
         }
-      }, operationContext);
-      for (final INodeSubstituteAction action : list) {
-        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
-          @Override
-          public SNode substitute(@Nullable EditorContext context, String pattern) {
-            lastPattern[0] = pattern;
-            return super.substitute(context, pattern);
-          }
-        });
-      }
+
+        public String getMatchingText(String pattern) {
+          return "split with";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
     }
     return result;
   }

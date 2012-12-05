@@ -21,6 +21,7 @@ import com.intellij.ide.util.frameworkSupport.FrameworkSupportConfigurableBase;
 import com.intellij.ide.util.frameworkSupport.FrameworkSupportModel;
 import com.intellij.ide.util.frameworkSupport.FrameworkSupportProviderBase;
 import com.intellij.ide.util.frameworkSupport.FrameworkVersion;
+import com.intellij.ide.util.newProjectWizard.impl.FrameworkSupportModelBase;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
@@ -107,7 +108,7 @@ public class MPSFrameworkSupportConfigurable extends FrameworkSupportConfigurabl
     }
 
     private String getContentRootPath() {
-        return myFrameworkSupportModel.getModuleBuilder().getContentEntryPath();
+      return ((FrameworkSupportModelBase) myFrameworkSupportModel).getBaseDirectoryForLibrariesPath();
     }
 
     // Originally was copied from: com.intellij.ide.util.newProjectWizard.SourcePathsStep.BrowsePathListener

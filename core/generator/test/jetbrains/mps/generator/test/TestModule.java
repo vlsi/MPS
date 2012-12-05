@@ -19,6 +19,7 @@ import jetbrains.mps.project.ClassLoadingModule;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
@@ -123,6 +124,12 @@ public class TestModule extends ClassLoadingModule {
 
   protected ModuleScope createScope() {
     return new TestModuleScope();
+  }
+
+  @Override
+  public ModuleDescriptor getModuleDescriptor() {
+    // todo: is it ok?
+    return myPeer.getModuleDescriptor();
   }
 
   public class TestModuleScope extends ModuleScope {
