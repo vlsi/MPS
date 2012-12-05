@@ -27,14 +27,14 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 public interface SModule {
 
   /**
-   * The repository-wide identifier
+   * The repository-wide unique identifier
    */
   SModuleId getModuleId();
 
   String getModuleName();
 
   /**
-   * The unique module reference  ??? what is the difference
+   * A reference to the module, which persists between subsequent read/write actions.
    */
   @NotNull
   SModuleReference getModuleReference();

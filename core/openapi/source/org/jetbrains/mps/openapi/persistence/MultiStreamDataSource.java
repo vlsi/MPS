@@ -19,6 +19,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+/**
+ * A data source with multiple input streams, each identified by a unique name.
+ */
 public interface MultiStreamDataSource extends DataSource {
 
   String getLocation();

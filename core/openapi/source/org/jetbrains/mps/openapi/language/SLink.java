@@ -16,12 +16,15 @@
 package org.jetbrains.mps.openapi.language;
 
 /**
- * evgeny, 7/25/12
+ * Represents a kind of node references
  */
 public interface SLink {
 
   String getRole();
 
+  /**
+   * ???
+   */
   boolean isReference();
 
   boolean isMultiple();

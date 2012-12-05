@@ -19,7 +19,7 @@ package org.jetbrains.mps.openapi.module;
  * There are several types of dependencies between two modules.
  * <ul>
  * <li>DEFAULT - the dependency is resolved and is available on the classpath during the code generation, compilation and run phases</li></li>
- * <li>DESIGN - the dependency between models ??? that has effect only during editing and is removed during generation</li>
+ * <li>DESIGN - the dependency between models that has effect only during editing and is removed during generation</li>
  * <li>COMPILE - the dependency is resolved and is available on the classpath during the compilation and run phases</li>
  * <li>RUNTIME -  the dependency is only required when running the application, and should not be available on the classpath during compilation</li>
  * <li>PROVIDED - the dependency is resolved and is available on the classpath during code generation and compilation, but is not included on the classpath at runtime.

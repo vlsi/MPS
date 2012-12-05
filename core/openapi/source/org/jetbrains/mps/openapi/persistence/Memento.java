@@ -16,7 +16,7 @@
 package org.jetbrains.mps.openapi.persistence;
 
 /**
- * Represents the configuration information for a ModelRoot stored in a module file.???file
+ * Represents the configuration information for a ModelRoot and is stored in a module file.???file
  * Mementos, in essence, resemble hierarchically organized hashmaps. The actual contents of the mementos and the shape
  * of the hierarchy are a responsibility of the owning ModelRoot.
  */

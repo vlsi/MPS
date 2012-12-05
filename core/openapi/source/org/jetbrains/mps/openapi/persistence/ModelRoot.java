@@ -49,7 +49,14 @@ public interface ModelRoot {
 
   SModel createModel(String modelName);
 
+  /**
+   * Gives the model root the opportunity to persist into the supplied memento whatever configuration information
+   * may be needed to restore the models in the future.
+   */
   void save(Memento memento);
 
+  /**
+   * Allows the model root to read its previously saved configuration information
+   */
   void load(Memento memento);
 }

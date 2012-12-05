@@ -16,7 +16,7 @@
 package org.jetbrains.mps.openapi.language;
 
 /**
- * evgeny, 7/27/12
+ * Data types need to be able to save to and load from strings.
  */
 public interface SDataType {
 

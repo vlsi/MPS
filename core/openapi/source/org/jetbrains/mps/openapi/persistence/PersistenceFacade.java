@@ -17,6 +17,9 @@ package org.jetbrains.mps.openapi.persistence;
 
 import org.jetbrains.mps.openapi.model.SModelId;
 
+/**
+ * Represents a singleton registry of model and model root factories.
+ */
 public abstract class PersistenceFacade {
 
   protected PersistenceFacade() {
@@ -32,11 +35,20 @@ public abstract class PersistenceFacade {
 
   public abstract ModelRootFactory getModelRootFactory(String id);
 
+  /**
+   * Type or id???
+   */
   public abstract void setModelRootFactory(String type, ModelRootFactory factory);
 
   public abstract ModelFactory getModelFactory(String extension);
 
   public abstract void setModelFactory(String extension, ModelFactory factory);
 
+  /**
+   * ???
+   *
+   * @param text
+   * @return
+   */
   public abstract SModelId getModelId(String text);
 }

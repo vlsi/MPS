@@ -19,6 +19,9 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
+/**
+ * A data source with a single input stream.
+ */
 public interface StreamDataSource extends DataSource {
 
   String getLocation();

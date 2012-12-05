@@ -16,7 +16,7 @@
 package org.jetbrains.mps.openapi.language;
 
 /**
- * evgeny, 7/25/12
+ * Represents an interface concept
  */
 public interface SInterfaceConcept extends SAbstractConcept {
 

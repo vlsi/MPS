@@ -16,13 +16,23 @@
 package org.jetbrains.mps.openapi.language;
 
 /**
- * evgeny, 7/27/12
+ * Represents an option in an enumeration
  */
 public interface SEnumerationLiteral {
 
+  /**
+   * The owning enumeration
+   */
   SEnumeration getEnumeration();
 
+  /**
+   * The way to present the option to the user
+   */
   String getPresentation();
 
+  /**
+   * The value associated with the option
+   * must be unique???
+   */
   String getValue();
 }

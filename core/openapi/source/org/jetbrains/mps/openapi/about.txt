@@ -1,5 +1,5 @@
 Be specific about when a read and write action lock is needed.
-Specify how to assert the required lock is present.
+Specify how to assert the required lock is present - ModelAccess.
 Point to default implementations that can be build upon.
 
 SModel should contain current SModel, SModelDescriptor, SModelHeader

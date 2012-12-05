@@ -17,13 +17,28 @@ package org.jetbrains.mps.openapi.language;
 
 import org.jetbrains.mps.openapi.module.SModule;
 
+/**
+ * Represents a language
+ */
 public interface SLanguage {
 
+  /**
+   * The visual representation to show to the user
+   */
   String getPresentation();
 
+  /**
+   * All concepts defined in the language
+   */
   Iterable<SAbstractConcept> getConcepts();
 
+  /**
+   * All direct runtime dependencies???
+   */
   Iterable<SModule> getLanguageRuntimes();
 
+  /**
+   * The module containing the language definition
+   */
   SModule getModule();
 }

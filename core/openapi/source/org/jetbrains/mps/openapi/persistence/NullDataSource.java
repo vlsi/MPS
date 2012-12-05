@@ -15,6 +15,10 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+/**
+ * An empty implementation of the DataSource interface.
+ * should be final???
+ */
 public class NullDataSource implements DataSource {
 
   @Override

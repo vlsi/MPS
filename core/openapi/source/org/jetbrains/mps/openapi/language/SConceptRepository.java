@@ -16,7 +16,7 @@
 package org.jetbrains.mps.openapi.language;
 
 /**
- * This interface provides a per-concept access to SLanguageRepository
+ * This singleton class provides a per-concept access to SLanguageRepository
  */
 public abstract class SConceptRepository {
 

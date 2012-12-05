@@ -15,6 +15,9 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+/**
+ * Factories that create model roots. They are registered through PersistenceFacade and associated with one or more file types.
+ */
 public interface ModelRootFactory {
 
   ModelRoot create();
