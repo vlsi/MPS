@@ -26,7 +26,7 @@ import java.util.concurrent.ConcurrentMap;
 /**
  * Evgeny Gryaznov, Sep 3, 2010
  */
-public interface ModelCommandExecutor {
+public interface ModelCommandExecutor extends org.jetbrains.mps.openapi.module.ModelAccess {
 
   /**
    * Enables canRead() without actually acquiring the read lock (screw you, ReadWriteLock!).
@@ -40,19 +40,7 @@ public interface ModelCommandExecutor {
 
   boolean isInEDT();
 
-  boolean canRead();
-
-  void checkReadAccess();
-
-  boolean canWrite();
-
-  void checkWriteAccess();
-
-  void runReadAction(Runnable r);
-
   <T> T runReadAction(Computable<T> c);
-
-  void runWriteAction(Runnable r);
 
   void writeFilesInEDT(@NotNull final Runnable action);
 
@@ -68,10 +56,6 @@ public interface ModelCommandExecutor {
   <T> T runReadInWriteAction(Computable<T> c);
 
   void runReadInEDT(Runnable r);
-
-  void runWriteInEDT(Runnable r);
-
-  void runCommandInEDT(@NotNull Runnable r, @NotNull Project p);
 
   void executeCommand(Runnable r, Project project);
 
