@@ -76,10 +76,6 @@
     <component>
       <implementation-class>jetbrains.mps.idea.core.projectView.MPSTreeRootNameInvalidator</implementation-class>
     </component>
-    <component>
-      <implementation-class>jetbrains.mps.idea.core.library.SolutionLibrariesIndex</implementation-class>
-      <interface-class>jetbrains.mps.idea.core.library.SolutionLibrariesIndex</interface-class>
-    </component>
   </project-components>
 
   <extensions defaultExtensionNs="com.intellij">

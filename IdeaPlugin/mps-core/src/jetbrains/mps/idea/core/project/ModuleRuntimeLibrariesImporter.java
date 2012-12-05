@@ -30,7 +30,7 @@ import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContaine
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainer.LibraryLevel;
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainerFactory;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.idea.core.library.SolutionLibrariesIndex;
+import jetbrains.mps.idea.core.library.SolutionLibrariesUtil;
 import jetbrains.mps.idea.core.library.SolutionLibraryType;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
@@ -70,12 +70,10 @@ public class ModuleRuntimeLibrariesImporter {
   }
 
   public void addMissingLibraries() {
-    Project project = getProject();
-
     Set<ModuleReference> alreadyImported = new HashSet<ModuleReference>();
     for (OrderEntry entry : myModifiableRootModel.getOrderEntries()){
       if (entry instanceof LibraryOrderEntry) {
-        alreadyImported.addAll(SolutionLibrariesIndex.getInstance(getProject()).getModules(((LibraryOrderEntry) entry).getLibrary()));
+        alreadyImported.addAll(SolutionLibrariesUtil.getModules(((LibraryOrderEntry) entry).getLibrary()));
       }
     }
 
@@ -114,7 +112,7 @@ public class ModuleRuntimeLibrariesImporter {
   @Nullable
     private Library getAutoLibrary(ModuleReference reference) {
       String libraryName = LIBRARY_PREFIX + reference.getModuleFqName() + AUTO_SUFFIX;
-      for (Library lib : SolutionLibrariesIndex.getInstance(getProject()).getLibraries(reference)) {
+      for (Library lib : SolutionLibrariesUtil.getLibraries(reference, getProject())) {
         if (lib.getName().equals(libraryName)) {
           return lib;
         }
