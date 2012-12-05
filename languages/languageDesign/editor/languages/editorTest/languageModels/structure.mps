@@ -149,12 +149,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3702466984434723497" resolveInfo="IBaseTestBlock" />
     </node>
   </root>
-  <root id="7658393498702771296">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="5216537374825317512">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpck.5169995583184591169" resolveInfo="attributed" />
-      <link role="target" roleId="tpce.1105736807942" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
-    </node>
-  </root>
+  <root id="7658393498702771296" />
   <root id="5110219550149792114">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5110219550149792118">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />

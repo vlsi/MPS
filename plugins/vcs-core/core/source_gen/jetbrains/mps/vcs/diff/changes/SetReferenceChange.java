@@ -10,7 +10,6 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -59,7 +58,7 @@ public class SetReferenceChange extends NodeChange {
     SNode node = model.getNodeById(getAffectedNodeId());
     assert node != null;
     if (myTargetNodeId == null && myResolveInfo == null) {
-      SNodeAccessUtil.setReferenceTarget(node, myRole, null);
+      node.setReferenceTarget(myRole, null);
     } else {
       SModelReference targetModelReference = (myTargetModelReference == null ?
         model.getSModelReference() :
@@ -71,7 +70,7 @@ public class SetReferenceChange extends NodeChange {
       } else {
         reference = new StaticReference(myRole, node, targetModelReference, myTargetNodeId, myResolveInfo);
       }
-      SNodeAccessUtil.setReferenceTarget(node, myRole, null);
+      node.setReferenceTarget(myRole, null);
       node.setReference(reference.getRole(), reference);
     }
   }

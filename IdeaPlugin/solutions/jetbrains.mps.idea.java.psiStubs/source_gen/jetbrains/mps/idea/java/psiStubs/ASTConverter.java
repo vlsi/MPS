@@ -470,6 +470,19 @@ public class ASTConverter {
     }));
   }
 
+  public static class WithState extends ASTConverter {
+    private String myIdPrefix;
+
+    public WithState(String prefix) {
+      myIdPrefix = prefix;
+    }
+
+    @Override
+    public String getIdPrefix() {
+      return myIdPrefix;
+    }
+  }
+
   private static SNode _quotation_createNode_rbndtb_a0a6a2c0e(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
@@ -494,18 +507,5 @@ public class ASTConverter {
 
   public static boolean isNotEmpty_rbndtb_a0s0b(String str) {
     return str != null && str.length() > 0;
-  }
-
-  public static class WithState extends ASTConverter {
-    private String myIdPrefix;
-
-    public WithState(String prefix) {
-      myIdPrefix = prefix;
-    }
-
-    @Override
-    public String getIdPrefix() {
-      return myIdPrefix;
-    }
   }
 }

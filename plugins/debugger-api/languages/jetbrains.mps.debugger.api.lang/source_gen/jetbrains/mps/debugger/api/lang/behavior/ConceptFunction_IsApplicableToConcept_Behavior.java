@@ -4,6 +4,10 @@ package jetbrains.mps.debugger.api.lang.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
+import java.util.List;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ConceptFunction_IsApplicableToConcept_Behavior {
   public static void init(SNode thisNode) {
@@ -11,5 +15,11 @@ public class ConceptFunction_IsApplicableToConcept_Behavior {
 
   public static boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
     return true;
+  }
+
+  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
+    List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
+    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)", "8751745335399632077"));
+    return result;
   }
 }

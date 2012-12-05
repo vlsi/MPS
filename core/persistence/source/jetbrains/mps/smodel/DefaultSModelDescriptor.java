@@ -61,6 +61,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
         updateDiskTimestamp();
         if (current == null) return new ModelLoadResult(fullModel, ModelLoadingState.FULLY_LOADED);
         current.setUpdateMode(true);   //not to send events on changes
+        fullModel.setUpdateMode(true);
         new ModelLoader(current, fullModel).update();
         current.setUpdateMode(false);  //enable events
         return new ModelLoadResult(current, ModelLoadingState.FULLY_LOADED);

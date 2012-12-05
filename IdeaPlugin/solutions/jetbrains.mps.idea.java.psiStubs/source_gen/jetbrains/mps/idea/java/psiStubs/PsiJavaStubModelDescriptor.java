@@ -47,6 +47,16 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
   }
 
   @Override
+  public void attach() {
+    myDataSource.addListener(this);
+  }
+
+  @Override
+  public void dispose() {
+    myDataSource.removeListener(this);
+  }
+
+  @Override
   protected SModel createModel() {
 
     myModel = new SModel(myModelRef);
@@ -69,8 +79,6 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
         MapSequence.fromMap(myRootsPerFile).put(jf, roots);
       }
     }
-
-    myDataSource.addListener(this);
 
     return myModel;
   }

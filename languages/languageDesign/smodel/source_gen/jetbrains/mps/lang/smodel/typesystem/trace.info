@@ -48,7 +48,7 @@
     <nodeInfo nodeId="1179506569646" fileName="RulesUtil.java" startLine="150" startPosition="58" endLine="151" endPosition="370" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1178287491768" fileName="RulesUtil.java" startLine="152" startPosition="5" endLine="153" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1178302058717" fileName="RulesUtil.java" startLine="157" startPosition="108" endLine="158" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1179357028840" fileName="RulesUtil.java" startLine="158" startPosition="29" endLine="159" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1179357028840" fileName="RulesUtil.java" startLine="158" startPosition="29" endLine="159" endPosition="284" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1178302007667" fileName="RulesUtil.java" startLine="162" startPosition="9" endLine="163" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1178302007667" fileName="RulesUtil.java" startLine="163" startPosition="62" endLine="164" endPosition="229" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1178302268618" fileName="RulesUtil.java" startLine="165" startPosition="9" endLine="166" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -219,7 +219,7 @@
     <nodeInfo nodeId="1186065663950" fileName="RulesUtil.java" startLine="81" startPosition="100" endLine="89" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1186065663987" fileName="RulesUtil.java" startLine="89" startPosition="5" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1205265953624" fileName="RulesUtil.java" startLine="63" startPosition="170" endLine="72" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1178301920923" fileName="RulesUtil.java" startLine="159" startPosition="106" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1178301920923" fileName="RulesUtil.java" startLine="159" startPosition="284" endLine="168" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8844001996561701137" fileName="RulesUtil.java" startLine="181" startPosition="182" endLine="190" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1178287490323" fileName="RulesUtil.java" startLine="224" startPosition="0" endLine="234" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="equate_inputNodeType#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1222429119606" fileName="RulesUtil.java" startLine="246" startPosition="12" endLine="256" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -406,7 +406,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1227545696957" fileName="RulesUtil.java" startLine="320" startPosition="30" endLine="327" endPosition="52" />
     <scopeInfo nodeId="1178287491727" fileName="RulesUtil.java" startLine="145" startPosition="180" endLine="153" endPosition="17" />
-    <scopeInfo nodeId="1178301920923" fileName="RulesUtil.java" startLine="159" startPosition="106" endLine="168" endPosition="5">
+    <scopeInfo nodeId="1178301920923" fileName="RulesUtil.java" startLine="159" startPosition="284" endLine="168" endPosition="5">
       <varInfo nodeId="1178301920924" varName="parm" />
     </scopeInfo>
     <scopeInfo nodeId="1222429119607" fileName="RulesUtil.java" startLine="246" startPosition="14" endLine="255" endPosition="9">

@@ -200,6 +200,7 @@
       <modulePath path="${project}/languages/languageDesign/typesystem/solutions/jetbrains.mps.bootstrap.helgins.sandbox/jetbrains.mps.bootstrap.helgins.sandbox.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/typesystem/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/typesystem/typesystem.mpl" folder="core.language-design" />
+      <modulePath path="${project}/languages/modelmetadata/modelmetadata.mpl" folder="plugins" />
       <modulePath path="${project}/languages/util/builders/builders.mpl" folder="baseLanguage.builders" />
       <modulePath path="${project}/languages/util/builders/sandbox/jetbrains.mps.builders.msd" folder="baseLanguage.builders" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/gentest/gentest.mpl" folder="languages.build" />

@@ -7,8 +7,10 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 
@@ -17,11 +19,11 @@ public class typeof_BaseCreatorTarget_InferenceRule extends AbstractInferenceRul
   }
 
   public void applyRule(final SNode target, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if ((int) ListSequence.fromList(SLinkOperations.getConceptLinkTargets(target, "type")).count() == 1) {
+    if (BehaviorReflection.invokeVirtualStatic((Class<SNode>) ((Class) Object.class), new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(target))), "virtual_getType_6575219246653208151", new Object[]{}) != null) {
       {
         SNode _nodeToCheck_1029348928467 = target;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:3d1d89d4-ed40-464f-804b-a59886f41d55(jetbrains.mps.execution.configurations.deprecated.typesystem)", "314981645426570067", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3d1d89d4-ed40-464f-804b-a59886f41d55(jetbrains.mps.execution.configurations.deprecated.typesystem)", "314981645426570069", true), (SNode) ListSequence.fromList(SLinkOperations.getConceptLinkTargets(target, "type")).first(), false, false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:3d1d89d4-ed40-464f-804b-a59886f41d55(jetbrains.mps.execution.configurations.deprecated.typesystem)", "314981645426570069", true), (SNode) BehaviorReflection.invokeVirtualStatic((Class<SNode>) ((Class) Object.class), new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(target))), "virtual_getType_6575219246653208151", new Object[]{}), false, false, _info_12389875345);
       }
     }
   }

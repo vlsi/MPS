@@ -4,6 +4,11 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
+import java.util.List;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
 
 public class AppendTextOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -11,5 +16,17 @@ public class AppendTextOperation_Behavior {
 
   public static String virtual_getMethodToGenerate_1262430001741492328(SConcept thisConcept) {
     return "append";
+  }
+
+  public static List<SNode> virtual_getOperationArgumentType_6575219246652510406(SConcept thisConcept) {
+    List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.lang.editor.structure.AbstractStyledTextOperation", "virtual_getOperationArgumentType_6575219246652510406", new Object[]{});
+    ListSequence.fromList(result).addElement(_quotation_createNode_jh7h4_a0a1a1());
+    return result;
+  }
+
+  private static SNode _quotation_createNode_jh7h4_a0a1a1() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
   }
 }

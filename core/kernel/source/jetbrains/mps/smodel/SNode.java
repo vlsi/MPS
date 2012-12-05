@@ -189,6 +189,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   final public SNode getParent() {
     //todo: ModelAccess.assertLegalRead(this);
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
     return treeParent();
   }
 
@@ -607,6 +609,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   //todo rewrite using real iterable after 3.0. Set is here only for migration purposes
   public Set<String> getPropertyNames() {
+    fireNodeReadAccess();
+    fireNodeUnclassifiedReadAccess();
     LinkedHashSet<String> result = new LinkedHashSet<String>();
     if (myProperties == null) return result;
     for (int i = 0; i < myProperties.length; i += 2) {

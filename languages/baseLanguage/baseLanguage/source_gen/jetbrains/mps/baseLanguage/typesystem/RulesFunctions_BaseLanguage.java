@@ -122,22 +122,19 @@ __switch__:
                       }
                       this.__CP__ = 1;
                       break;
-                    case 6:
-                      this.__CP__ = 3;
-                      this.yield(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ReturnStatement"));
-                      return true;
                     case 14:
                       this.__CP__ = 12;
                       this.yield(_11_returnStmt);
+                      return true;
+                    case 6:
+                      this.__CP__ = 3;
+                      this.yield(SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.ReturnStatement"));
                       return true;
                     case 0:
                       this.__CP__ = 2;
                       break;
                     case 2:
                       this.__CP__ = 4;
-                      break;
-                    case 5:
-                      this.__CP__ = 6;
                       break;
                     case 8:
                       // don't look inside closures and other code-blocks 
@@ -151,6 +148,9 @@ __switch__:
                       break;
                     case 13:
                       this.__CP__ = 14;
+                      break;
+                    case 5:
+                      this.__CP__ = 6;
                       break;
                     default:
                       break __loop__;
@@ -215,7 +215,7 @@ __switch__:
       {
         SNode _nodeToCheck_1029348928467 = nodeToCheck;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "6610038060571315990", 0, null);
-        typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_5ahx9e_a0c0a0f(genericClassifier, params), (SNode) instanceType, false, true, _info_12389875345);
+        typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_5ahx9e_a0c0a0f(params, genericClassifier), (SNode) instanceType, false, true, _info_12389875345);
       }
     }
     match_forInnerClassifiers(typeCheckingContext, genericClassifier, instanceType, mmap);
@@ -753,9 +753,9 @@ __switch__:
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "classifier", (SNode) parameter_2);
     {
-      List<SNode> nodes = (List<SNode>) parameter_2;
+      List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {
         quotedNode_3.addChild("parameter", HUtil.copyIfNecessary(child));
       }

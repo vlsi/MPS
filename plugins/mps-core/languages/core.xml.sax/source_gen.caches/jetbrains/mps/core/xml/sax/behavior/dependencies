@@ -26,10 +26,24 @@
     <classNode dependClassName="jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXAttributeHandler_Behavior" file="XMLSAXAttributeHandler_Behavior.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXAttributeHandler_BehaviorDescriptor" file="XMLSAXAttributeHandler_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.core.xml.sax.behavior.XMLSAXAttributeHandler_Behavior" />
     <classNode dependClassName="jetbrains.mps.core.xml.sax.behavior.XMLSAXHandlerFunction_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXAttributeHandler_value_BehaviorDescriptor" file="XMLSAXAttributeHandler_value_BehaviorDescriptor.java">
@@ -60,10 +74,24 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildHandler_Behavior" file="XMLSAXChildHandler_Behavior.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildHandler_BehaviorDescriptor" file="XMLSAXChildHandler_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildHandler_Behavior" />
     <classNode dependClassName="jetbrains.mps.core.xml.sax.behavior.XMLSAXHandlerFunction_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildHandler_childObject_BehaviorDescriptor" file="XMLSAXChildHandler_childObject_BehaviorDescriptor.java">
@@ -106,10 +134,24 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXHandlerFunction_Behavior" file="XMLSAXHandlerFunction_Behavior.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXHandlerFunction_BehaviorDescriptor" file="XMLSAXHandlerFunction_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.core.xml.sax.behavior.XMLSAXHandlerFunction_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXHandler_resultObject_BehaviorDescriptor" file="XMLSAXHandler_resultObject_BehaviorDescriptor.java">
@@ -186,10 +228,24 @@
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXTextHandler_Behavior" file="XMLSAXTextHandler_Behavior.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+  </dependency>
   <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXTextHandler_BehaviorDescriptor" file="XMLSAXTextHandler_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.core.xml.sax.behavior.XMLSAXHandlerFunction_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.core.xml.sax.behavior.XMLSAXTextHandler_Behavior" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.core.xml.sax.behavior.XMLSAXTextHandler_value_BehaviorDescriptor" file="XMLSAXTextHandler_value_BehaviorDescriptor.java">

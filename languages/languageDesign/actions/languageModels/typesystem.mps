@@ -413,7 +413,7 @@
           </node>
           <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1204227917016">
             <node role="operand" roleId="tpee.1197027771414" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1180046774617">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1180046747708" resolveInfo="node" />
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1180046747708" resolveInfo="nodeSetupFunction_NewNode" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tp25.Node_GetAncestorOperation" typeId="tp25.1171407110247" id="1180046780340">
               <node role="parameter" roleId="tp25.1144104376918" type="tp25.OperationParm_Concept" typeId="tp25.1144101972840" id="1180046783529">
@@ -445,7 +445,7 @@
         <node role="leftExpression" roleId="tpd4.1174660783413" type="tpd4.NormalTypeClause" typeId="tpd4.1185788614172" id="1223982503182">
           <node role="normalType" roleId="tpd4.1185788644032" type="tpd4.TypeOfExpression" typeId="tpd4.1174657487114" id="1223982503184">
             <node role="term" roleId="tpd4.1174657509053" type="tpd4.ApplicableNodeReference" typeId="tpd4.1174650418652" id="1180046839742">
-              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1180046747708" resolveInfo="node" />
+              <link role="applicableNode" roleId="tpd4.1174650432090" targetNodeId="1180046747708" resolveInfo="nodeSetupFunction_NewNode" />
             </node>
           </node>
         </node>
@@ -464,8 +464,8 @@
       </node>
     </node>
     <node role="applicableNode" roleId="tpd4.1174648101952" type="tpd4.ConceptReference" typeId="tpd4.1174642788531" id="1180046747708">
-      <property name="name" nameId="tpck.1169194664001" value="node" />
-      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpdg.1158701289411" resolveInfo="NodeSetupFunction_NewNode" />
+      <property name="name" nameId="tpck.1169194664001" value="nodeSetupFunction_NewNode" />
+      <link role="concept" roleId="tpd4.1174642800329" targetNodeId="tpdg.5584396657084912703" resolveInfo="NodeSetupFunction_NewNode" />
     </node>
   </root>
   <root id="1197895626287">

@@ -6,6 +6,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" />
   <import index="356a" modelUID="r:3b7ed80f-6cfd-45bc-b051-2f66c620dd27(jetbrains.mps.lang.traceable.structure)" version="0" />
+  <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068498886294">
@@ -1565,6 +1566,7 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="8473865358220097975" resolveInfo="UnknownNameRef" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2403002034744051110">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="Modifier" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
@@ -1589,12 +1591,24 @@
   <root id="1068431790191">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1146528679895">
       <property name="name" nameId="tpck.1169194664001" value="lvalue" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843047" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278843046">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpek.1262430001741497939" resolveInfo="lvalue" />
+      </node>
     </node>
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1238860354371">
       <property name="name" nameId="tpck.1169194664001" value="constant" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843143" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278843142">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpek.1262430001741498050" resolveInfo="constant" />
+      </node>
     </node>
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1241531154556">
       <property name="name" nameId="tpck.1169194664001" value="legalAsStatement" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278836339" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278836338">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpek.1262430001741498032" resolveInfo="legalAsStatement" />
+      </node>
     </node>
   </root>
   <root id="1068390468198">
@@ -2104,6 +2118,10 @@
   <root id="1081773326031">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.IntegerConceptPropertyDeclaration" typeId="tpce.1105725141344" id="1166617629900">
       <property name="name" nameId="tpck.1169194664001" value="priority" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843065" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278843064">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpek.1262430001741497858" resolveInfo="getPriority" />
+      </node>
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1081773367579">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -2200,6 +2218,10 @@
   <root id="1107135704075">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1199886518837">
       <property name="name" nameId="tpck.1169194664001" value="dontUseParameterObject" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278833288" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278833287">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpek.1262430001741498340" resolveInfo="dontUseParameterObject" />
+      </node>
     </node>
     <node role="conceptLinkDeclaration" roleId="tpce.1137532086877" type="tpce.AggregationConceptLinkDeclaration" typeId="tpce.1105741535888" id="1137545963098">
       <property name="name" nameId="tpck.1169194664001" value="conceptFunctionParameterType" />
@@ -2374,9 +2396,17 @@
   <root id="1137021947720">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1199874763892">
       <property name="name" nameId="tpck.1169194664001" value="usesParameterObject" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278838313" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278838312">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpek.1262430001741497984" resolveInfo="usesParameterObject" />
+      </node>
     </node>
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1216468774225">
       <property name="name" nameId="tpck.1169194664001" value="showName" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843145" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278843144">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpek.1262430001741498082" resolveInfo="showName" />
+      </node>
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1137022507850">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -2399,6 +2429,10 @@
     <node role="conceptLinkDeclaration" roleId="tpce.1137532086877" type="tpce.ReferenceConceptLinkDeclaration" typeId="tpce.1105741578420" id="1161119487665">
       <property name="name" nameId="tpck.1169194664001" value="applicableConceptFunctionParameter" />
       <link role="targetType" roleId="tpce.1105736621938" targetNodeId="tpce.1071489090640" resolveInfo="ConceptDeclaration" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="3044950653914717133" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="3044950653914717132">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpek.3044950653914717136" resolveInfo="getApplicableConceptFunctionParameter" />
+      </node>
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="1239354708927">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="1239354281271" resolveInfo="IMethodLike" />
@@ -2977,6 +3011,10 @@
   <root id="1197027803184">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1197029536315">
       <property name="name" nameId="tpck.1169194664001" value="lvalue" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278845169" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278845168">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpek.1262430001741498364" resolveInfo="lvalue" />
+      </node>
     </node>
     <node role="conceptLinkDeclaration" roleId="tpce.1137532086877" type="tpce.AggregationConceptLinkDeclaration" typeId="tpce.1105741535888" id="1217022095863">
       <property name="name" nameId="tpck.1169194664001" value="returnType" />
@@ -3864,11 +3902,7 @@
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="tpck.1835621062190663819" resolveInfo="IDontSubstituteByDefault" />
     </node>
   </root>
-  <root id="2403002034744051110">
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="2403002034744175482">
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473854053" resolveInfo="abstract" />
-    </node>
-  </root>
+  <root id="2403002034744051110" />
   <root id="2323553266850475941">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2323553266850475953">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />

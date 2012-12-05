@@ -5,6 +5,7 @@ package jetbrains.mps.lang.smodel.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IOperation_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
+import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.behavior.IOperation_Behavior;
 
@@ -42,6 +43,10 @@ public abstract class SNodeOperation_BehaviorDescriptor extends BaseConcept_Beha
 
   public boolean virtual_applicableToSimpleProperty_1262430001741498100(SConcept thisConcept) {
     return SNodeOperation_Behavior.virtual_applicableToSimpleProperty_1262430001741498100(thisConcept);
+  }
+
+  public List<SNode> virtual_getApplicableParameter_3044950653914717056(SConcept thisConcept) {
+    return SNodeOperation_Behavior.virtual_getApplicableParameter_3044950653914717056(thisConcept);
   }
 
   public String virtual_getVariableExpectedName_1213877410087(SNode thisNode) {

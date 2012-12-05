@@ -49,7 +49,7 @@ public class ConceptFunction_Behavior {
     }
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionParameter")));
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "applicableConceptFunctionParameter")));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{})));
     return (List<SNode>) result;
   }
 
@@ -134,6 +134,10 @@ public class ConceptFunction_Behavior {
 
   public static boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
     return false;
+  }
+
+  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
+    return ListSequence.fromList(new ArrayList<SNode>());
   }
 
   @Deprecated

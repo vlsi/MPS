@@ -13,7 +13,6 @@ import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.MPSCore;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import jetbrains.mps.smodel.SReference;
@@ -76,10 +75,10 @@ public class ChangeSetBuilder {
       }
     }
 
-    String oldPresentableValue = propertySupport.fromInternalValue(SNodeAccessUtil.getProperty(oldNode, name));
-    String newPresentableValue = propertySupport.fromInternalValue(SNodeAccessUtil.getProperty(newNode, name));
+    String oldPresentableValue = propertySupport.fromInternalValue(oldNode.getProperty(name));
+    String newPresentableValue = propertySupport.fromInternalValue(newNode.getProperty(name));
     if (!(EqualUtil.equals(oldPresentableValue, newPresentableValue))) {
-      ListSequence.fromList(myNewChanges).addElement(new SetPropertyChange(myChangeSet, oldNode.getSNodeId(), name, SNodeAccessUtil.getProperty(newNode, name)));
+      ListSequence.fromList(myNewChanges).addElement(new SetPropertyChange(myChangeSet, oldNode.getSNodeId(), name, newNode.getProperty(name)));
     }
   }
 
@@ -281,6 +280,7 @@ public class ChangeSetBuilder {
       }
     });
     ListSequence.fromList(myNewChanges).clear();
+    myChangeSet.fillRootToChange();
   }
 
   public List<ModelChange> getNewChanges() {
@@ -297,11 +297,11 @@ public class ChangeSetBuilder {
     return getAddedAndDeleted(itemsExtractor.invoke(myOldModel), itemsExtractor.invoke(myNewModel));
   }
 
-  public static ChangeSet buildChangeSet(SModel oldModel, SModel newModel) {
+  public static ModelChangeSet buildChangeSet(SModel oldModel, SModel newModel) {
     return buildChangeSet(oldModel, newModel, false);
   }
 
-  public static ChangeSet buildChangeSet(SModel oldModel, SModel newModel, boolean withOpposite) {
+  public static ModelChangeSet buildChangeSet(SModel oldModel, SModel newModel, boolean withOpposite) {
     ChangeSetBuilder builder = new ChangeSetBuilder(oldModel, newModel);
     builder.build(withOpposite);
     builder.commit();

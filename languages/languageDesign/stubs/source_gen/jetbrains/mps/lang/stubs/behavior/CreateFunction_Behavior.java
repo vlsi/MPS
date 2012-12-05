@@ -4,6 +4,10 @@ package jetbrains.mps.lang.stubs.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
+import java.util.List;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class CreateFunction_Behavior {
   public static void init(SNode thisNode) {
@@ -11,5 +15,14 @@ public class CreateFunction_Behavior {
 
   public static boolean virtual_showName_1262430001741498082(SConcept thisConcept) {
     return true;
+  }
+
+  public static List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
+    List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.baseLanguage.structure.ConceptFunction", "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
+    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)", "4063774604867508743"));
+    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)", "4852427478417697644"));
+    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)", "4063774604867508731"));
+    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)", "4063774604867508742"));
+    return result;
   }
 }

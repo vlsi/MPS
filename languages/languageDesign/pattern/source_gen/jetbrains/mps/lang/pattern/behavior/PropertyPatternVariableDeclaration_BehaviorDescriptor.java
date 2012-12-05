@@ -4,12 +4,17 @@ package jetbrains.mps.lang.pattern.behavior;
 
 import jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class PropertyPatternVariableDeclaration_BehaviorDescriptor extends PropertyAttribute_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
   public PropertyPatternVariableDeclaration_BehaviorDescriptor() {
+  }
+
+  public List<SNode> virtual_getAttributed_3044950653914717013(SConcept thisConcept) {
+    return PropertyPatternVariableDeclaration_Behavior.virtual_getAttributed_3044950653914717013(thisConcept);
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {

@@ -53,24 +53,25 @@ public class TextGenerator {
 
   public boolean handleOutput(IOperationContext context, GenerationStatus status) {
     if (!status.isOk()) return false;
-    if (status.getOutputModel() == null) return true;
 
     final AtomicReference<List<TextGenerationResult>> result = new AtomicReference<List<TextGenerationResult>>();
-
-    TextGeneratorEngine engine = new TextGeneratorEngine(myGenerateDebugInfo, myFailIfNoTextgen);
-    try {
-      engine.generateModels(Collections.singletonList(status.getOutputModel()), new GenerateCallback() {
-        @Override
-        public void modelGenerated(SModel model, List<TextGenerationResult> results) {
-          result.set(results);
-        }
-      });
-    } finally {
-      engine.shutdown();
+    if (status.getOutputModel() != null) {
+      TextGeneratorEngine engine = new TextGeneratorEngine(myGenerateDebugInfo, myFailIfNoTextgen);
+      try {
+        engine.generateModels(Collections.singletonList(status.getOutputModel()), new GenerateCallback() {
+          @Override
+          public void modelGenerated(SModel model, List<TextGenerationResult> results) {
+            result.set(results);
+          }
+        });
+      } finally {
+        engine.shutdown();
+      }
+    } else {
+      result.set(Collections.<TextGenerationResult>emptyList());
     }
 
     myTextGenProblems = jetbrains.mps.generator.textGen.TextGenerator.handleTextGenResults(status, result.get(), myGenerateDebugInfo, myStreamHandler, myCacheGenerators);
-
     return myTextGenProblems.isEmpty();
   }
 

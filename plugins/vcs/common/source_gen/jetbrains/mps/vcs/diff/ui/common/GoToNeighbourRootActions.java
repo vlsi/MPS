@@ -19,10 +19,23 @@ public abstract class GoToNeighbourRootActions {
   public GoToNeighbourRootActions() {
   }
 
+  @Deprecated
   @Nullable
-  protected abstract SNodeId getNeighbourId(boolean next);
+  protected SNodeId getNeighbourId(boolean next) {
+    return null;
+  }
 
-  protected abstract void goTo(@NotNull SNodeId rootId);
+  @Deprecated
+  protected void goTo(@NotNull SNodeId rootId) {
+  }
+
+  protected boolean hasNeighbour(boolean next) {
+    return getNeighbourId(next) != null;
+  }
+
+  protected void goToNeighbour(boolean next) {
+    goTo(getNeighbourId(next));
+  }
 
   public final BaseAction previous() {
     return new GoToNeighbourRootActions.TheAction(false);
@@ -30,6 +43,10 @@ public abstract class GoToNeighbourRootActions {
 
   public final BaseAction next() {
     return new GoToNeighbourRootActions.TheAction(true);
+  }
+
+  public BaseAction[] getActions() {
+    return new BaseAction[]{previous(), next()};
   }
 
   private class TheAction extends BaseAction implements DumbAware {
@@ -49,16 +66,37 @@ public abstract class GoToNeighbourRootActions {
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> map) {
-      SNodeId neighbour = getNeighbourId(myNext);
-      if (neighbour != null) {
-        goTo(neighbour);
-      }
+      goToNeighbour(myNext);
     }
 
     @Override
     protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
-      event.getPresentation().setVisible(true);
-      event.getPresentation().setEnabled(getNeighbourId(myNext) != null);
+      setEnabledState(event.getPresentation(), hasNeighbour(myNext));
+    }
+  }
+
+  public static abstract class GoToByTree extends GoToNeighbourRootActions {
+    private DiffModelTree myTree;
+
+    public GoToByTree(@NotNull DiffModelTree tree) {
+      myTree = tree;
+    }
+
+    @Nullable
+    protected abstract SNodeId getCurrentNodeId();
+
+    public abstract void setCurrentNodeId(@Nullable SNodeId nodeId);
+
+    @Override
+    protected boolean hasNeighbour(boolean next) {
+      return myTree.hasNeighbour(getCurrentNodeId(), next);
+    }
+
+    @Override
+    protected void goToNeighbour(boolean next) {
+      SNodeId nodeId = myTree.getNeighbourRoot(getCurrentNodeId(), next);
+      setCurrentNodeId(nodeId);
+      myTree.setSelected(nodeId);
     }
   }
 }

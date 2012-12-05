@@ -169,10 +169,7 @@ public class PsiChangesWatcher implements ProjectComponent {
     private void queueElement(PsiElement child, PsiTreeChangeEvent event) {
       PsiFile file = event.getFile();
       if (file == null) file = child.getContainingFile();
-      if (file == null) {
-//        myFileStatusMap.markAllFilesDirty();
-        return;
-      }
+      if (file == null) return;
 
       if (!child.isValid()) return;
 
@@ -182,11 +179,6 @@ public class PsiChangesWatcher implements ProjectComponent {
         myCollectedData.changed.put(file, toUpdate);
       }
       toUpdate.add(child);
-
-//      Document document = PsiDocumentManager.getInstance(myProject).getCachedDocument(file);
-//      if (document != null) {
-
-//      }
     }
   }
 

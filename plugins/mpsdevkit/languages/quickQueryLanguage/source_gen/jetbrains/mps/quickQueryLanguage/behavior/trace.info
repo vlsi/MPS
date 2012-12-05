@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="AbstractQueryFunction_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.behavior.AbstractQueryFunction_BehaviorDescriptor" />
+  <unitInfo fileName="AbstractQueryFunction_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.behavior.AbstractQueryFunction_BehaviorDescriptor" />
   <unitInfo fileName="BaseQuery_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.behavior.BaseQuery_BehaviorDescriptor" />
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="ModelQuery_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.behavior.ModelQuery_BehaviorDescriptor" />
@@ -9,12 +9,22 @@
   <unitInfo fileName="Query_node_Parameter_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.behavior.Query_node_Parameter_BehaviorDescriptor" />
   <unitInfo fileName="ReplaceModelQuery_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.behavior.ReplaceModelQuery_BehaviorDescriptor" />
   <root nodeId="2511103526757027819" modelId="r:00000000-0000-4000-0000-011c8959050b(jetbrains.mps.quickQueryLanguage.behavior)">
-    <nodeInfo nodeId="2511103526757027819" fileName="AbstractQueryFunction_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="2511103526757027821" fileName="AbstractQueryFunction_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="2511103526757027819" fileName="AbstractQueryFunction_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
+    <nodeInfo nodeId="3044950653914722733" fileName="AbstractQueryFunction_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914722748" fileName="AbstractQueryFunction_Behavior.java" startLine="17" startPosition="261" endLine="18" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914722752" fileName="AbstractQueryFunction_Behavior.java" startLine="18" startPosition="173" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2511103526757027819" fileName="AbstractQueryFunction_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2511103526757027819" fileName="AbstractQueryFunction_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="2511103526757027821" fileName="AbstractQueryFunction_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="2511103526757027819" fileName="AbstractQueryFunction_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="2511103526757027819" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="2511103526757027819" fileName="AbstractQueryFunction_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.behavior.AbstractQueryFunction_Behavior" />
+    <scopeInfo nodeId="3044950653914722732" fileName="AbstractQueryFunction_Behavior.java" startLine="16" startPosition="117" endLine="19" endPosition="18">
+      <varInfo nodeId="3044950653914722734" varName="result" />
+    </scopeInfo>
+    <scopeInfo nodeId="2511103526757027819" fileName="AbstractQueryFunction_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
+      <varInfo nodeId="2511103526757027819" varName="thisConcept" />
+    </scopeInfo>
+    <unitInfo nodeId="2511103526757027819" fileName="AbstractQueryFunction_Behavior.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.quickQueryLanguage.behavior.AbstractQueryFunction_Behavior" />
   </root>
 </debugInfo>
 

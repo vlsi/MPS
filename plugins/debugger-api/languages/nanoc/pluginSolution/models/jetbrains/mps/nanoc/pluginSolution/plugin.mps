@@ -75,21 +75,21 @@
     </node>
     <node type="uhxm.RunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="5487985028841967489">
       <property name="canRun" nameId="uhxm.5925077313451868299" value="true" />
-      <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
+      <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
       <link role="configuration" roleId="fb9u.946964771156905618" targetNodeId="5487985028841967426" resolveInfo="NanoC File" />
     </node>
     <node type="uhxm.BeforeTask" typeId="uhxm.7037083547576022975" id="5487985028841967572">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <property name="name" nameId="tpck.1169194664001" value="Compile with gcc" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
     </node>
     <node type="rzqf.CommandDeclaration" typeId="rzqf.856705193941281768" id="5487985028841967648">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <property name="name" nameId="tpck.1169194664001" value="gcc" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
     </node>
     <node type="rzqf.CommandDeclaration" typeId="rzqf.856705193941281768" id="5487985028841967924">
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
       <property name="name" nameId="tpck.1169194664001" value="gdb" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
     </node>
     <node type="rzqf.CommandDeclaration" typeId="rzqf.856705193941281768" id="5487985028841967972">
       <property name="name" nameId="tpck.1169194664001" value="exec" />
@@ -289,8 +289,8 @@
                 <property name="debuggerName" nameId="86gq.1104094430779068757" value="Cpp" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="86gq.CreateBreakpointOperation" typeId="86gq.2569394751387978473" id="5487985028841967381">
-                <property name="kindName" nameId="86gq.2569394751387978475" value="CPP_LINE_BREAKPOINT" />
                 <property name="kindPresentation" nameId="86gq.2569394751387978476" value="Cpp Line Breakpoint" />
+                <property name="kindName" nameId="86gq.2569394751387978475" value="CPP_LINE_BREAKPOINT" />
                 <node role="nodeExpression" roleId="86gq.2569394751387978492" type="86gq.ConceptFunctionParameter_DebuggableNode" typeId="86gq.1270798772176052880" id="5487985028841967382" />
                 <node role="projectExpression" roleId="86gq.2569394751387978493" type="86gq.ConceptFunctionParameter_Debug_Project" typeId="86gq.1270798772176052876" id="5487985028841967383" />
               </node>
@@ -763,8 +763,9 @@
                           <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
                           <property name="name" nameId="tpck.1169194664001" value="onTextAvailable" />
                           <property name="isFinal" nameId="tpee.1181808852946" value="false" />
-                          <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5487985028841967586" />
-                          <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5487985028841967587" />
+                          <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="5487985028841967609">
+                            <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
+                          </node>
                           <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="5487985028841967588">
                             <property name="name" nameId="tpck.1169194664001" value="event" />
                             <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5487985028841967589">
@@ -777,33 +778,10 @@
                               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="iwpw.~Key" resolveInfo="Key" />
                             </node>
                           </node>
+                          <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5487985028841967586" />
+                          <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5487985028841967587" />
                           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="5487985028841967592">
                             <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="5487985028841967593">
-                              <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5487985028841967594">
-                                <node role="statement" roleId="tpee.1068581517665" type="tpib.LogStatement" typeId="tpib.1167227138527" id="5487985028841967595">
-                                  <property name="severity" nameId="tpib.1167245565795" value="error" />
-                                  <node role="logExpression" roleId="tpib.1167227463056" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5487985028841967596">
-                                    <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5487985028841967597">
-                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841967588" resolveInfo="event" />
-                                    </node>
-                                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5487985028841967598">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="de39.~ProcessEvent%dgetText()%cjava%dlang%dString" resolveInfo="getText" />
-                                    </node>
-                                  </node>
-                                </node>
-                              </node>
-                              <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5487985028841967599">
-                                <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5487985028841967600">
-                                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="de39.~ProcessOutputTypes" resolveInfo="ProcessOutputTypes" />
-                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="de39.~ProcessOutputTypes%dSTDERR" resolveInfo="STDERR" />
-                                </node>
-                                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5487985028841967601">
-                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="iwpw.~Key%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
-                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5487985028841967602">
-                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841967590" resolveInfo="key" />
-                                  </node>
-                                </node>
-                              </node>
                               <node role="ifFalseStatement" roleId="tpee.1082485599094" type="tpee.BlockStatement" typeId="tpee.1082485599095" id="5487985028841967603">
                                 <node role="statements" roleId="tpee.1082485599096" type="tpee.StatementList" typeId="tpee.1068580123136" id="5487985028841967604">
                                   <node role="statement" roleId="tpee.1068581517665" type="tpib.LogStatement" typeId="tpib.1167227138527" id="5487985028841967605">
@@ -819,10 +797,32 @@
                                   </node>
                                 </node>
                               </node>
+                              <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5487985028841967599">
+                                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5487985028841967601">
+                                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="iwpw.~Key%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5487985028841967602">
+                                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841967590" resolveInfo="key" />
+                                  </node>
+                                </node>
+                                <node role="operand" roleId="tpee.1197027771414" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5487985028841967600">
+                                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="de39.~ProcessOutputTypes" resolveInfo="ProcessOutputTypes" />
+                                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="de39.~ProcessOutputTypes%dSTDERR" resolveInfo="STDERR" />
+                                </node>
+                              </node>
+                              <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="5487985028841967594">
+                                <node role="statement" roleId="tpee.1068581517665" type="tpib.LogStatement" typeId="tpib.1167227138527" id="5487985028841967595">
+                                  <property name="severity" nameId="tpib.1167245565795" value="error" />
+                                  <node role="logExpression" roleId="tpib.1167227463056" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5487985028841967596">
+                                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5487985028841967598">
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="de39.~ProcessEvent%dgetText()%cjava%dlang%dString" resolveInfo="getText" />
+                                    </node>
+                                    <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="5487985028841967597">
+                                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841967588" resolveInfo="event" />
+                                    </node>
+                                  </node>
+                                </node>
+                              </node>
                             </node>
-                          </node>
-                          <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="5487985028841967609">
-                            <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
                           </node>
                         </node>
                         <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5487985028841967584" />
@@ -1337,8 +1337,8 @@
     </node>
     <node role="executePart" roleId="rzqf.6129022259108579262" type="rzqf.ExecuteCommandPart" typeId="rzqf.6129022259108579244" id="5487985028841967819">
       <node role="parameterDeclaration" roleId="rzqf.6129022259108579245" type="rzqf.ExplicitCommandParameterDeclaration" typeId="rzqf.856705193941281762" id="5487985028841967820">
-        <property name="name" nameId="tpck.1169194664001" value="file" />
         <property name="isRequired" nameId="rzqf.856705193941281763" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="file" />
         <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="5487985028841967821">
           <link role="concept" roleId="tp25.1138405853777" targetNodeId="i1tc.1388222368191236575" resolveInfo="File" />
         </node>
@@ -1472,8 +1472,6 @@
                       <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
                       <property name="name" nameId="tpck.1169194664001" value="run" />
                       <property name="isFinal" nameId="tpee.1181808852946" value="false" />
-                      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7114233001712011362" />
-                      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7114233001712011363" />
                       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7114233001712011364">
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7114233001712011365">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7114233001712015240">
@@ -1500,6 +1498,9 @@
                                       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7114233001712015526">
                                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5487985028841967871">
                                           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5487985028841967872">
+                                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5487985028841967876">
+                                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="59et.~IFile%dmkdirs()%cboolean" resolveInfo="mkdirs" />
+                                            </node>
                                             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5487985028841967873">
                                               <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5487985028841967874">
                                                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5487985028841967865" resolveInfo="executableFile" />
@@ -1507,9 +1508,6 @@
                                               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5487985028841967875">
                                                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="59et.~IFile%dgetParent()%cjetbrains%dmps%dvfs%dIFile" resolveInfo="getParent" />
                                               </node>
-                                            </node>
-                                            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5487985028841967876">
-                                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="59et.~IFile%dmkdirs()%cboolean" resolveInfo="mkdirs" />
                                             </node>
                                           </node>
                                         </node>
@@ -1522,6 +1520,8 @@
                           </node>
                         </node>
                       </node>
+                      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7114233001712011362" />
+                      <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7114233001712011363" />
                     </node>
                     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7114233001712011360" />
                   </node>
@@ -1650,15 +1650,15 @@
   <root id="5487985028841967924">
     <node role="executePart" roleId="rzqf.6129022259108579262" type="rzqf.ExecuteCommandPart" typeId="rzqf.6129022259108579244" id="5487985028841967925">
       <node role="parameterDeclaration" roleId="rzqf.6129022259108579245" type="rzqf.ExplicitCommandParameterDeclaration" typeId="rzqf.856705193941281762" id="5487985028841967926">
-        <property name="name" nameId="tpck.1169194664001" value="executable" />
         <property name="isRequired" nameId="rzqf.856705193941281763" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="executable" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5487985028841967927">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fxg7.~File" resolveInfo="File" />
         </node>
       </node>
       <node role="parameterDeclaration" roleId="rzqf.6129022259108579245" type="rzqf.ExplicitCommandParameterDeclaration" typeId="rzqf.856705193941281762" id="5487985028841967928">
-        <property name="name" nameId="tpck.1169194664001" value="project" />
         <property name="isRequired" nameId="rzqf.856705193941281763" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="project" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5487985028841967929">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ph2v.~Project" resolveInfo="Project" />
         </node>
@@ -1797,8 +1797,8 @@
         </node>
       </node>
       <node role="parameterDeclaration" roleId="rzqf.6129022259108579245" type="rzqf.ExplicitCommandParameterDeclaration" typeId="rzqf.856705193941281762" id="5487985028841967983">
-        <property name="name" nameId="tpck.1169194664001" value="executable" />
         <property name="isRequired" nameId="rzqf.856705193941281763" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="executable" />
         <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5487985028841967984">
           <link role="classifier" roleId="tpee.1107535924139" targetNodeId="fxg7.~File" resolveInfo="File" />
         </node>

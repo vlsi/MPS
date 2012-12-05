@@ -4,10 +4,16 @@ package jetbrains.mps.lang.generator.behavior;
 
 import jetbrains.mps.lang.core.behavior.PropertyAttribute_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
+import java.util.List;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public class PropertyMacro_BehaviorDescriptor extends PropertyAttribute_BehaviorDescriptor implements AbstractMacro_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public PropertyMacro_BehaviorDescriptor() {
+  }
+
+  public List<SNode> virtual_getAttributed_3044950653914717013(SConcept thisConcept) {
+    return PropertyMacro_Behavior.virtual_getAttributed_3044950653914717013(thisConcept);
   }
 
   public String virtual_getRole_1262430001741497900(SConcept thisConcept) {

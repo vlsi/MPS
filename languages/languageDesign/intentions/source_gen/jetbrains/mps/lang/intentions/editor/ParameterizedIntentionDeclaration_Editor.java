@@ -313,8 +313,8 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
 
   private EditorCell createRefNode_crf3gy_f1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("descriptionFunction");
-    provider.setNoTargetText("<no descriptionFunction>");
+    provider.setRole("descriptionBlock");
+    provider.setNoTargetText("<no descriptionBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
@@ -347,8 +347,8 @@ public class ParameterizedIntentionDeclaration_Editor extends DefaultNodeEditor 
 
   private EditorCell createRefNode_crf3gy_j1b0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
-    provider.setRole("executeFunction");
-    provider.setNoTargetText("<no executeFunction>");
+    provider.setRole("executeBlock");
+    provider.setNoTargetText("<no executeBlock>");
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
