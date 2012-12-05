@@ -23,6 +23,7 @@ import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.FileUtil;
@@ -85,7 +86,7 @@ public class ModelDiffTool implements DiffTool {
       byte[] bytes = content.getBytes();
       // for added/deleted models create empty model to compare with 
       if (bytes.length == 0) {
-        return new SModel(new SModelReference("", ""));
+        return new DefaultSModel(new SModelReference("", ""));
       }
 
       return ModelPersistence.readModel(new String(bytes, FileUtil.DEFAULT_CHARSET), false);

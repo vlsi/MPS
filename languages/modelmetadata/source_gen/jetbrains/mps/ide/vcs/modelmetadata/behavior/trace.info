@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.ide.vcs.modelmetadata.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="Model_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.ide.vcs.modelmetadata.behavior.Model_BehaviorDescriptor" />
+</debugInfo>
+

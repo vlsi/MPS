@@ -15,6 +15,7 @@ import jetbrains.mps.ide.icons.IdeIcons;
 import java.util.Arrays;
 import jetbrains.mps.vcs.diff.ui.common.DiffEditor;
 import javax.swing.Icon;
+import jetbrains.mps.smodel.ModelAccess;
 
 public class DiffButtonsPainter extends ButtonsPainter {
   private RootDifferenceDialog myDialog;
@@ -60,7 +61,11 @@ public class DiffButtonsPainter extends ButtonsPainter {
     }
 
     public void performAction() {
-      myDialog.rollbackChanges(getChangeGroup().getChanges());
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          myDialog.rollbackChanges(getChangeGroup().getChanges());
+        }
+      });
     }
   }
 }

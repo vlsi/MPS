@@ -69,6 +69,7 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.vcs.diff.ModelChangeSet;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.fileEditor.FileEditor;
@@ -462,8 +463,8 @@ public class ChangesManagerTest {
   }
 
   private void assertChangeSetIsCorrect(final ChangeSet changeSet) {
-    ChangeSet rebuiltChangeSet = ModelAccess.instance().runReadAction(new Computable<ChangeSet>() {
-      public ChangeSet compute() {
+    ChangeSet rebuiltChangeSet = ModelAccess.instance().runReadAction(new Computable<ModelChangeSet>() {
+      public ModelChangeSet compute() {
         return ChangeSetBuilder.buildChangeSet(changeSet.getOldModel(), changeSet.getNewModel());
       }
     });

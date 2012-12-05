@@ -52,4 +52,8 @@ public class DiffChangeGroupLayout extends ChangeGroupLayout {
   protected ChangeSet getChangeSet() {
     return myChangeSet;
   }
+
+  public void setChangeSet(ChangeSet changeSet) {
+    myChangeSet = changeSet;
+  }
 }
