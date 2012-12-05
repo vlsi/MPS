@@ -21,97 +21,96 @@ import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
-import javax.swing.*;
+import javax.swing.Icon;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
 public class UsedLanguagesTable extends MpsElementsTable<ModuleReference> {
-    public static Comparator<ModuleReference> MODULE_REFERENCE_COMPARATOR = new ModuleReferenceComparator();
+  public static Comparator<ModuleReference> MODULE_REFERENCE_COMPARATOR = new ModuleReferenceComparator();
 
-    // TODO: create additional MPSConfigurationBean.get/setUsedLanguageReferences() methods and use it here
-    private static List<ModuleReference> getUsedLanguages(MPSConfigurationBean data) {
-        List<ModuleReference> usedLanguages = new ArrayList<ModuleReference>();
-        for (String moduleReference : data.getUsedLanguages()) {
-            usedLanguages.add(ModuleReference.fromString(moduleReference));
-        }
-        return usedLanguages;
+  // TODO: create additional MPSConfigurationBean.get/setUsedLanguageReferences() methods and use it here
+  private static List<ModuleReference> getUsedLanguages(MPSConfigurationBean data) {
+    List<ModuleReference> usedLanguages = new ArrayList<ModuleReference>();
+    for (String moduleReference : data.getUsedLanguages()) {
+      usedLanguages.add(ModuleReference.fromString(moduleReference));
     }
+    return usedLanguages;
+  }
 
-    public void setData(MPSConfigurationBean data) {
-        setElements(getUsedLanguages(data));
+  public void setData(MPSConfigurationBean data) {
+    setElements(getUsedLanguages(data));
+  }
+
+  public void getData(MPSConfigurationBean data) {
+    data.setUsedLanguages(getUsedLanguagesStringArray());
+  }
+
+  public boolean isModified(MPSConfigurationBean data) {
+    return isModified(getUsedLanguages(data));
+  }
+
+  private String[] getUsedLanguagesStringArray() {
+    List<ModuleReference> moduleReferences = getElements();
+    String[] usedLanguages = new String[moduleReferences.size()];
+    int i = 0;
+    for (ModuleReference moduleReference : moduleReferences) {
+      usedLanguages[i] = moduleReference.toString();
+      i++;
     }
+    return usedLanguages;
+  }
 
-    public void getData(MPSConfigurationBean data) {
-        data.setUsedLanguages(getUsedLanguagesStringArray());
+  @Override
+  protected String getText(ModuleReference moduleReference) {
+    return moduleReference.getModuleFqName();
+  }
+
+  @Override
+  protected Icon getIcon(ModuleReference moduleReference) {
+    return MPSIcons.LANGUAGE_ICON;
+  }
+
+  @Override
+  protected List<ModuleReference> getAllVisibleElements() {
+    final List<ModuleReference> allLanguages = new ArrayList<ModuleReference>();
+    for (Language language : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
+      allLanguages.add(language.getModuleReference());
     }
+    return allLanguages;
+  }
 
-    public boolean isModified(MPSConfigurationBean data) {
-        return isModified(getUsedLanguages(data));
-    }
+  @Override
+  protected Comparator<ModuleReference> getComparator() {
+    return MODULE_REFERENCE_COMPARATOR;
+  }
 
-    private String[] getUsedLanguagesStringArray() {
-        List<ModuleReference> moduleReferences = getElements();
-        String[] usedLanguages = new String[moduleReferences.size()];
-        int i = 0;
-        for (ModuleReference moduleReference : moduleReferences) {
-            usedLanguages[i] = moduleReference.toString();
-            i++;
-        }
-        return usedLanguages;
+  @Override
+  protected Class<ModuleReference> getRendererClass() {
+    return ModuleReference.class;
+  }
+
+  @Override
+  protected String getChooserMessage() {
+    return MPSBundle.message("used.languages.chooser.title");
+  }
+
+  private static final class ModuleReferenceComparator implements Comparator<ModuleReference> {
+    @Override
+    public int compare(ModuleReference o1, ModuleReference o2) {
+      return o1.getModuleFqName().compareTo(o2.getModuleFqName());
     }
 
     @Override
-    protected String getText(ModuleReference moduleReference) {
-        return moduleReference.getModuleFqName();
+    public boolean equals(Object obj) {
+      return obj instanceof ModuleReferenceComparator;
     }
 
     @Override
-    protected Icon getIcon(ModuleReference moduleReference) {
-        return MPSIcons.LANGUAGE_ICON;
+    public int hashCode() {
+      return this.getClass().hashCode();
     }
-
-    @Override
-    protected List<ModuleReference> getAllVisibleElements() {
-        final List<ModuleReference> allLanguages = new ArrayList<ModuleReference>();
-        for (Language language : ModuleRepositoryFacade.getInstance().getAllModules(Language.class)) {
-            allLanguages.add(language.getModuleReference());
-        }
-        return allLanguages;
-    }
-
-    @Override
-    protected Comparator<ModuleReference> getComparator() {
-        return MODULE_REFERENCE_COMPARATOR;
-    }
-
-    @Override
-    protected Class<ModuleReference> getRendererClass() {
-        return ModuleReference.class;
-    }
-
-    @Override
-    protected String getChooserMessage() {
-        return MPSBundle.message("used.languages.chooser.title");
-    }
-
-    private static final class ModuleReferenceComparator implements Comparator<ModuleReference> {
-        @Override
-        public int compare(ModuleReference o1, ModuleReference o2) {
-            return o1.getModuleFqName().compareTo(o2.getModuleFqName());
-        }
-
-        @Override
-        public boolean equals(Object obj) {
-            return obj instanceof ModuleReferenceComparator;
-        }
-
-        @Override
-        public int hashCode() {
-            return this.getClass().hashCode();
-        }
-    }
+  }
 }

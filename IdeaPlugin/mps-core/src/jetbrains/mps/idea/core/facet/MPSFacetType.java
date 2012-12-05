@@ -33,7 +33,7 @@ import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import javax.swing.*;
+import javax.swing.Icon;
 import java.util.Collection;
 
 /**
@@ -41,71 +41,71 @@ import java.util.Collection;
  */
 public class MPSFacetType extends FacetType<MPSFacet, MPSFacetConfiguration> {
 
-    public static final FacetTypeId<MPSFacet> ID = new FacetTypeId<MPSFacet>("mps_module");
+  public static final FacetTypeId<MPSFacet> ID = new FacetTypeId<MPSFacet>("mps_module");
 
-    public MPSFacetType() {
-        super(ID, "MPS", MPSBundle.message("facet.type.presentable.name"));
-    }
+  public MPSFacetType() {
+    super(ID, MPSFacetConstants.MPS_FACET_ID, MPSFacetConstants.MPS_FACET_NAME);
+  }
 
-    @Override
-    public MPSFacetConfiguration createDefaultConfiguration() {
-        return new MPSFacetConfiguration();
-    }
+  @Override
+  public MPSFacetConfiguration createDefaultConfiguration() {
+    return new MPSFacetConfiguration();
+  }
 
-    @Override
-    public MPSFacet createFacet(@NotNull Module module, String name, @NotNull MPSFacetConfiguration configuration, @Nullable Facet underlyingFacet) {
-        return new MPSFacet(this, module, name, configuration, underlyingFacet);
-    }
+  @Override
+  public MPSFacet createFacet(@NotNull Module module, String name, @NotNull MPSFacetConfiguration configuration, @Nullable Facet underlyingFacet) {
+    return new MPSFacet(this, module, name, configuration, underlyingFacet);
+  }
 
-    @Override
-    public boolean isSuitableModuleType(ModuleType moduleType) {
-        return true;
-    }
+  @Override
+  public boolean isSuitableModuleType(ModuleType moduleType) {
+    return true;
+  }
 
-    @Override
-    public Icon getIcon() {
-        return MPSIcons.MPS_ICON;
-    }
+  @Override
+  public Icon getIcon() {
+    return MPSIcons.MPS_ICON;
+  }
 
-    @Override
-    public void registerDetectors(final FacetDetectorRegistry<MPSFacetConfiguration> registry) {
-        FacetDetector<VirtualFile, MPSFacetConfiguration> detector = new MPSFacetDetector();
-        final boolean[] detected = new boolean[]{false};
+  @Override
+  public void registerDetectors(final FacetDetectorRegistry<MPSFacetConfiguration> registry) {
+    FacetDetector<VirtualFile, MPSFacetConfiguration> detector = new MPSFacetDetector();
+    final boolean[] detected = new boolean[]{false};
 
-        VirtualFileFilter filter = new VirtualFileFilter() {
-            public boolean accept(VirtualFile file) {
-                if (detected[0]) return true;
-                detected[0] = true;
-                if (MPSExtentions.MODEL.equals(file.getExtension())) {
-                    registry.customizeDetectedFacetPresentation(new MPSFacetPresentation());
-                    return true;
-                }
-                return false;
-            }
-        };
-
-        registry.registerUniversalDetector(MPSFileTypeFactory.MODEL_FILE_TYPE, filter, detector);
-    }
-
-    private class MPSFacetDetector extends FacetDetector<VirtualFile, MPSFacetConfiguration> {
-
-        private MPSFacetDetector() {
-            super("MPS");
+    VirtualFileFilter filter = new VirtualFileFilter() {
+      public boolean accept(VirtualFile file) {
+        if (detected[0]) return true;
+        detected[0] = true;
+        if (MPSExtentions.MODEL.equals(file.getExtension())) {
+          registry.customizeDetectedFacetPresentation(new MPSFacetPresentation());
+          return true;
         }
+        return false;
+      }
+    };
 
-        @Override
-        public MPSFacetConfiguration detectFacet(VirtualFile source, Collection<MPSFacetConfiguration> existentFacetConfigurations) {
-            if (!existentFacetConfigurations.isEmpty()) {
-                return existentFacetConfigurations.iterator().next();
-            }
-            return createDefaultConfiguration();
-        }
+    registry.registerUniversalDetector(MPSFileTypeFactory.MODEL_FILE_TYPE, filter, detector);
+  }
+
+  private class MPSFacetDetector extends FacetDetector<VirtualFile, MPSFacetConfiguration> {
+
+    private MPSFacetDetector() {
+      super("MPS");
     }
 
-    private static class MPSFacetPresentation extends DetectedFacetPresentation {
-        @Override
-        public String getAutodetectionPopupText(@NotNull Module module, @NotNull FacetType facetType, @NotNull String facetName, @NotNull VirtualFile[] files) {
-            return MPSBundle.message("facet.detected");
-        }
+    @Override
+    public MPSFacetConfiguration detectFacet(VirtualFile source, Collection<MPSFacetConfiguration> existentFacetConfigurations) {
+      if (!existentFacetConfigurations.isEmpty()) {
+        return existentFacetConfigurations.iterator().next();
+      }
+      return createDefaultConfiguration();
     }
+  }
+
+  private static class MPSFacetPresentation extends DetectedFacetPresentation {
+    @Override
+    public String getAutodetectionPopupText(@NotNull Module module, @NotNull FacetType facetType, @NotNull String facetName, @NotNull VirtualFile[] files) {
+      return MPSBundle.message("facet.detected");
+    }
+  }
 }

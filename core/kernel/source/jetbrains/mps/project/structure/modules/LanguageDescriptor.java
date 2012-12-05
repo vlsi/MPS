@@ -123,7 +123,7 @@ public class LanguageDescriptor extends ModuleDescriptor {
       stream.writeModuleReference(ref);
     }
 
-    stream.writeByte(0xac);
+    stream.writeByte(0x1e);
   }
 
   @Override
@@ -153,6 +153,6 @@ public class LanguageDescriptor extends ModuleDescriptor {
       myRuntimeModules.add(stream.readModuleReference());
     }
 
-    if (stream.readByte() != 0xac) throw new IOException("bad stream");
+    if (stream.readByte() != 0x1e) throw new IOException("bad stream");
   }
 }

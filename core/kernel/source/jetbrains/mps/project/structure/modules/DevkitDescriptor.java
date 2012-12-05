@@ -82,7 +82,7 @@ public class DevkitDescriptor extends ModuleDescriptor {
       stream.writeModuleReference(ref);
     }
 
-    stream.writeByte(0xfa);
+    stream.writeByte(0x1e);
   }
 
   @Override
@@ -106,6 +106,6 @@ public class DevkitDescriptor extends ModuleDescriptor {
       myExtendedDevkits.add(stream.readModuleReference());
     }
 
-    if (stream.readByte() != 0xfa) throw new IOException("bad stream: no module descriptor end marker");
+    if (stream.readByte() != 0x1e) throw new IOException("bad stream: no module descriptor end marker");
   }
 }

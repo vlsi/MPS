@@ -14,20 +14,17 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.make;
+package jetbrains.mps.idea.core.facet;
 
-import com.intellij.openapi.util.Key;
 import org.jetbrains.annotations.NonNls;
 
 /**
- * evgeny, 11/30/12
+ * evgeny, 11/28/12
  */
-public class MPSCompilerUtil {
+public class MPSFacetConstants {
 
   @NonNls
-  public static final String BUILDER_ID = "MPS";
+  public static final String MPS_FACET_ID = "MPS";
   @NonNls
-  public static final Key<String> MPS_LANGUAGES = Key.create("MPS_LANGUAGES_CLASSPATH");
-  @NonNls
-  public static final Key<String> MPS_REPOSITORY = Key.create("MPS_REPOSITORY");
+  public static final String MPS_FACET_NAME = "MPS";
 }

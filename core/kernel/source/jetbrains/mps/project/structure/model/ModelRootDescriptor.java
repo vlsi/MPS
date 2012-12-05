@@ -81,7 +81,7 @@ public final class ModelRootDescriptor {
       stream.writeByte(0x70);
       return;
     }
-    stream.writeByte(0x80);
+    stream.writeByte(0x55);
     if (parent != null) stream.writeString(mem.getType());
 
     Collection<String> keys = IterableUtil.asCollection(mem.getKeys());
@@ -105,7 +105,7 @@ public final class ModelRootDescriptor {
     if (header == 0x70) {
       return null;
     }
-    if (header != 0x80) throw new IOException("bad stream: no memento start marker");
+    if (header != 0x55) throw new IOException("bad stream: no memento start marker");
 
     Memento mem = parent != null ? parent.createChild(stream.readString()) : new MementoImpl();
 

@@ -201,7 +201,7 @@ public class ModuleDescriptor {
 
     stream.writeBoolean(myUseTransientOutput);
 
-    stream.writeByte(0xfa);
+    stream.writeByte(0x3a);
   }
 
   public void load(ModelInputStream stream) throws IOException {
@@ -250,7 +250,7 @@ public class ModuleDescriptor {
 
     myUseTransientOutput = stream.readBoolean();
 
-    if (stream.readByte() != 0xfa) throw new IOException("bad stream: no module descriptor end marker");
+    if (stream.readByte() != 0x3a) throw new IOException("bad stream: no module descriptor end marker");
   }
 
   private static class ModuleReferenceComparator implements Comparator<ModuleReference> {
