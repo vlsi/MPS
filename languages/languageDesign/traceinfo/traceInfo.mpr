@@ -30,10 +30,10 @@
       <modulePath path="${mps_home}/core/generator/solutions/traceInfo/tests/jetbrains.mps.traceInfo.test.msd" folder="" />
       <modulePath path="${mps_home}/languages/languageDesign/plugin/plugin.mpl" />
       <modulePath path="${mps_home}/languages/languageDesign/textGen/textGen.mpl" />
-      <modulePath path="${project}/languages/testWeavingGenerated.data/testWeavingGenerated.data.mpl" />
-      <modulePath path="${project}/languages/testWeavingInterpreted.data/testWeavingInterpreted.data.mpl" />
+      <modulePath path="${project}/testWeavingGenerated.data/testWeavingGenerated.data.mpl" />
+      <modulePath path="${project}/testWeavingInterpreted.data/testWeavingInterpreted.data.mpl" />
       <modulePath path="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" />
-      <modulePath path="${project}/solutions/jetbrains.mps.traceInfo.testWeaving/testWeaving.msd" />
+      <modulePath path="${project}/jetbrains.mps.traceInfo.testWeaving/testWeaving.msd" />
     </projectModules>
     <genConfs>
       <genConfModule name="info" moduleRef="jetbrains.mps.traceInfo" />
