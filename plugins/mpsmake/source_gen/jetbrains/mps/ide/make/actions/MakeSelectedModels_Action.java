@@ -16,8 +16,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class MakeSelectedModels_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -53,9 +52,7 @@ public class MakeSelectedModels_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "MakeSelectedModels", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "MakeSelectedModels", t);
       this.disable(event.getPresentation());
     }
   }
@@ -78,11 +75,9 @@ public class MakeSelectedModels_Action extends BaseAction {
       List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModelDescriptor>) ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")));
       new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models, ((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel")), null, null), false).executeAction();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "MakeSelectedModels", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "MakeSelectedModels", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(MakeSelectedModels_Action.class);
+  private static Logger LOG = Logger.getLogger(MakeSelectedModels_Action.class);
 }

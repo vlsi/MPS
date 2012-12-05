@@ -11,8 +11,7 @@ import java.util.Map;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class AddWatchAction_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("add.png");
@@ -32,9 +31,7 @@ public class AddWatchAction_Action extends BaseAction {
     try {
       event.getPresentation().setEnabled(DebugActionsUtil.getEvaluationProvider(event) != null);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "AddWatchAction", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "AddWatchAction", t);
       this.disable(event.getPresentation());
     }
   }
@@ -53,11 +50,9 @@ public class AddWatchAction_Action extends BaseAction {
         ((EvaluationProvider) evaluationProvider).createWatch();
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "AddWatchAction", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "AddWatchAction", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(AddWatchAction_Action.class);
+  private static Logger LOG = Logger.getLogger(AddWatchAction_Action.class);
 }

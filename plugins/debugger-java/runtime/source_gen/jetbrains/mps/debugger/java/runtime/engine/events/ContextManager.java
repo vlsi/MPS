@@ -16,8 +16,7 @@ import com.sun.jdi.request.EventRequest;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.jetbrains.annotations.NotNull;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ContextManager {
   private final List<EventContext> mySuspendedContexts = ListSequence.fromList(new ArrayList<EventContext>());
@@ -82,9 +81,7 @@ public class ContextManager {
           // Patches.MAC_RESUME_VM_HACK &&  
           // Its funny, but second resume solves the problem 
         } else {
-          if (log.isErrorEnabled()) {
-            log.error("", e);
-          }
+          LOG.error("", e);
           break;
         }
       }
@@ -130,7 +127,7 @@ public class ContextManager {
     return SetSequence.fromSet(myEvaluatedThreads).contains(threadReference);
   }
 
-  protected static Log log = LogFactory.getLog(ContextManager.class);
+  private static Logger LOG = Logger.getLogger(ContextManager.class);
 
   private static boolean eq_toclu7_a0a0a01(Object a, Object b) {
     return (a != null ?

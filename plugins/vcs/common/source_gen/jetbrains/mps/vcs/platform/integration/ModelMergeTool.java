@@ -23,8 +23,6 @@ import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.Nullable;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 public class ModelMergeTool extends MergeTool {
   private static final Logger LOG = Logger.getLogger(ModelMergeTool.class);
@@ -37,9 +35,7 @@ public class ModelMergeTool extends MergeTool {
     try {
       VirtualFile file = getFileFromMergeRequest(mrequest);
       if (file == null) {
-        if (log.isErrorEnabled()) {
-          log.error("No file");
-        }
+        LOG_705910402.error("No file");
         file = LocalFileSystem.getInstance().findFileByPath("/");
       }
       File backupFile = MergeBackupUtil.zipModel(request.getContents(), file);
@@ -52,9 +48,7 @@ public class ModelMergeTool extends MergeTool {
         mineModel = ModelPersistence.readModel(new String(contents[MergeConstants.CURRENT].getBytes(), FileUtil.DEFAULT_CHARSET), false);
         newModel = ModelPersistence.readModel(new String(contents[MergeConstants.LAST_REVISION].getBytes(), FileUtil.DEFAULT_CHARSET), false);
       } catch (ModelReadException e) {
-        if (log.isWarnEnabled()) {
-          log.warn("Couldn't read model, invoking text merge", e);
-        }
+        LOG_705910402.warning("Couldn't read model, invoking text merge", e);
         super.show(request);
         return;
       }
@@ -89,9 +83,7 @@ public class ModelMergeTool extends MergeTool {
         try {
           modelFile.setBinaryContent(result.getBytes(FileUtil.DEFAULT_CHARSET));
         } catch (IOException e) {
-          if (log.isErrorEnabled()) {
-            log.error("", e);
-          }
+          LOG_705910402.error("", e);
         }
       }
     });
@@ -106,5 +98,5 @@ public class ModelMergeTool extends MergeTool {
     return null;
   }
 
-  protected static Log log = LogFactory.getLog(ModelMergeTool.class);
+  private static Logger LOG_705910402 = Logger.getLogger(ModelMergeTool.class);
 }

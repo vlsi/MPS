@@ -45,8 +45,7 @@ import com.intellij.ide.plugins.IdeaPluginDescriptor;
 import com.intellij.ide.plugins.PluginManager;
 import com.intellij.openapi.extensions.PluginId;
 import com.intellij.ide.plugins.IdeaPluginDescriptorImpl;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class VcsActionsUtil {
   private VcsActionsUtil() {
@@ -70,9 +69,7 @@ public class VcsActionsUtil {
       });
       RootDifferenceDialog.invokeDialog(oldModel, newModel.value, id.value, project, contentTitles, bounds);
     } catch (VcsException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("", e);
-      }
+      LOG.warning("", e);
       Messages.showErrorDialog(project, "Can't show difference due to the following error: " + e.getMessage(), "Error");
     } catch (ModelReadException e) {
       Messages.showErrorDialog(project, "Can't load previous version: " + e.getMessage(), "Error");
@@ -203,5 +200,5 @@ __switch__:
     return p instanceof IdeaPluginDescriptorImpl && ((IdeaPluginDescriptorImpl) p).isEnabled();
   }
 
-  protected static Log log = LogFactory.getLog(VcsActionsUtil.class);
+  private static Logger LOG = Logger.getLogger(VcsActionsUtil.class);
 }

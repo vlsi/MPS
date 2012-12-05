@@ -16,8 +16,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.project.ModuleContext;
 import org.jetbrains.annotations.NotNull;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ModelChecker {
   public static final String SEVERITY_ERROR = "Errors";
@@ -50,14 +49,10 @@ public class ModelChecker {
           Project project = myOperationContext.getProject();
 
           if (module == null) {
-            if (log.isWarnEnabled()) {
-              log.warn("Module is null for " + modelDescriptor.getLongName() + " model");
-            }
+            LOG.warning("Module is null for " + modelDescriptor.getLongName() + " model");
           }
           if (project == null) {
-            if (log.isWarnEnabled()) {
-              log.warn("Project is null for IOperationContext in " + modelDescriptor.getLongName() + " model");
-            }
+            LOG.warning("Project is null for IOperationContext in " + modelDescriptor.getLongName() + " model");
           }
 
           if (module != null && project != null) {
@@ -69,9 +64,7 @@ public class ModelChecker {
                 List<SearchResult<ModelCheckerIssue>> specificCheckerResults = specificChecker.checkModel(model, monitor.subTask(1), operationContext);
                 myResults.getSearchResults().addAll(specificCheckerResults);
               } catch (Throwable t) {
-                if (log.isErrorEnabled()) {
-                  log.error("Error while " + model.getModelDescriptor().getLongName() + " model checking", t);
-                }
+                LOG.error("Error while " + model.getModelDescriptor().getLongName() + " model checking", t);
               }
               if (monitor.isCanceled()) {
                 break;
@@ -104,12 +97,10 @@ public class ModelChecker {
 
     @Override
     public Project getProject() {
-      if (log.isWarnEnabled()) {
-        log.warn("Using getProject() from IOperationContext strictly prohibited");
-      }
+      LOG.warning("Using getProject() from IOperationContext strictly prohibited");
       return super.getProject();
     }
   }
 
-  protected static Log log = LogFactory.getLog(ModelChecker.class);
+  private static Logger LOG = Logger.getLogger(ModelChecker.class);
 }

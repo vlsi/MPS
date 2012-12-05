@@ -24,8 +24,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class TestMergeAction_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -45,9 +44,7 @@ public class TestMergeAction_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "TestMergeAction", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "TestMergeAction", t);
       this.disable(event.getPresentation());
     }
   }
@@ -109,11 +106,9 @@ public class TestMergeAction_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "TestMergeAction", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "TestMergeAction", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(TestMergeAction_Action.class);
+  private static Logger LOG = Logger.getLogger(TestMergeAction_Action.class);
 }

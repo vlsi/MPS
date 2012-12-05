@@ -27,8 +27,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.IScope;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class AddAccessoryModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -48,9 +47,7 @@ public class AddAccessoryModel_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "AddAccessoryModel", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "AddAccessoryModel", t);
       this.disable(event.getPresentation());
     }
   }
@@ -114,11 +111,9 @@ public class AddAccessoryModel_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "AddAccessoryModel", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "AddAccessoryModel", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(AddAccessoryModel_Action.class);
+  private static Logger LOG = Logger.getLogger(AddAccessoryModel_Action.class);
 }

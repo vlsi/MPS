@@ -28,8 +28,7 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.IOperationContext;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class EvaluateExpression_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("evaluate.png");
@@ -52,9 +51,7 @@ public class EvaluateExpression_Action extends BaseAction {
         event.getPresentation().setEnabled(evaluationProvider != null && evaluationProvider.canEvaluate());
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "EvaluateExpression", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "EvaluateExpression", t);
       this.disable(event.getPresentation());
     }
   }
@@ -97,11 +94,9 @@ public class EvaluateExpression_Action extends BaseAction {
         evaluationProvider.showEvaluationDialog(((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), nodePointers);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "EvaluateExpression", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "EvaluateExpression", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(EvaluateExpression_Action.class);
+  private static Logger LOG = Logger.getLogger(EvaluateExpression_Action.class);
 }

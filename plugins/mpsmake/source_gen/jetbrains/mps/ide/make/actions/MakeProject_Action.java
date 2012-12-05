@@ -18,8 +18,7 @@ import java.util.ArrayList;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class MakeProject_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("make.png");
@@ -46,9 +45,7 @@ public class MakeProject_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "MakeProject", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "MakeProject", t);
       this.disable(event.getPresentation());
     }
   }
@@ -73,11 +70,9 @@ public class MakeProject_Action extends BaseAction {
       List<SModule> modules = ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<IModule>) ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")).getModules());
       new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, modules, null), false).executeAction();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "MakeProject", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "MakeProject", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(MakeProject_Action.class);
+  private static Logger LOG = Logger.getLogger(MakeProject_Action.class);
 }

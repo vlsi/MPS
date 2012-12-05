@@ -12,8 +12,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class GenerateBuildAction_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -40,9 +39,7 @@ public class GenerateBuildAction_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GenerateBuildAction", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GenerateBuildAction", t);
       this.disable(event.getPresentation());
     }
   }
@@ -66,16 +63,12 @@ public class GenerateBuildAction_Action extends BaseAction {
     try {
       boolean result = GenerateBuildUtil.generate(GenerateBuildUtil.getLayout(((SModelDescriptor) MapSequence.fromMap(_params).get("modelDescriptor"))), ((Project) MapSequence.fromMap(_params).get("project")), true);
       if (!(result)) {
-        if (log.isErrorEnabled()) {
-          log.error("Build files were not generated.");
-        }
+        LOG.error("Build files were not generated.");
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GenerateBuildAction", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GenerateBuildAction", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(GenerateBuildAction_Action.class);
+  private static Logger LOG = Logger.getLogger(GenerateBuildAction_Action.class);
 }

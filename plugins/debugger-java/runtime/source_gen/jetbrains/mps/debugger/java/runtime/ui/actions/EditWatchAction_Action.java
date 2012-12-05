@@ -11,8 +11,7 @@ import jetbrains.mps.debugger.java.runtime.ui.evaluation.EvaluationUi;
 import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationModel;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class EditWatchAction_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -32,9 +31,7 @@ public class EditWatchAction_Action extends BaseAction {
     try {
       event.getPresentation().setVisible(EvaluationUi.EVALUATION_MODEL.getData(event.getDataContext()) != null);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "EditWatchAction", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "EditWatchAction", t);
       this.disable(event.getPresentation());
     }
   }
@@ -52,11 +49,9 @@ public class EditWatchAction_Action extends BaseAction {
       // todo remove cast 
       ((EvaluationProvider) model.getDebugSession().getEvaluationProvider()).showEditWatchDialog(MPSCommonDataKeys.OPERATION_CONTEXT.getData(event.getDataContext()), model);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "EditWatchAction", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "EditWatchAction", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(EditWatchAction_Action.class);
+  private static Logger LOG = Logger.getLogger(EditWatchAction_Action.class);
 }

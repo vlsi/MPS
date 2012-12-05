@@ -17,8 +17,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.ide.projectPane.ProjectPane;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class NewGenerator_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -45,9 +44,7 @@ public class NewGenerator_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "NewGenerator", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "NewGenerator", t);
       this.disable(event.getPresentation());
     }
   }
@@ -81,11 +78,9 @@ public class NewGenerator_Action extends BaseAction {
         ProjectPane.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).selectModule(result, false);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "NewGenerator", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "NewGenerator", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(NewGenerator_Action.class);
+  private static Logger LOG = Logger.getLogger(NewGenerator_Action.class);
 }

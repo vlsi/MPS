@@ -16,8 +16,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.project.ProjectHelper;
 import com.intellij.openapi.project.Project;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class GoToSource_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -37,9 +36,7 @@ public class GoToSource_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GoToSource", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GoToSource", t);
       this.disable(event.getPresentation());
     }
   }
@@ -71,11 +68,9 @@ public class GoToSource_Action extends BaseAction {
         }
       }, ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GoToSource", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GoToSource", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(GoToSource_Action.class);
+  private static Logger LOG = Logger.getLogger(GoToSource_Action.class);
 }

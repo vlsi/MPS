@@ -14,8 +14,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.refactoring.RenameLanguageDialog;
 import com.intellij.openapi.project.Project;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class RenameLanguage_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -42,9 +41,7 @@ public class RenameLanguage_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RenameLanguage", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RenameLanguage", t);
       this.disable(event.getPresentation());
     }
   }
@@ -72,11 +69,9 @@ public class RenameLanguage_Action extends BaseAction {
     try {
       new RenameLanguageDialog(((Project) MapSequence.fromMap(_params).get("project")), ((Language) ((IModule) MapSequence.fromMap(_params).get("module")))).show();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RenameLanguage", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RenameLanguage", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(RenameLanguage_Action.class);
+  private static Logger LOG = Logger.getLogger(RenameLanguage_Action.class);
 }

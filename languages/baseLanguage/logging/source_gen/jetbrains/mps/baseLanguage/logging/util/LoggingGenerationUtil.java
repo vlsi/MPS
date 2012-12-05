@@ -7,8 +7,10 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.scope.Scope;
@@ -38,15 +40,16 @@ public class LoggingGenerationUtil {
   }
 
   public static boolean isDesignTimeModel(SModel sm) {
-    ModuleDescriptor moduleDescriptor = sm.getModelDescriptor().getModule().getModuleDescriptor();
-    if (moduleDescriptor == null) {
+    SModule module = sm.getModelDescriptor().getModule();
+    if (module == null) {
       return false;
     }
-    if (moduleDescriptor instanceof LanguageDescriptor) {
+    if (module instanceof Language || module instanceof Generator) {
       return true;
     }
-    if (moduleDescriptor instanceof SolutionDescriptor) {
-      return ((SolutionDescriptor) moduleDescriptor).getKind() != SolutionKind.NONE;
+    if (module instanceof Solution) {
+      SolutionDescriptor moduleDescriptor = ((Solution) module).getModuleDescriptor();
+      return moduleDescriptor.getKind() != SolutionKind.NONE;
     }
     return false;
   }

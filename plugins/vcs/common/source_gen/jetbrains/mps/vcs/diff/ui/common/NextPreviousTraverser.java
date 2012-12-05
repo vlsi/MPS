@@ -29,8 +29,7 @@ import jetbrains.mps.util.Computable;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.SNode;
 
@@ -112,9 +111,7 @@ public class NextPreviousTraverser {
         return b.getLeftComponent() == myLastEditor || b.getRightComponent() == myLastEditor;
       }
     }))) {
-      if (log.isErrorEnabled()) {
-        log.error("last editor is uknown: " + myLastEditor, new AssertionError());
-      }
+      LOG.error("last editor is uknown: " + myLastEditor, new AssertionError());
     }
   }
 
@@ -226,13 +223,11 @@ public class NextPreviousTraverser {
     if (editorCell != null) {
       myLastEditor.changeSelection(editorCell);
     } else {
-      if (log.isWarnEnabled()) {
-        log.warn(String.format("Could not find cell for coordinates (1, %d), editor for concept %s", y, ModelAccess.instance().<String>runReadAction(new Computable<String>() {
-          public String compute() {
-            return check_mf966z_a0a0a2a0a0b0t(check_mf966z_a0a0a0c0a0a1a91(myLastEditor.getEditedNode()));
-          }
-        })));
-      }
+      LOG.warning(String.format("Could not find cell for coordinates (1, %d), editor for concept %s", y, ModelAccess.instance().<String>runReadAction(new Computable<String>() {
+        public String compute() {
+          return check_mf966z_a0a0a2a0a0b0t(check_mf966z_a0a0a0c0a0a1a91(myLastEditor.getEditedNode()));
+        }
+      })));
     }
   }
 
@@ -263,7 +258,7 @@ public class NextPreviousTraverser {
     }
   }
 
-  protected static Log log = LogFactory.getLog(NextPreviousTraverser.class);
+  private static Logger LOG = Logger.getLogger(NextPreviousTraverser.class);
 
   private static Bounds check_mf966z_a5a31(ChangeGroup checkedDotOperand, boolean left) {
     if (null != checkedDotOperand) {

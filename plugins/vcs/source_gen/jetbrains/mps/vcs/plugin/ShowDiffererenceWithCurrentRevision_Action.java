@@ -23,8 +23,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.vcs.platform.actions.VcsActionsUtil;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("diff.png");
@@ -59,9 +58,7 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowDiffererenceWithCurrentRevision", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowDiffererenceWithCurrentRevision", t);
       this.disable(event.getPresentation());
     }
   }
@@ -89,11 +86,9 @@ public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
     try {
       VcsActionsUtil.showRootDifference((EditableSModelDescriptor) ((SModelDescriptor) MapSequence.fromMap(_params).get("model")), ((SNode) MapSequence.fromMap(_params).get("node")), ((Project) MapSequence.fromMap(_params).get("project")), null);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowDiffererenceWithCurrentRevision", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowDiffererenceWithCurrentRevision", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(ShowDiffererenceWithCurrentRevision_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowDiffererenceWithCurrentRevision_Action.class);
 }

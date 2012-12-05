@@ -22,8 +22,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class NewAccessoryModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -46,9 +45,7 @@ public class NewAccessoryModel_Action extends BaseAction {
         "New "
       )) + "Accesory Model");
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "NewAccessoryModel", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "NewAccessoryModel", t);
       this.disable(event.getPresentation());
     }
   }
@@ -99,11 +96,9 @@ public class NewAccessoryModel_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "NewAccessoryModel", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "NewAccessoryModel", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(NewAccessoryModel_Action.class);
+  private static Logger LOG = Logger.getLogger(NewAccessoryModel_Action.class);
 }

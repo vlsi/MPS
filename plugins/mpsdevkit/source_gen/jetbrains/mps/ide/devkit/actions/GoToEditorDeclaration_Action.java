@@ -26,8 +26,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class GoToEditorDeclaration_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("editor.png");
@@ -54,9 +53,7 @@ public class GoToEditorDeclaration_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GoToEditorDeclaration", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GoToEditorDeclaration", t);
       this.disable(event.getPresentation());
     }
   }
@@ -137,11 +134,9 @@ public class GoToEditorDeclaration_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GoToEditorDeclaration", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GoToEditorDeclaration", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(GoToEditorDeclaration_Action.class);
+  private static Logger LOG = Logger.getLogger(GoToEditorDeclaration_Action.class);
 }

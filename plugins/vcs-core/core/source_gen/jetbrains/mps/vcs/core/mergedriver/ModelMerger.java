@@ -21,8 +21,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.io.File;
 import jetbrains.mps.vcs.util.MergeDriverBackupUtil;
 import java.io.IOException;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 /*package*/ class ModelMerger extends SimpleMerger {
   private SModelFqName myModelFqName;
@@ -42,17 +41,13 @@ import org.apache.commons.logging.LogFactory;
     DefaultSModel localModel;
     DefaultSModel latestModel;
     try {
-      if (log.isInfoEnabled()) {
-        log.info("Reading models...");
-      }
+      LOG.info("Reading models...");
       baseModel = ModelPersistence.readModel(new String(baseContent, FileUtil.DEFAULT_CHARSET), false);
       myModelFqName = baseModel.getSModelFqName();
       localModel = ModelPersistence.readModel(new String(localContent, FileUtil.DEFAULT_CHARSET), false);
       latestModel = ModelPersistence.readModel(new String(latestContent, FileUtil.DEFAULT_CHARSET), false);
     } catch (ModelReadException e) {
-      if (log.isErrorEnabled()) {
-        log.error("Exception while reading models", e);
-      }
+      LOG.error("Exception while reading models", e);
       return backup(baseContent, localContent, latestContent);
     }
 
@@ -62,22 +57,16 @@ import org.apache.commons.logging.LogFactory;
     if (baseP >= 7 && localP >= 7 && latestP >= 7 || baseP < 7 && localP < 7 && latestP < 7) {
       // ok, can merge 
     } else {
-      if (log.isErrorEnabled()) {
-        log.error(String.format("%s: Conflicting model persistence versions", myModelFqName));
-      }
+      LOG.error(String.format("%s: Conflicting model persistence versions", myModelFqName));
       return backup(baseContent, localContent, latestContent);
     }
     if (!(roleIdsHandler.isConsistent())) {
-      if (log.isErrorEnabled()) {
-        log.error(String.format("%s: Inconsistent structure ids or import versions", myModelFqName));
-      }
+      LOG.error(String.format("%s: Inconsistent structure ids or import versions", myModelFqName));
       return backup(baseContent, localContent, latestContent);
     }
 
     try {
-      if (log.isInfoEnabled()) {
-        log.info("Merging " + baseModel.getSModelReference() + "...");
-      }
+      LOG.info("Merging " + baseModel.getSModelReference() + "...");
       final MergeSession mergeSession = new MergeSession(baseModel, localModel, latestModel);
       int conflictingChangesCount = Sequence.fromIterable(mergeSession.getAllChanges()).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange c) {
@@ -85,9 +74,7 @@ import org.apache.commons.logging.LogFactory;
         }
       }).count();
       if (conflictingChangesCount == 0) {
-        if (log.isInfoEnabled()) {
-          log.info(String.format("%s: %d changes detected: %d local and %d latest.", myModelFqName, Sequence.fromIterable(mergeSession.getAllChanges()).count(), ListSequence.fromList(mergeSession.getMyChangeSet().getModelChanges()).count(), ListSequence.fromList(mergeSession.getRepositoryChangeSet().getModelChanges()).count()));
-        }
+        LOG.info(String.format("%s: %d changes detected: %d local and %d latest.", myModelFqName, Sequence.fromIterable(mergeSession.getAllChanges()).count(), ListSequence.fromList(mergeSession.getMyChangeSet().getModelChanges()).count(), ListSequence.fromList(mergeSession.getRepositoryChangeSet().getModelChanges()).count()));
         Runnable applyAction = new Runnable() {
           public void run() {
             mergeSession.applyChanges(mergeSession.getAllChanges());
@@ -95,26 +82,18 @@ import org.apache.commons.logging.LogFactory;
         };
         ModelAccess.instance().runReadAction(applyAction);
         if (mergeSession.hasIdsToRestore()) {
-          if (log.isInfoEnabled()) {
-            log.info(String.format("%s: node id duplication detected, should merge in UI.", myModelFqName));
-          }
+          LOG.info(String.format("%s: node id duplication detected, should merge in UI.", myModelFqName));
         } else {
           String resultString = ModelPersistence.modelToString(mergeSession.getResultModel());
-          if (log.isInfoEnabled()) {
-            log.info(String.format("%s: merged successfully.", myModelFqName));
-          }
+          LOG.info(String.format("%s: merged successfully.", myModelFqName));
           backup(baseContent, localContent, latestContent);
           return MultiTuple.<Integer,byte[]>from(MERGED, resultString.getBytes(FileUtil.DEFAULT_CHARSET));
         }
       } else {
-        if (log.isInfoEnabled()) {
-          log.info(String.format("%s: %d changes detected, %d of them are conflicting", myModelFqName, Sequence.fromIterable(mergeSession.getAllChanges()).count(), conflictingChangesCount));
-        }
+        LOG.info(String.format("%s: %d changes detected, %d of them are conflicting", myModelFqName, Sequence.fromIterable(mergeSession.getAllChanges()).count(), conflictingChangesCount));
       }
     } catch (Throwable e) {
-      if (log.isErrorEnabled()) {
-        log.error("Exception while merging", e);
-      }
+      LOG.error("Exception while merging", e);
       return backup(baseContent, localContent, latestContent);
     }
 
@@ -125,17 +104,13 @@ import org.apache.commons.logging.LogFactory;
     try {
       File zipModel = MergeDriverBackupUtil.zipModel(new String[]{new String(baseContent, FileUtil.DEFAULT_CHARSET), new String(localContent, FileUtil.DEFAULT_CHARSET), new String(latestContent, FileUtil.DEFAULT_CHARSET)}, myModelFqName);
       if (zipModel != null) {
-        if (log.isInfoEnabled()) {
-          log.info("Saved merge backup to " + zipModel);
-        }
+        LOG.info("Saved merge backup to " + zipModel);
       }
     } catch (IOException e) {
-      if (log.isErrorEnabled()) {
-        log.error(String.format("%s: exception while backuping", myModelFqName), e);
-      }
+      LOG.error(String.format("%s: exception while backuping", myModelFqName), e);
     }
     return null;
   }
 
-  protected static Log log = LogFactory.getLog(ModelMerger.class);
+  private static Logger LOG = Logger.getLogger(ModelMerger.class);
 }

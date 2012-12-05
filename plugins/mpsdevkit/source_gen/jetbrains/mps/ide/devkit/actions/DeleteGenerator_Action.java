@@ -19,8 +19,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.devkit.util.DeleteGeneratorHelper;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class DeleteGenerator_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,9 +46,7 @@ public class DeleteGenerator_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "DeleteGenerator", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "DeleteGenerator", t);
       this.disable(event.getPresentation());
     }
   }
@@ -96,11 +93,9 @@ public class DeleteGenerator_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "DeleteGenerator", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "DeleteGenerator", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(DeleteGenerator_Action.class);
+  private static Logger LOG = Logger.getLogger(DeleteGenerator_Action.class);
 }

@@ -14,8 +14,7 @@ import com.intellij.openapi.vcs.diff.DiffProvider;
 import com.intellij.openapi.vcs.history.VcsRevisionNumber;
 import com.intellij.openapi.vcs.changes.ContentRevision;
 import com.intellij.openapi.vcs.VcsException;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class BaseVersionUtil {
   private BaseVersionUtil() {
@@ -28,9 +27,7 @@ public class BaseVersionUtil {
   @Nullable
   public static String getBaseVersionContent(@NotNull VirtualFile file, @NotNull Project project) {
     if (ModelAccess.instance().canRead()) {
-      if (log.isErrorEnabled()) {
-        log.error("BaseVersionUtil.getBaseVersionContent() is invoked from read action: possible deadlock", new IllegalStateException());
-      }
+      LOG.error("BaseVersionUtil.getBaseVersionContent() is invoked from read action: possible deadlock", new IllegalStateException());
     }
     try {
       AbstractVcs vcs = ProjectLevelVcsManager.getInstance(project).getVcsFor(file);
@@ -51,12 +48,10 @@ public class BaseVersionUtil {
       }
       return revision.getContent();
     } catch (VcsException ex) {
-      if (log.isWarnEnabled()) {
-        log.warn("VcsException during getting base version content: ", ex);
-      }
+      LOG.warning("VcsException during getting base version content: ", ex);
       return null;
     }
   }
 
-  protected static Log log = LogFactory.getLog(BaseVersionUtil.class);
+  private static Logger LOG = Logger.getLogger(BaseVersionUtil.class);
 }

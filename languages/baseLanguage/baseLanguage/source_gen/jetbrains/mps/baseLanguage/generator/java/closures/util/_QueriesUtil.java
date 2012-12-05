@@ -14,8 +14,7 @@ import java.util.ArrayList;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class _QueriesUtil {
   public _QueriesUtil() {
@@ -96,9 +95,7 @@ public class _QueriesUtil {
     SNode enclosingClosureOrContextOwner = ((SNode) jetbrains.mps.util.SNodeOperations.findParent(nodeInsideClosure, new Condition<SNode>() {
       public boolean met(SNode object) {
         if (!(object instanceof SNode)) {
-          if (log.isWarnEnabled()) {
-            log.warn("method create_closureContextObject(node<>, ITemplateGenerator) in " + _QueriesUtil.class.toString() + " operates only with the instances of SNode class");
-          }
+          LOG.warning("method create_closureContextObject(node<>, ITemplateGenerator) in " + _QueriesUtil.class.toString() + " operates only with the instances of SNode class");
           return false;
         }
         if (SNodeOperations.isInstanceOf(object, "jetbrains.mps.baseLanguage.structure.Closure")) {
@@ -121,5 +118,5 @@ public class _QueriesUtil {
     return SModelOperations.createNewNode(model, null, "jetbrains.mps.baseLanguage.structure.NullLiteral");
   }
 
-  protected static Log log = LogFactory.getLog(_QueriesUtil.class);
+  private static Logger LOG = Logger.getLogger(_QueriesUtil.class);
 }

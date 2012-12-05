@@ -32,8 +32,7 @@ import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.generator.ModelDigestUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ReRunMergeFromBackup_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -71,9 +70,7 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ReRunMergeFromBackup", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ReRunMergeFromBackup", t);
       this.disable(event.getPresentation());
     }
   }
@@ -116,18 +113,14 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
           DiffManager.getInstance().getDiffTool().show(mergeRequest);
           return;
         } catch (IOException e) {
-          if (log.isWarnEnabled()) {
-            log.warn("", e);
-          }
+          LOG.warning("", e);
           // Skip this backup 
           continue;
         }
       }
       Messages.showInfoMessage("No suitable backup files for " + ((SModelDescriptor) MapSequence.fromMap(_params).get("model")).getSModelReference().getSModelFqName() + "was not found.", "No Backup Files Found");
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ReRunMergeFromBackup", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ReRunMergeFromBackup", t);
     }
   }
 
@@ -157,5 +150,5 @@ public class ReRunMergeFromBackup_Action extends BaseAction {
     }
   }
 
-  protected static Log log = LogFactory.getLog(ReRunMergeFromBackup_Action.class);
+  private static Logger LOG = Logger.getLogger(ReRunMergeFromBackup_Action.class);
 }
