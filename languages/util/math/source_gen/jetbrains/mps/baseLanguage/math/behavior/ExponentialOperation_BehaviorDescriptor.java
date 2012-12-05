@@ -4,10 +4,16 @@ package jetbrains.mps.baseLanguage.math.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
+import java.util.List;
+import jetbrains.mps.smodel.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public abstract class ExponentialOperation_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public ExponentialOperation_BehaviorDescriptor() {
+  }
+
+  public List<SNode> virtual_getAllowedSubstituends_3044950653914716992(SConcept thisConcept) {
+    return ExponentialOperation_Behavior.virtual_getAllowedSubstituends_3044950653914716992(thisConcept);
   }
 
   public String virtual_getOperationSymbol_1262430001741497831(SConcept thisConcept) {

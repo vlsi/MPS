@@ -10,6 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.generator.runtime.TemplateUtil;
 
@@ -30,15 +31,15 @@ public class Templatemap__outputNode implements TemplateDeclaration {
       try {
         environment.getTracer().pushTemplateNode(templateNode_wi2k8y_a0a0a3a1a2);
         environment.nodeCopied(context1, tnode2, "tpl/r:00000000-0000-4000-0000-011c895905fa/1218738789586");
-        tnode2.setProperty("name", "map_outputNode");
-        tnode2.setProperty("text", "output root");
+        SNodeAccessUtil.setProperty(tnode2, "name", "map_outputNode");
+        SNodeAccessUtil.setProperty(tnode2, "text", "output root");
 
         {
           final SNode tnode3 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
           try {
             environment.getTracer().pushTemplateNode(templateNode_wi2k8y_a0a0a1a5a3a1a2);
             environment.nodeCopied(context1, tnode3, "tpl/r:00000000-0000-4000-0000-011c895905fa/1218738814182");
-            tnode3.setProperty("text", "this is 'special child' in root template");
+            SNodeAccessUtil.setProperty(tnode3, "text", "this is 'special child' in root template");
 
           } finally {
             environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode3));

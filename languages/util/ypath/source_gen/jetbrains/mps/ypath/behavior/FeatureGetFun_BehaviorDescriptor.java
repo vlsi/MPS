@@ -4,10 +4,16 @@ package jetbrains.mps.ypath.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
+import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class FeatureGetFun_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public FeatureGetFun_BehaviorDescriptor() {
+  }
+
+  public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
+    return FeatureGetFun_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
 
   public SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {

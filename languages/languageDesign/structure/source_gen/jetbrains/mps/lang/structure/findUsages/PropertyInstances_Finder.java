@@ -11,6 +11,7 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class PropertyInstances_Finder extends GeneratedFinder {
@@ -38,7 +39,7 @@ public class PropertyInstances_Finder extends GeneratedFinder {
       SNode conceptDeclaration = SNodeOperations.getAncestor(node, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", false, false);
       if (!((conceptDeclaration == null))) {
         for (SNode instance : FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, monitor.subTask(1))) {
-          String property = instance.getProperty(role);
+          String property = SNodeAccessUtil.getProperty(instance, role);
           if (property != null && !(property.equals(""))) {
             ListSequence.fromList(_results).addElement(instance);
           }

@@ -10,6 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class CellAction_DeleteSmart extends EditorCellAction {
   private SNode mySource;
@@ -36,7 +37,7 @@ public class CellAction_DeleteSmart extends EditorCellAction {
       }
     } else {
       // <node> 
-      mySource.setReferenceTarget(SPropertyOperations.getString(genuineLinkDeclaration, "role"), null);
+      SNodeAccessUtil.setReferenceTarget(mySource, SPropertyOperations.getString(genuineLinkDeclaration, "role"), null);
     }
   }
 }

@@ -166,58 +166,58 @@
     <unitInfo nodeId="2459884175399838932" fileName="typeof_BeforeUIObjectParam_InferenceRule.java" startLine="15" startPosition="0" endLine="42" endPosition="0" unitName="jetbrains.mps.ui.modeling.typesystem.typeof_BeforeUIObjectParam_InferenceRule" />
   </root>
   <root nodeId="2663453265345757182" modelId="r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)">
-    <nodeInfo nodeId="2663453265345937597" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="21" startPosition="5" endLine="22" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2663453265345937597" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="22" startPosition="45" endLine="23" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2663453265345937597" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="23" startPosition="202" endLine="24" endPosition="368" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="28" startPosition="46" endLine="29" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="33" startPosition="5" endLine="34" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="34" startPosition="119" endLine="35" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="39" startPosition="30" endLine="40" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="43" startPosition="79" endLine="44" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="45" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="45" startPosition="170" endLine="46" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="46" startPosition="78" endLine="47" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_LayoutConstraintExpression_InferenceRule#()V" />
-    <nodeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="46" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="46" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="32" startPosition="68" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2663453265345937597" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="20" startPosition="116" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="43" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_vm1bpd_a0a0b#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="20" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="17" startPosition="60" endLine="17" endPosition="60" />
-    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="28" startPosition="46" endLine="29" endPosition="76" />
-    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="39" startPosition="30" endLine="40" endPosition="17" />
-    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="33" startPosition="5" endLine="35" endPosition="45">
+    <nodeInfo nodeId="2663453265345937597" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="23" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2663453265345937597" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="23" startPosition="45" endLine="24" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2663453265345937597" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="24" startPosition="202" endLine="25" endPosition="368" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="29" startPosition="46" endLine="30" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="34" startPosition="5" endLine="35" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="35" startPosition="119" endLine="36" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="44" startPosition="79" endLine="45" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="45" startPosition="30" endLine="46" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="46" startPosition="170" endLine="47" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="47" startPosition="95" endLine="48" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_LayoutConstraintExpression_InferenceRule#()V" />
+    <nodeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="45" startPosition="30" endLine="47" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="45" startPosition="30" endLine="47" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2663453265345937597" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="21" startPosition="116" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="44" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_vm1bpd_a0a0b#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="18" startPosition="60" endLine="18" endPosition="60" />
+    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="29" startPosition="46" endLine="30" endPosition="76" />
+    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="40" startPosition="30" endLine="41" endPosition="17" />
+    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="34" startPosition="5" endLine="36" endPosition="45">
       <varInfo nodeId="2663453265345757182" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="44" startPosition="30" endLine="46" endPosition="78" />
-    <scopeInfo nodeId="2663453265345937597" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="21" startPosition="5" endLine="24" endPosition="368">
+    <scopeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="45" startPosition="30" endLine="47" endPosition="95" />
+    <scopeInfo nodeId="2663453265345937597" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="22" startPosition="5" endLine="25" endPosition="368">
       <varInfo nodeId="2663453265345937597" varName="_info_12389875345" />
       <varInfo nodeId="2663453265345937597" varName="_nodeToCheck_1029348928467" />
     </scopeInfo>
-    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="32" startPosition="68" endLine="36" endPosition="5" />
-    <scopeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="43" startPosition="79" endLine="47" endPosition="24">
+    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="33" startPosition="68" endLine="37" endPosition="5" />
+    <scopeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="44" startPosition="79" endLine="48" endPosition="24">
       <varInfo nodeId="2663453265345937602" varName="quotedNode_2" />
     </scopeInfo>
-    <scopeInfo nodeId="2663453265345757183" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="20" startPosition="116" endLine="25" endPosition="5" />
-    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="32" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="2663453265345757183" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="21" startPosition="116" endLine="26" endPosition="5" />
+    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="33" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="2663453265345757182" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="43" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="2663453265345937602" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="44" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="2663453265345937602" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="20" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="2663453265345757182" varName="lce" />
       <varInfo nodeId="2663453265345757182" varName="status" />
       <varInfo nodeId="2663453265345757182" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="16" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.ui.modeling.typesystem.typeof_LayoutConstraintExpression_InferenceRule" />
+    <unitInfo nodeId="2663453265345757182" fileName="typeof_LayoutConstraintExpression_InferenceRule.java" startLine="17" startPosition="0" endLine="51" endPosition="0" unitName="jetbrains.mps.ui.modeling.typesystem.typeof_LayoutConstraintExpression_InferenceRule" />
   </root>
   <root nodeId="2663453265348159936" modelId="r:a301270c-6f4f-43ab-84f3-d9145aa32bc7(jetbrains.mps.ui.modeling.typesystem)">
     <nodeInfo nodeId="2663453265348162548" fileName="typeof_ExpressionWithUnit_InferenceRule.java" startLine="19" startPosition="116" endLine="20" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

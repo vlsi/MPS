@@ -6,9 +6,13 @@ import jetbrains.mps.smodel.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class LanguageTextGenDeclaration_Behavior {
   public static void init(SNode thisNode) {
@@ -19,7 +23,7 @@ public class LanguageTextGenDeclaration_Behavior {
       return ListSequence.fromList(new ArrayList<SNode>());
     }
     List<SNode> result = new ArrayList<SNode>();
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "applicableHiddenParameter")));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getApplicableHiddenParameter_3044950653914717099", new Object[]{})));
     return (List<SNode>) result;
   }
 
@@ -61,5 +65,12 @@ public class LanguageTextGenDeclaration_Behavior {
 
   public static String virtual_getTextGenNode_1234784577703(SNode thisNode) {
     return "textGen";
+  }
+
+  public static List<SNode> virtual_getApplicableHiddenParameter_3044950653914717099(SConcept thisConcept) {
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1234351783410"));
+    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:de0d3c0c-d049-41cf-bbf9-a920ba513cd3(jetbrains.mps.lang.textGen.structure)", "1234279682891"));
+    return result;
   }
 }

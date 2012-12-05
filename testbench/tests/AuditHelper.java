@@ -43,6 +43,10 @@ public class AuditHelper {
     // TODO: some of error nodes is ClassifiersScope (MPS-16863)
     // TODO: and some of them is illegal concept for variable reference, check it with mikev
     DISABLED_MODULES.add("jetbrains.mps.baseLanguage.test");
+
+    // test usage: root node is not root in test
+    // TODO: maybe fix scopes for test nodes? to all nodes with concept in test root?
+    DISABLED_MODULES.add("jetbrains.mps.build.tests");
   }
 
   public static void init() {

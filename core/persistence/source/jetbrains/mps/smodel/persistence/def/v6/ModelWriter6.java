@@ -110,7 +110,7 @@ public class ModelWriter6 implements IModelWriter {
       Element propertyElement = new Element(ModelPersistence.PROPERTY);
       propertyElement.setAttribute(ModelPersistence.NAME, myHelper.genName(node, propertyName));
       //DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.NAME_ID, myHelper.genNameId(node, propertyName));
-      DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.VALUE, node.getPersistentProperty(propertyName));
+      DocUtil.setNotNullAttribute(propertyElement, ModelPersistence.VALUE, node.getProperty(propertyName));
       element.addContent(propertyElement);
     }
 

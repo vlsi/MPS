@@ -32,6 +32,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ConceptBehavior_Behavior {
@@ -112,7 +113,7 @@ public class ConceptBehavior_Behavior {
       }
 
       public SNode createMethodCall(SNode method, List<SNode> arguments) {
-        return _quotation_createNode_xahq23_a0a1a0a0a3(SLinkOperations.getTarget(SNodeOperations.cast(this.myStaticContainer, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false), method, arguments);
+        return _quotation_createNode_xahq23_a0a1a0a0a3(arguments, SLinkOperations.getTarget(SNodeOperations.cast(this.myStaticContainer, "jetbrains.mps.lang.behavior.structure.ConceptBehavior"), "concept", false), method);
       }
     };
   }
@@ -230,10 +231,10 @@ public class ConceptBehavior_Behavior {
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.StaticConceptMethodCall", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_2);
-    quotedNode_4.setReferenceTarget("concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_4, "baseMethodDeclaration", (SNode) parameter_3);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_4, "concept", (SNode) parameter_2);
     {
-      List<SNode> nodes = (List<SNode>) parameter_3;
+      List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {
         quotedNode_4.addChild("actualArgument", HUtil.copyIfNecessary(child));
       }

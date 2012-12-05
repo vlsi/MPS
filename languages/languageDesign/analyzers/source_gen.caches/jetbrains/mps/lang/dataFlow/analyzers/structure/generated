@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-er7takndlz10jqa6l9sxlct5n1zbzz3">
-  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="72jgettirgdze5zodlg3xz1jp5r3et8" />
+<dependencies version="2" modelHash="5kse33smivbjjgnofb7c5jptj3qrm0x">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-amw3yujjoknpk9rcm46zq6ty6idm23v" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="7uo2xyrudgr0a3zexm421hjdcsbok1q" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-87z6bgddy8ivkyr9ddyvqnv3hm4pw2y" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-baumsvy45qwk0i0m1tzx9fili68fouh" />
-  <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" hash="-97abcf6z0eb5cef0vttefsfpa4eq6sd" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
+  <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" hash="-4nirrn23q5wrl0mme8ov8v7hn17c6ex" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3t350ymnztu1bi083p2mhorjil0w76j" />
   <common hash="5h7mrh9a8uzwvkmt3nqabbsfz5hhoda">
     <dep root="2045671745393426211" />
@@ -51,7 +51,7 @@
   <source id="6618572076229093258" name="Instruction" hash="-7h2ikj2w9h84orbtcpd3boq95383wd6">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="6393434056522580745" name="AnalyzerMergeFunction" hash="abt6wawmdbvlton15lkezrrrb0rguvp">
+  <source id="6393434056522580745" name="AnalyzerMergeFunction" hash="-8vwd0gngdgr9ny6d24avfxe2mpim07z">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="4746038179140566716" name="AnalyzerParameterProgram" hash="ckblgm7nfaeqjgytkbr20ahlryws0nu">
@@ -60,10 +60,10 @@
   <source id="4746038179140566725" name="AnalyzerMergeParameterInput" hash="-dfhxm1mpzypssuhxpr9y3lztytj13x8">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4746038179140588744" name="AnalyzerInitialFunction" hash="2w1ur5lpagc1x7rltrmht2ufs5thm05">
+  <source id="4746038179140588744" name="AnalyzerInitialFunction" hash="-6mt37yjkb9nmqmi237c5ks96gdesgys">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="4746038179140588745" name="AnalyzerFunFunction" hash="29aox3rx17ernxuzbisnzu4n9fizdl9">
+  <source id="4746038179140588745" name="AnalyzerFunFunction" hash="2ulew8ghqi67mks79sk6n5n321po1zv">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="4746038179140588754" name="AnalyzerFunParameterProgramState" hash="-lvk6clzd7ttmtvwcfd0001eo4mxljd">

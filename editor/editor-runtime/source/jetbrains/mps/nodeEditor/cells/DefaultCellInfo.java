@@ -65,7 +65,9 @@ public class DefaultCellInfo implements CellInfo {
   }
 
   public void saveTo(Element e) {
-    e.setAttribute(CELL_ID, myCellId);
+    if (myCellId != null) {
+      e.setAttribute(CELL_ID, myCellId);
+    }
     e.setAttribute(CELL_NUMBER, "" + myCellNumber);
     e.setAttribute(IS_IN_LIST, "" + myIsInList);
     Element nodeElement = new Element(NODE);
@@ -88,7 +90,6 @@ public class DefaultCellInfo implements CellInfo {
     final String id;
     DefaultCellInfo parentInfo = null;
     cellId = e.getAttributeValue(CELL_ID);
-    if (cellId == null) return null;
     String num = e.getAttributeValue(CELL_NUMBER);
     if (num == null) return null;
     try {

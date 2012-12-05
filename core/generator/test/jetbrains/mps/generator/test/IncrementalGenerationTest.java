@@ -18,6 +18,7 @@ package jetbrains.mps.generator.test;
 import jetbrains.mps.TestMain;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -42,13 +43,13 @@ public class IncrementalGenerationTest extends GenerationTestBase {
           Assert.assertNotNull("No root in model", root);
 
           SNode found = null;
-          for(SNode md : root.getChildren("method")) {
-            if(md.getName().equals("testRename2")) {
+          for(SNode md : root.getChildren("member")) {
+            if(md.getName().equals("testRename2") && md.getConcept().getId().equals("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
               found = md;
             }
           }
           Assert.assertNotNull("no method in class", found);
-          found.setProperty(SNodeUtil.property_INamedConcept_name, "testRename3");
+          SNodeAccessUtil.setProperty(found, SNodeUtil.property_INamedConcept_name, "testRename3");
         }
       });
 
@@ -66,7 +67,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
           SModel model = descr.getSModel();
           SNode root = SModelOperations.getRootByName(model,"GoToFile");
           Assert.assertNotNull("No root in model", root);
-          root.setProperty(SNodeUtil.property_INamedConcept_name, "GoToFile2");
+          SNodeAccessUtil.setProperty(root, SNodeUtil.property_INamedConcept_name, "GoToFile2");
         }
       });
 
@@ -84,7 +85,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
           SModel model = descr.getSModel();
           SNode root = SModelOperations.getRootByName(model,"Expression");
           Assert.assertNotNull("No root in model", root);
-          root.setProperty(SNodeUtil.property_INamedConcept_name, "ReExpression");
+          SNodeAccessUtil.setProperty(root, SNodeUtil.property_INamedConcept_name, "ReExpression");
         }
       });
 

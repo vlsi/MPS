@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -88,7 +89,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
       SNode quotedNode_10 = null;
       SNode quotedNode_11 = null;
       quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, GlobalScope.getInstance(), false);
-      quotedNode_4.setProperty("name", (String) parameter_3);
+      SNodeAccessUtil.setProperty(quotedNode_4, "name", (String) parameter_3);
       quotedNode_5 = (SNode) parameter_1;
       if (quotedNode_5 != null) {
         quotedNode_4.addChild("returnType", HUtil.copyIfNecessary(quotedNode_5));
@@ -101,7 +102,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
       quotedNode_10 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", null, null, GlobalScope.getInstance(), false);
       quotedNode_9.addChild("operand", quotedNode_10);
       quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, null, GlobalScope.getInstance(), false);
-      quotedNode_11.setReferenceTarget("fieldDeclaration", (SNode) parameter_2);
+      SNodeAccessUtil.setReferenceTarget(quotedNode_11, "fieldDeclaration", (SNode) parameter_2);
       quotedNode_9.addChild("operation", quotedNode_11);
       quotedNode_8.addChild("expression", quotedNode_9);
       quotedNode_7.addChild("statement", quotedNode_8);
@@ -172,7 +173,7 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
       SNode quotedNode_15 = null;
       SNode quotedNode_16 = null;
       quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null, null, GlobalScope.getInstance(), false);
-      quotedNode_5.setProperty("name", (String) parameter_2);
+      SNodeAccessUtil.setProperty(quotedNode_5, "name", (String) parameter_2);
       quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
       quotedNode_5.addChild("returnType", quotedNode_6);
       quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
@@ -186,20 +187,20 @@ public class FieldDeclaration_keyMap extends EditorCellKeyMap {
       quotedNode_15 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", null, null, GlobalScope.getInstance(), false);
       quotedNode_14.addChild("operand", quotedNode_15);
       quotedNode_16 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, null, GlobalScope.getInstance(), false);
-      quotedNode_16.setReferenceTarget("fieldDeclaration", (SNode) parameter_1);
+      SNodeAccessUtil.setReferenceTarget(quotedNode_16, "fieldDeclaration", (SNode) parameter_1);
       quotedNode_14.addChild("operation", quotedNode_16);
       quotedNode_12.addChild("lValue", quotedNode_14);
       quotedNode_10.addChild("expression", quotedNode_12);
       quotedNode_8.addChild("statement", quotedNode_10);
       quotedNode_5.addChild("body", quotedNode_8);
       quotedNode_9 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-      quotedNode_9.setProperty("name", (String) parameter_4);
+      SNodeAccessUtil.setProperty(quotedNode_9, "name", (String) parameter_4);
       quotedNode_11 = (SNode) parameter_3;
       if (quotedNode_11 != null) {
         quotedNode_9.addChild("type", HUtil.copyIfNecessary(quotedNode_11));
       }
       quotedNode_5.addChild("parameter", quotedNode_9);
-      quotedNode_13.setReferenceTarget("variableDeclaration", quotedNode_9);
+      SNodeAccessUtil.setReferenceTarget(quotedNode_13, "variableDeclaration", quotedNode_9);
       return quotedNode_5;
     }
   }

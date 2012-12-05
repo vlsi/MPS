@@ -54,7 +54,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
           SLinkOperations.setTarget(SLinkOperations.getTarget(ExtractMethodWithOutputVariable.this.myDeclarationStatement, "localVariableDeclaration", true), "initializer", methodCall, true);
         } else {
           SNode newStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-          SLinkOperations.setTarget(newStatement, "expression", _quotation_createNode_n3576q_a0b0a2a0a0f(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ExtractMethodWithOutputVariable.this.myOutputVariable, "virtual_createReference_1213877517482", new Object[]{}), methodCall), true);
+          SLinkOperations.setTarget(newStatement, "expression", _quotation_createNode_n3576q_a0b0a2a0a0f(methodCall, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ExtractMethodWithOutputVariable.this.myOutputVariable, "virtual_createReference_1213877517482", new Object[]{})), true);
           SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), newStatement);
         }
         for (SNode statement : ListSequence.fromList(statements)) {
@@ -73,11 +73,11 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
-      quotedNode_3.addChild("lValue", HUtil.copyIfNecessary(quotedNode_4));
+      quotedNode_3.addChild("rValue", HUtil.copyIfNecessary(quotedNode_4));
     }
     quotedNode_5 = (SNode) parameter_2;
     if (quotedNode_5 != null) {
-      quotedNode_3.addChild("rValue", HUtil.copyIfNecessary(quotedNode_5));
+      quotedNode_3.addChild("lValue", HUtil.copyIfNecessary(quotedNode_5));
     }
     return quotedNode_3;
   }

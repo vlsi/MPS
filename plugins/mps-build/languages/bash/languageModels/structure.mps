@@ -5,6 +5,7 @@
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="u9e0" modelUID="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" version="-1" implicit="yes" />
+  <import index="zy04" modelUID="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="3321051580269894529">
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
@@ -876,8 +877,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="7633559109504426816" resolveInfo="AbstractCommand" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4857814468241254994">
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="external commmand declaration" />
       <property name="name" nameId="tpck.1169194664001" value="ExternalCommandDeclaration" />
@@ -1674,6 +1675,10 @@
   <root id="7633559109503378338">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="7633559109503378339">
       <property name="name" nameId="tpck.1169194664001" value="terminator" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843045" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278843044">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="zy04.1262430001741497822" resolveInfo="getTerminator" />
+      </node>
     </node>
   </root>
   <root id="7633559109503378340" />
@@ -1827,6 +1832,10 @@
   <root id="7633559109511764425">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="7633559109511764428">
       <property name="name" nameId="tpck.1169194664001" value="terminator" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278845167" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278845166">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="zy04.1262430001741498154" resolveInfo="getTerminator" />
+      </node>
     </node>
   </root>
   <root id="7633559109512234531" />
@@ -1856,9 +1865,17 @@
   <root id="7633559109512908785">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="7633559109512908787">
       <property name="name" nameId="tpck.1169194664001" value="leftBracket" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278838718" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278838717">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="zy04.1262430001741497966" resolveInfo="getLeftBracket" />
+      </node>
     </node>
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="7633559109512908789">
       <property name="name" nameId="tpck.1169194664001" value="rigthBracket" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278838321" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278838320">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="zy04.1262430001741497783" resolveInfo="getRigthBracket" />
+      </node>
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7633559109512908790">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -1875,6 +1892,10 @@
   <root id="3999172467437060443">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="3999172467437184648">
       <property name="name" nameId="tpck.1169194664001" value="sign" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843137" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278843136">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="zy04.1262430001741498244" resolveInfo="getSign" />
+      </node>
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3999172467437184656">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -1914,6 +1935,10 @@
   <root id="3999172467438007066">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="3999172467438007072">
       <property name="name" nameId="tpck.1169194664001" value="sign" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843061" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278843060">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="zy04.1262430001741498163" resolveInfo="getSign" />
+      </node>
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3999172467438007073">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -2001,6 +2026,10 @@
   <root id="3999172467440224562">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="3999172467440224571">
       <property name="name" nameId="tpck.1169194664001" value="sign" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843049" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278843048">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="zy04.1262430001741498130" resolveInfo="getSign" />
+      </node>
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3999172467440224563">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -2029,6 +2058,10 @@
   <root id="3999172467441205664">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="3999172467441293236">
       <property name="name" nameId="tpck.1169194664001" value="assingmentSign" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278845412" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278845411">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="zy04.1262430001741497909" resolveInfo="getAssingmentSign" />
+      </node>
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3999172467441293220">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -2104,9 +2137,17 @@
   <root id="4857814468235197585">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="4857814468235197588">
       <property name="name" nameId="tpck.1169194664001" value="left" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843051" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278843050">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="zy04.1262430001741497960" resolveInfo="getLeft" />
+      </node>
     </node>
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="4857814468235197590">
       <property name="name" nameId="tpck.1169194664001" value="right" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278847764" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278847763">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="zy04.1262430001741497867" resolveInfo="getRight" />
+      </node>
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="4857814468235197586">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8353259571485353278" resolveInfo="IGeneralizedWordUnit" />
@@ -2391,11 +2432,19 @@
     </node>
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="3263637656455059148">
       <property name="name" nameId="tpck.1169194664001" value="quotetype" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278844305" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278844304">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="zy04.1262430001741497924" resolveInfo="getQuotetype" />
+      </node>
     </node>
   </root>
   <root id="3147078024759753552">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="3147078024759753553">
       <property name="name" nameId="tpck.1169194664001" value="pattern" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278847760" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278847759">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="zy04.1262430001741497918" resolveInfo="getPattern" />
+      </node>
     </node>
   </root>
   <root id="3263637656455059140" />
@@ -2403,11 +2452,19 @@
   <root id="3263637656461715717">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.IntegerConceptPropertyDeclaration" typeId="tpce.1105725141344" id="3263637656461715718">
       <property name="name" nameId="tpck.1169194664001" value="priority" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843133" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278843132">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="zy04.1262430001741497876" resolveInfo="getPriority" />
+      </node>
     </node>
   </root>
   <root id="3263637656462020094">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="3263637656462020098">
       <property name="name" nameId="tpck.1169194664001" value="sign" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278836341" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278836340">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="zy04.1262430001741498229" resolveInfo="getSign" />
+      </node>
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="3263637656462020095">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -2444,6 +2501,10 @@
   <root id="8474643070102636489">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="8474643070102636523">
       <property name="name" nameId="tpck.1169194664001" value="operator" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278838714" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278838713">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="zy04.1262430001741498106" resolveInfo="getOperator" />
+      </node>
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8474643070102636490">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -2483,6 +2544,10 @@
   <root id="8474643070111818349">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="8474643070111818351">
       <property name="name" nameId="tpck.1169194664001" value="pypetype" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843057" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278843056">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="zy04.1262430001741497885" resolveInfo="getPypetype" />
+      </node>
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8474643070111988415">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -2527,6 +2592,10 @@
     </node>
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="9034131902191439565">
       <property name="name" nameId="tpck.1169194664001" value="op" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278845410" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278845409">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="zy04.1262430001741497951" resolveInfo="getOp" />
+      </node>
     </node>
   </root>
   <root id="9034131902191439577" />
@@ -2563,6 +2632,10 @@
   <root id="9034131902191635402">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="9034131902191635403">
       <property name="name" nameId="tpck.1169194664001" value="op" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278844295" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278844294">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="zy04.1262430001741498388" resolveInfo="getOp" />
+      </node>
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="9034131902191635404">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -2623,6 +2696,10 @@
     </node>
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.StringConceptPropertyDeclaration" typeId="tpce.1105725281956" id="2362837471611859418">
       <property name="name" nameId="tpck.1169194664001" value="sign" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278844301" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278844300">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="zy04.1262430001741498331" resolveInfo="getSign" />
+      </node>
     </node>
   </root>
   <root id="2362837471611859429" />

@@ -103,7 +103,7 @@ public abstract class BaseSNodeDescriptorIndex extends SingleEntryFileBasedIndex
             SModel model = doModelParsing(inputData);
 
             for (final SNode node : getRootsToIterate(model)) {
-              String persistentName = node.getPersistentProperty(SNodeUtil.property_INamedConcept_name);
+              String persistentName = node.getProperty(SNodeUtil.property_INamedConcept_name);
               String nodeName = (persistentName == null) ? "null" : persistentName;
               String conceptFqName = node.getConcept().getId();
               SModelReference modelRef = model.getSModelReference();

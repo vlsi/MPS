@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.EqualUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.util.*;
 
@@ -48,10 +49,10 @@ public class MatchingUtil {
 
     for (String propertyName : propertyNames) {
       SNode propertyDeclaration = SModelSearchUtil.findPropertyDeclaration(typeDeclaration, propertyName);
-      String propertyValue1 = node1.getProperty(propertyName);
-      String propertyValue2 = node2.getProperty(propertyName);
+      String propertyValue1 = SNodeAccessUtil.getProperty(node1, propertyName);
+      String propertyValue2 = SNodeAccessUtil.getProperty(node2, propertyName);
       if (propertyDeclaration == null) {
-        SNode diagnosticsNode = node1.getProperty(propertyName) != null ? node1 : node2;
+        SNode diagnosticsNode = SNodeAccessUtil.getProperty(node1, propertyName) != null ? node1 : node2;
         LOG.warning("can't find a property declaration for property " + propertyName + " in a concept " + typeDeclaration, diagnosticsNode);
         LOG.warning("try to compare just properties' internal values");
         if (!EqualUtil.equals(propertyValue1, propertyValue2)) return false;

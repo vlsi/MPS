@@ -18,6 +18,7 @@ package jetbrains.mps.nodeEditor.cellActions;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.EditorCellAction;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 /**
  * Author: Sergey Dmitriev.
@@ -37,6 +38,6 @@ public class CellAction_DeleteReference extends EditorCellAction {
   }
 
   public void execute(EditorContext context) {
-    mySource.setReferenceTarget(myRole, null);
+    SNodeAccessUtil.setReferenceTarget(mySource, myRole, null);
   }
 }

@@ -56,7 +56,10 @@ public class JavaParser {
     settings.put(CompilerOptions.OPTION_Source, CompilerOptions.VERSION_1_6);
     settings.put(CompilerOptions.OPTION_DocCommentSupport, "enabled");
     TypeNameResolver typeResolver = new TypeNameResolver(pkg);
-    ASTConverter converter = new ASTConverter(null, typeResolver, stubsMode);
+    ASTConverter converter = (FeatureKind.CLASS_STUB.equals(what) ?
+      new ASTConverter(null, typeResolver, stubsMode) :
+      new FullASTConverter(null, typeResolver)
+    );
 
     List<SNode> resultNodes = new ArrayList<SNode>();
     String resultPackageName = null;
@@ -81,12 +84,7 @@ public class JavaParser {
 
           List<SNode> roots = new ArrayList<SNode>();
           for (ASTNode astNode : astTypes) {
-            try {
-              ListSequence.fromList(roots).addElement(converter.convertRoot(astNode));
-            } catch (ReflectException e) {
-              // reflect exception will go away completely 
-              throw new RuntimeException(e);
-            }
+            ListSequence.fromList(roots).addElement(converter.convertRoot(astNode));
           }
           resultNodes = roots;
         }
@@ -108,11 +106,7 @@ public class JavaParser {
         ASTNode[] astNodes = util.parseClassBodyDeclarations(source, 0, source.length, settings, true, recovery);
         // type decl (inner), field, method 
         if (astNodes != null && astNodes.length > 0) {
-          try {
-            resultNodes = converter.convertClassContents(astNodes, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null));
-          } catch (ReflectException e) {
-            throw new RuntimeException(e);
-          }
+          resultNodes = converter.convertClassContents(astNodes, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null));
         }
 
         break;
@@ -125,15 +119,12 @@ public class JavaParser {
         }
 
         Statement[] stmts = absMethod.statements;
-        List<SNode> nodes = new ArrayList<SNode>();
+        // <node> 
 
         if (stmts != null && stmts.length > 0) {
           // TODO construct typeResolver from parent node context 
-          try {
-            resultNodes = converter.convertStatements(stmts);
-          } catch (ReflectException e) {
-            throw new RuntimeException(e);
-          }
+          SNode stmtList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
+          resultNodes = ((FullASTConverter) converter).convertStatementsOf(absMethod, stmtList);
         }
 
         break;
@@ -143,12 +134,14 @@ public class JavaParser {
     }
 
     // now insert comments 
-    attachComments(source, converter, util.recordedParsingInformation, converter.getCodeBlocks());
+    if (converter instanceof FullASTConverter) {
+      attachComments(source, ((FullASTConverter) converter), util.recordedParsingInformation, ((FullASTConverter) converter).getCodeBlocks());
+    }
 
     return new JavaParser.JavaParseResult(resultNodes, resultPackageName, problemDescription(util.recordedParsingInformation));
   }
 
-  public void attachComments(char[] source, ASTConverter converter, RecordedParsingInformation parseInfo, Iterable<ASTConverter.CodeBlock> blocks) {
+  public void attachComments(char[] source, FullASTConverter converter, RecordedParsingInformation parseInfo, Iterable<FullASTConverter.CodeBlock> blocks) {
 
     char[] content = source;
     int[][] comments = parseInfo.commentPositions;
@@ -157,8 +150,8 @@ public class JavaParser {
     final Map<SNode, Integer> positions = converter.getPositions();
     Map<Integer, SNode> javadocs = converter.getJavadocs();
 
-    Iterable<ASTConverter.CodeBlock> blcks = Sequence.fromIterable(blocks).sort(new Comparator<ASTConverter.CodeBlock>() {
-      public int compare(ASTConverter.CodeBlock a, ASTConverter.CodeBlock b) {
+    Iterable<FullASTConverter.CodeBlock> blcks = Sequence.fromIterable(blocks).sort(new Comparator<FullASTConverter.CodeBlock>() {
+      public int compare(FullASTConverter.CodeBlock a, FullASTConverter.CodeBlock b) {
         return a.getEndPos() - b.getEndPos();
       }
     }, true);
@@ -180,7 +173,7 @@ public class JavaParser {
       final int linestart = Math.abs(comment[0]);
       // find appropriate block 
       SNode block = null;
-      for (ASTConverter.CodeBlock blk : Sequence.fromIterable(blcks)) {
+      for (FullASTConverter.CodeBlock blk : Sequence.fromIterable(blcks)) {
         if (blk.getStartPos() <= linestart && linestart <= blk.getEndPos()) {
           block = blk.getStatementList();
           break;

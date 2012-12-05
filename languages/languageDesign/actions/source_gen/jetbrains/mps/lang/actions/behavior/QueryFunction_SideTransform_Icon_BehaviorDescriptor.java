@@ -5,9 +5,14 @@ package jetbrains.mps.lang.actions.behavior;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class QueryFunction_SideTransform_Icon_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor implements ISideTransform_String_BehaviorDescriptor {
   public QueryFunction_SideTransform_Icon_BehaviorDescriptor() {
+  }
+
+  public List<SNode> virtual_getApplicableConceptFunctionParameter_3044950653914717136(SConcept thisConcept) {
+    return QueryFunction_SideTransform_Icon_Behavior.virtual_getApplicableConceptFunctionParameter_3044950653914717136(thisConcept);
   }
 
   public List<SNode> virtual_getParameters_1213877374450(SNode thisNode) {

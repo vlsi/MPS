@@ -464,7 +464,7 @@ public class ConfReader {
       node.setProperty(property, (value != null ?
         value :
         ""
-      ), false);
+      ));
     }
   }
 

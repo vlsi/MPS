@@ -4,6 +4,10 @@ package jetbrains.mps.lang.structure.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
+import java.util.List;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class DeprecatedNodeAnnotation_Behavior {
   public static void init(SNode thisNode) {
@@ -11,5 +15,11 @@ public class DeprecatedNodeAnnotation_Behavior {
 
   public static String virtual_getRole_1262430001741497900(SConcept thisConcept) {
     return "deprecatedNode";
+  }
+
+  public static List<SNode> virtual_getAttributed_3044950653914717013(SConcept thisConcept) {
+    List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.lang.core.structure.NodeAttribute", "virtual_getAttributed_3044950653914717013", new Object[]{});
+    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)", "1224848324737"));
+    return result;
   }
 }

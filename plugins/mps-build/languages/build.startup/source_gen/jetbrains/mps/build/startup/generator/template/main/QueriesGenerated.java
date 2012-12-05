@@ -14,6 +14,7 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_3885435385580638724(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -146,7 +147,7 @@ public class QueriesGenerated {
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GLine", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.gtext.structure.GText", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("text", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_3, "text", (String) parameter_1);
     quotedNode_2.addChild("item", quotedNode_3);
     return quotedNode_2;
   }

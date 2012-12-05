@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.PropertySupport;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class PropertySubstituteAction extends AbstractNodeSubstituteAction {
   private String myPropertyName;
@@ -40,7 +41,7 @@ public class PropertySubstituteAction extends AbstractNodeSubstituteAction {
   }
 
   public SNode doSubstitute(String pattern) {
-    getSourceNode().setProperty(myPropertyName, myPropertyValue);
+    SNodeAccessUtil.setProperty(getSourceNode(), myPropertyName, myPropertyValue);
     return null;
   }
 }

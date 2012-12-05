@@ -102,10 +102,6 @@ public class QueriesGenerated {
     return PersistentPropertyDeclaration_Behavior.addMyPrefix_6314556899428615272(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "name"));
   }
 
-  public static Object propertyMacro_GetPropertyValue_3754890006475720275(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGeneratedClassName_946964771156905488", new Object[]{});
-  }
-
   public static Object propertyMacro_GetPropertyValue_7024026323278183387(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
@@ -114,7 +110,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
-  public static Object propertyMacro_GetPropertyValue_3754890006475707276(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_3754890006475720275(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGeneratedClassName_946964771156905488", new Object[]{});
   }
 
@@ -138,8 +134,8 @@ public class QueriesGenerated {
     return AbstractRunConfigurationExecutor_Behavior.call_getCanExecuteMethodName_7806358006983616236(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_7460665385311866838(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return RunConfiguration_Behavior.call_getGeneratedFactoryName_2256484787298832736(_context.getNode());
+  public static Object propertyMacro_GetPropertyValue_3754890006475707276(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGeneratedClassName_946964771156905488", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1051814066736514060(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -148,6 +144,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_4064954644153047831(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7460665385311866838(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return RunConfiguration_Behavior.call_getGeneratedFactoryName_2256484787298832736(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_7806358006983619352(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -195,10 +195,6 @@ public class QueriesGenerated {
     return fullPath.substring(fullPath.lastIndexOf("/") + 1);
   }
 
-  public static Object propertyMacro_GetPropertyValue_4013739085301519620(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGeneratedClassName_946964771156905488", new Object[]{});
-  }
-
   public static Object propertyMacro_GetPropertyValue_2256484787298832716(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode configuration = SNodeOperations.cast(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "configuration", true), "persistentConfiguration", false), "jetbrains.mps.execution.configurations.structure.RunConfiguration");
     return IGeneratedToClass_Behavior.call_getNamespace_2256484787298834694(configuration) + "." + RunConfiguration_Behavior.call_getGeneratedFactoryName_2256484787298832736(configuration);
@@ -208,16 +204,16 @@ public class QueriesGenerated {
     return _context.createUniqueName(BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGeneratedClassName_946964771156905488", new Object[]{}), SNodeOperations.getContainingRoot(_context.getNode()));
   }
 
+  public static Object propertyMacro_GetPropertyValue_4013739085301519620(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGeneratedClassName_946964771156905488", new Object[]{});
+  }
+
   public static Object propertyMacro_GetPropertyValue_6519221734259390311(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator"), "configuration", false), "virtual_getFullName_946964771156905503", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_6519221734259407644(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "creator", true), "jetbrains.mps.execution.configurations.structure.RunConfigurationCreator"), "configuration", false), "virtual_getFullName_946964771156905503", new Object[]{});
-  }
-
-  public static Object propertyMacro_GetPropertyValue_4929913054057210699(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGeneratedClassName_946964771156905488", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_4929913054057211148(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -254,6 +250,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_2137130439060060173(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BaseMpsBeforeTaskProvider.getConfigureMethodName();
+  }
+
+  public static Object propertyMacro_GetPropertyValue_4929913054057210699(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGeneratedClassName_946964771156905488", new Object[]{});
   }
 
   public static Object referenceMacro_GetReferent_5475888311765592552(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -316,12 +316,12 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "icon", true), "IconResourceToIconField");
   }
 
-  public static Object referenceMacro_GetReferent_3257967158569773573(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "PersitentTemplatePropertyToEditorParameter");
-  }
-
   public static Object referenceMacro_GetReferent_3257967158569773543(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "PersitentTemplatePropertyToEditorFieldDeclaration");
+  }
+
+  public static Object referenceMacro_GetReferent_3257967158569773573(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "PersitentTemplatePropertyToEditorParameter");
   }
 
   public static Object referenceMacro_GetReferent_5812151570929690853(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -387,10 +387,6 @@ public class QueriesGenerated {
     return Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(_context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "BeforeTaskToClass"))).first();
   }
 
-  public static boolean ifMacro_Condition_4371737370140155778(final IOperationContext operationContext, final IfMacroContext _context) {
-    return RunConfigurationExecutor_Behavior.call_isDebuggable_442015021861764808(_context.getNode());
-  }
-
   public static boolean ifMacro_Condition_6226796386650441487(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "debuggerConfiguration", true) != null);
   }
@@ -404,6 +400,10 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7806358006983617866(final IOperationContext operationContext, final IfMacroContext _context) {
+    return RunConfigurationExecutor_Behavior.call_isDebuggable_442015021861764808(_context.getNode());
+  }
+
+  public static boolean ifMacro_Condition_4371737370140155778(final IOperationContext operationContext, final IfMacroContext _context) {
     return RunConfigurationExecutor_Behavior.call_isDebuggable_442015021861764808(_context.getNode());
   }
 
@@ -579,11 +579,11 @@ public class QueriesGenerated {
     return beforeTaskCalls;
   }
 
-  public static Iterable sourceNodesQuery_7684700299064368359(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_3257967158569773517(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return PersistentConfiguration_Behavior.call_getTemplateProperties_946964771156066510(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_3257967158569773517(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+  public static Iterable sourceNodesQuery_7684700299064368359(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return PersistentConfiguration_Behavior.call_getTemplateProperties_946964771156066510(_context.getNode());
   }
 

@@ -8,10 +8,11 @@
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="35" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="tps4" modelUID="r:00000000-0000-4000-0000-011c895904d8(jetbrains.mps.build.packaging.structure)" version="8" implicit="yes" />
+  <import index="tpsf" modelUID="r:00000000-0000-4000-0000-011c895904d3(jetbrains.mps.build.packaging.behavior)" version="-1" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1202916958754">
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="Layout" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="build script" />
@@ -114,8 +115,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1203598322527" resolveInfo="File" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1205335290326">
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="Variable" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
@@ -326,8 +327,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1203598300291" resolveInfo="AbstractProjectComponent" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="701559220729212645">
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="Block" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="projectComponents" />
@@ -510,6 +511,10 @@
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1233309050521">
       <property name="name" nameId="tpck.1169194664001" value="acceptFiles" />
       <property name="inheritable" nameId="tpce.1218571350029" value="true" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278838720" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278838719">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpsf.1262430001741497846" resolveInfo="acceptFiles" />
+      </node>
     </node>
   </root>
   <root id="1203598322527">
@@ -567,6 +572,10 @@
   <root id="1203617883391">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1203619938976">
       <property name="name" nameId="tpck.1169194664001" value="cleanAfterTheJob" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843141" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278843140">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpsf.1262430001741498148" resolveInfo="cleanAfterTheJob" />
+      </node>
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1203617897549">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
@@ -898,6 +907,10 @@
   <root id="1233321544558">
     <node role="conceptPropertyDeclaration" roleId="tpce.1137467167200" type="tpce.BooleanConceptPropertyDeclaration" typeId="tpce.1105725240314" id="1233321577500">
       <property name="name" nameId="tpck.1169194664001" value="canStartFromBasedir" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.DeprecatedNodeAnnotation" typeId="tpce.1224240836180" id="4694041203278843053" />
+      <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpce.MigratedToMethodAnnotation" typeId="tpce.8080932314785812236" id="4694041203278843052">
+        <link role="method" roleId="tpce.8080932314785812847" targetNodeId="tpsf.1262430001741498253" resolveInfo="canStartFromBasedir" />
+      </node>
     </node>
   </root>
   <root id="1234531699390">

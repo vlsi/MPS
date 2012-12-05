@@ -85,7 +85,7 @@ public final class StaticReference extends SReferenceBase {
       sb.append(" is disposed\n");
       SNode sourceNode = getSourceNode();
       sb.append("source node is: name = ");
-      sb.append(sourceNode.getPersistentProperty(SNodeUtil.property_INamedConcept_name));
+      sb.append(sourceNode.getProperty(SNodeUtil.property_INamedConcept_name));
       sb.append(", model = ");
       sb.append(sourceNode.getModel());
       sb.append(", id = ");

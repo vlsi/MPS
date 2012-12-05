@@ -4,6 +4,8 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public interface IMember_BehaviorDescriptor extends INamedConcept_BehaviorDescriptor {
   public SNode virtual_getVisiblity_1213877352965(SNode thisNode);
@@ -11,4 +13,5 @@ public interface IMember_BehaviorDescriptor extends INamedConcept_BehaviorDescri
   public SNode virtual_createOperation_1213877353000(SNode thisNode);
   public boolean virtual_canBeReferent_8179323502814657526(SNode thisNode, SNode referentConcept);
   public boolean virtual_canOperationBeChild_4593153787954614840(SNode thisNode, SNode parentNode);
+  public List<SNode> virtual_getOperationConcept_3044950653914717125(SConcept thisConcept);
 }

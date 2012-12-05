@@ -8,9 +8,21 @@
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.setReferenceTarget(java.lang.String,org.jetbrains.mps.openapi.model.SNode)</string> 
   </void> 
   <void method="add"> 
-   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.visitChildren(org.jetbrains.mps.openapi.model.SNode$ChildVisitor)</string> 
+   <string>public abstract java.lang.String org.jetbrains.mps.openapi.model.SNode.getRoleInParent()</string>
   </void> 
-  <void method="add"> 
+  <void method="add">
+   <string>public abstract java.lang.Iterable&lt;java.lang.Object&gt; org.jetbrains.mps.openapi.model.SNode.getUserObjectKeys()</string>
+  </void>
+  <void method="add">
+   <string>public abstract org.jetbrains.mps.openapi.model.SNode org.jetbrains.mps.openapi.model.SNode.getNextSibling()</string>
+  </void>
+  <void method="add">
+   <string>public abstract java.lang.Iterable&lt;java.lang.String&gt; org.jetbrains.mps.openapi.model.SNode.getPropertyNames()</string>
+  </void>
+  <void method="add">
+   <string>public abstract org.jetbrains.mps.openapi.model.SNode org.jetbrains.mps.openapi.model.SNode.getPrevSibling()</string>
+  </void>
+  <void method="add">
    <string>public abstract java.lang.String org.jetbrains.mps.openapi.model.SNode.getName()</string> 
   </void> 
   <void method="add"> 
@@ -58,16 +70,7 @@
   <void method="add"> 
    <string>public abstract void org.jetbrains.mps.openapi.model.SNode.removeChild(org.jetbrains.mps.openapi.model.SNode)</string> 
   </void> 
-  <void method="add"> 
-   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.visitProperties(org.jetbrains.mps.openapi.model.SNode$PropertyVisitor)</string> 
-  </void> 
-  <void method="add"> 
-   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.visitUserObjects(org.jetbrains.mps.openapi.model.SNode$UserObjectVisitor)</string> 
-  </void> 
-  <void method="add"> 
-   <string>public abstract void org.jetbrains.mps.openapi.model.SNode.visitReferences(org.jetbrains.mps.openapi.model.SNode$ReferenceVisitor)</string> 
-  </void> 
-  <void method="add"> 
+  <void method="add">
    <string>public abstract org.jetbrains.mps.openapi.model.SNode org.jetbrains.mps.openapi.model.SNode.getNextChild(org.jetbrains.mps.openapi.model.SNode)</string> 
   </void> 
   <void method="add"> 

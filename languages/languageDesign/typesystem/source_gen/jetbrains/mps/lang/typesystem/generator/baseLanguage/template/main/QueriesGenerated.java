@@ -43,6 +43,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static boolean createRootRule_Condition_1175254554283(final IOperationContext operationContext, final CreateRootRuleContext _context) {
@@ -355,11 +356,6 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.lang.typesystem.structure.WasSelectedNodeOperation");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1174643589864(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode ruleConcept = SNodeOperations.getConceptDeclaration(_context.getNode());
-    return SPropertyOperations.getString(_context.getNode(), "name") + "_" + ruleConcept;
-  }
-
   public static Object propertyMacro_GetPropertyValue_1174644028587(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "applicableNode", true);
     SNode conceptDecl = SLinkOperations.getTarget(SNodeOperations.cast(applicableNode, "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false);
@@ -379,6 +375,11 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1176545770677(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(SNodeOperations.cast(_context.getNode(), "jetbrains.mps.lang.typesystem.structure.AbstractCheckingRule"), "overrides");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1174643589864(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode ruleConcept = SNodeOperations.getConceptDeclaration(_context.getNode());
+    return SPropertyOperations.getString(_context.getNode(), "name") + "_" + ruleConcept;
   }
 
   public static Object propertyMacro_GetPropertyValue_1198254524750(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -437,10 +438,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.typesystem.structure.OverloadedOpTypeRule_OneTypeSpecified"), "isStrong");
   }
 
-  public static Object propertyMacro_GetPropertyValue_7806648416361380827(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.createUniqueName("CustomOverloadedOperationsTypesProvider", null);
-  }
-
   public static Object propertyMacro_GetPropertyValue_7806648416361380890(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "leftIsExact");
   }
@@ -455,6 +452,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_7806648416361380938(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getBoolean(_context.getNode(), "leftIsStrong");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_7806648416361380827(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return _context.createUniqueName("CustomOverloadedOperationsTypesProvider", null);
   }
 
   public static Object propertyMacro_GetPropertyValue_1227106551298(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -633,11 +634,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "skipsError");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1188910585269(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode ruleConcept = SNodeOperations.getConceptDeclaration(_context.getNode());
-    return SPropertyOperations.getString(_context.getNode(), "name") + "_" + ruleConcept;
-  }
-
   public static Object propertyMacro_GetPropertyValue_1188831219936(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableNode = SLinkOperations.getTarget(_context.getNode(), "applicableNode", true);
     SNode conceptDecl = SLinkOperations.getTarget(SNodeOperations.cast(applicableNode, "jetbrains.mps.lang.typesystem.structure.ConceptReference"), "concept", false);
@@ -664,6 +660,11 @@ public class QueriesGenerated {
     return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1188910585269(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode ruleConcept = SNodeOperations.getConceptDeclaration(_context.getNode());
+    return SPropertyOperations.getString(_context.getNode(), "name") + "_" + ruleConcept;
+  }
+
   public static Object propertyMacro_GetPropertyValue_5830155447076591788(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return PatternVarsUtil.getFieldName(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false));
   }
@@ -682,11 +683,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_5830155447076591903(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return PatternVarsUtil.getFieldName(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false));
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1201609470053(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    SNode ruleConcept = SNodeOperations.getConceptDeclaration(_context.getNode());
-    return SPropertyOperations.getString(_context.getNode(), "name") + "_" + ruleConcept;
   }
 
   public static Object propertyMacro_GetPropertyValue_1201609469872(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -713,6 +709,11 @@ public class QueriesGenerated {
     SNode patternExpr = SLinkOperations.getTarget(SNodeOperations.cast(applicableNode, "jetbrains.mps.lang.typesystem.structure.PatternCondition"), "pattern", true);
     SNode conceptDecl = SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(patternExpr, "patternNode", true));
     return SNodeOperations.getModel(conceptDecl).getSModelFqName() + "." + SPropertyOperations.getString(conceptDecl, "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1201609470053(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    SNode ruleConcept = SNodeOperations.getConceptDeclaration(_context.getNode());
+    return SPropertyOperations.getString(_context.getNode(), "name") + "_" + ruleConcept;
   }
 
   public static Object propertyMacro_GetPropertyValue_1205766834368(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -924,16 +925,16 @@ public class QueriesGenerated {
     return null;
   }
 
-  public static Object propertyMacro_GetPropertyValue_6981684633700507644(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name") + "_DependentComputation";
-  }
-
   public static Object propertyMacro_GetPropertyValue_6981684633700629175(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "applicableConcept", false), "virtual_getFqName_1213877404258", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_160921426017522098(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(_context.getNode(), "blockingNodeConcept", false), "virtual_getFqName_1213877404258", new Object[]{});
+  }
+
+  public static Object propertyMacro_GetPropertyValue_6981684633700507644(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name") + "_DependentComputation";
   }
 
   public static Object propertyMacro_GetPropertyValue_8090891477833133073(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1134,16 +1135,16 @@ public class QueriesGenerated {
     return ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).toListSequence()).getElement(1);
   }
 
+  public static Object referenceMacro_GetReferent_5830155447076591806(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return PatternVarsUtil.getFieldTypeReference(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false));
+  }
+
   public static Object referenceMacro_GetReferent_5830155447076591760(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode matchStatementItem = SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.lang.typesystem.structure.MatchStatementItem", false, false);
     if (matchStatementItem != null) {
       return _context.getOutputNodeByInputNodeAndMappingLabel(matchStatementItem, "matchingPattern");
     }
     return null;
-  }
-
-  public static Object referenceMacro_GetReferent_5830155447076591806(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return PatternVarsUtil.getFieldTypeReference(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false));
   }
 
   public static Object referenceMacro_GetReferent_5830155447076592041(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -1182,16 +1183,16 @@ public class QueriesGenerated {
     return PatternVarsUtil.getFieldTypeReference(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false));
   }
 
+  public static Object referenceMacro_GetReferent_5830155447076591921(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return PatternVarsUtil.getFieldTypeReference(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false));
+  }
+
   public static Object referenceMacro_GetReferent_5830155447076591876(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     SNode coerceStatement = SNodeOperations.getAncestor(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false), "jetbrains.mps.lang.typesystem.structure.CoerceStatement", false, false);
     if (coerceStatement != null) {
       return _context.getOutputNodeByInputNodeAndMappingLabel(coerceStatement, "coercedPattern");
     }
     return null;
-  }
-
-  public static Object referenceMacro_GetReferent_5830155447076591921(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return PatternVarsUtil.getFieldTypeReference(SLinkOperations.getTarget(_context.getNode(), "patternVarDecl", false));
   }
 
   public static Object referenceMacro_GetReferent_1227108582180(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -2076,14 +2077,14 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
-  public static SNode sourceNodeQuery_1215520871184(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "body", true);
-  }
-
   public static SNode sourceNodeQuery_4146464629738104945(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode result = SNodeOperations.copyNode(_context.getNode());
     result.putUserObject("origin", _context.getNode());
     return result;
+  }
+
+  public static SNode sourceNodeQuery_1215520871184(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "body", true);
   }
 
   public static SNode sourceNodeQuery_3343519494168273485(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -2686,7 +2687,7 @@ parametersLoop:
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("name", "typeCheckingContext");
+    SNodeAccessUtil.setProperty(quotedNode_1, "name", "typeCheckingContext");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)"), SNodeId.fromString("~TypeCheckingContext")));
     quotedNode_1.addChild("type", quotedNode_2);
@@ -2697,7 +2698,7 @@ parametersLoop:
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("name", "typeCheckingContext");
+    SNodeAccessUtil.setProperty(quotedNode_1, "name", "typeCheckingContext");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)"), SNodeId.fromString("~TypeCheckingContext")));
     quotedNode_1.addChild("type", quotedNode_2);
@@ -2722,7 +2723,7 @@ parametersLoop:
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("name", "typeCheckingContext");
+    SNodeAccessUtil.setProperty(quotedNode_1, "name", "typeCheckingContext");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)"), SNodeId.fromString("~TypeCheckingContext")));
     quotedNode_1.addChild("type", quotedNode_2);
@@ -2747,8 +2748,8 @@ parametersLoop:
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("name", "typeCheckingContext");
-    quotedNode_1.setProperty("isFinal", "true");
+    SNodeAccessUtil.setProperty(quotedNode_1, "name", "typeCheckingContext");
+    SNodeAccessUtil.setProperty(quotedNode_1, "isFinal", "true");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)"), SNodeId.fromString("~TypeCheckingContext")));
     quotedNode_1.addChild("type", quotedNode_2);
@@ -2766,7 +2767,7 @@ parametersLoop:
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("name", "typeCheckingContext");
+    SNodeAccessUtil.setProperty(quotedNode_1, "name", "typeCheckingContext");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)"), SNodeId.fromString("~TypeCheckingContext")));
     quotedNode_1.addChild("type", quotedNode_2);
@@ -2777,8 +2778,8 @@ parametersLoop:
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("name", "typeCheckingContext");
-    quotedNode_1.setProperty("isFinal", "true");
+    SNodeAccessUtil.setProperty(quotedNode_1, "name", "typeCheckingContext");
+    SNodeAccessUtil.setProperty(quotedNode_1, "isFinal", "true");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)"), SNodeId.fromString("~TypeCheckingContext")));
     quotedNode_1.addChild("type", quotedNode_2);
@@ -2800,7 +2801,7 @@ parametersLoop:
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("name", "typeCheckingContext");
+    SNodeAccessUtil.setProperty(quotedNode_1, "name", "typeCheckingContext");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)"), SNodeId.fromString("~TypeCheckingContext")));
     quotedNode_1.addChild("type", quotedNode_2);
@@ -2840,7 +2841,7 @@ parametersLoop:
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalVariableReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("name", "typeCheckingContext");
+    SNodeAccessUtil.setProperty(quotedNode_1, "name", "typeCheckingContext");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.setReference("classifier", SReference.create("classifier", quotedNode_2, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.typesystem.inference(MPS.Core/jetbrains.mps.typesystem.inference@java_stub)"), SNodeId.fromString("~TypeCheckingContext")));
     quotedNode_1.addChild("type", quotedNode_2);

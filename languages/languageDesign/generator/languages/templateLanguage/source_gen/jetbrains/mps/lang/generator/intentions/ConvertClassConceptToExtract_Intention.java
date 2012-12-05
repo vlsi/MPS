@@ -18,6 +18,7 @@ import java.util.HashMap;
 import java.util.List;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertClassConceptToExtract_Intention implements IntentionFactory {
@@ -93,10 +94,10 @@ public class ConvertClassConceptToExtract_Intention implements IntentionFactory 
         newNode.addChild(child.getRoleInParent(), mapping.get(child));
       }
       for (SReference reference : node.getReferences()) {
-        newNode.setReferenceTarget(reference.getRole(), reference.getTargetNode());
+        SNodeAccessUtil.setReferenceTarget(newNode, reference.getRole(), reference.getTargetNode());
       }
       for (String propertyName : jetbrains.mps.util.SNodeOperations.getProperties(node).keySet()) {
-        newNode.setProperty(propertyName, node.getProperty(propertyName));
+        SNodeAccessUtil.setProperty(newNode, propertyName, SNodeAccessUtil.getProperty(node, propertyName));
       }
       SNodeOperations.replaceWithAnother(node, newNode);
     }

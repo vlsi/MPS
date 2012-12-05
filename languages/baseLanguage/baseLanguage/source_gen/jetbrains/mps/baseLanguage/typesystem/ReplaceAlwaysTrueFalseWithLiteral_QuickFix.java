@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ReplaceAlwaysTrueFalseWithLiteral_QuickFix extends QuickFix_Runtime {
   public ReplaceAlwaysTrueFalseWithLiteral_QuickFix() {
@@ -23,7 +24,7 @@ public class ReplaceAlwaysTrueFalseWithLiteral_QuickFix extends QuickFix_Runtime
   private static SNode _quotation_createNode_ndr37f_a0a0a0(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("value", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
 }

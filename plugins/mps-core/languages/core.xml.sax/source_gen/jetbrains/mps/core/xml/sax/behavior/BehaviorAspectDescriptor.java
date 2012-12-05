@@ -14,8 +14,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 0:
         return new XMLSAXAttributeHandler_BehaviorDescriptor();
-      case 1:
-        return new XMLSAXAttributeHandler_value_BehaviorDescriptor();
       case 2:
         return new XMLSAXAttributeReference_BehaviorDescriptor();
       case 3:
@@ -46,10 +44,12 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new XMLSAXParser_BehaviorDescriptor();
       case 16:
         return new XMLSAXTextHandler_BehaviorDescriptor();
-      case 17:
-        return new XMLSAXTextHandler_value_BehaviorDescriptor();
       case 18:
         return new XMLSAXTextRule_BehaviorDescriptor();
+      case 1:
+        return new XMLSAXAttributeHandler_value_BehaviorDescriptor();
+      case 17:
+        return new XMLSAXTextHandler_value_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

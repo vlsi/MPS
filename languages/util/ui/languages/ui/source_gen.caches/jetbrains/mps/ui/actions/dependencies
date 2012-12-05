@@ -34,6 +34,7 @@
     <classNode dependClassName="jetbrains.mps.ui.modeling.behavior.UIObject_Behavior" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
   </dependency>
 </dependenciesRoot>
 

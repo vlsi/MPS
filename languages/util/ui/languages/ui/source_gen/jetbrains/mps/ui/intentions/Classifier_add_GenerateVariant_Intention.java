@@ -30,6 +30,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Classifier_add_GenerateVariant_Intention implements IntentionFactory {
   public Classifier_add_GenerateVariant_Intention() {
@@ -79,7 +80,7 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
   }
 
   private List<String> parameter(final SNode node, final EditorContext editorContext) {
-    final SNode gv = SLinkOperations.getTarget(_quotation_createNode_3484lm_a0a0a0_0(), "classifier", false);
+    final SNode gv = SLinkOperations.getTarget(_quotation_createNode_3484lm_a0a0a0(), "classifier", false);
     Iterable<String> setgv = ListSequence.fromList(SLinkOperations.getTargets(ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode ann) {
         return SLinkOperations.getTarget(ann, "annotation", false) == gv;
@@ -108,7 +109,7 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      final SNode gv = SLinkOperations.getTarget(_quotation_createNode_3484lm_a0a0a0(), "classifier", false);
+      final SNode gv = SLinkOperations.getTarget(_quotation_createNode_3484lm_a0a0a0_0(), "classifier", false);
       SNode ann = ListSequence.fromList(SLinkOperations.getTargets(node, "annotation", true)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode ann) {
           return SLinkOperations.getTarget(ann, "annotation", false) == gv;
@@ -146,14 +147,14 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
     }
   }
 
-  private static SNode _quotation_createNode_3484lm_a0a0a0_0() {
+  private static SNode _quotation_createNode_3484lm_a0a0a0() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)"), SNodeId.fromString("8590671622324268192")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_3484lm_a0a0a0() {
+  private static SNode _quotation_createNode_3484lm_a0a0a0_0() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)"), SNodeId.fromString("8590671622324268192")));
@@ -177,7 +178,7 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
   private static SNode _quotation_createNode_3484lm_a0a3a0(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("value", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
 }

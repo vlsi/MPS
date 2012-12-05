@@ -29,6 +29,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.MPSDataKeys;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -119,11 +120,11 @@ public class ProjectPaneDnDListener implements DropTargetListener {
 
         for (Pair<SNode, String> sourceNode : getNodesToMove(targetModel, targetPackage, sourceNodes)) {
           String fullTargetPack = getFullTargetPack(targetPackage, sourceNode.o2);
-          sourceNode.o1.setProperty(SModelTreeNode.PACK, fullTargetPack);
+          SNodeAccessUtil.setProperty(sourceNode.o1, SModelTreeNode.PACK, fullTargetPack);
           if (SNodeOperations.isInstanceOf(sourceNode.o1, SNodeUtil.concept_AbstractConceptDeclaration)) {
             List<SNode> allAspects = SNodeUtil.findAllAspects(sourceNode.o1);
             for (SNode aspect : allAspects) {
-              aspect.setProperty(SModelTreeNode.PACK, fullTargetPack);
+              SNodeAccessUtil.setProperty(aspect, SModelTreeNode.PACK, fullTargetPack);
             }
           }
         }
@@ -148,7 +149,7 @@ public class ProjectPaneDnDListener implements DropTargetListener {
   }
 
   private String getVirtualPackage(final SNode node) {
-    String result = node.getProperty(SNodeUtil.property_BaseConcept_virtualPackage);
+    String result = SNodeAccessUtil.getProperty(node, SNodeUtil.property_BaseConcept_virtualPackage);
     return (result == null) ? "" : result;
   }
 

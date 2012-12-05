@@ -7,6 +7,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
@@ -29,7 +30,7 @@ public class TypesCheckOperation_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createHorizontal(editorContext, node);
     editorCell.setCellId("Collection_649p0a_a");
     editorCell.addEditorCell(this.createConstant_649p0a_a0(editorContext, node));
-    if (node.hasProperty("operationName")) {
+    if (SNodeAccessUtil.hasProperty(node, "operationName")) {
       editorCell.addEditorCell(this.createNonEmptyProperty_649p0a_b0(editorContext, node));
     }
     return editorCell;

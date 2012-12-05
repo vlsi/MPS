@@ -7,6 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class InlineController_Behavior {
   public static void init(SNode thisNode) {
@@ -22,7 +23,7 @@ public class InlineController_Behavior {
     SNode quotedNode_4 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.FunctionType", null, null, GlobalScope.getInstance(), false);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.EventType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReferenceTarget("event", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "event", (SNode) parameter_1);
     quotedNode_2.addChild("parameterType", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VoidType", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.addChild("resultType", quotedNode_4);

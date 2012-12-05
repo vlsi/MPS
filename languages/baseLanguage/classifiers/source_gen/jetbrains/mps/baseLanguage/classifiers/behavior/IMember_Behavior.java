@@ -5,10 +5,14 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import java.util.List;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import org.jetbrains.mps.openapi.language.SConcept;
+import java.util.ArrayList;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class IMember_Behavior {
@@ -20,7 +24,7 @@ public class IMember_Behavior {
   }
 
   public static SNode virtual_getOperationConcept_1213877352972(SNode thisNode) {
-    SNode memberOperationConcept = ((SNode) ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "operationConcept")).first());
+    SNode memberOperationConcept = ((SNode) ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getOperationConcept_3044950653914717125", new Object[]{})).first());
     if (memberOperationConcept == null) {
       throw new RuntimeException("Please set operationConcept in " + SNodeOperations.getConceptDeclaration(thisNode) + " concept");
     }
@@ -43,6 +47,10 @@ public class IMember_Behavior {
 
   public static boolean virtual_canOperationBeChild_4593153787954614840(SNode thisNode, SNode parentNode) {
     return true;
+  }
+
+  public static List<SNode> virtual_getOperationConcept_3044950653914717125(SConcept thisConcept) {
+    return ListSequence.fromList(new ArrayList<SNode>());
   }
 
   @Deprecated

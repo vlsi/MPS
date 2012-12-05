@@ -899,7 +899,11 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_1423329322227367931(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     if (Node_ConceptMethodCall_Behavior.call_isSuperMethodCall_1521124695248146659(_context.getNode())) {
-      return "invokeSuper";
+      if (SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), "isStatic")) {
+        return "invokeSuperStatic";
+      } else {
+        return "invokeSuper";
+      }
     }
     String methodName = "invoke";
     if (Node_ConceptMethodCall_Behavior.call_isVirtualMethodCall_1213877437823(_context.getNode())) {
@@ -949,7 +953,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_3425232330194975832(final IOperationContext operationContext, final IfMacroContext _context) {
-    return SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), "isStatic");
+    return SPropertyOperations.getBoolean(SLinkOperations.getTarget(_context.getNode(), "baseMethodDeclaration", false), "isStatic") && !(Node_ConceptMethodCall_Behavior.call_isSuperMethodCall_1521124695248146659(_context.getNode()));
   }
 
   public static boolean ifMacro_Condition_1423329322227367857(final IOperationContext operationContext, final IfMacroContext _context) {

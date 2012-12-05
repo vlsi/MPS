@@ -39,7 +39,7 @@ public class SNodeAccessUtil {
 
   public static boolean hasProperty(jetbrains.mps.smodel.SNode node, String name) {
     node.hasProperty(name); //todo this is to invoke corresponding read access. try to remove it by merging 2 types of access
-    String property_internal = node.getPersistentProperty(name);
+    String property_internal = node.getProperty(name);
     return !SModelUtil_new.isEmptyPropertyValue(property_internal);
   }
 

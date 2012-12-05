@@ -1640,8 +1640,8 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     for (Tuples._2<SNode, String> jarInFolder : ((JavaModulesClosure) _context.getVariable("var:depsClosure")).getExternalJarsInFolder()) {
       SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-      loopnode.setReferent("targetJar", jarInFolder._0(), false);
-      loopnode.setProperty("suffix", jarInFolder._1(), false);
+      loopnode.setReferenceTarget("targetJar", jarInFolder._0());
+      loopnode.setProperty("suffix", jarInFolder._1());
       ListSequence.fromList(result).addElement(loopnode);
     }
     return result;
@@ -1717,7 +1717,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     for (String fname : folders) {
       SNode loopnode = SModelOperations.createNewNode(_context.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-      loopnode.setProperty("folderName", fname, false);
+      loopnode.setProperty("folderName", fname);
       ListSequence.fromList(result).addElement(loopnode);
     }
     return result;

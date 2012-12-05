@@ -18,12 +18,12 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.CopyUtil;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.presentation.NodePresentationUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import javax.swing.Icon;
 import java.util.Arrays;
@@ -90,7 +90,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
       if (!SModelUtil.isAcceptableTarget(linkDeclaration, parameterNode)) {
         throw new RuntimeException("Couldn't set referent node: " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(parameterNode));
       }
-      getSourceNode().setReferenceTarget(SModelUtil.getGenuineLinkRole(linkDeclaration), parameterNode);
+      SNodeAccessUtil.setReferenceTarget(getSourceNode(), SModelUtil.getGenuineLinkRole(linkDeclaration), parameterNode);
     }
     return null;
   }
@@ -115,7 +115,7 @@ public class DefaultReferentNodeSubstituteAction extends AbstractNodeSubstituteA
     if (parent == null) {
       return null;
     }
-    sourceNode.setReferenceTarget(role, (SNode) getParameterObject());
+    SNodeAccessUtil.setReferenceTarget(sourceNode, role, (SNode) getParameterObject());
     SNode nodeToEquateCopy = CopyUtil.copy(nodeToEquate);
     return TypeChecker.getInstance().getTypeOf(nodeToEquateCopy);
   }

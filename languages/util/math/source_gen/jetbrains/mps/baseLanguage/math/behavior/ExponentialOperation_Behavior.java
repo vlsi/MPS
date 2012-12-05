@@ -4,6 +4,10 @@ package jetbrains.mps.baseLanguage.math.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ExponentialOperation_Behavior {
   public static void init(SNode thisNode) {
@@ -11,5 +15,11 @@ public class ExponentialOperation_Behavior {
 
   public static String virtual_getOperationSymbol_1262430001741497831(SConcept thisConcept) {
     return "?";
+  }
+
+  public static List<SNode> virtual_getAllowedSubstituends_3044950653914716992(SConcept thisConcept) {
+    List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
+    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:cb1a36c8-1ffb-415a-aba8-afb9dc042d1b(jetbrains.mps.baseLanguage.math.structure)", "7255837154369354272"));
+    return result;
   }
 }

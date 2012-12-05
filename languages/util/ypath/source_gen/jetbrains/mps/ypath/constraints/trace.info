@@ -183,7 +183,7 @@
     <nodeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="36" startPosition="37" endLine="37" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="41" startPosition="76" endLine="42" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213104846080" fileName="IFeature_Constraints.java" startLine="45" startPosition="30" endLine="46" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4145095496975148696" fileName="IFeature_Constraints.java" startLine="49" startPosition="9" endLine="50" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4145095496975148696" fileName="IFeature_Constraints.java" startLine="49" startPosition="9" endLine="50" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="52" startPosition="7" endLine="53" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="57" startPosition="83" endLine="58" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="61" startPosition="44" endLine="62" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -201,7 +201,7 @@
     <nodeInfo nodeId="1213104846066" fileName="IFeature_Constraints.java" startLine="43" startPosition="62" endLine="48" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="1225096928354" fileName="IFeature_Constraints.java" startLine="74" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1213104846063" fileName="IFeature_Constraints.java" startLine="42" startPosition="40" endLine="49" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="42" startPosition="40" endLine="50" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="42" startPosition="40" endLine="50" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1213104846108" fileName="IFeature_Constraints.java" startLine="72" startPosition="125" endLine="80" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="40" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setValue#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/IScope;)V" />
     <nodeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="69" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createSearchScopeOrListOfNodes#(Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/smodel/runtime/ReferenceConstraintsContext;)Ljava/lang/Object;" />
@@ -229,8 +229,8 @@
     <scopeInfo nodeId="1225096928354" fileName="IFeature_Constraints.java" startLine="74" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="1225096928354" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1213104846062" fileName="IFeature_Constraints.java" startLine="42" startPosition="40" endLine="50" endPosition="108" />
-    <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="41" startPosition="76" endLine="50" endPosition="108">
+    <scopeInfo nodeId="1213104846062" fileName="IFeature_Constraints.java" startLine="42" startPosition="40" endLine="50" endPosition="101" />
+    <scopeInfo nodeId="1213104846059" fileName="IFeature_Constraints.java" startLine="41" startPosition="76" endLine="50" endPosition="101">
       <varInfo nodeId="1213104846059" varName="propertyName" />
     </scopeInfo>
     <scopeInfo nodeId="1213104846096" fileName="IFeature_Constraints.java" startLine="70" startPosition="142" endLine="80" endPosition="32">

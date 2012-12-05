@@ -69,7 +69,7 @@ public class TableColumnSelection extends AbstractMultipleSelection {
       return false;
     }
     TableColumnSelection that = (TableColumnSelection) another;
-    if (myTableCell.equals(that.myTableCell)) {
+    if (!(myTableCell.equals(that.myTableCell))) {
       return false;
     }
     return myColumnNumber == that.myColumnNumber;

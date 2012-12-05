@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ReplaceWithConstantValue_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -83,7 +84,7 @@ public class ReplaceWithConstantValue_Intention implements IntentionFactory {
   private static SNode _quotation_createNode_y7ts2x_a0a0a(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.ConstantValue", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("constant", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "constant", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

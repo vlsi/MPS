@@ -3,6 +3,7 @@
   <persistence version="7" />
   <language namespace="c72da2b9-7cce-4447-8389-f407dc1158b7(jetbrains.mps.lang.structure)" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
+  <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="1071489090640" id="1071489090640">
@@ -227,6 +228,11 @@
     </node>
     <node type="tpce.InterfaceConceptDeclaration" typeId="1169125989551" id="2621449412040133764">
       <property name="name" nameId="tpck.1169194664001" value="IConceptAspect" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="1071489090640" id="8080932314785812236">
+      <property name="name" nameId="tpck.1169194664001" value="MigratedToMethodAnnotation" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="annotation" />
+      <link role="extends" roleId="1071489389519" targetNodeId="tpck.3364660638048049748" resolveInfo="NodeAttribute" />
     </node>
   </roots>
   <root id="1071489090640">
@@ -647,10 +653,6 @@
       <property name="name" nameId="tpck.1169194664001" value="comment" />
       <link role="dataType" roleId="1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
-    <node role="conceptLink" roleId="1105736949336" type="tpce.ReferenceConceptLink" typeId="1105736778597" id="5216537374825317500">
-      <link role="conceptLinkDeclaration" roleId="1105736734721" targetNodeId="tpck.5169995583184591169" resolveInfo="attributed" />
-      <link role="target" roleId="1105736807942" targetNodeId="1224848324737" resolveInfo="IStructureDeprecatable" />
-    </node>
   </root>
   <root id="1224848324737">
     <node role="extends" roleId="1169127546356" type="tpce.InterfaceConceptReference" typeId="1169127622168" id="1224848346098">
@@ -658,5 +660,13 @@
     </node>
   </root>
   <root id="2621449412040133764" />
+  <root id="8080932314785812236">
+    <node role="linkDeclaration" roleId="1071489727083" type="tpce.LinkDeclaration" typeId="1071489288298" id="8080932314785812847">
+      <property name="metaClass" nameId="1071599937831" value="reference" />
+      <property name="role" nameId="1071599776563" value="method" />
+      <property name="sourceCardinality" nameId="1071599893252" value="1" />
+      <link role="target" roleId="1071599976176" targetNodeId="1i04.1225194472830" resolveInfo="ConceptMethodDeclaration" />
+    </node>
+  </root>
 </model>
 

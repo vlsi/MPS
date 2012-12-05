@@ -67,6 +67,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static boolean nodeSubstituteActionsBuilder_Precondition_Expression_1198761649460(final IOperationContext operationContext, final NodeSubstitutePreconditionContext _context) {
@@ -3311,13 +3312,10 @@ __switch__:
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1224071208705(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      final String[] lastPattern = new String[1];
-      List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AsExpression"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
-        }
-
-        private SNode substitute(SNode result, String pattern) {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.AsExpression");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SNode result = SNodeFactoryOperations.createNewNode(_context.getModel(), "jetbrains.mps.baseLanguage.structure.AsExpression", null);
           SNode type = ExpectedType_FactoryUtil.createExpectedType(_context.getSourceNode());
           if (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
             SLinkOperations.setTarget(result, "classifierType", SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
@@ -3326,16 +3324,15 @@ __switch__:
           SLinkOperations.setTarget(result, "expression", _context.getSourceNode(), true);
           return result;
         }
-      }, operationContext);
-      for (final INodeSubstituteAction action : list) {
-        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
-          @Override
-          public SNode substitute(@Nullable EditorContext context, String pattern) {
-            lastPattern[0] = pattern;
-            return super.substitute(context, pattern);
-          }
-        });
-      }
+
+        public String getMatchingText(String pattern) {
+          return "as";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
     }
     return result;
   }
@@ -3357,27 +3354,22 @@ __switch__:
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Expression_1225276664061(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      final String[] lastPattern = new String[1];
-      List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SubstringExpression"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
-        }
-
-        private SNode substitute(SNode result, String pattern) {
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.SubstringExpression");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
           SNode expression = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.SubstringExpression");
           SLinkOperations.setTarget(expression, "operand", _context.getSourceNode(), true);
           return expression;
         }
-      }, operationContext);
-      for (final INodeSubstituteAction action : list) {
-        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
-          @Override
-          public SNode substitute(@Nullable EditorContext context, String pattern) {
-            lastPattern[0] = pattern;
-            return super.substitute(context, pattern);
-          }
-        });
-      }
+
+        public String getMatchingText(String pattern) {
+          return "[";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
     }
     return result;
   }
@@ -3385,27 +3377,22 @@ __switch__:
   public static List<INodeSubstituteAction> sideTransform_ActionsFactory_Statement_1232463815953(final IOperationContext operationContext, final SideTransformActionsBuilderContext _context) {
     List<INodeSubstituteAction> result = ListSequence.fromList(new ArrayList<INodeSubstituteAction>());
     {
-      final String[] lastPattern = new String[1];
-      List<INodeSubstituteAction> list = ModelActions.createChildSubstituteActions(_context.getSourceNode(), null, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CommentedStatement"), new AbstractChildNodeSetter() {
-        public SNode doExecute(SNode parentNode, SNode oldChild, SNode newChild, IScope p3) {
-          return substitute(newChild, lastPattern[0]);
-        }
-
-        private SNode substitute(SNode result, String pattern) {
-          SNodeOperations.replaceWithAnother(_context.getSourceNode(), result);
+      SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.CommentedStatement");
+      ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
+        public SNode doSubstitute(String pattern) {
+          SNode result = SNodeFactoryOperations.replaceWithNewChild(_context.getSourceNode(), "jetbrains.mps.baseLanguage.structure.CommentedStatement");
           SLinkOperations.setTarget(result, "statement", _context.getSourceNode(), true);
           return result;
         }
-      }, operationContext);
-      for (final INodeSubstituteAction action : list) {
-        ListSequence.fromList(result).addElement(new NodeSubstituteActionWrapper(action) {
-          @Override
-          public SNode substitute(@Nullable EditorContext context, String pattern) {
-            lastPattern[0] = pattern;
-            return super.substitute(context, pattern);
-          }
-        });
-      }
+
+        public String getMatchingText(String pattern) {
+          return "//";
+        }
+
+        public String getVisibleMatchingText(String pattern) {
+          return this.getMatchingText(pattern);
+        }
+      });
     }
     return result;
   }
@@ -4275,7 +4262,7 @@ __switch__:
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
     quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("value", "");
+    SNodeAccessUtil.setProperty(quotedNode_4, "value", "");
     quotedNode_3.addChild("actualArgument", quotedNode_4);
     quotedNode_1.addChild("operation", quotedNode_3);
     return quotedNode_1;
@@ -4294,7 +4281,7 @@ __switch__:
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null, null, GlobalScope.getInstance(), false);
     quotedNode_3.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_3, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)"), SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("value", "");
+    SNodeAccessUtil.setProperty(quotedNode_4, "value", "");
     quotedNode_3.addChild("actualArgument", quotedNode_4);
     quotedNode_1.addChild("operation", quotedNode_3);
     return quotedNode_1;
@@ -4309,9 +4296,9 @@ __switch__:
     SNode quotedNode_6 = null;
     SNode quotedNode_7 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("name", "main");
+    SNodeAccessUtil.setProperty(quotedNode_1, "name", "main");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("name", "args");
+    SNodeAccessUtil.setProperty(quotedNode_2, "name", "args");
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
     quotedNode_6.addChild("componentType", quotedNode_7);
@@ -4336,7 +4323,7 @@ __switch__:
   private static SNode _quotation_createNode_wa99gi_a0a0a1a(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("typeVariableDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "typeVariableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
 
@@ -4379,7 +4366,7 @@ __switch__:
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.Type", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.addChild("parameter", quotedNode_3);
     return quotedNode_2;
@@ -4408,7 +4395,7 @@ __switch__:
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setReferenceTarget("classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_5, "classifier", (SNode) parameter_1);
     quotedNode_4.addChild("componentType", quotedNode_5);
     quotedNode_3.addChild("type", quotedNode_4);
     quotedNode_2.addChild("localVariableDeclaration", quotedNode_3);

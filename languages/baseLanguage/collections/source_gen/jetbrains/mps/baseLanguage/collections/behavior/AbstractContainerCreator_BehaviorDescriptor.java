@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.AbstractCreator_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
+import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public abstract class AbstractContainerCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor {
@@ -12,6 +13,10 @@ public abstract class AbstractContainerCreator_BehaviorDescriptor extends Abstra
 
   public boolean virtual_canHaveParameter_2261417478150191157(SNode thisNode) {
     return AbstractContainerCreator_Behavior.virtual_canHaveParameter_2261417478150191157(thisNode);
+  }
+
+  public List<SNode> virtual_getAvailableFor_3044950653914717035(SConcept thisConcept) {
+    return AbstractContainerCreator_Behavior.virtual_getAvailableFor_3044950653914717035(thisConcept);
   }
 
   public boolean virtual_hasInitSize_1262430001741498238(SConcept thisConcept) {
