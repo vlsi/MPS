@@ -32,7 +32,7 @@
       <modulePath path="${mps_home}/languages/languageDesign/textGen/textGen.mpl" />
       <modulePath path="${project}/languages/testWeavingGenerated.data/testWeavingGenerated.data.mpl" />
       <modulePath path="${project}/languages/testWeavingInterpreted.data/testWeavingInterpreted.data.mpl" />
-      <modulePath path="${project}/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" folder="" />
+      <modulePath path="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" />
       <modulePath path="${project}/solutions/jetbrains.mps.traceInfo.testWeaving/testWeaving.msd" />
     </projectModules>
     <genConfs>
