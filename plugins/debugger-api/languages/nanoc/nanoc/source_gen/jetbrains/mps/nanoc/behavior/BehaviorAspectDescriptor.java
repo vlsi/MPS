@@ -7,13 +7,11 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.interpreted.BehaviorAspectInterpreted;
 
 public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor {
-  private static String[] stringSwitchCases_846f5o_a0a0a = new String[]{"jetbrains.mps.nanoc.structure.CAssignmentExpression", "jetbrains.mps.nanoc.structure.CBody", "jetbrains.mps.nanoc.structure.CChar", "jetbrains.mps.nanoc.structure.CDouble", "jetbrains.mps.nanoc.structure.CExpressionStatement", "jetbrains.mps.nanoc.structure.CFloat", "jetbrains.mps.nanoc.structure.CFor", "jetbrains.mps.nanoc.structure.CInt", "jetbrains.mps.nanoc.structure.CLong", "jetbrains.mps.nanoc.structure.CParenthesis", "jetbrains.mps.nanoc.structure.CShort", "jetbrains.mps.nanoc.structure.CWhile", "jetbrains.mps.nanoc.structure.DivOp", "jetbrains.mps.nanoc.structure.EqualOp", "jetbrains.mps.nanoc.structure.File", "jetbrains.mps.nanoc.structure.GreaterEqOp", "jetbrains.mps.nanoc.structure.GreaterOp", "jetbrains.mps.nanoc.structure.IntConst", "jetbrains.mps.nanoc.structure.LessEqOp", "jetbrains.mps.nanoc.structure.LessOp", "jetbrains.mps.nanoc.structure.MinusOp", "jetbrains.mps.nanoc.structure.MultOp", "jetbrains.mps.nanoc.structure.PlusOp", "jetbrains.mps.nanoc.structure.VarDecl", "jetbrains.mps.nanoc.structure.VarDeclStatement", "jetbrains.mps.nanoc.structure.VarRef"};
-
   public BehaviorAspectDescriptor() {
   }
 
   public BehaviorDescriptor getDescriptor(String fqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0a, fqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 14:
         return new File_BehaviorDescriptor();
       case 7:
@@ -70,4 +68,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
+
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.nanoc.structure.CAssignmentExpression", "jetbrains.mps.nanoc.structure.CBody", "jetbrains.mps.nanoc.structure.CChar", "jetbrains.mps.nanoc.structure.CDouble", "jetbrains.mps.nanoc.structure.CExpressionStatement", "jetbrains.mps.nanoc.structure.CFloat", "jetbrains.mps.nanoc.structure.CFor", "jetbrains.mps.nanoc.structure.CInt", "jetbrains.mps.nanoc.structure.CLong", "jetbrains.mps.nanoc.structure.CParenthesis", "jetbrains.mps.nanoc.structure.CShort", "jetbrains.mps.nanoc.structure.CWhile", "jetbrains.mps.nanoc.structure.DivOp", "jetbrains.mps.nanoc.structure.EqualOp", "jetbrains.mps.nanoc.structure.File", "jetbrains.mps.nanoc.structure.GreaterEqOp", "jetbrains.mps.nanoc.structure.GreaterOp", "jetbrains.mps.nanoc.structure.IntConst", "jetbrains.mps.nanoc.structure.LessEqOp", "jetbrains.mps.nanoc.structure.LessOp", "jetbrains.mps.nanoc.structure.MinusOp", "jetbrains.mps.nanoc.structure.MultOp", "jetbrains.mps.nanoc.structure.PlusOp", "jetbrains.mps.nanoc.structure.VarDecl", "jetbrains.mps.nanoc.structure.VarDeclStatement", "jetbrains.mps.nanoc.structure.VarRef"};
 }

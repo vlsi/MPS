@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactoring {
@@ -19,7 +20,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
 
   public SNode doRefactoring() {
     this.findDuplicates();
-    SNode var = _quotation_createNode_nngwe4_a0b0a(this.getExpressionType(), this.getExpression(), this.getName());
+    SNode var = _quotation_createNode_nngwe4_a0b0b(this.getExpressionType(), this.getExpression(), this.getName());
     if (myIsFinal) {
       SPropertyOperations.set(SLinkOperations.getTarget(var, "localVariableDeclaration", true), "isFinal", "" + (true));
     }
@@ -82,14 +83,14 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
     return SNodeOperations.isInstanceOf(expr, "jetbrains.mps.baseLanguage.structure.Expression") && SNodeOperations.getAncestor(expr, "jetbrains.mps.baseLanguage.structure.StatementList", false, false) != null;
   }
 
-  private static SNode _quotation_createNode_nngwe4_a0b0a(Object parameter_1, Object parameter_2, Object parameter_3) {
+  private static SNode _quotation_createNode_nngwe4_a0b0b(Object parameter_1, Object parameter_2, Object parameter_3) {
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     SNode quotedNode_7 = null;
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("name", (String) parameter_3);
+    SNodeAccessUtil.setProperty(quotedNode_5, "name", (String) parameter_3);
     quotedNode_6 = (SNode) parameter_1;
     if (quotedNode_6 != null) {
       quotedNode_5.addChild("type", HUtil.copyIfNecessary(quotedNode_6));

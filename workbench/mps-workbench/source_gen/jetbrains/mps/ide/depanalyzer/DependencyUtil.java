@@ -41,20 +41,20 @@ public class DependencyUtil {
         addDeps(result, getReexportDeps(descr), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.ReexportsDep);
         addDeps(result, getNonreexportDeps(descr), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.Depends);
         if (descr instanceof LanguageDescriptor) {
-          addDeps(result, (as_he47wm_a0a1a0a5a0d0a(descr, LanguageDescriptor.class)).getExtendedLanguages(), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.ExtendsLanguage);
+          addDeps(result, (as_he47wm_a0a1a0a5a0d0b(descr, LanguageDescriptor.class)).getExtendedLanguages(), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.ExtendsLanguage);
           ListSequence.fromList(result).addElement(new DependencyUtil.Link(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c")), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.LangCore));
         }
         if (descr instanceof GeneratorDescriptor) {
           GeneratorDescriptor gen = (GeneratorDescriptor) descr;
           addDeps(result, gen.getDepGenerators(), DependencyUtil.Role.DTDependency, DependencyUtil.LinkType.DependsOnGenerator);
-          ListSequence.fromList(result).addElement(new DependencyUtil.Link((as_he47wm_a0a0a0a0c0g0a3a0(module, Generator.class)).getSourceLanguage(), DependencyUtil.Role.DTDependency, DependencyUtil.LinkType.GeneratorLanguage));
-          ListSequence.fromList(result).addElement(new DependencyUtil.Link((as_he47wm_a0a0a0a0d0g0a3a0(module, Generator.class)).getSourceLanguage(), DependencyUtil.Role.GeneratorLanguage, DependencyUtil.LinkType.GeneratorLanguage));
+          ListSequence.fromList(result).addElement(new DependencyUtil.Link((as_he47wm_a0a0a0a0c0g0a3a1(module, Generator.class)).getSourceLanguage(), DependencyUtil.Role.DTDependency, DependencyUtil.LinkType.GeneratorLanguage));
+          ListSequence.fromList(result).addElement(new DependencyUtil.Link((as_he47wm_a0a0a0a0d0g0a3a1(module, Generator.class)).getSourceLanguage(), DependencyUtil.Role.GeneratorLanguage, DependencyUtil.LinkType.GeneratorLanguage));
         }
         break;
 
       case UsedDevkit:
       case DependencyDevkit:
-        DevkitDescriptor devkit = as_he47wm_a0a0a2d0a(descr, DevkitDescriptor.class);
+        DevkitDescriptor devkit = as_he47wm_a0a0a2d0b(descr, DevkitDescriptor.class);
         if (devkit == null) {
           break;
         }
@@ -75,7 +75,7 @@ public class DependencyUtil {
 
       case UsedExtLanguage:
       case UsedLanguage:
-        LanguageDescriptor lang = as_he47wm_a0a0a4d0a(descr, LanguageDescriptor.class);
+        LanguageDescriptor lang = as_he47wm_a0a0a4d0b(descr, LanguageDescriptor.class);
         if (lang == null) {
           break;
         }
@@ -88,7 +88,7 @@ public class DependencyUtil {
       case DTDependency_:
         addDeps(result, getReexportDeps(descr), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.ReexportsDep);
         if (descr instanceof LanguageDescriptor) {
-          addDeps(result, (as_he47wm_a0a1a0a1a5d0a(descr, LanguageDescriptor.class)).getExtendedLanguages(), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.ExtendsLanguage);
+          addDeps(result, (as_he47wm_a0a1a0a1a5d0b(descr, LanguageDescriptor.class)).getExtendedLanguages(), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.ExtendsLanguage);
         }
         if (trackRuntime) {
           addDeps(result, getNonreexportDeps(descr), DependencyUtil.Role.RTDependency, DependencyUtil.LinkType.Depends);
@@ -105,7 +105,7 @@ public class DependencyUtil {
           addDeps(result, descr.getUsedLanguages(), DependencyUtil.Role.DependencyLanguage, DependencyUtil.LinkType.UsesLanguage);
           addDeps(result, descr.getUsedDevkits(), DependencyUtil.Role.DependencyDevkit, DependencyUtil.LinkType.UsesDevkit);
           if (descr instanceof LanguageDescriptor) {
-            addDeps(result, (as_he47wm_a0a1a0a4a0a7d0a(descr, LanguageDescriptor.class)).getExtendedLanguages(), DependencyUtil.Role.RTDependency, DependencyUtil.LinkType.ExtendsLanguage);
+            addDeps(result, (as_he47wm_a0a1a0a4a0a7d0b(descr, LanguageDescriptor.class)).getExtendedLanguages(), DependencyUtil.Role.RTDependency, DependencyUtil.LinkType.ExtendsLanguage);
           }
         }
         break;
@@ -114,13 +114,13 @@ public class DependencyUtil {
         break;
 
       case GeneratorLanguage:
-        addDeps(result, check_he47wm_b0a0j3a0(as_he47wm_a0b0a0j3a0(descr, LanguageDescriptor.class)), DependencyUtil.Role.GeneratorLanguage, DependencyUtil.LinkType.ExtendsLanguage);
-        addDeps(result, check_he47wm_b0b0j3a0(as_he47wm_a0b0b0j3a0(descr, LanguageDescriptor.class)), DependencyUtil.Role.DTDependency, DependencyUtil.LinkType.ExportsRuntime);
+        addDeps(result, check_he47wm_b0a0j3a1(as_he47wm_a0b0a0j3a1(descr, LanguageDescriptor.class)), DependencyUtil.Role.GeneratorLanguage, DependencyUtil.LinkType.ExtendsLanguage);
+        addDeps(result, check_he47wm_b0b0j3a1(as_he47wm_a0b0b0j3a1(descr, LanguageDescriptor.class)), DependencyUtil.Role.DTDependency, DependencyUtil.LinkType.ExportsRuntime);
         break;
 
       case DependencyLanguage:
-        addDeps(result, check_he47wm_b0a0k3a0(as_he47wm_a0b0a0k3a0(descr, LanguageDescriptor.class)), DependencyUtil.Role.DependencyLanguage, DependencyUtil.LinkType.ExtendsLanguage);
-        addDeps(result, check_he47wm_b0b0k3a0(as_he47wm_a0b0b0k3a0(descr, LanguageDescriptor.class)), DependencyUtil.Role.RTDependency, DependencyUtil.LinkType.ExportsRuntime);
+        addDeps(result, check_he47wm_b0a0k3a1(as_he47wm_a0b0a0k3a1(descr, LanguageDescriptor.class)), DependencyUtil.Role.DependencyLanguage, DependencyUtil.LinkType.ExtendsLanguage);
+        addDeps(result, check_he47wm_b0b0k3a1(as_he47wm_a0b0b0k3a1(descr, LanguageDescriptor.class)), DependencyUtil.Role.RTDependency, DependencyUtil.LinkType.ExportsRuntime);
         break;
 
       default:
@@ -208,111 +208,6 @@ public class DependencyUtil {
       calcLoops(MultiTuple.<DependencyUtil.Role,IModule>from(link.role, link.module), trackRuntime, visited, path, result);
     }
     ListSequence.fromList(path).removeLastElement();
-  }
-
-  private static Set<ModuleReference> check_he47wm_b0a0j3a0(LanguageDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getExtendedLanguages();
-    }
-    return null;
-  }
-
-  private static Set<ModuleReference> check_he47wm_b0b0j3a0(LanguageDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getRuntimeModules();
-    }
-    return null;
-  }
-
-  private static Set<ModuleReference> check_he47wm_b0a0k3a0(LanguageDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getExtendedLanguages();
-    }
-    return null;
-  }
-
-  private static Set<ModuleReference> check_he47wm_b0b0k3a0(LanguageDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getRuntimeModules();
-    }
-    return null;
-  }
-
-  private static <T> T as_he47wm_a0a1a0a5a0d0a(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_he47wm_a0a0a0a0c0g0a3a0(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_he47wm_a0a0a0a0d0g0a3a0(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_he47wm_a0a0a2d0a(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_he47wm_a0a0a4d0a(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_he47wm_a0a1a0a1a5d0a(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_he47wm_a0a1a0a4a0a7d0a(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_he47wm_a0b0a0j3a0(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_he47wm_a0b0b0j3a0(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_he47wm_a0b0a0k3a0(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_he47wm_a0b0b0k3a0(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
   }
 
   public static   enum LinkType {
@@ -430,5 +325,110 @@ public class DependencyUtil {
     public int hashCode() {
       return module.hashCode() + linktype.hashCode();
     }
+  }
+
+  private static Set<ModuleReference> check_he47wm_b0a0j3a1(LanguageDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getExtendedLanguages();
+    }
+    return null;
+  }
+
+  private static Set<ModuleReference> check_he47wm_b0b0j3a1(LanguageDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getRuntimeModules();
+    }
+    return null;
+  }
+
+  private static Set<ModuleReference> check_he47wm_b0a0k3a1(LanguageDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getExtendedLanguages();
+    }
+    return null;
+  }
+
+  private static Set<ModuleReference> check_he47wm_b0b0k3a1(LanguageDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getRuntimeModules();
+    }
+    return null;
+  }
+
+  private static <T> T as_he47wm_a0a1a0a5a0d0b(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_he47wm_a0a0a0a0c0g0a3a1(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_he47wm_a0a0a0a0d0g0a3a1(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_he47wm_a0a0a2d0b(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_he47wm_a0a0a4d0b(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_he47wm_a0a1a0a1a5d0b(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_he47wm_a0a1a0a4a0a7d0b(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_he47wm_a0b0a0j3a1(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_he47wm_a0b0b0j3a1(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_he47wm_a0b0a0k3a1(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_he47wm_a0b0b0k3a1(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 }

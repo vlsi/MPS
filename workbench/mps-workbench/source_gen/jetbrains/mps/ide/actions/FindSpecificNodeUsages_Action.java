@@ -5,7 +5,6 @@ package jetbrains.mps.ide.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import com.intellij.openapi.project.Project;
@@ -19,10 +18,10 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.logging.Logger;
 
 public class FindSpecificNodeUsages_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("find.png");
-  private static Logger LOG = Logger.getLogger(FindSpecificNodeUsages_Action.class);
 
   public FindSpecificNodeUsages_Action() {
     super("Find Usages...", "", ICON);
@@ -93,4 +92,6 @@ public class FindSpecificNodeUsages_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "FindSpecificNodeUsages", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(FindSpecificNodeUsages_Action.class);
 }

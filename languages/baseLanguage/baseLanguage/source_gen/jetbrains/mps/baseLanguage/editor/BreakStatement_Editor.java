@@ -6,32 +6,95 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import java.util.Iterator;
+import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
-import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import java.util.Iterator;
-import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
-import jetbrains.mps.smodel.SModel;
 
 public class BreakStatement_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_xk0l2m_a(editorContext, node);
+  }
+
+  public static class BreakStatement_generic_cellMenu_a0a1a extends AbstractCellMenuPart_Generic_Group {
+    public BreakStatement_generic_cellMenu_a0a1a() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2<SNode, String>() {
+        public Iterable<String> translate(final SNode it) {
+          return new Iterable<String>() {
+            public Iterator<String> iterator() {
+              return new YieldingIterator<String>() {
+                private int __CP__ = 0;
+
+                protected boolean moveToNext() {
+__loop__:
+                  do {
+__switch__:
+                    switch (this.__CP__) {
+                      case -1:
+                        assert false : "Internal error";
+                        return false;
+                      case 2:
+                        if (!(SPropertyOperations.hasValue(it, "label", null))) {
+                          this.__CP__ = 3;
+                          break;
+                        }
+                        this.__CP__ = 1;
+                        break;
+                      case 4:
+                        this.__CP__ = 1;
+                        this.yield(SPropertyOperations.getString(it, "label"));
+                        return true;
+                      case 0:
+                        this.__CP__ = 2;
+                        break;
+                      case 3:
+                        this.__CP__ = 4;
+                        break;
+                      default:
+                        break __loop__;
+                    }
+                  } while (true);
+                  return false;
+                }
+              };
+            }
+          };
+        }
+      }).toListSequence();
+    }
+
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
+    }
+
+    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "label", parameterObject);
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
   }
 
   private EditorCell createCollection_xk0l2m_a(EditorContext editorContext, SNode node) {
@@ -139,68 +202,5 @@ public class BreakStatement_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_xk0l2m_a2a(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "loopLabelReference", true) != null);
-  }
-
-  public static class BreakStatement_generic_cellMenu_a0a1a extends AbstractCellMenuPart_Generic_Group {
-    public BreakStatement_generic_cellMenu_a0a1a() {
-    }
-
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      return ListSequence.fromList(SNodeOperations.getAncestors(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement", false)).translate(new ITranslator2<SNode, String>() {
-        public Iterable<String> translate(final SNode it) {
-          return new Iterable<String>() {
-            public Iterator<String> iterator() {
-              return new YieldingIterator<String>() {
-                private int __CP__ = 0;
-
-                protected boolean moveToNext() {
-__loop__:
-                  do {
-__switch__:
-                    switch (this.__CP__) {
-                      case -1:
-                        assert false : "Internal error";
-                        return false;
-                      case 2:
-                        if (!(SPropertyOperations.hasValue(it, "label", null))) {
-                          this.__CP__ = 3;
-                          break;
-                        }
-                        this.__CP__ = 1;
-                        break;
-                      case 4:
-                        this.__CP__ = 1;
-                        this.yield(SPropertyOperations.getString(it, "label"));
-                        return true;
-                      case 0:
-                        this.__CP__ = 2;
-                        break;
-                      case 3:
-                        this.__CP__ = 4;
-                        break;
-                      default:
-                        break __loop__;
-                    }
-                  } while (true);
-                  return false;
-                }
-              };
-            }
-          };
-        }
-      }).toListSequence();
-    }
-
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((String) parameterObject, node, model, scope, operationContext, editorContext);
-    }
-
-    public void handleAction_impl(String parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "label", parameterObject);
-    }
-
-    public boolean isReferentPresentation() {
-      return false;
-    }
   }
 }

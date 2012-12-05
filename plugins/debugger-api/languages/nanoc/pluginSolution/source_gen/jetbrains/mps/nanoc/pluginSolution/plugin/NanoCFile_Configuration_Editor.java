@@ -15,10 +15,6 @@ public class NanoCFile_Configuration_Editor extends SettingsEditorEx<NanoCFile_C
   private NodeByConceptChooser myChooser;
   private NodeByConcept_Configuration_Editor myNode;
 
-  public NanoCFile_Configuration_Editor(NodeByConcept_Configuration_Editor node) {
-    myNode = node;
-  }
-
   public void disposeEditor() {
     Disposer.dispose(myNode);
   }
@@ -37,5 +33,9 @@ public class NanoCFile_Configuration_Editor extends SettingsEditorEx<NanoCFile_C
 
   public void resetEditorFrom(final NanoCFile_Configuration configuration) {
     myNode.resetEditorFrom(configuration.getNode());
+  }
+
+  public NanoCFile_Configuration_Editor(NodeByConcept_Configuration_Editor node) {
+    myNode = node;
   }
 }

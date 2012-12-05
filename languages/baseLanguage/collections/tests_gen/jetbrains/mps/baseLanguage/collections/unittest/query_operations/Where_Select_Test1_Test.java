@@ -23,7 +23,6 @@ public class Where_Select_Test1_Test extends TestCase {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _2_i;
 
               protected boolean moveToNext() {
 __loop__:
@@ -62,6 +61,8 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _2_i;
             };
           }
         };

@@ -4,8 +4,6 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -20,10 +18,11 @@ import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.fileEditor.FileEditor;
 import jetbrains.mps.workbench.editors.MPSLanguageEditor;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class LanguageHierarchy_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(LanguageHierarchy_Action.class);
 
   public LanguageHierarchy_Action() {
     super("Language Diagram", "", ICON);
@@ -83,4 +82,6 @@ public class LanguageHierarchy_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(LanguageHierarchy_Action.class);
 }

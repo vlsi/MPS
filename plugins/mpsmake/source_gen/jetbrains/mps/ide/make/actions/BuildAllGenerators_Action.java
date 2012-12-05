@@ -4,8 +4,6 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -20,10 +18,11 @@ import java.util.ArrayList;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.IOperationContext;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class BuildAllGenerators_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(BuildAllGenerators_Action.class);
 
   public BuildAllGenerators_Action() {
     super("Rebuild All Generators", "", ICON);
@@ -78,4 +77,6 @@ public class BuildAllGenerators_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(BuildAllGenerators_Action.class);
 }

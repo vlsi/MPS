@@ -24,23 +24,21 @@ public class ModelUsedLangTableModel extends UsedLangsTableModel<ModelProperties
   }
 
   @Override
+  public void init() {
+    for(ModuleReference moduleReference : myItem.getUsedLanguages())
+      myTableItems.add(moduleReference);
+
+    for(ModuleReference moduleReference : myItem.getUsedDevKits())
+      myTableItems.add(moduleReference);
+  }
+
+  @Override
   public boolean isModified() {
     return !(myItem.getUsedLanguages().containsAll(getUsedLanguages())
       && getUsedLanguages().containsAll(myItem.getUsedLanguages())
       && myItem.getUsedDevKits().containsAll(getUsedDevkits())
       && getUsedDevkits().containsAll(myItem.getUsedDevKits())
     );
-  }
-
-  @Override
-  protected void init() {
-    for(ModuleReference moduleReference : myItem.getUsedLanguages()) {
-      myTableItems.add(new UsedLangTableItem(moduleReference));
-    }
-
-    for(ModuleReference moduleReference : myItem.getUsedDevKits()) {
-      myTableItems.add(new UsedLangTableItem(moduleReference));
-    }
   }
 
   @Override

@@ -86,7 +86,7 @@ public abstract class BreakpointsUiComponentEx<B, L extends B> {
     while (cell != null) {
       SNode node = cell.getSNode();
       if (node != null) {
-        if (!(TraceDown.isTraceable(node, debugInfo))) {
+        if (TraceDown.isTraceable(node, debugInfo)) {
           break;
         }
       }

@@ -30,14 +30,14 @@ public class PluginUtils {
 
     SModel model = genContext.getOriginalInputModel();
     String correctName = model.getModelDescriptor().getModule().getModuleFqName() + ".plugin";
-    if (eq_l4wyvj_a0f0c(model.getLongName(), correctName)) {
+    if (eq_l4wyvj_a0f0d(model.getLongName(), correctName)) {
       return;
     }
 
     genContext.showErrorMessage(node, "To be able to use plugin, you should name plugin model as '<ModuleName>.plugin'. For this model, the name should be " + correctName);
   }
 
-  private static boolean eq_l4wyvj_a0f0c(Object a, Object b) {
+  private static boolean eq_l4wyvj_a0f0d(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

@@ -12,22 +12,12 @@ public enum AnnotationLinkStereotype {
   property("property", "property");
 
   private String myName;
-  private String myValue;
-
-  AnnotationLinkStereotype(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -57,5 +47,16 @@ public enum AnnotationLinkStereotype {
       return AnnotationLinkStereotype.property;
     }
     return AnnotationLinkStereotype.getDefault();
+  }
+
+  private String myValue;
+
+  AnnotationLinkStereotype(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

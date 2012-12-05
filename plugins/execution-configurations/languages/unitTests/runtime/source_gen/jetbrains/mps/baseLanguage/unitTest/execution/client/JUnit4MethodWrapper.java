@@ -27,7 +27,7 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
   @Nullable
   @Override
   public ITestNodeWrapper getTestCase() {
-    SNode clazz = check_lclll2_a0a0b(getNode(), this);
+    SNode clazz = check_lclll2_a0a0c(getNode(), this);
     if ((clazz != null)) {
       return new JUnit3TestWrapper(clazz);
     }
@@ -38,10 +38,10 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, method, "virtual_isAbstract_1232982539764", new Object[]{})) && (SLinkOperations.getTarget(method, "visibility", true) != null) && SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PublicVisibility") && (SPropertyOperations.getString(method, "name") != null)) {
       boolean hasTestAnnotation = false;
       for (SNode annotation : ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true))) {
-        if (eq_lclll2_a0a0b0a0a(check_lclll2_a0a0b0a0a(annotation), SLinkOperations.getTarget(_quotation_createNode_lclll2_a0a0a1a0a0(), "annotation", false))) {
+        if (eq_lclll2_a0a0b0a0d(check_lclll2_a0a0b0a0d(annotation), SLinkOperations.getTarget(_quotation_createNode_lclll2_a0a0a1a0a3(), "annotation", false))) {
           return false;
         }
-        if (!(hasTestAnnotation) && eq_lclll2_a0a1a1a0a0(check_lclll2_a0a1a1a0a0(annotation), SLinkOperations.getTarget(_quotation_createNode_lclll2_a0a0b0b0a0a(), "annotation", false))) {
+        if (!(hasTestAnnotation) && eq_lclll2_a0a1a1a0a3(check_lclll2_a0a1a1a0a3(annotation), SLinkOperations.getTarget(_quotation_createNode_lclll2_a0a0b0b0a0d(), "annotation", false))) {
           hasTestAnnotation = true;
         }
       }
@@ -50,49 +50,49 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
     return false;
   }
 
-  private static SNode check_lclll2_a0a0b0a0a(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return SLinkOperations.getTarget(checkedDotOperand, "annotation", false);
-    }
-    return null;
-  }
-
-  private static SNode _quotation_createNode_lclll2_a0a0a1a0a0() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), SNodeId.fromString("~Ignore")));
-    return quotedNode_1;
-  }
-
-  private static SNode check_lclll2_a0a1a1a0a0(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return SLinkOperations.getTarget(checkedDotOperand, "annotation", false);
-    }
-    return null;
-  }
-
-  private static SNode _quotation_createNode_lclll2_a0a0b0b0a0a() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), SNodeId.fromString("~Test")));
-    return quotedNode_1;
-  }
-
-  private static SNode check_lclll2_a0a0b(SNode checkedDotOperand, JUnit4MethodWrapper checkedDotThisExpression) {
+  private static SNode check_lclll2_a0a0c(SNode checkedDotOperand, JUnit4MethodWrapper checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return SNodeOperations.getAncestor(checkedDotOperand, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     }
     return null;
   }
 
-  private static boolean eq_lclll2_a0a0b0a0a(Object a, Object b) {
+  private static SNode check_lclll2_a0a0b0a0d(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return SLinkOperations.getTarget(checkedDotOperand, "annotation", false);
+    }
+    return null;
+  }
+
+  private static SNode _quotation_createNode_lclll2_a0a0a1a0a3() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), SNodeId.fromString("~Ignore")));
+    return quotedNode_1;
+  }
+
+  private static SNode check_lclll2_a0a1a1a0a3(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return SLinkOperations.getTarget(checkedDotOperand, "annotation", false);
+    }
+    return null;
+  }
+
+  private static SNode _quotation_createNode_lclll2_a0a0b0b0a0d() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), SNodeId.fromString("~Test")));
+    return quotedNode_1;
+  }
+
+  private static boolean eq_lclll2_a0a0b0a0d(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_lclll2_a0a1a1a0a0(Object a, Object b) {
+  private static boolean eq_lclll2_a0a1a1a0a3(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

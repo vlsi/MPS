@@ -15,6 +15,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class typeof_EnclosingContextCompartmentExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_EnclosingContextCompartmentExpression_InferenceRule() {
@@ -33,7 +34,7 @@ public class typeof_EnclosingContextCompartmentExpression_InferenceRule extends 
     {
       SNode _nodeToCheck_1029348928467 = enclosingCtx;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5776545240964029414", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5776545240964029416", true), (SNode) _quotation_createNode_1zd8ev_a0d0a(SLinkOperations.getTarget(SNodeOperations.as(ctx, "jetbrains.mps.ui.structure.ContainerCompartment"), "container", false), SNodeOperations.as(SNodeOperations.getParent(SLinkOperations.getTarget(SNodeOperations.as(ctx, "jetbrains.mps.ui.structure.ContainerCompartment"), "container", false)), "jetbrains.mps.ui.modeling.structure.UIObject")), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:f2d87002-eac7-4f98-addf-b2caa99c13a5(jetbrains.mps.ui.typesystem)", "5776545240964029416", true), (SNode) _quotation_createNode_1zd8ev_a0d0b(SLinkOperations.getTarget(SNodeOperations.as(ctx, "jetbrains.mps.ui.structure.ContainerCompartment"), "container", false), SNodeOperations.as(SNodeOperations.getParent(SLinkOperations.getTarget(SNodeOperations.as(ctx, "jetbrains.mps.ui.structure.ContainerCompartment"), "container", false)), "jetbrains.mps.ui.modeling.structure.UIObject")), _info_12389875345);
     }
   }
 
@@ -52,11 +53,11 @@ public class typeof_EnclosingContextCompartmentExpression_InferenceRule extends 
     return false;
   }
 
-  private static SNode _quotation_createNode_1zd8ev_a0d0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_1zd8ev_a0d0b(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.ContainerType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReferenceTarget("container", (SNode) parameter_1);
-    quotedNode_3.setReferenceTarget("uiObject", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "container", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "uiObject", (SNode) parameter_2);
     return quotedNode_3;
   }
 }

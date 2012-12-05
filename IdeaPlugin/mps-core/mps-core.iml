@@ -10,73 +10,10 @@
       <sourceFolder url="file://$MODULE_DIR$/resources" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/testSrc" isTestSource="true" />
     </content>
-    <content url="file://$MODULE_DIR$/../../core">
-      <sourceFolder url="file://$MODULE_DIR$/../../core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/findUsages-runtime/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/findUsages-runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/generator/solutions/traceInfo/util/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/generator/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/generator/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/dataFlowRuntime/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/dataFlowRuntime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/patternRuntime/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/patternRuntime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/resources/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/smodelRuntime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/make-runtime/solutions/jetbrains.mps.make/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/runtime/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/typesystemEngine/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/typesystemEngine/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/stubUtils/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/refactoring-runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/ant/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/openapi/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/migration/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/persistence/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../core/persistence/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../editor">
-      <sourceFolder url="file://$MODULE_DIR$/../../editor/actions-runtime/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../editor/actions-runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../editor/editor-api/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../editor/editor-runtime/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../editor/editor-runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../editor/intentions-runtime/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../editor/typesystemIntegration/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../editor/typesystemIntegration/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../languages/baseLanguage">
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/closures/runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/collections/runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/baseLanguage/tuples/runtime/source_gen" isTestSource="false" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests">
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/testSrc" isTestSource="true" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../languages/languageDesign/test">
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" isTestSource="true" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../testbench">
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/source" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/../../testbench/source_gen" isTestSource="true" />
-    </content>
-    <content url="file://$MODULE_DIR$/../../workbench">
-      <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-editor/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-editor/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-platform/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-platform/source_gen" isTestSource="false" />
-    </content>
     <orderEntry type="jdk" jdkName="IDEA IC" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="library" name="MPS-core" level="project" />
-    <orderEntry type="library" name="ant" level="project" />
+    <orderEntry type="module" module-name="mps-common" exported="" />
+    <orderEntry type="library" scope="TEST" name="MPS-tests" level="project" />
   </component>
 </module>
 

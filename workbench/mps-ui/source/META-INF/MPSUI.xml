@@ -1,0 +1,10 @@
+<components>
+  <application-components>
+    <component>
+      <implementation-class>jetbrains.mps.ide.ui.dialogs.properties.persistence.ModelRootEntryPersistenceComponent</implementation-class>
+    </component>
+  </application-components>
+  <extensionPoints>
+    <extensionPoint qualifiedName="com.intellij.mps.modelRootEntry" beanClass="jetbrains.mps.ide.ui.dialogs.properties.persistence.ModelRootEntryEP"/>
+  </extensionPoints>
+</components>

@@ -4,7 +4,6 @@ package jetbrains.mps.ide.java.util;
 
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.logging.Logger;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModel;
@@ -40,10 +39,11 @@ import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.internal.collections.runtime.IListSequence;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.logging.Logger;
 
 public class StubResolver {
   private static final String JAVA_STUB = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
-  private static Logger LOG = Logger.getLogger(StubResolver.class);
   private Set<SModelReference> myUsedModels;
 
   public StubResolver() {
@@ -71,7 +71,7 @@ public class StubResolver {
         }
         // trying to find correspondent nonstub model 
         SModelFqName modelName = new SModelFqName(targetModelRef.getLongName(), null);
-        SModelReference modelRef = check_ar1im2_a0e0a0c0a(SModelRepository.getInstance().getModelDescriptor(modelName));
+        SModelReference modelRef = check_ar1im2_a0e0a0c0e(SModelRepository.getInstance().getModelDescriptor(modelName));
         if (modelRef == null) {
           continue;
         }
@@ -159,7 +159,7 @@ public class StubResolver {
           LOG.error("more than 1 possible resolution for " + SLinkOperations.getResolveInfo(ref) + " in model " + modelRef.getLongName());
         }
         if (ListSequence.fromList(resolved).count() > 0) {
-          node.setReferenceTarget(SLinkOperations.getRole(ref), ListSequence.fromList(resolved).first());
+          SNodeAccessUtil.setReferenceTarget(node, SLinkOperations.getRole(ref), ListSequence.fromList(resolved).first());
           ListSequence.fromList(toResolve).removeElement(ref);
           ++cnt;
           found = true;
@@ -169,7 +169,9 @@ public class StubResolver {
     return cnt;
   }
 
-  private static SModelReference check_ar1im2_a0e0a0c0a(SModelDescriptor checkedDotOperand) {
+  private static Logger LOG = Logger.getLogger(StubResolver.class);
+
+  private static SModelReference check_ar1im2_a0e0a0c0e(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModelReference();
     }

@@ -62,7 +62,7 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
         if (SNodeOperations.isInstanceOf(rt, "jetbrains.mps.baseLanguage.structure.IGenericType")) {
           rt = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.cast(rt, "jetbrains.mps.baseLanguage.structure.IGenericType"), "virtual_expandGenerics_4107091686347199582", new Object[]{subs});
         }
-        supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_qen718_a0a0j0e0c0a(paramTypes, rt));
+        supertypes = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_qen718_a0a0j0e0c0b(paramTypes, rt));
       }
     }
     return supertypes;
@@ -83,7 +83,7 @@ public class supertypesOf_ClassifierType_SubtypingRule extends SubtypingRule_Run
     return true;
   }
 
-  private static SNode _quotation_createNode_qen718_a0a0j0e0c0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_qen718_a0a0j0e0c0b(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;

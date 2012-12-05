@@ -7,6 +7,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
@@ -39,7 +40,7 @@ public class NodePatcher {
    */
   public static void fixNonStatic(SNode node) {
     for (SNode cls : ListSequence.fromList(SNodeOperations.getDescendants(node, "jetbrains.mps.baseLanguage.structure.Classifier", true, new String[]{}))) {
-      if (cls.getProperty("nonStatic") == null) {
+      if (SNodeAccessUtil.getProperty(cls, "nonStatic") == null) {
         SPropertyOperations.set(cls, "nonStatic", "" + (true));
       }
     }

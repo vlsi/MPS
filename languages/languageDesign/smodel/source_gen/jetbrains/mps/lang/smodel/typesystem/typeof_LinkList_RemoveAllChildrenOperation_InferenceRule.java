@@ -10,6 +10,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class typeof_LinkList_RemoveAllChildrenOperation_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_LinkList_RemoveAllChildrenOperation_InferenceRule() {
@@ -21,7 +22,7 @@ public class typeof_LinkList_RemoveAllChildrenOperation_InferenceRule extends Ab
     {
       SNode _nodeToCheck_1029348928467 = op;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1215104325500", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1215104325502", true), (SNode) _quotation_createNode_kyb4al_a0c0a(typeCheckingContext.getRepresentative(Concept_typevar_1215104325493)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "1215104325502", true), (SNode) _quotation_createNode_kyb4al_a0c0b(typeCheckingContext.getRepresentative(Concept_typevar_1215104325493)), _info_12389875345);
     }
   }
 
@@ -40,10 +41,10 @@ public class typeof_LinkList_RemoveAllChildrenOperation_InferenceRule extends Ab
     return true;
   }
 
-  private static SNode _quotation_createNode_kyb4al_a0c0a(Object parameter_1) {
+  private static SNode _quotation_createNode_kyb4al_a0c0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeListType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("elementConcept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "elementConcept", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

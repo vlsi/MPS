@@ -18,22 +18,12 @@ public enum TraversalAxis {
   PRECEDING_SIBLINGS_SELF("PRECEDING_SIBLINGS_SELF", "PRECEDING_SIBLINGS_SELF");
 
   private String myName;
-  private String myValue;
-
-  TraversalAxis(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -87,5 +77,16 @@ public enum TraversalAxis {
       return TraversalAxis.PRECEDING_SIBLINGS_SELF;
     }
     return TraversalAxis.getDefault();
+  }
+
+  private String myValue;
+
+  TraversalAxis(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

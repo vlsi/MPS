@@ -19,7 +19,7 @@ public class check_BuildFileExcludeSelector_NonTypesystemRule extends AbstractNo
   }
 
   public void applyRule(final SNode ex, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    if (isNotEmpty_or75j0_a0a0a0(SPropertyOperations.getString(ex, "pattern")) && (SPropertyOperations.getString(ex, "pattern").contains(" ") || SPropertyOperations.getString(ex, "pattern").contains("\t") || SPropertyOperations.getString(ex, "pattern").contains(","))) {
+    if (isNotEmpty_or75j0_a0a0a1(SPropertyOperations.getString(ex, "pattern")) && (SPropertyOperations.getString(ex, "pattern").contains(" ") || SPropertyOperations.getString(ex, "pattern").contains("\t") || SPropertyOperations.getString(ex, "pattern").contains(","))) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new PropertyMessageTarget("pattern");
@@ -43,7 +43,7 @@ public class check_BuildFileExcludeSelector_NonTypesystemRule extends AbstractNo
     return false;
   }
 
-  public static boolean isNotEmpty_or75j0_a0a0a0(String str) {
+  public static boolean isNotEmpty_or75j0_a0a0a1(String str) {
     return str != null && str.length() > 0;
   }
 }

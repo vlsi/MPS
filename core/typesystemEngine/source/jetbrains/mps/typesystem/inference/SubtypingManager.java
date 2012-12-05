@@ -17,11 +17,9 @@ package jetbrains.mps.typesystem.inference;
 
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.util.StructuralNodeSet;
 
-import java.util.List;
 import java.util.Set;
 
 public abstract class SubtypingManager {

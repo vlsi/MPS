@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -16,10 +15,10 @@ import java.awt.datatransfer.StringSelection;
 import com.intellij.ide.CopyPasteManagerEx;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.logging.Logger;
 
 public class AnalyzeStacktrace_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(AnalyzeStacktrace_Action.class);
 
   public AnalyzeStacktrace_Action() {
     super("Analyze Stacktrace...", "Open console with the navigation stacktrace", ICON);
@@ -87,4 +86,6 @@ public class AnalyzeStacktrace_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "AnalyzeStacktrace", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(AnalyzeStacktrace_Action.class);
 }

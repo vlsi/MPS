@@ -49,7 +49,7 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     });
 
     myStackFrameIndex = findStackFrameIndex();
-    check_vzg6vq_a01a0(getStackFrame(), this);
+    check_vzg6vq_a01a5(getStackFrame(), this);
     ListSequence.fromList(myWatchables).addSequence(ListSequence.fromList(getAdditionalWatchables()));
   }
 
@@ -73,7 +73,7 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     });
 
     myStackFrameIndex = findStackFrameIndex();
-    check_vzg6vq_a21a1(getStackFrame(), this);
+    check_vzg6vq_a21a6(getStackFrame(), this);
     ListSequence.fromList(myWatchables).addSequence(ListSequence.fromList(getAdditionalWatchables()));
   }
 
@@ -135,7 +135,7 @@ public class PausedJavaUiState extends JavaUiStateImpl {
   public ObjectReference getThisObject() {
     JavaStackFrame javaStackFrame = getStackFrame();
     if (javaStackFrame != null) {
-      return check_vzg6vq_a0a1a3(javaStackFrame.getStackFrame());
+      return check_vzg6vq_a0a1a11(javaStackFrame.getStackFrame());
     }
     return null;
   }
@@ -224,8 +224,8 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     if (myContext != null && myContext instanceof EventContext) {
       // todo move out 
       EventSet eventSet = ((EventContext) myContext).getEventSet();
-      String classFqName = check_vzg6vq_a0c0b0p(getStackFrame(), this);
-      ThreadReference threadReference = check_vzg6vq_a0d0b0p(getThread(), this);
+      String classFqName = check_vzg6vq_a0c0b0x(getStackFrame(), this);
+      ThreadReference threadReference = check_vzg6vq_a0d0b0x(getThread(), this);
       if (classFqName == null || threadReference == null) {
         return watchables;
       }
@@ -245,35 +245,35 @@ public class PausedJavaUiState extends JavaUiStateImpl {
     return watchables;
   }
 
-  private static void check_vzg6vq_a01a0(JavaStackFrame checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
+  private static void check_vzg6vq_a01a5(JavaStackFrame checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       checkedDotOperand.initializeWatchables();
     }
 
   }
 
-  private static void check_vzg6vq_a21a1(JavaStackFrame checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
+  private static void check_vzg6vq_a21a6(JavaStackFrame checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       checkedDotOperand.initializeWatchables();
     }
 
   }
 
-  private static ObjectReference check_vzg6vq_a0a1a3(StackFrame checkedDotOperand) {
+  private static ObjectReference check_vzg6vq_a0a1a11(StackFrame checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.thisObject();
     }
     return null;
   }
 
-  private static String check_vzg6vq_a0c0b0p(JavaStackFrame checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
+  private static String check_vzg6vq_a0c0b0x(JavaStackFrame checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getClassFqName();
     }
     return null;
   }
 
-  private static ThreadReference check_vzg6vq_a0d0b0p(JavaThread checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
+  private static ThreadReference check_vzg6vq_a0d0b0x(JavaThread checkedDotOperand, PausedJavaUiState checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getThread();
     }

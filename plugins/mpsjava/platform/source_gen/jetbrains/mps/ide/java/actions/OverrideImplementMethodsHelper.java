@@ -24,6 +24,7 @@ import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class OverrideImplementMethodsHelper {
@@ -86,25 +87,25 @@ public class OverrideImplementMethodsHelper {
         }
       }
       if (isNeedAddAnnotation) {
-        ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).addElement(_quotation_createNode_tfz3o4_a0a0a2a3a1());
+        ListSequence.fromList(SLinkOperations.getTargets(method, "annotation", true)).addElement(_quotation_createNode_tfz3o4_a0a0a2a3a8());
       }
     }
 
     Iterable<SNode> paramList = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return _quotation_createNode_tfz3o4_a0a0a0a5a1(it);
+        return _quotation_createNode_tfz3o4_a0a0a0a5a8(it);
       }
     });
     SNode defaultExpr;
     if (isInterfaceMethod) {
       defaultExpr = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(baseMethod, "returnType", true), "virtual_createDefaultTypeExpression_3359611512358152580", new Object[]{});
     } else {
-      defaultExpr = _quotation_createNode_tfz3o4_a0a0a7a1(baseMethod, Sequence.fromIterable(paramList).toListSequence());
+      defaultExpr = _quotation_createNode_tfz3o4_a0a0a7a8(baseMethod, Sequence.fromIterable(paramList).toListSequence());
     }
 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
       if (!(isInterfaceMethod)) {
-        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(_quotation_createNode_tfz3o4_a0a0a0a9a1(defaultExpr));
+        ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(_quotation_createNode_tfz3o4_a0a0a0a9a8(defaultExpr));
       }
     } else {
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(getReturnStatement(defaultExpr));
@@ -117,9 +118,9 @@ public class OverrideImplementMethodsHelper {
     }
 
     if (myNeedReturnKW) {
-      return _quotation_createNode_tfz3o4_a0a2a2(returnExpr);
+      return _quotation_createNode_tfz3o4_a0a2a9(returnExpr);
     } else {
-      return _quotation_createNode_tfz3o4_a0a0c0c(returnExpr);
+      return _quotation_createNode_tfz3o4_a0a0c0j(returnExpr);
     }
   }
 
@@ -161,25 +162,25 @@ public class OverrideImplementMethodsHelper {
     }
   }
 
-  private static SNode _quotation_createNode_tfz3o4_a0a0a2a3a1() {
+  private static SNode _quotation_createNode_tfz3o4_a0a0a2a3a8() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Override")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_tfz3o4_a0a0a0a5a1(Object parameter_1) {
+  private static SNode _quotation_createNode_tfz3o4_a0a0a0a5a8(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("variableDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_tfz3o4_a0a0a7a1(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_tfz3o4_a0a0a7a8(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.SuperMethodCall", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReferenceTarget("baseMethodDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "baseMethodDeclaration", (SNode) parameter_1);
     {
       List<SNode> nodes = (List<SNode>) parameter_2;
       for (SNode child : nodes) {
@@ -189,7 +190,7 @@ public class OverrideImplementMethodsHelper {
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_tfz3o4_a0a0a0a9a1(Object parameter_1) {
+  private static SNode _quotation_createNode_tfz3o4_a0a0a0a9a8(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, GlobalScope.getInstance(), false);
@@ -200,7 +201,7 @@ public class OverrideImplementMethodsHelper {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_tfz3o4_a0a2a2(Object parameter_1) {
+  private static SNode _quotation_createNode_tfz3o4_a0a2a9(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
@@ -211,7 +212,7 @@ public class OverrideImplementMethodsHelper {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_tfz3o4_a0a0c0c(Object parameter_1) {
+  private static SNode _quotation_createNode_tfz3o4_a0a0c0j(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null, null, GlobalScope.getInstance(), false);

@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.script.runtime.StubRefUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
@@ -49,7 +50,7 @@ public class StubUtil {
     IModule debuggerApi = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("cc7da2f6-419f-4133-a811-31fcd3295a85"));
     List<SModelDescriptor> debuggerModels = debuggerApi.getOwnModelDescriptors();
     for (SModelDescriptor debuggerModel : ListSequence.fromList(debuggerModels)) {
-      if (eq_g10q2g_a0a0f0b(debuggerModel.getLongName(), targetSModelReference.getLongName())) {
+      if (eq_g10q2g_a0a0f0c(debuggerModel.getLongName(), targetSModelReference.getLongName())) {
         return debuggerModel;
       }
     }
@@ -61,11 +62,11 @@ public class StubUtil {
     SModelDescriptor newModelDescriptor = StubUtil.getDebuggerModelForReference(reference);
 
     for (SNode candidate : ListSequence.fromList(SModelOperations.getNodes(newModelDescriptor.getSModel(), conceptFqName))) {
-      if (eq_g10q2g_a0a0d0c(getResolveInfo.invoke(candidate), reference.getResolveInfo())) {
+      if (eq_g10q2g_a0a0d0d(getResolveInfo.invoke(candidate), reference.getResolveInfo())) {
         SModelReference oldModelReference = reference.getTargetSModelReference();
         SNodeOperations.getModel(targetNode).deleteModelImport(oldModelReference);
 
-        targetNode.setReferenceTarget(role, candidate);
+        SNodeAccessUtil.setReferenceTarget(targetNode, role, candidate);
         StubRefUtil.addRequiredImports(SNodeOperations.getModel(targetNode), candidate);
         return;
       }
@@ -87,7 +88,7 @@ public class StubUtil {
       SModelReference oldModelReference = reference.getTargetSModelReference();
       SNodeOperations.getModel(node).deleteModelImport(oldModelReference);
 
-      node.setReferenceTarget(role, candidate);
+      SNodeAccessUtil.setReferenceTarget(node, role, candidate);
       StubRefUtil.addRequiredImports(SNodeOperations.getModel(node), candidate);
     } else {
       findAndReplace(node, role, new _FunctionTypes._return_P1_E0<String, SNode>() {
@@ -98,14 +99,14 @@ public class StubUtil {
     }
   }
 
-  private static boolean eq_g10q2g_a0a0f0b(Object a, Object b) {
+  private static boolean eq_g10q2g_a0a0f0c(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_g10q2g_a0a0d0c(Object a, Object b) {
+  private static boolean eq_g10q2g_a0a0d0d(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

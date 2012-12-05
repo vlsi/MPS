@@ -21,10 +21,10 @@ import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
 import jetbrains.mps.newTypesystem.RuntimeSupportNew;
+import jetbrains.mps.newTypesystem.context.SimpleTypecheckingContext;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.rules.LanguageScope;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.language.LanguageRegistry;
@@ -52,26 +52,27 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
 
   public final Object LISTENERS_LOCK = new Object();
 
-  private SubtypingManager mySubtypingManager;
-  private RuntimeSupport myRuntimeSupport;
-  private RulesManager myRulesManager;
-
-  private RuntimeSupport myRuntimeSupportTracer;
-  private SubtypingManager mySubtypingManagerTracer;
-
   private ThreadLocal<TypesReadListener> myTypesReadListener = new ThreadLocal<TypesReadListener>();
-
-  private SubtypingCache mySubtypingCache = null;
-  private volatile SubtypingCachePool myGlobalSubtypingCachePool = null;
-  private SubtypingCache myGenerationSubTypingCache = null;
-
-  private Map<SNode, SNode> myComputedTypesForCompletion = null;
-
-  private IPerformanceTracer myPerformanceTracer = null;
-
   private List<TypeRecalculatedListener> myTypeRecalculatedListeners = new ArrayList<TypeRecalculatedListener>(5);
 
   private final LanguageRegistry myLanguageRegistry;
+
+  private IPerformanceTracer myPerformanceTracer = null;
+
+  private SubtypingManager mySubtypingManager;
+  private SubtypingManager mySubtypingManagerTracer;
+
+  private RuntimeSupport myRuntimeSupport;
+  private RuntimeSupport myRuntimeSupportTracer;
+
+  private RulesManager myRulesManager;
+
+  private SubtypingCache mySubtypingCache = null;
+  private volatile SubtypingCachePool myGlobalSubtypingCachePool = null;
+
+  private SubtypingCache myGenerationSubTypingCache = null;
+
+  private Map<SNode, SNode> myComputedTypesForCompletion = null;
 
   private ThreadLocal<Boolean> myIsGenerationThread = new ThreadLocal<Boolean>() {
     @Override
@@ -265,17 +266,15 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   }
 
   public InequalitySystem getInequalitiesForHole(SNode hole, boolean holeIsAType) {
-    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(hole.getTopmostAncestor());
-    InequalitySystem inequalitySystem = typeCheckingContext.getBaseNodeTypesComponent().computeInequalitiesForHole(hole, holeIsAType);
+    SimpleTypecheckingContext typeCheckingContext = (SimpleTypecheckingContext) TypeContextManager.getInstance().createTypeCheckingContext(hole.getContainingRoot());
+    InequalitySystem inequalitySystem = typeCheckingContext.getTypechecking().computeInequalitiesForHole(hole, holeIsAType);
     typeCheckingContext.dispose();
     return inequalitySystem;
   }
 
   public SNode getInferredTypeOf(final SNode node) {
     if (node == null) return null;
-    TypeCheckingContext typeCheckingContext =
-      TypeContextManager.getInstance().createTypeCheckingContext(node);
-    typeCheckingContext.setSingleTypeComputation(true);
+    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createInferenceTypeCheckingContext(node);
     SNode type = typeCheckingContext.computeTypeInferenceMode(node);
     typeCheckingContext.dispose();
     return type;

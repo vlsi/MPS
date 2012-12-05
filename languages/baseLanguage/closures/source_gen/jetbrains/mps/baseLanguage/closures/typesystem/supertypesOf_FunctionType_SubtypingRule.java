@@ -12,6 +12,7 @@ import jetbrains.mps.baseLanguage.closures.behavior.FunctionType_Behavior;
 import jetbrains.mps.baseLanguage.closures.helper.ClosureLiteralUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_FunctionType_SubtypingRule() {
@@ -21,7 +22,7 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
     if ((SLinkOperations.getTarget(ft, "runtimeIface", false) == null)) {
       return FunctionType_Behavior.call_getDeclarationRuntimeType_1230319610063(ft);
     } else {
-      return ClosureLiteralUtil.fillParams(_quotation_createNode_8hodjs_a0a0a0a0(SLinkOperations.getTarget(ft, "runtimeIface", false)), ft);
+      return ClosureLiteralUtil.fillParams(_quotation_createNode_8hodjs_a0a0a0a1(SLinkOperations.getTarget(ft, "runtimeIface", false)), ft);
     }
   }
 
@@ -40,10 +41,10 @@ public class supertypesOf_FunctionType_SubtypingRule extends SubtypingRule_Runti
     return true;
   }
 
-  private static SNode _quotation_createNode_8hodjs_a0a0a0a0(Object parameter_1) {
+  private static SNode _quotation_createNode_8hodjs_a0a0a0a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

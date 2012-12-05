@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-c39cijy2menjq6kynm7v6n1gvmq6t76">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-uvseejb8lftjizgrik03igcx568a80" />
+<dependencies version="2" modelHash="9vz3xxpdlnckkt0abkuxlfgfbnxw8he">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-87z6bgddy8ivkyr9ddyvqnv3hm4pw2y" />
   <common hash="g2j6y9pruh8e2ljsbtffe7f7xz8edr" />
-  <source id="6391517972808555635" name="RemoteProcessHandler" hash="-7a935m0lhtxmuk02qilq989m31xqlpr">
+  <source id="6391517972808555635" name="RemoteProcessHandler" hash="-4uvtmvaqrtjufpdfq5pz0rnxz4hg2s0">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="RemoteProcessHandler.java" />
   </source>

@@ -21,9 +21,10 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
+import jetbrains.mps.lang.pattern.util.MatchingUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.pattern.util.MatchingUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class Type_Behavior {
   public static void init(SNode thisNode) {
@@ -341,13 +342,6 @@ public class Type_Behavior {
     return BehaviorManager.getInstance().invokeSuper(Boolean.TYPE, SNodeOperations.cast(thisNode, "jetbrains.mps.baseLanguage.structure.Type"), callerConceptFqName, "virtual_canBeCoerced_6321644624958501287", new Class[]{SNode.class, String.class}, new Object[]{conceptFqName});
   }
 
-  private static SNode _quotation_createNode_smb55n_a0a2a0a31(Object parameter_1) {
-    SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("classifier", (SNode) parameter_1);
-    return quotedNode_2;
-  }
-
   public static class Pattern_smb55n_a0a0a0a51 extends GeneratedMatchingPattern implements IMatchingPattern {
     /*package*/ Object AntiquotationField_smb55n_a0a0a0a41;
 
@@ -379,5 +373,12 @@ public class Type_Behavior {
 
     public void performActions(Object o) {
     }
+  }
+
+  private static SNode _quotation_createNode_smb55n_a0a2a0a31(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
+    return quotedNode_2;
   }
 }

@@ -57,8 +57,6 @@ __switch__:
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _2__zzz_;
-              private Iterator<SNode> _2__zzz__it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -94,6 +92,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private SNode _2__zzz_;
+              private Iterator<SNode> _2__zzz__it;
             };
           }
         };
@@ -143,8 +144,6 @@ __switch__:
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _2__yyy_;
-              private Iterator<SNode> _2__yyy__it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -180,6 +179,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private SNode _2__yyy_;
+              private Iterator<SNode> _2__yyy__it;
             };
           }
         };
@@ -192,10 +194,6 @@ __switch__:
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _2_p;
-              private Iterator<SNode> _2_p_it;
-              private SNode _5_c;
-              private Iterator<SNode> _5_c_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -254,6 +252,11 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private SNode _2_p;
+              private Iterator<SNode> _2_p_it;
+              private SNode _5_c;
+              private Iterator<SNode> _5_c_it;
             };
           }
         };
@@ -265,10 +268,6 @@ __switch__:
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _5__yyy_;
-              private Iterator<SNode> _5__yyy__it;
-              private SNode _2__zzz_;
-              private Iterator<SNode> _2__zzz__it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -327,6 +326,11 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private SNode _5__yyy_;
+              private Iterator<SNode> _5__yyy__it;
+              private SNode _2__zzz_;
+              private Iterator<SNode> _2__zzz__it;
             };
           }
         };
@@ -343,8 +347,6 @@ __switch__:
                 public Iterator<SNode> iterator() {
                   return new YieldingIterator<SNode>() {
                     private int __CP__ = 0;
-                    private SNode _2__yyy_;
-                    private Iterator<SNode> _2__yyy__it;
 
                     protected boolean moveToNext() {
 __loop__:
@@ -384,6 +386,9 @@ __switch__:
                       } while (true);
                       return false;
                     }
+
+                    private SNode _2__yyy_;
+                    private Iterator<SNode> _2__yyy__it;
                   };
                 }
               };
@@ -398,9 +403,6 @@ __switch__:
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _3__zzz_;
-              private List<SNode> _5__yyy_;
-              private SNode _9__xxx_;
 
               protected boolean moveToNext() {
 __loop__:
@@ -445,6 +447,10 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private SNode _3__zzz_;
+              private List<SNode> _5__yyy_;
+              private SNode _9__xxx_;
             };
           }
         };
@@ -497,9 +503,6 @@ __switch__:
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _3__zzz_;
-              private List<SNode> _7__yyy_;
-              private SNode _11__xxx_;
 
               protected boolean moveToNext() {
 __loop__:
@@ -548,6 +551,10 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private SNode _3__zzz_;
+              private List<SNode> _7__yyy_;
+              private SNode _11__xxx_;
             };
           }
         };

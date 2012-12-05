@@ -25,32 +25,51 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
+import jetbrains.mps.newTypesystem.context.TracingTypecheckingContext;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.VariableIdentifier;
-import jetbrains.mps.newTypesystem.operation.*;
+import jetbrains.mps.newTypesystem.operation.AbstractOperation;
+import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
+import jetbrains.mps.newTypesystem.operation.ApplyRuleOperation;
+import jetbrains.mps.newTypesystem.operation.CheckAllOperation;
+import jetbrains.mps.newTypesystem.operation.ClearNodeTypeOperation;
+import jetbrains.mps.newTypesystem.operation.SolveInequalitiesOperation;
 import jetbrains.mps.newTypesystem.operation.block.AddBlockOperation;
 import jetbrains.mps.newTypesystem.operation.block.AddDependencyOperation;
 import jetbrains.mps.newTypesystem.operation.block.RemoveBlockOperation;
 import jetbrains.mps.newTypesystem.operation.block.RemoveDependencyOperation;
-import jetbrains.mps.newTypesystem.state.blocks.*;
+import jetbrains.mps.newTypesystem.state.blocks.Block;
+import jetbrains.mps.newTypesystem.state.blocks.BlockKind;
+import jetbrains.mps.newTypesystem.state.blocks.CheckEquationBlock;
+import jetbrains.mps.newTypesystem.state.blocks.ComparableBlock;
+import jetbrains.mps.newTypesystem.state.blocks.ConditionKind;
+import jetbrains.mps.newTypesystem.state.blocks.InequalityBlock;
+import jetbrains.mps.newTypesystem.state.blocks.RelationKind;
+import jetbrains.mps.newTypesystem.state.blocks.TargetBlock;
+import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.InequalitySystem;
-import jetbrains.mps.util.containers.ManyToManyMap;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.containers.ManyToManyMap;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.Set;
+import java.util.Stack;
 
 public class State {
   private static final Logger LOG = Logger.getLogger(State.class);
 
-  private final TypeCheckingContextNew myTypeCheckingContext;
+  private final TypeCheckingContext myTypeCheckingContext;
 
   private final Equations myEquations;
   private final Inequalities myInequalities;
@@ -75,22 +94,7 @@ public class State {
   @StateObject
   private final Set<Block> myBlocks = new THashSet<Block>();
 
-  public State(TypeCheckingContextNew tcc) {
-    myTypeCheckingContext = tcc;
-    myEquations = new Equations(this);
-    myInequalities = new Inequalities(this);
-    myNodeMaps = new NodeMaps(this);
-    myVariableIdentifier = new VariableIdentifier();
-    {
-      myBlocksAndInputs.put(ConditionKind.SHALLOW, new ManyToManyMap<SNode, Block>());
-      myBlocksAndInputs.put(ConditionKind.CONCRETE, new ManyToManyMap<SNode, Block>());
-    }
-    myOperationStack = new Stack<AbstractOperation>();
-    myOperation = new CheckAllOperation();
-    myOperationStack.push(myOperation);
-  }
-
-  public State(TypeCheckingContextNew tcc, AbstractOperation operation) {
+  public State(TypeCheckingContext tcc, AbstractOperation operation) {
     myTypeCheckingContext = tcc;
     myEquations = new Equations(this);
     myInequalities = new Inequalities(this);
@@ -103,6 +107,10 @@ public class State {
     myOperationStack = new Stack<AbstractOperation>();
     myOperation = operation;
     myOperationStack.push(myOperation);
+  }
+
+  public State(TypeCheckingContext tcc) {
+    this(tcc, new CheckAllOperation());
   }
 
   @StateMethod
@@ -290,7 +298,7 @@ public class State {
     return myInequalities;
   }
 
-  public TypeCheckingContextNew getTypeCheckingContext() {
+  public TypeCheckingContext getTypeCheckingContext() {
     return myTypeCheckingContext;
   }
 
@@ -311,7 +319,7 @@ public class State {
     if (operation == null || myTargetTypeCalculated) {
       return;
     }
-    if (myTypeCheckingContext.isInTraceMode() || operation.hasEffect()) {
+    if (myTypeCheckingContext instanceof TracingTypecheckingContext|| operation.hasEffect()) {
       if (!myOperationStack.empty()) {
         myOperationStack.peek().addConsequence(operation);
       }
@@ -378,7 +386,7 @@ public class State {
 
 
   public void clearStateObjects() {
-    if (!myTypeCheckingContext.isInTraceMode() && myInequalitySystem == null) {
+    if (!(myTypeCheckingContext instanceof TracingTypecheckingContext) && myInequalitySystem == null) {
       for (Entry<ConditionKind, ManyToManyMap<SNode, Block>> map : myBlocksAndInputs.entrySet()) {
         map.getValue().clear();
       }
@@ -486,7 +494,7 @@ public class State {
     SNode typeVar = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeTypeVariable",
       null, GlobalScope.getInstance(), false);
     //todo this code should be moved into MPS
-    typeVar.setProperty(SNodeUtil.property_INamedConcept_name, myVariableIdentifier.getNewVarName());
+    SNodeAccessUtil.setProperty(typeVar, SNodeUtil.property_INamedConcept_name, myVariableIdentifier.getNewVarName());
     return typeVar;
   }
 

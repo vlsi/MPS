@@ -28,8 +28,6 @@ public class Array_Test extends Util_Test {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _2_i;
-              private int _2_i_idx;
 
               protected boolean moveToNext() {
 __loop__:
@@ -65,6 +63,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _2_i;
+              private int _2_i_idx;
             };
           }
         };
@@ -77,8 +78,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _2_i;
-              private int _2_i_idx;
 
               protected boolean moveToNext() {
 __loop__:
@@ -114,6 +113,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _2_i;
+              private int _2_i_idx;
             };
           }
         };
@@ -127,8 +129,6 @@ __switch__:
           public Iterator<String> iterator() {
             return new YieldingIterator<String>() {
               private int __CP__ = 0;
-              private String _2_s;
-              private int _2_s_idx;
 
               protected boolean moveToNext() {
 __loop__:
@@ -164,6 +164,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private String _2_s;
+              private int _2_s_idx;
             };
           }
         };
@@ -176,8 +179,6 @@ __switch__:
           public Iterator<String> iterator() {
             return new YieldingIterator<String>() {
               private int __CP__ = 0;
-              private String _2_s;
-              private int _2_s_idx;
 
               protected boolean moveToNext() {
 __loop__:
@@ -213,6 +214,9 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private String _2_s;
+              private int _2_s_idx;
             };
           }
         };

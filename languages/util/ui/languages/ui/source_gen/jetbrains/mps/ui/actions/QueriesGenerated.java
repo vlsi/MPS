@@ -32,6 +32,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.smodel.action.AbstractSideTransformHintSubstituteAction;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class QueriesGenerated {
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_Expression_5776545240965874273(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -312,7 +313,7 @@ public class QueriesGenerated {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.ui.structure.CompartmentReferenceExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReferenceTarget("container", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "container", (SNode) parameter_2);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("uiObject", HUtil.copyIfNecessary(quotedNode_4));

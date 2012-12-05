@@ -12,22 +12,12 @@ public enum TrimKind {
   trailing("trailing", "trailing");
 
   private String myName;
-  private String myValue;
-
-  TrimKind(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -57,5 +47,16 @@ public enum TrimKind {
       return TrimKind.trailing;
     }
     return TrimKind.getDefault();
+  }
+
+  private String myValue;
+
+  TrimKind(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

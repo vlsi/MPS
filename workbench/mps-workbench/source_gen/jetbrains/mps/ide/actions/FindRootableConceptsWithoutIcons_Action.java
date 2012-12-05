@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -31,10 +30,10 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.platform.refactoring.RefactoringAccess;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewItem;
+import jetbrains.mps.logging.Logger;
 
 public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(FindRootableConceptsWithoutIcons_Action.class);
 
   public FindRootableConceptsWithoutIcons_Action() {
     super("Find Rootable Concepts without Icons", "", ICON);
@@ -80,7 +79,7 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
               results.value = ListSequence.fromList(((List<SearchResult<SNode>>) concepts.value.getSearchResults())).where(new IWhereFilter<SearchResult<SNode>>() {
                 public boolean accept(SearchResult<SNode> it) {
                   SNode node = (SNode) it.getObject();
-                  return SPropertyOperations.getBoolean(node, "rootable") && isEmpty_567cn5_a0a1a0a0a0a0a1a0a0a0a3a0a0a0a0a0a3(SPropertyOperations.getString(node, "iconPath"));
+                  return SPropertyOperations.getBoolean(node, "rootable") && isEmpty_567cn5_a0a1a0a0a0a0a1a0a0a0a3a0a0a0a0a0a5(SPropertyOperations.getString(node, "iconPath"));
                 }
               }).toListSequence();
             }
@@ -106,7 +105,9 @@ public class FindRootableConceptsWithoutIcons_Action extends BaseAction {
     }
   }
 
-  public static boolean isEmpty_567cn5_a0a1a0a0a0a0a1a0a0a0a3a0a0a0a0a0a3(String str) {
+  private static Logger LOG = Logger.getLogger(FindRootableConceptsWithoutIcons_Action.class);
+
+  public static boolean isEmpty_567cn5_a0a1a0a0a0a0a1a0a0a0a3a0a0a0a0a0a5(String str) {
     return str == null || str.length() == 0;
   }
 }

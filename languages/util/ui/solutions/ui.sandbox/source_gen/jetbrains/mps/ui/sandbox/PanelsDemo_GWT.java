@@ -30,10 +30,10 @@ public class PanelsDemo_GWT {
   }
 
   public void buildUI(Panel menu) {
-    final Hyperlink widget_vdkrdn_a0a0a = new Hyperlink();
-    widget_vdkrdn_a0a0a.setText("Vertical");
-    widget_vdkrdn_a0a0a.setTargetHistoryToken("vertical");
-    widget_vdkrdn_a0a0a.addClickHandler(new ClickHandler() {
+    final Hyperlink widget_vdkrdn_a0a0c = new Hyperlink();
+    widget_vdkrdn_a0a0c.setText("Vertical");
+    widget_vdkrdn_a0a0c.setTargetHistoryToken("vertical");
+    widget_vdkrdn_a0a0c.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent e) {
         Executor<ClickEvent> he = new Executor<ClickEvent>() {
           public void doIt(ClickEvent event) {
@@ -43,11 +43,11 @@ public class PanelsDemo_GWT {
         he.doIt(e);
       }
     });
-    menu.add(widget_vdkrdn_a0a0a);
-    final Hyperlink widget_vdkrdn_b0a0a = new Hyperlink();
-    widget_vdkrdn_b0a0a.setText("Horizontal");
-    widget_vdkrdn_b0a0a.setTargetHistoryToken("horizontal");
-    widget_vdkrdn_b0a0a.addClickHandler(new ClickHandler() {
+    menu.add(widget_vdkrdn_a0a0c);
+    final Hyperlink widget_vdkrdn_b0a0c = new Hyperlink();
+    widget_vdkrdn_b0a0c.setText("Horizontal");
+    widget_vdkrdn_b0a0c.setTargetHistoryToken("horizontal");
+    widget_vdkrdn_b0a0c.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent e) {
         Executor<ClickEvent> he = new Executor<ClickEvent>() {
           public void doIt(ClickEvent event) {
@@ -57,11 +57,11 @@ public class PanelsDemo_GWT {
         he.doIt(e);
       }
     });
-    menu.add(widget_vdkrdn_b0a0a);
-    final Hyperlink widget_vdkrdn_c0a0a = new Hyperlink();
-    widget_vdkrdn_c0a0a.setText("Dock");
-    widget_vdkrdn_c0a0a.setTargetHistoryToken("dock");
-    widget_vdkrdn_c0a0a.addClickHandler(new ClickHandler() {
+    menu.add(widget_vdkrdn_b0a0c);
+    final Hyperlink widget_vdkrdn_c0a0c = new Hyperlink();
+    widget_vdkrdn_c0a0c.setText("Dock");
+    widget_vdkrdn_c0a0c.setTargetHistoryToken("dock");
+    widget_vdkrdn_c0a0c.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent e) {
         Executor<ClickEvent> he = new Executor<ClickEvent>() {
           public void doIt(ClickEvent event) {
@@ -71,11 +71,11 @@ public class PanelsDemo_GWT {
         he.doIt(e);
       }
     });
-    menu.add(widget_vdkrdn_c0a0a);
-    final Hyperlink widget_vdkrdn_d0a0a = new Hyperlink();
-    widget_vdkrdn_d0a0a.setText("Flow");
-    widget_vdkrdn_d0a0a.setTargetHistoryToken("flow");
-    widget_vdkrdn_d0a0a.addClickHandler(new ClickHandler() {
+    menu.add(widget_vdkrdn_c0a0c);
+    final Hyperlink widget_vdkrdn_d0a0c = new Hyperlink();
+    widget_vdkrdn_d0a0c.setText("Flow");
+    widget_vdkrdn_d0a0c.setTargetHistoryToken("flow");
+    widget_vdkrdn_d0a0c.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent e) {
         Executor<ClickEvent> he = new Executor<ClickEvent>() {
           public void doIt(ClickEvent event) {
@@ -85,11 +85,11 @@ public class PanelsDemo_GWT {
         he.doIt(e);
       }
     });
-    menu.add(widget_vdkrdn_d0a0a);
-    final Hyperlink widget_vdkrdn_e0a0a = new Hyperlink();
-    widget_vdkrdn_e0a0a.setText("Layout");
-    widget_vdkrdn_e0a0a.setTargetHistoryToken("layout");
-    widget_vdkrdn_e0a0a.addClickHandler(new ClickHandler() {
+    menu.add(widget_vdkrdn_d0a0c);
+    final Hyperlink widget_vdkrdn_e0a0c = new Hyperlink();
+    widget_vdkrdn_e0a0c.setText("Layout");
+    widget_vdkrdn_e0a0c.setTargetHistoryToken("layout");
+    widget_vdkrdn_e0a0c.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent e) {
         Executor<ClickEvent> he = new Executor<ClickEvent>() {
           public void doIt(ClickEvent event) {
@@ -99,11 +99,11 @@ public class PanelsDemo_GWT {
         he.doIt(e);
       }
     });
-    menu.add(widget_vdkrdn_e0a0a);
-    final Hyperlink widget_vdkrdn_f0a0a = new Hyperlink();
-    widget_vdkrdn_f0a0a.setText("Grid");
-    widget_vdkrdn_f0a0a.setTargetHistoryToken("grid");
-    widget_vdkrdn_f0a0a.addClickHandler(new ClickHandler() {
+    menu.add(widget_vdkrdn_e0a0c);
+    final Hyperlink widget_vdkrdn_f0a0c = new Hyperlink();
+    widget_vdkrdn_f0a0c.setText("Grid");
+    widget_vdkrdn_f0a0c.setTargetHistoryToken("grid");
+    widget_vdkrdn_f0a0c.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent e) {
         Executor<ClickEvent> he = new Executor<ClickEvent>() {
           public void doIt(ClickEvent event) {
@@ -113,7 +113,7 @@ public class PanelsDemo_GWT {
         he.doIt(e);
       }
     });
-    menu.add(widget_vdkrdn_f0a0a);
+    menu.add(widget_vdkrdn_f0a0c);
 
   }
 
@@ -128,11 +128,11 @@ public class PanelsDemo_GWT {
       it.next();
       it.remove();
     }
-    final TabLayoutPanel widget_vdkrdn_b0b0b = new TabLayoutPanel(2, Style.Unit.EM);
-    final String groupName_vdkrdn_a0c0b0b = "defaultGroup";
-    final LayoutPanel widget_vdkrdn_a0a1a1a1 = new LayoutPanel();
-    final String groupName_vdkrdn_a0b0d0b0b = "defaultGroup";
-    final VerticalPanel widget_vdkrdn_a0a0a0b0b0b = new _FunctionTypes._return_P0_E0<VerticalPanel>() {
+    final TabLayoutPanel widget_vdkrdn_b0b0d = new TabLayoutPanel(2, Style.Unit.EM);
+    final String groupName_vdkrdn_a0c0b0d = "defaultGroup";
+    final LayoutPanel widget_vdkrdn_a0a1a1a3 = new LayoutPanel();
+    final String groupName_vdkrdn_a0b0d0b0d = "defaultGroup";
+    final VerticalPanel widget_vdkrdn_a0a0a0b0b0d = new _FunctionTypes._return_P0_E0<VerticalPanel>() {
       public VerticalPanel invoke() {
         VerticalPanel vp = new VerticalPanel();
         vp.setHorizontalAlignment(HasHorizontalAlignment.ALIGN_LEFT);
@@ -140,22 +140,22 @@ public class PanelsDemo_GWT {
         return vp;
       }
     }.invoke();
-    final String groupName_vdkrdn_a0b0c0d0b0b = "defaultGroup";
-    final RadioButton widget_vdkrdn_a0a0a0a0a1a1a1 = new RadioButton(groupName_vdkrdn_a0b0c0d0b0b);
-    widget_vdkrdn_a0a0a0a0a1a1a1.setText("Stage 1");
-    widget_vdkrdn_a0a0a0b0b0b.add(widget_vdkrdn_a0a0a0a0a1a1a1);
-    final RadioButton widget_vdkrdn_b0a0a0a0a1a1a1 = new RadioButton(groupName_vdkrdn_a0b0c0d0b0b);
-    widget_vdkrdn_b0a0a0a0a1a1a1.setText("Stage 2");
-    widget_vdkrdn_a0a0a0b0b0b.add(widget_vdkrdn_b0a0a0a0a1a1a1);
-    final RadioButton widget_vdkrdn_c0a0a0a0a1a1a1 = new RadioButton(groupName_vdkrdn_a0b0c0d0b0b);
-    widget_vdkrdn_c0a0a0a0a1a1a1.setText("Stage 3");
-    widget_vdkrdn_a0a0a0b0b0b.add(widget_vdkrdn_c0a0a0a0a1a1a1);
-    widget_vdkrdn_a0a1a1a1.add(widget_vdkrdn_a0a0a0b0b0b);
-    widget_vdkrdn_a0a0a0b0b0b.setSize("100%", "100%");
-    widget_vdkrdn_b0b0b.add(widget_vdkrdn_a0a1a1a1, "Vertical");
-    dc.add(widget_vdkrdn_b0b0b);
-    widget_vdkrdn_b0b0b.setWidth("100%");
-    widget_vdkrdn_b0b0b.setHeight("100%");
+    final String groupName_vdkrdn_a0b0c0d0b0d = "defaultGroup";
+    final RadioButton widget_vdkrdn_a0a0a0a0a1a1a3 = new RadioButton(groupName_vdkrdn_a0b0c0d0b0d);
+    widget_vdkrdn_a0a0a0a0a1a1a3.setText("Stage 1");
+    widget_vdkrdn_a0a0a0b0b0d.add(widget_vdkrdn_a0a0a0a0a1a1a3);
+    final RadioButton widget_vdkrdn_b0a0a0a0a1a1a3 = new RadioButton(groupName_vdkrdn_a0b0c0d0b0d);
+    widget_vdkrdn_b0a0a0a0a1a1a3.setText("Stage 2");
+    widget_vdkrdn_a0a0a0b0b0d.add(widget_vdkrdn_b0a0a0a0a1a1a3);
+    final RadioButton widget_vdkrdn_c0a0a0a0a1a1a3 = new RadioButton(groupName_vdkrdn_a0b0c0d0b0d);
+    widget_vdkrdn_c0a0a0a0a1a1a3.setText("Stage 3");
+    widget_vdkrdn_a0a0a0b0b0d.add(widget_vdkrdn_c0a0a0a0a1a1a3);
+    widget_vdkrdn_a0a1a1a3.add(widget_vdkrdn_a0a0a0b0b0d);
+    widget_vdkrdn_a0a0a0b0b0d.setSize("100%", "100%");
+    widget_vdkrdn_b0b0d.add(widget_vdkrdn_a0a1a1a3, "Vertical");
+    dc.add(widget_vdkrdn_b0b0d);
+    widget_vdkrdn_b0b0d.setWidth("100%");
+    widget_vdkrdn_b0b0d.setHeight("100%");
   }
 
   public void horizontalPanel() {
@@ -169,38 +169,38 @@ public class PanelsDemo_GWT {
       it.next();
       it.remove();
     }
-    final TabLayoutPanel widget_vdkrdn_b0b0c = new TabLayoutPanel(2, Style.Unit.EM);
-    final String groupName_vdkrdn_a0c0b0c = "defaultGroup";
-    final LayoutPanel widget_vdkrdn_a0a1a1a2 = new LayoutPanel();
-    final String groupName_vdkrdn_a0b0d0b0c = "defaultGroup";
-    final HorizontalPanel widget_vdkrdn_a0a0a0b0b0c = new _FunctionTypes._return_P0_E0<HorizontalPanel>() {
+    final TabLayoutPanel widget_vdkrdn_b0b0e = new TabLayoutPanel(2, Style.Unit.EM);
+    final String groupName_vdkrdn_a0c0b0e = "defaultGroup";
+    final LayoutPanel widget_vdkrdn_a0a1a1a4 = new LayoutPanel();
+    final String groupName_vdkrdn_a0b0d0b0e = "defaultGroup";
+    final HorizontalPanel widget_vdkrdn_a0a0a0b0b0e = new _FunctionTypes._return_P0_E0<HorizontalPanel>() {
       public HorizontalPanel invoke() {
         HorizontalPanel hp = new HorizontalPanel();
         return hp;
       }
     }.invoke();
-    final String groupName_vdkrdn_a0b0c0d0b0c = "defaultGroup";
-    final Button widget_vdkrdn_a0a0a0a0a1a1a2 = new Button();
-    widget_vdkrdn_a0a0a0a0a1a1a2.setText("Button1");
-    widget_vdkrdn_a0a0a0b0b0c.add(widget_vdkrdn_a0a0a0a0a1a1a2);
-    final Button widget_vdkrdn_b0a0a0a0a1a1a2 = new Button();
-    widget_vdkrdn_b0a0a0a0a1a1a2.setText("Button2");
-    widget_vdkrdn_a0a0a0b0b0c.add(widget_vdkrdn_b0a0a0a0a1a1a2);
-    final Button widget_vdkrdn_c0a0a0a0a1a1a2 = new Button();
-    widget_vdkrdn_c0a0a0a0a1a1a2.setText("Button3");
-    widget_vdkrdn_a0a0a0b0b0c.add(widget_vdkrdn_c0a0a0a0a1a1a2);
-    final Button widget_vdkrdn_d0a0a0a0a1a1a2 = new Button();
-    widget_vdkrdn_d0a0a0a0a1a1a2.setText("Button4");
-    widget_vdkrdn_a0a0a0b0b0c.add(widget_vdkrdn_d0a0a0a0a1a1a2);
-    final Button widget_vdkrdn_e0a0a0a0a1a1a2 = new Button();
-    widget_vdkrdn_e0a0a0a0a1a1a2.setText("Button5");
-    widget_vdkrdn_a0a0a0b0b0c.add(widget_vdkrdn_e0a0a0a0a1a1a2);
-    widget_vdkrdn_a0a1a1a2.add(widget_vdkrdn_a0a0a0b0b0c);
-    widget_vdkrdn_a0a0a0b0b0c.setSize("100%", "100%");
-    widget_vdkrdn_b0b0c.add(widget_vdkrdn_a0a1a1a2, "Horizontal");
-    dc.add(widget_vdkrdn_b0b0c);
-    widget_vdkrdn_b0b0c.setWidth("100%");
-    widget_vdkrdn_b0b0c.setHeight("100%");
+    final String groupName_vdkrdn_a0b0c0d0b0e = "defaultGroup";
+    final Button widget_vdkrdn_a0a0a0a0a1a1a4 = new Button();
+    widget_vdkrdn_a0a0a0a0a1a1a4.setText("Button1");
+    widget_vdkrdn_a0a0a0b0b0e.add(widget_vdkrdn_a0a0a0a0a1a1a4);
+    final Button widget_vdkrdn_b0a0a0a0a1a1a4 = new Button();
+    widget_vdkrdn_b0a0a0a0a1a1a4.setText("Button2");
+    widget_vdkrdn_a0a0a0b0b0e.add(widget_vdkrdn_b0a0a0a0a1a1a4);
+    final Button widget_vdkrdn_c0a0a0a0a1a1a4 = new Button();
+    widget_vdkrdn_c0a0a0a0a1a1a4.setText("Button3");
+    widget_vdkrdn_a0a0a0b0b0e.add(widget_vdkrdn_c0a0a0a0a1a1a4);
+    final Button widget_vdkrdn_d0a0a0a0a1a1a4 = new Button();
+    widget_vdkrdn_d0a0a0a0a1a1a4.setText("Button4");
+    widget_vdkrdn_a0a0a0b0b0e.add(widget_vdkrdn_d0a0a0a0a1a1a4);
+    final Button widget_vdkrdn_e0a0a0a0a1a1a4 = new Button();
+    widget_vdkrdn_e0a0a0a0a1a1a4.setText("Button5");
+    widget_vdkrdn_a0a0a0b0b0e.add(widget_vdkrdn_e0a0a0a0a1a1a4);
+    widget_vdkrdn_a0a1a1a4.add(widget_vdkrdn_a0a0a0b0b0e);
+    widget_vdkrdn_a0a0a0b0b0e.setSize("100%", "100%");
+    widget_vdkrdn_b0b0e.add(widget_vdkrdn_a0a1a1a4, "Horizontal");
+    dc.add(widget_vdkrdn_b0b0e);
+    widget_vdkrdn_b0b0e.setWidth("100%");
+    widget_vdkrdn_b0b0e.setHeight("100%");
   }
 
   public void dockPanel() {
@@ -214,94 +214,94 @@ public class PanelsDemo_GWT {
       it.next();
       it.remove();
     }
-    final TabLayoutPanel widget_vdkrdn_b0b0d = new TabLayoutPanel(2, Style.Unit.EM);
-    final String groupName_vdkrdn_a0c0b0d = "defaultGroup";
-    final DockLayoutPanel widget_vdkrdn_a0a1a1a3 = new DockLayoutPanel(Style.Unit.EM);
-    final String groupName_vdkrdn_a0b0d0b0d = "defaultGroup";
-    final DockLayoutPanel cmp1 = widget_vdkrdn_a0a1a1a3;
-    final Button widget_vdkrdn_b0a0a0b0b0d = new Button();
-    widget_vdkrdn_b0a0a0b0b0d.setText("North");
-    widget_vdkrdn_b0a0a0b0b0d.addClickHandler(new ClickHandler() {
+    final TabLayoutPanel widget_vdkrdn_b0b0f = new TabLayoutPanel(2, Style.Unit.EM);
+    final String groupName_vdkrdn_a0c0b0f = "defaultGroup";
+    final DockLayoutPanel widget_vdkrdn_a0a1a1a5 = new DockLayoutPanel(Style.Unit.EM);
+    final String groupName_vdkrdn_a0b0d0b0f = "defaultGroup";
+    final DockLayoutPanel cmp1 = widget_vdkrdn_a0a1a1a5;
+    final Button widget_vdkrdn_b0a0a0b0b0f = new Button();
+    widget_vdkrdn_b0a0a0b0b0f.setText("North");
+    widget_vdkrdn_b0a0a0b0b0f.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent e) {
         Executor<ClickEvent> he = new Executor<ClickEvent>() {
           public void doIt(ClickEvent event) {
-            final Button widget_vdkrdn_a0a0a0a1a0a0a1a1a3 = new Button();
-            widget_vdkrdn_a0a0a0a1a0a0a1a1a3.setText("North");
-            cmp1.addNorth(widget_vdkrdn_a0a0a0a1a0a0a1a1a3, 2);
-            widget_vdkrdn_a0a0a0a1a0a0a1a1a3.setWidth("100%");
-            widget_vdkrdn_a0a0a0a1a0a0a1a1a3.setHeight("100%");
+            final Button widget_vdkrdn_a0a0a0a1a0a0a1a1a5 = new Button();
+            widget_vdkrdn_a0a0a0a1a0a0a1a1a5.setText("North");
+            cmp1.addNorth(widget_vdkrdn_a0a0a0a1a0a0a1a1a5, 2);
+            widget_vdkrdn_a0a0a0a1a0a0a1a1a5.setWidth("100%");
+            widget_vdkrdn_a0a0a0a1a0a0a1a1a5.setHeight("100%");
           }
         };
         he.doIt(e);
       }
     });
-    widget_vdkrdn_a0a1a1a3.addNorth(widget_vdkrdn_b0a0a0b0b0d, 2);
-    widget_vdkrdn_b0a0a0b0b0d.setWidth("100%");
-    widget_vdkrdn_b0a0a0b0b0d.setHeight("100%");
-    final DockLayoutPanel cmp2 = widget_vdkrdn_a0a1a1a3;
-    final Button widget_vdkrdn_b0b0a0b0b0d = new Button();
-    widget_vdkrdn_b0b0a0b0b0d.setText("South");
-    widget_vdkrdn_b0b0a0b0b0d.addClickHandler(new ClickHandler() {
+    widget_vdkrdn_a0a1a1a5.addNorth(widget_vdkrdn_b0a0a0b0b0f, 2);
+    widget_vdkrdn_b0a0a0b0b0f.setWidth("100%");
+    widget_vdkrdn_b0a0a0b0b0f.setHeight("100%");
+    final DockLayoutPanel cmp2 = widget_vdkrdn_a0a1a1a5;
+    final Button widget_vdkrdn_b0b0a0b0b0f = new Button();
+    widget_vdkrdn_b0b0a0b0b0f.setText("South");
+    widget_vdkrdn_b0b0a0b0b0f.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent e) {
         Executor<ClickEvent> he = new Executor<ClickEvent>() {
           public void doIt(ClickEvent event) {
-            final Button widget_vdkrdn_a0a0a0a1a1a0a1a1a3 = new Button();
-            widget_vdkrdn_a0a0a0a1a1a0a1a1a3.setText("South");
-            cmp2.addSouth(widget_vdkrdn_a0a0a0a1a1a0a1a1a3, 2);
-            widget_vdkrdn_a0a0a0a1a1a0a1a1a3.setWidth("100%");
-            widget_vdkrdn_a0a0a0a1a1a0a1a1a3.setHeight("100%");
+            final Button widget_vdkrdn_a0a0a0a1a1a0a1a1a5 = new Button();
+            widget_vdkrdn_a0a0a0a1a1a0a1a1a5.setText("South");
+            cmp2.addSouth(widget_vdkrdn_a0a0a0a1a1a0a1a1a5, 2);
+            widget_vdkrdn_a0a0a0a1a1a0a1a1a5.setWidth("100%");
+            widget_vdkrdn_a0a0a0a1a1a0a1a1a5.setHeight("100%");
           }
         };
         he.doIt(e);
       }
     });
-    widget_vdkrdn_a0a1a1a3.addSouth(widget_vdkrdn_b0b0a0b0b0d, 2);
-    widget_vdkrdn_b0b0a0b0b0d.setWidth("100%");
-    widget_vdkrdn_b0b0a0b0b0d.setHeight("100%");
-    final DockLayoutPanel cmp3 = widget_vdkrdn_a0a1a1a3;
-    final Button widget_vdkrdn_b0c0a0b0b0d = new Button();
-    widget_vdkrdn_b0c0a0b0b0d.setText("East");
-    widget_vdkrdn_b0c0a0b0b0d.addClickHandler(new ClickHandler() {
+    widget_vdkrdn_a0a1a1a5.addSouth(widget_vdkrdn_b0b0a0b0b0f, 2);
+    widget_vdkrdn_b0b0a0b0b0f.setWidth("100%");
+    widget_vdkrdn_b0b0a0b0b0f.setHeight("100%");
+    final DockLayoutPanel cmp3 = widget_vdkrdn_a0a1a1a5;
+    final Button widget_vdkrdn_b0c0a0b0b0f = new Button();
+    widget_vdkrdn_b0c0a0b0b0f.setText("East");
+    widget_vdkrdn_b0c0a0b0b0f.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent e) {
         Executor<ClickEvent> he = new Executor<ClickEvent>() {
           public void doIt(ClickEvent event) {
-            final Button widget_vdkrdn_a0a0a0a1a2a0a1a1a3 = new Button();
-            widget_vdkrdn_a0a0a0a1a2a0a1a1a3.setText("East");
-            cmp3.addEast(widget_vdkrdn_a0a0a0a1a2a0a1a1a3, 8);
-            widget_vdkrdn_a0a0a0a1a2a0a1a1a3.setWidth("100%");
-            widget_vdkrdn_a0a0a0a1a2a0a1a1a3.setHeight("100%");
+            final Button widget_vdkrdn_a0a0a0a1a2a0a1a1a5 = new Button();
+            widget_vdkrdn_a0a0a0a1a2a0a1a1a5.setText("East");
+            cmp3.addEast(widget_vdkrdn_a0a0a0a1a2a0a1a1a5, 8);
+            widget_vdkrdn_a0a0a0a1a2a0a1a1a5.setWidth("100%");
+            widget_vdkrdn_a0a0a0a1a2a0a1a1a5.setHeight("100%");
           }
         };
         he.doIt(e);
       }
     });
-    widget_vdkrdn_a0a1a1a3.addEast(widget_vdkrdn_b0c0a0b0b0d, 8);
-    widget_vdkrdn_b0c0a0b0b0d.setWidth("100%");
-    widget_vdkrdn_b0c0a0b0b0d.setHeight("100%");
-    final DockLayoutPanel cmp4 = widget_vdkrdn_a0a1a1a3;
-    final Button widget_vdkrdn_b0d0a0b0b0d = new Button();
-    widget_vdkrdn_b0d0a0b0b0d.setText("West");
-    widget_vdkrdn_b0d0a0b0b0d.addClickHandler(new ClickHandler() {
+    widget_vdkrdn_a0a1a1a5.addEast(widget_vdkrdn_b0c0a0b0b0f, 8);
+    widget_vdkrdn_b0c0a0b0b0f.setWidth("100%");
+    widget_vdkrdn_b0c0a0b0b0f.setHeight("100%");
+    final DockLayoutPanel cmp4 = widget_vdkrdn_a0a1a1a5;
+    final Button widget_vdkrdn_b0d0a0b0b0f = new Button();
+    widget_vdkrdn_b0d0a0b0b0f.setText("West");
+    widget_vdkrdn_b0d0a0b0b0f.addClickHandler(new ClickHandler() {
       public void onClick(ClickEvent e) {
         Executor<ClickEvent> he = new Executor<ClickEvent>() {
           public void doIt(ClickEvent event) {
-            final Button widget_vdkrdn_a0a0a0a1a3a0a1a1a3 = new Button();
-            widget_vdkrdn_a0a0a0a1a3a0a1a1a3.setText("West");
-            cmp4.addWest(widget_vdkrdn_a0a0a0a1a3a0a1a1a3, 8);
-            widget_vdkrdn_a0a0a0a1a3a0a1a1a3.setWidth("100%");
-            widget_vdkrdn_a0a0a0a1a3a0a1a1a3.setHeight("100%");
+            final Button widget_vdkrdn_a0a0a0a1a3a0a1a1a5 = new Button();
+            widget_vdkrdn_a0a0a0a1a3a0a1a1a5.setText("West");
+            cmp4.addWest(widget_vdkrdn_a0a0a0a1a3a0a1a1a5, 8);
+            widget_vdkrdn_a0a0a0a1a3a0a1a1a5.setWidth("100%");
+            widget_vdkrdn_a0a0a0a1a3a0a1a1a5.setHeight("100%");
           }
         };
         he.doIt(e);
       }
     });
-    widget_vdkrdn_a0a1a1a3.addWest(widget_vdkrdn_b0d0a0b0b0d, 8);
-    widget_vdkrdn_b0d0a0b0b0d.setWidth("100%");
-    widget_vdkrdn_b0d0a0b0b0d.setHeight("100%");
-    widget_vdkrdn_b0b0d.add(widget_vdkrdn_a0a1a1a3, "Dock");
-    dc.add(widget_vdkrdn_b0b0d);
-    widget_vdkrdn_b0b0d.setWidth("100%");
-    widget_vdkrdn_b0b0d.setHeight("100%");
+    widget_vdkrdn_a0a1a1a5.addWest(widget_vdkrdn_b0d0a0b0b0f, 8);
+    widget_vdkrdn_b0d0a0b0b0f.setWidth("100%");
+    widget_vdkrdn_b0d0a0b0b0f.setHeight("100%");
+    widget_vdkrdn_b0b0f.add(widget_vdkrdn_a0a1a1a5, "Dock");
+    dc.add(widget_vdkrdn_b0b0f);
+    widget_vdkrdn_b0b0f.setWidth("100%");
+    widget_vdkrdn_b0b0f.setHeight("100%");
   }
 
   public void flowPanel() {
@@ -315,19 +315,19 @@ public class PanelsDemo_GWT {
       it.next();
       it.remove();
     }
-    final TabLayoutPanel widget_vdkrdn_b0b0e = new TabLayoutPanel(2, Style.Unit.EM);
-    final String groupName_vdkrdn_a0c0b0e = "defaultGroup";
-    final FlowPanel widget_vdkrdn_a0a1a1a4 = new FlowPanel();
-    final String groupName_vdkrdn_a0b0d0b0e = "defaultGroup";
+    final TabLayoutPanel widget_vdkrdn_b0b0g = new TabLayoutPanel(2, Style.Unit.EM);
+    final String groupName_vdkrdn_a0c0b0g = "defaultGroup";
+    final FlowPanel widget_vdkrdn_a0a1a1a6 = new FlowPanel();
+    final String groupName_vdkrdn_a0b0d0b0g = "defaultGroup";
     for (int i = 1; i <= 100; i++) {
-      final Button widget_vdkrdn_a0a0a0a0b0b0e = new Button();
-      widget_vdkrdn_a0a0a0a0b0b0e.setText("Button" + i);
-      widget_vdkrdn_a0a1a1a4.add(widget_vdkrdn_a0a0a0a0b0b0e);
+      final Button widget_vdkrdn_a0a0a0a0b0b0g = new Button();
+      widget_vdkrdn_a0a0a0a0b0b0g.setText("Button" + i);
+      widget_vdkrdn_a0a1a1a6.add(widget_vdkrdn_a0a0a0a0b0b0g);
     }
-    widget_vdkrdn_b0b0e.add(widget_vdkrdn_a0a1a1a4, "Flow");
-    dc.add(widget_vdkrdn_b0b0e);
-    widget_vdkrdn_b0b0e.setWidth("100%");
-    widget_vdkrdn_b0b0e.setHeight("100%");
+    widget_vdkrdn_b0b0g.add(widget_vdkrdn_a0a1a1a6, "Flow");
+    dc.add(widget_vdkrdn_b0b0g);
+    widget_vdkrdn_b0b0g.setWidth("100%");
+    widget_vdkrdn_b0b0g.setHeight("100%");
   }
 
   public void layoutPanel() {
@@ -341,81 +341,81 @@ public class PanelsDemo_GWT {
       it.next();
       it.remove();
     }
-    final TabLayoutPanel widget_vdkrdn_b0b0f = new TabLayoutPanel(2, Style.Unit.EM);
-    final String groupName_vdkrdn_a0c0b0f = "defaultGroup";
-    final LayoutPanel widget_vdkrdn_a0a1a1a5 = new LayoutPanel();
-    final String groupName_vdkrdn_a0b0d0b0f = "defaultGroup";
-    final LayoutPanel widget_vdkrdn_a0a0a0b0b0f = new LayoutPanel();
-    final String groupName_vdkrdn_a0b0c0d0b0f = "defaultGroup";
-    final Button widget_vdkrdn_a0a0a0a0a1a1a5 = new Button();
-    widget_vdkrdn_a0a0a0a0a1a1a5.setText("Button #1");
-    widget_vdkrdn_a0a0a0b0b0f.add(widget_vdkrdn_a0a0a0a0a1a1a5);
-    widget_vdkrdn_a0a0a0a0a1a1a5.setWidth("100%");
-    widget_vdkrdn_a0a0a0a0a1a1a5.setHeight("100%");
-    widget_vdkrdn_a0a0a0b0b0f.setWidgetLeftWidth(widget_vdkrdn_a0a0a0a0a1a1a5, 0, Style.Unit.PCT, 80, Style.Unit.PCT);
-    widget_vdkrdn_a0a0a0b0b0f.setWidgetTopHeight(widget_vdkrdn_a0a0a0a0a1a1a5, 0, Style.Unit.PCT, 60, Style.Unit.PCT);
-    final Button widget_vdkrdn_b0a0a0a0a1a1a5 = new Button();
-    widget_vdkrdn_b0a0a0a0a1a1a5.setText("Button #2");
-    widget_vdkrdn_a0a0a0b0b0f.add(widget_vdkrdn_b0a0a0a0a1a1a5);
-    widget_vdkrdn_b0a0a0a0a1a1a5.setWidth("100%");
-    widget_vdkrdn_b0a0a0a0a1a1a5.setHeight("100%");
-    widget_vdkrdn_a0a0a0b0b0f.setWidgetLeftWidth(widget_vdkrdn_b0a0a0a0a1a1a5, 80, Style.Unit.PCT, 20, Style.Unit.PCT);
-    widget_vdkrdn_a0a0a0b0b0f.setWidgetTopHeight(widget_vdkrdn_b0a0a0a0a1a1a5, 0, Style.Unit.PCT, 20, Style.Unit.PCT);
-    final Button widget_vdkrdn_c0a0a0a0a1a1a5 = new Button();
-    widget_vdkrdn_c0a0a0a0a1a1a5.setText("Button #3");
-    widget_vdkrdn_a0a0a0b0b0f.add(widget_vdkrdn_c0a0a0a0a1a1a5);
-    widget_vdkrdn_c0a0a0a0a1a1a5.setWidth("100%");
-    widget_vdkrdn_c0a0a0a0a1a1a5.setHeight("100%");
-    widget_vdkrdn_a0a0a0b0b0f.setWidgetLeftWidth(widget_vdkrdn_c0a0a0a0a1a1a5, 80, Style.Unit.PCT, 20, Style.Unit.PCT);
-    widget_vdkrdn_a0a0a0b0b0f.setWidgetTopHeight(widget_vdkrdn_c0a0a0a0a1a1a5, 20, Style.Unit.PCT, 20, Style.Unit.PCT);
-    final Button widget_vdkrdn_d0a0a0a0a1a1a5 = new Button();
-    widget_vdkrdn_d0a0a0a0a1a1a5.setText("Button #4");
-    widget_vdkrdn_a0a0a0b0b0f.add(widget_vdkrdn_d0a0a0a0a1a1a5);
-    widget_vdkrdn_d0a0a0a0a1a1a5.setWidth("100%");
-    widget_vdkrdn_d0a0a0a0a1a1a5.setHeight("100%");
-    widget_vdkrdn_a0a0a0b0b0f.setWidgetLeftWidth(widget_vdkrdn_d0a0a0a0a1a1a5, 80, Style.Unit.PCT, 20, Style.Unit.PCT);
-    widget_vdkrdn_a0a0a0b0b0f.setWidgetTopHeight(widget_vdkrdn_d0a0a0a0a1a1a5, 40, Style.Unit.PCT, 20, Style.Unit.PCT);
-    final Button widget_vdkrdn_e0a0a0a0a1a1a5 = new Button();
-    widget_vdkrdn_e0a0a0a0a1a1a5.setText("Button #5");
-    widget_vdkrdn_a0a0a0b0b0f.add(widget_vdkrdn_e0a0a0a0a1a1a5);
-    widget_vdkrdn_e0a0a0a0a1a1a5.setWidth("100%");
-    widget_vdkrdn_e0a0a0a0a1a1a5.setHeight("100%");
-    widget_vdkrdn_a0a0a0b0b0f.setWidgetLeftWidth(widget_vdkrdn_e0a0a0a0a1a1a5, 0, Style.Unit.PCT, 20, Style.Unit.PCT);
-    widget_vdkrdn_a0a0a0b0b0f.setWidgetTopHeight(widget_vdkrdn_e0a0a0a0a1a1a5, 60, Style.Unit.PCT, 20, Style.Unit.PCT);
-    final Button widget_vdkrdn_f0a0a0a0a1a1a5 = new Button();
-    widget_vdkrdn_f0a0a0a0a1a1a5.setText("Button #6");
-    widget_vdkrdn_a0a0a0b0b0f.add(widget_vdkrdn_f0a0a0a0a1a1a5);
-    widget_vdkrdn_f0a0a0a0a1a1a5.setWidth("100%");
-    widget_vdkrdn_f0a0a0a0a1a1a5.setHeight("100%");
-    widget_vdkrdn_a0a0a0b0b0f.setWidgetLeftWidth(widget_vdkrdn_f0a0a0a0a1a1a5, 40, Style.Unit.PCT, 20, Style.Unit.PCT);
-    widget_vdkrdn_a0a0a0b0b0f.setWidgetTopHeight(widget_vdkrdn_f0a0a0a0a1a1a5, 60, Style.Unit.PCT, 20, Style.Unit.PCT);
-    final Button widget_vdkrdn_g0a0a0a0a1a1a5 = new Button();
-    widget_vdkrdn_g0a0a0a0a1a1a5.setText("Button #7");
-    widget_vdkrdn_a0a0a0b0b0f.add(widget_vdkrdn_g0a0a0a0a1a1a5);
-    widget_vdkrdn_g0a0a0a0a1a1a5.setWidth("100%");
-    widget_vdkrdn_g0a0a0a0a1a1a5.setHeight("100%");
-    widget_vdkrdn_a0a0a0b0b0f.setWidgetLeftWidth(widget_vdkrdn_g0a0a0a0a1a1a5, 60, Style.Unit.PCT, 20, Style.Unit.PCT);
-    widget_vdkrdn_a0a0a0b0b0f.setWidgetTopHeight(widget_vdkrdn_g0a0a0a0a1a1a5, 60, Style.Unit.PCT, 20, Style.Unit.PCT);
-    final Button widget_vdkrdn_h0a0a0a0a1a1a5 = new Button();
-    widget_vdkrdn_h0a0a0a0a1a1a5.setText("Button #8");
-    widget_vdkrdn_a0a0a0b0b0f.add(widget_vdkrdn_h0a0a0a0a1a1a5);
-    widget_vdkrdn_h0a0a0a0a1a1a5.setWidth("100%");
-    widget_vdkrdn_h0a0a0a0a1a1a5.setHeight("100%");
-    widget_vdkrdn_a0a0a0b0b0f.setWidgetLeftWidth(widget_vdkrdn_h0a0a0a0a1a1a5, 20, Style.Unit.PCT, 20, Style.Unit.PCT);
-    widget_vdkrdn_a0a0a0b0b0f.setWidgetTopHeight(widget_vdkrdn_h0a0a0a0a1a1a5, 80, Style.Unit.PCT, 20, Style.Unit.PCT);
-    final Button widget_vdkrdn_i0a0a0a0a1a1a5 = new Button();
-    widget_vdkrdn_i0a0a0a0a1a1a5.setText("Button #5");
-    widget_vdkrdn_a0a0a0b0b0f.add(widget_vdkrdn_i0a0a0a0a1a1a5);
-    widget_vdkrdn_i0a0a0a0a1a1a5.setWidth("100%");
-    widget_vdkrdn_i0a0a0a0a1a1a5.setHeight("100%");
-    widget_vdkrdn_a0a0a0b0b0f.setWidgetLeftWidth(widget_vdkrdn_i0a0a0a0a1a1a5, 60, Style.Unit.PCT, 20, Style.Unit.PCT);
-    widget_vdkrdn_a0a0a0b0b0f.setWidgetTopHeight(widget_vdkrdn_i0a0a0a0a1a1a5, 80, Style.Unit.PCT, 20, Style.Unit.PCT);
-    widget_vdkrdn_a0a1a1a5.add(widget_vdkrdn_a0a0a0b0b0f);
-    widget_vdkrdn_a0a0a0b0b0f.setSize("100%", "100%");
-    widget_vdkrdn_b0b0f.add(widget_vdkrdn_a0a1a1a5, "Layout");
-    dc.add(widget_vdkrdn_b0b0f);
-    widget_vdkrdn_b0b0f.setWidth("100%");
-    widget_vdkrdn_b0b0f.setHeight("100%");
+    final TabLayoutPanel widget_vdkrdn_b0b0h = new TabLayoutPanel(2, Style.Unit.EM);
+    final String groupName_vdkrdn_a0c0b0h = "defaultGroup";
+    final LayoutPanel widget_vdkrdn_a0a1a1a7 = new LayoutPanel();
+    final String groupName_vdkrdn_a0b0d0b0h = "defaultGroup";
+    final LayoutPanel widget_vdkrdn_a0a0a0b0b0h = new LayoutPanel();
+    final String groupName_vdkrdn_a0b0c0d0b0h = "defaultGroup";
+    final Button widget_vdkrdn_a0a0a0a0a1a1a7 = new Button();
+    widget_vdkrdn_a0a0a0a0a1a1a7.setText("Button #1");
+    widget_vdkrdn_a0a0a0b0b0h.add(widget_vdkrdn_a0a0a0a0a1a1a7);
+    widget_vdkrdn_a0a0a0a0a1a1a7.setWidth("100%");
+    widget_vdkrdn_a0a0a0a0a1a1a7.setHeight("100%");
+    widget_vdkrdn_a0a0a0b0b0h.setWidgetLeftWidth(widget_vdkrdn_a0a0a0a0a1a1a7, 0, Style.Unit.PCT, 80, Style.Unit.PCT);
+    widget_vdkrdn_a0a0a0b0b0h.setWidgetTopHeight(widget_vdkrdn_a0a0a0a0a1a1a7, 0, Style.Unit.PCT, 60, Style.Unit.PCT);
+    final Button widget_vdkrdn_b0a0a0a0a1a1a7 = new Button();
+    widget_vdkrdn_b0a0a0a0a1a1a7.setText("Button #2");
+    widget_vdkrdn_a0a0a0b0b0h.add(widget_vdkrdn_b0a0a0a0a1a1a7);
+    widget_vdkrdn_b0a0a0a0a1a1a7.setWidth("100%");
+    widget_vdkrdn_b0a0a0a0a1a1a7.setHeight("100%");
+    widget_vdkrdn_a0a0a0b0b0h.setWidgetLeftWidth(widget_vdkrdn_b0a0a0a0a1a1a7, 80, Style.Unit.PCT, 20, Style.Unit.PCT);
+    widget_vdkrdn_a0a0a0b0b0h.setWidgetTopHeight(widget_vdkrdn_b0a0a0a0a1a1a7, 0, Style.Unit.PCT, 20, Style.Unit.PCT);
+    final Button widget_vdkrdn_c0a0a0a0a1a1a7 = new Button();
+    widget_vdkrdn_c0a0a0a0a1a1a7.setText("Button #3");
+    widget_vdkrdn_a0a0a0b0b0h.add(widget_vdkrdn_c0a0a0a0a1a1a7);
+    widget_vdkrdn_c0a0a0a0a1a1a7.setWidth("100%");
+    widget_vdkrdn_c0a0a0a0a1a1a7.setHeight("100%");
+    widget_vdkrdn_a0a0a0b0b0h.setWidgetLeftWidth(widget_vdkrdn_c0a0a0a0a1a1a7, 80, Style.Unit.PCT, 20, Style.Unit.PCT);
+    widget_vdkrdn_a0a0a0b0b0h.setWidgetTopHeight(widget_vdkrdn_c0a0a0a0a1a1a7, 20, Style.Unit.PCT, 20, Style.Unit.PCT);
+    final Button widget_vdkrdn_d0a0a0a0a1a1a7 = new Button();
+    widget_vdkrdn_d0a0a0a0a1a1a7.setText("Button #4");
+    widget_vdkrdn_a0a0a0b0b0h.add(widget_vdkrdn_d0a0a0a0a1a1a7);
+    widget_vdkrdn_d0a0a0a0a1a1a7.setWidth("100%");
+    widget_vdkrdn_d0a0a0a0a1a1a7.setHeight("100%");
+    widget_vdkrdn_a0a0a0b0b0h.setWidgetLeftWidth(widget_vdkrdn_d0a0a0a0a1a1a7, 80, Style.Unit.PCT, 20, Style.Unit.PCT);
+    widget_vdkrdn_a0a0a0b0b0h.setWidgetTopHeight(widget_vdkrdn_d0a0a0a0a1a1a7, 40, Style.Unit.PCT, 20, Style.Unit.PCT);
+    final Button widget_vdkrdn_e0a0a0a0a1a1a7 = new Button();
+    widget_vdkrdn_e0a0a0a0a1a1a7.setText("Button #5");
+    widget_vdkrdn_a0a0a0b0b0h.add(widget_vdkrdn_e0a0a0a0a1a1a7);
+    widget_vdkrdn_e0a0a0a0a1a1a7.setWidth("100%");
+    widget_vdkrdn_e0a0a0a0a1a1a7.setHeight("100%");
+    widget_vdkrdn_a0a0a0b0b0h.setWidgetLeftWidth(widget_vdkrdn_e0a0a0a0a1a1a7, 0, Style.Unit.PCT, 20, Style.Unit.PCT);
+    widget_vdkrdn_a0a0a0b0b0h.setWidgetTopHeight(widget_vdkrdn_e0a0a0a0a1a1a7, 60, Style.Unit.PCT, 20, Style.Unit.PCT);
+    final Button widget_vdkrdn_f0a0a0a0a1a1a7 = new Button();
+    widget_vdkrdn_f0a0a0a0a1a1a7.setText("Button #6");
+    widget_vdkrdn_a0a0a0b0b0h.add(widget_vdkrdn_f0a0a0a0a1a1a7);
+    widget_vdkrdn_f0a0a0a0a1a1a7.setWidth("100%");
+    widget_vdkrdn_f0a0a0a0a1a1a7.setHeight("100%");
+    widget_vdkrdn_a0a0a0b0b0h.setWidgetLeftWidth(widget_vdkrdn_f0a0a0a0a1a1a7, 40, Style.Unit.PCT, 20, Style.Unit.PCT);
+    widget_vdkrdn_a0a0a0b0b0h.setWidgetTopHeight(widget_vdkrdn_f0a0a0a0a1a1a7, 60, Style.Unit.PCT, 20, Style.Unit.PCT);
+    final Button widget_vdkrdn_g0a0a0a0a1a1a7 = new Button();
+    widget_vdkrdn_g0a0a0a0a1a1a7.setText("Button #7");
+    widget_vdkrdn_a0a0a0b0b0h.add(widget_vdkrdn_g0a0a0a0a1a1a7);
+    widget_vdkrdn_g0a0a0a0a1a1a7.setWidth("100%");
+    widget_vdkrdn_g0a0a0a0a1a1a7.setHeight("100%");
+    widget_vdkrdn_a0a0a0b0b0h.setWidgetLeftWidth(widget_vdkrdn_g0a0a0a0a1a1a7, 60, Style.Unit.PCT, 20, Style.Unit.PCT);
+    widget_vdkrdn_a0a0a0b0b0h.setWidgetTopHeight(widget_vdkrdn_g0a0a0a0a1a1a7, 60, Style.Unit.PCT, 20, Style.Unit.PCT);
+    final Button widget_vdkrdn_h0a0a0a0a1a1a7 = new Button();
+    widget_vdkrdn_h0a0a0a0a1a1a7.setText("Button #8");
+    widget_vdkrdn_a0a0a0b0b0h.add(widget_vdkrdn_h0a0a0a0a1a1a7);
+    widget_vdkrdn_h0a0a0a0a1a1a7.setWidth("100%");
+    widget_vdkrdn_h0a0a0a0a1a1a7.setHeight("100%");
+    widget_vdkrdn_a0a0a0b0b0h.setWidgetLeftWidth(widget_vdkrdn_h0a0a0a0a1a1a7, 20, Style.Unit.PCT, 20, Style.Unit.PCT);
+    widget_vdkrdn_a0a0a0b0b0h.setWidgetTopHeight(widget_vdkrdn_h0a0a0a0a1a1a7, 80, Style.Unit.PCT, 20, Style.Unit.PCT);
+    final Button widget_vdkrdn_i0a0a0a0a1a1a7 = new Button();
+    widget_vdkrdn_i0a0a0a0a1a1a7.setText("Button #5");
+    widget_vdkrdn_a0a0a0b0b0h.add(widget_vdkrdn_i0a0a0a0a1a1a7);
+    widget_vdkrdn_i0a0a0a0a1a1a7.setWidth("100%");
+    widget_vdkrdn_i0a0a0a0a1a1a7.setHeight("100%");
+    widget_vdkrdn_a0a0a0b0b0h.setWidgetLeftWidth(widget_vdkrdn_i0a0a0a0a1a1a7, 60, Style.Unit.PCT, 20, Style.Unit.PCT);
+    widget_vdkrdn_a0a0a0b0b0h.setWidgetTopHeight(widget_vdkrdn_i0a0a0a0a1a1a7, 80, Style.Unit.PCT, 20, Style.Unit.PCT);
+    widget_vdkrdn_a0a1a1a7.add(widget_vdkrdn_a0a0a0b0b0h);
+    widget_vdkrdn_a0a0a0b0b0h.setSize("100%", "100%");
+    widget_vdkrdn_b0b0h.add(widget_vdkrdn_a0a1a1a7, "Layout");
+    dc.add(widget_vdkrdn_b0b0h);
+    widget_vdkrdn_b0b0h.setWidth("100%");
+    widget_vdkrdn_b0b0h.setHeight("100%");
   }
 
   public void gridLayoutPanel() {
@@ -429,11 +429,11 @@ public class PanelsDemo_GWT {
       it.next();
       it.remove();
     }
-    final TabLayoutPanel widget_vdkrdn_b0b0g = new TabLayoutPanel(2, Style.Unit.EM);
-    final String groupName_vdkrdn_a0c0b0g = "defaultGroup";
-    final LayoutPanel widget_vdkrdn_a0a1a1a6 = new LayoutPanel();
-    final String groupName_vdkrdn_a0b0d0b0g = "defaultGroup";
-    final FlexTable widget_vdkrdn_a0a0a0b0b0g = new _FunctionTypes._return_P0_E0<FlexTable>() {
+    final TabLayoutPanel widget_vdkrdn_b0b0i = new TabLayoutPanel(2, Style.Unit.EM);
+    final String groupName_vdkrdn_a0c0b0i = "defaultGroup";
+    final LayoutPanel widget_vdkrdn_a0a1a1a8 = new LayoutPanel();
+    final String groupName_vdkrdn_a0b0d0b0i = "defaultGroup";
+    final FlexTable widget_vdkrdn_a0a0a0b0b0i = new _FunctionTypes._return_P0_E0<FlexTable>() {
       public FlexTable invoke() {
         FlexTable ft = new FlexTable();
         ft.setWidth("100%");
@@ -441,33 +441,33 @@ public class PanelsDemo_GWT {
         return ft;
       }
     }.invoke();
-    final String groupName_vdkrdn_a0b0c0d0b0g = "defaultGroup";
-    final Button widget_vdkrdn_a0a0a0a0a1a1a6 = new Button();
-    widget_vdkrdn_a0a0a0a0a1a1a6.setText("Whatsup?");
+    final String groupName_vdkrdn_a0b0c0d0b0i = "defaultGroup";
+    final Button widget_vdkrdn_a0a0a0a0a1a1a8 = new Button();
+    widget_vdkrdn_a0a0a0a0a1a1a8.setText("Whatsup?");
     {
-      int xcell_a0d0c0c0d0b0g = 2;
-      int ycell_a0d0c0c0d0b0g = 2;
-      widget_vdkrdn_a0a0a0b0b0g.setWidget(ycell_a0d0c0c0d0b0g, xcell_a0d0c0c0d0b0g, widget_vdkrdn_a0a0a0a0a1a1a6);
+      int xcell_a0d0c0c0d0b0i = 2;
+      int ycell_a0d0c0c0d0b0i = 2;
+      widget_vdkrdn_a0a0a0b0b0i.setWidget(ycell_a0d0c0c0d0b0i, xcell_a0d0c0c0d0b0i, widget_vdkrdn_a0a0a0a0a1a1a8);
     }
-    final Button widget_vdkrdn_b0a0a0a0a1a1a6 = new Button();
-    widget_vdkrdn_b0a0a0a0a1a1a6.setText("Boo-hoo!");
+    final Button widget_vdkrdn_b0a0a0a0a1a1a8 = new Button();
+    widget_vdkrdn_b0a0a0a0a1a1a8.setText("Boo-hoo!");
     {
-      int xcell_a0h0c0c0d0b0g = 0;
-      int ycell_a0h0c0c0d0b0g = 0;
-      widget_vdkrdn_a0a0a0b0b0g.setWidget(ycell_a0h0c0c0d0b0g, xcell_a0h0c0c0d0b0g, widget_vdkrdn_b0a0a0a0a1a1a6);
+      int xcell_a0h0c0c0d0b0i = 0;
+      int ycell_a0h0c0c0d0b0i = 0;
+      widget_vdkrdn_a0a0a0b0b0i.setWidget(ycell_a0h0c0c0d0b0i, xcell_a0h0c0c0d0b0i, widget_vdkrdn_b0a0a0a0a1a1a8);
     }
-    final Button widget_vdkrdn_c0a0a0a0a1a1a6 = new Button();
-    widget_vdkrdn_c0a0a0a0a1a1a6.setText("Let's do it!");
+    final Button widget_vdkrdn_c0a0a0a0a1a1a8 = new Button();
+    widget_vdkrdn_c0a0a0a0a1a1a8.setText("Let's do it!");
     {
-      int xcell_a0l0c0c0d0b0g = 1;
-      int ycell_a0l0c0c0d0b0g = 1;
-      widget_vdkrdn_a0a0a0b0b0g.setWidget(ycell_a0l0c0c0d0b0g, xcell_a0l0c0c0d0b0g, widget_vdkrdn_c0a0a0a0a1a1a6);
+      int xcell_a0l0c0c0d0b0i = 1;
+      int ycell_a0l0c0c0d0b0i = 1;
+      widget_vdkrdn_a0a0a0b0b0i.setWidget(ycell_a0l0c0c0d0b0i, xcell_a0l0c0c0d0b0i, widget_vdkrdn_c0a0a0a0a1a1a8);
     }
-    widget_vdkrdn_a0a1a1a6.add(widget_vdkrdn_a0a0a0b0b0g);
-    widget_vdkrdn_a0a0a0b0b0g.setSize("100%", "100%");
-    widget_vdkrdn_b0b0g.add(widget_vdkrdn_a0a1a1a6, "Grid");
-    dc.add(widget_vdkrdn_b0b0g);
-    widget_vdkrdn_b0b0g.setWidth("100%");
-    widget_vdkrdn_b0b0g.setHeight("100%");
+    widget_vdkrdn_a0a1a1a8.add(widget_vdkrdn_a0a0a0b0b0i);
+    widget_vdkrdn_a0a0a0b0b0i.setSize("100%", "100%");
+    widget_vdkrdn_b0b0i.add(widget_vdkrdn_a0a1a1a8, "Grid");
+    dc.add(widget_vdkrdn_b0b0i);
+    widget_vdkrdn_b0b0i.setWidth("100%");
+    widget_vdkrdn_b0b0i.setHeight("100%");
   }
 }

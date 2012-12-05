@@ -11,6 +11,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class typeof_ReadConceptReferenceExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ReadConceptReferenceExpression_InferenceRule() {
@@ -20,7 +21,7 @@ public class typeof_ReadConceptReferenceExpression_InferenceRule extends Abstrac
     {
       SNode _nodeToCheck_1029348928467 = conceptReference;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "448792706993300117", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "448792706993300114", true), (SNode) _quotation_createNode_q4cewa_a0a0a(SLinkOperations.getTarget(conceptReference, "conceptDeclaration", false)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "448792706993300114", true), (SNode) _quotation_createNode_q4cewa_a0a0b(SLinkOperations.getTarget(conceptReference, "conceptDeclaration", false)), _info_12389875345);
     }
   }
 
@@ -39,10 +40,10 @@ public class typeof_ReadConceptReferenceExpression_InferenceRule extends Abstrac
     return false;
   }
 
-  private static SNode _quotation_createNode_q4cewa_a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_q4cewa_a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("conceptDeclaraton", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "conceptDeclaraton", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

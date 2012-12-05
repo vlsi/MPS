@@ -16,6 +16,7 @@
 package jetbrains.mps.ide.ui.dialogs.properties.tables.models;
 
 import com.intellij.util.ui.ItemRemovable;
+import jetbrains.mps.ide.ui.dialogs.properties.Modifiable;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Language;
@@ -26,8 +27,8 @@ import javax.swing.table.AbstractTableModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public abstract class UsedLangsTableModel<T> extends AbstractTableModel implements ItemRemovable {
-  protected List<UsedLangTableItem> myTableItems = new ArrayList<UsedLangTableItem>();
+public abstract class UsedLangsTableModel<T> extends AbstractTableModel implements ItemRemovable, Modifiable {
+  protected List<ModuleReference> myTableItems = new ArrayList<ModuleReference>();
   protected T myItem;
 
   public static final int ITEM_COLUMN = 0;
@@ -39,11 +40,7 @@ public abstract class UsedLangsTableModel<T> extends AbstractTableModel implemen
     init();
   }
 
-  protected abstract void init();
-  public abstract boolean isModified();
-  public abstract void apply();
-
-  public void addItem(UsedLangTableItem item) {
+  public void addItem(ModuleReference item) {
     if(myTableItems.contains(item))
       return;
     myTableItems.add(item);
@@ -75,13 +72,13 @@ public abstract class UsedLangsTableModel<T> extends AbstractTableModel implemen
   @Override
   public Class<?> getColumnClass(int columnIndex) {
     if(columnIndex == ITEM_COLUMN)
-      return UsedLangTableItem.class;
+      return ModuleReference.class;
     return super.getColumnClass(columnIndex);
   }
 
   @Override
   public Object getValueAt(int rowIndex, int columnIndex) {
-    UsedLangTableItem item = myTableItems.get(rowIndex);
+    ModuleReference item = myTableItems.get(rowIndex);
     if(columnIndex == ITEM_COLUMN)
       return item;
     return null;
@@ -90,9 +87,9 @@ public abstract class UsedLangsTableModel<T> extends AbstractTableModel implemen
   public List<ModuleReference> getUsedLanguages() {
     List<ModuleReference> list = new ArrayList<ModuleReference>();
     MPSModuleRepository moduleRepository = MPSModuleRepository.getInstance();
-    for(UsedLangTableItem tableItem : myTableItems)
-      if(moduleRepository.getModuleById(tableItem.getItem().getModuleId()) instanceof Language)
-        list.add(tableItem.getItem());
+    for(ModuleReference tableItem : myTableItems)
+      if(moduleRepository.getModuleById(tableItem.getModuleId()) instanceof Language)
+        list.add(tableItem);
 
     return list;
   }
@@ -100,9 +97,9 @@ public abstract class UsedLangsTableModel<T> extends AbstractTableModel implemen
   public List<ModuleReference> getUsedDevkits() {
     List<ModuleReference> list = new ArrayList<ModuleReference>();
     MPSModuleRepository moduleRepository = MPSModuleRepository.getInstance();
-    for(UsedLangTableItem tableItem : myTableItems)
-      if(moduleRepository.getModuleById(tableItem.getItem().getModuleId()) instanceof DevKit)
-        list.add(tableItem.getItem());
+    for(ModuleReference tableItem : myTableItems)
+      if(moduleRepository.getModuleById(tableItem.getModuleId()) instanceof DevKit)
+        list.add(tableItem);
 
     return list;
   }

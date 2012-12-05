@@ -4,8 +4,6 @@ package jetbrains.mps.ide.migration.migration25;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -15,10 +13,11 @@ import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelRepository;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class OptimizeProjectImports_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(OptimizeProjectImports_Action.class);
 
   public OptimizeProjectImports_Action() {
     super("Optimize Module Imports", "", ICON);
@@ -65,4 +64,6 @@ public class OptimizeProjectImports_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(OptimizeProjectImports_Action.class);
 }

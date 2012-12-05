@@ -162,12 +162,12 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
     return nodeCell.findParent(new Condition<EditorCell_Collection>() {
       public boolean met(EditorCell_Collection cellCollection) {
         // do not want an explicit dependency on table.runtime 
-        return eq_mgy25g_a0b0a0a0a0a5a51(cellCollection.getClass().getSimpleName(), "EditorCell_Table");
+        return eq_mgy25g_a0b0a0a0a0a5a71(cellCollection.getClass().getSimpleName(), "EditorCell_Table");
       }
     }) != null;
   }
 
-  private static boolean eq_mgy25g_a0b0a0a0a0a5a51(Object a, Object b) {
+  private static boolean eq_mgy25g_a0b0a0a0a0a5a71(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

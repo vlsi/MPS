@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import javax.swing.tree.TreeNode;
@@ -13,10 +12,11 @@ import jetbrains.mps.ide.ui.smodel.PropertyTreeNode;
 import jetbrains.mps.ide.ui.smodel.PropertiesTreeNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.logging.Logger;
 
 public class DeletePropertyAction_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(DeletePropertyAction_Action.class);
 
   public DeletePropertyAction_Action() {
     super("Delete", "", ICON);
@@ -65,9 +65,11 @@ public class DeletePropertyAction_Action extends BaseAction {
       TreeNode parent = ((TreeNode) MapSequence.fromMap(_params).get("node")).getParent();
       PropertiesTreeNode propsNode = (PropertiesTreeNode) parent;
       PropertyTreeNode propNode = (PropertyTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
-      propsNode.getSNode().setProperty(propNode.getProperty(), null);
+      SNodeAccessUtil.setProperty(propsNode.getSNode(), propNode.getProperty(), null);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "DeletePropertyAction", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(DeletePropertyAction_Action.class);
 }

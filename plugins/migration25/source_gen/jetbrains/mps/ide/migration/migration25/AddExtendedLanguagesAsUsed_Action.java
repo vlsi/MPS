@@ -4,8 +4,6 @@ package jetbrains.mps.ide.migration.migration25;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -20,10 +18,11 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class AddExtendedLanguagesAsUsed_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(AddExtendedLanguagesAsUsed_Action.class);
 
   public AddExtendedLanguagesAsUsed_Action() {
     super("Add Extended Languages as Used", "", ICON);
@@ -77,4 +76,6 @@ public class AddExtendedLanguagesAsUsed_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(AddExtendedLanguagesAsUsed_Action.class);
 }

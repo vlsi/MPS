@@ -30,10 +30,6 @@ public class Variable_Behavior {
           public Iterator<SNode> iterator() {
             return new YieldingIterator<SNode>() {
               private int __CP__ = 0;
-              private SNode _2_node;
-              private Iterator<SNode> _2_node_it;
-              private SNode _5__yield_4cy34q_a0a0a0a0b0c;
-              private Iterator<SNode> _5__yield_4cy34q_a0a0a0a0b0c_it;
 
               protected boolean moveToNext() {
 __loop__:
@@ -82,6 +78,11 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private SNode _2_node;
+              private Iterator<SNode> _2_node_it;
+              private SNode _5__yield_4cy34q_a0a0a0a0b0c;
+              private Iterator<SNode> _5__yield_4cy34q_a0a0a0a0b0c_it;
             };
           }
         };

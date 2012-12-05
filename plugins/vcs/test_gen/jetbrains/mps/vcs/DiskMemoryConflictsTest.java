@@ -16,6 +16,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.CopyUtil;
 import org.junit.Assert;
 import jetbrains.mps.smodel.SModelDescriptor;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.Scanner;
 import java.util.regex.Pattern;
 import java.util.List;
@@ -109,9 +110,9 @@ public class DiskMemoryConflictsTest {
             SNode node = modelDescriptor.getSModel().getNodeById("6010389230754495469");
             Assert.assertNotNull(node);
             if (nameToWrite == null) {
-              result[0] = node.getProperty("name");
+              result[0] = SNodeAccessUtil.getProperty(node, "name");
             } else {
-              node.setProperty("name", nameToWrite);
+              SNodeAccessUtil.setProperty(node, "name", nameToWrite);
             }
           } catch (Throwable ignored) {
           }

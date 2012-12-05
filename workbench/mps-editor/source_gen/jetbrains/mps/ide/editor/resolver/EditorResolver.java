@@ -16,11 +16,11 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorContext;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class EditorResolver implements IResolver {
   public EditorResolver() {
@@ -58,7 +58,7 @@ public class EditorResolver implements IResolver {
     if (result != null) {
       return result;
     }
-    IModule module = check_jllgm1_a0c0b(SNodeOperations.getModel(sourceNode).getModelDescriptor());
+    IModule module = check_jllgm1_a0c0c(SNodeOperations.getModel(sourceNode).getModelDescriptor());
     SNode target = reference.getTargetNodeSilently();
     if (target != null && module != null) {
       Scope scope = ModelConstraints.getScope(reference);
@@ -80,13 +80,6 @@ public class EditorResolver implements IResolver {
     return result;
   }
 
-  private static IModule check_jllgm1_a0c0b(SModelDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-
   private class FakeEditorComponent extends EditorComponent {
     public FakeEditorComponent(SNode node, IOperationContext operationContext) {
       super(operationContext);
@@ -97,5 +90,12 @@ public class EditorResolver implements IResolver {
     protected EditorCell createRootCell(List<SModelEvent> events) {
       return getEditorContext().createRootCell(getEditedNode(), events);
     }
+  }
+
+  private static IModule check_jllgm1_a0c0c(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
   }
 }

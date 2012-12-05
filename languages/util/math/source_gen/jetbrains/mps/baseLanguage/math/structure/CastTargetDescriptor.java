@@ -26,12 +26,6 @@ public enum CastTargetDescriptor {
   _____matrix_bigcomplex_("...->matrix<bigcomplex>", 16);
 
   private String myName;
-  private int myValue;
-
-  CastTargetDescriptor(String name, int value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
@@ -39,10 +33,6 @@ public enum CastTargetDescriptor {
 
   public String getValueAsString() {
     return "" + this.myValue;
-  }
-
-  public int getValue() {
-    return this.myValue;
   }
 
   public static List<CastTargetDescriptor> getConstants() {
@@ -127,5 +117,16 @@ public enum CastTargetDescriptor {
       return CastTargetDescriptor._____matrix_bigcomplex_;
     }
     return CastTargetDescriptor.getDefault();
+  }
+
+  private int myValue;
+
+  CastTargetDescriptor(String name, int value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public int getValue() {
+    return this.myValue;
   }
 }

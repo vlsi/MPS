@@ -4,7 +4,6 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -13,10 +12,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.CellActionType;
+import jetbrains.mps.logging.Logger;
 
 public class MoveRight_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(MoveRight_Action.class);
 
   public MoveRight_Action() {
     super("Right", "", ICON);
@@ -68,4 +67,6 @@ public class MoveRight_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "MoveRight", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(MoveRight_Action.class);
 }

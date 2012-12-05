@@ -4,7 +4,6 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.refactoring.framework.RefactoringUtil;
@@ -33,10 +32,10 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior;
 import com.intellij.openapi.ui.Messages;
+import jetbrains.mps.logging.Logger;
 
 public class MoveConcepts_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(MoveConcepts_Action.class);
 
   public MoveConcepts_Action() {
     super("Move Concepts", "", ICON);
@@ -167,4 +166,6 @@ public class MoveConcepts_Action extends BaseAction {
     }
     return true;
   }
+
+  private static Logger LOG = Logger.getLogger(MoveConcepts_Action.class);
 }

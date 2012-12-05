@@ -53,7 +53,7 @@ public class CreateInternalLabel_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BreakStatement") && isEmpty_5vtfno_a0a0a0a0a7(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BreakStatement"), "label"))) || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ContinueStatement") && isEmpty_5vtfno_a0a0a0a0a7_0(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ContinueStatement"), "label"))) || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") && isEmpty_5vtfno_a0a0a0a0h(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label"))) || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement") && isEmpty_5vtfno_a0a0a0a7(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "label")));
+    return (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.BreakStatement") && isEmpty_5vtfno_a0a0a0a0a9(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.BreakStatement"), "label"))) || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ContinueStatement") && isEmpty_5vtfno_a0a0a0a0a9_0(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ContinueStatement"), "label"))) || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement") && isEmpty_5vtfno_a0a0a0a0j(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.AbstractLoopStatement"), "label"))) || (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement") && isEmpty_5vtfno_a0a0a0a9(SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.SwitchStatement"), "label")));
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -65,22 +65,6 @@ public class CreateInternalLabel_Intention implements IntentionFactory {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new CreateInternalLabel_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
-  }
-
-  public static boolean isEmpty_5vtfno_a0a0a0a0a7(String str) {
-    return str == null || str.length() == 0;
-  }
-
-  public static boolean isEmpty_5vtfno_a0a0a0a0a7_0(String str) {
-    return str == null || str.length() == 0;
-  }
-
-  public static boolean isEmpty_5vtfno_a0a0a0a0h(String str) {
-    return str == null || str.length() == 0;
-  }
-
-  public static boolean isEmpty_5vtfno_a0a0a0a7(String str) {
-    return str == null || str.length() == 0;
   }
 
   public class IntentionImplementation implements IntentionExecutable {
@@ -107,5 +91,21 @@ public class CreateInternalLabel_Intention implements IntentionFactory {
     public IntentionDescriptor getDescriptor() {
       return CreateInternalLabel_Intention.this;
     }
+  }
+
+  public static boolean isEmpty_5vtfno_a0a0a0a0a9(String str) {
+    return str == null || str.length() == 0;
+  }
+
+  public static boolean isEmpty_5vtfno_a0a0a0a0a9_0(String str) {
+    return str == null || str.length() == 0;
+  }
+
+  public static boolean isEmpty_5vtfno_a0a0a0a0j(String str) {
+    return str == null || str.length() == 0;
+  }
+
+  public static boolean isEmpty_5vtfno_a0a0a0a9(String str) {
+    return str == null || str.length() == 0;
   }
 }

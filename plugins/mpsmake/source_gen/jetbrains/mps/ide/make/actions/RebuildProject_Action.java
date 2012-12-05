@@ -4,8 +4,6 @@ package jetbrains.mps.ide.make.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.make.IMakeService;
@@ -19,10 +17,11 @@ import java.util.ArrayList;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.IOperationContext;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class RebuildProject_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(RebuildProject_Action.class);
 
   public RebuildProject_Action() {
     super("_Rebuild Project", "", ICON);
@@ -78,4 +77,6 @@ public class RebuildProject_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(RebuildProject_Action.class);
 }

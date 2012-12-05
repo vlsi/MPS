@@ -4,8 +4,6 @@ package jetbrains.mps.debugger.java.runtime.ui.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -19,11 +17,12 @@ import com.sun.jdi.ThreadReference;
 import com.sun.jdi.Value;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaThread;
 
 public class CopyValueAction_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(CopyValueAction_Action.class);
 
   public CopyValueAction_Action() {
     super("Copy Value", "", ICON);
@@ -84,6 +83,8 @@ public class CopyValueAction_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(CopyValueAction_Action.class);
 
   private static ThreadReference check_d54g7t_a0i0a(JavaThread checkedDotOperand) {
     if (null != checkedDotOperand) {

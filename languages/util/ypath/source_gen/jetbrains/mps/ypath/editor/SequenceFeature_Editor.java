@@ -6,44 +6,157 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
+import java.util.List;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
+import jetbrains.mps.smodel.action.INodeSubstituteAction;
+import jetbrains.mps.nodeEditor.cellMenu.CellContext;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
+import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
+import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
+import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cellMenu.CompositeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 import jetbrains.mps.nodeEditor.MPSColors;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.ypath.behavior.IFeature_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.cellActions.CellAction_Empty;
-import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
-import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Generic_Group;
-import java.util.List;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.nodeEditor.cellMenu.CellContext;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class SequenceFeature_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
     return this.createCollection_q0s13v_a(editorContext, node);
+  }
+
+  public static class SequenceFeature_generic_cellMenu_a0a0a extends AbstractCellMenuPart_Generic_Group {
+    public SequenceFeature_generic_cellMenu_a0a0a() {
+    }
+
+    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      return ListSequence.fromListAndArray(new ArrayList<Boolean>(), true, false);
+    }
+
+    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      this.handleAction_impl((Boolean) parameterObject, node, model, scope, operationContext, editorContext);
+    }
+
+    public void handleAction_impl(Boolean parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
+      SPropertyOperations.set(node, "default", "" + (parameterObject));
+    }
+
+    public boolean isReferentPresentation() {
+      return false;
+    }
+
+    public String getMatchingText(Object parameterObject) {
+      return this.getMatchingText_internal((Boolean) parameterObject);
+    }
+
+    public String getMatchingText_internal(Boolean parameterObject) {
+      return (parameterObject ?
+        "default" :
+        "regular"
+      );
+    }
+
+    public String getDescriptionText(Object parameterObject) {
+      return this.getDescriptionText_internal((Boolean) parameterObject);
+    }
+
+    public String getDescriptionText_internal(Boolean parameterObject) {
+      return (parameterObject ?
+        "allows to omit the feature when iterating" :
+        "feature must be always specified"
+      );
+    }
+  }
+
+  public static class SequenceFeature_component_cellMenu_a0a0a2a0 implements SubstituteInfoPartExt {
+    private menu_FeatureSetOpposite myComponent;
+
+    public SequenceFeature_component_cellMenu_a0a0a2a0() {
+      this.myComponent = new menu_FeatureSetOpposite();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
+  public static class SequenceFeature_component_cellMenu_a0a0a2a0_0 implements SubstituteInfoPartExt {
+    private menu_FeatureSetOpposite myComponent;
+
+    public SequenceFeature_component_cellMenu_a0a0a2a0_0() {
+      this.myComponent = new menu_FeatureSetOpposite();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
+  public static class SequenceFeature_component_cellMenu_a0b0a2a0 implements SubstituteInfoPartExt {
+    private menu_FeatureSetOpposite myComponent;
+
+    public SequenceFeature_component_cellMenu_a0b0a2a0() {
+      this.myComponent = new menu_FeatureSetOpposite();
+    }
+
+    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
+      return this.myComponent.createActions(cellContext, editorContext);
+    }
+  }
+
+  public static class _Inline_q0s13v_a2a0c0a extends InlineCellProvider {
+    public _Inline_q0s13v_a2a0c0a() {
+      super();
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext) {
+      return this.createEditorCell(editorContext, this.getSNode());
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+      return this.createProperty_q0s13v_a0c0a2a0(editorContext, node);
+    }
+
+    private EditorCell createProperty_q0s13v_a0c0a2a0(EditorContext editorContext, SNode node) {
+      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
+      provider.setRole("name");
+      provider.setNoTargetText("<no name>");
+      provider.setReadOnly(true);
+      EditorCell editorCell;
+      editorCell = provider.createEditorCell(editorContext);
+      editorCell.setCellId("property_name_1");
+      BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
+      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
+      SNode attributeConcept = provider.getRoleAttribute();
+      Class attributeKind = provider.getRoleAttributeClass();
+      if (attributeConcept != null) {
+        IOperationContext opContext = editorContext.getOperationContext();
+        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
+        return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
+      } else
+      return editorCell;
+    }
   }
 
   private EditorCell createAlternation_q0s13v_a0a(EditorContext editorContext, SNode node) {
@@ -526,118 +639,5 @@ public class SequenceFeature_Editor extends DefaultNodeEditor {
 
   private static boolean renderingCondition_q0s13v_a2a0c0a(SNode node, EditorContext editorContext, IScope scope) {
     return (SLinkOperations.getTarget(node, "opposite", false) != null);
-  }
-
-  public static class SequenceFeature_generic_cellMenu_a0a0a extends AbstractCellMenuPart_Generic_Group {
-    public SequenceFeature_generic_cellMenu_a0a0a() {
-    }
-
-    public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      return ListSequence.fromListAndArray(new ArrayList<Boolean>(), true, false);
-    }
-
-    protected void handleAction(Object parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      this.handleAction_impl((Boolean) parameterObject, node, model, scope, operationContext, editorContext);
-    }
-
-    public void handleAction_impl(Boolean parameterObject, SNode node, SModel model, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
-      SPropertyOperations.set(node, "default", "" + (parameterObject));
-    }
-
-    public boolean isReferentPresentation() {
-      return false;
-    }
-
-    public String getMatchingText(Object parameterObject) {
-      return this.getMatchingText_internal((Boolean) parameterObject);
-    }
-
-    public String getMatchingText_internal(Boolean parameterObject) {
-      return (parameterObject ?
-        "default" :
-        "regular"
-      );
-    }
-
-    public String getDescriptionText(Object parameterObject) {
-      return this.getDescriptionText_internal((Boolean) parameterObject);
-    }
-
-    public String getDescriptionText_internal(Boolean parameterObject) {
-      return (parameterObject ?
-        "allows to omit the feature when iterating" :
-        "feature must be always specified"
-      );
-    }
-  }
-
-  public static class SequenceFeature_component_cellMenu_a0a0a2a0 implements SubstituteInfoPartExt {
-    private menu_FeatureSetOpposite myComponent;
-
-    public SequenceFeature_component_cellMenu_a0a0a2a0() {
-      this.myComponent = new menu_FeatureSetOpposite();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-  }
-
-  public static class SequenceFeature_component_cellMenu_a0a0a2a0_0 implements SubstituteInfoPartExt {
-    private menu_FeatureSetOpposite myComponent;
-
-    public SequenceFeature_component_cellMenu_a0a0a2a0_0() {
-      this.myComponent = new menu_FeatureSetOpposite();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-  }
-
-  public static class SequenceFeature_component_cellMenu_a0b0a2a0 implements SubstituteInfoPartExt {
-    private menu_FeatureSetOpposite myComponent;
-
-    public SequenceFeature_component_cellMenu_a0b0a2a0() {
-      this.myComponent = new menu_FeatureSetOpposite();
-    }
-
-    public List<INodeSubstituteAction> createActions(CellContext cellContext, EditorContext editorContext) {
-      return this.myComponent.createActions(cellContext, editorContext);
-    }
-  }
-
-  public static class _Inline_q0s13v_a2a0c0a extends InlineCellProvider {
-    public _Inline_q0s13v_a2a0c0a() {
-      super();
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return this.createEditorCell(editorContext, this.getSNode());
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createProperty_q0s13v_a0c0a2a0(editorContext, node);
-    }
-
-    private EditorCell createProperty_q0s13v_a0c0a2a0(EditorContext editorContext, SNode node) {
-      CellProviderWithRole provider = new PropertyCellProvider(node, editorContext);
-      provider.setRole("name");
-      provider.setNoTargetText("<no name>");
-      provider.setReadOnly(true);
-      EditorCell editorCell;
-      editorCell = provider.createEditorCell(editorContext);
-      editorCell.setCellId("property_name_1");
-      BaseLanguageStyle_StyleSheet.getField(editorCell).apply(editorCell);
-      editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-      SNode attributeConcept = provider.getRoleAttribute();
-      Class attributeKind = provider.getRoleAttributeClass();
-      if (attributeConcept != null) {
-        IOperationContext opContext = editorContext.getOperationContext();
-        EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-        return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-      } else
-      return editorCell;
-    }
   }
 }

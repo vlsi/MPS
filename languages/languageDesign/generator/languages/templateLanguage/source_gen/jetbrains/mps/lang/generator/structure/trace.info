@@ -4,34 +4,34 @@
   <unitInfo fileName="StructureAspectDescriptor.java" startLine="10" startPosition="0" endLine="185" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.StructureAspectDescriptor" />
   <root nodeId="1169670215797" modelId="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)">
     <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="17" startPosition="51" endLine="18" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="18" startPosition="23" endLine="19" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="22" startPosition="27" endLine="23" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="26" startPosition="36" endLine="27" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="30" startPosition="28" endLine="31" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="34" startPosition="59" endLine="35" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="35" startPosition="100" endLine="36" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="36" startPosition="70" endLine="37" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="37" startPosition="73" endLine="38" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="38" startPosition="71" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="42" startPosition="51" endLine="43" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="47" startPosition="24" endLine="48" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="50" startPosition="69" endLine="51" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="53" startPosition="72" endLine="54" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="56" startPosition="70" endLine="57" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="58" startPosition="5" endLine="59" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/generator/structure/GeneratorMessageType;" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="46" startPosition="63" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="49" startPosition="5" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="52" startPosition="5" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="55" startPosition="5" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="17" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratorMessageType#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="34" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
-    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="46" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/generator/structure/GeneratorMessageType;" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="16" startPosition="27" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="20" startPosition="36" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="24" startPosition="59" endLine="25" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="25" startPosition="100" endLine="26" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="26" startPosition="70" endLine="27" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="27" startPosition="73" endLine="28" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="28" startPosition="71" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="32" startPosition="51" endLine="33" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="37" startPosition="24" endLine="38" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="40" startPosition="69" endLine="41" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="43" startPosition="72" endLine="44" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="46" startPosition="70" endLine="47" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="48" startPosition="5" endLine="49" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="52" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="54" startPosition="51" endLine="55" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="55" startPosition="23" endLine="56" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="59" startPosition="28" endLine="60" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/generator/structure/GeneratorMessageType;" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="36" startPosition="63" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="39" startPosition="5" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="42" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="45" startPosition="5" endLine="48" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GeneratorMessageType#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="24" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
+    <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="36" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/generator/structure/GeneratorMessageType;" />
     <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -55,29 +55,29 @@
     <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="1169670215797" fileName="GeneratorMessageType_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="22" startPosition="27" endLine="23" endPosition="23" />
-    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="26" startPosition="36" endLine="27" endPosition="24" />
-    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="30" startPosition="28" endLine="31" endPosition="24" />
-    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="42" startPosition="51" endLine="43" endPosition="37" />
-    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="47" startPosition="24" endLine="48" endPosition="47" />
-    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="50" startPosition="69" endLine="51" endPosition="39" />
-    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="53" startPosition="72" endLine="54" endPosition="42" />
-    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="56" startPosition="70" endLine="57" endPosition="40" />
-    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="17" startPosition="51" endLine="19" endPosition="25" />
-    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="17" startPosition="0" endLine="21" endPosition="0">
+    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="16" startPosition="27" endLine="17" endPosition="23" />
+    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="20" startPosition="36" endLine="21" endPosition="24" />
+    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="32" startPosition="51" endLine="33" endPosition="37" />
+    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="37" startPosition="24" endLine="38" endPosition="47" />
+    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="40" startPosition="69" endLine="41" endPosition="39" />
+    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="43" startPosition="72" endLine="44" endPosition="42" />
+    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="46" startPosition="70" endLine="47" endPosition="40" />
+    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="59" startPosition="28" endLine="60" endPosition="24" />
+    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="54" startPosition="51" endLine="56" endPosition="25" />
+    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="1169670215797" varName="name" />
       <varInfo nodeId="1169670215797" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="34" startPosition="59" endLine="39" endPosition="16">
+    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="24" startPosition="59" endLine="29" endPosition="16">
       <varInfo nodeId="1169670215797" varName="list" />
     </scopeInfo>
-    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="34" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="46" startPosition="63" endLine="59" endPosition="45" />
-    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="46" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="24" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="36" startPosition="63" endLine="49" endPosition="45" />
+    <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="36" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="1169670215797" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
@@ -109,36 +109,36 @@
     <scopeInfo nodeId="1169670215797" fileName="GeneratorMessageType_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1169670215797" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="9" startPosition="0" endLine="62" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.GeneratorMessageType" />
+    <unitInfo nodeId="1169670215797" fileName="GeneratorMessageType.java" startLine="9" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.GeneratorMessageType" />
     <unitInfo nodeId="1169670215797" fileName="GeneratorMessageType_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.GeneratorMessageType_PropertySupport" />
   </root>
   <root nodeId="1195595264961" modelId="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)">
     <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myName" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="16" startPosition="48" endLine="17" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="17" startPosition="23" endLine="18" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="21" startPosition="27" endLine="22" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="25" startPosition="36" endLine="26" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="29" startPosition="28" endLine="30" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="33" startPosition="56" endLine="34" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="34" startPosition="94" endLine="35" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="35" startPosition="86" endLine="36" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="36" startPosition="88" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="40" startPosition="48" endLine="41" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="45" startPosition="24" endLine="46" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="48" startPosition="85" endLine="49" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="51" startPosition="87" endLine="52" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="53" startPosition="5" endLine="54" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/generator/structure/MappingScriptKind;" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="44" startPosition="60" endLine="47" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="47" startPosition="5" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="50" startPosition="5" endLine="53" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MappingScriptKind#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="33" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
-    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="44" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/generator/structure/MappingScriptKind;" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="15" startPosition="27" endLine="16" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="19" startPosition="36" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="23" startPosition="56" endLine="24" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="24" startPosition="94" endLine="25" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="25" startPosition="86" endLine="26" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="26" startPosition="88" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="30" startPosition="48" endLine="31" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="35" startPosition="24" endLine="36" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="38" startPosition="85" endLine="39" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="41" startPosition="87" endLine="42" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="43" startPosition="5" endLine="44" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="47" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myValue" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="49" startPosition="48" endLine="50" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="50" startPosition="23" endLine="51" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="54" startPosition="28" endLine="55" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValueAsString#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getDefault#()Ljetbrains/mps/lang/generator/structure/MappingScriptKind;" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="34" startPosition="60" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="37" startPosition="5" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="40" startPosition="5" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MappingScriptKind#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="23" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConstants#()Ljava/util/List;" />
+    <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="34" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="parseValue#(Ljava/lang/String;)Ljetbrains/mps/lang/generator/structure/MappingScriptKind;" />
     <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind_PropertySupport.java" startLine="13" startPosition="5" endLine="14" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind_PropertySupport.java" startLine="15" startPosition="33" endLine="16" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -162,28 +162,28 @@
     <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind_PropertySupport.java" startLine="38" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fromInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind_PropertySupport.java" startLine="10" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canSetValue#(Ljava/lang/String;)Z" />
     <nodeInfo nodeId="1195595264961" fileName="MappingScriptKind_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="toInternalValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="21" startPosition="27" endLine="22" endPosition="23" />
-    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="25" startPosition="36" endLine="26" endPosition="24" />
-    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="29" startPosition="28" endLine="30" endPosition="24" />
-    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="40" startPosition="48" endLine="41" endPosition="55" />
-    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="45" startPosition="24" endLine="46" endPosition="44" />
-    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="48" startPosition="85" endLine="49" endPosition="55" />
-    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="51" startPosition="87" endLine="52" endPosition="57" />
-    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="16" startPosition="48" endLine="18" endPosition="25" />
-    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="21" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
-    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="16" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="15" startPosition="27" endLine="16" endPosition="23" />
+    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="19" startPosition="36" endLine="20" endPosition="24" />
+    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="30" startPosition="48" endLine="31" endPosition="55" />
+    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="35" startPosition="24" endLine="36" endPosition="44" />
+    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="38" startPosition="85" endLine="39" endPosition="55" />
+    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="41" startPosition="87" endLine="42" endPosition="57" />
+    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="54" startPosition="28" endLine="55" endPosition="24" />
+    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="49" startPosition="48" endLine="51" endPosition="25" />
+    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="23" startPosition="56" endLine="27" endPosition="16">
+      <varInfo nodeId="1195595264961" varName="list" />
+    </scopeInfo>
+    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="1195595264961" varName="name" />
       <varInfo nodeId="1195595264961" varName="value" />
     </scopeInfo>
-    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="33" startPosition="56" endLine="37" endPosition="16">
-      <varInfo nodeId="1195595264961" varName="list" />
-    </scopeInfo>
-    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="33" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="44" startPosition="60" endLine="54" endPosition="42" />
-    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="44" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="23" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="34" startPosition="60" endLine="44" endPosition="42" />
+    <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="34" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="1195595264961" varName="value" />
     </scopeInfo>
     <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind_PropertySupport.java" startLine="11" startPosition="24" endLine="12" endPosition="18" />
@@ -215,7 +215,7 @@
     <scopeInfo nodeId="1195595264961" fileName="MappingScriptKind_PropertySupport.java" startLine="24" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="1195595264961" varName="value" />
     </scopeInfo>
-    <unitInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="9" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.MappingScriptKind" />
+    <unitInfo nodeId="1195595264961" fileName="MappingScriptKind.java" startLine="9" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.MappingScriptKind" />
     <unitInfo nodeId="1195595264961" fileName="MappingScriptKind_PropertySupport.java" startLine="9" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.lang.generator.structure.MappingScriptKind_PropertySupport" />
   </root>
 </debugInfo>

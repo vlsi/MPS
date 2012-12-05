@@ -16,6 +16,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
@@ -79,12 +80,12 @@ public abstract class IntroduceVariableRefactoring {
       SNode exprClassifier = SLinkOperations.getTarget(SNodeOperations.cast(expressionType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false);
       if (SNodeOperations.isInstanceOf(exprClassifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) {
         List<SNode> params = SLinkOperations.getTargets(SNodeOperations.cast(expressionType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true);
-        expressionType = _quotation_createNode_x65dk2_a0b0b0c0b(SLinkOperations.getTarget(SNodeOperations.cast(exprClassifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false));
+        expressionType = _quotation_createNode_x65dk2_a0b0b0c0l(SLinkOperations.getTarget(SNodeOperations.cast(exprClassifier, "jetbrains.mps.baseLanguage.structure.AnonymousClass"), "classifier", false));
         ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(expressionType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "parameter", true)).addSequence(ListSequence.fromList(params));
       }
     }
     if (SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.baseLanguage.structure.WildCardType")) {
-      expressionType = _quotation_createNode_x65dk2_a0a0d0b();
+      expressionType = _quotation_createNode_x65dk2_a0a0d0l();
     }
     if (SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.baseLanguage.structure.UpperBoundType")) {
       expressionType = SLinkOperations.getTarget(SNodeOperations.cast(expressionType, "jetbrains.mps.baseLanguage.structure.UpperBoundType"), "bound", true);
@@ -164,14 +165,14 @@ public abstract class IntroduceVariableRefactoring {
     return SNodeOperations.isInstanceOf(expressionType, "jetbrains.mps.baseLanguage.structure.VoidType");
   }
 
-  private static SNode _quotation_createNode_x65dk2_a0b0b0c0b(Object parameter_1) {
+  private static SNode _quotation_createNode_x65dk2_a0b0b0c0l(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_x65dk2_a0a0d0b() {
+  private static SNode _quotation_createNode_x65dk2_a0a0d0l() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));

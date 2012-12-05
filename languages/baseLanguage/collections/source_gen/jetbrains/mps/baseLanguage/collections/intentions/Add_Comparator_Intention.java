@@ -12,11 +12,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class Add_Comparator_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -70,33 +71,6 @@ public class Add_Comparator_Intention implements IntentionFactory {
     return myCachedExecutable;
   }
 
-  private static SNode _quotation_createNode_1k32yi_a0a0a0(Object parameter_1, Object parameter_2) {
-    SNode quotedNode_3 = null;
-    SNode quotedNode_4 = null;
-    SNode quotedNode_5 = null;
-    SNode quotedNode_6 = null;
-    SNode quotedNode_7 = null;
-    SNode quotedNode_8 = null;
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("name", "a");
-    quotedNode_7 = (SNode) parameter_1;
-    if (quotedNode_7 != null) {
-      quotedNode_4.addChild("type", HUtil.copyIfNecessary(quotedNode_7));
-    }
-    quotedNode_3.addChild("parameter", quotedNode_4);
-    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("name", "b");
-    quotedNode_8 = (SNode) parameter_2;
-    if (quotedNode_8 != null) {
-      quotedNode_5.addChild("type", HUtil.copyIfNecessary(quotedNode_8));
-    }
-    quotedNode_3.addChild("parameter", quotedNode_5);
-    quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.addChild("body", quotedNode_6);
-    return quotedNode_3;
-  }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
@@ -112,5 +86,32 @@ public class Add_Comparator_Intention implements IntentionFactory {
     public IntentionDescriptor getDescriptor() {
       return Add_Comparator_Intention.this;
     }
+  }
+
+  private static SNode _quotation_createNode_1k32yi_a0a0a0(Object parameter_1, Object parameter_2) {
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    SNode quotedNode_5 = null;
+    SNode quotedNode_6 = null;
+    SNode quotedNode_7 = null;
+    SNode quotedNode_8 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.closures.structure.ClosureLiteral", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setProperty(quotedNode_4, "name", "a");
+    quotedNode_7 = (SNode) parameter_1;
+    if (quotedNode_7 != null) {
+      quotedNode_4.addChild("type", HUtil.copyIfNecessary(quotedNode_7));
+    }
+    quotedNode_3.addChild("parameter", quotedNode_4);
+    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setProperty(quotedNode_5, "name", "b");
+    quotedNode_8 = (SNode) parameter_2;
+    if (quotedNode_8 != null) {
+      quotedNode_5.addChild("type", HUtil.copyIfNecessary(quotedNode_8));
+    }
+    quotedNode_3.addChild("parameter", quotedNode_5);
+    quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.addChild("body", quotedNode_6);
+    return quotedNode_3;
   }
 }

@@ -1,195 +1,195 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1215078243118" modelId="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)">
-    <nodeInfo nodeId="852155438141189832" fileName="SubtreeChecker.java" startLine="38" startPosition="53" endLine="39" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4277730795458375643" fileName="SubtreeChecker.java" startLine="42" startPosition="97" endLine="43" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6273236171923055292" fileName="SubtreeChecker.java" startLine="43" startPosition="92" endLine="44" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6273236171923055501" fileName="SubtreeChecker.java" startLine="44" startPosition="57" endLine="45" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6273236171923055303" fileName="SubtreeChecker.java" startLine="45" startPosition="53" endLine="46" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215607026365" fileName="SubtreeChecker.java" startLine="47" startPosition="9" endLine="48" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215607026381" fileName="SubtreeChecker.java" startLine="49" startPosition="136" endLine="50" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215607026387" fileName="SubtreeChecker.java" startLine="51" startPosition="206" endLine="52" endPosition="212" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215607026407" fileName="SubtreeChecker.java" startLine="54" startPosition="111" endLine="55" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4395293866213223857" fileName="SubtreeChecker.java" startLine="56" startPosition="121" endLine="57" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8124461238645249031" fileName="SubtreeChecker.java" startLine="57" startPosition="105" endLine="58" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215607026414" fileName="SubtreeChecker.java" startLine="59" startPosition="15" endLine="60" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215608437013" fileName="SubtreeChecker.java" startLine="60" startPosition="154" endLine="61" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="95706764259162024" fileName="SubtreeChecker.java" startLine="63" startPosition="114" endLine="64" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="95706764259162136" fileName="SubtreeChecker.java" startLine="64" startPosition="72" endLine="65" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="95706764259162154" fileName="SubtreeChecker.java" startLine="67" startPosition="60" endLine="68" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="95706764259162170" fileName="SubtreeChecker.java" startLine="68" startPosition="33" endLine="69" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="95706764259162171" fileName="SubtreeChecker.java" startLine="71" startPosition="15" endLine="72" endPosition="220" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215607026428" fileName="SubtreeChecker.java" startLine="74" startPosition="111" endLine="75" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215607026435" fileName="SubtreeChecker.java" startLine="75" startPosition="153" endLine="76" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215607026442" fileName="SubtreeChecker.java" startLine="76" startPosition="165" endLine="77" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215607026452" fileName="SubtreeChecker.java" startLine="79" startPosition="114" endLine="80" endPosition="147" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215607026459" fileName="SubtreeChecker.java" startLine="80" startPosition="147" endLine="81" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215607026466" fileName="SubtreeChecker.java" startLine="81" startPosition="183" endLine="82" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7938028138875678860" fileName="SubtreeChecker.java" startLine="86" startPosition="25" endLine="87" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2032731141110253719" fileName="SubtreeChecker.java" startLine="88" startPosition="33" endLine="89" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3996711022540418636" fileName="SubtreeChecker.java" startLine="90" startPosition="33" endLine="91" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3996711022540418661" fileName="SubtreeChecker.java" startLine="93" startPosition="35" endLine="94" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6273236171923055465" fileName="SubtreeChecker.java" startLine="99" startPosition="15" endLine="100" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215612199638" fileName="SubtreeChecker.java" startLine="104" startPosition="48" endLine="105" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215612669321" fileName="SubtreeChecker.java" startLine="105" startPosition="74" endLine="106" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215615074247" fileName="SubtreeChecker.java" startLine="106" startPosition="72" endLine="107" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215617240412" fileName="SubtreeChecker.java" startLine="107" startPosition="93" endLine="108" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215611983708" fileName="SubtreeChecker.java" startLine="110" startPosition="204" endLine="111" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215615554563" fileName="SubtreeChecker.java" startLine="112" startPosition="90" endLine="113" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215615533526" fileName="SubtreeChecker.java" startLine="113" startPosition="34" endLine="114" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215615626527" fileName="SubtreeChecker.java" startLine="115" startPosition="64" endLine="116" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215615667361" fileName="SubtreeChecker.java" startLine="117" startPosition="18" endLine="118" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="1215615683215" fileName="SubtreeChecker.java" startLine="120" startPosition="106" endLine="121" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215615689933" fileName="SubtreeChecker.java" startLine="123" startPosition="108" endLine="124" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215615758600" fileName="SubtreeChecker.java" startLine="126" startPosition="110" endLine="127" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215615437101" fileName="SubtreeChecker.java" startLine="127" startPosition="74" endLine="128" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215615811654" fileName="SubtreeChecker.java" startLine="128" startPosition="150" endLine="129" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215617277218" fileName="SubtreeChecker.java" startLine="131" startPosition="105" endLine="132" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215617277225" fileName="SubtreeChecker.java" startLine="132" startPosition="67" endLine="133" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215617277234" fileName="SubtreeChecker.java" startLine="133" startPosition="150" endLine="134" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215609104515" fileName="SubtreeChecker.java" startLine="145" startPosition="273" endLine="146" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8042441407353530942" fileName="SubtreeChecker.java" startLine="35" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SubtreeChecker#()V" />
-    <nodeInfo nodeId="1215615663872" fileName="SubtreeChecker.java" startLine="117" startPosition="16" endLine="119" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1215698239875" fileName="SubtreeChecker.java" startLine="153" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="runTest#()V" />
-    <nodeInfo nodeId="852155438141188210" fileName="SubtreeChecker.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkNodeForErrors#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3996711022540418629" fileName="SubtreeChecker.java" startLine="89" startPosition="56" endLine="92" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3996711022540418654" fileName="SubtreeChecker.java" startLine="92" startPosition="13" endLine="95" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215611983722" fileName="SubtreeChecker.java" startLine="119" startPosition="11" endLine="122" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215613114952" fileName="SubtreeChecker.java" startLine="122" startPosition="11" endLine="125" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215609104505" fileName="SubtreeChecker.java" startLine="144" startPosition="212" endLine="147" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4395293866213223841" fileName="SubtreeChecker.java" startLine="55" startPosition="72" endLine="59" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="95706764259162145" fileName="SubtreeChecker.java" startLine="66" startPosition="165" endLine="70" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215607026426" fileName="SubtreeChecker.java" startLine="73" startPosition="13" endLine="78" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215607026450" fileName="SubtreeChecker.java" startLine="78" startPosition="13" endLine="83" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215615533534" fileName="SubtreeChecker.java" startLine="114" startPosition="77" endLine="119" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215615153956" fileName="SubtreeChecker.java" startLine="125" startPosition="11" endLine="130" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215617277216" fileName="SubtreeChecker.java" startLine="130" startPosition="11" endLine="135" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215609104497" fileName="SubtreeChecker.java" startLine="143" startPosition="32" endLine="148" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="95706764259162043" fileName="SubtreeChecker.java" startLine="65" startPosition="38" endLine="71" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1215609091939" fileName="SubtreeChecker.java" startLine="142" startPosition="140" endLine="149" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215607026401" fileName="SubtreeChecker.java" startLine="53" startPosition="92" endLine="62" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3996711022540418620" fileName="SubtreeChecker.java" startLine="87" startPosition="87" endLine="96" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215605336242" fileName="SubtreeChecker.java" startLine="141" startPosition="52" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="95706764259161997" fileName="SubtreeChecker.java" startLine="62" startPosition="13" endLine="73" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215605336227" fileName="SubtreeChecker.java" startLine="141" startPosition="0" endLine="152" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="performOperations#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1215610523461" fileName="SubtreeChecker.java" startLine="85" startPosition="9" endLine="97" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215611983715" fileName="SubtreeChecker.java" startLine="111" startPosition="210" endLine="136" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1215611983706" fileName="SubtreeChecker.java" startLine="109" startPosition="134" endLine="137" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215611983693" fileName="SubtreeChecker.java" startLine="108" startPosition="74" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1215607026394" fileName="SubtreeChecker.java" startLine="52" startPosition="212" endLine="84" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1215607026385" fileName="SubtreeChecker.java" startLine="50" startPosition="32" endLine="85" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215611932104" fileName="SubtreeChecker.java" startLine="104" startPosition="0" endLine="140" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkDataFlow#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1215607026372" fileName="SubtreeChecker.java" startLine="48" startPosition="56" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="6273236171923055461" fileName="SubtreeChecker.java" startLine="46" startPosition="127" endLine="101" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
-    <nodeInfo nodeId="1215078294635" fileName="SubtreeChecker.java" startLine="42" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkNodeForErrors#(Ljetbrains/mps/smodel/SNode;ZZ)V" />
-    <scopeInfo nodeId="8042441407353530945" fileName="SubtreeChecker.java" startLine="35" startPosition="27" endLine="35" endPosition="27" />
-    <scopeInfo nodeId="1215698239878" fileName="SubtreeChecker.java" startLine="153" startPosition="32" endLine="153" endPosition="32" />
-    <scopeInfo nodeId="852155438141188213" fileName="SubtreeChecker.java" startLine="38" startPosition="53" endLine="39" endPosition="43" />
-    <scopeInfo nodeId="3996711022540418630" fileName="SubtreeChecker.java" startLine="90" startPosition="33" endLine="91" endPosition="97" />
-    <scopeInfo nodeId="3996711022540418655" fileName="SubtreeChecker.java" startLine="93" startPosition="35" endLine="94" endPosition="99" />
-    <scopeInfo nodeId="6273236171923055464" fileName="SubtreeChecker.java" startLine="99" startPosition="15" endLine="100" endPosition="92" />
-    <scopeInfo nodeId="1215615533535" fileName="SubtreeChecker.java" startLine="115" startPosition="64" endLine="116" endPosition="67" />
-    <scopeInfo nodeId="1215615663873" fileName="SubtreeChecker.java" startLine="117" startPosition="18" endLine="118" endPosition="21" />
-    <scopeInfo nodeId="1215611983727" fileName="SubtreeChecker.java" startLine="120" startPosition="106" endLine="121" endPosition="139" />
-    <scopeInfo nodeId="1215613114957" fileName="SubtreeChecker.java" startLine="123" startPosition="108" endLine="124" endPosition="136" />
-    <scopeInfo nodeId="1215609104514" fileName="SubtreeChecker.java" startLine="145" startPosition="273" endLine="146" endPosition="128" />
-    <scopeInfo nodeId="8042441407353530942" fileName="SubtreeChecker.java" startLine="35" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="4395293866213223842" fileName="SubtreeChecker.java" startLine="56" startPosition="121" endLine="58" endPosition="44" />
-    <scopeInfo nodeId="95706764259162146" fileName="SubtreeChecker.java" startLine="67" startPosition="60" endLine="69" endPosition="24" />
-    <scopeInfo nodeId="1215698239875" fileName="SubtreeChecker.java" startLine="153" startPosition="0" endLine="155" endPosition="0" />
-    <scopeInfo nodeId="852155438141188210" fileName="SubtreeChecker.java" startLine="38" startPosition="0" endLine="41" endPosition="0">
+    <nodeInfo nodeId="852155438141189832" fileName="SubtreeChecker.java" startLine="40" startPosition="53" endLine="41" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4277730795458375643" fileName="SubtreeChecker.java" startLine="44" startPosition="115" endLine="45" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6273236171923055292" fileName="SubtreeChecker.java" startLine="45" startPosition="92" endLine="46" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6273236171923055501" fileName="SubtreeChecker.java" startLine="46" startPosition="68" endLine="47" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215607026365" fileName="SubtreeChecker.java" startLine="49" startPosition="64" endLine="50" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215607026381" fileName="SubtreeChecker.java" startLine="51" startPosition="138" endLine="52" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215607026387" fileName="SubtreeChecker.java" startLine="53" startPosition="208" endLine="54" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215607026407" fileName="SubtreeChecker.java" startLine="56" startPosition="113" endLine="57" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4395293866213223857" fileName="SubtreeChecker.java" startLine="58" startPosition="123" endLine="59" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8124461238645249031" fileName="SubtreeChecker.java" startLine="59" startPosition="107" endLine="60" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215607026414" fileName="SubtreeChecker.java" startLine="61" startPosition="17" endLine="62" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215608437013" fileName="SubtreeChecker.java" startLine="62" startPosition="156" endLine="63" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="95706764259162024" fileName="SubtreeChecker.java" startLine="65" startPosition="116" endLine="66" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="95706764259162136" fileName="SubtreeChecker.java" startLine="66" startPosition="74" endLine="67" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="95706764259162154" fileName="SubtreeChecker.java" startLine="69" startPosition="62" endLine="70" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="95706764259162170" fileName="SubtreeChecker.java" startLine="70" startPosition="35" endLine="71" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="95706764259162171" fileName="SubtreeChecker.java" startLine="73" startPosition="17" endLine="74" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215607026428" fileName="SubtreeChecker.java" startLine="76" startPosition="113" endLine="77" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215607026435" fileName="SubtreeChecker.java" startLine="77" startPosition="155" endLine="78" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215607026442" fileName="SubtreeChecker.java" startLine="78" startPosition="167" endLine="79" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215607026452" fileName="SubtreeChecker.java" startLine="81" startPosition="116" endLine="82" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215607026459" fileName="SubtreeChecker.java" startLine="82" startPosition="149" endLine="83" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215607026466" fileName="SubtreeChecker.java" startLine="83" startPosition="185" endLine="84" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7938028138875678860" fileName="SubtreeChecker.java" startLine="88" startPosition="27" endLine="89" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2032731141110253719" fileName="SubtreeChecker.java" startLine="90" startPosition="35" endLine="91" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3996711022540418636" fileName="SubtreeChecker.java" startLine="92" startPosition="35" endLine="93" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3996711022540418661" fileName="SubtreeChecker.java" startLine="95" startPosition="37" endLine="96" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215612199638" fileName="SubtreeChecker.java" startLine="105" startPosition="48" endLine="106" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215612669321" fileName="SubtreeChecker.java" startLine="106" startPosition="74" endLine="107" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215615074247" fileName="SubtreeChecker.java" startLine="107" startPosition="72" endLine="108" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215617240412" fileName="SubtreeChecker.java" startLine="108" startPosition="93" endLine="109" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215611983708" fileName="SubtreeChecker.java" startLine="111" startPosition="204" endLine="112" endPosition="210" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215615554563" fileName="SubtreeChecker.java" startLine="113" startPosition="90" endLine="114" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215615533526" fileName="SubtreeChecker.java" startLine="114" startPosition="34" endLine="115" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215615626527" fileName="SubtreeChecker.java" startLine="116" startPosition="64" endLine="117" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215615667361" fileName="SubtreeChecker.java" startLine="118" startPosition="18" endLine="119" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="1215615683215" fileName="SubtreeChecker.java" startLine="121" startPosition="106" endLine="122" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215615689933" fileName="SubtreeChecker.java" startLine="124" startPosition="108" endLine="125" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215615758600" fileName="SubtreeChecker.java" startLine="127" startPosition="110" endLine="128" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215615437101" fileName="SubtreeChecker.java" startLine="128" startPosition="74" endLine="129" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215615811654" fileName="SubtreeChecker.java" startLine="129" startPosition="150" endLine="130" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215617277218" fileName="SubtreeChecker.java" startLine="132" startPosition="105" endLine="133" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215617277225" fileName="SubtreeChecker.java" startLine="133" startPosition="67" endLine="134" endPosition="150" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215617277234" fileName="SubtreeChecker.java" startLine="134" startPosition="150" endLine="135" endPosition="166" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215609104515" fileName="SubtreeChecker.java" startLine="146" startPosition="273" endLine="147" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8042441407353530942" fileName="SubtreeChecker.java" startLine="37" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SubtreeChecker#()V" />
+    <nodeInfo nodeId="1215615663872" fileName="SubtreeChecker.java" startLine="118" startPosition="16" endLine="120" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1215698239875" fileName="SubtreeChecker.java" startLine="154" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="runTest#()V" />
+    <nodeInfo nodeId="852155438141188210" fileName="SubtreeChecker.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkNodeForErrors#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3996711022540418629" fileName="SubtreeChecker.java" startLine="91" startPosition="58" endLine="94" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3996711022540418654" fileName="SubtreeChecker.java" startLine="94" startPosition="15" endLine="97" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215611983722" fileName="SubtreeChecker.java" startLine="120" startPosition="11" endLine="123" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215613114952" fileName="SubtreeChecker.java" startLine="123" startPosition="11" endLine="126" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215609104505" fileName="SubtreeChecker.java" startLine="145" startPosition="212" endLine="148" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4395293866213223841" fileName="SubtreeChecker.java" startLine="57" startPosition="74" endLine="61" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="95706764259162145" fileName="SubtreeChecker.java" startLine="68" startPosition="167" endLine="72" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215607026426" fileName="SubtreeChecker.java" startLine="75" startPosition="15" endLine="80" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215607026450" fileName="SubtreeChecker.java" startLine="80" startPosition="15" endLine="85" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215615533534" fileName="SubtreeChecker.java" startLine="115" startPosition="77" endLine="120" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215615153956" fileName="SubtreeChecker.java" startLine="126" startPosition="11" endLine="131" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215617277216" fileName="SubtreeChecker.java" startLine="131" startPosition="11" endLine="136" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215609104497" fileName="SubtreeChecker.java" startLine="144" startPosition="32" endLine="149" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="95706764259162043" fileName="SubtreeChecker.java" startLine="67" startPosition="40" endLine="73" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1215609091939" fileName="SubtreeChecker.java" startLine="143" startPosition="140" endLine="150" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215607026401" fileName="SubtreeChecker.java" startLine="55" startPosition="94" endLine="64" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3996711022540418620" fileName="SubtreeChecker.java" startLine="89" startPosition="89" endLine="98" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215605336242" fileName="SubtreeChecker.java" startLine="142" startPosition="52" endLine="151" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="95706764259161997" fileName="SubtreeChecker.java" startLine="64" startPosition="15" endLine="75" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215605336227" fileName="SubtreeChecker.java" startLine="142" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="performOperations#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1215610523461" fileName="SubtreeChecker.java" startLine="87" startPosition="11" endLine="99" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215611983715" fileName="SubtreeChecker.java" startLine="112" startPosition="210" endLine="137" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1215611983706" fileName="SubtreeChecker.java" startLine="110" startPosition="134" endLine="138" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215611983693" fileName="SubtreeChecker.java" startLine="109" startPosition="74" endLine="139" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1215607026394" fileName="SubtreeChecker.java" startLine="54" startPosition="214" endLine="86" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1215607026385" fileName="SubtreeChecker.java" startLine="52" startPosition="34" endLine="87" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215611932104" fileName="SubtreeChecker.java" startLine="105" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkDataFlow#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1215607026372" fileName="SubtreeChecker.java" startLine="50" startPosition="58" endLine="100" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4263976733282726503" fileName="SubtreeChecker.java" startLine="49" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#(Ljetbrains/mps/typesystem/inference/TypeCheckingContext;)V" />
+    <nodeInfo nodeId="4263976733281116661" fileName="SubtreeChecker.java" startLine="47" startPosition="53" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215078294635" fileName="SubtreeChecker.java" startLine="44" startPosition="0" endLine="104" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkNodeForErrors#(Ljetbrains/mps/smodel/SNode;ZZ)V" />
+    <scopeInfo nodeId="8042441407353530945" fileName="SubtreeChecker.java" startLine="37" startPosition="27" endLine="37" endPosition="27" />
+    <scopeInfo nodeId="1215698239878" fileName="SubtreeChecker.java" startLine="154" startPosition="32" endLine="154" endPosition="32" />
+    <scopeInfo nodeId="852155438141188213" fileName="SubtreeChecker.java" startLine="40" startPosition="53" endLine="41" endPosition="43" />
+    <scopeInfo nodeId="3996711022540418630" fileName="SubtreeChecker.java" startLine="92" startPosition="35" endLine="93" endPosition="99" />
+    <scopeInfo nodeId="3996711022540418655" fileName="SubtreeChecker.java" startLine="95" startPosition="37" endLine="96" endPosition="101" />
+    <scopeInfo nodeId="1215615533535" fileName="SubtreeChecker.java" startLine="116" startPosition="64" endLine="117" endPosition="67" />
+    <scopeInfo nodeId="1215615663873" fileName="SubtreeChecker.java" startLine="118" startPosition="18" endLine="119" endPosition="21" />
+    <scopeInfo nodeId="1215611983727" fileName="SubtreeChecker.java" startLine="121" startPosition="106" endLine="122" endPosition="139" />
+    <scopeInfo nodeId="1215613114957" fileName="SubtreeChecker.java" startLine="124" startPosition="108" endLine="125" endPosition="136" />
+    <scopeInfo nodeId="1215609104514" fileName="SubtreeChecker.java" startLine="146" startPosition="273" endLine="147" endPosition="128" />
+    <scopeInfo nodeId="8042441407353530942" fileName="SubtreeChecker.java" startLine="37" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="4395293866213223842" fileName="SubtreeChecker.java" startLine="58" startPosition="123" endLine="60" endPosition="46" />
+    <scopeInfo nodeId="95706764259162146" fileName="SubtreeChecker.java" startLine="69" startPosition="62" endLine="71" endPosition="26" />
+    <scopeInfo nodeId="1215698239875" fileName="SubtreeChecker.java" startLine="154" startPosition="0" endLine="156" endPosition="0" />
+    <scopeInfo nodeId="852155438141188210" fileName="SubtreeChecker.java" startLine="40" startPosition="0" endLine="43" endPosition="0">
       <varInfo nodeId="852155438141188214" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1215607026427" fileName="SubtreeChecker.java" startLine="74" startPosition="111" endLine="77" endPosition="29" />
-    <scopeInfo nodeId="1215607026451" fileName="SubtreeChecker.java" startLine="79" startPosition="114" endLine="82" endPosition="29" />
-    <scopeInfo nodeId="1215615153957" fileName="SubtreeChecker.java" startLine="126" startPosition="110" endLine="129" endPosition="173">
+    <scopeInfo nodeId="1215607026427" fileName="SubtreeChecker.java" startLine="76" startPosition="113" endLine="79" endPosition="31" />
+    <scopeInfo nodeId="1215607026451" fileName="SubtreeChecker.java" startLine="81" startPosition="116" endLine="84" endPosition="31" />
+    <scopeInfo nodeId="1215615153957" fileName="SubtreeChecker.java" startLine="127" startPosition="110" endLine="130" endPosition="173">
       <varInfo nodeId="1215615437102" varName="var" />
       <varInfo nodeId="1215615758601" varName="vars" />
     </scopeInfo>
-    <scopeInfo nodeId="1215617277217" fileName="SubtreeChecker.java" startLine="131" startPosition="105" endLine="134" endPosition="166">
+    <scopeInfo nodeId="1215617277217" fileName="SubtreeChecker.java" startLine="132" startPosition="105" endLine="135" endPosition="166">
       <varInfo nodeId="1215617277226" varName="var" />
       <varInfo nodeId="1215617277219" varName="vars" />
     </scopeInfo>
-    <scopeInfo nodeId="1215609104504" fileName="SubtreeChecker.java" startLine="144" startPosition="212" endLine="147" endPosition="11" />
-    <scopeInfo nodeId="1215609104505" fileName="SubtreeChecker.java" startLine="144" startPosition="212" endLine="147" endPosition="11">
+    <scopeInfo nodeId="1215609104504" fileName="SubtreeChecker.java" startLine="145" startPosition="212" endLine="148" endPosition="11" />
+    <scopeInfo nodeId="1215609104505" fileName="SubtreeChecker.java" startLine="145" startPosition="212" endLine="148" endPosition="11">
       <varInfo nodeId="1215609104512" varName="operation" />
     </scopeInfo>
-    <scopeInfo nodeId="95706764259162044" fileName="SubtreeChecker.java" startLine="66" startPosition="165" endLine="70" endPosition="17" />
-    <scopeInfo nodeId="1215609091940" fileName="SubtreeChecker.java" startLine="143" startPosition="32" endLine="148" endPosition="9" />
-    <scopeInfo nodeId="95706764259162043" fileName="SubtreeChecker.java" startLine="65" startPosition="38" endLine="71" endPosition="15">
+    <scopeInfo nodeId="95706764259162044" fileName="SubtreeChecker.java" startLine="68" startPosition="167" endLine="72" endPosition="19" />
+    <scopeInfo nodeId="1215609091940" fileName="SubtreeChecker.java" startLine="144" startPosition="32" endLine="149" endPosition="9" />
+    <scopeInfo nodeId="95706764259162043" fileName="SubtreeChecker.java" startLine="67" startPosition="40" endLine="73" endPosition="17">
       <varInfo nodeId="95706764259162047" varName="type2" />
     </scopeInfo>
-    <scopeInfo nodeId="1215607026406" fileName="SubtreeChecker.java" startLine="54" startPosition="111" endLine="61" endPosition="189">
+    <scopeInfo nodeId="1215607026406" fileName="SubtreeChecker.java" startLine="56" startPosition="113" endLine="63" endPosition="191">
       <varInfo nodeId="1215607026408" varName="type1" />
       <varInfo nodeId="1215607026415" varName="type2" />
     </scopeInfo>
-    <scopeInfo nodeId="3996711022540418621" fileName="SubtreeChecker.java" startLine="88" startPosition="33" endLine="95" endPosition="13">
+    <scopeInfo nodeId="3996711022540418621" fileName="SubtreeChecker.java" startLine="90" startPosition="35" endLine="97" endPosition="15">
       <varInfo nodeId="2032731141110253720" varName="reportError" />
     </scopeInfo>
-    <scopeInfo nodeId="1215605336250" fileName="SubtreeChecker.java" startLine="142" startPosition="140" endLine="149" endPosition="7" />
-    <scopeInfo nodeId="95706764259161998" fileName="SubtreeChecker.java" startLine="63" startPosition="114" endLine="72" endPosition="220">
+    <scopeInfo nodeId="1215605336250" fileName="SubtreeChecker.java" startLine="143" startPosition="140" endLine="150" endPosition="7" />
+    <scopeInfo nodeId="95706764259161998" fileName="SubtreeChecker.java" startLine="65" startPosition="116" endLine="74" endPosition="222">
       <varInfo nodeId="95706764259162137" varName="hasType" />
       <varInfo nodeId="95706764259162025" varName="type1" />
     </scopeInfo>
-    <scopeInfo nodeId="1215605336230" fileName="SubtreeChecker.java" startLine="141" startPosition="52" endLine="150" endPosition="5" />
-    <scopeInfo nodeId="1215605336242" fileName="SubtreeChecker.java" startLine="141" startPosition="52" endLine="150" endPosition="5">
+    <scopeInfo nodeId="1215605336230" fileName="SubtreeChecker.java" startLine="142" startPosition="52" endLine="151" endPosition="5" />
+    <scopeInfo nodeId="1215605336242" fileName="SubtreeChecker.java" startLine="142" startPosition="52" endLine="151" endPosition="5">
       <varInfo nodeId="1215605336248" varName="nodeToCheck" />
     </scopeInfo>
-    <scopeInfo nodeId="1215610523462" fileName="SubtreeChecker.java" startLine="86" startPosition="25" endLine="96" endPosition="11">
+    <scopeInfo nodeId="1215610523462" fileName="SubtreeChecker.java" startLine="88" startPosition="27" endLine="98" endPosition="13">
       <varInfo nodeId="7938028138875678861" varName="reporter" />
     </scopeInfo>
-    <scopeInfo nodeId="1215605336227" fileName="SubtreeChecker.java" startLine="141" startPosition="0" endLine="152" endPosition="0">
+    <scopeInfo nodeId="1215605336227" fileName="SubtreeChecker.java" startLine="142" startPosition="0" endLine="153" endPosition="0">
       <varInfo nodeId="1215605336251" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1215611983721" fileName="SubtreeChecker.java" startLine="112" startPosition="90" endLine="135" endPosition="11">
+    <scopeInfo nodeId="1215611983721" fileName="SubtreeChecker.java" startLine="113" startPosition="90" endLine="136" endPosition="11">
       <varInfo nodeId="1215615554564" varName="instruction" />
       <varInfo nodeId="1215615533527" varName="instructions" />
     </scopeInfo>
-    <scopeInfo nodeId="1215611983715" fileName="SubtreeChecker.java" startLine="111" startPosition="210" endLine="136" endPosition="9">
+    <scopeInfo nodeId="1215611983715" fileName="SubtreeChecker.java" startLine="112" startPosition="210" endLine="137" endPosition="9">
       <varInfo nodeId="1215611983719" varName="property" />
     </scopeInfo>
-    <scopeInfo nodeId="1215611983707" fileName="SubtreeChecker.java" startLine="110" startPosition="204" endLine="136" endPosition="9">
+    <scopeInfo nodeId="1215611983707" fileName="SubtreeChecker.java" startLine="111" startPosition="204" endLine="137" endPosition="9">
       <varInfo nodeId="1215611983709" varName="container" />
     </scopeInfo>
-    <scopeInfo nodeId="1215611983701" fileName="SubtreeChecker.java" startLine="109" startPosition="134" endLine="137" endPosition="7" />
-    <scopeInfo nodeId="1215607026400" fileName="SubtreeChecker.java" startLine="53" startPosition="92" endLine="83" endPosition="13" />
-    <scopeInfo nodeId="1215611983693" fileName="SubtreeChecker.java" startLine="108" startPosition="74" endLine="138" endPosition="5">
+    <scopeInfo nodeId="1215611983701" fileName="SubtreeChecker.java" startLine="110" startPosition="134" endLine="138" endPosition="7" />
+    <scopeInfo nodeId="1215607026400" fileName="SubtreeChecker.java" startLine="55" startPosition="94" endLine="85" endPosition="15" />
+    <scopeInfo nodeId="1215611983693" fileName="SubtreeChecker.java" startLine="109" startPosition="74" endLine="139" endPosition="5">
       <varInfo nodeId="1215611983699" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="1215607026394" fileName="SubtreeChecker.java" startLine="52" startPosition="212" endLine="84" endPosition="11">
+    <scopeInfo nodeId="1215607026394" fileName="SubtreeChecker.java" startLine="54" startPosition="214" endLine="86" endPosition="13">
       <varInfo nodeId="1215607026398" varName="property" />
     </scopeInfo>
-    <scopeInfo nodeId="1215607026386" fileName="SubtreeChecker.java" startLine="51" startPosition="206" endLine="84" endPosition="11">
+    <scopeInfo nodeId="1215607026386" fileName="SubtreeChecker.java" startLine="53" startPosition="208" endLine="86" endPosition="13">
       <varInfo nodeId="1215607026388" varName="container" />
     </scopeInfo>
-    <scopeInfo nodeId="1215611932107" fileName="SubtreeChecker.java" startLine="104" startPosition="48" endLine="138" endPosition="5">
+    <scopeInfo nodeId="1215611932107" fileName="SubtreeChecker.java" startLine="105" startPosition="48" endLine="139" endPosition="5">
       <varInfo nodeId="1215615074248" varName="initialized" />
       <varInfo nodeId="1215617240413" varName="live" />
       <varInfo nodeId="1215612199639" varName="program" />
       <varInfo nodeId="1215612669322" varName="unreachable" />
     </scopeInfo>
-    <scopeInfo nodeId="1215611932104" fileName="SubtreeChecker.java" startLine="104" startPosition="0" endLine="140" endPosition="0">
+    <scopeInfo nodeId="1215611932104" fileName="SubtreeChecker.java" startLine="105" startPosition="0" endLine="141" endPosition="0">
       <varInfo nodeId="1215611999300" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1215607026380" fileName="SubtreeChecker.java" startLine="49" startPosition="136" endLine="97" endPosition="9">
+    <scopeInfo nodeId="1215607026380" fileName="SubtreeChecker.java" startLine="51" startPosition="138" endLine="99" endPosition="11">
       <varInfo nodeId="1215607026382" varName="isError" />
     </scopeInfo>
-    <scopeInfo nodeId="1215607026372" fileName="SubtreeChecker.java" startLine="48" startPosition="56" endLine="98" endPosition="7">
+    <scopeInfo nodeId="1215607026372" fileName="SubtreeChecker.java" startLine="50" startPosition="58" endLine="100" endPosition="9">
       <varInfo nodeId="1215607026378" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="6273236171923055462" fileName="SubtreeChecker.java" startLine="47" startPosition="9" endLine="98" endPosition="7" />
-    <scopeInfo nodeId="1215078294638" fileName="SubtreeChecker.java" startLine="42" startPosition="97" endLine="101" endPosition="5">
+    <scopeInfo nodeId="4263976733282726509" fileName="SubtreeChecker.java" startLine="49" startPosition="64" endLine="100" endPosition="9" />
+    <scopeInfo nodeId="4263976733282726503" fileName="SubtreeChecker.java" startLine="49" startPosition="0" endLine="102" endPosition="0">
+      <varInfo nodeId="4263976733282726507" varName="typeCheckingContext" />
+    </scopeInfo>
+    <scopeInfo nodeId="1215078294638" fileName="SubtreeChecker.java" startLine="44" startPosition="115" endLine="102" endPosition="7">
       <varInfo nodeId="6273236171923055502" varName="containingRoot" />
       <varInfo nodeId="6273236171923055293" varName="owner" />
-      <varInfo nodeId="6273236171923055304" varName="typeCheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="1215078294635" fileName="SubtreeChecker.java" startLine="42" startPosition="0" endLine="103" endPosition="0">
+    <scopeInfo nodeId="1215078294635" fileName="SubtreeChecker.java" startLine="44" startPosition="0" endLine="104" endPosition="0">
       <varInfo nodeId="852155438140970277" varName="allowErrors" />
       <varInfo nodeId="852155438141020164" varName="allowWarnings" />
       <varInfo nodeId="1215078403182" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6273236171923055297" fileName="SubtreeChecker.java" startLine="44" startPosition="34" endLine="44" endPosition="56" unitName="jetbrains.mps.lang.test.runtime.SubtreeChecker$1" />
-    <unitInfo nodeId="1215078243118" fileName="SubtreeChecker.java" startLine="34" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.SubtreeChecker" />
+    <unitInfo nodeId="4263976733282726501" fileName="SubtreeChecker.java" startLine="48" startPosition="86" endLine="102" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.SubtreeChecker$1" />
+    <unitInfo nodeId="1215078243118" fileName="SubtreeChecker.java" startLine="36" startPosition="0" endLine="157" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.SubtreeChecker" />
   </root>
   <root nodeId="1221569991485" modelId="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)">
     <nodeInfo nodeId="1221570095729" fileName="BaseTestBody.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModel" />
@@ -720,271 +720,270 @@
   </root>
   <root nodeId="7107617965856250727" modelId="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)">
     <nodeInfo nodeId="577165239384693854" fileName="TransformationTestRunner.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EMPTY_CLIPBOARD_CONTENT" />
-    <nodeInfo nodeId="7107617965856250727" fileName="TransformationTestRunner.java" startLine="38" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
-    <nodeInfo nodeId="7321508538531297252" fileName="TransformationTestRunner.java" startLine="43" startPosition="121" endLine="44" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3611349286777962700" fileName="TransformationTestRunner.java" startLine="52" startPosition="24" endLine="53" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3611349286777962351" fileName="TransformationTestRunner.java" startLine="53" startPosition="44" endLine="54" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856385831" fileName="TransformationTestRunner.java" startLine="55" startPosition="5" endLine="56" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856385833" fileName="TransformationTestRunner.java" startLine="56" startPosition="28" endLine="57" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7107617965856385835" fileName="TransformationTestRunner.java" startLine="57" startPosition="57" endLine="58" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856385839" fileName="TransformationTestRunner.java" startLine="58" startPosition="56" endLine="59" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856385841" fileName="TransformationTestRunner.java" startLine="59" startPosition="27" endLine="60" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7107617965856385843" fileName="TransformationTestRunner.java" startLine="60" startPosition="21" endLine="61" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="262412979073762069" fileName="TransformationTestRunner.java" startLine="64" startPosition="30" endLine="65" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856385852" fileName="TransformationTestRunner.java" startLine="65" startPosition="35" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="7107617965856385867" fileName="TransformationTestRunner.java" startLine="69" startPosition="38" endLine="70" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="262412979073762186" fileName="TransformationTestRunner.java" startLine="72" startPosition="12" endLine="73" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856385907" fileName="TransformationTestRunner.java" startLine="78" startPosition="29" endLine="79" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4659104368503193814" fileName="TransformationTestRunner.java" startLine="80" startPosition="42" endLine="81" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9027620413164326361" fileName="TransformationTestRunner.java" startLine="82" startPosition="13" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="9027620413164326425" fileName="TransformationTestRunner.java" startLine="83" startPosition="0" endLine="84" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9027620413164336023" fileName="TransformationTestRunner.java" startLine="84" startPosition="53" endLine="85" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856385920" fileName="TransformationTestRunner.java" startLine="89" startPosition="7" endLine="90" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856386061" fileName="TransformationTestRunner.java" startLine="93" startPosition="155" endLine="94" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7107617965856386067" fileName="TransformationTestRunner.java" startLine="96" startPosition="25" endLine="97" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856386078" fileName="TransformationTestRunner.java" startLine="97" startPosition="87" endLine="98" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7107617965856386086" fileName="TransformationTestRunner.java" startLine="98" startPosition="69" endLine="99" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7107617965856386096" fileName="TransformationTestRunner.java" startLine="99" startPosition="87" endLine="100" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="7107617965856386112" fileName="TransformationTestRunner.java" startLine="102" startPosition="7" endLine="103" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7107617965856386118" fileName="TransformationTestRunner.java" startLine="103" startPosition="49" endLine="104" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856386129" fileName="TransformationTestRunner.java" startLine="104" startPosition="88" endLine="105" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856386140" fileName="TransformationTestRunner.java" startLine="105" startPosition="73" endLine="106" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7107617965856386164" fileName="TransformationTestRunner.java" startLine="111" startPosition="31" endLine="112" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856386178" fileName="TransformationTestRunner.java" startLine="117" startPosition="12" endLine="118" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856386192" fileName="TransformationTestRunner.java" startLine="121" startPosition="25" endLine="122" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856386197" fileName="TransformationTestRunner.java" startLine="122" startPosition="104" endLine="123" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856386203" fileName="TransformationTestRunner.java" startLine="126" startPosition="31" endLine="127" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="7107617965856385930" fileName="TransformationTestRunner.java" startLine="131" startPosition="39" endLine="132" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2966534639212639059" fileName="TransformationTestRunner.java" startLine="135" startPosition="34" endLine="136" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7107617965856385953" fileName="TransformationTestRunner.java" startLine="138" startPosition="45" endLine="139" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7107617965856385972" fileName="TransformationTestRunner.java" startLine="141" startPosition="51" endLine="142" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7107617965856385982" fileName="TransformationTestRunner.java" startLine="142" startPosition="90" endLine="143" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2966534639212639075" fileName="TransformationTestRunner.java" startLine="144" startPosition="54" endLine="145" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2966534639212650900" fileName="TransformationTestRunner.java" startLine="152" startPosition="37" endLine="153" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2966534639212666149" fileName="TransformationTestRunner.java" startLine="156" startPosition="41" endLine="157" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2966534639212650904" fileName="TransformationTestRunner.java" startLine="160" startPosition="41" endLine="161" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2329394428277189087" fileName="TransformationTestRunner.java" startLine="165" startPosition="35" endLine="166" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856386228" fileName="TransformationTestRunner.java" startLine="172" startPosition="78" endLine="173" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7107617965856386234" fileName="TransformationTestRunner.java" startLine="174" startPosition="9" endLine="175" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856386246" fileName="TransformationTestRunner.java" startLine="176" startPosition="39" endLine="177" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856386254" fileName="TransformationTestRunner.java" startLine="178" startPosition="40" endLine="179" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856386262" fileName="TransformationTestRunner.java" startLine="180" startPosition="43" endLine="181" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856386268" fileName="TransformationTestRunner.java" startLine="182" startPosition="5" endLine="183" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7107617965856250729" fileName="TransformationTestRunner.java" startLine="40" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TransformationTestRunner#()V" />
-    <nodeInfo nodeId="7107617965856385876" fileName="TransformationTestRunner.java" startLine="72" startPosition="10" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7107617965856386176" fileName="TransformationTestRunner.java" startLine="117" startPosition="10" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7107617965856250733" fileName="TransformationTestRunner.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initTest#(Ljetbrains/mps/lang/test/runtime/TransformationTest;Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7107617965856385865" fileName="TransformationTestRunner.java" startLine="68" startPosition="7" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4659104368503193780" fileName="TransformationTestRunner.java" startLine="79" startPosition="132" endLine="82" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7107617965856386162" fileName="TransformationTestRunner.java" startLine="111" startPosition="0" endLine="114" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7107617965856386201" fileName="TransformationTestRunner.java" startLine="125" startPosition="7" endLine="128" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7107617965856385926" fileName="TransformationTestRunner.java" startLine="131" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clearSystemClipboard#()V" />
-    <nodeInfo nodeId="7107617965856385988" fileName="TransformationTestRunner.java" startLine="143" startPosition="48" endLine="146" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2966534639212650876" fileName="TransformationTestRunner.java" startLine="152" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNames#()Ljava/util/Set;" />
-    <nodeInfo nodeId="2966534639212650881" fileName="TransformationTestRunner.java" startLine="156" startPosition="0" endLine="159" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserNames#()Ljava/util/Set;" />
-    <nodeInfo nodeId="2966534639212650886" fileName="TransformationTestRunner.java" startLine="160" startPosition="0" endLine="163" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="2329394428277189087" fileName="TransformationTestRunner.java" startLine="164" startPosition="56" endLine="167" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2329394428277189087" fileName="TransformationTestRunner.java" startLine="164" startPosition="56" endLine="167" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1828883994691865327" fileName="TransformationTestRunner.java" startLine="47" startPosition="160" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3611349286777954070" fileName="TransformationTestRunner.java" startLine="51" startPosition="7" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7107617965856385850" fileName="TransformationTestRunner.java" startLine="63" startPosition="78" endLine="67" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7107617965856386190" fileName="TransformationTestRunner.java" startLine="121" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7107617965856386161" fileName="TransformationTestRunner.java" startLine="109" startPosition="27" endLine="114" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2329394428277189569" fileName="TransformationTestRunner.java" startLine="164" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="report#(Ljava/lang/String;Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7107617965856385847" fileName="TransformationTestRunner.java" startLine="62" startPosition="61" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7107617965856386065" fileName="TransformationTestRunner.java" startLine="96" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7107617965856386189" fileName="TransformationTestRunner.java" startLine="119" startPosition="5" endLine="125" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856386157" fileName="TransformationTestRunner.java" startLine="109" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7107617965856385965" fileName="TransformationTestRunner.java" startLine="140" startPosition="109" endLine="147" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7107617965856386064" fileName="TransformationTestRunner.java" startLine="94" startPosition="62" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856385905" fileName="TransformationTestRunner.java" startLine="78" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7107617965856386151" fileName="TransformationTestRunner.java" startLine="107" startPosition="23" endLine="116" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856385963" fileName="TransformationTestRunner.java" startLine="139" startPosition="49" endLine="148" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7107617965856386232" fileName="TransformationTestRunner.java" startLine="173" startPosition="31" endLine="182" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="7107617965856385904" fileName="TransformationTestRunner.java" startLine="76" startPosition="25" endLine="87" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856385946" fileName="TransformationTestRunner.java" startLine="137" startPosition="91" endLine="149" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7107617965856385845" fileName="TransformationTestRunner.java" startLine="61" startPosition="22" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7107617965856385900" fileName="TransformationTestRunner.java" startLine="76" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="7107617965856386149" fileName="TransformationTestRunner.java" startLine="106" startPosition="51" endLine="119" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7107617965856386218" fileName="TransformationTestRunner.java" startLine="172" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tryToRunTest#(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Throwable;" />
-    <nodeInfo nodeId="7107617965856385942" fileName="TransformationTestRunner.java" startLine="136" startPosition="90" endLine="150" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7107617965856385894" fileName="TransformationTestRunner.java" startLine="74" startPosition="5" endLine="89" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2966534639212639091" fileName="TransformationTestRunner.java" startLine="150" startPosition="5" endLine="169" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7107617965856385938" fileName="TransformationTestRunner.java" startLine="135" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readSystemMacro#()V" />
-    <nodeInfo nodeId="7107617965856386042" fileName="TransformationTestRunner.java" startLine="93" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runTest#(Ljetbrains/mps/lang/test/runtime/TransformationTest;Ljava/lang/String;Ljava/lang/String;Z)V" />
-    <nodeInfo nodeId="1828883994691865316" fileName="TransformationTestRunner.java" startLine="47" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initTest#(Ljetbrains/mps/lang/test/runtime/TransformationTest;Ljava/lang/String;Ljava/lang/String;ZZ)V" />
-    <scopeInfo nodeId="7107617965856250732" fileName="TransformationTestRunner.java" startLine="40" startPosition="37" endLine="40" endPosition="37" />
-    <scopeInfo nodeId="7107617965856250736" fileName="TransformationTestRunner.java" startLine="43" startPosition="121" endLine="44" endPosition="53" />
-    <scopeInfo nodeId="7107617965856385866" fileName="TransformationTestRunner.java" startLine="69" startPosition="38" endLine="70" endPosition="106" />
-    <scopeInfo nodeId="7107617965856385877" fileName="TransformationTestRunner.java" startLine="72" startPosition="12" endLine="73" endPosition="112" />
-    <scopeInfo nodeId="4659104368503193781" fileName="TransformationTestRunner.java" startLine="80" startPosition="42" endLine="81" endPosition="145" />
-    <scopeInfo nodeId="7107617965856386163" fileName="TransformationTestRunner.java" startLine="111" startPosition="31" endLine="112" endPosition="102" />
-    <scopeInfo nodeId="7107617965856386177" fileName="TransformationTestRunner.java" startLine="117" startPosition="12" endLine="118" endPosition="94" />
-    <scopeInfo nodeId="7107617965856386202" fileName="TransformationTestRunner.java" startLine="126" startPosition="31" endLine="127" endPosition="25" />
-    <scopeInfo nodeId="7107617965856385929" fileName="TransformationTestRunner.java" startLine="131" startPosition="39" endLine="132" endPosition="165" />
-    <scopeInfo nodeId="7107617965856385989" fileName="TransformationTestRunner.java" startLine="144" startPosition="54" endLine="145" endPosition="128" />
-    <scopeInfo nodeId="2966534639212650880" fileName="TransformationTestRunner.java" startLine="152" startPosition="37" endLine="153" endPosition="81" />
-    <scopeInfo nodeId="2966534639212650885" fileName="TransformationTestRunner.java" startLine="156" startPosition="41" endLine="157" endPosition="81" />
-    <scopeInfo nodeId="2966534639212650891" fileName="TransformationTestRunner.java" startLine="160" startPosition="41" endLine="161" endPosition="51" />
-    <scopeInfo nodeId="2329394428277189087" fileName="TransformationTestRunner.java" startLine="165" startPosition="35" endLine="166" endPosition="66" />
-    <scopeInfo nodeId="7107617965856386233" fileName="TransformationTestRunner.java" startLine="174" startPosition="9" endLine="175" endPosition="46" />
-    <scopeInfo nodeId="7107617965856386242" fileName="TransformationTestRunner.java" startLine="176" startPosition="0" endLine="177" endPosition="26">
+    <nodeInfo nodeId="7321508538531297252" fileName="TransformationTestRunner.java" startLine="42" startPosition="121" endLine="43" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3611349286777962700" fileName="TransformationTestRunner.java" startLine="51" startPosition="24" endLine="52" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3611349286777962351" fileName="TransformationTestRunner.java" startLine="52" startPosition="44" endLine="53" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856385831" fileName="TransformationTestRunner.java" startLine="54" startPosition="5" endLine="55" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856385833" fileName="TransformationTestRunner.java" startLine="55" startPosition="28" endLine="56" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7107617965856385835" fileName="TransformationTestRunner.java" startLine="56" startPosition="57" endLine="57" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856385839" fileName="TransformationTestRunner.java" startLine="57" startPosition="56" endLine="58" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856385841" fileName="TransformationTestRunner.java" startLine="58" startPosition="27" endLine="59" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7107617965856385843" fileName="TransformationTestRunner.java" startLine="59" startPosition="21" endLine="60" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="262412979073762069" fileName="TransformationTestRunner.java" startLine="63" startPosition="30" endLine="64" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856385852" fileName="TransformationTestRunner.java" startLine="64" startPosition="35" endLine="65" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="7107617965856385867" fileName="TransformationTestRunner.java" startLine="68" startPosition="38" endLine="69" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="262412979073762186" fileName="TransformationTestRunner.java" startLine="71" startPosition="12" endLine="72" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856385907" fileName="TransformationTestRunner.java" startLine="77" startPosition="29" endLine="78" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4659104368503193814" fileName="TransformationTestRunner.java" startLine="79" startPosition="42" endLine="80" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9027620413164326361" fileName="TransformationTestRunner.java" startLine="81" startPosition="13" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9027620413164326425" fileName="TransformationTestRunner.java" startLine="82" startPosition="0" endLine="83" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9027620413164336023" fileName="TransformationTestRunner.java" startLine="83" startPosition="53" endLine="84" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856385920" fileName="TransformationTestRunner.java" startLine="88" startPosition="7" endLine="89" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856386061" fileName="TransformationTestRunner.java" startLine="92" startPosition="155" endLine="93" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7107617965856386067" fileName="TransformationTestRunner.java" startLine="95" startPosition="25" endLine="96" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856386078" fileName="TransformationTestRunner.java" startLine="96" startPosition="87" endLine="97" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7107617965856386086" fileName="TransformationTestRunner.java" startLine="97" startPosition="69" endLine="98" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7107617965856386096" fileName="TransformationTestRunner.java" startLine="98" startPosition="87" endLine="99" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="7107617965856386112" fileName="TransformationTestRunner.java" startLine="101" startPosition="7" endLine="102" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7107617965856386118" fileName="TransformationTestRunner.java" startLine="102" startPosition="49" endLine="103" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856386129" fileName="TransformationTestRunner.java" startLine="103" startPosition="88" endLine="104" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856386140" fileName="TransformationTestRunner.java" startLine="104" startPosition="73" endLine="105" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7107617965856386164" fileName="TransformationTestRunner.java" startLine="110" startPosition="31" endLine="111" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856386178" fileName="TransformationTestRunner.java" startLine="116" startPosition="12" endLine="117" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856386192" fileName="TransformationTestRunner.java" startLine="120" startPosition="25" endLine="121" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856386197" fileName="TransformationTestRunner.java" startLine="121" startPosition="104" endLine="122" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856386203" fileName="TransformationTestRunner.java" startLine="125" startPosition="31" endLine="126" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="7107617965856385930" fileName="TransformationTestRunner.java" startLine="130" startPosition="39" endLine="131" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2966534639212639059" fileName="TransformationTestRunner.java" startLine="134" startPosition="34" endLine="135" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7107617965856385953" fileName="TransformationTestRunner.java" startLine="137" startPosition="45" endLine="138" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7107617965856385972" fileName="TransformationTestRunner.java" startLine="140" startPosition="51" endLine="141" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7107617965856385982" fileName="TransformationTestRunner.java" startLine="141" startPosition="90" endLine="142" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2966534639212639075" fileName="TransformationTestRunner.java" startLine="143" startPosition="54" endLine="144" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2966534639212650900" fileName="TransformationTestRunner.java" startLine="151" startPosition="37" endLine="152" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2966534639212666149" fileName="TransformationTestRunner.java" startLine="155" startPosition="41" endLine="156" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2966534639212650904" fileName="TransformationTestRunner.java" startLine="159" startPosition="41" endLine="160" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2329394428277189087" fileName="TransformationTestRunner.java" startLine="164" startPosition="35" endLine="165" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856386228" fileName="TransformationTestRunner.java" startLine="171" startPosition="78" endLine="172" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7107617965856386234" fileName="TransformationTestRunner.java" startLine="173" startPosition="9" endLine="174" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856386246" fileName="TransformationTestRunner.java" startLine="175" startPosition="39" endLine="176" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856386254" fileName="TransformationTestRunner.java" startLine="177" startPosition="40" endLine="178" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856386262" fileName="TransformationTestRunner.java" startLine="179" startPosition="43" endLine="180" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856386268" fileName="TransformationTestRunner.java" startLine="181" startPosition="5" endLine="182" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7107617965856250727" fileName="TransformationTestRunner.java" startLine="185" startPosition="0" endLine="186" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="log" />
+    <nodeInfo nodeId="7107617965856250729" fileName="TransformationTestRunner.java" startLine="39" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TransformationTestRunner#()V" />
+    <nodeInfo nodeId="7107617965856385876" fileName="TransformationTestRunner.java" startLine="71" startPosition="10" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7107617965856386176" fileName="TransformationTestRunner.java" startLine="116" startPosition="10" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7107617965856250733" fileName="TransformationTestRunner.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initTest#(Ljetbrains/mps/lang/test/runtime/TransformationTest;Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7107617965856385865" fileName="TransformationTestRunner.java" startLine="67" startPosition="7" endLine="70" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4659104368503193780" fileName="TransformationTestRunner.java" startLine="78" startPosition="132" endLine="81" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7107617965856386162" fileName="TransformationTestRunner.java" startLine="110" startPosition="0" endLine="113" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7107617965856386201" fileName="TransformationTestRunner.java" startLine="124" startPosition="7" endLine="127" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7107617965856385926" fileName="TransformationTestRunner.java" startLine="130" startPosition="0" endLine="133" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="clearSystemClipboard#()V" />
+    <nodeInfo nodeId="7107617965856385988" fileName="TransformationTestRunner.java" startLine="142" startPosition="48" endLine="145" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2966534639212650876" fileName="TransformationTestRunner.java" startLine="151" startPosition="0" endLine="154" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNames#()Ljava/util/Set;" />
+    <nodeInfo nodeId="2966534639212650881" fileName="TransformationTestRunner.java" startLine="155" startPosition="0" endLine="158" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getUserNames#()Ljava/util/Set;" />
+    <nodeInfo nodeId="2966534639212650886" fileName="TransformationTestRunner.java" startLine="159" startPosition="0" endLine="162" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValue#(Ljava/lang/String;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2329394428277189087" fileName="TransformationTestRunner.java" startLine="163" startPosition="56" endLine="166" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2329394428277189087" fileName="TransformationTestRunner.java" startLine="163" startPosition="56" endLine="166" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1828883994691865327" fileName="TransformationTestRunner.java" startLine="46" startPosition="160" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3611349286777954070" fileName="TransformationTestRunner.java" startLine="50" startPosition="7" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7107617965856385850" fileName="TransformationTestRunner.java" startLine="62" startPosition="78" endLine="66" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7107617965856386190" fileName="TransformationTestRunner.java" startLine="120" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7107617965856386161" fileName="TransformationTestRunner.java" startLine="108" startPosition="27" endLine="113" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2329394428277189569" fileName="TransformationTestRunner.java" startLine="163" startPosition="0" endLine="168" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="report#(Ljava/lang/String;Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7107617965856385847" fileName="TransformationTestRunner.java" startLine="61" startPosition="61" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7107617965856386065" fileName="TransformationTestRunner.java" startLine="95" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7107617965856386189" fileName="TransformationTestRunner.java" startLine="118" startPosition="5" endLine="124" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856386157" fileName="TransformationTestRunner.java" startLine="108" startPosition="0" endLine="115" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7107617965856385965" fileName="TransformationTestRunner.java" startLine="139" startPosition="109" endLine="146" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7107617965856386064" fileName="TransformationTestRunner.java" startLine="93" startPosition="62" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856385905" fileName="TransformationTestRunner.java" startLine="77" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7107617965856386151" fileName="TransformationTestRunner.java" startLine="106" startPosition="23" endLine="115" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856385963" fileName="TransformationTestRunner.java" startLine="138" startPosition="49" endLine="147" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7107617965856386232" fileName="TransformationTestRunner.java" startLine="172" startPosition="31" endLine="181" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="7107617965856385904" fileName="TransformationTestRunner.java" startLine="75" startPosition="25" endLine="86" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856385946" fileName="TransformationTestRunner.java" startLine="136" startPosition="91" endLine="148" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7107617965856385845" fileName="TransformationTestRunner.java" startLine="60" startPosition="22" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7107617965856385900" fileName="TransformationTestRunner.java" startLine="75" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="7107617965856386149" fileName="TransformationTestRunner.java" startLine="105" startPosition="51" endLine="118" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7107617965856386218" fileName="TransformationTestRunner.java" startLine="171" startPosition="0" endLine="184" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="tryToRunTest#(Ljava/lang/Class;Ljava/lang/String;Ljava/lang/Object;)Ljava/lang/Throwable;" />
+    <nodeInfo nodeId="7107617965856385942" fileName="TransformationTestRunner.java" startLine="135" startPosition="90" endLine="149" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7107617965856385894" fileName="TransformationTestRunner.java" startLine="73" startPosition="5" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2966534639212639091" fileName="TransformationTestRunner.java" startLine="149" startPosition="5" endLine="168" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7107617965856385938" fileName="TransformationTestRunner.java" startLine="134" startPosition="0" endLine="170" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="readSystemMacro#()V" />
+    <nodeInfo nodeId="7107617965856386042" fileName="TransformationTestRunner.java" startLine="92" startPosition="0" endLine="129" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="runTest#(Ljetbrains/mps/lang/test/runtime/TransformationTest;Ljava/lang/String;Ljava/lang/String;Z)V" />
+    <nodeInfo nodeId="1828883994691865316" fileName="TransformationTestRunner.java" startLine="46" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initTest#(Ljetbrains/mps/lang/test/runtime/TransformationTest;Ljava/lang/String;Ljava/lang/String;ZZ)V" />
+    <scopeInfo nodeId="7107617965856250732" fileName="TransformationTestRunner.java" startLine="39" startPosition="37" endLine="39" endPosition="37" />
+    <scopeInfo nodeId="7107617965856250736" fileName="TransformationTestRunner.java" startLine="42" startPosition="121" endLine="43" endPosition="53" />
+    <scopeInfo nodeId="7107617965856385866" fileName="TransformationTestRunner.java" startLine="68" startPosition="38" endLine="69" endPosition="106" />
+    <scopeInfo nodeId="7107617965856385877" fileName="TransformationTestRunner.java" startLine="71" startPosition="12" endLine="72" endPosition="112" />
+    <scopeInfo nodeId="4659104368503193781" fileName="TransformationTestRunner.java" startLine="79" startPosition="42" endLine="80" endPosition="145" />
+    <scopeInfo nodeId="7107617965856386163" fileName="TransformationTestRunner.java" startLine="110" startPosition="31" endLine="111" endPosition="102" />
+    <scopeInfo nodeId="7107617965856386177" fileName="TransformationTestRunner.java" startLine="116" startPosition="12" endLine="117" endPosition="94" />
+    <scopeInfo nodeId="7107617965856386202" fileName="TransformationTestRunner.java" startLine="125" startPosition="31" endLine="126" endPosition="25" />
+    <scopeInfo nodeId="7107617965856385929" fileName="TransformationTestRunner.java" startLine="130" startPosition="39" endLine="131" endPosition="165" />
+    <scopeInfo nodeId="7107617965856385989" fileName="TransformationTestRunner.java" startLine="143" startPosition="54" endLine="144" endPosition="128" />
+    <scopeInfo nodeId="2966534639212650880" fileName="TransformationTestRunner.java" startLine="151" startPosition="37" endLine="152" endPosition="81" />
+    <scopeInfo nodeId="2966534639212650885" fileName="TransformationTestRunner.java" startLine="155" startPosition="41" endLine="156" endPosition="81" />
+    <scopeInfo nodeId="2966534639212650891" fileName="TransformationTestRunner.java" startLine="159" startPosition="41" endLine="160" endPosition="51" />
+    <scopeInfo nodeId="2329394428277189087" fileName="TransformationTestRunner.java" startLine="164" startPosition="35" endLine="165" endPosition="66" />
+    <scopeInfo nodeId="7107617965856386233" fileName="TransformationTestRunner.java" startLine="173" startPosition="9" endLine="174" endPosition="46" />
+    <scopeInfo nodeId="7107617965856386242" fileName="TransformationTestRunner.java" startLine="175" startPosition="0" endLine="176" endPosition="26">
       <varInfo nodeId="7107617965856386243" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7107617965856386245" fileName="TransformationTestRunner.java" startLine="176" startPosition="39" endLine="177" endPosition="26" />
-    <scopeInfo nodeId="7107617965856386250" fileName="TransformationTestRunner.java" startLine="178" startPosition="0" endLine="179" endPosition="26">
+    <scopeInfo nodeId="7107617965856386245" fileName="TransformationTestRunner.java" startLine="175" startPosition="39" endLine="176" endPosition="26" />
+    <scopeInfo nodeId="7107617965856386250" fileName="TransformationTestRunner.java" startLine="177" startPosition="0" endLine="178" endPosition="26">
       <varInfo nodeId="7107617965856386251" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7107617965856386253" fileName="TransformationTestRunner.java" startLine="178" startPosition="40" endLine="179" endPosition="26" />
-    <scopeInfo nodeId="7107617965856386258" fileName="TransformationTestRunner.java" startLine="180" startPosition="0" endLine="181" endPosition="41">
+    <scopeInfo nodeId="7107617965856386253" fileName="TransformationTestRunner.java" startLine="177" startPosition="40" endLine="178" endPosition="26" />
+    <scopeInfo nodeId="7107617965856386258" fileName="TransformationTestRunner.java" startLine="179" startPosition="0" endLine="180" endPosition="41">
       <varInfo nodeId="7107617965856386259" varName="e" />
     </scopeInfo>
-    <scopeInfo nodeId="7107617965856386261" fileName="TransformationTestRunner.java" startLine="180" startPosition="43" endLine="181" endPosition="41" />
-    <scopeInfo nodeId="7107617965856250729" fileName="TransformationTestRunner.java" startLine="40" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="3611349286777954071" fileName="TransformationTestRunner.java" startLine="52" startPosition="24" endLine="54" endPosition="41" />
-    <scopeInfo nodeId="7107617965856385851" fileName="TransformationTestRunner.java" startLine="64" startPosition="30" endLine="66" endPosition="16" />
-    <scopeInfo nodeId="7107617965856386191" fileName="TransformationTestRunner.java" startLine="121" startPosition="25" endLine="123" endPosition="59" />
-    <scopeInfo nodeId="7107617965856250733" fileName="TransformationTestRunner.java" startLine="43" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="7107617965856386261" fileName="TransformationTestRunner.java" startLine="179" startPosition="43" endLine="180" endPosition="41" />
+    <scopeInfo nodeId="7107617965856250729" fileName="TransformationTestRunner.java" startLine="39" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="3611349286777954071" fileName="TransformationTestRunner.java" startLine="51" startPosition="24" endLine="53" endPosition="41" />
+    <scopeInfo nodeId="7107617965856385851" fileName="TransformationTestRunner.java" startLine="63" startPosition="30" endLine="65" endPosition="16" />
+    <scopeInfo nodeId="7107617965856386191" fileName="TransformationTestRunner.java" startLine="120" startPosition="25" endLine="122" endPosition="59" />
+    <scopeInfo nodeId="7107617965856250733" fileName="TransformationTestRunner.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="7107617965856385819" varName="model" />
       <varInfo nodeId="7107617965856385816" varName="projectName" />
       <varInfo nodeId="7107617965856385822" varName="test" />
     </scopeInfo>
-    <scopeInfo nodeId="7107617965856386162" fileName="TransformationTestRunner.java" startLine="111" startPosition="0" endLine="114" endPosition="0" />
-    <scopeInfo nodeId="7107617965856385926" fileName="TransformationTestRunner.java" startLine="131" startPosition="0" endLine="134" endPosition="0" />
-    <scopeInfo nodeId="2966534639212650876" fileName="TransformationTestRunner.java" startLine="152" startPosition="0" endLine="155" endPosition="0" />
-    <scopeInfo nodeId="2966534639212650881" fileName="TransformationTestRunner.java" startLine="156" startPosition="0" endLine="159" endPosition="0" />
-    <scopeInfo nodeId="2966534639212650886" fileName="TransformationTestRunner.java" startLine="160" startPosition="0" endLine="163" endPosition="0">
+    <scopeInfo nodeId="7107617965856386162" fileName="TransformationTestRunner.java" startLine="110" startPosition="0" endLine="113" endPosition="0" />
+    <scopeInfo nodeId="7107617965856385926" fileName="TransformationTestRunner.java" startLine="130" startPosition="0" endLine="133" endPosition="0" />
+    <scopeInfo nodeId="2966534639212650876" fileName="TransformationTestRunner.java" startLine="151" startPosition="0" endLine="154" endPosition="0" />
+    <scopeInfo nodeId="2966534639212650881" fileName="TransformationTestRunner.java" startLine="155" startPosition="0" endLine="158" endPosition="0" />
+    <scopeInfo nodeId="2966534639212650886" fileName="TransformationTestRunner.java" startLine="159" startPosition="0" endLine="162" endPosition="0">
       <varInfo nodeId="2966534639212650889" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="2329394428277189087" fileName="TransformationTestRunner.java" startLine="164" startPosition="56" endLine="167" endPosition="9" />
-    <scopeInfo nodeId="2329394428277189576" fileName="TransformationTestRunner.java" startLine="164" startPosition="56" endLine="167" endPosition="9" />
-    <scopeInfo nodeId="7107617965856385849" fileName="TransformationTestRunner.java" startLine="63" startPosition="78" endLine="67" endPosition="9" />
-    <scopeInfo nodeId="7107617965856386066" fileName="TransformationTestRunner.java" startLine="96" startPosition="25" endLine="100" endPosition="128">
+    <scopeInfo nodeId="2329394428277189087" fileName="TransformationTestRunner.java" startLine="163" startPosition="56" endLine="166" endPosition="9" />
+    <scopeInfo nodeId="2329394428277189576" fileName="TransformationTestRunner.java" startLine="163" startPosition="56" endLine="166" endPosition="9" />
+    <scopeInfo nodeId="7107617965856385849" fileName="TransformationTestRunner.java" startLine="62" startPosition="78" endLine="66" endPosition="9" />
+    <scopeInfo nodeId="7107617965856386066" fileName="TransformationTestRunner.java" startLine="95" startPosition="25" endLine="99" endPosition="128">
       <varInfo nodeId="7107617965856386079" varName="classloader" />
       <varInfo nodeId="7107617965856386087" varName="module" />
     </scopeInfo>
-    <scopeInfo nodeId="7107617965856386190" fileName="TransformationTestRunner.java" startLine="121" startPosition="0" endLine="125" endPosition="0" />
-    <scopeInfo nodeId="7107617965856386160" fileName="TransformationTestRunner.java" startLine="109" startPosition="27" endLine="114" endPosition="13" />
-    <scopeInfo nodeId="7107617965856385971" fileName="TransformationTestRunner.java" startLine="141" startPosition="51" endLine="146" endPosition="13">
+    <scopeInfo nodeId="7107617965856386190" fileName="TransformationTestRunner.java" startLine="120" startPosition="0" endLine="124" endPosition="0" />
+    <scopeInfo nodeId="7107617965856386160" fileName="TransformationTestRunner.java" startLine="108" startPosition="27" endLine="113" endPosition="13" />
+    <scopeInfo nodeId="7107617965856385971" fileName="TransformationTestRunner.java" startLine="140" startPosition="51" endLine="145" endPosition="13">
       <varInfo nodeId="7107617965856385973" varName="canonicalPath" />
       <varInfo nodeId="7107617965856385983" varName="file" />
     </scopeInfo>
-    <scopeInfo nodeId="2329394428277189569" fileName="TransformationTestRunner.java" startLine="164" startPosition="0" endLine="169" endPosition="0">
+    <scopeInfo nodeId="2329394428277189569" fileName="TransformationTestRunner.java" startLine="163" startPosition="0" endLine="168" endPosition="0">
       <varInfo nodeId="2329394428277189572" varName="macro" />
       <varInfo nodeId="2329394428277189574" varName="message" />
     </scopeInfo>
-    <scopeInfo nodeId="7107617965856385847" fileName="TransformationTestRunner.java" startLine="62" startPosition="61" endLine="68" endPosition="7">
+    <scopeInfo nodeId="7107617965856385847" fileName="TransformationTestRunner.java" startLine="61" startPosition="61" endLine="67" endPosition="7">
       <varInfo nodeId="7107617965856385848" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="7107617965856386065" fileName="TransformationTestRunner.java" startLine="96" startPosition="0" endLine="102" endPosition="0" />
-    <scopeInfo nodeId="7107617965856385906" fileName="TransformationTestRunner.java" startLine="78" startPosition="29" endLine="85" endPosition="24">
+    <scopeInfo nodeId="7107617965856386065" fileName="TransformationTestRunner.java" startLine="95" startPosition="0" endLine="101" endPosition="0" />
+    <scopeInfo nodeId="7107617965856385906" fileName="TransformationTestRunner.java" startLine="77" startPosition="29" endLine="84" endPosition="24">
       <varInfo nodeId="7107617965856385908" varName="modelDescriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="7107617965856386157" fileName="TransformationTestRunner.java" startLine="109" startPosition="0" endLine="116" endPosition="0" />
-    <scopeInfo nodeId="7107617965856385964" fileName="TransformationTestRunner.java" startLine="140" startPosition="109" endLine="147" endPosition="11" />
-    <scopeInfo nodeId="7107617965856385846" fileName="TransformationTestRunner.java" startLine="62" startPosition="61" endLine="71" endPosition="7" />
-    <scopeInfo nodeId="7107617965856385905" fileName="TransformationTestRunner.java" startLine="78" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="7107617965856386150" fileName="TransformationTestRunner.java" startLine="107" startPosition="23" endLine="116" endPosition="9" />
-    <scopeInfo nodeId="7107617965856385952" fileName="TransformationTestRunner.java" startLine="138" startPosition="45" endLine="148" endPosition="9">
+    <scopeInfo nodeId="7107617965856386157" fileName="TransformationTestRunner.java" startLine="108" startPosition="0" endLine="115" endPosition="0" />
+    <scopeInfo nodeId="7107617965856385964" fileName="TransformationTestRunner.java" startLine="139" startPosition="109" endLine="146" endPosition="11" />
+    <scopeInfo nodeId="7107617965856385846" fileName="TransformationTestRunner.java" startLine="61" startPosition="61" endLine="70" endPosition="7" />
+    <scopeInfo nodeId="7107617965856385905" fileName="TransformationTestRunner.java" startLine="77" startPosition="0" endLine="86" endPosition="0" />
+    <scopeInfo nodeId="7107617965856386150" fileName="TransformationTestRunner.java" startLine="106" startPosition="23" endLine="115" endPosition="9" />
+    <scopeInfo nodeId="7107617965856385952" fileName="TransformationTestRunner.java" startLine="137" startPosition="45" endLine="147" endPosition="9">
       <varInfo nodeId="7107617965856385954" varName="key" />
     </scopeInfo>
-    <scopeInfo nodeId="7107617965856385903" fileName="TransformationTestRunner.java" startLine="76" startPosition="25" endLine="87" endPosition="11" />
-    <scopeInfo nodeId="7107617965856386227" fileName="TransformationTestRunner.java" startLine="172" startPosition="78" endLine="183" endPosition="21">
+    <scopeInfo nodeId="7107617965856385903" fileName="TransformationTestRunner.java" startLine="75" startPosition="25" endLine="86" endPosition="11" />
+    <scopeInfo nodeId="7107617965856386227" fileName="TransformationTestRunner.java" startLine="171" startPosition="78" endLine="182" endPosition="21">
       <varInfo nodeId="7107617965856386229" varName="exception" />
     </scopeInfo>
-    <scopeInfo nodeId="7107617965856385945" fileName="TransformationTestRunner.java" startLine="137" startPosition="91" endLine="149" endPosition="7" />
-    <scopeInfo nodeId="7107617965856385900" fileName="TransformationTestRunner.java" startLine="76" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="7107617965856386218" fileName="TransformationTestRunner.java" startLine="172" startPosition="0" endLine="185" endPosition="0">
+    <scopeInfo nodeId="7107617965856385945" fileName="TransformationTestRunner.java" startLine="136" startPosition="91" endLine="148" endPosition="7" />
+    <scopeInfo nodeId="7107617965856385900" fileName="TransformationTestRunner.java" startLine="75" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="7107617965856386218" fileName="TransformationTestRunner.java" startLine="171" startPosition="0" endLine="184" endPosition="0">
       <varInfo nodeId="7107617965856386221" varName="clazz" />
       <varInfo nodeId="7107617965856386223" varName="methodName" />
       <varInfo nodeId="7107617965856386225" varName="obj" />
     </scopeInfo>
-    <scopeInfo nodeId="7107617965856385942" fileName="TransformationTestRunner.java" startLine="136" startPosition="90" endLine="150" endPosition="5">
+    <scopeInfo nodeId="7107617965856385942" fileName="TransformationTestRunner.java" startLine="135" startPosition="90" endLine="149" endPosition="5">
       <varInfo nodeId="7107617965856385943" varName="property" />
     </scopeInfo>
-    <scopeInfo nodeId="7107617965856385941" fileName="TransformationTestRunner.java" startLine="135" startPosition="34" endLine="169" endPosition="7">
+    <scopeInfo nodeId="7107617965856385941" fileName="TransformationTestRunner.java" startLine="134" startPosition="34" endLine="168" endPosition="7">
       <varInfo nodeId="2966534639212639060" varName="macros" />
     </scopeInfo>
-    <scopeInfo nodeId="7107617965856386045" fileName="TransformationTestRunner.java" startLine="93" startPosition="155" endLine="128" endPosition="5">
+    <scopeInfo nodeId="7107617965856386045" fileName="TransformationTestRunner.java" startLine="92" startPosition="155" endLine="127" endPosition="5">
       <varInfo nodeId="7107617965856386062" varName="clazz" />
       <varInfo nodeId="7107617965856386141" varName="exception" />
       <varInfo nodeId="7107617965856386113" varName="obj" />
     </scopeInfo>
-    <scopeInfo nodeId="7107617965856385938" fileName="TransformationTestRunner.java" startLine="135" startPosition="0" endLine="171" endPosition="0" />
-    <scopeInfo nodeId="7107617965856386042" fileName="TransformationTestRunner.java" startLine="93" startPosition="0" endLine="130" endPosition="0">
+    <scopeInfo nodeId="7107617965856385938" fileName="TransformationTestRunner.java" startLine="134" startPosition="0" endLine="170" endPosition="0" />
+    <scopeInfo nodeId="7107617965856386042" fileName="TransformationTestRunner.java" startLine="92" startPosition="0" endLine="129" endPosition="0">
       <varInfo nodeId="7107617965856386055" varName="className" />
       <varInfo nodeId="7107617965856386057" varName="methodName" />
       <varInfo nodeId="7107617965856386050" varName="projectTest" />
       <varInfo nodeId="7107617965856386059" varName="runInCommand" />
     </scopeInfo>
-    <scopeInfo nodeId="1828883994691865326" fileName="TransformationTestRunner.java" startLine="47" startPosition="160" endLine="90" endPosition="45" />
-    <scopeInfo nodeId="1828883994691865316" fileName="TransformationTestRunner.java" startLine="47" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="1828883994691865326" fileName="TransformationTestRunner.java" startLine="46" startPosition="160" endLine="89" endPosition="45" />
+    <scopeInfo nodeId="1828883994691865316" fileName="TransformationTestRunner.java" startLine="46" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="1828883994691865322" varName="model" />
       <varInfo nodeId="1828883994691865319" varName="projectName" />
       <varInfo nodeId="1031873601093419550" varName="reOpenProject" />
       <varInfo nodeId="1828883994691865317" varName="test" />
       <varInfo nodeId="1828883994691865434" varName="uiTest" />
     </scopeInfo>
-    <unitInfo nodeId="7107617965856386162" fileName="TransformationTestRunner.java" startLine="110" startPosition="61" endLine="114" endPosition="11" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner$4" />
-    <unitInfo nodeId="7107617965856386190" fileName="TransformationTestRunner.java" startLine="120" startPosition="46" endLine="125" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner$4" />
-    <unitInfo nodeId="7107617965856386065" fileName="TransformationTestRunner.java" startLine="95" startPosition="45" endLine="102" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner$2" />
-    <unitInfo nodeId="7107617965856386155" fileName="TransformationTestRunner.java" startLine="108" startPosition="39" endLine="116" endPosition="7" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner$3" />
-    <unitInfo nodeId="7107617965856385905" fileName="TransformationTestRunner.java" startLine="77" startPosition="59" endLine="87" endPosition="9" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner$2" />
-    <unitInfo nodeId="7107617965856385898" fileName="TransformationTestRunner.java" startLine="75" startPosition="37" endLine="89" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner$1" />
-    <unitInfo nodeId="2966534639212650874" fileName="TransformationTestRunner.java" startLine="151" startPosition="51" endLine="169" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner$5" />
-    <unitInfo nodeId="7107617965856250727" fileName="TransformationTestRunner.java" startLine="36" startPosition="0" endLine="186" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner" />
+    <unitInfo nodeId="7107617965856386162" fileName="TransformationTestRunner.java" startLine="109" startPosition="61" endLine="113" endPosition="11" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner$4" />
+    <unitInfo nodeId="7107617965856386190" fileName="TransformationTestRunner.java" startLine="119" startPosition="46" endLine="124" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner$4" />
+    <unitInfo nodeId="7107617965856386065" fileName="TransformationTestRunner.java" startLine="94" startPosition="45" endLine="101" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner$2" />
+    <unitInfo nodeId="7107617965856386155" fileName="TransformationTestRunner.java" startLine="107" startPosition="39" endLine="115" endPosition="7" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner$3" />
+    <unitInfo nodeId="7107617965856385905" fileName="TransformationTestRunner.java" startLine="76" startPosition="59" endLine="86" endPosition="9" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner$2" />
+    <unitInfo nodeId="7107617965856385898" fileName="TransformationTestRunner.java" startLine="74" startPosition="37" endLine="88" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner$1" />
+    <unitInfo nodeId="2966534639212650874" fileName="TransformationTestRunner.java" startLine="150" startPosition="51" endLine="168" endPosition="5" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner$5" />
+    <unitInfo nodeId="7107617965856250727" fileName="TransformationTestRunner.java" startLine="36" startPosition="0" endLine="187" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.TransformationTestRunner" />
   </root>
   <root nodeId="7187651930234842193" modelId="r:00000000-0000-4000-0000-011c895903a2(jetbrains.mps.lang.test.runtime)">
-    <nodeInfo nodeId="7187651930234857569" fileName="TypeSystemCheckUtil.java" startLine="22" startPosition="54" endLine="23" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7187651930234857579" fileName="TypeSystemCheckUtil.java" startLine="23" startPosition="132" endLine="24" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5959209040402601059" fileName="TypeSystemCheckUtil.java" startLine="25" startPosition="134" endLine="26" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7187651930234868202" fileName="TypeSystemCheckUtil.java" startLine="26" startPosition="135" endLine="27" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2506344354198946775" fileName="TypeSystemCheckUtil.java" startLine="28" startPosition="26" endLine="29" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="7187651930234868225" fileName="TypeSystemCheckUtil.java" startLine="30" startPosition="7" endLine="31" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7187651930235350186" fileName="TypeSystemCheckUtil.java" startLine="31" startPosition="72" endLine="32" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7187651930234868250" fileName="TypeSystemCheckUtil.java" startLine="36" startPosition="49" endLine="37" endPosition="160" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7187651930234868260" fileName="TypeSystemCheckUtil.java" startLine="37" startPosition="160" endLine="38" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7187651930235281593" fileName="TypeSystemCheckUtil.java" startLine="38" startPosition="51" endLine="39" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="573205947724998390" fileName="TypeSystemCheckUtil.java" startLine="39" startPosition="51" endLine="40" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6852093964161556381" fileName="TypeSystemCheckUtil.java" startLine="40" startPosition="61" endLine="41" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6852093964161466427" fileName="TypeSystemCheckUtil.java" startLine="41" startPosition="59" endLine="42" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6852093964161556423" fileName="TypeSystemCheckUtil.java" startLine="42" startPosition="69" endLine="43" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6852093964161466464" fileName="TypeSystemCheckUtil.java" startLine="43" startPosition="36" endLine="44" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6852093964161466447" fileName="TypeSystemCheckUtil.java" startLine="44" startPosition="54" endLine="45" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6852093964161466435" fileName="TypeSystemCheckUtil.java" startLine="45" startPosition="36" endLine="46" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6852093964161556412" fileName="TypeSystemCheckUtil.java" startLine="48" startPosition="39" endLine="49" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="6852093964161556414" fileName="TypeSystemCheckUtil.java" startLine="50" startPosition="7" endLine="51" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="573205947724998730" fileName="TypeSystemCheckUtil.java" startLine="52" startPosition="5" endLine="53" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7187651930234842195" fileName="TypeSystemCheckUtil.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypeSystemCheckUtil#()V" />
-    <nodeInfo nodeId="2506344354198946764" fileName="TypeSystemCheckUtil.java" startLine="27" startPosition="64" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6852093964161556402" fileName="TypeSystemCheckUtil.java" startLine="47" startPosition="51" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6852093964161556390" fileName="TypeSystemCheckUtil.java" startLine="46" startPosition="67" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7187651930234868011" fileName="TypeSystemCheckUtil.java" startLine="24" startPosition="40" endLine="33" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="7187651930234842199" fileName="TypeSystemCheckUtil.java" startLine="22" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkGenerationMode#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7187651930234868244" fileName="TypeSystemCheckUtil.java" startLine="36" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkRollBacks#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="7187651930234842198" fileName="TypeSystemCheckUtil.java" startLine="19" startPosition="32" endLine="19" endPosition="32" />
-    <scopeInfo nodeId="2506344354198946765" fileName="TypeSystemCheckUtil.java" startLine="28" startPosition="26" endLine="29" endPosition="17" />
-    <scopeInfo nodeId="6852093964161556404" fileName="TypeSystemCheckUtil.java" startLine="48" startPosition="39" endLine="49" endPosition="14" />
-    <scopeInfo nodeId="7187651930234842195" fileName="TypeSystemCheckUtil.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="6852093964161556391" fileName="TypeSystemCheckUtil.java" startLine="47" startPosition="51" endLine="51" endPosition="27" />
-    <scopeInfo nodeId="6852093964161556390" fileName="TypeSystemCheckUtil.java" startLine="46" startPosition="67" endLine="52" endPosition="5">
+    <nodeInfo nodeId="7187651930234857569" fileName="TypeSystemCheckUtil.java" startLine="21" startPosition="54" endLine="22" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7187651930234857579" fileName="TypeSystemCheckUtil.java" startLine="22" startPosition="132" endLine="23" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5959209040402601059" fileName="TypeSystemCheckUtil.java" startLine="24" startPosition="134" endLine="25" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7187651930234868202" fileName="TypeSystemCheckUtil.java" startLine="25" startPosition="142" endLine="26" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2506344354198946775" fileName="TypeSystemCheckUtil.java" startLine="27" startPosition="26" endLine="28" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="7187651930234868225" fileName="TypeSystemCheckUtil.java" startLine="29" startPosition="7" endLine="30" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7187651930235350186" fileName="TypeSystemCheckUtil.java" startLine="30" startPosition="72" endLine="31" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7187651930234868250" fileName="TypeSystemCheckUtil.java" startLine="35" startPosition="49" endLine="36" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7187651930235281593" fileName="TypeSystemCheckUtil.java" startLine="36" startPosition="139" endLine="37" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="573205947724998390" fileName="TypeSystemCheckUtil.java" startLine="37" startPosition="49" endLine="38" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6852093964161556381" fileName="TypeSystemCheckUtil.java" startLine="38" startPosition="61" endLine="39" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6852093964161466427" fileName="TypeSystemCheckUtil.java" startLine="39" startPosition="59" endLine="40" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6852093964161556423" fileName="TypeSystemCheckUtil.java" startLine="40" startPosition="69" endLine="41" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6852093964161466464" fileName="TypeSystemCheckUtil.java" startLine="41" startPosition="36" endLine="42" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6852093964161466447" fileName="TypeSystemCheckUtil.java" startLine="42" startPosition="54" endLine="43" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6852093964161466435" fileName="TypeSystemCheckUtil.java" startLine="43" startPosition="36" endLine="44" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6852093964161556412" fileName="TypeSystemCheckUtil.java" startLine="46" startPosition="39" endLine="47" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="6852093964161556414" fileName="TypeSystemCheckUtil.java" startLine="48" startPosition="7" endLine="49" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="573205947724998730" fileName="TypeSystemCheckUtil.java" startLine="50" startPosition="5" endLine="51" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7187651930234842195" fileName="TypeSystemCheckUtil.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TypeSystemCheckUtil#()V" />
+    <nodeInfo nodeId="2506344354198946764" fileName="TypeSystemCheckUtil.java" startLine="26" startPosition="64" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6852093964161556402" fileName="TypeSystemCheckUtil.java" startLine="45" startPosition="51" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6852093964161556390" fileName="TypeSystemCheckUtil.java" startLine="44" startPosition="67" endLine="50" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7187651930234868011" fileName="TypeSystemCheckUtil.java" startLine="23" startPosition="40" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="7187651930234842199" fileName="TypeSystemCheckUtil.java" startLine="21" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkGenerationMode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7187651930234868244" fileName="TypeSystemCheckUtil.java" startLine="35" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="checkRollBacks#(Ljetbrains/mps/smodel/SNode;)V" />
+    <scopeInfo nodeId="7187651930234842198" fileName="TypeSystemCheckUtil.java" startLine="18" startPosition="32" endLine="18" endPosition="32" />
+    <scopeInfo nodeId="2506344354198946765" fileName="TypeSystemCheckUtil.java" startLine="27" startPosition="26" endLine="28" endPosition="17" />
+    <scopeInfo nodeId="6852093964161556404" fileName="TypeSystemCheckUtil.java" startLine="46" startPosition="39" endLine="47" endPosition="14" />
+    <scopeInfo nodeId="7187651930234842195" fileName="TypeSystemCheckUtil.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
+    <scopeInfo nodeId="6852093964161556391" fileName="TypeSystemCheckUtil.java" startLine="45" startPosition="51" endLine="49" endPosition="27" />
+    <scopeInfo nodeId="6852093964161556390" fileName="TypeSystemCheckUtil.java" startLine="44" startPosition="67" endLine="50" endPosition="5">
       <varInfo nodeId="6852093964161556393" varName="toRevert" />
     </scopeInfo>
-    <scopeInfo nodeId="7187651930234868019" fileName="TypeSystemCheckUtil.java" startLine="25" startPosition="134" endLine="32" endPosition="55">
+    <scopeInfo nodeId="7187651930234868019" fileName="TypeSystemCheckUtil.java" startLine="24" startPosition="134" endLine="31" endPosition="55">
       <varInfo nodeId="7187651930234868203" varName="type1" />
       <varInfo nodeId="7187651930234868226" varName="type2" />
       <varInfo nodeId="7392353035778547030" varName="typeCheckingContext2" />
     </scopeInfo>
-    <scopeInfo nodeId="7187651930234868011" fileName="TypeSystemCheckUtil.java" startLine="24" startPosition="40" endLine="33" endPosition="5">
+    <scopeInfo nodeId="7187651930234868011" fileName="TypeSystemCheckUtil.java" startLine="23" startPosition="40" endLine="32" endPosition="5">
       <varInfo nodeId="7187651930234868017" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="7187651930234842202" fileName="TypeSystemCheckUtil.java" startLine="22" startPosition="54" endLine="33" endPosition="5">
+    <scopeInfo nodeId="7187651930234842202" fileName="TypeSystemCheckUtil.java" startLine="21" startPosition="54" endLine="32" endPosition="5">
       <varInfo nodeId="7187651930234857570" varName="typeCheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="7187651930234842199" fileName="TypeSystemCheckUtil.java" startLine="22" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="7187651930234842199" fileName="TypeSystemCheckUtil.java" startLine="21" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="7187651930234842203" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="7187651930234868249" fileName="TypeSystemCheckUtil.java" startLine="36" startPosition="49" endLine="53" endPosition="57">
+    <scopeInfo nodeId="7187651930234868249" fileName="TypeSystemCheckUtil.java" startLine="35" startPosition="49" endLine="51" endPosition="57">
       <varInfo nodeId="6852093964161556424" varName="num" />
       <varInfo nodeId="6852093964161466465" varName="operation" />
       <varInfo nodeId="6852093964161466428" varName="operations" />
@@ -993,10 +992,10 @@
       <varInfo nodeId="573205947724998391" varName="state2" />
       <varInfo nodeId="7187651930234868251" varName="typeCheckingContext" />
     </scopeInfo>
-    <scopeInfo nodeId="7187651930234868244" fileName="TypeSystemCheckUtil.java" startLine="36" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="7187651930234868244" fileName="TypeSystemCheckUtil.java" startLine="35" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="7187651930234868245" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="7187651930234842193" fileName="TypeSystemCheckUtil.java" startLine="18" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.TypeSystemCheckUtil" />
+    <unitInfo nodeId="7187651930234842193" fileName="TypeSystemCheckUtil.java" startLine="17" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.lang.test.runtime.TypeSystemCheckUtil" />
   </root>
 </debugInfo>
 

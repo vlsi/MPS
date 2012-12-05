@@ -43,26 +43,26 @@
     <nodeInfo nodeId="6666322667909804025" fileName="Abc.java" startLine="11" startPosition="55" endLine="12" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6666322667909804025" fileName="Abc.java" startLine="12" startPosition="49" endLine="13" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6666322667909804025" fileName="Abc.java" startLine="13" startPosition="55" endLine="14" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="21" startPosition="28" endLine="22" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="22" startPosition="58" endLine="23" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="23" startPosition="58" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="21" startPosition="28" endLine="22" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="22" startPosition="56" endLine="23" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="23" startPosition="56" endLine="24" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="24" startPosition="58" endLine="25" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="25" startPosition="47" endLine="26" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="26" startPosition="62" endLine="27" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="27" startPosition="61" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="28" startPosition="63" endLine="29" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="29" startPosition="57" endLine="30" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="30" startPosition="58" endLine="31" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="31" startPosition="57" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="32" startPosition="58" endLine="33" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="33" startPosition="57" endLine="34" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="34" startPosition="58" endLine="35" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="35" startPosition="57" endLine="36" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="36" startPosition="58" endLine="37" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="37" startPosition="57" endLine="38" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="38" startPosition="58" endLine="39" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="39" startPosition="57" endLine="40" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="40" startPosition="55" endLine="41" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="28" startPosition="63" endLine="29" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="29" startPosition="55" endLine="30" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="30" startPosition="58" endLine="31" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="31" startPosition="55" endLine="32" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="32" startPosition="58" endLine="33" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="33" startPosition="55" endLine="34" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="34" startPosition="58" endLine="35" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="35" startPosition="55" endLine="36" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="36" startPosition="58" endLine="37" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="37" startPosition="55" endLine="38" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="38" startPosition="58" endLine="39" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="39" startPosition="55" endLine="40" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="40" startPosition="51" endLine="41" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6666322667909804025" fileName="Abc.java" startLine="10" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke#()Ljetbrains/jetpad/builders/sandbox/Node;" />
     <nodeInfo nodeId="6666322667909804024" fileName="Abc.java" startLine="8" startPosition="16" endLine="16" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7057666463730252452" fileName="Abc.java" startLine="8" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Abc#()V" />
@@ -76,17 +76,17 @@
     <scopeInfo nodeId="6666322667909804025" fileName="Abc.java" startLine="10" startPosition="0" endLine="16" endPosition="0" />
     <scopeInfo nodeId="7057666463730252455" fileName="Abc.java" startLine="8" startPosition="16" endLine="16" endPosition="15" />
     <scopeInfo nodeId="7057666463730252452" fileName="Abc.java" startLine="8" startPosition="0" endLine="18" endPosition="0" />
-    <scopeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="21" startPosition="28" endLine="41" endPosition="35">
-      <varInfo nodeId="3816167865390946758" varName="result_pb5_a0a0a0_0" />
-      <varInfo nodeId="3816167865390946758" varName="result_pb5_a0a0a0a0_0" />
-      <varInfo nodeId="3816167865390946758" varName="result_pb5_a0a0a0a0a0" />
-      <varInfo nodeId="3816167865390946758" varName="result_pb5_a0a0a0a0a0a0" />
-      <varInfo nodeId="3816167865390946758" varName="result_pb5_a1a0a0a0a0" />
-      <varInfo nodeId="3816167865390946758" varName="result_pb5_a1a0a0a0a0a0" />
-      <varInfo nodeId="3816167865390946758" varName="result_pb5_a2a0a0a0a0" />
-      <varInfo nodeId="3816167865390946758" varName="result_pb5_a3a0a0a0a0" />
-      <varInfo nodeId="3816167865390946758" varName="result_pb5_a4a0a0a0a0" />
-      <varInfo nodeId="3816167865390946758" varName="result_pb5_a5a0a0a0a0" />
+    <scopeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="21" startPosition="28" endLine="41" endPosition="33">
+      <varInfo nodeId="3816167865390946758" varName="result_pb5_a0a0a0a0a0a1" />
+      <varInfo nodeId="3816167865390946758" varName="result_pb5_a0a0a0a0a1" />
+      <varInfo nodeId="3816167865390946758" varName="result_pb5_a0a0a0a1" />
+      <varInfo nodeId="3816167865390946758" varName="result_pb5_a0a0a1" />
+      <varInfo nodeId="3816167865390946758" varName="result_pb5_a1a0a0a0a0a1" />
+      <varInfo nodeId="3816167865390946758" varName="result_pb5_a1a0a0a0a1" />
+      <varInfo nodeId="3816167865390946758" varName="result_pb5_a2a0a0a0a1" />
+      <varInfo nodeId="3816167865390946758" varName="result_pb5_a3a0a0a0a1" />
+      <varInfo nodeId="3816167865390946758" varName="result_pb5_a4a0a0a0a1" />
+      <varInfo nodeId="3816167865390946758" varName="result_pb5_a5a0a0a0a1" />
     </scopeInfo>
     <scopeInfo nodeId="3816167865390946758" fileName="Abc.java" startLine="21" startPosition="0" endLine="43" endPosition="0" />
     <scopeInfo nodeId="3816167865390667315" fileName="Abc.java" startLine="19" startPosition="21" endLine="43" endPosition="15" />

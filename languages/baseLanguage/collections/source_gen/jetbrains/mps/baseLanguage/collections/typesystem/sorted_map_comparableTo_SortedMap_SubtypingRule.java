@@ -20,7 +20,7 @@ public class sorted_map_comparableTo_SortedMap_SubtypingRule extends SubtypingRu
   }
 
   public SNode getSubOrSuperType(SNode sortedMapType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_j8vd07_a0a0(SLinkOperations.getTarget(sortedMapType, "keyType", true), SLinkOperations.getTarget(sortedMapType, "valueType", true));
+    return _quotation_createNode_j8vd07_a0a1(SLinkOperations.getTarget(sortedMapType, "keyType", true), SLinkOperations.getTarget(sortedMapType, "valueType", true));
   }
 
   public String getApplicableConceptFQName() {
@@ -38,7 +38,7 @@ public class sorted_map_comparableTo_SortedMap_SubtypingRule extends SubtypingRu
     return true;
   }
 
-  private static SNode _quotation_createNode_j8vd07_a0a0(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_j8vd07_a0a1(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;

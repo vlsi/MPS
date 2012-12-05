@@ -9,12 +9,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
-  public static Object propertyMacro_GetPropertyValue_5608160002100170951(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "facet", false), "name");
-  }
-
   public static Object propertyMacro_GetPropertyValue_5608160002100107306(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name") + "_outlook";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5608160002100170951(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "facet", false), "name");
   }
 
   public static Iterable sourceNodesQuery_5608160002100170944(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

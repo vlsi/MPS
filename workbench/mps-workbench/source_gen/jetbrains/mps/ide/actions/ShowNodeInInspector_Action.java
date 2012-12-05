@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -13,10 +12,10 @@ import jetbrains.mps.nodeEditor.inspector.InspectorEditorComponent;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.logging.Logger;
 
 public class ShowNodeInInspector_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(ShowNodeInInspector_Action.class);
 
   public ShowNodeInInspector_Action() {
     super("Inspect Node", "", ICON);
@@ -68,4 +67,6 @@ public class ShowNodeInInspector_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "ShowNodeInInspector", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ShowNodeInInspector_Action.class);
 }

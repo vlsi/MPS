@@ -17,6 +17,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class JavaExternalLibraryHelper {
   private SNode library;
@@ -105,7 +106,7 @@ public class JavaExternalLibraryHelper {
         continue;
       }
       SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-      propertyNode.addChild("attrs", _quotation_createNode_g6ffke_b0a3a9a0(val));
+      propertyNode.addChild("attrs", _quotation_createNode_g6ffke_b0a3a9a4(val));
       ListSequence.fromList(result).addElement(propertyNode);
     }
     for (SNode pe : jarContainers) {
@@ -115,42 +116,42 @@ public class JavaExternalLibraryHelper {
         continue;
       }
       SNode propertyNode = SModelOperations.createNewNode(genContext.getOutputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
-      propertyNode.addChild("attrs", _quotation_createNode_g6ffke_b0a3a01a0(val));
-      propertyNode.addChild("attrs", _quotation_createNode_g6ffke_b0a4a01a0());
+      propertyNode.addChild("attrs", _quotation_createNode_g6ffke_b0a3a01a4(val));
+      propertyNode.addChild("attrs", _quotation_createNode_g6ffke_b0a4a01a4());
       ListSequence.fromList(result).addElement(propertyNode);
     }
     return result;
   }
 
-  private static SNode _quotation_createNode_g6ffke_b0a3a9a0(Object parameter_1) {
+  private static SNode _quotation_createNode_g6ffke_b0a3a9a4(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("attrName", "file");
+    SNodeAccessUtil.setProperty(quotedNode_2, "attrName", "file");
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("text", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_3, "text", (String) parameter_1);
     quotedNode_2.addChild("value", quotedNode_3);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_g6ffke_b0a3a01a0(Object parameter_1) {
+  private static SNode _quotation_createNode_g6ffke_b0a3a01a4(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("attrName", "dir");
+    SNodeAccessUtil.setProperty(quotedNode_2, "attrName", "dir");
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("text", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_3, "text", (String) parameter_1);
     quotedNode_2.addChild("value", quotedNode_3);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_g6ffke_b0a4a01a0() {
+  private static SNode _quotation_createNode_g6ffke_b0a4a01a4() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlAttribute", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("attrName", "includes");
+    SNodeAccessUtil.setProperty(quotedNode_1, "attrName", "includes");
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.core.xml.structure.XmlTextValue", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("text", "*.jar");
+    SNodeAccessUtil.setProperty(quotedNode_2, "text", "*.jar");
     quotedNode_1.addChild("value", quotedNode_2);
     return quotedNode_1;
   }

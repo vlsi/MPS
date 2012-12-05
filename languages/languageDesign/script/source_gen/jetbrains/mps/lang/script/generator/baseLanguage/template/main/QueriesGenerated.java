@@ -4,8 +4,8 @@ package jetbrains.mps.lang.script.generator.baseLanguage.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.script.util.ScriptNameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
@@ -22,12 +22,12 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
-  public static Object propertyMacro_GetPropertyValue_1177464819480(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "title");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1177464650516(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return ScriptNameUtil.getMigrationScriptClassName(_context.getNode());
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1177464819480(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "title");
   }
 
   public static Object propertyMacro_GetPropertyValue_2598676492883187057(final IOperationContext operationContext, final PropertyMacroContext _context) {

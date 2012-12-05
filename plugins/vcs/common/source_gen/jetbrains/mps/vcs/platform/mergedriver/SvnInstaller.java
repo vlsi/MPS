@@ -82,7 +82,7 @@ import java.io.IOException;
           if (cmd.contains("mps-merger.")) {
             // already installed 
 
-            if (dryRun && neq_k2wvr2_a0a2a2a3a1a01a0(line, configLine)) {
+            if (dryRun && neq_k2wvr2_a0a2a2a3a1a01a5(line, configLine)) {
               return AbstractInstaller.State.OUTDATED;
             }
             lineToReplace = i;
@@ -152,7 +152,7 @@ import java.io.IOException;
     }
 
     if (dryRun) {
-      if (lineToReplace != -1 && eq_k2wvr2_a0a0a71a0(ListSequence.fromList(lines).getElement(lineToReplace), configLine)) {
+      if (lineToReplace != -1 && eq_k2wvr2_a0a0a71a5(ListSequence.fromList(lines).getElement(lineToReplace), configLine)) {
         return AbstractInstaller.State.INSTALLED;
       } else {
         return AbstractInstaller.State.NOT_INSTALLED;
@@ -188,24 +188,24 @@ import java.io.IOException;
   }
 
   public boolean sameAs(SvnInstaller other) {
-    return eq_k2wvr2_a0a0d(other.myConfigDir.getAbsolutePath(), myConfigDir.getAbsolutePath());
+    return eq_k2wvr2_a0a0i(other.myConfigDir.getAbsolutePath(), myConfigDir.getAbsolutePath());
   }
 
-  private static boolean neq_k2wvr2_a0a2a2a3a1a01a0(Object a, Object b) {
+  private static boolean neq_k2wvr2_a0a2a2a3a1a01a5(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean eq_k2wvr2_a0a0a71a0(Object a, Object b) {
+  private static boolean eq_k2wvr2_a0a0a71a5(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_k2wvr2_a0a0d(Object a, Object b) {
+  private static boolean eq_k2wvr2_a0a0i(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

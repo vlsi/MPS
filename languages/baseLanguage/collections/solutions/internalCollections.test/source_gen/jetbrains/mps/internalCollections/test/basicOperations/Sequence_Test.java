@@ -44,7 +44,6 @@ public class Sequence_Test extends Util_Test {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _2_i;
 
               protected boolean moveToNext() {
 __loop__:
@@ -83,6 +82,8 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _2_i;
             };
           }
         };
@@ -98,7 +99,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _2_i;
 
               protected boolean moveToNext() {
 __loop__:
@@ -137,6 +137,8 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _2_i;
             };
           }
         };
@@ -152,7 +154,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _2_i;
 
               protected boolean moveToNext() {
 __loop__:
@@ -191,6 +192,8 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _2_i;
             };
           }
         };
@@ -205,7 +208,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _4_i;
 
               protected boolean moveToNext() {
 __loop__:
@@ -264,6 +266,8 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _4_i;
             };
           }
         };
@@ -562,7 +566,6 @@ __switch__:
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _3_i;
 
               protected boolean moveToNext() {
 __loop__:
@@ -600,6 +603,8 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _3_i;
             };
           }
         };

@@ -18,23 +18,17 @@ package jetbrains.mps.typesystem.inference;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
-import jetbrains.mps.newTypesystem.NodeTypesComponent;
+import jetbrains.mps.newTypesystem.context.component.IncrementalTypechecking;
+import jetbrains.mps.newTypesystem.operation.AbstractOperation;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 public abstract class TypeCheckingContext {
-  public abstract SubtypingManager getSubtypingManager();
-
-  public abstract Map<SNode, SNode> getMainContext();
 
   public abstract SNode getRepresentative(SNode node);
 
@@ -57,14 +51,10 @@ public abstract class TypeCheckingContext {
 
   public abstract SNode createNewRuntimeTypesVariable();
 
-  public abstract void registerTypeVariable(SNode variable);
-
   //for special cases
   public abstract SNode typeOf(SNode node);
 
   public abstract SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency);
-
-  public abstract SNode[] getRegisteredTypeVariables(String varName);
 
   public abstract void addDependencyForCurrent(SNode node);
 
@@ -162,17 +152,8 @@ public abstract class TypeCheckingContext {
 
   public abstract State getState();
 
-  public abstract NodeTypesComponent getNodeTypesComponent();
-
-  public abstract NodeTypesComponent getBaseNodeTypesComponent();
-
-  public abstract void setOperationContext(IOperationContext context);
-
-  public abstract IOperationContext getOperationContext();
-
-  public abstract void runTypeCheckingAction(Runnable r);
-
-  public abstract <T> T runTypeCheckingAction(Computable<T> c);
+  @Deprecated
+  public abstract IncrementalTypechecking getBaseNodeTypesComponent();
 
   /*package*/
   public abstract SNode computeTypeInferenceMode(SNode node);
@@ -180,13 +161,13 @@ public abstract class TypeCheckingContext {
   public abstract SNode getTypeOf(SNode node, TypeChecker typeChecker);
 
   @Nullable
-  protected abstract SNode getTypeOf_normalMode(SNode node);
+  public abstract SNode getTypeOf_normalMode(SNode node);
 
-  protected abstract SNode getTypeOf_generationMode(SNode node);
+  public abstract SNode getTypeOf_generationMode(SNode node);
+
+  public abstract SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker);
 
   public abstract SNode getTypeInGenerationMode(SNode node);
-
-  protected abstract SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker);
 
   public abstract boolean checkIfNotChecked(SNode node, boolean useNonTypesystemRules);
 
@@ -211,8 +192,11 @@ public abstract class TypeCheckingContext {
   //returns the most serious error for node (warning if no errors, info if no warnings and errors)
   public abstract IErrorReporter getTypeMessageDontCheck(SNode node);
   public abstract boolean isSingleTypeComputation();
-  public abstract void setSingleTypeComputation(boolean isSingleTypeComputation);
   public abstract void clear();
+
+  public abstract AbstractOperation getOperation();
+
+  public abstract void checkRootInTraceMode(boolean refreshTypes);
 
   public static class NodeInfo {
     SNode myNode;

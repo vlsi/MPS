@@ -26,7 +26,6 @@ import java.util.List;
 
 public class ResolveUnknownUtil {
   private static Logger LOG = Logger.getLogger(ResolveUnknownUtil.class);
-  private static Logger LOG_180675533 = Logger.getLogger(ResolveUnknownUtil.class);
 
   public ResolveUnknownUtil() {
   }
@@ -433,4 +432,6 @@ public class ResolveUnknownUtil {
       ListSequence.fromList(SLinkOperations.getTargets(to, "actualArgument", true)).addElement(arg);
     }
   }
+
+  private static Logger LOG_180675533 = Logger.getLogger(ResolveUnknownUtil.class);
 }

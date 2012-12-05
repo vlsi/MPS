@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.execution.configurations.behavior.ConfigurationFromExecutorReference_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class typeof_ConfigurationFromExecutorReference_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ConfigurationFromExecutorReference_InferenceRule() {
@@ -21,7 +22,7 @@ public class typeof_ConfigurationFromExecutorReference_InferenceRule extends Abs
     {
       SNode _nodeToCheck_1029348928467 = configurationReference;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "7806358006983757925", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "7806358006983757922", true), (SNode) _quotation_createNode_7gce2m_a0a0a(SLinkOperations.getTarget(ConfigurationFromExecutorReference_Behavior.call_getExecutor_7806358006983757897(configurationReference), "configuration", false)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "7806358006983757922", true), (SNode) _quotation_createNode_7gce2m_a0a0b(SLinkOperations.getTarget(ConfigurationFromExecutorReference_Behavior.call_getExecutor_7806358006983757897(configurationReference), "configuration", false)), _info_12389875345);
     }
   }
 
@@ -40,10 +41,10 @@ public class typeof_ConfigurationFromExecutorReference_InferenceRule extends Abs
     return false;
   }
 
-  private static SNode _quotation_createNode_7gce2m_a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_7gce2m_a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.settings.structure.PersistentConfigurationType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("persistentConfiguration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "persistentConfiguration", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

@@ -22,7 +22,7 @@ public class typeof_GroupAccessOperation_InferenceRule extends AbstractInference
     {
       SNode _nodeToCheck_1029348928467 = groupAccessOperation;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "3205675194086686086", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "3205675194086686091", true), (SNode) _quotation_createNode_uliakk_a0a0a(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c89590364(jetbrains.mps.lang.plugin.typesystem)", "3205675194086686091", true), (SNode) _quotation_createNode_uliakk_a0a0b(), _info_12389875345);
     }
   }
 
@@ -41,7 +41,7 @@ public class typeof_GroupAccessOperation_InferenceRule extends AbstractInference
     return false;
   }
 
-  private static SNode _quotation_createNode_uliakk_a0a0a() {
+  private static SNode _quotation_createNode_uliakk_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.action(MPS.Platform/jetbrains.mps.workbench.action@java_stub)"), SNodeId.fromString("~BaseGroup")));

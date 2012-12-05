@@ -67,20 +67,20 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "message", true), "message", true) != null);
   }
 
+  public static SNode sourceNodeQuery_1171932074431(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    SNode superclass = SLinkOperations.getTarget(_context.getNode(), "superclass", true);
+    if ((superclass == null)) {
+      return _quotation_createNode_x583g4_a0a1a21();
+    }
+    return superclass;
+  }
+
   public static SNode sourceNodeQuery_8243879142738651539(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "beforeTest", true), "body", true);
   }
 
   public static SNode sourceNodeQuery_8243879142738651567(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "afterTest", true), "body", true);
-  }
-
-  public static SNode sourceNodeQuery_1171932074431(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    SNode superclass = SLinkOperations.getTarget(_context.getNode(), "superclass", true);
-    if ((superclass == null)) {
-      return _quotation_createNode_x583g4_a0a1a41();
-    }
-    return superclass;
   }
 
   public static SNode sourceNodeQuery_1171932074447(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -159,8 +159,16 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(_context.getNode(), "expression", true);
   }
 
+  public static Iterable sourceNodesQuery_9110034126561014534(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "annotation", true);
+  }
+
   public static Iterable sourceNodesQuery_1171986734537(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return Classifier_Behavior.call_staticFields_5292274854859223538(_context.getNode());
+  }
+
+  public static Iterable sourceNodesQuery_4326291070220018649(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return ClassConcept_Behavior.call_fields_5292274854859383272(_context.getNode());
   }
 
   public static Iterable sourceNodesQuery_1171932074411(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -171,19 +179,11 @@ public class QueriesGenerated {
     return Classifier_Behavior.call_methods_5292274854859311639(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_9110034126561014534(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "annotation", true);
-  }
-
-  public static Iterable sourceNodesQuery_4326291070220018649(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return ClassConcept_Behavior.call_fields_5292274854859383272(_context.getNode());
-  }
-
   public static Iterable sourceNodesQuery_9110034126561076473(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "annotation", true);
   }
 
-  private static SNode _quotation_createNode_x583g4_a0a1a41() {
+  private static SNode _quotation_createNode_x583g4_a0a1a21() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#junit.framework(jetbrains.mps.baseLanguage.unitTest.libs/junit.framework@java_stub)"), SNodeId.fromString("~TestCase")));

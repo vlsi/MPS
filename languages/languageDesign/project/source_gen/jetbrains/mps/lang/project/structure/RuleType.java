@@ -14,22 +14,12 @@ public enum RuleType {
   strictly_after("after (>)", "strictly_after");
 
   private String myName;
-  private String myValue;
-
-  RuleType(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -67,5 +57,16 @@ public enum RuleType {
       return RuleType.strictly_after;
     }
     return RuleType.getDefault();
+  }
+
+  private String myValue;
+
+  RuleType(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

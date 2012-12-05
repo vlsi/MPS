@@ -14,11 +14,12 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class CreateTypesystemIntention_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -75,31 +76,6 @@ public class CreateTypesystemIntention_Intention implements IntentionFactory {
     return myCachedExecutable;
   }
 
-  private static SNode _quotation_createNode_wv8vj7_a0a0a() {
-    SNode quotedNode_1 = null;
-    SNode quotedNode_2 = null;
-    SNode quotedNode_3 = null;
-    SNode quotedNode_4 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setProperty("name", "fix_");
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.addChild("body", quotedNode_4);
-    quotedNode_1.addChild("executeBlock", quotedNode_2);
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("nodeId", "3302086321380616758");
-    quotedNode_3.setProperty("modelId", "jetbrains.mps.lang.typesystem.intentions");
-    quotedNode_1.addChild("smodelAttribute", quotedNode_3);
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_wv8vj7_a0c0a(Object parameter_1) {
-    SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypesystemIntention", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("quickFix", (SNode) parameter_1);
-    return quotedNode_2;
-  }
-
   public class IntentionImplementation implements IntentionExecutable {
     public IntentionImplementation() {
     }
@@ -120,5 +96,30 @@ public class CreateTypesystemIntention_Intention implements IntentionFactory {
     public IntentionDescriptor getDescriptor() {
       return CreateTypesystemIntention_Intention.this;
     }
+  }
+
+  private static SNode _quotation_createNode_wv8vj7_a0a0a() {
+    SNode quotedNode_1 = null;
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypesystemQuickFix", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setProperty(quotedNode_1, "name", "fix_");
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.QuickFixExecuteBlock", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
+    quotedNode_2.addChild("body", quotedNode_4);
+    quotedNode_1.addChild("executeBlock", quotedNode_2);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.OriginalNodeId", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setProperty(quotedNode_3, "nodeId", "3302086321380616758");
+    SNodeAccessUtil.setProperty(quotedNode_3, "modelId", "jetbrains.mps.lang.typesystem.intentions");
+    quotedNode_1.addChild("smodelAttribute", quotedNode_3);
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_wv8vj7_a0c0a(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.TypesystemIntention", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "quickFix", (SNode) parameter_1);
+    return quotedNode_2;
   }
 }

@@ -11,6 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class vector_subtype_of_matrix_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
@@ -18,7 +19,7 @@ public class vector_subtype_of_matrix_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public SNode getSubOrSuperType(SNode vectorType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_exb2lq_a0a0(SLinkOperations.getTarget(vectorType, "elementType", true), "" + SPropertyOperations.getInteger(vectorType, "height"));
+    return _quotation_createNode_exb2lq_a0a1(SLinkOperations.getTarget(vectorType, "elementType", true), "" + SPropertyOperations.getInteger(vectorType, "height"));
   }
 
   public String getApplicableConceptFQName() {
@@ -36,12 +37,12 @@ public class vector_subtype_of_matrix_SubtypingRule extends SubtypingRule_Runtim
     return false;
   }
 
-  private static SNode _quotation_createNode_exb2lq_a0a0(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_exb2lq_a0a1(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.math.structure.MatrixType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("columns", "1");
-    quotedNode_3.setProperty("rows", (String) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_3, "columns", "1");
+    SNodeAccessUtil.setProperty(quotedNode_3, "rows", (String) parameter_2);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("elementType", HUtil.copyIfNecessary(quotedNode_4));

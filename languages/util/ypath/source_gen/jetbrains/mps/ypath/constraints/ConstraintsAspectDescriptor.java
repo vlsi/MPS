@@ -7,13 +7,11 @@ import java.util.Arrays;
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 
 public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime.ConstraintsAspectDescriptor {
-  private static String[] stringSwitchCases_2qnle6_a0a0a = new String[]{"jetbrains.mps.ypath.structure.GenericFeature", "jetbrains.mps.ypath.structure.GenericParamFeature", "jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.ypath.structure.IterateOperation", "jetbrains.mps.ypath.structure.ListFeature", "jetbrains.mps.ypath.structure.MatchPropertyOperation", "jetbrains.mps.ypath.structure.NodeKindSpecificCase", "jetbrains.mps.ypath.structure.SequenceFeature", "jetbrains.mps.ypath.structure.TreeNodeKindOccurrence", "jetbrains.mps.ypath.structure.TreeNodeKindProperty", "jetbrains.mps.ypath.structure.TreeNodeKindReference", "jetbrains.mps.ypath.structure.TreePathAdapterExpression", "jetbrains.mps.ypath.structure.TreePathAspect", "jetbrains.mps.ypath.structure.TreePathOperation"};
-
   public ConstraintsAspectDescriptor() {
   }
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
-    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0a, fqName)) {
+    switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
       case 5:
         return new MatchPropertyOperation_Constraints();
       case 12:
@@ -47,4 +45,6 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
         return new BaseConstraintsDescriptor(fqName);
     }
   }
+
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.ypath.structure.GenericFeature", "jetbrains.mps.ypath.structure.GenericParamFeature", "jetbrains.mps.ypath.structure.IFeature", "jetbrains.mps.ypath.structure.IterateOperation", "jetbrains.mps.ypath.structure.ListFeature", "jetbrains.mps.ypath.structure.MatchPropertyOperation", "jetbrains.mps.ypath.structure.NodeKindSpecificCase", "jetbrains.mps.ypath.structure.SequenceFeature", "jetbrains.mps.ypath.structure.TreeNodeKindOccurrence", "jetbrains.mps.ypath.structure.TreeNodeKindProperty", "jetbrains.mps.ypath.structure.TreeNodeKindReference", "jetbrains.mps.ypath.structure.TreePathAdapterExpression", "jetbrains.mps.ypath.structure.TreePathAspect", "jetbrains.mps.ypath.structure.TreePathOperation"};
 }

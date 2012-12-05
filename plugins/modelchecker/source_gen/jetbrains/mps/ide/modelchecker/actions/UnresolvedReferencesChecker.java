@@ -66,11 +66,11 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
             public boolean doFix() {
               if (scope.getModelDescriptor(uid) == null && SModelRepository.getInstance().getModelDescriptor(uid) != null) {
                 org.jetbrains.mps.openapi.model.SModel sm = SModelRepository.getInstance().getModelDescriptor(uid);
-                SModuleReference moduleReference = check_xiru3y_a0b0a0f0a0f0c0g0a(check_xiru3y_a0a1a0a5a0a5a2a6a0(sm));
+                SModuleReference moduleReference = check_xiru3y_a0b0a0f0a0f0c0g0b(check_xiru3y_a0a1a0a5a0a5a2a6a1(sm));
                 if (moduleReference == null) {
                   return false;
                 }
-                SModule module = check_xiru3y_a0d0a0f0a0f0c0g0a(model.getModelDescriptor());
+                SModule module = check_xiru3y_a0d0a0f0a0f0c0g0b(model.getModelDescriptor());
                 if (module == null) {
                   return false;
                 }
@@ -87,21 +87,21 @@ public class UnresolvedReferencesChecker extends SpecificChecker {
     return results;
   }
 
-  private static SModuleReference check_xiru3y_a0b0a0f0a0f0c0g0a(SModule checkedDotOperand) {
+  private static SModuleReference check_xiru3y_a0b0a0f0a0f0c0g0b(SModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModuleReference();
     }
     return null;
   }
 
-  private static SModule check_xiru3y_a0a1a0a5a0a5a2a6a0(org.jetbrains.mps.openapi.model.SModel checkedDotOperand) {
+  private static SModule check_xiru3y_a0a1a0a5a0a5a2a6a1(org.jetbrains.mps.openapi.model.SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static IModule check_xiru3y_a0d0a0f0a0f0c0g0a(SModelDescriptor checkedDotOperand) {
+  private static IModule check_xiru3y_a0d0a0f0a0f0c0g0b(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }

@@ -119,7 +119,7 @@ public class CheckFullDependencyUtil {
   }
 
   public static boolean isDependent(SNode plugin, SNode dependency) {
-    if (eq_qp5jua_a0a0d(plugin, dependency)) {
+    if (eq_qp5jua_a0a0e(plugin, dependency)) {
       return true;
     }
     return ListSequence.fromList(getDependency(plugin)).contains(getId(dependency));
@@ -180,7 +180,7 @@ public class CheckFullDependencyUtil {
     }).toListSequence();
   }
 
-  private static boolean eq_qp5jua_a0a0d(Object a, Object b) {
+  private static boolean eq_qp5jua_a0a0e(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

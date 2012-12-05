@@ -12,6 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.actions.behavior.ConceptFunctionParameter_nodeToCopyPreProcess_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class typeof_ConceptFunctionParameter_nodeToCopyPreProcess_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_ConceptFunctionParameter_nodeToCopyPreProcess_InferenceRule() {
@@ -21,7 +22,7 @@ public class typeof_ConceptFunctionParameter_nodeToCopyPreProcess_InferenceRule 
     {
       SNode _nodeToCheck_1029348928467 = node;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "5948027493682405602", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "5948027493682405599", true), (SNode) _quotation_createNode_74scda_a0a0a(SLinkOperations.getTarget(ConceptFunctionParameter_nodeToCopyPreProcess_Behavior.call_getPreProcessor_5948027493682405569(node), "concept", false)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c895902a6(jetbrains.mps.lang.actions.typesystem)", "5948027493682405599", true), (SNode) _quotation_createNode_74scda_a0a0b(SLinkOperations.getTarget(ConceptFunctionParameter_nodeToCopyPreProcess_Behavior.call_getPreProcessor_5948027493682405569(node), "concept", false)), _info_12389875345);
     }
   }
 
@@ -40,10 +41,10 @@ public class typeof_ConceptFunctionParameter_nodeToCopyPreProcess_InferenceRule 
     return false;
   }
 
-  private static SNode _quotation_createNode_74scda_a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_74scda_a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

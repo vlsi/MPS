@@ -11,12 +11,6 @@ public enum _LeftRight_Enum {
   right("right", false);
 
   private String myName;
-  private boolean myValue;
-
-  _LeftRight_Enum(String name, boolean value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
@@ -24,10 +18,6 @@ public enum _LeftRight_Enum {
 
   public String getValueAsString() {
     return "" + this.myValue;
-  }
-
-  public boolean getValue() {
-    return this.myValue;
   }
 
   public static List<_LeftRight_Enum> getConstants() {
@@ -52,5 +42,16 @@ public enum _LeftRight_Enum {
       return _LeftRight_Enum.right;
     }
     return _LeftRight_Enum.getDefault();
+  }
+
+  private boolean myValue;
+
+  _LeftRight_Enum(String name, boolean value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public boolean getValue() {
+    return this.myValue;
   }
 }

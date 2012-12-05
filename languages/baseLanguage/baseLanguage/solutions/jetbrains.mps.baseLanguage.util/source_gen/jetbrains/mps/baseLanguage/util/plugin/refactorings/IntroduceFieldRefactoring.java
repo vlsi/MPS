@@ -5,16 +5,17 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
@@ -30,16 +31,16 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     this.findDuplicates();
     SNode newDeclaration;
     if (this.myFieldInitialization == FieldInitializationPlace.FIELD) {
-      newDeclaration = _quotation_createNode_baxqxe_a0a0c0b(myVisibilityLevel.getNode(), SNodeOperations.copyNode(this.getExpressionType()), SNodeOperations.copyNode(this.getExpression()), this.getName());
+      newDeclaration = _quotation_createNode_baxqxe_a0a0c0d(myVisibilityLevel.getNode(), SNodeOperations.copyNode(this.getExpressionType()), SNodeOperations.copyNode(this.getExpression()), this.getName());
     } else {
-      newDeclaration = _quotation_createNode_baxqxe_a0a0a2a1(myVisibilityLevel.getNode(), SNodeOperations.copyNode(this.getExpressionType()), this.getName());
+      newDeclaration = _quotation_createNode_baxqxe_a0a0a2a3(myVisibilityLevel.getNode(), SNodeOperations.copyNode(this.getExpressionType()), this.getName());
     }
     if (myIsFinal) {
       SPropertyOperations.set(newDeclaration, "isFinal", "" + (true));
     }
     SNode classConcept = SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    ListSequence.fromList(SLinkOperations.getTargets(classConcept, "member", true)).addElement(newDeclaration);
-    SNode assignStatement = _quotation_createNode_baxqxe_a0g0b(newDeclaration, SNodeOperations.copyNode(this.getExpression()));
+    MemberInsertingUtils.insertClassifierMemberInBestPlace(classConcept, newDeclaration);
+    SNode assignStatement = _quotation_createNode_baxqxe_a0g0d(newDeclaration, SNodeOperations.copyNode(this.getExpression()));
     if (this.myFieldInitialization == FieldInitializationPlace.METHOD) {
       SNodeOperations.insertPrevSiblingChild(SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.Statement", false, false), SNodeOperations.copyNode(assignStatement));
     }
@@ -64,7 +65,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
   }
 
   public void replaceNode(SNode node, SNode declaration) {
-    SNodeOperations.replaceWithAnother(node, _quotation_createNode_baxqxe_a0a0a2(declaration));
+    SNodeOperations.replaceWithAnother(node, _quotation_createNode_baxqxe_a0a0a4(declaration));
   }
 
   public void setFieldInitializationPlace(FieldInitializationPlace place) {
@@ -89,13 +90,13 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     return SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.Expression") && (SNodeOperations.getAncestor(node, "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false) != null);
   }
 
-  private static SNode _quotation_createNode_baxqxe_a0a0c0b(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
+  private static SNode _quotation_createNode_baxqxe_a0a0c0d(Object parameter_1, Object parameter_2, Object parameter_3, Object parameter_4) {
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     SNode quotedNode_7 = null;
     SNode quotedNode_8 = null;
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("name", (String) parameter_4);
+    SNodeAccessUtil.setProperty(quotedNode_5, "name", (String) parameter_4);
     quotedNode_6 = (SNode) parameter_1;
     if (quotedNode_6 != null) {
       quotedNode_5.addChild("visibility", HUtil.copyIfNecessary(quotedNode_6));
@@ -111,12 +112,12 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     return quotedNode_5;
   }
 
-  private static SNode _quotation_createNode_baxqxe_a0a0a2a1(Object parameter_1, Object parameter_2, Object parameter_3) {
+  private static SNode _quotation_createNode_baxqxe_a0a0a2a3(Object parameter_1, Object parameter_2, Object parameter_3) {
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     SNode quotedNode_6 = null;
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setProperty("name", (String) parameter_3);
+    SNodeAccessUtil.setProperty(quotedNode_4, "name", (String) parameter_3);
     quotedNode_5 = (SNode) parameter_1;
     if (quotedNode_5 != null) {
       quotedNode_4.addChild("visibility", HUtil.copyIfNecessary(quotedNode_5));
@@ -128,7 +129,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     return quotedNode_4;
   }
 
-  private static SNode _quotation_createNode_baxqxe_a0g0b(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_baxqxe_a0g0d(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -141,7 +142,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_5.addChild("operand", quotedNode_7);
     quotedNode_8 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, null, GlobalScope.getInstance(), false);
-    quotedNode_8.setReferenceTarget("fieldDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_8, "fieldDeclaration", (SNode) parameter_1);
     quotedNode_5.addChild("operation", quotedNode_8);
     quotedNode_4.addChild("lValue", quotedNode_5);
     quotedNode_6 = (SNode) parameter_2;
@@ -152,7 +153,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_baxqxe_a0a0a2(Object parameter_1) {
+  private static SNode _quotation_createNode_baxqxe_a0a0a4(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -160,7 +161,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ThisExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_2.addChild("operand", quotedNode_3);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setReferenceTarget("fieldDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_4, "fieldDeclaration", (SNode) parameter_1);
     quotedNode_2.addChild("operation", quotedNode_4);
     return quotedNode_2;
   }

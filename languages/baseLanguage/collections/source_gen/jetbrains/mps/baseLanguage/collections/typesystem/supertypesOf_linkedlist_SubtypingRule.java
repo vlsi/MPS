@@ -21,9 +21,9 @@ public class supertypesOf_linkedlist_SubtypingRule extends SubtypingRule_Runtime
 
   public List<SNode> getSubOrSuperTypes(SNode llt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> res = new ArrayList<SNode>();
-    ListSequence.fromList(res).addElement(_quotation_createNode_vg4yju_a0a1a0(SLinkOperations.getTarget(llt, "elementType", true)));
-    ListSequence.fromList(res).addElement(_quotation_createNode_vg4yju_a0a2a0(SLinkOperations.getTarget(llt, "elementType", true)));
-    ListSequence.fromList(res).addElement(_quotation_createNode_vg4yju_a0a3a0(SLinkOperations.getTarget(llt, "elementType", true)));
+    ListSequence.fromList(res).addElement(_quotation_createNode_vg4yju_a0a1a1(SLinkOperations.getTarget(llt, "elementType", true)));
+    ListSequence.fromList(res).addElement(_quotation_createNode_vg4yju_a0a2a1(SLinkOperations.getTarget(llt, "elementType", true)));
+    ListSequence.fromList(res).addElement(_quotation_createNode_vg4yju_a0a3a1(SLinkOperations.getTarget(llt, "elementType", true)));
     return res;
   }
 
@@ -42,7 +42,7 @@ public class supertypesOf_linkedlist_SubtypingRule extends SubtypingRule_Runtime
     return false;
   }
 
-  private static SNode _quotation_createNode_vg4yju_a0a1a0(Object parameter_1) {
+  private static SNode _quotation_createNode_vg4yju_a0a1a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, GlobalScope.getInstance(), false);
@@ -53,7 +53,7 @@ public class supertypesOf_linkedlist_SubtypingRule extends SubtypingRule_Runtime
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_vg4yju_a0a2a0(Object parameter_1) {
+  private static SNode _quotation_createNode_vg4yju_a0a2a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.DequeType", null, null, GlobalScope.getInstance(), false);
@@ -64,7 +64,7 @@ public class supertypesOf_linkedlist_SubtypingRule extends SubtypingRule_Runtime
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_vg4yju_a0a3a0(Object parameter_1) {
+  private static SNode _quotation_createNode_vg4yju_a0a3a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.StackType", null, null, GlobalScope.getInstance(), false);

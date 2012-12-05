@@ -158,11 +158,11 @@ public class QueriesGenerated {
     return (SLinkOperations.getTarget(_context.getNode(), "editor", true) != null);
   }
 
-  public static boolean ifMacro_Condition_2195473424935857404(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_2195473424935857394(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "editor", true) != null);
   }
 
-  public static boolean ifMacro_Condition_2195473424935857394(final IOperationContext operationContext, final IfMacroContext _context) {
+  public static boolean ifMacro_Condition_2195473424935857404(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "editor", true) != null);
   }
 

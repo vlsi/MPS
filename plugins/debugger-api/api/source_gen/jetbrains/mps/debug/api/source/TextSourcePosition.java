@@ -35,17 +35,17 @@ public class TextSourcePosition extends SourcePosition {
 
     TextSourcePosition position = ((TextSourcePosition) object);
 
-    return eq_e6q8aw_a0a4a3_0(myFile, position.myFile) && eq_e6q8aw_a0a4a3(myLine, position.myLine);
+    return eq_e6q8aw_a0a4a6_0(myFile, position.myFile) && eq_e6q8aw_a0a4a6(myLine, position.myLine);
   }
 
-  private static boolean eq_e6q8aw_a0a4a3(Object a, Object b) {
+  private static boolean eq_e6q8aw_a0a4a6(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean eq_e6q8aw_a0a4a3_0(Object a, Object b) {
+  private static boolean eq_e6q8aw_a0a4a6_0(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

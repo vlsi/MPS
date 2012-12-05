@@ -17,95 +17,95 @@ public class CheckingRuleHelper {
   }
 
   public static List<SNode> allowedClasses() {
-    List<SNode> allowedClasses = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_lq9iuq_a0a0a0a(), _quotation_createNode_lq9iuq_b0a0a0a(), _quotation_createNode_lq9iuq_c0a0a0a(), _quotation_createNode_lq9iuq_d0a0a0a(), _quotation_createNode_lq9iuq_e0a0a0a(), _quotation_createNode_lq9iuq_f0a0a0a(), _quotation_createNode_lq9iuq_g0a0a0a(), _quotation_createNode_lq9iuq_h0a0a0a(), _quotation_createNode_lq9iuq_i0a0a0a(), _quotation_createNode_lq9iuq_j0a0a0a(), _quotation_createNode_lq9iuq_k0a0a0a(), _quotation_createNode_lq9iuq_l0a0a0a(), _quotation_createNode_lq9iuq_m0a0a0a());
+    List<SNode> allowedClasses = ListSequence.fromListAndArray(new ArrayList<SNode>(), _quotation_createNode_lq9iuq_a0a0a0b(), _quotation_createNode_lq9iuq_b0a0a0b(), _quotation_createNode_lq9iuq_c0a0a0b(), _quotation_createNode_lq9iuq_d0a0a0b(), _quotation_createNode_lq9iuq_e0a0a0b(), _quotation_createNode_lq9iuq_f0a0a0b(), _quotation_createNode_lq9iuq_g0a0a0b(), _quotation_createNode_lq9iuq_h0a0a0b(), _quotation_createNode_lq9iuq_i0a0a0b(), _quotation_createNode_lq9iuq_j0a0a0b(), _quotation_createNode_lq9iuq_k0a0a0b(), _quotation_createNode_lq9iuq_l0a0a0b(), _quotation_createNode_lq9iuq_m0a0a0b());
     return allowedClasses;
   }
 
-  private static SNode _quotation_createNode_lq9iuq_a0a0a0a() {
+  private static SNode _quotation_createNode_lq9iuq_a0a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent.atomic(JDK/java.util.concurrent.atomic@java_stub)"), SNodeId.fromString("~AtomicBoolean")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_lq9iuq_b0a0a0a() {
+  private static SNode _quotation_createNode_lq9iuq_b0a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent.atomic(JDK/java.util.concurrent.atomic@java_stub)"), SNodeId.fromString("~AtomicInteger")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_lq9iuq_c0a0a0a() {
+  private static SNode _quotation_createNode_lq9iuq_c0a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent.atomic(JDK/java.util.concurrent.atomic@java_stub)"), SNodeId.fromString("~AtomicLong")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_lq9iuq_d0a0a0a() {
+  private static SNode _quotation_createNode_lq9iuq_d0a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent.atomic(JDK/java.util.concurrent.atomic@java_stub)"), SNodeId.fromString("~AtomicLongArray")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_lq9iuq_e0a0a0a() {
+  private static SNode _quotation_createNode_lq9iuq_e0a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent.atomic(JDK/java.util.concurrent.atomic@java_stub)"), SNodeId.fromString("~AtomicIntegerArray")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_lq9iuq_f0a0a0a() {
+  private static SNode _quotation_createNode_lq9iuq_f0a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent.atomic(JDK/java.util.concurrent.atomic@java_stub)"), SNodeId.fromString("~AtomicReference")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_lq9iuq_g0a0a0a() {
+  private static SNode _quotation_createNode_lq9iuq_g0a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent.atomic(JDK/java.util.concurrent.atomic@java_stub)"), SNodeId.fromString("~AtomicReferenceArray")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_lq9iuq_h0a0a0a() {
+  private static SNode _quotation_createNode_lq9iuq_h0a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)"), SNodeId.fromString("~ConcurrentHashMap")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_lq9iuq_i0a0a0a() {
+  private static SNode _quotation_createNode_lq9iuq_i0a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)"), SNodeId.fromString("~ConcurrentSkipListMap")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_lq9iuq_j0a0a0a() {
+  private static SNode _quotation_createNode_lq9iuq_j0a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent(JDK/java.util.concurrent@java_stub)"), SNodeId.fromString("~ConcurrentSkipListSet")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_lq9iuq_k0a0a0a() {
+  private static SNode _quotation_createNode_lq9iuq_k0a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Thread")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_lq9iuq_l0a0a0a() {
+  private static SNode _quotation_createNode_lq9iuq_l0a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~String")));
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_lq9iuq_m0a0a0a() {
+  private static SNode _quotation_createNode_lq9iuq_m0a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

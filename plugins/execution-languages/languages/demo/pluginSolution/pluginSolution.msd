@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.execution.demo.pluginSolution" uuid="e2beadc1-8519-4f66-bcdf-046892bd0d20" pluginKind="PLUGIN_OTHER" compileInMPS="true">
+<solution name="jetbrains.mps.execution.demo.pluginSolution" uuid="e2beadc1-8519-4f66-bcdf-046892bd0d20" pluginKind="PLUGIN_OTHER" compileInMPS="true" generatorOutputPath="${module}/source_gen">
   <models>
-    <modelRoot path="${module}/" />
     <modelRoot path="${module}/models" />
+    <modelRoot path="${module}/" />
   </models>
   <sourcePath />
   <dependencies>
@@ -11,6 +11,7 @@
     <dependency reexport="false">86441d7a-e194-42da-81a5-2161ec62a379(MPS.Workbench)</dependency>
     <dependency reexport="false">22250116-183c-4e90-8450-b6a13dd8998b(jetbrains.mps.baseLanguage.execution.util)</dependency>
     <dependency reexport="false">cf8c9de5-1b4a-4dc8-8e6d-847159af31dd(jetbrains.mps.debugger.java.api)</dependency>
+    <dependency reexport="false">36c11d2d-1875-4a95-8bdb-70ea1ac63222(jetbrains.mps.execution.api)</dependency>
     <dependency reexport="false">933a68f9-aab6-401b-b5c5-5ca7783dce5f(jetbrains.mps.execution.configurations.pluginSolution)</dependency>
     <dependency reexport="false">e6081818-930c-4926-bdef-3537bcc59087(jetbrains.mps.execution.demo)</dependency>
     <dependency reexport="false">04b376d5-fc16-403b-a344-c68b30193c6a(jetbrains.mps.execution.library)</dependency>

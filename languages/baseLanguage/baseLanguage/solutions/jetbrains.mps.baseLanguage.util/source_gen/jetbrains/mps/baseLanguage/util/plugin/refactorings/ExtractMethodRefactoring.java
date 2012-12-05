@@ -22,6 +22,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public abstract class ExtractMethodRefactoring {
@@ -91,7 +92,7 @@ public abstract class ExtractMethodRefactoring {
     }
     ListSequence.fromList(SLinkOperations.getTargets(method, "throwsItem", true)).addSequence(ListSequence.fromList(throwables).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode it) {
-        return _quotation_createNode_jq3ovj_a0a0a0a0c0f(it);
+        return _quotation_createNode_jq3ovj_a0a0a0a0c0k(it);
       }
     }));
   }
@@ -112,8 +113,8 @@ public abstract class ExtractMethodRefactoring {
       }
     }
     for (SNode declaration : SetSequence.fromSet(MapSequence.fromMap(mapping).keySet())) {
-      SNode newDeclaration = _quotation_createNode_jq3ovj_a0a0c0g(SNodeOperations.copyNode(SLinkOperations.getTarget(declaration, "type", true)), SPropertyOperations.getString(declaration, "name"));
-      SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).first(), _quotation_createNode_jq3ovj_a0a1a2a6(newDeclaration));
+      SNode newDeclaration = _quotation_createNode_jq3ovj_a0a0c0l(SNodeOperations.copyNode(SLinkOperations.getTarget(declaration, "type", true)), SPropertyOperations.getString(declaration, "name"));
+      SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).first(), _quotation_createNode_jq3ovj_a0a1a2a11(newDeclaration));
       for (SNode reference : ListSequence.fromList(MapSequence.fromMap(mapping).get(declaration))) {
         SNodeOperations.replaceWithAnother(reference, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), newDeclaration, "virtual_createReference_1213877517482", new Object[]{}));
       }
@@ -162,7 +163,7 @@ public abstract class ExtractMethodRefactoring {
   public void replaceInputVariablesByParameters(List<SNode> nodes, Map<SNode, SNode> mapping) {
     Map<SNode, SNode> anotherMap = this.createInputVaryablesMapping(mapping, nodes);
     for (SNode node : SetSequence.fromSet(MapSequence.fromMap(anotherMap).keySet())) {
-      SNodeOperations.replaceWithAnother(node, _quotation_createNode_jq3ovj_a0a0a1a01(MapSequence.fromMap(anotherMap).get(node)));
+      SNodeOperations.replaceWithAnother(node, _quotation_createNode_jq3ovj_a0a0a1a51(MapSequence.fromMap(anotherMap).get(node)));
     }
   }
 
@@ -256,18 +257,18 @@ public abstract class ExtractMethodRefactoring {
     return this.myAnalyzer.shouldBeStatic();
   }
 
-  private static SNode _quotation_createNode_jq3ovj_a0a0a0a0c0f(Object parameter_1) {
+  private static SNode _quotation_createNode_jq3ovj_a0a0a0a0c0k(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_jq3ovj_a0a0c0g(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_jq3ovj_a0a0c0l(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("name", (String) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_3, "name", (String) parameter_2);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("type", HUtil.copyIfNecessary(quotedNode_4));
@@ -275,7 +276,7 @@ public abstract class ExtractMethodRefactoring {
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_jq3ovj_a0a1a2a6(Object parameter_1) {
+  private static SNode _quotation_createNode_jq3ovj_a0a1a2a11(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
@@ -287,10 +288,10 @@ public abstract class ExtractMethodRefactoring {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_jq3ovj_a0a0a1a01(Object parameter_1) {
+  private static SNode _quotation_createNode_jq3ovj_a0a0a1a51(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.VariableReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("variableDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

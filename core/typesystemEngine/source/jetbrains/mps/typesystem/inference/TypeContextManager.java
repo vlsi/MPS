@@ -18,20 +18,38 @@ package jetbrains.mps.typesystem.inference;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.lang.typesystem.runtime.performance.TypeCheckingContext_Tracer;
-import jetbrains.mps.newTypesystem.TypeCheckingContextNew;
+import jetbrains.mps.lang.typesystem.runtime.performance.IncrementalTypecheckingContext_Tracer;
+import jetbrains.mps.newTypesystem.context.InferenceTypecheckingContext;
+import jetbrains.mps.newTypesystem.context.SimpleTypecheckingContext;
+import jetbrains.mps.newTypesystem.context.TracingTypecheckingContext;
+import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
 import jetbrains.mps.smodel.event.SModelRootEvent;
+import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.Triplet;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.List;
+import java.util.ListIterator;
+import java.util.Map;
+import java.util.Set;
 
 public class TypeContextManager implements CoreComponent {
 
@@ -42,9 +60,13 @@ public class TypeContextManager implements CoreComponent {
 
   private final Object myLock = new Object();
   private Set<SModelDescriptor> myListeningForModels = new THashSet<SModelDescriptor>();
-  private Map<SNodePointer, Pair<TypeCheckingContext, List<ITypeContextOwner>>> myTypeCheckingContexts =
-    new THashMap<SNodePointer, Pair<TypeCheckingContext, List<ITypeContextOwner>>>(); //todo cleanup on reload (temp solution)
-  private boolean myComputeInNormalMode = false;
+  private Map<SNodePointer, List<Triplet<TypeCheckingContext, ITypeContextOwner, Integer>>> myTypeCheckingContexts =
+    new THashMap<SNodePointer, List<Triplet<TypeCheckingContext, ITypeContextOwner, Integer>>>(); //todo cleanup on reload (temp solution)
+
+  private boolean myComputeInNormalMode_resolverVooDoo = false;
+
+  private ThreadLocal<Set<SNode>> myResolveNodes = new ThreadLocal<Set<SNode>>();
+
   private ThreadLocal<Boolean> myResolveMode = new ThreadLocal<Boolean>() {
     @Override
     protected Boolean initialValue() {
@@ -53,9 +75,8 @@ public class TypeContextManager implements CoreComponent {
   };
 
   private TypeChecker myTypeChecker;
-  private ClassLoaderManager myClassLoaderManager;
 
-  private ThreadLocal<Set<SNode>> myResolveNodes = new ThreadLocal<Set<SNode>>();
+  private ClassLoaderManager myClassLoaderManager;
 
   private SModelListener myModelListener = new SModelAdapter(SModelListenerPriority.PLATFORM) {
     @Override
@@ -103,6 +124,12 @@ public class TypeContextManager implements CoreComponent {
       clearForClassesUnload();
     }
   };
+  private  ThreadLocal<ITypeContextOwner> myTypecheckingContextOwner = new ThreadLocal<ITypeContextOwner>() {
+    @Override
+    protected ITypeContextOwner initialValue() {
+      return new DefaultTypecheckingContextOwner();
+    }
+  };
 
   public static TypeContextManager getInstance() {
     return INSTANCE;
@@ -136,6 +163,43 @@ public class TypeContextManager implements CoreComponent {
     INSTANCE = null;
   }
 
+  public void runTypeCheckingAction(SNode rootNode, ITypechecking.Action r) {
+    final ITypeContextOwner contextOwner = myTypecheckingContextOwner.get();
+    TypeCheckingContext context = acquireTypecheckingContext(rootNode, contextOwner);
+    try{
+      r.run(context);
+    }
+    finally {
+      releaseTypecheckingContext(rootNode, contextOwner);
+    }
+  }
+
+  public void runTypeCheckingAction(@NotNull final ITypeContextOwner contextOwner, SNode rootNode, ITypechecking.Action r) {
+    ITypeContextOwner savedOwner = myTypecheckingContextOwner.get();
+    myTypecheckingContextOwner.set(contextOwner);
+    TypeCheckingContext context = acquireTypecheckingContext(rootNode, contextOwner);
+    try{
+      r.run(context);
+    }
+    finally {
+      releaseTypecheckingContext(rootNode, contextOwner);
+      myTypecheckingContextOwner.set(savedOwner);
+    }
+  }
+
+  public <T> T runTypeCheckingComputation(@NotNull final ITypeContextOwner contextOwner, SNode rootNode, Computation<T> r) {
+    ITypeContextOwner savedOwner = myTypecheckingContextOwner.get();
+    myTypecheckingContextOwner.set(contextOwner);
+    TypeCheckingContext context = acquireTypecheckingContext(rootNode, contextOwner);
+    try{
+      return r.compute(context);
+    }
+    finally {
+      releaseTypecheckingContext(rootNode, contextOwner);
+      myTypecheckingContextOwner.set(savedOwner);
+    }
+  }
+
   public void runResolveAction(Runnable r) {
     boolean wasResolveBefore = myResolveMode.get();
     myResolveMode.set(true);
@@ -158,85 +222,123 @@ public class TypeContextManager implements CoreComponent {
 
   public TypeCheckingContext createTypeCheckingContext(SNode node) {
     ModelAccess.assertLegalRead();
-    return new TypeCheckingContextNew(node, myTypeChecker, myTypeChecker.isGenerationMode());
+    if (myTypeChecker.isGenerationMode()) {
+      return new SimpleTypecheckingContext(node, myTypeChecker);
+    } else {
+      return new IncrementalTypecheckingContext(node, myTypeChecker);
+    }
   }
 
-  private TypeCheckingContext createTracingTypeCheckingContext(SNode node) {
+  public TypeCheckingContext createInferenceTypeCheckingContext(SNode node) {
     ModelAccess.assertLegalRead();
-    return new TypeCheckingContext_Tracer(node, myTypeChecker);
+    return new InferenceTypecheckingContext(node, myTypeChecker);
   }
 
-  public TypeCheckingContext getOrCreateContext(SNode node, ITypeContextOwner owner, boolean createIfAbsent) {
+  public TypeCheckingContext createTracingTypeCheckingContext(SNode node) {
+    ModelAccess.assertLegalRead();
+    return new TracingTypecheckingContext(node, myTypeChecker);
+  }
+
+  public TypeCheckingContext acquireTypecheckingContext(SNode rootNode, ITypeContextOwner contextOwner) {
+    return getOrCreateContext(rootNode, contextOwner, true);
+  }
+
+  public TypeCheckingContext lookupTypecheckingContext(SNode rootNode, ITypeContextOwner contextOwner) {
+    return getOrCreateContext(rootNode, contextOwner, false);
+  }
+
+  public void releaseTypecheckingContext(SNode rootNode, ITypeContextOwner contextOwner) {
+    removeOwnerForRootNodeContext(rootNode, contextOwner);
+  }
+
+  private TypeCheckingContext getOrCreateContext(SNode node, ITypeContextOwner owner, boolean createIfAbsent) {
     ModelAccess.assertLegalRead();
     if (node == null) return null;
     synchronized (myLock) {
       SNodePointer nodePointer = new SNodePointer(node);
-      Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(nodePointer);
+      List<Triplet<TypeCheckingContext, ITypeContextOwner, Integer>> contextWithOwners = myTypeCheckingContexts.get(nodePointer);
+      if (contextWithOwners == null && !createIfAbsent) return null;
       if (contextWithOwners == null) {
-        if (createIfAbsent) {
-          TypeCheckingContext newTypeCheckingContext = createTypeCheckingContext(node);
-          addModelListener(node);
-          List<ITypeContextOwner> owners = new ArrayList<ITypeContextOwner>(1);
-          contextWithOwners = new Pair<TypeCheckingContext, List<ITypeContextOwner>>(newTypeCheckingContext, owners);
-          owners.add(owner);
-          if (owners.size() > 100) {
-            if (!myReported) {
-              myReported = true;
-              LOG.warning("Type checking context for node " + node.getPresentation() + " has too much owners");
-            }
-          }
-          myTypeCheckingContexts.put(nodePointer, contextWithOwners);
-          return newTypeCheckingContext;
-        } else {
-          return null;
-        }
-      } else {
-        TypeCheckingContext context = contextWithOwners.o1;
-        if (jetbrains.mps.util.SNodeOperations.isDisposed(context.getNode())) {
-          removeContextForNode(nodePointer);
-          LOG.error("Type Checking Context had a disposed node inside. Node: " + node + " model: " + node.getModel());
-          return getOrCreateContext(node, owner, createIfAbsent);
-        }
-        if (!contextWithOwners.o2.contains(owner)) {
-          contextWithOwners.o2.add(owner);
-        }
-        return context;
+        contextWithOwners = new ArrayList<Triplet<TypeCheckingContext, ITypeContextOwner, Integer>>(4);
+        myTypeCheckingContexts.put(nodePointer, contextWithOwners);
       }
+      for (ListIterator<Triplet<TypeCheckingContext, ITypeContextOwner, Integer>> it  = contextWithOwners.listIterator(); it.hasNext(); ) {
+        Triplet<TypeCheckingContext, ITypeContextOwner, Integer> p = it.next();
+        if (p.second() == owner) {
+          TypeCheckingContext context = p.first();
+          // Dirty hack
+          if (jetbrains.mps.util.SNodeOperations.isDisposed(context.getNode())) {
+            removeContextForNode(nodePointer);
+            LOG.error("Type Checking Context had a disposed node inside. Node: " + node + " model: " + node.getModel());
+            return getOrCreateContext(node, owner, createIfAbsent);
+          }
+          it.set(new Triplet<TypeCheckingContext, ITypeContextOwner, Integer>(p.first(), p.second(), p.third()+1));
+          return context;
+        }
+      }
+
+      if (!createIfAbsent) return null;
+      TypeCheckingContext newTypeCheckingContext = owner.createTypecheckingContext(node, this);
+      addModelListener(node);
+      contextWithOwners.add(new Triplet<TypeCheckingContext, ITypeContextOwner, Integer>(newTypeCheckingContext, owner, 1));
+      if (contextWithOwners.size() > 100) {
+        if (!myReported) {
+          myReported = true;
+          LOG.warning("Type checking context for node " + node.getPresentation() + " has too much owners");
+        }
+      }
+      myTypeCheckingContexts.put(nodePointer, contextWithOwners);
+      return newTypeCheckingContext;
     }
   }
 
-  public void removeOwnerForRootNodeContext(final SNode node, final ITypeContextOwner owner) {
+  private void removeOwnerForRootNodeContext(final SNode node, final ITypeContextOwner owner) {
     ModelAccess.assertLegalRead();
     if (node == null || node.getModel() == null) return;
     //if node is disposed, then context was removed by beforeModelDisposed/beforeRootDeleted listener
     synchronized (myLock) {
       SNodePointer nodePointer = new SNodePointer(node);
-      Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(nodePointer);
+      List<Triplet<TypeCheckingContext, ITypeContextOwner, Integer>> contextWithOwners = myTypeCheckingContexts.get(nodePointer);
       if (contextWithOwners != null) {
-        List<ITypeContextOwner> owners = contextWithOwners.o2;
-        owners.remove(owner);
-        if (owners.isEmpty()) {
-          contextWithOwners.o1.dispose();
+        for (ListIterator<Triplet<TypeCheckingContext, ITypeContextOwner, Integer>> it = contextWithOwners.listIterator(); it.hasNext(); ) {
+          Triplet<TypeCheckingContext, ITypeContextOwner, Integer> p = it.next();
+          ITypeContextOwner o = p.second();
+          if (o == owner) {
+            int count = p.third() - 1;
+            if (count <= 0) {
+              it.remove();
+              p.first().dispose();
+            }
+            else {
+              it.set(new Triplet<TypeCheckingContext, ITypeContextOwner, Integer>(p.first(), p.second(), count));
+            }
+            break;
+          }
+        }
+        if (contextWithOwners.isEmpty()) {
           myTypeCheckingContexts.remove(nodePointer);
         }
       }
     }
   }
 
-  public void removeContextForNode(SNodePointer nodePointer) {
+  private void removeContextForNode(SNodePointer nodePointer) {
     synchronized (myLock) {
-      Pair<TypeCheckingContext, List<ITypeContextOwner>> contextWithOwners = myTypeCheckingContexts.get(nodePointer);
+      List<Triplet<TypeCheckingContext, ITypeContextOwner, Integer>> contextWithOwners = myTypeCheckingContexts.remove(nodePointer);
       if (contextWithOwners != null) {
-        contextWithOwners.o1.dispose();
-        myTypeCheckingContexts.remove(nodePointer);
+        for (Triplet<TypeCheckingContext, ITypeContextOwner, Integer> p : contextWithOwners) {
+          p.first().dispose();
+        }
       }
     }
   }
 
   private void clearForClassesUnload() {
     synchronized (myLock) {
-      for (Pair<TypeCheckingContext, List<ITypeContextOwner>> context : myTypeCheckingContexts.values()) {
-        context.o1.clear();
+      for (List<Triplet<TypeCheckingContext, ITypeContextOwner, Integer>> contexts : myTypeCheckingContexts.values()) {
+        for (Triplet<TypeCheckingContext, ITypeContextOwner, Integer> p: contexts) {
+          p.first().clear();
+        }
       }
     }
   }
@@ -252,9 +354,7 @@ public class TypeContextManager implements CoreComponent {
 
   private TypeCheckingContext createTypeCheckingContextForResolve(SNode node) {
     SNode root = node.getTopmostAncestor();
-    TypeCheckingContextNew context = new TypeCheckingContextNew(root, myTypeChecker, true);
-    context.setSingleTypeComputation(true);
-    return context;
+    return new SimpleTypecheckingContext(root, myTypeChecker);
   }
 
   private Set<SNode> getMyResolveNodes() {
@@ -270,8 +370,6 @@ public class TypeContextManager implements CoreComponent {
   SNode getTypeOf(final SNode node) {
     ModelAccess.assertLegalRead();
     if (node == null) return null;
-    ITypeContextOwner owner = new ITypeContextOwner() {
-    };
     SNode root = node.getTopmostAncestor();
     boolean isResolveMode = myResolveMode.get();
     Set<SNode> resolveNodes = getMyResolveNodes();
@@ -287,7 +385,9 @@ public class TypeContextManager implements CoreComponent {
     }
     try {
       if (myTypeChecker.isGenerationMode()) {
-        TypeCheckingContext context = myTypeChecker.hasPerformanceTracer() ? createTracingTypeCheckingContext(node) : createTypeCheckingContext(node);
+        TypeCheckingContext context = myTypeChecker.hasPerformanceTracer() ?
+          new IncrementalTypecheckingContext_Tracer(node, myTypeChecker) :
+          new SimpleTypecheckingContext(node, myTypeChecker);
         if (context == null) return null;
         try {
           return context.getTypeOf_generationMode(node);
@@ -297,12 +397,13 @@ public class TypeContextManager implements CoreComponent {
       }
       //now we are not in generation mode
 
-      TypeCheckingContext context = getOrCreateContext(root, owner, true);
+      final ITypeContextOwner contextOwner = myTypecheckingContextOwner.get();
+      TypeCheckingContext context = acquireTypecheckingContext(root, contextOwner);
       try {
-        if (myComputeInNormalMode && context != null && context.isCheckedRoot(false)) {
-          myComputeInNormalMode = false;
+        if (myComputeInNormalMode_resolverVooDoo && context != null && context.isCheckedRoot(false)) {
+          myComputeInNormalMode_resolverVooDoo = false;
           SNode type = context.getTypeOf_normalMode(node);
-          myComputeInNormalMode = true;
+          myComputeInNormalMode_resolverVooDoo = true;
           return type;
         }
         if (isResolveMode) {
@@ -317,14 +418,19 @@ public class TypeContextManager implements CoreComponent {
         if (context == null) return null;
         return context.getTypeOf(node, myTypeChecker);
       } finally {
-        removeOwnerForRootNodeContext(root, owner);
+        releaseTypecheckingContext(root, contextOwner);
       }
     } finally {
       resolveNodes.remove(node);
     }
   }
 
-  public void setComputeInNormalMode(boolean computeInNormalMode) {
-    myComputeInNormalMode = computeInNormalMode;
+  /**
+   * @deprecated let's come up with something smarter
+   */
+  public void setComputeInNormalMode_resolverVooDoo(boolean computeInNormalMode_resolverVooDoo) {
+    myComputeInNormalMode_resolverVooDoo = computeInNormalMode_resolverVooDoo;
   }
+
+
 }

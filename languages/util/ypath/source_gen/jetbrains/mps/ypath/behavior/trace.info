@@ -120,82 +120,82 @@
     <unitInfo nodeId="1213877240886" fileName="NodeKindSpecificCase_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.ypath.behavior.NodeKindSpecificCase_Behavior" />
   </root>
   <root nodeId="1213877241845" modelId="r:00000000-0000-4000-0000-011c895905a7(jetbrains.mps.ypath.behavior)">
-    <nodeInfo nodeId="1225096924568" fileName="TreePathAspect_Behavior.java" startLine="57" startPosition="27" endLine="57" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225096924576" fileName="TreePathAspect_Behavior.java" startLine="60" startPosition="27" endLine="60" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1225096924582" fileName="TreePathAspect_Behavior.java" startLine="63" startPosition="27" endLine="63" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1225096924568" fileName="TreePathAspect_Behavior.java" startLine="55" startPosition="27" endLine="55" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1225096924576" fileName="TreePathAspect_Behavior.java" startLine="58" startPosition="27" endLine="58" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1225096924582" fileName="TreePathAspect_Behavior.java" startLine="61" startPosition="27" endLine="61" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
-    <nodeInfo nodeId="1225096924574" fileName="TreePathAspect_Behavior.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_prop" />
-    <nodeInfo nodeId="1225096924574" fileName="TreePathAspect_Behavior.java" startLine="26" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_prop_it" />
-    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="33" startPosition="28" endLine="34" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
-    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="34" startPosition="54" endLine="35" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="36" startPosition="27" endLine="37" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="39" startPosition="57" endLine="40" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="40" startPosition="40" endLine="41" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="42" startPosition="23" endLine="43" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="43" startPosition="60" endLine="44" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="44" startPosition="38" endLine="45" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1225096924577" fileName="TreePathAspect_Behavior.java" startLine="47" startPosition="155" endLine="48" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225096924577" fileName="TreePathAspect_Behavior.java" startLine="48" startPosition="40" endLine="49" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1225096924577" fileName="TreePathAspect_Behavior.java" startLine="50" startPosition="23" endLine="51" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225096924577" fileName="TreePathAspect_Behavior.java" startLine="51" startPosition="38" endLine="52" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1225096935476" fileName="TreePathAspect_Behavior.java" startLine="53" startPosition="27" endLine="54" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225096935476" fileName="TreePathAspect_Behavior.java" startLine="54" startPosition="38" endLine="55" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225096935476" fileName="TreePathAspect_Behavior.java" startLine="55" startPosition="42" endLine="56" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225096924568" fileName="TreePathAspect_Behavior.java" startLine="57" startPosition="27" endLine="58" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225096924568" fileName="TreePathAspect_Behavior.java" startLine="58" startPosition="38" endLine="59" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1225096924576" fileName="TreePathAspect_Behavior.java" startLine="60" startPosition="27" endLine="61" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225096924576" fileName="TreePathAspect_Behavior.java" startLine="61" startPosition="38" endLine="62" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1225096924582" fileName="TreePathAspect_Behavior.java" startLine="63" startPosition="27" endLine="64" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225096924582" fileName="TreePathAspect_Behavior.java" startLine="64" startPosition="38" endLine="65" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="66" startPosition="28" endLine="67" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
-    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="69" startPosition="31" endLine="70" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="31" startPosition="28" endLine="32" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="32" startPosition="54" endLine="33" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="34" startPosition="27" endLine="35" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="37" startPosition="57" endLine="38" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="38" startPosition="40" endLine="39" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="40" startPosition="23" endLine="41" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="41" startPosition="60" endLine="42" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="42" startPosition="38" endLine="43" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1225096924577" fileName="TreePathAspect_Behavior.java" startLine="45" startPosition="155" endLine="46" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225096924577" fileName="TreePathAspect_Behavior.java" startLine="46" startPosition="40" endLine="47" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1225096924577" fileName="TreePathAspect_Behavior.java" startLine="48" startPosition="23" endLine="49" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225096924577" fileName="TreePathAspect_Behavior.java" startLine="49" startPosition="38" endLine="50" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1225096935476" fileName="TreePathAspect_Behavior.java" startLine="51" startPosition="27" endLine="52" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225096935476" fileName="TreePathAspect_Behavior.java" startLine="52" startPosition="38" endLine="53" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225096935476" fileName="TreePathAspect_Behavior.java" startLine="53" startPosition="42" endLine="54" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225096924568" fileName="TreePathAspect_Behavior.java" startLine="55" startPosition="27" endLine="56" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225096924568" fileName="TreePathAspect_Behavior.java" startLine="56" startPosition="38" endLine="57" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1225096924576" fileName="TreePathAspect_Behavior.java" startLine="58" startPosition="27" endLine="59" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225096924576" fileName="TreePathAspect_Behavior.java" startLine="59" startPosition="38" endLine="60" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1225096924582" fileName="TreePathAspect_Behavior.java" startLine="61" startPosition="27" endLine="62" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225096924582" fileName="TreePathAspect_Behavior.java" startLine="62" startPosition="38" endLine="63" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="64" startPosition="28" endLine="65" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
+    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="67" startPosition="31" endLine="68" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225096924574" fileName="TreePathAspect_Behavior.java" startLine="71" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_prop" />
+    <nodeInfo nodeId="1225096924574" fileName="TreePathAspect_Behavior.java" startLine="72" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_2_prop_it" />
     <nodeInfo nodeId="1213877241845" fileName="TreePathAspect_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="38" startPosition="27" endLine="42" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225096924577" fileName="TreePathAspect_Behavior.java" startLine="46" startPosition="27" endLine="50" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="30" startPosition="20" endLine="68" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="28" startPosition="46" endLine="69" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
-    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="28" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
-    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="22" startPosition="45" endLine="72" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="22" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
-    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="20" startPosition="56" endLine="74" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="20" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
-    <nodeInfo nodeId="1213877241849" fileName="TreePathAspect_Behavior.java" startLine="18" startPosition="77" endLine="76" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877241845" fileName="TreePathAspect_Behavior.java" startLine="18" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getDefaultProperty_1213877241846#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="36" startPosition="27" endLine="40" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225096924577" fileName="TreePathAspect_Behavior.java" startLine="44" startPosition="27" endLine="48" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="28" startPosition="20" endLine="66" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
+    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="26" startPosition="46" endLine="67" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.DoWhileStatement" />
+    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="26" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="moveToNext#()Z" />
+    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="22" startPosition="45" endLine="73" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="22" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="iterator#()Ljava/util/Iterator;" />
+    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="20" startPosition="56" endLine="75" endPosition="10" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="20" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="translate#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="1213877241849" fileName="TreePathAspect_Behavior.java" startLine="18" startPosition="77" endLine="77" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877241845" fileName="TreePathAspect_Behavior.java" startLine="18" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getDefaultProperty_1213877241846#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="1213877241877" fileName="TreePathAspect_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="1225096924568" fileName="TreePathAspect_Behavior.java" startLine="57" startPosition="27" endLine="57" endPosition="27" />
-    <scopeInfo nodeId="1225096924576" fileName="TreePathAspect_Behavior.java" startLine="60" startPosition="27" endLine="60" endPosition="27" />
-    <scopeInfo nodeId="1225096924582" fileName="TreePathAspect_Behavior.java" startLine="63" startPosition="27" endLine="63" endPosition="27" />
-    <scopeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="36" startPosition="27" endLine="37" endPosition="170" />
-    <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="66" startPosition="28" endLine="67" endPosition="37" />
+    <scopeInfo nodeId="1225096924568" fileName="TreePathAspect_Behavior.java" startLine="55" startPosition="27" endLine="55" endPosition="27" />
+    <scopeInfo nodeId="1225096924576" fileName="TreePathAspect_Behavior.java" startLine="58" startPosition="27" endLine="58" endPosition="27" />
+    <scopeInfo nodeId="1225096924582" fileName="TreePathAspect_Behavior.java" startLine="61" startPosition="27" endLine="61" endPosition="27" />
+    <scopeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="34" startPosition="27" endLine="35" endPosition="170" />
+    <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="64" startPosition="28" endLine="65" endPosition="37" />
     <scopeInfo nodeId="1213877241845" fileName="TreePathAspect_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="1213877241845" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="33" startPosition="28" endLine="35" endPosition="35" />
-    <scopeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="39" startPosition="57" endLine="41" endPosition="30" />
-    <scopeInfo nodeId="1225096924577" fileName="TreePathAspect_Behavior.java" startLine="47" startPosition="155" endLine="49" endPosition="30" />
-    <scopeInfo nodeId="1225096924568" fileName="TreePathAspect_Behavior.java" startLine="57" startPosition="27" endLine="59" endPosition="28" />
-    <scopeInfo nodeId="1225096924576" fileName="TreePathAspect_Behavior.java" startLine="60" startPosition="27" endLine="62" endPosition="28" />
-    <scopeInfo nodeId="1225096924582" fileName="TreePathAspect_Behavior.java" startLine="63" startPosition="27" endLine="65" endPosition="28" />
-    <scopeInfo nodeId="1225096935476" fileName="TreePathAspect_Behavior.java" startLine="53" startPosition="27" endLine="56" endPosition="34" />
-    <scopeInfo nodeId="1225096924577" fileName="TreePathAspect_Behavior.java" startLine="46" startPosition="27" endLine="52" endPosition="28" />
-    <scopeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="38" startPosition="27" endLine="45" endPosition="28" />
-    <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="30" startPosition="20" endLine="68" endPosition="19" />
-    <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="28" startPosition="46" endLine="70" endPosition="29" />
-    <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="28" startPosition="0" endLine="72" endPosition="0" />
-    <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="22" startPosition="45" endLine="72" endPosition="14" />
-    <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="22" startPosition="0" endLine="74" endPosition="0" />
-    <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="20" startPosition="56" endLine="74" endPosition="10" />
-    <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="20" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="31" startPosition="28" endLine="33" endPosition="35" />
+    <scopeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="37" startPosition="57" endLine="39" endPosition="30" />
+    <scopeInfo nodeId="1225096924577" fileName="TreePathAspect_Behavior.java" startLine="45" startPosition="155" endLine="47" endPosition="30" />
+    <scopeInfo nodeId="1225096924568" fileName="TreePathAspect_Behavior.java" startLine="55" startPosition="27" endLine="57" endPosition="28" />
+    <scopeInfo nodeId="1225096924576" fileName="TreePathAspect_Behavior.java" startLine="58" startPosition="27" endLine="60" endPosition="28" />
+    <scopeInfo nodeId="1225096924582" fileName="TreePathAspect_Behavior.java" startLine="61" startPosition="27" endLine="63" endPosition="28" />
+    <scopeInfo nodeId="1225096935476" fileName="TreePathAspect_Behavior.java" startLine="51" startPosition="27" endLine="54" endPosition="34" />
+    <scopeInfo nodeId="1225096924577" fileName="TreePathAspect_Behavior.java" startLine="44" startPosition="27" endLine="50" endPosition="28" />
+    <scopeInfo nodeId="1225096924569" fileName="TreePathAspect_Behavior.java" startLine="36" startPosition="27" endLine="43" endPosition="28" />
+    <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="28" startPosition="20" endLine="66" endPosition="19" />
+    <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="26" startPosition="46" endLine="68" endPosition="29" />
+    <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="26" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="22" startPosition="45" endLine="73" endPosition="14" />
+    <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="22" startPosition="0" endLine="75" endPosition="0" />
+    <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="20" startPosition="56" endLine="75" endPosition="10" />
+    <scopeInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="20" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="1225096924565" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877241848" fileName="TreePathAspect_Behavior.java" startLine="18" startPosition="77" endLine="76" endPosition="70" />
-    <scopeInfo nodeId="1213877241845" fileName="TreePathAspect_Behavior.java" startLine="18" startPosition="0" endLine="78" endPosition="0">
+    <scopeInfo nodeId="1213877241848" fileName="TreePathAspect_Behavior.java" startLine="18" startPosition="77" endLine="77" endPosition="70" />
+    <scopeInfo nodeId="1213877241845" fileName="TreePathAspect_Behavior.java" startLine="18" startPosition="0" endLine="79" endPosition="0">
       <varInfo nodeId="1213877241845" varName="thisNode" />
     </scopeInfo>
-    <unitInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="23" startPosition="23" endLine="72" endPosition="13" unitName="jetbrains.mps.ypath.behavior.TreePathAspect_Behavior$3" />
-    <unitInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="21" startPosition="19" endLine="74" endPosition="9" unitName="jetbrains.mps.ypath.behavior.TreePathAspect_Behavior$2" />
-    <unitInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="19" startPosition="125" endLine="76" endPosition="5" unitName="jetbrains.mps.ypath.behavior.TreePathAspect_Behavior$1" />
-    <unitInfo nodeId="1213877241845" fileName="TreePathAspect_Behavior.java" startLine="14" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreePathAspect_Behavior" />
+    <unitInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="23" startPosition="23" endLine="73" endPosition="13" unitName="jetbrains.mps.ypath.behavior.TreePathAspect_Behavior$3" />
+    <unitInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="21" startPosition="19" endLine="75" endPosition="9" unitName="jetbrains.mps.ypath.behavior.TreePathAspect_Behavior$2" />
+    <unitInfo nodeId="1225096924565" fileName="TreePathAspect_Behavior.java" startLine="19" startPosition="125" endLine="77" endPosition="5" unitName="jetbrains.mps.ypath.behavior.TreePathAspect_Behavior$1" />
+    <unitInfo nodeId="1213877241845" fileName="TreePathAspect_Behavior.java" startLine="14" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.ypath.behavior.TreePathAspect_Behavior" />
   </root>
   <root nodeId="1213877248385" modelId="r:00000000-0000-4000-0000-011c895905a7(jetbrains.mps.ypath.behavior)">
     <nodeInfo nodeId="1213877248388" fileName="FeatureGetFun_Behavior.java" startLine="13" startPosition="83" endLine="14" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

@@ -14,12 +14,6 @@ public enum InequationPriority {
   inf("inf", 500);
 
   private String myName;
-  private int myValue;
-
-  InequationPriority(String name, int value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
@@ -27,10 +21,6 @@ public enum InequationPriority {
 
   public String getValueAsString() {
     return "" + this.myValue;
-  }
-
-  public int getValue() {
-    return this.myValue;
   }
 
   public static List<InequationPriority> getConstants() {
@@ -67,5 +57,16 @@ public enum InequationPriority {
       return InequationPriority.inf;
     }
     return InequationPriority.getDefault();
+  }
+
+  private int myValue;
+
+  InequationPriority(String name, int value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public int getValue() {
+    return this.myValue;
   }
 }

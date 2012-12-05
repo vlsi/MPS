@@ -4,7 +4,6 @@ package jetbrains.mps.smodel.persistence.def.v7;
 
 import jetbrains.mps.util.xml.XMLSAXHandler;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
-import jetbrains.mps.logging.Logger;
 import java.util.Stack;
 import org.xml.sax.Locator;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
@@ -23,10 +22,10 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
+import jetbrains.mps.logging.Logger;
 
 public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
   private static String[] EMPTY_ARRAY = new String[0];
-  private static Logger LOG = Logger.getLogger(ModelReader7Handler.class);
   private ModelReader7Handler.ModelElementHandler modelhandler = new ModelReader7Handler.ModelElementHandler();
   private ModelReader7Handler.PersistenceElementHandler persistencehandler = new ModelReader7Handler.PersistenceElementHandler();
   private ModelReader7Handler.Module_referenceElementHandler module_referencehandler = new ModelReader7Handler.Module_referenceElementHandler();
@@ -511,7 +510,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       if ("property".equals(tagName)) {
         String[] child = (String[]) value;
         if (child[1] != null) {
-          result.setProperty(fieldhelper.readName(child[0]), child[1], false);
+          result.setProperty(fieldhelper.readName(child[0]), child[1]);
           fieldlinkMap.addNameLocation(fieldhelper.readLinkId(child[2]), result, child[0]);
         }
         return;
@@ -611,4 +610,6 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
       super.handleAttribute(resultObject, name, value);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ModelReader7Handler.class);
 }

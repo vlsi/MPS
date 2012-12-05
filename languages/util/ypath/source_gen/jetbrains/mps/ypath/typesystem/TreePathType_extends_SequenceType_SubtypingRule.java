@@ -17,7 +17,7 @@ public class TreePathType_extends_SequenceType_SubtypingRule extends SubtypingRu
   }
 
   public SNode getSubOrSuperType(SNode treepath, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_bmglej_a0a0(SLinkOperations.getTarget(treepath, "nodeType", true));
+    return _quotation_createNode_bmglej_a0a1(SLinkOperations.getTarget(treepath, "nodeType", true));
   }
 
   public String getApplicableConceptFQName() {
@@ -35,7 +35,7 @@ public class TreePathType_extends_SequenceType_SubtypingRule extends SubtypingRu
     return false;
   }
 
-  private static SNode _quotation_createNode_bmglej_a0a0(Object parameter_1) {
+  private static SNode _quotation_createNode_bmglej_a0a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);

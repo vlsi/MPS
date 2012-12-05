@@ -21,7 +21,7 @@ public class typeof_ListCustomParameter_InferenceRule extends AbstractInferenceR
     {
       SNode _nodeToCheck_1029348928467 = listCustomParameter;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:c19fbfce-5c58-4528-8b93-60edfa062cac(jetbrains.mps.baseLanguage.constructors.typesystem)", "4739047193854376705", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:c19fbfce-5c58-4528-8b93-60edfa062cac(jetbrains.mps.baseLanguage.constructors.typesystem)", "4739047193854376715", true), (SNode) _quotation_createNode_c9qmyp_a0a0a(SLinkOperations.getTarget(listCustomParameter, "type", true)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:c19fbfce-5c58-4528-8b93-60edfa062cac(jetbrains.mps.baseLanguage.constructors.typesystem)", "4739047193854376715", true), (SNode) _quotation_createNode_c9qmyp_a0a0b(SLinkOperations.getTarget(listCustomParameter, "type", true)), _info_12389875345);
     }
   }
 
@@ -40,7 +40,7 @@ public class typeof_ListCustomParameter_InferenceRule extends AbstractInferenceR
     return true;
   }
 
-  private static SNode _quotation_createNode_c9qmyp_a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_c9qmyp_a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, GlobalScope.getInstance(), false);

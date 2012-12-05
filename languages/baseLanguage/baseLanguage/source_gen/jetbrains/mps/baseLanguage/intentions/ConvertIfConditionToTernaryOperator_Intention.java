@@ -13,11 +13,11 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.intentions.IntentionDescriptor;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ConvertIfConditionToTernaryOperator_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -71,6 +71,24 @@ public class ConvertIfConditionToTernaryOperator_Intention implements IntentionF
     return myCachedExecutable;
   }
 
+  public class IntentionImplementation implements IntentionExecutable {
+    public IntentionImplementation() {
+    }
+
+    public String getDescription(final SNode node, final EditorContext editorContext) {
+      return "Convert If Condition to Ternary Operator";
+    }
+
+    public void execute(final SNode node, final EditorContext editorContext) {
+      SNode ternaryOperator = _quotation_createNode_78c6t8_a0a0a(SLinkOperations.getTarget(node, "condition", true), IntentionUtils.getExpressionFromNode(SLinkOperations.getTarget(node, "ifTrue", true)), IntentionUtils.getExpressionFromNode(SLinkOperations.getTarget(node, "ifFalseStatement", true)));
+      SNodeOperations.replaceWithAnother(node, ternaryOperator);
+    }
+
+    public IntentionDescriptor getDescriptor() {
+      return ConvertIfConditionToTernaryOperator_Intention.this;
+    }
+  }
+
   private static SNode _quotation_createNode_78c6t8_a0a0a(Object parameter_1, Object parameter_2, Object parameter_3) {
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -90,23 +108,5 @@ public class ConvertIfConditionToTernaryOperator_Intention implements IntentionF
       quotedNode_4.addChild("ifFalse", HUtil.copyIfNecessary(quotedNode_7));
     }
     return quotedNode_4;
-  }
-
-  public class IntentionImplementation implements IntentionExecutable {
-    public IntentionImplementation() {
-    }
-
-    public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Convert If Condition to Ternary Operator";
-    }
-
-    public void execute(final SNode node, final EditorContext editorContext) {
-      SNode ternaryOperator = _quotation_createNode_78c6t8_a0a0a(SLinkOperations.getTarget(node, "condition", true), IntentionUtils.getExpressionFromNode(SLinkOperations.getTarget(node, "ifTrue", true)), IntentionUtils.getExpressionFromNode(SLinkOperations.getTarget(node, "ifFalseStatement", true)));
-      SNodeOperations.replaceWithAnother(node, ternaryOperator);
-    }
-
-    public IntentionDescriptor getDescriptor() {
-      return ConvertIfConditionToTernaryOperator_Intention.this;
-    }
   }
 }

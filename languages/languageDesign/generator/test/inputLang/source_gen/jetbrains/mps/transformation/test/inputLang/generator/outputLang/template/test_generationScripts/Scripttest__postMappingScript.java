@@ -9,8 +9,6 @@ import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.generator.template.MappingScriptContext;
 
 public class Scripttest__postMappingScript implements TemplateMappingScript {
-  private static SNodePointer mappingScriptNode = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195510384868");
-
   public Scripttest__postMappingScript() {
   }
 
@@ -33,4 +31,6 @@ public class Scripttest__postMappingScript implements TemplateMappingScript {
   public void apply(SModel model, ITemplateGenerator generator) {
     QueriesGenerated.mappingScript_CodeBlock_1195510384869(generator.getGeneratorSessionContext(), new MappingScriptContext(model, mappingScriptNode, generator));
   }
+
+  private static SNodePointer mappingScriptNode = new SNodePointer("r:00000000-0000-4000-0000-011c895905f6(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_generationScripts@generator)", "1195510384868");
 }

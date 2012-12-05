@@ -14,12 +14,12 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.smodel.SModelUtil_new;
-import jetbrains.mps.project.GlobalScope;
 import java.util.List;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.intentions.IntentionDescriptor;
+import jetbrains.mps.smodel.SModelUtil_new;
+import jetbrains.mps.project.GlobalScope;
+import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ConvertToList_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
@@ -66,7 +66,7 @@ public class ConvertToList_Intention implements IntentionFactory {
   }
 
   private boolean isVisibleInChild(final SNode node, final SNode childNode, final EditorContext editorContext) {
-    return eq_63cojg_a0a0i(SNodeOperations.getContainingLinkRole(childNode), "items");
+    return eq_63cojg_a0a0k(SNodeOperations.getContainingLinkRole(childNode), "items");
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -78,29 +78,6 @@ public class ConvertToList_Intention implements IntentionFactory {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertToList_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
-  }
-
-  private static SNode _quotation_createNode_mz75hy_a0a2a0(Object parameter_1) {
-    SNode quotedNode_2 = null;
-    SNode quotedNode_3 = null;
-    SNode quotedNode_4 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", null, null, GlobalScope.getInstance(), false);
-    {
-      List<SNode> nodes = (List<SNode>) parameter_1;
-      for (SNode child : nodes) {
-        quotedNode_3.addChild("initValue", HUtil.copyIfNecessary(child));
-      }
-    }
-    quotedNode_2.addChild("creator", quotedNode_3);
-    return quotedNode_2;
-  }
-
-  private static boolean eq_63cojg_a0a0i(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 
   public class IntentionImplementation implements IntentionExecutable {
@@ -124,5 +101,28 @@ public class ConvertToList_Intention implements IntentionFactory {
     public IntentionDescriptor getDescriptor() {
       return ConvertToList_Intention.this;
     }
+  }
+
+  private static SNode _quotation_createNode_mz75hy_a0a2a0(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    SNode quotedNode_4 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", null, null, GlobalScope.getInstance(), false);
+    {
+      List<SNode> nodes = (List<SNode>) parameter_1;
+      for (SNode child : nodes) {
+        quotedNode_3.addChild("initValue", HUtil.copyIfNecessary(child));
+      }
+    }
+    quotedNode_2.addChild("creator", quotedNode_3);
+    return quotedNode_2;
+  }
+
+  private static boolean eq_63cojg_a0a0k(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

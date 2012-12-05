@@ -6,14 +6,14 @@ import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.InlineCellProvider;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
-import jetbrains.mps.nodeEditor.InlineCellProvider;
 
 public class MatrixInverseOperation_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -22,6 +22,26 @@ public class MatrixInverseOperation_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_j4oyiy_a(editorContext, node);
+  }
+
+  public static class _Inline_j4oyiy_a1a extends InlineCellProvider {
+    public _Inline_j4oyiy_a1a() {
+      super();
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext) {
+      return this.createEditorCell(editorContext, this.getSNode());
+    }
+
+    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
+      return this.createComponent_j4oyiy_a0b0(editorContext, node);
+    }
+
+    private EditorCell createComponent_j4oyiy_a0b0(EditorContext editorContext, SNode node) {
+      AbstractCellProvider provider = new MathContextEditorPart(node);
+      EditorCell editorCell = provider.createEditorCell(editorContext);
+      return editorCell;
+    }
   }
 
   private EditorCell createCollection_j4oyiy_a(EditorContext editorContext, SNode node) {
@@ -61,25 +81,5 @@ public class MatrixInverseOperation_Editor extends DefaultNodeEditor {
       return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
     } else
     return editorCell;
-  }
-
-  public static class _Inline_j4oyiy_a1a extends InlineCellProvider {
-    public _Inline_j4oyiy_a1a() {
-      super();
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return this.createEditorCell(editorContext, this.getSNode());
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createComponent_j4oyiy_a0b0(editorContext, node);
-    }
-
-    private EditorCell createComponent_j4oyiy_a0b0(EditorContext editorContext, SNode node) {
-      AbstractCellProvider provider = new MathContextEditorPart(node);
-      EditorCell editorCell = provider.createEditorCell(editorContext);
-      return editorCell;
-    }
   }
 }

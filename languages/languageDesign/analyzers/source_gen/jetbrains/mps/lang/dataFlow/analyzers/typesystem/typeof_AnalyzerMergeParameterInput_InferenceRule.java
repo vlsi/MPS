@@ -22,7 +22,7 @@ public class typeof_AnalyzerMergeParameterInput_InferenceRule extends AbstractIn
     {
       SNode _nodeToCheck_1029348928467 = input;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)", "9177062368042359803", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)", "9177062368042359800", true), (SNode) _quotation_createNode_rg9vlp_a0a0a(SLinkOperations.getTarget(SNodeOperations.getAncestor(input, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer", false, false), "latticeElementType", true)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)", "9177062368042359800", true), (SNode) _quotation_createNode_rg9vlp_a0a0b(SLinkOperations.getTarget(SNodeOperations.getAncestor(input, "jetbrains.mps.lang.dataFlow.analyzers.structure.Analyzer", false, false), "latticeElementType", true)), _info_12389875345);
     }
   }
 
@@ -41,7 +41,7 @@ public class typeof_AnalyzerMergeParameterInput_InferenceRule extends AbstractIn
     return false;
   }
 
-  private static SNode _quotation_createNode_rg9vlp_a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_rg9vlp_a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.ListType", null, null, GlobalScope.getInstance(), false);

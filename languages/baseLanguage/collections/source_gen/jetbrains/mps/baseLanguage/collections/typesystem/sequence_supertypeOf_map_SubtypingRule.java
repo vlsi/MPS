@@ -17,8 +17,8 @@ public class sequence_supertypeOf_map_SubtypingRule extends SubtypingRule_Runtim
   }
 
   public SNode getSubOrSuperType(SNode mapType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode mappingType = _quotation_createNode_cekk5b_a0a0a(SLinkOperations.getTarget(mapType, "keyType", true), SLinkOperations.getTarget(mapType, "valueType", true));
-    return _quotation_createNode_cekk5b_a1a0(mappingType);
+    SNode mappingType = _quotation_createNode_cekk5b_a0a0b(SLinkOperations.getTarget(mapType, "keyType", true), SLinkOperations.getTarget(mapType, "valueType", true));
+    return _quotation_createNode_cekk5b_a1a1(mappingType);
   }
 
   public String getApplicableConceptFQName() {
@@ -36,7 +36,7 @@ public class sequence_supertypeOf_map_SubtypingRule extends SubtypingRule_Runtim
     return false;
   }
 
-  private static SNode _quotation_createNode_cekk5b_a0a0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_cekk5b_a0a0b(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -52,7 +52,7 @@ public class sequence_supertypeOf_map_SubtypingRule extends SubtypingRule_Runtim
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_cekk5b_a1a0(Object parameter_1) {
+  private static SNode _quotation_createNode_cekk5b_a1a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);

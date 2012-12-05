@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.newTypesystem.state.blocks;
 
+import jetbrains.mps.newTypesystem.context.InferenceTypecheckingContext;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
@@ -62,7 +63,7 @@ public abstract class RelationBlock extends Block {
   }
 
   public boolean isCheckOnly() {
-    return !myState.getTypeCheckingContext().isInferenceMode() && myRelationKind.isCheckOnly();
+    return !(myState.getTypeCheckingContext() instanceof InferenceTypecheckingContext) && myRelationKind.isCheckOnly();
   }
 
   @Override

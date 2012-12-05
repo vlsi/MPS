@@ -21,7 +21,7 @@ public class DependenciesUtil {
     toScope.add(to);
 
     AnalyzeDependencies_Tool tool = project.getComponent(ProjectPluginManager.class).getTool(AnalyzeDependencies_Tool.class);
-    DependenciesPanel panel = as_ehks51_a0a6a0(tool.getComponent(), DependenciesPanel.class);
+    DependenciesPanel panel = as_ehks51_a0a6a1(tool.getComponent(), DependenciesPanel.class);
     panel.resetContent(fromScope, mpsProject, false);
     panel.selectInTargetsView(to);
     if (openTool) {
@@ -30,7 +30,7 @@ public class DependenciesUtil {
     return panel.updateReferencesView(toScope);
   }
 
-  private static <T> T as_ehks51_a0a6a0(Object o, Class<T> type) {
+  private static <T> T as_ehks51_a0a6a1(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

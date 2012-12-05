@@ -70,13 +70,6 @@ public class ChooseByNamePanel extends ChooseByNamePopup {
   }
 
   @Override
-  public void close(boolean isOk) {
-    for (Object element : getChosenElements()) {
-      myActionListener.elementChosen(element);
-    }
-  }
-
-  @Override
   protected boolean isShowListForEmptyPattern() {
     return true;
   }

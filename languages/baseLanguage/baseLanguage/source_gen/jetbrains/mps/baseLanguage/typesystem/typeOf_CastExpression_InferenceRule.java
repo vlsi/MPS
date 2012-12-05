@@ -12,6 +12,7 @@ import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class typeOf_CastExpression_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeOf_CastExpression_InferenceRule() {
@@ -27,7 +28,7 @@ public class typeOf_CastExpression_InferenceRule extends AbstractInferenceRule_R
       }
 
       if (SNodeOperations.isInstanceOf(castType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-        castType = _quotation_createNode_sr53ct_a0a0d0a0a(SLinkOperations.getTarget(SNodeOperations.cast(castType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
+        castType = _quotation_createNode_sr53ct_a0a0d0a0b(SLinkOperations.getTarget(SNodeOperations.cast(castType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false));
       }
       {
         SNode _nodeToCheck_1029348928467 = castExpression;
@@ -52,10 +53,10 @@ public class typeOf_CastExpression_InferenceRule extends AbstractInferenceRule_R
     return false;
   }
 
-  private static SNode _quotation_createNode_sr53ct_a0a0d0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_sr53ct_a0a0d0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("classifier", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "classifier", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

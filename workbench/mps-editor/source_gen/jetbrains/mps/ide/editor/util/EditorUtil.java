@@ -9,6 +9,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.util.MacrosFactory;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.io.File;
 import javax.swing.JButton;
 import javax.swing.AbstractAction;
@@ -35,17 +36,17 @@ public class EditorUtil {
 
     return createSelectButton(sourceNode, propertyName, context, true, new _FunctionTypes._return_P1_E0<String, String>() {
       public String invoke(String fullPath) {
-        return check_3m4h3r_a0a4a2a1(MacrosFactory.forModuleFile(module.getDescriptorFile()), fullPath);
+        return check_3m4h3r_a0a4a2a2(MacrosFactory.forModuleFile(module.getDescriptorFile()), fullPath);
       }
     }, new _FunctionTypes._return_P1_E0<String, String>() {
       public String invoke(String shortPath) {
-        return check_3m4h3r_a0a5a2a1(MacrosFactory.forModuleFile(module.getDescriptorFile()), shortPath);
+        return check_3m4h3r_a0a5a2a2(MacrosFactory.forModuleFile(module.getDescriptorFile()), shortPath);
       }
     });
   }
 
   public static JComponent createSelectButton(final SNode sourceNode, final String propertyName, final EditorContext context, final boolean files, @NotNull final _FunctionTypes._return_P1_E0<? extends String, ? super String> shrinkPath, @NotNull _FunctionTypes._return_P1_E0<? extends String, ? super String> expandPath) {
-    String filename = expandPath.invoke(sourceNode.getProperty(propertyName));
+    String filename = expandPath.invoke(SNodeAccessUtil.getProperty(sourceNode, propertyName));
     final File baseFile = (filename == null ?
       null :
       new File(filename)
@@ -74,7 +75,7 @@ public class EditorUtil {
         final String pathToShow = shrinkPath.invoke(result.getPath());
         ModelAccess.instance().runWriteActionInCommand(new Runnable() {
           public void run() {
-            sourceNode.setProperty(propertyName, pathToShow);
+            SNodeAccessUtil.setProperty(sourceNode, propertyName, pathToShow);
           }
         });
       }
@@ -82,14 +83,14 @@ public class EditorUtil {
     return button;
   }
 
-  private static String check_3m4h3r_a0a4a2a1(MacroHelper checkedDotOperand, String fullPath) {
+  private static String check_3m4h3r_a0a4a2a2(MacroHelper checkedDotOperand, String fullPath) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.shrinkPath(fullPath);
     }
     return null;
   }
 
-  private static String check_3m4h3r_a0a5a2a1(MacroHelper checkedDotOperand, String shortPath) {
+  private static String check_3m4h3r_a0a5a2a2(MacroHelper checkedDotOperand, String shortPath) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.expandPath(shortPath);
     }

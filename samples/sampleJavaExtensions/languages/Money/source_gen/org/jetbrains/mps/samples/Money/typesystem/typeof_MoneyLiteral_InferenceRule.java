@@ -19,7 +19,7 @@ public class typeof_MoneyLiteral_InferenceRule extends AbstractInferenceRule_Run
     {
       SNode _nodeToCheck_1029348928467 = ml;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)", "5447719361346490740", 0, null);
-      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)", "5447719361346490737", true), (SNode) _quotation_createNode_1il3t_a0a0a(), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:0c486cb8-8265-4e9d-90e8-118f83fd1147(org.jetbrains.mps.samples.Money.typesystem)", "5447719361346490737", true), (SNode) _quotation_createNode_1il3t_a0a0b(), false, true, _info_12389875345);
     }
   }
 
@@ -38,7 +38,7 @@ public class typeof_MoneyLiteral_InferenceRule extends AbstractInferenceRule_Run
     return false;
   }
 
-  private static SNode _quotation_createNode_1il3t_a0a0a() {
+  private static SNode _quotation_createNode_1il3t_a0a0b() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("org.jetbrains.mps.samples.Money.structure.MoneyType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

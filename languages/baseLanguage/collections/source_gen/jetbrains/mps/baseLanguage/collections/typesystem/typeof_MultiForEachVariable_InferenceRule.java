@@ -24,7 +24,7 @@ public class typeof_MultiForEachVariable_InferenceRule extends AbstractInference
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(mfv), "jetbrains.mps.baseLanguage.collections.structure.MultiForEachPair"), "input", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7668447476859120466", 0, null);
-        typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_gk7o1k_a0b0a0a(typeCheckingContext.getRepresentative(INPUT_typevar_8293956702610254515)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "8293956702610249719", true), false, true, _info_12389875345);
+        typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_gk7o1k_a0b0a0b(typeCheckingContext.getRepresentative(INPUT_typevar_8293956702610254515)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "8293956702610249719", true), false, true, _info_12389875345);
       }
       {
         SNode _nodeToCheck_1029348928467 = mfv;
@@ -49,7 +49,7 @@ public class typeof_MultiForEachVariable_InferenceRule extends AbstractInference
     return false;
   }
 
-  private static SNode _quotation_createNode_gk7o1k_a0b0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_gk7o1k_a0b0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.collections.structure.SequenceType", null, null, GlobalScope.getInstance(), false);

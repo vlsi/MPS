@@ -8,12 +8,12 @@ import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
+import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.lang.pattern.IMatchingPattern;
 
 public class supertypesOf_SNodeType_BaseConcept_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern;
@@ -22,7 +22,7 @@ public class supertypesOf_SNodeType_BaseConcept_SubtypingRule extends SubtypingR
   }
 
   public SNode getSubOrSuperType(SNode nodeType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_7ci8rs_a0a0();
+    return _quotation_createNode_7ci8rs_a0a2();
   }
 
   public String getApplicableConceptFQName() {
@@ -31,7 +31,7 @@ public class supertypesOf_SNodeType_BaseConcept_SubtypingRule extends SubtypingR
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      GeneratedMatchingPattern pattern = new supertypesOf_SNodeType_BaseConcept_SubtypingRule.Pattern_7ci8rs_a0a0a0a2();
+      GeneratedMatchingPattern pattern = new supertypesOf_SNodeType_BaseConcept_SubtypingRule.Pattern_7ci8rs_a0a0a0a4();
       this.myMatchingPattern = pattern;
       boolean b = pattern.match(argument);
       return new IsApplicableStatus(b, pattern);
@@ -46,15 +46,8 @@ public class supertypesOf_SNodeType_BaseConcept_SubtypingRule extends SubtypingR
     return true;
   }
 
-  private static SNode _quotation_createNode_7ci8rs_a0a0() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1133920641626")));
-    return quotedNode_1;
-  }
-
-  public static class Pattern_7ci8rs_a0a0a0a2 extends GeneratedMatchingPattern implements IMatchingPattern {
-    public Pattern_7ci8rs_a0a0a0a2() {
+  public static class Pattern_7ci8rs_a0a0a0a4 extends GeneratedMatchingPattern implements IMatchingPattern {
+    public Pattern_7ci8rs_a0a0a0a4() {
     }
 
     public boolean match(SNode nodeToMatch) {
@@ -81,5 +74,12 @@ public class supertypesOf_SNodeType_BaseConcept_SubtypingRule extends SubtypingR
 
     public void performActions(Object o) {
     }
+  }
+
+  private static SNode _quotation_createNode_7ci8rs_a0a2() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_1.setReference("concept", SReference.create("concept", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)"), SNodeId.fromString("1133920641626")));
+    return quotedNode_1;
   }
 }

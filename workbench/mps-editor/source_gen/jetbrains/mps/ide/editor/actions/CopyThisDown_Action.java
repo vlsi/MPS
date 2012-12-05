@@ -4,7 +4,6 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -19,10 +18,10 @@ import java.util.ArrayList;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.logging.Logger;
 
 public class CopyThisDown_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(CopyThisDown_Action.class);
 
   public CopyThisDown_Action() {
     super("Duplicate Node", "", ICON);
@@ -115,4 +114,6 @@ public class CopyThisDown_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "CopyThisDown", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(CopyThisDown_Action.class);
 }

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="208ous0nuihxx2rxzchjwx28308rrsn">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-uvseejb8lftjizgrik03igcx568a80" />
+<dependencies version="2" modelHash="-c7bazs7b9j2w8ifl3g1dt3dj9icitfo">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-87z6bgddy8ivkyr9ddyvqnv3hm4pw2y" />
   <common hash="e3i4tbq79snjq4aok43cq5z0z2vx781" />
-  <source id="4871586248217809898" name="TransformatorBuilder" hash="dszhpwhl9f7flpa4s4iv2ypmx99vwsc">
+  <source id="4871586248217809898" name="TransformatorBuilder" hash="85c2yp9ekef741m7il7nyr10r0m2iyl">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="TransformatorBuilder.java" />
   </source>

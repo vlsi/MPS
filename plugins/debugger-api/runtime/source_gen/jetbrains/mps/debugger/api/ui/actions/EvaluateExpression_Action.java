@@ -5,8 +5,6 @@ package jetbrains.mps.debugger.api.ui.actions;
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -30,10 +28,11 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.IOperationContext;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class EvaluateExpression_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("evaluate.png");
-  protected static Log log = LogFactory.getLog(EvaluateExpression_Action.class);
 
   public EvaluateExpression_Action() {
     super("Evaluate Expression", "", ICON);
@@ -103,4 +102,6 @@ public class EvaluateExpression_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(EvaluateExpression_Action.class);
 }

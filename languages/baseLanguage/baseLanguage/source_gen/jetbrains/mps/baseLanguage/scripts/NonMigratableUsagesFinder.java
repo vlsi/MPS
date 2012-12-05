@@ -11,9 +11,9 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -49,7 +49,7 @@ public class NonMigratableUsagesFinder {
   public static boolean isExcluded(SNode nodeUsage) {
     SNode root = SNodeOperations.getContainingRoot(nodeUsage);
 
-    if (SNodeOperations.getNode("r:dfc27cab-2d08-4c79-ac99-e95209e18392(jetbrains.mps.baseLanguage.pluginSolution.plugin)", "5909355414823772787") == root) {
+    if ("FindNotMigratableLinks".equals(SPropertyOperations.getString(SNodeOperations.as(root, "jetbrains.mps.lang.core.structure.INamedConcept"), "name"))) {
       return true;
     }
     if (SNodeOperations.getAncestor(nodeUsage, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", false, false) == ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)", "1213877306256"), "method", true)).findFirst(new IWhereFilter<SNode>() {

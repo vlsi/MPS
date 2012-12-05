@@ -15,6 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public supertypesOf_SNodeType_SNodeType_SubtypingRule() {
@@ -27,9 +28,9 @@ public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRul
     if (concept != null && SNodeOperations.isInstanceOf(concept, "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration")) {
       List<SNode> superConcepts = SConceptOperations.getDirectSuperConcepts(concept, false);
       for (SNode superConcept : ListSequence.fromList(superConcepts)) {
-        ListSequence.fromList(list).addElement(_quotation_createNode_c3i5bo_a0a0a1a3a0(superConcept));
+        ListSequence.fromList(list).addElement(_quotation_createNode_c3i5bo_a0a0a1a3a1(superConcept));
       }
-      ListSequence.fromList(list).addElement(_quotation_createNode_c3i5bo_a0a2a3a0());
+      ListSequence.fromList(list).addElement(_quotation_createNode_c3i5bo_a0a2a3a1());
     }
     return list;
   }
@@ -49,14 +50,14 @@ public class supertypesOf_SNodeType_SNodeType_SubtypingRule extends SubtypingRul
     return false;
   }
 
-  private static SNode _quotation_createNode_c3i5bo_a0a0a1a3a0(Object parameter_1) {
+  private static SNode _quotation_createNode_c3i5bo_a0a0a1a3a1(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_c3i5bo_a0a2a3a0() {
+  private static SNode _quotation_createNode_c3i5bo_a0a2a3a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

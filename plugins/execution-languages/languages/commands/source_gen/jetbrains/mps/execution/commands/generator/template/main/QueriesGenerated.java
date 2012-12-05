@@ -33,6 +33,7 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
@@ -68,8 +69,8 @@ public class QueriesGenerated {
     return CommandDeclaration_Behavior.getGetDebuggerMethodName_856705193941282096();
   }
 
-  public static Object propertyMacro_GetPropertyValue_865001690840233113(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return CommandDeclaration_Behavior.getGetDebuggerMethodName_856705193941282096();
+  public static Object propertyMacro_GetPropertyValue_865001690840233190(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGeneratedClassName_946964771156905488", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_865001690840232963(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -92,12 +93,12 @@ public class QueriesGenerated {
     return CommandDeclaration_Behavior.getCreateProcessMethodName_856705193941282090();
   }
 
-  public static Object propertyMacro_GetPropertyValue_865001690840233169(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
+  public static Object propertyMacro_GetPropertyValue_865001690840233113(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return CommandDeclaration_Behavior.getGetDebuggerMethodName_856705193941282096();
   }
 
-  public static Object propertyMacro_GetPropertyValue_865001690840233190(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGeneratedClassName_946964771156905488", new Object[]{});
+  public static Object propertyMacro_GetPropertyValue_865001690840233169(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
   public static Object propertyMacro_GetPropertyValue_6226796386650472933(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -153,16 +154,16 @@ public class QueriesGenerated {
     return !(ExplicitCommandParameterDeclaration_Behavior.call_isRequired_856705193941282030(SLinkOperations.getTarget(_context.getNode(), "parameter", false)));
   }
 
-  public static boolean ifMacro_Condition_865001690840233106(final IOperationContext operationContext, final IfMacroContext _context) {
-    return CommandDeclaration_Behavior.call_isDebuggable_856705193941282102(_context.getNode());
-  }
-
   public static boolean ifMacro_Condition_865001690840232971(final IOperationContext operationContext, final IfMacroContext _context) {
     return (SLinkOperations.getTarget(_context.getNode(), "initializer", true) != null);
   }
 
   public static boolean ifMacro_Condition_357096973092207652(final IOperationContext operationContext, final IfMacroContext _context) {
-    return TypeChecker.getInstance().getSubtypingManager().isComparable(SLinkOperations.getTarget(_context.getNode(), "type", true), _quotation_createNode_x583g4_b0a0a92(), true);
+    return TypeChecker.getInstance().getSubtypingManager().isComparable(SLinkOperations.getTarget(_context.getNode(), "type", true), _quotation_createNode_x583g4_b0a0a82(), true);
+  }
+
+  public static boolean ifMacro_Condition_865001690840233106(final IOperationContext operationContext, final IfMacroContext _context) {
+    return CommandDeclaration_Behavior.call_isDebuggable_856705193941282102(_context.getNode());
   }
 
   public static boolean ifMacro_Condition_4675583320452238291(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -505,7 +506,7 @@ public class QueriesGenerated {
     }
   }
 
-  private static SNode _quotation_createNode_x583g4_b0a0a92() {
+  private static SNode _quotation_createNode_x583g4_b0a0a82() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
@@ -514,14 +515,14 @@ public class QueriesGenerated {
   private static SNode _quotation_createNode_x583g4_a0a0ed(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalNewExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("fqClassName", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_2, "fqClassName", (String) parameter_1);
     return quotedNode_2;
   }
 
   private static SNode _quotation_createNode_x583g4_a0a0b0ed(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("variableDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
 
@@ -538,7 +539,7 @@ public class QueriesGenerated {
       quotedNode_4.addChild("operand", HUtil.copyIfNecessary(quotedNode_5));
     }
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalPartialInstanceMethodCall", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6.setProperty("methodName", (String) parameter_3);
+    SNodeAccessUtil.setProperty(quotedNode_6, "methodName", (String) parameter_3);
     quotedNode_8 = (SNode) parameter_2;
     if (quotedNode_8 != null) {
       quotedNode_6.addChild("actualArgument", HUtil.copyIfNecessary(quotedNode_8));
@@ -554,8 +555,8 @@ public class QueriesGenerated {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("fqClassName", (String) parameter_1);
-    quotedNode_3.setProperty("methodName", (String) parameter_2);
+    SNodeAccessUtil.setProperty(quotedNode_3, "fqClassName", (String) parameter_1);
+    SNodeAccessUtil.setProperty(quotedNode_3, "methodName", (String) parameter_2);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
     quotedNode_4.setReference("classifier", SReference.create("classifier", quotedNode_4, SModelReference.fromString("r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)"), SNodeId.fromString("4474271214082912941")));
     quotedNode_3.addChild("returnType", quotedNode_4);
@@ -567,8 +568,8 @@ public class QueriesGenerated {
     SNode quotedNode_6 = null;
     SNode quotedNode_7 = null;
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguageInternal.structure.InternalStaticMethodCall", null, null, GlobalScope.getInstance(), false);
-    quotedNode_5.setProperty("fqClassName", (String) parameter_4);
-    quotedNode_5.setProperty("methodName", (String) parameter_3);
+    SNodeAccessUtil.setProperty(quotedNode_5, "fqClassName", (String) parameter_4);
+    SNodeAccessUtil.setProperty(quotedNode_5, "methodName", (String) parameter_3);
     {
       List<SNode> nodes = (List<SNode>) parameter_1;
       for (SNode child : nodes) {
@@ -595,7 +596,7 @@ public class QueriesGenerated {
   private static SNode _quotation_createNode_x583g4_a0a0b0fd(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableReference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("variableDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "variableDeclaration", (SNode) parameter_1);
     return quotedNode_2;
   }
 
@@ -624,7 +625,7 @@ public class QueriesGenerated {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.commands.structure.CommandParameterAssignment", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReferenceTarget("parameterDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "parameterDeclaration", (SNode) parameter_1);
     quotedNode_4 = (SNode) parameter_2;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("value", HUtil.copyIfNecessary(quotedNode_4));

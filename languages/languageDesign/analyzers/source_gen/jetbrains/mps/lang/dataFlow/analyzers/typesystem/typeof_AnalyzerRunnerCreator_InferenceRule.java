@@ -24,7 +24,7 @@ public class typeof_AnalyzerRunnerCreator_InferenceRule extends AbstractInferenc
     {
       SNode _nodeToCheck_1029348928467 = analyzerRunnerCreator;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)", "178770917832644953", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)", "178770917832644950", true), (SNode) _quotation_createNode_tazfkf_a0a0a(SLinkOperations.getTarget(SLinkOperations.getTarget(analyzerRunnerCreator, "analyzer", false), "latticeElementType", true)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:139daa25-c5a7-4ac9-85a2-eb14d22e8f56(jetbrains.mps.lang.dataFlow.analyzers.typesystem)", "178770917832644950", true), (SNode) _quotation_createNode_tazfkf_a0a0b(SLinkOperations.getTarget(SLinkOperations.getTarget(analyzerRunnerCreator, "analyzer", false), "latticeElementType", true)), _info_12389875345);
     }
   }
 
@@ -43,7 +43,7 @@ public class typeof_AnalyzerRunnerCreator_InferenceRule extends AbstractInferenc
     return false;
   }
 
-  private static SNode _quotation_createNode_tazfkf_a0a0a(Object parameter_1) {
+  private static SNode _quotation_createNode_tazfkf_a0a0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);

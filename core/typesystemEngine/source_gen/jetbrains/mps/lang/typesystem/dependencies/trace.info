@@ -1,43 +1,42 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1194533670612" modelId="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)">
-    <nodeInfo nodeId="1194537616584" fileName="DependenciesCollector.java" startLine="25" startPosition="120" endLine="26" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1194537876793" fileName="DependenciesCollector.java" startLine="28" startPosition="156" endLine="29" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1194538029691" fileName="DependenciesCollector.java" startLine="31" startPosition="5" endLine="32" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1194616796235" fileName="DependenciesCollector.java" startLine="32" startPosition="91" endLine="33" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1194608829844" fileName="DependenciesCollector.java" startLine="34" startPosition="30" endLine="35" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1194538047306" fileName="DependenciesCollector.java" startLine="37" startPosition="148" endLine="38" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1194617147456" fileName="DependenciesCollector.java" startLine="38" startPosition="89" endLine="39" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1194538105510" fileName="DependenciesCollector.java" startLine="40" startPosition="122" endLine="41" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1194538774943" fileName="DependenciesCollector.java" startLine="42" startPosition="9" endLine="43" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="44" startPosition="11" endLine="45" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="46" startPosition="13" endLine="47" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="48" startPosition="57" endLine="49" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1194618347983" fileName="DependenciesCollector.java" startLine="53" startPosition="65" endLine="54" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="56" startPosition="20" endLine="57" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="58" startPosition="15" endLine="59" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="60" startPosition="59" endLine="61" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1194538998800" fileName="DependenciesCollector.java" startLine="65" startPosition="100" endLine="66" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="68" startPosition="22" endLine="69" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="70" startPosition="17" endLine="71" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="72" startPosition="61" endLine="73" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1194964769878" fileName="DependenciesCollector.java" startLine="77" startPosition="107" endLine="78" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1194966957317" fileName="DependenciesCollector.java" startLine="80" startPosition="24" endLine="81" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="82" startPosition="19" endLine="83" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="84" startPosition="21" endLine="85" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="86" startPosition="66" endLine="87" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1194966986146" fileName="DependenciesCollector.java" startLine="92" startPosition="113" endLine="93" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="96" startPosition="28" endLine="97" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="98" startPosition="23" endLine="99" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="100" startPosition="68" endLine="101" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1194967022395" fileName="DependenciesCollector.java" startLine="105" startPosition="25" endLine="106" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1194967769877" fileName="DependenciesCollector.java" startLine="108" startPosition="142" endLine="109" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1194968406529" fileName="DependenciesCollector.java" startLine="109" startPosition="173" endLine="110" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1194968586061" fileName="DependenciesCollector.java" startLine="111" startPosition="125" endLine="112" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1194969905282" fileName="DependenciesCollector.java" startLine="115" startPosition="63" endLine="116" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1194970183958" fileName="DependenciesCollector.java" startLine="119" startPosition="142" endLine="120" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="137" startPosition="80" endLine="138" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="138" startPosition="30" endLine="139" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194537616584" fileName="DependenciesCollector.java" startLine="26" startPosition="120" endLine="27" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194537876793" fileName="DependenciesCollector.java" startLine="29" startPosition="156" endLine="30" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1194538029691" fileName="DependenciesCollector.java" startLine="32" startPosition="5" endLine="33" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194616796235" fileName="DependenciesCollector.java" startLine="33" startPosition="91" endLine="34" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194608829844" fileName="DependenciesCollector.java" startLine="35" startPosition="30" endLine="36" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1194538047306" fileName="DependenciesCollector.java" startLine="38" startPosition="148" endLine="39" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1194617147456" fileName="DependenciesCollector.java" startLine="39" startPosition="89" endLine="40" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1194538105510" fileName="DependenciesCollector.java" startLine="41" startPosition="122" endLine="42" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194538774943" fileName="DependenciesCollector.java" startLine="43" startPosition="9" endLine="44" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="45" startPosition="11" endLine="46" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="47" startPosition="13" endLine="48" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="49" startPosition="57" endLine="50" endPosition="188" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1194618347983" fileName="DependenciesCollector.java" startLine="54" startPosition="65" endLine="55" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="57" startPosition="20" endLine="58" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="59" startPosition="15" endLine="60" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="61" startPosition="59" endLine="62" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1194538998800" fileName="DependenciesCollector.java" startLine="66" startPosition="100" endLine="67" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="69" startPosition="22" endLine="70" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="71" startPosition="17" endLine="72" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="73" startPosition="61" endLine="74" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1194964769878" fileName="DependenciesCollector.java" startLine="78" startPosition="107" endLine="79" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1194966957317" fileName="DependenciesCollector.java" startLine="81" startPosition="24" endLine="82" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="83" startPosition="19" endLine="84" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="85" startPosition="21" endLine="86" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="87" startPosition="66" endLine="88" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1194966986146" fileName="DependenciesCollector.java" startLine="93" startPosition="113" endLine="94" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="97" startPosition="28" endLine="98" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="99" startPosition="23" endLine="100" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="101" startPosition="68" endLine="102" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1194967022395" fileName="DependenciesCollector.java" startLine="106" startPosition="25" endLine="107" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194967769877" fileName="DependenciesCollector.java" startLine="109" startPosition="142" endLine="110" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194968406529" fileName="DependenciesCollector.java" startLine="110" startPosition="173" endLine="111" endPosition="156" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1194968586061" fileName="DependenciesCollector.java" startLine="112" startPosition="125" endLine="113" endPosition="157" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1194969905282" fileName="DependenciesCollector.java" startLine="116" startPosition="63" endLine="117" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1194970183958" fileName="DependenciesCollector.java" startLine="120" startPosition="142" endLine="121" endPosition="183" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="138" startPosition="80" endLine="139" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="139" startPosition="30" endLine="140" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="140" startPosition="30" endLine="141" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="141" startPosition="30" endLine="142" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -45,33 +44,33 @@
     <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="143" startPosition="30" endLine="144" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="144" startPosition="30" endLine="145" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="145" startPosition="30" endLine="146" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="146" startPosition="30" endLine="147" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="147" startPosition="31" endLine="148" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="148" startPosition="176" endLine="149" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="149" startPosition="48" endLine="150" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="150" startPosition="167" endLine="151" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="151" startPosition="54" endLine="152" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="152" startPosition="159" endLine="153" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="153" startPosition="54" endLine="154" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="154" startPosition="171" endLine="155" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="155" startPosition="51" endLine="156" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="156" startPosition="159" endLine="157" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="157" startPosition="48" endLine="158" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="158" startPosition="53" endLine="159" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="159" startPosition="164" endLine="160" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="160" startPosition="170" endLine="161" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="161" startPosition="171" endLine="162" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="162" startPosition="169" endLine="163" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="163" startPosition="50" endLine="164" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="164" startPosition="170" endLine="165" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="165" startPosition="51" endLine="166" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="166" startPosition="54" endLine="167" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="167" startPosition="53" endLine="168" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="168" startPosition="48" endLine="169" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="169" startPosition="73" endLine="170" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="170" startPosition="74" endLine="171" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="174" startPosition="83" endLine="175" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="175" startPosition="30" endLine="176" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="146" startPosition="30" endLine="147" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="147" startPosition="30" endLine="148" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="148" startPosition="31" endLine="149" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="149" startPosition="176" endLine="150" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="150" startPosition="65" endLine="151" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="151" startPosition="167" endLine="152" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="152" startPosition="54" endLine="153" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="153" startPosition="159" endLine="154" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="154" startPosition="54" endLine="155" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="155" startPosition="171" endLine="156" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="156" startPosition="68" endLine="157" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="157" startPosition="159" endLine="158" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="158" startPosition="48" endLine="159" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="159" startPosition="53" endLine="160" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="160" startPosition="164" endLine="161" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="161" startPosition="170" endLine="162" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="162" startPosition="171" endLine="163" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="163" startPosition="169" endLine="164" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="164" startPosition="50" endLine="165" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="165" startPosition="170" endLine="166" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="166" startPosition="51" endLine="167" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="167" startPosition="54" endLine="168" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="168" startPosition="53" endLine="169" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="169" startPosition="48" endLine="170" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="170" startPosition="90" endLine="171" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="171" startPosition="91" endLine="172" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="175" startPosition="83" endLine="176" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="176" startPosition="30" endLine="177" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="177" startPosition="30" endLine="178" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="178" startPosition="30" endLine="179" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -79,33 +78,33 @@
     <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="180" startPosition="30" endLine="181" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="181" startPosition="30" endLine="182" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="182" startPosition="30" endLine="183" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="183" startPosition="30" endLine="184" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="184" startPosition="31" endLine="185" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="185" startPosition="176" endLine="186" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="186" startPosition="48" endLine="187" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="187" startPosition="167" endLine="188" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="188" startPosition="54" endLine="189" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="189" startPosition="159" endLine="190" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="190" startPosition="54" endLine="191" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="191" startPosition="171" endLine="192" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="192" startPosition="51" endLine="193" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="193" startPosition="159" endLine="194" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="194" startPosition="48" endLine="195" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="195" startPosition="53" endLine="196" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="196" startPosition="164" endLine="197" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="197" startPosition="170" endLine="198" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="198" startPosition="171" endLine="199" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="199" startPosition="169" endLine="200" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="200" startPosition="50" endLine="201" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="201" startPosition="170" endLine="202" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="202" startPosition="51" endLine="203" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="203" startPosition="54" endLine="204" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="204" startPosition="53" endLine="205" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="205" startPosition="48" endLine="206" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="206" startPosition="73" endLine="207" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="207" startPosition="74" endLine="208" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="211" startPosition="90" endLine="212" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="212" startPosition="30" endLine="213" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="183" startPosition="30" endLine="184" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="184" startPosition="30" endLine="185" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="185" startPosition="31" endLine="186" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="186" startPosition="176" endLine="187" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="187" startPosition="65" endLine="188" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="188" startPosition="167" endLine="189" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="189" startPosition="54" endLine="190" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="190" startPosition="159" endLine="191" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="191" startPosition="54" endLine="192" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="192" startPosition="171" endLine="193" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="193" startPosition="68" endLine="194" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="194" startPosition="159" endLine="195" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="195" startPosition="48" endLine="196" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="196" startPosition="53" endLine="197" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="197" startPosition="164" endLine="198" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="198" startPosition="170" endLine="199" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="199" startPosition="171" endLine="200" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="200" startPosition="169" endLine="201" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="201" startPosition="50" endLine="202" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="202" startPosition="170" endLine="203" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="203" startPosition="51" endLine="204" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="204" startPosition="54" endLine="205" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="205" startPosition="53" endLine="206" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="206" startPosition="48" endLine="207" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="207" startPosition="90" endLine="208" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="208" startPosition="91" endLine="209" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="212" startPosition="90" endLine="213" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="213" startPosition="30" endLine="214" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="214" startPosition="30" endLine="215" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="215" startPosition="30" endLine="216" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -113,33 +112,33 @@
     <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="217" startPosition="30" endLine="218" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="218" startPosition="30" endLine="219" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="219" startPosition="30" endLine="220" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="220" startPosition="30" endLine="221" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="221" startPosition="31" endLine="222" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="222" startPosition="176" endLine="223" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="223" startPosition="48" endLine="224" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="224" startPosition="167" endLine="225" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="225" startPosition="54" endLine="226" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="226" startPosition="159" endLine="227" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="227" startPosition="54" endLine="228" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="228" startPosition="171" endLine="229" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="229" startPosition="51" endLine="230" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="230" startPosition="159" endLine="231" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="231" startPosition="48" endLine="232" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="232" startPosition="53" endLine="233" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="233" startPosition="164" endLine="234" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="234" startPosition="170" endLine="235" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="235" startPosition="171" endLine="236" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="236" startPosition="169" endLine="237" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="237" startPosition="50" endLine="238" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="238" startPosition="170" endLine="239" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="239" startPosition="51" endLine="240" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="240" startPosition="54" endLine="241" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="241" startPosition="53" endLine="242" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="242" startPosition="48" endLine="243" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="243" startPosition="73" endLine="244" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="244" startPosition="74" endLine="245" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="248" startPosition="95" endLine="249" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="249" startPosition="30" endLine="250" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="220" startPosition="30" endLine="221" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="221" startPosition="30" endLine="222" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="222" startPosition="31" endLine="223" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="223" startPosition="176" endLine="224" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="224" startPosition="65" endLine="225" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="225" startPosition="167" endLine="226" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="226" startPosition="54" endLine="227" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="227" startPosition="159" endLine="228" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="228" startPosition="54" endLine="229" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="229" startPosition="171" endLine="230" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="230" startPosition="68" endLine="231" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="231" startPosition="159" endLine="232" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="232" startPosition="48" endLine="233" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="233" startPosition="53" endLine="234" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="234" startPosition="164" endLine="235" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="235" startPosition="170" endLine="236" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="236" startPosition="171" endLine="237" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="237" startPosition="169" endLine="238" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="238" startPosition="50" endLine="239" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="239" startPosition="170" endLine="240" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="240" startPosition="51" endLine="241" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="241" startPosition="54" endLine="242" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="242" startPosition="53" endLine="243" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="243" startPosition="48" endLine="244" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="244" startPosition="90" endLine="245" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="245" startPosition="91" endLine="246" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="249" startPosition="95" endLine="250" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="250" startPosition="30" endLine="251" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="251" startPosition="30" endLine="252" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="252" startPosition="30" endLine="253" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -147,270 +146,271 @@
     <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="254" startPosition="30" endLine="255" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="255" startPosition="30" endLine="256" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="256" startPosition="30" endLine="257" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="257" startPosition="30" endLine="258" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="258" startPosition="31" endLine="259" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="259" startPosition="176" endLine="260" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="260" startPosition="48" endLine="261" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="261" startPosition="167" endLine="262" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="262" startPosition="54" endLine="263" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="263" startPosition="159" endLine="264" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="264" startPosition="54" endLine="265" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="265" startPosition="171" endLine="266" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="266" startPosition="51" endLine="267" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="267" startPosition="159" endLine="268" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="268" startPosition="48" endLine="269" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="269" startPosition="53" endLine="270" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="270" startPosition="164" endLine="271" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="271" startPosition="170" endLine="272" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="272" startPosition="171" endLine="273" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="273" startPosition="169" endLine="274" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="274" startPosition="50" endLine="275" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="275" startPosition="170" endLine="276" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="276" startPosition="51" endLine="277" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="277" startPosition="54" endLine="278" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="278" startPosition="53" endLine="279" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="279" startPosition="48" endLine="280" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="280" startPosition="73" endLine="281" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="281" startPosition="74" endLine="282" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1194870678778" fileName="DependenciesCollector.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DependenciesCollector#()V" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="149" startPosition="48" endLine="151" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="149" startPosition="48" endLine="151" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="151" startPosition="54" endLine="153" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="151" startPosition="54" endLine="153" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="155" startPosition="51" endLine="157" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="155" startPosition="51" endLine="157" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="161" startPosition="171" endLine="163" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="161" startPosition="171" endLine="163" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="163" startPosition="50" endLine="165" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="163" startPosition="50" endLine="165" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="186" startPosition="48" endLine="188" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="186" startPosition="48" endLine="188" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="188" startPosition="54" endLine="190" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="188" startPosition="54" endLine="190" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="192" startPosition="51" endLine="194" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="192" startPosition="51" endLine="194" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="198" startPosition="171" endLine="200" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="198" startPosition="171" endLine="200" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="200" startPosition="50" endLine="202" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="200" startPosition="50" endLine="202" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="223" startPosition="48" endLine="225" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="223" startPosition="48" endLine="225" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="225" startPosition="54" endLine="227" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="225" startPosition="54" endLine="227" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="229" startPosition="51" endLine="231" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="229" startPosition="51" endLine="231" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="235" startPosition="171" endLine="237" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="235" startPosition="171" endLine="237" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="237" startPosition="50" endLine="239" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="237" startPosition="50" endLine="239" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="260" startPosition="48" endLine="262" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="260" startPosition="48" endLine="262" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="262" startPosition="54" endLine="264" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="262" startPosition="54" endLine="264" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="266" startPosition="51" endLine="268" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="266" startPosition="51" endLine="268" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="272" startPosition="171" endLine="274" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="272" startPosition="171" endLine="274" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="274" startPosition="50" endLine="276" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="274" startPosition="50" endLine="276" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1194537417411" fileName="DependenciesCollector.java" startLine="27" startPosition="179" endLine="30" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1194608818461" fileName="DependenciesCollector.java" startLine="33" startPosition="57" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="47" startPosition="58" endLine="50" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="52" startPosition="42" endLine="55" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1194618326050" fileName="DependenciesCollector.java" startLine="52" startPosition="42" endLine="55" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="59" startPosition="60" endLine="62" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="64" startPosition="44" endLine="67" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1194538998798" fileName="DependenciesCollector.java" startLine="64" startPosition="44" endLine="67" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="71" startPosition="62" endLine="74" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="76" startPosition="46" endLine="79" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1194964536844" fileName="DependenciesCollector.java" startLine="76" startPosition="46" endLine="79" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="85" startPosition="65" endLine="88" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1194966986144" fileName="DependenciesCollector.java" startLine="91" startPosition="182" endLine="94" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="99" startPosition="67" endLine="102" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1194968562732" fileName="DependenciesCollector.java" startLine="110" startPosition="156" endLine="113" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1194969756459" fileName="DependenciesCollector.java" startLine="115" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="1194968619105" fileName="DependenciesCollector.java" startLine="118" startPosition="33" endLine="121" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1194536084807" fileName="DependenciesCollector.java" startLine="26" startPosition="65" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="90" startPosition="51" endLine="95" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1194966986142" fileName="DependenciesCollector.java" startLine="90" startPosition="51" endLine="95" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1194969730183" fileName="DependenciesCollector.java" startLine="113" startPosition="31" endLine="118" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="153" startPosition="54" endLine="158" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="153" startPosition="54" endLine="158" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="190" startPosition="54" endLine="195" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="190" startPosition="54" endLine="195" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="227" startPosition="54" endLine="232" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="227" startPosition="54" endLine="232" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="264" startPosition="54" endLine="269" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="264" startPosition="54" endLine="269" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="45" startPosition="52" endLine="51" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="57" startPosition="54" endLine="63" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="69" startPosition="56" endLine="75" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="83" startPosition="61" endLine="89" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="97" startPosition="63" endLine="103" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="160" startPosition="170" endLine="166" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="160" startPosition="170" endLine="166" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="197" startPosition="170" endLine="203" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="197" startPosition="170" endLine="203" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="234" startPosition="170" endLine="240" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="234" startPosition="170" endLine="240" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="271" startPosition="170" endLine="277" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="271" startPosition="170" endLine="277" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="159" startPosition="164" endLine="167" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="159" startPosition="164" endLine="167" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="196" startPosition="164" endLine="204" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="196" startPosition="164" endLine="204" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="233" startPosition="164" endLine="241" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="233" startPosition="164" endLine="241" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="270" startPosition="164" endLine="278" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="270" startPosition="164" endLine="278" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="158" startPosition="53" endLine="168" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="158" startPosition="53" endLine="168" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="195" startPosition="53" endLine="205" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="195" startPosition="53" endLine="205" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="232" startPosition="53" endLine="242" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="232" startPosition="53" endLine="242" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="269" startPosition="53" endLine="279" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="269" startPosition="53" endLine="279" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1194967102546" fileName="DependenciesCollector.java" startLine="107" startPosition="178" endLine="122" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1194967071234" fileName="DependenciesCollector.java" startLine="106" startPosition="139" endLine="123" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="104" startPosition="53" endLine="124" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="147" startPosition="31" endLine="168" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="147" startPosition="31" endLine="168" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="184" startPosition="31" endLine="205" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="184" startPosition="31" endLine="205" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="221" startPosition="31" endLine="242" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="221" startPosition="31" endLine="242" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="258" startPosition="31" endLine="279" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="258" startPosition="31" endLine="279" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="103" startPosition="23" endLine="125" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="96" startPosition="26" endLine="126" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="137" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_bcwvc2_b0a0a0a0a0c0a2a1a1a2a5a0#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="174" startPosition="0" endLine="210" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_bcwvc2_b0a0a0a0a0c0a2a0c0b0b0c0f0a#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="211" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_bcwvc2_b0a0a0a0a0a0c0b0a2a0c0a2a1a1a2a5a0#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="248" startPosition="0" endLine="284" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_bcwvc2_b0a0a0e0a0b0a0c0a2a1a0c0a2a0c0b0b0c0f0a#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="89" startPosition="21" endLine="126" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="81" startPosition="59" endLine="127" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1194966957317" fileName="DependenciesCollector.java" startLine="80" startPosition="22" endLine="128" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="75" startPosition="17" endLine="128" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="68" startPosition="20" endLine="129" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="63" startPosition="15" endLine="129" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="56" startPosition="18" endLine="130" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="51" startPosition="13" endLine="130" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="43" startPosition="52" endLine="131" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1194538774943" fileName="DependenciesCollector.java" startLine="41" startPosition="55" endLine="132" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1194538082892" fileName="DependenciesCollector.java" startLine="39" startPosition="55" endLine="133" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1194537984796" fileName="DependenciesCollector.java" startLine="36" startPosition="5" endLine="134" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1194535086641" fileName="DependenciesCollector.java" startLine="25" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectDependencies#(Ljetbrains/mps/smodel/SNode;Ljava/util/Map;Ljava/util/Set;)V" />
-    <scopeInfo nodeId="1194870678781" fileName="DependenciesCollector.java" startLine="22" startPosition="34" endLine="22" endPosition="34" />
-    <scopeInfo nodeId="1194537417413" fileName="DependenciesCollector.java" startLine="28" startPosition="156" endLine="29" endPosition="71" />
-    <scopeInfo nodeId="1194608818462" fileName="DependenciesCollector.java" startLine="34" startPosition="30" endLine="35" endPosition="56" />
-    <scopeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="48" startPosition="57" endLine="49" endPosition="188" />
-    <scopeInfo nodeId="1194618326051" fileName="DependenciesCollector.java" startLine="53" startPosition="65" endLine="54" endPosition="61" />
-    <scopeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="60" startPosition="59" endLine="61" endPosition="191" />
-    <scopeInfo nodeId="1194538998799" fileName="DependenciesCollector.java" startLine="65" startPosition="100" endLine="66" endPosition="214" />
-    <scopeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="72" startPosition="61" endLine="73" endPosition="192" />
-    <scopeInfo nodeId="1194964536846" fileName="DependenciesCollector.java" startLine="77" startPosition="107" endLine="78" endPosition="176" />
-    <scopeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="86" startPosition="66" endLine="87" endPosition="198" />
-    <scopeInfo nodeId="1194966986145" fileName="DependenciesCollector.java" startLine="92" startPosition="113" endLine="93" endPosition="180" />
-    <scopeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="100" startPosition="68" endLine="101" endPosition="198" />
-    <scopeInfo nodeId="1194968562734" fileName="DependenciesCollector.java" startLine="111" startPosition="125" endLine="112" endPosition="157" />
-    <scopeInfo nodeId="1194969756464" fileName="DependenciesCollector.java" startLine="115" startPosition="63" endLine="116" endPosition="134" />
-    <scopeInfo nodeId="1194968619106" fileName="DependenciesCollector.java" startLine="119" startPosition="142" endLine="120" endPosition="183" />
-    <scopeInfo nodeId="1194870678778" fileName="DependenciesCollector.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="149" startPosition="48" endLine="151" endPosition="54" />
-    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="151" startPosition="54" endLine="153" endPosition="54" />
-    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="155" startPosition="51" endLine="157" endPosition="48" />
-    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="161" startPosition="171" endLine="163" endPosition="50" />
-    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="163" startPosition="50" endLine="165" endPosition="51" />
-    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="186" startPosition="48" endLine="188" endPosition="54" />
-    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="188" startPosition="54" endLine="190" endPosition="54" />
-    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="192" startPosition="51" endLine="194" endPosition="48" />
-    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="198" startPosition="171" endLine="200" endPosition="50" />
-    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="200" startPosition="50" endLine="202" endPosition="51" />
-    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="223" startPosition="48" endLine="225" endPosition="54" />
-    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="225" startPosition="54" endLine="227" endPosition="54" />
-    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="229" startPosition="51" endLine="231" endPosition="48" />
-    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="235" startPosition="171" endLine="237" endPosition="50" />
-    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="237" startPosition="50" endLine="239" endPosition="51" />
-    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="260" startPosition="48" endLine="262" endPosition="54" />
-    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="262" startPosition="54" endLine="264" endPosition="54" />
-    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="266" startPosition="51" endLine="268" endPosition="48" />
-    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="272" startPosition="171" endLine="274" endPosition="50" />
-    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="274" startPosition="50" endLine="276" endPosition="51" />
-    <scopeInfo nodeId="1194536084811" fileName="DependenciesCollector.java" startLine="27" startPosition="179" endLine="30" endPosition="7" />
-    <scopeInfo nodeId="1194608818461" fileName="DependenciesCollector.java" startLine="33" startPosition="57" endLine="36" endPosition="5">
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="257" startPosition="30" endLine="258" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="258" startPosition="30" endLine="259" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="259" startPosition="31" endLine="260" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="260" startPosition="176" endLine="261" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="261" startPosition="65" endLine="262" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="262" startPosition="167" endLine="263" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="263" startPosition="54" endLine="264" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="264" startPosition="159" endLine="265" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="265" startPosition="54" endLine="266" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="266" startPosition="171" endLine="267" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="267" startPosition="68" endLine="268" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="268" startPosition="159" endLine="269" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="269" startPosition="48" endLine="270" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="270" startPosition="53" endLine="271" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="271" startPosition="164" endLine="272" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="272" startPosition="170" endLine="273" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="273" startPosition="171" endLine="274" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="274" startPosition="169" endLine="275" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="275" startPosition="50" endLine="276" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="276" startPosition="170" endLine="277" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="277" startPosition="51" endLine="278" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="278" startPosition="54" endLine="279" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="279" startPosition="53" endLine="280" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="280" startPosition="48" endLine="281" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="281" startPosition="90" endLine="282" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="282" startPosition="91" endLine="283" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1194870678778" fileName="DependenciesCollector.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DependenciesCollector#()V" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="150" startPosition="65" endLine="152" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="150" startPosition="65" endLine="152" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="152" startPosition="54" endLine="154" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="152" startPosition="54" endLine="154" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="156" startPosition="68" endLine="158" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="156" startPosition="68" endLine="158" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="162" startPosition="171" endLine="164" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="162" startPosition="171" endLine="164" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="164" startPosition="50" endLine="166" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="164" startPosition="50" endLine="166" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="187" startPosition="65" endLine="189" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="187" startPosition="65" endLine="189" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="189" startPosition="54" endLine="191" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="189" startPosition="54" endLine="191" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="193" startPosition="68" endLine="195" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="193" startPosition="68" endLine="195" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="199" startPosition="171" endLine="201" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="199" startPosition="171" endLine="201" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="201" startPosition="50" endLine="203" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="201" startPosition="50" endLine="203" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="224" startPosition="65" endLine="226" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="224" startPosition="65" endLine="226" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="226" startPosition="54" endLine="228" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="226" startPosition="54" endLine="228" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="230" startPosition="68" endLine="232" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="230" startPosition="68" endLine="232" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="236" startPosition="171" endLine="238" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="236" startPosition="171" endLine="238" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="238" startPosition="50" endLine="240" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="238" startPosition="50" endLine="240" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="261" startPosition="65" endLine="263" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="261" startPosition="65" endLine="263" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="263" startPosition="54" endLine="265" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="263" startPosition="54" endLine="265" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="267" startPosition="68" endLine="269" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="267" startPosition="68" endLine="269" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="273" startPosition="171" endLine="275" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="273" startPosition="171" endLine="275" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="275" startPosition="50" endLine="277" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="275" startPosition="50" endLine="277" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1194537417411" fileName="DependenciesCollector.java" startLine="28" startPosition="179" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1194608818461" fileName="DependenciesCollector.java" startLine="34" startPosition="57" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="48" startPosition="58" endLine="51" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="53" startPosition="42" endLine="56" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1194618326050" fileName="DependenciesCollector.java" startLine="53" startPosition="42" endLine="56" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="60" startPosition="60" endLine="63" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="65" startPosition="44" endLine="68" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1194538998798" fileName="DependenciesCollector.java" startLine="65" startPosition="44" endLine="68" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="72" startPosition="62" endLine="75" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="77" startPosition="46" endLine="80" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1194964536844" fileName="DependenciesCollector.java" startLine="77" startPosition="46" endLine="80" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="86" startPosition="65" endLine="89" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1194966986144" fileName="DependenciesCollector.java" startLine="92" startPosition="182" endLine="95" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="100" startPosition="67" endLine="103" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1194968562732" fileName="DependenciesCollector.java" startLine="111" startPosition="156" endLine="114" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="1194969756459" fileName="DependenciesCollector.java" startLine="116" startPosition="0" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="met#(Ljava/lang/Object;)Z" />
+    <nodeInfo nodeId="1194968619105" fileName="DependenciesCollector.java" startLine="119" startPosition="33" endLine="122" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1194536084807" fileName="DependenciesCollector.java" startLine="27" startPosition="65" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="91" startPosition="51" endLine="96" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1194966986142" fileName="DependenciesCollector.java" startLine="91" startPosition="51" endLine="96" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1194969730183" fileName="DependenciesCollector.java" startLine="114" startPosition="31" endLine="119" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="154" startPosition="54" endLine="159" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="154" startPosition="54" endLine="159" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="191" startPosition="54" endLine="196" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="191" startPosition="54" endLine="196" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="228" startPosition="54" endLine="233" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="228" startPosition="54" endLine="233" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="265" startPosition="54" endLine="270" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="265" startPosition="54" endLine="270" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="46" startPosition="52" endLine="52" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="58" startPosition="54" endLine="64" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="70" startPosition="56" endLine="76" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="84" startPosition="61" endLine="90" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="98" startPosition="63" endLine="104" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="161" startPosition="170" endLine="167" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="161" startPosition="170" endLine="167" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="198" startPosition="170" endLine="204" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="198" startPosition="170" endLine="204" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="235" startPosition="170" endLine="241" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="235" startPosition="170" endLine="241" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="272" startPosition="170" endLine="278" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="272" startPosition="170" endLine="278" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="160" startPosition="164" endLine="168" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="160" startPosition="164" endLine="168" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="197" startPosition="164" endLine="205" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="197" startPosition="164" endLine="205" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="234" startPosition="164" endLine="242" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="234" startPosition="164" endLine="242" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="271" startPosition="164" endLine="279" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="271" startPosition="164" endLine="279" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="159" startPosition="53" endLine="169" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="159" startPosition="53" endLine="169" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="196" startPosition="53" endLine="206" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="196" startPosition="53" endLine="206" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="233" startPosition="53" endLine="243" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="233" startPosition="53" endLine="243" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="270" startPosition="53" endLine="280" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="270" startPosition="53" endLine="280" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1194967102546" fileName="DependenciesCollector.java" startLine="108" startPosition="178" endLine="123" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1194967071234" fileName="DependenciesCollector.java" startLine="107" startPosition="139" endLine="124" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="105" startPosition="53" endLine="125" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="148" startPosition="31" endLine="169" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="148" startPosition="31" endLine="169" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="185" startPosition="31" endLine="206" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="185" startPosition="31" endLine="206" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="222" startPosition="31" endLine="243" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="222" startPosition="31" endLine="243" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="259" startPosition="31" endLine="280" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="259" startPosition="31" endLine="280" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="104" startPosition="23" endLine="126" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="97" startPosition="26" endLine="127" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="138" startPosition="0" endLine="174" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_bcwvc2_b0a0a0a0a0c0a2a1a1a2a5a1#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="175" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_bcwvc2_b0a0a0a0a0c0a2a0c0b0b0c0f0b#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="212" startPosition="0" endLine="248" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_bcwvc2_b0a0a0a0a0a0c0b0a2a0c0a2a1a1a2a5a1#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="249" startPosition="0" endLine="285" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_bcwvc2_b0a0a0e0a0b0a0c0a2a1a0c0a2a0c0b0b0c0f0b#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="90" startPosition="21" endLine="127" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="82" startPosition="59" endLine="128" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1194966957317" fileName="DependenciesCollector.java" startLine="81" startPosition="22" endLine="129" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="76" startPosition="17" endLine="129" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="69" startPosition="20" endLine="130" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="64" startPosition="15" endLine="130" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="57" startPosition="18" endLine="131" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="52" startPosition="13" endLine="131" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="44" startPosition="52" endLine="132" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1194538774943" fileName="DependenciesCollector.java" startLine="42" startPosition="55" endLine="133" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1194538082892" fileName="DependenciesCollector.java" startLine="40" startPosition="55" endLine="134" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1194537984796" fileName="DependenciesCollector.java" startLine="37" startPosition="5" endLine="135" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="1194535086641" fileName="DependenciesCollector.java" startLine="26" startPosition="0" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectDependencies#(Ljetbrains/mps/smodel/SNode;Ljava/util/Map;Ljava/util/Set;)V" />
+    <scopeInfo nodeId="1194870678781" fileName="DependenciesCollector.java" startLine="23" startPosition="34" endLine="23" endPosition="34" />
+    <scopeInfo nodeId="1194537417413" fileName="DependenciesCollector.java" startLine="29" startPosition="156" endLine="30" endPosition="71" />
+    <scopeInfo nodeId="1194608818462" fileName="DependenciesCollector.java" startLine="35" startPosition="30" endLine="36" endPosition="56" />
+    <scopeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="49" startPosition="57" endLine="50" endPosition="188" />
+    <scopeInfo nodeId="1194618326051" fileName="DependenciesCollector.java" startLine="54" startPosition="65" endLine="55" endPosition="61" />
+    <scopeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="61" startPosition="59" endLine="62" endPosition="191" />
+    <scopeInfo nodeId="1194538998799" fileName="DependenciesCollector.java" startLine="66" startPosition="100" endLine="67" endPosition="214" />
+    <scopeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="73" startPosition="61" endLine="74" endPosition="192" />
+    <scopeInfo nodeId="1194964536846" fileName="DependenciesCollector.java" startLine="78" startPosition="107" endLine="79" endPosition="176" />
+    <scopeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="87" startPosition="66" endLine="88" endPosition="198" />
+    <scopeInfo nodeId="1194966986145" fileName="DependenciesCollector.java" startLine="93" startPosition="113" endLine="94" endPosition="180" />
+    <scopeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="101" startPosition="68" endLine="102" endPosition="198" />
+    <scopeInfo nodeId="1194968562734" fileName="DependenciesCollector.java" startLine="112" startPosition="125" endLine="113" endPosition="157" />
+    <scopeInfo nodeId="1194969756464" fileName="DependenciesCollector.java" startLine="116" startPosition="63" endLine="117" endPosition="134" />
+    <scopeInfo nodeId="1194968619106" fileName="DependenciesCollector.java" startLine="120" startPosition="142" endLine="121" endPosition="183" />
+    <scopeInfo nodeId="1194870678778" fileName="DependenciesCollector.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="150" startPosition="65" endLine="152" endPosition="54" />
+    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="152" startPosition="54" endLine="154" endPosition="54" />
+    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="156" startPosition="68" endLine="158" endPosition="48" />
+    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="162" startPosition="171" endLine="164" endPosition="50" />
+    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="164" startPosition="50" endLine="166" endPosition="51" />
+    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="187" startPosition="65" endLine="189" endPosition="54" />
+    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="189" startPosition="54" endLine="191" endPosition="54" />
+    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="193" startPosition="68" endLine="195" endPosition="48" />
+    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="199" startPosition="171" endLine="201" endPosition="50" />
+    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="201" startPosition="50" endLine="203" endPosition="51" />
+    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="224" startPosition="65" endLine="226" endPosition="54" />
+    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="226" startPosition="54" endLine="228" endPosition="54" />
+    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="230" startPosition="68" endLine="232" endPosition="48" />
+    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="236" startPosition="171" endLine="238" endPosition="50" />
+    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="238" startPosition="50" endLine="240" endPosition="51" />
+    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="261" startPosition="65" endLine="263" endPosition="54" />
+    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="263" startPosition="54" endLine="265" endPosition="54" />
+    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="267" startPosition="68" endLine="269" endPosition="48" />
+    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="273" startPosition="171" endLine="275" endPosition="50" />
+    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="275" startPosition="50" endLine="277" endPosition="51" />
+    <scopeInfo nodeId="1194536084811" fileName="DependenciesCollector.java" startLine="28" startPosition="179" endLine="31" endPosition="7" />
+    <scopeInfo nodeId="1194608818461" fileName="DependenciesCollector.java" startLine="34" startPosition="57" endLine="37" endPosition="5">
       <varInfo nodeId="1194608818465" varName="root" />
     </scopeInfo>
-    <scopeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="52" startPosition="42" endLine="55" endPosition="15" />
-    <scopeInfo nodeId="1194538774947" fileName="DependenciesCollector.java" startLine="52" startPosition="42" endLine="55" endPosition="15" />
-    <scopeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="64" startPosition="44" endLine="67" endPosition="17" />
-    <scopeInfo nodeId="1194538897616" fileName="DependenciesCollector.java" startLine="64" startPosition="44" endLine="67" endPosition="17" />
-    <scopeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="76" startPosition="46" endLine="79" endPosition="19" />
-    <scopeInfo nodeId="1194964521499" fileName="DependenciesCollector.java" startLine="76" startPosition="46" endLine="79" endPosition="19" />
-    <scopeInfo nodeId="1194966986143" fileName="DependenciesCollector.java" startLine="91" startPosition="182" endLine="94" endPosition="25" />
-    <scopeInfo nodeId="1194969756459" fileName="DependenciesCollector.java" startLine="115" startPosition="0" endLine="118" endPosition="0">
+    <scopeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="53" startPosition="42" endLine="56" endPosition="15" />
+    <scopeInfo nodeId="1194538774947" fileName="DependenciesCollector.java" startLine="53" startPosition="42" endLine="56" endPosition="15" />
+    <scopeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="65" startPosition="44" endLine="68" endPosition="17" />
+    <scopeInfo nodeId="1194538897616" fileName="DependenciesCollector.java" startLine="65" startPosition="44" endLine="68" endPosition="17" />
+    <scopeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="77" startPosition="46" endLine="80" endPosition="19" />
+    <scopeInfo nodeId="1194964521499" fileName="DependenciesCollector.java" startLine="77" startPosition="46" endLine="80" endPosition="19" />
+    <scopeInfo nodeId="1194966986143" fileName="DependenciesCollector.java" startLine="92" startPosition="182" endLine="95" endPosition="25" />
+    <scopeInfo nodeId="1194969756459" fileName="DependenciesCollector.java" startLine="116" startPosition="0" endLine="119" endPosition="0">
       <varInfo nodeId="1194969756462" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="46" startPosition="13" endLine="50" endPosition="15">
-      <varInfo nodeId="1194538774945" varName="matchingNode_bcwvc2_a1a2a5a0" />
+    <scopeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="47" startPosition="13" endLine="51" endPosition="15">
+      <varInfo nodeId="1194538774945" varName="matchingNode_bcwvc2_a1a2a5a1" />
     </scopeInfo>
-    <scopeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="58" startPosition="15" endLine="62" endPosition="17">
-      <varInfo nodeId="1194538897614" varName="matchingNode_bcwvc2_b1a2a5a0" />
+    <scopeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="59" startPosition="15" endLine="63" endPosition="17">
+      <varInfo nodeId="1194538897614" varName="matchingNode_bcwvc2_b1a2a5a1" />
     </scopeInfo>
-    <scopeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="70" startPosition="17" endLine="74" endPosition="19">
-      <varInfo nodeId="1194964521497" varName="matchingNode_bcwvc2_c1a2a5a0" />
+    <scopeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="71" startPosition="17" endLine="75" endPosition="19">
+      <varInfo nodeId="1194964521497" varName="matchingNode_bcwvc2_c1a2a5a1" />
     </scopeInfo>
-    <scopeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="84" startPosition="21" endLine="88" endPosition="23">
-      <varInfo nodeId="1194966957319" varName="matchingNode_bcwvc2_a0b0c0f0a" />
+    <scopeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="85" startPosition="21" endLine="89" endPosition="23">
+      <varInfo nodeId="1194966957319" varName="matchingNode_bcwvc2_a0b0c0f0b" />
     </scopeInfo>
-    <scopeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="98" startPosition="23" endLine="102" endPosition="25">
-      <varInfo nodeId="1194967010187" varName="matchingNode_bcwvc2_b0b0c0f0a" />
+    <scopeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="99" startPosition="23" endLine="103" endPosition="25">
+      <varInfo nodeId="1194967010187" varName="matchingNode_bcwvc2_b0b0c0f0b" />
     </scopeInfo>
-    <scopeInfo nodeId="1194536084807" fileName="DependenciesCollector.java" startLine="26" startPosition="65" endLine="31" endPosition="5">
+    <scopeInfo nodeId="1194536084807" fileName="DependenciesCollector.java" startLine="27" startPosition="65" endLine="32" endPosition="5">
       <varInfo nodeId="1194536084809" varName="applicableNodeReference" />
     </scopeInfo>
-    <scopeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="90" startPosition="51" endLine="95" endPosition="23" />
-    <scopeInfo nodeId="1194966957321" fileName="DependenciesCollector.java" startLine="90" startPosition="51" endLine="95" endPosition="23" />
-    <scopeInfo nodeId="1194966986142" fileName="DependenciesCollector.java" startLine="90" startPosition="51" endLine="95" endPosition="23">
+    <scopeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="91" startPosition="51" endLine="96" endPosition="23" />
+    <scopeInfo nodeId="1194966957321" fileName="DependenciesCollector.java" startLine="91" startPosition="51" endLine="96" endPosition="23" />
+    <scopeInfo nodeId="1194966986142" fileName="DependenciesCollector.java" startLine="91" startPosition="51" endLine="96" endPosition="23">
       <varInfo nodeId="1194966986185" varName="variableReference" />
     </scopeInfo>
-    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="153" startPosition="54" endLine="158" endPosition="53" />
-    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="190" startPosition="54" endLine="195" endPosition="53" />
-    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="227" startPosition="54" endLine="232" endPosition="53" />
-    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="264" startPosition="54" endLine="269" endPosition="53" />
-    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="160" startPosition="170" endLine="166" endPosition="54" />
-    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="197" startPosition="170" endLine="203" endPosition="54" />
-    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="234" startPosition="170" endLine="240" endPosition="54" />
-    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="271" startPosition="170" endLine="277" endPosition="54" />
-    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="159" startPosition="164" endLine="167" endPosition="53" />
-    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="196" startPosition="164" endLine="204" endPosition="53" />
-    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="233" startPosition="164" endLine="241" endPosition="53" />
-    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="270" startPosition="164" endLine="278" endPosition="53" />
-    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="158" startPosition="53" endLine="168" endPosition="48" />
-    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="195" startPosition="53" endLine="205" endPosition="48" />
-    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="232" startPosition="53" endLine="242" endPosition="48" />
-    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="269" startPosition="53" endLine="279" endPosition="48" />
-    <scopeInfo nodeId="1194967102547" fileName="DependenciesCollector.java" startLine="108" startPosition="142" endLine="121" endPosition="31">
+    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="154" startPosition="54" endLine="159" endPosition="53" />
+    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="191" startPosition="54" endLine="196" endPosition="53" />
+    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="228" startPosition="54" endLine="233" endPosition="53" />
+    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="265" startPosition="54" endLine="270" endPosition="53" />
+    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="161" startPosition="170" endLine="167" endPosition="54" />
+    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="198" startPosition="170" endLine="204" endPosition="54" />
+    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="235" startPosition="170" endLine="241" endPosition="54" />
+    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="272" startPosition="170" endLine="278" endPosition="54" />
+    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="160" startPosition="164" endLine="168" endPosition="53" />
+    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="197" startPosition="164" endLine="205" endPosition="53" />
+    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="234" startPosition="164" endLine="242" endPosition="53" />
+    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="271" startPosition="164" endLine="279" endPosition="53" />
+    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="159" startPosition="53" endLine="169" endPosition="48" />
+    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="196" startPosition="53" endLine="206" endPosition="48" />
+    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="233" startPosition="53" endLine="243" endPosition="48" />
+    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="270" startPosition="53" endLine="280" endPosition="48" />
+    <scopeInfo nodeId="1194967102547" fileName="DependenciesCollector.java" startLine="109" startPosition="142" endLine="122" endPosition="31">
       <varInfo nodeId="1194969730184" varName="list" />
       <varInfo nodeId="1194967769878" varName="nodeStatement" />
       <varInfo nodeId="1194968406530" varName="usageStatement" />
     </scopeInfo>
-    <scopeInfo nodeId="1194967071235" fileName="DependenciesCollector.java" startLine="107" startPosition="178" endLine="122" endPosition="29" />
-    <scopeInfo nodeId="1194967071234" fileName="DependenciesCollector.java" startLine="106" startPosition="139" endLine="123" endPosition="27">
+    <scopeInfo nodeId="1194967071235" fileName="DependenciesCollector.java" startLine="108" startPosition="178" endLine="123" endPosition="29" />
+    <scopeInfo nodeId="1194967071234" fileName="DependenciesCollector.java" startLine="107" startPosition="139" endLine="124" endPosition="27">
       <varInfo nodeId="1194967071238" varName="reference" />
     </scopeInfo>
-    <scopeInfo nodeId="1194967010189" fileName="DependenciesCollector.java" startLine="105" startPosition="25" endLine="123" endPosition="27">
+    <scopeInfo nodeId="1194967010189" fileName="DependenciesCollector.java" startLine="106" startPosition="25" endLine="124" endPosition="27">
       <varInfo nodeId="1194967022396" varName="variableDeclaration" />
     </scopeInfo>
-    <scopeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="104" startPosition="53" endLine="124" endPosition="25" />
-    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="147" startPosition="31" endLine="168" endPosition="48" />
-    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="184" startPosition="31" endLine="205" endPosition="48" />
-    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="221" startPosition="31" endLine="242" endPosition="48" />
-    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="258" startPosition="31" endLine="279" endPosition="48" />
-    <scopeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="96" startPosition="28" endLine="125" endPosition="23">
-      <varInfo nodeId="1194967010187" varName="matches_bcwvc2_b0b0c0f0a" />
+    <scopeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="105" startPosition="53" endLine="125" endPosition="25" />
+    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="148" startPosition="31" endLine="169" endPosition="48" />
+    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="185" startPosition="31" endLine="206" endPosition="48" />
+    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="222" startPosition="31" endLine="243" endPosition="48" />
+    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="259" startPosition="31" endLine="280" endPosition="48" />
+    <scopeInfo nodeId="1194967010187" fileName="DependenciesCollector.java" startLine="97" startPosition="28" endLine="126" endPosition="23">
+      <varInfo nodeId="1194967010187" varName="matches_bcwvc2_b0b0c0f0b" />
     </scopeInfo>
-    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="137" startPosition="80" endLine="171" endPosition="24">
+    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="138" startPosition="80" endLine="172" endPosition="24">
       <varInfo nodeId="1238589082283" varName="quotedNode_1" />
       <varInfo nodeId="1238589082283" varName="quotedNode_10" />
       <varInfo nodeId="1238589082283" varName="quotedNode_2" />
@@ -422,7 +422,7 @@
       <varInfo nodeId="1238589082283" varName="quotedNode_8" />
       <varInfo nodeId="1238589082283" varName="quotedNode_9" />
     </scopeInfo>
-    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="174" startPosition="83" endLine="208" endPosition="24">
+    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="175" startPosition="83" endLine="209" endPosition="24">
       <varInfo nodeId="1238589082260" varName="quotedNode_1" />
       <varInfo nodeId="1238589082260" varName="quotedNode_10" />
       <varInfo nodeId="1238589082260" varName="quotedNode_2" />
@@ -434,7 +434,7 @@
       <varInfo nodeId="1238589082260" varName="quotedNode_8" />
       <varInfo nodeId="1238589082260" varName="quotedNode_9" />
     </scopeInfo>
-    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="211" startPosition="90" endLine="245" endPosition="24">
+    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="212" startPosition="90" endLine="246" endPosition="24">
       <varInfo nodeId="1238589082304" varName="quotedNode_1" />
       <varInfo nodeId="1238589082304" varName="quotedNode_10" />
       <varInfo nodeId="1238589082304" varName="quotedNode_2" />
@@ -446,7 +446,7 @@
       <varInfo nodeId="1238589082304" varName="quotedNode_8" />
       <varInfo nodeId="1238589082304" varName="quotedNode_9" />
     </scopeInfo>
-    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="248" startPosition="95" endLine="282" endPosition="24">
+    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="249" startPosition="95" endLine="283" endPosition="24">
       <varInfo nodeId="1238589082239" varName="quotedNode_1" />
       <varInfo nodeId="1238589082239" varName="quotedNode_10" />
       <varInfo nodeId="1238589082239" varName="quotedNode_2" />
@@ -458,47 +458,47 @@
       <varInfo nodeId="1238589082239" varName="quotedNode_8" />
       <varInfo nodeId="1238589082239" varName="quotedNode_9" />
     </scopeInfo>
-    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="137" startPosition="0" endLine="173" endPosition="0" />
-    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="174" startPosition="0" endLine="210" endPosition="0" />
-    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="211" startPosition="0" endLine="247" endPosition="0" />
-    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="248" startPosition="0" endLine="284" endPosition="0" />
-    <scopeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="82" startPosition="19" endLine="126" endPosition="21">
-      <varInfo nodeId="1194966957319" varName="matches_bcwvc2_a0b0c0f0a" />
+    <scopeInfo nodeId="1238589082283" fileName="DependenciesCollector.java" startLine="138" startPosition="0" endLine="174" endPosition="0" />
+    <scopeInfo nodeId="1238589082260" fileName="DependenciesCollector.java" startLine="175" startPosition="0" endLine="211" endPosition="0" />
+    <scopeInfo nodeId="1238589082304" fileName="DependenciesCollector.java" startLine="212" startPosition="0" endLine="248" endPosition="0" />
+    <scopeInfo nodeId="1238589082239" fileName="DependenciesCollector.java" startLine="249" startPosition="0" endLine="285" endPosition="0" />
+    <scopeInfo nodeId="1194966957319" fileName="DependenciesCollector.java" startLine="83" startPosition="19" endLine="127" endPosition="21">
+      <varInfo nodeId="1194966957319" varName="matches_bcwvc2_a0b0c0f0b" />
     </scopeInfo>
-    <scopeInfo nodeId="1194966957317" fileName="DependenciesCollector.java" startLine="80" startPosition="24" endLine="127" endPosition="19">
-      <varInfo nodeId="1194966957317" varName="matchedNode_bcwvc2_a1a2a5a0" />
+    <scopeInfo nodeId="1194966957317" fileName="DependenciesCollector.java" startLine="81" startPosition="24" endLine="128" endPosition="19">
+      <varInfo nodeId="1194966957317" varName="matchedNode_bcwvc2_a1a2a5a1" />
     </scopeInfo>
-    <scopeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="68" startPosition="22" endLine="128" endPosition="17">
-      <varInfo nodeId="1194964521497" varName="matches_bcwvc2_c1a2a5a0" />
+    <scopeInfo nodeId="1194964521497" fileName="DependenciesCollector.java" startLine="69" startPosition="22" endLine="129" endPosition="17">
+      <varInfo nodeId="1194964521497" varName="matches_bcwvc2_c1a2a5a1" />
     </scopeInfo>
-    <scopeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="56" startPosition="20" endLine="129" endPosition="15">
-      <varInfo nodeId="1194538897614" varName="matches_bcwvc2_b1a2a5a0" />
+    <scopeInfo nodeId="1194538897614" fileName="DependenciesCollector.java" startLine="57" startPosition="20" endLine="130" endPosition="15">
+      <varInfo nodeId="1194538897614" varName="matches_bcwvc2_b1a2a5a1" />
     </scopeInfo>
-    <scopeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="44" startPosition="11" endLine="130" endPosition="13">
-      <varInfo nodeId="1194538774945" varName="matches_bcwvc2_a1a2a5a0" />
+    <scopeInfo nodeId="1194538774945" fileName="DependenciesCollector.java" startLine="45" startPosition="11" endLine="131" endPosition="13">
+      <varInfo nodeId="1194538774945" varName="matches_bcwvc2_a1a2a5a1" />
     </scopeInfo>
-    <scopeInfo nodeId="1194538774943" fileName="DependenciesCollector.java" startLine="42" startPosition="9" endLine="131" endPosition="11">
-      <varInfo nodeId="1194538774943" varName="matchedNode_bcwvc2_b0c0f0a" />
+    <scopeInfo nodeId="1194538774943" fileName="DependenciesCollector.java" startLine="43" startPosition="9" endLine="132" endPosition="11">
+      <varInfo nodeId="1194538774943" varName="matchedNode_bcwvc2_b0c0f0b" />
     </scopeInfo>
-    <scopeInfo nodeId="1194538082893" fileName="DependenciesCollector.java" startLine="40" startPosition="122" endLine="132" endPosition="9">
+    <scopeInfo nodeId="1194538082893" fileName="DependenciesCollector.java" startLine="41" startPosition="122" endLine="133" endPosition="9">
       <varInfo nodeId="1194538105511" varName="parent" />
     </scopeInfo>
-    <scopeInfo nodeId="1194538082892" fileName="DependenciesCollector.java" startLine="39" startPosition="55" endLine="133" endPosition="7">
+    <scopeInfo nodeId="1194538082892" fileName="DependenciesCollector.java" startLine="40" startPosition="55" endLine="134" endPosition="7">
       <varInfo nodeId="1194538082896" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1194537984798" fileName="DependenciesCollector.java" startLine="37" startPosition="148" endLine="133" endPosition="7" />
-    <scopeInfo nodeId="1194535086644" fileName="DependenciesCollector.java" startLine="25" startPosition="120" endLine="134" endPosition="5">
+    <scopeInfo nodeId="1194537984798" fileName="DependenciesCollector.java" startLine="38" startPosition="148" endLine="134" endPosition="7" />
+    <scopeInfo nodeId="1194535086644" fileName="DependenciesCollector.java" startLine="26" startPosition="120" endLine="135" endPosition="5">
       <varInfo nodeId="1194616796236" varName="leavesSize" />
       <varInfo nodeId="1194538029692" varName="prevSize" />
       <varInfo nodeId="1194537616585" varName="roots" />
     </scopeInfo>
-    <scopeInfo nodeId="1194535086641" fileName="DependenciesCollector.java" startLine="25" startPosition="0" endLine="136" endPosition="0">
+    <scopeInfo nodeId="1194535086641" fileName="DependenciesCollector.java" startLine="26" startPosition="0" endLine="137" endPosition="0">
       <varInfo nodeId="1194612304660" varName="dependencies" />
       <varInfo nodeId="1194535127693" varName="inferenceRule" />
       <varInfo nodeId="1194612324558" varName="leaves" />
     </scopeInfo>
-    <unitInfo nodeId="1194969746832" fileName="DependenciesCollector.java" startLine="114" startPosition="165" endLine="118" endPosition="31" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector$1" />
-    <unitInfo nodeId="1194533670612" fileName="DependenciesCollector.java" startLine="21" startPosition="0" endLine="285" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector" />
+    <unitInfo nodeId="1194969746832" fileName="DependenciesCollector.java" startLine="115" startPosition="165" endLine="119" endPosition="31" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector$1" />
+    <unitInfo nodeId="1194533670612" fileName="DependenciesCollector.java" startLine="22" startPosition="0" endLine="286" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.DependenciesCollector" />
   </root>
   <root nodeId="1196177069451" modelId="r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)">
     <unitInfo nodeId="1196177069451" fileName="InferenceMethod.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="jetbrains.mps.lang.typesystem.dependencies.InferenceMethod" />

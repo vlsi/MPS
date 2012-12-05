@@ -17,6 +17,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class typeof_PatternReduction_MappingRule_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_PatternReduction_MappingRule_InferenceRule() {
@@ -34,7 +35,7 @@ public class typeof_PatternReduction_MappingRule_InferenceRule extends AbstractI
       {
         SNode _nodeToCheck_1029348928467 = rule;
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902e4(jetbrains.mps.lang.generator.typesystem)", "1805153994417064796", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) _quotation_createNode_xjg16h_a0b0b0a(PatternReduction_MappingRule_Behavior.call_getTemplateType_1805153994417123441(rule)), (SNode) _quotation_createNode_xjg16h_a0b0b0a_0(SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "labelDeclaration", false), "targetConcept", false)), false, false, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) _quotation_createNode_xjg16h_a0b0b0b(PatternReduction_MappingRule_Behavior.call_getTemplateType_1805153994417123441(rule)), (SNode) _quotation_createNode_xjg16h_a0b0b0b_0(SLinkOperations.getTarget(SLinkOperations.getTarget(rule, "labelDeclaration", false), "targetConcept", false)), false, false, _info_12389875345);
       }
     }
   }
@@ -54,17 +55,17 @@ public class typeof_PatternReduction_MappingRule_InferenceRule extends AbstractI
     return false;
   }
 
-  private static SNode _quotation_createNode_xjg16h_a0b0b0a(Object parameter_1) {
+  private static SNode _quotation_createNode_xjg16h_a0b0b0b(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_xjg16h_a0b0b0a_0(Object parameter_1) {
+  private static SNode _quotation_createNode_xjg16h_a0b0b0b_0(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReferenceTarget("concept", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_2, "concept", (SNode) parameter_1);
     return quotedNode_2;
   }
 }

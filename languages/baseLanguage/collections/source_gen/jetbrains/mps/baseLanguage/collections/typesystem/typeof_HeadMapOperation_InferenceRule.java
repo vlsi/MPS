@@ -24,7 +24,7 @@ public class typeof_HeadMapOperation_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = IOperation_Behavior.call_getOperand_1213877410070(operation);
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "7668447476859120483", 0, null);
-      typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_71s84n_a0c0a(typeCheckingContext.getRepresentative(KEY_TYPE_typevar_1240239989539), typeCheckingContext.getRepresentative(VALUE_TYPE_typevar_1240240024843)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240239999652", true), false, true, _info_12389875345);
+      typeCheckingContext.createGreaterThanInequality((SNode) _quotation_createNode_71s84n_a0c0b(typeCheckingContext.getRepresentative(KEY_TYPE_typevar_1240239989539), typeCheckingContext.getRepresentative(VALUE_TYPE_typevar_1240240024843)), (SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240239999652", true), false, true, _info_12389875345);
     }
     if (!(typeCheckingContext.isSingleTypeComputation())) {
       {
@@ -36,7 +36,7 @@ public class typeof_HeadMapOperation_InferenceRule extends AbstractInferenceRule
     {
       SNode _nodeToCheck_1029348928467 = operation;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240240066282", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240240050569", true), (SNode) _quotation_createNode_71s84n_a0e0a(typeCheckingContext.getRepresentative(KEY_TYPE_typevar_1240239989539), typeCheckingContext.getRepresentative(VALUE_TYPE_typevar_1240240024843)), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240240050569", true), (SNode) _quotation_createNode_71s84n_a0e0b(typeCheckingContext.getRepresentative(KEY_TYPE_typevar_1240239989539), typeCheckingContext.getRepresentative(VALUE_TYPE_typevar_1240240024843)), _info_12389875345);
     }
   }
 
@@ -55,7 +55,7 @@ public class typeof_HeadMapOperation_InferenceRule extends AbstractInferenceRule
     return false;
   }
 
-  private static SNode _quotation_createNode_71s84n_a0c0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_71s84n_a0c0b(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -71,7 +71,7 @@ public class typeof_HeadMapOperation_InferenceRule extends AbstractInferenceRule
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_71s84n_a0e0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_71s84n_a0e0b(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;

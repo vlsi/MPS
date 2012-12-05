@@ -12,22 +12,12 @@ public enum EquationDirection_Enum {
   right("=:", "right");
 
   private String myName;
-  private String myValue;
-
-  EquationDirection_Enum(String name, String value) {
-    this.myName = name;
-    this.myValue = value;
-  }
 
   public String getName() {
     return this.myName;
   }
 
   public String getValueAsString() {
-    return this.myValue;
-  }
-
-  public String getValue() {
     return this.myValue;
   }
 
@@ -57,5 +47,16 @@ public enum EquationDirection_Enum {
       return EquationDirection_Enum.right;
     }
     return EquationDirection_Enum.getDefault();
+  }
+
+  private String myValue;
+
+  EquationDirection_Enum(String name, String value) {
+    this.myName = name;
+    this.myValue = value;
+  }
+
+  public String getValue() {
+    return this.myValue;
   }
 }

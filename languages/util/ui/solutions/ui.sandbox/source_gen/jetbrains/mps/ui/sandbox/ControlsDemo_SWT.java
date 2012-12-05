@@ -29,10 +29,10 @@ public class ControlsDemo_SWT {
   }
 
   public void buildUI(Composite menu) {
-    final Link widget_z347t1_a0a0a = new Link(menu, SWT.NONE);
-    widget_z347t1_a0a0a.setText("<A>" + "Tree" + "</A>");
-    widget_z347t1_a0a0a.setData("historyToken", "tree");
-    widget_z347t1_a0a0a.addSelectionListener(new SelectionAdapter() {
+    final Link widget_z347t1_a0a0c = new Link(menu, SWT.NONE);
+    widget_z347t1_a0a0c.setText("<A>" + "Tree" + "</A>");
+    widget_z347t1_a0a0c.setData("historyToken", "tree");
+    widget_z347t1_a0a0c.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
         _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
@@ -44,10 +44,10 @@ public class ControlsDemo_SWT {
       }
     });
     //  with SWT items are not added to container
-    final Link widget_z347t1_b0a0a = new Link(menu, SWT.NONE);
-    widget_z347t1_b0a0a.setText("<A>" + "Table" + "</A>");
-    widget_z347t1_b0a0a.setData("historyToken", "tree");
-    widget_z347t1_b0a0a.addSelectionListener(new SelectionAdapter() {
+    final Link widget_z347t1_b0a0c = new Link(menu, SWT.NONE);
+    widget_z347t1_b0a0c.setText("<A>" + "Table" + "</A>");
+    widget_z347t1_b0a0c.setData("historyToken", "tree");
+    widget_z347t1_b0a0c.addSelectionListener(new SelectionAdapter() {
       @Override
       public void widgetSelected(SelectionEvent e) {
         _FunctionTypes._void_P1_E0<? super SelectionEvent> h = new _FunctionTypes._void_P1_E0<SelectionEvent>() {
@@ -72,32 +72,32 @@ public class ControlsDemo_SWT {
       it.next();
       it.remove();
     }
-    final TabFolder widget_z347t1_b0b0b = new TabFolder(dc, SWT.BORDER);
-    final Composite widget_z347t1_a0a1a1a1 = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
+    final TabFolder widget_z347t1_b0b0d = new TabFolder(dc, SWT.BORDER);
+    final Composite widget_z347t1_a0a1a1a3 = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
       public Composite invoke(Composite context_z347t1_a) {
-        Composite cmp = new Composite(widget_z347t1_b0b0b, SWT.NONE);
+        Composite cmp = new Composite(widget_z347t1_b0b0d, SWT.NONE);
         cmp.setLayout(new FillLayout());
         return cmp;
       }
-    }.invoke(widget_z347t1_b0b0b);
-    final Tree widget_z347t1_a0a0a0b0b0b = new Tree(widget_z347t1_a0a1a1a1, SWT.NONE);
-    final TreeItem widget_z347t1_a0a0a0a0a1a1a1 = new TreeItem(widget_z347t1_a0a0a0b0b0b, SWT.NONE);
-    widget_z347t1_a0a0a0a0a1a1a1.setText(String.valueOf("ROOT"));
+    }.invoke(widget_z347t1_b0b0d);
+    final Tree widget_z347t1_a0a0a0b0b0d = new Tree(widget_z347t1_a0a1a1a3, SWT.NONE);
+    final TreeItem widget_z347t1_a0a0a0a0a1a1a3 = new TreeItem(widget_z347t1_a0a0a0b0b0d, SWT.NONE);
+    widget_z347t1_a0a0a0a0a1a1a3.setText(String.valueOf("ROOT"));
     for (int i = 0; i < 5; i++) {
-      final TreeItem widget_z347t1_a0a0a0a0a0a0a0b0b0b = new TreeItem(widget_z347t1_a0a0a0a0a1a1a1, SWT.NONE);
-      widget_z347t1_a0a0a0a0a0a0a0b0b0b.setText(String.valueOf("Leaf"));
+      final TreeItem widget_z347t1_a0a0a0a0a0a0a0b0b0d = new TreeItem(widget_z347t1_a0a0a0a0a1a1a3, SWT.NONE);
+      widget_z347t1_a0a0a0a0a0a0a0b0b0d.setText(String.valueOf("Leaf"));
       // nothing to do 
     }
     // nothing to do 
     //  with SWT items are not added to container
     new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        TabItem ti = new TabItem(widget_z347t1_b0b0b, SWT.NONE);
+        TabItem ti = new TabItem(widget_z347t1_b0b0d, SWT.NONE);
         ti.setText("Tree");
-        ti.setControl((Control) widget_z347t1_a0a1a1a1);
+        ti.setControl((Control) widget_z347t1_a0a1a1a3);
       }
     }.invoke();
-    widget_z347t1_b0b0b.setLayoutData(DockLayoutData.CENTER);
+    widget_z347t1_b0b0d.setLayoutData(DockLayoutData.CENTER);
     dc.layout();
   }
 
@@ -112,51 +112,51 @@ public class ControlsDemo_SWT {
       it.next();
       it.remove();
     }
-    final TabFolder widget_z347t1_b0b0c = new TabFolder(dc, SWT.BORDER);
-    final Composite widget_z347t1_a0a1a1a2 = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
+    final TabFolder widget_z347t1_b0b0e = new TabFolder(dc, SWT.BORDER);
+    final Composite widget_z347t1_a0a1a1a4 = new _FunctionTypes._return_P1_E0<Composite, Composite>() {
       public Composite invoke(Composite context_z347t1_a_0) {
-        Composite cmp = new Composite(widget_z347t1_b0b0c, SWT.NONE);
+        Composite cmp = new Composite(widget_z347t1_b0b0e, SWT.NONE);
         cmp.setLayout(new FillLayout());
         return cmp;
       }
-    }.invoke(widget_z347t1_b0b0c);
-    final Table widget_z347t1_a0a0a0b0b0c = new _FunctionTypes._return_P1_E0<Table, Composite>() {
+    }.invoke(widget_z347t1_b0b0e);
+    final Table widget_z347t1_a0a0a0b0b0e = new _FunctionTypes._return_P1_E0<Table, Composite>() {
       public Table invoke(Composite context_z347t1_a_1) {
-        Table t = new Table(widget_z347t1_a0a1a1a2, SWT.NONE);
+        Table t = new Table(widget_z347t1_a0a1a1a4, SWT.NONE);
         t.setHeaderVisible(true);
         return t;
       }
-    }.invoke(widget_z347t1_a0a1a1a2);
-    final TableColumn widget_z347t1_a0a0a0a0a1a1a2 = new _FunctionTypes._return_P1_E0<TableColumn, Table>() {
+    }.invoke(widget_z347t1_a0a1a1a4);
+    final TableColumn widget_z347t1_a0a0a0a0a1a1a4 = new _FunctionTypes._return_P1_E0<TableColumn, Table>() {
       public TableColumn invoke(Table context_z347t1_a_2) {
-        TableColumn tc = new TableColumn(widget_z347t1_a0a0a0b0b0c, SWT.NONE);
+        TableColumn tc = new TableColumn(widget_z347t1_a0a0a0b0b0e, SWT.NONE);
         return tc;
       }
-    }.invoke(widget_z347t1_a0a0a0b0b0c);
-    widget_z347t1_a0a0a0a0a1a1a2.setText("Foo");
-    widget_z347t1_a0a0a0a0a1a1a2.pack();
-    final TableColumn widget_z347t1_b0a0a0a0a1a1a2 = new _FunctionTypes._return_P1_E0<TableColumn, Table>() {
+    }.invoke(widget_z347t1_a0a0a0b0b0e);
+    widget_z347t1_a0a0a0a0a1a1a4.setText("Foo");
+    widget_z347t1_a0a0a0a0a1a1a4.pack();
+    final TableColumn widget_z347t1_b0a0a0a0a1a1a4 = new _FunctionTypes._return_P1_E0<TableColumn, Table>() {
       public TableColumn invoke(Table context_z347t1_a_3) {
-        TableColumn tc = new TableColumn(widget_z347t1_a0a0a0b0b0c, SWT.NONE);
+        TableColumn tc = new TableColumn(widget_z347t1_a0a0a0b0b0e, SWT.NONE);
         return tc;
       }
-    }.invoke(widget_z347t1_a0a0a0b0b0c);
-    widget_z347t1_b0a0a0a0a1a1a2.setText("Bar");
-    widget_z347t1_b0a0a0a0a1a1a2.pack();
+    }.invoke(widget_z347t1_a0a0a0b0b0e);
+    widget_z347t1_b0a0a0a0a1a1a4.setText("Bar");
+    widget_z347t1_b0a0a0a0a1a1a4.pack();
     for (int i = 0; i < 128; i++) {
-      final TableItem widget_z347t1_a0a0b0a0a0a1a1a2 = new TableItem(widget_z347t1_a0a0a0b0b0c, SWT.NONE);
-      widget_z347t1_a0a0b0a0a0a1a1a2.setText((String[]) new String[]{"" + (i + 32), "" + Character.valueOf((char) (' ' + i))});
+      final TableItem widget_z347t1_a0a0b0a0a0a1a1a4 = new TableItem(widget_z347t1_a0a0a0b0b0e, SWT.NONE);
+      widget_z347t1_a0a0b0a0a0a1a1a4.setText((String[]) new String[]{"" + (i + 32), "" + Character.valueOf((char) (' ' + i))});
       // nothing to do 
     }
     //  with SWT items are not added to container
     new _FunctionTypes._void_P0_E0() {
       public void invoke() {
-        TabItem ti = new TabItem(widget_z347t1_b0b0c, SWT.NONE);
+        TabItem ti = new TabItem(widget_z347t1_b0b0e, SWT.NONE);
         ti.setText("Tree");
-        ti.setControl((Control) widget_z347t1_a0a1a1a2);
+        ti.setControl((Control) widget_z347t1_a0a1a1a4);
       }
     }.invoke();
-    widget_z347t1_b0b0c.setLayoutData(DockLayoutData.CENTER);
+    widget_z347t1_b0b0e.setLayoutData(DockLayoutData.CENTER);
     dc.layout();
   }
 }

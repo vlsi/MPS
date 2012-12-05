@@ -182,9 +182,9 @@ public class FileMPSProject extends Project {
     }
 
     private void load(File file, Element root) {
-      FileMPSProject.ProjectDescriptor result_dkknya_a0a1a = this;
-      final String result_dkknya_a0a0a1a = file.getName();
-      result_dkknya_a0a1a.setName(result_dkknya_a0a0a1a);
+      FileMPSProject.ProjectDescriptor result_dkknya_a0a5o = this;
+      final String result_dkknya_a0a0a5o = file.getName();
+      result_dkknya_a0a5o.setName(result_dkknya_a0a0a5o);
 
       if (root == null) {
         return;
@@ -197,12 +197,12 @@ public class FileMPSProject extends Project {
       ListSequence.fromList(moduleList).addSequence(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "projectModules"), "modulePath")));
       for (Element moduleElement : ListSequence.fromList(moduleList)) {
         Path modulePath = new Path();
-        Path result_dkknya_a1a9a0a1a = modulePath;
-        final String result_dkknya_a0a1a9a0a1a = MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(file.getPath())).expandPath(moduleElement.getAttributeValue("path"));
-        result_dkknya_a1a9a0a1a.setPath(result_dkknya_a0a1a9a0a1a);
-        final String result_dkknya_a1a1a9a0a1a = moduleElement.getAttributeValue("folder");
-        result_dkknya_a1a9a0a1a.setMPSFolder(result_dkknya_a1a1a9a0a1a);
-        result_dkknya_a0a1a.addModule(modulePath);
+        Path result_dkknya_a1a9a0a5o = modulePath;
+        final String result_dkknya_a0a1a9a0a5o = MacrosFactory.forProjectFile(FileSystem.getInstance().getFileByPath(file.getPath())).expandPath(moduleElement.getAttributeValue("path"));
+        result_dkknya_a1a9a0a5o.setPath(result_dkknya_a0a1a9a0a5o);
+        final String result_dkknya_a1a1a9a0a5o = moduleElement.getAttributeValue("folder");
+        result_dkknya_a1a9a0a5o.setMPSFolder(result_dkknya_a1a1a9a0a5o);
+        result_dkknya_a0a5o.addModule(modulePath);
       }
 
       for (Element e : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "genConfs"), "genConfModels"))) {
@@ -211,7 +211,7 @@ public class FileMPSProject extends Project {
         for (Element me : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(e, "models"), "model"))) {
           tc.addModel(SModelReference.fromString(me.getAttributeValue("modelRef")));
         }
-        result_dkknya_a0a1a.getTestConfigurations().add(tc);
+        result_dkknya_a0a5o.getTestConfigurations().add(tc);
       }
 
       for (Element e : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(root, "genConfs"), "genConfModule"))) {
@@ -220,7 +220,7 @@ public class FileMPSProject extends Project {
         String moduleRef = e.getAttributeValue("moduleRef");
         if (moduleRef != null) {
           tc.setModuleRef(ModuleReference.fromString(moduleRef));
-          result_dkknya_a0a1a.getTestConfigurations().add(tc);
+          result_dkknya_a0a5o.getTestConfigurations().add(tc);
         }
       }
     }

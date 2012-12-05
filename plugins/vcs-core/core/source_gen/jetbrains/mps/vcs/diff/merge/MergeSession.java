@@ -309,7 +309,7 @@ public class MergeSession {
   private void invalidateChanges(Iterable<ModelChange> changes) {
     if (Sequence.fromIterable(changes).isNotEmpty()) {
       SetSequence.fromSet(myResolvedChanges).addSequence(Sequence.fromIterable(changes));
-      check_bow6nj_a1a0a92(myChangesInvalidateHandler);
+      check_bow6nj_a1a0a24(myChangesInvalidateHandler);
     }
   }
 
@@ -330,27 +330,6 @@ public class MergeSession {
     CopyUtil.copyModelContentAndPreserveIds(m, copy);
     CopyUtil.copyModelProperties(m, copy);
     return copy;
-  }
-
-  private static void check_bow6nj_a1a0a92(MergeSession.ChangesInvalidateHandler checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      checkedDotOperand.someChangesInvalidated();
-    }
-
-  }
-
-  private static boolean eq_bow6nj_a0a0a0a0a0a0b0c1(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
-  }
-
-  private static boolean eq_bow6nj_a0a0a0a0a0a0b0k1(Object a, Object b) {
-    return (a != null ?
-      a.equals(b) :
-      a == b
-    );
   }
 
   public static interface ChangesInvalidateHandler {
@@ -384,7 +363,7 @@ public class MergeSession {
       List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getReference().getSourceNode().getSNodeId());
       invalidateChanges(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
-          return ch instanceof SetReferenceChange && eq_bow6nj_a0a0a0a0a0a0b0c1(((SetReferenceChange) ch).getRole(), event.getReference().getRole());
+          return ch instanceof SetReferenceChange && eq_bow6nj_a0a0a0a0a0a0b0d64(((SetReferenceChange) ch).getRole(), event.getReference().getRole());
         }
       }));
       invalidateDeletedRoot(event);
@@ -494,7 +473,7 @@ public class MergeSession {
       List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getNode().getSNodeId());
       invalidateChanges(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
-          return ch instanceof SetPropertyChange && eq_bow6nj_a0a0a0a0a0a0b0k1(((SetPropertyChange) ch).getPropertyName(), event.getPropertyName());
+          return ch instanceof SetPropertyChange && eq_bow6nj_a0a0a0a0a0a0b0l64(((SetPropertyChange) ch).getPropertyName(), event.getPropertyName());
         }
       }));
       invalidateDeletedRoot(event);
@@ -505,5 +484,26 @@ public class MergeSession {
       beforeNodeRemovedRecursively(event.getRoot());
       invalidateDeletedRoot(event);
     }
+  }
+
+  private static void check_bow6nj_a1a0a24(MergeSession.ChangesInvalidateHandler checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      checkedDotOperand.someChangesInvalidated();
+    }
+
+  }
+
+  private static boolean eq_bow6nj_a0a0a0a0a0a0b0d64(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_bow6nj_a0a0a0a0a0a0b0l64(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

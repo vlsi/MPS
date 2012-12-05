@@ -54,9 +54,9 @@ public class AutoResolver extends EditorCheckerAdapter {
           public void run() {
             ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
               public void run() {
-                TypeContextManager.getInstance().setComputeInNormalMode(true);
+                TypeContextManager.getInstance().setComputeInNormalMode_resolverVooDoo(true);
                 ResolverComponent.getInstance().resolveScopesOnly(badReferences, operationContext);
-                TypeContextManager.getInstance().setComputeInNormalMode(false);
+                TypeContextManager.getInstance().setComputeInNormalMode_resolverVooDoo(false);
               }
             }, operationContext.getProject());
           }

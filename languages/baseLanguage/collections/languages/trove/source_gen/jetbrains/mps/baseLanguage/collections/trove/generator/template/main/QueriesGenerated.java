@@ -4,10 +4,10 @@ package jetbrains.mps.baseLanguage.collections.trove.generator.template.main;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
@@ -18,13 +18,13 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
 public class QueriesGenerated {
-  public static Object propertyMacro_GetPropertyValue_5499565529811713156(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "T" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getUnboxedType_1213877337320", new Object[]{}), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "name") + "ListIterator";
-  }
-
   public static Object propertyMacro_GetPropertyValue_5499565529811346601(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String p = BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getPresentation_1213877396640", new Object[]{});
     return "T" + Character.toUpperCase(p.charAt(0)) + StringUtils.substring(p, 1) + "ArrayListDecorator";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5499565529811713156(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return "T" + SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getUnboxedType_1213877337320", new Object[]{}), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "name") + "ListIterator";
   }
 
   public static Object referenceMacro_GetReferent_5499565529811371608(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -53,26 +53,6 @@ public class QueriesGenerated {
 
   public static Object referenceMacro_GetReferent_5499565529811382399(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getPresentation_1213877396640", new Object[]{}) + "Value";
-  }
-
-  public static SNode sourceNodeQuery_5499565529811713176(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getUnboxedType_1213877337320", new Object[]{});
-  }
-
-  public static SNode sourceNodeQuery_5499565529811713189(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getUnboxedType_1213877337320", new Object[]{});
-  }
-
-  public static SNode sourceNodeQuery_5499565529811713202(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getUnboxedType_1213877337320", new Object[]{});
-  }
-
-  public static SNode sourceNodeQuery_5499565529811713225(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getUnboxedType_1213877337320", new Object[]{});
-  }
-
-  public static SNode sourceNodeQuery_5499565529811713240(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getUnboxedType_1213877337320", new Object[]{});
   }
 
   public static SNode sourceNodeQuery_5499565529811356535(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -156,6 +136,26 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_5499565529811382391(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getUnboxedType_1213877337320", new Object[]{});
+  }
+
+  public static SNode sourceNodeQuery_5499565529811713176(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getUnboxedType_1213877337320", new Object[]{});
+  }
+
+  public static SNode sourceNodeQuery_5499565529811713189(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getUnboxedType_1213877337320", new Object[]{});
+  }
+
+  public static SNode sourceNodeQuery_5499565529811713202(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getUnboxedType_1213877337320", new Object[]{});
+  }
+
+  public static SNode sourceNodeQuery_5499565529811713225(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getUnboxedType_1213877337320", new Object[]{});
+  }
+
+  public static SNode sourceNodeQuery_5499565529811713240(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), _context.getNode(), "virtual_getUnboxedType_1213877337320", new Object[]{});
   }
 

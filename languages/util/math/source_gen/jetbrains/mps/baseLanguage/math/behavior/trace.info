@@ -608,8 +608,8 @@
     <nodeInfo nodeId="2705856473428697902" fileName="MathUtil.java" startLine="684" startPosition="266" endLine="688" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238406301498" fileName="MathUtil.java" startLine="23" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="applicable#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="2705856473428695576" fileName="MathUtil.java" startLine="294" startPosition="0" endLine="299" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1300076822026748168" fileName="MathUtil.java" startLine="500" startPosition="0" endLine="505" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0c0a2a0c0b0b0d#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2705856473428697883" fileName="MathUtil.java" startLine="657" startPosition="0" endLine="662" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0c0h#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1300076822026748168" fileName="MathUtil.java" startLine="500" startPosition="0" endLine="505" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0c0a2a0c0b0b0e#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2705856473428697883" fileName="MathUtil.java" startLine="657" startPosition="0" endLine="662" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0c0i#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1238942028290" fileName="MathUtil.java" startLine="33" startPosition="44" endLine="39" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238942028306" fileName="MathUtil.java" startLine="43" startPosition="46" endLine="49" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1238942028322" fileName="MathUtil.java" startLine="53" startPosition="48" endLine="59" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -623,11 +623,11 @@
     <nodeInfo nodeId="1904947163751468054" fileName="MathUtil.java" startLine="158" startPosition="48" endLine="164" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2705856473428697727" fileName="MathUtil.java" startLine="216" startPosition="44" endLine="222" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2705856473428697736" fileName="MathUtil.java" startLine="226" startPosition="46" endLine="232" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2705856473428697756" fileName="MathUtil.java" startLine="622" startPosition="0" endLine="628" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0g#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2705856473428697767" fileName="MathUtil.java" startLine="629" startPosition="0" endLine="635" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0b0g#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2705856473428697778" fileName="MathUtil.java" startLine="636" startPosition="0" endLine="642" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0c0g#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2705856473428697789" fileName="MathUtil.java" startLine="643" startPosition="0" endLine="649" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0d0g#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2705856473428697800" fileName="MathUtil.java" startLine="650" startPosition="0" endLine="656" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0e0g#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2705856473428697756" fileName="MathUtil.java" startLine="622" startPosition="0" endLine="628" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0h#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2705856473428697767" fileName="MathUtil.java" startLine="629" startPosition="0" endLine="635" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0b0h#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2705856473428697778" fileName="MathUtil.java" startLine="636" startPosition="0" endLine="642" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0c0h#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2705856473428697789" fileName="MathUtil.java" startLine="643" startPosition="0" endLine="649" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0d0h#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2705856473428697800" fileName="MathUtil.java" startLine="650" startPosition="0" endLine="656" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0e0h#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2705856473428695578" fileName="MathUtil.java" startLine="300" startPosition="0" endLine="307" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_b0a#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2705856473428695580" fileName="MathUtil.java" startLine="308" startPosition="0" endLine="315" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_c0a#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2705856473428695582" fileName="MathUtil.java" startLine="316" startPosition="0" endLine="323" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_d0a#()Ljetbrains/mps/smodel/SNode;" />
@@ -637,18 +637,18 @@
     <nodeInfo nodeId="2705856473428695590" fileName="MathUtil.java" startLine="348" startPosition="0" endLine="355" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_h0a#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2705856473428695592" fileName="MathUtil.java" startLine="356" startPosition="0" endLine="363" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_i0a#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2705856473428695594" fileName="MathUtil.java" startLine="364" startPosition="0" endLine="371" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_j0a#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1300076822026746769" fileName="MathUtil.java" startLine="506" startPosition="0" endLine="513" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0c0d#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1300076822026746775" fileName="MathUtil.java" startLine="514" startPosition="0" endLine="521" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a1c0d#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1300076822026746781" fileName="MathUtil.java" startLine="522" startPosition="0" endLine="529" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a2c0d#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1300076822026746787" fileName="MathUtil.java" startLine="530" startPosition="0" endLine="537" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a3c0d#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1300076822026748005" fileName="MathUtil.java" startLine="558" startPosition="0" endLine="565" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0a0e#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1300076822026748011" fileName="MathUtil.java" startLine="566" startPosition="0" endLine="573" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a1a0e#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1300076822026748017" fileName="MathUtil.java" startLine="574" startPosition="0" endLine="581" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a2a0e#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1300076822026748023" fileName="MathUtil.java" startLine="582" startPosition="0" endLine="589" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a3a0e#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1300076822026748029" fileName="MathUtil.java" startLine="590" startPosition="0" endLine="597" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a4a0e#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1300076822026748035" fileName="MathUtil.java" startLine="598" startPosition="0" endLine="605" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a5a0e#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1300076822026748041" fileName="MathUtil.java" startLine="606" startPosition="0" endLine="613" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a6a0e#()Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1300076822026748047" fileName="MathUtil.java" startLine="614" startPosition="0" endLine="621" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a7a0e#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1300076822026746769" fileName="MathUtil.java" startLine="506" startPosition="0" endLine="513" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0c0e#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1300076822026746775" fileName="MathUtil.java" startLine="514" startPosition="0" endLine="521" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a1c0e#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1300076822026746781" fileName="MathUtil.java" startLine="522" startPosition="0" endLine="529" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a2c0e#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1300076822026746787" fileName="MathUtil.java" startLine="530" startPosition="0" endLine="537" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a3c0e#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1300076822026748005" fileName="MathUtil.java" startLine="558" startPosition="0" endLine="565" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0a0f#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1300076822026748011" fileName="MathUtil.java" startLine="566" startPosition="0" endLine="573" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a1a0f#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1300076822026748017" fileName="MathUtil.java" startLine="574" startPosition="0" endLine="581" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a2a0f#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1300076822026748023" fileName="MathUtil.java" startLine="582" startPosition="0" endLine="589" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a3a0f#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1300076822026748029" fileName="MathUtil.java" startLine="590" startPosition="0" endLine="597" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a4a0f#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1300076822026748035" fileName="MathUtil.java" startLine="598" startPosition="0" endLine="605" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a5a0f#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1300076822026748041" fileName="MathUtil.java" startLine="606" startPosition="0" endLine="613" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a6a0f#()Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1300076822026748047" fileName="MathUtil.java" startLine="614" startPosition="0" endLine="621" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a7a0f#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="2705856473428697889" fileName="MathUtil.java" startLine="667" startPosition="171" endLine="674" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2705856473428697889" fileName="MathUtil.java" startLine="667" startPosition="171" endLine="674" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2705856473428697902" fileName="MathUtil.java" startLine="682" startPosition="171" endLine="689" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -683,21 +683,21 @@
     <nodeInfo nodeId="1300076822026746808" fileName="MathUtil.java" startLine="542" startPosition="30" endLine="554" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1300076822026746808" fileName="MathUtil.java" startLine="542" startPosition="30" endLine="554" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1300076822026746764" fileName="MathUtil.java" startLine="172" startPosition="5" endLine="186" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="2705856473428697889" fileName="MathUtil.java" startLine="663" startPosition="0" endLine="677" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0d0h#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="2705856473428697902" fileName="MathUtil.java" startLine="678" startPosition="0" endLine="692" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0e0h#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2705856473428697889" fileName="MathUtil.java" startLine="663" startPosition="0" endLine="677" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0d0i#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="2705856473428697902" fileName="MathUtil.java" startLine="678" startPosition="0" endLine="692" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0e0i#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1238942028322" fileName="MathUtil.java" startLine="59" startPosition="13" endLine="74" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1238942054018" fileName="MathUtil.java" startLine="111" startPosition="13" endLine="126" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1904947163751468050" fileName="MathUtil.java" startLine="154" startPosition="11" endLine="169" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2705856473428697727" fileName="MathUtil.java" startLine="222" startPosition="9" endLine="237" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1238942028294" fileName="MathUtil.java" startLine="372" startPosition="0" endLine="387" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0a2a1a0a1#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1238942028310" fileName="MathUtil.java" startLine="388" startPosition="0" endLine="403" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0a2a0c0b0a0b#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1238942028326" fileName="MathUtil.java" startLine="404" startPosition="0" endLine="419" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0a2a0c0a2a1a0a1#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1238942028342" fileName="MathUtil.java" startLine="420" startPosition="0" endLine="435" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0a2a0c0a2a0c0b0a0b#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1238942707841" fileName="MathUtil.java" startLine="436" startPosition="0" endLine="451" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0a2a1a0a2#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1238942754077" fileName="MathUtil.java" startLine="452" startPosition="0" endLine="467" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0a2a0c0b0a0c#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1238942756449" fileName="MathUtil.java" startLine="468" startPosition="0" endLine="483" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0a2a0c0a2a1a0a2#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1238942758900" fileName="MathUtil.java" startLine="484" startPosition="0" endLine="499" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0a2a0c0a2a0c0b0a0c#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1300076822026746808" fileName="MathUtil.java" startLine="538" startPosition="0" endLine="557" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a2a2a3#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1238942028294" fileName="MathUtil.java" startLine="372" startPosition="0" endLine="387" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0a2a1a0a2#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1238942028310" fileName="MathUtil.java" startLine="388" startPosition="0" endLine="403" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0a2a0c0b0a0c#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1238942028326" fileName="MathUtil.java" startLine="404" startPosition="0" endLine="419" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0a2a0c0a2a1a0a2#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1238942028342" fileName="MathUtil.java" startLine="420" startPosition="0" endLine="435" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0a2a0c0a2a0c0b0a0c#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1238942707841" fileName="MathUtil.java" startLine="436" startPosition="0" endLine="451" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0a2a1a0a3#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1238942754077" fileName="MathUtil.java" startLine="452" startPosition="0" endLine="467" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0a2a0c0b0a0d#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1238942756449" fileName="MathUtil.java" startLine="468" startPosition="0" endLine="483" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0a2a0c0a2a1a0a3#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1238942758900" fileName="MathUtil.java" startLine="484" startPosition="0" endLine="499" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a0a0a2a0c0a2a0c0b0a0d#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1300076822026746808" fileName="MathUtil.java" startLine="538" startPosition="0" endLine="557" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_30uc9x_a2a2a4#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1300076822026748000" fileName="MathUtil.java" startLine="189" startPosition="57" endLine="209" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
     <nodeInfo nodeId="2705856473428697856" fileName="MathUtil.java" startLine="273" startPosition="0" endLine="293" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="operConstant#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="1300076822026747996" fileName="MathUtil.java" startLine="189" startPosition="0" endLine="211" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getRoundingMode#(I)Ljetbrains/mps/smodel/SNode;" />
@@ -857,43 +857,43 @@
       <varInfo nodeId="2705856473428697883" varName="quotedNode_1" />
     </scopeInfo>
     <scopeInfo nodeId="1238942028290" fileName="MathUtil.java" startLine="34" startPosition="9" endLine="38" endPosition="11">
-      <varInfo nodeId="1238942028290" varName="matchingNode_30uc9x_a0a1" />
+      <varInfo nodeId="1238942028290" varName="matchingNode_30uc9x_a0a2" />
     </scopeInfo>
     <scopeInfo nodeId="1238942028306" fileName="MathUtil.java" startLine="44" startPosition="11" endLine="48" endPosition="13">
-      <varInfo nodeId="1238942028306" varName="matchingNode_30uc9x_b0a1" />
+      <varInfo nodeId="1238942028306" varName="matchingNode_30uc9x_b0a2" />
     </scopeInfo>
     <scopeInfo nodeId="1238942028322" fileName="MathUtil.java" startLine="54" startPosition="13" endLine="58" endPosition="15">
-      <varInfo nodeId="1238942028322" varName="matchingNode_30uc9x_c0a1" />
+      <varInfo nodeId="1238942028322" varName="matchingNode_30uc9x_c0a2" />
     </scopeInfo>
     <scopeInfo nodeId="1238942028338" fileName="MathUtil.java" startLine="64" startPosition="15" endLine="68" endPosition="17">
-      <varInfo nodeId="1238942028338" varName="matchingNode_30uc9x_d0a1" />
+      <varInfo nodeId="1238942028338" varName="matchingNode_30uc9x_d0a2" />
     </scopeInfo>
     <scopeInfo nodeId="1238942053986" fileName="MathUtil.java" startLine="86" startPosition="9" endLine="90" endPosition="11">
-      <varInfo nodeId="1238942053986" varName="matchingNode_30uc9x_a0a2" />
+      <varInfo nodeId="1238942053986" varName="matchingNode_30uc9x_a0a3" />
     </scopeInfo>
     <scopeInfo nodeId="1238942054002" fileName="MathUtil.java" startLine="96" startPosition="11" endLine="100" endPosition="13">
-      <varInfo nodeId="1238942054002" varName="matchingNode_30uc9x_b0a2" />
+      <varInfo nodeId="1238942054002" varName="matchingNode_30uc9x_b0a3" />
     </scopeInfo>
     <scopeInfo nodeId="1238942054018" fileName="MathUtil.java" startLine="106" startPosition="13" endLine="110" endPosition="15">
-      <varInfo nodeId="1238942054018" varName="matchingNode_30uc9x_c0a2" />
+      <varInfo nodeId="1238942054018" varName="matchingNode_30uc9x_c0a3" />
     </scopeInfo>
     <scopeInfo nodeId="1238942054034" fileName="MathUtil.java" startLine="116" startPosition="15" endLine="120" endPosition="17">
-      <varInfo nodeId="1238942054034" varName="matchingNode_30uc9x_d0a2" />
+      <varInfo nodeId="1238942054034" varName="matchingNode_30uc9x_d0a3" />
     </scopeInfo>
     <scopeInfo nodeId="1300076822026748099" fileName="MathUtil.java" startLine="139" startPosition="9" endLine="143" endPosition="11">
-      <varInfo nodeId="1300076822026748099" varName="matchingNode_30uc9x_a1a3" />
+      <varInfo nodeId="1300076822026748099" varName="matchingNode_30uc9x_a1a4" />
     </scopeInfo>
     <scopeInfo nodeId="1904947163751468050" fileName="MathUtil.java" startLine="149" startPosition="11" endLine="153" endPosition="13">
-      <varInfo nodeId="1904947163751468050" varName="matchingNode_30uc9x_b1a3" />
+      <varInfo nodeId="1904947163751468050" varName="matchingNode_30uc9x_b1a4" />
     </scopeInfo>
     <scopeInfo nodeId="1904947163751468054" fileName="MathUtil.java" startLine="159" startPosition="13" endLine="163" endPosition="15">
-      <varInfo nodeId="1904947163751468054" varName="matchingNode_30uc9x_c1a3" />
+      <varInfo nodeId="1904947163751468054" varName="matchingNode_30uc9x_c1a4" />
     </scopeInfo>
     <scopeInfo nodeId="2705856473428697727" fileName="MathUtil.java" startLine="217" startPosition="9" endLine="221" endPosition="11">
-      <varInfo nodeId="2705856473428697727" varName="matchingNode_30uc9x_a0a5" />
+      <varInfo nodeId="2705856473428697727" varName="matchingNode_30uc9x_a0a6" />
     </scopeInfo>
     <scopeInfo nodeId="2705856473428697736" fileName="MathUtil.java" startLine="227" startPosition="11" endLine="231" endPosition="13">
-      <varInfo nodeId="2705856473428697736" varName="matchingNode_30uc9x_b0a5" />
+      <varInfo nodeId="2705856473428697736" varName="matchingNode_30uc9x_b0a6" />
     </scopeInfo>
     <scopeInfo nodeId="1238942028294" fileName="MathUtil.java" startLine="376" startPosition="165" endLine="380" endPosition="5" />
     <scopeInfo nodeId="1238942028294" fileName="MathUtil.java" startLine="380" startPosition="5" endLine="384" endPosition="5" />
@@ -1038,16 +1038,16 @@
     <scopeInfo nodeId="1238942756449" fileName="MathUtil.java" startLine="471" startPosition="30" endLine="480" endPosition="5" />
     <scopeInfo nodeId="1238942758900" fileName="MathUtil.java" startLine="487" startPosition="30" endLine="496" endPosition="5" />
     <scopeInfo nodeId="1238942028338" fileName="MathUtil.java" startLine="62" startPosition="20" endLine="73" endPosition="26">
-      <varInfo nodeId="1238942028338" varName="matches_30uc9x_d0a1" />
+      <varInfo nodeId="1238942028338" varName="matches_30uc9x_d0a2" />
     </scopeInfo>
     <scopeInfo nodeId="1238942054034" fileName="MathUtil.java" startLine="114" startPosition="20" endLine="125" endPosition="26">
-      <varInfo nodeId="1238942054034" varName="matches_30uc9x_d0a2" />
+      <varInfo nodeId="1238942054034" varName="matches_30uc9x_d0a3" />
     </scopeInfo>
     <scopeInfo nodeId="1904947163751468054" fileName="MathUtil.java" startLine="157" startPosition="18" endLine="168" endPosition="66">
-      <varInfo nodeId="1904947163751468054" varName="matches_30uc9x_c1a3" />
+      <varInfo nodeId="1904947163751468054" varName="matches_30uc9x_c1a4" />
     </scopeInfo>
     <scopeInfo nodeId="2705856473428697736" fileName="MathUtil.java" startLine="225" startPosition="16" endLine="236" endPosition="22">
-      <varInfo nodeId="2705856473428697736" varName="matches_30uc9x_b0a5" />
+      <varInfo nodeId="2705856473428697736" varName="matches_30uc9x_b0a6" />
     </scopeInfo>
     <scopeInfo nodeId="1300076822026746808" fileName="MathUtil.java" startLine="543" startPosition="171" endLine="554" endPosition="51" />
     <scopeInfo nodeId="1300076822026746808" fileName="MathUtil.java" startLine="542" startPosition="30" endLine="554" endPosition="51" />
@@ -1159,22 +1159,22 @@
       <varInfo nodeId="2705856473428697973" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1238942028322" fileName="MathUtil.java" startLine="52" startPosition="18" endLine="74" endPosition="13">
-      <varInfo nodeId="1238942028322" varName="matches_30uc9x_c0a1" />
+      <varInfo nodeId="1238942028322" varName="matches_30uc9x_c0a2" />
     </scopeInfo>
     <scopeInfo nodeId="1238942054018" fileName="MathUtil.java" startLine="104" startPosition="18" endLine="126" endPosition="13">
-      <varInfo nodeId="1238942054018" varName="matches_30uc9x_c0a2" />
+      <varInfo nodeId="1238942054018" varName="matches_30uc9x_c0a3" />
     </scopeInfo>
     <scopeInfo nodeId="1904947163751468050" fileName="MathUtil.java" startLine="147" startPosition="16" endLine="169" endPosition="11">
-      <varInfo nodeId="1904947163751468050" varName="matches_30uc9x_b1a3" />
+      <varInfo nodeId="1904947163751468050" varName="matches_30uc9x_b1a4" />
     </scopeInfo>
     <scopeInfo nodeId="1300076822026747996" fileName="MathUtil.java" startLine="189" startPosition="0" endLine="211" endPosition="0">
       <varInfo nodeId="1300076822026748055" varName="roundingMode" />
     </scopeInfo>
     <scopeInfo nodeId="2705856473428697727" fileName="MathUtil.java" startLine="215" startPosition="7" endLine="237" endPosition="9">
-      <varInfo nodeId="2705856473428697727" varName="matches_30uc9x_a0a5" />
+      <varInfo nodeId="2705856473428697727" varName="matches_30uc9x_a0a6" />
     </scopeInfo>
     <scopeInfo nodeId="2705856473428697725" fileName="MathUtil.java" startLine="213" startPosition="5" endLine="238" endPosition="7">
-      <varInfo nodeId="2705856473428697725" varName="matchedNode_30uc9x_a0f" />
+      <varInfo nodeId="2705856473428697725" varName="matchedNode_30uc9x_a0g" />
     </scopeInfo>
     <scopeInfo nodeId="2705856473428697724" fileName="MathUtil.java" startLine="212" startPosition="54" endLine="239" endPosition="5" />
     <scopeInfo nodeId="2705856473428697753" fileName="MathUtil.java" startLine="242" startPosition="42" endLine="270" endPosition="13" />
@@ -1185,28 +1185,28 @@
       <varInfo nodeId="2705856473428697750" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1238942028306" fileName="MathUtil.java" startLine="42" startPosition="16" endLine="75" endPosition="11">
-      <varInfo nodeId="1238942028306" varName="matches_30uc9x_b0a1" />
+      <varInfo nodeId="1238942028306" varName="matches_30uc9x_b0a2" />
     </scopeInfo>
     <scopeInfo nodeId="1238942054002" fileName="MathUtil.java" startLine="94" startPosition="16" endLine="127" endPosition="11">
-      <varInfo nodeId="1238942054002" varName="matches_30uc9x_b0a2" />
+      <varInfo nodeId="1238942054002" varName="matches_30uc9x_b0a3" />
     </scopeInfo>
     <scopeInfo nodeId="1300076822026748099" fileName="MathUtil.java" startLine="137" startPosition="7" endLine="170" endPosition="9">
-      <varInfo nodeId="1300076822026748099" varName="matches_30uc9x_a1a3" />
+      <varInfo nodeId="1300076822026748099" varName="matches_30uc9x_a1a4" />
     </scopeInfo>
     <scopeInfo nodeId="1300076822026748097" fileName="MathUtil.java" startLine="135" startPosition="5" endLine="171" endPosition="7">
-      <varInfo nodeId="1300076822026748097" varName="matchedNode_30uc9x_b0d" />
+      <varInfo nodeId="1300076822026748097" varName="matchedNode_30uc9x_b0e" />
     </scopeInfo>
     <scopeInfo nodeId="1238942028290" fileName="MathUtil.java" startLine="32" startPosition="7" endLine="76" endPosition="9">
-      <varInfo nodeId="1238942028290" varName="matches_30uc9x_a0a1" />
+      <varInfo nodeId="1238942028290" varName="matches_30uc9x_a0a2" />
     </scopeInfo>
     <scopeInfo nodeId="1238942053986" fileName="MathUtil.java" startLine="84" startPosition="7" endLine="128" endPosition="9">
-      <varInfo nodeId="1238942053986" varName="matches_30uc9x_a0a2" />
+      <varInfo nodeId="1238942053986" varName="matches_30uc9x_a0a3" />
     </scopeInfo>
     <scopeInfo nodeId="1238942028288" fileName="MathUtil.java" startLine="30" startPosition="5" endLine="77" endPosition="7">
-      <varInfo nodeId="1238942028288" varName="matchedNode_30uc9x_a0b" />
+      <varInfo nodeId="1238942028288" varName="matchedNode_30uc9x_a0c" />
     </scopeInfo>
     <scopeInfo nodeId="1238942053984" fileName="MathUtil.java" startLine="82" startPosition="5" endLine="129" endPosition="7">
-      <varInfo nodeId="1238942053984" varName="matchedNode_30uc9x_a0c" />
+      <varInfo nodeId="1238942053984" varName="matchedNode_30uc9x_a0d" />
     </scopeInfo>
     <scopeInfo nodeId="1238942002672" fileName="MathUtil.java" startLine="29" startPosition="43" endLine="78" endPosition="5" />
     <scopeInfo nodeId="1238942053983" fileName="MathUtil.java" startLine="81" startPosition="43" endLine="130" endPosition="5" />

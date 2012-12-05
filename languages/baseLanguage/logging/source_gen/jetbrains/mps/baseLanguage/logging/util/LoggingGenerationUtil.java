@@ -31,7 +31,7 @@ public class LoggingGenerationUtil {
     if (ListSequence.fromList(textExpressions).isNotEmpty()) {
       result = SNodeOperations.copyNode(ListSequence.fromList(textExpressions).first());
       for (SNode textExpression : ListSequence.fromList(textExpressions).skip(1)) {
-        result = _quotation_createNode_gd2srw_a0a0b0b0a(SNodeOperations.copyNode(textExpression), result);
+        result = _quotation_createNode_gd2srw_a0a0b0b0b(SNodeOperations.copyNode(textExpression), result);
       }
     }
     return result;
@@ -64,7 +64,7 @@ public class LoggingGenerationUtil {
     return baseName;
   }
 
-  private static SNode _quotation_createNode_gd2srw_a0a0b0b0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_gd2srw_a0a0b0b0b(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;

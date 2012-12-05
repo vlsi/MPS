@@ -19,6 +19,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 @Deprecated
 public class ConstraintsChecker extends SpecificChecker {
@@ -87,7 +88,7 @@ public class ConstraintsChecker extends SpecificChecker {
         if (!(ModelCheckerUtils.isDeclaredLink(SLinkOperations.findLinkDeclaration(reference), false))) {
           addIssue(results, node, "Usage of undeclared reference role \"" + reference + "\"", ModelChecker.SEVERITY_WARNING, "undeclared reference", new IModelCheckerFix() {
             public boolean doFix() {
-              node.setReferenceTarget(SLinkOperations.getRole(reference), null);
+              SNodeAccessUtil.setReferenceTarget(node, SLinkOperations.getRole(reference), null);
               return true;
             }
           });

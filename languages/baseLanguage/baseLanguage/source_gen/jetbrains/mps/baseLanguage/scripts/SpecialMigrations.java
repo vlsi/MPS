@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class SpecialMigrations {
@@ -62,11 +63,11 @@ public class SpecialMigrations {
     return migrations;
   }
 
-  private static SNode _quotation_createNode_i1zgmn_a0c0a0b0c0a0a0h0a(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_i1zgmn_a0c0a0b0c0a0a0h0b(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReferenceTarget("concept", (SNode) parameter_2);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_3, "concept", (SNode) parameter_2);
     quotedNode_4 = (SNode) parameter_1;
     if (quotedNode_4 != null) {
       quotedNode_3.addChild("leftExpression", HUtil.copyIfNecessary(quotedNode_4));

@@ -21,7 +21,7 @@ public class typeof_OutputResources_InferenceRule extends AbstractInferenceRule_
       {
         SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(or, "resource", true);
         EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "2360002718792622216", 0, null);
-        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "2360002718792622208", true), (SNode) _quotation_createNode_rptc1i_a0a0a(), true, true, _info_12389875345);
+        typeCheckingContext.createLessThanInequality((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:b90ae0cf-6b91-458a-92d0-e5bf2ada7de4(jetbrains.mps.make.script.typesystem)", "2360002718792622208", true), (SNode) _quotation_createNode_rptc1i_a0a0b(), true, true, _info_12389875345);
       }
     }
   }
@@ -41,7 +41,7 @@ public class typeof_OutputResources_InferenceRule extends AbstractInferenceRule_
     return false;
   }
 
-  private static SNode _quotation_createNode_rptc1i_a0a0a() {
+  private static SNode _quotation_createNode_rptc1i_a0a0b() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;

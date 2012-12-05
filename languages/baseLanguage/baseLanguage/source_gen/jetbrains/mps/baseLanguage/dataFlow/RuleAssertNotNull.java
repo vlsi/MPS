@@ -25,6 +25,94 @@ public class RuleAssertNotNull extends DataFlowConstructor {
   }
 
   public static class Pattern_7fbm30_a0a extends GeneratedMatchingPattern implements IMatchingPattern {
+    /*package*/ SNode patternVar_p;
+    /*package*/ SNode patternVar_action_var_5730083271929373007;
+    private GeneratedMatchingPattern myOrPattern_7fbm30_a0a0;
+
+    public Pattern_7fbm30_a0a() {
+    }
+
+    public boolean match(SNode nodeToMatch) {
+      {
+        SNode nodeToMatch_RuleAssertNotNull_7fbm30_a0a;
+        nodeToMatch_RuleAssertNotNull_7fbm30_a0a = nodeToMatch;
+        if (!("jetbrains.mps.baseLanguage.structure.AssertStatement".equals(nodeToMatch_RuleAssertNotNull_7fbm30_a0a.getConcept().getId()))) {
+          return false;
+        }
+        {
+          String childRole_RuleAssertNotNull_7fbm30_ = "condition";
+          if (!(PatternUtil.hasNChildren(nodeToMatch_RuleAssertNotNull_7fbm30_a0a, childRole_RuleAssertNotNull_7fbm30_, 1))) {
+            return false;
+          }
+          {
+            SNode childVar_RuleAssertNotNull_7fbm30_a0a0 = nodeToMatch_RuleAssertNotNull_7fbm30_a0a.getChildren(childRole_RuleAssertNotNull_7fbm30_).get(0);
+            {
+              SNode nodeToMatch_RuleAssertNotNull_7fbm30_a0a0;
+              nodeToMatch_RuleAssertNotNull_7fbm30_a0a0 = childVar_RuleAssertNotNull_7fbm30_a0a0;
+              {
+                boolean orMatches = false;
+                GeneratedMatchingPattern orPattern;
+                orPattern = new RuleAssertNotNull.Pattern_7fbm30_a0a.Pattern_7fbm30_a0a0a2a2a1a1a1a0a1a2a0a0a0a();
+                if (orPattern.match(nodeToMatch_RuleAssertNotNull_7fbm30_a0a0)) {
+                  orMatches = true;
+                  myOrPattern_7fbm30_a0a0 = orPattern;
+                }
+                orPattern = new RuleAssertNotNull.Pattern_7fbm30_a0a.Pattern_7fbm30_a0a0a3a2a1a1a1a0a1a2a0a0a0a();
+                if (orPattern.match(nodeToMatch_RuleAssertNotNull_7fbm30_a0a0)) {
+                  orMatches = true;
+                  myOrPattern_7fbm30_a0a0 = orPattern;
+                }
+                if (!(orMatches)) {
+                  return false;
+                }
+              }
+            }
+            this.patternVar_action_var_5730083271929373007 = childVar_RuleAssertNotNull_7fbm30_a0a0;
+          }
+        }
+      }
+      return true;
+    }
+
+    public boolean hasAntiquotations() {
+      return false;
+    }
+
+    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
+      if (pattern != null && pattern.getClass() == this.getClass()) {
+        patternVar_p = (SNode) pattern.getFieldValue("patternVar_p");
+        patternVar_action_var_5730083271929373007 = (SNode) pattern.getFieldValue("patternVar_action_var_5730083271929373007");
+      }
+    }
+
+    public Object getFieldValue(String fieldName) {
+      if ("patternVar_p".equals(fieldName)) {
+        return patternVar_p;
+      }
+      if ("patternVar_action_var_5730083271929373007".equals(fieldName)) {
+        return patternVar_action_var_5730083271929373007;
+      }
+      return null;
+    }
+
+    public void performActions(Object o) {
+      {
+        Object object = getFieldValue("patternVar_action_var_5730083271929373007");
+        if (((Program) o).contains(object)) {
+          boolean before = false;
+          int position;
+          if (before) {
+            position = ((Program) (o)).getStart(object);
+          } else {
+            position = ((Program) (o)).getEnd(object);
+          }
+          Instruction instruction = new notNullInstruction((SNode) getFieldValue("patternVar_p"));
+          instruction.setSource(getFieldValue("patternVar_action_var_5730083271929373007"));
+          ((Program) (o)).insert(instruction, position, true, before);
+        }
+      }
+    }
+
     public class Pattern_7fbm30_a0a0a2a2a1a1a1a0a1a2a0a0a0a extends GeneratedMatchingPattern implements IMatchingPattern {
       public Pattern_7fbm30_a0a0a2a2a1a1a1a0a1a2a0a0a0a() {
       }
@@ -142,94 +230,6 @@ public class RuleAssertNotNull extends DataFlowConstructor {
       }
 
       public void performActions(Object o) {
-      }
-    }
-
-    /*package*/ SNode patternVar_p;
-    /*package*/ SNode patternVar_action_var_5730083271929373007;
-    private GeneratedMatchingPattern myOrPattern_7fbm30_a0a0;
-
-    public Pattern_7fbm30_a0a() {
-    }
-
-    public boolean match(SNode nodeToMatch) {
-      {
-        SNode nodeToMatch_RuleAssertNotNull_7fbm30_a0a;
-        nodeToMatch_RuleAssertNotNull_7fbm30_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.AssertStatement".equals(nodeToMatch_RuleAssertNotNull_7fbm30_a0a.getConcept().getId()))) {
-          return false;
-        }
-        {
-          String childRole_RuleAssertNotNull_7fbm30_ = "condition";
-          if (!(PatternUtil.hasNChildren(nodeToMatch_RuleAssertNotNull_7fbm30_a0a, childRole_RuleAssertNotNull_7fbm30_, 1))) {
-            return false;
-          }
-          {
-            SNode childVar_RuleAssertNotNull_7fbm30_a0a0 = nodeToMatch_RuleAssertNotNull_7fbm30_a0a.getChildren(childRole_RuleAssertNotNull_7fbm30_).get(0);
-            {
-              SNode nodeToMatch_RuleAssertNotNull_7fbm30_a0a0;
-              nodeToMatch_RuleAssertNotNull_7fbm30_a0a0 = childVar_RuleAssertNotNull_7fbm30_a0a0;
-              {
-                boolean orMatches = false;
-                GeneratedMatchingPattern orPattern;
-                orPattern = new RuleAssertNotNull.Pattern_7fbm30_a0a.Pattern_7fbm30_a0a0a2a2a1a1a1a0a1a2a0a0a0a();
-                if (orPattern.match(nodeToMatch_RuleAssertNotNull_7fbm30_a0a0)) {
-                  orMatches = true;
-                  myOrPattern_7fbm30_a0a0 = orPattern;
-                }
-                orPattern = new RuleAssertNotNull.Pattern_7fbm30_a0a.Pattern_7fbm30_a0a0a3a2a1a1a1a0a1a2a0a0a0a();
-                if (orPattern.match(nodeToMatch_RuleAssertNotNull_7fbm30_a0a0)) {
-                  orMatches = true;
-                  myOrPattern_7fbm30_a0a0 = orPattern;
-                }
-                if (!(orMatches)) {
-                  return false;
-                }
-              }
-            }
-            this.patternVar_action_var_5730083271929373007 = childVar_RuleAssertNotNull_7fbm30_a0a0;
-          }
-        }
-      }
-      return true;
-    }
-
-    public boolean hasAntiquotations() {
-      return false;
-    }
-
-    public void fillFieldValuesFrom(GeneratedMatchingPattern pattern) {
-      if (pattern != null && pattern.getClass() == this.getClass()) {
-        patternVar_p = (SNode) pattern.getFieldValue("patternVar_p");
-        patternVar_action_var_5730083271929373007 = (SNode) pattern.getFieldValue("patternVar_action_var_5730083271929373007");
-      }
-    }
-
-    public Object getFieldValue(String fieldName) {
-      if ("patternVar_p".equals(fieldName)) {
-        return patternVar_p;
-      }
-      if ("patternVar_action_var_5730083271929373007".equals(fieldName)) {
-        return patternVar_action_var_5730083271929373007;
-      }
-      return null;
-    }
-
-    public void performActions(Object o) {
-      {
-        Object object = getFieldValue("patternVar_action_var_5730083271929373007");
-        if (((Program) o).contains(object)) {
-          boolean before = false;
-          int position;
-          if (before) {
-            position = ((Program) (o)).getStart(object);
-          } else {
-            position = ((Program) (o)).getEnd(object);
-          }
-          Instruction instruction = new notNullInstruction((SNode) getFieldValue("patternVar_p"));
-          instruction.setSource(getFieldValue("patternVar_action_var_5730083271929373007"));
-          ((Program) (o)).insert(instruction, position, true, before);
-        }
       }
     }
   }

@@ -16,6 +16,10 @@ import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
 public class QueriesGenerated {
+  public static Object propertyMacro_GetPropertyValue_1197167547634(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "stateMachineName") + "_StateMachineFactory";
+  }
+
   public static Object propertyMacro_GetPropertyValue_1197225159986(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "eventName");
   }
@@ -38,10 +42,6 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1197242046925(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "trigger", false), "eventName");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1197167547634(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "stateMachineName") + "_StateMachineFactory";
   }
 
   public static Object propertyMacro_GetPropertyValue_199058371937543681(final IOperationContext operationContext, final PropertyMacroContext _context) {

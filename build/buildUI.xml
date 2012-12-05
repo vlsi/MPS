@@ -35,8 +35,6 @@
     <mkdir dir="${build.layout}/lib" />
     <jar destfile="${build.layout}/lib/mps-ui.jar">
       <fileset dir="${build.tmp}/java/out/mps-ui" />
-      <zipfileset file="${mps_home}/languages/core/stub/MPS.UI/UI.msd" prefix="modules/MPS.UI" />
-      <zipfileset dir="${mps_home}/languages/core/stub/MPS.UI" includes="icons/**, resources/**" prefix="modules/MPS.UI" />
       <zipfileset file="${mps_home}/workbench/mps-ui/ui.msd" prefix="modules/jetbrains.mps.ide.ui" />
       <zipfileset dir="${mps_home}/workbench/mps-ui" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.ui" />
       <zipfileset dir="${mps_home}/workbench/mps-ui/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.ui/models" />
@@ -91,7 +89,8 @@
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/asm-tree-3.3.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <path refid="path.jdk.classpath" />

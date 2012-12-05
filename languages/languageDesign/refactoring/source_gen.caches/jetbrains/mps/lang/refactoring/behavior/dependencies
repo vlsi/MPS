@@ -703,6 +703,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.NodeOperation_BehaviorDescriptor" file="NodeOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -736,6 +737,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorManager" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
   </dependency>
   <dependency className="jetbrains.mps.lang.refactoring.behavior.NodesOperation_BehaviorDescriptor" file="NodesOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

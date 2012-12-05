@@ -4,7 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -15,10 +14,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.MPSDataKeys;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.StandaloneMPSProject;
+import jetbrains.mps.logging.Logger;
 
 public class AddModuleToProject_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(AddModuleToProject_Action.class);
 
   public AddModuleToProject_Action() {
     super("Add to Project", "", ICON);
@@ -79,4 +78,6 @@ public class AddModuleToProject_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "AddModuleToProject", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(AddModuleToProject_Action.class);
 }

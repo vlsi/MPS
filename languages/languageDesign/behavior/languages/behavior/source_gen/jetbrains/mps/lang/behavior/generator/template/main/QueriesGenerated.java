@@ -9,9 +9,9 @@ import jetbrains.mps.generator.template.BaseMappingRuleContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.behavior.behavior.BehaviorMethodNames;
 import jetbrains.mps.lang.behavior.behavior.StaticConceptMethodDeclaration_Behavior;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.behavior.behavior.LocalBehaviorMethodCall_Behavior;
@@ -58,6 +58,10 @@ public class QueriesGenerated {
     return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(_context.getNode(), "concept", false), "jetbrains.mps.lang.structure.structure.InterfaceConceptDeclaration");
   }
 
+  public static Object propertyMacro_GetPropertyValue_1225195370914(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
   public static Object propertyMacro_GetPropertyValue_1225195370435(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BehaviorMethodNames.getDeclarationName(_context.getNode());
   }
@@ -83,10 +87,6 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1902094167073769100(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getString(_context.getNode(), "name");
-  }
-
-  public static Object propertyMacro_GetPropertyValue_1225195370914(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
   }
 
@@ -128,6 +128,10 @@ public class QueriesGenerated {
     return behaviorModel + "." + SPropertyOperations.getString(extendsNode, "name") + "_BehaviorDescriptor";
   }
 
+  public static Object propertyMacro_GetPropertyValue_1144956008583624648(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SPropertyOperations.getBoolean(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "abstract");
+  }
+
   public static Object propertyMacro_GetPropertyValue_7923290658387314616(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BehaviorMethodNames.getDeclarationName(_context.getNode());
   }
@@ -149,22 +153,18 @@ public class QueriesGenerated {
     return BehaviorMethodNames.getDeclarationName(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_1144956008583624648(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SPropertyOperations.getBoolean(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "concept", false), "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "abstract");
-  }
-
   public static Object propertyMacro_GetPropertyValue_1144956008583742122(final IOperationContext operationContext, final PropertyMacroContext _context) {
     String behaviorModel = SNodeOperations.getModel(_context.getNode()).getLongName();
     behaviorModel = behaviorModel.substring(0, behaviorModel.length() - "structure".length()) + "behavior";
     return behaviorModel + "." + SPropertyOperations.getString(_context.getNode(), "name") + "_BehaviorDescriptor";
   }
 
-  public static Object propertyMacro_GetPropertyValue_1144956008583655120(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorMethodNames.getDeclarationName(_context.getNode());
-  }
-
   public static Object propertyMacro_GetPropertyValue_1144956008583654964(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "concept", false), "name") + "_BehaviorDescriptor";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_1144956008583655120(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorMethodNames.getDeclarationName(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_2056529430201935371(final IOperationContext operationContext, final PropertyMacroContext _context) {

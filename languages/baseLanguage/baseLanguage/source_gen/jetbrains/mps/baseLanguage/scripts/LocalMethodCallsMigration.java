@@ -13,6 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
@@ -36,7 +37,7 @@ public class LocalMethodCallsMigration {
     return new MigrationConfig(callConcept, SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalMethodCall")) {
       protected SNode createConditionInternal(SNode arg) {
         // <node> 
-        return _quotation_createNode_lds4sy_a1a0a0a0a1(declarationConcept, arg);
+        return _quotation_createNode_lds4sy_a1a0a0a0a2(declarationConcept, arg);
       }
 
       @Override
@@ -76,7 +77,7 @@ public class LocalMethodCallsMigration {
     };
   }
 
-  private static SNode _quotation_createNode_lds4sy_a1a0a0a0a1(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_lds4sy_a1a0a0a0a2(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -86,7 +87,7 @@ public class LocalMethodCallsMigration {
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", null, null, GlobalScope.getInstance(), false);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.RefConcept_Reference", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6.setReferenceTarget("conceptDeclaration", (SNode) parameter_1);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_6, "conceptDeclaration", (SNode) parameter_1);
     quotedNode_4.addChild("conceptArgument", quotedNode_6);
     quotedNode_3.addChild("operation", quotedNode_4);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DotExpression", null, null, GlobalScope.getInstance(), false);

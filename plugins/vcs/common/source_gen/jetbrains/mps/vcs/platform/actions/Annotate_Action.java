@@ -4,8 +4,6 @@ package jetbrains.mps.vcs.platform.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.vcs.annotate.AnnotationHelper;
@@ -13,10 +11,11 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class Annotate_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(Annotate_Action.class);
 
   public Annotate_Action() {
     super("Annotate", "", ICON);
@@ -67,4 +66,6 @@ public class Annotate_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(Annotate_Action.class);
 }

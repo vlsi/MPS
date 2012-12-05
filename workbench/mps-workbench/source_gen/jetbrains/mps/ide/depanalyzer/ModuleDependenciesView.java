@@ -99,7 +99,7 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
         Object o = path.getLastPathComponent();
         if (o instanceof ModuleDependencyNode) {
           ModuleDependencyNode node = (ModuleDependencyNode) o;
-          List<IModule> from = check_jxc64t_a0b0b0c0d0b(node.getFromNode());
+          List<IModule> from = check_jxc64t_a0b0b0c0d0e(node.getFromNode());
           if (from != null) {
             Map<List<IModule>, List<IModule>> collection = (node.isUsedLanguage() ?
               usedlanguages :
@@ -160,7 +160,7 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
       public void run() {
         tree.expandPath(new TreePath(node.getPath()));
         for (MPSTreeNode child : Sequence.fromIterable(node)) {
-          ModuleDependencyNode n = as_jxc64t_a0a0a1a0a0a0a6a7(child, ModuleDependencyNode.class);
+          ModuleDependencyNode n = as_jxc64t_a0a0a1a0a0a0a6a01(child, ModuleDependencyNode.class);
           if (n == null) {
             continue;
           }
@@ -187,20 +187,6 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
     return ActionPlace.MODULE_DEPENDENCIES;
   }
 
-  private static List<IModule> check_jxc64t_a0b0b0c0d0b(ModuleDependencyNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModules();
-    }
-    return null;
-  }
-
-  private static <T> T as_jxc64t_a0a0a1a0a0a0a6a7(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
   public static class MyToggleAction extends ToggleAction {
     private boolean myValue;
     private _FunctionTypes._void_P1_E0<? super Boolean> mySetValue;
@@ -218,5 +204,19 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
     public boolean isSelected(AnActionEvent event) {
       return myValue;
     }
+  }
+
+  private static List<IModule> check_jxc64t_a0b0b0c0d0e(ModuleDependencyNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModules();
+    }
+    return null;
+  }
+
+  private static <T> T as_jxc64t_a0a0a1a0a0a0a6a01(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
   }
 }

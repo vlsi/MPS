@@ -4,8 +4,6 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelStereotype;
@@ -22,10 +20,11 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 public class GoToUsageInMappingConfig_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(GoToUsageInMappingConfig_Action.class);
 
   public GoToUsageInMappingConfig_Action() {
     super("Go to Mapping Config", "", ICON);
@@ -102,4 +101,6 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
       }
     }
   }
+
+  protected static Log log = LogFactory.getLog(GoToUsageInMappingConfig_Action.class);
 }

@@ -104,10 +104,9 @@ public class GeneratedSourcePosition {
     if (debugInfo == null) {
       return null;
     }
-    Iterable<TraceablePositionInfo> positions = debugInfo.getPositions(node);
-    if (!positions.iterator().hasNext()) return null;
+    TraceablePositionInfo position = debugInfo.getPositionForNode(node);
+    if (position == null) return null;
 
-    TraceablePositionInfo position = positions.iterator().next();
     return new GeneratedSourcePosition(TraceInfoUtil.getUnitName(position.getFileName(), position.getStartLine(), model), position.getFileName(), position.getStartLine());
   }
 

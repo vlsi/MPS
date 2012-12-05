@@ -18,9 +18,6 @@ public class FibonacciSequence {
           public Iterator<Integer> iterator() {
             return new YieldingIterator<Integer>() {
               private int __CP__ = 0;
-              private int _6_n_;
-              private int _7_n__;
-              private int _11_n;
 
               protected boolean moveToNext() {
 __loop__:
@@ -88,6 +85,10 @@ __switch__:
                 } while (true);
                 return false;
               }
+
+              private int _6_n_;
+              private int _7_n__;
+              private int _11_n;
             };
           }
         };

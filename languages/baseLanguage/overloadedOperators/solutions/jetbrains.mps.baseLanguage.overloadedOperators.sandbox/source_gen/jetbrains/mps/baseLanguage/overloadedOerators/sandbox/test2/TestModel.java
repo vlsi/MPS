@@ -12,7 +12,7 @@ public class TestModel {
 
   public void test() {
     String str = "";
-    check_6o96ff_a1a0(str);
+    check_6o96ff_a1a1(str);
     str.concat("b");
   }
 
@@ -29,7 +29,7 @@ public class TestModel {
     d.print();
   }
 
-  private static String check_6o96ff_a1a0(String checkedDotOperand) {
+  private static String check_6o96ff_a1a1(String checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.concat("a");
     }

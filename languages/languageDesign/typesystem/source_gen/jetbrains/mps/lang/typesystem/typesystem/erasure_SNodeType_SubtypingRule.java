@@ -15,7 +15,7 @@ public class erasure_SNodeType_SubtypingRule extends SubtypingRule_Runtime imple
   }
 
   public SNode getSubOrSuperType(SNode snodeType, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    return _quotation_createNode_ak4xkm_a0a0();
+    return _quotation_createNode_ak4xkm_a0a1();
   }
 
   public String getApplicableConceptFQName() {
@@ -37,7 +37,7 @@ public class erasure_SNodeType_SubtypingRule extends SubtypingRule_Runtime imple
     return true;
   }
 
-  private static SNode _quotation_createNode_ak4xkm_a0a0() {
+  private static SNode _quotation_createNode_ak4xkm_a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.SNodeType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;

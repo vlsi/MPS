@@ -4,8 +4,6 @@ package jetbrains.mps.vcs.diff.ui.common;
 
 import javax.swing.Icon;
 import com.intellij.openapi.util.IconLoader;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import java.util.List;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import com.intellij.openapi.actionSystem.ActionToolbar;
@@ -28,16 +26,17 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
-import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.SNode;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.smodel.SNode;
 
 public class NextPreviousTraverser {
   private static final Icon PREVIOUS_ICON = IconLoader.getIcon("/actions/previousOccurence.png");
   private static final Icon NEXT_ICON = IconLoader.getIcon("/actions/nextOccurence.png");
-  protected static Log log = LogFactory.getLog(NextPreviousTraverser.class);
   private List<ChangeGroupLayout> myChangeGroupLayouts;
   private EditorComponent myLastEditor;
   private NextPreviousTraverser.TheAction myPreviousAction = new NextPreviousTraverser.TheAction(true);
@@ -142,7 +141,7 @@ public class NextPreviousTraverser {
         }
       });
     }
-    return check_mf966z_a5a5(changeGroup, left);
+    return check_mf966z_a5a31(changeGroup, left);
   }
 
   private synchronized Bounds getNeighbourGroupBounds(boolean previous) {
@@ -159,28 +158,28 @@ public class NextPreviousTraverser {
     Bounds min;
     if (asLeft == null) {
       {
-        Tuples._2<Bounds, Bounds> _tmp_mf966z_a0j0g = MultiTuple.<Bounds,Bounds>from(null, asRight);
-        min = _tmp_mf966z_a0j0g._0();
-        max = _tmp_mf966z_a0j0g._1();
+        Tuples._2<Bounds, Bounds> _tmp_mf966z_a0j0o = MultiTuple.<Bounds,Bounds>from(null, asRight);
+        min = _tmp_mf966z_a0j0o._0();
+        max = _tmp_mf966z_a0j0o._1();
       }
     } else if (asRight == null) {
       {
-        Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a9a6 = MultiTuple.<Bounds,Bounds>from(null, asLeft);
-        min = _tmp_mf966z_a0a9a6._0();
-        max = _tmp_mf966z_a0a9a6._1();
+        Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a9a41 = MultiTuple.<Bounds,Bounds>from(null, asLeft);
+        min = _tmp_mf966z_a0a9a41._0();
+        max = _tmp_mf966z_a0a9a41._1();
       }
     } else {
       if ((int) asLeft.start() < (int) asRight.start()) {
         {
-          Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a0a9a6 = MultiTuple.<Bounds,Bounds>from(asLeft, asRight);
-          min = _tmp_mf966z_a0a0a9a6._0();
-          max = _tmp_mf966z_a0a0a9a6._1();
+          Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a0a9a41 = MultiTuple.<Bounds,Bounds>from(asLeft, asRight);
+          min = _tmp_mf966z_a0a0a9a41._0();
+          max = _tmp_mf966z_a0a0a9a41._1();
         }
       } else {
         {
-          Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a0a0j0g = MultiTuple.<Bounds,Bounds>from(asRight, asLeft);
-          min = _tmp_mf966z_a0a0a0j0g._0();
-          max = _tmp_mf966z_a0a0a0j0g._1();
+          Tuples._2<Bounds, Bounds> _tmp_mf966z_a0a0a0j0o = MultiTuple.<Bounds,Bounds>from(asRight, asLeft);
+          min = _tmp_mf966z_a0a0a0j0o._0();
+          max = _tmp_mf966z_a0a0a0j0o._1();
         }
       }
     }
@@ -230,32 +229,11 @@ public class NextPreviousTraverser {
       if (log.isWarnEnabled()) {
         log.warn(String.format("Could not find cell for coordinates (1, %d), editor for concept %s", y, ModelAccess.instance().<String>runReadAction(new Computable<String>() {
           public String compute() {
-            return check_mf966z_a0a0a2a0a0b0l(check_mf966z_a0a0a0c0a0a1a11(myLastEditor.getEditedNode()));
+            return check_mf966z_a0a0a2a0a0b0t(check_mf966z_a0a0a0c0a0a1a91(myLastEditor.getEditedNode()));
           }
         })));
       }
     }
-  }
-
-  private static Bounds check_mf966z_a5a5(ChangeGroup checkedDotOperand, boolean left) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getBounds(left);
-    }
-    return null;
-  }
-
-  private static String check_mf966z_a0a0a2a0a0b0l(SConcept checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getId();
-    }
-    return null;
-  }
-
-  private static SConcept check_mf966z_a0a0a0c0a0a1a11(SNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getConcept();
-    }
-    return null;
   }
 
   private class TheAction extends BaseAction implements DumbAware {
@@ -283,5 +261,28 @@ public class NextPreviousTraverser {
     protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
       event.getPresentation().setEnabled(getNeighbourGroupBounds(myPrevious) != null);
     }
+  }
+
+  protected static Log log = LogFactory.getLog(NextPreviousTraverser.class);
+
+  private static Bounds check_mf966z_a5a31(ChangeGroup checkedDotOperand, boolean left) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getBounds(left);
+    }
+    return null;
+  }
+
+  private static String check_mf966z_a0a0a2a0a0b0t(SConcept checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getId();
+    }
+    return null;
+  }
+
+  private static SConcept check_mf966z_a0a0a0c0a0a1a91(SNode checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getConcept();
+    }
+    return null;
   }
 }

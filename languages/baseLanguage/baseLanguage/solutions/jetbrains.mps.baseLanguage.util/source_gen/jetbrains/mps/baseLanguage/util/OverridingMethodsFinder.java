@@ -143,11 +143,11 @@ public class OverridingMethodsFinder {
   }
 
   public static boolean canOverride(SNode method) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) && isNotEmpty_cdkq07_a0a0a1(SPropertyOperations.getString(method, "name"));
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) && isNotEmpty_cdkq07_a0a0a8(SPropertyOperations.getString(method, "name"));
   }
 
   public static boolean canBeOverriden(SNode method) {
-    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) && isNotEmpty_cdkq07_a0a0a2(SPropertyOperations.getString(method, "name"));
+    return !(SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "visibility", true), "jetbrains.mps.baseLanguage.structure.PrivateVisibility")) && isNotEmpty_cdkq07_a0a0a9(SPropertyOperations.getString(method, "name"));
   }
 
   public static <K, V> Set<V> safeGet(Map<K, Set<V>> map, K key) {
@@ -165,11 +165,11 @@ public class OverridingMethodsFinder {
     return false;
   }
 
-  public static boolean isNotEmpty_cdkq07_a0a0a1(String str) {
+  public static boolean isNotEmpty_cdkq07_a0a0a8(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_cdkq07_a0a0a2(String str) {
+  public static boolean isNotEmpty_cdkq07_a0a0a9(String str) {
     return str != null && str.length() > 0;
   }
 }

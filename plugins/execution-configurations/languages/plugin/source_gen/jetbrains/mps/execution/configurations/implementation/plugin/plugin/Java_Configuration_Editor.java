@@ -19,11 +19,6 @@ public class Java_Configuration_Editor extends SettingsEditorEx<Java_Configurati
   private NodeBySeveralConcepts_Configuration_Editor myNode;
   private JavaRunParameters_Configuration_Editor myRunParameters;
 
-  public Java_Configuration_Editor(NodeBySeveralConcepts_Configuration_Editor node, JavaRunParameters_Configuration_Editor runParameters) {
-    myNode = node;
-    myRunParameters = runParameters;
-  }
-
   public void disposeEditor() {
     myRunParameters.dispose();
     Disposer.dispose(myNode);
@@ -54,5 +49,10 @@ public class Java_Configuration_Editor extends SettingsEditorEx<Java_Configurati
   public void resetEditorFrom(final Java_Configuration configuration) {
     myNode.resetEditorFrom(configuration.getNode());
     myRunParameters.resetEditorFrom(configuration.getRunParameters());
+  }
+
+  public Java_Configuration_Editor(NodeBySeveralConcepts_Configuration_Editor node, JavaRunParameters_Configuration_Editor runParameters) {
+    myNode = node;
+    myRunParameters = runParameters;
   }
 }

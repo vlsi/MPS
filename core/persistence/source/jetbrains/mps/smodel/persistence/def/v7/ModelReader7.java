@@ -145,7 +145,7 @@ public class ModelReader7 implements IModelReader {
       String propertyName = myHelper.readName(element.getAttributeValue(ModelPersistence.NAME));
       String propertyValue = element.getAttributeValue(ModelPersistence.VALUE);
       if (propertyValue != null) {
-        node.setProperty(propertyName, propertyValue, false);
+        node.setProperty(propertyName, propertyValue);
         myLinkMap.addNameLocation(myHelper.readLinkId(element.getAttributeValue(ModelPersistence.NAME_ID)), node, propertyName);
       }
     }

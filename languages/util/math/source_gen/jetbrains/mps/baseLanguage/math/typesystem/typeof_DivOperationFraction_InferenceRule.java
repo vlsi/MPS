@@ -14,6 +14,7 @@ import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
 import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class typeof_DivOperationFraction_InferenceRule extends AbstractInferenceRule_Runtime implements InferenceRule_Runtime {
   public typeof_DivOperationFraction_InferenceRule() {
@@ -40,7 +41,7 @@ public class typeof_DivOperationFraction_InferenceRule extends AbstractInference
             final SNode rightType = typeCheckingContext.getRepresentative(rightExpressionType_typevar_1418611629041884929);
             typeCheckingContext.whenConcrete(rightType, new Runnable() {
               public void run() {
-                SNode opType = typeCheckingContext.getOverloadedOperationType(_quotation_createNode_ladpqm_a0a0a0a0e0a(), typeCheckingContext.getExpandedNode(leftType), typeCheckingContext.getExpandedNode(rightType));
+                SNode opType = typeCheckingContext.getOverloadedOperationType(_quotation_createNode_ladpqm_a0a0a0a0e0b(), typeCheckingContext.getExpandedNode(leftType), typeCheckingContext.getExpandedNode(rightType));
                 if ((opType != null)) {
                   {
                     SNode _nodeToCheck_1029348928467 = fraction;
@@ -76,16 +77,16 @@ public class typeof_DivOperationFraction_InferenceRule extends AbstractInference
     return false;
   }
 
-  private static SNode _quotation_createNode_ladpqm_a0a0a0a0e0a() {
+  private static SNode _quotation_createNode_ladpqm_a0a0a0a0e0b() {
     SNode quotedNode_1 = null;
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.DivExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setProperty("value", "1");
+    SNodeAccessUtil.setProperty(quotedNode_2, "value", "1");
     quotedNode_1.addChild("rightExpression", quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.IntegerConstant", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setProperty("value", "1");
+    SNodeAccessUtil.setProperty(quotedNode_3, "value", "1");
     quotedNode_1.addChild("leftExpression", quotedNode_3);
     return quotedNode_1;
   }

@@ -20,6 +20,7 @@ import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -69,7 +70,7 @@ public class PackageNode extends SNodeGroupTreeNode {
   public Set<SNode> getNodesUnderPackage(SModelDescriptor sm) {
     Set<SNode> nodes = new LinkedHashSet<SNode>();
     for (SNode root : sm.getSModel().roots()) {
-      String rootPack = root.getProperty(SModelTreeNode.PACK);
+      String rootPack = SNodeAccessUtil.getProperty(root, SModelTreeNode.PACK);
       if (rootPack != null && (rootPack.startsWith(getFullPackage() + ".") || rootPack.equals(getFullPackage()))) {
         nodes.add(root);
       }

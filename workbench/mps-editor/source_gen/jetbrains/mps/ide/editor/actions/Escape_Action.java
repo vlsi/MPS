@@ -4,7 +4,6 @@ package jetbrains.mps.ide.editor.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.logging.Logger;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -12,10 +11,10 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
+import jetbrains.mps.logging.Logger;
 
 public class Escape_Action extends BaseAction {
   private static final Icon ICON = null;
-  private static Logger LOG = Logger.getLogger(Escape_Action.class);
 
   public Escape_Action() {
     super("Escape", "", ICON);
@@ -77,4 +76,6 @@ public class Escape_Action extends BaseAction {
       LOG.error("User's action execute method failed. Action:" + "Escape", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(Escape_Action.class);
 }
