@@ -16,19 +16,25 @@
 package org.jetbrains.mps.openapi.language;
 
 /**
- * Represents a kind of node references
+ * Represents a kind of node connections. They can express either references or containment relationships.
  */
 public interface SLink {
 
   String getRole();
 
   /**
-   * ???
+   * True for references, false for containment relationships.
    */
   boolean isReference();
 
+  /**
+   * Cardinality greater than 1.
+   */
   boolean isMultiple();
 
+  /**
+   * Cardinality greater than 0.
+   */
   boolean isOptional();
 
   SAbstractConcept getTargetConcept();

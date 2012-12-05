@@ -31,24 +31,45 @@ public abstract class PersistenceFacade {
     return INSTANCE;
   }
 
-  public abstract Iterable<String> getTypeIds();
-
-  public abstract ModelRootFactory getModelRootFactory(String id);
+  //todo rename to getAvailableTypes()
 
   /**
-   * Type or id???
+   * Retrieves all registered types of model roots
+   */
+  public abstract Iterable<String> getTypeIds();
+
+  /**
+   * Retrieves the factory associated with the given type
+   */
+  public abstract ModelRootFactory getModelRootFactory(String type);
+
+  /**
+   * Registers the factory with the given type, overwriting potential earlier registration.
+   *
+   * @param factory The factory to register, null to clear the registration for the given type.
    */
   public abstract void setModelRootFactory(String type, ModelRootFactory factory);
 
+  /**
+   * Retrieves the factory associated with the given file extension.
+   */
   public abstract ModelFactory getModelFactory(String extension);
 
+  /**
+   * Registers the factory with the file extension, overwriting potential earlier registration.
+   *
+   * @param factory The factory to register, null to clear the registration for the given type.
+   */
   public abstract void setModelFactory(String extension, ModelFactory factory);
 
   /**
-   * ???
+   * Creates an SModelId from a given text identifier.
+   * Allows implementations to provide their own version of SModelId.
+   * todo add SModelIdFactory to openAPI
    *
-   * @param text
-   * @return
+   * @param text A text that the custom implementation of SModelIdFactory could use to build its own SModelId.
+   *             The text comes in the following format: "type:restInterpretedByTheConcreteTypeProvider"
+   *             The actual type of the model root is followed by implementation-specific text.
    */
   public abstract SModelId getModelId(String text);
 }

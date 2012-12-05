@@ -60,8 +60,7 @@ public interface SAbstractConcept {
   Iterable<SProperty> getProperties();
 
   /**
-   * This is suspicious???
-   * Why is this method available on SInterfaceConcepts???
+   * Either implementing or extending the supplied concept
    */
-  boolean isSubConceptOf(SConcept concept);
+  boolean isSubConceptOf(SAbstractConcept concept);
 }

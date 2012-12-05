@@ -22,9 +22,6 @@ public interface SProperty {
 
   String getName();
 
-  /**
-   * Why not primitive type???
-   */
   SDataType getType();
 
   /**

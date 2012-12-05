@@ -21,9 +21,9 @@ package org.jetbrains.mps.openapi.language;
 public interface SEnumeration extends SDataType {
 
   /**
-   * Resolves the enumeration literal with matching value
+   * Resolves the enumeration literal with matching name
    */
-  SEnumerationLiteral getLiteral(String value);
+  SEnumerationLiteral getLiteral(String name);
 
   SEnumerationLiteral getDefault();
 

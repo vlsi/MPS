@@ -43,28 +43,23 @@ public interface ModelAccess {
   void checkWriteAccess();
 
   /**
-   * Querying properties of models can only be performed from within managed commands, which hold the appropriate read lock.
-   * The method obtains such a lock and executes the provided command.
+   * Querying properties of models can only be performed from within managed actions, which hold the appropriate read lock.
+   * The method obtains such a lock and executes the provided action.
    */
   void runReadAction(Runnable r);
 
   /**
-   * Modifications to models can only be performed from within managed commands, which hold the appropriate write lock.
-   * The method obtains such a lock and executes the provided command.
+   * Modifications to models can only be performed from within managed actions, which hold the appropriate write lock.
+   * The method obtains such a lock and executes the provided action.
+   * It should not be invoked from EDT, otherwise UI freeze may occur.
    * Note: A lock cannot be upgraded. When owning the read lock it is not allowed to ask for the write lock through the runWriteAction() method.
    */
   void runWriteAction(Runnable r);
 
   /**
-   * Modifications to models can only be performed from within managed commands, which hold the appropriate write lock.
-   * The method obtains such a lock and executes the provided command on the EDT UI thread.
+   * Modifications to models can only be performed from within managed actions, which hold the appropriate write lock.
+   * The method obtains such a lock and executes the provided action on the EDT UI thread. Inside the action it is safe to
+   * touch any UI elements and perform other EDT-bound actions of the IntelliJ platform.
    */
   void runWriteInEDT(Runnable r);
-
-  /**
-   * Modifications to models can only be performed from within managed commands, which hold the appropriate write lock.
-   * The method obtains such a lock and executes the provided command.
-   * the project parameter ???
-   */
-  void runCommandInEDT(@NotNull Runnable r, @NotNull Project p);
 }

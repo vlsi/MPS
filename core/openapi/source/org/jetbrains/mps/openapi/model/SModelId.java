@@ -18,7 +18,8 @@ package org.jetbrains.mps.openapi.model;
 import org.jetbrains.mps.annotations.Immutable;
 
 /**
- * Uniquely identifies a model within a module
+ * Uniquely identifies a model within a module. Will be used as keys in maps and so should correctly implement equals() and hashCode().
+ * Custom persistence implementations may provide their own implementations of SModelId.
  */
 @Immutable
 public interface SModelId {

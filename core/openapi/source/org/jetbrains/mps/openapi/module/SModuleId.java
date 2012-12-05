@@ -16,8 +16,8 @@
 package org.jetbrains.mps.openapi.module;
 
 /**
- * A repository-wide unique id of a module ???
- * Use SNodeId details, simalarly for other IDs
+ * A repository-wide unique id of a module. Will be used as keys in maps and so should correctly implement equals() and hashCode().
+ * Custom persistence implementations may provide their own implementations of SModuleId.
  */
 public interface SModuleId {
 }

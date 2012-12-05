@@ -16,7 +16,7 @@
 package org.jetbrains.mps.openapi.persistence;
 
 /**
- * Gets notified whenever one or more streams (files) get changed by an external event. Internal???
+ * Gets notified whenever one or more streams (files) get changed by an external event.
  */
 public interface MultiStreamDataSourceListener extends DataSourceListener {
 

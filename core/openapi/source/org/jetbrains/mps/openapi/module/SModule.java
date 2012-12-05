@@ -45,7 +45,7 @@ public interface SModule {
   boolean isReadOnly();
 
   /**
-   * The module has been imported as a compiled library, not sources. Implies read only. ???
+   * The module has been imported as a compiled library, not sources. Implies read only.
    */
   boolean isPackaged();
 

@@ -31,8 +31,7 @@ public interface SEnumerationLiteral {
   String getPresentation();
 
   /**
-   * The value associated with the option
-   * must be unique???
+   * The name of the option, must be unique within the enumeration.
    */
-  String getValue();
+  String getName();
 }
