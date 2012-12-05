@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.traceInfo.test" uuid="415bc577-86ca-46a6-b873-4670fd19e169" compileInMPS="true">
+<solution name="jetbrains.mps.traceInfo.test" uuid="415bc577-86ca-46a6-b873-4670fd19e169" compileInMPS="false" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot path="${module}/jetbrains" />
   </models>
