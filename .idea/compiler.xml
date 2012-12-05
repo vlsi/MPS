@@ -117,11 +117,11 @@
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/traceable/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/traceable.operations/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/traceable.operations/tests/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/languageDesign/traceinfo/languages/testWeavingGenerated.data/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/languageDesign/traceinfo/languages/testWeavingInterpreted.data/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/languageDesign/traceinfo/languages/traceMacro.testlang/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/languageDesign/traceinfo/solutions/jetbrains.mps.traceInfo.testWeaving/source_gen" includeSubdirectories="true" />
-      <directory url="file://$PROJECT_DIR$/languages/languageDesign/traceinfo/solutions/traceMacro.sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/traceinfo/testWeavingGenerated.data/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/traceinfo/testWeavingInterpreted.data/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/traceinfo/traceMacro.sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/traceinfo/traceMacro.testlang/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/typesystem/languages/test/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/typesystem/solutions/pluginSolution/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/typesystem/source_gen" includeSubdirectories="true" />
