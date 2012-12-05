@@ -95,10 +95,6 @@ public class SModel {
     return false;
   }
 
-  public boolean isReadyForInput() {
-    return true;
-  }
-
   @Deprecated   //todo get rid of it
   public boolean isNotEditable() {
     assert !isDisposed();

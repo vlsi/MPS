@@ -18,8 +18,7 @@ package jetbrains.mps.typesystem.inference;
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
 import jetbrains.mps.components.CoreComponent;
-import jetbrains.mps.newTypesystem.context.CachingTypecheckingContext;
-import jetbrains.mps.newTypesystem.context.CachingTypecheckingContext_Tracer;
+import jetbrains.mps.newTypesystem.context.TargetTypecheckingContext_Tracer;
 import jetbrains.mps.newTypesystem.context.HoleTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.InferenceTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.SimpleTypecheckingContext;
@@ -395,13 +394,12 @@ public class TypeContextManager implements CoreComponent {
     try {
       if (myTypeChecker.isGenerationMode()) {
         TypeCheckingContext context = myTypeChecker.hasPerformanceTracer() ?
-          new CachingTypecheckingContext_Tracer(node, myTypeChecker) :
+          new TargetTypecheckingContext_Tracer(node, myTypeChecker) :
           new TargetTypecheckingContext(node, myTypeChecker);
-        if (context == null) return null;
         try {
           return context.getTypeOf_generationMode(node);
         } finally {
-//          context.dispose();
+          context.dispose();
         }
       }
       //now we are not in generation mode
@@ -440,59 +438,4 @@ public class TypeContextManager implements CoreComponent {
   public void setComputeInNormalMode_resolverVooDoo(boolean computeInNormalMode_resolverVooDoo) {
     myComputeInNormalMode_resolverVooDoo = computeInNormalMode_resolverVooDoo;
   }
-
-
-  private static class IdentityWrapper<K> {
-
-    private final K myObject;
-    private final int myHash;
-
-    public IdentityWrapper(K k) {
-      myObject = k;
-      myHash = k != null ? System.identityHashCode(myObject) : 113;
-    }
-
-    public K unwrap () {
-      return myObject;
-    }
-
-    @Override
-    public int hashCode() {
-      return myHash;
-    }
-
-    @Override
-    @SuppressWarnings("unchecked")
-    public boolean equals(Object that) {
-      if (that == this) return true;
-      if (that == null) return false;
-      if (!(that instanceof IdentityWrapper)) return false;
-      return this.myObject == ((IdentityWrapper<K>)that).myObject;
-    }
-  }
-
-  private static class TypecheckingContextHolder extends IdentityWrapper<SNode> {
-
-    private TypeCheckingContext myContext;
-
-    public TypecheckingContextHolder(SNode sNode) {
-      super(sNode);
-    }
-
-    public TypeCheckingContext getContext() {
-      return this.myContext;
-    }
-
-    public void setContext(TypeCheckingContext context) {
-      myContext = context;
-    }
-  }
-
-  private SimpleLRUCache<TypecheckingContextHolder> myContextCache = new SimpleLRUCache<TypecheckingContextHolder>() {
-    @Override
-    protected void purged(TypecheckingContextHolder tch) {
-      tch.getContext().dispose();
-      tch.setContext(null);
-    }
-  };
 }

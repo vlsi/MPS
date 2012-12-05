@@ -342,9 +342,6 @@ class GenerationSession {
       recycleWasteModel(currentInputModel);
       currentInputModel = currentOutputModel;
       currentInputModel.disposeFastNodeFinder();
-      if (currentInputModel.isTransient()) {
-        ((TransientSModel)currentInputModel).setReadyForInput();
-      }
 
       SModel transientModel = createTransientModel();
       if (myLogger.needsInfo()) {
