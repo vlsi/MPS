@@ -196,14 +196,24 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
   private class MyTabRemovalListener extends ModelListener {
     protected void onImportantRootRemoved(SNodePointer node) {
-      if (myBaseNode.equals(node)) return; //will be closed by idea
-      if (myBaseNode.getNode()==null) return; //will be closed by idea
-      if (myBaseNode.getModel() == null || myBaseNode.getModel().getModule() == null) return; //will be closed by idea
-      if (ModuleRepositoryFacade.getInstance().getModule(myBaseNode.getModel().getModule().getModuleReference()) == null) return; //will be closed by idea
-
+      if (isDisposedNode()) return;
+      if (myBaseNode.equals(node)) return;
       if (!isTabUpdateNeeded(node)) return;
-      updateTabs();
+
+      ModelAccess.instance().runReadInEDT(new Runnable() {
+        public void run() {
+          updateTabs();
+        }
+      });
     }
+  }
+
+  protected boolean isDisposedNode() {
+    return
+      myBaseNode.getNode() == null ||
+        myBaseNode.getModel() == null ||
+        myBaseNode.getModel().getModule() == null ||
+        ModuleRepositoryFacade.getInstance().getModule(myBaseNode.getModel().getModule().getModuleReference()) == null;
   }
 
   protected abstract boolean isTabUpdateNeeded(SNodePointer node);
