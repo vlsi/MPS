@@ -213,7 +213,6 @@ import java.util.Set;
   }
 
   protected SNode typeCalculated(SNode initialNode) {
-    assert false;
     return null;
   }
 
