@@ -21,7 +21,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 
-public class TestGeneratedFiles {
+public class GenSourcesAndCompilerXmlGenerationTest {
   @Test
   public void testGenSourcesIml() throws JDOMException, IOException {
     String previousGenSources = FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML);
