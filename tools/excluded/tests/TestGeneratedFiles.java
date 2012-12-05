@@ -26,7 +26,7 @@ public class TestGeneratedFiles {
   public void testGenSourcesIml() throws JDOMException, IOException {
     String previousGenSources = FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML);
     GeneratorsRunner.generateGenSourcesIml();
-    Assert.assertEquals(FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML), previousGenSources);
+    Assert.assertEquals("Regenerate gensources.iml. Run GeneratorsRunner run configuration.", FileUtil.read(GeneratorsRunner.GEN_SOURCES_IML), previousGenSources);
     // todo: cleanup?
   }
 
@@ -34,7 +34,7 @@ public class TestGeneratedFiles {
   public void testCompilerXml() throws JDOMException, IOException {
     String previousCompilerXml = FileUtil.read(GeneratorsRunner.COMPILER_XML_FILE);
     GeneratorsRunner.generateCompilerXmlFile();
-    Assert.assertEquals(FileUtil.read(GeneratorsRunner.COMPILER_XML_FILE), previousCompilerXml);
+    Assert.assertEquals("Regenerate compiler.xml. Run GeneratorsRunner run configuration.", FileUtil.read(GeneratorsRunner.COMPILER_XML_FILE), previousCompilerXml);
     // todo: cleanup?
   }
 }
