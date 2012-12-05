@@ -39,7 +39,7 @@ public class MetadataUtil {
     SPropertyOperations.set(root, "uuid", model.getSModelId() + "");
     SPropertyOperations.set(root, "version", "" + (model.getVersion()));
     if (model instanceof DefaultSModel) {
-      SPropertyOperations.set(root, "donotgenerate", "" + (check_ca1g54_a0a0e0b(((DefaultSModel) model).getSModelHeader())));
+      SPropertyOperations.set(root, "donotgenerate", "" + (check_ca1g54_a0a0e0c(((DefaultSModel) model).getSModelHeader())));
     }
     for (ModuleReference language : ListSequence.fromList(model.importedLanguages())) {
       ListSequence.fromList(SLinkOperations.getTargets(root, "language", true)).addElement(createModuleRefNode(language));
@@ -80,7 +80,7 @@ public class MetadataUtil {
     SNode root = ListSequence.fromList(SModelOperations.getRoots(metadataModel, "jetbrains.mps.ide.vcs.modelmetadata.structure.Model")).first();
     model.setVersion(SPropertyOperations.getInteger(root, "version"));
     if (model instanceof DefaultSModel) {
-      check_ca1g54_a0a2a4(((DefaultSModel) model).getSModelHeader(), root);
+      check_ca1g54_a0a2a5(((DefaultSModel) model).getSModelHeader(), root);
     }
 
     Set<ModuleReference> impLang = SetSequence.fromSetWithValues(new LinkedHashSet<ModuleReference>(), ListSequence.fromList(SLinkOperations.getTargets(root, "language", true)).select(new ISelector<SNode, ModuleReference>() {
@@ -153,14 +153,14 @@ public class MetadataUtil {
     });
   }
 
-  private static boolean check_ca1g54_a0a0e0b(SModelHeader checkedDotOperand) {
+  private static boolean check_ca1g54_a0a0e0c(SModelHeader checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.isDoNotGenerate();
     }
     return false;
   }
 
-  private static void check_ca1g54_a0a2a4(SModelHeader checkedDotOperand, SNode root) {
+  private static void check_ca1g54_a0a2a5(SModelHeader checkedDotOperand, SNode root) {
     if (null != checkedDotOperand) {
       checkedDotOperand.setDoNotGenerate(SPropertyOperations.getBoolean(root, "donotgenerate"));
     }

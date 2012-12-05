@@ -58,9 +58,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import com.intellij.openapi.wm.WindowManager;
-import jetbrains.mps.smodel.SModelDescriptor;
 import java.awt.GraphicsDevice;
 import java.awt.HeadlessException;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class RootDifferenceDialog extends DialogWrapper implements DataProvider {
   private ModelChangeSet myChangeSet;
@@ -137,7 +137,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
       myTraverser.goToFirstChangeLater();
     }
 
-    DisplayMode displayMode = check_vu2gar_a0jb0a(check_vu2gar_a0a53a0(GraphicsEnvironment.getLocalGraphicsEnvironment()));
+    DisplayMode displayMode = check_vu2gar_a0jb0q(check_vu2gar_a0a53a61(GraphicsEnvironment.getLocalGraphicsEnvironment()));
     int width = (displayMode == null ?
       800 :
       displayMode.getWidth() - 100
@@ -327,7 +327,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
           node.getPresentation()
         );
 
-        boolean isEditable = newModel.getModelDescriptor() instanceof EditableSModelDescriptor && check_vu2gar_a0a0g0a7a0(SModelRepository.getInstance().getModelDescriptor(newModel.getSModelReference())) == newModel;
+        boolean isEditable = newModel.getModelDescriptor() instanceof EditableSModelDescriptor && check_vu2gar_a0a0g0a7a23(SModelRepository.getInstance().getModelDescriptor(newModel.getSModelReference())) == newModel;
 
         return dialog.value = new RootDifferenceDialog(project, changeSet, rootId, rootName, contentTitles, WindowManager.getInstance().getFrame(project), isEditable, null, scrollTo);
       }
@@ -335,23 +335,23 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     dialog.value.show();
   }
 
-  private static SModel check_vu2gar_a0a0g0a7a0(SModelDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModel();
-    }
-    return null;
-  }
-
-  private static DisplayMode check_vu2gar_a0jb0a(GraphicsDevice checkedDotOperand) {
+  private static DisplayMode check_vu2gar_a0jb0q(GraphicsDevice checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDisplayMode();
     }
     return null;
   }
 
-  private static GraphicsDevice check_vu2gar_a0a53a0(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
+  private static GraphicsDevice check_vu2gar_a0a53a61(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDefaultScreenDevice();
+    }
+    return null;
+  }
+
+  private static SModel check_vu2gar_a0a0g0a7a23(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSModel();
     }
     return null;
   }

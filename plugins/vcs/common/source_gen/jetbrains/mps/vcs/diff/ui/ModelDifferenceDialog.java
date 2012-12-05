@@ -36,7 +36,6 @@ import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
-import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -51,6 +50,7 @@ import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
 import java.util.Arrays;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class ModelDifferenceDialog extends DialogWrapper {
   private Project myProject;
@@ -71,7 +71,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
     DiffTemporaryModule.createModuleForModel(newModel, "new", p);
     myContentTitles = diffRequest.getContentTitles();
     assert myContentTitles.length == 2;
-    myEditable = newModel.getModelDescriptor() instanceof EditableSModelDescriptor && check_vk52pz_a0a0h0a(SModelRepository.getInstance().getModelDescriptor(newModel.getSModelReference())) == newModel;
+    myEditable = newModel.getModelDescriptor() instanceof EditableSModelDescriptor && check_vk52pz_a0a0h0j(SModelRepository.getInstance().getModelDescriptor(newModel.getSModelReference())) == newModel;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         setTitle("Difference for model: " + SModelOperations.getModelName(oldModel));
@@ -210,13 +210,6 @@ public class ModelDifferenceDialog extends DialogWrapper {
     return myChangeSet.getChangesForRoot(rootId);
   }
 
-  private static SModel check_vk52pz_a0a0h0a(SModelDescriptor checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getSModel();
-    }
-    return null;
-  }
-
   public class MyGoToNeighbourRootActions extends GoToNeighbourRootActions.GoToByTree {
     public MyGoToNeighbourRootActions() {
       super(myTree);
@@ -300,5 +293,12 @@ public class ModelDifferenceDialog extends DialogWrapper {
     protected Iterable<SNodeId> getAffectedRoots() {
       return myChangeSet.getAffectedRoots();
     }
+  }
+
+  private static SModel check_vk52pz_a0a0h0j(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSModel();
+    }
+    return null;
   }
 }
