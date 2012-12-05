@@ -34,6 +34,7 @@ import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.*;
 import jetbrains.mps.vfs.FileSystem;
