@@ -23,6 +23,7 @@ import com.intellij.util.indexing.FileBasedIndex;
 import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
@@ -36,10 +37,11 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Set;
 
 public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindSupport {
+  private static Logger LOG = Logger.getLogger(MPSModelsFastFindSupport.class);
+
   public void initComponent() {
     FastFindSupportRegistry.getInstance().addFastFindSupport(RegularModelDataSource.FAST_FIND_ID, this);
   }
@@ -82,7 +84,10 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindS
         if (modelFile == null) continue;
 
         VirtualFile vf = VirtualFileUtils.getVirtualFile(modelFile);
-        if (vf==null) continue; //paranoid check due to http://youtrack.jetbrains.com/issue/MPS-16954
+        if (vf == null) {
+          LOG.warning("Model " + sm.getLongName() + ": virtual file not found for model file. Model file: " + modelFile.getPath());
+          continue;
+        }
 
         scopeFiles.addLink(sm, vf);
       }
@@ -93,7 +98,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindS
 
       //back-transform
       for (VirtualFile file : matchingFiles) {
-        for (SModelDescriptor m:scopeFiles.getBySecond(file)){
+        for (SModelDescriptor m : scopeFiles.getBySecond(file)) {
           result.putValue(m, elem);
         }
       }
