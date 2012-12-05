@@ -90,7 +90,11 @@
    <int>1</int>
   </void>
   <void method="put">
-   <string>public final org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getTopmostAncestor()</string>
+   <string>public final jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getTopmostAncestor()</string>
+   <int>1</int>
+  </void>
+  <void method="put">
+   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getTopmostAncestor()</string>
    <int>1</int>
   </void>
   <void method="put">
@@ -286,8 +290,8 @@
    <null/>
   </void>
   <void method="put">
-   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getNextSibling()</string>
-   <int>0</int>
+   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getNextSibling()</string>
+   <int>3</int>
   </void>
   <void method="put">
    <string>public java.util.List&lt;jetbrains.mps.smodel.SNode&gt; jetbrains.mps.smodel.SNode.getDescendants(jetbrains.mps.util.Condition&lt;jetbrains.mps.smodel.SNode&gt;)</string>
@@ -314,8 +318,8 @@
    <int>8</int>
   </void>
   <void method="put">
-   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getPrevSibling()</string>
-   <int>0</int>
+   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getPrevSibling()</string>
+   <int>3</int>
   </void>
   <void method="put">
    <string>public boolean jetbrains.mps.smodel.SNode.isRoot()</string>
@@ -450,7 +454,11 @@
    <null/>
   </void>
   <void method="put">
-   <string>public final org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getParent()</string>
+   <string>public final jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getParent()</string>
+   <int>1</int>
+  </void>
+  <void method="put">
+   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getParent()</string>
    <int>1</int>
   </void>
   <void method="put">
@@ -586,7 +594,7 @@
     <int>3</int>
   </void>
   <void method="put">
-    <string>public java.lang.Iterable&lt;java.lang.String&gt; jetbrains.mps.smodel.SNode.getPropertyNames()</string>
+    <string>public java.lang.Iterable jetbrains.mps.smodel.SNode.getPropertyNames()</string>
     <int>1</int>
   </void>
   <void method="put">
