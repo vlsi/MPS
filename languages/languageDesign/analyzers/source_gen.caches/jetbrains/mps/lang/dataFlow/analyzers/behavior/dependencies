@@ -9,7 +9,6 @@
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerFunFunction_Behavior" file="AnalyzerFunFunction_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -49,7 +48,6 @@
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerInitialFunction_Behavior" file="AnalyzerInitialFunction_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
@@ -71,7 +69,6 @@
   <dependency className="jetbrains.mps.lang.dataFlow.analyzers.behavior.AnalyzerMergeFunction_Behavior" file="AnalyzerMergeFunction_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />

@@ -30,54 +30,52 @@
   <unitInfo fileName="ReportExecutionError_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.ReportExecutionError_BehaviorDescriptor" />
   <unitInfo fileName="StartAndWaitOperation_BehaviorDescriptor.java" startLine="11" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.StartAndWaitOperation_BehaviorDescriptor" />
   <root nodeId="1262430001741647344" modelId="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)">
-    <nodeInfo nodeId="1262430001741647343" fileName="BuilderBlockStatement_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914722505" fileName="BuilderBlockStatement_Behavior.java" startLine="21" startPosition="93" endLine="22" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914722515" fileName="BuilderBlockStatement_Behavior.java" startLine="22" startPosition="71" endLine="23" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914722520" fileName="BuilderBlockStatement_Behavior.java" startLine="23" startPosition="277" endLine="24" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914722524" fileName="BuilderBlockStatement_Behavior.java" startLine="24" startPosition="167" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741647344" fileName="BuilderBlockStatement_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1262430001741647344" fileName="BuilderBlockStatement_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1262430001741647344" fileName="BuilderBlockStatement_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1262430001741647346" fileName="BuilderBlockStatement_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="1262430001741647341" fileName="BuilderBlockStatement_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="35" />
-    <scopeInfo nodeId="1262430001741647344" fileName="BuilderBlockStatement_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="1262430001741647343" fileName="BuilderBlockStatement_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914722505" fileName="BuilderBlockStatement_Behavior.java" startLine="20" startPosition="93" endLine="21" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914722520" fileName="BuilderBlockStatement_Behavior.java" startLine="21" startPosition="232" endLine="22" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914722524" fileName="BuilderBlockStatement_Behavior.java" startLine="22" startPosition="167" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647344" fileName="BuilderBlockStatement_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741647344" fileName="BuilderBlockStatement_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1262430001741647344" fileName="BuilderBlockStatement_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="1262430001741647346" fileName="BuilderBlockStatement_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="1262430001741647341" fileName="BuilderBlockStatement_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="35" />
+    <scopeInfo nodeId="1262430001741647344" fileName="BuilderBlockStatement_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1262430001741647344" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741647344" fileName="BuilderBlockStatement_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="1262430001741647344" fileName="BuilderBlockStatement_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="1262430001741647344" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914722504" fileName="BuilderBlockStatement_Behavior.java" startLine="21" startPosition="93" endLine="25" endPosition="18">
+    <scopeInfo nodeId="3044950653914722504" fileName="BuilderBlockStatement_Behavior.java" startLine="20" startPosition="93" endLine="23" endPosition="18">
       <varInfo nodeId="3044950653914722506" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741647344" fileName="BuilderBlockStatement_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="1262430001741647344" fileName="BuilderBlockStatement_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1262430001741647344" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741647344" fileName="BuilderBlockStatement_Behavior.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.BuilderBlockStatement_Behavior" />
+    <unitInfo nodeId="1262430001741647344" fileName="BuilderBlockStatement_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.BuilderBlockStatement_Behavior" />
   </root>
   <root nodeId="1262430001741704806" modelId="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)">
-    <nodeInfo nodeId="1262430001741704805" fileName="BuilderParameter_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914722678" fileName="BuilderParameter_Behavior.java" startLine="21" startPosition="93" endLine="22" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914722688" fileName="BuilderParameter_Behavior.java" startLine="22" startPosition="71" endLine="23" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914722693" fileName="BuilderParameter_Behavior.java" startLine="23" startPosition="277" endLine="24" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914722697" fileName="BuilderParameter_Behavior.java" startLine="24" startPosition="167" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741704806" fileName="BuilderParameter_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1262430001741704806" fileName="BuilderParameter_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1262430001741704806" fileName="BuilderParameter_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1262430001741704808" fileName="BuilderParameter_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="1262430001741704803" fileName="BuilderParameter_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="30" />
-    <scopeInfo nodeId="1262430001741704806" fileName="BuilderParameter_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="1262430001741704805" fileName="BuilderParameter_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914722678" fileName="BuilderParameter_Behavior.java" startLine="20" startPosition="93" endLine="21" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914722693" fileName="BuilderParameter_Behavior.java" startLine="21" startPosition="232" endLine="22" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914722697" fileName="BuilderParameter_Behavior.java" startLine="22" startPosition="167" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741704806" fileName="BuilderParameter_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741704806" fileName="BuilderParameter_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1262430001741704806" fileName="BuilderParameter_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="1262430001741704808" fileName="BuilderParameter_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="1262430001741704803" fileName="BuilderParameter_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="30" />
+    <scopeInfo nodeId="1262430001741704806" fileName="BuilderParameter_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1262430001741704806" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741704806" fileName="BuilderParameter_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="1262430001741704806" fileName="BuilderParameter_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="1262430001741704806" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914722677" fileName="BuilderParameter_Behavior.java" startLine="21" startPosition="93" endLine="25" endPosition="18">
+    <scopeInfo nodeId="3044950653914722677" fileName="BuilderParameter_Behavior.java" startLine="20" startPosition="93" endLine="23" endPosition="18">
       <varInfo nodeId="3044950653914722679" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741704806" fileName="BuilderParameter_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="1262430001741704806" fileName="BuilderParameter_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1262430001741704806" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741704806" fileName="BuilderParameter_Behavior.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.BuilderParameter_Behavior" />
+    <unitInfo nodeId="1262430001741704806" fileName="BuilderParameter_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.execution.commands.behavior.BuilderParameter_Behavior" />
   </root>
   <root nodeId="1616228152992024986" modelId="r:7757a4ec-c551-4194-a1b0-7ea4e576ea60(jetbrains.mps.execution.commands.behavior)">
     <nodeInfo nodeId="1616228152992024997" fileName="CommandPartLengthOperation_Behavior.java" startLine="12" startPosition="95" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

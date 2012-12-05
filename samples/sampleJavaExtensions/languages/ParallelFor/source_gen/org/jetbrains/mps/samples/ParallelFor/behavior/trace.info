@@ -7,58 +7,56 @@
   <unitInfo fileName="ThreadPool_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadPool_BehaviorDescriptor" />
   <unitInfo fileName="ThreadSafe_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="27" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadSafe_BehaviorDescriptor" />
   <root nodeId="1262430001741646801" modelId="r:66b9b377-244a-48b9-abf9-631a9c4ec34c(org.jetbrains.mps.samples.ParallelFor.behavior)">
-    <nodeInfo nodeId="1262430001741646800" fileName="NonThreadSafeClass_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914722278" fileName="NonThreadSafeClass_Behavior.java" startLine="21" startPosition="93" endLine="22" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914722288" fileName="NonThreadSafeClass_Behavior.java" startLine="22" startPosition="71" endLine="23" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914722293" fileName="NonThreadSafeClass_Behavior.java" startLine="23" startPosition="277" endLine="24" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914722297" fileName="NonThreadSafeClass_Behavior.java" startLine="24" startPosition="167" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741646801" fileName="NonThreadSafeClass_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1262430001741646801" fileName="NonThreadSafeClass_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1262430001741646801" fileName="NonThreadSafeClass_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1262430001741646803" fileName="NonThreadSafeClass_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="1262430001741646798" fileName="NonThreadSafeClass_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="27" />
-    <scopeInfo nodeId="1262430001741646801" fileName="NonThreadSafeClass_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="1262430001741646800" fileName="NonThreadSafeClass_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914722278" fileName="NonThreadSafeClass_Behavior.java" startLine="20" startPosition="93" endLine="21" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914722293" fileName="NonThreadSafeClass_Behavior.java" startLine="21" startPosition="232" endLine="22" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914722297" fileName="NonThreadSafeClass_Behavior.java" startLine="22" startPosition="167" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741646801" fileName="NonThreadSafeClass_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741646801" fileName="NonThreadSafeClass_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1262430001741646801" fileName="NonThreadSafeClass_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="1262430001741646803" fileName="NonThreadSafeClass_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="1262430001741646798" fileName="NonThreadSafeClass_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="27" />
+    <scopeInfo nodeId="1262430001741646801" fileName="NonThreadSafeClass_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1262430001741646801" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741646801" fileName="NonThreadSafeClass_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="1262430001741646801" fileName="NonThreadSafeClass_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="1262430001741646801" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914722277" fileName="NonThreadSafeClass_Behavior.java" startLine="21" startPosition="93" endLine="25" endPosition="18">
+    <scopeInfo nodeId="3044950653914722277" fileName="NonThreadSafeClass_Behavior.java" startLine="20" startPosition="93" endLine="23" endPosition="18">
       <varInfo nodeId="3044950653914722279" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741646801" fileName="NonThreadSafeClass_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="1262430001741646801" fileName="NonThreadSafeClass_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1262430001741646801" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741646801" fileName="NonThreadSafeClass_Behavior.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.NonThreadSafeClass_Behavior" />
+    <unitInfo nodeId="1262430001741646801" fileName="NonThreadSafeClass_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.NonThreadSafeClass_Behavior" />
   </root>
   <root nodeId="1262430001741647380" modelId="r:66b9b377-244a-48b9-abf9-631a9c4ec34c(org.jetbrains.mps.samples.ParallelFor.behavior)">
-    <nodeInfo nodeId="1262430001741647379" fileName="ThreadSafe_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914720392" fileName="ThreadSafe_Behavior.java" startLine="21" startPosition="93" endLine="22" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914720402" fileName="ThreadSafe_Behavior.java" startLine="22" startPosition="71" endLine="23" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720407" fileName="ThreadSafe_Behavior.java" startLine="23" startPosition="277" endLine="24" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720412" fileName="ThreadSafe_Behavior.java" startLine="24" startPosition="167" endLine="25" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720417" fileName="ThreadSafe_Behavior.java" startLine="25" startPosition="167" endLine="26" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720422" fileName="ThreadSafe_Behavior.java" startLine="26" startPosition="173" endLine="27" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720427" fileName="ThreadSafe_Behavior.java" startLine="27" startPosition="167" endLine="28" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720431" fileName="ThreadSafe_Behavior.java" startLine="28" startPosition="167" endLine="29" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741647380" fileName="ThreadSafe_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1262430001741647380" fileName="ThreadSafe_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1262430001741647380" fileName="ThreadSafe_Behavior.java" startLine="21" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1262430001741647382" fileName="ThreadSafe_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="1262430001741647377" fileName="ThreadSafe_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="24" />
-    <scopeInfo nodeId="1262430001741647380" fileName="ThreadSafe_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="1262430001741647379" fileName="ThreadSafe_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914720392" fileName="ThreadSafe_Behavior.java" startLine="20" startPosition="93" endLine="21" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914720407" fileName="ThreadSafe_Behavior.java" startLine="21" startPosition="232" endLine="22" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914720412" fileName="ThreadSafe_Behavior.java" startLine="22" startPosition="167" endLine="23" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914720417" fileName="ThreadSafe_Behavior.java" startLine="23" startPosition="167" endLine="24" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914720422" fileName="ThreadSafe_Behavior.java" startLine="24" startPosition="173" endLine="25" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914720427" fileName="ThreadSafe_Behavior.java" startLine="25" startPosition="167" endLine="26" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914720431" fileName="ThreadSafe_Behavior.java" startLine="26" startPosition="167" endLine="27" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647380" fileName="ThreadSafe_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741647380" fileName="ThreadSafe_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1262430001741647380" fileName="ThreadSafe_Behavior.java" startLine="20" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="1262430001741647382" fileName="ThreadSafe_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="1262430001741647377" fileName="ThreadSafe_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="24" />
+    <scopeInfo nodeId="1262430001741647380" fileName="ThreadSafe_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1262430001741647380" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741647380" fileName="ThreadSafe_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="1262430001741647380" fileName="ThreadSafe_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="1262430001741647380" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914720391" fileName="ThreadSafe_Behavior.java" startLine="21" startPosition="93" endLine="29" endPosition="18">
+    <scopeInfo nodeId="3044950653914720391" fileName="ThreadSafe_Behavior.java" startLine="20" startPosition="93" endLine="27" endPosition="18">
       <varInfo nodeId="3044950653914720393" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741647380" fileName="ThreadSafe_Behavior.java" startLine="21" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="1262430001741647380" fileName="ThreadSafe_Behavior.java" startLine="20" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="1262430001741647380" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741647380" fileName="ThreadSafe_Behavior.java" startLine="13" startPosition="0" endLine="32" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadSafe_Behavior" />
+    <unitInfo nodeId="1262430001741647380" fileName="ThreadSafe_Behavior.java" startLine="12" startPosition="0" endLine="30" endPosition="0" unitName="org.jetbrains.mps.samples.ParallelFor.behavior.ThreadSafe_Behavior" />
   </root>
   <root nodeId="4120418308311043819" modelId="r:66b9b377-244a-48b9-abf9-631a9c4ec34c(org.jetbrains.mps.samples.ParallelFor.behavior)">
     <nodeInfo nodeId="2832018561209150769" fileName="ParallelFor_Behavior.java" startLine="25" startPosition="105" endLine="26" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

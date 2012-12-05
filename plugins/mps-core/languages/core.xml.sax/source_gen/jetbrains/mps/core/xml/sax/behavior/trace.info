@@ -141,80 +141,76 @@
     <unitInfo nodeId="2264311582634140671" fileName="XMLSAXFieldReference_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.core.xml.sax.behavior.XMLSAXFieldReference_Behavior" />
   </root>
   <root nodeId="3044950653914718200" modelId="r:9196d39f-1499-4498-ba0c-ace961a07bab(jetbrains.mps.core.xml.sax.behavior)">
-    <nodeInfo nodeId="3044950653914718179" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="17" startPosition="117" endLine="18" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914718189" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="18" startPosition="71" endLine="19" endPosition="306" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718194" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="19" startPosition="306" endLine="20" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718198" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="20" startPosition="173" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914718200" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3044950653914718200" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="3044950653914718202" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="3044950653914718200" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="3044950653914718179" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914718194" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="17" startPosition="261" endLine="18" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914718198" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="18" startPosition="173" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914718200" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3044950653914718200" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="3044950653914718202" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="3044950653914718200" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="3044950653914718200" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914718178" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="17" startPosition="117" endLine="21" endPosition="18">
+    <scopeInfo nodeId="3044950653914718178" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="16" startPosition="117" endLine="19" endPosition="18">
       <varInfo nodeId="3044950653914718180" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914718200" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="3044950653914718200" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="3044950653914718200" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="3044950653914718200" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="13" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.core.xml.sax.behavior.XMLSAXHandlerFunction_Behavior" />
+    <unitInfo nodeId="3044950653914718200" fileName="XMLSAXHandlerFunction_Behavior.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.core.xml.sax.behavior.XMLSAXHandlerFunction_Behavior" />
   </root>
   <root nodeId="3044950653914720951" modelId="r:9196d39f-1499-4498-ba0c-ace961a07bab(jetbrains.mps.core.xml.sax.behavior)">
-    <nodeInfo nodeId="3044950653914720930" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="17" startPosition="117" endLine="18" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914720940" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="18" startPosition="71" endLine="19" endPosition="312" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720945" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="19" startPosition="312" endLine="20" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914720949" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="20" startPosition="173" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914720951" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3044950653914720951" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="3044950653914720953" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="3044950653914720951" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="3044950653914720930" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914720945" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="17" startPosition="267" endLine="18" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914720949" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="18" startPosition="173" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914720951" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3044950653914720951" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="3044950653914720953" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="3044950653914720951" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="3044950653914720951" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914720929" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="17" startPosition="117" endLine="21" endPosition="18">
+    <scopeInfo nodeId="3044950653914720929" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="16" startPosition="117" endLine="19" endPosition="18">
       <varInfo nodeId="3044950653914720931" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914720951" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="3044950653914720951" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="3044950653914720951" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="3044950653914720951" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="13" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.core.xml.sax.behavior.XMLSAXAttributeHandler_Behavior" />
+    <unitInfo nodeId="3044950653914720951" fileName="XMLSAXAttributeHandler_Behavior.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.core.xml.sax.behavior.XMLSAXAttributeHandler_Behavior" />
   </root>
   <root nodeId="3044950653914723390" modelId="r:9196d39f-1499-4498-ba0c-ace961a07bab(jetbrains.mps.core.xml.sax.behavior)">
-    <nodeInfo nodeId="3044950653914723369" fileName="XMLSAXChildHandler_Behavior.java" startLine="17" startPosition="117" endLine="18" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914723379" fileName="XMLSAXChildHandler_Behavior.java" startLine="18" startPosition="71" endLine="19" endPosition="312" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914723384" fileName="XMLSAXChildHandler_Behavior.java" startLine="19" startPosition="312" endLine="20" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914723388" fileName="XMLSAXChildHandler_Behavior.java" startLine="20" startPosition="173" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914723390" fileName="XMLSAXChildHandler_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3044950653914723390" fileName="XMLSAXChildHandler_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="3044950653914723392" fileName="XMLSAXChildHandler_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="3044950653914723390" fileName="XMLSAXChildHandler_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="3044950653914723369" fileName="XMLSAXChildHandler_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914723384" fileName="XMLSAXChildHandler_Behavior.java" startLine="17" startPosition="267" endLine="18" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914723388" fileName="XMLSAXChildHandler_Behavior.java" startLine="18" startPosition="173" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914723390" fileName="XMLSAXChildHandler_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3044950653914723390" fileName="XMLSAXChildHandler_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="3044950653914723392" fileName="XMLSAXChildHandler_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="3044950653914723390" fileName="XMLSAXChildHandler_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="3044950653914723390" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914723368" fileName="XMLSAXChildHandler_Behavior.java" startLine="17" startPosition="117" endLine="21" endPosition="18">
+    <scopeInfo nodeId="3044950653914723368" fileName="XMLSAXChildHandler_Behavior.java" startLine="16" startPosition="117" endLine="19" endPosition="18">
       <varInfo nodeId="3044950653914723370" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914723390" fileName="XMLSAXChildHandler_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="3044950653914723390" fileName="XMLSAXChildHandler_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="3044950653914723390" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="3044950653914723390" fileName="XMLSAXChildHandler_Behavior.java" startLine="13" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildHandler_Behavior" />
+    <unitInfo nodeId="3044950653914723390" fileName="XMLSAXChildHandler_Behavior.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.core.xml.sax.behavior.XMLSAXChildHandler_Behavior" />
   </root>
   <root nodeId="3044950653914724663" modelId="r:9196d39f-1499-4498-ba0c-ace961a07bab(jetbrains.mps.core.xml.sax.behavior)">
-    <nodeInfo nodeId="3044950653914724642" fileName="XMLSAXTextHandler_Behavior.java" startLine="17" startPosition="117" endLine="18" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914724652" fileName="XMLSAXTextHandler_Behavior.java" startLine="18" startPosition="71" endLine="19" endPosition="312" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914724657" fileName="XMLSAXTextHandler_Behavior.java" startLine="19" startPosition="312" endLine="20" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914724661" fileName="XMLSAXTextHandler_Behavior.java" startLine="20" startPosition="173" endLine="21" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914724663" fileName="XMLSAXTextHandler_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3044950653914724663" fileName="XMLSAXTextHandler_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="3044950653914724665" fileName="XMLSAXTextHandler_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="3044950653914724663" fileName="XMLSAXTextHandler_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="3044950653914724642" fileName="XMLSAXTextHandler_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="267" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914724657" fileName="XMLSAXTextHandler_Behavior.java" startLine="17" startPosition="267" endLine="18" endPosition="173" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914724661" fileName="XMLSAXTextHandler_Behavior.java" startLine="18" startPosition="173" endLine="19" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914724663" fileName="XMLSAXTextHandler_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3044950653914724663" fileName="XMLSAXTextHandler_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="3044950653914724665" fileName="XMLSAXTextHandler_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="3044950653914724663" fileName="XMLSAXTextHandler_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="3044950653914724663" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914724641" fileName="XMLSAXTextHandler_Behavior.java" startLine="17" startPosition="117" endLine="21" endPosition="18">
+    <scopeInfo nodeId="3044950653914724641" fileName="XMLSAXTextHandler_Behavior.java" startLine="16" startPosition="117" endLine="19" endPosition="18">
       <varInfo nodeId="3044950653914724643" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914724663" fileName="XMLSAXTextHandler_Behavior.java" startLine="17" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="3044950653914724663" fileName="XMLSAXTextHandler_Behavior.java" startLine="16" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="3044950653914724663" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="3044950653914724663" fileName="XMLSAXTextHandler_Behavior.java" startLine="13" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.core.xml.sax.behavior.XMLSAXTextHandler_Behavior" />
+    <unitInfo nodeId="3044950653914724663" fileName="XMLSAXTextHandler_Behavior.java" startLine="12" startPosition="0" endLine="22" endPosition="0" unitName="jetbrains.mps.core.xml.sax.behavior.XMLSAXTextHandler_Behavior" />
   </root>
 </debugInfo>
 

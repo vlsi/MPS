@@ -1106,29 +1106,28 @@
     <unitInfo nodeId="1224848369615" fileName="IStructureDeprecatable_Behavior.java" startLine="12" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.IStructureDeprecatable_Behavior" />
   </root>
   <root nodeId="1262430001741717360" modelId="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)">
-    <nodeInfo nodeId="1262430001741717359" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914718625" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="21" startPosition="93" endLine="22" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914718635" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="22" startPosition="71" endLine="23" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718640" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="23" startPosition="277" endLine="24" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914718644" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="24" startPosition="169" endLine="25" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741717360" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1262430001741717360" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1262430001741717360" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1262430001741717362" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="1262430001741717357" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="28" />
-    <scopeInfo nodeId="1262430001741717360" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="1262430001741717359" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914718625" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="20" startPosition="93" endLine="21" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914718640" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="21" startPosition="232" endLine="22" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914718644" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="22" startPosition="169" endLine="23" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741717360" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741717360" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1262430001741717360" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="1262430001741717362" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="1262430001741717357" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="28" />
+    <scopeInfo nodeId="1262430001741717360" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1262430001741717360" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741717360" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="1262430001741717360" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="1262430001741717360" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914718624" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="21" startPosition="93" endLine="25" endPosition="18">
+    <scopeInfo nodeId="3044950653914718624" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="20" startPosition="93" endLine="23" endPosition="18">
       <varInfo nodeId="3044950653914718626" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741717360" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="21" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="1262430001741717360" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="20" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="1262430001741717360" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741717360" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="13" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.DeprecatedNodeAnnotation_Behavior" />
+    <unitInfo nodeId="1262430001741717360" fileName="DeprecatedNodeAnnotation_Behavior.java" startLine="12" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.DeprecatedNodeAnnotation_Behavior" />
   </root>
   <root nodeId="2621449412040133765" modelId="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)">
     <nodeInfo nodeId="5270353093116089371" fileName="IConceptAspect_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1228,30 +1227,29 @@
     <unitInfo nodeId="2621449412040133765" fileName="IConceptAspect_Behavior.java" startLine="13" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior" />
   </root>
   <root nodeId="8080932314785851907" modelId="r:00000000-0000-4000-0000-011c8959028b(jetbrains.mps.lang.structure.behavior)">
-    <nodeInfo nodeId="8080932314785854061" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914721494" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="21" startPosition="93" endLine="22" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914721504" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="22" startPosition="71" endLine="23" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914721509" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="23" startPosition="277" endLine="24" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914721514" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="24" startPosition="169" endLine="25" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914721518" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="25" startPosition="169" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8080932314785851907" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="8080932314785851907" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
-    <nodeInfo nodeId="8080932314785851907" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="8080932314785851909" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="8080932314785853928" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="17" startPosition="82" endLine="18" endPosition="26" />
-    <scopeInfo nodeId="8080932314785851907" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="8080932314785854061" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914721494" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="20" startPosition="93" endLine="21" endPosition="232" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914721509" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="21" startPosition="232" endLine="22" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914721514" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="22" startPosition="169" endLine="23" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914721518" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="23" startPosition="169" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8080932314785851907" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8080932314785851907" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getRole_1262430001741497900#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
+    <nodeInfo nodeId="8080932314785851907" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="20" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAttributed_3044950653914717013#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="8080932314785851909" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="8080932314785853928" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="16" startPosition="82" endLine="17" endPosition="26" />
+    <scopeInfo nodeId="8080932314785851907" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="8080932314785851907" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="8080932314785851907" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="8080932314785851907" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="8080932314785851907" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914721493" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="21" startPosition="93" endLine="26" endPosition="18">
+    <scopeInfo nodeId="3044950653914721493" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="20" startPosition="93" endLine="24" endPosition="18">
       <varInfo nodeId="3044950653914721495" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="8080932314785851907" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="8080932314785851907" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="20" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="8080932314785851907" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="8080932314785851907" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.MigratedToMethodAnnotation_Behavior" />
+    <unitInfo nodeId="8080932314785851907" fileName="MigratedToMethodAnnotation_Behavior.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.lang.structure.behavior.MigratedToMethodAnnotation_Behavior" />
   </root>
 </debugInfo>
 

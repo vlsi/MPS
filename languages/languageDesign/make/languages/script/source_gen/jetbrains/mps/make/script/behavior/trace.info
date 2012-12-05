@@ -81,24 +81,23 @@
     <unitInfo nodeId="2974008768272238694" fileName="ResultStatement_Behavior.java" startLine="10" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.make.script.behavior.ResultStatement_Behavior" />
   </root>
   <root nodeId="3044950653914721099" modelId="r:5259874c-3b5b-4953-a966-2e24f7979009(jetbrains.mps.make.script.behavior)">
-    <nodeInfo nodeId="3044950653914721073" fileName="JobDefinition_Behavior.java" startLine="17" startPosition="117" endLine="18" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914721083" fileName="JobDefinition_Behavior.java" startLine="18" startPosition="71" endLine="19" endPosition="306" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914721088" fileName="JobDefinition_Behavior.java" startLine="19" startPosition="306" endLine="20" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914721093" fileName="JobDefinition_Behavior.java" startLine="20" startPosition="172" endLine="21" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914721097" fileName="JobDefinition_Behavior.java" startLine="21" startPosition="172" endLine="22" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914721099" fileName="JobDefinition_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3044950653914721099" fileName="JobDefinition_Behavior.java" startLine="17" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="3044950653914721101" fileName="JobDefinition_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="3044950653914721099" fileName="JobDefinition_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="3044950653914721073" fileName="JobDefinition_Behavior.java" startLine="16" startPosition="117" endLine="17" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914721088" fileName="JobDefinition_Behavior.java" startLine="17" startPosition="261" endLine="18" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914721093" fileName="JobDefinition_Behavior.java" startLine="18" startPosition="172" endLine="19" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914721097" fileName="JobDefinition_Behavior.java" startLine="19" startPosition="172" endLine="20" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914721099" fileName="JobDefinition_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3044950653914721099" fileName="JobDefinition_Behavior.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getApplicableConceptFunctionParameter_3044950653914717136#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="3044950653914721101" fileName="JobDefinition_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="3044950653914721099" fileName="JobDefinition_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="3044950653914721099" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914721072" fileName="JobDefinition_Behavior.java" startLine="17" startPosition="117" endLine="22" endPosition="18">
+    <scopeInfo nodeId="3044950653914721072" fileName="JobDefinition_Behavior.java" startLine="16" startPosition="117" endLine="20" endPosition="18">
       <varInfo nodeId="3044950653914721074" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914721099" fileName="JobDefinition_Behavior.java" startLine="17" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="3044950653914721099" fileName="JobDefinition_Behavior.java" startLine="16" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="3044950653914721099" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="3044950653914721099" fileName="JobDefinition_Behavior.java" startLine="13" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.make.script.behavior.JobDefinition_Behavior" />
+    <unitInfo nodeId="3044950653914721099" fileName="JobDefinition_Behavior.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.make.script.behavior.JobDefinition_Behavior" />
   </root>
   <root nodeId="4125795553994047765" modelId="r:5259874c-3b5b-4953-a966-2e24f7979009(jetbrains.mps.make.script.behavior)">
     <nodeInfo nodeId="4125795553994049033" fileName="OptionType_Behavior.java" startLine="15" startPosition="83" endLine="16" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

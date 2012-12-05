@@ -230,41 +230,40 @@
     <unitInfo nodeId="1213877428704" fileName="IMemberOperation_Behavior.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.IMemberOperation_Behavior" />
   </root>
   <root nodeId="1213877480555" modelId="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)">
-    <nodeInfo nodeId="1213877480558" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="20" startPosition="74" endLine="21" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1233077655320" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="24" startPosition="78" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8884554759541375753" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="28" startPosition="84" endLine="29" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914726529" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="32" startPosition="99" endLine="33" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914726539" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="33" startPosition="71" endLine="34" endPosition="292" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914726544" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="34" startPosition="292" endLine="35" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914726548" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="35" startPosition="179" endLine="36" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getVisiblity_1213877352965#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canBeAnnotated_1233076312117#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAdditionalIcon_5017341185733863694#(Ljetbrains/mps/smodel/SNode;)Ljavax/swing/Icon;" />
-    <nodeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="32" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperationConcept_3044950653914717125#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1213877480564" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
-    <scopeInfo nodeId="1213877480557" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="20" startPosition="74" endLine="21" endPosition="67" />
-    <scopeInfo nodeId="1233077650942" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="24" startPosition="78" endLine="25" endPosition="16" />
-    <scopeInfo nodeId="8884554759541375257" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="28" startPosition="84" endLine="29" endPosition="82" />
-    <scopeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0">
+    <nodeInfo nodeId="1213877480558" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="19" startPosition="74" endLine="20" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1233077655320" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="23" startPosition="78" endLine="24" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8884554759541375753" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="27" startPosition="84" endLine="28" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914726529" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="31" startPosition="99" endLine="32" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914726544" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="32" startPosition="247" endLine="33" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914726548" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="33" startPosition="179" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getVisiblity_1213877352965#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canBeAnnotated_1233076312117#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAdditionalIcon_5017341185733863694#(Ljetbrains/mps/smodel/SNode;)Ljavax/swing/Icon;" />
+    <nodeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperationConcept_3044950653914717125#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="1213877480564" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
+    <scopeInfo nodeId="1213877480557" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="19" startPosition="74" endLine="20" endPosition="67" />
+    <scopeInfo nodeId="1233077650942" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="23" startPosition="78" endLine="24" endPosition="16" />
+    <scopeInfo nodeId="8884554759541375257" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="27" startPosition="84" endLine="28" endPosition="82" />
+    <scopeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="1213877480555" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
+    <scopeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="19" startPosition="0" endLine="22" endPosition="0">
       <varInfo nodeId="1213877480555" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
+    <scopeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="1213877480555" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+    <scopeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
       <varInfo nodeId="1213877480555" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914726528" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="32" startPosition="99" endLine="36" endPosition="18">
+    <scopeInfo nodeId="3044950653914726528" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="31" startPosition="99" endLine="34" endPosition="18">
       <varInfo nodeId="3044950653914726530" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="32" startPosition="0" endLine="38" endPosition="0">
+    <scopeInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="31" startPosition="0" endLine="36" endPosition="0">
       <varInfo nodeId="1213877480555" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="16" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodDeclaration_Behavior" />
+    <unitInfo nodeId="1213877480555" fileName="DefaultClassifierMethodDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="37" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierMethodDeclaration_Behavior" />
   </root>
   <root nodeId="1213877512818" modelId="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)">
     <nodeInfo nodeId="1218740027719" fileName="ThisClassifierExpression_Behavior.java" startLine="17" startPosition="75" endLine="18" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -502,29 +501,28 @@
     <unitInfo nodeId="1213877527939" fileName="IClassifier_Behavior.java" startLine="19" startPosition="0" endLine="154" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_Behavior" />
   </root>
   <root nodeId="1214047465024" modelId="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)">
-    <nodeInfo nodeId="1214047523550" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="18" startPosition="74" endLine="19" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914725039" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="22" startPosition="99" endLine="23" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914725049" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="23" startPosition="71" endLine="24" endPosition="292" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914725054" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="24" startPosition="292" endLine="25" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914725058" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="25" startPosition="179" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1214047465024" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1214047465024" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getVisiblity_1213877352965#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1214047465024" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="22" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperationConcept_3044950653914717125#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1214047465026" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="15" startPosition="43" endLine="15" endPosition="43" />
-    <scopeInfo nodeId="1214047523549" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="18" startPosition="74" endLine="19" endPosition="67" />
-    <scopeInfo nodeId="1214047465024" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
+    <nodeInfo nodeId="1214047523550" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="17" startPosition="74" endLine="18" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914725039" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="21" startPosition="99" endLine="22" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914725054" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="22" startPosition="247" endLine="23" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914725058" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="23" startPosition="179" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1214047465024" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1214047465024" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getVisiblity_1213877352965#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1214047465024" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getOperationConcept_3044950653914717125#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="1214047465026" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="1214047523549" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="17" startPosition="74" endLine="18" endPosition="67" />
+    <scopeInfo nodeId="1214047465024" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
       <varInfo nodeId="1214047465024" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1214047465024" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
+    <scopeInfo nodeId="1214047465024" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1214047465024" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914725038" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="22" startPosition="99" endLine="26" endPosition="18">
+    <scopeInfo nodeId="3044950653914725038" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="21" startPosition="99" endLine="24" endPosition="18">
       <varInfo nodeId="3044950653914725040" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1214047465024" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="22" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="1214047465024" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="21" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="1214047465024" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1214047465024" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="14" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldDeclaration_Behavior" />
+    <unitInfo nodeId="1214047465024" fileName="DefaultClassifierFieldDeclaration_Behavior.java" startLine="13" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierFieldDeclaration_Behavior" />
   </root>
   <root nodeId="1217434042657" modelId="r:00000000-0000-4000-0000-011c8959036d(jetbrains.mps.baseLanguage.classifiers.behavior)">
     <nodeInfo nodeId="1217434044390" fileName="SuperClassifierExpresson_Behavior.java" startLine="11" startPosition="72" endLine="12" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

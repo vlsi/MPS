@@ -50,7 +50,6 @@
   <dependency className="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Predicate_Behavior" file="MigrationScriptPart_Instance_Predicate_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
@@ -71,7 +70,6 @@
   <dependency className="jetbrains.mps.lang.script.behavior.MigrationScriptPart_Instance_Updater_Behavior" file="MigrationScriptPart_Instance_Updater_Behavior.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />

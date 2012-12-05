@@ -886,167 +886,164 @@
     <unitInfo nodeId="1237722435323" fileName="AbstractContainerCreator_Behavior.java" startLine="14" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.AbstractContainerCreator_Behavior" />
   </root>
   <root nodeId="1237724489609" modelId="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)">
-    <nodeInfo nodeId="1237724552148" fileName="ListCreatorWithInit_Behavior.java" startLine="21" startPosition="72" endLine="22" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741647525" fileName="ListCreatorWithInit_Behavior.java" startLine="25" startPosition="87" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914721223" fileName="ListCreatorWithInit_Behavior.java" startLine="29" startPosition="95" endLine="30" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914721233" fileName="ListCreatorWithInit_Behavior.java" startLine="30" startPosition="71" endLine="31" endPosition="305" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914721238" fileName="ListCreatorWithInit_Behavior.java" startLine="31" startPosition="305" endLine="32" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914721243" fileName="ListCreatorWithInit_Behavior.java" startLine="32" startPosition="179" endLine="33" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914721248" fileName="ListCreatorWithInit_Behavior.java" startLine="33" startPosition="185" endLine="34" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914721252" fileName="ListCreatorWithInit_Behavior.java" startLine="34" startPosition="179" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="38" startPosition="78" endLine="39" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="39" startPosition="30" endLine="40" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="40" startPosition="30" endLine="41" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="41" startPosition="171" endLine="42" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="43" startPosition="31" endLine="44" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="45" startPosition="5" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237724489609" fileName="ListCreatorWithInit_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1237724489609" fileName="ListCreatorWithInit_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createType_1237722437229#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1237724489609" fileName="ListCreatorWithInit_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_hasInitSize_1262430001741498238#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
-    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="42" startPosition="39" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="41" startPosition="171" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="41" startPosition="171" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="40" startPosition="30" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="40" startPosition="30" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237724489609" fileName="ListCreatorWithInit_Behavior.java" startLine="29" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAvailableFor_3044950653914717035#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="38" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_42nh7a_a0a0#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="1237724489611" fileName="ListCreatorWithInit_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="1237724519695" fileName="ListCreatorWithInit_Behavior.java" startLine="21" startPosition="72" endLine="22" endPosition="103" />
-    <scopeInfo nodeId="1262430001741647524" fileName="ListCreatorWithInit_Behavior.java" startLine="25" startPosition="87" endLine="26" endPosition="16" />
-    <scopeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="43" startPosition="31" endLine="44" endPosition="80" />
-    <scopeInfo nodeId="1237724489609" fileName="ListCreatorWithInit_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0">
+    <nodeInfo nodeId="1237724552148" fileName="ListCreatorWithInit_Behavior.java" startLine="20" startPosition="72" endLine="21" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647525" fileName="ListCreatorWithInit_Behavior.java" startLine="24" startPosition="87" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914721223" fileName="ListCreatorWithInit_Behavior.java" startLine="28" startPosition="95" endLine="29" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914721238" fileName="ListCreatorWithInit_Behavior.java" startLine="29" startPosition="260" endLine="30" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914721243" fileName="ListCreatorWithInit_Behavior.java" startLine="30" startPosition="179" endLine="31" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914721248" fileName="ListCreatorWithInit_Behavior.java" startLine="31" startPosition="185" endLine="32" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914721252" fileName="ListCreatorWithInit_Behavior.java" startLine="32" startPosition="179" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="36" startPosition="78" endLine="37" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="37" startPosition="30" endLine="38" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="38" startPosition="30" endLine="39" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="39" startPosition="171" endLine="40" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="41" startPosition="31" endLine="42" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="43" startPosition="5" endLine="44" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237724489609" fileName="ListCreatorWithInit_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1237724489609" fileName="ListCreatorWithInit_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createType_1237722437229#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1237724489609" fileName="ListCreatorWithInit_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_hasInitSize_1262430001741498238#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="40" startPosition="39" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="39" startPosition="171" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="39" startPosition="171" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="38" startPosition="30" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="38" startPosition="30" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237724489609" fileName="ListCreatorWithInit_Behavior.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAvailableFor_3044950653914717035#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="36" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_42nh7a_a0a0#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="1237724489611" fileName="ListCreatorWithInit_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
+    <scopeInfo nodeId="1237724519695" fileName="ListCreatorWithInit_Behavior.java" startLine="20" startPosition="72" endLine="21" endPosition="103" />
+    <scopeInfo nodeId="1262430001741647524" fileName="ListCreatorWithInit_Behavior.java" startLine="24" startPosition="87" endLine="25" endPosition="16" />
+    <scopeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="41" startPosition="31" endLine="42" endPosition="80" />
+    <scopeInfo nodeId="1237724489609" fileName="ListCreatorWithInit_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="1237724489609" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1237724489609" fileName="ListCreatorWithInit_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="1237724489609" fileName="ListCreatorWithInit_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="1237724489609" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1237724489609" fileName="ListCreatorWithInit_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="1237724489609" fileName="ListCreatorWithInit_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="1237724489609" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="41" startPosition="171" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="40" startPosition="30" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="3044950653914721222" fileName="ListCreatorWithInit_Behavior.java" startLine="29" startPosition="95" endLine="35" endPosition="18">
+    <scopeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="39" startPosition="171" endLine="43" endPosition="5" />
+    <scopeInfo nodeId="3044950653914721222" fileName="ListCreatorWithInit_Behavior.java" startLine="28" startPosition="95" endLine="33" endPosition="18">
       <varInfo nodeId="3044950653914721224" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1237724489609" fileName="ListCreatorWithInit_Behavior.java" startLine="29" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="38" startPosition="30" endLine="43" endPosition="5" />
+    <scopeInfo nodeId="1237724489609" fileName="ListCreatorWithInit_Behavior.java" startLine="28" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="1237724489609" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="38" startPosition="78" endLine="46" endPosition="24">
+    <scopeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="36" startPosition="78" endLine="44" endPosition="24">
       <varInfo nodeId="1237724552149" varName="quotedNode_2" />
       <varInfo nodeId="1237724552149" varName="quotedNode_3" />
     </scopeInfo>
-    <scopeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="38" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1237724552149" fileName="ListCreatorWithInit_Behavior.java" startLine="36" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="1237724552149" varName="parameter_1" />
     </scopeInfo>
-    <unitInfo nodeId="1237724489609" fileName="ListCreatorWithInit_Behavior.java" startLine="17" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ListCreatorWithInit_Behavior" />
+    <unitInfo nodeId="1237724489609" fileName="ListCreatorWithInit_Behavior.java" startLine="16" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ListCreatorWithInit_Behavior" />
   </root>
   <root nodeId="1237724578571" modelId="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)">
-    <nodeInfo nodeId="1237724580097" fileName="HashSetCreator_Behavior.java" startLine="21" startPosition="72" endLine="22" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741647513" fileName="HashSetCreator_Behavior.java" startLine="25" startPosition="87" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914717189" fileName="HashSetCreator_Behavior.java" startLine="29" startPosition="95" endLine="30" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914717199" fileName="HashSetCreator_Behavior.java" startLine="30" startPosition="71" endLine="31" endPosition="305" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914717204" fileName="HashSetCreator_Behavior.java" startLine="31" startPosition="305" endLine="32" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914717209" fileName="HashSetCreator_Behavior.java" startLine="32" startPosition="179" endLine="33" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914717214" fileName="HashSetCreator_Behavior.java" startLine="33" startPosition="185" endLine="34" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914717218" fileName="HashSetCreator_Behavior.java" startLine="34" startPosition="179" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="38" startPosition="78" endLine="39" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="39" startPosition="30" endLine="40" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="40" startPosition="30" endLine="41" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="41" startPosition="170" endLine="42" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="43" startPosition="31" endLine="44" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="45" startPosition="5" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237724578571" fileName="HashSetCreator_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1237724578571" fileName="HashSetCreator_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createType_1237722437229#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1237724578571" fileName="HashSetCreator_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_hasInitSize_1262430001741498238#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
-    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="42" startPosition="39" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="41" startPosition="170" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="41" startPosition="170" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="40" startPosition="30" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="40" startPosition="30" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237724578571" fileName="HashSetCreator_Behavior.java" startLine="29" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAvailableFor_3044950653914717035#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="38" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_4sjjrg_a0a0#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="1237724578573" fileName="HashSetCreator_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="1237724580096" fileName="HashSetCreator_Behavior.java" startLine="21" startPosition="72" endLine="22" endPosition="103" />
-    <scopeInfo nodeId="1262430001741647512" fileName="HashSetCreator_Behavior.java" startLine="25" startPosition="87" endLine="26" endPosition="16" />
-    <scopeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="43" startPosition="31" endLine="44" endPosition="80" />
-    <scopeInfo nodeId="1237724578571" fileName="HashSetCreator_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0">
+    <nodeInfo nodeId="1237724580097" fileName="HashSetCreator_Behavior.java" startLine="20" startPosition="72" endLine="21" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647513" fileName="HashSetCreator_Behavior.java" startLine="24" startPosition="87" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914717189" fileName="HashSetCreator_Behavior.java" startLine="28" startPosition="95" endLine="29" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914717204" fileName="HashSetCreator_Behavior.java" startLine="29" startPosition="260" endLine="30" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914717209" fileName="HashSetCreator_Behavior.java" startLine="30" startPosition="179" endLine="31" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914717214" fileName="HashSetCreator_Behavior.java" startLine="31" startPosition="185" endLine="32" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914717218" fileName="HashSetCreator_Behavior.java" startLine="32" startPosition="179" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="36" startPosition="78" endLine="37" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="37" startPosition="30" endLine="38" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="38" startPosition="30" endLine="39" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="39" startPosition="170" endLine="40" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="41" startPosition="31" endLine="42" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="43" startPosition="5" endLine="44" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237724578571" fileName="HashSetCreator_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1237724578571" fileName="HashSetCreator_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createType_1237722437229#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1237724578571" fileName="HashSetCreator_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_hasInitSize_1262430001741498238#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="40" startPosition="39" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="39" startPosition="170" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="39" startPosition="170" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="38" startPosition="30" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="38" startPosition="30" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237724578571" fileName="HashSetCreator_Behavior.java" startLine="28" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAvailableFor_3044950653914717035#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="36" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_4sjjrg_a0a0#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="1237724578573" fileName="HashSetCreator_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
+    <scopeInfo nodeId="1237724580096" fileName="HashSetCreator_Behavior.java" startLine="20" startPosition="72" endLine="21" endPosition="103" />
+    <scopeInfo nodeId="1262430001741647512" fileName="HashSetCreator_Behavior.java" startLine="24" startPosition="87" endLine="25" endPosition="16" />
+    <scopeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="41" startPosition="31" endLine="42" endPosition="80" />
+    <scopeInfo nodeId="1237724578571" fileName="HashSetCreator_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="1237724578571" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1237724578571" fileName="HashSetCreator_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="1237724578571" fileName="HashSetCreator_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="1237724578571" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1237724578571" fileName="HashSetCreator_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="1237724578571" fileName="HashSetCreator_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="1237724578571" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="41" startPosition="170" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="40" startPosition="30" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="3044950653914717188" fileName="HashSetCreator_Behavior.java" startLine="29" startPosition="95" endLine="35" endPosition="18">
+    <scopeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="39" startPosition="170" endLine="43" endPosition="5" />
+    <scopeInfo nodeId="3044950653914717188" fileName="HashSetCreator_Behavior.java" startLine="28" startPosition="95" endLine="33" endPosition="18">
       <varInfo nodeId="3044950653914717190" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1237724578571" fileName="HashSetCreator_Behavior.java" startLine="29" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="38" startPosition="30" endLine="43" endPosition="5" />
+    <scopeInfo nodeId="1237724578571" fileName="HashSetCreator_Behavior.java" startLine="28" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="1237724578571" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="38" startPosition="78" endLine="46" endPosition="24">
+    <scopeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="36" startPosition="78" endLine="44" endPosition="24">
       <varInfo nodeId="1237724580098" varName="quotedNode_2" />
       <varInfo nodeId="1237724580098" varName="quotedNode_3" />
     </scopeInfo>
-    <scopeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="38" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1237724580098" fileName="HashSetCreator_Behavior.java" startLine="36" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="1237724580098" varName="parameter_1" />
     </scopeInfo>
-    <unitInfo nodeId="1237724578571" fileName="HashSetCreator_Behavior.java" startLine="17" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.HashSetCreator_Behavior" />
+    <unitInfo nodeId="1237724578571" fileName="HashSetCreator_Behavior.java" startLine="16" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.HashSetCreator_Behavior" />
   </root>
   <root nodeId="1237724603556" modelId="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)">
-    <nodeInfo nodeId="1237724605195" fileName="LinkedListCreator_Behavior.java" startLine="21" startPosition="72" endLine="22" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914719856" fileName="LinkedListCreator_Behavior.java" startLine="25" startPosition="95" endLine="26" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914719866" fileName="LinkedListCreator_Behavior.java" startLine="26" startPosition="71" endLine="27" endPosition="305" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719871" fileName="LinkedListCreator_Behavior.java" startLine="27" startPosition="305" endLine="28" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719876" fileName="LinkedListCreator_Behavior.java" startLine="28" startPosition="179" endLine="29" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719881" fileName="LinkedListCreator_Behavior.java" startLine="29" startPosition="185" endLine="30" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719886" fileName="LinkedListCreator_Behavior.java" startLine="30" startPosition="185" endLine="31" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719891" fileName="LinkedListCreator_Behavior.java" startLine="31" startPosition="179" endLine="32" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719896" fileName="LinkedListCreator_Behavior.java" startLine="32" startPosition="185" endLine="33" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719901" fileName="LinkedListCreator_Behavior.java" startLine="33" startPosition="185" endLine="34" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914719905" fileName="LinkedListCreator_Behavior.java" startLine="34" startPosition="185" endLine="35" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="38" startPosition="78" endLine="39" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="39" startPosition="30" endLine="40" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="40" startPosition="30" endLine="41" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="41" startPosition="177" endLine="42" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="43" startPosition="31" endLine="44" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="45" startPosition="5" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1237724603556" fileName="LinkedListCreator_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1237724603556" fileName="LinkedListCreator_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createType_1237722437229#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="42" startPosition="39" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="41" startPosition="177" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="41" startPosition="177" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="40" startPosition="30" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="40" startPosition="30" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="38" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_rsqk7y_a0a0#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1237724603556" fileName="LinkedListCreator_Behavior.java" startLine="25" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAvailableFor_3044950653914717035#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1237724603558" fileName="LinkedListCreator_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="1237724605194" fileName="LinkedListCreator_Behavior.java" startLine="21" startPosition="72" endLine="22" endPosition="103" />
-    <scopeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="43" startPosition="31" endLine="44" endPosition="80" />
-    <scopeInfo nodeId="1237724603556" fileName="LinkedListCreator_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0">
+    <nodeInfo nodeId="1237724605195" fileName="LinkedListCreator_Behavior.java" startLine="20" startPosition="72" endLine="21" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914719856" fileName="LinkedListCreator_Behavior.java" startLine="24" startPosition="95" endLine="25" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914719871" fileName="LinkedListCreator_Behavior.java" startLine="25" startPosition="260" endLine="26" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914719876" fileName="LinkedListCreator_Behavior.java" startLine="26" startPosition="179" endLine="27" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914719881" fileName="LinkedListCreator_Behavior.java" startLine="27" startPosition="185" endLine="28" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914719886" fileName="LinkedListCreator_Behavior.java" startLine="28" startPosition="185" endLine="29" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914719891" fileName="LinkedListCreator_Behavior.java" startLine="29" startPosition="179" endLine="30" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914719896" fileName="LinkedListCreator_Behavior.java" startLine="30" startPosition="185" endLine="31" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914719901" fileName="LinkedListCreator_Behavior.java" startLine="31" startPosition="185" endLine="32" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914719905" fileName="LinkedListCreator_Behavior.java" startLine="32" startPosition="185" endLine="33" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="36" startPosition="78" endLine="37" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="37" startPosition="30" endLine="38" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="38" startPosition="30" endLine="39" endPosition="177" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="39" startPosition="177" endLine="40" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="41" startPosition="31" endLine="42" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="43" startPosition="5" endLine="44" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1237724603556" fileName="LinkedListCreator_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1237724603556" fileName="LinkedListCreator_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createType_1237722437229#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="40" startPosition="39" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="39" startPosition="177" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="39" startPosition="177" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="38" startPosition="30" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="38" startPosition="30" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="36" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_rsqk7y_a0a0#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1237724603556" fileName="LinkedListCreator_Behavior.java" startLine="24" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAvailableFor_3044950653914717035#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="1237724603558" fileName="LinkedListCreator_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
+    <scopeInfo nodeId="1237724605194" fileName="LinkedListCreator_Behavior.java" startLine="20" startPosition="72" endLine="21" endPosition="103" />
+    <scopeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="41" startPosition="31" endLine="42" endPosition="80" />
+    <scopeInfo nodeId="1237724603556" fileName="LinkedListCreator_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="1237724603556" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1237724603556" fileName="LinkedListCreator_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="1237724603556" fileName="LinkedListCreator_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="1237724603556" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="41" startPosition="177" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="40" startPosition="30" endLine="45" endPosition="5" />
-    <scopeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="38" startPosition="78" endLine="46" endPosition="24">
+    <scopeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="39" startPosition="177" endLine="43" endPosition="5" />
+    <scopeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="38" startPosition="30" endLine="43" endPosition="5" />
+    <scopeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="36" startPosition="78" endLine="44" endPosition="24">
       <varInfo nodeId="1237724605196" varName="quotedNode_2" />
       <varInfo nodeId="1237724605196" varName="quotedNode_3" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914719855" fileName="LinkedListCreator_Behavior.java" startLine="25" startPosition="95" endLine="35" endPosition="18">
+    <scopeInfo nodeId="3044950653914719855" fileName="LinkedListCreator_Behavior.java" startLine="24" startPosition="95" endLine="33" endPosition="18">
       <varInfo nodeId="3044950653914719857" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="38" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1237724605196" fileName="LinkedListCreator_Behavior.java" startLine="36" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="1237724605196" varName="parameter_1" />
     </scopeInfo>
-    <scopeInfo nodeId="1237724603556" fileName="LinkedListCreator_Behavior.java" startLine="25" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="1237724603556" fileName="LinkedListCreator_Behavior.java" startLine="24" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="1237724603556" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1237724603556" fileName="LinkedListCreator_Behavior.java" startLine="17" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.LinkedListCreator_Behavior" />
+    <unitInfo nodeId="1237724603556" fileName="LinkedListCreator_Behavior.java" startLine="16" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.LinkedListCreator_Behavior" />
   </root>
   <root nodeId="1237783270701" modelId="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)">
     <nodeInfo nodeId="1237783279164" fileName="AllConstant_Behavior.java" startLine="10" startPosition="43" endLine="11" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1224,79 +1221,78 @@
     <unitInfo nodeId="1240249640915" fileName="SortedSetType_Behavior.java" startLine="22" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.SortedSetType_Behavior" />
   </root>
   <root nodeId="1240249694731" modelId="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)">
-    <nodeInfo nodeId="1240249709334" fileName="TreeSetCreator_Behavior.java" startLine="22" startPosition="72" endLine="23" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2261417478150191168" fileName="TreeSetCreator_Behavior.java" startLine="26" startPosition="86" endLine="27" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741647519" fileName="TreeSetCreator_Behavior.java" startLine="30" startPosition="87" endLine="31" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914722608" fileName="TreeSetCreator_Behavior.java" startLine="34" startPosition="95" endLine="35" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914722618" fileName="TreeSetCreator_Behavior.java" startLine="35" startPosition="71" endLine="36" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914722623" fileName="TreeSetCreator_Behavior.java" startLine="36" startPosition="295" endLine="37" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914722628" fileName="TreeSetCreator_Behavior.java" startLine="37" startPosition="179" endLine="38" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914722633" fileName="TreeSetCreator_Behavior.java" startLine="38" startPosition="185" endLine="39" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914722638" fileName="TreeSetCreator_Behavior.java" startLine="39" startPosition="179" endLine="40" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914722642" fileName="TreeSetCreator_Behavior.java" startLine="40" startPosition="179" endLine="41" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="45" startPosition="83" endLine="46" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="50" startPosition="116" endLine="51" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="54" startPosition="78" endLine="55" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="55" startPosition="30" endLine="56" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="56" startPosition="30" endLine="57" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="57" startPosition="176" endLine="58" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="59" startPosition="31" endLine="60" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="61" startPosition="5" endLine="62" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createType_1237722437229#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canHaveParameter_2261417478150191157#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_hasInitSize_1262430001741498238#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
-    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="58" startPosition="39" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="44" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_canHaveParameter_2261417478150191164#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_canHaveParameter_2261417478150191164#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="57" startPosition="176" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="57" startPosition="176" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="56" startPosition="30" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="56" startPosition="30" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="34" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAvailableFor_3044950653914717035#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="54" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_529210_a0a0#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="1240249694733" fileName="TreeSetCreator_Behavior.java" startLine="19" startPosition="43" endLine="19" endPosition="43" />
-    <scopeInfo nodeId="1240249696311" fileName="TreeSetCreator_Behavior.java" startLine="22" startPosition="72" endLine="23" endPosition="103" />
-    <scopeInfo nodeId="2261417478150191166" fileName="TreeSetCreator_Behavior.java" startLine="26" startPosition="86" endLine="27" endPosition="266" />
-    <scopeInfo nodeId="1262430001741647518" fileName="TreeSetCreator_Behavior.java" startLine="30" startPosition="87" endLine="31" endPosition="17" />
-    <scopeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="45" startPosition="83" endLine="46" endPosition="132" />
-    <scopeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="50" startPosition="116" endLine="51" endPosition="277" />
-    <scopeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="59" startPosition="31" endLine="60" endPosition="80" />
-    <scopeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="19" startPosition="0" endLine="21" endPosition="0">
+    <nodeInfo nodeId="1240249709334" fileName="TreeSetCreator_Behavior.java" startLine="21" startPosition="72" endLine="22" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2261417478150191168" fileName="TreeSetCreator_Behavior.java" startLine="25" startPosition="86" endLine="26" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741647519" fileName="TreeSetCreator_Behavior.java" startLine="29" startPosition="87" endLine="30" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914722608" fileName="TreeSetCreator_Behavior.java" startLine="33" startPosition="95" endLine="34" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914722623" fileName="TreeSetCreator_Behavior.java" startLine="34" startPosition="250" endLine="35" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914722628" fileName="TreeSetCreator_Behavior.java" startLine="35" startPosition="179" endLine="36" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914722633" fileName="TreeSetCreator_Behavior.java" startLine="36" startPosition="185" endLine="37" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914722638" fileName="TreeSetCreator_Behavior.java" startLine="37" startPosition="179" endLine="38" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914722642" fileName="TreeSetCreator_Behavior.java" startLine="38" startPosition="179" endLine="39" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="43" startPosition="83" endLine="44" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="48" startPosition="116" endLine="49" endPosition="277" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="52" startPosition="78" endLine="53" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="53" startPosition="30" endLine="54" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="54" startPosition="30" endLine="55" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="55" startPosition="176" endLine="56" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="57" startPosition="31" endLine="58" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="59" startPosition="5" endLine="60" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createType_1237722437229#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canHaveParameter_2261417478150191157#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_hasInitSize_1262430001741498238#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="56" startPosition="39" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="42" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_canHaveParameter_2261417478150191164#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="callSuper_canHaveParameter_2261417478150191164#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="55" startPosition="176" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="55" startPosition="176" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="54" startPosition="30" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="54" startPosition="30" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="33" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAvailableFor_3044950653914717035#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="52" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_529210_a0a0#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="1240249694733" fileName="TreeSetCreator_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
+    <scopeInfo nodeId="1240249696311" fileName="TreeSetCreator_Behavior.java" startLine="21" startPosition="72" endLine="22" endPosition="103" />
+    <scopeInfo nodeId="2261417478150191166" fileName="TreeSetCreator_Behavior.java" startLine="25" startPosition="86" endLine="26" endPosition="266" />
+    <scopeInfo nodeId="1262430001741647518" fileName="TreeSetCreator_Behavior.java" startLine="29" startPosition="87" endLine="30" endPosition="17" />
+    <scopeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="43" startPosition="83" endLine="44" endPosition="132" />
+    <scopeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="48" startPosition="116" endLine="49" endPosition="277" />
+    <scopeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="57" startPosition="31" endLine="58" endPosition="80" />
+    <scopeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="1240249694731" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="22" startPosition="0" endLine="25" endPosition="0">
+    <scopeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="1240249694731" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="1240249694731" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+    <scopeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="1240249694731" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="44" startPosition="0" endLine="48" endPosition="0">
+    <scopeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="42" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="1240249694731" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="49" startPosition="0" endLine="53" endPosition="0">
+    <scopeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="47" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="1240249694731" varName="callerConceptFqName" />
       <varInfo nodeId="1240249694731" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="57" startPosition="176" endLine="61" endPosition="5" />
-    <scopeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="56" startPosition="30" endLine="61" endPosition="5" />
-    <scopeInfo nodeId="3044950653914722607" fileName="TreeSetCreator_Behavior.java" startLine="34" startPosition="95" endLine="41" endPosition="18">
+    <scopeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="55" startPosition="176" endLine="59" endPosition="5" />
+    <scopeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="54" startPosition="30" endLine="59" endPosition="5" />
+    <scopeInfo nodeId="3044950653914722607" fileName="TreeSetCreator_Behavior.java" startLine="33" startPosition="95" endLine="39" endPosition="18">
       <varInfo nodeId="3044950653914722609" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="54" startPosition="78" endLine="62" endPosition="24">
+    <scopeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="33" startPosition="0" endLine="41" endPosition="0">
+      <varInfo nodeId="1240249694731" varName="thisConcept" />
+    </scopeInfo>
+    <scopeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="52" startPosition="78" endLine="60" endPosition="24">
       <varInfo nodeId="1240249709335" varName="quotedNode_2" />
       <varInfo nodeId="1240249709335" varName="quotedNode_3" />
     </scopeInfo>
-    <scopeInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="34" startPosition="0" endLine="43" endPosition="0">
-      <varInfo nodeId="1240249694731" varName="thisConcept" />
-    </scopeInfo>
-    <scopeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="54" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="1240249709335" fileName="TreeSetCreator_Behavior.java" startLine="52" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="1240249709335" varName="parameter_1" />
     </scopeInfo>
-    <unitInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="18" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.TreeSetCreator_Behavior" />
+    <unitInfo nodeId="1240249694731" fileName="TreeSetCreator_Behavior.java" startLine="17" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.TreeSetCreator_Behavior" />
   </root>
   <root nodeId="1240823859791" modelId="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)">
     <nodeInfo nodeId="1240823873373" fileName="MappingType_Behavior.java" startLine="15" startPosition="78" endLine="16" endPosition="447" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -1411,30 +1407,29 @@
     <unitInfo nodeId="1262430001741718457" fileName="ValueAccessOperation_Behavior.java" startLine="8" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.ValueAccessOperation_Behavior" />
   </root>
   <root nodeId="1262430001741718689" modelId="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)">
-    <nodeInfo nodeId="1262430001741718687" fileName="LinkedHashSetCreator_Behavior.java" startLine="17" startPosition="87" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914725065" fileName="LinkedHashSetCreator_Behavior.java" startLine="21" startPosition="95" endLine="22" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914725075" fileName="LinkedHashSetCreator_Behavior.java" startLine="22" startPosition="71" endLine="23" endPosition="295" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914725080" fileName="LinkedHashSetCreator_Behavior.java" startLine="23" startPosition="295" endLine="24" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914725085" fileName="LinkedHashSetCreator_Behavior.java" startLine="24" startPosition="179" endLine="25" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914725089" fileName="LinkedHashSetCreator_Behavior.java" startLine="25" startPosition="179" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741718689" fileName="LinkedHashSetCreator_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="1262430001741718689" fileName="LinkedHashSetCreator_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_hasInitSize_1262430001741498238#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
-    <nodeInfo nodeId="1262430001741718689" fileName="LinkedHashSetCreator_Behavior.java" startLine="21" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAvailableFor_3044950653914717035#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <scopeInfo nodeId="1262430001741718691" fileName="LinkedHashSetCreator_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
-    <scopeInfo nodeId="1262430001741718686" fileName="LinkedHashSetCreator_Behavior.java" startLine="17" startPosition="87" endLine="18" endPosition="16" />
-    <scopeInfo nodeId="1262430001741718689" fileName="LinkedHashSetCreator_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="1262430001741718687" fileName="LinkedHashSetCreator_Behavior.java" startLine="16" startPosition="87" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914725065" fileName="LinkedHashSetCreator_Behavior.java" startLine="20" startPosition="95" endLine="21" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914725080" fileName="LinkedHashSetCreator_Behavior.java" startLine="21" startPosition="250" endLine="22" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914725085" fileName="LinkedHashSetCreator_Behavior.java" startLine="22" startPosition="179" endLine="23" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914725089" fileName="LinkedHashSetCreator_Behavior.java" startLine="23" startPosition="179" endLine="24" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741718689" fileName="LinkedHashSetCreator_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="1262430001741718689" fileName="LinkedHashSetCreator_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_hasInitSize_1262430001741498238#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <nodeInfo nodeId="1262430001741718689" fileName="LinkedHashSetCreator_Behavior.java" startLine="20" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAvailableFor_3044950653914717035#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <scopeInfo nodeId="1262430001741718691" fileName="LinkedHashSetCreator_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="1262430001741718686" fileName="LinkedHashSetCreator_Behavior.java" startLine="16" startPosition="87" endLine="17" endPosition="16" />
+    <scopeInfo nodeId="1262430001741718689" fileName="LinkedHashSetCreator_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="1262430001741718689" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741718689" fileName="LinkedHashSetCreator_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0">
+    <scopeInfo nodeId="1262430001741718689" fileName="LinkedHashSetCreator_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="1262430001741718689" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="3044950653914725064" fileName="LinkedHashSetCreator_Behavior.java" startLine="21" startPosition="95" endLine="26" endPosition="18">
+    <scopeInfo nodeId="3044950653914725064" fileName="LinkedHashSetCreator_Behavior.java" startLine="20" startPosition="95" endLine="24" endPosition="18">
       <varInfo nodeId="3044950653914725066" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="1262430001741718689" fileName="LinkedHashSetCreator_Behavior.java" startLine="21" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="1262430001741718689" fileName="LinkedHashSetCreator_Behavior.java" startLine="20" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="1262430001741718689" varName="thisConcept" />
     </scopeInfo>
-    <unitInfo nodeId="1262430001741718689" fileName="LinkedHashSetCreator_Behavior.java" startLine="13" startPosition="0" endLine="29" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.LinkedHashSetCreator_Behavior" />
+    <unitInfo nodeId="1262430001741718689" fileName="LinkedHashSetCreator_Behavior.java" startLine="12" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.LinkedHashSetCreator_Behavior" />
   </root>
   <root nodeId="1331913329176106421" modelId="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)">
     <nodeInfo nodeId="1331913329176106542" fileName="CustomContainerCreator_Behavior.java" startLine="17" startPosition="78" endLine="18" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1797,58 +1792,57 @@
     <unitInfo nodeId="3358009230509337679" fileName="QueueType_Behavior.java" startLine="19" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.QueueType_Behavior" />
   </root>
   <root nodeId="3358009230509514611" modelId="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)">
-    <nodeInfo nodeId="3358009230509516543" fileName="PriorityQueueCreator_Behavior.java" startLine="21" startPosition="72" endLine="22" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1262430001741523460" fileName="PriorityQueueCreator_Behavior.java" startLine="25" startPosition="87" endLine="26" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3044950653914717225" fileName="PriorityQueueCreator_Behavior.java" startLine="29" startPosition="95" endLine="30" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3044950653914717235" fileName="PriorityQueueCreator_Behavior.java" startLine="30" startPosition="71" endLine="31" endPosition="305" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914717240" fileName="PriorityQueueCreator_Behavior.java" startLine="31" startPosition="305" endLine="32" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914717245" fileName="PriorityQueueCreator_Behavior.java" startLine="32" startPosition="185" endLine="33" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3044950653914717249" fileName="PriorityQueueCreator_Behavior.java" startLine="33" startPosition="179" endLine="34" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="37" startPosition="78" endLine="38" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="38" startPosition="30" endLine="39" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="39" startPosition="30" endLine="40" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="40" startPosition="172" endLine="41" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="42" startPosition="31" endLine="43" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="44" startPosition="5" endLine="45" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3358009230509514611" fileName="PriorityQueueCreator_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3358009230509514611" fileName="PriorityQueueCreator_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createType_1237722437229#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="3358009230509514611" fileName="PriorityQueueCreator_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_hasInitSize_1262430001741498238#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
-    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="41" startPosition="39" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="40" startPosition="172" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="40" startPosition="172" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="39" startPosition="30" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="39" startPosition="30" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3358009230509514611" fileName="PriorityQueueCreator_Behavior.java" startLine="29" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAvailableFor_3044950653914717035#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
-    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="37" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_ag90u1_a0a0#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <scopeInfo nodeId="3358009230509514613" fileName="PriorityQueueCreator_Behavior.java" startLine="18" startPosition="43" endLine="18" endPosition="43" />
-    <scopeInfo nodeId="3358009230509514617" fileName="PriorityQueueCreator_Behavior.java" startLine="21" startPosition="72" endLine="22" endPosition="103" />
-    <scopeInfo nodeId="1262430001741523459" fileName="PriorityQueueCreator_Behavior.java" startLine="25" startPosition="87" endLine="26" endPosition="16" />
-    <scopeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="42" startPosition="31" endLine="43" endPosition="80" />
-    <scopeInfo nodeId="3358009230509514611" fileName="PriorityQueueCreator_Behavior.java" startLine="18" startPosition="0" endLine="20" endPosition="0">
+    <nodeInfo nodeId="3358009230509516543" fileName="PriorityQueueCreator_Behavior.java" startLine="20" startPosition="72" endLine="21" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1262430001741523460" fileName="PriorityQueueCreator_Behavior.java" startLine="24" startPosition="87" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3044950653914717225" fileName="PriorityQueueCreator_Behavior.java" startLine="28" startPosition="95" endLine="29" endPosition="260" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3044950653914717240" fileName="PriorityQueueCreator_Behavior.java" startLine="29" startPosition="260" endLine="30" endPosition="185" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914717245" fileName="PriorityQueueCreator_Behavior.java" startLine="30" startPosition="185" endLine="31" endPosition="179" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3044950653914717249" fileName="PriorityQueueCreator_Behavior.java" startLine="31" startPosition="179" endLine="32" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="35" startPosition="78" endLine="36" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="36" startPosition="30" endLine="37" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="37" startPosition="30" endLine="38" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="38" startPosition="172" endLine="39" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="40" startPosition="31" endLine="41" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="42" startPosition="5" endLine="43" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3358009230509514611" fileName="PriorityQueueCreator_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="3358009230509514611" fileName="PriorityQueueCreator_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_createType_1237722437229#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="3358009230509514611" fileName="PriorityQueueCreator_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_hasInitSize_1262430001741498238#(Lorg/jetbrains/mps/openapi/language/SConcept;)Z" />
+    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="39" startPosition="39" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="38" startPosition="172" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="38" startPosition="172" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="37" startPosition="30" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="37" startPosition="30" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3358009230509514611" fileName="PriorityQueueCreator_Behavior.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAvailableFor_3044950653914717035#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/util/List;" />
+    <nodeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="35" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_ag90u1_a0a0#(Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <scopeInfo nodeId="3358009230509514613" fileName="PriorityQueueCreator_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
+    <scopeInfo nodeId="3358009230509514617" fileName="PriorityQueueCreator_Behavior.java" startLine="20" startPosition="72" endLine="21" endPosition="103" />
+    <scopeInfo nodeId="1262430001741523459" fileName="PriorityQueueCreator_Behavior.java" startLine="24" startPosition="87" endLine="25" endPosition="16" />
+    <scopeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="40" startPosition="31" endLine="41" endPosition="80" />
+    <scopeInfo nodeId="3358009230509514611" fileName="PriorityQueueCreator_Behavior.java" startLine="17" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="3358009230509514611" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509514611" fileName="PriorityQueueCreator_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0">
+    <scopeInfo nodeId="3358009230509514611" fileName="PriorityQueueCreator_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="3358009230509514611" varName="thisNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509514611" fileName="PriorityQueueCreator_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="3358009230509514611" fileName="PriorityQueueCreator_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="3358009230509514611" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="40" startPosition="172" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="3044950653914717224" fileName="PriorityQueueCreator_Behavior.java" startLine="29" startPosition="95" endLine="34" endPosition="18">
+    <scopeInfo nodeId="3044950653914717224" fileName="PriorityQueueCreator_Behavior.java" startLine="28" startPosition="95" endLine="32" endPosition="18">
       <varInfo nodeId="3044950653914717226" varName="result" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="39" startPosition="30" endLine="44" endPosition="5" />
-    <scopeInfo nodeId="3358009230509514611" fileName="PriorityQueueCreator_Behavior.java" startLine="29" startPosition="0" endLine="36" endPosition="0">
+    <scopeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="38" startPosition="172" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="37" startPosition="30" endLine="42" endPosition="5" />
+    <scopeInfo nodeId="3358009230509514611" fileName="PriorityQueueCreator_Behavior.java" startLine="28" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="3358009230509514611" varName="thisConcept" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="37" startPosition="78" endLine="45" endPosition="24">
+    <scopeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="35" startPosition="78" endLine="43" endPosition="24">
       <varInfo nodeId="3358009230509516544" varName="quotedNode_2" />
       <varInfo nodeId="3358009230509516544" varName="quotedNode_3" />
     </scopeInfo>
-    <scopeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="37" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="3358009230509516544" fileName="PriorityQueueCreator_Behavior.java" startLine="35" startPosition="0" endLine="45" endPosition="0">
       <varInfo nodeId="3358009230509516544" varName="parameter_1" />
     </scopeInfo>
-    <unitInfo nodeId="3358009230509514611" fileName="PriorityQueueCreator_Behavior.java" startLine="17" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.PriorityQueueCreator_Behavior" />
+    <unitInfo nodeId="3358009230509514611" fileName="PriorityQueueCreator_Behavior.java" startLine="16" startPosition="0" endLine="46" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.PriorityQueueCreator_Behavior" />
   </root>
   <root nodeId="3358009230509734418" modelId="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)">
     <nodeInfo nodeId="3358009230509734428" fileName="DequeType_Behavior.java" startLine="23" startPosition="113" endLine="24" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
