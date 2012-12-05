@@ -1,9 +1,3 @@
-import jetbrains.mps.util.FileUtil;
-import org.jdom.JDOMException;
-
-import java.io.File;
-import java.io.IOException;
-
 /*
 * Copyright 2003-2012 JetBrains s.r.o.
 *
@@ -19,6 +13,12 @@ import java.io.IOException;
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
+
+import org.jdom.JDOMException;
+
+import java.io.File;
+import java.io.IOException;
+
 public class GeneratorsRunner {
   public static final File GEN_SOURCES_IML = new File("tools" + File.separatorChar + "gensources" + File.separatorChar + "gensources.iml");
   public static final File COMPILER_XML_FILE = new File(".idea" + File.separatorChar + "compiler.xml");

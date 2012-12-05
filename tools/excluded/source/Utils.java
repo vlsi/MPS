@@ -41,10 +41,10 @@ public class Utils {
     return modulePath.substring(rootPath.length());
   }
 
-  public static Element getComponentWithNameXML(Document doc, String name) {
+  public static Element getComponentWithName(Document doc, String name) {
     for (Object component : doc.getRootElement().getChildren(COMPONENT)) {
-      Element compXML = (Element) component;
-      if (compXML.getAttributeValue(NAME).equals(name)) return compXML;
+      Element componentXml = (Element) component;
+      if (componentXml.getAttributeValue(NAME).equals(name)) return componentXml;
     }
     throw new IllegalStateException();
   }

@@ -1,11 +1,3 @@
-import jetbrains.mps.util.FileUtil;
-import junit.framework.Assert;
-import org.jdom.JDOMException;
-import org.junit.Test;
-import org.junit.runners.model.TestClass;
-
-import java.io.IOException;
-
 /*
 * Copyright 2003-2012 JetBrains s.r.o.
 *
@@ -21,6 +13,14 @@ import java.io.IOException;
 * See the License for the specific language governing permissions and
 * limitations under the License.
 */
+
+import jetbrains.mps.util.FileUtil;
+import junit.framework.Assert;
+import org.jdom.JDOMException;
+import org.junit.Test;
+
+import java.io.IOException;
+
 public class TestGeneratedFiles {
   @Test
   public void testGenSourcesIml() throws JDOMException, IOException {

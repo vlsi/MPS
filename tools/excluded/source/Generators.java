@@ -1,11 +1,3 @@
-import jetbrains.mps.util.JDOMUtil;
-import org.jdom.Document;
-import org.jdom.Element;
-import org.jdom.JDOMException;
-
-import java.io.File;
-import java.io.IOException;
-
 /*
  * Copyright 2003-2012 JetBrains s.r.o.
  *
@@ -21,6 +13,15 @@ import java.io.IOException;
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import jetbrains.mps.util.JDOMUtil;
+import org.jdom.Document;
+import org.jdom.Element;
+import org.jdom.JDOMException;
+
+import java.io.File;
+import java.io.IOException;
+
 public class Generators {
   // gensources.iml constants
   private static final String MODULE_ROOT_MANAGER = "NewModuleRootManager";
@@ -41,15 +42,15 @@ public class Generators {
   public static void updateCompilerExcludes(File compilerXmlFile, File... sourceDirs) throws JDOMException, IOException {
     Document compiler = JDOMUtil.loadDocument(compilerXmlFile);
 
-    Element rootElement = Utils.getComponentWithNameXML(compiler, COMPILER_CONFIGURATION);
-    Element excludeXML = rootElement.getChild("excludeFromCompile");
-    excludeXML.removeChildren(DIRECTORY);
+    Element rootElement = Utils.getComponentWithName(compiler, COMPILER_CONFIGURATION);
+    Element excludeXml = rootElement.getChild("excludeFromCompile");
+    excludeXml.removeChildren(DIRECTORY);
 
     for (File module : Utils.collectGeneratedInMPSModules(sourceDirs)) {
       Element excludedDir = new Element(DIRECTORY);
       excludedDir.setAttribute(URL, PATH_START_PROJECT + Utils.getRelativeProjectPath(module) + "/" + SOURCE_GEN_FOLDER);
       excludedDir.setAttribute("includeSubdirectories", "true");
-      excludeXML.addContent(excludedDir);
+      excludeXml.addContent(excludedDir);
     }
 
     JDOMUtil.writeDocument(compiler, compilerXmlFile);
@@ -57,24 +58,24 @@ public class Generators {
 
   public static void updateGenSourcesIml(File genSourcesIml, File... sourceDirs) throws JDOMException, IOException {
     Document doc = JDOMUtil.loadDocument(genSourcesIml);
-    Element rootManager = Utils.getComponentWithNameXML(doc, MODULE_ROOT_MANAGER);
+    Element rootManager = Utils.getComponentWithName(doc, MODULE_ROOT_MANAGER);
 
     rootManager.removeChildren(CONTENT);
 
     for (File dir : sourceDirs) {
-      Element contentRootXML = new Element(CONTENT);
-      contentRootXML.setAttribute(URL, PATH_START_MODULE + dir);
+      Element contentRoot = new Element(CONTENT);
+      contentRoot.setAttribute(URL, PATH_START_MODULE + dir);
       for (File module : Utils.collectGeneratedInMPSModules(dir)) {
-        Element sourceFolderXML = new Element(SOURCE_FOLDER);
-        sourceFolderXML.setAttribute(URL, PATH_START_MODULE + Utils.getRelativeProjectPath(module) + "/" + SOURCE_GEN_FOLDER);
-        sourceFolderXML.setAttribute("isTestSource", "false");
-        contentRootXML.addContent(sourceFolderXML);
+        Element sourceFolder = new Element(SOURCE_FOLDER);
+        sourceFolder.setAttribute(URL, PATH_START_MODULE + Utils.getRelativeProjectPath(module) + "/" + SOURCE_GEN_FOLDER);
+        sourceFolder.setAttribute("isTestSource", "false");
+        contentRoot.addContent(sourceFolder);
 
-        Element excludeFolderXML = new Element(EXCLUDE_FOLDER);
-        excludeFolderXML.setAttribute(URL, PATH_START_MODULE + Utils.getRelativeProjectPath(module) + "/" + CLASSES_GEN_FOLDER);
-        contentRootXML.addContent(excludeFolderXML);
+        Element excludeFolder = new Element(EXCLUDE_FOLDER);
+        excludeFolder.setAttribute(URL, PATH_START_MODULE + Utils.getRelativeProjectPath(module) + "/" + CLASSES_GEN_FOLDER);
+        contentRoot.addContent(excludeFolder);
       }
-      rootManager.addContent(contentRootXML);
+      rootManager.addContent(contentRoot);
     }
 
     JDOMUtil.writeDocument(doc, genSourcesIml);
