@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="1562009418797019073" modelId="r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)" />
   <root nodeId="1640281869714700106" modelId="r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)">
     <nodeInfo nodeId="1640281869714700106" fileName="UpdateTabCreation_MigrationScript.java" startLine="13" startPosition="80" endLine="14" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="1640281869714700107" fileName="UpdateTabCreation_MigrationScript.java" startLine="16" startPosition="31" endLine="17" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

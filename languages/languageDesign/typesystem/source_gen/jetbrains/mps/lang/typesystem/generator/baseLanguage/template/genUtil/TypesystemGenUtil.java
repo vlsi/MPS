@@ -38,7 +38,7 @@ public class TypesystemGenUtil {
     if ((baseMethodDeclaration != null)) {
       for (SNode annotationInstance : SLinkOperations.getTargets(baseMethodDeclaration, "annotation", true)) {
         SNode annotation = SLinkOperations.getTarget(annotationInstance, "annotation", false);
-        if (annotation == SLinkOperations.getTarget(_quotation_createNode_y65bbo_a0a0b0a0d0c_0(), "classifier", false) || annotation == SLinkOperations.getTarget(_quotation_createNode_y65bbo_a0a0b0a0d0c(), "classifier", false)) {
+        if (annotation == SLinkOperations.getTarget(_quotation_createNode_y65bbo_a0a0b0a0d0c(), "classifier", false) || annotation == SLinkOperations.getTarget(_quotation_createNode_y65bbo_a0a0b0a0d0c_0(), "classifier", false)) {
           return true;
         }
       }
@@ -65,14 +65,14 @@ public class TypesystemGenUtil {
   private static SNode _quotation_createNode_y65bbo_a0a0b0a0d0c() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), SNodeId.fromString("1223644778913")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), SNodeId.fromString("1196177069451")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_y65bbo_a0a0b0a0d0c_0() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), SNodeId.fromString("1196177069451")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:00000000-0000-4000-0000-011c895902b5(jetbrains.mps.lang.typesystem.dependencies)"), SNodeId.fromString("1223644778913")));
     return quotedNode_1;
   }
 

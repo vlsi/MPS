@@ -17,7 +17,7 @@ public class RemoveConceptProperties_Action extends BaseAction {
   private static final Icon ICON = null;
 
   public RemoveConceptProperties_Action() {
-    super("Get rid of concept properties", "", ICON);
+    super("Get rid of concept properties and links", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }

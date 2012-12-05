@@ -205,12 +205,12 @@
         </node>
       </node>
     </node>
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5376460755542209516">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ua2a.~DefaultTypecheckingContextOwner" resolveInfo="DefaultTypecheckingContextOwner" />
+    </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5231630840089786269" />
     <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5231630840089786274">
       <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wsw7.135987422146913546" resolveInfo="INodeChecker" />
-    </node>
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5376460755542209516">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="ua2a.~DefaultTypecheckingContextOwner" resolveInfo="DefaultTypecheckingContextOwner" />
     </node>
   </root>
   <root id="3364928926666865010">
@@ -229,6 +229,12 @@
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="3364928926666865012">
+      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3364928926666865034">
+        <property name="name" nameId="tpck.1169194664001" value="component" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3364928926666865035">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wsw7.3364928926666847271" resolveInfo="CheckersComponent" />
+        </node>
+      </node>
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="3364928926666865013" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3364928926666865014" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3364928926666865015">
@@ -255,12 +261,6 @@
           </node>
         </node>
       </node>
-      <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3364928926666865034">
-        <property name="name" nameId="tpck.1169194664001" value="component" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3364928926666865035">
-          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="wsw7.3364928926666847271" resolveInfo="CheckersComponent" />
-        </node>
-      </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="3364928926666865027">
       <property name="isDeprecated" nameId="tpee.1224848525476" value="false" />
@@ -270,14 +270,14 @@
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3364928926666865030">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3364928926666865046">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3364928926666865048">
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3364928926666865047">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3364928926666865036" resolveInfo="myCheckersComponent" />
+            </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3364928926666865137">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="wsw7.3364928926666865107" resolveInfo="addChecker" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3364928926666865152">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3364928926666865139" resolveInfo="myChecker" />
               </node>
-            </node>
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3364928926666865047">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3364928926666865036" resolveInfo="myCheckersComponent" />
             </node>
           </node>
         </node>

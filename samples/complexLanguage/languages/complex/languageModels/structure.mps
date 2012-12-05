@@ -74,12 +74,7 @@
     </node>
   </roots>
   <root id="1196259557930" />
-  <root id="1196260743057">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1196418742461">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1196418498814" resolveInfo="returnType" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.DoubleType" typeId="tpee.1070534513062" id="1196418744322" />
-    </node>
-  </root>
+  <root id="1196260743057" />
   <root id="1196260832413">
     <node role="conceptLinkDeclaration" roleId="tpce.1137532086877" type="tpce.AggregationConceptLinkDeclaration" typeId="tpce.1105741535888" id="1196418498814">
       <property name="name" nameId="tpck.1169194664001" value="returnType" />
@@ -91,40 +86,16 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068431790191" resolveInfo="Expression" />
     </node>
   </root>
-  <root id="1196263843100">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1196418763947">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1196418498814" resolveInfo="returnType" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.DoubleType" typeId="tpee.1070534513062" id="1196418767636" />
-    </node>
-  </root>
-  <root id="1196264034207">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1196418772512">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1196418498814" resolveInfo="returnType" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.DoubleType" typeId="tpee.1070534513062" id="1196418775186" />
-    </node>
-  </root>
-  <root id="1196261859224">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1196418637000">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1196418498814" resolveInfo="returnType" />
-      <node role="target" roleId="tpce.1105736901241" type="tpee.DoubleType" typeId="tpee.1070534513062" id="1196418645565" />
-    </node>
-  </root>
-  <root id="1196418881524">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1196418940099">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1196418498814" resolveInfo="returnType" />
-      <node role="target" roleId="tpce.1105736901241" type="tpo9.ComplexType" typeId="1196259557930" id="1196419204127" />
-    </node>
-  </root>
+  <root id="1196263843100" />
+  <root id="1196264034207" />
+  <root id="1196261859224" />
+  <root id="1196418881524" />
   <root id="1196421957108">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1196422043474">
       <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
       <property name="role" nameId="tpce.1071599776563" value="degree" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1179362310214" resolveInfo="IntegerLiteral" />
-    </node>
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.AggregationConceptLink" typeId="tpce.1105736889287" id="1196421987391">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="1196418498814" resolveInfo="returnType" />
-      <node role="target" roleId="tpce.1105736901241" type="tpo9.ComplexType" typeId="1196259557930" id="1196422002159" />
     </node>
   </root>
   <root id="1196434001121" />

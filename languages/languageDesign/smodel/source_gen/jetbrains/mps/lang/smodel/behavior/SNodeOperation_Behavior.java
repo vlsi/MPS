@@ -10,6 +10,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.language.SConcept;
+import java.util.List;
+import java.util.ArrayList;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -86,6 +88,10 @@ public class SNodeOperation_Behavior {
 
   public static boolean virtual_applicableToLinkList_1262430001741498382(SConcept thisConcept) {
     return false;
+  }
+
+  public static List<SNode> virtual_getApplicableParameter_3044950653914717056(SConcept thisConcept) {
+    return ListSequence.fromList(new ArrayList<SNode>());
   }
 
   public static SNode getLeftNodeConcept_1213877508847(SNode parent) {

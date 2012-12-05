@@ -35,10 +35,6 @@
     </node>
   </roots>
   <root id="7390982340086719450">
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7390982340086719515" />
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7390982340086720126">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="l62w.~BaseEditorChecker" resolveInfo="BaseEditorChecker" />
-    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="7390982340086719451">
       <property name="name" nameId="tpck.1169194664001" value="myMessagesChanged" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="7390982340086719452" />
@@ -1671,12 +1667,12 @@
         </node>
       </node>
     </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7390982340086719515" />
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7390982340086720126">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="l62w.~BaseEditorChecker" resolveInfo="BaseEditorChecker" />
+    </node>
   </root>
   <root id="5031859272495377247">
-    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5031859272495377248">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="l62w.~EditorCheckerAdapter" resolveInfo="EditorCheckerAdapter" />
-    </node>
-    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5031859272495377249" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="5031859272495377250">
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5031859272495377251" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="5031859272495377252" />
@@ -2288,6 +2284,10 @@
         </node>
       </node>
     </node>
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5031859272495377248">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="l62w.~EditorCheckerAdapter" resolveInfo="EditorCheckerAdapter" />
+    </node>
+    <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="5031859272495377249" />
   </root>
 </model>
 

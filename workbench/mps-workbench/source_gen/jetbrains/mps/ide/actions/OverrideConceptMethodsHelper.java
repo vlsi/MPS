@@ -75,7 +75,7 @@ public class OverrideConceptMethodsHelper {
           return _quotation_createNode_7wts1u_a0a0a0a2a0e0g(it);
         }
       });
-      defaultExpr = _quotation_createNode_7wts1u_a0d0a4a6(sourceMethodConcept, Sequence.fromIterable(paramList).toListSequence(), BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), baseMethod, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "call_getOverridenMethod_1225196403956", new Object[]{}));
+      defaultExpr = _quotation_createNode_7wts1u_a0d0a4a6(sourceMethodConcept, BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), baseMethod, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", "call_getOverridenMethod_1225196403956", new Object[]{}), Sequence.fromIterable(paramList).toListSequence());
     }
 
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(method, "returnType", true), "jetbrains.mps.baseLanguage.structure.VoidType")) {
@@ -126,9 +126,9 @@ public class OverrideConceptMethodsHelper {
     SNodeAccessUtil.setReferenceTarget(quotedNode_5, "superConcept", (SNode) parameter_1);
     quotedNode_4.addChild("operand", quotedNode_5);
     quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_6, "baseMethodDeclaration", (SNode) parameter_3);
+    SNodeAccessUtil.setReferenceTarget(quotedNode_6, "baseMethodDeclaration", (SNode) parameter_2);
     {
-      List<SNode> nodes = (List<SNode>) parameter_2;
+      List<SNode> nodes = (List<SNode>) parameter_3;
       for (SNode child : nodes) {
         quotedNode_6.addChild("actualArgument", HUtil.copyIfNecessary(child));
       }

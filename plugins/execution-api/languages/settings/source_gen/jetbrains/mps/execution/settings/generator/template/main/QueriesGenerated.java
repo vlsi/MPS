@@ -80,10 +80,6 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(_context.getNode(), "constraintsKind").equals("field");
   }
 
-  public static Object propertyMacro_GetPropertyValue_5041115067675810099(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return PersistentConfiguration_Behavior.call_getGeneratedEditorName_946964771156066479(_context.getNode());
-  }
-
   public static Object propertyMacro_GetPropertyValue_5041115067675810083(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return PersistentPropertyDeclaration_Behavior.call_getTypeEditorFqName_946964771156066917(_context.getNode());
   }
@@ -92,8 +88,8 @@ public class QueriesGenerated {
     return PersistentPropertyDeclaration_Behavior.addMyPrefix_6314556899428615272(SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
-  public static Object propertyMacro_GetPropertyValue_5041115067675810568(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGeneratedClassName_946964771156905488", new Object[]{});
+  public static Object propertyMacro_GetPropertyValue_5041115067675810099(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return PersistentConfiguration_Behavior.call_getGeneratedEditorName_946964771156066479(_context.getNode());
   }
 
   public static Object propertyMacro_GetPropertyValue_5041115067675810460(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -118,6 +114,10 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_5041115067675810748(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return SPropertyOperations.getString(_context.getNode(), "name");
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5041115067675810568(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getGeneratedClassName_946964771156905488", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_5041115067675810884(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -150,12 +150,12 @@ public class QueriesGenerated {
     return PersistentPropertyDeclaration_Behavior.call_getTypeEditorFqName_946964771156066917(_context.getNode());
   }
 
-  public static Object propertyMacro_GetPropertyValue_5041115067675811165(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return PersistentPropertyDeclaration_Behavior.removeMyPrefix_946964771156066836(SPropertyOperations.getString(_context.getNode(), "name"));
-  }
-
   public static Object propertyMacro_GetPropertyValue_4342433276614928649(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return BehaviorReflection.invokeVirtual(String.class, _context.getNode(), "virtual_getFullName_946964771156905503", new Object[]{});
+  }
+
+  public static Object propertyMacro_GetPropertyValue_5041115067675811165(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return PersistentPropertyDeclaration_Behavior.removeMyPrefix_946964771156066836(SPropertyOperations.getString(_context.getNode(), "name"));
   }
 
   public static Object propertyMacro_GetPropertyValue_5041115067675811232(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -191,10 +191,6 @@ public class QueriesGenerated {
     return "set" + PersistentPropertyDeclaration_Behavior.call_getAccessorName_946964771156066871(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "lValue", true), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.execution.settings.structure.PersistentPropertyReferenceOperation"), "variableDeclaration", false));
   }
 
-  public static Object referenceMacro_GetReferent_5041115067675810108(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToClass");
-  }
-
   public static Object referenceMacro_GetReferent_5041115067675810147(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "PersitentTemplatePropertyToEditorFieldDeclaration");
   }
@@ -204,6 +200,10 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_5041115067675810246(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToClass");
+  }
+
+  public static Object referenceMacro_GetReferent_5041115067675810108(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToClass");
   }
 
@@ -267,7 +267,7 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(SLinkOperations.getTarget(_context.getNode(), "variableDeclaration", false), "ConstructorParamaterToEditorField");
   }
 
-  public static Object referenceMacro_GetReferent_4342433276614907994(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_4342433276614908010(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToClass");
   }
 
@@ -275,24 +275,24 @@ public class QueriesGenerated {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConstructorParameterToEditorParameter");
   }
 
-  public static Object referenceMacro_GetReferent_4342433276614908010(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+  public static Object referenceMacro_GetReferent_4342433276614907994(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConfigurationToClass");
-  }
-
-  public static Object referenceMacro_GetReferent_5041115067675811179(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "PersitentTemplatePropertyToEditorParameter");
   }
 
   public static Object referenceMacro_GetReferent_5041115067675811188(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "PersitentTemplatePropertyToEditorFieldDeclaration");
   }
 
-  public static Object referenceMacro_GetReferent_5041115067675811206(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConstructorParameterToEditorParameter");
+  public static Object referenceMacro_GetReferent_5041115067675811179(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "PersitentTemplatePropertyToEditorParameter");
   }
 
   public static Object referenceMacro_GetReferent_5041115067675811215(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConstructorParamaterToField");
+  }
+
+  public static Object referenceMacro_GetReferent_5041115067675811206(final IOperationContext operationContext, final ReferenceMacroContext _context) {
+    return _context.getOutputNodeByInputNodeAndMappingLabel(_context.getNode(), "ConstructorParameterToEditorParameter");
   }
 
   public static Object referenceMacro_GetReferent_5041115067675811289(final IOperationContext operationContext, final ReferenceMacroContext _context) {
@@ -437,12 +437,12 @@ public class QueriesGenerated {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "dispose", true), "body", true);
   }
 
-  public static SNode sourceNodeQuery_5041115067675810175(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "createEditor", true));
-  }
-
   public static SNode sourceNodeQuery_5041115067675810188(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "createEditor", true), "body", true);
+  }
+
+  public static SNode sourceNodeQuery_5041115067675810175(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "editor", true), "createEditor", true));
   }
 
   public static SNode sourceNodeQuery_5041115067675810218(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -653,10 +653,6 @@ public class QueriesGenerated {
     return PersistentConfiguration_Behavior.call_getTemplateProperties_946964771156066510(_context.getNode());
   }
 
-  public static Iterable sourceNodesQuery_5041115067675811158(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return SLinkOperations.getTargets(_context.getNode(), "templateParameter", true);
-  }
-
   public static Iterable sourceNodesQuery_4342433276614928669(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "templateParameter", true);
   }
@@ -666,6 +662,10 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_5041115067675811223(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(_context.getNode(), "templateParameter", true);
+  }
+
+  public static Iterable sourceNodesQuery_5041115067675811158(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(_context.getNode(), "templateParameter", true);
   }
 

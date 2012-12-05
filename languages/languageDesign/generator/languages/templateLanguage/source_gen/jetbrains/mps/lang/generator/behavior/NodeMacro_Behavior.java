@@ -11,6 +11,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.jetbrains.mps.openapi.language.SConcept;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class NodeMacro_Behavior {
@@ -85,6 +87,12 @@ public class NodeMacro_Behavior {
 
   public static boolean virtual_multiple_1262430001741497972(SConcept thisConcept) {
     return true;
+  }
+
+  public static List<SNode> virtual_getAttributed_3044950653914717013(SConcept thisConcept) {
+    List<SNode> result = BehaviorReflection.invokeSuperStatic((Class<List<SNode>>) ((Class) Object.class), thisConcept, "jetbrains.mps.lang.core.structure.NodeAttribute", "virtual_getAttributed_3044950653914717013", new Object[]{});
+    ListSequence.fromList(result).addElement(SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626"));
+    return result;
   }
 
   @Deprecated

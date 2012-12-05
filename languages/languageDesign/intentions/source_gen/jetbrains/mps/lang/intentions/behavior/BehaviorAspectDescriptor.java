@@ -22,11 +22,11 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ExecuteBlock_BehaviorDescriptor();
       case 3:
         return new ConceptFunctionParameter_node_BehaviorDescriptor();
-      case 10:
+      case 12:
         return new QueryBlock_BehaviorDescriptor();
       case 7:
         return new IntentionParameter_BehaviorDescriptor();
-      case 9:
+      case 11:
         return new ParameterizedIntentionDeclaration_BehaviorDescriptor();
       case 1:
         return new ChildFilterFunction_BehaviorDescriptor();
@@ -34,12 +34,16 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new ConceptFunctionParameter_childNode_BehaviorDescriptor();
       case 0:
         return new BaseIntentionDeclaration_BehaviorDescriptor();
-      case 11:
+      case 13:
         return new SurroundWithIntentionDeclaration_BehaviorDescriptor();
+      case 9:
+        return new ParameterizedDescriptionBlock_BehaviorDescriptor();
+      case 10:
+        return new ParameterizedExecuteBlock_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.ChildFilterFunction", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.intentions.structure.DescriptionBlock", "jetbrains.mps.lang.intentions.structure.ExecuteBlock", "jetbrains.mps.lang.intentions.structure.IntentionDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.lang.intentions.structure.IsApplicableBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.QueryBlock", "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.ChildFilterFunction", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_childNode", "jetbrains.mps.lang.intentions.structure.ConceptFunctionParameter_node", "jetbrains.mps.lang.intentions.structure.DescriptionBlock", "jetbrains.mps.lang.intentions.structure.ExecuteBlock", "jetbrains.mps.lang.intentions.structure.IntentionDeclaration", "jetbrains.mps.lang.intentions.structure.IntentionParameter", "jetbrains.mps.lang.intentions.structure.IsApplicableBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedDescriptionBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedExecuteBlock", "jetbrains.mps.lang.intentions.structure.ParameterizedIntentionDeclaration", "jetbrains.mps.lang.intentions.structure.QueryBlock", "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration"};
 }

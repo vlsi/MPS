@@ -6,6 +6,8 @@ import jetbrains.mps.baseLanguage.behavior.VariableDeclaration_BehaviorDescripto
 import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_BehaviorDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IMember_Behavior;
+import java.util.List;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 public class PersistentPropertyDeclaration_BehaviorDescriptor extends VariableDeclaration_BehaviorDescriptor implements IMember_BehaviorDescriptor {
   public PersistentPropertyDeclaration_BehaviorDescriptor() {
@@ -25,6 +27,10 @@ public class PersistentPropertyDeclaration_BehaviorDescriptor extends VariableDe
 
   public SNode virtual_getOperationConcept_1213877352972(SNode thisNode) {
     return IMember_Behavior.virtual_getOperationConcept_1213877352972(thisNode);
+  }
+
+  public List<SNode> virtual_getOperationConcept_3044950653914717125(SConcept thisConcept) {
+    return PersistentPropertyDeclaration_Behavior.virtual_getOperationConcept_3044950653914717125(thisConcept);
   }
 
   public SNode virtual_getVisiblity_1213877352965(SNode thisNode) {

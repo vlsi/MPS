@@ -20,7 +20,7 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
 
   public SNode doRefactoring() {
     this.findDuplicates();
-    SNode var = _quotation_createNode_nngwe4_a0b0b(this.getExpressionType(), this.getExpression(), this.getName());
+    SNode var = _quotation_createNode_nngwe4_a0b0b(this.getName(), this.getExpressionType(), this.getExpression());
     if (myIsFinal) {
       SPropertyOperations.set(SLinkOperations.getTarget(var, "localVariableDeclaration", true), "isFinal", "" + (true));
     }
@@ -90,12 +90,12 @@ public class IntroduceLocalVariableRefactoring extends IntroduceVariableRefactor
     SNode quotedNode_7 = null;
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setProperty(quotedNode_5, "name", (String) parameter_3);
-    quotedNode_6 = (SNode) parameter_1;
+    SNodeAccessUtil.setProperty(quotedNode_5, "name", (String) parameter_1);
+    quotedNode_6 = (SNode) parameter_2;
     if (quotedNode_6 != null) {
       quotedNode_5.addChild("type", HUtil.copyIfNecessary(quotedNode_6));
     }
-    quotedNode_7 = (SNode) parameter_2;
+    quotedNode_7 = (SNode) parameter_3;
     if (quotedNode_7 != null) {
       quotedNode_5.addChild("initializer", HUtil.copyIfNecessary(quotedNode_7));
     }

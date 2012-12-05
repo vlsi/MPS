@@ -77,6 +77,10 @@ public class BehaviorReflection {
     return ConceptRegistry.getInstance().getBehaviorDescriptor(targetSuperFqName).invoke(node, methodName, parameters);
   }
 
+  public static Object invokeSuperStatic(@NotNull SConcept concept, String targetSuperFqName, String methodName, Object[] parameters) {
+    return ConceptRegistry.getInstance().getBehaviorDescriptor(targetSuperFqName).invokeStatic(concept, methodName, parameters);
+  }
+
   // todo: move to SNodeOperation? this methods for null safety
   public static <T> T invokeVirtual(Class<T> returnType, SNode node, String methodName, Object[] parameters) {
     return node == null ? defaultValue(returnType) : (T) invokeVirtual(node, methodName, parameters);
@@ -90,6 +94,11 @@ public class BehaviorReflection {
   public static <T> T invokeVirtualStatic(Class<T> returnType, SConcept concept, String methodName, Object[] parameters) {
     return concept == null ? defaultValue(returnType) : (T) invokeVirtualStatic(concept, methodName, parameters);
   }
+
+  public static <T> T invokeSuperStatic(Class<T> returnType, SConcept concept, String targetSuperFqName, String methodName, Object[] parameters) {
+    return concept == null ? defaultValue(returnType) : (T) invokeSuperStatic(concept, targetSuperFqName,methodName, parameters);
+  }
+
 
   public static <T> T invokeNonVirtualStatic(Class<T> returnType, SConcept concept, String methodName, Object[] parameters) {
     return (T) invokeNonVirtualStatic(concept, methodName, parameters);

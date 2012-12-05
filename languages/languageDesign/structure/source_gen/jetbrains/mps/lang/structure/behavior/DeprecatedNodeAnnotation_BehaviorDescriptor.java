@@ -4,12 +4,17 @@ package jetbrains.mps.lang.structure.behavior;
 
 import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
+import java.util.List;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class DeprecatedNodeAnnotation_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {
   public DeprecatedNodeAnnotation_BehaviorDescriptor() {
+  }
+
+  public List<SNode> virtual_getAttributed_3044950653914717013(SConcept thisConcept) {
+    return DeprecatedNodeAnnotation_Behavior.virtual_getAttributed_3044950653914717013(thisConcept);
   }
 
   public String virtual_getFqName_1213877404258(SNode thisNode) {

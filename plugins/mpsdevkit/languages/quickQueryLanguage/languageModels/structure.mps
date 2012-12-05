@@ -87,11 +87,6 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1218793664585" resolveInfo="QueryCondition" />
     </node>
   </root>
-  <root id="5046156961652249692">
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="5046156961652249695">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpee.1161119487665" resolveInfo="applicableConceptFunctionParameter" />
-      <link role="target" roleId="tpce.1105736807942" targetNodeId="1218793728835" resolveInfo="Query_node_Parameter" />
-    </node>
-  </root>
+  <root id="5046156961652249692" />
 </model>
 

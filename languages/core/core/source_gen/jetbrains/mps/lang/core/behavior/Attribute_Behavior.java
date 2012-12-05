@@ -4,6 +4,9 @@ package jetbrains.mps.lang.core.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.util.ArrayList;
 
 public class Attribute_Behavior {
   public static void init(SNode thisNode) {
@@ -15,5 +18,9 @@ public class Attribute_Behavior {
 
   public static boolean virtual_multiple_1262430001741497972(SConcept thisConcept) {
     return false;
+  }
+
+  public static List<SNode> virtual_getAttributed_3044950653914717013(SConcept thisConcept) {
+    return ListSequence.fromList(new ArrayList<SNode>());
   }
 }

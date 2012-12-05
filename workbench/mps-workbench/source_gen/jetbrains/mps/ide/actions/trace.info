@@ -11453,8 +11453,8 @@
       <varInfo nodeId="6351584993764481258" varName="context" />
       <varInfo nodeId="6351584993764480827" varName="module" />
     </scopeInfo>
-    <unitInfo nodeId="6351584993764481239" fileName="NewModelUtil.java" startLine="21" startPosition="47" endLine="25" endPosition="7" unitName="jetbrains.mps.ide.actions.NewModelUtil$1" />
-    <unitInfo nodeId="6351584993764481666" fileName="NewModelUtil.java" startLine="27" startPosition="47" endLine="31" endPosition="7" unitName="jetbrains.mps.ide.actions.NewModelUtil$2" />
+    <unitInfo nodeId="6351584993764481239" fileName="NewModelUtil.java" startLine="21" startPosition="47" endLine="25" endPosition="7" unitName="jetbrains.mps.ide.actions.NewModelUtil$2" />
+    <unitInfo nodeId="6351584993764481666" fileName="NewModelUtil.java" startLine="27" startPosition="47" endLine="31" endPosition="7" unitName="jetbrains.mps.ide.actions.NewModelUtil$1" />
     <unitInfo nodeId="6351584993764480814" fileName="NewModelUtil.java" startLine="14" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.ide.actions.NewModelUtil" />
   </root>
   <root nodeId="640843604926230885" modelId="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)">

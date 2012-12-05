@@ -53,10 +53,6 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="8892289062514160035" resolveInfo="Condition" />
     </node>
-    <node role="conceptLink" roleId="tpce.1105736949336" type="tpce.ReferenceConceptLink" typeId="tpce.1105736778597" id="5216537374825317508">
-      <link role="conceptLinkDeclaration" roleId="tpce.1105736734721" targetNodeId="tpck.5169995583184591169" resolveInfo="attributed" />
-      <link role="target" roleId="tpce.1105736807942" targetNodeId="tpee.1068580123165" resolveInfo="InstanceMethodDeclaration" />
-    </node>
   </root>
   <root id="332248429538012435" />
   <root id="2203155934614032172" />

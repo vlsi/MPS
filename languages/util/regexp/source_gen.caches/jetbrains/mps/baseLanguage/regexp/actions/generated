@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="dmgy5d2yhqf05nn9rlfmtmzyhw8mpi7">
+<dependencies version="2" modelHash="-43g9mngryisq4h931z4kxhn6ebyyux0">
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)" />
   <dep model="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.smodel.action(MPS.Editor/jetbrains.mps.smodel.action@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
@@ -69,10 +69,10 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="QueriesGenerated.java" />
   </common>
-  <source id="1174484726883" name="stringOperations" hash="-a7zb9ghel7qszbguba19ahas6pzi6aa">
+  <source id="1174484726883" name="stringOperations" hash="f78i4idt1l2rpqfjqfgmmo0p4cejf6">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="1177531319455" name="regexps_transform" hash="-9yb2yfntxjdwr9s1sqlkegljfu61rjm">
+  <source id="1177531319455" name="regexps_transform" hash="-dzy9qbzct49rsel2hv071dv1l85x5dm">
     <dep model="r:00000000-0000-4000-0000-011c895902a9(jetbrains.mps.lang.actions.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="6799940379546583155" name="regexps_node_factories" hash="-796c7h1paephf71k5kn50zewp5re6cf">
