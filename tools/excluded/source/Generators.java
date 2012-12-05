@@ -28,6 +28,7 @@ public class Generators {
   private static final String URL = "url";
   private static final String PATH_START_MODULE = "file://$MODULE_DIR$/../../";
   private static final String SOURCE_FOLDER = "sourceFolder";
+  private static final String EXCLUDE_FOLDER = "excludeFolder";
 
   private static final String SOURCE_GEN_FOLDER = "source_gen";
   private static final String CLASSES_GEN_FOLDER = "classes_gen";
@@ -68,6 +69,10 @@ public class Generators {
         sourceFolderXML.setAttribute(URL, PATH_START_MODULE + Utils.getRelativeProjectPath(module) + "/" + SOURCE_GEN_FOLDER);
         sourceFolderXML.setAttribute("isTestSource", "false");
         contentRootXML.addContent(sourceFolderXML);
+
+        Element excludeFolderXML = new Element(EXCLUDE_FOLDER);
+        excludeFolderXML.setAttribute(URL, PATH_START_MODULE + Utils.getRelativeProjectPath(module) + "/" + CLASSES_GEN_FOLDER);
+        contentRootXML.addContent(excludeFolderXML);
       }
       rootManager.addContent(contentRootXML);
     }
