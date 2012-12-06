@@ -24,7 +24,7 @@ import org.apache.commons.logging.LogFactory;
   @NotNull
   protected AbstractInstaller.State install(boolean dryRun) {
     if (!(PluginUtil.isGitPluginEnabled())) {
-      return AbstractInstaller.State.INSTALLED;
+      return AbstractInstaller.State.NOT_ENABLED;
     }
     try {
       String currentValue = GitConfigUtil.getValue(myProject, myProject.getBaseDir(), GitGlobalConfigFixesInstaller.CORE_AUTOCRLF);

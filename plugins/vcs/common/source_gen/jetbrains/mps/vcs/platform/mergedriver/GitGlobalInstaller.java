@@ -33,7 +33,7 @@ import org.apache.commons.logging.LogFactory;
   @NotNull
   protected AbstractInstaller.State install(boolean dryRun) {
     if (!(PluginUtil.isGitPluginEnabled())) {
-      return AbstractInstaller.State.INSTALLED;
+      return AbstractInstaller.State.NOT_ENABLED;
     }
     // TODO rewrite it using git4idea util classes 
     if (!(myConfigFile.exists())) {
