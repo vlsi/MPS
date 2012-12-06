@@ -2586,100 +2586,85 @@
   <root nodeId="4652592318748340352" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="4652592318748340441" fileName="GoToNeighbourRootActions.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PREVIOUS_ROOT_ICON" />
     <nodeInfo nodeId="4652592318748340447" fileName="GoToNeighbourRootActions.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="NEXT_ROOT_ICON" />
-    <nodeInfo nodeId="8600692914398194633" fileName="GoToNeighbourRootActions.java" startLine="24" startPosition="50" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8508325714721752692" fileName="GoToNeighbourRootActions.java" startLine="32" startPosition="48" endLine="33" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8508325714721786253" fileName="GoToNeighbourRootActions.java" startLine="36" startPosition="46" endLine="37" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748340476" fileName="GoToNeighbourRootActions.java" startLine="40" startPosition="38" endLine="41" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748340484" fileName="GoToNeighbourRootActions.java" startLine="44" startPosition="34" endLine="45" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2027145024769446522" fileName="GoToNeighbourRootActions.java" startLine="48" startPosition="36" endLine="49" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4652592318748340354" fileName="GoToNeighbourRootActions.java" startLine="53" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNext" />
-    <nodeInfo nodeId="4652592318748340377" fileName="GoToNeighbourRootActions.java" startLine="62" startPosition="9" endLine="63" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748340380" fileName="GoToNeighbourRootActions.java" startLine="63" startPosition="35" endLine="64" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4652592318748340383" fileName="GoToNeighbourRootActions.java" startLine="64" startPosition="37" endLine="65" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8508325714721899751" fileName="GoToNeighbourRootActions.java" startLine="68" startPosition="76" endLine="69" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8508325714721881489" fileName="GoToNeighbourRootActions.java" startLine="73" startPosition="75" endLine="74" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8600692914398543746" fileName="GoToNeighbourRootActions.java" startLine="79" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
-    <nodeInfo nodeId="8600692914398543863" fileName="GoToNeighbourRootActions.java" startLine="81" startPosition="52" endLine="82" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8600692914398605953" fileName="GoToNeighbourRootActions.java" startLine="88" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setCurrentNodeId#(Ljetbrains/mps/smodel/SNodeId;)V" />
-    <nodeInfo nodeId="8600692914398564711" fileName="GoToNeighbourRootActions.java" startLine="91" startPosition="50" endLine="92" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8600692914398663251" fileName="GoToNeighbourRootActions.java" startLine="96" startPosition="48" endLine="97" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8600692914398624358" fileName="GoToNeighbourRootActions.java" startLine="97" startPosition="73" endLine="98" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8600692914398646323" fileName="GoToNeighbourRootActions.java" startLine="98" startPosition="31" endLine="99" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8508325714721625205" fileName="GoToNeighbourRootActions.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNeighbour#(Z)Z" />
+    <nodeInfo nodeId="8508325714721765903" fileName="GoToNeighbourRootActions.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goToNeighbour#(Z)V" />
+    <nodeInfo nodeId="4652592318748340476" fileName="GoToNeighbourRootActions.java" startLine="26" startPosition="38" endLine="27" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748340484" fileName="GoToNeighbourRootActions.java" startLine="30" startPosition="34" endLine="31" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2027145024769446522" fileName="GoToNeighbourRootActions.java" startLine="34" startPosition="36" endLine="35" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4652592318748340354" fileName="GoToNeighbourRootActions.java" startLine="39" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNext" />
+    <nodeInfo nodeId="4652592318748340377" fileName="GoToNeighbourRootActions.java" startLine="48" startPosition="9" endLine="49" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748340380" fileName="GoToNeighbourRootActions.java" startLine="49" startPosition="35" endLine="50" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4652592318748340383" fileName="GoToNeighbourRootActions.java" startLine="50" startPosition="37" endLine="51" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8508325714721899751" fileName="GoToNeighbourRootActions.java" startLine="54" startPosition="76" endLine="55" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8508325714721881489" fileName="GoToNeighbourRootActions.java" startLine="59" startPosition="75" endLine="60" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8600692914398543746" fileName="GoToNeighbourRootActions.java" startLine="65" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myTree" />
+    <nodeInfo nodeId="8600692914398543863" fileName="GoToNeighbourRootActions.java" startLine="67" startPosition="52" endLine="68" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8600692914398605953" fileName="GoToNeighbourRootActions.java" startLine="74" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setCurrentNodeId#(Ljetbrains/mps/smodel/SNodeId;)V" />
+    <nodeInfo nodeId="8600692914398564711" fileName="GoToNeighbourRootActions.java" startLine="77" startPosition="50" endLine="78" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8600692914398663251" fileName="GoToNeighbourRootActions.java" startLine="82" startPosition="48" endLine="83" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8600692914398624358" fileName="GoToNeighbourRootActions.java" startLine="83" startPosition="73" endLine="84" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8600692914398646323" fileName="GoToNeighbourRootActions.java" startLine="84" startPosition="31" endLine="85" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4652592318748340454" fileName="GoToNeighbourRootActions.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GoToNeighbourRootActions#()V" />
-    <nodeInfo nodeId="8600692914398585115" fileName="GoToNeighbourRootActions.java" startLine="85" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentNodeId#()Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="4652592318748340465" fileName="GoToNeighbourRootActions.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goTo#(Ljetbrains/mps/smodel/SNodeId;)V" />
-    <nodeInfo nodeId="8508325714721625205" fileName="GoToNeighbourRootActions.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNeighbour#(Z)Z" />
-    <nodeInfo nodeId="8508325714721765903" fileName="GoToNeighbourRootActions.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goToNeighbour#(Z)V" />
-    <nodeInfo nodeId="4652592318748340472" fileName="GoToNeighbourRootActions.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="previous#()Ljetbrains/mps/workbench/action/BaseAction;" />
-    <nodeInfo nodeId="4652592318748340480" fileName="GoToNeighbourRootActions.java" startLine="44" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()Ljetbrains/mps/workbench/action/BaseAction;" />
-    <nodeInfo nodeId="2027145024769434204" fileName="GoToNeighbourRootActions.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getActions#()[Ljetbrains/mps/workbench/action/BaseAction;" />
-    <nodeInfo nodeId="4652592318748340390" fileName="GoToNeighbourRootActions.java" startLine="68" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="8600692914398512586" fileName="GoToNeighbourRootActions.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GoToByTree#(Ljetbrains/mps/vcs/diff/ui/common/DiffModelTree;)V" />
-    <nodeInfo nodeId="4652592318748340413" fileName="GoToNeighbourRootActions.java" startLine="72" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <nodeInfo nodeId="8600692914398562726" fileName="GoToNeighbourRootActions.java" startLine="90" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNeighbour#(Z)Z" />
-    <nodeInfo nodeId="4652592318748340458" fileName="GoToNeighbourRootActions.java" startLine="22" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNeighbourId#(Z)Ljetbrains/mps/smodel/SNodeId;" />
-    <nodeInfo nodeId="8600692914398562742" fileName="GoToNeighbourRootActions.java" startLine="95" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goToNeighbour#(Z)V" />
-    <nodeInfo nodeId="4652592318748340362" fileName="GoToNeighbourRootActions.java" startLine="55" startPosition="36" endLine="62" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4652592318748340358" fileName="GoToNeighbourRootActions.java" startLine="55" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TheAction#(Z)V" />
+    <nodeInfo nodeId="8600692914398585115" fileName="GoToNeighbourRootActions.java" startLine="71" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getCurrentNodeId#()Ljetbrains/mps/smodel/SNodeId;" />
+    <nodeInfo nodeId="4652592318748340472" fileName="GoToNeighbourRootActions.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="previous#()Ljetbrains/mps/workbench/action/BaseAction;" />
+    <nodeInfo nodeId="4652592318748340480" fileName="GoToNeighbourRootActions.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="next#()Ljetbrains/mps/workbench/action/BaseAction;" />
+    <nodeInfo nodeId="2027145024769434204" fileName="GoToNeighbourRootActions.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getActions#()[Ljetbrains/mps/workbench/action/BaseAction;" />
+    <nodeInfo nodeId="4652592318748340390" fileName="GoToNeighbourRootActions.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="8600692914398512586" fileName="GoToNeighbourRootActions.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GoToByTree#(Ljetbrains/mps/vcs/diff/ui/common/DiffModelTree;)V" />
+    <nodeInfo nodeId="4652592318748340413" fileName="GoToNeighbourRootActions.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
+    <nodeInfo nodeId="8600692914398562726" fileName="GoToNeighbourRootActions.java" startLine="76" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasNeighbour#(Z)Z" />
+    <nodeInfo nodeId="8600692914398562742" fileName="GoToNeighbourRootActions.java" startLine="81" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="goToNeighbour#(Z)V" />
+    <nodeInfo nodeId="4652592318748340362" fileName="GoToNeighbourRootActions.java" startLine="41" startPosition="36" endLine="48" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4652592318748340358" fileName="GoToNeighbourRootActions.java" startLine="41" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TheAction#(Z)V" />
     <scopeInfo nodeId="4652592318748340457" fileName="GoToNeighbourRootActions.java" startLine="19" startPosition="37" endLine="19" endPosition="37" />
-    <scopeInfo nodeId="4652592318748340471" fileName="GoToNeighbourRootActions.java" startLine="29" startPosition="48" endLine="29" endPosition="48" />
-    <scopeInfo nodeId="4652592318748340463" fileName="GoToNeighbourRootActions.java" startLine="24" startPosition="50" endLine="25" endPosition="16" />
-    <scopeInfo nodeId="8508325714721625820" fileName="GoToNeighbourRootActions.java" startLine="32" startPosition="48" endLine="33" endPosition="40" />
-    <scopeInfo nodeId="8508325714721765906" fileName="GoToNeighbourRootActions.java" startLine="36" startPosition="46" endLine="37" endPosition="31" />
-    <scopeInfo nodeId="4652592318748340475" fileName="GoToNeighbourRootActions.java" startLine="40" startPosition="38" endLine="41" endPosition="57" />
-    <scopeInfo nodeId="4652592318748340483" fileName="GoToNeighbourRootActions.java" startLine="44" startPosition="34" endLine="45" endPosition="56" />
-    <scopeInfo nodeId="2027145024769434207" fileName="GoToNeighbourRootActions.java" startLine="48" startPosition="36" endLine="49" endPosition="48" />
-    <scopeInfo nodeId="4652592318748340399" fileName="GoToNeighbourRootActions.java" startLine="68" startPosition="76" endLine="69" endPosition="28" />
-    <scopeInfo nodeId="4652592318748340423" fileName="GoToNeighbourRootActions.java" startLine="73" startPosition="75" endLine="74" endPosition="69" />
-    <scopeInfo nodeId="8600692914398512589" fileName="GoToNeighbourRootActions.java" startLine="81" startPosition="52" endLine="82" endPosition="20" />
-    <scopeInfo nodeId="8600692914398605953" fileName="GoToNeighbourRootActions.java" startLine="88" startPosition="0" endLine="89" endPosition="0">
-      <varInfo nodeId="8600692914398616368" varName="nodeId" />
-    </scopeInfo>
-    <scopeInfo nodeId="8600692914398562737" fileName="GoToNeighbourRootActions.java" startLine="91" startPosition="50" endLine="92" endPosition="59" />
-    <scopeInfo nodeId="4652592318748340454" fileName="GoToNeighbourRootActions.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="8600692914398585115" fileName="GoToNeighbourRootActions.java" startLine="85" startPosition="0" endLine="87" endPosition="0" />
-    <scopeInfo nodeId="4652592318748340465" fileName="GoToNeighbourRootActions.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
-      <varInfo nodeId="4652592318748340466" varName="rootId" />
-    </scopeInfo>
-    <scopeInfo nodeId="8508325714721625205" fileName="GoToNeighbourRootActions.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
+    <scopeInfo nodeId="8508325714721625205" fileName="GoToNeighbourRootActions.java" startLine="22" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="8508325714721751725" varName="next" />
     </scopeInfo>
-    <scopeInfo nodeId="8508325714721765903" fileName="GoToNeighbourRootActions.java" startLine="36" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="8508325714721765903" fileName="GoToNeighbourRootActions.java" startLine="24" startPosition="0" endLine="25" endPosition="0">
       <varInfo nodeId="8508325714721785196" varName="next" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748340472" fileName="GoToNeighbourRootActions.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="4652592318748340480" fileName="GoToNeighbourRootActions.java" startLine="44" startPosition="0" endLine="47" endPosition="0" />
-    <scopeInfo nodeId="2027145024769434204" fileName="GoToNeighbourRootActions.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="4652592318748340390" fileName="GoToNeighbourRootActions.java" startLine="68" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="4652592318748340475" fileName="GoToNeighbourRootActions.java" startLine="26" startPosition="38" endLine="27" endPosition="57" />
+    <scopeInfo nodeId="4652592318748340483" fileName="GoToNeighbourRootActions.java" startLine="30" startPosition="34" endLine="31" endPosition="56" />
+    <scopeInfo nodeId="2027145024769434207" fileName="GoToNeighbourRootActions.java" startLine="34" startPosition="36" endLine="35" endPosition="48" />
+    <scopeInfo nodeId="4652592318748340399" fileName="GoToNeighbourRootActions.java" startLine="54" startPosition="76" endLine="55" endPosition="28" />
+    <scopeInfo nodeId="4652592318748340423" fileName="GoToNeighbourRootActions.java" startLine="59" startPosition="75" endLine="60" endPosition="69" />
+    <scopeInfo nodeId="8600692914398512589" fileName="GoToNeighbourRootActions.java" startLine="67" startPosition="52" endLine="68" endPosition="20" />
+    <scopeInfo nodeId="8600692914398605953" fileName="GoToNeighbourRootActions.java" startLine="74" startPosition="0" endLine="75" endPosition="0">
+      <varInfo nodeId="8600692914398616368" varName="nodeId" />
+    </scopeInfo>
+    <scopeInfo nodeId="8600692914398562737" fileName="GoToNeighbourRootActions.java" startLine="77" startPosition="50" endLine="78" endPosition="59" />
+    <scopeInfo nodeId="4652592318748340454" fileName="GoToNeighbourRootActions.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="8600692914398585115" fileName="GoToNeighbourRootActions.java" startLine="71" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="4652592318748340472" fileName="GoToNeighbourRootActions.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="4652592318748340480" fileName="GoToNeighbourRootActions.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="2027145024769434204" fileName="GoToNeighbourRootActions.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="4652592318748340390" fileName="GoToNeighbourRootActions.java" startLine="54" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="4652592318748340393" varName="event" />
       <varInfo nodeId="4652592318748340395" varName="map" />
     </scopeInfo>
-    <scopeInfo nodeId="8600692914398512586" fileName="GoToNeighbourRootActions.java" startLine="81" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="8600692914398512586" fileName="GoToNeighbourRootActions.java" startLine="67" startPosition="0" endLine="70" endPosition="0">
       <varInfo nodeId="8600692914398543771" varName="tree" />
     </scopeInfo>
-    <scopeInfo nodeId="8600692914398562752" fileName="GoToNeighbourRootActions.java" startLine="96" startPosition="48" endLine="99" endPosition="33">
+    <scopeInfo nodeId="8600692914398562752" fileName="GoToNeighbourRootActions.java" startLine="82" startPosition="48" endLine="85" endPosition="33">
       <varInfo nodeId="8600692914398663252" varName="nodeId" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748340413" fileName="GoToNeighbourRootActions.java" startLine="72" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="4652592318748340413" fileName="GoToNeighbourRootActions.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
       <varInfo nodeId="4652592318748340417" varName="event" />
       <varInfo nodeId="4652592318748340419" varName="map" />
     </scopeInfo>
-    <scopeInfo nodeId="8600692914398562726" fileName="GoToNeighbourRootActions.java" startLine="90" startPosition="0" endLine="94" endPosition="0">
+    <scopeInfo nodeId="8600692914398562726" fileName="GoToNeighbourRootActions.java" startLine="76" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="8600692914398562727" varName="next" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748340458" fileName="GoToNeighbourRootActions.java" startLine="22" startPosition="0" endLine="27" endPosition="0">
-      <varInfo nodeId="4652592318748340459" varName="next" />
-    </scopeInfo>
-    <scopeInfo nodeId="8600692914398562742" fileName="GoToNeighbourRootActions.java" startLine="95" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="8600692914398562742" fileName="GoToNeighbourRootActions.java" startLine="81" startPosition="0" endLine="87" endPosition="0">
       <varInfo nodeId="8600692914398562743" varName="next" />
     </scopeInfo>
-    <scopeInfo nodeId="4652592318748340361" fileName="GoToNeighbourRootActions.java" startLine="55" startPosition="36" endLine="65" endPosition="20" />
-    <scopeInfo nodeId="4652592318748340358" fileName="GoToNeighbourRootActions.java" startLine="55" startPosition="0" endLine="67" endPosition="0">
+    <scopeInfo nodeId="4652592318748340361" fileName="GoToNeighbourRootActions.java" startLine="41" startPosition="36" endLine="51" endPosition="20" />
+    <scopeInfo nodeId="4652592318748340358" fileName="GoToNeighbourRootActions.java" startLine="41" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="4652592318748340387" varName="next" />
     </scopeInfo>
-    <unitInfo nodeId="8600692914398512582" fileName="GoToNeighbourRootActions.java" startLine="78" startPosition="0" endLine="102" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions$GoToByTree" />
-    <unitInfo nodeId="4652592318748340353" fileName="GoToNeighbourRootActions.java" startLine="52" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions$TheAction" />
-    <unitInfo nodeId="4652592318748340352" fileName="GoToNeighbourRootActions.java" startLine="15" startPosition="0" endLine="103" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions" />
+    <unitInfo nodeId="8600692914398512582" fileName="GoToNeighbourRootActions.java" startLine="64" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions$GoToByTree" />
+    <unitInfo nodeId="4652592318748340353" fileName="GoToNeighbourRootActions.java" startLine="38" startPosition="0" endLine="63" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions$TheAction" />
+    <unitInfo nodeId="4652592318748340352" fileName="GoToNeighbourRootActions.java" startLine="15" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions" />
   </root>
   <root nodeId="4652592318748340561" modelId="r:07568eb8-30c0-4bb3-9dcb-50ee4b8de59a(jetbrains.mps.vcs.diff.ui.common)">
     <nodeInfo nodeId="4652592318748340562" fileName="NextPreviousTraverser.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="PREVIOUS_ICON" />

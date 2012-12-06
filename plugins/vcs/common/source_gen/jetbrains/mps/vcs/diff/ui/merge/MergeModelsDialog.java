@@ -10,6 +10,7 @@ import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.vcs.diff.merge.MergeSessionState;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import jetbrains.mps.smodel.SNodeId;
 import java.util.Set;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -37,7 +38,6 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNodeId;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -50,6 +50,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import javax.swing.JComponent;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -67,11 +68,14 @@ public class MergeModelsDialog extends DialogWrapper {
   public static final Icon RESET = IconLoader.getIcon("/actions/reset.png");
   private Project myProject;
   private MergeSession myMergeSession;
+  private MergeSession myMetadataMergeSession;
   private MergeSessionState myInitialState;
+  private MergeSessionState myMetadataInitialState;
   private MergeModelsDialog.MergeModelsTree myMergeTree;
   private JPanel myPanel = new JPanel(new BorderLayout());
   private boolean myApplyChanges = false;
-  private boolean myRootsDialogInvoked = false;
+  private MergeRootsDialog myMergeRootsDialog = null;
+  private SNodeId myRootId;
   private String[] myContentTitles;
   private Set<ModelChange> myAppliedMetadataChanges = SetSequence.fromSet(new HashSet<ModelChange>());
   private ActionToolbar myToolbar;
@@ -159,7 +163,7 @@ public class MergeModelsDialog extends DialogWrapper {
 
   public void unregisterResultModel() {
     final SModel resultModel = myMergeSession.getResultModel();
-    assert check_3qqb0l_a0b0s(check_3qqb0l_a0a1a81(resultModel)) instanceof DiffTemporaryModule;
+    assert check_3qqb0l_a0b0v(check_3qqb0l_a0a1a12(resultModel)) instanceof DiffTemporaryModule;
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         DiffTemporaryModule.unregisterModel(resultModel, ProjectHelper.toMPSProject(myProject));
@@ -282,27 +286,60 @@ public class MergeModelsDialog extends DialogWrapper {
     }
   }
 
-  public void invokeMergeRoots(final SNodeId rootId) {
+  public void invokeMergeRoots(@Nullable final SNodeId rootId) {
     if (rootId == null) {
       invokeMergeMetadata();
       return;
     }
-    if (myRootsDialogInvoked) {
+    if (myMergeRootsDialog != null) {
       return;
     }
-    myRootsDialogInvoked = true;
-    final Wrappers._T<MergeRootsDialog> mergeRootsDialog = new Wrappers._T<MergeRootsDialog>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        mergeRootsDialog.value = new MergeRootsDialog(MergeModelsDialog.this, myMergeSession, rootId, myMergeTree.getNameForRoot(rootId));
+        myRootId = rootId;
+        myMergeRootsDialog = new MergeRootsDialog(myProject, myMergeSession, rootId, myMergeTree.getNameForRoot(rootId), getContentTitles(), getWindow(), new MergeModelsDialog.MyGoToNeighbourRootActions().getActions());
       }
     });
     SwingUtilities.invokeLater(new Runnable() {
       public void run() {
-        mergeRootsDialog.value.toFront();
+        myMergeRootsDialog.toFront();
       }
     });
-    mergeRootsDialog.value.show();
+    boolean isOk = myMergeRootsDialog.showAndGet();
+    if (!(isOk)) {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          restoreState(myMergeRootsDialog.getStateToRestore());
+        }
+      });
+    }
+    if (myMetadataMergeSession != null && isOk) {
+
+    }
+    myMergeRootsDialog = null;
+    rebuildLater();
+  }
+
+  public void setCurrentRoot(@Nullable final SNodeId rootId) {
+    assert myMergeRootsDialog != null;
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        if (rootId == null) {
+          return;
+        }
+        myRootId = rootId;
+        if (rootId == null) {
+          myMergeRootsDialog.setRoodId(Sequence.fromIterable(myMetadataMergeSession.getAffectedRoots()).first(), myMetadataMergeSession);
+        } else {
+          myMergeRootsDialog.setRootId(rootId);
+        }
+      }
+    });
+  }
+
+  @Nullable
+  public SNodeId getCurrentRoot() {
+    return myRootId;
   }
 
   public boolean isAcceptYoursTheirsEnabled() {
@@ -361,7 +398,7 @@ public class MergeModelsDialog extends DialogWrapper {
   }
 
   /*package*/ void rootsDialogClosed() {
-    myRootsDialogInvoked = false;
+    myMergeRootsDialog = null;
   }
 
   /*package*/ String[] getContentTitles() {
@@ -400,6 +437,21 @@ public class MergeModelsDialog extends DialogWrapper {
       } else {
         return NameUtil.formatNumericalString(totalChanges, " change");
       }
+    }
+  }
+
+  private class MyGoToNeighbourRootActions extends GoToNeighbourRootActions.GoToByTree {
+    public MyGoToNeighbourRootActions() {
+      super(myMergeTree);
+    }
+
+    @Nullable
+    protected SNodeId getCurrentNodeId() {
+      return getCurrentRoot();
+    }
+
+    public void setCurrentNodeId(@Nullable SNodeId nodeId) {
+      setCurrentRoot(nodeId);
     }
   }
 
@@ -493,14 +545,14 @@ public class MergeModelsDialog extends DialogWrapper {
     }
   }
 
-  private static IModule check_3qqb0l_a0b0s(SModelDescriptor checkedDotOperand) {
+  private static IModule check_3qqb0l_a0b0v(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_3qqb0l_a0a1a81(SModel checkedDotOperand) {
+  private static SModelDescriptor check_3qqb0l_a0a1a12(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

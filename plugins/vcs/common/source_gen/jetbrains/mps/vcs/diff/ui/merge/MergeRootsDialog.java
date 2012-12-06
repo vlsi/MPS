@@ -5,6 +5,7 @@ package jetbrains.mps.vcs.diff.ui.merge;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SNodeId;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
@@ -14,19 +15,24 @@ import java.util.List;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import java.util.Map;
+import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.HashMap;
 import jetbrains.mps.vcs.diff.ui.common.DiffEditorSeparator;
 import jetbrains.mps.vcs.diff.ui.common.DiffEditorsGroup;
 import jetbrains.mps.vcs.diff.merge.MergeSessionState;
 import com.intellij.openapi.diff.ex.DiffStatusBar;
 import com.intellij.openapi.diff.impl.util.TextDiffType;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser;
+import java.awt.Component;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.ModelAccess;
 import javax.swing.JSplitPane;
-import jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser;
-import jetbrains.mps.workbench.action.ActionUtils;
-import com.intellij.openapi.actionSystem.Separator;
 import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -35,23 +41,18 @@ import java.awt.GraphicsEnvironment;
 import java.awt.Dimension;
 import com.intellij.openapi.util.DimensionService;
 import java.awt.Point;
-import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.internal.collections.runtime.IMapping;
+import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
-import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import javax.swing.Action;
-import jetbrains.mps.project.Project;
-import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
-import org.jetbrains.annotations.NotNull;
 import java.awt.GraphicsDevice;
 import java.awt.HeadlessException;
 
@@ -59,7 +60,8 @@ public class MergeRootsDialog extends DialogWrapper {
   private MergeSession myMergeSession;
   private boolean myDisposed = false;
   private ChangeEditorMessage.ConflictChecker myConflictChecker;
-  private MergeModelsDialog myModelsDialog;
+  private Project myProject;
+  private String[] myTitles;
   private SNodeId myRootId;
   private JPanel myContainer = new JPanel(new BorderLayout());
   private JPanel myTopPanel = new JPanel(new GridBagLayout());
@@ -68,21 +70,24 @@ public class MergeRootsDialog extends DialogWrapper {
   private DiffEditor myMineEditor;
   private DiffEditor myRepositoryEditor;
   private List<ChangeGroupLayout> myChangeGroupLayouts = ListSequence.fromList(new ArrayList<ChangeGroupLayout>());
+  private Map<DiffChangeGroupLayout, Boolean> myDiffLayoutPart = MapSequence.fromMap(new HashMap<DiffChangeGroupLayout, Boolean>());
   private List<DiffEditorSeparator> myEdtiorSeparators = ListSequence.fromList(new ArrayList<DiffEditorSeparator>());
   private DiffEditorsGroup myDiffEditorsGroup = new DiffEditorsGroup();
   private MergeSessionState myStateToRestore;
   private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.MERGE_TYPES);
   private DefaultActionGroup myActionGroup;
+  private NextPreviousTraverser myTraverser;
 
-  public MergeRootsDialog(MergeModelsDialog mergeModelsDialog, MergeSession mergeSession, SNodeId rootId, String rootName) {
-    super(mergeModelsDialog.getWindow(), true);
+  public MergeRootsDialog(Project project, MergeSession mergeSession, SNodeId rootId, String rootName, String[] titles, Component parent, @Nullable BaseAction[] actions) {
+    super(parent, true);
     setTitle("Merging " + rootName);
     myConflictChecker = new ChangeEditorMessage.ConflictChecker() {
       public boolean isChangeConflicted(ModelChange ch) {
         return Sequence.fromIterable(myMergeSession.getConflictedWith(ch)).isNotEmpty();
       }
     };
-    myModelsDialog = mergeModelsDialog;
+    myProject = project;
+    myTitles = titles;
     myMergeSession = mergeSession;
     myRootId = rootId;
     myStateToRestore = myMergeSession.getCurrentState();
@@ -108,19 +113,26 @@ public class MergeRootsDialog extends DialogWrapper {
 
     JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopPanel, myBottomPanel);
     splitPane.setResizeWeight(0.7);
-    MergeRootsDialog.MyGoToNeighbourRootActions neighbourActions = new MergeRootsDialog.MyGoToNeighbourRootActions();
-    NextPreviousTraverser neighbourTraverser = new NextPreviousTraverser(myChangeGroupLayouts, myResultEditor.getMainEditor());
-    myActionGroup = ActionUtils.groupFromActions(new ApplyNonConflictsForRoot(this), Separator.getInstance(), neighbourActions.previous(), neighbourActions.next(), Separator.getInstance(), neighbourTraverser.previousAction(), neighbourTraverser.nextAction());
+    myTraverser = new NextPreviousTraverser(myChangeGroupLayouts, myResultEditor.getMainEditor());
+    myActionGroup = new DefaultActionGroup();
+    myActionGroup.add(new ApplyNonConflictsForRoot(this));
+    myActionGroup.addSeparator();
+    myActionGroup.addAll(myTraverser.previousAction(), myTraverser.nextAction());
+    if (actions != null) {
+      myActionGroup.addSeparator();
+      myActionGroup.addAll(actions);
+    }
+
     ActionToolbar toolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myActionGroup, true);
-    neighbourTraverser.setActionToolbar(toolbar);
+    myTraverser.setActionToolbar(toolbar);
 
     myContainer.add(toolbar.getComponent(), BorderLayout.NORTH);
     myContainer.add(splitPane, BorderLayout.CENTER);
     myContainer.add(this.myStatusBar, BorderLayout.SOUTH);
     highlightAllChanges();
 
-    neighbourTraverser.goToFirstChangeLater();
-    DisplayMode displayMode = check_3816sg_a0hb0r(check_3816sg_a0a33a71(GraphicsEnvironment.getLocalGraphicsEnvironment()));
+    myTraverser.goToFirstChangeLater();
+    DisplayMode displayMode = check_3816sg_a0mb0u(check_3816sg_a0a83a02(GraphicsEnvironment.getLocalGraphicsEnvironment()));
     int width = (displayMode == null ?
       800 :
       displayMode.getWidth() - 100
@@ -142,8 +154,31 @@ public class MergeRootsDialog extends DialogWrapper {
 
   }
 
+  public void setRootId(SNodeId rootId) {
+    myRootId = rootId;
+    myStateToRestore = myMergeSession.getCurrentState();
+    myMineEditor.editRoot(myProject, getRootNodeId(myMergeSession.getMyModel()), myMergeSession.getMyModel());
+    myResultEditor.editRoot(myProject, getRootNodeId(myMergeSession.getResultModel()), myMergeSession.getResultModel());
+    myRepositoryEditor.editRoot(myProject, getRootNodeId(myMergeSession.getRepositoryModel()), myMergeSession.getRepositoryModel());
+    rehighlight();
+    myTraverser.goToFirstChangeLater();
+  }
+
+  public void setRoodId(SNodeId rootId, final MergeSession mergeSession) {
+    myMergeSession = mergeSession;
+    MapSequence.fromMap(myDiffLayoutPart).visitAll(new IVisitor<IMapping<DiffChangeGroupLayout, Boolean>>() {
+      public void visit(IMapping<DiffChangeGroupLayout, Boolean> it) {
+        it.key().setChangeSet((it.value() ?
+          mergeSession.getMyChangeSet() :
+          mergeSession.getRepositoryChangeSet()
+        ));
+      }
+    });
+    setRootId(rootId);
+  }
+
   private ChangeGroupLayout createChangeGroupLayout(boolean mine, boolean inspector) {
-    return new DiffChangeGroupLayout(myConflictChecker, (mine ?
+    DiffChangeGroupLayout layout = new DiffChangeGroupLayout(myConflictChecker, (mine ?
       myMergeSession.getMyChangeSet() :
       myMergeSession.getRepositoryChangeSet()
     ), (mine ?
@@ -153,6 +188,8 @@ public class MergeRootsDialog extends DialogWrapper {
       myResultEditor :
       myRepositoryEditor
     ), inspector);
+    MapSequence.fromMap(myDiffLayoutPart).put(layout, mine);
+    return layout;
   }
 
   public String getDimensionServiceKey() {
@@ -171,7 +208,7 @@ public class MergeRootsDialog extends DialogWrapper {
       SModel resultModel = myMergeSession.getResultModel();
       SNodeId nodeId = getRootNodeId(resultModel);
       if (nodeId != null) {
-        myResultEditor.editRoot(myModelsDialog.getProject(), nodeId, resultModel);
+        myResultEditor.editRoot(myProject, nodeId, resultModel);
       }
     }
 
@@ -264,7 +301,7 @@ public class MergeRootsDialog extends DialogWrapper {
       null :
       model.getNodeById(rootId)
     );
-    final DiffEditor result = new DiffEditor(DiffTemporaryModule.getOperationContext(myModelsDialog.getProject(), model), root, myModelsDialog.getContentTitles()[index], index == 0);
+    final DiffEditor result = new DiffEditor(DiffTemporaryModule.getOperationContext(myProject, model), root, myTitles[index], index == 0);
 
     GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ?
       5 :
@@ -282,10 +319,6 @@ public class MergeRootsDialog extends DialogWrapper {
 
   public SNodeId getRootId() {
     return myRootId;
-  }
-
-  /*package*/ MergeModelsDialog getModelsDialog() {
-    return myModelsDialog;
   }
 
   @Nullable
@@ -313,7 +346,6 @@ public class MergeRootsDialog extends DialogWrapper {
   }
 
   public void saveAndClose() {
-    myStateToRestore = null;
     close(DialogWrapper.OK_EXIT_CODE);
   }
 
@@ -321,18 +353,8 @@ public class MergeRootsDialog extends DialogWrapper {
     return myMergeSession;
   }
 
-  public void resetState() {
-    Project project = ProjectHelper.toMPSProject(myModelsDialog.getProject());
-    Runnable r = new Runnable() {
-      public void run() {
-        myModelsDialog.restoreState(myStateToRestore);
-      }
-    };
-    if (project != null) {
-      ModelAccess.instance().runCommandInEDT(r, project);
-    } else {
-      ModelAccess.instance().runWriteActionInCommand(r);
-    }
+  public MergeSessionState getStateToRestore() {
+    return myStateToRestore;
   }
 
   @Override
@@ -341,13 +363,10 @@ public class MergeRootsDialog extends DialogWrapper {
       if (myDisposed) {
         return;
       }
-      if (myStateToRestore == null) {
-        myModelsDialog.rebuildLater();
-      } else {
-        resetState();
+      if (myActionGroup != null) {
+        myActionGroup.removeAll();
       }
-      myActionGroup.removeAll();
-      myModelsDialog.rootsDialogClosed();
+      myActionGroup = null;
       if (myMineEditor != null) {
         myMineEditor.dispose();
       }
@@ -371,29 +390,14 @@ public class MergeRootsDialog extends DialogWrapper {
     super.dispose();
   }
 
-  private class MyGoToNeighbourRootActions extends GoToNeighbourRootActions {
-    public MyGoToNeighbourRootActions() {
-    }
-
-    protected void goTo(@NotNull SNodeId rootId) {
-      saveAndClose();
-      myModelsDialog.invokeMergeRoots(rootId);
-    }
-
-    @Nullable
-    protected SNodeId getNeighbourId(boolean next) {
-      return myModelsDialog.getNeighbourRoot(myRootId, next);
-    }
-  }
-
-  private static DisplayMode check_3816sg_a0hb0r(GraphicsDevice checkedDotOperand) {
+  private static DisplayMode check_3816sg_a0mb0u(GraphicsDevice checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDisplayMode();
     }
     return null;
   }
 
-  private static GraphicsDevice check_3816sg_a0a33a71(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
+  private static GraphicsDevice check_3816sg_a0a83a02(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDefaultScreenDevice();
     }
