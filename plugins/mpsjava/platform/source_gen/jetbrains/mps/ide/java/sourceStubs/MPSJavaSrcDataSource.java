@@ -7,10 +7,10 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-public class JavaSrcDataSource extends FolderDataSource {
+public class MPSJavaSrcDataSource extends FolderDataSource {
 
 
-  public JavaSrcDataSource(@NotNull IFile dir, ModelRoot modelRoot) {
+  public MPSJavaSrcDataSource(@NotNull IFile dir, ModelRoot modelRoot) {
     super(dir, modelRoot);
   }
 
@@ -22,11 +22,4 @@ public class JavaSrcDataSource extends FolderDataSource {
   }
 
 
-
-  @Override
-  public IFile getFile(String fileName) {
-    // just making it public 
-    // Q: Should it be protected in FolderDataSource ? 
-    return super.getFile(fileName);
-  }
 }

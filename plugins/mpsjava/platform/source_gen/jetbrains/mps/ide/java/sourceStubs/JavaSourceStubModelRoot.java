@@ -7,6 +7,7 @@ import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
+import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.vfs.FileSystem;
@@ -27,7 +28,7 @@ public class JavaSourceStubModelRoot extends ModelRootBase implements FileSystem
 
   @NotNull
   private String myPath = "";
-  private Set<JavaSrcDataSource> myDataSources = SetSequence.fromSet(new HashSet<JavaSrcDataSource>());
+  private Set<MultiStreamDataSource> myDataSources = SetSequence.fromSet(new HashSet<MultiStreamDataSource>());
 
 
   public JavaSourceStubModelRoot() {
@@ -38,7 +39,7 @@ public class JavaSourceStubModelRoot extends ModelRootBase implements FileSystem
     if (o == null) {
       return false;
     }
-    if (!(o instanceof JavaSourceStubModelRoot)) {
+    if (!(this.getClass().equals(o.getClass()))) {
       return false;
     }
     return myPath.equals(((JavaSourceStubModelRoot) o).myPath);
@@ -76,15 +77,15 @@ public class JavaSourceStubModelRoot extends ModelRootBase implements FileSystem
     super.dispose();
   }
 
-
-
   @Override
   public SModel getModel(SModelId id) {
     // TODO 
     return null;
   }
 
-
+  protected MultiStreamDataSource newDataSource(IFile dir) {
+    return new MPSJavaSrcDataSource(dir, this);
+  }
 
   @Override
   public Iterable<SModel> getModels() {
@@ -104,7 +105,7 @@ public class JavaSourceStubModelRoot extends ModelRootBase implements FileSystem
 
     Set<SModel> models = SetSequence.fromSet(new HashSet<SModel>());
 
-    JavaSrcDataSource dataSource = new JavaSrcDataSource(dir, this);
+    MultiStreamDataSource dataSource = newDataSource(dir);
     boolean thereAreJavaFiles = dataSource.getAvailableStreams().iterator().hasNext();
 
     if (thereAreJavaFiles) {

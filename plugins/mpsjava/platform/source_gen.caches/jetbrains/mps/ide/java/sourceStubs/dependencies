@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelDescriptor" file="JavaSourceStubModelDescriptor.java">
+    <classNode dependClassName="java.io.BufferedReader" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.InputStream" />
+    <classNode dependClassName="java.io.InputStreamReader" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.util.HashMap" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Map" />
@@ -12,22 +17,22 @@
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParseException" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParser" />
     <classNode dependClassName="jetbrains.mps.ide.java.parser.FeatureKind" />
-    <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.JavaSrcDataSource" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFileUtils" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.MultiStreamDataSource" />
     <classNode extendsClassName="jetbrains.mps.smodel.BaseSpecialModelDescriptor" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.MultiStreamDataSourceListener" />
   </dependency>
@@ -39,7 +44,7 @@
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.JavaSrcDataSource" />
+    <classNode dependClassName="jetbrains.mps.ide.java.sourceStubs.MPSJavaSrcDataSource" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
@@ -55,6 +60,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.Memento" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.MultiStreamDataSource" />
     <classNode extendsClassName="jetbrains.mps.extapi.persistence.ModelRootBase" />
     <classNode extendsClassName="jetbrains.mps.vfs.FileSystemListener" />
   </dependency>
@@ -83,9 +89,8 @@
     <classNode dependClassName="jetbrains.mps.ide.persistence.ModelRootSettingsEditor" />
     <classNode extendsClassName="jetbrains.mps.ide.persistence.ModelRootSettingsEditorProvider" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.sourceStubs.JavaSrcDataSource" file="JavaSrcDataSource.java">
+  <dependency className="jetbrains.mps.ide.java.sourceStubs.MPSJavaSrcDataSource" file="MPSJavaSrcDataSource.java">
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />

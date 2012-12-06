@@ -7,8 +7,8 @@ import org.jetbrains.mps.openapi.persistence.MultiStreamDataSourceListener;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import java.util.Map;
-import jetbrains.mps.vfs.IFile;
 import java.util.Set;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -16,7 +16,6 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.ide.java.newparser.JavaParser;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.ide.java.parser.FeatureKind;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
@@ -27,6 +26,11 @@ import jetbrains.mps.ide.java.newparser.JavaParseException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.io.InputStream;
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 
 public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor implements MultiStreamDataSourceListener {
 
@@ -34,14 +38,14 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
 
   private SModelReference myModelRef;
   private SModel myModel;
-  private JavaSrcDataSource myDataSource;
+  private MultiStreamDataSource myDataSource;
   private String myJavaPackage;
-  private Map<IFile, Set<SNode>> myRootsPerFile = MapSequence.fromMap(new HashMap<IFile, Set<SNode>>());
+  private Map<String, Set<SNode>> myRootsPerFile = MapSequence.fromMap(new HashMap<String, Set<SNode>>());
   private Map<SNodeId, SNode> myRootsById = MapSequence.fromMap(new HashMap<SNodeId, SNode>());
 
 
 
-  public JavaSourceStubModelDescriptor(SModelReference modelRef, JavaSrcDataSource dataSource, String javaPackage) {
+  public JavaSourceStubModelDescriptor(SModelReference modelRef, MultiStreamDataSource dataSource, String javaPackage) {
     super(modelRef);
     myModelRef = modelRef;
     myDataSource = dataSource;
@@ -58,8 +62,7 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
 
     for (String fileName : Sequence.fromIterable(myDataSource.getAvailableStreams())) {
       try {
-        IFile file = myDataSource.getFile(fileName);
-        String code = IFileUtils.getTextContents(file);
+        String code = readInputStream(myDataSource.openInputStream(fileName));
 
         JavaParser.JavaParseResult parseResult = parser.parse(code, myJavaPackage, FeatureKind.CLASS_STUB, true);
         if (ListSequence.fromList(parseResult.getNodes()).isNotEmpty()) {
@@ -67,7 +70,7 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
             SModelOperations.addRootNode(myModel, node);
             MapSequence.fromMap(myRootsById).put(node.getSNodeId(), node);
           }
-          MapSequence.fromMap(myRootsPerFile).put(file, SetSequence.fromSetWithValues(new HashSet<SNode>(), parseResult.getNodes()));
+          MapSequence.fromMap(myRootsPerFile).put(fileName, SetSequence.fromSetWithValues(new HashSet<SNode>(), parseResult.getNodes()));
         }
 
       } catch (IOException e) {
@@ -98,28 +101,46 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
 
   @Override
   @NotNull
-  public JavaSrcDataSource getSource() {
+  public MultiStreamDataSource getSource() {
     return myDataSource;
   }
 
 
 
+
   @Override
-  public void changed(DataSource source, Iterable<String> files) {
+  public void changed(DataSource source, Iterable<String> changedItems) {
     ModelAccess.assertLegalWrite();
 
     LOG.info("got change event");
 
-    for (String fileName : Sequence.fromIterable(files)) {
-      IFile file = myDataSource.getFile(fileName);
-      if (file == null) {
-        // deleted 
+    // full rebuild 
+    mySModel = null;
+    // <node> 
 
-        continue;
+    final SNode n = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null);
+    SPropertyOperations.set(n, "name", "Bla");
+    ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
+      public void run() {
+        SModelOperations.addRootNode(myModel, n);
+      }
+    }, null);
+
+    try {
+      for (String item : Sequence.fromIterable(changedItems)) {
+        InputStream is = myDataSource.openInputStream(item);
+        if (is == null) {
+          // deleted 
+
+          continue;
+        }
+
+        // changed or created 
+
       }
 
-      // changed or created 
-
+    } catch (IOException e) {
+      LOG.error("Exception while handling change", e);
     }
   }
 
@@ -128,5 +149,21 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
   @Override
   public void changed(DataSource source) {
     // ignore 
+  }
+
+  private String readInputStream(InputStream is) throws IOException {
+    BufferedReader br = null;
+    try {
+      br = new BufferedReader(new InputStreamReader(is));
+      StringBuilder sb = new StringBuilder();
+      while (br.ready()) {
+        sb.append(br.readLine());
+      }
+      return sb.toString();
+    } finally {
+      if (br != null) {
+        br.close();
+      }
+    }
   }
 }
