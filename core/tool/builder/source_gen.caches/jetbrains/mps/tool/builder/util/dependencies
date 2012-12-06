@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.tool.builder.util.PathManager" file="PathManager.java">
+    <classNode dependClassName="java.io.BufferedInputStream" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileInputStream" />
+    <classNode dependClassName="java.io.FilenameFilter" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.InputStream" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.ClassLoader" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.net.MalformedURLException" />
+    <classNode dependClassName="java.net.URL" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.Enumeration" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Properties" />
+    <classNode dependClassName="java.util.PropertyResourceBundle" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.build.ant.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.build.ant.util.StringUtil" />
+    <classNode dependClassName="jetbrains.mps.build.ant.util.SystemInfo" />
+    <classNode dependClassName="jetbrains.mps.build.ant.util.URLUtil" />
+    <classNode dependClassName="jetbrains.mps.build.ant.util.UrlClassLoader" />
+    <classNode dependClassName="jetbrains.mps.library.LibraryInitializer" />
+    <classNode dependClassName="jetbrains.mps.library.contributor.LibraryContributor" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+  </dependency>
+</dependenciesRoot>
+

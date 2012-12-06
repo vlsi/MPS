@@ -32,7 +32,6 @@
       <modulePath path="${project}/build/solution/build.msd" folder="build" />
       <modulePath path="${project}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/jetbrains.mps.analyzers.runtime.msd" folder="core.analyzers" />
       <modulePath path="${project}/core/analyzers/solutions/sandbox/sandbox.msd" folder="core.analyzers" />
-      <modulePath path="${project}/core/ant/jetbrains.mps.build.antsupport.msd" folder="core" />
       <modulePath path="${project}/core/dependencies/dependencies.msd" folder="core" />
       <modulePath path="${project}/core/devkits/jetbrains.mps.devkit.bootstrap-languages.devkit" folder="devkits" />
       <modulePath path="${project}/core/devkits/jetbrains.mps.devkit.general-purpose.devkit" folder="devkits" />
@@ -52,6 +51,9 @@
       <modulePath path="${project}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" folder="core.make" />
       <modulePath path="${project}/core/persistence/persistence.msd" folder="core.kernel" />
       <modulePath path="${project}/core/refactoring-runtime/jetbrains.mps.refactoring.runtime.msd" folder="core" />
+      <modulePath path="${project}/core/tool/ant/jetbrains.mps.build.antsupport.msd" folder="core.tool" />
+      <modulePath path="${project}/core/tool/builder/builder.msd" folder="core.tool" />
+      <modulePath path="${project}/core/tool/common/common.msd" folder="core.tool" />
       <modulePath path="${project}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/jetbrains.mps.typesystemEngine.msd" folder="core" />
       <modulePath path="${project}/editor/actions-runtime/jetbrains.mps.actions.runtime.msd" folder="core.editor" />
       <modulePath path="${project}/editor/editor-runtime/jetbrains.mps.editor.runtime.msd" folder="core.editor" />
