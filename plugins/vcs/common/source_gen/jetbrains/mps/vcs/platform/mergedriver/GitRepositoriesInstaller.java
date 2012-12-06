@@ -31,7 +31,7 @@ import java.io.IOException;
   @NotNull
   protected AbstractInstaller.State install(final boolean dryRun) {
     if (!(PluginUtil.isGitPluginEnabled())) {
-      return AbstractInstaller.State.INSTALLED;
+      return AbstractInstaller.State.NOT_ENABLED;
     }
     Iterable<VcsRoot> gitRoots = getGitRoots();
     if (Sequence.fromIterable(gitRoots).isEmpty()) {
@@ -72,7 +72,7 @@ import java.io.IOException;
       }
     }).where(new IWhereFilter<AbstractInstaller.State>() {
       public boolean accept(AbstractInstaller.State st) {
-        return st != AbstractInstaller.State.INSTALLED;
+        return st == AbstractInstaller.State.NOT_INSTALLED || st == AbstractInstaller.State.OUTDATED;
       }
     }).count();
   }

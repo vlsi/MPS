@@ -46,7 +46,7 @@ import java.io.IOException;
   @NotNull
   protected AbstractInstaller.State install(boolean dryRun) {
     if (!(PluginUtil.isSvnPluginEnabled())) {
-      return AbstractInstaller.State.INSTALLED;
+      return AbstractInstaller.State.NOT_ENABLED;
     }
 
     if (!(dryRun)) {
