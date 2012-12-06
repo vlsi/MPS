@@ -27,7 +27,6 @@ import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.project.ModuleRuntimeLibrariesImporter;
 import jetbrains.mps.idea.core.ui.IModuleConfigurationTab;
-import jetbrains.mps.idea.core.ui.ImportedSolutionsTable;
 import jetbrains.mps.idea.core.ui.UsedLanguagesTable;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 
@@ -111,19 +110,16 @@ public class MPSFacetCommonTabUI implements IModuleConfigurationTab {
         });
       }
     };
-    ImportedSolutionsTable importedSolutionsTable = new ImportedSolutionsTable(myContext);
 
     // can not make it final and init in declaration since idea forms generator does not like it and put $$$setupUI$$$ call before setting the field
     myTabs = new ArrayList<IModuleConfigurationTab>();
     myTabs.add(mpsFacetSourcesTab);
     myTabs.add(mpsFacetPathsTab);
     myTabs.add(usedLanguagesTable);
-    myTabs.add(importedSolutionsTable);
 
     tabbedPane.addTab(MPSBundle.message("facet.sources.tab.name"), MPSIcons.SOURCES_TAB_ICON, mpsFacetSourcesTab.getRootPanel(), null);
     tabbedPane.addTab(MPSBundle.message("facet.paths.tab.name"), MPSIcons.PATHS_TAB_ICON, mpsFacetPathsTab.getRootPanel(), null);
     tabbedPane.addTab(MPSBundle.message("facet.languages.tab.name"), MPSIcons.LANGUAGES_TAB_ICON, usedLanguagesTable.getRootPanel(), null);
-    tabbedPane.addTab(MPSBundle.message("facet.solutions.tab.name"), MPSIcons.SOLUTION_ICON, importedSolutionsTable.getRootPanel(), null);
     tabbedPane.addTab(MPSBundle.message("facet.devkits.tab.name"), MPSIcons.DEVKITS_TAB_ICON, new JPanel(), null);
 
     myCentralComponent = tabbedPane.getComponent();

@@ -309,16 +309,20 @@ public class SolutionIdea extends Solution {
     @Override
     public void rootsChanged(ModuleRootEvent event) {
       if (myModule.getProject().equals(event.getSource())) {
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
-          public void run() {
-            // this is to prevent a delayed write to be executed after the module has already been disposed
-            // TODO: find a better solution
-            if (myModule.isDisposed()) return;
-            setModuleDescriptor(getModuleDescriptor(), false);
-          }
-        });
+        reset();
       }
     }
+  }
+
+  private void reset() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      public void run() {
+        // this is to prevent a delayed write to be executed after the module has already been disposed
+        // TODO: find a better solution
+        if (myModule.isDisposed()) return;
+        setModuleDescriptor(getModuleDescriptor(), false);
+      }
+    });
   }
 
   private class MyFacetManagerAdapter extends FacetManagerAdapter {
@@ -344,7 +348,7 @@ public class SolutionIdea extends Solution {
       };
       ModuleRootManager.getInstance(myModule).orderEntries().forEach(processor);
       if (processor.isFound()) {
-        invalidateDependencies();
+        reset();
       }
     }
   }
