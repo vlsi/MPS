@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="QueriesGenerated.java" startLine="17" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.QueriesGenerated" />
-  <unitInfo fileName="TemplateModelImpl.java" startLine="19" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.TemplateModelImpl" />
-  <root nodeId="6186432342008486850" modelId="r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main@generator)">
+  <unitInfo fileName="QueriesGenerated.java" startLine="17" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.QueriesGenerated" />
+  <unitInfo fileName="TemplateModelImpl.java" startLine="19" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.TemplateModelImpl" />
+  <root nodeId="6186432342008486850" modelId="r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)">
     <nodeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="rootRules" />
     <nodeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="weavings" />
     <nodeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="31" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="dropRules" />
@@ -13,7 +13,7 @@
     <nodeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="37" startPosition="190" endLine="38" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="41" startPosition="27" endLine="42" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="45" startPosition="35" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="49" startPosition="40" endLine="50" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="49" startPosition="40" endLine="50" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="53" startPosition="61" endLine="54" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="57" startPosition="64" endLine="58" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="61" startPosition="62" endLine="62" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -204,7 +204,7 @@
     <scopeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="297" startPosition="27" endLine="297" endPosition="27" />
     <scopeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="41" startPosition="27" endLine="42" endPosition="18" />
     <scopeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="45" startPosition="35" endLine="46" endPosition="24" />
-    <scopeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="49" startPosition="40" endLine="50" endPosition="216" />
+    <scopeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="49" startPosition="40" endLine="50" endPosition="178" />
     <scopeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="53" startPosition="61" endLine="54" endPosition="16" />
     <scopeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="57" startPosition="64" endLine="58" endPosition="34" />
     <scopeInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="61" startPosition="62" endLine="62" endPosition="34" />
@@ -435,15 +435,15 @@
     <scopeInfo nodeId="6186432342008522530" fileName="QueriesGenerated.java" startLine="74" startPosition="165" endLine="75" endPosition="99" />
     <scopeInfo nodeId="6186432342008533385" fileName="QueriesGenerated.java" startLine="78" startPosition="165" endLine="79" endPosition="231" />
     <scopeInfo nodeId="6186432342008533369" fileName="QueriesGenerated.java" startLine="82" startPosition="165" endLine="83" endPosition="99" />
-    <unitInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="120" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.Mappingmain$DropRootRule0" />
-    <unitInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="89" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.Mappingmain$RootMappingRule0" />
-    <unitInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="137" startPosition="0" endLine="189" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.Mappingmain$WeavingRule0" />
-    <unitInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="190" startPosition="0" endLine="242" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.Mappingmain$WeavingRule1" />
-    <unitInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="243" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.Mappingmain$WeavingRule2" />
-    <unitInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="296" startPosition="0" endLine="348" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.Mappingmain$WeavingRule3" />
-    <unitInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="28" startPosition="0" endLine="360" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.Mappingmain" />
+    <unitInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="120" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Mappingmain$DropRootRule0" />
+    <unitInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="89" startPosition="0" endLine="119" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Mappingmain$RootMappingRule0" />
+    <unitInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="137" startPosition="0" endLine="189" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Mappingmain$WeavingRule0" />
+    <unitInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="190" startPosition="0" endLine="242" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Mappingmain$WeavingRule1" />
+    <unitInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="243" startPosition="0" endLine="295" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Mappingmain$WeavingRule2" />
+    <unitInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="296" startPosition="0" endLine="348" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Mappingmain$WeavingRule3" />
+    <unitInfo nodeId="6186432342008486850" fileName="Mappingmain.java" startLine="28" startPosition="0" endLine="360" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Mappingmain" />
   </root>
-  <root nodeId="6186432342008490321" modelId="r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main@generator)">
+  <root nodeId="6186432342008490321" modelId="r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)">
     <nodeInfo nodeId="6186432342008490333" fileName="QueriesGenerated.java" startLine="18" startPosition="154" endLine="19" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008490321" fileName="Templatemap__RootConcept.java" startLine="22" startPosition="41" endLine="23" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008490321" fileName="Templatemap__RootConcept.java" startLine="26" startPosition="158" endLine="27" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -565,12 +565,12 @@
       <varInfo nodeId="6186432342008490321" varName="context" />
       <varInfo nodeId="6186432342008490321" varName="environment" />
     </scopeInfo>
-    <unitInfo nodeId="6186432342008490321" fileName="Templatemap__RootConcept.java" startLine="18" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.Templatemap__RootConcept" />
+    <unitInfo nodeId="6186432342008490321" fileName="Templatemap__RootConcept.java" startLine="18" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Templatemap__RootConcept" />
   </root>
-  <root nodeId="6186432342008522510" modelId="r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main@generator)">
+  <root nodeId="6186432342008522510" modelId="r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)">
     <nodeInfo nodeId="6186432342008526322" fileName="QueriesGenerated.java" startLine="22" startPosition="154" endLine="23" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008526290" fileName="QueriesGenerated.java" startLine="26" startPosition="154" endLine="27" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008522510" fileName="Templateweave__ChildConceptWeave.java" startLine="25" startPosition="41" endLine="26" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008522510" fileName="Templateweave__ChildConceptWeave.java" startLine="25" startPosition="41" endLine="26" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008522510" fileName="Templateweave__ChildConceptWeave.java" startLine="29" startPosition="154" endLine="30" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6186432342008522510" fileName="Templateweave__ChildConceptWeave.java" startLine="31" startPosition="9" endLine="32" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008522510" fileName="Templateweave__ChildConceptWeave.java" startLine="32" startPosition="77" endLine="33" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -722,7 +722,7 @@
     <scopeInfo nodeId="6186432342008526321" fileName="QueriesGenerated.java" startLine="22" startPosition="154" endLine="23" endPosition="69" />
     <scopeInfo nodeId="6186432342008522556" fileName="QueriesGenerated.java" startLine="26" startPosition="154" endLine="27" endPosition="141" />
     <scopeInfo nodeId="6186432342008522510" fileName="Templateweave__ChildConceptWeave.java" startLine="22" startPosition="45" endLine="22" endPosition="45" />
-    <scopeInfo nodeId="6186432342008522510" fileName="Templateweave__ChildConceptWeave.java" startLine="25" startPosition="41" endLine="26" endPosition="216" />
+    <scopeInfo nodeId="6186432342008522510" fileName="Templateweave__ChildConceptWeave.java" startLine="25" startPosition="41" endLine="26" endPosition="178" />
     <scopeInfo nodeId="6186432342008522510" fileName="Templateweave__ChildConceptWeave.java" startLine="46" startPosition="29" endLine="47" endPosition="48" />
     <scopeInfo nodeId="6186432342008522510" fileName="Templateweave__ChildConceptWeave.java" startLine="61" startPosition="29" endLine="62" endPosition="48" />
     <scopeInfo nodeId="6186432342008522510" fileName="Templateweave__ChildConceptWeave.java" startLine="96" startPosition="41" endLine="97" endPosition="57" />
@@ -808,16 +808,16 @@
       <varInfo nodeId="6186432342008522510" varName="context" />
       <varInfo nodeId="6186432342008522510" varName="environment" />
     </scopeInfo>
-    <unitInfo nodeId="6186432342008522510" fileName="Templateweave__ChildConceptWeave.java" startLine="21" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.Templateweave__ChildConceptWeave" />
+    <unitInfo nodeId="6186432342008522510" fileName="Templateweave__ChildConceptWeave.java" startLine="21" startPosition="0" endLine="224" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Templateweave__ChildConceptWeave" />
   </root>
-  <root nodeId="6186432342008533395" modelId="r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main@generator)">
+  <root nodeId="6186432342008533395" modelId="r:592e27b6-d258-4bf2-9e32-25019862e1f1(jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main@generator)">
     <nodeInfo nodeId="6186432342008533410" fileName="QueriesGenerated.java" startLine="30" startPosition="154" endLine="31" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008533419" fileName="QueriesGenerated.java" startLine="34" startPosition="154" endLine="35" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008533451" fileName="QueriesGenerated.java" startLine="38" startPosition="154" endLine="39" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008533460" fileName="QueriesGenerated.java" startLine="42" startPosition="154" endLine="43" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008533484" fileName="QueriesGenerated.java" startLine="46" startPosition="154" endLine="47" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008533493" fileName="QueriesGenerated.java" startLine="50" startPosition="154" endLine="51" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6186432342008533395" fileName="Templateweave__ChildConceptWeaveMany.java" startLine="25" startPosition="41" endLine="26" endPosition="216" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6186432342008533395" fileName="Templateweave__ChildConceptWeaveMany.java" startLine="25" startPosition="41" endLine="26" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6186432342008533395" fileName="Templateweave__ChildConceptWeaveMany.java" startLine="29" startPosition="154" endLine="30" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6186432342008533395" fileName="Templateweave__ChildConceptWeaveMany.java" startLine="31" startPosition="9" endLine="32" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6186432342008533395" fileName="Templateweave__ChildConceptWeaveMany.java" startLine="32" startPosition="77" endLine="33" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1332,7 +1332,7 @@
     <scopeInfo nodeId="6186432342008533483" fileName="QueriesGenerated.java" startLine="46" startPosition="154" endLine="47" endPosition="69" />
     <scopeInfo nodeId="6186432342008533492" fileName="QueriesGenerated.java" startLine="50" startPosition="154" endLine="51" endPosition="141" />
     <scopeInfo nodeId="6186432342008533395" fileName="Templateweave__ChildConceptWeaveMany.java" startLine="22" startPosition="49" endLine="22" endPosition="49" />
-    <scopeInfo nodeId="6186432342008533395" fileName="Templateweave__ChildConceptWeaveMany.java" startLine="25" startPosition="41" endLine="26" endPosition="216" />
+    <scopeInfo nodeId="6186432342008533395" fileName="Templateweave__ChildConceptWeaveMany.java" startLine="25" startPosition="41" endLine="26" endPosition="178" />
     <scopeInfo nodeId="6186432342008533395" fileName="Templateweave__ChildConceptWeaveMany.java" startLine="46" startPosition="29" endLine="47" endPosition="48" />
     <scopeInfo nodeId="6186432342008533395" fileName="Templateweave__ChildConceptWeaveMany.java" startLine="61" startPosition="29" endLine="62" endPosition="48" />
     <scopeInfo nodeId="6186432342008533395" fileName="Templateweave__ChildConceptWeaveMany.java" startLine="96" startPosition="41" endLine="97" endPosition="57" />
@@ -1596,7 +1596,7 @@
       <varInfo nodeId="6186432342008533395" varName="context" />
       <varInfo nodeId="6186432342008533395" varName="environment" />
     </scopeInfo>
-    <unitInfo nodeId="6186432342008533395" fileName="Templateweave__ChildConceptWeaveMany.java" startLine="21" startPosition="0" endLine="695" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.Templateweave__ChildConceptWeaveMany" />
+    <unitInfo nodeId="6186432342008533395" fileName="Templateweave__ChildConceptWeaveMany.java" startLine="21" startPosition="0" endLine="695" endPosition="0" unitName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Templateweave__ChildConceptWeaveMany" />
   </root>
 </debugInfo>
 
