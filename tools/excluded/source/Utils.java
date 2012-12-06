@@ -27,6 +27,7 @@ public class Utils {
   private static final String NAME = "name";
 
   private static String rootPath;
+
   static {
     rootPath = new File(".").getAbsolutePath();
     rootPath = rootPath.substring(0, rootPath.length() - 1);
@@ -42,11 +43,27 @@ public class Utils {
   }
 
   public static Element getComponentWithName(Document doc, String name) {
-    for (Object component : doc.getRootElement().getChildren(COMPONENT)) {
-      Element componentXml = (Element) component;
-      if (componentXml.getAttributeValue(NAME).equals(name)) return componentXml;
+    Element result = getChildByAttribute(doc.getRootElement(), COMPONENT, NAME, name);
+    if (result != null) {
+      return result;
+    } else {
+      throw new IllegalStateException();
     }
-    throw new IllegalStateException();
+  }
+
+  public static Element getChildByAttribute(Element element, String tagName, String attributeName, String attributeValue) {
+    Element result = null;
+    for (Object component : element.getChildren(tagName)) {
+      Element componentXml = (Element) component;
+      if (componentXml.getAttributeValue(attributeName).equals(attributeValue)) {
+        if (result == null) {
+          result = componentXml;
+        } else {
+          return null;
+        }
+      }
+    }
+    return result;
   }
 
   public static File[] files(String... paths) {

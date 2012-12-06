@@ -15,12 +15,17 @@
  */
 
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.misc.hash.HashSet;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Set;
 
 public class Generators {
   // gensources.iml constants
@@ -46,9 +51,14 @@ public class Generators {
     Element excludeXml = rootElement.getChild("excludeFromCompile");
     excludeXml.removeChildren(DIRECTORY);
 
+    List<String> paths = new ArrayList<String>();
     for (File module : Utils.collectGeneratedInMPSModules(sourceDirs)) {
+      paths.add(PATH_START_PROJECT + Utils.getRelativeProjectPath(module) + "/" + SOURCE_GEN_FOLDER);
+    }
+    Collections.sort(paths);
+    for (String path : paths) {
       Element excludedDir = new Element(DIRECTORY);
-      excludedDir.setAttribute(URL, PATH_START_PROJECT + Utils.getRelativeProjectPath(module) + "/" + SOURCE_GEN_FOLDER);
+      excludedDir.setAttribute(URL, path);
       excludedDir.setAttribute("includeSubdirectories", "true");
       excludeXml.addContent(excludedDir);
     }
@@ -60,22 +70,52 @@ public class Generators {
     Document doc = JDOMUtil.loadDocument(genSourcesIml);
     Element rootManager = Utils.getComponentWithName(doc, MODULE_ROOT_MANAGER);
 
-    rootManager.removeChildren(CONTENT);
-
+    Set<String> contentRootUrls = new HashSet<String>();
     for (File dir : sourceDirs) {
-      Element contentRoot = new Element(CONTENT);
-      contentRoot.setAttribute(URL, PATH_START_MODULE + dir);
+      contentRootUrls.add(PATH_START_MODULE + dir);
+
+      // try to modify existing content roots
+      Element contentRoot = Utils.getChildByAttribute(rootManager, CONTENT, URL, PATH_START_MODULE + dir);
+      if (contentRoot == null) {
+        contentRoot = new Element(CONTENT);
+        contentRoot.setAttribute(URL, PATH_START_MODULE + dir);
+        rootManager.addContent(contentRoot);
+      }
+      contentRoot.removeContent();
+
+      // generate lists of source gen and classes gen folders and add as source and excluded to content root
+      List<String> sourceGenFolders = new ArrayList<String>();
+      List<String> classesGenFolders = new ArrayList<String>();
       for (File module : Utils.collectGeneratedInMPSModules(dir)) {
+        sourceGenFolders.add(PATH_START_MODULE + Utils.getRelativeProjectPath(module) + "/" + SOURCE_GEN_FOLDER);
+        classesGenFolders.add(PATH_START_MODULE + Utils.getRelativeProjectPath(module) + "/" + CLASSES_GEN_FOLDER);
+      }
+      Collections.sort(sourceGenFolders);
+      Collections.sort(classesGenFolders);
+
+      for (String sourceGenFolder : sourceGenFolders) {
         Element sourceFolder = new Element(SOURCE_FOLDER);
-        sourceFolder.setAttribute(URL, PATH_START_MODULE + Utils.getRelativeProjectPath(module) + "/" + SOURCE_GEN_FOLDER);
+        sourceFolder.setAttribute(URL, sourceGenFolder);
         sourceFolder.setAttribute("isTestSource", "false");
         contentRoot.addContent(sourceFolder);
-
+      }
+      for (String classesGenFolder : classesGenFolders) {
         Element excludeFolder = new Element(EXCLUDE_FOLDER);
-        excludeFolder.setAttribute(URL, PATH_START_MODULE + Utils.getRelativeProjectPath(module) + "/" + CLASSES_GEN_FOLDER);
+        excludeFolder.setAttribute(URL, classesGenFolder);
         contentRoot.addContent(excludeFolder);
       }
-      rootManager.addContent(contentRoot);
+    }
+
+    // remove unnecessary content roots
+    List<Element> toRemove = new ArrayList<Element>();
+    for (Object _contentRoot : rootManager.getChildren(CONTENT)) {
+      Element contentRoot = (Element) _contentRoot;
+      if (!contentRootUrls.contains(contentRoot.getAttributeValue(URL))) {
+        toRemove.add(contentRoot);
+      }
+    }
+    for (Element element : toRemove) {
+      element.detach();
     }
 
     JDOMUtil.writeDocument(doc, genSourcesIml);
