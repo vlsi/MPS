@@ -32,7 +32,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.awt.Rectangle;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.EditorContext;
 import java.awt.Point;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -84,6 +83,10 @@ public class GoToInheritedClassifier_Action extends BaseAction {
       MapSequence.fromMap(_params).put("classifierNode", node);
     }
     if (MapSequence.fromMap(_params).get("classifierNode") == null) {
+      return false;
+    }
+    MapSequence.fromMap(_params).put("selectedCell", event.getData(MPSEditorDataKeys.EDITOR_CELL));
+    if (MapSequence.fromMap(_params).get("selectedCell") == null) {
       return false;
     }
     MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
@@ -156,7 +159,7 @@ public class GoToInheritedClassifier_Action extends BaseAction {
         }
       });
 
-      Rectangle cellBounds = ((EditorCell) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getSelectedCell()).getBounds();
+      Rectangle cellBounds = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell")).getBounds();
       Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
       RelativePoint relPoint = new RelativePoint(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), point);
 

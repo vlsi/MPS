@@ -70,6 +70,12 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   }
 
   protected void updateTabs() {
+    if (isDisposedNode()) return;
+
+    if (getLastNode()!=null && getLastNode().getNode() == null) {
+      onNodeChange(myBaseNode.getNode());
+    }
+
     myRealTabs.clear();
 
     ArrayList<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>(myPossibleTabs);
@@ -149,12 +155,7 @@ public class ButtonTabsComponent extends BaseTabsComponent {
   }
 
   protected boolean isTabUpdateNeeded(SNodePointer node) {
-    if (getLastNode().equals(node)) {
-      onNodeChange(myBaseNode.getNode());
-      return true;
-    }
-
-    return false;
+    return getLastNode().equals(node);
   }
 
   @Override
@@ -162,6 +163,5 @@ public class ButtonTabsComponent extends BaseTabsComponent {
     for (ButtonEditorTab realTab : myRealTabs) {
       realTab.updateIcon();
     }
-    myToolbar.updateActionsImmediately();
   }
 }
