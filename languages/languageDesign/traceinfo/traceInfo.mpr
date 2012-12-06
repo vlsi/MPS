@@ -26,14 +26,14 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${mps_home}/languages/baseLanguage/baseLanguage/baseLanguage.mpl" />
-      <modulePath path="${mps_home}/core/generator/solutions/traceInfo/tests/jetbrains.mps.traceInfo.test.msd" folder="" />
-      <modulePath path="${mps_home}/languages/languageDesign/plugin/plugin.mpl" />
-      <modulePath path="${mps_home}/languages/languageDesign/textGen/textGen.mpl" />
-      <modulePath path="${project}/testWeavingGenerated.data/testWeavingGenerated.data.mpl" />
-      <modulePath path="${project}/testWeavingInterpreted.data/testWeavingInterpreted.data.mpl" />
-      <modulePath path="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" />
-      <modulePath path="${project}/jetbrains.mps.traceInfo.testWeaving/testWeaving.msd" />
+      <modulePath path="${project}/../../../core/kernel/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" folder="" />
+      <modulePath path="${project}/../../baseLanguage/baseLanguage/baseLanguage.mpl" folder="" />
+      <modulePath path="${project}/../plugin/plugin.mpl" folder="" />
+      <modulePath path="${project}/../textGen/textGen.mpl" folder="" />
+      <modulePath path="${project}/jetbrains.mps.traceInfo.testWeaving/testWeaving.msd" folder="" />
+      <modulePath path="${project}/testWeavingGenerated.data/testWeavingGenerated.data.mpl" folder="" />
+      <modulePath path="${project}/testWeavingInterpreted.data/testWeavingInterpreted.data.mpl" folder="" />
+      <modulePath path="${project}/tests/jetbrains.mps.traceInfo.test.msd" folder="" />
     </projectModules>
     <genConfs>
       <genConfModule name="info" moduleRef="jetbrains.mps.traceInfo" />

@@ -39,7 +39,6 @@
       <modulePath path="${project}/core/devkits/jetbrains.mps.devkit.language-design.devkit" folder="devkits" />
       <modulePath path="${project}/core/findUsages-runtime/runtime.msd" folder="core" />
       <modulePath path="${project}/core/generator/solutions/generator/jetbrains.mps.generator.msd" folder="core" />
-      <modulePath path="${project}/core/generator/solutions/traceInfo/tests/jetbrains.mps.traceInfo.test.msd" folder="traceInfo" />
       <modulePath path="${project}/core/generator/solutions/traceInfo/util/cache.msd" folder="traceInfo" />
       <modulePath path="${project}/core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" folder="core.kernel" />
       <modulePath path="${project}/core/kernel/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" folder="traceInfo" />
@@ -192,6 +191,7 @@
       <modulePath path="${project}/languages/languageDesign/traceable.operations/tests/test.msd" folder="core.smodel" />
       <modulePath path="${project}/languages/languageDesign/traceable/traceable.mpl" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/testWeaving.msd" folder="traceInfo" />
+      <modulePath path="${project}/languages/languageDesign/traceinfo/tests/jetbrains.mps.traceInfo.test.msd" folder="traceInfo" />
       <modulePath path="${project}/languages/languageDesign/traceinfo/testWeavingGenerated.data/testWeavingGenerated.data.mpl" folder="traceInfo" />
       <modulePath path="${project}/languages/languageDesign/traceinfo/testWeavingInterpreted.data/testWeavingInterpreted.data.mpl" folder="traceInfo" />
       <modulePath path="${project}/languages/languageDesign/traceinfo/traceMacro.sandbox/sandbox.msd" folder="traceInfo" />

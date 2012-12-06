@@ -95,7 +95,7 @@ public class TraceInfoTest {
   }
 
   private void invokeTest(final _FunctionTypes._void_P0_E0 test) {
-    Project project = TestMain.loadProject(new File(PathManager.getHomePath() + "/core/kernel/traceinfo/traceInfo.mpr"));
+    Project project = TestMain.loadProject(new File(PathManager.getHomePath() + "/languages/languageDesign/traceinfo/traceInfo.mpr"));
     try {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {

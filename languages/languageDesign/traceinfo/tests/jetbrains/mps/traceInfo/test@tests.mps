@@ -928,7 +928,7 @@
                       <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~PathManager" resolveInfo="PathManager" />
                     </node>
                     <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3715237098669837845">
-                      <property name="value" nameId="tpee.1070475926801" value="/core/kernel/traceinfo/traceInfo.mpr" />
+                      <property name="value" nameId="tpee.1070475926801" value="/languages/languageDesign/traceinfo/traceInfo.mpr" />
                     </node>
                   </node>
                 </node>
