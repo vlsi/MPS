@@ -39,7 +39,7 @@ public class Utils {
     if (!modulePath.startsWith(rootPath)) {
       throw new IllegalStateException("Module path: " + modulePath + "; root path: " + rootPath);
     }
-    return modulePath.substring(rootPath.length());
+    return modulePath.substring(rootPath.length()).replace("\\", "/");
   }
 
   public static Element getComponentWithName(Document doc, String name) {
