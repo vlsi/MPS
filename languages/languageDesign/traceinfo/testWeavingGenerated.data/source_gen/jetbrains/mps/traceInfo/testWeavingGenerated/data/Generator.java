@@ -7,7 +7,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.Collection;
 import jetbrains.mps.generator.runtime.TemplateModel;
 import jetbrains.mps.generator.runtime.TemplateUtil;
-import jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.TemplateModelImpl;
+import jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.TemplateModelImpl;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
 import jetbrains.mps.smodel.language.LanguageRuntime;
 

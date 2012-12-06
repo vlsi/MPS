@@ -9,7 +9,7 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.smodel.language.LanguageRuntime" />
     <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingGenerated.data.Language" />
-    <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.generator.template.generator.template.main.TemplateModelImpl" />
+    <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.TemplateModelImpl" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModule" />
   </dependency>
   <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.Language" file="Language.java">
