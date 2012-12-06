@@ -11,8 +11,7 @@ import com.intellij.openapi.ui.Messages;
 import git4idea.commands.GitSimpleHandler;
 import git4idea.commands.GitCommand;
 import com.intellij.openapi.util.SystemInfo;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 /*package*/ class GitGlobalConfigFixesInstaller extends AbstractInstaller {
   private static final String CORE_AUTOCRLF = "core.autocrlf";
@@ -24,7 +23,7 @@ import org.apache.commons.logging.LogFactory;
   @NotNull
   protected AbstractInstaller.State install(boolean dryRun) {
     if (!(PluginUtil.isGitPluginEnabled())) {
-      return AbstractInstaller.State.INSTALLED;
+      return AbstractInstaller.State.NOT_ENABLED;
     }
     try {
       String currentValue = GitConfigUtil.getValue(myProject, myProject.getBaseDir(), GitGlobalConfigFixesInstaller.CORE_AUTOCRLF);
@@ -33,9 +32,7 @@ import org.apache.commons.logging.LogFactory;
       }
     } catch (VcsException e) {
       if (!(dryRun)) {
-        if (log.isWarnEnabled()) {
-          log.warn("Can't get value", e);
-        }
+        LOG.warning("Can't get value", e);
       }
       return AbstractInstaller.State.NOT_INSTALLED;
     }
@@ -48,9 +45,7 @@ import org.apache.commons.logging.LogFactory;
       setGlobalProperty(myProject, CORE_AUTOCRLF, getCoreAutocrlfValue());
       return AbstractInstaller.State.INSTALLED;
     } catch (VcsException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("Can't set value", e);
-      }
+      LOG.warning("Can't set value", e);
       Messages.showErrorDialog(myProject, "Can't set Git global property: " + e.getMessage(), "Git Global property");
       return AbstractInstaller.State.NOT_INSTALLED;
     }
@@ -85,5 +80,5 @@ import org.apache.commons.logging.LogFactory;
     );
   }
 
-  protected static Log log = LogFactory.getLog(GitGlobalConfigFixesInstaller.class);
+  private static Logger LOG = Logger.getLogger(GitGlobalConfigFixesInstaller.class);
 }

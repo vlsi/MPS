@@ -37,8 +37,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.generator.template.WeavingMappingRuleContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -658,14 +657,12 @@ public class QueriesGenerated {
   public static void mappingScript_CodeBlock_2535050848643235299(final IOperationContext operationContext, final MappingScriptContext _context) {
     for (SNode runConfiguration : ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mps.execution.configurations.structure.RunConfiguration"))) {
       if ((RunConfiguration_Behavior.call_getExecutor_3754890006475713427(runConfiguration) == null)) {
-        if (log.isErrorEnabled()) {
-          log.error("Configuration " + SPropertyOperations.getString(runConfiguration, "name") + " does not have any executors.");
-        }
+        LOG.error("Configuration " + SPropertyOperations.getString(runConfiguration, "name") + " does not have any executors.");
       }
     }
   }
 
-  protected static Log log = LogFactory.getLog(QueriesGenerated.class);
+  private static Logger LOG = Logger.getLogger(QueriesGenerated.class);
 
   private static SNode _quotation_createNode_x583g4_a0a0a57() {
     SNode quotedNode_1 = null;

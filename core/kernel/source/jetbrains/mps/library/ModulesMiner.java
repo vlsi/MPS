@@ -23,17 +23,16 @@ import jetbrains.mps.project.io.DescriptorIOFacade;
 import jetbrains.mps.project.persistence.DeploymentDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.project.structure.modules.DeploymentDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.*;
 import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.util.io.ModelInputStream;
+import jetbrains.mps.util.io.ModelOutputStream;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.io.IOException;
 import java.util.*;
 
 /**
@@ -49,31 +48,6 @@ public class ModulesMiner {
   }
 
   private ModulesMiner() {
-  }
-
-  /*
-   *   use collectModules + ModuleRepositoryFacade.createModule
-   */
-  @Deprecated
-  public List<IModule> readModuleDescriptors(IFile dir, MPSModuleOwner owner) {
-    return readModuleDescriptors(dir, owner, false);
-  }
-
-  /*
-   *   use collectModules + ModuleRepositoryFacade.createModule
-   */
-  @Deprecated
-  public List<IModule> readModuleDescriptors(IFile dir, final MPSModuleOwner owner, boolean refreshFiles) {
-    assertCanWrite();
-
-    List<IModule> result = new ArrayList<IModule>();
-    readModuleDescriptors(dir, new HashSet<IFile>(), result, refreshFiles, new DescriptorReader<IModule>() {
-      @Override
-      public IModule read(ModuleHandle handle) {
-        return ModuleRepositoryFacade.createModule(handle, owner);
-      }
-    });
-    return result;
   }
 
   public List<ModuleHandle> collectModules(IFile dir, boolean refreshFiles) {
@@ -222,29 +196,17 @@ public class ModulesMiner {
     }
 
     IFile classesGen = ProjectPathUtil.getClassesGenFolder(descriptorFile);
-    if (classesGen != null)
-
-    {
+    if (classesGen != null) {
       excludes.add(classesGen);
     }
 
-    for (
-      String entry
-      : descriptor.getAdditionalJavaStubPaths())
-
-    {
+    for (String entry : descriptor.getAdditionalJavaStubPaths()) {
       excludes.add(FileSystem.getInstance().getFileByPath(entry));
     }
   }
 
   boolean isModuleFile(IFile file) {
     return !file.isDirectory() && DescriptorIOFacade.getInstance().fromFileType(file) != null;
-  }
-
-  private void assertCanWrite() {
-    if (!ModelAccess.instance().canWrite()) {
-      throw new IllegalStateException("Can't write");
-    }
   }
 
   private static interface DescriptorReader<T> {
@@ -287,5 +249,46 @@ public class ModulesMiner {
       return getRealDescriptorFile(module.getDescriptorFile().getPath(), module.getModuleDescriptor().getDeploymentDescriptor());
     }
     return null;
+  }
+
+  public void saveModules(@NotNull Collection<ModuleHandle> handles, ModelOutputStream stream) throws IOException {
+    stream.writeInt(0xbeb0beb0);
+    stream.writeInt(handles.size());
+    for (ModuleHandle handle : handles) {
+      stream.writeString(handle.file.getPath());
+      if (handle.descriptor instanceof LanguageDescriptor) {
+        stream.writeByte(1);
+      } else if (handle.descriptor instanceof SolutionDescriptor) {
+        stream.writeByte(2);
+      } else if (handle.descriptor instanceof DevkitDescriptor) {
+        stream.writeByte(3);
+      } else {
+        throw new IllegalArgumentException("unknown module!");
+      }
+      handle.descriptor.save(stream);
+    }
+  }
+
+  public Collection<ModuleHandle> loadModules(ModelInputStream stream) throws IOException {
+    if (stream.readInt() != 0xbeb0beb0) throw new IOException("bad stream: no start marker");
+    int size = stream.readInt();
+    List<ModuleHandle> result = new ArrayList<ModuleHandle>(size);
+    for (; size > 0; size--) {
+      String file = stream.readString();
+      ModuleDescriptor descriptor;
+      int type = stream.readByte();
+      if (type == 1) {
+        descriptor = new LanguageDescriptor();
+      } else if (type == 2) {
+        descriptor = new SolutionDescriptor();
+      } else if (type == 3) {
+        descriptor = new DevkitDescriptor();
+      } else {
+        throw new IOException("broken stream: invalid descriptor type");
+      }
+      descriptor.load(stream);
+      result.add(new ModuleHandle(FileSystem.getInstance().getFileByPath(file), descriptor));
+    }
+    return result;
   }
 }

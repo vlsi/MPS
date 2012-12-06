@@ -19,8 +19,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class NewLanguage_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("projectLanguage.png");
@@ -40,9 +39,7 @@ public class NewLanguage_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "NewLanguage", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "NewLanguage", t);
       this.disable(event.getPresentation());
     }
   }
@@ -85,11 +82,9 @@ public class NewLanguage_Action extends BaseAction {
       projectPane.rebuildTree();
       projectPane.selectModule(l, false);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "NewLanguage", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "NewLanguage", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(NewLanguage_Action.class);
+  private static Logger LOG = Logger.getLogger(NewLanguage_Action.class);
 }

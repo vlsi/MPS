@@ -32,8 +32,7 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelRepository;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class OptimizeImportsInProject_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -53,9 +52,7 @@ public class OptimizeImportsInProject_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "OptimizeImportsInProject", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "OptimizeImportsInProject", t);
       this.disable(event.getPresentation());
     }
   }
@@ -119,11 +116,9 @@ public class OptimizeImportsInProject_Action extends BaseAction {
         });
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "OptimizeImportsInProject", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "OptimizeImportsInProject", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(OptimizeImportsInProject_Action.class);
+  private static Logger LOG = Logger.getLogger(OptimizeImportsInProject_Action.class);
 }

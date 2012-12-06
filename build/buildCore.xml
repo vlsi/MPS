@@ -111,9 +111,9 @@
       <zipfileset file="${mps_home}/core/kernel/patternRuntime/runtime.msd" prefix="modules/jetbrains.mps.lang.pattern.runtime" />
       <zipfileset dir="${mps_home}/core/kernel/patternRuntime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.lang.pattern.runtime" />
       <zipfileset dir="${mps_home}/core/kernel/patternRuntime/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.lang.pattern.runtime/models" />
-      <zipfileset file="${mps_home}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" prefix="modules/jetbrains.mps.traceInfo" />
-      <zipfileset dir="${mps_home}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.traceInfo" />
-      <zipfileset dir="${mps_home}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.traceInfo/" />
+      <zipfileset file="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" prefix="modules/jetbrains.mps.traceInfo" />
+      <zipfileset dir="${mps_home}/core/kernel/jetbrains.mps.debug.api.info" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.traceInfo" />
+      <zipfileset dir="${mps_home}/core/kernel/jetbrains.mps.debug.api.info" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.traceInfo/" />
       <zipfileset file="${mps_home}/core/generator/solutions/traceInfo/util/cache.msd" prefix="modules/jetbrains.mps.traceInfo.cache" />
       <zipfileset dir="${mps_home}/core/generator/solutions/traceInfo/util" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.traceInfo.cache" />
       <zipfileset dir="${mps_home}/core/generator/solutions/traceInfo/util/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.traceInfo.cache/models" />
@@ -1754,7 +1754,6 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <library jar="/lib/commons-logging-1.1.1.jar" />
         <sources jar="jetbrains.mps.baseLanguage.logging-src.jar" descriptor="logging.mpl" />
       </module>
     </echoxml>
@@ -1776,7 +1775,7 @@
         <dependencies>
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
         </dependencies>
-        <library jar="/lib/commons-logging-1.1.1.jar" />
+        <library jar="/lib/log4j.jar" />
         <sources jar="jetbrains.mps.baseLanguage.logging.runtime-src.jar" descriptor="runtime.msd" />
       </module>
     </echoxml>
@@ -2189,7 +2188,7 @@
         <pathelement path="${mps_home}/core/kernel/resources/source_gen" />
         <pathelement path="${mps_home}/core/kernel/smodelRuntime/source_gen" />
         <pathelement path="${mps_home}/core/kernel/stubUtils/source_gen" />
-        <pathelement path="${mps_home}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" />
+        <pathelement path="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/source_gen" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/source_gen" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen" />
         <pathelement path="${mps_home}/core/generator/solutions/traceInfo/util/source_gen" />
@@ -2252,7 +2251,7 @@
         <pathelement path="${mps_home}/core/kernel/resources/source_gen" />
         <pathelement path="${mps_home}/core/kernel/smodelRuntime/source_gen" />
         <pathelement path="${mps_home}/core/kernel/stubUtils/source_gen" />
-        <pathelement path="${mps_home}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" />
+        <pathelement path="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/source_gen" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/source_gen" />
         <pathelement path="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen" />
         <pathelement path="${mps_home}/core/generator/solutions/traceInfo/util/source_gen" />
@@ -2288,7 +2287,7 @@
       <fileset dir="${mps_home}/core/kernel/resources/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/kernel/smodelRuntime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/kernel/stubUtils/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/core/generator/solutions/traceInfo/util/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
@@ -2568,7 +2567,7 @@
         <path location="${mps_home}/languages/languageDesign/scopes/runtime/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
@@ -2605,7 +2604,7 @@
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -2635,7 +2634,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -2665,7 +2664,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -2695,7 +2694,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -2725,7 +2724,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -2760,7 +2759,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -2789,7 +2788,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -2824,7 +2823,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -2853,7 +2852,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -2888,7 +2887,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -2917,7 +2916,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -2952,7 +2951,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -2981,7 +2980,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3011,7 +3010,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3047,7 +3046,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -3090,7 +3089,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3126,7 +3125,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -3169,7 +3168,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.structure" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.typesystem" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -3204,7 +3203,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.scopes.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -3242,7 +3241,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.structure" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -3271,7 +3270,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3301,7 +3300,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3331,7 +3330,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3361,7 +3360,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3402,7 +3401,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.structure" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -3431,7 +3430,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3467,7 +3466,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -3487,7 +3486,7 @@
         <path location="${mps_home}/languages/languageDesign/refactoring/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java/out/mps-openapi" />
@@ -3554,7 +3553,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.structure" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.3" />
@@ -3603,7 +3602,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.structure" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -3632,7 +3631,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3662,7 +3661,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3692,7 +3691,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3722,7 +3721,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3752,7 +3751,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3782,7 +3781,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3812,7 +3811,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3848,7 +3847,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -3878,7 +3877,7 @@
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.regexp.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3908,7 +3907,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3938,7 +3937,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -3983,7 +3982,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.structure" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.3" />
@@ -4013,7 +4012,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -4043,7 +4042,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -4073,7 +4072,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -4117,7 +4116,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -4155,7 +4154,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -4184,7 +4183,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -4214,7 +4213,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -4255,7 +4254,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.structure" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -4284,7 +4283,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -4314,7 +4313,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -4344,7 +4343,7 @@
         <pathelement path="${build.tmp}/java/out/mps-editor" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <pathelement path="${build.tmp}/java.modules.cycle.2" />
@@ -4377,7 +4376,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -4411,7 +4410,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -4450,7 +4449,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.make.script" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -4486,7 +4485,7 @@
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.traceable" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -4531,7 +4530,7 @@
         <fileset file="${mps_home}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/jmock-junit4-2.5.1.jar" />
         <fileset file="${mps_home}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/objenesis-1.0.jar" />
         <fileset file="${artifacts.IDEA}/lib/ant/lib/ant.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/junit-4.10.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
@@ -4563,7 +4562,7 @@
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />
@@ -4593,7 +4592,7 @@
         <pathelement path="${build.tmp}/java/out/mps-platform" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.core" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.lang.smodel.runtime" />
-        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
         <path refid="path.jdk.classpath" />

@@ -4,10 +4,14 @@ package jetbrains.mps.lang.smodel.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.actions.GeneratedActionGroup;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.plugins.actions.LabelledAnchor;
+import com.intellij.openapi.actionSystem.ex.ActionManagerEx;
+import com.intellij.openapi.extensions.PluginId;
 
 public class Migration30_ActionGroup extends GeneratedActionGroup {
   private static Logger LOG = Logger.getLogger(Migration30_ActionGroup.class);
   public static final String ID = "jetbrains.mps.lang.smodel.pluginSolution.plugin.Migration30_ActionGroup";
+  public static final String LABEL_ID_remove_concept_properties = ID + "remove_concept_properties";
 
   public Migration30_ActionGroup() {
     super("Migration 3.0", ID);
@@ -16,6 +20,12 @@ public class Migration30_ActionGroup extends GeneratedActionGroup {
     try {
       Migration30_ActionGroup.this.addAction("jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToNewSNodeMethods_Action");
       Migration30_ActionGroup.this.addAction("jetbrains.mps.lang.smodel.pluginSolution.plugin.MigrateToOpenAPI_Action");
+      {
+        LabelledAnchor action = new LabelledAnchor(Migration30_ActionGroup.LABEL_ID_remove_concept_properties);
+        ActionManagerEx manager = ActionManagerEx.getInstanceEx();
+        manager.registerAction(action.getId(), action, PluginId.getId("jetbrains.mps.lang.smodel.pluginSolution"));
+        Migration30_ActionGroup.this.addAction(action);
+      }
     } catch (Throwable t) {
       LOG.error("User group error", t);
     }

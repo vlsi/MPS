@@ -36,8 +36,7 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class Java_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
@@ -94,9 +93,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
       if (fieldElement != null) {
         myNode.readExternal(fieldElement);
       } else {
-        if (log.isDebugEnabled()) {
-          log.debug("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
-        }
+        LOG.debug("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
       }
     }
     {
@@ -104,9 +101,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
       if (fieldElement != null) {
         myRunParameters.readExternal(fieldElement);
       } else {
-        if (log.isDebugEnabled()) {
-          log.debug("Element " + "myRunParameters" + " in " + this.getClass().getName() + " was null.");
-        }
+        LOG.debug("Element " + "myRunParameters" + " in " + this.getClass().getName() + " was null.");
       }
     }
   }
@@ -129,9 +124,7 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
       clone.myRunParameters = (JavaRunParameters_Configuration) myRunParameters.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      if (log.isErrorEnabled()) {
-        log.error("", ex);
-      }
+      LOG.error("", ex);
     }
     return clone;
   }
@@ -186,5 +179,5 @@ public class Java_Configuration extends BaseMpsRunConfiguration implements IPers
     return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodePointer>(), this.getNode().getNodePointer())};
   }
 
-  protected static Log log = LogFactory.getLog(Java_Configuration.class);
+  private static Logger LOG = Logger.getLogger(Java_Configuration.class);
 }

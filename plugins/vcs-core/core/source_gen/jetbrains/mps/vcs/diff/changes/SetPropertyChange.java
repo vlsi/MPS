@@ -7,7 +7,6 @@ import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class SetPropertyChange extends NodeChange {
   private String myPropertyName;
@@ -31,14 +30,14 @@ public class SetPropertyChange extends NodeChange {
   public void apply(@NotNull SModel model, @NotNull NodeCopier nodeCopier) {
     SNode node = model.getNodeById(getAffectedNodeId());
     assert node != null;
-    SNodeAccessUtil.setProperty(node, myPropertyName, myNewValue);
+    node.setProperty(myPropertyName, myNewValue);
   }
 
   @NotNull
   protected ModelChange createOppositeChange() {
     SNode node = getChangeSet().getOldModel().getNodeById(getAffectedNodeId());
     assert node != null;
-    return new SetPropertyChange(getChangeSet().getOppositeChangeSet(), getAffectedNodeId(), myPropertyName, SNodeAccessUtil.getProperty(node, myPropertyName));
+    return new SetPropertyChange(getChangeSet().getOppositeChangeSet(), getAffectedNodeId(), myPropertyName, node.getProperty(myPropertyName));
   }
 
   @Override
@@ -47,6 +46,6 @@ public class SetPropertyChange extends NodeChange {
   }
 
   public String getDescription() {
-    return String.format("Changed %s of #%s from '%s' to '%s'", myPropertyName, getAffectedNodeId(), SNodeAccessUtil.getProperty(getChangeSet().getOldModel().getNodeById(getAffectedNodeId()), myPropertyName), SNodeAccessUtil.getProperty(getChangeSet().getNewModel().getNodeById(getAffectedNodeId()), myPropertyName));
+    return String.format("Changed %s of #%s from '%s' to '%s'", myPropertyName, getAffectedNodeId(), getChangeSet().getOldModel().getNodeById(getAffectedNodeId()).getProperty(myPropertyName), getChangeSet().getNewModel().getNodeById(getAffectedNodeId()).getProperty(myPropertyName));
   }
 }

@@ -35,8 +35,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class FixMissingImportsInProject_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -56,9 +55,7 @@ public class FixMissingImportsInProject_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "FixMissingImportsInProject", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "FixMissingImportsInProject", t);
       this.disable(event.getPresentation());
     }
   }
@@ -117,11 +114,9 @@ public class FixMissingImportsInProject_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "FixMissingImportsInProject", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "FixMissingImportsInProject", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(FixMissingImportsInProject_Action.class);
+  private static Logger LOG = Logger.getLogger(FixMissingImportsInProject_Action.class);
 }

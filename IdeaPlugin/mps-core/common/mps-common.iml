@@ -8,7 +8,6 @@
     <orderEntry type="jdk" jdkName="IDEA IC" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="MPS-core" level="project" />
-    <orderEntry type="library" exported="" name="ANT-all" level="project" />
   </component>
 </module>
 

@@ -17,23 +17,24 @@
 package jetbrains.mps.idea.core.make;
 
 import com.intellij.compiler.impl.CompilerCacheManager;
-import com.intellij.openapi.compiler.*;
+import com.intellij.openapi.compiler.CompilerPaths;
+import com.intellij.openapi.compiler.IntermediateOutputCompiler;
 import com.intellij.openapi.module.Module;
 import org.jetbrains.annotations.NonNls;
 
 import java.io.File;
 
 public class MPSCompilerPaths {
-    // Shamelessly copied over from the IDEA sources
+  // Shamelessly copied over from the IDEA sources
 
-    @NonNls
-    public static String getCachesOutputPath(IntermediateOutputCompiler compiler, Module module, final boolean forTestSources) {
-        // use the standard IDEA path for the compiler caches and let's hope there's no name collision
-        final String cachesPath = new File(
-                CompilerPaths.getCacheStoreDirectory(module.getProject()), CompilerCacheManager.getCompilerIdString(compiler)).getPath();
-        //noinspection HardCodedStringLiteral
-        final String moduleDir = module.getName().replaceAll("\\s+", "_") + "." + Integer.toHexString(module.getModuleFilePath().hashCode());
-        return cachesPath.replace(File.separatorChar, '/') + "/" + moduleDir + "/" + (forTestSources? "test" : "production");
-    }
+  @NonNls
+  public static String getCachesOutputPath(IntermediateOutputCompiler compiler, Module module, final boolean forTestSources) {
+    // use the standard IDEA path for the compiler caches and let's hope there's no name collision
+    final String cachesPath = new File(
+      CompilerPaths.getCacheStoreDirectory(module.getProject()), CompilerCacheManager.getCompilerIdString(compiler)).getPath();
+    //noinspection HardCodedStringLiteral
+    final String moduleDir = module.getName().replaceAll("\\s+", "_") + "." + Integer.toHexString(module.getModuleFilePath().hashCode());
+    return cachesPath.replace(File.separatorChar, '/') + "/" + moduleDir + "/" + (forTestSources ? "test" : "production");
+  }
 
 }

@@ -18,25 +18,20 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class JavaApplication_Kind implements ConfigurationType {
   private static final Icon ICON = new _FunctionTypes._return_P0_E0<Icon>() {
     public Icon invoke() {
       IModule module = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("22e72e4c-0f69-46ce-8403-6750153aa615"));
       if (module == null) {
-        if (log.isErrorEnabled()) {
-          log.error("Can't find language jetbrains.mps.execution.configurations, turn on \"Execution Languages\" plugin.");
-        }
+        LOG.error("Can't find language jetbrains.mps.execution.configurations, turn on \"Execution Languages\" plugin.");
         return null;
       }
       String shortPath = "${language_descriptor}/icons/runApp.png";
       String path = MacrosFactory.forModuleFile(module.getDescriptorFile()).expandPath(shortPath);
       if ((path == null || path.length() == 0)) {
-        if (log.isErrorEnabled()) {
-          log.error("Can't expand path " + shortPath + " with module " + module + ".");
-        }
+        LOG.error("Can't expand path " + shortPath + " with module " + module + ".");
         return null;
       }
       return IconManager.loadIcon(path, true);
@@ -80,5 +75,5 @@ public class JavaApplication_Kind implements ConfigurationType {
     return ContainerUtil.findInstance(Extensions.getExtensions(CONFIGURATION_TYPE_EP), JavaApplication_Kind.class);
   }
 
-  protected static Log log = LogFactory.getLog(JavaApplication_Kind.class);
+  private static Logger LOG = Logger.getLogger(JavaApplication_Kind.class);
 }

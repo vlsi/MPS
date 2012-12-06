@@ -66,8 +66,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ChangesTracking {
   private Project myProject;
@@ -189,9 +188,7 @@ public class ChangesTracking {
     } else {
       String content = BaseVersionUtil.getBaseVersionContent(modelVFile, myProject);
       if (content == null && status != FileStatus.NOT_CHANGED) {
-        if (log.isErrorEnabled()) {
-          log.error("Base version content is null while file status is " + status);
-        }
+        LOG.error("Base version content is null while file status is " + status);
       }
       if (content == null) {
         return;
@@ -199,9 +196,7 @@ public class ChangesTracking {
       try {
         baseVersionModel.value = ModelPersistence.readModel(content, false);
       } catch (ModelReadException e) {
-        if (log.isWarnEnabled()) {
-          log.warn("", e);
-        }
+        LOG.warning("", e);
         return;
       }
     }
@@ -567,7 +562,7 @@ public class ChangesTracking {
     }
   }
 
-  protected static Log log = LogFactory.getLog(ChangesTracking.class);
+  private static Logger LOG = Logger.getLogger(ChangesTracking.class);
 
   private static SModel check_5iuzi5_a0a0a52(ChangeSet checkedDotOperand) {
     if (null != checkedDotOperand) {

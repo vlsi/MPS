@@ -4,7 +4,9 @@ package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.actionSystem.DataProvider;
+import jetbrains.mps.vcs.diff.ModelChangeSet;
 import jetbrains.mps.smodel.SNodeId;
+import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.diff.ui.common.DiffEditor;
 import java.util.List;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupLayout;
@@ -19,14 +21,13 @@ import com.intellij.openapi.actionSystem.ActionToolbar;
 import com.intellij.openapi.diff.ex.DiffStatusBar;
 import com.intellij.openapi.diff.impl.util.TextDiffType;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.vcs.diff.ui.common.Bounds;
-import java.awt.Frame;
-import javax.swing.JComponent;
-import javax.swing.JSplitPane;
 import jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser;
-import jetbrains.mps.workbench.action.ActionUtils;
-import com.intellij.openapi.actionSystem.Separator;
+import java.awt.Component;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.vcs.diff.ui.common.Bounds;
+import javax.swing.JSplitPane;
+import jetbrains.mps.vcs.diff.changes.ModelChange;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import javax.swing.SwingUtilities;
@@ -34,6 +35,9 @@ import java.awt.DisplayMode;
 import java.awt.GraphicsEnvironment;
 import java.awt.Dimension;
 import com.intellij.openapi.util.DimensionService;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout;
+import javax.swing.JComponent;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import com.intellij.openapi.util.Ref;
@@ -42,20 +46,27 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.vcs.diff.ui.common.DiffChangeGroupLayout;
 import jetbrains.mps.vcs.diff.ui.common.ChangeGroupMessages;
+import jetbrains.mps.vcs.diff.ChangeSetBuilder;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
-import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import com.intellij.openapi.wm.WindowManager;
 import java.awt.GraphicsDevice;
 import java.awt.HeadlessException;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class RootDifferenceDialog extends DialogWrapper implements DataProvider {
-  private ModelDifferenceDialog myModelDialog;
+  private ModelChangeSet myChangeSet;
   private SNodeId myRootId;
+  private Project myProject;
+  private String[] myTitles;
   private DiffEditor myOldEditor;
   private DiffEditor myNewEditor;
   private List<ChangeGroupLayout> myChangeGroupLayouts = ListSequence.fromList(new ArrayList<ChangeGroupLayout>());
@@ -66,33 +77,20 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   private JPanel myContainer = new JPanel(new BorderLayout());
   private ActionToolbar myActionToolbar;
   private DiffStatusBar myStatusBar = new DiffStatusBar(TextDiffType.DIFF_TYPES);
-  private boolean myClosed;
   private DefaultActionGroup myActionGroup;
+  private NextPreviousTraverser myTraverser;
 
-  public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName, @Nullable Bounds firstChange) {
-    super(modelDialog.getWindow(), true);
+  public RootDifferenceDialog(Project project, ModelChangeSet changeSet, SNodeId rootId, String rootName, String[] titles, Component parent, boolean isEditable, @Nullable BaseAction[] actions, @Nullable final Bounds firstChange) {
+    super(parent, true);
     setTitle("Difference for " + rootName);
-    init(modelDialog, rootId, firstChange);
-  }
 
-  public RootDifferenceDialog(ModelDifferenceDialog modelDialog, SNodeId rootId, String rootName, Frame frame, @Nullable Bounds firstChange) {
-    super(frame, true);
-    setTitle("Difference for " + rootName);
-    init(modelDialog, rootId, firstChange);
-  }
-
-  @Nullable
-  protected JComponent createCenterPanel() {
-    return myContainer;
-  }
-
-  private void init(ModelDifferenceDialog modelDialog, SNodeId rootId, @Nullable final Bounds firstChange) {
-    // Two constructors and init method is needed because different superconstructors should be invoked 
-    myModelDialog = modelDialog;
+    myChangeSet = changeSet;
     myRootId = rootId;
+    myProject = project;
+    myTitles = titles;
 
-    myOldEditor = addEditor(0, myModelDialog.getChangeSet().getOldModel());
-    myNewEditor = addEditor(1, myModelDialog.getChangeSet().getNewModel());
+    myOldEditor = addEditor(0, myChangeSet.getOldModel());
+    myNewEditor = addEditor(1, myChangeSet.getNewModel());
 
     linkEditors(true);
     linkEditors(false);
@@ -100,19 +98,28 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     JSplitPane splitPane = new JSplitPane(JSplitPane.VERTICAL_SPLIT, myTopPanel, myBottomPanel);
     splitPane.setResizeWeight(0.7);
 
-    RootDifferenceDialog.MyGoToNeighbourRootActions neighbourActions = new RootDifferenceDialog.MyGoToNeighbourRootActions();
-    final NextPreviousTraverser neighbourTraverser = new NextPreviousTraverser(myChangeGroupLayouts, myNewEditor.getMainEditor());
-    myActionGroup = ActionUtils.groupFromActions(neighbourActions.previous(), neighbourActions.next(), Separator.getInstance(), neighbourTraverser.previousAction(), neighbourTraverser.nextAction(), Separator.getInstance(), new RevertRootsAction(myModelDialog) {
-      protected SNodeId[] getRoots() {
-        return new SNodeId[]{myRootId};
-      }
+    myActionGroup = new DefaultActionGroup();
+    if (actions != null) {
+      myActionGroup.addAll(actions);
+      myActionGroup.addSeparator();
+    }
+    myTraverser = new NextPreviousTraverser(myChangeGroupLayouts, myNewEditor.getMainEditor());
+    myActionGroup.addAll(myTraverser.previousAction(), myTraverser.nextAction());
+    myActionGroup.addSeparator();
+    if (isEditable) {
+      myActionGroup.add(new RevertRootsAction(rootName) {
+        protected Iterable<ModelChange> getChanges() {
+          return myChangeSet.getChangesForRoot(myRootId);
+        }
 
-      protected void after() {
-        rehighlight();
-      }
-    });
+        protected void after() {
+          rehighlight();
+        }
+      });
+    }
+
     myActionToolbar = ActionManager.getInstance().createActionToolbar(ActionPlaces.UNKNOWN, myActionGroup, true);
-    neighbourTraverser.setActionToolbar(myActionToolbar);
+    myTraverser.setActionToolbar(myActionToolbar);
 
     myContainer.add(myActionToolbar.getComponent(), BorderLayout.NORTH);
     myContainer.add(splitPane, BorderLayout.CENTER);
@@ -123,13 +130,14 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     if (firstChange != null) {
       SwingUtilities.invokeLater(new Runnable() {
         public void run() {
-          neighbourTraverser.goToBounds(firstChange);
+          myTraverser.goToBounds(firstChange);
         }
       });
     } else {
-      neighbourTraverser.goToFirstChangeLater();
+      myTraverser.goToFirstChangeLater();
     }
-    DisplayMode displayMode = check_vu2gar_a0ab0r(check_vu2gar_a0a62a71(GraphicsEnvironment.getLocalGraphicsEnvironment()));
+
+    DisplayMode displayMode = check_vu2gar_a0jb0q(check_vu2gar_a0a53a61(GraphicsEnvironment.getLocalGraphicsEnvironment()));
     int width = (displayMode == null ?
       800 :
       displayMode.getWidth() - 100
@@ -143,7 +151,35 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     if (size == null) {
       myContainer.setPreferredSize(new Dimension(width, height));
     }
+
     init();
+  }
+
+  public SNodeId getRootId() {
+    return myRootId;
+  }
+
+  public void setRootId(SNodeId rootId) {
+    myRootId = rootId;
+    myOldEditor.editRoot(myProject, myRootId, myChangeSet.getOldModel());
+    myNewEditor.editRoot(myProject, myRootId, myChangeSet.getNewModel());
+    rehighlight();
+    myTraverser.goToFirstChangeLater();
+  }
+
+  public void setRootId(SNodeId rootId, ModelChangeSet changeSet) {
+    myChangeSet = changeSet;
+    ListSequence.fromList(myChangeGroupLayouts).visitAll(new IVisitor<ChangeGroupLayout>() {
+      public void visit(ChangeGroupLayout it) {
+        ((DiffChangeGroupLayout) it).setChangeSet(myChangeSet);
+      }
+    });
+    setRootId(rootId);
+  }
+
+  @Nullable
+  protected JComponent createCenterPanel() {
+    return myContainer;
   }
 
   public String getDimensionServiceKey() {
@@ -163,7 +199,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   }
 
   private DiffEditor addEditor(int index, SModel model) {
-    final DiffEditor result = new DiffEditor(DiffTemporaryModule.getOperationContext(myModelDialog.getProject(), model), model.getNodeById(myRootId), myModelDialog.getContentTitles()[index], index == 0);
+    final DiffEditor result = new DiffEditor(DiffTemporaryModule.getOperationContext(myProject, model), model.getNodeById(myRootId), myTitles[index], index == 0);
 
     GridBagConstraints gbc = new GridBagConstraints(index * 2, 0, 1, 1, 1, 1, GridBagConstraints.CENTER, GridBagConstraints.BOTH, new Insets(5, (index == 0 ?
       5 :
@@ -185,9 +221,9 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
         b.invalidate();
       }
     });
-    for (ModelChange change : ListSequence.fromList(myModelDialog.getChangesForRoot(myRootId))) {
-      higlightChange(myOldEditor, myModelDialog.getChangeSet().getOldModel(), change);
-      higlightChange(myNewEditor, myModelDialog.getChangeSet().getNewModel(), change);
+    for (ModelChange change : Sequence.fromIterable(myChangeSet.getChangesForRoot(myRootId))) {
+      higlightChange(myOldEditor, myChangeSet.getOldModel(), change);
+      higlightChange(myNewEditor, myChangeSet.getNewModel(), change);
     }
     ListSequence.fromList(myChangeGroupLayouts).visitAll(new IVisitor<ChangeGroupLayout>() {
       public void visit(ChangeGroupLayout b) {
@@ -198,7 +234,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     myOldEditor.repaintAndRebuildEditorMessages();
     myNewEditor.repaintAndRebuildEditorMessages();
 
-    int count = ListSequence.fromList(myModelDialog.getChangesForRoot(myRootId)).count();
+    int count = Sequence.fromIterable(myChangeSet.getChangesForRoot(myRootId)).count();
     myStatusBar.setText((count == 0 ?
       "no differences" :
       NameUtil.formatNumericalString(count, "difference")
@@ -208,7 +244,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   private void linkEditors(boolean inspector) {
     // create change group builder, trapecium strip and merge buttons painter 
     // 'mine' parameter means mine changeset, 'inspector' - highlight inspector editor component 
-    ChangeGroupLayout layout = new DiffChangeGroupLayout(null, myModelDialog.getChangeSet(), myOldEditor, myNewEditor, inspector);
+    ChangeGroupLayout layout = new DiffChangeGroupLayout(null, myChangeSet, myOldEditor, myNewEditor, inspector);
     ChangeGroupMessages.startMaintaining(layout);
     ListSequence.fromList(myChangeGroupLayouts).addElement(layout);
     DiffEditorSeparator separator = new DiffEditorSeparator(layout);
@@ -218,7 +254,7 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
       myTopPanel
     )).add(separator, gbc);
     ListSequence.fromList(myEditorSeparators).addElement(separator);
-    if (!(myModelDialog.getChangeSet().getNewModel().isNotEditable())) {
+    if (!(myChangeSet.getNewModel().isNotEditable())) {
       DiffButtonsPainter.addTo(this, myOldEditor, layout, inspector);
       DiffButtonsPainter.addTo(this, myNewEditor, layout, inspector);
     }
@@ -229,12 +265,12 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   }
 
   public void rehighlight() {
-    myModelDialog.rebuildChangeSet();
+    ChangeSetBuilder.rebuildChangeSet(myChangeSet);
     myNewEditor.unhighlightAllChanges();
     myOldEditor.unhighlightAllChanges();
 
     if (myNewEditor.getEditedNode() == null) {
-      myNewEditor.editRoot(myModelDialog.getProject(), myRootId, myModelDialog.getChangeSet().getNewModel());
+      myNewEditor.editRoot(myProject, myRootId, myChangeSet.getNewModel());
     }
 
     myNewEditor.getMainEditor().rebuildEditorContent();
@@ -244,11 +280,8 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
   }
 
   /*package*/ void rollbackChanges(Iterable<ModelChange> changes) {
-    myModelDialog.rollbackChanges(changes, new _FunctionTypes._void_P0_E0() {
-      public void invoke() {
-        rehighlight();
-      }
-    });
+    ModelChange.rollbackChanges(changes);
+    rehighlight();
   }
 
   protected JComponent getMainComponent() {
@@ -257,51 +290,68 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
 
   @Override
   public void dispose() {
-    if (!(myClosed)) {
-      myClosed = true;
-      myActionGroup.removeAll();
-      myModelDialog.rootDialogClosed();
-      myOldEditor.dispose();
-      myOldEditor = null;
-      myNewEditor.dispose();
-      myNewEditor = null;
-      ListSequence.fromList(myEditorSeparators).visitAll(new IVisitor<DiffEditorSeparator>() {
-        public void visit(DiffEditorSeparator s) {
-          s.dispose();
-        }
-      });
-      ListSequence.fromList(myEditorSeparators).clear();
-    }
-    myClosed = true;
+    myActionGroup.removeAll();
+    myActionGroup = null;
+    myOldEditor.dispose();
+    myOldEditor = null;
+    myNewEditor.dispose();
+    myNewEditor = null;
+    ListSequence.fromList(myEditorSeparators).visitAll(new IVisitor<DiffEditorSeparator>() {
+      public void visit(DiffEditorSeparator s) {
+        s.dispose();
+      }
+    });
+    ListSequence.fromList(myEditorSeparators).clear();
+    myEditorSeparators = null;
     super.dispose();
   }
 
-  public class MyGoToNeighbourRootActions extends GoToNeighbourRootActions {
-    public MyGoToNeighbourRootActions() {
-    }
+  public static void invokeDialog(final SModel oldModel, final SModel newModel, final SNodeId rootId, final Project project, final String[] contentTitles, @Nullable final Bounds scrollTo) {
+    assert contentTitles.length == 2;
 
-    protected void goTo(@NotNull SNodeId rootId) {
-      myModelDialog.startGoingToNeighbour();
-      close(DialogWrapper.NEXT_USER_EXIT_CODE);
-      myModelDialog.invokeRootDifference(rootId);
-    }
+    jetbrains.mps.project.Project p = ProjectHelper.toMPSProject(project);
+    DiffTemporaryModule.createModuleForModel(oldModel, "old", p);
+    DiffTemporaryModule.createModuleForModel(newModel, "new", p);
 
-    @Nullable
-    protected SNodeId getNeighbourId(boolean next) {
-      return myModelDialog.getNeighbourRoot(myRootId, next);
-    }
+    final Wrappers._T<RootDifferenceDialog> dialog = new Wrappers._T<RootDifferenceDialog>();
+    ModelAccess.instance().runReadAction(new _Adapters._return_P0_E0_to_Runnable_adapter(new _FunctionTypes._return_P0_E0<RootDifferenceDialog>() {
+      public RootDifferenceDialog invoke() {
+        ModelChangeSet changeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);
+
+        SNode node = newModel.getNodeById(rootId);
+        if (node == null) {
+          node = oldModel.getNodeById(rootId);
+        }
+        String rootName = (node == null ?
+          "root" :
+          node.getPresentation()
+        );
+
+        boolean isEditable = newModel.getModelDescriptor() instanceof EditableSModelDescriptor && check_vu2gar_a0a0g0a7a23(SModelRepository.getInstance().getModelDescriptor(newModel.getSModelReference())) == newModel;
+
+        return dialog.value = new RootDifferenceDialog(project, changeSet, rootId, rootName, contentTitles, WindowManager.getInstance().getFrame(project), isEditable, null, scrollTo);
+      }
+    }));
+    dialog.value.show();
   }
 
-  private static DisplayMode check_vu2gar_a0ab0r(GraphicsDevice checkedDotOperand) {
+  private static DisplayMode check_vu2gar_a0jb0q(GraphicsDevice checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDisplayMode();
     }
     return null;
   }
 
-  private static GraphicsDevice check_vu2gar_a0a62a71(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
+  private static GraphicsDevice check_vu2gar_a0a53a61(GraphicsEnvironment checkedDotOperand) throws HeadlessException {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getDefaultScreenDevice();
+    }
+    return null;
+  }
+
+  private static SModel check_vu2gar_a0a0g0a7a23(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSModel();
     }
     return null;
   }

@@ -15,6 +15,11 @@
  */
 package jetbrains.mps.project.structure.modules;
 
+import jetbrains.mps.util.io.ModelInputStream;
+import jetbrains.mps.util.io.ModelOutputStream;
+
+import java.io.IOException;
+
 public class SolutionDescriptor extends ModuleDescriptor {
 
   private String myOutputPath;
@@ -46,4 +51,26 @@ public class SolutionDescriptor extends ModuleDescriptor {
   public void setCompileInMPS(boolean compileInMPS) {
     myCompileInMPS = compileInMPS;
   }
+
+  @Override
+  protected int getHeaderMarker() {
+    return 0xa6aba7a;
+  }
+
+  @Override
+  public void save(ModelOutputStream stream) throws IOException {
+    super.save(stream);
+    stream.writeString(myOutputPath);
+    stream.writeString(myKind.name());
+    stream.writeBoolean(myCompileInMPS);
+  }
+
+  @Override
+  public void load(ModelInputStream stream) throws IOException {
+    super.load(stream);
+    myOutputPath = stream.readString();
+    myKind = SolutionKind.valueOf(stream.readString());
+    myCompileInMPS = stream.readBoolean();
+  }
+
 }

@@ -14,8 +14,7 @@ import jetbrains.mps.debugger.api.ui.breakpoints.BreakpointsBrowserDialog;
 import jetbrains.mps.smodel.IOperationContext;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ViewBreakpoints_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("viewBreakpoints.png");
@@ -35,9 +34,7 @@ public class ViewBreakpoints_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ViewBreakpoints", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ViewBreakpoints", t);
       this.disable(event.getPresentation());
     }
   }
@@ -62,11 +59,9 @@ public class ViewBreakpoints_Action extends BaseAction {
         }
       }, ModalityState.NON_MODAL);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ViewBreakpoints", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ViewBreakpoints", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(ViewBreakpoints_Action.class);
+  private static Logger LOG = Logger.getLogger(ViewBreakpoints_Action.class);
 }

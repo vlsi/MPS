@@ -74,7 +74,7 @@ public class DiffEditor implements EditorMessageOwner {
 
   public void editRoot(@NotNull Project project, @NotNull SNodeId rootId, @NotNull SModel model) {
     SNode root = model.getNodeById(rootId);
-    if (root != null && SNodeOperations.getParent(root) == null) {
+    if (SNodeOperations.getParent(root) == null) {
       getMainEditor().editNode(root, DiffTemporaryModule.getOperationContext(project, model));
     }
   }

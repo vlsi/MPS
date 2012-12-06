@@ -420,7 +420,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
       Set<String> contractMethods = this.getISNodeMethodsNames(false);
 
       List<Method> methods = new ArrayList<Method>();
-      methods.addAll(Arrays.asList(SNode.class.getMethods()));
+      methods.addAll(Arrays.asList(SNode.class.getDeclaredMethods()));
       // 'delete' must be last checked method 
       for (int i = 0; i < methods.size(); i++) {
         if (methods.get(i).getName().equals("delete") && i != (methods.size() - 1)) {

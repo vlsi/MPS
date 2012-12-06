@@ -12,8 +12,7 @@ import com.intellij.openapi.extensions.ExtensionPoint;
 import com.intellij.openapi.extensions.Extensions;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.util.containers.ContainerUtil;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCustomApplicationPlugin {
   private List<ConfigurationType> myRegisteredKinds = ListSequence.fromList(new ArrayList<ConfigurationType>());
@@ -37,9 +36,7 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
         try {
           return (Class<ConfigurationType>) getClass().getClassLoader().loadClass(className);
         } catch (ClassNotFoundException cl) {
-          if (log.isErrorEnabled()) {
-            log.error("Can not find configuration type " + className + ". Check languages dependency.", cl);
-          }
+          LOG.error("Can not find configuration type " + className + ". Check languages dependency.", cl);
           return (Class<ConfigurationType>) null;
         }
       }
@@ -93,5 +90,5 @@ public class RunConfigurationsInitializer_CustomApplicationPlugin extends BaseCu
     ListSequence.fromList(RunConfigurationsInitializer_CustomApplicationPlugin.this.myRegisteredProducers).clear();
   }
 
-  protected static Log log = LogFactory.getLog(RunConfigurationsInitializer_CustomApplicationPlugin.class);
+  private static Logger LOG = Logger.getLogger(RunConfigurationsInitializer_CustomApplicationPlugin.class);
 }

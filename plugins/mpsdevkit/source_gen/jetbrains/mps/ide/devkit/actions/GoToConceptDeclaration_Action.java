@@ -15,8 +15,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.smodel.IOperationContext;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class GoToConceptDeclaration_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("structure.png");
@@ -43,9 +42,7 @@ public class GoToConceptDeclaration_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GoToConceptDeclaration", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GoToConceptDeclaration", t);
       this.disable(event.getPresentation());
     }
   }
@@ -76,11 +73,9 @@ public class GoToConceptDeclaration_Action extends BaseAction {
       SNode concept = SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")));
       NavigationSupport.getInstance().openNode(((IOperationContext) MapSequence.fromMap(_params).get("context")), concept, true, true);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GoToConceptDeclaration", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GoToConceptDeclaration", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(GoToConceptDeclaration_Action.class);
+  private static Logger LOG = Logger.getLogger(GoToConceptDeclaration_Action.class);
 }

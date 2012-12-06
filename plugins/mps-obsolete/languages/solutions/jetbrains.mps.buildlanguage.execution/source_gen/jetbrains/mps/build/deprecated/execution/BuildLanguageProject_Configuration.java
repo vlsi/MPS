@@ -30,8 +30,7 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
@@ -68,9 +67,7 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
       if (fieldElement != null) {
         myNode.readExternal(fieldElement);
       } else {
-        if (log.isDebugEnabled()) {
-          log.debug("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
-        }
+        LOG.debug("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
       }
     }
     {
@@ -78,9 +75,7 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
       if (fieldElement != null) {
         mySettings.readExternal(fieldElement);
       } else {
-        if (log.isDebugEnabled()) {
-          log.debug("Element " + "mySettings" + " in " + this.getClass().getName() + " was null.");
-        }
+        LOG.debug("Element " + "mySettings" + " in " + this.getClass().getName() + " was null.");
       }
     }
   }
@@ -130,9 +125,7 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
       clone.mySettings = (AntSettings_Configuration) mySettings.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      if (log.isErrorEnabled()) {
-        log.error("", ex);
-      }
+      LOG.error("", ex);
     }
     return clone;
   }
@@ -190,7 +183,7 @@ public class BuildLanguageProject_Configuration extends BaseMpsRunConfiguration 
     return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodePointer>(), this.getNode().getNodePointer())};
   }
 
-  protected static Log log = LogFactory.getLog(BuildLanguageProject_Configuration.class);
+  private static Logger LOG = Logger.getLogger(BuildLanguageProject_Configuration.class);
 
   public static boolean isEmpty_skhqmd_a0a0k(String str) {
     return str == null || str.length() == 0;

@@ -19,8 +19,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class MakeSelection_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -59,9 +58,7 @@ public class MakeSelection_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "MakeSelection", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "MakeSelection", t);
       this.disable(event.getPresentation());
     }
   }
@@ -87,9 +84,7 @@ public class MakeSelection_Action extends BaseAction {
       List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModelDescriptor>) ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")));
       new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models, ((SModelDescriptor) MapSequence.fromMap(_params).get("cmodel")), modules, ((IModule) MapSequence.fromMap(_params).get("cmodule"))), MakeSelection_Action.this.cleanMake).executeAction();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "MakeSelection", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "MakeSelection", t);
     }
   }
 
@@ -103,5 +98,5 @@ public class MakeSelection_Action extends BaseAction {
     return res.toString();
   }
 
-  protected static Log log = LogFactory.getLog(MakeSelection_Action.class);
+  private static Logger LOG = Logger.getLogger(MakeSelection_Action.class);
 }

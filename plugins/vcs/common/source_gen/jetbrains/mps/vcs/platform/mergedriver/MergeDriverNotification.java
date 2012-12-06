@@ -56,7 +56,7 @@ public class MergeDriverNotification {
       return;
     }
     calculateCompositeState();
-    if (myCompositeState == AbstractInstaller.State.INSTALLED) {
+    if (myCompositeState == AbstractInstaller.State.NOT_ENABLED || myCompositeState == AbstractInstaller.State.INSTALLED) {
       return;
     }
     if (InternalFlag.isInternalMode() && myCompositeState == AbstractInstaller.State.OUTDATED) {

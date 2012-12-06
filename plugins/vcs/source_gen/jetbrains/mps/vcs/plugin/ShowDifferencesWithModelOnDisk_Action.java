@@ -18,8 +18,7 @@ import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import com.intellij.openapi.project.Project;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -46,9 +45,7 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowDifferencesWithModelOnDisk", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowDifferencesWithModelOnDisk", t);
       this.disable(event.getPresentation());
     }
   }
@@ -81,11 +78,9 @@ public class ShowDifferencesWithModelOnDisk_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowDifferencesWithModelOnDisk", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowDifferencesWithModelOnDisk", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(ShowDifferencesWithModelOnDisk_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowDifferencesWithModelOnDisk_Action.class);
 }

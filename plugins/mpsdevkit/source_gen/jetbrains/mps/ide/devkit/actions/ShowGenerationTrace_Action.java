@@ -20,8 +20,7 @@ import javax.swing.JOptionPane;
 import java.awt.Frame;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.generator.IGenerationTracer;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ShowGenerationTrace_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -50,9 +49,7 @@ public class ShowGenerationTrace_Action extends BaseAction {
         }
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowGenerationTrace", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowGenerationTrace", t);
       this.disable(event.getPresentation());
     }
   }
@@ -93,9 +90,7 @@ public class ShowGenerationTrace_Action extends BaseAction {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "No tracing data available");
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowGenerationTrace", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowGenerationTrace", t);
     }
   }
 
@@ -103,5 +98,5 @@ public class ShowGenerationTrace_Action extends BaseAction {
     return (GenerationTracer) ((Project) MapSequence.fromMap(_params).get("project")).getComponent(IGenerationTracer.class);
   }
 
-  protected static Log log = LogFactory.getLog(ShowGenerationTrace_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowGenerationTrace_Action.class);
 }

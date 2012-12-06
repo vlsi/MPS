@@ -12,8 +12,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class RollbackChanges_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("reset.png");
@@ -33,9 +32,7 @@ public class RollbackChanges_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RollbackChanges", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RollbackChanges", t);
       this.disable(event.getPresentation());
     }
   }
@@ -55,11 +52,9 @@ public class RollbackChanges_Action extends BaseAction {
     try {
       ChangesStripActionsHelper.rollbackChanges(((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RollbackChanges", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RollbackChanges", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(RollbackChanges_Action.class);
+  private static Logger LOG = Logger.getLogger(RollbackChanges_Action.class);
 }

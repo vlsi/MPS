@@ -17,8 +17,7 @@ import com.sun.jdi.ThreadReference;
 import com.sun.jdi.Value;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.debugger.java.api.evaluation.EvaluationUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaThread;
 
 public class CopyValueAction_Action extends BaseAction {
@@ -42,9 +41,7 @@ public class CopyValueAction_Action extends BaseAction {
         event.getPresentation().setVisible(value != null && value instanceof JavaValue && DebugActionsUtil.getEvaluationProvider(event) != null);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CopyValueAction", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "CopyValueAction", t);
       this.disable(event.getPresentation());
     }
   }
@@ -78,13 +75,11 @@ public class CopyValueAction_Action extends BaseAction {
       Value jdiValue = ((JavaValue) value).getValue();
       CopyPasteUtil.copyTextToClipboard(EvaluationUtils.getInstance().getStringPresentation(jdiValue, thread));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CopyValueAction", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "CopyValueAction", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(CopyValueAction_Action.class);
+  private static Logger LOG = Logger.getLogger(CopyValueAction_Action.class);
 
   private static ThreadReference check_d54g7t_a0i0a(JavaThread checkedDotOperand) {
     if (null != checkedDotOperand) {

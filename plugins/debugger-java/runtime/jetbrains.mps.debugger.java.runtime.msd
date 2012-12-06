@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.debugger.java.runtime" uuid="fcffe3cf-3ebc-4d3d-989b-2f30533bc904" compileInMPS="false">
+<solution name="jetbrains.mps.debugger.java.runtime" uuid="fcffe3cf-3ebc-4d3d-989b-2f30533bc904" pluginKind="PLUGIN_OTHER" compileInMPS="false" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot path="${module}/models" />
   </models>

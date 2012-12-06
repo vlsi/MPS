@@ -13,8 +13,7 @@ import jetbrains.mps.debugger.java.runtime.evaluation.model.AbstractEvaluationMo
 import jetbrains.mps.debug.api.evaluation.IEvaluationProvider;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class RemoveWatchAction_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("remove.png");
@@ -34,9 +33,7 @@ public class RemoveWatchAction_Action extends BaseAction {
     try {
       event.getPresentation().setEnabled(EvaluationUi.EVALUATION_MODEL.getData(event.getDataContext()) != null);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RemoveWatchAction", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RemoveWatchAction", t);
       this.disable(event.getPresentation());
     }
   }
@@ -56,11 +53,9 @@ public class RemoveWatchAction_Action extends BaseAction {
         ((EvaluationProvider) evaluationProvider).removeWatch(model);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RemoveWatchAction", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RemoveWatchAction", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(RemoveWatchAction_Action.class);
+  private static Logger LOG = Logger.getLogger(RemoveWatchAction_Action.class);
 }

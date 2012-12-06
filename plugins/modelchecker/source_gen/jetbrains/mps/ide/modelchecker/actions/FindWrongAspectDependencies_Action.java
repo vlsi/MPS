@@ -26,8 +26,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionKind;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class FindWrongAspectDependencies_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,9 +46,7 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "FindWrongAspectDependencies", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "FindWrongAspectDependencies", t);
       this.disable(event.getPresentation());
     }
   }
@@ -78,9 +75,7 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
       }));
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModels(models, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true, new WrongAspectDependenciesFinder());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "FindWrongAspectDependencies", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "FindWrongAspectDependencies", t);
     }
   }
 
@@ -98,5 +93,5 @@ public class FindWrongAspectDependencies_Action extends BaseAction {
     return false;
   }
 
-  protected static Log log = LogFactory.getLog(FindWrongAspectDependencies_Action.class);
+  private static Logger LOG = Logger.getLogger(FindWrongAspectDependencies_Action.class);
 }

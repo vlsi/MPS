@@ -23,8 +23,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class CreateDefaultEditor_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -70,9 +69,7 @@ public class CreateDefaultEditor_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CreateDefaultEditor", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "CreateDefaultEditor", t);
       this.disable(event.getPresentation());
     }
   }
@@ -111,11 +108,9 @@ public class CreateDefaultEditor_Action extends BaseAction {
       BehaviorReflection.invokeNonVirtual(Void.class, editorDeclaration, "jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", "call_createDefaultEditor_2970389781192937380", new Object[]{false});
       ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getEditorComponent().update();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CreateDefaultEditor", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "CreateDefaultEditor", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(CreateDefaultEditor_Action.class);
+  private static Logger LOG = Logger.getLogger(CreateDefaultEditor_Action.class);
 }

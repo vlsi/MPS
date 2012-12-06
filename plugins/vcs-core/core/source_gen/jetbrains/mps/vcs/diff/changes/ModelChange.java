@@ -7,6 +7,9 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public abstract class ModelChange {
   private ChangeSet myChangeSet;
@@ -51,4 +54,26 @@ public abstract class ModelChange {
   public abstract String toString();
 
   public abstract String getDescription();
+
+  public static void rollbackChanges(Iterable<ModelChange> changes) {
+    assert Sequence.fromIterable(changes).isNotEmpty();
+    final SModel model = Sequence.fromIterable(changes).first().getChangeSet().getNewModel();
+    final NodeCopier nc = new NodeCopier(model);
+    Iterable<ModelChange> oppositeChanges = Sequence.fromIterable(changes).select(new ISelector<ModelChange, ModelChange>() {
+      public ModelChange select(ModelChange ch) {
+        return ch.getOppositeChange();
+      }
+    });
+    for (ModelChange ch : Sequence.fromIterable(oppositeChanges)) {
+      if (ch instanceof NodeGroupChange) {
+        ((NodeGroupChange) ch).prepare();
+      }
+    }
+    Sequence.fromIterable(oppositeChanges).visitAll(new IVisitor<ModelChange>() {
+      public void visit(ModelChange ch) {
+        ch.apply(model, nc);
+      }
+    });
+    nc.restoreIds(true);
+  }
 }

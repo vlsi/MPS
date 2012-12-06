@@ -18,8 +18,7 @@ import java.util.Set;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.smodel.SNodePointer;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class HighlightCellDependencies_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,9 +38,7 @@ public class HighlightCellDependencies_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "HighlightCellDependencies", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "HighlightCellDependencies", t);
       this.disable(event.getPresentation());
     }
   }
@@ -82,11 +79,9 @@ public class HighlightCellDependencies_Action extends BaseAction {
       }
       highlightManager.repaintAndRebuildEditorMessages();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "HighlightCellDependencies", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "HighlightCellDependencies", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(HighlightCellDependencies_Action.class);
+  private static Logger LOG = Logger.getLogger(HighlightCellDependencies_Action.class);
 }

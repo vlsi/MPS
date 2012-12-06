@@ -18,8 +18,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class RebuildSelectedModules_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -59,9 +58,7 @@ public class RebuildSelectedModules_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RebuildSelectedModules", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RebuildSelectedModules", t);
       this.disable(event.getPresentation());
     }
   }
@@ -88,11 +85,9 @@ public class RebuildSelectedModules_Action extends BaseAction {
       List<SModule> modules = ListSequence.fromListWithValues(new ArrayList<SModule>(), (Iterable<IModule>) ((List<IModule>) MapSequence.fromMap(_params).get("modules")));
       new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), null, null, modules, cmd), true).executeAction();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RebuildSelectedModules", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RebuildSelectedModules", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(RebuildSelectedModules_Action.class);
+  private static Logger LOG = Logger.getLogger(RebuildSelectedModules_Action.class);
 }

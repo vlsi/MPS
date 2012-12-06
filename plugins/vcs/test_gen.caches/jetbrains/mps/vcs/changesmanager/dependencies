@@ -89,6 +89,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.concrete.GitUtils" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSet" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.ChangeSetBuilder" />
+    <classNode dependClassName="jetbrains.mps.vcs.diff.ModelChangeSet" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.AddRootChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModelChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.ModuleDependencyChange" />

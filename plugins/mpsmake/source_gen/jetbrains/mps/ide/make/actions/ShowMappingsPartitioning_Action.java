@@ -17,8 +17,7 @@ import jetbrains.mps.workbench.actions.model.PartitioningHelper;
 import com.intellij.openapi.project.Project;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IScope;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ShowMappingsPartitioning_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -45,9 +44,7 @@ public class ShowMappingsPartitioning_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowMappingsPartitioning", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowMappingsPartitioning", t);
       this.disable(event.getPresentation());
     }
   }
@@ -86,11 +83,9 @@ public class ShowMappingsPartitioning_Action extends BaseAction {
     try {
       PartitioningHelper.showMappingPartitioning(((Project) MapSequence.fromMap(_params).get("project")), ((Frame) MapSequence.fromMap(_params).get("frame")), ((IScope) MapSequence.fromMap(_params).get("scope")), ((List<SModelDescriptor>) MapSequence.fromMap(_params).get("models")));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowMappingsPartitioning", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowMappingsPartitioning", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(ShowMappingsPartitioning_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowMappingsPartitioning_Action.class);
 }

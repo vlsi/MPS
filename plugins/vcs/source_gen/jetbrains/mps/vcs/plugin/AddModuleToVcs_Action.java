@@ -19,8 +19,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vcs.changes.ChangeListManagerImpl;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class AddModuleToVcs_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("addToVcs.png");
@@ -49,9 +48,7 @@ public class AddModuleToVcs_Action extends BaseAction {
         presentation.setVisible(enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "AddModuleToVcs", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "AddModuleToVcs", t);
       this.disable(event.getPresentation());
     }
   }
@@ -77,11 +74,9 @@ public class AddModuleToVcs_Action extends BaseAction {
       ChangeListManagerImpl changeListManager = ChangeListManagerImpl.getInstanceImpl(((Project) MapSequence.fromMap(_params).get("project")));
       changeListManager.addUnversionedFiles(changeListManager.getDefaultChangeList(), unversionedFiles);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "AddModuleToVcs", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "AddModuleToVcs", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(AddModuleToVcs_Action.class);
+  private static Logger LOG = Logger.getLogger(AddModuleToVcs_Action.class);
 }

@@ -12,8 +12,7 @@ import jetbrains.mps.debug.api.AbstractDebugSession;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class StepOut_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("stepOut.png");
@@ -36,9 +35,7 @@ public class StepOut_Action extends BaseAction {
         event.getPresentation().setEnabled(debugSession != null && debugSession.isStepEnabled());
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "StepOut", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "StepOut", t);
       this.disable(event.getPresentation());
     }
   }
@@ -58,11 +55,9 @@ public class StepOut_Action extends BaseAction {
     try {
       DebugActionsUtil.getDebugSession(event).stepOut();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "StepOut", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "StepOut", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(StepOut_Action.class);
+  private static Logger LOG = Logger.getLogger(StepOut_Action.class);
 }

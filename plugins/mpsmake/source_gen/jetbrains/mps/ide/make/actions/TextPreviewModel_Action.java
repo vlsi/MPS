@@ -18,8 +18,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.List;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class TextPreviewModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -50,9 +49,7 @@ public class TextPreviewModel_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "TextPreviewModel", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "TextPreviewModel", t);
       this.disable(event.getPresentation());
     }
   }
@@ -77,9 +74,7 @@ public class TextPreviewModel_Action extends BaseAction {
         TextPreviewUtil.previewModelText(session, ((IOperationContext) MapSequence.fromMap(_params).get("context")), TextPreviewModel_Action.this.modelToGenerate(_params));
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "TextPreviewModel", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "TextPreviewModel", t);
     }
   }
 
@@ -101,5 +96,5 @@ public class TextPreviewModel_Action extends BaseAction {
     return md instanceof EditableSModelDescriptor && !(((EditableSModelDescriptor) md).isReadOnly());
   }
 
-  protected static Log log = LogFactory.getLog(TextPreviewModel_Action.class);
+  private static Logger LOG = Logger.getLogger(TextPreviewModel_Action.class);
 }

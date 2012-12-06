@@ -27,8 +27,7 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class AddSourcesToModelRoots_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -48,9 +47,7 @@ public class AddSourcesToModelRoots_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "AddSourcesToModelRoots", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "AddSourcesToModelRoots", t);
       this.disable(event.getPresentation());
     }
   }
@@ -102,11 +99,9 @@ public class AddSourcesToModelRoots_Action extends BaseAction {
 
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "AddSourcesToModelRoots", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "AddSourcesToModelRoots", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(AddSourcesToModelRoots_Action.class);
+  private static Logger LOG = Logger.getLogger(AddSourcesToModelRoots_Action.class);
 }

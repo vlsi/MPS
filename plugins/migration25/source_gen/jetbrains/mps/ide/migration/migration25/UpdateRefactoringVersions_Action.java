@@ -18,8 +18,7 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class UpdateRefactoringVersions_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,9 +38,7 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "UpdateRefactoringVersions", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "UpdateRefactoringVersions", t);
       this.disable(event.getPresentation());
     }
   }
@@ -79,9 +76,7 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
       }
       SModelRepository.getInstance().saveAll();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "UpdateRefactoringVersions", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "UpdateRefactoringVersions", t);
     }
   }
 
@@ -89,15 +84,11 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
     int modelVersion = model.getVersion();
     int historyVersion = model.getStructureModificationLog().getLatestVersion(model.getSModelReference());
     if (modelVersion < historyVersion) {
-      if (log.isInfoEnabled()) {
-        log.info("updating version of " + model + " from " + modelVersion + " to .history version " + historyVersion);
-      }
+      LOG.info("updating version of " + model + " from " + modelVersion + " to .history version " + historyVersion);
       model.setVersion(historyVersion);
       model.setChanged(true);
     } else if (modelVersion > historyVersion && historyVersion != -1) {
-      if (log.isInfoEnabled()) {
-        log.info("history version of " + model + " is smaller than model version: " + historyVersion + "<" + modelVersion);
-      }
+      LOG.info("history version of " + model + " is smaller than model version: " + historyVersion + "<" + modelVersion);
     }
   }
 
@@ -109,22 +100,18 @@ public class UpdateRefactoringVersions_Action extends BaseAction {
         continue;
       }
       if (importElement.getUsedVersion() < usedModel.getVersion()) {
-        if (log.isInfoEnabled()) {
-          log.info(model + ": updating used version of " + importElement.getModelReference() + " from " + importElement.getUsedVersion() + " to " + usedModel.getVersion());
-        }
+        LOG.info(model + ": updating used version of " + importElement.getModelReference() + " from " + importElement.getUsedVersion() + " to " + usedModel.getVersion());
         m.updateImportedModelUsedVersion(importElement.getModelReference(), usedModel.getVersion());
         model.setChanged(true);
       } else if (importElement.getUsedVersion() > usedModel.getVersion()) {
-        if (log.isErrorEnabled()) {
-          log.error(model + ": used version of " + importElement.getModelReference() + " is greater than model version: " + importElement.getUsedVersion() + ">" + usedModel.getVersion());
-        }
+        LOG.error(model + ": used version of " + importElement.getModelReference() + " is greater than model version: " + importElement.getUsedVersion() + ">" + usedModel.getVersion());
         m.updateImportedModelUsedVersion(importElement.getModelReference(), usedModel.getVersion());
         model.setChanged(true);
       }
     }
   }
 
-  protected static Log log = LogFactory.getLog(UpdateRefactoringVersions_Action.class);
+  private static Logger LOG = Logger.getLogger(UpdateRefactoringVersions_Action.class);
 
   private static <T> T as_hexye9_a0a0a1a7(Object o, Class<T> type) {
     return (type.isInstance(o) ?

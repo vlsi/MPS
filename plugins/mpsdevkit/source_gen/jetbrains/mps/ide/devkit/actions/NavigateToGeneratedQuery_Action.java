@@ -14,8 +14,7 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.ide.generator.GeneratedQueriesOpener;
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class NavigateToGeneratedQuery_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -45,9 +44,7 @@ public class NavigateToGeneratedQuery_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "NavigateToGeneratedQuery", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "NavigateToGeneratedQuery", t);
       this.disable(event.getPresentation());
     }
   }
@@ -77,11 +74,9 @@ public class NavigateToGeneratedQuery_Action extends BaseAction {
       SNode fun = SNodeOperations.getAncestor(((SNode) MapSequence.fromMap(_params).get("node")), "jetbrains.mps.baseLanguage.structure.ConceptFunction", true, false);
       GeneratedQueriesOpener.openQueryMethod(((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getOperationContext(), fun);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "NavigateToGeneratedQuery", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "NavigateToGeneratedQuery", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(NavigateToGeneratedQuery_Action.class);
+  private static Logger LOG = Logger.getLogger(NavigateToGeneratedQuery_Action.class);
 }

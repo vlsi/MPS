@@ -1,0 +1,141 @@
+/*
+ * Copyright 2003-2012 JetBrains s.r.o.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ * http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+package jetbrains.mps.jps.model;
+
+import jetbrains.mps.MPSCore;
+import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
+import jetbrains.mps.generator.MPSGenerator;
+import jetbrains.mps.idea.core.make.MPSCompilerUtil;
+import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.persistence.MPSPersistence;
+import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.language.ExtensionRegistry;
+import jetbrains.mps.smodel.language.LanguageRegistry;
+import jetbrains.mps.typesystem.MPSTypesystem;
+import jetbrains.mps.util.io.ModelInputStream;
+import org.jetbrains.jps.incremental.CompileContext;
+import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
+import org.jetbrains.jps.incremental.messages.CompilerMessage;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.util.Collection;
+
+/**
+ * evgeny, 12/3/12
+ */
+public class JpsMPSRepositoryFacade implements MPSModuleOwner {
+
+  private static final JpsMPSRepositoryFacade INSTANCE = new JpsMPSRepositoryFacade();
+
+  private volatile boolean isInitialized = false;
+  private final Object LOCK = new Object();
+
+  public JpsMPSRepositoryFacade() {
+  }
+
+  public static JpsMPSRepositoryFacade getInstance() {
+    return INSTANCE;
+  }
+
+  public void init(final CompileContext context) {
+    if (isInitialized) {
+      return;
+    }
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        long start = System.nanoTime();
+        initMPS();
+        initRepository(context,
+          context.getBuilderParameter(MPSCompilerUtil.MPS_LANGUAGES.toString()),
+          context.getBuilderParameter(MPSCompilerUtil.MPS_REPOSITORY.toString()));
+
+        LanguageRegistry.getInstance().loadLanguages();
+        ExtensionRegistry.getInstance().loadExtensionDescriptors();
+        ClassLoaderManager.getInstance().updateClassPath();
+
+        context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "loaded in " + (System.nanoTime() - start) / 1000000 + " ms"));
+        isInitialized = true;
+      }
+    });
+  }
+
+
+  private void initRepository(CompileContext context, String languages, String repoFile) {
+    if (repoFile != null) {
+      File f = new File(repoFile);
+      ModelInputStream mos = null;
+      try {
+        mos = new ModelInputStream(new FileInputStream(f));
+        Collection<ModuleHandle> moduleHandles = ModulesMiner.getInstance().loadModules(mos);
+        context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "loaded " + moduleHandles.size() + " modules"));
+        for (ModuleHandle h : moduleHandles) {
+          ModuleRepositoryFacade.createModule(h, this);
+        }
+        return;
+      } catch (IOException e) {
+        context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, e));
+        context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.WARNING, "cannot load cache, generation may be slow"));
+      } finally {
+        jetbrains.mps.util.FileUtil.closeFileSafe(mos);
+      }
+    }
+
+    context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.WARNING, "cannot start MPS, no repository provided"));
+  }
+
+  public void dispose() {
+    if (!isInitialized) {
+      return;
+    }
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        disposeMPS();
+        isInitialized = false;
+      }
+    });
+  }
+
+
+  private void initMPS() {
+    MPSCore.getInstance().init();
+    MPSPersistence.getInstance().init();
+    MPSTypesystem.getInstance().init();
+    MPSGenerator.getInstance().init();
+    MPSBaseLanguage.getInstance().init();
+  }
+
+  private void disposeMPS() {
+    MPSBaseLanguage.getInstance().dispose();
+    MPSGenerator.getInstance().dispose();
+    MPSTypesystem.getInstance().dispose();
+    MPSPersistence.getInstance().dispose();
+    MPSCore.getInstance().dispose();
+  }
+
+  @Override
+  public boolean isHidden() {
+    return true;
+  }
+}
