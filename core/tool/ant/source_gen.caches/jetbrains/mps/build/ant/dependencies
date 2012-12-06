@@ -31,9 +31,7 @@
     <classNode dependClassName="jetbrains.mps.MPSCore" />
     <classNode dependClassName="jetbrains.mps.build.ant.FileMPSProject" />
     <classNode dependClassName="jetbrains.mps.build.ant.MpsPlatform" />
-    <classNode dependClassName="jetbrains.mps.build.ant.util.MapPathMacrosProvider" />
     <classNode dependClassName="jetbrains.mps.build.ant.util.PathUtil" />
-    <classNode dependClassName="jetbrains.mps.build.ant.util.SetLibraryContributor" />
     <classNode dependClassName="jetbrains.mps.generator.DefaultModifiableGenerationSettings" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.CollectionSequence" />
@@ -45,7 +43,9 @@
     <classNode dependClassName="jetbrains.mps.project.PathMacrosProvider" />
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.tool.builder.util.MapPathMacrosProvider" />
     <classNode dependClassName="jetbrains.mps.tool.builder.util.PathManager" />
+    <classNode dependClassName="jetbrains.mps.tool.builder.util.SetLibraryContributor" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="org.apache.log4j.BasicConfigurator" />
     <classNode dependClassName="org.apache.log4j.ConsoleAppender" />
