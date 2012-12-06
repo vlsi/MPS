@@ -353,6 +353,7 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceinfo/testWeavingGenerated.data/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceinfo/testWeavingInterpreted.data/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceinfo/tests/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceinfo/traceMacro.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceinfo/traceMacro.testlang/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/typesystem/languages/test/source_gen" isTestSource="false" />
@@ -554,6 +555,7 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceinfo/testWeavingGenerated.data/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceinfo/testWeavingInterpreted.data/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceinfo/tests/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceinfo/traceMacro.sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/traceinfo/traceMacro.testlang/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/typesystem/classes_gen" />

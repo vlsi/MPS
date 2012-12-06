@@ -123,6 +123,7 @@
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/traceinfo/jetbrains.mps.traceInfo.testWeaving/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/traceinfo/testWeavingGenerated.data/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/traceinfo/testWeavingInterpreted.data/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/languages/languageDesign/traceinfo/tests/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/traceinfo/traceMacro.sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/traceinfo/traceMacro.testlang/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/languages/languageDesign/typesystem/languages/test/source_gen" includeSubdirectories="true" />
