@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4drqfhguhp6s4uw7wdqqj1ipxqqqkq6">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-87z6bgddy8ivkyr9ddyvqnv3hm4pw2y" />
+<dependencies version="2" modelHash="6mof7vcr4l8uy9m9l97sacn6phnj5ge">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="elegih5k2fg9y5kwyocm6t12ctcmdo0" />
-  <common hash="nqo6jklchs33xc1bxzq3e175vv9vy5" />
-  <source id="7016215775330902578" name="BytecodeVsSourceStubs" hash="-1w7y1sw5ja9xixyp9sna9pldev4yf1" dependsOnNodes="true">
+  <common hash="36ghu8pirm7tyfmf4ozhv41tu52k4h6" />
+  <source id="7016215775330902578" name="BytecodeVsSourceStubs" hash="73wyg67g55fd723p7vc9tnaqhg1z3k3" dependsOnNodes="true">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
     <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" />
