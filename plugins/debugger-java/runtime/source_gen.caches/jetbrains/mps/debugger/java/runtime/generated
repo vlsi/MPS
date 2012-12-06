@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-c2a6y546vqnraaznydjqdm1ssitryai">
+<dependencies version="2" modelHash="9w1fikatecr33h8g5z9qdc51hwy09zu">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
-  <common hash="e7n3soee51hksq235ugw3mw13pgroe4" />
+  <common hash="-9lfaceevvmf5kiuhgc5fm2nw250k7f2" />
   <source id="7048882195103614171" name="JavaNodePositionProvider" hash="-cp4wwvaolvrrepqhiexslh8okwfghz">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JavaNodePositionProvider.java" />
