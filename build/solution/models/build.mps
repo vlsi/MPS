@@ -1604,6 +1604,9 @@
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="1388241112194094622">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="1388241112193801468" resolveInfo="jetbrains.mps.baseLanguage.varVariable" />
             </node>
+            <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="9079491090478369164">
+              <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="9079491090172592781" resolveInfo="jetbrains.mps.baseLanguage.doubleDispatch" />
+            </node>
             <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_ModuleJars" typeId="kdzh.1265949165890536423" id="2540145662854758347">
               <link role="module" roleId="kdzh.1265949165890536425" targetNodeId="8939513996048535488" resolveInfo="jetbrains.mps.baseLanguageInternal" />
             </node>
