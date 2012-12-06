@@ -14,21 +14,22 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.ide.java.newparser.JavaParser;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.ide.java.parser.FeatureKind;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
-import java.util.HashSet;
-import java.io.IOException;
-import jetbrains.mps.ide.java.newparser.JavaParseException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.ide.java.newparser.JavaParser;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.HashSet;
 import java.io.InputStream;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.ide.java.parser.FeatureKind;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import java.io.IOException;
+import jetbrains.mps.ide.java.newparser.JavaParseException;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
@@ -57,28 +58,9 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
   @Override
   protected SModel createModel() {
 
-    JavaParser parser = new JavaParser();
     myModel = new SModel(myModelRef);
 
-    for (String fileName : Sequence.fromIterable(myDataSource.getAvailableStreams())) {
-      try {
-        String code = readInputStream(myDataSource.openInputStream(fileName));
-
-        JavaParser.JavaParseResult parseResult = parser.parse(code, myJavaPackage, FeatureKind.CLASS_STUB, true);
-        if (ListSequence.fromList(parseResult.getNodes()).isNotEmpty()) {
-          for (SNode node : ListSequence.fromList(parseResult.getNodes())) {
-            SModelOperations.addRootNode(myModel, node);
-            MapSequence.fromMap(myRootsById).put(node.getSNodeId(), node);
-          }
-          MapSequence.fromMap(myRootsPerFile).put(fileName, SetSequence.fromSetWithValues(new HashSet<SNode>(), parseResult.getNodes()));
-        }
-
-      } catch (IOException e) {
-        LOG.error("Failed to read java file. " + e.getMessage(), e);
-      } catch (JavaParseException e) {
-        LOG.error("Failed to parse java file. " + e.getMessage());
-      }
-    }
+    processStreams(myDataSource.getAvailableStreams());
 
     return myModel;
   }
@@ -114,41 +96,69 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
 
     LOG.info("got change event");
 
-    // full rebuild 
-    mySModel = null;
-    // <node> 
-
-    final SNode n = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null);
-    SPropertyOperations.set(n, "name", "Bla");
-    ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
-      public void run() {
-        SModelOperations.addRootNode(myModel, n);
-      }
-    }, null);
-
-    try {
-      for (String item : Sequence.fromIterable(changedItems)) {
-        InputStream is = myDataSource.openInputStream(item);
-        if (is == null) {
-          // deleted 
-
-          continue;
-        }
-
-        // changed or created 
-
-      }
-
-    } catch (IOException e) {
-      LOG.error("Exception while handling change", e);
-    }
+    processStreams(changedItems);
   }
-
-
 
   @Override
   public void changed(DataSource source) {
     // ignore 
+  }
+
+
+
+  public void processStreams(Iterable<String> names) {
+    JavaParser parser = new JavaParser();
+
+    for (String fileName : Sequence.fromIterable(names)) {
+      try {
+        Set<SNode> oldNodes = SetSequence.fromSetWithValues(new HashSet<SNode>(), MapSequence.fromMap(myRootsPerFile).get(fileName));
+
+        InputStream is = myDataSource.openInputStream(fileName);
+        // we've come from event and file has been deleted 
+        if (is == null) {
+          SetSequence.fromSet(oldNodes).visitAll(new IVisitor<SNode>() {
+            public void visit(SNode it) {
+              SNodeOperations.deleteNode(it);
+            }
+          });
+          MapSequence.fromMap(myRootsPerFile).removeKey(fileName);
+          continue;
+        }
+        String code = readInputStream(is);
+
+        JavaParser.JavaParseResult parseResult = parser.parse(code, myJavaPackage, FeatureKind.CLASS_STUB, true);
+        if (ListSequence.fromList(parseResult.getNodes()).isNotEmpty()) {
+          for (SNode newNode : ListSequence.fromList(parseResult.getNodes())) {
+            final org.jetbrains.mps.openapi.model.SNodeId newNodeId = newNode.getSNodeId();
+            // oldNodes is usually very very small (number of root classes in java file) 
+            SNode oldNode = SetSequence.fromSet(oldNodes).where(new IWhereFilter<SNode>() {
+              public boolean accept(SNode it) {
+                return it.getSNodeId().equals(newNodeId);
+              }
+            }).first();
+            if (oldNode == null) {
+              SModelOperations.addRootNode(myModel, newNode);
+              SetSequence.fromSet(oldNodes).removeElement(oldNode);
+            } else {
+              SNodeOperations.replaceWithAnother(oldNode, newNode);
+            }
+            MapSequence.fromMap(myRootsById).put(newNode.getSNodeId(), newNode);
+          }
+        }
+
+        SetSequence.fromSet(oldNodes).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode it) {
+            SNodeOperations.deleteNode(it);
+          }
+        });
+        MapSequence.fromMap(myRootsPerFile).put(fileName, SetSequence.fromSetWithValues(new HashSet<SNode>(), parseResult.getNodes()));
+
+      } catch (IOException e) {
+        LOG.error("Failed to read java file. " + e.getMessage(), e);
+      } catch (JavaParseException e) {
+        LOG.error("Failed to parse java file. " + e.getMessage());
+      }
+    }
   }
 
   private String readInputStream(InputStream is) throws IOException {

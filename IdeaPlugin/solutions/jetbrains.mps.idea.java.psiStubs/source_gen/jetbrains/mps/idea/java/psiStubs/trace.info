@@ -1426,128 +1426,150 @@
     <unitInfo nodeId="9079491090144936020" fileName="EclipseJavaStubModelRoot.java" startLine="9" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.idea.java.psiStubs.EclipseJavaStubModelRoot" />
   </root>
   <root nodeId="9079491090146104459" modelId="r:e32ada56-1876-4524-85c0-29075cbd8d32(jetbrains.mps.idea.java.psiStubs)">
-    <nodeInfo nodeId="9079491090484345260" fileName="EclipseJavaStubDataSource.java" startLine="32" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="LOCK" />
-    <nodeInfo nodeId="9079491090326740929" fileName="EclipseJavaStubDataSource.java" startLine="33" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListeners" />
-    <nodeInfo nodeId="9079491090388230170" fileName="EclipseJavaStubDataSource.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtFileMgr" />
-    <nodeInfo nodeId="9079491090392379027" fileName="EclipseJavaStubDataSource.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileDocMgr" />
-    <nodeInfo nodeId="9079491090173391559" fileName="EclipseJavaStubDataSource.java" startLine="40" startPosition="77" endLine="41" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="9079491090485693724" fileName="EclipseJavaStubDataSource.java" startLine="41" startPosition="26" endLine="42" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9079491090390576500" fileName="EclipseJavaStubDataSource.java" startLine="42" startPosition="64" endLine="43" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9079491090393524329" fileName="EclipseJavaStubDataSource.java" startLine="43" startPosition="53" endLine="44" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9079491090485693433" fileName="EclipseJavaStubDataSource.java" startLine="44" startPosition="53" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="9079491090484505351" fileName="EclipseJavaStubDataSource.java" startLine="50" startPosition="63" endLine="51" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="9079491090484551737" fileName="EclipseJavaStubDataSource.java" startLine="53" startPosition="25" endLine="54" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1778218818515363289" fileName="EclipseJavaStubDataSource.java" startLine="55" startPosition="64" endLine="56" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="1778218818516074283" fileName="EclipseJavaStubDataSource.java" startLine="63" startPosition="63" endLine="64" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1778218818516054799" fileName="EclipseJavaStubDataSource.java" startLine="65" startPosition="5" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="9079491090484781367" fileName="EclipseJavaStubDataSource.java" startLine="67" startPosition="25" endLine="68" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1778218818515370720" fileName="EclipseJavaStubDataSource.java" startLine="69" startPosition="74" endLine="70" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="9079491090480996184" fileName="EclipseJavaStubDataSource.java" startLine="76" startPosition="70" endLine="77" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9079491090481182967" fileName="EclipseJavaStubDataSource.java" startLine="77" startPosition="32" endLine="78" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9079491090481277750" fileName="EclipseJavaStubDataSource.java" startLine="79" startPosition="24" endLine="80" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
-    <nodeInfo nodeId="9079491090398995204" fileName="EclipseJavaStubDataSource.java" startLine="81" startPosition="5" endLine="82" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9079491090400604608" fileName="EclipseJavaStubDataSource.java" startLine="83" startPosition="22" endLine="84" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9079491090418298466" fileName="EclipseJavaStubDataSource.java" startLine="85" startPosition="12" endLine="86" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9079491090417606806" fileName="EclipseJavaStubDataSource.java" startLine="86" startPosition="50" endLine="87" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9079491090263498321" fileName="EclipseJavaStubDataSource.java" startLine="96" startPosition="56" endLine="97" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9079491090325835665" fileName="EclipseJavaStubDataSource.java" startLine="97" startPosition="42" endLine="98" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9079491090428720949" fileName="EclipseJavaStubDataSource.java" startLine="98" startPosition="76" endLine="99" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9079491090431534232" fileName="EclipseJavaStubDataSource.java" startLine="99" startPosition="114" endLine="100" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9079491090460363186" fileName="EclipseJavaStubDataSource.java" startLine="100" startPosition="114" endLine="101" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="9079491090460246871" fileName="EclipseJavaStubDataSource.java" startLine="101" startPosition="20" endLine="102" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9079491090460306358" fileName="EclipseJavaStubDataSource.java" startLine="103" startPosition="74" endLine="104" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9079491090431537271" fileName="EclipseJavaStubDataSource.java" startLine="105" startPosition="7" endLine="106" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9079491090434123187" fileName="EclipseJavaStubDataSource.java" startLine="109" startPosition="87" endLine="110" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9079491090434123123" fileName="EclipseJavaStubDataSource.java" startLine="110" startPosition="76" endLine="111" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="9079491090436529237" fileName="EclipseJavaStubDataSource.java" startLine="112" startPosition="69" endLine="113" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="9079491090437589394" fileName="EclipseJavaStubDataSource.java" startLine="114" startPosition="43" endLine="115" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="9079491090438708900" fileName="EclipseJavaStubDataSource.java" startLine="116" startPosition="9" endLine="117" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9079491090443474023" fileName="EclipseJavaStubDataSource.java" startLine="118" startPosition="7" endLine="119" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="9079491090443544258" fileName="EclipseJavaStubDataSource.java" startLine="119" startPosition="0" endLine="120" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="9079491090485614804" fileName="EclipseJavaStubDataSource.java" startLine="34" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIdeaModule" />
-    <nodeInfo nodeId="9079491090192984996" fileName="EclipseJavaStubDataSource.java" startLine="92" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyPsiListener#()V" />
-    <nodeInfo nodeId="9079491090484473401" fileName="EclipseJavaStubDataSource.java" startLine="49" startPosition="56" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9079491090484712023" fileName="EclipseJavaStubDataSource.java" startLine="54" startPosition="92" endLine="57" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1778218818516058271" fileName="EclipseJavaStubDataSource.java" startLine="62" startPosition="59" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9079491090485054735" fileName="EclipseJavaStubDataSource.java" startLine="68" startPosition="112" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9079491090481039700" fileName="EclipseJavaStubDataSource.java" startLine="78" startPosition="63" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9079491090403335756" fileName="EclipseJavaStubDataSource.java" startLine="85" startPosition="10" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="9079491090460282400" fileName="EclipseJavaStubDataSource.java" startLine="102" startPosition="91" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="9079491090437219453" fileName="EclipseJavaStubDataSource.java" startLine="113" startPosition="60" endLine="116" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9079491090484570888" fileName="EclipseJavaStubDataSource.java" startLine="52" startPosition="5" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="9079491090484751560" fileName="EclipseJavaStubDataSource.java" startLine="66" startPosition="0" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
-    <nodeInfo nodeId="9079491090400507173" fileName="EclipseJavaStubDataSource.java" startLine="82" startPosition="51" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="9079491090146104461" fileName="EclipseJavaStubDataSource.java" startLine="40" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EclipseJavaStubDataSource#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/persistence/ModelRoot;)V" />
-    <nodeInfo nodeId="9079491090425089462" fileName="EclipseJavaStubDataSource.java" startLine="111" startPosition="0" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="9079491090180734878" fileName="EclipseJavaStubDataSource.java" startLine="48" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListener#(Lorg/jetbrains/mps/openapi/persistence/DataSourceListener;)V" />
-    <nodeInfo nodeId="9079491090182612357" fileName="EclipseJavaStubDataSource.java" startLine="61" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListener#(Lorg/jetbrains/mps/openapi/persistence/DataSourceListener;)V" />
-    <nodeInfo nodeId="9079491090196010801" fileName="EclipseJavaStubDataSource.java" startLine="95" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="psiChanged#(Ljetbrains/mps/idea/core/psi/PsiListener/PsiEvent;)V" />
-    <nodeInfo nodeId="9079491090423849462" fileName="EclipseJavaStubDataSource.java" startLine="109" startPosition="0" endLine="122" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleFsItems#(Ljava/lang/String;Ljava/lang/Iterable;)Ljava/util/Set;" />
-    <nodeInfo nodeId="9079491090374437901" fileName="EclipseJavaStubDataSource.java" startLine="75" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openInputStream#(Ljava/lang/String;)Ljava/io/InputStream;" />
-    <scopeInfo nodeId="9079491090192984999" fileName="EclipseJavaStubDataSource.java" startLine="92" startPosition="28" endLine="92" endPosition="28" />
-    <scopeInfo nodeId="9079491090484473403" fileName="EclipseJavaStubDataSource.java" startLine="50" startPosition="63" endLine="51" endPosition="88" />
-    <scopeInfo nodeId="9079491090484712025" fileName="EclipseJavaStubDataSource.java" startLine="55" startPosition="64" endLine="56" endPosition="15" />
-    <scopeInfo nodeId="1778218818516058276" fileName="EclipseJavaStubDataSource.java" startLine="63" startPosition="63" endLine="64" endPosition="13" />
-    <scopeInfo nodeId="9079491090485054737" fileName="EclipseJavaStubDataSource.java" startLine="69" startPosition="74" endLine="70" endPosition="15" />
-    <scopeInfo nodeId="9079491090481039702" fileName="EclipseJavaStubDataSource.java" startLine="79" startPosition="24" endLine="80" endPosition="70" />
-    <scopeInfo nodeId="9079491090400507175" fileName="EclipseJavaStubDataSource.java" startLine="83" startPosition="22" endLine="84" endPosition="36" />
-    <scopeInfo nodeId="9079491090460282406" fileName="EclipseJavaStubDataSource.java" startLine="103" startPosition="74" endLine="104" endPosition="49" />
-    <scopeInfo nodeId="9079491090437219455" fileName="EclipseJavaStubDataSource.java" startLine="114" startPosition="43" endLine="115" endPosition="19" />
-    <scopeInfo nodeId="9079491090403335757" fileName="EclipseJavaStubDataSource.java" startLine="85" startPosition="12" endLine="87" endPosition="49">
+    <nodeInfo nodeId="9079491090484345260" fileName="EclipseJavaStubDataSource.java" startLine="36" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="LOCK" />
+    <nodeInfo nodeId="9079491090326740929" fileName="EclipseJavaStubDataSource.java" startLine="37" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myListeners" />
+    <nodeInfo nodeId="9079491090388230170" fileName="EclipseJavaStubDataSource.java" startLine="44" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtFileMgr" />
+    <nodeInfo nodeId="9079491090392379027" fileName="EclipseJavaStubDataSource.java" startLine="45" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileDocMgr" />
+    <nodeInfo nodeId="336459899649463534" fileName="EclipseJavaStubDataSource.java" startLine="46" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myPsiListener" />
+    <nodeInfo nodeId="9079491090173391559" fileName="EclipseJavaStubDataSource.java" startLine="53" startPosition="77" endLine="54" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="9079491090485693724" fileName="EclipseJavaStubDataSource.java" startLine="54" startPosition="26" endLine="55" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="336459899654856700" fileName="EclipseJavaStubDataSource.java" startLine="56" startPosition="31" endLine="57" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9079491090390576500" fileName="EclipseJavaStubDataSource.java" startLine="58" startPosition="5" endLine="59" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9079491090393524329" fileName="EclipseJavaStubDataSource.java" startLine="59" startPosition="53" endLine="60" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9079491090485693433" fileName="EclipseJavaStubDataSource.java" startLine="60" startPosition="53" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9079491090484505351" fileName="EclipseJavaStubDataSource.java" startLine="66" startPosition="63" endLine="67" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="9079491090484551737" fileName="EclipseJavaStubDataSource.java" startLine="69" startPosition="25" endLine="70" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="336459899649318507" fileName="EclipseJavaStubDataSource.java" startLine="71" startPosition="88" endLine="72" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1778218818516074283" fileName="EclipseJavaStubDataSource.java" startLine="79" startPosition="63" endLine="80" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1778218818516054799" fileName="EclipseJavaStubDataSource.java" startLine="81" startPosition="5" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9079491090484781367" fileName="EclipseJavaStubDataSource.java" startLine="83" startPosition="25" endLine="84" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="336459899649572904" fileName="EclipseJavaStubDataSource.java" startLine="85" startPosition="98" endLine="86" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9079491090480996184" fileName="EclipseJavaStubDataSource.java" startLine="92" startPosition="70" endLine="93" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9079491090481182967" fileName="EclipseJavaStubDataSource.java" startLine="93" startPosition="32" endLine="94" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="336459899667545262" fileName="EclipseJavaStubDataSource.java" startLine="95" startPosition="24" endLine="96" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9079491090398995204" fileName="EclipseJavaStubDataSource.java" startLine="97" startPosition="5" endLine="98" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9079491090400604608" fileName="EclipseJavaStubDataSource.java" startLine="99" startPosition="22" endLine="100" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9079491090418298466" fileName="EclipseJavaStubDataSource.java" startLine="101" startPosition="12" endLine="102" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9079491090417606806" fileName="EclipseJavaStubDataSource.java" startLine="102" startPosition="50" endLine="103" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9079491090263498321" fileName="EclipseJavaStubDataSource.java" startLine="112" startPosition="56" endLine="113" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9079491090325835665" fileName="EclipseJavaStubDataSource.java" startLine="113" startPosition="42" endLine="114" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9079491090428720949" fileName="EclipseJavaStubDataSource.java" startLine="114" startPosition="82" endLine="115" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9079491090431534232" fileName="EclipseJavaStubDataSource.java" startLine="115" startPosition="114" endLine="116" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9079491090460363186" fileName="EclipseJavaStubDataSource.java" startLine="116" startPosition="114" endLine="117" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="9079491090460246871" fileName="EclipseJavaStubDataSource.java" startLine="117" startPosition="20" endLine="118" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9079491090460306358" fileName="EclipseJavaStubDataSource.java" startLine="119" startPosition="74" endLine="120" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9079491090431537271" fileName="EclipseJavaStubDataSource.java" startLine="121" startPosition="7" endLine="122" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="336459899651064398" fileName="EclipseJavaStubDataSource.java" startLine="122" startPosition="101" endLine="123" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="336459899651172425" fileName="EclipseJavaStubDataSource.java" startLine="127" startPosition="93" endLine="128" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9079491090434123187" fileName="EclipseJavaStubDataSource.java" startLine="135" startPosition="87" endLine="136" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9079491090434123123" fileName="EclipseJavaStubDataSource.java" startLine="136" startPosition="76" endLine="137" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="336459899652674730" fileName="EclipseJavaStubDataSource.java" startLine="138" startPosition="69" endLine="139" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9079491090436529237" fileName="EclipseJavaStubDataSource.java" startLine="139" startPosition="52" endLine="140" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="9079491090437589394" fileName="EclipseJavaStubDataSource.java" startLine="141" startPosition="43" endLine="142" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="9079491090438708900" fileName="EclipseJavaStubDataSource.java" startLine="143" startPosition="9" endLine="144" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9079491090443474023" fileName="EclipseJavaStubDataSource.java" startLine="145" startPosition="7" endLine="146" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="9079491090443544258" fileName="EclipseJavaStubDataSource.java" startLine="146" startPosition="0" endLine="147" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9079491090485614804" fileName="EclipseJavaStubDataSource.java" startLine="38" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIdeaModule" />
+    <nodeInfo nodeId="9079491090192984996" fileName="EclipseJavaStubDataSource.java" startLine="108" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyPsiListener#()V" />
+    <nodeInfo nodeId="336459899654802339" fileName="EclipseJavaStubDataSource.java" startLine="55" startPosition="64" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9079491090484473401" fileName="EclipseJavaStubDataSource.java" startLine="65" startPosition="56" endLine="68" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9079491090484712023" fileName="EclipseJavaStubDataSource.java" startLine="70" startPosition="92" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1778218818516058271" fileName="EclipseJavaStubDataSource.java" startLine="78" startPosition="59" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9079491090485054735" fileName="EclipseJavaStubDataSource.java" startLine="84" startPosition="112" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9079491090481039700" fileName="EclipseJavaStubDataSource.java" startLine="94" startPosition="63" endLine="97" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="9079491090403335756" fileName="EclipseJavaStubDataSource.java" startLine="101" startPosition="10" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="9079491090460282400" fileName="EclipseJavaStubDataSource.java" startLine="118" startPosition="91" endLine="121" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="336459899651073815" fileName="EclipseJavaStubDataSource.java" startLine="126" startPosition="29" endLine="129" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="9079491090437219453" fileName="EclipseJavaStubDataSource.java" startLine="140" startPosition="42" endLine="143" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="336459899654696209" fileName="EclipseJavaStubDataSource.java" startLine="40" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFakeMpsProject" />
+    <nodeInfo nodeId="336459899651612550" fileName="EclipseJavaStubDataSource.java" startLine="47" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="_this" />
+    <nodeInfo nodeId="336459899654526723" fileName="EclipseJavaStubDataSource.java" startLine="126" startPosition="0" endLine="131" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="9079491090484570888" fileName="EclipseJavaStubDataSource.java" startLine="68" startPosition="5" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="9079491090484751560" fileName="EclipseJavaStubDataSource.java" startLine="82" startPosition="0" endLine="88" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="9079491090400507173" fileName="EclipseJavaStubDataSource.java" startLine="98" startPosition="51" endLine="104" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="336459899654324300" fileName="EclipseJavaStubDataSource.java" startLine="124" startPosition="27" endLine="131" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9079491090425089462" fileName="EclipseJavaStubDataSource.java" startLine="137" startPosition="0" endLine="145" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="336459899651083042" fileName="EclipseJavaStubDataSource.java" startLine="123" startPosition="0" endLine="132" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SynchronizedStatement" />
+    <nodeInfo nodeId="9079491090146104461" fileName="EclipseJavaStubDataSource.java" startLine="53" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="EclipseJavaStubDataSource#(Ljetbrains/mps/vfs/IFile;Lorg/jetbrains/mps/openapi/persistence/ModelRoot;)V" />
+    <nodeInfo nodeId="9079491090180734878" fileName="EclipseJavaStubDataSource.java" startLine="64" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListener#(Lorg/jetbrains/mps/openapi/persistence/DataSourceListener;)V" />
+    <nodeInfo nodeId="9079491090182612357" fileName="EclipseJavaStubDataSource.java" startLine="77" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListener#(Lorg/jetbrains/mps/openapi/persistence/DataSourceListener;)V" />
+    <nodeInfo nodeId="9079491090423849462" fileName="EclipseJavaStubDataSource.java" startLine="135" startPosition="0" endLine="149" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="handleFsItems#(Ljava/lang/String;Ljava/lang/Iterable;)Ljava/util/Set;" />
+    <nodeInfo nodeId="9079491090374437901" fileName="EclipseJavaStubDataSource.java" startLine="91" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="openInputStream#(Ljava/lang/String;)Ljava/io/InputStream;" />
+    <nodeInfo nodeId="9079491090196010801" fileName="EclipseJavaStubDataSource.java" startLine="111" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="psiChanged#(Ljetbrains/mps/idea/core/psi/PsiListener/PsiEvent;)V" />
+    <scopeInfo nodeId="9079491090192984999" fileName="EclipseJavaStubDataSource.java" startLine="108" startPosition="28" endLine="108" endPosition="28" />
+    <scopeInfo nodeId="336459899654802341" fileName="EclipseJavaStubDataSource.java" startLine="56" startPosition="31" endLine="57" endPosition="67" />
+    <scopeInfo nodeId="9079491090484473403" fileName="EclipseJavaStubDataSource.java" startLine="66" startPosition="63" endLine="67" endPosition="88" />
+    <scopeInfo nodeId="9079491090484712025" fileName="EclipseJavaStubDataSource.java" startLine="71" startPosition="88" endLine="72" endPosition="99" />
+    <scopeInfo nodeId="1778218818516058276" fileName="EclipseJavaStubDataSource.java" startLine="79" startPosition="63" endLine="80" endPosition="13" />
+    <scopeInfo nodeId="9079491090485054737" fileName="EclipseJavaStubDataSource.java" startLine="85" startPosition="98" endLine="86" endPosition="102" />
+    <scopeInfo nodeId="9079491090481039702" fileName="EclipseJavaStubDataSource.java" startLine="95" startPosition="24" endLine="96" endPosition="18" />
+    <scopeInfo nodeId="9079491090400507175" fileName="EclipseJavaStubDataSource.java" startLine="99" startPosition="22" endLine="100" endPosition="36" />
+    <scopeInfo nodeId="9079491090460282406" fileName="EclipseJavaStubDataSource.java" startLine="119" startPosition="74" endLine="120" endPosition="49" />
+    <scopeInfo nodeId="336459899651073821" fileName="EclipseJavaStubDataSource.java" startLine="127" startPosition="93" endLine="128" endPosition="52" />
+    <scopeInfo nodeId="9079491090437219455" fileName="EclipseJavaStubDataSource.java" startLine="141" startPosition="43" endLine="142" endPosition="19" />
+    <scopeInfo nodeId="9079491090403335757" fileName="EclipseJavaStubDataSource.java" startLine="101" startPosition="12" endLine="103" endPosition="49">
       <varInfo nodeId="9079491090418298469" varName="textBytes" />
     </scopeInfo>
-    <scopeInfo nodeId="9079491090192984996" fileName="EclipseJavaStubDataSource.java" startLine="92" startPosition="0" endLine="94" endPosition="0" />
-    <scopeInfo nodeId="9079491090460282400" fileName="EclipseJavaStubDataSource.java" startLine="102" startPosition="91" endLine="105" endPosition="7">
+    <scopeInfo nodeId="9079491090192984996" fileName="EclipseJavaStubDataSource.java" startLine="108" startPosition="0" endLine="110" endPosition="0" />
+    <scopeInfo nodeId="9079491090460282400" fileName="EclipseJavaStubDataSource.java" startLine="118" startPosition="91" endLine="121" endPosition="7">
       <varInfo nodeId="9079491090460282402" varName="f" />
     </scopeInfo>
-    <scopeInfo nodeId="9079491090484570892" fileName="EclipseJavaStubDataSource.java" startLine="53" startPosition="25" endLine="57" endPosition="7" />
-    <scopeInfo nodeId="9079491090484751562" fileName="EclipseJavaStubDataSource.java" startLine="67" startPosition="25" endLine="71" endPosition="7">
+    <scopeInfo nodeId="336459899651073815" fileName="EclipseJavaStubDataSource.java" startLine="126" startPosition="29" endLine="129" endPosition="13">
+      <varInfo nodeId="336459899651073817" varName="listener" />
+    </scopeInfo>
+    <scopeInfo nodeId="336459899654526727" fileName="EclipseJavaStubDataSource.java" startLine="126" startPosition="29" endLine="129" endPosition="13" />
+    <scopeInfo nodeId="9079491090484570892" fileName="EclipseJavaStubDataSource.java" startLine="69" startPosition="25" endLine="73" endPosition="7" />
+    <scopeInfo nodeId="9079491090484751562" fileName="EclipseJavaStubDataSource.java" startLine="83" startPosition="25" endLine="87" endPosition="7">
       <varInfo nodeId="9079491090484781370" varName="removed" />
     </scopeInfo>
-    <scopeInfo nodeId="9079491090146104464" fileName="EclipseJavaStubDataSource.java" startLine="40" startPosition="77" endLine="45" endPosition="0" />
-    <scopeInfo nodeId="9079491090425089467" fileName="EclipseJavaStubDataSource.java" startLine="112" startPosition="69" endLine="117" endPosition="63">
+    <scopeInfo nodeId="336459899654526723" fileName="EclipseJavaStubDataSource.java" startLine="126" startPosition="0" endLine="131" endPosition="0" />
+    <scopeInfo nodeId="9079491090425089467" fileName="EclipseJavaStubDataSource.java" startLine="138" startPosition="69" endLine="144" endPosition="70">
       <varInfo nodeId="9079491090436529238" varName="itemPath" />
+      <varInfo nodeId="336459899652674731" varName="vFile" />
     </scopeInfo>
-    <scopeInfo nodeId="9079491090146104461" fileName="EclipseJavaStubDataSource.java" startLine="40" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="336459899651083046" fileName="EclipseJavaStubDataSource.java" startLine="124" startPosition="27" endLine="131" endPosition="29" />
+    <scopeInfo nodeId="9079491090146104464" fileName="EclipseJavaStubDataSource.java" startLine="53" startPosition="77" endLine="61" endPosition="0" />
+    <scopeInfo nodeId="9079491090425089462" fileName="EclipseJavaStubDataSource.java" startLine="137" startPosition="0" endLine="145" endPosition="7">
+      <varInfo nodeId="9079491090425089466" varName="fsItem" />
+    </scopeInfo>
+    <scopeInfo nodeId="9079491090180734882" fileName="EclipseJavaStubDataSource.java" startLine="65" startPosition="56" endLine="74" endPosition="5" />
+    <scopeInfo nodeId="9079491090146104461" fileName="EclipseJavaStubDataSource.java" startLine="53" startPosition="0" endLine="63" endPosition="0">
       <varInfo nodeId="9079491090146704580" varName="dir" />
       <varInfo nodeId="9079491090146713643" varName="modelRoot" />
     </scopeInfo>
-    <scopeInfo nodeId="9079491090425089462" fileName="EclipseJavaStubDataSource.java" startLine="111" startPosition="0" endLine="118" endPosition="7">
-      <varInfo nodeId="9079491090425089466" varName="fsItem" />
-    </scopeInfo>
-    <scopeInfo nodeId="9079491090180734882" fileName="EclipseJavaStubDataSource.java" startLine="49" startPosition="56" endLine="58" endPosition="5" />
-    <scopeInfo nodeId="9079491090182612360" fileName="EclipseJavaStubDataSource.java" startLine="62" startPosition="59" endLine="72" endPosition="5" />
-    <scopeInfo nodeId="9079491090196010807" fileName="EclipseJavaStubDataSource.java" startLine="96" startPosition="56" endLine="106" endPosition="101">
-      <varInfo nodeId="9079491090325835668" varName="changedItems" />
-      <varInfo nodeId="9079491090460246874" varName="files" />
-      <varInfo nodeId="9079491090263498324" varName="path" />
-    </scopeInfo>
-    <scopeInfo nodeId="9079491090423849466" fileName="EclipseJavaStubDataSource.java" startLine="109" startPosition="87" endLine="120" endPosition="26">
-      <varInfo nodeId="9079491090434123188" varName="changedItems" />
-    </scopeInfo>
-    <scopeInfo nodeId="9079491090180734878" fileName="EclipseJavaStubDataSource.java" startLine="48" startPosition="0" endLine="60" endPosition="0">
+    <scopeInfo nodeId="9079491090182612360" fileName="EclipseJavaStubDataSource.java" startLine="78" startPosition="59" endLine="88" endPosition="5" />
+    <scopeInfo nodeId="9079491090180734878" fileName="EclipseJavaStubDataSource.java" startLine="64" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="9079491090181977968" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="9079491090374437905" fileName="EclipseJavaStubDataSource.java" startLine="76" startPosition="70" endLine="88" endPosition="5">
+    <scopeInfo nodeId="9079491090374437905" fileName="EclipseJavaStubDataSource.java" startLine="92" startPosition="70" endLine="104" endPosition="5">
       <varInfo nodeId="9079491090398995205" varName="doc" />
       <varInfo nodeId="9079491090480996185" varName="ifile" />
       <varInfo nodeId="9079491090481182968" varName="vfile" />
     </scopeInfo>
-    <scopeInfo nodeId="9079491090182612357" fileName="EclipseJavaStubDataSource.java" startLine="61" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="9079491090423849466" fileName="EclipseJavaStubDataSource.java" startLine="135" startPosition="87" endLine="147" endPosition="26">
+      <varInfo nodeId="9079491090434123188" varName="changedItems" />
+    </scopeInfo>
+    <scopeInfo nodeId="9079491090182612357" fileName="EclipseJavaStubDataSource.java" startLine="77" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="9079491090182612362" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="9079491090196010801" fileName="EclipseJavaStubDataSource.java" startLine="95" startPosition="0" endLine="108" endPosition="0">
-      <varInfo nodeId="9079491090196010803" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="9079491090423849462" fileName="EclipseJavaStubDataSource.java" startLine="109" startPosition="0" endLine="122" endPosition="0">
+    <scopeInfo nodeId="9079491090423849462" fileName="EclipseJavaStubDataSource.java" startLine="135" startPosition="0" endLine="149" endPosition="0">
       <varInfo nodeId="9079491090424228077" varName="items" />
       <varInfo nodeId="9079491090425250394" varName="path" />
     </scopeInfo>
-    <scopeInfo nodeId="9079491090374437901" fileName="EclipseJavaStubDataSource.java" startLine="75" startPosition="0" endLine="90" endPosition="0">
+    <scopeInfo nodeId="9079491090374437901" fileName="EclipseJavaStubDataSource.java" startLine="91" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="9079491090375917237" varName="name" />
     </scopeInfo>
-    <unitInfo nodeId="9079491090192984993" fileName="EclipseJavaStubDataSource.java" startLine="91" startPosition="0" endLine="123" endPosition="0" unitName="jetbrains.mps.idea.java.psiStubs.EclipseJavaStubDataSource$MyPsiListener" />
-    <unitInfo nodeId="9079491090146104459" fileName="EclipseJavaStubDataSource.java" startLine="30" startPosition="0" endLine="124" endPosition="0" unitName="jetbrains.mps.idea.java.psiStubs.EclipseJavaStubDataSource" />
+    <scopeInfo nodeId="9079491090196010807" fileName="EclipseJavaStubDataSource.java" startLine="112" startPosition="56" endLine="132" endPosition="7">
+      <varInfo nodeId="9079491090325835668" varName="changedItems" />
+      <varInfo nodeId="9079491090460246874" varName="files" />
+      <varInfo nodeId="9079491090263498324" varName="path" />
+    </scopeInfo>
+    <scopeInfo nodeId="9079491090196010801" fileName="EclipseJavaStubDataSource.java" startLine="111" startPosition="0" endLine="134" endPosition="0">
+      <varInfo nodeId="9079491090196010803" varName="event" />
+    </scopeInfo>
+    <unitInfo nodeId="336459899654526721" fileName="EclipseJavaStubDataSource.java" startLine="125" startPosition="51" endLine="131" endPosition="9" unitName="jetbrains.mps.idea.java.psiStubs.EclipseJavaStubDataSource$1" />
+    <unitInfo nodeId="9079491090192984993" fileName="EclipseJavaStubDataSource.java" startLine="107" startPosition="0" endLine="150" endPosition="0" unitName="jetbrains.mps.idea.java.psiStubs.EclipseJavaStubDataSource$MyPsiListener" />
+    <unitInfo nodeId="9079491090146104459" fileName="EclipseJavaStubDataSource.java" startLine="34" startPosition="0" endLine="151" endPosition="0" unitName="jetbrains.mps.idea.java.psiStubs.EclipseJavaStubDataSource" />
   </root>
 </debugInfo>
 

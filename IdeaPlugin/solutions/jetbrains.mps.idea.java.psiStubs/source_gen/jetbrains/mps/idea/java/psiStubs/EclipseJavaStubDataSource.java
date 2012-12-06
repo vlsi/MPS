@@ -9,13 +9,16 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.module.Module;
+import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.fileEditor.FileDocumentManager;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.idea.core.project.PluginModelRootUtil;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
+import jetbrains.mps.idea.core.psi.PsiChangesWatcher;
 import java.io.InputStream;
 import java.io.IOException;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -25,6 +28,7 @@ import java.io.ByteArrayInputStream;
 import jetbrains.mps.idea.core.psi.PsiListener;
 import com.intellij.psi.PsiFileSystemItem;
 import com.intellij.psi.PsiFile;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 
 public class EclipseJavaStubDataSource extends MPSJavaSrcDataSource {
@@ -33,13 +37,25 @@ public class EclipseJavaStubDataSource extends MPSJavaSrcDataSource {
   private Set<MultiStreamDataSourceListener> myListeners = SetSequence.fromSet(new HashSet<MultiStreamDataSourceListener>());
   @Nullable
   private Module myIdeaModule;
+  /**
+   * WILL GO AWAY
+   */
+  private MPSProject myFakeMpsProject;
   private VirtualFileManager myVirtFileMgr;
   private FileDocumentManager myFileDocMgr;
+  private EclipseJavaStubDataSource.MyPsiListener myPsiListener = new EclipseJavaStubDataSource.MyPsiListener();
+  /**
+   * Needed in inner class MyPsiListener. BL doesn't have qualified this.
+   */
+  private DataSource _this = this;
 
 
   public EclipseJavaStubDataSource(@NotNull IFile dir, ModelRoot modelRoot) {
     super(dir, modelRoot);
     myIdeaModule = PluginModelRootUtil.getIdeaModule(modelRoot);
+    if (myIdeaModule != null) {
+      myFakeMpsProject = new MPSProject(myIdeaModule.getProject());
+    }
     myVirtFileMgr = VirtualFileManager.getInstance();
     myFileDocMgr = FileDocumentManager.getInstance();
 
@@ -52,8 +68,8 @@ public class EclipseJavaStubDataSource extends MPSJavaSrcDataSource {
     }
     synchronized (LOCK) {
       SetSequence.fromSet(myListeners).addElement((MultiStreamDataSourceListener) listener);
-      if ((int) SetSequence.fromSet(myListeners).count() == 1) {
-        // ... 
+      if ((int) SetSequence.fromSet(myListeners).count() == 1 && myIdeaModule != null) {
+        myIdeaModule.getProject().getComponent(PsiChangesWatcher.class).addListener(myPsiListener);
       }
     }
   }
@@ -66,8 +82,8 @@ public class EclipseJavaStubDataSource extends MPSJavaSrcDataSource {
 
     synchronized (LOCK) {
       Object removed = SetSequence.fromSet(myListeners).removeElement((MultiStreamDataSourceListener) listener);
-      if (removed != null && SetSequence.fromSet(myListeners).isEmpty()) {
-        // ... 
+      if (removed != null && SetSequence.fromSet(myListeners).isEmpty() && myIdeaModule != null) {
+        myIdeaModule.getProject().getComponent(PsiChangesWatcher.class).removeListener(myPsiListener);
       }
     }
   }
@@ -77,7 +93,7 @@ public class EclipseJavaStubDataSource extends MPSJavaSrcDataSource {
     IFile ifile = getFile(name);
     VirtualFile vfile = VirtualFileUtils.getVirtualFile(ifile);
     if (vfile == null) {
-      throw new IOException("Could not open stream by name: " + name);
+      return null;
     }
     Document doc = myFileDocMgr.getDocument(vfile);
     if (doc == null) {
@@ -95,7 +111,7 @@ public class EclipseJavaStubDataSource extends MPSJavaSrcDataSource {
     @Override
     public void psiChanged(PsiListener.PsiEvent event) {
       String path = getFolder().getPath();
-      Set<String> changedItems = SetSequence.fromSet(new HashSet<String>());
+      final Set<String> changedItems = SetSequence.fromSet(new HashSet<String>());
       SetSequence.fromSet(changedItems).addSequence(SetSequence.fromSet(handleFsItems(path, event.getCreated())));
       SetSequence.fromSet(changedItems).addSequence(SetSequence.fromSet(handleFsItems(path, event.getRemoved())));
       // not pretty 
@@ -104,17 +120,28 @@ public class EclipseJavaStubDataSource extends MPSJavaSrcDataSource {
         SetSequence.fromSet(files).addElement(f);
       }
       SetSequence.fromSet(changedItems).addSequence(SetSequence.fromSet(handleFsItems(path, files)));
+
+      synchronized (LOCK) {
+        ModelAccess.instance().runCommandInEDT(new Runnable() {
+          public void run() {
+            for (MultiStreamDataSourceListener listener : SetSequence.fromSet(myListeners)) {
+              listener.changed(_this, changedItems);
+            }
+          }
+        }, myFakeMpsProject);
+      }
     }
 
     private Set<String> handleFsItems(String path, Iterable<PsiFileSystemItem> items) {
       Set<String> changedItems = SetSequence.fromSet(new HashSet<String>());
 
       for (PsiFileSystemItem fsItem : Sequence.fromIterable(items)) {
-        String itemPath = fsItem.getVirtualFile().getPath();
+        VirtualFile vFile = fsItem.getVirtualFile();
+        String itemPath = vFile.getPath();
         if (!(itemPath.startsWith(path))) {
           continue;
         }
-        SetSequence.fromSet(changedItems).addElement(itemPath);
+        SetSequence.fromSet(changedItems).addElement(vFile.getName());
       }
 
       return changedItems;

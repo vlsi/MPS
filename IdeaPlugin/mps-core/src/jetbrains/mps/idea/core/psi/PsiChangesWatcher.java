@@ -214,19 +214,15 @@ public class PsiChangesWatcher implements ProjectComponent {
     @Override
     public void run() {
       // notify our listeners
-      //  FIXME use runWriteInEDT ?
-      ThreadUtils.runInUIThreadNoWait(new Runnable() {
-        @Override
+
+      ModelAccess.instance().runWriteInEDT(new Runnable() {
         public void run() {
-          ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
-            public void run() {
-              for (PsiListener l: myListeners) {
-                l.psiChanged(data);
-              }
-            }
-          }, null);
+          for (PsiListener l: myListeners) {
+            l.psiChanged(data);
+          }
         }
       });
+
       myCollectedData = new PsiChangeData();
       myTimerTask = null;
     }
