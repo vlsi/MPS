@@ -4,6 +4,7 @@ package jetbrains.mps.build.ant;
 
 import java.util.Map;
 import java.io.File;
+import org.apache.log4j.Level;
 import jetbrains.mps.tool.builder.util.SetLibraryContributor;
 import jetbrains.mps.project.PathMacrosProvider;
 import jetbrains.mps.logging.ILoggingHandler;
@@ -27,13 +28,12 @@ import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.tool.builder.util.PathManager;
 import jetbrains.mps.smodel.ModelAccess;
-import org.apache.log4j.Level;
 
 public class Environment {
   private Map<String, String> myMacro;
   private boolean myLoadBootstrapLibraries;
   private Map<String, File> myLibraries;
-  private int myLogLevel;
+  private Level myLogLevel;
   private SetLibraryContributor myLibraryContibutor;
   private PathMacrosProvider myMacroProvider;
   private ILoggingHandler myMessageHandler;
@@ -41,7 +41,7 @@ public class Environment {
   public Environment() {
   }
 
-  public void init(Map<String, String> macro, boolean isLoadBootstarpLibraries, Map<String, File> libraries, int logLevel, ILoggingHandler lh) {
+  public void init(Map<String, String> macro, boolean isLoadBootstarpLibraries, Map<String, File> libraries, Level logLevel, ILoggingHandler lh) {
     myMacro = macro;
     myLoadBootstrapLibraries = isLoadBootstarpLibraries;
     myLibraries = libraries;
@@ -51,7 +51,7 @@ public class Environment {
 
   public void setup() {
     BasicConfigurator.configure(new ConsoleAppender(new SimpleLayout()));
-    Logger.getRootLogger().setLevel(getLog4jLevel());
+    Logger.getRootLogger().setLevel(myLogLevel);
     jetbrains.mps.logging.Logger.addLoggingHandler(myMessageHandler);
     MpsPlatform.init();
     MPSCore.getInstance().setTestMode();
@@ -152,25 +152,6 @@ public class Environment {
         pluginPath.append(pluginFolder.getPath());
       }
       System.setProperty("plugin.path", pluginPath.toString());
-    }
-  }
-
-  private Level getLog4jLevel() {
-    //  still warn, info only for messages from this task 
-    //  now we have info 
-    switch (myLogLevel) {
-      case org.apache.tools.ant.Project.MSG_ERR:
-        return Level.ERROR;
-      case org.apache.tools.ant.Project.MSG_WARN:
-        return Level.WARN;
-      case org.apache.tools.ant.Project.MSG_INFO:
-        return Level.WARN;
-      case org.apache.tools.ant.Project.MSG_VERBOSE:
-        return Level.INFO;
-      case org.apache.tools.ant.Project.MSG_DEBUG:
-        return Level.DEBUG;
-      default:
-        return null;
     }
   }
 }

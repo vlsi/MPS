@@ -8,7 +8,7 @@ import java.util.LinkedHashSet;
 import java.util.Map;
 import java.util.List;
 import java.util.LinkedHashMap;
-import org.apache.tools.ant.Project;
+import org.apache.log4j.Level;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -39,7 +39,7 @@ public class WhatToDo {
   private final Map<String, File> myLibraries = new LinkedHashMap<String, File>();
   private final Set<String> myCompiledLibraries = new LinkedHashSet<String>();
   private final Map<String, String> myMacro = new LinkedHashMap<String, String>();
-  private int myLogLevel = Project.MSG_INFO;
+  private Level myLogLevel = Level.INFO;
   private final Map<String, String> myProperties = new LinkedHashMap<String, String>();
   private final List<String> myParameters = new ArrayList<String>();
   private boolean myLoadBootstrapLibraries = true;
@@ -162,11 +162,11 @@ public class WhatToDo {
     myMacro.putAll(macro);
   }
 
-  public void updateLogLevel(int level) {
+  public void updateLogLevel(Level level) {
     myLogLevel = level;
   }
 
-  public int getLogLevel() {
+  public Level getLogLevel() {
     return myLogLevel;
   }
 

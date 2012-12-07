@@ -16,6 +16,7 @@
 package jetbrains.mps.build.ant;
 
 import junit.framework.TestCase;
+import org.apache.log4j.Level;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -81,7 +82,7 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
     WhatToDo toDo = new WhatToDo();
 
     toDo.updateFailOnError(true);
-    toDo.updateLogLevel(239);
+    toDo.updateLogLevel(Level.INFO);
     LinkedHashMap<String, String> properties = new LinkedHashMap<String, String>();
     properties.put("name1", "value1");
     properties.put("name2", "value2");

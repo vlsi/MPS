@@ -30,6 +30,7 @@ import java.io.InputStream;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import org.apache.tools.ant.types.EnumeratedAttribute;
+import org.apache.log4j.Level;
 import java.util.Scanner;
 
 public abstract class MpsLoadTask extends Task {
@@ -388,45 +389,20 @@ public abstract class MpsLoadTask extends Task {
     return null;
   }
 
-  private static   enum LogLevel {
-    ERROR(Project.MSG_ERR),
-    WARNING(Project.MSG_WARN),
-    INFO(Project.MSG_INFO),
-    DEBUG(Project.MSG_DEBUG);
-
-    private int myLevel;
-
-    LogLevel(int level) {
-      myLevel = level;
-    }
-
-    public int getLevel() {
-      return myLevel;
-    }
-  }
-
   public static class LogLevelAttribute extends EnumeratedAttribute {
-    private static final List<String> myLevels = new ArrayList<String>();
-
     public LogLevelAttribute() {
     }
 
     public String[] getValues() {
-      return myLevels.toArray(new String[myLevels.size()]);
+      return new String[]{"error", "warn", "warning", "info", "debug"};
     }
 
-    public int getLevel() {
-      return MpsLoadTask.LogLevel.values()[myLevels.indexOf(getValue())].getLevel();
-    }
-
-    private static String getLevelText(MpsLoadTask.LogLevel l) {
-      return l.name().toLowerCase();
-    }
-
-    static {
-      for (MpsLoadTask.LogLevel l : MpsLoadTask.LogLevel.values()) {
-        myLevels.add(MpsLoadTask.LogLevelAttribute.getLevelText(l));
+    public Level getLevel() {
+      String val = getValue();
+      if ("warning".equalsIgnoreCase(val)) {
+        val = "warn";
       }
+      return Level.toLevel(val);
     }
   }
 

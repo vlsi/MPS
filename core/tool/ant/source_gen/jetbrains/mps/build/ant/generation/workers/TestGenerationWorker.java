@@ -545,7 +545,7 @@ public class TestGenerationWorker extends MpsWorker {
           myReporter.outputLine("[WARNING]" + msg.getText());
           break;
         case INFORMATION:
-          TestGenerationWorker.this.verbose(msg.getText());
+          TestGenerationWorker.this.info(msg.getText());
           myReporter.outputLine("[INFO]" + msg.getText());
           break;
         default:
