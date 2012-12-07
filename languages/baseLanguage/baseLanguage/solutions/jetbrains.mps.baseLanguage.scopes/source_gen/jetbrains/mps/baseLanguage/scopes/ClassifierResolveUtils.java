@@ -16,9 +16,9 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -117,12 +117,18 @@ public class ClassifierResolveUtils {
   }
 
   private static Iterable<SNode> resolveClassifierByFqNameWithNonStubPriority(Iterable<SModelDescriptor> models, String classifierFqName) {
+    models = Sequence.fromIterable(models).where(new IWhereFilter<SModelDescriptor>() {
+      public boolean accept(SModelDescriptor it) {
+        return !(it.isTransient());
+      }
+    });
+
     final String stubStereoType = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
 
     // resolve without stubs 
     Iterable<SNode> result = resolveClassifierByFqName(Sequence.fromIterable(models).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor it) {
-        return neq_8z6r2b_a0a0a0a0a0a0d0f(it.getStereotype(), stubStereoType);
+        return neq_8z6r2b_a0a0a0a0a0a0f0f(it.getStereotype(), stubStereoType);
       }
     }), classifierFqName);
     if (Sequence.fromIterable(result).isNotEmpty()) {
@@ -132,7 +138,7 @@ public class ClassifierResolveUtils {
     // resolve with stubs 
     return resolveClassifierByFqName(Sequence.fromIterable(models).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor it) {
-        return eq_8z6r2b_a0a0a0a0a0a7a5(it.getStereotype(), stubStereoType);
+        return eq_8z6r2b_a0a0a0a0a0a9a5(it.getStereotype(), stubStereoType);
       }
     }), classifierFqName);
   }
@@ -265,14 +271,14 @@ public class ClassifierResolveUtils {
     );
   }
 
-  private static boolean neq_8z6r2b_a0a0a0a0a0a0d0f(Object a, Object b) {
+  private static boolean neq_8z6r2b_a0a0a0a0a0a0f0f(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean eq_8z6r2b_a0a0a0a0a0a7a5(Object a, Object b) {
+  private static boolean eq_8z6r2b_a0a0a0a0a0a9a5(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
