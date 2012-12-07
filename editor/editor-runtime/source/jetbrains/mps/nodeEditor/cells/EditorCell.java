@@ -35,6 +35,7 @@ import java.util.Set;
 public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.EditorCell {
   static final EditorCell[] EMPTY_ARRAY = new EditorCell[0];
 
+  // TODO: Pulled up to jetbrains.mps.openapi.editor.EditorCell. Remove it.
   void setX(int x);
 
   void setY(int y);
@@ -55,7 +56,7 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.Edit
   int getTopInset();
   int getBottomInset();
 
-  Rectangle getBounds();
+  // END of pull up
 
   void moveTo(int x, int y);
   

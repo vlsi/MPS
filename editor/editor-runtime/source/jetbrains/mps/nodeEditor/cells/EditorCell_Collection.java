@@ -526,7 +526,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements Iterable<
     final EditorComponent editorComponent = getEditor();
     editorComponent.addMouseListener(myUnfoldCollectionMouseListener = new MouseAdapter() {
       public void mouseClicked(MouseEvent e) {
-        if (getBounds().contains(e.getPoint())) {
+        if (GeometryUtil.contains(EditorCell_Collection.this, e.getX(), e.getY())) {
           editorComponent.clearSelectionStack();
           editorComponent.changeSelection(getFoldedCell());
           unfold();

@@ -17,18 +17,19 @@ package jetbrains.mps.nodeEditor.cellLayout;
 
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
-import jetbrains.mps.nodeEditor.*;
+import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.GeometryUtil;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.text.TextBuilder;
 
+import java.awt.Rectangle;
 import java.util.ArrayList;
-import java.util.Set;
 import java.util.HashSet;
 import java.util.Iterator;
-import java.awt.Rectangle;
 import java.util.List;
+import java.util.Set;
 
 /**
  * User: Sergey Dmitriev
@@ -311,7 +312,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
     LOG.assertLog(getFlowLayout(editorCells) == this);
     List<Rectangle> result = new ArrayList<Rectangle>();
     for (EditorCell cell : editorCells) {
-      result.add(cell.getBounds());
+      result.add(GeometryUtil.getBounds(editorCells));
     }
     return result;
   }

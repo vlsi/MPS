@@ -904,7 +904,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private List<HighlighterMessage> getHighlighterMessagesFor(EditorCell cell) {
     EditorCell parent = cell;
     while (parent != null) {
-      if (cell.getBounds().getMaxY() < parent.getBounds().getMaxY() && parent.getSNode() != cell.getSNode()) {
+      if (cell.getBottom() < parent.getBottom() && parent.getSNode() != cell.getSNode()) {
         return Collections.emptyList();
       }
       List<HighlighterMessage> messages = parent.getMessages(HighlighterMessage.class);
@@ -919,19 +919,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   // TODO: remove this method and use getHighlighterMessagesFor(EditorCell cell) instead
   private HighlighterMessage getHighlighterMessageFor(EditorCell cell) {
-    EditorCell parent = cell;
-    while (parent != null) {
-      if (cell.getBounds().getMaxY() < parent.getBounds().getMaxY() && parent.getSNode() != cell.getSNode()) {
-        return null;
-      }
-      List<HighlighterMessage> messages = parent.getMessages(HighlighterMessage.class);
-      if (!messages.isEmpty()) {
-        return messages.get(0);
-      }
-      parent = parent.getParent();
-    }
-
-    return null;
+    List<HighlighterMessage> highlighterMessages = getHighlighterMessagesFor(cell);
+    return highlighterMessages.isEmpty() ? null : highlighterMessages.get(0);
   }
 
   public IErrorReporter getErrorReporterFor(EditorCell cell) {
@@ -1034,7 +1023,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       for (AdditionalPainter additionalPainter : myAdditionalPainters) {
         Rectangle coverageArea = additionalPainter.getCoverageArea(this);
         if (coverageArea != null) {
-          if (coverageArea.contains(cell.getBounds())) {
+          if (coverageArea.contains(cell.getX(), cell.getY(), cell.getWidth(), cell.getHeight())) {
             Color color = additionalPainter.getCellsFontColor(cell);
             if (color != null) return color;
           }

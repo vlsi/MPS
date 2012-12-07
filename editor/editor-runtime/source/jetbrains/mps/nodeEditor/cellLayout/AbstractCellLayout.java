@@ -17,6 +17,7 @@ package jetbrains.mps.nodeEditor.cellLayout;
 
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 
 import java.awt.Rectangle;
 import java.util.Arrays;
@@ -41,7 +42,7 @@ public abstract class AbstractCellLayout implements CellLayout, CellLayoutExt {
   }
 
   public List<Rectangle> getSelectionBounds(EditorCell_Collection editorCells) {
-    return Arrays.asList(editorCells.getBounds());
+    return Arrays.asList(GeometryUtil.getBounds(editorCells));
   }
 
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
