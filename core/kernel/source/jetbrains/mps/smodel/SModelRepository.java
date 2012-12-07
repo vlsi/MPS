@@ -36,7 +36,6 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class SModelRepository implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(SModelRepository.class);
-  private ClassLoaderManager myManager;
 
   public static SModelRepository getInstance() {
     return MPSCore.getInstance().getModelRepository();
@@ -54,8 +53,9 @@ public class SModelRepository implements CoreComponent {
 
   private SModelListener myModelsListener = new ModelChangeListener();
 
+  @SuppressWarnings("UnusedParameters")
   public SModelRepository(ClassLoaderManager manager) {
-    myManager = manager;
+
   }
 
   @Override
