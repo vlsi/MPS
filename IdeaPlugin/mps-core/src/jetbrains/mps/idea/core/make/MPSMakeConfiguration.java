@@ -16,7 +16,8 @@
 
 package jetbrains.mps.idea.core.make;
 
-import jetbrains.mps.build.ant.WhatToDo;
+import jetbrains.mps.tool.common.Script;
+import org.apache.log4j.Level;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -24,7 +25,7 @@ import java.util.Map;
 
 public class MPSMakeConfiguration {
     
-    private final WhatToDo myWhatToDo = new WhatToDo();
+    private final Script myWhatToDo = new Script();
 
     public MPSMakeConfiguration() {
       myWhatToDo.setLoadBootstrapLibraries(false);
@@ -48,7 +49,7 @@ public class MPSMakeConfiguration {
         myWhatToDo.updateFailOnError(failOnError);
     }
 
-    public void setLogLevel(int logLevel) {
+    public void setLogLevel(Level logLevel) {
         myWhatToDo.updateLogLevel(logLevel);
     }
 
