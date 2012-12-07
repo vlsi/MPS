@@ -115,7 +115,7 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
           public SNode select(SNode it) {
             return SLinkOperations.getTarget(it, "annotation", false);
           }
-        }).contains(SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)", "~NotNull"))) {
+        }).contains(SNodeOperations.getNode("f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~NotNull"))) {
           SNode value = (SNode) write.getValue();
           if (SNodeOperations.isInstanceOf(value, "jetbrains.mps.baseLanguage.structure.VariableReference")) {
             value = SLinkOperations.getTarget(SNodeOperations.cast(value, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false);
@@ -140,7 +140,7 @@ public class check_NullableStates_NonTypesystemRule extends AbstractNonTypesyste
         public SNode select(SNode it) {
           return SLinkOperations.getTarget(it, "annotation", false);
         }
-      }).contains(SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)", "~NotNull"))) {
+      }).contains(SNodeOperations.getNode("f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~NotNull"))) {
         for (SNode returnStatement : RulesFunctions_BaseLanguage.collectReturnStatements(SLinkOperations.getTarget(method, "body", true))) {
           RulesFunctions_BaseLanguage.checkReturningExpression(typeCheckingContext, SLinkOperations.getTarget(returnStatement, "expression", true), returnStatement, program, result);
         }

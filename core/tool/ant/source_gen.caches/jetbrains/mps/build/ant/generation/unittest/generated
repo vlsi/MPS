@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-1a6w4cmxxc3g4ldbthsy3b0aky4ab1h">
+<dependencies version="2" modelHash="egs2equ93nywuw4sbjsail8lde39aeh">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -14,8 +14,8 @@
   <dep model="r:00000000-0000-4000-0000-011c8959051a(jetbrains.mps.baseLanguage.regexp.generator.baseLanguage.template.main@generator)" hash="-bs70xj0jutwpneqxfnei5b9w0spxl4" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3t350ymnztu1bi083p2mhorjil0w76j" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
-  <common hash="-birqpl6n829j8d6bd6051a4pvi5jqdl" />
-  <source id="8688590116724765630" name="UnitTestOutputReader" hash="9wkz0orsy78u8681dfe0azzschoakf5">
+  <common hash="9rxpkjzt8z78mv0b0j0g6m2vmg5fcst" />
+  <source id="8688590116724765630" name="UnitTestOutputReader" hash="1ug9nbgd9n3qrio9eonc17knaj6e89b">
     <dep root="8688590116724765629" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

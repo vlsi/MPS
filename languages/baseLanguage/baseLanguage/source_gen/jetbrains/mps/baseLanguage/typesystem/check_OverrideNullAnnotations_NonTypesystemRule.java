@@ -28,8 +28,8 @@ public class check_OverrideNullAnnotations_NonTypesystemRule extends AbstractNon
     if ((superMethod == null)) {
       return;
     }
-    if (BaseMethodDeclaration_Behavior.call_hasAnnotation_5499146221535822693(superMethod, SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)", "~NotNull"))) {
-      if (!(BaseMethodDeclaration_Behavior.call_hasAnnotation_5499146221535822693(method, SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)", "~NotNull")))) {
+    if (BaseMethodDeclaration_Behavior.call_hasAnnotation_5499146221535822693(superMethod, SNodeOperations.getNode("f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~NotNull"))) {
+      if (!(BaseMethodDeclaration_Behavior.call_hasAnnotation_5499146221535822693(method, SNodeOperations.getNode("f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~NotNull")))) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(method, "This method must have @NotNull annotation", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5499146221535829680", null, errorTarget);
@@ -42,9 +42,9 @@ public class check_OverrideNullAnnotations_NonTypesystemRule extends AbstractNon
       }
     }
     for (int i = 0; i < ListSequence.fromList(SLinkOperations.getTargets(superMethod, "parameter", true)).count(); i++) {
-      if (ParameterDeclaration_Behavior.call_hasAnnotation_5499146221535981742(ListSequence.fromList(SLinkOperations.getTargets(superMethod, "parameter", true)).getElement(i), SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)", "~Nullable"))) {
+      if (ParameterDeclaration_Behavior.call_hasAnnotation_5499146221535981742(ListSequence.fromList(SLinkOperations.getTargets(superMethod, "parameter", true)).getElement(i), SNodeOperations.getNode("f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~Nullable"))) {
         SNode param = ListSequence.fromList(SLinkOperations.getTargets(method, "parameter", true)).getElement(i);
-        if (param != null && !(ParameterDeclaration_Behavior.call_hasAnnotation_5499146221535981742(param, SNodeOperations.getNode("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)", "~Nullable")))) {
+        if (param != null && !(ParameterDeclaration_Behavior.call_hasAnnotation_5499146221535981742(param, SNodeOperations.getNode("f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)", "~Nullable")))) {
           {
             MessageTarget errorTarget = new NodeMessageTarget();
             IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(param, "This parameter must have @Nullable annotation", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "5499146221535981784", null, errorTarget);

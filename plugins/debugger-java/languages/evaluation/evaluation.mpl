@@ -26,6 +26,7 @@
   </generators>
   <sourcePath />
   <dependencies>
+    <dependency reexport="false">3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)</dependency>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">a0c108f0-1637-416e-a249-3effbaa4c998(jetbrains.mps.baseLanguage.search)</dependency>
     <dependency reexport="true">80208897-4572-437d-b50e-8f050cba9566(jetbrains.mps.debugger.java.privateMembers)</dependency>
