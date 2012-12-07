@@ -56,14 +56,12 @@ import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 import org.eclipse.jdt.internal.compiler.ast.UnaryExpression;
 import org.eclipse.jdt.internal.compiler.ast.NullLiteral;
 import org.eclipse.jdt.internal.compiler.impl.Constant;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.eclipse.jdt.internal.compiler.ast.CaseStatement;
 import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.eclipse.jdt.internal.compiler.impl.BooleanConstant;
-import org.eclipse.jdt.internal.compiler.impl.ByteConstant;
 import org.eclipse.jdt.internal.compiler.impl.CharConstant;
 import org.eclipse.jdt.internal.compiler.impl.DoubleConstant;
 import org.eclipse.jdt.internal.compiler.impl.FloatConstant;
@@ -71,6 +69,8 @@ import org.eclipse.jdt.internal.compiler.impl.IntConstant;
 import org.eclipse.jdt.internal.compiler.impl.LongConstant;
 import org.eclipse.jdt.internal.compiler.impl.ShortConstant;
 import org.eclipse.jdt.internal.compiler.impl.StringConstant;
+import org.eclipse.jdt.internal.compiler.impl.BooleanConstant;
+import org.eclipse.jdt.internal.compiler.impl.ByteConstant;
 import org.eclipse.jdt.internal.compiler.ast.AND_AND_Expression;
 import org.eclipse.jdt.internal.compiler.ast.OR_OR_Expression;
 import org.eclipse.jdt.internal.compiler.ast.CompoundAssignment;
@@ -92,8 +92,6 @@ import org.eclipse.jdt.internal.compiler.ast.TrueLiteral;
 import org.eclipse.jdt.internal.compiler.ast.FalseLiteral;
 import org.eclipse.jdt.internal.compiler.ast.StringLiteral;
 import jetbrains.mps.smodel.StaticReference;
-import java.lang.reflect.Method;
-import java.lang.reflect.InvocationTargetException;
 import org.eclipse.jdt.internal.compiler.ast.SingleTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.ParameterizedSingleTypeReference;
@@ -261,7 +259,7 @@ public class FullASTConverter extends ASTConverter {
         return null;
       }
       if (x.constant != Constant.NotAConstant) {
-        return SNodeOperations.cast(dispatchRefl("convertConstant", x.constant), "jetbrains.mps.baseLanguage.structure.Expression");
+        return convertConstant(x.constant);
       } else if (x instanceof NullLiteral) {
         return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null);
       } else {
@@ -597,7 +595,33 @@ public class FullASTConverter extends ASTConverter {
   }
 
   /*package*/ SNode convertStatement(TypeDeclaration x) {
-    throw new UnsupportedOperationException("Local type declarations are not supported");
+    LOG.error("Local type declarations are not supported");
+    return null;
+  }
+
+  private SNode convertConstant(Constant x) {
+    if (x instanceof CharConstant) {
+      return convertConstant((CharConstant) x);
+    } else if (x instanceof DoubleConstant) {
+      return convertConstant((DoubleConstant) x);
+    } else if (x instanceof FloatConstant) {
+      return convertConstant((FloatConstant) x);
+    } else if (x instanceof IntConstant) {
+      return convertConstant((IntConstant) x);
+    } else if (x instanceof LongConstant) {
+      return convertConstant((LongConstant) x);
+    } else if (x instanceof ShortConstant) {
+      return convertConstant((ShortConstant) x);
+    } else if (x instanceof StringConstant) {
+      return convertConstant((StringConstant) x);
+    } else {
+      if (x == null) {
+        return null;
+      }
+      LOG.error("Unsupported type of constant: " + x.getClass().getName());
+      return null;
+    }
+
   }
 
   /*package*/ SNode convertConstant(BooleanConstant x) {
@@ -1220,11 +1244,11 @@ public class FullASTConverter extends ASTConverter {
    */
   public SNode convertExpressionAdHoc(Expression exp) {
     if (exp instanceof TrueLiteral) {
-      return _quotation_createNode_f46ocm_a0a0a87();
+      return _quotation_createNode_f46ocm_a0a0a97();
     } else if (exp instanceof FalseLiteral) {
-      return _quotation_createNode_f46ocm_a0a0a0ad();
+      return _quotation_createNode_f46ocm_a0a0a0bd();
     } else if (exp instanceof StringLiteral) {
-      return _quotation_createNode_f46ocm_a0a1a0ad(new String(((StringLiteral) exp).source()));
+      return _quotation_createNode_f46ocm_a0a1a0bd(new String(((StringLiteral) exp).source()));
     } else if (exp instanceof ArrayInitializer) {
       SNode arr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayLiteral", null);
       for (Expression e : ((ArrayInitializer) exp).expressions) {
@@ -1258,7 +1282,7 @@ public class FullASTConverter extends ASTConverter {
 
     } else if (exp instanceof SingleNameReference) {
       // FIXME 
-      return _quotation_createNode_f46ocm_a1a4a0ad();
+      return _quotation_createNode_f46ocm_a1a4a0bd();
     } else {
       throw new RuntimeException("This kind of expression is not supported yet: " + exp.getClass().getName());
     }
@@ -1274,35 +1298,6 @@ public class FullASTConverter extends ASTConverter {
     } else {
       throw new RuntimeException("Unknown type of reference: " + sref.getClass().getName());
     }
-  }
-
-  protected SNode dispatchRefl(String name, Object child) {
-
-    if (child == null) {
-      return null;
-    }
-
-
-    try {
-      try {
-
-        Method method = getClass().getDeclaredMethod(name, child.getClass());
-        return (SNode) method.invoke(this, child);
-
-      } catch (IllegalArgumentException e) {
-        throw new ReflectException(e);
-      } catch (IllegalAccessException e) {
-        throw new ReflectException(e);
-      } catch (NoSuchMethodException e) {
-        throw new ReflectException(e);
-      } catch (InvocationTargetException e) {
-        throw new ReflectException(e);
-      }
-
-    } catch (ReflectException e) {
-      throw new RuntimeException(e);
-    }
-
   }
 
   private SNode getStatementListFromStatement(SNode possibleBlock, Statement x) {
@@ -1513,27 +1508,27 @@ public class FullASTConverter extends ASTConverter {
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_f46ocm_a0a0a0ad() {
+  private static SNode _quotation_createNode_f46ocm_a0a0a0bd() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_f46ocm_a0a1a0ad(Object parameter_1) {
+  private static SNode _quotation_createNode_f46ocm_a0a1a0bd(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_f46ocm_a0a0a87() {
+  private static SNode _quotation_createNode_f46ocm_a0a0a97() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_1, "value", "true");
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_f46ocm_a1a4a0ad() {
+  private static SNode _quotation_createNode_f46ocm_a1a4a0bd() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_1, "value", "NOT SUPPORTED YET");
