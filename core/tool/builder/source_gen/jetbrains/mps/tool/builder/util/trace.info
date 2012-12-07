@@ -242,7 +242,7 @@
     <nodeInfo nodeId="4774692914340656030" fileName="PathManager.java" startLine="192" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getConfigPathWithoutDialog#()Ljava/lang/String;" />
     <nodeInfo nodeId="4774692914340656250" fileName="PathManager.java" startLine="264" startPosition="0" endLine="278" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getResourceRoot#(Ljava/lang/Class;Ljava/lang/String;)Ljava/lang/String;" />
     <nodeInfo nodeId="4774692914340656778" fileName="PathManager.java" startLine="395" startPosition="0" endLine="409" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getBootstrapPaths#()Ljava/util/Collection;" />
-    <nodeInfo nodeId="4774692914340656981" fileName="PathManager.java" startLine="441" startPosition="0" endLine="455" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createPluginClassLoader#(Ljava/io/File;)Ljetbrains/mps/build/ant/util/UrlClassLoader;" />
+    <nodeInfo nodeId="4774692914340656981" fileName="PathManager.java" startLine="441" startPosition="0" endLine="455" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createPluginClassLoader#(Ljava/io/File;)Ljetbrains/mps/tool/common/util/UrlClassLoader;" />
     <nodeInfo nodeId="4774692914340655730" fileName="PathManager.java" startLine="102" startPosition="113" endLine="118" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4774692914340655926" fileName="PathManager.java" startLine="155" startPosition="0" endLine="172" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getSystemPath#()Ljava/lang/String;" />
     <nodeInfo nodeId="4774692914340656643" fileName="PathManager.java" startLine="364" startPosition="0" endLine="381" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="substituteVars#(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
@@ -579,6 +579,28 @@
     <scopeInfo nodeId="5900076103425675130" fileName="SetLibraryContributor.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
     <scopeInfo nodeId="5900076103425675138" fileName="SetLibraryContributor.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
     <unitInfo nodeId="5900076103425675110" fileName="SetLibraryContributor.java" startLine="9" startPosition="0" endLine="24" endPosition="0" unitName="jetbrains.mps.tool.builder.util.SetLibraryContributor" />
+  </root>
+  <root nodeId="878521226300613674" modelId="r:ff0ebc03-7726-472b-abbc-eb2c660f70cb(jetbrains.mps.tool.builder.util)">
+    <nodeInfo nodeId="878521226300613683" fileName="MpsPlatform.java" startLine="15" startPosition="29" endLine="16" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="878521226300613687" fileName="MpsPlatform.java" startLine="16" startPosition="33" endLine="17" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="878521226300613691" fileName="MpsPlatform.java" startLine="17" startPosition="40" endLine="18" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="878521226300613695" fileName="MpsPlatform.java" startLine="18" startPosition="39" endLine="19" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="878521226300613699" fileName="MpsPlatform.java" startLine="19" startPosition="38" endLine="20" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="878521226300613707" fileName="MpsPlatform.java" startLine="23" startPosition="32" endLine="24" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="878521226300613711" fileName="MpsPlatform.java" startLine="24" startPosition="44" endLine="25" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="878521226300613715" fileName="MpsPlatform.java" startLine="25" startPosition="41" endLine="26" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="878521226300613719" fileName="MpsPlatform.java" startLine="26" startPosition="42" endLine="27" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="878521226300613723" fileName="MpsPlatform.java" startLine="27" startPosition="43" endLine="28" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="878521226300613676" fileName="MpsPlatform.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MpsPlatform#()V" />
+    <nodeInfo nodeId="878521226300613680" fileName="MpsPlatform.java" startLine="15" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#()V" />
+    <nodeInfo nodeId="878521226300613704" fileName="MpsPlatform.java" startLine="23" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="dispose#()V" />
+    <scopeInfo nodeId="878521226300613679" fileName="MpsPlatform.java" startLine="12" startPosition="25" endLine="12" endPosition="25" />
+    <scopeInfo nodeId="878521226300613676" fileName="MpsPlatform.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="878521226300613682" fileName="MpsPlatform.java" startLine="15" startPosition="29" endLine="20" endPosition="41" />
+    <scopeInfo nodeId="878521226300613706" fileName="MpsPlatform.java" startLine="23" startPosition="32" endLine="28" endPosition="36" />
+    <scopeInfo nodeId="878521226300613680" fileName="MpsPlatform.java" startLine="15" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="878521226300613704" fileName="MpsPlatform.java" startLine="23" startPosition="0" endLine="30" endPosition="0" />
+    <unitInfo nodeId="878521226300613674" fileName="MpsPlatform.java" startLine="11" startPosition="0" endLine="31" endPosition="0" unitName="jetbrains.mps.tool.builder.util.MpsPlatform" />
   </root>
 </debugInfo>
 

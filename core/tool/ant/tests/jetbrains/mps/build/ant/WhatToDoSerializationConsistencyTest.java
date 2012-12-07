@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.build.ant;
 
+import jetbrains.mps.tool.common.WhatToDo;
 import junit.framework.TestCase;
 import org.apache.log4j.Level;
 

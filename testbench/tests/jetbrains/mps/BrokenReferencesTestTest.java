@@ -17,10 +17,10 @@ package jetbrains.mps;
 
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.util.io.ZipUtil;
-import jetbrains.mps.build.ant.MpsWorker.LogLogger;
+import jetbrains.mps.tool.builder.MpsWorker.LogLogger;
 import jetbrains.mps.build.ant.TeamCityMessageFormat;
-import jetbrains.mps.build.ant.WhatToDo;
-import jetbrains.mps.build.ant.brokenRefs.TestBrokenReferencesWorker;
+import jetbrains.mps.tool.common.WhatToDo;
+import jetbrains.mps.tool.builder.check.TestBrokenReferencesWorker;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.testbench.IdeaTestEnvironment;

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.tool.builder.check.TestBrokenReferencesWorker" file="TestBrokenReferencesWorker.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.CharSequence" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuffer" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.lang.management.ManagementFactory" />
+    <classNode dependClassName="java.lang.management.MemoryMXBean" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.build.ant.TeamCityMessageFormat" />
+    <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
+    <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.project.Project" />
+    <classNode dependClassName="jetbrains.mps.project.validation.ModelValidator" />
+    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodeUtil" />
+    <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.tool.builder.Environment" />
+    <classNode dependClassName="jetbrains.mps.tool.builder.FileMPSProject" />
+    <classNode dependClassName="jetbrains.mps.tool.builder.MpsWorker" />
+    <classNode dependClassName="jetbrains.mps.tool.common.IBuildServerMessageFormat" />
+    <classNode dependClassName="jetbrains.mps.tool.common.WhatToDo" />
+    <classNode dependClassName="jetbrains.mps.util.Computable" />
+    <classNode dependClassName="jetbrains.mps.util.FileUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode extendsClassName="jetbrains.mps.tool.builder.make.MakeWorker" />
+  </dependency>
+</dependenciesRoot>
+

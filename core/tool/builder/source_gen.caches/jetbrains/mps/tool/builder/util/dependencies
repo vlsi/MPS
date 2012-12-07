@@ -8,6 +8,13 @@
     <classNode dependClassName="java.util.Set" />
     <classNode extendsClassName="jetbrains.mps.project.PathMacrosProvider" />
   </dependency>
+  <dependency className="jetbrains.mps.tool.builder.util.MpsPlatform" file="MpsPlatform.java">
+    <classNode dependClassName="jetbrains.mps.MPSCore" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.search.MPSBaseLanguage" />
+    <classNode dependClassName="jetbrains.mps.generator.MPSGenerator" />
+    <classNode dependClassName="jetbrains.mps.persistence.MPSPersistence" />
+    <classNode dependClassName="jetbrains.mps.typesystem.MPSTypesystem" />
+  </dependency>
   <dependency className="jetbrains.mps.tool.builder.util.PathManager" file="PathManager.java">
     <classNode dependClassName="java.io.BufferedInputStream" />
     <classNode dependClassName="java.io.File" />
@@ -32,13 +39,13 @@
     <classNode dependClassName="java.util.Properties" />
     <classNode dependClassName="java.util.PropertyResourceBundle" />
     <classNode dependClassName="java.util.Set" />
-    <classNode dependClassName="jetbrains.mps.build.ant.util.FileUtil" />
-    <classNode dependClassName="jetbrains.mps.build.ant.util.StringUtil" />
-    <classNode dependClassName="jetbrains.mps.build.ant.util.SystemInfo" />
-    <classNode dependClassName="jetbrains.mps.build.ant.util.URLUtil" />
-    <classNode dependClassName="jetbrains.mps.build.ant.util.UrlClassLoader" />
     <classNode dependClassName="jetbrains.mps.library.LibraryInitializer" />
     <classNode dependClassName="jetbrains.mps.library.contributor.LibraryContributor" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.StringUtil" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.SystemInfo" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.URLUtil" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.UrlClassLoader" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />

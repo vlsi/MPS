@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="4kwfnd7wmk1i5zldyjw0ftbkab6rifi">
+  <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
+  <common hash="-c0tpun3zhy47qz8u607prpeiikqjjmz" />
+  <source id="878521226297927156" name="WhatToDo" hash="-a0kc46nw76l5dsvb6ho3yvu6v9wszcx">
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="WhatToDo.java" />
+  </source>
+  <source id="878521226297928383" name="MPSTaskData" hash="-2pmamaedkeza5qarl0qnfautegzo6t3">
+    <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="MPSTaskData.java" />
+  </source>
+  <source id="2546981710035421490" name="IBuildServerMessageFormat" hash="75e1n477msw8w5j1qe9650106gheid">
+    <file name="IBuildServerMessageFormat.java" />
+  </source>
+</dependencies>
+

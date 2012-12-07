@@ -8,7 +8,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.apache.tools.ant.util.JavaEnvUtils;
 import org.junit.Test;
-import jetbrains.mps.build.ant.generation.unittest.UnitTestRunner;
+import jetbrains.mps.tool.builder.unittest.UnitTestRunner;
 import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.PathManager;

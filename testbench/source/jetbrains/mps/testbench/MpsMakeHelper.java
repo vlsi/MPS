@@ -17,10 +17,10 @@ package jetbrains.mps.testbench;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
-import jetbrains.mps.build.ant.Environment;
-import jetbrains.mps.build.ant.MpsWorker.LogLogger;
-import jetbrains.mps.build.ant.WhatToDo;
-import jetbrains.mps.build.ant.make.MakeWorker;
+import jetbrains.mps.tool.builder.Environment;
+import jetbrains.mps.tool.builder.MpsWorker.LogLogger;
+import jetbrains.mps.tool.common.WhatToDo;
+import jetbrains.mps.tool.builder.make.MakeWorker;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.testbench.util.FilesCollector;
 import jetbrains.mps.testbench.util.FilesCollector.FilePattern;
