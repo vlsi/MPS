@@ -86,6 +86,12 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/lib/mps-openapi.jar">
       <fileset dir="${build.tmp}/java/out/mps-openapi" />
+      <zipfileset file="${mps_home}/languages/core/stub/JDK/JDK.msd" prefix="modules/JDK" />
+      <zipfileset dir="${mps_home}/languages/core/stub/JDK" includes="icons/**, resources/**" prefix="modules/JDK" />
+      <zipfileset file="${mps_home}/languages/core/stub/JDK.Tools/Tools.msd" prefix="modules/JDK.Tools" />
+      <zipfileset dir="${mps_home}/languages/core/stub/JDK.Tools" includes="icons/**, resources/**" prefix="modules/JDK.Tools" />
+      <zipfileset file="${mps_home}/languages/core/stub/Annotations/Annotations.msd" prefix="modules/Annotations" />
+      <zipfileset dir="${mps_home}/languages/core/stub/Annotations" includes="icons/**, resources/**" prefix="modules/Annotations" />
       <zipfileset file="${mps_home}/languages/core/stub/MPS.OpenAPI/OpenAPI.msd" prefix="modules/MPS.OpenAPI" />
       <zipfileset dir="${mps_home}/languages/core/stub/MPS.OpenAPI" includes="icons/**, resources/**" prefix="modules/MPS.OpenAPI" />
     </jar>
@@ -144,10 +150,6 @@
       <zipfileset file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" prefix="modules/jetbrains.mps.baseLanguage.search" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.baseLanguage.search" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.baseLanguage.search/" />
-      <zipfileset file="${mps_home}/languages/core/stub/JDK/JDK.msd" prefix="modules/JDK" />
-      <zipfileset dir="${mps_home}/languages/core/stub/JDK" includes="icons/**, resources/**" prefix="modules/JDK" />
-      <zipfileset file="${mps_home}/languages/core/stub/JDK.Tools/Tools.msd" prefix="modules/JDK.Tools" />
-      <zipfileset dir="${mps_home}/languages/core/stub/JDK.Tools" includes="icons/**, resources/**" prefix="modules/JDK.Tools" />
       <zipfileset file="${mps_home}/languages/core/stub/MPS.Core/Core.msd" prefix="modules/MPS.Core" />
       <zipfileset dir="${mps_home}/languages/core/stub/MPS.Core" includes="icons/**, resources/**" prefix="modules/MPS.Core" />
       <zipfileset file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/util.msd" prefix="modules/jetbrains.mps.baseLanguage.util" />
