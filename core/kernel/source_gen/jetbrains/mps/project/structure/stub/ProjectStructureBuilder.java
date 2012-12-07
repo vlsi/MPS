@@ -17,7 +17,6 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
@@ -73,9 +72,6 @@ public abstract class ProjectStructureBuilder {
     for (ModuleReference dep : source.getRuntimeModules()) {
       SLinkOperations.getTargets(result, "runtimeModules", true).add(convert(dep));
     }
-    for (StubSolution sol : source.getStubSolutions()) {
-      SLinkOperations.getTargets(result, "stubSolutions", true).add(convert(sol));
-    }
     collectModels(result, source);
     return result;
   }
@@ -108,13 +104,6 @@ public abstract class ProjectStructureBuilder {
     for (ModuleReference ref : source.getExportedSolutions()) {
       SLinkOperations.getTargets(result, "exportedSolutions", true).add(convert(ref));
     }
-    return result;
-  }
-
-  private SNode convert(StubSolution source) {
-    SNode result = SModelOperations.createNewNode(myModel, null, "jetbrains.mps.lang.project.structure.StubSolution");
-    SPropertyOperations.set(result, "name", source.getName());
-    SPropertyOperations.set(result, "uuid", source.getId().toString());
     return result;
   }
 
@@ -188,7 +177,7 @@ public abstract class ProjectStructureBuilder {
     fill(generator, source);
     SPropertyOperations.set(generator, "generatorUID", source.getGeneratorUID());
     SPropertyOperations.set(generator, "generateTemplates", "" + (source.isGenerateTemplates()));
-    SPropertyOperations.set(generator, "namespace", (isNotEmpty_5cil7k_a0a0e0p(source.getNamespace()) ?
+    SPropertyOperations.set(generator, "namespace", (isNotEmpty_5cil7k_a0a0e0o(source.getNamespace()) ?
       source.getNamespace() :
       null
     ));
@@ -271,7 +260,7 @@ public abstract class ProjectStructureBuilder {
 
   public abstract Iterable<org.jetbrains.mps.openapi.model.SModelReference> loadReferences(SNode module, ModuleDescriptor descriptor);
 
-  public static boolean isNotEmpty_5cil7k_a0a0e0p(String str) {
+  public static boolean isNotEmpty_5cil7k_a0a0e0o(String str) {
     return str != null && str.length() > 0;
   }
 }
