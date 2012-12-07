@@ -53,7 +53,7 @@
     <classNode dependClassName="java.lang.StringBuffer" />
     <classNode dependClassName="java.lang.System" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.tool.common.IBuildServerMessageFormat" />
+    <classNode extendsClassName="jetbrains.mps.tool.common.IMessageFormat" />
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.make.GeneratorWorker" file="GeneratorWorker.java">
     <classNode dependClassName="java.io.File" />
@@ -77,7 +77,6 @@
     <classNode dependClassName="java.util.concurrent.Future" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
-    <classNode dependClassName="jetbrains.mps.build.ant.generation.GenerateTask" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
@@ -107,7 +106,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
     <classNode dependClassName="jetbrains.mps.tool.builder.FileMPSProject" />
     <classNode dependClassName="jetbrains.mps.tool.builder.make.BuildMakeService" />
-    <classNode dependClassName="jetbrains.mps.tool.common.WhatToDo" />
+    <classNode dependClassName="jetbrains.mps.tool.common.Script" />
+    <classNode dependClassName="jetbrains.mps.tool.common.ScriptProperties" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.messages.IMessageHandler" />
@@ -128,7 +128,7 @@
     <classNode dependClassName="jetbrains.mps.project.Project" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.tool.builder.Environment" />
-    <classNode dependClassName="jetbrains.mps.tool.common.WhatToDo" />
+    <classNode dependClassName="jetbrains.mps.tool.common.Script" />
     <classNode dependClassName="jetbrains.mps.util.CollectionUtil" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
@@ -190,7 +190,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.resources.ModelsToResources" />
     <classNode dependClassName="jetbrains.mps.tool.builder.MpsWorker" />
     <classNode dependClassName="jetbrains.mps.tool.builder.make.BuildMakeService" />
-    <classNode dependClassName="jetbrains.mps.tool.common.WhatToDo" />
+    <classNode dependClassName="jetbrains.mps.tool.common.Script" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="jetbrains.mps.vfs.impl.JarEntryFile" />
@@ -227,8 +227,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.build.ant.TeamCityMessageFormat" />
-    <classNode dependClassName="jetbrains.mps.build.ant.generation.GenerateTask" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationFacade" />
     <classNode dependClassName="jetbrains.mps.generator.GenerationSettingsProvider" />
@@ -275,8 +273,10 @@
     <classNode dependClassName="jetbrains.mps.tool.builder.unittest.ITestReporter" />
     <classNode dependClassName="jetbrains.mps.tool.builder.unittest.UnitTestListener" />
     <classNode dependClassName="jetbrains.mps.tool.builder.unittest.XmlTestReporter" />
-    <classNode dependClassName="jetbrains.mps.tool.common.IBuildServerMessageFormat" />
-    <classNode dependClassName="jetbrains.mps.tool.common.WhatToDo" />
+    <classNode dependClassName="jetbrains.mps.tool.common.IMessageFormat" />
+    <classNode dependClassName="jetbrains.mps.tool.common.Script" />
+    <classNode dependClassName="jetbrains.mps.tool.common.ScriptProperties" />
+    <classNode dependClassName="jetbrains.mps.tool.common.TeamCityMessageFormat" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.apache.tools.ant.BuildException" />

@@ -76,7 +76,7 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="4003657351907888941" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="4003657351907888942">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="4003657351907888943">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="644x.4003657351907893942" resolveInfo="TeamCityMessageFormat" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="asz6.7910428321252775337" resolveInfo="TeamCityMessageFormat" />
                 </node>
               </node>
             </node>

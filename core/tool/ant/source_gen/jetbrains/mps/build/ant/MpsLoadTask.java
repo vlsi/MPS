@@ -4,7 +4,7 @@ package jetbrains.mps.build.ant;
 
 import org.apache.tools.ant.Task;
 import java.io.File;
-import jetbrains.mps.tool.common.WhatToDo;
+import jetbrains.mps.tool.common.Script;
 import java.util.List;
 import java.util.ArrayList;
 import org.apache.tools.ant.types.FileSet;
@@ -40,7 +40,7 @@ public abstract class MpsLoadTask extends Task {
   public static final String CONFIGURATION_NAME = "configuration.name";
   public static final String BUILD_NUMBER = "build.number";
   private File myMpsHome;
-  protected final WhatToDo myWhatToDo = new WhatToDo();
+  protected final Script myWhatToDo = new Script();
   private boolean myUsePropertiesAsMacro = false;
   private boolean myFork = true;
   private final List<String> myJvmArgs = new ArrayList<String>();
@@ -214,7 +214,7 @@ public abstract class MpsLoadTask extends Task {
       }
       URLClassLoader classLoader = new URLClassLoader(classPathUrls.toArray(new URL[classPathUrls.size()]), ProjectComponent.class.getClassLoader());
       try {
-        Class<?> whatToGenerateClass = classLoader.loadClass(WhatToDo.class.getCanonicalName());
+        Class<?> whatToGenerateClass = classLoader.loadClass(Script.class.getCanonicalName());
         Object whatToGenerate = whatToGenerateClass.newInstance();
         myWhatToDo.cloneTo(whatToGenerate);
         Class<?> generatorClass = classLoader.loadClass(getWorkerClass().getCanonicalName());

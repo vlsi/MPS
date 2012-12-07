@@ -19,7 +19,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.jdom.JDOMException;
 
-public class WhatToDo {
+public class Script {
   private static final String ELEMENT_TODO = "todo";
   private static final String ELEMENT_MODEL = "model";
   private static final String ELEMENT_MODULE = "module";
@@ -43,7 +43,7 @@ public class WhatToDo {
   private final List<String> myParameters = new ArrayList<String>();
   private boolean myLoadBootstrapLibraries = true;
 
-  public WhatToDo() {
+  public Script() {
   }
 
   public void addModuleFile(File file) {
@@ -191,7 +191,7 @@ public class WhatToDo {
 
   public void cloneTo(Object dest) {
     // TODO get rid of generic cloneTo 
-    Class<? extends WhatToDo> srcClass = this.getClass();
+    Class<? extends Script> srcClass = this.getClass();
     Class<? extends Object> destClass = dest.getClass();
     Method[] srcMethods = srcClass.getMethods();
     for (Method srcMethod : srcMethods) {
@@ -259,8 +259,8 @@ public class WhatToDo {
   }
 
   public File dumpToTmpFile() throws FileNotFoundException {
-    File tmpFile = WhatToDo.createTmpFile();
-    MPSTaskData data = new MPSTaskData();
+    File tmpFile = Script.createTmpFile();
+    ScriptData data = new ScriptData();
     data.setFailOnError(myFailOnError);
     data.setLogLevel(myLogLevel);
     data.setLoadBootstrapLibraries(myLoadBootstrapLibraries);
@@ -314,8 +314,8 @@ public class WhatToDo {
     return result;
   }
 
-  public static WhatToDo fromDumpInFile(File file) {
-    MPSTaskData data = new MPSTaskData();
+  public static Script fromDumpInFile(File file) {
+    ScriptData data = new ScriptData();
     try {
       data.load(file);
     } catch (JDOMException e) {
@@ -328,7 +328,7 @@ public class WhatToDo {
       }
     }
 
-    WhatToDo whatToDo = new WhatToDo();
+    Script whatToDo = new Script();
     whatToDo.myFailOnError = data.getFailOnError();
     whatToDo.myLogLevel = data.getLogLevel();
     whatToDo.myLoadBootstrapLibraries = data.getLoadBootstrapLibraries();

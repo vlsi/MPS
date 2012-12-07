@@ -1,20 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4kwfnd7wmk1i5zldyjw0ftbkab6rifi">
+<dependencies version="2" modelHash="-9wxsyabpif69i908jcx7t71er5xppx3">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
-  <common hash="-c0tpun3zhy47qz8u607prpeiikqjjmz" />
-  <source id="878521226297927156" name="WhatToDo" hash="-a0kc46nw76l5dsvb6ho3yvu6v9wszcx">
+  <common hash="bs6nvo72gmzq5030thrhamqjyrekdtn" />
+  <source id="878521226297927156" name="Script" hash="7ldbx75x8d55ilvuhd5vj0wtbzs5dx3">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="WhatToDo.java" />
+    <file name="Script.java" />
   </source>
-  <source id="878521226297928383" name="MPSTaskData" hash="-2pmamaedkeza5qarl0qnfautegzo6t3">
+  <source id="878521226297928383" name="ScriptData" hash="-lcydmj8kopq3c66cshsgw77srb3fs5">
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.apache.log4j(MPS.Core/org.apache.log4j@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
-    <file name="MPSTaskData.java" />
+    <file name="ScriptData.java" />
   </source>
-  <source id="2546981710035421490" name="IBuildServerMessageFormat" hash="75e1n477msw8w5j1qe9650106gheid">
-    <file name="IBuildServerMessageFormat.java" />
+  <source id="2546981710035421490" name="IMessageFormat" hash="-2r6qa5mkvpcuthbizmrstw47s5kk5wi">
+    <file name="IMessageFormat.java" />
+  </source>
+  <source id="7910428321252775322" name="TeamCityMessageFormat" hash="7ryrte9tosourrjeya2eiut55j4zyjo">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="TeamCityMessageFormat.java" />
+  </source>
+  <source id="7910428321252780319" name="ScriptProperties" hash="-8s8zhu4hv41qqsuxfb3946alq64li6b">
+    <file name="ScriptProperties.java" />
   </source>
 </dependencies>
 

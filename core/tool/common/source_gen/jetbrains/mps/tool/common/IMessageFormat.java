@@ -4,7 +4,7 @@ package jetbrains.mps.tool.common;
 
 import org.jetbrains.annotations.NotNull;
 
-public interface IBuildServerMessageFormat {
+public interface IMessageFormat {
   public StringBuffer escapeBuildMessage(@NotNull StringBuffer message);
   public String escapeBuildMessage(@NotNull String message);
   public String getLinesSeparator();

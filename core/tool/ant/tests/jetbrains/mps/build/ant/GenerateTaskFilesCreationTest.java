@@ -18,10 +18,10 @@ package jetbrains.mps.build.ant;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.util.io.ZipUtil;
 import jetbrains.mps.BaseMPSTest;
-import jetbrains.mps.build.ant.generation.GenerateTask;
 import jetbrains.mps.tool.builder.MpsWorker;
 import jetbrains.mps.tool.builder.make.GeneratorWorker;
-import jetbrains.mps.tool.common.WhatToDo;
+import jetbrains.mps.tool.common.ScriptProperties;
+import jetbrains.mps.tool.common.Script;
 import junit.framework.TestCase;
 import org.junit.After;
 import org.junit.Test;
@@ -81,7 +81,7 @@ public class GenerateTaskFilesCreationTest {
 
     File destdir = extractProject(projectName);
 
-    WhatToDo whatToDo = new WhatToDo();
+    Script whatToDo = new Script();
     whatToDo.addModuleFile(new File(getLanguagePath(destdir, projectName, languageName) + File.separator + languageName + ".mpl"));
     doGenerate(whatToDo);
 
@@ -112,8 +112,8 @@ public class GenerateTaskFilesCreationTest {
   private File generateProjectFromZipFile(String projectName) throws IOException {
     File destdir = extractProject(projectName);
 
-    WhatToDo whatToDo = new WhatToDo();
-    whatToDo.putProperty(GenerateTask.COMPILE, Boolean.toString(true));
+    Script whatToDo = new Script();
+    whatToDo.putProperty(ScriptProperties.COMPILE, Boolean.toString(true));
     whatToDo.addProjectFile(new File(destdir.getAbsolutePath() + File.separator + projectName + File.separator + projectName + ".mpr"));
     doGenerate(whatToDo);
 
@@ -132,7 +132,7 @@ public class GenerateTaskFilesCreationTest {
     return destdir;
   }
 
-  private void doGenerate(WhatToDo whatToDo) {
+  private void doGenerate(Script whatToDo) {
     MpsWorker mpsWorker = new GeneratorWorker(whatToDo);
     mpsWorker.work();
   }

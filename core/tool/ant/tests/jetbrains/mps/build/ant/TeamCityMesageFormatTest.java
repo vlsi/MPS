@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.build.ant;
 
+import jetbrains.mps.tool.common.TeamCityMessageFormat;
 import junit.framework.TestCase;
 
 public class TeamCityMesageFormatTest extends TestCase {

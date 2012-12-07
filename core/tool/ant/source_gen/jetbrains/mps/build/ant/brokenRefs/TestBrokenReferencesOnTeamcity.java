@@ -7,7 +7,7 @@ import jetbrains.mps.tool.builder.MpsWorker;
 import jetbrains.mps.tool.builder.check.TestBrokenReferencesWorker;
 import jetbrains.mps.build.ant.MyExecuteStreamHandler;
 import jetbrains.mps.build.ant.MyTeamcityAwareExecuteStreamHandler;
-import jetbrains.mps.build.ant.TeamCityMessageFormat;
+import jetbrains.mps.tool.common.TeamCityMessageFormat;
 
 public class TestBrokenReferencesOnTeamcity extends MpsLoadTask {
   public TestBrokenReferencesOnTeamcity() {

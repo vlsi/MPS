@@ -3102,9 +3102,9 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="878521226301294063">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="asz6.878521226297928156" resolveInfo="getProperty" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="878521226301294064">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="kio7.4003657351907886493" resolveInfo="GenerateTask" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="kio7.6180231420008238377" resolveInfo="STRICT_MODE" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7910428321252809360">
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="asz6.7910428321252780319" resolveInfo="GenerationOptions" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="asz6.7910428321252809353" resolveInfo="STRICT_MODE" />
                   </node>
                 </node>
               </node>
@@ -3148,9 +3148,9 @@
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="878521226301294081">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="asz6.878521226297928156" resolveInfo="getProperty" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="878521226301294082">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="kio7.4003657351907886493" resolveInfo="GenerateTask" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="kio7.6180231420008238386" resolveInfo="PARALLEL_MODE" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7910428321252809560">
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="asz6.7910428321252780319" resolveInfo="GenerationOptions" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="asz6.7910428321252809553" resolveInfo="PARALLEL_MODE" />
                       </node>
                     </node>
                   </node>
@@ -8434,9 +8434,9 @@
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="878521226301296321">
                   <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="asz6.878521226297928156" resolveInfo="getProperty" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="878521226301296322">
-                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="kio7.4003657351907886493" resolveInfo="GenerateTask" />
-                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="kio7.6180231420008238377" resolveInfo="STRICT_MODE" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7910428321252809361">
+                    <link role="classifier" roleId="tpee.1144433057691" targetNodeId="asz6.7910428321252780319" resolveInfo="GenerationOptions" />
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="asz6.7910428321252809353" resolveInfo="STRICT_MODE" />
                   </node>
                 </node>
               </node>
@@ -8480,9 +8480,9 @@
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="878521226301296339">
                       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="asz6.878521226297928156" resolveInfo="getProperty" />
-                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="878521226301296340">
-                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="kio7.4003657351907886493" resolveInfo="GenerateTask" />
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="kio7.6180231420008238386" resolveInfo="PARALLEL_MODE" />
+                      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7910428321252809561">
+                        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="asz6.7910428321252780319" resolveInfo="GenerationOptions" />
+                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="asz6.7910428321252809553" resolveInfo="PARALLEL_MODE" />
                       </node>
                     </node>
                   </node>
@@ -11918,7 +11918,7 @@
             <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="878521226301297739">
               <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="878521226301297740">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="878521226301297741">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="644x.4003657351907893942" resolveInfo="TeamCityMessageFormat" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="asz6.7910428321252775337" resolveInfo="TeamCityMessageFormat" />
                 </node>
               </node>
             </node>
@@ -12105,9 +12105,9 @@
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="878521226301297818">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="asz6.878521226297928156" resolveInfo="getProperty" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="878521226301297819">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="kio7.4003657351907886493" resolveInfo="GenerateTask" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="kio7.4003657351907886496" resolveInfo="COMPILE" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7910428321252809162">
+                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="asz6.7910428321252780319" resolveInfo="GenerationOptions" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="asz6.7910428321252809155" resolveInfo="COMPILE" />
                 </node>
               </node>
             </node>

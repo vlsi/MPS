@@ -5,9 +5,9 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="jetbrains.mps.build.ant.MyExecuteStreamHandler" />
     <classNode dependClassName="jetbrains.mps.build.ant.MyTeamcityAwareExecuteStreamHandler" />
-    <classNode dependClassName="jetbrains.mps.build.ant.TeamCityMessageFormat" />
     <classNode dependClassName="jetbrains.mps.tool.builder.MpsWorker" />
     <classNode dependClassName="jetbrains.mps.tool.builder.check.TestBrokenReferencesWorker" />
+    <classNode dependClassName="jetbrains.mps.tool.common.TeamCityMessageFormat" />
     <classNode extendsClassName="jetbrains.mps.build.ant.MpsLoadTask" />
   </dependency>
 </dependenciesRoot>

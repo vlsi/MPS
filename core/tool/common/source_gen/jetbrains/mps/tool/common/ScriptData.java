@@ -12,7 +12,7 @@ import jetbrains.mps.util.JDOMUtil;
 import org.jdom.Document;
 import org.jdom.JDOMException;
 
-public class MPSTaskData {
+public class ScriptData {
   public static final String ROOT_TASKDATA = "taskdata";
   public static final String PROP_WORKER = "worker";
   public static final String PROP_FAILONERROR = "failOnError";
@@ -35,7 +35,7 @@ public class MPSTaskData {
   private Map<String, File> myLibraries = new LinkedHashMap<String, File>();
   private Map<String, Element> myData = new LinkedHashMap<String, Element>();
 
-  public MPSTaskData() {
+  public ScriptData() {
   }
 
   public void save(File file) throws IOException {

@@ -18,8 +18,8 @@ package jetbrains.mps;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.util.io.ZipUtil;
 import jetbrains.mps.tool.builder.MpsWorker.LogLogger;
-import jetbrains.mps.build.ant.TeamCityMessageFormat;
-import jetbrains.mps.tool.common.WhatToDo;
+import jetbrains.mps.tool.common.TeamCityMessageFormat;
+import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.tool.builder.check.TestBrokenReferencesWorker;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
@@ -43,7 +43,7 @@ public class BrokenReferencesTestTest extends TestCase {
       }
     });
 
-    WhatToDo whatToDo = new WhatToDo();
+    Script whatToDo = new Script();
     whatToDo.addModelFile(new File(destdir.getAbsolutePath() + File.separator + "Broken.sandbox" + File.separator + "broken" + File.separator + "model.mps"));
     whatToDo.addLibrary(solutionName, destdir, false);
     whatToDo.updateLogLevel(Level.WARN);

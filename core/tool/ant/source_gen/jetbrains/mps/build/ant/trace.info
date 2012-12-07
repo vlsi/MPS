@@ -68,7 +68,7 @@
   <root nodeId="4003657351907888830" modelId="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)">
     <nodeInfo nodeId="4003657351907888833" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBuildServerMessageFormat" />
     <nodeInfo nodeId="4003657351907888836" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myMergeNext" />
-    <nodeInfo nodeId="4003657351907888848" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="12" startPosition="109" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4003657351907888848" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="12" startPosition="98" endLine="13" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="4003657351907888850" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="13" startPosition="16" endLine="14" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4003657351907888873" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="19" startPosition="79" endLine="20" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4003657351907888898" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="21" startPosition="18" endLine="22" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -78,12 +78,12 @@
     <nodeInfo nodeId="4003657351907888869" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="28" startPosition="12" endLine="29" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4003657351907888867" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="28" startPosition="10" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="4003657351907888884" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="24" startPosition="12" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4003657351907888840" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTeamcityAwareExecuteStreamHandler#(Lorg/apache/tools/ant/Task;Ljetbrains/mps/tool/common/IBuildServerMessageFormat;)V" />
+    <nodeInfo nodeId="4003657351907888840" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="12" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MyTeamcityAwareExecuteStreamHandler#(Lorg/apache/tools/ant/Task;Ljetbrains/mps/tool/common/IMessageFormat;)V" />
     <nodeInfo nodeId="4003657351907888880" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="20" startPosition="63" endLine="27" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4003657351907888860" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="18" startPosition="41" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="4003657351907888854" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="17" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="logOutput#(Ljava/lang/String;)V" />
     <scopeInfo nodeId="4003657351907888868" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="28" startPosition="12" endLine="29" endPosition="28" />
-    <scopeInfo nodeId="4003657351907888847" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="12" startPosition="109" endLine="14" endPosition="58" />
+    <scopeInfo nodeId="4003657351907888847" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="12" startPosition="98" endLine="14" endPosition="58" />
     <scopeInfo nodeId="4003657351907888897" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="21" startPosition="18" endLine="23" endPosition="63" />
     <scopeInfo nodeId="4003657351907888885" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="24" startPosition="14" endLine="26" endPosition="33" />
     <scopeInfo nodeId="4003657351907888840" fileName="MyTeamcityAwareExecuteStreamHandler.java" startLine="12" startPosition="0" endLine="16" endPosition="0">
@@ -368,8 +368,8 @@
     <nodeInfo nodeId="4003657351907890721" fileName="MpsLoadTask.java" startLine="203" startPosition="12" endLine="204" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4003657351907890736" fileName="MpsLoadTask.java" startLine="211" startPosition="43" endLine="212" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
     <nodeInfo nodeId="4003657351907890760" fileName="MpsLoadTask.java" startLine="214" startPosition="7" endLine="215" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907890798" fileName="MpsLoadTask.java" startLine="216" startPosition="11" endLine="217" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907890808" fileName="MpsLoadTask.java" startLine="217" startPosition="96" endLine="218" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907890798" fileName="MpsLoadTask.java" startLine="216" startPosition="11" endLine="217" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907890808" fileName="MpsLoadTask.java" startLine="217" startPosition="94" endLine="218" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4003657351907890814" fileName="MpsLoadTask.java" startLine="218" startPosition="66" endLine="219" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4003657351907890819" fileName="MpsLoadTask.java" startLine="219" startPosition="43" endLine="220" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4003657351907890829" fileName="MpsLoadTask.java" startLine="220" startPosition="93" endLine="221" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -897,106 +897,7 @@
     </scopeInfo>
     <unitInfo nodeId="4003657351907893424" fileName="LibraryDataType.java" startLine="8" startPosition="0" endLine="40" endPosition="0" unitName="jetbrains.mps.build.ant.LibraryDataType" />
   </root>
-  <root nodeId="4003657351907893927" modelId="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)">
-    <nodeInfo nodeId="4003657351907893930" fileName="TeamCityMessageFormat.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LINES_SEPARATOR" />
-    <nodeInfo nodeId="4003657351907893934" fileName="TeamCityMessageFormat.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SERVER_PREFIX" />
-    <nodeInfo nodeId="4003657351907893938" fileName="TeamCityMessageFormat.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SERVER_TEST_FAILED_PREFIX" />
-    <nodeInfo nodeId="4003657351907893953" fileName="TeamCityMessageFormat.java" startLine="18" startPosition="64" endLine="19" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907893982" fileName="TeamCityMessageFormat.java" startLine="22" startPosition="73" endLine="23" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907894012" fileName="TeamCityMessageFormat.java" startLine="24" startPosition="54" endLine="25" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907894020" fileName="TeamCityMessageFormat.java" startLine="25" startPosition="67" endLine="26" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907894027" fileName="TeamCityMessageFormat.java" startLine="26" startPosition="51" endLine="27" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907894034" fileName="TeamCityMessageFormat.java" startLine="27" startPosition="37" endLine="28" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907894043" fileName="TeamCityMessageFormat.java" startLine="29" startPosition="24" endLine="30" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907894047" fileName="TeamCityMessageFormat.java" startLine="30" startPosition="21" endLine="31" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907894060" fileName="TeamCityMessageFormat.java" startLine="33" startPosition="18" endLine="34" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907894065" fileName="TeamCityMessageFormat.java" startLine="34" startPosition="33" endLine="35" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907894069" fileName="TeamCityMessageFormat.java" startLine="37" startPosition="5" endLine="38" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907894075" fileName="TeamCityMessageFormat.java" startLine="41" startPosition="37" endLine="42" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907894084" fileName="TeamCityMessageFormat.java" startLine="45" startPosition="59" endLine="46" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907894097" fileName="TeamCityMessageFormat.java" startLine="49" startPosition="60" endLine="50" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907894113" fileName="TeamCityMessageFormat.java" startLine="53" startPosition="85" endLine="54" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907894140" fileName="TeamCityMessageFormat.java" startLine="57" startPosition="123" endLine="58" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907894145" fileName="TeamCityMessageFormat.java" startLine="58" startPosition="41" endLine="59" endPosition="152" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907894168" fileName="TeamCityMessageFormat.java" startLine="59" startPosition="152" endLine="60" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907894177" fileName="TeamCityMessageFormat.java" startLine="63" startPosition="70" endLine="64" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907894220" fileName="TeamCityMessageFormat.java" startLine="74" startPosition="55" endLine="75" endPosition="169" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907893942" fileName="TeamCityMessageFormat.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TeamCityMessageFormat#()V" />
-    <nodeInfo nodeId="4003657351907893946" fileName="TeamCityMessageFormat.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="escapeBuildMessage#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4003657351907894071" fileName="TeamCityMessageFormat.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLinesSeparator#()Ljava/lang/String;" />
-    <nodeInfo nodeId="4003657351907894077" fileName="TeamCityMessageFormat.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="formatTestStart#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4003657351907894090" fileName="TeamCityMessageFormat.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="formatTestFinish#(Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4003657351907894103" fileName="TeamCityMessageFormat.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="formatTestFailure#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4003657351907894170" fileName="TeamCityMessageFormat.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBuildServerMessage#(Ljava/lang/CharSequence;)Z" />
-    <nodeInfo nodeId="4003657351907894214" fileName="TeamCityMessageFormat.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isTestFailMessage#(Ljava/lang/CharSequence;)Z" />
-    <nodeInfo nodeId="4003657351907894038" fileName="TeamCityMessageFormat.java" startLine="28" startPosition="28" endLine="32" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="4003657351907894057" fileName="TeamCityMessageFormat.java" startLine="32" startPosition="7" endLine="36" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907894206" fileName="TeamCityMessageFormat.java" startLine="67" startPosition="55" endLine="71" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907894127" fileName="TeamCityMessageFormat.java" startLine="57" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="formatTestFailure#(Ljava/lang/String;Ljava/lang/String;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;" />
-    <nodeInfo nodeId="4003657351907894199" fileName="TeamCityMessageFormat.java" startLine="67" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="hasContinuation#(Ljava/lang/String;)I" />
-    <nodeInfo nodeId="4003657351907893999" fileName="TeamCityMessageFormat.java" startLine="23" startPosition="111" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="4003657351907893975" fileName="TeamCityMessageFormat.java" startLine="22" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="escapeBuildMessage#(Ljava/lang/StringBuffer;)Ljava/lang/StringBuffer;" />
-    <scopeInfo nodeId="4003657351907893945" fileName="TeamCityMessageFormat.java" startLine="15" startPosition="34" endLine="15" endPosition="34" />
-    <scopeInfo nodeId="4003657351907893952" fileName="TeamCityMessageFormat.java" startLine="18" startPosition="64" endLine="19" endPosition="130" />
-    <scopeInfo nodeId="4003657351907894074" fileName="TeamCityMessageFormat.java" startLine="41" startPosition="37" endLine="42" endPosition="27" />
-    <scopeInfo nodeId="4003657351907894083" fileName="TeamCityMessageFormat.java" startLine="45" startPosition="59" endLine="46" endPosition="90" />
-    <scopeInfo nodeId="4003657351907894096" fileName="TeamCityMessageFormat.java" startLine="49" startPosition="60" endLine="50" endPosition="62" />
-    <scopeInfo nodeId="4003657351907894112" fileName="TeamCityMessageFormat.java" startLine="53" startPosition="85" endLine="54" endPosition="113" />
-    <scopeInfo nodeId="4003657351907894176" fileName="TeamCityMessageFormat.java" startLine="63" startPosition="70" endLine="64" endPosition="139" />
-    <scopeInfo nodeId="4003657351907894219" fileName="TeamCityMessageFormat.java" startLine="74" startPosition="55" endLine="75" endPosition="169" />
-    <scopeInfo nodeId="4003657351907893942" fileName="TeamCityMessageFormat.java" startLine="15" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="4003657351907894042" fileName="TeamCityMessageFormat.java" startLine="29" startPosition="24" endLine="31" endPosition="61" />
-    <scopeInfo nodeId="4003657351907894059" fileName="TeamCityMessageFormat.java" startLine="33" startPosition="18" endLine="35" endPosition="29" />
-    <scopeInfo nodeId="4003657351907893946" fileName="TeamCityMessageFormat.java" startLine="18" startPosition="0" endLine="21" endPosition="0">
-      <varInfo nodeId="4003657351907893949" varName="rawMessage" />
-    </scopeInfo>
-    <scopeInfo nodeId="4003657351907894071" fileName="TeamCityMessageFormat.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="4003657351907894077" fileName="TeamCityMessageFormat.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
-      <varInfo nodeId="4003657351907894080" varName="testName" />
-    </scopeInfo>
-    <scopeInfo nodeId="4003657351907894090" fileName="TeamCityMessageFormat.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
-      <varInfo nodeId="4003657351907894093" varName="testName" />
-    </scopeInfo>
-    <scopeInfo nodeId="4003657351907894103" fileName="TeamCityMessageFormat.java" startLine="53" startPosition="0" endLine="56" endPosition="0">
-      <varInfo nodeId="4003657351907894110" varName="detailes" />
-      <varInfo nodeId="4003657351907894108" varName="message" />
-      <varInfo nodeId="4003657351907894106" varName="testName" />
-    </scopeInfo>
-    <scopeInfo nodeId="4003657351907894139" fileName="TeamCityMessageFormat.java" startLine="57" startPosition="123" endLine="60" endPosition="14">
-      <varInfo nodeId="4003657351907894141" varName="sb" />
-    </scopeInfo>
-    <scopeInfo nodeId="4003657351907894170" fileName="TeamCityMessageFormat.java" startLine="63" startPosition="0" endLine="66" endPosition="0">
-      <varInfo nodeId="4003657351907894173" varName="message" />
-    </scopeInfo>
-    <scopeInfo nodeId="4003657351907894214" fileName="TeamCityMessageFormat.java" startLine="74" startPosition="0" endLine="77" endPosition="0">
-      <varInfo nodeId="4003657351907894217" varName="text" />
-    </scopeInfo>
-    <scopeInfo nodeId="4003657351907894205" fileName="TeamCityMessageFormat.java" startLine="67" startPosition="55" endLine="71" endPosition="6" />
-    <scopeInfo nodeId="4003657351907894127" fileName="TeamCityMessageFormat.java" startLine="57" startPosition="0" endLine="62" endPosition="0">
-      <varInfo nodeId="4003657351907894136" varName="details" />
-      <varInfo nodeId="4003657351907894133" varName="message" />
-      <varInfo nodeId="4003657351907894130" varName="testName" />
-    </scopeInfo>
-    <scopeInfo nodeId="4003657351907894199" fileName="TeamCityMessageFormat.java" startLine="67" startPosition="0" endLine="73" endPosition="0">
-      <varInfo nodeId="4003657351907894202" varName="message" />
-    </scopeInfo>
-    <scopeInfo nodeId="4003657351907894011" fileName="TeamCityMessageFormat.java" startLine="24" startPosition="54" endLine="36" endPosition="7">
-      <varInfo nodeId="4003657351907894035" varName="found" />
-      <varInfo nodeId="4003657351907894028" varName="m" />
-      <varInfo nodeId="4003657351907894013" varName="newMessage" />
-      <varInfo nodeId="4003657351907894021" varName="p" />
-    </scopeInfo>
-    <scopeInfo nodeId="4003657351907893999" fileName="TeamCityMessageFormat.java" startLine="23" startPosition="111" endLine="37" endPosition="5">
-      <varInfo nodeId="4003657351907894000" varName="i" />
-    </scopeInfo>
-    <scopeInfo nodeId="4003657351907893981" fileName="TeamCityMessageFormat.java" startLine="22" startPosition="73" endLine="38" endPosition="19">
-      <varInfo nodeId="4003657351907893983" varName="replacements" />
-    </scopeInfo>
-    <scopeInfo nodeId="4003657351907893975" fileName="TeamCityMessageFormat.java" startLine="22" startPosition="0" endLine="40" endPosition="0">
-      <varInfo nodeId="4003657351907893978" varName="message" />
-    </scopeInfo>
-    <unitInfo nodeId="4003657351907893927" fileName="TeamCityMessageFormat.java" startLine="10" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.build.ant.TeamCityMessageFormat" />
-  </root>
+  <root nodeId="4003657351907893927" modelId="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" />
   <root nodeId="5596013162335920060" modelId="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" />
   <root nodeId="8638838189258374788" modelId="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" />
 </debugInfo>

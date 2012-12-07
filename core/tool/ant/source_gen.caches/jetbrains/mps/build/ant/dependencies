@@ -72,7 +72,7 @@
     <classNode dependClassName="jetbrains.mps.build.ant.ProjectNested" />
     <classNode dependClassName="jetbrains.mps.tool.builder.AntBootstrap" />
     <classNode dependClassName="jetbrains.mps.tool.builder.MpsWorker" />
-    <classNode dependClassName="jetbrains.mps.tool.common.WhatToDo" />
+    <classNode dependClassName="jetbrains.mps.tool.common.Script" />
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.tools.ant.BuildException" />
     <classNode dependClassName="org.apache.tools.ant.Project" />
@@ -102,7 +102,7 @@
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="jetbrains.mps.tool.common.IBuildServerMessageFormat" />
+    <classNode dependClassName="jetbrains.mps.tool.common.IMessageFormat" />
     <classNode dependClassName="org.apache.tools.ant.Task" />
     <classNode extendsClassName="jetbrains.mps.build.ant.MyExecuteStreamHandler" />
   </dependency>
@@ -112,15 +112,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="org.apache.tools.ant.BuildException" />
     <classNode extendsClassName="org.apache.tools.ant.types.FileSet" />
-  </dependency>
-  <dependency className="jetbrains.mps.build.ant.TeamCityMessageFormat" file="TeamCityMessageFormat.java">
-    <classNode dependClassName="java.lang.CharSequence" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.StringBuffer" />
-    <classNode dependClassName="java.util.regex.Matcher" />
-    <classNode dependClassName="java.util.regex.Pattern" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.tool.common.IBuildServerMessageFormat" />
   </dependency>
 </dependenciesRoot>
 

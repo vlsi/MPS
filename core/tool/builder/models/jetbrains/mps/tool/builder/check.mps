@@ -1210,7 +1210,7 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="2546981710035415921">
           <node role="expression" roleId="tpee.1068581517676" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2546981710035415922">
             <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2546981710035415923">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="644x.4003657351907893942" resolveInfo="TeamCityMessageFormat" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="asz6.7910428321252775337" resolveInfo="TeamCityMessageFormat" />
             </node>
           </node>
         </node>

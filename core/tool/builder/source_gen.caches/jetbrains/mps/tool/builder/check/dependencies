@@ -11,7 +11,6 @@
     <classNode dependClassName="java.lang.management.ManagementFactory" />
     <classNode dependClassName="java.lang.management.MemoryMXBean" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="jetbrains.mps.build.ant.TeamCityMessageFormat" />
     <classNode dependClassName="jetbrains.mps.kernel.model.SModelUtil" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
@@ -26,8 +25,9 @@
     <classNode dependClassName="jetbrains.mps.tool.builder.Environment" />
     <classNode dependClassName="jetbrains.mps.tool.builder.FileMPSProject" />
     <classNode dependClassName="jetbrains.mps.tool.builder.MpsWorker" />
-    <classNode dependClassName="jetbrains.mps.tool.common.IBuildServerMessageFormat" />
-    <classNode dependClassName="jetbrains.mps.tool.common.WhatToDo" />
+    <classNode dependClassName="jetbrains.mps.tool.common.IMessageFormat" />
+    <classNode dependClassName="jetbrains.mps.tool.common.Script" />
+    <classNode dependClassName="jetbrains.mps.tool.common.TeamCityMessageFormat" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
