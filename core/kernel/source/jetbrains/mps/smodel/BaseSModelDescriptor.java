@@ -43,6 +43,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   protected SModelReference myModelReference;
 
   private List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
+  private SModule myModule;
 
 
   protected BaseSModelDescriptor(@NotNull SModelReference modelReference, @NotNull DataSource source) {
@@ -136,14 +137,16 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return myModelReference.getStereotype();
   }
 
+
+  @Override
+  public void setModule(SModule module) {
+    myModule = module;
+  }
+
   @Override
   @Nullable
   public IModule getModule() {
-    SModule owner = SModelRepository.getInstance().getOwner(this);
-    if (owner instanceof IModule) {
-      return (IModule) owner;
-    }
-    return null;
+    return ((IModule) myModule);
   }
 
   protected abstract SModel getCurrentModelInternal();

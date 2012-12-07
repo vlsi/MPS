@@ -45,7 +45,6 @@ public class SModelRepository implements CoreComponent {
   private final Map<SModelFqName, SModelDescriptor> myFqNameToModelDescriptorMap = new ConcurrentHashMap<SModelFqName, SModelDescriptor>();
 
   private final Object myModelsLock = new Object();
-  private final Map<SModelDescriptor, SModule> myModelOwner = new THashMap<SModelDescriptor, SModule>();
   private final Map<SModule, Set<SModelDescriptor>> myModelsByOwner = new THashMap<SModule, Set<SModelDescriptor>>();
 
   private final Object myListenersLock = new Object();
@@ -73,7 +72,7 @@ public class SModelRepository implements CoreComponent {
    */
   public void registerModelDescriptor(SModelDescriptor modelDescriptor, SModule container) {
     synchronized (myModelsLock) {
-      SModule prevModule = myModelOwner.get(modelDescriptor);
+      SModule prevModule = modelDescriptor.getModule();
       if (prevModule != null) {
         if (prevModule != container) {
           LOG.error("Model \"" + modelDescriptor.getModelName() + "\" is already registered by another module: existing=" + prevModule + ", new=" + container);
@@ -94,7 +93,7 @@ public class SModelRepository implements CoreComponent {
       }
 
       ownerModels.add(modelDescriptor);
-      myModelOwner.put(modelDescriptor, container);
+      modelDescriptor.setModule(container);
 
       if (modelReference.getModelId() != null) {
         myIdToModelDescriptorMap.put(modelReference.getModelId(), modelDescriptor);
@@ -115,8 +114,7 @@ public class SModelRepository implements CoreComponent {
 
   public void unRegisterModelDescriptor(SModelDescriptor md, SModule forModule) {
     synchronized (myModelsLock) {
-      SModule owner = myModelOwner.get(md);
-      if (owner != forModule) throw new IllegalStateException();
+      if (md.getModule() != forModule) throw new IllegalStateException();
       removeModelDescriptor(md);
     }
   }
@@ -124,7 +122,7 @@ public class SModelRepository implements CoreComponent {
   public void removeModelDescriptor(SModelDescriptor md) {
     synchronized (myModelsLock) {
       fireBeforeModelRemoved(md);
-      SModule owner = myModelOwner.remove(md);
+      SModule owner = md.getModule();
       if (owner == null) throw new IllegalStateException();
       Set<SModelDescriptor> ownerModels = myModelsByOwner.get(owner);
       if (!ownerModels.remove(md)) throw new IllegalStateException();
@@ -170,7 +168,7 @@ public class SModelRepository implements CoreComponent {
 
   public List<SModelDescriptor> getModelDescriptors() {
     synchronized (myModelsLock) {
-      return new ArrayList<SModelDescriptor>(myModelOwner.keySet());
+      return new ArrayList<SModelDescriptor>(myIdToModelDescriptorMap.values());
     }
   }
 
@@ -206,10 +204,9 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
+  //todo inline
   public SModule getOwner(org.jetbrains.mps.openapi.model.SModel modelDescriptor) {
-    synchronized (myModelsLock) {
-      return myModelOwner.get((SModelDescriptor) modelDescriptor);
-    }
+    return modelDescriptor.getModule();
   }
 
   //----------------------------stuff-----------------------------
@@ -217,7 +214,7 @@ public class SModelRepository implements CoreComponent {
 
   private List<EditableSModelDescriptor> getModelsToSave() {
     List<EditableSModelDescriptor> modelsToSave = new ArrayList<EditableSModelDescriptor>();
-    for (SModelDescriptor md : myModelOwner.keySet()) {
+    for (SModelDescriptor md : myIdToModelDescriptorMap.values()) {
       if (!(md instanceof EditableSModelDescriptor)) continue;
 
       EditableSModelDescriptor emd = ((EditableSModelDescriptor) md);
