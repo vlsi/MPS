@@ -19,9 +19,10 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.Statement;
 import org.eclipse.jdt.internal.core.util.RecordedParsingInformation;
+import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Comparator;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.java.parser.CommentHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -134,21 +135,26 @@ public class JavaParser {
     }
 
     // now insert comments 
-    if (converter instanceof FullASTConverter) {
-      attachComments(source, ((FullASTConverter) converter), util.recordedParsingInformation, ((FullASTConverter) converter).getCodeBlocks());
-    }
+    attachComments(source, converter, util.recordedParsingInformation);
+
 
     return new JavaParser.JavaParseResult(resultNodes, resultPackageName, problemDescription(util.recordedParsingInformation));
   }
 
-  public void attachComments(char[] source, FullASTConverter converter, RecordedParsingInformation parseInfo, Iterable<FullASTConverter.CodeBlock> blocks) {
+  public void attachComments(char[] source, ASTConverter converter, RecordedParsingInformation parseInfo) {
 
     char[] content = source;
     int[][] comments = parseInfo.commentPositions;
     int[] lineends = parseInfo.lineEnds;
 
-    final Map<SNode, Integer> positions = converter.getPositions();
+    final Wrappers._T<Map<SNode, Integer>> positions = new Wrappers._T<Map<SNode, Integer>>(MapSequence.fromMap(new HashMap<SNode, Integer>()));
+    Iterable<FullASTConverter.CodeBlock> blocks = ListSequence.fromList(new ArrayList<FullASTConverter.CodeBlock>());
     Map<Integer, SNode> javadocs = converter.getJavadocs();
+
+    if (converter instanceof FullASTConverter) {
+      blocks = ((FullASTConverter) converter).getCodeBlocks();
+      positions.value = ((FullASTConverter) converter).getPositions();
+    }
 
     Iterable<FullASTConverter.CodeBlock> blcks = Sequence.fromIterable(blocks).sort(new Comparator<FullASTConverter.CodeBlock>() {
       public int compare(FullASTConverter.CodeBlock a, FullASTConverter.CodeBlock b) {
@@ -182,7 +188,7 @@ public class JavaParser {
       if ((block != null)) {
         int pos = ListSequence.fromList(SLinkOperations.getTargets(block, "statement", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
-            return !(MapSequence.fromMap(positions).containsKey(it)) || Math.abs(MapSequence.fromMap(positions).get(it)) <= linestart;
+            return !(MapSequence.fromMap(positions.value).containsKey(it)) || Math.abs(MapSequence.fromMap(positions.value).get(it)) <= linestart;
           }
         }).count();
         for (String line : ListSequence.fromList(CommentHelper.processComment(CommentHelper.splitString(content, lineends, linestart, Math.abs(comment[1]))))) {
