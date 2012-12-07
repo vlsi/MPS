@@ -62,7 +62,6 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.tool.common.TeamCityMessageFormat;
 import org.apache.tools.ant.BuildException;
@@ -438,7 +437,7 @@ public class TestGenerationWorker extends MpsWorker {
   }
 
   private boolean isWholeProject(Project prj) {
-    return Sequence.fromIterable(((Iterable<String>) myWhatToDo.getMPSProjectFiles().get(prj.getProjectFile()))).contains(TestGenerationOnTeamcity.WHOLE_PROJECT);
+    return Sequence.fromIterable(((Iterable<String>) myWhatToDo.getMPSProjectFiles().get(prj.getProjectFile()))).contains(ScriptProperties.WHOLE_PROJECT);
   }
 
   private IFile tmpFile(String path) {
@@ -493,7 +492,7 @@ public class TestGenerationWorker extends MpsWorker {
   }
 
   private String[] getPerfomanceReportDestinations() {
-    String reportType = myWhatToDo.getProperty(Script.GENERATE_PERFORMANCE_REPORT);
+    String reportType = myWhatToDo.getProperty(ScriptProperties.GENERATE_PERFORMANCE_REPORT);
     if (reportType == null || reportType.isEmpty()) {
       return new String[]{};
     }
@@ -502,11 +501,11 @@ public class TestGenerationWorker extends MpsWorker {
   }
 
   private boolean isSaveGeneratedFilesOnDisk() {
-    return Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SAVE_ON_DISK));
+    return Boolean.parseBoolean(myWhatToDo.getProperty(ScriptProperties.SAVE_ON_DISK));
   }
 
   private boolean isInvokeTestsSet() {
-    return Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.INVOKE_TESTS)) && isCompileSet();
+    return Boolean.parseBoolean(myWhatToDo.getProperty(ScriptProperties.INVOKE_TESTS)) && isCompileSet();
   }
 
   private boolean isCompileSet() {
@@ -514,7 +513,7 @@ public class TestGenerationWorker extends MpsWorker {
   }
 
   private boolean isShowDiff() {
-    return Boolean.parseBoolean(myWhatToDo.getProperty(TestGenerationOnTeamcity.SHOW_DIFF));
+    return Boolean.parseBoolean(myWhatToDo.getProperty(ScriptProperties.SHOW_DIFF));
   }
 
   @Override

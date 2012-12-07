@@ -4,9 +4,18 @@ package jetbrains.mps.tool.common;
 
 
 public class ScriptProperties {
+
   public static final String COMPILE = "COMPILE";
   public static final String STRICT_MODE = "STRICT_MODE";
   public static final String PARALLEL_MODE = "PARALLEL_MODE";
+
+  public static final String INVOKE_TESTS = "INVOKE_TESTS";
+  public static final String SAVE_ON_DISK = "SAVE_ON_DISK";
+  public static final String SHOW_DIFF = "SHOW_DIFF";
+  public static final String WHOLE_PROJECT = "WHOLE_PROJECT";
+
+  public static final String GENERATE_PERFORMANCE_REPORT = "GENERATE_PERFORMANCE_REPORT";
+
 
   private ScriptProperties() {
   }

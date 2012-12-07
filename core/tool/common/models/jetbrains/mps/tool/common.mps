@@ -117,15 +117,6 @@
         <property name="value" nameId="tpee.1070475926801" value="value" />
       </node>
     </node>
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="878521226297927194">
-      <property name="name" nameId="tpck.1169194664001" value="GENERATE_PERFORMANCE_REPORT" />
-      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="878521226297927195" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="878521226297927196" />
-      <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="878521226297927197">
-        <property name="value" nameId="tpee.1070475926801" value="GENERATE_PERFORMANCE_REPORT" />
-      </node>
-    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="878521226297927198">
       <property name="name" nameId="tpck.1169194664001" value="myModels" />
       <property name="isVolatile" nameId="tpee.1240249534625" value="false" />
@@ -2591,8 +2582,9 @@
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="878521226297928178">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Map%dget(java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="get" />
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="878521226297928179">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="878521226297927194" resolveInfo="GENERATE_PERFORMANCE_REPORT" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1365200781785228057">
+                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="7910428321252780319" resolveInfo="ScriptProperties" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1365200781785228053" resolveInfo="GENERATE_PERFORMANCE_REPORT" />
                 </node>
               </node>
             </node>
@@ -2659,8 +2651,9 @@
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="878521226297928206">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="k7g3.~Map%dput(java%dlang%dObject,java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="put" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="878521226297928207">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="878521226297927194" resolveInfo="GENERATE_PERFORMANCE_REPORT" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1365200781785228058">
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="7910428321252780319" resolveInfo="ScriptProperties" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1365200781785228053" resolveInfo="GENERATE_PERFORMANCE_REPORT" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="878521226297928208">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="878521226297928174" resolveInfo="reports" />
@@ -5608,6 +5601,7 @@
     </node>
   </root>
   <root id="7910428321252780319">
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="1365200781785229704" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="7910428321252809155">
       <property name="name" nameId="tpck.1169194664001" value="COMPILE" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -5635,6 +5629,54 @@
         <property name="value" nameId="tpee.1070475926801" value="PARALLEL_MODE" />
       </node>
     </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="1365200781785229587" />
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1365200781785207595">
+      <property name="name" nameId="tpck.1169194664001" value="INVOKE_TESTS" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1365200781785207596" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1365200781785207597" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1365200781785207598">
+        <property name="value" nameId="tpee.1070475926801" value="INVOKE_TESTS" />
+      </node>
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1365200781785216423">
+      <property name="name" nameId="tpck.1169194664001" value="SAVE_ON_DISK" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1365200781785216424" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1365200781785216425" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1365200781785216426">
+        <property name="value" nameId="tpee.1070475926801" value="SAVE_ON_DISK" />
+      </node>
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1365200781785216925">
+      <property name="name" nameId="tpck.1169194664001" value="SHOW_DIFF" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1365200781785216926" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1365200781785216927" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1365200781785216928">
+        <property name="value" nameId="tpee.1070475926801" value="SHOW_DIFF" />
+      </node>
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1365200781785217431">
+      <property name="name" nameId="tpck.1169194664001" value="WHOLE_PROJECT" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1365200781785217432" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1365200781785217433" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1365200781785217434">
+        <property name="value" nameId="tpee.1070475926801" value="WHOLE_PROJECT" />
+      </node>
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="1365200781785229549" />
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="1365200781785228053">
+      <property name="name" nameId="tpck.1169194664001" value="GENERATE_PERFORMANCE_REPORT" />
+      <property name="isFinal" nameId="tpee.1176718929932" value="true" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="1365200781785228054" />
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="1365200781785228055" />
+      <node role="initializer" roleId="tpee.1068431790190" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="1365200781785228056">
+        <property name="value" nameId="tpee.1070475926801" value="GENERATE_PERFORMANCE_REPORT" />
+      </node>
+    </node>
+    <node role="member" roleId="tpee.5375687026011219971" type="tpee.PlaceholderMember" typeId="tpee.1465982738277781862" id="1365200781785229744" />
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7910428321252780320" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="7910428321252780321">
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="7910428321252806829" />

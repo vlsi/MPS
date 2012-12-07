@@ -29,7 +29,6 @@ public class Script {
   private static final String ELEMENT_PROPERTY = "property";
   private static final String PATH = "path";
   private static final String VALUE = "value";
-  public static final String GENERATE_PERFORMANCE_REPORT = "GENERATE_PERFORMANCE_REPORT";
   private final Set<File> myModels = new LinkedHashSet<File>();
   private final Set<File> myModules = new LinkedHashSet<File>();
   private final Set<File> myExcludedFromDiff = new LinkedHashSet<File>();
@@ -285,7 +284,7 @@ public class Script {
   }
 
   public void addPerfomanceReport(String s) {
-    String reports = myProperties.get(GENERATE_PERFORMANCE_REPORT);
+    String reports = myProperties.get(ScriptProperties.GENERATE_PERFORMANCE_REPORT);
     if (reports == null) {
       reports = "";
     }
@@ -293,7 +292,7 @@ public class Script {
       reports += ",";
     }
     reports += s;
-    myProperties.put(GENERATE_PERFORMANCE_REPORT, reports);
+    myProperties.put(ScriptProperties.GENERATE_PERFORMANCE_REPORT, reports);
   }
 
   public static File createTmpFile() {

@@ -19,7 +19,6 @@
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Override" />
-    <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="jetbrains.mps.build.ant.MyExecuteStreamHandler" />
     <classNode dependClassName="jetbrains.mps.build.ant.MyTeamcityAwareExecuteStreamHandler" />
@@ -27,7 +26,7 @@
     <classNode dependClassName="jetbrains.mps.build.ant.generation.PerfomanceReport" />
     <classNode dependClassName="jetbrains.mps.tool.builder.MpsWorker" />
     <classNode dependClassName="jetbrains.mps.tool.builder.make.TestGenerationWorker" />
-    <classNode dependClassName="jetbrains.mps.tool.common.Script" />
+    <classNode dependClassName="jetbrains.mps.tool.common.ScriptProperties" />
     <classNode dependClassName="jetbrains.mps.tool.common.TeamCityMessageFormat" />
     <classNode dependClassName="org.apache.tools.ant.types.resources.FileResource" />
     <classNode extendsClassName="jetbrains.mps.build.ant.generation.GenerateTask" />

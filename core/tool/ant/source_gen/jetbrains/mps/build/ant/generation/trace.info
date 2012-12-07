@@ -87,81 +87,77 @@
     <unitInfo nodeId="4003657351907890045" fileName="PerfomanceReport.java" startLine="9" startPosition="0" endLine="45" endPosition="0" unitName="jetbrains.mps.build.ant.generation.PerfomanceReport" />
   </root>
   <root nodeId="4003657351907891908" modelId="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)">
-    <nodeInfo nodeId="4003657351907892082" fileName="TestGenerationOnTeamcity.java" startLine="16" startPosition="3" endLine="17" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892089" fileName="TestGenerationOnTeamcity.java" startLine="17" startPosition="66" endLine="18" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892096" fileName="TestGenerationOnTeamcity.java" startLine="18" startPosition="63" endLine="19" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891911" fileName="TestGenerationOnTeamcity.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INVOKE_TESTS" />
-    <nodeInfo nodeId="4003657351907891915" fileName="TestGenerationOnTeamcity.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SAVE_ON_DISK" />
-    <nodeInfo nodeId="4003657351907891919" fileName="TestGenerationOnTeamcity.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="SHOW_DIFF" />
-    <nodeInfo nodeId="4003657351907891923" fileName="TestGenerationOnTeamcity.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="WHOLE_PROJECT" />
-    <nodeInfo nodeId="4003657351907891939" fileName="TestGenerationOnTeamcity.java" startLine="30" startPosition="32" endLine="31" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907891951" fileName="TestGenerationOnTeamcity.java" startLine="34" startPosition="59" endLine="35" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891962" fileName="TestGenerationOnTeamcity.java" startLine="38" startPosition="35" endLine="39" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907891974" fileName="TestGenerationOnTeamcity.java" startLine="42" startPosition="51" endLine="43" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891985" fileName="TestGenerationOnTeamcity.java" startLine="46" startPosition="34" endLine="47" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907891997" fileName="TestGenerationOnTeamcity.java" startLine="50" startPosition="49" endLine="51" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892010" fileName="TestGenerationOnTeamcity.java" startLine="54" startPosition="70" endLine="55" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892023" fileName="TestGenerationOnTeamcity.java" startLine="59" startPosition="57" endLine="60" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907892030" fileName="TestGenerationOnTeamcity.java" startLine="64" startPosition="62" endLine="65" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4003657351907892053" fileName="TestGenerationOnTeamcity.java" startLine="69" startPosition="41" endLine="70" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907892064" fileName="TestGenerationOnTeamcity.java" startLine="71" startPosition="28" endLine="72" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4003657351907892072" fileName="TestGenerationOnTeamcity.java" startLine="72" startPosition="53" endLine="73" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907892049" fileName="TestGenerationOnTeamcity.java" startLine="75" startPosition="12" endLine="76" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4003657351907891931" fileName="TestGenerationOnTeamcity.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestGenerationOnTeamcity#()V" />
-    <nodeInfo nodeId="4003657351907892047" fileName="TestGenerationOnTeamcity.java" startLine="75" startPosition="10" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="4003657351907891935" fileName="TestGenerationOnTeamcity.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShowDiff#()Z" />
-    <nodeInfo nodeId="4003657351907891945" fileName="TestGenerationOnTeamcity.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShowDiff#(Z)V" />
-    <nodeInfo nodeId="4003657351907891958" fileName="TestGenerationOnTeamcity.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInvokeTests#()Z" />
-    <nodeInfo nodeId="4003657351907891968" fileName="TestGenerationOnTeamcity.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setInvokeTests#(Z)V" />
-    <nodeInfo nodeId="4003657351907891981" fileName="TestGenerationOnTeamcity.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSaveOnDisk#()Z" />
-    <nodeInfo nodeId="4003657351907891991" fileName="TestGenerationOnTeamcity.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSaveOnDisk#(Z)V" />
-    <nodeInfo nodeId="4003657351907892004" fileName="TestGenerationOnTeamcity.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addConfiguredPerfomanceReport#(Ljetbrains/mps/build/ant/generation/PerfomanceReport;)V" />
-    <nodeInfo nodeId="4003657351907892017" fileName="TestGenerationOnTeamcity.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWorkerClass#()Ljava/lang/Class;" />
-    <nodeInfo nodeId="4003657351907892026" fileName="TestGenerationOnTeamcity.java" startLine="63" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExecuteStreamHandler#()Ljetbrains/mps/build/ant/MyExecuteStreamHandler;" />
-    <nodeInfo nodeId="4003657351907892059" fileName="TestGenerationOnTeamcity.java" startLine="70" startPosition="44" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="4003657351907892043" fileName="TestGenerationOnTeamcity.java" startLine="68" startPosition="64" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4003657351907892037" fileName="TestGenerationOnTeamcity.java" startLine="68" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addConfiguredProject#(Ljetbrains/mps/build/ant/ProjectNested;)V" />
-    <scopeInfo nodeId="4003657351907891934" fileName="TestGenerationOnTeamcity.java" startLine="27" startPosition="37" endLine="27" endPosition="37" />
-    <scopeInfo nodeId="4003657351907891938" fileName="TestGenerationOnTeamcity.java" startLine="30" startPosition="32" endLine="31" endPosition="67" />
-    <scopeInfo nodeId="4003657351907891950" fileName="TestGenerationOnTeamcity.java" startLine="34" startPosition="59" endLine="35" endPosition="80" />
-    <scopeInfo nodeId="4003657351907891961" fileName="TestGenerationOnTeamcity.java" startLine="38" startPosition="35" endLine="39" endPosition="70" />
-    <scopeInfo nodeId="4003657351907891973" fileName="TestGenerationOnTeamcity.java" startLine="42" startPosition="51" endLine="43" endPosition="72" />
-    <scopeInfo nodeId="4003657351907891984" fileName="TestGenerationOnTeamcity.java" startLine="46" startPosition="34" endLine="47" endPosition="70" />
-    <scopeInfo nodeId="4003657351907891996" fileName="TestGenerationOnTeamcity.java" startLine="50" startPosition="49" endLine="51" endPosition="71" />
-    <scopeInfo nodeId="4003657351907892009" fileName="TestGenerationOnTeamcity.java" startLine="54" startPosition="70" endLine="55" endPosition="54" />
-    <scopeInfo nodeId="4003657351907892022" fileName="TestGenerationOnTeamcity.java" startLine="59" startPosition="57" endLine="60" endPosition="38" />
-    <scopeInfo nodeId="4003657351907892029" fileName="TestGenerationOnTeamcity.java" startLine="64" startPosition="62" endLine="65" endPosition="86" />
-    <scopeInfo nodeId="4003657351907892048" fileName="TestGenerationOnTeamcity.java" startLine="75" startPosition="12" endLine="76" endPosition="47" />
-    <scopeInfo nodeId="4003657351907891931" fileName="TestGenerationOnTeamcity.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="4003657351907892063" fileName="TestGenerationOnTeamcity.java" startLine="71" startPosition="28" endLine="73" endPosition="65">
+    <nodeInfo nodeId="4003657351907892082" fileName="TestGenerationOnTeamcity.java" startLine="16" startPosition="3" endLine="17" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892089" fileName="TestGenerationOnTeamcity.java" startLine="17" startPosition="83" endLine="18" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892096" fileName="TestGenerationOnTeamcity.java" startLine="18" startPosition="80" endLine="19" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891939" fileName="TestGenerationOnTeamcity.java" startLine="25" startPosition="32" endLine="26" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907891951" fileName="TestGenerationOnTeamcity.java" startLine="29" startPosition="59" endLine="30" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891962" fileName="TestGenerationOnTeamcity.java" startLine="33" startPosition="35" endLine="34" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907891974" fileName="TestGenerationOnTeamcity.java" startLine="37" startPosition="51" endLine="38" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891985" fileName="TestGenerationOnTeamcity.java" startLine="41" startPosition="34" endLine="42" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907891997" fileName="TestGenerationOnTeamcity.java" startLine="45" startPosition="49" endLine="46" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892010" fileName="TestGenerationOnTeamcity.java" startLine="49" startPosition="70" endLine="50" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892023" fileName="TestGenerationOnTeamcity.java" startLine="54" startPosition="57" endLine="55" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907892030" fileName="TestGenerationOnTeamcity.java" startLine="59" startPosition="62" endLine="60" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907892053" fileName="TestGenerationOnTeamcity.java" startLine="64" startPosition="41" endLine="65" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907892064" fileName="TestGenerationOnTeamcity.java" startLine="66" startPosition="28" endLine="67" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4003657351907892072" fileName="TestGenerationOnTeamcity.java" startLine="67" startPosition="53" endLine="68" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907892049" fileName="TestGenerationOnTeamcity.java" startLine="70" startPosition="12" endLine="71" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4003657351907891931" fileName="TestGenerationOnTeamcity.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestGenerationOnTeamcity#()V" />
+    <nodeInfo nodeId="4003657351907892047" fileName="TestGenerationOnTeamcity.java" startLine="70" startPosition="10" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4003657351907891935" fileName="TestGenerationOnTeamcity.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getShowDiff#()Z" />
+    <nodeInfo nodeId="4003657351907891945" fileName="TestGenerationOnTeamcity.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setShowDiff#(Z)V" />
+    <nodeInfo nodeId="4003657351907891958" fileName="TestGenerationOnTeamcity.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getInvokeTests#()Z" />
+    <nodeInfo nodeId="4003657351907891968" fileName="TestGenerationOnTeamcity.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setInvokeTests#(Z)V" />
+    <nodeInfo nodeId="4003657351907891981" fileName="TestGenerationOnTeamcity.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getSaveOnDisk#()Z" />
+    <nodeInfo nodeId="4003657351907891991" fileName="TestGenerationOnTeamcity.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setSaveOnDisk#(Z)V" />
+    <nodeInfo nodeId="4003657351907892004" fileName="TestGenerationOnTeamcity.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addConfiguredPerfomanceReport#(Ljetbrains/mps/build/ant/generation/PerfomanceReport;)V" />
+    <nodeInfo nodeId="4003657351907892017" fileName="TestGenerationOnTeamcity.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWorkerClass#()Ljava/lang/Class;" />
+    <nodeInfo nodeId="4003657351907892026" fileName="TestGenerationOnTeamcity.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExecuteStreamHandler#()Ljetbrains/mps/build/ant/MyExecuteStreamHandler;" />
+    <nodeInfo nodeId="4003657351907892059" fileName="TestGenerationOnTeamcity.java" startLine="65" startPosition="44" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="4003657351907892043" fileName="TestGenerationOnTeamcity.java" startLine="63" startPosition="64" endLine="72" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4003657351907892037" fileName="TestGenerationOnTeamcity.java" startLine="63" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addConfiguredProject#(Ljetbrains/mps/build/ant/ProjectNested;)V" />
+    <scopeInfo nodeId="4003657351907891934" fileName="TestGenerationOnTeamcity.java" startLine="22" startPosition="37" endLine="22" endPosition="37" />
+    <scopeInfo nodeId="4003657351907891938" fileName="TestGenerationOnTeamcity.java" startLine="25" startPosition="32" endLine="26" endPosition="84" />
+    <scopeInfo nodeId="4003657351907891950" fileName="TestGenerationOnTeamcity.java" startLine="29" startPosition="59" endLine="30" endPosition="97" />
+    <scopeInfo nodeId="4003657351907891961" fileName="TestGenerationOnTeamcity.java" startLine="33" startPosition="35" endLine="34" endPosition="87" />
+    <scopeInfo nodeId="4003657351907891973" fileName="TestGenerationOnTeamcity.java" startLine="37" startPosition="51" endLine="38" endPosition="89" />
+    <scopeInfo nodeId="4003657351907891984" fileName="TestGenerationOnTeamcity.java" startLine="41" startPosition="34" endLine="42" endPosition="87" />
+    <scopeInfo nodeId="4003657351907891996" fileName="TestGenerationOnTeamcity.java" startLine="45" startPosition="49" endLine="46" endPosition="88" />
+    <scopeInfo nodeId="4003657351907892009" fileName="TestGenerationOnTeamcity.java" startLine="49" startPosition="70" endLine="50" endPosition="54" />
+    <scopeInfo nodeId="4003657351907892022" fileName="TestGenerationOnTeamcity.java" startLine="54" startPosition="57" endLine="55" endPosition="38" />
+    <scopeInfo nodeId="4003657351907892029" fileName="TestGenerationOnTeamcity.java" startLine="59" startPosition="62" endLine="60" endPosition="86" />
+    <scopeInfo nodeId="4003657351907892048" fileName="TestGenerationOnTeamcity.java" startLine="70" startPosition="12" endLine="71" endPosition="47" />
+    <scopeInfo nodeId="4003657351907891931" fileName="TestGenerationOnTeamcity.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="4003657351907892063" fileName="TestGenerationOnTeamcity.java" startLine="66" startPosition="28" endLine="68" endPosition="82">
       <varInfo nodeId="4003657351907892065" varName="next" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892081" fileName="TestGenerationOnTeamcity.java" startLine="16" startPosition="3" endLine="19" endPosition="67" />
-    <scopeInfo nodeId="4003657351907891935" fileName="TestGenerationOnTeamcity.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="4003657351907891945" fileName="TestGenerationOnTeamcity.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
+    <scopeInfo nodeId="4003657351907892081" fileName="TestGenerationOnTeamcity.java" startLine="16" startPosition="3" endLine="19" endPosition="77" />
+    <scopeInfo nodeId="4003657351907891935" fileName="TestGenerationOnTeamcity.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
+    <scopeInfo nodeId="4003657351907891945" fileName="TestGenerationOnTeamcity.java" startLine="29" startPosition="0" endLine="32" endPosition="0">
       <varInfo nodeId="4003657351907891948" varName="isDifferenceCalculated" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891958" fileName="TestGenerationOnTeamcity.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="4003657351907891968" fileName="TestGenerationOnTeamcity.java" startLine="42" startPosition="0" endLine="45" endPosition="0">
+    <scopeInfo nodeId="4003657351907891958" fileName="TestGenerationOnTeamcity.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
+    <scopeInfo nodeId="4003657351907891968" fileName="TestGenerationOnTeamcity.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="4003657351907891971" varName="invokeTests" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907891981" fileName="TestGenerationOnTeamcity.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="4003657351907891991" fileName="TestGenerationOnTeamcity.java" startLine="50" startPosition="0" endLine="53" endPosition="0">
+    <scopeInfo nodeId="4003657351907891981" fileName="TestGenerationOnTeamcity.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="4003657351907891991" fileName="TestGenerationOnTeamcity.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="4003657351907891994" varName="saveOnDisk" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892004" fileName="TestGenerationOnTeamcity.java" startLine="54" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="4003657351907892004" fileName="TestGenerationOnTeamcity.java" startLine="49" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="4003657351907892007" varName="report" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892017" fileName="TestGenerationOnTeamcity.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="4003657351907892026" fileName="TestGenerationOnTeamcity.java" startLine="63" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="4003657351907892052" fileName="TestGenerationOnTeamcity.java" startLine="69" startPosition="41" endLine="74" endPosition="7">
+    <scopeInfo nodeId="4003657351907892017" fileName="TestGenerationOnTeamcity.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="4003657351907892026" fileName="TestGenerationOnTeamcity.java" startLine="58" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="4003657351907892052" fileName="TestGenerationOnTeamcity.java" startLine="64" startPosition="41" endLine="69" endPosition="7">
       <varInfo nodeId="4003657351907892054" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="4003657351907892042" fileName="TestGenerationOnTeamcity.java" startLine="68" startPosition="64" endLine="77" endPosition="5" />
-    <scopeInfo nodeId="4003657351907892037" fileName="TestGenerationOnTeamcity.java" startLine="68" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="4003657351907892042" fileName="TestGenerationOnTeamcity.java" startLine="63" startPosition="64" endLine="72" endPosition="5" />
+    <scopeInfo nodeId="4003657351907892037" fileName="TestGenerationOnTeamcity.java" startLine="63" startPosition="0" endLine="74" endPosition="0">
       <varInfo nodeId="4003657351907892040" varName="projectInner" />
     </scopeInfo>
-    <unitInfo nodeId="4003657351907891908" fileName="TestGenerationOnTeamcity.java" startLine="15" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity" />
+    <unitInfo nodeId="4003657351907891908" fileName="TestGenerationOnTeamcity.java" startLine="15" startPosition="0" endLine="75" endPosition="0" unitName="jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity" />
   </root>
 </debugInfo>
 

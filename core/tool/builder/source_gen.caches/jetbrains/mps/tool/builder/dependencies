@@ -9,7 +9,7 @@
     <classNode dependClassName="java.lang.reflect.Method" />
     <classNode dependClassName="java.net.URL" />
     <classNode dependClassName="java.util.ArrayList" />
-    <classNode dependClassName="jetbrains.mps.tool.common.util.ClassloaderUtil" />
+    <classNode dependClassName="jetbrains.mps.tool.builder.util.ClassloaderUtil" />
     <classNode dependClassName="jetbrains.mps.tool.common.util.UrlClassLoader" />
   </dependency>
   <dependency className="jetbrains.mps.tool.builder.Environment" file="Environment.java">

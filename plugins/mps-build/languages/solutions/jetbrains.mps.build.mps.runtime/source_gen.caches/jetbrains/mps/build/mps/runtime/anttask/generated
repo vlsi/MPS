@@ -18,8 +18,8 @@
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6f9jb5k2icdty624yqk3hbqvsk65dq5" />
-  <dep model="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)" hash="-762vfmi6bs1ljtgxdm39hv6061cixv9" />
-  <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" hash="386d87q0g7nceeh44mivxbheswg3soq" />
+  <dep model="r:73cef602-d8a6-459c-91ff-d4e129d1a7c5(jetbrains.mps.tool.builder)" hash="-5gj7i5qdqjkg6c9txlmlhbpe6timjkw" />
+  <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" hash="7x9ya9x7lifwotb7ly7wd4rmtnjpa9c" />
   <common hash="-5w8y5unb5dqok56bf44po8p772fcues" />
   <source id="7799088097575503432" name="GenModuleXmlTask" hash="8ifsvwwchtgpjxwfhjkiw0nn3dipvy7">
     <dep root="6690493898470434339" />

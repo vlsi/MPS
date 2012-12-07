@@ -23,37 +23,6 @@
     <classNode dependClassName="sun.misc.Resource" />
     <classNode extendsClassName="java.util.Enumeration" />
   </dependency>
-  <dependency className="jetbrains.mps.tool.common.util.ClassloaderUtil" file="ClassloaderUtil.java">
-    <classNode dependClassName="java.io.File" />
-    <classNode dependClassName="java.lang.Class" />
-    <classNode dependClassName="java.lang.ClassCastException" />
-    <classNode dependClassName="java.lang.ClassLoader" />
-    <classNode dependClassName="java.lang.ClassNotFoundException" />
-    <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.IllegalAccessException" />
-    <classNode dependClassName="java.lang.IllegalArgumentException" />
-    <classNode dependClassName="java.lang.NoSuchMethodException" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.SuppressWarnings" />
-    <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.lang.Thread" />
-    <classNode dependClassName="java.lang.reflect.Field" />
-    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
-    <classNode dependClassName="java.net.MalformedURLException" />
-    <classNode dependClassName="java.net.URL" />
-    <classNode dependClassName="java.net.URLClassLoader" />
-    <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.StringTokenizer" />
-    <classNode dependClassName="java.util.regex.Pattern" />
-    <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.tool.builder.util.PathManager" />
-    <classNode dependClassName="jetbrains.mps.tool.common.util.ContainerUtil" />
-    <classNode dependClassName="jetbrains.mps.tool.common.util.StringUtil" />
-    <classNode dependClassName="jetbrains.mps.tool.common.util.UrlClassLoader" />
-    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
-  </dependency>
   <dependency className="jetbrains.mps.tool.common.util.ClasspathCache" file="ClasspathCache.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
@@ -83,10 +52,6 @@
     <classNode dependClassName="java.util.concurrent.ThreadPoolExecutor" />
     <classNode dependClassName="java.util.concurrent.TimeUnit" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
-    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-  </dependency>
-  <dependency className="jetbrains.mps.tool.common.util.ContainerUtil" file="ContainerUtil.java">
-    <classNode dependClassName="java.util.Collection" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.tool.common.util.FileLoader" file="FileLoader.java">
