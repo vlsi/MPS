@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -26,7 +26,7 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.logging.Logger;
 
 public class ShowDiffererenceWithCurrentRevision_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("diff.png");
+  private static final Icon ICON = AllIcons.Actions.Diff;
 
   public ShowDiffererenceWithCurrentRevision_Action() {
     super("Compare with the Same Repository Version", "", ICON);

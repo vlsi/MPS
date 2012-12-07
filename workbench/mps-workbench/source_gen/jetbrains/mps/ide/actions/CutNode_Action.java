@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
@@ -21,7 +21,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
 
 public class CutNode_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("menu-cut.png");
+  private static final Icon ICON = AllIcons.Actions.Menu_cut;
 
   public CutNode_Action() {
     super("Cut", "", ICON);

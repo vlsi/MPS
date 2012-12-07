@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane;
 
+import com.intellij.icons.AllIcons.Actions;
 import jetbrains.mps.ide.icons.IdeIcons;
 
 import javax.swing.Icon;
@@ -62,7 +63,7 @@ public class Icons extends IdeIcons {
   public static final Icon INFER_QUESTION_ICON = new ImageIcon(Icons.class.getResource("nodes/inferQuestion.png"));
 
   public static final Icon DELETE_ICON = new ImageIcon(Icons.class.getResource("other/cancel.png"));
-  public static final Icon FIND_ICON = new ImageIcon(Icons.class.getResource("other/find.png"));
+  public static final Icon FIND_ICON = Actions.Find;
 
   public static final Icon HIERARCHY_ICON = new ImageIcon(Icons.class.getResource("nodes/hierarchyView.png"));
 

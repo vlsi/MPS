@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.java.runtime.ui.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -16,7 +16,7 @@ import jetbrains.mps.debugger.java.runtime.evaluation.EvaluationProvider;
 import jetbrains.mps.logging.Logger;
 
 public class RemoveWatchAction_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("remove.png");
+  private static final Icon ICON = AllIcons.General.Remove;
 
   public RemoveWatchAction_Action() {
     super("Remove Watch", "", ICON);

@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SNode;
@@ -18,7 +18,7 @@ import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.logging.Logger;
 
 public class CopyNode_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("menu-copy.png");
+  private static final Icon ICON = AllIcons.Actions.Copy;
 
   public CopyNode_Action() {
     super("Copy", "", ICON);

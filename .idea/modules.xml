@@ -32,6 +32,7 @@
       <module fileurl="file://$PROJECT_DIR$/core/findUsages-runtime/findUsages-runtime.iml" filepath="$PROJECT_DIR$/core/findUsages-runtime/findUsages-runtime.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/core/generator/generator-engine.iml" filepath="$PROJECT_DIR$/core/generator/generator-engine.iml" group="core" />
       <module fileurl="file://$PROJECT_DIR$/tools/gensources/gensources.iml" filepath="$PROJECT_DIR$/tools/gensources/gensources.iml" />
+      <module fileurl="file://$PROJECT_DIR$/workbench/icons/icons.iml" filepath="$PROJECT_DIR$/workbench/icons/icons.iml" group="workbench" />
       <module fileurl="file://$PROJECT_DIR$/plugins/ideaIntegration/ideaIntegration.iml" filepath="$PROJECT_DIR$/plugins/ideaIntegration/ideaIntegration.iml" group="plugins" />
       <module fileurl="file://$PROJECT_DIR$/editor/intentions-runtime/intentions-runtime.iml" filepath="$PROJECT_DIR$/editor/intentions-runtime/intentions-runtime.iml" group="editor" />
       <module fileurl="file://$PROJECT_DIR$/core/kernel/kernel.iml" filepath="$PROJECT_DIR$/core/kernel/kernel.iml" group="core" />

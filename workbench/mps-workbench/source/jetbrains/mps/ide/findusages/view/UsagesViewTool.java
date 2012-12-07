@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view;
 
+import com.intellij.icons.AllIcons.Toolwindows;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
@@ -80,7 +81,7 @@ public class UsagesViewTool extends TabbedUsagesTool implements PersistentStateC
   //----CONSTRUCT STUFF----
 
   public UsagesViewTool(Project project) {
-    super(project, TOOL_WINDOW_ID, 3, jetbrains.mps.ide.projectPane.Icons.FIND_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, TOOL_WINDOW_ID, 3, Toolwindows.ToolWindowFind, ToolWindowAnchor.BOTTOM, true);
   }
 
   protected UsagesView getUsagesView(int index) {

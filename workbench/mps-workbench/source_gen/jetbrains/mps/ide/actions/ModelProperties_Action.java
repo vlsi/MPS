@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -20,7 +20,7 @@ import javax.swing.SwingUtilities;
 import jetbrains.mps.logging.Logger;
 
 public class ModelProperties_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("modelProperties.png");
+  private static final Icon ICON = AllIcons.General.Settings;
 
   public ModelProperties_Action() {
     super("Model Properties", "", ICON);

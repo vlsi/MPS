@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
@@ -20,7 +20,7 @@ import jetbrains.mps.ide.editorTabs.TabbedEditor;
 import jetbrains.mps.logging.Logger;
 
 public class ShowConceptInHierarchy_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("hierarchyView.png");
+  private static final Icon ICON = AllIcons.Toolwindows.ToolWindowHierarchy;
 
   public ShowConceptInHierarchy_Action() {
     super("Show Concept in Hierarchy", "", ICON);

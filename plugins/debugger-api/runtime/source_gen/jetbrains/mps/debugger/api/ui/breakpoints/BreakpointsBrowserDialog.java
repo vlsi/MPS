@@ -33,6 +33,7 @@ import com.intellij.openapi.actionSystem.ToggleAction;
 import jetbrains.mps.debugger.api.ui.icons.Icons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.AnAction;
+import com.intellij.icons.AllIcons;
 import javax.swing.AbstractAction;
 import java.awt.event.ActionEvent;
 import javax.swing.KeyStroke;
@@ -279,7 +280,7 @@ public class BreakpointsBrowserDialog extends DialogWrapper implements DataProvi
       @Override
       public void update(AnActionEvent e) {
         super.update(e);
-        e.getPresentation().setIcon(jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons.ADD);
+        e.getPresentation().setIcon(AllIcons.General.Add);
       }
     };
     for (final IBreakpointKind kind : myProvidersManager.getAllKinds()) {
