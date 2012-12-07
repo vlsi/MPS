@@ -26,8 +26,7 @@ import jetbrains.mps.vfs.FileSystem;
 import java.io.File;
 import java.net.MalformedURLException;
 import org.jdom.Element;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
   public static final String TRACE_FILE_NAME = "trace.info";
@@ -93,9 +92,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
 
   @Override
   protected DebugInfo readCache(SModelDescriptor sm) {
-    if (log.isWarnEnabled()) {
-      log.warn("Should not use readCache method since it may cause a deadlock.\nSee MPS-13899", new RuntimeException());
-    }
+    LOG.warning("Should not use readCache method since it may cause a deadlock.\nSee MPS-13899", new RuntimeException());
     return readCache(sm, sm.getModule());
   }
 
@@ -136,9 +133,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
           stream.close();
         }
       } catch (IOException e) {
-        if (log.isErrorEnabled()) {
-          log.error("", e);
-        }
+        LOG.error("", e);
       }
     }
   }
@@ -244,7 +239,7 @@ public class TraceInfoCache extends XmlBasedModelCache<DebugInfo> {
     public URL getResource(IModule module, String resourceName);
   }
 
-  protected static Log log = LogFactory.getLog(TraceInfoCache.class);
+  private static Logger LOG = Logger.getLogger(TraceInfoCache.class);
 
   private static boolean neq_xlaj1j_a0b0s(Object a, Object b) {
     return !((a != null ?

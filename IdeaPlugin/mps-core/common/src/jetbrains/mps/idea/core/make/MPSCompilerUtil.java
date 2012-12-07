@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.core.make;
 
+import com.intellij.openapi.util.Key;
 import org.jetbrains.annotations.NonNls;
 
 /**
@@ -25,4 +26,8 @@ public class MPSCompilerUtil {
 
   @NonNls
   public static final String BUILDER_ID = "MPS";
+  @NonNls
+  public static final Key<String> MPS_LANGUAGES = Key.create("MPS_LANGUAGES_CLASSPATH");
+  @NonNls
+  public static final Key<String> MPS_REPOSITORY = Key.create("MPS_REPOSITORY");
 }

@@ -32,8 +32,7 @@ import com.intellij.execution.ui.actions.CloseAction;
 import javax.swing.JComponent;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.util.Disposer;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class DebuggerToolContentBuilder implements Disposable {
   @NonNls
@@ -86,9 +85,7 @@ public class DebuggerToolContentBuilder implements Disposable {
     ui.getOptions().setMoveToGridActionEnabled(true).setMinimizeActionEnabled(true);
     AbstractDebugSession debugSession = DebugSessionManagerComponent.getInstance(myProject).getDebugSession(myExecutionResult.getProcessHandler());
     if (debugSession == null) {
-      if (log.isErrorEnabled()) {
-        log.error("No debug session found for process handler " + myExecutionResult.getProcessHandler());
-      }
+      LOG.error("No debug session found for process handler " + myExecutionResult.getProcessHandler());
     } else {
       new DebuggerToolPanel(myProject, debugSession, ui);
     }
@@ -145,5 +142,5 @@ public class DebuggerToolContentBuilder implements Disposable {
     }
   }
 
-  protected static Log log = LogFactory.getLog(DebuggerToolContentBuilder.class);
+  private static Logger LOG = Logger.getLogger(DebuggerToolContentBuilder.class);
 }

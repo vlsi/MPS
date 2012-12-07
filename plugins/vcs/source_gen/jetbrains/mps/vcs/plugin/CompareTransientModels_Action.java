@@ -20,8 +20,7 @@ import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import com.intellij.openapi.project.Project;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class CompareTransientModels_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("diff.png");
@@ -48,9 +47,7 @@ public class CompareTransientModels_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CompareTransientModels", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "CompareTransientModels", t);
       this.disable(event.getPresentation());
     }
   }
@@ -85,13 +82,11 @@ public class CompareTransientModels_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CompareTransientModels", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "CompareTransientModels", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(CompareTransientModels_Action.class);
+  private static Logger LOG = Logger.getLogger(CompareTransientModels_Action.class);
 
   private static boolean eq_5whyyr_a0a0a3(Object a, Object b) {
     return (a != null ?

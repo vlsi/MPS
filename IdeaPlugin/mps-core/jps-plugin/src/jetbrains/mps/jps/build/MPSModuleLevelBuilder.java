@@ -17,6 +17,9 @@
 package jetbrains.mps.jps.build;
 
 import jetbrains.mps.idea.core.make.MPSCompilerUtil;
+import jetbrains.mps.jps.model.JpsMPSExtensionService;
+import jetbrains.mps.jps.model.JpsMPSModuleExtension;
+import jetbrains.mps.jps.model.JpsMPSRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.ModuleChunk;
 import org.jetbrains.jps.builders.DirtyFilesHolder;
@@ -29,6 +32,7 @@ import org.jetbrains.jps.incremental.ProjectBuildException;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
 import org.jetbrains.jps.model.module.JpsModule;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.IOException;
 
@@ -48,19 +52,38 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
   }
 
   @Override
+  public void buildFinished(CompileContext context) {
+    JpsMPSRepositoryFacade.getInstance().dispose();
+  }
+
+  @Override
   public ExitCode build(CompileContext compileContext,
-                        ModuleChunk moduleChunk,
-                        DirtyFilesHolder<JavaSourceRootDescriptor, ModuleBuildTarget> dirtyFilesHolder,
-                        OutputConsumer outputConsumer) throws ProjectBuildException, IOException {
+              ModuleChunk moduleChunk,
+              DirtyFilesHolder<JavaSourceRootDescriptor, ModuleBuildTarget> dirtyFilesHolder,
+              OutputConsumer outputConsumer) throws ProjectBuildException, IOException {
     ExitCode status = ExitCode.NOTHING_DONE;
     try {
       for (JpsModule jpsModule : moduleChunk.getModules()) {
-        compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "Processing " + jpsModule.getName()));
+        JpsMPSModuleExtension extension = JpsMPSExtensionService.getInstance().getExtension(jpsModule);
+        if (extension == null) {
+          compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "Ignoring (no facet) " + jpsModule.getName()));
+          continue;
+        }
+
+        JpsMPSRepositoryFacade.getInstance().init(compileContext);
+
+        compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "Processing " + jpsModule.getName() + ": " + extension.getConfiguration().getUUID()));
+        for (ModelRoot root : extension.getConfiguration().getModelRoots()) {
+          compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " -- " + root.getPresentation()));
+        }
+
       }
     } catch (Exception ex) {
       throw new ProjectBuildException(ex);
     }
 
+
+    compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.WARNING, "<simple warning to show Messages tool>"));
     return status;
   }
 }

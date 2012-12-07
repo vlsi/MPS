@@ -28,8 +28,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.FileUtil;
 import java.io.IOException;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ModelDiffTool implements DiffTool {
   public ModelDiffTool() {
@@ -43,9 +42,7 @@ public class ModelDiffTool implements DiffTool {
       oldModel = readModel(contents[0]);
       newModel = readModel(contents[1]);
     } catch (ModelReadException e) {
-      if (log.isErrorEnabled()) {
-        log.error("Can't read models", e);
-      }
+      LOG.error("Can't read models", e);
       DiffManager.getInstance().getIdeaDiffTool().show(request);
       return;
     }
@@ -95,5 +92,5 @@ public class ModelDiffTool implements DiffTool {
     }
   }
 
-  protected static Log log = LogFactory.getLog(ModelDiffTool.class);
+  private static Logger LOG = Logger.getLogger(ModelDiffTool.class);
 }

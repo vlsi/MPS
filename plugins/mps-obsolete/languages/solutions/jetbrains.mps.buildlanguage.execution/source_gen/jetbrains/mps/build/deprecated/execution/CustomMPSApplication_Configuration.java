@@ -29,8 +29,7 @@ import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
@@ -82,9 +81,7 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
       if (fieldElement != null) {
         myNode.readExternal(fieldElement);
       } else {
-        if (log.isDebugEnabled()) {
-          log.debug("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
-        }
+        LOG.debug("Element " + "myNode" + " in " + this.getClass().getName() + " was null.");
       }
     }
     {
@@ -92,9 +89,7 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
       if (fieldElement != null) {
         mySettings.readExternal(fieldElement);
       } else {
-        if (log.isDebugEnabled()) {
-          log.debug("Element " + "mySettings" + " in " + this.getClass().getName() + " was null.");
-        }
+        LOG.debug("Element " + "mySettings" + " in " + this.getClass().getName() + " was null.");
       }
     }
   }
@@ -135,9 +130,7 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
       clone.mySettings = (AntSettings_Configuration) mySettings.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      if (log.isErrorEnabled()) {
-        log.error("", ex);
-      }
+      LOG.error("", ex);
     }
     return clone;
   }
@@ -195,7 +188,7 @@ public class CustomMPSApplication_Configuration extends BaseMpsRunConfiguration 
     return new Object[]{SNodeOperations.cast(this.getNode().getNode(), "jetbrains.mps.build.packaging.structure.Layout")};
   }
 
-  protected static Log log = LogFactory.getLog(CustomMPSApplication_Configuration.class);
+  private static Logger LOG = Logger.getLogger(CustomMPSApplication_Configuration.class);
 
   public static boolean isEmpty_pdwtc4_a0a0a0d(String str) {
     return str == null || str.length() == 0;

@@ -14,12 +14,12 @@ import com.intellij.openapi.util.DimensionService;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import javax.swing.JCheckBox;
-import jetbrains.mps.InternalFlag;
 
 public class MergeDriverOptionsDialog extends DialogWrapper {
   private JPanel myPanel = new JPanel(new GridLayout(0, 1));
@@ -45,17 +45,17 @@ public class MergeDriverOptionsDialog extends DialogWrapper {
       myIdeSvn = null;
     }
 
-    myGitFixes.adIfNeeded();
+    myGitFixes.addIfNeeded();
     myGitGlobal.addItemListener(new ItemListener() {
       public void itemStateChanged(ItemEvent e) {
         myGitRepos.setEnabled(myGitGlobal.isSelected());
       }
     });
-    myGitGlobal.adIfNeeded();
-    myGitRepos.adIfNeeded();
-    myCommonSvn.adIfNeeded();
+    myGitGlobal.addIfNeeded();
+    myGitRepos.addIfNeeded();
+    myCommonSvn.addIfNeeded();
     if (myIdeSvn != null) {
-      myIdeSvn.adIfNeeded();
+      myIdeSvn.addIfNeeded();
     }
     myMainPanel.add(myPanel);
     final Dimension size = DimensionService.getInstance().getSize(getDimensionServiceKey());
@@ -92,6 +92,7 @@ public class MergeDriverOptionsDialog extends DialogWrapper {
     });
   }
 
+  @NotNull
   protected Action[] createActions() {
     List<Action> actions = ListSequence.fromList(new ArrayList<Action>());
     ListSequence.fromList(actions).addElement(getOKAction());
@@ -110,9 +111,9 @@ public class MergeDriverOptionsDialog extends DialogWrapper {
       myInstaller = installer;
     }
 
-    private void adIfNeeded() {
+    private void addIfNeeded() {
       AbstractInstaller.State currentState = myInstaller.getCurrentState();
-      if (InternalFlag.isInternalMode() || currentState != AbstractInstaller.State.INSTALLED) {
+      if (currentState != AbstractInstaller.State.NOT_ENABLED) {
         myPanel.add(this);
         setText(myInstaller.getActionTitle() + ((currentState == AbstractInstaller.State.OUTDATED ?
           " (update)" :

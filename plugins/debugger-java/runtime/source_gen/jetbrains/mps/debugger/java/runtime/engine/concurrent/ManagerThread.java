@@ -9,8 +9,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ManagerThread {
   private final BlockingQueue<IManagerCommand> myCommandQueue = new LinkedBlockingQueue<IManagerCommand>();
@@ -98,18 +97,14 @@ public class ManagerThread {
             try {
               command.cancel();
             } catch (Throwable t) {
-              if (log.isErrorEnabled()) {
-                log.error("Command " + command + " threw an exception.", t);
-              }
+              LOG.error("Command " + command + " threw an exception.", t);
             }
           }
         }
       } catch (InterruptedException ignore) {
         // do what? 
       }
-      if (log.isDebugEnabled()) {
-        log.debug("Thread " + this + " finished working.");
-      }
+      LOG.debug("Thread " + this + " finished working.");
     }
 
     private void processCommand(IManagerCommand command) {
@@ -120,12 +115,10 @@ public class ManagerThread {
           command.invoke();
         }
       } catch (Throwable t) {
-        if (log.isErrorEnabled()) {
-          log.error("Command " + command + " threw an exception.", t);
-        }
+        LOG.error("Command " + command + " threw an exception.", t);
       }
     }
   }
 
-  protected static Log log = LogFactory.getLog(ManagerThread.class);
+  private static Logger LOG = Logger.getLogger(ManagerThread.class);
 }

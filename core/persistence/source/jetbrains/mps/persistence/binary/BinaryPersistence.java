@@ -23,6 +23,8 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.io.ModelInputStream;
+import jetbrains.mps.util.io.ModelOutputStream;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 

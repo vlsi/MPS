@@ -21,8 +21,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.make.actions.MakeActionImpl;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -60,9 +59,7 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "MakeOrRebuildModelsFromChangeList", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "MakeOrRebuildModelsFromChangeList", t);
       this.disable(event.getPresentation());
     }
   }
@@ -87,9 +84,7 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
       List<SModel> models = ListSequence.fromListWithValues(new ArrayList<SModel>(), (Iterable<SModelDescriptor>) VcsActionsUtil.getModels(((VirtualFile[]) MapSequence.fromMap(_params).get("virtualFiles"))));
       new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models, ListSequence.fromList(models).first(), null, null), MakeOrRebuildModelsFromChangeList_Action.this.rebuild).executeAction();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "MakeOrRebuildModelsFromChangeList", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "MakeOrRebuildModelsFromChangeList", t);
     }
   }
 
@@ -103,5 +98,5 @@ public class MakeOrRebuildModelsFromChangeList_Action extends BaseAction {
     return res.toString();
   }
 
-  protected static Log log = LogFactory.getLog(MakeOrRebuildModelsFromChangeList_Action.class);
+  private static Logger LOG = Logger.getLogger(MakeOrRebuildModelsFromChangeList_Action.class);
 }

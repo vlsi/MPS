@@ -22,8 +22,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class FindAllAdapterUsages_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -43,9 +42,7 @@ public class FindAllAdapterUsages_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "FindAllAdapterUsages", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "FindAllAdapterUsages", t);
       this.disable(event.getPresentation());
     }
   }
@@ -74,11 +71,9 @@ public class FindAllAdapterUsages_Action extends BaseAction {
       }));
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModels(models, ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true, new AdapterUsagesFinder());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "FindAllAdapterUsages", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "FindAllAdapterUsages", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(FindAllAdapterUsages_Action.class);
+  private static Logger LOG = Logger.getLogger(FindAllAdapterUsages_Action.class);
 }

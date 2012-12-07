@@ -29,9 +29,10 @@ import jetbrains.mps.project.PathMacros;
 import jetbrains.mps.project.PathMacrosProvider;
 import java.util.Set;
 import java.util.Collections;
+import org.apache.log4j.Priority;
 import java.lang.reflect.InvocationTargetException;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class TransformationTestRunner {
   private static StringSelection EMPTY_CLIPBOARD_CONTENT = new StringSelection("");
@@ -161,8 +162,8 @@ public class TransformationTestRunner {
       }
 
       public void report(String macro, String message) {
-        if (log.isErrorEnabled()) {
-          log.error("Undefined macro: " + macro + ". " + message);
+        if (LOG.isEnabledFor(Priority.ERROR)) {
+          LOG.error("Undefined macro: " + macro + ". " + message);
         }
       }
     });
@@ -182,5 +183,5 @@ public class TransformationTestRunner {
     return exception;
   }
 
-  protected static Log log = LogFactory.getLog(TransformationTestRunner.class);
+  protected static Logger LOG = LogManager.getLogger(TransformationTestRunner.class);
 }

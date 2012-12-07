@@ -16,8 +16,7 @@ import jetbrains.mps.ide.actions.nodes.GoToRulesHelper;
 import java.awt.Frame;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.IOperationContext;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class GoToRules_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -37,9 +36,7 @@ public class GoToRules_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GoToRules", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GoToRules", t);
       this.disable(event.getPresentation());
     }
   }
@@ -79,11 +76,9 @@ public class GoToRules_Action extends BaseAction {
     try {
       GoToRulesHelper.go(((Frame) MapSequence.fromMap(_params).get("frame")), ((EditorCell) MapSequence.fromMap(_params).get("cell")), ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((SNode) MapSequence.fromMap(_params).get("node")));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GoToRules", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GoToRules", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(GoToRules_Action.class);
+  private static Logger LOG = Logger.getLogger(GoToRules_Action.class);
 }

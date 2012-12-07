@@ -16,7 +16,11 @@
 package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.io.ModelInputStream;
+import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
+
+import java.io.IOException;
 
 public class Dependency {
   public static final String MODULEREF = "moduleRef";
@@ -71,5 +75,17 @@ public class Dependency {
   @Override
   public int hashCode() {
     return (new Pair<ModuleReference,Boolean>(myModuleRef, myReexport)).hashCode();
+  }
+
+  public void save(ModelOutputStream stream) throws IOException {
+    stream.writeByte(0x75);
+    stream.writeModuleReference(myModuleRef);
+    stream.writeBoolean(myReexport);
+  }
+
+  public void load(ModelInputStream stream) throws IOException {
+    if (stream.readByte() != 0x75) throw new IOException("bad stream: no dependency start marker");
+    myModuleRef = stream.readModuleReference();
+    myReexport = stream.readBoolean();
   }
 }

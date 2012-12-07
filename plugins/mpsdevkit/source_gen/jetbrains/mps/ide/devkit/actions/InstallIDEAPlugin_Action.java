@@ -26,8 +26,7 @@ import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.ide.util.PropertiesComponent;
 import com.intellij.openapi.fileChooser.FileChooserDialog;
 import com.intellij.openapi.fileChooser.FileChooserFactory;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class InstallIDEAPlugin_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,9 +46,7 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "InstallIDEAPlugin", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "InstallIDEAPlugin", t);
       this.disable(event.getPresentation());
     }
   }
@@ -82,9 +79,7 @@ public class InstallIDEAPlugin_Action extends BaseAction {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Failed to install plugin : " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "InstallIDEAPlugin", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "InstallIDEAPlugin", t);
     }
   }
 
@@ -150,7 +145,7 @@ public class InstallIDEAPlugin_Action extends BaseAction {
     );
   }
 
-  protected static Log log = LogFactory.getLog(InstallIDEAPlugin_Action.class);
+  private static Logger LOG = Logger.getLogger(InstallIDEAPlugin_Action.class);
   private static Pattern REGEXP_gyxeh4_a0a4a7 = Pattern.compile("(?:\\.IntelliJIdea.*)|(?:\\.IdeaIC.*)", 0);
   private static Pattern REGEXP_gyxeh4_a0a4a7_0 = Pattern.compile("(?:IntelliJIdea.*)|(?:IdeaIC.*)", 0);
 }

@@ -10,8 +10,7 @@ import java.util.Map;
 import jetbrains.mps.ide.generator.GenerationSettings;
 import jetbrains.mps.ide.generator.Icons;
 import com.intellij.util.ui.EmptyIcon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class CheckModelsBeforeGeneration_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -38,9 +37,7 @@ public class CheckModelsBeforeGeneration_Action extends BaseAction {
         }
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CheckModelsBeforeGeneration", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "CheckModelsBeforeGeneration", t);
       this.disable(event.getPresentation());
     }
   }
@@ -57,11 +54,9 @@ public class CheckModelsBeforeGeneration_Action extends BaseAction {
       GenerationSettings settings = GenerationSettings.getInstance();
       settings.setCheckModelsBeforeGeneration(!(settings.isCheckModelsBeforeGeneration()));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CheckModelsBeforeGeneration", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "CheckModelsBeforeGeneration", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(CheckModelsBeforeGeneration_Action.class);
+  private static Logger LOG = Logger.getLogger(CheckModelsBeforeGeneration_Action.class);
 }

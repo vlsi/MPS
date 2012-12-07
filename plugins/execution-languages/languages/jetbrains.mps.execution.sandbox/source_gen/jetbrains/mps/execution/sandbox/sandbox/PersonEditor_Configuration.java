@@ -10,9 +10,10 @@ import org.jdom.Element;
 import com.intellij.openapi.util.WriteExternalException;
 import com.intellij.util.xmlb.XmlSerializer;
 import com.intellij.openapi.util.InvalidDataException;
+import org.apache.log4j.Priority;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class PersonEditor_Configuration implements IPersistentConfiguration, ITemplatePersistentConfiguration {
   @NotNull
@@ -64,8 +65,8 @@ public class PersonEditor_Configuration implements IPersistentConfiguration, ITe
       clone.myState = (PersonEditor_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      if (log.isErrorEnabled()) {
-        log.error("", ex);
+      if (LOG.isEnabledFor(Priority.ERROR)) {
+        LOG.error("", ex);
       }
     }
     return clone;
@@ -107,7 +108,7 @@ public class PersonEditor_Configuration implements IPersistentConfiguration, ITe
     return myEditorEx;
   }
 
-  protected static Log log = LogFactory.getLog(PersonEditor_Configuration.class);
+  protected static Logger LOG = LogManager.getLogger(PersonEditor_Configuration.class);
 
   private static boolean check_s1toyp_a0a0a(String checkedDotOperand) {
     if (null != checkedDotOperand) {

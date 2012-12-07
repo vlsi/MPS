@@ -25,8 +25,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.BaseSModelDescriptorWithSource;
 
 public class MergeBackupUtil {
@@ -66,9 +65,7 @@ public class MergeBackupUtil {
       FileUtil.zip(tmp, file);
       FileUtil.delete(tmp);
     } catch (IOException e) {
-      if (log.isErrorEnabled()) {
-        log.error("", e);
-      }
+      LOG.error("", e);
     }
   }
 
@@ -94,9 +91,7 @@ public class MergeBackupUtil {
         }
       });
       if (files == null || files.length != 1) {
-        if (log.isErrorEnabled()) {
-          log.error("Wrong zip contents");
-        }
+        LOG.error("Wrong zip contents");
       }
       file = files[0];
       char[] fileText = com.intellij.openapi.util.io.FileUtil.loadFileText(file);
@@ -138,7 +133,7 @@ public class MergeBackupUtil {
     }, false);
   }
 
-  protected static Log log = LogFactory.getLog(MergeBackupUtil.class);
+  private static Logger LOG = Logger.getLogger(MergeBackupUtil.class);
 
   private static String check_fhutfy_b0b0h(BaseSModelDescriptorWithSource checkedDotOperand) {
     if (null != checkedDotOperand) {

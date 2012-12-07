@@ -18,8 +18,7 @@ import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ShowTypeSystemTrace_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,9 +38,7 @@ public class ShowTypeSystemTrace_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowTypeSystemTrace", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowTypeSystemTrace", t);
       this.disable(event.getPresentation());
     }
   }
@@ -85,11 +82,9 @@ public class ShowTypeSystemTrace_Action extends BaseAction {
         tool.openToolLater(true);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowTypeSystemTrace", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowTypeSystemTrace", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(ShowTypeSystemTrace_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowTypeSystemTrace_Action.class);
 }

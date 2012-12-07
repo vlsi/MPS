@@ -36,7 +36,8 @@ import org.jetbrains.annotations.NotNull;
   public static   enum State {
     NOT_INSTALLED(),
     OUTDATED(),
-    INSTALLED();
+    INSTALLED(),
+    NOT_ENABLED();
 
     State() {
     }

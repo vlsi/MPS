@@ -20,8 +20,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.smodel.IOperationContext;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class CheckModule_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("modelChecker.png");
@@ -48,9 +47,7 @@ public class CheckModule_Action extends BaseAction {
         event.getPresentation().setDescription("Check " + whatToCheck.toLowerCase() + " for structure and typesystem rules");
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CheckModule", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "CheckModule", t);
       this.disable(event.getPresentation());
     }
   }
@@ -86,11 +83,9 @@ public class CheckModule_Action extends BaseAction {
         ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkModule(((IModule) MapSequence.fromMap(_params).get("module")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CheckModule", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "CheckModule", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(CheckModule_Action.class);
+  private static Logger LOG = Logger.getLogger(CheckModule_Action.class);
 }

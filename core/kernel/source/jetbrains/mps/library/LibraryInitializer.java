@@ -150,6 +150,16 @@ public class LibraryInitializer implements CoreComponent {
     return new HashSet<M>(result);
   }
 
+  public List<ModulesMiner.ModuleHandle> getModuleHandles() {
+    ModelAccess.assertLegalRead();
+
+    List<ModulesMiner.ModuleHandle> result = new ArrayList<ModulesMiner.ModuleHandle>();
+    for (SLibrary lib : myLibraries) {
+      result.addAll(lib.getHandles());
+    }
+    return result;
+  }
+
   public <M extends IModule> void addGenerators(Class<M> cls, Collection<M> result) {
     for (M m : new ArrayList<M>(result)) {
       if (m instanceof Language) {

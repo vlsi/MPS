@@ -7,8 +7,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.execution.configurations.RunProfile;
 import com.intellij.execution.executors.DefaultRunExecutor;
 import jetbrains.mps.execution.api.configurations.BaseMpsRunConfiguration;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class MPSProgramRunner extends DefaultProgramRunner {
   public MPSProgramRunner() {
@@ -23,12 +22,10 @@ public class MPSProgramRunner extends DefaultProgramRunner {
     try {
       return executorId.equals(DefaultRunExecutor.EXECUTOR_ID) && (!((profile instanceof BaseMpsRunConfiguration)) || ((BaseMpsRunConfiguration) profile).canExecute(executorId));
     } catch (Throwable throwable) {
-      if (log.isErrorEnabled()) {
-        log.error("Run configuration " + profile + " is broken.", throwable);
-      }
+      LOG.error("Run configuration " + profile + " is broken.", throwable);
       return false;
     }
   }
 
-  protected static Log log = LogFactory.getLog(MPSProgramRunner.class);
+  private static Logger LOG = Logger.getLogger(MPSProgramRunner.class);
 }

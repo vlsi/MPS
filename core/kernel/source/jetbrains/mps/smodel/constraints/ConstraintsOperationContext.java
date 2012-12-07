@@ -15,17 +15,16 @@
  */
 package jetbrains.mps.smodel.constraints;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
 import jetbrains.mps.smodel.IScope;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import org.jetbrains.annotations.NotNull;
 
 public class ConstraintsOperationContext extends StandaloneMPSContext {
-  protected static Log log = LogFactory.getLog(ConstraintsOperationContext.class);
+  protected static Logger LOG = Logger.getLogger(ConstraintsOperationContext.class);
 
   // TODO: use module reference instead
   private final IModule module;
@@ -37,9 +36,7 @@ public class ConstraintsOperationContext extends StandaloneMPSContext {
 
   @Override
   public Project getProject() {
-    if (log.isWarnEnabled()) {
-      log.warn("Using getProject() from IOperationContext in constraints not working now");
-    }
+    LOG.warning("Using getProject() from IOperationContext in constraints not working now");
     return null;
   }
 

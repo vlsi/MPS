@@ -13,8 +13,7 @@ import jetbrains.mps.project.OptimizeImportsHelper;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.SModelRepository;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class OptimizeProjectImports_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -34,9 +33,7 @@ public class OptimizeProjectImports_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "OptimizeProjectImports", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "OptimizeProjectImports", t);
       this.disable(event.getPresentation());
     }
   }
@@ -59,11 +56,9 @@ public class OptimizeProjectImports_Action extends BaseAction {
       helper.optimizeProjectImports(((MPSProject) MapSequence.fromMap(_params).get("project")));
       SModelRepository.getInstance().saveAll();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "OptimizeProjectImports", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "OptimizeProjectImports", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(OptimizeProjectImports_Action.class);
+  private static Logger LOG = Logger.getLogger(OptimizeProjectImports_Action.class);
 }

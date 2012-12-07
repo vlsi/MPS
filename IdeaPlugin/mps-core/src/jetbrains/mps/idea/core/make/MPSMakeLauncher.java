@@ -24,11 +24,13 @@ import com.intellij.execution.process.ProcessEvent;
 import com.intellij.execution.process.ProcessOutputTypes;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.projectRoots.JavaSdkType;
+import com.intellij.openapi.projectRoots.Sdk;
+import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.util.Key;
 import jetbrains.mps.build.ant.AntBootstrap;
 import jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker;
 import jetbrains.mps.util.PathManager;
-import org.apache.tools.ant.util.JavaEnvUtils;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -125,7 +127,14 @@ public class MPSMakeLauncher {
 
   private List<String> buildCommandLine(Set<File> classPaths) throws Exception {
     List<String> commandLine = new ArrayList<String>();
-    commandLine.add(JavaEnvUtils.getJreExecutable("java"));
+    final Sdk jdk = ProjectRootManager.getInstance(myProject).getProjectSdk();
+    if (jdk == null || !(jdk.getSdkType() instanceof JavaSdkType)) {
+      throw new IllegalArgumentException("Project JDK not configured");
+    }
+
+    final JavaSdkType sdkType = (JavaSdkType) jdk.getSdkType();
+
+    commandLine.add(sdkType.getVMExecutablePath(jdk));
 
     StringBuilder sb = new StringBuilder();
     String pathSeparator = "";

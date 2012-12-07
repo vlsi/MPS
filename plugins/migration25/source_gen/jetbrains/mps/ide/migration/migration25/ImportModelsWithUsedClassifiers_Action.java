@@ -27,8 +27,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.project.GlobalScope;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -48,9 +47,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ImportModelsWithUsedClassifiers", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ImportModelsWithUsedClassifiers", t);
       this.disable(event.getPresentation());
     }
   }
@@ -101,13 +98,11 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
         }
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ImportModelsWithUsedClassifiers", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ImportModelsWithUsedClassifiers", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(ImportModelsWithUsedClassifiers_Action.class);
+  private static Logger LOG = Logger.getLogger(ImportModelsWithUsedClassifiers_Action.class);
 
   private static SModelReference check_rft9c_a0a0a0e0d0c0a(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {

@@ -18,6 +18,9 @@ package jetbrains.mps.project.structure.modules.mappingpriorities;
 import jetbrains.mps.smodel.SModelReference;
 
 public class MappingConfig_SimpleRef extends MappingConfig_AbstractRef {
+
+  public static final int PERSISTENCE_ID = 0x55550002;
+
   private String myModelUID;
   private String myNodeID;
 

@@ -18,8 +18,7 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.concurrent.Commands" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.concurrent.IManagerCommand" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="org.apache.commons.logging.Log" />
-    <classNode dependClassName="org.apache.commons.logging.LogFactory" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode extendsClassName="java.lang.Thread" />
   </dependency>
 </dependenciesRoot>

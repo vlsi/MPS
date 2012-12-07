@@ -15,8 +15,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import com.intellij.openapi.project.Project;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class DeleteBreakpointAction_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("delete_breakpoint.png");
@@ -39,9 +38,7 @@ public class DeleteBreakpointAction_Action extends BaseAction {
         event.getPresentation().setEnabled(breakpoint != null);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "DeleteBreakpointAction", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "DeleteBreakpointAction", t);
       this.disable(event.getPresentation());
     }
   }
@@ -70,11 +67,9 @@ public class DeleteBreakpointAction_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "DeleteBreakpointAction", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "DeleteBreakpointAction", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(DeleteBreakpointAction_Action.class);
+  private static Logger LOG = Logger.getLogger(DeleteBreakpointAction_Action.class);
 }

@@ -18,8 +18,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class RecompileProject_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,9 +38,7 @@ public class RecompileProject_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RecompileProject", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RecompileProject", t);
       this.disable(event.getPresentation());
     }
   }
@@ -67,11 +64,9 @@ public class RecompileProject_Action extends BaseAction {
       SetSequence.fromSet(modules).addSequence(ListSequence.fromList(((MPSProject) MapSequence.fromMap(_params).get("project")).getProjectModules(IModule.class)));
       ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.fromMap(_params).get("ideaProject")), "Compiling", modules, true));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RecompileProject", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RecompileProject", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(RecompileProject_Action.class);
+  private static Logger LOG = Logger.getLogger(RecompileProject_Action.class);
 }

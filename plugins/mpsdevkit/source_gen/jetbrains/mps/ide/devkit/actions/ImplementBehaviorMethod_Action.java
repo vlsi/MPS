@@ -17,8 +17,7 @@ import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.actions.OverrideConceptMethodsAction;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ImplementBehaviorMethod_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -46,9 +45,7 @@ public class ImplementBehaviorMethod_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ImplementBehaviorMethod", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ImplementBehaviorMethod", t);
       this.disable(event.getPresentation());
     }
   }
@@ -83,11 +80,9 @@ public class ImplementBehaviorMethod_Action extends BaseAction {
       Project project = ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")).getProject();
       new OverrideConceptMethodsAction(project, ((SNode) MapSequence.fromMap(_params).get("selectedNode")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")), false).run();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ImplementBehaviorMethod", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ImplementBehaviorMethod", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(ImplementBehaviorMethod_Action.class);
+  private static Logger LOG = Logger.getLogger(ImplementBehaviorMethod_Action.class);
 }

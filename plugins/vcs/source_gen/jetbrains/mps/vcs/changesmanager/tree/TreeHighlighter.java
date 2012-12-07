@@ -49,8 +49,7 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import com.intellij.util.containers.MultiMap;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class TreeHighlighter implements TreeMessageOwner {
   private Map<FileStatus, TreeMessage> myTreeMessages = MapSequence.fromMap(new HashMap<FileStatus, TreeMessage>());
@@ -150,9 +149,7 @@ public class TreeHighlighter implements TreeMessageOwner {
         if (myFeaturesHolder.getNodesByFeature(feature).contains(node)) {
           myFeaturesHolder.removeNodeWithFeature(feature, node);
         } else {
-          if (log.isErrorEnabled()) {
-            log.error("trying to remove tree node which was not registered: " + node.getClass().getName() + " " + feature);
-          }
+          LOG.error("trying to remove tree node which was not registered: " + node.getClass().getName() + " " + feature);
         }
       }
       unhighlightNode(node);
@@ -413,5 +410,5 @@ public class TreeHighlighter implements TreeMessageOwner {
     }
   }
 
-  protected static Log log = LogFactory.getLog(TreeHighlighter.class);
+  private static Logger LOG = Logger.getLogger(TreeHighlighter.class);
 }

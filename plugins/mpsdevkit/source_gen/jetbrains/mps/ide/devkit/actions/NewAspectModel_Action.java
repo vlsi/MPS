@@ -19,8 +19,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class NewAspectModel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -48,9 +47,7 @@ public class NewAspectModel_Action extends BaseAction {
         NewAspectModel_Action.this.setEnabledState(event.getPresentation(), false);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "NewAspectModel", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "NewAspectModel", t);
       this.disable(event.getPresentation());
     }
   }
@@ -80,9 +77,7 @@ public class NewAspectModel_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "NewAspectModel", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "NewAspectModel", t);
     }
   }
 
@@ -100,5 +95,5 @@ public class NewAspectModel_Action extends BaseAction {
     return object.getName();
   }
 
-  protected static Log log = LogFactory.getLog(NewAspectModel_Action.class);
+  private static Logger LOG = Logger.getLogger(NewAspectModel_Action.class);
 }

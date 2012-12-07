@@ -15,8 +15,7 @@ import com.intellij.ide.structureView.StructureView;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.platform.dialogs.choosers.FileStructurePopup;
 import com.intellij.openapi.vfs.VirtualFile;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ShowStructure_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -36,9 +35,7 @@ public class ShowStructure_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowStructure", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowStructure", t);
       this.disable(event.getPresentation());
     }
   }
@@ -77,11 +74,9 @@ public class ShowStructure_Action extends BaseAction {
       }
       popup.show();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowStructure", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowStructure", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(ShowStructure_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowStructure_Action.class);
 }

@@ -20,8 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class CleanModule_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -49,9 +48,7 @@ public class CleanModule_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CleanModule", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "CleanModule", t);
       this.disable(event.getPresentation());
     }
   }
@@ -85,11 +82,9 @@ public class CleanModule_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CleanModule", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "CleanModule", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(CleanModule_Action.class);
+  private static Logger LOG = Logger.getLogger(CleanModule_Action.class);
 }

@@ -17,7 +17,10 @@ package jetbrains.mps.project.structure.modules;
 
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.util.io.ModelInputStream;
+import jetbrains.mps.util.io.ModelOutputStream;
 
+import java.io.IOException;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.LinkedHashSet;
@@ -150,6 +153,106 @@ public class ModuleDescriptor {
     myLoadException = loadException;
   }
 
+  public boolean isUseTransientOutput() {
+    return myUseTransientOutput;
+  }
+
+  public void setUseTransientOutput(boolean useTransientOutput) {
+    myUseTransientOutput = useTransientOutput;
+  }
+
+  protected int getHeaderMarker() {
+    return 0x73048111;
+  }
+
+  public void save(ModelOutputStream stream) throws IOException {
+    stream.writeInt(getHeaderMarker());
+    stream.writeModuleID(myId);
+    stream.writeString(myNamespace);
+    stream.writeString(myTimestamp);
+
+    stream.writeInt(myModelRoots.size());
+    for (ModelRootDescriptor root : myModelRoots) {
+      root.save(stream);
+    }
+
+    stream.writeInt(myDependencies.size());
+    for (Dependency dep : myDependencies) {
+      dep.save(stream);
+    }
+
+    stream.writeInt(myUsedLanguages.size());
+    for (ModuleReference ref : myUsedLanguages) {
+      stream.writeModuleReference(ref);
+    }
+
+    stream.writeInt(myUsedDevkits.size());
+    for (ModuleReference ref : myUsedDevkits) {
+      stream.writeModuleReference(ref);
+    }
+
+    stream.writeStrings(myAdditionalJavaStubPaths);
+    stream.writeStrings(mySourcePaths);
+
+    stream.writeByte(myDeploymentDescriptor != null ? 0x1 : 0x70);
+    if (myDeploymentDescriptor != null) {
+      myDeploymentDescriptor.save(stream);
+    }
+
+    stream.writeBoolean(myUseTransientOutput);
+
+    stream.writeByte(0x3a);
+  }
+
+  public void load(ModelInputStream stream) throws IOException {
+    if (stream.readInt() != getHeaderMarker()) throw new IOException("bad stream: no module descriptor start marker");
+    myId = stream.readModuleID();
+    myNamespace = stream.readString();
+    myTimestamp = stream.readString();
+
+    myModelRoots.clear();
+    for (int size = stream.readInt(); size > 0; size--) {
+      myModelRoots.add(ModelRootDescriptor.load(stream));
+    }
+
+    myDependencies.clear();
+    for (int size = stream.readInt(); size > 0; size--) {
+      Dependency dep = new Dependency();
+      dep.load(stream);
+      myDependencies.add(dep);
+    }
+
+    myUsedLanguages.clear();
+    for (int size = stream.readInt(); size > 0; size--) {
+      myUsedLanguages.add(stream.readModuleReference());
+    }
+
+    myUsedDevkits.clear();
+    for (int size = stream.readInt(); size > 0; size--) {
+      myUsedDevkits.add(stream.readModuleReference());
+    }
+
+    myAdditionalJavaStubPaths.clear();
+    myAdditionalJavaStubPaths.addAll(stream.readStrings());
+
+    mySourcePaths.clear();
+    mySourcePaths.addAll(stream.readStrings());
+
+    byte b = stream.readByte();
+    if (b == 0x1) {
+      myDeploymentDescriptor = new DeploymentDescriptor();
+      myDeploymentDescriptor.load(stream);
+    } else if (b == 0x70) {
+      myDeploymentDescriptor = null;
+    } else {
+      throw new IOException("broken stream");
+    }
+
+    myUseTransientOutput = stream.readBoolean();
+
+    if (stream.readByte() != 0x3a) throw new IOException("bad stream: no module descriptor end marker");
+  }
+
   private static class ModuleReferenceComparator implements Comparator<ModuleReference> {
     @Override
     public int compare(ModuleReference ref1, ModuleReference ref2) {
@@ -176,13 +279,5 @@ public class ModuleDescriptor {
     public int compare(Dependency dependency1, Dependency dependency2) {
       return myModuleRefComparator.compare(dependency1.getModuleRef(), dependency2.getModuleRef());
     }
-  }
-
-  public boolean isUseTransientOutput() {
-    return myUseTransientOutput;
-  }
-
-  public void setUseTransientOutput(boolean useTransientOutput) {
-    myUseTransientOutput = useTransientOutput;
   }
 }

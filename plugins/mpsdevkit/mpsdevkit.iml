@@ -8,6 +8,12 @@
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/languages/quickQueryLanguage/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/languages/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/languages/quickQueryLanguage/solutions/pluginSolution/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/languages/solutions/jetbrains.mps.baseLanguage.pluginSolution/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/languages/solutions/jetbrains.mps.lang.dataFlow.pluginSolution/classes_gen" />
+      <excludeFolder url="file://$MODULE_DIR$/languages/solutions/jetbrains.mps.lang.typesystem.devkit.pluginSolution/classes_gen" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

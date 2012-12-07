@@ -29,8 +29,7 @@ import jetbrains.mps.vcs.platform.util.MergeBackupUtil;
 import java.util.Arrays;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import com.intellij.openapi.ui.Messages;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ReportModelMergeProblem_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -62,9 +61,7 @@ public class ReportModelMergeProblem_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ReportModelMergeProblem", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ReportModelMergeProblem", t);
       this.disable(event.getPresentation());
     }
   }
@@ -136,9 +133,7 @@ public class ReportModelMergeProblem_Action extends BaseAction {
         }
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ReportModelMergeProblem", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ReportModelMergeProblem", t);
     }
   }
 
@@ -146,7 +141,7 @@ public class ReportModelMergeProblem_Action extends BaseAction {
     Messages.showInfoMessage(((Project) MapSequence.fromMap(_params).get("project")), "No merge backups available, that is MPS merge was not invoked.", "Model Merge Problem");
   }
 
-  protected static Log log = LogFactory.getLog(ReportModelMergeProblem_Action.class);
+  private static Logger LOG = Logger.getLogger(ReportModelMergeProblem_Action.class);
 
   public static boolean isNotEmpty_6wdzvw_a0a0a0a0a0b0d(String str) {
     return str != null && str.length() > 0;

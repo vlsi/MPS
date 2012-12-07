@@ -19,8 +19,7 @@ import java.util.HashSet;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.util.HashMap;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ClosuresUtil {
   private static Object CLOSURE_CONTEXT_DATA = new Object();
@@ -42,9 +41,7 @@ public class ClosuresUtil {
     return ((SNode) jetbrains.mps.util.SNodeOperations.findParent(node, new Condition<SNode>() {
       public boolean met(SNode n) {
         if (!(n instanceof SNode)) {
-          if (log.isWarnEnabled()) {
-            log.warn("method findEnclosingClosureContextOwner in " + ClosuresUtil.class.toString() + " operates only with the instances of SNode class");
-          }
+          LOG.warning("method findEnclosingClosureContextOwner in " + ClosuresUtil.class.toString() + " operates only with the instances of SNode class");
           return false;
         }
         return isClosureContextOwner(((SNode) n));
@@ -233,5 +230,5 @@ public class ClosuresUtil {
     }
   }
 
-  protected static Log log = LogFactory.getLog(ClosuresUtil.class);
+  private static Logger LOG = Logger.getLogger(ClosuresUtil.class);
 }
