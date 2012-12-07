@@ -5,6 +5,7 @@ import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.idea.core.project.ModelRootContributor;
 import jetbrains.mps.idea.java.psiStubs.EclipseJavaStubModelRoot;
+import jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.util.ArrayList;

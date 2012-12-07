@@ -94,8 +94,10 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
   public void changed(DataSource source, Iterable<String> changedItems) {
     ModelAccess.assertLegalWrite();
 
-    LOG.info("got change event");
-
+    // already attached but not createModel'd yet 
+    if (myModel == null) {
+      return;
+    }
     processStreams(changedItems);
   }
 
