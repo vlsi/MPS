@@ -150,14 +150,6 @@
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode dependClassName="sun.misc.Resource" />
   </dependency>
-  <dependency className="jetbrains.mps.build.ant.util.MapPathMacrosProvider" file="MapPathMacrosProvider.java">
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.lang.System" />
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode extendsClassName="jetbrains.mps.project.PathMacrosProvider" />
-  </dependency>
   <dependency className="jetbrains.mps.build.ant.util.PathUtil" file="PathUtil.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.String" />
@@ -165,11 +157,6 @@
     <classNode dependClassName="java.util.Stack" />
     <classNode dependClassName="java.util.StringTokenizer" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
-  </dependency>
-  <dependency className="jetbrains.mps.build.ant.util.SetLibraryContributor" file="SetLibraryContributor.java">
-    <classNode dependClassName="java.util.Collections" />
-    <classNode dependClassName="java.util.Set" />
-    <classNode extendsClassName="jetbrains.mps.library.contributor.LibraryContributor" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.util.StringUtil" file="StringUtil.java">
     <classNode dependClassName="java.lang.CharSequence" />

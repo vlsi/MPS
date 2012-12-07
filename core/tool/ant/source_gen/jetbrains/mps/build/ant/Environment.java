@@ -4,7 +4,7 @@ package jetbrains.mps.build.ant;
 
 import java.util.Map;
 import java.io.File;
-import jetbrains.mps.build.ant.util.SetLibraryContributor;
+import jetbrains.mps.tool.builder.util.SetLibraryContributor;
 import jetbrains.mps.project.PathMacrosProvider;
 import jetbrains.mps.logging.ILoggingHandler;
 import org.apache.log4j.BasicConfigurator;
@@ -20,7 +20,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.util.FileUtil;
 import java.util.HashMap;
 import jetbrains.mps.build.ant.util.PathUtil;
-import jetbrains.mps.build.ant.util.MapPathMacrosProvider;
+import jetbrains.mps.tool.builder.util.MapPathMacrosProvider;
 import java.util.Set;
 import jetbrains.mps.library.contributor.LibraryContributor;
 import java.util.HashSet;
