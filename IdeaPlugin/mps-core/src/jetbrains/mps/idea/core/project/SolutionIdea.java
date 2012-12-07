@@ -117,18 +117,17 @@ public class SolutionIdea extends Solution {
   @Override
   protected Iterable<ModelRoot> loadRoots() {
 
-    if (myContributedModelRoots==null) {
+    if (myContributedModelRoots == null) {
       myContributedModelRoots = new HashSet<ModelRoot>();
-      ModelRootContributorManager mgr = myModule.getProject().getComponent(ModelRootContributorManager.class);
-      for (ModelRootContributor contributor: mgr.getContributors()) {
-        for (ModelRoot root: contributor.getModelRoots(myModule)) {
+      for (ModelRootContributorEP e : ModelRootContributorEP.EP_NAME.getExtensions()) {
+        for (ModelRoot root : e.getModelRootContribitor().getModelRoots(myModule)) {
           myContributedModelRoots.add(root);
         }
       }
     }
 
     List<ModelRoot> sum = new ArrayList<ModelRoot>();
-    for (ModelRoot mr: super.loadRoots()) {
+    for (ModelRoot mr : super.loadRoots()) {
       sum.add(mr);
     }
 
@@ -202,17 +201,6 @@ public class SolutionIdea extends Solution {
   public void invalidateDependencies() {
     super.invalidateDependencies();
     myDependencies = null;
-  }
-
-  public void contributedModelRootsChanged() {
-    myContributedModelRoots = null;
-    // update models
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        setModuleDescriptor(getModuleDescriptor(), false);
-      }
-    });
   }
 
   @Override

@@ -42,7 +42,6 @@ import jetbrains.mps.ide.java.util.SolutionIds;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.project.ModelRootContributor;
-import jetbrains.mps.idea.core.project.ModelRootContributorManager;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.idea.core.project.stubs.AbstractJavaStubSolutionManager;
 import jetbrains.mps.idea.core.project.stubs.JavaStubPsiListener;
@@ -84,7 +83,7 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
 
   private final static String SOLUTION_NAME_PREFIX = "JavaCodeIn";
 
-  public ProjectJavaSourceImporter(MPSCoreComponents core, Project project, ModelRootContributorManager modelRootContributorManager) {
+  public ProjectJavaSourceImporter(MPSCoreComponents core, Project project) {
     myProject = project;
     myModuleManager = ModuleManager.getInstance(project);
     facetConnection = project.getMessageBus().connect();
@@ -93,14 +92,10 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
 
   @Override
   protected void init() {
-    ModelRootContributorManager mgr = myProject.getComponent(ModelRootContributorManager.class);
-    mgr.addContributor(this);
   }
 
   @Override
   protected void dispose() {
-    ModelRootContributorManager mgr = myProject.getComponent(ModelRootContributorManager.class);
-    mgr.removeContributor(this);
   }
 
   @Override
