@@ -23,11 +23,15 @@ import com.intellij.openapi.compiler.CompileStatusNotification;
 import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.components.impl.ComponentManagerImpl;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.projectRoots.impl.JavaSdkImpl;
+import com.intellij.openapi.projectRoots.ProjectJdkTable;
+import com.intellij.openapi.projectRoots.Sdk;
+import com.intellij.openapi.projectRoots.impl.JavaAwareProjectJdkTableImpl;
+import com.intellij.openapi.projectRoots.impl.ProjectJdkImpl;
 import com.intellij.openapi.roots.CompilerModuleExtension;
 import com.intellij.openapi.roots.ContentEntry;
 import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
@@ -45,20 +49,40 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
 
   private List<Asserter> asserters = new ArrayList<Asserter>();
 
+  private static Sdk getTestJdk() {
+    try {
+      ProjectJdkImpl jdk = (ProjectJdkImpl) JavaAwareProjectJdkTableImpl.getInstanceEx().getInternalJdk().clone();
+      jdk.setName("JDK");
+      return jdk;
+    } catch (CloneNotSupportedException e) {
+      //LOG.error(e);
+      return null;
+    }
+  }
+
   protected void prepareTestData(MPSFacetConfiguration configuration, final IFile source) throws Exception {
     final ModuleRootManager mrm = ModuleRootManager.getInstance(configuration.getFacet().getModule());
     ApplicationManager.getApplication().runWriteAction(new Runnable() {
       @Override
       public void run() {
+        Sdk jdk = ProjectJdkTable.getInstance().findJdk("JDK");
+        if (jdk != null) {
+          ProjectJdkTable.getInstance().removeJdk(jdk);
+        }
+
+        ProjectJdkTable.getInstance().addJdk(jdk = getTestJdk());
+
         ModifiableRootModel mm = mrm.getModifiableModel();
-        mm.setSdk(JavaSdkImpl.getMockJdk17());
+        ProjectRootManager.getInstance(myModule.getProject()).setProjectSdk(jdk);
+        mm.inheritSdk();
 
         VirtualFileSystem vfs = VirtualFileManager.getInstance().getFileSystem("file");
         VirtualFile project = vfs.findFileByPath(source.getParent().getPath());
         try {
           ContentEntry ce = mm.addContentEntry(project);
           VirtualFile contentRoot = project.findChild(source.getName());
-          if (contentRoot == null) contentRoot = project.createChildDirectory(AbstractMakeTest.this, source.getName());
+          if (contentRoot == null)
+            contentRoot = project.createChildDirectory(AbstractMakeTest.this, source.getName());
           ce.addSourceFolder(contentRoot, false);
         } catch (IOException e) {
         }
