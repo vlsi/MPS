@@ -4,8 +4,6 @@ package jetbrains.mps.build.mps.runtime.anttask;
 
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
-import org.apache.tools.ant.ProjectComponent;
-import jetbrains.mps.build.ant.Environment;
 import jetbrains.mps.project.Project;
 import java.util.List;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -31,14 +29,6 @@ public class GenModuleXmlWorker extends MpsWorker {
 
   public GenModuleXmlWorker(WhatToDo whatToDo) {
     super(whatToDo);
-  }
-
-  public GenModuleXmlWorker(WhatToDo whatToDo, ProjectComponent component) {
-    super(whatToDo, component);
-  }
-
-  public GenModuleXmlWorker(WhatToDo whatToDo, ProjectComponent component, Environment environment) {
-    super(whatToDo, component, environment);
   }
 
   public GenModuleXmlWorker(WhatToDo whatToDo, MpsWorker.AntLogger logger) {

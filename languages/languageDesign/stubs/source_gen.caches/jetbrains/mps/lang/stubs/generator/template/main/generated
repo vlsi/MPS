@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-8te7bjaepnrh05q8hi5qfoh1cmr5k2">
+<dependencies version="2" modelHash="395kgjr8l8iic88sr369r0tdh4wdda6">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="-mhq7bu6g8mtyvm09veubsafx9cdbe1" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
-  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="-11v40y00msyacn1zm5i9gn43wpcuwhf" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" hash="-2xgwavt0f1y0h56sycazqd9629v0npm" />
   <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="-6zim42wfld6ley17umrlwzykg17uz0u" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="3d2lxr8unjxvzzi6xlbsruq2a8tb63l" />
   <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="7hgovcgxnd93npcwx1oymw5jxqdbypg" />
@@ -11,7 +11,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" hash="-acs1znq6d4zmq0jt0ai12tqya72tq9" />
   <dep model="r:2398890e-46ed-4e8a-afe7-46a378efb9ff(jetbrains.mps.lang.stubs.behavior)" hash="-2tm8c0lzfhwn76nr48sucxadopvjqgp" />
   <dep model="r:4b48a44f-6ba9-48c3-ad27-273fa72f5664(jetbrains.mps.lang.stubs.structure)" hash="99xea36vdl2hi1dqgomobh16oxpvbru" />
-  <common hash="-7zu5i6ctu8w6oheugi9iaz2zezffcj4">
+  <common hash="7wpcfnw11ccmxt3m8v6na4zwh5eugus">
     <dep root="4009335194403290543" />
     <dep root="444366895203565720" />
     <dep root="5516999836374789370" />
@@ -38,7 +38,7 @@
   <source id="4009335194403290543" name="reduce_DefaultClassifierMethodCall" hash="9tbsdzr80sln3nihfaqat5ne9fu8gpd">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="5553449326502993521" name="CustomModelRootManager" hash="88d3dfo5ifs12cexc8srj7hvabtxa1j">
+  <source id="5553449326502993521" name="CustomModelRootManager" hash="-9gocsn5lo701kqo3ruqf6axf91afxv0">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
 </dependencies>

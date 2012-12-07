@@ -52,7 +52,6 @@
     <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.log4j.SimpleLayout" />
-    <classNode dependClassName="org.apache.tools.ant.Project" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.ExcludeNested" file="ExcludeNested.java">
     <classNode dependClassName="java.io.File" />
@@ -138,7 +137,7 @@
     <classNode dependClassName="java.util.LinkedHashMap" />
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.util.JDOMUtil" />
-    <classNode dependClassName="org.apache.tools.ant.Project" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.jdom.Document" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jdom.JDOMException" />
@@ -187,6 +186,7 @@
     <classNode dependClassName="jetbrains.mps.build.ant.MyExecuteStreamHandler" />
     <classNode dependClassName="jetbrains.mps.build.ant.ProjectNested" />
     <classNode dependClassName="jetbrains.mps.build.ant.WhatToDo" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.tools.ant.BuildException" />
     <classNode dependClassName="org.apache.tools.ant.Project" />
     <classNode dependClassName="org.apache.tools.ant.ProjectComponent" />
@@ -251,10 +251,9 @@
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.log4j.Logger" />
     <classNode dependClassName="org.apache.tools.ant.BuildException" />
-    <classNode dependClassName="org.apache.tools.ant.Project" />
-    <classNode dependClassName="org.apache.tools.ant.ProjectComponent" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
     <classNode extendsClassName="jetbrains.mps.build.ant.AntLogger" />
@@ -320,8 +319,8 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.build.ant.MPSTaskData" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity" />
+    <classNode dependClassName="org.apache.log4j.Level" />
     <classNode dependClassName="org.apache.tools.ant.BuildException" />
-    <classNode dependClassName="org.apache.tools.ant.Project" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jdom.JDOMException" />
   </dependency>

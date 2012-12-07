@@ -125,7 +125,7 @@
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="2761153619454568020">
       <property name="name" nameId="tpck.1169194664001" value="MigrationScript_SplitMPSClasspath" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Apply Split MPS.Classpath" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Fix MPS Stub references" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="9164503229271455483">
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
@@ -3236,7 +3236,7 @@
               <link role="classifier" roleId="tpee.1107535924139" targetNodeId="cu2c.~SNodePointer" resolveInfo="SNodePointer" />
             </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tp25.NodePointerExpression" typeId="tp25.1828409047608048457" id="1828409047608268662">
-              <link role="referentNode" roleId="tp25.1828409047608048458" targetNodeId="tp4r.5606420294479385927" resolveInfo="SplitMPSClasspath" />
+              <link role="referentNode" roleId="tp25.1828409047608048458" targetNodeId="tp4r.5606420294479385927" resolveInfo="FixMPSClasspath" />
             </node>
           </node>
         </node>
@@ -3253,7 +3253,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1828409047608268660" resolveInfo="script" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2761153619454568042">
-                  <property name="value" nameId="tpee.1070475926801" value="Split MPS.Classpath" />
+                  <property name="value" nameId="tpee.1070475926801" value="Fix MPS Stub references" />
                 </node>
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="2761153619454568043">
                   <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="2761153619454568044" />

@@ -11,16 +11,16 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SReference;
 
-public class SplitMPSClasspath_MigrationScript extends BaseMigrationScript {
-  public SplitMPSClasspath_MigrationScript(IOperationContext operationContext) {
-    super("Split MPS.Classpath Stubs");
+public class FixMPSClasspath_MigrationScript extends BaseMigrationScript {
+  public FixMPSClasspath_MigrationScript(IOperationContext operationContext) {
+    super("Fix MPS Bootstrap Stubs");
     this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
       public String getName() {
-        return "MPS.Classpath -> MPS.Core / .Editor / .Workbench";
+        return "MPS.Core -> MPS.Core / MPS.OpenAPI / Annotations; fix MPS.Platform/Worbench refs";
       }
 
       public String getAdditionalInfo() {
-        return "MPS.Classpath -> MPS.Core / .Editor / .Workbench";
+        return "MPS.Core -> MPS.Core / MPS.OpenAPI / Annotations; fix MPS.Platform/Worbench refs";
       }
 
       public String getFqNameOfConceptToSearchInstances() {
@@ -31,7 +31,7 @@ public class SplitMPSClasspath_MigrationScript extends BaseMigrationScript {
         return Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
             String modelName = it.getTargetSModelReference().getSModelFqName().toString();
-            return modelName.contains("MPS.Classpath") || modelName.contains("MPS.Core");
+            return modelName.contains("MPS.Core") || modelName.contains("MPS.Platform") || modelName.contains("MPS.Workbench") || modelName.contains("MPS.Classpath");
           }
         }).isNotEmpty();
 

@@ -26,6 +26,7 @@ import jetbrains.mps.testbench.util.FilesCollector;
 import jetbrains.mps.testbench.util.FilesCollector.FilePattern;
 import jetbrains.mps.testbench.util.FilesCollector.FilePattern.Type;
 import jetbrains.mps.util.FileUtil;
+import org.apache.log4j.Level;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.util.JavaEnvUtils;
 
@@ -142,7 +143,7 @@ public class MpsMakeHelper {
     for (File f : FilesCollector.fastCollectFiles(filePtns, path)) {
       toDo.addModuleFile(f);
     }
-    toDo.updateLogLevel(2); // INFO
+    toDo.updateLogLevel(Level.INFO);
     toDo.putProperty("mps.home", System.getProperty("user.dir"));
 
     MakeWorker worker = new MakeWorker(toDo, new LogLogger(), myEnvironment);

@@ -4,7 +4,6 @@ package jetbrains.mps.build.ant.generation.workers;
 
 import jetbrains.mps.build.ant.MpsWorker;
 import jetbrains.mps.build.ant.WhatToDo;
-import org.apache.tools.ant.ProjectComponent;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.build.ant.generation.GenerateTask;
 import jetbrains.mps.generator.GenerationSettingsProvider;
@@ -57,10 +56,6 @@ public class GeneratorWorker extends MpsWorker {
 
   public GeneratorWorker(WhatToDo whatToDo) {
     super(whatToDo);
-  }
-
-  public GeneratorWorker(WhatToDo whatToDo, ProjectComponent component) {
-    super(whatToDo, component);
   }
 
   public GeneratorWorker(WhatToDo whatToDo, MpsWorker.AntLogger logger) {
@@ -280,7 +275,7 @@ public class GeneratorWorker extends MpsWorker {
           myGenerationWarnings.add(msg.getText());
           break;
         case INFORMATION:
-          GeneratorWorker.this.verbose(msg.getText());
+          GeneratorWorker.this.info(msg.getText());
           break;
         default:
       }

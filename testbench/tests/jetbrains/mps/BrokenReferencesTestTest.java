@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.testbench.IdeaTestEnvironment;
 import junit.framework.TestCase;
+import org.apache.log4j.Level;
 
 import java.io.File;
 import java.io.FilenameFilter;
@@ -45,7 +46,7 @@ public class BrokenReferencesTestTest extends TestCase {
     WhatToDo whatToDo = new WhatToDo();
     whatToDo.addModelFile(new File(destdir.getAbsolutePath() + File.separator + "Broken.sandbox" + File.separator + "broken" + File.separator + "model.mps"));
     whatToDo.addLibrary(solutionName, destdir, false);
-    whatToDo.updateLogLevel(org.apache.tools.ant.Project.MSG_WARN);
+    whatToDo.updateLogLevel(Level.WARN);
     final boolean[] brokenReferenceFound = new boolean[]{false};
     TestBrokenReferencesWorker worker = new TestBrokenReferencesWorker(whatToDo, new LogLogger(), new IdeaTestEnvironment()) {
       @Override

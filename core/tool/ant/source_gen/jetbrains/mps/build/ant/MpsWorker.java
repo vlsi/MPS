@@ -5,7 +5,6 @@ package jetbrains.mps.build.ant;
 import org.apache.log4j.Logger;
 import java.util.List;
 import java.util.ArrayList;
-import org.apache.tools.ant.ProjectComponent;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -40,6 +39,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
+import org.apache.log4j.Level;
 import jetbrains.mps.tool.builder.util.PathManager;
 import java.io.StringWriter;
 import java.io.PrintWriter;
@@ -59,14 +59,6 @@ public abstract class MpsWorker {
     this(whatToDo, new MpsWorker.LogLogger());
   }
 
-  public MpsWorker(WhatToDo whatToDo, ProjectComponent component) {
-    this(whatToDo, new MpsWorker.ProjectComponentLogger(component));
-  }
-
-  public MpsWorker(WhatToDo whatToDo, ProjectComponent component, Environment environment) {
-    this(whatToDo, new MpsWorker.ProjectComponentLogger(component), environment);
-  }
-
   public MpsWorker(WhatToDo whatToDo, MpsWorker.AntLogger logger) {
     this(whatToDo, logger, new Environment());
   }
@@ -75,7 +67,6 @@ public abstract class MpsWorker {
     myWhatToDo = whatToDo;
     myLogger = logger;
     this.myEnvironment = environment;
-    // <node> 
     myEnvironment.init(whatToDo.getMacro(), whatToDo.isLoadBootstrapLibraries(), whatToDo.getLibraries(), whatToDo.getLogLevel(), new MpsWorker.MyMessageHandlerAppender());
   }
 
@@ -306,31 +297,29 @@ public abstract class MpsWorker {
     }
   }
 
-  private void log(String text, int level) {
-    if (level <= myWhatToDo.getLogLevel()) {
-      myLogger.log(text, level);
+  private void log(String text, Level level) {
+    if (!(level.isGreaterOrEqual(myWhatToDo.getLogLevel()))) {
+      return;
     }
+
+    myLogger.log(text, level);
   }
 
   public void info(String text) {
-    log(text, org.apache.tools.ant.Project.MSG_INFO);
-  }
-
-  public void verbose(String text) {
-    log(text, org.apache.tools.ant.Project.MSG_VERBOSE);
+    log(text, Level.INFO);
   }
 
   public void warning(String text) {
-    log(text, org.apache.tools.ant.Project.MSG_WARN);
+    log(text, Level.WARN);
     myWarnings.add(text);
   }
 
   public void debug(String text) {
-    log(text, org.apache.tools.ant.Project.MSG_DEBUG);
+    log(text, Level.DEBUG);
   }
 
   public void error(String text) {
-    log(text, org.apache.tools.ant.Project.MSG_ERR);
+    log(text, Level.ERROR);
     myErrors.add(text);
   }
 
@@ -377,7 +366,7 @@ public abstract class MpsWorker {
     }
 
     public void info(LogEntry e) {
-      MpsWorker.this.verbose(e.getMessage());
+      MpsWorker.this.info(e.getMessage());
     }
 
     public void warning(LogEntry e) {
@@ -406,27 +395,15 @@ public abstract class MpsWorker {
   }
 
   protected static interface AntLogger {
-    public void log(String text, int level);
-  }
-
-  private static class ProjectComponentLogger implements MpsWorker.AntLogger {
-    private final ProjectComponent myProjectComponent;
-
-    public ProjectComponentLogger(ProjectComponent projectComponent) {
-      myProjectComponent = projectComponent;
-    }
-
-    public void log(String text, int level) {
-      myProjectComponent.log(text, level);
-    }
+    public void log(String text, Level level);
   }
 
   public static class SystemOutLogger implements MpsWorker.AntLogger {
     public SystemOutLogger() {
     }
 
-    public void log(String text, int level) {
-      if (level == org.apache.tools.ant.Project.MSG_ERR) {
+    public void log(String text, Level level) {
+      if (level == Level.ERROR) {
         System.err.println(text);
       } else {
         System.out.println(text);
@@ -438,19 +415,18 @@ public abstract class MpsWorker {
     public LogLogger() {
     }
 
-    public void log(String text, int level) {
-      switch (level) {
-        case org.apache.tools.ant.Project.MSG_ERR:
+    public void log(String text, Level level) {
+      switch (level.toInt()) {
+        case Level.ERROR_INT:
           MpsWorker.LOG.error(text);
           break;
-        case org.apache.tools.ant.Project.MSG_WARN:
+        case Level.WARN_INT:
           MpsWorker.LOG.warn(text);
           break;
-        case org.apache.tools.ant.Project.MSG_INFO:
+        case Level.INFO_INT:
           MpsWorker.LOG.info(text);
           break;
-        case org.apache.tools.ant.Project.MSG_DEBUG:
-        case org.apache.tools.ant.Project.MSG_VERBOSE:
+        case Level.DEBUG_INT:
           MpsWorker.LOG.debug(text);
           break;
         default:
