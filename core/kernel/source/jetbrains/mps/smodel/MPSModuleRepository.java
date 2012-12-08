@@ -27,6 +27,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
 import org.jetbrains.mps.openapi.module.SRepository;
@@ -176,6 +177,11 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   }
 
   //---------------get by-----------------------------
+
+  @Override
+  public SModelAccess getModelAccess() {
+    return ModelAccess.instance();
+  }
 
   @Deprecated  //3.0, use getModules
   public Set<IModule> getAllModules() {
