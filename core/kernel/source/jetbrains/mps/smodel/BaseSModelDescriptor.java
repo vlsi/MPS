@@ -17,8 +17,10 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.event.SModelFileChangedEvent;
+import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
+import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -36,7 +38,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
 
-  private boolean myRegistered;
   @NotNull
   private final DataSource mySource;
   @NotNull
@@ -104,11 +105,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   @Override
   public boolean isRegistered() {
-    return myRegistered;
-  }
-
-  void setRegistered(boolean registered) {
-    myRegistered = registered;
+    return myModule != null && myModule.getRepository() != null;
   }
 
   @Override
