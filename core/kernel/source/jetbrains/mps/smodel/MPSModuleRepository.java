@@ -101,6 +101,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     myIdToModuleMap.put(module.getModuleReference().getModuleId(), module);
     myModules.add(module);
 
+    module.setRepository(this);
     module.attach();
     myModuleToOwners.addLink(module, owner);
     invalidateCaches();
@@ -166,6 +167,7 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
     if (remove) {
       fireBeforeModuleRemoved(module);
       myModules.remove(module);
+      module.setRepository(null);
       myIdToModuleMap.remove(module.getModuleReference().getModuleId());
       myFqNameToModulesMap.remove(module.getModuleFqName());
       return true;

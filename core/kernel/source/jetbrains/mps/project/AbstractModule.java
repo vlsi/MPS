@@ -73,6 +73,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   };
   private CompositeClassPathItem myCachedClassPathItem;
   protected boolean myChanged = false;
+  private SRepository myRepo;
 
   //----model creation
 
@@ -137,9 +138,13 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   @Override
+  public void setRepository(SRepository repo) {
+    myRepo = repo;
+  }
+
+  @Override
   public SRepository getRepository() {
-    // TODO API (implement)
-    return null;
+    return myRepo;
   }
 
   @Override
