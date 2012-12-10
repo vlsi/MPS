@@ -34,6 +34,7 @@ public interface SModel {
   /*
    * The returned name of the model includes a stereotype, such as 'generator' or 'tests', separated by the '@' character,
    * e.g. jetbrains.mps.sample.generator.main@generator
+   * MM: this is an equivalent to getModelReference.getModelName
    */
   String getModelName();
 
@@ -45,8 +46,14 @@ public interface SModel {
    */
   SModule getModule();
 
+  /**
+   * MM: root nodes are all nodes added to model using addRootNode.
+   */
   Iterable<? extends SNode> getRootNodes();
 
+  /**
+   * MM: adds a node and its descendants (the whole tree) to a model. After this, each node in underlying subtree will have getModel == this_model
+   */
   void addRootNode(SNode node);
 
   SNode getNode(SNodeId id);

@@ -39,6 +39,9 @@ public interface SRepository {
 
   SModule getModule(SModuleId ref);
 
+  /**
+   * MM: unmodifiable
+   */
   Iterable<SModule> getModules();
 
   void addRepositoryListener(SRepositoryListener listener);

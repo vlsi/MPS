@@ -18,6 +18,7 @@ package org.jetbrains.mps.openapi.module;
 /**
  * A repository-wide unique id of a module. Will be used as keys in maps and so should correctly implement equals() and hashCode().
  * Custom persistence implementations may provide their own implementations of SModuleId.
+ * MM: custom persistence is not about modules. Seems we just need to remove the last statement
  */
 public interface SModuleId {
 }
