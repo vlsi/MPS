@@ -329,9 +329,9 @@ public class MergeModelsDialog extends DialogWrapper {
         }
         myRootId = rootId;
         if (rootId == null) {
-          myMergeRootsDialog.setRoodId(Sequence.fromIterable(myMetadataMergeSession.getAffectedRoots()).first(), myMetadataMergeSession);
+          myMergeRootsDialog.setRoodId(Sequence.fromIterable(myMetadataMergeSession.getAffectedRoots()).first(), myMergeTree.getNameForRoot(rootId), myMetadataMergeSession);
         } else {
-          myMergeRootsDialog.setRootId(rootId);
+          myMergeRootsDialog.setRootId(rootId, myMergeTree.getNameForRoot(rootId));
         }
       }
     });

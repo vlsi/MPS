@@ -154,8 +154,9 @@ public class MergeRootsDialog extends DialogWrapper {
 
   }
 
-  public void setRootId(SNodeId rootId) {
+  public void setRootId(SNodeId rootId, String rootName) {
     myRootId = rootId;
+    setTitle("Merging " + rootName);
     myStateToRestore = myMergeSession.getCurrentState();
     myMineEditor.editRoot(myProject, getRootNodeId(myMergeSession.getMyModel()), myMergeSession.getMyModel());
     myResultEditor.editRoot(myProject, getRootNodeId(myMergeSession.getResultModel()), myMergeSession.getResultModel());
@@ -164,7 +165,7 @@ public class MergeRootsDialog extends DialogWrapper {
     myTraverser.goToFirstChangeLater();
   }
 
-  public void setRoodId(SNodeId rootId, final MergeSession mergeSession) {
+  public void setRoodId(SNodeId rootId, String rootName, final MergeSession mergeSession) {
     myMergeSession = mergeSession;
     MapSequence.fromMap(myDiffLayoutPart).visitAll(new IVisitor<IMapping<DiffChangeGroupLayout, Boolean>>() {
       public void visit(IMapping<DiffChangeGroupLayout, Boolean> it) {
@@ -174,7 +175,7 @@ public class MergeRootsDialog extends DialogWrapper {
         ));
       }
     });
-    setRootId(rootId);
+    setRootId(rootId, rootName);
   }
 
   private ChangeGroupLayout createChangeGroupLayout(boolean mine, boolean inspector) {

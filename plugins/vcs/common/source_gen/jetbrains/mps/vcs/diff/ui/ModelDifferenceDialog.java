@@ -157,16 +157,13 @@ public class ModelDifferenceDialog extends DialogWrapper {
           ListSequence.fromList(SModelOperations.getRoots(myMetadataChangeSet.getOldModel(), null)).first().getSNodeId() :
           rootId
         );
-        String rootName = (rootId == null ?
-          "Model Properties" :
-          myTree.getNameForRoot(rootId)
-        );
 
         myRootId = rootId;
-        myRootDifferenceDialog = new RootDifferenceDialog(myProject, changeSet, nodeId, rootName, myContentTitles, (isVisible() ?
+        myRootDifferenceDialog = new RootDifferenceDialog(myProject, changeSet, nodeId, myTree.getNameForRoot(rootId), myContentTitles, (isVisible() ?
           getWindow() :
           WindowManager.getInstance().getFrame(myProject)
         ), myEditable, new ModelDifferenceDialog.MyGoToNeighbourRootActions().getActions(), null);
+        myTree.getNameForRoot(rootId);
       }
     });
     myRootDifferenceDialog.show();
@@ -191,9 +188,9 @@ public class ModelDifferenceDialog extends DialogWrapper {
       public void run() {
         myRootId = rootId;
         if (rootId == null) {
-          myRootDifferenceDialog.setRootId(Sequence.fromIterable(myMetadataChangeSet.getAffectedRoots()).first(), myMetadataChangeSet);
+          myRootDifferenceDialog.setRootId(Sequence.fromIterable(myMetadataChangeSet.getAffectedRoots()).first(), myTree.getNameForRoot(rootId), myMetadataChangeSet);
         } else {
-          myRootDifferenceDialog.setRootId(rootId, myChangeSet);
+          myRootDifferenceDialog.setRootId(rootId, myTree.getNameForRoot(rootId), myChangeSet);
         }
       }
     });
