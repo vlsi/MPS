@@ -17,6 +17,7 @@
 package jetbrains.mps.idea.core.library;
 
 import com.intellij.ide.util.ChooseElementsDialog;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileTypes.FileTypes;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
@@ -30,6 +31,7 @@ import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.icons.MPSIcons;
@@ -81,6 +83,11 @@ public class SolutionLibraryType extends LibraryType<DummyLibraryProperties> {
   }
 
   @Override
+  public OrderRootType[] getAdditionalRootTypes() {
+    return new OrderRootType[]{ModuleXmlRootDetector.SOLUTION_MODULE_XML};
+  }
+
+  @Override
   public NewLibraryConfiguration createNewLibrary(@NotNull JComponent parentComponent, @Nullable VirtualFile contextDirectory, @NotNull final Project project) {
     final List<ModuleReference> availableSolutions = new ArrayList<ModuleReference>();
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -120,7 +127,9 @@ public class SolutionLibraryType extends LibraryType<DummyLibraryProperties> {
   private Set<OrderRoot> createRootsFor(List<ModuleReference> chosenElements) {
     final Set<OrderRoot> roots = new LinkedHashSet<OrderRoot>();
     for (ModuleReference module : chosenElements) {
-      for (VirtualFile virtualFile : getSolutionJars((Solution) ModuleRepositoryFacade.getInstance().getModule(module))) {
+      Solution solution = (Solution) ModuleRepositoryFacade.getInstance().getModule(module);
+      roots.add(new OrderRoot(VirtualFileUtils.getVirtualFile(solution.getDescriptorFile()), ModuleXmlRootDetector.SOLUTION_MODULE_XML, false));
+      for (VirtualFile virtualFile : getSolutionJars(solution)) {
         roots.add(new OrderRoot(virtualFile, OrderRootType.CLASSES, false));
       }
     }
@@ -158,13 +167,24 @@ public class SolutionLibraryType extends LibraryType<DummyLibraryProperties> {
     return new LibraryRootsComponentDescriptor() {
       @Override
       public OrderRootTypePresentation getRootTypePresentation(@NotNull OrderRootType type) {
+        if (type == ModuleXmlRootDetector.SOLUTION_MODULE_XML) {
+          return ModuleXmlRootDetector.getPresentation();
+        }
         return null;
+      }
+
+      @Override
+      public OrderRootType[] getRootTypes() {
+        ArrayList<OrderRootType> types = new ArrayList<OrderRootType>();
+        types.addAll(Arrays.asList(super.getRootTypes()));
+        types.add(ModuleXmlRootDetector.SOLUTION_MODULE_XML);
+        return types.toArray(new OrderRootType[types.size()]);
       }
 
       @NotNull
       @Override
       public List<? extends RootDetector> getRootDetectors() {
-        return Collections.emptyList();
+        return Arrays.asList(ModuleXmlRootDetector.getInstance());
       }
 
       @NotNull
