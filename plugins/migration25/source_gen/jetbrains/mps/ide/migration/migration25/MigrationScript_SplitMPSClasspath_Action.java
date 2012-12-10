@@ -24,7 +24,7 @@ public class MigrationScript_SplitMPSClasspath_Action extends BaseAction {
   private static final Icon ICON = null;
 
   public MigrationScript_SplitMPSClasspath_Action() {
-    super("Apply Split MPS.Classpath", "", ICON);
+    super("Fix MPS Stub references", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -62,7 +62,7 @@ public class MigrationScript_SplitMPSClasspath_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNodePointer script = new SNodePointer("r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)", "5606420294479385927");
-      MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Split MPS.Classpath", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
+      MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Fix MPS Stub references", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
       if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {
         executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
       } else {

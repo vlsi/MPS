@@ -17,7 +17,6 @@
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.ModuleReference" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.SolutionDescriptor" />
-    <classNode dependClassName="jetbrains.mps.project.structure.modules.StubSolution" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_AbstractRef" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_ExternalRef" />
     <classNode dependClassName="jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal" />

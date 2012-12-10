@@ -17,10 +17,6 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.StubSolution;
-import java.util.Set;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelReference;
@@ -100,11 +96,7 @@ public class GoByCurrentReferenceToIDEA_Action extends BaseAction {
       SModel model = node.getModel();
       IModule module = model.getModelDescriptor().getModule();
       assert module != null;
-      if (module instanceof StubSolution) {
-        Set<MPSModuleOwner> owners = MPSModuleRepository.getInstance().getOwners(module);
-        assert !(owners.isEmpty());
-        module = ((IModule) owners.iterator().next());
-      } else if (module instanceof Generator) {
+      if (module instanceof Generator) {
         module = ((Generator) module).getSourceLanguage();
       } else if (module.getDescriptorFile() == null) {
         assert false;

@@ -41,6 +41,7 @@ import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableIte
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModelDependTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.ModelUsedLangTableModel;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.models.UsedLangsTableModel;
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.Nls;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -92,7 +93,9 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
       if (myModelDescriptor instanceof EditableSModelDescriptor) {
         DataSource source = ((EditableSModelDescriptor) myModelDescriptor).getSource();
         if (source instanceof FileDataSource) {
-          return ((FileDataSource) source).getFile().getPath();
+          return FileUtil.getCanonicalPath(
+            ((FileDataSource) source).getFile().getPath()
+          );
         }
       }
       return "";

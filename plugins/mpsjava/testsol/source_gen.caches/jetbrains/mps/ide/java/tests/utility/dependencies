@@ -35,7 +35,6 @@
     <classNode dependClassName="java.util.Map" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Classifier_Behavior" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    <classNode dependClassName="jetbrains.mps.build.ant.FileMPSProject" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.DirParser" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParseException" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParser" />
@@ -70,6 +69,7 @@
     <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.StubHelper" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenerationResult" />
     <classNode dependClassName="jetbrains.mps.textGen.TextGenerationUtil" />
+    <classNode dependClassName="jetbrains.mps.tool.builder.FileMPSProject" />
     <classNode dependClassName="jetbrains.mps.util.FileUtil" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
     <classNode dependClassName="junit.framework.Assert" />

@@ -100,6 +100,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
@@ -1315,7 +1316,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public boolean hasValidSelectedNode() {
     SNode selectedNode = getSelectedNode();
-    return selectedNode != null && selectedNode.getModel() != null;
+    return selectedNode != null && !selectedNode.isDisposed() && selectedNode.getModel() != null;
   }
 
   public boolean isDisposed() {
@@ -1493,10 +1494,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       SModel model = node.getModel();
       if (model == null) continue;
 
-      SModelDescriptor modelDescriptor = model.getModelDescriptor();
-      if (modelDescriptor == null) continue;
-
-      result.add(modelDescriptor);
+      // Getting modelDescriptor via SModelRepository because sometimes
+      // node.getModel().getModelDescriptor() == null while reloading models from disk.
+      SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(model.getSModelReference());
+      if (modelDescriptor != null) {
+        result.add(modelDescriptor);
+      }
     }
     return result;
   }
@@ -2697,17 +2700,26 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   private void runSwapCellsActions(Runnable action) {
     try {
       myCellSwapInProgress = true;
-      if (getSelectedCell() != null) myRecentlySelectedCellInfo = getSelectedCell().getCellInfo();
-      Object memento = null;
-      if (getEditorContext() != null) {
-        memento = getEditorContext().createMemento();
+      EditorContext ec = getEditorContext();
+
+      boolean needsSavingState = ec != null;
+      if (getRootCell() != null && getRootCell().getSNode() != null && getRootCell().getSNode().isDisposed()) {
+        needsSavingState = false;
       }
-      action.run();
-      getEditorContext().pushTracerTask("retoring memento", true);
-      if (getEditorContext() != null) {
-        getEditorContext().setMemento(memento);
+
+      if (needsSavingState) {
+        EditorCell sc = getSelectedCell();
+        if (sc != null) {
+          myRecentlySelectedCellInfo = sc.getCellInfo();
+        }
+        Object memento = ec.createMemento();
+        action.run();
+        ec.pushTracerTask("restoring memento", true);
+        ec.setMemento(memento);
+        ec.popTracerTask();
+      } else {
+        action.run();
       }
-      getEditorContext().popTracerTask();
       myRecentlySelectedCellInfo = null;
     } finally {
       myCellSwapInProgress = false;

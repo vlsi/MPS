@@ -14,8 +14,6 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.List;
-import jetbrains.mps.project.structure.modules.StubSolution;
-import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -88,18 +86,6 @@ public class LanguageDescriptorPersistence {
             result_v3r4p8_a0a0d0c0b.getAdditionalJavaStubPaths().addAll(roots);
           }
 
-          Element stubSolutions = XmlUtil.first(languageElement, "stubSolutions");
-          if (stubSolutions != null) {
-            for (Element solutionElement : Sequence.fromIterable(XmlUtil.children(stubSolutions, "stubSolution"))) {
-              final StubSolution result_v3r4p8_a0a0a52a0a0d0c0b = new StubSolution();
-              final String result_v3r4p8_a0a0a0a52a0a0d0c0b = XmlUtil.stringWithDefault(solutionElement, "moduleName", "");
-              result_v3r4p8_a0a0a52a0a0d0c0b.setName(result_v3r4p8_a0a0a0a52a0a0d0c0b);
-              final ModuleId result_v3r4p8_a1a0a0a52a0a0d0c0b = ModuleId.fromString(XmlUtil.stringWithDefault(solutionElement, "moduleId", ""));
-              result_v3r4p8_a0a0a52a0a0d0c0b.setId(result_v3r4p8_a1a0a0a52a0a0d0c0b);
-              result_v3r4p8_a0a0d0c0b.getStubSolutions().add(result_v3r4p8_a0a0a52a0a0d0c0b);
-            }
-          }
-
           for (Element entryElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(languageElement, "sourcePath"), "source"))) {
             result_v3r4p8_a0a0d0c0b.getSourcePaths().add(macroHelper.expandPath(entryElement.getAttributeValue("path")));
           }
@@ -151,14 +137,6 @@ public class LanguageDescriptorPersistence {
       Element stubModelEntries = new Element("stubModelEntries");
       ModuleDescriptorPersistence.saveStubModelEntries(stubModelEntries, descriptor.getAdditionalJavaStubPaths(), macroHelper);
       languageElement.addContent(stubModelEntries);
-    }
-
-    if (!(descriptor.getStubSolutions().isEmpty())) {
-      Element stubSolutions = new Element("stubSolutions");
-      for (StubSolution entry : SetSequence.fromSet(descriptor.getStubSolutions())) {
-        XmlUtil.tagWithAttributes(stubSolutions, "stubSolution", "moduleName", entry.getName(), "moduleId", entry.getId().toString());
-      }
-      languageElement.addContent(stubSolutions);
     }
 
     Element sourcePath = new Element("sourcePath");

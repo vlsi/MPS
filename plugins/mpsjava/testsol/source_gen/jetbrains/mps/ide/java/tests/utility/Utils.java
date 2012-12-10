@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.textGen.TextGenerationResult;
 import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.project.ProjectOperationContext;
-import jetbrains.mps.build.ant.FileMPSProject;
+import jetbrains.mps.tool.builder.FileMPSProject;
 import java.io.File;
 import jetbrains.mps.util.PathManager;
 import jetbrains.mps.ide.java.newparser.JavaParser;

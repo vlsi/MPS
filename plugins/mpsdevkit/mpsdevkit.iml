@@ -8,12 +8,6 @@
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/tests" isTestSource="true" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/quickQueryLanguage/solutions/pluginSolution/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/quickQueryLanguage/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/solutions/jetbrains.mps.baseLanguage.pluginSolution/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/solutions/jetbrains.mps.lang.dataFlow.pluginSolution/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/languages/solutions/jetbrains.mps.lang.typesystem.devkit.pluginSolution/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/languages/quickQueryLanguage/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/languages/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/languages/quickQueryLanguage/solutions/pluginSolution/classes_gen" />
