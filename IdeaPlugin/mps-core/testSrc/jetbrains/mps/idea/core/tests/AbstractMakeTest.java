@@ -39,6 +39,7 @@ import com.intellij.openapi.vfs.VirtualFileSystem;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.MPSCompilerComponent;
 import jetbrains.mps.vfs.IFile;
+import junit.framework.AssertionFailedError;
 
 import javax.swing.SwingUtilities;
 import java.io.IOException;
@@ -131,8 +132,13 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
   }
 
   private void assertAsserters() throws Exception {
-    for (Asserter ass : asserters) {
-      ass.doAssert();
+    for (Asserter a : asserters) {
+      try {
+        a.doAssert();
+      } catch (AssertionFailedError ex) {
+        a.th.printStackTrace(System.err);
+        throw ex;
+      }
     }
     asserters.clear();
   }
@@ -202,8 +208,14 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
     return VirtualFileManager.getInstance().getFileSystem("file");
   }
 
-  private interface Asserter {
-    void doAssert() throws Exception;
+  private abstract class Asserter {
+    final Throwable th;
+
+    protected Asserter() {
+      this.th = new Throwable("original assertion trace");
+    }
+
+    abstract void doAssert() throws Exception;
   }
 
 
