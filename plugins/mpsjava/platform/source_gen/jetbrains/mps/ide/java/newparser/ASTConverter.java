@@ -373,7 +373,7 @@ public class ASTConverter {
 
     if (method.javadoc != null) {
       AttributeOperations.createAndSetAttrbiute(result, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment")), "jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment");
-      MapSequence.fromMap(myJavadocs).put(method.javadoc.sourceStart, AttributeOperations.getAttribute(result, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.MethodDocComment"))));
+      // <node> 
     }
 
     return result;
@@ -498,8 +498,9 @@ public class ASTConverter {
         SLinkOperations.setTarget(par, "type", convertTypeRef(arg.type), true);
         ListSequence.fromList(SLinkOperations.getTargets(result, "parameter", true)).addElement(par);
 
-        check_rbndtb_a6a0a41a61(idBuilder, par, this);
-        check_rbndtb_a7a0a41a61(idBuilder);
+        // <node> 
+        check_rbndtb_a7a0a41a61(idBuilder, arg, this);
+        check_rbndtb_a8a0a41a61(idBuilder);
       }
       // delete the last comma 
       if (x.arguments.length > 0) {
@@ -667,6 +668,27 @@ public class ASTConverter {
     }
   }
 
+  public String typeReferenceId(TypeReference typ) {
+    if (typ == null) {
+      return null;
+    }
+
+    char[][] tokens = typ.getTypeName();
+    StringBuilder sb = new StringBuilder();
+    for (int i = 0; i < tokens.length; i++) {
+      if (i > 0) {
+        sb.append(".");
+      }
+      sb.append(new String(tokens[i]));
+    }
+
+    if (typ instanceof ArrayTypeReference && !(typ instanceof ParameterizedSingleTypeReference) || typ instanceof ArrayQualifiedTypeReference && !(typ instanceof ParameterizedQualifiedTypeReference)) {
+      sb.append("[]");
+    }
+
+    return sb.toString();
+  }
+
   public void addTypeArgs(TypeReference[] from, List<SNode> into) throws JavaParseException {
     if (from == null || from.length == 0) {
       return;
@@ -744,14 +766,21 @@ public class ASTConverter {
     return null;
   }
 
-  private static StringBuilder check_rbndtb_a6a0a41a61(StringBuilder checkedDotOperand, SNode par, ASTConverter checkedDotThisExpression) {
+  private static StringBuilder check_rbndtb_a0a6a0a41a61(StringBuilder checkedDotOperand, SNode par, ASTConverter checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.append(checkedDotThisExpression.getTypeName(SLinkOperations.getTarget(par, "type", true)));
     }
     return null;
   }
 
-  private static StringBuilder check_rbndtb_a7a0a41a61(StringBuilder checkedDotOperand) {
+  private static StringBuilder check_rbndtb_a7a0a41a61(StringBuilder checkedDotOperand, Argument arg, ASTConverter checkedDotThisExpression) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.append(checkedDotThisExpression.typeReferenceId(arg.type));
+    }
+    return null;
+  }
+
+  private static StringBuilder check_rbndtb_a8a0a41a61(StringBuilder checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.append(",");
     }

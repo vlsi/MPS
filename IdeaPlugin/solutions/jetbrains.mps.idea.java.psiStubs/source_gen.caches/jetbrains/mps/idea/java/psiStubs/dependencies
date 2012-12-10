@@ -7,6 +7,7 @@
     <classNode dependClassName="com.intellij.psi.PsiClass" />
     <classNode dependClassName="com.intellij.psi.PsiClassType" />
     <classNode dependClassName="com.intellij.psi.PsiElement" />
+    <classNode dependClassName="com.intellij.psi.PsiEnumConstant" />
     <classNode dependClassName="com.intellij.psi.PsiField" />
     <classNode dependClassName="com.intellij.psi.PsiFile" />
     <classNode dependClassName="com.intellij.psi.PsiJavaFile" />
@@ -17,6 +18,7 @@
     <classNode dependClassName="com.intellij.psi.PsiParameter" />
     <classNode dependClassName="com.intellij.psi.PsiPrimitiveType" />
     <classNode dependClassName="com.intellij.psi.PsiType" />
+    <classNode dependClassName="com.intellij.psi.PsiTypeElement" />
     <classNode dependClassName="com.intellij.psi.PsiTypeParameter" />
     <classNode dependClassName="com.intellij.psi.PsiTypeParameterListOwner" />
     <classNode dependClassName="com.intellij.psi.PsiWildcardType" />

@@ -22,7 +22,6 @@ public class JavaSourceModelRootContributor implements ModelRootContributor {
     List<ModelRoot> singleton = new ArrayList<ModelRoot>(1);
 //    singleton.add( new PsiJavaStubModelRoot(module) );
 
-
     for (VirtualFile sourceRoot: ModuleRootManager.getInstance(module).getSourceRoots(false)) {
       String path = sourceRoot.getPath();
       EclipseJavaStubModelRoot modelRoot = new EclipseJavaStubModelRoot() ;
