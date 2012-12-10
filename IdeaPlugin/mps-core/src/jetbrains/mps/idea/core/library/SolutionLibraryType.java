@@ -21,12 +21,14 @@ import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileTypes.FileTypes;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.project.ProjectBundle;
 import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.roots.impl.libraries.LibraryEx;
 import com.intellij.openapi.roots.libraries.*;
 import com.intellij.openapi.roots.libraries.ui.*;
 import com.intellij.openapi.roots.ui.configuration.FacetsProvider;
 import com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditor;
+import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -189,12 +191,23 @@ public class SolutionLibraryType extends LibraryType<DummyLibraryProperties> {
 
       @NotNull
       @Override
+      public FileChooserDescriptor createAttachFilesChooserDescriptor(@Nullable String libraryName) {
+        // same as super apart from the constructor invocation parameters
+        FileChooserDescriptor descriptor = new FileChooserDescriptor(false, false, true, false, true, true);
+        descriptor.setTitle(StringUtil.isEmpty(libraryName) ? ProjectBundle.message("library.attach.files.action")
+          : ProjectBundle.message("library.attach.files.to.library.action", libraryName));
+        descriptor.setDescription(ProjectBundle.message("library.attach.files.description"));
+        return descriptor;
+      }
+
+      @NotNull
+      @Override
       public List<? extends AttachRootButtonDescriptor> createAttachButtons() {
-        return Arrays.asList(new AttachRootButtonDescriptor(OrderRootType.CLASSES, MPSBundle.message("library.attach.mps.solution")) {
+        return Arrays.asList(new AttachRootButtonDescriptor(ModuleXmlRootDetector.SOLUTION_MODULE_XML, MPSBundle.message("library.attach.mps.solution")) {
           @Override
           public VirtualFile[] selectFiles(@NotNull JComponent parent, @Nullable VirtualFile initialSelection, @Nullable final Module contextModule, @NotNull final LibraryEditor libraryEditor) {
             final List<ModuleReference> availableSolutions = new ArrayList<ModuleReference>();
-            final Set<VirtualFile> libraryFiles = new HashSet<VirtualFile>(Arrays.asList(libraryEditor.getFiles(OrderRootType.CLASSES)));
+            final Set<VirtualFile> descriptors = new HashSet<VirtualFile>(Arrays.asList(libraryEditor.getFiles(ModuleXmlRootDetector.SOLUTION_MODULE_XML)));
             ModelAccess.instance().runReadAction(new Runnable() {
               @Override
               public void run() {
@@ -202,7 +215,7 @@ public class SolutionLibraryType extends LibraryType<DummyLibraryProperties> {
                   if (solution instanceof SolutionIdea || solution instanceof StubSolution) {
                     continue;
                   }
-                  if (libraryFiles.contains(getJarFile(solution.getBundleHome().getPath()))) {
+                  if (descriptors.contains(VirtualFileUtils.getVirtualFile(solution.getDescriptorFile()))) {
                     // skip solutions that are already in a lib
                     continue;
                   }
@@ -213,15 +226,27 @@ public class SolutionLibraryType extends LibraryType<DummyLibraryProperties> {
 
             ChooseElementsDialog<ModuleReference> chooser = new ModuleReferenceChooserDialog(parent, availableSolutions);
             chooser.show();
-            List<ModuleReference> chosenElements = chooser.getChosenElements();
+            final List<ModuleReference> chosenElements = chooser.getChosenElements();
 
-            final Set<VirtualFile> roots = new LinkedHashSet<VirtualFile>();
-            for (ModuleReference module : chosenElements) {
-              for (VirtualFile virtualFile : getSolutionJars((Solution) ModuleRepositoryFacade.getInstance().getModule(module))) {
-                roots.add(virtualFile);
+            final Set<VirtualFile> addedDescriptors = new LinkedHashSet<VirtualFile>();
+            final Set<VirtualFile> addedJars = new LinkedHashSet<VirtualFile>();
+            ModelAccess.instance().runReadAction(new Runnable() {
+              @Override
+              public void run() {
+                for (ModuleReference module : chosenElements) {
+                  addedDescriptors.add(VirtualFileUtils.getVirtualFile(ModuleRepositoryFacade.getInstance().getModule(module).getDescriptorFile()));
+                  for (VirtualFile virtualFile : getSolutionJars((Solution) ModuleRepositoryFacade.getInstance().getModule(module))) {
+                    addedJars.add(virtualFile);
+                  }
+                }
               }
+            });
+            // that's a hack
+            // I want to add 2 different root types here: classes and module xml-s
+            for (VirtualFile classesJar : addedJars) {
+              libraryEditor.addRoot(classesJar, OrderRootType.CLASSES);
             }
-            return roots.toArray(new VirtualFile[roots.size()]);
+            return addedDescriptors.toArray(new VirtualFile[addedDescriptors.size()]);
           }
         });
       }

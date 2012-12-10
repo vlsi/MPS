@@ -30,12 +30,10 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Collection;
-import java.util.LinkedHashSet;
-import java.util.List;
+import java.util.*;
 
 public class ModuleXmlRootDetector extends RootDetector {
-  public static final OrderRootType SOLUTION_MODULE_XML = new OrderRootType("SOLUTION_MODULE_XML") {
+  public static final OrderRootType SOLUTION_MODULE_XML = new OrderRootType("MPS_MODULE_XML") {
   };
   private static final ModuleXmlRootDetector INSTANCE = new ModuleXmlRootDetector();
 
