@@ -17,9 +17,13 @@ package org.jetbrains.mps.openapi.language;
 
 /**
  * A descriptor of a concept, which defines the kind for nodes.
+ * MM: the descriptor is read-only, it's impossible to change the concept by invoking its methods.
+ * MM: SConcept can be obtained by id from SConceptRepository
  * This interface is not supposed to be implemented outside of MPS itself.
  * Moreover, it's prohibited to have 2 or more implementations available on the classpath at a time.
  * This interface has been introduced to give MPS the ability to switch between different implementations w/o affecting users.
+ * MM: note: the relationship between SNode and SConcept is very similar to relationship between an object and its Class object in Java
+ * MM: there's only one instance of each concept, so that they can be tested for equality with "==". [not yet completed]
  */
 public interface SAbstractConcept {
   /**
