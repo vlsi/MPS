@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.library;
 
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.SModelId;
@@ -24,6 +25,7 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import sun.util.LocaleServiceProviderPool.LocalizedObjectGetter;
 
 import java.util.Collection;
 import java.util.List;
@@ -32,6 +34,7 @@ import java.util.List;
  * evgeny, 3/18/11
  */
 public class ModelsMiner {
+  private static Logger LOG = Logger.getLogger(ModelsMiner.class);
 
   /*
    * use #collectModelDescriptors(dir, models)
@@ -59,7 +62,10 @@ public class ModelsMiner {
       }
 
       SModelReference modelReference;
-      assert dr.getUID() != null : "wrong model: " + file.getPath();
+      if (dr.getUID() == null){
+        LOG.error("wrong model: " + file.getPath(), new Throwable());
+        continue;
+      }
 
       modelReference = SModelReference.fromString(dr.getUID());
 
