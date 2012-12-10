@@ -28,8 +28,8 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
  * To change this template use File | Settings | File Templates.
  */
 public class HoleTypecheckingContext extends SimpleTypecheckingContext<HoleState, HoleTypechecking> {
-  public HoleTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
-    super(rootNode, typeChecker);
+  public HoleTypecheckingContext(SNode node, TypeChecker typeChecker) {
+    super(node, typeChecker);
   }
 
   @Override
@@ -40,5 +40,10 @@ public class HoleTypecheckingContext extends SimpleTypecheckingContext<HoleState
   @Override
   protected HoleTypechecking createTypechecking() {
     return new HoleTypechecking(getNode(), getState());
+  }
+
+  @Override
+  public boolean isSingleTypeComputation() {
+    return false;
   }
 }

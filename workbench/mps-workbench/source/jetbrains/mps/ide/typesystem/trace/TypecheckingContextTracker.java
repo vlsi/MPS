@@ -24,6 +24,7 @@ import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 
 import java.util.List;
 
@@ -69,6 +70,16 @@ public class TypecheckingContextTracker implements ITypeContextOwner {
   @Override
   public TypeCheckingContext createTypecheckingContext(SNode sNode, TypeContextManager typeContextManager) {
     return typeContextManager.createTracingTypeCheckingContext(sNode);
+  }
+
+  @Override
+  public boolean reuseTypecheckingContext() {
+    return true;
+  }
+
+  @Override
+  public SubtypingCache createSubtypingCache() {
+    return null;
   }
 
   public void setGenerationMode(boolean generationMode, SNode selectedNode) {

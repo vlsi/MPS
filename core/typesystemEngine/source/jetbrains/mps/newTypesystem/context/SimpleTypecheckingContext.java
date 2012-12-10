@@ -41,7 +41,7 @@ import java.util.Set;
  * Time: 3:35 PM
  * To change this template use File | Settings | File Templates.
  */
-public class SimpleTypecheckingContext<
+public abstract class SimpleTypecheckingContext<
     STATE extends State,
     TCHECK extends BaseTypechecking<STATE, ? extends SimpleTypecheckingComponent<STATE>>>
   extends BaseTypecheckingContext {
@@ -115,13 +115,7 @@ public class SimpleTypecheckingContext<
 
   @Override
   public SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
-    Pair<SNode, Boolean> pair = typeChecker.getTypeComputedForCompletion(node);
-    if (pair.o2) {
-      return pair.o1;
-    }
-    SNode resultType = getTypechecking().computeTypesForNodeDuringResolving(node);
-    typeChecker.putTypeComputedForCompletion(node, resultType);
-    return resultType;
+    throw new IllegalStateException("Invalid usage of SimpleTypecheckingContext");
   }
 
   @Override
@@ -227,7 +221,7 @@ public class SimpleTypecheckingContext<
   @Override
   public void checkRoot(final boolean refreshTypes) {
     synchronized (TYPECHECKING_LOCK) {
-      LanguageScopeExecutor.execWithModelScope(myRootNode.getModel(), new Computable<Object>() {
+      LanguageScopeExecutor.execWithModelScope(myNode.getModel(), new Computable<Object>() {
         @Override
         public Object compute() {
           getTypechecking().computeTypes(refreshTypes);

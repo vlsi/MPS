@@ -41,8 +41,8 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<St
   private Map<Object, Integer> myRequesting = new HashMap<Object, Integer>();
   private Integer myOldHash = 0;
 
-  public IncrementalTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
-    super(rootNode, typeChecker);
+  public IncrementalTypecheckingContext(SNode node, TypeChecker typeChecker) {
+    super(node, typeChecker);
   }
 
   @Override

@@ -68,12 +68,9 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
 
   private RulesManager myRulesManager;
 
-  private SubtypingCache mySubtypingCache = null;
   private volatile SubtypingCachePool myGlobalSubtypingCachePool = null;
 
   private SubtypingCache myGenerationSubTypingCache = null;
-
-  private Map<SNode, SNode> myComputedTypesForCompletion = null;
 
   private ThreadLocal<Boolean> myIsGenerationThread = new ThreadLocal<Boolean>() {
     @Override
@@ -155,7 +152,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
         return generationSubTypingCache;
       }
     }
-    return mySubtypingCache;
+    return TypeContextManager.getInstance().getSubtypingCache();
   }
 
   public SubtypingCache getGlobalSubtypingCache() {
@@ -175,38 +172,8 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
     return myRulesManager;
   }
 
-  public void enableTypesComputingForCompletion() {
-    //todo add assertion that it is in synchronized with below (e.g. in write action)
-    myComputedTypesForCompletion = new THashMap<SNode, SNode>(1);
-    if (mySubtypingCache == null) {
-      mySubtypingCache = createSubtypingCache();
-    }
-  }
-
-  public void clearTypesComputedForCompletion() {
-    //todo add assertion that it is in synchronized with above (e.g. in write action)
-    myComputedTypesForCompletion = null;
-    if (!isGenerationMode()) {
-      mySubtypingCache = null;
-    }
-  }
-
   private SubtypingCache createSubtypingCache() {
     return new ConcurrentSubtypingCache();
-  }
-
-  public Pair<SNode, Boolean> getTypeComputedForCompletion(SNode node) {
-    if (myComputedTypesForCompletion != null && myComputedTypesForCompletion.containsKey(node)) {
-      return new Pair<SNode, Boolean>(myComputedTypesForCompletion.get(node), true);
-    } else {
-      return new Pair<SNode, Boolean>(null, false);
-    }
-  }
-
-  public void putTypeComputedForCompletion(SNode node, SNode type) {
-    if (myComputedTypesForCompletion != null) {
-      myComputedTypesForCompletion.put(node, type);
-    }
   }
 
   public void generationStarted(IPerformanceTracer performanceTracer) {
@@ -267,7 +234,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   }
 
   public InequalitySystem getInequalitiesForHole(SNode hole, boolean holeIsAType) {
-    HoleTypecheckingContext typeCheckingContext = TypeContextManager.getInstance().createHoleTypecheckingContext(hole.getContainingRoot());
+    HoleTypecheckingContext typeCheckingContext = TypeContextManager.getInstance().createHoleTypecheckingContext(hole);
     InequalitySystem inequalitySystem = typeCheckingContext.getTypechecking().computeInequalitiesForHole(hole, holeIsAType);
     typeCheckingContext.dispose();
     return inequalitySystem;

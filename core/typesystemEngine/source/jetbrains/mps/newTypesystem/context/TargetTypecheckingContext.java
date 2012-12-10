@@ -29,8 +29,8 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
  */
 public class TargetTypecheckingContext extends SimpleTypecheckingContext<TargetState, TargetTypechecking> {
 
-  public TargetTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
-    super(rootNode, typeChecker);
+  public TargetTypecheckingContext(SNode node, TypeChecker typeChecker) {
+    super(node, typeChecker);
   }
 
   @Override

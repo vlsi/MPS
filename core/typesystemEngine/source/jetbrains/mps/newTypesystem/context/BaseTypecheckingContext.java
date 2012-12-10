@@ -28,7 +28,6 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.util.Computable;
 
 import java.util.List;
 
@@ -43,12 +42,12 @@ public abstract class BaseTypecheckingContext<STATE extends State> extends TypeC
 
   protected final Object TYPECHECKING_LOCK = new Object();
 
-  protected SNode myRootNode;
+  protected SNode myNode;
 
   protected TypeChecker myTypeChecker;
 
-  public BaseTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
-    myRootNode = rootNode;
+  public BaseTypecheckingContext(SNode node, TypeChecker typeChecker) {
+    myNode = node;
     myTypeChecker = typeChecker;
   }
 
@@ -190,13 +189,13 @@ public abstract class BaseTypecheckingContext<STATE extends State> extends TypeC
 
   @Override
   public void dispose() {
-    myRootNode = null;
+    myNode = null;
     getState().clear(true);
   }
 
   @Override
   public SNode getNode() {
-    return myRootNode;
+    return myNode;
   }
 
   @Override

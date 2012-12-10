@@ -16,29 +16,29 @@
 package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 
 /**
- * Created with IntelliJ IDEA.
- * User: fyodor
- * Date: 11/27/12
- * Time: 11:32 AM
- * To change this template use File | Settings | File Templates.
- */
-public class DefaultTypecheckingContextOwner implements ITypeContextOwner {
-
+* Created with IntelliJ IDEA.
+* User: fyodor
+* Date: 12/7/12
+* Time: 4:13 PM
+* To change this template use File | Settings | File Templates.
+*/
+class NonReusableTypecheckingContextOwner implements ITypeContextOwner {
   @Override
   public TypeCheckingContext createTypecheckingContext(SNode sNode, TypeContextManager typeContextManager) {
-    return typeContextManager.createTypeCheckingContext(sNode);
+    return typeContextManager.createTypeCheckingContextForResolve(sNode);
   }
 
   @Override
   public boolean reuseTypecheckingContext() {
-    return true;
+    return false;
   }
 
   @Override
   public SubtypingCache createSubtypingCache() {
-    return null;
+    return new ConcurrentSubtypingCache();
   }
 }

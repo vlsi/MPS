@@ -30,8 +30,8 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
  */
 public class InferenceTypecheckingContext extends SimpleTypecheckingContext<State, BaseTypechecking<State, SimpleTypecheckingComponent<State>>> {
 
-  public InferenceTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
-    super(rootNode, typeChecker);
+  public InferenceTypecheckingContext(SNode node, TypeChecker typeChecker) {
+    super(node, typeChecker);
   }
 
   protected void applyNonTypesystemRules() {
