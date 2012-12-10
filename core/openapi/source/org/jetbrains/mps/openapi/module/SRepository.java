@@ -17,6 +17,23 @@ package org.jetbrains.mps.openapi.module;
 
 /**
  * A storage for modules
+ *
+ * MM: REPOSITORY STRUCTURE
+ * MM: there can be many repositories. Given a repository, module/model/node reference can be resolved.
+ * MM: There's no need in making ids unique globally as each subsystem knows which exact repository it needs at every time
+ * MM: (e.g. typesystem knows where it stores its type-nodes, so it will not try to resolve references to them )
+ *
+ * MM: Repository contains modules, modules have model roots, each model root can load models. Model is a set of "root" nodes.
+ * MM: Each "root" node is a root of a tree of nodes. So that, repository is a tree structure.
+ * MM: repository
+ *        -module1
+ *            model root 1
+ *              model1
+ *                root_node_1
+ *                  child_node_1
+ *                    child_node_1_1
+ *                  child_node2
+ *            model root 2
  */
 public interface SRepository {
 
