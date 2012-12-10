@@ -19,35 +19,69 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
 
+/**
+ * MM: NODE STATES
+ * MM: node has 2 states: it can be either attached to some repository or not
+ * MM: in case it's not attached, it's a simple Java object
+ * MM: after attachment, the node checks correct read/write access through repository.getModelAccess()
+ * MM: and also starts notifications about node reads
+ *
+ * MM: NODE MANIPULATION
+ * MM: after detaching from model, the node is held in a special place in repository until the end of a Command
+ * MM: (UnregisteredNodes/ImmatureReferences) so that all references in the node and from outside still work
+ * MM: e.g. we have A,B and C nodes in model M, where A and B references C. After
+ * MM: C.delete or M.removeRoot(C) or C.getParent().removeChild(C), A and B will still have C as a target of reference until the end current command
+
+ * MM: STORING NODES
+ * MM: storing nodes between read actions will cause errors and possible memleaks. See getReference()
+ *
+ * MM: EXTERNAL CONSTRAINTS
+ * MM: the SNode represents the raw node in the AST. SNode does not know about constraints, behavior, getters and setters
+ * MM: for props/refs
+ *
+ * MM: SEE ALSO
+ * MM: SNodeUtil, SNodeAccessUtil
+ */
 public interface SNode {
 
   //common properties
 
   /**
    * Uniquely identifies the node within its containing model. May also be null.
+   * MM: null means that reference is resolved dynamically [not yet documented how]
    */
   SNodeId getSNodeId();
 
   /**
    * Uniquely identifies the node globally. Never changes between subsequent read and write actions.
+   * MM: Uniquely identifies the node IN A REPOSITORY
+
+   * MM: this is a "weak ref" for a node
+   * MM: this is the only correct way to pass or store nodes between read/write actions
    */
   SNodeReference getReference();
 
   /**
    * The concept that this node represents
+   * MM: can be compared as "==". [not yet implemented]
    */
   SConcept getConcept();
 
   /**
    * A string representing the node
+   * MM: use to show the node in UI
    */
   String getPresentation();
 
   /**
    * The name of the node. For INamed concepts identical with the INamed.name
+   * MM: just gets the "name" property of a node. THIS IS AMBIGUOUS: For INamed concepts identical with the INamed.name
    */
   String getName();
 
+  /**
+   * MM: containing model or null if the node is not contained in any model
+   */
   SModel getContainingModel();
 
   // tree operation
@@ -56,11 +90,6 @@ public interface SNode {
 
   /**
    * Inserts the given node as a child of the current node of the specified role directly behind the anchor node.<br/>
-   * If the specified role has cardinality greater than one, this method inserts a new child.<br/>
-   * If the specified role accepts only one child element and there is no child in it, a new child is added.
-   * The last parameter is ignored in this case.<br/>
-   * If the specified role accepts only one child element and there is a child in it, the current child is replaced
-   * with the new one. The last parameter is ignored in this case.<br/>
    *
    * @param role   a role to insert new child into
    * @param child  a node to insert
@@ -70,9 +99,16 @@ public interface SNode {
    */
   void insertChild(String role, SNode child, @Nullable SNode anchor);
 
-  //note this has different semantics than child.delete()
+  /**
+   * MM: removes the child of this node
+   * MM: See "node manipulation" section in class doc
+   */
   void removeChild(SNode child);
 
+  /**
+   * MM: if the node is a root, removes it from a model, else removes node from its parent
+   * MM: See "node manipulation" section in class doc
+   */
   void delete();
 
   //base tree queries
@@ -86,19 +122,36 @@ public interface SNode {
 
   String getRoleInParent();
 
+  /**
+   * MM: no parent -> no sibling. Root has no siblings
+   */
   SNode getPrevSibling();
 
+  /**
+   * MM: no parent -> no sibling. Root has no siblings
+   */
   SNode getNextSibling();
 
-  //non-modifiable
+  /**
+   * MM:non-modifiable
+   */
   Iterable<? extends SNode> getChildren(String role);
 
+  /**
+   * MM: null for first child
+   */
   SNode getPrevChild(SNode child);
 
+  /**
+   * MM: null for last child
+   */
   SNode getNextChild(SNode child);
 
   String getRoleOf(SNode child);
 
+  /**
+   * MM: consider non-modifiable
+   */
   public Iterable<? extends SNode> getChildren();
 
   // refs
@@ -108,6 +161,9 @@ public interface SNode {
    */
   void setReferenceTarget(String role, @Nullable SNode target);
 
+  /**
+   * MM: it's impossible to determine whether reference was set to null or wasn't set at all
+   */
   SNode getReferenceTarget(String role);
 
   // SReferences
@@ -130,6 +186,8 @@ public interface SNode {
    * Retrieves all SReferences from the node.
    * Since SReference can refer to nodes by name and resolve them dynamically, this method may be able to help you resolve
    * the target nodes even when working with invalid code.
+   *
+   * MM: consider non-modifiable
    */
   public Iterable<? extends SReference> getReferences();
 
@@ -141,6 +199,9 @@ public interface SNode {
 
   void setProperty(String propertyName, String propertyValue);
 
+  /**
+   * MM: consider non-modifiable
+   */
   Iterable<String> getPropertyNames();
 
   // user objects
