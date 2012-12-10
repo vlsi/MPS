@@ -53,6 +53,10 @@ public class SwitchToComplexIsApplicable_Intention implements IntentionFactory {
     return new SNodePointer("r:e5ea276a-79c7-4383-9407-3428086d3297(jetbrains.mps.debugger.api.lang.intentions)", "8751745335399757635");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SwitchToComplexIsApplicable_Intention.IntentionImplementation());

@@ -65,7 +65,7 @@ public class BracesHighlighter {
         EditorCell cell = editorCell.getPrevLeaf();
         if (cell instanceof EditorCell_Label) {
           EditorCell_Label label = (EditorCell_Label) cell;
-          if (label.getBounds().getMaxX() == editorCell.getBounds().getMinX() && editorCell.getLeftInset() == 0) {
+          if (label.getWidth() == 0 && editorCell.getLeftInset() == 0) {
             cellToSelect = label;
           }
         }
@@ -73,7 +73,7 @@ public class BracesHighlighter {
         EditorCell cell = editorCell.getNextLeaf();
         if (cell instanceof EditorCell_Label) {
           EditorCell_Label label = (EditorCell_Label) cell;
-          if (label.getBounds().getMinX() == editorCell.getBounds().getMaxX() && editorCell.getRightInset() == 0) {
+          if (label.getWidth() == 0 && editorCell.getRightInset() == 0) {
             cellToSelect = label;
           }
         }

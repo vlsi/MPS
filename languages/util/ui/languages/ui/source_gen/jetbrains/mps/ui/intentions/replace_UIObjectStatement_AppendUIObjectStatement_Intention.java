@@ -62,6 +62,10 @@ public class replace_UIObjectStatement_AppendUIObjectStatement_Intention impleme
     return new SNodePointer("r:8cdffe0e-82a6-47c0-9a63-88679c2baa24(jetbrains.mps.ui.intentions)", "1576918603588812821");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new replace_UIObjectStatement_AppendUIObjectStatement_Intention.IntentionImplementation());

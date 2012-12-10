@@ -65,6 +65,10 @@ public class NewTemplateInInlineSwitchDefault_Intention implements IntentionFact
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "8004199436029429270");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new NewTemplateInInlineSwitchDefault_Intention.IntentionImplementation());

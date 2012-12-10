@@ -59,6 +59,10 @@ public class AddCustomLocationDependency_Intention implements IntentionFactory {
     return new SNodePointer("r:e8fca550-89ba-41bb-ae28-dc9cae640a8a(jetbrains.mps.build.mps.intentions)", "2798275735916376328");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddCustomLocationDependency_Intention.IntentionImplementation());

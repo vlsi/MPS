@@ -271,6 +271,7 @@
     <classNode dependClassName="com.intellij.openapi.ui.popup.ListPopup" />
     <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />
     <classNode dependClassName="java.awt.Frame" />
+    <classNode dependClassName="java.awt.Point" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.util.plugin.refactorings.IntroduceLocalVariableRefactoring" />
@@ -280,6 +281,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Label" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.messageTargets.CellFinder" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

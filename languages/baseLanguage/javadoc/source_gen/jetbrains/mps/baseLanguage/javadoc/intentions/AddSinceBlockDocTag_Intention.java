@@ -61,6 +61,10 @@ public class AddSinceBlockDocTag_Intention implements IntentionFactory {
     return new SNodePointer("r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)", "8465538089690815842");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddSinceBlockDocTag_Intention.IntentionImplementation());

@@ -55,6 +55,10 @@ public class TurnToIfStatement_Intention implements IntentionFactory {
     return new SNodePointer("r:c94a864e-ad51-4b38-a592-c0d7623187a1(org.jetbrains.mps.samples.IfAndUnless.intentions)", "393299394024668987");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new TurnToIfStatement_Intention.IntentionImplementation());

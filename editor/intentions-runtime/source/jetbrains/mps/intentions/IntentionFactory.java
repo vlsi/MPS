@@ -25,5 +25,7 @@ import java.util.Collection;
  * Date: 10/31/12
  */
 public interface IntentionFactory extends IntentionDescriptor {
+  boolean isSurroundWith();
+
   Collection<IntentionExecutable> instances(SNode node, EditorContext editorContext);
 }
