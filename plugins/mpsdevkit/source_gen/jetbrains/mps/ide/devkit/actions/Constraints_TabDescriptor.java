@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class Constraints_TabDescriptor extends RelationDescriptor {
-  private static final Icon ICON = IconUtil.getIcon("constraints.png");
+  private static final Icon ICON = IconUtil.getIcon("constraint.png");
 
   public Constraints_TabDescriptor() {
   }

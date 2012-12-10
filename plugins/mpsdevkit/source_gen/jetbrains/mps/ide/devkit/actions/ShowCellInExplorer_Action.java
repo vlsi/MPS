@@ -17,7 +17,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.logging.Logger;
 
 public class ShowCellInExplorer_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("cellExplorer.png");
+  private static final Icon ICON = IconUtil.getIcon("showCellInExplorer.png");
 
   public ShowCellInExplorer_Action() {
     super("Show Cell In Explorer", "", ICON);

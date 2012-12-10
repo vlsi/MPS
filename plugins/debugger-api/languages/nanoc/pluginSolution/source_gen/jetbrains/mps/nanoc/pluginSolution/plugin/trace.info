@@ -243,7 +243,7 @@
     <unitInfo nodeId="5487985028841967385" fileName="CppDebuggerInitializer_CustomApplicationPlugin.java" startLine="10" startPosition="0" endLine="36" endPosition="0" unitName="jetbrains.mps.nanoc.pluginSolution.plugin.CppDebuggerInitializer_CustomApplicationPlugin" />
   </root>
   <root nodeId="5487985028841967424" modelId="r:7774ea03-9c55-49cb-9b27-89814ac6e48a(jetbrains.mps.nanoc.pluginSolution.plugin)">
-    <nodeInfo nodeId="5487985028841967425" fileName="ExecutableFile_Kind.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="5108813241794979248" fileName="ExecutableFile_Kind.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="5487985028841967424" fileName="ExecutableFile_Kind.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myForeignFactories" />
     <nodeInfo nodeId="5487985028841967424" fileName="ExecutableFile_Kind.java" startLine="24" startPosition="61" endLine="25" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5487985028841967424" fileName="ExecutableFile_Kind.java" startLine="25" startPosition="101" endLine="26" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

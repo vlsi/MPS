@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import javax.swing.JComponent;
 
 public class TraceTool_Tool extends GeneratedTool {
-  private static final Icon ICON = IconUtil.getIcon("types.png");
+  private static final Icon ICON = IconUtil.getIcon("type.png");
   private TypeSystemTracePanel myPanel;
 
   public TraceTool_Tool(Project project) {

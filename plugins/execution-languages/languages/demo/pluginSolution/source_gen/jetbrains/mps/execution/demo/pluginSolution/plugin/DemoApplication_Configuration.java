@@ -26,11 +26,9 @@ import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import javax.swing.Icon;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.util.IconUtil;
 import jetbrains.mps.logging.Logger;
 
 public class DemoApplication_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
@@ -131,10 +129,6 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
     return new DemoApplication_Configuration_Editor(myNode.getEditor());
   }
 
-  public Icon getIcon() {
-    return ICON;
-  }
-
   @Override
   public boolean canExecute(String executorId) {
     return DemoApplication_Configuration_RunProfileState.canExecute(executorId);
@@ -144,6 +138,5 @@ public class DemoApplication_Configuration extends BaseMpsRunConfiguration imple
     return new Object[]{ListSequence.fromListAndArray(new ArrayList<SNodePointer>(), this.getNode().getNodePointer())};
   }
 
-  private static final Icon ICON = IconUtil.getIcon("run.png");
   private static Logger LOG = Logger.getLogger(DemoApplication_Configuration.class);
 }

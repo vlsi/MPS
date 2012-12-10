@@ -9,10 +9,10 @@
   <import index="1i04" modelUID="r:3270011d-8b2d-4938-8dff-d256a759e017(jetbrains.mps.lang.behavior.structure)" version="-1" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1225194240794">
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/behavior.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${mps_home}/workbench/icons/source/nodes/behavior.png" />
       <property name="name" nameId="tpck.1169194664001" value="ConceptBehavior" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Behavior" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Concept Behavior" />

@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class Data_Flow_TabDescriptor extends RelationDescriptor {
-  private static final Icon ICON = IconUtil.getIcon("goRound.png");
+  private static final Icon ICON = IconUtil.getIcon("dataFlow.png");
 
   public Data_Flow_TabDescriptor() {
   }

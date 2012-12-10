@@ -31,7 +31,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.logging.Logger;
 
 public class ImportAllModulesFromFolder_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("import.png");
+  private static final Icon ICON = IconUtil.getIcon("importModulesFromFolder.png");
 
   public ImportAllModulesFromFolder_Action() {
     super("Import All Modules from Folder", "", ICON);

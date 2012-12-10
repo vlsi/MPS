@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.logging.Logger;
 
 public class ShowInLogicalView_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("logical_view.png");
+  private static final Icon ICON = IconUtil.getIcon("logicalView.png");
 
   public ShowInLogicalView_Action() {
     super("Show Node in Logical View", "", ICON);

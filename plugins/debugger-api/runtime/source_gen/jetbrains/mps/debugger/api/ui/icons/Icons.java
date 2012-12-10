@@ -14,12 +14,13 @@ public class Icons {
   public static final Icon VARIABLES = IconContainer.ICON_a6;
   public static final Icon WATCHES = IconContainer.ICON_a7;
   public static final Icon BREAKPOINTS_DIALOG_DELETE = IconContainer.ICON_a8;
-  public static final Icon BREAKPOINTS_DIALOG_GOTO = IconContainer.ICON_a9;
-  public static final Icon BREAKPOINTS_DIALOG_GROUP_BY_MODEL = IconContainer.ICON_a01;
-  public static final Icon BREAKPOINTS_DIALOG_GROUP_BY_MODULE = IconContainer.ICON_a11;
-  public static final Icon BREAKPOINTS_DIALOG_GROUP_BY_ROOT = IconContainer.ICON_a21;
-  public static final Icon BREAKPOINTS_DIALOG_VIEW_SOURCE = IconContainer.ICON_a31;
-  public static final Icon BREAKPOINTS_DIALOG_TREE_VIEW = IconContainer.ICON_a41;
+  public static final Icon BREAKPOINTS_DIALOG_ADD = IconContainer.ICON_a9;
+  public static final Icon BREAKPOINTS_DIALOG_GOTO = IconContainer.ICON_a01;
+  public static final Icon BREAKPOINTS_DIALOG_GROUP_BY_MODEL = IconContainer.ICON_a11;
+  public static final Icon BREAKPOINTS_DIALOG_GROUP_BY_MODULE = IconContainer.ICON_a21;
+  public static final Icon BREAKPOINTS_DIALOG_GROUP_BY_ROOT = IconContainer.ICON_a31;
+  public static final Icon BREAKPOINTS_DIALOG_VIEW_SOURCE = IconContainer.ICON_a41;
+  public static final Icon BREAKPOINTS_DIALOG_TREE_VIEW = IconContainer.ICON_a51;
 
   public Icons() {
   }

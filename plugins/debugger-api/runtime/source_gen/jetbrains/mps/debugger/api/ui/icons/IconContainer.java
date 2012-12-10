@@ -4,21 +4,23 @@ package jetbrains.mps.debugger.api.ui.icons;
 
 import javax.swing.Icon;
 import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 
 public class IconContainer {
-  protected static Icon ICON_a8 = IconUtil.getIcon("delete_breakpoint.png");
-  protected static Icon ICON_a9 = IconUtil.getIcon("go_to_source.png");
-  protected static Icon ICON_a01 = IconUtil.getIcon("group_by_model_1.png");
-  protected static Icon ICON_a11 = IconUtil.getIcon("group_by_module_1.png");
-  protected static Icon ICON_a21 = IconUtil.getIcon("group_by_root.png");
-  protected static Icon ICON_a31 = IconUtil.getIcon("view_source.png");
-  protected static Icon ICON_a41 = IconUtil.getIcon("tree_view.png");
-  protected static Icon ICON_a0 = IconUtil.getIcon("db_set_breakpoint.png");
-  protected static Icon ICON_a1 = IconUtil.getIcon("db_invalid_breakpoint.png");
-  protected static Icon ICON_a2 = IconUtil.getIcon("db_disabled_breakpoint.png");
-  protected static Icon ICON_a3 = IconUtil.getIcon("db_muted_breakpoint.png");
-  protected static Icon ICON_a4 = IconUtil.getIcon("db_show_as_tree.png");
-  protected static Icon ICON_a5 = IconUtil.getIcon("db_frames.png");
-  protected static Icon ICON_a6 = IconUtil.getIcon("db_variables.png");
-  protected static Icon ICON_a7 = IconUtil.getIcon("db_watches.png");
+  protected static Icon ICON_a8 = IconUtil.getIcon("deleteBreakpoint.png");
+  protected static Icon ICON_a01 = IconUtil.getIcon("goToSource.png");
+  protected static Icon ICON_a11 = IconUtil.getIcon("groupByModel.png");
+  protected static Icon ICON_a21 = IconUtil.getIcon("groupByModule.png");
+  protected static Icon ICON_a31 = IconUtil.getIcon("groupByRoot.png");
+  protected static Icon ICON_a41 = AllIcons.Actions.ShowSource;
+  protected static Icon ICON_a51 = AllIcons.Actions.ShowAsTree;
+  protected static Icon ICON_a0 = AllIcons.Debugger.Db_set_breakpoint;
+  protected static Icon ICON_a1 = AllIcons.Debugger.Db_invalid_breakpoint;
+  protected static Icon ICON_a2 = AllIcons.Debugger.Db_disabled_breakpoint;
+  protected static Icon ICON_a3 = AllIcons.Debugger.Db_muted_breakpoint;
+  protected static Icon ICON_a4 = AllIcons.Actions.ShowAsTree;
+  protected static Icon ICON_a5 = AllIcons.Debugger.Frame;
+  protected static Icon ICON_a6 = AllIcons.Debugger.Value;
+  protected static Icon ICON_a7 = AllIcons.Debugger.Watches;
+  protected static Icon ICON_a9 = IconUtil.getIcon("addBreakpoint.png");
 }

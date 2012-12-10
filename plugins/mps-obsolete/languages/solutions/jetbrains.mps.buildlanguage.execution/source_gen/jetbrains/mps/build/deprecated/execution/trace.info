@@ -1694,7 +1694,7 @@
     <unitInfo nodeId="4197214709893771928" fileName="TargetChoosePanel.java" startLine="13" startPosition="0" endLine="39" endPosition="0" unitName="jetbrains.mps.build.deprecated.execution.TargetChoosePanel" />
   </root>
   <root nodeId="4197214709893781959" modelId="r:78fddae4-c085-42f0-a758-ca4c7b372a36(jetbrains.mps.build.deprecated.execution)">
-    <nodeInfo nodeId="4197214709893781960" fileName="Ant_Kind.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
+    <nodeInfo nodeId="5108813241790840013" fileName="Ant_Kind.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
     <nodeInfo nodeId="4197214709893781959" fileName="Ant_Kind.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myForeignFactories" />
     <nodeInfo nodeId="4197214709893781959" fileName="Ant_Kind.java" startLine="24" startPosition="61" endLine="25" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4197214709893781959" fileName="Ant_Kind.java" startLine="25" startPosition="101" endLine="26" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

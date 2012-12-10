@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.ide.projectPane.favorites.FavoritesUtil;
@@ -19,7 +19,7 @@ import java.util.List;
 import jetbrains.mps.logging.Logger;
 
 public class RenameFavoritesList_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("menu-replace.png");
+  private static final Icon ICON = AllIcons.Actions.Menu_replace;
 
   public RenameFavoritesList_Action() {
     super("Rename Favorites List", "", ICON);
