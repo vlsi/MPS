@@ -96,7 +96,7 @@ public class ComplicatedMakeTests extends AbstractMakeTest {
     getVFS().refresh(false);
 
     // second compilation
-    assertCompiles(cm, 1, 0);
+    assertCompiles(cm, 0, 0);
 
     assertExists(outputDir, "code");
     assertNotExists(outputDir, "code/Test.java");
