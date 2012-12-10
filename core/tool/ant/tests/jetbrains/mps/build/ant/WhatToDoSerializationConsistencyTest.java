@@ -15,7 +15,9 @@
  */
 package jetbrains.mps.build.ant;
 
+import jetbrains.mps.tool.common.Script;
 import junit.framework.TestCase;
+import org.apache.log4j.Level;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -28,7 +30,7 @@ import java.util.LinkedHashMap;
 public class WhatToDoSerializationConsistencyTest extends TestCase {
 
   public void testCloningConcistencyWithProjects() {
-    WhatToDo toDo = new WhatToDo();
+    Script toDo = new Script();
 
     toDo.addProjectFile(new File("languages/util/builders/builders.mpr").getAbsoluteFile(), "blahblahblah1", "blahblahblah2");
     toDo.addProjectFile(new File("languages/util/dates/dates.mpr").getAbsoluteFile(), "blahblahblah1");
@@ -38,7 +40,7 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
   }
 
   public void testCloningConcistencyWithModels() {
-    WhatToDo toDo = new WhatToDo();
+    Script toDo = new Script();
 
     toDo.addModelFile(new File("languages/util/regexp/languageModels/editor.mps").getAbsoluteFile());
     toDo.addModelFile(new File("languages/util/regexp/languageModels/structure.mps").getAbsoluteFile());
@@ -48,7 +50,7 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
   }
 
   public void testCloningConcistencyWithModules() {
-    WhatToDo toDo = new WhatToDo();
+    Script toDo = new Script();
 
     toDo.addModuleFile(new File("languages/util/regexp/solutions/jetbrains.mps.regexp.examples/jetbrains.mps.regexp.examples.msd").getAbsoluteFile());
     toDo.addModuleFile(new File("languages/util/regexp/solutions/jetbrains.mps.regexp.sandbox/jetbrains.mps.regexp.sandbox.msd").getAbsoluteFile());
@@ -58,7 +60,7 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
   }
 
   public void testCloningConcistencyWithLibraries() {
-    WhatToDo toDo = new WhatToDo();
+    Script toDo = new Script();
 
     toDo.addLibrary("name1", new File("dir1").getAbsoluteFile(), false);
     toDo.addLibrary("name2", new File("dir3").getAbsoluteFile(), false /*true*/);
@@ -68,7 +70,7 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
   }
 
   public void testCloningConcistencyWithMacro() {
-    WhatToDo toDo = new WhatToDo();
+    Script toDo = new Script();
 
     toDo.addMacro("name1", "value1");
     toDo.addMacro("name2", "value2");
@@ -78,10 +80,10 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
   }
 
   public void testCloningConcistencyWithOtherParameters() {
-    WhatToDo toDo = new WhatToDo();
+    Script toDo = new Script();
 
     toDo.updateFailOnError(true);
-    toDo.updateLogLevel(239);
+    toDo.updateLogLevel(Level.INFO);
     LinkedHashMap<String, String> properties = new LinkedHashMap<String, String>();
     properties.put("name1", "value1");
     properties.put("name2", "value2");
@@ -92,10 +94,10 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
     testToDoConsistency(toDo);
   }
 
-  private void testToDoConsistency(WhatToDo toDo) {
+  private void testToDoConsistency(Script toDo) {
     try {
-      WhatToDo toDoFromString = WhatToDo.fromDumpInFile(toDo.dumpToTmpFile());
-      WhatToDo toDoCloned = new WhatToDo();
+      Script toDoFromString = Script.fromDumpInFile(toDo.dumpToTmpFile());
+      Script toDoCloned = new Script();
       toDo.cloneTo(toDoCloned);
 
       assertDeepObjectEquals(toDoCloned, toDoFromString);

@@ -4,7 +4,7 @@ package jetbrains.mps.build.mps.runtime.anttask;
 
 import jetbrains.mps.build.ant.MpsLoadTask;
 import org.apache.tools.ant.types.Path;
-import jetbrains.mps.build.ant.MpsWorker;
+import jetbrains.mps.tool.builder.MpsWorker;
 import java.util.Set;
 import java.io.File;
 import java.util.HashSet;

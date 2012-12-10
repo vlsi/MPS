@@ -102,14 +102,6 @@ public abstract class AbstractMPSFixtureTestCase extends UsefulTestCase {
     myFixture.setTestDataPath(getTestDataPath());
     myModule = moduleFixtureBuilder.getFixture().getModule();
 
-    ApplicationManager.getApplication().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        final String jdkHome = SystemProperties.getJavaHome();
-        final String versionName = ProjectBundle.message("sdk.java.name.template", SystemProperties.getJavaVersion());
-        ProjectRootManager.getInstance(myModule.getProject()).setProjectSdk(JavaSdk.getInstance().createJdk(versionName, jdkHome));
-      }
-    });
     CompilerWorkspaceConfiguration.getInstance(myModule.getProject()).USE_COMPILE_SERVER = false;
     myFacet = addMPSFacet(myModule);
 

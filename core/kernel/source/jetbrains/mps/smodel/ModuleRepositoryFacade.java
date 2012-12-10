@@ -153,32 +153,9 @@ public class ModuleRepositoryFacade implements CoreComponent {
 
     if (registered == language) {
       language.setLanguageDescriptor(descriptor, false);
-      createLanguageLibs(language, descriptor);
     }
 
     return registered;
-  }
-
-  public static void createLanguageLibs(Language language, LanguageDescriptor languageDescriptor) {
-    List<SolutionDescriptor> solutionDescriptors = createLanguageLibraryDescriptors(languageDescriptor);
-
-    for (SolutionDescriptor sd : solutionDescriptors) {
-      jetbrains.mps.project.StubSolution.newInstance(sd, language);
-    }
-  }
-
-  private static List<SolutionDescriptor> createLanguageLibraryDescriptors(LanguageDescriptor ld) {
-    List<SolutionDescriptor> result = new ArrayList<SolutionDescriptor>();
-    for (jetbrains.mps.project.structure.modules.StubSolution ss : ld.getStubSolutions()) {
-      SolutionDescriptor descriptor = new SolutionDescriptor();
-      descriptor.setId(ss.getId());
-      descriptor.setNamespace(ss.getName());
-
-      descriptor.setCompileInMPS(false);
-
-      result.add(descriptor);
-    }
-    return result;
   }
 
   private static Solution newSolutionInstance(ModuleHandle handle, MPSModuleOwner moduleOwner) {

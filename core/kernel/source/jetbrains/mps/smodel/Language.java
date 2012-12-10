@@ -68,13 +68,6 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   protected void reloadAfterDescriptorChange() {
-    ModuleRepositoryFacade.getInstance().unregisterModules(this, new Condition<IModule>() {
-      public boolean met(IModule m) {
-        return !(m instanceof Solution && ((Solution) m) instanceof StubSolution);
-      }
-    });
-    ModuleRepositoryFacade.createLanguageLibs(this, getModuleDescriptor());
-
     super.reloadAfterDescriptorChange();
     revalidateGenerators();
   }

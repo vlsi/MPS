@@ -28,8 +28,8 @@ import com.intellij.openapi.projectRoots.JavaSdkType;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.util.Key;
-import jetbrains.mps.build.ant.AntBootstrap;
-import jetbrains.mps.build.ant.generation.workers.ReducedGenerationWorker;
+import jetbrains.mps.tool.builder.AntBootstrap;
+import jetbrains.mps.tool.builder.make.ReducedGenerationWorker;
 import jetbrains.mps.util.PathManager;
 
 import java.io.File;

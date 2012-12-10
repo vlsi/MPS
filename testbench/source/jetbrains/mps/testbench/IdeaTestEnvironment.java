@@ -3,7 +3,7 @@ package jetbrains.mps.testbench;
 import com.intellij.idea.IdeaTestApplication;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
 import com.intellij.openapi.util.InvalidDataException;
-import jetbrains.mps.build.ant.Environment;
+import jetbrains.mps.tool.builder.Environment;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.make.ModuleMaker;

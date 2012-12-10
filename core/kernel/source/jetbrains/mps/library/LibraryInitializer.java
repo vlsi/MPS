@@ -75,10 +75,17 @@ public class LibraryInitializer implements CoreComponent {
     // TODO find classloader using ModuleOwner (SLibrary)
     String pluginPath = module.getPluginPath();
     if (pluginPath != null) {
+      String foundPath = "";
       for (String path : myParentLoaders.keySet()) {
         if (pluginPath.startsWith(FileSystem.getInstance().getFileByPath(path).getPath())) {
-          return myParentLoaders.get(path);
+          // handle one path being a prefix of the other
+          if (path != null && path.length() > foundPath.length()) {
+            foundPath = path;
+          }
         }
+      }
+      if (!foundPath.isEmpty()) {
+        return myParentLoaders.get(foundPath);
       }
     }
 

@@ -1703,7 +1703,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
     quotedNode_26.setReference("classifier", SReference.create("classifier", quotedNode_26, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.progress(MPS.Core/jetbrains.mps.progress@java_stub)"), SNodeId.fromString("~ProgressMonitor")));
     quotedNode_24.addChild("type", quotedNode_26);
     quotedNode_27 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
-    quotedNode_27.setReference("annotation", SReference.create("annotation", quotedNode_27, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.annotations(MPS.Core/org.jetbrains.annotations@java_stub)"), SNodeId.fromString("~NotNull")));
+    quotedNode_27.setReference("annotation", SReference.create("annotation", quotedNode_27, SModelReference.fromString("f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)"), SNodeId.fromString("~NotNull")));
     quotedNode_24.addChild("annotation", quotedNode_27);
     quotedNode_21.addChild("parameter", quotedNode_24);
     quotedNode_25 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);

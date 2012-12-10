@@ -28,6 +28,7 @@ import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
 import com.intellij.openapi.util.EmptyRunnable;
 import com.intellij.ui.AnActionButton;
 import com.intellij.ui.AnActionButtonRunnable;
+import com.intellij.ui.ColoredTableCellRenderer;
 import com.intellij.ui.FieldPanel;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.InsertPathAction;
@@ -62,6 +63,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.ui.dialogs.properties.creators.DependencyChooser;
 import jetbrains.mps.ide.ui.dialogs.properties.creators.DevKitChooser;
@@ -86,10 +88,12 @@ import org.jetbrains.annotations.Nls;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
+import javax.swing.BorderFactory;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JPanel;
+import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.ListSelectionModel;
 import javax.swing.event.TableModelEvent;
@@ -166,7 +170,9 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     protected String getConfigItemPath() {
       if(myModule instanceof Generator)
         return "";
-      return myModule.getDescriptorFile().getPath();
+      return FileUtil.getCanonicalPath(
+        myModule.getDescriptorFile().getPath()
+      );
     }
 
     @Override
@@ -600,13 +606,19 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     }
 
     private String getGenOutPath() {
-      return myModule.getGeneratorOutputPath();
+      return FileUtil.getCanonicalPath(myModule.getGeneratorOutputPath());
     }
     
     private JComponent getSourcePathsTable() {
       myPathsTableModel = new PathsTableModel();
       final JBTable sourcePathTable = new JBTable(myPathsTableModel);
       sourcePathTable.setTableHeader(null);
+      sourcePathTable.setDefaultRenderer(String.class, new MyPathRenderer());
+      sourcePathTable.setShowHorizontalLines(false);
+      sourcePathTable.setShowVerticalLines(false);
+      sourcePathTable.setAutoCreateRowSorter(false);
+      sourcePathTable.setAutoscrolls(true);
+
       
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(sourcePathTable);
       decorator.setAddAction(new AnActionButtonRunnable() {
@@ -633,6 +645,11 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       myLibraryTableModel = new LibraryTableModel();
       final JBTable librariesTable = new JBTable(myLibraryTableModel);
       librariesTable.setTableHeader(null);
+      librariesTable.setDefaultRenderer(String.class, new MyPathRenderer());
+      librariesTable.setShowHorizontalLines(false);
+      librariesTable.setShowVerticalLines(false);
+      librariesTable.setAutoCreateRowSorter(false);
+      librariesTable.setAutoscrolls(true);
 
       ToolbarDecorator decorator = ToolbarDecorator.createDecorator(librariesTable);
       decorator.setAddAction(new AnActionButtonRunnable() {
@@ -675,10 +692,12 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
     @Override
     public void apply() {
       if(myModuleDescriptor instanceof LanguageDescriptor)
-        ((LanguageDescriptor) myModuleDescriptor).setGenPath(myGenOut.getText());
+        if(!myGenOut.getText().equals(getGenOutPath()))
+          ((LanguageDescriptor) myModuleDescriptor).setGenPath(myGenOut.getText());
       else if(myModuleDescriptor instanceof SolutionDescriptor) {
         SolutionDescriptor descriptor = (SolutionDescriptor) myModuleDescriptor;
-        descriptor.setOutputPath(myGenOut.getText());
+        if(!myGenOut.getText().equals(getGenOutPath()))
+          descriptor.setOutputPath(myGenOut.getText());
         descriptor.setCompileInMPS(myCheckBox.isSelected());
         descriptor.setKind((SolutionKind)myComboBox.getSelectedItem());
       }
@@ -724,6 +743,13 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       @Override
       public String getColumnName(int columnIndex) {
         return "";
+      }
+
+      @Override
+      public Class<?> getColumnClass(int columnIndex) {
+        if(columnIndex == 0)
+          return String.class;
+        return super.getColumnClass(columnIndex);
       }
 
       @Override
@@ -790,6 +816,13 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       }
 
       @Override
+      public Class<?> getColumnClass(int columnIndex) {
+        if(columnIndex == 0)
+          return String.class;
+        return super.getColumnClass(columnIndex);
+      }
+
+      @Override
       public void removeRow(int idx) {
         myStubModelEntries.remove(idx);
       }
@@ -802,6 +835,19 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
       public void apply() {
         myModuleDescriptor.getAdditionalJavaStubPaths().clear();
         myModuleDescriptor.getAdditionalJavaStubPaths().addAll(myStubModelEntries);
+      }
+    }
+
+    private class MyPathRenderer extends ColoredTableCellRenderer {
+      @Override
+      protected void customizeCellRenderer(JTable table, Object value, boolean selected, boolean hasFocus, int row, int column) {
+        setPaintFocusBorder(false);
+        setFocusBorderAroundIcon(true);
+        setBorder(BorderFactory.createEmptyBorder(1,1,1,1));
+        if (value != null) {
+          String path = (String) value;
+          append(FileUtil.getCanonicalPath(path));
+        }
       }
     }
   }

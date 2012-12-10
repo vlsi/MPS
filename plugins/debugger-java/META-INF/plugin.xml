@@ -44,6 +44,6 @@
   <extensions defaultExtensionNs="com.intellij">
     <!--runtime-->
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
-    <mps.LanguageLibrary dir=""/>
+    <mps.LanguageLibrary dir="/"/>
   </extensions>
 </idea-plugin>

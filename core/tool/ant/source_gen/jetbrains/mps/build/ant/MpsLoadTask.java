@@ -4,6 +4,7 @@ package jetbrains.mps.build.ant;
 
 import org.apache.tools.ant.Task;
 import java.io.File;
+import jetbrains.mps.tool.common.Script;
 import java.util.List;
 import java.util.ArrayList;
 import org.apache.tools.ant.types.FileSet;
@@ -15,6 +16,7 @@ import java.util.Set;
 import java.util.Hashtable;
 import org.apache.tools.ant.util.JavaEnvUtils;
 import java.util.HashSet;
+import jetbrains.mps.tool.builder.AntBootstrap;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import org.apache.tools.ant.taskdefs.Execute;
@@ -26,17 +28,19 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.Method;
 import java.io.FileInputStream;
 import java.util.LinkedHashSet;
+import jetbrains.mps.tool.builder.MpsWorker;
 import java.io.InputStream;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import org.apache.tools.ant.types.EnumeratedAttribute;
+import org.apache.log4j.Level;
 import java.util.Scanner;
 
 public abstract class MpsLoadTask extends Task {
   public static final String CONFIGURATION_NAME = "configuration.name";
   public static final String BUILD_NUMBER = "build.number";
   private File myMpsHome;
-  protected final WhatToDo myWhatToDo = new WhatToDo();
+  protected final Script myWhatToDo = new Script();
   private boolean myUsePropertiesAsMacro = false;
   private boolean myFork = true;
   private final List<String> myJvmArgs = new ArrayList<String>();
@@ -210,7 +214,7 @@ public abstract class MpsLoadTask extends Task {
       }
       URLClassLoader classLoader = new URLClassLoader(classPathUrls.toArray(new URL[classPathUrls.size()]), ProjectComponent.class.getClassLoader());
       try {
-        Class<?> whatToGenerateClass = classLoader.loadClass(WhatToDo.class.getCanonicalName());
+        Class<?> whatToGenerateClass = classLoader.loadClass(Script.class.getCanonicalName());
         Object whatToGenerate = whatToGenerateClass.newInstance();
         myWhatToDo.cloneTo(whatToGenerate);
         Class<?> generatorClass = classLoader.loadClass(getWorkerClass().getCanonicalName());
@@ -388,45 +392,20 @@ public abstract class MpsLoadTask extends Task {
     return null;
   }
 
-  private static   enum LogLevel {
-    ERROR(Project.MSG_ERR),
-    WARNING(Project.MSG_WARN),
-    INFO(Project.MSG_INFO),
-    DEBUG(Project.MSG_DEBUG);
-
-    private int myLevel;
-
-    LogLevel(int level) {
-      myLevel = level;
-    }
-
-    public int getLevel() {
-      return myLevel;
-    }
-  }
-
   public static class LogLevelAttribute extends EnumeratedAttribute {
-    private static final List<String> myLevels = new ArrayList<String>();
-
     public LogLevelAttribute() {
     }
 
     public String[] getValues() {
-      return myLevels.toArray(new String[myLevels.size()]);
+      return new String[]{"error", "warn", "warning", "info", "debug"};
     }
 
-    public int getLevel() {
-      return MpsLoadTask.LogLevel.values()[myLevels.indexOf(getValue())].getLevel();
-    }
-
-    private static String getLevelText(MpsLoadTask.LogLevel l) {
-      return l.name().toLowerCase();
-    }
-
-    static {
-      for (MpsLoadTask.LogLevel l : MpsLoadTask.LogLevel.values()) {
-        myLevels.add(MpsLoadTask.LogLevelAttribute.getLevelText(l));
+    public Level getLevel() {
+      String val = getValue();
+      if ("warning".equalsIgnoreCase(val)) {
+        val = "warn";
       }
+      return Level.toLevel(val);
     }
   }
 

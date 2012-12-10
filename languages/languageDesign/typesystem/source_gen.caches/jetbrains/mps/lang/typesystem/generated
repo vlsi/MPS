@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-blhyfj789xk41cjhibwwlih8ic03rk4">
+<dependencies version="2" modelHash="-2j28wvk5tpdmiirnk3rpunl2oqjivsi">
   <dep model="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)" hash="-4gvhbhl4k1fmr8u2so3whp7vwoe0ywr" />
   <common>
     <dep model="r:00000000-0000-4000-0000-011c895902b1(jetbrains.mps.lang.typesystem.typesystem)" />

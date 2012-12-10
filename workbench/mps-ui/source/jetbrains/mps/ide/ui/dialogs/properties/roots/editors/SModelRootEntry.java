@@ -31,6 +31,7 @@ import com.intellij.util.EventDispatcher;
 import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor;
 import org.jetbrains.annotations.Nullable;
@@ -173,7 +174,7 @@ public class SModelRootEntry implements ModelRootEntry {
           @Override
           public void selectionChanged(List<VirtualFile> selection) {
             if (selection.size() > 0) {
-              myModelRoot.setPath(selection.get(0).getPath());
+              myModelRoot.setPath(FileUtil.getCanonicalPath(selection.get(0).getPath()));
               myEventDispatcher.getMulticaster().fireDataChanged();
             }
           }

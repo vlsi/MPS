@@ -144,8 +144,6 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
-    <classNode dependClassName="jetbrains.mps.build.ant.generation.unittest.UnitTestListener" />
-    <classNode dependClassName="jetbrains.mps.build.ant.generation.unittest.UnitTestOutputReader" />
     <classNode dependClassName="jetbrains.mps.build.gentest.plugin.ITestResource" />
     <classNode dependClassName="jetbrains.mps.build.gentest.plugin.TestCollector" />
     <classNode dependClassName="jetbrains.mps.build.gentest.plugin.Test_Facet.Target_runTests.Parameters" />
@@ -168,6 +166,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.GResource" />
     <classNode dependClassName="jetbrains.mps.smodel.resources.IGResource" />
+    <classNode dependClassName="jetbrains.mps.tool.builder.unittest.UnitTestListener" />
+    <classNode dependClassName="jetbrains.mps.tool.builder.unittest.UnitTestOutputReader" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._1" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx" />
@@ -185,7 +185,6 @@
     <classNode dependClassName="java.util.Collections" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.closures.runtime.Wrappers" />
-    <classNode dependClassName="jetbrains.mps.build.ant.generation.unittest.UnitTestRunner" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IterableUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
@@ -194,6 +193,7 @@
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.reloading.RealClassPathItem" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.tool.builder.unittest.UnitTestRunner" />
     <classNode dependClassName="jetbrains.mps.util.PathManager" />
     <classNode dependClassName="org.apache.tools.ant.util.JavaEnvUtils" />
     <classNode dependClassName="org.junit.Test" />
