@@ -62,6 +62,10 @@ public class ExtractGroup_Intention implements IntentionFactory {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590365(jetbrains.mps.lang.plugin.intentions)", "1204990433124");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ExtractGroup_Intention.IntentionImplementation());

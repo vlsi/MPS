@@ -59,6 +59,10 @@ public class AddMissingLanguageImport_Intention implements IntentionFactory {
     return new SNodePointer("r:00000000-0000-4000-0000-011c89590285(jetbrains.mps.lang.core.intentions)", "1209383918929");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddMissingLanguageImport_Intention.IntentionImplementation());

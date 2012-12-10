@@ -63,6 +63,10 @@ public class MultiForeachLoop_replaceWith_MultiForEachStatement_Intention implem
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)", "8293956702610699517");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MultiForeachLoop_replaceWith_MultiForEachStatement_Intention.IntentionImplementation());

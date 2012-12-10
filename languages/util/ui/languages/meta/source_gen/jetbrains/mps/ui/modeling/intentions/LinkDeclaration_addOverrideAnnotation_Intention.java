@@ -56,6 +56,10 @@ public class LinkDeclaration_addOverrideAnnotation_Intention implements Intentio
     return new SNodePointer("r:bac8ec1e-8e5a-402a-a005-91bd829c7598(jetbrains.mps.ui.modeling.intentions)", "6247544121092588774");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new LinkDeclaration_addOverrideAnnotation_Intention.IntentionImplementation());

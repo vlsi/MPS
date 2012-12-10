@@ -154,6 +154,7 @@ public class ShowSurroundWithIntentions_Action extends BaseAction {
   private Iterable<Pair<IntentionExecutable, SNode>> getAvailableIntentions(final Map<String, Object> _params) {
     IntentionsManager.QueryDescriptor query = new IntentionsManager.QueryDescriptor();
     query.setIntentionClass(SurroundWithIntention.class);
+    query.setSurroundWith(true);
     query.setCurrentNodeOnly(true);
     return IntentionsManager.getInstance().getAvailableIntentions(query, ((SNode) MapSequence.fromMap(_params).get("node")), ((EditorContext) MapSequence.fromMap(_params).get("editorContext")));
   }

@@ -56,6 +56,10 @@ public class FoldHTMLElement_Intention implements IntentionFactory {
     return new SNodePointer("r:17a5547b-be2d-47de-9fc3-8304c9f5de67(jetbrains.mps.baseLanguage.javadoc.intentions)", "6612597108004799966");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new FoldHTMLElement_Intention.IntentionImplementation());
@@ -68,7 +72,7 @@ public class FoldHTMLElement_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      String name = (isEmpty_ngv5m6_a0a0a0b11(SPropertyOperations.getString(node, "name")) ?
+      String name = (isEmpty_ngv5m6_a0a0a0b21(SPropertyOperations.getString(node, "name")) ?
         "..." :
         SPropertyOperations.getString(node, "name")
       );
@@ -91,7 +95,7 @@ public class FoldHTMLElement_Intention implements IntentionFactory {
     }
   }
 
-  public static boolean isEmpty_ngv5m6_a0a0a0b11(String str) {
+  public static boolean isEmpty_ngv5m6_a0a0a0b21(String str) {
     return str == null || str.length() == 0;
   }
 }

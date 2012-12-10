@@ -13,15 +13,16 @@
     <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1215604078224" fileName="AddTestAnnotation_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="62" startPosition="53" endLine="63" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="67" startPosition="37" endLine="68" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="69" startPosition="5" endLine="70" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1210673948048" fileName="AddTestAnnotation_Intention.java" startLine="77" startPosition="87" endLine="78" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1210674410577" fileName="AddTestAnnotation_Intention.java" startLine="81" startPosition="78" endLine="82" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1210674361648" fileName="AddTestAnnotation_Intention.java" startLine="82" startPosition="127" endLine="83" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1210674415352" fileName="AddTestAnnotation_Intention.java" startLine="83" startPosition="197" endLine="84" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="87" startPosition="48" endLine="88" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="66" startPosition="35" endLine="67" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="73" startPosition="5" endLine="74" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1210673948048" fileName="AddTestAnnotation_Intention.java" startLine="81" startPosition="87" endLine="82" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1210674410577" fileName="AddTestAnnotation_Intention.java" startLine="85" startPosition="78" endLine="86" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1210674361648" fileName="AddTestAnnotation_Intention.java" startLine="86" startPosition="127" endLine="87" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1210674415352" fileName="AddTestAnnotation_Intention.java" startLine="87" startPosition="197" endLine="88" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="91" startPosition="48" endLine="92" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddTestAnnotation_Intention#()V" />
-    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="74" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="78" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
     <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -31,14 +32,15 @@
     <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="51" startPosition="84" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="66" startPosition="99" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="81" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="70" startPosition="99" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="85" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="51" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
     <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="24" startPosition="40" endLine="24" endPosition="40" />
-    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="74" startPosition="38" endLine="74" endPosition="38" />
+    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="78" startPosition="38" endLine="78" endPosition="38" />
     <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="59" />
     <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="31" />
     <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="35" startPosition="41" endLine="36" endPosition="76" />
@@ -48,11 +50,12 @@
     <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="52" startPosition="53" endLine="53" endPosition="19" />
     <scopeInfo nodeId="1210674015604" fileName="AddTestAnnotation_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="76" />
     <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="62" startPosition="53" endLine="63" endPosition="123" />
-    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="67" startPosition="37" endLine="68" endPosition="133" />
-    <scopeInfo nodeId="1210673906863" fileName="AddTestAnnotation_Intention.java" startLine="77" startPosition="87" endLine="78" endPosition="41" />
-    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="87" startPosition="48" endLine="88" endPosition="46" />
+    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="66" startPosition="35" endLine="67" endPosition="17" />
+    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="133" />
+    <scopeInfo nodeId="1210673906863" fileName="AddTestAnnotation_Intention.java" startLine="81" startPosition="87" endLine="82" endPosition="41" />
+    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="91" startPosition="48" endLine="92" endPosition="46" />
     <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="74" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="78" startPosition="0" endLine="80" endPosition="0" />
     <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
@@ -64,17 +67,18 @@
       <varInfo nodeId="1210673906861" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="62" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="1210673906861" varName="editorContext" />
       <varInfo nodeId="1210673906861" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1210673906865" fileName="AddTestAnnotation_Intention.java" startLine="81" startPosition="78" endLine="84" endPosition="42">
+    <scopeInfo nodeId="1210673906865" fileName="AddTestAnnotation_Intention.java" startLine="85" startPosition="78" endLine="88" endPosition="42">
       <varInfo nodeId="1210674410578" varName="newAnnotation" />
     </scopeInfo>
-    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="91" startPosition="0" endLine="94" endPosition="0" />
     <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="51" startPosition="84" endLine="55" endPosition="16" />
-    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="66" startPosition="99" endLine="70" endPosition="30" />
-    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="81" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="70" startPosition="99" endLine="74" endPosition="30" />
+    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="85" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="1210673906861" varName="editorContext" />
       <varInfo nodeId="1210673906861" varName="node" />
     </scopeInfo>
@@ -82,12 +86,12 @@
       <varInfo nodeId="1210673906861" varName="editorContext" />
       <varInfo nodeId="1210673906861" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="66" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="1210673906861" varName="context" />
       <varInfo nodeId="1210673906861" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="73" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddTestAnnotation_Intention$IntentionImplementation" />
-    <unitInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="21" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddTestAnnotation_Intention" />
+    <unitInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="77" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddTestAnnotation_Intention$IntentionImplementation" />
+    <unitInfo nodeId="1210673906861" fileName="AddTestAnnotation_Intention.java" startLine="21" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddTestAnnotation_Intention" />
   </root>
   <root nodeId="1215508253864" modelId="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)">
     <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
@@ -101,15 +105,16 @@
     <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1215604098601" fileName="AddPropertiesMark_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="62" startPosition="53" endLine="63" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="67" startPosition="37" endLine="68" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="69" startPosition="5" endLine="70" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215508395400" fileName="AddPropertiesMark_Intention.java" startLine="77" startPosition="87" endLine="78" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215508304161" fileName="AddPropertiesMark_Intention.java" startLine="81" startPosition="78" endLine="82" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215508304167" fileName="AddPropertiesMark_Intention.java" startLine="82" startPosition="132" endLine="83" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215508304174" fileName="AddPropertiesMark_Intention.java" startLine="83" startPosition="204" endLine="84" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="87" startPosition="48" endLine="88" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="66" startPosition="35" endLine="67" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="73" startPosition="5" endLine="74" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215508395400" fileName="AddPropertiesMark_Intention.java" startLine="81" startPosition="87" endLine="82" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215508304161" fileName="AddPropertiesMark_Intention.java" startLine="85" startPosition="78" endLine="86" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215508304167" fileName="AddPropertiesMark_Intention.java" startLine="86" startPosition="132" endLine="87" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215508304174" fileName="AddPropertiesMark_Intention.java" startLine="87" startPosition="204" endLine="88" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="91" startPosition="48" endLine="92" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddPropertiesMark_Intention#()V" />
-    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="74" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="78" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
     <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -119,14 +124,15 @@
     <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="51" startPosition="84" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="66" startPosition="99" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="81" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="70" startPosition="99" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="85" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="51" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
     <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="24" startPosition="40" endLine="24" endPosition="40" />
-    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="74" startPosition="38" endLine="74" endPosition="38" />
+    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="78" startPosition="38" endLine="78" endPosition="38" />
     <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="59" />
     <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="31" />
     <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="35" startPosition="41" endLine="36" endPosition="76" />
@@ -136,11 +142,12 @@
     <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="52" startPosition="53" endLine="53" endPosition="19" />
     <scopeInfo nodeId="1215508387814" fileName="AddPropertiesMark_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="76" />
     <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="62" startPosition="53" endLine="63" endPosition="123" />
-    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="67" startPosition="37" endLine="68" endPosition="133" />
-    <scopeInfo nodeId="1215508253866" fileName="AddPropertiesMark_Intention.java" startLine="77" startPosition="87" endLine="78" endPosition="46" />
-    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="87" startPosition="48" endLine="88" endPosition="46" />
+    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="66" startPosition="35" endLine="67" endPosition="17" />
+    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="133" />
+    <scopeInfo nodeId="1215508253866" fileName="AddPropertiesMark_Intention.java" startLine="81" startPosition="87" endLine="82" endPosition="46" />
+    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="91" startPosition="48" endLine="92" endPosition="46" />
     <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="74" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="78" startPosition="0" endLine="80" endPosition="0" />
     <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
@@ -152,17 +159,18 @@
       <varInfo nodeId="1215508253864" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="62" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="1215508253864" varName="editorContext" />
       <varInfo nodeId="1215508253864" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1215508253868" fileName="AddPropertiesMark_Intention.java" startLine="81" startPosition="78" endLine="84" endPosition="42">
+    <scopeInfo nodeId="1215508253868" fileName="AddPropertiesMark_Intention.java" startLine="85" startPosition="78" endLine="88" endPosition="42">
       <varInfo nodeId="1215508304162" varName="newAnnotation" />
     </scopeInfo>
-    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="91" startPosition="0" endLine="94" endPosition="0" />
     <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="51" startPosition="84" endLine="55" endPosition="16" />
-    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="66" startPosition="99" endLine="70" endPosition="30" />
-    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="81" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="70" startPosition="99" endLine="74" endPosition="30" />
+    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="85" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="1215508253864" varName="editorContext" />
       <varInfo nodeId="1215508253864" varName="node" />
     </scopeInfo>
@@ -170,12 +178,12 @@
       <varInfo nodeId="1215508253864" varName="editorContext" />
       <varInfo nodeId="1215508253864" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="66" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="1215508253864" varName="context" />
       <varInfo nodeId="1215508253864" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="73" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddPropertiesMark_Intention$IntentionImplementation" />
-    <unitInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="21" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddPropertiesMark_Intention" />
+    <unitInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="77" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddPropertiesMark_Intention$IntentionImplementation" />
+    <unitInfo nodeId="1215508253864" fileName="AddPropertiesMark_Intention.java" startLine="21" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddPropertiesMark_Intention" />
   </root>
   <root nodeId="1215604006108" modelId="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)">
     <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
@@ -189,15 +197,16 @@
     <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1215604111884" fileName="AddOperationsMark_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="62" startPosition="53" endLine="63" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="67" startPosition="37" endLine="68" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="69" startPosition="5" endLine="70" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215604028387" fileName="AddOperationsMark_Intention.java" startLine="77" startPosition="87" endLine="78" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1215604086689" fileName="AddOperationsMark_Intention.java" startLine="81" startPosition="78" endLine="82" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1215604086695" fileName="AddOperationsMark_Intention.java" startLine="82" startPosition="132" endLine="83" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215604086702" fileName="AddOperationsMark_Intention.java" startLine="83" startPosition="204" endLine="84" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="87" startPosition="48" endLine="88" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="66" startPosition="35" endLine="67" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="73" startPosition="5" endLine="74" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215604028387" fileName="AddOperationsMark_Intention.java" startLine="81" startPosition="87" endLine="82" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1215604086689" fileName="AddOperationsMark_Intention.java" startLine="85" startPosition="78" endLine="86" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1215604086695" fileName="AddOperationsMark_Intention.java" startLine="86" startPosition="132" endLine="87" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215604086702" fileName="AddOperationsMark_Intention.java" startLine="87" startPosition="204" endLine="88" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="91" startPosition="48" endLine="92" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddOperationsMark_Intention#()V" />
-    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="74" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="78" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
     <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -207,14 +216,15 @@
     <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="51" startPosition="84" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="66" startPosition="99" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="81" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="70" startPosition="99" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="85" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="51" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
     <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="24" startPosition="40" endLine="24" endPosition="40" />
-    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="74" startPosition="38" endLine="74" endPosition="38" />
+    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="78" startPosition="38" endLine="78" endPosition="38" />
     <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="59" />
     <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="31" />
     <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="35" startPosition="41" endLine="36" endPosition="76" />
@@ -224,11 +234,12 @@
     <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="52" startPosition="53" endLine="53" endPosition="19" />
     <scopeInfo nodeId="1215604047634" fileName="AddOperationsMark_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="76" />
     <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="62" startPosition="53" endLine="63" endPosition="123" />
-    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="67" startPosition="37" endLine="68" endPosition="133" />
-    <scopeInfo nodeId="1215604006110" fileName="AddOperationsMark_Intention.java" startLine="77" startPosition="87" endLine="78" endPosition="46" />
-    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="87" startPosition="48" endLine="88" endPosition="46" />
+    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="66" startPosition="35" endLine="67" endPosition="17" />
+    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="133" />
+    <scopeInfo nodeId="1215604006110" fileName="AddOperationsMark_Intention.java" startLine="81" startPosition="87" endLine="82" endPosition="46" />
+    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="91" startPosition="48" endLine="92" endPosition="46" />
     <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="74" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="78" startPosition="0" endLine="80" endPosition="0" />
     <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
@@ -240,17 +251,18 @@
       <varInfo nodeId="1215604006108" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="62" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="1215604006108" varName="editorContext" />
       <varInfo nodeId="1215604006108" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1215604006112" fileName="AddOperationsMark_Intention.java" startLine="81" startPosition="78" endLine="84" endPosition="42">
+    <scopeInfo nodeId="1215604006112" fileName="AddOperationsMark_Intention.java" startLine="85" startPosition="78" endLine="88" endPosition="42">
       <varInfo nodeId="1215604086690" varName="newAnootation" />
     </scopeInfo>
-    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="91" startPosition="0" endLine="94" endPosition="0" />
     <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="51" startPosition="84" endLine="55" endPosition="16" />
-    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="66" startPosition="99" endLine="70" endPosition="30" />
-    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="81" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="70" startPosition="99" endLine="74" endPosition="30" />
+    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="85" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="1215604006108" varName="editorContext" />
       <varInfo nodeId="1215604006108" varName="node" />
     </scopeInfo>
@@ -258,12 +270,12 @@
       <varInfo nodeId="1215604006108" varName="editorContext" />
       <varInfo nodeId="1215604006108" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="66" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="1215604006108" varName="context" />
       <varInfo nodeId="1215604006108" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="73" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddOperationsMark_Intention$IntentionImplementation" />
-    <unitInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="21" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddOperationsMark_Intention" />
+    <unitInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="77" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddOperationsMark_Intention$IntentionImplementation" />
+    <unitInfo nodeId="1215604006108" fileName="AddOperationsMark_Intention.java" startLine="21" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddOperationsMark_Intention" />
   </root>
   <root nodeId="1225963656881" modelId="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)">
     <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="30" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
@@ -277,35 +289,36 @@
     <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="62" startPosition="5" endLine="63" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229197127709" fileName="AddCellAnnotation_Intention.java" startLine="66" startPosition="91" endLine="67" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="70" startPosition="53" endLine="71" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="75" startPosition="37" endLine="76" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="77" startPosition="5" endLine="78" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1225963656884" fileName="AddCellAnnotation_Intention.java" startLine="85" startPosition="87" endLine="86" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1229956339936" fileName="AddCellAnnotation_Intention.java" startLine="89" startPosition="78" endLine="90" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1229956407430" fileName="AddCellAnnotation_Intention.java" startLine="91" startPosition="156" endLine="92" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229956491859" fileName="AddCellAnnotation_Intention.java" startLine="94" startPosition="160" endLine="95" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1226066626900" fileName="AddCellAnnotation_Intention.java" startLine="96" startPosition="7" endLine="97" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1228588344665" fileName="AddCellAnnotation_Intention.java" startLine="97" startPosition="132" endLine="98" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1977980803835380527" fileName="AddCellAnnotation_Intention.java" startLine="99" startPosition="83" endLine="100" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6268941039745612489" fileName="AddCellAnnotation_Intention.java" startLine="102" startPosition="52" endLine="103" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1229432616638" fileName="AddCellAnnotation_Intention.java" startLine="103" startPosition="64" endLine="104" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1229432964459" fileName="AddCellAnnotation_Intention.java" startLine="105" startPosition="56" endLine="106" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229432832864" fileName="AddCellAnnotation_Intention.java" startLine="107" startPosition="16" endLine="108" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1932269937152736130" fileName="AddCellAnnotation_Intention.java" startLine="109" startPosition="9" endLine="110" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6268941039745612515" fileName="AddCellAnnotation_Intention.java" startLine="110" startPosition="81" endLine="111" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6268941039745615927" fileName="AddCellAnnotation_Intention.java" startLine="111" startPosition="99" endLine="112" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229956650965" fileName="AddCellAnnotation_Intention.java" startLine="113" startPosition="14" endLine="114" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229530702910" fileName="AddCellAnnotation_Intention.java" startLine="115" startPosition="7" endLine="116" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1017540429574408417" fileName="AddCellAnnotation_Intention.java" startLine="116" startPosition="80" endLine="117" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1017540429574408440" fileName="AddCellAnnotation_Intention.java" startLine="118" startPosition="52" endLine="119" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1017540429574408449" fileName="AddCellAnnotation_Intention.java" startLine="119" startPosition="79" endLine="120" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1017540429574409213" fileName="AddCellAnnotation_Intention.java" startLine="120" startPosition="118" endLine="121" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1226066626906" fileName="AddCellAnnotation_Intention.java" startLine="122" startPosition="7" endLine="123" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1226066626913" fileName="AddCellAnnotation_Intention.java" startLine="123" startPosition="197" endLine="124" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="127" startPosition="48" endLine="128" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="74" startPosition="35" endLine="75" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="79" startPosition="37" endLine="80" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="81" startPosition="5" endLine="82" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225963656884" fileName="AddCellAnnotation_Intention.java" startLine="89" startPosition="87" endLine="90" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229956339936" fileName="AddCellAnnotation_Intention.java" startLine="93" startPosition="78" endLine="94" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1229956407430" fileName="AddCellAnnotation_Intention.java" startLine="95" startPosition="156" endLine="96" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229956491859" fileName="AddCellAnnotation_Intention.java" startLine="98" startPosition="160" endLine="99" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1226066626900" fileName="AddCellAnnotation_Intention.java" startLine="100" startPosition="7" endLine="101" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1228588344665" fileName="AddCellAnnotation_Intention.java" startLine="101" startPosition="132" endLine="102" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1977980803835380527" fileName="AddCellAnnotation_Intention.java" startLine="103" startPosition="83" endLine="104" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6268941039745612489" fileName="AddCellAnnotation_Intention.java" startLine="106" startPosition="52" endLine="107" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1229432616638" fileName="AddCellAnnotation_Intention.java" startLine="107" startPosition="64" endLine="108" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1229432964459" fileName="AddCellAnnotation_Intention.java" startLine="109" startPosition="56" endLine="110" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229432832864" fileName="AddCellAnnotation_Intention.java" startLine="111" startPosition="16" endLine="112" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1932269937152736130" fileName="AddCellAnnotation_Intention.java" startLine="113" startPosition="9" endLine="114" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6268941039745612515" fileName="AddCellAnnotation_Intention.java" startLine="114" startPosition="81" endLine="115" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6268941039745615927" fileName="AddCellAnnotation_Intention.java" startLine="115" startPosition="99" endLine="116" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229956650965" fileName="AddCellAnnotation_Intention.java" startLine="117" startPosition="14" endLine="118" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229530702910" fileName="AddCellAnnotation_Intention.java" startLine="119" startPosition="7" endLine="120" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1017540429574408417" fileName="AddCellAnnotation_Intention.java" startLine="120" startPosition="80" endLine="121" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1017540429574408440" fileName="AddCellAnnotation_Intention.java" startLine="122" startPosition="52" endLine="123" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1017540429574408449" fileName="AddCellAnnotation_Intention.java" startLine="123" startPosition="79" endLine="124" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1017540429574409213" fileName="AddCellAnnotation_Intention.java" startLine="124" startPosition="118" endLine="125" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1226066626906" fileName="AddCellAnnotation_Intention.java" startLine="126" startPosition="7" endLine="127" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1226066626913" fileName="AddCellAnnotation_Intention.java" startLine="127" startPosition="197" endLine="128" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="131" startPosition="48" endLine="132" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="32" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddCellAnnotation_Intention#()V" />
-    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="82" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
-    <nodeInfo nodeId="1229432828393" fileName="AddCellAnnotation_Intention.java" startLine="107" startPosition="14" endLine="109" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1229956647134" fileName="AddCellAnnotation_Intention.java" startLine="113" startPosition="12" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="86" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="1229432828393" fileName="AddCellAnnotation_Intention.java" startLine="111" startPosition="14" endLine="113" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1229956647134" fileName="AddCellAnnotation_Intention.java" startLine="117" startPosition="12" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -315,20 +328,21 @@
     <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="59" startPosition="84" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="74" startPosition="99" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1229956363147" fileName="AddCellAnnotation_Intention.java" startLine="90" startPosition="28" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
-    <nodeInfo nodeId="1229956429662" fileName="AddCellAnnotation_Intention.java" startLine="93" startPosition="7" endLine="96" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="1977980803835380461" fileName="AddCellAnnotation_Intention.java" startLine="98" startPosition="62" endLine="101" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="127" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="1229432620259" fileName="AddCellAnnotation_Intention.java" startLine="104" startPosition="53" endLine="109" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1017540429574408429" fileName="AddCellAnnotation_Intention.java" startLine="117" startPosition="120" endLine="122" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="78" startPosition="99" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1229956363147" fileName="AddCellAnnotation_Intention.java" startLine="94" startPosition="28" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.WhileStatement" />
+    <nodeInfo nodeId="1229956429662" fileName="AddCellAnnotation_Intention.java" startLine="97" startPosition="7" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1977980803835380461" fileName="AddCellAnnotation_Intention.java" startLine="102" startPosition="62" endLine="105" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="131" startPosition="0" endLine="134" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="1229432620259" fileName="AddCellAnnotation_Intention.java" startLine="108" startPosition="53" endLine="113" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1017540429574408429" fileName="AddCellAnnotation_Intention.java" startLine="121" startPosition="120" endLine="126" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="59" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="74" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="1228588348423" fileName="AddCellAnnotation_Intention.java" startLine="101" startPosition="7" endLine="115" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="89" startPosition="0" endLine="126" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="78" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="1228588348423" fileName="AddCellAnnotation_Intention.java" startLine="105" startPosition="7" endLine="119" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="93" startPosition="0" endLine="130" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="32" startPosition="40" endLine="32" endPosition="40" />
-    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="82" startPosition="38" endLine="82" endPosition="38" />
+    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="86" startPosition="38" endLine="86" endPosition="38" />
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="35" startPosition="30" endLine="36" endPosition="59" />
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="39" startPosition="35" endLine="40" endPosition="31" />
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="43" startPosition="41" endLine="44" endPosition="76" />
@@ -338,17 +352,18 @@
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="60" startPosition="53" endLine="61" endPosition="19" />
     <scopeInfo nodeId="1225963656907" fileName="AddCellAnnotation_Intention.java" startLine="66" startPosition="91" endLine="67" endPosition="119" />
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="70" startPosition="53" endLine="71" endPosition="123" />
-    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="75" startPosition="37" endLine="76" endPosition="133" />
-    <scopeInfo nodeId="1225963656883" fileName="AddCellAnnotation_Intention.java" startLine="85" startPosition="87" endLine="86" endPosition="37" />
-    <scopeInfo nodeId="1229956363149" fileName="AddCellAnnotation_Intention.java" startLine="91" startPosition="156" endLine="92" endPosition="55" />
-    <scopeInfo nodeId="1229956429663" fileName="AddCellAnnotation_Intention.java" startLine="94" startPosition="160" endLine="95" endPosition="50" />
-    <scopeInfo nodeId="1977980803835380462" fileName="AddCellAnnotation_Intention.java" startLine="99" startPosition="83" endLine="100" endPosition="77" />
-    <scopeInfo nodeId="1229432620260" fileName="AddCellAnnotation_Intention.java" startLine="105" startPosition="56" endLine="106" endPosition="80" />
-    <scopeInfo nodeId="1229432828394" fileName="AddCellAnnotation_Intention.java" startLine="107" startPosition="16" endLine="108" endPosition="88" />
-    <scopeInfo nodeId="1229956647135" fileName="AddCellAnnotation_Intention.java" startLine="113" startPosition="14" endLine="114" endPosition="74" />
-    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="127" startPosition="48" endLine="128" endPosition="46" />
+    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="74" startPosition="35" endLine="75" endPosition="17" />
+    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="79" startPosition="37" endLine="80" endPosition="133" />
+    <scopeInfo nodeId="1225963656883" fileName="AddCellAnnotation_Intention.java" startLine="89" startPosition="87" endLine="90" endPosition="37" />
+    <scopeInfo nodeId="1229956363149" fileName="AddCellAnnotation_Intention.java" startLine="95" startPosition="156" endLine="96" endPosition="55" />
+    <scopeInfo nodeId="1229956429663" fileName="AddCellAnnotation_Intention.java" startLine="98" startPosition="160" endLine="99" endPosition="50" />
+    <scopeInfo nodeId="1977980803835380462" fileName="AddCellAnnotation_Intention.java" startLine="103" startPosition="83" endLine="104" endPosition="77" />
+    <scopeInfo nodeId="1229432620260" fileName="AddCellAnnotation_Intention.java" startLine="109" startPosition="56" endLine="110" endPosition="80" />
+    <scopeInfo nodeId="1229432828394" fileName="AddCellAnnotation_Intention.java" startLine="111" startPosition="16" endLine="112" endPosition="88" />
+    <scopeInfo nodeId="1229956647135" fileName="AddCellAnnotation_Intention.java" startLine="117" startPosition="14" endLine="118" endPosition="74" />
+    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="131" startPosition="48" endLine="132" endPosition="46" />
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="32" startPosition="0" endLine="34" endPosition="0" />
-    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="82" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="86" startPosition="0" endLine="88" endPosition="0" />
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
@@ -360,43 +375,44 @@
       <varInfo nodeId="1225963656881" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="70" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="85" startPosition="0" endLine="88" endPosition="0">
+    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="74" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="89" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="1225963656881" varName="editorContext" />
       <varInfo nodeId="1225963656881" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1229956429662" fileName="AddCellAnnotation_Intention.java" startLine="93" startPosition="7" endLine="96" endPosition="7">
+    <scopeInfo nodeId="1229956429662" fileName="AddCellAnnotation_Intention.java" startLine="97" startPosition="7" endLine="100" endPosition="7">
       <varInfo nodeId="1229956429666" varName="oldAnnotation" />
     </scopeInfo>
-    <scopeInfo nodeId="1017540429574408430" fileName="AddCellAnnotation_Intention.java" startLine="118" startPosition="52" endLine="121" endPosition="115">
+    <scopeInfo nodeId="1017540429574408430" fileName="AddCellAnnotation_Intention.java" startLine="122" startPosition="52" endLine="125" endPosition="115">
       <varInfo nodeId="1017540429574408441" varName="nodeRangeSelection" />
     </scopeInfo>
-    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="127" startPosition="0" endLine="130" endPosition="0" />
+    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="131" startPosition="0" endLine="134" endPosition="0" />
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="59" startPosition="84" endLine="63" endPosition="16" />
-    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="74" startPosition="99" endLine="78" endPosition="30" />
+    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="78" startPosition="99" endLine="82" endPosition="30" />
     <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="59" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="1225963656881" varName="editorContext" />
       <varInfo nodeId="1225963656881" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="74" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="78" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="1225963656881" varName="context" />
       <varInfo nodeId="1225963656881" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1228588348424" fileName="AddCellAnnotation_Intention.java" startLine="102" startPosition="52" endLine="112" endPosition="95">
+    <scopeInfo nodeId="1228588348424" fileName="AddCellAnnotation_Intention.java" startLine="106" startPosition="52" endLine="116" endPosition="95">
       <varInfo nodeId="1229432616639" varName="caretPosition" />
       <varInfo nodeId="6268941039745612490" varName="label" />
     </scopeInfo>
-    <scopeInfo nodeId="1226066626118" fileName="AddCellAnnotation_Intention.java" startLine="89" startPosition="78" endLine="124" endPosition="42">
+    <scopeInfo nodeId="1226066626118" fileName="AddCellAnnotation_Intention.java" startLine="93" startPosition="78" endLine="128" endPosition="42">
       <varInfo nodeId="1229956339937" varName="ancessor" />
       <varInfo nodeId="1228588344666" varName="contextCell" />
       <varInfo nodeId="1226066626901" varName="newAnnotation" />
       <varInfo nodeId="1017540429574408418" varName="selection" />
     </scopeInfo>
-    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="89" startPosition="0" endLine="126" endPosition="0">
+    <scopeInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="93" startPosition="0" endLine="130" endPosition="0">
       <varInfo nodeId="1225963656881" varName="editorContext" />
       <varInfo nodeId="1225963656881" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="81" startPosition="0" endLine="131" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddCellAnnotation_Intention$IntentionImplementation" />
-    <unitInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="29" startPosition="0" endLine="132" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddCellAnnotation_Intention" />
+    <unitInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="85" startPosition="0" endLine="135" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddCellAnnotation_Intention$IntentionImplementation" />
+    <unitInfo nodeId="1225963656881" fileName="AddCellAnnotation_Intention.java" startLine="29" startPosition="0" endLine="136" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddCellAnnotation_Intention" />
   </root>
   <root nodeId="1230224371548" modelId="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)">
     <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
@@ -410,14 +426,15 @@
     <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1231857808667" fileName="AddMockAnnotation_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="62" startPosition="53" endLine="63" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="67" startPosition="37" endLine="68" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="69" startPosition="5" endLine="70" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1230224704769" fileName="AddMockAnnotation_Intention.java" startLine="77" startPosition="87" endLine="78" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1230224597307" fileName="AddMockAnnotation_Intention.java" startLine="81" startPosition="78" endLine="82" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1230224672973" fileName="AddMockAnnotation_Intention.java" startLine="82" startPosition="123" endLine="83" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="86" startPosition="48" endLine="87" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="66" startPosition="35" endLine="67" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="133" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="73" startPosition="5" endLine="74" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1230224704769" fileName="AddMockAnnotation_Intention.java" startLine="81" startPosition="87" endLine="82" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1230224597307" fileName="AddMockAnnotation_Intention.java" startLine="85" startPosition="78" endLine="86" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1230224672973" fileName="AddMockAnnotation_Intention.java" startLine="86" startPosition="123" endLine="87" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="90" startPosition="48" endLine="91" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddMockAnnotation_Intention#()V" />
-    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="74" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="78" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
     <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -427,14 +444,15 @@
     <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="51" startPosition="84" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="66" startPosition="99" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="81" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="70" startPosition="99" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="85" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="51" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
     <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="24" startPosition="40" endLine="24" endPosition="40" />
-    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="74" startPosition="38" endLine="74" endPosition="38" />
+    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="78" startPosition="38" endLine="78" endPosition="38" />
     <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="59" />
     <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="31" />
     <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="35" startPosition="41" endLine="36" endPosition="76" />
@@ -444,12 +462,13 @@
     <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="52" startPosition="53" endLine="53" endPosition="19" />
     <scopeInfo nodeId="1231857807900" fileName="AddMockAnnotation_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="119" />
     <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="62" startPosition="53" endLine="63" endPosition="123" />
-    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="67" startPosition="37" endLine="68" endPosition="133" />
-    <scopeInfo nodeId="1230224371550" fileName="AddMockAnnotation_Intention.java" startLine="77" startPosition="87" endLine="78" endPosition="35" />
-    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="86" startPosition="48" endLine="87" endPosition="46" />
+    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="66" startPosition="35" endLine="67" endPosition="17" />
+    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="133" />
+    <scopeInfo nodeId="1230224371550" fileName="AddMockAnnotation_Intention.java" startLine="81" startPosition="87" endLine="82" endPosition="35" />
+    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="90" startPosition="48" endLine="91" endPosition="46" />
     <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="74" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="1230224371552" fileName="AddMockAnnotation_Intention.java" startLine="81" startPosition="78" endLine="83" endPosition="195">
+    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="78" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="1230224371552" fileName="AddMockAnnotation_Intention.java" startLine="85" startPosition="78" endLine="87" endPosition="195">
       <varInfo nodeId="1230224597308" varName="newAnnotation" />
     </scopeInfo>
     <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
@@ -463,14 +482,15 @@
       <varInfo nodeId="1230224371548" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="62" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="1230224371548" varName="editorContext" />
       <varInfo nodeId="1230224371548" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="86" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="90" startPosition="0" endLine="93" endPosition="0" />
     <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="51" startPosition="84" endLine="55" endPosition="16" />
-    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="66" startPosition="99" endLine="70" endPosition="30" />
-    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="81" startPosition="0" endLine="85" endPosition="0">
+    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="70" startPosition="99" endLine="74" endPosition="30" />
+    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="85" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="1230224371548" varName="editorContext" />
       <varInfo nodeId="1230224371548" varName="node" />
     </scopeInfo>
@@ -478,12 +498,12 @@
       <varInfo nodeId="1230224371548" varName="editorContext" />
       <varInfo nodeId="1230224371548" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="66" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="1230224371548" varName="context" />
       <varInfo nodeId="1230224371548" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="73" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddMockAnnotation_Intention$IntentionImplementation" />
-    <unitInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="21" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddMockAnnotation_Intention" />
+    <unitInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="77" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddMockAnnotation_Intention$IntentionImplementation" />
+    <unitInfo nodeId="1230224371548" fileName="AddMockAnnotation_Intention.java" startLine="21" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddMockAnnotation_Intention" />
   </root>
   <root nodeId="3100207102208970627" modelId="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)">
     <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
@@ -498,23 +518,24 @@
     <nodeInfo nodeId="4052780437581057391" fileName="AddScopeTestAnnotation_Intention.java" startLine="61" startPosition="91" endLine="62" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5449224527592367264" fileName="AddScopeTestAnnotation_Intention.java" startLine="62" startPosition="57" endLine="63" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="66" startPosition="53" endLine="67" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="73" startPosition="5" endLine="74" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3100207102208970633" fileName="AddScopeTestAnnotation_Intention.java" startLine="81" startPosition="87" endLine="82" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3100207102209039510" fileName="AddScopeTestAnnotation_Intention.java" startLine="85" startPosition="78" endLine="86" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3100207102209039516" fileName="AddScopeTestAnnotation_Intention.java" startLine="86" startPosition="115" endLine="87" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9120563202187871518" fileName="AddScopeTestAnnotation_Intention.java" startLine="87" startPosition="191" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5449224527592117659" fileName="AddScopeTestAnnotation_Intention.java" startLine="89" startPosition="67" endLine="90" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4052780437580950834" fileName="AddScopeTestAnnotation_Intention.java" startLine="90" startPosition="175" endLine="91" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5449224527592367546" fileName="AddScopeTestAnnotation_Intention.java" startLine="91" startPosition="130" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="4052780437580951085" fileName="AddScopeTestAnnotation_Intention.java" startLine="93" startPosition="66" endLine="94" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4052780437580951094" fileName="AddScopeTestAnnotation_Intention.java" startLine="94" startPosition="126" endLine="95" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4052780437580951182" fileName="AddScopeTestAnnotation_Intention.java" startLine="95" startPosition="75" endLine="96" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="9120563202187871526" fileName="AddScopeTestAnnotation_Intention.java" startLine="98" startPosition="7" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="5449224527592421058" fileName="AddScopeTestAnnotation_Intention.java" startLine="99" startPosition="0" endLine="100" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="103" startPosition="48" endLine="104" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="70" startPosition="35" endLine="71" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="75" startPosition="37" endLine="76" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="77" startPosition="5" endLine="78" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3100207102208970633" fileName="AddScopeTestAnnotation_Intention.java" startLine="85" startPosition="87" endLine="86" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3100207102209039510" fileName="AddScopeTestAnnotation_Intention.java" startLine="89" startPosition="78" endLine="90" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3100207102209039516" fileName="AddScopeTestAnnotation_Intention.java" startLine="90" startPosition="115" endLine="91" endPosition="191" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9120563202187871518" fileName="AddScopeTestAnnotation_Intention.java" startLine="91" startPosition="191" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5449224527592117659" fileName="AddScopeTestAnnotation_Intention.java" startLine="93" startPosition="67" endLine="94" endPosition="175" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4052780437580950834" fileName="AddScopeTestAnnotation_Intention.java" startLine="94" startPosition="175" endLine="95" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5449224527592367546" fileName="AddScopeTestAnnotation_Intention.java" startLine="95" startPosition="130" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="4052780437580951085" fileName="AddScopeTestAnnotation_Intention.java" startLine="97" startPosition="66" endLine="98" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4052780437580951094" fileName="AddScopeTestAnnotation_Intention.java" startLine="98" startPosition="126" endLine="99" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4052780437580951182" fileName="AddScopeTestAnnotation_Intention.java" startLine="99" startPosition="75" endLine="100" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9120563202187871526" fileName="AddScopeTestAnnotation_Intention.java" startLine="102" startPosition="7" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5449224527592421058" fileName="AddScopeTestAnnotation_Intention.java" startLine="103" startPosition="0" endLine="104" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="107" startPosition="48" endLine="108" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="27" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddScopeTestAnnotation_Intention#()V" />
-    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="78" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="82" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
     <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -523,17 +544,18 @@
     <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
     <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="54" startPosition="84" endLine="57" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="70" startPosition="99" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="103" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="74" startPosition="99" endLine="77" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="107" startPosition="0" endLine="110" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
     <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="4052780437580951079" fileName="AddScopeTestAnnotation_Intention.java" startLine="92" startPosition="0" endLine="97" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4052780437580951079" fileName="AddScopeTestAnnotation_Intention.java" startLine="96" startPosition="0" endLine="101" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="54" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="5449224527592420958" fileName="AddScopeTestAnnotation_Intention.java" startLine="88" startPosition="0" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="85" startPosition="0" endLine="102" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="74" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="5449224527592420958" fileName="AddScopeTestAnnotation_Intention.java" startLine="92" startPosition="0" endLine="102" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="89" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="27" startPosition="45" endLine="27" endPosition="45" />
-    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="78" startPosition="38" endLine="78" endPosition="38" />
+    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="82" startPosition="38" endLine="82" endPosition="38" />
     <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="30" startPosition="30" endLine="31" endPosition="59" />
     <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="34" startPosition="35" endLine="35" endPosition="36" />
     <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="38" startPosition="41" endLine="39" endPosition="81" />
@@ -542,14 +564,15 @@
     <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="50" startPosition="44" endLine="51" endPosition="17" />
     <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="55" startPosition="53" endLine="56" endPosition="19" />
     <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="66" startPosition="53" endLine="67" endPosition="129" />
-    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="138" />
-    <scopeInfo nodeId="3100207102208970629" fileName="AddScopeTestAnnotation_Intention.java" startLine="81" startPosition="87" endLine="82" endPosition="41" />
-    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="103" startPosition="48" endLine="104" endPosition="51" />
+    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="70" startPosition="35" endLine="71" endPosition="17" />
+    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="75" startPosition="37" endLine="76" endPosition="138" />
+    <scopeInfo nodeId="3100207102208970629" fileName="AddScopeTestAnnotation_Intention.java" startLine="85" startPosition="87" endLine="86" endPosition="41" />
+    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="107" startPosition="48" endLine="108" endPosition="51" />
     <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="27" startPosition="0" endLine="29" endPosition="0" />
     <scopeInfo nodeId="4052780437581057388" fileName="AddScopeTestAnnotation_Intention.java" startLine="61" startPosition="91" endLine="63" endPosition="70">
       <varInfo nodeId="4052780437581057392" varName="selectedNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="78" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="82" startPosition="0" endLine="84" endPosition="0" />
     <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
     <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
@@ -557,43 +580,44 @@
     <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
     <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
     <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="70" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="85" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="3100207102208970627" varName="editorContext" />
       <varInfo nodeId="3100207102208970627" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4052780437580951080" fileName="AddScopeTestAnnotation_Intention.java" startLine="93" startPosition="66" endLine="96" endPosition="115">
+    <scopeInfo nodeId="4052780437580951080" fileName="AddScopeTestAnnotation_Intention.java" startLine="97" startPosition="66" endLine="100" endPosition="115">
       <varInfo nodeId="4052780437580951086" varName="expectedNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="103" startPosition="0" endLine="106" endPosition="0" />
+    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="107" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="54" startPosition="84" endLine="58" endPosition="16" />
     <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="61" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="3100207102208970627" varName="editorContext" />
       <varInfo nodeId="3100207102208970627" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="70" startPosition="99" endLine="74" endPosition="30" />
-    <scopeInfo nodeId="4052780437580951079" fileName="AddScopeTestAnnotation_Intention.java" startLine="92" startPosition="0" endLine="97" endPosition="9">
+    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="74" startPosition="99" endLine="78" endPosition="30" />
+    <scopeInfo nodeId="4052780437580951079" fileName="AddScopeTestAnnotation_Intention.java" startLine="96" startPosition="0" endLine="101" endPosition="9">
       <varInfo nodeId="4052780437580951082" varName="avaliable" />
     </scopeInfo>
     <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="54" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="3100207102208970627" varName="editorContext" />
       <varInfo nodeId="3100207102208970627" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="74" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="3100207102208970627" varName="context" />
       <varInfo nodeId="3100207102208970627" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="5449224527592420959" fileName="AddScopeTestAnnotation_Intention.java" startLine="89" startPosition="67" endLine="97" endPosition="9">
+    <scopeInfo nodeId="5449224527592420959" fileName="AddScopeTestAnnotation_Intention.java" startLine="93" startPosition="67" endLine="101" endPosition="9">
       <varInfo nodeId="4052780437580950835" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="3100207102208970631" fileName="AddScopeTestAnnotation_Intention.java" startLine="85" startPosition="78" endLine="100" endPosition="42">
+    <scopeInfo nodeId="3100207102208970631" fileName="AddScopeTestAnnotation_Intention.java" startLine="89" startPosition="78" endLine="104" endPosition="42">
       <varInfo nodeId="3100207102209039511" varName="newAnnotation" />
     </scopeInfo>
-    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="85" startPosition="0" endLine="102" endPosition="0">
+    <scopeInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="89" startPosition="0" endLine="106" endPosition="0">
       <varInfo nodeId="3100207102208970627" varName="editorContext" />
       <varInfo nodeId="3100207102208970627" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="77" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddScopeTestAnnotation_Intention$IntentionImplementation" />
-    <unitInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="24" startPosition="0" endLine="108" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddScopeTestAnnotation_Intention" />
+    <unitInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="81" startPosition="0" endLine="111" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddScopeTestAnnotation_Intention$IntentionImplementation" />
+    <unitInfo nodeId="3100207102208970627" fileName="AddScopeTestAnnotation_Intention.java" startLine="24" startPosition="0" endLine="112" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddScopeTestAnnotation_Intention" />
   </root>
   <root nodeId="3100207102209325314" modelId="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)">
     <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
@@ -607,16 +631,17 @@
     <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="55" startPosition="5" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="9120563202187965515" fileName="AddScopeExpectedNodes_Intention.java" startLine="59" startPosition="91" endLine="60" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="63" startPosition="53" endLine="64" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="68" startPosition="37" endLine="69" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="70" startPosition="5" endLine="71" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3100207102209325319" fileName="AddScopeExpectedNodes_Intention.java" startLine="78" startPosition="87" endLine="79" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4052780437581111068" fileName="AddScopeExpectedNodes_Intention.java" startLine="82" startPosition="78" endLine="83" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4052780437581111083" fileName="AddScopeExpectedNodes_Intention.java" startLine="84" startPosition="64" endLine="85" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4052780437581111089" fileName="AddScopeExpectedNodes_Intention.java" startLine="85" startPosition="124" endLine="86" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4052780437581111096" fileName="AddScopeExpectedNodes_Intention.java" startLine="86" startPosition="73" endLine="87" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="91" startPosition="48" endLine="92" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="67" startPosition="35" endLine="68" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="72" startPosition="37" endLine="73" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="74" startPosition="5" endLine="75" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3100207102209325319" fileName="AddScopeExpectedNodes_Intention.java" startLine="82" startPosition="87" endLine="83" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4052780437581111068" fileName="AddScopeExpectedNodes_Intention.java" startLine="86" startPosition="78" endLine="87" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4052780437581111083" fileName="AddScopeExpectedNodes_Intention.java" startLine="88" startPosition="64" endLine="89" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4052780437581111089" fileName="AddScopeExpectedNodes_Intention.java" startLine="89" startPosition="124" endLine="90" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4052780437581111096" fileName="AddScopeExpectedNodes_Intention.java" startLine="90" startPosition="73" endLine="91" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="95" startPosition="48" endLine="96" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddScopeExpectedNodes_Intention#()V" />
-    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="75" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="79" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
     <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -626,15 +651,16 @@
     <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="52" startPosition="84" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="67" startPosition="99" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="4052780437581111081" fileName="AddScopeExpectedNodes_Intention.java" startLine="83" startPosition="119" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="71" startPosition="99" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="95" startPosition="0" endLine="98" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="4052780437581111081" fileName="AddScopeExpectedNodes_Intention.java" startLine="87" startPosition="119" endLine="92" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="52" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="67" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="82" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="71" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="86" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="25" startPosition="44" endLine="25" endPosition="44" />
-    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="75" startPosition="38" endLine="75" endPosition="38" />
+    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="79" startPosition="38" endLine="79" endPosition="38" />
     <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="58" />
     <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="35" />
     <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="36" startPosition="41" endLine="37" endPosition="80" />
@@ -644,11 +670,12 @@
     <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="53" startPosition="53" endLine="54" endPosition="19" />
     <scopeInfo nodeId="9120563202187965514" fileName="AddScopeExpectedNodes_Intention.java" startLine="59" startPosition="91" endLine="60" endPosition="79" />
     <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="63" startPosition="53" endLine="64" endPosition="129" />
-    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="68" startPosition="37" endLine="69" endPosition="137" />
-    <scopeInfo nodeId="3100207102209325316" fileName="AddScopeExpectedNodes_Intention.java" startLine="78" startPosition="87" endLine="79" endPosition="40" />
-    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="91" startPosition="48" endLine="92" endPosition="50" />
+    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="67" startPosition="35" endLine="68" endPosition="17" />
+    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="72" startPosition="37" endLine="73" endPosition="137" />
+    <scopeInfo nodeId="3100207102209325316" fileName="AddScopeExpectedNodes_Intention.java" startLine="82" startPosition="87" endLine="83" endPosition="40" />
+    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="95" startPosition="48" endLine="96" endPosition="50" />
     <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="75" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="79" startPosition="0" endLine="81" endPosition="0" />
     <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
@@ -660,36 +687,37 @@
       <varInfo nodeId="3100207102209325314" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="78" startPosition="0" endLine="81" endPosition="0">
+    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="67" startPosition="0" endLine="70" endPosition="0" />
+    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="82" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="3100207102209325314" varName="editorContext" />
       <varInfo nodeId="3100207102209325314" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4052780437581111082" fileName="AddScopeExpectedNodes_Intention.java" startLine="84" startPosition="64" endLine="87" endPosition="104">
+    <scopeInfo nodeId="4052780437581111082" fileName="AddScopeExpectedNodes_Intention.java" startLine="88" startPosition="64" endLine="91" endPosition="104">
       <varInfo nodeId="4052780437581111084" varName="expectedNode" />
     </scopeInfo>
-    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="91" startPosition="0" endLine="94" endPosition="0" />
+    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="95" startPosition="0" endLine="98" endPosition="0" />
     <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="52" startPosition="84" endLine="56" endPosition="16" />
-    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="67" startPosition="99" endLine="71" endPosition="30" />
-    <scopeInfo nodeId="4052780437581111081" fileName="AddScopeExpectedNodes_Intention.java" startLine="83" startPosition="119" endLine="88" endPosition="7">
+    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="71" startPosition="99" endLine="75" endPosition="30" />
+    <scopeInfo nodeId="4052780437581111081" fileName="AddScopeExpectedNodes_Intention.java" startLine="87" startPosition="119" endLine="92" endPosition="7">
       <varInfo nodeId="4052780437581111103" varName="avaliable" />
     </scopeInfo>
     <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="52" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="3100207102209325314" varName="editorContext" />
       <varInfo nodeId="3100207102209325314" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="67" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="71" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="3100207102209325314" varName="context" />
       <varInfo nodeId="3100207102209325314" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="3100207102209325318" fileName="AddScopeExpectedNodes_Intention.java" startLine="82" startPosition="78" endLine="88" endPosition="7">
+    <scopeInfo nodeId="3100207102209325318" fileName="AddScopeExpectedNodes_Intention.java" startLine="86" startPosition="78" endLine="92" endPosition="7">
       <varInfo nodeId="4052780437581111069" varName="scope" />
     </scopeInfo>
-    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="82" startPosition="0" endLine="90" endPosition="0">
+    <scopeInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="86" startPosition="0" endLine="94" endPosition="0">
       <varInfo nodeId="3100207102209325314" varName="editorContext" />
       <varInfo nodeId="3100207102209325314" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="74" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddScopeExpectedNodes_Intention$IntentionImplementation" />
-    <unitInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="22" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddScopeExpectedNodes_Intention" />
+    <unitInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="78" startPosition="0" endLine="99" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddScopeExpectedNodes_Intention$IntentionImplementation" />
+    <unitInfo nodeId="3100207102209325314" fileName="AddScopeExpectedNodes_Intention.java" startLine="22" startPosition="0" endLine="100" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddScopeExpectedNodes_Intention" />
   </root>
   <root nodeId="6017652711700380617" modelId="r:00000000-0000-4000-0000-011c89590386(jetbrains.mps.lang.test.intentions)">
     <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
@@ -703,16 +731,17 @@
     <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6017652711700380644" fileName="AddNodeHasErrorMark_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="62" startPosition="53" endLine="63" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="67" startPosition="37" endLine="68" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="69" startPosition="5" endLine="70" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6017652711700380620" fileName="AddNodeHasErrorMark_Intention.java" startLine="77" startPosition="87" endLine="78" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6017652711700380624" fileName="AddNodeHasErrorMark_Intention.java" startLine="81" startPosition="78" endLine="82" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6017652711700380630" fileName="AddNodeHasErrorMark_Intention.java" startLine="82" startPosition="132" endLine="83" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6017652711700388062" fileName="AddNodeHasErrorMark_Intention.java" startLine="83" startPosition="204" endLine="84" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6017652711700380637" fileName="AddNodeHasErrorMark_Intention.java" startLine="84" startPosition="124" endLine="85" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="88" startPosition="48" endLine="89" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="66" startPosition="35" endLine="67" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="73" startPosition="5" endLine="74" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6017652711700380620" fileName="AddNodeHasErrorMark_Intention.java" startLine="81" startPosition="87" endLine="82" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6017652711700380624" fileName="AddNodeHasErrorMark_Intention.java" startLine="85" startPosition="78" endLine="86" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6017652711700380630" fileName="AddNodeHasErrorMark_Intention.java" startLine="86" startPosition="132" endLine="87" endPosition="204" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6017652711700388062" fileName="AddNodeHasErrorMark_Intention.java" startLine="87" startPosition="204" endLine="88" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6017652711700380637" fileName="AddNodeHasErrorMark_Intention.java" startLine="88" startPosition="124" endLine="89" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="92" startPosition="48" endLine="93" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddNodeHasErrorMark_Intention#()V" />
-    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="74" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="78" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
     <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -722,14 +751,15 @@
     <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="51" startPosition="84" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="66" startPosition="99" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="70" startPosition="99" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="92" startPosition="0" endLine="95" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
     <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="51" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="81" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="85" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="24" startPosition="42" endLine="24" endPosition="42" />
-    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="74" startPosition="38" endLine="74" endPosition="38" />
+    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="78" startPosition="38" endLine="78" endPosition="38" />
     <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="59" />
     <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="33" />
     <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="35" startPosition="41" endLine="36" endPosition="78" />
@@ -739,11 +769,12 @@
     <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="52" startPosition="53" endLine="53" endPosition="19" />
     <scopeInfo nodeId="6017652711700380643" fileName="AddNodeHasErrorMark_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="76" />
     <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="62" startPosition="53" endLine="63" endPosition="129" />
-    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="67" startPosition="37" endLine="68" endPosition="135" />
-    <scopeInfo nodeId="6017652711700380619" fileName="AddNodeHasErrorMark_Intention.java" startLine="77" startPosition="87" endLine="78" endPosition="45" />
-    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="88" startPosition="48" endLine="89" endPosition="48" />
+    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="66" startPosition="35" endLine="67" endPosition="17" />
+    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="135" />
+    <scopeInfo nodeId="6017652711700380619" fileName="AddNodeHasErrorMark_Intention.java" startLine="81" startPosition="87" endLine="82" endPosition="45" />
+    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="92" startPosition="48" endLine="93" endPosition="48" />
     <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="74" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="78" startPosition="0" endLine="80" endPosition="0" />
     <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
@@ -755,30 +786,31 @@
       <varInfo nodeId="6017652711700380617" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="62" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="6017652711700380617" varName="editorContext" />
       <varInfo nodeId="6017652711700380617" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="88" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="92" startPosition="0" endLine="95" endPosition="0" />
     <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="51" startPosition="84" endLine="55" endPosition="16" />
-    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="66" startPosition="99" endLine="70" endPosition="30" />
-    <scopeInfo nodeId="6017652711700380623" fileName="AddNodeHasErrorMark_Intention.java" startLine="81" startPosition="78" endLine="85" endPosition="42">
+    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="70" startPosition="99" endLine="74" endPosition="30" />
+    <scopeInfo nodeId="6017652711700380623" fileName="AddNodeHasErrorMark_Intention.java" startLine="85" startPosition="78" endLine="89" endPosition="42">
       <varInfo nodeId="6017652711700380625" varName="newAnnotation" />
     </scopeInfo>
     <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="51" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="6017652711700380617" varName="editorContext" />
       <varInfo nodeId="6017652711700380617" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="66" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="6017652711700380617" varName="context" />
       <varInfo nodeId="6017652711700380617" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="81" startPosition="0" endLine="87" endPosition="0">
+    <scopeInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="85" startPosition="0" endLine="91" endPosition="0">
       <varInfo nodeId="6017652711700380617" varName="editorContext" />
       <varInfo nodeId="6017652711700380617" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="73" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddNodeHasErrorMark_Intention$IntentionImplementation" />
-    <unitInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="21" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddNodeHasErrorMark_Intention" />
+    <unitInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="77" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddNodeHasErrorMark_Intention$IntentionImplementation" />
+    <unitInfo nodeId="6017652711700380617" fileName="AddNodeHasErrorMark_Intention.java" startLine="21" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.lang.test.intentions.AddNodeHasErrorMark_Intention" />
   </root>
 </debugInfo>
 

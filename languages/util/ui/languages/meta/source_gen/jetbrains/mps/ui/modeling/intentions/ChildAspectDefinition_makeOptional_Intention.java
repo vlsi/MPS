@@ -59,6 +59,10 @@ public class ChildAspectDefinition_makeOptional_Intention implements IntentionFa
     return new SNodePointer("r:bac8ec1e-8e5a-402a-a005-91bd829c7598(jetbrains.mps.ui.modeling.intentions)", "6030013275786405059");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ChildAspectDefinition_makeOptional_Intention.IntentionImplementation());
