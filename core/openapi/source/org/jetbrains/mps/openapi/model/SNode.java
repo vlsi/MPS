@@ -125,9 +125,7 @@ public interface SNode {
   SNode getNextSibling();
 
   /**
-   * MM: non-modifiable
-   * VP: The only implementation creates a copy, which, however, remains modifiable
-   * VP: The only implementation creates a copy, which, however, remains modifiable
+   * Returns an immutable collection of children in the specified role.
    */
   Iterable<? extends SNode> getChildren(String role);
 
@@ -144,8 +142,7 @@ public interface SNode {
   String getRoleOf(SNode child);
 
   /**
-   * MM: consider non-modifiable
-   * VP: Seems to be immutable ATM
+   * Returns an immutable collection of all children.
    */
   public Iterable<? extends SNode> getChildren();
 
@@ -182,8 +179,7 @@ public interface SNode {
    * Since SReference can refer to nodes by name and resolve them dynamically, this method may be able to help you resolve
    * the target nodes even when working with invalid code.
    * <p/>
-   * MM: consider non-modifiable
-   * VP: agree
+   * The returned collection is immutable.
    */
   public Iterable<? extends SReference> getReferences();
 
@@ -196,8 +192,7 @@ public interface SNode {
   void setProperty(String propertyName, String propertyValue);
 
   /**
-   * MM: consider non-modifiable
-   * VP: agree
+   * Retrieves keys of all properties. The returned collection is immutable.
    */
   Iterable<String> getPropertyNames();
 
