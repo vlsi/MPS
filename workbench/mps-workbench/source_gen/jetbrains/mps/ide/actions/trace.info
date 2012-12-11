@@ -7195,7 +7195,7 @@
     <nodeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="31" startPosition="38" endLine="32" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="32" startPosition="43" endLine="33" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="33" startPosition="34" endLine="34" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="38" startPosition="32" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="38" startPosition="32" endLine="39" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="43" startPosition="9" endLine="44" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="43" startPosition="9" endLine="44" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="46" startPosition="33" endLine="47" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -7243,7 +7243,7 @@
     <nodeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="80" startPosition="0" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="52" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <scopeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="71" startPosition="25" endLine="71" endPosition="25" />
-    <scopeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="38" startPosition="32" endLine="39" endPosition="16" />
+    <scopeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="38" startPosition="32" endLine="39" endPosition="17" />
     <scopeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="43" startPosition="9" endLine="44" endPosition="43" />
     <scopeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="46" startPosition="33" endLine="47" endPosition="93" />
     <scopeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="54" startPosition="53" endLine="55" endPosition="19" />
@@ -11296,7 +11296,7 @@
     <nodeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="37" startPosition="35" endLine="38" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="38" startPosition="40" endLine="39" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="39" startPosition="34" endLine="40" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="44" startPosition="32" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="44" startPosition="32" endLine="45" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="49" startPosition="9" endLine="50" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="49" startPosition="9" endLine="50" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="52" startPosition="33" endLine="53" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -11350,7 +11350,7 @@
     <nodeInfo nodeId="5533671870987099238" fileName="HighlightUsages_Action.java" startLine="80" startPosition="86" endLine="110" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="78" startPosition="96" endLine="115" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="77" startPosition="0" endLine="117" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doExecute#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
-    <scopeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="44" startPosition="32" endLine="45" endPosition="16" />
+    <scopeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="44" startPosition="32" endLine="45" endPosition="17" />
     <scopeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="49" startPosition="9" endLine="50" endPosition="43" />
     <scopeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="52" startPosition="33" endLine="53" endPosition="90" />
     <scopeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="60" startPosition="53" endLine="61" endPosition="19" />

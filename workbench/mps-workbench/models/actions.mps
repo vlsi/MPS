@@ -30973,6 +30973,12 @@
   </root>
   <root id="7162597690968192621" />
   <root id="3856909620694994569">
+    <node role="actions" roleId="tp4k.1512255007353869533" type="tp4k.ActionReference" typeId="tp4k.1512255007353869535" id="3337791061337020966">
+      <link role="actionDeclaration" roleId="tp4k.1512255007353869536" targetNodeId="5533671870987003804" resolveInfo="HighlightUsages" />
+    </node>
+    <node role="actions" roleId="tp4k.1512255007353869533" type="tp4k.ActionReference" typeId="tp4k.1512255007353869535" id="3337791061337020968">
+      <link role="actionDeclaration" roleId="tp4k.1512255007353869536" targetNodeId="227146524086812204" resolveInfo="HighlightInstances" />
+    </node>
     <node role="actions" roleId="tp4k.1512255007353869533" type="tp4k.ActionReference" typeId="tp4k.1512255007353869535" id="3856909620694994570">
       <link role="actionDeclaration" roleId="tp4k.1512255007353869536" targetNodeId="5033107305426734988" resolveInfo="FastFindNodeUsages" />
     </node>
