@@ -364,9 +364,9 @@
       <modulePath path="${project}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.dataFlow.pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.typesystem.devkit.pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/plugins/mpsdevkit/mpsdevkit.msd" folder="plugins" />
+      <modulePath path="${project}/plugins/mpsjava/basePlatform/basePlatform.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/migration/migration.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/platform/platform.msd" folder="plugins.mpsjava" />
-      <modulePath path="${project}/plugins/mpsjava/stubs/sources.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/testsol/tests.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/testsolution/testMaterial.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/workbench/java.msd" folder="plugins.mpsjava" />

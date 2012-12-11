@@ -22,8 +22,8 @@
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="123.1" />
 
-  <xi:include href="../platform/classes/jetbrains/mps/ide/java/actions/JavaActions.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="../workbench/classes/jetbrains/mps/ide/java/workbench/actions/JavaWorkbenchActions.xml"
+  <xi:include href="../classes/jetbrains/mps/ide/java/actions/JavaActions.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="../classes/jetbrains/mps/ide/java/workbench/actions/JavaWorkbenchActions.xml"
               xpointer="xpointer(/components/*)"/>
 
   <application-components>

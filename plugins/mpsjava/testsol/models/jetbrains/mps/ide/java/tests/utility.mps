@@ -188,8 +188,8 @@
                         </node>
                       </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.EnumConstantReference" typeId="tpee.1083260308424" id="719036592319873750">
-                        <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="jdco.2537348641689790181" resolveInfo="CLASS_STUB" />
-                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="jdco.5646944109420325187" resolveInfo="FeatureKind" />
+                        <link role="enumConstantDeclaration" roleId="tpee.1083260308426" targetNodeId="rkxj.5824619280724720991" resolveInfo="CLASS_STUB" />
+                        <link role="enumClass" roleId="tpee.1144432896254" targetNodeId="rkxj.5824619280724720990" resolveInfo="FeatureKind" />
                       </node>
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="1218582063869330510">
                         <property name="value" nameId="tpee.1068580123138" value="true" />

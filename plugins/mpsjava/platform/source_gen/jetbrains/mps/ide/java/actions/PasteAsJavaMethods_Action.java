@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.java.parser.FeatureKind;
+import jetbrains.mps.ide.java.newparser.FeatureKind;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.logging.Logger;
 

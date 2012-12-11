@@ -3,9 +3,9 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$" />
-    <content url="file://$MODULE_DIR$/../../../plugins/mpsjava/platform">
-      <sourceFolder url="file://$MODULE_DIR$/../../../plugins/mpsjava/platform/source" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../../plugins/mpsjava/platform/source_gen" isTestSource="false" />
+    <content url="file://$MODULE_DIR$/../../../plugins/mpsjava/basePlatform">
+      <sourceFolder url="file://$MODULE_DIR$/../../../plugins/mpsjava/basePlatform/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../../plugins/mpsjava/basePlatform/source" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="IDEA IC" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />

@@ -1,7 +1,5 @@
 package jetbrains.mps.idea.java.sourceStubs;
 
-import com.intellij.openapi.roots.ModuleRootManager;
-import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot;
 import jetbrains.mps.idea.core.project.JpsModelRootContributor;
 import org.jetbrains.jps.model.module.JpsModule;

@@ -5,7 +5,7 @@ package jetbrains.mps.ide.java.util;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.ide.java.parser.FeatureKind;
+import jetbrains.mps.ide.java.newparser.FeatureKind;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModel;
 import java.awt.datatransfer.Transferable;
