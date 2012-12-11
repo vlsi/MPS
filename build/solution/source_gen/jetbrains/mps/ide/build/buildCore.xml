@@ -126,8 +126,6 @@
       <zipfileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.baseLanguage.search/" />
       <zipfileset file="${mps_home}/languages/core/stub/JDK/JDK.msd" prefix="modules/JDK" />
       <zipfileset dir="${mps_home}/languages/core/stub/JDK" includes="icons/**, resources/**" prefix="modules/JDK" />
-      <zipfileset file="${mps_home}/languages/core/stub/JDK.Tools/Tools.msd" prefix="modules/JDK.Tools" />
-      <zipfileset dir="${mps_home}/languages/core/stub/JDK.Tools" includes="icons/**, resources/**" prefix="modules/JDK.Tools" />
       <zipfileset file="${mps_home}/languages/core/stub/MPS.Core/Core.msd" prefix="modules/MPS.Core" />
       <zipfileset dir="${mps_home}/languages/core/stub/MPS.Core" includes="icons/**, resources/**" prefix="modules/MPS.Core" />
       <zipfileset file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/util.msd" prefix="modules/jetbrains.mps.baseLanguage.util" />
