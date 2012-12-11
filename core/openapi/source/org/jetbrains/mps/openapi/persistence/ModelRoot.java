@@ -21,6 +21,7 @@ import org.jetbrains.mps.openapi.module.SModule;
 
 /**
  * Represents a logically connected group of models that come from a related physical origin, such as a file or a directory.
+ * For implementation consider extending ModelRootBase or FolderModelRootBase.
  */
 public interface ModelRoot {
 

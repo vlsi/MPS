@@ -16,7 +16,7 @@
 package org.jetbrains.mps.openapi.language;
 
 /**
- * ?? Represents a kind of node connections. They can express either references or containment relationships.
+ * Represents an abstract meta-definition of node connections. These can express either references or containment relationships.
  */
 public interface SLink {
 
@@ -28,13 +28,13 @@ public interface SLink {
   boolean isReference();
 
   /**
-   * ?? (maximum?) Cardinality greater than 1.
-   * EG: false for references
+   * The maximum cardinality can be greater than 1.
+   * Always false for references, true or false for parent-child relationships.
    */
   boolean isMultiple();
 
   /**
-   * ?? Cardinality greater than 0.
+   * For optional relationships cardinality can also be equal to 0.
    */
   boolean isOptional();
 

@@ -32,7 +32,7 @@ public interface SModule {
   SModuleId getModuleId();
 
   /**
-   * MM: equals getModuleReference.getModuleName()
+   * Identical to getModuleReference.getModuleName()
    */
   String getModuleName();
 
@@ -64,13 +64,13 @@ public interface SModule {
 
   /**
    * All dependencies on modules of all kinds.
-   * MM: includes only dependencies declared in this model. See also GlobalModuleDependenciesManager [not yet in API]
+   * Includes only dependencies declared in this model. See also GlobalModuleDependenciesManager [not yet in API]
    */
   Iterable<SDependency> getDeclaredDependencies();
 
   /**
    * Languages declared as dependencies of the DEFAULT kind.
-   * MM: includes only dependencies declared in this model. See also GlobalModuleDependenciesManager [not yet in API]
+   * Includes only dependencies declared in this model. See also GlobalModuleDependenciesManager [not yet in API]
    */
   Iterable<SLanguage> getUsedLanguages();
 

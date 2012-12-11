@@ -31,7 +31,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
  * (UnregisteredNodes/ImmatureReferences) so that all references in the node and from the outside still work.
  * E.g. we have A,B and C nodes in model M, where A and B references C. After
  * C.delete or M.removeRoot(C) or C.getParent().removeChild(C), A and B will still have C as a target of reference until the end the current command.
- * MM: if a node has been detached from its parent, it becomes detached from the whole tree. SModel.getRootNodes will not return it as a root in this case.
+ * If a node has been detached from its parent, it becomes detached from the whole tree. SModel.getRootNodes will not return it as a root in this case.
  * <p/>
  * STORING NODES
  * Keeping references to nodes between subsequent read actions will cause errors and possible memory leaks. See getReference()
@@ -48,8 +48,6 @@ public interface SNode {
 
   /**
    * Uniquely identifies the node within its containing model. May also be null.
-   * Null means that the reference is resolved dynamically [not yet documented how]
-   * MM: ??I'm not sure the last statement is true??
    */
   SNodeId getSNodeId();
 

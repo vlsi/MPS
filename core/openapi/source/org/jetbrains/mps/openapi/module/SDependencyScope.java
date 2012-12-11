@@ -29,14 +29,22 @@ package org.jetbrains.mps.openapi.module;
  * </ul>
  */
 public enum SDependencyScope {
-  /* EG: all types of modules */
+  /* all types of modules */
   DEFAULT,
   DESIGN,
   COMPILE,
   RUNTIME,
   PROVIDED,
 
-  /* EG: only between language modules  */
+  /* only between language modules  */
+
+  /**
+   * Applicable only between two language modules
+   */
   EXTENDS,
+
+  /**
+   * Applicable only between two language modules
+   */
   GENERATES_INTO
 }
