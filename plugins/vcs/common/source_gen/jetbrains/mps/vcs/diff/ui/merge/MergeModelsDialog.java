@@ -307,7 +307,7 @@ public class MergeModelsDialog extends DialogWrapper {
       public boolean accept(ModelChange ch) {
         return !(myMergeSession.isChangeResolved(ch));
       }
-    }).isNotEmpty() || isMetadataSelected() && Sequence.fromIterable(myMetadataMergeSession.getAllChanges()).where(new IWhereFilter<ModelChange>() {
+    }).isNotEmpty() || myMetadataMergeSession != null && isMetadataSelected() && Sequence.fromIterable(myMetadataMergeSession.getAllChanges()).where(new IWhereFilter<ModelChange>() {
       public boolean accept(ModelChange ch) {
         return !(myMetadataMergeSession.isChangeResolved(ch));
       }
@@ -316,7 +316,7 @@ public class MergeModelsDialog extends DialogWrapper {
 
   public void acceptVersionForSelectedRoots(boolean mine) {
     applyUnresolvedChanges(myMergeSession, getModelChangesForSelection(), mine);
-    if (isMetadataSelected()) {
+    if (myMetadataMergeSession != null && isMetadataSelected()) {
       applyUnresolvedChanges(myMetadataMergeSession, myMetadataMergeSession.getAllChanges(), mine);
       applyMetadataChanges();
     }
