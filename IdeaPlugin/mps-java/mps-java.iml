@@ -13,16 +13,13 @@
     <content url="file://$MODULE_DIR$/../solutions/jetbrains.mps.idea.java.psiStubs">
       <sourceFolder url="file://$MODULE_DIR$/../solutions/jetbrains.mps.idea.java.psiStubs/source_gen" isTestSource="false" />
     </content>
-    <content url="file://$MODULE_DIR$/../../plugins/mpsjava/platform">
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/platform/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../plugins/mpsjava/platform/source" isTestSource="false" />
-    </content>
     <content url="file://$MODULE_DIR$/../../workbench/mps-debugger">
       <sourceFolder url="file://$MODULE_DIR$/../../workbench/mps-debugger/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="jdk" jdkName="IDEA IC" jdkType="IDEA JDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="mps-core" />
+    <orderEntry type="module" module-name="mps-java-common" />
   </component>
 </module>
 

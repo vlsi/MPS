@@ -5,6 +5,8 @@
       <module fileurl="file://$PROJECT_DIR$/mps-core/common/mps-common.iml" filepath="$PROJECT_DIR$/mps-core/common/mps-common.iml" />
       <module fileurl="file://$PROJECT_DIR$/mps-core/mps-core.iml" filepath="$PROJECT_DIR$/mps-core/mps-core.iml" />
       <module fileurl="file://$PROJECT_DIR$/mps-java/mps-java.iml" filepath="$PROJECT_DIR$/mps-java/mps-java.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mps-java/common/mps-java-common.iml" filepath="$PROJECT_DIR$/mps-java/common/mps-java-common.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mps-java-jps-plugin/mps-java-jps-plugin.iml" filepath="$PROJECT_DIR$/mps-java-jps-plugin/mps-java-jps-plugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/mps-core/jps-plugin/mps-jps-plugin.iml" filepath="$PROJECT_DIR$/mps-core/jps-plugin/mps-jps-plugin.iml" />
       <module fileurl="file://$PROJECT_DIR$/mps-startup/mps-startup.iml" filepath="$PROJECT_DIR$/mps-startup/mps-startup.iml" />
       <module fileurl="file://$PROJECT_DIR$/mps-vcs/mps-vcs.iml" filepath="$PROJECT_DIR$/mps-vcs/mps-vcs.iml" />

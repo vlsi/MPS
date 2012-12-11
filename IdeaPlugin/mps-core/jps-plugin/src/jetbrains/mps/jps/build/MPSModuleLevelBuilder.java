@@ -20,6 +20,14 @@ import jetbrains.mps.idea.core.make.MPSCompilerUtil;
 import jetbrains.mps.jps.model.JpsMPSExtensionService;
 import jetbrains.mps.jps.model.JpsMPSModuleExtension;
 import jetbrains.mps.jps.model.JpsMPSRepositoryFacade;
+import jetbrains.mps.jps.project.JpsMPSProject;
+import jetbrains.mps.jps.project.JpsSolutionIdea;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.ModuleChunk;
 import org.jetbrains.jps.builders.DirtyFilesHolder;
@@ -63,7 +71,14 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
               OutputConsumer outputConsumer) throws ProjectBuildException, IOException {
     ExitCode status = ExitCode.NOTHING_DONE;
     try {
+
+
+
       for (JpsModule jpsModule : moduleChunk.getModules()) {
+
+        // must be done once ?
+        final JpsMPSProject project = new JpsMPSProject(jpsModule.getProject());
+
         JpsMPSModuleExtension extension = JpsMPSExtensionService.getInstance().getExtension(jpsModule);
         if (extension == null) {
           compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "Ignoring (no facet) " + jpsModule.getName()));
@@ -73,6 +88,24 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
         JpsMPSRepositoryFacade.getInstance().init(compileContext);
 
         compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "Processing " + jpsModule.getName() + ": " + extension.getConfiguration().getUUID()));
+
+        SolutionDescriptor descriptor = extension.getConfiguration().getSolutionDescriptor();
+        final JpsSolutionIdea solution = new JpsSolutionIdea(jpsModule, descriptor);
+
+
+        ModelAccess.instance().runWriteAction(new Runnable() {
+          @Override
+          public void run() {
+            MPSModuleRepository.getInstance().registerModule(solution, project);
+            solution.updateModelsSet();
+          }
+        });
+
+        for (SModelDescriptor d: SModelRepository.getInstance().getModelDescriptors(solution)) {
+          compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " ++ " + d.getLongName()));
+        }
+
+
         for (ModelRoot root : extension.getConfiguration().getModelRoots()) {
           compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " -- " + root.getPresentation()));
         }

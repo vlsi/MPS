@@ -16,6 +16,7 @@
 
 package jetbrains.mps.jps.model;
 
+import jetbrains.mps.idea.core.project.JpsModelRootContributor;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.jps.model.module.JpsModule;
