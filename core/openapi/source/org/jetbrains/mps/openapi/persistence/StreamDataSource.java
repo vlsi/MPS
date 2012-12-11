@@ -21,6 +21,7 @@ import java.io.OutputStream;
 
 /**
  * A data source with a single input stream.
+ * EG: for implementation consider extending FileDataSource or DataSourceBase
  */
 public interface StreamDataSource extends DataSource {
 

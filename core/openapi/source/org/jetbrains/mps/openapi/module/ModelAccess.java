@@ -15,9 +15,6 @@
  */
 package org.jetbrains.mps.openapi.module;
 
-import jetbrains.mps.project.Project;
-import org.jetbrains.annotations.NotNull;
-
 /**
  * Gives convenient access to access control methods on a model.
  */

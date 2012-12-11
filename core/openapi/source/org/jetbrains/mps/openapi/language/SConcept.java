@@ -17,7 +17,7 @@ package org.jetbrains.mps.openapi.language;
 
 
 /**
- * Adds the ability to query the interface concepts that the current concepts extends and the single concept it inherits from.
+ * Represents a concept
  */
 public interface SConcept extends SAbstractConcept {
   SConcept getSuperConcept();

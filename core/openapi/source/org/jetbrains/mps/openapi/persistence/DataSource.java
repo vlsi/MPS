@@ -17,6 +17,7 @@ package org.jetbrains.mps.openapi.persistence;
 
 /**
  * Represents a source of data to build models from.
+ * EG: for implementation consider extending FileDataSource or DataSourceBase
  */
 public interface DataSource {
 

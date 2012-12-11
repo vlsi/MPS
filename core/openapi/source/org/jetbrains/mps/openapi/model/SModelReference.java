@@ -28,7 +28,7 @@ public interface SModelReference {
   SModelId getModelId();
 
   /**
-   * The returned name of the model includes a stereotype, such as 'generator' or 'tests', separated by the '@' character,
+   * The returned name of the model may include a stereotype, such as 'generator' or 'tests', separated by the '@' character,
    * e.g. jetbrains.mps.sample.generator.main@generator
    */
   String getModelName();

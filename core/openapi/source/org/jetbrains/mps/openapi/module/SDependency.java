@@ -20,7 +20,7 @@ package org.jetbrains.mps.openapi.module;
  */
 public interface SDependency {
 
-  SDependencyKind getKind();
+  SDependencyScope getScope();
 
   boolean isReexport();
 

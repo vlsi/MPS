@@ -16,7 +16,7 @@
 package org.jetbrains.mps.openapi.language;
 
 /**
- * Adds the ability to report its type to data types and defines allowed primitive types.
+ * It represents primitive data types, such as int, string or boolean.
  */
 public interface SPrimitiveDataType extends SDataType {
 

@@ -28,6 +28,15 @@ package org.jetbrains.mps.openapi.module;
  * <li>GENERATES_INTO - the dependency between languages that indicates that he source language will be generated into the target language and thus the generated code needs the dependencies of the target language.</li>
  * </ul>
  */
-public enum SDependencyKind {
-  DEFAULT, EXTENDS, GENERATES_INTO, DESIGN, COMPILE, RUNTIME, PROVIDED
+public enum SDependencyScope {
+  /* EG: all types of modules */
+  DEFAULT,
+  DESIGN,
+  COMPILE,
+  RUNTIME,
+  PROVIDED,
+
+  /* EG: only between language modules  */
+  EXTENDS,
+  GENERATES_INTO
 }

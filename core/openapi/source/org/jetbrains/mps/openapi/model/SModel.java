@@ -31,7 +31,7 @@ public interface SModel {
    */
   SModelId getModelId();
 
-  /*
+  /**
    * The returned name of the model includes a stereotype, such as 'generator' or 'tests', separated by the '@' character,
    * e.g. jetbrains.mps.sample.generator.main@generator
    * MM: this is an equivalent to getModelReference.getModelName
@@ -56,10 +56,12 @@ public interface SModel {
    */
   void addRootNode(SNode node);
 
+  // TODO removeRootNode();
+
   SNode getNode(SNodeId id);
 
   /**
-   * The data source that loaded this model
+   * The data source which this model was loaded from
    */
   @NotNull
   DataSource getSource();
