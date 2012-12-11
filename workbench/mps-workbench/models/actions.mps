@@ -6452,8 +6452,24 @@
                 <link role="member" roleId="tp4f.1205756909548" targetNodeId="8711271696997892107" resolveInfo="project" />
               </node>
             </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8711271696997892112">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1236348508701" resolveInfo="report" />
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.TernaryOperatorExpression" typeId="tpee.1163668896201" id="3337791061336958347">
+              <node role="ifTrue" roleId="tpee.1163668922816" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3337791061336958357">
+                <property name="value" nameId="tpee.1070475926801" value="Nothing to optimize" />
+              </node>
+              <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3337791061336958362">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1236348508701" resolveInfo="report" />
+              </node>
+              <node role="condition" roleId="tpee.1163668914799" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3337791061336958303">
+                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="8711271696997892112">
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1236348508701" resolveInfo="report" />
+                </node>
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3337791061336958317">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~String%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3337791061336958322">
+                    <property name="value" nameId="tpee.1070475926801" value="" />
+                  </node>
+                </node>
+              </node>
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8711271696997892116">
               <property name="value" nameId="tpee.1070475926801" value="Optimize Imports" />
