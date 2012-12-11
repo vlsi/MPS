@@ -9391,6 +9391,9 @@
       <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="1890976590445719544">
         <link role="module" roleId="3ior.2754769020641646250" targetNodeId="1580556790195486221" resolveInfo="mps-java" />
       </node>
+      <node role="dependencies" roleId="3ior.2754769020641646251" type="3ior.BuildSource_JavaDependencyModule" typeId="3ior.2754769020641646247" id="4440224681184645000">
+        <link role="module" roleId="3ior.2754769020641646250" targetNodeId="5903960679215880968" resolveInfo="mps-java-platform" />
+      </node>
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Solution" typeId="kdzh.3189788309731840247" id="1890976590445582774">
       <property name="compact" nameId="kdzh.8369506495128725901" value="true" />

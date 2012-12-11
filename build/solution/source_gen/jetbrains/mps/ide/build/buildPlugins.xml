@@ -326,6 +326,7 @@
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <pathelement path="${build.tmp}/java/out/modelchecker" />
         <pathelement path="${build.tmp}/java/out/mps-java" />
+        <fileset file="${artifacts.buildCore}/mps-core/plugins/mps-java/lib/mps-java-platform.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
