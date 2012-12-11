@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ds1tpagirvcr0es00w1hybbgio54ygc">
+<dependencies version="2" modelHash="dzjw9aj27v300o8wtv888zqob8h1xvu">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="1h96jbg38xkez14vk73630sbzaefb2q" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="1x3xr8k67w2buvi21pv9dhqvhucj5t8" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="a1zgrouzvocts8mn9z8xik6lpn0y8ga" />
-  <common hash="-b0cksawa85z48cfhfqspzbf7frtfgo">
+  <common hash="7v1xzb3jcmihhfr8ol9kwy0s7yuosv6">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="2891782949125168912" name="JavaDebugger" hash="-esqi80vb2nk05iwaze1pxurh7s6v5u9">
@@ -11,7 +11,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="JavaDebugger.java" />
   </source>
-  <source id="2891782949125171999" name="JavaBreakpointsProvider" hash="-8qi14j2tum3zkzyydeieymeapr9pslx">
+  <source id="2891782949125171999" name="JavaBreakpointsProvider" hash="c7m78a99pf8ju7up5brb4ndknby4kwo">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="JavaBreakpointsProvider.java" />

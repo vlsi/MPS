@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4tpzl43c20c5kigvym3db0q07ab3k6t">
+<dependencies version="2" modelHash="-6pprl5lhc35tofotnksy66qx4mvtmht">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="1h96jbg38xkez14vk73630sbzaefb2q" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="1x3xr8k67w2buvi21pv9dhqvhucj5t8" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="a1zgrouzvocts8mn9z8xik6lpn0y8ga" />
-  <common hash="-67846r22b9adw2x2i7sk47dlks5vdb7">
+  <common hash="brx22b3oio4zd3rkfy8cg2eoadpuwhl">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="2891782949125145720" name="IDebuggerManagerThread" hash="-dwwcstp3gjlh0qjomkejmfhgt5xfoyp">
@@ -32,7 +32,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="SystemMessagesReporter.java" />
   </source>
-  <source id="2891782949125146391" name="DebuggerManagerThread" hash="1vskqat9y1ckvjavbz39mcboo1fhagl">
+  <source id="2891782949125146391" name="DebuggerManagerThread" hash="-d0qucgx3m5esq11jry44mzc6sw8rkva">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="DebuggerManagerThread.java" />

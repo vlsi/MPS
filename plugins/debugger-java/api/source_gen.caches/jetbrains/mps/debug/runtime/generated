@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-qhzy8re4o8a204lylvk8eum6npflkg">
+<dependencies version="2" modelHash="-dqodyq3uu2v7i99vt5paii5ct8cbcf8">
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="1x3xr8k67w2buvi21pv9dhqvhucj5t8" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="a1zgrouzvocts8mn9z8xik6lpn0y8ga" />
-  <common hash="7ej4ax6qwj22eferhdi99fbboyunvn1">
+  <common hash="-eug16lzu0ec1cxmefs79no03kwelxfx">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="3432969378036015499" name="JavaUiState" hash="-84em52m3p195j11o0eiv7zrdukmv491">
+  <source id="3432969378036015499" name="JavaUiState" hash="il54857f9a2ffwv89ain90zgktd0co">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="JavaUiState.java" />
   </source>

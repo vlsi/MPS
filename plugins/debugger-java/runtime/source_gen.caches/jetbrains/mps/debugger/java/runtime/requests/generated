@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-39x5lxl2wuen9tv76p1m2jvczuibcnp">
+<dependencies version="2" modelHash="-8f2ubw1m3k60crl99f3evwo8owk4m45">
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="1x3xr8k67w2buvi21pv9dhqvhucj5t8" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="a1zgrouzvocts8mn9z8xik6lpn0y8ga" />
-  <common hash="bmm0b6a9w5movihkc916bftywnny6e3">
+  <common hash="aqpamtz5w06ae0hdec64il0uub4kkog">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="2891782949125146377" name="Requestor" hash="-2jjinzpqo0wja3hxmuxot760u07hko8">
     <file name="Requestor.java" />
   </source>
-  <source id="2891782949125170507" name="ClassPrepareRequestor" hash="8pxyogki29dtr09marfc5b3d22603lb">
+  <source id="2891782949125170507" name="ClassPrepareRequestor" hash="-3yu9oh5l7fh4ropu7ov892rujn7zlgf">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="ClassPrepareRequestor.java" />
   </source>
-  <source id="2891782949125205202" name="LocatableEventRequestor" hash="-1548v4a88of10l6po2q7fnimv3bwjwa">
+  <source id="2891782949125205202" name="LocatableEventRequestor" hash="-74jyh0qntfcknc4a33fdlrztvknnrkz">
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="LocatableEventRequestor.java" />
   </source>
