@@ -27,12 +27,14 @@ import com.intellij.openapi.roots.impl.libraries.LibraryEx;
 import com.intellij.openapi.roots.libraries.*;
 import com.intellij.openapi.roots.libraries.ui.*;
 import com.intellij.openapi.roots.ui.configuration.FacetsProvider;
+import com.intellij.openapi.roots.ui.configuration.libraryEditor.DefaultLibraryRootsComponentDescriptor;
 import com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditor;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.vfs.JarFileSystem;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import com.sun.xml.internal.xsom.impl.scd.Iterators.Array;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
@@ -166,91 +168,7 @@ public class SolutionLibraryType extends LibraryType<DummyLibraryProperties> {
 
   @Override
   public LibraryRootsComponentDescriptor createLibraryRootsComponentDescriptor() {
-    return new LibraryRootsComponentDescriptor() {
-      @Override
-      public OrderRootTypePresentation getRootTypePresentation(@NotNull OrderRootType type) {
-        if (type == ModuleXmlRootDetector.SOLUTION_MODULE_XML) {
-          return ModuleXmlRootDetector.getPresentation();
-        }
-        return null;
-      }
-
-      @Override
-      public OrderRootType[] getRootTypes() {
-        ArrayList<OrderRootType> types = new ArrayList<OrderRootType>();
-        types.addAll(Arrays.asList(super.getRootTypes()));
-        types.add(ModuleXmlRootDetector.SOLUTION_MODULE_XML);
-        return types.toArray(new OrderRootType[types.size()]);
-      }
-
-      @NotNull
-      @Override
-      public List<? extends RootDetector> getRootDetectors() {
-        return Arrays.asList(ModuleXmlRootDetector.getInstance());
-      }
-
-      @NotNull
-      @Override
-      public FileChooserDescriptor createAttachFilesChooserDescriptor(@Nullable String libraryName) {
-        // same as super apart from the constructor invocation parameters
-        FileChooserDescriptor descriptor = new FileChooserDescriptor(false, false, true, false, true, true);
-        descriptor.setTitle(StringUtil.isEmpty(libraryName) ? ProjectBundle.message("library.attach.files.action")
-          : ProjectBundle.message("library.attach.files.to.library.action", libraryName));
-        descriptor.setDescription(ProjectBundle.message("library.attach.files.description"));
-        return descriptor;
-      }
-
-      @NotNull
-      @Override
-      public List<? extends AttachRootButtonDescriptor> createAttachButtons() {
-        return Arrays.asList(new AttachRootButtonDescriptor(ModuleXmlRootDetector.SOLUTION_MODULE_XML, MPSBundle.message("library.attach.mps.solution")) {
-          @Override
-          public VirtualFile[] selectFiles(@NotNull JComponent parent, @Nullable VirtualFile initialSelection, @Nullable final Module contextModule, @NotNull final LibraryEditor libraryEditor) {
-            final List<ModuleReference> availableSolutions = new ArrayList<ModuleReference>();
-            final Set<VirtualFile> descriptors = new HashSet<VirtualFile>(Arrays.asList(libraryEditor.getFiles(ModuleXmlRootDetector.SOLUTION_MODULE_XML)));
-            ModelAccess.instance().runReadAction(new Runnable() {
-              @Override
-              public void run() {
-                for (Solution solution : ModuleRepositoryFacade.getInstance().getAllModules(Solution.class)) {
-                  if (solution instanceof SolutionIdea || solution instanceof StubSolution) {
-                    continue;
-                  }
-                  if (descriptors.contains(VirtualFileUtils.getVirtualFile(solution.getDescriptorFile()))) {
-                    // skip solutions that are already in a lib
-                    continue;
-                  }
-                  availableSolutions.add(solution.getModuleReference());
-                }
-              }
-            });
-
-            ChooseElementsDialog<ModuleReference> chooser = new ModuleReferenceChooserDialog(parent, availableSolutions);
-            chooser.show();
-            final List<ModuleReference> chosenElements = chooser.getChosenElements();
-
-            final Set<VirtualFile> addedDescriptors = new LinkedHashSet<VirtualFile>();
-            final Set<VirtualFile> addedJars = new LinkedHashSet<VirtualFile>();
-            ModelAccess.instance().runReadAction(new Runnable() {
-              @Override
-              public void run() {
-                for (ModuleReference module : chosenElements) {
-                  addedDescriptors.add(VirtualFileUtils.getVirtualFile(ModuleRepositoryFacade.getInstance().getModule(module).getDescriptorFile()));
-                  for (VirtualFile virtualFile : getSolutionJars((Solution) ModuleRepositoryFacade.getInstance().getModule(module))) {
-                    addedJars.add(virtualFile);
-                  }
-                }
-              }
-            });
-            // that's a hack
-            // I want to add 2 different root types here: classes and module xml-s
-            for (VirtualFile classesJar : addedJars) {
-              libraryEditor.addRoot(classesJar, OrderRootType.CLASSES);
-            }
-            return addedDescriptors.toArray(new VirtualFile[addedDescriptors.size()]);
-          }
-        });
-      }
-    };
+    return new MyLibraryRootsComponentDescriptor();
   }
 
   public static boolean isSolutionLibrary(Library l) {
@@ -281,6 +199,95 @@ public class SolutionLibraryType extends LibraryType<DummyLibraryProperties> {
     @Override
     protected Icon getItemIcon(ModuleReference item) {
       return MPSIcons.SOLUTION_ICON;
+    }
+  }
+
+  private static class MyLibraryRootsComponentDescriptor extends DefaultLibraryRootsComponentDescriptor {
+    @Override
+    public OrderRootTypePresentation getRootTypePresentation(@NotNull OrderRootType type) {
+      if (type == ModuleXmlRootDetector.SOLUTION_MODULE_XML) {
+        return ModuleXmlRootDetector.getPresentation();
+      }
+      return null;
+    }
+
+    @Override
+    public OrderRootType[] getRootTypes() {
+      ArrayList<OrderRootType> types = new ArrayList<OrderRootType>();
+      types.addAll(Arrays.asList(super.getRootTypes()));
+      types.add(ModuleXmlRootDetector.SOLUTION_MODULE_XML);
+      return types.toArray(new OrderRootType[types.size()]);
+    }
+
+    @NotNull
+    @Override
+    public List<? extends RootDetector> getRootDetectors() {
+      List<RootDetector> dectectors = new ArrayList<RootDetector>();
+      dectectors.addAll(super.getRootDetectors());
+      dectectors.add(ModuleXmlRootDetector.getInstance());
+      return dectectors;
+    }
+
+    @NotNull
+    @Override
+    public FileChooserDescriptor createAttachFilesChooserDescriptor(@Nullable String libraryName) {
+      // same as super apart from the constructor invocation parameters
+      FileChooserDescriptor descriptor = new FileChooserDescriptor(false, false, true, false, true, true);
+      descriptor.setTitle(StringUtil.isEmpty(libraryName) ? ProjectBundle.message("library.attach.files.action")
+        : ProjectBundle.message("library.attach.files.to.library.action", libraryName));
+      descriptor.setDescription(ProjectBundle.message("library.attach.files.description"));
+      return descriptor;
+    }
+
+    @NotNull
+    @Override
+    public List<? extends AttachRootButtonDescriptor> createAttachButtons() {
+      return Arrays.asList(new AttachRootButtonDescriptor(ModuleXmlRootDetector.SOLUTION_MODULE_XML, MPSBundle.message("library.attach.mps.solution")) {
+        @Override
+        public VirtualFile[] selectFiles(@NotNull JComponent parent, @Nullable VirtualFile initialSelection, @Nullable final Module contextModule, @NotNull final LibraryEditor libraryEditor) {
+          final List<ModuleReference> availableSolutions = new ArrayList<ModuleReference>();
+          final Set<VirtualFile> descriptors = new HashSet<VirtualFile>(Arrays.asList(libraryEditor.getFiles(ModuleXmlRootDetector.SOLUTION_MODULE_XML)));
+          ModelAccess.instance().runReadAction(new Runnable() {
+            @Override
+            public void run() {
+              for (Solution solution : ModuleRepositoryFacade.getInstance().getAllModules(Solution.class)) {
+                if (solution instanceof SolutionIdea || solution instanceof StubSolution) {
+                  continue;
+                }
+                if (descriptors.contains(VirtualFileUtils.getVirtualFile(solution.getDescriptorFile()))) {
+                  // skip solutions that are already in a lib
+                  continue;
+                }
+                availableSolutions.add(solution.getModuleReference());
+              }
+            }
+          });
+
+          ChooseElementsDialog<ModuleReference> chooser = new ModuleReferenceChooserDialog(parent, availableSolutions);
+          chooser.show();
+          final List<ModuleReference> chosenElements = chooser.getChosenElements();
+
+          final Set<VirtualFile> addedDescriptors = new LinkedHashSet<VirtualFile>();
+          final Set<VirtualFile> addedJars = new LinkedHashSet<VirtualFile>();
+          ModelAccess.instance().runReadAction(new Runnable() {
+            @Override
+            public void run() {
+              for (ModuleReference module : chosenElements) {
+                addedDescriptors.add(VirtualFileUtils.getVirtualFile(ModuleRepositoryFacade.getInstance().getModule(module).getDescriptorFile()));
+                for (VirtualFile virtualFile : getSolutionJars((Solution) ModuleRepositoryFacade.getInstance().getModule(module))) {
+                  addedJars.add(virtualFile);
+                }
+              }
+            }
+          });
+          // that's a hack
+          // I want to add 2 different root types here: classes and module xml-s
+          for (VirtualFile classesJar : addedJars) {
+            libraryEditor.addRoot(classesJar, OrderRootType.CLASSES);
+          }
+          return addedDescriptors.toArray(new VirtualFile[addedDescriptors.size()]);
+        }
+      });
     }
   }
 }
