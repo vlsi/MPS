@@ -354,8 +354,8 @@ public class MergeRootsDialog extends DialogWrapper {
     return myMergeSession;
   }
 
-  public MergeSessionState getStateToRestore() {
-    return myStateToRestore;
+  public void restoreState() {
+    myMergeSession.restoreState(myStateToRestore);
   }
 
   @Override

@@ -6,10 +6,6 @@ import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.vcs.diff.changes.ModelChange;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.vcs.diff.changes.MetadataChange;
 
 public class MergeNonConflictingRoots extends BaseAction implements DumbAware {
   private MergeModelsDialog myDialog;
@@ -21,22 +17,12 @@ public class MergeNonConflictingRoots extends BaseAction implements DumbAware {
   }
 
   protected void doExecute(AnActionEvent event, Map<String, Object> map) {
-    Iterable<ModelChange> changes = getChanges();
-    myDialog.getMergeSession().applyChanges(changes);
-    myDialog.markMetadataChangesAsApplied(Sequence.fromIterable(changes).where(new IWhereFilter<ModelChange>() {
-      public boolean accept(ModelChange ch) {
-        return ch instanceof MetadataChange;
-      }
-    }));
+    myDialog.mergeNonConflictingRoots();
     myDialog.rebuildLater();
   }
 
   @Override
   protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
-    event.getPresentation().setEnabled(Sequence.fromIterable(getChanges()).isNotEmpty());
-  }
-
-  private Iterable<ModelChange> getChanges() {
-    return myDialog.getMergeSession().getApplicableChangesInNonConflictingRoots();
+    event.getPresentation().setEnabled(myDialog.hasNonConflictingRoots());
   }
 }
