@@ -30,6 +30,8 @@ import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContaine
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainer.LibraryLevel;
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainerFactory;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.idea.core.library.ModuleXmlRootDetector;
 import jetbrains.mps.idea.core.library.SolutionLibrariesUtil;
 import jetbrains.mps.idea.core.library.SolutionLibraryType;
 import jetbrains.mps.project.IModule;
@@ -78,7 +80,8 @@ public class ModuleRuntimeLibrariesImporter {
     }
 
     Collection<Library> projectLibs2Add = new HashSet<Library>();
-    Map<ModuleReference, Collection<VirtualFile>> projectLibs2Create = new HashMap<ModuleReference, Collection<VirtualFile>>();
+    Map<ModuleReference, Collection<VirtualFile>> projectLibs2Create_Classpath = new HashMap<ModuleReference, Collection<VirtualFile>>();
+    Map<ModuleReference, VirtualFile> projectLibs2Create_ModuleXml = new HashMap<ModuleReference, VirtualFile>();
     for (IModule usedModule : collectRuntimeModules(myAddedModules)) {
       if (!(usedModule instanceof Solution) || !usedModule.isPackaged() ||
         BootstrapLanguages.JDK.equals(usedModule.getModuleReference())) {
@@ -94,7 +97,8 @@ public class ModuleRuntimeLibrariesImporter {
         projectLibs2Add.add(library);
       } else {
         Set<VirtualFile> stubFiles = SolutionLibraryType.getSolutionJars((Solution) usedModule);
-        projectLibs2Create.put(usedModule.getModuleReference(), stubFiles);
+        projectLibs2Create_Classpath.put(usedModule.getModuleReference(), stubFiles);
+        projectLibs2Create_ModuleXml.put(usedModule.getModuleReference(), VirtualFileUtils.getVirtualFile(usedModule.getDescriptorFile()));
       }
     }
 
@@ -102,9 +106,9 @@ public class ModuleRuntimeLibrariesImporter {
       myModifiableRootModel.addLibraryEntry(projectLibrary);
     }
 
-    for (ModuleReference moduleReference : projectLibs2Create.keySet()) {
-      Collection<VirtualFile> libraryFiles = projectLibs2Create.get(moduleReference);
-      Library projectLibrary = createProjectLibrary(moduleReference.getModuleFqName(), libraryFiles);
+    for (ModuleReference moduleReference : projectLibs2Create_Classpath.keySet()) {
+      Collection<VirtualFile> libraryFiles = projectLibs2Create_Classpath.get(moduleReference);
+      Library projectLibrary = createProjectLibrary(moduleReference.getModuleFqName(), libraryFiles, projectLibs2Create_ModuleXml.get(moduleReference));
       myModifiableRootModel.addLibraryEntry(projectLibrary);
     }
   }
@@ -124,7 +128,7 @@ public class ModuleRuntimeLibrariesImporter {
     return myLibrariesContainer.getProject();
   }
 
-  private Library createProjectLibrary(String moduleName, Collection<VirtualFile> libraryFiles) {
+  private Library createProjectLibrary(String moduleName, Collection<VirtualFile> libraryFiles, VirtualFile moduleXml) {
     String libName = LIBRARY_PREFIX + moduleName + AUTO_SUFFIX;
 
     NewLibraryEditor editor = new NewLibraryEditor();
@@ -132,6 +136,7 @@ public class ModuleRuntimeLibrariesImporter {
     for (VirtualFile classRoot : libraryFiles) {
       editor.addRoot(classRoot, OrderRootType.CLASSES);
     }
+    editor.addRoot(moduleXml, ModuleXmlRootDetector.SOLUTION_MODULE_XML);
     editor.setType(SolutionLibraryType.getInstance());
     editor.setProperties(SolutionLibraryType.getInstance().createDefaultProperties());
     return myLibrariesContainer.createLibrary(editor, LibraryLevel.PROJECT);

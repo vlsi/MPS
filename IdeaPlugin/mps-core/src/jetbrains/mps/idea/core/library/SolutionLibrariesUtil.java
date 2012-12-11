@@ -18,9 +18,11 @@ package jetbrains.mps.idea.core.library;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.OrderRootType;
+import com.intellij.openapi.roots.impl.libraries.LibraryEx;
 import com.intellij.openapi.roots.impl.libraries.ProjectLibraryTable;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
@@ -28,12 +30,10 @@ import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
+import java.util.*;
 
 public class SolutionLibrariesUtil {
   @NotNull
@@ -53,23 +53,33 @@ public class SolutionLibrariesUtil {
   }
 
   private static boolean hasModule(Library library, IModule module) {
-    if (!(module instanceof Solution) || (module instanceof SolutionIdea) || (module instanceof StubSolution)) {
+    if (!isSuitableModule(module) || !SolutionLibraryType.isSolutionLibrary(library)) {
       return false;
     }
     Solution solution = (Solution) module;
-    VirtualFile solutionBundleHome = SolutionLibraryType.getJarFile(solution.getBundleHome().getPath());
-    return solutionBundleHome != null && Arrays.asList(library.getFiles(OrderRootType.CLASSES)).contains(solutionBundleHome);
+    return Arrays.asList(library.getFiles(ModuleXmlRootDetector.SOLUTION_MODULE_XML)).contains(VirtualFileUtils.getVirtualFile(solution.getDescriptorFile()));
+  }
+
+  private static boolean isSuitableModule(IModule module) {
+    return (module instanceof Solution) && !(module instanceof SolutionIdea) && !(module instanceof StubSolution);
   }
 
   @NotNull
   public static Set<ModuleReference> getModules(final Library library) {
+    if (!SolutionLibraryType.isSolutionLibrary(library)) {
+      return Collections.emptySet();
+    }
     final Set<ModuleReference> modules = new HashSet<ModuleReference>();
+    final Set<IFile> moduleXmls = new HashSet<IFile>();
+    for (VirtualFile file : library.getFiles(ModuleXmlRootDetector.SOLUTION_MODULE_XML)) {
+      moduleXmls.add(VirtualFileUtils.toIFile(file));
+    }
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
         Collection<Solution> allSolutions = ModuleRepositoryFacade.getInstance().getAllModules(Solution.class);
         for (Solution solution : allSolutions) {
-          if (hasModule(library, solution)) {
+          if (moduleXmls.contains(solution.getDescriptorFile())) {
             modules.add(solution.getModuleReference());
           }
         }
