@@ -15,9 +15,10 @@
  */
 package jetbrains.mps.workbench.actions.welcomeScreen;
 
+import com.intellij.openapi.util.IconLoader;
+
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 
 public class Icons {
-  public static final Icon OPEN_SAMPLE = new ImageIcon(Icons.class.getResource("openSample.png"));
+  public static final Icon OPEN_SAMPLE = IconLoader.findIcon("/general/openSample.png");
 }

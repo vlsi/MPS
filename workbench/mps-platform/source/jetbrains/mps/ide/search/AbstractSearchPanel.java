@@ -15,12 +15,12 @@
  */
 package jetbrains.mps.ide.search;
 
+import com.intellij.icons.AllIcons.Actions;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.ui.components.panels.NonOpaquePanel;
 import jetbrains.mps.ide.actions.MPSActions;
-import jetbrains.mps.ide.search.icons.Icons;
 import jetbrains.mps.ide.ui.CompletionTextField;
 
 import javax.swing.*;
@@ -38,8 +38,8 @@ import java.util.regex.Pattern;
 public abstract class AbstractSearchPanel extends JPanel {
   protected final Color myBadSequenceColor = Color.pink;
   protected HistoryCompletionTextField myText = new HistoryCompletionTextField();
-  private JCheckBox myIsCaseSensitive = new JCheckBox("Case sensitive");
-  private JCheckBox myIsWordsOnly = new JCheckBox("Match whole words only");
+  private JCheckBox myIsCaseSensitive = new JCheckBox("Match Case");
+  private JCheckBox myIsWordsOnly = new JCheckBox("Words");
   private JCheckBox myIsRegex = new JCheckBox("Regex");
   protected JLabel myFindResult = new JLabel();
   private JComponent myToolbarComponent;
@@ -83,18 +83,9 @@ public abstract class AbstractSearchPanel extends JPanel {
     mainPanel.add(myToolbarComponent);
 
     mainPanel.add(myIsCaseSensitive);
-    myIsCaseSensitive.setMnemonic(KeyEvent.VK_C);
+    myIsCaseSensitive.setMnemonic(KeyEvent.VK_M);
     myIsCaseSensitive.setFocusable(false);
     myIsCaseSensitive.addActionListener(new ActionListener() {
-      public void actionPerformed(ActionEvent event) {
-        search();
-      }
-    });
-
-    mainPanel.add(myIsWordsOnly);
-    myIsWordsOnly.setMnemonic(KeyEvent.VK_M);
-    myIsWordsOnly.setFocusable(false);
-    myIsWordsOnly.addActionListener(new ActionListener() {
       public void actionPerformed(ActionEvent event) {
         search();
       }
@@ -109,11 +100,20 @@ public abstract class AbstractSearchPanel extends JPanel {
       }
     });
 
+    mainPanel.add(myIsWordsOnly);
+    myIsWordsOnly.setMnemonic(KeyEvent.VK_O);
+    myIsWordsOnly.setFocusable(false);
+    myIsWordsOnly.addActionListener(new ActionListener() {
+      public void actionPerformed(ActionEvent event) {
+        search();
+      }
+    });
+
     this.add(mainPanel, BorderLayout.WEST);
 
     JPanel tailPanel = new NonOpaquePanel(new BorderLayout(5, 0));
     JPanel tailContainer = new NonOpaquePanel(new BorderLayout(5, 0));
-    JLabel escapeLabel = new JLabel(Icons.ESCAPE_ICON);
+    JLabel escapeLabel = new JLabel(Actions.Cross);
 
     tailPanel.add(myFindResult, BorderLayout.CENTER);
     tailPanel.add(escapeLabel, BorderLayout.EAST);
@@ -328,7 +328,7 @@ public abstract class AbstractSearchPanel extends JPanel {
 
   protected class ShowHistoryAction extends AnAction {
     private ShowHistoryAction() {
-      getTemplatePresentation().setIcon(Icons.SEARCH_ICON);
+      getTemplatePresentation().setIcon(Actions.Search);
       getTemplatePresentation().setDescription("Search history");
       getTemplatePresentation().setText("Search History");
 
@@ -352,7 +352,7 @@ public abstract class AbstractSearchPanel extends JPanel {
 
   private class PrevOccurenceAction extends AnAction {
     public PrevOccurenceAction() {
-      getTemplatePresentation().setIcon(Icons.PREVIOUS_ICON);
+      getTemplatePresentation().setIcon(Actions.PreviousOccurence);
       getTemplatePresentation().setDescription("Previous Occurrence");
       getTemplatePresentation().setText("Previous Occurrence");
 
@@ -378,7 +378,7 @@ public abstract class AbstractSearchPanel extends JPanel {
 
   private class NextOccurenceAction extends AnAction {
     public NextOccurenceAction() {
-      getTemplatePresentation().setIcon(Icons.NEXT_ICON);
+      getTemplatePresentation().setIcon(Actions.NextOccurence);
       getTemplatePresentation().setDescription("Next Occurrence");
       getTemplatePresentation().setText("Next Occurrence");
 
@@ -404,7 +404,7 @@ public abstract class AbstractSearchPanel extends JPanel {
 
   private class FindAllAction extends AnAction {
     private FindAllAction() {
-      getTemplatePresentation().setIcon(Icons.EXPORT_ICON);
+      getTemplatePresentation().setIcon(Actions.Export);
       getTemplatePresentation().setDescription("Export matches to Find tool window");
       getTemplatePresentation().setText("Find All");
       AnAction findNext = ActionManager.getInstance().getAction(MPSActions.EDITOR_FIND_NEXT);

@@ -15,24 +15,25 @@
  */
 package jetbrains.mps.ide.devkit.cellExplorer;
 
+import com.intellij.openapi.util.IconLoader;
+
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 
 /**
  * evgeny, 11/14/11
  */
 public class CellIcons {
 
-  public static final Icon CELL_EXPLORER_ICON = new ImageIcon(CellIcons.class.getResource("icons/cellExplorer.png"));
+  public static final Icon CELL_EXPLORER_ICON = IconLoader.findIcon("/cellExplorer/cellExplorer.png");
 
-  public static final Icon CELLS_ICON = new ImageIcon(CellIcons.class.getResource("icons/cells.png"));
+  public static final Icon CELLS_ICON = IconLoader.findIcon("/cellExplorer/cells.png");
 
-  public static final Icon CELL_ACTION_KEY_ICON = new ImageIcon(CellIcons.class.getResource("icons/cellActionKey.png"));
-  public static final Icon CELL_COMPONENT_ICON = new ImageIcon(CellIcons.class.getResource("icons/cellComponent.png"));
-  public static final Icon CELL_CONSTANT_ICON = new ImageIcon(CellIcons.class.getResource("icons/cellConst.png"));
-  public static final Icon CELL_DEFAULT_ICON = new ImageIcon(CellIcons.class.getResource("icons/cellDefault.png"));
-  public static final Icon CELL_ERROR_ICON = new ImageIcon(CellIcons.class.getResource("icons/cellError.png"));
-  public static final Icon CELL_PROPERTY_ICON = new ImageIcon(CellIcons.class.getResource("icons/cellProperty.png"));
-  public static final Icon CELL_KEY_MAP_ICON = new ImageIcon(CellIcons.class.getResource("icons/cellKeyMap.png"));
-  public static final Icon CELL_TREE_ICON = new ImageIcon(CellIcons.class.getResource("icons/cellTree.png"));
+  public static final Icon CELL_ACTION_KEY_ICON = IconLoader.findIcon("/cellExplorer/cellActionKey.png");
+  public static final Icon CELL_COMPONENT_ICON = IconLoader.findIcon("/cellExplorer/cellComponent.png");
+  public static final Icon CELL_CONSTANT_ICON = IconLoader.findIcon("/cellExplorer/cellConst.png");
+  public static final Icon CELL_DEFAULT_ICON = IconLoader.findIcon("/cellExplorer/cellDefault.png");
+  public static final Icon CELL_ERROR_ICON = IconLoader.findIcon("/cellExplorer/cellError.png");
+  public static final Icon CELL_PROPERTY_ICON = IconLoader.findIcon("/cellExplorer/cellProperty.png");
+  public static final Icon CELL_KEY_MAP_ICON = IconLoader.findIcon("/cellExplorer/cellKeyMap.png");
+  public static final Icon CELL_TREE_ICON = IconLoader.findIcon("/cellExplorer/cellTree.png");
 }

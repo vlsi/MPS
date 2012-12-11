@@ -15,12 +15,14 @@
  */
 package jetbrains.mps.plugin.icons;
 
+import com.intellij.openapi.util.IconLoader;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 public class Icons {
-  public static final Icon CONNECTED = new ImageIcon(Icons.class.getResource("connected.png"));
-  public static final Icon DISCONNECTED = new ImageIcon(Icons.class.getResource("disconnected.png"));
-  public static final Icon TRYING_TO_CONNECT = new ImageIcon(Icons.class.getResource("trying.png"));
-  public static final Icon CONNECTED_ERRORS = new ImageIcon(Icons.class.getResource("connected_with_errors.png"));
+  public static final Icon CONNECTED = IconLoader.findIcon("/ideaIntegration/connected.png");
+  public static final Icon DISCONNECTED = IconLoader.findIcon("/ideaIntegration/disconnected.png");
+  public static final Icon TRYING_TO_CONNECT = IconLoader.findIcon("/ideaIntegration/trying.png");
+  public static final Icon CONNECTED_ERRORS = IconLoader.findIcon("/ideaIntegration/connected_with_errors.png");
 }

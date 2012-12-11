@@ -54,11 +54,11 @@
     </node>
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="7518060231983298939">
       <property name="id" nameId="tp4k.5023285075122009366" value="a" />
-      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="a" />
       <property name="descripttion" nameId="tp4k.5023285075122009368" value="a" />
+      <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="a" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="a" />
-      <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="a" />
       <property name="name" nameId="tpck.1169194664001" value="a" />
+      <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="a" />
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="123.1" />
       <property name="version" nameId="tp4k.5023285075122009369" value="a" />
     </node>
@@ -139,7 +139,7 @@
     </node>
   </root>
   <root id="8750596094204760415">
-    <node role="icon" roleId="uhxm.7966814097310618131" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4763274727405913090" />
+    <node role="icon" roleId="uhxm.7966814097310618131" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="7456875308137632425" />
   </root>
   <root id="8750596094204760417">
     <node role="editor" roleId="uhxm.3754890006475816675" type="fb9u.SettingsEditor" typeId="fb9u.946964771156066621" id="8750596094204760418">

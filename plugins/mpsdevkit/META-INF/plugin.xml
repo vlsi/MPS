@@ -87,6 +87,9 @@
               class="jetbrains.mps.ide.devkit.help.ShowDocumentationAction"
               text="Browse MPS Documentation"
               description="You can browse online documentation on MPS"/>
+      <action id="JetBrainsTV.MPS"
+              class="jetbrains.mps.ide.devkit.help.MPSJetBrainsTvAction"
+              text="JetBrains TV"/>
 
       <add-to-group group-id="WelcomeScreen.Documentation" anchor="first"/>
     </group>
