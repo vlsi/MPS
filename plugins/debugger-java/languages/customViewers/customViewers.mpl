@@ -96,7 +96,7 @@
   </generators>
   <sourcePath />
   <dependencies>
-    <dependency reexport="true">fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)</dependency>
+    <dependency reexport="true">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
     <dependency reexport="true">80208897-4572-437d-b50e-8f050cba9566(jetbrains.mps.debugger.java.privateMembers)</dependency>
     <dependency reexport="false">5b1f863d-65a0-41a6-a801-33896be24202(jetbrains.mps.ide.editor)</dependency>
@@ -112,7 +112,7 @@
   </usedDevKits>
   <runtime>
     <dependency reexport="false">cf8c9de5-1b4a-4dc8-8e6d-847159af31dd(jetbrains.mps.debugger.java.api)</dependency>
-    <dependency reexport="false">fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)</dependency>
+    <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
   </runtime>
   <extendedLanguages>
     <extendedLanguage>ef7bf5ac-d06c-4342-b11d-e42104eb9343(jetbrains.mps.lang.plugin.standalone)</extendedLanguage>
