@@ -19,6 +19,7 @@ package jetbrains.mps.workbench.actions.goTo.matcher;
 import com.intellij.ide.util.gotoByName.*;
 import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.progress.ProcessCanceledException;
+import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.util.Comparing;
 import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
@@ -34,6 +35,7 @@ import com.intellij.util.containers.ContainerUtil;
 import org.jetbrains.annotations.Nullable;
 
 import java.lang.ref.WeakReference;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
@@ -252,5 +254,19 @@ public class MPSNodeItemProvider implements ChooseByNameItemProvider {
 
       return Comparing.compare(myModel.getFullName(o1), myModel.getFullName(o2));
     }
+  }
+
+
+  // For compatibility with IDEA12
+  public boolean filterElements(ChooseByNameBase base, String pattern, boolean everywhere, ProgressIndicator cancelled, Processor<Object> consumer) {
+    Boolean result = null;
+    try {
+      DefaultChooseByNameItemProvider provider = new DefaultChooseByNameItemProvider(myContext.get());
+      Method method = provider.getClass().getMethod("filterElements", ChooseByNameBase.class, String.class, boolean.class, ProgressIndicator.class, Processor.class);
+      result = (Boolean)method.invoke(provider, base, pattern, everywhere, cancelled, consumer);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return result;
   }
 }

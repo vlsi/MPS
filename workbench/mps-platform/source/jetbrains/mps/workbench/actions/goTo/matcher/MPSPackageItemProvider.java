@@ -18,15 +18,21 @@ package jetbrains.mps.workbench.actions.goTo.matcher;
 
 import com.intellij.ide.util.gotoByName.ChooseByNameBase;
 import com.intellij.ide.util.gotoByName.DefaultChooseByNameItemProvider;
+import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.util.Computable;
 import com.intellij.psi.PsiElement;
 import com.intellij.util.Processor;
 
+import java.lang.ref.WeakReference;
+import java.lang.reflect.Method;
 import java.util.List;
 
 public class MPSPackageItemProvider extends DefaultChooseByNameItemProvider {
+  private WeakReference<PsiElement> myContext;          // For compatibility with IDEA12
+
   public MPSPackageItemProvider(PsiElement context) {
     super(context);
+    myContext = new WeakReference<PsiElement>(context); // For compatibility with IDEA12
   }
 
   public void filterElements(ChooseByNameBase base, String pattern, boolean everywhere, Computable<Boolean> cancelled, Processor<Object> consumer) {
@@ -41,5 +47,20 @@ public class MPSPackageItemProvider extends DefaultChooseByNameItemProvider {
     if ("".equals(pattern)) return "*";
     if (pattern.endsWith(" ")) return pattern;
     else return pattern + ".*";
+  }
+
+
+
+  // For compatibility with IDEA12
+  public boolean filterElements(ChooseByNameBase base, String pattern, boolean everywhere, ProgressIndicator cancelled, Processor<Object> consumer) {
+    Boolean result = null;
+    try {
+      DefaultChooseByNameItemProvider provider = new DefaultChooseByNameItemProvider(myContext.get());
+      Method method = provider.getClass().getMethod("filterElements", ChooseByNameBase.class, String.class, boolean.class, ProgressIndicator.class, Processor.class);
+      result = (Boolean)method.invoke(provider, base, transformPattern(pattern), everywhere, cancelled, consumer);
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
+    return result;
   }
 }
