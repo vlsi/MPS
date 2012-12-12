@@ -15,11 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import com.intellij.openapi.application.ApplicationManager;
-import com.intellij.openapi.application.impl.ApplicationImpl;
 import com.intellij.ui.ColorUtil;
-import com.intellij.ui.Gray;
-import com.intellij.ui.LightColors;
 import com.intellij.util.ui.ButtonlessScrollBarUI;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.errors.MessageStatus;
@@ -42,6 +38,9 @@ import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComponent, MouseMotionListener, MouseListener {
+  private final static Color COLOR_TRACK_BACKGROUND =  new Color(0xf5f5f5); // ButtonlessScrollBarUI.TRACK_BACKGROUND in IDEA11 vs ButtonlessScrollBarUI.getTrackBackground() in IDEA12
+  private final static Color COLOR_TRACK_BORDER = new Color(230, 230, 230); // ButtonlessScrollBarUI.TRACK_BORDER in IDEA11 vs ButtonlessScrollBarUI.getTrackBorderColor() in IDEA12
+
   private EditorComponent myEditorComponent;
   private MyErrorsButton myErrorsButton = new MyErrorsButton();
   private List<SimpleEditorMessage> myMessages = new CopyOnWriteArrayList<SimpleEditorMessage>();
@@ -88,10 +87,10 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
 
   @Override
   protected void paintTrack(Graphics g, JComponent c, Rectangle bounds) {
-    g.setColor(LightColors.SLIGHTLY_GRAY);
+    g.setColor(COLOR_TRACK_BACKGROUND);
     g.fillRect(bounds.x, bounds.y, bounds.width, bounds.height);
 
-    g.setColor(Gray._230);
+    g.setColor(COLOR_TRACK_BORDER);
     int border = myRightToLeft ? bounds.x + bounds.width - 1 : bounds.x;
     g.drawLine(border, bounds.y, border, bounds.y + bounds.height);
 
@@ -398,10 +397,10 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
     public void paint(Graphics g) {
       final Rectangle bounds = getBounds();
 
-      g.setColor(LightColors.SLIGHTLY_GRAY);
+      g.setColor(COLOR_TRACK_BACKGROUND);
       g.fillRect(0, 0, bounds.width, bounds.height);
 
-      g.setColor(Gray._230);
+      g.setColor(COLOR_TRACK_BORDER);
       g.drawLine(0, 0, 0, bounds.height);
 
       Icon icon = getIcon();
