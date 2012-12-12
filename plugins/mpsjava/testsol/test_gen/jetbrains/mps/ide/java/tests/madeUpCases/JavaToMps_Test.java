@@ -72,14 +72,14 @@ public class JavaToMps_Test extends BaseTransformationTest4 {
       this.addNodeById("1218582063869484737");
       this.addNodeById("8083368042256419833");
       // <node> 
-      Utils.checkFile(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/SelfRef.java", SNodeOperations.cast(this.getNodeById("4795297196607521155"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+      Utils.checkFile(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/selfref", SNodeOperations.cast(this.getNodeById("4795297196607521155"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     }
 
     public void test_ClassWInnerInterace() throws Exception {
       this.addNodeById("4795297196607520929");
       this.addNodeById("1218582063869484737");
       this.addNodeById("8083368042256419833");
-      Utils.checkFile(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/ClassWithIface.java", SNodeOperations.cast(this.getNodeById("1218582063869484741"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+      Utils.checkFile(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/classwiface", SNodeOperations.cast(this.getNodeById("1218582063869484741"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     }
 
     public void test_Imports1() throws Exception {
@@ -107,7 +107,7 @@ public class JavaToMps_Test extends BaseTransformationTest4 {
       this.addNodeById("4795297196607520929");
       this.addNodeById("1218582063869484737");
       this.addNodeById("8083368042256419833");
-      Utils.checkFile(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/NestContainer.java", SNodeOperations.cast(this.getNodeById("8083368042256419834"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
+      Utils.checkFile(PathManager.getHomePath() + "/plugins/mpsjava/tests/singleFiles/nestcontainer", SNodeOperations.cast(this.getNodeById("8083368042256419834"), "jetbrains.mps.baseLanguage.structure.ClassConcept"));
     }
 
     public void test_FullSource() throws Exception {

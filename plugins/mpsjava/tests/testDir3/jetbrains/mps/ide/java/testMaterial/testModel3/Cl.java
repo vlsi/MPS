@@ -6,6 +6,5 @@ import java.io.*;
 
 public class Cl {
 
-    // must be resolved to j.m.i.j.testMaterial3.sub.MyClass
     static MyClass x;
 }

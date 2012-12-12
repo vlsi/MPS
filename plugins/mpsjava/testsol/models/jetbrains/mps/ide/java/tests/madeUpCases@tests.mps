@@ -219,8 +219,8 @@
           </node>
         </node>
         <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8083368042256323315">
-          <property name="name" nameId="tpck.1169194664001" value="overloaded" />
           <property name="isSynchronized" nameId="tpee.4276006055363816570" value="true" />
+          <property name="name" nameId="tpck.1169194664001" value="overloaded" />
           <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="8083368042256323316" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8083368042256323319" />
           <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="8083368042256323318" />
@@ -311,8 +311,8 @@
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="8083368042256391461" />
         </node>
         <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="8083368042256391462">
-          <property name="name" nameId="tpck.1169194664001" value="transnt" />
           <property name="isTransient" nameId="tpee.8606350594693632173" value="true" />
+          <property name="name" nameId="tpck.1169194664001" value="transnt" />
           <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="8083368042256391463" />
           <node role="type" roleId="tpee.5680397130376446158" type="tpee.IntegerType" typeId="tpee.1070534370425" id="8083368042256391465" />
         </node>
@@ -427,7 +427,7 @@
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~PathManager" resolveInfo="PathManager" />
               </node>
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7030568040400118042">
-                <property name="value" nameId="tpee.1070475926801" value="/plugins/mpsjava/tests/singleFiles/SelfRef.java" />
+                <property name="value" nameId="tpee.1070475926801" value="/plugins/mpsjava/tests/singleFiles/selfref" />
               </node>
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="7030568040400118052">
@@ -451,7 +451,7 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="msyo.~PathManager%dgetHomePath()%cjava%dlang%dString" resolveInfo="getHomePath" />
               </node>
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="8083368042256449072">
-                <property name="value" nameId="tpee.1070475926801" value="/plugins/mpsjava/tests/singleFiles/ClassWithIface.java" />
+                <property name="value" nameId="tpee.1070475926801" value="/plugins/mpsjava/tests/singleFiles/classwiface" />
               </node>
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="8083368042256449073">
@@ -587,7 +587,7 @@
                 <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="msyo.~PathManager" resolveInfo="PathManager" />
               </node>
               <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="7030568040400313719">
-                <property name="value" nameId="tpee.1070475926801" value="/plugins/mpsjava/tests/singleFiles/NestContainer.java" />
+                <property name="value" nameId="tpee.1070475926801" value="/plugins/mpsjava/tests/singleFiles/nestcontainer" />
               </node>
             </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="7030568040400313730">

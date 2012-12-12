@@ -38,7 +38,6 @@ import com.intellij.psi.*;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.ide.java.util.SolutionIds;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.project.ModelRootContributor;
