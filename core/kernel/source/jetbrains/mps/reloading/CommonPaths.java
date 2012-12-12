@@ -35,6 +35,7 @@ public class CommonPaths {
 
   public static final boolean isMac = OS_NAME.startsWith("mac");
   public static final int jdkVersion;
+  public static final boolean isToolsJarNeeded;
 
   private static final Logger LOG = Logger.getLogger(CommonPaths.class);
 
@@ -48,6 +49,8 @@ public class CommonPaths {
       LOG.error("Unexpected java version format " + JAVA_VERSION + ".");
       jdkVersion = 0;
     }
+    
+    isToolsJarNeeded = !(isMac && jdkVersion < 7);
   }
 
   //--------paths-----------
@@ -78,8 +81,6 @@ public class CommonPaths {
         addTestJars(result);
       } else if (type == ClassType.JDK) {
         return getJDKPath();
-      } else if (type == ClassType.JDK_TOOLS) {
-        addIfExists(result, "/lib/tools.jar");
       }
     }
     return itemToPath(result);
@@ -128,6 +129,7 @@ public class CommonPaths {
     for (String s : getJDKJars()) {
       addJarForName(composite, s);
     }
+    addToolsJar(composite);
     return composite;
   }
 
@@ -167,7 +169,6 @@ public class CommonPaths {
     addIdeaJars(result);
     addUIJars(result);
     addWorkbenchJars(result);
-    addToolsJar(result);
     addClasses(result, PathManager.getHomePath());
     return result;
   }
@@ -224,7 +225,9 @@ public class CommonPaths {
   }
 
   private static void addToolsJar(CompositeClassPathItem result) {
-    addIfExists(result, "/lib/tools.jar");
+    if (isToolsJarNeeded) {
+      addIfExists(result, "/lib/tools.jar");
+    }
   }
 
   public static void addClasses(final CompositeClassPathItem result, final String homePath) {

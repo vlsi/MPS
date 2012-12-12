@@ -113,7 +113,6 @@
       <modulePath path="${project}/languages/core/core/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/core/stub/Annotations/Annotations.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/Ant/Ant.msd" folder="core.stub" />
-      <modulePath path="${project}/languages/core/stub/JDK.Tools/Tools.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/JDK/JDK.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/MPS.Core/Core.msd" folder="core.stub" />
       <modulePath path="${project}/languages/core/stub/MPS.Editor/Editor.msd" folder="core.stub" />
