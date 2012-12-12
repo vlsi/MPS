@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="8tk73b3bcdh759dcn0qw816uipqemwn">
+<dependencies version="2" modelHash="-5lmxrxd5ixp1f59i0imxvykc7citqt5">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
   <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" hash="-47b5z0vi50ch1p0zpran7ye5sfop6r3" />
-  <dep model="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)" hash="-d6xzonw1u928f95supzx9vdyfukq0be" />
+  <dep model="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)" hash="dgvjwnd8yiqnszpfqzul60nikd3045y" />
   <dep model="r:b54bdfd2-1093-4bb6-bc08-562a3cd72450(jetbrains.mps.debugger.java.runtime.ui)" hash="9tm6o5is1mo0yj2brvc92h5smliy1kp" />
-  <common hash="-1iu3e6qlvz7jt4rx7pjiinyfyoa8ywa" />
-  <source id="6957207478384132498" name="JavaPrimitiveValue" hash="2hma9wpv3g41tqb22byszm2n6wgegpb">
+  <common hash="-7gcvypu8c7sel6f35q6z8flqlew4fxk" />
+  <source id="6957207478384132498" name="JavaPrimitiveValue" hash="9fagltc4oncdky7t84nz4n3xyh4ie1w">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" />
     <dep model="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)" />
     <file name="JavaPrimitiveValue.java" />
   </source>
-  <source id="6957207478384132580" name="JavaObjectValue" hash="-c9wa7gb2x4zk1pllhp91iw9rjcrfrd0">
+  <source id="6957207478384132580" name="JavaObjectValue" hash="-66j8abybyzpfj8ozoi3gaycr74ju5xs">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" />
     <dep model="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)" />
     <file name="JavaObjectValue.java" />
   </source>
-  <source id="6957207478384132896" name="JavaStringValue" hash="8n1u18xmvhdw33xs2ozm6dvrhe6jucj">
+  <source id="6957207478384132896" name="JavaStringValue" hash="7mk4ul9g0f239kegaqgn5tqxxe9b3bm">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)" />
     <file name="JavaStringValue.java" />
   </source>
-  <source id="6957207478384132938" name="JavaArrayValue" hash="-at4p08syz8kd3vcjvsuimffuphgykrc">
+  <source id="6957207478384132938" name="JavaArrayValue" hash="9ywzrtqn1ktcx2imanbhk5yb9axboj4">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" />
     <dep model="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)" />
     <file name="JavaArrayValue.java" />
   </source>
-  <source id="6957207478384133213" name="ValueUtilImpl" hash="-38fbw0uqoim25dlpzja6cbkqhu70j1m">
+  <source id="6957207478384133213" name="ValueUtilImpl" hash="-6d88uel1eg2f8cwo37soehnrbuniizy">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)" />
     <file name="ValueUtilImpl.java" />
   </source>
-  <source id="3187167456722650426" name="FieldWatchpointValue" hash="-dqzk9flagfer428x3nwwahlz187n1gi">
+  <source id="3187167456722650426" name="FieldWatchpointValue" hash="9ubix5wu3deyfqb30mim4632bfsaqjw">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)" />
     <dep model="r:b54bdfd2-1093-4bb6-bc08-562a3cd72450(jetbrains.mps.debugger.java.runtime.ui)" />
