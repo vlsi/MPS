@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ide.java.basePlatform" uuid="65557aaa-5381-435d-b705-3f8d546e0f40" compileInMPS="false">
   <models>
+    <modelRoot path="${mps_home}/plugins/mpsjava/classes">
+      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
+    </modelRoot>
     <modelRoot path="${module}/models" />
-    <modelRoot path="${mps_home}/plugins/mpsjava/classes" type="java_class_stub" />
   </models>
   <sourcePath />
   <dependencies>
