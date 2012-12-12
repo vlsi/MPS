@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="4003657351907888918" modelId="r:784d242b-f6ad-4b0f-aa36-a8c26e63e674(jetbrains.mps.build.ant.brokenRefs)" />
+  <root nodeId="4003657351907888919" modelId="r:784d242b-f6ad-4b0f-aa36-a8c26e63e674(jetbrains.mps.build.ant.brokenRefs)">
+    <nodeInfo nodeId="4003657351907888932" fileName="TestBrokenReferencesOnTeamcity.java" startLine="16" startPosition="57" endLine="17" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907888938" fileName="TestBrokenReferencesOnTeamcity.java" startLine="21" startPosition="62" endLine="22" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4003657351907888922" fileName="TestBrokenReferencesOnTeamcity.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TestBrokenReferencesOnTeamcity#()V" />
+    <nodeInfo nodeId="4003657351907888926" fileName="TestBrokenReferencesOnTeamcity.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWorkerClass#()Ljava/lang/Class;" />
+    <nodeInfo nodeId="4003657351907888934" fileName="TestBrokenReferencesOnTeamcity.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getExecuteStreamHandler#()Ljetbrains/mps/build/ant/MyExecuteStreamHandler;" />
+    <scopeInfo nodeId="4003657351907888925" fileName="TestBrokenReferencesOnTeamcity.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
+    <scopeInfo nodeId="4003657351907888931" fileName="TestBrokenReferencesOnTeamcity.java" startLine="16" startPosition="57" endLine="17" endPosition="44" />
+    <scopeInfo nodeId="4003657351907888937" fileName="TestBrokenReferencesOnTeamcity.java" startLine="21" startPosition="62" endLine="22" endPosition="86" />
+    <scopeInfo nodeId="4003657351907888922" fileName="TestBrokenReferencesOnTeamcity.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="4003657351907888926" fileName="TestBrokenReferencesOnTeamcity.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="4003657351907888934" fileName="TestBrokenReferencesOnTeamcity.java" startLine="20" startPosition="0" endLine="24" endPosition="0" />
+    <unitInfo nodeId="4003657351907888919" fileName="TestBrokenReferencesOnTeamcity.java" startLine="12" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.build.ant.brokenRefs.TestBrokenReferencesOnTeamcity" />
+  </root>
+</debugInfo>
+

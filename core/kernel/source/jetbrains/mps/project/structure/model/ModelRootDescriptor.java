@@ -17,13 +17,19 @@ package jetbrains.mps.project.structure.model;
 
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.util.IterableUtil;
+import jetbrains.mps.util.io.ModelInputStream;
+import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.mps.openapi.persistence.Memento;
+
+import java.io.IOException;
+import java.util.Collection;
 
 /**
  * evgeny, 10/24/12
  */
 
-public class ModelRootDescriptor {
+public final class ModelRootDescriptor {
 
   private String type;
   private Memento memento;
@@ -57,5 +63,61 @@ public class ModelRootDescriptor {
     ModelRoot modelRoot = new ModelRoot();
     modelRoot.load(memento);
     return modelRoot;
+  }
+
+  public void save(ModelOutputStream stream) throws IOException {
+    stream.writeByte(0x6a);
+    stream.writeString(type);
+    saveMemento(null, memento, stream);
+  }
+
+  public static ModelRootDescriptor load(ModelInputStream stream) throws IOException {
+    if (stream.readByte() != 0x6a) throw new IOException("bad stream: no model root descriptor start marker");
+    return new ModelRootDescriptor(stream.readString(), readMemento(null, stream));
+  }
+
+  private static void saveMemento(Memento parent, Memento mem, ModelOutputStream stream) throws IOException {
+    if (mem == null) {
+      stream.writeByte(0x70);
+      return;
+    }
+    stream.writeByte(0x55);
+    if (parent != null) stream.writeString(mem.getType());
+
+    Collection<String> keys = IterableUtil.asCollection(mem.getKeys());
+    stream.writeInt(keys.size());
+    for (String key : keys) {
+      stream.writeString(key);
+      stream.writeString(mem.get(key));
+    }
+
+    Collection<Memento> children = IterableUtil.asCollection(mem.getChildren());
+    stream.writeInt(children.size());
+    for (Memento child : children) {
+      saveMemento(mem, child, stream);
+    }
+
+    stream.writeString(mem.getText());
+  }
+
+  private static Memento readMemento(Memento parent, ModelInputStream stream) throws IOException {
+    byte header = stream.readByte();
+    if (header == 0x70) {
+      return null;
+    }
+    if (header != 0x55) throw new IOException("bad stream: no memento start marker");
+
+    Memento mem = parent != null ? parent.createChild(stream.readString()) : new MementoImpl();
+
+    for (int valuesCount = stream.readInt(); valuesCount > 0; valuesCount--) {
+      mem.put(stream.readString(), stream.readString());
+    }
+
+    for (int childrenCount = stream.readInt(); childrenCount > 0; childrenCount--) {
+      readMemento(mem, stream);
+    }
+
+    mem.setText(stream.readString());
+    return mem;
   }
 }

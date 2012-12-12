@@ -22,6 +22,7 @@ import java.awt.BorderLayout;
 import javax.swing.JLabel;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
+import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodeId;
 import javax.swing.JComponent;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -72,9 +73,12 @@ public class DiffEditor implements EditorMessageOwner {
     return getMainEditor().getEditedNode();
   }
 
-  public void editRoot(@NotNull Project project, @NotNull SNodeId rootId, @NotNull SModel model) {
-    SNode root = model.getNodeById(rootId);
-    if (root != null && SNodeOperations.getParent(root) == null) {
+  public void editRoot(@NotNull Project project, @Nullable SNodeId rootId, @NotNull SModel model) {
+    SNode root = (rootId == null ?
+      null :
+      model.getNodeById(rootId)
+    );
+    if (SNodeOperations.getParent(root) == null) {
       getMainEditor().editNode(root, DiffTemporaryModule.getOperationContext(project, model));
     }
   }

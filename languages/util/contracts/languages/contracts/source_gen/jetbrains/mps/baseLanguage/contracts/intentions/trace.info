@@ -13,13 +13,14 @@
     <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="55" startPosition="5" endLine="56" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6302815655306166940" fileName="RemoveConditions_Intention.java" startLine="59" startPosition="91" endLine="60" endPosition="283" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="63" startPosition="53" endLine="64" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="68" startPosition="37" endLine="69" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="70" startPosition="5" endLine="71" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6302815655306166930" fileName="RemoveConditions_Intention.java" startLine="78" startPosition="87" endLine="79" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6302815655306167016" fileName="RemoveConditions_Intention.java" startLine="82" startPosition="78" endLine="83" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="86" startPosition="48" endLine="87" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="67" startPosition="35" endLine="68" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="72" startPosition="37" endLine="73" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="74" startPosition="5" endLine="75" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6302815655306166930" fileName="RemoveConditions_Intention.java" startLine="82" startPosition="87" endLine="83" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6302815655306167016" fileName="RemoveConditions_Intention.java" startLine="86" startPosition="78" endLine="87" endPosition="223" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="90" startPosition="48" endLine="91" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RemoveConditions_Intention#()V" />
-    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="75" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="79" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
     <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -29,14 +30,15 @@
     <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="52" startPosition="84" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="67" startPosition="99" endLine="70" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="67" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="71" startPosition="99" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="82" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
     <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="52" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="67" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="71" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
     <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="25" startPosition="39" endLine="25" endPosition="39" />
-    <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="75" startPosition="38" endLine="75" endPosition="38" />
+    <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="79" startPosition="38" endLine="79" endPosition="38" />
     <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="28" startPosition="30" endLine="29" endPosition="76" />
     <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="32" startPosition="35" endLine="33" endPosition="30" />
     <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="36" startPosition="41" endLine="37" endPosition="88" />
@@ -46,12 +48,13 @@
     <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="53" startPosition="53" endLine="54" endPosition="19" />
     <scopeInfo nodeId="6302815655306166933" fileName="RemoveConditions_Intention.java" startLine="59" startPosition="91" endLine="60" endPosition="283" />
     <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="63" startPosition="53" endLine="64" endPosition="142" />
-    <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="68" startPosition="37" endLine="69" endPosition="132" />
-    <scopeInfo nodeId="6302815655306137099" fileName="RemoveConditions_Intention.java" startLine="78" startPosition="87" endLine="79" endPosition="33" />
-    <scopeInfo nodeId="6302815655306137101" fileName="RemoveConditions_Intention.java" startLine="82" startPosition="78" endLine="83" endPosition="223" />
-    <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="86" startPosition="48" endLine="87" endPosition="45" />
+    <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="67" startPosition="35" endLine="68" endPosition="17" />
+    <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="72" startPosition="37" endLine="73" endPosition="132" />
+    <scopeInfo nodeId="6302815655306137099" fileName="RemoveConditions_Intention.java" startLine="82" startPosition="87" endLine="83" endPosition="33" />
+    <scopeInfo nodeId="6302815655306137101" fileName="RemoveConditions_Intention.java" startLine="86" startPosition="78" endLine="87" endPosition="223" />
+    <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="90" startPosition="48" endLine="91" endPosition="45" />
     <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="25" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="75" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="79" startPosition="0" endLine="81" endPosition="0" />
     <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
     <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
@@ -63,27 +66,28 @@
       <varInfo nodeId="6302815655306137097" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="63" startPosition="0" endLine="66" endPosition="0" />
-    <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="78" startPosition="0" endLine="81" endPosition="0">
-      <varInfo nodeId="6302815655306137097" varName="editorContext" />
-      <varInfo nodeId="6302815655306137097" varName="node" />
-    </scopeInfo>
+    <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="67" startPosition="0" endLine="70" endPosition="0" />
     <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="82" startPosition="0" endLine="85" endPosition="0">
       <varInfo nodeId="6302815655306137097" varName="editorContext" />
       <varInfo nodeId="6302815655306137097" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="86" startPosition="0" endLine="89" endPosition="0" />
+    <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="86" startPosition="0" endLine="89" endPosition="0">
+      <varInfo nodeId="6302815655306137097" varName="editorContext" />
+      <varInfo nodeId="6302815655306137097" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="90" startPosition="0" endLine="93" endPosition="0" />
     <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="52" startPosition="84" endLine="56" endPosition="16" />
-    <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="67" startPosition="99" endLine="71" endPosition="30" />
+    <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="71" startPosition="99" endLine="75" endPosition="30" />
     <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="52" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="6302815655306137097" varName="editorContext" />
       <varInfo nodeId="6302815655306137097" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="67" startPosition="0" endLine="73" endPosition="0">
+    <scopeInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="71" startPosition="0" endLine="77" endPosition="0">
       <varInfo nodeId="6302815655306137097" varName="context" />
       <varInfo nodeId="6302815655306137097" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="74" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.intentions.RemoveConditions_Intention$IntentionImplementation" />
-    <unitInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="22" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.intentions.RemoveConditions_Intention" />
+    <unitInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="78" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.intentions.RemoveConditions_Intention$IntentionImplementation" />
+    <unitInfo nodeId="6302815655306137097" fileName="RemoveConditions_Intention.java" startLine="22" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.intentions.RemoveConditions_Intention" />
   </root>
   <root nodeId="6302815655306137102" modelId="r:3070cbe8-0c27-49bc-b3e1-822ee20455cd(jetbrains.mps.baseLanguage.contracts.intentions)">
     <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
@@ -97,13 +101,14 @@
     <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="54" startPosition="5" endLine="55" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2348361366766591633" fileName="AddConditions_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="123" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="62" startPosition="53" endLine="63" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="67" startPosition="37" endLine="68" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="69" startPosition="5" endLine="70" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6302815655306145565" fileName="AddConditions_Intention.java" startLine="77" startPosition="87" endLine="78" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6302815655306145570" fileName="AddConditions_Intention.java" startLine="82" startPosition="211" endLine="83" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="87" startPosition="48" endLine="88" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="66" startPosition="35" endLine="67" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="73" startPosition="5" endLine="74" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6302815655306145565" fileName="AddConditions_Intention.java" startLine="81" startPosition="87" endLine="82" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6302815655306145570" fileName="AddConditions_Intention.java" startLine="86" startPosition="211" endLine="87" endPosition="308" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="91" startPosition="48" endLine="92" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddConditions_Intention#()V" />
-    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="74" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="78" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
     <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -113,15 +118,16 @@
     <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="51" startPosition="84" endLine="54" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="66" startPosition="99" endLine="69" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6302815655306145568" fileName="AddConditions_Intention.java" startLine="81" startPosition="78" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="87" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="81" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="70" startPosition="99" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6302815655306145568" fileName="AddConditions_Intention.java" startLine="85" startPosition="78" endLine="88" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="91" startPosition="0" endLine="94" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="85" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="51" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
     <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="24" startPosition="36" endLine="24" endPosition="36" />
-    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="74" startPosition="38" endLine="74" endPosition="38" />
+    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="78" startPosition="38" endLine="78" endPosition="38" />
     <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="76" />
     <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="27" />
     <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="35" startPosition="41" endLine="36" endPosition="85" />
@@ -131,12 +137,13 @@
     <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="52" startPosition="53" endLine="53" endPosition="19" />
     <scopeInfo nodeId="2348361366766581297" fileName="AddConditions_Intention.java" startLine="58" startPosition="91" endLine="59" endPosition="123" />
     <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="62" startPosition="53" endLine="63" endPosition="142" />
-    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="67" startPosition="37" endLine="68" endPosition="129" />
-    <scopeInfo nodeId="6302815655306137104" fileName="AddConditions_Intention.java" startLine="77" startPosition="87" endLine="78" endPosition="30" />
-    <scopeInfo nodeId="6302815655306145569" fileName="AddConditions_Intention.java" startLine="82" startPosition="211" endLine="83" endPosition="308" />
-    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="87" startPosition="48" endLine="88" endPosition="42" />
+    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="66" startPosition="35" endLine="67" endPosition="17" />
+    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="71" startPosition="37" endLine="72" endPosition="129" />
+    <scopeInfo nodeId="6302815655306137104" fileName="AddConditions_Intention.java" startLine="81" startPosition="87" endLine="82" endPosition="30" />
+    <scopeInfo nodeId="6302815655306145569" fileName="AddConditions_Intention.java" startLine="86" startPosition="211" endLine="87" endPosition="308" />
+    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="91" startPosition="48" endLine="92" endPosition="42" />
     <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="74" startPosition="0" endLine="76" endPosition="0" />
+    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="78" startPosition="0" endLine="80" endPosition="0" />
     <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
@@ -148,15 +155,16 @@
       <varInfo nodeId="6302815655306137102" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="62" startPosition="0" endLine="65" endPosition="0" />
-    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
+    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0">
       <varInfo nodeId="6302815655306137102" varName="editorContext" />
       <varInfo nodeId="6302815655306137102" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6302815655306137106" fileName="AddConditions_Intention.java" startLine="81" startPosition="78" endLine="84" endPosition="7" />
-    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="87" startPosition="0" endLine="90" endPosition="0" />
+    <scopeInfo nodeId="6302815655306137106" fileName="AddConditions_Intention.java" startLine="85" startPosition="78" endLine="88" endPosition="7" />
+    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="91" startPosition="0" endLine="94" endPosition="0" />
     <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="51" startPosition="84" endLine="55" endPosition="16" />
-    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="66" startPosition="99" endLine="70" endPosition="30" />
-    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="81" startPosition="0" endLine="86" endPosition="0">
+    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="70" startPosition="99" endLine="74" endPosition="30" />
+    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="85" startPosition="0" endLine="90" endPosition="0">
       <varInfo nodeId="6302815655306137102" varName="editorContext" />
       <varInfo nodeId="6302815655306137102" varName="node" />
     </scopeInfo>
@@ -164,12 +172,12 @@
       <varInfo nodeId="6302815655306137102" varName="editorContext" />
       <varInfo nodeId="6302815655306137102" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="66" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="6302815655306137102" varName="context" />
       <varInfo nodeId="6302815655306137102" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="73" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.intentions.AddConditions_Intention$IntentionImplementation" />
-    <unitInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="21" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.intentions.AddConditions_Intention" />
+    <unitInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="77" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.intentions.AddConditions_Intention$IntentionImplementation" />
+    <unitInfo nodeId="6302815655306137102" fileName="AddConditions_Intention.java" startLine="21" startPosition="0" endLine="96" endPosition="0" unitName="jetbrains.mps.baseLanguage.contracts.intentions.AddConditions_Intention" />
   </root>
 </debugInfo>
 

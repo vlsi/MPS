@@ -28,8 +28,7 @@ import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
@@ -67,9 +66,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
       if (fieldElement != null) {
         myJUnitSettings.readExternal(fieldElement);
       } else {
-        if (log.isDebugEnabled()) {
-          log.debug("Element " + "myJUnitSettings" + " in " + this.getClass().getName() + " was null.");
-        }
+        LOG.debug("Element " + "myJUnitSettings" + " in " + this.getClass().getName() + " was null.");
       }
     }
     {
@@ -77,9 +74,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
       if (fieldElement != null) {
         myJavaRunParameters.readExternal(fieldElement);
       } else {
-        if (log.isDebugEnabled()) {
-          log.debug("Element " + "myJavaRunParameters" + " in " + this.getClass().getName() + " was null.");
-        }
+        LOG.debug("Element " + "myJavaRunParameters" + " in " + this.getClass().getName() + " was null.");
       }
     }
   }
@@ -169,9 +164,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
       clone.myJavaRunParameters = (JavaRunParameters_Configuration) myJavaRunParameters.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      if (log.isErrorEnabled()) {
-        log.error("", ex);
-      }
+      LOG.error("", ex);
     }
     return clone;
   }
@@ -241,7 +234,7 @@ public class JUnitTests_Configuration extends BaseMpsRunConfiguration implements
     return new Object[]{this.getTestsToMake()};
   }
 
-  protected static Log log = LogFactory.getLog(JUnitTests_Configuration.class);
+  private static Logger LOG = Logger.getLogger(JUnitTests_Configuration.class);
 
   public static boolean isNotEmpty_p90f5h_a0a0t(String str) {
     return str != null && str.length() > 0;

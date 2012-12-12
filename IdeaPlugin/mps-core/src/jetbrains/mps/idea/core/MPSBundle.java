@@ -28,28 +28,28 @@ import java.util.ResourceBundle;
  * evgeny, 10/26/11
  */
 public class MPSBundle {
-    private static Reference<ResourceBundle> ourBundle;
+  private static Reference<ResourceBundle> ourBundle;
 
-    @NonNls
-    private static final String BUNDLE = "jetbrains.mps.idea.core.MPSBundle";
+  @NonNls
+  private static final String BUNDLE = "jetbrains.mps.idea.core.MPSBundle";
 
-    public static String message(@PropertyKey(resourceBundle = BUNDLE) String key, Object... params) {
-        return CommonBundle.message(getBundle(), key, params);
+  public static String message(@PropertyKey(resourceBundle = BUNDLE) String key, Object... params) {
+    return CommonBundle.message(getBundle(), key, params);
+  }
+
+  public static String getString(@PropertyKey(resourceBundle = BUNDLE) String key, Object... params) {
+    return CommonBundle.message(getBundle(), key, params);
+  }
+
+  private static ResourceBundle getBundle() {
+    ResourceBundle bundle = null;
+
+    if (ourBundle != null) bundle = ourBundle.get();
+
+    if (bundle == null) {
+      bundle = ResourceBundle.getBundle(BUNDLE);
+      ourBundle = new SoftReference<ResourceBundle>(bundle);
     }
-
-    public static String getString(@PropertyKey(resourceBundle = BUNDLE) String key, Object... params) {
-        return CommonBundle.message(getBundle(), key, params);
-    }
-
-    private static ResourceBundle getBundle() {
-        ResourceBundle bundle = null;
-
-        if (ourBundle != null) bundle = ourBundle.get();
-
-        if (bundle == null) {
-            bundle = ResourceBundle.getBundle(BUNDLE);
-            ourBundle = new SoftReference<ResourceBundle>(bundle);
-        }
-        return bundle;
-    }
+    return bundle;
+  }
 }

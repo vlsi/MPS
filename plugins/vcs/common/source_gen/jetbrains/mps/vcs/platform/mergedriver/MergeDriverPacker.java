@@ -15,8 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.LinkedHashSet;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public abstract class MergeDriverPacker {
   private static MergeDriverPacker ourInstance;
@@ -76,9 +75,7 @@ public abstract class MergeDriverPacker {
           FileUtil.copyFile(file, tmpDir);
         }
       } else {
-        if (log.isErrorEnabled()) {
-          log.error("couldn't find class path: " + classpathDir);
-        }
+        LOG.error("couldn't find class path: " + classpathDir);
       }
     }
     // Workaround for rare case when MPS build is invoked with internal flag (MPS-13819) 
@@ -154,5 +151,5 @@ public abstract class MergeDriverPacker {
     ourInstance = instance;
   }
 
-  protected static Log log = LogFactory.getLog(MergeDriverPacker.class);
+  private static Logger LOG = Logger.getLogger(MergeDriverPacker.class);
 }

@@ -65,7 +65,7 @@ public class ComplicatedMakeTests extends AbstractMakeTest {
     assertTrue(moduleDir.findChild("src") == null);
 
     CompilerManager cm = CompilerManager.getInstance(myFacet.getModule().getProject());
-    assertCompiles(cm, 1, 0);
+    assertCompiles(cm, 0, 0);
 
     MPSCompiler2[] mpscs = cm.getCompilers(MPSCompiler2.class);
     assertSame(1, mpscs.length);
@@ -96,7 +96,7 @@ public class ComplicatedMakeTests extends AbstractMakeTest {
     getVFS().refresh(false);
 
     // second compilation
-    assertCompiles(cm, 1, 0);
+    assertCompiles(cm, 0, 0);
 
     assertExists(outputDir, "code");
     assertNotExists(outputDir, "code/Test.java");

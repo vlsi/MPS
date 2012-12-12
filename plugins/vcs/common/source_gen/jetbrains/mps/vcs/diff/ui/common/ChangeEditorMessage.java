@@ -16,6 +16,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Rectangle;
+import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -36,8 +37,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import org.jetbrains.annotations.NotNull;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.ModelAccessor;
 
 public class ChangeEditorMessage extends EditorMessageWithTarget {
@@ -105,7 +105,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
       } else {
         Rectangle bounds = (isIndirectRoot(editor) ?
           getFirstPseudoLineBounds(editor) :
-          cell.getBounds()
+          GeometryUtil.getBounds(cell)
         );
         graphics.setColor(ChangeColors.get((isConflicted() ?
           ChangeType.CONFLICTED :
@@ -159,7 +159,6 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
   }
 
   private void drawDeletedChild(Graphics graphics, EditorCell cell) {
-    Rectangle bounds = cell.getBounds();
     if (myMessageTarget.getRole().equals(cell.getRole())) {
       int index = ((DeletedNodeMessageTarget) myMessageTarget).getNextChildIndex();
       if (index != -1) {
@@ -176,36 +175,32 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
           cell.paintSelection(graphics, getColor(), false);
         }
       }
-    } else {
-      graphics.setColor(getColor());
-      graphics.drawLine(bounds.x, bounds.y, bounds.x + bounds.width, bounds.y);
     }
   }
 
   private void drawHorizontalLine(Graphics graphics, EditorCell_Collection collectionCell, int cellIndex) {
-    Rectangle bounds = collectionCell.getBounds();
     int y;
     if (-1 < cellIndex && cellIndex < collectionCell.getChildCount()) {
       y = collectionCell.getChildAt(cellIndex).getY();
     } else {
-      y = ((int) collectionCell.getChildAt(collectionCell.getChildCount() - 1).getBounds().getMaxY());
+      y = collectionCell.getChildAt(collectionCell.getChildCount() - 1).getBottom();
     }
     graphics.setColor(getColor());
-    graphics.drawLine((int) bounds.getMinX(), y, (int) bounds.getMaxX(), y);
+    graphics.drawLine(collectionCell.getX(), y, collectionCell.getRight(), y);
   }
 
   private void drawVerticalLineWithArrows(Graphics graphics, EditorCell_Collection collectionCell, int cellIndex) {
     int x;
-    Rectangle childCellBounds;
+    jetbrains.mps.openapi.editor.EditorCell childCell;
     if (-1 < cellIndex && cellIndex < collectionCell.getChildCount()) {
-      childCellBounds = collectionCell.getCellAt(cellIndex).getBounds();
-      x = childCellBounds.x;
+      childCell = collectionCell.getCellAt(cellIndex);
+      x = childCell.getX();
     } else {
-      childCellBounds = collectionCell.getCellAt(collectionCell.getChildCount() - 1).getBounds();
-      x = (int) childCellBounds.getMaxX();
+      childCell = collectionCell.getCellAt(collectionCell.getChildCount() - 1);
+      x = childCell.getRight();
     }
-    int y1 = childCellBounds.y;
-    int y2 = (int) childCellBounds.getMaxY();
+    int y1 = childCell.getY();
+    int y2 = childCell.getBottom();
 
     graphics.setColor(getColor());
     graphics.drawLine(x, y1, x, y2);
@@ -303,18 +298,16 @@ __switch__:
         };
       }
     }.invoke(editor.getRootCell());
-    Rectangle bounds = check_myu41h_a0b0u(Sequence.fromIterable(leafCells).first());
-    if (bounds == null) {
+
+    if (Sequence.fromIterable(leafCells).isEmpty()) {
       return new Rectangle();
     }
-    for (EditorCell leaf : Sequence.fromIterable(leafCells).skip(1)) {
-      if (leaf.getBounds().y == bounds.y) {
-        bounds.add(leaf.getBounds());
-      } else {
-        break;
+    final int firstCellY = Sequence.fromIterable(leafCells).first().getY();
+    return GeometryUtil.getBounds(Sequence.fromIterable(leafCells).where(new IWhereFilter<EditorCell>() {
+      public boolean accept(EditorCell it) {
+        return it.getY() == firstCellY;
       }
-    }
-    return bounds;
+    }).toGenericArray(EditorCell.class));
   }
 
   public Bounds getBounds(EditorComponent editor) {
@@ -338,7 +331,7 @@ __switch__:
           return getBoundsSuper(editor);
         }
       } else {
-        int y = (int) cell.getBounds().getMinY();
+        int y = cell.getY();
         return new Bounds(y, y + 1);
       }
     }
@@ -351,17 +344,17 @@ __switch__:
     int minY;
     int maxY;
     if (cellIndex > lastCellIndex) {
-      Rectangle lastCellBounds = cell.getChildAt(lastCellIndex).getBounds();
+      jetbrains.mps.openapi.editor.EditorCell childCell = cell.getChildAt(lastCellIndex);
       minY = (isVertical(cell) ?
-        (int) lastCellBounds.getMaxY() :
-        (int) lastCellBounds.getMinY()
+        childCell.getBottom() :
+        childCell.getY()
       );
-      maxY = Math.max((int) lastCellBounds.getMaxY(), minY + 1);
+      maxY = Math.max(childCell.getBottom(), minY + 1);
     } else {
-      minY = (int) cell.getChildAt(cellIndex).getBounds().getMinY();
+      minY = cell.getChildAt(cellIndex).getY();
       maxY = (isVertical(cell) ?
         minY + 1 :
-        (int) cell.getCellAt(cellIndex).getBounds().getMaxY()
+        cell.getCellAt(cellIndex).getBottom()
       );
     }
     return new Bounds(minY, maxY);
@@ -418,9 +411,7 @@ __switch__:
     if (currentNodeIndex == nodeIndex - 1) {
       return collectionCell.getChildCount();
     }
-    if (log.isWarnEnabled()) {
-      log.warn("Could not find child cell index for deleted child: currentNodeIndex=" + currentNodeIndex + ", total cells=" + collectionCell.getChildCount() + ", requested nodeIndex=" + nodeIndex);
-    }
+    LOG.warning("Could not find child cell index for deleted child: currentNodeIndex=" + currentNodeIndex + ", total cells=" + collectionCell.getChildCount() + ", requested nodeIndex=" + nodeIndex);
     return -1;
   }
 
@@ -428,7 +419,7 @@ __switch__:
     public boolean isChangeConflicted(ModelChange change);
   }
 
-  protected static Log log = LogFactory.getLog(ChangeEditorMessage.class);
+  private static Logger LOG = Logger.getLogger(ChangeEditorMessage.class);
 
   private static boolean check_myu41h_a0b0m(EditorCell checkedDotOperand) {
     if (null != checkedDotOperand) {
@@ -468,13 +459,6 @@ __switch__:
   private static SNode check_myu41h_a0a0a0t(SNode checkedDotOperand, ChangeEditorMessage checkedDotThisExpression) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getParent();
-    }
-    return null;
-  }
-
-  private static Rectangle check_myu41h_a0b0u(EditorCell checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getBounds();
     }
     return null;
   }

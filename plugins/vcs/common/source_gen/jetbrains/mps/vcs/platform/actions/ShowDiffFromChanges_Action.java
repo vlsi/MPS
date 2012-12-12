@@ -20,8 +20,7 @@ import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.application.ApplicationManager;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import com.intellij.openapi.project.Project;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ShowDiffFromChanges_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("diff.png");
@@ -41,9 +40,7 @@ public class ShowDiffFromChanges_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowDiffFromChanges", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowDiffFromChanges", t);
       this.disable(event.getPresentation());
     }
   }
@@ -78,11 +75,9 @@ public class ShowDiffFromChanges_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowDiffFromChanges", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowDiffFromChanges", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(ShowDiffFromChanges_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowDiffFromChanges_Action.class);
 }

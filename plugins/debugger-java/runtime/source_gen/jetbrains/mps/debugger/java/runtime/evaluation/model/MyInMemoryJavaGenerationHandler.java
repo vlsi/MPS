@@ -22,8 +22,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 /*package*/ class MyInMemoryJavaGenerationHandler extends InMemoryJavaGenerationHandler {
   private final List<_FunctionTypes._void_P1_E0<? super SNode>> myGenerationListeners = ListSequence.fromList(new ArrayList<_FunctionTypes._void_P1_E0<? super SNode>>());
@@ -46,9 +45,7 @@ import org.apache.commons.logging.LogFactory;
     try {
       result.add(ClassPathFactory.getInstance().createFromPath(path, this.getClass().getName()));
     } catch (IOException e) {
-      if (log.isErrorEnabled()) {
-        log.error("Cant create cpitem from path " + path, e);
-      }
+      LOG_200965554.error("Cant create cpitem from path " + path, e);
     }
 
     return result;
@@ -77,5 +74,5 @@ import org.apache.commons.logging.LogFactory;
     return super.handleOutput(module, inputModel, status, context, monitor);
   }
 
-  protected static Log log = LogFactory.getLog(MyInMemoryJavaGenerationHandler.class);
+  private static Logger LOG_200965554 = Logger.getLogger(MyInMemoryJavaGenerationHandler.class);
 }

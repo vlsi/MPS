@@ -20,8 +20,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class GoToUsageInMappingConfig_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -60,9 +59,7 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GoToUsageInMappingConfig", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GoToUsageInMappingConfig", t);
       this.disable(event.getPresentation());
     }
   }
@@ -96,11 +93,9 @@ public class GoToUsageInMappingConfig_Action extends BaseAction {
       MappingConfigFinder finder = new MappingConfigFinder(((Generator) ((IModule) MapSequence.fromMap(_params).get("module"))), SNodeOperations.getContainingRoot(((SNode) MapSequence.fromMap(_params).get("node"))));
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(UsagesViewTool.class).findUsages(FindUtils.makeProvider(finder), new SearchQuery(null), false, false, false, "No usages found");
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GoToUsageInMappingConfig", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GoToUsageInMappingConfig", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(GoToUsageInMappingConfig_Action.class);
+  private static Logger LOG = Logger.getLogger(GoToUsageInMappingConfig_Action.class);
 }

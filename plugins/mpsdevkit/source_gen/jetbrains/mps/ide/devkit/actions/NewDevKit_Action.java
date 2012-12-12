@@ -20,8 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.ide.projectPane.ProjectPane;
 import com.intellij.openapi.project.Project;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class NewDevKit_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("devkit.png");
@@ -41,9 +40,7 @@ public class NewDevKit_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "NewDevKit", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "NewDevKit", t);
       this.disable(event.getPresentation());
     }
   }
@@ -89,11 +86,9 @@ public class NewDevKit_Action extends BaseAction {
       projectPane.rebuildTree();
       projectPane.selectModule(devkit, false);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "NewDevKit", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "NewDevKit", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(NewDevKit_Action.class);
+  private static Logger LOG = Logger.getLogger(NewDevKit_Action.class);
 }

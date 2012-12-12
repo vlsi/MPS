@@ -77,6 +77,7 @@
     <classNode extendsClassName="jetbrains.mps.vfs.FileSystemEvent" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.watching.FileSystemListenersContainer" file="FileSystemListenersContainer.java">
+    <classNode dependClassName="com.intellij.openapi.vfs.LocalFileSystem" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
@@ -88,6 +89,7 @@
     <classNode dependClassName="java.util.concurrent.ConcurrentMap" />
     <classNode dependClassName="jetbrains.mps.util.containers.ConcurrentHashSet" />
     <classNode dependClassName="jetbrains.mps.vfs.FileSystemListener" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.watching.ModelCacheReloader" file="ModelCacheReloader.java">
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileEvent" />

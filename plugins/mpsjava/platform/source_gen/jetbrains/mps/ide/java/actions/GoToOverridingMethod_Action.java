@@ -15,8 +15,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.featureStatistics.FeatureUsageTracker;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
 import com.intellij.openapi.project.Project;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.logging.Logger;
 
 public class GoToOverridingMethod_Action extends BaseAction {
@@ -79,7 +79,7 @@ public class GoToOverridingMethod_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       FeatureUsageTracker.getInstance().triggerFeatureUsed("navigation.gotoImplementation");
-      GoToHelper.executeFinders(((SNode) MapSequence.fromMap(_params).get("methodNode")), ((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), ((Project) MapSequence.fromMap(_params).get("project")), GoToOverridingMethod_Action.this.getFinderName(_params));
+      GoToHelper.executeFinders(((SNode) MapSequence.fromMap(_params).get("methodNode")), ((Project) MapSequence.fromMap(_params).get("project")), GoToOverridingMethod_Action.this.getFinderName(_params), GoToHelper.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent()));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToOverridingMethod", t);
     }

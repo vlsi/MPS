@@ -41,7 +41,7 @@ public class PersistenceTest extends BaseMPSTest {
   private static final String TEST_MODEL = "testlanguage.structure";
   private final static File sourceZip = new File("testbench/modules/testPersistence.zip");
   private final static File tempDir = new File(PathManager.getHomePath(), "TEST_PERSISTENCE");
-  private final static int START_PERSISTENCE_TEST_VERSION = 4;
+  private final static int START_PERSISTENCE_TEST_VERSION = 7;
 
   private static Logger LOG = Logger.getLogger(PersistenceTest.class);
 

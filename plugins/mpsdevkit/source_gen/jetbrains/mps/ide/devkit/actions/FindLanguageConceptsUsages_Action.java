@@ -21,8 +21,7 @@ import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.specific.LanguageConceptsUsagesFinder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class FindLanguageConceptsUsages_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("find.png");
@@ -60,9 +59,7 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "FindLanguageConceptsUsages", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "FindLanguageConceptsUsages", t);
       this.disable(event.getPresentation());
     }
   }
@@ -100,11 +97,9 @@ public class FindLanguageConceptsUsages_Action extends BaseAction {
       });
       ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(UsagesViewTool.class).findUsages(provider[0], query[0], true, true, false, "There are no usages of language's concepts");
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "FindLanguageConceptsUsages", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "FindLanguageConceptsUsages", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(FindLanguageConceptsUsages_Action.class);
+  private static Logger LOG = Logger.getLogger(FindLanguageConceptsUsages_Action.class);
 }

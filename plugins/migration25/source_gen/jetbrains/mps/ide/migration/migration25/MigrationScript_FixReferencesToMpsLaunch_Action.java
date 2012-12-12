@@ -18,8 +18,7 @@ import com.intellij.openapi.command.CommandProcessorEx;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.awt.Frame;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class MigrationScript_FixReferencesToMpsLaunch_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,9 +38,7 @@ public class MigrationScript_FixReferencesToMpsLaunch_Action extends BaseAction 
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "MigrationScript_FixReferencesToMpsLaunch", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "MigrationScript_FixReferencesToMpsLaunch", t);
       this.disable(event.getPresentation());
     }
   }
@@ -72,11 +69,9 @@ public class MigrationScript_FixReferencesToMpsLaunch_Action extends BaseAction 
         executor.execAsCommand(((Frame) MapSequence.fromMap(_params).get("frame")));
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "MigrationScript_FixReferencesToMpsLaunch", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "MigrationScript_FixReferencesToMpsLaunch", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(MigrationScript_FixReferencesToMpsLaunch_Action.class);
+  private static Logger LOG = Logger.getLogger(MigrationScript_FixReferencesToMpsLaunch_Action.class);
 }

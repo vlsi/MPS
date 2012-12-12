@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.tool.builder.util.ClassloaderUtil" file="ClassloaderUtil.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.ClassCastException" />
+    <classNode dependClassName="java.lang.ClassLoader" />
+    <classNode dependClassName="java.lang.ClassNotFoundException" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.IllegalAccessException" />
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
+    <classNode dependClassName="java.lang.NoSuchMethodException" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.SuppressWarnings" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.lang.Thread" />
+    <classNode dependClassName="java.lang.reflect.Field" />
+    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
+    <classNode dependClassName="java.net.MalformedURLException" />
+    <classNode dependClassName="java.net.URL" />
+    <classNode dependClassName="java.net.URLClassLoader" />
+    <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.StringTokenizer" />
+    <classNode dependClassName="java.util.regex.Pattern" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.tool.builder.util.ContainerUtil" />
+    <classNode dependClassName="jetbrains.mps.tool.builder.util.PathManager" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.StringUtil" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.UrlClassLoader" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+  </dependency>
+  <dependency className="jetbrains.mps.tool.builder.util.ContainerUtil" file="ContainerUtil.java">
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+  </dependency>
+  <dependency className="jetbrains.mps.tool.builder.util.MapPathMacrosProvider" file="MapPathMacrosProvider.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode extendsClassName="jetbrains.mps.project.PathMacrosProvider" />
+  </dependency>
+  <dependency className="jetbrains.mps.tool.builder.util.MpsPlatform" file="MpsPlatform.java">
+    <classNode dependClassName="jetbrains.mps.MPSCore" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.search.MPSBaseLanguage" />
+    <classNode dependClassName="jetbrains.mps.generator.MPSGenerator" />
+    <classNode dependClassName="jetbrains.mps.persistence.MPSPersistence" />
+    <classNode dependClassName="jetbrains.mps.typesystem.MPSTypesystem" />
+  </dependency>
+  <dependency className="jetbrains.mps.tool.builder.util.PathManager" file="PathManager.java">
+    <classNode dependClassName="java.io.BufferedInputStream" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileInputStream" />
+    <classNode dependClassName="java.io.FilenameFilter" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.InputStream" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.ClassLoader" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.net.MalformedURLException" />
+    <classNode dependClassName="java.net.URL" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.Enumeration" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Properties" />
+    <classNode dependClassName="java.util.PropertyResourceBundle" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.library.LibraryInitializer" />
+    <classNode dependClassName="jetbrains.mps.library.contributor.LibraryContributor" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.FileUtil" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.StringUtil" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.SystemInfo" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.URLUtil" />
+    <classNode dependClassName="jetbrains.mps.tool.common.util.UrlClassLoader" />
+    <classNode dependClassName="org.jetbrains.annotations.NonNls" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+  </dependency>
+  <dependency className="jetbrains.mps.tool.builder.util.SetLibraryContributor" file="SetLibraryContributor.java">
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode extendsClassName="jetbrains.mps.library.contributor.LibraryContributor" />
+  </dependency>
+</dependenciesRoot>
+

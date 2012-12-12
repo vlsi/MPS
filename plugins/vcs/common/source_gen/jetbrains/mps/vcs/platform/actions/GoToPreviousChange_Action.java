@@ -12,8 +12,7 @@ import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class GoToPreviousChange_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("previousOccurence.png");
@@ -33,9 +32,7 @@ public class GoToPreviousChange_Action extends BaseAction {
     try {
       event.getPresentation().setEnabled(ChangesStripActionsHelper.isNeighbourGroupAvailable(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), false));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GoToPreviousChange", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GoToPreviousChange", t);
       this.disable(event.getPresentation());
     }
   }
@@ -55,11 +52,9 @@ public class GoToPreviousChange_Action extends BaseAction {
     try {
       ChangesStripActionsHelper.goToNeighbourGroup(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), false);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GoToPreviousChange", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GoToPreviousChange", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(GoToPreviousChange_Action.class);
+  private static Logger LOG = Logger.getLogger(GoToPreviousChange_Action.class);
 }

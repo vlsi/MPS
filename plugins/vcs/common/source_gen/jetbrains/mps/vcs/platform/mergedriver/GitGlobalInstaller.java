@@ -17,8 +17,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.IOException;
 import java.io.FileNotFoundException;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 /*package*/ class GitGlobalInstaller extends AbstractInstaller {
   private File myConfigFile;
@@ -33,7 +32,7 @@ import org.apache.commons.logging.LogFactory;
   @NotNull
   protected AbstractInstaller.State install(boolean dryRun) {
     if (!(PluginUtil.isGitPluginEnabled())) {
-      return AbstractInstaller.State.INSTALLED;
+      return AbstractInstaller.State.NOT_ENABLED;
     }
     // TODO rewrite it using git4idea util classes 
     if (!(myConfigFile.exists())) {
@@ -124,9 +123,7 @@ import org.apache.commons.logging.LogFactory;
       Messages.showInfoMessage(myProject, String.format("Successfully updated %s", myConfigFile.getAbsolutePath()), "Global Git Merge Driver Installed");
       return AbstractInstaller.State.INSTALLED;
     } catch (IOException e) {
-      if (log.isErrorEnabled()) {
-        log.error("Writing gitconfig file failed", e);
-      }
+      LOG.error("Writing gitconfig file failed", e);
       String msg = e.getMessage() + ".";
       if (SystemInfo.isWindows && e instanceof FileNotFoundException) {
         msg += " Try unsetting hidden attribute for that file in Windows Explorer.";
@@ -144,7 +141,7 @@ import org.apache.commons.logging.LogFactory;
     return "Git";
   }
 
-  protected static Log log = LogFactory.getLog(GitGlobalInstaller.class);
+  private static Logger LOG = Logger.getLogger(GitGlobalInstaller.class);
 
   private static boolean neq_btx4zt_a0a0a0g0t0d(Object a, Object b) {
     return !((a != null ?

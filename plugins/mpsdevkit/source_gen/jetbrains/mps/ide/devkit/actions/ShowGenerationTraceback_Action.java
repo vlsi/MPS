@@ -19,8 +19,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import java.util.ArrayList;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ShowGenerationTraceback_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -47,9 +46,7 @@ public class ShowGenerationTraceback_Action extends BaseAction {
         event.getPresentation().setEnabled(tracer.hasTracebackData(SNodeOperations.getModel(((SNode) MapSequence.fromMap(_params).get("node"))).getSModelReference()));
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowGenerationTraceback", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowGenerationTraceback", t);
       this.disable(event.getPresentation());
     }
   }
@@ -99,11 +96,9 @@ public class ShowGenerationTraceback_Action extends BaseAction {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "No tracing data available");
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowGenerationTraceback", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowGenerationTraceback", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(ShowGenerationTraceback_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowGenerationTraceback_Action.class);
 }

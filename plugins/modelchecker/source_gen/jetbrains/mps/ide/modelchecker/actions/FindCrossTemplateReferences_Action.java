@@ -22,8 +22,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class FindCrossTemplateReferences_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -43,9 +42,7 @@ public class FindCrossTemplateReferences_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "FindCrossTemplateReferences", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "FindCrossTemplateReferences", t);
       this.disable(event.getPresentation());
     }
   }
@@ -80,11 +77,9 @@ public class FindCrossTemplateReferences_Action extends BaseAction {
         }
       });
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "FindCrossTemplateReferences", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "FindCrossTemplateReferences", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(FindCrossTemplateReferences_Action.class);
+  private static Logger LOG = Logger.getLogger(FindCrossTemplateReferences_Action.class);
 }

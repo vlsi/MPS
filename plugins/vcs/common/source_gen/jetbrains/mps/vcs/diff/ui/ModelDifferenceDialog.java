@@ -4,23 +4,20 @@ package jetbrains.mps.vcs.diff.ui;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.vcs.diff.ChangeSet;
-import java.util.Map;
-import jetbrains.mps.smodel.SNodeId;
-import java.util.List;
-import jetbrains.mps.vcs.diff.changes.ModelChange;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
-import java.util.HashMap;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import jetbrains.mps.vcs.diff.ModelChangeSet;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.ChangeSetBuilder;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.vcs.diff.ui.common.InvokeTextDiffAction;
@@ -31,57 +28,64 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.ui.ScrollPaneFactory;
 import java.awt.Dimension;
 import com.intellij.openapi.util.DimensionService;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.vcs.diff.ui.common.SimpleDiffRequest;
 import org.jetbrains.annotations.Nullable;
 import javax.swing.JComponent;
 import javax.swing.Action;
-import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.vcs.diff.changes.NodeCopier;
-import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
-import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.vcs.diff.ui.common.Bounds;
-import com.intellij.openapi.ui.Messages;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
+import jetbrains.mps.vcs.diff.ChangeSet;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.wm.WindowManager;
-import javax.swing.SwingUtilities;
+import jetbrains.mps.vcs.diff.changes.ModelChange;
+import jetbrains.mps.vcs.diff.ui.common.GoToNeighbourRootActions;
 import jetbrains.mps.vcs.diff.ui.common.DiffModelTree;
 import jetbrains.mps.workbench.action.BaseAction;
-import java.util.Arrays;
+import java.util.List;
+import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.vcs.diff.ui.common.ChangeColors;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import java.util.Arrays;
+import jetbrains.mps.smodel.SModelDescriptor;
 
 public class ModelDifferenceDialog extends DialogWrapper {
   private Project myProject;
-  private ChangeSet myChangeSet;
-  private Map<SNodeId, List<ModelChange>> myRootToChanges = MapSequence.fromMap(new HashMap<SNodeId, List<ModelChange>>());
-  private List<ModelChange> myMetadataChanges = ListSequence.fromList(new ArrayList<ModelChange>());
+  private ModelChangeSet myChangeSet;
+  private ModelChangeSet myMetadataChangeSet;
   private ModelDifferenceDialog.ModelDifferenceTree myTree;
   private JPanel myPanel = new JPanel(new BorderLayout());
-  private boolean myRootsDialogInvoked = false;
-  private boolean myGoingToNeighbour = false;
+  private RootDifferenceDialog myRootDifferenceDialog = null;
+  private SNodeId myRootId;
   private String[] myContentTitles;
+  private boolean myEditable;
 
   public ModelDifferenceDialog(final SModel oldModel, final SModel newModel, DiffRequest diffRequest) {
     super(diffRequest.getProject());
     myProject = diffRequest.getProject();
-    jetbrains.mps.project.Project p = ProjectHelper.toMPSProject(myProject);
+    final jetbrains.mps.project.Project p = ProjectHelper.toMPSProject(myProject);
     DiffTemporaryModule.createModuleForModel(oldModel, "old", p);
     DiffTemporaryModule.createModuleForModel(newModel, "new", p);
     myContentTitles = diffRequest.getContentTitles();
     assert myContentTitles.length == 2;
+    myEditable = newModel.getModelDescriptor() instanceof EditableSModelDescriptor && check_vk52pz_a0a0h0j(SModelRepository.getInstance().getModelDescriptor(newModel.getSModelReference())) == newModel;
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
+        setTitle("Difference for model: " + SModelOperations.getModelName(oldModel));
         myChangeSet = ChangeSetBuilder.buildChangeSet(oldModel, newModel, true);
-        fillRootToChange();
+        if (Sequence.fromIterable(myChangeSet.getChangesForRoot(null)).isNotEmpty()) {
+          SModel oldMetaModel = MetadataUtil.createMetadataModel(oldModel);
+          SModel newMetaModel = MetadataUtil.createMetadataModel(newModel);
+          DiffTemporaryModule.createModuleForModel(oldMetaModel, "old", p);
+          DiffTemporaryModule.createModuleForModel(newMetaModel, "new", p, true);
+          myMetadataChangeSet = ChangeSetBuilder.buildChangeSet(oldMetaModel, newMetaModel, true);
+        }
       }
     });
+
     myTree = new ModelDifferenceDialog.ModelDifferenceTree();
 
     DefaultActionGroup actionGroup = ActionUtils.groupFromActions(new InvokeTextDiffAction("View as Text", "View model difference using as text difference of XML contents", this, diffRequest, DiffManager.getInstance().getIdeaDiffTool()));
@@ -93,11 +97,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
     if (size == null) {
       myPanel.setPreferredSize(new Dimension(500, 700));
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        setTitle("Difference for model: " + SModelOperations.getModelName(oldModel));
-      }
-    });
+
     init();
   }
 
@@ -118,25 +118,11 @@ public class ModelDifferenceDialog extends DialogWrapper {
     return getClass().getName();
   }
 
-  private void fillRootToChange() {
-    MapSequence.fromMap(myRootToChanges).clear();
-    ListSequence.fromList(myMetadataChanges).clear();
-    for (ModelChange c : ListSequence.fromList(myChangeSet.getModelChanges())) {
-      SNodeId id = c.getRootId();
-      if (id == null) {
-        ListSequence.fromList(myMetadataChanges).addElement(c);
-      } else {
-        if (!(MapSequence.fromMap(myRootToChanges).containsKey(id))) {
-          MapSequence.fromMap(myRootToChanges).put(id, ListSequence.fromList(new ArrayList<ModelChange>()));
-        }
-        ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(id)).addElement(c);
-      }
-    }
-  }
-
-  /*package*/ void rebuildChangeSet() {
+  /*package*/ void rebuildChangeSets() {
     ChangeSetBuilder.rebuildChangeSet(myChangeSet);
-    fillRootToChange();
+    if (myMetadataChangeSet != null) {
+      ChangeSetBuilder.rebuildChangeSet(myMetadataChangeSet);
+    }
     myTree.rebuildLater();
   }
 
@@ -152,96 +138,88 @@ public class ModelDifferenceDialog extends DialogWrapper {
     return myProject;
   }
 
-  @Nullable
-  public SNodeId getNeighbourRoot(@NotNull SNodeId rootId, boolean next) {
-    return myTree.getNeighbourRoot(rootId, next);
+  public boolean isEditable() {
+    return myEditable;
   }
 
-  /*package*/ void startGoingToNeighbour() {
-    myGoingToNeighbour = true;
-  }
-
-  /*package*/ void rollbackChanges(final Iterable<ModelChange> changes, @Nullable final _FunctionTypes._void_P0_E0 after) {
-    ModelAccess.instance().runWriteActionInCommand(new Runnable() {
-      public void run() {
-        assert Sequence.fromIterable(changes).isNotEmpty();
-        final SModel model = Sequence.fromIterable(changes).first().getChangeSet().getNewModel();
-        final NodeCopier nc = new NodeCopier(model);
-        Iterable<ModelChange> oppositeChanges = Sequence.fromIterable(changes).select(new ISelector<ModelChange, ModelChange>() {
-          public ModelChange select(ModelChange ch) {
-            return ch.getOppositeChange();
-          }
-        });
-        for (ModelChange ch : Sequence.fromIterable(oppositeChanges)) {
-          if (ch instanceof NodeGroupChange) {
-            ((NodeGroupChange) ch).prepare();
-          }
-        }
-        Sequence.fromIterable(oppositeChanges).visitAll(new IVisitor<ModelChange>() {
-          public void visit(ModelChange ch) {
-            ch.apply(model, nc);
-          }
-        });
-        nc.restoreIds(true);
-        if (after != null) {
-          after.invoke();
-        }
-      }
-    });
-  }
-
-  public void invokeRootDifference(SNodeId rootId) {
-    invokeRootDifference(rootId, null);
-  }
-
-  public void invokeRootDifference(final SNodeId rootId, @Nullable final Bounds scrollTo) {
-    if (rootId == null) {
-      StringBuilder sb = new StringBuilder();
-      for (ModelChange mc : ListSequence.fromList(myMetadataChanges)) {
-        if (mc != ListSequence.fromList(myMetadataChanges).first()) {
-          sb.append("\n");
-        }
-        sb.append(mc);
-      }
-      Messages.showInfoMessage(myPanel, sb.toString(), "Model Properties Difference");
+  public void invokeRootDifference(@Nullable final SNodeId rootId) {
+    if (myRootDifferenceDialog != null) {
       return;
     }
-    if (myRootsDialogInvoked) {
-      return;
-    }
-    myGoingToNeighbour = false;
-    myRootsDialogInvoked = true;
-    final Wrappers._T<RootDifferenceDialog> rootDialog = new Wrappers._T<RootDifferenceDialog>();
+
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        if (isVisible()) {
-          rootDialog.value = new RootDifferenceDialog(ModelDifferenceDialog.this, rootId, myTree.getNameForRoot(rootId), scrollTo);
+        ModelChangeSet changeSet = (rootId == null ?
+          myMetadataChangeSet :
+          myChangeSet
+        );
+        SNodeId nodeId = (rootId == null ?
+          ListSequence.fromList(SModelOperations.getRoots(myMetadataChangeSet.getOldModel(), null)).first().getSNodeId() :
+          rootId
+        );
+
+        myRootId = rootId;
+        myRootDifferenceDialog = new RootDifferenceDialog(myProject, changeSet, nodeId, myTree.getNameForRoot(rootId), myContentTitles, (isVisible() ?
+          getWindow() :
+          WindowManager.getInstance().getFrame(myProject)
+        ), myEditable, new ModelDifferenceDialog.MyGoToNeighbourRootActions().getActions(), null);
+        myTree.getNameForRoot(rootId);
+      }
+    });
+    myRootDifferenceDialog.show();
+    if (myMetadataChangeSet != null && myEditable) {
+      ModelAccess.instance().runWriteActionInCommand(new Runnable() {
+        public void run() {
+          MetadataUtil.applyMetadataChanges(myChangeSet.getNewModel(), myMetadataChangeSet.getNewModel());
+        }
+      });
+    }
+    myRootDifferenceDialog = null;
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        rebuildChangeSets();
+      }
+    });
+  }
+
+  public void setCurrentRoot(@Nullable final SNodeId rootId) {
+    assert myRootDifferenceDialog != null;
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        myRootId = rootId;
+        if (rootId == null) {
+          myRootDifferenceDialog.setRootId(Sequence.fromIterable(myMetadataChangeSet.getAffectedRoots()).first(), myTree.getNameForRoot(rootId), myMetadataChangeSet);
         } else {
-          rootDialog.value = new RootDifferenceDialog(ModelDifferenceDialog.this, rootId, myTree.getNameForRoot(rootId), WindowManager.getInstance().getFrame(myProject), scrollTo);
+          myRootDifferenceDialog.setRootId(rootId, myTree.getNameForRoot(rootId), myChangeSet);
         }
       }
     });
-    SwingUtilities.invokeLater(new Runnable() {
-      public void run() {
-        rootDialog.value.toFront();
-      }
-    });
-    rootDialog.value.show();
   }
 
-  /*package*/ void rootDialogClosed() {
-    myRootsDialogInvoked = false;
-    if (!(myGoingToNeighbour) && !(isVisible())) {
-      close(DialogWrapper.NEXT_USER_EXIT_CODE);
+  @Nullable
+  public SNodeId getCurrentRoot() {
+    // <node> 
+    return myRootId;
+  }
+
+  public Iterable<ModelChange> getChangesForRoot(SNodeId rootId) {
+    // rootId == null => metadata changes 
+    return myChangeSet.getChangesForRoot(rootId);
+  }
+
+  public class MyGoToNeighbourRootActions extends GoToNeighbourRootActions.GoToByTree {
+    public MyGoToNeighbourRootActions() {
+      super(myTree);
     }
-  }
 
-  public List<ModelChange> getChangesForRoot(SNodeId rootId) {
-    return MapSequence.fromMap(myRootToChanges).get(rootId);
-  }
+    @Nullable
+    protected SNodeId getCurrentNodeId() {
+      return getCurrentRoot();
+    }
 
-  public List<ModelChange> getMetadataChanges() {
-    return myMetadataChanges;
+    public void setCurrentNodeId(@Nullable SNodeId nodeId) {
+      setCurrentRoot(nodeId);
+    }
   }
 
   private class ModelDifferenceTree extends DiffModelTree {
@@ -250,25 +228,54 @@ public class ModelDifferenceDialog extends DialogWrapper {
     }
 
     protected Iterable<BaseAction> getRootActions() {
-      return Arrays.<BaseAction>asList(new InvokeRootDifferenceAction(ModelDifferenceDialog.this), new RevertRootsAction(ModelDifferenceDialog.this) {
-        protected SNodeId[] getRoots() {
-          return Sequence.fromIterable(Sequence.fromArray(getSelectedNodes(DiffModelTree.RootTreeNode.class, null))).select(new ISelector<DiffModelTree.RootTreeNode, SNodeId>() {
-            public SNodeId select(DiffModelTree.RootTreeNode rtn) {
-              return rtn.getRootId();
-            }
-          }).toGenericArray(SNodeId.class);
-        }
+      List<BaseAction> actions = ListSequence.fromList(new ArrayList<BaseAction>());
 
-        protected void after() {
-          ModelDifferenceDialog.this.rebuildChangeSet();
-        }
-      });
+      ListSequence.fromList(actions).addElement(new InvokeRootDifferenceAction(ModelDifferenceDialog.this));
+
+      if (myEditable) {
+        ListSequence.fromList(actions).addElement(new RevertRootsAction("roots") {
+          protected Iterable<ModelChange> getChanges() {
+            return Sequence.fromIterable(Sequence.fromArray(getSelectedNodes(DiffModelTree.RootTreeNode.class, null))).translate(new ITranslator2<DiffModelTree.RootTreeNode, ModelChange>() {
+              public Iterable<ModelChange> translate(DiffModelTree.RootTreeNode r) {
+                return myChangeSet.getChangesForRoot(r.getRootId());
+              }
+            });
+          }
+
+          protected void after() {
+            rebuildChangeSets();
+          }
+
+          @Override
+          protected String getRevertTitle() {
+            Iterable<SNodeId> roots = Sequence.fromIterable(Sequence.fromArray(getSelectedNodes(DiffModelTree.RootTreeNode.class, null))).select(new ISelector<DiffModelTree.RootTreeNode, SNodeId>() {
+              public SNodeId select(DiffModelTree.RootTreeNode rtn) {
+                return rtn.getRootId();
+              }
+            });
+            if ((int) Sequence.fromIterable(roots).count() == 1) {
+              return (Sequence.fromIterable(roots).first() == null ?
+                "Properties" :
+                "Root"
+              );
+            } else if (Sequence.fromIterable(roots).any(new IWhereFilter<SNodeId>() {
+              public boolean accept(SNodeId r) {
+                return r == null;
+              }
+            })) {
+              return "Roots and Properties ";
+            }
+            return "Roots";
+          }
+        });
+      }
+      return actions;
     }
 
     protected void updateRootCustomPresentation(@NotNull DiffModelTree.RootTreeNode rootTreeNode) {
       ChangeType compositeChangeType = ChangeType.CHANGE;
       if (rootTreeNode.getRootId() != null) {
-        ModelChange firstChange = ListSequence.fromList(MapSequence.fromMap(myRootToChanges).get(rootTreeNode.getRootId())).first();
+        ModelChange firstChange = Sequence.fromIterable(myChangeSet.getChangesForRoot(rootTreeNode.getRootId())).first();
         if (firstChange instanceof AddRootChange || firstChange instanceof DeleteRootChange) {
           compositeChangeType = firstChange.getType();
         }
@@ -281,10 +288,14 @@ public class ModelDifferenceDialog extends DialogWrapper {
     }
 
     protected Iterable<SNodeId> getAffectedRoots() {
-      return (ListSequence.fromList(myMetadataChanges).isEmpty() ?
-        MapSequence.fromMap(myRootToChanges).keySet() :
-        SetSequence.fromSet(MapSequence.fromMap(myRootToChanges).keySet()).concat(ListSequence.fromList(ListSequence.fromListAndArray(new ArrayList<SNodeId>(), null)))
-      );
+      return myChangeSet.getAffectedRoots();
     }
+  }
+
+  private static SModel check_vk52pz_a0a0h0j(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getSModel();
+    }
+    return null;
   }
 }

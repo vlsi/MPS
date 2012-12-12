@@ -13,8 +13,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ToggleBreakpoint_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -37,9 +36,7 @@ public class ToggleBreakpoint_Action extends BaseAction {
         event.getPresentation().setEnabled(breakpointManager != null && breakpointManager.isDebuggable(((EditorCell) MapSequence.fromMap(_params).get("selectedCell"))));
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ToggleBreakpoint", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ToggleBreakpoint", t);
       this.disable(event.getPresentation());
     }
   }
@@ -67,11 +64,9 @@ public class ToggleBreakpoint_Action extends BaseAction {
     try {
       BreakpointsUiComponent.getInstance(((Project) MapSequence.fromMap(_params).get("project"))).toggleBreakpoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ToggleBreakpoint", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ToggleBreakpoint", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(ToggleBreakpoint_Action.class);
+  private static Logger LOG = Logger.getLogger(ToggleBreakpoint_Action.class);
 }

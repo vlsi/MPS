@@ -10,8 +10,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.project.MPSProject;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class CorrectIconsAfterPluginMove_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -31,9 +30,7 @@ public class CorrectIconsAfterPluginMove_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CorrectIconsAfterPluginMove", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "CorrectIconsAfterPluginMove", t);
       this.disable(event.getPresentation());
     }
   }
@@ -53,11 +50,9 @@ public class CorrectIconsAfterPluginMove_Action extends BaseAction {
     try {
       new PluginMoveHelper(((MPSProject) MapSequence.fromMap(_params).get("project"))).moveIconsInAction();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CorrectIconsAfterPluginMove", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "CorrectIconsAfterPluginMove", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(CorrectIconsAfterPluginMove_Action.class);
+  private static Logger LOG = Logger.getLogger(CorrectIconsAfterPluginMove_Action.class);
 }

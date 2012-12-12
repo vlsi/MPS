@@ -21,8 +21,7 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.IOperationContext;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class RebuildRequiredModels_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -42,9 +41,7 @@ public class RebuildRequiredModels_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RebuildRequiredModels", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RebuildRequiredModels", t);
       this.disable(event.getPresentation());
     }
   }
@@ -81,11 +78,9 @@ public class RebuildRequiredModels_Action extends BaseAction {
 
       new MakeActionImpl(((IOperationContext) MapSequence.fromMap(_params).get("context")), new MakeActionParameters(((IOperationContext) MapSequence.fromMap(_params).get("context")), models.value, null, null, null), true).executeAction();
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RebuildRequiredModels", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RebuildRequiredModels", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(RebuildRequiredModels_Action.class);
+  private static Logger LOG = Logger.getLogger(RebuildRequiredModels_Action.class);
 }

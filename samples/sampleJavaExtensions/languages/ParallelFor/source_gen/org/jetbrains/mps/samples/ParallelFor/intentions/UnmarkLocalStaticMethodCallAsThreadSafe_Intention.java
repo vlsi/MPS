@@ -73,6 +73,10 @@ public class UnmarkLocalStaticMethodCallAsThreadSafe_Intention implements Intent
     return new SNodePointer("r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)", "3540747636396569313");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new UnmarkLocalStaticMethodCallAsThreadSafe_Intention.IntentionImplementation());

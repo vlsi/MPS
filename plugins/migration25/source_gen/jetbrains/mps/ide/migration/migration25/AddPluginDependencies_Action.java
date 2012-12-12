@@ -22,8 +22,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class AddPluginDependencies_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -43,9 +42,7 @@ public class AddPluginDependencies_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "AddPluginDependencies", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "AddPluginDependencies", t);
       this.disable(event.getPresentation());
     }
   }
@@ -75,11 +72,9 @@ public class AddPluginDependencies_Action extends BaseAction {
       SModelRepository.getInstance().saveAll();
       ClassLoaderManager.getInstance().reloadAll(new EmptyProgressMonitor());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "AddPluginDependencies", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "AddPluginDependencies", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(AddPluginDependencies_Action.class);
+  private static Logger LOG = Logger.getLogger(AddPluginDependencies_Action.class);
 }

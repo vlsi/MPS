@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.execution.configurations.implementation.plugin" uuid="bf659d6c-5638-4ea1-972b-4d492b5a91f2" compileInMPS="false" generatorOutputPath="${module}/source_gen">
+<solution name="jetbrains.mps.execution.configurations.implementation.plugin" uuid="bf659d6c-5638-4ea1-972b-4d492b5a91f2" pluginKind="PLUGIN_OTHER" compileInMPS="false" generatorOutputPath="${module}/source_gen">
   <models>
-    <modelRoot path="${module}/models" />
     <modelRoot path="${module}/" />
+    <modelRoot path="${module}/models" />
   </models>
   <sourcePath />
   <dependencies>
+    <dependency reexport="false">3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)</dependency>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
     <dependency reexport="false">8865b7a8-5271-43d3-884c-6fd1d9cfdd34(MPS.OpenAPI)</dependency>

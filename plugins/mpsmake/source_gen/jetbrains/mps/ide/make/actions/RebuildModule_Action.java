@@ -15,8 +15,7 @@ import java.util.Set;
 import jetbrains.mps.util.CollectionUtil;
 import com.intellij.openapi.progress.ProgressManager;
 import com.intellij.openapi.project.Project;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class RebuildModule_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -43,9 +42,7 @@ public class RebuildModule_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "RebuildModule", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "RebuildModule", t);
       this.disable(event.getPresentation());
     }
   }
@@ -70,11 +67,9 @@ public class RebuildModule_Action extends BaseAction {
       Set<IModule> modules = CollectionUtil.set(((IModule) MapSequence.fromMap(_params).get("module")));
       ProgressManager.getInstance().run(new DefaultMakeTask(((Project) MapSequence.fromMap(_params).get("project")), "Compiling", modules, true));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "RebuildModule", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "RebuildModule", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(RebuildModule_Action.class);
+  private static Logger LOG = Logger.getLogger(RebuildModule_Action.class);
 }

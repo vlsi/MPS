@@ -12,6 +12,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Rectangle;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
+import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.util.Condition;
@@ -133,7 +134,7 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
     if (nodeCell == null) {
       return null;
     }
-    return nodeCell.getBounds();
+    return GeometryUtil.getBounds(nodeCell);
   }
 
   @Nullable

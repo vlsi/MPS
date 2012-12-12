@@ -67,6 +67,10 @@ public class CreateNewBuildLanguageProject_Intention implements IntentionFactory
     return new SNodePointer("r:e0c736f5-141d-492a-8ea5-d9cfc3978a00(jetbrains.mps.build.packaging.intentions)", "1228398444440");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new CreateNewBuildLanguageProject_Intention.IntentionImplementation());

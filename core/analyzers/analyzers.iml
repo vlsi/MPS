@@ -4,7 +4,7 @@
     <output url="file://$MODULE_DIR$/classes" />
     <output-test url="file://$MODULE_DIR$/classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$">
+    <content url="file://$MODULE_DIR$/solutions/jetbrains.mps.analyzers.runtime">
       <sourceFolder url="file://$MODULE_DIR$/solutions/jetbrains.mps.analyzers.runtime/source_gen" isTestSource="false" />
     </content>
     <orderEntry type="inheritedJdk" />

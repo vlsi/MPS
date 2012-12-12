@@ -29,6 +29,7 @@ import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.EventDispatcher;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
@@ -140,7 +141,7 @@ public class DefaultModelRootEntry implements ModelRootEntry {
           @Override
           public void selectionChanged(List<VirtualFile> selection) {
             if (selection.size() > 0) {
-              myModelRoot.setPath(selection.get(0).getPath());
+              myModelRoot.setPath(FileUtil.getCanonicalPath(selection.get(0).getPath()));
               myEventDispatcher.getMulticaster().fireDataChanged();
             }
           }

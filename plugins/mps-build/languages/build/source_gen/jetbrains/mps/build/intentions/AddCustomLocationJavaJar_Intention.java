@@ -59,6 +59,10 @@ public class AddCustomLocationJavaJar_Intention implements IntentionFactory {
     return new SNodePointer("r:9e44d7c5-70f5-4986-acea-57d3ad3ce28f(jetbrains.mps.build.intentions)", "8706695667516275787");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new AddCustomLocationJavaJar_Intention.IntentionImplementation());

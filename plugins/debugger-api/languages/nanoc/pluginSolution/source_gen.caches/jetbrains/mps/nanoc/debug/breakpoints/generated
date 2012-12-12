@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-cp65rkbvciwb82b4q1c9z0n6mzhonrt">
+<dependencies version="2" modelHash="93m5xpxq7xsrv6u8vmeaqg9uw3lpz24">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
   <dep model="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" hash="-8gsws184moh2qypdm89gwaijpvs85i6" />
-  <common hash="d7n2t0bewwjfm4e27z2r07h8930xkpm" />
-  <source id="3990508698139426916" name="GDBBreakpoint" hash="6q2pxe570u8ks0t49kuyc6i8wsi3lkc">
+  <common hash="-5beuzh1uj5ls65w5xjalgipblpft0oj" />
+  <source id="3990508698139426916" name="GDBBreakpoint" hash="ao8mpbmlqnicrrx3yro5dwrujgptlu6">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" />
     <file name="GDBBreakpoint.java" />
   </source>
-  <source id="226334238991961367" name="GDBBreakpointsProvider" hash="-6986ywmrbzt4kihkll3actk6o7z9p6b">
+  <source id="226334238991961367" name="GDBBreakpointsProvider" hash="4ogtgtpmni6rgbf1yn01u4viqqx19v9">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="GDBBreakpointsProvider.java" />
   </source>

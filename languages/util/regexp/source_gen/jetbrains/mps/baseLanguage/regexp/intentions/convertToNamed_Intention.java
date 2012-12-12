@@ -52,6 +52,10 @@ public class convertToNamed_Intention implements IntentionFactory {
     return new SNodePointer("r:5c2005a8-261b-4759-9059-c2decf025b8a(jetbrains.mps.baseLanguage.regexp.intentions)", "305848682816615072");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new convertToNamed_Intention.IntentionImplementation());

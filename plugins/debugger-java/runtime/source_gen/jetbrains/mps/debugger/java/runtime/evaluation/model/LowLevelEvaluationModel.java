@@ -57,8 +57,7 @@ import jetbrains.mps.debug.api.Debuggers;
 import jetbrains.mps.debugger.java.runtime.JavaDebugger;
 import java.io.File;
 import com.intellij.ide.plugins.IdeaPluginDescriptorImpl;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -259,9 +258,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
   private void importStubForFqName(String fqName) {
     SModelReference stubReference = StubHelper.uidForPackageInStubs(fqName);
     if (stubReference == null) {
-      if (log.isErrorEnabled()) {
-        log.error("Stub for " + fqName + " was not found.");
-      }
+      LOG.error("Stub for " + fqName + " was not found.");
       return;
     }
     myAuxModel.getSModel().addModelImport(stubReference, false);
@@ -332,9 +329,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       }
       // todo highlight when this type or static context type are invalid 
     } catch (InvalidStackFrameException e) {
-      if (log.isWarnEnabled()) {
-        log.warn("InvalidStackFrameException", e);
-      }
+      LOG.warning("InvalidStackFrameException", e);
     }
     myVariablesInitialized = true;
   }
@@ -383,7 +378,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     }).toListSequence();
   }
 
-  protected static Log log = LogFactory.getLog(LowLevelEvaluationModel.class);
+  private static Logger LOG = Logger.getLogger(LowLevelEvaluationModel.class);
 
   private static SNode _quotation_createNode_qkk2f2_a0a0b0b0k(Object parameter_1) {
     SNode quotedNode_2 = null;

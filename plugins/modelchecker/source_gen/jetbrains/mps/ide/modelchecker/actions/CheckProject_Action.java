@@ -14,8 +14,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.smodel.IOperationContext;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class CheckProject_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("modelChecker.png");
@@ -35,9 +34,7 @@ public class CheckProject_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "CheckProject", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "CheckProject", t);
       this.disable(event.getPresentation());
     }
   }
@@ -61,11 +58,9 @@ public class CheckProject_Action extends BaseAction {
     try {
       ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModelCheckerTool_Tool.class).checkProject(((Project) MapSequence.fromMap(_params).get("project")), ((IOperationContext) MapSequence.fromMap(_params).get("operationContext")), true);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "CheckProject", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "CheckProject", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(CheckProject_Action.class);
+  private static Logger LOG = Logger.getLogger(CheckProject_Action.class);
 }

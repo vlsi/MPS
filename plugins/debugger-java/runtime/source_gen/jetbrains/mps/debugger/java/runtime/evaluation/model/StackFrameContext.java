@@ -47,8 +47,7 @@ import com.sun.jdi.ArrayType;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder;
 import com.sun.jdi.ObjectReference;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -105,9 +104,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
           jdiType = variable.getLocalVariable().type();
           SNode type = getMpsTypeFromJdiType(jdiType, createClassifierType);
           if (type == null) {
-            if (log.isWarnEnabled()) {
-              log.warn("Could not deduce type for a variable " + name);
-            }
+            LOG.warning("Could not deduce type for a variable " + name);
           } else {
             VariableDescription variableDescription = new VariableDescription(name, type);
             fillVariableDescription(name, variableDescription);
@@ -117,18 +114,14 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
           if (jdiType == null) {
             SNode classifierType = createClassifierType.invoke(variable.getLocalVariable().typeName());
             if (classifierType == null) {
-              if (log.isWarnEnabled()) {
-                log.warn("Could not deduce type for a variable " + name);
-              }
+              LOG.warning("Could not deduce type for a variable " + name);
             } else {
               VariableDescription variableDescription = new VariableDescription(name, classifierType);
               fillVariableDescription(name, variableDescription);
               MapSequence.fromMap(result).put(name, variableDescription);
             }
           } else {
-            if (log.isWarnEnabled()) {
-              log.warn("Exception when creating variable " + name, cne);
-            }
+            LOG.warning("Exception when creating variable " + name, cne);
           }
         }
         return false;
@@ -148,9 +141,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
           description.setHighLevelNode(node);
         }
       } catch (InvalidStackFrameException e) {
-        if (log.isWarnEnabled()) {
-          log.warn("InvalidStackFrameException", e);
-        }
+        LOG.warning("InvalidStackFrameException", e);
       }
     }
   }
@@ -266,9 +257,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
               return true;
             }
           } catch (ClassNotLoadedException ex) {
-            if (log.isWarnEnabled()) {
-              log.warn("Exception when checking variable " + variable, ex);
-            }
+            LOG.warning("Exception when checking variable " + variable, ex);
           }
         }
         return false;
@@ -296,7 +285,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     return staticContextTypeName.equals(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(staticContextType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "virtual_getFqName_1213877404258", new Object[]{}));
   }
 
-  protected static Log log = LogFactory.getLog(StackFrameContext.class);
+  private static Logger LOG = Logger.getLogger(StackFrameContext.class);
 
   private static String check_4zsmpx_a0a6a6(SNodeId checkedDotOperand) {
     if (null != checkedDotOperand) {

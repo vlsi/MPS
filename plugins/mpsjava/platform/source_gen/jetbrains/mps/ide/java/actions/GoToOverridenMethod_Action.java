@@ -23,15 +23,10 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import java.awt.Rectangle;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.openapi.editor.EditorContext;
-import java.awt.Point;
-import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.util.GoToHelper;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.util.OverridingMethodsFinder;
@@ -83,6 +78,10 @@ public class GoToOverridenMethod_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("selectedNode") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("selectedCell", event.getData(MPSEditorDataKeys.EDITOR_CELL));
+    if (MapSequence.fromMap(_params).get("selectedCell") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
@@ -117,15 +116,11 @@ public class GoToOverridenMethod_Action extends BaseAction {
           });
         }
       });
-      Rectangle cellBounds = ((EditorCell) ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getSelectedCell()).getBounds();
-      Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
-      RelativePoint relPoint = new RelativePoint(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), point);
-
       GoToHelper.showOverridenMethodsMenu(SetSequence.fromSet(overridenMethods.value).select(new ISelector<Tuples._2<SNodePointer, SNode>, SNodePointer>() {
         public SNodePointer select(Tuples._2<SNodePointer, SNode> it) {
           return it._0();
         }
-      }).toListSequence(), relPoint, ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))), methodName[0]);
+      }).toListSequence(), GoToHelper.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent()), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))), methodName[0]);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToOverridenMethod", t);
     }

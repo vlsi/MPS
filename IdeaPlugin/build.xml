@@ -15,16 +15,42 @@
   -->
 <project name="IDEA-plugin-compile" default="build" basedir=".">
 
+  <!--
+     There are two ways to pass IDEA locations to the script.
+
+      1. Environment variables (in ~/.profile or similar)
+
+        export IDEA_PATH=/Applications/IntelliJ\ IDEA\ 12\ CE.app
+        export IDEA_PLUGINS=/Users/username/Library/Application\ Support/IdeaIC12
+
+      2. Java system properties.
+
+        ant -Dhome.idea_ce=/opt/IDEA12 -Dhome.idea_ce.plugins=/opt/plugins/IDEA12 <task>
+  -->
+
+
   <dirname property="base_dir" file="${ant.file.IDEA-plugin-compile}/.."/>
 
   <property name="build.home" value="${base_dir}/IdeaPlugin/build"/>
   <property name="plugins.sandbox.dir" value="${build.home}/plugins-sandbox"/>
-  <property file="build.properties"/>
-  <property name="ideaPath" value="${home.idea_ce}"/>
 
-  <path id="ant.libraries">
-    <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
-  </path>
+  <target name="loadEnvVars" unless="home.idea_ce">
+    <property environment="env"/>
+    <fail message="Please, define IDEA_PATH environment variable" unless="env.IDEA_PATH"/>
+    <property name="ideaPath" location="${env.IDEA_PATH}"/>
+    <fail message="Please, define IDEA_PLUGINS environment variable" unless="env.IDEA_PLUGINS"/>
+    <property name="ideaPlugins" location="${env.IDEA_PLUGINS}"/>
+  </target>
+
+  <target name="loadSystemVars" if="home.idea_ce">
+    <property name="ideaPath" value="${home.idea_ce}"/>
+    <property name="ideaPlugins" value="${home.idea_ce.plugins}"/>
+  </target>
+
+  <target name="loadVars" depends="loadEnvVars, loadSystemVars">
+    <echo message="IDEA: ${ideaPath}"/>
+    <echo message="Plugins: ${ideaPlugins}"/>
+  </target>
 
   <target name="prepare" depends="buildCore">
     <delete dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
@@ -38,7 +64,8 @@
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCoreEx/languages"/>
     </copy>
     <mkdir dir="build/tmp/prepare/java/out/mps-test-ex"/>
-    <javac destdir="build/tmp/prepare/java/out/mps-test-ex" fork="true" memorymaximumsize="256m" includeantruntime="false" debug="true">
+    <javac destdir="build/tmp/prepare/java/out/mps-test-ex" fork="true" memorymaximumsize="256m"
+           includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none"/>
       <src>
         <path location="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/testSrc"/>
@@ -60,30 +87,30 @@
     <delete dir="${build.home}"/>
   </target>
 
-  <target name="buildCore">
+  <target name="buildCore" depends="loadVars">
     <ant antfile="../build/buildCore.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
-      <property name="idea_home" location="${home.idea_ce}"/>
+      <property name="idea_home" location="${ideaPath}"/>
     </ant>
     <ant antfile="../build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
-      <property name="idea_home" location="${home.idea_ce}"/>
+      <property name="idea_home" location="${ideaPath}"/>
     </ant>
     <ant antfile="../build/buildBuild.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
-      <property name="idea_home" location="${home.idea_ce}"/>
+      <property name="idea_home" location="${ideaPath}"/>
     </ant>
   </target>
 
-  <target name="buildJavaSourceStubs">
+  <target name="buildJavaSourceStubs" depends="loadVars">
     <!--
     <ant antfile="../build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
-      <property name="idea_home" location="${home.idea_ce}"/>
+      <property name="idea_home" location="${ideaPath}"/>
     </ant>
     <ant antfile="../build/buildPlugins.xml" target="java.compile.jetbrains.mps.ide.java.sourceStubs" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
-      <property name="idea_home" location="${home.idea_ce}"/>
+      <property name="idea_home" location="${ideaPath}"/>
     </ant>
     -->
   </target>
@@ -92,14 +119,14 @@
   <target name="build" depends="buildCore">
     <ant antfile="buildPlugin.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
-      <property name="idea_home" location="${home.idea_ce}"/>
+      <property name="idea_home" location="${ideaPath}"/>
     </ant>
   </target>
 
   <target name="buildTests" depends="build">
     <ant antfile="buildPluginTests.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
-      <property name="idea_home" location="${home.idea_ce}"/>
+      <property name="idea_home" location="${ideaPath}"/>
     </ant>
   </target>
 
@@ -113,7 +140,7 @@
     <copy todir="${plugins.sandbox.dir}/plugins/tests/projectView">
       <fileset dir="${base_dir}/IdeaPlugin/tests/projectView"/>
     </copy>
-    <mkdir dir="${home.idea_ce}/java/mockJDK-1.7/jre/lib"/>
+    <mkdir dir="${ideaPath}/java/mockJDK-1.7/jre/lib"/>
 
     <junit fork="true"
            dir="."
@@ -130,7 +157,7 @@
       <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>
       <sysproperty key="idea.plugins.path" value="${plugins.sandbox.dir}/plugins"/>
       <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core"/>
-      <sysproperty key="idea.home.path" value="${home.idea_ce}"/>
+      <sysproperty key="idea.home.path" value="${ideaPath}"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
       <sysproperty key="file.encoding" value="UTF-8"/>
       <classpath>
@@ -153,20 +180,20 @@
   <target name="zip" depends="build">
     <ant antfile="buildPluginDist.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
-      <property name="idea_home" location="${home.idea_ce}"/>
+      <property name="idea_home" location="${ideaPath}"/>
       <property name="plugin.version" value="${plugin.version}"/>
     </ant>
   </target>
 
   <target name="install-plugin" depends="build">
-    <property name="pluginPath" value="${home.idea_ce.plugins}"/>
+    <property name="pluginPath" value="${ideaPlugins}"/>
     <copy todir="${pluginPath}">
       <fileset dir="${build.home}/artifacts/buildPlugin/plugins"/>
     </copy>
   </target>
 
-  <target name="uninstall-plugin">
-    <property name="pluginPath" value="${home.idea_ce.plugins}"/>
+  <target name="uninstall-plugin" depends="loadVars">
+    <property name="pluginPath" value="${ideaPlugins}"/>
     <delete dir="${pluginPath}/mps-core"/>
     <delete dir="${pluginPath}/mps-vcs"/>
     <delete file="${pluginPath}/mps-java.jar"/>

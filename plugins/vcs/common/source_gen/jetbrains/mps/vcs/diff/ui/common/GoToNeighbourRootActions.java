@@ -4,13 +4,13 @@ package jetbrains.mps.vcs.diff.ui.common;
 
 import javax.swing.Icon;
 import com.intellij.openapi.util.IconLoader;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNodeId;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SNodeId;
 
 public abstract class GoToNeighbourRootActions {
   private static final Icon PREVIOUS_ROOT_ICON = IconLoader.getIcon("/actions/prevfile.png");
@@ -19,10 +19,9 @@ public abstract class GoToNeighbourRootActions {
   public GoToNeighbourRootActions() {
   }
 
-  @Nullable
-  protected abstract SNodeId getNeighbourId(boolean next);
+  protected abstract boolean hasNeighbour(boolean next);
 
-  protected abstract void goTo(@NotNull SNodeId rootId);
+  protected abstract void goToNeighbour(boolean next);
 
   public final BaseAction previous() {
     return new GoToNeighbourRootActions.TheAction(false);
@@ -30,6 +29,10 @@ public abstract class GoToNeighbourRootActions {
 
   public final BaseAction next() {
     return new GoToNeighbourRootActions.TheAction(true);
+  }
+
+  public BaseAction[] getActions() {
+    return new BaseAction[]{previous(), next()};
   }
 
   private class TheAction extends BaseAction implements DumbAware {
@@ -49,16 +52,37 @@ public abstract class GoToNeighbourRootActions {
     }
 
     protected void doExecute(AnActionEvent event, Map<String, Object> map) {
-      SNodeId neighbour = getNeighbourId(myNext);
-      if (neighbour != null) {
-        goTo(neighbour);
-      }
+      goToNeighbour(myNext);
     }
 
     @Override
     protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
-      event.getPresentation().setVisible(true);
-      event.getPresentation().setEnabled(getNeighbourId(myNext) != null);
+      setEnabledState(event.getPresentation(), hasNeighbour(myNext));
+    }
+  }
+
+  public static abstract class GoToByTree extends GoToNeighbourRootActions {
+    private DiffModelTree myTree;
+
+    public GoToByTree(@NotNull DiffModelTree tree) {
+      myTree = tree;
+    }
+
+    @Nullable
+    protected abstract SNodeId getCurrentNodeId();
+
+    public abstract void setCurrentNodeId(@Nullable SNodeId nodeId);
+
+    @Override
+    protected boolean hasNeighbour(boolean next) {
+      return myTree.hasNeighbour(getCurrentNodeId(), next);
+    }
+
+    @Override
+    protected void goToNeighbour(boolean next) {
+      SNodeId nodeId = myTree.getNeighbourRoot(getCurrentNodeId(), next);
+      setCurrentNodeId(nodeId);
+      myTree.setSelected(nodeId);
     }
   }
 }

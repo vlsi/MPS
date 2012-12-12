@@ -21,8 +21,6 @@ import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 
 public class UpgradePersistence_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -42,9 +40,7 @@ public class UpgradePersistence_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "UpgradePersistence", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "UpgradePersistence", t);
       this.disable(event.getPresentation());
     }
   }
@@ -101,11 +97,9 @@ public class UpgradePersistence_Action extends BaseAction {
         }
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "UpgradePersistence", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "UpgradePersistence", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(UpgradePersistence_Action.class);
+  private static Logger LOG = Logger.getLogger(UpgradePersistence_Action.class);
 }

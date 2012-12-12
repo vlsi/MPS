@@ -18,8 +18,7 @@ import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class AddExtendedLanguagesAsUsed_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,9 +38,7 @@ public class AddExtendedLanguagesAsUsed_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "AddExtendedLanguagesAsUsed", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "AddExtendedLanguagesAsUsed", t);
       this.disable(event.getPresentation());
     }
   }
@@ -71,11 +68,9 @@ public class AddExtendedLanguagesAsUsed_Action extends BaseAction {
         module.save();
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "AddExtendedLanguagesAsUsed", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "AddExtendedLanguagesAsUsed", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(AddExtendedLanguagesAsUsed_Action.class);
+  private static Logger LOG = Logger.getLogger(AddExtendedLanguagesAsUsed_Action.class);
 }

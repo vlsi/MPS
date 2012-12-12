@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-c2a6y546vqnraaznydjqdm1ssitryai">
+<dependencies version="2" modelHash="-bo5qymoyffmtp9cighpj1wsqyc5ihky">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
-  <common hash="e7n3soee51hksq235ugw3mw13pgroe4" />
-  <source id="7048882195103614171" name="JavaNodePositionProvider" hash="-cp4wwvaolvrrepqhiexslh8okwfghz">
+  <common hash="-1ys2nrajlhq9n6z7a668iskqhqm96da" />
+  <source id="7048882195103614171" name="JavaNodePositionProvider" hash="-2s9m2bty976ippqlmo68ggeoiq0aflz">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JavaNodePositionProvider.java" />
   </source>
-  <source id="4352118152439837554" name="JavaDebugger" hash="-3v01pi2ulsuio3q7iqeb72u8srfa398">
+  <source id="4352118152439837554" name="JavaDebugger" hash="-1ksvc3dzp2nj0mvyyz9b75nd4622b">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="JavaDebugger.java" />
   </source>

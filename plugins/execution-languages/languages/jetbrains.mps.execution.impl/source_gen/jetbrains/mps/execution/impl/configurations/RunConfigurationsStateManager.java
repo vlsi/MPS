@@ -34,8 +34,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import org.jdom.Element;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class RunConfigurationsStateManager implements ProjectComponent {
   private final Project myProject;
@@ -80,9 +79,7 @@ public class RunConfigurationsStateManager implements ProjectComponent {
         myState.restoreState();
         myState = null;
       } catch (InvalidDataException e) {
-        if (log.isErrorEnabled()) {
-          log.error("Can't read execution configurations state.", e);
-        }
+        LOG.error("Can't read execution configurations state.", e);
       }
     }
   }
@@ -99,14 +96,10 @@ public class RunConfigurationsStateManager implements ProjectComponent {
           while (d_it.hasNext()) {
             d_var = d_it.next();
             if (d_var.getAttachedContent() == null) {
-              if (log.isWarnEnabled()) {
-                log.warn("Attached content of descriptor " + d_var.getDisplayName() + " is null.");
-              }
+              LOG.warning("Attached content of descriptor " + d_var.getDisplayName() + " is null.");
             } else
             if (d_var.getAttachedContent().getManager() == null) {
-              if (log.isWarnEnabled()) {
-                log.warn("Manager of attached content of descriptor " + d_var.getDisplayName() + " is null.");
-              }
+              LOG.warning("Manager of attached content of descriptor " + d_var.getDisplayName() + " is null.");
             } else {
               d_var.getAttachedContent().getManager().removeAllContents(true);
             }
@@ -120,9 +113,7 @@ public class RunConfigurationsStateManager implements ProjectComponent {
         myState = new RunConfigurationsStateManager.State();
         getRunManager().clearAll();
       } catch (WriteExternalException e) {
-        if (log.isErrorEnabled()) {
-          log.error("Can't save run configurations state.", e);
-        }
+        LOG.error("Can't save run configurations state.", e);
       }
     }
   }
@@ -216,5 +207,5 @@ public class RunConfigurationsStateManager implements ProjectComponent {
     }
   }
 
-  protected static Log log = LogFactory.getLog(RunConfigurationsStateManager.class);
+  private static Logger LOG = Logger.getLogger(RunConfigurationsStateManager.class);
 }

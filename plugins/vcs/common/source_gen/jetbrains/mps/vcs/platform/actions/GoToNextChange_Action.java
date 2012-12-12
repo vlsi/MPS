@@ -13,8 +13,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class GoToNextChange_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("nextOccurence.png");
@@ -34,9 +33,7 @@ public class GoToNextChange_Action extends BaseAction {
     try {
       event.getPresentation().setEnabled(ChangesStripActionsHelper.isNeighbourGroupAvailable(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), true));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "GoToNextChange", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "GoToNextChange", t);
       this.disable(event.getPresentation());
     }
   }
@@ -60,11 +57,9 @@ public class GoToNextChange_Action extends BaseAction {
     try {
       ChangesStripActionsHelper.goToNeighbourGroup(((EditorContext) MapSequence.fromMap(_params).get("editorContext")), true);
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "GoToNextChange", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "GoToNextChange", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(GoToNextChange_Action.class);
+  private static Logger LOG = Logger.getLogger(GoToNextChange_Action.class);
 }

@@ -54,6 +54,10 @@ public class CreateProperVariableReferance_Intention implements IntentionFactory
     return new SNodePointer("r:0c717a24-7cfd-444b-8c1a-bb7f81471ed8(jetbrains.mps.bash.intentions)", "1635896182103803015");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new CreateProperVariableReferance_Intention.IntentionImplementation());

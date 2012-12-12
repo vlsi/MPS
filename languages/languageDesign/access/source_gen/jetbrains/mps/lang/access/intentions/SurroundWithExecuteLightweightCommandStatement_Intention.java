@@ -56,6 +56,10 @@ public class SurroundWithExecuteLightweightCommandStatement_Intention implements
     return new SNodePointer("r:4df57e9b-2a09-44c7-b16d-4af6620e3aaa(jetbrains.mps.lang.access.intentions)", "1616052750811363739");
   }
 
+  public boolean isSurroundWith() {
+    return true;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new SurroundWithExecuteLightweightCommandStatement_Intention.IntentionImplementation());

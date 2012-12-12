@@ -14,8 +14,7 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.devkit.cellExplorer.CellExplorerView;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class ShowCellInExplorer_Action extends BaseAction {
   private static final Icon ICON = IconUtil.getIcon("cellExplorer.png");
@@ -35,9 +34,7 @@ public class ShowCellInExplorer_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowCellInExplorer", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowCellInExplorer", t);
       this.disable(event.getPresentation());
     }
   }
@@ -61,11 +58,9 @@ public class ShowCellInExplorer_Action extends BaseAction {
     try {
       ((IOperationContext) MapSequence.fromMap(_params).get("context")).getComponent(CellExplorerView.class).showCell(((EditorCell) MapSequence.fromMap(_params).get("cell")));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowCellInExplorer", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowCellInExplorer", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(ShowCellInExplorer_Action.class);
+  private static Logger LOG = Logger.getLogger(ShowCellInExplorer_Action.class);
 }

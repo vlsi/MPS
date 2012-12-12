@@ -8,8 +8,7 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 /*package*/ class CurrentDifferenceBroadcaster implements CurrentDifferenceListener {
   private List<CurrentDifferenceListener> myListeners = ListSequence.fromList(new ArrayList<CurrentDifferenceListener>());
@@ -45,9 +44,7 @@ import org.apache.commons.logging.LogFactory;
         task.invoke(listener);
       } catch (Throwable t) {
         myCommandQueue.setHadExceptions(true);
-        if (log.isErrorEnabled()) {
-          log.error("Exception on firing " + name + " event", t);
-        }
+        LOG.error("Exception on firing " + name + " event", t);
       }
     }
   }
@@ -84,5 +81,5 @@ import org.apache.commons.logging.LogFactory;
     });
   }
 
-  protected static Log log = LogFactory.getLog(CurrentDifferenceBroadcaster.class);
+  private static Logger LOG = Logger.getLogger(CurrentDifferenceBroadcaster.class);
 }

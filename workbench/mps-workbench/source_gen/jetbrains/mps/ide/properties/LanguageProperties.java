@@ -5,7 +5,6 @@ package jetbrains.mps.ide.properties;
 import java.util.List;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.StubSolution;
 import jetbrains.mps.workbench.dialogs.project.components.parts.lists.ListsFactory;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
@@ -17,13 +16,11 @@ public class LanguageProperties extends ModuleProperties {
   private List<SModelReference> myAccessoryModels;
   private List<ModuleReference> myExtendedLanguages;
   private List<ModuleReference> myRuntimeModules;
-  private List<StubSolution> myStubSolutions;
 
   public LanguageProperties() {
     myAccessoryModels = ListsFactory.create(ListsFactory.MODEL_REF_COMPARATOR);
     myExtendedLanguages = ListsFactory.create(ListsFactory.MODULE_VALID_REF_COMPARATOR);
     myRuntimeModules = ListsFactory.create(ListsFactory.MODULE_REF_COMPARATOR);
-    myStubSolutions = ListsFactory.create(ListsFactory.STUB_SOLUTIONS_ENTRY_COMPARATOR);
   }
 
   public String getGenPath() {
@@ -46,10 +43,6 @@ public class LanguageProperties extends ModuleProperties {
     return myRuntimeModules;
   }
 
-  public List<StubSolution> getStubSolutions() {
-    return myStubSolutions;
-  }
-
   @Override
   public void loadFrom(ModuleDescriptor descriptor) {
     assert descriptor instanceof LanguageDescriptor;
@@ -59,12 +52,6 @@ public class LanguageProperties extends ModuleProperties {
     myAccessoryModels.addAll(d.getAccessoryModels());
     myExtendedLanguages.addAll(d.getExtendedLanguages());
     myRuntimeModules.addAll(d.getRuntimeModules());
-    for (StubSolution ss : d.getStubSolutions()) {
-      myStubSolutions.add((ss != null ?
-        ss.getCopy() :
-        null
-      ));
-    }
   }
 
   @Override
@@ -79,7 +66,5 @@ public class LanguageProperties extends ModuleProperties {
     d.getExtendedLanguages().addAll(myExtendedLanguages);
     d.getRuntimeModules().clear();
     d.getRuntimeModules().addAll(myRuntimeModules);
-    d.getStubSolutions().clear();
-    d.getStubSolutions().addAll(myStubSolutions);
   }
 }

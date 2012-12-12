@@ -53,6 +53,10 @@ public class Option_makeDefault_Intention implements IntentionFactory {
     return new SNodePointer("r:5909e14d-efc7-4305-a9c5-848760da6cbc(jetbrains.mps.make.script.intentions)", "8626841540115943116");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new Option_makeDefault_Intention.IntentionImplementation());

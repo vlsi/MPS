@@ -68,6 +68,10 @@ public class Classifier_add_GenerateVariant_Intention implements IntentionFactor
     return new SNodePointer("r:8cdffe0e-82a6-47c0-9a63-88679c2baa24(jetbrains.mps.ui.intentions)", "8905126934806239993");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     List<IntentionExecutable> list = ListSequence.fromList(new ArrayList<IntentionExecutable>());
     List<String> paramList = parameter(node, context);

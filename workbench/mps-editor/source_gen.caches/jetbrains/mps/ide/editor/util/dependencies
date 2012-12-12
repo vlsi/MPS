@@ -50,7 +50,8 @@
     <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />
     <classNode dependClassName="com.intellij.ui.components.JBList" />
     <classNode dependClassName="java.awt.Point" />
-    <classNode dependClassName="java.awt.Rectangle" />
+    <classNode dependClassName="java.awt.event.InputEvent" />
+    <classNode dependClassName="java.awt.event.MouseEvent" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />

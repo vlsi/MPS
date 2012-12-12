@@ -4,13 +4,13 @@ package jetbrains.mps.baseLanguage.unitTest.sandbox;
 
 import junit.framework.TestCase;
 import junit.framework.Assert;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
+import org.apache.log4j.LogManager;
 
 public class Test_Test extends TestCase {
   public void test_test1() throws Exception {
-    if (log.isInfoEnabled()) {
-      log.info("info!");
+    if (LOG.isInfoEnabled()) {
+      LOG.info("info!");
     }
     Assert.assertFalse(false);
   }
@@ -27,5 +27,5 @@ public class Test_Test extends TestCase {
     System.err.println("teardown test!!");
   }
 
-  protected static Log log = LogFactory.getLog(Test_Test.class);
+  protected static Logger LOG = LogManager.getLogger(Test_Test.class);
 }

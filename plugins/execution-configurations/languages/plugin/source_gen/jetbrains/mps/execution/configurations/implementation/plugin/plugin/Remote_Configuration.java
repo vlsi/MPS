@@ -22,8 +22,7 @@ import com.intellij.openapi.util.JDOMExternalizable;
 import com.intellij.execution.runners.ProgramRunner;
 import com.intellij.execution.configurations.ConfigurationInfoProvider;
 import jetbrains.mps.execution.api.settings.SettingsEditorEx;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class Remote_Configuration extends BaseMpsRunConfiguration implements IPersistentConfiguration {
   @NotNull
@@ -61,9 +60,7 @@ public class Remote_Configuration extends BaseMpsRunConfiguration implements IPe
       clone.myState = (Remote_Configuration.MyState) myState.clone();
       return clone;
     } catch (CloneNotSupportedException ex) {
-      if (log.isErrorEnabled()) {
-        log.error("", ex);
-      }
+      LOG.error("", ex);
     }
     return clone;
   }
@@ -119,5 +116,5 @@ public class Remote_Configuration extends BaseMpsRunConfiguration implements IPe
     return Remote_Configuration_RunProfileState.canExecute(executorId);
   }
 
-  protected static Log log = LogFactory.getLog(Remote_Configuration.class);
+  private static Logger LOG = Logger.getLogger(Remote_Configuration.class);
 }

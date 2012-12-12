@@ -68,6 +68,10 @@ public class ConvertInlineTemplateToTemplateFragment_Intention implements Intent
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1203775431223");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertInlineTemplateToTemplateFragment_Intention.IntentionImplementation());

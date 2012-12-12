@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.build.ant.Arg" file="Arg.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="org.apache.tools.ant.ProjectComponent" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.ant.ExcludeNested" file="ExcludeNested.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="org.apache.tools.ant.types.FileSet" />
+    <classNode dependClassName="org.apache.tools.ant.types.resources.FileResource" />
+    <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.ant.JvmArgs" file="JvmArgs.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.Arrays" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.build.ant.Arg" />
+    <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.ant.LibraryDataType" file="LibraryDataType.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.ant.Macro" file="Macro.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.ant.MpsLoadTask" file="MpsLoadTask.java">
+    <classNode dependClassName="java.io.BufferedReader" />
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.FileInputStream" />
+    <classNode dependClassName="java.io.FileNotFoundException" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.InputStream" />
+    <classNode dependClassName="java.io.InputStreamReader" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Exception" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.StringBuilder" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="java.lang.Throwable" />
+    <classNode dependClassName="java.lang.reflect.Constructor" />
+    <classNode dependClassName="java.lang.reflect.Method" />
+    <classNode dependClassName="java.net.MalformedURLException" />
+    <classNode dependClassName="java.net.URL" />
+    <classNode dependClassName="java.net.URLClassLoader" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Hashtable" />
+    <classNode dependClassName="java.util.Iterator" />
+    <classNode dependClassName="java.util.LinkedHashSet" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="java.util.Scanner" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.build.ant.Arg" />
+    <classNode dependClassName="jetbrains.mps.build.ant.ExcludeNested" />
+    <classNode dependClassName="jetbrains.mps.build.ant.JvmArgs" />
+    <classNode dependClassName="jetbrains.mps.build.ant.LibraryDataType" />
+    <classNode dependClassName="jetbrains.mps.build.ant.Macro" />
+    <classNode dependClassName="jetbrains.mps.build.ant.MyExecuteStreamHandler" />
+    <classNode dependClassName="jetbrains.mps.build.ant.ProjectNested" />
+    <classNode dependClassName="jetbrains.mps.tool.builder.AntBootstrap" />
+    <classNode dependClassName="jetbrains.mps.tool.builder.MpsWorker" />
+    <classNode dependClassName="jetbrains.mps.tool.common.Script" />
+    <classNode dependClassName="org.apache.log4j.Level" />
+    <classNode dependClassName="org.apache.tools.ant.BuildException" />
+    <classNode dependClassName="org.apache.tools.ant.Project" />
+    <classNode dependClassName="org.apache.tools.ant.ProjectComponent" />
+    <classNode dependClassName="org.apache.tools.ant.taskdefs.Execute" />
+    <classNode dependClassName="org.apache.tools.ant.types.FileSet" />
+    <classNode dependClassName="org.apache.tools.ant.types.resources.FileResource" />
+    <classNode dependClassName="org.apache.tools.ant.util.JavaEnvUtils" />
+    <classNode extendsClassName="java.lang.Thread" />
+    <classNode extendsClassName="org.apache.tools.ant.Task" />
+    <classNode extendsClassName="org.apache.tools.ant.types.EnumeratedAttribute" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.ant.MyExecuteStreamHandler" file="MyExecuteStreamHandler.java">
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.InputStream" />
+    <classNode dependClassName="java.io.OutputStream" />
+    <classNode dependClassName="java.lang.InterruptedException" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.Thread" />
+    <classNode dependClassName="java.util.Scanner" />
+    <classNode dependClassName="org.apache.tools.ant.Project" />
+    <classNode dependClassName="org.apache.tools.ant.Task" />
+    <classNode extendsClassName="org.apache.tools.ant.taskdefs.ExecuteStreamHandler" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.ant.MyTeamcityAwareExecuteStreamHandler" file="MyTeamcityAwareExecuteStreamHandler.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.System" />
+    <classNode dependClassName="jetbrains.mps.tool.common.IMessageFormat" />
+    <classNode dependClassName="org.apache.tools.ant.Task" />
+    <classNode extendsClassName="jetbrains.mps.build.ant.MyExecuteStreamHandler" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.ant.ProjectNested" file="ProjectNested.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="org.apache.tools.ant.BuildException" />
+    <classNode extendsClassName="org.apache.tools.ant.types.FileSet" />
+  </dependency>
+</dependenciesRoot>
+

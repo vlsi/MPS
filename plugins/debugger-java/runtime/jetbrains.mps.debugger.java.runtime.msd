@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.debugger.java.runtime" uuid="fcffe3cf-3ebc-4d3d-989b-2f30533bc904" compileInMPS="false">
+<solution name="jetbrains.mps.debugger.java.runtime" uuid="fcffe3cf-3ebc-4d3d-989b-2f30533bc904" pluginKind="PLUGIN_OTHER" compileInMPS="false" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot path="${module}/models" />
   </models>
   <sourcePath />
   <dependencies>
+    <dependency reexport="false">3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)</dependency>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">fdb93da0-59ed-4001-b2aa-4fad79ec058e(JDK.Tools)</dependency>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>

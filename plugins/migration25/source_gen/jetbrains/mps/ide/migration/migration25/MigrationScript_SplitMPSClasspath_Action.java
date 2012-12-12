@@ -18,14 +18,13 @@ import com.intellij.openapi.command.CommandProcessorEx;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
 import com.intellij.openapi.progress.EmptyProgressIndicator;
 import java.awt.Frame;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class MigrationScript_SplitMPSClasspath_Action extends BaseAction {
   private static final Icon ICON = null;
 
   public MigrationScript_SplitMPSClasspath_Action() {
-    super("Apply Split MPS.Classpath", "", ICON);
+    super("Fix MPS Stub references", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(true);
   }
@@ -39,9 +38,7 @@ public class MigrationScript_SplitMPSClasspath_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "MigrationScript_SplitMPSClasspath", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "MigrationScript_SplitMPSClasspath", t);
       this.disable(event.getPresentation());
     }
   }
@@ -65,18 +62,16 @@ public class MigrationScript_SplitMPSClasspath_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       SNodePointer script = new SNodePointer("r:00000000-0000-4000-0000-011c89590367(jetbrains.mps.lang.plugin.scripts)", "5606420294479385927");
-      MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Split MPS.Classpath", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
+      MigrationScriptExecutor executor = new MigrationScriptExecutor(script, "Fix MPS Stub references", ((IOperationContext) MapSequence.fromMap(_params).get("context")), ((Project) MapSequence.fromMap(_params).get("project")));
       if (CommandProcessorEx.getInstance().getCurrentCommand() != null) {
         executor.execImmediately(new ProgressMonitorAdapter(new EmptyProgressIndicator()));
       } else {
         executor.execAsCommand(((Frame) MapSequence.fromMap(_params).get("frame")));
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "MigrationScript_SplitMPSClasspath", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "MigrationScript_SplitMPSClasspath", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(MigrationScript_SplitMPSClasspath_Action.class);
+  private static Logger LOG = Logger.getLogger(MigrationScript_SplitMPSClasspath_Action.class);
 }

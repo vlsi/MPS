@@ -23,8 +23,7 @@ import com.intellij.openapi.project.ProjectManager;
 import jetbrains.mps.vcs.diff.ui.ModelDifferenceDialog;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.vcs.util.ModelVersion;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
   public DiskMemoryConflictResolverImpl() {
@@ -107,9 +106,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
       FileUtil.delete(tmp);
       return zipfile;
     } catch (IOException e) {
-      if (log.isErrorEnabled()) {
-        log.error("Cannot create backup during resolving disk-memory conflict for " + inMemory.getLongName(), e);
-      }
+      LOG.error("Cannot create backup during resolving disk-memory conflict for " + inMemory.getLongName(), e);
       throw new RuntimeException(e);
     }
   }
@@ -119,9 +116,7 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
     try {
       onDisk = ModelPersistence.readModel(modelFile, false);
     } catch (ModelReadException e) {
-      if (log.isErrorEnabled()) {
-        log.error("Could not read model", e);
-      }
+      LOG.error("Could not read model", e);
     }
     Project project = ProjectManager.getInstance().getOpenProjects()[0];
     final ModelDifferenceDialog dialog = new ModelDifferenceDialog(onDisk, inMemory, project, "Filesystem version (Read-Only)", "Memory Version");
@@ -148,5 +143,5 @@ public class DiskMemoryConflictResolverImpl extends DiskMemoryConflictResolver {
     }
   }
 
-  protected static Log log = LogFactory.getLog(DiskMemoryConflictResolverImpl.class);
+  private static Logger LOG = Logger.getLogger(DiskMemoryConflictResolverImpl.class);
 }

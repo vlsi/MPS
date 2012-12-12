@@ -66,6 +66,10 @@ public class ConvertInferenceRuleToNonTypesystemRule_Intention implements Intent
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902b2(jetbrains.mps.lang.typesystem.intentions)", "1195490883262");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertInferenceRuleToNonTypesystemRule_Intention.IntentionImplementation());

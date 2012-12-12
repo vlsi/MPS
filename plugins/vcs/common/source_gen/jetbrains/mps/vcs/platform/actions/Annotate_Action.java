@@ -11,8 +11,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import jetbrains.mps.logging.Logger;
 
 public class Annotate_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -39,9 +38,7 @@ public class Annotate_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "Annotate", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "Annotate", t);
       this.disable(event.getPresentation());
     }
   }
@@ -61,11 +58,9 @@ public class Annotate_Action extends BaseAction {
     try {
       AnnotationHelper.annotate(((EditorComponent) MapSequence.fromMap(_params).get("editor")));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "Annotate", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "Annotate", t);
     }
   }
 
-  protected static Log log = LogFactory.getLog(Annotate_Action.class);
+  private static Logger LOG = Logger.getLogger(Annotate_Action.class);
 }

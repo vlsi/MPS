@@ -23,10 +23,44 @@ import jetbrains.mps.smodel.SNode;
 public interface EditorCell {
 
   int getX();
+
+  void setX(int x);
+
   int getY();
 
+  void setY(int y);
+
   int getWidth();
+
+  void setWidth(int width);
+
   int getHeight();
+
+  void setHeight(int height);
+
+  int getBottom();
+
+  int getRight();
+
+  int getBaseline();
+
+  void setBaseline(int y);
+
+  int getAscent();
+
+  int getDescent();
+
+  int getEffectiveWidth();
+
+  int getLeftInset();
+
+  int getRightInset();
+
+  int getTopInset();
+
+  int getBottomInset();
+
+// Older methods
 
   EditorContext getContext();
 

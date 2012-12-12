@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.debugger.api.api" uuid="cc7da2f6-419f-4133-a811-31fcd3295a85" pluginKind="PLUGIN_CORE" compileInMPS="false">
+<solution name="jetbrains.mps.debugger.api.api" uuid="cc7da2f6-419f-4133-a811-31fcd3295a85" pluginKind="PLUGIN_OTHER" compileInMPS="false">
   <models>
     <modelRoot path="${module}/" />
   </models>
   <sourcePath />
   <dependencies>
+    <dependency reexport="false">3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)</dependency>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
     <dependency reexport="false">742f6602-5a2f-4313-aa6e-ae1cd4ffdc61(MPS.Platform)</dependency>
