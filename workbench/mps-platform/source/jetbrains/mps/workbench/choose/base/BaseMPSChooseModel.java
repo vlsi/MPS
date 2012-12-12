@@ -203,4 +203,9 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
   public String getHelpId() {
     return null;
   }
+
+  // IDEA12 addition to ChooseByNameModel interface
+  public boolean useMiddleMatching() {
+    return true;
+  }
 }
