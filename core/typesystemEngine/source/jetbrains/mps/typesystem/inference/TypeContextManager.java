@@ -205,36 +205,34 @@ public class TypeContextManager implements CoreComponent {
   }
 
   public void runResolveAction(Runnable r) {
+    runTypecheckingAction(new NonReusableTypecheckingContextOwner(), r);
+  }
+
+  public <T> T runResolveAction(Computable<T> computable) {
+    return runTypecheckingAction(new NonReusableTypecheckingContextOwner(), computable);
+  }
+
+  public void runTypecheckingAction(ITypeContextOwner contextOwner, Runnable r) {
     final ITypeContextOwner savedOwner = myTypecheckingContextOwner.get();
-    myTypecheckingContextOwner.set(new NonReusableTypecheckingContextOwner());
+    myTypecheckingContextOwner.set(contextOwner);
     final SubtypingCache savedSubtypingCache = mySubtypingCache.get();
     mySubtypingCache.set(null);
-
-//    boolean wasResolveBefore = myResolveMode.get();
-//    myResolveMode.set(true);
     try {
       r.run();
     } finally {
-//      myResolveMode.set(wasResolveBefore);
-
       myTypecheckingContextOwner.set(savedOwner);
       mySubtypingCache.set(savedSubtypingCache);
     }
   }
 
-  public <T> T runResolveAction(Computable<T> computable) {
+  public <T> T runTypecheckingAction(ITypeContextOwner contextOwner, Computable<T> computable) {
     final ITypeContextOwner savedOwner = myTypecheckingContextOwner.get();
-    myTypecheckingContextOwner.set(new NonReusableTypecheckingContextOwner());
+    myTypecheckingContextOwner.set(contextOwner);
     final SubtypingCache savedSubtypingCache = mySubtypingCache.get();
     mySubtypingCache.set(null);
-
-//    boolean wasResolveBefore = myResolveMode.get();
-//    myResolveMode.set(true);
     try {
       return computable.compute();
     } finally {
-//      myResolveMode.set(wasResolveBefore);
-
       myTypecheckingContextOwner.set(savedOwner);
       mySubtypingCache.set(savedSubtypingCache);
     }

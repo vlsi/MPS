@@ -68,8 +68,6 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
 
   private RulesManager myRulesManager;
 
-  private volatile SubtypingCachePool myGlobalSubtypingCachePool = null;
-
   private SubtypingCache myGenerationSubTypingCache = null;
 
   private ThreadLocal<Boolean> myIsGenerationThread = new ThreadLocal<Boolean>() {
@@ -153,19 +151,6 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
       }
     }
     return TypeContextManager.getInstance().getSubtypingCache();
-  }
-
-  public SubtypingCache getGlobalSubtypingCache() {
-    return myGlobalSubtypingCachePool != null ? myGlobalSubtypingCachePool.getCurrent() : null;
-  }
-
-  public void enableGlobalSubtypingCache() {
-    myGlobalSubtypingCachePool = new SubtypingCachePool();
-  }
-
-  public void clearGlobalSubtypingCache() {
-    if (myGlobalSubtypingCachePool != null) myGlobalSubtypingCachePool.clear();
-    myGlobalSubtypingCachePool = null;
   }
 
   public RulesManager getRulesManager() {
@@ -307,25 +292,4 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
     }
   }
 
-  private class SubtypingCachePool {
-
-    private volatile ConcurrentHashMap<LanguageScope, SubtypingCache> myPool = new ConcurrentHashMap<LanguageScope, SubtypingCache>();
-    private volatile ConcurrentHashMap<LanguageScope, Boolean> myPoolGuard = new ConcurrentHashMap<LanguageScope, Boolean>();
-
-    private SubtypingCache getCurrent() {
-      LanguageScope langScope = LanguageScope.getCurrent();
-      if (!myPool.containsKey(langScope)) {
-        if (myPoolGuard.putIfAbsent(langScope, Boolean.TRUE) == null) {
-          myPool.put(langScope,createSubtypingCache());
-        }
-      }
-      return myPool.get(langScope);
-    }
-
-    private void clear () {
-      myPoolGuard.clear();
-      myPool.clear();
-    }
-
-  }
 }

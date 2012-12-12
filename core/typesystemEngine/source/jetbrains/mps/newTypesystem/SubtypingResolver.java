@@ -171,21 +171,11 @@ public class SubtypingResolver {
         return answer;
       }
     }
-    cache = TypeChecker.getInstance().getGlobalSubtypingCache();
-    if (cache != null) {
-      Boolean answer = cache.getIsSubtype(subType, superType, isWeak);
-      if (answer != null) {
-        return answer;
-      }
-    }
     return null;
   }
 
   private void addToCache(SNode subType, SupertypeMatcher superType, boolean answer, boolean isWeak) {
     SubtypingCache cache = TypeChecker.getInstance().getSubtypingCache();
-    if (cache == null) {
-      cache = TypeChecker.getInstance().getGlobalSubtypingCache();
-    }
     if (cache != null) {
       cache.cacheIsSubtype(subType, superType.getSuperType(), answer, isWeak);
     }

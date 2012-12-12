@@ -76,11 +76,6 @@ public class CoercionManager {
         if (subtypingCache != null) {
           subtypingCache.cacheCoerce(subtype, pattern, result, isWeak);
         }
-        subtypingCache = myTypeChecker.getGlobalSubtypingCache();
-        if (subtypingCache != null) {
-          subtypingCache.cacheCoerce(subtype, pattern, result, isWeak);
-        }
-
         return result;
       }
     });
@@ -94,11 +89,6 @@ public class CoercionManager {
       if (coerced != null) {
         return coerced;
       }
-    }
-    cache = myTypeChecker.getGlobalSubtypingCache();
-    if (cache != null) {
-      Pair<Boolean, SNode> coerced = cache.getCoerced(subtype, pattern, isWeak);
-      if (coerced != null) return coerced;
     }
     return null;
   }
