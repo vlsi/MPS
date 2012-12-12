@@ -30,7 +30,8 @@ public class FixJDKTools_MigrationScript extends BaseMigrationScript {
       public boolean isApplicableInstanceNode(SNode node) {
         return Sequence.fromIterable(SNodeOperations.getReferences(node)).where(new IWhereFilter<SReference>() {
           public boolean accept(SReference it) {
-            return it.getTargetSModelReference().getSModelFqName().toString().contains("JDK.Tools");
+            String modelName = it.getTargetSModelReference().getSModelFqName().toString();
+            return modelName.contains("JDK.Tools") || (!(modelName.contains("JDK")) && modelName.contains("com.sun.jdi"));
           }
         }).isNotEmpty();
       }
