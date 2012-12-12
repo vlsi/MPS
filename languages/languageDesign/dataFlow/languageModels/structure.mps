@@ -10,10 +10,10 @@
   <import index="tp41" modelUID="r:00000000-0000-4000-0000-011c8959037d(jetbrains.mps.lang.dataFlow.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1206442055221">
-      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
+      <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${mps_home}/workbench/icons/source/nodes/dataFlow.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/goRound.png" />
       <property name="name" nameId="tpck.1169194664001" value="DataFlowBuilderDeclaration" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Data Flow Builder" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />

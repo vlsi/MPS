@@ -177,7 +177,6 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/lib/mps-icons.jar">
       <fileset dir="${build.tmp}/java/out/mps-icons" />
-      <zipfileset dir="${mps_home}/workbench/icons/source" prefix="module" />
     </jar>
     <jar destfile="${build.layout}/mps-core/lib/mps-editor.jar">
       <fileset dir="${build.tmp}/java/out/mps-editor" />
@@ -2452,11 +2451,13 @@
     <mkdir dir="${build.tmp}/java/out/mps-icons" />
     <javac2 destdir="${build.tmp}/java/out/mps-icons" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
-      <src />
+      <src>
+        <path location="${mps_home}/workbench/icons/source" />
+      </src>
       <classpath refid="path.jdk.classpath" />
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-icons">
-      <fileset dir="${mps_home}/workbench/icons/source" />
+      <fileset dir="${mps_home}/workbench/icons/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   

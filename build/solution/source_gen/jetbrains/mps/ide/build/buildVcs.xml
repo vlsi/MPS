@@ -154,7 +154,6 @@
     <javac2 destdir="${build.tmp}/java/out/vcs" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <pathelement path="${mps_home}/plugins/vcs/source" />
         <pathelement path="${mps_home}/plugins/vcs/source_gen" />
         <pathelement path="${mps_home}/plugins/vcs/common/source" />
         <pathelement path="${mps_home}/plugins/vcs/common/source_gen" />
@@ -186,7 +185,6 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/vcs">
-      <fileset dir="${mps_home}/plugins/vcs/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/vcs/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/vcs/common/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/vcs/common/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />

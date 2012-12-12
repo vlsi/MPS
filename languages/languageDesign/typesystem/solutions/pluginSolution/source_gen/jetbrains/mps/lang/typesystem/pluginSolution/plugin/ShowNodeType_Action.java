@@ -24,7 +24,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.logging.Logger;
 
 public class ShowNodeType_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("type.png");
+  private static final Icon ICON = IconUtil.getIcon("types.png");
 
   public ShowNodeType_Action() {
     super("Show Type", "Show node's HELGINS type", ICON);

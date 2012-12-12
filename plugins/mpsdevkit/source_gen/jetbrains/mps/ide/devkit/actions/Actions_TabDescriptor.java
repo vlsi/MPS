@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.LanguageAspect;
 
 public class Actions_TabDescriptor extends RelationDescriptor {
-  private static final Icon ICON = IconUtil.getIcon("action.png");
+  private static final Icon ICON = IconUtil.getIcon("actions.png");
 
   public Actions_TabDescriptor() {
   }

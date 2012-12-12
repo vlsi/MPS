@@ -15,7 +15,7 @@
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1233670071145">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${mps_home}/workbench/icons/source/nodes/textGen.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/textGen.png" />
       <property name="name" nameId="tpck.1169194664001" value="ConceptTextGenDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="root" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1234281982537" resolveInfo="AbstractTextGenDeclaration" />

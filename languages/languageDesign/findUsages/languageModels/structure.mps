@@ -21,7 +21,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1197044488845">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${mps_home}/workbench/icons/source/nodes/usagesFinder.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/usagesFinder.png" />
       <property name="name" nameId="tpck.1169194664001" value="FinderDeclaration" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1218978086674" resolveInfo="AbstractFinderDeclaration" />
     </node>
