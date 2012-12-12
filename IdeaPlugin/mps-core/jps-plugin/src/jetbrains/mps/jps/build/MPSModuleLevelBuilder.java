@@ -40,6 +40,7 @@ import org.jetbrains.jps.incremental.ProjectBuildException;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
 import org.jetbrains.jps.model.module.JpsModule;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.IOException;
@@ -65,13 +66,12 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
   }
 
   @Override
-  public ExitCode build(CompileContext compileContext,
-              ModuleChunk moduleChunk,
-              DirtyFilesHolder<JavaSourceRootDescriptor, ModuleBuildTarget> dirtyFilesHolder,
-              OutputConsumer outputConsumer) throws ProjectBuildException, IOException {
+  public ExitCode build(final CompileContext compileContext,
+                        ModuleChunk moduleChunk,
+                        DirtyFilesHolder<JavaSourceRootDescriptor, ModuleBuildTarget> dirtyFilesHolder,
+                        OutputConsumer outputConsumer) throws ProjectBuildException, IOException {
     ExitCode status = ExitCode.NOTHING_DONE;
     try {
-
 
 
       for (JpsModule jpsModule : moduleChunk.getModules()) {
@@ -101,8 +101,17 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
           }
         });
 
-        for (SModelDescriptor d: SModelRepository.getInstance().getModelDescriptors(solution)) {
+        for (final SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors(solution)) {
           compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " ++ " + d.getLongName()));
+          ModelAccess.instance().runReadAction(new Runnable() {
+            @Override
+            public void run() {
+              for (SNode n: d.getRootNodes()) {
+                compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " root: " + n.getName() ));
+              }
+            }
+          });
+
         }
 
 

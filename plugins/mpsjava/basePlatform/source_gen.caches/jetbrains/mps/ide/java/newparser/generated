@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-4waqkxgg5lnqflrhldd85pgk4m71k6i">
+<dependencies version="2" modelHash="eoxlv9r8jsm7iqfpe3wri62vmntsyud">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -37,8 +37,8 @@
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-dtcjnjk6lww15wxj6oyv44k28fu5g1d" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3t350ymnztu1bi083p2mhorjil0w76j" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
-  <common hash="5moio27tblsqh1zwsoli5o3ooyfinsx">
-    <dep root="5824619280724816885" />
+  <common hash="ao9alqcvm4e4lq95ir85cdomz4ltgny">
+    <dep root="8048826103541484532" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
     <file name="StringUtils.java" />
@@ -85,9 +85,9 @@
   <source id="3493766494546492050" name="JavaParseException" hash="-2ticn25uazhazywyyl2e6wdxg3le8">
     <file name="JavaParseException.java" />
   </source>
-  <source id="3493766494546492073" name="JavaParser" hash="-1v1n7kcizkisz5jau2ta4a8td7bgx5y">
-    <dep root="5824619280724816885" />
+  <source id="3493766494546492073" name="JavaParser" hash="-e8o4yzunhg7r542v9iopfdbyn5ps4n2">
     <dep root="7529829387573562750" />
+    <dep root="8048826103541484532" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -128,7 +128,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="TypeNameResolver.java" />
   </source>
-  <source id="887121589775377717" name="DirParser" hash="6a40o6v9jfoub7c0mcgq8nv1b5bhf3c">
+  <source id="887121589775377717" name="DirParser" hash="5h2gfmsgnzp4pvs7pkowjw9wwlx97rt">
     <dep root="3493766494546492073" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -180,10 +180,10 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="FullASTConverter.java" />
   </source>
-  <source id="5824619280724720990" name="FeatureKind" hash="bchml44kbzp9gx2s8ilconojnf8g9h">
+  <source id="5646944109420325187" name="FeatureKind" hash="-ebv0kkfvlnylkbuzx3zrm7vutjjn7kp">
     <file name="FeatureKind.java" />
   </source>
-  <source id="5824619280724816885" name="CommentHelper" hash="2ga4nv2wfmtlle1umaf7z0t0eu5qdmq">
+  <source id="8048826103541484532" name="CommentHelper" hash="-43vwingtfg8ck700okxlrqwrtw281jr">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

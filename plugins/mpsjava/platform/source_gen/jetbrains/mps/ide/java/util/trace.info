@@ -500,12 +500,6 @@
     <unitInfo nodeId="2742102018362199421" fileName="StubResolver.java" startLine="149" startPosition="85" endLine="157" endPosition="9" unitName="jetbrains.mps.ide.java.util.StubResolver$4" />
     <unitInfo nodeId="5778265495851109956" fileName="StubResolver.java" startLine="45" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.ide.java.util.StubResolver" />
   </root>
-  <root nodeId="8183587472722977035" modelId="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)">
-    <nodeInfo nodeId="8183587472722977045" fileName="SolutionIds.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="stubManagerSltn" />
-    <nodeInfo nodeId="8183587472722977037" fileName="SolutionIds.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SolutionIds#()V" />
-    <scopeInfo nodeId="8183587472722977040" fileName="SolutionIds.java" startLine="12" startPosition="24" endLine="12" endPosition="24" />
-    <scopeInfo nodeId="8183587472722977037" fileName="SolutionIds.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <unitInfo nodeId="8183587472722977035" fileName="SolutionIds.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ide.java.util.SolutionIds" />
-  </root>
+  <root nodeId="8183587472722977035" modelId="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)" />
 </debugInfo>
 
