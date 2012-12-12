@@ -60,7 +60,7 @@
     <nodeInfo nodeId="8896124412454743586" fileName="JavaSourceStubModelRoot.java" startLine="75" startPosition="50" endLine="76" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4423331261408218176" fileName="JavaSourceStubModelRoot.java" startLine="82" startPosition="39" endLine="83" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="4423331261408187337" fileName="JavaSourceStubModelRoot.java" startLine="83" startPosition="12" endLine="84" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1829879859706620665" fileName="JavaSourceStubModelRoot.java" startLine="90" startPosition="39" endLine="91" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1829879859706620665" fileName="JavaSourceStubModelRoot.java" startLine="90" startPosition="40" endLine="91" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3663314010270710737" fileName="JavaSourceStubModelRoot.java" startLine="91" startPosition="64" endLine="92" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3663314010270843986" fileName="JavaSourceStubModelRoot.java" startLine="94" startPosition="36" endLine="95" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="3663314010270850173" fileName="JavaSourceStubModelRoot.java" startLine="97" startPosition="7" endLine="98" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -125,7 +125,7 @@
     <nodeInfo nodeId="1829879859706916561" fileName="JavaSourceStubModelRoot.java" startLine="124" startPosition="49" endLine="129" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1829879859707543023" fileName="JavaSourceStubModelRoot.java" startLine="130" startPosition="0" endLine="138" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="2892149804165887032" fileName="JavaSourceStubModelRoot.java" startLine="36" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
-    <nodeInfo nodeId="4423331261408187338" fileName="JavaSourceStubModelRoot.java" startLine="89" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModels#()Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="4423331261408187338" fileName="JavaSourceStubModelRoot.java" startLine="89" startPosition="0" endLine="100" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="loadModels#()Ljava/lang/Iterable;" />
     <nodeInfo nodeId="1829879859707044185" fileName="JavaSourceStubModelRoot.java" startLine="109" startPosition="0" endLine="121" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1829879859706643217" fileName="JavaSourceStubModelRoot.java" startLine="103" startPosition="0" endLine="142" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModels#(Ljetbrains/mps/vfs/IFile;Ljava/lang/String;)Ljava/util/Set;" />
     <scopeInfo nodeId="4423331261408184035" fileName="JavaSourceStubModelRoot.java" startLine="33" startPosition="36" endLine="33" endPosition="36" />
@@ -190,7 +190,7 @@
       <varInfo nodeId="1829879859707572526" varName="subPkg" />
     </scopeInfo>
     <scopeInfo nodeId="2892149804165887036" fileName="JavaSourceStubModelRoot.java" startLine="37" startPosition="35" endLine="44" endPosition="63" />
-    <scopeInfo nodeId="4423331261408187345" fileName="JavaSourceStubModelRoot.java" startLine="90" startPosition="39" endLine="98" endPosition="18">
+    <scopeInfo nodeId="4423331261408187345" fileName="JavaSourceStubModelRoot.java" startLine="90" startPosition="40" endLine="98" endPosition="18">
       <varInfo nodeId="3663314010270710740" varName="models" />
       <varInfo nodeId="1829879859706620666" varName="path" />
     </scopeInfo>

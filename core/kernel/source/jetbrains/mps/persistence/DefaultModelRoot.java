@@ -55,7 +55,7 @@ public class DefaultModelRoot extends FolderModelRootBase {
   }
 
   @Override
-  public Iterable<SModel> getModels() {
+  public Iterable<SModel> loadModels() {
     List<SModel> result = new ArrayList<SModel>();
     collectModels(FileSystem.getInstance().getFileByPath(getPath()), result);
     return result;
@@ -85,7 +85,7 @@ public class DefaultModelRoot extends FolderModelRootBase {
     return model;
   }
 
-  private void collectModels(IFile dir, Collection<SModel> models) {
+  protected void collectModels(IFile dir, Collection<SModel> models) {
     if (FileSystem.getInstance().isFileIgnored(dir.getName())) return;
     if (!dir.isDirectory()) return;
 

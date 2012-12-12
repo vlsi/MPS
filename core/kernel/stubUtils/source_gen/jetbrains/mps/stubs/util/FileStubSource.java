@@ -63,7 +63,7 @@ public class FileStubSource extends FileDataSource implements StubModelDataSourc
       ModelRoot created = modelRootFactory.create();
       created.load(root.getMemento());
       ((ModelRootBase) created).setModule(module);
-      Iterable<org.jetbrains.mps.openapi.model.SModel> mds = created.getModels();
+      Iterable<org.jetbrains.mps.openapi.model.SModel> mds = ((ModelRootBase) created).loadModels();
       return Sequence.fromIterable(mds).select(new ISelector<org.jetbrains.mps.openapi.model.SModel, org.jetbrains.mps.openapi.model.SModelReference>() {
         public org.jetbrains.mps.openapi.model.SModelReference select(org.jetbrains.mps.openapi.model.SModel it) {
           return it.getModelReference();

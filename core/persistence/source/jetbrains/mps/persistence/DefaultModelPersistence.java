@@ -20,7 +20,6 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -49,24 +48,24 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
     if (!(dataSource instanceof FileDataSource)) return null;
     FileDataSource source = (FileDataSource) dataSource;
 
-    DescriptorLoadResult dr;
+    SModelHeader header;
     try {
-      dr = ModelPersistence.loadDescriptor(source.getFile());
+      header = ModelPersistence.loadDescriptor(source.getFile());
     } catch (ModelReadException ignored) {
       LOG.error("Can't read model: ", ignored);
-      dr = new DescriptorLoadResult();
+      header = new SModelHeader();
     }
 
     SModelReference modelReference;
-    assert dr.getUID() != null : "wrong model: " + source.getFile().getPath();
+    assert header.getUID() != null : "wrong model: " + source.getFile().getPath();
 
-    modelReference = SModelReference.fromString(dr.getUID());
+    modelReference = SModelReference.fromString(header.getUID());
 
     LOG.debug("Getting model " + modelReference + " from " + source.getLocation());
 
     SModelDescriptor modelDescriptor = SModelRepository.getInstance().getModelDescriptor(modelReference);
     if (modelDescriptor == null) {
-      modelDescriptor = new DefaultSModelDescriptor(source, modelReference, dr);
+      modelDescriptor = new DefaultSModelDescriptor(source, modelReference, header);
     }
     return modelDescriptor;
   }
@@ -75,7 +74,7 @@ public class DefaultModelPersistence implements CoreComponent, ModelFactory {
   public SModel create(String modelName, StreamDataSource dataSource) {
     if (!(dataSource instanceof FileDataSource)) return null;
     SModelReference ref = new SModelReference(SModelFqName.fromString(modelName), jetbrains.mps.smodel.SModelId.generate());
-    return new DefaultSModelDescriptor((FileDataSource) dataSource, ref, new DescriptorLoadResult());
+    return new DefaultSModelDescriptor((FileDataSource) dataSource, ref, new SModelHeader());
   }
 
   @Override
