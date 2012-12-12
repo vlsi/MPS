@@ -90,7 +90,7 @@
 
   <target name="sign" if="windows">
     <exec executable="${basedir}/build/sign/signtool.exe" osfamily="windows" failonerror="false" dir="${output.dir}">
-      <arg line="sign /f ${basedir}/build/sign/cs_cert2011.pfx /p 123 ${output.dir}/${buildMPS.build.number}-windows.exe"/>
+      <arg line="sign /f ${basedir}/build/sign/cs_cert2011.pfx /ac ${basedir}/build/sign/path.cer /p 123 ${output.dir}/${buildMPS.build.number}-windows.exe"/>
     </exec>
   </target>
 
