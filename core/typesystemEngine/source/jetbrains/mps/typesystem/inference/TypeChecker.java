@@ -46,9 +46,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class TypeChecker implements CoreComponent, LanguageRegistryListener {
-  private static final String RUNTIME_TYPES = "$runtimeTypes$";
-  private static final String TYPES_MODEL_NAME = "typesModel";
-  private static final SModelFqName TYPES_MODEL_UID = new SModelFqName(TYPES_MODEL_NAME, RUNTIME_TYPES);
   private static TypeChecker INSTANCE;
 
   public final Object LISTENERS_LOCK = new Object();
@@ -240,14 +237,6 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
     return TypeContextManager.getInstance().getTypeOf(node);
   }
 
-
-  public SModelFqName getRuntimeTypesModelUID() {
-    return TYPES_MODEL_UID;
-  }
-
-  public boolean isGlobalIncrementalMode() {
-    return !isGenerationMode();
-  }
 
   private List<TypeRecalculatedListener> copyTypeRecalculatedListeners() {
     synchronized (LISTENERS_LOCK) {
