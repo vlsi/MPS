@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="elharkvye9oom4t0yn62d0g49z09ay2">
+<dependencies version="2" modelHash="azz180ohaw6v2gsm8t7htvvy3n45w1n">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
   <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" hash="-45t6h1tnt2f4ywjdfvx5yscqnv06zvb" />
   <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" hash="-47b5z0vi50ch1p0zpran7ye5sfop6r3" />
-  <common hash="-2pnxdxlqcwrgs70sk4lqefjba9z3vzp" />
+  <common hash="-e2247vhptub8yfhjpqo50r7bmfvj5p7" />
   <source id="3432969378036013923" name="JavaField" hash="6zt3ooo87gpzx1bt67m6vt4im964fmv">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:0a0d7eec-6e5a-412b-8e16-e3ee5ed7fb95(jetbrains.mps.debug.api.programState)" />
