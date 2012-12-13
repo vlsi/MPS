@@ -89,6 +89,8 @@ public class PlainTabsComponent extends BaseTabsComponent {
   private synchronized void onTabIndexChange() {
     if (myDisposed) return;
 
+    if (myJbTabs.getTabCount()==0) return;
+
     int index = myJbTabs.getSelectedIndex();
     PlainEditorTab tab = myRealTabs.get(index);
     SNodePointer np = tab.getNode();
@@ -150,8 +152,8 @@ public class PlainTabsComponent extends BaseTabsComponent {
   protected synchronized void updateTabs() {
     if (myDisposed) return;
 
-    myRealTabs.clear();
     myJbTabs.removeAll();
+    myRealTabs.clear();
 
     ArrayList<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>(myPossibleTabs);
     Collections.sort(tabs, new RelationComparator());
