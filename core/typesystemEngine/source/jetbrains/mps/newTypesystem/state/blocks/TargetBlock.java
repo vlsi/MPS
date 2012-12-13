@@ -17,6 +17,7 @@ package jetbrains.mps.newTypesystem.state.blocks;
 
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.newTypesystem.state.TargetState;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
@@ -29,9 +30,14 @@ import java.util.Set;
 public class TargetBlock extends Block {
   private SNode myNode;
 
-  public TargetBlock(State state, SNode node, SNode originalNode) {
+  public TargetBlock(TargetState state, SNode node, SNode originalNode) {
     super(state, getModelName(originalNode), getNodeId(originalNode));
     myNode = node;
+  }
+
+  @Override
+  protected TargetState getState() {
+    return (TargetState) super.getState();
   }
 
   private static String getNodeId(SNode originalNode) {
@@ -66,8 +72,8 @@ public class TargetBlock extends Block {
 
   @Override
   public void performAction() {
-    myState.expandTargetNode();
-    myState.setTargetTypeCalculated();
+    getState().expandTargetNode();
+    getState().setTargetTypeCalculated();
 
   }
 

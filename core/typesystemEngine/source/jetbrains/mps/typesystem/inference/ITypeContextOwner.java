@@ -16,8 +16,12 @@
 package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 
 public interface ITypeContextOwner {
   TypeCheckingContext createTypecheckingContext (SNode sNode, TypeContextManager typeContextManager);
 
+  boolean reuseTypecheckingContext();
+
+  SubtypingCache createSubtypingCache();
 }

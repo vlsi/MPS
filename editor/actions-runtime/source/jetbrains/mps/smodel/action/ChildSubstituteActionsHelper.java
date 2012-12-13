@@ -68,9 +68,8 @@ public class ChildSubstituteActionsHelper {
     // enable R/O access
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        TypeChecker.getInstance().enableTypesComputingForCompletion();
+        // In case this becomes a performance bottleneck, use the SubtypingCache
         result[0] = createActions_internal(parentNode, currentChild, childConcept, childSetter, context);
-        TypeChecker.getInstance().clearTypesComputedForCompletion();
       }
     });
 

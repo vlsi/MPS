@@ -118,6 +118,7 @@ import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NodesParetoFrontier;
 import jetbrains.mps.util.Pair;
@@ -884,6 +885,16 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   @Override
   public TypeCheckingContext createTypecheckingContext(SNode sNode, TypeContextManager typeContextManager) {
     return (new DefaultTypecheckingContextOwner()).createTypecheckingContext(sNode, typeContextManager);
+  }
+
+  @Override
+  public boolean reuseTypecheckingContext() {
+    return true;
+  }
+
+  @Override
+  public SubtypingCache createSubtypingCache() {
+    return null;
   }
 
   private String getMessagesTextFor(EditorCell cell) {
@@ -2515,7 +2526,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   private List<INodeSubstituteAction> getMatchingActions(final EditorCell editorCell, final NodeSubstituteInfo substituteInfo, final boolean isSmart, final String pattern) {
-    return TypeContextManager.getInstance().runTypeCheckingComputation(this, myNode.getTopmostAncestor(), new Computation<List<INodeSubstituteAction>>() {
+    return TypeContextManager.getInstance().runTypeCheckingComputation(this, myNode, new Computation<List<INodeSubstituteAction>>() {
       @Override
       public List<INodeSubstituteAction> compute(TypeCheckingContext context) {
         return isSmart ? substituteInfo.getSmartMatchingActions(pattern, false, editorCell) :

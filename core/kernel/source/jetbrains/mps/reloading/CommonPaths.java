@@ -66,8 +66,6 @@ public class CommonPaths {
       if (type == ClassType.OPENAPI) {
         addOpenAPIJars(result);
       } else if (type == ClassType.CORE) {
-        // TODO remove openapi here
-        addOpenAPIJars(result);
         addCoreJars(result);
       } else if (type == ClassType.EDITOR) {
         addEditorJars(result);
@@ -181,7 +179,6 @@ public class CommonPaths {
     addIfExists(result, "/lib/mps-core.jar");
     addIfExists(result, "/lib/mps-closures.jar");
     addIfExists(result, "/lib/mps-tuples.jar");
-    addIfExists(result, "/lib/annotations.jar");
     addIfExists(result, "/lib/log4j.jar");
     addIfExists(result, "/lib/trove4j.jar");
     addIfExists(result, "/lib/commons-lang-2.4.jar");

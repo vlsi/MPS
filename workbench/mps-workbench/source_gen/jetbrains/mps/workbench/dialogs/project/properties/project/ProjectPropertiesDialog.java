@@ -13,6 +13,7 @@ import java.awt.Dimension;
 import jetbrains.mps.project.StandaloneMPSProject;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 import com.intellij.openapi.ui.DialogWrapper;
 import java.awt.event.ActionEvent;
@@ -66,6 +67,7 @@ public final class ProjectPropertiesDialog extends BaseStretchingBindedDialog {
   }
 
   @Override
+  @NotNull
   protected Action[] createActions() {
     return new Action[]{getOKAction(), getCancelAction(), new DialogWrapper.DialogWrapperAction("Apply") {
       protected void doAction(ActionEvent p0) {

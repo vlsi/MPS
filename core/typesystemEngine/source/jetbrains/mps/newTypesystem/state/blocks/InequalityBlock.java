@@ -25,9 +25,7 @@ import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.AddRemarkOperation;
 import jetbrains.mps.newTypesystem.operation.CheckSubTypeOperation;
 import jetbrains.mps.newTypesystem.operation.ProcessReplacementRuleOperation;
-import jetbrains.mps.newTypesystem.rules.LanguageScope;
 import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
-import jetbrains.mps.newTypesystem.rules.LanguageScopeFactory;
 import jetbrains.mps.newTypesystem.state.Equations;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
@@ -99,9 +97,9 @@ public class InequalityBlock extends RelationBlock {
       final InequationReplacementRule_Runtime rule = inequalityReplacementRule.o1;
 
       final IsApplicable2Status status = inequalityReplacementRule.o2;
-      myState.executeOperation(new ProcessReplacementRuleOperation(subType, superType, new Runnable() {
+      getState().executeOperation(new ProcessReplacementRuleOperation(subType, superType, new Runnable() {
         public void run() {
-          ((AbstractInequationReplacementRule_Runtime) rule).processInequation(subType, superType, myEquationInfo, myState.getTypeCheckingContext(), status, myRelationKind.isWeak(), lessThan);
+          ((AbstractInequationReplacementRule_Runtime) rule).processInequation(subType, superType, myEquationInfo, getState().getTypeCheckingContext(), status, myRelationKind.isWeak(), lessThan);
         }
       }));
       return true;
@@ -115,9 +113,9 @@ public class InequalityBlock extends RelationBlock {
     }
     if (!TypesUtil.hasVariablesInside(subType) && !TypesUtil.hasVariablesInside(superType)){
       //no need to check if we don't need error reporting
-      if (myState.getTypeCheckingContext().isSingleTypeComputation()) return;
+      if (getState().getTypeCheckingContext().isSingleTypeComputation()) return;
       if (TypesUtil.match(subType, superType)) {
-        myState.executeOperation(new AddRemarkOperation("Matched: " + subType + " and "+superType));
+        getState().executeOperation(new AddRemarkOperation("Matched: " + subType + " and " + superType));
         return;
       }
     }
@@ -125,10 +123,10 @@ public class InequalityBlock extends RelationBlock {
       return;
     }
     final SubTypingManagerNew subTyping = (SubTypingManagerNew) TypeChecker.getInstance().getSubtypingManager();
-    myState.executeOperation(new CheckSubTypeOperation(subType, superType, new Runnable() {
+    getState().executeOperation(new CheckSubTypeOperation(subType, superType, new Runnable() {
       public void run() {
         if (!calcIsSubtype(subTyping, subType, superType)) {
-          myState.getNodeMaps().reportSubTypeError(subType, superType, myEquationInfo, myRelationKind.isWeak());
+          getState().getNodeMaps().reportSubTypeError(subType, superType, myEquationInfo, myRelationKind.isWeak());
         }
       }
     }));
@@ -136,10 +134,10 @@ public class InequalityBlock extends RelationBlock {
 
   private boolean calcIsSubtype(SubTypingManagerNew subTyping, SNode subType, SNode superType) {
     THashSet<Pair<SNode, SNode>> matchingPairs = new THashSet<Pair<SNode, SNode>>();
-    SubtypingResolver subtypingResolver = new SubtypingResolver(myRelationKind.isWeak(), myState.getTypeCheckingContext(), matchingPairs);
+    SubtypingResolver subtypingResolver = new SubtypingResolver(myRelationKind.isWeak(), getState().getTypeCheckingContext(), matchingPairs);
     boolean result = subtypingResolver.calcIsSubType(subType, superType);
     if (result) {
-      Equations equations = myState.getEquations();
+      Equations equations = getState().getEquations();
       if (equations != null) {
         equations.addEquations(matchingPairs, myEquationInfo);
       }

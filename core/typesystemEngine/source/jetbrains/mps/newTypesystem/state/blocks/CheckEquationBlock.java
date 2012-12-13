@@ -40,7 +40,7 @@ public class CheckEquationBlock extends RelationBlock {
     SNode left = getResolvedInput(myLeftNode);
     SNode right = getResolvedInput(myRightNode);
     if (!TypesUtil.match(left, right)) {
-      myState.getNodeMaps().reportEquationBroken(myEquationInfo, left, right);
+      getState().getNodeMaps().reportEquationBroken(myEquationInfo, left, right);
     }
   }
 

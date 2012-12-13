@@ -16,6 +16,7 @@
 package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 
 /**
  * Created with IntelliJ IDEA.
@@ -29,5 +30,15 @@ public class DefaultTypecheckingContextOwner implements ITypeContextOwner {
   @Override
   public TypeCheckingContext createTypecheckingContext(SNode sNode, TypeContextManager typeContextManager) {
     return typeContextManager.createTypeCheckingContext(sNode);
+  }
+
+  @Override
+  public boolean reuseTypecheckingContext() {
+    return true;
+  }
+
+  @Override
+  public SubtypingCache createSubtypingCache() {
+    return null;
   }
 }

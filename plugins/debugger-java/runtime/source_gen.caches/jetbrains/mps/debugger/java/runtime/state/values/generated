@@ -2,7 +2,7 @@
 <dependencies version="2" modelHash="-5lmxrxd5ixp1f59i0imxvykc7citqt5">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
   <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" hash="-47b5z0vi50ch1p0zpran7ye5sfop6r3" />
-  <dep model="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)" hash="dgvjwnd8yiqnszpfqzul60nikd3045y" />
+  <dep model="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)" hash="-1iiswjpvavpi9ymynt6om43h0o3mxdl" />
   <dep model="r:b54bdfd2-1093-4bb6-bc08-562a3cd72450(jetbrains.mps.debugger.java.runtime.ui)" hash="9tm6o5is1mo0yj2brvc92h5smliy1kp" />
   <common hash="-7gcvypu8c7sel6f35q6z8flqlew4fxk" />
   <source id="6957207478384132498" name="JavaPrimitiveValue" hash="9fagltc4oncdky7t84nz4n3xyh4ie1w">

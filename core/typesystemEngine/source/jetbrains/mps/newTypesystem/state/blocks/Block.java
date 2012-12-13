@@ -17,6 +17,7 @@ package jetbrains.mps.newTypesystem.state.blocks;
 
 import jetbrains.mps.newTypesystem.state.NodeMaps;
 import jetbrains.mps.newTypesystem.state.State;
+import jetbrains.mps.newTypesystem.state.TargetState;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Pair;
 
@@ -24,7 +25,7 @@ import java.util.List;
 import java.util.Set;
 
 public abstract class Block {
-  protected State myState;
+  private State myState;
   private String myNodeModel;
   private String myNodeId;
 
@@ -75,4 +76,8 @@ public abstract class Block {
   public abstract Set<SNode> getInputs();
 
   public abstract Set<Pair<SNode, ConditionKind>> getInitialInputs();
+
+  protected State getState() {
+    return myState;
+  }
 }
