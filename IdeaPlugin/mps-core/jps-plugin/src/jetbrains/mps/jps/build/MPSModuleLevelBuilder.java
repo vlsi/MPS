@@ -72,17 +72,15 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
                         DirtyFilesHolder<JavaSourceRootDescriptor, ModuleBuildTarget> dirtyFilesHolder,
                         OutputConsumer outputConsumer) throws ProjectBuildException, IOException {
     ExitCode status = ExitCode.NOTHING_DONE;
+
+    if (moduleChunk.getModules().isEmpty()) return status;
+
     try {
 
-
+      final JpsMPSProject project = new JpsMPSProject(moduleChunk.getModules().iterator().next().getProject());
+      JpsGeneratorWorker worker = new JpsGeneratorWorker(project, compileContext);
 
       for (JpsModule jpsModule : moduleChunk.getModules()) {
-
-        // must be done once ?
-        final JpsMPSProject project = new JpsMPSProject(jpsModule.getProject());
-
-
-
 
         JpsMPSModuleExtension extension = JpsMPSExtensionService.getInstance().getExtension(jpsModule);
         if (extension == null) {
@@ -103,44 +101,36 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
             MPSModuleRepository.getInstance().registerModule(solution, project);
             solution.updateModelsSet();
 
-
             compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "FQ name: " + solution.getModuleReference().getModuleFqName()));
-
           }
         });
 
-        for (final SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors(solution)) {
-          compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " ++ " + d.getLongName()));
-
-//          worker.addModel(d);
-
+        for (final SModelDescriptor desc : SModelRepository.getInstance().getModelDescriptors(solution)) {
+          compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " ++ " + desc.getLongName()));
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {
-              for (SNode n : d.getRootNodes()) {
+              for (SNode n : desc.getRootNodes()) {
                 compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " root: " + n.getName()));
               }
             }
           });
         }
 
-        compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "Persist. Facade: " + PersistenceFacade.getInstance()));
-
-        JpsGeneratorWorker worker = new JpsGeneratorWorker(project, compileContext);
-        // populate worker with models needing re-generation
-        dirtyFilesHolder.processDirtyFiles(worker);
-
-        for (SModel m: worker.getModels()) {
-          compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " generated model: " + m.getModelName()));
-        }
-
-        worker.generate();
-
         for (ModelRoot root : extension.getConfiguration().getModelRoots()) {
           compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " -- " + root.getPresentation()));
         }
-
       }
+
+      // populate worker with models needing re-generation
+      dirtyFilesHolder.processDirtyFiles(worker);
+
+      for (SModel m : worker.getModels()) {
+        compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " model to generate: " + m.getModelName()));
+      }
+
+      worker.generate();
+
     } catch (Exception ex) {
       throw new ProjectBuildException(ex);
     }

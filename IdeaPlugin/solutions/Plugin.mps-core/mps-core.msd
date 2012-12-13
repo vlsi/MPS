@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="Plugin.mps-core" uuid="06dc0794-59ef-49f2-81a9-204231aab3a9" compileInMPS="true" generatorOutputPath="${module}/source_gen">
   <models>
-    <modelRoot path="${mps_home}/IdeaPlugin/mps-core/src">
-      <manager moduleId="77cb6858-037c-4d16-bec3-aa1eda698a48" className="jetbrains.mps.ide.java.stubManagers.JavaSourceStubs" />
-    </modelRoot>
+    <modelRoot path="${mps_home}/IdeaPlugin/mps-core/src" type="java_source_stubs" />
   </models>
   <sourcePath />
   <dependencies>

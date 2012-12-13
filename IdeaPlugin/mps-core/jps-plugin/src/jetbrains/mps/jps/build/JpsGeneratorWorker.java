@@ -46,10 +46,6 @@ public class JpsGeneratorWorker extends GeneratorWorker implements FileProcessor
     this.compileContext = compileContext;
   }
 
-  public void addModel(SModel model) {
-    myModels.add(model);
-  }
-
   Iterable<SModel> getModels() {
     return myModels;
   }
