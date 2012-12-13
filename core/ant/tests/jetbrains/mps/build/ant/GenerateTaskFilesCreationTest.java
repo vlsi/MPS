@@ -111,9 +111,9 @@ public class GenerateTaskFilesCreationTest {
     TestCase.assertTrue(someConceptEditorFile.exists());
   }
 
-  private void assertStructureGenerated(String projectName, String languageName, File destdir, String conceptName) {
-    File someConceptFile = new File(getStructurePath(destdir, projectName, languageName) + conceptName + ".java");
-    TestCase.assertTrue(someConceptFile.exists());
+  private void assertStructureGenerated(String projectName, String languageName, File destdir, String conceptName) throws IOException {
+    File structureAspectFile = new File(getStructurePath(destdir, projectName, languageName)  + "StructureAspectDescriptor.java");
+    TestCase.assertTrue(FileUtil.loadFile(structureAspectFile).contains(conceptName));
   }
 
   private void assertGeneratorGenerated(String projectName, String languageName, File destdir) {
