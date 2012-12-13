@@ -61,6 +61,10 @@ public class MigrateString_Intention implements IntentionFactory {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902c6(jetbrains.mps.baseLanguage.intentions)", "3627222673199430317");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MigrateString_Intention.IntentionImplementation());

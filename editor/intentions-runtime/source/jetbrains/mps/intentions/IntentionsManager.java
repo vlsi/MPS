@@ -43,7 +43,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.Pair;
@@ -96,6 +98,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   private Set<IntentionFactory> myIntentionFactories = new HashSet<IntentionFactory>();
   private Map<String, Set<IntentionFactory>> myConcept2IntentionFactories = new HashMap<String, Set<IntentionFactory>>();
+  private Map<String, Set<IntentionFactory>> myConcept2IntentionFactoriesAvailableInChildNodes = new HashMap<String, Set<IntentionFactory>>();
 
   private boolean myCachesAreValid = false;
   private boolean myLoaded = false;
@@ -109,25 +112,29 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   }
 
   public Set<IntentionType> getAvailableBaseIntentionTypes(final SNode node, EditorContext editorContext) {
+    ModelAccess.assertLegalRead();
     CollectAvailableIntentionTypesVisitor visitor = new CollectAvailableIntentionTypesVisitor();
     visitIntentions(node, visitor, editorContext);
     return visitor.getAvailableIntentionTypes();
   }
 
   public boolean hasAvailableBaseIntentions(SNode node, EditorContext editorContext) {
+    ModelAccess.assertLegalRead();
     CheckAvailabilityVisitor visitor = new CheckAvailabilityVisitor();
     visitIntentions(node, visitor, editorContext);
     return visitor.isIntentionAvailable();
   }
 
   public synchronized Collection<Pair<IntentionExecutable, SNode>> getAvailableIntentions(final QueryDescriptor query, final SNode node, final EditorContext context) {
+    ModelAccess.assertLegalRead();
     checkLoaded();
-    Computable<Set<Pair<IntentionExecutable, SNode>>> computable = new Computable<Set<Pair<IntentionExecutable, SNode>>>() {
+    return TypeContextManager.getInstance().runTypecheckingAction((ITypeContextOwner) context.getEditorComponent(), new Computable<Set<Pair<IntentionExecutable, SNode>>>() {
+      @Override
       public Set<Pair<IntentionExecutable, SNode>> compute() {
         // Hiding intentions with same IntentionDescriptor
         // important then currently selected element and it's parent has same intention
         final Set<IntentionDescriptor> processedIntentionDescriptors = new HashSet<IntentionDescriptor>();
-        Filter filter = new Filter(query.myIntentionClass, query.myEnabledOnly ? getDisabledIntentions() : null) {
+        Filter filter = new Filter(query.myIntentionClass, query.myEnabledOnly ? getDisabledIntentions() : null, query.mySurroundWith) {
           @Override
           boolean accept(Intention intention) {
             return super.accept(intention) && !processedIntentionDescriptors.contains(intention.getDescriptor());
@@ -155,17 +162,9 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
             parent = parent.getParent();
           }
         }
-
         return result;
       }
-    };
-
-    try {
-      TypeChecker.getInstance().enableGlobalSubtypingCache();
-      return ModelAccess.instance().runReadAction(computable);
-    } finally {
-      TypeChecker.getInstance().clearGlobalSubtypingCache();
-    }
+    });
   }
 
   private List<IntentionExecutable> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean isAncestor, Filter filter) {
@@ -330,6 +329,15 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       myConcept2IntentionFactories.put(InternUtil.intern(intentionFactory.getConcept()), intentionFactories);
     }
     intentionFactories.add(intentionFactory);
+
+    if (intentionFactory.isAvailableInChildNodes()) {
+      intentionFactories = myConcept2IntentionFactoriesAvailableInChildNodes.get(intentionFactory.getConcept());
+      if (intentionFactories == null) {
+        intentionFactories = new LinkedHashSet<IntentionFactory>();
+        myConcept2IntentionFactoriesAvailableInChildNodes.put(InternUtil.intern(intentionFactory.getConcept()), intentionFactories);
+      }
+      intentionFactories.add(intentionFactory);
+    }
   }
 
   private void checkLoaded() {
@@ -410,34 +418,29 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
 
   private synchronized void visitIntentions(final SNode node, final IntentionsVisitor visitor, final EditorContext editorContext) {
     checkLoaded();
-    try {
-      TypeChecker.getInstance().enableGlobalSubtypingCache();
-      ModelAccess.instance().runReadAction(new Runnable() {
-        @Override
-        public void run() {
-          Filter filter = new Filter(BaseIntention.class, getDisabledIntentions());
-          for (SNode currentNode = node; currentNode != null; currentNode = currentNode.getParent()) {
-            visitIntentions(currentNode, visitor, filter, currentNode != node, editorContext);
+    TypeContextManager.getInstance().runTypecheckingAction((ITypeContextOwner) editorContext.getEditorComponent(), new Runnable() {
+      @Override
+      public void run() {
+        Filter filter = new Filter(BaseIntention.class, getDisabledIntentions());
+        for (SNode currentNode = node; currentNode != null; currentNode = currentNode.getParent()) {
+          if (!visitIntentions(currentNode, visitor, filter, currentNode != node, editorContext)) {
+            break;
           }
         }
-      });
-    } finally {
-      TypeChecker.getInstance().clearGlobalSubtypingCache();
-    }
+      }
+    });
   }
 
-  private void visitIntentions(SNode node, IntentionsVisitor visitor, Filter filter, boolean isAncestor, EditorContext editorContext) {
+  private boolean visitIntentions(SNode node, IntentionsVisitor visitor, Filter filter, boolean isAncestor, EditorContext editorContext) {
     for (String conceptId : LanguageHierarchyCache.getAncestorsNames(node.getConcept().getId())) {
-      if (myConcept2IntentionFactories.containsKey(conceptId)) {
-        for (IntentionFactory intentionFactory : myConcept2IntentionFactories.get(conceptId)) {
-          if (isAncestor && !intentionFactory.isAvailableInChildNodes()) {
-            continue;
-          }
+      Map<String, Set<IntentionFactory>> concept2FactoriesMap = isAncestor ? myConcept2IntentionFactoriesAvailableInChildNodes : myConcept2IntentionFactories;
+      if (concept2FactoriesMap.containsKey(conceptId)) {
+        for (IntentionFactory intentionFactory : concept2FactoriesMap.get(conceptId)) {
           if (!filter.accept(intentionFactory) || !intentionFactory.isApplicable(node, editorContext)) {
             continue;
           }
           if (!visitor.visit(intentionFactory)) {
-            return;
+            return false;
           }
         }
       }
@@ -450,20 +453,27 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
             continue;
           }
           if (!visitor.visit(intention)) {
-            return;
+            return false;
           }
         }
       }
     }
+    return true;
   }
 
   static class Filter {
     private Class<? extends Intention> myIntentionClass = null;
     private Set<String> myDisabledIntentions = null;
+    private boolean mySurroundWith = false;
 
-    public Filter(Class<? extends Intention> baseIntentionClass, Set<String> disabledIntentions) {
-      myIntentionClass = baseIntentionClass;
+    public Filter(Class<? extends Intention> intentionClass, Set<String> disabledIntentions) {
+      myIntentionClass = intentionClass;
       myDisabledIntentions = disabledIntentions;
+    }
+
+    public Filter(Class<? extends Intention> intentionClass, Set<String> disabledIntentions, boolean surroundWith) {
+      this(intentionClass, disabledIntentions);
+      mySurroundWith = surroundWith;
     }
 
     boolean accept(Intention intention) {
@@ -480,7 +490,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
       if (myDisabledIntentions != null && myDisabledIntentions.contains(intentionFactory.getPersistentStateKey())) {
         return false;
       }
-      return true;
+      return intentionFactory.isSurroundWith() ? mySurroundWith : !mySurroundWith;
     }
   }
 
@@ -490,12 +500,17 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     private Class<? extends Intention> myIntentionClass = null;
     private boolean myEnabledOnly = false;
     private boolean myCurrentNodeOnly = false;
+    private boolean mySurroundWith = false;
 
     public QueryDescriptor() {
     }
 
     public void setIntentionClass(Class<? extends Intention> intentionClass) {
       myIntentionClass = intentionClass;
+    }
+
+    public void setSurroundWith(boolean surroundWith) {
+      mySurroundWith = surroundWith;
     }
 
     public void setEnabledOnly(boolean enabledOnly) {

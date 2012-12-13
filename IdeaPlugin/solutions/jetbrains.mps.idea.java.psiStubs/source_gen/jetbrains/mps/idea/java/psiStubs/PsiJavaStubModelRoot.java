@@ -108,7 +108,7 @@ public class PsiJavaStubModelRoot extends ModelRootBase implements PsiListener {
   }
 
   @Override
-  public Iterable<SModel> getModels() {
+  public Iterable<SModel> loadModels() {
     myModels = getModelMap();
     for (SModel model : Sequence.fromIterable(MapSequence.fromMap(myModels).values())) {
       register(model);

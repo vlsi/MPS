@@ -88,7 +88,7 @@ public class JavaSourceStubModelRoot extends ModelRootBase implements FileSystem
   }
 
   @Override
-  public Iterable<SModel> getModels() {
+  public Iterable<SModel> loadModels() {
     IFile path = FileSystem.getInstance().getFileByPath(myPath);
     Set<SModel> models = getModels(path, "");
     SetSequence.fromSet(models).visitAll(new IVisitor<SModel>() {

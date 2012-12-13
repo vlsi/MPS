@@ -66,6 +66,10 @@ public class TurnToParallelForEachStatement_Intention implements IntentionFactor
     return new SNodePointer("r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)", "5384012304952529816");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new TurnToParallelForEachStatement_Intention.IntentionImplementation());

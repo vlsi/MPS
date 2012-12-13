@@ -16,7 +16,6 @@ import jetbrains.mps.typesystem.checking.HighlightUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
@@ -54,9 +53,8 @@ public class AutoResolver extends EditorCheckerAdapter {
           public void run() {
             ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
               public void run() {
-                TypeContextManager.getInstance().setComputeInNormalMode_resolverVooDoo(true);
+                // in case this becomes a performance bottleneck, consider reusing the editor's typechecking context  
                 ResolverComponent.getInstance().resolveScopesOnly(badReferences, operationContext);
-                TypeContextManager.getInstance().setComputeInNormalMode_resolverVooDoo(false);
               }
             }, operationContext.getProject());
           }

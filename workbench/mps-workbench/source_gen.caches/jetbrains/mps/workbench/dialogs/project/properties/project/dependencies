@@ -52,6 +52,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.BaseBindedDialog" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPrefsExtraPanel" />
     <classNode dependClassName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectProperties" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.workbench.dialogs.project.BaseStretchingBindedDialog" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPrefsPage" file="ProjectPropertiesPrefsPage.java">

@@ -12792,12 +12792,6 @@
                 <link role="member" roleId="tp4f.1205756909548" targetNodeId="1596727503333709189" resolveInfo="methodNode" />
               </node>
             </node>
-            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1596727503333709204">
-              <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1596727503333709205" />
-              <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="1596727503333709206">
-                <link role="member" roleId="tp4f.1205756909548" targetNodeId="1596727503333709193" resolveInfo="selectedCell" />
-              </node>
-            </node>
             <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1596727503333709207">
               <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1596727503333709208" />
               <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="1596727503333709209">
@@ -12808,6 +12802,22 @@
               <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="1596727503333709211" />
               <node role="operation" roleId="tpee.1197027833540" type="tp4f.DefaultClassifierMethodCallOperation" typeId="tp4f.1205769149993" id="1596727503333709212">
                 <link role="member" roleId="tp4f.1205756909548" targetNodeId="1596727503333709183" resolveInfo="getFinderName" />
+              </node>
+            </node>
+            <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="457552532822487220">
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7lvn.2808756344206283880" resolveInfo="GoToHelper" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7lvn.457552532820394239" resolveInfo="getRelativePoint" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="457552532822569200">
+                <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="457552532822569203" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="457552532822569205">
+                  <link role="member" roleId="tp4f.1205756909548" targetNodeId="1596727503333709193" resolveInfo="selectedCell" />
+                </node>
+              </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="457552532822572673">
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="457552532822575460">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="6tyf.~AnActionEvent%dgetInputEvent()%cjava%dawt%devent%dInputEvent" resolveInfo="getInputEvent" />
+                </node>
+                <node role="operand" roleId="tpee.1197027771414" type="tp4k.ConceptFunctionParameter_AnActionEvent" typeId="tp4k.1203082903663" id="457552532822571502" />
               </node>
             </node>
           </node>

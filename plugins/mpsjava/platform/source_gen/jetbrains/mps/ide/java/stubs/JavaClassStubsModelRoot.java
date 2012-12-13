@@ -42,7 +42,7 @@ public class JavaClassStubsModelRoot extends ModelRootBase {
     return null;
   }
 
-  public Iterable<SModel> getModels() {
+  public Iterable<SModel> loadModels() {
     List<SModel> result = ListSequence.fromList(new ArrayList<SModel>());
     IClassPathItem cp = create(myPath);
     getModelDescriptors(result, myPath, cp, "", LanguageID.JAVA, getModule());

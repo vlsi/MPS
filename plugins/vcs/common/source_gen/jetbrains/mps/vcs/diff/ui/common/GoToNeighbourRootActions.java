@@ -4,13 +4,13 @@ package jetbrains.mps.vcs.diff.ui.common;
 
 import javax.swing.Icon;
 import com.intellij.openapi.util.IconLoader;
-import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNodeId;
-import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.smodel.SNodeId;
 
 public abstract class GoToNeighbourRootActions {
   private static final Icon PREVIOUS_ROOT_ICON = IconLoader.getIcon("/actions/prevfile.png");
@@ -19,23 +19,9 @@ public abstract class GoToNeighbourRootActions {
   public GoToNeighbourRootActions() {
   }
 
-  @Deprecated
-  @Nullable
-  protected SNodeId getNeighbourId(boolean next) {
-    return null;
-  }
+  protected abstract boolean hasNeighbour(boolean next);
 
-  @Deprecated
-  protected void goTo(@NotNull SNodeId rootId) {
-  }
-
-  protected boolean hasNeighbour(boolean next) {
-    return getNeighbourId(next) != null;
-  }
-
-  protected void goToNeighbour(boolean next) {
-    goTo(getNeighbourId(next));
-  }
+  protected abstract void goToNeighbour(boolean next);
 
   public final BaseAction previous() {
     return new GoToNeighbourRootActions.TheAction(false);

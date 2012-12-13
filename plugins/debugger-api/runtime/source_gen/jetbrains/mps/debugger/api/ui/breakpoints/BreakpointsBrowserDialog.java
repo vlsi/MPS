@@ -48,6 +48,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import org.jetbrains.annotations.NonNls;
+import org.jetbrains.annotations.NotNull;
 import javax.swing.Action;
 
 public class BreakpointsBrowserDialog extends DialogWrapper implements DataProvider {
@@ -387,6 +388,7 @@ public class BreakpointsBrowserDialog extends DialogWrapper implements DataProvi
   }
 
   @Override
+  @NotNull
   protected Action[] createActions() {
     return new Action[]{getOKAction()};
   }

@@ -46,10 +46,10 @@ public class ComparableBlock extends RelationBlock {
     // if subType or superType
     boolean isWeak = myRelationKind.isWeak();
     if (subTyping.isComparable(left, right, isWeak)) {
-      myState.executeOperation(new AddRemarkOperation(left + " is comparable with " + right));
+      getState().executeOperation(new AddRemarkOperation(left + " is comparable with " + right));
       return;
     }
-    myState.getNodeMaps().reportComparableError(left, right, myEquationInfo, isWeak);
+    getState().getNodeMaps().reportComparableError(left, right, myEquationInfo, isWeak);
   }
 
   @Override

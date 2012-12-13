@@ -117,14 +117,13 @@ public abstract class AbstractNodeSubstituteInfo implements NodeSubstituteInfo {
     if (inequalitiesSystem == null) return substituteActionList;
 
     List<INodeSubstituteAction> result = new ArrayList<INodeSubstituteAction>();
-    TypeChecker.getInstance().enableTypesComputingForCompletion();
+    // In case this becomes a performance bottleneck, use the SubtypingCache
     for (INodeSubstituteAction nodeSubstituteAction : substituteActionList) {
       SNode type = nodeSubstituteAction.getActionType(pattern, contextCell);
       if (type != null && inequalitiesSystem.satisfies(type)) {
         result.add(nodeSubstituteAction);
       }
     }
-    TypeChecker.getInstance().clearTypesComputedForCompletion();
     return result;
   }
 

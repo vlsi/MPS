@@ -11,17 +11,18 @@
     <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="47" startPosition="44" endLine="48" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="51" startPosition="84" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="55" startPosition="53" endLine="56" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="62" startPosition="5" endLine="63" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224245365572" fileName="AddDeprecatedAnnotation_Intention.java" startLine="71" startPosition="211" endLine="72" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224245381358" fileName="AddDeprecatedAnnotation_Intention.java" startLine="73" startPosition="7" endLine="74" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1224245430628" fileName="AddDeprecatedAnnotation_Intention.java" startLine="78" startPosition="211" endLine="79" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1224245455278" fileName="AddDeprecatedAnnotation_Intention.java" startLine="79" startPosition="137" endLine="80" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224245566347" fileName="AddDeprecatedAnnotation_Intention.java" startLine="81" startPosition="14" endLine="82" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="86" startPosition="48" endLine="87" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="59" startPosition="35" endLine="60" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="64" startPosition="37" endLine="65" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="66" startPosition="5" endLine="67" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224245365572" fileName="AddDeprecatedAnnotation_Intention.java" startLine="75" startPosition="211" endLine="76" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224245381358" fileName="AddDeprecatedAnnotation_Intention.java" startLine="77" startPosition="7" endLine="78" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1224245430628" fileName="AddDeprecatedAnnotation_Intention.java" startLine="82" startPosition="211" endLine="83" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1224245455278" fileName="AddDeprecatedAnnotation_Intention.java" startLine="83" startPosition="137" endLine="84" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224245566347" fileName="AddDeprecatedAnnotation_Intention.java" startLine="85" startPosition="14" endLine="86" endPosition="225" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="90" startPosition="48" endLine="91" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddDeprecatedAnnotation_Intention#()V" />
-    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="67" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
-    <nodeInfo nodeId="1224245542923" fileName="AddDeprecatedAnnotation_Intention.java" startLine="81" startPosition="12" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="71" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="1224245542923" fileName="AddDeprecatedAnnotation_Intention.java" startLine="85" startPosition="12" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -30,15 +31,16 @@
     <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
     <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="59" startPosition="99" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224245334979" fileName="AddDeprecatedAnnotation_Intention.java" startLine="70" startPosition="87" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="59" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="1224245511985" fileName="AddDeprecatedAnnotation_Intention.java" startLine="77" startPosition="78" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="77" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="63" startPosition="99" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1224245334979" fileName="AddDeprecatedAnnotation_Intention.java" startLine="74" startPosition="87" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="63" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="74" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="1224245511985" fileName="AddDeprecatedAnnotation_Intention.java" startLine="81" startPosition="78" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="81" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="24" startPosition="46" endLine="24" endPosition="46" />
-    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="67" startPosition="38" endLine="67" endPosition="38" />
+    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="71" startPosition="38" endLine="71" endPosition="38" />
     <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="75" />
     <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="37" />
     <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="35" startPosition="41" endLine="36" endPosition="87" />
@@ -47,13 +49,14 @@
     <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="47" startPosition="44" endLine="48" endPosition="17" />
     <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="51" startPosition="84" endLine="52" endPosition="16" />
     <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="55" startPosition="53" endLine="56" endPosition="128" />
-    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="139" />
-    <scopeInfo nodeId="1224245334981" fileName="AddDeprecatedAnnotation_Intention.java" startLine="71" startPosition="211" endLine="72" endPosition="43" />
-    <scopeInfo nodeId="1224245542924" fileName="AddDeprecatedAnnotation_Intention.java" startLine="81" startPosition="14" endLine="82" endPosition="225" />
-    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="86" startPosition="48" endLine="87" endPosition="52" />
+    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="59" startPosition="35" endLine="60" endPosition="17" />
+    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="64" startPosition="37" endLine="65" endPosition="139" />
+    <scopeInfo nodeId="1224245334981" fileName="AddDeprecatedAnnotation_Intention.java" startLine="75" startPosition="211" endLine="76" endPosition="43" />
+    <scopeInfo nodeId="1224245542924" fileName="AddDeprecatedAnnotation_Intention.java" startLine="85" startPosition="14" endLine="86" endPosition="225" />
+    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="90" startPosition="48" endLine="91" endPosition="52" />
     <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="67" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="1224245511986" fileName="AddDeprecatedAnnotation_Intention.java" startLine="78" startPosition="211" endLine="80" endPosition="209">
+    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="71" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="1224245511986" fileName="AddDeprecatedAnnotation_Intention.java" startLine="82" startPosition="211" endLine="84" endPosition="209">
       <varInfo nodeId="1224245430629" varName="annotation" />
     </scopeInfo>
     <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
@@ -67,24 +70,25 @@
       <varInfo nodeId="1224245135252" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="86" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="59" startPosition="99" endLine="63" endPosition="30" />
-    <scopeInfo nodeId="1224245135254" fileName="AddDeprecatedAnnotation_Intention.java" startLine="70" startPosition="87" endLine="74" endPosition="44" />
-    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="59" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="90" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="63" startPosition="99" endLine="67" endPosition="30" />
+    <scopeInfo nodeId="1224245135254" fileName="AddDeprecatedAnnotation_Intention.java" startLine="74" startPosition="87" endLine="78" endPosition="44" />
+    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="63" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="1224245135252" varName="context" />
       <varInfo nodeId="1224245135252" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="74" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="1224245135252" varName="editorContext" />
       <varInfo nodeId="1224245135252" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1224245135256" fileName="AddDeprecatedAnnotation_Intention.java" startLine="77" startPosition="78" endLine="83" endPosition="7" />
-    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="77" startPosition="0" endLine="85" endPosition="0">
+    <scopeInfo nodeId="1224245135256" fileName="AddDeprecatedAnnotation_Intention.java" startLine="81" startPosition="78" endLine="87" endPosition="7" />
+    <scopeInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="81" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="1224245135252" varName="editorContext" />
       <varInfo nodeId="1224245135252" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="66" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.AddDeprecatedAnnotation_Intention$IntentionImplementation" />
-    <unitInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="21" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.AddDeprecatedAnnotation_Intention" />
+    <unitInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="70" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.AddDeprecatedAnnotation_Intention$IntentionImplementation" />
+    <unitInfo nodeId="1224245135252" fileName="AddDeprecatedAnnotation_Intention.java" startLine="21" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.AddDeprecatedAnnotation_Intention" />
   </root>
   <root nodeId="2799938697970315260" modelId="r:e5a8b5c7-85b5-4d59-9e4e-850a142e2560(jetbrains.mps.lang.structure.intentions)">
     <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
@@ -96,12 +100,13 @@
     <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="43" startPosition="44" endLine="44" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="47" startPosition="84" endLine="48" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="56" startPosition="37" endLine="57" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="58" startPosition="5" endLine="59" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2799938697970315280" fileName="MakeRootable_Intention.java" startLine="73" startPosition="78" endLine="74" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="77" startPosition="48" endLine="78" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="55" startPosition="35" endLine="56" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="128" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="62" startPosition="5" endLine="63" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2799938697970315280" fileName="MakeRootable_Intention.java" startLine="77" startPosition="78" endLine="78" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="81" startPosition="48" endLine="82" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeRootable_Intention#()V" />
-    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="63" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="67" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
     <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -110,14 +115,15 @@
     <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
     <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="55" startPosition="99" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="2799938697970315267" fileName="MakeRootable_Intention.java" startLine="66" startPosition="87" endLine="70" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="55" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="59" startPosition="99" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="2799938697970315267" fileName="MakeRootable_Intention.java" startLine="70" startPosition="87" endLine="74" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="59" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
     <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="20" startPosition="35" endLine="20" endPosition="35" />
-    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="63" startPosition="38" endLine="63" endPosition="38" />
+    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="67" startPosition="38" endLine="67" endPosition="38" />
     <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="23" startPosition="30" endLine="24" endPosition="71" />
     <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="27" startPosition="35" endLine="28" endPosition="26" />
     <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="31" startPosition="41" endLine="32" endPosition="76" />
@@ -126,11 +132,12 @@
     <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="43" startPosition="44" endLine="44" endPosition="16" />
     <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="47" startPosition="84" endLine="48" endPosition="16" />
     <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="134" />
-    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="56" startPosition="37" endLine="57" endPosition="128" />
-    <scopeInfo nodeId="2799938697970315264" fileName="MakeRootable_Intention.java" startLine="73" startPosition="78" endLine="74" endPosition="108" />
-    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="77" startPosition="48" endLine="78" endPosition="41" />
+    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="55" startPosition="35" endLine="56" endPosition="17" />
+    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="128" />
+    <scopeInfo nodeId="2799938697970315264" fileName="MakeRootable_Intention.java" startLine="77" startPosition="78" endLine="78" endPosition="108" />
+    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="81" startPosition="48" endLine="82" endPosition="41" />
     <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="63" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="67" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
@@ -142,23 +149,24 @@
       <varInfo nodeId="2799938697970315260" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="2799938697970315260" varName="editorContext" />
       <varInfo nodeId="2799938697970315260" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="77" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="55" startPosition="99" endLine="59" endPosition="30" />
-    <scopeInfo nodeId="2799938697970315262" fileName="MakeRootable_Intention.java" startLine="66" startPosition="87" endLine="70" endPosition="8" />
-    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="55" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="81" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="59" startPosition="99" endLine="63" endPosition="30" />
+    <scopeInfo nodeId="2799938697970315262" fileName="MakeRootable_Intention.java" startLine="70" startPosition="87" endLine="74" endPosition="8" />
+    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="59" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="2799938697970315260" varName="context" />
       <varInfo nodeId="2799938697970315260" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="66" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="2799938697970315260" varName="editorContext" />
       <varInfo nodeId="2799938697970315260" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="62" startPosition="0" endLine="81" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.MakeRootable_Intention$IntentionImplementation" />
-    <unitInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="17" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.MakeRootable_Intention" />
+    <unitInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="66" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.MakeRootable_Intention$IntentionImplementation" />
+    <unitInfo nodeId="2799938697970315260" fileName="MakeRootable_Intention.java" startLine="17" startPosition="0" endLine="86" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.MakeRootable_Intention" />
   </root>
   <root nodeId="4672725010143198841" modelId="r:e5a8b5c7-85b5-4d59-9e4e-850a142e2560(jetbrains.mps.lang.structure.intentions)">
     <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
@@ -170,13 +178,14 @@
     <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="43" startPosition="44" endLine="44" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="47" startPosition="84" endLine="48" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="56" startPosition="37" endLine="57" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="58" startPosition="5" endLine="59" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4672725010143212656" fileName="MakeAbsrtract_Intention.java" startLine="73" startPosition="78" endLine="74" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4672725010144279798" fileName="MakeAbsrtract_Intention.java" startLine="75" startPosition="61" endLine="76" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="80" startPosition="48" endLine="81" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="55" startPosition="35" endLine="56" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="62" startPosition="5" endLine="63" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4672725010143212656" fileName="MakeAbsrtract_Intention.java" startLine="77" startPosition="78" endLine="78" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010144279798" fileName="MakeAbsrtract_Intention.java" startLine="79" startPosition="61" endLine="80" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="84" startPosition="48" endLine="85" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeAbsrtract_Intention#()V" />
-    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="63" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="67" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
     <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -185,15 +194,16 @@
     <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
     <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="55" startPosition="99" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4672725010144276876" fileName="MakeAbsrtract_Intention.java" startLine="74" startPosition="108" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="4672725010143205926" fileName="MakeAbsrtract_Intention.java" startLine="66" startPosition="87" endLine="70" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="55" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="73" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="59" startPosition="99" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4672725010144276876" fileName="MakeAbsrtract_Intention.java" startLine="78" startPosition="108" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="4672725010143205926" fileName="MakeAbsrtract_Intention.java" startLine="70" startPosition="87" endLine="74" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="59" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="77" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="20" startPosition="36" endLine="20" endPosition="36" />
-    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="63" startPosition="38" endLine="63" endPosition="38" />
+    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="67" startPosition="38" endLine="67" endPosition="38" />
     <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="23" startPosition="30" endLine="24" endPosition="71" />
     <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="27" startPosition="35" endLine="28" endPosition="27" />
     <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="31" startPosition="41" endLine="32" endPosition="77" />
@@ -202,11 +212,12 @@
     <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="43" startPosition="44" endLine="44" endPosition="17" />
     <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="47" startPosition="84" endLine="48" endPosition="16" />
     <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="134" />
-    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="56" startPosition="37" endLine="57" endPosition="129" />
-    <scopeInfo nodeId="4672725010144276878" fileName="MakeAbsrtract_Intention.java" startLine="75" startPosition="61" endLine="76" endPosition="61" />
-    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="80" startPosition="48" endLine="81" endPosition="42" />
+    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="55" startPosition="35" endLine="56" endPosition="17" />
+    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="129" />
+    <scopeInfo nodeId="4672725010144276878" fileName="MakeAbsrtract_Intention.java" startLine="79" startPosition="61" endLine="80" endPosition="61" />
+    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="84" startPosition="48" endLine="85" endPosition="42" />
     <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="63" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="67" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
@@ -218,24 +229,25 @@
       <varInfo nodeId="4672725010143198841" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="80" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="55" startPosition="99" endLine="59" endPosition="30" />
-    <scopeInfo nodeId="4672725010143198844" fileName="MakeAbsrtract_Intention.java" startLine="66" startPosition="87" endLine="70" endPosition="8" />
-    <scopeInfo nodeId="4672725010143198846" fileName="MakeAbsrtract_Intention.java" startLine="73" startPosition="78" endLine="77" endPosition="7" />
-    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="55" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="84" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="59" startPosition="99" endLine="63" endPosition="30" />
+    <scopeInfo nodeId="4672725010143198844" fileName="MakeAbsrtract_Intention.java" startLine="70" startPosition="87" endLine="74" endPosition="8" />
+    <scopeInfo nodeId="4672725010143198846" fileName="MakeAbsrtract_Intention.java" startLine="77" startPosition="78" endLine="81" endPosition="7" />
+    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="59" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="4672725010143198841" varName="context" />
       <varInfo nodeId="4672725010143198841" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="66" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="4672725010143198841" varName="editorContext" />
       <varInfo nodeId="4672725010143198841" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="73" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="77" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="4672725010143198841" varName="editorContext" />
       <varInfo nodeId="4672725010143198841" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="62" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.MakeAbsrtract_Intention$IntentionImplementation" />
-    <unitInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="17" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.MakeAbsrtract_Intention" />
+    <unitInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="66" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.MakeAbsrtract_Intention$IntentionImplementation" />
+    <unitInfo nodeId="4672725010143198841" fileName="MakeAbsrtract_Intention.java" startLine="17" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.MakeAbsrtract_Intention" />
   </root>
   <root nodeId="4672725010143787708" modelId="r:e5a8b5c7-85b5-4d59-9e4e-850a142e2560(jetbrains.mps.lang.structure.intentions)">
     <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
@@ -247,13 +259,14 @@
     <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="43" startPosition="44" endLine="44" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="47" startPosition="84" endLine="48" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="56" startPosition="37" endLine="57" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="58" startPosition="5" endLine="59" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4672725010143794942" fileName="MakeFinal_Intention.java" startLine="73" startPosition="78" endLine="74" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4672725010144270019" fileName="MakeFinal_Intention.java" startLine="75" startPosition="58" endLine="76" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="80" startPosition="48" endLine="81" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="55" startPosition="35" endLine="56" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="62" startPosition="5" endLine="63" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4672725010143794942" fileName="MakeFinal_Intention.java" startLine="77" startPosition="78" endLine="78" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010144270019" fileName="MakeFinal_Intention.java" startLine="79" startPosition="58" endLine="80" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="84" startPosition="48" endLine="85" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeFinal_Intention#()V" />
-    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="63" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="67" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
     <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -262,15 +275,16 @@
     <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
     <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="55" startPosition="99" endLine="58" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4672725010144267087" fileName="MakeFinal_Intention.java" startLine="74" startPosition="102" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="4672725010143789308" fileName="MakeFinal_Intention.java" startLine="66" startPosition="87" endLine="70" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="55" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="66" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="73" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="59" startPosition="99" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4672725010144267087" fileName="MakeFinal_Intention.java" startLine="78" startPosition="102" endLine="81" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="4672725010143789308" fileName="MakeFinal_Intention.java" startLine="70" startPosition="87" endLine="74" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="59" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="77" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="20" startPosition="32" endLine="20" endPosition="32" />
-    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="63" startPosition="38" endLine="63" endPosition="38" />
+    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="67" startPosition="38" endLine="67" endPosition="38" />
     <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="23" startPosition="30" endLine="24" endPosition="71" />
     <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="27" startPosition="35" endLine="28" endPosition="23" />
     <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="31" startPosition="41" endLine="32" endPosition="73" />
@@ -279,11 +293,12 @@
     <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="43" startPosition="44" endLine="44" endPosition="17" />
     <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="47" startPosition="84" endLine="48" endPosition="16" />
     <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="51" startPosition="53" endLine="52" endPosition="134" />
-    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="56" startPosition="37" endLine="57" endPosition="125" />
-    <scopeInfo nodeId="4672725010144267089" fileName="MakeFinal_Intention.java" startLine="75" startPosition="58" endLine="76" endPosition="64" />
-    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="80" startPosition="48" endLine="81" endPosition="38" />
+    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="55" startPosition="35" endLine="56" endPosition="17" />
+    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="125" />
+    <scopeInfo nodeId="4672725010144267089" fileName="MakeFinal_Intention.java" startLine="79" startPosition="58" endLine="80" endPosition="64" />
+    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="84" startPosition="48" endLine="85" endPosition="38" />
     <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="63" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="67" startPosition="0" endLine="69" endPosition="0" />
     <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
     <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
     <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
@@ -295,24 +310,25 @@
       <varInfo nodeId="4672725010143787708" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="51" startPosition="0" endLine="54" endPosition="0" />
-    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="80" startPosition="0" endLine="83" endPosition="0" />
-    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="55" startPosition="99" endLine="59" endPosition="30" />
-    <scopeInfo nodeId="4672725010143787710" fileName="MakeFinal_Intention.java" startLine="66" startPosition="87" endLine="70" endPosition="8" />
-    <scopeInfo nodeId="4672725010143787712" fileName="MakeFinal_Intention.java" startLine="73" startPosition="78" endLine="77" endPosition="7" />
-    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="55" startPosition="0" endLine="61" endPosition="0">
+    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="84" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="59" startPosition="99" endLine="63" endPosition="30" />
+    <scopeInfo nodeId="4672725010143787710" fileName="MakeFinal_Intention.java" startLine="70" startPosition="87" endLine="74" endPosition="8" />
+    <scopeInfo nodeId="4672725010143787712" fileName="MakeFinal_Intention.java" startLine="77" startPosition="78" endLine="81" endPosition="7" />
+    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="59" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="4672725010143787708" varName="context" />
       <varInfo nodeId="4672725010143787708" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="66" startPosition="0" endLine="72" endPosition="0">
+    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="4672725010143787708" varName="editorContext" />
       <varInfo nodeId="4672725010143787708" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="73" startPosition="0" endLine="79" endPosition="0">
+    <scopeInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="77" startPosition="0" endLine="83" endPosition="0">
       <varInfo nodeId="4672725010143787708" varName="editorContext" />
       <varInfo nodeId="4672725010143787708" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="62" startPosition="0" endLine="84" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.MakeFinal_Intention$IntentionImplementation" />
-    <unitInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="17" startPosition="0" endLine="85" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.MakeFinal_Intention" />
+    <unitInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="66" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.MakeFinal_Intention$IntentionImplementation" />
+    <unitInfo nodeId="4672725010143787708" fileName="MakeFinal_Intention.java" startLine="17" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.MakeFinal_Intention" />
   </root>
   <root nodeId="6080606717145172152" modelId="r:e5a8b5c7-85b5-4d59-9e4e-850a142e2560(jetbrains.mps.lang.structure.intentions)">
     <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
@@ -324,17 +340,18 @@
     <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="47" startPosition="44" endLine="48" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="51" startPosition="84" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="55" startPosition="53" endLine="56" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="62" startPosition="5" endLine="63" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6080606717145174032" fileName="AddMigratedToAnnotation_Intention.java" startLine="71" startPosition="213" endLine="72" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6080606717145174034" fileName="AddMigratedToAnnotation_Intention.java" startLine="73" startPosition="7" endLine="74" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6080606717145289878" fileName="AddMigratedToAnnotation_Intention.java" startLine="78" startPosition="213" endLine="79" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6080606717145289884" fileName="AddMigratedToAnnotation_Intention.java" startLine="79" startPosition="139" endLine="80" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6080606717145289899" fileName="AddMigratedToAnnotation_Intention.java" startLine="81" startPosition="14" endLine="82" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="86" startPosition="48" endLine="87" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="59" startPosition="35" endLine="60" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="64" startPosition="37" endLine="65" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="66" startPosition="5" endLine="67" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6080606717145174032" fileName="AddMigratedToAnnotation_Intention.java" startLine="75" startPosition="213" endLine="76" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6080606717145174034" fileName="AddMigratedToAnnotation_Intention.java" startLine="77" startPosition="7" endLine="78" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6080606717145289878" fileName="AddMigratedToAnnotation_Intention.java" startLine="82" startPosition="213" endLine="83" endPosition="139" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6080606717145289884" fileName="AddMigratedToAnnotation_Intention.java" startLine="83" startPosition="139" endLine="84" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6080606717145289899" fileName="AddMigratedToAnnotation_Intention.java" startLine="85" startPosition="14" endLine="86" endPosition="227" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="90" startPosition="48" endLine="91" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="24" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="AddMigratedToAnnotation_Intention#()V" />
-    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="67" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
-    <nodeInfo nodeId="6080606717145289897" fileName="AddMigratedToAnnotation_Intention.java" startLine="81" startPosition="12" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="71" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="6080606717145289897" fileName="AddMigratedToAnnotation_Intention.java" startLine="85" startPosition="12" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="31" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -343,15 +360,16 @@
     <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
     <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="51" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="59" startPosition="99" endLine="62" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6080606717145174024" fileName="AddMigratedToAnnotation_Intention.java" startLine="70" startPosition="87" endLine="73" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="86" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="59" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6080606717145289876" fileName="AddMigratedToAnnotation_Intention.java" startLine="77" startPosition="78" endLine="83" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="77" startPosition="0" endLine="85" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="59" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="63" startPosition="99" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6080606717145174024" fileName="AddMigratedToAnnotation_Intention.java" startLine="74" startPosition="87" endLine="77" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="90" startPosition="0" endLine="93" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="63" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="74" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6080606717145289876" fileName="AddMigratedToAnnotation_Intention.java" startLine="81" startPosition="78" endLine="87" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="81" startPosition="0" endLine="89" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="24" startPosition="46" endLine="24" endPosition="46" />
-    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="67" startPosition="38" endLine="67" endPosition="38" />
+    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="71" startPosition="38" endLine="71" endPosition="38" />
     <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="27" startPosition="30" endLine="28" endPosition="79" />
     <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="31" startPosition="35" endLine="32" endPosition="37" />
     <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="35" startPosition="41" endLine="36" endPosition="87" />
@@ -360,13 +378,14 @@
     <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="47" startPosition="44" endLine="48" endPosition="17" />
     <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="51" startPosition="84" endLine="52" endPosition="16" />
     <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="55" startPosition="53" endLine="56" endPosition="134" />
-    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="60" startPosition="37" endLine="61" endPosition="139" />
-    <scopeInfo nodeId="6080606717145174031" fileName="AddMigratedToAnnotation_Intention.java" startLine="71" startPosition="213" endLine="72" endPosition="41" />
-    <scopeInfo nodeId="6080606717145289898" fileName="AddMigratedToAnnotation_Intention.java" startLine="81" startPosition="14" endLine="82" endPosition="227" />
-    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="86" startPosition="48" endLine="87" endPosition="52" />
+    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="59" startPosition="35" endLine="60" endPosition="17" />
+    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="64" startPosition="37" endLine="65" endPosition="139" />
+    <scopeInfo nodeId="6080606717145174031" fileName="AddMigratedToAnnotation_Intention.java" startLine="75" startPosition="213" endLine="76" endPosition="41" />
+    <scopeInfo nodeId="6080606717145289898" fileName="AddMigratedToAnnotation_Intention.java" startLine="85" startPosition="14" endLine="86" endPosition="227" />
+    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="90" startPosition="48" endLine="91" endPosition="52" />
     <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="24" startPosition="0" endLine="26" endPosition="0" />
-    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="67" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="6080606717145289877" fileName="AddMigratedToAnnotation_Intention.java" startLine="78" startPosition="213" endLine="80" endPosition="211">
+    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="71" startPosition="0" endLine="73" endPosition="0" />
+    <scopeInfo nodeId="6080606717145289877" fileName="AddMigratedToAnnotation_Intention.java" startLine="82" startPosition="213" endLine="84" endPosition="211">
       <varInfo nodeId="6080606717145289879" varName="annotation" />
     </scopeInfo>
     <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
@@ -380,24 +399,25 @@
       <varInfo nodeId="6080606717145172152" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
-    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="86" startPosition="0" endLine="89" endPosition="0" />
-    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="59" startPosition="99" endLine="63" endPosition="30" />
-    <scopeInfo nodeId="6080606717145172155" fileName="AddMigratedToAnnotation_Intention.java" startLine="70" startPosition="87" endLine="74" endPosition="42" />
-    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="59" startPosition="0" endLine="65" endPosition="0">
+    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="59" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="90" startPosition="0" endLine="93" endPosition="0" />
+    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="63" startPosition="99" endLine="67" endPosition="30" />
+    <scopeInfo nodeId="6080606717145172155" fileName="AddMigratedToAnnotation_Intention.java" startLine="74" startPosition="87" endLine="78" endPosition="42" />
+    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="63" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="6080606717145172152" varName="context" />
       <varInfo nodeId="6080606717145172152" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="70" startPosition="0" endLine="76" endPosition="0">
+    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="74" startPosition="0" endLine="80" endPosition="0">
       <varInfo nodeId="6080606717145172152" varName="editorContext" />
       <varInfo nodeId="6080606717145172152" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6080606717145172157" fileName="AddMigratedToAnnotation_Intention.java" startLine="77" startPosition="78" endLine="83" endPosition="7" />
-    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="77" startPosition="0" endLine="85" endPosition="0">
+    <scopeInfo nodeId="6080606717145172157" fileName="AddMigratedToAnnotation_Intention.java" startLine="81" startPosition="78" endLine="87" endPosition="7" />
+    <scopeInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="81" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="6080606717145172152" varName="editorContext" />
       <varInfo nodeId="6080606717145172152" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="66" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.AddMigratedToAnnotation_Intention$IntentionImplementation" />
-    <unitInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="21" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.AddMigratedToAnnotation_Intention" />
+    <unitInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="70" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.AddMigratedToAnnotation_Intention$IntentionImplementation" />
+    <unitInfo nodeId="6080606717145172152" fileName="AddMigratedToAnnotation_Intention.java" startLine="21" startPosition="0" endLine="95" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.AddMigratedToAnnotation_Intention" />
   </root>
   <root nodeId="6895093993902311021" modelId="r:e5a8b5c7-85b5-4d59-9e4e-850a142e2560(jetbrains.mps.lang.structure.intentions)">
     <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myCachedExecutable" />
@@ -411,57 +431,58 @@
     <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="66" startPosition="5" endLine="67" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6895093993902318351" fileName="CreateReferenceConcept_Intention.java" startLine="70" startPosition="91" endLine="71" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="74" startPosition="53" endLine="75" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="79" startPosition="37" endLine="80" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="81" startPosition="5" endLine="82" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6895093993902311026" fileName="CreateReferenceConcept_Intention.java" startLine="89" startPosition="87" endLine="90" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7376433222636453325" fileName="CreateReferenceConcept_Intention.java" startLine="93" startPosition="78" endLine="94" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6895093993902311040" fileName="CreateReferenceConcept_Intention.java" startLine="94" startPosition="19" endLine="95" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6895093993902318256" fileName="CreateReferenceConcept_Intention.java" startLine="95" startPosition="190" endLine="96" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1643988642622750509" fileName="CreateReferenceConcept_Intention.java" startLine="96" startPosition="76" endLine="97" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318361" fileName="CreateReferenceConcept_Intention.java" startLine="97" startPosition="112" endLine="98" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6895093993902318324" fileName="CreateReferenceConcept_Intention.java" startLine="98" startPosition="111" endLine="99" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7376433222636453059" fileName="CreateReferenceConcept_Intention.java" startLine="99" startPosition="0" endLine="100" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6895093993902312304" fileName="CreateReferenceConcept_Intention.java" startLine="100" startPosition="27" endLine="101" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6895093993902312756" fileName="CreateReferenceConcept_Intention.java" startLine="101" startPosition="103" endLine="102" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6895093993902312768" fileName="CreateReferenceConcept_Intention.java" startLine="102" startPosition="75" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="7376433222636453831" fileName="CreateReferenceConcept_Intention.java" startLine="103" startPosition="0" endLine="104" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="6895093993902312782" fileName="CreateReferenceConcept_Intention.java" startLine="104" startPosition="16" endLine="105" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6895093993902318371" fileName="CreateReferenceConcept_Intention.java" startLine="105" startPosition="71" endLine="106" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1643988642622750519" fileName="CreateReferenceConcept_Intention.java" startLine="106" startPosition="56" endLine="107" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902312812" fileName="CreateReferenceConcept_Intention.java" startLine="107" startPosition="111" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="6895093993902318181" fileName="CreateReferenceConcept_Intention.java" startLine="108" startPosition="0" endLine="109" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="5660856942024694644" fileName="CreateReferenceConcept_Intention.java" startLine="109" startPosition="70" endLine="110" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="113" startPosition="48" endLine="114" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="118" startPosition="119" endLine="119" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="119" startPosition="30" endLine="120" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="120" startPosition="30" endLine="121" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="121" startPosition="171" endLine="122" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="122" startPosition="76" endLine="123" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="123" startPosition="230" endLine="124" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="124" startPosition="168" endLine="125" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="125" startPosition="72" endLine="126" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="126" startPosition="72" endLine="127" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="127" startPosition="76" endLine="128" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="128" startPosition="84" endLine="129" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="129" startPosition="59" endLine="130" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="133" startPosition="99" endLine="134" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="134" startPosition="30" endLine="135" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="135" startPosition="30" endLine="136" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="136" startPosition="30" endLine="137" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="137" startPosition="30" endLine="138" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="138" startPosition="174" endLine="139" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="139" startPosition="96" endLine="140" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="140" startPosition="167" endLine="141" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="141" startPosition="97" endLine="142" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="142" startPosition="171" endLine="143" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="143" startPosition="168" endLine="144" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="144" startPosition="66" endLine="145" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="145" startPosition="251" endLine="146" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="146" startPosition="53" endLine="147" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="147" startPosition="59" endLine="148" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="148" startPosition="53" endLine="149" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="78" startPosition="35" endLine="79" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="83" startPosition="37" endLine="84" endPosition="138" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="85" startPosition="5" endLine="86" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6895093993902311026" fileName="CreateReferenceConcept_Intention.java" startLine="93" startPosition="87" endLine="94" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7376433222636453325" fileName="CreateReferenceConcept_Intention.java" startLine="97" startPosition="78" endLine="98" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6895093993902311040" fileName="CreateReferenceConcept_Intention.java" startLine="98" startPosition="19" endLine="99" endPosition="190" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6895093993902318256" fileName="CreateReferenceConcept_Intention.java" startLine="99" startPosition="190" endLine="100" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1643988642622750509" fileName="CreateReferenceConcept_Intention.java" startLine="100" startPosition="76" endLine="101" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318361" fileName="CreateReferenceConcept_Intention.java" startLine="101" startPosition="112" endLine="102" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6895093993902318324" fileName="CreateReferenceConcept_Intention.java" startLine="102" startPosition="111" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7376433222636453059" fileName="CreateReferenceConcept_Intention.java" startLine="103" startPosition="0" endLine="104" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6895093993902312304" fileName="CreateReferenceConcept_Intention.java" startLine="104" startPosition="27" endLine="105" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6895093993902312756" fileName="CreateReferenceConcept_Intention.java" startLine="105" startPosition="103" endLine="106" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6895093993902312768" fileName="CreateReferenceConcept_Intention.java" startLine="106" startPosition="75" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7376433222636453831" fileName="CreateReferenceConcept_Intention.java" startLine="107" startPosition="0" endLine="108" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="6895093993902312782" fileName="CreateReferenceConcept_Intention.java" startLine="108" startPosition="16" endLine="109" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6895093993902318371" fileName="CreateReferenceConcept_Intention.java" startLine="109" startPosition="71" endLine="110" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1643988642622750519" fileName="CreateReferenceConcept_Intention.java" startLine="110" startPosition="56" endLine="111" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902312812" fileName="CreateReferenceConcept_Intention.java" startLine="111" startPosition="111" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6895093993902318181" fileName="CreateReferenceConcept_Intention.java" startLine="112" startPosition="0" endLine="113" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5660856942024694644" fileName="CreateReferenceConcept_Intention.java" startLine="113" startPosition="70" endLine="114" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="117" startPosition="48" endLine="118" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="122" startPosition="119" endLine="123" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="123" startPosition="30" endLine="124" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="124" startPosition="30" endLine="125" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="125" startPosition="171" endLine="126" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="126" startPosition="76" endLine="127" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="127" startPosition="230" endLine="128" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="128" startPosition="168" endLine="129" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="129" startPosition="72" endLine="130" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="130" startPosition="72" endLine="131" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="131" startPosition="76" endLine="132" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="132" startPosition="84" endLine="133" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="133" startPosition="59" endLine="134" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="137" startPosition="99" endLine="138" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="138" startPosition="30" endLine="139" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="139" startPosition="30" endLine="140" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="140" startPosition="30" endLine="141" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="141" startPosition="30" endLine="142" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="142" startPosition="174" endLine="143" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="143" startPosition="96" endLine="144" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="144" startPosition="167" endLine="145" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="145" startPosition="97" endLine="146" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="146" startPosition="171" endLine="147" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="147" startPosition="168" endLine="148" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="148" startPosition="66" endLine="149" endPosition="251" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="149" startPosition="251" endLine="150" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="150" startPosition="53" endLine="151" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="151" startPosition="59" endLine="152" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="152" startPosition="53" endLine="153" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="36" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CreateReferenceConcept_Intention#()V" />
-    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="86" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="90" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
     <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="47" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -471,28 +492,29 @@
     <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="63" startPosition="84" endLine="66" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableToNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="78" startPosition="99" endLine="81" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="113" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="142" startPosition="171" endLine="146" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="142" startPosition="171" endLine="146" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="78" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="82" startPosition="99" endLine="85" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="117" startPosition="0" endLine="120" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="146" startPosition="171" endLine="150" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="146" startPosition="171" endLine="150" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="63" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="78" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="123" startPosition="230" endLine="129" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="123" startPosition="230" endLine="129" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="141" startPosition="97" endLine="147" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="141" startPosition="97" endLine="147" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="120" startPosition="30" endLine="129" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="120" startPosition="30" endLine="129" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="139" startPosition="96" endLine="148" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="139" startPosition="96" endLine="148" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="137" startPosition="30" endLine="148" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="137" startPosition="30" endLine="148" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="118" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_vn7eng_a0b0a#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="133" startPosition="0" endLine="151" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_vn7eng_a0l0a#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="93" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="82" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="127" startPosition="230" endLine="133" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="127" startPosition="230" endLine="133" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="145" startPosition="97" endLine="151" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="145" startPosition="97" endLine="151" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="124" startPosition="30" endLine="133" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="124" startPosition="30" endLine="133" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="143" startPosition="96" endLine="152" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="143" startPosition="96" endLine="152" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="141" startPosition="30" endLine="152" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="141" startPosition="30" endLine="152" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="122" startPosition="0" endLine="136" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_vn7eng_a0b0a#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="137" startPosition="0" endLine="155" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_vn7eng_a0l0a#(Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="97" startPosition="0" endLine="116" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="36" startPosition="45" endLine="36" endPosition="45" />
-    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="86" startPosition="38" endLine="86" endPosition="38" />
+    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="90" startPosition="38" endLine="90" endPosition="38" />
     <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="39" startPosition="30" endLine="40" endPosition="79" />
     <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="43" startPosition="35" endLine="44" endPosition="36" />
     <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="47" startPosition="41" endLine="48" endPosition="86" />
@@ -502,11 +524,12 @@
     <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="64" startPosition="53" endLine="65" endPosition="19" />
     <scopeInfo nodeId="6895093993902318350" fileName="CreateReferenceConcept_Intention.java" startLine="70" startPosition="91" endLine="71" endPosition="97" />
     <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="74" startPosition="53" endLine="75" endPosition="134" />
-    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="79" startPosition="37" endLine="80" endPosition="138" />
-    <scopeInfo nodeId="6895093993902311023" fileName="CreateReferenceConcept_Intention.java" startLine="89" startPosition="87" endLine="90" endPosition="40" />
-    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="113" startPosition="48" endLine="114" endPosition="51" />
+    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="78" startPosition="35" endLine="79" endPosition="17" />
+    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="83" startPosition="37" endLine="84" endPosition="138" />
+    <scopeInfo nodeId="6895093993902311023" fileName="CreateReferenceConcept_Intention.java" startLine="93" startPosition="87" endLine="94" endPosition="40" />
+    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="117" startPosition="48" endLine="118" endPosition="51" />
     <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="36" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="86" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="90" startPosition="0" endLine="92" endPosition="0" />
     <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
     <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
     <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="47" startPosition="0" endLine="50" endPosition="0" />
@@ -518,43 +541,44 @@
       <varInfo nodeId="6895093993902311021" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="74" startPosition="0" endLine="77" endPosition="0" />
-    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="89" startPosition="0" endLine="92" endPosition="0">
+    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="78" startPosition="0" endLine="81" endPosition="0" />
+    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="93" startPosition="0" endLine="96" endPosition="0">
       <varInfo nodeId="6895093993902311021" varName="editorContext" />
       <varInfo nodeId="6895093993902311021" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="113" startPosition="0" endLine="116" endPosition="0" />
+    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="117" startPosition="0" endLine="120" endPosition="0" />
     <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="63" startPosition="84" endLine="67" endPosition="16" />
-    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="78" startPosition="99" endLine="82" endPosition="30" />
-    <scopeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="142" startPosition="171" endLine="146" endPosition="53" />
+    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="82" startPosition="99" endLine="86" endPosition="30" />
+    <scopeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="146" startPosition="171" endLine="150" endPosition="53" />
     <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="63" startPosition="0" endLine="69" endPosition="0">
       <varInfo nodeId="6895093993902311021" varName="editorContext" />
       <varInfo nodeId="6895093993902311021" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="78" startPosition="0" endLine="84" endPosition="0">
+    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="82" startPosition="0" endLine="88" endPosition="0">
       <varInfo nodeId="6895093993902311021" varName="context" />
       <varInfo nodeId="6895093993902311021" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="123" startPosition="230" endLine="129" endPosition="59" />
-    <scopeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="141" startPosition="97" endLine="147" endPosition="59" />
-    <scopeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="120" startPosition="30" endLine="129" endPosition="59" />
-    <scopeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="139" startPosition="96" endLine="148" endPosition="53" />
-    <scopeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="137" startPosition="30" endLine="148" endPosition="53" />
-    <scopeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="118" startPosition="119" endLine="130" endPosition="24">
+    <scopeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="127" startPosition="230" endLine="133" endPosition="59" />
+    <scopeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="145" startPosition="97" endLine="151" endPosition="59" />
+    <scopeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="124" startPosition="30" endLine="133" endPosition="59" />
+    <scopeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="143" startPosition="96" endLine="152" endPosition="53" />
+    <scopeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="141" startPosition="30" endLine="152" endPosition="53" />
+    <scopeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="122" startPosition="119" endLine="134" endPosition="24">
       <varInfo nodeId="6895093993902318240" varName="quotedNode_4" />
       <varInfo nodeId="6895093993902318240" varName="quotedNode_5" />
     </scopeInfo>
-    <scopeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="118" startPosition="0" endLine="132" endPosition="0">
+    <scopeInfo nodeId="6895093993902318240" fileName="CreateReferenceConcept_Intention.java" startLine="122" startPosition="0" endLine="136" endPosition="0">
       <varInfo nodeId="6895093993902318240" varName="parameter_1" />
       <varInfo nodeId="6895093993902318240" varName="parameter_2" />
       <varInfo nodeId="6895093993902318240" varName="parameter_3" />
     </scopeInfo>
-    <scopeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="133" startPosition="99" endLine="149" endPosition="24">
+    <scopeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="137" startPosition="99" endLine="153" endPosition="24">
       <varInfo nodeId="6895093993902318303" varName="quotedNode_3" />
       <varInfo nodeId="6895093993902318303" varName="quotedNode_4" />
       <varInfo nodeId="6895093993902318303" varName="quotedNode_5" />
       <varInfo nodeId="6895093993902318303" varName="quotedNode_6" />
     </scopeInfo>
-    <scopeInfo nodeId="6895093993902311025" fileName="CreateReferenceConcept_Intention.java" startLine="93" startPosition="78" endLine="110" endPosition="77">
+    <scopeInfo nodeId="6895093993902311025" fileName="CreateReferenceConcept_Intention.java" startLine="97" startPosition="78" endLine="114" endPosition="77">
       <varInfo nodeId="6895093993902311041" varName="concept" />
       <varInfo nodeId="6895093993902318182" varName="context" />
       <varInfo nodeId="6895093993902312783" varName="editor" />
@@ -562,16 +586,16 @@
       <varInfo nodeId="6895093993902312305" varName="language" />
       <varInfo nodeId="6895093993902318362" varName="link" />
     </scopeInfo>
-    <scopeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="133" startPosition="0" endLine="151" endPosition="0">
+    <scopeInfo nodeId="6895093993902318303" fileName="CreateReferenceConcept_Intention.java" startLine="137" startPosition="0" endLine="155" endPosition="0">
       <varInfo nodeId="6895093993902318303" varName="parameter_1" />
       <varInfo nodeId="6895093993902318303" varName="parameter_2" />
     </scopeInfo>
-    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="93" startPosition="0" endLine="112" endPosition="0">
+    <scopeInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="97" startPosition="0" endLine="116" endPosition="0">
       <varInfo nodeId="6895093993902311021" varName="editorContext" />
       <varInfo nodeId="6895093993902311021" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="85" startPosition="0" endLine="117" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.CreateReferenceConcept_Intention$IntentionImplementation" />
-    <unitInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="33" startPosition="0" endLine="152" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.CreateReferenceConcept_Intention" />
+    <unitInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="89" startPosition="0" endLine="121" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.CreateReferenceConcept_Intention$IntentionImplementation" />
+    <unitInfo nodeId="6895093993902311021" fileName="CreateReferenceConcept_Intention.java" startLine="33" startPosition="0" endLine="156" endPosition="0" unitName="jetbrains.mps.lang.structure.intentions.CreateReferenceConcept_Intention" />
   </root>
 </debugInfo>
 

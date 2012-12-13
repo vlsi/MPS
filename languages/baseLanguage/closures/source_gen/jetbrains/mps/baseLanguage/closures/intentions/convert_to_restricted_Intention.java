@@ -64,6 +64,10 @@ public class convert_to_restricted_Intention implements IntentionFactory {
     return new SNodePointer("r:dda1964e-d5fa-4ee3-9168-3bfd25608c63(jetbrains.mps.baseLanguage.closures.intentions)", "1229783748457");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new convert_to_restricted_Intention.IntentionImplementation());

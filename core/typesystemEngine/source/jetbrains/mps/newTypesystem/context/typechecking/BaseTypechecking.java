@@ -13,10 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.newTypesystem.context.component;
+package jetbrains.mps.newTypesystem.context.typechecking;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
+import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
@@ -39,47 +40,38 @@ import java.util.Set;
  * Time: 3:24 PM
  * To change this template use File | Settings | File Templates.
  */
-public class SimpleTypechecking {
+public class BaseTypechecking<STATE extends State, COMP extends SimpleTypecheckingComponent> {
 
   protected final SNode myRootNode;
-  private final SimpleTypecheckingComponent myTypecheckingComponent;
+  private final STATE myState;
+  private final COMP myTypecheckingComponent;
 
-  public SimpleTypechecking(SNode node, State state) {
+  public BaseTypechecking(SNode node, STATE state) {
     myRootNode = node;
-    myTypecheckingComponent = createTypeSystemComponent(state);
+    myState = state;
+    myTypecheckingComponent = createTypecheckingComponent();
   }
 
-  protected SimpleTypecheckingComponent createTypeSystemComponent(State state) {
-    return new SimpleTypecheckingComponent(state, this);
+  protected STATE getState() {
+    return myState;
+  }
+
+  @SuppressWarnings("unchecked")
+  protected COMP createTypecheckingComponent() {
+    return (COMP) new SimpleTypecheckingComponent<STATE>(getState(), this);
   }
 
   public SNode getNode() {
     return myRootNode;
   }
 
-  protected SimpleTypecheckingComponent getTypecheckingComponent() {
+  protected COMP getTypecheckingComponent() {
     return myTypecheckingComponent;
   }
 
   protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
     SNode result = getTypecheckingComponent().computeTypesForNode_special(initialNode, givenAdditionalNodes);
     return result;
-  }
-
-  public InequalitySystem computeInequalitiesForHole(SNode hole, boolean holeIsAType) {
-    State state = myTypecheckingComponent.getState();
-    if (state == null) return null;
-    try {
-      state.initHole(hole);
-      computeTypesForNode_special(hole.getParent(), Collections.singleton(hole));
-      state.getInequalitySystem().expandAll(state.getEquations());
-      /* for (String s : state.getInequalitySystem().getPresentation()) {
-         System.out.println(s);
-       } */
-      return state.getInequalitySystem();
-    } finally {
-      state.disposeHole();
-    }
   }
 
   public SNode computeTypesForNodeDuringGeneration(SNode initialNode) {
@@ -151,4 +143,5 @@ public class SimpleTypechecking {
   public void applyNonTypesystemRulesToRoot(IOperationContext context, TypeCheckingContext typeCheckingContext) {
     // do nothing
   }
+
 }

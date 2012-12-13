@@ -30,12 +30,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import java.awt.Rectangle;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import java.awt.Point;
-import com.intellij.ui.awt.RelativePoint;
-import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.util.GoToHelper;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.logging.Logger;
 
@@ -158,12 +154,7 @@ public class GoToInheritedClassifier_Action extends BaseAction {
           });
         }
       });
-
-      Rectangle cellBounds = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell")).getBounds();
-      Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
-      RelativePoint relPoint = new RelativePoint(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), point);
-
-      GoToHelper.showInheritedClassesMenu(nodes, relPoint, ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
+      GoToHelper.showInheritedClassesMenu(nodes, GoToHelper.getRelativePoint(((EditorCell) MapSequence.fromMap(_params).get("selectedCell")), event.getInputEvent()), ProjectHelper.toMPSProject(((Project) MapSequence.fromMap(_params).get("project"))));
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "GoToInheritedClassifier", t);
     }

@@ -51,8 +51,6 @@ public class Solution extends ClassLoadingModule {
     Map<ModuleReference, ClasspathReader.ClassType> result = new HashMap<ModuleReference, ClasspathReader.ClassType>();
     result.put(new ModuleReference("JDK",
       ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065")), ClasspathReader.ClassType.JDK);
-    result.put(new ModuleReference("JDK.Tools",
-      ModuleId.fromString("fdb93da0-59ed-4001-b2aa-4fad79ec058e")), ClasspathReader.ClassType.JDK_TOOLS);
     result.put(new ModuleReference("MPS.OpenAPI",
       ModuleId.fromString("8865b7a8-5271-43d3-884c-6fd1d9cfdd34")), ClasspathReader.ClassType.OPENAPI);
     result.put(new ModuleReference("MPS.Core",

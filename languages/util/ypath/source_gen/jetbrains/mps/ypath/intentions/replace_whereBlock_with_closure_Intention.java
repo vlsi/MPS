@@ -64,6 +64,10 @@ public class replace_whereBlock_with_closure_Intention implements IntentionFacto
     return new SNodePointer("r:00000000-0000-4000-0000-011c895905ab(jetbrains.mps.ypath.intentions)", "4234084459084260639");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new replace_whereBlock_with_closure_Intention.IntentionImplementation());

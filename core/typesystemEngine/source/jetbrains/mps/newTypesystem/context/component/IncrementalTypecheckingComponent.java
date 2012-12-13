@@ -16,6 +16,7 @@
 package jetbrains.mps.newTypesystem.context.component;
 
 import gnu.trove.THashSet;
+import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.AbstractNodesReadListener;
 import jetbrains.mps.smodel.LanguageHierarchyCache.CacheReadAccessListener;
@@ -25,7 +26,7 @@ import jetbrains.mps.util.Pair;
 
 import java.util.Set;
 
-/*package*/ abstract class CachingTypecheckingComponent extends SimpleTypecheckingComponent {
+/*package*/ public abstract class IncrementalTypecheckingComponent<STATE extends State> extends SimpleTypecheckingComponent<STATE> {
 
   private boolean myInvalidationWasPerformed = false;
   private boolean myCacheWasRebuilt = false;
@@ -33,7 +34,7 @@ import java.util.Set;
 
   private Set<SNode> myCurrentNodesToInvalidate = new THashSet<SNode>();
 
-  protected CachingTypecheckingComponent(TypeChecker typeChecker, State state, SimpleTypechecking component) {
+  protected IncrementalTypecheckingComponent(TypeChecker typeChecker, STATE state, BaseTypechecking component) {
     super(state, component);
   }
 

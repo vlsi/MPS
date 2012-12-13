@@ -52,6 +52,10 @@ public class MakeFinal_Intention implements IntentionFactory {
     return new SNodePointer("r:e5a8b5c7-85b5-4d59-9e4e-850a142e2560(jetbrains.mps.lang.structure.intentions)", "4672725010143787708");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new MakeFinal_Intention.IntentionImplementation());

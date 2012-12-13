@@ -700,74 +700,74 @@
     <unitInfo nodeId="3201642974933586123" fileName="ProjectPropertiesPrefsPage.java" startLine="16" startPosition="0" endLine="83" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesPrefsPage" />
   </root>
   <root nodeId="3201642974933587319" modelId="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)">
-    <nodeInfo nodeId="3201642974933587327" fileName="ProjectPropertiesDialog.java" startLine="21" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
-    <nodeInfo nodeId="3201642974933587330" fileName="ProjectPropertiesDialog.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProperties" />
-    <nodeInfo nodeId="2505864428223642499" fileName="ProjectPropertiesDialog.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myExtraPanels" />
-    <nodeInfo nodeId="995085540520740553" fileName="ProjectPropertiesDialog.java" startLine="25" startPosition="57" endLine="26" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
-    <nodeInfo nodeId="3201642974933587373" fileName="ProjectPropertiesDialog.java" startLine="29" startPosition="125" endLine="30" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="3201642974933587387" fileName="ProjectPropertiesDialog.java" startLine="30" startPosition="111" endLine="31" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3201642974933587393" fileName="ProjectPropertiesDialog.java" startLine="31" startPosition="24" endLine="32" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2505864428223727597" fileName="ProjectPropertiesDialog.java" startLine="32" startPosition="30" endLine="33" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="995085540520740500" fileName="ProjectPropertiesDialog.java" startLine="34" startPosition="56" endLine="35" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3201642974933587399" fileName="ProjectPropertiesDialog.java" startLine="36" startPosition="5" endLine="37" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3201642974933587407" fileName="ProjectPropertiesDialog.java" startLine="40" startPosition="25" endLine="41" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3201642974933587446" fileName="ProjectPropertiesDialog.java" startLine="41" startPosition="146" endLine="42" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2505864428223718804" fileName="ProjectPropertiesDialog.java" startLine="43" startPosition="104" endLine="44" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1465111356940117865" fileName="ProjectPropertiesDialog.java" startLine="45" startPosition="5" endLine="46" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3201642974933587466" fileName="ProjectPropertiesDialog.java" startLine="49" startPosition="43" endLine="50" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3201642974933587473" fileName="ProjectPropertiesDialog.java" startLine="50" startPosition="43" endLine="51" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3201642974933587486" fileName="ProjectPropertiesDialog.java" startLine="54" startPosition="48" endLine="55" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3201642974933587589" fileName="ProjectPropertiesDialog.java" startLine="60" startPosition="25" endLine="61" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3201642974933587598" fileName="ProjectPropertiesDialog.java" startLine="61" startPosition="45" endLine="62" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3201642974933587509" fileName="ProjectPropertiesDialog.java" startLine="64" startPosition="7" endLine="65" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="995085540520823880" fileName="ProjectPropertiesDialog.java" startLine="71" startPosition="47" endLine="72" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3201642974933587333" fileName="ProjectPropertiesDialog.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectPropertiesDialog#(Lcom/intellij/openapi/project/Project;)V" />
-    <nodeInfo nodeId="995085540520740445" fileName="ProjectPropertiesDialog.java" startLine="33" startPosition="32" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2505864428223718807" fileName="ProjectPropertiesDialog.java" startLine="42" startPosition="180" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="3201642974933587482" fileName="ProjectPropertiesDialog.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMPSProject#()Ljetbrains/mps/project/StandaloneMPSProject;" />
-    <nodeInfo nodeId="995085540520823873" fileName="ProjectPropertiesDialog.java" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAction#(Ljava/awt/event/ActionEvent;)V" />
-    <nodeInfo nodeId="3201642974933587462" fileName="ProjectPropertiesDialog.java" startLine="49" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectProjectProperties#()V" />
-    <nodeInfo nodeId="3201642974933587506" fileName="ProjectPropertiesDialog.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="995085540520740581" fileName="ProjectPropertiesDialog.java" startLine="69" startPosition="38" endLine="74" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3201642974933587499" fileName="ProjectPropertiesDialog.java" startLine="58" startPosition="37" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3201642974933587403" fileName="ProjectPropertiesDialog.java" startLine="40" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initUI#()V" />
-    <nodeInfo nodeId="995085540520740559" fileName="ProjectPropertiesDialog.java" startLine="68" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()[Ljavax/swing/Action;" />
-    <nodeInfo nodeId="3201642974933587495" fileName="ProjectPropertiesDialog.java" startLine="58" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doSaveChanges#()Z" />
-    <nodeInfo nodeId="3201642974933587366" fileName="ProjectPropertiesDialog.java" startLine="29" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectPropertiesDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/workbench/dialogs/project/properties/project/ProjectProperties;[Ljetbrains/mps/workbench/dialogs/project/properties/project/ProjectPrefsExtraPanel;)V" />
-    <scopeInfo nodeId="3201642974933587337" fileName="ProjectPropertiesDialog.java" startLine="25" startPosition="57" endLine="26" endPosition="30" />
-    <scopeInfo nodeId="995085540520740446" fileName="ProjectPropertiesDialog.java" startLine="34" startPosition="56" endLine="35" endPosition="33" />
-    <scopeInfo nodeId="2505864428223718810" fileName="ProjectPropertiesDialog.java" startLine="43" startPosition="104" endLine="44" endPosition="85" />
-    <scopeInfo nodeId="3201642974933587485" fileName="ProjectPropertiesDialog.java" startLine="54" startPosition="48" endLine="55" endPosition="75" />
-    <scopeInfo nodeId="995085540520823878" fileName="ProjectPropertiesDialog.java" startLine="71" startPosition="47" endLine="72" endPosition="22" />
-    <scopeInfo nodeId="3201642974933587465" fileName="ProjectPropertiesDialog.java" startLine="49" startPosition="43" endLine="51" endPosition="43" />
-    <scopeInfo nodeId="3201642974933587588" fileName="ProjectPropertiesDialog.java" startLine="60" startPosition="25" endLine="62" endPosition="25" />
-    <scopeInfo nodeId="3201642974933587333" fileName="ProjectPropertiesDialog.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
+    <nodeInfo nodeId="3201642974933587327" fileName="ProjectPropertiesDialog.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProject" />
+    <nodeInfo nodeId="3201642974933587330" fileName="ProjectPropertiesDialog.java" startLine="23" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myProperties" />
+    <nodeInfo nodeId="2505864428223642499" fileName="ProjectPropertiesDialog.java" startLine="24" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myExtraPanels" />
+    <nodeInfo nodeId="995085540520740553" fileName="ProjectPropertiesDialog.java" startLine="26" startPosition="57" endLine="27" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="3201642974933587373" fileName="ProjectPropertiesDialog.java" startLine="30" startPosition="125" endLine="31" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="3201642974933587387" fileName="ProjectPropertiesDialog.java" startLine="31" startPosition="111" endLine="32" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3201642974933587393" fileName="ProjectPropertiesDialog.java" startLine="32" startPosition="24" endLine="33" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2505864428223727597" fileName="ProjectPropertiesDialog.java" startLine="33" startPosition="30" endLine="34" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="995085540520740500" fileName="ProjectPropertiesDialog.java" startLine="35" startPosition="56" endLine="36" endPosition="33" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3201642974933587399" fileName="ProjectPropertiesDialog.java" startLine="37" startPosition="5" endLine="38" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3201642974933587407" fileName="ProjectPropertiesDialog.java" startLine="41" startPosition="25" endLine="42" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3201642974933587446" fileName="ProjectPropertiesDialog.java" startLine="42" startPosition="146" endLine="43" endPosition="180" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2505864428223718804" fileName="ProjectPropertiesDialog.java" startLine="44" startPosition="104" endLine="45" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1465111356940117865" fileName="ProjectPropertiesDialog.java" startLine="46" startPosition="5" endLine="47" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3201642974933587466" fileName="ProjectPropertiesDialog.java" startLine="50" startPosition="43" endLine="51" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3201642974933587473" fileName="ProjectPropertiesDialog.java" startLine="51" startPosition="43" endLine="52" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3201642974933587486" fileName="ProjectPropertiesDialog.java" startLine="55" startPosition="48" endLine="56" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3201642974933587589" fileName="ProjectPropertiesDialog.java" startLine="61" startPosition="25" endLine="62" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3201642974933587598" fileName="ProjectPropertiesDialog.java" startLine="62" startPosition="45" endLine="63" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3201642974933587509" fileName="ProjectPropertiesDialog.java" startLine="65" startPosition="7" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="995085540520823880" fileName="ProjectPropertiesDialog.java" startLine="73" startPosition="47" endLine="74" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3201642974933587333" fileName="ProjectPropertiesDialog.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectPropertiesDialog#(Lcom/intellij/openapi/project/Project;)V" />
+    <nodeInfo nodeId="995085540520740445" fileName="ProjectPropertiesDialog.java" startLine="34" startPosition="32" endLine="37" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2505864428223718807" fileName="ProjectPropertiesDialog.java" startLine="43" startPosition="180" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3201642974933587482" fileName="ProjectPropertiesDialog.java" startLine="55" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getMPSProject#()Ljetbrains/mps/project/StandaloneMPSProject;" />
+    <nodeInfo nodeId="995085540520823873" fileName="ProjectPropertiesDialog.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doAction#(Ljava/awt/event/ActionEvent;)V" />
+    <nodeInfo nodeId="3201642974933587462" fileName="ProjectPropertiesDialog.java" startLine="50" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectProjectProperties#()V" />
+    <nodeInfo nodeId="3201642974933587506" fileName="ProjectPropertiesDialog.java" startLine="61" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="995085540520740581" fileName="ProjectPropertiesDialog.java" startLine="71" startPosition="38" endLine="76" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3201642974933587499" fileName="ProjectPropertiesDialog.java" startLine="59" startPosition="37" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3201642974933587403" fileName="ProjectPropertiesDialog.java" startLine="41" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="initUI#()V" />
+    <nodeInfo nodeId="3201642974933587495" fileName="ProjectPropertiesDialog.java" startLine="59" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doSaveChanges#()Z" />
+    <nodeInfo nodeId="995085540520740559" fileName="ProjectPropertiesDialog.java" startLine="69" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createActions#()[Ljavax/swing/Action;" />
+    <nodeInfo nodeId="3201642974933587366" fileName="ProjectPropertiesDialog.java" startLine="30" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectPropertiesDialog#(Lcom/intellij/openapi/project/Project;Ljetbrains/mps/workbench/dialogs/project/properties/project/ProjectProperties;[Ljetbrains/mps/workbench/dialogs/project/properties/project/ProjectPrefsExtraPanel;)V" />
+    <scopeInfo nodeId="3201642974933587337" fileName="ProjectPropertiesDialog.java" startLine="26" startPosition="57" endLine="27" endPosition="30" />
+    <scopeInfo nodeId="995085540520740446" fileName="ProjectPropertiesDialog.java" startLine="35" startPosition="56" endLine="36" endPosition="33" />
+    <scopeInfo nodeId="2505864428223718810" fileName="ProjectPropertiesDialog.java" startLine="44" startPosition="104" endLine="45" endPosition="85" />
+    <scopeInfo nodeId="3201642974933587485" fileName="ProjectPropertiesDialog.java" startLine="55" startPosition="48" endLine="56" endPosition="75" />
+    <scopeInfo nodeId="995085540520823878" fileName="ProjectPropertiesDialog.java" startLine="73" startPosition="47" endLine="74" endPosition="22" />
+    <scopeInfo nodeId="3201642974933587465" fileName="ProjectPropertiesDialog.java" startLine="50" startPosition="43" endLine="52" endPosition="43" />
+    <scopeInfo nodeId="3201642974933587588" fileName="ProjectPropertiesDialog.java" startLine="61" startPosition="25" endLine="63" endPosition="25" />
+    <scopeInfo nodeId="3201642974933587333" fileName="ProjectPropertiesDialog.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
       <varInfo nodeId="3201642974933587335" varName="project" />
     </scopeInfo>
-    <scopeInfo nodeId="2505864428223718807" fileName="ProjectPropertiesDialog.java" startLine="42" startPosition="180" endLine="45" endPosition="5">
+    <scopeInfo nodeId="2505864428223718807" fileName="ProjectPropertiesDialog.java" startLine="43" startPosition="180" endLine="46" endPosition="5">
       <varInfo nodeId="2505864428223718808" varName="extraPanel" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933587482" fileName="ProjectPropertiesDialog.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
-    <scopeInfo nodeId="995085540520823873" fileName="ProjectPropertiesDialog.java" startLine="71" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="3201642974933587482" fileName="ProjectPropertiesDialog.java" startLine="55" startPosition="0" endLine="58" endPosition="0" />
+    <scopeInfo nodeId="995085540520823873" fileName="ProjectPropertiesDialog.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="995085540520823876" varName="p0" />
     </scopeInfo>
-    <scopeInfo nodeId="3201642974933587462" fileName="ProjectPropertiesDialog.java" startLine="49" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="3201642974933587506" fileName="ProjectPropertiesDialog.java" startLine="60" startPosition="0" endLine="64" endPosition="0" />
-    <scopeInfo nodeId="995085540520740563" fileName="ProjectPropertiesDialog.java" startLine="69" startPosition="38" endLine="74" endPosition="7" />
-    <scopeInfo nodeId="3201642974933587406" fileName="ProjectPropertiesDialog.java" startLine="40" startPosition="25" endLine="46" endPosition="56" />
-    <scopeInfo nodeId="3201642974933587498" fileName="ProjectPropertiesDialog.java" startLine="58" startPosition="37" endLine="65" endPosition="16" />
-    <scopeInfo nodeId="3201642974933587372" fileName="ProjectPropertiesDialog.java" startLine="29" startPosition="125" endLine="37" endPosition="13" />
-    <scopeInfo nodeId="3201642974933587403" fileName="ProjectPropertiesDialog.java" startLine="40" startPosition="0" endLine="48" endPosition="0" />
-    <scopeInfo nodeId="995085540520740559" fileName="ProjectPropertiesDialog.java" startLine="68" startPosition="0" endLine="76" endPosition="0" />
-    <scopeInfo nodeId="3201642974933587495" fileName="ProjectPropertiesDialog.java" startLine="58" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="3201642974933587366" fileName="ProjectPropertiesDialog.java" startLine="29" startPosition="0" endLine="39" endPosition="0">
+    <scopeInfo nodeId="3201642974933587462" fileName="ProjectPropertiesDialog.java" startLine="50" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="3201642974933587506" fileName="ProjectPropertiesDialog.java" startLine="61" startPosition="0" endLine="65" endPosition="0" />
+    <scopeInfo nodeId="995085540520740563" fileName="ProjectPropertiesDialog.java" startLine="71" startPosition="38" endLine="76" endPosition="7" />
+    <scopeInfo nodeId="3201642974933587406" fileName="ProjectPropertiesDialog.java" startLine="41" startPosition="25" endLine="47" endPosition="56" />
+    <scopeInfo nodeId="3201642974933587498" fileName="ProjectPropertiesDialog.java" startLine="59" startPosition="37" endLine="66" endPosition="16" />
+    <scopeInfo nodeId="3201642974933587372" fileName="ProjectPropertiesDialog.java" startLine="30" startPosition="125" endLine="38" endPosition="13" />
+    <scopeInfo nodeId="3201642974933587403" fileName="ProjectPropertiesDialog.java" startLine="41" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="3201642974933587495" fileName="ProjectPropertiesDialog.java" startLine="59" startPosition="0" endLine="68" endPosition="0" />
+    <scopeInfo nodeId="995085540520740559" fileName="ProjectPropertiesDialog.java" startLine="69" startPosition="0" endLine="78" endPosition="0" />
+    <scopeInfo nodeId="3201642974933587366" fileName="ProjectPropertiesDialog.java" startLine="30" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="2505864428223727591" varName="extraPanels" />
       <varInfo nodeId="3201642974933587368" varName="project" />
       <varInfo nodeId="3201642974933587370" varName="properties" />
     </scopeInfo>
-    <unitInfo nodeId="995085540520823871" fileName="ProjectPropertiesDialog.java" startLine="70" startPosition="62" endLine="74" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog$2" />
-    <unitInfo nodeId="3201642974933587505" fileName="ProjectPropertiesDialog.java" startLine="59" startPosition="55" endLine="64" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog$1" />
-    <unitInfo nodeId="3201642974933587319" fileName="ProjectPropertiesDialog.java" startLine="20" startPosition="0" endLine="77" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog" />
+    <unitInfo nodeId="995085540520823871" fileName="ProjectPropertiesDialog.java" startLine="72" startPosition="62" endLine="76" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog$2" />
+    <unitInfo nodeId="3201642974933587505" fileName="ProjectPropertiesDialog.java" startLine="60" startPosition="55" endLine="65" endPosition="5" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog$1" />
+    <unitInfo nodeId="3201642974933587319" fileName="ProjectPropertiesDialog.java" startLine="21" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.workbench.dialogs.project.properties.project.ProjectPropertiesDialog" />
   </root>
   <root nodeId="7767836446863523822" modelId="r:74729267-a5fb-4229-a117-335c34e68536(jetbrains.mps.workbench.dialogs.project.properties.project)">
     <nodeInfo nodeId="7767836446863523839" fileName="ProjectPrefsExtraPanel.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="EP_NAME" />

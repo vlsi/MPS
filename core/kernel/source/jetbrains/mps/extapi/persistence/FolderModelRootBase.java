@@ -38,6 +38,8 @@ public abstract class FolderModelRootBase extends ModelRootBase implements FileS
   }
 
   public void setPath(String path) {
+    checkNotRegistered();
+
     this.path = path;
   }
 

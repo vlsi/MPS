@@ -421,9 +421,6 @@
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />
-    <classNode dependClassName="java.awt.Point" />
-    <classNode dependClassName="java.awt.Rectangle" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -447,7 +444,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
@@ -465,9 +461,6 @@
     <classNode dependClassName="com.intellij.openapi.progress.ProgressManager" />
     <classNode dependClassName="com.intellij.openapi.progress.Task" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
-    <classNode dependClassName="com.intellij.ui.awt.RelativePoint" />
-    <classNode dependClassName="java.awt.Point" />
-    <classNode dependClassName="java.awt.Rectangle" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -492,7 +485,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />

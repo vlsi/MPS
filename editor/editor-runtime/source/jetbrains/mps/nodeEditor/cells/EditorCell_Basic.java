@@ -314,6 +314,16 @@ public abstract class EditorCell_Basic implements EditorCell {
     myHeight = height;
   }
 
+  @Override
+  public int getBottom() {
+    return getY() + getHeight();
+  }
+
+  @Override
+  public int getRight() {
+    return getX() + getWidth();
+  }
+
   public int getEffectiveWidth() {
     return myWidth;
   }
@@ -566,11 +576,6 @@ public abstract class EditorCell_Basic implements EditorCell {
   public void end() {
 
   }
-
-  public Rectangle getBounds() {
-    return new Rectangle(getX(), getY(), getWidth(), getHeight());
-  }
-
 
   public final EditorCell findLeaf(int x, int y) {
     return findLeaf(x, y, Condition.TRUE_CONDITION);

@@ -122,8 +122,8 @@
     </node>
     <node type="tpih.GDocument" typeId="tpih.1184639540818" id="716066598061903449">
       <property name="extension" nameId="tpih.1184639664013" value="nsi" />
-      <property name="documentName" nameId="tpih.1184639635512" value="installer" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.data" />
+      <property name="documentName" nameId="tpih.1184639635512" value="installer" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4197214709894135186">
       <property name="name" nameId="tpck.1169194664001" value="buildObsolete" />
@@ -160,8 +160,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="927724900262328564">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="8055294676438936916">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -785,8 +785,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="1085569310939354355">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="optionsName" nameId="3ior.927724900262033859" value="withoutXmls" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="1085569310939354356">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
@@ -1125,9 +1125,6 @@
             <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="1966103100308041270">
               <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_FolderWithSources" typeId="kdzh.2105528055260548241" id="2105528055260693100">
                 <link role="module" roleId="kdzh.1692280246134781713" targetNodeId="413682502717652307" resolveInfo="JDK" />
-              </node>
-              <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_FolderWithSources" typeId="kdzh.2105528055260548241" id="2105528055260693099">
-                <link role="module" roleId="kdzh.1692280246134781713" targetNodeId="2182758403694858553" resolveInfo="JDK.Tools" />
               </node>
               <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_FolderWithSources" typeId="kdzh.2105528055260548241" id="4278841037070230773">
                 <link role="module" roleId="kdzh.1692280246134781713" targetNodeId="4697806380739460690" resolveInfo="Annotations" />
@@ -2054,36 +2051,6 @@
           </node>
         </node>
       </node>
-      <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Solution" typeId="kdzh.3189788309731840247" id="2182758403694858553">
-        <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
-        <property name="name" nameId="tpck.1169194664001" value="JDK.Tools" />
-        <property name="uuid" nameId="kdzh.322010710375892619" value="fdb93da0-59ed-4001-b2aa-4fad79ec058e" />
-        <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="true" />
-        <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="7507666976388974938">
-          <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="1277685309310599419" resolveInfo="mps_home" />
-          <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7507666976388974939">
-            <property name="head" nameId="3ior.8618885170173601779" value="languages" />
-            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7507666976388974940">
-              <property name="head" nameId="3ior.8618885170173601779" value="core" />
-              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7507666976388974941">
-                <property name="head" nameId="3ior.8618885170173601779" value="stub" />
-                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7507666976388974942">
-                  <property name="head" nameId="3ior.8618885170173601779" value="JDK.Tools" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="7507666976388974943">
-                    <property name="head" nameId="3ior.8618885170173601779" value="Tools.msd" />
-                  </node>
-                </node>
-              </node>
-            </node>
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="7259033139236397001">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="7259033139236397002">
-            <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
-            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="413682502717652307" resolveInfo="JDK" />
-          </node>
-        </node>
-      </node>
       <node role="modules" roleId="kdzh.1500819558095907806" type="kdzh.BuildMps_Solution" typeId="kdzh.3189788309731840247" id="4697806380739460690">
         <property name="compact" nameId="kdzh.8369506495128725901" value="true" />
         <property name="name" nameId="tpck.1169194664001" value="Annotations" />
@@ -2157,16 +2124,22 @@
           <property name="reexport" nameId="kdzh.3189788309731928316" value="true" />
           <link role="module" roleId="kdzh.3189788309731928317" targetNodeId="1966103100308027822" resolveInfo="mps-openapi" />
         </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4697806380739487250">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="4697806380739487249">
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="6128512196624868439">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="6128512196624868438">
             <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
             <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="4697806380739460690" resolveInfo="Annotations" />
           </node>
         </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="4697806380739487252">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="4697806380739487251">
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="6128512196624868441">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="6128512196624868440">
             <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
             <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="413682502717652307" resolveInfo="JDK" />
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="6128512196624868443">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="6128512196624868442">
+            <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
+            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="2182758403694705590" resolveInfo="MPS.Core" />
           </node>
         </node>
       </node>
@@ -2295,12 +2268,6 @@
           <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="7259033139236489066">
             <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
             <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="413682502717652307" resolveInfo="JDK" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="7259033139236489067">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="7259033139236489068">
-            <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
-            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="2182758403694858553" resolveInfo="JDK.Tools" />
           </node>
         </node>
         <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="7259033139236489069">
@@ -5803,8 +5770,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="1659807394255099741">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="8055294676438936914">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -5871,8 +5838,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="8241785156573698281">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="optionsName" nameId="3ior.927724900262033859" value="mps-workbench-specific" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="8241785156573698282">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
@@ -6302,12 +6269,6 @@
           <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="2569834391839970953">
             <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
             <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="413682502717652307" resolveInfo="JDK" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="2569834391839970954">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="2569834391839970955">
-            <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
-            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="2182758403694858553" resolveInfo="JDK.Tools" />
           </node>
         </node>
         <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="2569834391839970956">
@@ -6862,8 +6823,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="1659807394255099739">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="8055294676438936915">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -9421,8 +9382,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="5875180246329088819">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="5875180246329088820">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -9605,8 +9566,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="6391307088354381144">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="6391307088354381145">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -10259,8 +10220,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="5249031859942907433">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="5249031859942907434">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -10456,8 +10417,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="1545517825663017279">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="1545517825663017280">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -10705,8 +10666,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="5249031859942907430">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="5249031859942907431">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -11102,15 +11063,15 @@
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.debugger.java.api" />
         <property name="uuid" nameId="kdzh.322010710375892619" value="cf8c9de5-1b4a-4dc8-8e6d-847159af31dd" />
         <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="true" />
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5506065168694778984">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="5506065168694778985">
-            <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
-            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="2182758403694858553" resolveInfo="JDK.Tools" />
-          </node>
-        </node>
         <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ModuleDependencyOnJavaModule" typeId="kdzh.3189788309731928315" id="8710483322545782906">
           <property name="reexport" nameId="kdzh.3189788309731928316" value="true" />
           <link role="module" roleId="kdzh.3189788309731928317" targetNodeId="1841128050848833514" resolveInfo="debugger-java" />
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5314142268369023022">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="5314142268369023023">
+            <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
+            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="413682502717652307" resolveInfo="JDK" />
+          </node>
         </node>
         <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="6164334420696870895">
           <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="6361939271669730825" resolveInfo="mps_home" />
@@ -11198,6 +11159,60 @@
         <property name="name" nameId="tpck.1169194664001" value="jetbrains.mps.debugger.java.customViewers" />
         <property name="uuid" nameId="kdzh.322010710375892619" value="fa8aeae9-4df9-4e13-bfb1-9b04c67ddb77" />
         <property name="doNotCompile" nameId="kdzh.1500819558096356884" value="false" />
+        <node role="runtime" roleId="kdzh.3189788309731917348" type="kdzh.BuildMps_ModuleSolutionRuntime" typeId="kdzh.3189788309731981027" id="5314142268369023030">
+          <link role="solution" roleId="kdzh.3189788309731981028" targetNodeId="5506065168694778977" resolveInfo="jetbrains.mps.debugger.java.api" />
+        </node>
+        <node role="runtime" roleId="kdzh.3189788309731917348" type="kdzh.BuildMps_ModuleSolutionRuntime" typeId="kdzh.3189788309731981027" id="5314142268369023031">
+          <link role="solution" roleId="kdzh.3189788309731981028" targetNodeId="413682502717652307" resolveInfo="JDK" />
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5314142268369023024">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="5314142268369023025">
+            <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
+            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="413682502717652307" resolveInfo="JDK" />
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5314142268369023026">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="5314142268369023027">
+            <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
+            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="5506065168694779074" resolveInfo="jetbrains.mps.debugger.java.privateMembers" />
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5314142268369023028">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="5314142268369023029">
+            <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
+            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="5506065168694778977" resolveInfo="jetbrains.mps.debugger.java.api" />
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5314142268369023032">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="5314142268369023033">
+            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="2569834391839970927" resolveInfo="jetbrains.mps.lang.plugin.standalone" />
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5314142268369023034">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="5314142268369023035">
+            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8939513996048535701" resolveInfo="jetbrains.mps.baseLanguage.logging" />
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5314142268369023036">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="5314142268369023037">
+            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="5506065168694779074" resolveInfo="jetbrains.mps.debugger.java.privateMembers" />
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5314142268369023038">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="5314142268369023039">
+            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8939513996048536112" resolveInfo="jetbrains.mps.lang.plugin" />
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5314142268369023040">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="5314142268369023041">
+            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8939513996048535435" resolveInfo="jetbrains.mps.baseLanguage" />
+          </node>
+        </node>
+        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5314142268369023042">
+          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="5314142268369023043">
+            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8939513996048535569" resolveInfo="jetbrains.mps.baseLanguage.collections" />
+          </node>
+        </node>
         <node role="path" roleId="kdzh.322010710375956261" type="3ior.BuildSourceMacroRelativePath" typeId="3ior.7389400916848153117" id="4301118715654684511">
           <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="6361939271669730825" resolveInfo="mps_home" />
           <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4301118715654684512">
@@ -11214,60 +11229,6 @@
                 </node>
               </node>
             </node>
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5332097447637862696">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="5332097447637862697">
-            <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
-            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="2182758403694858553" resolveInfo="JDK.Tools" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5332097447637862698">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="5332097447637862699">
-            <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
-            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="5506065168694779074" resolveInfo="jetbrains.mps.debugger.java.privateMembers" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5332097447637862700">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyOnModule" typeId="kdzh.5253498789149585690" id="5332097447637862701">
-            <property name="reexport" nameId="kdzh.5253498789149547713" value="true" />
-            <link role="module" roleId="kdzh.5253498789149547705" targetNodeId="5506065168694778977" resolveInfo="jetbrains.mps.debugger.java.api" />
-          </node>
-        </node>
-        <node role="runtime" roleId="kdzh.3189788309731917348" type="kdzh.BuildMps_ModuleSolutionRuntime" typeId="kdzh.3189788309731981027" id="5332097447637862702">
-          <link role="solution" roleId="kdzh.3189788309731981028" targetNodeId="5506065168694778977" resolveInfo="jetbrains.mps.debugger.java.api" />
-        </node>
-        <node role="runtime" roleId="kdzh.3189788309731917348" type="kdzh.BuildMps_ModuleSolutionRuntime" typeId="kdzh.3189788309731981027" id="5332097447637862703">
-          <link role="solution" roleId="kdzh.3189788309731981028" targetNodeId="2182758403694858553" resolveInfo="JDK.Tools" />
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5332097447637862704">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="5332097447637862705">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="2569834391839970927" resolveInfo="jetbrains.mps.lang.plugin.standalone" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5332097447637862706">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="5332097447637862707">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8939513996048535701" resolveInfo="jetbrains.mps.baseLanguage.logging" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5332097447637862708">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="5332097447637862709">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="5506065168694779074" resolveInfo="jetbrains.mps.debugger.java.privateMembers" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5332097447637862710">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="5332097447637862711">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8939513996048536112" resolveInfo="jetbrains.mps.lang.plugin" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5332097447637862712">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="5332097447637862713">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8939513996048535435" resolveInfo="jetbrains.mps.baseLanguage" />
-          </node>
-        </node>
-        <node role="dependencies" roleId="kdzh.5253498789149547704" type="kdzh.BuildMps_ExtractedModuleDependency" typeId="kdzh.7259033139236285166" id="5332097447637862714">
-          <node role="dependency" roleId="kdzh.7259033139236285167" type="kdzh.BuildMps_ModuleDependencyExtendLanguage" typeId="kdzh.4278635856200794926" id="5332097447637862715">
-            <link role="language" roleId="kdzh.4278635856200794928" targetNodeId="8939513996048535569" resolveInfo="jetbrains.mps.baseLanguage.collections" />
           </node>
         </node>
       </node>
@@ -11679,8 +11640,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="5249031859942907427">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="5249031859942907428">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -12747,8 +12708,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="2075442863766408896">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="2075442863766408897">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -14459,8 +14420,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="1185869098826025451">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="1185869098826025452">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -15202,8 +15163,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="8227093612176368070">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="8227093612176368071">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -15264,8 +15225,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="6977615362525485149">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="256" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="256" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="6977615362525485150">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -15598,8 +15559,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="5970299968953452769">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="5970299968953452770">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -16395,8 +16356,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="4197214709894135187">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="4197214709894135188">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -17214,8 +17175,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="4061567211001166737">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="4061567211001166738">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -17619,8 +17580,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="7322192058491640277">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="7322192058491640278">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -18222,8 +18183,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="6265574260762011004">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="6265574260762011005">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>

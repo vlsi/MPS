@@ -55,6 +55,10 @@ public class Inequalities {
     myState = state;
   }
 
+  protected State getState() {
+    return myState;
+  }
+
   public void printAll() {
     System.out.println("Relations");
     for (Block node : getRelationsToSolve()) {
@@ -128,7 +132,7 @@ public class Inequalities {
     solvingInProcess = true;
     List<RelationBlock> inequalities = getRelationsToSolve();
     initializeMapsInc(inequalities);
-    while (iteration(inequalities) && !myState.isTargetTypeCalculated()) {
+    while (iteration(inequalities)) {
       inequalities = getRelationsToSolve();
     }
     solvingInProcess = false;
@@ -250,7 +254,7 @@ public class Inequalities {
     return false;
   }
 
-  private boolean iteration(List<RelationBlock> inequalities) {
+  protected boolean iteration(List<RelationBlock> inequalities) {
     if (myNodesInc.size() == 0) {
       return false;
     }

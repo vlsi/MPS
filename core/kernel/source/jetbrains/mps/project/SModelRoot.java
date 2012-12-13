@@ -103,7 +103,7 @@ public class SModelRoot extends FolderModelRootBase {
   }
 
   @Override
-  public Iterable<SModel> getModels() {
+  public Iterable<SModel> loadModels() {
     IModelRootManager manager = getManager();
     //model with model root manager not yet loaded - should be loaded after classes reloading
     if (manager == null) return Collections.emptyList();

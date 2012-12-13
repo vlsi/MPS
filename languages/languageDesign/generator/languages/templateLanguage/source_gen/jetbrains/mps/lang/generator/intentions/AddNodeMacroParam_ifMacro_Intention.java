@@ -72,6 +72,10 @@ public class AddNodeMacroParam_ifMacro_Intention implements IntentionFactory {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "1240572960649");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     List<IntentionExecutable> list = ListSequence.fromList(new ArrayList<IntentionExecutable>());
     List<SNode> paramList = parameter(node, context);

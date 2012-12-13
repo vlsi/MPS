@@ -18,8 +18,8 @@ import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
-import java.awt.Rectangle;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import java.awt.Rectangle;
 import javax.swing.BorderFactory;
 import java.awt.Color;
 import java.util.List;
@@ -52,14 +52,15 @@ public class BaseVersionEditorComponent extends EditorComponent implements Edito
         return a.merge(b);
       }
     });
-    Rectangle cellsRect = new Rectangle();
+    int rightMost = 0;
     for (EditorCell leafCell = getRootCell().getFirstLeaf(); leafCell != null; leafCell = leafCell.getNextLeaf()) {
-      Rectangle bounds = leafCell.getBounds();
-      if (verticalBounds.contains(bounds.y) || verticalBounds.contains(bounds.y + bounds.height) || verticalBounds.contains(bounds.y + bounds.height / 2)) {
-        cellsRect = cellsRect.union(bounds);
+      if (verticalBounds.contains(leafCell.getY()) || verticalBounds.contains(leafCell.getBottom()) || verticalBounds.contains(leafCell.getY() + leafCell.getHeight() / 2)) {
+        if (leafCell.getRight() > rightMost) {
+          rightMost = leafCell.getRight();
+        }
       }
     }
-    Rectangle viewRect = new Rectangle(0, (int) verticalBounds.start(), (int) cellsRect.getMaxX(), verticalBounds.length());
+    Rectangle viewRect = new Rectangle(0, (int) verticalBounds.start(), rightMost, verticalBounds.length());
     viewRect.y -= 1;
     viewRect.width += 5;
     viewRect.height += 4;

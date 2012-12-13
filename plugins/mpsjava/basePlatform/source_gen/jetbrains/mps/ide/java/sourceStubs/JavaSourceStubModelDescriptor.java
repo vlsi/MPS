@@ -101,6 +101,8 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
     processStreams(changedItems);
   }
 
+
+
   @Override
   public void changed(DataSource source) {
     // ignore 

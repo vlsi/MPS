@@ -74,9 +74,6 @@ public class State {
   private final Equations myEquations;
   private final Inequalities myInequalities;
   private final NodeMaps myNodeMaps;
-  private SNode myHole;
-  private SNode myTargetNode;
-  private boolean myTargetTypeCalculated = false;
 
   private final VariableIdentifier myVariableIdentifier;
 
@@ -85,7 +82,6 @@ public class State {
   private List<AbstractOperation> myOperationsAsList;
   private boolean myInsideStateChangeAction = false;
 
-  private InequalitySystem myInequalitySystem = null;
 
   @StateObject
   private final Map<ConditionKind, ManyToManyMap<SNode, Block>> myBlocksAndInputs =
@@ -97,7 +93,7 @@ public class State {
   public State(TypeCheckingContext tcc, AbstractOperation operation) {
     myTypeCheckingContext = tcc;
     myEquations = new Equations(this);
-    myInequalities = new Inequalities(this);
+    myInequalities = createInequalities();
     myNodeMaps = new NodeMaps(this);
     myVariableIdentifier = new VariableIdentifier();
     {
@@ -111,6 +107,10 @@ public class State {
 
   public State(TypeCheckingContext tcc) {
     this(tcc, new CheckAllOperation());
+  }
+
+  protected Inequalities createInequalities() {
+    return new Inequalities(this);
   }
 
   @StateMethod
@@ -153,9 +153,6 @@ public class State {
   }
 
   public void applyRuleToNode(SNode node, ICheckingRule_Runtime rule, IsApplicableStatus status) {
-    if (myHole!=null && myHole == node) {
-      return;
-    }
     try {
       executeOperation(new ApplyRuleOperation(node, rule, status));
     } catch (Throwable t) {
@@ -238,16 +235,6 @@ public class State {
   }
 
   public boolean addEquation(SNode left, SNode right, EquationInfo info) {
-    if (myInequalitySystem != null) {
-      if (HUtil.isRuntimeHoleType(left)) {
-        myInequalitySystem.addEquation(left);
-        return true;
-      }
-      if (HUtil.isRuntimeHoleType(right)) {
-        myInequalitySystem.addEquation(right);
-        return true;
-      }
-    }
     return myEquations.addEquation(left, right, info);
   }
 
@@ -261,31 +248,11 @@ public class State {
   }
 
   public void addInequality(SNode subType, SNode superType, boolean isWeak, boolean check, EquationInfo info, boolean lessThan) {
-    if (myInequalitySystem != null) {
-      if (HUtil.isRuntimeHoleType(subType)) {
-        myInequalitySystem.addSupertype(superType, isWeak);
-        return;
-      }
-      if (HUtil.isRuntimeHoleType(superType)) {
-        myInequalitySystem.addSubtype(subType, isWeak);
-        return;
-      }
-    }
     if (check && myTypeCheckingContext.isSingleTypeComputation()) return; //no need to check if we don't need to report errors
     addBlock(new InequalityBlock(this, subType, superType, lessThan, RelationKind.fromFlags(isWeak, check, false), info));
   }
 
   public void addComparable(SNode left, SNode right, boolean isWeak, boolean inference, EquationInfo info) {
-    if (myInequalitySystem != null) {
-      if (HUtil.isRuntimeHoleType(right)) {
-        myInequalitySystem.addComparable(left, isWeak);
-        return;
-      }
-      if (HUtil.isRuntimeHoleType(left)) {
-        myInequalitySystem.addComparable(right, isWeak);
-        return;
-      }
-    }
     if (!inference && myTypeCheckingContext.isSingleTypeComputation()) return; //no need to check if we don't need to report errors)
     addBlock(new ComparableBlock(this, left, right, RelationKind.fromFlags(isWeak, !inference, true), info));
   }
@@ -316,10 +283,8 @@ public class State {
   }
 
   public void executeOperation(AbstractOperation operation) {
-    if (operation == null || myTargetTypeCalculated) {
-      return;
-    }
-    if (myTypeCheckingContext instanceof TracingTypecheckingContext|| operation.hasEffect()) {
+    if (operation == null) return;
+    if (myTypeCheckingContext instanceof TracingTypecheckingContext || operation.hasEffect()) {
       if (!myOperationStack.empty()) {
         myOperationStack.peek().addConsequence(operation);
       }
@@ -362,19 +327,11 @@ public class State {
     myNodeMaps.clear();
     myVariableIdentifier.clear();
     myBlocks.clear();
-    myTargetNode = null;
-    myTargetTypeCalculated = false;
     for (ManyToManyMap map : myBlocksAndInputs.values()) {
       map.clear();
     }
     if (clearDiff) {
       clearOperations();
-    }
-    if (myInequalitySystem != null) {
-      //reset hole
-      SNode hole = myHole;
-      disposeHole();
-      initHole(hole);
     }
   }
 
@@ -386,7 +343,7 @@ public class State {
 
 
   public void clearStateObjects() {
-    if (!(myTypeCheckingContext instanceof TracingTypecheckingContext) && myInequalitySystem == null) {
+    if (!(myTypeCheckingContext instanceof TracingTypecheckingContext)/* && myInequalitySystem == null*/) {
       for (Entry<ConditionKind, ManyToManyMap<SNode, Block>> map : myBlocksAndInputs.entrySet()) {
         map.getValue().clear();
       }
@@ -436,34 +393,8 @@ public class State {
   public AbstractOperation getOperation() {
     return myOperation;
   }
-  
-  public void setTargetNode(SNode node) {
-    if (myInequalitySystem != null) return;
-    addBlock(new TargetBlock(this, typeOf(node, null), node));
-    myTargetNode = node;
-  }
-
-  public void setTargetTypeCalculated() {
-    myTargetTypeCalculated = true;
-    myNodeMaps.expandNode(myTargetNode, true);
-  }
-
-  public boolean isTargetTypeCalculated() {
-    return myTargetTypeCalculated;
-  }
-
-  public void expandTargetNode() {
-    myNodeMaps.expandNode(myTargetNode, true);
-    if (!TypesUtil.hasVariablesInside(myNodeMaps.getType(myTargetNode))) {
-      setTargetTypeCalculated();
-    }
-  }
 
   public void expandAll(final Set<SNode> nodes, final boolean finalExpansion) {
-    if (myTypeCheckingContext.isSingleTypeComputation()) {
-      expandTargetNode();
-      return;
-    }
     if (nodes != null && !nodes.isEmpty()) {
       executeOperation(new AddRemarkOperation("Types Expansion", new Runnable() {
         public void run() {
@@ -539,22 +470,4 @@ public class State {
     }
   }
 
-  public void initHole(SNode hole) {
-    SNode holeVar = typeOf(hole, null);
-    SNode holeType = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.lang.typesystem.structure.RuntimeHoleType",
-      null, GlobalScope.getInstance(), false);
-    myNodeMaps.addNodeToType(hole, holeVar, null);
-    myEquations.addEquation(holeVar, holeType, null);
-    myHole = hole;
-    myInequalitySystem = new InequalitySystem(holeType, this);
-  }
-
-  public InequalitySystem getInequalitySystem() {
-    return myInequalitySystem;
-  }
-
-  public void disposeHole() {
-    myInequalitySystem = null;
-    myHole = null;
-  }
 }

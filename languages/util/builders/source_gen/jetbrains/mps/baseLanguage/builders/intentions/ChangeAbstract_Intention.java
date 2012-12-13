@@ -52,6 +52,10 @@ public class ChangeAbstract_Intention implements IntentionFactory {
     return new SNodePointer("r:7f54566a-e579-4f13-aaf4-b6e2c202aeb2(jetbrains.mps.baseLanguage.builders.intentions)", "5219429592916269641");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ChangeAbstract_Intention.IntentionImplementation());

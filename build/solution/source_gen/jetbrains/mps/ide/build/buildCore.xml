@@ -91,8 +91,6 @@
       <fileset dir="${build.tmp}/java/out/mps-openapi" />
       <zipfileset file="${mps_home}/languages/core/stub/JDK/JDK.msd" prefix="modules/JDK" />
       <zipfileset dir="${mps_home}/languages/core/stub/JDK" includes="icons/**, resources/**" prefix="modules/JDK" />
-      <zipfileset file="${mps_home}/languages/core/stub/JDK.Tools/Tools.msd" prefix="modules/JDK.Tools" />
-      <zipfileset dir="${mps_home}/languages/core/stub/JDK.Tools" includes="icons/**, resources/**" prefix="modules/JDK.Tools" />
       <zipfileset file="${mps_home}/languages/core/stub/Annotations/Annotations.msd" prefix="modules/Annotations" />
       <zipfileset dir="${mps_home}/languages/core/stub/Annotations" includes="icons/**, resources/**" prefix="modules/Annotations" />
       <zipfileset file="${mps_home}/languages/core/stub/MPS.OpenAPI/OpenAPI.msd" prefix="modules/MPS.OpenAPI" />

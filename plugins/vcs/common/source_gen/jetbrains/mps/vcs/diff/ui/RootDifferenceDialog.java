@@ -159,22 +159,23 @@ public class RootDifferenceDialog extends DialogWrapper implements DataProvider 
     return myRootId;
   }
 
-  public void setRootId(SNodeId rootId) {
+  public void setRootId(SNodeId rootId, String rootName) {
     myRootId = rootId;
+    setTitle("Difference for " + rootName);
     myOldEditor.editRoot(myProject, myRootId, myChangeSet.getOldModel());
     myNewEditor.editRoot(myProject, myRootId, myChangeSet.getNewModel());
     rehighlight();
     myTraverser.goToFirstChangeLater();
   }
 
-  public void setRootId(SNodeId rootId, ModelChangeSet changeSet) {
+  public void setRootId(SNodeId rootId, String rootName, ModelChangeSet changeSet) {
     myChangeSet = changeSet;
     ListSequence.fromList(myChangeGroupLayouts).visitAll(new IVisitor<ChangeGroupLayout>() {
       public void visit(ChangeGroupLayout it) {
         ((DiffChangeGroupLayout) it).setChangeSet(myChangeSet);
       }
     });
-    setRootId(rootId);
+    setRootId(rootId, rootName);
   }
 
   @Nullable

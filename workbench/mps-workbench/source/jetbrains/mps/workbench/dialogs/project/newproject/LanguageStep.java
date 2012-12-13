@@ -130,12 +130,19 @@ public class LanguageStep extends BaseStep {
 
   public void _check() throws CommitStepException {
     if (myOptions.getCreateNewLanguage()) {
-      File dir = new File(myPath.getPath());
+      if (myPath.getPath().length() == 0) {
+        throw new CommitStepException("Enter language directory");
+      }
+      File file = new File(myPath.getPath());
+      if (file.exists()) {
+        throw new CommitStepException("Language directory already exists");
+      }
+      File dir = file.getParentFile();
       if (!(dir.isAbsolute())) {
-        throw new CommitStepException("Path should path");
+        throw new CommitStepException("Path should be absolute");
       }
       if (myNamespace.getText().length() == 0) {
-        throw new CommitStepException("Enter namespace");
+        throw new CommitStepException("Enter language name");
       }
       if (MPSModuleRepository.getInstance().getModuleByFqName(myNamespace.getText()) != null) {
         throw new CommitStepException("Language namespace already exists");

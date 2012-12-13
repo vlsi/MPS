@@ -18,7 +18,6 @@ package jetbrains.mps.smodel.persistence.def;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.vfs.IFile;
-import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
 
@@ -26,7 +25,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.TreeSet;
 
 class DefaultMetadataPersistence {
   private static final Logger LOG = Logger.getLogger(DefaultMetadataPersistence.class);
@@ -34,22 +32,6 @@ class DefaultMetadataPersistence {
   private static final String ENTRY = "entry";
   private static final String KEY = "key";
   private static final String VALUE = "value";
-
-  static void save(IFile file, Map<String, String> metadata) {
-    try {
-      Element root = new Element("metadata");
-
-      for (String key : new TreeSet<String>(metadata.keySet())) {
-        root.addContent(
-          new Element(ENTRY)
-            .addContent(new Element(KEY).setText(key))
-            .addContent(new Element(VALUE).setText(metadata.get(key))));
-      }
-      JDOMUtil.writeDocument(new Document(root), file);
-    } catch (IOException e) {
-      throw new RuntimeException(e);
-    }
-  }
 
   static Map<String, String> load(IFile file) {
     try {

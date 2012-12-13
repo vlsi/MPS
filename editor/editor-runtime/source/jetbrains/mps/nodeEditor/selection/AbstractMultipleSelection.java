@@ -20,6 +20,7 @@ import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.nodeEditor.cells.ParentSettings;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
@@ -46,9 +47,7 @@ public abstract class AbstractMultipleSelection extends AbstractSelection implem
 
   @Override
   public void activate() {
-    Rectangle firstBound = getFirstCell().getBounds();
-    Rectangle lastBounds = getLastCell().getBounds();
-    getEditorComponent().scrollRectToVisible(firstBound.union(lastBounds));
+    getEditorComponent().scrollRectToVisible(GeometryUtil.getBounds(getFirstCell(), getLastCell()));
     getEditorComponent().repaint();
   }
 
