@@ -21,6 +21,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
@@ -124,6 +125,11 @@ public class TestModule extends ClassLoadingModule {
 
   protected ModuleScope createScope() {
     return new TestModuleScope();
+  }
+
+  @Override
+  public boolean canLoad() {
+    return myPeer instanceof IClassLoadingModule && ((IClassLoadingModule) myPeer).canLoad();
   }
 
   @Override

@@ -8,11 +8,8 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.project.structure.modules.SolutionKind;
+import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -41,17 +38,7 @@ public class LoggingGenerationUtil {
 
   public static boolean isDesignTimeModel(SModel sm) {
     SModule module = sm.getModelDescriptor().getModule();
-    if (module == null) {
-      return false;
-    }
-    if (module instanceof Language || module instanceof Generator) {
-      return true;
-    }
-    if (module instanceof Solution) {
-      SolutionDescriptor moduleDescriptor = ((Solution) module).getModuleDescriptor();
-      return moduleDescriptor.getKind() != SolutionKind.NONE;
-    }
-    return false;
+    return (module instanceof Generator) || (module instanceof IClassLoadingModule && ((IClassLoadingModule) module).canLoad());
   }
 
   public static String generateUniqueFieldName(SNode contextNode, final String baseName) {
