@@ -143,7 +143,7 @@
       <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.build.deprecated" />
       <property name="name" nameId="tpck.1169194664001" value="MPS Deprecated Build Languages" />
       <property name="descripttion" nameId="tp4k.5023285075122009368" value="Legacy (deprecated) build languages for MPS" />
-      <property name="version" nameId="tp4k.5023285075122009369" value="2.5.2" />
+      <property name="version" nameId="tp4k.5023285075122009369" value="2.5.3" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="117.105" />
