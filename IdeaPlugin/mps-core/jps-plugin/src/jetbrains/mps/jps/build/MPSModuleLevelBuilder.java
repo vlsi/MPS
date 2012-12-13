@@ -77,6 +77,11 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
         // must be done once ?
         final JpsMPSProject project = new JpsMPSProject(jpsModule.getProject());
 
+        JpsGeneratorWorker worker = new JpsGeneratorWorker(project);
+        // populate worker with models needing re-generation
+        dirtyFilesHolder.processDirtyFiles(worker);
+
+
         JpsMPSModuleExtension extension = JpsMPSExtensionService.getInstance().getExtension(jpsModule);
         if (extension == null) {
           compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "Ignoring (no facet) " + jpsModule.getName()));
@@ -90,17 +95,23 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
         SolutionDescriptor descriptor = extension.getConfiguration().getSolutionDescriptor();
         final JpsSolutionIdea solution = new JpsSolutionIdea(jpsModule, descriptor);
 
-
         ModelAccess.instance().runWriteAction(new Runnable() {
           @Override
           public void run() {
             MPSModuleRepository.getInstance().registerModule(solution, project);
             solution.updateModelsSet();
+
+
+            compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "FQ name: " + solution.getModuleReference().getModuleFqName()));
+
           }
         });
 
         for (final SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors(solution)) {
           compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " ++ " + d.getLongName()));
+
+          worker.addModel(d);
+
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {
@@ -109,15 +120,9 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
               }
             }
           });
-
-
-          JpsGeneratorWorker worker = new JpsGeneratorWorker(project);
-          // populate worker with models needing re-generation
-          dirtyFilesHolder.processDirtyFiles(worker);
-          worker.generate();
-
         }
 
+        worker.generate();
 
         for (ModelRoot root : extension.getConfiguration().getModelRoots()) {
           compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " -- " + root.getPresentation()));

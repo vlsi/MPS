@@ -95,7 +95,7 @@ public class Utils {
     mr.setModule(ourModule);
     mr.setPath(path);
 
-    SNode result = SNodeOperations.cast(((SNode) mr.getModels().iterator().next().getRootNodes().iterator().next()), "jetbrains.mps.baseLanguage.structure.Classifier");
+    SNode result = SNodeOperations.cast(((SNode) mr.loadModels().iterator().next().getRootNodes().iterator().next()), "jetbrains.mps.baseLanguage.structure.Classifier");
 
     NodePatcher.removeStatements(expected);
     NodePatcher.fixNonStatic(expected);
@@ -118,7 +118,7 @@ public class Utils {
     mr.setPath(dirPath);
 
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
-    for (org.jetbrains.mps.openapi.model.SModel md : Sequence.fromIterable(mr.getModels())) {
+    for (org.jetbrains.mps.openapi.model.SModel md : Sequence.fromIterable(mr.loadModels())) {
       SModel m = ((SModelDescriptor) md).getSModel();
       ListSequence.fromList(models).addElement(m);
     }
@@ -204,7 +204,7 @@ public class Utils {
 
     src2.setModule(mod2);
     src2.setPath(sourcePath);
-    srcModels = src2.getModels();
+    srcModels = src2.loadModels();
 
     for (org.jetbrains.mps.openapi.model.SModel m : Sequence.fromIterable(srcModels)) {
       // <node> 
