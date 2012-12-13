@@ -414,4 +414,14 @@ public class MessagesGutter extends ButtonlessScrollBarUI implements TooltipComp
       return new Dimension(Icons.OK.getIconWidth() + 3, Icons.OK.getIconHeight() + 4);
     }
   }
+
+
+  // For compatibility with IDEA12 (getDecrButtonHeight() vs getDecrementButtonHeight())
+  public int getDecrButtonHeight() {
+    return decrButton.getHeight();
+  }
+  // For compatibility with IDEA12 (getIncrButtonHeight() vs getIncrementButtonHeight())
+  public int getIncrButtonHeight() {
+    return incrButton.getHeight();
+  }
 }
