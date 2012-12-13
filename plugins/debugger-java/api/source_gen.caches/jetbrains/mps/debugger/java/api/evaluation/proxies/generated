@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="ajehn1wmd3s9u5o7tpxrakl9iqxgyjv">
+<dependencies version="2" modelHash="4vubq6tv6otbiuyl5vdix9384h08d7n">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
   <common hash="73ipv6ebj2f21v2jcid9jvld0ch7lcc" />
   <source id="4727801710070560812" name="IValueProxy" hash="ab5qg6ipkv1mb6v65obfjb0k252hv2o">
@@ -20,7 +20,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="ProxyEqualsUtil.java" />
   </source>
-  <source id="4727801710070563570" name="IObjectValueProxy" hash="4tghepkuhkap8deu3h26eu2g7zj30bh">
+  <source id="4727801710070563570" name="IObjectValueProxy" hash="5qurr6oe36yya8he3k756qaq2mk4o36">
     <file name="IObjectValueProxy.java" />
   </source>
   <source id="4727801710070563612" name="ValueProxy" hash="-d96cliikmk43d0novgkz46cnmlqrf3d">
