@@ -56,7 +56,15 @@ public class CompositeItemProvider implements ChooseByNameItemProvider {
         try {
           Method method = matcher.getClass().getMethod("filterElements", ChooseByNameBase.class, String.class, boolean.class, ProgressIndicator.class, Processor.class);
           res = (Boolean)method.invoke(matcher, base, pattern, everywhere, cancelled, consumer);
-        } catch (Exception e) {
+        } catch (InvocationTargetException e) {
+          Throwable throwable = e.getCause();
+          if (throwable instanceof RuntimeException) {
+            throw (RuntimeException)throwable;
+          }
+          e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+          e.printStackTrace();
+        } catch (IllegalAccessException e) {
           e.printStackTrace();
         }
         result = res && result;

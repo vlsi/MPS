@@ -24,6 +24,7 @@ import com.intellij.psi.PsiElement;
 import com.intellij.util.Processor;
 
 import java.lang.ref.WeakReference;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.List;
 
@@ -58,7 +59,15 @@ public class MPSPackageItemProvider extends DefaultChooseByNameItemProvider {
       DefaultChooseByNameItemProvider provider = new DefaultChooseByNameItemProvider(myContext.get());
       Method method = provider.getClass().getMethod("filterElements", ChooseByNameBase.class, String.class, boolean.class, ProgressIndicator.class, Processor.class);
       result = (Boolean)method.invoke(provider, base, transformPattern(pattern), everywhere, cancelled, consumer);
-    } catch (Exception e) {
+    } catch (InvocationTargetException e) {
+      Throwable throwable = e.getCause();
+      if (throwable instanceof RuntimeException) {
+        throw (RuntimeException)throwable;
+      }
+      e.printStackTrace();
+    } catch (NoSuchMethodException e) {
+      e.printStackTrace();
+    } catch (IllegalAccessException e) {
       e.printStackTrace();
     }
     return result;
