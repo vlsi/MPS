@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
-  <dependency className="jetbrains.mps.ide.java.stubs.JavaClassStubConstants" file="JavaClassStubConstants.java">
+  <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubConstants" file="JavaClassStubConstants.java">
     <classNode dependClassName="java.lang.String" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.stubs.JavaClassStubModelDescriptor" file="JavaClassStubModelDescriptor.java">
+  <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor" file="JavaClassStubModelDescriptor.java">
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Iterable" />
@@ -33,17 +33,12 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
     <classNode extendsClassName="jetbrains.mps.smodel.BaseSModelDescriptorWithSource" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.stubs.JavaClassStubModelRootFactory" file="JavaClassStubModelRootFactory.java">
-    <classNode dependClassName="jetbrains.mps.ide.java.stubs.JavaClassStubsModelRoot" />
+  <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubModelRootFactory" file="JavaClassStubModelRootFactory.java">
+    <classNode dependClassName="jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
     <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.ModelRootFactory" />
   </dependency>
-  <dependency className="jetbrains.mps.ide.java.stubs.JavaClassStubModelRootSettingsProvider" file="JavaClassStubModelRootSettingsProvider.java">
-    <classNode dependClassName="jetbrains.mps.ide.java.stubs.JavaClassStubsModelRootSettingsEditor" />
-    <classNode dependClassName="jetbrains.mps.ide.persistence.ModelRootSettingsEditor" />
-    <classNode extendsClassName="jetbrains.mps.ide.persistence.ModelRootSettingsEditorProvider" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.java.stubs.JavaClassStubsModelRoot" file="JavaClassStubsModelRoot.java">
+  <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot" file="JavaClassStubsModelRoot.java">
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
@@ -52,9 +47,9 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FolderSetDataSource" />
-    <classNode dependClassName="jetbrains.mps.ide.java.stubs.JavaClassStubConstants" />
-    <classNode dependClassName="jetbrains.mps.ide.java.stubs.JavaClassStubModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.persistence.java.library.JavaClassStubConstants" />
+    <classNode dependClassName="jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.reloading.ClassPathFactory" />
     <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
     <classNode dependClassName="jetbrains.mps.smodel.BaseSModelDescriptor" />
@@ -68,22 +63,7 @@
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelId" />
     <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.Memento" />
-    <classNode extendsClassName="jetbrains.mps.extapi.persistence.ModelRootBase" />
-  </dependency>
-  <dependency className="jetbrains.mps.ide.java.stubs.JavaClassStubsModelRootSettingsEditor" file="JavaClassStubsModelRootSettingsEditor.java">
-    <classNode dependClassName="java.awt.event.ActionEvent" />
-    <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.AbstractAction" />
-    <classNode dependClassName="javax.swing.JButton" />
-    <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="jetbrains.mps.ide.java.stubs.JavaClassStubsModelRoot" />
-    <classNode dependClassName="jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser" />
-    <classNode dependClassName="jetbrains.mps.project.Project" />
-    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
-    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
-    <classNode extendsClassName="jetbrains.mps.ide.persistence.ModelRootSettingsEditor" />
+    <classNode extendsClassName="jetbrains.mps.extapi.persistence.FolderModelRootBase" />
   </dependency>
 </dependenciesRoot>
 

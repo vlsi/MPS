@@ -13,30 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.persistence;
+package jetbrains.mps.persistence.java.library;
 
-import jetbrains.mps.components.ComponentPlugin;
-import jetbrains.mps.persistence.java.library.JavaClassesPersistence;
+import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.MPSExtentions;
 
 /**
- * evgeny, 11/9/12
+ * evgeny, 12/13/12
  */
-public class MPSPersistence extends ComponentPlugin {
-
-  private static MPSPersistence ourInstance = new MPSPersistence();
-
-  public static MPSPersistence getInstance() {
-    return ourInstance;
-  }
-
-  private MPSPersistence() {
+public class JavaClassesPersistence implements CoreComponent {
+  @Override
+  public void init() {
+    PersistenceRegistry.getInstance().setModelRootFactory(JavaClassStubConstants.STUB_TYPE, new JavaClassStubModelRootFactory());
   }
 
   @Override
-  public void init() {
-    super.init();
-    init(new DefaultModelPersistence());
-    init(new BinaryModelPersistence());
-    init(new JavaClassesPersistence());
+  public void dispose() {
+    PersistenceRegistry.getInstance().setModelRootFactory(JavaClassStubConstants.STUB_TYPE, null);
   }
+
 }
