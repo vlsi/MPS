@@ -121,15 +121,26 @@ public class SModelHeader {
     }
   }
 
-  public void load(ModelInputStream stream) throws IOException {
+  public static SModelHeader load(ModelInputStream stream) throws IOException {
     if (stream.readByte() != 77) throw new IOException("bad stream: no model header start marker");
-    myUID = stream.readString();
-    myPersistenceVersion = stream.readInt();
-    myVersion = stream.readInt();
-    doNotGenerate = stream.readBoolean();
-    myOptionalProperties.clear();
+    SModelHeader result = new SModelHeader();
+    result.setUID(stream.readString());
+    result.setPersistenceVersion(stream.readInt());
+    result.setVersion(stream.readInt());
+    result.setDoNotGenerate(stream.readBoolean());
     for (int size = stream.readInt(); size > 0; size--) {
-      myOptionalProperties.put(stream.readString(), stream.readString());
+      result.setOptionalProperty(stream.readString(), stream.readString());
     }
+    return result;
+  }
+
+  public SModelHeader createCopy() {
+    SModelHeader copy = new SModelHeader();
+    copy.myUID = myUID;
+    copy.myPersistenceVersion = myPersistenceVersion;
+    copy.myVersion = myVersion;
+    copy.doNotGenerate = doNotGenerate;
+    copy.myOptionalProperties.putAll(myOptionalProperties);
+    return copy;
   }
 }
