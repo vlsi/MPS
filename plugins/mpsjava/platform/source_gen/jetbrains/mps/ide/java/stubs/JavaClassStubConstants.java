@@ -7,7 +7,7 @@ public class JavaClassStubConstants {
   /**
    * should be in sync with what's written in plugin.xml
    */
-  public static final String STUB_TYPE = "java_class_stub";
+  public static final String STUB_TYPE = "java_classes";
 
   public JavaClassStubConstants() {
   }
