@@ -111,7 +111,10 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
           });
 
 
-          JpsGeneratorWorker w = new JpsGeneratorWorker();
+          JpsGeneratorWorker worker = new JpsGeneratorWorker(project);
+          // populate worker with models needing re-generation
+          dirtyFilesHolder.processDirtyFiles(worker);
+          worker.generate();
 
         }
 
