@@ -25,7 +25,6 @@ import jetbrains.mps.jps.project.JpsSolutionIdea;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
@@ -73,8 +72,6 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
     ExitCode status = ExitCode.NOTHING_DONE;
     try {
 
-//      JpsGeneratorWorker w = new JpsGeneratorWorker(null);
-
       for (JpsModule jpsModule : moduleChunk.getModules()) {
 
         // must be done once ?
@@ -112,6 +109,9 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
               }
             }
           });
+
+
+          JpsGeneratorWorker w = new JpsGeneratorWorker();
 
         }
 
