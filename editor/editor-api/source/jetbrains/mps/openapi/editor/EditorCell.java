@@ -60,19 +60,53 @@ public interface EditorCell {
 
   int getBottomInset();
 
-// Older methods
+  void moveTo(int x, int y);
 
-  EditorContext getContext();
+  void setSelected(boolean isSelected);
+
+  boolean isSelected();
+
+  void setSelectable(boolean isSelected);
+
+  boolean isSelectable();
+
+  void setCellId(String cellId);
 
   String getCellId();
 
-  SNode getSNode();
+  void setRole(String role);
 
-  boolean isSingleNodeCell();
+  String getRole();
 
-  EditorCell findLeaf(int x, int y);
+  SNode getRefNode();
+
+  void setRefNode(SNode refNode);
+
+  boolean isErrorState();
+
+  void setErrorState(boolean isError);
+
+  void relayout();
 
   void setCaretX(int x);
 
   int getCaretX();
+
+  void home();
+
+  void end();
+
+  EditorContext getContext();
+
+  EditorCell findLeaf(int x, int y);
+
+  boolean isSingleNodeCell();
+
+  SNode getSNode();
+
+  void putUserObject(Object key, Object value);
+
+  Object getUserObject(Object key);
+
+  EditorComponent getEditorComponent();
 }
