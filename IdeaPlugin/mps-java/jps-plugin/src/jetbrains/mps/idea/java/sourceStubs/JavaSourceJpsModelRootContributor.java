@@ -13,7 +13,7 @@ import java.util.List;
  * danilla 12/11/12
  */
 
-public class EclipseModelRootContributor implements JpsModelRootContributor {
+public class JavaSourceJpsModelRootContributor implements JpsModelRootContributor {
   @Override
   public Iterable<ModelRoot> getModelRoots(JpsModule module) {
 

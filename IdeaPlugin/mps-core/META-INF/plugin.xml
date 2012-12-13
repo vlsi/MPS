@@ -99,7 +99,7 @@
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <renameHandler implementation="jetbrains.mps.idea.core.refactoring.ModelRenameHandler"/>
     <moduleRendererFactory implementation="jetbrains.mps.idea.core.navigation.MpsRendererFactory" order="first"/>
-    <compileServer.plugin classpath="jps/mps-jps-plugin.jar;mps-common.jar;mps-backend.jar;mps-core.jar;mps-openapi.jar;mps-collections.jar;mps-closures.jar;mps-tuples.jar;asm.jar;asm-tree-3.3.jar;ant.jar;"/>
+    <compileServer.plugin classpath="jps/mps-jps-plugin.jar;mps-common.jar;mps-backend.jar;mps-core.jar;mps-openapi.jar;mps-collections.jar;mps-closures.jar;mps-tuples.jar;asm.jar;asm-tree-3.3.jar;"/>
   </extensions>
 
   <actions>

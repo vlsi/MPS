@@ -23,7 +23,8 @@ import java.util.Set;
 
 public class JpsSolutionIdea extends Solution {
 
-  JpsModule myModule;
+  private JpsModule myModule;
+  private Set<ModelRoot> myContributedModelRoots;
 
   public JpsSolutionIdea(@NotNull JpsModule module, SolutionDescriptor descriptor) {
     super(descriptor, null);
@@ -32,12 +33,8 @@ public class JpsSolutionIdea extends Solution {
     setModuleReference(new ModuleReference(name, ModuleId.foreign(name)));
   }
 
-
-  private Set<ModelRoot> myContributedModelRoots;
-
   @Override
   protected Iterable<ModelRoot> loadRoots() {
-
     if (myContributedModelRoots == null) {
       myContributedModelRoots = new HashSet<ModelRoot>();
       for (JpsModelRootContributor c : JpsServiceManager.getInstance().getExtensions(JpsModelRootContributor.class)) {
@@ -55,7 +52,6 @@ public class JpsSolutionIdea extends Solution {
     sum.addAll(myContributedModelRoots);
 
     return sum;
-
   }
 
 }

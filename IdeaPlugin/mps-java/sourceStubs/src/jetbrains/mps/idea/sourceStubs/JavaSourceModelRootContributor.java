@@ -21,14 +21,15 @@ public class JavaSourceModelRootContributor implements ModelRootContributor {
   public Iterable<ModelRoot> getModelRoots(Module module) {
     List<ModelRoot> modelRoots = new ArrayList<ModelRoot>();
 
-    if (1 > 0) {
+    // should there be a way to switch from ui?
+    if (true) {
       modelRoots.add(new PsiJavaStubModelRoot(module));
+
     } else {
       for (VirtualFile sourceRoot : ModuleRootManager.getInstance(module).getSourceRoots(false)) {
         String path = sourceRoot.getPath();
         EclipseJavaStubModelRoot modelRoot = new EclipseJavaStubModelRoot();
         modelRoot.setPath(path);
-        // not singleton
         modelRoots.add(modelRoot);
       }
     }

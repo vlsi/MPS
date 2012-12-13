@@ -39,8 +39,10 @@ import org.jetbrains.jps.incremental.ProjectBuildException;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
 import org.jetbrains.jps.model.module.JpsModule;
+import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.IOException;
 
@@ -72,14 +74,14 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
     ExitCode status = ExitCode.NOTHING_DONE;
     try {
 
+
+
       for (JpsModule jpsModule : moduleChunk.getModules()) {
 
         // must be done once ?
         final JpsMPSProject project = new JpsMPSProject(jpsModule.getProject());
 
-        JpsGeneratorWorker worker = new JpsGeneratorWorker(project);
-        // populate worker with models needing re-generation
-        dirtyFilesHolder.processDirtyFiles(worker);
+
 
 
         JpsMPSModuleExtension extension = JpsMPSExtensionService.getInstance().getExtension(jpsModule);
@@ -110,7 +112,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
         for (final SModelDescriptor d : SModelRepository.getInstance().getModelDescriptors(solution)) {
           compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " ++ " + d.getLongName()));
 
-          worker.addModel(d);
+//          worker.addModel(d);
 
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
@@ -120,6 +122,16 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
               }
             }
           });
+        }
+
+        compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "Persist. Facade: " + PersistenceFacade.getInstance()));
+
+        JpsGeneratorWorker worker = new JpsGeneratorWorker(project, compileContext);
+        // populate worker with models needing re-generation
+        dirtyFilesHolder.processDirtyFiles(worker);
+
+        for (SModel m: worker.getModels()) {
+          compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " generated model: " + m.getModelName()));
         }
 
         worker.generate();
