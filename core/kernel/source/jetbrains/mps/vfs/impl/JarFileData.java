@@ -20,7 +20,12 @@ import jetbrains.mps.logging.Logger;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.*;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
@@ -88,6 +93,8 @@ class JarFileData extends AbstractJarFileData {
 
   @Override
   InputStream openStream(String path) throws IOException {
+    ensureInitialized();
+
     ZipFile zipFile = new ZipFile(myFile);
     ZipEntry entry = myEntries.get(path);
     return new MyInputStream(zipFile, entry);
