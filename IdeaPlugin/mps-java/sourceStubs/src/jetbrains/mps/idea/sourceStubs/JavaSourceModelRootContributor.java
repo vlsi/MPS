@@ -19,18 +19,21 @@ public class JavaSourceModelRootContributor implements ModelRootContributor {
 
   @Override
   public Iterable<ModelRoot> getModelRoots(Module module) {
-    List<ModelRoot> singleton = new ArrayList<ModelRoot>(1);
-//    singleton.add( new PsiJavaStubModelRoot(module) );
+    List<ModelRoot> modelRoots = new ArrayList<ModelRoot>();
 
-    for (VirtualFile sourceRoot: ModuleRootManager.getInstance(module).getSourceRoots(false)) {
-      String path = sourceRoot.getPath();
-      EclipseJavaStubModelRoot modelRoot = new EclipseJavaStubModelRoot() ;
-      modelRoot.setPath(path);
-      // not singleton
-      singleton.add(modelRoot);
+    if (1 > 0) {
+      modelRoots.add(new PsiJavaStubModelRoot(module));
+    } else {
+      for (VirtualFile sourceRoot : ModuleRootManager.getInstance(module).getSourceRoots(false)) {
+        String path = sourceRoot.getPath();
+        EclipseJavaStubModelRoot modelRoot = new EclipseJavaStubModelRoot();
+        modelRoot.setPath(path);
+        // not singleton
+        modelRoots.add(modelRoot);
+      }
     }
 
-    return singleton;
+    return modelRoots;
   }
 
 }

@@ -54,6 +54,7 @@
       <fileset dir="${artifacts.buildCoreEx}/plugins/mps-core/languages" />
     </copy>
     <mkdir dir="${build.layout}/mps-core/lib" />
+    <copy file="${artifacts.buildCore}/mps-core/lib/asm.jar" todir="${build.layout}/mps-core/lib" />
     <copy file="${artifacts.buildCore}/mps-core/lib/asm-tree-3.3.jar" todir="${build.layout}/mps-core/lib" />
     <copy file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" todir="${build.layout}/mps-core/lib" />
     <copy file="${artifacts.buildCore}/mps-core/lib/mps-backend.jar" todir="${build.layout}/mps-core/lib" />
@@ -146,6 +147,14 @@
         </tokenfilter>
       </filterchain>
     </copy>
+    <mkdir dir="${build.tmp}/default/mps-java.jar/lib" />
+    <mkdir dir="${build.tmp}/default/mps-java.jar/lib/jps" />
+    <jar destfile="${build.tmp}/default/mps-java.jar/lib/jps/mps-java-jps-plugin.jar">
+      <fileset dir="${build.tmp}/java/out/mps-java-jps-plugin" />
+    </jar>
+    <jar destfile="${build.tmp}/default/mps-java.jar/lib/mps-java-common.jar">
+      <fileset dir="${build.tmp}/java/out/mps-java-common" />
+    </jar>
     <jar destfile="${build.layout}/mps-java/lib/mps-java.jar">
       <fileset dir="${build.tmp}/java/out/mps-java" />
       <zipfileset file="${mps_home}/plugins/mpsjava/basePlatform/basePlatform.msd" prefix="modules/jetbrains.mps.ide.java.basePlatform" />
@@ -174,7 +183,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.mps-common, java.compile.mps-jps-plugin, java.compile.mps-plugin, java.compile.mps-vcs-core, java.compile.mps-vcs-platform, java.compile.mps-java" />
+  <target name="compileJava" depends="java.compile.mps-common, java.compile.mps-jps-plugin, java.compile.mps-plugin, java.compile.mps-vcs-core, java.compile.mps-vcs-platform, java.compile.mps-java, java.compile.mps-java-common, java.compile.mps-java-jps-plugin" />
   
   <target name="processResources" />
   
@@ -231,6 +240,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
         <pathelement path="${build.tmp}/java/out/mps-common" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-backend.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
@@ -243,6 +253,7 @@
         <fileset file="${artifacts.IDEA}/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm-tree-3.3.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
+        <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
@@ -366,7 +377,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-java" depends="java.compile.mps-common, java.compile.mps-plugin, fetchDependencies">
+  <target name="java.compile.mps-java" depends="java.compile.mps-java-common, java.compile.mps-java-jps-plugin, java.compile.mps-common, java.compile.mps-plugin, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-java" />
     <javac2 destdir="${build.tmp}/java/out/mps-java" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -379,6 +390,8 @@
         <path location="${mps_home}/plugins/mpsjava/platform/source" />
       </src>
       <classpath>
+        <pathelement path="${build.tmp}/java/out/mps-java-common" />
+        <pathelement path="${build.tmp}/java/out/mps-java-jps-plugin" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
@@ -413,6 +426,78 @@
       <fileset dir="${mps_home}/IdeaPlugin/solutions/jetbrains.mps.idea.java.psiStubs/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/mpsjava/platform/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/mpsjava/platform/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.mps-java-common" depends="java.compile.mps-common, fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/mps-java-common" />
+    <javac2 destdir="${build.tmp}/java/out/mps-java-common" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps_home}/plugins/mpsjava/basePlatform/source" />
+        <path location="${mps_home}/plugins/mpsjava/basePlatform/source_gen" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
+        <pathelement path="${build.tmp}/java/out/mps-common" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
+        <fileset file="${artifacts.IDEA}/lib/guava-12.0.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/asm-tree-3.3.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
+    </javac2>
+    <copy todir="${build.tmp}/java/out/mps-java-common">
+      <fileset dir="${mps_home}/plugins/mpsjava/basePlatform/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mpsjava/basePlatform/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.mps-java-jps-plugin" depends="java.compile.mps-common, java.compile.mps-java-common, java.compile.mps-jps-plugin, fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/mps-java-jps-plugin" />
+    <javac2 destdir="${build.tmp}/java/out/mps-java-jps-plugin" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps_home}/IdeaPlugin/mps-java/jps-plugin/src" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
+        <pathelement path="${build.tmp}/java/out/mps-common" />
+        <pathelement path="${build.tmp}/java/out/mps-java-common" />
+        <pathelement path="${build.tmp}/java/out/mps-jps-plugin" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
+        <fileset file="${artifacts.IDEA}/lib/guava-12.0.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/asm-tree-3.3.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
+    </javac2>
+    <copy todir="${build.tmp}/java/out/mps-java-jps-plugin">
+      <fileset dir="${mps_home}/IdeaPlugin/mps-java/jps-plugin/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
 </project>

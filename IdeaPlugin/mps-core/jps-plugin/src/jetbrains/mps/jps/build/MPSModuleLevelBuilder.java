@@ -73,6 +73,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
     ExitCode status = ExitCode.NOTHING_DONE;
     try {
 
+//      JpsGeneratorWorker w = new JpsGeneratorWorker(null);
 
       for (JpsModule jpsModule : moduleChunk.getModules()) {
 
@@ -106,8 +107,8 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
           ModelAccess.instance().runReadAction(new Runnable() {
             @Override
             public void run() {
-              for (SNode n: d.getRootNodes()) {
-                compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " root: " + n.getName() ));
+              for (SNode n : d.getRootNodes()) {
+                compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " root: " + n.getName()));
               }
             }
           });
