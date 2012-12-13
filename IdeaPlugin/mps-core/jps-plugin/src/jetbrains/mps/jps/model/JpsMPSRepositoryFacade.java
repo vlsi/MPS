@@ -20,9 +20,11 @@ import jetbrains.mps.MPSCore;
 import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
 import jetbrains.mps.generator.MPSGenerator;
 import jetbrains.mps.idea.core.make.MPSCompilerUtil;
-import jetbrains.mps.library.ModulesMiner;
-import jetbrains.mps.library.ModulesMiner.ModuleHandle;
+import jetbrains.mps.idea.core.module.CachedModuleData;
+import jetbrains.mps.idea.core.module.CachedRepositoryData;
+import jetbrains.mps.jps.persistence.CachedDefaultModelRoot;
 import jetbrains.mps.persistence.MPSPersistence;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.ModelAccess;
@@ -34,11 +36,12 @@ import jetbrains.mps.util.io.ModelInputStream;
 import org.jetbrains.jps.incremental.CompileContext;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.Collection;
 
 /**
  * evgeny, 12/3/12
@@ -49,6 +52,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
   private volatile boolean isInitialized = false;
   private final Object LOCK = new Object();
+  private CachedRepositoryData myRepo;
 
   public JpsMPSRepositoryFacade() {
   }
@@ -86,12 +90,24 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
       File f = new File(repoFile);
       ModelInputStream mos = null;
       try {
+        long start = System.nanoTime();
         mos = new ModelInputStream(new FileInputStream(f));
-        Collection<ModuleHandle> moduleHandles = ModulesMiner.getInstance().loadModules(mos);
-        context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "loaded " + moduleHandles.size() + " modules"));
-        for (ModuleHandle h : moduleHandles) {
-          ModuleRepositoryFacade.createModule(h, this);
+        myRepo = CachedRepositoryData.load(mos);
+        context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "loaded " + myRepo.getModules().size() + " modules in " + (System.nanoTime() - start) / 1000000 + " ms"));
+
+        // use optimized implementation of default model root
+        PersistenceRegistry.getInstance().setModelRootFactory(PersistenceRegistry.DEFAULT_MODEL_ROOT, new ModelRootFactory() {
+          @Override
+          public ModelRoot create() {
+            return new CachedDefaultModelRoot(myRepo);
+          }
+        });
+
+        start = System.nanoTime();
+        for (CachedModuleData data : myRepo.getModules()) {
+          ModuleRepositoryFacade.createModule(data.getHandle(), this);
         }
+        context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "created " + myRepo.getModules().size() + " modules in " + (System.nanoTime() - start) / 1000000 + " ms"));
         return;
       } catch (IOException e) {
         context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, e));

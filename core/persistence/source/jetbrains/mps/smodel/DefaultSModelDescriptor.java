@@ -117,7 +117,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     ModelLoadResult result;
     try {
       // TODO use DataSource
-      result = ModelPersistence.readModel(getDescriptorSModelHeader(), modelFile, state);
+      result = ModelPersistence.readModel(myHeader, modelFile, state);
     } catch (ModelReadException e) {
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
       DefaultSModel newModel = new InvalidDefaultSModel(getSModelReference(), e);
@@ -221,8 +221,8 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     getSModelHeader().setVersion(newVersion);
   }
 
-  private SModelHeader getDescriptorSModelHeader() {
-    return myHeader;
+  public SModelHeader getModelHeader() {
+    return myHeader.createCopy();
   }
 
   private SModelHeader getSModelHeader() {

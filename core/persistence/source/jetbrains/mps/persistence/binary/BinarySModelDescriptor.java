@@ -160,4 +160,9 @@ public class BinarySModelDescriptor extends BaseEditableSModelDescriptor impleme
     if (model != null) return model.getHeader().isDoNotGenerate();
     return myHeader.isDoNotGenerate();
   }
+
+  public BinaryModelHeader getModelHeader() {
+    return myHeader.createCopy();
+  }
+
 }

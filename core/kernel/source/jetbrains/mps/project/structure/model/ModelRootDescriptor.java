@@ -17,6 +17,7 @@ package jetbrains.mps.project.structure.model;
 
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
@@ -46,7 +47,14 @@ public final class ModelRootDescriptor {
 
   public String getType() {
     if (type == null) {
-      return getMemento().getChild("manager") != null ? PersistenceRegistry.OBSOLETE_MODEL_ROOT : PersistenceRegistry.DEFAULT_MODEL_ROOT;
+      Memento manager = getMemento().getChild("manager");
+      if (manager == null) {
+        return PersistenceRegistry.DEFAULT_MODEL_ROOT;
+      }
+//      if (matches(manager, LanguageID.JAVA_MANAGER)) {
+//        return "java_classes"; // TODO use JavaClassStubConstants.STUB_TYPE
+//      }
+      return PersistenceRegistry.OBSOLETE_MODEL_ROOT;
     }
     return type;
   }
@@ -119,5 +127,10 @@ public final class ModelRootDescriptor {
 
     mem.setText(stream.readString());
     return mem;
+  }
+
+  private static boolean matches(Memento manager, ModelRootManager mrm) {
+    return mrm.getClassName().equals(manager.get("className")) &&
+      mrm.getModuleId().equals(manager.get("moduleId"));
   }
 }

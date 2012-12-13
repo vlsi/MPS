@@ -8,6 +8,7 @@
     <classNode dependClassName="java.io.IOException" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Set" />
@@ -15,19 +16,22 @@
     <classNode dependClassName="jetbrains.mps.extapi.persistence.FolderSetDataSource" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.IModule" />
     <classNode dependClassName="jetbrains.mps.project.ModuleId" />
     <classNode dependClassName="jetbrains.mps.reloading.ClassPathFactory" />
     <classNode dependClassName="jetbrains.mps.reloading.CompositeClassPathItem" />
     <classNode dependClassName="jetbrains.mps.smodel.Language" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
     <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
     <classNode dependClassName="jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap" />
-    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
-    <classNode extendsClassName="jetbrains.mps.smodel.BaseSModelDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.BaseSModelDescriptorWithSource" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.stubs.JavaClassStubModelRootFactory" file="JavaClassStubModelRootFactory.java">
     <classNode dependClassName="jetbrains.mps.ide.java.stubs.JavaClassStubsModelRoot" />
