@@ -970,11 +970,16 @@ public class FullASTConverter extends ASTConverter {
 
     // x.type is expression, not type reference 
     // we're making TypeReference out of NameReference 
-    TypeReference typRef = nameRefToTypeRef(x.type);
-    if (typRef == null) {
-      throw new JavaParseException("Unexpected type expression in type case: " + x.type.getClass().getName());
+    // <node> 
+    // <node> 
+
+    // in idea 12's eclipse parser seems to give us type reference right away 
+    if (!(x.type instanceof TypeReference)) {
+      LOG.error("Class in class cast expession is not a type reference. Class name: " + x.type.toString());
+      return null;
     }
-    SLinkOperations.setTarget(result, "type", convertTypeRef(typRef), true);
+
+    SLinkOperations.setTarget(result, "type", convertTypeRef(x.type), true);
     return result;
   }
 
