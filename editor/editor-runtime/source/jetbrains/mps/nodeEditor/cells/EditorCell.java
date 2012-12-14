@@ -25,17 +25,16 @@ import jetbrains.mps.util.Condition;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.EditorCell {
+public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cells.EditorCell {
   static final EditorCell[] EMPTY_ARRAY = new EditorCell[0];
 
-  // TODO: Pulled up to jetbrains.mps.openapi.editor.EditorCell. Remove it.
+  // TODO: Pulled up to jetbrains.mps.openapi.editor.cells.EditorCell. Remove it.
   void setX(int x);
 
   void setY(int y);

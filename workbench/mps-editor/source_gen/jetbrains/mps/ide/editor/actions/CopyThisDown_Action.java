@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.logging.Logger;
 
 public class CopyThisDown_Action extends BaseAction {
@@ -90,7 +91,8 @@ public class CopyThisDown_Action extends BaseAction {
           if (!(BehaviorReflection.invokeNonVirtual(Boolean.TYPE, link, "jetbrains.mps.lang.structure.structure.LinkDeclaration", "call_isSingular_1213877254557", new Object[]{}))) {
             SNode copy = SNodeOperations.copyNode(nodeToCopy);
             parent.insertChild(role, copy, nodeToCopy);
-            ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext().selectWRTFocusPolicy(copy);
+            EditorContext editorContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext();
+            editorContext.selectWRTFocusPolicy(copy);
             ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).selectNode(copy);
             return;
           }
@@ -108,7 +110,8 @@ public class CopyThisDown_Action extends BaseAction {
         for (SNode node : ListSequence.fromList(((List<SNode>) MapSequence.fromMap(_params).get("inputNodes"))).reversedList()) {
           parent.insertChild(role, SNodeOperations.copyNode(node), lastNode);
         }
-        ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext().selectRange(firstNode, lastNode);
+        EditorContext editorContext = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getEditorContext();
+        editorContext.selectRange(firstNode, lastNode);
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "CopyThisDown", t);

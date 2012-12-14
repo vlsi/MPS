@@ -17,7 +17,7 @@ package jetbrains.mps.nodeEditor.cellActions;
 
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
-import jetbrains.mps.openapi.editor.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 
 public class CellAction_InsertIntoCollection extends EditorCellAction {

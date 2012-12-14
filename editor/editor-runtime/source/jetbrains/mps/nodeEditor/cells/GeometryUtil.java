@@ -22,7 +22,7 @@ import java.awt.Rectangle;
  * Date: 12/7/12
  */
 public class GeometryUtil {
-  public static Rectangle getBounds(jetbrains.mps.openapi.editor.EditorCell... cells) {
+  public static Rectangle getBounds(jetbrains.mps.openapi.editor.cells.EditorCell... cells) {
     assert cells.length > 0;
     Rectangle result = null;
     for (int i = 0; i < cells.length; i++) {
@@ -32,7 +32,7 @@ public class GeometryUtil {
     return result;
   }
 
-  public static boolean contains(jetbrains.mps.openapi.editor.EditorCell cell, int x, int y) {
+  public static boolean contains(jetbrains.mps.openapi.editor.cells.EditorCell cell, int x, int y) {
     return getBounds(cell).contains(x, y);
   }
 }

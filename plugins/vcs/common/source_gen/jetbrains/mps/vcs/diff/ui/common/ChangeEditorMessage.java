@@ -191,7 +191,7 @@ public class ChangeEditorMessage extends EditorMessageWithTarget {
 
   private void drawVerticalLineWithArrows(Graphics graphics, EditorCell_Collection collectionCell, int cellIndex) {
     int x;
-    jetbrains.mps.openapi.editor.EditorCell childCell;
+    jetbrains.mps.openapi.editor.cells.EditorCell childCell;
     if (-1 < cellIndex && cellIndex < collectionCell.getChildCount()) {
       childCell = collectionCell.getCellAt(cellIndex);
       x = childCell.getX();
@@ -344,7 +344,7 @@ __switch__:
     int minY;
     int maxY;
     if (cellIndex > lastCellIndex) {
-      jetbrains.mps.openapi.editor.EditorCell childCell = cell.getChildAt(lastCellIndex);
+      jetbrains.mps.openapi.editor.cells.EditorCell childCell = cell.getChildAt(lastCellIndex);
       minY = (isVertical(cell) ?
         childCell.getBottom() :
         childCell.getY()

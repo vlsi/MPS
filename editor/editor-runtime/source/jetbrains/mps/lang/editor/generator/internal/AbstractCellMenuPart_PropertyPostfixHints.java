@@ -21,7 +21,7 @@ import jetbrains.mps.nodeEditor.cellMenu.CellContext;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPart;
 import jetbrains.mps.nodeEditor.cellMenu.SubstituteInfoPartExt;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.openapi.editor.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
@@ -222,7 +222,7 @@ public abstract class AbstractCellMenuPart_PropertyPostfixHints implements Subst
 
       EditorCell editorCell = myEditorContext.getSelectedCell();
       if (editorCell instanceof EditorCell_Label) {
-        ((EditorCell_Label) editorCell).end();
+        ((EditorCell_Label)editorCell).end();
       }
 
       return null;
