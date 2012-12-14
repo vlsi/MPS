@@ -115,12 +115,12 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
           }
         });
 
-                PersistenceRegistry.getInstance().setModelRootFactory(PersistenceRegistry.JAVA_CLASSES_ROOT, new ModelRootFactory() {
-                    @Override
-                    public ModelRoot create() {
-                        return new CachedJavaClassStubsModelRoot(myRepo);
-                    }
-                });
+        PersistenceRegistry.getInstance().setModelRootFactory(PersistenceRegistry.JAVA_CLASSES_ROOT, new ModelRootFactory() {
+          @Override
+          public ModelRoot create() {
+            return new CachedJavaClassStubsModelRoot(myRepo);
+          }
+        });
 
         start = System.nanoTime();
         for (CachedModuleData data : myRepo.getModules()) {
