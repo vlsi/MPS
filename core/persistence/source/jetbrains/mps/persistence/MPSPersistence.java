@@ -16,6 +16,7 @@
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.ComponentPlugin;
+import jetbrains.mps.persistence.java.library.JavaClassesPersistence;
 
 /**
  * evgeny, 11/9/12
@@ -36,5 +37,6 @@ public class MPSPersistence extends ComponentPlugin {
     super.init();
     init(new DefaultModelPersistence());
     init(new BinaryModelPersistence());
+    init(new JavaClassesPersistence());
   }
 }

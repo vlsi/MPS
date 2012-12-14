@@ -19,8 +19,8 @@ package jetbrains.mps.ide.java.ui;
 import com.intellij.ide.util.treeView.AbstractTreeUi;
 import com.intellij.openapi.Disposable;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
-import com.intellij.openapi.fileChooser.ex.FileSystemTreeImpl;
 import com.intellij.openapi.fileChooser.FileSystemTree.Listener;
+import com.intellij.openapi.fileChooser.ex.FileSystemTreeImpl;
 import com.intellij.openapi.fileTypes.FileTypeRegistry;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
@@ -29,7 +29,7 @@ import com.intellij.ui.components.JBPanel;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.EventDispatcher;
-import jetbrains.mps.ide.java.stubs.JavaClassStubsModelRoot;
+import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.annotations.Nullable;
@@ -37,9 +37,9 @@ import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryEditor;
 
-import javax.swing.JComponent;
-import javax.swing.JScrollPane;
-import java.awt.BorderLayout;
+import javax.swing.*;
+import java.awt.*;
+import java.io.File;
 import java.util.List;
 
 public class JavaClassStubsModelRootEntry implements ModelRootEntry {
@@ -50,9 +50,11 @@ public class JavaClassStubsModelRootEntry implements ModelRootEntry {
   public ModelRoot getModelRoot() {
     return myModelRoot;
   }
-  
+
   public void setModelRoot(ModelRoot root) {
-    if (!(root instanceof JavaClassStubsModelRoot)) { throw new ClassCastException(); }
+    if (!(root instanceof JavaClassStubsModelRoot)) {
+      throw new ClassCastException();
+    }
     myModelRoot = (JavaClassStubsModelRoot) root;
   }
 
@@ -71,11 +73,13 @@ public class JavaClassStubsModelRootEntry implements ModelRootEntry {
 
   @Override
   public boolean isValid() {
-    return (new java.io.File(myModelRoot.getPath())).exists();
+    String path = myModelRoot.getPath();
+    if (path == null) return false;
+    return (new File(path)).exists();
   }
 
   public ModelRootEntryEditor getEditor() {
-    return new JavaClassStubsModelRootEntryEditor(); 
+    return new JavaClassStubsModelRootEntryEditor();
   }
 
   @Override
@@ -87,7 +91,7 @@ public class JavaClassStubsModelRootEntry implements ModelRootEntry {
     private JBPanel myTreePanel;
 
     public JComponent createComponent() {
-      JBPanel panel = new JBPanel(new GridLayoutManager(1,1));
+      JBPanel panel = new JBPanel(new GridLayoutManager(1, 1));
 
       myTreePanel = new JBPanel(new BorderLayout());
       updateTree();
@@ -109,7 +113,7 @@ public class JavaClassStubsModelRootEntry implements ModelRootEntry {
       VirtualFile virtualFile = VirtualFileManager.getInstance().findFileByUrl(
         VirtualFileManager.constructUrl("file", path)
       );
-      if(myModelRoot.getModule() != null && (virtualFile == null || path.isEmpty()))
+      if (myModelRoot.getModule() != null && (virtualFile == null || path.isEmpty()))
         virtualFile = VirtualFileManager.getInstance().findFileByUrl(
           VirtualFileManager.constructUrl(
             "file",

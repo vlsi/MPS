@@ -21,6 +21,7 @@ import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -139,10 +140,8 @@ public class Solution extends ClassLoadingModule {
     descriptor.getAdditionalJavaStubPaths().clear();
 
     for (String path : javaCP) {
-      SModelRoot mr = new SModelRoot(LanguageID.JAVA_MANAGER);
-      mr.setPath(path);
-      descriptor.getModelRootDescriptors().add(mr.toDescriptor());
-      descriptor.getAdditionalJavaStubPaths().add(mr.getPath());
+      descriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(path));
+      descriptor.getAdditionalJavaStubPaths().add(path);
     }
   }
 

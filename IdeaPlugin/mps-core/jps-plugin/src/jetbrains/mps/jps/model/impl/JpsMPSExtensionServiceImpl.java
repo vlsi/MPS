@@ -16,7 +16,6 @@
 
 package jetbrains.mps.jps.model.impl;
 
-import jetbrains.mps.idea.core.project.JpsModelRootContributor;
 import jetbrains.mps.jps.model.JpsMPSExtensionService;
 import jetbrains.mps.jps.model.JpsMPSModuleExtension;
 import org.jetbrains.annotations.NotNull;
@@ -30,8 +29,6 @@ import java.util.Set;
  * evgeny, 11/28/12
  */
 public class JpsMPSExtensionServiceImpl extends JpsMPSExtensionService {
-
-  Set<JpsModelRootContributor> myContributors = new HashSet<JpsModelRootContributor>();
 
   @Nullable
   @Override

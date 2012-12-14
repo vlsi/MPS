@@ -410,9 +410,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     descriptor.getModelRootDescriptors().removeAll(toRemove);
 
     if (addBundleAsModelRoot) {
-      SModelRoot mr = new SModelRoot(LanguageID.JAVA_MANAGER);
-      mr.setPath(bundleHomeFile.getPath());
-      descriptor.getModelRootDescriptors().add(mr.toDescriptor());
+      descriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(bundleHomeFile.getPath()));
     }
     if (dd == null) {
       return;
@@ -423,10 +421,9 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
         ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
         : bundleParent.getDescendant(jarFile);
       if (jar.exists()) {
-        SModelRoot mr = new SModelRoot(LanguageID.JAVA_MANAGER);
-        mr.setPath(jar.getPath());
-        descriptor.getAdditionalJavaStubPaths().add(mr.getPath());
-        descriptor.getModelRootDescriptors().add(mr.toDescriptor());
+        String path = jar.getPath();
+        descriptor.getAdditionalJavaStubPaths().add(path);
+        descriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(path));
       }
     }
   }

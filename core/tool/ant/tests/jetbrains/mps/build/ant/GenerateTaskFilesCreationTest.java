@@ -48,12 +48,23 @@ public class GenerateTaskFilesCreationTest {
   }
 
   @Test
+  public void testOneFileForOneConcept() throws IOException {
+    String projectName = "FileTestProject";
+    String languageName = "FileTestProjectLanguage";
+
+    File destdir = generateProjectFromZipFile(projectName);
+
+    assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
+  }
+
+  @Test
   public void testSeveralFilesForOneConcept() throws IOException {
     String projectName = "TestProjectWithOneConcept";
     String languageName = projectName + "Language";
 
     File destdir = generateProjectFromZipFile(projectName);
 
+    assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertEditorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertBehaviorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
   }
@@ -66,6 +77,7 @@ public class GenerateTaskFilesCreationTest {
 
     File destdir = generateProjectFromZipFile(projectName);
 
+    assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertEditorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertBehaviorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertGeneratorGenerated(projectName, languageName, destdir);
@@ -85,6 +97,7 @@ public class GenerateTaskFilesCreationTest {
     whatToDo.addModuleFile(new File(getLanguagePath(destdir, projectName, languageName) + File.separator + languageName + ".mpl"));
     doGenerate(whatToDo);
 
+    assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertEditorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertBehaviorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertGeneratorGenerated(projectName, languageName, destdir);
@@ -98,6 +111,11 @@ public class GenerateTaskFilesCreationTest {
   private void assertEditorGenerated(String projectName, String languageName, File destdir, String conceptName) {
     File someConceptEditorFile = new File(getEditorPath(destdir, projectName, languageName) + conceptName + "_Editor.java");
     TestCase.assertTrue(someConceptEditorFile.exists());
+  }
+
+  private void assertStructureGenerated(String projectName, String languageName, File destdir, String conceptName) throws IOException {
+    File structureAspectFile = new File(getStructurePath(destdir, projectName, languageName)  + "StructureAspectDescriptor.java");
+    TestCase.assertTrue(FileUtil.loadFile(structureAspectFile).contains(conceptName));
   }
 
   private void assertGeneratorGenerated(String projectName, String languageName, File destdir) {
@@ -137,6 +155,11 @@ public class GenerateTaskFilesCreationTest {
     mpsWorker.work();
   }
 
+  private String getStructurePath(File destdir, String projectName, String languageName) {
+    return getLanguageSourceFolderPath(destdir, projectName, languageName)
+      + "structure" + File.separator;
+  }
+
   private String getEditorPath(File destdir, String projectName, String languageName) {
     return getLanguageSourceFolderPath(destdir, projectName, languageName)
       + "editor" + File.separator;
@@ -162,5 +185,4 @@ public class GenerateTaskFilesCreationTest {
       + "solutions" + File.separator + solutionName + File.separator
       + "source_gen" + File.separator + solutionName + File.separator + "sandbox" + File.separator;
   }
-
 }

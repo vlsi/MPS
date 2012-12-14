@@ -44,13 +44,18 @@ import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import java.awt.BorderLayout;
 import java.awt.Color;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 
 public class PlainTabsComponent extends BaseTabsComponent {
   private final List<PlainEditorTab> myRealTabs = new ArrayList<PlainEditorTab>();
   private final AsJBTabs myJbTabs;
   private RelationDescriptor myLastEmptyTab = null;
   private volatile boolean myDisposed = false;
+  private volatile boolean myRebuilding = false;
 
   private final Disposable myJbTabsDisposable = new Disposable() {
     public void dispose() {
@@ -75,7 +80,8 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
     myJbTabs.addChangeListener(new ChangeListener() {
       public void stateChanged(ChangeEvent e) {
-        if(myDisposed) return;
+        if (myDisposed) return;
+        if (myRebuilding) return;
 
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
@@ -88,6 +94,8 @@ public class PlainTabsComponent extends BaseTabsComponent {
 
   private synchronized void onTabIndexChange() {
     if (myDisposed) return;
+
+    if (myJbTabs.getTabCount() == 0) return;
 
     int index = myJbTabs.getSelectedIndex();
     PlainEditorTab tab = myRealTabs.get(index);
@@ -150,30 +158,67 @@ public class PlainTabsComponent extends BaseTabsComponent {
   protected synchronized void updateTabs() {
     if (myDisposed) return;
 
-    myRealTabs.clear();
-    myJbTabs.removeAll();
+    SNodePointer selNode = null;
+    RelationDescriptor selRel = null;
 
-    ArrayList<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>(myPossibleTabs);
-    Collections.sort(tabs, new RelationComparator());
-
-    Map<RelationDescriptor, List<SNode>> newContent = updateDocumentsAndNodes();
-
-    //todo sort nodes inside aspect
-    JLabel fill = new JLabel("");
-    for (RelationDescriptor tab : tabs) {
-      List<SNode> nodes = newContent.get(tab);
-      if (nodes != null) {
-        for (SNode node : nodes) {
-          myRealTabs.add(new PlainEditorTab(new SNodePointer(node), tab));
-          myJbTabs.addTab(node.getPresentation(), IconManager.getIconFor(node), fill, "");
-        }
-      } else if (myShowGrayed) {
-        myRealTabs.add(new PlainEditorTab(null, tab));
-        myJbTabs.addTab(tab.getTitle(), fill);
-        myJbTabs.setForegroundAt(myJbTabs.getTabCount() - 1, Color.GRAY);
+    int selected = myJbTabs.getTabCount() > 0 ? myJbTabs.getSelectedIndex() : -1;
+    if (selected != -1) {
+      selNode = myRealTabs.get(selected).getNode();
+      if (selNode == null) {
+        selRel = myRealTabs.get(selected).getTab();
       }
     }
-    updateTabColors();
+
+    boolean oldRebuilding = myRebuilding;
+    myRebuilding = true;
+    try {
+      myJbTabs.removeAll();
+      myRealTabs.clear();
+
+      ArrayList<RelationDescriptor> tabs = new ArrayList<RelationDescriptor>(myPossibleTabs);
+      Collections.sort(tabs, new RelationComparator());
+
+      Map<RelationDescriptor, List<SNode>> newContent = updateDocumentsAndNodes();
+
+      //todo sort nodes inside aspect
+      JLabel fill = new JLabel("");
+      for (RelationDescriptor tab : tabs) {
+        List<SNode> nodes = newContent.get(tab);
+        if (nodes != null) {
+          for (SNode node : nodes) {
+            myRealTabs.add(new PlainEditorTab(new SNodePointer(node), tab));
+            myJbTabs.addTab(node.getPresentation(), IconManager.getIconFor(node), fill, "");
+          }
+        } else if (myShowGrayed) {
+          myRealTabs.add(new PlainEditorTab(null, tab));
+          myJbTabs.addTab(tab.getTitle(), fill);
+          myJbTabs.setForegroundAt(myJbTabs.getTabCount() - 1, Color.GRAY);
+        }
+      }
+      updateTabColors();
+    } finally {
+      myRebuilding = oldRebuilding;
+    }
+
+    if (selNode != null) {
+      for (PlainEditorTab tab : myRealTabs) {
+        if (tab.getNode().equals(selNode)) {
+          myJbTabs.setSelectedIndex(myRealTabs.indexOf(tab));
+          break;
+        }
+      }
+    } else if (selRel != null) {
+      for (PlainEditorTab tab : myRealTabs) {
+        if (tab.getTab() == selRel) {
+          myJbTabs.setSelectedIndex(myRealTabs.indexOf(tab));
+          break;
+        }
+      }
+    } else {
+      if (myJbTabs.getTabCount() > 0) {
+        myJbTabs.setSelectedIndex(0);
+      }
+    }
   }
 
   private synchronized void selectNodeTab() {

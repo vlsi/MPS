@@ -7,4 +7,8 @@
   <extensionPoints>
     <extensionPoint qualifiedName="com.intellij.mps.modelRootEntry" beanClass="jetbrains.mps.ide.ui.dialogs.properties.persistence.ModelRootEntryEP"/>
   </extensionPoints>
+
+  <extensions defaultExtensionNs="com.intellij">
+    <mps.modelRootEntry rootType="java_classes" className="jetbrains.mps.ide.java.ui.JavaClassStubsModelRootEntry"/>
+  </extensions>
 </components>

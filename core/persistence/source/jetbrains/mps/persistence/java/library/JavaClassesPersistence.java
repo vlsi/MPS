@@ -13,18 +13,24 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+package jetbrains.mps.persistence.java.library;
 
-package jetbrains.mps.idea.core.project.stubs;
-
-import jetbrains.mps.project.structure.model.ModelRootManager;
-import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.MPSExtentions;
 
 /**
- * User: danilla
- * Date: 10/18/12
+ * evgeny, 12/13/12
  */
-public abstract class ClassFileStubSolutionManager extends AbstractJavaStubSolutionManager {
-  protected ModelRootManager getModelRootManager() {
-    return LanguageID.JAVA_MANAGER;
+public class JavaClassesPersistence implements CoreComponent {
+  @Override
+  public void init() {
+    PersistenceRegistry.getInstance().setModelRootFactory(JavaClassStubConstants.STUB_TYPE, new JavaClassStubModelRootFactory());
   }
+
+  @Override
+  public void dispose() {
+    PersistenceRegistry.getInstance().setModelRootFactory(JavaClassStubConstants.STUB_TYPE, null);
+  }
+
 }

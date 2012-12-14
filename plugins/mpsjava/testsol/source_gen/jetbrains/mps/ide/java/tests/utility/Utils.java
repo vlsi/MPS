@@ -255,10 +255,10 @@ public class Utils {
       SModel binModel = MapSequence.fromMap(leftModelMap).get(name);
       SModel srcModel = MapSequence.fromMap(rightModelMap).get(name);
 
-      errors = compare2models(binModel, srcModel, classMap) || errors;
+      errors = compare2models(binModel, srcModel, classMap);
     }
 
-    Assert.assertFalse("Models differ", errors);
+    Assert.assertFalse(errors);
   }
 
   public static boolean compare2models(SModel left, SModel right, Map<SNode, SNode> nodeMap) {
@@ -281,7 +281,7 @@ public class Utils {
     List<NodeDifference> diff = NodesMatcher.matchNodes(binRoots, srcRoots, nodeMap);
     if (diff != null) {
       wereErrors = true;
-      System.out.println("Diff: " + diff);
+      System.err.println("Diff: " + diff);
     }
     return wereErrors;
   }

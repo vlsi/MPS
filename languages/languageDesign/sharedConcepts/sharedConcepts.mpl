@@ -2,18 +2,14 @@
 <language namespace="jetbrains.mps.lang.sharedConcepts" uuid="13744753-c81f-424a-9c1b-cf8943bf4e86" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot path="${module}/languageModels" />
-    <modelRoot path="${module}/classes_gen">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
+    <modelRoot path="${module}/classes_gen" type="java_classes" />
   </models>
   <accessoryModels />
   <generators>
     <generator generatorUID="jetbrains.mps.lang.sharedConcepts#1161623873951" uuid="51736086-833e-4b0d-b9a6-a1dbbfda2131">
       <models>
         <modelRoot path="${module}/generators/baseLanguage/templates" />
-        <modelRoot path="${module}/classes_gen">
-          <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-        </modelRoot>
+        <modelRoot path="${module}/classes_gen" type="java_classes" />
       </models>
       <external-templates>
         <generator generatorUID="985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)" />

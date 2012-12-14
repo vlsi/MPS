@@ -5,12 +5,8 @@
     <modelRoot path="${module}/redist/gwt-dev.jar">
       <manager moduleId="954c4d77-e24b-4e49-a5a5-5476c966c092" className="jetbrains.mps.gwt.client.stubs.GWTModuleStubs" />
     </modelRoot>
-    <modelRoot path="${module}/redist/gwt-servlet.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
-    <modelRoot path="${module}/redist/gwt-user.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
+    <modelRoot path="${module}/redist/gwt-servlet.jar" type="java_classes" />
+    <modelRoot path="${module}/redist/gwt-user.jar" type="java_classes" />
     <modelRoot path="${module}/redist/gwt-user.jar">
       <manager moduleId="954c4d77-e24b-4e49-a5a5-5476c966c092" className="jetbrains.mps.gwt.client.stubs.GWTModuleStubs" />
     </modelRoot>

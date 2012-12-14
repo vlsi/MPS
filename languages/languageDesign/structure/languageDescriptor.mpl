@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.lang.structure" uuid="c72da2b9-7cce-4447-8389-f407dc1158b7" generatorOutputPath="${module}/source_gen">
   <models>
-    <modelRoot path="${module}/classes_gen">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
+    <modelRoot path="${module}/classes_gen" type="java_classes" />
     <modelRoot path="${module}/languageModels" />
   </models>
   <accessoryModels>
@@ -12,13 +10,9 @@
   <generators>
     <generator generatorUID="jetbrains.mps.lang.structure#1170324972255" uuid="b8e4beec-8383-4fb9-b0bb-9d1c9c159cfc">
       <models>
-        <modelRoot path="${module}/classes_gen">
-          <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-        </modelRoot>
+        <modelRoot path="${module}/classes_gen" type="java_classes" />
         <modelRoot path="${module}/generator_new" />
-        <modelRoot path="${mps_home}/lib/guava-11.0.1.jar">
-          <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-        </modelRoot>
+        <modelRoot path="${mps_home}/lib/guava-11.0.1.jar" type="java_classes" />
       </models>
       <external-templates>
         <generator generatorUID="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />
