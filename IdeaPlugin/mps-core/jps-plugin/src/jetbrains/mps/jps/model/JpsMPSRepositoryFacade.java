@@ -23,6 +23,7 @@ import jetbrains.mps.idea.core.make.MPSCompilerUtil;
 import jetbrains.mps.idea.core.module.CachedModuleData;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.jps.persistence.CachedDefaultModelRoot;
+import jetbrains.mps.jps.persistence.CachedJavaClassStubsModelRoot;
 import jetbrains.mps.jps.project.JpsMPSProject;
 import jetbrains.mps.jps.project.JpsSolutionIdea;
 import jetbrains.mps.persistence.MPSPersistence;
@@ -113,6 +114,13 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
             return new CachedDefaultModelRoot(myRepo);
           }
         });
+
+                PersistenceRegistry.getInstance().setModelRootFactory(PersistenceRegistry.JAVA_CLASSES_ROOT, new ModelRootFactory() {
+                    @Override
+                    public ModelRoot create() {
+                        return new CachedJavaClassStubsModelRoot(myRepo);
+                    }
+                });
 
         start = System.nanoTime();
         for (CachedModuleData data : myRepo.getModules()) {

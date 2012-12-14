@@ -28,48 +28,53 @@ import java.io.IOException;
  */
 public class CachedModelData {
 
-  private final String file;
-  private final Object header;
+    private final String file;
+    private final Object header;
 
-  public CachedModelData(String file, Object header) {
-    this.file = file;
-    this.header = header;
-  }
-
-  public String getFile() {
-    return file;
-  }
-
-  public Object getHeader() {
-    return header;
-  }
-
-  public void save(ModelOutputStream stream) throws IOException {
-    stream.writeByte(31);
-    stream.writeString(file);
-    if (header instanceof SModelHeader) {
-      stream.writeByte(55);
-      ((SModelHeader) header).save(stream);
-    } else if (header instanceof BinaryModelHeader) {
-      stream.writeByte(56);
-      ((BinaryModelHeader) header).save(stream);
-    } else {
-      stream.writeByte(0x70);
+    public CachedModelData(String file, Object header) {
+        this.file = file;
+        this.header = header;
     }
-  }
 
-  public static CachedModelData load(ModelInputStream stream) throws IOException {
-    if (stream.readByte() != 31) throw new IOException("bad stream: no model start marker");
-    String file = stream.readString();
-    byte headerKind = stream.readByte();
-    Object header = null;
-    if (headerKind == 55) {
-      header = SModelHeader.load(stream);
-    } else if (headerKind == 56) {
-      header = BinaryModelHeader.load(stream);
-    } else if (headerKind != 0x70) {
-      throw new IOException("unknown model header");
+    public String getFile() {
+        return file;
     }
-    return new CachedModelData(file, header);
-  }
+
+    public Object getHeader() {
+        return header;
+    }
+
+    public void save(ModelOutputStream stream) throws IOException {
+        stream.writeByte(31);
+        stream.writeString(file);
+        if (header instanceof SModelHeader) {
+            stream.writeByte(55);
+            ((SModelHeader) header).save(stream);
+        } else if (header instanceof BinaryModelHeader) {
+            stream.writeByte(56);
+            ((BinaryModelHeader) header).save(stream);
+        } else if (header instanceof JavaStubModelHeader) {
+            stream.writeByte(57);
+            ((JavaStubModelHeader) header).save(stream);
+        } else {
+            stream.writeByte(0x70);
+        }
+    }
+
+    public static CachedModelData load(ModelInputStream stream) throws IOException {
+        if (stream.readByte() != 31) throw new IOException("bad stream: no model start marker");
+        String file = stream.readString();
+        byte headerKind = stream.readByte();
+        Object header = null;
+        if (headerKind == 55) {
+            header = SModelHeader.load(stream);
+        } else if (headerKind == 56) {
+            header = BinaryModelHeader.load(stream);
+        } else if (headerKind == 57) {
+            header = JavaStubModelHeader.load(stream);
+        } else if (headerKind != 0x70) {
+            throw new IOException("unknown model header");
+        }
+        return new CachedModelData(file, header);
+    }
 }
