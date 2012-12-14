@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1851338810969934906" modelId="r:6091ed43-87dc-46b6-a3f7-1b2c71e13bc7(jetbrains.mps.reloading)">
-    <nodeInfo nodeId="1851338810969942553" fileName="ReloadListenerContainer.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListener#(Ljetbrains/mps/reloading/IReloadListener;)V" />
-    <nodeInfo nodeId="1851338810969953483" fileName="ReloadListenerContainer.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListener#(Ljetbrains/mps/reloading/IReloadListener;)V" />
-    <nodeInfo nodeId="1851338810969942474" fileName="ReloadListenerContainer.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReloadListenerContainer#()V" />
-    <scopeInfo nodeId="1851338810969942477" fileName="ReloadListenerContainer.java" startLine="7" startPosition="36" endLine="7" endPosition="36" />
-    <scopeInfo nodeId="1851338810969942553" fileName="ReloadListenerContainer.java" startLine="12" startPosition="0" endLine="13" endPosition="0">
+    <nodeInfo nodeId="3962024479285448391" fileName="ReloadListenerContainer.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
+    <nodeInfo nodeId="3962024479285456095" fileName="ReloadListenerContainer.java" startLine="16" startPosition="55" endLine="17" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1851338810969942553" fileName="ReloadListenerContainer.java" startLine="20" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addReloadListener#(Ljetbrains/mps/reloading/IReloadListener;)V" />
+    <nodeInfo nodeId="1851338810969953483" fileName="ReloadListenerContainer.java" startLine="22" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeReloadListener#(Ljetbrains/mps/reloading/IReloadListener;)V" />
+    <nodeInfo nodeId="1519428872448363243" fileName="ReloadListenerContainer.java" startLine="27" startPosition="27" endLine="28" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="3962024479285437921" fileName="ReloadListenerContainer.java" startLine="29" startPosition="5" endLine="30" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3962024479285439093" fileName="ReloadListenerContainer.java" startLine="30" startPosition="20" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="3962024479285445204" fileName="ReloadListenerContainer.java" startLine="34" startPosition="25" endLine="35" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3962024479285460229" fileName="ReloadListenerContainer.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReloadListenerContainer#()V" />
+    <nodeInfo nodeId="3962024479285429164" fileName="ReloadListenerContainer.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getInstance#()Ljetbrains/mps/reloading/ReloadListenerContainer;" />
+    <nodeInfo nodeId="3962024479285429375" fileName="ReloadListenerContainer.java" startLine="26" startPosition="22" endLine="29" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3962024479284960691" fileName="ReloadListenerContainer.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="3962024479284960659" fileName="ReloadListenerContainer.java" startLine="26" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="init#()V" />
+    <scopeInfo nodeId="3962024479285460233" fileName="ReloadListenerContainer.java" startLine="11" startPosition="36" endLine="11" endPosition="36" />
+    <scopeInfo nodeId="3962024479285429168" fileName="ReloadListenerContainer.java" startLine="16" startPosition="55" endLine="17" endPosition="20" />
+    <scopeInfo nodeId="1851338810969942553" fileName="ReloadListenerContainer.java" startLine="20" startPosition="0" endLine="21" endPosition="0">
       <varInfo nodeId="1851338810969944460" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="1851338810969953483" fileName="ReloadListenerContainer.java" startLine="14" startPosition="0" endLine="15" endPosition="0">
+    <scopeInfo nodeId="1851338810969953483" fileName="ReloadListenerContainer.java" startLine="22" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="1851338810969953506" varName="listener" />
     </scopeInfo>
-    <scopeInfo nodeId="1851338810969942474" fileName="ReloadListenerContainer.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
-    <unitInfo nodeId="1851338810969934906" fileName="ReloadListenerContainer.java" startLine="6" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.reloading.ReloadListenerContainer" />
+    <scopeInfo nodeId="3962024479285429377" fileName="ReloadListenerContainer.java" startLine="27" startPosition="27" endLine="28" endPosition="63" />
+    <scopeInfo nodeId="3962024479284960695" fileName="ReloadListenerContainer.java" startLine="34" startPosition="25" endLine="35" endPosition="20" />
+    <scopeInfo nodeId="3962024479285460229" fileName="ReloadListenerContainer.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
+    <scopeInfo nodeId="3962024479285429164" fileName="ReloadListenerContainer.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="3962024479284960691" fileName="ReloadListenerContainer.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="3962024479284960663" fileName="ReloadListenerContainer.java" startLine="26" startPosition="22" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="3962024479284960659" fileName="ReloadListenerContainer.java" startLine="26" startPosition="0" endLine="33" endPosition="0" />
+    <unitInfo nodeId="1851338810969934906" fileName="ReloadListenerContainer.java" startLine="7" startPosition="0" endLine="38" endPosition="0" unitName="jetbrains.mps.reloading.ReloadListenerContainer" />
   </root>
   <root nodeId="1851338810969942567" modelId="r:6091ed43-87dc-46b6-a3f7-1b2c71e13bc7(jetbrains.mps.reloading)">
     <nodeInfo nodeId="1851338810969942573" fileName="IReloadListener.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadStarted#()V" />

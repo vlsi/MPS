@@ -940,6 +940,11 @@
             </node>
           </node>
         </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3962024479285567795">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="3962024479285567794">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z2fy.3962024479284960659" resolveInfo="init" />
+          </node>
+        </node>
       </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="8474613039627891486">
@@ -1177,6 +1182,29 @@
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="8474613039627891590">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8474613039627891365" resolveInfo="myConnection" />
             </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tp2q.ForEachStatement" typeId="tp2q.1153943597977" id="3962024479285630558">
+          <node role="inputSequence" roleId="tp2q.1153944424730" type="tpee.VariableReference" typeId="tpee.1068498886296" id="3962024479285634522">
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8474613039627891320" resolveInfo="myReloadListeners" />
+          </node>
+          <node role="variable" roleId="tp2q.1153944400369" type="tp2q.ForEachVariable" typeId="tp2q.1153944193378" id="3962024479285630560">
+            <property name="name" nameId="tpck.1169194664001" value="listener" />
+          </node>
+          <node role="body" roleId="tpee.1154032183016" type="tpee.StatementList" typeId="tpee.1068580123136" id="3962024479285630564">
+            <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3962024479285645366">
+              <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="3962024479285645365">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8474613039627891734" resolveInfo="removeReloadListener" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="3962024479285649472">
+                  <link role="variable" roleId="tp2q.1153944258490" targetNodeId="3962024479285630560" resolveInfo="listener" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3962024479285577494">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.LocalMethodCall" typeId="tpee.7812454656619025412" id="3962024479285577493">
+            <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="z2fy.3962024479284960691" resolveInfo="dispose" />
           </node>
         </node>
       </node>
@@ -2260,6 +2288,9 @@
           </node>
         </node>
       </node>
+    </node>
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3962024479285493958">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="z2fy.1851338810969934906" resolveInfo="ReloadListenerContainer" />
     </node>
   </root>
   <root id="6784047278245094901">

@@ -5,7 +5,9 @@
   </dependency>
   <dependency className="jetbrains.mps.reloading.IReloadListener" file="IReloadListener.java" />
   <dependency className="jetbrains.mps.reloading.ReloadListenerContainer" file="ReloadListenerContainer.java">
+    <classNode dependClassName="java.lang.IllegalStateException" />
     <classNode dependClassName="jetbrains.mps.reloading.IReloadListener" />
+    <classNode extendsClassName="jetbrains.mps.components.CoreComponent" />
   </dependency>
   <dependency className="jetbrains.mps.reloading.ReloadSession" file="ReloadSession.java">
     <classNode dependClassName="java.lang.Runnable" />
