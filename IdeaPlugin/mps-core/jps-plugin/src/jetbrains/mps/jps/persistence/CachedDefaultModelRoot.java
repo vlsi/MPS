@@ -21,10 +21,12 @@ import jetbrains.mps.idea.core.module.CachedModelData;
 import jetbrains.mps.idea.core.module.CachedModuleData;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.persistence.DefaultModelRoot;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.binary.BinaryModelHeader;
 import jetbrains.mps.persistence.binary.BinarySModelDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
@@ -51,6 +53,9 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
   @Override
   public Iterable<SModel> loadModels() {
     SModule module = getModule();
+        if (module instanceof Generator) {
+            module = ((Generator) module).getSourceLanguage();
+        }
     if (module == null || !(module.getModuleReference() instanceof ModuleReference)) {
       return super.loadModels();
     }
@@ -61,7 +66,7 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
     }
 
     String path = getPath();
-    List<CachedModelData> models = moduleData.getModels(path);
+    List<CachedModelData> models = moduleData.getModels(PersistenceRegistry.DEFAULT_MODEL_ROOT, path);
     if (models == null) {
       return super.loadModels();
     }

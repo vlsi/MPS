@@ -23,69 +23,65 @@ import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.Map.Entry;
-import java.util.Set;
 
 /**
  * evgeny, 12/12/12
  */
 public class CachedModuleData {
 
-  private ModuleHandle myHandle;
-  private Map<String, List<CachedModelData>> myModels;
+    private ModuleHandle myHandle;
+    private Map<String, List<CachedModelData>> myModels;
 
-  public CachedModuleData(@NotNull ModuleHandle handle, @NotNull Map<String, List<CachedModelData>> models) {
-    myHandle = handle;
-    myModels = models;
-  }
-
-  public ModuleHandle getHandle() {
-    return myHandle;
-  }
-
-  public List<CachedModelData> getModels(String path) {
-    return myModels.get(path);
-  }
-
-  public void save(ModelOutputStream stream) throws IOException {
-    stream.writeByte(27);
-    ModulesMiner.getInstance().saveHandle(myHandle, stream);
-
-    Set<Entry<String, List<CachedModelData>>> entries = myModels.entrySet();
-    stream.writeInt(entries.size());
-    for (Entry<String, List<CachedModelData>> entry : entries) {
-      stream.writeString(entry.getKey());
-
-      List<CachedModelData> value = entry.getValue();
-      stream.writeInt(value.size());
-      for (CachedModelData model : value) {
-        model.save(stream);
-      }
-    }
-    stream.writeInt(0x674921);
-  }
-
-  public static CachedModuleData load(ModelInputStream stream) throws IOException {
-    if (stream.readByte() != 27) throw new IOException("bad stream: no module start marker");
-    ModuleHandle moduleHandle = ModulesMiner.getInstance().loadHandle(stream);
-
-    Map<String, List<CachedModelData>> modelsByPath = new HashMap<String, List<CachedModelData>>();
-    for (int size = stream.readInt(); size > 0; size--) {
-      String key = stream.readString();
-      int valueSize = stream.readInt();
-      List<CachedModelData> models = new ArrayList<CachedModelData>(valueSize);
-      for (; valueSize > 0; valueSize--) {
-        models.add(CachedModelData.load(stream));
-      }
-      modelsByPath.put(key, models);
+    public CachedModuleData(@NotNull ModuleHandle handle, @NotNull Map<String, List<CachedModelData>> models) {
+        myHandle = handle;
+        myModels = models;
     }
 
-    if (stream.readInt() != 0x674921) throw new IOException("bad stream: no module end marker");
-    return new CachedModuleData(moduleHandle, modelsByPath);
-  }
+    public ModuleHandle getHandle() {
+        return myHandle;
+    }
+
+    public List<CachedModelData> getModels(String rootType, String path) {
+        return myModels.get(rootType + ":" + path);
+    }
+
+    public void save(ModelOutputStream stream) throws IOException {
+        stream.writeByte(27);
+        ModulesMiner.getInstance().saveHandle(myHandle, stream);
+
+        Set<Entry<String, List<CachedModelData>>> entries = myModels.entrySet();
+        stream.writeInt(entries.size());
+        for (Entry<String, List<CachedModelData>> entry : entries) {
+            stream.writeString(entry.getKey());
+
+            List<CachedModelData> value = entry.getValue();
+            stream.writeInt(value.size());
+            for (CachedModelData model : value) {
+                model.save(stream);
+            }
+        }
+        stream.writeInt(0x674921);
+    }
+
+    public static CachedModuleData load(ModelInputStream stream) throws IOException {
+        if (stream.readByte() != 27) throw new IOException("bad stream: no module start marker");
+        ModuleHandle moduleHandle = ModulesMiner.getInstance().loadHandle(stream);
+
+        Map<String, List<CachedModelData>> modelsByPath = new HashMap<String, List<CachedModelData>>();
+        for (int size = stream.readInt(); size > 0; size--) {
+            String key = stream.readString();
+            int valueSize = stream.readInt();
+            List<CachedModelData> models = new ArrayList<CachedModelData>(valueSize);
+            for (; valueSize > 0; valueSize--) {
+                models.add(CachedModelData.load(stream));
+            }
+            modelsByPath.put(key, models);
+        }
+
+        if (stream.readInt() != 0x674921) throw new IOException("bad stream: no module end marker");
+        return new CachedModuleData(moduleHandle, modelsByPath);
+    }
 
 }
