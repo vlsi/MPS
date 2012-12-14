@@ -6,7 +6,9 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.util.messages.MessageBus;
 import com.intellij.openapi.project.ProjectManager;
 import com.intellij.openapi.vfs.VirtualFileManager;
+import jetbrains.mps.reloading.ReloadSession;
 import java.util.Set;
+import jetbrains.mps.reloading.IReloadListener;
 import java.util.HashSet;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
@@ -35,6 +37,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.reloading.IFileProcessor;
 import com.intellij.openapi.vfs.newvfs.events.VFileContentChangeEvent;
 import com.intellij.openapi.vfs.newvfs.events.VFileCreateEvent;
 import com.intellij.openapi.vfs.newvfs.events.VFileDeleteEvent;
@@ -48,7 +51,7 @@ public class FSChangesWatcher implements ApplicationComponent {
   private final VirtualFileManager myVirtualFileManager;
   private volatile ReloadSession myReloadSession;
   private final Object myLock = new Object();
-  private final Set<FSChangesWatcher.IReloadListener> myReloadListeners = new HashSet<FSChangesWatcher.IReloadListener>();
+  private final Set<IReloadListener> myReloadListeners = new HashSet<IReloadListener>();
   private int myBans = 0;
   private MergingUpdateQueue myQueue = new MergingUpdateQueue("Model Changes Watcher Queue", 500, true, null, null, null, true);
   private Object myUpdateId = new Object();
@@ -178,21 +181,21 @@ public class FSChangesWatcher implements ApplicationComponent {
     }
   }
 
-  public void addReloadListener(FSChangesWatcher.IReloadListener listener) {
+  public void addReloadListener(IReloadListener listener) {
     synchronized (myReloadListeners) {
       myReloadListeners.add(listener);
     }
   }
 
-  public void removeReloadListener(FSChangesWatcher.IReloadListener listener) {
+  public void removeReloadListener(IReloadListener listener) {
     synchronized (myReloadListeners) {
       myReloadListeners.remove(listener);
     }
   }
 
-  private Set<FSChangesWatcher.IReloadListener> getReloadListeners() {
+  private Set<IReloadListener> getReloadListeners() {
     synchronized (myReloadListeners) {
-      HashSet<FSChangesWatcher.IReloadListener> listeners = new HashSet<FSChangesWatcher.IReloadListener>();
+      HashSet<IReloadListener> listeners = new HashSet<IReloadListener>();
       listeners.addAll(myReloadListeners);
       return listeners;
     }
@@ -234,6 +237,7 @@ public class FSChangesWatcher implements ApplicationComponent {
       synchronized (myLock) {
         if (myReloadSession == null) {
           myReloadSession = new ReloadSession(getReloadListeners());
+          myReloadSession.addProcessor(new FileProcessor());
         }
         ListSequence.fromList(events).where(new IWhereFilter<VFileEvent>() {
           public boolean accept(VFileEvent it) {
@@ -253,38 +257,43 @@ public class FSChangesWatcher implements ApplicationComponent {
       LOG.debug("Process after event for " + event.getPath());
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          for (EventProcessor p : reloadSession.getProcessors()) {
+          for (IFileProcessor p : reloadSession.getProcessors()) {
             if (event.getFile() == null) {
               LOG.warning("event.getFile() is null. Event: " + event.getClass().getName() + "; path=" + event.getPath());
               continue;
             }
-            if (!(p.accepts(event.getFile()))) {
+            FileProcessor processor;
+
+
+            if (p instanceof FileProcessor) {
+              processor = ((FileProcessor) p);
+            } else {
+              LOG.warning("file processors of different types: " + p.getClass().getName() + " and " + FileProcessor.class.getName());
+              continue;
+            }
+
+            if (!(processor.accepts(event.getFile()))) {
               continue;
             }
 
             if (event instanceof VFileContentChangeEvent) {
-              p.processContentChanged(event.getFile());
+              processor.processContentChanged(event.getFile());
             } else if (event instanceof VFileCreateEvent) {
-              p.processCreate(event.getFile());
+              processor.processCreate(event.getFile());
             } else if (event instanceof VFileDeleteEvent) {
-              p.processDelete(event.getFile());
+              processor.processDelete(event.getFile());
             } else if (event instanceof VFileCopyEvent) {
-              p.processCreate(event.getFile());
+              processor.processCreate(event.getFile());
             } else if (event instanceof VFileMoveEvent) {
               VFileMoveEvent re = (VFileMoveEvent) event;
               String name = re.getFile().getName();
-              p.processDelete(event.getFile());
-              p.processCreate(re.getNewParent().findChild(name));
+              processor.processDelete(event.getFile());
+              processor.processCreate(re.getNewParent().findChild(name));
             }
           }
         }
       });
     }
-  }
-
-  public static interface IReloadListener {
-    public void reloadStarted();
-    public void reloadFinished();
   }
 
   private static Logger LOG = Logger.getLogger(FSChangesWatcher.class);

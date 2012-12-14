@@ -15,6 +15,4 @@ import com.intellij.openapi.vfs.VirtualFile;
   protected abstract void processCreate(VirtualFile file);
 
   protected abstract void processContentChanged(VirtualFile file);
-
-  protected abstract boolean isEmpty();
 }

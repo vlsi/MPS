@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <root nodeId="1851338810969934906" modelId="r:6091ed43-87dc-46b6-a3f7-1b2c71e13bc7(jetbrains.mps.reloading)">
+    <nodeInfo nodeId="1851338810969942553" fileName="ReloadListenerContainer.java" startLine="12" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addListener#(Ljetbrains/mps/reloading/IReloadListener;)V" />
+    <nodeInfo nodeId="1851338810969953483" fileName="ReloadListenerContainer.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="removeListener#(Ljetbrains/mps/reloading/IReloadListener;)V" />
+    <nodeInfo nodeId="1851338810969942474" fileName="ReloadListenerContainer.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReloadListenerContainer#()V" />
+    <scopeInfo nodeId="1851338810969942477" fileName="ReloadListenerContainer.java" startLine="7" startPosition="36" endLine="7" endPosition="36" />
+    <scopeInfo nodeId="1851338810969942553" fileName="ReloadListenerContainer.java" startLine="12" startPosition="0" endLine="13" endPosition="0">
+      <varInfo nodeId="1851338810969944460" varName="listener" />
+    </scopeInfo>
+    <scopeInfo nodeId="1851338810969953483" fileName="ReloadListenerContainer.java" startLine="14" startPosition="0" endLine="15" endPosition="0">
+      <varInfo nodeId="1851338810969953506" varName="listener" />
+    </scopeInfo>
+    <scopeInfo nodeId="1851338810969942474" fileName="ReloadListenerContainer.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
+    <unitInfo nodeId="1851338810969934906" fileName="ReloadListenerContainer.java" startLine="6" startPosition="0" endLine="18" endPosition="0" unitName="jetbrains.mps.reloading.ReloadListenerContainer" />
+  </root>
+  <root nodeId="1851338810969942567" modelId="r:6091ed43-87dc-46b6-a3f7-1b2c71e13bc7(jetbrains.mps.reloading)">
+    <nodeInfo nodeId="1851338810969942573" fileName="IReloadListener.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadStarted#()V" />
+    <nodeInfo nodeId="1851338810969944444" fileName="IReloadListener.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadFinished#()V" />
+    <scopeInfo nodeId="1851338810969942573" fileName="IReloadListener.java" startLine="7" startPosition="0" endLine="8" endPosition="0" />
+    <scopeInfo nodeId="1851338810969944444" fileName="IReloadListener.java" startLine="8" startPosition="0" endLine="9" endPosition="0" />
+    <unitInfo nodeId="1851338810969942567" fileName="IReloadListener.java" startLine="6" startPosition="0" endLine="10" endPosition="0" unitName="jetbrains.mps.reloading.IReloadListener" />
+  </root>
+  <root nodeId="1851338810970004194" modelId="r:6091ed43-87dc-46b6-a3f7-1b2c71e13bc7(jetbrains.mps.reloading)">
+    <nodeInfo nodeId="1851338810970286439" fileName="IFileProcessor.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="update#(Ljetbrains/mps/progress/ProgressMonitor;)V" />
+    <nodeInfo nodeId="1851338810971899567" fileName="IFileProcessor.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEmpty#()Z" />
+    <scopeInfo nodeId="1851338810970286439" fileName="IFileProcessor.java" startLine="8" startPosition="0" endLine="9" endPosition="0">
+      <varInfo nodeId="1851338810970315585" varName="monitor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1851338810971899567" fileName="IFileProcessor.java" startLine="9" startPosition="0" endLine="10" endPosition="0" />
+    <unitInfo nodeId="1851338810970004194" fileName="IFileProcessor.java" startLine="7" startPosition="0" endLine="11" endPosition="0" unitName="jetbrains.mps.reloading.IFileProcessor" />
+  </root>
+  <root nodeId="1851338810970027516" modelId="r:6091ed43-87dc-46b6-a3f7-1b2c71e13bc7(jetbrains.mps.reloading)">
+    <nodeInfo nodeId="1851338810970027518" fileName="ReloadSession.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadListeners" />
+    <nodeInfo nodeId="1851338810970027522" fileName="ReloadSession.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloaded" />
+    <nodeInfo nodeId="1851338810970027526" fileName="ReloadSession.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myFileProcessors" />
+    <nodeInfo nodeId="1851338810970027538" fileName="ReloadSession.java" startLine="19" startPosition="94" endLine="20" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1851338810971550639" fileName="ReloadSession.java" startLine="20" startPosition="103" endLine="21" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1851338810971300107" fileName="ReloadSession.java" startLine="26" startPosition="62" endLine="27" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="1851338810971771832" fileName="ReloadSession.java" startLine="30" startPosition="54" endLine="31" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1851338810971864643" fileName="ReloadSession.java" startLine="36" startPosition="43" endLine="37" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1851338810970027569" fileName="ReloadSession.java" startLine="42" startPosition="27" endLine="43" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1851338810970027571" fileName="ReloadSession.java" startLine="45" startPosition="5" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1851338810971150822" fileName="ReloadSession.java" startLine="46" startPosition="16" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1851338810970027577" fileName="ReloadSession.java" startLine="50" startPosition="55" endLine="51" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
+    <nodeInfo nodeId="1851338810970027581" fileName="ReloadSession.java" startLine="51" startPosition="88" endLine="52" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1851338810970027585" fileName="ReloadSession.java" startLine="52" startPosition="22" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1851338810970027586" fileName="ReloadSession.java" startLine="53" startPosition="0" endLine="54" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1851338810970027592" fileName="ReloadSession.java" startLine="54" startPosition="38" endLine="55" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1851338810972989548" fileName="ReloadSession.java" startLine="58" startPosition="27" endLine="59" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1851338810970027608" fileName="ReloadSession.java" startLine="60" startPosition="64" endLine="61" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1851338810970027617" fileName="ReloadSession.java" startLine="62" startPosition="11" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="1851338810970027623" fileName="ReloadSession.java" startLine="64" startPosition="69" endLine="65" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1851338810970027633" fileName="ReloadSession.java" startLine="65" startPosition="104" endLine="66" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1851338810970027596" fileName="ReloadSession.java" startLine="70" startPosition="15" endLine="71" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1851338810970027598" fileName="ReloadSession.java" startLine="71" startPosition="35" endLine="72" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1851338810970027602" fileName="ReloadSession.java" startLine="72" startPosition="21" endLine="73" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1851338810970027650" fileName="ReloadSession.java" startLine="78" startPosition="49" endLine="79" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1851338810970027663" fileName="ReloadSession.java" startLine="84" startPosition="49" endLine="85" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1851338810970027516" fileName="ReloadSession.java" startLine="89" startPosition="0" endLine="90" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="1851338810971159969" fileName="ReloadSession.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReloadSession#(Ljava/util/Set;)V" />
+    <nodeInfo nodeId="1851338810971739658" fileName="ReloadSession.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addProcessor#(Ljetbrains/mps/reloading/IFileProcessor;)V" />
+    <nodeInfo nodeId="1851338810971843274" fileName="ReloadSession.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getProcessors#()[Ljetbrains/mps/reloading/IFileProcessor;" />
+    <nodeInfo nodeId="1851338810970027563" fileName="ReloadSession.java" startLine="41" startPosition="46" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1851338810972630072" fileName="ReloadSession.java" startLine="59" startPosition="23" endLine="62" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1851338810970027645" fileName="ReloadSession.java" startLine="77" startPosition="36" endLine="80" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1851338810970027658" fileName="ReloadSession.java" startLine="83" startPosition="37" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1851338810970027531" fileName="ReloadSession.java" startLine="19" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ReloadSession#(Ljava/util/Set;Ljava/util/Set;)V" />
+    <nodeInfo nodeId="1851338810970027618" fileName="ReloadSession.java" startLine="63" startPosition="0" endLine="67" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1851338810970027559" fileName="ReloadSession.java" startLine="40" startPosition="28" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="1851338810970027641" fileName="ReloadSession.java" startLine="77" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireReloadStarted#()V" />
+    <nodeInfo nodeId="1851338810970027654" fileName="ReloadSession.java" startLine="83" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="fireReloadFinished#()V" />
+    <nodeInfo nodeId="1851338810970027555" fileName="ReloadSession.java" startLine="40" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isEmpty#()Z" />
+    <nodeInfo nodeId="1851338810970027606" fileName="ReloadSession.java" startLine="58" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="1851338810970027605" fileName="ReloadSession.java" startLine="56" startPosition="9" endLine="69" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1851338810970027594" fileName="ReloadSession.java" startLine="55" startPosition="24" endLine="74" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="1851338810970027573" fileName="ReloadSession.java" startLine="50" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doReload#(Ljetbrains/mps/progress/ProgressMonitor;)V" />
+    <scopeInfo nodeId="1851338810971159978" fileName="ReloadSession.java" startLine="26" startPosition="62" endLine="27" endPosition="32" />
+    <scopeInfo nodeId="1851338810971739662" fileName="ReloadSession.java" startLine="30" startPosition="54" endLine="31" endPosition="64" />
+    <scopeInfo nodeId="1851338810971843278" fileName="ReloadSession.java" startLine="36" startPosition="43" endLine="37" endPosition="86" />
+    <scopeInfo nodeId="1851338810970027568" fileName="ReloadSession.java" startLine="42" startPosition="27" endLine="43" endPosition="21" />
+    <scopeInfo nodeId="1851338810972630078" fileName="ReloadSession.java" startLine="60" startPosition="64" endLine="61" endPosition="85" />
+    <scopeInfo nodeId="1851338810970027649" fileName="ReloadSession.java" startLine="78" startPosition="49" endLine="79" endPosition="24" />
+    <scopeInfo nodeId="1851338810970027662" fileName="ReloadSession.java" startLine="84" startPosition="49" endLine="85" endPosition="25" />
+    <scopeInfo nodeId="1851338810970027537" fileName="ReloadSession.java" startLine="19" startPosition="94" endLine="21" endPosition="96" />
+    <scopeInfo nodeId="1851338810970027622" fileName="ReloadSession.java" startLine="64" startPosition="69" endLine="66" endPosition="83" />
+    <scopeInfo nodeId="1851338810971159969" fileName="ReloadSession.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="1851338810971159972" varName="reloadListeners" />
+    </scopeInfo>
+    <scopeInfo nodeId="1851338810971739658" fileName="ReloadSession.java" startLine="30" startPosition="0" endLine="33" endPosition="0">
+      <varInfo nodeId="1851338810971760187" varName="processor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1851338810971843274" fileName="ReloadSession.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1851338810970027562" fileName="ReloadSession.java" startLine="41" startPosition="46" endLine="44" endPosition="7" />
+    <scopeInfo nodeId="1851338810972630072" fileName="ReloadSession.java" startLine="59" startPosition="23" endLine="62" endPosition="11">
+      <varInfo nodeId="1851338810972630074" varName="fileProcessor" />
+    </scopeInfo>
+    <scopeInfo nodeId="1851338810970027595" fileName="ReloadSession.java" startLine="70" startPosition="15" endLine="73" endPosition="27" />
+    <scopeInfo nodeId="1851338810970027644" fileName="ReloadSession.java" startLine="77" startPosition="36" endLine="80" endPosition="5" />
+    <scopeInfo nodeId="1851338810970027645" fileName="ReloadSession.java" startLine="77" startPosition="36" endLine="80" endPosition="5">
+      <varInfo nodeId="1851338810970027647" varName="l" />
+    </scopeInfo>
+    <scopeInfo nodeId="1851338810970027657" fileName="ReloadSession.java" startLine="83" startPosition="37" endLine="86" endPosition="5" />
+    <scopeInfo nodeId="1851338810970027658" fileName="ReloadSession.java" startLine="83" startPosition="37" endLine="86" endPosition="5">
+      <varInfo nodeId="1851338810970027660" varName="l" />
+    </scopeInfo>
+    <scopeInfo nodeId="1851338810970027531" fileName="ReloadSession.java" startLine="19" startPosition="0" endLine="23" endPosition="0">
+      <varInfo nodeId="1851338810970711452" varName="processors" />
+      <varInfo nodeId="1851338810970027534" varName="reloadListeners" />
+    </scopeInfo>
+    <scopeInfo nodeId="1851338810970027559" fileName="ReloadSession.java" startLine="40" startPosition="28" endLine="45" endPosition="5">
+      <varInfo nodeId="1851338810970027560" varName="p" />
+    </scopeInfo>
+    <scopeInfo nodeId="1851338810970027641" fileName="ReloadSession.java" startLine="77" startPosition="0" endLine="82" endPosition="0" />
+    <scopeInfo nodeId="1851338810970027654" fileName="ReloadSession.java" startLine="83" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="1851338810970027558" fileName="ReloadSession.java" startLine="40" startPosition="28" endLine="47" endPosition="0" />
+    <scopeInfo nodeId="1851338810970027555" fileName="ReloadSession.java" startLine="40" startPosition="0" endLine="49" endPosition="0" />
+    <scopeInfo nodeId="1851338810970027607" fileName="ReloadSession.java" startLine="58" startPosition="27" endLine="67" endPosition="11">
+      <varInfo nodeId="1851338810972989551" varName="work" />
+    </scopeInfo>
+    <scopeInfo nodeId="1851338810970027606" fileName="ReloadSession.java" startLine="58" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1851338810970027604" fileName="ReloadSession.java" startLine="56" startPosition="9" endLine="69" endPosition="9" />
+    <scopeInfo nodeId="1851338810970027576" fileName="ReloadSession.java" startLine="50" startPosition="55" endLine="74" endPosition="5" />
+    <scopeInfo nodeId="1851338810970027573" fileName="ReloadSession.java" startLine="50" startPosition="0" endLine="76" endPosition="0">
+      <varInfo nodeId="1851338810970027639" varName="monitor" />
+    </scopeInfo>
+    <unitInfo nodeId="1851338810970027606" fileName="ReloadSession.java" startLine="57" startPosition="48" endLine="69" endPosition="7" unitName="jetbrains.mps.reloading.ReloadSession$1" />
+    <unitInfo nodeId="1851338810970027516" fileName="ReloadSession.java" startLine="14" startPosition="0" endLine="91" endPosition="0" unitName="jetbrains.mps.reloading.ReloadSession" />
+  </root>
+</debugInfo>
+

@@ -72,7 +72,7 @@
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManager" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.FSChangesWatcher" />
     <classNode extendsClassName="com.intellij.openapi.vfs.VirtualFileManagerListener" />
-    <classNode extendsClassName="jetbrains.mps.ide.platform.watching.IReloadListener" />
+    <classNode extendsClassName="jetbrains.mps.reloading.IReloadListener" />
     <classNode extendsClassName="jetbrains.mps.vcs.suspicious.BaseTaskQueue" />
   </dependency>
 </dependenciesRoot>
