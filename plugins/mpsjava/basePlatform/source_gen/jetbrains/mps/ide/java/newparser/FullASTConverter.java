@@ -74,7 +74,6 @@ import org.eclipse.jdt.internal.compiler.impl.ByteConstant;
 import org.eclipse.jdt.internal.compiler.ast.AND_AND_Expression;
 import org.eclipse.jdt.internal.compiler.ast.OR_OR_Expression;
 import org.eclipse.jdt.internal.compiler.ast.CompoundAssignment;
-import org.eclipse.jdt.internal.compiler.ast.CombinedBinaryExpression;
 import org.eclipse.jdt.internal.compiler.ast.EqualExpression;
 import org.eclipse.jdt.internal.compiler.ast.OperatorIds;
 import org.eclipse.jdt.internal.compiler.ast.PostfixExpression;
@@ -779,8 +778,6 @@ public class FullASTConverter extends ASTConverter {
   /*package*/ SNode convertExpression(BinaryExpression x) throws JavaParseException {
     if (x instanceof AND_AND_Expression) {
       return convertExpression((AND_AND_Expression) x);
-    } else if (x instanceof CombinedBinaryExpression) {
-      return convertExpression((CombinedBinaryExpression) x);
     } else if (x instanceof EqualExpression) {
       return convertExpression((EqualExpression) x);
     } else if (x instanceof OR_OR_Expression) {
@@ -840,10 +837,6 @@ public class FullASTConverter extends ASTConverter {
       return convertBinaryOperation(x.left, x.right, op);
     }
 
-  }
-
-  /*package*/ SNode convertExpression(CombinedBinaryExpression x) throws JavaParseException {
-    return convertExpression((BinaryExpression) x);
   }
 
   /*package*/ SNode convertExpression(CompoundAssignment x) throws JavaParseException {
@@ -1249,11 +1242,11 @@ public class FullASTConverter extends ASTConverter {
    */
   public SNode convertExpressionAdHoc(Expression exp) {
     if (exp instanceof TrueLiteral) {
-      return _quotation_createNode_f46ocm_a0a0a97();
+      return _quotation_createNode_f46ocm_a0a0a87();
     } else if (exp instanceof FalseLiteral) {
-      return _quotation_createNode_f46ocm_a0a0a0bd();
+      return _quotation_createNode_f46ocm_a0a0a0ad();
     } else if (exp instanceof StringLiteral) {
-      return _quotation_createNode_f46ocm_a0a1a0bd(new String(((StringLiteral) exp).source()));
+      return _quotation_createNode_f46ocm_a0a1a0ad(new String(((StringLiteral) exp).source()));
     } else if (exp instanceof ArrayInitializer) {
       SNode arr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayLiteral", null);
       for (Expression e : ((ArrayInitializer) exp).expressions) {
@@ -1287,7 +1280,7 @@ public class FullASTConverter extends ASTConverter {
 
     } else if (exp instanceof SingleNameReference) {
       // FIXME 
-      return _quotation_createNode_f46ocm_a1a4a0bd();
+      return _quotation_createNode_f46ocm_a1a4a0ad();
     } else {
       throw new RuntimeException("This kind of expression is not supported yet: " + exp.getClass().getName());
     }
@@ -1513,27 +1506,27 @@ public class FullASTConverter extends ASTConverter {
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_f46ocm_a0a0a0bd() {
+  private static SNode _quotation_createNode_f46ocm_a0a0a0ad() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_f46ocm_a0a1a0bd(Object parameter_1) {
+  private static SNode _quotation_createNode_f46ocm_a0a1a0ad(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_f46ocm_a0a0a97() {
+  private static SNode _quotation_createNode_f46ocm_a0a0a87() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_1, "value", "true");
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_f46ocm_a1a4a0bd() {
+  private static SNode _quotation_createNode_f46ocm_a1a4a0ad() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_1, "value", "NOT SUPPORTED YET");

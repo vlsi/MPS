@@ -188,9 +188,9 @@ public class TypeNameResolver {
 
       // using short name, as it must be accessible 
       String fqname = myPackage + "." + unqualName;
-      return new DynamicReference(role, source, null, unqualName);
-
       // <node> 
+
+      return new JavaPackagesDynReferece(role, source, unqualName, null);
 
 
     } else {

@@ -30,6 +30,7 @@ public class JavaPackagesDynReferece extends DynamicReference {
 
       for (SNode n : ListSequence.fromList(SModelOperations.getRoots(mdl, null))) {
         if (name.equals(n.getName())) {
+          this.setTargetSModelReference(mdl.getSModelReference());
           return n;
         }
       }

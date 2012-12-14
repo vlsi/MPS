@@ -93,7 +93,7 @@ public class JavaToMps_Test extends BaseTransformationTest4 {
       this.addNodeById("4795297196607520929");
       this.addNodeById("1218582063869484737");
       this.addNodeById("8083368042256419833");
-      // <node> 
+      Utils.checkStubModels(PathManager.getHomePath() + "/plugins/mpsjava/tests/testDir2", ListSequence.fromListAndArray(new ArrayList<SModel>(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel2", "")).getSModel(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.ide.java.testMaterial.testModel2.sub", "")).getSModel()));
     }
 
     public void test_Imports3() throws Exception {

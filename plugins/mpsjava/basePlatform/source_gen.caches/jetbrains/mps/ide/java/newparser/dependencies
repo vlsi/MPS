@@ -155,7 +155,6 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.CaseStatement" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.CastExpression" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ClassLiteralAccess" />
-    <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.CombinedBinaryExpression" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.CompoundAssignment" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ConditionalExpression" />

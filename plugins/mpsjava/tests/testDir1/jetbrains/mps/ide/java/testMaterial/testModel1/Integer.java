@@ -1,4 +1,4 @@
-package pkg;
+package jetbrains.mps.ide.java.testMaterial.testModel1;
 
 public class Integer {
     private int i;

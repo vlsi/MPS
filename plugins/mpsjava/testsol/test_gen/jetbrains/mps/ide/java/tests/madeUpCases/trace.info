@@ -101,7 +101,7 @@
     <nodeInfo nodeId="8083368042256417953" fileName="JavaToMps_Test.java" startLine="92" startPosition="50" endLine="93" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8083368042256417953" fileName="JavaToMps_Test.java" startLine="93" startPosition="46" endLine="94" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8083368042256417953" fileName="JavaToMps_Test.java" startLine="94" startPosition="46" endLine="95" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2623182543841517992" fileName="JavaToMps_Test.java" startLine="95" startPosition="46" endLine="96" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="8083368042256417956" fileName="JavaToMps_Test.java" startLine="95" startPosition="46" endLine="96" endPosition="427" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8083368042256418397" fileName="JavaToMps_Test.java" startLine="99" startPosition="50" endLine="100" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8083368042256418397" fileName="JavaToMps_Test.java" startLine="100" startPosition="46" endLine="101" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8083368042256418397" fileName="JavaToMps_Test.java" startLine="101" startPosition="46" endLine="102" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -144,7 +144,7 @@
     <scopeInfo nodeId="4795297196607520928" fileName="JavaToMps_Test.java" startLine="63" startPosition="52" endLine="65" endPosition="112" />
     <scopeInfo nodeId="1218582063869484771" fileName="JavaToMps_Test.java" startLine="78" startPosition="61" endLine="82" endPosition="216" />
     <scopeInfo nodeId="7902967214465805211" fileName="JavaToMps_Test.java" startLine="85" startPosition="50" endLine="89" endPosition="427" />
-    <scopeInfo nodeId="8083368042256417953" fileName="JavaToMps_Test.java" startLine="92" startPosition="50" endLine="96" endPosition="16" />
+    <scopeInfo nodeId="8083368042256417953" fileName="JavaToMps_Test.java" startLine="92" startPosition="50" endLine="96" endPosition="427" />
     <scopeInfo nodeId="8083368042256418397" fileName="JavaToMps_Test.java" startLine="99" startPosition="50" endLine="103" endPosition="427" />
     <scopeInfo nodeId="7030568040400313711" fileName="JavaToMps_Test.java" startLine="106" startPosition="54" endLine="110" endPosition="218" />
     <scopeInfo nodeId="887121589775270929" fileName="JavaToMps_Test.java" startLine="113" startPosition="52" endLine="117" endPosition="16" />

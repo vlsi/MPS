@@ -80,6 +80,8 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
       final JpsMPSProject project = new JpsMPSProject(moduleChunk.getModules().iterator().next().getProject());
       JpsGeneratorWorker worker = new JpsGeneratorWorker(project, compileContext);
 
+      compileContext.getProjectDescriptor().getProject();
+
       for (JpsModule jpsModule : moduleChunk.getModules()) {
 
         JpsMPSModuleExtension extension = JpsMPSExtensionService.getInstance().getExtension(jpsModule);
