@@ -29,6 +29,7 @@ import jetbrains.mps.jps.project.JpsSolutionIdea;
 import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -52,6 +53,8 @@ import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * evgeny, 12/3/12
@@ -63,6 +66,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
   private volatile boolean isInitialized = false;
   private final Object LOCK = new Object();
   private CachedRepositoryData myRepo;
+  private Map<JpsModule, Solution> jpsToMpsModules = new HashMap<JpsModule, Solution>();
 
   public JpsMPSRepositoryFacade() {
   }
@@ -94,6 +98,11 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
         isInitialized = true;
       }
     });
+  }
+
+  public Solution getSolution(JpsModule module) {
+    if (!isInitialized) throw new IllegalStateException("Not initialized yet");
+    return jpsToMpsModules.get(module);
   }
 
 
@@ -159,6 +168,8 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
       MPSModuleRepository.getInstance().registerModule(solution, project);
       solution.updateModelsSet();
+
+      jpsToMpsModules.put(mod, solution);
 
       context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "FQ name: " + solution.getModuleReference().getModuleFqName()));
 

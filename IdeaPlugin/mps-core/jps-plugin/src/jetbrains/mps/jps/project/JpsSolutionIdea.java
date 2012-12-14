@@ -2,8 +2,10 @@ package jetbrains.mps.jps.project;
 
 import jetbrains.mps.idea.core.make.MPSCompilerUtil;
 import jetbrains.mps.idea.core.project.JpsModelRootContributor;
+import jetbrains.mps.jps.model.JpsMPSRepositoryFacade;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.vfs.FileSystem;
@@ -12,6 +14,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.incremental.CompileContext;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
+import org.jetbrains.jps.model.module.JpsDependencyElement;
 import org.jetbrains.jps.model.module.JpsModule;
 import org.jetbrains.jps.service.JpsServiceManager;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -42,6 +45,26 @@ public class JpsSolutionIdea extends Solution {
 
   public JpsModule getJpsModule() {
     return myModule;
+  }
+
+
+  @Override
+  public List<Dependency> getDependencies() {
+    List<Dependency> dependencies = new ArrayList<Dependency>();
+
+    for (JpsDependencyElement jpsDep: myModule.getDependenciesList().getDependencies()) {
+      JpsModule jpsModule = jpsDep.getContainingModule();
+      Solution solution = JpsMPSRepositoryFacade.getInstance().getSolution(jpsModule);
+
+      if (solution!=null) {
+        Dependency dep = new Dependency();
+        dep.setModuleRef(solution.getModuleReference());
+        dep.setReexport(false);
+        dependencies.add(dep);
+      }
+    }
+
+    return dependencies;
   }
 
   @Override
