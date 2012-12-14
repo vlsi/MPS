@@ -20,16 +20,15 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.model.ModelRootManager;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.persistence.IModelRootManager;
 import jetbrains.mps.smodel.persistence.InvalidModelRootManager;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
-import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.Memento;
 
 import java.util.Collection;
@@ -47,15 +46,9 @@ public class SModelRoot extends FolderModelRootBase {
   private ModelRoot myModelRoot;
   private IModelRootManager myManager;
 
-  public SModelRoot(@Nullable ModelRootManager manager) {
-    myModelRoot = new ModelRoot(null, manager);
+  public SModelRoot() {
+    myModelRoot = new ModelRoot(null, null);
     myManager = createManager();
-  }
-
-  public SModelRoot(SModule module, ModelRoot root) {
-    myModelRoot = root;
-    myManager = createManager();
-    setModule(module);
   }
 
   @Override
@@ -65,6 +58,9 @@ public class SModelRoot extends FolderModelRootBase {
 
   private IModelRootManager createManager() {
     if (myModelRoot.getManager() != null) {
+      if (LanguageID.JAVA_MANAGER.equals(myModelRoot.getManager())) {
+        throw new IllegalStateException("SModelRoot cannot handle java stubs");
+      }
       String moduleId = myModelRoot.getManager().getModuleId();
       String className = myModelRoot.getManager().getClassName();
       return create(moduleId, className);
@@ -125,7 +121,9 @@ public class SModelRoot extends FolderModelRootBase {
   @Override
   public SModel createModel(String modelName) {
     SModel model = getManager().createModel(this, SModelFqName.fromString(modelName));
-    if (model!=null) { register(model); }
+    if (model != null) {
+      register(model);
+    }
     return model;
   }
 

@@ -54,7 +54,7 @@ public class ModelRootChooser implements Computable<ModelRootDescriptor> {
         result.setPath(dir.getPath());
         return result.toDescriptor();
       } else {
-        SModelRoot result = new SModelRoot(null);
+        SModelRoot result = new SModelRoot();
         result.setPath(dir.getPath());
         return result.toDescriptor();
       }

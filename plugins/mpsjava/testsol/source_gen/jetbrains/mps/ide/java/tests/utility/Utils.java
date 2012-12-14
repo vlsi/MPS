@@ -178,7 +178,7 @@ public class Utils {
     IModule mod2 = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("49166c31-952a-46f6-8970-ea45964379d0"));
 
     List<SModel> binModels = ListSequence.fromList(new ArrayList<SModel>());
-    SModelRoot binSRoot = new SModelRoot(null);
+    SModelRoot binSRoot = new SModelRoot();
     binSRoot.setModule(mod1);
     binSRoot.setPath(binPath);
     Collection<SModelDescriptor> binStubModels = bin.load(binSRoot);

@@ -121,4 +121,10 @@ public final class ModelRootDescriptor {
     mem.setText(stream.readString());
     return mem;
   }
+
+  public static ModelRootDescriptor getJavaStubsModelRoot(String path) {
+    Memento m = new MementoImpl();
+    m.put("path", path);
+    return new ModelRootDescriptor(PersistenceRegistry.JAVA_CLASSES_ROOT, m);
+  }
 }
