@@ -1,4 +1,4 @@
-package jetbrains.mps.idea.java.testMaterial.testModel3;
+package jetbrains.mps.ide.java.testMaterial.testModel3;
 
 import java.util.*;
 import jetbrains.mps.ide.java.testMaterial.testModel3.sub.*;
