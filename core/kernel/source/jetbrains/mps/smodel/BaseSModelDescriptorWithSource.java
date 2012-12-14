@@ -78,6 +78,7 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
     ModelAccess.assertLegalWrite();
 
     ModelReloadNotifier.getInstance().notifyLater(this);
+    //SModelRepository.getInstance().addModelRepositoryListener();
 
     final SModel oldSModel = getCurrentModelInternal();
     if (oldSModel != null) {

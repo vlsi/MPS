@@ -121,6 +121,7 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
+  //notifyModelReplace(oldModel, newModel)
   public void removeModelDescriptor(SModelDescriptor md) {
     synchronized (myModelsLock) {
       fireBeforeModelRemoved(md);

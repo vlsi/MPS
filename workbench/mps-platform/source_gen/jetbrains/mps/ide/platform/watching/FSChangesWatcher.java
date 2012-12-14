@@ -78,7 +78,7 @@ public class FSChangesWatcher extends ReloadListenerContainer implements Applica
   };
   private IMakeService myMakeService;
 
-  public FSChangesWatcher(MessageBus bus, ProjectManager projectManager, VirtualFileManager virtualFileManager) {
+  public FSChangesWatcher(MessageBus bus, ProjectManager projectManager, VirtualFileManager virtualFileManager/*MPSCoreComponent*/) {
     myBus = bus;
     myVirtualFileManager = virtualFileManager;
     myProjectManager = projectManager;
