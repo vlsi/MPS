@@ -4,6 +4,7 @@ import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.jps.model.JpsProject;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -20,16 +21,16 @@ public class JpsMPSProject extends Project {
 
   @Override
   public List<String> getWatchedModulesPaths() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return new ArrayList<String>();
   }
 
   @Override
   public <T> T getComponent(Class<T> t) {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return null;
   }
 
   @Override
   public String getName() {
-    return null;  //To change body of implemented methods use File | Settings | File Templates.
+    return myProject.getName();
   }
 }

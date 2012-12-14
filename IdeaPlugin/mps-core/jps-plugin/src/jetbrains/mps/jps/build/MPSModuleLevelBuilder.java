@@ -77,10 +77,8 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
 
     try {
 
-      final JpsMPSProject project = new JpsMPSProject(moduleChunk.getModules().iterator().next().getProject());
+      final JpsMPSProject project = new JpsMPSProject(compileContext.getProjectDescriptor().getProject());
       JpsGeneratorWorker worker = new JpsGeneratorWorker(project, compileContext);
-
-      compileContext.getProjectDescriptor().getProject();
 
       for (JpsModule jpsModule : moduleChunk.getModules()) {
 
@@ -94,30 +92,6 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
 
         compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "Processing " + jpsModule.getName() + ": " + extension.getConfiguration().getUUID()));
 
-        SolutionDescriptor descriptor = extension.getConfiguration().getSolutionDescriptor();
-        final JpsSolutionIdea solution = new JpsSolutionIdea(jpsModule, descriptor);
-
-        ModelAccess.instance().runWriteAction(new Runnable() {
-          @Override
-          public void run() {
-            MPSModuleRepository.getInstance().registerModule(solution, project);
-            solution.updateModelsSet();
-
-            compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "FQ name: " + solution.getModuleReference().getModuleFqName()));
-          }
-        });
-
-        for (final SModelDescriptor desc : SModelRepository.getInstance().getModelDescriptors(solution)) {
-          compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " ++ " + desc.getLongName()));
-          ModelAccess.instance().runReadAction(new Runnable() {
-            @Override
-            public void run() {
-              for (SNode n : desc.getRootNodes()) {
-                compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " root: " + n.getName()));
-              }
-            }
-          });
-        }
 
         for (ModelRoot root : extension.getConfiguration().getModelRoots()) {
           compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " -- " + root.getPresentation()));

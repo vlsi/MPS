@@ -1,6 +1,8 @@
 package jetbrains.mps.jps.build;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
+import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
+import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.idea.core.make.MPSCompilerUtil;
 import jetbrains.mps.jps.model.JpsMPSExtensionService;
 import jetbrains.mps.jps.model.JpsMPSModuleExtension;
@@ -8,6 +10,7 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.tool.builder.MpsWorker;
 import jetbrains.mps.tool.builder.make.GeneratorWorker;
+import jetbrains.mps.tool.builder.make.ReducedGenerationWorker;
 import jetbrains.mps.tool.common.Script;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
@@ -33,7 +36,7 @@ import java.util.Set;
  * danilla 12/12/12
  */
 
-public class JpsGeneratorWorker extends GeneratorWorker implements FileProcessor<JavaSourceRootDescriptor, ModuleBuildTarget> {
+public class JpsGeneratorWorker extends ReducedGenerationWorker implements FileProcessor<JavaSourceRootDescriptor, ModuleBuildTarget> {
 
   private Project myProject;
   private Set<SModel> myModels = new HashSet<SModel>();
@@ -44,6 +47,7 @@ public class JpsGeneratorWorker extends GeneratorWorker implements FileProcessor
     super(new Script());
     myProject = p;
     this.compileContext = compileContext;
+
   }
 
   Iterable<SModel> getModels() {
@@ -88,6 +92,9 @@ public class JpsGeneratorWorker extends GeneratorWorker implements FileProcessor
   }
 
   public void generate() {
+
+    // only for ReducedGeneratorWorker
+    GenerationSettingsProvider.getInstance().setGenerationSettings(new DefaultModifiableGenerationSettings());
 
     ObjectsToProcess objToProcess = new ObjectsToProcess();
     objToProcess.getModels().addAll(myModels);

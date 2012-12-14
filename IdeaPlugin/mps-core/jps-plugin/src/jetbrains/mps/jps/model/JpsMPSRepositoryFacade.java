@@ -23,12 +23,19 @@ import jetbrains.mps.idea.core.make.MPSCompilerUtil;
 import jetbrains.mps.idea.core.module.CachedModuleData;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.jps.persistence.CachedDefaultModelRoot;
+import jetbrains.mps.jps.project.JpsMPSProject;
+import jetbrains.mps.jps.project.JpsSolutionIdea;
 import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.typesystem.MPSTypesystem;
@@ -36,6 +43,8 @@ import jetbrains.mps.util.io.ModelInputStream;
 import org.jetbrains.jps.incremental.CompileContext;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
+import org.jetbrains.jps.model.module.JpsModule;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 
@@ -78,6 +87,8 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
         ExtensionRegistry.getInstance().loadExtensionDescriptors();
         ClassLoaderManager.getInstance().updateClassPath();
 
+        initProject(context);
+
         context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "loaded in " + (System.nanoTime() - start) / 1000000 + " ms"));
         isInitialized = true;
       }
@@ -118,6 +129,38 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
     }
 
     context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.WARNING, "cannot start MPS, no repository provided"));
+  }
+
+  private void initProject(CompileContext context) {
+
+    JpsMPSProject project = new JpsMPSProject(context.getProjectDescriptor().getProject());
+
+    for (JpsModule mod : context.getProjectDescriptor().getProject().getModules()) {
+      JpsMPSModuleExtension extension = JpsMPSExtensionService.getInstance().getExtension(mod);
+
+      if (extension == null) {
+        context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "Ignoring (no facet) " + mod.getName()));
+        continue;
+      }
+
+      SolutionDescriptor descriptor = extension.getConfiguration().getSolutionDescriptor();
+      descriptor.setNamespace(mod.getName());
+      descriptor.setId(ModuleId.foreign(mod.getName()));
+
+      JpsSolutionIdea solution = new JpsSolutionIdea(mod, descriptor, context);
+
+      MPSModuleRepository.getInstance().registerModule(solution, project);
+      solution.updateModelsSet();
+
+      context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "FQ name: " + solution.getModuleReference().getModuleFqName()));
+
+      for (SModelDescriptor desc : SModelRepository.getInstance().getModelDescriptors(solution)) {
+        context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " ++ " + desc.getLongName()));
+        for (SNode n : desc.getRootNodes()) {
+          context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " root: " + n.getName()));
+        }
+      }
+    }
   }
 
   public void dispose() {
