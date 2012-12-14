@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.reloading.IReloadListener;
+import jetbrains.mps.reloading.ReloadListenerContainer;
+
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -30,6 +33,17 @@ public class ModelReloadNotifier {
 
 
   public ModelReloadNotifier() {
+    ReloadListenerContainer.getInstance().addReloadListener(new IReloadListener() {
+      @Override
+      public void reloadStarted() {
+
+      }
+
+      @Override
+      public void reloadFinished() {
+        notifyAfterReload();
+      }
+    });
   }
 
   public void reloadModels(Set<SModelDescriptor> modelDescriptors) {
