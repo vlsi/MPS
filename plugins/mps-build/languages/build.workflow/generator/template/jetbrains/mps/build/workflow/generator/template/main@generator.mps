@@ -2420,16 +2420,6 @@
                   </node>
                 </node>
               </node>
-              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="2059109515400477146">
-                <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
-                <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
-                <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="2059109515400477147">
-                  <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
-                  <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="2059109515400477159">
-                    <property name="text" nameId="iuxj.6666499814681541920" value="asm.jar" />
-                  </node>
-                </node>
-              </node>
               <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="5091697509628019643">
                 <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
                 <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
@@ -2437,16 +2427,6 @@
                   <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
                   <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="5091697509628019645">
                     <property name="text" nameId="iuxj.6666499814681541920" value="asm4-all.jar" />
-                  </node>
-                </node>
-              </node>
-              <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="2059109515400477149">
-                <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
-                <property name="tagName" nameId="iuxj.6666499814681415862" value="include" />
-                <node role="attributes" roleId="iuxj.6666499814681415861" type="iuxj.XmlAttribute" typeId="iuxj.6666499814681447923" id="2059109515400477150">
-                  <property name="attrName" nameId="iuxj.6666499814681447926" value="name" />
-                  <node role="value" roleId="iuxj.6666499814681541918" type="iuxj.XmlTextValue" typeId="iuxj.6666499814681541919" id="2059109515400477160">
-                    <property name="text" nameId="iuxj.6666499814681541920" value="asm-commons.jar" />
                   </node>
                 </node>
               </node>
@@ -2553,8 +2533,8 @@
             </node>
           </node>
           <node role="parts" roleId="8xvf.2769948622284574304" type="8xvf.BwfAntTaskDeclaration" typeId="8xvf.2059109515400477499" id="2059109515400527261">
-            <property name="name" nameId="tpck.1169194664001" value="javac2" />
             <property name="classname" nameId="8xvf.2059109515400477502" value="com.intellij.ant.Javac2" />
+            <property name="name" nameId="tpck.1169194664001" value="javac2" />
             <link role="classpath" roleId="8xvf.2059109515400477503" targetNodeId="2059109515400476884" resolveInfo="javac2.classpath" />
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.TemplateFragment" typeId="tpf8.1095672379244" id="2059109515400527263" />
             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.IfMacro" typeId="tpf8.1118773211870" id="2059109515400527265">

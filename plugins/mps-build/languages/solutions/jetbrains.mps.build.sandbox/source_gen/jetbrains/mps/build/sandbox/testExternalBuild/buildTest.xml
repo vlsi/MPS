@@ -90,8 +90,7 @@
         <fileset file="${artifacts.buildMPS}/lib/trove4j.jar" />
         <fileset file="${artifacts.buildMPS}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.buildMPS}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${artifacts.buildMPS}/lib/asm.jar" />
-        <fileset file="${artifacts.buildMPS}/lib/asm-tree-3.3.jar" />
+        <fileset file="${artifacts.buildMPS}/lib/asm4-all.jar" />
         <fileset file="${artifacts.buildMPS}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.buildMPS}/lib" includes="*.jar" />
         <fileset file="${artifacts.buildMPS}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />

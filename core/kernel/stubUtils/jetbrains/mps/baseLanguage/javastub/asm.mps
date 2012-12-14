@@ -3333,12 +3333,17 @@
   </root>
   <root id="7241381882860001929">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7241381882860007073" />
-    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7241381882860007074">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="88b1.~SignatureVisitor" resolveInfo="SignatureVisitor" />
-    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="7241381882860007075">
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7241381882860007076" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7241381882860007077" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7241381882860007077">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="8471909024438049477">
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="88b1.~SignatureVisitor%d&lt;init&gt;(int)" resolveInfo="SignatureVisitor" />
+          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8471909024438053002">
+            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="g877.~Opcodes" resolveInfo="Opcodes" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="g877.~Opcodes%dASM4" resolveInfo="ASM4" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7241381882860007078">
       <property name="name" nameId="tpck.1169194664001" value="visitFormalTypeParameter" />
@@ -3549,6 +3554,9 @@
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7241381882860007170" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7241381882860007171" />
     </node>
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8471909024438061664">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="88b1.~SignatureVisitor" resolveInfo="SignatureVisitor" />
+    </node>
   </root>
   <root id="7241381882860007172">
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7241381882860007173" />
@@ -3598,9 +3606,6 @@
     </node>
   </root>
   <root id="7241381882860007196">
-    <node role="implementedInterface" roleId="tpee.1095933932569" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7241381882860007197">
-      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="88b1.~SignatureVisitor" resolveInfo="SignatureVisitor" />
-    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="7241381882860007198">
       <property name="name" nameId="tpck.1169194664001" value="INSTANCE" />
       <property name="isFinal" nameId="tpee.1176718929932" value="true" />
@@ -3616,7 +3621,15 @@
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="7241381882860007203">
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="7241381882860007204" />
-      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7241381882860007205" />
+      <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7241381882860007205">
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.SuperConstructorInvocation" typeId="tpee.1070475587102" id="8471909024438077784">
+          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="88b1.~SignatureVisitor%d&lt;init&gt;(int)" resolveInfo="SignatureVisitor" />
+          <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8471909024438077798">
+            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="g877.~Opcodes" resolveInfo="Opcodes" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="g877.~Opcodes%dASM4" resolveInfo="ASM4" />
+          </node>
+        </node>
+      </node>
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="7241381882860007206">
       <property name="name" nameId="tpck.1169194664001" value="visitFormalTypeParameter" />
@@ -3799,6 +3812,9 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="7241381882860007297" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="7241381882860007298" />
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="7241381882860007299" />
+    </node>
+    <node role="superclass" roleId="tpee.1165602531693" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8471909024438077670">
+      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="88b1.~SignatureVisitor" resolveInfo="SignatureVisitor" />
     </node>
   </root>
   <root id="7241381882860007300">
