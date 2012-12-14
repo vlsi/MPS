@@ -8,7 +8,6 @@ import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
 import com.intellij.openapi.vfs.VirtualFileManagerListener;
-import jetbrains.mps.reloading.IReloadListener;
 
 public abstract class TaskQueue<T> extends BaseTaskQueue<T> {
   private final TaskQueue.BanVFMListener myVirtualFileManagerListener = new TaskQueue.BanVFMListener();
@@ -72,7 +71,7 @@ public abstract class TaskQueue<T> extends BaseTaskQueue<T> {
     }
   }
 
-  private class BanReloadListener implements IReloadListener {
+  private class BanReloadListener implements FSChangesWatcher.IReloadListener {
     private int myReloadBan = 0;
 
     private BanReloadListener() {

@@ -104,7 +104,7 @@
     <classNode dependClassName="org.junit.Before" />
     <classNode dependClassName="org.junit.BeforeClass" />
     <classNode dependClassName="org.junit.Test" />
-    <classNode extendsClassName="jetbrains.mps.reloading.IReloadListener" />
+    <classNode extendsClassName="jetbrains.mps.ide.platform.watching.IReloadListener" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.DummyFileEditor" file="DummyFileEditor.java">
     <classNode dependClassName="com.intellij.codeHighlighting.BackgroundEditorHighlighter" />

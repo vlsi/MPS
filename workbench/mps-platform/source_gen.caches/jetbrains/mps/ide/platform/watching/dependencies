@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.platform.watching.EventProcessor" file="EventProcessor.java">
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.watching.FSChangesWatcher" file="FSChangesWatcher.java">
     <classNode dependClassName="com.intellij.openapi.application.Application" />
@@ -32,6 +33,7 @@
     <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.MPSCore" />
     <classNode dependClassName="jetbrains.mps.ide.platform.watching.FileProcessor" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.watching.ReloadSession" />
     <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
@@ -41,16 +43,12 @@
     <classNode dependClassName="jetbrains.mps.make.IMakeService" />
     <classNode dependClassName="jetbrains.mps.make.MakeNotification" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitorAdapter" />
-    <classNode dependClassName="jetbrains.mps.reloading.IFileProcessor" />
-    <classNode dependClassName="jetbrains.mps.reloading.IReloadListener" />
-    <classNode dependClassName="jetbrains.mps.reloading.ReloadSession" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.util.Computable" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="com.intellij.openapi.vfs.newvfs.BulkFileListener" />
-    <classNode extendsClassName="jetbrains.mps.reloading.ReloadListenerContainer" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.watching.FileProcessor" file="FileProcessor.java">
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
@@ -77,7 +75,6 @@
     <classNode dependClassName="jetbrains.mps.vfs.FileSystemListener" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.watching.EventProcessor" />
-    <classNode extendsClassName="jetbrains.mps.reloading.IFileProcessor" />
     <classNode extendsClassName="jetbrains.mps.vfs.FileSystemEvent" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.watching.FileSystemListenersContainer" file="FileSystemListenersContainer.java">
@@ -119,5 +116,19 @@
     <classNode extendsClassName="com.intellij.openapi.vfs.VirtualFileAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ide.platform.watching.ModuleRootCache" file="ModuleRootCache.java" />
+  <dependency className="jetbrains.mps.ide.platform.watching.ReloadSession" file="ReloadSession.java">
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.watching.FSChangesWatcher" />
+    <classNode dependClassName="jetbrains.mps.ide.platform.watching.FileProcessor" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.progress.EmptyProgressMonitor" />
+    <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
+    <classNode dependClassName="jetbrains.mps.progress.SubProgressKind" />
+    <classNode dependClassName="jetbrains.mps.reloading.ClassLoaderManager" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+  </dependency>
 </dependenciesRoot>
 

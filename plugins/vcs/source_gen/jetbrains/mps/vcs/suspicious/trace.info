@@ -357,95 +357,95 @@
     <unitInfo nodeId="4707157387247635635" fileName="BaseTaskQueue.java" startLine="10" startPosition="0" endLine="55" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.BaseTaskQueue" />
   </root>
   <root nodeId="4707157387247635742" modelId="r:e74490a1-7013-47e5-9f40-14c310c80a86(jetbrains.mps.vcs.suspicious)">
-    <nodeInfo nodeId="4707157387247635787" fileName="TaskQueue.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFileManagerListener" />
-    <nodeInfo nodeId="4707157387247635792" fileName="TaskQueue.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadListener" />
-    <nodeInfo nodeId="4707157387247635797" fileName="TaskQueue.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myManager" />
-    <nodeInfo nodeId="4707157387247635800" fileName="TaskQueue.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWatcher" />
-    <nodeInfo nodeId="4707157387247635803" fileName="TaskQueue.java" startLine="18" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFileManager" />
-    <nodeInfo nodeId="4707157387247635816" fileName="TaskQueue.java" startLine="20" startPosition="109" endLine="21" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="4707157387247635817" fileName="TaskQueue.java" startLine="21" startPosition="12" endLine="22" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247635821" fileName="TaskQueue.java" startLine="22" startPosition="24" endLine="23" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247635825" fileName="TaskQueue.java" startLine="23" startPosition="24" endLine="24" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247635829" fileName="TaskQueue.java" startLine="24" startPosition="46" endLine="25" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247635834" fileName="TaskQueue.java" startLine="25" startPosition="50" endLine="26" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247635843" fileName="TaskQueue.java" startLine="29" startPosition="25" endLine="30" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247635848" fileName="TaskQueue.java" startLine="30" startPosition="53" endLine="31" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247635864" fileName="TaskQueue.java" startLine="35" startPosition="51" endLine="36" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4707157387247635876" fileName="TaskQueue.java" startLine="37" startPosition="53" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247635883" fileName="TaskQueue.java" startLine="41" startPosition="50" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247635890" fileName="TaskQueue.java" startLine="44" startPosition="38" endLine="45" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247635892" fileName="TaskQueue.java" startLine="46" startPosition="5" endLine="47" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247635750" fileName="TaskQueue.java" startLine="51" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVFMBan" />
-    <nodeInfo nodeId="4707157387247635900" fileName="TaskQueue.java" startLine="57" startPosition="18" endLine="58" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247635901" fileName="TaskQueue.java" startLine="59" startPosition="7" endLine="60" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247635908" fileName="TaskQueue.java" startLine="64" startPosition="18" endLine="65" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247635909" fileName="TaskQueue.java" startLine="66" startPosition="7" endLine="67" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247635913" fileName="TaskQueue.java" startLine="70" startPosition="31" endLine="71" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247635772" fileName="TaskQueue.java" startLine="76" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadBan" />
-    <nodeInfo nodeId="4707157387247635920" fileName="TaskQueue.java" startLine="81" startPosition="33" endLine="82" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247635924" fileName="TaskQueue.java" startLine="85" startPosition="34" endLine="86" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4707157387247635928" fileName="TaskQueue.java" startLine="89" startPosition="31" endLine="90" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4707157387247635753" fileName="TaskQueue.java" startLine="53" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BanVFMListener#()V" />
-    <nodeInfo nodeId="4707157387247635775" fileName="TaskQueue.java" startLine="78" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BanReloadListener#()V" />
-    <nodeInfo nodeId="4707157387247635871" fileName="TaskQueue.java" startLine="36" startPosition="83" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4707157387247635878" fileName="TaskQueue.java" startLine="40" startPosition="5" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4707157387247635885" fileName="TaskQueue.java" startLine="43" startPosition="5" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4707157387247635897" fileName="TaskQueue.java" startLine="56" startPosition="51" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4707157387247635905" fileName="TaskQueue.java" startLine="63" startPosition="51" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4707157387247635766" fileName="TaskQueue.java" startLine="70" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBanned#()Z" />
-    <nodeInfo nodeId="4707157387247635778" fileName="TaskQueue.java" startLine="81" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadStarted#()V" />
-    <nodeInfo nodeId="4707157387247635781" fileName="TaskQueue.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadFinished#()V" />
-    <nodeInfo nodeId="4707157387247635784" fileName="TaskQueue.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBanned#()Z" />
-    <nodeInfo nodeId="4707157387247635839" fileName="TaskQueue.java" startLine="29" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
-    <nodeInfo nodeId="4707157387247635857" fileName="TaskQueue.java" startLine="34" startPosition="43" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4707157387247635756" fileName="TaskQueue.java" startLine="56" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeRefreshStart#(Z)V" />
-    <nodeInfo nodeId="4707157387247635761" fileName="TaskQueue.java" startLine="63" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="afterRefreshFinish#(Z)V" />
-    <nodeInfo nodeId="4707157387247635806" fileName="TaskQueue.java" startLine="20" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TaskQueue#(Lcom/intellij/openapi/project/ProjectManager;Ljetbrains/mps/ide/platform/watching/FSChangesWatcher;Lcom/intellij/openapi/vfs/VirtualFileManager;)V" />
-    <nodeInfo nodeId="4707157387247635853" fileName="TaskQueue.java" startLine="34" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isProcessingAllowed#()Z" />
-    <scopeInfo nodeId="4707157387247635895" fileName="TaskQueue.java" startLine="53" startPosition="30" endLine="53" endPosition="30" />
-    <scopeInfo nodeId="4707157387247635918" fileName="TaskQueue.java" startLine="78" startPosition="33" endLine="78" endPosition="33" />
-    <scopeInfo nodeId="4707157387247635875" fileName="TaskQueue.java" startLine="37" startPosition="53" endLine="38" endPosition="21" />
-    <scopeInfo nodeId="4707157387247635882" fileName="TaskQueue.java" startLine="41" startPosition="50" endLine="42" endPosition="19" />
-    <scopeInfo nodeId="4707157387247635889" fileName="TaskQueue.java" startLine="44" startPosition="38" endLine="45" endPosition="19" />
-    <scopeInfo nodeId="4707157387247635899" fileName="TaskQueue.java" startLine="57" startPosition="18" endLine="58" endPosition="15" />
-    <scopeInfo nodeId="4707157387247635907" fileName="TaskQueue.java" startLine="64" startPosition="18" endLine="65" endPosition="15" />
-    <scopeInfo nodeId="4707157387247635912" fileName="TaskQueue.java" startLine="70" startPosition="31" endLine="71" endPosition="27" />
-    <scopeInfo nodeId="4707157387247635919" fileName="TaskQueue.java" startLine="81" startPosition="33" endLine="82" endPosition="20" />
-    <scopeInfo nodeId="4707157387247635923" fileName="TaskQueue.java" startLine="85" startPosition="34" endLine="86" endPosition="20" />
-    <scopeInfo nodeId="4707157387247635927" fileName="TaskQueue.java" startLine="89" startPosition="31" endLine="90" endPosition="30" />
-    <scopeInfo nodeId="4707157387247635842" fileName="TaskQueue.java" startLine="29" startPosition="25" endLine="31" endPosition="88" />
-    <scopeInfo nodeId="4707157387247635753" fileName="TaskQueue.java" startLine="53" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="4707157387247635775" fileName="TaskQueue.java" startLine="78" startPosition="0" endLine="80" endPosition="0" />
-    <scopeInfo nodeId="4707157387247635766" fileName="TaskQueue.java" startLine="70" startPosition="0" endLine="73" endPosition="0" />
-    <scopeInfo nodeId="4707157387247635778" fileName="TaskQueue.java" startLine="81" startPosition="0" endLine="84" endPosition="0" />
-    <scopeInfo nodeId="4707157387247635781" fileName="TaskQueue.java" startLine="85" startPosition="0" endLine="88" endPosition="0" />
-    <scopeInfo nodeId="4707157387247635784" fileName="TaskQueue.java" startLine="89" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="4707157387247635839" fileName="TaskQueue.java" startLine="29" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="4707157387247635863" fileName="TaskQueue.java" startLine="35" startPosition="51" endLine="39" endPosition="7">
+    <nodeInfo nodeId="4707157387247635787" fileName="TaskQueue.java" startLine="13" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFileManagerListener" />
+    <nodeInfo nodeId="4707157387247635792" fileName="TaskQueue.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadListener" />
+    <nodeInfo nodeId="4707157387247635797" fileName="TaskQueue.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myManager" />
+    <nodeInfo nodeId="4707157387247635800" fileName="TaskQueue.java" startLine="16" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myWatcher" />
+    <nodeInfo nodeId="4707157387247635803" fileName="TaskQueue.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVirtualFileManager" />
+    <nodeInfo nodeId="4707157387247635816" fileName="TaskQueue.java" startLine="19" startPosition="109" endLine="20" endPosition="12" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="4707157387247635817" fileName="TaskQueue.java" startLine="20" startPosition="12" endLine="21" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247635821" fileName="TaskQueue.java" startLine="21" startPosition="24" endLine="22" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247635825" fileName="TaskQueue.java" startLine="22" startPosition="24" endLine="23" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247635829" fileName="TaskQueue.java" startLine="23" startPosition="46" endLine="24" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247635834" fileName="TaskQueue.java" startLine="24" startPosition="50" endLine="25" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247635843" fileName="TaskQueue.java" startLine="28" startPosition="25" endLine="29" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247635848" fileName="TaskQueue.java" startLine="29" startPosition="53" endLine="30" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247635864" fileName="TaskQueue.java" startLine="34" startPosition="51" endLine="35" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4707157387247635876" fileName="TaskQueue.java" startLine="36" startPosition="53" endLine="37" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4707157387247635883" fileName="TaskQueue.java" startLine="40" startPosition="50" endLine="41" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4707157387247635890" fileName="TaskQueue.java" startLine="43" startPosition="38" endLine="44" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4707157387247635892" fileName="TaskQueue.java" startLine="45" startPosition="5" endLine="46" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4707157387247635750" fileName="TaskQueue.java" startLine="50" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myVFMBan" />
+    <nodeInfo nodeId="4707157387247635900" fileName="TaskQueue.java" startLine="56" startPosition="18" endLine="57" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4707157387247635901" fileName="TaskQueue.java" startLine="58" startPosition="7" endLine="59" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247635908" fileName="TaskQueue.java" startLine="63" startPosition="18" endLine="64" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4707157387247635909" fileName="TaskQueue.java" startLine="65" startPosition="7" endLine="66" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247635913" fileName="TaskQueue.java" startLine="69" startPosition="31" endLine="70" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4707157387247635772" fileName="TaskQueue.java" startLine="75" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myReloadBan" />
+    <nodeInfo nodeId="4707157387247635920" fileName="TaskQueue.java" startLine="80" startPosition="33" endLine="81" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247635924" fileName="TaskQueue.java" startLine="84" startPosition="34" endLine="85" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4707157387247635928" fileName="TaskQueue.java" startLine="88" startPosition="31" endLine="89" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4707157387247635753" fileName="TaskQueue.java" startLine="52" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BanVFMListener#()V" />
+    <nodeInfo nodeId="4707157387247635775" fileName="TaskQueue.java" startLine="77" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BanReloadListener#()V" />
+    <nodeInfo nodeId="4707157387247635871" fileName="TaskQueue.java" startLine="35" startPosition="83" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4707157387247635878" fileName="TaskQueue.java" startLine="39" startPosition="5" endLine="42" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4707157387247635885" fileName="TaskQueue.java" startLine="42" startPosition="5" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4707157387247635897" fileName="TaskQueue.java" startLine="55" startPosition="51" endLine="58" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4707157387247635905" fileName="TaskQueue.java" startLine="62" startPosition="51" endLine="65" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4707157387247635766" fileName="TaskQueue.java" startLine="69" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBanned#()Z" />
+    <nodeInfo nodeId="4707157387247635778" fileName="TaskQueue.java" startLine="80" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadStarted#()V" />
+    <nodeInfo nodeId="4707157387247635781" fileName="TaskQueue.java" startLine="84" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="reloadFinished#()V" />
+    <nodeInfo nodeId="4707157387247635784" fileName="TaskQueue.java" startLine="88" startPosition="0" endLine="91" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isBanned#()Z" />
+    <nodeInfo nodeId="4707157387247635839" fileName="TaskQueue.java" startLine="28" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="dispose#()V" />
+    <nodeInfo nodeId="4707157387247635857" fileName="TaskQueue.java" startLine="33" startPosition="43" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4707157387247635756" fileName="TaskQueue.java" startLine="55" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="beforeRefreshStart#(Z)V" />
+    <nodeInfo nodeId="4707157387247635761" fileName="TaskQueue.java" startLine="62" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="afterRefreshFinish#(Z)V" />
+    <nodeInfo nodeId="4707157387247635806" fileName="TaskQueue.java" startLine="19" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TaskQueue#(Lcom/intellij/openapi/project/ProjectManager;Ljetbrains/mps/ide/platform/watching/FSChangesWatcher;Lcom/intellij/openapi/vfs/VirtualFileManager;)V" />
+    <nodeInfo nodeId="4707157387247635853" fileName="TaskQueue.java" startLine="33" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isProcessingAllowed#()Z" />
+    <scopeInfo nodeId="4707157387247635895" fileName="TaskQueue.java" startLine="52" startPosition="30" endLine="52" endPosition="30" />
+    <scopeInfo nodeId="4707157387247635918" fileName="TaskQueue.java" startLine="77" startPosition="33" endLine="77" endPosition="33" />
+    <scopeInfo nodeId="4707157387247635875" fileName="TaskQueue.java" startLine="36" startPosition="53" endLine="37" endPosition="21" />
+    <scopeInfo nodeId="4707157387247635882" fileName="TaskQueue.java" startLine="40" startPosition="50" endLine="41" endPosition="19" />
+    <scopeInfo nodeId="4707157387247635889" fileName="TaskQueue.java" startLine="43" startPosition="38" endLine="44" endPosition="19" />
+    <scopeInfo nodeId="4707157387247635899" fileName="TaskQueue.java" startLine="56" startPosition="18" endLine="57" endPosition="15" />
+    <scopeInfo nodeId="4707157387247635907" fileName="TaskQueue.java" startLine="63" startPosition="18" endLine="64" endPosition="15" />
+    <scopeInfo nodeId="4707157387247635912" fileName="TaskQueue.java" startLine="69" startPosition="31" endLine="70" endPosition="27" />
+    <scopeInfo nodeId="4707157387247635919" fileName="TaskQueue.java" startLine="80" startPosition="33" endLine="81" endPosition="20" />
+    <scopeInfo nodeId="4707157387247635923" fileName="TaskQueue.java" startLine="84" startPosition="34" endLine="85" endPosition="20" />
+    <scopeInfo nodeId="4707157387247635927" fileName="TaskQueue.java" startLine="88" startPosition="31" endLine="89" endPosition="30" />
+    <scopeInfo nodeId="4707157387247635842" fileName="TaskQueue.java" startLine="28" startPosition="25" endLine="30" endPosition="88" />
+    <scopeInfo nodeId="4707157387247635753" fileName="TaskQueue.java" startLine="52" startPosition="0" endLine="54" endPosition="0" />
+    <scopeInfo nodeId="4707157387247635775" fileName="TaskQueue.java" startLine="77" startPosition="0" endLine="79" endPosition="0" />
+    <scopeInfo nodeId="4707157387247635766" fileName="TaskQueue.java" startLine="69" startPosition="0" endLine="72" endPosition="0" />
+    <scopeInfo nodeId="4707157387247635778" fileName="TaskQueue.java" startLine="80" startPosition="0" endLine="83" endPosition="0" />
+    <scopeInfo nodeId="4707157387247635781" fileName="TaskQueue.java" startLine="84" startPosition="0" endLine="87" endPosition="0" />
+    <scopeInfo nodeId="4707157387247635784" fileName="TaskQueue.java" startLine="88" startPosition="0" endLine="91" endPosition="0" />
+    <scopeInfo nodeId="4707157387247635839" fileName="TaskQueue.java" startLine="28" startPosition="0" endLine="32" endPosition="0" />
+    <scopeInfo nodeId="4707157387247635863" fileName="TaskQueue.java" startLine="34" startPosition="51" endLine="38" endPosition="7">
       <varInfo nodeId="4707157387247635865" varName="vcsMan" />
     </scopeInfo>
-    <scopeInfo nodeId="4707157387247635896" fileName="TaskQueue.java" startLine="56" startPosition="51" endLine="60" endPosition="17" />
-    <scopeInfo nodeId="4707157387247635904" fileName="TaskQueue.java" startLine="63" startPosition="51" endLine="67" endPosition="17" />
-    <scopeInfo nodeId="4707157387247635815" fileName="TaskQueue.java" startLine="20" startPosition="109" endLine="26" endPosition="85" />
-    <scopeInfo nodeId="4707157387247635857" fileName="TaskQueue.java" startLine="34" startPosition="43" endLine="40" endPosition="5">
+    <scopeInfo nodeId="4707157387247635896" fileName="TaskQueue.java" startLine="55" startPosition="51" endLine="59" endPosition="17" />
+    <scopeInfo nodeId="4707157387247635904" fileName="TaskQueue.java" startLine="62" startPosition="51" endLine="66" endPosition="17" />
+    <scopeInfo nodeId="4707157387247635815" fileName="TaskQueue.java" startLine="19" startPosition="109" endLine="25" endPosition="85" />
+    <scopeInfo nodeId="4707157387247635857" fileName="TaskQueue.java" startLine="33" startPosition="43" endLine="39" endPosition="5">
       <varInfo nodeId="4707157387247635861" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="4707157387247635756" fileName="TaskQueue.java" startLine="56" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="4707157387247635756" fileName="TaskQueue.java" startLine="55" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="4707157387247635759" varName="async" />
     </scopeInfo>
-    <scopeInfo nodeId="4707157387247635761" fileName="TaskQueue.java" startLine="63" startPosition="0" endLine="69" endPosition="0">
+    <scopeInfo nodeId="4707157387247635761" fileName="TaskQueue.java" startLine="62" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="4707157387247635764" varName="async" />
     </scopeInfo>
-    <scopeInfo nodeId="4707157387247635806" fileName="TaskQueue.java" startLine="20" startPosition="0" endLine="28" endPosition="0">
+    <scopeInfo nodeId="4707157387247635806" fileName="TaskQueue.java" startLine="19" startPosition="0" endLine="27" endPosition="0">
       <varInfo nodeId="4707157387247635809" varName="manager" />
       <varInfo nodeId="4707157387247635813" varName="virtualFileManager" />
       <varInfo nodeId="4707157387247635811" varName="watcher" />
     </scopeInfo>
-    <scopeInfo nodeId="4707157387247635856" fileName="TaskQueue.java" startLine="34" startPosition="43" endLine="47" endPosition="16" />
-    <scopeInfo nodeId="4707157387247635853" fileName="TaskQueue.java" startLine="34" startPosition="0" endLine="49" endPosition="0" />
-    <unitInfo nodeId="4707157387247635769" fileName="TaskQueue.java" startLine="75" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.TaskQueue$BanReloadListener" />
-    <unitInfo nodeId="4707157387247635747" fileName="TaskQueue.java" startLine="50" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.TaskQueue$BanVFMListener" />
-    <unitInfo nodeId="4707157387247635742" fileName="TaskQueue.java" startLine="13" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.TaskQueue" />
+    <scopeInfo nodeId="4707157387247635856" fileName="TaskQueue.java" startLine="33" startPosition="43" endLine="46" endPosition="16" />
+    <scopeInfo nodeId="4707157387247635853" fileName="TaskQueue.java" startLine="33" startPosition="0" endLine="48" endPosition="0" />
+    <unitInfo nodeId="4707157387247635769" fileName="TaskQueue.java" startLine="74" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.TaskQueue$BanReloadListener" />
+    <unitInfo nodeId="4707157387247635747" fileName="TaskQueue.java" startLine="49" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.TaskQueue$BanVFMListener" />
+    <unitInfo nodeId="4707157387247635742" fileName="TaskQueue.java" startLine="12" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.vcs.suspicious.TaskQueue" />
   </root>
 </debugInfo>
 

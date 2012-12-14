@@ -88,7 +88,6 @@ import jetbrains.mps.smodel.SReference;
 import com.intellij.openapi.util.registry.Registry;
 import jetbrains.mps.TestMain;
 import org.junit.AfterClass;
-import jetbrains.mps.reloading.IReloadListener;
 
 public class ChangesManagerTest {
   private static final File DESTINATION_PROJECT_DIR = new File(FileUtil.getTempDir(), "testConflicts");
@@ -981,7 +980,7 @@ public class ChangesManagerTest {
     TestMain.finishTestOnProjectCopy(ourProject, DESTINATION_PROJECT_DIR);
   }
 
-  private class MyReloadListener implements IReloadListener {
+  private class MyReloadListener implements FSChangesWatcher.IReloadListener {
     public MyReloadListener() {
     }
 
