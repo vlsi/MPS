@@ -21,7 +21,6 @@ import jetbrains.mps.make.IMakeService;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.MPSCore;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import com.intellij.util.ui.update.Update;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vcs.ProjectLevelVcsManager;
@@ -144,9 +143,7 @@ public class FSChangesWatcher extends ReloadListenerContainer implements Applica
     myVirtualFileManager.removeVirtualFileManagerListener(myVirtualFileManagerListener);
     myConnection.disconnect();
     myConnection = null;
-    for (IReloadListener listener : SetSequence.fromSet(myReloadListeners)) {
-      removeReloadListener(listener);
-    }
+    myReloadListeners.clear();
     dispose();
   }
 

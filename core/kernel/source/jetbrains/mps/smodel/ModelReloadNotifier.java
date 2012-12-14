@@ -15,50 +15,57 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.reloading.IReloadListener;
-import jetbrains.mps.reloading.ReloadListenerContainer;
+import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 
 import java.util.HashSet;
-import java.util.LinkedHashSet;
+import java.util.LinkedHashMap;
+import java.util.Map;
 import java.util.Set;
 
 /**
  * Semen Alperovich
  * Dec 13, 1012
  */
-public class ModelReloadNotifier {
+public class ModelReloadNotifier implements CoreComponent {
 
-  private Set<ModelReloadListener> myListeners = new HashSet<ModelReloadListener>();
-  private Set<SModelDescriptor> myReloadingDescriptorQueue = new LinkedHashSet<SModelDescriptor>();
+  private static ModelReloadNotifier INSTANCE;
 
+  private final Set<ModelReloadListener> myListeners = new HashSet<ModelReloadListener>();
+  private final Map<SModelDescriptor, SModel> myReloadingDescriptorQueue = new LinkedHashMap<SModelDescriptor, SModel>();
 
-  public ModelReloadNotifier() {
-    ReloadListenerContainer.getInstance().addReloadListener(new IReloadListener() {
-      @Override
-      public void reloadStarted() {
-
-      }
-
-      @Override
-      public void reloadFinished() {
-        notifyAfterReload();
-      }
-    });
+  public static ModelReloadNotifier getInstance() {
+    return INSTANCE;
   }
 
-  public void reloadModels(Set<SModelDescriptor> modelDescriptors) {
+  public void reloadModelsFromDisk(Set<EditableSModelDescriptor> modelDescriptors) {
+    ModelAccess.assertLegalWrite();
+
+
+    for (EditableSModelDescriptor descriptor : modelDescriptors) {
+      descriptor.reloadFromDisk();
+    }
+
+
   }
 
   public void addListener(ModelReloadListener listener) {
-    myListeners.add(listener);
+    synchronized (myListeners) {
+      myListeners.add(listener);
+    }
   }
 
-  void reloadLater(SModelDescriptor modelDescriptor) {
-    /*remove model;
-    * add model;*/
+  void notifyLater(BaseSModelDescriptor modelDescriptor) {
+    ModelAccess.assertLegalWrite();
+    SModel oldModel = modelDescriptor.getCurrentModelInternal();
 
-    myReloadingDescriptorQueue.add(modelDescriptor);
+    if (myReloadingDescriptorQueue.isEmpty()) {
+      notifyAfterReload();
+    }
 
+    synchronized (myReloadingDescriptorQueue) {
+      myReloadingDescriptorQueue.put(modelDescriptor, oldModel);
+    }
 
   }
 
@@ -66,10 +73,19 @@ public class ModelReloadNotifier {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        fireReload(myReloadingDescriptorQueue);
-        for (SModelDescriptor modelDescriptor : myReloadingDescriptorQueue) {
-          //dispose model;
+        if (myReloadingDescriptorQueue.isEmpty()) {
+          return;
         }
+
+        fireReload(myReloadingDescriptorQueue.keySet());
+        for (SModelDescriptor modelDescriptor : myReloadingDescriptorQueue.keySet()) {
+          SModel oldModel = myReloadingDescriptorQueue.get(modelDescriptor);
+          if (oldModel != null) {
+            oldModel.dispose();
+          }
+        }
+
+        myReloadingDescriptorQueue.clear();
       }
     });
   }
@@ -78,5 +94,22 @@ public class ModelReloadNotifier {
     for (ModelReloadListener reloadListener : myListeners) {
       reloadListener.modelsReloaded(modelDescriptors);
     }
+  }
+
+  @Override
+  public void init() {
+    if (INSTANCE != null) {
+      throw new IllegalStateException("double initialization");
+    }
+
+    INSTANCE = this;
+
+  }
+
+
+  @Override
+  public void dispose() {
+    myListeners.clear();
+    myReloadingDescriptorQueue.clear();
   }
 }
