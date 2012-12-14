@@ -1090,13 +1090,13 @@
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="7016215775330868316">
           <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="7016215775330868317">
             <property name="name" nameId="tpck.1169194664001" value="bin" />
+            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3025023396748391193">
+              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8uhb.~JavaStubs" resolveInfo="JavaStubs" />
+            </node>
             <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="7016215775330876812">
               <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="7016215775330876814">
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8uhb.~JavaStubs%d&lt;init&gt;()" resolveInfo="JavaStubs" />
               </node>
-            </node>
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="7016215775330881238">
-              <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8uhb.~JavaStubs" resolveInfo="JavaStubs" />
             </node>
           </node>
         </node>

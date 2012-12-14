@@ -178,7 +178,7 @@ public class Utils {
     IModule mod2 = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("49166c31-952a-46f6-8970-ea45964379d0"));
 
     List<SModel> binModels = ListSequence.fromList(new ArrayList<SModel>());
-    SModelRoot binSRoot = new SModelRoot(null);
+    SModelRoot binSRoot = new SModelRoot();
     binSRoot.setModule(mod1);
     binSRoot.setPath(binPath);
     Collection<SModelDescriptor> binStubModels = bin.load(binSRoot);
@@ -255,10 +255,10 @@ public class Utils {
       SModel binModel = MapSequence.fromMap(leftModelMap).get(name);
       SModel srcModel = MapSequence.fromMap(rightModelMap).get(name);
 
-      errors = compare2models(binModel, srcModel, classMap);
+      errors = compare2models(binModel, srcModel, classMap) || errors;
     }
 
-    Assert.assertFalse(errors);
+    Assert.assertFalse("Models differ", errors);
   }
 
   public static boolean compare2models(SModel left, SModel right, Map<SNode, SNode> nodeMap) {
@@ -281,7 +281,7 @@ public class Utils {
     List<NodeDifference> diff = NodesMatcher.matchNodes(binRoots, srcRoots, nodeMap);
     if (diff != null) {
       wereErrors = true;
-      System.err.println("Diff: " + diff);
+      System.out.println("Diff: " + diff);
     }
     return wereErrors;
   }
