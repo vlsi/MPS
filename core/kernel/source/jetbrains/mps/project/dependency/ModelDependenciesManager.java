@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModel;
 
+import java.util.Collection;
 import java.util.LinkedHashSet;
 import java.util.Set;
 
@@ -31,7 +32,7 @@ public class ModelDependenciesManager {
     myModel = model;
   }
 
-  public Iterable<ModuleReference> getAllImportedLanguages() {
+  public Collection<ModuleReference> getAllImportedLanguages() {
     Set<ModuleReference> result = new LinkedHashSet<ModuleReference>();
     result.addAll(myModel.importedLanguages());
     for (ModuleReference dk : myModel.importedDevkits()) {
