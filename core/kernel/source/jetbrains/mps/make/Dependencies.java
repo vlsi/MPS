@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.util.FlattenIterable;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.File;
 import java.util.*;
@@ -65,12 +66,20 @@ class Dependencies {
     }
   }
 
+  @Nullable
   private File getJavaFile(String fqName) {
     IModule m = myModules.get(fqName);
     if (m == null) return null;
 
-    String outputPath = m.getGeneratorOutputPath() + File.separator + NameUtil.pathFromNamespace(fqName) + MPSExtentions.DOT_JAVAFILE;
-    return new File(outputPath);
+    for (String path : m.getSourcePaths()) {
+      String outputPath = path + File.separator + NameUtil.pathFromNamespace(fqName) + MPSExtentions.DOT_JAVAFILE;
+      File outputFile = new File(outputPath);
+      if (outputFile.exists()) {
+        return outputFile;
+      }
+    }
+
+    return null;
   }
 
   private void collectDependencies(IModule m) {
@@ -102,7 +111,7 @@ class Dependencies {
     long value = myLastModified.get(fqName);
     if (value == 0) {
       File iFile = getJavaFile(fqName);
-      value = iFile.lastModified();
+      value = (iFile != null) ? iFile.lastModified() : 0;
       myLastModified.put(fqName, value == 0 ? -1 : 0);
     }
 
