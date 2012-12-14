@@ -38,8 +38,7 @@
     <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
     <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
     <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
-    <fileset file="${artifacts.IDEA}/lib/asm.jar" />
-    <fileset file="${mps_home}/lib/asm-tree-3.3.jar" />
+    <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
     <fileset file="${mps_home}/lib/diffutils-1.2.1.jar" />
   </path>
   
@@ -61,10 +60,7 @@
     <mkdir dir="${build.layout}/mps-core" />
     <mkdir dir="${build.layout}/mps-core/lib" />
     <copy todir="${build.layout}/mps-core/lib">
-      <fileset file="${mps_home}/lib/asm.jar" />
-    </copy>
-    <copy todir="${build.layout}/mps-core/lib">
-      <fileset file="${mps_home}/lib/asm-tree-3.3.jar" />
+      <fileset file="${mps_home}/lib/asm4-all.jar" />
     </copy>
     <copy todir="${build.layout}/mps-core/lib">
       <fileset file="${mps_home}/lib/diffutils-1.2.1.jar" />

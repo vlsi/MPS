@@ -54,8 +54,6 @@
       <fileset dir="${artifacts.buildCoreEx}/plugins/mps-core/languages" />
     </copy>
     <mkdir dir="${build.layout}/mps-core/lib" />
-    <copy file="${artifacts.buildCore}/mps-core/lib/asm.jar" todir="${build.layout}/mps-core/lib" />
-    <copy file="${artifacts.buildCore}/mps-core/lib/asm-tree-3.3.jar" todir="${build.layout}/mps-core/lib" />
     <copy file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" todir="${build.layout}/mps-core/lib" />
     <copy file="${artifacts.buildCore}/mps-core/lib/mps-backend.jar" todir="${build.layout}/mps-core/lib" />
     <copy file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" todir="${build.layout}/mps-core/lib" />
@@ -215,8 +213,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/asm-tree-3.3.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
@@ -250,8 +247,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/asm-tree-3.3.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
         <path refid="path.jdk.classpath" />
@@ -289,8 +285,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/asm-tree-3.3.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
         <path refid="path.jdk.classpath" />
@@ -323,8 +318,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/asm-tree-3.3.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <path refid="path.java.library.idea-vcs" />
         <path refid="path.jdk.classpath" />
@@ -362,8 +356,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/asm-tree-3.3.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <path refid="path.java.library.idea-vcs" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
@@ -412,8 +405,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/asm-tree-3.3.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <path refid="path.jdk.classpath" />
@@ -453,8 +445,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/asm-tree-3.3.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
@@ -490,8 +481,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
-        <fileset file="${artifacts.IDEA}/lib/asm.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/asm-tree-3.3.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>

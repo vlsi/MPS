@@ -188,8 +188,9 @@ public class CommonPaths {
     addIfExists(result, "/lib/xstream-1.4.3.jar");
     addIfExists(result, "/lib/diffutils-1.2.1.jar");
     addIfExists(result, "/lib/commons-logging-1.1.1.jar");
-    addIfExists(result, "/lib/asm.jar");
-    addIfExists(result, "/lib/asm-tree-3.3.jar");
+    addIfExists(result, "/lib/asm4-all.jar");
+//    addIfExists(result, "/lib/asm.jar");
+//    addIfExists(result, "/lib/asm-tree-3.3.jar");
   }
 
   private static void addEditorJars(CompositeClassPathItem result) {
