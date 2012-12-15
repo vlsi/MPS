@@ -84,12 +84,10 @@
         <fileset file="${artifacts.buildMPS}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.buildMPS}/lib/annotations.jar" />
         <fileset file="${artifacts.buildMPS}/lib/ecj-4.2.jar" />
-        <fileset file="${artifacts.buildMPS}/lib/guava-12.0.jar" />
         <fileset file="${artifacts.buildMPS}/lib/jdom.jar" />
         <fileset file="${artifacts.buildMPS}/lib/log4j.jar" />
         <fileset file="${artifacts.buildMPS}/lib/trove4j.jar" />
         <fileset file="${artifacts.buildMPS}/lib/xstream-1.4.3.jar" />
-        <fileset file="${artifacts.buildMPS}/lib/commons-logging-1.1.1.jar" />
         <fileset file="${artifacts.buildMPS}/lib/asm4-all.jar" />
         <fileset file="${artifacts.buildMPS}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.buildMPS}/lib" includes="*.jar" />

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="6792046066743130" modelId="r:91fb18c7-a74a-4784-95fb-46b200b2b62a(org.jetbrains.mps.samples.Build.build)">
-    <unitInfo nodeId="6792046066743130" fileName="build.xml" startLine="1" startPosition="0" endLine="400" endPosition="10" unitName="org.jetbrains.mps.samples.Build.build.build" />
+    <unitInfo nodeId="6792046066743130" fileName="build.xml" startLine="1" startPosition="0" endLine="392" endPosition="10" unitName="org.jetbrains.mps.samples.Build.build.build" />
   </root>
 </debugInfo>
 

@@ -14,7 +14,6 @@
     <orderEntry type="module" module-name="kernel" />
     <orderEntry type="module" module-name="editor-runtime" />
     <orderEntry type="module" module-name="collections-runtime" />
-    <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
   </component>
 </module>

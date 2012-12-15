@@ -35,7 +35,6 @@
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" name="Trove" level="project" />
     <orderEntry type="library" name="JMock" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Commons-logging" level="project" />
     <orderEntry type="library" name="Ant" level="project" />
     <orderEntry type="library" name="Diff-utils" level="project" />
     <orderEntry type="library" name="JUnit4" level="project" />
