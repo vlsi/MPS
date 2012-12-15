@@ -95,7 +95,7 @@ public class GenerateTaskFilesCreationTest {
     File destdir = extractProject(projectName);
 
     Script whatToDo = new Script();
-    whatToDo.updateLogLevel(Level.OFF);
+    whatToDo.updateLogLevel(Level.WARN);
     whatToDo.addModuleFile(new File(getLanguagePath(destdir, projectName, languageName) + File.separator + languageName + ".mpl"));
     doGenerate(whatToDo);
 
@@ -133,7 +133,7 @@ public class GenerateTaskFilesCreationTest {
     File destdir = extractProject(projectName);
 
     Script whatToDo = new Script();
-    whatToDo.updateLogLevel(Level.OFF);
+    whatToDo.updateLogLevel(Level.WARN);
     whatToDo.putProperty(ScriptProperties.COMPILE, Boolean.toString(true));
     whatToDo.addProjectFile(new File(destdir.getAbsolutePath() + File.separator + projectName + File.separator + projectName + ".mpr"));
     doGenerate(whatToDo);
