@@ -1,5 +1,7 @@
 package jetbrains.mps.jps.project;
 
+import com.intellij.openapi.util.io.FileUtil;
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.idea.core.make.MPSCompilerUtil;
 import jetbrains.mps.idea.core.project.JpsModelRootContributor;
 import jetbrains.mps.jps.model.JpsMPSRepositoryFacade;
@@ -16,13 +18,13 @@ import org.jetbrains.jps.model.java.JpsJavaExtensionService;
 import org.jetbrains.jps.model.module.JpsDependencyElement;
 import org.jetbrains.jps.model.module.JpsModule;
 import org.jetbrains.jps.service.JpsServiceManager;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
+import java.util.concurrent.atomic.AtomicReference;
 
 /**
  * danilla 12/10/12
@@ -33,6 +35,7 @@ public class JpsSolutionIdea extends Solution {
     private JpsModule myModule;
     private Set<ModelRoot> myContributedModelRoots;
     private CompileContext myCompileContext;
+    private AtomicReference<Map<String, SModel>> myPathToModel = new AtomicReference<Map<String, SModel>>();
 
     public JpsSolutionIdea(@NotNull JpsModule module, SolutionDescriptor descriptor, CompileContext compileCtx) {
         super(descriptor, null);
@@ -41,10 +44,29 @@ public class JpsSolutionIdea extends Solution {
         myCompileContext = compileCtx;
     }
 
-    public JpsModule getJpsModule() {
+    public JpsModule getModule() {
         return myModule;
     }
 
+    public SModel getModelByPath(String path) {
+        Map<String, SModel> map = myPathToModel.get();
+        if (map != null) {
+            return map.get(path);
+        }
+
+        map = new HashMap<String, SModel>();
+        for (SModel m : getModels()) {
+            DataSource source = m.getSource();
+            if (source instanceof FileDataSource) {
+                String p = ((FileDataSource) source).getFile().getPath();
+                p = FileUtil.toCanonicalPath(p);
+                map.put(p, m);
+            }
+        }
+
+        myPathToModel.compareAndSet(null, map);
+        return map.get(path);
+    }
 
     @Override
     public List<Dependency> getDependencies() {
