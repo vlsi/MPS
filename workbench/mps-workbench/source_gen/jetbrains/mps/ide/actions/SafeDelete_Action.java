@@ -8,6 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -46,12 +47,17 @@ public class SafeDelete_Action extends BaseAction {
       return false;
     }
     {
-      SNode node = event.getData(MPSCommonDataKeys.NODE);
-      if (node != null) {
+      List<SNode> nodes = event.getData(MPSCommonDataKeys.NODES);
+      boolean error = false;
+      if (nodes != null) {
       }
-      MapSequence.fromMap(_params).put("node", node);
+      if (error || nodes == null) {
+        MapSequence.fromMap(_params).put("nodes", null);
+      } else {
+        MapSequence.fromMap(_params).put("nodes", ListSequence.fromListWithValues(new ArrayList<SNode>(), nodes));
+      }
     }
-    if (MapSequence.fromMap(_params).get("node") == null) {
+    if (MapSequence.fromMap(_params).get("nodes") == null) {
       return false;
     }
     return true;
@@ -59,7 +65,7 @@ public class SafeDelete_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new DeleteNodesHelper(ListSequence.fromListAndArray(new ArrayList<SNode>(), ((SNode) MapSequence.fromMap(_params).get("node"))), ((IOperationContext) MapSequence.fromMap(_params).get("context"))).deleteNodes(true, true, false);
+      new DeleteNodesHelper(((List<SNode>) MapSequence.fromMap(_params).get("nodes")), ((IOperationContext) MapSequence.fromMap(_params).get("context"))).deleteNodes(true, true, false);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "SafeDelete", t);
     }

@@ -19,10 +19,7 @@ import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Collections;
-import java.util.HashSet;
 import java.util.Set;
-import java.util.zip.ZipEntry;
-import java.util.zip.ZipFile;
 
 public class AbstractJarFileData {
   protected File myFile;
@@ -48,21 +45,13 @@ public class AbstractJarFileData {
   }
 
   boolean isDirectory(String path) {
-     return false;
+    return false;
   }
 
   String getParentDirectory(String dir) {
     int lastSlash = dir.lastIndexOf("/");
     if (lastSlash == -1) return "";
     return dir.substring(0, lastSlash);
-  }
-
-  protected Set<String> getDirectoriesFor(String dir) {
-    return Collections.emptySet();
-  }
-
-  protected Set<String> getFilesFor(String dir) {
-    return Collections.emptySet();
   }
 
   InputStream openStream(String path) throws IOException {

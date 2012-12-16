@@ -171,7 +171,8 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   protected void setModuleReference(@NotNull ModuleReference reference) {
-    LOG.assertLog(myModuleReference == null || EqualUtil.equals(myModuleReference.getModuleId(), reference.getModuleId()), reference.getModuleFqName());
+    assert reference.getModuleId() != null : "module must have an id";
+    assert myModuleReference == null || reference.getModuleId().equals(myModuleReference.getModuleId()) : "module id can't be changed";
 
     ModuleReference oldValue = myModuleReference;
     myModuleReference = reference;
@@ -184,6 +185,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   }
 
   @NotNull
+  //module reference is immutable, so we cn return original
   public ModuleReference getModuleReference() {
     return myModuleReference;
   }
@@ -408,9 +410,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     descriptor.getModelRootDescriptors().removeAll(toRemove);
 
     if (addBundleAsModelRoot) {
-      SModelRoot mr = new SModelRoot(LanguageID.JAVA_MANAGER);
-      mr.setPath(bundleHomeFile.getPath());
-      descriptor.getModelRootDescriptors().add(mr.toDescriptor());
+      descriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(bundleHomeFile.getPath()));
     }
     if (dd == null) {
       return;
@@ -421,10 +421,9 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
         ? FileSystem.getInstance().getFileByPath(PathManager.getHomePath() + jarFile)
         : bundleParent.getDescendant(jarFile);
       if (jar.exists()) {
-        SModelRoot mr = new SModelRoot(LanguageID.JAVA_MANAGER);
-        mr.setPath(jar.getPath());
-        descriptor.getAdditionalJavaStubPaths().add(mr.getPath());
-        descriptor.getModelRootDescriptors().add(mr.toDescriptor());
+        String path = jar.getPath();
+        descriptor.getAdditionalJavaStubPaths().add(path);
+        descriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(path));
       }
     }
   }

@@ -50,7 +50,7 @@ public class IntelligentInputUtil {
       public Boolean compute() {
         return TypeContextManager.getInstance().runTypeCheckingComputation(
           (ITypeContextOwner)editorContext.getEditorComponent(),
-          editorContext.getEditorComponent().getEditedNode().getTopmostAncestor(),
+          editorContext.getEditorComponent().getEditedNode(),
           new Computation<Boolean>() {
           @Override
           public Boolean compute(TypeCheckingContext context) {

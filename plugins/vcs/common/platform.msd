@@ -2,12 +2,8 @@
 <solution name="jetbrains.mps.ide.vcs.platform" uuid="6fd1293f-7f65-4ffd-99dc-4719eca7c171" pluginKind="PLUGIN_OTHER" compileInMPS="false" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot path="${module}/models" />
-    <modelRoot path="${mps_home}/plugins/svn4idea/lib/svn4idea.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/plugins/git4idea/lib/git4idea.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
+    <modelRoot path="${mps_home}/plugins/svn4idea/lib/svn4idea.jar" type="java_classes" />
+    <modelRoot path="${mps_home}/plugins/git4idea/lib/git4idea.jar" type="java_classes" />
   </models>
   <sourcePath />
   <dependencies>

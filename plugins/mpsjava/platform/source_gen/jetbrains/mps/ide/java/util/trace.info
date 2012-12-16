@@ -143,7 +143,7 @@
     <nodeInfo nodeId="1418985936284183725" fileName="JavaPaster.java" startLine="141" startPosition="134" endLine="146" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1333741215284452141" fileName="JavaPaster.java" startLine="161" startPosition="5" endLine="166" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5646944109420336615" fileName="JavaPaster.java" startLine="59" startPosition="33" endLine="65" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="5646944109420336553" fileName="JavaPaster.java" startLine="42" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pasteJava#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/ide/java/parser/FeatureKind;Ljetbrains/mps/project/Project;)V" />
+    <nodeInfo nodeId="5646944109420336553" fileName="JavaPaster.java" startLine="42" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pasteJava#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/ide/java/newparser/FeatureKind;Ljetbrains/mps/project/Project;)V" />
     <nodeInfo nodeId="5646944109420336582" fileName="JavaPaster.java" startLine="50" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pasteJavaAsClass#(Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/project/Project;)V" />
     <nodeInfo nodeId="3256924578580258449" fileName="JavaPaster.java" startLine="170" startPosition="0" endLine="178" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getStatementsFromJavaText#(Ljava/lang/String;Ljetbrains/mps/smodel/SModel;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/project/Project;)Ljava/util/List;" />
     <nodeInfo nodeId="5646944109420336650" fileName="JavaPaster.java" startLine="69" startPosition="66" endLine="79" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
@@ -156,7 +156,7 @@
     <nodeInfo nodeId="5646944109420336607" fileName="JavaPaster.java" startLine="58" startPosition="0" endLine="83" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStringFromClipboard#()Ljava/lang/String;" />
     <nodeInfo nodeId="5611348363757625096" fileName="JavaPaster.java" startLine="96" startPosition="7" endLine="130" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
     <nodeInfo nodeId="5646944109420336717" fileName="JavaPaster.java" startLine="89" startPosition="0" endLine="133" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="5646944109420336685" fileName="JavaPaster.java" startLine="84" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pasteJavaAsNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;Ljava/lang/String;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/ide/java/parser/FeatureKind;Ljetbrains/mps/project/Project;)V" />
+    <nodeInfo nodeId="5646944109420336685" fileName="JavaPaster.java" startLine="84" startPosition="0" endLine="135" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="pasteJavaAsNode#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SModel;Ljava/lang/String;Ljetbrains/mps/smodel/IOperationContext;Ljetbrains/mps/ide/java/newparser/FeatureKind;Ljetbrains/mps/project/Project;)V" />
     <scopeInfo nodeId="5646944109420336552" fileName="JavaPaster.java" startLine="39" startPosition="23" endLine="39" endPosition="23" />
     <scopeInfo nodeId="5611348363757625098" fileName="JavaPaster.java" startLine="129" startPosition="16" endLine="129" endPosition="16" />
     <scopeInfo nodeId="3256924578580312335" fileName="JavaPaster.java" startLine="174" startPosition="0" endLine="174" endPosition="43">
@@ -500,12 +500,6 @@
     <unitInfo nodeId="2742102018362199421" fileName="StubResolver.java" startLine="149" startPosition="85" endLine="157" endPosition="9" unitName="jetbrains.mps.ide.java.util.StubResolver$4" />
     <unitInfo nodeId="5778265495851109956" fileName="StubResolver.java" startLine="45" startPosition="0" endLine="181" endPosition="0" unitName="jetbrains.mps.ide.java.util.StubResolver" />
   </root>
-  <root nodeId="8183587472722977035" modelId="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)">
-    <nodeInfo nodeId="8183587472722977045" fileName="SolutionIds.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="stubManagerSltn" />
-    <nodeInfo nodeId="8183587472722977037" fileName="SolutionIds.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SolutionIds#()V" />
-    <scopeInfo nodeId="8183587472722977040" fileName="SolutionIds.java" startLine="12" startPosition="24" endLine="12" endPosition="24" />
-    <scopeInfo nodeId="8183587472722977037" fileName="SolutionIds.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
-    <unitInfo nodeId="8183587472722977035" fileName="SolutionIds.java" startLine="9" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.ide.java.util.SolutionIds" />
-  </root>
+  <root nodeId="8183587472722977035" modelId="r:ba675e48-daa4-42f0-bb41-6ecb53e4758b(jetbrains.mps.ide.java.util)" />
 </debugInfo>
 

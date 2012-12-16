@@ -6,11 +6,12 @@ import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.annotations.Nullable;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.NameUtil;
 import com.intellij.openapi.ui.Messages;
 
@@ -22,12 +23,41 @@ public class MergeConfirmation {
   private MergeConfirmation() {
   }
 
-  public static void showMergeConfirmationAndTakeAction(DialogWrapper dialog, MergeSession mergeSession, Iterable<ModelChange> allRelevantChanges, final _FunctionTypes._void_P0_E0 resolveTask, final _FunctionTypes._void_P0_E0 saveAndCloseTask) {
-    int result = MergeConfirmation.showMergeConfirmationIfNeeded(dialog, mergeSession, allRelevantChanges);
-    if (result == MergeConfirmation.RETURN) {
-    } else if (result == MergeConfirmation.SAVE_AS_IS) {
+  public static void showMergeConfirmationAndTakeAction(DialogWrapper dialog, MergeSession mergeSession, Iterable<ModelChange> allRelevantChanges, _FunctionTypes._void_P0_E0 resolveTask, _FunctionTypes._void_P0_E0 saveAndCloseTask) {
+    showMergeConfirmationAndTakeAction(dialog, mergeSession, allRelevantChanges, null, null, resolveTask, saveAndCloseTask);
+  }
+
+  public static void showMergeConfirmationAndTakeAction(DialogWrapper dialog, final MergeSession mergeSession, Iterable<ModelChange> allRelevantChanges, @Nullable final MergeSession mergeSession2, Iterable<ModelChange> allRelevantChanges2, final _FunctionTypes._void_P0_E0 resolveTask, final _FunctionTypes._void_P0_E0 saveAndCloseTask) {
+    List<ModelChange> changes = Sequence.fromIterable(allRelevantChanges).where(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange ch) {
+        return !(mergeSession.isChangeResolved(ch));
+      }
+    }).toListSequence();
+    int nChanges = ListSequence.fromList(changes).count();
+    int nConflicts = ListSequence.fromList(changes).where(new IWhereFilter<ModelChange>() {
+      public boolean accept(ModelChange ch) {
+        return Sequence.fromIterable(mergeSession.getConflictedWith(ch)).isNotEmpty();
+      }
+    }).count();
+    if (mergeSession2 != null) {
+      changes = Sequence.fromIterable(allRelevantChanges2).where(new IWhereFilter<ModelChange>() {
+        public boolean accept(ModelChange ch) {
+          return !(mergeSession2.isChangeResolved(ch));
+        }
+      }).toListSequence();
+      nChanges += ListSequence.fromList(changes).count();
+      nConflicts += ListSequence.fromList(changes).where(new IWhereFilter<ModelChange>() {
+        public boolean accept(ModelChange ch) {
+          return Sequence.fromIterable(mergeSession2.getConflictedWith(ch)).isNotEmpty();
+        }
+      }).count();
+    }
+
+    int result = MergeConfirmation.showMergeConfirmationIfNeeded(dialog, nChanges, nConflicts);
+    if (result == RETURN) {
+    } else if (result == SAVE_AS_IS) {
       saveAndCloseTask.invoke();
-    } else if (result == MergeConfirmation.RESOLVE_AUTOMATICALLY) {
+    } else if (result == RESOLVE_AUTOMATICALLY) {
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
         public void run() {
           resolveTask.invoke();
@@ -37,23 +67,13 @@ public class MergeConfirmation {
     }
   }
 
-  private static int showMergeConfirmationIfNeeded(DialogWrapper dialog, final MergeSession mergeSession, Iterable<ModelChange> allRelevantChanges) {
-    List<ModelChange> changes = Sequence.fromIterable(allRelevantChanges).where(new IWhereFilter<ModelChange>() {
-      public boolean accept(ModelChange ch) {
-        return !(mergeSession.isChangeResolved(ch));
-      }
-    }).toListSequence();
-    Iterable<ModelChange> conflictedChanges = ListSequence.fromList(changes).where(new IWhereFilter<ModelChange>() {
-      public boolean accept(ModelChange ch) {
-        return Sequence.fromIterable(mergeSession.getConflictedWith(ch)).isNotEmpty();
-      }
-    });
-    if (Sequence.fromIterable(conflictedChanges).count() != 0) {
-      return showUnresolvedConflictsConfirmation(dialog, Sequence.fromIterable(conflictedChanges).count());
-    } else if (ListSequence.fromList(changes).count() != 0) {
-      return showUnresolvedChangesConfirmation(dialog, ListSequence.fromList(changes).count());
+  private static int showMergeConfirmationIfNeeded(DialogWrapper dialog, int changes, int conflicted) {
+    if (conflicted != 0) {
+      return showUnresolvedConflictsConfirmation(dialog, conflicted);
+    } else if (changes != 0) {
+      return showUnresolvedChangesConfirmation(dialog, changes);
     }
-    return MergeConfirmation.SAVE_AS_IS;
+    return SAVE_AS_IS;
   }
 
   private static int showUnresolvedConflictsConfirmation(DialogWrapper dialog, int changes) {

@@ -5,11 +5,12 @@
     <output-test url="file://$MODULE_DIR$/testclasses" />
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/migration/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/stubs/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/testsol/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/workbench/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/platform/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/platform/source_gen" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/basePlatform/source" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/basePlatform/source_gen" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/migration/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/stubs/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/testsol/classes_gen" />
     </content>
     <orderEntry type="inheritedJdk" />
@@ -28,7 +29,6 @@
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" name="Beansbinding" level="project" />
-    <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="module" module-name="baseLanguage-util" />
     <orderEntry type="module" module-name="refactoring-runtime" />
     <orderEntry type="module" module-name="actions-runtime" />

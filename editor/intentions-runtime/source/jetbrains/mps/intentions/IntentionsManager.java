@@ -42,7 +42,9 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.ITypeContextOwner;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NonNls;
@@ -107,76 +109,74 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
     myClassLoaderManager = coreComponents.getClassLoaderManager();
   }
 
-  public synchronized IntentionType getHighestAvailableBaseIntentionType(final SNode node, EditorContext editorContext) {
+  public synchronized IntentionType getHighestAvailableBaseIntentionType(final SNode node, final EditorContext editorContext) {
     ModelAccess.assertLegalRead();
     final GetHighestAvailableIntentionTypeVisitor visitor = new GetHighestAvailableIntentionTypeVisitor();
     checkLoaded();
-    try {
-      TypeChecker.getInstance().enableGlobalSubtypingCache();
-      Filter filter = new Filter(BaseIntention.class, getDisabledIntentions()) {
-        @Override
-        boolean accept(Intention intention) {
-          return super.accept(intention) && visitor.hasHigherPriority(intention.getType());
-        }
+    TypeContextManager.getInstance().runTypecheckingAction((ITypeContextOwner) editorContext.getEditorComponent(), new Runnable() {
+      @Override
+      public void run() {
+        Filter filter = new Filter(BaseIntention.class, getDisabledIntentions()) {
+          @Override
+          boolean accept(Intention intention) {
+            return super.accept(intention) && visitor.hasHigherPriority(intention.getType());
+          }
 
-        @Override
-        boolean accept(IntentionFactory intentionFactory) {
-          return super.accept(intentionFactory) && visitor.hasHigherPriority(intentionFactory.getType());
-        }
-      };
-      for (SNode currentNode = node; currentNode != null; currentNode = currentNode.getParent()) {
-        if (!visitIntentions(currentNode, visitor, filter, currentNode != node, editorContext)) {
-          break;
+          @Override
+          boolean accept(IntentionFactory intentionFactory) {
+            return super.accept(intentionFactory) && visitor.hasHigherPriority(intentionFactory.getType());
+          }
+        };
+        for (SNode currentNode = node; currentNode != null; currentNode = currentNode.getParent()) {
+          if (!visitIntentions(currentNode, visitor, filter, currentNode != node, editorContext)) {
+            break;
+          }
         }
       }
-    } finally {
-      TypeChecker.getInstance().clearGlobalSubtypingCache();
-    }
+    });
     return visitor.getIntentionType();
   }
 
   public synchronized Collection<Pair<IntentionExecutable, SNode>> getAvailableIntentions(final QueryDescriptor query, final SNode node, final EditorContext context) {
     ModelAccess.assertLegalRead();
     checkLoaded();
-    try {
-      TypeChecker.getInstance().enableGlobalSubtypingCache();
-
-      // Hiding intentions with same IntentionDescriptor
-      // important then currently selected element and it's parent has same intention
-      final Set<IntentionDescriptor> processedIntentionDescriptors = new HashSet<IntentionDescriptor>();
-      Filter filter = new Filter(query.myIntentionClass, query.myEnabledOnly ? getDisabledIntentions() : null, query.mySurroundWith) {
-        @Override
-        boolean accept(Intention intention) {
-          return super.accept(intention) && !processedIntentionDescriptors.contains(intention.getDescriptor());
-        }
-
-        @Override
-        boolean accept(IntentionFactory intentionFactory) {
-          return super.accept(intentionFactory) && !processedIntentionDescriptors.contains(intentionFactory);
-        }
-      };
-      Set<Pair<IntentionExecutable, SNode>> result = new HashSet<Pair<IntentionExecutable, SNode>>();
-
-      for (IntentionExecutable intentionExecutable : getAvailableIntentionsForExactNode(node, context, false, filter)) {
-        result.add(new Pair<IntentionExecutable, SNode>(intentionExecutable, node));
-        processedIntentionDescriptors.add(intentionExecutable.getDescriptor());
-      }
-
-      if (!query.isCurrentNodeOnly()) {
-        SNode parent = node.getParent();
-        while (parent != null) {
-          for (IntentionExecutable intentionExecutable : getAvailableIntentionsForExactNode(parent, context, true, filter)) {
-            result.add(new Pair<IntentionExecutable, SNode>(intentionExecutable, parent));
-            processedIntentionDescriptors.add(intentionExecutable.getDescriptor());
+    return TypeContextManager.getInstance().runTypecheckingAction((ITypeContextOwner) context.getEditorComponent(), new Computable<Collection<Pair<IntentionExecutable,SNode>>>() {
+      @Override
+      public Set<Pair<IntentionExecutable, SNode>> compute() {
+        // Hiding intentions with same IntentionDescriptor
+        // important then currently selected element and it's parent has same intention
+        final Set<IntentionDescriptor> processedIntentionDescriptors = new HashSet<IntentionDescriptor>();
+        Filter filter = new Filter(query.myIntentionClass, query.myEnabledOnly ? getDisabledIntentions() : null, query.mySurroundWith) {
+          @Override
+          boolean accept(Intention intention) {
+            return super.accept(intention) && !processedIntentionDescriptors.contains(intention.getDescriptor());
           }
-          parent = parent.getParent();
-        }
-      }
 
-      return result;
-    } finally {
-      TypeChecker.getInstance().clearGlobalSubtypingCache();
-    }
+          @Override
+          boolean accept(IntentionFactory intentionFactory) {
+            return super.accept(intentionFactory) && !processedIntentionDescriptors.contains(intentionFactory);
+          }
+        };
+        Set<Pair<IntentionExecutable, SNode>> result = new HashSet<Pair<IntentionExecutable, SNode>>();
+
+        for (IntentionExecutable intentionExecutable : getAvailableIntentionsForExactNode(node, context, false, filter)) {
+          result.add(new Pair<IntentionExecutable, SNode>(intentionExecutable, node));
+          processedIntentionDescriptors.add(intentionExecutable.getDescriptor());
+        }
+
+        if (!query.isCurrentNodeOnly()) {
+          SNode parent = node.getParent();
+          while (parent != null) {
+            for (IntentionExecutable intentionExecutable : getAvailableIntentionsForExactNode(parent, context, true, filter)) {
+              result.add(new Pair<IntentionExecutable, SNode>(intentionExecutable, parent));
+              processedIntentionDescriptors.add(intentionExecutable.getDescriptor());
+            }
+            parent = parent.getParent();
+          }
+        }
+        return result;
+      }
+    });
   }
 
   private List<IntentionExecutable> getAvailableIntentionsForExactNode(final SNode node, @NotNull final EditorContext context, boolean isAncestor, Filter filter) {

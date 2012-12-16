@@ -23,6 +23,7 @@ import com.intellij.psi.*;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.ThreadUtils;
 import jetbrains.mps.idea.core.psi.PsiListener.PsiEvent;
+import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.util.misc.hash.HashSet;
@@ -50,8 +51,11 @@ public class PsiChangesWatcher implements ProjectComponent {
   private Timer myTimer = new Timer(true);
   private TimerTask myTimerTask;
 
+  private MPSProject myMPSProject;
+
   PsiChangesWatcher(Project p) {
     myProject = p;
+    myMPSProject = new MPSProject(myProject);
   }
 
   public void addListener(PsiListener listener) {
@@ -214,19 +218,16 @@ public class PsiChangesWatcher implements ProjectComponent {
     @Override
     public void run() {
       // notify our listeners
-      //  FIXME use runWriteInEDT ?
-      ThreadUtils.runInUIThreadNoWait(new Runnable() {
-        @Override
+
+      // FIXME !!! Command is temp solution
+      ModelAccess.instance().runCommandInEDT(new Runnable() {
         public void run() {
-          ModelAccess.instance().runUndoTransparentCommand(new Runnable() {
-            public void run() {
-              for (PsiListener l: myListeners) {
-                l.psiChanged(data);
-              }
-            }
-          }, null);
+          for (PsiListener l : myListeners) {
+            l.psiChanged(data);
+          }
         }
-      });
+      }, myMPSProject);
+
       myCollectedData = new PsiChangeData();
       myTimerTask = null;
     }

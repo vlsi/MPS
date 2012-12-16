@@ -56,7 +56,6 @@ public class ClasspathReader {
 
   public enum ClassType {
     JDK("jdk"),
-    JDK_TOOLS("jdktools"),
     OPENAPI("openapi"),
     CORE("core"),
     EDITOR("editor"),

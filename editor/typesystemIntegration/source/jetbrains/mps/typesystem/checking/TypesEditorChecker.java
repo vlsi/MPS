@@ -23,7 +23,7 @@ import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.QuickFix_Runtime;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
-import jetbrains.mps.newTypesystem.context.component.IncrementalTypechecking;
+import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.HighlighterMessage;

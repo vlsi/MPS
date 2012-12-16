@@ -6,6 +6,7 @@ import java.util.Set;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.ide.java.newparser.FeatureKind;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;

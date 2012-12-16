@@ -11,12 +11,11 @@ import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.ui.Messages;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.project.structure.model.ModelRootManager;
-import jetbrains.mps.ide.ui.dialogs.properties.editors.ManagerTableCellEditor;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.persistence.PersistenceRegistry;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import jetbrains.mps.extapi.persistence.FolderModelRootBase;
+import org.jetbrains.mps.openapi.persistence.Memento;
+import jetbrains.mps.persistence.MementoImpl;
 
 public class StubRootChooser implements Computable<List<String>> {
   private List<ModelRootDescriptor> myRoots;
@@ -45,39 +44,34 @@ public class StubRootChooser implements Computable<List<String>> {
       if (res == Messages.YES) {
         ListSequence.fromList(myRoots).addSequence(ListSequence.fromList(result).select(new ISelector<String, ModelRootDescriptor>() {
           public ModelRootDescriptor select(String it) {
-            SModelRoot sme = new SModelRoot(LanguageID.JAVA_MANAGER);
-            sme.setPath(it);
-            return sme.toDescriptor();
+            return ModelRootDescriptor.getJavaStubsModelRoot(it);
           }
         }));
       }
     } else {
-      List<ModelRootManager> managers = ListSequence.fromList(ManagerTableCellEditor.getManagers()).where(new IWhereFilter<ModelRootManager>() {
-        public boolean accept(ModelRootManager it) {
-          return it != null;
-        }
-      }).toListSequence();
-      if (ListSequence.fromList(managers).isEmpty()) {
+      final List<String> modelRootTypes = ListSequence.fromListWithValues(new ArrayList<String>(), PersistenceRegistry.getInstance().getTypeIds());
+      if (ListSequence.fromList(modelRootTypes).isEmpty()) {
         return result;
       }
 
-      final List<String> managerNames = ListSequence.fromList(managers).select(new ISelector<ModelRootManager, String>() {
-        public String select(ModelRootManager it) {
-          return NameUtil.shortNameFromLongName(it.getClassName());
+      List<String> modelRootNames = ListSequence.fromList(modelRootTypes).select(new ISelector<String, String>() {
+        public String select(String it) {
+          // TODO  
+          return it;
         }
       }).toListSequence();
-      final int res = Messages.showChooseDialog("MPS can try creating models for the specified locations,\n" + "so that class files can be referenced from MPS models directly.\n" + "Would you like to import models for the specified locations?", "Model Roots", ListSequence.fromList(managerNames).toGenericArray(String.class), ListSequence.fromList(managerNames).first(), Messages.getQuestionIcon());
+      final int res = Messages.showChooseDialog("MPS can try creating models for the specified locations,\n" + "so that class files can be referenced from MPS models directly.\n" + "Would you like to import models for the specified locations?", "Model Roots", ListSequence.fromList(modelRootNames).toGenericArray(String.class), ListSequence.fromList(modelRootNames).first(), Messages.getQuestionIcon());
       if (res >= 0) {
-        final ModelRootManager manager = ListSequence.fromList(managers).findFirst(new IWhereFilter<ModelRootManager>() {
-          public boolean accept(ModelRootManager it) {
-            return NameUtil.shortNameFromLongName(it.getClassName()).equals(ListSequence.fromList(managerNames).getElement(res));
-          }
-        });
         ListSequence.fromList(myRoots).addSequence(ListSequence.fromList(result).select(new ISelector<String, ModelRootDescriptor>() {
           public ModelRootDescriptor select(String it) {
-            SModelRoot sme = new SModelRoot(manager);
-            sme.setPath(it);
-            return sme.toDescriptor();
+            String type = modelRootTypes.get(res);
+            ModelRoot root = PersistenceRegistry.getInstance().getModelRootFactory(type).create();
+            if (root instanceof FolderModelRootBase) {
+              ((FolderModelRootBase) root).setPath(it);
+            }
+            Memento m = new MementoImpl();
+            root.save(m);
+            return new ModelRootDescriptor(type, m);
           }
         }));
       }

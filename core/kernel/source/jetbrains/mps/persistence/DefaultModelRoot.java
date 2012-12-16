@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package jetbrains.mps.persistence;
 
 import jetbrains.mps.extapi.persistence.FileDataSource;
@@ -56,7 +55,7 @@ public class DefaultModelRoot extends FolderModelRootBase {
   }
 
   @Override
-  public Iterable<SModel> getModels() {
+  public Iterable<SModel> loadModels() {
     List<SModel> result = new ArrayList<SModel>();
     collectModels(FileSystem.getInstance().getFileByPath(getPath()), result);
     return result;
@@ -86,7 +85,7 @@ public class DefaultModelRoot extends FolderModelRootBase {
     return model;
   }
 
-  public void collectModels(IFile dir, Collection<SModel> models) {
+  protected void collectModels(IFile dir, Collection<SModel> models) {
     if (FileSystem.getInstance().isFileIgnored(dir.getName())) return;
     if (!dir.isDirectory()) return;
 
@@ -125,7 +124,7 @@ public class DefaultModelRoot extends FolderModelRootBase {
     return new FileDataSource(file, this);
   }
 
-  public boolean isLanguageAspect(String modelName) {
+  private boolean isLanguageAspect(String modelName) {
     if (!isLanguageAspectsModelRoot()) return false;
     //prefixed with language namespace
     if (!NameUtil.namespaceFromLongName(modelName).equals(getModule().getModuleName())) return false;
@@ -137,7 +136,7 @@ public class DefaultModelRoot extends FolderModelRootBase {
     return false;
   }
 
-  public boolean isLanguageAspectsModelRoot() {
+  private boolean isLanguageAspectsModelRoot() {
     if (!(getModule() instanceof Language)) return false;
     return FileSystem.getInstance().getFileByPath(getPath()).getName().equals(Language.LANGUAGE_MODELS);
   }

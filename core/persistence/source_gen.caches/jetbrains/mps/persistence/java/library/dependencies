@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependenciesRoot>
+  <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubConstants" file="JavaClassStubConstants.java">
+    <classNode dependClassName="java.lang.String" />
+  </dependency>
+  <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor" file="JavaClassStubModelDescriptor.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.javastub.ASMModelLoader" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.FolderSetDataSource" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.logging.Logger" />
+    <classNode dependClassName="jetbrains.mps.project.IModule" />
+    <classNode dependClassName="jetbrains.mps.project.ModuleId" />
+    <classNode dependClassName="jetbrains.mps.reloading.ClassPathFactory" />
+    <classNode dependClassName="jetbrains.mps.reloading.CompositeClassPathItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.Language" />
+    <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.smodel.loading.ModelLoadingState" />
+    <classNode dependClassName="jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
+    <classNode extendsClassName="jetbrains.mps.smodel.BaseSModelDescriptorWithSource" />
+  </dependency>
+  <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubModelRootFactory" file="JavaClassStubModelRootFactory.java">
+    <classNode dependClassName="jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
+    <classNode extendsClassName="org.jetbrains.mps.openapi.persistence.ModelRootFactory" />
+  </dependency>
+  <dependency className="jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot" file="JavaClassStubsModelRoot.java">
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.extapi.persistence.FolderSetDataSource" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.persistence.java.library.JavaClassStubConstants" />
+    <classNode dependClassName="jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.reloading.ClassPathFactory" />
+    <classNode dependClassName="jetbrains.mps.reloading.IClassPathItem" />
+    <classNode dependClassName="jetbrains.mps.smodel.BaseSModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.LanguageID" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelRepository" />
+    <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.StubHelper" />
+    <classNode dependClassName="jetbrains.mps.vfs.FileSystem" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModel" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SModelId" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.module.SModule" />
+    <classNode extendsClassName="jetbrains.mps.extapi.persistence.FolderModelRootBase" />
+  </dependency>
+</dependenciesRoot>
+

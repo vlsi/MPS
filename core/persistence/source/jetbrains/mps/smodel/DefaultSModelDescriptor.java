@@ -29,16 +29,12 @@ import jetbrains.mps.smodel.loading.ModelLoader;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.loading.UpdateableModel;
 import jetbrains.mps.smodel.nodeidmap.RegularNodeIdMap;
-import jetbrains.mps.smodel.persistence.def.DescriptorLoadResult;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.smodel.persistence.def.ModelReadException;
 import jetbrains.mps.smodel.persistence.def.RefactoringsPersistence;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.Collections;
-import java.util.Map;
 
 import static jetbrains.mps.smodel.DefaultSModel.InvalidDefaultSModel;
 
@@ -70,16 +66,14 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     }
   };
 
-  private Map<String, String> myMetadata;
   private SModelHeader myHeader;
 
   private final Object myRefactoringHistoryLock = new Object();
   private StructureModificationLog myStructureModificationLog;
 
-  public DefaultSModelDescriptor(FileDataSource source, SModelReference modelReference, DescriptorLoadResult d) {
+  public DefaultSModelDescriptor(FileDataSource source, SModelReference modelReference, SModelHeader header) {
     super(modelReference, source);
-    myHeader = d.getHeader();
-    myMetadata = d.getMetadata();
+    myHeader = header;
   }
 
   public ModelLoadingState getLoadingState() {
@@ -123,7 +117,7 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     ModelLoadResult result;
     try {
       // TODO use DataSource
-      result = ModelPersistence.readModel(getDescriptorSModelHeader(), modelFile, state);
+      result = ModelPersistence.readModel(myHeader, modelFile, state);
     } catch (ModelReadException e) {
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
       DefaultSModel newModel = new InvalidDefaultSModel(getSModelReference(), e);
@@ -227,18 +221,14 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
     getSModelHeader().setVersion(newVersion);
   }
 
-  private SModelHeader getDescriptorSModelHeader() {
-    return myHeader;
+  public SModelHeader getModelHeader() {
+    return myHeader.createCopy();
   }
 
   private SModelHeader getSModelHeader() {
     DefaultSModel model = getCurrentModelInternal();
     if (model == null) return myHeader;
     return model.getSModelHeader();
-  }
-
-  public Map<String, String> getMetaData() {
-    return Collections.unmodifiableMap(myMetadata);
   }
 
   private void tryFixingVersion(SModel loadedSModel) {
@@ -268,16 +258,13 @@ public class DefaultSModelDescriptor extends BaseEditableSModelDescriptor implem
 
   @Override
   protected void reload() {
-    DescriptorLoadResult dr;
     try {
-      dr = ModelPersistence.loadDescriptor(getSource().getFile());
+      myHeader = ModelPersistence.loadDescriptor(getSource().getFile());
     } catch (ModelReadException e) {
       updateDiskTimestamp();
       SuspiciousModelHandler.getHandler().handleSuspiciousModel(this, false);
       return;
     }
-    myHeader = dr.getHeader();
-    myMetadata = dr.getMetadata();
 
     updateDiskTimestamp();
 

@@ -10,9 +10,7 @@
     <fileset dir="${idea_home}/lib">
       <include name="javac2.jar" />
       <include name="jdom.jar" />
-      <include name="asm.jar" />
       <include name="asm4-all.jar" />
-      <include name="asm-commons.jar" />
       <include name="jgoodies-forms.jar" />
     </fileset>
   </path>

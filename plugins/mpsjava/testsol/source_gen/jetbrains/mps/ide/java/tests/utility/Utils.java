@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.ide.java.parser.FeatureKind;
+import jetbrains.mps.ide.java.newparser.FeatureKind;
 import junit.framework.Assert;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -29,24 +29,20 @@ import jetbrains.mps.lang.test.matcher.NodeDifference;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.util.FileUtil;
-import jetbrains.mps.stubs.javastub.classpath.StubHelper;
-import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.stubs.BaseStubModelDescriptor;
-import jetbrains.mps.ide.java.stubManagers.JavaSourceStubModelDS;
+import jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot;
 import java.util.ArrayList;
-import jetbrains.mps.ide.java.stubManagers.JavaSourceStubs;
-import jetbrains.mps.project.SModelRoot;
-import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.ide.java.newparser.DirParser;
 import jetbrains.mps.baseLanguage.stubs.JavaStubs;
-import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.project.SModelRoot;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 
 public class Utils {
   private static IModule ourModule = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("c3786d2b-aba2-45e5-8de0-1124fd14259b"));
@@ -95,15 +91,11 @@ public class Utils {
 
   public static void checkFile(String path, SNode expected) {
 
-    SModelReference modRef = StubHelper.uidForPackageInStubs("unused", LanguageID.JAVA, ourModule.getModuleReference());
+    JavaSourceStubModelRoot mr = new JavaSourceStubModelRoot();
+    mr.setModule(ourModule);
+    mr.setPath(path);
 
-    BaseStubModelDescriptor smd;
-    smd = new BaseStubModelDescriptor(modRef, new JavaSourceStubModelDS(), ourModule);
-    ((JavaSourceStubModelDS) smd.getSource()).addPath(path, null);
-    SModel mdl = smd.getSModel();
-
-    Assert.assertTrue(mdl.rootsIterator().hasNext());
-    SNode result = SNodeOperations.cast(mdl.rootsIterator().next(), "jetbrains.mps.baseLanguage.structure.Classifier");
+    SNode result = SNodeOperations.cast(((SNode) mr.loadModels().iterator().next().getRootNodes().iterator().next()), "jetbrains.mps.baseLanguage.structure.Classifier");
 
     NodePatcher.removeStatements(expected);
     NodePatcher.fixNonStatic(expected);
@@ -112,6 +104,7 @@ public class Utils {
     // <node> 
 
     Assert.assertEquals(null, NodesMatcher.matchNodes(ListSequence.fromListAndArray(new ArrayList<SNode>(), expected), ListSequence.fromListAndArray(new ArrayList<SNode>(), result)));
+
   }
 
   public static void checkStubModel(String dirPath, SModel expected) {
@@ -119,19 +112,18 @@ public class Utils {
   }
 
   public static void checkStubModels(String dirPath, List<SModel> expected) {
-    JavaSourceStubs stubMgr = new JavaSourceStubs();
 
-    SModelRoot modelRoot = new SModelRoot(null);
-    modelRoot.setModule(ourModule);
-    modelRoot.setPath(dirPath);
-    Collection<SModelDescriptor> mds = stubMgr.load(modelRoot);
+    JavaSourceStubModelRoot mr = new JavaSourceStubModelRoot();
+    mr.setModule(ourModule);
+    mr.setPath(dirPath);
+
     List<SModel> models = ListSequence.fromList(new ArrayList<SModel>());
-    for (SModelDescriptor md : CollectionSequence.fromCollection(mds)) {
-      SModel m = md.getSModel();
+    for (org.jetbrains.mps.openapi.model.SModel md : Sequence.fromIterable(mr.loadModels())) {
+      SModel m = ((SModelDescriptor) md).getSModel();
       ListSequence.fromList(models).addElement(m);
     }
 
-    // FIXME resolveSModelAttrs is temporary (testImports2 started to have problems) 
+    // FIXME removeSModelAttrs is temporary (testImports2 started to have problems) 
 
     for (SModel m : ListSequence.fromList(models)) {
       for (SNode root : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
@@ -179,14 +171,14 @@ public class Utils {
 
   public static void compareBinAndSrcStubs(String binPath, String sourcePath) {
     JavaStubs bin = new JavaStubs();
-    JavaSourceStubs src = new JavaSourceStubs();
+    JavaSourceStubModelRoot src2 = new JavaSourceStubModelRoot();
 
     // just 2 distinct modules 
     IModule mod1 = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("c3786d2b-aba2-45e5-8de0-1124fd14259b"));
     IModule mod2 = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("49166c31-952a-46f6-8970-ea45964379d0"));
 
     List<SModel> binModels = ListSequence.fromList(new ArrayList<SModel>());
-    SModelRoot binSRoot = new SModelRoot(null);
+    SModelRoot binSRoot = new SModelRoot();
     binSRoot.setModule(mod1);
     binSRoot.setPath(binPath);
     Collection<SModelDescriptor> binStubModels = bin.load(binSRoot);
@@ -207,18 +199,20 @@ public class Utils {
       }
     }
 
-    List<SModel> srcModels = ListSequence.fromList(new ArrayList<SModel>());
-    Collection<SModelDescriptor> srcStubModels;
-    SModelRoot srcSRoot = new SModelRoot(null);
-    srcSRoot.setModule(mod2);
-    srcSRoot.setPath(sourcePath);
-    srcStubModels = src.load(srcSRoot);
-    for (SModelDescriptor md : CollectionSequence.fromCollection(srcStubModels)) {
-      SModel m = md.getSModel();
-      ListSequence.fromList(srcModels).addElement(m);
+    Iterable<org.jetbrains.mps.openapi.model.SModel> srcModels;
+    List<SModel> srcModelsX = ListSequence.fromList(new ArrayList<SModel>());
+
+    src2.setModule(mod2);
+    src2.setPath(sourcePath);
+    srcModels = src2.loadModels();
+
+    for (org.jetbrains.mps.openapi.model.SModel m : Sequence.fromIterable(srcModels)) {
       // <node> 
 
-      for (SNode srcRoot : ListSequence.fromList(SModelOperations.getRoots(m, null))) {
+      SModel zzz = ((SModelDescriptor) m).getSModel();
+      srcModelsX.add(zzz);
+
+      for (SNode srcRoot : ListSequence.fromList(SModelOperations.getRoots(zzz, null))) {
         NodePatcher.fixNonStatic(srcRoot);
         NodePatcher.removeSourceLevelAnnotations(srcRoot);
 
@@ -226,7 +220,7 @@ public class Utils {
       }
     }
 
-    compare(binModels, srcModels);
+    compare(binModels, srcModelsX);
     // <node> 
   }
 
@@ -261,10 +255,10 @@ public class Utils {
       SModel binModel = MapSequence.fromMap(leftModelMap).get(name);
       SModel srcModel = MapSequence.fromMap(rightModelMap).get(name);
 
-      errors = compare2models(binModel, srcModel, classMap);
+      errors = compare2models(binModel, srcModel, classMap) || errors;
     }
 
-    Assert.assertFalse(errors);
+    Assert.assertFalse("Models differ", errors);
   }
 
   public static boolean compare2models(SModel left, SModel right, Map<SNode, SNode> nodeMap) {
@@ -287,7 +281,7 @@ public class Utils {
     List<NodeDifference> diff = NodesMatcher.matchNodes(binRoots, srcRoots, nodeMap);
     if (diff != null) {
       wereErrors = true;
-      System.err.println("Diff: " + diff);
+      System.out.println("Diff: " + diff);
     }
     return wereErrors;
   }
@@ -341,8 +335,8 @@ public class Utils {
   public static void buildMethodsNodeMap(SNode left, SNode right, Map<SNode, SNode> nodeMap) {
     List<SNode> leftMethods = new ArrayList<SNode>();
     List<SNode> rightMethods = new ArrayList<SNode>();
-    ListSequence.fromList(leftMethods).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(left)));
-    ListSequence.fromList(rightMethods).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(right)));
+    ListSequence.fromList(leftMethods).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), left, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})));
+    ListSequence.fromList(rightMethods).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), right, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})));
 
     Map<String, SNode> rightIndex = MapSequence.fromMap(new HashMap<String, SNode>());
     for (SNode rightMthd : ListSequence.fromList(rightMethods)) {

@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
+import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.Set;
 
@@ -44,6 +45,15 @@ public abstract class ModelRootBase implements ModelRoot {
     checkNotRegistered();
     myModule = module;
   }
+
+  @Override
+  public final Iterable<SModel> getModels() {
+    ModelAccess.assertLegalRead();
+
+    return new ArrayList<SModel>(myModels);
+  }
+
+  public abstract Iterable<SModel> loadModels();
 
   @Override
   public boolean isReadOnly() {
@@ -102,7 +112,7 @@ public abstract class ModelRootBase implements ModelRoot {
 
     Set<org.jetbrains.mps.openapi.model.SModelReference> loaded = new HashSet<org.jetbrains.mps.openapi.model.SModelReference>();
     SModelRepository modelRepository = SModelRepository.getInstance();
-    for (SModel model : getModels()) {
+    for (SModel model : loadModels()) {
       loaded.add(model.getModelReference());
       register(model);
     }

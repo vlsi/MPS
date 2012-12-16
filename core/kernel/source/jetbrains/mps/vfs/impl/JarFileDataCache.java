@@ -16,7 +16,6 @@
 package jetbrains.mps.vfs.impl;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.util.FileUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -57,17 +56,12 @@ class JarFileDataCache {
         }
       }
 
-      try {
-        JarFileData data = new JarFileData(new File(path));
-        WeakReference<JarFileData> ref = new WeakReference<JarFileData>(data, myQueue);
-        myPathToRef.put(path, ref);
-        myRefToPath.put(ref, path);
+      JarFileData data = new JarFileData(new File(path));
+      WeakReference<JarFileData> ref = new WeakReference<JarFileData>(data, myQueue);
+      myPathToRef.put(path, ref);
+      myRefToPath.put(ref, path);
 
-        return data;
-      } catch (IOException e) {
-        LOG.error(e);
-        return null;
-      }
+      return data;
     }
   }
 
@@ -76,8 +70,7 @@ class JarFileDataCache {
       WeakReference<JarFileData> ref = (WeakReference<JarFileData>) myQueue.poll();
       if (ref == null) break;
 
-      String path = myRefToPath.get(ref);
-      myRefToPath.remove(ref);
+      String path = myRefToPath.remove(ref);
       myPathToRef.remove(path);
     }
   }

@@ -16,7 +16,6 @@
     <orderEntry type="library" name="Trove" level="project" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
-    <orderEntry type="library" name="Commons-logging" level="project" />
   </component>
 </module>
 

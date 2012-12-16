@@ -18,6 +18,7 @@ public class EvaluationDialog extends AbstractEvaluationDialog {
   }
 
   @Override
+  @NotNull
   protected Action[] createActions() {
     return new Action[]{new DialogWrapper.DialogWrapperAction("Evaluate") {
       protected void doAction(ActionEvent p0) {

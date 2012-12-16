@@ -26,7 +26,7 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
   }
 
   /*package*/ static void updateReferencesToMpsClasspath(SNode node) {
-    IModule[] modules = {MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("3f233e7f-b8a6-46d2-a57f-795d56775243")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("8865b7a8-5271-43d3-884c-6fd1d9cfdd34")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("267ff2fa-bd8d-467e-8bfe-73a9c242da8b")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("86441d7a-e194-42da-81a5-2161ec62a379"))};
+    IModule[] modules = {MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("3f233e7f-b8a6-46d2-a57f-795d56775243")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("8865b7a8-5271-43d3-884c-6fd1d9cfdd34")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6ed54515-acc8-4d1e-a16c-9fd6cfe951ea")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61")), MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("86441d7a-e194-42da-81a5-2161ec62a379"))};
 
     SModel model = SNodeOperations.getModel(node);
     IModule module = check_xpwqv8_a0d0b(model.getModelDescriptor());
@@ -35,10 +35,13 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
       SModelReference oldModelRef = ref.getTargetSModelReference();
       final String fqname = check_xpwqv8_a0b0f0b(oldModelRef);
       for (IModule newModule : modules) {
+        if (newModule == null) {
+          continue;
+        }
         List<SModelDescriptor> models = newModule.getOwnModelDescriptors();
-        SModelReference modelRef = check_xpwqv8_a0b0c0f0b(ListSequence.fromList(models).findFirst(new IWhereFilter<SModelDescriptor>() {
+        SModelReference modelRef = check_xpwqv8_a0c0c0f0b(ListSequence.fromList(models).findFirst(new IWhereFilter<SModelDescriptor>() {
           public boolean accept(SModelDescriptor it) {
-            return eq_xpwqv8_a0a0a0a0a0a0b0c0f0b(it.getLongName(), fqname);
+            return eq_xpwqv8_a0a0a0a0a0a0c0c0f0b(it.getLongName(), fqname);
           }
         }));
         if (modelRef == null) {
@@ -89,14 +92,14 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
     return null;
   }
 
-  private static SModelReference check_xpwqv8_a0b0c0f0b(SModelDescriptor checkedDotOperand) {
+  private static SModelReference check_xpwqv8_a0c0c0f0b(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModelReference();
     }
     return null;
   }
 
-  private static boolean eq_xpwqv8_a0a0a0a0a0a0b0c0f0b(Object a, Object b) {
+  private static boolean eq_xpwqv8_a0a0a0a0a0a0c0c0f0b(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

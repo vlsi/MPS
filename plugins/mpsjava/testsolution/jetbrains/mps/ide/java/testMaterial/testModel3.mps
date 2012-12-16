@@ -14,7 +14,7 @@
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8083368042256418374" />
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="8083368042256418390">
       <property name="name" nameId="tpck.1169194664001" value="x" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8083368042256418393">
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2887245214163404615">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="8ssk.8083368042256418379" resolveInfo="MyClass" />
       </node>
     </node>

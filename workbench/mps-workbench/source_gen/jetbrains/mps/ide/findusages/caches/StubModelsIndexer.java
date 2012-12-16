@@ -11,7 +11,7 @@ import java.util.Map;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.util.indexing.FileContent;
 import java.util.Collections;
-import org.objectweb.asm.ClassReader;
+import org.jetbrains.asm4.ClassReader;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
 import jetbrains.mps.reloading.AbstractClassPathItem;
 import jetbrains.mps.util.NameUtil;

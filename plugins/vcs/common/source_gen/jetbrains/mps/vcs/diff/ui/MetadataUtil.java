@@ -4,7 +4,9 @@ package jetbrains.mps.vcs.diff.ui;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -19,8 +21,6 @@ import java.util.LinkedHashSet;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelHeader;
 
 public class MetadataUtil {
@@ -28,7 +28,7 @@ public class MetadataUtil {
   }
 
   public static SModel createMetadataModel(SModel model) {
-    SModel metadataModel = new SModel(new SModelReference(SModelOperations.getModelName(model), "metadata"));
+    SModel metadataModel = new SModel(new SModelReference(new SModelFqName(SModelOperations.getModelName(model), "metadata"), SModelId.generate()));
     SModelOperations.addRootNode(metadataModel, createModelRoot(model));
     return metadataModel;
   }

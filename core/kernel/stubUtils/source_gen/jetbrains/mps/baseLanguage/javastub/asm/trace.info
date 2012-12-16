@@ -27,7 +27,7 @@
     <nodeInfo nodeId="6849912058625332370" fileName="ASMAnnotation.java" startLine="28" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getValues#()Ljava/util/Map;" />
     <nodeInfo nodeId="6849912058625332333" fileName="ASMAnnotation.java" startLine="49" startPosition="5" endLine="56" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6849912058625332212" fileName="ASMAnnotation.java" startLine="17" startPosition="48" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="6849912058625332199" fileName="ASMAnnotation.java" startLine="16" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMAnnotation#(Lorg/objectweb/asm/tree/AnnotationNode;)V" />
+    <nodeInfo nodeId="6849912058625332199" fileName="ASMAnnotation.java" startLine="16" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMAnnotation#(Lorg/jetbrains/asm4/tree/AnnotationNode;)V" />
     <nodeInfo nodeId="6849912058625332283" fileName="ASMAnnotation.java" startLine="39" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="processValue#(Ljava/lang/Object;)Ljava/lang/Object;" />
     <scopeInfo nodeId="6849912058625332389" fileName="ASMAnnotation.java" startLine="35" startPosition="28" endLine="36" endPosition="18" />
     <scopeInfo nodeId="6849912058625332293" fileName="ASMAnnotation.java" startLine="40" startPosition="42" endLine="41" endPosition="55" />
@@ -64,79 +64,80 @@
     <unitInfo nodeId="6849912058625332189" fileName="ASMAnnotation.java" startLine="12" startPosition="0" endLine="60" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMAnnotation" />
   </root>
   <root nodeId="7241381882860001929" modelId="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.baseLanguage.javastub.asm)">
-    <nodeInfo nodeId="7241381882860007088" fileName="SignatureVisitorAdapter.java" startLine="14" startPosition="45" endLine="15" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860007094" fileName="SignatureVisitorAdapter.java" startLine="18" startPosition="49" endLine="19" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860007100" fileName="SignatureVisitorAdapter.java" startLine="22" startPosition="45" endLine="23" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860007106" fileName="SignatureVisitorAdapter.java" startLine="26" startPosition="44" endLine="27" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860007112" fileName="SignatureVisitorAdapter.java" startLine="30" startPosition="48" endLine="31" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860007118" fileName="SignatureVisitorAdapter.java" startLine="34" startPosition="45" endLine="35" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860007124" fileName="SignatureVisitorAdapter.java" startLine="38" startPosition="48" endLine="39" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860007142" fileName="SignatureVisitorAdapter.java" startLine="48" startPosition="44" endLine="49" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860007166" fileName="SignatureVisitorAdapter.java" startLine="61" startPosition="60" endLine="62" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860007075" fileName="SignatureVisitorAdapter.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SignatureVisitorAdapter#()V" />
-    <nodeInfo nodeId="7241381882860007078" fileName="SignatureVisitorAdapter.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitFormalTypeParameter#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7241381882860007126" fileName="SignatureVisitorAdapter.java" startLine="42" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitBaseType#(C)V" />
-    <nodeInfo nodeId="7241381882860007132" fileName="SignatureVisitorAdapter.java" startLine="45" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitTypeVariable#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7241381882860007144" fileName="SignatureVisitorAdapter.java" startLine="52" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitClassType#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7241381882860007150" fileName="SignatureVisitorAdapter.java" startLine="55" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitInnerClassType#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7241381882860007156" fileName="SignatureVisitorAdapter.java" startLine="58" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitTypeArgument#()V" />
-    <nodeInfo nodeId="7241381882860007168" fileName="SignatureVisitorAdapter.java" startLine="65" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitEnd#()V" />
-    <nodeInfo nodeId="7241381882860007084" fileName="SignatureVisitorAdapter.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitClassBound#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007090" fileName="SignatureVisitorAdapter.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitInterfaceBound#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007096" fileName="SignatureVisitorAdapter.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitSuperclass#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007102" fileName="SignatureVisitorAdapter.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitInterface#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007108" fileName="SignatureVisitorAdapter.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitParameterType#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007114" fileName="SignatureVisitorAdapter.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitReturnType#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007120" fileName="SignatureVisitorAdapter.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitExceptionType#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007138" fileName="SignatureVisitorAdapter.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitArrayType#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007160" fileName="SignatureVisitorAdapter.java" startLine="61" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitTypeArgument#(C)Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <scopeInfo nodeId="7241381882860007077" fileName="SignatureVisitorAdapter.java" startLine="8" startPosition="36" endLine="8" endPosition="36" />
-    <scopeInfo nodeId="7241381882860007083" fileName="SignatureVisitorAdapter.java" startLine="11" startPosition="53" endLine="11" endPosition="53" />
-    <scopeInfo nodeId="7241381882860007131" fileName="SignatureVisitorAdapter.java" startLine="42" startPosition="46" endLine="42" endPosition="46" />
-    <scopeInfo nodeId="7241381882860007137" fileName="SignatureVisitorAdapter.java" startLine="45" startPosition="46" endLine="45" endPosition="46" />
-    <scopeInfo nodeId="7241381882860007149" fileName="SignatureVisitorAdapter.java" startLine="52" startPosition="43" endLine="52" endPosition="43" />
-    <scopeInfo nodeId="7241381882860007155" fileName="SignatureVisitorAdapter.java" startLine="55" startPosition="48" endLine="55" endPosition="48" />
-    <scopeInfo nodeId="7241381882860007159" fileName="SignatureVisitorAdapter.java" startLine="58" startPosition="35" endLine="58" endPosition="35" />
-    <scopeInfo nodeId="7241381882860007171" fileName="SignatureVisitorAdapter.java" startLine="65" startPosition="26" endLine="65" endPosition="26" />
-    <scopeInfo nodeId="7241381882860007087" fileName="SignatureVisitorAdapter.java" startLine="14" startPosition="45" endLine="15" endPosition="41" />
-    <scopeInfo nodeId="7241381882860007093" fileName="SignatureVisitorAdapter.java" startLine="18" startPosition="49" endLine="19" endPosition="41" />
-    <scopeInfo nodeId="7241381882860007099" fileName="SignatureVisitorAdapter.java" startLine="22" startPosition="45" endLine="23" endPosition="41" />
-    <scopeInfo nodeId="7241381882860007105" fileName="SignatureVisitorAdapter.java" startLine="26" startPosition="44" endLine="27" endPosition="41" />
-    <scopeInfo nodeId="7241381882860007111" fileName="SignatureVisitorAdapter.java" startLine="30" startPosition="48" endLine="31" endPosition="41" />
-    <scopeInfo nodeId="7241381882860007117" fileName="SignatureVisitorAdapter.java" startLine="34" startPosition="45" endLine="35" endPosition="41" />
-    <scopeInfo nodeId="7241381882860007123" fileName="SignatureVisitorAdapter.java" startLine="38" startPosition="48" endLine="39" endPosition="41" />
-    <scopeInfo nodeId="7241381882860007141" fileName="SignatureVisitorAdapter.java" startLine="48" startPosition="44" endLine="49" endPosition="41" />
-    <scopeInfo nodeId="7241381882860007165" fileName="SignatureVisitorAdapter.java" startLine="61" startPosition="60" endLine="62" endPosition="41" />
-    <scopeInfo nodeId="7241381882860007075" fileName="SignatureVisitorAdapter.java" startLine="8" startPosition="0" endLine="10" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007078" fileName="SignatureVisitorAdapter.java" startLine="11" startPosition="0" endLine="13" endPosition="0">
+    <nodeInfo nodeId="8471909024438049477" fileName="SignatureVisitorAdapter.java" startLine="9" startPosition="36" endLine="10" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7241381882860007088" fileName="SignatureVisitorAdapter.java" startLine="16" startPosition="45" endLine="17" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860007094" fileName="SignatureVisitorAdapter.java" startLine="20" startPosition="49" endLine="21" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860007100" fileName="SignatureVisitorAdapter.java" startLine="24" startPosition="45" endLine="25" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860007106" fileName="SignatureVisitorAdapter.java" startLine="28" startPosition="44" endLine="29" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860007112" fileName="SignatureVisitorAdapter.java" startLine="32" startPosition="48" endLine="33" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860007118" fileName="SignatureVisitorAdapter.java" startLine="36" startPosition="45" endLine="37" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860007124" fileName="SignatureVisitorAdapter.java" startLine="40" startPosition="48" endLine="41" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860007142" fileName="SignatureVisitorAdapter.java" startLine="50" startPosition="44" endLine="51" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860007166" fileName="SignatureVisitorAdapter.java" startLine="63" startPosition="60" endLine="64" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860007078" fileName="SignatureVisitorAdapter.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitFormalTypeParameter#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7241381882860007126" fileName="SignatureVisitorAdapter.java" startLine="44" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitBaseType#(C)V" />
+    <nodeInfo nodeId="7241381882860007132" fileName="SignatureVisitorAdapter.java" startLine="47" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitTypeVariable#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7241381882860007144" fileName="SignatureVisitorAdapter.java" startLine="54" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitClassType#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7241381882860007150" fileName="SignatureVisitorAdapter.java" startLine="57" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitInnerClassType#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7241381882860007156" fileName="SignatureVisitorAdapter.java" startLine="60" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitTypeArgument#()V" />
+    <nodeInfo nodeId="7241381882860007168" fileName="SignatureVisitorAdapter.java" startLine="67" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitEnd#()V" />
+    <nodeInfo nodeId="7241381882860007075" fileName="SignatureVisitorAdapter.java" startLine="9" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SignatureVisitorAdapter#()V" />
+    <nodeInfo nodeId="7241381882860007084" fileName="SignatureVisitorAdapter.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitClassBound#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007090" fileName="SignatureVisitorAdapter.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitInterfaceBound#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007096" fileName="SignatureVisitorAdapter.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitSuperclass#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007102" fileName="SignatureVisitorAdapter.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitInterface#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007108" fileName="SignatureVisitorAdapter.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitParameterType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007114" fileName="SignatureVisitorAdapter.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitReturnType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007120" fileName="SignatureVisitorAdapter.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitExceptionType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007138" fileName="SignatureVisitorAdapter.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitArrayType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007160" fileName="SignatureVisitorAdapter.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitTypeArgument#(C)Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <scopeInfo nodeId="7241381882860007083" fileName="SignatureVisitorAdapter.java" startLine="13" startPosition="53" endLine="13" endPosition="53" />
+    <scopeInfo nodeId="7241381882860007131" fileName="SignatureVisitorAdapter.java" startLine="44" startPosition="46" endLine="44" endPosition="46" />
+    <scopeInfo nodeId="7241381882860007137" fileName="SignatureVisitorAdapter.java" startLine="47" startPosition="46" endLine="47" endPosition="46" />
+    <scopeInfo nodeId="7241381882860007149" fileName="SignatureVisitorAdapter.java" startLine="54" startPosition="43" endLine="54" endPosition="43" />
+    <scopeInfo nodeId="7241381882860007155" fileName="SignatureVisitorAdapter.java" startLine="57" startPosition="48" endLine="57" endPosition="48" />
+    <scopeInfo nodeId="7241381882860007159" fileName="SignatureVisitorAdapter.java" startLine="60" startPosition="35" endLine="60" endPosition="35" />
+    <scopeInfo nodeId="7241381882860007171" fileName="SignatureVisitorAdapter.java" startLine="67" startPosition="26" endLine="67" endPosition="26" />
+    <scopeInfo nodeId="7241381882860007077" fileName="SignatureVisitorAdapter.java" startLine="9" startPosition="36" endLine="10" endPosition="24" />
+    <scopeInfo nodeId="7241381882860007087" fileName="SignatureVisitorAdapter.java" startLine="16" startPosition="45" endLine="17" endPosition="41" />
+    <scopeInfo nodeId="7241381882860007093" fileName="SignatureVisitorAdapter.java" startLine="20" startPosition="49" endLine="21" endPosition="41" />
+    <scopeInfo nodeId="7241381882860007099" fileName="SignatureVisitorAdapter.java" startLine="24" startPosition="45" endLine="25" endPosition="41" />
+    <scopeInfo nodeId="7241381882860007105" fileName="SignatureVisitorAdapter.java" startLine="28" startPosition="44" endLine="29" endPosition="41" />
+    <scopeInfo nodeId="7241381882860007111" fileName="SignatureVisitorAdapter.java" startLine="32" startPosition="48" endLine="33" endPosition="41" />
+    <scopeInfo nodeId="7241381882860007117" fileName="SignatureVisitorAdapter.java" startLine="36" startPosition="45" endLine="37" endPosition="41" />
+    <scopeInfo nodeId="7241381882860007123" fileName="SignatureVisitorAdapter.java" startLine="40" startPosition="48" endLine="41" endPosition="41" />
+    <scopeInfo nodeId="7241381882860007141" fileName="SignatureVisitorAdapter.java" startLine="50" startPosition="44" endLine="51" endPosition="41" />
+    <scopeInfo nodeId="7241381882860007165" fileName="SignatureVisitorAdapter.java" startLine="63" startPosition="60" endLine="64" endPosition="41" />
+    <scopeInfo nodeId="7241381882860007078" fileName="SignatureVisitorAdapter.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="7241381882860007081" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860007126" fileName="SignatureVisitorAdapter.java" startLine="42" startPosition="0" endLine="44" endPosition="0">
+    <scopeInfo nodeId="7241381882860007126" fileName="SignatureVisitorAdapter.java" startLine="44" startPosition="0" endLine="46" endPosition="0">
       <varInfo nodeId="7241381882860007129" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860007132" fileName="SignatureVisitorAdapter.java" startLine="45" startPosition="0" endLine="47" endPosition="0">
+    <scopeInfo nodeId="7241381882860007132" fileName="SignatureVisitorAdapter.java" startLine="47" startPosition="0" endLine="49" endPosition="0">
       <varInfo nodeId="7241381882860007135" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860007144" fileName="SignatureVisitorAdapter.java" startLine="52" startPosition="0" endLine="54" endPosition="0">
+    <scopeInfo nodeId="7241381882860007144" fileName="SignatureVisitorAdapter.java" startLine="54" startPosition="0" endLine="56" endPosition="0">
       <varInfo nodeId="7241381882860007147" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860007150" fileName="SignatureVisitorAdapter.java" startLine="55" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="7241381882860007150" fileName="SignatureVisitorAdapter.java" startLine="57" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="7241381882860007153" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860007156" fileName="SignatureVisitorAdapter.java" startLine="58" startPosition="0" endLine="60" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007168" fileName="SignatureVisitorAdapter.java" startLine="65" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007084" fileName="SignatureVisitorAdapter.java" startLine="14" startPosition="0" endLine="17" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007090" fileName="SignatureVisitorAdapter.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007096" fileName="SignatureVisitorAdapter.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007102" fileName="SignatureVisitorAdapter.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007108" fileName="SignatureVisitorAdapter.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007114" fileName="SignatureVisitorAdapter.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007120" fileName="SignatureVisitorAdapter.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007138" fileName="SignatureVisitorAdapter.java" startLine="48" startPosition="0" endLine="51" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007160" fileName="SignatureVisitorAdapter.java" startLine="61" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="7241381882860007156" fileName="SignatureVisitorAdapter.java" startLine="60" startPosition="0" endLine="62" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007168" fileName="SignatureVisitorAdapter.java" startLine="67" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007075" fileName="SignatureVisitorAdapter.java" startLine="9" startPosition="0" endLine="12" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007084" fileName="SignatureVisitorAdapter.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007090" fileName="SignatureVisitorAdapter.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007096" fileName="SignatureVisitorAdapter.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007102" fileName="SignatureVisitorAdapter.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007108" fileName="SignatureVisitorAdapter.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007114" fileName="SignatureVisitorAdapter.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007120" fileName="SignatureVisitorAdapter.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007138" fileName="SignatureVisitorAdapter.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007160" fileName="SignatureVisitorAdapter.java" startLine="63" startPosition="0" endLine="66" endPosition="0">
       <varInfo nodeId="7241381882860007163" varName="wildcard" />
     </scopeInfo>
-    <unitInfo nodeId="7241381882860001929" fileName="SignatureVisitorAdapter.java" startLine="7" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.SignatureVisitorAdapter" />
+    <unitInfo nodeId="7241381882860001929" fileName="SignatureVisitorAdapter.java" startLine="8" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.SignatureVisitorAdapter" />
   </root>
   <root nodeId="7241381882860002146" modelId="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.baseLanguage.javastub.asm)">
     <nodeInfo nodeId="7241381882860002149" fileName="ASMArrayType.java" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myElementType" />
@@ -306,7 +307,7 @@
     <nodeInfo nodeId="7241381882860006317" fileName="ASMMethod.java" startLine="124" startPosition="5" endLine="143" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860006185" fileName="ASMMethod.java" startLine="102" startPosition="5" endLine="124" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860005976" fileName="ASMMethod.java" startLine="67" startPosition="89" endLine="90" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="7241381882860005734" fileName="ASMMethod.java" startLine="27" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMMethod#(Lorg/objectweb/asm/tree/MethodNode;)V" />
+    <nodeInfo nodeId="7241381882860005734" fileName="ASMMethod.java" startLine="27" startPosition="0" endLine="148" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMMethod#(Lorg/jetbrains/asm4/tree/MethodNode;)V" />
     <scopeInfo nodeId="7241381882860005768" fileName="ASMMethod.java" startLine="30" startPosition="35" endLine="31" endPosition="140" />
     <scopeInfo nodeId="7241381882860005761" fileName="ASMMethod.java" startLine="32" startPosition="12" endLine="33" endPosition="83" />
     <scopeInfo nodeId="7241381882860005795" fileName="ASMMethod.java" startLine="35" startPosition="35" endLine="36" endPosition="69" />
@@ -513,7 +514,7 @@
     <nodeInfo nodeId="7241381882860006878" fileName="ASMField.java" startLine="27" startPosition="51" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860007056" fileName="ASMField.java" startLine="91" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAnnotations#()Ljava/util/List;" />
     <nodeInfo nodeId="7241381882860006818" fileName="ASMField.java" startLine="19" startPosition="20" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7241381882860006808" fileName="ASMField.java" startLine="18" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMField#(Lorg/objectweb/asm/tree/FieldNode;)V" />
+    <nodeInfo nodeId="7241381882860006808" fileName="ASMField.java" startLine="18" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMField#(Lorg/jetbrains/asm4/tree/FieldNode;)V" />
     <scopeInfo nodeId="7241381882860006896" fileName="ASMField.java" startLine="28" startPosition="36" endLine="29" endPosition="63" />
     <scopeInfo nodeId="7241381882860006887" fileName="ASMField.java" startLine="30" startPosition="12" endLine="31" endPosition="29" />
     <scopeInfo nodeId="7241381882860006911" fileName="ASMField.java" startLine="35" startPosition="27" endLine="36" endPosition="24" />
@@ -574,80 +575,81 @@
     <unitInfo nodeId="7241381882860007172" fileName="ASMVarArgType.java" startLine="6" startPosition="0" endLine="17" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.ASMVarArgType" />
   </root>
   <root nodeId="7241381882860007196" modelId="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.baseLanguage.javastub.asm)">
-    <nodeInfo nodeId="7241381882860007198" fileName="NullSignatureVisitor.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
-    <nodeInfo nodeId="7241381882860007216" fileName="NullSignatureVisitor.java" startLine="16" startPosition="45" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860007222" fileName="NullSignatureVisitor.java" startLine="20" startPosition="49" endLine="21" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860007228" fileName="NullSignatureVisitor.java" startLine="24" startPosition="45" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860007234" fileName="NullSignatureVisitor.java" startLine="28" startPosition="44" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860007240" fileName="NullSignatureVisitor.java" startLine="32" startPosition="48" endLine="33" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860007246" fileName="NullSignatureVisitor.java" startLine="36" startPosition="45" endLine="37" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860007252" fileName="NullSignatureVisitor.java" startLine="40" startPosition="48" endLine="41" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860007270" fileName="NullSignatureVisitor.java" startLine="50" startPosition="44" endLine="51" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860007294" fileName="NullSignatureVisitor.java" startLine="63" startPosition="60" endLine="64" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7241381882860007203" fileName="NullSignatureVisitor.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NullSignatureVisitor#()V" />
-    <nodeInfo nodeId="7241381882860007206" fileName="NullSignatureVisitor.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitFormalTypeParameter#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7241381882860007254" fileName="NullSignatureVisitor.java" startLine="44" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitBaseType#(C)V" />
-    <nodeInfo nodeId="7241381882860007260" fileName="NullSignatureVisitor.java" startLine="47" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitTypeVariable#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7241381882860007272" fileName="NullSignatureVisitor.java" startLine="54" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitClassType#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7241381882860007278" fileName="NullSignatureVisitor.java" startLine="57" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitInnerClassType#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7241381882860007284" fileName="NullSignatureVisitor.java" startLine="60" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitTypeArgument#()V" />
-    <nodeInfo nodeId="7241381882860007296" fileName="NullSignatureVisitor.java" startLine="67" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitEnd#()V" />
-    <nodeInfo nodeId="7241381882860007212" fileName="NullSignatureVisitor.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitClassBound#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007218" fileName="NullSignatureVisitor.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitInterfaceBound#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007224" fileName="NullSignatureVisitor.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitSuperclass#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007230" fileName="NullSignatureVisitor.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitInterface#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007236" fileName="NullSignatureVisitor.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitParameterType#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007242" fileName="NullSignatureVisitor.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitReturnType#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007248" fileName="NullSignatureVisitor.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitExceptionType#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007266" fileName="NullSignatureVisitor.java" startLine="50" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitArrayType#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007288" fileName="NullSignatureVisitor.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitTypeArgument#(C)Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <scopeInfo nodeId="7241381882860007205" fileName="NullSignatureVisitor.java" startLine="10" startPosition="34" endLine="10" endPosition="34" />
-    <scopeInfo nodeId="7241381882860007211" fileName="NullSignatureVisitor.java" startLine="13" startPosition="53" endLine="13" endPosition="53" />
-    <scopeInfo nodeId="7241381882860007259" fileName="NullSignatureVisitor.java" startLine="44" startPosition="46" endLine="44" endPosition="46" />
-    <scopeInfo nodeId="7241381882860007265" fileName="NullSignatureVisitor.java" startLine="47" startPosition="46" endLine="47" endPosition="46" />
-    <scopeInfo nodeId="7241381882860007277" fileName="NullSignatureVisitor.java" startLine="54" startPosition="43" endLine="54" endPosition="43" />
-    <scopeInfo nodeId="7241381882860007283" fileName="NullSignatureVisitor.java" startLine="57" startPosition="48" endLine="57" endPosition="48" />
-    <scopeInfo nodeId="7241381882860007287" fileName="NullSignatureVisitor.java" startLine="60" startPosition="35" endLine="60" endPosition="35" />
-    <scopeInfo nodeId="7241381882860007299" fileName="NullSignatureVisitor.java" startLine="67" startPosition="26" endLine="67" endPosition="26" />
-    <scopeInfo nodeId="7241381882860007215" fileName="NullSignatureVisitor.java" startLine="16" startPosition="45" endLine="17" endPosition="16" />
-    <scopeInfo nodeId="7241381882860007221" fileName="NullSignatureVisitor.java" startLine="20" startPosition="49" endLine="21" endPosition="16" />
-    <scopeInfo nodeId="7241381882860007227" fileName="NullSignatureVisitor.java" startLine="24" startPosition="45" endLine="25" endPosition="16" />
-    <scopeInfo nodeId="7241381882860007233" fileName="NullSignatureVisitor.java" startLine="28" startPosition="44" endLine="29" endPosition="16" />
-    <scopeInfo nodeId="7241381882860007239" fileName="NullSignatureVisitor.java" startLine="32" startPosition="48" endLine="33" endPosition="16" />
-    <scopeInfo nodeId="7241381882860007245" fileName="NullSignatureVisitor.java" startLine="36" startPosition="45" endLine="37" endPosition="16" />
-    <scopeInfo nodeId="7241381882860007251" fileName="NullSignatureVisitor.java" startLine="40" startPosition="48" endLine="41" endPosition="16" />
-    <scopeInfo nodeId="7241381882860007269" fileName="NullSignatureVisitor.java" startLine="50" startPosition="44" endLine="51" endPosition="16" />
-    <scopeInfo nodeId="7241381882860007293" fileName="NullSignatureVisitor.java" startLine="63" startPosition="60" endLine="64" endPosition="16" />
-    <scopeInfo nodeId="7241381882860007203" fileName="NullSignatureVisitor.java" startLine="10" startPosition="0" endLine="12" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007206" fileName="NullSignatureVisitor.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
+    <nodeInfo nodeId="7241381882860007198" fileName="NullSignatureVisitor.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="INSTANCE" />
+    <nodeInfo nodeId="8471909024438077784" fileName="NullSignatureVisitor.java" startLine="11" startPosition="34" endLine="12" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="7241381882860007216" fileName="NullSignatureVisitor.java" startLine="18" startPosition="45" endLine="19" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860007222" fileName="NullSignatureVisitor.java" startLine="22" startPosition="49" endLine="23" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860007228" fileName="NullSignatureVisitor.java" startLine="26" startPosition="45" endLine="27" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860007234" fileName="NullSignatureVisitor.java" startLine="30" startPosition="44" endLine="31" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860007240" fileName="NullSignatureVisitor.java" startLine="34" startPosition="48" endLine="35" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860007246" fileName="NullSignatureVisitor.java" startLine="38" startPosition="45" endLine="39" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860007252" fileName="NullSignatureVisitor.java" startLine="42" startPosition="48" endLine="43" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860007270" fileName="NullSignatureVisitor.java" startLine="52" startPosition="44" endLine="53" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860007294" fileName="NullSignatureVisitor.java" startLine="65" startPosition="60" endLine="66" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7241381882860007206" fileName="NullSignatureVisitor.java" startLine="15" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitFormalTypeParameter#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7241381882860007254" fileName="NullSignatureVisitor.java" startLine="46" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitBaseType#(C)V" />
+    <nodeInfo nodeId="7241381882860007260" fileName="NullSignatureVisitor.java" startLine="49" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitTypeVariable#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7241381882860007272" fileName="NullSignatureVisitor.java" startLine="56" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitClassType#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7241381882860007278" fileName="NullSignatureVisitor.java" startLine="59" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitInnerClassType#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7241381882860007284" fileName="NullSignatureVisitor.java" startLine="62" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitTypeArgument#()V" />
+    <nodeInfo nodeId="7241381882860007296" fileName="NullSignatureVisitor.java" startLine="69" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitEnd#()V" />
+    <nodeInfo nodeId="7241381882860007203" fileName="NullSignatureVisitor.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="NullSignatureVisitor#()V" />
+    <nodeInfo nodeId="7241381882860007212" fileName="NullSignatureVisitor.java" startLine="18" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitClassBound#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007218" fileName="NullSignatureVisitor.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitInterfaceBound#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007224" fileName="NullSignatureVisitor.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitSuperclass#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007230" fileName="NullSignatureVisitor.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitInterface#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007236" fileName="NullSignatureVisitor.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitParameterType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007242" fileName="NullSignatureVisitor.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitReturnType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007248" fileName="NullSignatureVisitor.java" startLine="42" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitExceptionType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007266" fileName="NullSignatureVisitor.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitArrayType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007288" fileName="NullSignatureVisitor.java" startLine="65" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitTypeArgument#(C)Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <scopeInfo nodeId="7241381882860007211" fileName="NullSignatureVisitor.java" startLine="15" startPosition="53" endLine="15" endPosition="53" />
+    <scopeInfo nodeId="7241381882860007259" fileName="NullSignatureVisitor.java" startLine="46" startPosition="46" endLine="46" endPosition="46" />
+    <scopeInfo nodeId="7241381882860007265" fileName="NullSignatureVisitor.java" startLine="49" startPosition="46" endLine="49" endPosition="46" />
+    <scopeInfo nodeId="7241381882860007277" fileName="NullSignatureVisitor.java" startLine="56" startPosition="43" endLine="56" endPosition="43" />
+    <scopeInfo nodeId="7241381882860007283" fileName="NullSignatureVisitor.java" startLine="59" startPosition="48" endLine="59" endPosition="48" />
+    <scopeInfo nodeId="7241381882860007287" fileName="NullSignatureVisitor.java" startLine="62" startPosition="35" endLine="62" endPosition="35" />
+    <scopeInfo nodeId="7241381882860007299" fileName="NullSignatureVisitor.java" startLine="69" startPosition="26" endLine="69" endPosition="26" />
+    <scopeInfo nodeId="7241381882860007205" fileName="NullSignatureVisitor.java" startLine="11" startPosition="34" endLine="12" endPosition="24" />
+    <scopeInfo nodeId="7241381882860007215" fileName="NullSignatureVisitor.java" startLine="18" startPosition="45" endLine="19" endPosition="16" />
+    <scopeInfo nodeId="7241381882860007221" fileName="NullSignatureVisitor.java" startLine="22" startPosition="49" endLine="23" endPosition="16" />
+    <scopeInfo nodeId="7241381882860007227" fileName="NullSignatureVisitor.java" startLine="26" startPosition="45" endLine="27" endPosition="16" />
+    <scopeInfo nodeId="7241381882860007233" fileName="NullSignatureVisitor.java" startLine="30" startPosition="44" endLine="31" endPosition="16" />
+    <scopeInfo nodeId="7241381882860007239" fileName="NullSignatureVisitor.java" startLine="34" startPosition="48" endLine="35" endPosition="16" />
+    <scopeInfo nodeId="7241381882860007245" fileName="NullSignatureVisitor.java" startLine="38" startPosition="45" endLine="39" endPosition="16" />
+    <scopeInfo nodeId="7241381882860007251" fileName="NullSignatureVisitor.java" startLine="42" startPosition="48" endLine="43" endPosition="16" />
+    <scopeInfo nodeId="7241381882860007269" fileName="NullSignatureVisitor.java" startLine="52" startPosition="44" endLine="53" endPosition="16" />
+    <scopeInfo nodeId="7241381882860007293" fileName="NullSignatureVisitor.java" startLine="65" startPosition="60" endLine="66" endPosition="16" />
+    <scopeInfo nodeId="7241381882860007206" fileName="NullSignatureVisitor.java" startLine="15" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="7241381882860007209" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860007254" fileName="NullSignatureVisitor.java" startLine="44" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="7241381882860007254" fileName="NullSignatureVisitor.java" startLine="46" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="7241381882860007257" varName="descriptor" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860007260" fileName="NullSignatureVisitor.java" startLine="47" startPosition="0" endLine="49" endPosition="0">
+    <scopeInfo nodeId="7241381882860007260" fileName="NullSignatureVisitor.java" startLine="49" startPosition="0" endLine="51" endPosition="0">
       <varInfo nodeId="7241381882860007263" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860007272" fileName="NullSignatureVisitor.java" startLine="54" startPosition="0" endLine="56" endPosition="0">
+    <scopeInfo nodeId="7241381882860007272" fileName="NullSignatureVisitor.java" startLine="56" startPosition="0" endLine="58" endPosition="0">
       <varInfo nodeId="7241381882860007275" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860007278" fileName="NullSignatureVisitor.java" startLine="57" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="7241381882860007278" fileName="NullSignatureVisitor.java" startLine="59" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="7241381882860007281" varName="name" />
     </scopeInfo>
-    <scopeInfo nodeId="7241381882860007284" fileName="NullSignatureVisitor.java" startLine="60" startPosition="0" endLine="62" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007296" fileName="NullSignatureVisitor.java" startLine="67" startPosition="0" endLine="69" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007212" fileName="NullSignatureVisitor.java" startLine="16" startPosition="0" endLine="19" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007218" fileName="NullSignatureVisitor.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007224" fileName="NullSignatureVisitor.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007230" fileName="NullSignatureVisitor.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007236" fileName="NullSignatureVisitor.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007242" fileName="NullSignatureVisitor.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007248" fileName="NullSignatureVisitor.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007266" fileName="NullSignatureVisitor.java" startLine="50" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="7241381882860007288" fileName="NullSignatureVisitor.java" startLine="63" startPosition="0" endLine="66" endPosition="0">
+    <scopeInfo nodeId="7241381882860007284" fileName="NullSignatureVisitor.java" startLine="62" startPosition="0" endLine="64" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007296" fileName="NullSignatureVisitor.java" startLine="69" startPosition="0" endLine="71" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007203" fileName="NullSignatureVisitor.java" startLine="11" startPosition="0" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007212" fileName="NullSignatureVisitor.java" startLine="18" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007218" fileName="NullSignatureVisitor.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007224" fileName="NullSignatureVisitor.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007230" fileName="NullSignatureVisitor.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007236" fileName="NullSignatureVisitor.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007242" fileName="NullSignatureVisitor.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007248" fileName="NullSignatureVisitor.java" startLine="42" startPosition="0" endLine="45" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007266" fileName="NullSignatureVisitor.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
+    <scopeInfo nodeId="7241381882860007288" fileName="NullSignatureVisitor.java" startLine="65" startPosition="0" endLine="68" endPosition="0">
       <varInfo nodeId="7241381882860007291" varName="wildcard" />
     </scopeInfo>
-    <unitInfo nodeId="7241381882860007196" fileName="NullSignatureVisitor.java" startLine="7" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.NullSignatureVisitor" />
+    <unitInfo nodeId="7241381882860007196" fileName="NullSignatureVisitor.java" startLine="8" startPosition="0" endLine="72" endPosition="0" unitName="jetbrains.mps.baseLanguage.javastub.asm.NullSignatureVisitor" />
   </root>
   <root nodeId="7241381882860007300" modelId="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.baseLanguage.javastub.asm)">
     <nodeInfo nodeId="7241381882860007303" fileName="ASMUnboundedType.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMUnboundedType#()V" />
@@ -769,7 +771,7 @@
     <nodeInfo nodeId="7241381882860007375" fileName="TypeUtil.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromDescriptor#(Ljava/lang/String;)Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
     <nodeInfo nodeId="7241381882860007462" fileName="TypeUtil.java" startLine="45" startPosition="86" endLine="48" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="7241381882860007489" fileName="TypeUtil.java" startLine="56" startPosition="62" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7241381882860007514" fileName="TypeUtil.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitReturnType#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007514" fileName="TypeUtil.java" startLine="63" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitReturnType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
     <nodeInfo nodeId="7241381882860007527" fileName="TypeUtil.java" startLine="70" startPosition="72" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860007567" fileName="TypeUtil.java" startLine="83" startPosition="66" endLine="86" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7241381882860007595" fileName="TypeUtil.java" startLine="91" startPosition="88" endLine="94" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -789,23 +791,23 @@
     <nodeInfo nodeId="7241381882860007342" fileName="TypeUtil.java" startLine="244" startPosition="0" endLine="247" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitTypeArgument#()V" />
     <nodeInfo nodeId="7241381882860007350" fileName="TypeUtil.java" startLine="253" startPosition="0" endLine="256" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitBaseType#(C)V" />
     <nodeInfo nodeId="7241381882860007355" fileName="TypeUtil.java" startLine="257" startPosition="0" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitTypeVariable#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7241381882860007360" fileName="TypeUtil.java" startLine="261" startPosition="0" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitArrayType#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007360" fileName="TypeUtil.java" startLine="261" startPosition="0" endLine="264" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitArrayType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
     <nodeInfo nodeId="7241381882860007363" fileName="TypeUtil.java" startLine="265" startPosition="0" endLine="268" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitClassType#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="7241381882860008048" fileName="TypeUtil.java" startLine="282" startPosition="7" endLine="285" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7241381882860007630" fileName="TypeUtil.java" startLine="108" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitClassBound#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007630" fileName="TypeUtil.java" startLine="108" startPosition="0" endLine="112" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitClassBound#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
     <nodeInfo nodeId="7241381882860007754" fileName="TypeUtil.java" startLine="200" startPosition="42" endLine="204" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860007902" fileName="TypeUtil.java" startLine="232" startPosition="40" endLine="236" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860007919" fileName="TypeUtil.java" startLine="236" startPosition="7" endLine="240" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7241381882860007345" fileName="TypeUtil.java" startLine="248" startPosition="0" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitTypeArgument#(C)Lorg/objectweb/asm/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007345" fileName="TypeUtil.java" startLine="248" startPosition="0" endLine="252" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitTypeArgument#(C)Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
     <nodeInfo nodeId="7241381882860008024" fileName="TypeUtil.java" startLine="278" startPosition="37" endLine="282" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860007507" fileName="TypeUtil.java" startLine="61" startPosition="82" endLine="66" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7241381882860007554" fileName="TypeUtil.java" startLine="77" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitParameterType#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007633" fileName="TypeUtil.java" startLine="113" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitInterfaceBound#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007681" fileName="TypeUtil.java" startLine="164" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitExceptionType#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007554" fileName="TypeUtil.java" startLine="77" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitParameterType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007633" fileName="TypeUtil.java" startLine="113" startPosition="0" endLine="118" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitInterfaceBound#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007681" fileName="TypeUtil.java" startLine="164" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitExceptionType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
     <nodeInfo nodeId="7241381882860007797" fileName="TypeUtil.java" startLine="207" startPosition="98" endLine="212" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860007625" fileName="TypeUtil.java" startLine="101" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitFormalTypeParameter#(Ljava/lang/String;)V" />
-    <nodeInfo nodeId="7241381882860007636" fileName="TypeUtil.java" startLine="119" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitReturnType#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860007639" fileName="TypeUtil.java" startLine="126" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitSuperclass#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007636" fileName="TypeUtil.java" startLine="119" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitReturnType#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860007639" fileName="TypeUtil.java" startLine="126" startPosition="0" endLine="132" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitSuperclass#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
     <nodeInfo nodeId="5944751885067650179" fileName="TypeUtil.java" startLine="140" startPosition="53" endLine="146" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860007993" fileName="TypeUtil.java" startLine="269" startPosition="28" endLine="275" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7241381882860007451" fileName="TypeUtil.java" startLine="43" startPosition="22" endLine="50" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -824,7 +826,7 @@
     <nodeInfo nodeId="7241381882860007642" fileName="TypeUtil.java" startLine="133" startPosition="0" endLine="153" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="flush#()V" />
     <nodeInfo nodeId="7241381882860007329" fileName="TypeUtil.java" startLine="200" startPosition="0" endLine="222" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addPart#(Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;)V" />
     <nodeInfo nodeId="7241381882860007389" fileName="TypeUtil.java" startLine="21" startPosition="50" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.SwitchStatement" />
-    <nodeInfo nodeId="7241381882860007384" fileName="TypeUtil.java" startLine="21" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromType#(Lorg/objectweb/asm/Type;)Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
+    <nodeInfo nodeId="7241381882860007384" fileName="TypeUtil.java" startLine="21" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="fromType#(Lorg/jetbrains/asm4/Type;)Ljetbrains/mps/baseLanguage/javastub/asm/ASMType;" />
     <nodeInfo nodeId="7241381882860007608" fileName="TypeUtil.java" startLine="95" startPosition="60" endLine="153" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7241381882860007581" fileName="TypeUtil.java" startLine="90" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getFormalTypeParameters#(Ljava/lang/String;)Ljava/util/List;" />
     <scopeInfo nodeId="7241381882860007374" fileName="TypeUtil.java" startLine="14" startPosition="26" endLine="14" endPosition="26" />
@@ -1236,17 +1238,17 @@
     <nodeInfo nodeId="7241381882860009484" fileName="ASMClass.java" startLine="52" startPosition="10" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7241381882860009658" fileName="ASMClass.java" startLine="74" startPosition="83" endLine="81" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7241381882860010059" fileName="ASMClass.java" startLine="184" startPosition="32" endLine="191" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7241381882860009554" fileName="ASMClass.java" startLine="34" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitSuperclass#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
-    <nodeInfo nodeId="7241381882860009557" fileName="ASMClass.java" startLine="43" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitInterface#()Lorg/objectweb/asm/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860009554" fileName="ASMClass.java" startLine="34" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitSuperclass#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860009557" fileName="ASMClass.java" startLine="43" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitInterface#()Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
     <nodeInfo nodeId="7241381882860009602" fileName="ASMClass.java" startLine="65" startPosition="5" endLine="73" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="7241381882860010000" fileName="ASMClass.java" startLine="175" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitTypeVariable#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="7241381882860010005" fileName="ASMClass.java" startLine="184" startPosition="0" endLine="193" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitEnd#()V" />
     <nodeInfo nodeId="7241381882860009547" fileName="ASMClass.java" startLine="32" startPosition="73" endLine="51" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7241381882860009996" fileName="ASMClass.java" startLine="173" startPosition="62" endLine="193" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7241381882860009641" fileName="ASMClass.java" startLine="73" startPosition="5" endLine="95" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7241381882860009399" fileName="ASMClass.java" startLine="173" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitTypeArgument#(C)Lorg/objectweb/asm/signature/SignatureVisitor;" />
+    <nodeInfo nodeId="7241381882860009399" fileName="ASMClass.java" startLine="173" startPosition="0" endLine="195" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visitTypeArgument#(C)Lorg/jetbrains/asm4/signature/SignatureVisitor;" />
     <nodeInfo nodeId="7241381882860009476" fileName="ASMClass.java" startLine="30" startPosition="100" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7241381882860009454" fileName="ASMClass.java" startLine="28" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMClass#(Lorg/objectweb/asm/ClassReader;)V" />
+    <nodeInfo nodeId="7241381882860009454" fileName="ASMClass.java" startLine="28" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ASMClass#(Lorg/jetbrains/asm4/ClassReader;)V" />
     <scopeInfo nodeId="7241381882860009987" fileName="ASMClass.java" startLine="166" startPosition="41" endLine="166" endPosition="41" />
     <scopeInfo nodeId="7241381882860009494" fileName="ASMClass.java" startLine="53" startPosition="37" endLine="54" endPosition="83" />
     <scopeInfo nodeId="7241381882860009522" fileName="ASMClass.java" startLine="56" startPosition="61" endLine="57" endPosition="75" />

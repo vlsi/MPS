@@ -49,6 +49,7 @@ public class MpsMakeHelper {
     {Type.EXCLUDE, "**/**testLogger**/**"},
     {Type.EXCLUDE, "**/**sandbox**/**"},
     {Type.EXCLUDE, "**/**Sandbox**/**"},
+    {Type.EXCLUDE, "**/IdeaPlugin/solutions/**"},
     {Type.INCLUDE, "**/**.mpl"},
     {Type.INCLUDE, "**/**.msd"},
     {Type.EXCLUDE, "**/resolve.msd"},
