@@ -7872,8 +7872,26 @@
             <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="2688703077001376106">
               <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2688703077001376107">
                 <property name="head" nameId="3ior.8618885170173601779" value="build" />
-                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2688703077001376108">
-                  <property name="head" nameId="3ior.8618885170173601779" value="mps.sh" />
+                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111537853">
+                  <property name="head" nameId="3ior.8618885170173601779" value="solution" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111537856">
+                    <property name="head" nameId="3ior.8618885170173601779" value="source_gen" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111537858">
+                      <property name="head" nameId="3ior.8618885170173601779" value="jetbrains" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111537860">
+                        <property name="head" nameId="3ior.8618885170173601779" value="mps" />
+                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111537862">
+                          <property name="head" nameId="3ior.8618885170173601779" value="ide" />
+                          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111537864">
+                            <property name="head" nameId="3ior.8618885170173601779" value="build" />
+                            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111537866">
+                              <property name="head" nameId="3ior.8618885170173601779" value="mps.sh" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -8288,11 +8306,29 @@
                     <property name="eol" nameId="3ior.4198392933254416822" value="lf" />
                     <property name="removeEOF" nameId="3ior.4198392933254551900" value="true" />
                   </node>
-                  <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="3730845620956883034">
-                    <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3730845620956883035">
+                  <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="3558426974111550578">
+                    <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550579">
                       <property name="head" nameId="3ior.8618885170173601779" value="build" />
-                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3730845620956883036">
-                        <property name="head" nameId="3ior.8618885170173601779" value="Info.plist.xml" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550580">
+                        <property name="head" nameId="3ior.8618885170173601779" value="solution" />
+                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550581">
+                          <property name="head" nameId="3ior.8618885170173601779" value="source_gen" />
+                          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550582">
+                            <property name="head" nameId="3ior.8618885170173601779" value="jetbrains" />
+                            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550583">
+                              <property name="head" nameId="3ior.8618885170173601779" value="mps" />
+                              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550584">
+                                <property name="head" nameId="3ior.8618885170173601779" value="ide" />
+                                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550585">
+                                  <property name="head" nameId="3ior.8618885170173601779" value="build" />
+                                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550586">
+                                    <property name="head" nameId="3ior.8618885170173601779" value="Info.plist.xml" />
+                                  </node>
+                                </node>
+                              </node>
+                            </node>
+                          </node>
+                        </node>
                       </node>
                     </node>
                   </node>
@@ -8328,11 +8364,29 @@
               <property name="eol" nameId="3ior.4198392933254416822" value="lf" />
               <property name="removeEOF" nameId="3ior.4198392933254551900" value="true" />
             </node>
-            <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="2688703077001284726">
-              <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2688703077001284727">
+            <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="3558426974111550692">
+              <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550693">
                 <property name="head" nameId="3ior.8618885170173601779" value="build" />
-                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2688703077001284728">
-                  <property name="head" nameId="3ior.8618885170173601779" value="mps.sh" />
+                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550694">
+                  <property name="head" nameId="3ior.8618885170173601779" value="solution" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550695">
+                    <property name="head" nameId="3ior.8618885170173601779" value="source_gen" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550696">
+                      <property name="head" nameId="3ior.8618885170173601779" value="jetbrains" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550697">
+                        <property name="head" nameId="3ior.8618885170173601779" value="mps" />
+                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550698">
+                          <property name="head" nameId="3ior.8618885170173601779" value="ide" />
+                          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550699">
+                            <property name="head" nameId="3ior.8618885170173601779" value="build" />
+                            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550700">
+                              <property name="head" nameId="3ior.8618885170173601779" value="mps.sh" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -8342,11 +8396,29 @@
             <node role="parameters" roleId="3ior.9126048691955220774" type="3ior.BuildLayout_CopyFilterFixCRLF" typeId="3ior.4198392933254416812" id="2688703077001284741">
               <property name="eol" nameId="3ior.4198392933254416822" value="crlf" />
             </node>
-            <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="2688703077001284733">
-              <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2688703077001284734">
+            <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="3558426974111550827">
+              <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550828">
                 <property name="head" nameId="3ior.8618885170173601779" value="build" />
-                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2688703077001284735">
-                  <property name="head" nameId="3ior.8618885170173601779" value="mps.bat" />
+                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550829">
+                  <property name="head" nameId="3ior.8618885170173601779" value="solution" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550830">
+                    <property name="head" nameId="3ior.8618885170173601779" value="source_gen" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550831">
+                      <property name="head" nameId="3ior.8618885170173601779" value="jetbrains" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550832">
+                        <property name="head" nameId="3ior.8618885170173601779" value="mps" />
+                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550833">
+                          <property name="head" nameId="3ior.8618885170173601779" value="ide" />
+                          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550834">
+                            <property name="head" nameId="3ior.8618885170173601779" value="build" />
+                            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111550835">
+                              <property name="head" nameId="3ior.8618885170173601779" value="mps.bat" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -8458,11 +8530,29 @@
                 <property name="eol" nameId="3ior.4198392933254416822" value="lf" />
                 <property name="removeEOF" nameId="3ior.4198392933254551900" value="true" />
               </node>
-              <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="2688703077001193404">
-                <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2688703077001193405">
+              <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="3558426974111557269">
+                <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111557270">
                   <property name="head" nameId="3ior.8618885170173601779" value="build" />
-                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2688703077001193406">
-                    <property name="head" nameId="3ior.8618885170173601779" value="Info.plist.xml" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111557271">
+                    <property name="head" nameId="3ior.8618885170173601779" value="solution" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111557272">
+                      <property name="head" nameId="3ior.8618885170173601779" value="source_gen" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111557273">
+                        <property name="head" nameId="3ior.8618885170173601779" value="jetbrains" />
+                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111557274">
+                          <property name="head" nameId="3ior.8618885170173601779" value="mps" />
+                          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111557275">
+                            <property name="head" nameId="3ior.8618885170173601779" value="ide" />
+                            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111557276">
+                              <property name="head" nameId="3ior.8618885170173601779" value="build" />
+                              <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111557277">
+                                <property name="head" nameId="3ior.8618885170173601779" value="Info.plist.xml" />
+                              </node>
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
                   </node>
                 </node>
               </node>
@@ -8613,11 +8703,29 @@
               <property name="eol" nameId="3ior.4198392933254416822" value="lf" />
               <property name="removeEOF" nameId="3ior.4198392933254551900" value="true" />
             </node>
-            <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="2688703077001193419">
-              <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2688703077001193420">
+            <node role="path" roleId="3ior.9126048691955220762" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="3558426974111557392">
+              <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111557393">
                 <property name="head" nameId="3ior.8618885170173601779" value="build" />
-                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="2688703077001193421">
-                  <property name="head" nameId="3ior.8618885170173601779" value="mps.sh" />
+                <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111557394">
+                  <property name="head" nameId="3ior.8618885170173601779" value="solution" />
+                  <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111557395">
+                    <property name="head" nameId="3ior.8618885170173601779" value="source_gen" />
+                    <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111557396">
+                      <property name="head" nameId="3ior.8618885170173601779" value="jetbrains" />
+                      <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111557397">
+                        <property name="head" nameId="3ior.8618885170173601779" value="mps" />
+                        <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111557398">
+                          <property name="head" nameId="3ior.8618885170173601779" value="ide" />
+                          <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111557399">
+                            <property name="head" nameId="3ior.8618885170173601779" value="build" />
+                            <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="3558426974111557400">
+                              <property name="head" nameId="3ior.8618885170173601779" value="mps.sh" />
+                            </node>
+                          </node>
+                        </node>
+                      </node>
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
