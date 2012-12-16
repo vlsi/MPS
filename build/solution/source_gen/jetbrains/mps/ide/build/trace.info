@@ -37,7 +37,7 @@
     <unitInfo nodeId="5970299968953452763" fileName="buildConnectorPlugin.xml" startLine="1" startPosition="0" endLine="79" endPosition="10" unitName="jetbrains.mps.ide.build.buildConnectorPlugin" />
   </root>
   <root nodeId="6164334420696839314" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="6164334420696839314" fileName="buildDebuggerPlugin.xml" startLine="1" startPosition="0" endLine="751" endPosition="10" unitName="jetbrains.mps.ide.build.buildDebuggerPlugin" />
+    <unitInfo nodeId="6164334420696839314" fileName="buildDebuggerPlugin.xml" startLine="1" startPosition="0" endLine="766" endPosition="10" unitName="jetbrains.mps.ide.build.buildDebuggerPlugin" />
   </root>
   <root nodeId="6265574260762011003" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
     <unitInfo nodeId="6265574260762011003" fileName="buildMakePlugin.xml" startLine="1" startPosition="0" endLine="103" endPosition="10" unitName="jetbrains.mps.ide.build.buildMakePlugin" />

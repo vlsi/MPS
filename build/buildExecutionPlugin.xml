@@ -405,8 +405,8 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
-        <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-api/languages/jetbrains.mps.debugger.api.lang.jar" />
-        <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-execution-api/languages/jetbrains.mps.execution.common.jar" />
+        <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-api/languages/mps-debugger-api/jetbrains.mps.debugger.api.lang.jar" />
+        <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.common.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.plugin.jar" />
@@ -462,9 +462,9 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
-        <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-api/languages/jetbrains.mps.debugger.api.lang.jar" />
-        <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-execution-api/languages/jetbrains.mps.execution.common.jar" />
-        <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-execution-api/languages/jetbrains.mps.execution.settings.jar" />
+        <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-api/languages/mps-debugger-api/jetbrains.mps.debugger.api.lang.jar" />
+        <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.common.jar" />
+        <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.settings.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
@@ -591,9 +591,9 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
-        <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-api/languages/jetbrains.mps.debugger.api.lang.jar" />
-        <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-execution-api/languages/jetbrains.mps.execution.common.jar" />
-        <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-execution-api/languages/jetbrains.mps.execution.settings.jar" />
+        <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-api/languages/mps-debugger-api/jetbrains.mps.debugger.api.lang.jar" />
+        <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.common.jar" />
+        <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.settings.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.plugin.jar" />
