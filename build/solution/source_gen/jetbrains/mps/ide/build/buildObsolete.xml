@@ -483,8 +483,8 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-ui.jar" />
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-execution-api/lib/execution-api.jar" />
-        <fileset file="${artifacts.buildExecutionPlugin}/plugins/execution-languages/lib/execution-languages.jar" />
-        <fileset file="${artifacts.buildExecutionPlugin}/plugins/execution-configurations/lib/execution-configurations.jar" />
+        <fileset file="${artifacts.buildExecutionPlugin}/plugins/mps-execution-languages/lib/execution-languages.jar" />
+        <fileset file="${artifacts.buildExecutionPlugin}/plugins/mps-execution-configurations/lib/execution-configurations.jar" />
         <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-api/lib/debugger-api.jar" />
         <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-java/lib/debugger-java.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
