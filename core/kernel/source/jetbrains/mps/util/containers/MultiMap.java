@@ -3,11 +3,20 @@ package jetbrains.mps.util.containers;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.Serializable;
-import java.util.*;
+import java.util.AbstractCollection;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 import java.util.Map.Entry;
+import java.util.NoSuchElementException;
+import java.util.Set;
 
 /**
  * This class was copied from Idea's util.jar not to get it all in our core
+ *
  * @author Dmitry Avdeev
  */
 public class MultiMap<K, V> implements Serializable {
@@ -78,7 +87,7 @@ public class MultiMap<K, V> implements Serializable {
   public boolean isEmpty() {
     if (myMap.isEmpty()) return true;
 
-    for(Collection<V> valueList: myMap.values()) {
+    for (Collection<V> valueList : myMap.values()) {
       if (!valueList.isEmpty()) {
         return false;
       }
@@ -91,7 +100,7 @@ public class MultiMap<K, V> implements Serializable {
   }
 
   public boolean containsScalarValue(V value) {
-    for(Collection<V> valueList: myMap.values()) {
+    for (Collection<V> valueList : myMap.values()) {
       if (valueList.contains(value)) {
         return true;
       }
@@ -225,7 +234,7 @@ public class MultiMap<K, V> implements Serializable {
   public boolean equals(Object o) {
     if (this == o) return true;
     if (!(o instanceof MultiMap)) return false;
-    return myMap.equals(((MultiMap)o).myMap);
+    return myMap.equals(((MultiMap) o).myMap);
   }
 
   @Override
@@ -236,5 +245,11 @@ public class MultiMap<K, V> implements Serializable {
   @Override
   public String toString() {
     return myMap.toString();
+  }
+
+  public void putAllValues(Map<K, Collection<V>> map) {
+    for (Entry<K, Collection<V>> e : map.entrySet()) {
+      putValues(e.getKey(), e.getValue());
+    }
   }
 }
