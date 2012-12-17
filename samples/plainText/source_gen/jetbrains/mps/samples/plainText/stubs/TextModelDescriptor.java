@@ -18,6 +18,7 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.InputStream;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.ThreadUtils;
 
 public class TextModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor {
@@ -108,8 +109,11 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
   public void reloadFromDisk() {
     ModelAccess.assertLegalWrite();
 
-    final SModel old = myModel;
-    check_bp2jat_a3a31(old);
+    SModel old = myModel;
+
+    SModelRepository.getInstance().notifyModelReplaced(this, old);
+
+    check_bp2jat_a6a31(old);
 
     myModel = null;
     isChanged = false;
@@ -119,10 +123,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
       public void run() {
         ModelAccess.instance().runWriteAction(new Runnable() {
           public void run() {
-            fireModelReplaced();
             fireModelStateChanged(ModelLoadingState.FULLY_LOADED, ModelLoadingState.NOT_LOADED);
-
-            check_bp2jat_a3a0a0a0j0n(old);
           }
         });
       }
@@ -130,16 +131,9 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
 
   }
 
-  private static void check_bp2jat_a3a31(SModel checkedDotOperand) {
+  private static void check_bp2jat_a6a31(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.setModelDescriptor(null);
-    }
-
-  }
-
-  private static void check_bp2jat_a3a0a0a0j0n(SModel checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      checkedDotOperand.dispose();
     }
 
   }

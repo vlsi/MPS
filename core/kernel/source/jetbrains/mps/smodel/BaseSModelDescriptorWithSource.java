@@ -77,10 +77,10 @@ public abstract class BaseSModelDescriptorWithSource extends BaseSModelDescripto
   protected synchronized void replaceModel(Runnable replacer) {
     ModelAccess.assertLegalWrite();
 
-    SModelRepository.getInstance().notifyLater(this);
-
-
     final SModel oldSModel = getCurrentModelInternal();
+    SModelRepository.getInstance().notifyModelReplaced(this, oldSModel);
+
+
     if (oldSModel != null) {
       oldSModel.setModelDescriptor(null);
     }

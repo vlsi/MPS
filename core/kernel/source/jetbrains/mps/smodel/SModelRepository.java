@@ -260,16 +260,15 @@ public class SModelRepository implements CoreComponent {
   public void refreshModels() {
   }
 
-  void notifyLater(BaseSModelDescriptor modelDescriptor) {
+ public void notifyModelReplaced(BaseSModelDescriptor modelDescriptor, SModel oldSModel) {
     ModelAccess.assertLegalWrite();
-    SModel oldModel = modelDescriptor.getCurrentModelInternal();
 
     if (myReloadingDescriptorQueue.isEmpty()) {
       notifyAfterReload();
     }
 
     synchronized (myReloadingDescriptorQueue) {
-      myReloadingDescriptorQueue.put(modelDescriptor, oldModel);
+      myReloadingDescriptorQueue.put(modelDescriptor, oldSModel);
     }
 
   }
