@@ -4,7 +4,7 @@
     <unitInfo nodeId="1392391688312941958" fileName="buildStandalone.xml" startLine="1" startPosition="0" endLine="99" endPosition="10" unitName="jetbrains.mps.ide.build.buildStandalone" />
   </root>
   <root nodeId="1545517825663017278" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="1545517825663017278" fileName="buildVcs.xml" startLine="1" startPosition="0" endLine="165" endPosition="10" unitName="jetbrains.mps.ide.build.buildVcs" />
+    <unitInfo nodeId="1545517825663017278" fileName="buildVcs.xml" startLine="1" startPosition="0" endLine="231" endPosition="10" unitName="jetbrains.mps.ide.build.buildVcs" />
   </root>
   <root nodeId="2075442863766408895" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
     <unitInfo nodeId="2075442863766408895" fileName="buildExperimental.xml" startLine="1" startPosition="0" endLine="1988" endPosition="10" unitName="jetbrains.mps.ide.build.buildExperimental" />
@@ -28,7 +28,7 @@
     <unitInfo nodeId="4301118715654819483" fileName="buildTroveCollections.xml" startLine="1" startPosition="0" endLine="201" endPosition="10" unitName="jetbrains.mps.ide.build.buildTroveCollections" />
   </root>
   <root nodeId="5148601452480491524" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="5148601452480491524" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="474" endPosition="10" unitName="jetbrains.mps.ide.build.buildPlugin" />
+    <unitInfo nodeId="5148601452480491524" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="540" endPosition="10" unitName="jetbrains.mps.ide.build.buildPlugin" />
   </root>
   <root nodeId="5548512857136492214" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
     <unitInfo nodeId="5548512857136492214" fileName="buildDevKit.xml" startLine="1" startPosition="0" endLine="995" endPosition="10" unitName="jetbrains.mps.ide.build.buildDevKit" />
