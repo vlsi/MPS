@@ -20,6 +20,7 @@ import jetbrains.mps.components.CoreComponent;
 
 import java.util.Map;
 
+@Deprecated //use openapi. this does not work
 public class FastFindSupportRegistry implements CoreComponent {
   private static FastFindSupportRegistry INSTANCE;
 

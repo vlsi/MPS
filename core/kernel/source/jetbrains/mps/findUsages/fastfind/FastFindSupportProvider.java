@@ -17,6 +17,7 @@ package jetbrains.mps.findUsages.fastfind;
 
 import org.jetbrains.annotations.Nullable;
 
+@Deprecated //use openapi. this does not work
 public interface FastFindSupportProvider {
   @Nullable()
   FastFindSupport getFastFindSupport();
