@@ -203,7 +203,7 @@ public class Solution extends ClassLoadingModule {
   }
 
   public boolean canLoad() {
-    return getModuleDescriptor().getKind() != SolutionKind.NONE;
+    return MPSCore.getInstance().isTestMode() || getModuleDescriptor().getKind() != SolutionKind.NONE;
   }
 
   @Deprecated
