@@ -42,6 +42,9 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.io.File;
+import java.lang.Class;
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.List;
 
 /**
@@ -85,7 +88,18 @@ public class MPSFrameworkSupportConfigurable extends FrameworkSupportConfigurabl
 
         myModelDirectoryName = new JTextField(getDefaultModelDirectoryName());
         final FileChooserDescriptor chooserDescriptor = FileChooserDescriptorFactory.createSingleFolderDescriptor();
-        chooserDescriptor.setIsTreeRootVisible(true);
+        // Reflection for compatibility with IDEA12: setIsTreeRootVisible differs in return type (void <-> FileChooserDescriptor)
+        try {
+          Class cls = chooserDescriptor.getClass();
+          Method method = cls.getMethod("setIsTreeRootVisible", boolean.class);
+          method.invoke(chooserDescriptor, (Boolean)true);
+        } catch (NoSuchMethodException e) {
+          e.printStackTrace();
+        } catch (InvocationTargetException e) {
+          e.printStackTrace();
+        } catch (IllegalAccessException e) {
+          e.printStackTrace();
+        }
         final FieldPanel fieldPanel = new FieldPanel(myModelDirectoryName, null, null, new BrowsePathListener(myModelDirectoryName, chooserDescriptor), null);
         fieldPanel.getFieldLabel().setFont(UIUtil.getLabelFont().deriveFont(Font.BOLD));
         panel.add(fieldPanel, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 0.0, GridBagConstraints.NORTHWEST, GridBagConstraints.HORIZONTAL, new Insets(8, 20, 0, 10), 0, 0));
