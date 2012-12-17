@@ -29,6 +29,7 @@ import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.project.stubs.AbstractJavaStubSolutionManager;
+import jetbrains.mps.idea.core.project.stubs.SdkClassesImporter;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
@@ -153,6 +154,7 @@ public class SolutionIdea extends Solution {
         }
       }
 
+      addUsedSdk(myDependencies);
       addUsedLibraries(myDependencies);
 
       // adding JDK module to a set of dependencies
@@ -162,6 +164,13 @@ public class SolutionIdea extends Solution {
       }
     }
     return myDependencies;
+  }
+
+  private void addUsedSdk(final List<Dependency> dependencies) {
+    Solution sdkSolution = myModule.getProject().getComponent(SdkClassesImporter.class).getModuleSdkSolution(myModule);
+    if (sdkSolution != null) {
+      myDependencies.add(new Dependency(sdkSolution.getModuleReference(), false));
+    }
   }
 
   private void addUsedLibraries(final List<Dependency> dependencies) {
