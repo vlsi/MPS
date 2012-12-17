@@ -40,7 +40,19 @@ public interface ModelCommandExecutor extends org.jetbrains.mps.openapi.module.M
 
   boolean isInEDT();
 
+  boolean canRead();
+
+  void checkReadAccess();
+
+  boolean canWrite();
+
+  void checkWriteAccess();
+
+  void runReadAction(Runnable r);
+
   <T> T runReadAction(Computable<T> c);
+
+  void runWriteAction(Runnable r);
 
   void writeFilesInEDT(@NotNull final Runnable action);
 
@@ -57,9 +69,11 @@ public interface ModelCommandExecutor extends org.jetbrains.mps.openapi.module.M
 
   void runReadInEDT(Runnable r);
 
-  void executeCommand(Runnable r, Project project);
+  void runWriteInEDT(Runnable r);
 
   void runCommandInEDT(@NotNull Runnable r, @NotNull Project p);
+
+  void executeCommand(Runnable r, Project project);
 
   /**
    * use runWriteActionInCommand(final Computable<T> c, Project project)
