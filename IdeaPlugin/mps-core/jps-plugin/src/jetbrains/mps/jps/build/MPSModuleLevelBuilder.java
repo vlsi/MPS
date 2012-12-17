@@ -19,8 +19,8 @@ package jetbrains.mps.jps.build;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.io.FileUtil;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.idea.core.make.MPSCompilerUtil;
 import jetbrains.mps.idea.core.make.MPSCustomMessages;
+import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.jps.model.JpsMPSExtensionService;
 import jetbrains.mps.jps.model.JpsMPSModuleExtension;
 import jetbrains.mps.jps.model.JpsMPSRepositoryFacade;
@@ -58,7 +58,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
     @NotNull
     @Override
     public String getPresentableName() {
-        return MPSCompilerUtil.BUILDER_ID;
+        return MPSMakeConstants.BUILDER_ID;
     }
 
     @Override
@@ -80,9 +80,9 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
         Collection<String> filesToRefresh = refreshComponent.getFilesToRefresh();
         if (!filesToRefresh.isEmpty()) {
             for (String file : filesToRefresh) {
-                context.processMessage(new CustomBuilderMessage(MPSCompilerUtil.BUILDER_ID, MPSCustomMessages.MSG_GENERATED, file));
+                context.processMessage(new CustomBuilderMessage(MPSMakeConstants.BUILDER_ID, MPSCustomMessages.MSG_GENERATED, file));
             }
-            context.processMessage(new CustomBuilderMessage(MPSCompilerUtil.BUILDER_ID, MPSCustomMessages.MSG_REFRESH, ""));
+            context.processMessage(new CustomBuilderMessage(MPSMakeConstants.BUILDER_ID, MPSCustomMessages.MSG_REFRESH, ""));
         }
         JpsMPSRepositoryFacade.getInstance().dispose();
     }
@@ -115,8 +115,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
             }
 
             Collection<SModel> sModels = new ArrayList<SModel>(toMake.keySet());
-            JpsMPSCompiler compiler = new JpsMPSCompiler(JpsMPSRepositoryFacade.getInstance().getProject(), sModels, compileContext) {
-
+            MPSCompilerContext context = new MPSCompilerContext(compileContext) {
                 @Override
                 public void fileCreated(File newFile, SModel sourceModel, boolean isUnchanged) throws IOException {
                     assert sourceModel.getSource() instanceof FileDataSource;
@@ -132,16 +131,12 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
                 }
 
                 @Override
-                public void fileDeleted(File file) throws IOException {
-                    refreshComponent.removed(Collections.singleton(file.getPath()));
-                }
-
-                @Override
                 public void reportProgress(String message) {
                     compileContext.processMessage(new ProgressMessage(message));
                 }
             };
 
+            MPSCompiler compiler = new MPSCompiler(JpsMPSRepositoryFacade.getInstance().getProject(), sModels, context);
             boolean success = compiler.build();
             if (success) {
                 status = ExitCode.OK;
@@ -151,8 +146,8 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
             throw new ProjectBuildException(ex);
         }
 
-        if (JpsBuilderUtil.isTracingMode()) {
-            compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.WARNING, "<simple warning to show Messages tool>"));
+        if (MPSCompilerUtil.isTracingMode()) {
+            compileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.WARNING, "<simple warning to show Messages tool>"));
         }
         return status;
     }
@@ -171,7 +166,7 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
                 String path = FileUtil.toCanonicalPath(file.getPath());
                 SModel model = solution.getModelByPath(path);
                 if (model == null) {
-                    compileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.WARNING, "cannot find MPS model for " + path));
+                    compileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.WARNING, "cannot find MPS model for " + path));
                     return true;
                 }
 

@@ -2,7 +2,7 @@ package jetbrains.mps.jps.project;
 
 import com.intellij.openapi.util.io.FileUtil;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.idea.core.make.MPSCompilerUtil;
+import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.idea.core.project.JpsModelRootContributor;
 import jetbrains.mps.jps.model.JpsMPSRepositoryFacade;
 import jetbrains.mps.project.Solution;
@@ -91,14 +91,14 @@ public class JpsSolutionIdea extends Solution {
     public IFile getClassesGen() {
         IFile descriptorFile = getDescriptorFile();
         if (descriptorFile != null && descriptorFile.isReadOnly()) {
-            myCompileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " super.ClassesGen " + super.getClassesGen()));
+            myCompileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, " super.ClassesGen " + super.getClassesGen()));
             return super.getClassesGen();
         }
 
         // FIX hard-coded forTests=false
         // TODO use ProjectPaths.getModuleOutputDir(myModule, false); (using JpsJavaExtensionService directly to be compatible with IDEA 12.0.0 release)
         File outputDir = JpsJavaExtensionService.getInstance().getOutputDirectory(myModule, false);
-        myCompileContext.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " ClassesGen from module " + FileSystem.getInstance().getFileByPath(outputDir.getPath())));
+        myCompileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, " ClassesGen from module " + FileSystem.getInstance().getFileByPath(outputDir.getPath())));
         if (outputDir != null) return FileSystem.getInstance().getFileByPath(outputDir.getPath());
         else return null;
     }

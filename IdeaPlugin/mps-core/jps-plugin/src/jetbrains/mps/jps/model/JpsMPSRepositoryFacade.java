@@ -19,10 +19,10 @@ package jetbrains.mps.jps.model;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
 import jetbrains.mps.generator.MPSGenerator;
-import jetbrains.mps.idea.core.make.MPSCompilerUtil;
+import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.idea.core.module.CachedModuleData;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
-import jetbrains.mps.jps.build.JpsBuilderUtil;
+import jetbrains.mps.jps.build.MPSCompilerUtil;
 import jetbrains.mps.jps.persistence.CachedDefaultModelRoot;
 import jetbrains.mps.jps.persistence.CachedJavaClassStubsModelRoot;
 import jetbrains.mps.jps.project.JpsMPSProject;
@@ -82,8 +82,8 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
                 long start = System.nanoTime();
                 initMPS();
                 initRepository(context,
-                        context.getBuilderParameter(MPSCompilerUtil.MPS_LANGUAGES.toString()),
-                        context.getBuilderParameter(MPSCompilerUtil.MPS_REPOSITORY.toString()));
+                        context.getBuilderParameter(MPSMakeConstants.MPS_LANGUAGES.toString()),
+                        context.getBuilderParameter(MPSMakeConstants.MPS_REPOSITORY.toString()));
 
                 LanguageRegistry.getInstance().loadLanguages();
                 ExtensionRegistry.getInstance().loadExtensionDescriptors();
@@ -91,8 +91,8 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
                 initProject(context);
 
-                if (JpsBuilderUtil.isTracingMode()) {
-                    context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "MPS loaded in " + (System.nanoTime() - start) / 1000000 + " ms"));
+                if (MPSCompilerUtil.isTracingMode()) {
+                    context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "MPS loaded in " + (System.nanoTime() - start) / 1000000 + " ms"));
                 }
                 isInitialized = true;
             }
@@ -117,8 +117,8 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
                 long start = System.nanoTime();
                 mos = new ModelInputStream(new FileInputStream(f));
                 myRepo = CachedRepositoryData.load(mos);
-                if (JpsBuilderUtil.isTracingMode()) {
-                    context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "loaded " + myRepo.getModules().size() + " modules in " + (System.nanoTime() - start) / 1000000 + " ms"));
+                if (MPSCompilerUtil.isTracingMode()) {
+                    context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "loaded " + myRepo.getModules().size() + " modules in " + (System.nanoTime() - start) / 1000000 + " ms"));
                 }
 
                 // use optimized implementation of default model root
@@ -140,13 +140,13 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
                 for (CachedModuleData data : myRepo.getModules()) {
                     ModuleRepositoryFacade.createModule(data.getHandle(), this);
                 }
-                if (JpsBuilderUtil.isTracingMode()) {
-                    context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "instantiated " + myRepo.getModules().size() + " modules in " + (System.nanoTime() - start) / 1000000 + " ms"));
+                if (MPSCompilerUtil.isTracingMode()) {
+                    context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "instantiated " + myRepo.getModules().size() + " modules in " + (System.nanoTime() - start) / 1000000 + " ms"));
                 }
                 return;
             } catch (IOException e) {
-                context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, e));
-                context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.WARNING, "cannot load cache, generation may be slow"));
+                context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, e));
+                context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.WARNING, "cannot load cache, generation may be slow"));
             } finally {
                 jetbrains.mps.util.FileUtil.closeFileSafe(mos);
             }
@@ -155,7 +155,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
             // TODO split by semicolon, etc.
         }
 
-        context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.WARNING, "cannot start MPS, no repository provided"));
+        context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.WARNING, "cannot start MPS, no repository provided"));
     }
 
     private void initProject(CompileContext context) {
@@ -170,8 +170,8 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
                 continue;
             }
 
-            if (JpsBuilderUtil.isTracingMode()) {
-                context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "Creating solution for " + mod.getName()));
+            if (MPSCompilerUtil.isTracingMode()) {
+                context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "Creating solution for " + mod.getName()));
             }
 
             SolutionDescriptor descriptor = extension.getConfiguration().getSolutionDescriptor();
@@ -188,8 +188,8 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
             jpsToMpsModules.put(mod, solutionIdea);
         }
 
-        if (JpsBuilderUtil.isTracingMode()) {
-            context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "Project modules loaded in " + (System.nanoTime() - start) / 1000000 + " ms"));
+        if (MPSCompilerUtil.isTracingMode()) {
+            context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "Project modules loaded in " + (System.nanoTime() - start) / 1000000 + " ms"));
         }
     }
 

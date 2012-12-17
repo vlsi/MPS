@@ -76,7 +76,7 @@ public class MPSCompilerComponent implements ProjectComponent {
                     }
                     sb.append(path);
                 }
-                context.getCompileScope().putUserData(MPSCompilerUtil.MPS_LANGUAGES, sb.toString());
+                context.getCompileScope().putUserData(MPSMakeConstants.MPS_LANGUAGES, sb.toString());
 
 
                 final File repositoryCache = new File(CompilerPaths.getCompilerSystemDirectory(project), "mps_repository.dat");
@@ -89,7 +89,7 @@ public class MPSCompilerComponent implements ProjectComponent {
                         try {
                             mos = new ModelOutputStream(new FileOutputStream(repositoryCache));
                             cachedRepositoryData.save(mos);
-                            context.getCompileScope().putUserData(MPSCompilerUtil.MPS_REPOSITORY, repositoryCache.getPath());
+                            context.getCompileScope().putUserData(MPSMakeConstants.MPS_REPOSITORY, repositoryCache.getPath());
                         } catch (IOException e) {
                             context.addMessage(CompilerMessageCategory.INFORMATION, "cannot save cache for MPS, generation may be slow", null, 0, 0);
                         } finally {
@@ -128,7 +128,7 @@ public class MPSCompilerComponent implements ProjectComponent {
 
         @Override
         public void messageReceived(String builderId, String messageType, String messageText) {
-            if (!MPSCompilerUtil.BUILDER_ID.equals(builderId)) {
+            if (!MPSMakeConstants.BUILDER_ID.equals(builderId)) {
                 return;
             }
 

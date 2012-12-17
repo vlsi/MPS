@@ -19,7 +19,7 @@ package jetbrains.mps.jps.build;
 /**
  * evgeny, 12/15/12
  */
-public class JpsBuilderUtil {
+public class MPSCompilerUtil {
 
     public static boolean isTracingMode() {
         return "true".equals(System.getProperty("mps.jps.debug"));

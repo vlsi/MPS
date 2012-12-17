@@ -22,7 +22,7 @@ import org.jetbrains.annotations.NonNls;
 /**
  * evgeny, 11/30/12
  */
-public class MPSCompilerUtil {
+public class MPSMakeConstants {
 
   @NonNls
   public static final String BUILDER_ID = "MPS";
