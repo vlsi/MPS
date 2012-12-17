@@ -101,6 +101,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
@@ -659,6 +660,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         updateStatusBarMessage();
       }
     });
+
+    SModelRepository.getInstance().addModelRepositoryListener(mySimpleModelListener);
   }
 
   protected void notifyCreation() {
@@ -1278,6 +1281,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     myHighlightManager.dispose();
 
     removeOurListeners();
+    SModelRepository.getInstance().removeModelRepositoryListener(mySimpleModelListener);
 
     EditorSettings.getInstance().removeEditorSettingsListener(mySettingsListener);
     ClassLoaderManager.getInstance().removeReloadHandler(myReloadListener);
@@ -1386,13 +1390,11 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   private void addOurListeners(@NotNull SModelDescriptor sm) {
     myEventsCollector.add(sm);
-    sm.addModelListener(mySimpleModelListener);
     myModelDescriptorsWithListener.add(sm);
   }
 
   private void removeOurListeners(@NotNull SModelDescriptor sm) {
     myEventsCollector.remove(sm);
-    sm.removeModelListener(mySimpleModelListener);
     myModelDescriptorsWithListener.remove(sm);
   }
 
@@ -3149,23 +3151,28 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     }
   }
 
-  private class MySimpleModelListener extends SModelAdapter {
-    public void modelReplaced(final SModelDescriptor sm) {
+  private class MySimpleModelListener extends SModelRepositoryAdapter {
+    @Override
+    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
       assert SwingUtilities.isEventDispatchThread() : "Model reloaded notification expected in EventDispatchThread";
       if (myNode != null) {
         assertModelNotDisposed();
-        if (myNode.getModel().getSModelReference().equals(sm.getSModelReference())) {
-          clearModelDisposedTrace();
-          SNodeId oldId = myNode.getSNodeId();
-          myNode = sm.getSModel().getNodeById(oldId);
+        for (SModelDescriptor descriptor : replacedModels){
+          if (myNode.getModel().getSModelReference().equals(descriptor.getSModelReference())) {
+            clearModelDisposedTrace();
+            SNodeId oldId = myNode.getSNodeId();
+            myNode = descriptor.getSModel().getNodeById(oldId);
+            break;
+          }
         }
       }
       rebuildEditorContent();
     }
 
+
     @Override
-    public void beforeModelDisposed(SModel sm) {
-      if (myNode != null && myNode.getModel().getSModelReference().equals(sm.getSModelReference())) {
+    public void beforeModelRemoved(SModelDescriptor modelDescriptor) {
+      if (myNode != null && myNode.getModel().getSModelReference().equals(modelDescriptor.getSModelReference())) {
         myModelDisposedStackTrace = Thread.currentThread().getStackTrace();
       }
     }

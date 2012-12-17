@@ -47,7 +47,7 @@ public abstract class SModelRepositoryAdapter implements SModelRepositoryListene
   }
 
   @Override
-  public void modelsReplaced(Set<SModelDescriptor> reloadedModels) {
+  public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
     modelRepositoryChanged();
   }
 
