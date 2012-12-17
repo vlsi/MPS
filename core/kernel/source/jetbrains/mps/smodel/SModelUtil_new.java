@@ -33,6 +33,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Set;
 
 public class SModelUtil_new implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(SModelUtil_new.class);
@@ -55,12 +56,6 @@ public class SModelUtil_new implements CoreComponent {
       SModelUtil.clearCaches();
     }
 
-    public void modelReplaced(SModelDescriptor descriptor) {
-      if (Language.getModelAspect(descriptor) != LanguageAspect.STRUCTURE) {
-        return;
-      }
-      SModelUtil.clearCaches();
-    }
 
     public void propertyChanged(SModelPropertyEvent p0) {
       if (!LanguageAspect.STRUCTURE.is(p0.getModel())) {
@@ -80,17 +75,31 @@ public class SModelUtil_new implements CoreComponent {
     }
   };
 
+  private SModelRepositoryAdapter myRepositoryListener = new SModelRepositoryAdapter() {
+    @Override
+    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+      for (SModelDescriptor descriptor : replacedModels) {
+        if (Language.getModelAspect(descriptor) == LanguageAspect.STRUCTURE) {
+          SModelUtil.clearCaches();
+          return;
+        }
+      }
+    }
+  };
+
   public SModelUtil_new(ClassLoaderManager clManager, GlobalSModelEventsManager meManager) {
     myClManager = clManager;
     myMeManager = meManager;
   }
 
   public void init() {
+    SModelRepository.getInstance().addModelRepositoryListener(myRepositoryListener);
     myClManager.addReloadHandler(myReloadHandler);
     myMeManager.addGlobalModelListener(myModelListener);
   }
 
   public void dispose() {
+    SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
     myMeManager.removeGlobalModelListener(myModelListener);
     myClManager.removeReloadHandler(myReloadHandler);
   }
@@ -124,7 +133,7 @@ public class SModelUtil_new implements CoreComponent {
   }
 
   public static SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, SNodeId nodeId, IScope scope, boolean fullNodeStructure) {
-    boolean isNotProjectModel = model==null || !ProjectModels.isProjectModel(model.getSModelReference());
+    boolean isNotProjectModel = model == null || !ProjectModels.isProjectModel(model.getSModelReference());
     if (isNotProjectModel) {
       String fqName = ModelConstraints.getDefaultConcreteConceptFqName(conceptFqName);
       if (fqName != null) {
