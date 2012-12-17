@@ -7,9 +7,12 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
-import org.jetbrains.mps.openapi.module.SModule;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.Generator;
-import jetbrains.mps.runtime.IClassLoadingModule;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.project.structure.modules.SolutionKind;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.lang.scopes.runtime.ScopeUtils;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -37,8 +40,24 @@ public class LoggingGenerationUtil {
   }
 
   public static boolean isDesignTimeModel(SModel sm) {
-    SModule module = sm.getModelDescriptor().getModule();
-    return (module instanceof Generator) || (module instanceof IClassLoadingModule && ((IClassLoadingModule) module).canLoad());
+    IModule module = sm.getModelDescriptor().getModule();
+
+    if (module instanceof Generator) {
+      return true;
+    }
+
+    // todo: use  
+    // <node> 
+
+    ModuleDescriptor descriptor = module.getModuleDescriptor();
+    if (descriptor instanceof LanguageDescriptor) {
+      return true;
+    }
+    if (descriptor instanceof SolutionDescriptor) {
+      return ((SolutionDescriptor) descriptor).getKind() != SolutionKind.NONE;
+    }
+
+    return false;
   }
 
   public static String generateUniqueFieldName(SNode contextNode, final String baseName) {
