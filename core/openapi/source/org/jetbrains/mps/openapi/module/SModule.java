@@ -21,31 +21,74 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
+/**
+ * A module represents a language or a solution.
+ */
 public interface SModule {
 
+  /**
+   * The repository-wide unique identifier
+   */
   SModuleId getModuleId();
 
+  /**
+   * Identical to getModuleReference.getModuleName()
+   */
   String getModuleName();
 
+  /**
+   * A reference to the module, which persists between subsequent read/write actions.
+   */
   @NotNull
   SModuleReference getModuleReference();
 
+  /**
+   * No updates are permitted
+   */
   boolean isReadOnly();
 
+  /**
+   * The module has been imported as a compiled library, not sources. Implies read only.
+   */
   boolean isPackaged();
 
+  /**
+   * The owning repository
+   */
   SRepository getRepository();
 
+  /**
+   * Wraps and returns an optimized directory of all modules visible from the current module
+   */
   SModuleScope getModuleScope();
 
+  /**
+   * All dependencies on modules of all kinds.
+   * Includes only dependencies declared in this model. See also GlobalModuleDependenciesManager [not yet in API]
+   */
   Iterable<SDependency> getDeclaredDependencies();
 
+  /**
+   * Languages declared as dependencies of the DEFAULT kind.
+   * Includes only dependencies declared in this model. See also GlobalModuleDependenciesManager [not yet in API]
+   */
   Iterable<SLanguage> getUsedLanguages();
 
+  /**
+   * Find the specified model among the dependencies.
+   *
+   * @return The desired model or null, if not found.
+   */
   SModel resolveInDependencies(SModelId ref);
 
+  /**
+   * Retrieves a module's model by id
+   */
   SModel getModel(SModelId id);
 
+  /**
+   * Retrieves all module's models
+   */
   Iterable<SModel> getModels();
 
   Iterable<ModelRoot> getModelRoots();

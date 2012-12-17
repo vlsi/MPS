@@ -26,7 +26,7 @@ import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.openapi.editor.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;

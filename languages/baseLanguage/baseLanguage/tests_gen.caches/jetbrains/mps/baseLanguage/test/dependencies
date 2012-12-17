@@ -393,13 +393,11 @@
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTransformationTest4" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.test.hasSameSignatureTest_Test" file="hasSameSignatureTest_Test.java">
-    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Exception" />
-    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Throwable" />
     <classNode dependClassName="jetbrains.mps.MPSLaunch" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="junit.framework.Assert" />
     <classNode dependClassName="org.junit.Test" />
     <classNode extendsClassName="jetbrains.mps.lang.test.runtime.BaseTestBody" />

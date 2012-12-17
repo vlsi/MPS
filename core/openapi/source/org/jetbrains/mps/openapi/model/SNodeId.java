@@ -17,6 +17,10 @@ package org.jetbrains.mps.openapi.model;
 
 import org.jetbrains.mps.annotations.Immutable;
 
+/**
+ * Uniquely identifies a node within a model. Will be used as keys in maps and so should correctly implement equals() and hashCode().
+ * Custom persistence implementations may provide their own implementations of SNodeId.
+ */
 @Immutable
 public interface SNodeId {
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-dkxl84sfa2mnu8y3sdq6otwgj3y4ehi">
+<dependencies version="2" modelHash="3wq5svbz2yqp3lkj2e75jjkai1dkn5d">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="-amw3yujjoknpk9rcm46zq6ty6idm23v" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="7uo2xyrudgr0a3zexm421hjdcsbok1q" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
@@ -17,7 +17,7 @@
     <file name="Constants_Language.java" />
     <file name="StructureAspectDescriptor.java" />
   </common>
-  <source id="1494751830318912535" name="Constants" hash="a17874ceztkuho905jlr9119u2k0rcj">
+  <source id="1494751830318912535" name="Constants" hash="-daef4urtdjgukx4tk21xwawn42xveeb">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="1494751830318912537" name="Constant" hash="clahckf7ws4iik0pcr44cbxkj7zbgbf">

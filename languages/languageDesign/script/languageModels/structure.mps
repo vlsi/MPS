@@ -93,6 +93,22 @@
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="pull up method" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5434557751112081978">
+      <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="AbstractClassifierSpecification" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="api" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5434557751112207651">
+      <property name="name" nameId="tpck.1169194664001" value="DirectClassifierSpecification" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="api" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="5434557751112081978" resolveInfo="AbstractClassifierSpecification" />
+    </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5434557751112207835">
+      <property name="name" nameId="tpck.1169194664001" value="FQNameClassifierSpecification" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="api" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="5434557751112081978" resolveInfo="AbstractClassifierSpecification" />
+    </node>
   </roots>
   <root id="1177457067821">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="1177458178889">
@@ -193,6 +209,12 @@
     </node>
   </root>
   <root id="6655357163912246425">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5434557751112108415">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="oldClassifier" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="5434557751112081978" resolveInfo="AbstractClassifierSpecification" />
+    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="7867202088808133349">
       <property name="name" nameId="tpck.1169194664001" value="updateClassifierTypes" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
@@ -202,12 +224,6 @@
       <property name="role" nameId="tpce.1071599776563" value="pullUpMethods" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="849077997121870276" resolveInfo="PullUpMethod" />
-    </node>
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6655357163912246426">
-      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
-      <property name="role" nameId="tpce.1071599776563" value="oldClassifier" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1107461130800" resolveInfo="Classifier" />
     </node>
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6655357163912246427">
       <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
@@ -228,6 +244,29 @@
       <property name="role" nameId="tpce.1071599776563" value="newMethodDeclaration" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1068580123132" resolveInfo="BaseMethodDeclaration" />
+    </node>
+  </root>
+  <root id="5434557751112081978" />
+  <root id="5434557751112207651">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="5434557751112207965">
+      <property name="metaClass" nameId="tpce.1071599937831" value="reference" />
+      <property name="role" nameId="tpce.1071599776563" value="classifier" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="tpee.1107461130800" resolveInfo="Classifier" />
+    </node>
+  </root>
+  <root id="5434557751112207835">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5434557751112752962">
+      <property name="name" nameId="tpck.1169194664001" value="classifierFQName" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5434557751113468451">
+      <property name="name" nameId="tpck.1169194664001" value="smodelReference" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="8915466921781754528">
+      <property name="name" nameId="tpck.1169194664001" value="snodeId" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
   </root>
 </model>

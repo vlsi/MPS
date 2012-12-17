@@ -15,11 +15,23 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+/**
+ * Represents a source of data to build models from.
+ * For implementation consider extending FileDataSource or DataSourceBase
+ */
 public interface DataSource {
 
+  /**
+   * Registers listeners who need to be notified about changes in the underlying data source.
+   * It is the responsibility of the DataSource to detect such updates and notify the listeners.
+   */
   void addListener(DataSourceListener listener);
 
   void removeListener(DataSourceListener listener);
 
+  /**
+   * Retrieves the last modification timestamp.
+   * The timestamp should reliably reflect all external changes to the data source.
+   */
   long getTimestamp();
 }

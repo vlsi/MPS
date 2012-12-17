@@ -16,7 +16,9 @@
 package org.jetbrains.mps.openapi.model;
 
 /**
- * evgeny, 10/5/12
+ * Represents a unique global reference to a node. SNodeReferences are the only recommended way to keep references
+ * to nodes across subsequent read or write actions. While direct memory references get obsolete once an action finishes,
+ * SNodeReferences will consistently retrieve the same node.
  */
 public interface SNodeReference {
 }

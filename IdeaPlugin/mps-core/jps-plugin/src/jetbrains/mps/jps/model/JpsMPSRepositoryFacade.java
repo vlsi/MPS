@@ -19,9 +19,10 @@ package jetbrains.mps.jps.model;
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.baseLanguage.search.MPSBaseLanguage;
 import jetbrains.mps.generator.MPSGenerator;
-import jetbrains.mps.idea.core.make.MPSCompilerUtil;
+import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.idea.core.module.CachedModuleData;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
+import jetbrains.mps.jps.build.MPSCompilerUtil;
 import jetbrains.mps.jps.persistence.CachedDefaultModelRoot;
 import jetbrains.mps.jps.persistence.CachedJavaClassStubsModelRoot;
 import jetbrains.mps.jps.project.JpsMPSProject;
@@ -29,15 +30,12 @@ import jetbrains.mps.jps.project.JpsSolutionIdea;
 import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
-import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.typesystem.MPSTypesystem;
@@ -46,7 +44,6 @@ import org.jetbrains.jps.incremental.CompileContext;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
 import org.jetbrains.jps.model.module.JpsModule;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 
@@ -61,159 +58,173 @@ import java.util.Map;
  */
 public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
-  private static final JpsMPSRepositoryFacade INSTANCE = new JpsMPSRepositoryFacade();
+    private static final JpsMPSRepositoryFacade INSTANCE = new JpsMPSRepositoryFacade();
 
-  private volatile boolean isInitialized = false;
-  private final Object LOCK = new Object();
-  private CachedRepositoryData myRepo;
-  private Map<JpsModule, Solution> jpsToMpsModules = new HashMap<JpsModule, Solution>();
+    private volatile boolean isInitialized = false;
+    private CachedRepositoryData myRepo;
+    private Map<JpsModule, JpsSolutionIdea> jpsToMpsModules = new HashMap<JpsModule, JpsSolutionIdea>();
+    private JpsMPSProject myProject;
 
-  public JpsMPSRepositoryFacade() {
-  }
-
-  public static JpsMPSRepositoryFacade getInstance() {
-    return INSTANCE;
-  }
-
-  public void init(final CompileContext context) {
-    if (isInitialized) {
-      return;
+    public JpsMPSRepositoryFacade() {
     }
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        long start = System.nanoTime();
-        initMPS();
-        initRepository(context,
-          context.getBuilderParameter(MPSCompilerUtil.MPS_LANGUAGES.toString()),
-          context.getBuilderParameter(MPSCompilerUtil.MPS_REPOSITORY.toString()));
 
-        LanguageRegistry.getInstance().loadLanguages();
-        ExtensionRegistry.getInstance().loadExtensionDescriptors();
-        ClassLoaderManager.getInstance().updateClassPath();
+    public static JpsMPSRepositoryFacade getInstance() {
+        return INSTANCE;
+    }
 
-        initProject(context);
-
-        context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "loaded in " + (System.nanoTime() - start) / 1000000 + " ms"));
-        isInitialized = true;
-      }
-    });
-  }
-
-  public Solution getSolution(JpsModule module) {
-    if (!isInitialized) throw new IllegalStateException("Not initialized yet");
-    return jpsToMpsModules.get(module);
-  }
-
-
-  private void initRepository(CompileContext context, String languages, String repoFile) {
-    if (repoFile != null) {
-      File f = new File(repoFile);
-      ModelInputStream mos = null;
-      try {
-        long start = System.nanoTime();
-        mos = new ModelInputStream(new FileInputStream(f));
-        myRepo = CachedRepositoryData.load(mos);
-        context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "loaded " + myRepo.getModules().size() + " modules in " + (System.nanoTime() - start) / 1000000 + " ms"));
-
-        // use optimized implementation of default model root
-        PersistenceRegistry.getInstance().setModelRootFactory(PersistenceRegistry.DEFAULT_MODEL_ROOT, new ModelRootFactory() {
-          @Override
-          public ModelRoot create() {
-            return new CachedDefaultModelRoot(myRepo);
-          }
-        });
-
-        PersistenceRegistry.getInstance().setModelRootFactory(PersistenceRegistry.JAVA_CLASSES_ROOT, new ModelRootFactory() {
-          @Override
-          public ModelRoot create() {
-            return new CachedJavaClassStubsModelRoot(myRepo);
-          }
-        });
-
-        start = System.nanoTime();
-        for (CachedModuleData data : myRepo.getModules()) {
-          ModuleRepositoryFacade.createModule(data.getHandle(), this);
+    public void init(final CompileContext context) {
+        if (isInitialized) {
+            return;
         }
-        context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "created " + myRepo.getModules().size() + " modules in " + (System.nanoTime() - start) / 1000000 + " ms"));
-        return;
-      } catch (IOException e) {
-        context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, e));
-        context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.WARNING, "cannot load cache, generation may be slow"));
-      } finally {
-        jetbrains.mps.util.FileUtil.closeFileSafe(mos);
-      }
+        ModelAccess.instance().runWriteAction(new Runnable() {
+            @Override
+            public void run() {
+                long start = System.nanoTime();
+                initMPS();
+                initRepository(context,
+                        context.getBuilderParameter(MPSMakeConstants.MPS_LANGUAGES.toString()),
+                        context.getBuilderParameter(MPSMakeConstants.MPS_REPOSITORY.toString()));
+
+                LanguageRegistry.getInstance().loadLanguages();
+                ExtensionRegistry.getInstance().loadExtensionDescriptors();
+                ClassLoaderManager.getInstance().updateClassPath();
+
+                initProject(context);
+
+                if (MPSCompilerUtil.isTracingMode()) {
+                    context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "MPS loaded in " + (System.nanoTime() - start) / 1000000 + " ms"));
+                }
+                isInitialized = true;
+            }
+        });
     }
 
-    context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.WARNING, "cannot start MPS, no repository provided"));
-  }
+    public JpsMPSProject getProject() {
+        return myProject;
+    }
 
-  private void initProject(CompileContext context) {
+    public JpsSolutionIdea getSolution(JpsModule module) {
+        if (!isInitialized) throw new IllegalStateException("Not initialized yet");
+        return jpsToMpsModules.get(module);
+    }
 
-    JpsMPSProject project = new JpsMPSProject(context.getProjectDescriptor().getProject());
 
-    for (JpsModule mod : context.getProjectDescriptor().getProject().getModules()) {
-      JpsMPSModuleExtension extension = JpsMPSExtensionService.getInstance().getExtension(mod);
+    private void initRepository(CompileContext context, String languages, String repoFile) {
+        if (repoFile != null) {
+            File f = new File(repoFile);
+            ModelInputStream mos = null;
+            try {
+                long start = System.nanoTime();
+                mos = new ModelInputStream(new FileInputStream(f));
+                myRepo = CachedRepositoryData.load(mos);
+                if (MPSCompilerUtil.isTracingMode()) {
+                    context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "loaded " + myRepo.getModules().size() + " modules in " + (System.nanoTime() - start) / 1000000 + " ms"));
+                }
 
-      if (extension == null) {
-        context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "Ignoring (no facet) " + mod.getName()));
-        continue;
-      }
+                // use optimized implementation of default model root
+                PersistenceRegistry.getInstance().setModelRootFactory(PersistenceRegistry.DEFAULT_MODEL_ROOT, new ModelRootFactory() {
+                    @Override
+                    public ModelRoot create() {
+                        return new CachedDefaultModelRoot(myRepo);
+                    }
+                });
 
-      SolutionDescriptor descriptor = extension.getConfiguration().getSolutionDescriptor();
-      descriptor.setNamespace(mod.getName());
-      descriptor.setId(ModuleId.foreign(mod.getName()));
+                PersistenceRegistry.getInstance().setModelRootFactory(PersistenceRegistry.JAVA_CLASSES_ROOT, new ModelRootFactory() {
+                    @Override
+                    public ModelRoot create() {
+                        return new CachedJavaClassStubsModelRoot(myRepo);
+                    }
+                });
 
-      JpsSolutionIdea solution = new JpsSolutionIdea(mod, descriptor, context);
+                start = System.nanoTime();
+                for (CachedModuleData data : myRepo.getModules()) {
+                    ModuleRepositoryFacade.createModule(data.getHandle(), this);
+                }
+                if (MPSCompilerUtil.isTracingMode()) {
+                    context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "instantiated " + myRepo.getModules().size() + " modules in " + (System.nanoTime() - start) / 1000000 + " ms"));
+                }
+                return;
+            } catch (IOException e) {
+                context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, e));
+                context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.WARNING, "cannot load cache, generation may be slow"));
+            } finally {
+                jetbrains.mps.util.FileUtil.closeFileSafe(mos);
+            }
+        } else if (languages != null) {
 
-      MPSModuleRepository.getInstance().registerModule(solution, project);
-      solution.updateModelsSet();
-
-      jpsToMpsModules.put(mod, solution);
-
-      context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, "FQ name: " + solution.getModuleReference().getModuleFqName()));
-
-      for (SModelDescriptor desc : SModelRepository.getInstance().getModelDescriptors(solution)) {
-        context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " ++ " + desc.getLongName()));
-        for (SNode n : desc.getRootNodes()) {
-          context.processMessage(new CompilerMessage(MPSCompilerUtil.BUILDER_ID, Kind.INFO, " root: " + n.getName()));
+            // TODO split by semicolon, etc.
         }
-      }
+
+        context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.WARNING, "cannot start MPS, no repository provided"));
     }
-  }
 
-  public void dispose() {
-    if (!isInitialized) {
-      return;
+    private void initProject(CompileContext context) {
+        long start = System.nanoTime();
+
+        myProject = new JpsMPSProject(context.getProjectDescriptor().getProject());
+
+        for (JpsModule mod : context.getProjectDescriptor().getProject().getModules()) {
+            JpsMPSModuleExtension extension = JpsMPSExtensionService.getInstance().getExtension(mod);
+
+            if (extension == null) {
+                continue;
+            }
+
+            if (MPSCompilerUtil.isTracingMode()) {
+                context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "Creating solution for " + mod.getName()));
+            }
+
+            SolutionDescriptor descriptor = extension.getConfiguration().getSolutionDescriptor();
+            descriptor.setNamespace(mod.getName());
+            descriptor.setId(ModuleId.foreign(mod.getName()));
+
+            JpsSolutionIdea module = new JpsSolutionIdea(mod, descriptor, context);
+            JpsSolutionIdea solutionIdea = MPSModuleRepository.getInstance().registerModule(module, myProject);
+            if (module == solutionIdea) {
+                solutionIdea.updateModelsSet();
+            }
+            myProject.addModule(solutionIdea.getModuleReference());
+
+            jpsToMpsModules.put(mod, solutionIdea);
+        }
+
+        if (MPSCompilerUtil.isTracingMode()) {
+            context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "Project modules loaded in " + (System.nanoTime() - start) / 1000000 + " ms"));
+        }
     }
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        disposeMPS();
-        isInitialized = false;
-      }
-    });
-  }
+
+    public void dispose() {
+        if (!isInitialized) {
+            return;
+        }
+        ModelAccess.instance().runWriteAction(new Runnable() {
+            @Override
+            public void run() {
+                disposeMPS();
+                isInitialized = false;
+            }
+        });
+    }
 
 
-  private void initMPS() {
-    MPSCore.getInstance().init();
-    MPSPersistence.getInstance().init();
-    MPSTypesystem.getInstance().init();
-    MPSGenerator.getInstance().init();
-    MPSBaseLanguage.getInstance().init();
-  }
+    private void initMPS() {
+        MPSCore.getInstance().init();
+        MPSPersistence.getInstance().init();
+        MPSTypesystem.getInstance().init();
+        MPSGenerator.getInstance().init();
+        MPSBaseLanguage.getInstance().init();
+    }
 
-  private void disposeMPS() {
-    MPSBaseLanguage.getInstance().dispose();
-    MPSGenerator.getInstance().dispose();
-    MPSTypesystem.getInstance().dispose();
-    MPSPersistence.getInstance().dispose();
-    MPSCore.getInstance().dispose();
-  }
+    private void disposeMPS() {
+        MPSBaseLanguage.getInstance().dispose();
+        MPSGenerator.getInstance().dispose();
+        MPSTypesystem.getInstance().dispose();
+        MPSPersistence.getInstance().dispose();
+        MPSCore.getInstance().dispose();
+    }
 
-  @Override
-  public boolean isHidden() {
-    return true;
-  }
+    @Override
+    public boolean isHidden() {
+        return true;
+    }
 }

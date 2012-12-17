@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.execution.impl.tests" uuid="7b15492d-a198-43e2-91e3-4a7e9116ce2b" compileInMPS="true">
+<solution name="jetbrains.mps.execution.impl.tests" uuid="7b15492d-a198-43e2-91e3-4a7e9116ce2b" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot path="${mps_home}/plugins/execution-configurations/languages/plugin/classes" type="java_classes" />
     <modelRoot path="${module}/" />

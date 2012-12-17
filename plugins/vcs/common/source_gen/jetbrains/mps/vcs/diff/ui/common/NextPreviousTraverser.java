@@ -19,7 +19,7 @@ import java.util.Arrays;
 import com.intellij.openapi.application.ApplicationManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.openapi.editor.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.workbench.action.BaseAction;

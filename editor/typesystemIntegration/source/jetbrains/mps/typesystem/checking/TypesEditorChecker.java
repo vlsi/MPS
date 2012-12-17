@@ -29,7 +29,7 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.HighlighterMessage;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
-import jetbrains.mps.openapi.editor.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;

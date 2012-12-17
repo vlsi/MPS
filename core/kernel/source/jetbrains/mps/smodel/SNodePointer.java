@@ -22,7 +22,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class SNodePointer implements SNodeReference {
-  private static SModelRepository ourSModelRepository = null;
 
   private SModelReference myModelReference;
   private SNodeId myNodeId;
@@ -146,9 +145,6 @@ public class SNodePointer implements SNodeReference {
   }
 
   private static SModelRepository getSModelRepository() {
-    if (ourSModelRepository == null) {
-      ourSModelRepository = SModelRepository.getInstance();
-    }
-    return ourSModelRepository;
+    return SModelRepository.getInstance();
   }
 }

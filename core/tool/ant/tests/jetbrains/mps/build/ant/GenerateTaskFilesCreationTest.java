@@ -23,6 +23,7 @@ import jetbrains.mps.tool.builder.make.GeneratorWorker;
 import jetbrains.mps.tool.common.ScriptProperties;
 import jetbrains.mps.tool.common.Script;
 import junit.framework.TestCase;
+import org.apache.log4j.Level;
 import org.junit.After;
 import org.junit.Test;
 
@@ -94,6 +95,7 @@ public class GenerateTaskFilesCreationTest {
     File destdir = extractProject(projectName);
 
     Script whatToDo = new Script();
+    whatToDo.updateLogLevel(Level.WARN);
     whatToDo.addModuleFile(new File(getLanguagePath(destdir, projectName, languageName) + File.separator + languageName + ".mpl"));
     doGenerate(whatToDo);
 
@@ -131,6 +133,7 @@ public class GenerateTaskFilesCreationTest {
     File destdir = extractProject(projectName);
 
     Script whatToDo = new Script();
+    whatToDo.updateLogLevel(Level.WARN);
     whatToDo.putProperty(ScriptProperties.COMPILE, Boolean.toString(true));
     whatToDo.addProjectFile(new File(destdir.getAbsolutePath() + File.separator + projectName + File.separator + projectName + ".mpr"));
     doGenerate(whatToDo);

@@ -19,12 +19,25 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.module.SModule;
 
+/**
+ * Represents a logically connected group of models that come from a related physical origin, such as a file or a directory.
+ * For implementation consider extending ModelRootBase or FolderModelRootBase.
+ */
 public interface ModelRoot {
 
+  /**
+   * A customizable categorization identifier, such as JavaStubs
+   */
   String getType();
 
+  /**
+   * A textual representation of the model root
+   */
   String getPresentation();
 
+  /**
+   * The owning module
+   */
   SModule getModule();
 
   SModel getModel(SModelId id);
@@ -37,7 +50,14 @@ public interface ModelRoot {
 
   SModel createModel(String modelName);
 
+  /**
+   * Gives the model root the opportunity to persist into the supplied memento whatever configuration information
+   * may be needed to restore the models in the future.
+   */
   void save(Memento memento);
 
+  /**
+   * Allows the model root to read its previously saved configuration information
+   */
   void load(Memento memento);
 }

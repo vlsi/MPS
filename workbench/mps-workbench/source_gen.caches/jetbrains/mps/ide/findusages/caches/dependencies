@@ -95,7 +95,7 @@
     <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.ClassifierKind" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode dependClassName="org.objectweb.asm.ClassReader" />
+    <classNode dependClassName="org.jetbrains.asm4.ClassReader" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer" />
   </dependency>

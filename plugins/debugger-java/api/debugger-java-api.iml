@@ -22,7 +22,6 @@
     <orderEntry type="module" module-name="Tuples-runtime" />
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="library" name="JDOM" level="project" />
-    <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="library" name="Tools" level="project" />
     <orderEntry type="module" module-name="debugger-api-runtime" />
     <orderEntry type="module" module-name="debugger-api-api" />

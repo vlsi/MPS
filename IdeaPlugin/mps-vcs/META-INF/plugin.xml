@@ -44,6 +44,7 @@
     </component>
   </application-components>
   <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir="/languages"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <vcs.fileStatusProvider implementation="jetbrains.mps.vcs.changesmanager.NodeFileStatusProvider"/>
     <checkinHandlerFactory implementation="jetbrains.mps.vcs.platform.integration.OptimizeImportsCheckinHandler$OptimizeImportsCheckinHandlerFactory"/>

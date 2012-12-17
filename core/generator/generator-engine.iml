@@ -16,7 +16,6 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="typesystemEngine" />
     <orderEntry type="library" name="Annotations" level="project" />
-    <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="library" name="Eclipse-compiler" level="project" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="module" module-name="Closures-runtime" />

@@ -19,7 +19,6 @@ import com.intellij.idea.IdeaTestApplication;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.ex.ProjectManagerEx;
-import com.intellij.openapi.util.InvalidDataException;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.newvfs.persistent.FSRecords;
@@ -48,11 +47,10 @@ import junit.framework.TestCase;
 import junit.framework.TestFailure;
 import org.eclipse.jdt.core.compiler.CategorizedProblem;
 import org.eclipse.jdt.internal.compiler.CompilationResult;
-import org.jdom.JDOMException;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import java.io.File;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -98,14 +96,14 @@ public class TestMain {
 */
 
   public static boolean testOnProjectCopy(final File source, final File destinationDir,
-                                          final String projectName, ProjectRunnable pr) {
+                      final String projectName, ProjectRunnable pr) {
     return testOnProjectCopy(source, destinationDir, projectName, pr, new String[0]);
   }
 
 
   public static boolean testOnProjectCopy(final File source, final File destinationDir,
-                                          final String projectName, ProjectRunnable pr,
-                                          final String... plugins) {
+                      final String projectName, ProjectRunnable pr,
+                      final String... plugins) {
     final Project project = startTestOnProjectCopy(source, destinationDir, projectName, plugins);
     if (project == null) {
       return false;
@@ -122,8 +120,8 @@ public class TestMain {
   }
 
   public static Project startTestOnProjectCopy(final File source, final File destinationDir,
-                                               final String projectName,
-                                               final String... plugins) {
+                         final String projectName,
+                         final String... plugins) {
     IdeMain.setTestMode(TestMode.CORE_TEST);
     Logger.setThreshold("WARN");
     org.apache.log4j.BasicConfigurator.configure();
@@ -206,23 +204,19 @@ public class TestMain {
     //this is a workaround for MPS-8840
     final com.intellij.openapi.project.Project[] project = new com.intellij.openapi.project.Project[1];
 
+    final Throwable[] exc = new Throwable[]{null};
     ThreadUtils.runInUIThreadAndWait(new Runnable() {
       public void run() {
         try {
           project[0] = projectManager.loadAndOpenProject(filePath);
-        } catch (IOException e) {
-          throw new RuntimeException(e);
-        } catch (JDOMException e) {
-          throw new RuntimeException(e);
-        } catch (InvalidDataException e) {
-          throw new RuntimeException(e);
+        } catch (Throwable e) {
+          exc[0] = e;
         }
       }
     });
-
     if (project[0] == null) {
       // this actually happens
-      throw new RuntimeException("ProjectManager could not load project from " + projectFile.getAbsolutePath());
+      throw new RuntimeException("ProjectManager could not load project from " + projectFile.getAbsolutePath(), exc[0]);
     }
 
     ModelAccess.instance().runReadAction(new Runnable() {
@@ -465,7 +459,7 @@ public class TestMain {
 
     StringBuffer pluginPath = new StringBuffer();
     File pluginDir = new File(com.intellij.openapi.application.PathManager.getPreinstalledPluginsPath());
-    if(pluginDir.listFiles() != null) {
+    if (pluginDir.listFiles() != null) {
       for (File pluginFolder : pluginDir.listFiles()) {
         if (pluginPath.length() > 0) {
           pluginPath.append(File.pathSeparator);

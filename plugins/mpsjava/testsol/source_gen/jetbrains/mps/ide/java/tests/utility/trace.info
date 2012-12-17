@@ -187,9 +187,9 @@
     <nodeInfo nodeId="8083368042256456192" fileName="Utils.java" startLine="329" startPosition="66" endLine="330" endPosition="135" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7030568040400251426" fileName="Utils.java" startLine="335" startPosition="94" endLine="336" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7030568040400251655" fileName="Utils.java" startLine="336" startPosition="53" endLine="337" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7030568040400251661" fileName="Utils.java" startLine="337" startPosition="54" endLine="338" endPosition="269" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7030568040400251711" fileName="Utils.java" startLine="338" startPosition="269" endLine="339" endPosition="271" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7030568040400251760" fileName="Utils.java" startLine="339" startPosition="271" endLine="340" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="7030568040400251661" fileName="Utils.java" startLine="337" startPosition="54" endLine="338" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7030568040400251711" fileName="Utils.java" startLine="338" startPosition="134" endLine="339" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7030568040400251760" fileName="Utils.java" startLine="339" startPosition="136" endLine="340" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7030568040400251768" fileName="Utils.java" startLine="340" startPosition="0" endLine="341" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7030568040400251783" fileName="Utils.java" startLine="342" startPosition="65" endLine="343" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7030568040400251913" fileName="Utils.java" startLine="344" startPosition="5" endLine="345" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
@@ -701,7 +701,7 @@
     <unitInfo nodeId="7149447565294020275" fileName="NodePatcher.java" startLine="70" startPosition="267" endLine="74" endPosition="5" unitName="jetbrains.mps.ide.java.tests.utility.NodePatcher$1" />
     <unitInfo nodeId="7149447565294020331" fileName="NodePatcher.java" startLine="78" startPosition="248" endLine="82" endPosition="7" unitName="jetbrains.mps.ide.java.tests.utility.NodePatcher$2" />
     <unitInfo nodeId="7149447565294020343" fileName="NodePatcher.java" startLine="82" startPosition="40" endLine="86" endPosition="7" unitName="jetbrains.mps.ide.java.tests.utility.NodePatcher$3" />
-    <unitInfo nodeId="7030568040400429332" fileName="NodePatcher.java" startLine="105" startPosition="282" endLine="109" endPosition="5" unitName="jetbrains.mps.ide.java.tests.utility.NodePatcher$4" />
+    <unitInfo nodeId="7030568040400429332" fileName="NodePatcher.java" startLine="105" startPosition="147" endLine="109" endPosition="5" unitName="jetbrains.mps.ide.java.tests.utility.NodePatcher$4" />
     <unitInfo nodeId="7303989191346994322" fileName="NodePatcher.java" startLine="110" startPosition="92" endLine="114" endPosition="5" unitName="jetbrains.mps.ide.java.tests.utility.NodePatcher$5" />
     <unitInfo nodeId="8083368042256395971" fileName="NodePatcher.java" startLine="25" startPosition="0" endLine="125" endPosition="0" unitName="jetbrains.mps.ide.java.tests.utility.NodePatcher" />
   </root>

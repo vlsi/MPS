@@ -20,7 +20,7 @@
   <import index="4ior" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.psi.impl.cache.impl.id(com.intellij.psi.impl.cache.impl.id@java_stub)" version="-1" />
   <import index="sego" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.util.indexing(com.intellij.util.indexing@java_stub)" version="-1" />
   <import index="j4yb" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.projectPane.fileSystem(jetbrains.mps.ide.projectPane.fileSystem@java_stub)" version="-1" />
-  <import index="4oa8" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.objectweb.asm(MPS.Core/org.objectweb.asm@java_stub)" version="-1" />
+  <import index="g877" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.asm4(MPS.Core/org.jetbrains.asm4@java_stub)" version="-1" />
   <import index="45y3" modelUID="r:eafb5d8e-2952-4826-b4ad-be2b9011f598(jetbrains.mps.baseLanguage.javastub.asm)" version="-1" />
   <import index="zofw" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.persistence.def(jetbrains.mps.smodel.persistence.def@java_stub)" version="-1" />
   <import index="uvf9" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.util.text(com.intellij.util.text@java_stub)" version="-1" />
@@ -32,7 +32,7 @@
   <import index="n13f" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.reloading(MPS.Core/jetbrains.mps.reloading@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" />
   <import index="fhgm" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.stubs.javastub.classpath(MPS.Core/jetbrains.mps.stubs.javastub.classpath@java_stub)" version="-1" />
-  <import index="o9ng" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.objectweb.asm.tree(MPS.Core/org.objectweb.asm.tree@java_stub)" version="-1" />
+  <import index="86y1" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#org.jetbrains.asm4.tree(MPS.Core/org.jetbrains.asm4.tree@java_stub)" version="-1" />
   <import index="5heg" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#gnu.trove(MPS.Core/gnu.trove@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" />
   <import index="6xpj" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.stubs(jetbrains.mps.stubs@java_stub)" version="-1" />
@@ -1250,7 +1250,7 @@
               <property name="name" nameId="tpck.1169194664001" value="reader" />
               <property name="isFinal" nameId="tpee.1176718929932" value="false" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="5423843815843127111">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4oa8.~ClassReader" resolveInfo="ClassReader" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="g877.~ClassReader" resolveInfo="ClassReader" />
               </node>
             </node>
           </node>
@@ -1260,7 +1260,7 @@
                 <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="8091930109923280414">
                   <node role="rValue" roleId="tpee.1068498886297" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="2810982631457565493">
                     <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="2810982631457565494">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4oa8.~ClassReader%d&lt;init&gt;(byte[])" resolveInfo="ClassReader" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="g877.~ClassReader%d&lt;init&gt;(byte[])" resolveInfo="ClassReader" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="303301571174689172">
                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="303301571174689165" resolveInfo="bytes" />
                       </node>
@@ -1383,7 +1383,7 @@
                 <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2566197375814082184" resolveInfo="updateClassifier" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3822554386093950906">
                   <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fhgm.~ClassifierKind" resolveInfo="ClassifierKind" />
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fhgm.~ClassifierKind%dgetClassifierKind(org%dobjectweb%dasm%dClassReader)%cjetbrains%dmps%dstubs%djavastub%dclasspath%dClassifierKind" resolveInfo="getClassifierKind" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fhgm.~ClassifierKind%dgetClassifierKind(org%djetbrains%dasm4%dClassReader)%cjetbrains%dmps%dstubs%djavastub%dclasspath%dClassifierKind" resolveInfo="getClassifierKind" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3822554386093953645">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2810982631457565491" resolveInfo="reader" />
                   </node>
@@ -1428,6 +1428,12 @@
       <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="303301571174689252">
         <node role="creator" roleId="tpee.1145553007750" type="tpee.ClassCreator" typeId="tpee.1212685548494" id="303301571174689254">
           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="5heg.~THashMap%d&lt;init&gt;()" resolveInfo="THashMap" />
+          <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8471909024438982051">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4ior.~IdIndexEntry" resolveInfo="IdIndexEntry" />
+          </node>
+          <node role="typeParameter" roleId="tpee.1212687122400" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="8471909024438982052">
+            <link role="classifier" roleId="tpee.1107535924139" targetNodeId="e2lb.~Integer" resolveInfo="Integer" />
+          </node>
         </node>
       </node>
     </node>

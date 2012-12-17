@@ -15,6 +15,9 @@
  */
 package org.jetbrains.mps.openapi.persistence;
 
+/**
+ * Receives notifications about external changes to the data source
+ */
 public interface DataSourceListener {
 
   void changed(DataSource source);

@@ -80,7 +80,7 @@ public class LocalVariableIntroducer {
   }
 
   private RelativePoint getRelativePoint() {
-    jetbrains.mps.openapi.editor.EditorCell cell = myEditorContext.getContextCell();
+    jetbrains.mps.openapi.editor.cells.EditorCell cell = myEditorContext.getContextCell();
     return new RelativePoint(myEditorComponent, new Point(cell.getX(), cell.getY()));
   }
 }

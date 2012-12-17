@@ -27,6 +27,7 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiTreeChangeListener;
 import com.intellij.psi.codeStyle.CodeStyleManager;
 import com.intellij.psi.impl.PsiManagerEx;
+import com.intellij.psi.impl.PsiModificationTrackerImpl;
 import com.intellij.psi.impl.PsiTreeChangeEventImpl;
 import com.intellij.psi.impl.cache.CacheManager;
 import com.intellij.psi.impl.file.impl.FileManager;
@@ -180,7 +181,7 @@ class NullPsiManager extends PsiManagerEx {
 
   @NotNull
   public PsiModificationTracker getModificationTracker() {
-    return new PsiModificationTracker() {
+    return new PsiModificationTrackerImpl(myProject) {
       @Override
       public long getModificationCount() {
         return 0;

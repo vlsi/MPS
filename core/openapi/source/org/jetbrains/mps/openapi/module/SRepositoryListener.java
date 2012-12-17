@@ -16,7 +16,7 @@
 package org.jetbrains.mps.openapi.module;
 
 /**
- * evgeny, 10/5/12
+ * Receives notifications whenever a repository gets updated
  */
 public interface SRepositoryListener {
 
@@ -30,5 +30,11 @@ public interface SRepositoryListener {
 
   void moduleChanged(SModule module);
 
+  /**
+   * Reports changes to the owners schema of a module. It gets invoked when a module gets detached from an owner, but is still used
+   * by at least one other owner and so cannot be removed completely.
+   *
+   * @deprecated To remove in 3.0 since modules can now only have one owner
+   */
   void repositoryChanged();
 }

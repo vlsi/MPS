@@ -23,6 +23,7 @@ import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 
+import java.util.Collections;
 import java.util.Map;
 
 /**
@@ -75,7 +76,7 @@ public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.P
 
   @Override
   public Iterable<String> getTypeIds() {
-    return myRootFactories.keySet();
+    return Collections.unmodifiableCollection(myRootFactories.keySet());
   }
 
   @Override

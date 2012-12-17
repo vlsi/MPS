@@ -52,9 +52,9 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.ClassifierKind" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
-    <classNode dependClassName="org.objectweb.asm.ClassReader" />
-    <classNode dependClassName="org.objectweb.asm.Opcodes" />
-    <classNode dependClassName="org.objectweb.asm.tree.InnerClassNode" />
+    <classNode dependClassName="org.jetbrains.asm4.ClassReader" />
+    <classNode dependClassName="org.jetbrains.asm4.Opcodes" />
+    <classNode dependClassName="org.jetbrains.asm4.tree.InnerClassNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.javastub.ClassifierUpdater" file="ClassifierUpdater.java">
     <classNode dependClassName="java.lang.Boolean" />
@@ -102,6 +102,7 @@
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />

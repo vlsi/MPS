@@ -16,7 +16,6 @@
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="execution-configurations-ant" />
     <orderEntry type="module" module-name="execution-api" />
-    <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="module" module-name="execution-languages-library" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="module" module-name="mps-workbench" />

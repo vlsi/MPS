@@ -14,7 +14,7 @@ import jetbrains.mps.baseLanguage.behavior.AssignmentExpression_Behavior;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.intentions.IntentionDescriptor;
 

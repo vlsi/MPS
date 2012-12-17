@@ -16,11 +16,11 @@
 package org.jetbrains.mps.openapi.module;
 
 /**
- * evgeny, 10/5/12
+ * Represents a dependency between modules. It points to the target module, can be of several kinds and may declare re-export.
  */
 public interface SDependency {
 
-  SDependencyKind getKind();
+  SDependencyScope getScope();
 
   boolean isReexport();
 

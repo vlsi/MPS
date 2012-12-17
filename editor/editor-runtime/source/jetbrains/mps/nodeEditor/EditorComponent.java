@@ -114,7 +114,6 @@ import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.typesystem.inference.ITypeContextOwner;
-import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -2020,7 +2019,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
   }
 
   @Override
-  public final void changeSelection(jetbrains.mps.openapi.editor.EditorCell newSelectedCell) {
+  public final void changeSelection(jetbrains.mps.openapi.editor.cells.EditorCell newSelectedCell) {
     changeSelection((EditorCell) newSelectedCell, true);
   }
 
@@ -2083,12 +2082,12 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     scrollToCell(getSelectedCell());
   }
 
-  public void scrollToCell(@NotNull jetbrains.mps.openapi.editor.EditorCell cell) {
+  public void scrollToCell(@NotNull jetbrains.mps.openapi.editor.cells.EditorCell cell) {
     if (getVisibleRect().isEmpty()) {
       return;
     }
 
-    jetbrains.mps.openapi.editor.EditorCell largestVerticalBigCell = cell;
+    jetbrains.mps.openapi.editor.cells.EditorCell largestVerticalBigCell = cell;
 
     int viewportWidth = getViewport().getWidth();
 

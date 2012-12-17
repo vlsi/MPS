@@ -8,7 +8,7 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Property;
 import jetbrains.mps.nodeEditor.cells.PropertyAccessor;
 import jetbrains.mps.lang.pattern.editor.PatternAddingUtil;

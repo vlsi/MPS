@@ -15,6 +15,20 @@
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
     <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.unitTest.intentions.FixPluginKindForMPSTestCase_Intention" file="FixPluginKindForMPSTestCase_Intention.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.Collection" />
+    <classNode dependClassName="java.util.Collections" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.typesystem.CheckUtils" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionDescriptor" />
+    <classNode dependClassName="jetbrains.mps.intentions.IntentionType" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeReference" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionExecutable" />
+    <classNode extendsClassName="jetbrains.mps.intentions.IntentionFactory" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.intentions.FlipAssertEquals_Intention" file="FlipAssertEquals_Intention.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Collection" />
@@ -32,6 +46,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.unitTest.intentions.IntentionsDescriptor" file="IntentionsDescriptor.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.intentions.AddRemoveMessage_Intention" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.intentions.FixPluginKindForMPSTestCase_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.intentions.FlipAssertEquals_Intention" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.unitTest.intentions.convert_test_case_to_unittest_case_Intention" />
     <classNode dependClassName="jetbrains.mps.intentions.IntentionsManager" />

@@ -16,7 +16,7 @@
 package org.jetbrains.mps.openapi.module;
 
 /**
- * evgeny, 10/5/12
+ * A globally unique reference to a module
  */
 public interface SModuleReference {
 

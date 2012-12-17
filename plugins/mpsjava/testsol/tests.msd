@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.ide.java.tests" uuid="c3786d2b-aba2-45e5-8de0-1124fd14259b" compileInMPS="true" generatorOutputPath="${module}/source_gen">
+<solution name="jetbrains.mps.ide.java.tests" uuid="c3786d2b-aba2-45e5-8de0-1124fd14259b" pluginKind="PLUGIN_OTHER" compileInMPS="true" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot path="${mps_home}/languages/baseLanguage/baseLanguage/classes_gen" type="java_classes" />
     <modelRoot path="${module}/models" />
