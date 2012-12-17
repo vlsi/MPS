@@ -42,7 +42,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 
 public class Utils {
   private static IModule ourModule = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("c3786d2b-aba2-45e5-8de0-1124fd14259b"));
@@ -335,8 +335,8 @@ public class Utils {
   public static void buildMethodsNodeMap(SNode left, SNode right, Map<SNode, SNode> nodeMap) {
     List<SNode> leftMethods = new ArrayList<SNode>();
     List<SNode> rightMethods = new ArrayList<SNode>();
-    ListSequence.fromList(leftMethods).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), left, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})));
-    ListSequence.fromList(rightMethods).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), right, "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})));
+    ListSequence.fromList(leftMethods).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(left)));
+    ListSequence.fromList(rightMethods).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(right)));
 
     Map<String, SNode> rightIndex = MapSequence.fromMap(new HashMap<String, SNode>());
     for (SNode rightMthd : ListSequence.fromList(rightMethods)) {

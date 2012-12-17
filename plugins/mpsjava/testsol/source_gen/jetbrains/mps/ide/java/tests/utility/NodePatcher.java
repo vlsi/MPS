@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.SNodeId;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -102,7 +102,7 @@ public class NodePatcher {
 
   public static void sortNestedClass(SNode node) {
     List<SNode> nested = new ArrayList<SNode>();
-    ListSequence.fromList(nested).addSequence(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), node, "jetbrains.mps.baseLanguage.structure.Classifier", "call_nestedClassifiers_5292274854859193142", new Object[]{})).sort(new ISelector<SNode, String>() {
+    ListSequence.fromList(nested).addSequence(Sequence.fromIterable(Classifier_Behavior.call_nestedClassifiers_5292274854859193142(node)).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
         return SPropertyOperations.getString(it, "name");
       }
