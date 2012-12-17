@@ -61,6 +61,30 @@
   <projectService serviceInterface="com.intellij.ui.FileColorManager"
                   serviceImplementation="com.intellij.ui.tabs.FileColorManagerImpl"/>
 
+  <projectService serviceInterface="com.intellij.openapi.roots.impl.LibraryScopeCache"
+                  serviceImplementation="com.intellij.openapi.roots.impl.LibraryScopeCache"/>
+
+<!--  <colorSettingsPage implementation="com.intellij.openapi.options.colors.pages.GeneralColorsPage" id="general"/>
+  <colorSettingsPage implementation="com.intellij.openapi.options.colors.pages.ANSIColoredConsoleColorsPage" id="general"/>
+  <colorSettingsPage implementation="com.intellij.openapi.options.colors.pages.CustomColorsPage" id="custom"/>
+
+  <elementDescriptionProvider implementation="com.intellij.psi.impl.DefaultPomTargetDescriptionProvider" order="last" id="pomDefault"/>
+
+  <applicationService serviceInterface="com.intellij.codeInspection.ex.AppInspectionProfilesVisibleTreeState"
+                      serviceImplementation="com.intellij.codeInspection.ex.AppInspectionProfilesVisibleTreeState"/>
+  <projectService serviceInterface="com.intellij.codeInspection.ex.ProjectInspectionProfilesVisibleTreeState"
+                  serviceImplementation="com.intellij.codeInspection.ex.ProjectInspectionProfilesVisibleTreeState"/>
+
+  &lt;!&ndash; Editor &ndash;&gt;
+  <applicationConfigurable instance="com.intellij.application.options.editor.EditorOptions" id="editor" key="title.editor"
+                           bundle="messages.ApplicationBundle" order="after appearance" childrenEPName="com.intellij.editorOptionsProvider"/>
+
+  <projectService serviceInterface="com.intellij.semantic.SemService" serviceImplementation="com.intellij.semantic.SemServiceImpl"/>
+
+  &lt;!&ndash; Global Code Style &ndash;&gt;
+  <projectConfigurable instance="com.intellij.application.options.CodeStyleSchemesConfigurable" order="after colors"/>-->
+
+  <!-- File Types -->
   <applicationConfigurable instance="com.intellij.openapi.fileTypes.impl.FileTypeConfigurable" id="preferences.fileTypes"
                            key="filetype.settings.title" bundle="messages.FileTypesBundle"/>
 
@@ -92,8 +116,120 @@
   <projectService serviceInterface="com.intellij.execution.ui.RunnerLayoutUi$Factory"
                   serviceImplementation="com.intellij.execution.ui.layout.impl.RunnerLayoutUiFactoryImpl"/>
 
+  <!--
+  <toolWindow id="Project" anchor="left" icon="AllIcons.Toolwindows.ToolWindowProject"
+              factoryClass="com.intellij.ide.projectView.impl.ProjectViewToolWindowFactory"/>
+  <toolWindow id="TODO" anchor="bottom" icon="AllIcons.Toolwindows.ToolWindowTodo"
+              factoryClass="com.intellij.ide.todo.TodoToolWindowFactory" canCloseContents="true"/>
+  -->
   <toolWindow id="Structure" anchor="left" icon="AllIcons.Toolwindows.ToolWindowStructure" secondary="true"
               factoryClass="com.intellij.ide.structureView.impl.StructureViewToolWindowFactory"/>
+  <!--
+  <toolWindow id="Favorites" anchor="left" icon="AllIcons.Toolwindows.ToolWindowFavorites" secondary="true"
+              factoryClass="com.intellij.ide.projectView.impl.FavoritesViewToolWindowFactory"/>
 
+  <psi.fileReferenceHelper implementation="com.intellij.psi.impl.source.resolve.reference.impl.providers.PsiFileReferenceHelper"/>
+  <psi.fileReferenceHelper implementation="com.intellij.psi.impl.source.resolve.reference.impl.providers.JarFileReferenceHelper"/>
+  <projectConfigurable instance="com.intellij.openapi.vfs.encoding.FileEncodingConfigurable"/>
+  <projectConfigurable instance="com.intellij.ui.tabs.FileColorsConfigurable" id="fileColors" displayName="File Colors" />
+
+  <uiDebuggerExtension implementation="com.intellij.ui.debugger.extensions.PlaybackDebugger"/>
+  <uiDebuggerExtension implementation="com.intellij.ui.debugger.extensions.ActionTracer"/>
+  <uiDebuggerExtension implementation="com.intellij.openapi.util.objectTree.DisposerDebugger"/>
+
+  <applicationService serviceInterface="com.intellij.ui.debugger.extensions.PlaybackDebugger$PlaybackDebuggerState"
+                      serviceImplementation="com.intellij.ui.debugger.extensions.PlaybackDebugger$PlaybackDebuggerState"/>
+
+  <globalInspection shortName="Annotator" displayName="Annotator" groupName="General" enabledByDefault="true" level="ERROR"
+                    implementationClass="com.intellij.codeInspection.DefaultHighlightVisitorBasedInspection$AnnotatorBasedInspection"/>
+  <globalInspection shortName="SyntaxError" displayName="Syntax error" groupName="General" enabledByDefault="true" level="ERROR"
+                    implementationClass="com.intellij.codeInspection.DefaultHighlightVisitorBasedInspection$SyntaxErrorInspection"/>
+  <localInspection shortName="LossyEncoding" bundle="messages.InspectionsBundle" key="lossy.encoding"
+                   groupKey="group.names.internationalization.issues" enabledByDefault="false" level="WARNING"
+                   implementationClass="com.intellij.codeInspection.LossyEncodingInspection"/>
+
+  <applicationService serviceInterface="com.intellij.codeInsight.template.TemplateBuilderFactory"
+                      serviceImplementation="com.intellij.codeInsight.template.TemplateBuilderFactoryImpl"/>
+
+  &lt;!&ndash;<projectViewPane implementation="com.intellij.ide.favoritesTreeView.FavoritesProjectViewPane"/>&ndash;&gt;
+  <projectViewPane implementation="com.intellij.ide.scopeView.ScopeViewPane"/>
+
+   -->
   <fileIconProvider implementation="jetbrains.mps.workbench.editors.MPSIconProvider"/>
+  <!--
+  <fileIconProvider implementation="com.intellij.openapi.fileTypes.impl.NativeFileIconProvider"/>
+  <fileIconProvider implementation="com.intellij.ide.FileIconPatcherImpl"/>
+  <renameHandler implementation="com.intellij.refactoring.rename.inplace.VariableInplaceRenameHandler"/>
+  <renameHandler implementation="com.intellij.refactoring.rename.inplace.MemberInplaceRenameHandler"/>
+  <completion.contributor language="any" implementationClass="com.intellij.refactoring.rename.inplace.CompletionContributorForInplaceRename"
+                          order="first"/>
+
+  <projectService serviceInterface="com.intellij.openapi.vcs.changes.ui.ChangesFileNameDecorator"
+                  serviceImplementation="com.intellij.openapi.vcs.changes.ui.WolfChangesFileNameDecorator"/>
+
+  <filePasteProvider implementation="com.intellij.ide.FileListPasteProvider"/>
+
+  <definitionsSearch implementation="com.intellij.pom.PomDefinitionSearch"/>
+  <definitionsSearch implementation="com.intellij.xml.impl.schema.SchemaDefinitionsSearch"/>
+
+  <applicationService serviceInterface="com.intellij.ide.todo.TodoConfiguration"
+                      serviceImplementation="com.intellij.ide.todo.TodoConfiguration"/>
+  <indexPatternProvider implementation="com.intellij.ide.todo.TodoIndexPatternProvider"/>
+
+  <hectorComponentProvider implementation="com.intellij.codeInsight.daemon.PowerSaveHectorProvider"/>
+
+  <copyPastePostProcessor implementation="com.intellij.codeInsight.editorActions.CopyPasteIndentProcessor"/>
+
+  <statistics.usagesCollector implementation="com.intellij.facet.impl.statistics.FrameworkUsagesCollector"/>
+  <statistics.usagesCollector implementation="com.intellij.facet.impl.statistics.ModuleTypeUsagesCollector"/>
+  <statistics.usagesCollector implementation="com.intellij.execution.impl.statistics.RunConfigurationTypeUsagesCollector"/>
+  <statistics.usagesCollector implementation="com.intellij.execution.impl.statistics.TemporaryRunConfigurationTypeUsagesCollector"/>
+  <statistics.usagesCollector implementation="com.intellij.openapi.fileTypes.FileTypeUsagesCollector"/>
+
+  <renamePsiElementProcessor implementation="com.intellij.refactoring.rename.RenamePsiFileProcessor" order="last"/>
+  <renameInputValidator implementation="com.intellij.refactoring.rename.RenameToIgnoredDirectoryFileInputValidator" order="last"/>
+
+  <refactoring.elementListenerProvider implementation="com.intellij.execution.impl.RunConfigurationRefactoringElementListenerProvider"/>
+
+  <keymapExtension implementation="com.intellij.tools.ToolKeymapExtension"/>
+
+  <inspectionsReportConverter implementation="com.intellij.codeInspection.ex.PlainTextFormatter"/>
+
+  <documentationProvider implementation="com.intellij.openapi.paths.WebReferenceDocumentationProvider"/>
+
+  <refactoring.moveDirectoryWithClassesHelper
+          implementation="com.intellij.refactoring.move.moveClassesOrPackages.MoveDirectoryWithClassesHelper$Default" order="last"/>
+
+  <checkinHandlerFactory implementation="com.intellij.openapi.vcs.checkin.ReformatCheckinHandlerFactory"/>
+  <checkinHandlerFactory implementation="com.intellij.openapi.vcs.checkin.OptimizeOptionsCheckinHandlerFactory"/>
+  <checkinHandlerFactory implementation="com.intellij.openapi.vcs.checkin.CodeAnalysisCheckinHandlerFactory"/>
+  <checkinHandlerFactory implementation="com.intellij.openapi.vcs.checkin.TodoCheckinHandlerFactory"/>
+
+  <projectService serviceInterface="com.intellij.openapi.vcs.CodeSmellDetector"
+                  serviceImplementation="com.intellij.openapi.vcs.impl.CodeSmellDetectorImpl"/>
+
+  <editorTabTitleProvider implementation="com.intellij.openapi.fileEditor.impl.UniqueNameEditorTabTitleProvider"/>
+
+  <projectService serviceInterface="com.intellij.psi.util.PsiModificationTracker"
+                  serviceImplementation="com.intellij.psi.impl.PsiModificationTrackerImpl"/>
+
+  <itemPresentationProvider forClass="com.intellij.psi.PsiDirectory"
+                            implementationClass="com.intellij.navigation.DirectoryPresentationProvider"/>
+
+  <projectService serviceInterface="com.intellij.openapi.module.ModulePointerManager"
+                  serviceImplementation="com.intellij.openapi.module.impl.ModulePointerManagerImpl"/>
+
+  <customFoldingProvider implementation="com.intellij.lang.customFolding.NetBeansCustomFoldingProvider"/>
+  <customFoldingProvider implementation="com.intellij.lang.customFolding.VisualStudioCustomFoldingProvider"/>
+
+  <completion.contributor language="TEXT" implementationClass="com.intellij.ui.TextFieldWithAutoCompletionContributor"
+                          order="first, before commitCompletion"/>
+
+  <pathMacroFilter implementation="com.intellij.execution.configuration.RunConfigurationPathMacroFilter"/>
+  <pathMacroFilter implementation="com.intellij.openapi.application.StructuralSearchPathMacroFilter"/>
+
+  <postStartupActivity implementation="com.intellij.codeInsight.highlighting.BraceHighlighter"/>
+  <usageContextPanelProvider implementation="com.intellij.usages.impl.UsagePreviewPanel$Provider"/>
+  <usageContextPanelProvider implementation="com.intellij.usageView.impl.UsageContextCallHierarchyPanel$Provider"/>
+  -->
 </extensions>
