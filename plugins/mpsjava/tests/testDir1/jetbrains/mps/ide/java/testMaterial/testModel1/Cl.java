@@ -1,4 +1,4 @@
-package jetbrains.mps.idea.java.testMaterial.testModel1;
+package jetbrains.mps.ide.java.testMaterial.testModel1;
 
 import jetbrains.mps.ide.java.testMaterial.testModel1.sub.Integer;
 

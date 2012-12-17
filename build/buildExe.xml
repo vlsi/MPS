@@ -29,8 +29,8 @@
       <fileset dir="${artifacts.buildMPS}"
                excludes="**/bin/linux/**, **/bin/mac/**, **/bin/nix/**, **/bin/win/**, "/>
     </copy>
-    <copy file="${basedir}/build/mps.vmoptions" tofile="${build.tmp}/mps.exe.vmoptions"/>
-    <copy file="${basedir}/build/mps.bat" tofile="${build.tmp}/mps.bat"/>
+    <copy file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.vmoptions" tofile="${build.tmp}/mps.exe.vmoptions"/>
+    <copy file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.bat" tofile="${build.tmp}/mps.bat"/>
     <copy todir="${build.tmp}/help">
       <fileset dir="${basedir}/help"/>
     </copy>
@@ -40,7 +40,7 @@
     <copy file="${basedir}/build/resources/homepage.ico" tofile="${build.tmp}/homepage.ico"/>
     <copy file="${basedir}/build/tools/jre.zip" tofile="${build.tmp}/jre.zip"/>
     <copy file="${basedir}/build/tools/nsis.zip" tofile="${build.tmp}/nsis.zip"/>
-    <copy file="${basedir}/build/installer.nsi" tofile="${build.tmp}/installer.nsi"/>
+    <copy file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/installer.nsi" tofile="${build.tmp}/installer.nsi"/>
     <copy file="${basedir}/license/mps_license.txt" tofile="${build.tmp}/license.txt"/>
     <antcall target="exe" inheritall="true">
       <param name="input.dir" value="${build.tmp}"/>
@@ -91,7 +91,7 @@
 
   <target name="sign" if="windows">
     <exec executable="${mps.sign}/signtool.exe" osfamily="windows" failonerror="false" dir="${output.dir}">
-      <arg line="sign /f ${mps.sign}/cs_cert2011.pfx /p 123 ${output.dir}/${buildMPS.build.number}-windows.exe"/>
+      <arg line="sign /f ${mps.sign}/cs_cert2011.pfx /ac ${mps.sign}/path.cer /p 123 ${output.dir}/${buildMPS.build.number}-windows.exe"/>
     </exec>
   </target>
 

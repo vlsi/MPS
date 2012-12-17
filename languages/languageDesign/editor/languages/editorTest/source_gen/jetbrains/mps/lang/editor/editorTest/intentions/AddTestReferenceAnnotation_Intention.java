@@ -12,7 +12,7 @@ import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
-import jetbrains.mps.openapi.editor.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.generator.editor.QueriesUtil;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
@@ -62,6 +62,10 @@ public class AddTestReferenceAnnotation_Intention implements IntentionFactory {
 
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:aaff0f7f-e57d-4430-aea6-ff86ed5c75ae(jetbrains.mps.lang.editor.editorTest.intentions)", "7658393498702987309");
+  }
+
+  public boolean isSurroundWith() {
+    return false;
   }
 
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {

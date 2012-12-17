@@ -16,9 +16,9 @@ import jetbrains.mps.project.GlobalScope;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -41,7 +41,7 @@ public class ClassifierResolveUtils {
 
   public static SNode resolveNonSpecialSyntax(@NotNull String classifierName, @NotNull SNode contextNode) {
     // try to resolve as nested name in current model 
-    Iterable<SNode> result = resolveClassifierByNestedName(check_8z6r2b_a0a1a1(SNodeOperations.getModel(contextNode)), classifierName);
+    Iterable<SNode> result = resolveClassifierByNestedName(check_8z6r2b_a0a1a2(SNodeOperations.getModel(contextNode)), classifierName);
     if (Sequence.fromIterable(result).isNotEmpty()) {
       return ((int) Sequence.fromIterable(result).count() == 1 ?
         Sequence.fromIterable(result).first() :
@@ -50,7 +50,7 @@ public class ClassifierResolveUtils {
     }
 
     // try to resolve as fq name in current model 
-    result = resolveClassifierByFqName(check_8z6r2b_a0a5a1(SNodeOperations.getModel(contextNode)), classifierName);
+    result = resolveClassifierByFqName(check_8z6r2b_a0a5a2(SNodeOperations.getModel(contextNode)), classifierName);
     if (Sequence.fromIterable(result).isNotEmpty()) {
       return ((int) Sequence.fromIterable(result).count() == 1 ?
         Sequence.fromIterable(result).first() :
@@ -59,7 +59,7 @@ public class ClassifierResolveUtils {
     }
 
     // try to resolve as fq name in current scope 
-    Iterable<IModule> visibleModules = check_8z6r2b_a0a9a1(check_8z6r2b_a0a0j0b(check_8z6r2b_a0a0a9a1(SNodeOperations.getModel(contextNode)))).getVisibleModules();
+    Iterable<IModule> visibleModules = check_8z6r2b_a0a9a2(check_8z6r2b_a0a0j0c(check_8z6r2b_a0a0a9a2(SNodeOperations.getModel(contextNode)))).getVisibleModules();
     result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<IModule, SModelDescriptor>() {
       public Iterable<SModelDescriptor> translate(IModule it) {
         return it.getOwnModelDescriptors();
@@ -72,7 +72,7 @@ public class ClassifierResolveUtils {
   }
 
   public static SNode resolveWithSpecifiedTargetModelName(@NotNull String targetModelName, @NotNull String classifierFqName, @Nullable SModel sourceModel) {
-    Iterable<SNode> sameModelResult = resolveClassifierByFqName(check_8z6r2b_a0a0a2(sourceModel), classifierFqName);
+    Iterable<SNode> sameModelResult = resolveClassifierByFqName(check_8z6r2b_a0a0a3(sourceModel), classifierFqName);
     if (Sequence.fromIterable(sameModelResult).isNotEmpty()) {
       return ((int) Sequence.fromIterable(sameModelResult).count() == 1 ?
         Sequence.fromIterable(sameModelResult).first() :
@@ -80,7 +80,7 @@ public class ClassifierResolveUtils {
       );
     }
 
-    IScope modelScope = check_8z6r2b_a0d0c(check_8z6r2b_a0a3a2(check_8z6r2b_a0a0d0c(sourceModel)));
+    IScope modelScope = check_8z6r2b_a0d0d(check_8z6r2b_a0a3a3(check_8z6r2b_a0a0d0d(sourceModel)));
 
     if (modelScope != null) {
       Iterable<SNode> result = resolveInScope(targetModelName, classifierFqName, modelScope);
@@ -108,7 +108,7 @@ public class ClassifierResolveUtils {
     List<SModelDescriptor> result = ListSequence.fromList(new ArrayList<SModelDescriptor>());
     for (IModule module : Sequence.fromIterable(scope.getVisibleModules())) {
       for (SModelDescriptor modelDescriptor : ListSequence.fromList(module.getOwnModelDescriptors())) {
-        if (eq_8z6r2b_a0a0a0c0e(modelDescriptor.getLongName(), modelLongName)) {
+        if (eq_8z6r2b_a0a0a0c0f(modelDescriptor.getLongName(), modelLongName)) {
           ListSequence.fromList(result).addElement(modelDescriptor);
         }
       }
@@ -117,12 +117,18 @@ public class ClassifierResolveUtils {
   }
 
   private static Iterable<SNode> resolveClassifierByFqNameWithNonStubPriority(Iterable<SModelDescriptor> models, String classifierFqName) {
+    models = Sequence.fromIterable(models).where(new IWhereFilter<SModelDescriptor>() {
+      public boolean accept(SModelDescriptor it) {
+        return !(it.isTransient());
+      }
+    });
+
     final String stubStereoType = SModelStereotype.getStubStereotypeForId(LanguageID.JAVA);
 
     // resolve without stubs 
     Iterable<SNode> result = resolveClassifierByFqName(Sequence.fromIterable(models).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor it) {
-        return neq_8z6r2b_a0a0a0a0a0a0d0f(it.getStereotype(), stubStereoType);
+        return neq_8z6r2b_a0a0a0a0a0a0f0g(it.getStereotype(), stubStereoType);
       }
     }), classifierFqName);
     if (Sequence.fromIterable(result).isNotEmpty()) {
@@ -132,7 +138,7 @@ public class ClassifierResolveUtils {
     // resolve with stubs 
     return resolveClassifierByFqName(Sequence.fromIterable(models).where(new IWhereFilter<SModelDescriptor>() {
       public boolean accept(SModelDescriptor it) {
-        return eq_8z6r2b_a0a0a0a0a0a7a5(it.getStereotype(), stubStereoType);
+        return eq_8z6r2b_a0a0a0a0a0a9a6(it.getStereotype(), stubStereoType);
       }
     }), classifierFqName);
   }
@@ -195,84 +201,84 @@ public class ClassifierResolveUtils {
     });
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a1a1(SModel checkedDotOperand) {
+  private static SModelDescriptor check_8z6r2b_a0a1a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a5a1(SModel checkedDotOperand) {
+  private static SModelDescriptor check_8z6r2b_a0a5a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static IScope check_8z6r2b_a0a9a1(IModule checkedDotOperand) {
+  private static IScope check_8z6r2b_a0a9a2(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
     }
     return null;
   }
 
-  private static IModule check_8z6r2b_a0a0j0b(SModelDescriptor checkedDotOperand) {
+  private static IModule check_8z6r2b_a0a0j0c(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a0a9a1(SModel checkedDotOperand) {
+  private static SModelDescriptor check_8z6r2b_a0a0a9a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a0a2(SModel checkedDotOperand) {
+  private static SModelDescriptor check_8z6r2b_a0a0a3(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static IScope check_8z6r2b_a0d0c(IModule checkedDotOperand) {
+  private static IScope check_8z6r2b_a0d0d(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
     }
     return null;
   }
 
-  private static IModule check_8z6r2b_a0a3a2(SModelDescriptor checkedDotOperand) {
+  private static IModule check_8z6r2b_a0a3a3(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a0d0c(SModel checkedDotOperand) {
+  private static SModelDescriptor check_8z6r2b_a0a0d0d(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static boolean eq_8z6r2b_a0a0a0c0e(Object a, Object b) {
+  private static boolean eq_8z6r2b_a0a0a0c0f(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
   }
 
-  private static boolean neq_8z6r2b_a0a0a0a0a0a0d0f(Object a, Object b) {
+  private static boolean neq_8z6r2b_a0a0a0a0a0a0f0g(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  private static boolean eq_8z6r2b_a0a0a0a0a0a7a5(Object a, Object b) {
+  private static boolean eq_8z6r2b_a0a0a0a0a0a9a6(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

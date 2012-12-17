@@ -18,14 +18,14 @@
     <mkdir dir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz/MPS ${buildCore.version}" />
     <mkdir dir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz/MPS ${buildCore.version}/bin" />
     <copy todir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz/MPS ${buildCore.version}/bin">
-      <fileset file="${basedir}/build/mps.vmoptions" />
+      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.vmoptions" />
       <filterchain>
         <fixcrlf eol="lf" eof="remove" />
       </filterchain>
     </copy>
     <mkdir dir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz_f755" />
     <copy todir="${build.tmp}/default/_dl_{build.number}-linux.tar.gz_f755">
-      <fileset file="${basedir}/build/mps.sh" />
+      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.sh" />
       <filterchain>
         <fixcrlf eol="lf" eof="remove" />
       </filterchain>
@@ -46,13 +46,13 @@
     <mkdir dir="${build.tmp}/default/_dl_{build.number}.zip/MPS ${buildCore.version}" />
     <mkdir dir="${build.tmp}/default/_dl_{build.number}.zip/MPS ${buildCore.version}/bin" />
     <copy todir="${build.tmp}/default/_dl_{build.number}.zip/MPS ${buildCore.version}/bin">
-      <fileset file="${basedir}/build/mps.vmoptions" />
+      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.vmoptions" />
       <filterchain>
         <fixcrlf eol="lf" eof="remove" />
       </filterchain>
     </copy>
     <copy todir="${build.tmp}/default/_dl_{build.number}.zip/MPS ${buildCore.version}/bin">
-      <fileset file="${basedir}/build/mps.vmoptions" />
+      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.vmoptions" />
       <filterchain>
         <fixcrlf eol="crlf" />
       </filterchain>
@@ -61,7 +61,7 @@
     <mkdir dir="${build.tmp}/default/_dl_{build.number}.zip/MPS ${buildCore.version}/bin/mac" />
     <mkdir dir="${build.tmp}/default/_dl_{build.number}.zip/MPS ${buildCore.version}/bin/mac/Contents" />
     <copy todir="${build.tmp}/default/_dl_{build.number}.zip/MPS ${buildCore.version}/bin/mac/Contents">
-      <fileset file="${basedir}/build/Info.plist.xml" />
+      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/Info.plist.xml" />
       <filterchain>
         <tokenfilter>
           <replaceregex pattern="\$version\$" replace="${buildCore.version}" flags="" />
@@ -75,14 +75,14 @@
     </copy>
     <mkdir dir="${build.tmp}/default/_dl_{build.number}.zip_f755" />
     <copy todir="${build.tmp}/default/_dl_{build.number}.zip_f755">
-      <fileset file="${basedir}/build/mps.sh" />
+      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.sh" />
       <filterchain>
         <fixcrlf eol="lf" eof="remove" />
       </filterchain>
     </copy>
     <mkdir dir="${build.tmp}/default/_dl_{build.number}.zip_f7551" />
     <copy todir="${build.tmp}/default/_dl_{build.number}.zip_f7551">
-      <fileset file="${basedir}/build/mps.bat" />
+      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.bat" />
       <filterchain>
         <fixcrlf eol="crlf" />
       </filterchain>
@@ -123,7 +123,7 @@
     <mkdir dir="${build.tmp}/default/_dl_{build.number}-macos.zip/MPS ${buildCore.version}.app" />
     <mkdir dir="${build.tmp}/default/_dl_{build.number}-macos.zip/MPS ${buildCore.version}.app/Contents" />
     <copy todir="${build.tmp}/default/_dl_{build.number}-macos.zip/MPS ${buildCore.version}.app/Contents">
-      <fileset file="${basedir}/build/Info.plist.xml" />
+      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/Info.plist.xml" />
       <filterchain>
         <tokenfilter>
           <replaceregex pattern="\$version\$" replace="${buildCore.version}" flags="" />
@@ -137,7 +137,7 @@
     </copy>
     <mkdir dir="${build.tmp}/default/_dl_{build.number}-macos.zip/MPS ${buildCore.version}.app/bin" />
     <copy todir="${build.tmp}/default/_dl_{build.number}-macos.zip/MPS ${buildCore.version}.app/bin">
-      <fileset file="${basedir}/build/mps.vmoptions" />
+      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.vmoptions" />
       <filterchain>
         <fixcrlf eol="lf" eof="remove" />
       </filterchain>
@@ -149,7 +149,7 @@
     </copy>
     <mkdir dir="${build.tmp}/default/_dl_{build.number}-macos.zip_f755" />
     <copy todir="${build.tmp}/default/_dl_{build.number}-macos.zip_f755">
-      <fileset file="${basedir}/build/mps.sh" />
+      <fileset file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.sh" />
       <filterchain>
         <fixcrlf eol="lf" eof="remove" />
       </filterchain>

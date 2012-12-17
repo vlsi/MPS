@@ -12,7 +12,6 @@ import jetbrains.mps.smodel.Generator;
 import javax.swing.JPanel;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 
@@ -93,17 +92,11 @@ public class StandardDialogs {
         result_960thj_a0a3a0a0a1.setConstraints(result_960thj_a1a0a3a0a0a1);
         result_960thj_a3a0a0a1.addComponent(result_960thj_a0a3a0a0a1);
         final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a1a3a0a0a1 = new BaseTabbedBindedDialog.ComponentDescriptor();
-        final JComponent result_960thj_a0a1a3a0a0a1 = StandardComponents.createStubSolutionsPanel(dialog, "Stub Solutions", dialog.myProperties.getStubSolutions());
+        final JComponent result_960thj_a0a1a3a0a0a1 = StandardComponents.createStubRootsPanel(dialog, true, "Libraries", dialog.myProperties.getStubModels(), dialog.myProperties.getModelRoots());
         result_960thj_a1a3a0a0a1.setComponent(result_960thj_a0a1a3a0a0a1);
         final BaseBindedDialog.ConstraintsType result_960thj_a1a1a3a0a0a1 = BaseBindedDialog.ConstraintsType.LIST;
         result_960thj_a1a3a0a0a1.setConstraints(result_960thj_a1a1a3a0a0a1);
         result_960thj_a3a0a0a1.addComponent(result_960thj_a1a3a0a0a1);
-        final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a2a3a0a0a1 = new BaseTabbedBindedDialog.ComponentDescriptor();
-        final JComponent result_960thj_a0a2a3a0a0a1 = StandardComponents.createStubRootsPanel(dialog, true, "Libraries", dialog.myProperties.getStubModels(), dialog.myProperties.getModelRoots());
-        result_960thj_a2a3a0a0a1.setComponent(result_960thj_a0a2a3a0a0a1);
-        final BaseBindedDialog.ConstraintsType result_960thj_a1a2a3a0a0a1 = BaseBindedDialog.ConstraintsType.LIST;
-        result_960thj_a2a3a0a0a1.setConstraints(result_960thj_a1a2a3a0a0a1);
-        result_960thj_a3a0a0a1.addComponent(result_960thj_a2a3a0a0a1);
         result_960thj_a0a0a1.addTab(result_960thj_a3a0a0a1);
         final BaseTabbedBindedDialog.DialogTab result_960thj_a4a0a0a1 = new BaseTabbedBindedDialog.DialogTab("Runtime");
         final BaseTabbedBindedDialog.ComponentDescriptor result_960thj_a0a4a0a0a1 = new BaseTabbedBindedDialog.ComponentDescriptor();
@@ -295,9 +288,6 @@ public class StandardDialogs {
         result_960thj_a1a3a0a0a4.setComponent(result_960thj_a0a1a3a0a0a4);
         final BaseBindedDialog.ConstraintsType result_960thj_a1a1a3a0a0a4 = BaseBindedDialog.ConstraintsType.LIST;
         result_960thj_a1a3a0a0a4.setConstraints(result_960thj_a1a1a3a0a0a4);
-        if (s instanceof StubSolution) {
-          result_960thj_a1a3a0a0a4.setReadOnly();
-        }
         result_960thj_a3a0a0a4.addComponent(result_960thj_a1a3a0a0a4);
         result_960thj_a0a0a4.addTab(result_960thj_a3a0a0a4);
         final BaseTabbedBindedDialog.DialogTab result_960thj_a4a0a0a4 = new BaseTabbedBindedDialog.DialogTab("Advanced");

@@ -38,14 +38,13 @@ import com.intellij.psi.*;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.ide.java.util.SolutionIds;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.project.ModelRootContributor;
-import jetbrains.mps.idea.core.project.ModelRootContributorManager;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.idea.core.project.stubs.AbstractJavaStubSolutionManager;
 import jetbrains.mps.idea.core.project.stubs.JavaStubPsiListener;
+import jetbrains.mps.idea.java.psiStubs.EclipseJavaStubModelRoot;
 import jetbrains.mps.idea.java.psiStubs.PsiJavaStubModelRoot;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRootManager;
@@ -55,6 +54,8 @@ import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
 import jetbrains.mps.stubs.BaseStubModelDescriptor;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.misc.hash.HashSet;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
@@ -81,7 +82,7 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
 
   private final static String SOLUTION_NAME_PREFIX = "JavaCodeIn";
 
-  public ProjectJavaSourceImporter(MPSCoreComponents core, Project project, ModelRootContributorManager modelRootContributorManager) {
+  public ProjectJavaSourceImporter(MPSCoreComponents core, Project project) {
     myProject = project;
     myModuleManager = ModuleManager.getInstance(project);
     facetConnection = project.getMessageBus().connect();
@@ -90,14 +91,10 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
 
   @Override
   protected void init() {
-    ModelRootContributorManager mgr = myProject.getComponent(ModelRootContributorManager.class);
-    mgr.addContributor(this);
   }
 
   @Override
   protected void dispose() {
-    ModelRootContributorManager mgr = myProject.getComponent(ModelRootContributorManager.class);
-    mgr.removeContributor(this);
   }
 
   @Override
@@ -299,7 +296,18 @@ public class ProjectJavaSourceImporter extends AbstractJavaStubSolutionManager i
   @Override
   public Iterable<ModelRoot> getModelRoots(Module module) {
     List<ModelRoot> singleton = new ArrayList<ModelRoot>(1);
-    singleton.add( new PsiJavaStubModelRoot(module) );
+//    singleton.add( new PsiJavaStubModelRoot(module) );
+
+
+    for (VirtualFile sourceRoot: ModuleRootManager.getInstance(module).getSourceRoots(false)) {
+      String path = sourceRoot.getPath();
+      EclipseJavaStubModelRoot modelRoot = new EclipseJavaStubModelRoot() ;
+      modelRoot.setPath(path);
+      // not singleton
+      singleton.add(modelRoot);
+    }
+
+
     return singleton;
   }
 

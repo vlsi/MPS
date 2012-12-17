@@ -82,14 +82,11 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
     Project project = ProjectHelper.toIdeaProject(context.getProject());
     SModel targetModel = node.getModel();
 
-    System.out.println("DEBUG: We're navigating --- " + node.getConcept().getName() + " " + targetModel.getStereotype());
-
     if ("java_stub".equals(targetModel.getStereotype())) {
       // jumping to code that has been loaded through java stubs, either binary or source
 
       // FIXME replace hard-coded strings
       if (node.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Classifier")) {
-        System.out.println("DEBUG: it's our case");
         PsiClass cls = findClass(node, project);
 
         if (cls != null) {

@@ -18,9 +18,12 @@ package jetbrains.mps.build.ant;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.util.io.ZipUtil;
 import jetbrains.mps.BaseMPSTest;
-import jetbrains.mps.build.ant.generation.GenerateTask;
-import jetbrains.mps.build.ant.generation.workers.GeneratorWorker;
+import jetbrains.mps.tool.builder.MpsWorker;
+import jetbrains.mps.tool.builder.make.GeneratorWorker;
+import jetbrains.mps.tool.common.ScriptProperties;
+import jetbrains.mps.tool.common.Script;
 import junit.framework.TestCase;
+import org.apache.log4j.Level;
 import org.junit.After;
 import org.junit.Test;
 
@@ -46,12 +49,23 @@ public class GenerateTaskFilesCreationTest {
   }
 
   @Test
+  public void testOneFileForOneConcept() throws IOException {
+    String projectName = "FileTestProject";
+    String languageName = "FileTestProjectLanguage";
+
+    File destdir = generateProjectFromZipFile(projectName);
+
+    assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
+  }
+
+  @Test
   public void testSeveralFilesForOneConcept() throws IOException {
     String projectName = "TestProjectWithOneConcept";
     String languageName = projectName + "Language";
 
     File destdir = generateProjectFromZipFile(projectName);
 
+    assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertEditorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertBehaviorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
   }
@@ -64,6 +78,7 @@ public class GenerateTaskFilesCreationTest {
 
     File destdir = generateProjectFromZipFile(projectName);
 
+    assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertEditorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertBehaviorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertGeneratorGenerated(projectName, languageName, destdir);
@@ -79,10 +94,12 @@ public class GenerateTaskFilesCreationTest {
 
     File destdir = extractProject(projectName);
 
-    WhatToDo whatToDo = new WhatToDo();
+    Script whatToDo = new Script();
+    whatToDo.updateLogLevel(Level.WARN);
     whatToDo.addModuleFile(new File(getLanguagePath(destdir, projectName, languageName) + File.separator + languageName + ".mpl"));
     doGenerate(whatToDo);
 
+    assertStructureGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertEditorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertBehaviorGenerated(projectName, languageName, destdir, CONCEPT_NAME);
     assertGeneratorGenerated(projectName, languageName, destdir);
@@ -98,6 +115,11 @@ public class GenerateTaskFilesCreationTest {
     TestCase.assertTrue(someConceptEditorFile.exists());
   }
 
+  private void assertStructureGenerated(String projectName, String languageName, File destdir, String conceptName) throws IOException {
+    File structureAspectFile = new File(getStructurePath(destdir, projectName, languageName)  + "StructureAspectDescriptor.java");
+    TestCase.assertTrue(FileUtil.loadFile(structureAspectFile).contains(conceptName));
+  }
+
   private void assertGeneratorGenerated(String projectName, String languageName, File destdir) {
     File queriesGeneratedFile = new File(getLanguageSourceFolderPath(destdir, projectName, languageName)
       + "generator" + File.separator
@@ -110,8 +132,9 @@ public class GenerateTaskFilesCreationTest {
   private File generateProjectFromZipFile(String projectName) throws IOException {
     File destdir = extractProject(projectName);
 
-    WhatToDo whatToDo = new WhatToDo();
-    whatToDo.putProperty(GenerateTask.COMPILE, Boolean.toString(true));
+    Script whatToDo = new Script();
+    whatToDo.updateLogLevel(Level.WARN);
+    whatToDo.putProperty(ScriptProperties.COMPILE, Boolean.toString(true));
     whatToDo.addProjectFile(new File(destdir.getAbsolutePath() + File.separator + projectName + File.separator + projectName + ".mpr"));
     doGenerate(whatToDo);
 
@@ -130,9 +153,14 @@ public class GenerateTaskFilesCreationTest {
     return destdir;
   }
 
-  private void doGenerate(WhatToDo whatToDo) {
+  private void doGenerate(Script whatToDo) {
     MpsWorker mpsWorker = new GeneratorWorker(whatToDo);
     mpsWorker.work();
+  }
+
+  private String getStructurePath(File destdir, String projectName, String languageName) {
+    return getLanguageSourceFolderPath(destdir, projectName, languageName)
+      + "structure" + File.separator;
   }
 
   private String getEditorPath(File destdir, String projectName, String languageName) {
@@ -160,5 +188,4 @@ public class GenerateTaskFilesCreationTest {
       + "solutions" + File.separator + solutionName + File.separator
       + "source_gen" + File.separator + solutionName + File.separator + "sandbox" + File.separator;
   }
-
 }

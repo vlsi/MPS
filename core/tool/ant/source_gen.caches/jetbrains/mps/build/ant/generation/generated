@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="cx203fv15titk8qcpsgoewp1zog6v5k">
+<dependencies version="2" modelHash="5pw5l5ngl7notvqovtjpqhfdn5kpnog">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
-  <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" hash="-4vkg4d8dl6v142gfs0svw7sa1x1jfcx" />
-  <common hash="6xbpbjvint4jtclo0rtskslbf23vftq" />
-  <source id="4003657351907889940" name="ConsoleMessageFormat" hash="-4t6w4pxrpehukklcm12gmk7vue6b8po">
-    <file name="ConsoleMessageFormat.java" />
-  </source>
+  <dep model="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" hash="-8w3520cymf6q8065ut30yz8iuwttdd2" />
+  <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" hash="7x9ya9x7lifwotb7ly7wd4rmtnjpa9c" />
+  <common hash="6fpqeul99z6qafcyrnvi8w35e4sy6ke" />
   <source id="4003657351907890045" name="PerfomanceReport" hash="-auk7al5nloscn4hfqg877n60m18wvtm">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="PerfomanceReport.java" />
   </source>
-  <source id="4003657351907891908" name="TestGenerationOnTeamcity" hash="-5gybwmflec3zgjo879w1pp3w41fdnis">
+  <source id="4003657351907891908" name="TestGenerationOnTeamcity" hash="1qcfv920qwc5tpk2k768v620xzhtqgo">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" />
     <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" />
     <file name="TestGenerationOnTeamcity.java" />
   </source>
-  <source id="4003657351907886493" name="GenerateTask" hash="-2frldhtcitpell0j4mledd7hodmec36">
+  <source id="4003657351907886493" name="GenerateTask" hash="djddux95wsacxz0b4qukq6nuz067b3k">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:067fd2c9-d009-4506-91db-a69992d65964(jetbrains.mps.tool.common)" />
     <dep model="r:7b2ffdb7-2bfc-4488-8c0c-ee8fe93fe3c1(jetbrains.mps.build.ant)" />
     <file name="GenerateTask.java" />
   </source>

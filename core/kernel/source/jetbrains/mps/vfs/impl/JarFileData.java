@@ -20,35 +20,49 @@ import jetbrains.mps.logging.Logger;
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.*;
+import java.util.Collections;
+import java.util.Enumeration;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Set;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipFile;
 
 class JarFileData extends AbstractJarFileData {
   private static Logger LOG = Logger.getLogger(JarFileData.class);
 
+  private final Object myLock = new Object();
+  private boolean isInitialized = false;
   private Map<String, Set<String>> myFiles = new HashMap<String, Set<String>>();
   private Map<String, Set<String>> mySubDirectories = new HashMap<String, Set<String>>();
   private Map<String, ZipEntry> myEntries = new HashMap<String, ZipEntry>();
 
-  JarFileData(File file) throws IOException {
+  JarFileData(File file) {
     super(file);
-    buildCaches();
   }
 
   Set<String> getFiles(String dir) {
+    ensureInitialized();
+
     return Collections.unmodifiableSet(myFiles.get(dir));
   }
 
   Set<String> getSubdirectories(String dir) {
+    ensureInitialized();
+
     return Collections.unmodifiableSet(mySubDirectories.get(dir));
   }
 
   boolean exists(String path) {
+    ensureInitialized();
+
     return (myEntries.get(path) != null) || (mySubDirectories.get(path) != null);
   }
 
   boolean isDirectory(String path) {
+    ensureInitialized();
+
     if (myEntries.get(path) != null) {
       return myEntries.get(path).isDirectory();
     }
@@ -63,16 +77,14 @@ class JarFileData extends AbstractJarFileData {
     return dir.substring(0, lastSlash);
   }
 
-  @Override
-  protected Set<String> getDirectoriesFor(String dir) {
+  private Set<String> getDirectoriesFor(String dir) {
     if (mySubDirectories.get(dir) == null) {
       mySubDirectories.put(dir, new HashSet<String>());
     }
     return mySubDirectories.get(dir);
   }
 
-  @Override
-  protected Set<String> getFilesFor(String dir) {
+  private Set<String> getFilesFor(String dir) {
     if (myFiles.get(dir) == null) {
       myFiles.put(dir, new HashSet<String>());
     }
@@ -81,6 +93,8 @@ class JarFileData extends AbstractJarFileData {
 
   @Override
   InputStream openStream(String path) throws IOException {
+    ensureInitialized();
+
     ZipFile zipFile = new ZipFile(myFile);
     ZipEntry entry = myEntries.get(path);
     return new MyInputStream(zipFile, entry);
@@ -88,50 +102,64 @@ class JarFileData extends AbstractJarFileData {
 
   @Override
   long getLength(String path) {
+    ensureInitialized();
+
     return myEntries.get(path).getSize();
   }
 
-  private void buildCaches() throws IOException {
-    ZipFile zipFile = new ZipFile(myFile);
+  private void ensureInitialized() {
+    synchronized (myLock) {
+      if (isInitialized) return;
 
-    try {
-      Enumeration<? extends ZipEntry> entries = zipFile.entries();
+      isInitialized = true;
+      ZipFile zipFile = null;
+      try {
+        zipFile = new ZipFile(myFile);
+        Enumeration<? extends ZipEntry> entries = zipFile.entries();
 
-      while (entries.hasMoreElements()) {
-        ZipEntry entry = entries.nextElement();
-        if (entry.isDirectory()) {
-          String name = entry.getName();
-          if (name.endsWith("/")) {
-            name = name.substring(0, name.length() - 1);
-          }
+        while (entries.hasMoreElements()) {
+          ZipEntry entry = entries.nextElement();
+          if (entry.isDirectory()) {
+            String name = entry.getName();
+            if (name.endsWith("/")) {
+              name = name.substring(0, name.length() - 1);
+            }
 
-          buildDirectoryCaches(name);
-        } else {
-          String name = entry.getName();
-
-          int packEnd = name.lastIndexOf('/');
-          String dir;
-          String fileName;
-          if (packEnd == -1) {
-            dir = "";
-            fileName = name;
+            buildDirectoryCaches(name);
           } else {
-            dir = packEnd > 0 ? name.substring(0, packEnd) : name;
-            fileName = name.substring(packEnd + 1);
+            String name = entry.getName();
+
+            int packEnd = name.lastIndexOf('/');
+            String dir;
+            String fileName;
+            if (packEnd == -1) {
+              dir = "";
+              fileName = name;
+            } else {
+              dir = packEnd > 0 ? name.substring(0, packEnd) : name;
+              fileName = name.substring(packEnd + 1);
+            }
+
+            buildDirectoryCaches(dir);
+            getFilesFor(dir).add(fileName);
+
+            if (dir.length() > 0) {
+              myEntries.put(dir + "/" + fileName, entry);
+            } else {
+              myEntries.put(fileName, entry);
+            }
           }
-
-          buildDirectoryCaches(dir);
-          getFilesFor(dir).add(fileName);
-
-          if (dir.length() > 0) {
-            myEntries.put(dir + "/" + fileName, entry);
-          } else {
-            myEntries.put(fileName, entry);
+        }
+      } catch (IOException e) {
+        LOG.error(e);
+      } finally {
+        if (zipFile != null) {
+          try {
+            zipFile.close();
+          } catch (IOException ignored) {
           }
         }
       }
-    } finally {
-      zipFile.close();
     }
   }
 

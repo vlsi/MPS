@@ -18,17 +18,21 @@ package jetbrains.mps.idea.core.project.stubs;
 
 import com.intellij.openapi.components.BaseComponent;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.project.*;
-import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.util.misc.hash.HashSet;
+import jetbrains.mps.smodel.MPSModuleOwner;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
@@ -37,86 +41,72 @@ import java.util.Set;
  */
 public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner, BaseComponent {
 
-  private static ModelRootManager defaultStubMgr = LanguageID.JAVA_MANAGER;
+    public static void addModelRoots(SolutionDescriptor solutionDescriptor, VirtualFile[] roots) {
+        Set<String> seenPaths = new LinkedHashSet<String>();
+        for (ModelRootDescriptor d : solutionDescriptor.getModelRootDescriptors()) {
+            if (!PersistenceRegistry.JAVA_CLASSES_ROOT.equals(d.getType())) continue;
 
-  protected ModelRootManager getModelRootManager() {
-    // default stub model root manager
-    return defaultStubMgr;
-  }
-
-  public static void addModelRoots(SolutionDescriptor solutionDescriptor, VirtualFile[] roots, ModelRootManager rootMgr) {
-    Set<String> seenPaths = new HashSet<String>();
-    for (ModelRootDescriptor d : solutionDescriptor.getModelRootDescriptors()) {
-      ModelRoot root = d.getRoot();
-      if (root != null && EqualUtil.equals(root.getManager(), rootMgr)) {
-        seenPaths.add(root.getPath());
-      }
+            seenPaths.add(d.getMemento().get("path"));
+        }
+        for (VirtualFile f : roots) {
+            String localPath = getLocalPath(f);
+            if (!seenPaths.add(localPath)) continue;
+            solutionDescriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(localPath));
+        }
     }
-    for (VirtualFile f : roots) {
-      SModelRoot modelRoot = new SModelRoot(rootMgr);
-      modelRoot.setPath(getLocalPath(f));
-      if (!seenPaths.add(modelRoot.getPath())) continue;
-      solutionDescriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
+
+    private static String getLocalPath(VirtualFile f) {
+        String path = f.getPath();
+        int index = path.indexOf("!");
+        if (index < 0) return path;
+        return path.substring(0, index);
     }
-  }
 
-  protected void addModelRoots(SolutionDescriptor solutionDescriptor, VirtualFile[] roots) {
-    ModelRootManager rootMgr = getModelRootManager();
-    addModelRoots(solutionDescriptor, roots, rootMgr);
-  }
-
-  private static String getLocalPath(VirtualFile f) {
-    String path = f.getPath();
-    int index = path.indexOf("!");
-    if (index < 0) return path;
-    return path.substring(0, index);
-  }
-
-  @Override
-  public void initComponent() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        init();
-      }
-    });
-  }
-
-  @Override
-  public void disposeComponent() {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        dispose();
-      }
-    });
-  }
-
-  @NotNull
-  @Override
-  public String getComponentName() {
-    return getClass().getSimpleName();
-  }
-
-  protected abstract void init();
-
-  protected abstract void dispose();
-
-  protected Solution addSolution(String name, VirtualFile[] roots) {
-    SolutionDescriptor sd = new SolutionDescriptor();
-    sd.setNamespace(name);
-    sd.setId(ModuleId.foreign(name));
-    addModelRoots(sd, roots);
-    return StubSolution.newInstance(sd, this);
-  }
-
-  protected void removeSolution(String name) {
-    ModuleReference ref = new ModuleReference(null, ModuleId.foreign(name));
-    MPSModuleRepository repository = MPSModuleRepository.getInstance();
-    IModule m = ModuleRepositoryFacade.getInstance().getModule(ref);
-    if (m == null) {
-      return;
+    @Override
+    public void initComponent() {
+        ModelAccess.instance().runWriteAction(new Runnable() {
+            @Override
+            public void run() {
+                init();
+            }
+        });
     }
-    repository.unregisterModule(m, this);
-  }
+
+    @Override
+    public void disposeComponent() {
+        ModelAccess.instance().runWriteAction(new Runnable() {
+            @Override
+            public void run() {
+                dispose();
+            }
+        });
+    }
+
+    @NotNull
+    @Override
+    public String getComponentName() {
+        return getClass().getSimpleName();
+    }
+
+    protected abstract void init();
+
+    protected abstract void dispose();
+
+    protected Solution addSolution(String name, VirtualFile[] roots) {
+        SolutionDescriptor sd = new SolutionDescriptor();
+        sd.setNamespace(name);
+        sd.setId(ModuleId.foreign(name));
+        addModelRoots(sd, roots);
+        return StubSolution.newInstance(sd, this);
+    }
+
+    protected void removeSolution(String name) {
+        ModuleReference ref = new ModuleReference(null, ModuleId.foreign(name));
+        MPSModuleRepository repository = MPSModuleRepository.getInstance();
+        IModule m = ModuleRepositoryFacade.getInstance().getModule(ref);
+        if (m == null) {
+            return;
+        }
+        repository.unregisterModule(m, this);
+    }
 }

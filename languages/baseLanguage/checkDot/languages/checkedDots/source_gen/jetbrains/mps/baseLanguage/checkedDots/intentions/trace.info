@@ -11,19 +11,20 @@
     <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="45" startPosition="44" endLine="46" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="49" startPosition="84" endLine="50" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="53" startPosition="53" endLine="54" endPosition="144" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="58" startPosition="37" endLine="59" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="60" startPosition="5" endLine="61" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7654328074273773966" fileName="MakeDotExpressionChecked_Intention.java" startLine="76" startPosition="120" endLine="77" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7654328074273773972" fileName="MakeDotExpressionChecked_Intention.java" startLine="77" startPosition="127" endLine="78" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7654328074273773981" fileName="MakeDotExpressionChecked_Intention.java" startLine="78" startPosition="116" endLine="79" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7654328074273773990" fileName="MakeDotExpressionChecked_Intention.java" startLine="79" startPosition="120" endLine="80" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7654328074273773934" fileName="MakeDotExpressionChecked_Intention.java" startLine="81" startPosition="14" endLine="82" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7654328074273773940" fileName="MakeDotExpressionChecked_Intention.java" startLine="82" startPosition="143" endLine="83" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7654328074273773949" fileName="MakeDotExpressionChecked_Intention.java" startLine="83" startPosition="113" endLine="84" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7654328074273773958" fileName="MakeDotExpressionChecked_Intention.java" startLine="84" startPosition="117" endLine="85" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="89" startPosition="48" endLine="90" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="57" startPosition="35" endLine="58" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="62" startPosition="37" endLine="63" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="64" startPosition="5" endLine="65" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7654328074273773966" fileName="MakeDotExpressionChecked_Intention.java" startLine="80" startPosition="120" endLine="81" endPosition="127" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7654328074273773972" fileName="MakeDotExpressionChecked_Intention.java" startLine="81" startPosition="127" endLine="82" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7654328074273773981" fileName="MakeDotExpressionChecked_Intention.java" startLine="82" startPosition="116" endLine="83" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7654328074273773990" fileName="MakeDotExpressionChecked_Intention.java" startLine="83" startPosition="120" endLine="84" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7654328074273773934" fileName="MakeDotExpressionChecked_Intention.java" startLine="85" startPosition="14" endLine="86" endPosition="143" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7654328074273773940" fileName="MakeDotExpressionChecked_Intention.java" startLine="86" startPosition="143" endLine="87" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7654328074273773949" fileName="MakeDotExpressionChecked_Intention.java" startLine="87" startPosition="113" endLine="88" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7654328074273773958" fileName="MakeDotExpressionChecked_Intention.java" startLine="88" startPosition="117" endLine="89" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="93" startPosition="48" endLine="94" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="22" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeDotExpressionChecked_Intention#()V" />
-    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="65" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
+    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="69" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
     <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
     <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPresentation#()Ljava/lang/String;" />
     <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getPersistentStateKey#()Ljava/lang/String;" />
@@ -32,16 +33,17 @@
     <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
     <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="53" startPosition="0" endLine="56" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getIntentionNodeReference#()Lorg/jetbrains/mps/openapi/model/SNodeReference;" />
-    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="57" startPosition="99" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="89" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
-    <nodeInfo nodeId="7654328074273773999" fileName="MakeDotExpressionChecked_Intention.java" startLine="68" startPosition="87" endLine="72" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7654328074273773931" fileName="MakeDotExpressionChecked_Intention.java" startLine="81" startPosition="12" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="57" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
-    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="68" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
-    <nodeInfo nodeId="7654328074273773923" fileName="MakeDotExpressionChecked_Intention.java" startLine="75" startPosition="78" endLine="86" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="75" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="57" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSurroundWith#()Z" />
+    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="61" startPosition="99" endLine="64" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="93" startPosition="0" endLine="96" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptor#()Ljetbrains/mps/intentions/IntentionDescriptor;" />
+    <nodeInfo nodeId="7654328074273773999" fileName="MakeDotExpressionChecked_Intention.java" startLine="72" startPosition="87" endLine="76" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7654328074273773931" fileName="MakeDotExpressionChecked_Intention.java" startLine="85" startPosition="12" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="61" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
+    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="72" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/lang/String;" />
+    <nodeInfo nodeId="7654328074273773923" fileName="MakeDotExpressionChecked_Intention.java" startLine="79" startPosition="78" endLine="90" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="79" startPosition="0" endLine="92" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="22" startPosition="47" endLine="22" endPosition="47" />
-    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="65" startPosition="38" endLine="65" endPosition="38" />
+    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="69" startPosition="38" endLine="69" endPosition="38" />
     <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="25" startPosition="30" endLine="26" endPosition="64" />
     <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="29" startPosition="35" endLine="30" endPosition="38" />
     <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="33" startPosition="41" endLine="34" endPosition="98" />
@@ -50,10 +52,11 @@
     <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="45" startPosition="44" endLine="46" endPosition="17" />
     <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="49" startPosition="84" endLine="50" endPosition="16" />
     <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="53" startPosition="53" endLine="54" endPosition="144" />
-    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="58" startPosition="37" endLine="59" endPosition="140" />
-    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="89" startPosition="48" endLine="90" endPosition="53" />
+    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="57" startPosition="35" endLine="58" endPosition="17" />
+    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="62" startPosition="37" endLine="63" endPosition="140" />
+    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="93" startPosition="48" endLine="94" endPosition="53" />
     <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="22" startPosition="0" endLine="24" endPosition="0" />
-    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="65" startPosition="0" endLine="67" endPosition="0" />
+    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="69" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="25" startPosition="0" endLine="28" endPosition="0" />
     <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="29" startPosition="0" endLine="32" endPosition="0" />
     <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="33" startPosition="0" endLine="36" endPosition="0" />
@@ -65,30 +68,31 @@
       <varInfo nodeId="1038097819968653124" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="53" startPosition="0" endLine="56" endPosition="0" />
-    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="89" startPosition="0" endLine="92" endPosition="0" />
-    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="57" startPosition="99" endLine="61" endPosition="30" />
-    <scopeInfo nodeId="1038097819968653126" fileName="MakeDotExpressionChecked_Intention.java" startLine="68" startPosition="87" endLine="72" endPosition="8" />
-    <scopeInfo nodeId="7654328074273773924" fileName="MakeDotExpressionChecked_Intention.java" startLine="76" startPosition="120" endLine="80" endPosition="64">
+    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="57" startPosition="0" endLine="60" endPosition="0" />
+    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="93" startPosition="0" endLine="96" endPosition="0" />
+    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="61" startPosition="99" endLine="65" endPosition="30" />
+    <scopeInfo nodeId="1038097819968653126" fileName="MakeDotExpressionChecked_Intention.java" startLine="72" startPosition="87" endLine="76" endPosition="8" />
+    <scopeInfo nodeId="7654328074273773924" fileName="MakeDotExpressionChecked_Intention.java" startLine="80" startPosition="120" endLine="84" endPosition="64">
       <varInfo nodeId="7654328074273773967" varName="dotExpression" />
     </scopeInfo>
-    <scopeInfo nodeId="7654328074273773932" fileName="MakeDotExpressionChecked_Intention.java" startLine="81" startPosition="14" endLine="85" endPosition="61">
+    <scopeInfo nodeId="7654328074273773932" fileName="MakeDotExpressionChecked_Intention.java" startLine="85" startPosition="14" endLine="89" endPosition="61">
       <varInfo nodeId="7654328074273773935" varName="checkedDot" />
     </scopeInfo>
-    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="57" startPosition="0" endLine="63" endPosition="0">
+    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="61" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="1038097819968653124" varName="context" />
       <varInfo nodeId="1038097819968653124" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="68" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="72" startPosition="0" endLine="78" endPosition="0">
       <varInfo nodeId="1038097819968653124" varName="editorContext" />
       <varInfo nodeId="1038097819968653124" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1038097819968653128" fileName="MakeDotExpressionChecked_Intention.java" startLine="75" startPosition="78" endLine="86" endPosition="7" />
-    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="75" startPosition="0" endLine="88" endPosition="0">
+    <scopeInfo nodeId="1038097819968653128" fileName="MakeDotExpressionChecked_Intention.java" startLine="79" startPosition="78" endLine="90" endPosition="7" />
+    <scopeInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="79" startPosition="0" endLine="92" endPosition="0">
       <varInfo nodeId="1038097819968653124" varName="editorContext" />
       <varInfo nodeId="1038097819968653124" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="64" startPosition="0" endLine="93" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.intentions.MakeDotExpressionChecked_Intention$IntentionImplementation" />
-    <unitInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="19" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.intentions.MakeDotExpressionChecked_Intention" />
+    <unitInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="68" startPosition="0" endLine="97" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.intentions.MakeDotExpressionChecked_Intention$IntentionImplementation" />
+    <unitInfo nodeId="1038097819968653124" fileName="MakeDotExpressionChecked_Intention.java" startLine="19" startPosition="0" endLine="98" endPosition="0" unitName="jetbrains.mps.baseLanguage.checkedDots.intentions.MakeDotExpressionChecked_Intention" />
   </root>
 </debugInfo>
 

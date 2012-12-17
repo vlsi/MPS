@@ -52,6 +52,10 @@ public class editoMute_Intention implements IntentionFactory {
     return new SNodePointer("r:7344827c-92d1-4046-9d4e-c93304e0d649(jetbrains.mps.testbench.suite.intentions)", "8605005254686393770");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new editoMute_Intention.IntentionImplementation());

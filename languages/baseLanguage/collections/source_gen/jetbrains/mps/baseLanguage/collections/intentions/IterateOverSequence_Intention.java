@@ -65,6 +65,10 @@ public class IterateOverSequence_Intention implements IntentionFactory {
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959032c(jetbrains.mps.baseLanguage.collections.intentions)", "309173295241374789");
   }
 
+  public boolean isSurroundWith() {
+    return true;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new IterateOverSequence_Intention.IntentionImplementation());

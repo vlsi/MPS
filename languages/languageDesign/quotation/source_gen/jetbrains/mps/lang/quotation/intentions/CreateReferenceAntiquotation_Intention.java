@@ -8,7 +8,7 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.openapi.editor.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -76,6 +76,10 @@ public class CreateReferenceAntiquotation_Intention implements IntentionFactory 
 
   public SNodeReference getIntentionNodeReference() {
     return new SNodePointer("r:f4b34c7d-c02f-43b9-b6e7-feff8966461c(jetbrains.mps.lang.quotation.intentions)", "1227886614590");
+  }
+
+  public boolean isSurroundWith() {
+    return false;
   }
 
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {

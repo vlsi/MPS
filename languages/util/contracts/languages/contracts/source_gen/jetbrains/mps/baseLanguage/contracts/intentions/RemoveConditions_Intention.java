@@ -64,6 +64,10 @@ public class RemoveConditions_Intention implements IntentionFactory {
     return new SNodePointer("r:3070cbe8-0c27-49bc-b3e1-822ee20455cd(jetbrains.mps.baseLanguage.contracts.intentions)", "6302815655306137097");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new RemoveConditions_Intention.IntentionImplementation());

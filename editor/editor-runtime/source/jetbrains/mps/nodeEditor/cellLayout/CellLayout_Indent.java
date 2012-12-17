@@ -19,13 +19,18 @@ import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
+import jetbrains.mps.nodeEditor.cells.GeometryUtil;
 import jetbrains.mps.nodeEditor.style.DefaultBaseLine;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 
-import java.awt.*;
-import java.util.*;
+import java.awt.Rectangle;
+import java.util.ArrayList;
+import java.util.HashSet;
+import java.util.Iterator;
 import java.util.List;
+import java.util.Set;
+import java.util.Stack;
 
 public class CellLayout_Indent extends AbstractCellLayout {
   static boolean isOnNewLine(EditorCell root, EditorCell cell) {
@@ -179,7 +184,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
     List<Rectangle> result = new ArrayList<Rectangle>();
     List<EditorCell> indentLeafs = getIndentLeafs(editorCells);
     for (EditorCell leaf : indentLeafs) {
-      result.add(leaf.getBounds());
+      result.add(GeometryUtil.getBounds(editorCells));
     }
     return result;
   }

@@ -113,8 +113,14 @@ public abstract class EditorCell_Basic implements EditorCell {
     myNode = node;
   }
 
+  @Override
   public EditorComponent getEditor() {
     return (EditorComponent) getContext().getEditorComponent();
+  }
+
+  @Override
+  public jetbrains.mps.openapi.editor.EditorComponent getEditorComponent() {
+    return getContext().getEditorComponent();
   }
 
   public boolean isErrorState() {
@@ -312,6 +318,16 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   public void setHeight(int height) {
     myHeight = height;
+  }
+
+  @Override
+  public int getBottom() {
+    return getY() + getHeight();
+  }
+
+  @Override
+  public int getRight() {
+    return getX() + getWidth();
   }
 
   public int getEffectiveWidth() {
@@ -567,11 +583,6 @@ public abstract class EditorCell_Basic implements EditorCell {
 
   }
 
-  public Rectangle getBounds() {
-    return new Rectangle(getX(), getY(), getWidth(), getHeight());
-  }
-
-
   public final EditorCell findLeaf(int x, int y) {
     return findLeaf(x, y, Condition.TRUE_CONDITION);
   }
@@ -601,17 +612,6 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
 
     return best;
-  }
-
-  public EditorCell findCellWeak(int y, Condition<EditorCell> condition) {
-    Set<EditorCell> candidates = new LinkedHashSet<EditorCell>();
-    collectCellsWithY(this, y, candidates, false);
-    for (EditorCell cell : candidates) {
-      if (condition.met(cell)) {
-        return cell;
-      }
-    }
-    return null;
   }
 
   private EditorCell findClosestHorizontal(int x, Condition<EditorCell> condition, Set<EditorCell> candidates) {

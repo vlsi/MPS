@@ -17,10 +17,10 @@ package jetbrains.mps.testbench;
 
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectManager;
-import jetbrains.mps.build.ant.Environment;
-import jetbrains.mps.build.ant.MpsWorker.LogLogger;
-import jetbrains.mps.build.ant.WhatToDo;
-import jetbrains.mps.build.ant.make.MakeWorker;
+import jetbrains.mps.tool.builder.Environment;
+import jetbrains.mps.tool.builder.MpsWorker.LogLogger;
+import jetbrains.mps.tool.common.Script;
+import jetbrains.mps.tool.builder.make.MakeWorker;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.testbench.util.FilesCollector;
 import jetbrains.mps.testbench.util.FilesCollector.FilePattern;
@@ -49,6 +49,7 @@ public class MpsMakeHelper {
     {Type.EXCLUDE, "**/**testLogger**/**"},
     {Type.EXCLUDE, "**/**sandbox**/**"},
     {Type.EXCLUDE, "**/**Sandbox**/**"},
+    {Type.EXCLUDE, "**/IdeaPlugin/solutions/**"},
     {Type.INCLUDE, "**/**.mpl"},
     {Type.INCLUDE, "**/**.msd"},
     {Type.EXCLUDE, "**/resolve.msd"},
@@ -134,7 +135,7 @@ public class MpsMakeHelper {
   }
 
   public void directMake() {
-    WhatToDo toDo = new WhatToDo();
+    Script toDo = new Script();
     List<File> path = Collections.singletonList(new File(System.getProperty("user.dir")));
     List<FilePattern> filePtns = new ArrayList<FilePattern>();
     for (Object[] ptns : PATTERNS) {
@@ -151,7 +152,7 @@ public class MpsMakeHelper {
 //    spawnWorkerAndWait(toDo);
   }
 
-  private void spawnWorkerAndWait(WhatToDo myWhatToDo) {
+  private void spawnWorkerAndWait(Script myWhatToDo) {
     String currentClassPathString = System.getProperty("java.class.path");
     Set<File> classPaths = calculateClassPath(new File(System.getProperty("user.dir")));
 

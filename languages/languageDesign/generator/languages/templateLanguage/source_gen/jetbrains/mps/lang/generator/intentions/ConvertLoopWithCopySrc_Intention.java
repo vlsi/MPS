@@ -85,6 +85,10 @@ public class ConvertLoopWithCopySrc_Intention implements IntentionFactory {
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902e5(jetbrains.mps.lang.generator.intentions)", "7834938100936599479");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertLoopWithCopySrc_Intention.IntentionImplementation());

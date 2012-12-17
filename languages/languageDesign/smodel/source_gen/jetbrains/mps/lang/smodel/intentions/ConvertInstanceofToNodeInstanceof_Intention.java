@@ -62,6 +62,10 @@ public class ConvertInstanceofToNodeInstanceof_Intention implements IntentionFac
     return new SNodePointer("r:00000000-0000-4000-0000-011c895902ff(jetbrains.mps.lang.smodel.intentions)", "8288233991428710054");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertInstanceofToNodeInstanceof_Intention.IntentionImplementation());

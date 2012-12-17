@@ -348,7 +348,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
   }
 
   private Iterable<Integer> getPseudoLinesForContent(@Nullable LineContent content) {
-    jetbrains.mps.openapi.editor.EditorCell cell = findCellForContent(content);
+    jetbrains.mps.openapi.editor.cells.EditorCell cell = findCellForContent(content);
     if (cell == null) {
       return Sequence.fromIterable(Collections.<Integer>emptyList());
     }

@@ -16,8 +16,11 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
+import jetbrains.mps.util.io.ModelInputStream;
+import jetbrains.mps.util.io.ModelOutputStream;
 import jetbrains.mps.util.misc.hash.HashMap;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.Map;
 
@@ -105,4 +108,39 @@ public class SModelHeader {
     myOptionalProperties.putAll(header.getOptionalProperties());
   }
 
+  public void save(ModelOutputStream stream) throws IOException {
+    stream.writeByte(77);
+    stream.writeString(myUID);
+    stream.writeInt(myPersistenceVersion);
+    stream.writeInt(myVersion);
+    stream.writeBoolean(doNotGenerate);
+    stream.writeInt(myOptionalProperties.size());
+    for (Map.Entry<String, String> ss : myOptionalProperties.entrySet()) {
+      stream.writeString(ss.getKey());
+      stream.writeString(ss.getValue());
+    }
+  }
+
+  public static SModelHeader load(ModelInputStream stream) throws IOException {
+    if (stream.readByte() != 77) throw new IOException("bad stream: no model header start marker");
+    SModelHeader result = new SModelHeader();
+    result.setUID(stream.readString());
+    result.setPersistenceVersion(stream.readInt());
+    result.setVersion(stream.readInt());
+    result.setDoNotGenerate(stream.readBoolean());
+    for (int size = stream.readInt(); size > 0; size--) {
+      result.setOptionalProperty(stream.readString(), stream.readString());
+    }
+    return result;
+  }
+
+  public SModelHeader createCopy() {
+    SModelHeader copy = new SModelHeader();
+    copy.myUID = myUID;
+    copy.myPersistenceVersion = myPersistenceVersion;
+    copy.myVersion = myVersion;
+    copy.doNotGenerate = doNotGenerate;
+    copy.myOptionalProperties.putAll(myOptionalProperties);
+    return copy;
+  }
 }

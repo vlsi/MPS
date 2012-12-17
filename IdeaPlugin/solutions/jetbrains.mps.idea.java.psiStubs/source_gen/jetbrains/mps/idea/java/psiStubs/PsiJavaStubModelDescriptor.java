@@ -90,6 +90,10 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
 
   public void psiChanged(PsiListener.PsiEvent event) {
 
+    // already attached, but not createModel'd yet 
+    if (myModel == null) {
+      return;
+    }
 
     System.out.println("MODEL ROOT RECEIVED EVENT");
     for (PsiFileSystemItem f : Sequence.fromIterable(event.getRemoved())) {

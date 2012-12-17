@@ -25,16 +25,16 @@ import jetbrains.mps.util.Condition;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Set;
 
-public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.EditorCell {
+public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.cells.EditorCell {
   static final EditorCell[] EMPTY_ARRAY = new EditorCell[0];
 
+  // TODO: Pulled up to jetbrains.mps.openapi.editor.cells.EditorCell. Remove it.
   void setX(int x);
 
   void setY(int y);
@@ -55,14 +55,7 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.Edit
   int getTopInset();
   int getBottomInset();
 
-  Rectangle getBounds();
-
   void moveTo(int x, int y);
-  
-  void paint(Graphics g);
-  void paint(Graphics g, ParentSettings parentSettings);
-  void paintSelection(Graphics g, Color c, boolean drawBorder);
-  void paintSelection(Graphics g, Color c, boolean drawBorder, ParentSettings parentSettings);
 
   void setSelected(boolean isSelected);
   boolean isSelected();
@@ -79,17 +72,39 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.Edit
   SNode getRefNode();
   void setRefNode(SNode refNode);
 
+  boolean isErrorState();
+  void setErrorState(boolean isError);
+
+  void relayout();
+
+  void setCaretX(int x);
+  int getCaretX();
+
+  void home();
+  void end();
+
+  EditorCell findLeaf(int x, int y);
+
+  boolean isSingleNodeCell();
+
+  SNode getSNode();
+
+  void putUserObject(Object key, Object value);
+  Object getUserObject(Object key);
+  // END of pull up
+
+  void paint(Graphics g);
+  void paint(Graphics g, ParentSettings parentSettings);
+  void paintSelection(Graphics g, Color c, boolean drawBorder);
+  void paintSelection(Graphics g, Color c, boolean drawBorder, ParentSettings parentSettings);
+
   // FIXME
   void setLinkDeclaration(SNode link);
   SNode getLinkDeclaration();
 
   boolean isReferenceCell();
 
-  boolean isErrorState();
-  void setErrorState(boolean isError);
   boolean validate(boolean strict, boolean canActivatePopup);
-
-  void relayout();
 
   TextBuilder renderText();
 
@@ -104,47 +119,41 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.Edit
   @Deprecated
   EditorContext getEditorContext();
 
-  void setCaretX(int x);
-  int getCaretX();
-
-  void home();
-  void end();
-
-  EditorCell findLeaf(int x, int y);
   EditorCell findLeaf(int x, int y, Condition<EditorCell> condition);
-  
+
   EditorCell findCellWeak(int x, int y);
-  EditorCell findCellWeak(int y, Condition<EditorCell> condition);
   EditorCell findCellWeak(int x, int y, Condition<EditorCell> condition);
 
   EditorCell_Collection getParent();
-  boolean isSingleNodeCell();
 
   void synchronizeViewWithModel();
-
-  SNode getSNode();
 
   SNode getSNodeWRTReference();
   String getCellRole();
 
+  // TODO: move this group of methods to open API
   NodeSubstitutePatternEditor createSubstitutePatternEditor();
   void setSubstituteInfo(NodeSubstituteInfo substitueInfo);
   NodeSubstituteInfo getSubstituteInfo();
 
   EditorCellAction getAction(CellActionType type);
+  // TODO: move this method to open API
   void setAction(CellActionType type, EditorCellAction action);
   boolean canExecuteAction(CellActionType type);
   boolean executeAction(CellActionType type);
   EditorCellAction getApplicableCellAction(CellActionType type);
   Set<CellActionType> getAvailableActions();
 
+  // TODO: move this method to open API
   void addKeyMap(EditorCellKeyMap keyMap);
 
   EditorCellKeyMap getKeyMap();
 
-  void putUserObject(Object key, Object value);
-  Object getUserObject(Object key);
-
+  /**
+   * Starting from MPS 3.0 use getEditorComponent(); instead
+   * @return
+   */
+  @Deprecated
   EditorComponent getEditor();
 
   void switchCaretVisible();
@@ -154,6 +163,7 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.Edit
   Color getCellBackgroundColor();
   void setCellBackgroundColor(Color color);
 
+  // TODO: move this method to open API
   CellInfo getCellInfo();
 
   void setRightTransformAnchorTag(String tag);
@@ -169,6 +179,7 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.Edit
   <C extends EditorCell> C findChild(CellFinder<C> finder, boolean includeThis);
   <C extends EditorCell> C findChild(CellFinder<C> finder);
 
+  // TODO: move to EditorCell_Collection & open API
   boolean isFolded();
   boolean isUnfoldedCollection();
   boolean canBePossiblyFolded();
@@ -192,8 +203,10 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.Edit
 
   boolean hasFocusPolicy();
   FocusPolicy getFocusPolicy();
+  // TODO: move to open API or modify editor generator to use styles for FocusPolicy
   void setFocusPolicy(FocusPolicy fp);
 
+  // TODO: move to open API
   List<EditorMessage> getMessages();
   <T extends EditorMessage> List<T> getMessages(Class<T> clazz);
   List<EditorMessage> getMessagesForOwner(EditorMessageOwner owner);
@@ -201,6 +214,7 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.Edit
 
   EditorCell_Label getSTHintCell();
 
+  // TODO: move to open API
   Style getStyle();
 
   boolean isLeaf();
@@ -243,6 +257,7 @@ public interface EditorCell extends Cloneable, jetbrains.mps.openapi.editor.Edit
   EditorCell getUpper(Condition<EditorCell> condition, int baseX);
   EditorCell getLower(Condition<EditorCell> condition, int baseX);
 
+  // TODO: same as inset?
   void setLeftGap(int gap);
   void setRightGap(int gap);
 }

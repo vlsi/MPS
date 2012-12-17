@@ -17,8 +17,8 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
-import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.extapi.persistence.FolderModelRootBase;
+import jetbrains.mps.persistence.PersistenceRegistry;
 
 public class EvaluationAuxModule extends AbstractModule {
   private Project myProject;
@@ -80,9 +80,9 @@ public class EvaluationAuxModule extends AbstractModule {
   protected Iterable<ModelRoot> loadRoots() {
     Set<ModelRoot> result = new HashSet<ModelRoot>();
     for (String stub : SetSequence.fromSet(myStubPaths)) {
-      SModelRoot smodelRoot = new SModelRoot(LanguageID.JAVA_MANAGER);
-      smodelRoot.setPath(stub);
-      result.add(smodelRoot);
+      FolderModelRootBase modelRoot = (FolderModelRootBase) PersistenceRegistry.getInstance().getModelRootFactory(PersistenceRegistry.JAVA_CLASSES_ROOT).create();
+      modelRoot.setPath(stub);
+      result.add(modelRoot);
     }
     return result;
   }

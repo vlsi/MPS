@@ -28,6 +28,7 @@ import jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.EditorManager;
+import jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider;
 import jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider;
 
 public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
@@ -37,26 +38,6 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
 
   public EditorCell createInspectedCell(EditorContext editorContext, SNode node) {
     return this.createCollection_7cysuj_a_0(editorContext, node);
-  }
-
-  public static class _Inline_7cysuj_a1a extends InlineCellProvider {
-    public _Inline_7cysuj_a1a() {
-      super();
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext) {
-      return this.createEditorCell(editorContext, this.getSNode());
-    }
-
-    public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
-      return this.createReferencePresentation_7cysuj_a0b0(editorContext, node);
-    }
-
-    private EditorCell createReferencePresentation_7cysuj_a0b0(EditorContext editorContext, SNode node) {
-      EditorCell_Property editorCell = EditorCell_RefPresentation.create(editorContext, node, this.getRefNode(), this.getLinkDeclaration());
-      editorCell.setCellId("ReferencePresentation_7cysuj_a0b0");
-      return editorCell;
-    }
   }
 
   public static class _Inline_7cysuj_a3a extends InlineCellProvider {
@@ -119,7 +100,7 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_7cysuj_a");
     editorCell.addEditorCell(this.createComponent_7cysuj_a0(editorContext, node));
-    editorCell.addEditorCell(this.createRefCell_7cysuj_b0(editorContext, node));
+    editorCell.addEditorCell(this.createRefNode_7cysuj_b0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7cysuj_c0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_7cysuj_d0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_7cysuj_e0(editorContext, node));
@@ -204,12 +185,12 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_7cysuj_b0(EditorContext editorContext, SNode node) {
+  private EditorCell createRefCell_7cysuj_d0(EditorContext editorContext, SNode node) {
     CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("oldClassifier");
-    provider.setNoTargetText("<no oldClassifier>");
+    provider.setRole("newClassifier");
+    provider.setNoTargetText("<no newClassifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ExtractInterfaceMigration_Editor._Inline_7cysuj_a1a());
+    provider.setAuxiliaryCellProvider(new ExtractInterfaceMigration_Editor._Inline_7cysuj_a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
@@ -222,12 +203,11 @@ public class ExtractInterfaceMigration_Editor extends DefaultNodeEditor {
     return editorCell;
   }
 
-  private EditorCell createRefCell_7cysuj_d0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new RefCellCellProvider(node, editorContext);
-    provider.setRole("newClassifier");
-    provider.setNoTargetText("<no newClassifier>");
+  private EditorCell createRefNode_7cysuj_b0(EditorContext editorContext, SNode node) {
+    CellProviderWithRole provider = new RefNodeCellProvider(node, editorContext);
+    provider.setRole("oldClassifier");
+    provider.setNoTargetText("<no oldClassifier>");
     EditorCell editorCell;
-    provider.setAuxiliaryCellProvider(new ExtractInterfaceMigration_Editor._Inline_7cysuj_a3a());
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();

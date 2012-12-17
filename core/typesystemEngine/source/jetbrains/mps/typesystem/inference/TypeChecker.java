@@ -21,6 +21,7 @@ import jetbrains.mps.lang.typesystem.runtime.RuntimeSupport;
 import jetbrains.mps.lang.typesystem.runtime.performance.RuntimeSupport_Tracer;
 import jetbrains.mps.lang.typesystem.runtime.performance.SubtypingManager_Tracer;
 import jetbrains.mps.newTypesystem.RuntimeSupportNew;
+import jetbrains.mps.newTypesystem.context.HoleTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.SimpleTypecheckingContext;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.rules.LanguageScope;
@@ -45,9 +46,6 @@ import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class TypeChecker implements CoreComponent, LanguageRegistryListener {
-  private static final String RUNTIME_TYPES = "$runtimeTypes$";
-  private static final String TYPES_MODEL_NAME = "typesModel";
-  private static final SModelFqName TYPES_MODEL_UID = new SModelFqName(TYPES_MODEL_NAME, RUNTIME_TYPES);
   private static TypeChecker INSTANCE;
 
   public final Object LISTENERS_LOCK = new Object();
@@ -67,12 +65,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
 
   private RulesManager myRulesManager;
 
-  private SubtypingCache mySubtypingCache = null;
-  private volatile SubtypingCachePool myGlobalSubtypingCachePool = null;
-
   private SubtypingCache myGenerationSubTypingCache = null;
-
-  private Map<SNode, SNode> myComputedTypesForCompletion = null;
 
   private ThreadLocal<Boolean> myIsGenerationThread = new ThreadLocal<Boolean>() {
     @Override
@@ -154,58 +147,15 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
         return generationSubTypingCache;
       }
     }
-    return mySubtypingCache;
-  }
-
-  public SubtypingCache getGlobalSubtypingCache() {
-    return myGlobalSubtypingCachePool != null ? myGlobalSubtypingCachePool.getCurrent() : null;
-  }
-
-  public void enableGlobalSubtypingCache() {
-    myGlobalSubtypingCachePool = new SubtypingCachePool();
-  }
-
-  public void clearGlobalSubtypingCache() {
-    if (myGlobalSubtypingCachePool != null) myGlobalSubtypingCachePool.clear();
-    myGlobalSubtypingCachePool = null;
+    return TypeContextManager.getInstance().getSubtypingCache();
   }
 
   public RulesManager getRulesManager() {
     return myRulesManager;
   }
 
-  public void enableTypesComputingForCompletion() {
-    //todo add assertion that it is in synchronized with below (e.g. in write action)
-    myComputedTypesForCompletion = new THashMap<SNode, SNode>(1);
-    if (mySubtypingCache == null) {
-      mySubtypingCache = createSubtypingCache();
-    }
-  }
-
-  public void clearTypesComputedForCompletion() {
-    //todo add assertion that it is in synchronized with above (e.g. in write action)
-    myComputedTypesForCompletion = null;
-    if (!isGenerationMode()) {
-      mySubtypingCache = null;
-    }
-  }
-
   private SubtypingCache createSubtypingCache() {
     return new ConcurrentSubtypingCache();
-  }
-
-  public Pair<SNode, Boolean> getTypeComputedForCompletion(SNode node) {
-    if (myComputedTypesForCompletion != null && myComputedTypesForCompletion.containsKey(node)) {
-      return new Pair<SNode, Boolean>(myComputedTypesForCompletion.get(node), true);
-    } else {
-      return new Pair<SNode, Boolean>(null, false);
-    }
-  }
-
-  public void putTypeComputedForCompletion(SNode node, SNode type) {
-    if (myComputedTypesForCompletion != null) {
-      myComputedTypesForCompletion.put(node, type);
-    }
   }
 
   public void generationStarted(IPerformanceTracer performanceTracer) {
@@ -266,7 +216,7 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
   }
 
   public InequalitySystem getInequalitiesForHole(SNode hole, boolean holeIsAType) {
-    SimpleTypecheckingContext typeCheckingContext = (SimpleTypecheckingContext) TypeContextManager.getInstance().createTypeCheckingContext(hole.getContainingRoot());
+    HoleTypecheckingContext typeCheckingContext = TypeContextManager.getInstance().createHoleTypecheckingContext(hole);
     InequalitySystem inequalitySystem = typeCheckingContext.getTypechecking().computeInequalitiesForHole(hole, holeIsAType);
     typeCheckingContext.dispose();
     return inequalitySystem;
@@ -287,14 +237,6 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
     return TypeContextManager.getInstance().getTypeOf(node);
   }
 
-
-  public SModelFqName getRuntimeTypesModelUID() {
-    return TYPES_MODEL_UID;
-  }
-
-  public boolean isGlobalIncrementalMode() {
-    return !isGenerationMode();
-  }
 
   private List<TypeRecalculatedListener> copyTypeRecalculatedListeners() {
     synchronized (LISTENERS_LOCK) {
@@ -339,25 +281,4 @@ public class TypeChecker implements CoreComponent, LanguageRegistryListener {
     }
   }
 
-  private class SubtypingCachePool {
-
-    private volatile ConcurrentHashMap<LanguageScope, SubtypingCache> myPool = new ConcurrentHashMap<LanguageScope, SubtypingCache>();
-    private volatile ConcurrentHashMap<LanguageScope, Boolean> myPoolGuard = new ConcurrentHashMap<LanguageScope, Boolean>();
-
-    private SubtypingCache getCurrent() {
-      LanguageScope langScope = LanguageScope.getCurrent();
-      if (!myPool.containsKey(langScope)) {
-        if (myPoolGuard.putIfAbsent(langScope, Boolean.TRUE) == null) {
-          myPool.put(langScope,createSubtypingCache());
-        }
-      }
-      return myPool.get(langScope);
-    }
-
-    private void clear () {
-      myPoolGuard.clear();
-      myPool.clear();
-    }
-
-  }
 }

@@ -181,11 +181,11 @@ public class JavaStackFrame extends ProxyForJava implements IStackFrame {
     int result = 0;
     result = 31 * result + myIndex;
     result = 31 * result + ((myLocation != null ?
-      ((Object) myLocation).hashCode() :
+      (myLocation).hashCode() :
       0
     ));
     result = 31 * result + ((myThread != null ?
-      ((Object) myThread).hashCode() :
+      (myThread).hashCode() :
       0
     ));
     return result;

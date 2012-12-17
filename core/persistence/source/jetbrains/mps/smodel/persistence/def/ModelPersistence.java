@@ -19,7 +19,10 @@ import jetbrains.mps.generator.ModelDigestHelper;
 import jetbrains.mps.generator.ModelDigestUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.MPSExtentions;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.DefaultSModel;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelHeader;
 import jetbrains.mps.smodel.loading.ModelLoadResult;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.smodel.persistence.def.v4.ModelPersistence4;
@@ -123,7 +126,7 @@ public class ModelPersistence {
   }
   //--------read--------
 
-  private static void loadDescriptor(DescriptorLoadResult result, IFile file) throws ModelReadException {
+  private static void loadDescriptor(SModelHeader result, IFile file) throws ModelReadException {
     InputStream in = null;
     try {
       in = file.openInputStream();
@@ -137,33 +140,35 @@ public class ModelPersistence {
     }
   }
 
-  private static void loadDescriptor(DescriptorLoadResult result, InputSource source) throws ModelReadException {
+  private static void loadDescriptor(SModelHeader result, InputSource source) throws ModelReadException {
     parseAndHandleExceptions(source, new MyDescriptorHandler(result), "model descriptor");
   }
 
-  public static DescriptorLoadResult loadDescriptor(InputSource source) throws ModelReadException {
-    DescriptorLoadResult result = new DescriptorLoadResult();
+  public static SModelHeader loadDescriptor(InputSource source) throws ModelReadException {
+    SModelHeader result = new SModelHeader();
     loadDescriptor(result, source);
     return result;
   }
 
-  public static DescriptorLoadResult loadDescriptor(IFile file) throws ModelReadException {
-    final DescriptorLoadResult result = new DescriptorLoadResult();
-    Map<String, String> metadata = loadMetadata(file);
-    if (metadata != null) {
-      result.setMetadata(metadata);
-      if (metadata.containsKey(SModelHeader.VERSION)) {
-        try {
-          result.setVersion(Integer.parseInt(metadata.remove(SModelHeader.VERSION)));
-        } catch (NumberFormatException ignored) {
+  public static SModelHeader loadDescriptor(IFile file) throws ModelReadException {
+    final SModelHeader result = new SModelHeader();
+    loadDescriptor(result, file);
+
+    // for old persistences try to load header from metadata
+    if(result.getPersistenceVersion() < 7) {
+      Map<String, String> metadata = loadMetadata(file);
+      if (metadata != null) {
+        if (metadata.containsKey(SModelHeader.VERSION)) {
+          try {
+            result.setVersion(Integer.parseInt(metadata.remove(SModelHeader.VERSION)));
+          } catch (NumberFormatException ignored) {
+          }
+        }
+        if (metadata.containsKey(SModelHeader.DO_NOT_GENERATE)) {
+          result.setDoNotGenerate(Boolean.parseBoolean(metadata.remove(SModelHeader.DO_NOT_GENERATE)));
         }
       }
-      if (metadata.containsKey(SModelHeader.DO_NOT_GENERATE)) {
-        result.setDoNotGenerate(Boolean.parseBoolean(metadata.remove(SModelHeader.DO_NOT_GENERATE)));
-      }
     }
-
-    loadDescriptor(result, file);
     return result;
   }
 
@@ -190,10 +195,6 @@ public class ModelPersistence {
       " Use newer version of JetBrains MPS to load this model.");
   }
 
-  private static SModelHeader getModelHeader(@NotNull InputSource inputSource) throws ModelReadException {
-    return loadDescriptor(inputSource).getHeader();
-  }
-
   @NotNull
   public static ModelLoadResult readModel(@NotNull SModelHeader header, @NotNull IFile file, ModelLoadingState state) throws ModelReadException {
     InputStream in = null;
@@ -211,7 +212,7 @@ public class ModelPersistence {
   @Nullable
   public static List<LineContent> getLineToContentMap(String content) throws ModelReadException {
     SModelHeader header;
-    header = getModelHeader(new InputSource(new StringReader(content)));
+    header = loadDescriptor(new InputSource(new StringReader(content)));
     IModelPersistence mp = getModelPersistence(header);
 
     if (mp != null) {
@@ -241,6 +242,9 @@ public class ModelPersistence {
   public static DefaultSModel saveModel(@NotNull SModel model, @NotNull IFile file, int persistenceVersion) {
     LOG.debug("Save model " + model.getSModelReference() + " to file " + file.getPath());
 
+    // (since 3.0) we do not support saving in old persistences (before 7)
+    persistenceVersion = Math.min(7, persistenceVersion);
+
     if (file.isReadOnly()) {
       LOG.error("Can't write to " + file.getPath());
       return null;
@@ -254,28 +258,6 @@ public class ModelPersistence {
       oldVersion = defaultSModel.getPersistenceVersion();
       if (oldVersion != persistenceVersion) {
         defaultSModel.setPersistenceVersion(persistenceVersion);
-      }
-    }
-
-    // save metadata
-    SModelDescriptor modelDescriptor = model.getModelDescriptor();
-    if (modelDescriptor instanceof DefaultSModelDescriptor) {
-      DefaultSModelDescriptor md = (DefaultSModelDescriptor) modelDescriptor;
-      Map<String, String> metadata = md.getMetaData();
-
-      // for old persistence, push version/doNotGenerator options => metadata back
-      if(model instanceof DefaultSModel) {
-        SModelHeader header = ((DefaultSModel) model).getSModelHeader();
-        if (persistenceVersion < 7 && (header.getVersion() != -1 || header.isDoNotGenerate())) {
-          metadata = new HashMap<String, String>(metadata);
-          if (header.getVersion() != -1) {
-            metadata.put(SModelHeader.VERSION, Integer.toString(header.getVersion()));
-          }
-          if (header.isDoNotGenerate()) {
-            metadata.put(SModelHeader.DO_NOT_GENERATE, "true");
-          }
-        }
-        saveMetadata(md.getSource().getFile(), metadata);
       }
     }
 
@@ -337,7 +319,7 @@ public class ModelPersistence {
   }
 
   public static Map<String, String> calculateHashes(byte[] modelBytes) throws ModelReadException {
-    SModelHeader header = getModelHeader(new InputSource(new ByteArrayInputStream(modelBytes)));
+    SModelHeader header = loadDescriptor(new InputSource(new ByteArrayInputStream(modelBytes)));
     IModelPersistence mp = getModelPersistence(header);
     Map<String, String> result;
     if (mp != null) {
@@ -353,14 +335,14 @@ public class ModelPersistence {
 
   @NotNull
   public static DefaultSModel readModel(@NotNull final IFile file, boolean onlyRoots) throws ModelReadException {
-    SModelHeader header = loadDescriptor(file).getHeader();
+    SModelHeader header = loadDescriptor(file);
     ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
     return readModel(header, file, state).getModel();
   }
 
   @NotNull
   public static DefaultSModel readModel(@NotNull final String content, boolean onlyRoots) throws ModelReadException {
-    SModelHeader header = loadDescriptor(new InputSource(new StringReader(content))).getHeader();
+    SModelHeader header = loadDescriptor(new InputSource(new StringReader(content)));
     ModelLoadingState state = onlyRoots ? ModelLoadingState.ROOTS_LOADED : ModelLoadingState.FULLY_LOADED;
     return readModel(header, new InputSource(new StringReader(content)), state).getModel();
   }
@@ -373,26 +355,6 @@ public class ModelPersistence {
         return saveModel(model);
       }
     }));
-  }
-
-  // TODO deprecate metadata in MPS 3.0
-
-  public static void saveMetadata(IFile modelFile, @NotNull Map<String, String> metadata) {
-    if (modelFile == null) return;
-
-    IFile metadataFile = getMetadataFile(modelFile);
-    if (metadata.isEmpty()) {
-      if (metadataFile.exists()) {
-        metadataFile.delete();
-      }
-      return;
-    }
-
-    if (!metadataFile.exists()) {
-      metadataFile.createNewFile();
-    }
-
-    DefaultMetadataPersistence.save(metadataFile, metadata);
   }
 
   @Nullable
@@ -436,16 +398,16 @@ public class ModelPersistence {
   }
 
   public static Map<IndexEntry, Integer> index(char[] data) throws ModelReadException {
-    SModelHeader header = loadDescriptor(new InputSource(new CharArrayReader(data))).getHeader();
+    SModelHeader header = loadDescriptor(new InputSource(new CharArrayReader(data)));
     IModelPersistence mp = getModelPersistence(header);
     assert mp != null : "Using unsupported persistence version: " + header.getPersistenceVersion();
     return mp.index(data);
   }
 
   private static class MyDescriptorHandler extends DefaultHandler {
-    private final DescriptorLoadResult myResult;
+    private final SModelHeader myResult;
 
-    public MyDescriptorHandler(DescriptorLoadResult result) {
+    public MyDescriptorHandler(SModelHeader result) {
       myResult = result;
     }
 
@@ -464,7 +426,7 @@ public class ModelPersistence {
           } else if (SModelHeader.DO_NOT_GENERATE.equals(name)) {
             myResult.setDoNotGenerate(Boolean.parseBoolean(value));
           } else {
-            myResult.getHeader().setOptionalProperty(name, StringUtil.unescapeXml(value));
+            myResult.setOptionalProperty(name, StringUtil.unescapeXml(value));
           }
         }
       } else if (PERSISTENCE.equals(qName)) {

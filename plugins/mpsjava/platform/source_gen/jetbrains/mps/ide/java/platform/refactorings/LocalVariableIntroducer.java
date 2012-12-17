@@ -22,6 +22,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.messageTargets.CellFinder;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import com.intellij.ui.awt.RelativePoint;
+import java.awt.Point;
 
 public class LocalVariableIntroducer {
   private IntroduceLocalVariableRefactoring myRefactoring;
@@ -79,6 +80,7 @@ public class LocalVariableIntroducer {
   }
 
   private RelativePoint getRelativePoint() {
-    return new RelativePoint(myEditorComponent, ((EditorCell) myEditorContext.getContextCell()).getBounds().getLocation());
+    jetbrains.mps.openapi.editor.cells.EditorCell cell = myEditorContext.getContextCell();
+    return new RelativePoint(myEditorComponent, new Point(cell.getX(), cell.getY()));
   }
 }

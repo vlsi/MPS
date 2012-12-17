@@ -2,16 +2,11 @@
 <solution name="jetbrains.mps.ide.vcs.platform" uuid="6fd1293f-7f65-4ffd-99dc-4719eca7c171" pluginKind="PLUGIN_OTHER" compileInMPS="false" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot path="${module}/models" />
-    <modelRoot path="${mps_home}/plugins/svn4idea/lib/svn4idea.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
-    <modelRoot path="${mps_home}/plugins/git4idea/lib/git4idea.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
+    <modelRoot path="${mps_home}/plugins/svn4idea/lib/svn4idea.jar" type="java_classes" />
+    <modelRoot path="${mps_home}/plugins/git4idea/lib/git4idea.jar" type="java_classes" />
   </models>
   <sourcePath />
   <dependencies>
-    <dependency reexport="false">3f233e7f-b8a6-46d2-a57f-795d56775243(Annotations)</dependency>
     <dependency reexport="false">6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)</dependency>
     <dependency reexport="false">6ed54515-acc8-4d1e-a16c-9fd6cfe951ea(MPS.Core)</dependency>
     <dependency reexport="false">1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)</dependency>

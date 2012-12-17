@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<solution name="jetbrains.mps.lang.traceable.operations.test" uuid="f5b70e84-5208-49eb-a417-d53c9f82bdf2" compileInMPS="true">
+<solution name="jetbrains.mps.lang.traceable.operations.test" uuid="f5b70e84-5208-49eb-a417-d53c9f82bdf2" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
     <modelRoot path="${module}/models" />
   </models>

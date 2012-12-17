@@ -3,6 +3,37 @@
   <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="28" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="ConstantReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.behavior.ConstantReference_BehaviorDescriptor" />
   <unitInfo fileName="Constant_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.behavior.Constant_BehaviorDescriptor" />
-  <unitInfo fileName="Constants_BehaviorDescriptor.java" startLine="10" startPosition="0" endLine="23" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.behavior.Constants_BehaviorDescriptor" />
+  <unitInfo fileName="Constants_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.behavior.Constants_BehaviorDescriptor" />
+  <root nodeId="5956117492786858347" modelId="r:68c57825-9d65-4771-a04b-e7b3a3f2abfb(org.jetbrains.mps.samples.Constants.behavior)">
+    <nodeInfo nodeId="5956117492787112065" fileName="Constants_Behavior.java" startLine="18" startPosition="108" endLine="19" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5956117492787427086" fileName="Constants_Behavior.java" startLine="22" startPosition="47" endLine="23" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5956117492786970725" fileName="Constants_Behavior.java" startLine="25" startPosition="8" endLine="26" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5956117492787054797" fileName="Constants_Behavior.java" startLine="27" startPosition="5" endLine="28" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5956117492786858347" fileName="Constants_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="5956117492787425957" fileName="Constants_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isExcluded#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="5956117492787425423" fileName="Constants_Behavior.java" startLine="19" startPosition="193" endLine="25" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5956117492786950660" fileName="Constants_Behavior.java" startLine="17" startPosition="107" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5956117492786858347" fileName="Constants_Behavior.java" startLine="17" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getScope_3734116213129936182#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/scope/Scope;" />
+    <scopeInfo nodeId="5956117492786865753" fileName="Constants_Behavior.java" startLine="14" startPosition="43" endLine="14" endPosition="43" />
+    <scopeInfo nodeId="5956117492787425966" fileName="Constants_Behavior.java" startLine="22" startPosition="47" endLine="23" endPosition="99" />
+    <scopeInfo nodeId="5956117492786858347" fileName="Constants_Behavior.java" startLine="14" startPosition="0" endLine="16" endPosition="0">
+      <varInfo nodeId="5956117492786858347" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5956117492787425957" fileName="Constants_Behavior.java" startLine="21" startPosition="0" endLine="25" endPosition="0">
+      <varInfo nodeId="5956117492787425963" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="5956117492786950662" fileName="Constants_Behavior.java" startLine="18" startPosition="108" endLine="26" endPosition="28">
+      <varInfo nodeId="5956117492787425424" varName="filteringScope" />
+      <varInfo nodeId="5956117492787112066" varName="forNamedElements" />
+    </scopeInfo>
+    <scopeInfo nodeId="5956117492786928150" fileName="Constants_Behavior.java" startLine="17" startPosition="107" endLine="28" endPosition="16" />
+    <scopeInfo nodeId="5956117492786858347" fileName="Constants_Behavior.java" startLine="17" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="5956117492786928148" varName="child" />
+      <varInfo nodeId="5956117492786928146" varName="kind" />
+      <varInfo nodeId="5956117492786858347" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="5956117492787425427" fileName="Constants_Behavior.java" startLine="20" startPosition="42" endLine="25" endPosition="7" unitName="org.jetbrains.mps.samples.Constants.behavior.Constants_Behavior$1" />
+    <unitInfo nodeId="5956117492786858347" fileName="Constants_Behavior.java" startLine="13" startPosition="0" endLine="31" endPosition="0" unitName="org.jetbrains.mps.samples.Constants.behavior.Constants_Behavior" />
+  </root>
 </debugInfo>
 

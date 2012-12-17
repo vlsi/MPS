@@ -32,7 +32,6 @@ public class LanguageDescriptor extends ModuleDescriptor {
   private List<GeneratorDescriptor> myGenerators;
   private Set<ModuleReference> myExtendedLanguages;
   private Set<ModuleReference> myRuntimeModules;
-  private Set<StubSolution> myStubSolutions;
 
   public LanguageDescriptor() {
     super();
@@ -40,7 +39,6 @@ public class LanguageDescriptor extends ModuleDescriptor {
     myGenerators = new ArrayList<GeneratorDescriptor>();
     myExtendedLanguages = new LinkedHashSet<ModuleReference>();
     myRuntimeModules = new LinkedHashSet<ModuleReference>();
-    myStubSolutions = new LinkedHashSet<StubSolution>();
   }
 
   public String getGenPath() {
@@ -65,10 +63,6 @@ public class LanguageDescriptor extends ModuleDescriptor {
 
   public Set<ModuleReference> getRuntimeModules() {
     return myRuntimeModules;
-  }
-
-  public Set<StubSolution> getStubSolutions() {
-    return myStubSolutions;
   }
 
   @Override

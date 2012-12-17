@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-c0nnm6kvuv2e1p0ao1ghssl3x575z00">
-  <dep model="f:java_stub#fdb93da0-59ed-4001-b2aa-4fad79ec058e#com.sun.jdi.request(JDK.Tools/com.sun.jdi.request@java_stub)" />
+<dependencies version="2" modelHash="-6o3l6ywobf0rjc7lrlr6z132zj3s9e9">
+  <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi.request(JDK/com.sun.jdi.request@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
-  <common hash="-5ed6mx48u3ozc8zfygz5sofhfsvoxzs" />
+  <common hash="-22r9tevl3ati0wgix73g4nggxd3rewi" />
   <source id="2891782949125146377" name="Requestor" hash="-2jjinzpqo0wja3hxmuxot760u07hko8">
     <file name="Requestor.java" />
   </source>
-  <source id="2891782949125170507" name="ClassPrepareRequestor" hash="54w6yd8ftvyxi2gd5rlmiv5g7s0aw3b">
+  <source id="2891782949125170507" name="ClassPrepareRequestor" hash="33zznbskaz28eawkuu7ruflw1pcbsmn">
     <file name="ClassPrepareRequestor.java" />
   </source>
-  <source id="2891782949125205202" name="LocatableEventRequestor" hash="dblks7tkvlfo2mp3j4d0t33b62rg6kz">
+  <source id="2891782949125205202" name="LocatableEventRequestor" hash="-1n7y6kc9q19u3uy27sww281az30zgsb">
     <file name="LocatableEventRequestor.java" />
   </source>
   <source id="6460341978864598530" name="IRequestManager" hash="732mhdlpezha2dvmvvfi9i4j1gr1rbl">
     <file name="IRequestManager.java" />
   </source>
-  <source id="6460341978864599228" name="StepRequestor" hash="b5rcgmwejb63475b4x57lq654b3xn12">
-    <dep model="f:java_stub#fdb93da0-59ed-4001-b2aa-4fad79ec058e#com.sun.jdi.request(JDK.Tools/com.sun.jdi.request@java_stub)" />
+  <source id="6460341978864599228" name="StepRequestor" hash="ewl5bbxh6da7xw0wu7mpf1c5tnw6h0u">
+    <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi.request(JDK/com.sun.jdi.request@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="StepRequestor.java" />
   </source>

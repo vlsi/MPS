@@ -79,6 +79,10 @@ public class QueriesGenerated {
     return _context.getNode().getSNodeId().toString();
   }
 
+  public static Object propertyMacro_GetPropertyValue_286293695940675180(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return SNodeOperations.isInstanceOf(_context.getNode(), "jetbrains.mps.lang.intentions.structure.SurroundWithIntentionDeclaration");
+  }
+
   public static Object referenceMacro_GetReferent_5264392666049409975(final IOperationContext operationContext, final ReferenceMacroContext _context) {
     return "myParameter";
   }

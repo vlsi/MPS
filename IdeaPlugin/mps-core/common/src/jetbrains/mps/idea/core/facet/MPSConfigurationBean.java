@@ -49,7 +49,7 @@ public class MPSConfigurationBean {
   }
 
   @Transient
-  SolutionDescriptor getSolutionDescriptor() {
+  public SolutionDescriptor getSolutionDescriptor() {
     return myDescriptor;
   }
 

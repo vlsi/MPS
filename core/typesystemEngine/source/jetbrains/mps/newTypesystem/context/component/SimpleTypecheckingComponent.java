@@ -17,10 +17,9 @@ package jetbrains.mps.newTypesystem.context.component;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
-import jetbrains.mps.newTypesystem.TypesUtil;
+import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -45,18 +44,18 @@ import java.util.Set;
  * Time: 10:07 AM
  * To change this template use File | Settings | File Templates.
  */
-/*package*/ class SimpleTypecheckingComponent {
+/*package*/ public class SimpleTypecheckingComponent<STATE extends State> {
 
-  protected final State myState;
+  private final STATE myState;
   protected Queue<SNode> myQueue = new LinkedList<SNode>();
   protected boolean myIsChecked = false;
-  protected SimpleTypechecking myTypechecking;
+  protected BaseTypechecking myTypechecking;
   protected Set<SNode> myNodes = new THashSet<SNode>();
   protected Set<SNode> myFullyCheckedNodes = new THashSet<SNode>(); //nodes which are checked with their children
   protected Set<SNode> myPartlyCheckedNodes = new THashSet<SNode>(); // nodes which are checked themselves but not children
 
 
-  public SimpleTypecheckingComponent(State state, SimpleTypechecking component) {
+  public SimpleTypecheckingComponent(STATE state, BaseTypechecking component) {
     myState = state;
     myTypechecking = component;
   }
@@ -80,12 +79,12 @@ import java.util.Set;
     // do nothing
   }
 
-  protected SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
+  public SNode computeTypesForNode_special(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
     return computeTypesForNode_special_(initialNode, givenAdditionalNodes);
   }
 
   protected void setTargetNode(SNode initialNode) {
-    myState.setTargetNode(initialNode);
+    assert false;
   }
 
 
@@ -131,7 +130,7 @@ import java.util.Set;
     return myIsChecked && !doInvalidate();
   }
 
-  protected SimpleTypechecking getTypechecking() {
+  protected BaseTypechecking getTypechecking() {
     return myTypechecking;
   }
 
@@ -214,17 +213,6 @@ import java.util.Set;
   }
 
   protected SNode typeCalculated(SNode initialNode) {
-    if (myState.getInequalitySystem() != null) {
-      SNode expectedType = myState.getInequalitySystem().getExpectedType();
-      if (expectedType != null && !TypesUtil.hasVariablesInside(expectedType) && !HUtil.isRuntimeHoleType(expectedType)) {
-        return expectedType;
-      }
-    } else {
-      if (initialNode == null) return null;
-      if (!myState.isTargetTypeCalculated()) return null;
-      SNode type = myState.expand(getType(initialNode));
-      if (type != null && !TypesUtil.hasVariablesInside(type)) return type;
-    }
     return null;
   }
 
@@ -234,13 +222,17 @@ import java.util.Set;
     solveInequalitiesAndExpandTypes(finalExpansion);
   }
 
-  protected final SNode computeTypesForNode_special_(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
+  protected SNode computeTypesForNode_special_(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
     assert myFullyCheckedNodes.isEmpty();
+    return computeTypesForNode_special__(initialNode, givenAdditionalNodes);
+  }
+
+  protected SNode computeTypesForNode_special__(SNode initialNode, Collection<SNode> givenAdditionalNodes) {
     SNode type = null;
     SNode prevNode = null;
     SNode node = initialNode;
     long start = System.currentTimeMillis();
-    myState.setTargetNode(initialNode);
+    setTarget(initialNode);
     while (node != null) {
       Collection<SNode> additionalNodes = givenAdditionalNodes;
       if (prevNode != null) {
@@ -252,9 +244,7 @@ import java.util.Set;
       if (type == null) {
         if (node.getModel() != null && node.getModel().isRoot(node)) {
           //System.out.println("Root: " + initialNode.getDebugText());
-          if (myState.getInequalitySystem() == null) {
-            computeTypes(node,true, true, Collections.<SNode>emptyList(), true, initialNode);
-          }
+          computeTypes(initialNode, node);
           type = getType(initialNode);
           if (type == null && node != initialNode) {
             TypeSystemComponent.LOG.error("No typesystem rule for " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(initialNode) + " in root " + initialNode.getTopmostAncestor() + ": type calculation took " + (System.currentTimeMillis() - start) + " ms", new Throwable(), new SNodePointer(initialNode));
@@ -271,11 +261,19 @@ import java.util.Set;
     return type;
   }
 
+  protected void computeTypes(SNode initialNode, SNode node) {
+    /*do nothing*/
+  }
+
+  protected void setTarget(SNode initialNode) {
+    /*do nothing*/
+  }
+
   public void clear() {
 
   }
 
-  /*package*/ State getState() {
+  /*package*/ STATE getState() {
     return myState;
   }
 

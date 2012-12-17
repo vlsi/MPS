@@ -22,10 +22,14 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.jps.model.module.JpsModule;
 
+import java.util.HashSet;
+import java.util.Set;
+
 /**
  * evgeny, 11/28/12
  */
 public class JpsMPSExtensionServiceImpl extends JpsMPSExtensionService {
+
   @Nullable
   @Override
   public JpsMPSModuleExtension getExtension(@Nullable JpsModule module) {
@@ -36,4 +40,5 @@ public class JpsMPSExtensionServiceImpl extends JpsMPSExtensionService {
   public void setExtension(@NotNull JpsModule module, @NotNull JpsMPSModuleExtension extension) {
     module.getContainer().setChild(JpsMPSModuleExtensionImpl.ROLE, extension);
   }
+
 }

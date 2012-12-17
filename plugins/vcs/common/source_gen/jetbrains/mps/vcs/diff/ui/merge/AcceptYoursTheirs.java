@@ -28,7 +28,7 @@ public class AcceptYoursTheirs extends BaseAction implements DumbAware {
 
   @Override
   protected void doUpdate(AnActionEvent event, Map<String, Object> map) {
-    event.getPresentation().setEnabled(myMergeModelsDialog.isAcceptYoursTheirsEnabled());
+    setEnabledState(event.getPresentation(), myMergeModelsDialog.isAcceptYoursTheirsEnabled());
   }
 
   @Override

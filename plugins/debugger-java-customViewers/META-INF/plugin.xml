@@ -7,9 +7,10 @@
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="123.1" />
   
-  <depends>jetbrains.mps.debugger-java</depends>
+  <depends>jetbrains.mps.debugger.java</depends>
 
   <extensions defaultExtensionNs="com.intellij">
+    <mps.LanguageLibrary dir="/" />
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter" />
   </extensions>
 </idea-plugin>

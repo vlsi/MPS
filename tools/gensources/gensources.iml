@@ -802,7 +802,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="Annotations" level="project" />
-    <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" name="Ant" level="project" />
     <orderEntry type="library" name="ASM" level="project" />

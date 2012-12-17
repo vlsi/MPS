@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="Ant" uuid="847a3235-09f9-403c-b6a9-1c294a212e92" compileInMPS="false">
   <models>
-    <modelRoot path="${mps_home}/lib/ant/lib/ant.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
+    <modelRoot path="${mps_home}/lib/ant/lib/ant.jar" type="java_classes" />
   </models>
   <stubModelEntries>
     <stubModelEntry path="${mps_home}/lib/ant/lib/ant.jar" />

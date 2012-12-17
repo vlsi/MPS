@@ -23,11 +23,15 @@ import com.intellij.openapi.compiler.CompileStatusNotification;
 import com.intellij.openapi.compiler.CompilerManager;
 import com.intellij.openapi.components.impl.ComponentManagerImpl;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.projectRoots.impl.JavaSdkImpl;
+import com.intellij.openapi.projectRoots.ProjectJdkTable;
+import com.intellij.openapi.projectRoots.Sdk;
+import com.intellij.openapi.projectRoots.impl.JavaAwareProjectJdkTableImpl;
+import com.intellij.openapi.projectRoots.impl.ProjectJdkImpl;
 import com.intellij.openapi.roots.CompilerModuleExtension;
 import com.intellij.openapi.roots.ContentEntry;
 import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.roots.ProjectRootManager;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
@@ -35,6 +39,7 @@ import com.intellij.openapi.vfs.VirtualFileSystem;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
 import jetbrains.mps.idea.core.make.MPSCompilerComponent;
 import jetbrains.mps.vfs.IFile;
+import junit.framework.AssertionFailedError;
 
 import javax.swing.SwingUtilities;
 import java.io.IOException;
@@ -45,20 +50,40 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
 
   private List<Asserter> asserters = new ArrayList<Asserter>();
 
+  private static Sdk getTestJdk() {
+    try {
+      ProjectJdkImpl jdk = (ProjectJdkImpl) JavaAwareProjectJdkTableImpl.getInstanceEx().getInternalJdk().clone();
+      jdk.setName("JDK");
+      return jdk;
+    } catch (CloneNotSupportedException e) {
+      //LOG.error(e);
+      return null;
+    }
+  }
+
   protected void prepareTestData(MPSFacetConfiguration configuration, final IFile source) throws Exception {
     final ModuleRootManager mrm = ModuleRootManager.getInstance(configuration.getFacet().getModule());
     ApplicationManager.getApplication().runWriteAction(new Runnable() {
       @Override
       public void run() {
+        Sdk jdk = ProjectJdkTable.getInstance().findJdk("JDK");
+        if (jdk != null) {
+          ProjectJdkTable.getInstance().removeJdk(jdk);
+        }
+
+        ProjectJdkTable.getInstance().addJdk(jdk = getTestJdk());
+
         ModifiableRootModel mm = mrm.getModifiableModel();
-        mm.setSdk(JavaSdkImpl.getMockJdk17());
+        ProjectRootManager.getInstance(myModule.getProject()).setProjectSdk(jdk);
+        mm.inheritSdk();
 
         VirtualFileSystem vfs = VirtualFileManager.getInstance().getFileSystem("file");
         VirtualFile project = vfs.findFileByPath(source.getParent().getPath());
         try {
           ContentEntry ce = mm.addContentEntry(project);
           VirtualFile contentRoot = project.findChild(source.getName());
-          if (contentRoot == null) contentRoot = project.createChildDirectory(AbstractMakeTest.this, source.getName());
+          if (contentRoot == null)
+            contentRoot = project.createChildDirectory(AbstractMakeTest.this, source.getName());
           ce.addSourceFolder(contentRoot, false);
         } catch (IOException e) {
         }
@@ -107,8 +132,13 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
   }
 
   private void assertAsserters() throws Exception {
-    for (Asserter ass : asserters) {
-      ass.doAssert();
+    for (Asserter a : asserters) {
+      try {
+        a.doAssert();
+      } catch (AssertionFailedError ex) {
+        a.th.printStackTrace(System.err);
+        throw ex;
+      }
     }
     asserters.clear();
   }
@@ -178,8 +208,14 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
     return VirtualFileManager.getInstance().getFileSystem("file");
   }
 
-  private interface Asserter {
-    void doAssert() throws Exception;
+  private abstract class Asserter {
+    final Throwable th;
+
+    protected Asserter() {
+      this.th = new Throwable("original assertion trace");
+    }
+
+    abstract void doAssert() throws Exception;
   }
 
 

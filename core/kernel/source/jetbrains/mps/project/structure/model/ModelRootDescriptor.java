@@ -17,6 +17,7 @@ package jetbrains.mps.project.structure.model;
 
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
@@ -119,5 +120,11 @@ public final class ModelRootDescriptor {
 
     mem.setText(stream.readString());
     return mem;
+  }
+
+  public static ModelRootDescriptor getJavaStubsModelRoot(String path) {
+    Memento m = new MementoImpl();
+    m.put("path", path);
+    return new ModelRootDescriptor(PersistenceRegistry.JAVA_CLASSES_ROOT, m);
   }
 }

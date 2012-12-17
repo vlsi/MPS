@@ -36,6 +36,9 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SNodePointer;
+import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.action.BaseAction;
@@ -138,15 +141,20 @@ public class IntentionsSupport {
             return;
           }
 
-          boolean show = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-            public Boolean compute() {
-              if (isInconsistentEditor() || myEditor.isReadOnly()) return false;
+          final IntentionType intentionType = ModelAccess.instance().runReadAction(new Computable<IntentionType>() {
+            public IntentionType compute() {
+              if (isInconsistentEditor() || myEditor.isReadOnly()) return null;
               // TODO check for ActionsAsIntentions
-              return IntentionsManager.getInstance().hasAvailableBaseIntentions(myEditor.getSelectedNode(), myEditor.getEditorContext());
+              return TypeContextManager.getInstance().runTypeCheckingComputation(myEditor, myEditor.getEditedNode(), new Computation<IntentionType>() {
+                @Override
+                public IntentionType compute(TypeCheckingContext context) {
+                  return IntentionsManager.getInstance().getHighestAvailableBaseIntentionType(myEditor.getSelectedNode(), myEditor.getEditorContext());
+                }
+              });
             }
           });
 
-          if (!show || interrupted()) {
+          if (intentionType == null || interrupted()) {
             return;
           }
 
@@ -158,11 +166,7 @@ public class IntentionsSupport {
                 hideLightBulb();
               } else {
                 adjustLightBulbLocation();
-                showLightBulb(new Computable<Boolean>() {
-                  public Boolean compute() {
-                    return interrupted();
-                  }
-                });
+                showLightBulbComponent(intentionType == IntentionType.NORMAL ? Icons.INTENTION : intentionType.getIcon());
               }
             }
           });
@@ -360,38 +364,21 @@ public class IntentionsSupport {
     popup.show(relativePoint);
   }
 
-  private void showLightBulb(Computable<Boolean> terminated) {
-    SNode node = myEditor.getEditedNode();
-    if (node == null || node.getModel().isDisposed() || node.getModel().isNotEditable()) return;
-
-    Set<IntentionType> availableIntentionTypes = IntentionsManager.getInstance().getAvailableBaseIntentionTypes(myEditor.getSelectedNode(), myEditor.getEditorContext());
-    if (availableIntentionTypes.isEmpty()) {
-      return;
-    }
-    if (terminated.compute()) {
-      return;
-    }
-    IntentionType typeToShow = IntentionType.getLowestPriorityType();
-    for (IntentionType intentionType : availableIntentionTypes) {
-      if (intentionType.getPriority() < typeToShow.getPriority()) {
-        typeToShow = intentionType;
-      }
-    }
-    if (terminated.compute()) {
-      return;
-    }
-    showLightBulbComponent(typeToShow == IntentionType.NORMAL ? Icons.INTENTION : typeToShow.getIcon());
-  }
-
   private Set<Pair<IntentionExecutable, SNode>> getEnabledIntentions() {
     final Set<Pair<IntentionExecutable, SNode>> result = new LinkedHashSet<Pair<IntentionExecutable, SNode>>();
-    SNode node = myEditor.getSelectedNode();
-    EditorContext editorContext = myEditor.getEditorContext();
+    final SNode node = myEditor.getSelectedNode();
+    final EditorContext editorContext = myEditor.getEditorContext();
     if (node != null && editorContext != null) {
-      QueryDescriptor query = new QueryDescriptor();
+      final QueryDescriptor query = new QueryDescriptor();
       query.setIntentionClass(BaseIntention.class);
       query.setEnabledOnly(true);
-      result.addAll(IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext));
+      final Collection<Pair<IntentionExecutable, SNode>> availableIntentions = TypeContextManager.getInstance().runTypeCheckingComputation(myEditor, myEditor.getEditedNode(), new Computation<Collection<Pair<IntentionExecutable, SNode>>>() {
+        @Override
+        public Collection<Pair<IntentionExecutable, SNode>> compute(TypeCheckingContext context) {
+          return IntentionsManager.getInstance().getAvailableIntentions(query, node, editorContext);
+        }
+      });
+      result.addAll(availableIntentions);
     }
     return result;
   }

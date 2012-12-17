@@ -6,6 +6,7 @@ import jetbrains.mps.typesystem.inference.ITypeContextOwner;
 import java.util.List;
 import jetbrains.mps.checkers.INodeChecker;
 import jetbrains.mps.checkers.CheckersComponent;
+import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -31,6 +32,14 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
     myLanguageCheckers = CheckersComponent.getInstance().getCheckers();
   }
 
+  public boolean reuseTypecheckingContext() {
+    return true;
+  }
+
+  public SubtypingCache createSubtypingCache() {
+    return null;
+  }
+
   public TypeCheckingContext createTypecheckingContext(SNode node, TypeContextManager manager) {
     return new DefaultTypecheckingContextOwner().createTypecheckingContext(node, manager);
   }
@@ -53,7 +62,7 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
             Set<IErrorReporter> iErrorReporters = checker.getErrors(rootNode, operationContext);
             for (IErrorReporter errorReporter : SetSequence.fromSet(iErrorReporters)) {
               final IErrorReporter reporter = errorReporter;
-              final QuickFix_Runtime quickFix = check_7763bz_a0b0b0a0a2a0a0d0d0d(check_7763bz_a0a1a1a0a0c0a0a3a3a3(errorReporter));
+              final QuickFix_Runtime quickFix = check_7763bz_a0b0b0a0a2a0a0d0d0f(check_7763bz_a0a1a1a0a0c0a0a3a3a5(errorReporter));
               IModelCheckerFix fix = null;
               if (quickFix != null) {
                 fix = new IModelCheckerFix() {
@@ -74,14 +83,14 @@ public class SpecificModelChecker extends SpecificChecker implements ITypeContex
     return results;
   }
 
-  private static QuickFix_Runtime check_7763bz_a0b0b0a0a2a0a0d0d0d(QuickFixProvider checkedDotOperand) {
+  private static QuickFix_Runtime check_7763bz_a0b0b0a0a2a0a0d0d0f(QuickFixProvider checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getQuickFix();
     }
     return null;
   }
 
-  private static QuickFixProvider check_7763bz_a0a1a1a0a0c0a0a3a3a3(IErrorReporter checkedDotOperand) {
+  private static QuickFixProvider check_7763bz_a0a1a1a0a0c0a0a3a3a5(IErrorReporter checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getIntentionProvider();
     }

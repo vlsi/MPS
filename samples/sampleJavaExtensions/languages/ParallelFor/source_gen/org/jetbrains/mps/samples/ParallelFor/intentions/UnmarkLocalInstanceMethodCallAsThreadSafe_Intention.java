@@ -73,6 +73,10 @@ public class UnmarkLocalInstanceMethodCallAsThreadSafe_Intention implements Inte
     return new SNodePointer("r:2614090b-4018-4457-8ad5-c503bc8936fb(org.jetbrains.mps.samples.ParallelFor.intentions)", "3540747636396569349");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new UnmarkLocalInstanceMethodCallAsThreadSafe_Intention.IntentionImplementation());

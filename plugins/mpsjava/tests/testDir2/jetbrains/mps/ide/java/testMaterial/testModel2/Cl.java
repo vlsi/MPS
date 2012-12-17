@@ -1,11 +1,12 @@
-package jetbrains.mps.idea.java.testMaterial.testModel2;
+package jetbrains.mps.ide.java.testMaterial.testModel2;
 
-// contains a class named Integer
+/** testModel2.sub contains a class named Integer */
+/** But our static x must be resolved to java.lang.Integer */
+
 import jetbrains.mps.ide.java.testMaterial.testModel2.sub.*;
 
 public class Cl {
 
-    // must be resolved to java.lang.Integer 
     static Integer x = new Integer(5);
 
     public static void main(String[] args) {

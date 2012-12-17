@@ -102,20 +102,6 @@
     </ant>
   </target>
 
-  <target name="buildJavaSourceStubs" depends="loadVars">
-    <!--
-    <ant antfile="../build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true">
-      <property name="build.dir" location="${build.home}"/>
-      <property name="idea_home" location="${ideaPath}"/>
-    </ant>
-    <ant antfile="../build/buildPlugins.xml" target="java.compile.jetbrains.mps.ide.java.sourceStubs" inheritAll="false" useNativeBasedir="true">
-      <property name="build.dir" location="${build.home}"/>
-      <property name="idea_home" location="${ideaPath}"/>
-    </ant>
-    -->
-  </target>
-
-
   <target name="build" depends="buildCore">
     <ant antfile="buildPlugin.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>

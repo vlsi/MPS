@@ -52,6 +52,10 @@ public class GenerateSingleLineDefaultEditor_Intention implements IntentionFacto
     return new SNodePointer("r:00000000-0000-4000-0000-011c8959029b(jetbrains.mps.lang.editor.intentions)", "5469351333089013987");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new GenerateSingleLineDefaultEditor_Intention.IntentionImplementation());

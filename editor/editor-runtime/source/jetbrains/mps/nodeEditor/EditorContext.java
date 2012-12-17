@@ -257,7 +257,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
   }
 
   @Override
-  public void selectWRTFocusPolicy(jetbrains.mps.openapi.editor.EditorCell editorCell) {
+  public void selectWRTFocusPolicy(jetbrains.mps.openapi.editor.cells.EditorCell editorCell) {
     getNodeEditorComponent().changeSelectionWRTFocusPolicy((EditorCell) editorCell);
   }
 
@@ -365,7 +365,7 @@ public class EditorContext implements jetbrains.mps.openapi.editor.EditorContext
     }
   }
 
-  public jetbrains.mps.openapi.editor.EditorCell createRoleAttributeCell(Class attributeKind, jetbrains.mps.openapi.editor.EditorCell cellWithRole, SNode roleAttribute) {
+  public jetbrains.mps.openapi.editor.cells.EditorCell createRoleAttributeCell(Class attributeKind, jetbrains.mps.openapi.editor.cells.EditorCell cellWithRole, SNode roleAttribute) {
     if (myCurrentRefNodeContext != null) {
       if (attributeKind != AttributeKind.Reference.class && myCurrentRefNodeContext.hasRoles())
         //Do not show attributes on reference cells.

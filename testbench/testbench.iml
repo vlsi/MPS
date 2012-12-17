@@ -29,13 +29,10 @@
     <orderEntry type="module" module-name="typesystemUi" />
     <orderEntry type="library" name="PicoContainer" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />
-    <orderEntry type="library" name="Commons-net" level="project" />
     <orderEntry type="library" name="XmlRpc" level="project" />
-    <orderEntry type="library" name="Commons-codec" level="project" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" name="Trove" level="project" />
     <orderEntry type="library" name="JMock" level="project" />
-    <orderEntry type="library" scope="RUNTIME" name="Commons-logging" level="project" />
     <orderEntry type="library" name="Ant" level="project" />
     <orderEntry type="library" name="Diff-utils" level="project" />
     <orderEntry type="library" name="JUnit4" level="project" />
@@ -60,9 +57,20 @@
     <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="module" module-name="resources" />
     <orderEntry type="module" module-name="resources_en" />
-    <orderEntry type="module" module-name="mpsjava-platform" scope="RUNTIME" />
-    <orderEntry type="module" module-name="mpsjava-workbench" scope="RUNTIME" />
     <orderEntry type="module" module-name="persistence" scope="TEST" />
+    <orderEntry type="module" module-name="mpsjava" scope="RUNTIME" />
+    <orderEntry type="module-library" scope="RUNTIME">
+      <library name="IDEA runtime jars">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../lib/commons-logging-1.1.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../lib/commons-codec-1.3.jar!/" />
+          <root url="jar://$MODULE_DIR$/../lib/commons-net-3.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../lib/guava-12.0.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
 

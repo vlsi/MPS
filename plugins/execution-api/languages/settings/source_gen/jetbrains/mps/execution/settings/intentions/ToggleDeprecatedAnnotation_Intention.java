@@ -56,6 +56,10 @@ public class ToggleDeprecatedAnnotation_Intention implements IntentionFactory {
     return new SNodePointer("r:2f15cca9-9d4b-4caa-8c6d-31f12b9faf00(jetbrains.mps.execution.settings.intentions)", "9191251033651652580");
   }
 
+  public boolean isSurroundWith() {
+    return false;
+  }
+
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
       myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ToggleDeprecatedAnnotation_Intention.IntentionImplementation());

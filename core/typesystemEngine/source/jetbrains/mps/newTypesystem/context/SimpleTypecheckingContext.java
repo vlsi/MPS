@@ -17,9 +17,11 @@ package jetbrains.mps.newTypesystem.context;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.newTypesystem.context.component.IncrementalTypechecking;
-import jetbrains.mps.newTypesystem.context.component.SimpleTypechecking;
+import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
+import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
+import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent;
 import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -39,24 +41,43 @@ import java.util.Set;
  * Time: 3:35 PM
  * To change this template use File | Settings | File Templates.
  */
-public class SimpleTypecheckingContext extends BaseTypecheckingContext {
+public abstract class SimpleTypecheckingContext<
+    STATE extends State,
+    TCHECK extends BaseTypechecking<STATE, ? extends SimpleTypecheckingComponent<STATE>>>
+  extends BaseTypecheckingContext {
 
-  private SimpleTypechecking myTypechecking;
+  private TCHECK myTypechecking;
+  private STATE myState;
 
   public SimpleTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
     super(rootNode, typeChecker);
-    setTypechecking(createNodeTypesComponent());
+    myState = createState();
+    setTypechecking(createTypechecking());
   }
 
-  protected SimpleTypechecking createNodeTypesComponent() {
-    return new SimpleTypechecking(getNode(), getState());
+  @SuppressWarnings("unchecked")
+  protected TCHECK createTypechecking() {
+    return (TCHECK) new BaseTypechecking<STATE, SimpleTypecheckingComponent<STATE>>(getNode(), getState());
+  }
+
+  @SuppressWarnings("unchecked")
+  protected STATE createState() {
+    return (STATE) new State(this);
+  }
+
+  public STATE getState() {
+    assert myState != null;
+    return myState;
+  }
+
+  public TCHECK getTypechecking() {
+    return myTypechecking;
   }
 
   @Override
   public boolean isSingleTypeComputation() {
     return true;
   }
-
 
   @Override
   public void addDependencyForCurrent(SNode node) {
@@ -91,17 +112,11 @@ public class SimpleTypecheckingContext extends BaseTypecheckingContext {
     return result;
   }
 
+
   @Override
   public SNode getTypeOf_resolveMode(SNode node, TypeChecker typeChecker) {
-    Pair<SNode, Boolean> pair = typeChecker.getTypeComputedForCompletion(node);
-    if (pair.o2) {
-      return pair.o1;
-    }
-    SNode resultType = getTypechecking().computeTypesForNodeDuringResolving(node);
-    typeChecker.putTypeComputedForCompletion(node, resultType);
-    return resultType;
+    throw new IllegalStateException("Invalid usage of SimpleTypecheckingContext");
   }
-
 
   @Override
   public SNode getTypeOf(SNode node, TypeChecker typeChecker) {
@@ -140,11 +155,7 @@ public class SimpleTypecheckingContext extends BaseTypecheckingContext {
     return null;
   }
 
-  public SimpleTypechecking getTypechecking() {
-    return myTypechecking;
-  }
-
-  protected final void setTypechecking(SimpleTypechecking typechecking) {
+  protected final void setTypechecking(TCHECK typechecking) {
     assert myTypechecking == null;
     assert typechecking != null;
     myTypechecking = typechecking;
@@ -159,7 +170,7 @@ public class SimpleTypecheckingContext extends BaseTypecheckingContext {
   public SNode typeOf(SNode node, String ruleModel, String ruleId, boolean addDependency) {
     EquationInfo info = new EquationInfo(node, "typeOf", ruleModel, ruleId);
     if (node == null) return null;
-    SimpleTypechecking currentTypesComponent = getTypechecking();   //first, in current component
+    BaseTypechecking currentTypesComponent = getTypechecking();   //first, in current component
     if (currentTypesComponent != null) {
       //--- for incremental algorithm:
       currentTypesComponent.addNodeToFrontier(node);
@@ -210,7 +221,7 @@ public class SimpleTypecheckingContext extends BaseTypecheckingContext {
   @Override
   public void checkRoot(final boolean refreshTypes) {
     synchronized (TYPECHECKING_LOCK) {
-      LanguageScopeExecutor.execWithModelScope(myRootNode.getModel(), new Computable<Object>() {
+      LanguageScopeExecutor.execWithModelScope(myNode.getModel(), new Computable<Object>() {
         @Override
         public Object compute() {
           getTypechecking().computeTypes(refreshTypes);
