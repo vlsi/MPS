@@ -293,7 +293,7 @@ public class SolutionIdea extends Solution {
       Library library = loe.getLibrary();
       if (library == null) continue;
 
-      AbstractJavaStubSolutionManager.addModelRoots(solutionDescriptor, library.getFiles(OrderRootType.CLASSES));
+      StubSolutionIdea.addModelRoots(solutionDescriptor, library.getFiles(OrderRootType.CLASSES));
     }
   }
 

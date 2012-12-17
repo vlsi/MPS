@@ -17,7 +17,9 @@
 package jetbrains.mps.idea.core.project.stubs;
 
 import com.intellij.openapi.components.BaseComponent;
+import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.idea.core.project.StubSolutionIdea;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.StubSolution;
@@ -32,17 +34,7 @@ import org.jetbrains.annotations.NotNull;
  * Date: 4/30/12
  */
 public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner, BaseComponent {
-  public static void addModelRoots(SolutionDescriptor solutionDescriptor, VirtualFile[] roots) {
-    for (VirtualFile f : roots) {
-      ModelRoot modelRoot = new ModelRoot(getLocalPath(f), LanguageID.JAVA_MANAGER);
-      if (solutionDescriptor.getModelRoots().contains(modelRoot)) {
-        continue;
-      }
-      solutionDescriptor.getModelRoots().add(modelRoot);
-    }
-  }
-
-  private static String getLocalPath(VirtualFile f) {
+  public static String getLocalPath(VirtualFile f) {
     String path = f.getPath();
     int index = path.indexOf("!");
     if (index < 0) return path;
@@ -79,12 +71,8 @@ public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner,
 
   protected abstract void dispose();
 
-  protected void addSolution(String name, VirtualFile[] roots) {
-    SolutionDescriptor sd = new SolutionDescriptor();
-    sd.setNamespace(name);
-    sd.setId(ModuleId.foreign(name));
-    addModelRoots(sd, roots);
-    StubSolution.newInstance(sd, this);
+  protected void addSolution(Library library) {
+    StubSolutionIdea.newInstance(library, this);
   }
 
   protected void removeSolution(String name) {
