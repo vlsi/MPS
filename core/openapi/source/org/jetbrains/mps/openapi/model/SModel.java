@@ -47,8 +47,8 @@ public interface SModel {
   SModule getModule();
 
   /**
-   * Returns an unmodifiable collection of root nodes. Root nodes are all nodes added to model using addRootNode.
-   * VP: should be immutable collection? Currently it isn't.
+   * Returns a collection of root nodes. Root nodes are all nodes added to model using addRootNode.
+   * todo VP: should be immutable collection? Currently it isn't.
    */
   Iterable<? extends SNode> getRootNodes();
 

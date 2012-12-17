@@ -20,7 +20,6 @@ package org.jetbrains.mps.openapi.module;
  * <p/>
  * REPOSITORY STRUCTURE
  * There can be multiple repositories available. Given a repository, references to modules/models/nodes can be resolved.
- * VP: The text below needs clarification
  * There's no need in making ids unique globally as each subsystem knows, which exact repository it needs to use at any moment.
  * (e.g. the type-system knows where it stores its type-nodes, so it will not try to resolve references to them )
  * <p/>
