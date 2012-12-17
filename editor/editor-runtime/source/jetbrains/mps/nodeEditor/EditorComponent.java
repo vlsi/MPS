@@ -3165,8 +3165,14 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             break;
           }
         }
+
+        for (SModelDescriptor descriptor : replacedModels){
+          if (myModelDescriptorsWithListener.contains(descriptor)){
+            rebuildEditorContent();
+            break;
+          }
+        }
       }
-      rebuildEditorContent();
     }
 
 
