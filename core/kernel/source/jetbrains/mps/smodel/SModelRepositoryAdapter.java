@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
+import java.util.Set;
+
 public abstract class SModelRepositoryAdapter implements SModelRepositoryListener {
   public void beforeModelDeleted(SModelDescriptor modelDescriptor) {
 
@@ -42,6 +44,11 @@ public abstract class SModelRepositoryAdapter implements SModelRepositoryListene
   public void modelRenamed(SModelDescriptor modelDescriptor) {
     modelRepositoryChanged();
     modelRepositoryChanged(modelDescriptor);
+  }
+
+  @Override
+  public void modelsReplaced(Set<SModelDescriptor> reloadedModels) {
+    modelRepositoryChanged();
   }
 
   public void modelRepositoryChanged() {

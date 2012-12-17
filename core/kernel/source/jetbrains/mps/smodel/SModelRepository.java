@@ -52,6 +52,8 @@ public class SModelRepository implements CoreComponent {
   private final Object myListenersLock = new Object();
   private final List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
 
+  private final Map<SModelDescriptor, SModel> myReloadingDescriptorQueue = new LinkedHashMap<SModelDescriptor, SModel>();
+
   private SModelListener myModelsListener = new ModelChangeListener();
 
   public SModelRepository(ClassLoaderManager manager) {
@@ -258,6 +260,42 @@ public class SModelRepository implements CoreComponent {
   public void refreshModels() {
   }
 
+  void notifyLater(BaseSModelDescriptor modelDescriptor) {
+    ModelAccess.assertLegalWrite();
+    SModel oldModel = modelDescriptor.getCurrentModelInternal();
+
+    if (myReloadingDescriptorQueue.isEmpty()) {
+      notifyAfterReload();
+    }
+
+    synchronized (myReloadingDescriptorQueue) {
+      myReloadingDescriptorQueue.put(modelDescriptor, oldModel);
+    }
+
+  }
+
+  private void notifyAfterReload() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      @Override
+      public void run() {
+        if (myReloadingDescriptorQueue.isEmpty()) {
+          return;
+        }
+
+        fireModelReplaced(myReloadingDescriptorQueue.keySet());
+        for (SModelDescriptor modelDescriptor : myReloadingDescriptorQueue.keySet()) {
+          SModel oldModel = myReloadingDescriptorQueue.get(modelDescriptor);
+          if (oldModel != null) {
+            oldModel.dispose();
+          }
+        }
+
+        myReloadingDescriptorQueue.clear();
+      }
+    });
+  }
+
+
   //---------------------------events----------------------------
 
   public void addModelRepositoryListener(@NotNull SModelRepositoryListener l) {
@@ -332,6 +370,16 @@ public class SModelRepository implements CoreComponent {
     for (SModelRepositoryListener listener : listeners()) {
       try {
         listener.beforeModelDeleted(modelDescriptor);
+      } catch (Throwable t) {
+        LOG.error(t);
+      }
+    }
+  }
+
+  private void fireModelReplaced(Set<SModelDescriptor> modelDescriptors) {
+    for (SModelRepositoryListener listener : listeners()) {
+      try {
+        listener.modelsReplaced(modelDescriptors);
       } catch (Throwable t) {
         LOG.error(t);
       }

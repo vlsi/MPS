@@ -104,7 +104,6 @@ public class MPSCore extends ComponentPlugin {
     init(new FindUsagesManager());
     init(new FastFindSupportRegistry());
     init(new DataFlowManager(classLoaderManager, myModuleRepository));
-    init(new ModelReloadNotifier());
 
     init(new ResolverComponent());
     init(new CheckersComponent());

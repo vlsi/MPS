@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.smodel;
 
-import jetbrains.mps.vfs.IFile;
+
+import java.util.Set;
 
 public interface SModelRepositoryListener {
   void beforeModelDeleted(SModelDescriptor modelDescriptor);
@@ -29,5 +30,7 @@ public interface SModelRepositoryListener {
   void modelAdded(SModelDescriptor modelDescriptor);
 
   void modelRenamed(SModelDescriptor modelDescriptor);
+
+  void modelsReplaced(Set<SModelDescriptor> reloadedModels);
 }
 
