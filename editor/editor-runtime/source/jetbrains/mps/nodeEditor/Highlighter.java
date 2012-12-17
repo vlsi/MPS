@@ -101,12 +101,14 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       }
     }
   };
-  private SModelListener myModelReloadListener = new SModelAdapter() {
-    public void modelReplaced(SModelDescriptor sm) {
+  private SModelRepositoryListener myModelReloadListener = new SModelRepositoryAdapter() {
+    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
       for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
         SNode sNode = editorComponent.getEditedNode();
-        if (sNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(sNode) && sNode.getModel().getModelDescriptor() == sm) {
-          myCheckedOnceEditors.remove(editorComponent);
+        for (SModelDescriptor modelDescriptor : replacedModels){
+          if (sNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(sNode) && sNode.getModel().getSModelReference().equals(modelDescriptor.getSModelReference())) {
+            myCheckedOnceEditors.remove(editorComponent);
+          }
         }
       }
     }
@@ -138,7 +140,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     }
     myClassLoaderManager.addReloadHandler(myReloadListener);
     myGlobalSModelEventsManager.addGlobalCommandListener(myModelCommandListener);
-    myGlobalSModelEventsManager.addGlobalModelListener(myModelReloadListener);
+    SModelRepository.getInstance().addModelRepositoryListener(myModelReloadListener);
 
     myInspectorTool = myProject.getComponent(InspectorTool.class);
     myMessageBusConnection = myProject.getMessageBus().connect();
@@ -168,7 +170,7 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     stopUpdater();
     ModelAccess.instance().removeCommandListener(myCommandListener);
     myGlobalSModelEventsManager.removeGlobalCommandListener(myModelCommandListener);
-    myGlobalSModelEventsManager.removeGlobalModelListener(myModelReloadListener);
+    SModelRepository.getInstance().removeModelRepositoryListener(myModelReloadListener);
     myClassLoaderManager.removeReloadHandler(myReloadListener);
     myMessageBusConnection.disconnect();
     myInspectorTool = null;

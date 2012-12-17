@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ddalzbcicvj97r46ja02bl3mdkwssgb">
+<dependencies version="2" modelHash="ck7s7mupoek554pp2whkgd3kt2xdtuq">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -73,7 +73,7 @@
     <dep model="r:00000000-0000-4000-0000-011c89590580(jetbrains.mps.baseLanguage.logging.generator.baseLanguage.template.main@generator)" />
     <file name="BaseVersionUtil.java" />
   </source>
-  <source id="8579517044346265736" name="CurrentDifferenceBroadcaster" hash="bk4s7cyruzze6ihy0xkwifdfny97tm7">
+  <source id="8579517044346265736" name="CurrentDifferenceBroadcaster" hash="9r89f899a22ho14fyaflnmv07nz4d07">
     <dep root="6756213824749053844" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
@@ -95,7 +95,7 @@
   <source id="6756213824749156025" name="CurrentDifferenceAdapter" hash="di3p9jzix1u2e0eekcnmdi8czsb6ri">
     <file name="CurrentDifferenceAdapter.java" />
   </source>
-  <source id="3161776655522589894" name="CurrentDifferenceRegistry" hash="5z1lghqfbopvsixqcjwqq4qixr4obcq">
+  <source id="3161776655522589894" name="CurrentDifferenceRegistry" hash="-b22pjpknic1iui3dc3a73c4aodrd027">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.components(MPS.Core/jetbrains.mps.components@java_stub)" />
@@ -109,7 +109,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CurrentDifferenceRegistry.java" />
   </source>
-  <source id="3161776655522572366" name="CurrentDifference" hash="eds4lbclo7qns77b3lqbrv355wwsres">
+  <source id="3161776655522572366" name="CurrentDifference" hash="cww3315hazgkntodeqh2egwk5jjbmhh">
     <dep root="6756213824749053844" />
     <dep root="8579517044346265736" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -121,7 +121,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="CurrentDifference.java" />
   </source>
-  <source id="3161776655522682154" name="ChangesTracking" hash="2n8bfceuos3shhh61gs9q4t32led241">
+  <source id="3161776655522682154" name="ChangesTracking" hash="-a7z77pnxtetxrosebviesypnxh67sy5">
     <dep root="3161776655522572366" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
@@ -169,7 +169,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="ChangesTracking.java" />
   </source>
-  <source id="6389979038222847043" name="EventConsumingMapping" hash="-93g9i7rxlwuxn30e9ct803usl2aoky8">
+  <source id="6389979038222847043" name="EventConsumingMapping" hash="epwufwmzycz5l8kjibhaxxbwwmlu2r8">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />

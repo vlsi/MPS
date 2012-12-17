@@ -16,6 +16,7 @@ import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import java.util.List;
 import com.intellij.openapi.vcs.FileStatus;
 import org.jetbrains.annotations.NotNull;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.vcs.diff.changes.MetadataChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -64,7 +65,7 @@ import jetbrains.mps.vcs.diff.changes.ModuleDependencyChange;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
-import jetbrains.mps.smodel.SModelAdapter;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.logging.Logger;
 
@@ -89,7 +90,7 @@ public class ChangesTracking {
     myModelDescriptor = myDifference.getModelDescriptor();
     myQueue = CurrentDifferenceRegistry.getInstance(project).getCommandQueue();
     synchronized (this) {
-      myModelDescriptor.addModelListener(myModelListener);
+      SModelRepository.getInstance().addModelRepositoryListener(myModelListener);
       myEventsCollector.add(myModelDescriptor);
     }
   }
@@ -98,7 +99,7 @@ public class ChangesTracking {
     synchronized (this) {
       if (!(myDisposed)) {
         myDisposed = true;
-        myModelDescriptor.removeModelListener(myModelListener);
+        SModelRepository.getInstance().removeModelRepositoryListener(myModelListener);
         myEventsCollector.remove(myModelDescriptor);
         myEventsCollector.dispose();
         myQueue.runTask(new Runnable() {
@@ -552,13 +553,15 @@ public class ChangesTracking {
     }
   }
 
-  private class MyModelListener extends SModelAdapter {
+  private class MyModelListener extends SModelRepositoryAdapter {
     public MyModelListener() {
     }
 
     @Override
-    public void modelReplaced(SModelDescriptor descriptor) {
-      scheduleFullUpdate();
+    public void modelsReplaced(Set<SModelDescriptor> descriptors) {
+      if (descriptors.contains(myModelDescriptor)) {
+        scheduleFullUpdate();
+      }
     }
   }
 
