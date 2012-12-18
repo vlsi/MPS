@@ -21,7 +21,9 @@ import com.intellij.openapi.projectRoots.SdkModificator;
 import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.roots.RootProvider;
 import com.intellij.openapi.roots.RootProvider.RootSetChangedListener;
+import com.intellij.openapi.roots.impl.libraries.ProjectLibraryTable;
 import com.intellij.openapi.roots.libraries.Library;
+import com.intellij.openapi.roots.libraries.LibraryTable.Listener;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.idea.core.project.stubs.AbstractJavaStubSolutionManager;
 import jetbrains.mps.project.ModuleId;
@@ -54,7 +56,7 @@ public abstract class StubSolutionIdea extends StubSolution {
     super(descriptor, null);
   }
 
-  protected void attachListener() {
+  protected void attachRootsListener() {
     getRootProvider().addRootSetChangedListener(myRootSetChangedListener);
   }
 
@@ -101,7 +103,7 @@ public abstract class StubSolutionIdea extends StubSolution {
     protected LibraryStubSolution(SolutionDescriptor descriptor, @NotNull Library library) {
       super(descriptor);
       myLibrary = library;
-      attachListener();
+      attachRootsListener();
     }
 
     @Override
@@ -117,7 +119,7 @@ public abstract class StubSolutionIdea extends StubSolution {
     protected SdkStubSolution(SolutionDescriptor descriptor, @NotNull Sdk sdk) {
       super(descriptor);
       mySdk = sdk;
-      attachListener();
+      attachRootsListener();
     }
 
     @Override
