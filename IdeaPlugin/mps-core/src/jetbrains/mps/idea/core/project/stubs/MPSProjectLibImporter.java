@@ -21,7 +21,7 @@ import com.intellij.openapi.roots.impl.libraries.ProjectLibraryTable;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable;
 import jetbrains.mps.ide.MPSCoreComponents;
-import jetbrains.mps.idea.core.library.SolutionLibraryType;
+import jetbrains.mps.idea.core.library.ModuleLibraryType;
 
 public class MPSProjectLibImporter extends BaseLibImporter implements ProjectComponent {
   private final ProjectLibraryTable myLibTable;
@@ -33,7 +33,7 @@ public class MPSProjectLibImporter extends BaseLibImporter implements ProjectCom
 
   @Override
   protected void addModuleForLibrary(Library l) {
-    if (SolutionLibraryType.isSolutionLibrary(l)) {
+    if (ModuleLibraryType.isSolutionLibrary(l)) {
       return;
     }
     super.addModuleForLibrary(l);

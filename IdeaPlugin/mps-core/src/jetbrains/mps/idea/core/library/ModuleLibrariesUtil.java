@@ -35,7 +35,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
 
-public class SolutionLibrariesUtil {
+public class ModuleLibrariesUtil {
   @NotNull
   public static Collection<Library> getLibraries(ModuleReference reference, Project project) {
     Set<Library> libraries = new HashSet<Library>();
@@ -53,11 +53,11 @@ public class SolutionLibrariesUtil {
   }
 
   private static boolean hasModule(Library library, IModule module) {
-    if (!isSuitableModule(module) || !SolutionLibraryType.isSolutionLibrary(library)) {
+    if (!isSuitableModule(module) || !ModuleLibraryType.isSolutionLibrary(library)) {
       return false;
     }
     Solution solution = (Solution) module;
-    return Arrays.asList(library.getFiles(ModuleXmlRootDetector.SOLUTION_MODULE_XML)).contains(VirtualFileUtils.getVirtualFile(solution.getDescriptorFile()));
+    return Arrays.asList(library.getFiles(ModuleXmlRootDetector.MPS_MODULE_XML)).contains(VirtualFileUtils.getVirtualFile(solution.getDescriptorFile()));
   }
 
   private static boolean isSuitableModule(IModule module) {
@@ -66,12 +66,12 @@ public class SolutionLibrariesUtil {
 
   @NotNull
   public static Set<ModuleReference> getModules(final Library library) {
-    if (!SolutionLibraryType.isSolutionLibrary(library)) {
+    if (!ModuleLibraryType.isSolutionLibrary(library)) {
       return Collections.emptySet();
     }
     final Set<ModuleReference> modules = new HashSet<ModuleReference>();
     final Set<IFile> moduleXmls = new HashSet<IFile>();
-    for (VirtualFile file : library.getFiles(ModuleXmlRootDetector.SOLUTION_MODULE_XML)) {
+    for (VirtualFile file : library.getFiles(ModuleXmlRootDetector.MPS_MODULE_XML)) {
       moduleXmls.add(VirtualFileUtils.toIFile(file));
     }
     ModelAccess.instance().runReadAction(new Runnable() {

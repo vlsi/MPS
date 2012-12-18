@@ -33,12 +33,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.*;
 
 public class ModuleXmlRootDetector extends RootDetector {
-  public static final OrderRootType SOLUTION_MODULE_XML = new OrderRootType("MPS_MODULE_XML") {
+  public static final OrderRootType MPS_MODULE_XML = new OrderRootType("MPS_MODULE_XML") {
   };
   private static final ModuleXmlRootDetector INSTANCE = new ModuleXmlRootDetector();
 
   protected ModuleXmlRootDetector() {
-    super(SOLUTION_MODULE_XML, false, MPSBundle.message("mps.solutions.root.type"));
+    super(MPS_MODULE_XML, false, MPSBundle.message("mps.module.xml.root.type"));
   }
 
   @NotNull
@@ -71,6 +71,6 @@ public class ModuleXmlRootDetector extends RootDetector {
   }
 
   public static OrderRootTypePresentation getPresentation() {
-    return new OrderRootTypePresentation(MPSBundle.message("mps.solutions.root.type"), MPSIcons.SOLUTION_ICON);
+    return new OrderRootTypePresentation(MPSBundle.message("mps.module.xml.root.type"), MPSIcons.MPS_ICON);
   }
 }

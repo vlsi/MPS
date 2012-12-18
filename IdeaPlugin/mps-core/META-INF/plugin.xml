@@ -88,7 +88,7 @@
     <usageGroupingRuleProvider implementation="jetbrains.mps.idea.core.usages.rules.MPSUsageGroupingRuleProviderImpl" />
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <renameHandler implementation="jetbrains.mps.idea.core.refactoring.ModelRenameHandler"/>
-    <library.type implementation="jetbrains.mps.idea.core.library.SolutionLibraryType"/>
+    <library.type implementation="jetbrains.mps.idea.core.library.ModuleLibraryType"/>
   </extensions>
 
   <actions>

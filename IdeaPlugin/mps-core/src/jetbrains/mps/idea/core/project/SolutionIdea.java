@@ -33,8 +33,8 @@ import com.intellij.util.Processor;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.idea.core.library.SolutionLibrariesUtil;
-import jetbrains.mps.idea.core.library.SolutionLibraryType;
+import jetbrains.mps.idea.core.library.ModuleLibrariesUtil;
+import jetbrains.mps.idea.core.library.ModuleLibraryType;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRoot;
@@ -73,7 +73,7 @@ public class SolutionIdea extends Solution {
       @Override
       public void run() {
         for (final Library library : projectLibraryTable.getLibraries()) {
-          if (SolutionLibraryType.isSolutionLibrary(library)) {
+          if (ModuleLibraryType.isSolutionLibrary(library)) {
             library.getRootProvider().addRootSetChangedListener(myRootSetListener);
           }
         }
@@ -101,7 +101,7 @@ public class SolutionIdea extends Solution {
       @Override
       public void run() {
         for (final Library library : projectLibraryTable.getLibraries()) {
-          if (SolutionLibraryType.isSolutionLibrary(library)) {
+          if (ModuleLibraryType.isSolutionLibrary(library)) {
             library.getRootProvider().addRootSetChangedListener(myRootSetListener);
           }
         }
@@ -173,8 +173,8 @@ public class SolutionIdea extends Solution {
           return true;
         }
 
-        if (SolutionLibraryType.isSolutionLibrary(library)) {
-          Set<ModuleReference> moduleReferences = SolutionLibrariesUtil.getModules(library);
+        if (ModuleLibraryType.isSolutionLibrary(library)) {
+          Set<ModuleReference> moduleReferences = ModuleLibrariesUtil.getModules(library);
           for (ModuleReference moduleReference : moduleReferences) {
             if (modules.containsKey(moduleReference)) {
               if (loe.isExported()) {
@@ -357,7 +357,7 @@ public class SolutionIdea extends Solution {
 
     @Override
     public void afterLibraryAdded(final Library newLibrary) {
-      if (SolutionLibraryType.isSolutionLibrary(newLibrary)) {
+      if (ModuleLibraryType.isSolutionLibrary(newLibrary)) {
         newLibrary.getRootProvider().addRootSetChangedListener(myRootSetListener);
       }
     }

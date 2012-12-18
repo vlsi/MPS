@@ -31,9 +31,9 @@ import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContaine
 import com.intellij.openapi.roots.ui.configuration.projectRoot.LibrariesContainerFactory;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
+import jetbrains.mps.idea.core.library.ModuleLibrariesUtil;
+import jetbrains.mps.idea.core.library.ModuleLibraryType;
 import jetbrains.mps.idea.core.library.ModuleXmlRootDetector;
-import jetbrains.mps.idea.core.library.SolutionLibrariesUtil;
-import jetbrains.mps.idea.core.library.SolutionLibraryType;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
@@ -73,9 +73,9 @@ public class ModuleRuntimeLibrariesImporter {
 
   public void addMissingLibraries() {
     Set<ModuleReference> alreadyImported = new HashSet<ModuleReference>();
-    for (OrderEntry entry : myModifiableRootModel.getOrderEntries()){
+    for (OrderEntry entry : myModifiableRootModel.getOrderEntries()) {
       if (entry instanceof LibraryOrderEntry) {
-        alreadyImported.addAll(SolutionLibrariesUtil.getModules(((LibraryOrderEntry) entry).getLibrary()));
+        alreadyImported.addAll(ModuleLibrariesUtil.getModules(((LibraryOrderEntry) entry).getLibrary()));
       }
     }
 
@@ -96,7 +96,7 @@ public class ModuleRuntimeLibrariesImporter {
       if (library != null) {
         projectLibs2Add.add(library);
       } else {
-        Set<VirtualFile> stubFiles = SolutionLibraryType.getSolutionJars((Solution) usedModule);
+        Set<VirtualFile> stubFiles = ModuleLibraryType.getModuleJars((Solution) usedModule);
         projectLibs2Create_Classpath.put(usedModule.getModuleReference(), stubFiles);
         projectLibs2Create_ModuleXml.put(usedModule.getModuleReference(), VirtualFileUtils.getVirtualFile(usedModule.getDescriptorFile()));
       }
@@ -114,15 +114,15 @@ public class ModuleRuntimeLibrariesImporter {
   }
 
   @Nullable
-    private Library getAutoLibrary(ModuleReference reference) {
-      String libraryName = LIBRARY_PREFIX + reference.getModuleFqName() + AUTO_SUFFIX;
-      for (Library lib : SolutionLibrariesUtil.getLibraries(reference, getProject())) {
-        if (lib.getName().equals(libraryName)) {
-          return lib;
-        }
+  private Library getAutoLibrary(ModuleReference reference) {
+    String libraryName = LIBRARY_PREFIX + reference.getModuleFqName() + AUTO_SUFFIX;
+    for (Library lib : ModuleLibrariesUtil.getLibraries(reference, getProject())) {
+      if (lib.getName().equals(libraryName)) {
+        return lib;
       }
-      return null;
     }
+    return null;
+  }
 
   private Project getProject() {
     return myLibrariesContainer.getProject();
@@ -136,9 +136,9 @@ public class ModuleRuntimeLibrariesImporter {
     for (VirtualFile classRoot : libraryFiles) {
       editor.addRoot(classRoot, OrderRootType.CLASSES);
     }
-    editor.addRoot(moduleXml, ModuleXmlRootDetector.SOLUTION_MODULE_XML);
-    editor.setType(SolutionLibraryType.getInstance());
-    editor.setProperties(SolutionLibraryType.getInstance().createDefaultProperties());
+    editor.addRoot(moduleXml, ModuleXmlRootDetector.MPS_MODULE_XML);
+    editor.setType(ModuleLibraryType.getInstance());
+    editor.setProperties(ModuleLibraryType.getInstance().createDefaultProperties());
     return myLibrariesContainer.createLibrary(editor, LibraryLevel.PROJECT);
   }
 
