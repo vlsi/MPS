@@ -1629,9 +1629,11 @@
     <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="5" startPosition="0" endLine="5" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
     <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="5" startPosition="0" endLine="5" endPosition="20" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="6" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="6" startPosition="0" endLine="6" endPosition="31" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="6" startPosition="0" endLine="6" endPosition="16" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="7" startPosition="0" endLine="7" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
-    <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="7" startPosition="0" endLine="7" endPosition="21" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="7" startPosition="0" endLine="7" endPosition="31" conceptFqName="jetbrains.mps.gtext.structure.GText" />
+    <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="8" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />
+    <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="8" startPosition="0" endLine="8" endPosition="21" conceptFqName="jetbrains.mps.gtext.structure.GText" />
     <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="1" startPosition="0" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="1" startPosition="7" endLine="2" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="2" startPosition="0" endLine="3" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
@@ -1643,13 +1645,15 @@
     <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="5" startPosition="0" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
     <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="5" startPosition="20" endLine="6" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="6" startPosition="0" endLine="7" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="6" startPosition="31" endLine="7" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="6" startPosition="16" endLine="7" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="7" startPosition="0" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
-    <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="7" startPosition="21" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="7" startPosition="31" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
+    <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GItemList" />
+    <nodeInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="8" startPosition="21" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GNewLine" />
     <unitInfo nodeId="716066598061903713" fileName="Info.plist.xml" startLine="1" startPosition="0" endLine="62" endPosition="8" unitName="jetbrains.mps.ide.build.Info.plist" />
     <unitInfo nodeId="716066598061903713" fileName="mps.bat" startLine="1" startPosition="0" endLine="44" endPosition="0" unitName="mps.bat" />
     <unitInfo nodeId="716066598061903713" fileName="mps.sh" startLine="1" startPosition="0" endLine="60" endPosition="0" unitName="mps.sh" />
-    <unitInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="1" startPosition="0" endLine="8" endPosition="0" unitName="mps.vmoptions" />
+    <unitInfo nodeId="716066598061903713" fileName="mps.vmoptions" startLine="1" startPosition="0" endLine="9" endPosition="0" unitName="mps.vmoptions" />
   </root>
   <root nodeId="7926701909975931624" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
     <unitInfo nodeId="7926701909975931624" fileName="buildCore.xml" startLine="1" startPosition="0" endLine="4711" endPosition="10" unitName="jetbrains.mps.ide.build.buildCore" />
