@@ -40,6 +40,7 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.project.ModuleRuntimeLibrariesImporter;
 import jetbrains.mps.idea.core.project.SolutionIdea;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -69,7 +70,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
     return JarFileSystem.getInstance().findFileByPath(vFile.getPath() + JarFileSystem.JAR_SEPARATOR);
   }
 
-  public static Set<VirtualFile> getModuleJars(Solution usedModule) {
+  public static Set<VirtualFile> getModuleJars(AbstractModule usedModule) {
     Set<VirtualFile> stubFiles = new HashSet<VirtualFile>();
     for (String stubPath : usedModule.getAllStubPaths()) {
       VirtualFile jarFile = getJarFile(stubPath);
@@ -118,10 +119,10 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
 
   private Set<OrderRoot> createRootsFor(List<ModuleReference> chosenElements) {
     final Set<OrderRoot> roots = new LinkedHashSet<OrderRoot>();
-    for (ModuleReference module : chosenElements) {
-      Solution solution = (Solution) ModuleRepositoryFacade.getInstance().getModule(module);
-      roots.add(new OrderRoot(VirtualFileUtils.getVirtualFile(solution.getDescriptorFile()), ModuleXmlRootDetector.MPS_MODULE_XML, false));
-      for (VirtualFile virtualFile : getModuleJars(solution)) {
+    for (ModuleReference moduleReference : chosenElements) {
+      AbstractModule module = (AbstractModule) ModuleRepositoryFacade.getInstance().getModule(moduleReference);
+      roots.add(new OrderRoot(VirtualFileUtils.getVirtualFile(module.getDescriptorFile()), ModuleXmlRootDetector.MPS_MODULE_XML, false));
+      for (VirtualFile virtualFile : getModuleJars(module)) {
         roots.add(new OrderRoot(virtualFile, OrderRootType.CLASSES, false));
       }
     }
@@ -192,6 +193,8 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
         return MPSIcons.LANGUAGE_ICON;
       }
     }
+
+
   }
 
   private static class MyLibraryRootsComponentDescriptor extends DefaultLibraryRootsComponentDescriptor {
@@ -214,10 +217,10 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
     @NotNull
     @Override
     public List<? extends RootDetector> getRootDetectors() {
-      List<RootDetector> dectectors = new ArrayList<RootDetector>();
-      dectectors.addAll(super.getRootDetectors());
-      dectectors.add(ModuleXmlRootDetector.getInstance());
-      return dectectors;
+      List<RootDetector> detectors = new ArrayList<RootDetector>();
+      detectors.addAll(super.getRootDetectors());
+      detectors.add(ModuleXmlRootDetector.getInstance());
+      return detectors;
     }
 
     @NotNull
@@ -249,8 +252,9 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
             @Override
             public void run() {
               for (ModuleReference module : chosenElements) {
-                addedDescriptors.add(VirtualFileUtils.getVirtualFile(ModuleRepositoryFacade.getInstance().getModule(module).getDescriptorFile()));
-                for (VirtualFile virtualFile : getModuleJars((Solution) ModuleRepositoryFacade.getInstance().getModule(module))) {
+                AbstractModule chosenModule = (AbstractModule) ModuleRepositoryFacade.getInstance().getModule(module);
+                addedDescriptors.add(VirtualFileUtils.getVirtualFile(chosenModule.getDescriptorFile()));
+                for (VirtualFile virtualFile : getModuleJars(chosenModule)) {
                   addedJars.add(virtualFile);
                 }
               }
@@ -269,6 +273,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
 
   private static List<ModuleReference> calculateVisibleModules(final Set<VirtualFile> excluded) {
     final List<ModuleReference> availableSolutions = new ArrayList<ModuleReference>();
+    final List<ModuleReference> availableLanguages = new ArrayList<ModuleReference>();
     ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
@@ -280,10 +285,17 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
             // skip solutions that are already in a lib
             continue;
           }
-          availableSolutions.add(module.getModuleReference());
+          if (module instanceof Solution) {
+            availableSolutions.add(module.getModuleReference());
+          } else {
+            availableLanguages.add(module.getModuleReference());
+          }
         }
       }
     });
-    return availableSolutions;
+    List<ModuleReference> result = new ArrayList<ModuleReference>();
+    result.addAll(availableSolutions);
+    result.addAll(availableLanguages);
+    return result;
   }
 }
