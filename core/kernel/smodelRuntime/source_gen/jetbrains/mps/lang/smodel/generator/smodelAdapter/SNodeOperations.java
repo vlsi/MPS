@@ -602,13 +602,10 @@ public class SNodeOperations {
       return null;
     }
     if (!(SNodeOperations.isInstanceOf(node, castTo))) {
-      // hack, remove? 
-      if (!(HUtil.isRuntimeTypeVariable(node))) {
-        if (ourCastsEnabled) {
-          throw new NodeCastException("Can't cast " + node.getConcept().getId() + " to " + castTo);
-        } else {
-          LOG.warning("Can't cast " + node.getConcept().getId() + " to " + castTo);
-        }
+      if (ourCastsEnabled) {
+        throw new NodeCastException("Can't cast " + node.getConcept().getId() + " to " + castTo);
+      } else {
+        LOG.warning("Can't cast " + node.getConcept().getId() + " to " + castTo);
       }
     }
     return node;
