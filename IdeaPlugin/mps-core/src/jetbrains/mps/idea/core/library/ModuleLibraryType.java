@@ -40,8 +40,8 @@ import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.project.ModuleRuntimeLibrariesImporter;
 import jetbrains.mps.idea.core.project.SolutionIdea;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
@@ -92,18 +92,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
 
   @Override
   public NewLibraryConfiguration createNewLibrary(@NotNull JComponent parentComponent, @Nullable VirtualFile contextDirectory, @NotNull final Project project) {
-    final List<ModuleReference> availableSolutions = new ArrayList<ModuleReference>();
-    ModelAccess.instance().runReadAction(new Runnable() {
-      @Override
-      public void run() {
-        for (Solution solution : ModuleRepositoryFacade.getInstance().getAllModules(Solution.class)) {
-          if (solution instanceof SolutionIdea || solution instanceof StubSolution) {
-            continue;
-          }
-          availableSolutions.add(solution.getModuleReference());
-        }
-      }
-    });
+    List<ModuleReference> availableSolutions = calculateVisibleModules(Collections.<VirtualFile>emptySet());
 
     ChooseElementsDialog<ModuleReference> chooser = new ModuleReferenceChooserDialog(project, availableSolutions);
     chooser.show();
@@ -152,7 +141,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
 
   @Override
   public Icon getIcon() {
-    return MPSIcons.SOLUTION_ICON;
+    return MPSIcons.MPS_ICON;
   }
 
   @Override
@@ -183,11 +172,11 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
 
   private static class ModuleReferenceChooserDialog extends ChooseElementsDialog<ModuleReference> {
     public ModuleReferenceChooserDialog(Project project, List<ModuleReference> availableSolutions) {
-      super(project, availableSolutions, MPSBundle.message("used.solutions.chooser.title"), null);
+      super(project, availableSolutions, MPSBundle.message("used.modules.chooser.title"), null);
     }
 
     private ModuleReferenceChooserDialog(Component parent, List<ModuleReference> availableSolutions) {
-      super(parent, availableSolutions, MPSBundle.message("used.solutions.chooser.title"));
+      super(parent, availableSolutions, MPSBundle.message("used.modules.chooser.title"));
     }
 
     @Override
@@ -197,7 +186,11 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
 
     @Override
     protected Icon getItemIcon(ModuleReference item) {
-      return MPSIcons.SOLUTION_ICON;
+      if (ModuleRepositoryFacade.getInstance().getModule(item) instanceof Solution) {
+        return MPSIcons.SOLUTION_ICON;
+      } else {
+        return MPSIcons.LANGUAGE_ICON;
+      }
     }
   }
 
@@ -244,25 +237,9 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
       return Arrays.asList(new AttachRootButtonDescriptor(ModuleXmlRootDetector.MPS_MODULE_XML, MPSBundle.message("library.attach.mps.solution")) {
         @Override
         public VirtualFile[] selectFiles(@NotNull JComponent parent, @Nullable VirtualFile initialSelection, @Nullable final Module contextModule, @NotNull final LibraryEditor libraryEditor) {
-          final List<ModuleReference> availableSolutions = new ArrayList<ModuleReference>();
-          final Set<VirtualFile> descriptors = new HashSet<VirtualFile>(Arrays.asList(libraryEditor.getFiles(ModuleXmlRootDetector.MPS_MODULE_XML)));
-          ModelAccess.instance().runReadAction(new Runnable() {
-            @Override
-            public void run() {
-              for (Solution solution : ModuleRepositoryFacade.getInstance().getAllModules(Solution.class)) {
-                if (solution instanceof SolutionIdea || solution instanceof StubSolution) {
-                  continue;
-                }
-                if (descriptors.contains(VirtualFileUtils.getVirtualFile(solution.getDescriptorFile()))) {
-                  // skip solutions that are already in a lib
-                  continue;
-                }
-                availableSolutions.add(solution.getModuleReference());
-              }
-            }
-          });
+          List<ModuleReference> visibleModules = calculateVisibleModules(new HashSet<VirtualFile>(Arrays.asList(libraryEditor.getFiles(ModuleXmlRootDetector.MPS_MODULE_XML))));
 
-          ChooseElementsDialog<ModuleReference> chooser = new ModuleReferenceChooserDialog(parent, availableSolutions);
+          ChooseElementsDialog<ModuleReference> chooser = new ModuleReferenceChooserDialog(parent, visibleModules);
           chooser.show();
           final List<ModuleReference> chosenElements = chooser.getChosenElements();
 
@@ -288,5 +265,25 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
         }
       });
     }
+  }
+
+  private static List<ModuleReference> calculateVisibleModules(final Set<VirtualFile> excluded) {
+    final List<ModuleReference> availableSolutions = new ArrayList<ModuleReference>();
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        for (IModule module : ModuleRepositoryFacade.getInstance().getAllModules(IModule.class)) {
+          if (module instanceof SolutionIdea || module.getDescriptorFile() == null) {
+            continue;
+          }
+          if (excluded.contains(VirtualFileUtils.getVirtualFile(module.getDescriptorFile()))) {
+            // skip solutions that are already in a lib
+            continue;
+          }
+          availableSolutions.add(module.getModuleReference());
+        }
+      }
+    });
+    return availableSolutions;
   }
 }
