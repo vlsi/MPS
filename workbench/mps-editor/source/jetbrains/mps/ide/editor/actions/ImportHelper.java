@@ -47,6 +47,7 @@ import org.jetbrains.mps.openapi.module.SModuleReference;
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -158,7 +159,8 @@ public class ImportHelper {
           langs.remove(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.CORE, Language.class));
 
           for (Language l : langs) {
-            if (myModel.getSModel().importedLanguages().contains(l.getModuleReference())) continue;
+            Collection<ModuleReference> impLangs = myModel.getSModel().getModelDepsManager().getAllImportedLanguages();
+            if (impLangs.contains(l.getModuleReference())) continue;
             importCandidates.add(l.getModuleReference());
           }
         }
