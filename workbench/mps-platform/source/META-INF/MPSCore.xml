@@ -21,11 +21,11 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.findusages.MPSModelsIndexer</implementation-class>
+      <implementation-class>jetbrains.mps.workbench.findusages.MPSModelsIndexer</implementation-class>
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.findusages.MPSModelsFastFindSupport</implementation-class>
+      <implementation-class>jetbrains.mps.workbench.findusages.MPSModelsFastFindSupport</implementation-class>
     </component>
 
     <component>
@@ -49,11 +49,11 @@
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.workbench.actions.goTo.index.StubsNodeDescriptorsCache</implementation-class>
+      <implementation-class>jetbrains.mps.ide.blame.dialog.BlameDialogComponent</implementation-class>
     </component>
 
     <component>
-      <implementation-class>jetbrains.mps.ide.blame.dialog.BlameDialogComponent</implementation-class>
+      <implementation-class>jetbrains.mps.workbench.goTo.index.MPSModelNavigationContributor</implementation-class>
     </component>
   </application-components>
 
@@ -88,7 +88,7 @@
     <getDataRule key="MPS_IScope" implementationClass="jetbrains.mps.ide.dataExtraction.ScopeRule"/>
     <getDataRule key="MPS_IModule" implementationClass="jetbrains.mps.ide.dataExtraction.ModuleRule"/>
 
-    <fileBasedIndex implementation="jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex"/>
-    <gotoClassContributor implementation="jetbrains.mps.workbench.actions.goTo.GoToClassMPSContributor"/>
+    <fileBasedIndex implementation="jetbrains.mps.workbench.goTo.index.RootNodeNameIndex"/>
+    <gotoClassContributor implementation="jetbrains.mps.workbench.goTo.GoToClassMPSContributor"/>
   </extensions>
 </components>

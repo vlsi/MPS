@@ -23,6 +23,8 @@ import java.util.Set;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.ide.ui.TreeTextUtil;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public class MigrationScriptFinder implements IFinder {
   private List<SNodePointer> myScripts = new ArrayList<SNodePointer>();
@@ -53,12 +55,13 @@ public class MigrationScriptFinder implements IFinder {
             break;
           }
           monitor.step(scriptInstance.getName() + " [" + migrationRefactoring.getAdditionalInfo() + "]");
-          Set<SNode> concept = Collections.singleton(MigrationScriptUtil.getApplicableConcept(migrationRefactoring));
-          Set<SNode> instances = FindUsagesManager.getInstance().findUsages(concept, SearchType.INSTANCES, queryScope, null);
-          for (SNode instance : instances) {
-            if (MigrationScriptUtil.isApplicableRefactoring(instance, migrationRefactoring)) {
+          String cname = migrationRefactoring.getFqNameOfConceptToSearchInstances();
+          SConcept concept = SConceptRepository.getInstance().getConcept(cname);
+          Set<org.jetbrains.mps.openapi.model.SNode> instances = FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, queryScope, null);
+          for (org.jetbrains.mps.openapi.model.SNode instance : instances) {
+            if (MigrationScriptUtil.isApplicableRefactoring(((SNode) instance), migrationRefactoring)) {
               String category = TreeTextUtil.toHtml(scriptInstance.getName()) + " </b>[" + TreeTextUtil.toHtml(migrationRefactoring.getAdditionalInfo()) + "]<b>";
-              SearchResult<SNode> result = new SearchResult<SNode>(instance, category);
+              SearchResult<SNode> result = new SearchResult<SNode>(((SNode) instance), category);
               myMigrationBySearchResult.put(result, migrationRefactoring);
               myResults.getSearchResults().add(result);
             }

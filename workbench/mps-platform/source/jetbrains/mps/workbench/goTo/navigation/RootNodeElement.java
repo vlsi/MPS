@@ -13,23 +13,23 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.goTo.index;
+package jetbrains.mps.workbench.goTo.navigation;
 
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
+import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
 
 public class RootNodeElement implements NavigationItem {
-  private BaseSNodeDescriptor myNodeResult;
+  private NodeDescriptor myNodeResult;
 
-  public RootNodeElement(BaseSNodeDescriptor nodeResult) {
+  public RootNodeElement(NodeDescriptor nodeResult) {
     myNodeResult = nodeResult;
   }
 
   public String getName() {
-    return myNodeResult.getNodeName();
+    return myNodeResult.getName();
   }
 
   public ItemPresentation getPresentation() {
@@ -41,7 +41,7 @@ public class RootNodeElement implements NavigationItem {
   }
 
   public SModelReference getModel() {
-    return myNodeResult.getModelReference();
+    return ((SModelReference) myNodeResult.getNodeReference().getModelReference());
   }
 
   public void navigate(boolean requestFocus) {

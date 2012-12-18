@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.findusages;
+package jetbrains.mps.workbench.findusages;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.psi.impl.cache.impl.id.FileTypeIdIndexer;
@@ -35,7 +35,6 @@ import java.util.Map.Entry;
 public class MPSModelsIndexer implements ApplicationComponent {
   public void initComponent() {
     IdTableBuilding.registerIdIndexer(MPSFileTypeFactory.MODEL_FILE_TYPE, new MyFileTypeIdIndexer());
-
   }
 
   public void disposeComponent() {

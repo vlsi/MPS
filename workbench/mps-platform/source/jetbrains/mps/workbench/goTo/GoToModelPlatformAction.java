@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.goTo;
+package jetbrains.mps.workbench.goTo;
 
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import com.intellij.ide.impl.ProjectPaneSelectInTarget;
@@ -33,7 +33,7 @@ import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.ModelUtil;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
+import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
 

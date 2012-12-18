@@ -131,8 +131,8 @@
       <add-to-group group-id="jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup"/>
     </action>
     <!--This action should be moved to MPSCore.xml as soon as we use Idea Project Tree in IDE-->
-    <action id="jetbrains.mps.workbench.actions.goTo.GoToModelPlatformAction"
-            class="jetbrains.mps.workbench.actions.goTo.GoToModelPlatformAction"
+    <action id="jetbrains.mps.workbench.goTo.GoToModelPlatformAction"
+            class="jetbrains.mps.workbench.goTo.GoToModelPlatformAction"
             text="MPS Model...">
       <add-to-group group-id="GoToMenu"
                     anchor="first"/>

@@ -28,12 +28,12 @@ public class FastGoToRegistry implements CoreComponent {
 
   private Map<String, NodeNavigationContributor> myRootType2Contributor = new HashMap<String, NodeNavigationContributor>();
 
-  public void addNavigationContributor(String id, NodeNavigationContributor contributor) {
-    myRootType2Contributor.put(id, contributor);
-  }
-
-  public void removeNavigationContributor(String id) {
-    myRootType2Contributor.remove(id);
+  public void setNavigationContributor(String id, NodeNavigationContributor contributor) {
+    if (contributor!=null){
+      myRootType2Contributor.put(id, contributor);
+    }else {
+      myRootType2Contributor.remove(id);
+    }
   }
 
   public NodeNavigationContributor getNavigationContributor(String id) {

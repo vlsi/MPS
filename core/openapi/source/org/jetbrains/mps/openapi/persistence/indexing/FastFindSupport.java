@@ -17,6 +17,7 @@ package org.jetbrains.mps.openapi.persistence.indexing;
 
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
@@ -26,5 +27,5 @@ import java.util.Set;
 public interface FastFindSupport {
   Map<SModel, Collection<SConcept>> findModelsWithPossibleInstances(Collection<SModel> models, Set<SConcept> concepts);
 
-  Map<SModel, Collection<SNodeReference>> findModelsWithPossibleUsages(Collection<SModel> models, Set<SNodeReference> nodes);
+  Map<SModel, Collection<SNode>> findModelsWithPossibleUsages(Collection<SModel> models, Set<SNode> nodes);
 }

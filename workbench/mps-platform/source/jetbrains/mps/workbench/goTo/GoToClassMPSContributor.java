@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.workbench.actions.goTo;
+package jetbrains.mps.workbench.goTo;
 
 import com.intellij.navigation.GotoClassContributor;
 import com.intellij.navigation.NavigationItem;

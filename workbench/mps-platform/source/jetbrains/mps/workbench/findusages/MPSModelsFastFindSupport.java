@@ -13,20 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.findusages;
+package jetbrains.mps.workbench.findusages;
 
 import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import com.intellij.util.indexing.FileBasedIndex;
-import jetbrains.mps.findUsages.fastfind.FastFindSupport;
-import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import jetbrains.mps.util.containers.MultiMap;
@@ -34,19 +32,26 @@ import jetbrains.mps.util.containers.SetBasedMultiMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.persistence.indexing.FastFindSupport;
+import org.jetbrains.mps.openapi.persistence.indexing.FastFindUsagesRegistry;
 
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindSupport {
   private static Logger LOG = Logger.getLogger(MPSModelsFastFindSupport.class);
 
   public void initComponent() {
-    FastFindSupportRegistry.getInstance().addFastFindSupport(DefaultSModelDescriptor.FAST_FIND_ID, this);
+    FastFindUsagesRegistry.getInstance().setFastFindSupport(PersistenceRegistry.DEFAULT_MODEL_ROOT, this);
   }
 
   public void disposeComponent() {
-    FastFindSupportRegistry.getInstance().removeFastFindSupport(DefaultSModelDescriptor.FAST_FIND_ID);
+    FastFindUsagesRegistry.getInstance().setFastFindSupport(PersistenceRegistry.DEFAULT_MODEL_ROOT, null);
   }
 
   @NotNull
@@ -54,41 +59,40 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindS
     return MPSModelsFastFindSupport.class.getSimpleName();
   }
 
-  public MultiMap<SModelDescriptor, SNode> findModelsWithPossibleUsages(Set<SModelDescriptor> models, Set<SNode> nodes) {
-    return findModels(models, nodes, new Mapper<SNode, String>() {
-      public String value(SNode key) {
+  public Map<SModel, Collection<org.jetbrains.mps.openapi.model.SNode>> findModelsWithPossibleUsages(Collection<SModel> models, Set<org.jetbrains.mps.openapi.model.SNode> nodes) {
+    return findModels(models, nodes, new Mapper<org.jetbrains.mps.openapi.model.SNode, String>() {
+      public String value(org.jetbrains.mps.openapi.model.SNode key) {
         return key.getSNodeId().toString();
       }
     });
   }
 
-  public MultiMap<SModelDescriptor, String> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> conceptNames) {
-    return findModels(models, conceptNames, new Mapper<String, String>() {
-      public String value(String key) {
-        return key.substring(key.lastIndexOf('.') + 1);
+  public Map<SModel, Collection<SConcept>> findModelsWithPossibleInstances(Collection<SModel> models, Set<SConcept> concepts) {
+    return findModels(models, concepts, new Mapper<SConcept, String>() {
+      public String value(SConcept key) {
+        return key.getName();
       }
     });
   }
 
-  private <T> MultiMap<SModelDescriptor, T> findModels(Set<SModelDescriptor> models, Set<T> elems, @Nullable Mapper<T, String> id) {
-    MultiMap<SModelDescriptor, T> result = new SetBasedMultiMap<SModelDescriptor, T>();
+  private <T> Map<SModel, Collection<T>> findModels(Collection<SModel> models, Set<T> elems, @Nullable Mapper<T, String> id) {
+    MultiMap<SModel, T> result = new SetBasedMultiMap<SModel, T>();
     for (T elem : elems) {
       String nodeId = id == null ? elem.toString() : id.value(elem);
 
       //get all files in scope
       ManyToManyMap<SModelDescriptor, VirtualFile> scopeFiles = new ManyToManyMap<SModelDescriptor, VirtualFile>();
-      for (SModelDescriptor sm : models) {
+      for (SModel sm : models) {
         assert sm instanceof DefaultSModelDescriptor : "a non-regular model is passed to FindSupport designed for regular models";
         IFile modelFile = ((DefaultSModelDescriptor) sm).getSource().getFile();
-        if (modelFile == null) continue;
 
         VirtualFile vf = VirtualFileUtils.getVirtualFile(modelFile);
         if (vf == null) {
-          LOG.warning("Model " + sm.getLongName() + ": virtual file not found for model file. Model file: " + modelFile.getPath());
+          LOG.warning("Model " + ((DefaultSModelDescriptor) sm).getLongName() + ": virtual file not found for model file. Model file: " + modelFile.getPath());
           continue;
         }
 
-        scopeFiles.addLink(sm, vf);
+        scopeFiles.addLink(((DefaultSModelDescriptor) sm), vf);
       }
 
       //filter files with usages
@@ -102,6 +106,11 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindS
         }
       }
     }
-    return result;
+
+    Map<SModel, Collection<T>> res = new HashMap<SModel, Collection<T>>();
+    for (Entry<SModel, Collection<T>> e : result.entrySet()) {
+      res.put(e.getKey(), e.getValue());
+    }
+    return res;
   }
 }

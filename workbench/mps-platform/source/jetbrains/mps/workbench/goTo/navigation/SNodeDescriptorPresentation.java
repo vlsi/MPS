@@ -13,27 +13,27 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.goTo.index;
+package jetbrains.mps.workbench.goTo.navigation;
 
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
 import jetbrains.mps.workbench.choose.base.BasePresentation;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
 
 import javax.swing.Icon;
 
 public class SNodeDescriptorPresentation extends BasePresentation {
-  private BaseSNodeDescriptor myNodeResult;
+  private NodeDescriptor myNodeResult;
 
-  public SNodeDescriptorPresentation(BaseSNodeDescriptor nodeResult) {
+  public SNodeDescriptorPresentation(NodeDescriptor nodeResult) {
     myNodeResult = nodeResult;
   }
 
   public String getModelName() {
-    SModelReference mr = myNodeResult.getModelReference();
+    SModelReference mr = ((SModelReference) myNodeResult.getNodeReference().getModelReference());
     SModelFqName modelFqName = mr.getSModelFqName();
     if (modelFqName!=null) return modelFqName.toString();
     return SModelRepository.getInstance().getModelDescriptor(mr).getLongName();
@@ -41,7 +41,7 @@ public class SNodeDescriptorPresentation extends BasePresentation {
 
   @NotNull
   public String doGetPresentableText() {
-    return myNodeResult.getNodeName();
+    return myNodeResult.getName();
   }
 
   public String doGetLocationString() {
@@ -49,7 +49,7 @@ public class SNodeDescriptorPresentation extends BasePresentation {
   }
 
   public Icon doGetIcon() {
-    String conceptFqName = myNodeResult.getConceptFqName();
+    String conceptFqName = myNodeResult.getConcept().getId();
 
     //we don't use alternative icon here since it's very expensive and slows down Ctrl+N popup considerably
     return IconManager.getIconForConceptFQName(conceptFqName);

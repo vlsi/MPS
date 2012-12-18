@@ -5,7 +5,7 @@ package jetbrains.mps.debugger.java.runtime.ui.breakpoints;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import java.util.Map;
 import java.util.List;
-import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
+import jetbrains.mps.workbench.actions.goTo.providers.descriptor.BaseSNodeDescriptor;
 import java.util.LinkedHashMap;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.project.IModule;

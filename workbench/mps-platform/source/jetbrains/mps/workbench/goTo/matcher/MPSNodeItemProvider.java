@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.workbench.actions.goTo.matcher;
+package jetbrains.mps.workbench.goTo.matcher;
 
 import com.intellij.concurrency.JobLauncher;
 import com.intellij.ide.util.gotoByName.*;
@@ -22,13 +22,11 @@ import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.progress.ProcessCanceledException;
 import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.openapi.util.Comparing;
-import com.intellij.openapi.util.Computable;
 import com.intellij.openapi.util.Pair;
 import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.codeStyle.MinusculeMatcher;
 import com.intellij.psi.codeStyle.NameUtil;
-import com.intellij.psi.codeStyle.NameUtil.Matcher;
 import com.intellij.psi.util.proximity.PsiProximityComparator;
 import com.intellij.util.Function;
 import com.intellij.util.Processor;

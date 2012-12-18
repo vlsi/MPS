@@ -33,7 +33,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vfs.VfsUtilCore;
 import com.intellij.openapi.vfs.VirtualFileVisitor;
-import jetbrains.mps.ide.findusages.ConcreteFilesGlobalSearchScope;
+import jetbrains.mps.workbench.findusages.ConcreteFilesGlobalSearchScope;
 import com.intellij.util.indexing.FileBasedIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndex;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;

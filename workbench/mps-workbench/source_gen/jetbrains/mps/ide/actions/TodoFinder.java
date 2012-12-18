@@ -14,21 +14,25 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public class TodoFinder implements IFinder {
   public TodoFinder() {
   }
 
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
-    Set<SNode> nodes = (Set<SNode>) FindUsagesManager.getInstance().findUsages(Collections.singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TextCommentPart")), SearchType.INSTANCES, query.getScope(), null);
+    String cname = "jetbrains.mps.baseLanguage.structure.TextCommentPart";
+    SConcept concept = SConceptRepository.getInstance().getConcept(cname);
+    Set<org.jetbrains.mps.openapi.model.SNode> nodes =  FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, query.getScope(), null);
     SearchResults<SNode> results = new SearchResults<SNode>();
-    for (SNode node : nodes) {
-      String text = SPropertyOperations.getString(node, "text");
+    for (org.jetbrains.mps.openapi.model.SNode node : nodes) {
+      String text = SPropertyOperations.getString(((SNode) node), "text");
       if (text == null) {
         continue;
       }
       if (text.toLowerCase().startsWith("todo:")) {
-        results.getSearchResults().add(new SearchResult<SNode>(node, "TODO items"));
+        results.getSearchResults().add(new SearchResult<SNode>(((SNode) node), "TODO items"));
       }
     }
     return results;

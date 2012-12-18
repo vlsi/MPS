@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.goTo;
+package jetbrains.mps.workbench.goTo;
 
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;

@@ -79,7 +79,7 @@ public class HighlightUsages_Action extends BaseAction {
           NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
           EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
           SNode node = ((EditorCell) MapSequence.fromMap(_params).get("editorCell")).getSNodeWRTReference();
-          Set<SReference> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(node), SearchType.USAGES, new ModelsOnlyScope(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))), null);
+          Set<org.jetbrains.mps.openapi.model.SReference> usages = FindUsagesManager.getInstance().findUsages(Collections.<org.jetbrains.mps.openapi.model.SNode>singleton(node), SearchType.USAGES, new ModelsOnlyScope(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))), null);
           boolean highlight = highlightManager.getMessagesFor(node, messageOwner).isEmpty();
           if (SNodeOperations.getContainingRoot(node) == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getTopmostAncestor()) {
             if (highlight) {
@@ -90,12 +90,12 @@ public class HighlightUsages_Action extends BaseAction {
               }
             }
           }
-          for (SReference ref : SetSequence.fromSet(usages)) {
+          for (org.jetbrains.mps.openapi.model.SReference ref : SetSequence.fromSet(usages)) {
             if (ref.getSourceNode().getTopmostAncestor() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getTopmostAncestor()) {
               if (highlight) {
-                highlightManager.mark(ref.getSourceNode(), HighlightConstants.USAGES_COLOR, "usage", messageOwner);
+                highlightManager.mark(((SNode) ref.getSourceNode()), HighlightConstants.USAGES_COLOR, "usage", messageOwner);
               } else {
-                for (EditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(ref.getSourceNode(), messageOwner))) {
+                for (EditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(((SNode) ref.getSourceNode()), messageOwner))) {
                   highlightManager.unmark(message);
                 }
               }

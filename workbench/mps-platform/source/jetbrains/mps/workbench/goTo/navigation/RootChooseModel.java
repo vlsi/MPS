@@ -13,139 +13,67 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.goTo.index;
+package jetbrains.mps.workbench.goTo.navigation;
 
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.psi.search.GlobalSearchScope;
-import com.intellij.util.indexing.FileBasedIndex;
-import com.intellij.util.indexing.ID;
 import jetbrains.mps.FilteredGlobalScope;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
-import jetbrains.mps.smodel.language.ConceptRegistry;
-import jetbrains.mps.smodel.loading.ModelLoadingState;
-import jetbrains.mps.smodel.runtime.PropertyConstraintsDescriptor;
-import jetbrains.mps.smodel.runtime.base.BasePropertyConstraintsDescriptor;
-import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
-import jetbrains.mps.workbench.actions.goTo.index.descriptor.SNodeDescriptor;
+import jetbrains.mps.smodel.BaseScope;
+import jetbrains.mps.smodel.IScope;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelStereotype;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.choose.base.ModulesOnlyScope;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
 
 import java.util.ArrayList;
-import java.util.HashSet;
+import java.util.Collection;
 import java.util.List;
-import java.util.Set;
 
-public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescriptor> {
-  public BaseSNodeDescriptorIndex myIndex;
+public class RootChooseModel extends BaseMPSChooseModel<NodeDescriptor> {
+  public RootNodeNameIndex myIndex;
 
-  public MPSChooseSNodeDescriptor(Project project, BaseSNodeDescriptorIndex index) {
+  public RootChooseModel(Project project, RootNodeNameIndex index) {
     super(project, "node");
     myIndex = index;
   }
 
   @Override
-  public BaseSNodeDescriptor[] find(boolean checkboxState) {
+  public NodeDescriptor[] find(boolean checkboxState) {
     if (checkboxState) return find(new FilteredGlobalScope());
     MPSProject project = getProject().getComponent(MPSProject.class);
     return find(new FilterStubsScope(new ModulesOnlyScope(project.getModulesWithGenerators())));
   }
 
-  public BaseSNodeDescriptor[] find(final IScope scope) {
-    final Set<BaseSNodeDescriptor> keys = new HashSet<BaseSNodeDescriptor>();
-
-    final ID<Integer, List<BaseSNodeDescriptor>> indexName = myIndex.getName();
-    final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
-
-    Set<SModelDescriptor> findDirectly = new HashSet<SModelDescriptor>();
-
-    for (SModelDescriptor sm : scope.getModelDescriptors()) {
-      if (!SModelStereotype.isUserModel(sm)) continue;
-
-      if (!(sm instanceof DefaultSModelDescriptor)) {
-        if (sm.isLoaded()) {
-          findDirectly.add(sm);
-        }
-        continue;
-      }
-
-      DefaultSModelDescriptor esm = (DefaultSModelDescriptor) sm;
-      if (esm.getLoadingState() == ModelLoadingState.FULLY_LOADED) {
-        findDirectly.add(sm);
-        continue;
-      }
-
-      IFile modelFile = esm.getSource().getFile();
-      VirtualFile vf = VirtualFileUtils.getVirtualFile(modelFile);
-      if (vf == null) continue; // e.g. model was deleted
-
-      int fileId = FileBasedIndex.getFileId(vf);
-
-      List<List<BaseSNodeDescriptor>> descriptors = fileBasedIndex.getValues(indexName, fileId, GlobalSearchScope.fileScope(getProject(), vf));
-      if (descriptors.isEmpty()) continue;
-
-      boolean needToLoad = false;
-      for (BaseSNodeDescriptor snd : descriptors.get(0)) {
-        PropertyConstraintsDescriptor descriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(snd.getConceptFqName()).getProperty(SNodeUtil.property_INamedConcept_name);
-        if (descriptor instanceof BasePropertyConstraintsDescriptor && !((BasePropertyConstraintsDescriptor) descriptor).isGetterDefault()) {
-          needToLoad = true;
-          break;
-        }
-      }
-
-      if (needToLoad) {
-        findDirectly.add(sm);
-      } else {
-        keys.addAll(descriptors.get(0));
-      }
-    }
-
-    for (SModelDescriptor sm : findDirectly) {
-      for (SNode root : myIndex.getRootsToIterate(sm.getSModel())) {
-        String nodeName = (root.getName() == null) ? "null" : root.getName();
-        BaseSNodeDescriptor nodeDescriptor = SNodeDescriptor.fromModelReference(
-          nodeName, root.getConcept().getId(), root.getModel().getSModelReference(), root.getSNodeId());
-        keys.add(nodeDescriptor);
-      }
-    }
-
-    //java stubs
-    for (SModelDescriptor m : scope.getModelDescriptors()) {
-      keys.addAll(StubsNodeDescriptorsCache.getInstance().getSNodeDescriptors(m.getSModelReference()));
-    }
-
-    return keys.toArray(new BaseSNodeDescriptor[keys.size()]);
+  public NodeDescriptor[] find(final IScope scope) {
+    Collection<NodeDescriptor> nodes = GotoNavigationUtil.getNodeElements(scope.getModelDescriptors(), ProjectHelper.toMPSProject(getProject()));
+    return nodes.toArray(new NodeDescriptor[nodes.size()]);
   }
 
-  public NavigationItem doGetNavigationItem(final BaseSNodeDescriptor object) {
+  public NavigationItem doGetNavigationItem(final NodeDescriptor object) {
     return new RootNodeElement(object) {
       private Project myProject = getProject();
 
       public void navigate(boolean requestFocus) {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           public void run() {
-            SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(object.getModelReference());
-            if (descriptor == null) {
-              LOG.error("Can't find model descriptor for: " + object.getModelReference());
-              return;
-            }
-
-            SModel model = descriptor.getSModel();
-            SNode node = object.getNode(model);
+            SNode node = ((SNode) object.getNodeReference().resolve(MPSModuleRepository.getInstance()));
             if (node == null) {
-              LOG.error("Can't find node for: " + object.getId());
+              LOG.error("Can't find node for: " + object.getNodeReference());
               return;
             }
 
@@ -157,8 +85,8 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
     };
   }
 
-  public String doGetObjectName(BaseSNodeDescriptor object) {
-    return object.getNodeName();
+  public String doGetObjectName(NodeDescriptor object) {
+    return object.getName();
   }
 
   public String doGetFullName(Object element) {

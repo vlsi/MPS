@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.goTo.matcher;
+package jetbrains.mps.workbench.goTo.matcher;
 
 import com.intellij.ide.util.gotoByName.ChooseByNameBase;
 import com.intellij.ide.util.gotoByName.ChooseByNameItemProvider;

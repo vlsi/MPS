@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.goTo.matcher;
+package jetbrains.mps.workbench.goTo.ui;
 
 import com.intellij.ide.util.gotoByName.ChooseByNameItemProvider;
 import com.intellij.ide.util.gotoByName.ChooseByNameModel;
@@ -24,6 +24,9 @@ import com.intellij.openapi.actionSystem.Shortcut;
 import com.intellij.openapi.keymap.KeymapManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.workbench.action.BaseAction;
+import jetbrains.mps.workbench.goTo.matcher.CompositeItemProvider;
+import jetbrains.mps.workbench.goTo.matcher.MPSNodeItemProvider;
+import jetbrains.mps.workbench.goTo.matcher.MPSPackageItemProvider;
 import jetbrains.mps.workbench.choose.base.FakePsiContext;
 import org.jetbrains.annotations.Nullable;
 

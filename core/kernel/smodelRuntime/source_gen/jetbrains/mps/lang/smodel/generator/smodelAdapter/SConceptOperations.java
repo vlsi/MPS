@@ -23,6 +23,8 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.findUsages.SearchType;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public final class SConceptOperations {
   private SConceptOperations() {
@@ -131,7 +133,9 @@ public final class SConceptOperations {
     if (scope == null) {
       scope = GlobalScope.getInstance();
     }
-    return ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findUsages(Collections.singleton(conceptDeclarationNode), SearchType.INSTANCES, scope, null));
+    String cId = NameUtil.nodeFQName(conceptDeclarationNode);
+    SConcept concept = SConceptRepository.getInstance().getConcept(cId);
+    return ((List) ListSequence.fromListWithValues(new ArrayList<org.jetbrains.mps.openapi.model.SNode>(), FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, scope, null)));
   }
 
   public static SNode createNewNode(String conceptFqName) {

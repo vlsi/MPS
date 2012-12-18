@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.workbench.actions.goTo.index;
+package jetbrains.mps.workbench.goTo.index;
 
 import com.intellij.util.io.KeyDescriptor;
 
@@ -23,38 +23,40 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-class ListEnumerator<T> implements KeyDescriptor<List<T>> {
+/**
+ * Class to support List &lt;SNode&gt; handling in index
+ */
+class SNodeDescriptorListEnumerator implements KeyDescriptor<List<SNodeDescriptor>> {
+  public SNodeDescriptorListEnumerator() {
 
-  private KeyDescriptor<T> myElementKeyDescriptor;
-
-  ListEnumerator(KeyDescriptor<T> elementKeyDescriptor) {
-    myElementKeyDescriptor = elementKeyDescriptor;
   }
 
   @Override
-  public int getHashCode(List<T> value) {
+  public int getHashCode(List<SNodeDescriptor> value) {
     return value.hashCode();
   }
 
   @Override
-  public boolean isEqual(List<T> val1, List<T> val2) {
+  public boolean isEqual(List<SNodeDescriptor> val1, List<SNodeDescriptor> val2) {
     return val1.equals(val2);
   }
 
   @Override
-  public void save(DataOutput out, List<T> value) throws IOException {
+  public void save(DataOutput out, List<SNodeDescriptor> value) throws IOException {
     out.writeInt(value.size());
-    for (T item : value) {
-      myElementKeyDescriptor.save(out, item);
+    for (SNodeDescriptor item : value) {
+      item.save(out);
     }
   }
 
   @Override
-  public List<T> read(DataInput in) throws IOException {
+  public List<SNodeDescriptor> read(DataInput in) throws IOException {
     int size = in.readInt();
-    List<T> result = new ArrayList<T>();
+    List<SNodeDescriptor> result = new ArrayList<SNodeDescriptor>();
     for (int i = 0; i < size; i++) {
-      result.add(myElementKeyDescriptor.read(in));
+      SNodeDescriptor d = new SNodeDescriptor();
+      d.read(in);
+      result.add(d);
     }
     return result;
   }
