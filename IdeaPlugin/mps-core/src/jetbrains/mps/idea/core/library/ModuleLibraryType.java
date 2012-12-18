@@ -102,7 +102,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
       return null;
     }
 
-    String name = ModuleRuntimeLibrariesImporter.LIBRARY_PREFIX + chosenElements.get(0).getModuleFqName();
+    String name = ModuleLibrariesUtil.LIBRARY_PREFIX + chosenElements.get(0).getModuleFqName();
     if (chosenElements.size() > 1) {
       name += "...";
     }
@@ -160,7 +160,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
     return new MyLibraryRootsComponentDescriptor();
   }
 
-  public static boolean isSolutionLibrary(Library l) {
+  public static boolean isModuleLibrary(Library l) {
     if (l instanceof LibraryEx) {
       return ((LibraryEx) l).getType() instanceof ModuleLibraryType;
     }

@@ -33,7 +33,7 @@ public class MPSProjectLibImporter extends BaseLibImporter implements ProjectCom
 
   @Override
   protected void addModuleForLibrary(Library l) {
-    if (ModuleLibraryType.isSolutionLibrary(l)) {
+    if (ModuleLibraryType.isModuleLibrary(l)) {
       return;
     }
     super.addModuleForLibrary(l);

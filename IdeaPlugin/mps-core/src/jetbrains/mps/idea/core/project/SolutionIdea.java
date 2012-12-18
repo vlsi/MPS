@@ -73,7 +73,7 @@ public class SolutionIdea extends Solution {
       @Override
       public void run() {
         for (final Library library : projectLibraryTable.getLibraries()) {
-          if (ModuleLibraryType.isSolutionLibrary(library)) {
+          if (ModuleLibraryType.isModuleLibrary(library)) {
             library.getRootProvider().addRootSetChangedListener(myRootSetListener);
           }
         }
@@ -101,7 +101,7 @@ public class SolutionIdea extends Solution {
       @Override
       public void run() {
         for (final Library library : projectLibraryTable.getLibraries()) {
-          if (ModuleLibraryType.isSolutionLibrary(library)) {
+          if (ModuleLibraryType.isModuleLibrary(library)) {
             library.getRootProvider().addRootSetChangedListener(myRootSetListener);
           }
         }
@@ -173,7 +173,7 @@ public class SolutionIdea extends Solution {
           return true;
         }
 
-        if (ModuleLibraryType.isSolutionLibrary(library)) {
+        if (ModuleLibraryType.isModuleLibrary(library)) {
           Set<ModuleReference> moduleReferences = ModuleLibrariesUtil.getModules(library);
           for (ModuleReference moduleReference : moduleReferences) {
             if (modules.containsKey(moduleReference)) {
@@ -357,7 +357,7 @@ public class SolutionIdea extends Solution {
 
     @Override
     public void afterLibraryAdded(final Library newLibrary) {
-      if (ModuleLibraryType.isSolutionLibrary(newLibrary)) {
+      if (ModuleLibraryType.isModuleLibrary(newLibrary)) {
         newLibrary.getRootProvider().addRootSetChangedListener(myRootSetListener);
       }
     }
