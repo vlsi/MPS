@@ -26,7 +26,6 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.library.ModulesMiner.ModuleHandle;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 
@@ -48,17 +47,14 @@ public class ModuleXmlRootDetector extends RootDetector {
 
     List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(VirtualFileUtils.toIFile(rootCandidate), false);
     for (ModuleHandle handle : moduleHandles) {
-      // need only solutions (used languages are imported in a standard mps way)
-      if (handle.getDescriptor() instanceof SolutionDescriptor) {
-        // need only loaded modules
-        // we may want loading in the future, but the time has not come yet
-        if (ModuleRepositoryFacade.getInstance().getModule(handle.getDescriptor().getModuleReference()) != null) {
-          VirtualFile ideaFile = VirtualFileUtils.getVirtualFile(handle.getFile());
-          // we compare file system since idea has been very, very bad:( See DetectedRootsChooserDialog.createTreeTable
-          // problem in VfsUtilCore.getRelativePath
-          if (ideaFile != null && ideaFile.getFileSystem() == rootCandidate.getFileSystem()) {
-            result.add(ideaFile);
-          }
+      // need only loaded modules
+      // we may want loading in the future, but the time has not come yet
+      if (ModuleRepositoryFacade.getInstance().getModule(handle.getDescriptor().getModuleReference()) != null) {
+        VirtualFile ideaFile = VirtualFileUtils.getVirtualFile(handle.getFile());
+        // we compare file system since idea has been very, very bad:( See DetectedRootsChooserDialog.createTreeTable
+        // problem in VfsUtilCore.getRelativePath
+        if (ideaFile != null && ideaFile.getFileSystem() == rootCandidate.getFileSystem()) {
+          result.add(ideaFile);
         }
       }
     }
