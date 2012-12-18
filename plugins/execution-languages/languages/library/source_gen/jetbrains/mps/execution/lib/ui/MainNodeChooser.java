@@ -84,16 +84,17 @@ public class MainNodeChooser<C extends SNode> extends AbstractMainNodeChooser {
   }
 
   protected List<SNode> findToChooseFromOnInit(FindUsagesManager manager, ProgressMonitor monitor) {
-    Set<SNode> instances = manager.findUsages(Collections.singleton(((SNode) this.myTargetConcept)), SearchType.INSTANCES, myScope, monitor);
-    if (this.myAcceptor == null) {
-      return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);
-    } else {
-      return ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SNode>(), instances)).where(new IWhereFilter<SNode>() {
-        public boolean accept(SNode it) {
-          return MainNodeChooser.this.myAcceptor.invoke(it);
-        }
-      }).toListSequence();
-    }
+//    Set<SNode> instances = manager.findUsages(Collections.singleton(((SNode) this.myTargetConcept)), SearchType.INSTANCES, myScope, monitor);
+//    if (this.myAcceptor == null) {
+//      return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);
+//    } else {
+//      return ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SNode>(), instances)).where(new IWhereFilter<SNode>() {
+//        public boolean accept(SNode it) {
+//          return MainNodeChooser.this.myAcceptor.invoke(it);
+//        }
+//      }).toListSequence();
+//    }
+    return new ArrayList<SNode>();
   }
 
   protected List<SModelDescriptor> getModelDescriptors(String model) {

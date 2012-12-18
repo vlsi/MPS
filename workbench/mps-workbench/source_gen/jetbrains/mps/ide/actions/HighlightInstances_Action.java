@@ -76,16 +76,16 @@ public class HighlightInstances_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
-      EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
-
-      Set<SNode> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")))), SearchType.INSTANCES, new ModelsOnlyScope(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))), null);
-      for (SNode ref : SetSequence.fromSet(usages)) {
-        if (ref.getTopmostAncestor() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getTopmostAncestor()) {
-          highlightManager.mark(ref, HighlightConstants.INSTANCES_COLOR, "usage", messageOwner);
-        }
-      }
-      highlightManager.repaintAndRebuildEditorMessages();
+//      NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
+//      EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
+//
+//      Set<SNode> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")))), SearchType.INSTANCES, new ModelsOnlyScope(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))), null);
+//      for (SNode ref : SetSequence.fromSet(usages)) {
+//        if (ref.getTopmostAncestor() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getTopmostAncestor()) {
+//          highlightManager.mark(ref, HighlightConstants.INSTANCES_COLOR, "usage", messageOwner);
+//        }
+//      }
+//      highlightManager.repaintAndRebuildEditorMessages();
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "HighlightInstances", t);
     }

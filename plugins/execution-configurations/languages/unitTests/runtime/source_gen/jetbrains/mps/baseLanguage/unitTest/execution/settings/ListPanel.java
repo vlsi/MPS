@@ -162,9 +162,6 @@ public class ListPanel extends JPanel {
           final List<SNode> nodesList = new ArrayList<SNode>();
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
-              for (SNode concept : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts())) {
-                ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, GlobalScope.getInstance(), new ProgressMonitorAdapter(ProgressManager.getInstance().getProgressIndicator()))));
-              }
             }
           });
           if (ListPanel.this.myIsTestMethods) {

@@ -57,11 +57,6 @@ public abstract class StubsClassChooserDialog extends DialogWrapper {
 
   @Override
   protected void doOKAction() {
-    BaseSNodeDescriptor chosenElement = (BaseSNodeDescriptor) myPanel.getChosenElement();
-    if (chosenElement != null) {
-      mySelected = myModel.getFullName(chosenElement);
-    }
-    super.doOKAction();
   }
 
   protected abstract boolean isValid(SNode node);

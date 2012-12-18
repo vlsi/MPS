@@ -42,15 +42,6 @@ public class ModelChooser extends BaseChooserComponent {
     ListSequence.fromList(this.myCheckedModels).clear();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<SNode> nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findUsages(Collections.singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SearchType.INSTANCES, GlobalScope.getInstance(), null));
-        for (SNode node : nodes) {
-          SModel model = SNodeOperations.getModel(node);
-          SModelReference md = model.getSModelReference();
-          if (ListSequence.fromList(ModelChooser.this.myCheckedModels).contains(md)) {
-            continue;
-          }
-          ListSequence.fromList(ModelChooser.this.myCheckedModels).addElement(md);
-        }
       }
     });
   }
