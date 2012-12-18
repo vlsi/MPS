@@ -26,15 +26,18 @@ import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable.Listener;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.idea.core.project.stubs.AbstractJavaStubSolutionManager;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.LanguageID;
-import jetbrains.mps.smodel.MPSModuleOwner;
-import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.HashSet;
+import java.util.Set;
 
 public abstract class StubSolutionIdea extends StubSolution {
   private final RootSetChangedListener myRootSetChangedListener = new RootSetChangedListener() {
@@ -96,6 +99,33 @@ public abstract class StubSolutionIdea extends StubSolution {
     super.dispose();
   }
 
+  @Override
+  protected ModuleScope createScope() {
+    return new StubSolutionScope();
+  }
+
+  @Nullable
+  public static Solution getJdkSolution() {
+    return (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065"));
+  }
+
+  private class StubSolutionScope extends ModuleScope {
+    @Override
+    protected Set<IModule> getInitialModules() {
+      Set<IModule> modules = new HashSet<IModule>();
+
+      // explicitly add jdk
+      // todo: remove when sdk are loaded correctly
+      Solution jdkSolutionReference = getJdkSolution();
+      if (jdkSolutionReference != null) {
+        modules.add(jdkSolutionReference);
+      }
+
+      modules.addAll(ModuleRepositoryFacade.getInstance().getAllModules(StubSolutionIdea.class));
+      return modules;
+    }
+  }
+
   private static class LibraryStubSolution extends StubSolutionIdea {
     @NotNull
     private final Library myLibrary;
@@ -104,6 +134,7 @@ public abstract class StubSolutionIdea extends StubSolution {
       super(descriptor);
       myLibrary = library;
       attachRootsListener();
+      // todo handle rename; no idea how
     }
 
     @Override

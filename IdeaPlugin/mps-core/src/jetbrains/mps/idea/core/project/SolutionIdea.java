@@ -148,7 +148,7 @@ public class SolutionIdea extends Solution {
       // adding JDK module to a set of dependencies
       // why, oh, why are we doing it?
       // FIXME, PLEASE!
-      Solution jdkSolution = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065"));
+      Solution jdkSolution = StubSolutionIdea.getJdkSolution();
       if (jdkSolution != null) {
         myDependencies.add(new Dependency(jdkSolution.getModuleReference(), false));
       }
