@@ -54,7 +54,12 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   public void setModelRoot(ModelRoot modelRoot) {
-    assert myModelRoot == null;
+    if (myModelRoot != null && modelRoot != null) {
+      LOG.error("Duplicate model roots for model " + getLongName() + " in module " + modelRoot.getModule() + ": \n" +
+        "1. " + myModelRoot.getPresentation() + "\n" +
+        "2. " + modelRoot.getPresentation()
+      );
+    }
     myModelRoot = modelRoot;
   }
 
