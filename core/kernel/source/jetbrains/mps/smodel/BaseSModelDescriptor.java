@@ -29,16 +29,15 @@ import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.IOException;
 import java.util.List;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 public abstract class BaseSModelDescriptor implements SModelDescriptor {
+
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
 
-  private ModelRoot myModelRoot;
   @NotNull
   private final DataSource mySource;
   @NotNull
@@ -51,15 +50,6 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   protected BaseSModelDescriptor(@NotNull SModelReference modelReference, @NotNull DataSource source) {
     myModelReference = modelReference;
     mySource = source;
-  }
-
-  public void setModelRoot(ModelRoot modelRoot) {
-    assert myModelRoot == null;
-    myModelRoot = modelRoot;
-  }
-
-  public ModelRoot getModelRoot() {
-    return myModelRoot;
   }
 
   @Override
