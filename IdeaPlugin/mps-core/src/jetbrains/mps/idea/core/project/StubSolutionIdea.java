@@ -59,12 +59,6 @@ public abstract class StubSolutionIdea extends StubSolution {
     super(descriptor, null);
   }
 
-  protected void attachRootsListener() {
-    getRootProvider().addRootSetChangedListener(myRootSetChangedListener);
-  }
-
-  protected abstract RootProvider getRootProvider();
-
   public static Solution newInstance(Library library, MPSModuleOwner moduleOwner) {
     SolutionDescriptor descriptor = createDescriptor(library.getName(), library.getFiles(OrderRootType.CLASSES));
     return register(descriptor, moduleOwner, new LibraryStubSolution(descriptor, library));
@@ -75,13 +69,19 @@ public abstract class StubSolutionIdea extends StubSolution {
     return register(descriptor, moduleOwner, new SdkStubSolution(descriptor, sdk));
   }
 
-  public static SolutionDescriptor createDescriptor(String name, VirtualFile[] roots) {
+  private static SolutionDescriptor createDescriptor(String name, VirtualFile[] roots) {
     SolutionDescriptor sd = new SolutionDescriptor();
     sd.setNamespace(name);
     sd.setId(ModuleId.foreign(name));
     addModelRoots(sd, roots);
     return sd;
   }
+
+  protected void attachRootsListener() {
+    getRootProvider().addRootSetChangedListener(myRootSetChangedListener);
+  }
+
+  protected abstract RootProvider getRootProvider();
 
   public static void addModelRoots(SolutionDescriptor solutionDescriptor, VirtualFile[] roots) {
     for (VirtualFile f : roots) {
