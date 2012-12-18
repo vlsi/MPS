@@ -205,7 +205,7 @@ public class SolutionIdea extends Solution {
   public void addDependency(@NotNull ModuleReference moduleRef, boolean reexport) {
     // we do not add a dependency into solution, we add dependency to idea module instead
     ModifiableRootModel modifiableModel = ModuleRootManager.getInstance(myModule).getModifiableModel();
-    new ModuleRuntimeLibrariesImporter(myModule, Collections.singleton(moduleRef), modifiableModel).addMissingLibraries();
+    ModuleRuntimeLibrariesImporter.importForUsedModules(myModule, Collections.singleton(moduleRef), modifiableModel);
     modifiableModel.commit();
   }
 
@@ -213,7 +213,7 @@ public class SolutionIdea extends Solution {
   public void addUsedLanguage(ModuleReference langRef) {
     super.addUsedLanguage(langRef);
     ModifiableRootModel modifiableModel = ModuleRootManager.getInstance(myModule).getModifiableModel();
-    new ModuleRuntimeLibrariesImporter(myModule, Collections.singletonList(langRef), modifiableModel).addMissingLibraries();
+    ModuleRuntimeLibrariesImporter.importForUsedLanguages(myModule, Collections.singleton(langRef), modifiableModel);
     modifiableModel.commit();
   }
 

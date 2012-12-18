@@ -50,7 +50,7 @@ import java.util.*;
  * User: shatalin
  * Date: 6/8/12
  */
-public class ModuleRuntimeLibrariesImporter {
+public abstract class ModuleRuntimeLibrariesImporter {
   private static final String AUTO_SUFFIX = "_auto";
   public static final String LIBRARY_PREFIX = "mps.";
   private final Collection<ModuleReference> myAddedModules;
@@ -69,6 +69,18 @@ public class ModuleRuntimeLibrariesImporter {
     myAddedModules = addedModules;
     myModifiableRootModel = modifiableModel;
     myLibrariesContainer = container;
+  }
+
+  public static void importForUsedLanguages(FacetEditorContext context, Collection<ModuleReference> addedModules) {
+    new UsedLanguagesImporter(context, addedModules).addMissingLibraries();
+  }
+
+  public static void importForUsedLanguages(Module ideaModule, Collection<ModuleReference> addedModules, ModifiableRootModel modifiableModel) {
+    new UsedLanguagesImporter(ideaModule, addedModules, modifiableModel).addMissingLibraries();
+  }
+
+  public static void importForUsedModules(Module ideaModule, Collection<ModuleReference> addedModules, ModifiableRootModel modifiableModel) {
+    new UsedModulesImporter(ideaModule, addedModules, modifiableModel).addMissingLibraries();
   }
 
   public void addMissingLibraries() {
@@ -142,46 +154,67 @@ public class ModuleRuntimeLibrariesImporter {
     return myLibrariesContainer.createLibrary(editor, LibraryLevel.PROJECT);
   }
 
-  private Set<IModule> collectRuntimeModules(Collection<ModuleReference> moduleReferences) {
-    Set<IModule> runtimeDependencies = new HashSet<IModule>();
-    for (ModuleReference moduleReference : moduleReferences) {
-      IModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
-      if (module instanceof Language) {
+  protected abstract Set<IModule> collectRuntimeModules(Collection<ModuleReference> moduleReferences);
+
+  private static class UsedLanguagesImporter extends ModuleRuntimeLibrariesImporter {
+
+    public UsedLanguagesImporter(FacetEditorContext context, Collection<ModuleReference> addedModules) {
+      super(context, addedModules);
+    }
+
+    public UsedLanguagesImporter(Module ideaModule, Collection<ModuleReference> addedModules, ModifiableRootModel modifiableModel) {
+      super(ideaModule, addedModules, modifiableModel);
+    }
+
+    protected Set<IModule> collectRuntimeModules(Collection<ModuleReference> moduleReferences) {
+      Set<IModule> runtimeDependencies = new HashSet<IModule>();
+      for (ModuleReference moduleReference : moduleReferences) {
+        IModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
+        assert module instanceof Language;
         collectRuntimeModules(runtimeDependencies, (Language) module);
-      } else if (module instanceof Solution && !(module instanceof SolutionIdea)) {
-        collectRuntimeModules(runtimeDependencies, (Solution) module);
+      }
+      return runtimeDependencies;
+    }
+
+    private void collectRuntimeModules(Set<IModule> runtimeDependencies, Language language) {
+      for (ModuleReference runtimeModuleReference : language.getRuntimeModulesReferences()) {
+        IModule runtimeModule = ModuleRepositoryFacade.getInstance().getModule(runtimeModuleReference);
+        if (runtimeModule != null) {
+          collectRuntimeDependencies(runtimeModule, runtimeDependencies);
+        }
       }
     }
-    return runtimeDependencies;
-  }
 
-  private void collectRuntimeModules(Set<IModule> runtimeDependencies, Language language) {
-    for (ModuleReference runtimeModuleReference : language.getRuntimeModulesReferences()) {
-      IModule runtimeModule = ModuleRepositoryFacade.getInstance().getModule(runtimeModuleReference);
-      if (runtimeModule != null) {
-        collectRuntimeDependencies(runtimeModule, runtimeDependencies);
+    private void collectRuntimeDependencies(IModule module, Set<IModule> result) {
+      if (result.contains(module)) {
+        return;
+      }
+      result.add(module);
+      for (IModule usedModule : module.getDependenciesManager().directlyUsedModules(Deptype.EXECUTE.reexportAll, Deptype.EXECUTE.runtimes)) {
+        collectRuntimeDependencies(usedModule, result);
       }
     }
   }
 
-  private void collectRuntimeModules(Set<IModule> runtimeDependencies, Solution solution) {
-    GlobalModuleDependenciesManager manager = new GlobalModuleDependenciesManager(Collections.singleton((IModule) solution));
-    runtimeDependencies.add(solution);
-    for (IModule module : manager.getModules(Deptype.COMPILE)) {
-      if (module instanceof Solution) {
-        runtimeDependencies.add(module);
+  private static class UsedModulesImporter extends ModuleRuntimeLibrariesImporter {
+    public UsedModulesImporter(Module ideaModule, Collection<ModuleReference> addedModules, ModifiableRootModel modifiableModel) {
+      super(ideaModule, addedModules, modifiableModel);
+    }
+
+    protected Set<IModule> collectRuntimeModules(Collection<ModuleReference> moduleReferences) {
+      Set<IModule> runtimeDependencies = new HashSet<IModule>();
+      for (ModuleReference moduleReference : moduleReferences) {
+        IModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
+        // we do not want stubs stuff
+        assert module.getDescriptorFile() != null;
+        collectRuntimeModules(runtimeDependencies, module);
       }
+      return runtimeDependencies;
+    }
+
+    private void collectRuntimeModules(Set<IModule> runtimeDependencies, IModule module) {
+      runtimeDependencies.add(module);
+      runtimeDependencies.addAll(new GlobalModuleDependenciesManager(Collections.singleton(module)).getModules(Deptype.COMPILE));
     }
   }
-
-  private void collectRuntimeDependencies(IModule module, Set<IModule> result) {
-    if (result.contains(module)) {
-      return;
-    }
-    result.add(module);
-    for (IModule usedModule : module.getDependenciesManager().directlyUsedModules(Deptype.EXECUTE.reexportAll, Deptype.EXECUTE.runtimes)) {
-      collectRuntimeDependencies(usedModule, result);
-    }
-  }
-
 }

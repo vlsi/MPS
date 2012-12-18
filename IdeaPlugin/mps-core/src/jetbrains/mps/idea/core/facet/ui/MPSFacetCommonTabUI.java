@@ -105,7 +105,7 @@ public class MPSFacetCommonTabUI implements IModuleConfigurationTab {
         ApplicationManager.getApplication().runWriteAction(new Runnable() {
           @Override
           public void run() {
-            new ModuleRuntimeLibrariesImporter(myContext, elementsToAdd).addMissingLibraries();
+            ModuleRuntimeLibrariesImporter.importForUsedLanguages(myContext, elementsToAdd);
           }
         });
       }
