@@ -10,9 +10,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.findusages.view.FindUtils;
-import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class QueryFinder implements IFinder {
@@ -27,19 +25,22 @@ public class QueryFinder implements IFinder {
   public SearchResults find(SearchQuery searchQuery, ProgressMonitor monitor) {
     Object queryObject = searchQuery.getObjectHolder().getObject();
     assert queryObject instanceof SNode;
-    SearchResults instances = FindUtils.getSearchResults(monitor, ((SNode) queryObject), searchQuery.getScope(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
-    List<SearchResult<SNode>> instancesList = instances.getSearchResults();
-    Iterator<SearchResult<SNode>> it = ListSequence.fromList(instancesList).iterator();
-    try {
-      while (it.hasNext()) {
-        SearchResult<SNode> current = it.next();
-        if (!(this.myQuery.isSatisfies(current.getObject()))) {
-          it.remove();
+
+    SearchResults<SNode> instances = FindUtils.getSearchResults(monitor, ((SNode) queryObject), searchQuery.getScope(), "jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder");
+
+    SearchResults<SNode> results = new SearchResults<SNode>();
+    results.getSearchedNodes().addAll(instances.getSearchedNodes());
+
+    for (SearchResult<SNode> instance : ListSequence.fromList(instances.getSearchResults())) {
+      try {
+        if (this.myQuery.isSatisfies(instance.getObject())) {
+          results.getSearchResults().add(instance);
         }
+      } catch (Exception e) {
+        LOG.warning("Exception on search query execution", e);
       }
-    } catch (Throwable t) {
-      LOG.warning("Exception on search query execution", t);
     }
-    return new SearchResults(instances.getSearchedNodes(), instancesList);
+
+    return results;
   }
 }
