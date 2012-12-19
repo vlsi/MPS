@@ -8,6 +8,7 @@ import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import java.util.Collection;
 import jetbrains.mps.smodel.descriptor.NodeDescriptor;
+import java.util.ArrayList;
 
 public class JavaStubModelDescriptor extends BaseStubModelDescriptor implements NodesNavigationContributor {
   public JavaStubModelDescriptor(SModelReference modelReference, JavaStubModelDataSource source, SModule module) {
@@ -15,6 +16,6 @@ public class JavaStubModelDescriptor extends BaseStubModelDescriptor implements 
   }
 
   public Collection<NodeDescriptor> getNodeDescriptors() {
-    return ((JavaStubModelDataSource) getSource()).getNodeDescriptors(this);
+    return new ArrayList();
   }
 }
