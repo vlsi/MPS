@@ -5,39 +5,40 @@
     <nodeInfo nodeId="6443678531916430908" fileName="FinderUtils.java" startLine="23" startPosition="72" endLine="24" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="19118734505264114" fileName="FinderUtils.java" startLine="29" startPosition="54" endLine="30" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="19118734505264138" fileName="FinderUtils.java" startLine="30" startPosition="107" endLine="31" endPosition="107" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="19118734505279368" fileName="FinderUtils.java" startLine="33" startPosition="101" endLine="34" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="579151324305928108" fileName="FinderUtils.java" startLine="33" startPosition="101" endLine="34" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="19118734505279295" fileName="FinderUtils.java" startLine="36" startPosition="5" endLine="37" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="19118734505275257" fileName="FinderUtils.java" startLine="41" startPosition="60" endLine="42" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="19118734505276435" fileName="FinderUtils.java" startLine="44" startPosition="102" endLine="45" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3213515816073559257" fileName="FinderUtils.java" startLine="46" startPosition="5" endLine="47" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="3213515816073559097" fileName="FinderUtils.java" startLine="47" startPosition="54" endLine="48" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3213515816073559108" fileName="FinderUtils.java" startLine="48" startPosition="64" endLine="49" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3213515816073559147" fileName="FinderUtils.java" startLine="50" startPosition="98" endLine="51" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="3213515816073559213" fileName="FinderUtils.java" startLine="53" startPosition="82" endLine="54" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3213515816073559231" fileName="FinderUtils.java" startLine="56" startPosition="82" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3213515816073559260" fileName="FinderUtils.java" startLine="60" startPosition="5" endLine="61" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="3213515816073559234" fileName="FinderUtils.java" startLine="61" startPosition="56" endLine="62" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="579151324305977389" fileName="FinderUtils.java" startLine="50" startPosition="98" endLine="51" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3213515816073559147" fileName="FinderUtils.java" startLine="51" startPosition="74" endLine="52" endPosition="268" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3213515816073559213" fileName="FinderUtils.java" startLine="54" startPosition="82" endLine="55" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3213515816073559231" fileName="FinderUtils.java" startLine="57" startPosition="82" endLine="58" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3213515816073559260" fileName="FinderUtils.java" startLine="61" startPosition="5" endLine="62" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="3213515816073559234" fileName="FinderUtils.java" startLine="62" startPosition="56" endLine="63" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6443678531916429552" fileName="FinderUtils.java" startLine="17" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FinderUtils#()V" />
     <nodeInfo nodeId="6443678531916430901" fileName="FinderUtils.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compare#(Ljetbrains/mps/ide/findusages/model/SearchResult;Ljetbrains/mps/ide/findusages/model/SearchResult;)I" />
     <nodeInfo nodeId="19118734505279350" fileName="FinderUtils.java" startLine="32" startPosition="112" endLine="35" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="19118734505275234" fileName="FinderUtils.java" startLine="40" startPosition="57" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="19118734505275274" fileName="FinderUtils.java" startLine="43" startPosition="5" endLine="46" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3213515816073559200" fileName="FinderUtils.java" startLine="52" startPosition="169" endLine="55" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="3213515816073559217" fileName="FinderUtils.java" startLine="55" startPosition="9" endLine="58" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3213515816073559200" fileName="FinderUtils.java" startLine="53" startPosition="169" endLine="56" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3213515816073559217" fileName="FinderUtils.java" startLine="56" startPosition="9" endLine="59" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6443678531916430872" fileName="FinderUtils.java" startLine="21" startPosition="70" endLine="26" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="19118734505279317" fileName="FinderUtils.java" startLine="31" startPosition="107" endLine="36" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="6443678531916430630" fileName="FinderUtils.java" startLine="20" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="sortNodeResultsByEditorPosition#(Ljetbrains/mps/ide/findusages/model/SearchResults;)V" />
-    <nodeInfo nodeId="3213515816073559185" fileName="FinderUtils.java" startLine="51" startPosition="290" endLine="59" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="3213515816073559185" fileName="FinderUtils.java" startLine="52" startPosition="268" endLine="60" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="6443678531916429572" fileName="FinderUtils.java" startLine="29" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="compareNodes#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
-    <nodeInfo nodeId="3213515816073559119" fileName="FinderUtils.java" startLine="49" startPosition="64" endLine="60" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="6443678531916429583" fileName="FinderUtils.java" startLine="40" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="compareBrothers#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
+    <nodeInfo nodeId="3213515816073559119" fileName="FinderUtils.java" startLine="49" startPosition="64" endLine="61" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
+    <nodeInfo nodeId="6443678531916429583" fileName="FinderUtils.java" startLine="40" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="compareBrothers#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)I" />
     <scopeInfo nodeId="6443678531916429555" fileName="FinderUtils.java" startLine="17" startPosition="25" endLine="17" endPosition="25" />
     <scopeInfo nodeId="6443678531916430902" fileName="FinderUtils.java" startLine="23" startPosition="72" endLine="24" endPosition="70" />
     <scopeInfo nodeId="19118734505279351" fileName="FinderUtils.java" startLine="33" startPosition="101" endLine="34" endPosition="119" />
     <scopeInfo nodeId="19118734505275236" fileName="FinderUtils.java" startLine="41" startPosition="60" endLine="42" endPosition="52" />
     <scopeInfo nodeId="19118734505275275" fileName="FinderUtils.java" startLine="44" startPosition="102" endLine="45" endPosition="89" />
-    <scopeInfo nodeId="3213515816073559202" fileName="FinderUtils.java" startLine="53" startPosition="82" endLine="54" endPosition="20" />
-    <scopeInfo nodeId="3213515816073559218" fileName="FinderUtils.java" startLine="56" startPosition="82" endLine="57" endPosition="19" />
+    <scopeInfo nodeId="3213515816073559202" fileName="FinderUtils.java" startLine="54" startPosition="82" endLine="55" endPosition="20" />
+    <scopeInfo nodeId="3213515816073559218" fileName="FinderUtils.java" startLine="57" startPosition="82" endLine="58" endPosition="19" />
     <scopeInfo nodeId="6443678531916429552" fileName="FinderUtils.java" startLine="17" startPosition="0" endLine="19" endPosition="0" />
     <scopeInfo nodeId="6443678531916430901" fileName="FinderUtils.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
       <varInfo nodeId="6443678531916430901" varName="a" />
@@ -50,7 +51,7 @@
     <scopeInfo nodeId="6443678531916430633" fileName="FinderUtils.java" startLine="20" startPosition="84" endLine="26" endPosition="13">
       <varInfo nodeId="6443678531916430836" varName="resultList" />
     </scopeInfo>
-    <scopeInfo nodeId="3213515816073559188" fileName="FinderUtils.java" startLine="52" startPosition="169" endLine="58" endPosition="9" />
+    <scopeInfo nodeId="3213515816073559188" fileName="FinderUtils.java" startLine="53" startPosition="169" endLine="59" endPosition="9" />
     <scopeInfo nodeId="6443678531916430630" fileName="FinderUtils.java" startLine="20" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="6443678531916430634" varName="results" />
     </scopeInfo>
@@ -58,29 +59,30 @@
       <varInfo nodeId="19118734505264115" varName="path1" />
       <varInfo nodeId="19118734505264139" varName="path2" />
     </scopeInfo>
-    <scopeInfo nodeId="3213515816073559185" fileName="FinderUtils.java" startLine="51" startPosition="290" endLine="59" endPosition="7">
+    <scopeInfo nodeId="3213515816073559185" fileName="FinderUtils.java" startLine="52" startPosition="268" endLine="60" endPosition="7">
       <varInfo nodeId="3213515816073559186" varName="cell" />
-    </scopeInfo>
-    <scopeInfo nodeId="3213515816073559120" fileName="FinderUtils.java" startLine="50" startPosition="98" endLine="59" endPosition="7">
-      <varInfo nodeId="3213515816073559148" varName="editor" />
     </scopeInfo>
     <scopeInfo nodeId="6443678531916429572" fileName="FinderUtils.java" startLine="29" startPosition="0" endLine="39" endPosition="0">
       <varInfo nodeId="6443678531916429576" varName="n1" />
       <varInfo nodeId="6443678531916429579" varName="n2" />
     </scopeInfo>
-    <scopeInfo nodeId="3213515816073559119" fileName="FinderUtils.java" startLine="49" startPosition="64" endLine="60" endPosition="5">
+    <scopeInfo nodeId="3213515816073559120" fileName="FinderUtils.java" startLine="50" startPosition="98" endLine="60" endPosition="7">
+      <varInfo nodeId="579151324305977392" varName="conceptDeclaration" />
+      <varInfo nodeId="3213515816073559148" varName="editor" />
+    </scopeInfo>
+    <scopeInfo nodeId="3213515816073559119" fileName="FinderUtils.java" startLine="49" startPosition="64" endLine="61" endPosition="5">
       <varInfo nodeId="3213515816073559122" varName="p" />
     </scopeInfo>
-    <scopeInfo nodeId="6443678531916429586" fileName="FinderUtils.java" startLine="40" startPosition="57" endLine="62" endPosition="106">
+    <scopeInfo nodeId="6443678531916429586" fileName="FinderUtils.java" startLine="40" startPosition="57" endLine="63" endPosition="106">
       <varInfo nodeId="3213515816073559098" varName="l1" />
       <varInfo nodeId="3213515816073559109" varName="l2" />
     </scopeInfo>
-    <scopeInfo nodeId="6443678531916429583" fileName="FinderUtils.java" startLine="40" startPosition="0" endLine="64" endPosition="0">
+    <scopeInfo nodeId="6443678531916429583" fileName="FinderUtils.java" startLine="40" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="6443678531916429588" varName="n1" />
       <varInfo nodeId="6443678531916429590" varName="n2" />
     </scopeInfo>
     <unitInfo nodeId="6443678531916430901" fileName="FinderUtils.java" startLine="22" startPosition="47" endLine="26" endPosition="5" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.FinderUtils$1" />
-    <unitInfo nodeId="6443678531916429550" fileName="FinderUtils.java" startLine="16" startPosition="0" endLine="65" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.FinderUtils" />
+    <unitInfo nodeId="6443678531916429550" fileName="FinderUtils.java" startLine="16" startPosition="0" endLine="66" endPosition="0" unitName="jetbrains.mps.ide.findusages.findalgorithm.finders.FinderUtils" />
   </root>
   <root nodeId="8267733531687411983" modelId="r:1a2b3027-99d2-4946-917b-f185130ac75d(jetbrains.mps.ide.findusages.findalgorithm.finders)">
     <nodeInfo nodeId="8267733531687412018" fileName="ModuleClassReference.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModuleRef" />
