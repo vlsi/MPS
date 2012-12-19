@@ -30,6 +30,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
   private SModelDescriptor myModelDescriptor;
   private boolean myInitialized;
   private SModelAdapter myListener = new MySModelAdapter();
+  private SModelRepositoryAdapter myRepositoryAdapter = new MySModelRepositoryAdapter();
 
   private Map<String, Set<SNode>> myNodes = new THashMap<String, Set<SNode>>();
 
@@ -37,6 +38,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
     myModel = model;
     myModelDescriptor = model.getModelDescriptor();
     myModelDescriptor.addModelListener(myListener);
+    SModelRepository.getInstance().addModelRepositoryListener(myRepositoryAdapter);
   }
 
   @Override
@@ -46,6 +48,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
       myNodes.clear();
     }
     myModelDescriptor.removeModelListener(myListener);
+    SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryAdapter);
   }
 
   private void initCache() {
@@ -178,13 +181,21 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
         removeFromCache(event.getRoot());
       }
     }
+  }
+
+
+  private class MySModelRepositoryAdapter extends SModelRepositoryAdapter {
 
     @Override
-    public void modelReplaced(SModelDescriptor md) {
-      synchronized (myLock) {
-        myInitialized = false;
-        myNodes.clear();
+    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+      if (replacedModels.contains(myModelDescriptor)) {
+        synchronized (myLock) {
+          myInitialized = false;
+          myNodes.clear();
+        }
       }
     }
   }
+
+
 }
