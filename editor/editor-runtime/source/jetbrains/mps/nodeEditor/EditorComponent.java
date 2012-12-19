@@ -683,7 +683,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         }
       }
     };
-    if (ModelAccess.instance().isInEDT()){
+    if (ModelAccess.instance().isInEDT()) {
       notifyCreationRunnable.run();
     } else {
       ModelAccess.instance().runReadInEDT(notifyCreationRunnable);
@@ -1195,7 +1195,8 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     final EditorContext editorContext = createEditorContextForActions();
     for (final EditorCellKeyMapAction action : KeyMapUtil.getRegisteredActions(cell, editorContext)) {
       try {
-        if (!(action.isShownInPopupMenu() && action.canExecute(null, (jetbrains.mps.openapi.editor.EditorContext) editorContext))) continue;
+        if (!(action.isShownInPopupMenu() && action.canExecute(null, (jetbrains.mps.openapi.editor.EditorContext) editorContext)))
+          continue;
         BaseAction mpsAction = new MyBaseAction(action, editorContext);
         mpsAction.addPlace(ActionPlace.EDITOR);
         result.add(mpsAction);
@@ -2297,7 +2298,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     return context != null ? context : TypeContextManager.getInstance().acquireTypecheckingContext(getNodeForTypechecking(), this);
   }
 
-  public ITypeContextOwner getTypecheckingContextOwner () {
+  public ITypeContextOwner getTypecheckingContextOwner() {
     return this;
   }
 
@@ -3155,23 +3156,25 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     @Override
     public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
       assert SwingUtilities.isEventDispatchThread() : "Model reloaded notification expected in EventDispatchThread";
-      if (myNode != null) {
-        assertModelNotDisposed();
-        for (SModelDescriptor descriptor : replacedModels){
+      boolean needToRebuild = false;
+
+      for (SModelDescriptor descriptor : replacedModels) {
+        if (myModelDescriptorsWithListener.contains(descriptor)) {
+          needToRebuild = true;
+        }
+        if (myNode != null) {
+          assertModelNotDisposed();
           if (myNode.getModel().getSModelReference().equals(descriptor.getSModelReference())) {
             clearModelDisposedTrace();
             SNodeId oldId = myNode.getSNodeId();
             myNode = descriptor.getSModel().getNodeById(oldId);
-            break;
+            needToRebuild = true;
           }
         }
+      }
 
-        for (SModelDescriptor descriptor : replacedModels){
-          if (myModelDescriptorsWithListener.contains(descriptor)){
-            rebuildEditorContent();
-            break;
-          }
-        }
+      if (needToRebuild) {
+        rebuildEditorContent();
       }
     }
 
