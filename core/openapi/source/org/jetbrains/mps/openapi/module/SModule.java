@@ -57,6 +57,8 @@ public interface SModule {
    */
   SRepository getRepository();
 
+  void setRepository(SRepository repo);
+
   /**
    * Wraps and returns an optimized directory of all modules visible from the current module
    */

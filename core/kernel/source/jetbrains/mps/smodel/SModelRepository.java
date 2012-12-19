@@ -31,12 +31,16 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class SModelRepository implements CoreComponent {
   private static final Logger LOG = Logger.getLogger(SModelRepository.class);
-  private ClassLoaderManager myManager;
 
   public static SModelRepository getInstance() {
     return MPSCore.getInstance().getModelRepository();
@@ -54,8 +58,9 @@ public class SModelRepository implements CoreComponent {
 
   private SModelListener myModelsListener = new ModelChangeListener();
 
+  @SuppressWarnings("UnusedParameters")
   public SModelRepository(ClassLoaderManager manager) {
-    myManager = manager;
+
   }
 
   @Override
@@ -95,13 +100,11 @@ public class SModelRepository implements CoreComponent {
 
       ownerModels.add(modelDescriptor);
       myModelOwner.put(modelDescriptor, container);
+      modelDescriptor.setModule(container);
 
-      if (modelReference.getModelId() != null) {
-        myIdToModelDescriptorMap.put(modelReference.getModelId(), modelDescriptor);
-        if (modelDescriptor instanceof BaseSModelDescriptor) {
-          ((BaseSModelDescriptor) modelDescriptor).setRegistered(true);
-        }
-      }
+      assert modelReference.getModelId() != null:"can't add model w/o model id";
+      myIdToModelDescriptorMap.put(modelReference.getModelId(), modelDescriptor);
+
       if (modelReference.getSModelFqName() != null) {
         myFqNameToModelDescriptorMap.put(modelReference.getSModelFqName(), modelDescriptor);
       }
@@ -131,9 +134,7 @@ public class SModelRepository implements CoreComponent {
 
       if (md.getSModelReference().getModelId() != null) {
         myIdToModelDescriptorMap.remove(md.getSModelReference().getModelId());
-        if (md instanceof BaseSModelDescriptor) {
-          ((BaseSModelDescriptor) md).setRegistered(false);
-        }
+        md.setModule(null);
       }
       myFqNameToModelDescriptorMap.remove(md.getSModelReference().getSModelFqName());
       md.removeModelListener(myModelsListener);
@@ -174,6 +175,11 @@ public class SModelRepository implements CoreComponent {
     }
   }
 
+  public SModelDescriptor getModelDescriptor(SModelId id) {
+    return myIdToModelDescriptorMap.get(id);
+  }
+
+    @Deprecated
   public List<SModelDescriptor> getModelDescriptorsByModelName(String modelName) {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor d : getModelDescriptors()) {
@@ -184,6 +190,7 @@ public class SModelRepository implements CoreComponent {
     return result;
   }
 
+  @Deprecated
   public SModelDescriptor getModelDescriptor(org.jetbrains.mps.openapi.model.SModelReference modelReference) {
     if (modelReference == null) return null;
     org.jetbrains.mps.openapi.model.SModelId id = modelReference.getModelId();

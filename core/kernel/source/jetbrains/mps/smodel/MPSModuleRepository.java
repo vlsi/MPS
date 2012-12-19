@@ -16,9 +16,9 @@
 package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
+import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.ProjectManager;
@@ -27,16 +27,24 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.components.CoreComponent;
+import org.jetbrains.mps.openapi.module.RepositoryAccess;
+import org.jetbrains.mps.openapi.module.SModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
+import org.jetbrains.mps.openapi.module.SRepository;
 import org.jetbrains.mps.openapi.module.SRepositoryListener;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Set;
 import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
-public class MPSModuleRepository implements CoreComponent {
+public class MPSModuleRepository implements CoreComponent, SRepository {
   private static final Logger LOG = Logger.getLogger(MPSModuleRepository.class);
   private ClassLoaderManager myClm;
   private ReloadAdapter myHandler = new ReloadAdapter() {
@@ -95,6 +103,7 @@ public class MPSModuleRepository implements CoreComponent {
     myIdToModuleMap.put(module.getModuleReference().getModuleId(), module);
     myModules.add(module);
 
+    module.setRepository(this);
     module.attach();
     myModuleToOwners.addLink(module, owner);
     invalidateCaches();
@@ -160,6 +169,7 @@ public class MPSModuleRepository implements CoreComponent {
     if (remove) {
       fireBeforeModuleRemoved(module);
       myModules.remove(module);
+      module.setRepository(null);
       myIdToModuleMap.remove(module.getModuleReference().getModuleId());
       myFqNameToModulesMap.remove(module.getModuleFqName());
       return true;
@@ -169,6 +179,12 @@ public class MPSModuleRepository implements CoreComponent {
 
   //---------------get by-----------------------------
 
+  @Override
+  public SModelAccess getModelAccess() {
+    return ModelAccess.instance();
+  }
+
+  @Deprecated  //3.0, use getModules
   public Set<IModule> getAllModules() {
     ModelAccess.assertLegalRead();
     return Collections.unmodifiableSet(myModules);
@@ -192,6 +208,45 @@ public class MPSModuleRepository implements CoreComponent {
     return myFqNameToModulesMap.get(fqName);
   }
 
+  public SModule getModule(SModuleId id) {
+    assertCanRead();
+
+    if (id == null) return null;
+    return myIdToModuleMap.get(id);
+  }
+
+  public Iterable<SModule> getModules() {
+    return (Set)getAllModules();
+  }
+
+  @Override
+  public RepositoryAccess getRepositoryAccess() {
+    return new RepositoryAccess() {
+      @Override
+      public void applyChanges(Runnable r) {
+        //todo implement
+      }
+
+      @Override
+      public boolean isUpdating() {
+        //todo implement
+        return false;
+      }
+    };
+  }
+
+  @Override
+  public void addRepositoryListener(SRepositoryListener listener) {
+    //todo implement
+  }
+
+  @Override
+  public void removeRepositoryListener(SRepositoryListener listener) {
+    //todo implement
+  }
+
+  @Deprecated //in 3.0
+  //use getModule()
   public IModule getModuleById(SModuleId moduleId) {
     //todo assertCanRead();
 

@@ -6,8 +6,8 @@
                  url="http://confluence.jetbrains.net/display/MPS/JetBrains+MPS+2.5+Download+Page"
                  feedback="http://youtrack.jetbrains.net"
                  majorVersion="2">
-          <build number="MPS-117.9351" version="JetBrains MPS 2.5.2">
-            <message>JetBrains MPS 2.5.2 is available.</message>
+          <build number="MPS-117.9406" version="JetBrains MPS 2.5.3">
+            <message>JetBrains MPS 2.5.3 is available.</message>
           </build>
         </channel>
 
@@ -15,8 +15,8 @@
                url="http://confluence.jetbrains.net/display/MPS/JetBrains+MPS+2.5+Download+Page"
                feedback="http://youtrack.jetbrains.net"
                majorVersion="2">
-        <build number="MPS-117.9351" version="JetBrains MPS 2.5.2">
-          <message>JetBrains MPS 2.5.2 is available.</message>
+        <build number="MPS-117.9406" version="JetBrains MPS 2.5.3">
+          <message>JetBrains MPS 2.5.3 is available.</message>
         </build>
       </channel>
 
@@ -24,8 +24,8 @@
                url="http://confluence.jetbrains.net/display/MPS/JetBrains+MPS+2.5+Download+Page"
                feedback="http://youtrack.jetbrains.net"
                majorVersion="2" minorVersoin="5">
-        <build number="MPS-117.9351" version="JetBrains MPS 2.5.2">
-          <message>JetBrains MPS 2.5.2 is available.</message>
+        <build number="MPS-117.9406" version="JetBrains MPS 2.5.3">
+          <message>JetBrains MPS 2.5.3 is available.</message>
         </build>
       </channel>
 
@@ -33,8 +33,8 @@
                url="http://confluence.jetbrains.net/display/MPS/JetBrains+MPS+2.5+Download+Page"
                feedback="http://youtrack.jetbrains.net"
                majorVersion="2" minorVersoin="5">
-        <build number="MPS-117.9351" version="JetBrains MPS 2.5.2">
-          <message>JetBrains MPS 2.5.2 is available.</message>
+        <build number="MPS-117.9406" version="JetBrains MPS 2.5.3">
+          <message>JetBrains MPS 2.5.3 is available.</message>
         </build>
       </channel>
 

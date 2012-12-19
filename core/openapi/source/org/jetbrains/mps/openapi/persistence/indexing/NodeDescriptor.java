@@ -13,11 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.descriptor;
+package org.jetbrains.mps.openapi.persistence.indexing;
 
-import java.util.Collection;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
 
-@Deprecated //use openapi. this does not work
-public interface NodesNavigationContributor {
-  Collection<NodeDescriptor> getNodeDescriptors();
+public interface NodeDescriptor {
+  String getName();
+
+  SConcept getConcept();
+
+  SModelReference getModelReference();
 }

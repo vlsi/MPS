@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2012 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,11 +13,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel.descriptor;
+package org.jetbrains.mps.openapi.persistence.indexing;
+
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 
 import java.util.Collection;
+import java.util.Map;
+import java.util.Set;
 
-@Deprecated //use openapi. this does not work
-public interface NodesNavigationContributor {
-  Collection<NodeDescriptor> getNodeDescriptors();
+public interface FastFindSupport {
+  Map<SModel, Collection<SConcept>> findModelsWithPossibleInstances(Collection<SModel> models, Set<SConcept> concepts);
+
+  Map<SModel, Collection<SNodeReference>> findModelsWithPossibleUsages(Collection<SModel> models, Set<SNodeReference> nodes);
 }

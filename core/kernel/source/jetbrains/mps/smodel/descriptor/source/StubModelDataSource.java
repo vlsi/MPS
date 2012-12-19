@@ -20,6 +20,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 
+@Deprecated //use openapi. this does not work
 public interface StubModelDataSource extends DataSource {
 
   SModel loadSModel(IModule contextModule, SModelDescriptor descriptor);

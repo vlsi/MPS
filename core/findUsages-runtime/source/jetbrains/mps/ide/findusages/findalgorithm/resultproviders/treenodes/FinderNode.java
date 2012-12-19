@@ -17,6 +17,7 @@ package jetbrains.mps.ide.findusages.findalgorithm.resultproviders.treenodes;
 
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
+import jetbrains.mps.ide.findusages.findalgorithm.finders.FinderUtils;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.IFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
@@ -43,7 +44,6 @@ public class FinderNode extends BaseLeaf {
   private IFinder myFinder;
 
   public FinderNode() {
-
   }
 
   public FinderNode(IFinder finder) {
@@ -63,12 +63,19 @@ public class FinderNode extends BaseLeaf {
   }
 
   public SearchResults doGetResults(final SearchQuery query, @NotNull final ProgressMonitor monitor) {
-    monitor.start(getTaskName(), 1);
+    monitor.start(getTaskName(), myFinder instanceof GeneratedFinder ? 2 : 1);
     try {
       return ModelAccess.instance().runReadAction(new Computable<SearchResults>() {
         public SearchResults compute() {
           try {
-            return myFinder.find(query, monitor.subTask(1));
+            SearchResults results = myFinder.find(query, monitor.subTask(1));
+            if (myFinder instanceof GeneratedFinder) {
+              FinderUtils.sortNodeResultsByEditorPosition(results);
+              monitor.advance(1);
+            } else {
+              // ?
+            }
+            return results;
           } catch (Throwable t) {
             LOG.error(t.getMessage(), t);
             return new SearchResults();

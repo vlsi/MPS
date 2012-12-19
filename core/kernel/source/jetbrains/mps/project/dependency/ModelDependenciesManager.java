@@ -25,6 +25,7 @@ import jetbrains.mps.smodel.event.SModelLanguageEvent;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Collection;
 import java.util.Collections;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -49,7 +50,7 @@ public class ModelDependenciesManager {
     myModuleWatcher = new MyModuleWatcher();
   }
 
-  public Iterable<ModuleReference> getAllImportedLanguages() {
+  public Collection<ModuleReference> getAllImportedLanguages() {
     if (myModel == null) throw new IllegalStateException("access after disposal");
 
     if (myInvalidatedFlag.compareAndSet(true, false)) {

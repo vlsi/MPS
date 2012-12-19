@@ -21,6 +21,7 @@ import jetbrains.mps.util.containers.MultiMap;
 
 import java.util.Set;
 
+@Deprecated //use openapi. this does not work
 public interface FastFindSupport {
   //note that Set<String> is passed because we won't have concept nodes at runtime in future
   MultiMap<SModelDescriptor,String> findModelsWithPossibleInstances(Set<SModelDescriptor> models, Set<String> concepts);
