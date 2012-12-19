@@ -118,7 +118,6 @@ public abstract class BaseMPSChooseModel<T> implements ChooseByNameModel {
         //this normally should not happen, this code is here because of MPS-10408
         if (navigationItems != null) return navigationItems.toArray(new NavigationItem[navigationItems.size()]);
 
-        LOG.error("No navigation items for element with name: " + name);
         return new NavigationItem[0];
       }
     });

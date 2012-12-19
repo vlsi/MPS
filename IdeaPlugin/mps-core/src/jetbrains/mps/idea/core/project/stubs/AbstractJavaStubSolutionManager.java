@@ -17,8 +17,10 @@
 package jetbrains.mps.idea.core.project.stubs;
 
 import com.intellij.openapi.components.BaseComponent;
+import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.idea.core.project.StubSolutionIdea;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
@@ -40,27 +42,6 @@ import java.util.Set;
  * Date: 4/30/12
  */
 public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner, BaseComponent {
-
-    public static void addModelRoots(SolutionDescriptor solutionDescriptor, VirtualFile[] roots) {
-        Set<String> seenPaths = new LinkedHashSet<String>();
-        for (ModelRootDescriptor d : solutionDescriptor.getModelRootDescriptors()) {
-            if (!PersistenceRegistry.JAVA_CLASSES_ROOT.equals(d.getType())) continue;
-
-            seenPaths.add(d.getMemento().get("path"));
-        }
-        for (VirtualFile f : roots) {
-            String localPath = getLocalPath(f);
-            if (!seenPaths.add(localPath)) continue;
-            solutionDescriptor.getModelRootDescriptors().add(ModelRootDescriptor.getJavaStubsModelRoot(localPath));
-        }
-    }
-
-    private static String getLocalPath(VirtualFile f) {
-        String path = f.getPath();
-        int index = path.indexOf("!");
-        if (index < 0) return path;
-        return path.substring(0, index);
-    }
 
     @Override
     public void initComponent() {
@@ -92,13 +73,9 @@ public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner,
 
     protected abstract void dispose();
 
-    protected Solution addSolution(String name, VirtualFile[] roots) {
-        SolutionDescriptor sd = new SolutionDescriptor();
-        sd.setNamespace(name);
-        sd.setId(ModuleId.foreign(name));
-        addModelRoots(sd, roots);
-        return StubSolution.newInstance(sd, this);
-    }
+  protected void addSolution(Library library) {
+    StubSolutionIdea.newInstance(library, this);
+  }
 
     protected void removeSolution(String name) {
         ModuleReference ref = new ModuleReference(null, ModuleId.foreign(name));
