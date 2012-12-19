@@ -15,10 +15,10 @@
  */
 package jetbrains.mps.nodeEditor.cellLayout;
 
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.nodeEditor.cellLayout.AbstractCellLayout;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
 /**
  * User: Sergey Dmitriev
@@ -68,7 +68,7 @@ public class CellLayout_Horizontal extends AbstractCellLayout {
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     for (EditorCell editorCell : editorCells) {
-      result = result.appendToTheRight(editorCell.renderText(), PunctuationUtil.hasLeftGap(editorCell));
+      result = result.appendToTheRight(APICellAdapter.renderText(editorCell), PunctuationUtil.hasLeftGap(editorCell));
     }
     return result;
   }

@@ -31,6 +31,9 @@ import jetbrains.mps.nodeEditor.EditorCellKeyMapAction;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
 import jetbrains.mps.nodeEditor.cells.*;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.*;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
@@ -143,7 +146,7 @@ public class CellExplorerView extends BaseProjectTool {
     List<EditorCell> path = new ArrayList<EditorCell>();
     while (cell != null) {
       path.add(cell);
-      cell = cell.getParent();
+      cell = (EditorCell) cell.getParent();
     }
     Collections.reverse(path);
 
@@ -291,8 +294,8 @@ public class CellExplorerView extends BaseProjectTool {
 
       if (myCell instanceof EditorCell_Collection) {
         EditorCell_Collection cell = (EditorCell_Collection) myCell;
-        for (EditorCell child : cell) {
-          add(new CellTreeNode(child));
+        for (jetbrains.mps.openapi.editor.cells.EditorCell child : cell) {
+          add(new CellTreeNode((EditorCell) child));
         }
         myInitialized = true;
       }

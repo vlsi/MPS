@@ -30,14 +30,14 @@
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1234198385755">
-      <property name="category" nameId="tp33.1206123296179" value="editor language" />
       <property name="title" nameId="tp33.1177457669450" value="Horizontal Gap Migration" />
-      <property name="name" nameId="tpck.1169194664001" value="HorizontalGapMigration" />
+      <property name="category" nameId="tp33.1206123296179" value="editor language" />
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
+      <property name="name" nameId="tpck.1169194664001" value="HorizontalGapMigration" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1237726848485">
-      <property name="category" nameId="tp33.1206123296179" value="editor language" />
       <property name="title" nameId="tp33.1177457669450" value="Migration to Indent Layout" />
+      <property name="category" nameId="tp33.1206123296179" value="editor language" />
       <property name="name" nameId="tpck.1169194664001" value="MigrationToIndentLayout" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="113254018726283913">
@@ -909,29 +909,113 @@
     <node role="part" roleId="tp33.1177458178889" type="tp33.WhitespaceMigrationScriptPart" typeId="tp33.2598676492883244606" id="2783385774420420452" />
     <node role="part" roleId="tp33.1177458178889" type="tp33.ExtractInterfaceMigration" typeId="tp33.6655357163912246425" id="2783385774420420454">
       <link role="newClassifier" roleId="tp33.6655357163912246427" targetNodeId="jsgz.~EditorCell" resolveInfo="EditorCell" />
-      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2783385774420420712">
-        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="jsgz.~EditorCell%dgetCellId()%cjava%dlang%dString" resolveInfo="getCellId" />
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619341785149">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dsetX(int)%cvoid" resolveInfo="setX" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342099089">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dsetY(int)%cvoid" resolveInfo="setY" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342101522">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dsetWidth(int)%cvoid" resolveInfo="setWidth" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342101532">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dsetHeight(int)%cvoid" resolveInfo="setHeight" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342101543">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dgetBaseline()%cint" resolveInfo="getBaseline" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342102119">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dsetBaseline(int)%cvoid" resolveInfo="setBaseline" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342102697">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dgetAscent()%cint" resolveInfo="getAscent" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342103277">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dgetDescent()%cint" resolveInfo="getDescent" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342103859">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dgetEffectiveWidth()%cint" resolveInfo="getEffectiveWidth" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342103875">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dgetLeftInset()%cint" resolveInfo="getLeftInset" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342104461">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dgetRightInset()%cint" resolveInfo="getRightInset" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342105049">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dgetTopInset()%cint" resolveInfo="getTopInset" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342105639">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dgetBottomInset()%cint" resolveInfo="getBottomInset" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342106803">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dmoveTo(int,int)%cvoid" resolveInfo="moveTo" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342107397">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dsetSelected(boolean)%cvoid" resolveInfo="setSelected" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342107419">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%disSelected()%cboolean" resolveInfo="isSelected" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342107442">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dsetSelectable(boolean)%cvoid" resolveInfo="setSelectable" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342108042">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%disSelectable()%cboolean" resolveInfo="isSelectable" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342108067">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dsetCellId(java%dlang%dString)%cvoid" resolveInfo="setCellId" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342108671">
         <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dgetCellId()%cjava%dlang%dString" resolveInfo="getCellId" />
       </node>
-      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2783385774420421331">
-        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="jsgz.~EditorCell%dgetSNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getSNode" />
-        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dgetSNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getSNode" />
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342108698">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dsetRole(java%dlang%dString)%cvoid" resolveInfo="setRole" />
       </node>
-      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2783385774420421332">
-        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="jsgz.~EditorCell%disSingleNodeCell()%cboolean" resolveInfo="isSingleNodeCell" />
-        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%disSingleNodeCell()%cboolean" resolveInfo="isSingleNodeCell" />
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342109306">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dgetRole()%cjava%dlang%dString" resolveInfo="getRole" />
       </node>
-      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="761326369573221041">
-        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="jsgz.~EditorCell%dfindLeaf(int,int)%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell" resolveInfo="findLeaf" />
-        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dfindLeaf(int,int)%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell" resolveInfo="findLeaf" />
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342109335">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dgetRefNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getRefNode" />
       </node>
-      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="761326369573221593">
-        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="jsgz.~EditorCell%dsetCaretX(int)%cvoid" resolveInfo="setCaretX" />
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342109947">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dsetRefNode(jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="setRefNode" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342110561">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%disErrorState()%cboolean" resolveInfo="isErrorState" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342111177">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dsetErrorState(boolean)%cvoid" resolveInfo="setErrorState" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342111210">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%drelayout()%cvoid" resolveInfo="relayout" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342111830">
         <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dsetCaretX(int)%cvoid" resolveInfo="setCaretX" />
       </node>
-      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="761326369573221599">
-        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="jsgz.~EditorCell%dgetCaretX()%cint" resolveInfo="getCaretX" />
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342112452">
         <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dgetCaretX()%cint" resolveInfo="getCaretX" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342112488">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dhome()%cvoid" resolveInfo="home" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342113114">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dend()%cvoid" resolveInfo="end" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342113152">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dfindLeaf(int,int)%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell" resolveInfo="findLeaf" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342114373">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%disSingleNodeCell()%cboolean" resolveInfo="isSingleNodeCell" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342114413">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dgetSNode()%cjetbrains%dmps%dsmodel%dSNode" resolveInfo="getSNode" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342115047">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dputUserObject(java%dlang%dObject,java%dlang%dObject)%cvoid" resolveInfo="putUserObject" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2496927619342115683">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="jsgz.~EditorCell%dgetUserObject(java%dlang%dObject)%cjava%dlang%dObject" resolveInfo="getUserObject" />
       </node>
       <node role="oldClassifier" roleId="tp33.5434557751112108415" type="tp33.DirectClassifierSpecification" typeId="tp33.5434557751112207651" id="5434557751112863745">
         <link role="classifier" roleId="tp33.5434557751112207965" targetNodeId="jsgz.~EditorCell" resolveInfo="EditorCell" />

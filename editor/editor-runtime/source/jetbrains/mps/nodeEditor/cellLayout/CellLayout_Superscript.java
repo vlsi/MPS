@@ -15,13 +15,15 @@
  */
 package jetbrains.mps.nodeEditor.cellLayout;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
-import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
+import jetbrains.mps.nodeEditor.style.APIStyleAdapter;
 import jetbrains.mps.nodeEditor.style.ScriptKind;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
 /**
  * Sergey.Sinchuk, Oct 29, 2009
@@ -38,14 +40,14 @@ public class CellLayout_Superscript extends AbstractCellLayout {
   private void applyScalingInt(EditorCell cell, int scale) {
     if (cell instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) cell;
-      CellLayout layout = collection.getCellLayout();
+      jetbrains.mps.openapi.editor.cells.CellLayout layout = collection.getCellLayout();
       if (layout instanceof CellLayout_Superscript) ((CellLayout_Superscript) layout).myBaseScale = scale;
       else for (EditorCell c : collection) applyScalingInt(c, scale);
     }
     if (cell instanceof EditorCell_Label) {
       EditorCell_Label label = (EditorCell_Label) cell;
-      Integer oldFontSize = label.getStyle().get(StyleAttributes.ORIGINAL_FONT_SIZE);
-      Integer fontSize = label.getStyle().get(StyleAttributes.FONT_SIZE);
+      Integer oldFontSize = APIStyleAdapter.getStyleAttribute(label, StyleAttributes.ORIGINAL_FONT_SIZE);
+      Integer fontSize = APIStyleAdapter.getStyleAttribute(label, StyleAttributes.FONT_SIZE);
       if (fontSize == null) fontSize = EditorSettings.getInstance().getFontSize();
       if (oldFontSize == null) {
         oldFontSize = fontSize;
@@ -58,7 +60,7 @@ public class CellLayout_Superscript extends AbstractCellLayout {
 
   public void applyScaling(EditorCell_Collection editorCells) {
     for (EditorCell cell : editorCells) {
-      int i = cell.getStyle().get(StyleAttributes.SCRIPT_KIND) != ScriptKind.NORMAL ? 1 : 0;
+      int i = APIStyleAdapter.getStyleAttribute(cell, StyleAttributes.SCRIPT_KIND) != ScriptKind.NORMAL ? 1 : 0;
       applyScalingInt(cell, myBaseScale + i);
     }
   }
@@ -68,7 +70,7 @@ public class CellLayout_Superscript extends AbstractCellLayout {
       CellLayout_Indent_Old._doLayout(editorCells);
       return;
     }
-    EditorCell[] cells = editorCells.getContentCells();
+    Iterable<EditorCell> cells = editorCells.getContentCells();
 
     final int x = editorCells.getX();
     final int y = editorCells.getY();
@@ -87,7 +89,7 @@ public class CellLayout_Superscript extends AbstractCellLayout {
 
     for (EditorCell cell : cells) {
       cell.relayout();
-      ScriptKind skind = cell.getStyle().get(StyleAttributes.SCRIPT_KIND);
+      ScriptKind skind = APIStyleAdapter.getStyleAttribute(cell, StyleAttributes.SCRIPT_KIND);
       int cellHeight = cell.getHeight();
       switch (skind) {
         case NORMAL:
@@ -103,7 +105,7 @@ public class CellLayout_Superscript extends AbstractCellLayout {
     }
 
     for (EditorCell cell : cells) {
-      ScriptKind skind = cell.getStyle().get(StyleAttributes.SCRIPT_KIND);
+      ScriptKind skind = APIStyleAdapter.getStyleAttribute(cell, StyleAttributes.SCRIPT_KIND);
       switch (skind) {
         case NORMAL:
           floor2x = Math.max(floor2x, Math.max(floor1x, floor3x));
@@ -136,20 +138,18 @@ public class CellLayout_Superscript extends AbstractCellLayout {
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     for (EditorCell editorCell : editorCells) {
-      result = result.appendToTheBottom(editorCell.renderText());
+      result = result.appendToTheBottom(APICellAdapter.renderText(editorCell));
     }
     return result;
   }
 
   public int getAscent(EditorCell_Collection editorCells) {
-    EditorCell[] cells = editorCells.getContentCells();
-
     int floor2 = 0;
     int floor3 = 0;
 
-    for (EditorCell cell : cells) {
+    for (EditorCell cell : editorCells.getContentCells()) {
       cell.relayout();
-      ScriptKind skind = cell.getStyle().get(StyleAttributes.SCRIPT_KIND);
+      ScriptKind skind = APIStyleAdapter.getStyleAttribute(cell, StyleAttributes.SCRIPT_KIND);
       switch (skind) {
         case NORMAL:
           floor2 = Math.max(floor2, cell.getAscent());
@@ -171,6 +171,4 @@ public class CellLayout_Superscript extends AbstractCellLayout {
   public String toString() {
     return "Vertical";
   }
-
-
 }

@@ -244,7 +244,7 @@ public abstract class EditorCell_Basic implements EditorCell {
           return currentAction;
         }
       }
-      current = current.getParent();
+      current = (EditorCell) current.getParent();
     }
     EditorCellAction action = getEditor().getComponentAction(type);
     if (action != null && action.canExecute(getContext())) {
@@ -259,7 +259,7 @@ public abstract class EditorCell_Basic implements EditorCell {
       if (current.getAction(type) != null && current.getLastLeaf() == this) {
         cellAction = current.getAction(type);
       }
-      current = current.getParent();
+      current = (EditorCell) current.getParent();
     }
     return cellAction;
   }
@@ -812,7 +812,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     Object anchorId = node.getUserObject(EditorManager.SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID);
     if (anchorId == null) {
       if (bigCell != null && bigCell.getParent() != null) {
-        for (EditorCell child : bigCell.getParent()) {
+        for (jetbrains.mps.openapi.editor.cells.EditorCell child : bigCell.getParent()) {
           if (child instanceof EditorCell_STHint) {
             return (EditorCell_Label) child;
           }
@@ -827,20 +827,14 @@ public abstract class EditorCell_Basic implements EditorCell {
 
       assert anchorCell.getParent() != null : "No cell parent for node " + node.getSNodeId().toString() + " " + node.getModel();
 
-      int indexInParent = anchorCell.getParent().indexOf(anchorCell);
-
-      if (indexInParent + 1 < anchorCell.getParent().getChildCount()) {
-        EditorCell candidate = anchorCell.getParent().getChildAt(indexInParent + 1);
-        if (candidate instanceof EditorCell_STHint) {
-          return (EditorCell_Label) candidate;
-        }
+      jetbrains.mps.openapi.editor.cells.EditorCell nextSibling = APICellAdapter.getNextSibling(anchorCell);
+      if (nextSibling instanceof EditorCell_STHint) {
+        return (EditorCell_Label) nextSibling;
       }
 
-      if (indexInParent - 1 >= 0) {
-        EditorCell candidate = anchorCell.getParent().getChildAt(indexInParent - 1);
-        if (candidate instanceof EditorCell_STHint) {
-          return (EditorCell_Label) candidate;
-        }
+      jetbrains.mps.openapi.editor.cells.EditorCell prevSibling = APICellAdapter.getPrevSibling(anchorCell);
+      if (prevSibling instanceof EditorCell_STHint) {
+        return (EditorCell_Label) prevSibling;
       }
 
       return null;
@@ -932,9 +926,10 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public boolean isAncestorOf(EditorCell cell) {
-    while (cell != null) {
-      cell = cell.getParent();
-      if (cell == this) return true;
+    jetbrains.mps.openapi.editor.cells.EditorCell_Collection parent = cell.getParent();
+    while (parent != null) {
+      if (parent == this) return true;
+      parent = parent.getParent();
     }
     return false;
   }
@@ -956,7 +951,7 @@ public abstract class EditorCell_Basic implements EditorCell {
       }
 
       public EditorCell_Collection next() {
-        EditorCell_Collection parent = myCurrentCell.getParent();
+        EditorCell_Collection parent = (EditorCell_Collection) myCurrentCell.getParent();
         if (parent == null) throw new NoSuchElementException();
         myCurrentCell = parent;
         return parent;
@@ -1016,7 +1011,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     EditorCell prevCell = null;
     while (cell != null) {
       prevCell = cell;
-      cell = cell.getParent();
+      cell = (EditorCell) cell.getParent();
     }
     return prevCell;
   }

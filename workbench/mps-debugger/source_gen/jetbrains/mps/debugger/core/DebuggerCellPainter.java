@@ -152,7 +152,7 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
       // whatever 
       return false;
     }
-    EditorCell_Collection parent = nodeCell.getParent();
+    jetbrains.mps.openapi.editor.cells.EditorCell_Collection parent = nodeCell.getParent();
     if (parent == null) {
       return false;
     }

@@ -62,6 +62,11 @@ public interface EditorCell {
 
   int getBottomInset();
 
+  // TODO: same as inset?
+  void setLeftGap(int gap);
+
+  void setRightGap(int gap);
+
   void moveTo(int x, int y);
 
   void setSelected(boolean isSelected);
@@ -99,6 +104,10 @@ public interface EditorCell {
   void end();
 
   EditorContext getContext();
+
+  EditorCell_Collection getParent();
+
+  EditorCell getRootParent();
 
   EditorCell findLeaf(int x, int y);
 

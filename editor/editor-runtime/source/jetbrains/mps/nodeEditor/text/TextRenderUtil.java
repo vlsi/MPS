@@ -17,10 +17,12 @@ package jetbrains.mps.nodeEditor.text;
 
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.selection.Selection;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TextRenderUtil {
@@ -29,13 +31,16 @@ public class TextRenderUtil {
     if (selection == null || selection.getSelectedCells().size() == 0) {
       TextBuilder.getEmptyTextBuilder();
     }
-    List<EditorCell> selectedCells = selection.getSelectedCells();
+    List<EditorCell> selectedCells = new ArrayList<EditorCell>();
+    for (EditorCell selectedCell : selection.getSelectedCells()) {
+      selectedCells.add(selectedCell);
+    }
     EditorCell firstSelectedCell = selectedCells.get(0);
     if (selectedCells.size() == 1) {
-      return firstSelectedCell.renderText();
+      return APICellAdapter.renderText(firstSelectedCell);
     }
     EditorCell_Collection parentCell = firstSelectedCell.getParent();
-    CellLayout layout = parentCell.getCellLayout();
+    CellLayout layout = (CellLayout) parentCell.getCellLayout();
     return layout.doLayoutText(selectedCells);
   }
 

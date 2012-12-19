@@ -137,7 +137,7 @@ public class EditorActionUtils {
     }
 
     if (cell.isOnRightBoundary()) {
-      final EditorCell_Collection parentCell = cell.getParent();
+      final EditorCell_Collection parentCell = (EditorCell_Collection) cell.getParent();
       if (parentCell != null) {
         final EditorCell nextLeaf = cell.getNextLeaf();
         if (nextLeaf != null) {
@@ -170,7 +170,7 @@ public class EditorActionUtils {
     }
 
     if (cell.isOnLeftBoundary()) {
-      final EditorCell_Collection parentCell = cell.getParent();
+      final EditorCell_Collection parentCell = (EditorCell_Collection) cell.getParent();
       if (parentCell != null) {
         final EditorCell prevLeaf = cell.getPrevLeaf();
         if (prevLeaf != null) {

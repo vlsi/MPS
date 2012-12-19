@@ -15,18 +15,18 @@
  */
 package jetbrains.mps.nodeEditor.cellLayout;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
 import java.awt.Rectangle;
 import java.util.Arrays;
 import java.util.List;
 
-public abstract class AbstractCellLayout implements CellLayout, CellLayoutExt {
+public abstract class AbstractCellLayout implements CellLayout {
   public int getAscent(EditorCell_Collection editorCells) {
     int ascent = 0;
-    for (EditorCell cell : editorCells.getCells()) {
+    for (EditorCell cell : editorCells) {
       ascent = Math.max(ascent, cell.getAscent());
     }
     return ascent;

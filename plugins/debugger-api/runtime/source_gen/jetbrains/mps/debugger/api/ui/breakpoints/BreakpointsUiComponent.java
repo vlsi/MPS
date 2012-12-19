@@ -167,7 +167,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
       if (myDebugInfoManager.isDebuggableNode(node)) {
         return cell;
       }
-      cell = cell.getParent();
+      cell = (EditorCell) cell.getParent();
     }
     return null;
   }

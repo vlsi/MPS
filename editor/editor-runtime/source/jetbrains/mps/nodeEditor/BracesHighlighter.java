@@ -90,7 +90,7 @@ public class BracesHighlighter {
       if (editorCell.getStyle().get(StyleAttributes.MATCHING_LABEL) != null) {
         return new Pair(editorCell, editorCell.getStyle().get(StyleAttributes.MATCHING_LABEL));
       }
-      editorCell = editorCell.getParent();
+      editorCell = (EditorCell) editorCell.getParent();
     }
     return null;
   }

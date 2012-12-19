@@ -22,7 +22,9 @@ import jetbrains.mps.nodeEditor.attribute.AttributeKind;
 import jetbrains.mps.nodeEditor.cellMenu.AbstractNodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cells.*;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.openapi.editor.cells.*;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
@@ -131,8 +133,8 @@ public class EditorManager {
 
   private static void fillContextToCellMapForChildren(EditorCell cell, Map<ReferencedNodeContext, EditorCell> map) {
     if (cell instanceof EditorCell_Collection) {
-      for (EditorCell childCell : ((EditorCell_Collection) cell)) {
-        fillContextToCellMap(childCell, map);
+      for (jetbrains.mps.openapi.editor.cells.EditorCell childCell : ((EditorCell_Collection) cell)) {
+        fillContextToCellMap((EditorCell) childCell, map);
       }
     }
   }
@@ -445,7 +447,7 @@ public class EditorManager {
     Object anchorId = node.getUserObject(SIDE_TRANSFORM_HINT_ANCHOR_CELL_ID);
     EditorCell anchorCell = anchorId == null ? null : nodeCell.findChild(CellFinders.byId(node, anchorId.toString()), true);
     if (anchorCell != null && anchorCell != nodeCell) {
-      EditorCell_Collection cellCollection = anchorCell.getParent();
+      jetbrains.mps.openapi.editor.cells.EditorCell_Collection cellCollection = anchorCell.getParent();
       int index;
       if (side == CellSide.RIGHT) {
         index = cellCollection.indexOf(anchorCell) + 1;
@@ -453,7 +455,7 @@ public class EditorManager {
         index = cellCollection.indexOf(anchorCell);
       }
 
-      cellCollection.addCellAt(index, sideTransformHintCell, false);
+      cellCollection.addEditorCellAt(index, sideTransformHintCell, false);
       resultCell = nodeCell;
       sideTransformHintCell.setAnchor(anchorCell);
     } else {
@@ -464,7 +466,7 @@ public class EditorManager {
       if (side == CellSide.RIGHT) {
         rowWrapper.addEditorCell(sideTransformHintCell);
       } else {
-        rowWrapper.addCellAt(0, sideTransformHintCell, false);
+        rowWrapper.addEditorCellAt(0, sideTransformHintCell, false);
       }
       resultCell = rowWrapper;
       sideTransformHintCell.setAnchor(nodeCell);

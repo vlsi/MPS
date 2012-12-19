@@ -86,7 +86,7 @@ public class ShowParameters_Action extends BaseAction {
           MPSToolTipManager.getInstance().showToolTip(new ToolTipData(componet), ((EditorComponent) MapSequence.fromMap(_params).get("editor")), p);
           return;
         }
-        currentCell = currentCell.getParent();
+        currentCell = (EditorCell) currentCell.getParent();
       }
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowParameters", t);

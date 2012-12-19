@@ -15,17 +15,14 @@
  */
 package jetbrains.mps.nodeEditor.cellLayout;
 
-import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.nodeEditor.cellLayout.AbstractCellLayout;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
-import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.nodeEditor.style.APIStyleAdapter;
 import jetbrains.mps.nodeEditor.style.CellAlign;
 import jetbrains.mps.nodeEditor.style.DefaultBaseLine;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-
-import java.awt.Font;
-import java.awt.FontMetrics;
+import jetbrains.mps.nodeEditor.style.StyleAttributes;
+import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
 /**
  * User: Sergey Dmitriev
@@ -48,7 +45,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       return;
     }
 
-    EditorCell[] cells = editorCells.getContentCells();
+    Iterable<EditorCell> cells = editorCells.getContentCells();
     EditorCell closingBrace = editorCells.getClosingBrace();
     EditorCell openingBrace = editorCells.getOpeningBrace();
     boolean usesBraces = editorCells.usesBraces();
@@ -83,7 +80,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       int cellX = editorCell.getX();
       int cellY = editorCell.getY();
       int newCellX = cellX;
-      CellAlign cellAlign = editorCells.getStyle().get(StyleAttributes.HORIZONTAL_ALIGN);
+      CellAlign cellAlign = APIStyleAdapter.getStyleAttribute(editorCells, StyleAttributes.HORIZONTAL_ALIGN);
       if (cellAlign == CellAlign.CENTER && !myGridLayout) {
         newCellX = cellX + (width - editorCell.getWidth()) / 2;
       } else if (cellAlign == CellAlign.RIGHT && !myGridLayout) {
@@ -114,10 +111,10 @@ public class CellLayout_Vertical extends AbstractCellLayout {
         for (EditorCell editorCell : cells) {
           if (editorCell instanceof EditorCell_Collection) {
             EditorCell_Collection editorCellCollection = (EditorCell_Collection) editorCell;
-            CellLayout cellLayout = editorCellCollection.getCellLayout();
+            jetbrains.mps.openapi.editor.cells.CellLayout cellLayout = editorCellCollection.getCellLayout();
             if (cellLayout instanceof CellLayout_Horizontal) {
-              if (i < editorCellCollection.getChildCount()) {
-                EditorCell cell = editorCellCollection.getChildAt(i);
+              if (i < editorCellCollection.getCellsCount()) {
+                EditorCell cell = editorCellCollection.getCellAt(i);
                 cell.setX(x0);
                 cell.relayout();
                 maxWidth = Math.max(maxWidth, cell.getWidth());
@@ -134,9 +131,9 @@ public class CellLayout_Vertical extends AbstractCellLayout {
         for (EditorCell editorCell : cells) {
           if (editorCell instanceof EditorCell_Collection) {
             EditorCell_Collection editorCellCollection = (EditorCell_Collection) editorCell;
-            CellLayout cellLayout = editorCellCollection.getCellLayout();
-            if (cellLayout instanceof CellLayout_Horizontal && i < editorCellCollection.getChildCount()) {
-              EditorCell cell = editorCellCollection.getChildAt(i);
+            jetbrains.mps.openapi.editor.cells.CellLayout cellLayout = editorCellCollection.getCellLayout();
+            if (cellLayout instanceof CellLayout_Horizontal && i < editorCellCollection.getCellsCount()) {
+              EditorCell cell = editorCellCollection.getCellAt(i);
               cell.setWidth(maxWidth);
             }
           }
@@ -158,7 +155,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       for (EditorCell editorCell : cells) {
         if (editorCell instanceof EditorCell_Collection) {
           EditorCell_Collection editorCellCollection = (EditorCell_Collection) editorCell;
-          CellLayout cellLayout = editorCellCollection.getCellLayout();
+          jetbrains.mps.openapi.editor.cells.CellLayout cellLayout = editorCellCollection.getCellLayout();
           if (cellLayout instanceof CellLayout_Horizontal) {
             int width0 = 0;
             for (EditorCell cell : editorCellCollection) {
@@ -177,7 +174,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
         width += closingBrace.getWidth();
       } else {
         EditorCell lastCell = editorCells.lastContentCell();
-        while (lastCell.isUnfoldedCollection()) {
+        while ((lastCell instanceof EditorCell_Collection) && !((EditorCell_Collection) lastCell).isFolded()) {
           lastCell = ((EditorCell_Collection)lastCell).lastCell();
         }
         closingBrace.setX(lastCell.getX() + lastCell.getWidth()/*x + lastCellWidth*/);
@@ -190,8 +187,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
   }
 
   private int getBracesIndent(EditorCell cell) {
-    if (cell instanceof EditorCell_Collection) return ((EditorCell_Collection) cell).getBracesIndent();
-    return 0;
+    return cell instanceof  EditorCell_Collection ? ((EditorCell_Collection) cell).getBracesIndent() : 0;
   }
 
   public int getRightInternalInset(EditorCell_Collection editorCell_collection) {
@@ -203,22 +199,22 @@ public class CellLayout_Vertical extends AbstractCellLayout {
   public TextBuilder doLayoutText(Iterable<EditorCell> editorCells) {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     for (EditorCell editorCell : editorCells) {
-      result = result.appendToTheBottom(editorCell.renderText());
+      result = result.appendToTheBottom(APICellAdapter.renderText(editorCell));
     }
     return result;
   }
 
   public int getAscent(EditorCell_Collection editorCells) {
-    for (EditorCell cell : editorCells.getCells()) {
-      if (cell.getStyle().get(StyleAttributes.BASE_LINE_CELL)) {
+    for (EditorCell cell : editorCells) {
+      if (APIStyleAdapter.getStyleAttribute(cell, StyleAttributes.BASE_LINE_CELL)) {
         return cell.getY() - editorCells.getY() + cell.getAscent();
       }
     }
 
-    DefaultBaseLine bL = editorCells.getStyle().get(StyleAttributes.DEFAULT_BASE_LINE);
+    DefaultBaseLine bL = APIStyleAdapter.getStyleAttribute(editorCells, StyleAttributes.DEFAULT_BASE_LINE);
 
     int result = 0;
-    for (EditorCell cell : editorCells.getCells()) {
+    for (EditorCell cell : editorCells) {
       result = cell.getAscent();
       if (result > 0) {
         break;

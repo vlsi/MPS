@@ -48,7 +48,7 @@ class DfsTraverser {
         myCurrent = getSibling(current);
         return;
       }
-      current = current.getParent();
+      current = (EditorCell) current.getParent();
     }
     myCurrent = null;
   }

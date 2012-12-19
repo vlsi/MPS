@@ -18,11 +18,12 @@ package jetbrains.mps.nodeEditor.cellLayout;
 import jetbrains.mps.editor.runtime.impl.LayoutConstraints;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorSettings;
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
+import jetbrains.mps.nodeEditor.style.APIStyleAdapter;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
+import jetbrains.mps.openapi.editor.cells.*;
 
 import java.awt.Rectangle;
 import java.util.ArrayList;
@@ -116,7 +117,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
   private CellLayout_Flow getFlowLayout(EditorCell editorCell) {
     if (editorCell instanceof EditorCell_Collection) {
       EditorCell_Collection editorCell_collection = (EditorCell_Collection) editorCell;
-      CellLayout cellLayout = editorCell_collection.getCellLayout();
+      jetbrains.mps.openapi.editor.cells.CellLayout cellLayout = editorCell_collection.getCellLayout();
       if(cellLayout instanceof CellLayout_Flow) {
         return (CellLayout_Flow) cellLayout;
       }
@@ -150,8 +151,8 @@ public class CellLayout_Flow extends AbstractCellLayout {
       myX = editorCells.getX() + myWStart;
       myY = editorCells.getY();
       myMaxRightX = myX;
-      if (editorCells.getStyle().getCurrent(StyleAttributes.MAX_WIDTH) !=null ) {
-        myMaxX = editorCells.getX() + editorCells.getStyle().getCurrent(StyleAttributes.MAX_WIDTH);
+      if (APIStyleAdapter.getCurrentStyleAttribute(editorCells, StyleAttributes.MAX_WIDTH) !=null ) {
+        myMaxX = editorCells.getX() + APIStyleAdapter.getCurrentStyleAttribute(editorCells, StyleAttributes.MAX_WIDTH);
       } else {
         myMaxX = getMaxX();
       }
@@ -179,13 +180,13 @@ public class CellLayout_Flow extends AbstractCellLayout {
         myNextIsPunctuation = false;
         if (lookAhead.hasNext()) {
           nextCell = lookAhead.next();
-          if (nextCell.isPunctuationLayout()) {
+          if (APICellAdapter.isPunctuationLayout(nextCell)) {
             myNextIsPunctuation = true;
           }
         }
 
         //if no flow
-        if (LayoutConstraints.NOFLOW_LAYOUT_CONSTRAINT.equals(cell.getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT))) {
+        if (LayoutConstraints.NOFLOW_LAYOUT_CONSTRAINT.equals(APIStyleAdapter.getStyleAttribute(cell, StyleAttributes.LAYOUT_CONSTRAINT))) {
           if (!getCurrentLine().isEmpty()) {
             alignLine();
             nextLine();
@@ -330,10 +331,10 @@ public class CellLayout_Flow extends AbstractCellLayout {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     for (;it.hasNext();) {
       EditorCell editorCell = it.next();
-      if (LayoutConstraints.NOFLOW_LAYOUT_CONSTRAINT.equals(editorCell.getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT))) {
-        return result.appendToTheBottom(editorCell.renderText());
+      if (LayoutConstraints.NOFLOW_LAYOUT_CONSTRAINT.equals(APIStyleAdapter.getStyleAttribute(editorCell, StyleAttributes.LAYOUT_CONSTRAINT))) {
+        return result.appendToTheBottom(APICellAdapter.renderText(editorCell));
       }
-      result = result.appendToTheRight(editorCell.renderText(), !(editorCell.isPunctuationLayout()));
+      result = result.appendToTheRight(APICellAdapter.renderText(editorCell), !APICellAdapter.isPunctuationLayout(editorCell));
     }
     return result;
   }

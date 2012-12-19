@@ -67,7 +67,7 @@ public class EditorCell_RefPresentation {
     private EditorCell findCellWithLinkDeclaration() {
       EditorCell current = myContextCell;
       while (current != null && current.getLinkDeclaration() == null) {
-        current = current.getParent();
+        current = (EditorCell) current.getParent();
       }
       if (current == null) throw new IllegalStateException();
       return current;
