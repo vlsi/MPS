@@ -1,5 +1,6 @@
 package jetbrains.mps.idea.core.project.stubs;
 
+import com.intellij.facet.FacetManager;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.module.ModuleManager;
@@ -8,6 +9,8 @@ import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.OrderEntry;
 import com.intellij.openapi.roots.OrderRootType;
+import jetbrains.mps.idea.core.facet.MPSFacet;
+import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.annotations.NotNull;
@@ -29,13 +32,13 @@ public class SdkClassesImporter extends AbstractJavaStubSolutionManager implemen
 
   @Override
   public void projectOpened() {
-    for (Module m : ModuleManager.getInstance(myProject).getModules()) {
-      if (0 > 1) continue;
-      final Sdk sdk = ModuleRootManager.getInstance(m).getSdk();
+    for (Module module : ModuleManager.getInstance(myProject).getModules()) {
+      MPSFacet moduleMPSFacet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
+      if (moduleMPSFacet == null) continue;
+      final Sdk sdk = ModuleRootManager.getInstance(module).getSdk();
       if (sdk == null) continue;
 
-      System.out.println("SDK found: " + sdk.getName());
-
+      // HACK temporary
       if (sdk.getName().equals("1.6")) continue;
 
       if (mySdkSolutions.get(sdk) == null) {
@@ -44,7 +47,6 @@ public class SdkClassesImporter extends AbstractJavaStubSolutionManager implemen
           public void run() {
             Solution solution = addSolution(sdk.getName(), sdk.getRootProvider().getFiles(OrderRootType.CLASSES));
             mySdkSolutions.put(sdk, solution);
-            System.out.println("Registering " + sdk.getName());
           }
         });
       }
