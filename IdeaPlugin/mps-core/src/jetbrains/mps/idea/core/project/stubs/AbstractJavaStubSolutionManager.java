@@ -18,24 +18,15 @@ package jetbrains.mps.idea.core.project.stubs;
 
 import com.intellij.openapi.components.BaseComponent;
 import com.intellij.openapi.roots.libraries.Library;
-import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.idea.core.project.StubSolutionIdea;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.project.Solution;
-import jetbrains.mps.project.StubSolution;
-import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 /**
  * User: shatalin
@@ -43,47 +34,47 @@ import java.util.Set;
  */
 public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner, BaseComponent {
 
-    @Override
-    public void initComponent() {
-        ModelAccess.instance().runWriteAction(new Runnable() {
-            @Override
-            public void run() {
-                init();
-            }
-        });
-    }
+  @Override
+  public void initComponent() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        init();
+      }
+    });
+  }
 
-    @Override
-    public void disposeComponent() {
-        ModelAccess.instance().runWriteAction(new Runnable() {
-            @Override
-            public void run() {
-                dispose();
-            }
-        });
-    }
+  @Override
+  public void disposeComponent() {
+    ModelAccess.instance().runWriteAction(new Runnable() {
+      @Override
+      public void run() {
+        dispose();
+      }
+    });
+  }
 
-    @NotNull
-    @Override
-    public String getComponentName() {
-        return getClass().getSimpleName();
-    }
+  @NotNull
+  @Override
+  public String getComponentName() {
+    return getClass().getSimpleName();
+  }
 
-    protected abstract void init();
+  protected abstract void init();
 
-    protected abstract void dispose();
+  protected abstract void dispose();
 
   protected void addSolution(Library library) {
     StubSolutionIdea.newInstance(library, this);
   }
 
-    protected void removeSolution(String name) {
-        ModuleReference ref = new ModuleReference(null, ModuleId.foreign(name));
-        MPSModuleRepository repository = MPSModuleRepository.getInstance();
-        IModule m = ModuleRepositoryFacade.getInstance().getModule(ref);
-        if (m == null) {
-            return;
-        }
-        repository.unregisterModule(m, this);
+  protected void removeSolution(String name) {
+    ModuleReference ref = new ModuleReference(null, ModuleId.foreign(name));
+    MPSModuleRepository repository = MPSModuleRepository.getInstance();
+    IModule m = ModuleRepositoryFacade.getInstance().getModule(ref);
+    if (m == null) {
+      return;
     }
+    repository.unregisterModule(m, this);
+  }
 }
