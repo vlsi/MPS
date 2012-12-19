@@ -54,7 +54,7 @@
         <string>false</string>
       </dict>
       <key>VMOptions</key>
-      <string>-client -Xss1024k -ea -Xmx1200m -XX:MaxPermSize=256m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8</string>
+      <string>-client -Xss1024k -ea -Xmx1200m -XX:MaxPermSize=256m -XX:NewSize=256m -XX:+HeapDumpOnOutOfMemoryError -Dfile.encoding=UTF-8</string>
       <key>WorkingDirectory</key>
       <string>$APP_PACKAGE/bin</string>
     </dict>
