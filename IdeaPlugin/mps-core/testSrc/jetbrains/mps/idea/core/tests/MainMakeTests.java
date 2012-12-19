@@ -49,7 +49,8 @@ public class MainMakeTests extends AbstractMakeTest {
     final IFile model = copyResource("models", "main.mps", "main.mps", "/tests/blProject/models/main.mps");
     final IFile source = model.getParent();
     DefaultModelRoot e = new DefaultModelRoot();
-    e.setPath(model.getParent().getPath());
+    e.setContentRoot(model.getParent().getPath());
+    e.addFile(DefaultModelRoot.SOURCE_ROOTS, model.getParent().getPath());
     configuration.getBean().setModelRoots(Arrays.<ModelRoot>asList(e));
     prepareTestData(configuration, source);
   }

@@ -41,7 +41,8 @@ public class SimpleMakeTest extends AbstractMakeTest {
     copyResource(moduleFileName, "simple.iml", "/tests/simple/simple.iml");
     final IFile model = copyResource("models", "simple.mps", "simple.mps", "/tests/simple/models/simple.mps");
     DefaultModelRoot defaultModelRoot = new DefaultModelRoot();
-    defaultModelRoot.setPath(model.getParent().getPath());
+    defaultModelRoot.setContentRoot(model.getParent().getPath());
+    defaultModelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, model.getParent().getPath());
     configuration.getBean().setModelRoots(Arrays.<ModelRoot>asList(defaultModelRoot));
     prepareTestData(configuration, model.getParent());
   }

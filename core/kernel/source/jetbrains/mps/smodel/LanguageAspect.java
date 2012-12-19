@@ -213,7 +213,7 @@ public enum LanguageAspect {
   }
 
   public SModelReference get(ModuleReference l) {
-    return new SModelReference(l.getModuleFqName() + "." + myName, null);
+    return new SModelReference(l.getModuleName() + "." + myName, null);
   }
 
   public String getName() {

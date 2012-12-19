@@ -27,7 +27,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
-import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
@@ -36,6 +35,7 @@ import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.smodel.*;
@@ -121,10 +121,10 @@ public class NewRootAction extends AnAction {
     Module module = e.getData(LangDataKeys.MODULE);
     VirtualFile[] vFiles = e.getData(PlatformDataKeys.VIRTUAL_FILE_ARRAY);
     if (module == null ||
-      vFiles == null ||
-      vFiles.length != 1 ||
-      vFiles[0].isDirectory() ||
-      FileTypeRegistry.getInstance().getFileTypeByFile(vFiles[0]) != MPSFileTypeFactory.MODEL_FILE_TYPE) {
+        vFiles == null ||
+        vFiles.length != 1 ||
+        vFiles[0].isDirectory() ||
+        FileTypeRegistry.getInstance().getFileTypeByFile(vFiles[0]) != MPSFileTypeFactory.MODEL_FILE_TYPE) {
       return;
     }
 
@@ -139,30 +139,32 @@ public class NewRootAction extends AnAction {
     }
     String path = VirtualFileManager.extractPath(url);
     for (ModelRoot root : mpsFacet.getSolution().getModelRoots()) {
-      if (!(root instanceof FolderModelRootBase)) continue;
-      FolderModelRootBase modelRoot = (FolderModelRootBase) root;
-      if (path.startsWith(modelRoot.getPath())) {
-        Solution solution = mpsFacet.getSolution();
-        myOperationContext = new ModuleContext(solution, mpsProject);
-        myModelDescriptor = (EditableSModelDescriptor) SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(vFiles[0].getPath()));
-        if (myModelDescriptor != null) {
-          ModelAccess.instance().runReadAction(new Runnable() {
-            @Override
-            public void run() {
-              SModel model = myModelDescriptor.getSModel();
-              List<Language> modelLanguages = SModelOperations.getLanguages(model, myOperationContext.getScope());
-              for (Language language : modelLanguages) {
-                for (SNode concept : language.getConceptDeclarations()) {
-                  String conceptFqName = NameUtil.nodeFQName(concept);
-                  if (ModelConstraints.canBeRoot(conceptFqName, model, null)) {
-                    myConceptFqNameToNodePointerMap.put(conceptFqName, new SNodePointer(concept));
+      if (!(root instanceof DefaultModelRoot)) continue;
+      DefaultModelRoot modelRoot = (DefaultModelRoot) root;
+      for (String sourceRoot : modelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
+        if (path.startsWith(sourceRoot)) {
+          Solution solution = mpsFacet.getSolution();
+          myOperationContext = new ModuleContext(solution, mpsProject);
+          myModelDescriptor = (EditableSModelDescriptor) SModelFileTracker.getInstance().findModel(FileSystem.getInstance().getFileByPath(vFiles[0].getPath()));
+          if (myModelDescriptor != null) {
+            ModelAccess.instance().runReadAction(new Runnable() {
+              @Override
+              public void run() {
+                SModel model = myModelDescriptor.getSModel();
+                List<Language> modelLanguages = SModelOperations.getLanguages(model, myOperationContext.getScope());
+                for (Language language : modelLanguages) {
+                  for (SNode concept : language.getConceptDeclarations()) {
+                    String conceptFqName = NameUtil.nodeFQName(concept);
+                    if (ModelConstraints.canBeRoot(conceptFqName, model, null)) {
+                      myConceptFqNameToNodePointerMap.put(conceptFqName, new SNodePointer(concept));
+                    }
                   }
                 }
               }
-            }
-          });
+            });
+          }
+          return;
         }
-        return;
       }
     }
   }

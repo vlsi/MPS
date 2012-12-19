@@ -17,13 +17,13 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.util.misc.hash.HashMap;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 /**

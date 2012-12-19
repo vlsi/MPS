@@ -43,7 +43,7 @@ public class ModelRootContentEntryEditor extends ContentEntryEditor {
   }
 
   private static String pathToUrl(DefaultModelRoot root) {
-    return VirtualFileManager.constructUrl(LocalFileSystem.PROTOCOL, root.getPath());
+    return VirtualFileManager.constructUrl(LocalFileSystem.PROTOCOL, root.getContentRoot());
   }
 
   @Override

@@ -16,9 +16,7 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.smodel.structure.Extension;
-import jetbrains.mps.smodel.structure.ExtensionDescriptor;
 import jetbrains.mps.smodel.structure.ExtensionPoint;
-import jetbrains.mps.util.misc.hash.HashMap;
 
 import java.util.*;
 

@@ -16,6 +16,7 @@
 
 package jetbrains.mps.idea.core.facet;
 
+import com.intellij.util.PathUtil;
 import com.intellij.util.xmlb.annotations.AbstractCollection;
 import com.intellij.util.xmlb.annotations.Attribute;
 import com.intellij.util.xmlb.annotations.Tag;
@@ -23,6 +24,7 @@ import com.intellij.util.xmlb.annotations.Transient;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.MementoUtil;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.persistence.ModuleDescriptorPersistence;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
@@ -136,12 +138,25 @@ public class MPSConfigurationBean {
     if (state.usedLanguages != null) {
       setUsedLanguages(state.usedLanguages);
     }
+
+    String moduleContentRoot = null;
+    if (state.generatorOutputPath != null && state.generatorOutputPath.trim().length() > 0) {
+      String moduleDirPath = PathUtil.getParentPath(state.generatorOutputPath);
+      if (moduleDirPath != null && moduleDirPath.trim().length() > 0) {
+        moduleContentRoot = moduleDirPath;
+      }
+    }
+
     List<ModelRootDescriptor> roots = new ArrayList<ModelRootDescriptor>();
     if (state.modelRoots != null) {
+      ModelRootDescriptor[] moduleDefaultRoot = new ModelRootDescriptor[]{null};
       for (jetbrains.mps.project.structure.model.ModelRoot modelRoot : state.modelRoots) {
         Memento m = new MementoImpl();
         modelRoot.save(m);
-        roots.add(new ModelRootDescriptor(null, m));
+        ModelRootDescriptor desc = ModuleDescriptorPersistence.createDescriptor(null, m, moduleContentRoot, moduleDefaultRoot);
+        if (desc != null) {
+          roots.add(desc);
+        }
       }
     }
     if (state.rootDescriptors != null) {

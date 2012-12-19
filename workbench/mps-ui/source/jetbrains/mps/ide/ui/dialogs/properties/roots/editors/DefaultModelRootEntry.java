@@ -23,7 +23,6 @@ import com.intellij.openapi.fileChooser.ex.FileSystemTreeImpl;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.ui.ScrollPaneFactory;
-import com.intellij.ui.components.JBLabel;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.EventDispatcher;
@@ -49,8 +48,8 @@ public class DefaultModelRootEntry implements ModelRootEntry {
 
   @Override
   public DefaultModelRoot getModelRoot() {
-    if(myModelRoot.getPath() == null)
-      myModelRoot.setPath("");
+    if(myModelRoot.getContentRoot() == null)
+      myModelRoot.setContentRoot("");
     return myModelRoot;
   }
 
@@ -66,7 +65,7 @@ public class DefaultModelRootEntry implements ModelRootEntry {
     final StringBuilder messageText = new StringBuilder();
     messageText.append("<html>");
     messageText.append("Type : ").append(myModelRoot.getType()).append("<br>");
-    messageText.append("Path : ").append(myModelRoot.getPath()).append("<br>");
+    messageText.append("Path : ").append(myModelRoot.getContentRoot()).append("<br>");
     return messageText.toString();
   }
 
@@ -78,7 +77,7 @@ public class DefaultModelRootEntry implements ModelRootEntry {
 
   @Override
   public boolean isValid() {
-    return (new java.io.File(myModelRoot.getPath())).exists();
+    return (new java.io.File(myModelRoot.getContentRoot())).exists();
   }
 
   @Override
@@ -121,7 +120,7 @@ public class DefaultModelRootEntry implements ModelRootEntry {
 //      ui.setRootNode(new DirectoryTreeNode(rootPath, null, null));
 
 
-      String path = myModelRoot.getPath() == null ? "" : myModelRoot.getPath();
+      String path = myModelRoot.getContentRoot() == null ? "" : myModelRoot.getContentRoot();
       VirtualFile virtualFile = VirtualFileManager.getInstance().findFileByUrl(
         VirtualFileManager.constructUrl("file", path)
       );
@@ -141,7 +140,7 @@ public class DefaultModelRootEntry implements ModelRootEntry {
           @Override
           public void selectionChanged(List<VirtualFile> selection) {
             if (selection.size() > 0) {
-              myModelRoot.setPath(FileUtil.getCanonicalPath(selection.get(0).getPath()));
+              myModelRoot.setContentRoot(FileUtil.getCanonicalPath(selection.get(0).getPath()));
               myEventDispatcher.getMulticaster().fireDataChanged();
             }
           }

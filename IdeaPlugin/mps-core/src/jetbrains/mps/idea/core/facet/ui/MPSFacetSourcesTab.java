@@ -49,12 +49,9 @@ import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.idea.core.ui.IModuleConfigurationTab;
 
-import javax.swing.BorderFactory;
-import javax.swing.JComponent;
-import javax.swing.JPanel;
-import javax.swing.JScrollPane;
+import javax.swing.*;
 import javax.swing.border.Border;
-import java.awt.Color;
+import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -203,7 +200,8 @@ public class MPSFacetSourcesTab implements IModuleConfigurationTab {
     ContentEntryEditor lastEditor = null;
     for (VirtualFile file : files) {
       DefaultModelRoot root = new DefaultModelRoot();
-      root.setPath(file.getPath());
+      root.setContentRoot(file.getPath());
+      root.addFile(DefaultModelRoot.SOURCE_ROOTS, file.getPath());
       lastEditor = addModelRoot(root);
     }
     selectModelRoot(lastEditor);
@@ -253,14 +251,14 @@ public class MPSFacetSourcesTab implements IModuleConfigurationTab {
           if (VfsUtil.isAncestor(modelRootFile, file, true)) {
             // intersection not allowed
             throw new Exception(
-              MPSBundle.message("facet.sources.tab.add.content.intersect.error", file.getPresentableUrl(),
-                modelRootFile.getPresentableUrl()));
+                MPSBundle.message("facet.sources.tab.add.content.intersect.error", file.getPresentableUrl(),
+                    modelRootFile.getPresentableUrl()));
           }
           if (VfsUtil.isAncestor(file, modelRootFile, true)) {
             // intersection not allowed
             throw new Exception(
-              MPSBundle.message("facet.sources.tab.add.content.dominate.error", file.getPresentableUrl(),
-                modelRootFile.getPresentableUrl()));
+                MPSBundle.message("facet.sources.tab.add.content.dominate.error", file.getPresentableUrl(),
+                    modelRootFile.getPresentableUrl()));
           }
         }
       }

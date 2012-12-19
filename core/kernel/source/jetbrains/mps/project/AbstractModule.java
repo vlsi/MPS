@@ -19,6 +19,7 @@ import jetbrains.mps.extapi.persistence.ModelRootBase;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.dependency.modules.DependenciesManager;
 import jetbrains.mps.project.dependency.modules.ModuleDependenciesManager;
@@ -387,9 +388,8 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     // stub model roots
     List<ModelRootDescriptor> toRemove = new ArrayList<ModelRootDescriptor>();
     for (ModelRootDescriptor mrd : descriptor.getModelRootDescriptors()) {
-      jetbrains.mps.project.structure.model.ModelRoot sme = mrd.getRoot();
-      if (sme == null || !LanguageID.JAVA_MANAGER.equals(sme.getManager())) continue;
-      String path = sme.getPath();
+      if (!mrd.getType().equals(PersistenceRegistry.JAVA_CLASSES_ROOT)) continue;
+      String path = mrd.getMemento().get("path");
       String canonicalPath = FileUtil.getCanonicalPath(path).toLowerCase();
 
       String suffix = descriptor.getCompileInMPS() ? "classes_gen" : "classes";

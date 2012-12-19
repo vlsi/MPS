@@ -144,9 +144,14 @@ public class Module_Behavior {
         return it instanceof DefaultModelRoot;
       }
     }).toListSequence();
-    List<SNode> pathHolders = Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).select(new ISelector<org.jetbrains.mps.openapi.persistence.ModelRoot, String>() {
-      public String select(org.jetbrains.mps.openapi.persistence.ModelRoot it) {
-        return (((DefaultModelRoot) it)).getPath().replace(File.separator, Util.SEPARATOR);
+    List<SNode> pathHolders = Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).translate(new ITranslator2<org.jetbrains.mps.openapi.persistence.ModelRoot, String>() {
+      public Iterable<String> translate(org.jetbrains.mps.openapi.persistence.ModelRoot it) {
+        Iterable<String> files = (((DefaultModelRoot) it)).getFiles(DefaultModelRoot.SOURCE_ROOTS);
+        return Sequence.fromIterable(files).select(new ISelector<String, String>() {
+          public String select(String it) {
+            return it.replace(File.separator, Util.SEPARATOR);
+          }
+        });
       }
     }).distinct().toListSequence(), true);
     return ListSequence.fromList(pathHolders).sort(new ISelector<SNode, String>() {

@@ -10,6 +10,7 @@ import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import org.jetbrains.mps.openapi.persistence.Memento;
 import java.io.IOException;
 import org.jdom.JDOMException;
 import org.jdom.Element;
@@ -49,9 +50,7 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
         if (mpsConf.rootDescriptors != null) {
           for (ModelRootDescriptor mrp : mpsConf.rootDescriptors) {
             // TODO: model root manager 
-            if (mrp.getMemento().get("path") != null) {
-              mrp.getMemento().put("path", macroHelper.expandPath(mrp.getMemento().get("path")));
-            }
+            process(mrp.getMemento(), macroHelper);
             result_56japk_a0a0e0b.getModelRootDescriptors().add(mrp);
           }
 
@@ -76,6 +75,17 @@ public class IdeaModuleSolutionDescriptorIO implements DescriptorIO<SolutionDesc
     }.invoke();
     sd.setTimestamp(Long.toString(file.lastModified()));
     return sd;
+  }
+
+  public void process(Memento memento, MacroHelper helper) {
+    for (String key : memento.getKeys()) {
+      if (key.equals("path") || key.endsWith("Path")) {
+        memento.put(key, helper.expandPath(memento.get(key)));
+      }
+    }
+    for (Memento c : memento.getChildren()) {
+      process(c, helper);
+    }
   }
 
   private MPSFacetConfiguration readMPSFacetConf(IFile file) throws DescriptorIOException {

@@ -14,7 +14,9 @@
         </option>
         <modelRoots>
           <modelRoot type="default">
-            <settings path="$MODULE_DIR$/models" />
+            <settings contentPath="$MODULE_DIR$">
+              <sourceRoot location="models" />
+            </settings>
           </modelRoot>
         </modelRoots>
       </configuration>

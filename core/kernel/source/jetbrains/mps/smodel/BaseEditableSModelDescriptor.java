@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.persistence.DefaultModelRoot;
@@ -157,7 +158,16 @@ public abstract class BaseEditableSModelDescriptor extends BaseSModelDescriptorW
       IFile oldFile = getSource().getFile();
       ModelRoot root = ModelRootUtil.getModelRoot(this);
       if (root instanceof DefaultModelRoot) {
-        IFile newFile = ((DefaultModelRoot) root).createSource(newModelFqName.toString(), FileUtil.getExtension(oldFile.getName())).getFile();
+        DefaultModelRoot defaultModelRoot = (DefaultModelRoot) root;
+        String sourceRoot = null;
+        for (String sr : defaultModelRoot.getFiles(FileBasedModelRoot.SOURCE_ROOTS)) {
+          if (oldFile.getPath().startsWith(sr)) {
+            // using the same sourceRoot
+            sourceRoot = sr;
+            break;
+          }
+        }
+        IFile newFile = defaultModelRoot.createSource(newModelFqName.toString(), FileUtil.getExtension(oldFile.getName()), sourceRoot).getFile();
         newFile.getParent().mkdirs();
         newFile.createNewFile();
         changeModelFile(newFile);

@@ -21,7 +21,6 @@ import jetbrains.mps.idea.core.module.CachedModelData;
 import jetbrains.mps.idea.core.module.CachedModuleData;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.idea.core.module.JavaStubModelHeader;
-import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import jetbrains.mps.persistence.java.library.JavaClassStubsModelRoot;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -37,42 +36,41 @@ import java.util.List;
  */
 public class CachedJavaClassStubsModelRoot extends JavaClassStubsModelRoot {
 
-    private CachedRepositoryData myCachedRepository;
+  private CachedRepositoryData myCachedRepository;
 
-    public CachedJavaClassStubsModelRoot(CachedRepositoryData repo) {
-        myCachedRepository = repo;
+  public CachedJavaClassStubsModelRoot(CachedRepositoryData repo) {
+    myCachedRepository = repo;
+  }
+
+  @Override
+  public Iterable<SModel> loadModels() {
+    SModule module = getModule();
+    if (module instanceof Generator) {
+      module = ((Generator) module).getSourceLanguage();
+    }
+    if (module == null || !(module.getModuleReference() instanceof ModuleReference)) {
+      return super.loadModels();
     }
 
-    @Override
-    public Iterable<SModel> loadModels() {
-        SModule module = getModule();
-        if (module instanceof Generator) {
-            module = ((Generator) module).getSourceLanguage();
-        }
-        if (module == null || !(module.getModuleReference() instanceof ModuleReference)) {
-            return super.loadModels();
-        }
-
-        CachedModuleData moduleData = myCachedRepository.getModuleData((ModuleReference) module.getModuleReference());
-        if (moduleData == null) {
-            return super.loadModels();
-        }
-
-        String path = getPath();
-        List<CachedModelData> models = moduleData.getModels(PersistenceRegistry.JAVA_CLASSES_ROOT, path);
-        if (models == null) {
-            return super.loadModels();
-        }
-
-        List<SModel> result = new ArrayList<SModel>();
-        for (CachedModelData mdata : models) {
-            FolderSetDataSource source = new FolderSetDataSource();
-            JavaStubModelHeader header = (JavaStubModelHeader) mdata.getHeader();
-            for (String s : header.getPaths()) {
-                source.addPath(s, this);
-            }
-            result.add(new JavaClassStubModelDescriptor(header.getReference(), source, this));
-        }
-        return result;
+    CachedModuleData moduleData = myCachedRepository.getModuleData((ModuleReference) module.getModuleReference());
+    if (moduleData == null) {
+      return super.loadModels();
     }
+
+    List<CachedModelData> models = moduleData.getModels(this);
+    if (models == null) {
+      return super.loadModels();
+    }
+
+    List<SModel> result = new ArrayList<SModel>();
+    for (CachedModelData mdata : models) {
+      FolderSetDataSource source = new FolderSetDataSource();
+      JavaStubModelHeader header = (JavaStubModelHeader) mdata.getHeader();
+      for (String s : header.getPaths()) {
+        source.addPath(s, this);
+      }
+      result.add(new JavaClassStubModelDescriptor(header.getReference(), source, this));
+    }
+    return result;
+  }
 }
