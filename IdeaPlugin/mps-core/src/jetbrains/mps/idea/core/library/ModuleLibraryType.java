@@ -24,8 +24,18 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.project.ProjectBundle;
 import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.roots.impl.libraries.LibraryEx;
-import com.intellij.openapi.roots.libraries.*;
-import com.intellij.openapi.roots.libraries.ui.*;
+import com.intellij.openapi.roots.libraries.DummyLibraryProperties;
+import com.intellij.openapi.roots.libraries.Library;
+import com.intellij.openapi.roots.libraries.LibraryType;
+import com.intellij.openapi.roots.libraries.NewLibraryConfiguration;
+import com.intellij.openapi.roots.libraries.PersistentLibraryKind;
+import com.intellij.openapi.roots.libraries.ui.AttachRootButtonDescriptor;
+import com.intellij.openapi.roots.libraries.ui.LibraryEditorComponent;
+import com.intellij.openapi.roots.libraries.ui.LibraryPropertiesEditor;
+import com.intellij.openapi.roots.libraries.ui.LibraryRootsComponentDescriptor;
+import com.intellij.openapi.roots.libraries.ui.OrderRoot;
+import com.intellij.openapi.roots.libraries.ui.OrderRootTypePresentation;
+import com.intellij.openapi.roots.libraries.ui.RootDetector;
 import com.intellij.openapi.roots.ui.configuration.FacetsProvider;
 import com.intellij.openapi.roots.ui.configuration.libraryEditor.DefaultLibraryRootsComponentDescriptor;
 import com.intellij.openapi.roots.ui.configuration.libraryEditor.LibraryEditor;
@@ -38,7 +48,6 @@ import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.icons.MPSIcons;
-import jetbrains.mps.idea.core.project.ModuleRuntimeLibrariesImporter;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
@@ -52,16 +61,16 @@ import org.jetbrains.annotations.Nullable;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import java.awt.Component;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.List;
+import java.util.Set;
 
 public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
-  public static final PersistentLibraryKind MPS_MODULE_LIBRARY_KIND = new PersistentLibraryKind<DummyLibraryProperties>("mps.solution.library") {
-    @NotNull
-    @Override
-    public DummyLibraryProperties createDefaultProperties() {
-      return new DummyLibraryProperties();
-    }
-  };
+  public static final PersistentLibraryKind MPS_MODULE_LIBRARY_KIND = new MpsModuleLibraryKind();
 
   public ModuleLibraryType() {
     super(MPS_MODULE_LIBRARY_KIND);
@@ -90,10 +99,6 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
   @Override
   public String getCreateActionName() {
     return MPSBundle.message("library.mps.solutions");
-  }
-
-  public OrderRootType[] getAdditionalRootTypes() {
-    return new OrderRootType[]{ModuleXmlRootDetector.MPS_MODULE_XML};
   }
 
   @Override
@@ -296,5 +301,22 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
     result.addAll(availableSolutions);
     result.addAll(availableLanguages);
     return result;
+  }
+
+  private static class MpsModuleLibraryKind extends PersistentLibraryKind<DummyLibraryProperties> {
+    public MpsModuleLibraryKind() {
+      super("mps.solution.library");
+    }
+
+    @NotNull
+    @Override
+    public DummyLibraryProperties createDefaultProperties() {
+      return new DummyLibraryProperties();
+    }
+
+    @Override
+    public OrderRootType[] getAdditionalRootTypes() {
+      return new OrderRootType[]{ModuleXmlRootDetector.MPS_MODULE_XML};
+    }
   }
 }
