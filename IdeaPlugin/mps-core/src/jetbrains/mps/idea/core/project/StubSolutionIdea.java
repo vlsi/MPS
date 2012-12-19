@@ -69,6 +69,15 @@ public abstract class StubSolutionIdea extends StubSolution {
     return register(descriptor, moduleOwner, new SdkStubSolution(descriptor, sdk));
   }
 
+  @Nullable
+  public static Library findLibrary(StubSolutionIdea solutionIdea) {
+    if (solutionIdea instanceof LibraryStubSolution) {
+      return ((LibraryStubSolution)solutionIdea).getLibrary();
+    }
+    // sdk?
+    return null;
+  }
+
   private static SolutionDescriptor createDescriptor(String name, VirtualFile[] roots) {
     SolutionDescriptor sd = new SolutionDescriptor();
     sd.setNamespace(name);
@@ -140,6 +149,11 @@ public abstract class StubSolutionIdea extends StubSolution {
     @Override
     protected RootProvider getRootProvider() {
       return myLibrary.getRootProvider();
+    }
+
+    @NotNull
+    public Library getLibrary() {
+      return myLibrary;
     }
   }
 

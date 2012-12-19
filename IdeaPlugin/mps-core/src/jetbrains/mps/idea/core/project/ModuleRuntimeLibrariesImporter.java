@@ -86,7 +86,18 @@ public abstract class ModuleRuntimeLibrariesImporter {
         continue;
       }
 
-      projectLibs2Add.add(ModuleLibrariesUtil.getOrCreateAutoLibrary(usedModule, getProject(), myLibrariesContainer));
+      // todo how to deal with sdk stubs?
+
+      Library library = null;
+      if (usedModule instanceof StubSolutionIdea) {
+        library = StubSolutionIdea.findLibrary((StubSolutionIdea) usedModule);
+      } else {
+        library = ModuleLibrariesUtil.getOrCreateAutoLibrary(usedModule, getProject(), myLibrariesContainer);
+      }
+
+      if (library != null) {
+        projectLibs2Add.add(library);
+      }
     }
 
     for (Library projectLibrary : projectLibs2Add) {
@@ -149,8 +160,6 @@ public abstract class ModuleRuntimeLibrariesImporter {
       Set<IModule> runtimeDependencies = new HashSet<IModule>();
       for (ModuleReference moduleReference : moduleReferences) {
         IModule module = ModuleRepositoryFacade.getInstance().getModule(moduleReference);
-        // we do not want stubs stuff
-        assert module.getDescriptorFile() != null;
         collectRuntimeModules(runtimeDependencies, module);
       }
       return runtimeDependencies;
