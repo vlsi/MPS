@@ -13,11 +13,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.ide.java;
+package jetbrains.mps.workbench.findusages;
 
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.ide.projectPane.fileSystem.FileIcons;
 import jetbrains.mps.project.MPSExtentions;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -30,6 +29,7 @@ import javax.swing.ImageIcon;
 * evgeny, 10/27/11
 */
 public class ClassFileType implements FileType {
+  public static final Icon CLASS_ICON = new ImageIcon(ClassFileType.class.getResource("icons/javaClass.png"));
 
   @NotNull
   @NonNls
@@ -50,7 +50,7 @@ public class ClassFileType implements FileType {
 
   @Nullable
   public Icon getIcon() {
-    return FileIcons.CLASS_ICON;
+    return CLASS_ICON;
   }
 
   public boolean isBinary() {

@@ -17,20 +17,18 @@ package jetbrains.mps.ide.projectPane.fileSystem;
 
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.fileTypes.FileTypeConsumer;
-import com.intellij.openapi.fileTypes.FileTypeFactory;
 import jetbrains.mps.fileTypes.XMLFileType;
-import jetbrains.mps.ide.java.ClassFileType;
 import jetbrains.mps.ide.java.JavaFileType;
 import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.workbench.findusages.MPSPlatformFileTypeFactory;
 import org.jetbrains.annotations.NotNull;
 
 /**
  * evgeny, 10/27/11
  */
-public class MPSWorkbenchFileTypeFactory extends FileTypeFactory {
+public class MPSWorkbenchFileTypeFactory extends MPSPlatformFileTypeFactory {
   public static final FileType XML_FILE_TYPE = new XMLFileType("XML", "XML File", "xml", FileIcons.XML_ICON);
   public static final FileType JAVA_FILE_TYPE = new JavaFileType();
-  public static final FileType CLASS_FILE_TYPE = new ClassFileType();
 
   public static final String[] XML_EXTENSIONS = {MPSExtentions.IDEAWORKSPACE,
     MPSExtentions.WORKSPACE,

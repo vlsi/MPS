@@ -37,11 +37,11 @@
       <implementation-class>jetbrains.mps.ide.refactoring.RefactoringAccessImpl</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.ide.findusages.caches.StubModelsIndexer</implementation-class>
+      <implementation-class>jetbrains.mps.workbench.findusages.StubModelsIndexer</implementation-class>
     </component>
-    <!--<component>-->
-      <!--<implementation-class>jetbrains.mps.ide.findusages.caches.StubModelsFastFindSupport</implementation-class>-->
-    <!--</component>-->
+    <component>
+      <implementation-class>jetbrains.mps.workbench.findusages.StubModelsFastFindSupport</implementation-class>
+    </component>
     <component>
       <implementation-class>jetbrains.mps.workbench.MPSApplicationInfo</implementation-class>
     </component>
