@@ -26,6 +26,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
+import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -52,7 +53,7 @@ public class SModelRepository implements CoreComponent {
   private final Object myListenersLock = new Object();
   private final List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
 
-  private final Map<SModelDescriptor, SModel> myReloadingDescriptorQueue = new LinkedHashMap<SModelDescriptor, SModel>();
+  private final Map<SModelDescriptor, SModel> myReloadingDescriptorSet = new LinkedHashMap<SModelDescriptor, SModel>();
 
   private SModelListener myModelsListener = new ModelChangeListener();
 
@@ -263,12 +264,12 @@ public class SModelRepository implements CoreComponent {
  public void notifyModelReplaced(BaseSModelDescriptor modelDescriptor, SModel oldSModel) {
     ModelAccess.assertLegalWrite();
 
-    if (myReloadingDescriptorQueue.isEmpty()) {
+    if (myReloadingDescriptorSet.isEmpty()) {
       notifyAfterReload();
     }
 
-    synchronized (myReloadingDescriptorQueue) {
-      myReloadingDescriptorQueue.put(modelDescriptor, oldSModel);
+    synchronized (myReloadingDescriptorSet) {
+      myReloadingDescriptorSet.put(modelDescriptor, oldSModel);
     }
 
   }
@@ -277,23 +278,27 @@ public class SModelRepository implements CoreComponent {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        if (myReloadingDescriptorQueue.isEmpty()) {
+        if (myReloadingDescriptorSet.isEmpty()) {
           return;
         }
 
-        fireModelReplaced(myReloadingDescriptorQueue.keySet());
-        for (SModelDescriptor modelDescriptor : myReloadingDescriptorQueue.keySet()) {
-          SModel oldModel = myReloadingDescriptorQueue.get(modelDescriptor);
+        fireModelReplaced(myReloadingDescriptorSet.keySet());
+        for (SModelDescriptor modelDescriptor : myReloadingDescriptorSet.keySet()) {
+          SModel oldModel = myReloadingDescriptorSet.get(modelDescriptor);
           if (oldModel != null) {
             oldModel.dispose();
           }
         }
 
-        myReloadingDescriptorQueue.clear();
+        myReloadingDescriptorSet.clear();
       }
     });
   }
 
+
+  public void replaceModel(DefaultSModelDescriptor descriptor, DefaultSModel newModel, final ModelLoadingState state){
+    descriptor.replaceModel(newModel, state);
+  }
 
   //---------------------------events----------------------------
 
