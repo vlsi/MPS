@@ -26,19 +26,21 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Set;
+
 
 class OnReloadingUndoCleaner implements ApplicationComponent {
   private ProjectManager myProjectManager;
-  private GlobalSModelEventsManager myEventsManager;
 
   OnReloadingUndoCleaner(MPSCoreComponents coreComponents, ProjectManager projectManager) {
     myProjectManager = projectManager;
-    myEventsManager = coreComponents.getGlobalSModelEventsManager();
   }
 
   @NotNull
@@ -48,25 +50,26 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
 
   public void initComponent() {
 
-    myEventsManager.addGlobalModelListener(new SModelAdapter() {
+    SModelRepository.getInstance().addModelRepositoryListener(new SModelRepositoryAdapter() {
       @Override
-      public void modelReplaced(SModelDescriptor sm) {
-        for (SNode root : sm.getSModel().roots()) {
-          final MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(root);
-          assert file.hasValidMPSNode() : "invalid file returned by MPS VFS for following model root: " + root;
-          for (final Project p : myProjectManager.getOpenProjects()) {
-            ApplicationManager.getApplication().invokeLater(new Runnable() {
-              public void run() {
-                if (!p.isDisposed() && file.isValid()) {
-                  ((UndoManagerImpl) UndoManager.getInstance(p)).clearUndoRedoQueueInTests(file);
+      public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+        for (SModelDescriptor sm : replacedModels) {
+          for (SNode root : sm.getSModel().roots()) {
+            final MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(root);
+            assert file.hasValidMPSNode() : "invalid file returned by MPS VFS for following model root: " + root;
+            for (final Project p : myProjectManager.getOpenProjects()) {
+              ApplicationManager.getApplication().invokeLater(new Runnable() {
+                public void run() {
+                  if (!p.isDisposed() && file.isValid()) {
+                    ((UndoManagerImpl) UndoManager.getInstance(p)).clearUndoRedoQueueInTests(file);
+                  }
                 }
-              }
-            }, ModalityState.NON_MODAL);
+              }, ModalityState.NON_MODAL);
+            }
           }
         }
       }
     });
-
   }
 
   public void disposeComponent() {
