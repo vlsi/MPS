@@ -8,10 +8,8 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.vcs.FileStatus;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
-import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.editor.MPSEditorUtil;
-import jetbrains.mps.smodel.ModelAccess;
 import com.intellij.openapi.editor.Document;
 
 public class NodeFileStatusProvider implements FileStatusProvider {
@@ -24,21 +22,18 @@ public class NodeFileStatusProvider implements FileStatusProvider {
   }
 
   public FileStatus getFileStatus(VirtualFile file) {
-    if (file instanceof MPSNodeVirtualFile) {
-      final MPSNodeVirtualFile nodeFile = (MPSNodeVirtualFile) file;
-      final Wrappers._T<SNode> root = new Wrappers._T<SNode>(MPSEditorUtil.getCurrentEditedNode(myProject, nodeFile));
-      if (root.value == null) {
-        ModelAccess.instance().runReadAction(new Runnable() {
-          public void run() {
-            root.value = nodeFile.getNode();
-          }
-        });
-      }
-      if (root.value != null) {
-        return myMapping.getStatus(root.value);
-      }
+    if (!(file instanceof MPSNodeVirtualFile)) {
+      return null;
     }
-    return null;
+    MPSNodeVirtualFile nodeFile = (MPSNodeVirtualFile) file;
+    SNode root = MPSEditorUtil.getCurrentEditedNode(myProject, nodeFile);
+    if (root == null) {
+      return null;
+    }
+    if (root.isDisposed()) {
+      return null;
+    }
+    return myMapping.getStatus(root);
   }
 
   public void refreshFileStatusFromDocument(VirtualFile file, Document document) {

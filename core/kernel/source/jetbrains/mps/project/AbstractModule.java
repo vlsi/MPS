@@ -104,7 +104,8 @@ public abstract class AbstractModule implements IModule {
   //----reference
 
   protected void setModuleReference(@NotNull ModuleReference reference) {
-    LOG.assertLog(myModuleReference == null || ObjectUtils.equals(myModuleReference.getModuleId(), reference.getModuleId()), reference.getModuleFqName());
+    assert reference.getModuleId() != null : "module must have an id";
+    assert myModuleReference == null || reference.getModuleId().equals(myModuleReference.getModuleId()) : "module id can't be changed";
 
     ModuleReference oldValue = myModuleReference;
     myModuleReference = reference;
@@ -117,6 +118,7 @@ public abstract class AbstractModule implements IModule {
   }
 
   @NotNull
+  //module reference is immutable, so we cn return original
   public ModuleReference getModuleReference() {
     return myModuleReference;
   }

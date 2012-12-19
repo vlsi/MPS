@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="4oknys0yej5xtantgazd4wm9e5h0zm">
+<dependencies version="2" modelHash="-d68ah8v5wwuffxezbleo1pclmvdfp8b">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="1h96jbg38xkez14vk73630sbzaefb2q" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="1x3xr8k67w2buvi21pv9dhqvhucj5t8" />
@@ -13,7 +13,7 @@
   <dep model="r:4f6f8ed5-c3d7-49f4-b0dd-d70029feffdf(jetbrains.mps.baseLanguage.extensionMethods.structure)" hash="-cqyqskrem7nlgpo1xelcebhd8lj9wq1" />
   <dep model="r:a5509d93-a6df-4356-9363-7de4efc47849(jetbrains.mps.baseLanguage.extensionMethods.behavior)" hash="8mfrit9put3pasw2b1kwbi6889j30ys" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="a1zgrouzvocts8mn9z8xik6lpn0y8ga" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-6mrrf5lmwyozphwi7ijfbp6jjoyozuy" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="7w1e831jg2rvu8efz5er0l7s2jdmhpg" />
   <common hash="-969o3ckoand1ycagcmmtcekd7lpsogi">
     <dep root="2870858475498606561" />
     <dep root="328127298621285767" />
@@ -45,7 +45,7 @@
   <source id="328127298621285767" name="reduce_ThisExtention" hash="dgfwpnhvmwr6pq87cgpte78yvdbbys4">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
-  <source id="2870858475498606561" name="reduce_ExtensionMethodReference" hash="2ecb74pvf5z3bbw3prv8gjkbyx534yl">
+  <source id="2870858475498606561" name="reduce_ExtensionMethodReference" hash="ryexihyqim2u5rxexybzv0coy5noe3">
     <dep model="r:00000000-0000-4000-0000-011c895902e9(jetbrains.mps.lang.generator.generator.baseLanguage.template.main@generator)" />
   </source>
   <source id="8022092943110544334" name="BaseExtensionMethodContainerImpl" hash="44qcfrmh421tejfxtjzbf28y50vd9vd">

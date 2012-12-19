@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="c3d8gq2iezd63sp12q0hrvqnonac5an">
+<dependencies version="2" modelHash="a7lpqixb1g3mg9s4vduxkg8eu6jkatm">
   <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="1h96jbg38xkez14vk73630sbzaefb2q" />
   <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" hash="1x3xr8k67w2buvi21pv9dhqvhucj5t8" />
@@ -16,11 +16,11 @@
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="-7a2x0ckvyi3q05eh2sxnpwh84qw700g" />
   <dep model="r:d3d1a08a-58c7-42cd-9ba9-3124b71778eb(jetbrains.mps.lang.test.matcher)" hash="e1tpxy0zr2oiu0eq5ig32g69hn67xzb" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-ewgblj5m32jyc5zc1n1eup4emffkdql" />
-  <common hash="-aeo47sgffn1lrbx6050trgrb5m65aut">
+  <common hash="-2fjo4hnlq5qpc4ra9uso27lri6bi6iw">
     <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" />
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
-  <source id="5543996881668550053" name="TransformationUtil_Expressions" hash="-5xa4qeikvf71ot1unu55s4pr1wwtujx" dependsOnNodes="true">
+  <source id="5543996881668550053" name="TransformationUtil_Expressions" hash="-6whsjgytexjpm6kwkhr4bdd16ro0lyh" dependsOnNodes="true">
     <dep root="7744266994038462827" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
@@ -39,7 +39,7 @@
     <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
     <file name="TransformationUtil_Expressions_Test.java" />
   </source>
-  <source id="7696059916860905164" name="TransformationUtil_Complex" hash="93n9zhrttmjeir7jhqvw8nwsadpnqs3" dependsOnNodes="true">
+  <source id="7696059916860905164" name="TransformationUtil_Complex" hash="5fk1ae8poesjrodfpehpot2mlbt99u8" dependsOnNodes="true">
     <dep root="7744266994038462827" />
     <dep model="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

@@ -345,14 +345,6 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
     }
   }
 
-  protected void processChanged(ProgressMonitor monitor) {
-    if (!needsReloading()) return;
-
-    monitor.start("Reloading " + getLongName(), 1);
-    reloadFromDiskSafe();
-    monitor.done();
-  }
-
   protected void reload() {
     DescriptorLoadResult dr;
     try {
@@ -387,6 +379,7 @@ public class DefaultSModelDescriptor extends BaseSModelDescriptorWithSource impl
   }
 
   public void resolveDiskConflict() {
+    LOG.warning("Model=" + getSModel().getSModelFqName()+ ", file ts="+getSource().getTimestamp() + ", model ts=" + getSourceTimestamp(), new Throwable());  // more information
     DiskMemoryConflictResolver.getResolver().resolveDiskMemoryConflict(getModelFile(), getSModel(), this);
   }
 

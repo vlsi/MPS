@@ -11,9 +11,9 @@
   <import index="k7g3" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(java.util@java_stub)" version="-1" />
   <import index="vkwc" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util.concurrent.locks(java.util.concurrent.locks@java_stub)" version="-1" />
   <import index="ieao" modelUID="r:171d7488-7735-44dd-8049-f905d8fca4b0(jetbrains.mps.debugger.java.runtime)" version="-1" />
-  <import index="4c6z" modelUID="f:java_stub#fdb93da0-59ed-4001-b2aa-4fad79ec058e#com.sun.jdi(com.sun.jdi@java_stub)" version="-1" />
   <import index="e2lb" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)" version="-1" />
   <import index="esue" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.util(MPS.Platform/com.intellij.util@java_stub)" version="-1" />
+  <import index="f5hh" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <roots>
     <node type="tpee.Interface" typeId="tpee.1107796713796" id="2891782949125145720">
@@ -1635,7 +1635,7 @@
                     <property name="name" nameId="tpck.1169194664001" value="e" />
                     <property name="isFinal" nameId="tpee.1176718929932" value="false" />
                     <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125205549">
-                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~VMDisconnectedException" resolveInfo="VMDisconnectedException" />
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="f5hh.~VMDisconnectedException" resolveInfo="VMDisconnectedException" />
                     </node>
                   </node>
                 </node>
@@ -2787,7 +2787,7 @@
               <property name="name" nameId="tpck.1169194664001" value="e" />
               <property name="isFinal" nameId="tpee.1176718929932" value="false" />
               <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2891782949125205492">
-                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4c6z.~VMDisconnectedException" resolveInfo="VMDisconnectedException" />
+                <link role="classifier" roleId="tpee.1107535924139" targetNodeId="f5hh.~VMDisconnectedException" resolveInfo="VMDisconnectedException" />
               </node>
             </node>
           </node>

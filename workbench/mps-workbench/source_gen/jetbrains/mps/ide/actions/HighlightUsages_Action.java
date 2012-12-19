@@ -42,7 +42,7 @@ public class HighlightUsages_Action extends BaseAction {
 
   @Override
   public boolean isDumbAware() {
-    return true;
+    return false;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {

@@ -6937,18 +6937,20 @@
               </node>
             </node>
           </node>
-          <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7327512164851048494">
-            <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="7327512164851048493">
-              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2340513783146254867" resolveInfo="myTableCell" />
-            </node>
-            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7327512164851048498">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7327512164851048500">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="7327512164851048499">
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7327512164851048481" resolveInfo="that" />
-                </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="7327512164851048504">
-                  <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="2340513783146254867" resolveInfo="myTableCell" />
+          <node role="condition" roleId="tpee.1068580123160" type="tpee.NotExpression" typeId="tpee.1081516740877" id="6162642318860140323">
+            <node role="expression" roleId="tpee.1081516765348" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6162642318860140324">
+              <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="6162642318860140325">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="2340513783146254867" resolveInfo="myTableCell" />
+              </node>
+              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6162642318860140326">
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="e2lb.~Object%dequals(java%dlang%dObject)%cboolean" resolveInfo="equals" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6162642318860140327">
+                  <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6162642318860140328">
+                    <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7327512164851048481" resolveInfo="that" />
+                  </node>
+                  <node role="operation" roleId="tpee.1197027833540" type="tpee.FieldReferenceOperation" typeId="tpee.1197029447546" id="6162642318860140329">
+                    <link role="fieldDeclaration" roleId="tpee.1197029500499" targetNodeId="2340513783146254867" resolveInfo="myTableCell" />
+                  </node>
                 </node>
               </node>
             </node>

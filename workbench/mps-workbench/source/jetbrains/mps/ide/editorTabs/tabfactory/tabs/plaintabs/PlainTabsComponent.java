@@ -94,6 +94,8 @@ public class PlainTabsComponent extends BaseTabsComponent {
     int index = myJbTabs.getSelectedIndex();
     PlainEditorTab tab = myRealTabs.get(index);
     SNodePointer np = tab.getNode();
+    if (ObjectUtils.equals(np, getLastNode())) return;
+
     SNode node = np == null ? null : np.getNode();
 
     if (node != null) {
@@ -212,12 +214,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
   }
 
   protected boolean isTabUpdateNeeded(SNodePointer node) {
-    if (myDisposed) return false;
-
-    if (!isOwn(node)) return false;
-
-    onNodeChange(myBaseNode.getNode());
-    return true;
+    return !myDisposed && isOwn(node);
   }
 
   private synchronized boolean isOwn(SNodePointer node) {

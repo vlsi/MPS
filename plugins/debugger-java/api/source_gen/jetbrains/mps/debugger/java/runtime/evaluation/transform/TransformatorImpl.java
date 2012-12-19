@@ -1194,7 +1194,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
               {
                 quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_23 = quotedNode_11;
-                quotedNode1_23.addReference(SReference.create("classifier", quotedNode1_23, SModelReference.fromString("f:java_stub#fdb93da0-59ed-4001-b2aa-4fad79ec058e#com.sun.jdi(JDK.Tools/com.sun.jdi@java_stub)"), SNodeId.fromString("~ThreadReference")));
+                quotedNode1_23.addReference(SReference.create("classifier", quotedNode1_23, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)"), SNodeId.fromString("~ThreadReference")));
                 quotedNode_9.addChild("returnType", quotedNode1_23);
               }
               {
@@ -1436,7 +1436,7 @@ public class TransformatorImpl extends TransformatorBuilder.Transformator {
               {
                 quotedNode_11 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, GlobalScope.getInstance(), false);
                 SNode quotedNode1_23 = quotedNode_11;
-                quotedNode1_23.addReference(SReference.create("classifier", quotedNode1_23, SModelReference.fromString("f:java_stub#fdb93da0-59ed-4001-b2aa-4fad79ec058e#com.sun.jdi(JDK.Tools/com.sun.jdi@java_stub)"), SNodeId.fromString("~ThreadReference")));
+                quotedNode1_23.addReference(SReference.create("classifier", quotedNode1_23, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)"), SNodeId.fromString("~ThreadReference")));
                 quotedNode_9.addChild("returnType", quotedNode1_23);
               }
               {

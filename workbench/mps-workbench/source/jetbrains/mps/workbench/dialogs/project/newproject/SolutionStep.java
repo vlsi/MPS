@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.dialogs.project.newproject;
 import com.intellij.ide.wizard.CommitStepException;
 import jetbrains.mps.ide.common.PathField;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.workbench.MPSApplicationInfo;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -148,22 +149,25 @@ public class SolutionStep extends BaseStep {
       if (myPath.getPath().length() == 0) {
         throw new CommitStepException("Enter solution directory");
       }
-      if (myNamespace.getText().length() == 0) {
-        throw new CommitStepException("Enter solution name");
-      }
-      if (!(SourceVersion.isName(myNamespace.getText()))) {
-        throw new CommitStepException("Solution namespace should be valid Java package");
-      }
-      if (MPSModuleRepository.getInstance().getModuleByFqName(myNamespace.getText()) != null) {
-        throw new CommitStepException("Duplicate solution name");
-      }
       File file = new File(myPath.getPath());
       if (file.exists()) {
-        throw new CommitStepException("Solution file already exists");
+        throw new CommitStepException("Solution directory already exists");
       }
       File dir = file.getParentFile();
       if (!(dir.isAbsolute())) {
         throw new CommitStepException("Path should be absolute");
+      }
+      if (myNamespace.getText().length() == 0) {
+        throw new CommitStepException("Enter solution name");
+      }
+      if (MPSModuleRepository.getInstance().getModuleByFqName(myNamespace.getText()) != null) {
+        throw new CommitStepException("Solution namespace already exists");
+      }
+      if (NameUtil.shortNameFromLongName(myNamespace.getText()).length() == 0) {
+        throw new CommitStepException("Enter valid namespace");
+      }
+      if (!(SourceVersion.isName(myNamespace.getText()))) {
+        throw new CommitStepException("Solution namespace should be valid Java package");
       }
     }
   }

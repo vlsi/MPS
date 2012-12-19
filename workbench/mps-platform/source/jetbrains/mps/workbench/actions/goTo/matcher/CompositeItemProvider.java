@@ -17,8 +17,12 @@ package jetbrains.mps.workbench.actions.goTo.matcher;
 
 import com.intellij.ide.util.gotoByName.ChooseByNameBase;
 import com.intellij.ide.util.gotoByName.ChooseByNameItemProvider;
+import com.intellij.openapi.progress.ProgressIndicator;
 import com.intellij.util.Processor;
+import org.jetbrains.annotations.NotNull;
 
+import java.lang.reflect.InvocationTargetException;
+import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -42,5 +46,29 @@ public class CompositeItemProvider implements ChooseByNameItemProvider {
     for (ChooseByNameItemProvider matcher : myProviders) {
       matcher.filterElements(base,pattern, everywhere, cancelled, consumer);
     }
+  }
+
+  // For compatibility with IDEA12
+  public boolean filterElements(@NotNull ChooseByNameBase base, @NotNull String pattern, boolean everywhere, @NotNull ProgressIndicator cancelled, @NotNull Processor<Object> consumer) {
+    boolean result = true;
+      for (ChooseByNameItemProvider matcher : myProviders) {
+        Boolean res = null;
+        try {
+          Method method = matcher.getClass().getMethod("filterElements", ChooseByNameBase.class, String.class, boolean.class, ProgressIndicator.class, Processor.class);
+          res = (Boolean)method.invoke(matcher, base, pattern, everywhere, cancelled, consumer);
+        } catch (InvocationTargetException e) {
+          Throwable throwable = e.getCause();
+          if (throwable instanceof RuntimeException) {
+            throw (RuntimeException)throwable;
+          }
+          e.printStackTrace();
+        } catch (NoSuchMethodException e) {
+          e.printStackTrace();
+        } catch (IllegalAccessException e) {
+          e.printStackTrace();
+        }
+        result = res && result;
+      }
+    return result;
   }
 }

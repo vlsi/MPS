@@ -94,6 +94,10 @@ public class QueriesGenerated {
     return _context.getNode();
   }
 
+  public static Iterable sourceNodesQuery_4525411394274030104(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
+    return SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall"), "typeArgument", true);
+  }
+
   public static Iterable sourceNodesQuery_7609957718756197743(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SLinkOperations.getTargets(SNodeOperations.cast(SLinkOperations.getTarget(_context.getNode(), "operation", true), "jetbrains.mps.baseLanguage.extensionMethods.structure.ExtensionMethodCall"), "actualArgument", true);
   }

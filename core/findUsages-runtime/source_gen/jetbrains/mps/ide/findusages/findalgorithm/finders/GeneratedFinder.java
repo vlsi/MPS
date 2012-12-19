@@ -14,13 +14,7 @@ import jetbrains.mps.ide.findusages.model.SearchQuery;
 import jetbrains.mps.ide.findusages.model.holders.IHolder;
 import jetbrains.mps.ide.findusages.model.holders.NodeHolder;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.Comparator;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.behaviour.BehaviorManager;
-import jetbrains.mps.smodel.LanguageAspect;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public abstract class GeneratedFinder implements IInterfacedFinder {
   private static final Logger LOG = Logger.getLogger(GeneratedFinder.class);
@@ -77,52 +71,12 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
       }
       List<SNode> res = new ArrayList<SNode>();
       doFind(node, query.getScope(), res, monitor);
-      for (SNode resnode : ListSequence.fromList(res).sort(new Comparator<SNode>() {
-        public int compare(SNode a, SNode b) {
-          return compareNodes(a, b);
-        }
-      }, true)) {
+      for (SNode resnode : res) {
         results.getSearchResults().add(new SearchResult<SNode>(resnode, getNodeCategory(resnode)));
       }
     } else {
       LOG.debug("Trying to use finder that is not applicable to the concept. Returning empty results.[finder: \"" + getDescription() + "\"; " + "concept: " + node.getConceptFqName());
     }
     return results;
-  }
-
-  private int compareNodes(SNode n1, SNode n2) {
-    List<SNode> path1 = ListSequence.fromList(SNodeOperations.getAncestors(n1, null, true)).reversedList();
-    List<SNode> path2 = ListSequence.fromList(SNodeOperations.getAncestors(n2, null, true)).reversedList();
-    for (int i = 0; i < ListSequence.fromList(path1).count() && i < ListSequence.fromList(path2).count(); ++i) {
-      if (ListSequence.fromList(path1).getElement(i) != ListSequence.fromList(path2).getElement(i)) {
-        return compareBrothers(ListSequence.fromList(path1).getElement(i), ListSequence.fromList(path2).getElement(i));
-      }
-    }
-    return ListSequence.fromList(path1).count() - ListSequence.fromList(path2).count();
-  }
-
-  private int compareBrothers(SNode n1, SNode n2) {
-    if (SNodeOperations.getContainingLinkRole(n1) == null) {
-      return n1.toString().compareTo(n2.toString());
-    }
-    if (SNodeOperations.getContainingLinkRole(n1).equals(SNodeOperations.getContainingLinkRole(n2))) {
-      return SNodeOperations.getIndexInParent(n1) - SNodeOperations.getIndexInParent(n2);
-    }
-    // try to compare positions in editor of ancestor 
-    SNode l1 = SNodeOperations.getContainingLinkDeclaration(n1);
-    SNode l2 = SNodeOperations.getContainingLinkDeclaration(n2);
-    for (SNode p = SNodeOperations.getParent(n1); (p != null); p = SNodeOperations.getParent(p)) {
-      SNode editor = ((SNode) BehaviorManager.getInstance().invoke(Object.class, SNodeOperations.getConceptDeclaration(p), "call_findConceptAspect_8360039740498068384", new Class[]{SNode.class, LanguageAspect.class}, LanguageAspect.EDITOR));
-      for (SNode cell : ListSequence.fromList(SNodeOperations.getDescendants(editor, "jetbrains.mps.lang.editor.structure.CellModel_WithRole", false, new String[]{}))) {
-        if (SLinkOperations.getTarget(cell, "relationDeclaration", false) == l1) {
-          return -1;
-        }
-        if (SLinkOperations.getTarget(cell, "relationDeclaration", false) == l2) {
-          return 1;
-        }
-      }
-    }
-    // just compare roles if was not compared in editor 
-    return SNodeOperations.getContainingLinkRole(n1).compareTo(SNodeOperations.getContainingLinkRole(n2));
   }
 }

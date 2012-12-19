@@ -5,6 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.sandbox;
 import org.junit.runner.RunWith;
 import org.junit.Test;
 import junit.framework.Assert;
+import org.junit.Ignore;
 
 @RunWith(SimpleRunner.class)
 public class Test4 extends AbstractTest4Class {
@@ -20,5 +21,11 @@ public class Test4 extends AbstractTest4Class {
   public void method2() {
     Assert.assertFalse(false);
     throw new RuntimeException("!");
+  }
+
+  @Test
+  @Ignore
+  public void method3() {
+    Assert.assertFalse(false);
   }
 }

@@ -26,7 +26,7 @@ import com.intellij.openapi.progress.ProgressIndicator;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import java.awt.Rectangle;
-import jetbrains.mps.nodeEditor.EditorContext;
+import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Point;
 import com.intellij.ui.awt.RelativePoint;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -86,6 +86,10 @@ public class GoToOverridenMethod_Action extends BaseAction {
     if (MapSequence.fromMap(_params).get("selectedNode") == null) {
       return false;
     }
+    MapSequence.fromMap(_params).put("selectedCell", event.getData(MPSEditorDataKeys.EDITOR_CELL));
+    if (MapSequence.fromMap(_params).get("selectedCell") == null) {
+      return false;
+    }
     MapSequence.fromMap(_params).put("editorComponent", event.getData(MPSEditorDataKeys.EDITOR_COMPONENT));
     if (MapSequence.fromMap(_params).get("editorComponent") == null) {
       return false;
@@ -120,7 +124,7 @@ public class GoToOverridenMethod_Action extends BaseAction {
           });
         }
       });
-      Rectangle cellBounds = ((EditorContext) MapSequence.fromMap(_params).get("editorContext")).getSelectedCell().getBounds();
+      Rectangle cellBounds = ((EditorCell) MapSequence.fromMap(_params).get("selectedCell")).getBounds();
       Point point = new Point(((int) cellBounds.getMinX()), ((int) cellBounds.getMaxY()));
       RelativePoint relPoint = new RelativePoint(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")), point);
 

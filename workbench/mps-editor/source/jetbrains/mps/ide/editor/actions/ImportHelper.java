@@ -45,10 +45,7 @@ import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JOptionPane;
 import java.awt.Frame;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 
 public class ImportHelper {
   public static void addModelImport(final Project project, final IModule module, final SModelDescriptor model,
@@ -151,10 +148,11 @@ public class ImportHelper {
 
           langs.remove(lang);
           //this is added in language implicitly, so we don't show this import
-          langs.remove(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.CORE,Language.class));
+          langs.remove(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.CORE, Language.class));
 
           for (Language l : langs) {
-            if (myModel.getSModel().importedLanguages().contains(l.getModuleReference())) continue;
+            Collection<ModuleReference> impLangs = myModel.getSModel().getModelDepsManager().getAllImportedLanguages();
+            if (impLangs.contains(l.getModuleReference())) continue;
             importCandidates.add(l.getModuleReference());
           }
         }

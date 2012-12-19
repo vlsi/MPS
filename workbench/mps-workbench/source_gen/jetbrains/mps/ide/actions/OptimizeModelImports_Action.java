@@ -90,7 +90,10 @@ public class OptimizeModelImports_Action extends BaseAction {
           SModelRepository.getInstance().saveAll();
         }
       });
-      Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), report.value, "Optimize Imports", Messages.getInformationIcon());
+      Messages.showMessageDialog(((Project) MapSequence.fromMap(_params).get("project")), (report.value.equals("") ?
+        "Nothing to optimize" :
+        report.value
+      ), "Optimize Imports", Messages.getInformationIcon());
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
         log.error("User's action execute method failed. Action:" + "OptimizeModelImports", t);

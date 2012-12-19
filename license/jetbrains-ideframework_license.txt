@@ -6,7 +6,7 @@ IF YOU DO NOT AGREE TO THE TERMS AND CONDITIONS OF THIS AGREEMENT, YOU SHOULD NO
 
 1. PARTIES
  
-(a) "Licensor" means JetBrains s.r.o., having its principal place of business at Na Lysinach 443/57, Prague, 14700, Czech Republic.
+(a) "Licensor" means JetBrains s.r.o., having its principal place of business at Na hrebenech II 1718/10, Prague, 14700, Czech Republic.
 
 (b) "Licensee" means an open source development group specified in the License Certificate.
 
@@ -113,6 +113,6 @@ Licensee agree to be identified as a customer of Licensor and that Licensor may 
 
 For exceptions or modifications to this Agreement, please contact Licensor at:
 
-Address: Na Lysinach 443/57, Prague, 14700, Czech Republic
+Address: Na hrebenech II 1718/10, Prague, 14700, Czech Republic
 Fax: +420 261 711 724
 E-mail: sales@jetbrains.com
