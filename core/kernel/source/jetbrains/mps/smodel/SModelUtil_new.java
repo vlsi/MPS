@@ -99,9 +99,9 @@ public class SModelUtil_new implements CoreComponent {
   }
 
   public void dispose() {
-    SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
     myMeManager.removeGlobalModelListener(myModelListener);
     myClManager.removeReloadHandler(myReloadHandler);
+    SModelRepository.getInstance().removeModelRepositoryListener(myRepositoryListener);
   }
 
   /**

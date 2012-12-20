@@ -37,8 +37,8 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
   public DefaultFastNodeFinder(SModel model) {
     myModel = model;
     myModelDescriptor = model.getModelDescriptor();
-    myModelDescriptor.addModelListener(myListener);
     SModelRepository.getInstance().addModelRepositoryListener(myRepositoryAdapter);
+    myModelDescriptor.addModelListener(myListener);
   }
 
   @Override
