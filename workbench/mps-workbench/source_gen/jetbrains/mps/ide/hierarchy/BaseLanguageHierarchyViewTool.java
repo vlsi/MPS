@@ -83,10 +83,10 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
     }
 
     protected Set<SNode> getDescendants(SNode node, Set<SNode> visited) {
-      Set<org.jetbrains.mps.openapi.model.SReference> usages = myUsagesManager.findUsages(Collections.<org.jetbrains.mps.openapi.model.SNode>singleton(node), SearchType.USAGES, GlobalScopeMinusTransient.getInstance(), null);
+      Set<SReference> usages = ((Set) myUsagesManager.findUsages(Collections.<org.jetbrains.mps.openapi.model.SNode>singleton(node), SearchType.USAGES, GlobalScopeMinusTransient.getInstance(), null));
       Set<SNode> result = new HashSet<SNode>();
-      for (org.jetbrains.mps.openapi.model.SReference usage : usages) {
-        SNode sourceNode = ((SNode) usage.getSourceNode());
+      for (SReference usage : usages) {
+        SNode sourceNode = usage.getSourceNode();
         if ("classifier".equals(usage.getRole())) {
           if (SNodeOperations.isInstanceOf(sourceNode, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
             SNode classifierType = SNodeOperations.cast(sourceNode, "jetbrains.mps.baseLanguage.structure.ClassifierType");

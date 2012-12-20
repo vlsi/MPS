@@ -19,12 +19,12 @@ import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.lang.script.runtime.MigrationScriptUtil;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.ide.ui.TreeTextUtil;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public class MigrationScriptFinder implements IFinder {
   private List<SNodePointer> myScripts = new ArrayList<SNodePointer>();
@@ -57,11 +57,11 @@ public class MigrationScriptFinder implements IFinder {
           monitor.step(scriptInstance.getName() + " [" + migrationRefactoring.getAdditionalInfo() + "]");
           String cname = migrationRefactoring.getFqNameOfConceptToSearchInstances();
           SConcept concept = SConceptRepository.getInstance().getConcept(cname);
-          Set<org.jetbrains.mps.openapi.model.SNode> instances = FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, queryScope, null);
-          for (org.jetbrains.mps.openapi.model.SNode instance : instances) {
-            if (MigrationScriptUtil.isApplicableRefactoring(((SNode) instance), migrationRefactoring)) {
+          Set<SNode> instances = ((Set) FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, queryScope, null));
+          for (SNode instance : instances) {
+            if (MigrationScriptUtil.isApplicableRefactoring(instance, migrationRefactoring)) {
               String category = TreeTextUtil.toHtml(scriptInstance.getName()) + " </b>[" + TreeTextUtil.toHtml(migrationRefactoring.getAdditionalInfo()) + "]<b>";
-              SearchResult<SNode> result = new SearchResult<SNode>(((SNode) instance), category);
+              SearchResult<SNode> result = new SearchResult<SNode>(instance, category);
               myMigrationBySearchResult.put(result, migrationRefactoring);
               myResults.getSearchResults().add(result);
             }

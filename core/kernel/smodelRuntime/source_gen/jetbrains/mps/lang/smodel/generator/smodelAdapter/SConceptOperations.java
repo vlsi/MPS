@@ -20,11 +20,11 @@ import jetbrains.mps.smodel.SModelOperations;
 import java.util.Set;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.findUsages.SearchType;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.findUsages.FindUsagesManager;
+import jetbrains.mps.findUsages.SearchType;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public final class SConceptOperations {
   private SConceptOperations() {
@@ -135,7 +135,8 @@ public final class SConceptOperations {
     }
     String cId = NameUtil.nodeFQName(conceptDeclarationNode);
     SConcept concept = SConceptRepository.getInstance().getConcept(cId);
-    return ((List) ListSequence.fromListWithValues(new ArrayList<org.jetbrains.mps.openapi.model.SNode>(), FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, scope, null)));
+    Set<SNode> usages = ((Set) FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, scope, null));
+    return ListSequence.fromListWithValues(new ArrayList<SNode>(), usages);
   }
 
   public static SNode createNewNode(String conceptFqName) {
