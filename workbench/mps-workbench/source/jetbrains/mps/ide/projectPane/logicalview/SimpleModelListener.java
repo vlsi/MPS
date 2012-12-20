@@ -44,10 +44,6 @@ public abstract class SimpleModelListener extends SModelAdapter {
     updateNodePresentation(false, false);
   }
 
-  public void modelReplaced(SModelDescriptor sm) {
-    updateNodePresentation(true, true);
-  }
-
   public boolean isValid() {
     if (myTreeNode.getTree() == null) return false;
 
