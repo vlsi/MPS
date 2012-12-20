@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.logging.Logger;
 
 public class ShowInLogicalView_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("logicalView.png");
+  private static final Icon ICON = MPSIcons.ProjectPane.LogicalView;
 
   public ShowInLogicalView_Action() {
     super("Show Node in Logical View", "", ICON);

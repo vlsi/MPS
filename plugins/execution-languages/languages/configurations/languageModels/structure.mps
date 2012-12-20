@@ -19,17 +19,17 @@
   <import index="86gq" modelUID="r:f516737e-c915-4042-896e-de34190042b2(jetbrains.mps.debugger.api.lang.structure)" version="3" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2401501559171345993">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${mps_home}/workbench/icons/source/runConfigurations/runConfigurationDeclaration.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${module}/icons/runConfigurationDeclaration.png" />
       <property name="name" nameId="tpck.1169194664001" value="RunConfiguration" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="run configuration" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="fb9u.946964771156066336" resolveInfo="PersistentConfiguration" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2401501559171345994">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="RunConfigurationKind" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="run configuration kind" />
@@ -60,8 +60,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1107135704075" resolveInfo="ConceptFunctionParameter" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7806358006983614956">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="RunConfigurationExecutor" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
@@ -90,8 +90,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068581242878" resolveInfo="ReturnStatement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="4366236229294105349">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="RunConfigurationProducer" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="producer" />
@@ -176,8 +176,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="4366236229294141334" resolveInfo="RunConfigurationSource" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="7037083547576022975">
-      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
+      <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="BeforeTask" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="before" />

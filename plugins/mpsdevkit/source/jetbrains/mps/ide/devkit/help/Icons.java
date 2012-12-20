@@ -15,13 +15,13 @@
  */
 package jetbrains.mps.ide.devkit.help;
 
-import com.intellij.openapi.util.IconLoader;
+import jetbrains.mps.icons.MPSIcons.Help;
 
 import javax.swing.Icon;
 
 public class Icons {
-  public static final Icon READ_HELP_ICON = IconLoader.findIcon("/help/readHelp.png");
-  public static final Icon SCREENCAST = IconLoader.findIcon("/help/screencast.png");
-  public static final Icon DOCUMENTATION = IconLoader.findIcon("/help/documentation.png");
-  public static final Icon TUTORIAL = IconLoader.findIcon("/help/tutorial.png");
+  public static final Icon READ_HELP_ICON = Help.ReadHelp;
+  public static final Icon SCREENCAST = Help.ScreenCast;
+  public static final Icon DOCUMENTATION = Help.Documentation;
+  public static final Icon TUTORIAL = Help.Tutorial;
 }

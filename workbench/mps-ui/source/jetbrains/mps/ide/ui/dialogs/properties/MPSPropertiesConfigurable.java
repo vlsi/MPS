@@ -41,6 +41,7 @@ import com.intellij.ui.table.JBTable;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.JBInsets;
+import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.project.DevKit;
@@ -275,7 +276,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     protected DependTableModel myDependTableModel;
 
     public DependenciesTab() {
-      super(PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.title"), IdeIcons.DEPENDENCIES_ICON, PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.tip"));
+      super(PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.title"), General.Dependencies, PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.tip"));
       init();
     }
 

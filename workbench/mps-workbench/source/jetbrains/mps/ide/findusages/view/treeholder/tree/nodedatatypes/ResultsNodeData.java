@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 
+import jetbrains.mps.icons.MPSIcons;
+import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.view.treeholder.tree.TextOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
@@ -49,7 +51,7 @@ public class ResultsNodeData extends BaseNodeData {
   @Override
   public Icon getIcon() {
     if (myNodeRepresentator == null) {
-      return Icons.USAGES_ICON;
+      return Nodes.UsagesFinder;
     } else {
       return myNodeRepresentator.getResultsIcon();
     }

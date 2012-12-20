@@ -4,9 +4,9 @@ package jetbrains.mps.ide.java.platform.refactorings;
 
 import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
-import jetbrains.mps.util.IconUtil;
+import jetbrains.mps.icons.MPSIcons;
 
 public class IconContainer {
   protected static Icon ICON_a0 = AllIcons.Nodes.Class;
-  protected static Icon ICON_a1 = IconUtil.getIcon("behavior.png");
+  protected static Icon ICON_a1 = MPSIcons.Nodes.Behavior;
 }

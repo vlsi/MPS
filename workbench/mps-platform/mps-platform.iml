@@ -27,6 +27,7 @@
     <orderEntry type="module" module-name="make-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
     <orderEntry type="module" module-name="persistence" />
+    <orderEntry type="module" module-name="mps-icons" />
     <orderEntry type="library" name="ASM" level="project" />
   </component>
 </module>

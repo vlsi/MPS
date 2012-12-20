@@ -16,6 +16,8 @@
 package jetbrains.mps.ide.icons;
 
 import jetbrains.mps.fileTypes.FileIcons;
+import jetbrains.mps.icons.MPSIcons.Nodes;
+import jetbrains.mps.icons.MPSIcons.ToolWindows;
 
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
@@ -27,7 +29,7 @@ public class IdeIcons {
 
   public static final Icon UNKNOWN_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/unknown.png"));
 
-  public static final Icon DEFAULT_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/default.png"));
+  public static final Icon DEFAULT_ICON = ToolWindows.Default;
   public static final Icon DEFAULT_ROOT_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/defaultRootNode.png"));
   public static final Icon DEFAULT_NODE_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/defaultNode.png"));
 
@@ -43,7 +45,7 @@ public class IdeIcons {
   public static final Icon BEHAVIOR_MODEL_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/behaviorModel.png"));
   public static final Icon CONSTRAINTS_MODEL_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/constraintsModel.png"));
   public static final Icon DATA_FLOW_MODEL_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/dataFlowModel.png"));
-  public static final Icon TEST_MODEL_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/testModel.png"));
+  public static final Icon TEST_MODEL_ICON = Nodes.TestModel;
   public static final Icon REFACTORINGS_MODEL_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/refactoringsModel.png"));
   public static final Icon STUBS_MODEL_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/stubsModel.png"));
   public static final Icon TEXT_GEN_MODEL_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/textGenModel.png"));
@@ -53,12 +55,11 @@ public class IdeIcons {
   public static final Icon SOLUTION_ICON = FileIcons.SOLUTION_ICON;
   public static final Icon LANGUAGE_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/language.png"));
   public static final Icon DEVKIT_ICON = FileIcons.DEVKIT_ICON;
-  public static final Icon GENERATOR_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/generator.png"));
+  public static final Icon GENERATOR_ICON = Nodes.Generator;
   public static final Icon PROJECT_LANGUAGE_ICON = FileIcons.PROJECT_LANGUAGE_ICON;
 
   public static final Icon PROPERTIES_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/properties.png"));
   public static final Icon INSPECTOR_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/inspector.png"));
-  public static final Icon CLOSE_ICON = new ImageIcon(IdeIcons.class.getResource("nodes/close.png"));
 
   public static final Icon REVERT = new ImageIcon(IdeIcons.class.getResource("vc/revert.png"));
   public static final Icon ROLLBACK = new ImageIcon(IdeIcons.class.getResource("vc/rollback.png"));
@@ -69,7 +70,6 @@ public class IdeIcons {
 
   // TODO: move to appropriate package and class
   public static final Icon ADD_MODEL_ROOT_ICON = new ImageIcon(IdeIcons.class.getResource("addModelRoot.png"));
-  public static final Icon DEPENDENCIES_ICON = new ImageIcon(IdeIcons.class.getResource("dependencies.png"));
   public static final Icon DELETE_CONTENT_ROOT = new ImageIcon(IdeIcons.class.getResource("deleteContentRoot.png"));
   public static final Icon DELETE_CONTENT_ROOT_ROLL_OVER = new ImageIcon(IdeIcons.class.getResource("deleteContentRootRollover.png"));
 }

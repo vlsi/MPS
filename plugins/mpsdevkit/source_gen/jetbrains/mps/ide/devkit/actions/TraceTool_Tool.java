@@ -4,7 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.tool.GeneratedTool;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.ide.typesystem.trace.TypeSystemTracePanel;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import javax.swing.JComponent;
 
 public class TraceTool_Tool extends GeneratedTool {
-  private static final Icon ICON = IconUtil.getIcon("type.png");
+  private static final Icon ICON = MPSIcons.Nodes.Type;
   private TypeSystemTracePanel myPanel;
 
   public TraceTool_Tool(Project project) {

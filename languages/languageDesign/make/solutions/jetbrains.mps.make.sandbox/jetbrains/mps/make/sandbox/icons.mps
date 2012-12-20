@@ -23,7 +23,7 @@
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="4176072814906255309" />
     </node>
     <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4176072814906255310">
-      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/icons/source/mpsHome.png" />
+      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-icons/source/mpsHome.png" />
     </node>
   </root>
   <root id="3564595993453230683">

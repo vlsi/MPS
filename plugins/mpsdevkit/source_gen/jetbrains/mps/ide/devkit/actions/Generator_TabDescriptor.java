@@ -4,7 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
@@ -41,7 +41,7 @@ import jetbrains.mps.ide.actions.MappingDialog;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
 public class Generator_TabDescriptor extends RelationDescriptor {
-  private static final Icon ICON = IconUtil.getIcon("reduction.png");
+  private static final Icon ICON = MPSIcons.Nodes.Reduction;
 
   public Generator_TabDescriptor() {
   }

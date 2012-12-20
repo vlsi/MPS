@@ -18,6 +18,7 @@ package jetbrains.mps.ide.devkit.generator.icons;
 import com.intellij.icons.AllIcons.Actions;
 import com.intellij.icons.AllIcons.General;
 import com.intellij.openapi.util.IconLoader;
+import jetbrains.mps.icons.MPSIcons.Generator;
 import jetbrains.mps.ide.devkit.generator.TracerNode;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.icons.IconManager;
@@ -34,15 +35,15 @@ public class Icons {
   public static final Icon AUTOSCROLL_TO_SOURCE = General.AutoscrollToSource;
 
   // nodes
-  public static final Icon INPUT = IconLoader.findIcon("/generator/input.png");
-  public static final Icon OUTPUT = IconLoader.findIcon("/generator/output.png");
-  public static final Icon RULE = IconLoader.findIcon("/generator/rule.png");
-  public static final Icon COPY_OPERATION = IconLoader.findIcon("/generator/copy-operation.png");
-  public static final Icon MACRO = IconLoader.findIcon("/generator/macro.png");
-  public static final Icon RULE_CONSEQUENCE = IconLoader.findIcon("/generator/rule-consequence.png");
-  public static final Icon SWITCH = IconLoader.findIcon("/generator/switch.png");
-  public static final Icon TEMPALTE = IconLoader.findIcon("/generator/template.png");
-  public static final Icon MAPPING_SCRIPT = IconLoader.findIcon("/generator/mapping-script.png");
+  public static final Icon INPUT = Generator.Input;
+  public static final Icon OUTPUT = Generator.Output;
+  public static final Icon RULE = Generator.Rule;
+  public static final Icon COPY_OPERATION = Generator.CopyOperation;
+  public static final Icon MACRO = Generator.Macro;
+  public static final Icon RULE_CONSEQUENCE = Generator.RuleConsequence;
+  public static final Icon SWITCH = Generator.Switch;
+  public static final Icon TEMPALTE = Generator.Template;
+  public static final Icon MAPPING_SCRIPT = Generator.MappingScript;
 
 
   public static Icon getIcon(TracerNode tracerNode) {

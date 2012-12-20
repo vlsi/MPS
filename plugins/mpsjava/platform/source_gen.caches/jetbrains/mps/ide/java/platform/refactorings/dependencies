@@ -124,6 +124,7 @@
     <classNode extendsClassName="javax.swing.JPanel" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.refactorings.IconContainer" file="IconContainer.java">
+    <classNode dependClassName="jetbrains.mps.icons.MPSIcons" />
     <classNode dependClassName="jetbrains.mps.util.IconUtil" />
     <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="javax.swing.Icon" />

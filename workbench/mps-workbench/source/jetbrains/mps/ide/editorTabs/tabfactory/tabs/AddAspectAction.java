@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 
+import com.intellij.icons.AllIcons;
+import com.intellij.icons.AllIcons.General;
 import com.intellij.openapi.actionSystem.*;
 import jetbrains.mps.ide.actions.CreateAspect_Action;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
@@ -30,7 +32,7 @@ import java.util.Iterator;
 import java.util.Set;
 
 public abstract class AddAspectAction extends AnAction {
-  public static final Icon ADD_ICON = new ImageIcon(AddAspectAction.class.getResource("add.png"));
+  public static final Icon ADD_ICON = General.Add;
 
   private SNodePointer myBaseNode;
   private Set<RelationDescriptor> myPossibleTabs;

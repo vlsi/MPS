@@ -15,43 +15,32 @@
  */
 package jetbrains.mps.workbench.actions;
 
+import com.intellij.icons.AllIcons;
+import com.intellij.icons.AllIcons.Actions;
 import com.intellij.ide.IdeBundle;
-import com.intellij.ide.actions.OpenProjectFileChooserDescriptor;
-import com.intellij.ide.highlighter.ProjectFileType;
 import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import com.intellij.openapi.extensions.Extensions;
 import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.ex.FileChooserDialogImpl;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.SystemInfo;
-import com.intellij.openapi.util.text.StringUtil;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.platform.ProjectBaseDirectory;
-import com.intellij.projectImport.ProjectOpenProcessor;
 import com.intellij.util.Consumer;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.IFileFilter;
-import jetbrains.mps.ide.ui.filechoosers.treefilechooser.TreeFileChooser;
-import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.workbench.action.BaseAction;
 
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
-import java.awt.Frame;
 import java.io.File;
-import java.util.Collections;
-import java.util.LinkedHashSet;
 import java.util.Map;
-import java.util.Set;
 
 public class OpenMPSProjectAction extends BaseAction {
-  private static final Icon OPEN_ICON = new ImageIcon(OpenMPSProjectAction.class.getResource("open.png"));
-  private static final Icon OPEN_ICON_WELCOME_SCREEN = new ImageIcon(OpenMPSProjectAction.class.getResource("openWelcomeScreen.png"));
+  private static final Icon OPEN_ICON = Actions.Menu_open;
+  private static final Icon OPEN_ICON_WELCOME_SCREEN = AllIcons.General.OpenProject;
 
   public OpenMPSProjectAction() {
     setExecuteOutsideCommand(true);

@@ -15,15 +15,15 @@
  */
 package jetbrains.mps.ide.tools;
 
+import com.intellij.icons.AllIcons.Actions;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import jetbrains.mps.ide.icons.IdeIcons;
 
 public class CloseAction extends AnAction {
   private BaseTool myTool;
 
   public CloseAction(BaseTool tool) {
-    super("Close", "Close tool", IdeIcons.CLOSE_ICON);
+    super("Close", "Close tool", Actions.Cancel);
     myTool = tool;
   }
 

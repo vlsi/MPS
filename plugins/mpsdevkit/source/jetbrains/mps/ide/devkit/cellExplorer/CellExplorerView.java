@@ -20,6 +20,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.ScrollPaneFactory;
+import jetbrains.mps.icons.MPSIcons.CellExplorer;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
@@ -163,7 +164,7 @@ public class CellExplorerView extends BaseProjectTool {
   }
 
   public Icon getIcon() {
-    return CellIcons.CELL_EXPLORER_ICON;
+    return CellExplorer.CellExplorer;
   }
 
   public JComponent getComponent() {
@@ -175,13 +176,13 @@ public class CellExplorerView extends BaseProjectTool {
       if (myCurrentEditor == null || myCurrentEditor.getRootCell() == null) {
         return new TextTreeNode("No editor selected") {
           {
-            setIcon(CellIcons.CELL_EXPLORER_ICON);
+            setIcon(CellExplorer.CellExplorer);
           }
         };
       } else {
         TextTreeNode root = new TextTreeNode("CELLS") {
           {
-            setIcon(CellIcons.CELL_EXPLORER_ICON);
+            setIcon(CellExplorer.CellExplorer);
           }
         };
         root.add(new CellTreeNode(myCurrentEditor.getRootCell()));
@@ -202,19 +203,19 @@ public class CellExplorerView extends BaseProjectTool {
 
     protected void doUpdatePresentation() {
       if (myCell.isErrorState()) {
-        setIcon(CellIcons.CELL_ERROR_ICON);
+        setIcon(CellExplorer.CellError);
       } else if (myCell instanceof EditorCell_Collection) {
-        setIcon(CellIcons.CELLS_ICON);
+        setIcon(CellExplorer.Cells);
       } else if (myCell instanceof EditorCell_Constant) {
-        setIcon(CellIcons.CELL_CONSTANT_ICON);
+        setIcon(CellExplorer.CellConst);
       } else if (myCell instanceof EditorCell_Error) {
-        setIcon(CellIcons.CELL_ERROR_ICON);
+        setIcon(CellExplorer.CellError);
       } else if (myCell instanceof EditorCell_Component) {
-        setIcon(CellIcons.CELL_COMPONENT_ICON);
+        setIcon(CellExplorer.CellComponent);
       } else if (myCell instanceof EditorCell_Property) {
-        setIcon(CellIcons.CELL_PROPERTY_ICON);
+        setIcon(CellExplorer.CellProperty);
       } else {
-        setIcon(CellIcons.CELL_DEFAULT_ICON);
+        setIcon(CellExplorer.CellDefault);
       }
 
       setAdditionalText("[" + myCell.getX() + ", " + myCell.getY() + ", " + myCell.getWidth() + ", " + myCell.getHeight() + "], baseLine = " + myCell.getBaseline() + ", ascent = " + myCell.getAscent() + ", descent = " + myCell.getDescent());
@@ -359,7 +360,7 @@ public class CellExplorerView extends BaseProjectTool {
 
         add(new TextTreeNode(text) {
           {
-            setIcon(CellIcons.CELL_ACTION_KEY_ICON);
+            setIcon(CellExplorer.CellActionKey);
           }
 
           public boolean isLeaf() {
@@ -367,7 +368,7 @@ public class CellExplorerView extends BaseProjectTool {
           }
         });
 
-        setIcon(CellIcons.CELL_KEY_MAP_ICON);
+        setIcon(CellExplorer.CellKeyMap);
         setNodeIdentifier("Keymap");
       }
     }

@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -22,7 +22,7 @@ import com.intellij.openapi.vcs.changes.ChangeListManagerImpl;
 import jetbrains.mps.logging.Logger;
 
 public class AddModuleToVcs_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("addToVcs.png");
+  private static final Icon ICON = MPSIcons.Actions.AddToVCS;
 
   public AddModuleToVcs_Action() {
     super("Add Module to VCS", "", ICON);

@@ -35,6 +35,7 @@
     <orderEntry type="module" module-name="modelchecker" />
     <orderEntry type="module" module-name="persistence" />
     <orderEntry type="module" module-name="mps-ui" />
+    <orderEntry type="module" module-name="mps-icons" />
   </component>
 </module>
 

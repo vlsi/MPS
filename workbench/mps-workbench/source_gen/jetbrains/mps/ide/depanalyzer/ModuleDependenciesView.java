@@ -12,6 +12,7 @@ import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.tools.CloseAction;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
+import jetbrains.mps.icons.MPSIcons;
 import javax.swing.JComponent;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
@@ -53,11 +54,11 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
       public void invoke(Boolean b) {
         setHideSourceModules(b);
       }
-    }), new ModuleDependenciesView.MyToggleAction("Show Runtime Dependencies", jetbrains.mps.ide.moduleDependencies.icons.Icons.RUNTIME, false, new _FunctionTypes._void_P1_E0<Boolean>() {
+    }), new ModuleDependenciesView.MyToggleAction("Show Runtime Dependencies", MPSIcons.General.Runtime, false, new _FunctionTypes._void_P1_E0<Boolean>() {
       public void invoke(Boolean b) {
         setShowRuntime(b);
       }
-    }), new ModuleDependenciesView.MyToggleAction("Show Used Languages", jetbrains.mps.ide.moduleDependencies.icons.Icons.USED_LANGUAGES_ICON, true, new _FunctionTypes._void_P1_E0<Boolean>() {
+    }), new ModuleDependenciesView.MyToggleAction("Show Used Languages", MPSIcons.Nodes.Language, true, new _FunctionTypes._void_P1_E0<Boolean>() {
       public void invoke(Boolean b) {
         setShowUsedLanguages(b);
       }

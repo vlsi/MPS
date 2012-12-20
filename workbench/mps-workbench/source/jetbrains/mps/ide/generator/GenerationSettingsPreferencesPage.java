@@ -17,6 +17,8 @@ package jetbrains.mps.ide.generator;
 
 import jetbrains.mps.InternalFlag;
 import jetbrains.mps.generator.GenerationOptions;
+import jetbrains.mps.icons.MPSIcons;
+import jetbrains.mps.icons.MPSIcons.Nodes;
 import jetbrains.mps.ide.generator.GenerationSettings.GenerateRequirementsPolicy;
 import jetbrains.mps.ide.projectPane.Icons;
 import org.jetbrains.annotations.Nullable;
@@ -68,7 +70,7 @@ class GenerationSettingsPreferencesPage {
   }
 
   public Icon getIcon() {
-    return Icons.GENERATORS_ICON;
+    return Nodes.Generator;
   }
 
   public JComponent getComponent() {

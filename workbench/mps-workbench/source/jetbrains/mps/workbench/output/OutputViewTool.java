@@ -23,8 +23,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.ui.ScrollPaneFactory;
+import jetbrains.mps.icons.MPSIcons.ToolWindows;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.workbench.action.ActionUtils;
 
@@ -45,7 +45,7 @@ public class OutputViewTool extends BaseProjectTool {
   private int myFontSize = 12;
 
   public OutputViewTool(Project project) {
-    super(project, "Output", 6, Icons.OUTPUT_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "Output", 6, ToolWindows.OutputView, ToolWindowAnchor.BOTTOM, true);
   }
 
   @Override
