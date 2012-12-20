@@ -960,7 +960,6 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JComponent" />
-    <classNode dependClassName="javax.swing.UIManager" />
     <classNode dependClassName="jetbrains.mps.ide.generator.GenerationSettings" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.CustomIconWrapper" />
     <classNode dependClassName="jetbrains.mps.ide.make.actions.IconContainer" />
