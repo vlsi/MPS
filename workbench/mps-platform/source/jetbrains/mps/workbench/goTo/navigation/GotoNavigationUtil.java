@@ -43,7 +43,6 @@ public class GotoNavigationUtil {
       if (nnc == null) continue; //todo support this case
 
       res.addAll(nnc.getNodeDescriptors(e.getValue(), p));
-
     }
 
     return res;
