@@ -150,8 +150,8 @@ public class EditorCell_Table extends EditorCell_Collection {
     List<Integer> positionsX = ListSequence.fromList(new ArrayList<Integer>());
     List<Integer> positionsY = ListSequence.fromList(new ArrayList<Integer>());
 
-    for (Iterator<EditorCell> rowsIterator = iterator(); rowsIterator.hasNext();) {
-      EditorCell nextRow = rowsIterator.next();
+    for (Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> rowsIterator = iterator(); rowsIterator.hasNext();) {
+      jetbrains.mps.openapi.editor.cells.EditorCell nextRow = rowsIterator.next();
       assert nextRow instanceof EditorCell_Collection;
       ListSequence.fromList(positionsY).addElement(nextRow.getY());
       if (!(rowsIterator.hasNext())) {
@@ -159,8 +159,8 @@ public class EditorCell_Table extends EditorCell_Collection {
         ListSequence.fromList(positionsY).addElement(nextRow.getY() + nextRow.getHeight());
       }
       int index = -1;
-      for (Iterator<EditorCell> cellIterator = ((EditorCell_Collection) nextRow).iterator(); cellIterator.hasNext(); index++) {
-        EditorCell nextCell = cellIterator.next();
+      for (Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> cellIterator = ((EditorCell_Collection) nextRow).iterator(); cellIterator.hasNext(); index++) {
+        jetbrains.mps.openapi.editor.cells.EditorCell nextCell = cellIterator.next();
         if (index < 0) {
           //  skipping first cell 
           continue;
@@ -197,10 +197,10 @@ public class EditorCell_Table extends EditorCell_Collection {
     assert !(myEmpty);
     assert columnIntex >= 0 && columnIntex < myModel.getColumnCount();
     List<EditorCell> result = ListSequence.fromList(new ArrayList<EditorCell>());
-    for (Iterator<EditorCell> rowsIterator = iterator(); rowsIterator.hasNext();) {
-      EditorCell nextRow = rowsIterator.next();
+    for (Iterator<jetbrains.mps.openapi.editor.cells.EditorCell> rowsIterator = iterator(); rowsIterator.hasNext();) {
+      jetbrains.mps.openapi.editor.cells.EditorCell nextRow = rowsIterator.next();
       assert nextRow instanceof EditorCell_Collection;
-      ListSequence.fromList(result).addElement(((EditorCell_Collection) nextRow).getCellAt(columnIntex + 1));
+      ListSequence.fromList(result).addElement((EditorCell) ((EditorCell_Collection) nextRow).getCellAt(columnIntex + 1));
     }
     return result;
   }

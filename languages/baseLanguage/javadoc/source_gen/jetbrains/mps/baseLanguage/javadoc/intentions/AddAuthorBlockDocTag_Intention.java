@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
@@ -88,9 +88,9 @@ public class AddAuthorBlockDocTag_Intention implements IntentionFactory {
       ListSequence.fromList(SLinkOperations.getTargets(node, "author", true)).addElement(authorTag);
       editorContext.flushEvents();
       EditorCell authorEditorCell = editorContext.getEditorComponent().findNodeCell(authorTag);
-      jetbrains.mps.nodeEditor.cells.EditorCell cellToSelect = null;
+      EditorCell cellToSelect = null;
       if (authorEditorCell instanceof EditorCell_Collection) {
-        for (jetbrains.mps.nodeEditor.cells.EditorCell childCell : Sequence.fromIterable((EditorCell_Collection) authorEditorCell)) {
+        for (EditorCell childCell : Sequence.fromIterable((EditorCell_Collection) authorEditorCell)) {
           String cellId = childCell.getCellId();
           if (cellId != null && cellId.contains("text")) {
             cellToSelect = childCell;

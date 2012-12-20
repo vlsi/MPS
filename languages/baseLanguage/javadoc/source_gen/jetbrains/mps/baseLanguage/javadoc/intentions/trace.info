@@ -905,8 +905,8 @@
     <nodeInfo nodeId="8465538089690815805" fileName="AddAuthorBlockDocTag_Intention.java" startLine="87" startPosition="133" endLine="88" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2194993533736518305" fileName="AddAuthorBlockDocTag_Intention.java" startLine="88" startPosition="100" endLine="89" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4298862722976216168" fileName="AddAuthorBlockDocTag_Intention.java" startLine="89" startPosition="34" endLine="90" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4298862722976219604" fileName="AddAuthorBlockDocTag_Intention.java" startLine="90" startPosition="95" endLine="91" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4298862722976218904" fileName="AddAuthorBlockDocTag_Intention.java" startLine="93" startPosition="133" endLine="94" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4298862722976219604" fileName="AddAuthorBlockDocTag_Intention.java" startLine="90" startPosition="95" endLine="91" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4298862722976218904" fileName="AddAuthorBlockDocTag_Intention.java" startLine="93" startPosition="102" endLine="94" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4298862722976219609" fileName="AddAuthorBlockDocTag_Intention.java" startLine="95" startPosition="58" endLine="96" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4298862722976219620" fileName="AddAuthorBlockDocTag_Intention.java" startLine="96" startPosition="37" endLine="97" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="107" startPosition="48" endLine="108" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -930,7 +930,7 @@
     <nodeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="52" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
     <nodeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="71" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="instances#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)Ljava/util/Collection;" />
     <nodeInfo nodeId="4298862722976216187" fileName="AddAuthorBlockDocTag_Intention.java" startLine="92" startPosition="62" endLine="99" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="4298862722976216178" fileName="AddAuthorBlockDocTag_Intention.java" startLine="91" startPosition="68" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="4298862722976216178" fileName="AddAuthorBlockDocTag_Intention.java" startLine="91" startPosition="37" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="86" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
     <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="25" startPosition="43" endLine="25" endPosition="43" />
     <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="79" startPosition="38" endLine="79" endPosition="38" />
@@ -969,7 +969,7 @@
     <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="107" startPosition="0" endLine="110" endPosition="0" />
     <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="52" startPosition="84" endLine="56" endPosition="16" />
     <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="71" startPosition="99" endLine="75" endPosition="30" />
-    <scopeInfo nodeId="4298862722976216190" fileName="AddAuthorBlockDocTag_Intention.java" startLine="93" startPosition="133" endLine="98" endPosition="11">
+    <scopeInfo nodeId="4298862722976216190" fileName="AddAuthorBlockDocTag_Intention.java" startLine="93" startPosition="102" endLine="98" endPosition="11">
       <varInfo nodeId="4298862722976218905" varName="cellId" />
     </scopeInfo>
     <scopeInfo nodeId="8465538089690783660" fileName="AddAuthorBlockDocTag_Intention.java" startLine="52" startPosition="0" endLine="58" endPosition="0">
