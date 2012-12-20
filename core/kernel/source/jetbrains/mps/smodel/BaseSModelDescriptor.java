@@ -17,8 +17,10 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.event.*;
+import jetbrains.mps.smodel.event.SModelFileChangedEvent;
+import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelListener.SModelListenerPriority;
+import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -36,13 +38,13 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   private static final Logger LOG = Logger.getLogger(BaseSModelDescriptor.class);
 
-  private boolean myRegistered;
   @NotNull
   private final DataSource mySource;
   @NotNull
   protected SModelReference myModelReference;
 
   private List<SModelListener> myModelListeners = new CopyOnWriteArrayList<SModelListener>();
+  private SModule myModule;
 
 
   protected BaseSModelDescriptor(@NotNull SModelReference modelReference, @NotNull DataSource source) {
@@ -103,11 +105,7 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
 
   @Override
   public boolean isRegistered() {
-    return myRegistered;
-  }
-
-  void setRegistered(boolean registered) {
-    myRegistered = registered;
+    return myModule != null && myModule.getRepository() != null;
   }
 
   @Override
@@ -136,14 +134,16 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     return myModelReference.getStereotype();
   }
 
+
+  @Override
+  public void setModule(SModule module) {
+    myModule = module;
+  }
+
   @Override
   @Nullable
   public IModule getModule() {
-    SModule owner = SModelRepository.getInstance().getOwner(this);
-    if (owner instanceof IModule) {
-      return (IModule) owner;
-    }
-    return null;
+    return ((IModule) myModule);
   }
 
   protected abstract SModel getCurrentModelInternal();

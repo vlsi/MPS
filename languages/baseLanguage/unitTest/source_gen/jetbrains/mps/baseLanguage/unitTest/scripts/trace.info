@@ -1,3 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<debugInfo />
+<debugInfo>
+  <root nodeId="825821767789110605" modelId="r:00000000-0000-4000-0000-011c895902d6(jetbrains.mps.baseLanguage.unitTest.scripts)">
+    <nodeInfo nodeId="825821767789110605" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="12" startPosition="91" endLine="13" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="15" startPosition="31" endLine="16" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="19" startPosition="41" endLine="20" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="23" startPosition="59" endLine="24" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="825821767789141847" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="825821767789192750" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="32" startPosition="62" endLine="33" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="37" startPosition="42" endLine="38" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
+    <nodeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFqNameOfConceptToSearchInstances#()Ljava/lang/String;" />
+    <nodeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableInstanceNode#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="825821767789192620" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="31" startPosition="52" endLine="34" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isShowAsIntention#()Z" />
+    <nodeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="31" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdateInstanceNode#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="825821767789110605" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="13" startPosition="90" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="13" startPosition="90" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="825821767789110605" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="12" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FixPluginKindForMPSTestCases_MigrationScript#(Ljetbrains/mps/smodel/IOperationContext;)V" />
+    <scopeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="15" startPosition="31" endLine="16" endPosition="21" />
+    <scopeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="19" startPosition="41" endLine="20" endPosition="21" />
+    <scopeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="23" startPosition="59" endLine="24" endPosition="73" />
+    <scopeInfo nodeId="825821767789135609" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="27" startPosition="59" endLine="28" endPosition="65" />
+    <scopeInfo nodeId="825821767789192622" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="32" startPosition="62" endLine="33" endPosition="21" />
+    <scopeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="37" startPosition="42" endLine="38" endPosition="21" />
+    <scopeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="15" startPosition="0" endLine="18" endPosition="0" />
+    <scopeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="23" startPosition="0" endLine="26" endPosition="0" />
+    <scopeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="27" startPosition="0" endLine="30" endPosition="0">
+      <varInfo nodeId="825821767789131668" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="825821767789131670" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="31" startPosition="52" endLine="34" endPosition="9" />
+    <scopeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="31" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="825821767789131668" varName="node" />
+    </scopeInfo>
+    <scopeInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="13" startPosition="90" endLine="40" endPosition="7" />
+    <scopeInfo nodeId="825821767789110605" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="12" startPosition="91" endLine="40" endPosition="7" />
+    <scopeInfo nodeId="825821767789110605" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="12" startPosition="0" endLine="42" endPosition="0">
+      <varInfo nodeId="825821767789110605" varName="operationContext" />
+    </scopeInfo>
+    <unitInfo nodeId="825821767789131668" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="14" startPosition="28" endLine="40" endPosition="5" unitName="jetbrains.mps.baseLanguage.unitTest.scripts.FixPluginKindForMPSTestCases_MigrationScript$1" />
+    <unitInfo nodeId="825821767789110605" fileName="FixPluginKindForMPSTestCases_MigrationScript.java" startLine="11" startPosition="0" endLine="43" endPosition="0" unitName="jetbrains.mps.baseLanguage.unitTest.scripts.FixPluginKindForMPSTestCases_MigrationScript" />
+  </root>
+</debugInfo>
 

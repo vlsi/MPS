@@ -113,8 +113,14 @@ public abstract class EditorCell_Basic implements EditorCell {
     myNode = node;
   }
 
+  @Override
   public EditorComponent getEditor() {
     return (EditorComponent) getContext().getEditorComponent();
+  }
+
+  @Override
+  public jetbrains.mps.openapi.editor.EditorComponent getEditorComponent() {
+    return getContext().getEditorComponent();
   }
 
   public boolean isErrorState() {
@@ -606,17 +612,6 @@ public abstract class EditorCell_Basic implements EditorCell {
     }
 
     return best;
-  }
-
-  public EditorCell findCellWeak(int y, Condition<EditorCell> condition) {
-    Set<EditorCell> candidates = new LinkedHashSet<EditorCell>();
-    collectCellsWithY(this, y, candidates, false);
-    for (EditorCell cell : candidates) {
-      if (condition.met(cell)) {
-        return cell;
-      }
-    }
-    return null;
   }
 
   private EditorCell findClosestHorizontal(int x, Condition<EditorCell> condition, Set<EditorCell> candidates) {

@@ -7,6 +7,7 @@
     <classNode dependClassName="com.intellij.psi.PsiClass" />
     <classNode dependClassName="com.intellij.psi.PsiClassType" />
     <classNode dependClassName="com.intellij.psi.PsiElement" />
+    <classNode dependClassName="com.intellij.psi.PsiEnumConstant" />
     <classNode dependClassName="com.intellij.psi.PsiField" />
     <classNode dependClassName="com.intellij.psi.PsiFile" />
     <classNode dependClassName="com.intellij.psi.PsiJavaFile" />
@@ -17,6 +18,7 @@
     <classNode dependClassName="com.intellij.psi.PsiParameter" />
     <classNode dependClassName="com.intellij.psi.PsiPrimitiveType" />
     <classNode dependClassName="com.intellij.psi.PsiType" />
+    <classNode dependClassName="com.intellij.psi.PsiTypeElement" />
     <classNode dependClassName="com.intellij.psi.PsiTypeParameter" />
     <classNode dependClassName="com.intellij.psi.PsiTypeParameterListOwner" />
     <classNode dependClassName="com.intellij.psi.PsiWildcardType" />
@@ -41,6 +43,49 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+  </dependency>
+  <dependency className="jetbrains.mps.idea.java.psiStubs.EclipseJavaStubDataSource" file="EclipseJavaStubDataSource.java">
+    <classNode dependClassName="com.intellij.openapi.editor.Document" />
+    <classNode dependClassName="com.intellij.openapi.fileEditor.FileDocumentManager" />
+    <classNode dependClassName="com.intellij.openapi.module.Module" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
+    <classNode dependClassName="com.intellij.openapi.vfs.VirtualFileManager" />
+    <classNode dependClassName="com.intellij.psi.PsiFile" />
+    <classNode dependClassName="com.intellij.psi.PsiFileSystemItem" />
+    <classNode dependClassName="java.io.ByteArrayInputStream" />
+    <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.io.InputStream" />
+    <classNode dependClassName="java.lang.IllegalArgumentException" />
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.Runnable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.HashSet" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.ide.vfs.VirtualFileUtils" />
+    <classNode dependClassName="jetbrains.mps.idea.core.project.PluginModelRootUtil" />
+    <classNode dependClassName="jetbrains.mps.idea.core.psi.PsiChangesWatcher" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
+    <classNode dependClassName="jetbrains.mps.project.MPSProject" />
+    <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSource" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.DataSourceListener" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.ModelRoot" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.MultiStreamDataSourceListener" />
+    <classNode extendsClassName="jetbrains.mps.ide.java.sourceStubs.MPSJavaSrcDataSource" />
+    <classNode extendsClassName="jetbrains.mps.idea.core.psi.PsiListener" />
+  </dependency>
+  <dependency className="jetbrains.mps.idea.java.psiStubs.EclipseJavaStubModelRoot" file="EclipseJavaStubModelRoot.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="jetbrains.mps.idea.java.psiStubs.EclipseJavaStubDataSource" />
+    <classNode dependClassName="jetbrains.mps.vfs.IFile" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.persistence.MultiStreamDataSource" />
+    <classNode extendsClassName="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot" />
   </dependency>
   <dependency className="jetbrains.mps.idea.java.psiStubs.PsiJavaStubDataSource" file="PsiJavaStubDataSource.java">
     <classNode dependClassName="com.intellij.openapi.module.Module" />

@@ -17,6 +17,7 @@ package jetbrains.mps.smodel.descriptor;
 
 import java.util.Collection;
 
+@Deprecated //use openapi. this does not work
 public interface NodesNavigationContributor {
   Collection<NodeDescriptor> getNodeDescriptors();
 }

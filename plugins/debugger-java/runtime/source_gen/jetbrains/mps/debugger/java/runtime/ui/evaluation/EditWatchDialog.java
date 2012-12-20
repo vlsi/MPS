@@ -33,6 +33,7 @@ public class EditWatchDialog extends AbstractEvaluationDialog {
   }
 
   @Override
+  @NotNull
   protected Action[] createActions() {
     return new Action[]{getOKAction()};
   }

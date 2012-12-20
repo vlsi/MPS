@@ -21,9 +21,10 @@ import jetbrains.mps.errors.QuickFixProvider;
 import jetbrains.mps.errors.SimpleErrorReporter;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.newTypesystem.context.component.IncrementalTypechecking;
+import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.SubTypingManagerNew;
 import jetbrains.mps.newTypesystem.operation.TraceWarningOperation;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.SNodeOperations;
@@ -31,7 +32,7 @@ import jetbrains.mps.util.SNodeOperations;
 import java.util.HashMap;
 import java.util.Map;
 
-public class IncrementalTypecheckingContext extends SimpleTypecheckingContext {
+public class IncrementalTypecheckingContext extends SimpleTypecheckingContext<State, IncrementalTypechecking> {
   private static Logger LOG = Logger.getLogger(IncrementalTypecheckingContext.class);
 
   private boolean myIsNonTypesystemComputation = false;
@@ -40,24 +41,18 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext {
   private Map<Object, Integer> myRequesting = new HashMap<Object, Integer>();
   private Integer myOldHash = 0;
 
-  public IncrementalTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
-    super(rootNode, typeChecker);
+  public IncrementalTypecheckingContext(SNode node, TypeChecker typeChecker) {
+    super(node, typeChecker);
   }
 
   @Override
-  protected IncrementalTypechecking createNodeTypesComponent() {
+  protected IncrementalTypechecking createTypechecking() {
     return new IncrementalTypechecking(getNode(), getState());
-  }
-
-  @Override
-  public IncrementalTypechecking getTypechecking() {
-    return (IncrementalTypechecking) super.getTypechecking();
   }
 
   public boolean isSingleTypeComputation() {
     return false;
   }
-
 
   public TypeChecker getTypeChecker() {
     return myTypeChecker;
@@ -67,12 +62,10 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext {
     return (SubTypingManagerNew) myTypeChecker.getSubtypingManager();
   }
 
-
   @Override
   public void clear() {
     getTypechecking().clear();
   }
-
 
   @Override
   public final IncrementalTypechecking getBaseNodeTypesComponent() {
@@ -130,7 +123,7 @@ public class IncrementalTypecheckingContext extends SimpleTypecheckingContext {
 
   @Override
   public boolean isIncrementalMode() {
-    return !myTypeChecker.isGenerationMode() && getState().getInequalitySystem() == null;
+    return false; /*!myTypeChecker.isGenerationMode() && getState().getInequalitySystem() == null;*/
   }
 
   public void runTypeCheckingAction(Runnable r) {

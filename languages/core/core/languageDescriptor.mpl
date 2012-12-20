@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.lang.core" uuid="ceab5195-25ea-4f22-9b92-103b95ca8c0c" generatorOutputPath="${module}/source_gen">
   <models>
-    <modelRoot path="${module}/classes_gen">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
+    <modelRoot path="${module}/classes_gen" type="java_classes" />
     <modelRoot path="${module}/languageModels" />
   </models>
   <accessoryModels />

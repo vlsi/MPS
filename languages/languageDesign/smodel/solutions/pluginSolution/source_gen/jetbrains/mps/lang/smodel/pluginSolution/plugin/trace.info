@@ -1226,8 +1226,8 @@
     <nodeInfo nodeId="7039601390004647235" fileName="ApiTransformations.java" startLine="1417" startPosition="31" endLine="1418" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7039601390004647235" fileName="ApiTransformations.java" startLine="1418" startPosition="31" endLine="1419" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7039601390004647235" fileName="ApiTransformations.java" startLine="1419" startPosition="164" endLine="1420" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7039601390004647235" fileName="ApiTransformations.java" startLine="1420" startPosition="178" endLine="1421" endPosition="395" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7039601390004647235" fileName="ApiTransformations.java" startLine="1421" startPosition="395" endLine="1422" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7039601390004647235" fileName="ApiTransformations.java" startLine="1420" startPosition="178" endLine="1421" endPosition="403" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7039601390004647235" fileName="ApiTransformations.java" startLine="1421" startPosition="403" endLine="1422" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7039601390004647235" fileName="ApiTransformations.java" startLine="1422" startPosition="171" endLine="1423" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7039601390004647235" fileName="ApiTransformations.java" startLine="1423" startPosition="163" endLine="1424" endPosition="256" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7039601390004647235" fileName="ApiTransformations.java" startLine="1424" startPosition="256" endLine="1425" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1271,8 +1271,8 @@
     <nodeInfo nodeId="7039601390004647335" fileName="ApiTransformations.java" startLine="1472" startPosition="30" endLine="1473" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7039601390004647335" fileName="ApiTransformations.java" startLine="1473" startPosition="31" endLine="1474" endPosition="164" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7039601390004647335" fileName="ApiTransformations.java" startLine="1474" startPosition="164" endLine="1475" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7039601390004647335" fileName="ApiTransformations.java" startLine="1475" startPosition="178" endLine="1476" endPosition="395" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7039601390004647335" fileName="ApiTransformations.java" startLine="1476" startPosition="395" endLine="1477" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7039601390004647335" fileName="ApiTransformations.java" startLine="1475" startPosition="178" endLine="1476" endPosition="403" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7039601390004647335" fileName="ApiTransformations.java" startLine="1476" startPosition="403" endLine="1477" endPosition="167" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7039601390004647335" fileName="ApiTransformations.java" startLine="1477" startPosition="167" endLine="1478" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7039601390004647335" fileName="ApiTransformations.java" startLine="1478" startPosition="246" endLine="1479" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7039601390004647335" fileName="ApiTransformations.java" startLine="1479" startPosition="228" endLine="1480" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -3161,8 +3161,8 @@
     <nodeInfo nodeId="7039601390004646960" fileName="ApiTransformations.java" startLine="1335" startPosition="174" endLine="1343" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7039601390004647184" fileName="ApiTransformations.java" startLine="1397" startPosition="51" endLine="1405" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7039601390004647184" fileName="ApiTransformations.java" startLine="1397" startPosition="51" endLine="1405" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7039601390004647335" fileName="ApiTransformations.java" startLine="1476" startPosition="395" endLine="1484" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7039601390004647335" fileName="ApiTransformations.java" startLine="1476" startPosition="395" endLine="1484" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7039601390004647335" fileName="ApiTransformations.java" startLine="1476" startPosition="403" endLine="1484" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7039601390004647335" fileName="ApiTransformations.java" startLine="1476" startPosition="403" endLine="1484" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7039601390004647433" fileName="ApiTransformations.java" startLine="1522" startPosition="30" endLine="1530" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7039601390004647433" fileName="ApiTransformations.java" startLine="1522" startPosition="30" endLine="1530" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7039601390004647608" fileName="ApiTransformations.java" startLine="1608" startPosition="175" endLine="1616" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -3224,8 +3224,8 @@
     <nodeInfo nodeId="7039601390004646812" fileName="ApiTransformations.java" startLine="1267" startPosition="171" endLine="1276" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7039601390004647012" fileName="ApiTransformations.java" startLine="1359" startPosition="30" endLine="1368" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7039601390004647012" fileName="ApiTransformations.java" startLine="1359" startPosition="30" endLine="1368" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7039601390004647235" fileName="ApiTransformations.java" startLine="1421" startPosition="395" endLine="1430" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="7039601390004647235" fileName="ApiTransformations.java" startLine="1421" startPosition="395" endLine="1430" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7039601390004647235" fileName="ApiTransformations.java" startLine="1421" startPosition="403" endLine="1430" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="7039601390004647235" fileName="ApiTransformations.java" startLine="1421" startPosition="403" endLine="1430" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7039601390004647235" fileName="ApiTransformations.java" startLine="1431" startPosition="53" endLine="1440" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7039601390004647235" fileName="ApiTransformations.java" startLine="1431" startPosition="53" endLine="1440" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7039601390004647335" fileName="ApiTransformations.java" startLine="1485" startPosition="53" endLine="1494" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -4209,7 +4209,7 @@
     <scopeInfo nodeId="7039601390004646762" fileName="ApiTransformations.java" startLine="1237" startPosition="174" endLine="1245" endPosition="54" />
     <scopeInfo nodeId="7039601390004646960" fileName="ApiTransformations.java" startLine="1335" startPosition="174" endLine="1343" endPosition="54" />
     <scopeInfo nodeId="7039601390004647184" fileName="ApiTransformations.java" startLine="1397" startPosition="51" endLine="1405" endPosition="53" />
-    <scopeInfo nodeId="7039601390004647335" fileName="ApiTransformations.java" startLine="1476" startPosition="395" endLine="1484" endPosition="58" />
+    <scopeInfo nodeId="7039601390004647335" fileName="ApiTransformations.java" startLine="1476" startPosition="403" endLine="1484" endPosition="58" />
     <scopeInfo nodeId="7039601390004647433" fileName="ApiTransformations.java" startLine="1522" startPosition="30" endLine="1530" endPosition="53" />
     <scopeInfo nodeId="7039601390004647608" fileName="ApiTransformations.java" startLine="1608" startPosition="175" endLine="1616" endPosition="56" />
     <scopeInfo nodeId="7039601390004647708" fileName="ApiTransformations.java" startLine="1692" startPosition="175" endLine="1700" endPosition="56" />
@@ -4240,7 +4240,7 @@
     <scopeInfo nodeId="7039601390004646682" fileName="ApiTransformations.java" startLine="1197" startPosition="30" endLine="1206" endPosition="53" />
     <scopeInfo nodeId="7039601390004646812" fileName="ApiTransformations.java" startLine="1267" startPosition="171" endLine="1276" endPosition="51" />
     <scopeInfo nodeId="7039601390004647012" fileName="ApiTransformations.java" startLine="1359" startPosition="30" endLine="1368" endPosition="53" />
-    <scopeInfo nodeId="7039601390004647235" fileName="ApiTransformations.java" startLine="1421" startPosition="395" endLine="1430" endPosition="58" />
+    <scopeInfo nodeId="7039601390004647235" fileName="ApiTransformations.java" startLine="1421" startPosition="403" endLine="1430" endPosition="58" />
     <scopeInfo nodeId="7039601390004647235" fileName="ApiTransformations.java" startLine="1431" startPosition="53" endLine="1440" endPosition="51" />
     <scopeInfo nodeId="7039601390004647335" fileName="ApiTransformations.java" startLine="1485" startPosition="53" endLine="1494" endPosition="51" />
     <scopeInfo nodeId="7039601390004647384" fileName="ApiTransformations.java" startLine="1502" startPosition="30" endLine="1511" endPosition="51" />

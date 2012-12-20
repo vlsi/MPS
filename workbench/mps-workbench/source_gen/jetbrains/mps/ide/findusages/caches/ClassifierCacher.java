@@ -31,7 +31,7 @@ import jetbrains.mps.baseLanguage.javastub.asm.ASMUnboundedType;
 import jetbrains.mps.baseLanguage.javastub.ASMNodeId;
 
 public class ClassifierCacher {
-  private Map<IdIndexEntry, Integer> myResult = new THashMap();
+  private Map<IdIndexEntry, Integer> myResult = new THashMap<IdIndexEntry, Integer>();
 
   public ClassifierCacher() {
   }

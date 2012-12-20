@@ -14,6 +14,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
 
   public void init() {
     IntentionsManager.getInstance().registerIntentionFactory(new AddRemoveMessage_Intention());
+    IntentionsManager.getInstance().registerIntentionFactory(new FixPluginKindForMPSTestCase_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new FlipAssertEquals_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new convert_test_case_to_unittest_case_Intention());
   }

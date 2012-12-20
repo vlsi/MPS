@@ -58,7 +58,6 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
 
   @Override
   public BaseSNodeDescriptor[] find(boolean checkboxState) {
-    // todo: exclude stubs from ctrl+n?
     if (checkboxState) return find(new FilteredGlobalScope());
     MPSProject project = getProject().getComponent(MPSProject.class);
     return find(new FilterStubsScope(new ModulesOnlyScope(project.getModulesWithGenerators())));
@@ -68,7 +67,6 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
     final Set<BaseSNodeDescriptor> keys = new HashSet<BaseSNodeDescriptor>();
 
     final ID<Integer, List<BaseSNodeDescriptor>> indexName = myIndex.getName();
-    final ModelConstraintsManager cm = ModelConstraintsManager.getInstance();
     final FileBasedIndex fileBasedIndex = FileBasedIndex.getInstance();
 
     Set<SModelDescriptor> findDirectly = new HashSet<SModelDescriptor>();
@@ -168,7 +166,6 @@ public class MPSChooseSNodeDescriptor extends BaseMPSChooseModel<BaseSNodeDescri
     assert presentation != null;
     return presentation.getModelName() + "." + presentation.getPresentableText();
   }
-
 
   protected String doGetCheckBoxName() {
     return "Include stubs and &non-&&project models";

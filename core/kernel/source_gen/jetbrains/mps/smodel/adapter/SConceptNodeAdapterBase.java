@@ -16,7 +16,6 @@ import java.util.List;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.mps.openapi.language.SLanguage;
 import jetbrains.mps.smodel.Language;
@@ -74,7 +73,7 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
     });
   }
 
-  public boolean isSubConceptOf(SConcept concept) {
+  public boolean isSubConceptOf(SAbstractConcept concept) {
     if (!(concept instanceof SConceptNodeAdapterBase)) {
       throw new IllegalArgumentException("not supported");
     }

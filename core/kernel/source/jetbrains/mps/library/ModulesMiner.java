@@ -213,24 +213,6 @@ public class ModulesMiner {
     T read(ModuleHandle module);
   }
 
-  public static class ModuleHandle {
-    private IFile file;
-    private ModuleDescriptor descriptor;
-
-    public ModuleHandle(IFile file, ModuleDescriptor descriptor) {
-      this.file = file;
-      this.descriptor = descriptor;
-    }
-
-    public IFile getFile() {
-      return file;
-    }
-
-    public ModuleDescriptor getDescriptor() {
-      return descriptor;
-    }
-  }
-
   @Nullable
   public static IFile getRealDescriptorFile(String filePath, DeploymentDescriptor deploymentDescriptor) {
     if (deploymentDescriptor.getSourcesJar() != null) {
@@ -251,44 +233,54 @@ public class ModulesMiner {
     return null;
   }
 
-  public void saveModules(@NotNull Collection<ModuleHandle> handles, ModelOutputStream stream) throws IOException {
-    stream.writeInt(0xbeb0beb0);
-    stream.writeInt(handles.size());
-    for (ModuleHandle handle : handles) {
-      stream.writeString(handle.file.getPath());
-      if (handle.descriptor instanceof LanguageDescriptor) {
-        stream.writeByte(1);
-      } else if (handle.descriptor instanceof SolutionDescriptor) {
-        stream.writeByte(2);
-      } else if (handle.descriptor instanceof DevkitDescriptor) {
-        stream.writeByte(3);
-      } else {
-        throw new IllegalArgumentException("unknown module!");
-      }
-      handle.descriptor.save(stream);
+  public void saveHandle(@NotNull ModuleHandle handle, ModelOutputStream stream) throws IOException {
+    stream.writeShort(0x1be0);
+    stream.writeString(handle.file.getPath());
+    if (handle.descriptor instanceof LanguageDescriptor) {
+      stream.writeByte(1);
+    } else if (handle.descriptor instanceof SolutionDescriptor) {
+      stream.writeByte(2);
+    } else if (handle.descriptor instanceof DevkitDescriptor) {
+      stream.writeByte(3);
+    } else {
+      throw new IllegalArgumentException("unknown module!");
     }
+    handle.descriptor.save(stream);
   }
 
-  public Collection<ModuleHandle> loadModules(ModelInputStream stream) throws IOException {
-    if (stream.readInt() != 0xbeb0beb0) throw new IOException("bad stream: no start marker");
-    int size = stream.readInt();
-    List<ModuleHandle> result = new ArrayList<ModuleHandle>(size);
-    for (; size > 0; size--) {
-      String file = stream.readString();
-      ModuleDescriptor descriptor;
-      int type = stream.readByte();
-      if (type == 1) {
-        descriptor = new LanguageDescriptor();
-      } else if (type == 2) {
-        descriptor = new SolutionDescriptor();
-      } else if (type == 3) {
-        descriptor = new DevkitDescriptor();
-      } else {
-        throw new IOException("broken stream: invalid descriptor type");
-      }
-      descriptor.load(stream);
-      result.add(new ModuleHandle(FileSystem.getInstance().getFileByPath(file), descriptor));
+  public ModuleHandle loadHandle(ModelInputStream stream) throws IOException {
+    if (stream.readShort() != 0x1be0) throw new IOException("bad stream: no start marker");
+    String file = stream.readString();
+    ModuleDescriptor descriptor;
+    int type = stream.readByte();
+    if (type == 1) {
+      descriptor = new LanguageDescriptor();
+    } else if (type == 2) {
+      descriptor = new SolutionDescriptor();
+    } else if (type == 3) {
+      descriptor = new DevkitDescriptor();
+    } else {
+      throw new IOException("broken stream: invalid descriptor type");
     }
-    return result;
+    descriptor.load(stream);
+    return new ModuleHandle(FileSystem.getInstance().getFileByPath(file), descriptor);
+  }
+
+  public static class ModuleHandle {
+    private IFile file;
+    private ModuleDescriptor descriptor;
+
+    public ModuleHandle(IFile file, ModuleDescriptor descriptor) {
+      this.file = file;
+      this.descriptor = descriptor;
+    }
+
+    public IFile getFile() {
+      return file;
+    }
+
+    public ModuleDescriptor getDescriptor() {
+      return descriptor;
+    }
   }
 }

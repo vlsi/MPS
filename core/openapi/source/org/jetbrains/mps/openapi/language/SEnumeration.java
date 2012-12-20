@@ -16,11 +16,14 @@
 package org.jetbrains.mps.openapi.language;
 
 /**
- * evgeny, 7/27/12
+ * Represents an enumeration - a collections of related options (SEnumerationLiterals)
  */
 public interface SEnumeration extends SDataType {
 
-  SEnumerationLiteral getLiteral(String value);
+  /**
+   * Resolves the enumeration literal with matching name
+   */
+  SEnumerationLiteral getLiteral(String name);
 
   SEnumerationLiteral getDefault();
 

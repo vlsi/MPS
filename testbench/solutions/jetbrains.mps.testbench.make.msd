@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.testbench.make" uuid="79f9d103-4ff6-4def-9c1a-27070f9ba255" compileInMPS="false" generatorOutputPath="${mps_home}/testbench/tests_gen">
   <models>
-    <modelRoot path="${mps_home}/lib/diffutils-1.2.1.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
+    <modelRoot path="${mps_home}/lib/diffutils-1.2.1.jar" type="java_classes" />
     <modelRoot path="${module}/" />
   </models>
   <stubModelEntries>

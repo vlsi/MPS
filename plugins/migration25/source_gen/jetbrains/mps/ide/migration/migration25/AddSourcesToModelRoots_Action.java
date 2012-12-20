@@ -24,7 +24,6 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.util.EqualUtil;
-import jetbrains.mps.project.SModelRoot;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.logging.Logger;
@@ -89,9 +88,7 @@ public class AddSourcesToModelRoots_Action extends BaseAction {
           continue;
         }
 
-        SModelRoot mr = new SModelRoot(LanguageID.JAVA_MANAGER);
-        mr.setPath(module.getClassesGen().getPath());
-        CollectionSequence.fromCollection(mrs).addElement(mr.toDescriptor());
+        CollectionSequence.fromCollection(mrs).addElement(ModelRootDescriptor.getJavaStubsModelRoot(module.getClassesGen().getPath()));
 
         module.setModuleDescriptor(descriptor, false);
         module.save();

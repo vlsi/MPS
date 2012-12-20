@@ -21,6 +21,8 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.util.MacroHelper;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.persistence.MementoImpl;
+import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.smodel.LanguageID;
 import org.jdom.Attribute;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vfs.IFile;
@@ -30,6 +32,7 @@ import java.io.InputStreamReader;
 import java.util.regex.Pattern;
 import java.util.regex.Matcher;
 import java.io.IOException;
+import jetbrains.mps.project.structure.model.ModelRootManager;
 import jetbrains.mps.logging.Logger;
 
 public class ModuleDescriptorPersistence {
@@ -135,7 +138,23 @@ public class ModuleDescriptorPersistence {
   private static ModelRootDescriptor loadModelRoot(Element modelRootElement, final MacroHelper macroHelper) {
     Memento m = new MementoImpl();
     readMemento(m, modelRootElement, macroHelper);
-    return new ModelRootDescriptor(modelRootElement.getAttributeValue("type"), m);
+    String type = modelRootElement.getAttributeValue("type");
+    // temporary code for migrating old model roots 
+    if (type == null) {
+      Memento manager = m.getChild("manager");
+      if (manager == null) {
+        type = PersistenceRegistry.DEFAULT_MODEL_ROOT;
+      } else if (matches(manager, LanguageID.JAVA_MANAGER)) {
+        // TODO use JavaClassStubConstants.STUB_TYPE 
+        type = "java_classes";
+        String path = m.get("path");
+        m = new MementoImpl();
+        m.put("path", path);
+      } else {
+        type = PersistenceRegistry.OBSOLETE_MODEL_ROOT;
+      }
+    }
+    return new ModelRootDescriptor(type, m);
   }
 
   public static void readMemento(Memento memento, Element element, final MacroHelper macroHelper) {
@@ -254,6 +273,11 @@ public class ModuleDescriptorPersistence {
       exception.getCause()
     ));
   }
+
+  private static boolean matches(Memento manager, ModelRootManager mrm) {
+    return mrm.getClassName().equals(manager.get("className")) && mrm.getModuleId().equals(manager.get("moduleId"));
+  }
+
 
   private static Logger LOG = Logger.getLogger(ModuleDescriptorPersistence.class);
 }

@@ -8,7 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/source" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/source_gen" isTestSource="false" />
     </content>
-    <orderEntry type="jdk" jdkName="1.6" jdkType="JavaSDK" />
+    <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Annotations" level="project" />
     <orderEntry type="library" name="Idea-plaform" level="project" />
@@ -16,6 +16,7 @@
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="collections-runtime" />
     <orderEntry type="module" module-name="Closures-runtime" />
+    <orderEntry type="module" module-name="persistence" />
   </component>
 </module>
 

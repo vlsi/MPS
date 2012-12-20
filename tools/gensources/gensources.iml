@@ -359,7 +359,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/typesystem/languages/test/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/typesystem/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/typesystem/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/modelmetadata/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/builders/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/builders/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/languages/gentest/source_gen" isTestSource="false" />
@@ -561,7 +560,6 @@
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/typesystem/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/typesystem/languages/test/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/languageDesign/typesystem/solutions/pluginSolution/classes_gen" />
-      <excludeFolder url="file://$MODULE_DIR$/../../languages/modelmetadata/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/util/builders/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/util/builders/sandbox/classes_gen" />
       <excludeFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/languages/gentest/classes_gen" />
@@ -802,7 +800,6 @@
       </library>
     </orderEntry>
     <orderEntry type="library" name="Annotations" level="project" />
-    <orderEntry type="library" name="Commons-logging" level="project" />
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" name="Ant" level="project" />
     <orderEntry type="library" name="ASM" level="project" />

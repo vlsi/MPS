@@ -19,7 +19,7 @@ import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.DataSourceListener;
 
 /**
- * evgeny, 11/2/12
+ * A base convenience class for data sources with empty implementations for all methods.
  */
 public abstract class DataSourceBase implements DataSource {
 

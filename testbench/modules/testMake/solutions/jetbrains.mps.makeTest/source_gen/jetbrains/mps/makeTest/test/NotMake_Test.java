@@ -7,10 +7,10 @@ import junit.framework.TestCase;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 
@@ -22,7 +22,7 @@ public class NotMake_Test extends TestCase {
       @Override
       public void change(SModel model) {
         super.change(model);
-        SPropertyOperations.set(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.Classifier")).first(), "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).first(), "isAbstract", "" + (true));
+        SPropertyOperations.set(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.Classifier")).first())).first(), "isAbstract", "" + (true));
       }
     });
   }
@@ -61,7 +61,7 @@ public class NotMake_Test extends TestCase {
       @Override
       public void change(SModel model) {
         super.change(model);
-        SPropertyOperations.set(Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.Classifier")).first(), "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).first(), "isAbstract", "" + (true));
+        SPropertyOperations.set(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(ListSequence.fromList(SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.Classifier")).first())).first(), "isAbstract", "" + (true));
       }
     });
   }

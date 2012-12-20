@@ -15,11 +15,17 @@
  */
 package org.jetbrains.mps.openapi.language;
 
+/**
+ * Represents a concept property
+ */
 public interface SProperty {
 
   String getName();
 
   SDataType getType();
 
+  /**
+   * Will be used to check validity of potential values.
+   */
   boolean isValid(String value);
 }

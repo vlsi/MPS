@@ -28,6 +28,68 @@
     <orderEntry type="library" name="JDOM" level="project" />
     <orderEntry type="library" name="Log4j" level="project" />
     <orderEntry type="library" name="Idea-extensions" level="project" />
+    <orderEntry type="module" module-name="actions-runtime" scope="PROVIDED" />
+    <orderEntry type="module" module-name="analyzers" scope="PROVIDED" />
+    <orderEntry type="module" module-name="ant" scope="PROVIDED" />
+    <orderEntry type="module" module-name="baseLanguage-search" scope="PROVIDED" />
+    <orderEntry type="module" module-name="baseLanguage-util" scope="PROVIDED" />
+    <orderEntry type="module" module-name="build-deprecated" scope="PROVIDED" />
+    <orderEntry type="module" module-name="Closures-runtime" scope="PROVIDED" />
+    <orderEntry type="module" module-name="collections-runtime" scope="PROVIDED" />
+    <orderEntry type="module" module-name="debugger-api-api" scope="PROVIDED" />
+    <orderEntry type="module" module-name="debugger-api-runtime" scope="PROVIDED" />
+    <orderEntry type="module" module-name="debugger-java-api" scope="PROVIDED" />
+    <orderEntry type="module" module-name="debugger-java-customViewers" scope="PROVIDED" />
+    <orderEntry type="module" module-name="debugger-java-runtime" scope="PROVIDED" />
+    <orderEntry type="module" module-name="editor-api" scope="PROVIDED" />
+    <orderEntry type="module" module-name="editor-runtime" scope="PROVIDED" />
+    <orderEntry type="module" module-name="excluded" scope="PROVIDED" />
+    <orderEntry type="module" module-name="execution-api" scope="PROVIDED" />
+    <orderEntry type="module" module-name="execution-configurations-ant" scope="PROVIDED" />
+    <orderEntry type="module" module-name="execution-configurations-baseLanguage" scope="PROVIDED" />
+    <orderEntry type="module" module-name="execution-configurations-plugin" scope="PROVIDED" />
+    <orderEntry type="module" module-name="execution-configurations-unitTests" scope="PROVIDED" />
+    <orderEntry type="module" module-name="execution-impl" scope="PROVIDED" />
+    <orderEntry type="module" module-name="execution-languages-deprecated-runtime" scope="PROVIDED" />
+    <orderEntry type="module" module-name="execution-languages-library" scope="PROVIDED" />
+    <orderEntry type="module" module-name="execution-languages-plugin" scope="PROVIDED" />
+    <orderEntry type="module" module-name="findUsages-runtime" scope="PROVIDED" />
+    <orderEntry type="module" module-name="generator-engine" scope="PROVIDED" />
+    <orderEntry type="module" module-name="gensources" scope="PROVIDED" />
+    <orderEntry type="module" module-name="ideaIntegration" scope="PROVIDED" />
+    <orderEntry type="module" module-name="intentions-runtime" scope="PROVIDED" />
+    <orderEntry type="module" module-name="kernel" scope="PROVIDED" />
+    <orderEntry type="module" module-name="make-runtime" scope="PROVIDED" />
+    <orderEntry type="module" module-name="migration" scope="PROVIDED" />
+    <orderEntry type="module" module-name="migration25" scope="PROVIDED" />
+    <orderEntry type="module" module-name="migrationAssistant" scope="PROVIDED" />
+    <orderEntry type="module" module-name="miscTests" scope="PROVIDED" />
+    <orderEntry type="module" module-name="modelchecker" scope="PROVIDED" />
+    <orderEntry type="module" module-name="mps-debugger" scope="PROVIDED" />
+    <orderEntry type="module" module-name="mps-editor" scope="PROVIDED" />
+    <orderEntry type="module" module-name="mps-platform" scope="PROVIDED" />
+    <orderEntry type="module" module-name="mps-ui" scope="PROVIDED" />
+    <orderEntry type="module" module-name="mps-workbench" scope="PROVIDED" />
+    <orderEntry type="module" module-name="mpsdevkit" scope="PROVIDED" />
+    <orderEntry type="module" module-name="mpsjava" scope="PROVIDED" />
+    <orderEntry type="module" module-name="mpsmake" scope="PROVIDED" />
+    <orderEntry type="module" module-name="MPSSupport" scope="PROVIDED" />
+    <orderEntry type="module" module-name="openapi" scope="PROVIDED" />
+    <orderEntry type="module" module-name="persistence" scope="PROVIDED" />
+    <orderEntry type="module" module-name="refactoring-runtime" scope="PROVIDED" />
+    <orderEntry type="module" module-name="resources" scope="PROVIDED" />
+    <orderEntry type="module" module-name="resources_en" scope="PROVIDED" />
+    <orderEntry type="module" module-name="runtime" scope="PROVIDED" />
+    <orderEntry type="module" module-name="samples" scope="PROVIDED" />
+    <orderEntry type="module" module-name="testbench" scope="PROVIDED" />
+    <orderEntry type="module" module-name="Tuples-runtime" scope="PROVIDED" />
+    <orderEntry type="module" module-name="typesystemEngine" scope="PROVIDED" />
+    <orderEntry type="module" module-name="typesystemIntegration" scope="PROVIDED" />
+    <orderEntry type="module" module-name="typesystemUi" scope="PROVIDED" />
+    <orderEntry type="module" module-name="uiLanguage-runtime" scope="PROVIDED" />
+    <orderEntry type="module" module-name="uiTests" scope="PROVIDED" />
+    <orderEntry type="module" module-name="vcs" scope="PROVIDED" />
+    <orderEntry type="module" module-name="vcs-core" scope="PROVIDED" />
   </component>
 </module>
 

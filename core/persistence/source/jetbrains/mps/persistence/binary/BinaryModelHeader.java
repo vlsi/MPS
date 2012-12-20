@@ -16,6 +16,10 @@
 package jetbrains.mps.persistence.binary;
 
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.util.io.ModelInputStream;
+import jetbrains.mps.util.io.ModelOutputStream;
+
+import java.io.IOException;
 
 /**
  * evgeny, 11/21/12
@@ -47,5 +51,28 @@ public class BinaryModelHeader {
 
   public void setDoNotGenerate(boolean doNotGenerate) {
     this.doNotGenerate = doNotGenerate;
+  }
+
+  public void save(ModelOutputStream stream) throws IOException {
+    stream.writeByte(79);
+    stream.writeModelReference(reference);
+    stream.writeInt(version);
+    stream.writeBoolean(doNotGenerate);
+  }
+
+  public static BinaryModelHeader load(ModelInputStream stream) throws IOException {
+    if (stream.readByte() != 79) throw new IOException("bad stream: no model header start marker");
+    SModelReference reference = stream.readModelReference();
+    BinaryModelHeader result = new BinaryModelHeader(reference);
+    result.setVersion(stream.readInt());
+    result.setDoNotGenerate(stream.readBoolean());
+    return result;
+  }
+
+  public BinaryModelHeader createCopy() {
+    BinaryModelHeader copy = new BinaryModelHeader(reference);
+    copy.version = version;
+    copy.doNotGenerate = doNotGenerate;
+    return copy;
   }
 }

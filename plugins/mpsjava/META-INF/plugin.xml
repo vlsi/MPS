@@ -22,8 +22,8 @@
   <vendor url="http://www.jetbrains.com/mps/" logo="/MPS_16.png">JetBrains</vendor>
   <idea-version since-build="123.1" />
 
-  <xi:include href="../platform/classes/jetbrains/mps/ide/java/actions/JavaActions.xml" xpointer="xpointer(/components/*)"/>
-  <xi:include href="../workbench/classes/jetbrains/mps/ide/java/workbench/actions/JavaWorkbenchActions.xml"
+  <xi:include href="../classes/jetbrains/mps/ide/java/actions/JavaActions.xml" xpointer="xpointer(/components/*)"/>
+  <xi:include href="../classes/jetbrains/mps/ide/java/workbench/actions/JavaWorkbenchActions.xml"
               xpointer="xpointer(/components/*)"/>
 
   <application-components>
@@ -56,11 +56,8 @@
     <mps.VisibleModuleMask mask="jetbrains\.mps\.baseLanguage.*"/>
     <mps.VisibleModuleMask mask="jetbrains\.mps\.devkit\.general-purpose"/>
     <mps.VisibleModuleMask mask="jetbrains\.mps\.xml.*"/>
-    <mps.modelRootFactory rootType="java_class_stub" className="jetbrains.mps.ide.java.stubs.JavaClassStubModelRootFactory"/>
-    <mps.modelRootSettings rootType="java_class_stub" className="jetbrains.mps.ide.java.stubs.JavaClassStubModelRootSettingsProvider"/>
-    <mps.modelRootEntry rootType="java_class_stub" className="jetbrains.mps.ide.java.ui.JavaClassStubsModelRootEntry"/>
     <mps.modelRootFactory rootType="java_source_stubs" className="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRootFactory"/>
-    <mps.modelRootSettings rootType="java_source_stubs" className="jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRootSettingsProvider"/>
+    <mps.modelRootSettings rootType="java_source_stubs" className="jetbrains.mps.ide.java.sourceStubsUI.JavaSourceStubModelRootSettingsProvider"/>
     <mps.modelRootEntry rootType="java_source_stubs" className="jetbrains.mps.ide.java.ui.JavaSourceStubsModelRootEntry"/>
   </extensions>
 </idea-plugin>

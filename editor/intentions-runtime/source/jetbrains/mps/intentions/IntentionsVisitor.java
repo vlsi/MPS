@@ -28,26 +28,6 @@ interface IntentionsVisitor {
 
   boolean visit(IntentionFactory intentionFactory);
 
-  class CheckAvailabilityVisitor implements IntentionsVisitor {
-    private boolean myIntentionAvailable = false;
-
-    @Override
-    public boolean visit(Intention intention) {
-      myIntentionAvailable = true;
-      return !myIntentionAvailable;
-    }
-
-    @Override
-    public boolean visit(IntentionFactory intentionFactory) {
-      myIntentionAvailable = true;
-      return !myIntentionAvailable;
-    }
-
-    public boolean isIntentionAvailable() {
-      return myIntentionAvailable;
-    }
-  }
-
   class CollectAvailableIntentionsVisitor implements IntentionsVisitor {
     private Set<Intention> myAvailableIntentions = new HashSet<Intention>();
     private Set<IntentionFactory> myAvailableIntentionFactories = new HashSet<IntentionFactory>();
@@ -73,23 +53,35 @@ interface IntentionsVisitor {
     }
   }
 
-  class CollectAvailableIntentionTypesVisitor implements IntentionsVisitor {
-    private Set<IntentionType> myAvailableIntentionTypes = new HashSet<IntentionType>();
+  class GetHighestAvailableIntentionTypeVisitor implements IntentionsVisitor {
+    private IntentionType myIntentionType = null;
 
     @Override
     public boolean visit(Intention intention) {
-      myAvailableIntentionTypes.add(intention.getType());
-      return true;
+      return visit(intention.getType());
     }
 
     @Override
     public boolean visit(IntentionFactory intentionFactory) {
-      myAvailableIntentionTypes.add(intentionFactory.getType());
-      return true;
+      return visit(intentionFactory.getType());
     }
 
-    public Set<IntentionType> getAvailableIntentionTypes() {
-      return myAvailableIntentionTypes;
+    public IntentionType getIntentionType() {
+      return myIntentionType;
+    }
+
+    private boolean visit(IntentionType intentionType) {
+      if (hasHigherPriority(intentionType)) {
+        myIntentionType = intentionType;
+      }
+      return myIntentionType.getPriority() > 0;
+    }
+
+    /**
+     * return true if passed intentionType has higher priority then one currently stored by this visitor
+     */
+    public boolean hasHigherPriority(IntentionType intentionType) {
+      return myIntentionType == null || myIntentionType.getPriority() < intentionType.getPriority();
     }
   }
 }

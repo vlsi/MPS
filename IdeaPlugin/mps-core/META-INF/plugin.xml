@@ -68,6 +68,9 @@
       <implementation-class>jetbrains.mps.idea.core.project.stubs.MPSProjectLibImporter</implementation-class>
     </component>
     <component>
+      <implementation-class>jetbrains.mps.idea.core.project.stubs.SdkClassesImporter</implementation-class>
+    </component>
+    <component>
       <implementation-class>jetbrains.mps.project.MPSProject</implementation-class>
     </component>
     <component>
@@ -80,12 +83,13 @@
       <implementation-class>jetbrains.mps.idea.core.projectView.MPSTreeRootNameInvalidator</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.idea.core.project.ModelRootContributorManager</implementation-class>
-    </component>
-    <component>
       <implementation-class>jetbrains.mps.idea.core.psi.PsiChangesWatcher</implementation-class>
     </component>
   </project-components>
+
+  <extensionPoints>
+    <extensionPoint qualifiedName="com.intellij.mps.modelRootContributor" beanClass="jetbrains.mps.idea.core.project.ModelRootContributorEP"/>
+  </extensionPoints>
 
   <extensions defaultExtensionNs="com.intellij">
     <editorOptionsProvider instance="jetbrains.mps.nodeEditor.EditorSettingsConfigurable$EditorSettingsConfigurableOptionsProvider"/>

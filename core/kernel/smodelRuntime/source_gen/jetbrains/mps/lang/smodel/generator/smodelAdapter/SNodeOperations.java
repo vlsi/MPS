@@ -21,7 +21,6 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.ScopeAdapter;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.SReference;
@@ -602,13 +601,10 @@ public class SNodeOperations {
       return null;
     }
     if (!(SNodeOperations.isInstanceOf(node, castTo))) {
-      // hack, remove? 
-      if (!(HUtil.isRuntimeTypeVariable(node))) {
-        if (ourCastsEnabled) {
-          throw new NodeCastException("Can't cast " + node.getConcept().getId() + " to " + castTo);
-        } else {
-          LOG.warning("Can't cast " + node.getConcept().getId() + " to " + castTo);
-        }
+      if (ourCastsEnabled) {
+        throw new NodeCastException("Can't cast " + node.getConcept().getId() + " to " + castTo);
+      } else {
+        LOG.warning("Can't cast " + node.getConcept().getId() + " to " + castTo);
       }
     }
     return node;

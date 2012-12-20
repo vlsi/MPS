@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="Annotations" uuid="3f233e7f-b8a6-46d2-a57f-795d56775243" compileInMPS="false" generatorOutputPath="${module}/source_gen">
   <models>
-    <modelRoot path="${mps_home}/lib/annotations.jar">
-      <manager moduleId="f3061a53-9226-4cc5-a443-f952ceaf5816" className="jetbrains.mps.baseLanguage.stubs.JavaStubs" />
-    </modelRoot>
+    <modelRoot path="${mps_home}/lib/annotations.jar" type="java_classes" />
   </models>
   <stubModelEntries>
     <stubModelEntry path="${mps_home}/lib/annotations.jar" />

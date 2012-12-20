@@ -837,11 +837,11 @@
     <nodeInfo nodeId="6639374232683434563" fileName="hasSameSignatureTest_Test.java" startLine="16" startPosition="44" endLine="17" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6639374232683434563" fileName="hasSameSignatureTest_Test.java" startLine="17" startPosition="116" endLine="18" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6639374232683434579" fileName="hasSameSignatureTest_Test.java" startLine="23" startPosition="46" endLine="24" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5157939743593410699" fileName="hasSameSignatureTest_Test.java" startLine="24" startPosition="46" endLine="25" endPosition="448" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5157939743593410699" fileName="hasSameSignatureTest_Test.java" startLine="24" startPosition="46" endLine="25" endPosition="350" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6639374232683434579" fileName="hasSameSignatureTest_Test.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_list#()V" />
     <nodeInfo nodeId="6639374232683434563" fileName="hasSameSignatureTest_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_list#()V" />
     <scopeInfo nodeId="6639374232683434563" fileName="hasSameSignatureTest_Test.java" startLine="16" startPosition="44" endLine="18" endPosition="106" />
-    <scopeInfo nodeId="6639374232683434579" fileName="hasSameSignatureTest_Test.java" startLine="23" startPosition="46" endLine="25" endPosition="448" />
+    <scopeInfo nodeId="6639374232683434579" fileName="hasSameSignatureTest_Test.java" startLine="23" startPosition="46" endLine="25" endPosition="350" />
     <scopeInfo nodeId="6639374232683434579" fileName="hasSameSignatureTest_Test.java" startLine="23" startPosition="0" endLine="27" endPosition="0" />
     <scopeInfo nodeId="6639374232683434563" fileName="hasSameSignatureTest_Test.java" startLine="15" startPosition="0" endLine="20" endPosition="0" />
     <unitInfo nodeId="6639374232683434563" fileName="hasSameSignatureTest_Test.java" startLine="21" startPosition="0" endLine="28" endPosition="0" unitName="jetbrains.mps.baseLanguage.test.hasSameSignatureTest_Test$TestBody" />

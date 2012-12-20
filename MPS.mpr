@@ -202,7 +202,6 @@
       <modulePath path="${project}/languages/languageDesign/typesystem/solutions/jetbrains.mps.bootstrap.helgins.sandbox/jetbrains.mps.bootstrap.helgins.sandbox.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/typesystem/solutions/pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/languages/languageDesign/typesystem/typesystem.mpl" folder="core.language-design" />
-      <modulePath path="${project}/languages/modelmetadata/modelmetadata.mpl" folder="plugins" />
       <modulePath path="${project}/languages/util/builders/builders.mpl" folder="baseLanguage.builders" />
       <modulePath path="${project}/languages/util/builders/sandbox/jetbrains.mps.builders.msd" folder="baseLanguage.builders" />
       <modulePath path="${project}/languages/util/buildlanguage/languages/gentest/gentest.mpl" folder="languages.build" />
@@ -363,17 +362,18 @@
       <modulePath path="${project}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.dataFlow.pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.typesystem.devkit.pluginSolution/pluginSolution.msd" folder="core.language-design" />
       <modulePath path="${project}/plugins/mpsdevkit/mpsdevkit.msd" folder="plugins" />
+      <modulePath path="${project}/plugins/mpsjava/basePlatform/basePlatform.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/migration/migration.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/platform/platform.msd" folder="plugins.mpsjava" />
-      <modulePath path="${project}/plugins/mpsjava/stubs/sources.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/testsol/tests.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/testsolution/testMaterial.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsjava/workbench/java.msd" folder="plugins.mpsjava" />
       <modulePath path="${project}/plugins/mpsmake/solution/jetbrains.mps.ide.make.msd" folder="plugins" />
       <modulePath path="${project}/plugins/samples/jetbrains.mps.samples.msd" folder="samples" />
-      <modulePath path="${project}/plugins/vcs-core/core/core.msd" folder="plugins" />
-      <modulePath path="${project}/plugins/vcs/common/platform.msd" folder="plugins" />
-      <modulePath path="${project}/plugins/vcs/jetbrains.mps.vcs.msd" folder="plugins" />
+      <modulePath path="${project}/plugins/vcs-core/core/core.msd" folder="plugins.vcs" />
+      <modulePath path="${project}/plugins/vcs/common/platform.msd" folder="plugins.vcs" />
+      <modulePath path="${project}/plugins/vcs/jetbrains.mps.vcs.msd" folder="plugins.vcs" />
+      <modulePath path="${project}/plugins/vcs/languages/modelmetadata/modelmetadata.mpl" folder="plugins.vcs" />
       <modulePath path="${project}/samples/agreement/agreementLanguage/languageDescriptor.mpl" folder="samples" />
       <modulePath path="${project}/samples/agreement/framework/jetbrains.mps.samples.agreement.framework.msd" folder="samples" />
       <modulePath path="${project}/samples/agreement/sandbox/agreementRegistryBuilder.msd" folder="samples" />

@@ -177,6 +177,11 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
       return idx >= 0 ? STEP_IDS.get(idx) : null;
     }
 
+    public Object getSkipPreviousStepId() {
+      int idx = STEP_IDS.indexOf(myId) - 2;
+      return idx >= 0 ? STEP_IDS.get(idx) : null;
+    }
+
     @Override
     public Icon getIcon() {
       return WIZARD_ICON;
@@ -551,8 +556,14 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
     }
 
     @Override
+    public Object getPreviousStepId() {
+      return super.getSkipPreviousStepId();
+    }
+
+    @Override
     public void commit(CommitType commitType) throws CommitStepException {
       if (CommitType.Next == commitType) {
+        if (myAllActions.isEmpty()) throw new CommitStepException("No actions available");
         if (myExcludedActions.containsAll(myAllActions)) throw new CommitStepException("No actions selected");
         MigrationProcessor processor = myProject.getComponent(MigrationProcessor.class);
         List<?> actions = new ArrayList<Object>(processor.getActions());
@@ -566,6 +577,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
     private boolean myStarted;
     private boolean myFinished;
+    private boolean myDoneAny;
     private final Task myTask;
     private InlineProgressIndicator myProgressIndicator;
     private final Set<Object> myMarked = Collections.synchronizedSet(new HashSet<Object>());
@@ -618,6 +630,7 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
           processor.addCallback(new Callback() {
             @Override
             public void startingAction(Object action) {
+              myDoneAny = true;
               indicator.setIndeterminate(false);
               indicator.setFraction(0.0);
               myList.ensureIndexIsVisible(actions.indexOf(action));
@@ -699,12 +712,19 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
     @Override
     public boolean isComplete() {
-      return myStarted && myFinished;
+      return myStarted && myFinished && myDoneAny;
     }
 
     @Override
     public boolean isPostComplete() {
-      return myStarted && myFinished;
+      return myStarted && myFinished && myDoneAny;
+    }
+
+    @Override
+    public void commit(CommitType commitType) throws CommitStepException {
+      if (CommitType.Next == commitType || CommitType.Finish == commitType) {
+        if (!myDoneAny) throw new CommitStepException("Nothing done");
+      }
     }
   }
 

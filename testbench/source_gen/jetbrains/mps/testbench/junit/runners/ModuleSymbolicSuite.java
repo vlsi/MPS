@@ -12,6 +12,19 @@ import org.junit.runner.Description;
 import org.junit.runner.notification.RunNotifier;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.runtime.IClassLoadingModule;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
+import java.net.URL;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.io.File;
+import java.net.MalformedURLException;
+import java.net.URLClassLoader;
+import jetbrains.mps.reloading.ClasspathStringCollector;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
+import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import java.util.Set;
+import jetbrains.mps.reloading.CommonPaths;
 import org.junit.runner.notification.Failure;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
@@ -132,10 +145,60 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
     }
 
     private void init(IModule mod, RunnerBuilder builder) {
-      Class klass = mod.getClass(myClassName);
+      Class klass = getTestClass(mod, myClassName);
       if (klass != null) {
         this.myDelegate = builder.safeRunnerForClass(klass);
+      } else {
+        // todo: ? 
       }
+    }
+
+    private static Class getTestClass(IModule module, String className) {
+      if (module instanceof IClassLoadingModule && ((IClassLoadingModule) module).canLoad()) {
+        return module.getClass(className);
+      } else {
+        try {
+          return getTestClassLoaderForModule(module).loadClass(className);
+        } catch (ClassNotFoundException e) {
+          return null;
+        }
+      }
+    }
+
+    private static ClassLoader getTestClassLoaderForModule(IModule module) {
+      List<String> paths = ListSequence.fromList(new ArrayList<String>());
+      // <node> 
+      ListSequence.fromList(paths).addSequence(ListSequence.fromList(getClasspathForModule(module)));
+
+      URL[] urls = ListSequence.fromList(paths).select(new ISelector<String, URL>() {
+        public URL select(String it) {
+          try {
+            return new File(it).toURL();
+          } catch (MalformedURLException e) {
+            // todo: ? 
+            return null;
+          }
+        }
+      }).toGenericArray(URL.class);
+
+      return new URLClassLoader(urls);
+    }
+
+    private static List<String> getClasspathForModule(final IModule module) {
+      final ClasspathStringCollector visitor = new ClasspathStringCollector();
+      module.getClassPathItem().accept(visitor);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          for (IModule m : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.COMPILE))) {
+            m.getClassPathItem().accept(visitor);
+          }
+        }
+      });
+
+      Set<String> visited = visitor.getClasspath();
+      visited.removeAll(CommonPaths.getJDKPath());
+
+      return ListSequence.fromListWithValues(new ArrayList<String>(), visited);
     }
 
     private void runFailure(Description failDesc, Throwable cause, RunNotifier notifier) {

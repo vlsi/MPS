@@ -49,19 +49,19 @@ public class JavaLocation implements ILocation {
 
     JavaLocation that = (JavaLocation) o;
     if ((myFileName != null ?
-      !(((Object) myFileName).equals(that.myFileName)) :
+      !((myFileName).equals(that.myFileName)) :
       that.myFileName != null
     )) {
       return false;
     }
     if ((myUnitName != null ?
-      !(((Object) myUnitName).equals(that.myUnitName)) :
+      !((myUnitName).equals(that.myUnitName)) :
       that.myUnitName != null
     )) {
       return false;
     }
     if ((myRoutineName != null ?
-      !(((Object) myRoutineName).equals(that.myRoutineName)) :
+      !((myRoutineName).equals(that.myRoutineName)) :
       that.myRoutineName != null
     )) {
       return false;

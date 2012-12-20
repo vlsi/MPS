@@ -25,20 +25,8 @@ public enum IntentionType {
   QUICKFIX(Icons.QUICKFIX, 1), //todo remove
   ERROR(Icons.ERROR_INTENTION, 0);
 
-  private static final IntentionType LOWEST_PRIORITY_TYPE;
-
   private int myPriority;
   private Icon myIcon;
-
-  static {
-    IntentionType result = values()[0];
-    for (IntentionType type : values()) {
-      if (type.getPriority() > result.getPriority()) {
-        result = type;
-      }
-    }
-    LOWEST_PRIORITY_TYPE = result;
-  }
 
   IntentionType(Icon icon, int priority) {
     myIcon = icon;
@@ -51,9 +39,5 @@ public enum IntentionType {
 
   public int getPriority() {
     return myPriority;
-  }
-
-  public static IntentionType getLowestPriorityType() {
-    return LOWEST_PRIORITY_TYPE;
   }
 }

@@ -2,7 +2,6 @@
   <library name="MPS-core">
     <CLASSES>
       <root url="jar://$PROJECT_DIR$/mps-core/lib/diffutils-1.2.1.jar!/" />
-      <root url="jar://$PROJECT_DIR$/mps-core/lib/asm-tree-3.3.jar!/" />
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-backend.jar!/" />
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-closures.jar!/" />
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-collections.jar!/" />
@@ -17,7 +16,6 @@
     </CLASSES>
     <JAVADOC />
     <SOURCES>
-      <root url="file://$PROJECT_DIR$/../core/ant/source_gen" />
       <root url="file://$PROJECT_DIR$/../core/analyzers/solutions/jetbrains.mps.analyzers.runtime/source_gen" />
       <root url="file://$PROJECT_DIR$/../core/findUsages-runtime/source" />
       <root url="file://$PROJECT_DIR$/../core/findUsages-runtime/source_gen" />
@@ -38,9 +36,7 @@
       <root url="file://$PROJECT_DIR$/../core/typesystemEngine/source" />
       <root url="file://$PROJECT_DIR$/../core/typesystemEngine/source_gen" />
       <root url="file://$PROJECT_DIR$/../core/kernel/stubUtils/source_gen" />
-      <root url="file://$PROJECT_DIR$/../core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" />
       <root url="file://$PROJECT_DIR$/../core/refactoring-runtime/source_gen" />
-      <root url="file://$PROJECT_DIR$/../core/ant/source_gen" />
       <root url="file://$PROJECT_DIR$/../core/openapi/source" />
       <root url="file://$PROJECT_DIR$/../core/migration/source" />
       <root url="file://$PROJECT_DIR$/../core/persistence/source" />
@@ -64,6 +60,9 @@
       <root url="file://$PROJECT_DIR$/../workbench/mps-platform/source_gen" />
       <root url="file://$PROJECT_DIR$/../workbench/mps-ui/source" />
       <root url="file://$PROJECT_DIR$/../workbench/mps-ui/source_gen" />
+      <root url="file://$PROJECT_DIR$/../core/tool/ant/source_gen" />
+      <root url="file://$PROJECT_DIR$/../core/tool/builder/source_gen" />
+      <root url="file://$PROJECT_DIR$/../core/tool/common/source_gen" />
     </SOURCES>
   </library>
 </component>

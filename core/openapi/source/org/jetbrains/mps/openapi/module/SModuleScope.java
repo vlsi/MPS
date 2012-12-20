@@ -19,7 +19,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelReference;
 
 /**
- * evgeny, 10/31/12
+ * Gives a convenient way to access and resolve all visible modules and their models
  */
 public interface SModuleScope {
 

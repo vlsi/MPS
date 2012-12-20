@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.newTypesystem.context;
 
+import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
+import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent;
+import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
@@ -25,10 +28,11 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
  * Time: 4:17 PM
  * To change this template use File | Settings | File Templates.
  */
-public class TracingTypecheckingContext extends SimpleTypecheckingContext {
+public class TracingTypecheckingContext
+  extends SimpleTypecheckingContext<State, BaseTypechecking<State, SimpleTypecheckingComponent<State>>> {
 
-  public TracingTypecheckingContext(SNode rootNode, TypeChecker typeChecker) {
-    super(rootNode, typeChecker);
+  public TracingTypecheckingContext(SNode node, TypeChecker typeChecker) {
+    super(node, typeChecker);
   }
 
   @Override

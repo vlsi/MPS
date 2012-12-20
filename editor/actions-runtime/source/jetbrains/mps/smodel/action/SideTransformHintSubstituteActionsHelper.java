@@ -18,11 +18,20 @@ package jetbrains.mps.smodel.action;
 import jetbrains.mps.actions.runtime.impl.SideTransformUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
+import jetbrains.mps.newTypesystem.context.CachingTypecheckingContext;
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
+import jetbrains.mps.typesystem.inference.ITypeContextOwner;
+import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeCheckingContext;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
+import jetbrains.mps.typesystem.inference.util.ConcurrentSubtypingCache;
+import jetbrains.mps.typesystem.inference.util.SubtypingCache;
+import jetbrains.mps.util.Computable;
 
 import java.util.*;
 
@@ -57,34 +66,27 @@ public class SideTransformHintSubstituteActionsHelper {
 
   public boolean canCreateActions() {
     if (!isValid()) return false;
-
-    TypeChecker.getInstance().enableTypesComputingForCompletion();
-    try {
-      return SideTransformUtil.getApplicableActionsBuilders(mySourceNode, myTransformTags, mySide, myContext).iterator().hasNext();
-    } finally {
-      TypeChecker.getInstance().clearTypesComputedForCompletion();
-    }
+    return TypeContextManager.getInstance().runResolveAction(new Computable<Boolean>() {
+      @Override
+      public Boolean compute() {
+        return SideTransformUtil.getApplicableActionsBuilders(mySourceNode, myTransformTags, mySide, myContext).iterator().hasNext();
+      }
+    });
   }
 
   public List<INodeSubstituteAction> createActions() {
     if (!isValid()) return Collections.emptyList();
-
-    final List<INodeSubstituteAction>[] result = new List[1];
     // enable R/O access
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        TypeChecker.getInstance().enableTypesComputingForCompletion();
-        try {
-          result[0] = Collections.unmodifiableList(SideTransformUtil.createActions(mySourceNode, myTransformTags, mySide, myContext));
-        } catch (Throwable t) {
-          LOG.error(t);
-          result[0] = Collections.emptyList();
-        } finally {
-          TypeChecker.getInstance().clearTypesComputedForCompletion();
-        }
+    return ModelAccess.instance().runReadAction(new Computable<List<INodeSubstituteAction>>() {
+      public List<INodeSubstituteAction> compute() {
+        return TypeContextManager.getInstance().runResolveAction(new Computable<List<INodeSubstituteAction>>() {
+          @Override
+          public List<INodeSubstituteAction> compute() {
+            return Collections.unmodifiableList(SideTransformUtil.createActions(mySourceNode, myTransformTags, mySide, myContext));
+          }
+        });
       }
     });
-
-    return result[0];
   }
+
 }

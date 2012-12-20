@@ -18,13 +18,13 @@ package org.jetbrains.mps.openapi.model;
 import org.jetbrains.annotations.NotNull;
 
 /**
- * This class implement complex operations on a node structure.
- * Unlike the SNode implementors, this class should consider all cases,
+ * This class implement complex operations on the node structure.
+ * Unlike the SNode implementations, which may focus on their specific needs, this class should consider all cases,
  * e.g. replacing a node with a root node from another model
  */
 public class SNodeUtil {
   /**
-   * Replaces node with another, preserving attributes
+   * Replaces a node with another, preserving attributes
    */
   public static SNode replaceWithAnother(@NotNull SNode node, SNode replacer) {
     SNode nodeParent = node.getParent();

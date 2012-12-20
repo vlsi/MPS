@@ -16,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
 
 public class SLanguageLanguageAdapter implements SLanguage {
@@ -53,7 +54,7 @@ public class SLanguageLanguageAdapter implements SLanguage {
     return c;
   }
 
-  public Iterable<SModule> getLanguageRuntimes() {
+  public Iterable<SModuleReference> getLanguageRuntimes() {
     return null;
   }
 

@@ -35,10 +35,13 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
       SModelReference oldModelRef = ref.getTargetSModelReference();
       final String fqname = check_xpwqv8_a0b0f0b(oldModelRef);
       for (IModule newModule : modules) {
+        if (newModule == null) {
+          continue;
+        }
         List<SModelDescriptor> models = newModule.getOwnModelDescriptors();
-        SModelReference modelRef = check_xpwqv8_a0b0c0f0b(ListSequence.fromList(models).findFirst(new IWhereFilter<SModelDescriptor>() {
+        SModelReference modelRef = check_xpwqv8_a0c0c0f0b(ListSequence.fromList(models).findFirst(new IWhereFilter<SModelDescriptor>() {
           public boolean accept(SModelDescriptor it) {
-            return eq_xpwqv8_a0a0a0a0a0a0b0c0f0b(it.getLongName(), fqname);
+            return eq_xpwqv8_a0a0a0a0a0a0c0c0f0b(it.getLongName(), fqname);
           }
         }));
         if (modelRef == null) {
@@ -89,14 +92,14 @@ import jetbrains.mps.internal.collections.runtime.CollectionSequence;
     return null;
   }
 
-  private static SModelReference check_xpwqv8_a0b0c0f0b(SModelDescriptor checkedDotOperand) {
+  private static SModelReference check_xpwqv8_a0c0c0f0b(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getSModelReference();
     }
     return null;
   }
 
-  private static boolean eq_xpwqv8_a0a0a0a0a0a0b0c0f0b(Object a, Object b) {
+  private static boolean eq_xpwqv8_a0a0a0a0a0a0c0c0f0b(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b

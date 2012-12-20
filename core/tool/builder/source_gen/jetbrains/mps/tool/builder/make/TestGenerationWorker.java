@@ -64,7 +64,6 @@ import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.tool.common.TeamCityMessageFormat;
-import org.apache.tools.ant.BuildException;
 import jetbrains.mps.messages.IMessageHandler;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.tool.builder.unittest.UnitTestAdapter;
@@ -519,7 +518,7 @@ public class TestGenerationWorker extends MpsWorker {
   @Override
   protected void showStatistic() {
     if (myTestFailed && myWhatToDo.getFailOnError()) {
-      throw new BuildException("Tests Failed");
+      throw new RuntimeException("Tests Failed");
     }
   }
 

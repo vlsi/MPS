@@ -194,7 +194,7 @@ public class MPSEditorOpener {
     if (inspectorTool == null) return false;
     jetbrains.mps.openapi.editor.EditorComponent inspector = inspectorTool.getInspector();
     while (node != null) {
-      jetbrains.mps.openapi.editor.EditorCell cellInInspector = inspector.findNodeCell(node);
+      jetbrains.mps.openapi.editor.cells.EditorCell cellInInspector = inspector.findNodeCell(node);
       if (cellInInspector != null) {
         if (cellInInspector == inspectorTool.getInspector().getRootCell()) return false;
         return true;
@@ -268,7 +268,7 @@ public class MPSEditorOpener {
     }
 
     while (currentSelectionTarget != null) {
-      jetbrains.mps.openapi.editor.EditorCell cell = component.findNodeCell(currentSelectionTarget);
+      jetbrains.mps.openapi.editor.cells.EditorCell cell = component.findNodeCell(currentSelectionTarget);
       if (cell != null) {
         component.changeSelection(cell);
         return;

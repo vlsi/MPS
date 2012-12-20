@@ -29,13 +29,13 @@ import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.project.stubs.AbstractJavaStubSolutionManager;
+import jetbrains.mps.idea.core.project.stubs.SdkClassesImporter;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
-import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.vfs.FileSystem;
@@ -117,18 +117,17 @@ public class SolutionIdea extends Solution {
   @Override
   protected Iterable<ModelRoot> loadRoots() {
 
-    if (myContributedModelRoots==null) {
+    if (myContributedModelRoots == null) {
       myContributedModelRoots = new HashSet<ModelRoot>();
-      ModelRootContributorManager mgr = myModule.getProject().getComponent(ModelRootContributorManager.class);
-      for (ModelRootContributor contributor: mgr.getContributors()) {
-        for (ModelRoot root: contributor.getModelRoots(myModule)) {
+      for (ModelRootContributorEP e : ModelRootContributorEP.EP_NAME.getExtensions()) {
+        for (ModelRoot root : e.getModelRootContribitor().getModelRoots(myModule)) {
           myContributedModelRoots.add(root);
         }
       }
     }
 
     List<ModelRoot> sum = new ArrayList<ModelRoot>();
-    for (ModelRoot mr: super.loadRoots()) {
+    for (ModelRoot mr : super.loadRoots()) {
       sum.add(mr);
     }
 
@@ -154,6 +153,7 @@ public class SolutionIdea extends Solution {
         }
       }
 
+      addUsedSdk(myDependencies);
       addUsedLibraries(myDependencies);
 
       // adding JDK module to a set of dependencies
@@ -163,6 +163,13 @@ public class SolutionIdea extends Solution {
       }
     }
     return myDependencies;
+  }
+
+  private void addUsedSdk(final List<Dependency> dependencies) {
+    Solution sdkSolution = myModule.getProject().getComponent(SdkClassesImporter.class).getModuleSdkSolution(myModule);
+    if (sdkSolution != null) {
+      myDependencies.add(new Dependency(sdkSolution.getModuleReference(), false));
+    }
   }
 
   private void addUsedLibraries(final List<Dependency> dependencies) {
@@ -202,17 +209,6 @@ public class SolutionIdea extends Solution {
   public void invalidateDependencies() {
     super.invalidateDependencies();
     myDependencies = null;
-  }
-
-  public void contributedModelRootsChanged() {
-    myContributedModelRoots = null;
-    // update models
-    ModelAccess.instance().runWriteInEDT(new Runnable() {
-      @Override
-      public void run() {
-        setModuleDescriptor(getModuleDescriptor(), false);
-      }
-    });
   }
 
   @Override
@@ -286,7 +282,7 @@ public class SolutionIdea extends Solution {
       Library library = loe.getLibrary();
       if (library == null) continue;
 
-      AbstractJavaStubSolutionManager.addModelRoots(solutionDescriptor, library.getFiles(OrderRootType.CLASSES), LanguageID.JAVA_MANAGER);
+      AbstractJavaStubSolutionManager.addModelRoots(solutionDescriptor, library.getFiles(OrderRootType.CLASSES));
     }
   }
 

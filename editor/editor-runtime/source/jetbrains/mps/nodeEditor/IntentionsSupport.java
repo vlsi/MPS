@@ -141,20 +141,20 @@ public class IntentionsSupport {
             return;
           }
 
-          boolean show = ModelAccess.instance().runReadAction(new Computable<Boolean>() {
-            public Boolean compute() {
-              if (isInconsistentEditor() || myEditor.isReadOnly()) return false;
+          final IntentionType intentionType = ModelAccess.instance().runReadAction(new Computable<IntentionType>() {
+            public IntentionType compute() {
+              if (isInconsistentEditor() || myEditor.isReadOnly()) return null;
               // TODO check for ActionsAsIntentions
-              return TypeContextManager.getInstance().runTypeCheckingComputation(myEditor, myEditor.getEditedNode(), new Computation<Boolean>() {
+              return TypeContextManager.getInstance().runTypeCheckingComputation(myEditor, myEditor.getEditedNode(), new Computation<IntentionType>() {
                 @Override
-                public Boolean compute(TypeCheckingContext context) {
-                  return IntentionsManager.getInstance().hasAvailableBaseIntentions(myEditor.getSelectedNode(), myEditor.getEditorContext());
+                public IntentionType compute(TypeCheckingContext context) {
+                  return IntentionsManager.getInstance().getHighestAvailableBaseIntentionType(myEditor.getSelectedNode(), myEditor.getEditorContext());
                 }
               });
             }
           });
 
-          if (!show || interrupted()) {
+          if (intentionType == null || interrupted()) {
             return;
           }
 
@@ -166,11 +166,7 @@ public class IntentionsSupport {
                 hideLightBulb();
               } else {
                 adjustLightBulbLocation();
-                showLightBulb(new Computable<Boolean>() {
-                  public Boolean compute() {
-                    return interrupted();
-                  }
-                });
+                showLightBulbComponent(intentionType == IntentionType.NORMAL ? Icons.INTENTION : intentionType.getIcon());
               }
             }
           });
@@ -366,34 +362,6 @@ public class IntentionsSupport {
     }
     RelativePoint relativePoint = new RelativePoint(editorContext.getNodeEditorComponent(), new Point(x, y));
     popup.show(relativePoint);
-  }
-
-  private void showLightBulb(Computable<Boolean> terminated) {
-    SNode node = myEditor.getEditedNode();
-    if (node == null || node.getModel().isDisposed() || node.getModel().isNotEditable()) return;
-
-    Set<IntentionType> availableIntentionTypes = TypeContextManager.getInstance().runTypeCheckingComputation(myEditor, myEditor.getEditedNode(), new Computation<Set<IntentionType>>() {
-      @Override
-      public Set<IntentionType> compute(TypeCheckingContext context) {
-        return IntentionsManager.getInstance().getAvailableBaseIntentionTypes(myEditor.getSelectedNode(), myEditor.getEditorContext());
-      }
-    });
-    if (availableIntentionTypes.isEmpty()) {
-      return;
-    }
-    if (terminated.compute()) {
-      return;
-    }
-    IntentionType typeToShow = IntentionType.getLowestPriorityType();
-    for (IntentionType intentionType : availableIntentionTypes) {
-      if (intentionType.getPriority() < typeToShow.getPriority()) {
-        typeToShow = intentionType;
-      }
-    }
-    if (terminated.compute()) {
-      return;
-    }
-    showLightBulbComponent(typeToShow == IntentionType.NORMAL ? Icons.INTENTION : typeToShow.getIcon());
   }
 
   private Set<Pair<IntentionExecutable, SNode>> getEnabledIntentions() {

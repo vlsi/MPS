@@ -12,7 +12,6 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.make.ModuleMaker;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import org.apache.tools.ant.BuildException;
 import java.util.Set;
 import java.io.File;
 import jetbrains.mps.project.MPSExtentions;
@@ -161,7 +160,7 @@ public abstract class MpsWorker {
 
   protected void failBuild(String name) {
     if (!(myErrors.isEmpty()) && myWhatToDo.getFailOnError()) {
-      throw new BuildException(this.formatErrorsReport(name).toString());
+      throw new RuntimeException(this.formatErrorsReport(name).toString());
     }
   }
 

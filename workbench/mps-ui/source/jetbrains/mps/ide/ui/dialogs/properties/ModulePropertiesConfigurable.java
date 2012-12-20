@@ -691,9 +691,11 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     public void apply() {
-      if(myModuleDescriptor instanceof LanguageDescriptor)
-        if(!myGenOut.getText().equals(getGenOutPath()))
+      if(myModuleDescriptor instanceof LanguageDescriptor) {
+        if(!myGenOut.getText().equals(getGenOutPath())) {
           ((LanguageDescriptor) myModuleDescriptor).setGenPath(myGenOut.getText());
+        }
+      }
       else if(myModuleDescriptor instanceof SolutionDescriptor) {
         SolutionDescriptor descriptor = (SolutionDescriptor) myModuleDescriptor;
         if(!myGenOut.getText().equals(getGenOutPath()))

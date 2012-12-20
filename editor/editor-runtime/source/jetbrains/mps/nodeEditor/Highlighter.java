@@ -44,6 +44,7 @@ import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.typesystem.inference.TypeChecker;
+import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.WeakSet;
 import org.jetbrains.annotations.NonNls;
@@ -279,14 +280,14 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
     // SwingUtilities.invokeLater(new Runnable() {
     //   public void run() {
 
-    List<SModelEvent> events = new ArrayList<SModelEvent>();
+    final List<SModelEvent> events = new ArrayList<SModelEvent>();
     synchronized (EVENTS_LOCK) {
       events.addAll(myLastEvents);
       myLastEvents.clear();
     }
 
-    Set<BaseEditorChecker> checkers = new LinkedHashSet<BaseEditorChecker>();
-    Set<BaseEditorChecker> checkersToRemove = new LinkedHashSet<BaseEditorChecker>();
+    final Set<BaseEditorChecker> checkers = new LinkedHashSet<BaseEditorChecker>();
+    final Set<BaseEditorChecker> checkersToRemove = new LinkedHashSet<BaseEditorChecker>();
     // to avoid inconsistency between checkers, we collect them from fields here
     // in the synchronized block and then do not read the fields in this iteration anymore
     synchronized (CHECKERS_LOCK) {
@@ -318,43 +319,52 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
       return;
     }
 
-    boolean isUpdated = false;
-    boolean inspectorIsUpdated = false;
+    final boolean[] isUpdated = {false};
+    final boolean[] inspectorIsUpdated = {false};
     EditorComponent inspector = null;
-    try {
-      TypeChecker.getInstance().enableGlobalSubtypingCache();
-      for (EditorComponent editorComponent : allEditorComponents) {
-        if (myStopThread) {
-          return;
-        }
-        if (updateEditorComponent(editorComponent, events, checkers, checkersToRemove, false)) {
-          isUpdated = true;
-        }
-      }
 
+    for (final EditorComponent editorComponent : allEditorComponents) {
       if (myStopThread) {
         return;
       }
-      if (myInspectorTool != null && myInspectorTool.getInspector() != null) {
-        inspector = myInspectorTool.getInspector();
-        if (updateEditorComponent(inspector, events, checkers, checkersToRemove, isUpdated)) {
-          inspectorIsUpdated = true;
+      TypeContextManager.getInstance().runTypecheckingAction(editorComponent, new Runnable() {
+        @Override
+        public void run() {
+          if (updateEditorComponent(editorComponent, events, checkers, checkersToRemove, false)) {
+            isUpdated[0] = true;
+          }
         }
-      }
-    } finally {
-      TypeChecker.getInstance().clearGlobalSubtypingCache();
+      });
     }
+
     if (myStopThread) {
       return;
     }
 
-    if (isUpdated) {
+    if (myInspectorTool != null && myInspectorTool.getInspector() != null) {
+      inspector = myInspectorTool.getInspector();
+      final EditorComponent finalInspector = inspector;
+      TypeContextManager.getInstance().runTypecheckingAction(inspector, new Runnable() {
+        @Override
+        public void run() {
+          if (updateEditorComponent(finalInspector, events, checkers, checkersToRemove, isUpdated[0])) {
+            inspectorIsUpdated[0] = true;
+          }
+        }
+      });
+    }
+
+    if (myStopThread) {
+      return;
+    }
+
+    if (isUpdated[0]) {
       for (EditorComponent editorComponent : allEditorComponents) {
         editorComponent.repaint();
         editorComponent.getVerticalScrollBar().repaint();
       }
     }
-    if (inspectorIsUpdated) {
+    if (inspectorIsUpdated[0]) {
       inspector.repaint();
       inspector.getVerticalScrollBar().repaint();
     }

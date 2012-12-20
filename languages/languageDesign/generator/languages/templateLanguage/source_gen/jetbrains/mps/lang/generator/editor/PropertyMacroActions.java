@@ -32,7 +32,7 @@ public class PropertyMacroActions {
       SNode attributedNode = SNodeOperations.getParent(node);
       SNode propertyDeclaration = AttributeOperations.getPropertyDeclaration(SNodeOperations.as(node, "jetbrains.mps.lang.core.structure.PropertyAttribute"));
       EditorComponent editorComponent = editorContext.getEditorComponent();
-      jetbrains.mps.openapi.editor.EditorCell cell = editorComponent.findCellWithId(attributedNode, PropertyDeclaration_Behavior.call_getCellId_1216822951265(propertyDeclaration));
+      jetbrains.mps.openapi.editor.cells.EditorCell cell = editorComponent.findCellWithId(attributedNode, PropertyDeclaration_Behavior.call_getCellId_1216822951265(propertyDeclaration));
       if (cell != null) {
         editorComponent.changeSelection(cell);
       }

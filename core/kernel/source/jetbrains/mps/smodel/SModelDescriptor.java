@@ -19,6 +19,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.SModule;
 
 /**
  * This is a common descriptor used for all models - stub, transient, caches, regular MPS models
@@ -29,9 +30,10 @@ public interface SModelDescriptor extends org.jetbrains.mps.openapi.model.SModel
    */
   SModel getSModel();
 
-  // TODO remove
   @Override
   IModule getModule();
+
+  void setModule(SModule container);
 
   //------
 

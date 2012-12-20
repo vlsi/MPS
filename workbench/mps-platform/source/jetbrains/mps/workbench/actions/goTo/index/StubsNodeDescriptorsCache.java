@@ -34,6 +34,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Map;
 
+@Deprecated //use openapi. this does not work
 public class StubsNodeDescriptorsCache implements ApplicationComponent {
   private ReloadAdapter myReloadHandler = new ReloadAdapter() {
     public void unload() {
