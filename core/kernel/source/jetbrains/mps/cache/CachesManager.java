@@ -43,7 +43,7 @@ public class CachesManager implements CoreComponent {
     }
 
     public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
-      for (SModelDescriptor replacedModel : replacedModels){
+      for (SModelDescriptor replacedModel : replacedModels) {
         onModelRemoved(replacedModel);
       }
     }

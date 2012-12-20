@@ -90,18 +90,6 @@ public class TypeContextManager implements CoreComponent {
         }
       }
     }
-
-    public void modelReplaced(SModelDescriptor md) {
-      SModelReference modelRef = md.getSModelReference();
-      synchronized (myLock) {
-        for (SNodePointer nodePointer : new ArrayList<SNodePointer>(myTypeCheckingContexts.keySet())) {
-          if (nodePointer == null || nodePointer.getNode() == null || nodePointer.getModel() == null ||
-            jetbrains.mps.util.SNodeOperations.isDisposed(nodePointer.getNode()) || modelRef.equals(nodePointer.getModelReference())) {
-            removeContextForNode(nodePointer);
-          }
-        }
-      }
-    }
   };
 
   private SModelRepositoryAdapter mySModelRepositoryListener = new SModelRepositoryAdapter() {
@@ -111,6 +99,20 @@ public class TypeContextManager implements CoreComponent {
 
     public void modelRemoved(SModelDescriptor modelDescriptor) {
       myListeningForModels.remove(modelDescriptor);
+    }
+
+    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+      for (SModelDescriptor md : replacedModels) {
+        SModelReference modelRef = md.getSModelReference();
+        synchronized (myLock) {
+          for (SNodePointer nodePointer : new ArrayList<SNodePointer>(myTypeCheckingContexts.keySet())) {
+            if (nodePointer == null || nodePointer.getNode() == null || nodePointer.getModel() == null ||
+              jetbrains.mps.util.SNodeOperations.isDisposed(nodePointer.getNode()) || modelRef.equals(nodePointer.getModelReference())) {
+              removeContextForNode(nodePointer);
+            }
+          }
+        }
+      }
     }
   };
 
