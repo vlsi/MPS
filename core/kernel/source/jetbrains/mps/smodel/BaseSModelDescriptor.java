@@ -171,6 +171,10 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
     myModelListeners.clear();
   }
 
+  protected void notifyModelReplaced(SModel oldSModel) {
+    SModelRepository.getInstance().notifyModelReplaced(this, oldSModel);
+  }
+
   // Not SModel-specific listener notifications
 
   void fireBeforeModelFileChanged(SModelFileChangedEvent event) {

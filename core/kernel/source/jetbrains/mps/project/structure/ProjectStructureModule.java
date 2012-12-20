@@ -303,11 +303,10 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
 
     private void dropModel() {
       if (mySModel == null) return;
-      final SModel oldSModel = mySModel;
 
-      SModelRepository.getInstance().notifyModelReplaced(this, oldSModel);
+      notifyModelReplaced(mySModel);
 
-      oldSModel.setModelDescriptor(null);
+      mySModel.setModelDescriptor(null);
       mySModel = null;
     }
 

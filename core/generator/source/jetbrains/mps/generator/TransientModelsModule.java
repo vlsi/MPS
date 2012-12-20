@@ -261,13 +261,8 @@ public class TransientModelsModule extends ClassLoadingModule {
     private void dropModel() {
       if (mySModel != null) {
         LOG.debug("Dropped " + getSModelReference());
-        SModelRepository.getInstance().notifyModelReplaced(this, mySModel);
-        ModelAccess.instance().runWriteInEDT(new Runnable() {
-          @Override
-          public void run() {
-            mySModel = null;
-          }
-        });
+        notifyModelReplaced(mySModel);
+        mySModel = null;
       }
     }
 

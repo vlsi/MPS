@@ -38,8 +38,6 @@ public interface SModelRepositoryListener {
    * <p/>
    * It is guaranteed that this method will be executed in event dispatch thread.
    * <p/>
-   * Passed SModelDescriptor will keep new instance of SModel.
-   * <p/>
    * Old instance of SModel will not be attached to any SModelDescriptor and will not
    * be disposed till the end of notifications processing.
    *

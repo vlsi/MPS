@@ -269,7 +269,7 @@ public class SModelRepository implements CoreComponent {
   public void refreshModels() {
   }
 
-  public void notifyModelReplaced(BaseSModelDescriptor modelDescriptor, SModel oldSModel) {
+  void notifyModelReplaced(BaseSModelDescriptor modelDescriptor, SModel oldSModel) {
     ModelAccess.assertLegalWrite();
 
     if (myReloadingDescriptorMap.isEmpty()) {
