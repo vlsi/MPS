@@ -20,7 +20,6 @@ import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.HashMap;
-import java.util.Map.Entry;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
@@ -29,10 +28,9 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.containers.SetBasedMultiMap;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import com.intellij.openapi.vfs.VirtualFile;
-import jetbrains.mps.smodel.descriptor.source.StubModelDataSource;
+import jetbrains.mps.extapi.persistence.FolderSetDataSource;
 import gnu.trove.THashSet;
-import jetbrains.mps.stubs.BaseStubModelDescriptor;
-import jetbrains.mps.extapi.persistence.FileSystemBasedDataSource;
+import jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.ide.vfs.VirtualFileUtils;
 import com.intellij.openapi.vfs.VfsUtilCore;
@@ -81,7 +79,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
     }
 
     Map<SModel, Collection<SNode>> res = new HashMap<SModel, Collection<SNode>>();
-    for (Entry<SModel, Collection<SNode>> e : result.entrySet()) {
+    for (Map.Entry<SModel, Collection<SNode>> e : result.entrySet()) {
       res.put(e.getKey(), e.getValue());
     }
     return res;
@@ -111,22 +109,18 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
     // get all files in scope 
     final ManyToManyMap<SModel, VirtualFile> scopeFiles = new ManyToManyMap<SModel, VirtualFile>();
 
-    Set<StubModelDataSource> sources = new THashSet<StubModelDataSource>();
+    Set<FolderSetDataSource> sources = new THashSet<FolderSetDataSource>();
     final Set<VirtualFile> dirs = new THashSet<VirtualFile>();
 
     for (final SModel sm : models) {
-      assert sm instanceof BaseStubModelDescriptor : sm.getClass().getName();
-      StubModelDataSource source = ((BaseStubModelDescriptor) sm).getSource();
+      FolderSetDataSource source = ((JavaClassStubModelDescriptor) sm).getSource();
       if (sources.contains(source)) {
         continue;
       }
 
       sources.add(source);
 
-      if (!(source instanceof FileSystemBasedDataSource)) {
-        continue;
-      }
-      Collection<IFile> files = ((FileSystemBasedDataSource) source).getAffectedFiles();
+      Collection<IFile> files = source.getAffectedFiles();
       for (IFile path : files) {
         final VirtualFile vf = VirtualFileUtils.getVirtualFile(path);
         if (vf == null) {

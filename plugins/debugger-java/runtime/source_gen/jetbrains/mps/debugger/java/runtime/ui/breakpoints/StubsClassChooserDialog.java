@@ -8,8 +8,8 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.workbench.actions.goTo.ui.ChooseByNamePanel;
-import jetbrains.mps.workbench.actions.goTo.ui.MpsPopupFactory;
+import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
+import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.JComponent;
@@ -57,6 +57,11 @@ public abstract class StubsClassChooserDialog extends DialogWrapper {
 
   @Override
   protected void doOKAction() {
+    NodeDescriptor chosenElement = (NodeDescriptor) myPanel.getChosenElement();
+    if (chosenElement != null) {
+      mySelected = myModel.getFullName(chosenElement);
+    }
+    super.doOKAction();
   }
 
   protected abstract boolean isValid(SNode node);
