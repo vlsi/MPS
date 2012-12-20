@@ -6,7 +6,8 @@ import com.intellij.ide.util.gotoByName.ChooseByNameModel;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
-import com.intellij.openapi.ui.DialogWrapper;
+import java.awt.HeadlessException;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
@@ -24,7 +25,7 @@ public abstract class StubsClassChooserDialog extends DialogWrapper {
   public StubsClassChooserDialog(Project project, String text) throws HeadlessException {
     super(project);
     setTitle(text);
-    myModel = new ChooseFromStubsByNameModel() {
+    myModel = new ChooseFromStubsByNameModel(ProjectHelper.toMPSProject(project)) {
       @Override
       protected boolean isValid(SNode node) {
         return StubsClassChooserDialog.this.isValid(node);

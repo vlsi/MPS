@@ -7,6 +7,7 @@ import java.util.Map;
 import java.util.List;
 import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
 import java.util.LinkedHashMap;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
@@ -28,7 +29,7 @@ import org.jetbrains.annotations.NotNull;
 /*package*/ abstract class ChooseFromStubsByNameModel implements ChooseByNameModel {
   private final Map<String, List<NodeDescriptor>> myPossibleNodes = new LinkedHashMap<String, List<NodeDescriptor>>();
 
-  /*package*/ ChooseFromStubsByNameModel() {
+  /*package*/ ChooseFromStubsByNameModel(final Project p) {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         List<SModelDescriptor> mds = SModelRepository.getInstance().getModelDescriptors();
@@ -37,7 +38,7 @@ import org.jetbrains.annotations.NotNull;
             return SModelStereotype.isStubModelStereotype(it.getStereotype());
           }
         });
-        Iterable<NodeDescriptor> descr = GotoNavigationUtil.getNodeElements(stubModels);
+        Iterable<NodeDescriptor> descr = GotoNavigationUtil.getNodeElements(stubModels, p);
 
         for (NodeDescriptor descriptor : descr) {
           String name = getName(descriptor);
