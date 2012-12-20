@@ -44,17 +44,12 @@ public class ModelGenerationStatusManager implements CoreComponent {
 
   private final List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();
 
-  private final GlobalSModelEventsManager myGlobalEventsManager;
   private final SModelRepositoryAdapter mySmodelReloadListener = new SModelRepositoryAdapter() {
     @Override
     public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
       ModelGenerationStatusManager.this.invalidateData(replacedModels);
     }
   };
-
-  public ModelGenerationStatusManager(GlobalSModelEventsManager globalEventsManager) {
-    myGlobalEventsManager = globalEventsManager;
-  }
 
   public void init() {
     if (INSTANCE != null) {
