@@ -27,6 +27,7 @@ import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRenamedEvent;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
+import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -57,7 +58,7 @@ public class SModelRepository implements CoreComponent {
   private final Object myListenersLock = new Object();
   private final List<SModelRepositoryListener> mySModelRepositoryListeners = new ArrayList<SModelRepositoryListener>();
 
-  private final Map<SModelDescriptor, List<SModel>> myReloadingDescriptorMap = new LinkedHashMap<SModelDescriptor, List<SModel>>();
+  private final MultiMap<SModelDescriptor, SModel> myReloadingDescriptorMap = new MultiMap<SModelDescriptor, SModel>();
 
   private SModelListener myModelsListener = new ModelChangeListener();
 
@@ -276,10 +277,7 @@ public class SModelRepository implements CoreComponent {
     }
 
     synchronized (myReloadingDescriptorMap) {
-      if (!myReloadingDescriptorMap.containsKey(modelDescriptor)) {
-        myReloadingDescriptorMap.put(modelDescriptor, new ArrayList<SModel>());
-      }
-      myReloadingDescriptorMap.get(modelDescriptor).add(oldSModel);
+      myReloadingDescriptorMap.putValue(modelDescriptor, oldSModel);
     }
 
   }
@@ -293,11 +291,9 @@ public class SModelRepository implements CoreComponent {
         }
 
         fireModelReplaced(myReloadingDescriptorMap.keySet());
-        for (List<SModel> modelList : myReloadingDescriptorMap.values()) {
-          for (SModel oldModel : modelList) {
-            if (oldModel != null) {
-              oldModel.dispose();
-            }
+        for (SModel oldModel : myReloadingDescriptorMap.values()) {
+          if (oldModel != null) {
+            oldModel.dispose();
           }
         }
 
