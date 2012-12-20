@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.progress.EmptyProgressMonitor;
@@ -66,16 +66,16 @@ public class ApiMigrationHelper {
     Set<SNode> unknownUsages = SetSequence.fromSet(new HashSet<SNode>());
 
     // replace old SNode with a new interface 
-    Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
+    Set<org.jetbrains.mps.openapi.model.SNode> nodes = SetSequence.fromSet(new HashSet<org.jetbrains.mps.openapi.model.SNode>());
     SetSequence.fromSet(nodes).addElement(oldSnodeNode);
 
     Set<SReference> usages = FindUsagesManager.getInstance().findUsages(nodes, SearchType.USAGES, scope, new EmptyProgressMonitor());
 
     final Set<SNode> changedClassUsages = SetSequence.fromSet(new HashSet<SNode>());
-    final Set<Tuples._2<SNode, SReference>> changedClassUsagesInTemplates = SetSequence.fromSet(new HashSet<Tuples._2<SNode, SReference>>());
-    final Set<Tuples._2<SNode, SReference>> changedClassUsagesInTypes = SetSequence.fromSet(new HashSet<Tuples._2<SNode, SReference>>());
+    final Set<Tuples._2<SNode, jetbrains.mps.smodel.SReference>> changedClassUsagesInTemplates = SetSequence.fromSet(new HashSet<Tuples._2<SNode, jetbrains.mps.smodel.SReference>>());
+    final Set<Tuples._2<SNode, jetbrains.mps.smodel.SReference>> changedClassUsagesInTypes = SetSequence.fromSet(new HashSet<Tuples._2<SNode, jetbrains.mps.smodel.SReference>>());
     for (SReference ref : SetSequence.fromSet(usages)) {
-      SNode rNode = ref.getSourceNode();
+      SNode rNode = ((SNode) ref.getSourceNode());
       if (rNode.getModel().isNotEditable()) {
         continue;
       }
@@ -87,12 +87,12 @@ public class ApiMigrationHelper {
       }
 
       if (SNodeOperations.getContainingLinkDeclaration(n) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "typeParameter")) {
-        SetSequence.fromSet(changedClassUsagesInTemplates).addElement(MultiTuple.<SNode,SReference>from(rNode, ((SReference) new StaticReference(ref.getRole(), rNode, newSnodeNode))));
+        SetSequence.fromSet(changedClassUsagesInTemplates).addElement(MultiTuple.<SNode,jetbrains.mps.smodel.SReference>from(rNode, ((jetbrains.mps.smodel.SReference) new StaticReference(ref.getRole(), rNode, newSnodeNode))));
         continue;
       }
 
       if (SNodeOperations.getContainingLinkDeclaration(n) == SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "parameter")) {
-        SetSequence.fromSet(changedClassUsagesInTypes).addElement(MultiTuple.<SNode,SReference>from(rNode, ((SReference) new StaticReference(ref.getRole(), rNode, newSnodeNode))));
+        SetSequence.fromSet(changedClassUsagesInTypes).addElement(MultiTuple.<SNode,jetbrains.mps.smodel.SReference>from(rNode, ((jetbrains.mps.smodel.SReference) new StaticReference(ref.getRole(), rNode, newSnodeNode))));
         continue;
       }
 
@@ -103,12 +103,12 @@ public class ApiMigrationHelper {
     Set<SNode> methods = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(methods).addSequence(Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(oldSnodeNode)));
 
-    Set<SReference> musages = FindUsagesManager.getInstance().findUsages(methods, SearchType.USAGES, scope, new EmptyProgressMonitor());
+    Set<jetbrains.mps.smodel.SReference> musages = ((Set) FindUsagesManager.getInstance().findUsages(((Set) methods), SearchType.USAGES, scope, new EmptyProgressMonitor()));
 
-    final Set<Tuples._2<SNode, SReference>> changedMethodCalls = SetSequence.fromSet(new HashSet<Tuples._2<SNode, SReference>>());
+    final Set<Tuples._2<SNode, jetbrains.mps.smodel.SReference>> changedMethodCalls = SetSequence.fromSet(new HashSet<Tuples._2<SNode, jetbrains.mps.smodel.SReference>>());
     final Set<SNode> castedMethodCalls = SetSequence.fromSet(new HashSet<SNode>());
 
-    for (SReference ref : SetSequence.fromSet(musages)) {
+    for (jetbrains.mps.smodel.SReference ref : SetSequence.fromSet(musages)) {
       SNode rNode = ref.getSourceNode();
       if (!(needMigration(rNode))) {
         continue;
@@ -116,7 +116,7 @@ public class ApiMigrationHelper {
 
       SNode newMethod = getNewMethod((SNode) ref.getTargetNode());
       if (newMethod != null) {
-        SetSequence.fromSet(changedMethodCalls).addElement(MultiTuple.<SNode,SReference>from(rNode, ((SReference) new StaticReference(ref.getRole(), rNode, newMethod))));
+        SetSequence.fromSet(changedMethodCalls).addElement(MultiTuple.<SNode,jetbrains.mps.smodel.SReference>from(rNode, ((jetbrains.mps.smodel.SReference) new StaticReference(ref.getRole(), rNode, newMethod))));
         continue;
       }
 
@@ -132,9 +132,9 @@ public class ApiMigrationHelper {
     Set<SNode> smethods = SetSequence.fromSet(new HashSet<SNode>());
     SetSequence.fromSet(smethods).addSequence(Sequence.fromIterable(ClassConcept_Behavior.call_staticMethods_5292274854859435867(oldSnodeNode)));
 
-    Set<SReference> smusages = FindUsagesManager.getInstance().findUsages(smethods, SearchType.USAGES, scope, new EmptyProgressMonitor());
+    Set<jetbrains.mps.smodel.SReference> smusages = ((Set) FindUsagesManager.getInstance().findUsages(((Set) smethods), SearchType.USAGES, scope, new EmptyProgressMonitor()));
 
-    for (SReference ref : SetSequence.fromSet(smusages)) {
+    for (jetbrains.mps.smodel.SReference ref : SetSequence.fromSet(smusages)) {
       SNode rNode = ref.getSourceNode();
       if (rNode.getModel().isNotEditable()) {
         continue;
@@ -146,16 +146,16 @@ public class ApiMigrationHelper {
       public SearchResult<SNode> select(SNode it) {
         return new SearchResult<SNode>(it, "replaced SNode occurences");
       }
-    }).union(SetSequence.fromSet(changedClassUsagesInTemplates).select(new ISelector<Tuples._2<SNode, SReference>, SearchResult<SNode>>() {
-      public SearchResult<SNode> select(Tuples._2<SNode, SReference> it) {
+    }).union(SetSequence.fromSet(changedClassUsagesInTemplates).select(new ISelector<Tuples._2<SNode, jetbrains.mps.smodel.SReference>, SearchResult<SNode>>() {
+      public SearchResult<SNode> select(Tuples._2<SNode, jetbrains.mps.smodel.SReference> it) {
         return new SearchResult<SNode>(it._0(), "replaced SNode in new XYZ<SNode,...>");
       }
-    })).union(SetSequence.fromSet(changedClassUsagesInTypes).select(new ISelector<Tuples._2<SNode, SReference>, SearchResult<SNode>>() {
-      public SearchResult<SNode> select(Tuples._2<SNode, SReference> it) {
+    })).union(SetSequence.fromSet(changedClassUsagesInTypes).select(new ISelector<Tuples._2<SNode, jetbrains.mps.smodel.SReference>, SearchResult<SNode>>() {
+      public SearchResult<SNode> select(Tuples._2<SNode, jetbrains.mps.smodel.SReference> it) {
         return new SearchResult<SNode>(it._0(), "replaced SNode in Type<SNode,...>");
       }
-    })).union(SetSequence.fromSet(changedMethodCalls).select(new ISelector<Tuples._2<SNode, SReference>, SearchResult<SNode>>() {
-      public SearchResult<SNode> select(Tuples._2<SNode, SReference> it) {
+    })).union(SetSequence.fromSet(changedMethodCalls).select(new ISelector<Tuples._2<SNode, jetbrains.mps.smodel.SReference>, SearchResult<SNode>>() {
+      public SearchResult<SNode> select(Tuples._2<SNode, jetbrains.mps.smodel.SReference> it) {
         return new SearchResult<SNode>(it._0(), "replaced method call");
       }
     })).union(SetSequence.fromSet(castedMethodCalls).select(new ISelector<SNode, SearchResult<SNode>>() {
@@ -177,13 +177,13 @@ public class ApiMigrationHelper {
             for (SNode cls : SetSequence.fromSet(changedClassUsages)) {
               SLinkOperations.setTarget(SNodeOperations.cast(cls, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", newSnodeNode, false);
             }
-            for (Tuples._2<SNode, SReference> tmplCls : SetSequence.fromSet(changedClassUsagesInTypes)) {
+            for (Tuples._2<SNode, jetbrains.mps.smodel.SReference> tmplCls : SetSequence.fromSet(changedClassUsagesInTypes)) {
               tmplCls._0().setReference(tmplCls._1().getRole(), tmplCls._1());
             }
-            for (Tuples._2<SNode, SReference> tmplCls : SetSequence.fromSet(changedClassUsagesInTemplates)) {
+            for (Tuples._2<SNode, jetbrains.mps.smodel.SReference> tmplCls : SetSequence.fromSet(changedClassUsagesInTemplates)) {
               tmplCls._0().setReference(tmplCls._1().getRole(), tmplCls._1());
             }
-            for (Tuples._2<SNode, SReference> change : SetSequence.fromSet(changedMethodCalls)) {
+            for (Tuples._2<SNode, jetbrains.mps.smodel.SReference> change : SetSequence.fromSet(changedMethodCalls)) {
               change._0().setReference(change._1().getRole(), change._1());
             }
             for (SNode occ : SetSequence.fromSet(castedMethodCalls)) {
@@ -230,12 +230,12 @@ public class ApiMigrationHelper {
     for (Tuples._3<String, SNode, _FunctionTypes._void_P1_E0<? super SNode>> transformation : ListSequence.fromList(transformations)) {
       Set<SNode> method = SetSequence.fromSetAndArray(new HashSet<SNode>(), transformation._1());
 
-      Set<SReference> musages = FindUsagesManager.getInstance().findUsages(method, SearchType.USAGES, scope, new EmptyProgressMonitor());
+      Set<jetbrains.mps.smodel.SReference> musages = ((Set) FindUsagesManager.getInstance().findUsages(((Set) method), SearchType.USAGES, scope, new EmptyProgressMonitor()));
 
       Set<SNode> unknown = SetSequence.fromSet(new HashSet<SNode>());
       Set<SNode> known = SetSequence.fromSet(new HashSet<SNode>());
 
-      for (SReference usage : SetSequence.fromSet(musages)) {
+      for (jetbrains.mps.smodel.SReference usage : SetSequence.fromSet(musages)) {
         SNode n = usage.getSourceNode();
         if (!(needMigration(n))) {
           continue;
@@ -308,21 +308,21 @@ public class ApiMigrationHelper {
   private static SNode _quotation_createNode_yke5lt_a0a0a0e() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
+    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_yke5lt_a0a0b0e() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode")));
+    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode")));
     return quotedNode_1;
   }
 
   private static SNode _quotation_createNode_yke5lt_b0a1a4a0c0a0a1a0lb0e() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
+    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
     return quotedNode_1;
   }
 
@@ -336,7 +336,7 @@ public class ApiMigrationHelper {
       quotedNode_2.addChild("expression", HUtil.copyIfNecessary(quotedNode_3));
     }
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setReference("classifier", SReference.create("classifier", quotedNode_4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
+    quotedNode_4.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_4, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode")));
     quotedNode_2.addChild("type", quotedNode_4);
     return quotedNode_2;
   }
@@ -344,7 +344,7 @@ public class ApiMigrationHelper {
   private static SNode _quotation_createNode_yke5lt_a0a0a0i() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode")));
+    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode")));
     return quotedNode_1;
   }
 

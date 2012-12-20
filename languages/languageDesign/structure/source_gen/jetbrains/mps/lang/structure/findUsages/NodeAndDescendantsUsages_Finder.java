@@ -13,7 +13,7 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.findUsages.SearchType;
 
@@ -38,7 +38,7 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
     try {
-      Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
+      Set<org.jetbrains.mps.openapi.model.SNode> nodes = SetSequence.fromSet(new HashSet<org.jetbrains.mps.openapi.model.SNode>());
       SetSequence.fromSet(nodes).addElement(node);
       for (SNode child : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{}))) {
         SetSequence.fromSet(nodes).addElement(child);
@@ -46,8 +46,9 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
       // 
       Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(nodes, SearchType.USAGES, scope, monitor);
       for (SReference reference : resRefs) {
-        if (!(SetSequence.fromSet(nodes).contains(reference.getSourceNode()))) {
-          ListSequence.fromList(_results).addElement(reference.getSourceNode());
+        SNode snode = ((SNode) reference.getSourceNode());
+        if (!(SetSequence.fromSet(nodes).contains(snode))) {
+          ListSequence.fromList(_results).addElement(snode);
         }
       }
     } finally {

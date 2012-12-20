@@ -7,11 +7,14 @@ import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import java.awt.HeadlessException;
+
+import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
 import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
 
 import javax.swing.JComponent;
 import java.awt.Dimension;
