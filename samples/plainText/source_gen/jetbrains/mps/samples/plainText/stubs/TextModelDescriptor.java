@@ -18,7 +18,6 @@ import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.io.InputStream;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.ide.ThreadUtils;
 
 public class TextModelDescriptor extends BaseSModelDescriptorWithSource implements EditableSModelDescriptor {
@@ -110,10 +109,9 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
     ModelAccess.assertLegalWrite();
 
     SModel old = myModel;
+    notifyModelReplaced(old);
 
-    SModelRepository.getInstance().notifyModelReplaced(this, old);
-
-    check_bp2jat_a6a31(old);
+    check_bp2jat_a5a31(old);
 
     myModel = null;
     isChanged = false;
@@ -131,7 +129,7 @@ public class TextModelDescriptor extends BaseSModelDescriptorWithSource implemen
 
   }
 
-  private static void check_bp2jat_a6a31(SModel checkedDotOperand) {
+  private static void check_bp2jat_a5a31(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       checkedDotOperand.setModelDescriptor(null);
     }
