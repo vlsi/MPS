@@ -15,8 +15,10 @@
  */
 package jetbrains.mps.nodeEditor;
 
-import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+
+import jetbrains.mps.nodeEditor.cells.APICellAdapter;
+import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 
 class DfsTraverser {
   private EditorCell myCurrent;
@@ -37,36 +39,32 @@ class DfsTraverser {
       return;
     }
 
-    if (myCurrent instanceof EditorCell_Collection && getChild(myCurrent) != myCurrent) {
-      myCurrent = getChild(myCurrent);
-      return;
+    if (myCurrent instanceof EditorCell_Collection) {
+      EditorCell child = getChild((EditorCell_Collection) myCurrent);
+      if (child != null) {
+        myCurrent = child;
+        return;
+      }
     }
 
     EditorCell current = myCurrent;
     while (current != null) {
-      if (getSibling(current) != null) {
-        myCurrent = getSibling(current);
+      EditorCell sibling = getSibling(current);
+      if (sibling != null) {
+        myCurrent = sibling;
         return;
       }
-      current = (EditorCell) current.getParent();
+      current = current.getParent();
     }
     myCurrent = null;
   }
 
-  private EditorCell getChild(EditorCell cell) {
-    if (myForward) {
-      return cell.getFirstChild();
-    } else {
-      return cell.getLastChild();
-    }
+  private EditorCell getChild(EditorCell_Collection cell) {
+    return myForward ? cell.firstCell() : cell.lastCell();
   }
 
   private EditorCell getSibling(EditorCell cell) {
-    if (myForward) {
-      return cell.getNextSibling();
-    } else {
-      return cell.getPrevSibling();
-    }
+    return myForward ? APICellAdapter.getNextSibling(cell) : APICellAdapter.getPrevSibling(cell);
   }
 
 }

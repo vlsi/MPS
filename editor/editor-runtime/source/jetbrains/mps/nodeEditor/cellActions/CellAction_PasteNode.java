@@ -182,11 +182,11 @@ public class CellAction_PasteNode extends EditorCellAction {
     if (cell.isLastPositionInBigCell()) return cell;
 
     if (cell instanceof EditorCell_Label && cell.getRole() == null) {
-      EditorCell result = new ChildrenCollectionFinder(cell, true, false).find();
+      EditorCell result = (EditorCell) new ChildrenCollectionFinder(cell, true, false).find();
       if (result != null) {
         return result;
       }
-      result = new ChildrenCollectionFinder(cell, false, false).find();
+      result = (EditorCell) new ChildrenCollectionFinder(cell, false, false).find();
       if (result != null) {
         if (result instanceof EditorCell_Collection) {
           return result.getLastChild();

@@ -57,7 +57,7 @@ public class Insert_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      EditorCell editorCell = EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
+      EditorCell editorCell = (EditorCell) EditorActionUtils.getEditorCellToInsert(((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")));
       if (editorCell.isFirstCaretPosition()) {
         if (!(editorCell.isLastCaretPosition()) || (editorCell instanceof EditorCell_Label && !(((EditorCell_Label) editorCell).isLastPositionAllowed()))) {
           EditorActionUtils.callInsertBeforeAction(editorCell);

@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.nodeEditor.cells;
 
+import jetbrains.mps.nodeEditor.CellActionType;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.Condition;
 
 import java.util.List;
 
@@ -41,8 +43,16 @@ public class APICellAdapter {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getNextLeaf();
   }
 
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getNextLeaf(EditorCell cell, Condition<jetbrains.mps.nodeEditor.cells.EditorCell> condition) {
+    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getNextLeaf(condition);
+  }
+
   public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevLeaf(EditorCell cell) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getPrevLeaf();
+  }
+
+  public static jetbrains.mps.openapi.editor.cells.EditorCell getPrevLeaf(EditorCell cell, Condition<jetbrains.mps.nodeEditor.cells.EditorCell> condition) {
+    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getPrevLeaf(condition);
   }
 
   public static jetbrains.mps.openapi.editor.cells.EditorCell getFirstLeaf(EditorCell cell) {
@@ -91,5 +101,17 @@ public class APICellAdapter {
 
   public static FocusPolicy getFocusPolicy(EditorCell cell) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).getFocusPolicy();
+  }
+
+  public static boolean validate(EditorCell cell, boolean strict, boolean canActivatePopup) {
+    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).validate(strict, canActivatePopup);
+  }
+
+  public static boolean isLastPositionInBigCell(EditorCell cell) {
+    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).isLastPositionInBigCell();
+  }
+
+  public static boolean executeAction(EditorCell cell, CellActionType type) {
+    return ((jetbrains.mps.nodeEditor.cells.EditorCell) cell).executeAction(type);
   }
 }

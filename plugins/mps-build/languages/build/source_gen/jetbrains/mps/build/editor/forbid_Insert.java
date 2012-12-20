@@ -27,8 +27,8 @@ public class forbid_Insert {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      EditorCell cell = (EditorCell) editorContext.getEditorComponent().findNodeCell(node);
-      EditorCell outerCollection = (cell != null ?
+      jetbrains.mps.openapi.editor.cells.EditorCell cell = (EditorCell) editorContext.getEditorComponent().findNodeCell(node);
+      jetbrains.mps.openapi.editor.cells.EditorCell outerCollection = (cell != null ?
         EditorActionUtils.getSiblingCollectionForInsert(cell, false) :
         null
       );
@@ -70,8 +70,8 @@ public class forbid_Insert {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      EditorCell cell = (EditorCell) editorContext.getEditorComponent().findNodeCell(node);
-      EditorCell outerCollection = (cell != null ?
+      jetbrains.mps.openapi.editor.cells.EditorCell cell = editorContext.getEditorComponent().findNodeCell(node);
+      jetbrains.mps.openapi.editor.cells.EditorCell outerCollection = (cell != null ?
         EditorActionUtils.getSiblingCollectionForInsert(cell, true) :
         null
       );
