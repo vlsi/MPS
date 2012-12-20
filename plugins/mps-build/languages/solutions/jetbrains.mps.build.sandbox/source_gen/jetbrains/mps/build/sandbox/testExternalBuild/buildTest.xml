@@ -81,6 +81,7 @@
         <fileset file="${artifacts.buildMPS}/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildMPS}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildMPS}/lib/mps-ui.jar" />
+        <fileset file="${artifacts.buildMPS}/lib/mps-icons.jar" />
         <fileset file="${artifacts.buildMPS}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.buildMPS}/lib/annotations.jar" />
         <fileset file="${artifacts.buildMPS}/lib/ecj-4.2.jar" />

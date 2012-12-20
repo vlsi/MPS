@@ -2420,7 +2420,7 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-ui" depends="java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-persistence, java.compile.mps-platform, fetchDependencies">
+  <target name="java.compile.mps-ui" depends="java.compile.mps-openapi, java.compile.mps-closures, java.compile.mps-collections, java.compile.mps-tuples, java.compile.mps-core, java.compile.mps-persistence, java.compile.mps-platform, java.compile.mps-icons, fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-ui" />
     <javac2 destdir="${build.tmp}/java/out/mps-ui" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
@@ -2436,6 +2436,7 @@
         <pathelement path="${build.tmp}/java/out/mps-core" />
         <pathelement path="${build.tmp}/java/out/mps-persistence" />
         <pathelement path="${build.tmp}/java/out/mps-platform" />
+        <pathelement path="${build.tmp}/java/out/mps-icons" />
         <path refid="path.java.library.annotations-lib" />
         <path refid="path.java.library.core-libraries" />
         <path refid="path.java.library.idea-libraries" />
@@ -2448,14 +2449,19 @@
     </copy>
   </target>
   
-  <target name="java.compile.mps-icons">
+  <target name="java.compile.mps-icons" depends="fetchDependencies">
     <mkdir dir="${build.tmp}/java/out/mps-icons" />
     <javac2 destdir="${build.tmp}/java/out/mps-icons" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/workbench/mps-icons/source" />
       </src>
-      <classpath refid="path.jdk.classpath" />
+      <classpath>
+        <fileset file="${mps_home}/lib/platform-api.jar" />
+        <fileset file="${artifacts.IDEA}/lib/icons.jar" />
+        <fileset file="${artifacts.IDEA}/lib/util.jar" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-icons">
       <fileset dir="${mps_home}/workbench/mps-icons/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
