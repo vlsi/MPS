@@ -41,6 +41,12 @@ public class CachesManager implements CoreComponent {
     public void modelRemoved(SModelDescriptor modelDescriptor) {
       onModelRemoved(modelDescriptor);
     }
+
+    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+      for (SModelDescriptor replacedModel : replacedModels){
+        onModelRemoved(replacedModel);
+      }
+    }
   };
 
   private ReloadAdapter myCLMListener = new ReloadAdapter() {
@@ -170,10 +176,6 @@ public class CachesManager implements CoreComponent {
       myCache = cache;
     }
 
-    @Override
-    public void modelReplaced(SModelDescriptor md) {
-      CachesManager.getInstance().removeCache(myCache.getKey());
-    }
 
     public void languageAdded(SModelLanguageEvent event) {
       myCache.languageAdded(event);
