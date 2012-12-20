@@ -17,6 +17,9 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.List;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
 import java.util.Set;
 import java.util.Collections;
 import jetbrains.mps.findUsages.SearchType;
@@ -26,7 +29,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.util.NameUtil;
 
 /**
  * Use NodeByConceptChooser
@@ -84,17 +86,18 @@ public class MainNodeChooser<C extends SNode> extends AbstractMainNodeChooser {
   }
 
   protected List<SNode> findToChooseFromOnInit(FindUsagesManager manager, ProgressMonitor monitor) {
-//    Set<SNode> instances = manager.findUsages(Collections.singleton(((SNode) this.myTargetConcept)), SearchType.INSTANCES, myScope, monitor);
-//    if (this.myAcceptor == null) {
-//      return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);
-//    } else {
-//      return ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SNode>(), instances)).where(new IWhereFilter<SNode>() {
-//        public boolean accept(SNode it) {
-//          return MainNodeChooser.this.myAcceptor.invoke(it);
-//        }
-//      }).toListSequence();
-//    }
-    return new ArrayList<SNode>();
+    SConcept concept = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(myTargetConcept));
+
+    Set<SNode> instances = ((Set) manager.findUsages(Collections.singleton(concept), SearchType.INSTANCES, myScope, monitor));
+    if (this.myAcceptor == null) {
+      return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);
+    } else {
+      return ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SNode>(), instances)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return MainNodeChooser.this.myAcceptor.invoke(it);
+        }
+      }).toListSequence();
+    }
   }
 
   protected List<SModelDescriptor> getModelDescriptors(String model) {

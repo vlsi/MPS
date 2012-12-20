@@ -7,10 +7,11 @@ import java.util.List;
 import jetbrains.mps.smodel.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import java.util.Collections;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.project.GlobalScope;
 import java.util.Collection;
@@ -30,8 +31,6 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.LinkedHashMap;
 import jetbrains.mps.project.structure.project.testconfigurations.ModuleTestConfiguration;
 import jetbrains.mps.project.structure.project.testconfigurations.IllegalGeneratorConfigurationException;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public class RefactoringUtil {
   private static final Logger LOG = Logger.getLogger(RefactoringUtil.class);
@@ -57,9 +56,10 @@ public class RefactoringUtil {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         SConcept c1 = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.refactoring.structure.Refactoring");
+        Set<SNode> newRefactorings = ((Set) FindUsagesManager.getInstance().findUsages(Collections.singleton(c1), SearchType.INSTANCES, GlobalScope.getInstance(), null));
+
         SConcept c2 = SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.refactoring.structure.OldRefactoring");
-        Set<SNode> newRefactorings = (Set)FindUsagesManager.getInstance().findUsages(Collections.singleton(c1), SearchType.INSTANCES, GlobalScope.getInstance(), null);
-        Set<SNode> oldRefactorings = (Set)FindUsagesManager.getInstance().findUsages(Collections.singleton(c2), SearchType.INSTANCES, GlobalScope.getInstance(), null);
+        Set<SNode> oldRefactorings = ((Set) FindUsagesManager.getInstance().findUsages(Collections.singleton(c2), SearchType.INSTANCES, GlobalScope.getInstance(), null));
         availableRefactorings.addAll(newRefactorings);
         availableRefactorings.addAll(oldRefactorings);
       }

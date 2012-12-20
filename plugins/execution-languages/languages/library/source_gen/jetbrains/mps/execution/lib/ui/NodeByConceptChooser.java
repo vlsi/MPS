@@ -18,6 +18,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import java.util.Collections;
 import jetbrains.mps.findUsages.SearchType;
@@ -28,8 +30,6 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import org.jetbrains.mps.openapi.language.SConcept;
-import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public class NodeByConceptChooser extends AbstractMainNodeChooser {
   @NotNull
@@ -89,11 +89,11 @@ public class NodeByConceptChooser extends AbstractMainNodeChooser {
 
   protected List<SNode> findToChooseFromOnInit(FindUsagesManager manager, ProgressMonitor monitor) {
     SConcept concept = SConceptRepository.getInstance().getConcept(myTargetConcept);
-    Set<org.jetbrains.mps.openapi.model.SNode> instances = manager.findUsages(Collections.singleton(concept), SearchType.INSTANCES, myScope, monitor);
+    Set<SNode> instances = ((Set) manager.findUsages(Collections.singleton(concept), SearchType.INSTANCES, myScope, monitor));
     if (this.myAcceptor == null) {
-      return ListSequence.fromListWithValues(new ArrayList<SNode>(), (Set)instances);
+      return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);
     } else {
-      return ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SNode>(), (Set)instances)).where(new IWhereFilter<SNode>() {
+      return ListSequence.fromList(ListSequence.fromListWithValues(new ArrayList<SNode>(), instances)).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return NodeByConceptChooser.this.myAcceptor.invoke(it);
         }
