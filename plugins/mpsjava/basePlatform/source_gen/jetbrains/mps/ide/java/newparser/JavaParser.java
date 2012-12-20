@@ -56,7 +56,7 @@ public class JavaParser {
     settings.put(CompilerOptions.OPTION_DocCommentSupport, "enabled");
     TypeNameResolver typeResolver = new TypeNameResolver(pkg);
     ASTConverter converter = (FeatureKind.CLASS_STUB.equals(what) ?
-      new ASTConverter(null, typeResolver, stubsMode) :
+      new ASTConverter(typeResolver, stubsMode) :
       new FullASTConverter(null, typeResolver)
     );
 

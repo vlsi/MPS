@@ -39,7 +39,6 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.Argument" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ArrayQualifiedTypeReference" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ArrayTypeReference" />
-    <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ConstructorDeclaration" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.Expression" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.FieldDeclaration" />
@@ -132,7 +131,6 @@
     <classNode dependClassName="jetbrains.mps.lang.typesystem.runtime.HUtil" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="jetbrains.mps.smodel.DynamicReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
