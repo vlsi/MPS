@@ -324,6 +324,17 @@ public abstract class MPSTreeNode extends DefaultMutableTreeNode implements Iter
     }
   }
 
+  public void updatePresentation(final boolean reloadSubTree, final boolean updateAncestors) {
+    renewPresentation();
+    if (reloadSubTree) {
+      updateSubTree();
+    }
+
+    if (updateAncestors) {
+      updateAncestorsPresentationInTree();
+    }
+  }
+
   private void treeMessagesChanged(boolean updatePresentation) {
     if (updatePresentation) {
       ThreadUtils.runInUIThreadNoWait(new Runnable() {
