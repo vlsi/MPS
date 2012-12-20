@@ -22,6 +22,8 @@ import jetbrains.mps.smodel.GlobalSModelEventsManager;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import org.jetbrains.annotations.NotNull;
@@ -30,6 +32,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+import java.util.Set;
 
 public class ModelGenerationStatusManager implements CoreComponent {
 
@@ -42,10 +45,10 @@ public class ModelGenerationStatusManager implements CoreComponent {
   private final List<ModelGenerationStatusListener> myListeners = new ArrayList<ModelGenerationStatusListener>();
 
   private final GlobalSModelEventsManager myGlobalEventsManager;
-  private final SModelAdapter mySmodelReloadListener = new SModelAdapter() {
+  private final SModelRepositoryAdapter mySmodelReloadListener = new SModelRepositoryAdapter() {
     @Override
-    public void modelReplaced(SModelDescriptor sm) {
-      ModelGenerationStatusManager.this.invalidateData(Collections.singleton(sm));
+    public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+      ModelGenerationStatusManager.this.invalidateData(replacedModels);
     }
   };
 
@@ -59,11 +62,11 @@ public class ModelGenerationStatusManager implements CoreComponent {
     }
 
     INSTANCE = this;
-    myGlobalEventsManager.addGlobalModelListener(mySmodelReloadListener);
+    SModelRepository.getInstance().addModelRepositoryListener(mySmodelReloadListener);
   }
 
   public void dispose() {
-    myGlobalEventsManager.removeGlobalModelListener(mySmodelReloadListener);
+    SModelRepository.getInstance().removeModelRepositoryListener(mySmodelReloadListener);
     INSTANCE = null;
   }
 
