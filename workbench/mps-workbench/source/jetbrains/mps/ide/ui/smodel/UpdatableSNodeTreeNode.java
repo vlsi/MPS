@@ -21,6 +21,9 @@ import jetbrains.mps.ide.ui.smodel.SModelEventsDispatcher.SModelEventsListener;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelRepositoryAdapter;
+import jetbrains.mps.smodel.SModelRepositoryListener;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -36,6 +39,7 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
   private SNodeTreeUpdater myTreeUpdater;
   private SModelEventsListener myEventsListener;
   private SimpleModelListener mySNodeModelListener;
+  private SModelRepositoryListener myModelRepositoryListener;
 
   public UpdatableSNodeTreeNode(SNode node, IOperationContext operationContext) {
     super(node, operationContext);
@@ -53,9 +57,12 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
     if (myEventsListener == null) return;
     SModelEventsDispatcher.getInstance().registerListener(myEventsListener);
     myEventsListener.getModelDescriptor().addModelListener(mySNodeModelListener);
+    SModelRepository.getInstance().addModelRepositoryListener(myModelRepositoryListener);
   }
 
   private void removeListeners() {
+    SModelRepository.getInstance().removeModelRepositoryListener(myModelRepositoryListener);
+
     SModelDescriptor md = getModelDescriptor();
     if (md == null) return;
     if (mySNodeModelListener != null) {
@@ -80,6 +87,14 @@ public class UpdatableSNodeTreeNode extends SNodeTreeNode {
       public boolean isValid() {
         if (!super.isValid()) return false;
         return !jetbrains.mps.util.SNodeOperations.isDisposed(getSNode());
+      }
+    };
+    myModelRepositoryListener = new SModelRepositoryAdapter() {
+      @Override
+      public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+         if (replacedModels.contains(myEventsListener.getModelDescriptor())) {
+           mySNodeModelListener.modelReplaced(myEventsListener.getModelDescriptor());
+         }
       }
     };
     if (getModelDescriptor() instanceof EditableSModelDescriptor) {
