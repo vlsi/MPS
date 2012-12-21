@@ -257,7 +257,6 @@
     <javac2 destdir="${build.tmp}/java/out/mps-java" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <pathelement path="${mps_home}/plugins/mpsjava/basePlatform/source" />
         <pathelement path="${mps_home}/plugins/mpsjava/platform/source" />
         <pathelement path="${mps_home}/plugins/mpsjava/workbench/source_gen" />
       </src>
@@ -287,7 +286,6 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-java">
-      <fileset dir="${mps_home}/plugins/mpsjava/basePlatform/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/mpsjava/platform/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/mpsjava/workbench/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>

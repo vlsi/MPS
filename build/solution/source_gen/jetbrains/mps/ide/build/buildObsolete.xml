@@ -216,8 +216,8 @@
     <jar destfile="${build.layout}/plugins/mps-obsolete/languages/build/jetbrains.mps.build.generictasks.pluginSolution-src.jar">
       <fileset dir="${mps_home}/plugins/mps-obsolete/languages/generictasks/solutions/pluginSolution/source_gen" includes="**/*.java" />
       <zipfileset file="${mps_home}/plugins/mps-obsolete/languages/generictasks/solutions/pluginSolution/pluginSolution.msd" prefix="module" />
-      <zipfileset dir="${mps_home}/plugins/mps-obsolete/languages/generictasks/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
       <zipfileset dir="${mps_home}/plugins/mps-obsolete/languages/generictasks/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
+      <zipfileset dir="${mps_home}/plugins/mps-obsolete/languages/generictasks/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.mpsdist.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.mpsdist.jar/META-INF" />

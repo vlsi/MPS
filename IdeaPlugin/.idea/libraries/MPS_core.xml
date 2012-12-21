@@ -13,6 +13,7 @@
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-test.jar!/" />
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-tuples.jar!/" />
       <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-ui.jar!/" />
+      <root url="jar://$PROJECT_DIR$/mps-core/lib/mps-icons.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>
