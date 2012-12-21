@@ -47,6 +47,9 @@
         <tokenfilter>
           <replaceregex pattern="../workbench/classes/jetbrains/" replace="../jetbrains/" flags="gi" />
         </tokenfilter>
+        <tokenfilter>
+          <replaceregex pattern="../classes/jetbrains/" replace="../jetbrains/" flags="gi" />
+        </tokenfilter>
       </filterchain>
     </copy>
     <jar destfile="${build.layout}/plugins/mps-java/lib/mpsjava.jar">
@@ -286,6 +289,9 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-java">
+      <fileset dir="${mps_home}/plugins/mpsjava/platform/source_gen">
+        <include name="**/*.xml" />
+      </fileset>
       <fileset dir="${mps_home}/plugins/mpsjava/platform/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/mpsjava/workbench/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
