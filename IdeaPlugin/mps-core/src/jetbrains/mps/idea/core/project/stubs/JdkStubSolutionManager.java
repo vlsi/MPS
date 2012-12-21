@@ -22,9 +22,9 @@ import com.intellij.openapi.projectRoots.ProjectJdkTable;
 import com.intellij.openapi.projectRoots.ProjectJdkTable.Listener;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.projectRoots.SdkModificator;
-import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.idea.core.project.StubSolutionIdea;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
@@ -66,7 +66,7 @@ public class JdkStubSolutionManager extends AbstractJavaStubSolutionManager impl
     if (!(sdk instanceof SdkModificator)) {
       return;
     }
-    addSolution(sdk.getName(), ((SdkModificator) sdk).getRoots(OrderRootType.CLASSES));
+    StubSolutionIdea.newInstance(sdk, this);
   }
 
   protected void removeModule(Sdk sdk) {

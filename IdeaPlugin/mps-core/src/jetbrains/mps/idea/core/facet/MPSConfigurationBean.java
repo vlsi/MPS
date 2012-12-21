@@ -18,6 +18,7 @@ package jetbrains.mps.idea.core.facet;
 
 import com.intellij.util.xmlb.annotations.Transient;
 import jetbrains.mps.project.structure.model.ModelRoot;
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 

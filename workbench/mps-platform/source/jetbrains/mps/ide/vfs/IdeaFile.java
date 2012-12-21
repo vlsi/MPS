@@ -25,6 +25,7 @@ import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.ex.IFileEx;
 import org.apache.commons.lang.ObjectUtils;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 import java.io.*;
 import java.util.ArrayList;
@@ -314,46 +315,52 @@ class IdeaFile implements IFileEx {
       myVirtualFile = null;
     }
     if (myVirtualFile == null) {
-      LocalFileSystem localFileSystem = LocalFileSystem.getInstance();
-      if (myPath.contains("!")) {
-        int index = myPath.indexOf("!");
-        String jarPath = myPath.substring(0, index);
-        String entryPath = myPath.substring(index + 1);
-
-        assert entryPath.indexOf('\\') == -1 : "No backslashes are allowed in JAR entry path: " + myPath;
-        entryPath = entryPath.replace('\\', '/');
-        if (entryPath.startsWith("/")) {
-          entryPath = entryPath.substring(1);
-        }
-
-        JarFileSystem jarFileSystem = JarFileSystem.getInstance();
-        VirtualFile jarFile;
-        if (withRefresh) {
-          jarFile = localFileSystem.refreshAndFindFileByPath(jarPath);
-        } else {
-          jarFile = localFileSystem.findFileByPath(jarPath);
-        }
-        if (jarFile != null) {
-          VirtualFile jarRootFile = jarFileSystem.getJarRootForLocalFile(jarFile);
-          if (jarRootFile != null) {
-            // Workaround for IDEA-75359
-            IdeaFileSystemProvider.jarRootAccessed(jarRootFile);
-
-            myVirtualFile = jarRootFile.findFileByRelativePath(entryPath);
-          }
-        }
-      } else {
-        if (withRefresh) {
-          myVirtualFile = localFileSystem.refreshAndFindFileByPath(myPath);
-        } else {
-          myVirtualFile = localFileSystem.findFileByPath(myPath);
-        }
-      }
+      myVirtualFile = findIdeaFile(myPath, withRefresh);
     }
     if (myVirtualFile != null) {
       myPath = null;
     }
     return myVirtualFile != null;
+  }
+
+  @Nullable
+  private static VirtualFile findIdeaFile(String path, boolean withRefresh) {
+    LocalFileSystem localFileSystem = LocalFileSystem.getInstance();
+    if (path.contains("!")) {
+      int index = path.indexOf("!");
+      String jarPath = path.substring(0, index);
+      String entryPath = path.substring(index + 1);
+
+      assert entryPath.indexOf('\\') == -1 : "No backslashes are allowed in JAR entry path: " + path;
+      entryPath = entryPath.replace('\\', '/');
+      if (entryPath.startsWith("/")) {
+        entryPath = entryPath.substring(1);
+      }
+
+      JarFileSystem jarFileSystem = JarFileSystem.getInstance();
+      VirtualFile jarFile;
+      if (withRefresh) {
+        jarFile = localFileSystem.refreshAndFindFileByPath(jarPath);
+      } else {
+        jarFile = localFileSystem.findFileByPath(jarPath);
+      }
+      if (jarFile != null) {
+        VirtualFile jarRootFile = jarFileSystem.getJarRootForLocalFile(jarFile);
+        if (jarRootFile != null) {
+          // Workaround for IDEA-75359
+          IdeaFileSystemProvider.jarRootAccessed(jarRootFile);
+
+          return jarRootFile.findFileByRelativePath(entryPath);
+        }
+      }
+      return null;
+    } else {
+      if (withRefresh) {
+        return localFileSystem.refreshAndFindFileByPath(path);
+      } else {
+        return localFileSystem.findFileByPath(path);
+      }
+    }
   }
 
   private static String truncDirPath(String path) {

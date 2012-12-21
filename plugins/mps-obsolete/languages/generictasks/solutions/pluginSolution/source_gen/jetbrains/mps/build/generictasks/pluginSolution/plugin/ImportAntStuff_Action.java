@@ -10,11 +10,15 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.actions.MPSCommonDataKeys;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.build.generictasks.taskfromjar.Generator;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModel;
 
 public class ImportAntStuff_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -32,7 +36,7 @@ public class ImportAntStuff_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return (((IModule) MapSequence.fromMap(_params).get("module")) instanceof Language) && (((IModule) MapSequence.fromMap(_params).get("module")).getModuleFqName().contains("jetbrains.mps.build.generictasks"));
+    return eq_nh7qpt_a0a0b(((IModule) MapSequence.fromMap(_params).get("module")).getModuleReference(), ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.generictasks", Language.class).getModuleReference());
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -62,9 +66,9 @@ public class ImportAntStuff_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      Language language = ((Language) ((IModule) MapSequence.fromMap(_params).get("module")));
-      ImportAntStuff_Action.this.importTasks(language, ImportAntStuffUtil.getGenerated(language), Generator.Modes.CORE, _params);
-      ImportAntStuff_Action.this.importTasks(language, ImportAntStuffUtil.getOptional(language), Generator.Modes.JUNIT, _params);
+      Language language = ModuleRepositoryFacade.getInstance().getModule("jetbrains.mps.build.generictasks", Language.class);
+      ImportAntStuff_Action.this.importTasks(language, SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.generictasks.generated", "")).getSModel().getModelDescriptor(), Generator.Modes.CORE, _params);
+      ImportAntStuff_Action.this.importTasks(language, SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.generictasks.optional", "")).getSModel().getModelDescriptor(), Generator.Modes.JUNIT, _params);
       if (log.isInfoEnabled()) {
         log.info("Import completed.");
       }
@@ -77,6 +81,13 @@ public class ImportAntStuff_Action extends BaseAction {
 
   private void importTasks(Language l, SModelDescriptor model, Generator.Modes m, final Map<String, Object> _params) {
     assert model != null;
-    new Generator().generateTasks(model.getSModel(), m, ImportAntStuffUtil.getAllModels(l));
+    new Generator().generateTasks(model.getSModel(), m, new SModel[]{SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.generictasks.generated", "")).getSModel(), SModelRepository.getInstance().getModelDescriptor(new SModelReference("jetbrains.mps.build.generictasks.optional", "")).getSModel()});
+  }
+
+  private static boolean eq_nh7qpt_a0a0b(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
   }
 }

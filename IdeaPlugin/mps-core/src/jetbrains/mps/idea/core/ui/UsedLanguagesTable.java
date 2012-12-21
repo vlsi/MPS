@@ -29,7 +29,7 @@ import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class UsedLanguagesTable extends MpsElementsTable<ModuleReference> {
+public class UsedLanguagesTable extends MpsElementsTable<ModuleReference> implements IModuleConfigurationTab {
     public static Comparator<ModuleReference> MODULE_REFERENCE_COMPARATOR = new ModuleReferenceComparator();
 
     // TODO: create additional MPSConfigurationBean.get/setUsedLanguageReferences() methods and use it here
@@ -41,11 +41,11 @@ public class UsedLanguagesTable extends MpsElementsTable<ModuleReference> {
         return usedLanguages;
     }
 
-    public void setData(MPSConfigurationBean data) {
+    public void reset(MPSConfigurationBean data) {
         setElements(getUsedLanguages(data));
     }
 
-    public void getData(MPSConfigurationBean data) {
+    public void apply(MPSConfigurationBean data) {
         data.setUsedLanguages(getUsedLanguagesStringArray());
     }
 
@@ -53,7 +53,16 @@ public class UsedLanguagesTable extends MpsElementsTable<ModuleReference> {
         return isModified(getUsedLanguages(data));
     }
 
-    private String[] getUsedLanguagesStringArray() {
+  @Override
+  public JComponent getRootPanel() {
+    return createComponent();
+  }
+
+  @Override
+  public void onTabEntering() {
+  }
+
+  private String[] getUsedLanguagesStringArray() {
         List<ModuleReference> moduleReferences = getElements();
         String[] usedLanguages = new String[moduleReferences.size()];
         int i = 0;
