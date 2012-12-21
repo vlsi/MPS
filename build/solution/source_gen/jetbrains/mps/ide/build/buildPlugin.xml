@@ -296,6 +296,9 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-java">
+      <fileset dir="${mps_home}/plugins/mpsjava/platform/source_gen">
+        <include name="**/*.xml" />
+      </fileset>
       <fileset dir="${mps_home}/IdeaPlugin/mps-java/debugger/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
