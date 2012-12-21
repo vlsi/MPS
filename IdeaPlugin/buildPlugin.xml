@@ -161,7 +161,7 @@
     </copy>
     <mkdir dir="${build.layout}/mps-java" />
     <mkdir dir="${build.layout}/mps-java/lib" />
-    <copy file="${artifacts.buildCore}/mps-core/plugins/mps-java/lib/mps-java-platform.jar" todir="${build.layout}/mps-java/lib" />
+    <copy file="${artifacts.buildCore}/mps-core/plugins/mps-java/lib/mps-java-common.jar" todir="${build.layout}/mps-java/lib" />
     <mkdir dir="${build.layout}/mps-java/lib/jps" />
     <jar destfile="${build.layout}/mps-java/lib/jps/mps-java-jps-plugin.jar">
       <fileset dir="${build.tmp}/java/out/mps-java-jps-plugin" />
@@ -405,7 +405,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <pathelement path="${build.tmp}/java/out/mps-plugin" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-icons.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/plugins/mps-java/lib/mps-java-platform.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/plugins/mps-java/lib/mps-java-common.jar" />
         <fileset file="${mps_home}/lib/tools.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
@@ -442,7 +442,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
         <pathelement path="${build.tmp}/java/out/mps-common" />
-        <fileset file="${artifacts.buildCore}/mps-core/plugins/mps-java/lib/mps-java-platform.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/plugins/mps-java/lib/mps-java-common.jar" />
         <pathelement path="${build.tmp}/java/out/mps-jps-plugin" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />

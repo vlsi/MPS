@@ -35,7 +35,7 @@
     <mkdir dir="${build.layout}/plugins" />
     <mkdir dir="${build.layout}/plugins/mps-java" />
     <mkdir dir="${build.layout}/plugins/mps-java/lib" />
-    <copy file="${artifacts.buildCore}/mps-core/plugins/mps-java/lib/mps-java-platform.jar" todir="${build.layout}/plugins/mps-java/lib" />
+    <copy file="${artifacts.buildCore}/mps-core/plugins/mps-java/lib/mps-java-common.jar" todir="${build.layout}/plugins/mps-java/lib" />
     <mkdir dir="${build.tmp}/default/mpsjava.jar" />
     <mkdir dir="${build.tmp}/default/mpsjava.jar/META-INF" />
     <copy todir="${build.tmp}/default/mpsjava.jar/META-INF">
@@ -261,7 +261,7 @@
         <pathelement path="${mps_home}/plugins/mpsjava/workbench/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.buildCore}/mps-core/plugins/mps-java/lib/mps-java-platform.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/plugins/mps-java/lib/mps-java-common.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
@@ -348,7 +348,7 @@
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <pathelement path="${build.tmp}/java/out/modelchecker" />
         <pathelement path="${build.tmp}/java/out/mps-java" />
-        <fileset file="${artifacts.buildCore}/mps-core/plugins/mps-java/lib/mps-java-platform.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/plugins/mps-java/lib/mps-java-common.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
