@@ -161,6 +161,7 @@
     </copy>
     <mkdir dir="${build.layout}/mps-java" />
     <mkdir dir="${build.layout}/mps-java/lib" />
+    <copy file="${artifacts.buildCore}/mps-core/plugins/mps-java/lib/mps-java-platform.jar" todir="${build.layout}/mps-java/lib" />
     <jar destfile="${build.layout}/mps-java/lib/mps-java-common.jar">
       <fileset dir="${build.tmp}/java/out/mps-java-common" />
     </jar>
@@ -183,12 +184,6 @@
     </copy>
     <jar destfile="${build.layout}/mps-java/lib/mps-java.jar">
       <fileset dir="${build.tmp}/java/out/mps-java" />
-      <zipfileset file="${mps_home}/plugins/mpsjava/basePlatform/basePlatform.msd" prefix="modules/jetbrains.mps.ide.java.basePlatform" />
-      <zipfileset dir="${mps_home}/plugins/mpsjava/basePlatform" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.java.basePlatform" />
-      <zipfileset dir="${mps_home}/plugins/mpsjava/basePlatform/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.java.basePlatform/models" />
-      <zipfileset file="${mps_home}/plugins/mpsjava/platform/platform.msd" prefix="modules/jetbrains.mps.ide.java.platform" />
-      <zipfileset dir="${mps_home}/plugins/mpsjava/platform" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.java.platform" />
-      <zipfileset dir="${mps_home}/plugins/mpsjava/platform/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.java.platform/models" />
       <fileset dir="${build.tmp}/default/mps-java.jar" />
     </jar>
     <echo file="${build.layout}/build.properties">buildPlugin.plugin.version=${plugin.version}${line.separator}buildPlugin.date=${date}${line.separator}buildCore.version=${buildCore.version}</echo>
@@ -397,7 +392,6 @@
         <path location="${mps_home}/IdeaPlugin/mps-java/scopes/src" />
         <path location="${mps_home}/IdeaPlugin/mps-java/sourceStubs/src" />
         <path location="${mps_home}/IdeaPlugin/solutions/jetbrains.mps.idea.java.psiStubs/source_gen" />
-        <path location="${mps_home}/plugins/mpsjava/platform/source_gen" />
         <path location="${mps_home}/plugins/mpsjava/platform/source" />
       </src>
       <classpath>
@@ -415,6 +409,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <pathelement path="${build.tmp}/java/out/mps-plugin" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-icons.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/plugins/mps-java/lib/mps-java-platform.jar" />
         <fileset file="${mps_home}/lib/tools.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
@@ -433,7 +428,6 @@
       <fileset dir="${mps_home}/IdeaPlugin/mps-java/scopes/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/IdeaPlugin/mps-java/sourceStubs/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/IdeaPlugin/solutions/jetbrains.mps.idea.java.psiStubs/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/plugins/mpsjava/platform/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/plugins/mpsjava/platform/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
@@ -444,7 +438,6 @@
       <compilerarg value="-Xlint:none" />
       <src>
         <path location="${mps_home}/plugins/mpsjava/basePlatform/source" />
-        <path location="${mps_home}/plugins/mpsjava/basePlatform/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-openapi.jar" />
@@ -453,6 +446,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
         <pathelement path="${build.tmp}/java/out/mps-common" />
+        <fileset file="${artifacts.buildCore}/mps-core/plugins/mps-java/lib/mps-java-platform.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
@@ -467,7 +461,6 @@
     </javac2>
     <copy todir="${build.tmp}/java/out/mps-java-common">
       <fileset dir="${mps_home}/plugins/mpsjava/basePlatform/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/plugins/mpsjava/basePlatform/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -486,6 +479,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
         <pathelement path="${build.tmp}/java/out/mps-common" />
         <pathelement path="${build.tmp}/java/out/mps-java-common" />
+        <fileset file="${artifacts.buildCore}/mps-core/plugins/mps-java/lib/mps-java-platform.jar" />
         <pathelement path="${build.tmp}/java/out/mps-jps-plugin" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />

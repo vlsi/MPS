@@ -47,6 +47,7 @@ import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import jetbrains.mps.idea.core.ui.IModuleConfigurationTab;
 
 import javax.swing.BorderFactory;
 import javax.swing.JComponent;
@@ -60,7 +61,7 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-public class MPSFacetSourcesTab {
+public class MPSFacetSourcesTab implements IModuleConfigurationTab {
   private static final Color BACKGROUND_COLOR = UIUtil.getListBackground();
 
   private JPanel myRootPanel;
@@ -82,14 +83,18 @@ public class MPSFacetSourcesTab {
     return myRootPanel;
   }
 
-  public void setData(MPSConfigurationBean data) {
+  @Override
+  public void onTabEntering() {
+  }
+
+  public void reset(MPSConfigurationBean data) {
     for (ModelRoot modelRoot : data.getModelRoots()) {
       if (!(modelRoot instanceof DefaultModelRoot)) continue;
       addModelRoot((DefaultModelRoot) modelRoot);
     }
   }
 
-  public void getData(MPSConfigurationBean data) {
+  public void apply(MPSConfigurationBean data) {
     Collection<ModelRoot> modelRoots = getModelRoots();
     for (ModelRoot mr : data.getModelRoots()) {
       if (mr instanceof DefaultModelRoot) continue;

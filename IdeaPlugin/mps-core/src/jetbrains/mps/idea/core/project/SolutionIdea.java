@@ -21,14 +21,29 @@ import com.intellij.facet.Facet;
 import com.intellij.facet.FacetManager;
 import com.intellij.facet.FacetManagerAdapter;
 import com.intellij.openapi.module.Module;
-import com.intellij.openapi.roots.*;
+import com.intellij.openapi.project.Project;
+import com.intellij.openapi.roots.CompilerModuleExtension;
+import com.intellij.openapi.roots.LibraryOrderEntry;
+import com.intellij.openapi.roots.ModifiableRootModel;
+import com.intellij.openapi.roots.ModuleRootEvent;
+import com.intellij.openapi.roots.ModuleRootListener;
+import com.intellij.openapi.roots.ModuleRootManager;
+import com.intellij.openapi.roots.OrderEntry;
+import com.intellij.openapi.roots.OrderEnumerator;
+import com.intellij.openapi.roots.OrderRootType;
+import com.intellij.openapi.roots.RootProvider;
+import com.intellij.openapi.roots.RootProvider.RootSetChangedListener;
+import com.intellij.openapi.roots.impl.libraries.ProjectLibraryTable;
 import com.intellij.openapi.roots.libraries.Library;
+import com.intellij.openapi.roots.libraries.LibraryTable.Listener;
 import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.util.CommonProcessors.FindProcessor;
 import com.intellij.util.Processor;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
-import jetbrains.mps.idea.core.project.stubs.AbstractJavaStubSolutionManager;
+import jetbrains.mps.idea.core.library.ModuleLibrariesUtil;
+import jetbrains.mps.idea.core.library.ModuleLibraryType;
 import jetbrains.mps.idea.core.project.stubs.SdkClassesImporter;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
@@ -44,14 +59,25 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
 
 public class SolutionIdea extends Solution {
   @NotNull
-  private Module myModule;
+  private final Module myModule;
   private List<Dependency> myDependencies;
   private Set<ModelRoot> myContributedModelRoots;
   private MessageBusConnection myConnection;
+  private final SolutionIdea.MyRootSetChangedListener myRootSetListener = new MyRootSetChangedListener();
+  private final SolutionIdea.MyLibrariesListener myLibrariesListener = new MyLibrariesListener();
 
   public SolutionIdea(@NotNull Module module, SolutionDescriptor descriptor) {
     super(descriptor, null);
@@ -59,36 +85,20 @@ public class SolutionIdea extends Solution {
     // TODO: simply set solution descriptor local variable?
     setSolutionDescriptor(descriptor, false);
     myConnection = myModule.getProject().getMessageBus().connect();
-    myConnection.subscribe(ProjectTopics.PROJECT_ROOTS, new ModuleRootListener() {
+    myConnection.subscribe(ProjectTopics.PROJECT_ROOTS, new MyModuleRootListener());
+    myConnection.subscribe(FacetManager.FACETS_TOPIC, new MyFacetManagerAdapter());
+    final ProjectLibraryTable projectLibraryTable = (ProjectLibraryTable) ProjectLibraryTable.getInstance(myModule.getProject());
+    ModelAccess.instance().runReadAction(new Runnable() {
       @Override
-      public void beforeRootsChange(ModuleRootEvent event) {
-      }
-
-      @Override
-      public void rootsChanged(ModuleRootEvent event) {
-        if (myModule.getProject().equals(event.getSource())) {
-          ModelAccess.instance().runWriteInEDT(new Runnable() {
-            public void run() {
-              // this is to prevent a delayed write to be executed after the module has already been disposed
-              // TODO: find a better solution
-              if (myModule.isDisposed()) return;
-              setModuleDescriptor(getModuleDescriptor(), false);
-            }
-          });
+      public void run() {
+        for (final Library library : projectLibraryTable.getLibraries()) {
+          if (ModuleLibraryType.isModuleLibrary(library)) {
+            library.getRootProvider().addRootSetChangedListener(myRootSetListener);
+          }
         }
       }
     });
-    myConnection.subscribe(FacetManager.FACETS_TOPIC, new FacetManagerAdapter() {
-      @Override
-      public void facetAdded(@NotNull Facet facet) {
-        handleFacetChanged(facet);
-      }
-
-      @Override
-      public void facetRemoved(@NotNull Facet facet) {
-        handleFacetChanged(facet);
-      }
-    });
+    projectLibraryTable.addListener(myLibrariesListener);
   }
 
   @Override
@@ -105,6 +115,18 @@ public class SolutionIdea extends Solution {
 
   @Override
   public void dispose() {
+    final ProjectLibraryTable projectLibraryTable = (ProjectLibraryTable) ProjectLibraryTable.getInstance(myModule.getProject());
+    ModelAccess.instance().runReadAction(new Runnable() {
+      @Override
+      public void run() {
+        for (final Library library : projectLibraryTable.getLibraries()) {
+          if (ModuleLibraryType.isModuleLibrary(library)) {
+            library.getRootProvider().addRootSetChangedListener(myRootSetListener);
+          }
+        }
+      }
+    });
+    projectLibraryTable.removeListener(myLibrariesListener);
     super.dispose();
     myConnection.disconnect();
   }
@@ -139,7 +161,6 @@ public class SolutionIdea extends Solution {
   @Override
   public List<Dependency> getDependencies() {
     if (myDependencies == null) {
-      // TODO: move to Solution descriptor & try to use common Solution implementation here?
       myDependencies = new ArrayList<Dependency>();
 
       ArrayList<Module> usedModules = new ArrayList<Module>(Arrays.asList(ModuleRootManager.getInstance(myModule).getDependencies()));
@@ -157,7 +178,9 @@ public class SolutionIdea extends Solution {
       addUsedLibraries(myDependencies);
 
       // adding JDK module to a set of dependencies
-      Solution jdkSolution = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065"));
+      // why, oh, why are we doing it?
+      // FIXME, PLEASE!
+      Solution jdkSolution = StubSolutionIdea.getJdkSolution();
       if (jdkSolution != null) {
         myDependencies.add(new Dependency(jdkSolution.getModuleReference(), false));
       }
@@ -173,35 +196,63 @@ public class SolutionIdea extends Solution {
   }
 
   private void addUsedLibraries(final List<Dependency> dependencies) {
-    ModuleRootManager moduleRootManager = ModuleRootManager.getInstance(myModule);
-    moduleRootManager.orderEntries().forEach(new Processor<OrderEntry>() {
+    dependencies.addAll(calculateLibraryDependencies(ModuleRootManager.getInstance(myModule).orderEntries(), myModule.getProject(), true));
+  }
+
+  public static List<Dependency> calculateLibraryDependencies(OrderEnumerator orderEnumerator, final Project project, final boolean includeStubs) {
+    final Map<ModuleReference, Boolean> modules = new HashMap<ModuleReference, Boolean>();
+    orderEnumerator.forEach(new Processor<OrderEntry>() {
       public boolean process(OrderEntry oe) {
         if (!(oe instanceof LibraryOrderEntry)) {
           return true;
         }
         LibraryOrderEntry loe = (LibraryOrderEntry) oe;
-        if (loe.isModuleLevel() || loe.getLibrary() == null) {
+        Library library = loe.getLibrary();
+        if (loe.isModuleLevel() || library == null) {
           return true;
         }
 
-        Solution s = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(loe.getLibrary().getName()));
-        if (s != null) {
-          dependencies.add(new Dependency(s.getModuleReference(), false));
+        if (ModuleLibraryType.isModuleLibrary(library)) {
+          Set<ModuleReference> moduleReferences = ModuleLibrariesUtil.getModules(library);
+          for (ModuleReference moduleReference : moduleReferences) {
+            if (modules.containsKey(moduleReference)) {
+              if (loe.isExported()) {
+                modules.put(moduleReference, true);
+              }
+            } else {
+              modules.put(moduleReference, loe.isExported());
+            }
+          }
+        } else if (includeStubs) {
+          // try to find stub solution
+          Solution s = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(library.getName()));
+          if (s != null) {
+            modules.put(s.getModuleReference(), loe.isExported());
+          }
         }
         return true;
       }
     });
+    List<Dependency> result = new ArrayList<Dependency>();
+    for (Entry<ModuleReference, Boolean> entry : modules.entrySet()) {
+      result.add(new Dependency(entry.getKey(), entry.getValue()));
+    }
+    return result;
   }
 
   @Override
   public void addDependency(@NotNull SModuleReference moduleRef, boolean reexport) {
+    // we do not add a dependency into solution, we add dependency to idea module instead
+    ModifiableRootModel modifiableModel = ModuleRootManager.getInstance(myModule).getModifiableModel();
+    ModuleRuntimeLibrariesImporter.importForUsedModules(myModule, Collections.singleton(moduleRef), modifiableModel);
+    modifiableModel.commit();
   }
 
   @Override
   public void addUsedLanguage(ModuleReference langRef) {
     super.addUsedLanguage(langRef);
     ModifiableRootModel modifiableModel = ModuleRootManager.getInstance(myModule).getModifiableModel();
-    new ModuleRuntimeLibrariesManager(myModule, Collections.singletonList(langRef), modifiableModel).addMissingLibraries();
+    ModuleRuntimeLibrariesImporter.importForUsedLanguages(myModule, Collections.<SModuleReference>singleton(langRef), modifiableModel);
     modifiableModel.commit();
   }
 
@@ -214,6 +265,7 @@ public class SolutionIdea extends Solution {
   @Override
   public void save() {
     // TODO: implement saving functionality here.
+    // should this methods really do something?
 //        super.save();    //To change body of overridden methods use File | Settings | File Templates.
   }
 
@@ -282,11 +334,86 @@ public class SolutionIdea extends Solution {
       Library library = loe.getLibrary();
       if (library == null) continue;
 
-      AbstractJavaStubSolutionManager.addModelRoots(solutionDescriptor, library.getFiles(OrderRootType.CLASSES));
+      StubSolutionIdea.addModelRoots(solutionDescriptor, library.getFiles(OrderRootType.CLASSES));
     }
   }
 
   public Module getIdeaModule() {
     return myModule;
+  }
+
+  private class MyModuleRootListener implements ModuleRootListener {
+    @Override
+    public void beforeRootsChange(ModuleRootEvent event) {
+    }
+
+    @Override
+    public void rootsChanged(ModuleRootEvent event) {
+      if (myModule.getProject().equals(event.getSource())) {
+        reset();
+      }
+    }
+  }
+
+  private void reset() {
+    ModelAccess.instance().runWriteInEDT(new Runnable() {
+      public void run() {
+        // this is to prevent a delayed write to be executed after the module has already been disposed
+        // TODO: find a better solution
+        if (myModule.isDisposed()) return;
+        setModuleDescriptor(getModuleDescriptor(), false);
+      }
+    });
+  }
+
+  private class MyFacetManagerAdapter extends FacetManagerAdapter {
+    @Override
+    public void facetAdded(@NotNull Facet facet) {
+      handleFacetChanged(facet);
+    }
+
+    @Override
+    public void facetRemoved(@NotNull Facet facet) {
+      handleFacetChanged(facet);
+    }
+  }
+
+  private class MyRootSetChangedListener implements RootSetChangedListener {
+    @Override
+    public void rootSetChanged(final RootProvider wrapper) {
+      FindProcessor<OrderEntry> processor = new FindProcessor<OrderEntry>() {
+        @Override
+        protected boolean accept(OrderEntry orderEntry) {
+          return orderEntry instanceof LibraryOrderEntry && ((LibraryOrderEntry) orderEntry).getLibrary().getRootProvider() == wrapper;
+        }
+      };
+      ModuleRootManager.getInstance(myModule).orderEntries().forEach(processor);
+      if (processor.isFound()) {
+        reset();
+      }
+    }
+  }
+
+  private class MyLibrariesListener implements Listener {
+
+    @Override
+    public void afterLibraryAdded(final Library newLibrary) {
+      if (ModuleLibraryType.isModuleLibrary(newLibrary)) {
+        newLibrary.getRootProvider().addRootSetChangedListener(myRootSetListener);
+      }
+    }
+
+    @Override
+    public void afterLibraryRenamed(Library library) {
+    }
+
+    @Override
+    public void beforeLibraryRemoved(Library library) {
+      library.getRootProvider().addRootSetChangedListener(myRootSetListener);
+    }
+
+    @Override
+    public void afterLibraryRemoved(Library library) {
+    }
   }
 }

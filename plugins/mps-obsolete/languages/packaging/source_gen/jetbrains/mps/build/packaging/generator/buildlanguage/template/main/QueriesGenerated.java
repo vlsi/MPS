@@ -1664,7 +1664,7 @@ __switch__:
       }
       // calculate module cycles 
       Set<IModule> modulesToProcess = MapSequence.fromMap(map).keySet();
-      Set<IModule> modulesCopy = SetSequence.fromSet(new LinkedHashSet());
+      Set<IModule> modulesCopy = SetSequence.fromSet(new LinkedHashSet<IModule>());
       SetSequence.fromSet(modulesCopy).addSequence(SetSequence.fromSet(modulesToProcess).sort(new ISelector<IModule, String>() {
         public String select(IModule it) {
           return it.getModuleFqName();

@@ -24,11 +24,12 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 
 import javax.swing.Icon;
+import javax.swing.JComponent;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-public class UsedLanguagesTable extends MpsElementsTable<ModuleReference> {
+public class UsedLanguagesTable extends MpsElementsTable<ModuleReference> implements IModuleConfigurationTab {
   public static Comparator<ModuleReference> MODULE_REFERENCE_COMPARATOR = new ModuleReferenceComparator();
 
   // TODO: create additional MPSConfigurationBean.get/setUsedLanguageReferences() methods and use it here
@@ -40,16 +41,25 @@ public class UsedLanguagesTable extends MpsElementsTable<ModuleReference> {
     return usedLanguages;
   }
 
-  public void setData(MPSConfigurationBean data) {
+  public void reset(MPSConfigurationBean data) {
     setElements(getUsedLanguages(data));
   }
 
-  public void getData(MPSConfigurationBean data) {
+  public void apply(MPSConfigurationBean data) {
     data.setUsedLanguages(getUsedLanguagesStringArray());
   }
 
   public boolean isModified(MPSConfigurationBean data) {
     return isModified(getUsedLanguages(data));
+  }
+
+  @Override
+  public JComponent getRootPanel() {
+    return createComponent();
+  }
+
+  @Override
+  public void onTabEntering() {
   }
 
   private String[] getUsedLanguagesStringArray() {
