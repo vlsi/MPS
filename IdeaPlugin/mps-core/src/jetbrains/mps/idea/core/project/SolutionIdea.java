@@ -121,7 +121,7 @@ public class SolutionIdea extends Solution {
       public void run() {
         for (final Library library : projectLibraryTable.getLibraries()) {
           if (ModuleLibraryType.isModuleLibrary(library)) {
-            library.getRootProvider().addRootSetChangedListener(myRootSetListener);
+            library.getRootProvider().removeRootSetChangedListener(myRootSetListener);
           }
         }
       }
