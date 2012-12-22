@@ -203,7 +203,7 @@ public class ModulesMiner {
   }
 
   private void processExcludes(@NotNull IFile descriptorFile, ModuleDescriptor descriptor, Set<IFile> excludes) {
-    if (descriptor == null) {
+    if (descriptor == null || descriptorFile.isReadOnly()) {
       return;
     }
 
