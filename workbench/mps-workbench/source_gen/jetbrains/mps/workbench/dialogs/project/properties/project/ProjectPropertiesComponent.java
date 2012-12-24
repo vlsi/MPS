@@ -30,7 +30,8 @@ public class ProjectPropertiesComponent extends JPanel {
 
   private void initUI() {
     setLayout(new BorderLayout());
-    add(myPropertiesDialog.getMainComponent(), BorderLayout.CENTER);
+    setAutoscrolls(false);
+    add(myPropertiesDialog.createCenterPanel(), BorderLayout.CENTER);
   }
 
   public boolean isModified() {
