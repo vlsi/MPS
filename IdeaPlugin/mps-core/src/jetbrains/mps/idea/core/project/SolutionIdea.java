@@ -104,7 +104,7 @@ public class SolutionIdea extends Solution {
   @Override
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
     newDescriptor.setNamespace(myModule.getName());
-//    addLibs(newDescriptor);
+    addLibs(newDescriptor);
     super.setSolutionDescriptor(newDescriptor, reloadClasses);
   }
 
