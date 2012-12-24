@@ -93,13 +93,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myId;
   }
 
-  public SNodeId getSNodeId() {
-    ModelAccess.assertLegalRead(this);
-    assertDisposed();
-    fireNodeReadAccess();
-    return myId;
-  }
-
   @NotNull
   public final SNode getTopmostAncestor() {
     ModelAccess.assertLegalRead(this);
@@ -995,6 +988,15 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   //-----------these methods are rewritten on the top of SNode public, so that they are utilities actually----
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public SNodeId getSNodeId() {
+    return getNodeId();
+  }
 
   @Deprecated
   /**
