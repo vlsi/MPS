@@ -89,8 +89,8 @@ public final class ProjectPropertiesDialog extends DialogWrapper {
 
 
 
-
-  private GridConstraints getGridConstraints(int row, boolean fill) {
+  private Object getGridConstraints(int row, boolean fill) {
+    // TODO: resolve problem with GridConstraints in stubs 
     return new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, (fill ?
       GridConstraints.FILL_BOTH :
       GridConstraints.FILL_HORIZONTAL
@@ -110,10 +110,10 @@ public final class ProjectPropertiesDialog extends DialogWrapper {
     int rowIndex = 0;
     myPanel = new JBPanel(new GridLayoutManager(rowCount, 1, new Insets(5, 5, 5, 5), -1, -1));
     myPanel.setAutoscrolls(false);
-    myPanel.add(createProjectModulesList(), getGridConstraints(rowIndex++, true));
-    myPanel.add(createTestConfigList(), getGridConstraints(rowIndex++, true));
+    myPanel.add(createProjectModulesList(), (GridConstraints) getGridConstraints(rowIndex++, true));
+    myPanel.add(createTestConfigList(), (GridConstraints) getGridConstraints(rowIndex++, true));
     for (ProjectPrefsExtraPanel extraPanel : Sequence.fromIterable(Sequence.fromArray(myExtraPanels))) {
-      myPanel.add(extraPanel.getComponent(), getGridConstraints(rowIndex++, false));
+      myPanel.add(extraPanel.getComponent(), (GridConstraints) getGridConstraints(rowIndex++, false));
     }
   }
 
