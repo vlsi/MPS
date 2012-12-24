@@ -15,7 +15,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 
 public class Interface_Constraints extends BaseConstraintsDescriptor {
@@ -62,7 +62,7 @@ public class Interface_Constraints extends BaseConstraintsDescriptor {
   public static boolean static_canBeAParent(SNode node, SNode childNode, SNode childConcept, SNode link, final IOperationContext operationContext) {
     if (SConceptOperations.isSubConceptOf(childConcept, "jetbrains.mps.baseLanguage.structure.ClassifierMember")) {
       SNode memberConcept = (SNode) childConcept;
-      return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(memberConcept)), "virtual_canBeInterfaceMember_2949815620938109095", new Object[]{});
+      return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(memberConcept)), "virtual_canBeInterfaceMember_2949815620938109095", new Object[]{});
     }
     return true;
   }

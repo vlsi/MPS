@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.List;
@@ -27,7 +27,7 @@ public class ConceptFunctionParameter_Behavior {
   }
 
   public static boolean virtual_isParameterObjectUsed_1213877522926(SNode thisNode) {
-    return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_dontUseParameterObject_1262430001741498340", new Object[]{}));
+    return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_dontUseParameterObject_1262430001741498340", new Object[]{}));
   }
 
   public static SNode call_findConceptFunction_1213877522934(SNode thisNode) {
@@ -35,7 +35,7 @@ public class ConceptFunctionParameter_Behavior {
     final SNode ourConcept = SNodeOperations.getConceptDeclaration(thisNode);
     return ListSequence.fromList(functions).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return ListSequence.fromList(SLinkOperations.getConceptLinkTargets(it, "conceptFunctionParameter")).contains(ourConcept) || ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(it))), "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{})).contains(ourConcept);
+        return ListSequence.fromList(SLinkOperations.getConceptLinkTargets(it, "conceptFunctionParameter")).contains(ourConcept) || ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(it))), "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{})).contains(ourConcept);
       }
     }).first();
   }

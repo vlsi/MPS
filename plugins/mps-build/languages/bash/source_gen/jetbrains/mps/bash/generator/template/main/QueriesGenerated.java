@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -27,7 +27,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6382090206703015763(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return " " + BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.AsyncTerminator"))), "virtual_getTerminator_1262430001741497822", new Object[]{});
+    return " " + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.AsyncTerminator"))), "virtual_getTerminator_1262430001741497822", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_6382090206703015630(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -39,15 +39,15 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6382090206702609569(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(_context.getNode(), "following", true)))), "virtual_getOperator_1262430001741498106", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(_context.getNode(), "following", true)))), "virtual_getOperator_1262430001741498106", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_6382090206702813339(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(_context.getNode(), "following", true)))), "virtual_getPypetype_1262430001741497885", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(SLinkOperations.getTarget(_context.getNode(), "following", true)))), "virtual_getPypetype_1262430001741497885", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_1625002555034422450(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getAssingmentSign_1262430001741497909", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getAssingmentSign_1262430001741497909", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_7788637930351460494(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -59,11 +59,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7788637930352617562(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getLeftBracket_1262430001741497966", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getLeftBracket_1262430001741497966", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_7788637930352617552(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getRigthBracket_1262430001741497783", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getRigthBracket_1262430001741497783", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_6382090206703421291(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -87,31 +87,31 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6382090206703730384(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getQuotetype_1262430001741497924", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getQuotetype_1262430001741497924", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_6382090206703730394(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getQuotetype_1262430001741497924", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getQuotetype_1262430001741497924", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_9034131902182548045(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getQuotetype_1262430001741497924", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getQuotetype_1262430001741497924", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_9034131902182548061(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getQuotetype_1262430001741497924", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getQuotetype_1262430001741497924", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_7788637930352764837(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getSign_1262430001741498163", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getSign_1262430001741498163", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_7788637930353719422(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getSign_1262430001741498229", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getSign_1262430001741498229", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_7788637930353053888(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getSign_1262430001741498130", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getSign_1262430001741498130", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_7788637930351566062(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -135,15 +135,15 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7788637930353955520(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getOp_1262430001741497951", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getOp_1262430001741497951", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_7788637930354569908(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getOp_1262430001741498388", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getOp_1262430001741498388", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_7788637930354457740(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getSign_1262430001741498331", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getSign_1262430001741498331", new Object[]{});
   }
 
   public static Object propertyMacro_GetPropertyValue_7788637930354787069(final IOperationContext operationContext, final PropertyMacroContext _context) {

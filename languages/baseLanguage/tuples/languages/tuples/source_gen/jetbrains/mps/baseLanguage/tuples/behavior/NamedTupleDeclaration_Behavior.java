@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -29,7 +29,7 @@ public class NamedTupleDeclaration_Behavior {
   }
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
-    StringBuilder sb = new StringBuilder(BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getLeftBracket_1262430001741497804", new Object[]{}));
+    StringBuilder sb = new StringBuilder(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getLeftBracket_1262430001741497804", new Object[]{}));
     String sep = "";
     for (SNode cmp : ListSequence.fromList(NamedTupleDeclaration_Behavior.call_allExtends_3142843783245461132(thisNode)).reversedList().translate(new ITranslator2<SNode, SNode>() {
       public Iterable<SNode> translate(SNode ntd) {
@@ -39,7 +39,7 @@ public class NamedTupleDeclaration_Behavior {
       sb.append(sep).append(SPropertyOperations.getString(cmp, "name"));
       sep = ", ";
     }
-    return sb.append(BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getRightBracket_1262430001741498115", new Object[]{})).append(" ").append(SPropertyOperations.getString(thisNode, "nestedName")).toString();
+    return sb.append(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getRightBracket_1262430001741498115", new Object[]{})).append(" ").append(SPropertyOperations.getString(thisNode, "nestedName")).toString();
   }
 
   public static List<SNode> call_allExtends_3142843783245461132(SNode thisNode) {

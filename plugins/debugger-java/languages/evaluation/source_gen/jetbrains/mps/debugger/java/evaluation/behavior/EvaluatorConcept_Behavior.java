@@ -11,7 +11,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ILeftCombinator;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -82,7 +82,7 @@ public class EvaluatorConcept_Behavior {
       return "new " + BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(SNodeOperations.cast(expression, "jetbrains.mps.baseLanguage.structure.GenericNewExpression"), "creator", true), "virtual_getPresentation_1213877396640", new Object[]{});
     }
 
-    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(expression))), "virtual_constant_1262430001741498050", new Object[]{})) {
+    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(expression))), "virtual_constant_1262430001741498050", new Object[]{})) {
       return BehaviorReflection.invokeVirtual(Object.class, expression, "virtual_getCompileTimeConstantValue_1238860310638", new Object[]{SNodeOperations.getModel(thisNode).getModelDescriptor().getModule()}) + "";
     }
 

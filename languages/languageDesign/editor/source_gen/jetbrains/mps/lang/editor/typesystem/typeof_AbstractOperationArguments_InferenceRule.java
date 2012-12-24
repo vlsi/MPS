@@ -9,7 +9,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -26,7 +26,7 @@ public class typeof_AbstractOperationArguments_InferenceRule extends AbstractInf
   }
 
   public void applyRule(final SNode operation, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    List<SNode> argumentTypes = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(operation))), "virtual_getOperationArgumentType_6575219246652510406", new Object[]{});
+    List<SNode> argumentTypes = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(operation))), "virtual_getOperationArgumentType_6575219246652510406", new Object[]{});
     if (ListSequence.fromList(SLinkOperations.getTargets(operation, "actualArgument", true)).count() != ListSequence.fromList(argumentTypes).count()) {
       {
         MessageTarget errorTarget = new NodeMessageTarget();

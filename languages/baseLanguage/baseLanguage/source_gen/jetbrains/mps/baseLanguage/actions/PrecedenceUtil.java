@@ -9,7 +9,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 
 public class PrecedenceUtil {
@@ -85,7 +85,7 @@ public class PrecedenceUtil {
 
   private static PrecedenceUtil.Precedence getPriority(SNode expression) {
     if (SConceptOperations.isSubConceptOf(expression, "jetbrains.mps.baseLanguage.structure.BinaryOperation")) {
-      switch (BehaviorReflection.invokeVirtualStatic(Integer.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(((SNode) expression))), "virtual_getPriority_1262430001741497858", new Object[]{})) {
+      switch (BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(((SNode) expression))), "virtual_getPriority_1262430001741497858", new Object[]{})) {
         case -2:
           // || 
           return PrecedenceUtil.Precedence.J_13;

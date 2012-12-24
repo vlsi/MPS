@@ -5056,7 +5056,7 @@
     <nodeInfo nodeId="964810815943258162" fileName="matrix_index_lvalue_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="matrix_index_lvalue_NonTypesystemRule#()V" />
     <nodeInfo nodeId="964810815943258162" fileName="matrix_index_lvalue_NonTypesystemRule.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="964810815943258162" fileName="matrix_index_lvalue_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="49" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="964810815943264793" fileName="matrix_index_lvalue_NonTypesystemRule.java" startLine="26" startPosition="258" endLine="30" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="964810815943264793" fileName="matrix_index_lvalue_NonTypesystemRule.java" startLine="26" startPosition="278" endLine="30" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="964810815943258162" fileName="matrix_index_lvalue_NonTypesystemRule.java" startLine="39" startPosition="68" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="964810815943264772" fileName="matrix_index_lvalue_NonTypesystemRule.java" startLine="25" startPosition="135" endLine="31" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="964810815943258162" fileName="matrix_index_lvalue_NonTypesystemRule.java" startLine="39" startPosition="0" endLine="45" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
@@ -5075,7 +5075,7 @@
     </scopeInfo>
     <scopeInfo nodeId="964810815943258162" fileName="matrix_index_lvalue_NonTypesystemRule.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
     <scopeInfo nodeId="964810815943258162" fileName="matrix_index_lvalue_NonTypesystemRule.java" startLine="46" startPosition="0" endLine="49" endPosition="0" />
-    <scopeInfo nodeId="964810815943264774" fileName="matrix_index_lvalue_NonTypesystemRule.java" startLine="26" startPosition="258" endLine="30" endPosition="9" />
+    <scopeInfo nodeId="964810815943264774" fileName="matrix_index_lvalue_NonTypesystemRule.java" startLine="26" startPosition="278" endLine="30" endPosition="9" />
     <scopeInfo nodeId="964810815943258162" fileName="matrix_index_lvalue_NonTypesystemRule.java" startLine="39" startPosition="68" endLine="43" endPosition="5" />
     <scopeInfo nodeId="964810815943264757" fileName="matrix_index_lvalue_NonTypesystemRule.java" startLine="25" startPosition="135" endLine="31" endPosition="7" />
     <scopeInfo nodeId="964810815943258162" fileName="matrix_index_lvalue_NonTypesystemRule.java" startLine="39" startPosition="0" endLine="45" endPosition="0">

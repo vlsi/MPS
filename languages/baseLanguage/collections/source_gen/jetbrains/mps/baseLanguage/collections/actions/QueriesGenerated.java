@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.action.NodeSetupContext;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
@@ -69,7 +69,7 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AbstractContainerCreator_1237731265768(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getSourceNode(), "virtual_canHaveParameter_2261417478150191157", new Object[]{}) && ((SLinkOperations.getTarget(_context.getSourceNode(), "initSize", true) == null) || !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getSourceNode()))), "virtual_hasInitSize_1262430001741498238", new Object[]{}))) && (int) ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "initValue", true)).count() == 0 && (SLinkOperations.getTarget(_context.getSourceNode(), "copyFrom", true) == null);
+    return BehaviorReflection.invokeVirtual(Boolean.TYPE, _context.getSourceNode(), "virtual_canHaveParameter_2261417478150191157", new Object[]{}) && ((SLinkOperations.getTarget(_context.getSourceNode(), "initSize", true) == null) || !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getSourceNode()))), "virtual_hasInitSize_1262430001741498238", new Object[]{}))) && (int) ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "initValue", true)).count() == 0 && (SLinkOperations.getTarget(_context.getSourceNode(), "copyFrom", true) == null);
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_HashMapCreator_1240226454998(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
@@ -81,11 +81,11 @@ public class QueriesGenerated {
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AbstractContainerCreator_1562299158921287173(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return (SLinkOperations.getTarget(_context.getSourceNode(), "initSize", true) == null) && BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getSourceNode()))), "virtual_hasInitSize_1262430001741498238", new Object[]{}) && (int) ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "initValue", true)).count() == 0 && (SLinkOperations.getTarget(_context.getSourceNode(), "copyFrom", true) == null);
+    return (SLinkOperations.getTarget(_context.getSourceNode(), "initSize", true) == null) && BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getSourceNode()))), "virtual_hasInitSize_1262430001741498238", new Object[]{}) && (int) ListSequence.fromList(SLinkOperations.getTargets(_context.getSourceNode(), "initValue", true)).count() == 0 && (SLinkOperations.getTarget(_context.getSourceNode(), "copyFrom", true) == null);
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_HashMapCreator_1562299158921333141(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {
-    return (SLinkOperations.getTarget(_context.getSourceNode(), "initializer", true) == null) && (SLinkOperations.getTarget(_context.getSourceNode(), "initSize", true) == null) && BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getSourceNode()))), "virtual_hasInitSize_1262430001741497996", new Object[]{});
+    return (SLinkOperations.getTarget(_context.getSourceNode(), "initializer", true) == null) && (SLinkOperations.getTarget(_context.getSourceNode(), "initSize", true) == null) && BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getSourceNode()))), "virtual_hasInitSize_1262430001741497996", new Object[]{});
   }
 
   public static boolean sideTransformHintSubstituteActionsBuilder_Precondition_AbstractContainerCreator_1279588871814823471(final IOperationContext operationContext, final SideTransformPreconditionContext _context) {

@@ -27,7 +27,7 @@ import jetbrains.mps.smodel.action.ModelActions;
 import jetbrains.mps.smodel.action.AbstractChildNodeSetter;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.smodel.action.NodeSubstituteActionWrapper;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.openapi.editor.EditorContext;
@@ -342,7 +342,7 @@ public class QueriesGenerated {
           SNode source = SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.bash.structure.ArithmeticExpression");
           while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(source), "jetbrains.mps.bash.structure.BinaryArithmeticExpression")) {
             SNode parent = SNodeOperations.cast(SNodeOperations.getParent(source), "jetbrains.mps.bash.structure.BinaryArithmeticExpression");
-            if (BehaviorReflection.invokeVirtualStatic(Integer.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(result))), "virtual_getPriority_1262430001741497876", new Object[]{}) < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497876", new Object[]{})) {
+            if (BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(result))), "virtual_getPriority_1262430001741497876", new Object[]{}) < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497876", new Object[]{})) {
               source = parent;
             } else {
               break;
@@ -379,7 +379,7 @@ public class QueriesGenerated {
           SNode source = SNodeOperations.cast(_context.getSourceNode(), "jetbrains.mps.bash.structure.ArithmeticExpression");
           while (SNodeOperations.isInstanceOf(SNodeOperations.getParent(source), "jetbrains.mps.bash.structure.BinaryArithmeticExpression")) {
             SNode parent = SNodeOperations.cast(SNodeOperations.getParent(source), "jetbrains.mps.bash.structure.BinaryArithmeticExpression");
-            if (BehaviorReflection.invokeVirtualStatic(Integer.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(result))), "virtual_getPriority_1262430001741497876", new Object[]{}) < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497876", new Object[]{})) {
+            if (BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(result))), "virtual_getPriority_1262430001741497876", new Object[]{}) < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(parent))), "virtual_getPriority_1262430001741497876", new Object[]{})) {
               source = parent;
             } else {
               break;
