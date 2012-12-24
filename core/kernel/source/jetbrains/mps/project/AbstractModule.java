@@ -307,14 +307,14 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
 
   //----stubs
 
-  public Collection<String> getAllStubPaths() {
+  public Collection<String> getClassPath() {
     Set<String> result = new LinkedHashSet<String>();
-    result.addAll(getStubPaths());
-    result.addAll(getOwnStubPaths());
+    result.addAll(getAdditionalClassPath());
+    result.addAll(getOwnClassPath());
     return result;
   }
 
-  public Collection<String> getOwnStubPaths() {
+  public Collection<String> getOwnClassPath() {
     if (!isCompileInMPS()) return Collections.emptyList();
 
     IFile classFolder = getClassesGen();
@@ -323,7 +323,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
     return Collections.singletonList(classFolder.getPath());
   }
 
-  public Collection<String> getStubPaths() {
+  public Collection<String> getAdditionalClassPath() {
     ModuleDescriptor descriptor = getModuleDescriptor();
     if (descriptor == null) return Collections.emptySet();
     return descriptor.getAdditionalJavaStubPaths();
@@ -441,7 +441,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
         myCachedClassPathItem = new CompositeClassPathItem();
         myCachedClassPathItem.addInvalidationAction(myClasspathInvalidator);
 
-        for (String path : getAllStubPaths()) {
+        for (String path : getClassPath()) {
           try {
             IClassPathItem pathItem = ClassPathFactory.getInstance().createFromPath(path, this.getModuleName());
             myCachedClassPathItem.add(pathItem);

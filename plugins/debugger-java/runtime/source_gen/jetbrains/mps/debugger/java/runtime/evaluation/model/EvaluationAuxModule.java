@@ -22,7 +22,7 @@ import jetbrains.mps.persistence.PersistenceRegistry;
 
 public class EvaluationAuxModule extends AbstractModule {
   private Project myProject;
-  private final Set<String> myStubPaths = SetSequence.fromSet(new HashSet<String>());
+  private final Set<String> myClassPaths = SetSequence.fromSet(new HashSet<String>());
   private final Set<ModuleReference> myUsedLanguages = SetSequence.fromSet(new HashSet<ModuleReference>());
   @Nullable
   private IModule myContextModule;
@@ -61,15 +61,15 @@ public class EvaluationAuxModule extends AbstractModule {
   }
 
   @Override
-  public Set<String> getStubPaths() {
-    return myStubPaths;
+  public Set<String> getAdditionalClassPath() {
+    return myClassPaths;
   }
 
-  public String addStubPath(String path) {
-    if (SetSequence.fromSet(myStubPaths).contains(path)) {
+  public String addClassPathItem(String path) {
+    if (SetSequence.fromSet(myClassPaths).contains(path)) {
       path = null;
     } else {
-      SetSequence.fromSet(myStubPaths).addElement(path);
+      SetSequence.fromSet(myClassPaths).addElement(path);
     }
     invalidateClassPath();
     MPSModuleRepository.getInstance().fireModuleChanged(this);
@@ -79,7 +79,7 @@ public class EvaluationAuxModule extends AbstractModule {
   @Override
   protected Iterable<ModelRoot> loadRoots() {
     Set<ModelRoot> result = new HashSet<ModelRoot>();
-    for (String stub : SetSequence.fromSet(myStubPaths)) {
+    for (String stub : SetSequence.fromSet(myClassPaths)) {
       FolderModelRootBase modelRoot = (FolderModelRootBase) PersistenceRegistry.getInstance().getModelRootFactory(PersistenceRegistry.JAVA_CLASSES_ROOT).create();
       modelRoot.setPath(stub);
       result.add(modelRoot);

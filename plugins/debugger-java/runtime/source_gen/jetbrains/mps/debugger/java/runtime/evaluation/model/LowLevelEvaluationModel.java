@@ -80,7 +80,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
         myAuxModule.setContextModule(myEvaluationContext.getLocationModule());
         ListSequence.fromList(myEvaluationContext.getClassPath()).union(ListSequence.fromList(getDebuggerStubPath())).visitAll(new IVisitor<String>() {
           public void visit(String it) {
-            myAuxModule.addStubPath(it);
+            myAuxModule.addClassPathItem(it);
           }
         });
         myAuxModule.updateModelsSet();
