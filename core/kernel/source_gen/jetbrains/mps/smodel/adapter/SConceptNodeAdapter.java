@@ -4,6 +4,7 @@ package jetbrains.mps.smodel.adapter;
 
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import org.jetbrains.mps.openapi.language.SInterfaceConcept;
@@ -17,7 +18,7 @@ public class SConceptNodeAdapter extends SConceptNodeAdapterBase implements SCon
   }
 
   public SConcept getSuperConcept() {
-    return new SConceptNodeAdapter(NameUtil.nodeFQName(SLinkOperations.getTarget(getConcept(), "extends", false)));
+    return SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SLinkOperations.getTarget(getConcept(), "extends", false)));
   }
 
   public Iterable<SInterfaceConcept> getSuperInterfaces() {

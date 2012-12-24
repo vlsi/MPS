@@ -11,7 +11,7 @@ import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -91,7 +91,7 @@ public class SNodeOperations {
    * todo rewrite the code using this
    */
   public static SConcept getConcept(String name) {
-    return new SConceptNodeAdapter(name);
+    return SConceptRepository.getInstance().getConcept(name);
   }
 
   /**

@@ -15,6 +15,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 import org.jetbrains.mps.openapi.module.SModule;
@@ -37,9 +39,9 @@ public class SLanguageLanguageAdapter implements SLanguage {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
       }
-    }).select(new ISelector<SNode, SConceptNodeAdapter>() {
-      public SConceptNodeAdapter select(SNode it) {
-        return new SConceptNodeAdapter(NameUtil.nodeFQName(it));
+    }).select(new ISelector<SNode, SConcept>() {
+      public SConcept select(SNode it) {
+        return SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(it));
       }
     }));
     ListSequence.fromList(c).addSequence(Sequence.fromIterable(roots).where(new IWhereFilter<SNode>() {
