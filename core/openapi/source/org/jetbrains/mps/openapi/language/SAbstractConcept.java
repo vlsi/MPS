@@ -33,6 +33,8 @@ public interface SAbstractConcept {
    */
   String getId();
 
+  String getQualifiedName();
+
   /**
    * The user visible name of the concept
    */
