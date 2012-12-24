@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="8vo4fejr8glal2s9nstd15eqbdpwu09">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9fewwdo4hvsg0t5ahhqrttciuy5v4h" />
+  <common hash="1wzfki8bcw5v8n4mc2fyxx8tmzsm1pl" />
+  <source id="8307544070813664740" name="MultiplyOperation" hash="9lmiabmz3w5rumf8kxf7ol5tlg80w7z">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="MultiplyOperation.java" />
+  </source>
+  <source id="8307544070813664794" name="IfFunction" hash="-dcuaxq5bawyysr7jkjxdy0mxdctnuw6">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <file name="IfFunction.java" />
+  </source>
+  <source id="8307544070813664858" name="Function" hash="-923g05qglasb5kez962b1tr8izabe5r">
+    <file name="Function.java" />
+  </source>
+  <source id="8307544070813664867" name="DoubleConstant" hash="-2pz2n9tjy11mfbg6tnyf9m48scf7c6g">
+    <file name="DoubleConstant.java" />
+  </source>
+</dependencies>
+
