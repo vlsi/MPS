@@ -37,7 +37,7 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
     return NameUtil.shortNameFromLongName(myConceptName);
   }
 
-  public String getId() {
+  public String getConceptId() {
     return myConceptName;
   }
 
@@ -94,6 +94,10 @@ public class SConceptNodeAdapterBase implements SAbstractConcept {
       myConcept = SModelUtil.findConceptDeclaration(myConceptName, GlobalScope.getInstance());
     }
     return myConcept;
+  }
+
+  public String getId() {
+    return myConceptName;
   }
 
   private static boolean eq_vein7o_a0a0a0a0a0a0a8(Object a, Object b) {
