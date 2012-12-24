@@ -16,16 +16,52 @@
 package jetbrains.mps.smodel.language;
 
 import jetbrains.mps.components.CoreComponent;
+import jetbrains.mps.logging.Logger;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
-* evgeny, 10/12/12
-*/
+ * evgeny, 10/12/12
+ */
 public class ConceptRepository extends SConceptRepository implements CoreComponent {
+  private static Logger LOG = Logger.getLogger(ConceptRepository.class);
+
+  private final Map<String, SConcept> myConcepts = new HashMap<String, SConcept>();
+
   public SConcept getConcept(String id) {
-    return new SConceptNodeAdapter(id);
+    synchronized (myConcepts) {
+      if (!myConcepts.containsKey(id)) {
+        String langName = NameUtil.namespaceFromConceptFQName(id);
+        IModule module = MPSModuleRepository.getInstance().getModuleByFqName(langName);
+        if (!(module instanceof Language)) {
+          LOG.error("Can't find language for concept " + id, new Throwable());
+        } else {
+          Language lang = (Language) module;
+          SModel strucModel = lang.getStructureModelDescriptor().getSModel();
+          for (SNode root : strucModel.roots()) {
+            myConcepts.put(id, new SConceptNodeAdapter(langName + "." + root.getProperty(SNodeUtil.property_INamedConcept_name)));
+          }
+
+          SConcept concept = myConcepts.get(id);
+          if (concept == null) {
+            LOG.error("Creating a concept descriptor for a concept not yet loaded " + id, new Throwable());
+          }
+        }
+        myConcepts.put(id, new SConceptNodeAdapter(id));
+      }
+      return myConcepts.get(id);
+    }
   }
 
   @Override
