@@ -6081,7 +6081,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="7292080432684961353" resolveInfo="module" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1937023808170650711">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetClassPath()%cjava%dutil%dCollection" resolveInfo="getClassPath" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetAdditionalClassPath()%cjava%dutil%dCollection" resolveInfo="getAdditionalClassPath" />
                 </node>
               </node>
             </node>
