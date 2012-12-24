@@ -49,6 +49,8 @@ public interface SNode {
   /**
    * Uniquely identifies the node within its containing model. May also be null.
    */
+  SNodeId getNodeId();
+
   SNodeId getSNodeId();
 
   /**

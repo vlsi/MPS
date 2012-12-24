@@ -86,6 +86,13 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     myId = SModel.generateUniqueId();
   }
 
+  public SNodeId getNodeId() {
+    ModelAccess.assertLegalRead(this);
+    assertDisposed();
+    fireNodeReadAccess();
+    return myId;
+  }
+
   public SNodeId getSNodeId() {
     ModelAccess.assertLegalRead(this);
     assertDisposed();
