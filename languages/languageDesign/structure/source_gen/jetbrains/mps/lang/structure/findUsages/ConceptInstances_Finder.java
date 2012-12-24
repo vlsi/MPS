@@ -8,6 +8,9 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.findUsages.FindUsagesManager;
@@ -35,9 +38,10 @@ public class ConceptInstances_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
     try {
-      List<SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findUsages(Collections.singleton(node), SearchType.INSTANCES, scope, monitor));
-      for (SNode resNode : resNodes) {
-        ListSequence.fromList(_results).addElement(resNode);
+      SConcept concept = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(node));
+      List<org.jetbrains.mps.openapi.model.SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<org.jetbrains.mps.openapi.model.SNode>(), FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, scope, monitor));
+      for (org.jetbrains.mps.openapi.model.SNode resNode : resNodes) {
+        ListSequence.fromList(_results).addElement(((SNode) resNode));
       }
     } finally {
       monitor.done();

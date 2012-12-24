@@ -8,11 +8,14 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import java.util.ArrayList;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import java.util.Set;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import java.util.Collections;
 import jetbrains.mps.findUsages.SearchType;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class ExactConceptInstances_Finder extends GeneratedFinder {
   private static Logger LOG = Logger.getLogger("jetbrains.mps.lang.structure.findUsages.ExactConceptInstances_Finder");
@@ -35,9 +38,10 @@ public class ExactConceptInstances_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
     try {
-      List<SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findUsages(Collections.singleton(node), SearchType.EXACT_INSTANCES, scope, monitor));
-      for (SNode resNode : resNodes) {
-        ListSequence.fromList(_results).addElement(resNode);
+      SConcept concept = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(node));
+      Set<org.jetbrains.mps.openapi.model.SNode> nodes = FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.EXACT_INSTANCES, scope, monitor);
+      for (org.jetbrains.mps.openapi.model.SNode resNode : nodes) {
+        ListSequence.fromList(_results).addElement(((SNode) resNode));
       }
     } finally {
       monitor.done();

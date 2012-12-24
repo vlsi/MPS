@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.ide.generator.GenerationSettings;
-import jetbrains.mps.ide.generator.Icons;
+import com.intellij.icons.AllIcons;
 import com.intellij.util.ui.EmptyIcon;
 import jetbrains.mps.logging.Logger;
 
@@ -31,7 +31,7 @@ public class CheckModelsBeforeGeneration_Action extends BaseAction {
       {
         boolean optionEnabled = GenerationSettings.getInstance().isCheckModelsBeforeGeneration();
         if (optionEnabled) {
-          event.getPresentation().setIcon(Icons.CHECK_ICON);
+          event.getPresentation().setIcon(AllIcons.Actions.Checked_small);
         } else {
           event.getPresentation().setIcon(new EmptyIcon(18, 18));
         }

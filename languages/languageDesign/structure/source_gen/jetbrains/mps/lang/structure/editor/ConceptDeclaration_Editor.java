@@ -1225,7 +1225,7 @@ public class ConceptDeclaration_Editor extends DefaultNodeEditor {
   }
 
   private static JComponent _QueryFunction_JComponent_ueqr71_a2c0(final SNode node, final EditorContext editorContext) {
-    return EditorUtil.createSelectIconButton(node, editorContext);
+    return EditorUtil.createSelectIconButton(node, editorContext, true);
   }
 
   private static boolean _StyleParameter_QueryFunction_ueqr71_a0c0a(SNode node, EditorContext editorContext) {

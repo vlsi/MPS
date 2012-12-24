@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.projectPane.fileSystem;
 
+import com.intellij.icons.AllIcons.Actions;
 import com.intellij.ide.SelectInContext;
 import com.intellij.ide.SelectInTarget;
 import com.intellij.ide.projectView.ProjectView;
@@ -142,7 +143,7 @@ public class FileViewProjectPane extends AbstractProjectViewPane implements Data
   }
 
   public Icon getIcon() {
-    return FileIcons.FILE_VIEW_ICON;
+    return Actions.ShowAsTree;
   }
 
   public JComponent createComponent() {

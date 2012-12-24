@@ -59,7 +59,7 @@ public class CheckProjectStructure {
     HELPER = new CheckProjectStructureHelper();
     HELPER.init(new String[][]{{"samples_home", System.getProperty("user.dir") + "/samples"}});
 
-    List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), ProjectDirExclude.excludeSet, false);
+    List<ModuleHandle> moduleHandles = ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), ProjectDirExclude.getExcludeSet(), false);
 
     ArrayList<Object[]> res = new ArrayList<Object[]>();
     for (ModuleHandle moduleHandle : moduleHandles) {
@@ -82,7 +82,7 @@ public class CheckProjectStructure {
 
   @BeforeClass
   public static void init() {
-    CheckProjectStructureHelper.loadModules(ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), ProjectDirExclude.excludeSet, false));
+    CheckProjectStructureHelper.loadModules(ModulesMiner.getInstance().collectModules(FileSystem.getInstance().getFileByPath(System.getProperty("user.dir")), ProjectDirExclude.getExcludeSet(), false));
   }
 
   @AfterClass

@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.ide.MPSCoreComponents;
 import jetbrains.mps.project.listener.ModelCreationListener;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.ide.projectPane.Icons;
+import com.intellij.icons.AllIcons;
 import jetbrains.mps.project.AbstractModule;
 import org.jetbrains.mps.openapi.model.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -25,7 +25,7 @@ public class HierarchyViewTool extends AbstractHierarchyView {
   private ModelCreationListener myCreationListener;
 
   public HierarchyViewTool(Project project, MPSCoreComponents coreComponents) {
-    super(project, "Hierarchy", 8, Icons.HIERARCHY_ICON);
+    super(project, "Hierarchy", 8, AllIcons.Toolwindows.ToolWindowHierarchy);
     this.myCoreComponents = coreComponents;
   }
 

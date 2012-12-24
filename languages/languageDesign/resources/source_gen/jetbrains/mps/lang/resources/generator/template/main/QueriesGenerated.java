@@ -15,6 +15,7 @@ import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.lang.resources.behavior.IconResourceBundle_Behavior;
 import jetbrains.mps.lang.resources.behavior.IconResource_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
+import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 
@@ -72,8 +73,16 @@ public class QueriesGenerated {
     return IconResourceBundle_Behavior.call_getJavaName_8974276187400030159(_context.getNode());
   }
 
+  public static boolean ifMacro_Condition_4965310991037828399(final IOperationContext operationContext, final IfMacroContext _context) {
+    return isNotEmpty_x583g4_a0a0n(SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "icon", true), "path"));
+  }
+
   public static SNode sourceNodeQuery_8814893218132245226(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "iconExpression", true);
+  }
+
+  public static SNode sourceNodeQuery_4965310991037946893(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "icon", true), "iconExpression", true);
   }
 
   public static Iterable sourceNodesQuery_2990235398086399665(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
@@ -82,5 +91,9 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_6759767305208041204(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return SModelOperations.getNodes(_context.getInputModel(), "jetbrains.mps.lang.resources.structure.IconResourceExpression");
+  }
+
+  public static boolean isNotEmpty_x583g4_a0a0n(String str) {
+    return str != null && str.length() > 0;
   }
 }

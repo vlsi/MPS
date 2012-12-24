@@ -66,6 +66,7 @@
   </dependency>
   <dependency className="jetbrains.mps.nanoc.pluginSolution.plugin.ExecutableFile_Kind" file="ExecutableFile_Kind.java">
     <classNode dependClassName="com.intellij.execution.configurations.ConfigurationFactory" />
+    <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.extensions.Extensions" />
     <classNode dependClassName="com.intellij.util.containers.ContainerUtil" />
     <classNode dependClassName="java.lang.String" />
@@ -74,7 +75,6 @@
     <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.nanoc.pluginSolution.plugin.NanoCFile_Configuration_Factory" />
-    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="com.intellij.execution.configurations.ConfigurationType" />

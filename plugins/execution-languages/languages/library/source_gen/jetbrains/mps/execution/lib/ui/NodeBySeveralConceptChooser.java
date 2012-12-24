@@ -23,6 +23,8 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import java.util.Collections;
 import jetbrains.mps.findUsages.SearchType;
@@ -77,7 +79,8 @@ public class NodeBySeveralConceptChooser extends AbstractMainNodeChooser {
       public Iterable<SNode> translate(Tuples._2<String, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
         String targetConcept = it._0();
         final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();
-        Set<SNode> instances = manager.findUsages(Collections.singleton(SModelUtil.findConceptDeclaration(targetConcept, GlobalScope.getInstance())), SearchType.INSTANCES, myScope, monitor);
+        SConcept concept = SConceptRepository.getInstance().getConcept(targetConcept);
+        Set<SNode> instances = ((Set) manager.findUsages(Collections.singleton(concept), SearchType.INSTANCES, myScope, monitor));
         if (function == null) {
           return instances;
         } else {

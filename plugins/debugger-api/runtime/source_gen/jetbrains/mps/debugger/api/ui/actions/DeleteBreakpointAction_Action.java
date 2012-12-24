@@ -18,7 +18,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
 
 public class DeleteBreakpointAction_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("delete_breakpoint.png");
+  private static final Icon ICON = IconUtil.getIcon("deleteBreakpoint.png");
 
   public DeleteBreakpointAction_Action() {
     super("Delete", "Delete Breakpoint", ICON);

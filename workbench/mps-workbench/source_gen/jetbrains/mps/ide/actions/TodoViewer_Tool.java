@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.plugins.tool.GeneratedTool;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.project.MPSProject;
@@ -12,7 +12,7 @@ import java.awt.Container;
 import javax.swing.JComponent;
 
 public class TodoViewer_Tool extends GeneratedTool {
-  private static final Icon ICON = IconUtil.getIcon("todo.png");
+  private static final Icon ICON = AllIcons.Toolwindows.ToolWindowTodo;
   private TodoViewer myComponent;
 
   public TodoViewer_Tool(Project project) {

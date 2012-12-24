@@ -23,6 +23,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.behavior.Node_ConceptMethodCall_Behavior;
 import jetbrains.mps.lang.smodel.generator.baseLanguage.util.ConceptMethodCallUtils;
 import jetbrains.mps.generator.template.PropertyMacroContext;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.lang.structure.behavior.LinkDeclaration_Behavior;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.behavior.behavior.BehaviorMethodNames;
@@ -41,7 +42,6 @@ import jetbrains.mps.generator.template.MapSrcMacroContext;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
@@ -360,7 +360,12 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1219355399537(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "referentNode", false)).getSModelReference().toString();
+    SModelReference targetModelRef = SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "referentNode", false)).getSModelReference();
+    SModelReference sourceModelRef = SNodeOperations.getModel(_context.getNode()).getSModelReference();
+    if (sourceModelRef.equals(targetModelRef)) {
+      return _context.getOriginalInputModel().getSModelReference().toString();
+    }
+    return targetModelRef.toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1219355463409(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -368,7 +373,12 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1828409047608049663(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "referentNode", false)).getSModelReference().toString();
+    SModelReference targetModelRef = SNodeOperations.getModel(SLinkOperations.getTarget(_context.getNode(), "referentNode", false)).getSModelReference();
+    SModelReference sourceModelRef = SNodeOperations.getModel(_context.getNode()).getSModelReference();
+    if (sourceModelRef.equals(targetModelRef)) {
+      return _context.getOriginalInputModel().getSModelReference().toString();
+    }
+    return targetModelRef.toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1828409047608051092(final IOperationContext operationContext, final PropertyMacroContext _context) {

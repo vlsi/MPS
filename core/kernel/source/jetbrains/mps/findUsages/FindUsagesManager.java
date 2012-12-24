@@ -15,7 +15,6 @@
  */
 package jetbrains.mps.findUsages;
 
-import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.progress.EmptyProgressMonitor;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.IScope;
@@ -24,36 +23,18 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.HashSet;
 import java.util.Set;
 
-public class FindUsagesManager implements CoreComponent {
-
-  //------------CoreComponent stuff----------------
-
-  private static FindUsagesManager INSTANCE;
-
+public class FindUsagesManager {
   public static FindUsagesManager getInstance() {
-    return INSTANCE;
+    return new FindUsagesManager();
   }
 
-  public void init() {
-    if (INSTANCE != null) {
-      throw new IllegalStateException("double initialization");
-    }
-
-    INSTANCE = this;
-  }
-
-  public void dispose() {
-    INSTANCE = null;
-  }
-
-//------------------API-------------------------
-
-  public <T, R> Set<T> findUsages(Set<SNode> nodes, SearchType<T, R> type, IScope scope, @Nullable ProgressMonitor monitor) {
-    MultiMap<SModelDescriptor, R> directSearch = type.findMatchingModelsInCache(nodes, scope.getModelDescriptors(), null);
+  public <T, R> Set<T> findUsages(Set<R> nodes, SearchType<T, R> type, IScope scope, @Nullable ProgressMonitor monitor) {
+    MultiMap<SModel, R> directSearch = type.findMatchingModelsInCache(nodes, scope.getModelDescriptors(), null);
 
     Set<T> result = new HashSet<T>();
     if (monitor == null) monitor = new EmptyProgressMonitor();

@@ -29,6 +29,7 @@ import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.InsertPathAction;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSConfigurationBean;
+import jetbrains.mps.idea.core.ui.IModuleConfigurationTab;
 
 import javax.swing.*;
 import javax.swing.event.DocumentEvent;
@@ -36,7 +37,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class MPSFacetPathsTab {
+public class MPSFacetPathsTab implements IModuleConfigurationTab {
     private JPanel myRootPanel;
     private JRadioButton myUseTransientOutputFolder;
     private JRadioButton myUseModuleSourceFolderRadioButton;
@@ -81,7 +82,7 @@ public class MPSFacetPathsTab {
         return myRootPanel;
     }
 
-    public void setData(MPSConfigurationBean data) {
+    public void reset(MPSConfigurationBean data) {
         if (data.isUseTransientOutputFolder()) {
             myUseTransientOutputFolder.doClick();
         } else if (data.isUseModuleSourceFolder()) {
@@ -92,7 +93,7 @@ public class MPSFacetPathsTab {
         myFieldPanel.setText(data.getGeneratorOutputPath());
     }
 
-    public void getData(MPSConfigurationBean data) {
+    public void apply(MPSConfigurationBean data) {
         data.setUseTransientOutputFolder(isUseTransientOutputFolder());
         data.setUseModuleSourceFolder(isUseModuleSourceFolder());
         data.setGeneratorOutputPath(getGeneratorOutputPath());

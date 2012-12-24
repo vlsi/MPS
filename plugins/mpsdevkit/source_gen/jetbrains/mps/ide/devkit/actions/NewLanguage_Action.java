@@ -22,7 +22,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
 
 public class NewLanguage_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("projectLanguage.png");
+  private static final Icon ICON = IconUtil.getIcon("language.png");
 
   public NewLanguage_Action() {
     super("Language", "", ICON);

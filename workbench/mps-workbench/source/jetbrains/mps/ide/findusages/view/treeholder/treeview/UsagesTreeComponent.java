@@ -15,12 +15,16 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.treeview;
 
+import com.intellij.icons.AllIcons;
+import com.intellij.icons.AllIcons.General;
 import com.intellij.ide.*;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.pom.Navigatable;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.usageView.UsageViewBundle;
 import com.intellij.util.ui.tree.TreeUtil;
+import jetbrains.mps.icons.MPSIcons;
+import jetbrains.mps.icons.MPSIcons.Actions;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
@@ -312,7 +316,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
       private DefaultActionGroup myActions;
 
       public ViewOptionsToolbar() {
-        myAdditionalInfoNeededButton = new MyBaseToggleAction("Additional node info", "", Icons.INFO_ICON) {
+        myAdditionalInfoNeededButton = new MyBaseToggleAction("Additional node info", "", General.Information) {
           public boolean isSelected(AnActionEvent e) {
             return myTree.isAdditionalInfoNeeded();
           }
@@ -322,7 +326,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
           }
         };
 
-        myShowSearchedNodesButton = new MyBaseToggleAction("Show searched nodes", "", Icons.SHOW_SEARCHED_ICON) {
+        myShowSearchedNodesButton = new MyBaseToggleAction("Show searched nodes", "", Actions.SearchedNodes) {
           public boolean isSelected(AnActionEvent e) {
             return myTree.isShowSearchedNodes();
           }
@@ -335,7 +339,7 @@ public abstract class UsagesTreeComponent extends JPanel implements IChangeListe
           }
         };
 
-        myGroupSearchedNodesButton = new MyBaseToggleAction("Group searched nodes", "", Icons.GROUP_SEARCHED_ICON) {
+        myGroupSearchedNodesButton = new MyBaseToggleAction("Group searched nodes", "", Actions.GroupSearched) {
           public boolean isSelected(AnActionEvent e) {
             return myTree.isGroupSearchedNodes();
           }

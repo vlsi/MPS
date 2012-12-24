@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.output;
 
+import com.intellij.icons.AllIcons.Actions;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -22,9 +23,8 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.openapi.wm.WindowManager;
 import com.intellij.ui.ScrollPaneFactory;
+import jetbrains.mps.icons.MPSIcons.ToolWindows;
 import jetbrains.mps.ide.ThreadUtils;
-import jetbrains.mps.ide.icons.IconManager;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.tools.BaseProjectTool;
 import jetbrains.mps.workbench.action.ActionUtils;
 
@@ -45,7 +45,7 @@ public class OutputViewTool extends BaseProjectTool {
   private int myFontSize = 12;
 
   public OutputViewTool(Project project) {
-    super(project, "Output", 6, Icons.OUTPUT_VIEW_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "Output", 6, ToolWindows.OutputView, ToolWindowAnchor.BOTTOM, true);
   }
 
   @Override
@@ -54,7 +54,7 @@ public class OutputViewTool extends BaseProjectTool {
     this.myTextArea = new JTextArea();
     myTextArea.setEditable(false);
 
-    myFindAction = new AbstractAction("Find", IconManager.EMPTY_ICON) {
+    myFindAction = new AbstractAction("Find", Actions.Find) {
       {
         putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke("control F"));
       }
@@ -65,7 +65,7 @@ public class OutputViewTool extends BaseProjectTool {
         find(pattern);
       }
     };
-    myFindNextAction = new AbstractAction("Find Next", IconManager.EMPTY_ICON) {
+    myFindNextAction = new AbstractAction("Find Next", Actions.NextOccurence) {
       {
         putValue(Action.ACCELERATOR_KEY, KeyStroke.getKeyStroke("F3"));
       }
@@ -93,7 +93,7 @@ public class OutputViewTool extends BaseProjectTool {
       private void processMouseEvent(MouseEvent e) {
         if (e.isPopupTrigger()) {
           JPopupMenu menu = new JPopupMenu();
-          menu.add(new AbstractAction("Clear", IconManager.EMPTY_ICON) {
+          menu.add(new AbstractAction("Clear", Actions.GC) {
             public void actionPerformed(ActionEvent event) {
               clear();
             }

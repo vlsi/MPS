@@ -21,8 +21,8 @@ import com.intellij.openapi.actionSystem.DataContext;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.ui.DialogWrapper;
-import jetbrains.mps.workbench.actions.goTo.matcher.ChooseByNamePanel;
-import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
+import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
+import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import org.jetbrains.annotations.Nullable;
 

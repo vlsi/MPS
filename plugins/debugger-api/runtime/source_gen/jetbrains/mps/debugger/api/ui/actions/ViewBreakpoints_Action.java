@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.api.ui.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -17,7 +17,7 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.logging.Logger;
 
 public class ViewBreakpoints_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("viewBreakpoints.png");
+  private static final Icon ICON = AllIcons.Debugger.ViewBreakpoints;
 
   public ViewBreakpoints_Action() {
     super("View Breakpoints", "", ICON);

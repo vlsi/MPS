@@ -19,8 +19,8 @@
     <classNode extendsClassName="jetbrains.mps.make.facet.IFacetManifest" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.IconContainer" file="IconContainer.java">
+    <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.plugin.IconResourceBundle_Behavior" file="IconResourceBundle_Behavior.java">
     <classNode dependClassName="java.lang.Iterable" />

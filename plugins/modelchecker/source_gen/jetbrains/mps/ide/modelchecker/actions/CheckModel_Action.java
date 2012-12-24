@@ -4,7 +4,7 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -23,7 +23,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.logging.Logger;
 
 public class CheckModel_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("modelChecker.png");
+  private static final Icon ICON = MPSIcons.General.ModelChecker;
 
   public CheckModel_Action() {
     super("Check Model", "Check model for unresolved references and typesystem rules", ICON);

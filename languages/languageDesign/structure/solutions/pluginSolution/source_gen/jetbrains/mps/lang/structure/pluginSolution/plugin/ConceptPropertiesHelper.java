@@ -14,9 +14,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import java.util.Collection;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.progress.EmptyProgressMonitor;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -25,6 +27,9 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.language.SConcept;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -140,10 +145,10 @@ public class ConceptPropertiesHelper {
     final Set<SNode> conceptLinkDeclarationUsages = SetSequence.fromSet(new HashSet<SNode>());
     final Set<SNode> linkAccessUsages = SetSequence.fromSet(new HashSet<SNode>());
     final Set<SearchResult<SNode>> allUsages = SetSequence.fromSet(new HashSet<SearchResult<SNode>>());
-    Set<SNode> usages = FindUsagesManager.getInstance().findUsages(nodesToFind(), SearchType.INSTANCES, scope, new EmptyProgressMonitor());
+    Collection<SNode> usages = ((Collection) FindUsagesManager.getInstance().findUsages(nodesToFind(), SearchType.INSTANCES, scope, new EmptyProgressMonitor()));
 
     boolean usageIsFound;
-    for (SNode usage : SetSequence.fromSet(usages)) {
+    for (SNode usage : CollectionSequence.fromCollection(usages)) {
       usageIsFound = true;
       if (SNodeOperations.isInstanceOf(usage, "jetbrains.mps.lang.structure.structure.ConceptProperty")) {
         SetSequence.fromSet(conceptPropertyUsages).addElement(SNodeOperations.cast(usage, "jetbrains.mps.lang.structure.structure.ConceptProperty"));
@@ -183,16 +188,20 @@ public class ConceptPropertiesHelper {
     }
   }
 
-  private Set<SNode> nodesToFind() {
-    Set<SNode> result = SetSequence.fromSet(new HashSet<SNode>());
-    SetSequence.fromSet(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration"));
-    SetSequence.fromSet(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ConceptProperty"));
-    SetSequence.fromSet(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess"));
-    SetSequence.fromSet(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty"));
-    SetSequence.fromSet(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration"));
-    SetSequence.fromSet(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.structure.structure.ReferenceConceptLink"));
-    SetSequence.fromSet(result).addElement(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.smodel.structure.SConceptLinkAccess"));
-    return result;
+  private Set<SConcept> nodesToFind() {
+    Set<String> result = SetSequence.fromSet(new HashSet<String>());
+    SetSequence.fromSet(result).addElement("jetbrains.mps.lang.structure.structure.ConceptPropertyDeclaration");
+    SetSequence.fromSet(result).addElement("jetbrains.mps.lang.structure.structure.ConceptProperty");
+    SetSequence.fromSet(result).addElement("jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess");
+    SetSequence.fromSet(result).addElement("jetbrains.mps.lang.editor.structure.CellModel_ConceptProperty");
+    SetSequence.fromSet(result).addElement("jetbrains.mps.lang.structure.structure.ReferenceConceptLinkDeclaration");
+    SetSequence.fromSet(result).addElement("jetbrains.mps.lang.structure.structure.ReferenceConceptLink");
+    SetSequence.fromSet(result).addElement("jetbrains.mps.lang.smodel.structure.SConceptLinkAccess");
+    return SetSequence.fromSetWithValues(new HashSet<SConcept>(), SetSequence.fromSet(result).select(new ISelector<String, SConcept>() {
+      public SConcept select(String it) {
+        return SConceptRepository.getInstance().getConcept(it);
+      }
+    }));
   }
 
   private Set<Language> getProjectLanguages() {
@@ -706,7 +715,7 @@ public class ConceptPropertiesHelper {
 
   public void removeConceptProperties() {
     final Set<SNode> conceptPropertiesAndLinks = SetSequence.fromSet(new HashSet<SNode>());
-    Set<SNode> usages = FindUsagesManager.getInstance().findUsages(nodesToFind(), SearchType.INSTANCES, scope, new EmptyProgressMonitor());
+    Set<SNode> usages = ((Set) FindUsagesManager.getInstance().findUsages(nodesToFind(), SearchType.INSTANCES, scope, new EmptyProgressMonitor()));
 
 
     final Set<SearchResult<SNode>> allUsages = SetSequence.fromSet(new HashSet<SearchResult<SNode>>());

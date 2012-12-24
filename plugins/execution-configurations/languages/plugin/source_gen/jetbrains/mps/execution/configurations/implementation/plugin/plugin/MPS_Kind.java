@@ -4,7 +4,7 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import com.intellij.execution.configurations.ConfigurationType;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import jetbrains.mps.icons.MPSIcons;
 import java.util.List;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -15,7 +15,7 @@ import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 
 public class MPS_Kind implements ConfigurationType {
-  private static final Icon ICON = IconUtil.getIcon("MPS_16.png");
+  private static final Icon ICON = MPSIcons.MPS16x16;
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
 
   public MPS_Kind() {

@@ -4,7 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.LanguageAspect;
 
 public class Intentions_TabDescriptor extends RelationDescriptor {
-  private static final Icon ICON = IconUtil.getIcon("intention.png");
+  private static final Icon ICON = AllIcons.Actions.IntentionBulb;
 
   public Intentions_TabDescriptor() {
   }

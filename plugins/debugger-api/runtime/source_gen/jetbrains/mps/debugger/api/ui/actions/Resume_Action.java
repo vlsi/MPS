@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.api.ui.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -15,7 +15,7 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.logging.Logger;
 
 public class Resume_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("resume.png");
+  private static final Icon ICON = AllIcons.Debugger.ThreadStates.Running;
 
   public Resume_Action() {
     super("Resume", "Resume Execution", ICON);

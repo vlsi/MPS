@@ -113,10 +113,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
   </dependency>
-  <dependency className="jetbrains.mps.execution.lib.ui.IconContainer" file="IconContainer.java">
-    <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
-  </dependency>
   <dependency className="jetbrains.mps.execution.lib.ui.MainNodeChooser" file="MainNodeChooser.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Deprecated" />
@@ -150,6 +146,8 @@
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
     <classNode extendsClassName="jetbrains.mps.execution.lib.ui.AbstractMainNodeChooser" />
   </dependency>
   <dependency className="jetbrains.mps.execution.lib.ui.MultiConceptChooser" file="MultiConceptChooser.java">
@@ -191,6 +189,8 @@
     <classNode dependClassName="jetbrains.mps.util.annotation.ToRemove" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
     <classNode extendsClassName="jetbrains.mps.execution.lib.ui.AbstractMainNodeChooser" />
   </dependency>
   <dependency className="jetbrains.mps.execution.lib.ui.NodeByConceptChooser" file="NodeByConceptChooser.java">
@@ -227,6 +227,8 @@
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
     <classNode extendsClassName="jetbrains.mps.execution.lib.ui.AbstractMainNodeChooser" />
   </dependency>
   <dependency className="jetbrains.mps.execution.lib.ui.NodeBySeveralConceptChooser" file="NodeBySeveralConceptChooser.java">
@@ -266,6 +268,8 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
     <classNode extendsClassName="jetbrains.mps.execution.lib.ui.AbstractMainNodeChooser" />
   </dependency>
   <dependency className="jetbrains.mps.execution.lib.ui.ParameterBrowser" file="ParameterBrowser.java">
@@ -279,6 +283,7 @@
     <classNode extendsClassName="javax.swing.JComponent" />
   </dependency>
   <dependency className="jetbrains.mps.execution.lib.ui.RawLineEditorComponent" file="RawLineEditorComponent.java">
+    <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.Disposable" />
     <classNode dependClassName="com.intellij.openapi.fileChooser.FileChooserDescriptor" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
@@ -289,9 +294,7 @@
     <classNode dependClassName="java.awt.event.ActionListener" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="javax.swing.Icon" />
     <classNode dependClassName="javax.swing.JTextField" />
-    <classNode dependClassName="jetbrains.mps.execution.lib.ui.IconContainer" />
     <classNode extendsClassName="jetbrains.mps.execution.lib.ui.BaseFieldWithButtonComponent" />
   </dependency>
 </dependenciesRoot>

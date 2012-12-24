@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.migration.assistant;
 
+import com.intellij.icons.AllIcons.Actions;
 import com.intellij.ide.BrowserUtil;
 import com.intellij.ide.wizard.AbstractWizardEx;
 import com.intellij.ide.wizard.AbstractWizardStepEx;
@@ -31,6 +32,8 @@ import com.intellij.openapi.wm.impl.status.InlineProgressIndicator;
 import com.intellij.ui.components.JBCheckBox;
 import com.intellij.ui.components.JBList;
 import com.intellij.ui.components.JBScrollPane;
+import jetbrains.mps.icons.MPSIcons.General;
+import jetbrains.mps.icons.MPSIcons.Small;
 import jetbrains.mps.ide.migration.assistant.MigrationProcessor.Callback;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
@@ -66,10 +69,10 @@ public class MigrationAssistantWizard extends AbstractWizardEx {
 
   private static final List<String> STEP_IDS = new ArrayList<String>();
 
-  private static Icon WIZARD_ICON = new ImageIcon(MigrationAssistantWizard.class.getResource("newProject.png"));
-  private static Icon EXCLUDE_ICON = new ImageIcon(MigrationAssistantWizard.class.getResource("cross.png"));
-  private static Icon CHECK_ICON = new ImageIcon(MigrationAssistantWizard.class.getResource("check.png"));
-  private static Icon ERROR_ICON = new ImageIcon(MigrationAssistantWizard.class.getResource("error.png"));
+  private static Icon WIZARD_ICON = General.NewProject;
+  private static Icon EXCLUDE_ICON = Actions.Cross;
+  private static Icon CHECK_ICON = Actions.Checked;
+  private static Icon ERROR_ICON = Small.Error;
   private static Icon EMPTY_ICON = new Icon() {
     @Override
     public void paintIcon(Component component, Graphics graphics, int i, int i1) {

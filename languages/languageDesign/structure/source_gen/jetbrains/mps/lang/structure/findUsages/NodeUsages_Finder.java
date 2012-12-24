@@ -9,7 +9,7 @@ import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.progress.ProgressMonitor;
 import java.util.Set;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import java.util.Collections;
 import jetbrains.mps.findUsages.SearchType;
@@ -36,9 +36,9 @@ public class NodeUsages_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
     try {
-      Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(Collections.singleton(node), SearchType.USAGES, scope, monitor);
+      Set<SReference> resRefs = FindUsagesManager.getInstance().findUsages(Collections.<org.jetbrains.mps.openapi.model.SNode>singleton(node), SearchType.USAGES, scope, monitor);
       for (SReference reference : resRefs) {
-        ListSequence.fromList(_results).addElement(reference.getSourceNode());
+        ListSequence.fromList(_results).addElement(((SNode) reference.getSourceNode()));
       }
     } finally {
       monitor.done();

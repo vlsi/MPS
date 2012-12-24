@@ -18,6 +18,8 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.progress.ProgressMonitor;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import java.util.Collections;
 import jetbrains.mps.findUsages.SearchType;
@@ -86,7 +88,8 @@ public class NodeByConceptChooser extends AbstractMainNodeChooser {
   }
 
   protected List<SNode> findToChooseFromOnInit(FindUsagesManager manager, ProgressMonitor monitor) {
-    Set<SNode> instances = manager.findUsages(Collections.singleton(((SNode) getTargetConceptNode())), SearchType.INSTANCES, myScope, monitor);
+    SConcept concept = SConceptRepository.getInstance().getConcept(myTargetConcept);
+    Set<SNode> instances = ((Set) manager.findUsages(Collections.singleton(concept), SearchType.INSTANCES, myScope, monitor));
     if (this.myAcceptor == null) {
       return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);
     } else {

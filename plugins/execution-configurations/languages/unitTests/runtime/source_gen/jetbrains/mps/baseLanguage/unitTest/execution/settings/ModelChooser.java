@@ -12,9 +12,11 @@ import java.awt.event.ActionEvent;
 import jetbrains.mps.ide.ui.dialogs.properties.choosers.CommonChoosers;
 import java.util.Collections;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import java.util.Set;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SModel;
@@ -42,8 +44,9 @@ public class ModelChooser extends BaseChooserComponent {
     ListSequence.fromList(this.myCheckedModels).clear();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        List<SNode> nodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findUsages(Collections.singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase")), SearchType.INSTANCES, GlobalScope.getInstance(), null));
-        for (SNode node : nodes) {
+        SConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
+        Set<SNode> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, GlobalScope.getInstance(), null);
+        for (jetbrains.mps.smodel.SNode node : ((Set<jetbrains.mps.smodel.SNode>) ((Set) usages))) {
           SModel model = SNodeOperations.getModel(node);
           SModelReference md = model.getSModelReference();
           if (ListSequence.fromList(ModelChooser.this.myCheckedModels).contains(md)) {

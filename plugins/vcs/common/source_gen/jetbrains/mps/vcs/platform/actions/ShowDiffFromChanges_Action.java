@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.platform.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -23,7 +23,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
 
 public class ShowDiffFromChanges_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("diff.png");
+  private static final Icon ICON = AllIcons.Actions.Diff;
 
   public ShowDiffFromChanges_Action() {
     super("Show Difference", "", ICON);

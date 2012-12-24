@@ -28,9 +28,10 @@ import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 import com.intellij.openapi.actionSystem.AnAction;
-import jetbrains.mps.ide.findusages.view.icons.Icons;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.ToggleAction;
+import jetbrains.mps.icons.MPSIcons;
 
 public class DependenciesPanel extends JPanel {
   private DependencyTree myInitTree;
@@ -156,7 +157,7 @@ public class DependenciesPanel extends JPanel {
 
   private class CloseAction extends AnAction {
     public CloseAction() {
-      super("Close", "Close dependencies viewer", Icons.CLOSE_ICON);
+      super("Close", "Close dependencies viewer", AllIcons.Actions.Cancel);
     }
 
     public void actionPerformed(AnActionEvent event) {
@@ -166,7 +167,7 @@ public class DependenciesPanel extends JPanel {
 
   private class RerunAction extends AnAction {
     public RerunAction() {
-      super("Rerun", "Rerun dependencies viewer", Icons.RERUN_ICON);
+      super("Rerun", "Rerun dependencies viewer", AllIcons.Actions.RefreshUsages);
     }
 
     public void actionPerformed(AnActionEvent event) {
@@ -176,7 +177,7 @@ public class DependenciesPanel extends JPanel {
 
   public class ToggleUsedLanguages extends ToggleAction {
     public ToggleUsedLanguages() {
-      super("Show used languages", "Show used languages", jetbrains.mps.ide.moduleDependencies.icons.Icons.USED_LANGUAGES_ICON);
+      super("Show used languages", "Show used languages", MPSIcons.Nodes.Language);
     }
 
     public boolean isSelected(AnActionEvent event) {

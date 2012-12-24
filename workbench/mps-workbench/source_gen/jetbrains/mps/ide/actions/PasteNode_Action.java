@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -32,7 +32,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.logging.Logger;
 
 public class PasteNode_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("menu-paste.png");
+  private static final Icon ICON = AllIcons.Actions.Menu_paste;
 
   public PasteNode_Action() {
     super("Paste", "", ICON);

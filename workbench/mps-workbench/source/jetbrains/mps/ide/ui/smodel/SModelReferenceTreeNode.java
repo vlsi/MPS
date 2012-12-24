@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.ui.smodel;
 
+import com.intellij.icons.AllIcons.Nodes;
 import com.intellij.ui.LayeredIcon;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.projectPane.Icons;
@@ -43,7 +44,7 @@ public class SModelReferenceTreeNode extends MPSTreeNode {
     setNodeIdentifier(name);
     setAutoExpandable(true);
     Icon icon = Icons.MODEL_ICON;
-    icon = new LayeredIcon(icon, Icons.ARROW_ICON);
+    icon = new LayeredIcon(icon, Nodes.Symlink);
     setIcon(icon);
   }
 

@@ -4,7 +4,7 @@ package jetbrains.mps.quickQueryLanguage.pluginSolution.plugin;
 
 import jetbrains.mps.plugins.tool.GeneratedTabbedTool;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.ide.findusages.model.SearchQuery;
@@ -16,7 +16,7 @@ import jetbrains.mps.plugins.tool.IComponentDisposer;
 import javax.swing.JComponent;
 
 public class RunReplacement_Tool extends GeneratedTabbedTool {
-  private static final Icon ICON = IconUtil.getIcon("find.png");
+  private static final Icon ICON = AllIcons.Toolwindows.ToolWindowFind;
   private Project myProject;
 
   public RunReplacement_Tool(Project project) {
