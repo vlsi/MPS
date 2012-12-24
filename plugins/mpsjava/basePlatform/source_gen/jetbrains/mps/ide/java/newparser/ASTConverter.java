@@ -460,7 +460,7 @@ public class ASTConverter {
     for (MemberValuePair pair : anno.memberValuePairs()) {
       SNode val = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", null);
       SReference ref = new DynamicReference("key", val, null, new String(pair.name));
-      val.addReference(ref);
+      val.setReference(ref.getRole(), ref);
       // FIXME this will be convertExpressionRefl when I implement enum conversion there 
       SLinkOperations.setTarget(val, "value", convertExpression(pair.value), true);
       ListSequence.fromList(SLinkOperations.getTargets(node, "value", true)).addElement(val);
