@@ -3589,7 +3589,7 @@
                         </node>
                       </node>
                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8177148268721488538">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetStubPaths()%cjava%dutil%dCollection" resolveInfo="getStubPaths" />
+                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetClassPath()%cjava%dutil%dCollection" resolveInfo="getClassPath" />
                       </node>
                     </node>
                   </node>
@@ -6784,8 +6784,8 @@
               <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="7235580512916925060">
                 <node role="rValue" roleId="tpee.1068498886297" type="tp3r.Quotation" typeId="tp3r.1196350785113" id="55204148067466601">
                   <node role="quotedNode" roleId="tp3r.1196350785114" type="tps4.PathHolder" typeId="tps4.1204737220833" id="55204148067466602">
-                    <property name="moduleRelativePath" nameId="tps4.4567890205662779918" value="moduleRelativePath" />
                     <property name="fullPath" nameId="tps4.1208952075958" value="fullPath" />
+                    <property name="moduleRelativePath" nameId="tps4.4567890205662779918" value="moduleRelativePath" />
                     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.PropertyAntiquotation" typeId="tp3r.1196866233735" id="55204148067466603">
                       <property name="propertyName" nameId="tpck.1757699476691236117" value="fullPath" />
                       <node role="expression" roleId="tp3r.1196350785111" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="55204148067466604">
