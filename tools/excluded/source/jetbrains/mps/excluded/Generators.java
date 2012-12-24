@@ -14,6 +14,8 @@
  * limitations under the License.
  */
 
+package jetbrains.mps.excluded;
+
 import jetbrains.mps.util.JDOMUtil;
 import jetbrains.mps.util.misc.hash.HashSet;
 import org.jdom.Document;

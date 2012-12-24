@@ -14,6 +14,8 @@
 * limitations under the License.
 */
 
+package jetbrains.mps.excluded;
+
 import org.jdom.JDOMException;
 
 import java.io.File;

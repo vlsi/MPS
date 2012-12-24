@@ -14,6 +14,8 @@
 * limitations under the License.
 */
 
+package jetbrains.mps.excluded;
+
 import jetbrains.mps.util.FileUtil;
 import junit.framework.Assert;
 import org.jdom.JDOMException;
