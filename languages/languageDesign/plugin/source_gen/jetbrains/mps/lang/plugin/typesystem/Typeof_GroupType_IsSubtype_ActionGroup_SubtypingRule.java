@@ -27,7 +27,7 @@ public class Typeof_GroupType_IsSubtype_ActionGroup_SubtypingRule extends Subtyp
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getConceptId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

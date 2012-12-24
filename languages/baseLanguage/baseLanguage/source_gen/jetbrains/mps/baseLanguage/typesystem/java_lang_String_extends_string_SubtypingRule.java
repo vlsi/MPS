@@ -49,7 +49,7 @@ public class java_lang_String_extends_string_SubtypingRule extends SubtypingRule
       {
         SNode nodeToMatch_java_lang_String_extends_string_imi2rc_a0a;
         nodeToMatch_java_lang_String_extends_string_imi2rc_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_java_lang_String_extends_string_imi2rc_a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_java_lang_String_extends_string_imi2rc_a0a.getConcept().getConceptId()))) {
           return false;
         }
         {

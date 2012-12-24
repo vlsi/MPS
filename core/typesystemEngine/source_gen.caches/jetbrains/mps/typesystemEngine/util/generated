@@ -6,7 +6,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-4cbucrb929z9etkx6zjqzitfrb2b9f" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9fewwdo4hvsg0t5ahhqrttciuy5v4h" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="3d2lxr8unjxvzzi6xlbsruq2a8tb63l" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-ci4nagrqwkamxc17i3508grfdplet1o" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="egiwuzafx3tl3xpy2o3efqrip5u7wyl" />
   <common hash="5qes3d75j2je41kzt2gxy17rnro1ymj" />
   <source id="1883223317720973623" name="LatticeUtil" hash="dk4urmx27je1eewqtr9a815bijbn95s">
     <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />

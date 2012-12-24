@@ -4,7 +4,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="-mhq7bu6g8mtyvm09veubsafx9cdbe1" />
   <dep model="r:00000000-0000-4000-0000-011c895902d7(jetbrains.mps.baseLanguage.unitTest.structure)" hash="4iprwt890608tyasaoi55spdupusfjb" />
   <dep model="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" hash="878olgcbge8ptp6b27whqemq2a322b6" />
-  <dep model="r:00000000-0000-4000-0000-011c89590324(jetbrains.mps.lang.script.generator.baseLanguage.template.main@generator)" hash="-dhnuz0roquxw8r3tf5jeeo2gcckvhdt" />
+  <dep model="r:00000000-0000-4000-0000-011c89590324(jetbrains.mps.lang.script.generator.baseLanguage.template.main@generator)" hash="-2tcg8nka2s0szmj7ojrblnz96r6237e" />
   <common hash="3934ww8bpztl6fw0atf1g8tn62m8q3a" />
   <source id="825821767789110605" name="FixPluginKindForMPSTestCases" hash="-7oahkybm35qflfi6r7xq2cyig6p4lto">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

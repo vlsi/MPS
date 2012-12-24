@@ -49,7 +49,7 @@ public class supertypesOf_SNodeType_SEnumMemberType_SubtypingRule extends Subtyp
       {
         SNode nodeToMatch_supertypesOf_SNodeType_SEnumMemberType_6v72fr_a0a;
         nodeToMatch_supertypesOf_SNodeType_SEnumMemberType_6v72fr_a0a = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_supertypesOf_SNodeType_SEnumMemberType_6v72fr_a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_supertypesOf_SNodeType_SEnumMemberType_6v72fr_a0a.getConcept().getConceptId()))) {
           return false;
         }
         {

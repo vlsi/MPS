@@ -369,7 +369,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1219355463409(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "referentNode", false).getSNodeId().toString();
+    return SLinkOperations.getTarget(_context.getNode(), "referentNode", false).getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1828409047608049663(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -382,7 +382,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1828409047608051092(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "referentNode", false).getSNodeId().toString();
+    return SLinkOperations.getTarget(_context.getNode(), "referentNode", false).getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1226362356279(final IOperationContext operationContext, final PropertyMacroContext _context) {

@@ -28,7 +28,7 @@ public class sequence_type_comparableWith_Iterable_ComparisonRule extends Compar
 
   public IsApplicableStatus isApplicableFirst(SNode node) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getId(), this.getApplicableConceptFQName1());
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getConceptId(), this.getApplicableConceptFQName1());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -60,7 +60,7 @@ public class sequence_type_comparableWith_Iterable_ComparisonRule extends Compar
       {
         SNode nodeToMatch_sequence_type_comparableWith_Iterable_wnlwmt_a0a;
         nodeToMatch_sequence_type_comparableWith_Iterable_wnlwmt_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_sequence_type_comparableWith_Iterable_wnlwmt_a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_sequence_type_comparableWith_Iterable_wnlwmt_a0a.getConcept().getConceptId()))) {
           return false;
         }
         {

@@ -39,14 +39,14 @@ public class any_type_supertypeof_wildcard_type_InequationReplacementRule extend
 
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getId(), this.getApplicableSubtypeConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getConceptId(), this.getApplicableSubtypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
 
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getId(), this.getApplicableSupertypeConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getConceptId(), this.getApplicableSupertypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

@@ -90,7 +90,7 @@ public class QueriesGenerated {
       public boolean accept(SNode it) {
         return eq_x583g4_a0a0a0a0a0a0a0a41(SPropertyOperations.getString(it, "name"), SPropertyOperations.getString(_context.getNode(), "name"));
       }
-    }).first().getSNodeId().toString();
+    }).first().getNodeId().toString();
   }
 
   public static Object referenceMacro_GetReferent_7991477654791738442(final IOperationContext operationContext, final ReferenceMacroContext _context) {

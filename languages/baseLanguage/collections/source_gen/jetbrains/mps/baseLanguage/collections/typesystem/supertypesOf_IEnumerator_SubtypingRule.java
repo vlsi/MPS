@@ -52,7 +52,7 @@ public class supertypesOf_IEnumerator_SubtypingRule extends SubtypingRule_Runtim
       {
         SNode nodeToMatch_supertypesOf_IEnumerator_4sudxd_a0a;
         nodeToMatch_supertypesOf_IEnumerator_4sudxd_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_IEnumerator_4sudxd_a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_IEnumerator_4sudxd_a0a.getConcept().getConceptId()))) {
           return false;
         }
         {

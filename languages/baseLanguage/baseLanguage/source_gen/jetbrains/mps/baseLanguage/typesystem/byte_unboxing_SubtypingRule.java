@@ -49,7 +49,7 @@ public class byte_unboxing_SubtypingRule extends SubtypingRule_Runtime implement
       {
         SNode nodeToMatch_byte_unboxing_omlyur_a0a;
         nodeToMatch_byte_unboxing_omlyur_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_byte_unboxing_omlyur_a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_byte_unboxing_omlyur_a0a.getConcept().getConceptId()))) {
           return false;
         }
         {

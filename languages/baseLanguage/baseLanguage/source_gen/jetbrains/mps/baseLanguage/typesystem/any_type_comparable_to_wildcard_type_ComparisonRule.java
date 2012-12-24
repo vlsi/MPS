@@ -22,14 +22,14 @@ public class any_type_comparable_to_wildcard_type_ComparisonRule extends Compari
 
   public IsApplicableStatus isApplicableFirst(SNode node) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getId(), this.getApplicableConceptFQName1());
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getConceptId(), this.getApplicableConceptFQName1());
       return new IsApplicableStatus(b, null);
     }
   }
 
   public IsApplicableStatus isApplicableSecond(SNode node) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getId(), this.getApplicableConceptFQName2());
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getConceptId(), this.getApplicableConceptFQName2());
       return new IsApplicableStatus(b, null);
     }
   }

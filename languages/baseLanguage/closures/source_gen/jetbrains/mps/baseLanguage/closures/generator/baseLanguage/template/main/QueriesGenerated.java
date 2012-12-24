@@ -1182,11 +1182,11 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_7246115176735005356(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return "_tmp_" + _context.getNode().getSNodeId().toString();
+    return "_tmp_" + _context.getNode().getNodeId().toString();
   }
 
   public static Object referenceMacro_GetReferent_7246115176735007801(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return "_tmp_" + _context.getNode().getSNodeId().toString();
+    return "_tmp_" + _context.getNode().getNodeId().toString();
   }
 
   public static Object referenceMacro_GetReferent_8424084437048109805(final IOperationContext operationContext, final ReferenceMacroContext _context) {

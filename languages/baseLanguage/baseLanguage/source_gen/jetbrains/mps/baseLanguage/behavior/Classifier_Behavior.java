@@ -700,7 +700,7 @@ public class Classifier_Behavior {
       {
         SNode nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42;
         nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_Classifier_Behavior_qw8l7c_a0a0a0a42.getConcept().getConceptId()))) {
           return false;
         }
         {

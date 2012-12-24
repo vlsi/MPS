@@ -57,7 +57,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252323013(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "canBeChild", true).getSNodeId().toString();
+    return SLinkOperations.getTarget(_context.getNode(), "canBeChild", true).getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252358760(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -65,7 +65,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252358773(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "canBeParent", true).getSNodeId().toString();
+    return SLinkOperations.getTarget(_context.getNode(), "canBeParent", true).getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252358999(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -73,7 +73,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252359012(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "canBeRoot", true).getSNodeId().toString();
+    return SLinkOperations.getTarget(_context.getNode(), "canBeRoot", true).getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252398461(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -81,7 +81,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_7423954551252398474(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "canBeAncestor", true).getSNodeId().toString();
+    return SLinkOperations.getTarget(_context.getNode(), "canBeAncestor", true).getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_3749568622064121023(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -136,7 +136,7 @@ public class QueriesGenerated {
     return _context.getOriginalCopiedInputNode((ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_isValidatorGenerated_522233044824082130(((SNode) _context.getVariable("factory"))) ?
       ConstraintFunction_ReferentSearchScope_Factory_Behavior.call_getValidator_2990203945683058946(((SNode) _context.getVariable("factory"))) :
       ((SNode) _context.getVariable("factory"))
-    )).getSNodeId().toString();
+    )).getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_7093837644838476833(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -157,7 +157,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5934496548013422581(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getOriginalCopiedInputNode(((SNode) _context.getVariable("factory"))).getSNodeId().toString();
+    return _context.getOriginalCopiedInputNode(((SNode) _context.getVariable("factory"))).getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_3602553488694021819(final IOperationContext operationContext, final PropertyMacroContext _context) {

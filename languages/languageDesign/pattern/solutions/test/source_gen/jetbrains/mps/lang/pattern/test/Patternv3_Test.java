@@ -70,7 +70,7 @@ public class Patternv3_Test extends BaseTransformationTest4 {
         {
           SNode nodeToMatch_v3_1fi_a0;
           nodeToMatch_v3_1fi_a0 = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_v3_1fi_a0.getConcept().getId()))) {
+          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_v3_1fi_a0.getConcept().getConceptId()))) {
             return false;
           }
           {
@@ -83,7 +83,7 @@ public class Patternv3_Test extends BaseTransformationTest4 {
               {
                 SNode nodeToMatch_v3_1fi_a0a;
                 nodeToMatch_v3_1fi_a0a = childVar_v3_1fi_a0a;
-                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_v3_1fi_a0a.getConcept().getId()))) {
+                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_v3_1fi_a0a.getConcept().getConceptId()))) {
                   return false;
                 }
                 patternVar_className = nodeToMatch_v3_1fi_a0a.getReferenceTarget("classifier");
@@ -101,7 +101,7 @@ public class Patternv3_Test extends BaseTransformationTest4 {
               {
                 SNode nodeToMatch_v3_1fi_a0a_0;
                 nodeToMatch_v3_1fi_a0a_0 = childVar_v3_1fi_a0a_0;
-                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_v3_1fi_a0a_0.getConcept().getId()))) {
+                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_v3_1fi_a0a_0.getConcept().getConceptId()))) {
                   return false;
                 }
                 patternVar_method = nodeToMatch_v3_1fi_a0a_0.getReferenceTarget("baseMethodDeclaration");

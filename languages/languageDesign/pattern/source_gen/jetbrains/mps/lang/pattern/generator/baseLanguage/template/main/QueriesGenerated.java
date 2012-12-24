@@ -36,7 +36,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1202825939894(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getConcept().getId();
+    return _context.getNode().getConcept().getConceptId();
   }
 
   public static Object propertyMacro_GetPropertyValue_1190931377077(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -611,7 +611,7 @@ public class QueriesGenerated {
       SNode referent = ((SNode) ref.getTargetNode());
       SPropertyOperations.set(referenceNode, "role", ref.getRole());
       SPropertyOperations.set(referenceNode, "model", referent.getModel().getSModelReference().toString());
-      SPropertyOperations.set(referenceNode, "id", referent.getSNodeId().toString());
+      SPropertyOperations.set(referenceNode, "id", referent.getNodeId().toString());
       SLinkOperations.setTarget(referenceNode, "mainNode", _context.getNode(), false);
       ListSequence.fromList(result).addElement(referenceNode);
     }

@@ -51,7 +51,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
               {
                 SNode matchingNode_1b5x3i_a0a4a = typeCheckingContext.getExpandedNode(reifiedRet);
                 if (matchingNode_1b5x3i_a0a4a != null) {
-                  matches_1b5x3i_a0a4a = SModelUtil_new.isAssignableConcept(matchingNode_1b5x3i_a0a4a.getConcept().getId(), "jetbrains.mps.lang.typesystem.structure.MeetType");
+                  matches_1b5x3i_a0a4a = SModelUtil_new.isAssignableConcept(matchingNode_1b5x3i_a0a4a.getConcept().getConceptId(), "jetbrains.mps.lang.typesystem.structure.MeetType");
                 }
               }
               if (matches_1b5x3i_a0a4a) {
@@ -78,7 +78,7 @@ public class typeof_CompactInvokeFunctionExpression_InferenceRule extends Abstra
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getConceptId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

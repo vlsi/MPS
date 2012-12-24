@@ -32,7 +32,7 @@
   <dep model="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.ui(MPS.Workbench/jetbrains.mps.ide.ui@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9fewwdo4hvsg0t5ahhqrttciuy5v4h" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6f9jb5k2icdty624yqk3hbqvsk65dq5" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-e3rt8eb62eu9t6ugr5gfkacjat5gspr" />
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="c5xmnvbkhnv235xixr8ao12s6zxbcb" />
   <dep model="r:00000000-0000-4000-0000-011c895904a6(jetbrains.mps.ide.embeddableEditor)" hash="-5xn0yly6e8kgiovexlfvqvdiwa10x7x" />
   <dep model="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)" hash="-dh7s6av2gp5vg4r8eo6zgikra47743c" />
@@ -41,7 +41,7 @@
   <dep model="r:63e7a653-1334-49d4-8e81-fd72b84fb4ff(jetbrains.mps.debugger.java.runtime.state)" hash="1mr4d8rf60qdvtjxdejfiiwsrsgtpp2" />
   <dep model="r:6c15a5c9-1bba-4ade-a066-13f2741b04fc(jetbrains.mps.debugger.java.api.state)" hash="8cr00plh4h1ffhdx8l5gkug5477iewf" />
   <dep model="r:6ed9d174-6cbf-4569-b2b8-259c43efcbd9(jetbrains.mps.debugger.java.api.state.watchables)" hash="blg3xssv5tzrh36myueokcn4hjmrvi7" />
-  <dep model="r:86d21248-3bf4-41d8-8375-ab68885d035f(jetbrains.mps.debugger.java.runtime.evaluation.model)" hash="5bnyv33fulgh1htffs03va34ra95r4b" />
+  <dep model="r:86d21248-3bf4-41d8-8375-ab68885d035f(jetbrains.mps.debugger.java.runtime.evaluation.model)" hash="-1qne3xg3vkw9ra9p263wh3saozcj5ma" />
   <dep model="r:96c2681b-d258-4b28-81fb-0850456a3cee(jetbrains.mps.debugger.java.api.ui)" hash="68n3guuxxy6csog7vz04pr9t29kvoze" />
   <dep model="r:a3396333-01e8-4d8f-ac7d-92203e663cdb(jetbrains.mps.debugger.java.runtime.ui.actions)" hash="t69bnnesipfg307cwp2l9qas8m8f3w" />
   <dep model="r:a35795b4-c996-4cf6-bdbd-9ddbda25cde5(jetbrains.mps.debugger.api.ui.tree)" hash="2r8f65j4mbc63a1sscah4vp2fy3qp44" />

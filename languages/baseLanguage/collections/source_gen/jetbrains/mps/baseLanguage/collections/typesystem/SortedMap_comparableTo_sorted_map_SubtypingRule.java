@@ -53,7 +53,7 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
       {
         SNode nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a;
         nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getConcept().getConceptId()))) {
           return false;
         }
         {

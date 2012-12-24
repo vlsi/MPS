@@ -28,7 +28,7 @@ public class DebuggerIsDebugger_ComparisonRule extends ComparisonRule_Runtime {
 
   public IsApplicableStatus isApplicableFirst(SNode node) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getId(), this.getApplicableConceptFQName1());
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getConceptId(), this.getApplicableConceptFQName1());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -58,7 +58,7 @@ public class DebuggerIsDebugger_ComparisonRule extends ComparisonRule_Runtime {
       {
         SNode nodeToMatch_DebuggerIsDebugger_1iq6h2_a0a;
         nodeToMatch_DebuggerIsDebugger_1iq6h2_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_DebuggerIsDebugger_1iq6h2_a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_DebuggerIsDebugger_1iq6h2_a0a.getConcept().getConceptId()))) {
           return false;
         }
         {

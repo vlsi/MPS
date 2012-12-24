@@ -49,7 +49,7 @@ public class float_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
       {
         SNode nodeToMatch_float_unboxing_yblmix_a0a;
         nodeToMatch_float_unboxing_yblmix_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_float_unboxing_yblmix_a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_float_unboxing_yblmix_a0a.getConcept().getConceptId()))) {
           return false;
         }
         {
