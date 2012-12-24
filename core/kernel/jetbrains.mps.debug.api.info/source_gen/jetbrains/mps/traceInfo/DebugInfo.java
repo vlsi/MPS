@@ -168,7 +168,7 @@ public class DebugInfo {
         return getAllPositionsForRoot.invoke(it);
       }
     })) {
-      if (element.isPositionInside(file, line)) {
+      if (element.contains(file, line)) {
         ListSequence.fromList(resultList).addElement(element);
       }
     }
@@ -189,7 +189,7 @@ public class DebugInfo {
     })) {
       List<T> list = MapSequence.fromMap(result).get(root);
       for (T element : SetSequence.fromSet(getAllPositionsForRoot.invoke(root))) {
-        if (element.isPositionInside(file, line)) {
+        if (element.contains(file, line)) {
           if (list == null) {
             list = ListSequence.fromList(new ArrayList<T>());
             MapSequence.fromMap(result).put(root, list);

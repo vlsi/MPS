@@ -61,7 +61,7 @@ public class BreakpointLocation {
 
   @Nullable
   public String getTargetUnitName() {
-    return TraceInfoUtil.getUnitName(getFileName(), getLineIndexInFile(), myNodePointer.getModel());
+    return TraceInfoUtil.getUnitName(getTargetCodePosition(), myNodePointer.getModel());
   }
 
   public boolean isValid() {
