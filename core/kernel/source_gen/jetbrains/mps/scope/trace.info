@@ -301,22 +301,22 @@
     <nodeInfo nodeId="8401916545537277600" fileName="SimpleRoleScope.java" startLine="26" startPosition="23" endLine="27" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8401916545537277628" fileName="SimpleRoleScope.java" startLine="27" startPosition="23" endLine="28" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8401916545537277639" fileName="SimpleRoleScope.java" startLine="31" startPosition="59" endLine="32" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8401916545537277701" fileName="SimpleRoleScope.java" startLine="34" startPosition="115" endLine="35" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="8401916545537277701" fileName="SimpleRoleScope.java" startLine="34" startPosition="122" endLine="35" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="8401916545537277703" fileName="SimpleRoleScope.java" startLine="36" startPosition="7" endLine="37" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8401916545537277730" fileName="SimpleRoleScope.java" startLine="39" startPosition="29" endLine="40" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8401916545537277738" fileName="SimpleRoleScope.java" startLine="41" startPosition="16" endLine="42" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8401916545537277742" fileName="SimpleRoleScope.java" startLine="45" startPosition="5" endLine="46" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8401916545537277744" fileName="SimpleRoleScope.java" startLine="49" startPosition="72" endLine="50" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8401916545537277752" fileName="SimpleRoleScope.java" startLine="52" startPosition="115" endLine="53" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="8401916545537277752" fileName="SimpleRoleScope.java" startLine="52" startPosition="122" endLine="53" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="8401916545537277766" fileName="SimpleRoleScope.java" startLine="54" startPosition="7" endLine="55" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8401916545537277884" fileName="SimpleRoleScope.java" startLine="56" startPosition="54" endLine="57" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8401916545537277798" fileName="SimpleRoleScope.java" startLine="59" startPosition="5" endLine="60" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8401916545537277915" fileName="SimpleRoleScope.java" startLine="64" startPosition="68" endLine="65" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8401916545537277947" fileName="SimpleRoleScope.java" startLine="67" startPosition="116" endLine="68" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8401916545537277947" fileName="SimpleRoleScope.java" startLine="67" startPosition="123" endLine="68" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8401916545537277920" fileName="SimpleRoleScope.java" startLine="69" startPosition="5" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8401916545537277800" fileName="SimpleRoleScope.java" startLine="70" startPosition="0" endLine="71" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8401916545537277961" fileName="SimpleRoleScope.java" startLine="73" startPosition="22" endLine="74" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="8401916545537277808" fileName="SimpleRoleScope.java" startLine="76" startPosition="115" endLine="77" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="8401916545537277808" fileName="SimpleRoleScope.java" startLine="76" startPosition="122" endLine="77" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="8401916545537277822" fileName="SimpleRoleScope.java" startLine="78" startPosition="7" endLine="79" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8401916545537277967" fileName="SimpleRoleScope.java" startLine="80" startPosition="32" endLine="81" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="8401916545537277963" fileName="SimpleRoleScope.java" startLine="81" startPosition="21" endLine="82" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -345,15 +345,15 @@
     <nodeInfo nodeId="8401916545537277804" fileName="SimpleRoleScope.java" startLine="71" startPosition="34" endLine="84" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="8401916545537277507" fileName="SimpleRoleScope.java" startLine="31" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="8401916545537277521" fileName="SimpleRoleScope.java" startLine="63" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getReferenceText#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
-    <scopeInfo nodeId="8401916545537277665" fileName="SimpleRoleScope.java" startLine="34" startPosition="115" endLine="35" endPosition="17" />
+    <scopeInfo nodeId="8401916545537277665" fileName="SimpleRoleScope.java" startLine="34" startPosition="122" endLine="35" endPosition="17" />
     <scopeInfo nodeId="8401916545537277722" fileName="SimpleRoleScope.java" startLine="39" startPosition="29" endLine="40" endPosition="21" />
     <scopeInfo nodeId="8401916545537277737" fileName="SimpleRoleScope.java" startLine="41" startPosition="16" endLine="42" endPosition="22" />
-    <scopeInfo nodeId="8401916545537277751" fileName="SimpleRoleScope.java" startLine="52" startPosition="115" endLine="53" endPosition="17" />
+    <scopeInfo nodeId="8401916545537277751" fileName="SimpleRoleScope.java" startLine="52" startPosition="122" endLine="53" endPosition="17" />
     <scopeInfo nodeId="8401916545537277866" fileName="SimpleRoleScope.java" startLine="56" startPosition="54" endLine="57" endPosition="52" />
     <scopeInfo nodeId="8401916545537277897" fileName="SimpleRoleScope.java" startLine="64" startPosition="68" endLine="65" endPosition="18" />
-    <scopeInfo nodeId="8401916545537277922" fileName="SimpleRoleScope.java" startLine="67" startPosition="116" endLine="68" endPosition="18" />
+    <scopeInfo nodeId="8401916545537277922" fileName="SimpleRoleScope.java" startLine="67" startPosition="123" endLine="68" endPosition="18" />
     <scopeInfo nodeId="8401916545537277953" fileName="SimpleRoleScope.java" startLine="73" startPosition="22" endLine="74" endPosition="17" />
-    <scopeInfo nodeId="8401916545537277807" fileName="SimpleRoleScope.java" startLine="76" startPosition="115" endLine="77" endPosition="17" />
+    <scopeInfo nodeId="8401916545537277807" fileName="SimpleRoleScope.java" startLine="76" startPosition="122" endLine="77" endPosition="17" />
     <scopeInfo nodeId="8401916545537277537" fileName="SimpleRoleScope.java" startLine="88" startPosition="0" endLine="89" endPosition="0">
       <varInfo nodeId="8401916545537277542" varName="child" />
     </scopeInfo>

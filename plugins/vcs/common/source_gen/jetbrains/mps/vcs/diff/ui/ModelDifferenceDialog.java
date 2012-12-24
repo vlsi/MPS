@@ -154,7 +154,7 @@ public class ModelDifferenceDialog extends DialogWrapper {
           myChangeSet
         );
         SNodeId nodeId = (rootId == null ?
-          ListSequence.fromList(SModelOperations.getRoots(myMetadataChangeSet.getOldModel(), null)).first().getSNodeId() :
+          ListSequence.fromList(SModelOperations.getRoots(myMetadataChangeSet.getOldModel(), null)).first().getNodeId() :
           rootId
         );
 

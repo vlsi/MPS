@@ -48,7 +48,7 @@ public class PrintNodeID_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      System.out.println("ID = " + ((SNode) MapSequence.fromMap(_params).get("node")).getSNodeId().toString());
+      System.out.println("ID = " + ((SNode) MapSequence.fromMap(_params).get("node")).getNodeId().toString());
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "PrintNodeID", t);
     }

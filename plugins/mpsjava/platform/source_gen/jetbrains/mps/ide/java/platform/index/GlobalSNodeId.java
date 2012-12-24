@@ -15,7 +15,7 @@ public class GlobalSNodeId {
   private String myNodeId;
 
   public GlobalSNodeId(SNode node) {
-    this(SNodeOperations.getModel(node).getSModelReference().toString(), node.getSNodeId().toString());
+    this(SNodeOperations.getModel(node).getSModelReference().toString(), node.getNodeId().toString());
   }
 
   public GlobalSNodeId(String modelReference, String nodeId) {

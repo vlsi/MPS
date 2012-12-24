@@ -23,7 +23,7 @@ public class EventConsumingMapping {
   }
 
   private void consumeAllForNode(SNode node) {
-    final SNodeId id = node.getSNodeId();
+    final SNodeId id = node.getNodeId();
     Sequence.fromIterable(((Iterable<SModelEvent>) myNodesToUnconsumedEvents.getValues(id))).where(new IWhereFilter<SModelEvent>() {
       public boolean accept(SModelEvent e) {
         return !(e instanceof SModelRootEvent);
@@ -60,7 +60,7 @@ public class EventConsumingMapping {
       return;
     }
 
-    if (!(myAddedNodesToEvents.containsKey(affectedNode.getSNodeId()))) {
+    if (!(myAddedNodesToEvents.containsKey(affectedNode.getNodeId()))) {
       if (event instanceof SModelRootEvent) {
         SModelRootEvent rootEvent = (SModelRootEvent) event;
         if (rootEvent.isRemoved()) {
@@ -73,10 +73,10 @@ public class EventConsumingMapping {
           consumeAllForNode(child);
         }
       }
-      myNodesToUnconsumedEvents.put(affectedNode.getSNodeId(), event);
+      myNodesToUnconsumedEvents.put(affectedNode.getNodeId(), event);
     }
     if (addedNode != null) {
-      myAddedNodesToEvents.put(addedNode.getSNodeId(), event);
+      myAddedNodesToEvents.put(addedNode.getNodeId(), event);
     }
   }
 

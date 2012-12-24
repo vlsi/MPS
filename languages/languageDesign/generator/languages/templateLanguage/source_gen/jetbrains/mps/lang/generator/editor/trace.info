@@ -13123,92 +13123,101 @@
     <unitInfo nodeId="1168619539479" fileName="RootTemplateAnnotation_Editor.java" startLine="21" startPosition="0" endLine="163" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.RootTemplateAnnotation_Editor" />
   </root>
   <root nodeId="1168620373595" modelId="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)">
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="22" startPosition="42" endLine="23" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="23" startPosition="41" endLine="24" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="24" startPosition="34" endLine="25" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="25" startPosition="87" endLine="26" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="30" startPosition="52" endLine="31" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="34" startPosition="40" endLine="35" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="38" startPosition="40" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="42" startPosition="91" endLine="43" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="44" startPosition="34" endLine="45" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="46" startPosition="7" endLine="47" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="48" startPosition="32" endLine="49" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="50" startPosition="7" endLine="51" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="54" startPosition="85" endLine="55" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="55" startPosition="62" endLine="56" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1205882896626" fileName="RootTemplateAnnotation_KeyMap.java" startLine="60" startPosition="62" endLine="61" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1205883506608" fileName="RootTemplateAnnotation_KeyMap.java" startLine="62" startPosition="7" endLine="63" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1205883003793" fileName="RootTemplateAnnotation_KeyMap.java" startLine="63" startPosition="66" endLine="64" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1205883090295" fileName="RootTemplateAnnotation_KeyMap.java" startLine="65" startPosition="63" endLine="66" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1168622142763" fileName="RootTemplateAnnotation_KeyMap.java" startLine="67" startPosition="7" endLine="68" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1168622580789" fileName="RootTemplateAnnotation_KeyMap.java" startLine="71" startPosition="146" endLine="72" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="75" startPosition="34" endLine="76" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="24" startPosition="34" endLine="26" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootTemplateAnnotation_KeyMap_Action0#()V" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="43" startPosition="62" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="47" startPosition="49" endLine="50" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1205882872205" fileName="RootTemplateAnnotation_KeyMap.java" startLine="59" startPosition="152" endLine="62" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1205883007582" fileName="RootTemplateAnnotation_KeyMap.java" startLine="64" startPosition="56" endLine="67" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="71" startPosition="0" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="75" startPosition="0" endLine="78" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="54" startPosition="0" endLine="58" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="22" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootTemplateAnnotation_KeyMap#()V" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="42" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="59" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Z" />
-    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="30" startPosition="52" endLine="31" endPosition="37" />
-    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="34" startPosition="40" endLine="35" endPosition="44" />
-    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="38" startPosition="40" endLine="39" endPosition="19" />
-    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="44" startPosition="34" endLine="45" endPosition="21" />
-    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="48" startPosition="32" endLine="49" endPosition="21" />
-    <scopeInfo nodeId="1205882872206" fileName="RootTemplateAnnotation_KeyMap.java" startLine="60" startPosition="62" endLine="61" endPosition="21" />
-    <scopeInfo nodeId="1205883007583" fileName="RootTemplateAnnotation_KeyMap.java" startLine="65" startPosition="63" endLine="66" endPosition="21" />
-    <scopeInfo nodeId="1168620555238" fileName="RootTemplateAnnotation_KeyMap.java" startLine="71" startPosition="146" endLine="72" endPosition="299" />
-    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="75" startPosition="34" endLine="76" endPosition="28" />
-    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="24" startPosition="34" endLine="26" endPosition="49" />
-    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="54" startPosition="85" endLine="56" endPosition="115">
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="24" startPosition="42" endLine="25" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="25" startPosition="41" endLine="26" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="26" startPosition="34" endLine="27" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="27" startPosition="87" endLine="28" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="32" startPosition="52" endLine="33" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="36" startPosition="40" endLine="37" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="40" startPosition="40" endLine="41" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="44" startPosition="91" endLine="45" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="46" startPosition="34" endLine="47" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="48" startPosition="7" endLine="49" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="50" startPosition="32" endLine="51" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="52" startPosition="7" endLine="53" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="56" startPosition="85" endLine="57" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="57" startPosition="62" endLine="58" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1205882896626" fileName="RootTemplateAnnotation_KeyMap.java" startLine="62" startPosition="62" endLine="63" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1205883506608" fileName="RootTemplateAnnotation_KeyMap.java" startLine="64" startPosition="7" endLine="65" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1205883003793" fileName="RootTemplateAnnotation_KeyMap.java" startLine="65" startPosition="66" endLine="66" endPosition="141" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1205883090295" fileName="RootTemplateAnnotation_KeyMap.java" startLine="67" startPosition="63" endLine="68" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1168622142763" fileName="RootTemplateAnnotation_KeyMap.java" startLine="69" startPosition="7" endLine="70" endPosition="215" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1168622580789" fileName="RootTemplateAnnotation_KeyMap.java" startLine="73" startPosition="146" endLine="74" endPosition="299" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="77" startPosition="34" endLine="78" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2381446136244093894" fileName="RootTemplateAnnotation_KeyMap.java" startLine="82" startPosition="38" endLine="83" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2381446136244093894" fileName="RootTemplateAnnotation_KeyMap.java" startLine="84" startPosition="7" endLine="85" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="26" startPosition="34" endLine="28" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootTemplateAnnotation_KeyMap_Action0#()V" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="36" startPosition="0" endLine="39" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="40" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="45" startPosition="62" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="49" startPosition="49" endLine="52" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1205882872205" fileName="RootTemplateAnnotation_KeyMap.java" startLine="61" startPosition="152" endLine="64" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1205883007582" fileName="RootTemplateAnnotation_KeyMap.java" startLine="66" startPosition="141" endLine="69" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="73" startPosition="0" endLine="76" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="77" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2381446136244093894" fileName="RootTemplateAnnotation_KeyMap.java" startLine="81" startPosition="75" endLine="84" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="56" startPosition="0" endLine="60" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="24" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="RootTemplateAnnotation_KeyMap#()V" />
+    <nodeInfo nodeId="2381446136244093894" fileName="RootTemplateAnnotation_KeyMap.java" startLine="81" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="check_366854_a0a2a0a#(Lorg/jetbrains/mps/openapi/model/SModel;)Lorg/jetbrains/mps/openapi/module/SModule;" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="44" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="61" startPosition="0" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Z" />
+    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="32" startPosition="52" endLine="33" endPosition="37" />
+    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="36" startPosition="40" endLine="37" endPosition="44" />
+    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="40" startPosition="40" endLine="41" endPosition="19" />
+    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="46" startPosition="34" endLine="47" endPosition="21" />
+    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="50" startPosition="32" endLine="51" endPosition="21" />
+    <scopeInfo nodeId="1205882872206" fileName="RootTemplateAnnotation_KeyMap.java" startLine="62" startPosition="62" endLine="63" endPosition="21" />
+    <scopeInfo nodeId="1205883007583" fileName="RootTemplateAnnotation_KeyMap.java" startLine="67" startPosition="63" endLine="68" endPosition="21" />
+    <scopeInfo nodeId="1168620555238" fileName="RootTemplateAnnotation_KeyMap.java" startLine="73" startPosition="146" endLine="74" endPosition="299" />
+    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="77" startPosition="34" endLine="78" endPosition="28" />
+    <scopeInfo nodeId="2381446136244093894" fileName="RootTemplateAnnotation_KeyMap.java" startLine="82" startPosition="38" endLine="83" endPosition="45" />
+    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="26" startPosition="34" endLine="28" endPosition="49" />
+    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="56" startPosition="85" endLine="58" endPosition="115">
       <varInfo nodeId="1168620373595" varName="contextCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
-    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="38" startPosition="0" endLine="41" endPosition="0" />
-    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="71" startPosition="0" endLine="74" endPosition="0">
+    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="36" startPosition="0" endLine="39" endPosition="0" />
+    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="40" startPosition="0" endLine="43" endPosition="0" />
+    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="73" startPosition="0" endLine="76" endPosition="0">
       <varInfo nodeId="1168620373595" varName="editorContext" />
       <varInfo nodeId="1168620373595" varName="keyEvent" />
       <varInfo nodeId="1168620373595" varName="node" />
       <varInfo nodeId="1168620373595" varName="selectedNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="75" startPosition="0" endLine="78" endPosition="0" />
-    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="22" startPosition="42" endLine="26" endPosition="49">
+    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="77" startPosition="0" endLine="80" endPosition="0" />
+    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="24" startPosition="42" endLine="28" endPosition="49">
       <varInfo nodeId="1168620373595" varName="action" />
     </scopeInfo>
-    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="54" startPosition="0" endLine="58" endPosition="0">
+    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="56" startPosition="0" endLine="60" endPosition="0">
       <varInfo nodeId="1168620373595" varName="editorContext" />
       <varInfo nodeId="1168620373595" varName="keyEvent" />
     </scopeInfo>
-    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="22" startPosition="0" endLine="28" endPosition="0" />
-    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="42" startPosition="91" endLine="51" endPosition="114">
+    <scopeInfo nodeId="2381446136244093894" fileName="RootTemplateAnnotation_KeyMap.java" startLine="81" startPosition="75" endLine="85" endPosition="18" />
+    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="24" startPosition="0" endLine="30" endPosition="0" />
+    <scopeInfo nodeId="2381446136244093894" fileName="RootTemplateAnnotation_KeyMap.java" startLine="81" startPosition="0" endLine="87" endPosition="0">
+      <varInfo nodeId="2381446136244093894" varName="checkedDotOperand" />
+    </scopeInfo>
+    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="44" startPosition="91" endLine="53" endPosition="114">
       <varInfo nodeId="1168620373595" varName="contextCell" />
       <varInfo nodeId="1168620373595" varName="contextNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1168622085219" fileName="RootTemplateAnnotation_KeyMap.java" startLine="59" startPosition="152" endLine="68" endPosition="215">
+    <scopeInfo nodeId="1168622085219" fileName="RootTemplateAnnotation_KeyMap.java" startLine="61" startPosition="152" endLine="70" endPosition="215">
       <varInfo nodeId="1205883506609" varName="applyToNode" />
       <varInfo nodeId="1205883003794" varName="language" />
     </scopeInfo>
-    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="42" startPosition="0" endLine="53" endPosition="0">
+    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="44" startPosition="0" endLine="55" endPosition="0">
       <varInfo nodeId="1168620373595" varName="editorContext" />
       <varInfo nodeId="1168620373595" varName="keyEvent" />
     </scopeInfo>
-    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="59" startPosition="0" endLine="70" endPosition="0">
+    <scopeInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="61" startPosition="0" endLine="72" endPosition="0">
       <varInfo nodeId="1168620373595" varName="editorContext" />
       <varInfo nodeId="1168620373595" varName="keyEvent" />
       <varInfo nodeId="1168620373595" varName="node" />
       <varInfo nodeId="1168620373595" varName="selectedNodes" />
     </scopeInfo>
-    <unitInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="29" startPosition="0" endLine="79" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.RootTemplateAnnotation_KeyMap$RootTemplateAnnotation_KeyMap_Action0" />
-    <unitInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="21" startPosition="0" endLine="80" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.RootTemplateAnnotation_KeyMap" />
+    <unitInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="31" startPosition="0" endLine="88" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.RootTemplateAnnotation_KeyMap$RootTemplateAnnotation_KeyMap_Action0" />
+    <unitInfo nodeId="1168620373595" fileName="RootTemplateAnnotation_KeyMap.java" startLine="23" startPosition="0" endLine="89" endPosition="0" unitName="jetbrains.mps.lang.generator.editor.RootTemplateAnnotation_KeyMap" />
   </root>
   <root nodeId="1169570088021" modelId="r:00000000-0000-4000-0000-011c895902e3(jetbrains.mps.lang.generator.editor)">
     <nodeInfo nodeId="1195252271355" fileName="WeaveEach_RuleConsequence_Editor.java" startLine="155" startPosition="58" endLine="155" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

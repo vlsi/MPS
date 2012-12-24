@@ -17,6 +17,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class RootTemplateAnnotation_KeyMap extends EditorCellKeyMap {
   public RootTemplateAnnotation_KeyMap() {
@@ -61,7 +63,7 @@ public class RootTemplateAnnotation_KeyMap extends EditorCellKeyMap {
         return false;
       }
       SNode applyToNode = SNodeOperations.getContainingRoot(node);
-      Language language = applyToNode.getNodeLanguage();
+      Language language = (Language) check_366854_a0a2a0a(SNodeOperations.getConceptDeclaration(((SNode) applyToNode)).getContainingModel());
       if (language == BootstrapLanguages.generatorLanguage()) {
         return false;
       }
@@ -74,6 +76,13 @@ public class RootTemplateAnnotation_KeyMap extends EditorCellKeyMap {
 
     public String getKeyStroke() {
       return "ctrl shift H";
+    }
+
+    private static SModule check_366854_a0a2a0a(SModel checkedDotOperand) {
+      if (null != checkedDotOperand) {
+        return checkedDotOperand.getModule();
+      }
+      return null;
     }
   }
 }

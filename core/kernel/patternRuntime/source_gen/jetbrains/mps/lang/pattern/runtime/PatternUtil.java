@@ -22,7 +22,7 @@ public class PatternUtil {
       return false;
     }
     SNodeId id1 = pointer.getNodeId();
-    SNodeId id2 = node.getSNodeId();
+    SNodeId id2 = node.getNodeId();
     if (id1 == null || id2 == null || !(id1.equals(id2))) {
       return false;
     }

@@ -46,7 +46,7 @@ public class MappingConfigFinder implements IFinder {
     for (SNode node : nodesToCheck) {
       List<SReference> references = node.getReferences();
       for (SReference reference : references) {
-        if (myNodeToFindUsages.getSNodeId().equals(reference.getTargetNodeId())) {
+        if (myNodeToFindUsages.getNodeId().equals(reference.getTargetNodeId())) {
           SearchResult<SNode> result = new SearchResult<SNode>(node, "");
           results.add(result);
           break;

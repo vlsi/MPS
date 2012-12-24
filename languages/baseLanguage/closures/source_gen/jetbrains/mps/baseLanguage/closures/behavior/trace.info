@@ -40,7 +40,7 @@
     <nodeInfo nodeId="1213877338517" fileName="ClosureLiteral_Behavior.java" startLine="31" startPosition="78" endLine="32" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877338527" fileName="ClosureLiteral_Behavior.java" startLine="32" startPosition="137" endLine="33" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1213877338536" fileName="ClosureLiteral_Behavior.java" startLine="34" startPosition="5" endLine="35" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1213877338547" fileName="ClosureLiteral_Behavior.java" startLine="38" startPosition="84" endLine="39" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1213877338547" fileName="ClosureLiteral_Behavior.java" startLine="38" startPosition="84" endLine="39" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1229718192190" fileName="ClosureLiteral_Behavior.java" startLine="42" startPosition="170" endLine="43" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1237540583054" fileName="ClosureLiteral_Behavior.java" startLine="46" startPosition="90" endLine="47" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1239707798336" fileName="ClosureLiteral_Behavior.java" startLine="50" startPosition="69" endLine="51" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -106,7 +106,7 @@
     <nodeInfo nodeId="1229718192191" fileName="ClosureLiteral_Behavior.java" startLine="105" startPosition="30" endLine="122" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1229718192191" fileName="ClosureLiteral_Behavior.java" startLine="101" startPosition="0" endLine="125" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_l77foe_a0a2#(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="1213877338557" fileName="ClosureLiteral_Behavior.java" startLine="25" startPosition="43" endLine="25" endPosition="43" />
-    <scopeInfo nodeId="1213877338546" fileName="ClosureLiteral_Behavior.java" startLine="38" startPosition="84" endLine="39" endPosition="69" />
+    <scopeInfo nodeId="1213877338546" fileName="ClosureLiteral_Behavior.java" startLine="38" startPosition="84" endLine="39" endPosition="68" />
     <scopeInfo nodeId="1229718192189" fileName="ClosureLiteral_Behavior.java" startLine="42" startPosition="170" endLine="43" endPosition="82" />
     <scopeInfo nodeId="1237540575570" fileName="ClosureLiteral_Behavior.java" startLine="46" startPosition="90" endLine="47" endPosition="73" />
     <scopeInfo nodeId="1239707739905" fileName="ClosureLiteral_Behavior.java" startLine="50" startPosition="69" endLine="51" endPosition="61" />

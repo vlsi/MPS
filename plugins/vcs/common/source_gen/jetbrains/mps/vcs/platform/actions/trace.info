@@ -683,7 +683,7 @@
     <nodeInfo nodeId="226179684898988032" fileName="VcsActionsUtil.java" startLine="61" startPosition="80" endLine="62" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8230098746512809154" fileName="VcsActionsUtil.java" startLine="62" startPosition="69" endLine="63" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="226179684898997012" fileName="VcsActionsUtil.java" startLine="65" startPosition="27" endLine="66" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8230098746512809176" fileName="VcsActionsUtil.java" startLine="66" startPosition="43" endLine="67" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8230098746512809176" fileName="VcsActionsUtil.java" startLine="66" startPosition="43" endLine="67" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="226179684898927489" fileName="VcsActionsUtil.java" startLine="69" startPosition="9" endLine="70" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8230098746512809192" fileName="VcsActionsUtil.java" startLine="71" startPosition="30" endLine="72" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8230098746512809195" fileName="VcsActionsUtil.java" startLine="72" startPosition="25" endLine="73" endPosition="120" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -789,7 +789,7 @@
     <scopeInfo nodeId="8230098746512809383" fileName="VcsActionsUtil.java" startLine="189" startPosition="51" endLine="190" endPosition="27" />
     <scopeInfo nodeId="8230098746512809392" fileName="VcsActionsUtil.java" startLine="193" startPosition="12" endLine="194" endPosition="70" />
     <scopeInfo nodeId="8230098746512809423" fileName="VcsActionsUtil.java" startLine="51" startPosition="0" endLine="53" endPosition="0" />
-    <scopeInfo nodeId="8230098746512809159" fileName="VcsActionsUtil.java" startLine="65" startPosition="27" endLine="67" endPosition="39" />
+    <scopeInfo nodeId="8230098746512809159" fileName="VcsActionsUtil.java" startLine="65" startPosition="27" endLine="67" endPosition="38" />
     <scopeInfo nodeId="8230098746512809188" fileName="VcsActionsUtil.java" startLine="71" startPosition="0" endLine="73" endPosition="120">
       <varInfo nodeId="8230098746512809189" varName="e" />
     </scopeInfo>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="1u8h3shfb5p6z4hbj66ty4c3wobq1fi">
+  <common hash="-c1sboqui37ujjfipulaltljvr3850w5" />
+  <source id="263837413765000620" name="DefaultTestSuite" hash="pj2wpjmtvlybr6raz2uz9af6yeypm5">
+    <file name="DefaultTestSuite.java" />
+  </source>
+  <source id="7906452883299946797" name="ExecuteProjectTests" hash="-vn6594rqjgyapwht1cy5oez88o55pf">
+    <file name="ExecuteProjectTests.java" />
+  </source>
+</dependencies>
+

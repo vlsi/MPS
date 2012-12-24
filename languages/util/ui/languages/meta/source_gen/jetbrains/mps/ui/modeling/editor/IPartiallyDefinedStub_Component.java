@@ -153,7 +153,7 @@ public class IPartiallyDefinedStub_Component extends AbstractCellProvider {
     private EditorCell createReadOnlyModelAccessor_qot6m0_a0d0(final EditorContext editorContext, final SNode node) {
       EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
         public String getText() {
-          return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "name") + "@" + node.getSNodeId().toString();
+          return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "name") + "@" + node.getNodeId().toString();
         }
 
         public void setText(String s) {

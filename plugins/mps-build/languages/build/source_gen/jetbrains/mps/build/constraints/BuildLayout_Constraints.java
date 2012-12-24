@@ -32,7 +32,7 @@ public class BuildLayout_Constraints extends BaseConstraintsDescriptor {
   }
 
   public static boolean static_canBeAChild(SNode node, SNode parentNode, SNode link, SNode childConcept, final IOperationContext operationContext) {
-    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.structure.BuildProject") || parentNode.getConcept().getId().startsWith("jetbrains.mps.lang.generator");
+    return SNodeOperations.isInstanceOf(parentNode, "jetbrains.mps.build.structure.BuildProject") || parentNode.getConcept().getConceptId().startsWith("jetbrains.mps.lang.generator");
   }
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "4993211115183387849");

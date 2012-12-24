@@ -19,7 +19,7 @@ public class BuildLayout_Behavior {
   }
 
   public static String virtual_getPrepareSubTaskId_4701820937132344041(SNode thisNode) {
-    return "create.artifacts.folder." + thisNode.getSNodeId().toString();
+    return "create.artifacts.folder." + thisNode.getNodeId().toString();
   }
 
   public static void virtual_appendName_1368030936106665465(SNode thisNode, SNode parent, StringBuilder sb) {

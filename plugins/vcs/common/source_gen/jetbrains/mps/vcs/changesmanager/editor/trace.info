@@ -613,7 +613,7 @@
     <nodeInfo nodeId="6402272430682179098" fileName="EditorHighlighter.java" startLine="72" startPosition="39" endLine="73" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9216758901194588264" fileName="EditorHighlighter.java" startLine="73" startPosition="53" endLine="74" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3100987166859536779" fileName="EditorHighlighter.java" startLine="74" startPosition="0" endLine="75" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2835122602744634061" fileName="EditorHighlighter.java" startLine="78" startPosition="58" endLine="79" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2835122602744634061" fileName="EditorHighlighter.java" startLine="78" startPosition="58" endLine="79" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6402272430682179372" fileName="EditorHighlighter.java" startLine="82" startPosition="54" endLine="83" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8974964540305863434" fileName="EditorHighlighter.java" startLine="91" startPosition="66" endLine="92" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8974964540305863450" fileName="EditorHighlighter.java" startLine="97" startPosition="17" endLine="98" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -735,7 +735,7 @@
     <scopeInfo nodeId="6402272430682178254" fileName="EditorHighlighter.java" startLine="220" startPosition="42" endLine="220" endPosition="42" />
     <scopeInfo nodeId="7090398860987902383" fileName="EditorHighlighter.java" startLine="56" startPosition="31" endLine="57" endPosition="23" />
     <scopeInfo nodeId="7732671373443366427" fileName="EditorHighlighter.java" startLine="60" startPosition="117" endLine="61" endPosition="23" />
-    <scopeInfo nodeId="2835122602744614998" fileName="EditorHighlighter.java" startLine="78" startPosition="58" endLine="79" endPosition="75" />
+    <scopeInfo nodeId="2835122602744614998" fileName="EditorHighlighter.java" startLine="78" startPosition="58" endLine="79" endPosition="74" />
     <scopeInfo nodeId="6402272430682179134" fileName="EditorHighlighter.java" startLine="82" startPosition="54" endLine="83" endPosition="40" />
     <scopeInfo nodeId="6402272430682179337" fileName="EditorHighlighter.java" startLine="91" startPosition="66" endLine="92" endPosition="56" />
     <scopeInfo nodeId="8601487597690662341" fileName="EditorHighlighter.java" startLine="122" startPosition="77" endLine="123" endPosition="19" />

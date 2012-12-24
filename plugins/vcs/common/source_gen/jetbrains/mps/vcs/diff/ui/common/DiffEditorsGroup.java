@@ -52,7 +52,7 @@ public class DiffEditorsGroup {
         }
 
         while (visibleNode != null) {
-          SNodeId id = visibleNode.getSNodeId();
+          SNodeId id = visibleNode.getNodeId();
           EditorCell thisCell = thisEditor.findNodeCell(visibleNode);
           if (thisCell != null) {
             int newRelativePos = viewY - thisCell.getY();

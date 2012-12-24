@@ -532,8 +532,8 @@
   </root>
   <root nodeId="1213877329110" modelId="r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)">
     <nodeInfo nodeId="1216377921925" fileName="CellModel_WithRole_Behavior.java" startLine="16" startPosition="77" endLine="17" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1216378375083" fileName="CellModel_WithRole_Behavior.java" startLine="20" startPosition="87" endLine="21" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1216378375090" fileName="CellModel_WithRole_Behavior.java" startLine="21" startPosition="57" endLine="22" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216378375083" fileName="CellModel_WithRole_Behavior.java" startLine="20" startPosition="87" endLine="21" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1216378375090" fileName="CellModel_WithRole_Behavior.java" startLine="21" startPosition="64" endLine="22" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1216378375095" fileName="CellModel_WithRole_Behavior.java" startLine="22" startPosition="73" endLine="23" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877329110" fileName="CellModel_WithRole_Behavior.java" startLine="27" startPosition="74" endLine="28" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1213877329110" fileName="CellModel_WithRole_Behavior.java" startLine="32" startPosition="84" endLine="33" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />

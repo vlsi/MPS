@@ -54,7 +54,7 @@ public class MappingRuleTemplateNodeSearchScope extends AbstractSearchScope {
           }
 
           // not instance of concepts from TLBase language (like TemplateDeclaration, MappingConfiguration etc.) 
-          Language language = object.getLanguage();
+          Language language = ((Language) object.getConcept().getLanguage().getModule());
           return language != BootstrapLanguages.generatorLanguage();
         }
       };

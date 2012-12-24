@@ -126,7 +126,7 @@ public class ChildSubstituteActionsUtil {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.lang.actions.structure.RemoveByConditionPart");
       }
     })) {
-      String methodName = "removeActionsByCondition_" + removeByCondition.getSNodeId();
+      String methodName = "removeActionsByCondition_" + removeByCondition.getNodeId();
       try {
         QueryMethodGenerated.invoke(methodName, context, new RemoveSubstituteActionByConditionContext(ListSequence.fromList(actions).iterator(), parentNode, currentChild, childConcept), SNodeOperations.getModel(builder));
       } catch (Throwable t) {

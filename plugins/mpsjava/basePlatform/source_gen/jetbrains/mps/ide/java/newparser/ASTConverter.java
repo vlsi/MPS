@@ -338,11 +338,11 @@ public class ASTConverter {
   private SNode convertMethod(SNode cls, AbstractMethodDeclaration method, boolean attach) throws JavaParseException {
     SNode result = null;
 
-    SNodeId sNodeId = cls.getSNodeId();
+    SNodeId sNodeId = cls.getNodeId();
     // FIXME 
     String clsStringId = (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || sNodeId instanceof SNodeId.Regular ?
       null :
-      cls.getSNodeId().toString()
+      cls.getNodeId().toString()
     );
 
     if (method instanceof MethodDeclaration) {

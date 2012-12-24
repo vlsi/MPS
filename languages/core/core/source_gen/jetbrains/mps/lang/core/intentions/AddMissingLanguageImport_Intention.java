@@ -8,6 +8,7 @@ import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.project.IModule;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.Collections;
@@ -52,7 +53,7 @@ public class AddMissingLanguageImport_Intention implements IntentionFactory {
   }
 
   private boolean isApplicableToNode(final SNode node, final EditorContext editorContext) {
-    return node.getLanguage() == null;
+    return ((IModule) node.getConcept().getLanguage().getModule()) == null;
   }
 
   public SNodeReference getIntentionNodeReference() {
@@ -75,11 +76,11 @@ public class AddMissingLanguageImport_Intention implements IntentionFactory {
     }
 
     public String getDescription(final SNode node, final EditorContext editorContext) {
-      return "Add Language " + node.getLanguageNamespace() + " to Current Module";
+      return "Add Language " + node.getConcept().getLanguage().getPresentation() + " to Current Module";
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      ModuleReference moduleRef = node.getLanguage().getModuleReference();
+      ModuleReference moduleRef = ((IModule) node.getConcept().getLanguage().getModule()).getModuleReference();
       if (moduleRef == null) {
         return;
       }

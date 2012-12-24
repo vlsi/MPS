@@ -39,7 +39,7 @@
     <nodeInfo nodeId="6677452554239174321" fileName="OverloadedBinaryOperator_Behavior.java" startLine="19" startPosition="83" endLine="20" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1569627462441168526" fileName="OverloadedBinaryOperator_Behavior.java" startLine="23" startPosition="81" endLine="24" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1569627462441168532" fileName="OverloadedBinaryOperator_Behavior.java" startLine="25" startPosition="179" endLine="26" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1569627462441168561" fileName="OverloadedBinaryOperator_Behavior.java" startLine="27" startPosition="12" endLine="28" endPosition="119" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1569627462441168561" fileName="OverloadedBinaryOperator_Behavior.java" startLine="27" startPosition="12" endLine="28" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6677452554240637511" fileName="OverloadedBinaryOperator_Behavior.java" startLine="29" startPosition="5" endLine="30" endPosition="426" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3044950653914724723" fileName="OverloadedBinaryOperator_Behavior.java" startLine="33" startPosition="117" endLine="34" endPosition="261" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3044950653914724738" fileName="OverloadedBinaryOperator_Behavior.java" startLine="34" startPosition="261" endLine="35" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -54,7 +54,7 @@
     <scopeInfo nodeId="6677452554239147648" fileName="OverloadedBinaryOperator_Behavior.java" startLine="16" startPosition="43" endLine="16" endPosition="43" />
     <scopeInfo nodeId="6677452554239147652" fileName="OverloadedBinaryOperator_Behavior.java" startLine="19" startPosition="83" endLine="20" endPosition="67" />
     <scopeInfo nodeId="1569627462441168509" fileName="OverloadedBinaryOperator_Behavior.java" startLine="25" startPosition="179" endLine="26" endPosition="274" />
-    <scopeInfo nodeId="1569627462441168560" fileName="OverloadedBinaryOperator_Behavior.java" startLine="27" startPosition="12" endLine="28" endPosition="119" />
+    <scopeInfo nodeId="1569627462441168560" fileName="OverloadedBinaryOperator_Behavior.java" startLine="27" startPosition="12" endLine="28" endPosition="118" />
     <scopeInfo nodeId="6677452554239147646" fileName="OverloadedBinaryOperator_Behavior.java" startLine="16" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="6677452554239147646" varName="thisNode" />
     </scopeInfo>

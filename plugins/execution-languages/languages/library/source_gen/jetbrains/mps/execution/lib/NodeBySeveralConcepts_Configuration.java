@@ -95,7 +95,7 @@ public class NodeBySeveralConcepts_Configuration implements IPersistentConfigura
       this.setNodeId(null);
     } else {
       this.setModelId(node.getModel().getModelDescriptor().getSModelReference().toString());
-      this.setNodeId(node.getSNodeId().toString());
+      this.setNodeId(node.getNodeId().toString());
     }
   }
 

@@ -129,9 +129,9 @@ public abstract class AbstractMainNodeChooser extends BaseChooserComponent {
     } else {
       String longName = SNodeOperations.getModel(node).getLongName();
       if (longName.equals("")) {
-        return node.getSNodeId().toString();
+        return node.getNodeId().toString();
       }
-      return longName + "." + node.getSNodeId().toString();
+      return longName + "." + node.getNodeId().toString();
     }
   }
 

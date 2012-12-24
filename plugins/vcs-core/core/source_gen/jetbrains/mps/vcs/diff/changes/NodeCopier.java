@@ -34,7 +34,7 @@ public class NodeCopier {
   public SNode copyNode(SNode sourceNode) {
     SNode copy = CopyUtil.copyAndPreserveId(sourceNode);
     for (SNode node : ListSequence.fromList(SNodeOperations.getDescendants(copy, null, true, new String[]{}))) {
-      SNodeId nodeId = node.getSNodeId();
+      SNodeId nodeId = node.getNodeId();
       SNodeId replacedId = nodeId;
       while (myModel.getNodeById(replacedId) != null) {
         replacedId = SModel.generateUniqueId();

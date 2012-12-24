@@ -18,6 +18,7 @@ import jetbrains.mps.nodeEditor.INodeEditor;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.nodeEditor.ErrorNodeEditor;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.lang.reflect.InvocationTargetException;
@@ -74,9 +75,9 @@ public class EditorsFinderManager implements ApplicationComponent {
   }
 
   public synchronized INodeEditor loadEditor(EditorContext context, SNode node) {
-    assert context.getOperationContext().getModule() != null || context.getOperationContext().isTestMode() : "Illegal state, node: " + node.getSNodeId().toString() + ", model: " + SNodeOperations.getModel(node) + ", operationContext: " + context.getOperationContext();
+    assert context.getOperationContext().getModule() != null || context.getOperationContext().isTestMode() : "Illegal state, node: " + node.getNodeId().toString() + ", model: " + SNodeOperations.getModel(node) + ", operationContext: " + context.getOperationContext();
 
-    if (node.getLanguage() == null) {
+    if (((IModule) node.getConcept().getLanguage().getModule()) == null) {
       return new ErrorNodeEditor();
     }
     String key = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getConceptDeclaration(node), "virtual_getFqName_1213877404258", new Object[]{});

@@ -57,7 +57,7 @@ public class DataFlowUtil {
         checkReturns(typeCheckingContext, program);
       }
     } catch (DataflowBuilderException e) {
-      throw new RuntimeException("Building dataflow for node: " + statementList.getSNodeId().toString() + " model: " + statementList.getModel(), e);
+      throw new RuntimeException("Building dataflow for node: " + statementList.getNodeId().toString() + " model: " + statementList.getModel(), e);
     }
   }
 

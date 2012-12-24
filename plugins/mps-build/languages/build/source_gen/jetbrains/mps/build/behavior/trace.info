@@ -1660,7 +1660,7 @@
   <root nodeId="5584673629410192611" modelId="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)">
     <nodeInfo nodeId="5584673629410321098" fileName="BuildLayout_Behavior.java" startLine="13" startPosition="116" endLine="14" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1117643560963359435" fileName="BuildLayout_Behavior.java" startLine="17" startPosition="89" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1117643560963359438" fileName="BuildLayout_Behavior.java" startLine="21" startPosition="88" endLine="22" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1117643560963359438" fileName="BuildLayout_Behavior.java" startLine="21" startPosition="88" endLine="22" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8739007987174736714" fileName="BuildLayout_Behavior.java" startLine="25" startPosition="109" endLine="26" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5908258303322131066" fileName="BuildLayout_Behavior.java" startLine="29" startPosition="122" endLine="30" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="5908258303322131073" fileName="BuildLayout_Behavior.java" startLine="30" startPosition="43" endLine="31" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -1674,7 +1674,7 @@
     <scopeInfo nodeId="5584673629410192613" fileName="BuildLayout_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
     <scopeInfo nodeId="5584673629410192616" fileName="BuildLayout_Behavior.java" startLine="13" startPosition="116" endLine="14" endPosition="29" />
     <scopeInfo nodeId="1117643560963359428" fileName="BuildLayout_Behavior.java" startLine="17" startPosition="89" endLine="18" endPosition="16" />
-    <scopeInfo nodeId="1117643560963359420" fileName="BuildLayout_Behavior.java" startLine="21" startPosition="88" endLine="22" endPosition="73" />
+    <scopeInfo nodeId="1117643560963359420" fileName="BuildLayout_Behavior.java" startLine="21" startPosition="88" endLine="22" endPosition="72" />
     <scopeInfo nodeId="1368030936106736626" fileName="BuildLayout_Behavior.java" startLine="25" startPosition="109" endLine="26" endPosition="19" />
     <scopeInfo nodeId="5584673629410192611" fileName="BuildLayout_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
       <varInfo nodeId="5584673629410192611" varName="thisNode" />
@@ -2632,14 +2632,14 @@
     <unitInfo nodeId="7181125477683417259" fileName="BuildExternalLayoutDependency_Behavior.java" startLine="11" startPosition="0" endLine="30" endPosition="0" unitName="jetbrains.mps.build.behavior.BuildExternalLayoutDependency_Behavior" />
   </root>
   <root nodeId="7389400916848004877" modelId="r:08f2b659-8469-4592-93bf-a6edb46ec86d(jetbrains.mps.build.behavior)">
-    <nodeInfo nodeId="1117643560963359380" fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="11" startPosition="89" endLine="12" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1117643560963359342" fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="15" startPosition="88" endLine="16" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1117643560963359380" fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="11" startPosition="89" endLine="12" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1117643560963359342" fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="15" startPosition="88" endLine="16" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7389400916848004877" fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="7389400916848004877" fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getAssembleSubTaskId_4701820937132344052#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="7389400916848004877" fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPrepareSubTaskId_4701820937132344041#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <scopeInfo nodeId="7389400916848004879" fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
-    <scopeInfo nodeId="4701820937132344069" fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="11" startPosition="89" endLine="12" endPosition="58" />
-    <scopeInfo nodeId="4701820937132344065" fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="15" startPosition="88" endLine="16" endPosition="57" />
+    <scopeInfo nodeId="4701820937132344069" fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="11" startPosition="89" endLine="12" endPosition="57" />
+    <scopeInfo nodeId="4701820937132344065" fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="15" startPosition="88" endLine="16" endPosition="56" />
     <scopeInfo nodeId="7389400916848004877" fileName="BuildLayout_AbstractContainer_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="7389400916848004877" varName="thisNode" />
     </scopeInfo>

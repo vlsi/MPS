@@ -64,7 +64,7 @@ public class BuildSource_JavaLibrary_Constraints extends BaseConstraintsDescript
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildJavaPlugin");
       }
-    }) || parentNode.getConcept().getId().startsWith("jetbrains.mps.lang.generator");
+    }) || parentNode.getConcept().getConceptId().startsWith("jetbrains.mps.lang.generator");
   }
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:5076fdb3-19c3-4563-aa26-7ace7591e78d(jetbrains.mps.build.constraints)", "6647099934206924808");

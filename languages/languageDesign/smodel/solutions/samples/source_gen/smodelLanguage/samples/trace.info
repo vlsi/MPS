@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1145576838780" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
-    <nodeInfo nodeId="1145576838787" fileName="SemanticDowncast.java" startLine="11" startPosition="56" endLine="12" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1145576838795" fileName="SemanticDowncast.java" startLine="12" startPosition="70" endLine="13" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1145576838807" fileName="SemanticDowncast.java" startLine="16" startPosition="56" endLine="17" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1171482174425" fileName="SemanticDowncast.java" startLine="17" startPosition="126" endLine="18" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1145576838787" fileName="SemanticDowncast.java" startLine="11" startPosition="56" endLine="12" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1145576838795" fileName="SemanticDowncast.java" startLine="12" startPosition="69" endLine="13" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1145576838807" fileName="SemanticDowncast.java" startLine="16" startPosition="56" endLine="17" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1171482174425" fileName="SemanticDowncast.java" startLine="17" startPosition="125" endLine="18" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1145576838835" fileName="SemanticDowncast.java" startLine="21" startPosition="47" endLine="22" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1206064836921" fileName="SemanticDowncast.java" startLine="22" startPosition="148" endLine="23" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1145576838845" fileName="SemanticDowncast.java" startLine="23" startPosition="124" endLine="24" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -12,11 +12,11 @@
     <nodeInfo nodeId="1145576838781" fileName="SemanticDowncast.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke_getID_method_1#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1145576838801" fileName="SemanticDowncast.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke_getID_method_2#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1145576838829" fileName="SemanticDowncast.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="countChildren#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="1145576838783" fileName="SemanticDowncast.java" startLine="11" startPosition="56" endLine="13" endPosition="60">
+    <scopeInfo nodeId="1145576838783" fileName="SemanticDowncast.java" startLine="11" startPosition="56" endLine="13" endPosition="59">
       <varInfo nodeId="1145576838796" varName="id_briefly" />
       <varInfo nodeId="1145576838788" varName="id_verbose" />
     </scopeInfo>
-    <scopeInfo nodeId="1145576838803" fileName="SemanticDowncast.java" startLine="16" startPosition="56" endLine="18" endPosition="105">
+    <scopeInfo nodeId="1145576838803" fileName="SemanticDowncast.java" startLine="16" startPosition="56" endLine="18" endPosition="104">
       <varInfo nodeId="1171482174426" varName="id_better" />
       <varInfo nodeId="1145576838808" varName="id_verbose" />
     </scopeInfo>

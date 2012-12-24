@@ -57,7 +57,7 @@ public class ScopePositionInfo extends PositionInfo {
       MapSequence.fromMap(myTempNodeToVarMap).put(node, varInfo);
       SortedMapSequence.fromMap(myNamesToVars).put(varInfo.getVarName(), varInfo);
     } else {
-      LOG.warning("variable name is null for node " + node.getSNodeId().toString());
+      LOG.warning("variable name is null for node " + node.getNodeId().toString());
     }
   }
 

@@ -76,7 +76,7 @@ public class EditorHighlighter implements EditorMessageOwner {
                 if (changeSet != null) {
                   ListSequence.fromList(changeSet.getModelChanges()).where(new IWhereFilter<ModelChange>() {
                     public boolean accept(ModelChange c) {
-                      return editedNode.getSNodeId().equals(c.getRootId());
+                      return editedNode.getNodeId().equals(c.getRootId());
                     }
                   }).visitAll(new IVisitor<ModelChange>() {
                     public void visit(ModelChange c) {

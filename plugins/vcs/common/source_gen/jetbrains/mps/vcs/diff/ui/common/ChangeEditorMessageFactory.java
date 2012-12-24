@@ -68,11 +68,11 @@ public class ChangeEditorMessageFactory {
       // We need to check change models because current edited model can have different indices 
       // (for instance, when some changes are already applied) 
       SNodeId beginId = (changeBegin < changeChildren.size() ?
-        changeChildren.get(changeBegin).getSNodeId() :
+        changeChildren.get(changeBegin).getNodeId() :
         null
       );
       SNodeId endId = (changeEnd < changeChildren.size() ?
-        changeChildren.get(changeEnd).getSNodeId() :
+        changeChildren.get(changeEnd).getNodeId() :
         null
       );
       int currentChildrenSize = parentNode.getChildren(role).size();

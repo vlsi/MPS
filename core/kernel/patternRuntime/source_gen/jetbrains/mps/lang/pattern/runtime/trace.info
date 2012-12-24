@@ -6,7 +6,7 @@
     <nodeInfo nodeId="7783830406851712446" fileName="PatternUtil.java" startLine="19" startPosition="67" endLine="20" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7783830406851712456" fileName="PatternUtil.java" startLine="21" startPosition="111" endLine="22" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7783830406851712471" fileName="PatternUtil.java" startLine="23" startPosition="5" endLine="24" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7783830406851712477" fileName="PatternUtil.java" startLine="24" startPosition="38" endLine="25" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7783830406851712477" fileName="PatternUtil.java" startLine="24" startPosition="38" endLine="25" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7783830406851712485" fileName="PatternUtil.java" startLine="26" startPosition="59" endLine="27" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7783830406851712500" fileName="PatternUtil.java" startLine="28" startPosition="5" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6803895172776101014" fileName="PatternUtil.java" startLine="32" startPosition="106" endLine="33" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -16,7 +16,7 @@
     <nodeInfo nodeId="7783830406851712507" fileName="PatternUtil.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="PatternUtil#()V" />
     <nodeInfo nodeId="7783830406851712423" fileName="PatternUtil.java" startLine="15" startPosition="81" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7783830406851712454" fileName="PatternUtil.java" startLine="20" startPosition="76" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="7783830406851712483" fileName="PatternUtil.java" startLine="25" startPosition="36" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="7783830406851712483" fileName="PatternUtil.java" startLine="25" startPosition="35" endLine="28" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6803895172776101026" fileName="PatternUtil.java" startLine="34" startPosition="35" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="6803895172776100975" fileName="PatternUtil.java" startLine="33" startPosition="103" endLine="39" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="6599163591527286778" fileName="PatternUtil.java" startLine="32" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="hasNChildren#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;I)Z" />

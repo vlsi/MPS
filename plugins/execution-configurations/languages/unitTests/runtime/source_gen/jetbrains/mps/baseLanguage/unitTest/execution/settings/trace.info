@@ -1672,7 +1672,7 @@
     <nodeInfo nodeId="6062668769034855313" fileName="TestUtils.java" startLine="53" startPosition="68" endLine="54" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6062668769034855320" fileName="TestUtils.java" startLine="54" startPosition="46" endLine="55" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034855333" fileName="TestUtils.java" startLine="58" startPosition="77" endLine="59" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6062668769034855339" fileName="TestUtils.java" startLine="61" startPosition="25" endLine="62" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6062668769034855339" fileName="TestUtils.java" startLine="61" startPosition="25" endLine="62" endPosition="136" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6062668769034855357" fileName="TestUtils.java" startLine="64" startPosition="7" endLine="65" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034855377" fileName="TestUtils.java" startLine="70" startPosition="26" endLine="71" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6062668769034855385" fileName="TestUtils.java" startLine="78" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="__CP__" />
@@ -1798,7 +1798,7 @@
     <scopeInfo nodeId="6062668769034855386" fileName="TestUtils.java" startLine="116" startPosition="27" endLine="116" endPosition="27" />
     <scopeInfo nodeId="6062668769034855406" fileName="TestUtils.java" startLine="127" startPosition="28" endLine="127" endPosition="28" />
     <scopeInfo nodeId="6062668769034855292" fileName="TestUtils.java" startLine="49" startPosition="65" endLine="50" endPosition="18" />
-    <scopeInfo nodeId="6062668769034855338" fileName="TestUtils.java" startLine="61" startPosition="25" endLine="62" endPosition="137" />
+    <scopeInfo nodeId="6062668769034855338" fileName="TestUtils.java" startLine="61" startPosition="25" endLine="62" endPosition="136" />
     <scopeInfo nodeId="6062668769034855376" fileName="TestUtils.java" startLine="70" startPosition="26" endLine="71" endPosition="78" />
     <scopeInfo nodeId="6062668769034855387" fileName="TestUtils.java" startLine="88" startPosition="27" endLine="89" endPosition="91" />
     <scopeInfo nodeId="6062668769034855390" fileName="TestUtils.java" startLine="119" startPosition="27" endLine="120" endPosition="98" />

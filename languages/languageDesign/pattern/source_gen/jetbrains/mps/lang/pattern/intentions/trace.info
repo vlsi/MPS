@@ -489,7 +489,7 @@
     <nodeInfo nodeId="4413230749907743482" fileName="CreateActionAsPattern_Intention.java" startLine="82" startPosition="87" endLine="83" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4413230749907743485" fileName="CreateActionAsPattern_Intention.java" startLine="86" startPosition="78" endLine="87" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4413230749907743491" fileName="CreateActionAsPattern_Intention.java" startLine="87" startPosition="58" endLine="88" endPosition="247" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1508313647019622814" fileName="CreateActionAsPattern_Intention.java" startLine="88" startPosition="247" endLine="89" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1508313647019622814" fileName="CreateActionAsPattern_Intention.java" startLine="88" startPosition="247" endLine="89" endPosition="273" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="92" startPosition="48" endLine="93" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="25" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="CreateActionAsPattern_Intention#()V" />
     <nodeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="79" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="IntentionImplementation#()V" />
@@ -542,7 +542,7 @@
       <varInfo nodeId="4413230749907735528" varName="editorContext" />
       <varInfo nodeId="4413230749907735528" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4413230749907735532" fileName="CreateActionAsPattern_Intention.java" startLine="86" startPosition="78" endLine="89" endPosition="274">
+    <scopeInfo nodeId="4413230749907735532" fileName="CreateActionAsPattern_Intention.java" startLine="86" startPosition="78" endLine="89" endPosition="273">
       <varInfo nodeId="4413230749907743486" varName="currentNode" />
     </scopeInfo>
     <scopeInfo nodeId="4413230749907735528" fileName="CreateActionAsPattern_Intention.java" startLine="92" startPosition="0" endLine="95" endPosition="0" />

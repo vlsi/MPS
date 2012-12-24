@@ -13,11 +13,11 @@ public class NodeSubstituteActionsBuilder_Behavior {
   public static String call_getPreconditionQueryMethodName_1220278671791(SNode thisNode) {
     String conceptName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "applicableConcept", false), "name");
     SNode precondition = SLinkOperations.getTarget(thisNode, "precondition", true);
-    return "nodeSubstituteActionsBuilder_Precondition_" + conceptName + "_" + precondition.getSNodeId().toString();
+    return "nodeSubstituteActionsBuilder_Precondition_" + conceptName + "_" + precondition.getNodeId().toString();
   }
 
   public static String call_getBuilderQueryMethodName_1220278926652(SNode thisNode) {
     String conceptName = SPropertyOperations.getString(SLinkOperations.getTarget(thisNode, "applicableConcept", false), "name");
-    return "nodeSubstituteActionsBuilder_ActionsFactory_" + conceptName + "_" + thisNode.getSNodeId().toString();
+    return "nodeSubstituteActionsBuilder_ActionsFactory_" + conceptName + "_" + thisNode.getNodeId().toString();
   }
 }

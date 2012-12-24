@@ -233,7 +233,7 @@ public class MergeModelsDialog extends DialogWrapper {
           myMergeSession
         );
         SNodeId nodeId = (rootId == null ?
-          ListSequence.fromList(SModelOperations.getRoots(myMetadataMergeSession.getBaseModel(), null)).first().getSNodeId() :
+          ListSequence.fromList(SModelOperations.getRoots(myMetadataMergeSession.getBaseModel(), null)).first().getNodeId() :
           rootId
         );
 
