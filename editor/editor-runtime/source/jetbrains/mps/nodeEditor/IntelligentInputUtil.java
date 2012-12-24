@@ -36,6 +36,7 @@ import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 import java.util.List;
 
@@ -293,7 +294,7 @@ public class IntelligentInputUtil {
     if (concept == null) {
       return false;
     }
-    boolean property = BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(concept)), "virtual_substituteInAmbigousPosition_1262430001741498020", new Object[]{});
+    boolean property = BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(concept)), "virtual_substituteInAmbigousPosition_1262430001741498020", new Object[]{});
     if (property) {
       SNode outputConcept = substituteInfo.getMatchingActions(text, true).get(0).getOutputConcept();
       for (INodeSubstituteAction action : substituteInfo.getMatchingActions(text, true)) {

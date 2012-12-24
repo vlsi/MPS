@@ -494,7 +494,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
 
-    return new SConceptNodeAdapter(myConceptFqName);
+    return SConceptRepository.getInstance().getConcept(myConceptFqName);
   }
 
   public Object getUserObject(Object key) {
