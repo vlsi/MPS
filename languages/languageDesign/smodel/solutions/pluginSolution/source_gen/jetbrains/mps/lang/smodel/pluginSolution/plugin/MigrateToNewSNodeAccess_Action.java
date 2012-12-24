@@ -14,11 +14,11 @@ import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
 
-public class MigrateToNewSNodeMethods_Action extends BaseAction {
+public class MigrateToNewSNodeAccess_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public MigrateToNewSNodeMethods_Action() {
-    super("Migrate to new SNode methods", "", ICON);
+  public MigrateToNewSNodeAccess_Action() {
+    super("Migrate to new SNodeAccess (one pass only!)", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -32,7 +32,7 @@ public class MigrateToNewSNodeMethods_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "MigrateToNewSNodeMethods", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "MigrateToNewSNodeAccess", t);
       this.disable(event.getPresentation());
     }
   }
@@ -55,11 +55,11 @@ public class MigrateToNewSNodeMethods_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       ApiMigrationHelper instance = new ApiMigrationHelper(((MPSProject) MapSequence.fromMap(_params).get("project")), ((Project) MapSequence.fromMap(_params).get("iproject")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope());
-      instance.migrateMethods(new ApiTransformations().getTransformations());
+      instance.migrateMethods(new OnePassApiTransformations().getTransformations());
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "MigrateToNewSNodeMethods", t);
+      LOG.error("User's action execute method failed. Action:" + "MigrateToNewSNodeAccess", t);
     }
   }
 
-  private static Logger LOG = Logger.getLogger(MigrateToNewSNodeMethods_Action.class);
+  private static Logger LOG = Logger.getLogger(MigrateToNewSNodeAccess_Action.class);
 }
