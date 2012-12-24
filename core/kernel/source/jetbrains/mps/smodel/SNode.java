@@ -37,9 +37,15 @@ import org.jetbrains.mps.migration.annotations.ShortTermMigration;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.*;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -114,7 +120,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     fireNodeReadAccess();
 
-    return myModel != null ? myModel.getModelDescriptor() : null;
+    if (myModel==null) return null;
+
+    SModelDescriptor md = myModel.getModelDescriptor();
+    return md != null ? md : new FakeModelDescriptor(myModel);
   }
 
   public final boolean hasProperty(String propertyName) {
@@ -1922,5 +1931,88 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public void setBooleanProperty(String propertyName, boolean value) {
     SNodeAccessUtil.setProperty(this, propertyName, value ? "" + value : null);
+  }
+
+  /**
+   * This is for migration purposes, until we get rid of SModel class
+   */
+  private static class FakeModelDescriptor implements org.jetbrains.mps.openapi.model.SModel {
+    private SModel myModel;
+
+    public FakeModelDescriptor(@NotNull SModel md) {
+      myModel = md;
+    }
+
+    @Override
+    public SModelId getModelId() {
+      return myModel.getSModelId();
+    }
+
+    @Override
+    public String getModelName() {
+      return getModelReference().getModelName();
+    }
+
+    @NotNull
+    @Override
+    public SModelReference getModelReference() {
+      return myModel.getSModelReference();
+    }
+
+    @Override
+    public ModelRoot getModelRoot() {
+      return null;
+    }
+
+    @Override
+    public void setModelRoot(ModelRoot mr) {
+      LOG.warning("Setting model root of a detached model is quite ", new Throwable());
+    }
+
+    @Override
+    public SModule getModule() {
+      return null;
+    }
+
+    @Override
+    public Iterable<? extends org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
+      return myModel.roots();
+    }
+
+    @Override
+    public void addRootNode(org.jetbrains.mps.openapi.model.SNode node) {
+      myModel.addRoot((SNode) node);
+    }
+
+    @Override
+    public org.jetbrains.mps.openapi.model.SNode getNode(org.jetbrains.mps.openapi.model.SNodeId id) {
+      return myModel.getNode(id);
+    }
+
+    @NotNull
+    @Override
+    public DataSource getSource() {
+      return new NullDataSource();
+    }
+
+    @Override
+    public boolean isLoaded() {
+      return true;
+    }
+
+    @Override
+    public void load() throws IOException {
+
+    }
+
+    @Override
+    public void save() throws IOException {
+
+    }
+
+    @Override
+    public void unload() {
+
+    }
   }
 }
