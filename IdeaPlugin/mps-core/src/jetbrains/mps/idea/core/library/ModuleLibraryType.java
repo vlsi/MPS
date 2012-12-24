@@ -28,7 +28,6 @@ import com.intellij.openapi.roots.libraries.DummyLibraryProperties;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryType;
 import com.intellij.openapi.roots.libraries.NewLibraryConfiguration;
-import com.intellij.openapi.roots.libraries.PersistentLibraryKind;
 import com.intellij.openapi.roots.libraries.ui.AttachRootButtonDescriptor;
 import com.intellij.openapi.roots.libraries.ui.LibraryEditorComponent;
 import com.intellij.openapi.roots.libraries.ui.LibraryPropertiesEditor;
@@ -70,10 +69,8 @@ import java.util.List;
 import java.util.Set;
 
 public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
-  public static final PersistentLibraryKind MPS_MODULE_LIBRARY_KIND = new MpsModuleLibraryKind();
-
   public ModuleLibraryType() {
-    super(MPS_MODULE_LIBRARY_KIND);
+    super(MpsModuleLibraryKindContainer.MPS_MODULE_LIBRARY_KIND);
   }
 
   @Nullable
@@ -166,7 +163,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
 
   public static boolean isModuleLibrary(Library l) {
     if (l instanceof LibraryEx) {
-      return MPS_MODULE_LIBRARY_KIND.equals(((LibraryEx) l).getKind());
+      return MpsModuleLibraryKindContainer.MPS_MODULE_LIBRARY_KIND.equals(((LibraryEx) l).getKind());
     }
     return false;
   }
@@ -301,22 +298,5 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
     result.addAll(availableSolutions);
     result.addAll(availableLanguages);
     return result;
-  }
-
-  private static class MpsModuleLibraryKind extends PersistentLibraryKind<DummyLibraryProperties> {
-    public MpsModuleLibraryKind() {
-      super("mps.solution.library");
-    }
-
-    @NotNull
-    @Override
-    public DummyLibraryProperties createDefaultProperties() {
-      return new DummyLibraryProperties();
-    }
-
-    @Override
-    public OrderRootType[] getAdditionalRootTypes() {
-      return new OrderRootType[]{ModuleXmlRootDetector.MPS_MODULE_XML};
-    }
   }
 }
