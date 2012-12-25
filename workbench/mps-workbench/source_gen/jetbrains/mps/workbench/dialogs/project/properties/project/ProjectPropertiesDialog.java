@@ -8,10 +8,10 @@ import com.intellij.openapi.project.Project;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.smodel.ModelAccess;
-import com.intellij.uiDesigner.core.GridConstraints;
-import com.intellij.ui.components.JBPanel;
-import com.intellij.uiDesigner.core.GridLayoutManager;
+import java.awt.GridBagConstraints;
 import java.awt.Insets;
+import com.intellij.ui.components.JBPanel;
+import java.awt.GridLayout;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import com.intellij.ui.components.JBList;
 import jetbrains.mps.workbench.dialogs.project.components.parts.renderers.PathRenderer;
@@ -90,14 +90,11 @@ public final class ProjectPropertiesDialog extends DialogWrapper {
 
 
   private Object getGridConstraints(int row, boolean fill) {
-    // TODO: resolve problem with GridConstraints in stubs 
-    return new GridConstraints(row, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, (fill ?
-      GridConstraints.FILL_BOTH :
-      GridConstraints.FILL_HORIZONTAL
-    ), GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, (fill ?
-      GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW :
-      GridConstraints.SIZEPOLICY_FIXED
-    ), null, null, null, 0);
+    // TODO: resolve problem with com.intellij.uiDesigner.core.GridLayoutManager & com.intellij.uiDesigner.core.GridConstraints in stubs 
+    if (fill) {
+      return new GridBagConstraints(0, row, 1, 1, 0, 1, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 0, 0, 0), 10, 10);
+    }
+    return new GridBagConstraints(0, row, 1, 1, 0, 0, GridBagConstraints.SOUTHWEST, GridBagConstraints.HORIZONTAL, new Insets(0, 0, 0, 0), 0, 0);
   }
 
 
@@ -108,12 +105,12 @@ public final class ProjectPropertiesDialog extends DialogWrapper {
       myExtraPanels.length
     ));
     int rowIndex = 0;
-    myPanel = new JBPanel(new GridLayoutManager(rowCount, 1, new Insets(5, 5, 5, 5), -1, -1));
+    myPanel = new JBPanel(new GridLayout(rowCount, 1));
     myPanel.setAutoscrolls(false);
-    myPanel.add(createProjectModulesList(), (GridConstraints) getGridConstraints(rowIndex++, true));
-    myPanel.add(createTestConfigList(), (GridConstraints) getGridConstraints(rowIndex++, true));
+    myPanel.add(createProjectModulesList(), getGridConstraints(rowIndex++, true));
+    myPanel.add(createTestConfigList(), getGridConstraints(rowIndex++, true));
     for (ProjectPrefsExtraPanel extraPanel : Sequence.fromIterable(Sequence.fromArray(myExtraPanels))) {
-      myPanel.add(extraPanel.getComponent(), (GridConstraints) getGridConstraints(rowIndex++, false));
+      myPanel.add(extraPanel.getComponent(), getGridConstraints(rowIndex++, false));
     }
   }
 
