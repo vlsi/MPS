@@ -21,7 +21,6 @@ import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.editor.Editor;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
-import com.intellij.psi.*;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.project.SolutionIdea;
@@ -58,7 +57,8 @@ public class MpsSourcePosition extends SourcePosition {
     SNodePointer rootPointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
       @Override
       public SNodePointer compute() {
-        return new SNodePointer(myNodePointer.getNode().getContainingRoot());
+        SNode root = myNodePointer.getNode().getTopmostAncestor();
+        return new SNodePointer(root.getModel() == null ? null : root);
       }
     });
     return MPSNodesVirtualFileSystem.getInstance().getFileFor(rootPointer);
@@ -90,7 +90,7 @@ public class MpsSourcePosition extends SourcePosition {
 
     if (element != null && element.getParent() instanceof PsiForStatement) {
       PsiStatement initialization = ((PsiForStatement) element.getParent()).getInitialization();
-      if (initialization != null){
+      if (initialization != null) {
         element = initialization;
       }
     }
