@@ -20,7 +20,12 @@ import jetbrains.mps.util.FileUtil;
 import org.jdom.Document;
 import org.jdom.Element;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -105,5 +110,35 @@ public class Utils {
   private static boolean isModuleCompileInMPS(File moduleFile) {
     String content = FileUtil.read(moduleFile);
     return !(content.contains("compileInMPS=\"false\""));
+  }
+
+  public static File root() {
+    return new File(".");
+  }
+
+  public static List<File> files(File root) {
+    List<File> result = new ArrayList<File>();
+    collectFiles(root, result);
+    return result;
+  }
+
+  private static void collectFiles(File file, List<File> result) {
+    if (file.isFile()) {
+      result.add(file);
+    } else {
+      for (File inner : file.listFiles()) {
+        collectFiles(inner, result);
+      }
+    }
+  }
+
+  public static List<File> withExtension(String ext, List<File> files) {
+    List<File> result = new ArrayList<File>();
+    for (File file : files) {
+      if (file.getName().endsWith(ext)) {
+        result.add(file);
+      }
+    }
+    return result;
   }
 }
