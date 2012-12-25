@@ -23,6 +23,7 @@ import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.persistence.RoleIdsComponent;
+import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
@@ -235,37 +236,41 @@ public class ModelLinkMap {
 
   public void fillRoleIdsComponent() {
     if (RoleIdsComponent.isEnabled()) {
-      for (SModel.ImportElement i : ListSequence.fromList(myModel.getAdditionalModelVersions())) {
-        RoleIdsComponent.modelVersionRead(i);
-      }
-      for (final SNodePointer ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeRoleMap).keySet())) {
-        ListSequence.fromList(MapSequence.fromMap(myNodeRoleMap).get(ptr)).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode n) {
-            RoleIdsComponent.nodeRoleRead(n, ptr);
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          for (SModel.ImportElement i : ListSequence.fromList(myModel.getAdditionalModelVersions())) {
+            RoleIdsComponent.modelVersionRead(i);
           }
-        });
-      }
-      for (final SNodePointer ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeTypeMap).keySet())) {
-        ListSequence.fromList(MapSequence.fromMap(myNodeTypeMap).get(ptr)).visitAll(new IVisitor<SNode>() {
-          public void visit(SNode n) {
-            RoleIdsComponent.conceptRead(n, ptr);
+          for (final SNodePointer ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeRoleMap).keySet())) {
+            ListSequence.fromList(MapSequence.fromMap(myNodeRoleMap).get(ptr)).visitAll(new IVisitor<SNode>() {
+              public void visit(SNode n) {
+                RoleIdsComponent.nodeRoleRead(n, ptr);
+              }
+            });
           }
-        });
-      }
-      for (final SNodePointer ptr : SetSequence.fromSet(MapSequence.fromMap(myRefRoleMap).keySet())) {
-        ListSequence.fromList(MapSequence.fromMap(myRefRoleMap).get(ptr)).visitAll(new IVisitor<SReference>() {
-          public void visit(SReference r) {
-            RoleIdsComponent.referenceRoleRead(r, ptr);
+          for (final SNodePointer ptr : SetSequence.fromSet(MapSequence.fromMap(myNodeTypeMap).keySet())) {
+            ListSequence.fromList(MapSequence.fromMap(myNodeTypeMap).get(ptr)).visitAll(new IVisitor<SNode>() {
+              public void visit(SNode n) {
+                RoleIdsComponent.conceptRead(n, ptr);
+              }
+            });
           }
-        });
-      }
-      for (final SNodePointer ptr : SetSequence.fromSet(MapSequence.fromMap(myPropNameMap).keySet())) {
-        ListSequence.fromList(MapSequence.fromMap(myPropNameMap).get(ptr)).visitAll(new IVisitor<Pair<SNode, String>>() {
-          public void visit(Pair<SNode, String> nP) {
-            RoleIdsComponent.propertyNameRead(nP.o1, nP.o2, ptr);
+          for (final SNodePointer ptr : SetSequence.fromSet(MapSequence.fromMap(myRefRoleMap).keySet())) {
+            ListSequence.fromList(MapSequence.fromMap(myRefRoleMap).get(ptr)).visitAll(new IVisitor<SReference>() {
+              public void visit(SReference r) {
+                RoleIdsComponent.referenceRoleRead(r, ptr);
+              }
+            });
           }
-        });
-      }
+          for (final SNodePointer ptr : SetSequence.fromSet(MapSequence.fromMap(myPropNameMap).keySet())) {
+            ListSequence.fromList(MapSequence.fromMap(myPropNameMap).get(ptr)).visitAll(new IVisitor<Pair<SNode, String>>() {
+              public void visit(Pair<SNode, String> nP) {
+                RoleIdsComponent.propertyNameRead(nP.o1, nP.o2, ptr);
+              }
+            });
+          }
+        }
+      });
     }
   }
 
