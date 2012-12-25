@@ -63,7 +63,7 @@ public interface SModel {
    */
   void addRootNode(SNode node);
 
-  // TODO removeRootNode();
+  void removeRootNode(SNode node);
 
   SNode getNode(SNodeId id);
 

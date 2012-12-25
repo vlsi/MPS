@@ -95,6 +95,12 @@ public abstract class BaseSModelDescriptor implements SModelDescriptor {
   }
 
   @Override
+  public void removeRootNode(@NotNull SNode node) {
+    // TODO remove cast
+    getSModel().removeRoot((jetbrains.mps.smodel.SNode) node);
+  }
+
+  @Override
   public SNode getNode(SNodeId id) {
     return getSModel().getNode(id);
   }

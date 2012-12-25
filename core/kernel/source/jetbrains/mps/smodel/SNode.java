@@ -1994,6 +1994,11 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
 
     @Override
+    public void removeRootNode(org.jetbrains.mps.openapi.model.SNode node) {
+      myModel.removeRoot((SNode) node);
+    }
+
+    @Override
     public org.jetbrains.mps.openapi.model.SNode getNode(org.jetbrains.mps.openapi.model.SNodeId id) {
       return myModel.getNode(id);
     }
