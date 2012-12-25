@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.roots.editors;
 
+import com.intellij.icons.AllIcons.Modules;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
@@ -34,7 +35,6 @@ import com.intellij.ui.roots.ToolbarPanel;
 import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
@@ -43,8 +43,6 @@ import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryContainer.ContentEntryEditorListener;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SModel;
-import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
@@ -96,7 +94,7 @@ public class ContentEntriesEditor {
     AnAction action = new IconWithTextAction(
       PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.title"),
       PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.tip"),
-      IdeIcons.ADD_MODEL_ROOT_ICON) {
+      Modules.AddContentEntry) {
       @Override
       public void actionPerformed(AnActionEvent e) {
         final JBPopup popup = JBPopupFactory.getInstance().createListPopup(
@@ -250,32 +248,7 @@ public class ContentEntriesEditor {
     }
 
     public void actionPerformed(AnActionEvent e) {
-      ModelRoot modelRoot = null;
-      if(myType.equals("file_based")) {
-        final ModelRoot modelRootBase = PersistenceRegistry.getInstance().getModelRootFactory("default").create();
-        modelRoot = new FileBasedModelRoot() {
-          @Override
-          public String getType() { return "file_based"; }
-
-          @Override
-          public SModel getModel(SModelId id) { return modelRootBase.getModel(id); }
-
-          @Override
-          public Iterable<SModel> loadModels() {
-            return modelRootBase.getModels();
-          }
-
-          @Override
-          public boolean canCreateModel(String modelName) {
-            return false;
-          }
-
-          @Override
-          public SModel createModel(String modelName) { return modelRootBase.createModel(modelName); }
-        };
-      }
-      else
-        modelRoot = PersistenceRegistry.getInstance().getModelRootFactory(myType).create();
+      ModelRoot modelRoot = PersistenceRegistry.getInstance().getModelRootFactory(myType).create();
       ModelRootEntry entry = ModelRootEntryPersistence.getInstance().getModelRootEntry(modelRoot);
       if(entry instanceof FileBasedModelRootEntry) {
         ((FileBasedModelRoot)entry.getModelRoot()).setContentRoot(

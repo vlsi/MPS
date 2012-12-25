@@ -74,7 +74,6 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.FontMetrics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -233,7 +232,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     protected JTextField myTextFieldName;
 
     public CommonTab() {
-      super(PropertiesBundle.message("mps.properties.configurable.common.commontab.title"), IdeIcons.ADD_MODEL_ROOT_ICON, PropertiesBundle.message("mps.properties.configurable.common.commontab.tip"));
+      super(PropertiesBundle.message("mps.properties.configurable.common.commontab.title"), null, PropertiesBundle.message("mps.properties.configurable.common.commontab.tip"));
       init();
     }
 

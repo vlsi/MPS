@@ -78,6 +78,7 @@ public class MPSIcons {
 
   public static class Help {
     public static final Icon Documentation = IconLoader.getIcon("/help/documentation.png");
+    public static final Icon JetbrainsTvMPS = IconLoader.getIcon("/help/jetbrainsTvMPS.png");
     public static final Icon ReadHelp = IconLoader.getIcon("/help/readHelp.png");
     public static final Icon ScreenCast = IconLoader.getIcon("/help/screencast.png");
     public static final Icon Tutorial = IconLoader.getIcon("/help/tutorial.png");
@@ -104,6 +105,7 @@ public class MPSIcons {
     public static final Icon ProjectModels = IconLoader.getIcon("/nodes/projectModels.png");
     public static final Icon Reduction = IconLoader.getIcon("/nodes/reduction.png");
     public static final Icon Refactoring = IconLoader.getIcon("/nodes/refactoring.png");
+    public static final Icon RootNode = IconLoader.getIcon("/nodes/rootNode.png");
     public static final Icon Rule = IconLoader.getIcon("/nodes/rule.png");
     public static final Icon Solution = IconLoader.getIcon("/nodes/solution.png");
     public static final Icon Structure = IconLoader.getIcon("/nodes/structure.png");
@@ -112,7 +114,26 @@ public class MPSIcons {
     public static final Icon TransientModels = IconLoader.getIcon("/nodes/transientModels.png");
     public static final Icon TransientModelsDisable = IconLoader.getIcon("/nodes/transientModelsDisable.png");
     public static final Icon Type = IconLoader.getIcon("/nodes/type.png");
+    public static final Icon Unknown = IconLoader.getIcon("/nodes/unknown.png");
     public static final Icon UsagesFinder = IconLoader.getIcon("/nodes/usagesFinder.png");
+    
+    public static class Models {
+      public static final Icon StructureModel = IconLoader.getIcon("/nodes/models/structureModel.png");
+      public static final Icon EditorModel = IconLoader.getIcon("/nodes/models/editorModel.png");
+      public static final Icon ActionsModel = IconLoader.getIcon("/nodes/models/actionsModel.png");
+      public static final Icon TemplatesModel = IconLoader.getIcon("/nodes/models/templatesModel.png");
+      public static final Icon TypesystemModel = IconLoader.getIcon("/nodes/models/typesystemModel.png");
+      public static final Icon IntentionsModel = IconLoader.getIcon("/nodes/models/intentionsModel.png");
+      public static final Icon FindUsagesModel = IconLoader.getIcon("/nodes/models/findUsagesModel.png");
+      public static final Icon PluginModel = IconLoader.getIcon("/nodes/models/pluginModel.png");
+      public static final Icon BehaviourModel = IconLoader.getIcon("/nodes/models/behaviorModel.png");
+      public static final Icon ConstraintsModel = IconLoader.getIcon("/nodes/models/constraintsModel.png");
+      public static final Icon DataFlowModel = IconLoader.getIcon("/nodes/models/dataFlowModel.png");
+      public static final Icon RefactoringsModel = IconLoader.getIcon("/nodes/models/refactoringsModel.png");
+      public static final Icon StubsModel = IconLoader.getIcon("/nodes/models/stubsModel.png");
+      public static final Icon TextGenModel = IconLoader.getIcon("/nodes/models/textGenModel.png");
+      public static final Icon AccessoryModel = IconLoader.getIcon("/nodes/models/accessoryModel.png");
+    }
   }
 
   public static class ProjectPane {
