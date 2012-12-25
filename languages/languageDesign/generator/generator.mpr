@@ -26,10 +26,10 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${mps_home}/languages/baseLanguage/unitTest/unitTest.mpl" />
+      <modulePath path="${mps_home}/languages/baseLanguage/unitTest/jetbrains.mps.baseLanguage.unitTest.mpl" />
       <modulePath path="${mps_home}/core/generator/solutions/generator/jetbrains.mps.generator.msd" folder="" />
-      <modulePath path="${mps_home}/core/kernel/patternRuntime/runtime.msd" folder="" />
-      <modulePath path="${mps_home}/languages/languageDesign/plugin/plugin.mpl" />
+      <modulePath path="${mps_home}/core/kernel/patternRuntime/jetbrains.mps.lang.pattern.runtime.msd" folder="" />
+      <modulePath path="${mps_home}/languages/languageDesign/plugin/jetbrains.mps.lang.plugin.mpl" />
       <modulePath path="${project}/languages/descriptor/jetbrains.mps.lang.descriptor.mpl" folder="" />
       <modulePath path="${project}/languages/errorReporting/jetbrains.mps.transformation.test.errorReporting.mpl" folder="" />
       <modulePath path="${project}/languages/generationContext/jetbrains.mps.lang.generator.generationContext.mpl" />

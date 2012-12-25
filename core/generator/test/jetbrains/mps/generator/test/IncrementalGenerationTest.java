@@ -76,7 +76,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
   @Test
   public void testBaseLanguageStructure() throws IOException {
-    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/languages/baseLanguage/baseLanguage/baseLanguage.mpr"));
+    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/MPS.mpr"));
     SModelDescriptor descr = findModel(p, "jetbrains.mps.baseLanguage.structure");
 
     doTestIncrementalGeneration(p, descr,
@@ -94,7 +94,7 @@ public class IncrementalGenerationTest extends GenerationTestBase {
 
   @Test
   public void testBaseLanguageEditor() throws IOException {
-    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/languages/baseLanguage/baseLanguage/baseLanguage.mpr"));
+    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/MPS.mpr"));
     SModelDescriptor descr = findModel(p, "jetbrains.mps.baseLanguage.editor");
 
     doTestIncrementalGeneration(p, descr,
