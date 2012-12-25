@@ -13,6 +13,8 @@ import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.descriptor.GeneratableSModelDescriptor;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
+import jetbrains.mps.smodel.DefaultSModel;
 import jetbrains.mps.kernel.model.MissingDependenciesFixer;
 import java.util.Set;
 import java.util.HashSet;
@@ -21,6 +23,7 @@ import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.Language;
 
 public class ModelProperties {
+  private static String USE_MODEL_FOLDER_FOR_GENERATION = "useModelFolderForGeneration";
   private List<SModelReference> myImportedModels = new ArrayList<SModelReference>();
   private List<ModuleReference> myUsedLanguages = new ArrayList<ModuleReference>();
   private List<ModuleReference> myUsedDevKits = new ArrayList<ModuleReference>();
@@ -28,6 +31,7 @@ public class ModelProperties {
   private SModelDescriptor myModelDescriptor;
   private IOperationContext myContext;
   private boolean myDoNotGenerate;
+  private boolean myGenerateIntoModelFolder;
 
   public ModelProperties(SModelDescriptor modelDescriptor, IOperationContext context) {
     myModelDescriptor = modelDescriptor;
@@ -38,6 +42,7 @@ public class ModelProperties {
     myUsedDevKits.addAll(model.importedDevkits());
     myLanguagesEngagedOnGeneration.addAll(model.engagedOnGenerationLanguages());
     myDoNotGenerate = myModelDescriptor instanceof GeneratableSModelDescriptor && ((GeneratableSModelDescriptor) myModelDescriptor).isDoNotGenerate();
+    myGenerateIntoModelFolder = myModelDescriptor instanceof GeneratableSModelDescriptor && ((GeneratableSModelDescriptor) myModelDescriptor).isGenerateIntoModelFolder();
   }
 
   public SModelDescriptor getModelDescriptor() {
@@ -68,6 +73,14 @@ public class ModelProperties {
     myDoNotGenerate = doNotGenerate;
   }
 
+  public boolean isGenerateIntoModelFolder() {
+    return myGenerateIntoModelFolder;
+  }
+
+  public void setGenerateIntoModelFolder(boolean generateIntoModelFolder) {
+    myGenerateIntoModelFolder = generateIntoModelFolder;
+  }
+
   public void saveChanges() {
     if (!(myModelDescriptor instanceof EditableSModelDescriptor)) {
       return;
@@ -88,6 +101,15 @@ public class ModelProperties {
             dmd.setDoNotGenerate(myDoNotGenerate);
           }
         }
+        if (myModelDescriptor instanceof DefaultSModelDescriptor) {
+          DefaultSModel dm = (DefaultSModel) myModelDescriptor.getSModel();
+          if (myGenerateIntoModelFolder) {
+            dm.getSModelHeader().setOptionalProperty(USE_MODEL_FOLDER_FOR_GENERATION, Boolean.TRUE.toString());
+          } else {
+            dm.getSModelHeader().removeOptionalProperty(USE_MODEL_FOLDER_FOR_GENERATION);
+          }
+        }
+
         ((EditableSModelDescriptor) myModelDescriptor).save();
       }
     });

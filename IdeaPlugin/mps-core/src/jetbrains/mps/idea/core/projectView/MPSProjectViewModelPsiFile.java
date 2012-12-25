@@ -19,8 +19,12 @@ package jetbrains.mps.idea.core.projectView;
 import com.intellij.ide.projectView.PresentationData;
 import com.intellij.ide.projectView.impl.nodes.PsiFileNode;
 import com.intellij.openapi.options.ex.SingleConfigurableEditor;
+import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
+import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable.Tab;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
+import jetbrains.mps.idea.core.MPSBundle;
+import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.ModuleOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.workbench.choose.models.ModelPresentation;
@@ -51,8 +55,13 @@ public class MPSProjectViewModelPsiFile extends PsiFileNode {
   @Override
   public void navigate(boolean requestFocus) {
     MPSPropertiesConfigurable configurable = new ModelPropertiesConfigurable(mySModelDescriptor,
-      new ModuleOperationContext(mySModelDescriptor.getModule())
+      new ModuleOperationContext(mySModelDescriptor.getModule()) {
+        @Override
+        public Project getProject() { return ProjectHelper.toMPSProject(MPSProjectViewModelPsiFile.this.getProject()); }
+      },
+      true
     );
+
     final SingleConfigurableEditor dialog = new SingleConfigurableEditor(myProject, configurable);
 
     SwingUtilities.invokeLater(new Runnable() {
@@ -66,6 +75,6 @@ public class MPSProjectViewModelPsiFile extends PsiFileNode {
   @Nullable
   @Override
   public String getNavigateActionText(boolean b) {
-    return "Open Model Settings";
+    return MPSBundle.message("open.model.properties.action");
   }
 }

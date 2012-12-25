@@ -26,6 +26,7 @@ import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.dialogs.properties.tables.items.DependenciesTableItem;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.Language;
@@ -54,11 +55,16 @@ import java.util.List;
 public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
   private ModelProperties myModelProperties;
   private SModelDescriptor myModelDescriptor;
+  private boolean myInPlugin = false;
 
   public ModelPropertiesConfigurable(SModelDescriptor modelDescriptor, IOperationContext context) {
+    this(modelDescriptor, context, false);
+  }
+  public ModelPropertiesConfigurable(SModelDescriptor modelDescriptor, IOperationContext context, boolean inPlugin) {
     super(context.getProject());
     myModelDescriptor = modelDescriptor;
     myModelProperties = new ModelProperties(modelDescriptor, context);
+    myInPlugin = inPlugin;
 
     addTab(new ModelCommonTab());
     addTab(new ModelUsedLanguagesTab());
@@ -124,7 +130,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
     }
   }
 
-  private class ModelDependenciesTab extends DependenciesTab {
+  protected class ModelDependenciesTab extends DependenciesTab {
 
     @Override
     protected DependTableModel getDependTableModel() {
@@ -171,30 +177,43 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
   }
 
   public class InfoTab extends Tab {
-    private JBCheckBox myCheckBox;
+    private final boolean myIsDefSModelDescr;
+    private JBCheckBox myDoNotGenerateCheckBox;
+    private JBCheckBox myGenerateIntoModelFolderCheckBox;
 
     public InfoTab() {
       super(PropertiesBundle.message("mps.properties.configurable.model.infotab.title"), IdeIcons.DEFAULT_ICON, PropertiesBundle.message("mps.properties.configurable.model.infotab.tip"));
+      myIsDefSModelDescr = myInPlugin && myModelDescriptor instanceof DefaultSModelDescriptor;
       init();
     }
 
     @Override
     public void apply() {
-      myModelProperties.setDoNotGenerate(myCheckBox.isSelected());
+      myModelProperties.setDoNotGenerate(myDoNotGenerateCheckBox.isSelected());
+      if(myIsDefSModelDescr)
+        myModelProperties.setGenerateIntoModelFolder(myGenerateIntoModelFolderCheckBox.isSelected());
     }
 
     @Override
     public void init() {
-      final JPanel panel = new JPanel();
-      panel.setLayout(new GridLayoutManager(3, 1, INSETS, -1, -1));
+      int rowsCount = myIsDefSModelDescr ? 4 : 3;
+      int rowIndex = 0;
 
-      myCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.configurable.model.infotab.checkbox"), myModelProperties.isDoNotGenerate());
-      panel.add(myCheckBox, new GridConstraints(0, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+      final JPanel panel = new JPanel();
+      panel.setLayout(new GridLayoutManager(rowsCount, 1, INSETS, -1, -1));
+
+      myDoNotGenerateCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.configurable.model.infotab.checkboxDNG"), myModelProperties.isDoNotGenerate());
+      panel.add(myDoNotGenerateCheckBox, new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+
+      if(myIsDefSModelDescr) {
+        myGenerateIntoModelFolderCheckBox = new JBCheckBox(PropertiesBundle.message("mps.properties.configurable.model.infotab.checkboxGIMF"), myModelProperties.isGenerateIntoModelFolder());
+        panel.add(myGenerateIntoModelFolderCheckBox, new GridConstraints(rowIndex++, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+      }
 
       final JBLabel label = new JBLabel();
       label.setText(getInfoText());
-      panel.add(label, new GridConstraints(1, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
-      panel.add(new Spacer(), new GridConstraints(2, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
+      panel.add(label, new GridConstraints(rowIndex, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, GridConstraints.SIZEPOLICY_FIXED, null, null, null, 0, false));
+      panel.add(new Spacer(), new GridConstraints(rowIndex, 0, 1, 1, GridConstraints.ANCHOR_CENTER, GridConstraints.FILL_BOTH, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, GridConstraints.SIZEPOLICY_CAN_SHRINK | GridConstraints.SIZEPOLICY_CAN_GROW, null, null, null, 0, false));
 
       setTabComponent(panel);
     }
@@ -222,7 +241,8 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
 
     @Override
     public boolean isModified() {
-      return myCheckBox.isSelected() != myModelProperties.isDoNotGenerate();
+      return myDoNotGenerateCheckBox.isSelected() != myModelProperties.isDoNotGenerate()
+        || ( myIsDefSModelDescr ? (myGenerateIntoModelFolderCheckBox.isSelected() != myModelProperties.isGenerateIntoModelFolder()) : false );
     }
   }
 }

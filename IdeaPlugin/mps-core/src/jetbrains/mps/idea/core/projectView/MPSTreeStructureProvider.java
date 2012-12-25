@@ -57,13 +57,17 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
       final List<AbstractTreeNode> modifiedChildren = new ArrayList<AbstractTreeNode>();
 
       for (AbstractTreeNode childNode : children) {
-        IFile childModelFile = getModelFile(childNode);
+        final IFile childModelFile = getModelFile(childNode);
+        final AbstractTreeNode node = childNode;
 
         if (childModelFile != null && childNode instanceof PsiFileNode) {
-          modifiedChildren.add(
-            new MPSProjectViewModelPsiFile(
-              (PsiFileNode)childNode, SModelFileTracker.getInstance().findModel(childModelFile))
-          );
+          ModelAccess.instance().runReadAction(new Runnable() {
+            public void run() {
+              SModelDescriptor descr = SModelFileTracker.getInstance().findModel(childModelFile);
+              if(descr != null)
+                modifiedChildren.add(new MPSProjectViewModelPsiFile((PsiFileNode)node, descr));
+            }
+          });
           continue;
         }
         modifiedChildren.add(childNode);

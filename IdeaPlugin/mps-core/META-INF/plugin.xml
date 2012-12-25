@@ -127,12 +127,12 @@
             class="jetbrains.mps.idea.core.actions.UnmarkModelRootAction">
       <add-to-group group-id="MarkRootGroup"/>
     </action>
-    <action id="jetbrains.mps.idea.core.actions.OpenModelPropertiesAction"
+    <!--<action id="jetbrains.mps.idea.core.actions.OpenModelPropertiesAction"
             class="jetbrains.mps.idea.core.actions.OpenModelPropertiesAction">
       <add-to-group group-id="ProjectViewPopupMenuSettingsGroup" relative-to-action="MarkRootGroup"
                     anchor="after"/>
       <keyboard-shortcut first-keystroke="alt ENTER" keymap="$default"/>
-    </action>
+    </action>-->
     <action id="jetbrains.mps.idea.core.actions.AddMissingDependencyAction"
             class="jetbrains.mps.idea.core.actions.AddMissingDependencyAction">
       <add-to-group group-id="jetbrains.mps.ide.editor.actions.ActionsAsIntentions_ActionGroup"/>
