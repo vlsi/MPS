@@ -103,6 +103,9 @@ public class TypeContextManager implements CoreComponent {
 
     public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
       for (SModelDescriptor md : replacedModels) {
+        if (! myListeningForModels.contains(md)) {
+          continue;
+        }
         SModelReference modelRef = md.getSModelReference();
         synchronized (myLock) {
           for (SNodePointer nodePointer : new ArrayList<SNodePointer>(myTypeCheckingContexts.keySet())) {

@@ -31,6 +31,7 @@ import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -47,9 +48,19 @@ public class ModelGenerationStatusManager implements CoreComponent {
   private final SModelRepositoryAdapter mySmodelReloadListener = new SModelRepositoryAdapter() {
     @Override
     public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
+      Set<SModelDescriptor> registeredModels = new HashSet<SModelDescriptor>();
+      for (SModelDescriptor modelDescriptor : replacedModels){
+        if (modelDescriptor.isRegistered()) {
+          registeredModels.add(modelDescriptor);
+        }
+      }
       ModelGenerationStatusManager.this.invalidateData(replacedModels);
     }
   };
+
+  public ModelGenerationStatusManager() {
+
+  }
 
   public void init() {
     if (INSTANCE != null) {

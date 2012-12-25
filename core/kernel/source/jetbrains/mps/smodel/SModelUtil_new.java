@@ -79,6 +79,9 @@ public class SModelUtil_new implements CoreComponent {
     @Override
     public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
       for (SModelDescriptor descriptor : replacedModels) {
+        if (!descriptor.isRegistered())  {
+          continue;
+        }
         if (Language.getModelAspect(descriptor) == LanguageAspect.STRUCTURE) {
           SModelUtil.clearCaches();
           return;

@@ -104,9 +104,12 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
   };
   private SModelRepositoryListener myModelReloadListener = new SModelRepositoryAdapter() {
     public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
-      for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
-        SNode sNode = editorComponent.getEditedNode();
-        for (SModelDescriptor modelDescriptor : replacedModels){
+      for (SModelDescriptor modelDescriptor : replacedModels) {
+        if (!modelDescriptor.isRegistered()){
+          continue;
+        }
+        for (EditorComponent editorComponent : new ArrayList<EditorComponent>(myCheckedOnceEditors)) {
+          SNode sNode = editorComponent.getEditedNode();
           if (sNode != null && !jetbrains.mps.util.SNodeOperations.isDisposed(sNode) && sNode.getModel().getSModelReference().equals(modelDescriptor.getSModelReference())) {
             myCheckedOnceEditors.remove(editorComponent);
           }
@@ -495,7 +498,8 @@ public class Highlighter implements EditorMessageOwner, ProjectComponent {
           if (myStopThread) return false;
 
           SNode node = editor.getEditedNode();
-          if (node == null || node.getModel()==null || jetbrains.mps.util.SNodeOperations.isDisposed(node)) return false;
+          if (node == null || node.getModel() == null || jetbrains.mps.util.SNodeOperations.isDisposed(node))
+            return false;
           if (node.getModel().getModelDescriptor() == null) {
             // asking runLoPrioRead() implementation to re-execute this task later:
             // editor was not updated in accordance with last modelReload event yet.

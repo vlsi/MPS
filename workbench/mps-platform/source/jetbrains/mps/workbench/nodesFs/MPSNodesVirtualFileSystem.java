@@ -241,6 +241,10 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
     public void modelsReplaced(final Set<SModelDescriptor> descriptors) {
       for (SModelDescriptor sModelDescriptor : descriptors) {
 
+        if (!sModelDescriptor.isRegistered()) {
+          continue;
+        }
+
         for (SNode root : sModelDescriptor.getSModel().roots()) {
           updateModificationStamp(root);
         }

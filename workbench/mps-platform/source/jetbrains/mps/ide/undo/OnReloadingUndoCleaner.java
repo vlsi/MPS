@@ -54,6 +54,9 @@ class OnReloadingUndoCleaner implements ApplicationComponent {
       @Override
       public void modelsReplaced(Set<SModelDescriptor> replacedModels) {
         for (SModelDescriptor sm : replacedModels) {
+          if (!sm.isRegistered()) {
+            continue;
+          }
           for (SNode root : sm.getSModel().roots()) {
             final MPSNodeVirtualFile file = MPSNodesVirtualFileSystem.getInstance().getFileFor(root);
             assert file.hasValidMPSNode() : "invalid file returned by MPS VFS for following model root: " + root;
