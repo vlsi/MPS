@@ -112,9 +112,6 @@ public interface SNode {
   //complex queries
 
   @NotNull
-  SNode getTopmostAncestor();
-
-  @NotNull
   SNode getContainingRoot();
 
   String getRoleInParent();
