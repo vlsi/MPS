@@ -56,7 +56,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.build-src.jar" descriptor="build.mpl" />
+        <sources jar="jetbrains.mps.build-src.jar" descriptor="jetbrains.mps.build.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-build/languages/build/jetbrains.mps.build.jar">
@@ -66,7 +66,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-build/languages/build/jetbrains.mps.build-src.jar">
       <fileset dir="${mps_home}/plugins/mps-build/languages/build/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/mps-build/languages/build/build.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/mps-build/languages/build/jetbrains.mps.build.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mps-build/languages/build/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/plugins/mps-build/languages/build/utilModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/utilModels" />
       <zipfileset dir="${mps_home}/plugins/mps-build/languages/build/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
@@ -87,7 +87,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.build.workflow-src.jar" descriptor="workflow.mpl" />
+        <sources jar="jetbrains.mps.build.workflow-src.jar" descriptor="jetbrains.mps.build.workflow.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-build/languages/build/jetbrains.mps.build.workflow.jar">
@@ -97,7 +97,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-build/languages/build/jetbrains.mps.build.workflow-src.jar">
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.workflow/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/mps-build/languages/build.workflow/workflow.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/mps-build/languages/build.workflow/jetbrains.mps.build.workflow.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mps-build/languages/build.workflow/accessoryModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/accessoryModels" />
       <zipfileset dir="${mps_home}/plugins/mps-build/languages/build.workflow/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/plugins/mps-build/languages/build.workflow/util" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/util" />
@@ -119,7 +119,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.build.mps-src.jar" descriptor="mps.mpl" />
+        <sources jar="jetbrains.mps.build.mps-src.jar" descriptor="jetbrains.mps.build.mps.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-build/languages/build/jetbrains.mps.build.mps.jar">
@@ -129,7 +129,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-build/languages/build/jetbrains.mps.build.mps-src.jar">
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.mps/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/mps-build/languages/build.mps/mps.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/mps-build/languages/build.mps/jetbrains.mps.build.mps.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mps-build/languages/build.mps/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/plugins/mps-build/languages/build.mps/util" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/util" />
       <zipfileset dir="${mps_home}/plugins/mps-build/languages/build.mps/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
@@ -152,7 +152,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.bash-src.jar" descriptor="bash.mpl" />
+        <sources jar="jetbrains.mps.bash-src.jar" descriptor="jetbrains.mps.bash.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-build/languages/build/jetbrains.mps.bash.jar">
@@ -162,7 +162,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-build/languages/build/jetbrains.mps.bash-src.jar">
       <fileset dir="${mps_home}/plugins/mps-build/languages/bash/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/mps-build/languages/bash/bash.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/mps-build/languages/bash/jetbrains.mps.bash.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mps-build/languages/bash/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
       <zipfileset dir="${mps_home}/plugins/mps-build/languages/bash/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/plugins/mps-build/languages/bash/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
@@ -184,7 +184,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.build.startup-src.jar" descriptor="startup.mpl" />
+        <sources jar="jetbrains.mps.build.startup-src.jar" descriptor="jetbrains.mps.build.startup.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-build/languages/build/jetbrains.mps.build.startup.jar">
@@ -194,12 +194,12 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-build/languages/build/jetbrains.mps.build.startup-src.jar">
       <fileset dir="${mps_home}/plugins/mps-build/languages/build.startup/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/mps-build/languages/build.startup/startup.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/mps-build/languages/build.startup/jetbrains.mps.build.startup.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mps-build/languages/build.startup/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/plugins/mps-build/languages/build.startup/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
     <jar destfile="${build.layout}/plugins/mps-build/languages/build/jetbrains.mps.ide.build.jar">
-      <zipfileset file="${mps_home}/build/solution/build.msd" prefix="modules/jetbrains.mps.ide.build" />
+      <zipfileset file="${mps_home}/build/solution/jetbrains.mps.ide.build.msd" prefix="modules/jetbrains.mps.ide.build" />
       <zipfileset dir="${mps_home}/build/solution" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.build" />
       <zipfileset dir="${mps_home}/build/solution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.build/models" />
     </jar>

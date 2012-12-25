@@ -46,7 +46,7 @@
     </projectSolutions>
     <projectLanguages>
       <languagePath path="${mps_home}/languages/baseLanguage/unitTest/unitTest.mpl" />
-      <languagePath path="${project}/test.mpl" />
+      <languagePath path="${project}/jetbrains.mps.lang.test.mpl" />
     </projectLanguages>
     <projectDevkits />
     <genConfs>

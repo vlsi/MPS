@@ -30,16 +30,16 @@
       <modulePath path="${mps_home}/core/generator/solutions/generator/jetbrains.mps.generator.msd" folder="" />
       <modulePath path="${mps_home}/core/kernel/patternRuntime/runtime.msd" folder="" />
       <modulePath path="${mps_home}/languages/languageDesign/plugin/plugin.mpl" />
-      <modulePath path="${project}/languages/descriptor/descriptor.mpl" folder="" />
-      <modulePath path="${project}/languages/errorReporting/errorReporting.mpl" folder="" />
-      <modulePath path="${project}/languages/generationContext/generationContext.mpl" />
-      <modulePath path="${project}/languages/generationParameters/generationParameters.mpl" folder="" />
-      <modulePath path="${project}/languages/templateLanguage/templateLanguage.mpl" />
+      <modulePath path="${project}/languages/descriptor/jetbrains.mps.lang.descriptor.mpl" folder="" />
+      <modulePath path="${project}/languages/errorReporting/jetbrains.mps.transformation.test.errorReporting.mpl" folder="" />
+      <modulePath path="${project}/languages/generationContext/jetbrains.mps.lang.generator.generationContext.mpl" />
+      <modulePath path="${project}/languages/generationParameters/jetbrains.mps.lang.generator.generationParameters.mpl" folder="" />
+      <modulePath path="${project}/languages/templateLanguage/jetbrains.mps.lang.generator.mpl" />
       <modulePath path="${project}/test/incremental/jetbrains.mps.transformation.test.incremental.msd" folder="" />
-      <modulePath path="${project}/test/inputLang/inputLang.mpl" />
-      <modulePath path="${project}/test/inputModels/inputModels.msd" />
-      <modulePath path="${project}/test/outputLang/outputLang.mpl" />
-      <modulePath path="${project}/test/sandbox/sandbox.msd" />
+      <modulePath path="${project}/test/inputLang/jetbrains.mps.transformation.test.inputLang.mpl" />
+      <modulePath path="${project}/test/inputModels/jetbrains.mps.transformation.test.inputModels.msd" />
+      <modulePath path="${project}/test/outputLang/jetbrains.mps.transformation.test.outputLang.mpl" />
+      <modulePath path="${project}/test/sandbox/jetbrains.mps.generator.sandbox.msd" />
     </projectModules>
     <genConfs>
       <genConfModule name="generator engine (solution)" moduleRef="jetbrains.mps.generator" />

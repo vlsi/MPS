@@ -62,7 +62,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.execution.settings-src.jar" descriptor="settings.mpl" />
+        <sources jar="jetbrains.mps.execution.settings-src.jar" descriptor="jetbrains.mps.execution.settings.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.settings.jar">
@@ -72,7 +72,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.settings-src.jar">
       <fileset dir="${mps_home}/plugins/execution-api/languages/settings/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/execution-api/languages/settings/settings.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/execution-api/languages/settings/jetbrains.mps.execution.settings.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/execution-api/languages/settings/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/plugins/execution-api/languages/settings/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -93,7 +93,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.execution.common-src.jar" descriptor="common.mpl" />
+        <sources jar="jetbrains.mps.execution.common-src.jar" descriptor="jetbrains.mps.execution.common.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.common.jar">
@@ -103,7 +103,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-execution-api/languages/mps-execution-api/jetbrains.mps.execution.common-src.jar">
       <fileset dir="${mps_home}/plugins/execution-api/languages/common/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/execution-api/languages/common/common.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/execution-api/languages/common/jetbrains.mps.execution.common.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/execution-api/languages/common/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.layout}/plugins/mps-execution-api/lib" />
@@ -143,7 +143,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.debugger.api.lang-src.jar" descriptor="api.mpl" />
+        <sources jar="jetbrains.mps.debugger.api.lang-src.jar" descriptor="jetbrains.mps.debugger.api.lang.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-debugger-api/languages/mps-debugger-api/jetbrains.mps.debugger.api.lang.jar">
@@ -153,7 +153,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-debugger-api/languages/mps-debugger-api/jetbrains.mps.debugger.api.lang-src.jar">
       <fileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/api.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/jetbrains.mps.debugger.api.lang.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -164,10 +164,10 @@
     <mkdir dir="${build.layout}/plugins/mps-debugger-api/lib" />
     <jar destfile="${build.layout}/plugins/mps-debugger-api/lib/debugger-api.jar">
       <fileset dir="${build.tmp}/java/out/debugger-api" />
-      <zipfileset file="${mps_home}/plugins/debugger-api/api/api.msd" prefix="modules/jetbrains.mps.debugger.api.api" />
+      <zipfileset file="${mps_home}/plugins/debugger-api/api/jetbrains.mps.debugger.api.api.msd" prefix="modules/jetbrains.mps.debugger.api.api" />
       <zipfileset dir="${mps_home}/plugins/debugger-api/api" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.debugger.api.api" />
       <zipfileset dir="${mps_home}/plugins/debugger-api/api" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.debugger.api.api/" />
-      <zipfileset file="${mps_home}/plugins/debugger-api/runtime/jetbrains.mps.debugger-api.msd" prefix="modules/jetbrains.mps.debugger.api.runtime" />
+      <zipfileset file="${mps_home}/plugins/debugger-api/runtime/jetbrains.mps.debugger.api.runtime.msd" prefix="modules/jetbrains.mps.debugger.api.runtime" />
       <zipfileset dir="${mps_home}/plugins/debugger-api/runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.debugger.api.runtime" />
       <zipfileset dir="${mps_home}/plugins/debugger-api/runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.debugger.api.runtime/" />
     </jar>
@@ -201,7 +201,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.debugger.java.privateMembers-src.jar" descriptor="privateMembers.mpl" />
+        <sources jar="jetbrains.mps.debugger.java.privateMembers-src.jar" descriptor="jetbrains.mps.debugger.java.privateMembers.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.privateMembers.jar">
@@ -211,7 +211,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.privateMembers-src.jar">
       <fileset dir="${mps_home}/plugins/debugger-java/languages/privateMembers/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/debugger-java/languages/privateMembers/privateMembers.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/debugger-java/languages/privateMembers/jetbrains.mps.debugger.java.privateMembers.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/debugger-java/languages/privateMembers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.debugger.java.customViewers.jar" />
@@ -233,7 +233,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.debugger.java.customViewers-src.jar" descriptor="customViewers.mpl" />
+        <sources jar="jetbrains.mps.debugger.java.customViewers-src.jar" descriptor="jetbrains.mps.debugger.java.customViewers.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.customViewers.jar">
@@ -243,7 +243,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.customViewers-src.jar">
       <fileset dir="${mps_home}/plugins/debugger-java/languages/customViewers/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/debugger-java/languages/customViewers/customViewers.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/debugger-java/languages/customViewers/jetbrains.mps.debugger.java.customViewers.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/debugger-java/languages/customViewers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/plugins/debugger-java/languages/customViewers/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -263,7 +263,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.debugger.java.evaluation-src.jar" descriptor="evaluation.mpl" />
+        <sources jar="jetbrains.mps.debugger.java.evaluation-src.jar" descriptor="jetbrains.mps.debugger.java.evaluation.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.evaluation.jar">
@@ -273,7 +273,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-debugger-java/languages/mps-debugger-java/jetbrains.mps.debugger.java.evaluation-src.jar">
       <fileset dir="${mps_home}/plugins/debugger-java/languages/evaluation/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/debugger-java/languages/evaluation/evaluation.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/debugger-java/languages/evaluation/jetbrains.mps.debugger.java.evaluation.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/debugger-java/languages/evaluation/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/plugins/debugger-java/languages/evaluation/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -294,7 +294,7 @@
     <jar destfile="${build.layout}/plugins/mps-debugger-java-customViewers.jar">
       <fileset dir="${build.tmp}/java/out/debugger-java-customViewers" />
       <zipfileset file="${mps_home}/plugins/debugger-java-customViewers/META-INF/plugin.xml" prefix="META-INF" />
-      <zipfileset file="${mps_home}/plugins/debugger-java-customViewers/plugin.msd" prefix="jetbrains.mps.debugger.java.customViewers.plugin" />
+      <zipfileset file="${mps_home}/plugins/debugger-java-customViewers/jetbrains.mps.debugger.java.customViewers.plugin.msd" prefix="jetbrains.mps.debugger.java.customViewers.plugin" />
       <zipfileset dir="${mps_home}/plugins/debugger-java-customViewers" includes="icons/**, resources/**" prefix="jetbrains.mps.debugger.java.customViewers.plugin" />
       <zipfileset dir="${mps_home}/plugins/debugger-java-customViewers" includes="**/*.mps, **/*.metadata, **/*.history" prefix="jetbrains.mps.debugger.java.customViewers.plugin/" />
       <zipfileset dir="${mps_home}/plugins/debugger-java-customViewers/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="jetbrains.mps.debugger.java.customViewers.plugin/models" />

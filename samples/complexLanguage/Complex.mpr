@@ -16,9 +16,9 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${project}/languages/complex/complex.mpl" />
-      <modulePath path="${project}/solutions/jetbrains.mps.complex.runtime/jetbrains.mps.complex.runtime.msd" />
-      <modulePath path="${project}/solutions/sandbox/sandbox.msd" />
+      <modulePath path="${project}/languages/complex/jetbrains.mps.samples.complex.mpl" />
+      <modulePath path="${project}/solutions/jetbrains.mps.complex.runtime/jetbrains.mps.samples.complex.runtime.msd" />
+      <modulePath path="${project}/solutions/sandbox/jetbrains.mps.samples.complex.sandbox.msd" />
     </projectModules>
     <genConfs>
       <genConfModule name="Generate Complex" moduleRef="ff24ab03-965e-4d15-9aed-52dc276658f4(jetbrains.mps.samples.complex)" />

@@ -43,7 +43,7 @@
     <orderEntry type="module" module-name="debugger-java-runtime" scope="PROVIDED" />
     <orderEntry type="module" module-name="editor-api" scope="PROVIDED" />
     <orderEntry type="module" module-name="editor-runtime" scope="PROVIDED" />
-    <orderEntry type="module" module-name="excluded" scope="PROVIDED" />
+    <orderEntry type="module" module-name="tools" scope="PROVIDED" />
     <orderEntry type="module" module-name="execution-api" scope="PROVIDED" />
     <orderEntry type="module" module-name="execution-configurations-ant" scope="PROVIDED" />
     <orderEntry type="module" module-name="execution-configurations-baseLanguage" scope="PROVIDED" />

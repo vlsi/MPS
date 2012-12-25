@@ -63,7 +63,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.collections.trove-src.jar" descriptor="trove.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage.collections.trove-src.jar" descriptor="jetbrains.mps.baseLanguage.collections.trove.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-trove/languages/jetbrains.mps.baseLanguage.collections.trove.jar">
@@ -73,7 +73,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-trove/languages/jetbrains.mps.baseLanguage.collections.trove-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/collections/languages/trove/trove.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/collections/languages/trove/jetbrains.mps.baseLanguage.collections.trove.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/collections/languages/trove/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
