@@ -31,7 +31,7 @@ public class DependencyViewerScope {
     if (node == null) {
       return false;
     }
-    SNode root = node.getTopmostAncestor();
+    SNode root = node.getContainingRoot();
     if (CollectionSequence.fromCollection(myRoots).contains(root) || CollectionSequence.fromCollection(myRoots).contains(node)) {
       return true;
     }

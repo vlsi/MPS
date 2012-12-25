@@ -3855,7 +3855,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8294989614925458187" resolveInfo="node" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8294989614925458142">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SNode%dgetTopmostAncestor()%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="getTopmostAncestor" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SNode%dgetContainingRoot()%corg%djetbrains%dmps%dopenapi%dmodel%dSNode" resolveInfo="getContainingRoot" />
               </node>
             </node>
           </node>

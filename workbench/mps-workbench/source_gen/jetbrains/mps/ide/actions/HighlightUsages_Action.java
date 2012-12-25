@@ -91,7 +91,7 @@ public class HighlightUsages_Action extends BaseAction {
             }
           }
           for (SReference ref : SetSequence.fromSet(usages)) {
-            if (ref.getSourceNode().getTopmostAncestor() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getTopmostAncestor()) {
+            if (ref.getSourceNode().getContainingRoot() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
               if (highlight) {
                 highlightManager.mark(((SNode) ref.getSourceNode()), HighlightConstants.USAGES_COLOR, "usage", messageOwner);
               } else {
