@@ -191,7 +191,7 @@ public class SolutionIdea extends Solution {
   private void addUsedSdk(final List<Dependency> dependencies) {
     Solution sdkSolution = myModule.getProject().getComponent(SdkClassesImporter.class).getModuleSdkSolution(myModule);
     if (sdkSolution != null) {
-      myDependencies.add(new Dependency(sdkSolution.getModuleReference(), false));
+      dependencies.add(new Dependency(sdkSolution.getModuleReference(), false));
     }
   }
 

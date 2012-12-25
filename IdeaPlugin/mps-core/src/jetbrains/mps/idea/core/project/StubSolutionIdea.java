@@ -30,6 +30,7 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -128,7 +129,7 @@ public abstract class StubSolutionIdea extends StubSolution {
 
   @Nullable
   public static Solution getJdkSolution() {
-    return (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065"));
+    return (Solution) MPSModuleRepository.getInstance().getModule(BootstrapLanguages.JDK);
   }
 
   private class StubSolutionScope extends ModuleScope {

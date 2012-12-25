@@ -84,7 +84,7 @@ public class ModuleLibraryType extends LibraryType<DummyLibraryProperties> {
 
   public static Set<VirtualFile> getModuleJars(AbstractModule usedModule) {
     Set<VirtualFile> stubFiles = new HashSet<VirtualFile>();
-    for (String stubPath : usedModule.getAllStubPaths()) {
+    for (String stubPath : usedModule.getClassPath()) {
       VirtualFile jarFile = getJarFile(stubPath);
       if (jarFile != null) {
         stubFiles.add(jarFile);
