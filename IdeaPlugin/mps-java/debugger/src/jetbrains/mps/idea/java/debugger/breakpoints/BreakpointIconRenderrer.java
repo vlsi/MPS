@@ -36,6 +36,7 @@ import com.intellij.xdebugger.impl.actions.EditBreakpointAction.ContextAction;
 import com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsMasterDetailPopupFactory;
 import com.intellij.xdebugger.impl.ui.DebuggerUIUtil;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointIconRenderrerEx;
+import jetbrains.mps.idea.java.MpsJavaBundle;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
@@ -95,7 +96,7 @@ import java.awt.Point;
   private class EditBreakpointAction extends AnAction {
 
     public EditBreakpointAction() {
-      super("Edit");
+      super(MpsJavaBundle.message("debugger.edit.breakpoint.action"));
     }
 
     @Override

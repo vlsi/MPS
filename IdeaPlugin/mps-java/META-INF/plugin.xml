@@ -37,13 +37,13 @@
 
   <project-components>
     <component>
-      <implementation-class>jetbrains.mps.idea.debugger.IdeaDebuggerPositionHighlighter</implementation-class>
+      <implementation-class>jetbrains.mps.idea.jetbrains.mps.idea.java.debugger.IdeaDebuggerPositionHighlighter</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.idea.debugger.breakpoints.IdeaBreakpointsUiComponent</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.idea.debugger.trace.TraceFilesManager</implementation-class>
+      <implementation-class>jetbrains.mps.idea.java.trace.TraceFilesManager</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.java.actions.OverrideImplementMethodComponent</implementation-class>

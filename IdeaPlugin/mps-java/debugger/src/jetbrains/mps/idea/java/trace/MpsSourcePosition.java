@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.debugger;
+package jetbrains.mps.idea.java.trace;
 
 import com.intellij.debugger.SourcePosition;
 import com.intellij.openapi.editor.Document;

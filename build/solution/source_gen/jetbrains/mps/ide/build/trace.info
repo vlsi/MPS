@@ -34,7 +34,7 @@
     <unitInfo nodeId="4416206207494713671" fileName="buildAdditionalPlugins.xml" startLine="1" startPosition="0" endLine="44" endPosition="10" unitName="jetbrains.mps.ide.build.buildAdditionalPlugins" />
   </root>
   <root nodeId="5148601452480491524" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="5148601452480491524" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="502" endPosition="10" unitName="jetbrains.mps.ide.build.buildPlugin" />
+    <unitInfo nodeId="5148601452480491524" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="505" endPosition="10" unitName="jetbrains.mps.ide.build.buildPlugin" />
   </root>
   <root nodeId="5548512857136492214" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
     <unitInfo nodeId="5548512857136492214" fileName="buildDevKit.xml" startLine="1" startPosition="0" endLine="1006" endPosition="10" unitName="jetbrains.mps.ide.build.buildDevKit" />

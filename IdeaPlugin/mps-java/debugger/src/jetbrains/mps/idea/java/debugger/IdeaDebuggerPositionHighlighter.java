@@ -30,6 +30,7 @@ import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debugger.core.CurrentLinePositionComponentEx;
+import jetbrains.mps.idea.java.trace.MpsSourcePosition;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.NotNull;
 

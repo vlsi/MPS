@@ -33,7 +33,7 @@ import com.intellij.psi.PsiFile;
 import com.intellij.psi.util.PsiTreeUtil;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointsUiComponentEx;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
-import jetbrains.mps.idea.debugger.GeneratedSourcePosition;
+import jetbrains.mps.idea.java.trace.GeneratedSourcePosition;
 import jetbrains.mps.nodeEditor.AdditionalPainter;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;

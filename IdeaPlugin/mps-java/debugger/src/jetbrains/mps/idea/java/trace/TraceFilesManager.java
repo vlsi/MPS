@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.debugger.trace;
+package jetbrains.mps.idea.java.trace;
 
 import com.intellij.compiler.CompilerConfiguration;
 import com.intellij.facet.FacetManager;

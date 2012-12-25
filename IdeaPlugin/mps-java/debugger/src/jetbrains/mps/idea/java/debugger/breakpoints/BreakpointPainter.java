@@ -23,7 +23,7 @@ import com.intellij.debugger.ui.breakpoints.BreakpointWithHighlighter;
 import com.intellij.psi.PsiClass;
 import com.intellij.psi.util.PsiUtil;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointPainterEx;
-import jetbrains.mps.idea.debugger.GeneratedSourcePosition;
+import jetbrains.mps.idea.java.trace.GeneratedSourcePosition;
 import jetbrains.mps.smodel.SNode;
 import org.jetbrains.annotations.Nullable;
 
