@@ -84,6 +84,7 @@ public class JavaClassStubsModelRoot extends FolderModelRootBase {
           ListSequence.fromList(result).addElement(descriptor);
         } else {
           smd = new JavaClassStubModelDescriptor(modelReference, new FolderSetDataSource(), this);
+          smd.setModelRoot(this);
           ListSequence.fromList(result).addElement(smd);
         }
         ((FolderSetDataSource) smd.getSource()).addPath(child(startPath, subpackage), this);

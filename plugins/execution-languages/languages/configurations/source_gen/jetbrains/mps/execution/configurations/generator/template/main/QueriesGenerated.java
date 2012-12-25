@@ -443,11 +443,15 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1474977673367994580(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0rd(SPropertyOperations.getString(_context.getNode(), "path"));
+    return isNotEmpty_x583g4_a0a0a59(SPropertyOperations.getString(_context.getNode(), "path")) || (SLinkOperations.getTarget(_context.getNode(), "iconExpression", true) != null);
+  }
+
+  public static boolean ifMacro_Condition_4965310991037556552(final IOperationContext operationContext, final IfMacroContext _context) {
+    return isNotEmpty_x583g4_a0a0sd(SPropertyOperations.getString(_context.getNode(), "path"));
   }
 
   public static boolean ifMacro_Condition_6396510228602727619(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isEmpty_x583g4_a0a0sd(SPropertyOperations.getString(_context.getNode(), "alias"));
+    return isEmpty_x583g4_a0a0td(SPropertyOperations.getString(_context.getNode(), "alias"));
   }
 
   public static boolean ifMacro_Condition_3726880020403335400(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -508,6 +512,10 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_7236226861153318943(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     return SLinkOperations.getTarget(_context.getNode(), "tool", true);
+  }
+
+  public static SNode sourceNodeQuery_4965310991037665038(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
+    return SLinkOperations.getTarget(_context.getNode(), "iconExpression", true);
   }
 
   public static SNode sourceNodeQuery_7952658987872141374(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -571,7 +579,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_5475888311765497814(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    List<SNode> beforeTaskCalls = check_x583g4_a0a0ve(RunConfiguration_Behavior.call_getExecutor_3754890006475713427(_context.getNode()));
+    List<SNode> beforeTaskCalls = check_x583g4_a0a0xe(RunConfiguration_Behavior.call_getExecutor_3754890006475713427(_context.getNode()));
     if (beforeTaskCalls == null) {
       return new ArrayList<SNode>();
     }
@@ -678,7 +686,7 @@ public class QueriesGenerated {
     return quotedNode_1;
   }
 
-  private static List<SNode> check_x583g4_a0a0ve(SNode checkedDotOperand) {
+  private static List<SNode> check_x583g4_a0a0xe(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return SLinkOperations.getTargets(checkedDotOperand, "beforeTask", true);
     }
@@ -693,11 +701,15 @@ public class QueriesGenerated {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0rd(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0a59(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isEmpty_x583g4_a0a0sd(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0sd(String str) {
+    return str != null && str.length() > 0;
+  }
+
+  public static boolean isEmpty_x583g4_a0a0td(String str) {
     return str == null || str.length() == 0;
   }
 }

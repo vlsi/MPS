@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.ide.projectPane.logicalview.nodes;
 
+import com.intellij.icons.AllIcons.Nodes;
 import com.intellij.openapi.actionSystem.ActionGroup;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.ui.ErrorState;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -33,7 +33,7 @@ public class AccessoriesModelTreeNode extends TextTreeNode {
   public AccessoriesModelTreeNode(ProjectLanguageTreeNode projectLanguageTreeNode) {
     super("accessories");
     myProjectLanguageTreeNode = projectLanguageTreeNode;
-    setIcon(Icons.LIB_ICON);
+    setIcon(Nodes.PpLib);
   }
 
   public List<String> validate() {

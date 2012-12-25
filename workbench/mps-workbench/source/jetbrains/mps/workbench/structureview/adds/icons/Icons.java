@@ -15,11 +15,12 @@
  */
 package jetbrains.mps.workbench.structureview.adds.icons;
 
+import jetbrains.mps.icons.MPSIcons.Generator;
+
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 
 public class Icons {
-  public static final Icon OUTPUT = new ImageIcon(Icons.class.getResource("output.png"));
+  public static final Icon OUTPUT = Generator.Output;
 
   public static final Icon SORT_NODES_BY_ASPECT_ICON = jetbrains.mps.ide.projectPane.Icons.PROJECT_ICON;
   public static final Icon GROUP_ASPECTS_ICON = jetbrains.mps.ide.projectPane.Icons.PROJECT_MODELS_ICON;

@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.logging.Logger;
 
 public class GoToBreakpointSourceAction_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("go_to_source.png");
+  private static final Icon ICON = IconUtil.getIcon("goToSource.png");
 
   public GoToBreakpointSourceAction_Action() {
     super("Go To", "Go To Source", ICON);

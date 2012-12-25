@@ -189,9 +189,9 @@ public class ResolveUnknownUtil {
         if (lastUpperCase < ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).count() - 1) {
           // it's more than just a class name 
           SNode fref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
-          fref.addReference(new DynamicReference("classifier", fref, null, className.value));
+          fref.setReference(new DynamicReference("classifier", fref, null, className.value).getRole(), new DynamicReference("classifier", fref, null, className.value));
           SReference fieldRef = new DynamicReference("staticFieldDeclaration", fref, null, SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).getElement(lastUpperCase + 1), "value"));
-          fref.addReference(fieldRef);
+          fref.setReference(fieldRef.getRole(), fieldRef);
 
           tokPos++;
           operand.value = fref;
@@ -199,7 +199,7 @@ public class ResolveUnknownUtil {
 
       } else {
         operand.value = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
-        operand.value.addReference(new DynamicReference("variableDeclaration", operand.value, null, SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).first(), "value")));
+        operand.value.setReference(new DynamicReference("variableDeclaration", operand.value, null, SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).first(), "value")).getRole(), new DynamicReference("variableDeclaration", operand.value, null, SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).first(), "value")));
         tokPos = 1;
       }
 
@@ -231,10 +231,10 @@ public class ResolveUnknownUtil {
           if ((target != null)) {
             SLinkOperations.setTarget(call, "classConcept", SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
           } else {
-            call.addReference(new DynamicReference("classConcept", call, null, className.value));
+            call.setReference(new DynamicReference("classConcept", call, null, className.value).getRole(), new DynamicReference("classConcept", call, null, className.value));
           }
           SReference sref = new DynamicReference("baseMethodDeclaration", call, null, SPropertyOperations.getString(x, "callee"));
-          call.addReference(sref);
+          call.setReference(sref.getRole(), sref);
           reattachMethodArguments(x, call);
           return call;
         }
@@ -252,7 +252,7 @@ public class ResolveUnknownUtil {
           SLinkOperations.setTarget(dotExpr, "operation", call, true);
 
           SReference sref = new DynamicReference("baseMethodDeclaration", call, null, SPropertyOperations.getString(x, "callee"));
-          call.addReference(sref);
+          call.setReference(sref.getRole(), sref);
 
           reattachMethodArguments(x, call);
           return dotExpr;
@@ -303,7 +303,7 @@ public class ResolveUnknownUtil {
         SLinkOperations.setTarget(statFieldRef, "classifier", cls, false);
 
         SReference fieldRef = new DynamicReference("staticFieldDeclaration", statFieldRef, null, SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).getElement(tokPos), "value"));
-        statFieldRef.addReference(fieldRef);
+        statFieldRef.setReference(fieldRef.getRole(), fieldRef);
 
         operand = statFieldRef;
         // +1 is here because static field takes one extra token 
@@ -331,7 +331,7 @@ public class ResolveUnknownUtil {
     SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
     SLinkOperations.setTarget(dotExpr, "operation", fieldRef, true);
     SReference sref = new DynamicReference("fieldDeclaration", fieldRef, null, fieldName);
-    fieldRef.addReference(sref);
+    fieldRef.setReference(sref.getRole(), sref);
     return dotExpr;
   }
 
@@ -352,7 +352,7 @@ public class ResolveUnknownUtil {
 
       SNode varRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
       SReference sref = new DynamicReference("variableDeclaration", varRef, null, name);
-      varRef.addReference(sref);
+      varRef.setReference(sref.getRole(), sref);
 
       return varRef;
     } else {

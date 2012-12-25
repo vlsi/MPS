@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="8056730377013685541" modelId="r:911b64be-e838-4b67-bbec-bce1a5b0b287(jetbrains.mps.build.sandbox.testExternalBuild)">
-    <unitInfo nodeId="8056730377013685541" fileName="buildTest.xml" startLine="1" startPosition="0" endLine="104" endPosition="10" unitName="jetbrains.mps.build.sandbox.testExternalBuild.buildTest" />
+    <unitInfo nodeId="8056730377013685541" fileName="buildTest.xml" startLine="1" startPosition="0" endLine="105" endPosition="10" unitName="jetbrains.mps.build.sandbox.testExternalBuild.buildTest" />
   </root>
   <root nodeId="8077978191914979020" modelId="r:911b64be-e838-4b67-bbec-bce1a5b0b287(jetbrains.mps.build.sandbox.testExternalBuild)">
-    <unitInfo nodeId="8077978191914979020" fileName="buildTest2.xml" startLine="1" startPosition="0" endLine="119" endPosition="10" unitName="jetbrains.mps.build.sandbox.testExternalBuild.buildTest2" />
+    <unitInfo nodeId="8077978191914979020" fileName="buildTest2.xml" startLine="1" startPosition="0" endLine="120" endPosition="10" unitName="jetbrains.mps.build.sandbox.testExternalBuild.buildTest2" />
   </root>
 </debugInfo>
 

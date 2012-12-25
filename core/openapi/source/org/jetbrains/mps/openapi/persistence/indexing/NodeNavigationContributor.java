@@ -15,10 +15,12 @@
  */
 package org.jetbrains.mps.openapi.persistence.indexing;
 
+import jetbrains.mps.project.Project;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.util.Collection;
 
 public interface NodeNavigationContributor {
-  Collection<NodeDescriptor> getNodeDescriptors(Collection<SModel> models);
+  //second parameter is temporary until we make repositories per-project
+  Collection<NodeDescriptor> getNodeDescriptors(Collection<SModel> models, Project p);
 }

@@ -24,8 +24,8 @@ import jetbrains.mps.util.ConditionalIterable;
 import java.util.List;
 import java.util.ArrayList;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
-import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
-import jetbrains.mps.workbench.actions.goTo.NavigateCallback;
+import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
+import jetbrains.mps.workbench.goTo.NavigateCallback;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.logging.Logger;
 

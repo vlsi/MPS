@@ -28,7 +28,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068390468198">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/classType.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/class.png" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Class declaration" />
       <property name="name" nameId="tpck.1169194664001" value="ClassConcept" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />

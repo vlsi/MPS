@@ -15,6 +15,9 @@
  */
 package jetbrains.mps.ide.devkit.help;
 
+import com.intellij.icons.AllIcons.General;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.wm.impl.welcomeScreen.JetBrainsTvAction;
 
 /**
@@ -26,5 +29,18 @@ public class MPSJetBrainsTvAction extends JetBrainsTvAction {
 
   public MPSJetBrainsTvAction() {
     super(CHANNEL);
+
+    getTemplatePresentation().setText("JetBrains TV");
+    getTemplatePresentation().setIcon(General.JetbrainsTvIdea);
+  }
+
+  @Override
+  public void update(AnActionEvent e) {
+    if (ActionPlaces.WELCOME_SCREEN.equals(e.getPlace())) {
+      e.getPresentation().setIcon(General.JetbrainsTvIdea);
+    } else {
+      e.getPresentation().setIcon(null);
+    }
+    super.update(e);
   }
 }

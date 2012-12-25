@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.findusages.view.treeholder.tree.nodedatatypes;
 
+import jetbrains.mps.icons.MPSIcons;
+import jetbrains.mps.icons.MPSIcons.Actions;
 import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.view.icons.Icons;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
@@ -35,7 +37,7 @@ public class SearchedNodesNodeData extends BaseNodeData {
   }
 
   public Icon getIcon() {
-    return Icons.SEARCHED_NODES_ICON;
+    return Actions.SearchedNodes;
   }
 
   public Object getIdObject() {

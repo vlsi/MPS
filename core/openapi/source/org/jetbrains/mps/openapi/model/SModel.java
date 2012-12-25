@@ -18,6 +18,8 @@ package org.jetbrains.mps.openapi.model;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import java.io.IOException;
 
@@ -40,6 +42,10 @@ public interface SModel {
 
   @NotNull
   SModelReference getModelReference();
+
+  ModelRoot getModelRoot();
+
+  void setModelRoot(ModelRoot mr);
 
   /**
    * Retrieves the owning module

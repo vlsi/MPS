@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.platform.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.vcs.changesmanager.editor.ChangesStripActionsHelper;
@@ -15,7 +15,7 @@ import jetbrains.mps.ide.editor.MPSEditorDataKeys;
 import jetbrains.mps.logging.Logger;
 
 public class CopyOldNodes_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("menu-copy.png");
+  private static final Icon ICON = AllIcons.Actions.Copy;
 
   public CopyOldNodes_Action() {
     super("Copy Old Code", "", ICON);

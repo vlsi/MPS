@@ -59,7 +59,7 @@ public class TraceDown {
       if (positionMatcher.invoke(position)) {
         UnitPositionInfo unit = ListSequence.fromList(unitsForNode).findFirst(new IWhereFilter<UnitPositionInfo>() {
           public boolean accept(UnitPositionInfo it) {
-            return it.isPositionInside(position.getFileName(), position.getStartLine());
+            return it.contains(position.getFileName(), position.getStartLine());
           }
         });
         if (unit != null) {

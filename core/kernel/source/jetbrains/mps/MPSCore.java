@@ -21,8 +21,6 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.components.ComponentPlugin;
 import jetbrains.mps.datatransfer.CopyPasteManager;
 import jetbrains.mps.datatransfer.PasteWrappersManager;
-import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.findUsages.fastfind.FastFindSupportRegistry;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.make.java.BLDependenciesCache;
@@ -34,7 +32,15 @@ import jetbrains.mps.project.structure.LanguageDescriptorModelProvider;
 import jetbrains.mps.project.structure.ProjectStructureModule;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.resolve.ResolverComponent;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.ImmatureReferences;
+import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModuleFileTracker;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModelFileTracker;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.language.ConceptRepository;
 import jetbrains.mps.smodel.language.ExtensionRegistry;
@@ -103,8 +109,6 @@ public class MPSCore extends ComponentPlugin {
     init(new CopyPasteManager(classLoaderManager));
     init(new PasteWrappersManager(classLoaderManager));
     init(new BLDependenciesCache(myModelRepository));
-    init(new FindUsagesManager());
-    init(new FastFindSupportRegistry());
     init(new DataFlowManager(classLoaderManager, myModuleRepository));
 
     init(new ResolverComponent());
@@ -150,5 +154,4 @@ public class MPSCore extends ComponentPlugin {
   public void setMergeDriverMode(boolean mergeDriverMode) {
     this.mergeDriverMode = mergeDriverMode;
   }
-
 }

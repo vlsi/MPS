@@ -8,6 +8,14 @@ import jetbrains.mps.smodel.SNode;
 import junit.framework.Assert;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import jetbrains.mps.debug.api.breakpoints.BreakpointLocation;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.TestMain;
 import java.io.File;
@@ -90,6 +98,33 @@ public class TraceInfoTest {
           SNode node = TraceInfoUtil.getVar(stackTraceElement.getClassName(), stackTraceElement.getFileName(), stackTraceElement.getLineNumber(), "it_gen");
           Assert.assertTrue("Node " + node + " for variable it_gen.", (node != null) && SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.collections.structure.ForEachVariable"));
         }
+      }
+    });
+  }
+
+  @Test
+  public void internalClassTest() {
+    invokeTest(new _FunctionTypes._void_P0_E0() {
+      public void invoke() {
+        SNode statement = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), SNodeOperations.getNode("r:fc539459-610a-408b-8472-ac3a7316412f(jetbrains.mps.traceInfo.test@tests)", "8529179251482782650"), "jetbrains.mps.baseLanguage.structure.Classifier", "call_methods_5292274854859311639", new Object[]{})).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SPropertyOperations.getString(it, "name").equals("internalClassTest");
+          }
+        }).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return (SLinkOperations.getTarget(it, "body", true) != null);
+          }
+        }).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SLinkOperations.getTarget(it, "body", true);
+          }
+        }).translate(new ITranslator2<SNode, SNode>() {
+          public Iterable<SNode> translate(SNode it) {
+            return SLinkOperations.getTargets(it, "statement", true);
+          }
+        }).first();
+        BreakpointLocation location = new BreakpointLocation(statement);
+        Assert.assertEquals("jetbrains.mps.traceInfo.test.TestClass", location.getTargetUnitName());
       }
     });
   }

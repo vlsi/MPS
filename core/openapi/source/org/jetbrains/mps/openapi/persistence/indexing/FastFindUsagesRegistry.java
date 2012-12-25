@@ -28,12 +28,12 @@ public class FastFindUsagesRegistry implements CoreComponent {
 
   private Map<String, FastFindSupport> myRootType2FindSupport = new HashMap<String, FastFindSupport>();
 
-  public void addFastFindSupport(String id, FastFindSupport ffs) {
-    myRootType2FindSupport.put(id, ffs);
-  }
-
-  public void removeFastFindSupport(String id) {
-    myRootType2FindSupport.remove(id);
+  public void setFastFindSupport(String id, FastFindSupport ffs) {
+    if (ffs != null) {
+      myRootType2FindSupport.put(id, ffs);
+    } else {
+      myRootType2FindSupport.remove(id);
+    }
   }
 
   public FastFindSupport getFastFindSupport(String id) {

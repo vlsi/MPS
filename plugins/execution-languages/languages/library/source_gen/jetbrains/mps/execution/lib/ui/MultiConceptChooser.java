@@ -25,6 +25,9 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
 import java.util.Set;
 import java.util.Collections;
 import jetbrains.mps.findUsages.SearchType;
@@ -32,7 +35,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.util.NameUtil;
 
 /**
  * Use NodeBySeveralConceptChooser
@@ -89,7 +91,8 @@ public class MultiConceptChooser extends AbstractMainNodeChooser {
       public Iterable<SNode> translate(Tuples._2<SNode, _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode>> it) {
         SNode targetConcept = it._0();
         final _FunctionTypes._return_P1_E0<? extends Boolean, ? super SNode> function = it._1();
-        Set<SNode> instances = manager.findUsages(Collections.singleton(targetConcept), SearchType.INSTANCES, myScope, monitor);
+        SConcept concept = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(targetConcept));
+        Set<SNode> instances = ((Set) manager.findUsages(Collections.singleton(concept), SearchType.INSTANCES, myScope, monitor));
         if (function == null) {
           return ListSequence.fromListWithValues(new ArrayList<SNode>(), instances);
         } else {

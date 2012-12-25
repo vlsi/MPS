@@ -450,7 +450,7 @@ public class Language extends ClassLoadingModule implements MPSModuleOwner {
   }
 
   @Override
-  public Collection<String> getOwnStubPaths() {
+  public Collection<String> getOwnClassPath() {
     if (isPackaged()) {
       return Collections.singletonList(
         FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath());

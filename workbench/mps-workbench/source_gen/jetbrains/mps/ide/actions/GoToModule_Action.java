@@ -25,8 +25,8 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
-import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
-import jetbrains.mps.workbench.actions.goTo.NavigateCallback;
+import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
+import jetbrains.mps.workbench.goTo.NavigateCallback;
 import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.logging.Logger;
 

@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.diff.ui.common;
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.project.DumbAware;
 import javax.swing.Icon;
-import com.intellij.openapi.util.IconLoader;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.diff.DiffRequest;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.diff.DiffTool;
@@ -13,7 +13,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 
 public class InvokeTextDiffAction extends BaseAction implements DumbAware {
-  private static final Icon TEXT_ICON = IconLoader.getIcon("/fileTypes/text.png");
+  private static final Icon TEXT_ICON = AllIcons.FileTypes.Text;
   private DiffRequest myDiffRequest;
   private DialogWrapper myDialog;
   private DiffTool myDiffTool;

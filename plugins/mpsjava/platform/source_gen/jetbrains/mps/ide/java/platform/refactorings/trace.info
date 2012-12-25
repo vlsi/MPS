@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="IconContainer.java" startLine="8" startPosition="0" endLine="12" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.IconContainer" />
+  <unitInfo fileName="IconContainer.java" startLine="9" startPosition="0" endLine="13" endPosition="0" unitName="jetbrains.mps.ide.java.platform.refactorings.IconContainer" />
   <root nodeId="2370003301081570" modelId="r:04a4e07b-6b42-4834-848a-987fb6edcd08(jetbrains.mps.ide.java.platform.refactorings)">
     <nodeInfo nodeId="2370003301081655" fileName="IntroduceConstantDialog.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myRefactoring" />
     <nodeInfo nodeId="2370003301081663" fileName="IntroduceConstantDialog.java" startLine="17" startPosition="122" endLine="18" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />

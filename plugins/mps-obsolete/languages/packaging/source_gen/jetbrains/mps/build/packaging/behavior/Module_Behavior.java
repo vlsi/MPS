@@ -73,7 +73,7 @@ public class Module_Behavior {
   }
 
   public static boolean call_needsOwnStubs_8177148268721488524(SNode thisNode) {
-    return Sequence.fromIterable(((Iterable<String>) ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getStubPaths())).where(new IWhereFilter<String>() {
+    return Sequence.fromIterable(((Iterable<String>) ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getClassPath())).where(new IWhereFilter<String>() {
       public boolean accept(String it) {
         return !(it.endsWith(".jar"));
       }
@@ -278,8 +278,8 @@ public class Module_Behavior {
 
   public static Collection<String> call_getClassPathExcludingIdea_2000252915626233691(SNode thisNode, AbstractModule module) {
     return (module.isCompileInMPS() ?
-      module.getAllStubPaths() :
-      module.getStubPaths()
+      module.getClassPath() :
+      module.getAdditionalClassPath()
     );
   }
 

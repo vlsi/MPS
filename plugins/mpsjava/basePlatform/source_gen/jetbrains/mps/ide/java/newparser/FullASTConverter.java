@@ -95,7 +95,6 @@ import org.eclipse.jdt.internal.compiler.ast.SingleTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.ParameterizedSingleTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.ParameterizedQualifiedTypeReference;
-import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -110,7 +109,11 @@ public class FullASTConverter extends ASTConverter {
 
 
   public FullASTConverter(CompilationUnitDeclaration cud, @NotNull TypeNameResolver typeResolver) {
-    super(cud, typeResolver, false);
+    super(typeResolver, false);
+  }
+
+  private FullASTConverter(FullASTConverter base) {
+    super(base);
   }
 
   public SNode convertStatementWrap(Statement x) throws JavaParseException {
@@ -263,7 +266,7 @@ public class FullASTConverter extends ASTConverter {
         return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null);
       } else {
         // import token as string constant even if it was an error in literal 
-        return _quotation_createNode_f46ocm_a1a0c0o(NameUtil.escapeString(new String(((Literal) x).source())));
+        return _quotation_createNode_f46ocm_a1a0c0p(NameUtil.escapeString(new String(((Literal) x).source())));
       }
     }
 
@@ -452,7 +455,7 @@ public class FullASTConverter extends ASTConverter {
       }
     })) {
       // we don't support for ( a=5, b=6; ...) {} in baseLanguage, workaround here 
-      result = _quotation_createNode_f46ocm_a0b0d0db(init, forStatement);
+      result = _quotation_createNode_f46ocm_a0b0d0eb(init, forStatement);
     } else if (!(init.isEmpty())) {
       boolean first = true;
       for (SNode statement : init) {
@@ -1003,14 +1006,14 @@ public class FullASTConverter extends ASTConverter {
       throw new JavaParseException("Type should be class in qualified this reference");
     }
     SReference sref = adjustClassReference(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), thisRef, "classConcept");
-    thisRef.addReference(sref);
+    thisRef.setReference(sref.getRole(), sref);
     return thisRef;
   }
 
   /*package*/ SNode convertExpression(SingleNameReference x) {
     SNode varRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SReference sref = new DynamicReference("variableDeclaration", varRef, null, new String(x.token));
-    varRef.addReference(sref);
+    varRef.setReference(sref.getRole(), sref);
     return varRef;
   }
 
@@ -1038,7 +1041,7 @@ public class FullASTConverter extends ASTConverter {
     SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
     SLinkOperations.setTarget(dotExpr, "operation", fieldRef, true);
     SReference sref = new DynamicReference("fieldDeclaration", fieldRef, null, fieldName);
-    fieldRef.addReference(sref);
+    fieldRef.setReference(sref.getRole(), sref);
     return dotExpr;
   }
 
@@ -1110,7 +1113,7 @@ public class FullASTConverter extends ASTConverter {
         SLinkOperations.setTarget(dotExpr, "operation", instCall, true);
 
         SReference sref = new DynamicReference("baseMethodDeclaration", instCall, null, methodName);
-        instCall.addReference(sref);
+        instCall.setReference(sref.getRole(), sref);
 
         result = dotExpr;
         call = instCall;
@@ -1139,7 +1142,7 @@ public class FullASTConverter extends ASTConverter {
     SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
     SLinkOperations.setTarget(result, "operation", fieldRef, true);
     SReference sref = new DynamicReference("fieldDeclaration", fieldRef, null, new String(x.token));
-    fieldRef.addReference(sref);
+    fieldRef.setReference(sref.getRole(), sref);
     return result;
   }
 
@@ -1209,7 +1212,7 @@ public class FullASTConverter extends ASTConverter {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null);
 
     SReference sref = adjustClassReference(SNodeOperations.cast(argType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), result, "classifier");
-    result.addReference(sref);
+    result.setReference(sref.getRole(), sref);
     return result;
   }
 
@@ -1242,11 +1245,11 @@ public class FullASTConverter extends ASTConverter {
    */
   public SNode convertExpressionAdHoc(Expression exp) {
     if (exp instanceof TrueLiteral) {
-      return _quotation_createNode_f46ocm_a0a0a87();
+      return _quotation_createNode_f46ocm_a0a0a97();
     } else if (exp instanceof FalseLiteral) {
-      return _quotation_createNode_f46ocm_a0a0a0ad();
+      return _quotation_createNode_f46ocm_a0a0a0bd();
     } else if (exp instanceof StringLiteral) {
-      return _quotation_createNode_f46ocm_a0a1a0ad(new String(((StringLiteral) exp).source()));
+      return _quotation_createNode_f46ocm_a0a1a0bd(new String(((StringLiteral) exp).source()));
     } else if (exp instanceof ArrayInitializer) {
       SNode arr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayLiteral", null);
       for (Expression e : ((ArrayInitializer) exp).expressions) {
@@ -1274,13 +1277,13 @@ public class FullASTConverter extends ASTConverter {
       }
       SReference enumConstRef = new DynamicReference("enumConstantDeclaration", enumRef, null, enumConstName);
 
-      enumRef.addReference(enumClRef);
-      enumRef.addReference(enumConstRef);
+      enumRef.setReference(enumClRef.getRole(), enumClRef);
+      enumRef.setReference(enumConstRef.getRole(), enumConstRef);
       return enumRef;
 
     } else if (exp instanceof SingleNameReference) {
       // FIXME 
-      return _quotation_createNode_f46ocm_a1a4a0ad();
+      return _quotation_createNode_f46ocm_a1a4a0bd();
     } else {
       throw new RuntimeException("This kind of expression is not supported yet: " + exp.getClass().getName());
     }
@@ -1394,12 +1397,6 @@ public class FullASTConverter extends ASTConverter {
     return stmt;
   }
 
-  private void insertAt(FullASTConverter.Position pos, SNode node) {
-    if (pos != null) {
-      pos.insert(node);
-    }
-  }
-
   public class CodeBlock {
     private CompilationUnitDeclaration cud;
 
@@ -1441,44 +1438,33 @@ public class FullASTConverter extends ASTConverter {
     }
   }
 
-  /*package*/ static class Position {
-    private SNode current;
-    private SNode anchor;
-    private String role;
-    private int index;
+  @Override
+  protected FullASTConverter withNewState(ASTConverter.State state) {
+    return new FullASTConverter.FullASTConverterWithState(this, state);
+  }
 
-    public Position(SNode n, String rol) {
-      current = n;
-      role = rol;
-      index = 0;
-      anchor = null;
+  private class FullASTConverterWithState extends FullASTConverter {
+    private ASTConverter.State myState;
+
+    private FullASTConverterWithState(FullASTConverter base, ASTConverter.State state) {
+      super(base);
+      myState = state;
     }
 
-    public Scope getScope(SNode kind) {
-      return Scope.getScope(current, role, index, kind);
-    }
-
-    public void insert(SNode node) {
-      if (index == 0) {
-        current.addChild(role, node);
-      } else {
-        SNode anchor = current.getChildren(role).get(index - 1);
-        current.insertChild(anchor, role, node);
-      }
-      // dakjshdjashggggggggggggggggggggggggggggggggggggg 
+    @Override
+    public ASTConverter.State getState() {
+      return myState;
     }
   }
 
-
-
-  private static SNode _quotation_createNode_f46ocm_a1a0c0o(Object parameter_1) {
+  private static SNode _quotation_createNode_f46ocm_a1a0c0p(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_f46ocm_a0b0d0db(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_f46ocm_a0b0d0eb(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -1506,27 +1492,27 @@ public class FullASTConverter extends ASTConverter {
     return quotedNode_3;
   }
 
-  private static SNode _quotation_createNode_f46ocm_a0a0a0ad() {
+  private static SNode _quotation_createNode_f46ocm_a0a0a0bd() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_f46ocm_a0a1a0ad(Object parameter_1) {
+  private static SNode _quotation_createNode_f46ocm_a0a1a0bd(Object parameter_1) {
     SNode quotedNode_2 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_f46ocm_a0a0a87() {
+  private static SNode _quotation_createNode_f46ocm_a0a0a97() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_1, "value", "true");
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_f46ocm_a1a4a0ad() {
+  private static SNode _quotation_createNode_f46ocm_a1a4a0bd() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_1, "value", "NOT SUPPORTED YET");

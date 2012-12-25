@@ -4,18 +4,17 @@ package jetbrains.mps.baseLanguage.unitTest.execution.tool;
 
 import com.intellij.openapi.Disposable;
 import javax.swing.Icon;
-import com.intellij.icons.AllIcons;
 import com.intellij.util.Alarm;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestRunState;
 import com.intellij.openapi.util.Disposer;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.ModelAccess;
+import com.intellij.icons.AllIcons;
 
 public class TestTreeIconAnimator implements Disposable, Runnable {
   private static final int FRAMES_COUNT = 8;
   private static final int MOVIE_TIME = 800;
   private static final int FRAME_TIME = MOVIE_TIME / FRAMES_COUNT;
-  private static Icon PAUSED_ICON = AllIcons.RunConfigurations.TestPaused;
   private static Icon[] FRAMES = new Icon[FRAMES_COUNT];
   private long myLastInvocationTime = -1;
   private Alarm myAlarm;

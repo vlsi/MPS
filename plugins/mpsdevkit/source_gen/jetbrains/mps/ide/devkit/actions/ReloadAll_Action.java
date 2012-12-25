@@ -4,7 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -20,7 +20,7 @@ import jetbrains.mps.progress.ProgressMonitorAdapter;
 import jetbrains.mps.logging.Logger;
 
 public class ReloadAll_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("reload.png");
+  private static final Icon ICON = AllIcons.Actions.Refresh;
 
   public ReloadAll_Action() {
     super("Reload All Classes", "Reload all MPS classes", ICON);

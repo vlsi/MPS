@@ -10,10 +10,10 @@ import java.util.Map;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
-import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
-import jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex;
+import jetbrains.mps.workbench.goTo.navigation.RootChooseModel;
+import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopup;
-import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
+import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import com.intellij.ide.util.gotoByName.ChooseByNamePopupComponent;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.application.ModalityState;
@@ -56,7 +56,7 @@ public class GoToRootNode_Action extends BaseAction {
       Project project = event.getData(PlatformDataKeys.PROJECT);
       assert project != null;
 
-      MPSChooseSNodeDescriptor chooseSNodeResult = new MPSChooseSNodeDescriptor(project, new RootNodeNameIndex());
+      RootChooseModel chooseSNodeResult = new RootChooseModel(project, new RootNodeNameIndex());
       ChooseByNamePopup popup = MpsPopupFactory.createNodePopupWithParentAction(project, chooseSNodeResult, GoToRootNode_Action.this);
 
       popup.invoke(new ChooseByNamePopupComponent.Callback() {

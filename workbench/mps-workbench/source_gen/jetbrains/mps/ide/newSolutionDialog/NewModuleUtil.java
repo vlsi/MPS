@@ -86,8 +86,7 @@ public class NewModuleUtil {
   }
 
   private static IFile getModuleFile(String namespace, String rootPath, String extension) {
-    String shortName = NameUtil.shortNameFromLongName(namespace);
-    String path = rootPath + File.separator + shortName + extension;
+    String path = rootPath + File.separator + namespace + extension;
     return FileSystem.getInstance().getFileByPath(path);
   }
 

@@ -4,7 +4,7 @@ package jetbrains.mps.build.mps.pluginSolution.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -18,7 +18,7 @@ import com.intellij.openapi.application.ModalityState;
 import jetbrains.mps.logging.Logger;
 
 public class GenerateBuildForProjectAction_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("buildProject.png");
+  private static final Icon ICON = AllIcons.Ant.Build;
 
   public GenerateBuildForProjectAction_Action() {
     super("Build Solution", "", ICON);

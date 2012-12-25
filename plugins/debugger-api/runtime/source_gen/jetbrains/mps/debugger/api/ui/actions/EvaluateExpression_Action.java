@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.api.ui.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -31,7 +31,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.logging.Logger;
 
 public class EvaluateExpression_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("evaluate.png");
+  private static final Icon ICON = AllIcons.Debugger.EvaluateExpression;
 
   public EvaluateExpression_Action() {
     super("Evaluate Expression", "", ICON);

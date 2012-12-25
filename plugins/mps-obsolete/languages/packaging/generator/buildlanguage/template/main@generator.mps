@@ -113,12 +113,12 @@
     </node>
     <node type="tpsj.ProjectDescription" typeId="tpsj.1216745453338" id="1216902420773">
       <property name="name" nameId="tpck.1169194664001" value="compile.modules" />
-      <property name="propertiesFile" nameId="tpsj.4738159245302261806" value="project.properties" />
       <property name="basedir" nameId="tpsj.7857794759871997326" value="." />
+      <property name="propertiesFile" nameId="tpsj.4738159245302261806" value="project.properties" />
     </node>
     <node type="tpf8.MappingScript" typeId="tpf8.1195499912406" id="1217435006859">
-      <property name="name" nameId="tpck.1169194664001" value="CalculateCycles" />
       <property name="scriptKind" nameId="tpf8.1195595592106" value="pre_processing" />
+      <property name="name" nameId="tpck.1169194664001" value="CalculateCycles" />
       <property name="modifiesModel" nameId="tpf8.1195595611951" value="true" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1219155958546">
@@ -140,9 +140,9 @@
       <property name="name" nameId="tpck.1169194664001" value="project.properties" />
     </node>
     <node type="tpf8.MappingScript" typeId="tpf8.1195499912406" id="1219229087937">
-      <property name="name" nameId="tpck.1169194664001" value="UpdateMacro" />
       <property name="scriptKind" nameId="tpf8.1195595592106" value="pre_processing" />
       <property name="modifiesModel" nameId="tpf8.1195595611951" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="UpdateMacro" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="1220026404357">
       <property name="name" nameId="tpck.1169194664001" value="reduce_PathHolder" />
@@ -227,8 +227,8 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ideaPlugin" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="2454311172623297881">
-      <property name="name" nameId="tpck.1169194664001" value="reduce_PluginModule" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ideaPlugin" />
+      <property name="name" nameId="tpck.1169194664001" value="reduce_PluginModule" />
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tps4.989489456094386109" resolveInfo="PluginModule" />
     </node>
     <node type="tpf8.TemplateDeclaration" typeId="tpf8.1092059087312" id="6278136257391529759">
@@ -670,8 +670,8 @@
   </root>
   <root id="1203611981921">
     <node role="property" roleId="tpsk.1200425668297" type="tpsk.ExternalPropertyDeclaration" typeId="tpsk.1219147669362" id="1219229617369">
-      <property name="checkOnStart" nameId="tpsk.1219774190534" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="macro.name" />
+      <property name="checkOnStart" nameId="tpsk.1219774190534" value="false" />
       <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="1219229629189" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="1234978171535">
         <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="1234978171536">
@@ -694,8 +694,8 @@
       </node>
     </node>
     <node role="property" roleId="tpsk.1200425668297" type="tpsk.ExternalPropertyDeclaration" typeId="tpsk.1219147669362" id="1219156675528">
-      <property name="checkOnStart" nameId="tpsk.1219774190534" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="variable.name" />
+      <property name="checkOnStart" nameId="tpsk.1219774190534" value="true" />
       <node role="type" roleId="tpsk.1196870993204" type="tpsk.StringType" typeId="tpsk.1196870403099" id="1219156716422" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="1219156680506">
         <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="1219156680507">
@@ -990,8 +990,8 @@
       </node>
     </node>
     <node role="target" roleId="tpsk.1196851079482" type="tpsk.TargetDeclaration" typeId="tpsk.1196851099544" id="1203612152087">
-      <property name="shortDescription" nameId="tpck.1156234966388" value="create folders and copy some contents to them" />
       <property name="name" nameId="tpck.1169194664001" value="folders.create" />
+      <property name="shortDescription" nameId="tpck.1156234966388" value="create folders and copy some contents to them" />
       <node role="taskCall" roleId="tpsk.1196851542249" type="ddum.TaskCall" typeId="ddum.353793545802643477" id="1203615027465">
         <link role="declaration" roleId="ddum.353793545802643478" targetNodeId="adh8.353793545802814434" resolveInfo="mkdir" />
         <node role="atributes" roleId="ddum.353793545802643479" type="ddum.Attribute" typeId="ddum.353793545802643466" id="1203615036248">
@@ -3197,13 +3197,13 @@
   </root>
   <root id="1204019666126">
     <node role="property" roleId="tpsk.1200425668297" type="tpsk.ExternalPropertyDeclaration" typeId="tpsk.1219147669362" id="1219160370052">
-      <property name="checkOnStart" nameId="tpsk.1219774190534" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="deploy.dir" />
+      <property name="checkOnStart" nameId="tpsk.1219774190534" value="true" />
       <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="1219160378549" />
     </node>
     <node role="property" roleId="tpsk.1200425668297" type="tpsk.ExternalPropertyDeclaration" typeId="tpsk.1219147669362" id="1239193117872">
-      <property name="checkOnStart" nameId="tpsk.1219774190534" value="false" />
       <property name="name" nameId="tpck.1169194664001" value="macro.name" />
+      <property name="checkOnStart" nameId="tpsk.1219774190534" value="false" />
       <node role="type" roleId="tpsk.1196870993204" type="tpsk.FileType" typeId="tpsk.1199032398223" id="1239193117874" />
       <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="1239193117875">
         <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="1239193117876">
@@ -7257,7 +7257,11 @@
                   </node>
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8735618128970558497">
-                  <node role="creator" roleId="tpee.1145553007750" type="tp2q.LinkedHashSetCreator" typeId="tp2q.1240217271293" id="8735618128970576812" />
+                  <node role="creator" roleId="tpee.1145553007750" type="tp2q.LinkedHashSetCreator" typeId="tp2q.1240217271293" id="8735618128970576812">
+                    <node role="elementType" roleId="tp2q.1237721435807" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4416206207494590607">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~IModule" resolveInfo="IModule" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -10663,8 +10667,8 @@
         </node>
       </node>
       <node role="content" roleId="tpkv.1107866800972" type="tpkv.Element" typeId="tpkv.1107866778860" id="437343344536578735">
-        <property name="name" nameId="tpck.1169194664001" value="help" />
         <property name="collapse" nameId="tpkv.5252685582976647062" value="true" />
+        <property name="name" nameId="tpck.1169194664001" value="help" />
         <node role="attribute" roleId="tpkv.1107866791721" type="tpkv.Attribute" typeId="tpkv.1107866742882" id="437343344536578736">
           <property name="name" nameId="tpck.1169194664001" value="file" />
           <property name="value" nameId="tpkv.1107866755246" value="mpshelp.jar" />
@@ -11870,8 +11874,8 @@
         </node>
         <node role="entry" roleId="tps4.1203617897549" type="tps4.Jar" typeId="tps4.1203598417283" id="2454311172623297985">
           <node role="entry" roleId="tps4.1203617897549" type="tps4.Copy" typeId="tps4.1204015075559" id="2454311172623297986">
-            <property name="excludes" nameId="tps4.1204107538752" value="" />
             <property name="name" nameId="tpck.1169194664001" value="" />
+            <property name="excludes" nameId="tps4.1204107538752" value="" />
             <node role="sourcePath" roleId="tps4.1220974847213" type="tps4.Path" typeId="tps4.1220973916698" id="2454311172623297987">
               <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="2454311172623297988">
                 <property name="name" nameId="tps4.1220976068141" value="base_dir" />
@@ -12123,8 +12127,8 @@
         <node role="alternativeConsequence" roleId="tpf8.1194989344771" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="2454311172623298140">
           <node role="templateNode" roleId="tpf8.1177093586806" type="tps4.Jar" typeId="tps4.1203598417283" id="2454311172623298146">
             <node role="entry" roleId="tps4.1203617897549" type="tps4.Copy" typeId="tps4.1204015075559" id="2454311172623298147">
-              <property name="excludes" nameId="tps4.1204107538752" value="" />
               <property name="name" nameId="tpck.1169194664001" value="" />
+              <property name="excludes" nameId="tps4.1204107538752" value="" />
               <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="2454311172623298155">
                 <node role="sourceNodesQuery" roleId="tpf8.1167952069335" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="2454311172623298156">
                   <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2454311172623298157">
@@ -12627,8 +12631,8 @@
             </node>
           </node>
           <node role="entry" roleId="tps4.1203617897549" type="tps4.Copy" typeId="tps4.1204015075559" id="6278136257391526793">
-            <property name="excludes" nameId="tps4.1204107538752" value="" />
             <property name="name" nameId="tpck.1169194664001" value="" />
+            <property name="excludes" nameId="tps4.1204107538752" value="" />
             <node role="sourcePath" roleId="tps4.1220974847213" type="tps4.Path" typeId="tps4.1220973916698" id="6278136257391529804">
               <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="6278136257391529805">
                 <property name="name" nameId="tps4.1220976068141" value="base_dir" />
@@ -12877,8 +12881,8 @@
         </node>
       </node>
       <node role="entry" roleId="tps4.1203617897549" type="tps4.Copy" typeId="tps4.1204015075559" id="6278136257391572955">
-        <property name="excludes" nameId="tps4.1204107538752" value="" />
         <property name="name" nameId="tpck.1169194664001" value="" />
+        <property name="excludes" nameId="tps4.1204107538752" value="" />
         <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.CopySrcListMacro" typeId="tpf8.1114729360583" id="6278136257391572959">
           <node role="sourceNodesQuery" roleId="tpf8.1168278589236" type="tpf8.SourceSubstituteMacro_SourceNodesQuery" typeId="tpf8.1167951910403" id="6278136257391572960">
             <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6278136257391572961">
@@ -12953,8 +12957,8 @@
         <node role="alternativeConsequence" roleId="tpf8.1194989344771" type="tpf8.InlineTemplate_RuleConsequence" typeId="tpf8.1177093525992" id="6278136257391572969">
           <node role="templateNode" roleId="tpf8.1177093586806" type="tps4.Jar" typeId="tps4.1203598417283" id="6278136257391572971">
             <node role="entry" roleId="tps4.1203617897549" type="tps4.Copy" typeId="tps4.1204015075559" id="6278136257391573804">
-              <property name="excludes" nameId="tps4.1204107538752" value="" />
               <property name="name" nameId="tpck.1169194664001" value="" />
+              <property name="excludes" nameId="tps4.1204107538752" value="" />
               <node role="sourcePath" roleId="tps4.1220974847213" type="tps4.Path" typeId="tps4.1220973916698" id="6278136257391573805">
                 <node role="macro" roleId="tps4.1220976095387" type="tps4.MacroReference" typeId="tps4.1220976052975" id="6278136257391573806">
                   <property name="name" nameId="tps4.1220976068141" value="base_dir" />

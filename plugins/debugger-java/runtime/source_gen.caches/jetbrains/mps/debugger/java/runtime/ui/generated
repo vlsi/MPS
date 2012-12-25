@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="9tm6o5is1mo0yj2brvc92h5smliy1kp">
-  <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" hash="4hcep7xhiffv2wb0qno9ahp0inrjv04" />
-  <common hash="q4pzdxjbxw5fd34qmsqabeitlyys39" dependsOnNodes="true">
+<dependencies version="2" modelHash="-dzethuer9k5i9hrbhi7xzjaexblhz54">
+  <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.icons(MPS.Platform/com.intellij.icons@java_stub)" />
+  <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" hash="-1z4sgnmsh8j8s0i5ej74l7wxous2i9b" />
+  <common hash="-9tlvxufyrmv3cb2s31nwd7av41b0wwq" dependsOnNodes="true">
     <dep root="3187167456722827906" />
+    <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.icons(MPS.Platform/com.intellij.icons@java_stub)" />
     <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" />
     <file name="IconContainer.java" />
   </common>
-  <source id="3187167456722827906" name="Icons" hash="-9gp2ap1evlzv5y43j5uv7vp7t5tt432" dependsOnCreated="true">
+  <source id="3187167456722827906" name="Icons" hash="25d9hnlrkrli3f9l05zrec8qh4fdu9k" dependsOnCreated="true">
     <dep model="r:4aa0c7da-6277-43fd-90b0-e616e98e56e0(jetbrains.mps.lang.resources.generator.template.main@generator)" />
     <file name="Icons.java" />
   </source>

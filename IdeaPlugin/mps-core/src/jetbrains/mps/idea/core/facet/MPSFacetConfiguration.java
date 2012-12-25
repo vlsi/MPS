@@ -132,13 +132,13 @@ public class MPSFacetConfiguration implements FacetConfiguration, PersistentStat
     @Override
     public void apply() throws ConfigurationException {
       if (myForm != null) {
-        myForm.getData(myConfigurationBean);
+        myForm.apply(myConfigurationBean);
       }
     }
 
     public void reset() {
       if (myForm != null) {
-        myForm.setData(myConfigurationBean);
+        myForm.reset(myConfigurationBean);
       }
     }
 

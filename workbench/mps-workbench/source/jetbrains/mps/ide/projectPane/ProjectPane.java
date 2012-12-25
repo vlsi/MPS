@@ -36,6 +36,7 @@ import com.intellij.openapi.wm.ToolWindowManager;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.util.ui.update.MergingUpdateQueue;
 import com.intellij.util.ui.update.Update;
+import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.ide.IdeMain;
 import jetbrains.mps.ide.IdeMain.TestMode;
 import jetbrains.mps.ide.ThreadUtils;
@@ -188,7 +189,7 @@ public class ProjectPane extends BaseLogicalViewProjectPane {
   }
 
   public Icon getIcon() {
-    return Icons.LOGICAL_VIEW_ICON;
+    return MPSIcons.ProjectPane.LogicalView;
   }
 
   public ActionCallback updateFromRoot(boolean restoreExpandedPaths) {

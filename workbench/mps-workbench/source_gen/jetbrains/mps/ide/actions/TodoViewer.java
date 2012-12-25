@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import javax.swing.JPanel;
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
+import com.intellij.icons.AllIcons;
 import jetbrains.mps.ide.findusages.view.UsagesView;
 import jetbrains.mps.project.Project;
 import java.awt.BorderLayout;
@@ -37,7 +37,7 @@ import jetbrains.mps.ide.findusages.CantLoadSomethingException;
 import jetbrains.mps.ide.findusages.CantSaveSomethingException;
 
 public class TodoViewer extends JPanel {
-  public static final Icon TODO_ICON = new ImageIcon(TodoViewer.class.getResource("todo.png"));
+  public static final Icon TODO_ICON = AllIcons.Toolwindows.ToolWindowTodo;
   private UsagesView myUsagesView;
   private Project myProject;
   private TodoViewer_Tool myTool;

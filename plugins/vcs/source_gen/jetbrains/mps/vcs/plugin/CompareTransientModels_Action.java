@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
@@ -23,7 +23,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
 
 public class CompareTransientModels_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("diff.png");
+  private static final Icon ICON = AllIcons.Actions.Diff;
 
   public CompareTransientModels_Action() {
     super("Compare Models", "", ICON);

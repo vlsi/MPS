@@ -27,7 +27,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.projectPane.Icons;
+import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SModel;
@@ -102,7 +102,7 @@ public class MappingDialog extends DialogWrapper {
     TextTreeNode root = new TextTreeNode("Generators");
     for (final Generator generator : myLanguage.getGenerators()) {
       ModuleContext moduleContext = new ModuleContext(generator, ProjectHelper.toMPSProject(myProject));
-      MPSTreeNode generatorTreeNode = new MappingDialog.MyTreeNode(moduleContext, Icons.GENERATORS_ICON, generator.getModuleFqName(), "generator/" + generator.getName());
+      MPSTreeNode generatorTreeNode = new MappingDialog.MyTreeNode(moduleContext, MPSIcons.Nodes.Generator, generator.getModuleFqName(), "generator/" + generator.getName());
       root.add(generatorTreeNode);
       for (SModelDescriptor md : generator.getOwnTemplateModels()) {
         MPSTreeNode modelTreeNode = new MappingDialog.MyTreeNode(moduleContext, IconManager.getIconFor(md), md.toString(), md.getLongName() + "@" + md.getStereotype());

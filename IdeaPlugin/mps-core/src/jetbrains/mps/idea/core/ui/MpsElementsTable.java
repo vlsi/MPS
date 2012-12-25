@@ -32,21 +32,22 @@ import java.util.*;
 public abstract class MpsElementsTable<T> {
   private final Border NO_FOCUS_BORDER = BorderFactory.createEmptyBorder(1, 1, 1, 1);
 
-  private MpsElementsTableModel myElementsTableModel;
+  private MpsElementsTableModel<T> myElementsTableModel;
   private JBTable myElementsTable;
 
   public JComponent createComponent() {
     myElementsTableModel = new MpsElementsTableModel<T>(getComparator(), getRendererClass(), getColumnTitle());
 
-    myElementsTable = new JBTable(myElementsTableModel);
-    myElementsTable.setShowGrid(false);
-    myElementsTable.setDragEnabled(false);
-    myElementsTable.setShowHorizontalLines(false);
-    myElementsTable.setShowVerticalLines(false);
-    myElementsTable.setIntercellSpacing(new Dimension(0, 0));
-    myElementsTable.setBorder(new LineBorder(UIUtil.getBorderColor()));
-    myElementsTable.setDefaultRenderer(getRendererClass(), createDefaultRenderer());
-    myElementsTable.getSelectionModel().setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+    JBTable table = new JBTable(myElementsTableModel);
+    table.setShowGrid(false);
+    table.setDragEnabled(false);
+    table.setShowHorizontalLines(false);
+    table.setShowVerticalLines(false);
+    table.setIntercellSpacing(new Dimension(0, 0));
+    table.setBorder(new LineBorder(UIUtil.getBorderColor()));
+    table.setDefaultRenderer(getRendererClass(), createDefaultRenderer());
+    table.getSelectionModel().setSelectionMode(ListSelectionModel.MULTIPLE_INTERVAL_SELECTION);
+    myElementsTable = table;
 
     new SpeedSearchBase<JBTable>(myElementsTable) {
       public int getSelectedIndex() {
@@ -92,6 +93,7 @@ public abstract class MpsElementsTable<T> {
           @Override
           public void run() {
             final java.util.List<T> allElements = getAllVisibleElements();
+            allElements.removeAll(getElements());
             Collections.sort(allElements, getComparator());
 
             SwingUtilities.invokeLater(new Runnable() {

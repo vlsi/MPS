@@ -139,10 +139,10 @@
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
-    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.matcher.ChooseByNamePanel" />
-    <classNode dependClassName="jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory" />
     <classNode dependClassName="jetbrains.mps.workbench.choose.nodes.BaseNodePointerItem" />
     <classNode dependClassName="jetbrains.mps.workbench.choose.nodes.BaseNodePointerModel" />
+    <classNode dependClassName="jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel" />
+    <classNode dependClassName="jetbrains.mps.workbench.goTo.ui.MpsPopupFactory" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
     <classNode extendsClassName="com.intellij.openapi.ui.DialogWrapper" />
   </dependency>

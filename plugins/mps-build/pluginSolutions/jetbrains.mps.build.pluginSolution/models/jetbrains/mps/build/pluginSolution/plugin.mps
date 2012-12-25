@@ -51,8 +51,8 @@
     </node>
     <node type="uhxm.RunConfigurationExecutor" typeId="uhxm.7806358006983614956" id="4468328282078708516">
       <property name="canRun" nameId="uhxm.5925077313451868299" value="true" />
-      <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
+      <property name="configurationName" nameId="uhxm.1931462339887551644" value="myRunConfiguration" />
       <link role="configuration" roleId="fb9u.946964771156905618" targetNodeId="4468328282078607076" resolveInfo="Build Script" />
     </node>
     <node type="uhxm.RunConfigurationProducer" typeId="uhxm.4366236229294105349" id="3767587139140991018">
@@ -319,7 +319,7 @@
     </node>
   </root>
   <root id="4468328282078639071">
-    <node role="icon" roleId="uhxm.7966814097310618131" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4468328282078639072" />
+    <node role="icon" roleId="uhxm.7966814097310618131" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="7456875308137584246" />
   </root>
   <root id="4468328282078708516">
     <node role="execute" roleId="uhxm.7945003362267213473" type="uhxm.ExecuteConfiguration_Function" typeId="uhxm.6139196002333163564" id="4468328282078708517">

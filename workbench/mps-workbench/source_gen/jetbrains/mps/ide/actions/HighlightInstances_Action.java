@@ -13,10 +13,11 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.Set;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import java.util.Collections;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.smodel.ModelsOnlyScope;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -79,10 +80,11 @@ public class HighlightInstances_Action extends BaseAction {
       NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
       EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
 
-      Set<SNode> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(SNodeOperations.getConceptDeclaration(((SNode) MapSequence.fromMap(_params).get("node")))), SearchType.INSTANCES, new ModelsOnlyScope(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))), null);
-      for (SNode ref : SetSequence.fromSet(usages)) {
+      SConcept concept = SConceptRepository.getInstance().getConcept(((SNode) MapSequence.fromMap(_params).get("node")).getConcept().getId());
+      Set<org.jetbrains.mps.openapi.model.SNode> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, new ModelsOnlyScope(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))), null);
+      for (org.jetbrains.mps.openapi.model.SNode ref : SetSequence.fromSet(usages)) {
         if (ref.getTopmostAncestor() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getTopmostAncestor()) {
-          highlightManager.mark(ref, HighlightConstants.INSTANCES_COLOR, "usage", messageOwner);
+          highlightManager.mark(((SNode) ref), HighlightConstants.INSTANCES_COLOR, "usage", messageOwner);
         }
       }
       highlightManager.repaintAndRebuildEditorMessages();

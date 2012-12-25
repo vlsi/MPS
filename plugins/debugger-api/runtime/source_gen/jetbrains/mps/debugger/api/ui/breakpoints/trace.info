@@ -1502,7 +1502,7 @@
     <nodeInfo nodeId="4474271214083123482" fileName="BreakpointsBrowserDialog.java" startLine="270" startPosition="77" endLine="271" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083122841" fileName="BreakpointsBrowserDialog.java" startLine="273" startPosition="7" endLine="274" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="418270182880377872" fileName="BreakpointsBrowserDialog.java" startLine="280" startPosition="43" endLine="281" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="418270182880377875" fileName="BreakpointsBrowserDialog.java" startLine="281" startPosition="24" endLine="282" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="418270182880377875" fileName="BreakpointsBrowserDialog.java" startLine="281" startPosition="24" endLine="282" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="418270182880377891" fileName="BreakpointsBrowserDialog.java" startLine="285" startPosition="73" endLine="286" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="418270182880377907" fileName="BreakpointsBrowserDialog.java" startLine="287" startPosition="63" endLine="288" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="418270182880377920" fileName="BreakpointsBrowserDialog.java" startLine="291" startPosition="56" endLine="292" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1658,7 +1658,7 @@
     <scopeInfo nodeId="4474271214083123329" fileName="BreakpointsBrowserDialog.java" startLine="199" startPosition="43" endLine="201" endPosition="53" />
     <scopeInfo nodeId="4474271214083123380" fileName="BreakpointsBrowserDialog.java" startLine="222" startPosition="43" endLine="224" endPosition="53" />
     <scopeInfo nodeId="4474271214083123431" fileName="BreakpointsBrowserDialog.java" startLine="245" startPosition="43" endLine="247" endPosition="53" />
-    <scopeInfo nodeId="418270182880377871" fileName="BreakpointsBrowserDialog.java" startLine="280" startPosition="43" endLine="282" endPosition="118" />
+    <scopeInfo nodeId="418270182880377871" fileName="BreakpointsBrowserDialog.java" startLine="280" startPosition="43" endLine="282" endPosition="66" />
     <scopeInfo nodeId="4474271214083122389" fileName="BreakpointsBrowserDialog.java" startLine="104" startPosition="5" endLine="107" endPosition="5">
       <varInfo nodeId="4474271214083122391" varName="view" />
     </scopeInfo>

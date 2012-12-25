@@ -814,6 +814,7 @@
     <orderEntry type="library" name="Idea-plaform" level="project" />
     <orderEntry type="module" module-name="mps-editor" />
     <orderEntry type="module" module-name="debugger-api-api" />
+    <orderEntry type="module" module-name="mps-icons" />
   </component>
 </module>
 

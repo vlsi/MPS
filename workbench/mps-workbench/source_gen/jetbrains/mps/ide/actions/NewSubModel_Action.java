@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -22,7 +22,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 
 public class NewSubModel_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("model.png");
+  private static final Icon ICON = MPSIcons.Nodes.Model;
 
   public NewSubModel_Action() {
     super("Model", "", ICON);

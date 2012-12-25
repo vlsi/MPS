@@ -22,6 +22,7 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import com.intellij.ui.ScrollPaneFactory;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
@@ -47,7 +48,7 @@ public class ClassPathViewerTool extends BaseProjectTool {
   private IModule myInspectedModule;
 
   public ClassPathViewerTool(Project project) {
-    super(project, "Classpath Explorer", -1, IconManager.EMPTY_ICON, ToolWindowAnchor.BOTTOM, true);
+    super(project, "Classpath Explorer", -1, IdeIcons.DEFAULT_ICON, ToolWindowAnchor.BOTTOM, true);
 
   }
 

@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import java.util.List;
@@ -18,7 +18,7 @@ import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.logging.Logger;
 
 public class AnalyzeModuleDependencies_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("dependencies.png");
+  private static final Icon ICON = AllIcons.Toolwindows.ToolWindowModuleDependencies;
 
   public AnalyzeModuleDependencies_Action() {
     super("Analyze Module Dependencies", "", ICON);

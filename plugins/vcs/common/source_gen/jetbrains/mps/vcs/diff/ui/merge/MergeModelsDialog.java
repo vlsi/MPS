@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.diff.ui.merge;
 
 import com.intellij.openapi.ui.DialogWrapper;
 import javax.swing.Icon;
-import com.intellij.openapi.util.IconLoader;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.vcs.diff.merge.MergeSessionState;
@@ -63,8 +63,8 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
 
 public class MergeModelsDialog extends DialogWrapper {
-  public static final Icon APPLY_NON_CONFLICTS = IconLoader.getIcon("/diff/applyNotConflicts.png");
-  public static final Icon RESET = IconLoader.getIcon("/actions/reset.png");
+  public static final Icon APPLY_NON_CONFLICTS = AllIcons.Diff.ApplyNotConflicts;
+  public static final Icon RESET = AllIcons.Actions.Rollback;
   private Project myProject;
   private MergeSession myMergeSession;
   private MergeSession myMetadataMergeSession;

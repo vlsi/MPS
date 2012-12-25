@@ -4,7 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -24,7 +24,7 @@ import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.logging.Logger;
 
 public class FindLanguageConceptsUsages_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("find.png");
+  private static final Icon ICON = AllIcons.Actions.Find;
 
   public FindLanguageConceptsUsages_Action() {
     super("Find Concepts Usages", "", ICON);

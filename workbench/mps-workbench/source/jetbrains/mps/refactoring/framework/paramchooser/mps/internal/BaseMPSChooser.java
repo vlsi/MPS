@@ -22,8 +22,8 @@ import jetbrains.mps.refactoring.framework.InvalidInputValueException;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.refactoring.framework.paramchooser.IChooser;
 import jetbrains.mps.refactoring.framework.paramchooser.mps.IChooserSettings;
-import jetbrains.mps.workbench.actions.goTo.matcher.ChooseByNamePanel;
-import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
+import jetbrains.mps.workbench.goTo.ui.ChooseByNamePanel;
+import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 
 import javax.swing.JComponent;
 

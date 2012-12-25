@@ -108,7 +108,7 @@ public class TestToolbarPanel extends JPanel {
   }
 
   private AnAction createNextOccurrenceAction() {
-    return new AnAction("Next Failed Test", "Navigate to the next occurrence", Icons.NEXT_ICON) {
+    return new AnAction("Next Failed Test", "Navigate to the next occurrence", AllIcons.Actions.NextOccurence) {
       {
         registerCustomShortcutSet(new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_NEXT_OCCURENCE)), myTree);
       }
@@ -122,7 +122,7 @@ public class TestToolbarPanel extends JPanel {
   }
 
   private AnAction createPreviousOccurrenceAction() {
-    return new AnAction("Previous Failed Test", "Navigate to the previous occurrence", Icons.PREVIOUS_ICON) {
+    return new AnAction("Previous Failed Test", "Navigate to the previous occurrence", AllIcons.Actions.PreviousOccurence) {
       {
         registerCustomShortcutSet(new CustomShortcutSet(KeymapManager.getInstance().getActiveKeymap().getShortcuts(IdeActions.ACTION_PREVIOUS_OCCURENCE)), myTree);
       }

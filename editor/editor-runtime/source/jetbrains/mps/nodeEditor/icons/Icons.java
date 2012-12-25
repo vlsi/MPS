@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.nodeEditor.icons;
 
+import com.intellij.icons.AllIcons.General;
+
 import javax.swing.*;
 
 /**
@@ -22,7 +24,7 @@ import javax.swing.*;
  */
 public class Icons {
   public static final Icon OK = new ImageIcon(Icons.class.getResource("errorsOK.png"));
-  public static final Icon IN_PROGRESS = new ImageIcon(Icons.class.getResource("errorsInProgress.png"));
-  public static final Icon ERRORS = new ImageIcon(Icons.class.getResource("errorsFound.png"));
+  public static final Icon IN_PROGRESS = General.ErrorsInProgress;
+  public static final Icon ERRORS = General.ErrorsFound;
   public static final Icon WARNINGS = new ImageIcon(Icons.class.getResource("warningsFound.png"));
 }

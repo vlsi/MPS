@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import com.intellij.openapi.project.Project;
@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.logging.Logger;
 
 public class FindSpecificNodeUsages_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("find.png");
+  private static final Icon ICON = AllIcons.Actions.Find;
 
   public FindSpecificNodeUsages_Action() {
     super("Find Usages...", "", ICON);
