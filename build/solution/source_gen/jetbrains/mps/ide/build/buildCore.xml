@@ -82,7 +82,7 @@
       <zipfileset dir="${mps_home}/languages/core/stub/JDK" includes="icons/**, resources/**" prefix="modules/JDK" />
       <zipfileset file="${mps_home}/languages/core/stub/Annotations/Annotations.msd" prefix="modules/Annotations" />
       <zipfileset dir="${mps_home}/languages/core/stub/Annotations" includes="icons/**, resources/**" prefix="modules/Annotations" />
-      <zipfileset file="${mps_home}/languages/core/stub/MPS.OpenAPI/OpenAPI.msd" prefix="modules/MPS.OpenAPI" />
+      <zipfileset file="${mps_home}/languages/core/stub/MPS.OpenAPI/MPS.OpenAPI.msd" prefix="modules/MPS.OpenAPI" />
       <zipfileset dir="${mps_home}/languages/core/stub/MPS.OpenAPI" includes="icons/**, resources/**" prefix="modules/MPS.OpenAPI" />
     </jar>
     <jar destfile="${build.layout}/mps-core/lib/mps-core.jar">
@@ -94,26 +94,26 @@
       <zipfileset file="${mps_home}/core/kernel/kernelSolution/jetbrains.mps.kernel.msd" prefix="modules/jetbrains.mps.kernel" />
       <zipfileset dir="${mps_home}/core/kernel/kernelSolution" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.kernel" />
       <zipfileset dir="${mps_home}/core/kernel/kernelSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.kernel/" />
-      <zipfileset file="${mps_home}/core/persistence/persistence.msd" prefix="modules/jetbrains.mps.persistence" />
+      <zipfileset file="${mps_home}/core/persistence/jetbrains.mps.persistence.msd" prefix="modules/jetbrains.mps.persistence" />
       <zipfileset dir="${mps_home}/core/persistence" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.persistence" />
       <zipfileset dir="${mps_home}/core/persistence/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.persistence/models" />
-      <zipfileset file="${mps_home}/core/kernel/smodelRuntime/smodelRuntime.msd" prefix="modules/jetbrains.mps.runtime" />
+      <zipfileset file="${mps_home}/core/kernel/smodelRuntime/jetbrains.mps.runtime.msd" prefix="modules/jetbrains.mps.runtime" />
       <zipfileset dir="${mps_home}/core/kernel/smodelRuntime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.runtime" />
       <zipfileset dir="${mps_home}/core/kernel/smodelRuntime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.runtime/" />
-      <zipfileset file="${mps_home}/core/findUsages-runtime/runtime.msd" prefix="modules/jetbrains.mps.findUsages.runtime" />
+      <zipfileset file="${mps_home}/core/findUsages-runtime/jetbrains.mps.findUsages.runtime.msd" prefix="modules/jetbrains.mps.findUsages.runtime" />
       <zipfileset dir="${mps_home}/core/findUsages-runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.findUsages.runtime" />
       <zipfileset dir="${mps_home}/core/findUsages-runtime" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.findUsages.runtime/" />
       <zipfileset dir="${mps_home}/core/findUsages-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.findUsages.runtime/models" />
       <zipfileset file="${mps_home}/core/refactoring-runtime/jetbrains.mps.refactoring.runtime.msd" prefix="modules/jetbrains.mps.refactoring.runtime" />
       <zipfileset dir="${mps_home}/core/refactoring-runtime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.refactoring.runtime" />
       <zipfileset dir="${mps_home}/core/refactoring-runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.refactoring.runtime/models" />
-      <zipfileset file="${mps_home}/core/kernel/patternRuntime/runtime.msd" prefix="modules/jetbrains.mps.lang.pattern.runtime" />
+      <zipfileset file="${mps_home}/core/kernel/patternRuntime/jetbrains.mps.lang.pattern.runtime.msd" prefix="modules/jetbrains.mps.lang.pattern.runtime" />
       <zipfileset dir="${mps_home}/core/kernel/patternRuntime" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.lang.pattern.runtime" />
       <zipfileset dir="${mps_home}/core/kernel/patternRuntime/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.lang.pattern.runtime/models" />
-      <zipfileset file="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" prefix="modules/jetbrains.mps.traceInfo" />
+      <zipfileset file="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/jetbrains.mps.traceInfo.msd" prefix="modules/jetbrains.mps.traceInfo" />
       <zipfileset dir="${mps_home}/core/kernel/jetbrains.mps.debug.api.info" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.traceInfo" />
       <zipfileset dir="${mps_home}/core/kernel/jetbrains.mps.debug.api.info" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.traceInfo/" />
-      <zipfileset file="${mps_home}/core/generator/solutions/traceInfo/util/cache.msd" prefix="modules/jetbrains.mps.traceInfo.cache" />
+      <zipfileset file="${mps_home}/core/generator/solutions/traceInfo/util/jetbrains.mps.traceInfo.cache.msd" prefix="modules/jetbrains.mps.traceInfo.cache" />
       <zipfileset dir="${mps_home}/core/generator/solutions/traceInfo/util" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.traceInfo.cache" />
       <zipfileset dir="${mps_home}/core/generator/solutions/traceInfo/util/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.traceInfo.cache/models" />
       <zipfileset file="${mps_home}/core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" prefix="modules/jetbrains.mps.dataFlow.runtime" />
@@ -140,9 +140,9 @@
       <zipfileset file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" prefix="modules/jetbrains.mps.baseLanguage.search" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.baseLanguage.search" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.baseLanguage.search/" />
-      <zipfileset file="${mps_home}/languages/core/stub/MPS.Core/Core.msd" prefix="modules/MPS.Core" />
+      <zipfileset file="${mps_home}/languages/core/stub/MPS.Core/MPS.Core.msd" prefix="modules/MPS.Core" />
       <zipfileset dir="${mps_home}/languages/core/stub/MPS.Core" includes="icons/**, resources/**" prefix="modules/MPS.Core" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/util.msd" prefix="modules/jetbrains.mps.baseLanguage.util" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/jetbrains.mps.baseLanguage.util.msd" prefix="modules/jetbrains.mps.baseLanguage.util" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.baseLanguage.util" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/solution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.baseLanguage.util/solution" />
     </jar>
@@ -150,28 +150,28 @@
       <fileset dir="${build.tmp}/java/out/mps-ant" />
       <zipfileset file="${mps_home}/languages/core/stub/Ant/Ant.msd" prefix="modules/Ant" />
       <zipfileset dir="${mps_home}/languages/core/stub/Ant" includes="icons/**, resources/**" prefix="modules/Ant" />
-      <zipfileset file="${mps_home}/core/tool/ant/jetbrains.mps.build.antsupport.msd" prefix="modules/jetbrains.mps.tool.ant" />
+      <zipfileset file="${mps_home}/core/tool/ant/jetbrains.mps.tool.ant.msd" prefix="modules/jetbrains.mps.tool.ant" />
       <zipfileset dir="${mps_home}/core/tool/ant" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.tool.ant" />
       <zipfileset dir="${mps_home}/core/tool/ant/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.tool.ant/models" />
-      <zipfileset file="${mps_home}/core/tool/builder/builder.msd" prefix="modules/jetbrains.mps.tool.builder" />
+      <zipfileset file="${mps_home}/core/tool/builder/jetbrains.mps.tool.builder.msd" prefix="modules/jetbrains.mps.tool.builder" />
       <zipfileset dir="${mps_home}/core/tool/builder" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.tool.builder" />
       <zipfileset dir="${mps_home}/core/tool/builder/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.tool.builder/models" />
-      <zipfileset file="${mps_home}/core/tool/common/common.msd" prefix="modules/jetbrains.mps.tool.common" />
+      <zipfileset file="${mps_home}/core/tool/common/jetbrains.mps.tool.common.msd" prefix="modules/jetbrains.mps.tool.common" />
       <zipfileset dir="${mps_home}/core/tool/common" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.tool.common" />
       <zipfileset dir="${mps_home}/core/tool/common/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.tool.common/models" />
     </jar>
     <jar destfile="${build.layout}/mps-core/lib/mps-platform.jar">
       <fileset dir="${build.tmp}/java/out/mps-platform" />
       <fileset dir="${build.tmp}/java/out/mps-debugger" />
-      <zipfileset file="${mps_home}/languages/core/stub/MPS.Platform/Platform.msd" prefix="modules/MPS.Platform" />
+      <zipfileset file="${mps_home}/languages/core/stub/MPS.Platform/MPS.Platform.msd" prefix="modules/MPS.Platform" />
       <zipfileset dir="${mps_home}/languages/core/stub/MPS.Platform" includes="icons/**, resources/**" prefix="modules/MPS.Platform" />
-      <zipfileset file="${mps_home}/workbench/mps-platform/base.msd" prefix="modules/jetbrains.mps.ide.platform" />
+      <zipfileset file="${mps_home}/workbench/mps-platform/jetbrains.mps.ide.platform.msd" prefix="modules/jetbrains.mps.ide.platform" />
       <zipfileset dir="${mps_home}/workbench/mps-platform" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.platform" />
       <zipfileset dir="${mps_home}/workbench/mps-platform/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.platform/models" />
     </jar>
     <jar destfile="${build.layout}/mps-core/lib/mps-ui.jar">
       <fileset dir="${build.tmp}/java/out/mps-ui" />
-      <zipfileset file="${mps_home}/workbench/mps-ui/ui.msd" prefix="modules/jetbrains.mps.ide.ui" />
+      <zipfileset file="${mps_home}/workbench/mps-ui/jetbrains.mps.ide.ui.msd" prefix="modules/jetbrains.mps.ide.ui" />
       <zipfileset dir="${mps_home}/workbench/mps-ui" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.ui" />
       <zipfileset dir="${mps_home}/workbench/mps-ui/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.ui/models" />
     </jar>
@@ -180,7 +180,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/lib/mps-editor.jar">
       <fileset dir="${build.tmp}/java/out/mps-editor" />
-      <zipfileset file="${mps_home}/languages/core/stub/MPS.Editor/Editor.msd" prefix="modules/MPS.Editor" />
+      <zipfileset file="${mps_home}/languages/core/stub/MPS.Editor/MPS.Editor.msd" prefix="modules/MPS.Editor" />
       <zipfileset dir="${mps_home}/languages/core/stub/MPS.Editor" includes="icons/**, resources/**" prefix="modules/MPS.Editor" />
       <zipfileset file="${mps_home}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" prefix="modules/jetbrains.mps.ide.editor" />
       <zipfileset dir="${mps_home}/workbench/mps-editor" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.editor" />
@@ -228,7 +228,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.make.facet-src.jar" descriptor="facet.mpl" />
+        <sources jar="jetbrains.mps.make.facet-src.jar" descriptor="jetbrains.mps.make.facet.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/make/jetbrains.mps.make.facet.jar">
@@ -238,7 +238,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/make/jetbrains.mps.make.facet-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/make/languages/facet/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/make/languages/facet/facet.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/make/languages/facet/jetbrains.mps.make.facet.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/make/languages/facet/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/make/languages/facet/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -258,7 +258,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.make.script-src.jar" descriptor="script.mpl" />
+        <sources jar="jetbrains.mps.make.script-src.jar" descriptor="jetbrains.mps.make.script.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/make/jetbrains.mps.make.script.jar">
@@ -268,7 +268,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/make/jetbrains.mps.make.script-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/make/languages/script/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/make/languages/script/script.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/make/languages/script/jetbrains.mps.make.script.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/make/languages/script/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/make/languages/script/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -289,7 +289,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.build.gentest-src.jar" descriptor="gentest.mpl" />
+        <sources jar="jetbrains.mps.build.gentest-src.jar" descriptor="jetbrains.mps.build.gentest.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/make/jetbrains.mps.build.gentest.jar">
@@ -299,7 +299,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/make/jetbrains.mps.build.gentest-src.jar">
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/gentest/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/util/buildlanguage/languages/gentest/gentest.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/util/buildlanguage/languages/gentest/jetbrains.mps.build.gentest.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/util/buildlanguage/languages/gentest/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.reduced.jar" />
@@ -318,7 +318,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.build.reduced-src.jar" descriptor="reduced.mpl" />
+        <sources jar="jetbrains.mps.build.reduced-src.jar" descriptor="jetbrains.mps.build.reduced.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/make/jetbrains.mps.build.reduced.jar">
@@ -328,7 +328,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/make/jetbrains.mps.build.reduced-src.jar">
       <fileset dir="${mps_home}/languages/util/buildlanguage/languages/reduced/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/util/buildlanguage/languages/reduced/reduced.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/util/buildlanguage/languages/reduced/jetbrains.mps.build.reduced.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/util/buildlanguage/languages/reduced/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.layout}/mps-core/languages/xml" />
@@ -349,7 +349,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.core.xml-src.jar" descriptor="xml.mpl" />
+        <sources jar="jetbrains.mps.core.xml-src.jar" descriptor="jetbrains.mps.core.xml.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/xml/jetbrains.mps.core.xml.jar">
@@ -359,7 +359,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/xml/jetbrains.mps.core.xml-src.jar">
       <fileset dir="${mps_home}/plugins/mps-core/languages/core.xml/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/mps-core/languages/core.xml/xml.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/mps-core/languages/core.xml/jetbrains.mps.core.xml.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mps-core/languages/core.xml/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/plugins/mps-core/languages/core.xml/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -379,7 +379,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.core.xml.sax-src.jar" descriptor="sax.mpl" />
+        <sources jar="jetbrains.mps.core.xml.sax-src.jar" descriptor="jetbrains.mps.core.xml.sax.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/xml/jetbrains.mps.core.xml.sax.jar">
@@ -389,7 +389,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/xml/jetbrains.mps.core.xml.sax-src.jar">
       <fileset dir="${mps_home}/plugins/mps-core/languages/core.xml.sax/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/mps-core/languages/core.xml.sax/sax.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/mps-core/languages/core.xml.sax/jetbrains.mps.core.xml.sax.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mps-core/languages/core.xml.sax/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/plugins/mps-core/languages/core.xml.sax/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -410,7 +410,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.access-src.jar" descriptor="access.mpl" />
+        <sources jar="jetbrains.mps.lang.access-src.jar" descriptor="jetbrains.mps.lang.access.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.access.jar">
@@ -420,7 +420,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.access-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/access/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/access/access.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/access/jetbrains.mps.lang.access.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/access/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/access/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -440,7 +440,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.actions-src.jar" descriptor="languageDescriptor.mpl" />
+        <sources jar="jetbrains.mps.lang.actions-src.jar" descriptor="jetbrains.mps.lang.actions.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.actions.jar">
@@ -450,7 +450,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.actions-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/actions/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/actions/languageDescriptor.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/actions/jetbrains.mps.lang.actions.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/actions/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/actions/generators/baseLanguage/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generators/baseLanguage/templates" />
     </jar>
@@ -470,7 +470,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.behavior-src.jar" descriptor="behavior.mpl" />
+        <sources jar="jetbrains.mps.lang.behavior-src.jar" descriptor="jetbrains.mps.lang.behavior.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.behavior.jar">
@@ -480,7 +480,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.behavior-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/behavior/languages/behavior/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/behavior/languages/behavior/behavior.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/behavior/languages/behavior/jetbrains.mps.lang.behavior.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/behavior/languages/behavior/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/behavior/languages/behavior/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -500,7 +500,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.checkedName-src.jar" descriptor="checkedName.mpl" />
+        <sources jar="jetbrains.mps.lang.checkedName-src.jar" descriptor="jetbrains.mps.lang.checkedName.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.checkedName.jar">
@@ -510,7 +510,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.checkedName-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/checkedName/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/checkedName/checkedName.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/checkedName/jetbrains.mps.lang.checkedName.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/checkedName/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/checkedName/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -530,7 +530,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.constraints-src.jar" descriptor="constraints.mpl" />
+        <sources jar="jetbrains.mps.lang.constraints-src.jar" descriptor="jetbrains.mps.lang.constraints.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.constraints.jar">
@@ -540,7 +540,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.constraints-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/constraints/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/constraints/constraints.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/constraints/jetbrains.mps.lang.constraints.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/constraints/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/constraints/generators/baseLanguage/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generators/baseLanguage/templates" />
     </jar>
@@ -561,7 +561,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.core-src.jar" descriptor="languageDescriptor.mpl" />
+        <sources jar="jetbrains.mps.lang.core-src.jar" descriptor="jetbrains.mps.lang.core.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar">
@@ -571,7 +571,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.core-src.jar">
       <fileset dir="${mps_home}/languages/core/core/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/core/core/languageDescriptor.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/core/core/jetbrains.mps.lang.core.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/core/core/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.dataFlow.jar" />
@@ -590,7 +590,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.dataFlow-src.jar" descriptor="dataFlow.mpl" />
+        <sources jar="jetbrains.mps.lang.dataFlow-src.jar" descriptor="jetbrains.mps.lang.dataFlow.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar">
@@ -600,7 +600,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.dataFlow-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/dataFlow/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/dataFlow/dataFlow.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/dataFlow/jetbrains.mps.lang.dataFlow.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/dataFlow/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/dataFlow/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
     </jar>
@@ -620,7 +620,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.dataFlow.analyzers-src.jar" descriptor="analyzers.mpl" />
+        <sources jar="jetbrains.mps.lang.dataFlow.analyzers-src.jar" descriptor="jetbrains.mps.lang.dataFlow.analyzers.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.dataFlow.analyzers.jar">
@@ -630,7 +630,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.dataFlow.analyzers-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/analyzers/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/analyzers/analyzers.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/analyzers/jetbrains.mps.lang.dataFlow.analyzers.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/analyzers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/analyzers/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -650,7 +650,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.descriptor-src.jar" descriptor="descriptor.mpl" />
+        <sources jar="jetbrains.mps.lang.descriptor-src.jar" descriptor="jetbrains.mps.lang.descriptor.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.descriptor.jar">
@@ -660,7 +660,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.descriptor-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/generator/languages/descriptor/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/generator/languages/descriptor/descriptor.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/generator/languages/descriptor/jetbrains.mps.lang.descriptor.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/generator/languages/descriptor/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/generator/languages/descriptor/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -681,7 +681,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.editor-src.jar" descriptor="editor.mpl" />
+        <sources jar="jetbrains.mps.lang.editor-src.jar" descriptor="jetbrains.mps.lang.editor.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.editor.jar">
@@ -691,7 +691,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.editor-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/editor/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/editor/editor.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/editor/jetbrains.mps.lang.editor.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/editor/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/editor/generators/baseLanguage/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generators/baseLanguage/templates" />
     </jar>
@@ -711,7 +711,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.extension-src.jar" descriptor="extension.mpl" />
+        <sources jar="jetbrains.mps.lang.extension-src.jar" descriptor="jetbrains.mps.lang.extension.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.extension.jar">
@@ -721,7 +721,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.extension-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/extension/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/extension/extension.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/extension/jetbrains.mps.lang.extension.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/extension/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/extension/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -741,7 +741,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.findUsages-src.jar" descriptor="findUsages.mpl" />
+        <sources jar="jetbrains.mps.lang.findUsages-src.jar" descriptor="jetbrains.mps.lang.findUsages.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.findUsages.jar">
@@ -751,7 +751,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.findUsages-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/findUsages/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/findUsages/findUsages.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/findUsages/jetbrains.mps.lang.findUsages.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/findUsages/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/findUsages/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
     </jar>
@@ -771,7 +771,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.generator-src.jar" descriptor="templateLanguage.mpl" />
+        <sources jar="jetbrains.mps.lang.generator-src.jar" descriptor="jetbrains.mps.lang.generator.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.generator.jar">
@@ -781,7 +781,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.generator-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/generator/languages/templateLanguage/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/generator/languages/templateLanguage/templateLanguage.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/generator/languages/templateLanguage/jetbrains.mps.lang.generator.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/generator/languages/templateLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/generator/languages/templateLanguage/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
     </jar>
@@ -801,7 +801,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.generator.generationContext-src.jar" descriptor="generationContext.mpl" />
+        <sources jar="jetbrains.mps.lang.generator.generationContext-src.jar" descriptor="jetbrains.mps.lang.generator.generationContext.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar">
@@ -811,7 +811,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.generator.generationContext-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/generator/languages/generationContext/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/generator/languages/generationContext/generationContext.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/generator/languages/generationContext/jetbrains.mps.lang.generator.generationContext.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/generator/languages/generationContext/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/generator/languages/generationContext/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
     </jar>
@@ -831,7 +831,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.generator.generationParameters-src.jar" descriptor="generationParameters.mpl" />
+        <sources jar="jetbrains.mps.lang.generator.generationParameters-src.jar" descriptor="jetbrains.mps.lang.generator.generationParameters.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.generator.generationParameters.jar">
@@ -841,7 +841,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.generator.generationParameters-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/generator/languages/generationParameters/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/generator/languages/generationParameters/generationParameters.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/generator/languages/generationParameters/jetbrains.mps.lang.generator.generationParameters.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/generator/languages/generationParameters/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/generator/languages/generationParameters/generator" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator" />
     </jar>
@@ -861,7 +861,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.intentions-src.jar" descriptor="intentions.mpl" />
+        <sources jar="jetbrains.mps.lang.intentions-src.jar" descriptor="jetbrains.mps.lang.intentions.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.intentions.jar">
@@ -871,7 +871,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.intentions-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/intentions/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/intentions/intentions.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/intentions/jetbrains.mps.lang.intentions.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/intentions/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/intentions/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
     </jar>
@@ -891,7 +891,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.pattern-src.jar" descriptor="pattern.mpl" />
+        <sources jar="jetbrains.mps.lang.pattern-src.jar" descriptor="jetbrains.mps.lang.pattern.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.pattern.jar">
@@ -901,7 +901,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.pattern-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/pattern/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/pattern/pattern.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/pattern/jetbrains.mps.lang.pattern.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/pattern/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/pattern/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
     </jar>
@@ -921,7 +921,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.project-src.jar" descriptor="project.mpl" />
+        <sources jar="jetbrains.mps.lang.project-src.jar" descriptor="jetbrains.mps.lang.project.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.project.jar">
@@ -931,7 +931,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.project-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/project/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/project/project.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/project/jetbrains.mps.lang.project.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/project/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.quotation.jar" />
@@ -950,7 +950,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.quotation-src.jar" descriptor="quotation.mpl" />
+        <sources jar="jetbrains.mps.lang.quotation-src.jar" descriptor="jetbrains.mps.lang.quotation.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.quotation.jar">
@@ -960,7 +960,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.quotation-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/quotation/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/quotation/quotation.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/quotation/jetbrains.mps.lang.quotation.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/quotation/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/quotation/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
     </jar>
@@ -981,7 +981,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.plugin-src.jar" descriptor="plugin.mpl" />
+        <sources jar="jetbrains.mps.lang.plugin-src.jar" descriptor="jetbrains.mps.lang.plugin.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.plugin.jar">
@@ -991,7 +991,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.plugin-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/plugin/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/plugin/plugin.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/plugin/jetbrains.mps.lang.plugin.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/plugin/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/plugin/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
     </jar>
@@ -1012,7 +1012,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.resources-src.jar" descriptor="resources.mpl" />
+        <sources jar="jetbrains.mps.lang.resources-src.jar" descriptor="jetbrains.mps.lang.resources.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.resources.jar">
@@ -1022,7 +1022,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.resources-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/resources/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/resources/resources.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/resources/jetbrains.mps.lang.resources.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/resources/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/resources/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -1042,7 +1042,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.refactoring-src.jar" descriptor="refactoring.mpl" />
+        <sources jar="jetbrains.mps.lang.refactoring-src.jar" descriptor="jetbrains.mps.lang.refactoring.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.refactoring.jar">
@@ -1052,7 +1052,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.refactoring-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/refactoring/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/refactoring/refactoring.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/refactoring/jetbrains.mps.lang.refactoring.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/refactoring/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/refactoring/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
     </jar>
@@ -1072,7 +1072,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.scopes-src.jar" descriptor="scopes.mpl" />
+        <sources jar="jetbrains.mps.lang.scopes-src.jar" descriptor="jetbrains.mps.lang.scopes.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.scopes.jar">
@@ -1082,7 +1082,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.scopes-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/scopes/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/scopes/scopes.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/scopes/jetbrains.mps.lang.scopes.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/scopes/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/scopes/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -1097,7 +1097,7 @@
           <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.scopes.runtime-src.jar" descriptor="runtime.msd" />
+        <sources jar="jetbrains.mps.lang.scopes.runtime-src.jar" descriptor="jetbrains.mps.lang.scopes.runtime.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar">
@@ -1107,7 +1107,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.scopes.runtime-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/scopes/runtime/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/scopes/runtime/runtime.msd" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/scopes/runtime/jetbrains.mps.lang.scopes.runtime.msd" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/scopes/runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.script.jar" />
@@ -1126,7 +1126,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.script-src.jar" descriptor="script.mpl" />
+        <sources jar="jetbrains.mps.lang.script-src.jar" descriptor="jetbrains.mps.lang.script.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.script.jar">
@@ -1136,7 +1136,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.script-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/script/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/script/script.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/script/jetbrains.mps.lang.script.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/script/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/script/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
     </jar>
@@ -1156,7 +1156,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.sharedConcepts-src.jar" descriptor="sharedConcepts.mpl" />
+        <sources jar="jetbrains.mps.lang.sharedConcepts-src.jar" descriptor="jetbrains.mps.lang.sharedConcepts.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.sharedConcepts.jar">
@@ -1166,7 +1166,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.sharedConcepts-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/sharedConcepts/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/sharedConcepts/sharedConcepts.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/sharedConcepts/jetbrains.mps.lang.sharedConcepts.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/sharedConcepts/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/sharedConcepts/generators/baseLanguage/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generators/baseLanguage/templates" />
     </jar>
@@ -1188,7 +1188,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.smodel-src.jar" descriptor="smodel.mpl" />
+        <sources jar="jetbrains.mps.lang.smodel-src.jar" descriptor="jetbrains.mps.lang.smodel.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.smodel.jar">
@@ -1198,7 +1198,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.smodel-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/smodel/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/smodel/smodel.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/smodel/jetbrains.mps.lang.smodel.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/smodel/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/smodel/generator" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator" />
       <zipfileset dir="${mps_home}/languages/languageDesign/smodel/generator/baseLanguage" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage" />
@@ -1210,7 +1210,7 @@
         <dependencies>
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.smodel.runtime-src.jar" descriptor="runtime.msd" />
+        <sources jar="jetbrains.mps.lang.smodel.runtime-src.jar" descriptor="jetbrains.mps.lang.smodel.runtime.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.smodel.runtime.jar">
@@ -1220,7 +1220,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.smodel.runtime-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.runtime/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.runtime/runtime.msd" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.runtime/jetbrains.mps.lang.smodel.runtime.msd" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.runtime/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.structure.jar" />
@@ -1240,7 +1240,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.structure-src.jar" descriptor="languageDescriptor.mpl" />
+        <sources jar="jetbrains.mps.lang.structure-src.jar" descriptor="jetbrains.mps.lang.structure.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.structure.jar">
@@ -1250,7 +1250,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.structure-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/structure/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/structure/languageDescriptor.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/structure/jetbrains.mps.lang.structure.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/structure/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/structure/generator_new" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator_new" />
     </jar>
@@ -1270,7 +1270,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.stubs-src.jar" descriptor="stubs.mpl" />
+        <sources jar="jetbrains.mps.lang.stubs-src.jar" descriptor="jetbrains.mps.lang.stubs.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.stubs.jar">
@@ -1280,7 +1280,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.stubs-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/stubs/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/stubs/stubs.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/stubs/jetbrains.mps.lang.stubs.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/stubs/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/stubs/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -1300,7 +1300,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.textGen-src.jar" descriptor="textGen.mpl" />
+        <sources jar="jetbrains.mps.lang.textGen-src.jar" descriptor="jetbrains.mps.lang.textGen.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.textGen.jar">
@@ -1310,7 +1310,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.textGen-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/textGen/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/textGen/textGen.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/textGen/jetbrains.mps.lang.textGen.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/textGen/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
       <zipfileset dir="${mps_home}/languages/languageDesign/textGen/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/textGen/generators/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generators/baseLanguage/template" />
@@ -1331,7 +1331,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.traceable-src.jar" descriptor="traceable.mpl" />
+        <sources jar="jetbrains.mps.lang.traceable-src.jar" descriptor="jetbrains.mps.lang.traceable.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar">
@@ -1341,7 +1341,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/traceable/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/traceable/traceable.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/traceable/jetbrains.mps.lang.traceable.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/traceable/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.traceable.operations.jar" />
@@ -1360,7 +1360,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.traceable.operations-src.jar" descriptor="operations.mpl" />
+        <sources jar="jetbrains.mps.lang.traceable.operations-src.jar" descriptor="jetbrains.mps.lang.traceable.operations.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.operations.jar">
@@ -1370,7 +1370,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.operations-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/traceable.operations/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/traceable.operations/operations.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/traceable.operations/jetbrains.mps.lang.traceable.operations.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/traceable.operations/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/traceable.operations/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -1391,7 +1391,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.typesystem-src.jar" descriptor="typesystem.mpl" />
+        <sources jar="jetbrains.mps.lang.typesystem-src.jar" descriptor="jetbrains.mps.lang.typesystem.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.typesystem.jar">
@@ -1401,7 +1401,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/languageDesign/jetbrains.mps.lang.typesystem-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/typesystem/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/typesystem/typesystem.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/typesystem/jetbrains.mps.lang.typesystem.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/typesystem/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/languageDesign/typesystem/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
     </jar>
@@ -1425,7 +1425,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage-src.jar" descriptor="baseLanguage.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage-src.jar" descriptor="jetbrains.mps.baseLanguage.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.jar">
@@ -1435,7 +1435,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/baseLanguage/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/baseLanguage/baseLanguage.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/baseLanguage/jetbrains.mps.baseLanguage.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/baseLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/baseLanguage/generator/java/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/java/templates" />
     </jar>
@@ -1455,7 +1455,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.blTypes-src.jar" descriptor="blTypes.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage.blTypes-src.jar" descriptor="jetbrains.mps.baseLanguage.blTypes.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar">
@@ -1465,7 +1465,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/blTypes/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/blTypes/blTypes.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/blTypes/jetbrains.mps.baseLanguage.blTypes.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/blTypes/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/blTypes/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
@@ -1485,7 +1485,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.builders-src.jar" descriptor="builders.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage.builders-src.jar" descriptor="jetbrains.mps.baseLanguage.builders.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.builders.jar">
@@ -1495,7 +1495,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.builders-src.jar">
       <fileset dir="${mps_home}/languages/util/builders/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/util/builders/builders.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/util/builders/jetbrains.mps.baseLanguage.builders.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/util/builders/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/util/builders/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -1515,7 +1515,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.checkedDots-src.jar" descriptor="checkedDots.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage.checkedDots-src.jar" descriptor="jetbrains.mps.baseLanguage.checkedDots.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar">
@@ -1525,7 +1525,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/checkDot/languages/checkedDots/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/checkDot/languages/checkedDots/checkedDots.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/checkDot/languages/checkedDots/jetbrains.mps.baseLanguage.checkedDots.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/checkDot/languages/checkedDots/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/checkDot/languages/checkedDots/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -1545,7 +1545,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.classifiers-src.jar" descriptor="classifiers.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage.classifiers-src.jar" descriptor="jetbrains.mps.baseLanguage.classifiers.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar">
@@ -1555,7 +1555,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/classifiers/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/classifiers/classifiers.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/classifiers/jetbrains.mps.baseLanguage.classifiers.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/classifiers/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/classifiers/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
     </jar>
@@ -1576,7 +1576,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.closures-src.jar" descriptor="closures.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage.closures-src.jar" descriptor="jetbrains.mps.baseLanguage.closures.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar">
@@ -1586,7 +1586,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.closures-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/closures/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/closures/closures.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/closures/jetbrains.mps.baseLanguage.closures.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/closures/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/closures/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
     </jar>
@@ -1607,7 +1607,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.collections-src.jar" descriptor="collections.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage.collections-src.jar" descriptor="jetbrains.mps.baseLanguage.collections.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar">
@@ -1617,7 +1617,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.collections-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/collections/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/collections/collections.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/collections/jetbrains.mps.baseLanguage.collections.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/collections/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/collections/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/collections/generators/baseLanguage/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generators/baseLanguage/templates" />
@@ -1638,7 +1638,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.constructors-src.jar" descriptor="constructors.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage.constructors-src.jar" descriptor="jetbrains.mps.baseLanguage.constructors.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.constructors.jar">
@@ -1648,7 +1648,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.constructors-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/constructors/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/constructors/constructors.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/constructors/jetbrains.mps.baseLanguage.constructors.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/constructors/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/constructors/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -1668,7 +1668,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.extensionMethods-src.jar" descriptor="methodExtension.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage.extensionMethods-src.jar" descriptor="jetbrains.mps.baseLanguage.extensionMethods.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.extensionMethods.jar">
@@ -1678,7 +1678,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.extensionMethods-src.jar">
       <fileset dir="${mps_home}/languages/util/extensionMethod/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/util/extensionMethod/methodExtension.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/util/extensionMethod/jetbrains.mps.baseLanguage.extensionMethods.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/util/extensionMethod/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/util/extensionMethod/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -1699,7 +1699,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.javadoc-src.jar" descriptor="javadoc.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage.javadoc-src.jar" descriptor="jetbrains.mps.baseLanguage.javadoc.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.javadoc.jar">
@@ -1709,7 +1709,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.javadoc-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/javadoc/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/javadoc/javadoc.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/javadoc/jetbrains.mps.baseLanguage.javadoc.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/javadoc/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.jdk7.jar" />
@@ -1728,7 +1728,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.jdk7-src.jar" descriptor="jdk7.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage.jdk7-src.jar" descriptor="jetbrains.mps.baseLanguage.jdk7.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7.jar">
@@ -1738,7 +1738,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.jdk7-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/jdk7/languages/jdk7/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/jdk7/languages/jdk7/jdk7.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/jdk7/languages/jdk7/jetbrains.mps.baseLanguage.jdk7.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/jdk7/languages/jdk7/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/jdk7/languages/jdk7/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -1758,7 +1758,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.logging-src.jar" descriptor="logging.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage.logging-src.jar" descriptor="jetbrains.mps.baseLanguage.logging.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar">
@@ -1768,7 +1768,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.logging-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/logging/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/logging/logging.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/logging/jetbrains.mps.baseLanguage.logging.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/logging/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/logging/generators/baseLanguage/templates" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generators/baseLanguage/templates" />
     </jar>
@@ -1780,7 +1780,7 @@
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
         </dependencies>
         <library jar="/lib/log4j.jar" />
-        <sources jar="jetbrains.mps.baseLanguage.logging.runtime-src.jar" descriptor="runtime.msd" />
+        <sources jar="jetbrains.mps.baseLanguage.logging.runtime-src.jar" descriptor="jetbrains.mps.baseLanguage.logging.runtime.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar">
@@ -1788,7 +1788,7 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.logging.runtime.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime-src.jar">
-      <zipfileset file="${mps_home}/languages/baseLanguage/logging/runtime/runtime.msd" prefix="module" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/logging/runtime/jetbrains.mps.baseLanguage.logging.runtime.msd" prefix="module" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.overloadedOperators.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.overloadedOperators.jar/META-INF" />
@@ -1806,7 +1806,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.overloadedOperators-src.jar" descriptor="overloadedOperators.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage.overloadedOperators-src.jar" descriptor="jetbrains.mps.baseLanguage.overloadedOperators.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.overloadedOperators.jar">
@@ -1816,7 +1816,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.overloadedOperators-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/overloadedOperators.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/jetbrains.mps.baseLanguage.overloadedOperators.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -1836,7 +1836,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.regexp-src.jar" descriptor="regexp.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage.regexp-src.jar" descriptor="jetbrains.mps.baseLanguage.regexp.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.jar">
@@ -1846,7 +1846,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp-src.jar">
       <fileset dir="${mps_home}/languages/util/regexp/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/util/regexp/regexp.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/util/regexp/jetbrains.mps.baseLanguage.regexp.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/util/regexp/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
       <zipfileset dir="${mps_home}/languages/util/regexp/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/util/regexp/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
@@ -1884,7 +1884,7 @@
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.scopes-src.jar" descriptor="scopes.msd" />
+        <sources jar="jetbrains.mps.baseLanguage.scopes-src.jar" descriptor="jetbrains.mps.baseLanguage.scopes.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar">
@@ -1894,7 +1894,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/scopes.msd" prefix="module" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/jetbrains.mps.baseLanguage.scopes.msd" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.baseLanguage.tuples.jar" />
@@ -1913,7 +1913,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.tuples-src.jar" descriptor="tuples.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage.tuples-src.jar" descriptor="jetbrains.mps.baseLanguage.tuples.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar">
@@ -1923,7 +1923,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/tuples/languages/tuples/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/tuples/languages/tuples/tuples.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/tuples/languages/tuples/jetbrains.mps.baseLanguage.tuples.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/tuples/languages/tuples/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/tuples/languages/tuples/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -1943,7 +1943,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.varVariable-src.jar" descriptor="varVariable.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage.varVariable-src.jar" descriptor="jetbrains.mps.baseLanguage.varVariable.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.varVariable.jar">
@@ -1953,7 +1953,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.varVariable-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/varVariable/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/varVariable/varVariable.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/varVariable/jetbrains.mps.baseLanguage.varVariable.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/varVariable/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/varVariable/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -1973,7 +1973,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.doubleDispatch-src.jar" descriptor="doubleDispatch.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage.doubleDispatch-src.jar" descriptor="jetbrains.mps.baseLanguage.doubleDispatch.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.doubleDispatch.jar">
@@ -1983,7 +1983,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.doubleDispatch-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/doubleDispatch/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/doubleDispatch/doubleDispatch.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/doubleDispatch/jetbrains.mps.baseLanguage.doubleDispatch.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/doubleDispatch/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/doubleDispatch/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -2003,7 +2003,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguageInternal-src.jar" descriptor="baseLanguageInternal.mpl" />
+        <sources jar="jetbrains.mps.baseLanguageInternal-src.jar" descriptor="jetbrains.mps.baseLanguageInternal.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar">
@@ -2013,7 +2013,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguageInternal-src.jar">
       <fileset dir="${mps_home}/languages/baseLanguage/baseLanguageInternal/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/baseLanguageInternal/jetbrains.mps.baseLanguageInternal.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/baseLanguageInternal/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/baseLanguageInternal/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -2034,7 +2034,7 @@
         <library jar="jmock-junit4-2.5.1.jar" />
         <library jar="objenesis-1.0.jar" />
         <library jar="/lib/junit-4.10.jar" />
-        <sources jar="jetbrains.mps.baseLanguage.unitTest.libs-src.jar" descriptor="jetbrains.mps.baseLnaguage.unitTest.lib.msd" />
+        <sources jar="jetbrains.mps.baseLanguage.unitTest.libs-src.jar" descriptor="jetbrains.mps.baseLanguage.unitTest.libs.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jetbrains.mps.baseLanguage.unitTest.libs.jar">
@@ -2042,7 +2042,7 @@
       <fileset dir="${build.tmp}/default/jetbrains.mps.baseLanguage.unitTest.libs.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jetbrains.mps.baseLanguage.unitTest.libs-src.jar">
-      <zipfileset file="${mps_home}/languages/baseLanguage/unitTest/solutions/lib/jetbrains.mps.baseLnaguage.unitTest.lib.msd" prefix="module" />
+      <zipfileset file="${mps_home}/languages/baseLanguage/unitTest/solutions/lib/jetbrains.mps.baseLanguage.unitTest.libs.msd" prefix="module" />
       <zipfileset dir="${mps_home}/languages/baseLanguage/unitTest/solutions/lib" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
     </jar>
     <copy todir="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs">
@@ -2096,7 +2096,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.execution.util-src.jar" descriptor="util.mpl" />
+        <sources jar="jetbrains.mps.execution.util-src.jar" descriptor="jetbrains.mps.execution.util.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-core/languages/util/jetbrains.mps.execution.util.jar">
@@ -2106,7 +2106,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/util/jetbrains.mps.execution.util-src.jar">
       <fileset dir="${mps_home}/languages/util/execution/util/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/util/execution/util/util.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/util/execution/util/jetbrains.mps.execution.util.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/util/execution/util/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.layout}/mps-core/plugins" />
@@ -2114,10 +2114,10 @@
     <mkdir dir="${build.layout}/mps-core/plugins/mps-java/lib" />
     <jar destfile="${build.layout}/mps-core/plugins/mps-java/lib/mps-java-common.jar">
       <fileset dir="${build.tmp}/java/out/mps-java-common" />
-      <zipfileset file="${mps_home}/plugins/mpsjava/platform/platform.msd" prefix="modules/jetbrains.mps.ide.java.platform" />
+      <zipfileset file="${mps_home}/plugins/mpsjava/platform/jetbrains.mps.ide.java.platform.msd" prefix="modules/jetbrains.mps.ide.java.platform" />
       <zipfileset dir="${mps_home}/plugins/mpsjava/platform" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.java.platform" />
       <zipfileset dir="${mps_home}/plugins/mpsjava/platform/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.java.platform/models" />
-      <zipfileset file="${mps_home}/plugins/mpsjava/basePlatform/basePlatform.msd" prefix="modules/jetbrains.mps.ide.java.basePlatform" />
+      <zipfileset file="${mps_home}/plugins/mpsjava/basePlatform/jetbrains.mps.ide.java.basePlatform.msd" prefix="modules/jetbrains.mps.ide.java.basePlatform" />
       <zipfileset dir="${mps_home}/plugins/mpsjava/basePlatform" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.java.basePlatform" />
       <zipfileset dir="${mps_home}/plugins/mpsjava/basePlatform/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.java.basePlatform/models" />
     </jar>

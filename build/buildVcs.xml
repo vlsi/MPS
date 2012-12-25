@@ -78,7 +78,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.ide.vcs.modelmetadata-src.jar" descriptor="modelmetadata.mpl" />
+        <sources jar="jetbrains.mps.ide.vcs.modelmetadata-src.jar" descriptor="jetbrains.mps.ide.vcs.modelmetadata.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-vcs/languages/jetbrains.mps.ide.vcs.modelmetadata.jar">
@@ -88,7 +88,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-vcs/languages/jetbrains.mps.ide.vcs.modelmetadata-src.jar">
       <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/vcs/languages/modelmetadata/modelmetadata.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/vcs/languages/modelmetadata/jetbrains.mps.ide.vcs.modelmetadata.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <echo file="${build.layout}/build.properties">buildCore.version=${buildCore.version}</echo>

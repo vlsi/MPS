@@ -40,7 +40,7 @@
     <mkdir dir="${build.layout}/plugins/mps-devkit/lib" />
     <jar destfile="${build.layout}/plugins/mps-devkit/lib/devkit.jar">
       <fileset dir="${build.tmp}/java/out/mps-devkit" />
-      <zipfileset file="${mps_home}/plugins/mpsdevkit/mpsdevkit.msd" prefix="modules/jetbrains.mps.ide.mpsdevkit" />
+      <zipfileset file="${mps_home}/plugins/mpsdevkit/jetbrains.mps.ide.mpsdevkit.msd" prefix="modules/jetbrains.mps.ide.mpsdevkit" />
       <zipfileset dir="${mps_home}/plugins/mpsdevkit" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.mpsdevkit" />
       <zipfileset dir="${mps_home}/plugins/mpsdevkit/solution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.mpsdevkit/solution" />
     </jar>
@@ -63,7 +63,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.plugin.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+        <sources jar="jetbrains.mps.lang.plugin.pluginSolution-src.jar" descriptor="jetbrains.mps.lang.plugin.pluginSolution.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.plugin.pluginSolution.jar">
@@ -73,7 +73,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.plugin.pluginSolution-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/plugin/solutions/pluginSolution/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/plugin/solutions/pluginSolution/pluginSolution.msd" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/plugin/solutions/pluginSolution/jetbrains.mps.lang.plugin.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/plugin/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
       <zipfileset dir="${mps_home}/languages/languageDesign/plugin/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
@@ -94,7 +94,7 @@
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.generator.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+        <sources jar="jetbrains.mps.lang.generator.pluginSolution-src.jar" descriptor="jetbrains.mps.lang.generator.pluginSolution.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.generator.pluginSolution.jar">
@@ -104,7 +104,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.generator.pluginSolution-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/generator/languages/templateLanguage/solutions/pluginSolution/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/generator/languages/templateLanguage/solutions/pluginSolution/pluginSolution.msd" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/generator/languages/templateLanguage/solutions/pluginSolution/jetbrains.mps.lang.generator.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/generator/languages/templateLanguage/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.smodel.pluginSolution.jar" />
@@ -123,7 +123,7 @@
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.smodel.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+        <sources jar="jetbrains.mps.lang.smodel.pluginSolution-src.jar" descriptor="jetbrains.mps.lang.smodel.pluginSolution.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.smodel.pluginSolution.jar">
@@ -133,7 +133,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.smodel.pluginSolution-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/smodel/solutions/pluginSolution/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/smodel/solutions/pluginSolution/pluginSolution.msd" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/smodel/solutions/pluginSolution/jetbrains.mps.lang.smodel.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/smodel/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
       <zipfileset dir="${mps_home}/languages/languageDesign/smodel/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
     </jar>
@@ -152,7 +152,7 @@
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.quotation.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+        <sources jar="jetbrains.mps.lang.quotation.pluginSolution-src.jar" descriptor="jetbrains.mps.lang.quotation.pluginSolution.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.quotation.pluginSolution.jar">
@@ -162,7 +162,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.quotation.pluginSolution-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/quotation/solutions/pluginSolution/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/quotation/solutions/pluginSolution/pluginSolution.msd" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/quotation/solutions/pluginSolution/jetbrains.mps.lang.quotation.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/quotation/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
       <zipfileset dir="${mps_home}/languages/languageDesign/quotation/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
     </jar>
@@ -182,7 +182,7 @@
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.test.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+        <sources jar="jetbrains.mps.lang.test.pluginSolution-src.jar" descriptor="jetbrains.mps.lang.test.pluginSolution.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.test.pluginSolution.jar">
@@ -192,7 +192,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.test.pluginSolution-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/test/solutions/pluginSolution/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/test/solutions/pluginSolution/pluginSolution.msd" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/test/solutions/pluginSolution/jetbrains.mps.lang.test.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/test/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
       <zipfileset dir="${mps_home}/languages/languageDesign/test/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
@@ -213,7 +213,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.structure.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+        <sources jar="jetbrains.mps.lang.structure.pluginSolution-src.jar" descriptor="jetbrains.mps.lang.structure.pluginSolution.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.structure.pluginSolution.jar">
@@ -223,7 +223,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.structure.pluginSolution-src.jar">
       <fileset dir="${mps_home}/languages/languageDesign/structure/solutions/pluginSolution/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/languageDesign/structure/solutions/pluginSolution/pluginSolution.msd" prefix="module" />
+      <zipfileset file="${mps_home}/languages/languageDesign/structure/solutions/pluginSolution/jetbrains.mps.lang.structure.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${mps_home}/languages/languageDesign/structure/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
       <zipfileset dir="${mps_home}/languages/languageDesign/structure/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
@@ -242,7 +242,7 @@
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.lang.dataFlow.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+        <sources jar="jetbrains.mps.lang.dataFlow.pluginSolution-src.jar" descriptor="jetbrains.mps.lang.dataFlow.pluginSolution.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.dataFlow.pluginSolution.jar">
@@ -252,7 +252,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/languageDesign/jetbrains.mps.lang.dataFlow.pluginSolution-src.jar">
       <fileset dir="${mps_home}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.dataFlow.pluginSolution/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.dataFlow.pluginSolution/pluginSolution.msd" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.dataFlow.pluginSolution/jetbrains.mps.lang.dataFlow.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.dataFlow.pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
     <mkdir dir="${build.layout}/plugins/mps-devkit/languages/quickQueryLanguage" />
@@ -272,7 +272,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.quickQueryLanguage-src.jar" descriptor="quickQueryLanguage.mpl" />
+        <sources jar="jetbrains.mps.quickQueryLanguage-src.jar" descriptor="jetbrains.mps.quickQueryLanguage.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/quickQueryLanguage/jetbrains.mps.quickQueryLanguage.jar">
@@ -282,7 +282,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/quickQueryLanguage/jetbrains.mps.quickQueryLanguage-src.jar">
       <fileset dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/quickQueryLanguage.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/jetbrains.mps.quickQueryLanguage.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
       <zipfileset dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
@@ -323,7 +323,7 @@
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.quickQueryLanguage.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+        <sources jar="jetbrains.mps.quickQueryLanguage.pluginSolution-src.jar" descriptor="jetbrains.mps.quickQueryLanguage.pluginSolution.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/quickQueryLanguage/jetbrains.mps.quickQueryLanguage.pluginSolution.jar">
@@ -333,7 +333,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/quickQueryLanguage/jetbrains.mps.quickQueryLanguage.pluginSolution-src.jar">
       <fileset dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/pluginSolution/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/pluginSolution/pluginSolution.msd" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/pluginSolution/jetbrains.mps.quickQueryLanguage.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
       <zipfileset dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
     </jar>
@@ -354,7 +354,7 @@
           <module ref="d7eb0a2a-bd50-4576-beae-e4a89db35f20(jetbrains.mps.lang.scopes.runtime)" />
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
+        <sources jar="jetbrains.mps.baseLanguage.pluginSolution-src.jar" descriptor="jetbrains.mps.baseLanguage.pluginSolution.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/baseLanguage/jetbrains.mps.baseLanguage.pluginSolution.jar">
@@ -364,7 +364,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-devkit/languages/baseLanguage/jetbrains.mps.baseLanguage.pluginSolution-src.jar">
       <fileset dir="${mps_home}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.baseLanguage.pluginSolution/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.baseLanguage.pluginSolution/pluginSolution.msd" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.baseLanguage.pluginSolution/jetbrains.mps.baseLanguage.pluginSolution.msd" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.baseLanguage.pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
     <echo file="${build.layout}/build.properties">buildCore.version=${buildCore.version}</echo>
