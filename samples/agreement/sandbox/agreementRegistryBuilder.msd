@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.samples.agreementLanguage.sandbox" uuid="8297e161-d142-4e1a-83a1-5f3e5124f9cf" compileInMPS="true" generatorOutputPath="${module}/source_gen">
   <models>
-    <modelRoot path="${module}/models/postingrules" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="models/postingrules" />
+    </modelRoot>
   </models>
   <sourcePath />
   <dependencies>

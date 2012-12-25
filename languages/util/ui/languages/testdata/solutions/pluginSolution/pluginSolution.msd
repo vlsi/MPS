@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ui.internal.testdata.pluginSolution" uuid="dc474973-0f7b-4144-90c0-589509266420" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
-    <modelRoot path="${module}/models" />
-    <modelRoot path="${module}/" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="models" />
+      <sourceRoot location="." />
+    </modelRoot>
   </models>
   <sourcePath />
   <dependencies>

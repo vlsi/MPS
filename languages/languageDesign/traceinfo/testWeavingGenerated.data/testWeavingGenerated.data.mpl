@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.traceInfo.testWeavingGenerated.data" uuid="ce517356-fc9a-4e78-8606-6e7a36ff0671">
   <models>
-    <modelRoot path="${module}/languageModels" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="languageModels" />
+    </modelRoot>
   </models>
   <accessoryModels />
   <generators>
     <generator name="main" generatorUID="jetbrains.mps.traceInfo.testWeavingGenerated.data#6186432342008486849" uuid="5cb70574-4ffb-4146-9211-dc924a83cfac" generate-templates="true">
       <models>
-        <modelRoot path="${module}/generator/template" />
+        <modelRoot contentPath="${module}" type="default">
+          <sourceRoot location="generator/template" />
+        </modelRoot>
       </models>
       <external-templates />
       <usedLanguages>

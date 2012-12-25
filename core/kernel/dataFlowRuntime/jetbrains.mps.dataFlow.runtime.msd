@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.dataFlow.runtime" uuid="2af156ab-65c1-4a62-bd0d-ea734f71eab6" pluginKind="PLUGIN_CORE" compileInMPS="false">
   <models>
-    <modelRoot path="${module}/" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="." />
+    </modelRoot>
   </models>
   <sourcePath />
   <dependencies>

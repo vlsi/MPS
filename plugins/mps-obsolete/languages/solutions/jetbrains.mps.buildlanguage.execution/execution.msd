@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.build.deprecated.execution" uuid="869ac71f-76c6-4fc8-9be1-7d4dfe25b401" pluginKind="PLUGIN_OTHER" compileInMPS="false" generatorOutputPath="${module}/source_gen">
   <models>
-    <modelRoot path="${module}/models" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="models" />
+    </modelRoot>
   </models>
   <sourcePath />
   <dependencies>

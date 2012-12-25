@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.quickQueryLanguage.pluginSolution" uuid="7cafff2e-0f23-44d5-8d34-9e13afa2a751" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
-    <modelRoot path="${module}/models" />
-    <modelRoot path="${module}/" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="models" />
+      <sourceRoot location="." />
+    </modelRoot>
   </models>
   <sourcePath />
   <dependencies>

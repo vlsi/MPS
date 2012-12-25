@@ -2,7 +2,9 @@
 <solution name="jetbrains.mps.ide.java.tests" uuid="c3786d2b-aba2-45e5-8de0-1124fd14259b" pluginKind="PLUGIN_OTHER" compileInMPS="true" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot path="${mps_home}/languages/baseLanguage/baseLanguage/classes_gen" type="java_classes" />
-    <modelRoot path="${module}/models" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="models" />
+    </modelRoot>
   </models>
   <stubModelEntries>
     <stubModelEntry path="${mps_home}/plugins/mpsjava/classes" />

@@ -2,7 +2,9 @@
 <language namespace="jetbrains.mps.lang.core" uuid="ceab5195-25ea-4f22-9b92-103b95ca8c0c" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot path="${module}/classes_gen" type="java_classes" />
-    <modelRoot path="${module}/languageModels" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="languageModels" />
+    </modelRoot>
   </models>
   <accessoryModels />
   <generators />

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.lang.smodel" uuid="7866978e-a0f0-4cc7-81bc-4d213d9375e1" generatorOutputPath="${module}/source_gen">
   <models>
-    <modelRoot path="${module}/languageModels" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="languageModels" />
+    </modelRoot>
     <modelRoot path="${module}/classes_gen" type="java_classes" />
   </models>
   <accessoryModels>
@@ -11,8 +13,10 @@
     <generator name="BL" generatorUID="jetbrains.mps.lang.smodel#1139186730696" uuid="2bdcefec-ba49-4b32-ab50-ebc7a41d5090">
       <models>
         <modelRoot path="${module}/classes_gen" type="java_classes" />
-        <modelRoot path="${module}/generator" />
-        <modelRoot path="${module}/generator/baseLanguage" />
+        <modelRoot contentPath="${module}" type="default">
+          <sourceRoot location="generator" />
+          <sourceRoot location="generator/baseLanguage" />
+        </modelRoot>
       </models>
       <external-templates>
         <generator generatorUID="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />

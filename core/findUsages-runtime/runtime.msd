@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.findUsages.runtime" uuid="bfbdd672-7ff5-403f-af4f-16da5226f34c" pluginKind="PLUGIN_CORE" compileInMPS="false">
   <models>
-    <modelRoot path="${module}/" />
-    <modelRoot path="${module}/models" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="." />
+      <sourceRoot location="models" />
+    </modelRoot>
   </models>
   <sourcePath />
   <dependencies>

@@ -2,7 +2,9 @@
 <language namespace="jetbrains.mps.lang.structure" uuid="c72da2b9-7cce-4447-8389-f407dc1158b7" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot path="${module}/classes_gen" type="java_classes" />
-    <modelRoot path="${module}/languageModels" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="languageModels" />
+    </modelRoot>
   </models>
   <accessoryModels>
     <model modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
@@ -11,7 +13,9 @@
     <generator generatorUID="jetbrains.mps.lang.structure#1170324972255" uuid="b8e4beec-8383-4fb9-b0bb-9d1c9c159cfc">
       <models>
         <modelRoot path="${module}/classes_gen" type="java_classes" />
-        <modelRoot path="${module}/generator_new" />
+        <modelRoot contentPath="${module}" type="default">
+          <sourceRoot location="generator_new" />
+        </modelRoot>
         <modelRoot path="${mps_home}/lib/guava-11.0.1.jar" type="java_classes" />
       </models>
       <external-templates>

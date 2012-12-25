@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.ui" uuid="fb26dccf-fa54-4e9a-8ddb-b66311a34393">
   <models>
-    <modelRoot path="${module}/languageAccessories" />
-    <modelRoot path="${module}/languageModels" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="languageAccessories" />
+      <sourceRoot location="languageModels" />
+    </modelRoot>
   </models>
   <accessoryModels>
     <model modelUID="r:c1b84d62-80cc-499b-b655-943c00c7ba88(jetbrains.mps.ui.widgets)" />
@@ -12,7 +14,9 @@
   <generators>
     <generator name="baseLanguage" generatorUID="jetbrains.mps.ui#5725024602606565468" uuid="da5e4290-fe8f-4051-99eb-423e4107c1b4">
       <models>
-        <modelRoot path="${module}/generator/template" />
+        <modelRoot contentPath="${module}" type="default">
+          <sourceRoot location="generator/template" />
+        </modelRoot>
       </models>
       <external-templates>
         <generator generatorUID="190a284a-5378-42fd-8a37-3c6e429d667a(jetbrains.mps.ui.internal#4980855909371308341)" />

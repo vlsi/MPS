@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-573j7m92likl6ky0boe7z71o7wr4vro">
+<dependencies version="2" modelHash="-8vdt5kzbzk3onyv1bjik3o252t7l24l">
   <dep model="r:10b3b956-11f8-4dce-a96b-c10e225a71df(jetbrains.mps.make.outlook.typesystem)" hash="-d55miu3ssvfsne82uhabsy1j3qijgmv" />
   <common>
     <dep model="r:10b3b956-11f8-4dce-a96b-c10e225a71df(jetbrains.mps.make.outlook.typesystem)" />

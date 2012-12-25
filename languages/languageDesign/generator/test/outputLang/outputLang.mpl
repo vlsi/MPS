@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.transformation.test.outputLang" uuid="157a9668-bf58-417b-893e-53d86388dc56">
   <models>
-    <modelRoot path="${module}/languageModels" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="languageModels" />
+    </modelRoot>
   </models>
   <accessoryModels />
   <generators>
     <generator name="self" generatorUID="jetbrains.mps.transformation.test.outputLang#1209603905948" uuid="de2f9603-575d-4d84-b063-776b6d27a0b9" generate-templates="true">
       <models>
-        <modelRoot path="${module}/generator/self/template" />
+        <modelRoot contentPath="${module}" type="default">
+          <sourceRoot location="generator/self/template" />
+        </modelRoot>
       </models>
       <external-templates />
       <dependencies>

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ide.vcs.core" uuid="85836058-a162-41d7-bb1d-52e99d873f28" pluginKind="PLUGIN_CORE" compileInMPS="false">
   <models>
-    <modelRoot path="${module}/models" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="models" />
+    </modelRoot>
     <modelRoot path="${mps_home}/plugins/svn4idea/lib/sequence-library.jar" type="java_classes" />
     <modelRoot path="${mps_home}/plugins/svn4idea/lib/svnkit.jar" type="java_classes" />
   </models>

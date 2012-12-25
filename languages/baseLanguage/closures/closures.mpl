@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.baseLanguage.closures" uuid="fd392034-7849-419d-9071-12563d152375">
   <models>
-    <modelRoot path="${module}/languageModels" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="languageModels" />
+    </modelRoot>
   </models>
   <accessoryModels />
   <generators>
     <generator generatorUID="jetbrains.mps.baseLanguage.closures#1199623535494" uuid="857d0a79-6f44-4f46-84ed-9c5b42632011">
       <models>
-        <modelRoot path="${module}/generator/baseLanguage/template" />
+        <modelRoot contentPath="${module}" type="default">
+          <sourceRoot location="generator/baseLanguage/template" />
+        </modelRoot>
       </models>
       <external-templates>
         <generator generatorUID="985c8c6a-64b4-486d-a91e-7d4112742556(jetbrains.mps.baseLanguage#1129914002933)" />

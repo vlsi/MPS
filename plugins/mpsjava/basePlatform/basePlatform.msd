@@ -2,7 +2,9 @@
 <solution name="jetbrains.mps.ide.java.basePlatform" uuid="65557aaa-5381-435d-b705-3f8d546e0f40" compileInMPS="false">
   <models>
     <modelRoot path="${mps_home}/plugins/mpsjava/classes" type="java_classes" />
-    <modelRoot path="${module}/models" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="models" />
+    </modelRoot>
   </models>
   <sourcePath />
   <dependencies>

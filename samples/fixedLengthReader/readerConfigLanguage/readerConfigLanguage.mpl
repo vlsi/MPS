@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.samples.readerConfigLanguage" uuid="089e26c5-bfc3-4a60-9953-f68169a4608a">
   <models>
-    <modelRoot path="${module}/languageModels" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="languageModels" />
+    </modelRoot>
   </models>
   <accessoryModels />
   <generators>
     <generator generatorUID="readerConfigLanguage#1129923280150" uuid="5b79f56d-c904-49ad-93b5-e535ce9a83fc">
       <models>
-        <modelRoot path="${module}/generator/baseLanguage" />
+        <modelRoot contentPath="${module}" type="default">
+          <sourceRoot location="generator/baseLanguage" />
+        </modelRoot>
       </models>
       <external-templates />
       <dependencies>
@@ -26,7 +30,9 @@
     </generator>
     <generator generatorUID="readerConfigLanguage#1129923281152" uuid="ffb71f3a-317f-4241-a93c-321d713ebf82">
       <models>
-        <modelRoot path="${module}/generator/xml" />
+        <modelRoot contentPath="${module}" type="default">
+          <sourceRoot location="generator/xml" />
+        </modelRoot>
       </models>
       <external-templates />
       <usedLanguages>

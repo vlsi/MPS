@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ui.swing.runtime" uuid="acc947bf-6778-444a-9dc7-4cc72d4eb3d0" compileInMPS="true">
   <models>
-    <modelRoot path="${module}/" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="." />
+    </modelRoot>
     <modelRoot path="${module}/lib/swingx-1.6.jar" type="java_classes" />
   </models>
   <stubModelEntries>

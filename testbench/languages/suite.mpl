@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.testbench.suite" uuid="d3c5a46f-b8c2-47db-ad0a-30b8f19c2055">
   <models>
-    <modelRoot path="${module}/languageModels" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="languageModels" />
+    </modelRoot>
   </models>
   <accessoryModels>
     <model modelUID="r:2623dc86-b72d-4474-bafb-caa0418fe3c1(jetbrains.mps.testbench.suite.util)" />
@@ -9,7 +11,9 @@
   <generators>
     <generator name="java" generatorUID="jetbrains.mps.testbench.suite#8749850441865775970" uuid="13b00428-a31f-4c99-b565-ebb37706f8e8">
       <models>
-        <modelRoot path="${module}/generator/template" />
+        <modelRoot contentPath="${module}" type="default">
+          <sourceRoot location="generator/template" />
+        </modelRoot>
       </models>
       <external-templates />
       <dependencies>

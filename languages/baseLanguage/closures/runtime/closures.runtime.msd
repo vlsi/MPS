@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="closures.runtime" uuid="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb" pluginKind="PLUGIN_CORE" compileInMPS="false">
   <models>
-    <modelRoot path="${module}/" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="." />
+    </modelRoot>
     <modelRoot path="${module}/classes" type="java_classes" />
   </models>
   <sourcePath />

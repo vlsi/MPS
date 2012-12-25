@@ -2,13 +2,17 @@
 <language namespace="jetbrains.mps.lang.actions" uuid="aee9cad2-acd4-4608-aef2-0004f6a1cdbd" generatorOutputPath="${module}/source_gen">
   <models>
     <modelRoot path="${module}/classes_gen" type="java_classes" />
-    <modelRoot path="${module}/languageModels" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="languageModels" />
+    </modelRoot>
   </models>
   <accessoryModels />
   <generators>
     <generator generatorUID="jetbrains.mps.lang.actions#1154466409006" uuid="018659ff-d3ef-4215-97e0-bcfeeb111145">
       <models>
-        <modelRoot path="${module}/generators/baseLanguage/templates" />
+        <modelRoot contentPath="${module}" type="default">
+          <sourceRoot location="generators/baseLanguage/templates" />
+        </modelRoot>
       </models>
       <external-templates>
         <generator generatorUID="51736086-833e-4b0d-b9a6-a1dbbfda2131(jetbrains.mps.lang.sharedConcepts#1161623873951)" />

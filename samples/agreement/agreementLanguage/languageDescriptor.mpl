@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.samples.agreementLanguage" uuid="144f7012-c2d5-43be-be2b-4bfb7dff6503">
   <models>
-    <modelRoot path="${module}/languageAccessories" />
-    <modelRoot path="${module}/languageModels" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="languageAccessories" />
+      <sourceRoot location="languageModels" />
+    </modelRoot>
   </models>
   <accessoryModels>
     <model modelUID="r:00000000-0000-4000-0000-011c8959040b(jetbrains.mps.samples.agreementLanguage.declarations)" />
@@ -10,7 +12,9 @@
   <generators>
     <generator generatorUID="agreementLanguage#1130266708218" uuid="99486a30-6681-4388-952b-49b8af1fef48">
       <models>
-        <modelRoot path="${module}/generator" />
+        <modelRoot contentPath="${module}" type="default">
+          <sourceRoot location="generator" />
+        </modelRoot>
       </models>
       <external-templates />
       <dependencies>

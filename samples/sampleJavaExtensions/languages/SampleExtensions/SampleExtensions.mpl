@@ -1,13 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="org.jetbrains.mps.samples.IfAndUnless" uuid="67b828fd-8fbc-4496-b7f7-8b64ac097c62">
   <models>
-    <modelRoot path="${module}/languageModels" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="languageModels" />
+    </modelRoot>
   </models>
   <accessoryModels />
   <generators>
     <generator name="main" generatorUID="org.jetbrains.mps.samples.IfAndUnless#393299394024627256" uuid="a9b9fa8e-12f5-448d-b22d-5663c8206e2f">
       <models>
-        <modelRoot path="${module}/generator/template" />
+        <modelRoot contentPath="${module}" type="default">
+          <sourceRoot location="generator/template" />
+        </modelRoot>
       </models>
       <external-templates />
       <usedLanguages>

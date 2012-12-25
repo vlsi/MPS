@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.lang.smodel.unittest" uuid="d51c8d2d-7b6e-4d93-9eee-b55b04c5886b" pluginKind="PLUGIN_OTHER" compileInMPS="true" generatorOutputPath="${module}/tests_gen">
   <models>
-    <modelRoot path="${module}/" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="." />
+    </modelRoot>
   </models>
   <sourcePath />
   <dependencies>

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.testbench" uuid="e9000334-f5e2-4a2f-a0fc-9afd1d31e048" compileInMPS="false" generatorOutputPath="${mps_home}/testbench/source_gen">
   <models>
-    <modelRoot path="${module}/" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="." />
+    </modelRoot>
   </models>
   <sourcePath />
   <dependencies>

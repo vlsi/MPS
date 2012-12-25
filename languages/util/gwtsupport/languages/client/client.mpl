@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="jetbrains.mps.gwt.client" uuid="954c4d77-e24b-4e49-a5a5-5476c966c092">
   <models>
-    <modelRoot path="${module}/languageModels" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="languageModels" />
+    </modelRoot>
     <modelRoot path="${module}/redist/gwt-dev.jar">
       <manager moduleId="954c4d77-e24b-4e49-a5a5-5476c966c092" className="jetbrains.mps.gwt.client.stubs.GWTModuleStubs" />
     </modelRoot>
@@ -15,7 +17,9 @@
   <generators>
     <generator name="xml" generatorUID="jetbrains.mps.gwt.client#1572321421814275034" uuid="486577d1-3c2e-499e-91d3-9bab36e681a9">
       <models>
-        <modelRoot path="${module}/generator/template" />
+        <modelRoot contentPath="${module}" type="default">
+          <sourceRoot location="generator/template" />
+        </modelRoot>
       </models>
       <external-templates>
         <generator generatorUID="94951427-301e-4a1c-a1cd-d2c6bc9f3cfa(jetbrains.mps.xml#1163716442262)" />

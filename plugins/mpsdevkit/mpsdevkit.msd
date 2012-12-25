@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ide.mpsdevkit" uuid="cac2fef0-41a6-4fcd-923f-f893d536b2ab" pluginKind="PLUGIN_OTHER" compileInMPS="false" generatorOutputPath="${module}/source_gen">
   <models>
-    <modelRoot path="${module}/solution" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="solution" />
+    </modelRoot>
     <modelRoot path="${module}/classes" type="java_classes" />
   </models>
   <sourcePath />

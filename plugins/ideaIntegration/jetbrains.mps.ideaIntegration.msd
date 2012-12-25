@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.ideaIntegration" uuid="7c96448b-2b97-4f89-b563-f04172a4b83a" compileInMPS="false">
   <models>
-    <modelRoot path="${module}/">
+    <modelRoot path="${module}">
       <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
     </modelRoot>
     <modelRoot path="${module}/classes" type="java_classes" />
-    <modelRoot path="${module}/models" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="models" />
+    </modelRoot>
   </models>
   <sourcePath />
   <dependencies>
