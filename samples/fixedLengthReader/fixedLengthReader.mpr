@@ -17,7 +17,7 @@
   <component name="MPSProject">
     <projectModules>
       <modulePath path="${project}/myReaderConfiguration/myReaderConfiguration.msd" />
-      <modulePath path="${project}/readerConfigLanguage/readerConfigLanguage.mpl" />
+      <modulePath path="${project}/readerConfigLanguage/jetbrains.mps.samples.readerConfigLanguage.mpl" />
       <modulePath path="${project}/readerFramework/readerFramework.msd" folder="" />
     </projectModules>
     <genConfs>

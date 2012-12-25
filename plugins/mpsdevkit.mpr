@@ -30,7 +30,7 @@
       <modulePath path="${project}/mpsdevkit/solution/mpsdevkit.msd" folder="" />
       <modulePath path="${project}/mpsmake/solution/jetbrains.mps.ide.make.msd" folder="" />
       <modulePath path="${project}/mpsjava/solution/jetbrains.mps.ide.java.msd" folder="" />
-      <modulePath path="${project}/mpsjava/testsolution/testMaterial.msd" folder="" />
+      <modulePath path="${project}/mpsjava/testsolution/jetbrains.mps.ide.java.testMaterial.msd" folder="" />
       <modulePath path="${project}/modelchecker/solution/jetbrains.mps.ide.modelchecker.msd" folder="" />
       <modulePath path="${project}/migration/solution/jetbrains.mps.ide.migration.msd" folder="" />
     </projectModules>

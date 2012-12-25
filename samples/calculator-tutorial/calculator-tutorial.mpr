@@ -16,7 +16,7 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${project}/languages/calculator/calculator.mpl" />
+      <modulePath path="${project}/languages/calculator/jetbrains.mps.calculator.mpl" />
       <modulePath path="${project}/solutions/jetbrains.mps.calculator.sandbox/jetbrains.mps.calculator.sandbox.msd" />
     </projectModules>
     <genConfs>

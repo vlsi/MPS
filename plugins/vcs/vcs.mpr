@@ -31,7 +31,7 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${project}/jetbrains.mps.vcs.msd" />
+      <modulePath path="${project}/jetbrains.mps.ide.vcs.msd" />
       <modulePath path="${project}/solutions/jetbrains.mps.vcs.mergedriver/mergedriver.msd" folder="" />
     </projectModules>
     <genConfs>

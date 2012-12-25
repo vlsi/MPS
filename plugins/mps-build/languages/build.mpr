@@ -6,14 +6,14 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${project}/bash/bash.mpl" />
+      <modulePath path="${project}/bash/jetbrains.mps.bash.mpl" />
       <modulePath path="${project}/bash/sandbox/jetbrains.mps.bash.sandbox.msd" />
-      <modulePath path="${project}/build.mps/mps.mpl" folder="" />
-      <modulePath path="${project}/build.startup/startup.mpl" />
-      <modulePath path="${project}/build.workflow/workflow.mpl" folder="" />
-      <modulePath path="${project}/build/build.mpl" />
-      <modulePath path="${project}/solutions/jetbrains.mps.build.sandbox/sandbox.msd" />
-      <modulePath path="${project}/solutions/jetbrains.mps.build.tests/tests.msd" folder="" />
+      <modulePath path="${project}/build.mps/jetbrains.mps.build.mps.mpl" folder="" />
+      <modulePath path="${project}/build.startup/jetbrains.mps.build.startup.mpl" />
+      <modulePath path="${project}/build.workflow/jetbrains.mps.build.workflow.mpl" folder="" />
+      <modulePath path="${project}/build/jetbrains.mps.build.mpl" />
+      <modulePath path="${project}/solutions/jetbrains.mps.build.sandbox/jetbrains.mps.build.sandbox.msd" />
+      <modulePath path="${project}/solutions/jetbrains.mps.build.tests/jetbrains.mps.build.tests.msd" folder="" />
       <modulePath path="$PROJECT_DIR$/../../../build/solution/build.msd" />
       <modulePath path="$PROJECT_DIR$/../pluginSolutions/jetbrains.mps.build.mps.pluginSolution/pluginSolution.msd" />
       <modulePath path="$PROJECT_DIR$/../pluginSolutions/jetbrains.mps.build.pluginSolution/pluginSolution.msd" />
