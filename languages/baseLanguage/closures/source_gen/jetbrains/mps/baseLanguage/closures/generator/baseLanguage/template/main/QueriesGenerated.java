@@ -3634,7 +3634,7 @@ public class QueriesGenerated {
             SNode de = SNodeOperations.cast(SNodeOperations.getParent(desc), "jetbrains.mps.baseLanguage.structure.DotExpression");
             SNode lvd = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
             SLinkOperations.setTarget(lvd, "type", FunctionTypeUtil.unmeet(SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(TypeChecker.getInstance().getTypeOf(SLinkOperations.getTarget(de, "operand", true)), "jetbrains.mps.baseLanguage.closures.structure.UnrestrictedFunctionType"), "terminateType", true))), true);
-            SPropertyOperations.set(lvd, "name", "_tmp_" + de.getSNodeId().toString());
+            SPropertyOperations.set(lvd, "name", "_tmp_" + de.getNodeId().toString());
             Flags.NEEDS_INITIALIZER.flag(_context, lvd);
             SNode lvds = SNodeOperations.insertPrevSiblingChild(stmt, SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null));
             SLinkOperations.setTarget(lvds, "localVariableDeclaration", lvd, true);
