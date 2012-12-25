@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.nodeEditor;
 
+import com.intellij.ide.ui.UISettings;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.components.JBRadioButton;
@@ -308,8 +309,9 @@ class EditorSettingsPreferencesPage {
         mySettings.getState().setShowGrayed(myAllTabs.isSelected());
         applyState();
 
-        mySettings.getState().setMRUEditorActivatesOnClose(myActivateMRUEditorOnCloseRadio.isSelected());
-        mySettings.getState().setRightEditorActivatesOnClose(myActivateRightNeighbouringTabRadioButton.isSelected());
+        UISettings uiSettings = UISettings.getInstance();
+        uiSettings.ACTIVATE_MRU_EDITOR_ON_CLOSE = myActivateMRUEditorOnCloseRadio.isSelected();
+        uiSettings.ACTIVATE_RIGHT_EDITOR_ON_CLOSE = myActivateRightNeighbouringTabRadioButton.isSelected();
 
         mySettings.updateCachedValue();
 
@@ -348,8 +350,9 @@ class EditorSettingsPreferencesPage {
     boolean sameFgColor = mySelectionForegroundColorComponent.getColor().equals(EditorSettings.getDefaultSelectionForegroundColor());
     boolean sameBlinkingRate = myBlinkingRateSlider.getValue() == (int) (SLIDER_RATIO / (long) CaretBlinker.getInstance().getCaretBlinkingRateTimeMillis());
     boolean sameTabs = myFirstSelection.isSelected();
-    boolean sameCloseActiveTabs = mySettings.getState().isMRUEditorActivatesOnClose() == myActivateMRUEditorOnCloseRadio.isSelected()
-      && mySettings.getState().isRightEditorActivatesOnClose() == myActivateRightNeighbouringTabRadioButton.isSelected();
+    UISettings uiSettings = UISettings.getInstance();
+    boolean sameCloseActiveTabs = uiSettings.ACTIVATE_MRU_EDITOR_ON_CLOSE == myActivateMRUEditorOnCloseRadio.isSelected()
+      && uiSettings.ACTIVATE_RIGHT_EDITOR_ON_CLOSE == myActivateRightNeighbouringTabRadioButton.isSelected();
 
     return !(sameTextWidth && sameIndentSize && sameAntialiasing && sameUseBraces && samePowerSaveMode
       && sameFontSize && sameFontFamily && sameLineSpacing && sameBgColor && sameFgColor && sameBlinkingRate && sameTabs && sameCloseActiveTabs);
@@ -387,8 +390,9 @@ class EditorSettingsPreferencesPage {
     applyState();
     myFirstSelection.setSelected(true);
 
-    if (mySettings.getState().isMRUEditorActivatesOnClose()) myActivateMRUEditorOnCloseRadio.setSelected(true);
-    else if (mySettings.getState().isRightEditorActivatesOnClose()) myActivateRightNeighbouringTabRadioButton.setSelected(true);
+    UISettings uiSettings = UISettings.getInstance();
+    if (uiSettings.ACTIVATE_MRU_EDITOR_ON_CLOSE) myActivateMRUEditorOnCloseRadio.setSelected(true);
+    else if (uiSettings.ACTIVATE_RIGHT_EDITOR_ON_CLOSE) myActivateRightNeighbouringTabRadioButton.setSelected(true);
     else myActivateLeftEditorOnCloseRadio.setSelected(true);
 
     ModelAccess.instance().runReadInEDT(new Runnable() {
