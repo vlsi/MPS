@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.debugger;
+package jetbrains.mps.idea.java.debugger;
 
 import com.intellij.debugger.PositionManager;
 import com.intellij.debugger.PositionManagerFactory;

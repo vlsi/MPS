@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.debugger.breakpoints;
+package jetbrains.mps.idea.java.debugger.breakpoints;
 
 import com.intellij.debugger.DebuggerManagerEx;
 import com.intellij.debugger.engine.requests.RequestManagerImpl;
