@@ -1,4 +1,5 @@
 <project name="buildMPS" default="build">
+  <property name="mps.sign" location="sign"/>
 
   <property name="idea_home" location=".." />
 
@@ -23,7 +24,7 @@
     <ant antfile="buildMPS.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildDistribution.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildExe.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="sign/buildDmg.xml" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="${mps.sign}/buildDmg.xml" inheritAll="true" useNativeBasedir="true" />
   </target>
   
   <target name="clean">
