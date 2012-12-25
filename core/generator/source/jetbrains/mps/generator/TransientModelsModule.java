@@ -262,27 +262,14 @@ public class TransientModelsModule extends ClassLoadingModule {
       if (mySModel != null) {
         LOG.debug("Dropped " + getSModelReference());
         final SModel oldModel = mySModel;
-        oldModel.setModelDescriptor(null);
-
-        final Runnable notify = new Runnable() {
-          @Override
-          public void run() {
-            notifyModelReplaced(oldModel);
-            ModelAccess.instance().runWriteInEDT(new Runnable() {
-              @Override
-              public void run() {
-                mySModel = null;
-              }
-            });
-          }
-        };
+        mySModel = null;
         if (ModelAccess.instance().canWrite()) {
-          notify.run();
+          notifyModelReplaced(oldModel);
         } else {
           ModelAccess.instance().runWriteInEDT(new Runnable() {
             @Override
             public void run() {
-              notify.run();
+              notifyModelReplaced(oldModel);
             }
           });
         }
