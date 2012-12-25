@@ -20,7 +20,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.AbstractImmutableList;
 import jetbrains.mps.util.Condition;
@@ -94,7 +93,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   @NotNull
-  public final SNode getTopmostAncestor() {
+  public SNode getContainingRoot() {
     ModelAccess.assertLegalRead(this);
     assertDisposed();
 
@@ -1070,9 +1069,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * Inline content in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  public SNode getContainingRoot() {
-    SNode root = getTopmostAncestor();
-    return root.getModel() == null ? null : root;
+  public SNode getTopmostAncestor() {
+    return getContainingRoot();
   }
 
   @Deprecated

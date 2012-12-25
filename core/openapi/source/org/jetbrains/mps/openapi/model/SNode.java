@@ -114,6 +114,9 @@ public interface SNode {
   @NotNull
   SNode getTopmostAncestor();
 
+  @NotNull
+  SNode getContainingRoot();
+
   String getRoleInParent();
 
   /**
