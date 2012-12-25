@@ -16,7 +16,7 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${project}/../sampleXML/languages/sampleXML/sampleXML.mpl" />
+      <modulePath path="${project}/../sampleXML/languages/sampleXML/jetbrains.mps.sampleXML.mpl" />
       <modulePath path="${project}/languages/demoLang1/jetbrains.mps.samples.generator_demo.demoLang1.mpl" />
       <modulePath path="${project}/languages/demoLang2/jetbrains.mps.samples.generator_demo.demoLang2.mpl" />
       <modulePath path="${project}/languages/demoLang3/jetbrains.mps.samples.generator_demo.demoLang3.mpl" folder="" />

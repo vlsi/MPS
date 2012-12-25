@@ -14,9 +14,9 @@
       <modulePath path="${project}/build/jetbrains.mps.build.mpl" />
       <modulePath path="${project}/solutions/jetbrains.mps.build.sandbox/jetbrains.mps.build.sandbox.msd" />
       <modulePath path="${project}/solutions/jetbrains.mps.build.tests/jetbrains.mps.build.tests.msd" folder="" />
-      <modulePath path="$PROJECT_DIR$/../../../build/solution/build.msd" />
-      <modulePath path="$PROJECT_DIR$/../pluginSolutions/jetbrains.mps.build.mps.pluginSolution/pluginSolution.msd" />
-      <modulePath path="$PROJECT_DIR$/../pluginSolutions/jetbrains.mps.build.pluginSolution/pluginSolution.msd" />
+      <modulePath path="$PROJECT_DIR$/../../../build/solution/jetbrains.mps.ide.build.msd" />
+      <modulePath path="$PROJECT_DIR$/../pluginSolutions/jetbrains.mps.build.mps.pluginSolution/jetbrains.mps.build.mps.pluginSolution.msd" />
+      <modulePath path="$PROJECT_DIR$/../pluginSolutions/jetbrains.mps.build.pluginSolution/jetbrains.mps.build.pluginSolution.msd" />
     </projectModules>
     <genConfs />
   </component>

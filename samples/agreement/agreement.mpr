@@ -16,7 +16,7 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${project}/../formulaLanguage/language/formulaLanguage.mpl" />
+      <modulePath path="${project}/../formulaLanguage/language/jetbrains.mps.samples.formulaLanguage.mpl" />
       <modulePath path="${project}/../formulaLanguage/runtime/jetbrains.mps.samples.formula.runtime.msd" />
       <modulePath path="${project}/agreementLanguage/jetbrains.mps.samples.agreementLanguage.mpl" />
       <modulePath path="${project}/framework/jetbrains.mps.samples.agreement.framework.msd" folder="" />

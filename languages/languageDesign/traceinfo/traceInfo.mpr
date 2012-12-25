@@ -26,10 +26,10 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${project}/../../../core/kernel/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" folder="" />
-      <modulePath path="${project}/../../baseLanguage/baseLanguage/baseLanguage.mpl" folder="" />
-      <modulePath path="${project}/../plugin/plugin.mpl" folder="" />
-      <modulePath path="${project}/../textGen/textGen.mpl" folder="" />
+      <modulePath path="${project}/../../../core/kernel/jetbrains.mps.debug.api.info/jetbrains.mps.traceInfo.msd" folder="" />
+      <modulePath path="${project}/../../baseLanguage/baseLanguage/jetbrains.mps.baseLanguage.mpl" folder="" />
+      <modulePath path="${project}/../plugin/jetbrains.mps.lang.plugin.mpl" folder="" />
+      <modulePath path="${project}/../textGen/jetbrains.mps.lang.textGen.mpl" folder="" />
       <modulePath path="${project}/jetbrains.mps.traceInfo.testWeaving/jetbrains.mps.traceInfo.testWeaving.msd" folder="" />
       <modulePath path="${project}/testWeavingGenerated.data/jetbrains.mps.traceInfo.testWeavingGenerated.data.mpl" folder="" />
       <modulePath path="${project}/testWeavingInterpreted.data/jetbrains.mps.traceInfo.testWeavingInterpreted.data.mpl" folder="" />
