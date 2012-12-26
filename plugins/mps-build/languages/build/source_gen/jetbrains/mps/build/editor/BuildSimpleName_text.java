@@ -8,6 +8,8 @@ import java.awt.event.KeyEvent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.List;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -44,7 +46,7 @@ public class BuildSimpleName_text extends EditorCellKeyMap {
       if (contextNode == null) {
         return false;
       }
-      if (contextNode.isInstanceOfConcept("jetbrains.mps.build.structure.BuildTextStringPart")) {
+      if (SNodeUtil.isInstanceOf(contextNode, SConceptRepository.getInstance().getConcept("jetbrains.mps.build.structure.BuildTextStringPart"))) {
         return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
       }
       return false;

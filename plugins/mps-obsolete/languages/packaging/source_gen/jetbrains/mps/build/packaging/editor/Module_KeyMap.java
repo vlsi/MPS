@@ -8,6 +8,8 @@ import java.awt.event.KeyEvent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.List;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.project.Project;
@@ -41,7 +43,7 @@ public class Module_KeyMap extends EditorCellKeyMap {
       if (contextNode == null) {
         return false;
       }
-      if (contextNode.isInstanceOfConcept("jetbrains.mps.build.packaging.structure.Module")) {
+      if (SNodeUtil.isInstanceOf(contextNode, SConceptRepository.getInstance().getConcept("jetbrains.mps.build.packaging.structure.Module"))) {
         return true;
       }
       return false;

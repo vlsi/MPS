@@ -8,6 +8,8 @@ import java.awt.event.KeyEvent;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -41,7 +43,7 @@ public class AddForStatementVar extends EditorCellKeyMap {
       if (contextNode == null) {
         return false;
       }
-      if (contextNode.isInstanceOfConcept("jetbrains.mps.lang.core.structure.BaseConcept")) {
+      if (SNodeUtil.isInstanceOf(contextNode, SConceptRepository.getInstance().getConcept("jetbrains.mps.lang.core.structure.BaseConcept"))) {
         return this.canExecute_internal(keyEvent, editorContext, contextNode, this.getSelectedNodes(editorContext));
       }
       return false;
