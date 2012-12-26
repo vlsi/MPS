@@ -162,7 +162,7 @@ public final class CopyUtil {
 
   private static void addReferences(SNode root, Map<SNode, SNode> mapping, boolean forceCloneRefs) {
     if (root == null) return;
-    Iterable<SNode> thisAndDesc = IterableUtil.merge(Collections.singleton(root), root.getDescendants());
+    Iterable<SNode> thisAndDesc = IterableUtil.merge(Collections.singleton(root), jetbrains.mps.util.SNodeOperations.getDescendants(root, null));
     for (SNode inputNode : thisAndDesc) {
       SNode outputNode = mapping.get(inputNode);
       if (outputNode == null) continue;

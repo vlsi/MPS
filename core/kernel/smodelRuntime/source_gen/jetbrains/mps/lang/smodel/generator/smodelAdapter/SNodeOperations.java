@@ -210,7 +210,7 @@ public class SNodeOperations {
     }
 
     if (childConceptFqName == null) {
-      result = (List<SNode>) node.getDescendants();
+      result = (List<SNode>) jetbrains.mps.util.SNodeOperations.getDescendants(node, null);
       if (inclusion) {
         result.add(0, node);
       }
@@ -563,7 +563,9 @@ public class SNodeOperations {
     if (node == null || node.getParent() == null) {
       return -1;
     }
-    return node.getParent().getIndexOfChild(node);
+    String role = node.getRoleInParent();
+    if (role == null) return -1;
+    return node.getParent().getChildren(role).indexOf(node);
   }
 
   public static List<SNode> getAllAttributes(SNode node) {

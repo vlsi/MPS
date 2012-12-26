@@ -475,7 +475,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       synchronized (myAdditionalInputNodes) {
         if (!myAdditionalInputNodes.containsKey(inputNode)) {
           myAdditionalInputNodes.put(inputNode, Boolean.TRUE);
-          for (SNode n : inputNode.getDescendants()) {
+          for (SNode n : jetbrains.mps.util.SNodeOperations.getDescendants(inputNode, null)) {
             myAdditionalInputNodes.put(n, Boolean.TRUE);
           }
         }
