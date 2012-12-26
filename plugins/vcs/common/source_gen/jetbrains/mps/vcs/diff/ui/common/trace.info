@@ -2717,7 +2717,7 @@
     <nodeInfo nodeId="4652592318748340561" fileName="NextPreviousTraverser.java" startLine="261" startPosition="0" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4652592318748340849" fileName="NextPreviousTraverser.java" startLine="264" startPosition="36" endLine="265" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4652592318748340849" fileName="NextPreviousTraverser.java" startLine="266" startPosition="5" endLine="267" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="5577480965331702735" fileName="NextPreviousTraverser.java" startLine="271" startPosition="36" endLine="272" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5577480965331702735" fileName="NextPreviousTraverser.java" startLine="271" startPosition="36" endLine="272" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="5577480965331702735" fileName="NextPreviousTraverser.java" startLine="273" startPosition="5" endLine="274" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4652592318748341086" fileName="NextPreviousTraverser.java" startLine="278" startPosition="36" endLine="279" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4652592318748341086" fileName="NextPreviousTraverser.java" startLine="280" startPosition="5" endLine="281" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -2810,7 +2810,7 @@
     <scopeInfo nodeId="4652592318748341084" fileName="NextPreviousTraverser.java" startLine="227" startPosition="33" endLine="228" endPosition="104" />
     <scopeInfo nodeId="4652592318748341126" fileName="NextPreviousTraverser.java" startLine="256" startPosition="75" endLine="257" endPosition="86" />
     <scopeInfo nodeId="4652592318748340849" fileName="NextPreviousTraverser.java" startLine="264" startPosition="36" endLine="265" endPosition="47" />
-    <scopeInfo nodeId="5577480965331702735" fileName="NextPreviousTraverser.java" startLine="271" startPosition="36" endLine="272" endPosition="39" />
+    <scopeInfo nodeId="5577480965331702735" fileName="NextPreviousTraverser.java" startLine="271" startPosition="36" endLine="272" endPosition="46" />
     <scopeInfo nodeId="4652592318748341086" fileName="NextPreviousTraverser.java" startLine="278" startPosition="36" endLine="279" endPosition="44" />
     <scopeInfo nodeId="4652592318748340605" fileName="NextPreviousTraverser.java" startLine="50" startPosition="117" endLine="52" endPosition="24" />
     <scopeInfo nodeId="4652592318748341037" fileName="NextPreviousTraverser.java" startLine="216" startPosition="41" endLine="218" endPosition="32" />
