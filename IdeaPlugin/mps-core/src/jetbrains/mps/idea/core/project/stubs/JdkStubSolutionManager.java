@@ -72,7 +72,7 @@ public class JdkStubSolutionManager extends AbstractJavaStubSolutionManager impl
     }
   }
 
-  public void claimSdk(Module module) {
+  public void claimSdk(Module module) throws DifferentSdkException {
     ModelAccess.assertLegalWrite();
 
     Sdk sdk = ModuleRootManager.getInstance(module).getSdk();
@@ -85,9 +85,9 @@ public class JdkStubSolutionManager extends AbstractJavaStubSolutionManager impl
       if (myOnlySdk != null && !myModules.isEmpty()) {
         // is it our only sdk?
         if (myOnlySdk.equals(sdk)) return;
+
         // we don't support multipse SDKs for now
-        // TODO signal somehow "DIFFERENT SDKS NEEDED BY 2 OR MORE SolutionIdeas"
-        return;
+        throw new DifferentSdkException(myOnlySdk, sdk);
       }
 
       // if no modules are left, we can throw our sdk away and set up another one

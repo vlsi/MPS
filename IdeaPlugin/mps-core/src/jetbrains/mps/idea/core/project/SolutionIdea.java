@@ -39,6 +39,8 @@ import com.intellij.openapi.roots.RootProvider.RootSetChangedListener;
 import com.intellij.openapi.roots.impl.libraries.ProjectLibraryTable;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable.Listener;
+import com.intellij.openapi.startup.StartupManager;
+import com.intellij.openapi.ui.Messages;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.CommonProcessors.FindProcessor;
 import com.intellij.util.Processor;
@@ -47,6 +49,7 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.library.ModuleLibrariesUtil;
 import jetbrains.mps.idea.core.library.ModuleLibraryType;
+import jetbrains.mps.idea.core.project.stubs.DifferentSdkException;
 import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
 import jetbrains.mps.idea.core.project.stubs.SdkClassesImporter;
 import jetbrains.mps.project.ModuleId;
@@ -107,10 +110,27 @@ public class SolutionIdea extends Solution {
 
   @Override
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
-    newDescriptor.setNamespace(myModule.getName());
-    ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).claimSdk(myModule);
-    addLibs(newDescriptor);
-    super.setSolutionDescriptor(newDescriptor, reloadClasses);
+    try {
+      ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).claimSdk(myModule);
+    } catch (final DifferentSdkException e) {
+
+      StartupManager.getInstance(myModule.getProject()).runWhenProjectIsInitialized(
+      /*ModelAccess.instance().runReadInEDT(*/new Runnable() {
+        @Override
+        public void run() {
+          Messages.showErrorDialog(myModule.getProject(),
+            "There are more than one different SDKs used in modules with MPS facets.\n" +
+              "Trying to use " + e.getRequestedSdk().getName() +
+              " while " + e.getCurrentSdk().getName() + " is already used." + "\n",
+            "Multiple SDKs not supported in MPS plugin"
+          );
+        }
+      });
+
+      newDescriptor.setNamespace(myModule.getName());
+      addLibs(newDescriptor);
+      super.setSolutionDescriptor(newDescriptor, reloadClasses);
+    }
   }
 
   @Override
