@@ -97,7 +97,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
 
   void reportModelAccess(SModelDescriptor model, SNode root) {
     if (myDependenciesTraces == null) return;
-    String key = model.getSModelReference().toString() + " in " + (root == null ? "common" : root.getId());
+    String key = model.getSModelReference().toString() + " in " + (root == null ? "common" : root.getNodeId().toString());
     if (myDependenciesTraces.containsKey(key)) return;
 
     StringWriter stringWriter = new StringWriter();
@@ -164,7 +164,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
       nextStepToOriginalMap.put(outputRoot, null);
       return;
     }
-    SNode originalRoot = currentToOriginalMap.get(inputNode.getTopmostAncestor());
+    SNode originalRoot = currentToOriginalMap.get(inputNode.getContainingRoot());
 //    if(originalRoot == null && !currentToOriginalMap.containsKey(inputNode.getTopmostAncestor())) {
 //      LOG.warning("consistency problem in dependencies map");
 //    }
@@ -230,7 +230,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     if (inputNode == null || !(inputNode.getModel() != null)) {
       return myConditionalsBuilder;
     }
-    inputNode = inputNode.getTopmostAncestor();
+    inputNode = inputNode.getContainingRoot();
     SNode originalRoot = currentToOriginalMap.get(inputNode);
     if (originalRoot != null) {
       return myRootBuilders.get(originalRoot);

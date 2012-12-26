@@ -43,7 +43,7 @@ public class SNodeOperations {
     if (node == null) {
       return null;
     }
-    return node.getTopmostAncestor();
+    return node.getContainingRoot();
   }
 
   @Deprecated
@@ -74,7 +74,7 @@ public class SNodeOperations {
 
     // look up for certain concept 
     if (root) {
-      SNode rootParent = node.getTopmostAncestor();
+      SNode rootParent = node.getContainingRoot();
       if (rootParent.getModel() != null && SNodeOperations.nullSafeInstanceOf(rootParent, ancestorConceptFqName)) {
         if (!(sameMetaLevel) || SModelUtil_new.getMetaLevel(rootParent) == metaLevel) {
           return rootParent;
@@ -131,7 +131,7 @@ public class SNodeOperations {
       return null;
     }
     if (root) {
-      SNode rootParent = node.getTopmostAncestor();
+      SNode rootParent = node.getContainingRoot();
       if (SNodeOperations._isInstanceOf(rootParent, ancestorConceptFqNames)) {
         if (!(sameMetaLevel) || SModelUtil_new.getMetaLevel(rootParent) == metaLevel) {
           return rootParent;

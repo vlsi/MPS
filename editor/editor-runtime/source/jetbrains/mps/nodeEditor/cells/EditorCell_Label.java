@@ -609,7 +609,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
     if (node.getModel()==null) return;
 
-    MPSNodesVirtualFileSystem.getInstance().getFileFor(node.getTopmostAncestor()).setModificationStamp(LocalTimeCounter.currentTime());
+    MPSNodesVirtualFileSystem.getInstance().getFileFor(node.getContainingRoot()).setModificationStamp(LocalTimeCounter.currentTime());
   }
 
   public void insertText(String text) {

@@ -276,7 +276,7 @@ public class TypeContextManager implements CoreComponent {
   private TypeCheckingContext getOrCreateContext(SNode node, ITypeContextOwner owner, boolean createIfAbsent) {
     ModelAccess.assertLegalRead();
     if (node == null) return null;
-    final SNode rootNode = node.getTopmostAncestor();
+    final SNode rootNode = node.getContainingRoot();
     synchronized (myLock) {
       SNodePointer rootNodePointer = new SNodePointer(rootNode);
 
@@ -341,7 +341,7 @@ public class TypeContextManager implements CoreComponent {
   private void removeOwnerForRootNodeContext(final SNode node, final ITypeContextOwner owner) {
     ModelAccess.assertLegalRead();
     if (node == null || node.getModel() == null) return;
-    final SNode rootNode = node.getTopmostAncestor();
+    final SNode rootNode = node.getContainingRoot();
     //if node is disposed, then context was removed by beforeModelDisposed/beforeRootDeleted listener
     synchronized (myLock) {
       SNodePointer rootNodePointer = new SNodePointer(rootNode);
@@ -404,7 +404,7 @@ public class TypeContextManager implements CoreComponent {
   }
 
   public TypeCheckingContext createTypeCheckingContextForResolve(SNode node) {
-    SNode root = node.getTopmostAncestor();
+    SNode root = node.getContainingRoot();
     return new CachingTypecheckingContext(root, myTypeChecker);
   }
 

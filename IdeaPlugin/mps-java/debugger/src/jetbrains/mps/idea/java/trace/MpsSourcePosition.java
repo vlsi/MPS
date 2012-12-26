@@ -64,7 +64,7 @@ public class MpsSourcePosition extends SourcePosition {
     SNodePointer rootPointer = ModelAccess.instance().runReadAction(new Computable<SNodePointer>() {
       @Override
       public SNodePointer compute() {
-        SNode root = myNodePointer.getNode().getTopmostAncestor();
+        SNode root = myNodePointer.getNode().getContainingRoot();
         return new SNodePointer(root.getModel() == null ? null : root);
       }
     });

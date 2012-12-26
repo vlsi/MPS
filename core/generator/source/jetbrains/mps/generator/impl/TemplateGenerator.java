@@ -703,7 +703,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     if (node == null) return null;
     if (node.getModel() == null) return null;
     if (node.getModel().isRoot(node)) return node;
-    return node.getTopmostAncestor();
+    return node.getContainingRoot();
   }
 
   public boolean isIncremental() {

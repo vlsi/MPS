@@ -51,7 +51,7 @@ public abstract class NodeNavigatable implements Navigatable {
       public void run() {
         SNode targetNode = myNode.getNode();
         if(targetNode != null) {
-          myRootNode = new SNodePointer(targetNode.getTopmostAncestor());
+          myRootNode = new SNodePointer(targetNode.getContainingRoot());
           myFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(myRootNode);
         }
       }

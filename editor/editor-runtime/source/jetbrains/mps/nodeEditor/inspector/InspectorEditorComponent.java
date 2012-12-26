@@ -69,7 +69,7 @@ public class InspectorEditorComponent extends EditorComponent {
         clearModelDisposedTrace();
         myNode = node;
         myNodePointer = myNode != null ? new SNodePointer(myNode) : null;
-        myRoot = myNode == null ? null : myNode.getTopmostAncestor();
+        myRoot = myNode == null ? null : myNode.getContainingRoot();
         setReadOnly(node == null || node.getModel() == null || node.getModel().isDisposed() || node.getModel().isNotEditable());
         if (node == null) {
           setOperationContext(null);
