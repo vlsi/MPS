@@ -415,7 +415,7 @@ public class SNodeOperations {
     }
     String role = node.getRoleInParent();
     assert parent != null && role != null;
-    parent.insertChild(role, newChild, node);
+    parent.insertChild(role, node, newChild);
     return newChild;
   }
 
@@ -476,7 +476,7 @@ public class SNodeOperations {
   public static SNode replaceWithNewChild(SNode oldChild, String conceptFqName) {
     assert oldChild != null : "can't replace node. node is NULL";
     SNode oldChildParent = oldChild.getParent();
-    if (oldChildParent == null && oldChild.getModel() == null || !oldChild.getModel().isRoot(oldChild)) {
+    if (oldChildParent == null && (oldChild.getModel() == null || !(oldChild.getModel().isRoot(oldChild)))) {
       return null;
     }
     SModel model = oldChild.getModel();
@@ -564,7 +564,9 @@ public class SNodeOperations {
       return -1;
     }
     String role = node.getRoleInParent();
-    if (role == null) return -1;
+    if (role == null) {
+      return -1;
+    }
     return node.getParent().getChildren(role).indexOf(node);
   }
 

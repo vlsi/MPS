@@ -7,10 +7,10 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import java.util.Iterator;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.List;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
 
 @Deprecated
@@ -42,7 +42,7 @@ public class SLinkOperations {
   public static SNode setTarget(SNode node, String role, SNode targetNode, boolean child) {
     if (node != null) {
       if (child) {
-        SNode oldChild = jetbrains.mps.util.SNodeOperations.getChild(node, role);
+        SNode oldChild = SNodeOperations.getChild(node, role);
         if (oldChild != null) {
           node.removeChild(oldChild);
         }
@@ -152,7 +152,7 @@ public class SLinkOperations {
     if (node == null) {
       return new ArrayList<SNode>();
     }
-    return SNodeOperations.getConceptLinkTargets(node, linkName, true);
+    return jetbrains.mps.smodel.SNodeOperations.getConceptLinkTargets(node, linkName, true);
   }
 
   public static SNode findLinkDeclaration(SReference reference) {
