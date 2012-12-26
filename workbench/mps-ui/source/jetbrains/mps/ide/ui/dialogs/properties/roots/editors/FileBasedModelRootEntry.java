@@ -19,7 +19,7 @@ import com.intellij.icons.AllIcons.Modules;
 import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.ui.Gray;
-import com.intellij.ui.components.JBLabel;
+import com.intellij.ui.HoverHyperlinkLabel;
 import com.intellij.ui.components.JBPanel;
 import com.intellij.ui.roots.FilePathClipper;
 import com.intellij.ui.roots.IconActionComponent;
@@ -40,9 +40,12 @@ import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
 import java.awt.BasicStroke;
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Dimension;
 import java.awt.Font;
 import java.awt.FontMetrics;
 import java.awt.Graphics;
@@ -113,7 +116,7 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
   }
 
   protected Color getKindColor(String kind) {
-    if(kind.equals(FileBasedModelRoot.MODEL_ROOTS))
+    if(kind.equals(FileBasedModelRoot.SOURCE_ROOTS))
       return ModelRootEntryContainer.SOURCES_COLOR;
 
     if(kind.equals(FileBasedModelRoot.EXCLUDED))
@@ -139,7 +142,7 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
     int idx = 0;
     for(String file : files) {
       final int verticalPolicy = idx == files.size() - 1? GridConstraints.SIZEPOLICY_CAN_GROW : GridConstraints.SIZEPOLICY_FIXED;
-      panel.add(createKindFileComponent(file.replace(myFileBasedModelRoot.getContentRoot(),"").replaceFirst(File.separator,""), foregroundColor), new GridConstraints(idx, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, verticalPolicy, null, null, null));
+      panel.add(createKindFileComponent(file, foregroundColor), new GridConstraints(idx, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, verticalPolicy, null, null, null));
       int column = 1;
       int colspan = 2;
 
@@ -164,18 +167,20 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
 
   private JComponent createKindFileComponent(final String file, Color foreground) {
 
-    /*if (folderFile != null && contentEntryFile != null) {
-      HoverHyperlinkLabel hyperlinkLabel = new HoverHyperlinkLabel(path, foreground);
-      hyperlinkLabel.setMinimumSize(new Dimension(0, 0));
-      hyperlinkLabel.addHyperlinkListener(new HyperlinkListener() {
-        @Override
-        public void hyperlinkUpdate(HyperlinkEvent e) {
-          myCallback.navigateFolder(getContentEntry(), file);
-        }
-      });
-      registerTextComponent(hyperlinkLabel, foreground);
-      return new UnderlinedPathLabel(hyperlinkLabel);
-    }
+    //if (folderFile != null && contentEntryFile != null) {
+    HoverHyperlinkLabel hyperlinkLabel = new HoverHyperlinkLabel(
+      file.replace(myFileBasedModelRoot.getContentRoot(),"").replaceFirst(File.separator,""), foreground
+    );
+    hyperlinkLabel.setMinimumSize(new Dimension(0, 0));
+    hyperlinkLabel.addHyperlinkListener(new HyperlinkListener() {
+      @Override
+      public void hyperlinkUpdate(HyperlinkEvent e) {
+        myFileBasedModelRootEditor.selectFile(file);
+      }
+    });
+    registerTextComponent(hyperlinkLabel, foreground);
+    return new UnderlinedPathLabel(hyperlinkLabel);
+    /*}
     else {
       String path = toRelativeDisplayPath(file.getUrl(), getContentEntry().getUrl());
       if (!packagePrefix.isEmpty()) {
@@ -188,10 +193,10 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
       return new UnderlinedPathLabel(pathLabel);
     }*/
 
-    final JLabel pathLabel = new JLabel(file);
-    pathLabel.setOpaque(false);
-    registerTextComponent(pathLabel, foreground);
-    return new UnderlinedPathLabel(pathLabel);
+//    final JLabel pathLabel = new JLabel(file);
+//    pathLabel.setOpaque(false);
+//    registerTextComponent(pathLabel, foreground);
+//    return new UnderlinedPathLabel(pathLabel);
   }
 
   private JComponent createKindFileDeleteComponent(final String file) {

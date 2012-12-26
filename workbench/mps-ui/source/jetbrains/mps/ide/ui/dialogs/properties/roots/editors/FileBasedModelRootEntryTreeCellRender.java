@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.roots.editors;
 
-import com.intellij.icons.AllIcons.Modules;
+import com.intellij.icons.AllIcons.Nodes;
 import com.intellij.ide.util.treeView.NodeDescriptor;
 import com.intellij.ide.util.treeView.NodeRenderer;
 import com.intellij.openapi.fileChooser.FileElement;
@@ -70,6 +70,8 @@ public class FileBasedModelRootEntryTreeCellRender extends NodeRenderer {
           return myModelRootEditor.getFileBasedModelRootEntry().getKindIcon(kind);
       }
     }
+    if(file.getPath().equals(modelRoot.getContentRoot()))
+      return Nodes.HomeFolder;
     return originalIcon;
   }
 }

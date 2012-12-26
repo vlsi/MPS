@@ -16,14 +16,14 @@
 package jetbrains.mps.ide.ui.dialogs.properties.roots.editors;
 
 import com.intellij.icons.AllIcons.Actions;
-import com.intellij.icons.AllIcons.Modules;
+import com.intellij.icons.AllIcons.Nodes;
 import com.intellij.ide.util.treeView.AbstractTreeBuilder;
 import com.intellij.ide.util.treeView.AbstractTreeStructure;
 import com.intellij.ide.util.treeView.NodeDescriptor;
 import com.intellij.idea.ActionsBundle;
+import com.intellij.openapi.Disposable;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
-import com.intellij.openapi.actionSystem.CustomShortcutSet;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import com.intellij.openapi.actionSystem.Presentation;
@@ -47,7 +47,6 @@ import com.intellij.ui.roots.ToolbarPanel;
 import com.intellij.ui.treeStructure.Tree;
 import com.intellij.util.ui.tree.TreeUtil;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryEditor;
@@ -56,17 +55,13 @@ import javax.swing.JComponent;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTree;
-import javax.swing.KeyStroke;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 import javax.swing.tree.TreeCellRenderer;
 import java.awt.BorderLayout;
 import java.awt.LayoutManager;
-import java.awt.event.InputEvent;
-import java.awt.event.KeyEvent;
 import java.util.Collection;
 import java.util.Comparator;
-import java.util.Iterator;
 
 public class FileBasedModelRootEditor implements ModelRootEntryEditor {
 //  private final Project myProject;
@@ -172,7 +167,10 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
       }
     };
     myFileSystemTree.showHiddens(true);
-//    Disposer.register(myProject, myFileSystemTree);
+    Disposer.register(new Disposable() {
+      @Override
+      public void dispose() {}
+    }, myFileSystemTree);
 
     final NewFolderAction newFolderAction = new MyNewFolderAction();
     final DefaultActionGroup mousePopupGroup = new DefaultActionGroup();
@@ -189,6 +187,18 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
     myDescriptor.setRoots(file);
     if (file != null) {
       myDescriptor.setTitle( FileUtil.toSystemDependentName(file.getPath()) );
+    }
+  }
+
+  public void selectFile(String file) {
+    VirtualFile file2Select = VirtualFileManager.getInstance().findFileByUrl(
+      VirtualFileManager.constructUrl("file", file)
+    );
+    if(file2Select == null) return;
+
+    myTree.requestFocus();
+    if (myFileSystemTree != null) {
+      myFileSystemTree.select(file2Select, null);
     }
   }
 
@@ -249,7 +259,7 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
     private final FileChooserDescriptor myDescriptor;
 
     public ChooseModelRootContentFilder() {
-      super("","",Modules.AddContentEntry);
+      super("Change Root Folder","", Nodes.HomeFolder);
       myDescriptor = new FileChooserDescriptor(false, true, true, false, true, true);
       myDescriptor.setTitle("Select new content entry for model root");
     }
