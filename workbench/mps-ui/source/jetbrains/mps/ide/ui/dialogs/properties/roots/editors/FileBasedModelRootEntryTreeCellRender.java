@@ -21,12 +21,12 @@ import com.intellij.ide.util.treeView.NodeRenderer;
 import com.intellij.openapi.fileChooser.FileElement;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
 
 import javax.swing.Icon;
 import javax.swing.JTree;
 import javax.swing.tree.DefaultMutableTreeNode;
+import java.util.Collection;
 
 public class FileBasedModelRootEntryTreeCellRender extends NodeRenderer {
 
@@ -49,8 +49,9 @@ public class FileBasedModelRootEntryTreeCellRender extends NodeRenderer {
           final VirtualFile file = ((FileElement)element).getFile();
           if (file != null && file.isDirectory()) {
             final FileBasedModelRoot modelRoot = (FileBasedModelRoot)entry.getModelRoot();
-            if (modelRoot != null)
+            if (modelRoot != null) {
               setIcon(updateIcon(modelRoot, file, getIcon()));
+            }
           }
         }
       }
@@ -58,10 +59,17 @@ public class FileBasedModelRootEntryTreeCellRender extends NodeRenderer {
   }
 
   private Icon updateIcon(FileBasedModelRoot modelRoot, VirtualFile file, Icon originalIcon) {
-    if(modelRoot.containsFile(FileBasedModelRoot.EXCLUDED, file.getPath()))
-      return Modules.ExcludeRoot;
-    else if (modelRoot.containsFile(FileBasedModelRoot.MODEL_ROOTS, file.getPath()))
-      return Modules.SourceRoot;
+    Collection<String> kinds = modelRoot.getSupportedFileKinds();
+    for (String kind : kinds) {
+      if(modelRoot.containsFile(kind, file.getPath())) {
+        return myModelRootEditor.getFileBasedModelRootEntry().getKindIcon(kind);
+      }
+      Collection<String> kindFiles = modelRoot.getFiles(kind);
+      for(String kindFile : kindFiles) {
+        if(file.getPath().contains(kindFile))
+          return myModelRootEditor.getFileBasedModelRootEntry().getKindIcon(kind);
+      }
+    }
     return originalIcon;
   }
 }

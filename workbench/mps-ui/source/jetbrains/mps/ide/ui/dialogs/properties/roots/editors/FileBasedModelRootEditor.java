@@ -32,16 +32,13 @@ import com.intellij.openapi.fileChooser.FileChooser;
 import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.fileChooser.FileChooserDescriptorFactory;
 import com.intellij.openapi.fileChooser.FileSystemTree;
-import com.intellij.openapi.fileChooser.actions.FileChooserAction;
 import com.intellij.openapi.fileChooser.actions.NewFolderAction;
-import com.intellij.openapi.fileChooser.ex.FileChooserKeys;
 import com.intellij.openapi.fileChooser.ex.FileSystemTreeImpl;
 import com.intellij.openapi.fileChooser.impl.FileTreeBuilder;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.roots.ui.configuration.actions.IconWithTextAction;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.util.io.FileUtil;
-import com.intellij.openapi.vfs.VfsUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.ui.ScrollPaneFactory;
@@ -50,6 +47,7 @@ import com.intellij.ui.roots.ToolbarPanel;
 import com.intellij.ui.treeStructure.Tree;
 import com.intellij.util.ui.tree.TreeUtil;
 import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryEditor;
@@ -66,8 +64,9 @@ import java.awt.BorderLayout;
 import java.awt.LayoutManager;
 import java.awt.event.InputEvent;
 import java.awt.event.KeyEvent;
-import java.io.File;
+import java.util.Collection;
 import java.util.Comparator;
+import java.util.Iterator;
 
 public class FileBasedModelRootEditor implements ModelRootEntryEditor {
 //  private final Project myProject;
@@ -97,24 +96,22 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
     myTreePanel.setVisible(false);
     myDescriptor = FileChooserDescriptorFactory.createMultipleFilesNoJarsDescriptor();
     myDescriptor.setShowFileSystemRoots(false);
-
-    createEditingActions();
   }
 
   protected void createEditingActions() {
-    AnAction setModelRoolAnAction = new ToggleFBModelRootKindAction(myTree, this, "Model Root",null,Modules.SourceRoot) {
-      @Override
-      protected String getKind() { return FileBasedModelRoot.MODEL_ROOTS; }
-    };
-    setModelRoolAnAction.registerCustomShortcutSet(new CustomShortcutSet(KeyStroke.getKeyStroke(KeyEvent.VK_M, InputEvent.ALT_MASK)), myTree);
-    myEditingActionsGroup.add(setModelRoolAnAction);
+    myEditingActionsGroup.removeAll();
 
-    AnAction excludAnAction = new ToggleFBModelRootKindAction(myTree, this, "Excluded",null,Modules.ExcludeRoot) {
-      @Override
-      protected String getKind() { return FileBasedModelRoot.EXCLUDED; }
-    };
-    excludAnAction.registerCustomShortcutSet(new CustomShortcutSet(KeyStroke.getKeyStroke(KeyEvent.VK_E, InputEvent.ALT_MASK)), myTree);
-    myEditingActionsGroup.add(excludAnAction);
+    FileBasedModelRoot fileBasedModelRoot = (FileBasedModelRoot) myFileBasedModelRootEntry.getModelRoot();
+    Collection<String> kinds = fileBasedModelRoot.getSupportedFileKinds();
+
+    for(final String kind : kinds) {
+      AnAction modelRootAnAction = new ToggleFBModelRootKindAction(myTree, this, fileBasedModelRoot.getKindText(kind), null, myFileBasedModelRootEntry.getKindIcon(kind)) {
+        @Override
+        protected String getKind() { return kind; }
+      };
+//      modelRootAnAction.registerCustomShortcutSet(new CustomShortcutSet(KeyStroke.getKeyStroke(KeyEvent.VK_M, InputEvent.ALT_MASK)), myTree);
+      myEditingActionsGroup.add(modelRootAnAction);
+    }
   }
 
   protected TreeCellRenderer getModelRootEntryCellRenderer() {
@@ -145,17 +142,24 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
 
     String path = ((FileBasedModelRoot)myFileBasedModelRootEntry.getModelRoot()).getContentRoot();
 
-    final VirtualFile file = VirtualFileManager.getInstance().findFileByUrl(
+    VirtualFile file = VirtualFileManager.getInstance().findFileByUrl(
       VirtualFileManager.constructUrl("file", path)
     );
+    /*if(file == null && myFileBasedModelRootEntry.getModelRoot().getModule() != null) {
+      path = MPSModuleRepository.getInstance().getModuleById(myFileBasedModelRootEntry.getModelRoot().getModule().getModuleId()).getBundleHome().getPath();
+      file = VirtualFileManager.getInstance().findFileByUrl(
+        VirtualFileManager.constructUrl("file", path)
+      );
+    }*/
     setRoot(file);
 
+    final VirtualFile file2Runnable = file;
     final Runnable init = new Runnable() {
       @Override
       public void run() {
         //noinspection ConstantConditions
         myFileSystemTree.updateTree();
-        myFileSystemTree.select(file, null);
+        myFileSystemTree.select(file2Runnable, null);
       }
     };
 
@@ -177,11 +181,13 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
     mousePopupGroup.add(newFolderAction);
     mousePopupGroup.add(new ChooseModelRootContentFilder());
     myFileSystemTree.registerMouseListener(mousePopupGroup);
+
+    createEditingActions();
   }
 
   private void setRoot(VirtualFile file) {
     myDescriptor.setRoots(file);
-    if (file == null) {
+    if (file != null) {
       myDescriptor.setTitle( FileUtil.toSystemDependentName(file.getPath()) );
     }
   }

@@ -17,6 +17,7 @@ package jetbrains.mps.ide.ui.dialogs.properties.roots.editors;
 
 import com.intellij.icons.AllIcons.Modules;
 import com.intellij.openapi.util.SystemInfo;
+import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.ui.Gray;
 import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.components.JBPanel;
@@ -36,6 +37,7 @@ import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryEditor;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryExt;
 
 import javax.swing.BorderFactory;
+import javax.swing.Icon;
 import javax.swing.JComponent;
 import javax.swing.JLabel;
 import java.awt.BasicStroke;
@@ -48,6 +50,7 @@ import java.awt.Graphics2D;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.Stroke;
+import java.io.File;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
@@ -62,12 +65,6 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
 
   @Override
   public ModelRoot getModelRoot() {
-    if(myFileBasedModelRoot.getContentRoot() == null)
-      myFileBasedModelRoot.setContentRoot("/home/user/Development/mps2/"
-        /*MPSModuleRepository.getInstance().getModuleById(
-          myFileBasedModelRoot.getModule().getModuleId()
-        ).getBundleHome().getPath()*/
-      );
     return myFileBasedModelRoot;
   }
 
@@ -125,6 +122,16 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
     return Color.WHITE;
   }
 
+  protected Icon getKindIcon(String kind) {
+    if(kind.equals(FileBasedModelRoot.SOURCE_ROOTS))
+      return Modules.SourceRoot;
+
+    if(kind.equals(FileBasedModelRoot.EXCLUDED))
+      return Modules.ExcludeRoot;
+
+    throw new IllegalArgumentException("unknown kind");
+  }
+
   protected JComponent createKindGroupComponent(String title, Collection<String> files, Color foregroundColor) {
     final JBPanel panel = new JBPanel(new GridLayoutManager(files.size(), 3, new JBInsets(1, 17, 0, 2), 0, 1));
     panel.setOpaque(false);
@@ -132,7 +139,7 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
     int idx = 0;
     for(String file : files) {
       final int verticalPolicy = idx == files.size() - 1? GridConstraints.SIZEPOLICY_CAN_GROW : GridConstraints.SIZEPOLICY_FIXED;
-      panel.add(createKindFileComponent(file, foregroundColor), new GridConstraints(idx, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, verticalPolicy, null, null, null));
+      panel.add(createKindFileComponent(file.replace(myFileBasedModelRoot.getContentRoot(),"").replaceFirst(File.separator,""), foregroundColor), new GridConstraints(idx, 0, 1, 1, GridConstraints.ANCHOR_NORTHWEST, GridConstraints.FILL_HORIZONTAL, GridConstraints.SIZEPOLICY_CAN_GROW | GridConstraints.SIZEPOLICY_CAN_SHRINK, verticalPolicy, null, null, null));
       int column = 1;
       int colspan = 2;
 
