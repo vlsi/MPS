@@ -1189,7 +1189,7 @@
     <nodeInfo nodeId="7757449281563190727" fileName="StackFrameContext.java" startLine="288" startPosition="0" endLine="289" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="4603359679487186943" fileName="StackFrameContext.java" startLine="291" startPosition="36" endLine="292" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4603359679487186943" fileName="StackFrameContext.java" startLine="293" startPosition="5" endLine="294" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4544608336420760890" fileName="StackFrameContext.java" startLine="298" startPosition="36" endLine="299" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4544608336420760890" fileName="StackFrameContext.java" startLine="298" startPosition="36" endLine="299" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4544608336420760890" fileName="StackFrameContext.java" startLine="300" startPosition="5" endLine="301" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7757449281563191082" fileName="StackFrameContext.java" startLine="304" startPosition="65" endLine="305" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7757449281563191082" fileName="StackFrameContext.java" startLine="305" startPosition="30" endLine="306" endPosition="162" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -1357,7 +1357,7 @@
     <scopeInfo nodeId="2416198621220215538" fileName="StackFrameContext.java" startLine="278" startPosition="116" endLine="279" endPosition="19" />
     <scopeInfo nodeId="2416198621220213997" fileName="StackFrameContext.java" startLine="282" startPosition="81" endLine="283" endPosition="19" />
     <scopeInfo nodeId="4603359679487186943" fileName="StackFrameContext.java" startLine="291" startPosition="36" endLine="292" endPosition="42" />
-    <scopeInfo nodeId="4544608336420760890" fileName="StackFrameContext.java" startLine="298" startPosition="36" endLine="299" endPosition="44" />
+    <scopeInfo nodeId="4544608336420760890" fileName="StackFrameContext.java" startLine="298" startPosition="36" endLine="299" endPosition="43" />
     <scopeInfo nodeId="7757449281563191082" fileName="StackFrameContext.java" startLine="305" startPosition="30" endLine="306" endPosition="162" />
     <scopeInfo nodeId="7757449281563191090" fileName="StackFrameContext.java" startLine="311" startPosition="30" endLine="312" endPosition="159" />
     <scopeInfo nodeId="7757449281563191098" fileName="StackFrameContext.java" startLine="317" startPosition="30" endLine="318" endPosition="160" />

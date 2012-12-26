@@ -122,7 +122,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
       public SNodePointer compute() {
         final SNode rootNode = (editedNode.getModel() == null ?
           null :
-          editedNode.getTopmostAncestor()
+          editedNode.getContainingRoot()
         );
         return new SNodePointer(rootNode);
       }
@@ -173,7 +173,7 @@ public class BreakpointsUiComponent extends BreakpointsUiComponentEx<IBreakpoint
   }
 
   protected void toggleBreakpoint(@NotNull SNode node) {
-    SNode root = node.getTopmostAncestor();
+    SNode root = node.getContainingRoot();
     IBreakpoint breakpoint = null;
     Set<ILocationBreakpoint> mpsBreakpointSet = myBreakpointsManagerComponent.getBreakpoints(new SNodePointer(root));
     if (mpsBreakpointSet != null) {

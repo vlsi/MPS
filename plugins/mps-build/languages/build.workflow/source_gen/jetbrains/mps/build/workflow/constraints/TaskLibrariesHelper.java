@@ -48,7 +48,7 @@ public class TaskLibrariesHelper {
           SNode targetNode = ref.getTargetNodeSilently();
           if (targetNode == null) {
             genContext.showErrorMessage(n, "cannot import library `" + SPropertyOperations.getString(lib, "name") + "': unresolved reference");
-          } else if (!(libsSet.contains(targetNode.getTopmostAncestor()))) {
+          } else if (!(libsSet.contains(targetNode.getContainingRoot()))) {
             genContext.showErrorMessage(n, "cannot import library `" + SPropertyOperations.getString(lib, "name") + "': broken reference, target is not imported");
           }
         }
@@ -68,7 +68,7 @@ public class TaskLibrariesHelper {
         if (map.containsKey(targetNode)) {
           SNodeAccessUtil.setReferenceTarget(n, ref.getRole(), map.get(targetNode));
         } else {
-          SNode containingRoot = targetNode.getTopmostAncestor();
+          SNode containingRoot = targetNode.getContainingRoot();
           if (jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.isInstanceOf(containingRoot, "jetbrains.mps.build.workflow.structure.BwfTaskLibrary")) {
             genContext.showErrorMessage(n, "task library is not imported");
           }

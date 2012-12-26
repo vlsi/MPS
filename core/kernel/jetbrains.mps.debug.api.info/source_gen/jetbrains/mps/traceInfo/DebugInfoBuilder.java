@@ -25,7 +25,7 @@ public class DebugInfoBuilder {
   public void addTraceablePosition(SNode inputNode, SModelDescriptor inputModel, String fileName, TraceablePositionInfo positionInfo) {
     positionInfo.setNodeId(inputNode.getNodeId().toString());
     positionInfo.setFileName(fileName);
-    SNode topmostAncestor = inputNode.getTopmostAncestor();
+    SNode topmostAncestor = inputNode.getContainingRoot();
     myDebugInfo.addPosition(positionInfo, topmostAncestor);
   }
 
@@ -43,7 +43,7 @@ public class DebugInfoBuilder {
       }
     }
     positionInfo.clearTempVarInfoMap();
-    myDebugInfo.addScopePosition(positionInfo, inputNode.getTopmostAncestor());
+    myDebugInfo.addScopePosition(positionInfo, inputNode.getContainingRoot());
   }
 
   public void addUnitPosition(SNode inputNode, SModelDescriptor inputModel, String fileName, UnitPositionInfo positionInfo) {
@@ -51,7 +51,7 @@ public class DebugInfoBuilder {
     SNode topmostAncestor = null;
     if (inputNode != null && !((SNodeOperations.isDisposed(inputNode)))) {
       positionInfo.setNodeId(inputNode.getNodeId().toString());
-      topmostAncestor = inputNode.getTopmostAncestor();
+      topmostAncestor = inputNode.getContainingRoot();
     }
     myDebugInfo.addUnitPosition(positionInfo, topmostAncestor);
   }
