@@ -158,11 +158,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5718428430098844386(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "newMethodDeclaration", false).getSNodeId().toString();
+    return SLinkOperations.getTarget(_context.getNode(), "newMethodDeclaration", false).getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_627956582045882902(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getSNodeId().toString();
+    return _context.getNode().getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_8915466921781684875(final IOperationContext operationContext, final PropertyMacroContext _context) {

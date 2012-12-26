@@ -67,7 +67,7 @@ public class PatternProperty_Test extends BaseTransformationTest4 {
         {
           SNode nodeToMatch_Property_ru5khm_a0;
           nodeToMatch_Property_ru5khm_a0 = nodeToMatch;
-          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_Property_ru5khm_a0.getConcept().getId()))) {
+          if (!("jetbrains.mps.baseLanguage.structure.DotExpression".equals(nodeToMatch_Property_ru5khm_a0.getConcept().getConceptId()))) {
             return false;
           }
           {
@@ -80,7 +80,7 @@ public class PatternProperty_Test extends BaseTransformationTest4 {
               {
                 SNode nodeToMatch_Property_ru5khm_a0a;
                 nodeToMatch_Property_ru5khm_a0a = childVar_Property_ru5khm_a0a;
-                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_Property_ru5khm_a0a.getConcept().getId()))) {
+                if (!("jetbrains.mps.baseLanguage.structure.StaticFieldReference".equals(nodeToMatch_Property_ru5khm_a0a.getConcept().getConceptId()))) {
                   return false;
                 }
                 patternVar_className = nodeToMatch_Property_ru5khm_a0a.getReferenceTarget("classifier");
@@ -98,7 +98,7 @@ public class PatternProperty_Test extends BaseTransformationTest4 {
               {
                 SNode nodeToMatch_Property_ru5khm_a0a_0;
                 nodeToMatch_Property_ru5khm_a0a_0 = childVar_Property_ru5khm_a0a_0;
-                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_Property_ru5khm_a0a_0.getConcept().getId()))) {
+                if (!("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation".equals(nodeToMatch_Property_ru5khm_a0a_0.getConcept().getConceptId()))) {
                   return false;
                 }
                 patternVar_method = nodeToMatch_Property_ru5khm_a0a_0.getReferenceTarget("baseMethodDeclaration");
@@ -112,7 +112,7 @@ public class PatternProperty_Test extends BaseTransformationTest4 {
                     {
                       SNode nodeToMatch_Property_ru5khm_a0a0;
                       nodeToMatch_Property_ru5khm_a0a0 = childVar_Property_ru5khm_a0a0;
-                      if (!("jetbrains.mps.baseLanguage.structure.StringLiteral".equals(nodeToMatch_Property_ru5khm_a0a0.getConcept().getId()))) {
+                      if (!("jetbrains.mps.baseLanguage.structure.StringLiteral".equals(nodeToMatch_Property_ru5khm_a0a0.getConcept().getConceptId()))) {
                         return false;
                       }
                       patternVar_printed = SNodeAccessUtil.getProperty(nodeToMatch_Property_ru5khm_a0a0, "value");

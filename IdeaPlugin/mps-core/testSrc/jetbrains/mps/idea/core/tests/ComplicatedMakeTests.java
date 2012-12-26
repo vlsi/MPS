@@ -42,7 +42,8 @@ public class ComplicatedMakeTests extends AbstractMakeTest {
     final IFile code2Model = copyResource("models", "code2.mps", "code2.mps", "/tests/makeTests/models/code2.mps");
     final IFile data2Model = copyResource("models", "data2.mps", "data2.mps", "/tests/makeTests/models/data2.mps");
     DefaultModelRoot root = new DefaultModelRoot();
-    root.setPath(codeModel.getParent().getPath());
+    root.setContentRoot(codeModel.getParent().getPath());
+    root.addFile(DefaultModelRoot.SOURCE_ROOTS, codeModel.getParent().getPath());
     configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));
     prepareTestData(configuration, codeModel.getParent());
   }

@@ -27,7 +27,7 @@ public class NodeOperation_Behavior {
   }
 
   public static String virtual_getTestName_1216136419751(SNode thisNode) {
-    return "test_" + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getName_1217435265700", new Object[]{}) + thisNode.getSNodeId().toString();
+    return "test_" + BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_getName_1217435265700", new Object[]{}) + thisNode.getNodeId().toString();
   }
 
   @Deprecated

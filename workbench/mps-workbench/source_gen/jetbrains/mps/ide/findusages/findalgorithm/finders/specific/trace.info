@@ -13,7 +13,7 @@
     <nodeInfo nodeId="6056923343037305819" fileName="MappingConfigFinder.java" startLine="41" startPosition="31" endLine="42" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6056923343037305832" fileName="MappingConfigFinder.java" startLine="43" startPosition="7" endLine="44" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6056923343037305843" fileName="MappingConfigFinder.java" startLine="46" startPosition="37" endLine="47" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="6056923343037305865" fileName="MappingConfigFinder.java" startLine="49" startPosition="82" endLine="50" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="6056923343037305865" fileName="MappingConfigFinder.java" startLine="49" startPosition="81" endLine="50" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="6056923343037305874" fileName="MappingConfigFinder.java" startLine="50" startPosition="73" endLine="51" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6056923343037305879" fileName="MappingConfigFinder.java" startLine="51" startPosition="30" endLine="52" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
     <nodeInfo nodeId="6056923343037305880" fileName="MappingConfigFinder.java" startLine="55" startPosition="5" endLine="56" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -39,7 +39,7 @@
     <scopeInfo nodeId="6056923343037331220" fileName="MappingConfigFinder.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
       <varInfo nodeId="6056923343037331220" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="6056923343037305864" fileName="MappingConfigFinder.java" startLine="49" startPosition="82" endLine="52" endPosition="16">
+    <scopeInfo nodeId="6056923343037305864" fileName="MappingConfigFinder.java" startLine="49" startPosition="81" endLine="52" endPosition="16">
       <varInfo nodeId="6056923343037305866" varName="result" />
     </scopeInfo>
     <scopeInfo nodeId="6056923343037305740" fileName="MappingConfigFinder.java" startLine="26" startPosition="0" endLine="30" endPosition="0">

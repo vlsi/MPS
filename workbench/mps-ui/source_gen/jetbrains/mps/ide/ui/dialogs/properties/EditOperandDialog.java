@@ -264,7 +264,7 @@ public class EditOperandDialog extends DialogWrapper {
     MappingSelectTree.NodeRefNodeData rootData = (MappingSelectTree.NodeRefNodeData) nRoot.getUserObject();
     MappingConfig_SimpleRef result = new MappingConfig_SimpleRef();
     result.setModelUID(rootData.getObject().getModelReference().toString());
-    result.setNodeID(rootData.getObject().getNode().getSNodeId().toString());
+    result.setNodeID(rootData.getObject().getNode().getNodeId().toString());
     return result;
   }
 

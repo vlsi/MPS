@@ -21,7 +21,7 @@ public class DefaultBaseLine_Behavior {
         {
           SNode matchingNode_q0zywl_a0a0 = cellModel;
           if (matchingNode_q0zywl_a0a0 != null) {
-            matches_q0zywl_a0a0 = SModelUtil_new.isAssignableConcept(matchingNode_q0zywl_a0a0.getConcept().getId(), "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList");
+            matches_q0zywl_a0a0 = SModelUtil_new.isAssignableConcept(matchingNode_q0zywl_a0a0.getConcept().getConceptId(), "jetbrains.mps.lang.editor.structure.CellModel_RefNodeList");
           }
         }
         if (matches_q0zywl_a0a0) {
@@ -31,7 +31,7 @@ public class DefaultBaseLine_Behavior {
           {
             SNode matchingNode_q0zywl_b0a0 = cellModel;
             if (matchingNode_q0zywl_b0a0 != null) {
-              matches_q0zywl_b0a0 = SModelUtil_new.isAssignableConcept(matchingNode_q0zywl_b0a0.getConcept().getId(), "jetbrains.mps.lang.editor.structure.CellModel_Collection");
+              matches_q0zywl_b0a0 = SModelUtil_new.isAssignableConcept(matchingNode_q0zywl_b0a0.getConcept().getConceptId(), "jetbrains.mps.lang.editor.structure.CellModel_Collection");
             }
           }
           if (matches_q0zywl_b0a0) {

@@ -38,7 +38,8 @@ public class BrokenMakeTest extends AbstractMakeTest {
     copyResource(moduleFileName, "makeTestBroken.iml", "/tests/makeTestBroken/makeTestBroken.iml");
     final IFile brokenModel = copyResource("models", "broken.mps", "broken.mps", "/tests/makeTestBroken/models/broken.mps");
     DefaultModelRoot root = new DefaultModelRoot();
-    root.setPath(brokenModel.getParent().getPath());
+    root.setContentRoot(brokenModel.getParent().getPath());
+    root.addFile(DefaultModelRoot.SOURCE_ROOTS, brokenModel.getParent().getPath());
     configuration.getBean().setModelRoots(Arrays.<ModelRoot>asList(root));
     prepareTestData(configuration, brokenModel.getParent());
   }

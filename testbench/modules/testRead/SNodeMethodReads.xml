@@ -90,11 +90,7 @@
    <int>1</int>
   </void>
   <void method="put">
-   <string>public final jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getTopmostAncestor()</string>
-   <int>1</int>
-  </void>
-  <void method="put">
-   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getTopmostAncestor()</string>
+   <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getTopmostAncestor()</string>
    <int>1</int>
   </void>
   <void method="put">
@@ -183,6 +179,10 @@
   </void>
   <void method="put">
    <string>public jetbrains.mps.smodel.SNode jetbrains.mps.smodel.SNode.getContainingRoot()</string>
+   <int>2</int>
+  </void>
+  <void method="put">
+   <string>public org.jetbrains.mps.openapi.model.SNode jetbrains.mps.smodel.SNode.getContainingRoot()</string>
    <int>2</int>
   </void>
   <void method="put">
@@ -498,6 +498,10 @@
    <null/>
   </void>
   <void method="put">
+   <string>public jetbrains.mps.smodel.SNodeId jetbrains.mps.smodel.SNode.getNodeId()</string>
+   <int>1</int>
+  </void>
+  <void method="put">
    <string>public jetbrains.mps.smodel.SNodeId jetbrains.mps.smodel.SNode.getSNodeId()</string>
    <int>1</int>
   </void>
@@ -575,6 +579,10 @@
   </void>
   <void method="put">
    <string>public org.jetbrains.mps.openapi.model.SNodeId jetbrains.mps.smodel.SNode.getSNodeId()</string>
+   <int>1</int>
+  </void>
+  <void method="put">
+   <string>public org.jetbrains.mps.openapi.model.SNodeId jetbrains.mps.smodel.SNode.getNodeId()</string>
    <int>1</int>
   </void>
   <void method="put">

@@ -20,7 +20,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.AbstractImmutableList;
 import jetbrains.mps.util.Condition;
@@ -37,9 +36,15 @@ import org.jetbrains.mps.migration.annotations.ShortTermMigration;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.model.*;
+import org.jetbrains.mps.openapi.model.SModelId;
+import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.persistence.DataSource;
+import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import org.jetbrains.mps.openapi.persistence.NullDataSource;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
@@ -80,7 +85,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     myId = SModel.generateUniqueId();
   }
 
-  public SNodeId getSNodeId() {
+  public SNodeId getNodeId() {
     ModelAccess.assertLegalRead(this);
     assertDisposed();
     fireNodeReadAccess();
@@ -88,7 +93,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   }
 
   @NotNull
-  public final SNode getTopmostAncestor() {
+  public SNode getContainingRoot() {
     ModelAccess.assertLegalRead(this);
     assertDisposed();
 
@@ -114,7 +119,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     fireNodeReadAccess();
 
-    return myModel != null ? myModel.getModelDescriptor() : null;
+    if (myModel==null) return null;
+
+    SModelDescriptor md = myModel.getModelDescriptor();
+    return md != null ? md : new FakeModelDescriptor(myModel);
   }
 
   public final boolean hasProperty(String propertyName) {
@@ -350,7 +358,28 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * Deletes all nodes in subtree starting with current. Differs from {@link SNode#removeChild(org.jetbrains.mps.openapi.model.SNode)}.
    */
   public void delete() {
-    delete_internal();
+    //delete all children
+    List<SNode> children = new ArrayList<SNode>(getChildren());
+    for (SNode child : children) {
+      child.delete();
+    }
+
+    //remove all references
+    while (myReferences.length > 0) {
+      removeReferenceInternal(myReferences[0]);
+    }
+    myReferences = SReference.EMPTY_ARRAY;
+
+    //remove from parent
+    SNode parent1 = getParent();
+    if (parent1 != null) {
+      parent1.removeChild(this);
+    } else {
+      SModel model = getModel();
+      if (model != null && model.isRoot(this)) {
+        model.removeRoot(this);
+      }
+    }
   }
 
   public String getPresentation() {
@@ -485,7 +514,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
 
-    return new SConceptNodeAdapter(myConceptFqName);
+    return SConceptRepository.getInstance().getConcept(myConceptFqName);
   }
 
   public Object getUserObject(Object key) {
@@ -812,31 +841,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
-  private void delete_internal() {
-    //delete all children
-    List<SNode> children = new ArrayList<SNode>(getChildren());
-    for (SNode child : children) {
-      child.delete_internal();
-    }
-
-    //remove all references
-    while (myReferences.length > 0) {
-      removeReferenceInternal(myReferences[0]);
-    }
-    myReferences = SReference.EMPTY_ARRAY;
-
-    //remove from parent
-    SNode parent = getParent();
-    if (parent != null) {
-      parent.removeChild(this);
-    } else {
-      SModel model = getModel();
-      if (model != null && model.isRoot(this)) {
-        model.removeRoot(this);
-      }
-    }
-  }
-
   private void enforceModelLoad() {
     if (myModel == null) return;
     if (!myModel.isRoot(this)) return;
@@ -982,6 +986,15 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   @Deprecated
   /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public SNodeId getSNodeId() {
+    return getNodeId();
+  }
+
+  @Deprecated
+  /**
    * Not supposed to be used
    * @Deprecated in 3.0
    */
@@ -1052,9 +1065,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * Inline content in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  public SNode getContainingRoot() {
-    SNode root = getTopmostAncestor();
-    return root.getModel() == null ? null : root;
+  public SNode getTopmostAncestor() {
+    return getContainingRoot();
   }
 
   @Deprecated
@@ -1922,5 +1934,93 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    */
   public void setBooleanProperty(String propertyName, boolean value) {
     SNodeAccessUtil.setProperty(this, propertyName, value ? "" + value : null);
+  }
+
+  /**
+   * This is for migration purposes, until we get rid of SModel class
+   */
+  private static class FakeModelDescriptor implements org.jetbrains.mps.openapi.model.SModel {
+    private SModel myModel;
+
+    public FakeModelDescriptor(@NotNull SModel md) {
+      myModel = md;
+    }
+
+    @Override
+    public SModelId getModelId() {
+      return myModel.getSModelId();
+    }
+
+    @Override
+    public String getModelName() {
+      return getModelReference().getModelName();
+    }
+
+    @NotNull
+    @Override
+    public SModelReference getModelReference() {
+      return myModel.getSModelReference();
+    }
+
+    @Override
+    public ModelRoot getModelRoot() {
+      return null;
+    }
+
+    @Override
+    public void setModelRoot(ModelRoot mr) {
+      LOG.warning("Setting model root of a detached model is quite ", new Throwable());
+    }
+
+    @Override
+    public SModule getModule() {
+      return null;
+    }
+
+    @Override
+    public Iterable<? extends org.jetbrains.mps.openapi.model.SNode> getRootNodes() {
+      return myModel.roots();
+    }
+
+    @Override
+    public void addRootNode(org.jetbrains.mps.openapi.model.SNode node) {
+      myModel.addRoot((SNode) node);
+    }
+
+    @Override
+    public void removeRootNode(org.jetbrains.mps.openapi.model.SNode node) {
+      myModel.removeRoot((SNode) node);
+    }
+
+    @Override
+    public org.jetbrains.mps.openapi.model.SNode getNode(org.jetbrains.mps.openapi.model.SNodeId id) {
+      return myModel.getNode(id);
+    }
+
+    @NotNull
+    @Override
+    public DataSource getSource() {
+      return new NullDataSource();
+    }
+
+    @Override
+    public boolean isLoaded() {
+      return true;
+    }
+
+    @Override
+    public void load() throws IOException {
+
+    }
+
+    @Override
+    public void save() throws IOException {
+
+    }
+
+    @Override
+    public void unload() {
+
+    }
   }
 }

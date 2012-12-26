@@ -28,7 +28,7 @@ public class ResourceType_comparableWith_IResource_ComparisonRule extends Compar
 
   public IsApplicableStatus isApplicableFirst(SNode node) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getId(), this.getApplicableConceptFQName1());
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getConceptId(), this.getApplicableConceptFQName1());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -58,7 +58,7 @@ public class ResourceType_comparableWith_IResource_ComparisonRule extends Compar
       {
         SNode nodeToMatch_ResourceType_comparableWith_IResource_rtu2iv_a0a;
         nodeToMatch_ResourceType_comparableWith_IResource_rtu2iv_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ResourceType_comparableWith_IResource_rtu2iv_a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ResourceType_comparableWith_IResource_rtu2iv_a0a.getConcept().getConceptId()))) {
           return false;
         }
         {

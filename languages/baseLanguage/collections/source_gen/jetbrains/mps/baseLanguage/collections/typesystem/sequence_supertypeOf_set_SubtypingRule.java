@@ -51,7 +51,7 @@ public class sequence_supertypeOf_set_SubtypingRule extends SubtypingRule_Runtim
       {
         SNode nodeToMatch_sequence_supertypeOf_set_twopzc_a0a;
         nodeToMatch_sequence_supertypeOf_set_twopzc_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SetType".equals(nodeToMatch_sequence_supertypeOf_set_twopzc_a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.collections.structure.SetType".equals(nodeToMatch_sequence_supertypeOf_set_twopzc_a0a.getConcept().getConceptId()))) {
           return false;
         }
         {

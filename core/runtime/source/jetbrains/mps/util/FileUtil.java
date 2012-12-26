@@ -529,4 +529,13 @@ public class FileUtil {
     }
     return null;
   }
+
+  public static String stripLastSlashes(String path) {
+    if (path == null) return null;
+
+    while (path.endsWith("/") || path.endsWith("\\")) {
+      path = path.substring(0, path.length() - 1);
+    }
+    return path;
+  }
 }

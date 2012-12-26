@@ -185,7 +185,7 @@ public class ReducedGenerationWorker extends GeneratorWorker {
         hashes._0(fileHashes);
 
         Tuples._1<Boolean> skipReconcile = (Tuples._1<Boolean>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.reconcile"), Object.class);
-        skipReconcile._0(false);
+        skipReconcile._0(true);
 
         // override solution's output path 
         Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>> pathToFile = (Tuples._1<_FunctionTypes._return_P1_E0<? extends IFile, ? super String>>) pp.properties(new ITarget.Name("jetbrains.mps.lang.core.Make.make"), Object.class);

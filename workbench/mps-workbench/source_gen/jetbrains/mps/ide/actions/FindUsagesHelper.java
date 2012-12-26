@@ -51,7 +51,7 @@ import jetbrains.mps.ide.findusages.view.optionseditor.options.ScopeOptions;
           node :
           cell.getSNodeWRTReference()
         );
-        concept.value = operationNode.value.getConcept().getId();
+        concept.value = operationNode.value.getConcept().getConceptId();
       }
     });
     // show dialog 

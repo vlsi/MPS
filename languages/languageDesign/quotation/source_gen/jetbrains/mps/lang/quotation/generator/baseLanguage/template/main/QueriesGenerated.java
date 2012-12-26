@@ -31,7 +31,7 @@ import jetbrains.mps.generator.runtime.TemplateModule;
 
 public class QueriesGenerated {
   public static Object propertyMacro_GetPropertyValue_3180306201267234161(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getConcept().getId();
+    return _context.getNode().getConcept().getConceptId();
   }
 
   public static Object propertyMacro_GetPropertyValue_6497389703574369338(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -81,12 +81,12 @@ public class QueriesGenerated {
 
   public static Object propertyMacro_GetPropertyValue_1025590056396672173(final IOperationContext operationContext, final PropertyMacroContext _context) {
     //  the 'node' expression may have been already mapped and unique name created for it 
-    String uniqName = (String) _context.getTransientObject("parameterFromExpressions_" + _context.getNode().getSNodeId().toString());
+    String uniqName = (String) _context.getTransientObject("parameterFromExpressions_" + _context.getNode().getNodeId().toString());
     uniqName = (uniqName != null ?
       uniqName :
       "parameter_" + QuotationUtil.genQuotationNodeId(_context, _context.getNode())
     );
-    _context.putTransientObject("parameterFromExpressions_" + _context.getNode().getSNodeId().toString(), uniqName);
+    _context.putTransientObject("parameterFromExpressions_" + _context.getNode().getNodeId().toString(), uniqName);
     return uniqName;
   }
 
@@ -322,7 +322,7 @@ public class QueriesGenerated {
       referenceNode.setProperty("targetModel", ((SReference) ref).getTargetSModelReference().update().toString());
       referenceNode.setProperty("role", ref.getRole());
       if (targetNode != null) {
-        referenceNode.setProperty("targetNodeId", targetNode.getSNodeId().toString());
+        referenceNode.setProperty("targetNodeId", targetNode.getNodeId().toString());
       }
       ListSequence.fromList(result).addElement(referenceNode);
     }

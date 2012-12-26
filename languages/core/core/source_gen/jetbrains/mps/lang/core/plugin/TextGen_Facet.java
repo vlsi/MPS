@@ -467,8 +467,8 @@ public class TextGen_Facet extends IFacet.Stub {
                         root.getName()
                       ));
                       if (fname == null) {
-                        fname = "<null> [" + root.getSNodeId() + "]";
-                        monitor.reportFeedback(new IFeedback.WARNING(String.valueOf("No file name for the root node [" + root.getSNodeId() + "]")));
+                        fname = "<null> [" + root.getNodeId() + "]";
+                        monitor.reportFeedback(new IFeedback.WARNING(String.valueOf("No file name for the root node [" + root.getNodeId() + "]")));
                       }
                       MapSequence.fromMap(texts).put(fname, tgr.getResult());
                     }

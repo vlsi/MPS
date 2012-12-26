@@ -19,7 +19,7 @@ public class IntentionUtils {
         {
           SNode matchingNode_k79hya_a0a1 = node;
           if (matchingNode_k79hya_a0a1 != null) {
-            matches_k79hya_a0a1 = SModelUtil_new.isAssignableConcept(matchingNode_k79hya_a0a1.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.StatementList");
+            matches_k79hya_a0a1 = SModelUtil_new.isAssignableConcept(matchingNode_k79hya_a0a1.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.StatementList");
           }
         }
         if (matches_k79hya_a0a1) {
@@ -32,7 +32,7 @@ public class IntentionUtils {
           {
             SNode matchingNode_k79hya_b0a1 = node;
             if (matchingNode_k79hya_b0a1 != null) {
-              matches_k79hya_b0a1 = SModelUtil_new.isAssignableConcept(matchingNode_k79hya_b0a1.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.BlockStatement");
+              matches_k79hya_b0a1 = SModelUtil_new.isAssignableConcept(matchingNode_k79hya_b0a1.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.BlockStatement");
             }
           }
           if (matches_k79hya_b0a1) {
@@ -52,7 +52,7 @@ public class IntentionUtils {
         {
           SNode matchingNode_k79hya_a0a2 = optimizeNode(node);
           if (matchingNode_k79hya_a0a2 != null) {
-            matches_k79hya_a0a2 = SModelUtil_new.isAssignableConcept(matchingNode_k79hya_a0a2.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.ReturnStatement");
+            matches_k79hya_a0a2 = SModelUtil_new.isAssignableConcept(matchingNode_k79hya_a0a2.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.ReturnStatement");
           }
         }
         if (matches_k79hya_a0a2) {
@@ -71,7 +71,7 @@ public class IntentionUtils {
         {
           SNode matchingNode_k79hya_a0a3 = optimizeNode(node);
           if (matchingNode_k79hya_a0a3 != null) {
-            matches_k79hya_a0a3 = SModelUtil_new.isAssignableConcept(matchingNode_k79hya_a0a3.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+            matches_k79hya_a0a3 = SModelUtil_new.isAssignableConcept(matchingNode_k79hya_a0a3.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.ExpressionStatement");
           }
         }
         if (matches_k79hya_a0a3) {

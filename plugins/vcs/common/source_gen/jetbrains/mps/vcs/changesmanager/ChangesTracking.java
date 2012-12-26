@@ -252,7 +252,7 @@ public class ChangesTracking {
     List<SNode> children = oldNode.getChildren(role);
     ListSequence.fromList(children).visitAll(new IVisitor<SNode>() {
       public void visit(SNode c) {
-        removeDescendantChanges(c.getSNodeId());
+        removeDescendantChanges(c.getNodeId());
       }
     });
   }
@@ -261,7 +261,7 @@ public class ChangesTracking {
     SNode oldNode = getOldNode(nodeId);
     assert oldNode != null;
     for (SNode d : ListSequence.fromList(SNodeOperations.getDescendants(oldNode, null, true, new String[]{}))) {
-      removeChanges(d.getSNodeId(), ModelChange.class, new _FunctionTypes._return_P1_E0<Boolean, ModelChange>() {
+      removeChanges(d.getNodeId(), ModelChange.class, new _FunctionTypes._return_P1_E0<Boolean, ModelChange>() {
         public Boolean invoke(ModelChange ch) {
           return true;
         }
@@ -289,7 +289,7 @@ public class ChangesTracking {
     myEventConsumingMapping.addEvent(event);
     final List<SNodeId> ancestors = ListSequence.fromList(SNodeOperations.getAncestors(currentNode, null, true)).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode a) {
-        return a.getSNodeId();
+        return a.getNodeId();
       }
     }).toListSequence();
     myQueue.runTask(new Runnable() {
@@ -329,7 +329,7 @@ public class ChangesTracking {
       List<SNode> children = ngc.getChangeSet().getNewModel().getNodeById(ngc.getParentNodeId()).getChildren(ngc.getRole());
       childrenIds = ListSequence.fromList(children).select(new ISelector<SNode, SNodeId>() {
         public SNodeId select(SNode n) {
-          return n.getSNodeId();
+          return n.getNodeId();
         }
       }).toListSequence();
     } else {
@@ -381,7 +381,7 @@ public class ChangesTracking {
       if (node.getModel() == null) {
         return;
       }
-      final SNodeId nodeId = node.getSNodeId();
+      final SNodeId nodeId = node.getNodeId();
       final String propertyName = event.getPropertyName();
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
@@ -405,7 +405,7 @@ public class ChangesTracking {
       if (sourceNode.getModel() == null) {
         return;
       }
-      final SNodeId nodeId = sourceNode.getSNodeId();
+      final SNodeId nodeId = sourceNode.getNodeId();
       final String role = ref.getRole();
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
@@ -441,7 +441,7 @@ public class ChangesTracking {
       } else {
         SetSequence.fromSet(childRoles).addElement(childRole);
       }
-      final SNodeId parentId = parent.getSNodeId();
+      final SNodeId parentId = parent.getNodeId();
 
       final Wrappers._T<List<SNode>> childrenRightAfterEvent = new Wrappers._T<List<SNode>>(parent.getChildren(childRole));
       childrenRightAfterEvent.value = ListSequence.fromList(childrenRightAfterEvent.value).select(new ISelector<SNode, SNode>() {
@@ -460,7 +460,7 @@ public class ChangesTracking {
           removeDescendantChanges(parentId, childRole);
           myLastParentAndNewChildrenIds = MultiTuple.<SNodeId,List<SNodeId>>from(parentId, ListSequence.fromList(childrenRightAfterEvent.value).select(new ISelector<SNode, SNodeId>() {
             public SNodeId select(SNode n) {
-              return n.getSNodeId();
+              return n.getNodeId();
             }
           }).toListSequence());
           buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
@@ -481,7 +481,7 @@ public class ChangesTracking {
       )) {
         return;
       }
-      final SNodeId rootId = root.getSNodeId();
+      final SNodeId rootId = root.getNodeId();
       runUpdateTask(new _FunctionTypes._void_P0_E0() {
         public void invoke() {
           if (added) {

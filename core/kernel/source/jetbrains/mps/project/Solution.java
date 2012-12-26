@@ -154,7 +154,7 @@ public class Solution extends ClassLoadingModule {
   }
 
   @Override
-  public Collection<String> getOwnStubPaths() {
+  public Collection<String> getOwnClassPath() {
     if (isPackaged()) {
       return Collections.singletonList(FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath());
     }
@@ -167,7 +167,7 @@ public class Solution extends ClassLoadingModule {
       return Collections.emptyList();
     }
 
-    return super.getOwnStubPaths();
+    return super.getOwnClassPath();
   }
 
   @Override

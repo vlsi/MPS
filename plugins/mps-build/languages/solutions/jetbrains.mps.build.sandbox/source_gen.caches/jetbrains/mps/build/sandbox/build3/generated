@@ -4,7 +4,7 @@
   <dep model="r:d8d06a40-eb90-4ad9-a679-19e3fc235859(jetbrains.mps.build.workflow.generator.template.main@generator)" hash="-ejnytd3v2xm1fpxg5ie78oeuou2c485" />
   <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="2m8bjhf3n3sxvtrkycr26tj32lda6g6" />
   <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="46ht7ebo9nxjnku000nibe0avptr0ak" />
-  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="-7xuj7obwhdvmrqdslnkxzjx9si78jrp" />
+  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="-4qmc8m0psc7xdd7k2wqwgfh08j9xxwb" />
   <common hash="5m2g9c4kp23s5c0cw556idqy1qxru42" />
   <source id="5253498789149585672" name="buildMpsA" hash="-6qrdawszxyc2yc2wdejc6gypso1esu">
     <dep root="6859736767834635843" />

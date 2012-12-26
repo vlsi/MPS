@@ -73,7 +73,7 @@ public class Module_Behavior {
   }
 
   public static boolean call_needsOwnStubs_8177148268721488524(SNode thisNode) {
-    return Sequence.fromIterable(((Iterable<String>) ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getStubPaths())).where(new IWhereFilter<String>() {
+    return Sequence.fromIterable(((Iterable<String>) ((AbstractModule) Module_Behavior.call_getModule_1213877515148(thisNode)).getClassPath())).where(new IWhereFilter<String>() {
       public boolean accept(String it) {
         return !(it.endsWith(".jar"));
       }
@@ -144,9 +144,14 @@ public class Module_Behavior {
         return it instanceof DefaultModelRoot;
       }
     }).toListSequence();
-    List<SNode> pathHolders = Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).select(new ISelector<org.jetbrains.mps.openapi.persistence.ModelRoot, String>() {
-      public String select(org.jetbrains.mps.openapi.persistence.ModelRoot it) {
-        return (((DefaultModelRoot) it)).getPath().replace(File.separator, Util.SEPARATOR);
+    List<SNode> pathHolders = Module_Behavior.call_getPathHolders_1213877515000(thisNode, ListSequence.fromList(paths).translate(new ITranslator2<org.jetbrains.mps.openapi.persistence.ModelRoot, String>() {
+      public Iterable<String> translate(org.jetbrains.mps.openapi.persistence.ModelRoot it) {
+        Iterable<String> files = (((DefaultModelRoot) it)).getFiles(DefaultModelRoot.SOURCE_ROOTS);
+        return Sequence.fromIterable(files).select(new ISelector<String, String>() {
+          public String select(String it) {
+            return it.replace(File.separator, Util.SEPARATOR);
+          }
+        });
       }
     }).distinct().toListSequence(), true);
     return ListSequence.fromList(pathHolders).sort(new ISelector<SNode, String>() {
@@ -278,8 +283,8 @@ public class Module_Behavior {
 
   public static Collection<String> call_getClassPathExcludingIdea_2000252915626233691(SNode thisNode, AbstractModule module) {
     return (module.isCompileInMPS() ?
-      module.getAllStubPaths() :
-      module.getStubPaths()
+      module.getClassPath() :
+      module.getAdditionalClassPath()
     );
   }
 

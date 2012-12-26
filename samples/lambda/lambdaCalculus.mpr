@@ -16,7 +16,7 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${project}/languages/lambdaCalculus/lambdaCalculus.mpl" />
+      <modulePath path="${project}/languages/lambdaCalculus/jetbrains.mps.samples.lambdaCalculus.mpl" />
       <modulePath path="${project}/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" folder="" />
       <modulePath path="${project}/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/jetbrains.mps.samples.lambdaCalculus.sandbox.msd" />
     </projectModules>

@@ -32,7 +32,7 @@ public class ExtensionPoint_Constraints extends BaseConstraintsDescriptor {
         {
           String name = node.getName();
           name = (name == null ?
-            node.getSNodeId().toString() :
+            node.getNodeId().toString() :
             name
           );
           return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias") + "$" + (name).replace('.', '-');

@@ -48,7 +48,7 @@ public class CopySrcNodeMacro_Behavior {
       {
         SNode nodeToMatch_CopySrcNodeMacro_Behavior_7c1mz_a0a0a0;
         nodeToMatch_CopySrcNodeMacro_Behavior_7c1mz_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_CopySrcNodeMacro_Behavior_7c1mz_a0a0a0.getConcept().getId()))) {
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_CopySrcNodeMacro_Behavior_7c1mz_a0a0a0.getConcept().getConceptId()))) {
           return false;
         }
         patternVar_concept = nodeToMatch_CopySrcNodeMacro_Behavior_7c1mz_a0a0a0.getReferenceTarget("concept");

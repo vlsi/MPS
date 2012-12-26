@@ -65,8 +65,7 @@ public class CachedDefaultModelRoot extends DefaultModelRoot {
       return super.loadModels();
     }
 
-    String path = getPath();
-    List<CachedModelData> models = moduleData.getModels(PersistenceRegistry.DEFAULT_MODEL_ROOT, path);
+    List<CachedModelData> models = moduleData.getModels(this);
     if (models == null) {
       return super.loadModels();
     }

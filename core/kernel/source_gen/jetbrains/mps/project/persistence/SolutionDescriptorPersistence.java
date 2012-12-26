@@ -30,53 +30,54 @@ public class SolutionDescriptorPersistence {
     try {
       Document document = JDOMUtil.loadDocument(file);
       final Element rootElement = document.getRootElement();
+      final String contentRoot = file.getParent().getPath();
 
       assert rootElement != null;
 
       descriptor = new _FunctionTypes._return_P0_E0<SolutionDescriptor>() {
         public SolutionDescriptor invoke() {
-          final SolutionDescriptor result_8ckma3_a0a0f0b0e = new SolutionDescriptor();
-          final String result_8ckma3_a0a0a0f0b0e = rootElement.getAttributeValue("name");
-          result_8ckma3_a0a0f0b0e.setNamespace(result_8ckma3_a0a0a0f0b0e);
+          final SolutionDescriptor result_8ckma3_a0a0g0b0e = new SolutionDescriptor();
+          final String result_8ckma3_a0a0a0g0b0e = rootElement.getAttributeValue("name");
+          result_8ckma3_a0a0g0b0e.setNamespace(result_8ckma3_a0a0a0g0b0e);
 
           if (rootElement.getAttributeValue("uuid") != null) {
-            final String result_8ckma3_a0a2a0a0f0b0e = rootElement.getAttributeValue("uuid");
-            result_8ckma3_a0a0f0b0e.setUUID(result_8ckma3_a0a2a0a0f0b0e);
+            final String result_8ckma3_a0a2a0a0g0b0e = rootElement.getAttributeValue("uuid");
+            result_8ckma3_a0a0g0b0e.setUUID(result_8ckma3_a0a2a0a0g0b0e);
           }
 
           String pluginKind = rootElement.getAttributeValue("pluginKind");
           if (pluginKind != null && pluginKind.length() > 0) {
-            final SolutionKind result_8ckma3_a0a5a0a0f0b0e = SolutionKind.valueOf(pluginKind);
-            result_8ckma3_a0a0f0b0e.setKind(result_8ckma3_a0a5a0a0f0b0e);
+            final SolutionKind result_8ckma3_a0a5a0a0g0b0e = SolutionKind.valueOf(pluginKind);
+            result_8ckma3_a0a0g0b0e.setKind(result_8ckma3_a0a5a0a0g0b0e);
           }
 
-          final boolean result_8ckma3_a7a0a0f0b0e = XmlUtil.booleanWithDefault(rootElement, COMPILE_IN_MPS, false);
-          result_8ckma3_a0a0f0b0e.setCompileInMPS(result_8ckma3_a7a0a0f0b0e);
+          final boolean result_8ckma3_a7a0a0g0b0e = XmlUtil.booleanWithDefault(rootElement, COMPILE_IN_MPS, false);
+          result_8ckma3_a0a0g0b0e.setCompileInMPS(result_8ckma3_a7a0a0g0b0e);
 
           String genOutput = rootElement.getAttributeValue("generatorOutputPath");
           if ((genOutput != null && genOutput.length() > 0)) {
-            final String result_8ckma3_a0a01a0a0f0b0e = macroHelper.expandPath(genOutput);
-            result_8ckma3_a0a0f0b0e.setOutputPath(result_8ckma3_a0a01a0a0f0b0e);
+            final String result_8ckma3_a0a01a0a0g0b0e = macroHelper.expandPath(genOutput);
+            result_8ckma3_a0a0g0b0e.setOutputPath(result_8ckma3_a0a01a0a0g0b0e);
           }
 
-          result_8ckma3_a0a0f0b0e.getModelRootDescriptors().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(XmlUtil.first(rootElement, "models"), "modelRoot"), macroHelper));
+          result_8ckma3_a0a0g0b0e.getModelRootDescriptors().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(XmlUtil.first(rootElement, "models"), "modelRoot"), contentRoot, macroHelper));
 
           Element stubModelEntries = XmlUtil.first(rootElement, "stubModelEntries");
           if (stubModelEntries != null) {
             List<String> roots = ModuleDescriptorPersistence.loadStubModelEntries(stubModelEntries, macroHelper);
-            result_8ckma3_a0a0f0b0e.getAdditionalJavaStubPaths().addAll(roots);
+            result_8ckma3_a0a0g0b0e.getAdditionalJavaStubPaths().addAll(roots);
           }
 
-          ModuleDescriptorPersistence.loadDependencies(result_8ckma3_a0a0f0b0e, rootElement);
+          ModuleDescriptorPersistence.loadDependencies(result_8ckma3_a0a0g0b0e, rootElement);
           for (Element entryElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(rootElement, "classPath"), "entry")).concat(Sequence.fromIterable(XmlUtil.children(XmlUtil.first(rootElement, "runtimeClassPath"), "entry")))) {
             // runtime classpath left for compatibility 
-            result_8ckma3_a0a0f0b0e.getAdditionalJavaStubPaths().add(macroHelper.expandPath(entryElement.getAttributeValue("path")));
+            result_8ckma3_a0a0g0b0e.getAdditionalJavaStubPaths().add(macroHelper.expandPath(entryElement.getAttributeValue("path")));
           }
 
           for (Element entryElement : Sequence.fromIterable(XmlUtil.children(XmlUtil.first(rootElement, SOURCE_PATH), SOURCE_PATH_SOURCE))) {
-            result_8ckma3_a0a0f0b0e.getSourcePaths().add(macroHelper.expandPath(entryElement.getAttributeValue("path")));
+            result_8ckma3_a0a0g0b0e.getSourcePaths().add(macroHelper.expandPath(entryElement.getAttributeValue("path")));
           }
-          return result_8ckma3_a0a0f0b0e;
+          return result_8ckma3_a0a0g0b0e;
         }
       }.invoke();
     } catch (Exception e) {

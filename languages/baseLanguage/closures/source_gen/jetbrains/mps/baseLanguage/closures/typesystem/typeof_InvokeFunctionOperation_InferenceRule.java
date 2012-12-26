@@ -52,7 +52,7 @@ public class typeof_InvokeFunctionOperation_InferenceRule extends AbstractInfere
               {
                 SNode matchingNode_7xpnd0_a0a4a = typeCheckingContext.getExpandedNode(reifiedRet);
                 if (matchingNode_7xpnd0_a0a4a != null) {
-                  matches_7xpnd0_a0a4a = SModelUtil_new.isAssignableConcept(matchingNode_7xpnd0_a0a4a.getConcept().getId(), "jetbrains.mps.lang.typesystem.structure.MeetType");
+                  matches_7xpnd0_a0a4a = SModelUtil_new.isAssignableConcept(matchingNode_7xpnd0_a0a4a.getConcept().getConceptId(), "jetbrains.mps.lang.typesystem.structure.MeetType");
                 }
               }
               if (matches_7xpnd0_a0a4a) {
@@ -79,7 +79,7 @@ public class typeof_InvokeFunctionOperation_InferenceRule extends AbstractInfere
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getConceptId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

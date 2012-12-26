@@ -2026,9 +2026,9 @@
   <root nodeId="3147078024759440443" modelId="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)">
     <nodeInfo nodeId="3263637656468797835" fileName="SimpleWord_Behavior.java" startLine="20" startPosition="49" endLine="21" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8457058248754676973" fileName="SimpleWord_Behavior.java" startLine="22" startPosition="5" endLine="23" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474643070100053889" fileName="SimpleWord_Behavior.java" startLine="25" startPosition="202" endLine="26" endPosition="198" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474643070100053889" fileName="SimpleWord_Behavior.java" startLine="25" startPosition="222" endLine="26" endPosition="218" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8474643070100053900" fileName="SimpleWord_Behavior.java" startLine="27" startPosition="26" endLine="28" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8474643070100053906" fileName="SimpleWord_Behavior.java" startLine="28" startPosition="110" endLine="29" endPosition="222" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8474643070100053906" fileName="SimpleWord_Behavior.java" startLine="28" startPosition="110" endLine="29" endPosition="242" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8474643070100053919" fileName="SimpleWord_Behavior.java" startLine="30" startPosition="54" endLine="31" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8474643070100053926" fileName="SimpleWord_Behavior.java" startLine="31" startPosition="62" endLine="32" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8474643070100053934" fileName="SimpleWord_Behavior.java" startLine="33" startPosition="11" endLine="34" endPosition="92" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -2042,9 +2042,9 @@
     <nodeInfo nodeId="3263637656468797824" fileName="SimpleWord_Behavior.java" startLine="19" startPosition="105" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8474643070100053950" fileName="SimpleWord_Behavior.java" startLine="37" startPosition="16" endLine="40" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="8474643070100053879" fileName="SimpleWord_Behavior.java" startLine="48" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_ur4wq2_a0a0c0b#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="8474643070100053917" fileName="SimpleWord_Behavior.java" startLine="29" startPosition="222" endLine="33" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474643070100053917" fileName="SimpleWord_Behavior.java" startLine="29" startPosition="242" endLine="33" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8474643070100053940" fileName="SimpleWord_Behavior.java" startLine="34" startPosition="92" endLine="40" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8474643070100053898" fileName="SimpleWord_Behavior.java" startLine="26" startPosition="198" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8474643070100053898" fileName="SimpleWord_Behavior.java" startLine="26" startPosition="218" endLine="42" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8474643070100053845" fileName="SimpleWord_Behavior.java" startLine="24" startPosition="139" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="8729722338759341977" fileName="SimpleWord_Behavior.java" startLine="23" startPosition="115" endLine="44" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="3147078024759440443" fileName="SimpleWord_Behavior.java" startLine="19" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_splitValue_3147078024759753598#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;Ljetbrains/mps/smodel/IScope;)Z" />
@@ -2065,7 +2065,7 @@
       <varInfo nodeId="8474643070100053901" varName="endOfWord" />
       <varInfo nodeId="8474643070100053935" varName="newUnit" />
     </scopeInfo>
-    <scopeInfo nodeId="8474643070100053846" fileName="SimpleWord_Behavior.java" startLine="25" startPosition="202" endLine="42" endPosition="9">
+    <scopeInfo nodeId="8474643070100053846" fileName="SimpleWord_Behavior.java" startLine="25" startPosition="222" endLine="42" endPosition="9">
       <varInfo nodeId="8474643070100053890" varName="index" />
     </scopeInfo>
     <scopeInfo nodeId="8729722338759341979" fileName="SimpleWord_Behavior.java" startLine="24" startPosition="139" endLine="43" endPosition="7" />
@@ -2083,16 +2083,16 @@
     <unitInfo nodeId="3147078024759440443" fileName="SimpleWord_Behavior.java" startLine="15" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.bash.behavior.SimpleWord_Behavior" />
   </root>
   <root nodeId="3147078024759753558" modelId="r:c574a83a-ec69-4fe6-915d-e101a0ad8839(jetbrains.mps.bash.behavior)">
-    <nodeInfo nodeId="3147078024759753584" fileName="IConcreteWordUnit_Behavior.java" startLine="16" startPosition="76" endLine="17" endPosition="226" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3263637656469698023" fileName="IConcreteWordUnit_Behavior.java" startLine="20" startPosition="76" endLine="21" endPosition="217" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3147078024759753584" fileName="IConcreteWordUnit_Behavior.java" startLine="16" startPosition="76" endLine="17" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3263637656469698023" fileName="IConcreteWordUnit_Behavior.java" startLine="20" startPosition="76" endLine="21" endPosition="237" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1262430001741497917" fileName="IConcreteWordUnit_Behavior.java" startLine="24" startPosition="85" endLine="25" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3147078024759753558" fileName="IConcreteWordUnit_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="3147078024759753558" fileName="IConcreteWordUnit_Behavior.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_patternLength_3147078024759753579#(Ljetbrains/mps/smodel/SNode;)I" />
     <nodeInfo nodeId="3147078024759753558" fileName="IConcreteWordUnit_Behavior.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getPattern_3263637656469698018#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="3147078024759753558" fileName="IConcreteWordUnit_Behavior.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPattern_1262430001741497918#(Lorg/jetbrains/mps/openapi/language/SConcept;)Ljava/lang/String;" />
     <scopeInfo nodeId="3147078024759753560" fileName="IConcreteWordUnit_Behavior.java" startLine="13" startPosition="43" endLine="13" endPosition="43" />
-    <scopeInfo nodeId="3147078024759753582" fileName="IConcreteWordUnit_Behavior.java" startLine="16" startPosition="76" endLine="17" endPosition="226" />
-    <scopeInfo nodeId="3263637656469698021" fileName="IConcreteWordUnit_Behavior.java" startLine="20" startPosition="76" endLine="21" endPosition="217" />
+    <scopeInfo nodeId="3147078024759753582" fileName="IConcreteWordUnit_Behavior.java" startLine="16" startPosition="76" endLine="17" endPosition="246" />
+    <scopeInfo nodeId="3263637656469698021" fileName="IConcreteWordUnit_Behavior.java" startLine="20" startPosition="76" endLine="21" endPosition="237" />
     <scopeInfo nodeId="1262430001741497920" fileName="IConcreteWordUnit_Behavior.java" startLine="24" startPosition="85" endLine="25" endPosition="16" />
     <scopeInfo nodeId="3147078024759753558" fileName="IConcreteWordUnit_Behavior.java" startLine="13" startPosition="0" endLine="15" endPosition="0">
       <varInfo nodeId="3147078024759753558" varName="thisNode" />

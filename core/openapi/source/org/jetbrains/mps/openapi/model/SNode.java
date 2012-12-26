@@ -49,6 +49,8 @@ public interface SNode {
   /**
    * Uniquely identifies the node within its containing model. May also be null.
    */
+  SNodeId getNodeId();
+
   SNodeId getSNodeId();
 
   /**
@@ -110,7 +112,7 @@ public interface SNode {
   //complex queries
 
   @NotNull
-  SNode getTopmostAncestor();
+  SNode getContainingRoot();
 
   String getRoleInParent();
 

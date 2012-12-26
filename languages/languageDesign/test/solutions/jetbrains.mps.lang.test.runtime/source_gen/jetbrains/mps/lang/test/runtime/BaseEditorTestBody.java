@@ -88,7 +88,7 @@ public class BaseEditorTestBody extends BaseTestBody {
     if (ListSequence.fromList(annotations).isEmpty()) {
       return null;
     }
-    return new CellReference(this.getNodeById(SNodeOperations.getParent(ListSequence.fromList(annotations).first()).getSNodeId().toString()), ListSequence.fromList(annotations).first(), this.myMap);
+    return new CellReference(this.getNodeById(SNodeOperations.getParent(ListSequence.fromList(annotations).first()).getNodeId().toString()), ListSequence.fromList(annotations).first(), this.myMap);
   }
 
   public void checkAssertion() throws Throwable {

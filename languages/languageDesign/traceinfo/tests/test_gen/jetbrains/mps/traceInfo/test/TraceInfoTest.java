@@ -39,7 +39,7 @@ public class TraceInfoTest {
             TestClass.ifTest();
           }
         });
-        Assert.assertTrue("Node " + node.getSNodeId().toString() + " is of concept " + SNodeOperations.getConceptDeclaration(node), SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IfStatement"));
+        Assert.assertTrue("Node " + node.getNodeId().toString() + " is of concept " + SNodeOperations.getConceptDeclaration(node), SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.IfStatement"));
       }
     });
   }
@@ -53,7 +53,7 @@ public class TraceInfoTest {
             TestClass.forTest();
           }
         });
-        Assert.assertTrue("Node " + node.getSNodeId().toString() + " is of concept " + SNodeOperations.getConceptDeclaration(node), SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ForStatement"));
+        Assert.assertTrue("Node " + node.getNodeId().toString() + " is of concept " + SNodeOperations.getConceptDeclaration(node), SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ForStatement"));
       }
     });
   }
@@ -67,7 +67,7 @@ public class TraceInfoTest {
             TestClass.blockStatementTest();
           }
         });
-        Assert.assertTrue("Node " + node.getSNodeId().toString() + " is of concept " + SNodeOperations.getConceptDeclaration(node), SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
+        Assert.assertTrue("Node " + node.getNodeId().toString() + " is of concept " + SNodeOperations.getConceptDeclaration(node), SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ThrowStatement"));
       }
     });
   }

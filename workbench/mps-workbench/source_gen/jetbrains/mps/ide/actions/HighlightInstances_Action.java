@@ -80,10 +80,10 @@ public class HighlightInstances_Action extends BaseAction {
       NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
       EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
 
-      SConcept concept = SConceptRepository.getInstance().getConcept(((SNode) MapSequence.fromMap(_params).get("node")).getConcept().getId());
+      SConcept concept = SConceptRepository.getInstance().getConcept(((SNode) MapSequence.fromMap(_params).get("node")).getConcept().getConceptId());
       Set<org.jetbrains.mps.openapi.model.SNode> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, new ModelsOnlyScope(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))), null);
       for (org.jetbrains.mps.openapi.model.SNode ref : SetSequence.fromSet(usages)) {
-        if (ref.getTopmostAncestor() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getTopmostAncestor()) {
+        if (ref.getContainingRoot() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getTopmostAncestor()) {
           highlightManager.mark(((SNode) ref), HighlightConstants.INSTANCES_COLOR, "usage", messageOwner);
         }
       }

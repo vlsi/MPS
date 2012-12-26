@@ -54,7 +54,7 @@
     </copy>
     <jar destfile="${build.layout}/plugins/mps-java/lib/mpsjava.jar">
       <fileset dir="${build.tmp}/java/out/mps-java" />
-      <zipfileset file="${mps_home}/plugins/mpsjava/workbench/java.msd" prefix="modules/jetbrains.mps.ide.java" />
+      <zipfileset file="${mps_home}/plugins/mpsjava/workbench/jetbrains.mps.ide.java.msd" prefix="modules/jetbrains.mps.ide.java" />
       <zipfileset dir="${mps_home}/plugins/mpsjava/workbench" includes="icons/**, resources/**" prefix="modules/jetbrains.mps.ide.java" />
       <zipfileset dir="${mps_home}/plugins/mpsjava/workbench/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="modules/jetbrains.mps.ide.java/models" />
       <fileset dir="${build.tmp}/default/mpsjava.jar" />
@@ -71,7 +71,7 @@
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.ide.java.migration-src.jar" descriptor="migration.msd" />
+        <sources jar="jetbrains.mps.ide.java.migration-src.jar" descriptor="jetbrains.mps.ide.java.migration.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-java/languages/jetbrains.mps.ide.java.migration.jar">
@@ -81,7 +81,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-java/languages/jetbrains.mps.ide.java.migration-src.jar">
       <fileset dir="${mps_home}/plugins/mpsjava/migration/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/mpsjava/migration/migration.msd" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/mpsjava/migration/jetbrains.mps.ide.java.migration.msd" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/mpsjava/migration/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
     <jar destfile="${build.layout}/plugins/ideaIntegration.jar">

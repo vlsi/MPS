@@ -6727,8 +6727,8 @@
   </root>
   <root nodeId="1226514876978" modelId="r:00000000-0000-4000-0000-011c895904d5(jetbrains.mps.build.packaging.editor)">
     <nodeInfo nodeId="1226514876978" fileName="MacroReference_MenuComponent.java" startLine="22" startPosition="41" endLine="23" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
-    <nodeInfo nodeId="1226514924183" fileName="MacroReference_MenuComponent.java" startLine="30" startPosition="134" endLine="31" endPosition="584" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1226514924202" fileName="MacroReference_MenuComponent.java" startLine="31" startPosition="584" endLine="32" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1226514924183" fileName="MacroReference_MenuComponent.java" startLine="30" startPosition="134" endLine="31" endPosition="604" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1226514924202" fileName="MacroReference_MenuComponent.java" startLine="31" startPosition="604" endLine="32" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1226514924207" fileName="MacroReference_MenuComponent.java" startLine="32" startPosition="66" endLine="33" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1226514924180" fileName="MacroReference_MenuComponent.java" startLine="36" startPosition="162" endLine="37" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1226514924213" fileName="MacroReference_MenuComponent.java" startLine="41" startPosition="47" endLine="42" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />

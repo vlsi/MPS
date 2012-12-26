@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -20,13 +20,13 @@ public class IndexedTupleType_Behavior {
 
   public static String virtual_getPresentation_1213877396640(SNode thisNode) {
     StringBuilder sb = new StringBuilder();
-    sb.append(BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getLeftBracket_1262430001741497978", new Object[]{}));
+    sb.append(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getLeftBracket_1262430001741497978", new Object[]{}));
     String sep = "";
     for (SNode mt : SLinkOperations.getTargets(thisNode, "componentType", true)) {
       sb.append(sep).append(BehaviorReflection.invokeVirtual(String.class, mt, "virtual_getPresentation_1213877396640", new Object[]{}));
       sep = ", ";
     }
-    sb.append(BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getRightBracket_1262430001741498044", new Object[]{}));
+    sb.append(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getRightBracket_1262430001741498044", new Object[]{}));
     return sb.toString();
   }
 

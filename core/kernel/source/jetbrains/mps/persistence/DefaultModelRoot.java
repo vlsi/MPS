@@ -15,8 +15,8 @@
  */
 package jetbrains.mps.persistence;
 
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.extapi.persistence.FileDataSource;
-import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.smodel.Language;
@@ -25,22 +25,23 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.PersistenceFacade;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
+import java.util.*;
 
 /**
  * evgeny, 11/9/12
  */
-public class DefaultModelRoot extends FolderModelRootBase {
+public class DefaultModelRoot extends FileBasedModelRoot {
 
   public DefaultModelRoot() {
+    super(new String[]{SOURCE_ROOTS});
   }
 
   @Override
@@ -57,7 +58,9 @@ public class DefaultModelRoot extends FolderModelRootBase {
   @Override
   public Iterable<SModel> loadModels() {
     List<SModel> result = new ArrayList<SModel>();
-    collectModels(FileSystem.getInstance().getFileByPath(getPath()), result);
+    for (String path : getFiles(SOURCE_ROOTS)) {
+      collectModels(FileSystem.getInstance().getFileByPath(path), result);
+    }
     return result;
   }
 
@@ -66,23 +69,26 @@ public class DefaultModelRoot extends FolderModelRootBase {
     if (super.isReadOnly()) {
       return true;
     }
-    return isLanguageAspectsModelRoot();
+    Collection<String> modelRoots = getFiles(SOURCE_ROOTS);
+    return modelRoots.isEmpty()
+      || modelRoots.size() == 1 && isLanguageAspectsSourceRoot(modelRoots.iterator().next());
   }
 
   @Override
   public boolean canCreateModel(String modelName) {
     ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
-    FileDataSource source = createSource(modelName, MPSExtentions.MODEL);
+    FileDataSource source = createSource(modelName, MPSExtentions.MODEL, null);
     return modelFactory.canCreate(modelName, source);
   }
 
   @Override
   public SModel createModel(String modelName) {
     ModelFactory modelFactory = PersistenceFacade.getInstance().getModelFactory(MPSExtentions.MODEL);
-    FileDataSource source = createSource(modelName, MPSExtentions.MODEL);
+    FileDataSource source = createSource(modelName, MPSExtentions.MODEL, null);
     SModel model = modelFactory.create(modelName, source);
     if (model != null) {
       model.setModelRoot(this);
+      // TODO fix
       register(model);
     }
     return model;
@@ -116,20 +122,59 @@ public class DefaultModelRoot extends FolderModelRootBase {
     }
   }
 
-  public FileDataSource createSource(String modelName, String extension) {
-    String path = getPath();
+  public FileDataSource createSource(String modelName, String extension, @Nullable String sourceRoot) {
+
+    Set<String> sourceRoots = new LinkedHashSet<String>(getFiles(SOURCE_ROOTS));
+    if (sourceRoots.isEmpty()) {
+      throw new IllegalStateException("empty list of source roots");
+    }
+
+    if (sourceRoot == null || !sourceRoots.contains(sourceRoot)) {
+      sourceRoot = null;
+      for (String sr : sourceRoots) {
+        if (isLanguageAspectsSourceRoot(sr)) {
+          String prefix = getModule().getModuleName() + ".";
+          if (modelName.startsWith(prefix)) {
+            String aspectName = modelName.substring(prefix.length());
+            if (getAspect(aspectName) != null) {
+              sourceRoot = sr;
+              break;
+            }
+          }
+          continue;
+        }
+        sourceRoot = sr;
+        break;
+      }
+      if (sourceRoot == null) {
+        throw new IllegalStateException("no suitable source root found");
+      }
+    }
 
     String filenameSuffix = modelName;
-    if (isLanguageAspect(modelName)) {
+    if (isLanguageAspect(modelName, sourceRoot)) {
       filenameSuffix = NameUtil.shortNameFromLongName(filenameSuffix);
     }
 
-    IFile file = FileSystem.getInstance().getFileByPath(path + File.separator + NameUtil.pathFromNamespace(filenameSuffix) + "." + extension);
+    IFile file = FileSystem.getInstance().getFileByPath(sourceRoot + File.separator + NameUtil.pathFromNamespace(filenameSuffix) + "." + extension);
     return new FileDataSource(file, this);
   }
 
-  private boolean isLanguageAspect(String modelName) {
-    if (!isLanguageAspectsModelRoot()) return false;
+  private LanguageAspect getAspect(@NotNull String aspectName) {
+    if (aspectName.indexOf('.') >= 0) {
+      return null;
+    }
+    for (LanguageAspect la : LanguageAspect.values()) {
+      if (la.getName().equals(aspectName)) {
+        return la;
+      }
+    }
+    return null;
+  }
+
+
+  private boolean isLanguageAspect(String modelName, String sourceRoot) {
+    if (!isLanguageAspectsSourceRoot(sourceRoot)) return false;
     //prefixed with language namespace
     if (!NameUtil.namespaceFromLongName(modelName).equals(getModule().getModuleName())) return false;
     //is aspect model name
@@ -140,9 +185,9 @@ public class DefaultModelRoot extends FolderModelRootBase {
     return false;
   }
 
-  private boolean isLanguageAspectsModelRoot() {
+  private boolean isLanguageAspectsSourceRoot(String sourceRoot) {
     if (!(getModule() instanceof Language)) return false;
-    return FileSystem.getInstance().getFileByPath(getPath()).getName().equals(Language.LANGUAGE_MODELS);
+    return FileSystem.getInstance().getFileByPath(sourceRoot).getName().equals(Language.LANGUAGE_MODELS);
   }
 
   @Deprecated
@@ -150,20 +195,5 @@ public class DefaultModelRoot extends FolderModelRootBase {
     ModelRootDescriptor result = new ModelRootDescriptor();
     save(result.getMemento());
     return result;
-  }
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-
-    DefaultModelRoot that = (DefaultModelRoot) o;
-
-    return getPath().equals(that.getPath());
-  }
-
-  @Override
-  public int hashCode() {
-    return getPath().hashCode();
   }
 }

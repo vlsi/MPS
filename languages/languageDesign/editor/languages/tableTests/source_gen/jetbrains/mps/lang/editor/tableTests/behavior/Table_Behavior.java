@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.tableTests.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -15,9 +15,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 
 public class Table_Behavior {
   public static void init(SNode thisNode) {
-    for (int i = 0; i < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getInitialRowCount_1262430001741498094", new Object[]{}); i++) {
+    for (int i = 0; i < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getInitialRowCount_1262430001741498094", new Object[]{}); i++) {
       SNode row = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Row", null);
-      for (int j = 0; j < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getInitialColumnCount_1262430001741498026", new Object[]{}); j++) {
+      for (int j = 0; j < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getInitialColumnCount_1262430001741498026", new Object[]{}); j++) {
         SNode dataCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null);
         SPropertyOperations.set(dataCell, "value", "$" + i + " " + j + "$");
         ListSequence.fromList(SLinkOperations.getTargets(row, "cells", true)).addElement(dataCell);

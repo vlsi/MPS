@@ -211,7 +211,7 @@ public class RunMigrationScriptsDialog extends JDialog {
       SNode sn = ListSequence.fromList(myScripts).getElement(row);
       if (column == 0) {
         SNode script = sn;
-        return mySelectedScriptIds.contains(script.getSNodeId().toString());
+        return mySelectedScriptIds.contains(script.getNodeId().toString());
       }
       if (column == 1) {
         return "  " + SPropertyOperations.getString(sn, "title");
@@ -230,7 +230,7 @@ public class RunMigrationScriptsDialog extends JDialog {
     }
 
     public void setValueAt(Object aValue, int row, int column) {
-      String id = ListSequence.fromList(myScripts).getElement(row).getSNodeId().toString();
+      String id = ListSequence.fromList(myScripts).getElement(row).getNodeId().toString();
       if ((Boolean) aValue) {
         mySelectedScriptIds.add(id);
       } else {

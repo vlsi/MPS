@@ -33,15 +33,18 @@ import com.intellij.ui.components.JBPanel;
 import com.intellij.ui.roots.ToolbarPanel;
 import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.UIUtil;
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryContainer.ContentEntryEditorListener;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
@@ -59,7 +62,6 @@ import java.awt.GridBagLayout;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class ContentEntriesEditor {
 
@@ -216,7 +218,7 @@ public class ContentEntriesEditor {
   }
 
   public boolean isModified() {
-    Set<ModelRootDescriptor> newSet = getDescriptors();
+    List<ModelRootDescriptor> newSet = getDescriptors();
     return !(myModuleDescriptor.getModelRootDescriptors().containsAll(newSet) && newSet.containsAll(myModuleDescriptor.getModelRootDescriptors()));
   }
 
@@ -225,14 +227,14 @@ public class ContentEntriesEditor {
     myModuleDescriptor.getModelRootDescriptors().addAll(getDescriptors());
   }
 
-  private Set<ModelRootDescriptor> getDescriptors() {
-    Set<ModelRootDescriptor> descriptorSet = new HashSet<ModelRootDescriptor>();
+  private ArrayList<ModelRootDescriptor> getDescriptors() {
+    ArrayList<ModelRootDescriptor> descriptors = new ArrayList<ModelRootDescriptor>();
     for(ModelRootEntryContainer container : myModelRootEntries) {
       Memento memento = new MementoImpl();
       container.getModelRoot().save(memento);
-      descriptorSet.add(new ModelRootDescriptor(container.getModelRoot().getType(), memento));
+      descriptors.add(new ModelRootDescriptor(container.getModelRoot().getType(), memento));
     }
-    return descriptorSet;
+    return descriptors;
   }
 
   public JComponent getComponent() {
@@ -248,8 +250,38 @@ public class ContentEntriesEditor {
     }
 
     public void actionPerformed(AnActionEvent e) {
-      ModelRoot modelRoot = PersistenceRegistry.getInstance().getModelRootFactory(myType).create();
+      ModelRoot modelRoot = null;
+      if(myType.equals("file_based")) {
+        final ModelRoot modelRootBase = PersistenceRegistry.getInstance().getModelRootFactory("default").create();
+        modelRoot = new FileBasedModelRoot() {
+          @Override
+          public String getType() { return "file_based"; }
+
+          @Override
+          public SModel getModel(SModelId id) { return modelRootBase.getModel(id); }
+
+          @Override
+          public Iterable<SModel> loadModels() {
+            return modelRootBase.getModels();
+          }
+
+          @Override
+          public boolean canCreateModel(String modelName) {
+            return false;
+          }
+
+          @Override
+          public SModel createModel(String modelName) { return modelRootBase.createModel(modelName); }
+        };
+      }
+      else
+        modelRoot = PersistenceRegistry.getInstance().getModelRootFactory(myType).create();
       ModelRootEntry entry = ModelRootEntryPersistence.getInstance().getModelRootEntry(modelRoot);
+      if(entry instanceof FileBasedModelRootEntry) {
+        ((FileBasedModelRoot)entry.getModelRoot()).setContentRoot(
+          MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId()).getBundleHome().getPath()
+        );
+      }
       ModelRootEntryContainer container = new ModelRootEntryContainer(entry);
       container.addContentEntryEditorListener(myEditorListener);
       myModelRootEntries.add(container);

@@ -16,8 +16,8 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${project}/nanoc/nanoc.mpl" />
-      <modulePath path="${project}/pluginSolution/pluginSolution.msd" />
+      <modulePath path="${project}/nanoc/jetbrains.mps.nanoc.mpl" />
+      <modulePath path="${project}/pluginSolution/jetbrains.mps.nanoc.pluginSolution.msd" />
       <modulePath path="${project}/sandbox/jetbrains.mps.nanoc.sandbox.msd" />
     </projectModules>
     <genConfs />

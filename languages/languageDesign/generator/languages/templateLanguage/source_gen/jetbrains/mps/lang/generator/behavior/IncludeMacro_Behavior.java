@@ -35,7 +35,7 @@ public class IncludeMacro_Behavior {
       {
         SNode nodeToMatch_IncludeMacro_Behavior_wfrqja_a0a0a0;
         nodeToMatch_IncludeMacro_Behavior_wfrqja_a0a0a0 = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_IncludeMacro_Behavior_wfrqja_a0a0a0.getConcept().getId()))) {
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_IncludeMacro_Behavior_wfrqja_a0a0a0.getConcept().getConceptId()))) {
           return false;
         }
         patternVar_concept = nodeToMatch_IncludeMacro_Behavior_wfrqja_a0a0a0.getReferenceTarget("concept");

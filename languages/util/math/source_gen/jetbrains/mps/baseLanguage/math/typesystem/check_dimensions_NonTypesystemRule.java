@@ -28,7 +28,7 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
         {
           SNode matchingNode_n3qbw2_a0a = binaryOperation;
           if (matchingNode_n3qbw2_a0a != null) {
-            matches_n3qbw2_a0a = SModelUtil_new.isAssignableConcept(matchingNode_n3qbw2_a0a.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.MulExpression");
+            matches_n3qbw2_a0a = SModelUtil_new.isAssignableConcept(matchingNode_n3qbw2_a0a.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.MulExpression");
           }
         }
         if (matches_n3qbw2_a0a) {
@@ -49,7 +49,7 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
           {
             SNode matchingNode_n3qbw2_b0a = binaryOperation;
             if (matchingNode_n3qbw2_b0a != null) {
-              matches_n3qbw2_b0a = SModelUtil_new.isAssignableConcept(matchingNode_n3qbw2_b0a.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.PlusExpression");
+              matches_n3qbw2_b0a = SModelUtil_new.isAssignableConcept(matchingNode_n3qbw2_b0a.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.PlusExpression");
             }
           }
           if (matches_n3qbw2_b0a) {
@@ -64,7 +64,7 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
             {
               SNode matchingNode_n3qbw2_c0a = binaryOperation;
               if (matchingNode_n3qbw2_c0a != null) {
-                matches_n3qbw2_c0a = SModelUtil_new.isAssignableConcept(matchingNode_n3qbw2_c0a.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.MinusExpression");
+                matches_n3qbw2_c0a = SModelUtil_new.isAssignableConcept(matchingNode_n3qbw2_c0a.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.MinusExpression");
               }
             }
             if (matches_n3qbw2_c0a) {
@@ -87,7 +87,7 @@ public class check_dimensions_NonTypesystemRule extends AbstractNonTypesystemRul
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getConceptId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

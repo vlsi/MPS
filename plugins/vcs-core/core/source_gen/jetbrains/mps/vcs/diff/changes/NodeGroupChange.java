@@ -70,11 +70,11 @@ public class NodeGroupChange extends ModelChange {
       List<SNode> children = parent.getChildren(myRole);
       myPreparedIdsToDelete = ListSequence.fromList(new ArrayList<SNodeId>());
       for (int i = myBegin; i < myEnd; i++) {
-        ListSequence.fromList(myPreparedIdsToDelete).addElement(children.get(i).getSNodeId());
+        ListSequence.fromList(myPreparedIdsToDelete).addElement(children.get(i).getNodeId());
       }
       myPreparedAnchorId = (myBegin == 0 ?
         null :
-        children.get(myBegin - 1).getSNodeId()
+        children.get(myBegin - 1).getNodeId()
       );
     }
   }
@@ -110,7 +110,7 @@ public class NodeGroupChange extends ModelChange {
   @Nullable
   @Override
   public SNodeId getRootId() {
-    return getChangeSet().getOldModel().getNodeById(myParentNodeId).getTopmostAncestor().getSNodeId();
+    return getChangeSet().getOldModel().getNodeById(myParentNodeId).getTopmostAncestor().getNodeId();
   }
 
   @NotNull
@@ -146,7 +146,7 @@ public class NodeGroupChange extends ModelChange {
       newChildren = getChangeSet().getNewModel().getNodeById(myParentNodeId).getChildren(myRole);
       newIds = IterableUtils.join(ListSequence.fromList(newChildren).page(myResultBegin, myResultEnd).select(new ISelector<SNode, String>() {
         public String select(SNode n) {
-          return "#" + n.getSNodeId();
+          return "#" + n.getNodeId();
         }
       }), ", ");
     }

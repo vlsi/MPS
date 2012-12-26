@@ -672,7 +672,7 @@
   </root>
   <root nodeId="7057666463730306574" modelId="r:3783215c-b297-48a0-a2ee-a2b26d55402b(jetbrains.mps.baseLanguage.builders.behavior)">
     <nodeInfo nodeId="7057666463730573700" fileName="Builder_Behavior.java" startLine="20" startPosition="82" endLine="21" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7057666463730595169" fileName="Builder_Behavior.java" startLine="24" startPosition="76" endLine="25" endPosition="211" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7057666463730595169" fileName="Builder_Behavior.java" startLine="24" startPosition="76" endLine="25" endPosition="231" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="754838298734498715" fileName="Builder_Behavior.java" startLine="28" startPosition="81" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4797501453850310554" fileName="Builder_Behavior.java" startLine="32" startPosition="139" endLine="33" endPosition="197" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4797501453850305576" fileName="Builder_Behavior.java" startLine="36" startPosition="145" endLine="37" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
@@ -710,7 +710,7 @@
     <nodeInfo nodeId="7057666463730306574" fileName="Builder_Behavior.java" startLine="44" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getContextBuilder_7057666463730366732#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="7057666463730306576" fileName="Builder_Behavior.java" startLine="17" startPosition="43" endLine="17" endPosition="43" />
     <scopeInfo nodeId="7057666463730306580" fileName="Builder_Behavior.java" startLine="20" startPosition="82" endLine="21" endPosition="103" />
-    <scopeInfo nodeId="7057666463730595162" fileName="Builder_Behavior.java" startLine="24" startPosition="76" endLine="25" endPosition="211" />
+    <scopeInfo nodeId="7057666463730595162" fileName="Builder_Behavior.java" startLine="24" startPosition="76" endLine="25" endPosition="231" />
     <scopeInfo nodeId="7057666463730718254" fileName="Builder_Behavior.java" startLine="28" startPosition="81" endLine="29" endPosition="16" />
     <scopeInfo nodeId="7288041816792215498" fileName="Builder_Behavior.java" startLine="32" startPosition="139" endLine="33" endPosition="197" />
     <scopeInfo nodeId="4797501453850305566" fileName="Builder_Behavior.java" startLine="36" startPosition="145" endLine="37" endPosition="46" />

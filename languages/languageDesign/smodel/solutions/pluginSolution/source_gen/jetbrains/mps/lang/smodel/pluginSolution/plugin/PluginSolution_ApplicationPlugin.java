@@ -21,6 +21,7 @@ public class PluginSolution_ApplicationPlugin extends BaseApplicationPlugin {
   public void createGroups() {
     // actions w/o parameters 
     addAction(new CheckLangForJavaStubModels_Action());
+    addAction(new MigrateToNewSNodeAccess_Action());
     addAction(new MigrateToNewSNodeMethods_Action());
     addAction(new MigrateToOpenAPI_Action());
     // groups 

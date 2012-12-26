@@ -20,7 +20,7 @@ import jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import java.util.List;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
@@ -54,7 +54,7 @@ public class AttributeQualifier_Behavior {
           public boolean accept(SNode it) {
             return eq_h001dt_a0a0a0a0a0a0a0a0a0a0a6a3(SPropertyOperations.getString(it, "name"), "getRole");
           }
-        }) && BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(attr)), "virtual_getRole_1262430001741497900", new Object[]{}) != null && ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), new SConceptNodeAdapter(NameUtil.nodeFQName(attr)), "virtual_getAttributed_3044950653914717013", new Object[]{})).any(new IWhereFilter<SNode>() {
+        }) && BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(attr)), "virtual_getRole_1262430001741497900", new Object[]{}) != null && ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(attr)), "virtual_getAttributed_3044950653914717013", new Object[]{})).any(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SConceptOperations.isSubConceptOf(container, NameUtil.nodeFQName(it));
           }

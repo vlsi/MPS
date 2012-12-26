@@ -26,7 +26,7 @@
   <dep model="r:4a0301da-c964-420c-8e35-486843de9df5(jetbrains.mps.debug.api.evaluation)" hash="-3bgfbqxg4gfraxyg74i0ypfpnz5k8qj" />
   <dep model="r:63e7a653-1334-49d4-8e81-fd72b84fb4ff(jetbrains.mps.debugger.java.runtime.state)" hash="1mr4d8rf60qdvtjxdejfiiwsrsgtpp2" />
   <dep model="r:6c15a5c9-1bba-4ade-a066-13f2741b04fc(jetbrains.mps.debugger.java.api.state)" hash="8cr00plh4h1ffhdx8l5gkug5477iewf" />
-  <dep model="r:86d21248-3bf4-41d8-8375-ab68885d035f(jetbrains.mps.debugger.java.runtime.evaluation.model)" hash="4f452lpxg260qo5pbpdcjnbn5j2sc2l" />
+  <dep model="r:86d21248-3bf4-41d8-8375-ab68885d035f(jetbrains.mps.debugger.java.runtime.evaluation.model)" hash="-1qne3xg3vkw9ra9p263wh3saozcj5ma" />
   <dep model="r:a35795b4-c996-4cf6-bdbd-9ddbda25cde5(jetbrains.mps.debugger.api.ui.tree)" hash="2r8f65j4mbc63a1sscah4vp2fy3qp44" />
   <dep model="r:ac4cce94-c169-4971-be8f-807482637028(jetbrains.mps.debugger.java.api.state.proxy)" hash="b5f2hat22z7kofjpealda8q4j854fl3" />
   <dep model="r:b4456070-b665-4c03-b3d3-15a7362ba923(jetbrains.mps.debugger.java.runtime.ui.evaluation)" hash="-34x3jneje8g2nw99g1any42bq6141co" />
@@ -34,7 +34,7 @@
   <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" hash="-kugzdgos9h1280bqqmb5f6xjgqlcwz" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3t350ymnztu1bi083p2mhorjil0w76j" />
   <dep model="r:f326a98e-32f7-47a0-ba29-239107a89ca4(jetbrains.mps.debugger.java.api.evaluation)" hash="e3wp8oraj7m4i1ebrq3glc1ncuapita" />
-  <dep model="r:f88361e7-5098-4f71-afec-1ad5641911e8(jetbrains.mps.lang.plugin.standalone.generator.template.main@generator)" hash="cqx2sgfbx6gxe3yclzo6g7fa3hl4l1v" />
+  <dep model="r:f88361e7-5098-4f71-afec-1ad5641911e8(jetbrains.mps.lang.plugin.standalone.generator.template.main@generator)" hash="ekh78886lkdiqjjxred7oky30fvh837" />
   <common hash="75pi6pnu3ionkt6jfdreov68cifvpbi" />
   <source id="8643693251546861612" name="WatchesTreeActions" hash="9crdfrlxk9520sufp3nnl8tnx1h9sh2">
     <dep root="8643693251546861633" />

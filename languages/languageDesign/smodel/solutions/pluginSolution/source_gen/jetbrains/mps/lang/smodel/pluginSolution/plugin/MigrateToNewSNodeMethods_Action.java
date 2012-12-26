@@ -54,7 +54,8 @@ public class MigrateToNewSNodeMethods_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new ApiMigrationHelper(((MPSProject) MapSequence.fromMap(_params).get("project")), ((Project) MapSequence.fromMap(_params).get("iproject")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope()).replaceSNodeMethods();
+      ApiMigrationHelper instance = new ApiMigrationHelper(((MPSProject) MapSequence.fromMap(_params).get("project")), ((Project) MapSequence.fromMap(_params).get("iproject")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope());
+      instance.migrateMethods(new ApiTransformations().getTransformations());
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "MigrateToNewSNodeMethods", t);
     }

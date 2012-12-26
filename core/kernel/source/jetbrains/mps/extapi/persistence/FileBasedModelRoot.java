@@ -17,7 +17,7 @@ package jetbrains.mps.extapi.persistence;
 
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.util.misc.hash.HashMap;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.FileSystemListener;
 import jetbrains.mps.vfs.IFile;
@@ -31,14 +31,14 @@ import java.util.*;
 public abstract class FileBasedModelRoot extends ModelRootBase implements FileSystemListener {
 
   public static final String EXCLUDED = "excluded";
-  public static final String MODEL_ROOTS = "modelRoots";
+  public static final String SOURCE_ROOTS = "sourceRoot";
 
   private String contentRoot;
   private Map<String, List<String>> filesForKind = new HashMap<String, List<String>>();
   private final List<PathListener> myListeners = new ArrayList<PathListener>();
 
   protected FileBasedModelRoot() {
-    this(new String[]{MODEL_ROOTS, EXCLUDED});
+    this(new String[]{SOURCE_ROOTS, EXCLUDED});
   }
 
   protected FileBasedModelRoot(String[] supportedFileKinds) {
@@ -66,16 +66,49 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
     return strings == null ? Collections.<String>emptyList() : new ArrayList<String>(strings);
   }
 
-  public final void setFiles(String kind, Collection<String> files) {
+  public final boolean containsFile(String kind, String file) {
+    List<String> strings = filesForKind.get(kind);
+    if (strings == null) {
+      return false;
+    }
+    return strings.contains(file);
+  }
+
+  public final void addFiles(String kind, Collection<String> files) {
     checkNotRegistered();
 
     if (!filesForKind.containsKey(kind)) {
       throw new IllegalArgumentException("unknown kind");
     }
-    if (files == null) {
-      filesForKind.put(kind, new ArrayList<String>());
+    if (files == null || files.isEmpty()) {
+      return;
     }
-    filesForKind.put(kind, new ArrayList<String>(files));
+
+    filesForKind.get(kind).addAll(files);
+  }
+
+  public final void addFile(String kind, String file) {
+    addFiles(kind, Arrays.asList(file));
+  }
+
+  public final void deleteFile(String kind, String file) {
+    checkNotRegistered();
+
+    if (!filesForKind.containsKey(kind)) {
+      throw new IllegalArgumentException("unknown kind");
+    }
+
+    filesForKind.get(kind).remove(file);
+  }
+
+  public final void clearFiles(String kind) {
+    checkNotRegistered();
+
+    if (!filesForKind.containsKey(kind)) {
+      throw new IllegalArgumentException("unknown kind");
+    }
+
+    filesForKind.get(kind).clear();
   }
 
   @Override
@@ -90,7 +123,7 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   public String getKindText(String kind) {
     if (kind.equals(EXCLUDED)) {
       return "Excluded Folders";
-    } else if (kind.equals(MODEL_ROOTS)) {
+    } else if (kind.equals(SOURCE_ROOTS)) {
       return "Model Folders";
     }
     return null;
@@ -98,13 +131,19 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
 
   @Override
   public final void save(Memento memento) {
-    memento.put("path", contentRoot);
+    memento.put("contentPath", contentRoot);
     for (String kind : getSupportedFileKinds()) {
       List<String> files = filesForKind.get(kind);
 
       for (String s : files) {
         Memento modelRoot = memento.createChild(kind);
-        modelRoot.put("path", s);
+        if (s.equals(contentRoot)) {
+          modelRoot.put("location", ".");
+        } else if (s.startsWith(contentRoot + "/")) {
+          modelRoot.put("location", s.substring(contentRoot.length() + 1));
+        } else {
+          modelRoot.put("path", s);
+        }
       }
     }
   }
@@ -113,19 +152,21 @@ public abstract class FileBasedModelRoot extends ModelRootBase implements FileSy
   public final void load(Memento memento) {
     checkNotRegistered();
 
-    contentRoot = memento.get("path");
+    contentRoot = FileUtil.stripLastSlashes(memento.get("contentPath"));
     for (String kind : getSupportedFileKinds()) {
-      List<String> files = null;
+      List<String> files = filesForKind.get(kind);
+      files.clear();
       for (Memento root : memento.getChildren(kind)) {
-        if (files == null) {
-          files = new ArrayList<String>();
+        String relPath = root.get("location");
+        if (relPath != null) {
+          if (relPath.equals(".")) {
+            files.add(contentRoot);
+          } else {
+            files.add(contentRoot + "/" + relPath);
+          }
+        } else {
+          files.add(root.get("path"));
         }
-        files.add(root.get("path"));
-      }
-      if (files == null) {
-        filesForKind.get(kind).clear();
-      } else {
-        filesForKind.put(kind, files);
       }
     }
   }

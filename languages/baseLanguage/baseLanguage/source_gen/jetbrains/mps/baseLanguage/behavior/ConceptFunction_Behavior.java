@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -24,7 +24,7 @@ public class ConceptFunction_Behavior {
   }
 
   public static boolean virtual_usesParameterObjectFor_1213877374432(SNode thisNode, SNode parameter) {
-    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_usesParameterObject_1262430001741497984", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_usesParameterObject_1262430001741497984", new Object[]{});
   }
 
   public static SNode virtual_getExpectedReturnType_1213877374441(SNode thisNode) {
@@ -49,7 +49,7 @@ public class ConceptFunction_Behavior {
     }
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addSequence(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "conceptFunctionParameter")));
-    ListSequence.fromList(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{})));
+    ListSequence.fromList(result).addSequence(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{})));
     return (List<SNode>) result;
   }
 
@@ -70,7 +70,7 @@ public class ConceptFunction_Behavior {
     // by default 'alias' is not shown. 
     // if you need presentation like alias(...)->.. 
     // then use the ConceptFunctionAliased_Component 
-    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_showName_1262430001741498082", new Object[]{})) {
+    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_showName_1262430001741498082", new Object[]{})) {
       result.append(ConceptFunction_Behavior.call_getName_1216468837268(thisNode));
     }
     return ConceptFunction_Behavior.call_appendHeader_2866018809101869378(thisNode, result);

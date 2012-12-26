@@ -42,7 +42,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
   }
 
   public void checkNode(final SNode node, LanguageErrorsComponent component, final IOperationContext operationContext, IScope scope) {
-    final ConstraintsDescriptor newDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getId());
+    final ConstraintsDescriptor newDescriptor = ConceptRegistry.getInstance().getConstraintsDescriptor(node.getConcept().getConceptId());
 
     final CheckingNodeContext checkingNodeContext = new jetbrains.mps.smodel.runtime.impl.CheckingNodeContext();
 
@@ -57,7 +57,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       }
       boolean canBeChild = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ModelConstraintsManager.canBeChild(newDescriptor, node.getConcept().getId(), operationContext, SNodeOperations.getParent(node), link, node, checkingNodeContext);
+          return ModelConstraintsManager.canBeChild(newDescriptor, node.getConcept().getConceptId(), operationContext, SNodeOperations.getParent(node), link, node, checkingNodeContext);
         }
       });
       if (!(canBeChild)) {
@@ -69,7 +69,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
     if (jetbrains.mps.util.SNodeOperations.isRoot(node)) {
       boolean canBeRoot = component.runCheckingAction(new _FunctionTypes._return_P0_E0<Boolean>() {
         public Boolean invoke() {
-          return ModelConstraintsManager.canBeRoot(newDescriptor, operationContext, node.getConcept().getId(), SNodeOperations.getModel(node), checkingNodeContext);
+          return ModelConstraintsManager.canBeRoot(newDescriptor, operationContext, node.getConcept().getConceptId(), SNodeOperations.getModel(node), checkingNodeContext);
         }
       });
       if (!(canBeRoot)) {
@@ -121,7 +121,7 @@ public class ConstraintsChecker extends AbstractConstraintsChecker {
       final PropertySupport ps = PropertySupport.getPropertySupport(p);
       final String propertyName = SPropertyOperations.getString(p, "name");
       if (propertyName == null) {
-        LOG.error("Property declaration has a null name, declaration id: " + p.getSNodeId() + ", model: " + SNodeOperations.getModel(p).getSModelFqName());
+        LOG.error("Property declaration has a null name, declaration id: " + p.getNodeId() + ", model: " + SNodeOperations.getModel(p).getSModelFqName());
         continue;
       }
       final String value = ps.fromInternalValue(SNodeAccessUtil.getProperty(node, propertyName));

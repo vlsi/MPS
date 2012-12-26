@@ -21,7 +21,7 @@
     <nodeInfo nodeId="1831640603945292239" fileName="SNodeOperations.java" startLine="77" startPosition="45" endLine="78" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1831640603945292207" fileName="SNodeOperations.java" startLine="83" startPosition="175" endLine="84" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1831640603945292362" fileName="SNodeOperations.java" startLine="85" startPosition="7" endLine="86" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2089287822043606744" fileName="SNodeOperations.java" startLine="93" startPosition="50" endLine="94" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2089287822043606744" fileName="SNodeOperations.java" startLine="93" startPosition="50" endLine="94" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1958256073812991547" fileName="SNodeOperations.java" startLine="100" startPosition="52" endLine="101" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7036185364855564182" fileName="SNodeOperations.java" startLine="102" startPosition="64" endLine="103" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1958256073812969566" fileName="SNodeOperations.java" startLine="104" startPosition="5" endLine="105" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -121,7 +121,7 @@
     <scopeInfo nodeId="4951414497584670908" fileName="SNodeOperations.java" startLine="59" startPosition="34" endLine="60" endPosition="53" />
     <scopeInfo nodeId="7036185364863700619" fileName="SNodeOperations.java" startLine="69" startPosition="72" endLine="70" endPosition="47" />
     <scopeInfo nodeId="1831640603945223025" fileName="SNodeOperations.java" startLine="83" startPosition="175" endLine="84" endPosition="85" />
-    <scopeInfo nodeId="2089287822043606743" fileName="SNodeOperations.java" startLine="93" startPosition="50" endLine="94" endPosition="41" />
+    <scopeInfo nodeId="2089287822043606743" fileName="SNodeOperations.java" startLine="93" startPosition="50" endLine="94" endPosition="61" />
     <scopeInfo nodeId="7036185364855562295" fileName="SNodeOperations.java" startLine="102" startPosition="64" endLine="103" endPosition="67" />
     <scopeInfo nodeId="7036185364862526456" fileName="SNodeOperations.java" startLine="113" startPosition="101" endLine="114" endPosition="34" />
     <scopeInfo nodeId="7036185364855583359" fileName="SNodeOperations.java" startLine="124" startPosition="64" endLine="125" endPosition="80" />
@@ -573,7 +573,7 @@
     <nodeInfo nodeId="7295777740694850212" fileName="SNodeCompare.java" startLine="85" startPosition="49" endLine="86" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7295777740694850265" fileName="SNodeCompare.java" startLine="89" startPosition="64" endLine="90" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7295777740694850151" fileName="SNodeCompare.java" startLine="93" startPosition="5" endLine="94" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7295777740694850327" fileName="SNodeCompare.java" startLine="97" startPosition="54" endLine="98" endPosition="224" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="7295777740694850327" fileName="SNodeCompare.java" startLine="97" startPosition="54" endLine="98" endPosition="236" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7295777740694844261" fileName="SNodeCompare.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SNodeCompare#()V" />
     <nodeInfo nodeId="7295777740694849923" fileName="SNodeCompare.java" startLine="26" startPosition="141" endLine="29" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2732852465125742138" fileName="SNodeCompare.java" startLine="38" startPosition="0" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="visit#(Ljetbrains/mps/smodel/SReference;)V" />
@@ -620,7 +620,7 @@
     <scopeInfo nodeId="7295777740694850047" fileName="SNodeCompare.java" startLine="71" startPosition="84" endLine="72" endPosition="23" />
     <scopeInfo nodeId="7295777740694850180" fileName="SNodeCompare.java" startLine="85" startPosition="49" endLine="86" endPosition="21" />
     <scopeInfo nodeId="7295777740694850245" fileName="SNodeCompare.java" startLine="89" startPosition="64" endLine="90" endPosition="23" />
-    <scopeInfo nodeId="7295777740694844269" fileName="SNodeCompare.java" startLine="97" startPosition="54" endLine="98" endPosition="224" />
+    <scopeInfo nodeId="7295777740694844269" fileName="SNodeCompare.java" startLine="97" startPosition="54" endLine="98" endPosition="236" />
     <scopeInfo nodeId="7295777740694844261" fileName="SNodeCompare.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
     <scopeInfo nodeId="1144510136184409520" fileName="SNodeCompare.java" startLine="51" startPosition="41" endLine="53" endPosition="21" />
     <scopeInfo nodeId="6442525078792092015" fileName="SNodeCompare.java" startLine="65" startPosition="16" endLine="67" endPosition="23" />

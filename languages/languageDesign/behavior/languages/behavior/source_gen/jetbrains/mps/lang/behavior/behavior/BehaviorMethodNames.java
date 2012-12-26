@@ -32,6 +32,6 @@ public class BehaviorMethodNames {
   }
 
   private static String getMethodName(SNode method) {
-    return SPropertyOperations.getString(method, "name") + "_" + method.getSNodeId().toString();
+    return SPropertyOperations.getString(method, "name") + "_" + method.getNodeId().toString();
   }
 }

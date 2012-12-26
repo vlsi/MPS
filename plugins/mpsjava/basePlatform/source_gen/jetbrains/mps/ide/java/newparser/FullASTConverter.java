@@ -1006,14 +1006,14 @@ public class FullASTConverter extends ASTConverter {
       throw new JavaParseException("Type should be class in qualified this reference");
     }
     SReference sref = adjustClassReference(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"), thisRef, "classConcept");
-    thisRef.addReference(sref);
+    thisRef.setReference(sref.getRole(), sref);
     return thisRef;
   }
 
   /*package*/ SNode convertExpression(SingleNameReference x) {
     SNode varRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SReference sref = new DynamicReference("variableDeclaration", varRef, null, new String(x.token));
-    varRef.addReference(sref);
+    varRef.setReference(sref.getRole(), sref);
     return varRef;
   }
 
@@ -1041,7 +1041,7 @@ public class FullASTConverter extends ASTConverter {
     SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
     SLinkOperations.setTarget(dotExpr, "operation", fieldRef, true);
     SReference sref = new DynamicReference("fieldDeclaration", fieldRef, null, fieldName);
-    fieldRef.addReference(sref);
+    fieldRef.setReference(sref.getRole(), sref);
     return dotExpr;
   }
 
@@ -1113,7 +1113,7 @@ public class FullASTConverter extends ASTConverter {
         SLinkOperations.setTarget(dotExpr, "operation", instCall, true);
 
         SReference sref = new DynamicReference("baseMethodDeclaration", instCall, null, methodName);
-        instCall.addReference(sref);
+        instCall.setReference(sref.getRole(), sref);
 
         result = dotExpr;
         call = instCall;
@@ -1142,7 +1142,7 @@ public class FullASTConverter extends ASTConverter {
     SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
     SLinkOperations.setTarget(result, "operation", fieldRef, true);
     SReference sref = new DynamicReference("fieldDeclaration", fieldRef, null, new String(x.token));
-    fieldRef.addReference(sref);
+    fieldRef.setReference(sref.getRole(), sref);
     return result;
   }
 
@@ -1212,7 +1212,7 @@ public class FullASTConverter extends ASTConverter {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierClassExpression", null);
 
     SReference sref = adjustClassReference(SNodeOperations.cast(argType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), result, "classifier");
-    result.addReference(sref);
+    result.setReference(sref.getRole(), sref);
     return result;
   }
 
@@ -1277,8 +1277,8 @@ public class FullASTConverter extends ASTConverter {
       }
       SReference enumConstRef = new DynamicReference("enumConstantDeclaration", enumRef, null, enumConstName);
 
-      enumRef.addReference(enumClRef);
-      enumRef.addReference(enumConstRef);
+      enumRef.setReference(enumClRef.getRole(), enumClRef);
+      enumRef.setReference(enumConstRef.getRole(), enumConstRef);
       return enumRef;
 
     } else if (exp instanceof SingleNameReference) {

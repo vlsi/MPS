@@ -80,7 +80,7 @@ public abstract class GeneratedFinder implements IInterfacedFinder {
         results.getSearchResults().add(new SearchResult<SNode>(resnode, getNodeCategory(resnode)));
       }
     } else {
-      LOG.debug("Trying to use finder that is not applicable to the concept. Returning empty results.[finder: \"" + getDescription() + "\"; " + "concept: " + node.getConcept().getId());
+      LOG.debug("Trying to use finder that is not applicable to the concept. Returning empty results.[finder: \"" + getDescription() + "\"; " + "concept: " + node.getConcept().getConceptId());
     }
     return results;
   }

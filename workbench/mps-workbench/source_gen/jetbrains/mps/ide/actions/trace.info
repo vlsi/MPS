@@ -6949,9 +6949,9 @@
     <nodeInfo nodeId="227146524086812207" fileName="HighlightInstances_Action.java" startLine="79" startPosition="9" endLine="80" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="227146524086812215" fileName="HighlightInstances_Action.java" startLine="80" startPosition="140" endLine="81" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="299059313917246840" fileName="HighlightInstances_Action.java" startLine="81" startPosition="140" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="3839513696115040160" fileName="HighlightInstances_Action.java" startLine="82" startPosition="0" endLine="83" endPosition="142" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1603865323670465831" fileName="HighlightInstances_Action.java" startLine="83" startPosition="142" endLine="84" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="227146524086812463" fileName="HighlightInstances_Action.java" startLine="86" startPosition="160" endLine="87" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3839513696115040160" fileName="HighlightInstances_Action.java" startLine="82" startPosition="0" endLine="83" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1603865323670465831" fileName="HighlightInstances_Action.java" startLine="83" startPosition="149" endLine="84" endPosition="246" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="227146524086812463" fileName="HighlightInstances_Action.java" startLine="86" startPosition="159" endLine="87" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1709218712959265252" fileName="HighlightInstances_Action.java" startLine="89" startPosition="7" endLine="90" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="91" startPosition="27" endLine="92" endPosition="90" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="96" startPosition="0" endLine="97" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -6983,7 +6983,7 @@
     <scopeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="59" startPosition="65" endLine="60" endPosition="19" />
     <scopeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="63" startPosition="60" endLine="64" endPosition="19" />
     <scopeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="72" startPosition="59" endLine="73" endPosition="19" />
-    <scopeInfo nodeId="227146524086812403" fileName="HighlightInstances_Action.java" startLine="86" startPosition="160" endLine="87" endPosition="106" />
+    <scopeInfo nodeId="227146524086812403" fileName="HighlightInstances_Action.java" startLine="86" startPosition="159" endLine="87" endPosition="106" />
     <scopeInfo nodeId="227146524086812204" fileName="HighlightInstances_Action.java" startLine="91" startPosition="0" endLine="92" endPosition="90">
       <varInfo nodeId="227146524086812204" varName="t" />
     </scopeInfo>
@@ -7141,7 +7141,7 @@
     <nodeInfo nodeId="2557058267217516263" fileName="FindUsagesHelper.java" startLine="44" startPosition="144" endLine="45" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2557058267217516265" fileName="FindUsagesHelper.java" startLine="45" startPosition="16" endLine="46" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1766758229455160656" fileName="FindUsagesHelper.java" startLine="46" startPosition="70" endLine="47" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1766758229455160661" fileName="FindUsagesHelper.java" startLine="53" startPosition="10" endLine="54" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1766758229455160661" fileName="FindUsagesHelper.java" startLine="53" startPosition="10" endLine="54" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2557058267217516288" fileName="FindUsagesHelper.java" startLine="56" startPosition="7" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="2557058267217516290" fileName="FindUsagesHelper.java" startLine="57" startPosition="19" endLine="58" endPosition="168" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="2557058267217516298" fileName="FindUsagesHelper.java" startLine="58" startPosition="168" endLine="59" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -7183,7 +7183,7 @@
       <varInfo nodeId="2557058267217525621" varName="withDialog" />
     </scopeInfo>
     <scopeInfo nodeId="2557058267217516312" fileName="FindUsagesHelper.java" startLine="60" startPosition="23" endLine="64" endPosition="7" />
-    <scopeInfo nodeId="2557058267217516270" fileName="FindUsagesHelper.java" startLine="49" startPosition="25" endLine="54" endPosition="65" />
+    <scopeInfo nodeId="2557058267217516270" fileName="FindUsagesHelper.java" startLine="49" startPosition="25" endLine="54" endPosition="72" />
     <scopeInfo nodeId="2557058267217516352" fileName="FindUsagesHelper.java" startLine="73" startPosition="0" endLine="78" endPosition="0" />
     <scopeInfo nodeId="2557058267217516269" fileName="FindUsagesHelper.java" startLine="49" startPosition="0" endLine="56" endPosition="0" />
     <scopeInfo nodeId="2557058267217516072" fileName="FindUsagesHelper.java" startLine="44" startPosition="144" endLine="79" endPosition="150">
@@ -9104,7 +9104,7 @@
     <nodeInfo nodeId="4006758004392312921" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="58" startPosition="62" endLine="59" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4006758004392312921" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="60" startPosition="5" endLine="61" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4006758004392312929" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="65" startPosition="9" endLine="66" endPosition="82" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4006758004392312965" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="68" startPosition="40" endLine="69" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4006758004392312965" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="68" startPosition="40" endLine="69" endPosition="153" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4006758004392313023" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="71" startPosition="9" endLine="72" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8787627761412217709" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="74" startPosition="54" endLine="75" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8848477597120135286" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="77" startPosition="31" endLine="78" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -9134,7 +9134,7 @@
     <scopeInfo nodeId="4006758004392312921" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="45" startPosition="9" endLine="46" endPosition="43" />
     <scopeInfo nodeId="4006758004392312921" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="54" startPosition="53" endLine="55" endPosition="19" />
     <scopeInfo nodeId="4006758004392312921" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="58" startPosition="62" endLine="59" endPosition="19" />
-    <scopeInfo nodeId="4006758004392312961" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="68" startPosition="40" endLine="69" endPosition="146" />
+    <scopeInfo nodeId="4006758004392312961" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="68" startPosition="40" endLine="69" endPosition="153" />
     <scopeInfo nodeId="4006758004392312921" fileName="FindUnusedAndDeprecatedConcepts_Action.java" startLine="87" startPosition="0" endLine="88" endPosition="103">
       <varInfo nodeId="4006758004392312921" varName="t" />
     </scopeInfo>
@@ -10682,7 +10682,7 @@
     <nodeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="35" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="HighlightUsages_Action#()V" />
     <nodeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="46" startPosition="89" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
     <nodeInfo nodeId="5533671870987170544" fileName="HighlightUsages_Action.java" startLine="84" startPosition="177" endLine="91" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5533671870987188807" fileName="HighlightUsages_Action.java" startLine="94" startPosition="180" endLine="101" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5533671870987188807" fileName="HighlightUsages_Action.java" startLine="94" startPosition="178" endLine="101" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="46" startPosition="0" endLine="54" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="5533671870987100212" fileName="HighlightUsages_Action.java" startLine="83" startPosition="92" endLine="92" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="5533671870987188758" fileName="HighlightUsages_Action.java" startLine="93" startPosition="62" endLine="102" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -10726,7 +10726,7 @@
     <scopeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="35" startPosition="0" endLine="40" endPosition="0" />
     <scopeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="46" startPosition="89" endLine="52" endPosition="5" />
     <scopeInfo nodeId="5533671870987100213" fileName="HighlightUsages_Action.java" startLine="84" startPosition="177" endLine="91" endPosition="13" />
-    <scopeInfo nodeId="5533671870987188772" fileName="HighlightUsages_Action.java" startLine="94" startPosition="180" endLine="101" endPosition="15" />
+    <scopeInfo nodeId="5533671870987188772" fileName="HighlightUsages_Action.java" startLine="94" startPosition="178" endLine="101" endPosition="15" />
     <scopeInfo nodeId="5533671870987003804" fileName="HighlightUsages_Action.java" startLine="46" startPosition="0" endLine="54" endPosition="0">
       <varInfo nodeId="5533671870987003804" varName="_params" />
       <varInfo nodeId="5533671870987003804" varName="event" />

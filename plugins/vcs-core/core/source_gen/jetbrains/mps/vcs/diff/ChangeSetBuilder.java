@@ -78,7 +78,7 @@ public class ChangeSetBuilder {
     String oldPresentableValue = propertySupport.fromInternalValue(oldNode.getProperty(name));
     String newPresentableValue = propertySupport.fromInternalValue(newNode.getProperty(name));
     if (!(EqualUtil.equals(oldPresentableValue, newPresentableValue))) {
-      ListSequence.fromList(myNewChanges).addElement(new SetPropertyChange(myChangeSet, oldNode.getSNodeId(), name, newNode.getProperty(name)));
+      ListSequence.fromList(myNewChanges).addElement(new SetPropertyChange(myChangeSet, oldNode.getNodeId(), name, newNode.getProperty(name)));
     }
   }
 
@@ -117,7 +117,7 @@ public class ChangeSetBuilder {
       // same references 
     } else {
       SModelReference targetModel = check_nbyrtw_a0a0a8a9(newReference);
-      ListSequence.fromList(myNewChanges).addElement(new SetReferenceChange(myChangeSet, oldNode.getSNodeId(), role, targetModel, newTargetId, check_nbyrtw_f0a0a1a0i0j(newReference)));
+      ListSequence.fromList(myNewChanges).addElement(new SetReferenceChange(myChangeSet, oldNode.getNodeId(), role, targetModel, newTargetId, check_nbyrtw_f0a0a1a0i0j(newReference)));
     }
   }
 
@@ -125,9 +125,9 @@ public class ChangeSetBuilder {
     assert oldNode != null || newNode != null;
 
     if (oldNode == null) {
-      ListSequence.fromList(myNewChanges).addElement(new AddRootChange(myChangeSet, newNode.getSNodeId()));
+      ListSequence.fromList(myNewChanges).addElement(new AddRootChange(myChangeSet, newNode.getNodeId()));
     } else if (newNode == null) {
-      ListSequence.fromList(myNewChanges).addElement(new DeleteRootChange(myChangeSet, oldNode.getSNodeId()));
+      ListSequence.fromList(myNewChanges).addElement(new DeleteRootChange(myChangeSet, oldNode.getNodeId()));
     } else {
       buildForProperties(oldNode, newNode);
       buildForReferences(oldNode, newNode);
@@ -143,18 +143,18 @@ public class ChangeSetBuilder {
   }
 
   private void buildForNodeRole(SNode oldNode, SNode newNode, String role) {
-    buildForNodeRole(oldNode.getChildren(role), newNode.getChildren(role), oldNode.getSNodeId(), role);
+    buildForNodeRole(oldNode.getChildren(role), newNode.getChildren(role), oldNode.getNodeId(), role);
   }
 
   public void buildForNodeRole(final List<SNode> oldChildren, List<SNode> newChildren, SNodeId parentId, String role) {
     List<SNodeId> oldIds = ListSequence.fromList(oldChildren).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
-        return n.getSNodeId();
+        return n.getNodeId();
       }
     }).toListSequence();
     List<SNodeId> newIds = ListSequence.fromList(newChildren).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
-        return n.getSNodeId();
+        return n.getNodeId();
       }
     }).toListSequence();
     LongestCommonSubsequenceFinder<SNodeId> finder = new LongestCommonSubsequenceFinder<SNodeId>(oldIds, newIds);
@@ -175,7 +175,7 @@ public class ChangeSetBuilder {
       }
     }).visitAll(new IVisitor<SNode>() {
       public void visit(SNode child) {
-        buildForNode(child, myNewModel.getNodeById(child.getSNodeId()));
+        buildForNode(child, myNewModel.getNodeById(child.getNodeId()));
       }
     });
   }
@@ -259,7 +259,7 @@ public class ChangeSetBuilder {
   private void build(boolean withOpposite) {
     Iterable<SNodeId> allRootIds = ListSequence.fromList(SModelOperations.getRoots(myOldModel, null)).concat(ListSequence.fromList(SModelOperations.getRoots(myNewModel, null))).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
-        return n.getSNodeId();
+        return n.getNodeId();
       }
     });
     for (SNodeId rootId : SetSequence.fromSetWithValues(new HashSet<SNodeId>(), allRootIds)) {

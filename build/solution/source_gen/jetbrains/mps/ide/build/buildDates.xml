@@ -64,7 +64,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.dates-src.jar" descriptor="dates.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage.dates-src.jar" descriptor="jetbrains.mps.baseLanguage.dates.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-dates/languages/jetbrains.mps.baseLanguage.dates.jar">
@@ -74,7 +74,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-dates/languages/jetbrains.mps.baseLanguage.dates-src.jar">
       <fileset dir="${mps_home}/languages/util/dates/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/util/dates/dates.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/util/dates/jetbrains.mps.baseLanguage.dates.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/util/dates/languageAccessories" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageAccessories" />
       <zipfileset dir="${mps_home}/languages/util/dates/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${mps_home}/languages/util/dates/generator/baseLanguage/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/baseLanguage/template" />
@@ -97,7 +97,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.baseLanguage.datesInternal-src.jar" descriptor="internal.mpl" />
+        <sources jar="jetbrains.mps.baseLanguage.datesInternal-src.jar" descriptor="jetbrains.mps.baseLanguage.datesInternal.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/plugins/mps-dates/languages/jetbrains.mps.baseLanguage.datesInternal.jar">
@@ -107,7 +107,7 @@
     </jar>
     <jar destfile="${build.layout}/plugins/mps-dates/languages/jetbrains.mps.baseLanguage.datesInternal-src.jar">
       <fileset dir="${mps_home}/languages/util/dates/internal/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/languages/util/dates/internal/internal.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/languages/util/dates/internal/jetbrains.mps.baseLanguage.datesInternal.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/languages/util/dates/internal/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <mkdir dir="${build.layout}/plugins/mps-dates/languages" />

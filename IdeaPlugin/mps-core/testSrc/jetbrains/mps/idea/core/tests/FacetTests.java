@@ -116,7 +116,8 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     String modelRootPath = modelRootDir.getPath();
     MPSConfigurationBean configurationBean = myFacet.getConfiguration().getBean();
     DefaultModelRoot root = new DefaultModelRoot();
-    root.setPath(modelRootPath);
+    root.setContentRoot(modelRootPath);
+    root.addFile(DefaultModelRoot.SOURCE_ROOTS, modelRootPath);
     configurationBean.setModelRoots(Arrays.<ModelRoot>asList(root));
     myFacet.setConfiguration(configurationBean);
     flushEDT();
@@ -129,7 +130,7 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     assertTrue(iterator.hasNext());
     ModelRoot theModelRoot = iterator.next();
     assertFalse(iterator.hasNext());
-    assertEquals(modelRootDir.getPath(), ((FolderModelRootBase) theModelRoot).getPath());
+    assertEquals(modelRootDir.getPath(), ((DefaultModelRoot) theModelRoot).getFiles(DefaultModelRoot.SOURCE_ROOTS).iterator().next());
 
     configurationBean = myFacet.getConfiguration().getBean();
     configurationBean.setModelRoots(new ArrayList<ModelRoot>());

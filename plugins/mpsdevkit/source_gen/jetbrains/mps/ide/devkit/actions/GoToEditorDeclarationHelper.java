@@ -32,7 +32,7 @@ public class GoToEditorDeclarationHelper {
     }
     String message = ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
-        return "Concept \"" + node.getConcept().getId() + "\" has no editor.\n" + "Create new editor?";
+        return "Concept \"" + node.getConcept().getConceptId() + "\" has no editor.\n" + "Create new editor?";
       }
     });
     int option = JOptionPane.showConfirmDialog(null, message, "Editor not found", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE);

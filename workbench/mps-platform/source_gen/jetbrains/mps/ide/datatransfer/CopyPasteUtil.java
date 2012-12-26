@@ -54,7 +54,7 @@ public class CopyPasteUtil {
     necessaryLanguages.clear();
     Set<SNode> sourceNodes = sourceNodesToNewNodes.keySet();
     for (SNode node : sourceNodes) {
-      necessaryLanguages.add(new ModuleReference(node.getLanguageNamespace()).update());
+      necessaryLanguages.add(new ModuleReference(node.getConcept().getLanguage().getPresentation()).update());
     }
     for (SReference ref : allReferences) {
       if (sourceNodesToNewNodes.get(ref.getTargetNode()) == null) {
@@ -113,8 +113,8 @@ public class CopyPasteUtil {
   }
 
   private static SNode copyNode_internal(SNode sourceNode, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
-    SNode targetNode = new SNode(InternUtil.intern(sourceNode.getConcept().getId()));
-    targetNode.setId(SNodeId.fromString(sourceNode.getSNodeId().toString()));
+    SNode targetNode = new SNode(InternUtil.intern(sourceNode.getConcept().getConceptId()));
+    targetNode.setId(SNodeId.fromString(sourceNode.getNodeId().toString()));
     for (String name : SetSequence.fromSet(sourceNode.getPropertyNames())) {
       targetNode.setProperty(name, sourceNode.getProperty(name));
     }
@@ -152,7 +152,7 @@ public class CopyPasteUtil {
         newReference = SReference.create(sourceReference.getRole(), newSourceNode, newTargetNode);
       } else {
         if (oldTargetNode != null) {
-          newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getSModelReference(), oldTargetNode.getSNodeId());
+          newReference = SReference.create(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getSModelReference(), oldTargetNode.getNodeId());
         } else
         if (sourceReference.getResolveInfo() != null) {
           newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, sourceReference.getResolveInfo());
@@ -183,7 +183,7 @@ public class CopyPasteUtil {
           );
           if (resolveInfo != null) {
             if (oldTargetNode != null && !(SNodeOperations.isDisposed(oldTargetNode)) && oldTargetNode.getModel() != null) {
-              newReference = new StaticReference(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getSModelReference(), oldTargetNode.getSNodeId(), resolveInfo);
+              newReference = new StaticReference(sourceReference.getRole(), newSourceNode, oldTargetNode.getModel().getSModelReference(), oldTargetNode.getNodeId(), resolveInfo);
             } else {
               newReference = new StaticReference(sourceReference.getRole(), newSourceNode, null, null, resolveInfo);
             }

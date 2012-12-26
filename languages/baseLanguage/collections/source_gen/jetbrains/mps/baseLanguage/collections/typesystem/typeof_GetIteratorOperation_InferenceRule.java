@@ -31,7 +31,7 @@ public class typeof_GetIteratorOperation_InferenceRule extends AbstractInference
         {
           SNode matchingNode_aqh9x4_a2a = typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(iterator), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240152232529", true);
           if (matchingNode_aqh9x4_a2a != null) {
-            matches_aqh9x4_a2a = SModelUtil_new.isAssignableConcept(matchingNode_aqh9x4_a2a.getConcept().getId(), "jetbrains.mps.baseLanguage.collections.structure.ListType");
+            matches_aqh9x4_a2a = SModelUtil_new.isAssignableConcept(matchingNode_aqh9x4_a2a.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.collections.structure.ListType");
           }
         }
         if (matches_aqh9x4_a2a) {
@@ -45,7 +45,7 @@ public class typeof_GetIteratorOperation_InferenceRule extends AbstractInference
           {
             SNode matchingNode_aqh9x4_b2a = typeCheckingContext.typeOf(IOperation_Behavior.call_getOperand_1213877410070(iterator), "r:00000000-0000-4000-0000-011c8959032b(jetbrains.mps.baseLanguage.collections.typesystem)", "1240152232529", true);
             if (matchingNode_aqh9x4_b2a != null) {
-              matches_aqh9x4_b2a = SModelUtil_new.isAssignableConcept(matchingNode_aqh9x4_b2a.getConcept().getId(), "jetbrains.mps.baseLanguage.collections.structure.SetType");
+              matches_aqh9x4_b2a = SModelUtil_new.isAssignableConcept(matchingNode_aqh9x4_b2a.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.collections.structure.SetType");
             }
           }
           if (matches_aqh9x4_b2a) {
@@ -70,7 +70,7 @@ public class typeof_GetIteratorOperation_InferenceRule extends AbstractInference
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getConceptId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

@@ -102,7 +102,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1172648115916(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "TreePath_" + ((SNode) _context.getNode()).getSNodeId().toString();
+    return "TreePath_" + ((SNode) _context.getNode()).getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1172655415629(final IOperationContext operationContext, final PropertyMacroContext _context) {

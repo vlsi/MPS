@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2arkksus73nw1au1h4sejq04gc9r32l">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
+<dependencies version="2" modelHash="-6931n84whybq7ec17u3y8v5hf01g6rl">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9fewwdo4hvsg0t5ahhqrttciuy5v4h" />
   <common hash="d0pz2d26ibjukq8cusqdxjzkjw40c3s" />
-  <source id="7617727720685157684" name="SwingTransientValues" hash="-6m8jmbfmntij3lqjw5k46q2d403bdrz">
+  <source id="7617727720685157684" name="SwingTransientValues" hash="lyjm7je65eqei9y4peyy9jr81warxi">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="SwingTransientValues.java" />
   </source>

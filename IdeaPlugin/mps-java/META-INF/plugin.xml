@@ -37,13 +37,13 @@
 
   <project-components>
     <component>
-      <implementation-class>jetbrains.mps.idea.debugger.IdeaDebuggerPositionHighlighter</implementation-class>
+      <implementation-class>jetbrains.mps.idea.java.debugger.IdeaDebuggerPositionHighlighter</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.idea.debugger.breakpoints.IdeaBreakpointsUiComponent</implementation-class>
+      <implementation-class>jetbrains.mps.idea.java.debugger.breakpoints.IdeaBreakpointsUiComponent</implementation-class>
     </component>
     <component>
-      <implementation-class>jetbrains.mps.idea.debugger.trace.TraceFilesManager</implementation-class>
+      <implementation-class>jetbrains.mps.idea.java.trace.TraceFilesManager</implementation-class>
     </component>
     <component>
       <implementation-class>jetbrains.mps.ide.java.actions.OverrideImplementMethodComponent</implementation-class>
@@ -68,7 +68,7 @@
   <extensions defaultExtensionNs="com.intellij">
     <mps.LanguageLibrary dir=""/>
     <mps.modelRootContributor className="jetbrains.mps.idea.sourceStubs.JavaSourceModelRootContributor"/>
-    <debugger.positionManagerFactory implementation="jetbrains.mps.idea.debugger.MpsPositionManagerFactory"/>
+    <debugger.positionManagerFactory implementation="jetbrains.mps.idea.java.debugger.MpsPositionManagerFactory"/>
     <fileBasedIndex implementation="jetbrains.mps.ide.java.platform.index.ClassifierSuccessorsIndexer"/>
     <errorHandler implementation="jetbrains.mps.ide.blame.CharismaReporter"/>
     <compileServer.plugin classpath="jps/mps-java-jps-plugin.jar;mps-java-common.jar"/>

@@ -8,7 +8,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
@@ -22,11 +22,11 @@ public class SimpleWord_Behavior {
     }
     SNode refConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.bash.structure.IConcreteWordUnit");
     for (SNode unit : ListSequence.fromList(SConceptOperations.getAllSubConcepts(refConcept, SNodeOperations.getModel(thisNode), scope))) {
-      if (isNotEmpty_ur4wq2_a0a0c0b(BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(unit)), "virtual_getPattern_1262430001741497918", new Object[]{}))) {
-        int index = value.indexOf(BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(unit)), "virtual_getPattern_1262430001741497918", new Object[]{}));
+      if (isNotEmpty_ur4wq2_a0a0c0b(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(unit)), "virtual_getPattern_1262430001741497918", new Object[]{}))) {
+        int index = value.indexOf(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(unit)), "virtual_getPattern_1262430001741497918", new Object[]{}));
         if (index != -1) {
           SNode endOfWord = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.SimpleWord", null);
-          String dummy = value.substring(index + BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(unit)), "virtual_getPattern_1262430001741497918", new Object[]{}).length());
+          String dummy = value.substring(index + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(unit)), "virtual_getPattern_1262430001741497918", new Object[]{}).length());
           if ((dummy != null && dummy.length() > 0)) {
             SPropertyOperations.set(endOfWord, "word", dummy);
             SNodeOperations.insertNextSiblingChild(thisNode, endOfWord);

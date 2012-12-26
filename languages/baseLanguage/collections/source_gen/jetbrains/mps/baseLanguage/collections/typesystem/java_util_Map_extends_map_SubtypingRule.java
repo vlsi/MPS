@@ -53,7 +53,7 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
       {
         SNode nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a;
         nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getConcept().getConceptId()))) {
           return false;
         }
         {

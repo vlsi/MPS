@@ -42,6 +42,7 @@ import jetbrains.mps.project.structure.modules.Dependency;
 import java.util.LinkedHashMap;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.ProjectPathUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.MacrosFactory;
@@ -707,18 +708,25 @@ public class ModuleLoader {
         continue;
       }
 
-      String path = modelRootDescriptor.getMemento().get("path");
-      SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
-      if (p == null) {
-        continue;
-      }
+      DefaultModelRoot mr = new DefaultModelRoot();
+      mr.load(modelRootDescriptor.getMemento());
+      for (String path : mr.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
+        if (path == null) {
+          continue;
+        }
+        SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
+        if (p == null) {
+          continue;
+        }
 
-      if (!(checkOnly)) {
-        SNode mroot = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot", null);
-        SLinkOperations.setTarget(mroot, "folder", p, true);
-        ListSequence.fromList(SLinkOperations.getTargets(module, "sources", true)).addElement(mroot);
+        if (!(checkOnly)) {
+          SNode mroot = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot", null);
+          SLinkOperations.setTarget(mroot, "folder", p, true);
+          ListSequence.fromList(SLinkOperations.getTargets(module, "sources", true)).addElement(mroot);
+        }
+        hasModels = true;
+
       }
-      hasModels = true;
     }
     List<String> res = new ArrayList<String>();
     for (String sp : myModuleDescriptor.getSourcePaths()) {

@@ -29,7 +29,7 @@ public class check_AbstractMethodsInClass_NonTypesystemRule extends AbstractNonT
             {
               SNode matchingNode_qfxa59_a0a1a0a = classifier;
               if (matchingNode_qfxa59_a0a1a0a != null) {
-                matches_qfxa59_a0a1a0a = SModelUtil_new.isAssignableConcept(matchingNode_qfxa59_a0a1a0a.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+                matches_qfxa59_a0a1a0a = SModelUtil_new.isAssignableConcept(matchingNode_qfxa59_a0a1a0a.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.ClassConcept");
               }
             }
             if (matches_qfxa59_a0a1a0a) {
@@ -52,7 +52,7 @@ public class check_AbstractMethodsInClass_NonTypesystemRule extends AbstractNonT
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getConceptId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

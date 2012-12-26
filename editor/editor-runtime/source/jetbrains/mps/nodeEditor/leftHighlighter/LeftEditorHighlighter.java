@@ -165,7 +165,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     return myFoldingLineX;
   }
 
-  private int getIconRenderersOffset() {
+  public int getIconRenderersOffset() {
     return myRightToLeft ? getFoldingAreaWidth() : myTextColumnWidth;
   }
 
@@ -532,7 +532,7 @@ public class LeftEditorHighlighter extends JComponent implements TooltipComponen
     return new Dimension(myWidth + 1, myEditorComponent.getPreferredSize().height);
   }
 
-  private int getIconCoordinate(EditorMessageIconRenderer renderer) {
+  public int getIconCoordinate(EditorMessageIconRenderer renderer) {
     EditorCell anchorCell = getAnchorCell(renderer);
     if (anchorCell == null || anchorCell.isUnderFolded()) {
       // no anchorCell 

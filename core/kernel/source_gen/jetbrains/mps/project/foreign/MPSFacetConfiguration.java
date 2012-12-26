@@ -11,6 +11,7 @@ import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import jetbrains.mps.persistence.MementoImpl;
+import jetbrains.mps.project.persistence.ModuleDescriptorPersistence;
 import jetbrains.mps.persistence.MementoUtil;
 import java.util.Set;
 import java.util.HashSet;
@@ -38,10 +39,14 @@ public class MPSFacetConfiguration {
       } else if ("generatorOutputPath".equals(optionName)) {
         this.generatorOutputPath = ch.getAttributeValue(OPT_VALUE);
       } else if ("modelRoots".equals(optionName)) {
+        ModelRootDescriptor[] moduleDefaultRoot = new ModelRootDescriptor[]{null};
         for (ModelRoot root : SetSequence.fromSet(readModelRoots(XmlUtil.first(ch, "set")))) {
           Memento m = new MementoImpl();
           root.save(m);
-          descriptors.add(new ModelRootDescriptor(null, m));
+          ModelRootDescriptor descr = ModuleDescriptorPersistence.createDescriptor(null, m, null, moduleDefaultRoot);
+          if (descr != null) {
+            descriptors.add(descr);
+          }
         }
       } else if ("usedLanguages".equals(optionName)) {
         this.usedLanguages = readArray(XmlUtil.first(ch, "array"));

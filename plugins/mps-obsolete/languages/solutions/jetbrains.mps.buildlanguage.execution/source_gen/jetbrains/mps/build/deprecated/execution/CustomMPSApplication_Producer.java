@@ -51,7 +51,7 @@ public class CustomMPSApplication_Producer {
         public void run() {
           layout.value = SNodeOperations.getAncestor(source, "jetbrains.mps.build.packaging.structure.Layout", false, true);
           isApplicable.value = (layout.value != null) && (ListSequence.fromList(SNodeOperations.getDescendants(layout.value, "jetbrains.mps.build.custommps.structure.MPSBuild", false, new String[]{})).isNotEmpty());
-          configurationId.value = source.getSNodeId().toString();
+          configurationId.value = source.getNodeId().toString();
         }
       });
       if (!(isApplicable.value)) {
@@ -94,7 +94,7 @@ public class CustomMPSApplication_Producer {
       final Wrappers._T<String> configurationId = new Wrappers._T<String>();
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          configurationId.value = ListSequence.fromList(SLinkOperations.getTargets(source, "configuration", true)).first().getSNodeId().toString();
+          configurationId.value = ListSequence.fromList(SLinkOperations.getTargets(source, "configuration", true)).first().getNodeId().toString();
         }
       });
 
@@ -134,7 +134,7 @@ public class CustomMPSApplication_Producer {
               return BehaviorReflection.invokeNonVirtual(Boolean.TYPE, source, "jetbrains.mps.build.packaging.structure.AbstractProjectComponent", "call_included_1213877333807", new Object[]{it});
             }
           });
-          configurationId.value = configuration.value.getSNodeId().toString();
+          configurationId.value = configuration.value.getNodeId().toString();
         }
       });
       if (!(isApplicable.value)) {

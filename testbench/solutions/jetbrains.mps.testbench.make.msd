@@ -2,7 +2,9 @@
 <solution name="jetbrains.mps.testbench.make" uuid="79f9d103-4ff6-4def-9c1a-27070f9ba255" compileInMPS="false" generatorOutputPath="${mps_home}/testbench/tests_gen">
   <models>
     <modelRoot path="${mps_home}/lib/diffutils-1.2.1.jar" type="java_classes" />
-    <modelRoot path="${module}/" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="." />
+    </modelRoot>
   </models>
   <stubModelEntries>
     <stubModelEntry path="${mps_home}/lib/diffutils-1.2.1.jar" />

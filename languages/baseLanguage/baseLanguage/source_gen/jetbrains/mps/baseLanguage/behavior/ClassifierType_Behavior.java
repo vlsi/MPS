@@ -306,7 +306,7 @@ public class ClassifierType_Behavior {
       {
         SNode nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0j;
         nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0j = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0j.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ClassifierType_Behavior_hz3823_a0a0a0a0j.getConcept().getConceptId()))) {
           return false;
         }
         {
@@ -347,7 +347,7 @@ public class ClassifierType_Behavior {
       {
         SNode nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a9;
         nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a9 = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a9.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ClassifierType_Behavior_hz3823_a0a1a9.getConcept().getConceptId()))) {
           return false;
         }
         {

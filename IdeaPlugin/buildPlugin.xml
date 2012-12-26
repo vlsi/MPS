@@ -143,7 +143,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="jetbrains.mps.ide.vcs.modelmetadata-src.jar" descriptor="modelmetadata.mpl" />
+        <sources jar="jetbrains.mps.ide.vcs.modelmetadata-src.jar" descriptor="jetbrains.mps.ide.vcs.modelmetadata.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/mps-vcs/languages/jetbrains.mps.ide.vcs.modelmetadata.jar">
@@ -153,7 +153,7 @@
     </jar>
     <jar destfile="${build.layout}/mps-vcs/languages/jetbrains.mps.ide.vcs.modelmetadata-src.jar">
       <fileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/vcs/languages/modelmetadata/modelmetadata.mpl" prefix="module" />
+      <zipfileset file="${mps_home}/plugins/vcs/languages/modelmetadata/jetbrains.mps.ide.vcs.modelmetadata.mpl" prefix="module" />
       <zipfileset dir="${mps_home}/plugins/vcs/languages/modelmetadata/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
     </jar>
     <copy todir="${build.layout}">
@@ -385,9 +385,10 @@
     <javac2 destdir="${build.tmp}/java/out/mps-java" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/IdeaPlugin/mps-java/debugger/src" />
-        <path location="${mps_home}/IdeaPlugin/mps-java/scopes/src" />
-        <path location="${mps_home}/IdeaPlugin/mps-java/sourceStubs/src" />
+        <pathelement path="${mps_home}/IdeaPlugin/mps-java/debugger/src" />
+        <pathelement path="${mps_home}/IdeaPlugin/mps-java/scopes/src" />
+        <pathelement path="${mps_home}/IdeaPlugin/mps-java/sourceStubs/src" />
+        <pathelement path="${mps_home}/IdeaPlugin/mps-java/src" />
         <path location="${mps_home}/IdeaPlugin/solutions/jetbrains.mps.idea.java.psiStubs/source_gen" />
         <path location="${mps_home}/plugins/mpsjava/platform/source" />
       </src>
@@ -423,11 +424,13 @@
       <fileset dir="${mps_home}/plugins/mpsjava/platform/source_gen">
         <include name="**/*.xml" />
       </fileset>
+      <fileset dir="${mps_home}/IdeaPlugin/mps-java/resources" />
+      <fileset dir="${mps_home}/IdeaPlugin/solutions/jetbrains.mps.idea.java.psiStubs/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mpsjava/platform/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/IdeaPlugin/mps-java/debugger/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/IdeaPlugin/mps-java/scopes/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/IdeaPlugin/mps-java/sourceStubs/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/IdeaPlugin/solutions/jetbrains.mps.idea.java.psiStubs/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
-      <fileset dir="${mps_home}/plugins/mpsjava/platform/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/IdeaPlugin/mps-java/src" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   

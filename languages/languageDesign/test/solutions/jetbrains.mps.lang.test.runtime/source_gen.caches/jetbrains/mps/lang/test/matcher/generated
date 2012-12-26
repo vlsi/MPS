@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="7ve209096jmp6q1taezel2asuwlz7v1">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
+<dependencies version="2" modelHash="-12mxd0icw2p8vdlhlwzg09t1ev23qnw">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9fewwdo4hvsg0t5ahhqrttciuy5v4h" />
   <common hash="c5qmg4krw7uvunelb10ehu9hkbdbxp4" />
   <source id="8984393347190225578" name="DifferanceItem" hash="-2grtgdnulr4ld8szi84bdq2imlexycz">
     <file name="DifferanceItem.java" />
@@ -9,7 +9,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="NodeDifference.java" />
   </source>
-  <source id="8984393347190227556" name="NodesMatcher" hash="bkzaj5lw15bwrziqfw01n0kapz4h4ty">
+  <source id="8984393347190227556" name="NodesMatcher" hash="-bsgaz49452s8t8kpwpp4489fb4a7y6w">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="NodesMatcher.java" />
   </source>

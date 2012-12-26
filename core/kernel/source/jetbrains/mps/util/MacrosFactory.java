@@ -215,8 +215,10 @@ public class MacrosFactory {
       // since pathStartsWith uses getCanonicalPath
       // we use it here also
       path = FileUtil.getCanonicalPath(path);
+      if (path.equals(prefix)) {
+        return "";
+      }
       assert path.length() >= prefix.length() : "path: " + path + "; prefix: " + prefix;
-
       return File.separator + FileUtil.getRelativePath(path, prefix, File.separator);
     }
 

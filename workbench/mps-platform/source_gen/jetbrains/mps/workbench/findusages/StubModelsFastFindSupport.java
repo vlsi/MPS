@@ -89,7 +89,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
     final String blName = MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("f3061a53-9226-4cc5-a443-f952ceaf5816")).getModuleFqName();
     concepts = SetSequence.fromSetWithValues(new HashSet<SConcept>(), SetSequence.fromSet(concepts).where(new IWhereFilter<SConcept>() {
       public boolean accept(SConcept it) {
-        return NameUtil.namespaceFromConceptFQName(it.getId()).equals(blName);
+        return NameUtil.namespaceFromConceptFQName(it.getConceptId()).equals(blName);
       }
     }));
 

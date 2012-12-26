@@ -41,7 +41,7 @@ import jetbrains.mps.smodel.SModelFileTracker;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import javax.swing.JComponent;
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.Set;
 
@@ -118,7 +118,9 @@ public class ModelOrNodeChooser extends ProjectViewPane implements ModelElementT
 
     for (ModelRoot mr : configurationBean.getModelRoots()) {
       if (!(mr instanceof DefaultModelRoot)) continue;
-      if (((DefaultModelRoot) mr).getPath().startsWith(path)) return true;
+      for (String sourceRoot : ((DefaultModelRoot) mr).getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
+        if (sourceRoot.startsWith(path)) return true;
+      }
     }
     return false;
   }

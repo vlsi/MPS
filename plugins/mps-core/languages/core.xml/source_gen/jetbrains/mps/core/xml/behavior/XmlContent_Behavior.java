@@ -4,7 +4,7 @@ package jetbrains.mps.core.xml.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -15,7 +15,7 @@ public class XmlContent_Behavior {
   }
 
   public static boolean virtual_isOneLineBlock_2133624044437631438(SNode thisNode) {
-    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_oneLineBlock_1262430001741497816", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_oneLineBlock_1262430001741497816", new Object[]{});
   }
 
   public static boolean virtual_isFirstPositionAllowed_2133624044437631446(SNode thisNode) {
@@ -55,7 +55,7 @@ public class XmlContent_Behavior {
   }
 
   public static boolean virtual_isTextLike_2133624044437631604(SNode thisNode) {
-    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_textLike_1262430001741498277", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_textLike_1262430001741498277", new Object[]{});
   }
 
   public static boolean virtual_oneLineBlock_1262430001741497816(SConcept thisConcept) {

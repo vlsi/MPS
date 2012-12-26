@@ -31,7 +31,11 @@ public interface SAbstractConcept {
    * Now we use fqName for that purpose, but it's planned to use id in future releases instead,
    * so that the id does not change when we change concept's name.
    */
+  String getConceptId();
+
   String getId();
+
+  String getQualifiedName();
 
   /**
    * The user visible name of the concept

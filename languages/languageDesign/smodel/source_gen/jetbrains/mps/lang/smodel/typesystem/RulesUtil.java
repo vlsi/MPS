@@ -10,7 +10,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.behavior.SNodeOperation_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.structure.behavior.DataTypeDeclaration_Behavior;
@@ -43,35 +43,35 @@ public class RulesUtil {
     final SNode leftExpression = SNodeOperation_Behavior.call_getLeftExpression_1213877508894(op);
     SNode LeftType = TypeChecker.getInstance().getTypeOf(leftExpression);
     boolean isGood = false;
-    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToModel_1262430001741492322", new Object[]{})) {
+    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToModel_1262430001741492322", new Object[]{})) {
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, _quotation_createNode_yxkngc_b0a0a4a0(), false)) {
         isGood = true;
       }
     }
-    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToConcept_1262430001741498358", new Object[]{})) {
+    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToConcept_1262430001741498358", new Object[]{})) {
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, _quotation_createNode_yxkngc_b0a0a5a0())) {
         isGood = true;
       }
     }
-    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToNode_1262430001741498076", new Object[]{})) {
+    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToNode_1262430001741498076", new Object[]{})) {
       if (TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, _quotation_createNode_yxkngc_b0a0a6a0(), false)) {
         isGood = true;
       }
     }
     // =========== 
-    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToLink_1262430001741498352", new Object[]{})) {
+    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToLink_1262430001741498352", new Object[]{})) {
       SNode linkAccess = SNodeOperations.as(SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op), "jetbrains.mps.lang.smodel.structure.ILinkAccess");
       if (linkAccess != null) {
         isGood = BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isSingularCardinality_4024382256428848847", new Object[]{});
         if (isGood) {
           // some of ops applicable to 'link' require left-expr to be a concept 
-          if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToConcept_1262430001741498358", new Object[]{}) && !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToNode_1262430001741498076", new Object[]{}))) {
+          if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToConcept_1262430001741498358", new Object[]{}) && !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToNode_1262430001741498076", new Object[]{}))) {
             isGood = TypeChecker.getInstance().getSubtypingManager().isSubtype(LeftType, _quotation_createNode_yxkngc_b0a0a0b0b0b0i0a());
           }
         }
       }
     }
-    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToLinkList_1262430001741498382", new Object[]{})) {
+    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToLinkList_1262430001741498382", new Object[]{})) {
       SNode linkAccess = SNodeOperations.as(SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op), "jetbrains.mps.lang.smodel.structure.ILinkAccess");
       if (linkAccess != null) {
         isGood = !(BehaviorReflection.invokeVirtual(Boolean.TYPE, linkAccess, "virtual_isSingularCardinality_4024382256428848847", new Object[]{}));
@@ -79,7 +79,7 @@ public class RulesUtil {
     }
     // =========== 
     SNode leftOperation = SNodeOperation_Behavior.call_getLeftExpressionOperation_1213877508946(op);
-    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToSimpleProperty_1262430001741498100", new Object[]{})) {
+    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToSimpleProperty_1262430001741498100", new Object[]{})) {
       if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.lang.smodel.structure.SPropertyAccess")) {
         SNode propertyDecl = SLinkOperations.getTarget(SNodeOperations.cast(leftOperation, "jetbrains.mps.lang.smodel.structure.SPropertyAccess"), "property", false);
         if (DataTypeDeclaration_Behavior.call_isSimple_1220268671473(SLinkOperations.getTarget(propertyDecl, "dataType", false))) {
@@ -87,7 +87,7 @@ public class RulesUtil {
         }
       }
     }
-    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToEnumProperty_1262430001741498259", new Object[]{})) {
+    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToEnumProperty_1262430001741498259", new Object[]{})) {
       if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.lang.smodel.structure.SPropertyAccess")) {
         SNode propertyDecl = SLinkOperations.getTarget(SNodeOperations.cast(leftOperation, "jetbrains.mps.lang.smodel.structure.SPropertyAccess"), "property", false);
         if (DataTypeDeclaration_Behavior.call_isEnum_1220268692373(SLinkOperations.getTarget(propertyDecl, "dataType", false))) {
@@ -95,7 +95,7 @@ public class RulesUtil {
         }
       }
     }
-    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToConceptProperty_1262430001741497945", new Object[]{})) {
+    if (BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_applicableToConceptProperty_1262430001741497945", new Object[]{})) {
       if (SConceptOperations.isExactly(SNodeOperations.getConceptDeclaration(leftOperation), "jetbrains.mps.lang.smodel.structure.SConceptPropertyAccess")) {
         isGood = true;
       }
@@ -156,7 +156,7 @@ public class RulesUtil {
   @CheckingMethod
   public static boolean checkOpParameters_generic(final TypeCheckingContext typeCheckingContext, SNode op) {
     boolean noProblem = true;
-    List<SNode> applicableParmConcepts = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_getApplicableParameter_3044950653914717056", new Object[]{});
+    List<SNode> applicableParmConcepts = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(op))), "virtual_getApplicableParameter_3044950653914717056", new Object[]{});
     for (SNode parm : ListSequence.fromList(SLinkOperations.getTargets(op, "parameter", true))) {
       if (!(ListSequence.fromList(applicableParmConcepts).contains(SNodeOperations.getConceptDeclaration(parm)))) {
         {

@@ -3,10 +3,10 @@
   <root nodeId="6379619452576053308" modelId="r:fecd6787-578a-4191-9c12-15978df95924(jetbrains.mps.ui.generator.template.helper)">
     <nodeInfo nodeId="6379619452576053373" fileName="SessionObjects.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="name" />
     <nodeInfo nodeId="6379619452576053381" fileName="SessionObjects.java" startLine="13" startPosition="31" endLine="14" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6379619452576053313" fileName="SessionObjects.java" startLine="18" startPosition="26" endLine="19" endPosition="114" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8775965742401007176" fileName="SessionObjects.java" startLine="19" startPosition="114" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="6379619452576053313" fileName="SessionObjects.java" startLine="18" startPosition="26" endLine="19" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8775965742401007176" fileName="SessionObjects.java" startLine="19" startPosition="113" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="6379619452576053342" fileName="SessionObjects.java" startLine="25" startPosition="26" endLine="26" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="6379619452576053347" fileName="SessionObjects.java" startLine="27" startPosition="5" endLine="28" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="6379619452576053347" fileName="SessionObjects.java" startLine="27" startPosition="5" endLine="28" endPosition="111" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6379619452576053371" fileName="SessionObjects.java" startLine="31" startPosition="27" endLine="32" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6379619452576053377" fileName="SessionObjects.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SessionObjects#(Ljava/lang/String;)V" />
     <nodeInfo nodeId="6379619452576053340" fileName="SessionObjects.java" startLine="24" startPosition="82" endLine="27" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -23,7 +23,7 @@
     </scopeInfo>
     <scopeInfo nodeId="6379619452576053367" fileName="SessionObjects.java" startLine="31" startPosition="0" endLine="34" endPosition="0" />
     <scopeInfo nodeId="6379619452576053310" fileName="SessionObjects.java" startLine="17" startPosition="99" endLine="21" endPosition="5" />
-    <scopeInfo nodeId="6379619452576053339" fileName="SessionObjects.java" startLine="24" startPosition="82" endLine="28" endPosition="112" />
+    <scopeInfo nodeId="6379619452576053339" fileName="SessionObjects.java" startLine="24" startPosition="82" endLine="28" endPosition="111" />
     <scopeInfo nodeId="6379619452576053309" fileName="SessionObjects.java" startLine="17" startPosition="0" endLine="23" endPosition="0">
       <varInfo nodeId="6379619452576053334" varName="context" />
       <varInfo nodeId="6379619452576053332" varName="genContext" />

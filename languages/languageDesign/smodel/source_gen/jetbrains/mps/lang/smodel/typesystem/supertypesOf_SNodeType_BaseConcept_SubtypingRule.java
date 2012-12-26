@@ -54,7 +54,7 @@ public class supertypesOf_SNodeType_BaseConcept_SubtypingRule extends SubtypingR
       {
         SNode nodeToMatch_supertypesOf_SNodeType_BaseConcept_x4galq_a0a;
         nodeToMatch_supertypesOf_SNodeType_BaseConcept_x4galq_a0a = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_supertypesOf_SNodeType_BaseConcept_x4galq_a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_supertypesOf_SNodeType_BaseConcept_x4galq_a0a.getConcept().getConceptId()))) {
           return false;
         }
       }

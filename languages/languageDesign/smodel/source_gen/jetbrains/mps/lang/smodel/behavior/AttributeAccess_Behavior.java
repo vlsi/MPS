@@ -4,7 +4,7 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -27,7 +27,7 @@ public class AttributeAccess_Behavior {
   }
 
   public static boolean virtual_isSingularCardinality_4024382256428848847(SNode thisNode) {
-    return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "qualifier", true), "virtual_getTargetConcept_6407023681583066586", new Object[]{}))), "virtual_multiple_1262430001741497972", new Object[]{}) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "qualifier", true), "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier"));
+    return !(BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), SLinkOperations.getTarget(thisNode, "qualifier", true), "virtual_getTargetConcept_6407023681583066586", new Object[]{}))), "virtual_multiple_1262430001741497972", new Object[]{}) || SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "qualifier", true), "jetbrains.mps.lang.smodel.structure.AllAttributeQualifier"));
   }
 
   public static boolean virtual_isAggregation_4024382256428848854(SNode thisNode) {

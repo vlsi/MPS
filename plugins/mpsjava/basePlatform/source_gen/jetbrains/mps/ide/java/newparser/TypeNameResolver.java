@@ -127,21 +127,21 @@ public class TypeNameResolver {
     SNode classType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
 
     SReference sref = resolveShortClassName(name, classType, "classifier");
-    classType.addReference(sref);
+    classType.setReference(sref.getRole(), sref);
     return classType;
   }
 
   public SNode resolveQualifiedTypeName(String qname) {
     SNode classType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SReference sref = resolveQualifiedClassName(qname, classType, "classifier");
-    classType.addReference(sref);
+    classType.setReference(sref.getRole(), sref);
     return classType;
   }
 
   public SNode resolveAnnotaion(String name) {
     SNode annoInst = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null);
     SReference ref = resolveShortClassName(name, annoInst, "annotation");
-    annoInst.addReference(ref);
+    annoInst.setReference(ref.getRole(), ref);
     return annoInst;
   }
 
@@ -324,7 +324,7 @@ public class TypeNameResolver {
       } else {
         SNode typeVarRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
         SReference ref = new StaticReference("typeVariableDeclaration", typeVarRef, typeVar);
-        typeVarRef.addReference(ref);
+        typeVarRef.setReference(ref.getRole(), ref);
         return typeVarRef;
       }
     }

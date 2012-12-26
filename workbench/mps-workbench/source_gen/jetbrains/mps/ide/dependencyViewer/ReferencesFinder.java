@@ -62,7 +62,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     try {
       monitor.start("computing used languages", ListSequence.fromList(nodes).count());
       for (SNode node : nodes) {
-        SNode concept = SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance());
+        SNode concept = SModelUtil.findConceptDeclaration(node.getConcept().getConceptId(), GlobalScope.getInstance());
         if (concepts.add(concept)) {
           results.getSearchResults().add(new SearchResult(concept, "concept"));
         }
@@ -112,7 +112,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
       for (final SNode node : ListSequence.fromList(nodes)) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            SNode concept = SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance());
+            SNode concept = SModelUtil.findConceptDeclaration(node.getConcept().getConceptId(), GlobalScope.getInstance());
             if (concept != null && targetScope.contains(concept)) {
               results.getSearchResults().add(new SearchResult(node, "language"));
             }

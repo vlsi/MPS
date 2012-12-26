@@ -123,16 +123,16 @@ public class ClassifierSuccessorsIndexer extends FileBasedIndexExtension<GlobalS
         }
 
         private boolean isInstanceOfClassConcept(SNode node) {
-          String conceptFQName = node.getConcept().getId();
+          String conceptFQName = node.getConcept().getConceptId();
           return "jetbrains.mps.baseLanguage.structure.ClassConcept".equals(conceptFQName) || "jetbrains.mps.baseLanguage.structure.AnonymousClass".equals(conceptFQName) || "jetbrains.mps.baseLanguage.structure.EnumClass".equals(conceptFQName) || "jetbrains.mps.baseLanguageInternal.structure.ExtractStaticInnerClassConcept".equals(conceptFQName) || "jetbrains.mps.baseLanguage.unitTest.structure.BTestCase".equals(conceptFQName);
         }
 
         private boolean isInstanceOfAnonymousClassConcept(SNode node) {
-          return "jetbrains.mps.baseLanguage.structure.AnonymousClass".equals(node.getConcept().getId());
+          return "jetbrains.mps.baseLanguage.structure.AnonymousClass".equals(node.getConcept().getConceptId());
         }
 
         private boolean isInstanceOfInterfaceConcept(SNode node) {
-          String conceptFQName = node.getConcept().getId();
+          String conceptFQName = node.getConcept().getConceptId();
           return "jetbrains.mps.baseLanguage.structure.Interface".equals(conceptFQName) || "jetbrains.mps.baseLanguage.structure.Annotation".equals(conceptFQName);
         }
       });

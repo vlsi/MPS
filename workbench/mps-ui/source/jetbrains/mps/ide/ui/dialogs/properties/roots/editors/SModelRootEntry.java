@@ -77,12 +77,6 @@ public class SModelRootEntry implements ModelRootEntry {
     return messageText.toString();
   }
 
-  @Nullable
-  @Override
-  public JComponent getDetailsComponent() {
-    return null;
-  }
-
   @Override
   public boolean isValid() {
     String path = myModelRoot.getPath();

@@ -338,11 +338,11 @@ public class ASTConverter {
   private SNode convertMethod(SNode cls, AbstractMethodDeclaration method, boolean attach) throws JavaParseException {
     SNode result = null;
 
-    SNodeId sNodeId = cls.getSNodeId();
+    SNodeId sNodeId = cls.getNodeId();
     // FIXME 
     String clsStringId = (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || sNodeId instanceof SNodeId.Regular ?
       null :
-      cls.getSNodeId().toString()
+      cls.getNodeId().toString()
     );
 
     if (method instanceof MethodDeclaration) {
@@ -460,7 +460,7 @@ public class ASTConverter {
     for (MemberValuePair pair : anno.memberValuePairs()) {
       SNode val = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", null);
       SReference ref = new DynamicReference("key", val, null, new String(pair.name));
-      val.addReference(ref);
+      val.setReference(ref.getRole(), ref);
       // FIXME this will be convertExpressionRefl when I implement enum conversion there 
       SLinkOperations.setTarget(val, "value", convertExpression(pair.value), true);
       ListSequence.fromList(SLinkOperations.getTargets(node, "value", true)).addElement(val);

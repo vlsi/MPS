@@ -44,7 +44,7 @@
   <dep model="r:00000000-0000-4000-0000-011c89590369(jetbrains.mps.lang.plugin.generator.baseLanguage.template.main@generator)" hash="c5xmnvbkhnv235xixr8ao12s6zxbcb" />
   <dep model="r:01820806-c285-4459-a416-37590f94adc8(jetbrains.mps.debugger.api.ui.actions)" hash="-dh7s6av2gp5vg4r8eo6zgikra47743c" />
   <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" hash="-kugzdgos9h1280bqqmb5f6xjgqlcwz" />
-  <dep model="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" hash="2esogka8cz05tem356fhq5n79ppbghu" />
+  <dep model="r:d910d08e-4a00-41f9-ac8b-b7c374586874(jetbrains.mps.debug.api.breakpoints)" hash="8o63ekzodadu6zmp9e7eru033ys97aj" />
   <dep model="r:e60874cf-5ffd-4123-9760-5f88ff8e0a5a(jetbrains.mps.debugger.api.ui.icons)" hash="u5dfhvujrp14q7ob33zgklkrwmrmn0" />
   <common hash="44abgxvfmhnzpfpxux9ai1xyce5hrxv" />
   <source id="4474271214083117744" name="BreakpointIconRenderer" hash="6v2egilqzjrtjus5g8xp28bduxty26h">

@@ -46,7 +46,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="org.jetbrains.mps.samples.Constants-src.jar" descriptor="Constants.mpl" />
+        <sources jar="org.jetbrains.mps.samples.Constants-src.jar" descriptor="org.jetbrains.mps.samples.Constants.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.Constants.jar">
@@ -56,7 +56,7 @@
     </jar>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.Constants-src.jar">
       <fileset dir="${project_home}/languages/Constants/source_gen" includes="**/*.java" />
-      <zipfileset file="${project_home}/languages/Constants/Constants.mpl" prefix="module" />
+      <zipfileset file="${project_home}/languages/Constants/org.jetbrains.mps.samples.Constants.mpl" prefix="module" />
       <zipfileset dir="${project_home}/languages/Constants/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${project_home}/languages/Constants/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -76,7 +76,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="org.jetbrains.mps.samples.IfAndUnless-src.jar" descriptor="SampleExtensions.mpl" />
+        <sources jar="org.jetbrains.mps.samples.IfAndUnless-src.jar" descriptor="org.jetbrains.mps.samples.IfAndUnless.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.IfAndUnless.jar">
@@ -86,7 +86,7 @@
     </jar>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.IfAndUnless-src.jar">
       <fileset dir="${project_home}/languages/SampleExtensions/source_gen" includes="**/*.java" />
-      <zipfileset file="${basedir}/languages/SampleExtensions/SampleExtensions.mpl" prefix="module" />
+      <zipfileset file="${basedir}/languages/SampleExtensions/org.jetbrains.mps.samples.IfAndUnless.mpl" prefix="module" />
       <zipfileset dir="${project_home}/languages/SampleExtensions/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${project_home}/languages/SampleExtensions/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -99,7 +99,7 @@
           <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
         </dependencies>
-        <sources jar="org.jetbrains.mps.samples.MoneyRuntime-src.jar" descriptor="MoneyRuntime.msd" />
+        <sources jar="org.jetbrains.mps.samples.MoneyRuntime-src.jar" descriptor="org.jetbrains.mps.samples.MoneyRuntime.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.MoneyRuntime.jar">
@@ -109,7 +109,7 @@
     </jar>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.MoneyRuntime-src.jar">
       <fileset dir="${project_home}/solutions/MoneyRuntime/source_gen" includes="**/*.java" />
-      <zipfileset file="${basedir}/solutions/MoneyRuntime/MoneyRuntime.msd" prefix="module" />
+      <zipfileset file="${basedir}/solutions/MoneyRuntime/org.jetbrains.mps.samples.MoneyRuntime.msd" prefix="module" />
       <zipfileset dir="${project_home}/solutions/MoneyRuntime/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/org.jetbrains.mps.samples.ParallelForUtils.jar" />
@@ -121,7 +121,7 @@
           <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
         </dependencies>
-        <sources jar="org.jetbrains.mps.samples.ParallelForUtils-src.jar" descriptor="ParallelForUtils.msd" />
+        <sources jar="org.jetbrains.mps.samples.ParallelForUtils-src.jar" descriptor="org.jetbrains.mps.samples.ParallelForUtils.msd" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.ParallelForUtils.jar">
@@ -131,7 +131,7 @@
     </jar>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.ParallelForUtils-src.jar">
       <fileset dir="${project_home}/solutions/ParallelForUtils/source_gen" includes="**/*.java" />
-      <zipfileset file="${basedir}/solutions/ParallelForUtils/ParallelForUtils.msd" prefix="module" />
+      <zipfileset file="${basedir}/solutions/ParallelForUtils/org.jetbrains.mps.samples.ParallelForUtils.msd" prefix="module" />
       <zipfileset dir="${project_home}/solutions/ParallelForUtils" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
     </jar>
     <mkdir dir="${build.tmp}/default/org.jetbrains.mps.samples.Money.jar" />
@@ -151,7 +151,7 @@
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
           <module ref="562eff3e-65ac-4df8-98d2-6cf36850139c(org.jetbrains.mps.samples.MoneyRuntime)" />
         </dependencies>
-        <sources jar="org.jetbrains.mps.samples.Money-src.jar" descriptor="Money.mpl" />
+        <sources jar="org.jetbrains.mps.samples.Money-src.jar" descriptor="org.jetbrains.mps.samples.Money.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.Money.jar">
@@ -161,7 +161,7 @@
     </jar>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.Money-src.jar">
       <fileset dir="${project_home}/languages/Money/source_gen" includes="**/*.java" />
-      <zipfileset file="${basedir}/languages/Money/Money.mpl" prefix="module" />
+      <zipfileset file="${basedir}/languages/Money/org.jetbrains.mps.samples.Money.mpl" prefix="module" />
       <zipfileset dir="${project_home}/languages/Money/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${project_home}/languages/Money/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>
@@ -182,7 +182,7 @@
           <module ref="6d7b94f7-2db7-4e65-9dbd-cf745a12036a(jetbrains.mps.lang.smodel.runtime)" />
           <module ref="8fe4c62a-2020-4ff4-8eda-f322a55bdc9f(jetbrains.mps.refactoring.runtime)" />
         </dependencies>
-        <sources jar="org.jetbrains.mps.samples.ParallelFor-src.jar" descriptor="ParallelFor.mpl" />
+        <sources jar="org.jetbrains.mps.samples.ParallelFor-src.jar" descriptor="org.jetbrains.mps.samples.ParallelFor.mpl" />
       </module>
     </echoxml>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.ParallelFor.jar">
@@ -192,7 +192,7 @@
     </jar>
     <jar destfile="${build.layout}/SampleJavaExtensions/languages/groupedContent/org.jetbrains.mps.samples.ParallelFor-src.jar">
       <fileset dir="${project_home}/languages/ParallelFor/source_gen" includes="**/*.java" />
-      <zipfileset file="${basedir}/languages/ParallelFor/ParallelFor.mpl" prefix="module" />
+      <zipfileset file="${basedir}/languages/ParallelFor/org.jetbrains.mps.samples.ParallelFor.mpl" prefix="module" />
       <zipfileset dir="${project_home}/languages/ParallelFor/languageModels" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/languageModels" />
       <zipfileset dir="${project_home}/languages/ParallelFor/generator/template" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/generator/template" />
     </jar>

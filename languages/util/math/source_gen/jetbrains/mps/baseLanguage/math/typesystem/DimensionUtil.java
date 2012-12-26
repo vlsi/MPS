@@ -36,7 +36,7 @@ public class DimensionUtil {
             {
               SNode matchingNode_48zlf8_a0a5a0a0 = type;
               if (matchingNode_48zlf8_a0a5a0a0 != null) {
-                matches_48zlf8_a0a5a0a0 = SModelUtil_new.isAssignableConcept(matchingNode_48zlf8_a0a5a0a0.getConcept().getId(), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
+                matches_48zlf8_a0a5a0a0 = SModelUtil_new.isAssignableConcept(matchingNode_48zlf8_a0a5a0a0.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
               }
             }
             if (matches_48zlf8_a0a5a0a0) {
@@ -87,7 +87,7 @@ public class DimensionUtil {
               {
                 SNode matchingNode_48zlf8_b0a5a0a0 = type;
                 if (matchingNode_48zlf8_b0a5a0a0 != null) {
-                  matches_48zlf8_b0a5a0a0 = SModelUtil_new.isAssignableConcept(matchingNode_48zlf8_b0a5a0a0.getConcept().getId(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
+                  matches_48zlf8_b0a5a0a0 = SModelUtil_new.isAssignableConcept(matchingNode_48zlf8_b0a5a0a0.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
                 }
               }
               if (matches_48zlf8_b0a5a0a0) {
@@ -223,7 +223,7 @@ public class DimensionUtil {
         {
           SNode matchingNode_48zlf8_a0a2 = t;
           if (matchingNode_48zlf8_a0a2 != null) {
-            matches_48zlf8_a0a2 = SModelUtil_new.isAssignableConcept(matchingNode_48zlf8_a0a2.getConcept().getId(), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
+            matches_48zlf8_a0a2 = SModelUtil_new.isAssignableConcept(matchingNode_48zlf8_a0a2.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
           }
         }
         if (matches_48zlf8_a0a2) {
@@ -233,7 +233,7 @@ public class DimensionUtil {
           {
             SNode matchingNode_48zlf8_b0a2 = t;
             if (matchingNode_48zlf8_b0a2 != null) {
-              matches_48zlf8_b0a2 = SModelUtil_new.isAssignableConcept(matchingNode_48zlf8_b0a2.getConcept().getId(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
+              matches_48zlf8_b0a2 = SModelUtil_new.isAssignableConcept(matchingNode_48zlf8_b0a2.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
             }
           }
           if (matches_48zlf8_b0a2) {
@@ -253,7 +253,7 @@ public class DimensionUtil {
         {
           SNode matchingNode_48zlf8_a0a3 = t;
           if (matchingNode_48zlf8_a0a3 != null) {
-            matches_48zlf8_a0a3 = SModelUtil_new.isAssignableConcept(matchingNode_48zlf8_a0a3.getConcept().getId(), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
+            matches_48zlf8_a0a3 = SModelUtil_new.isAssignableConcept(matchingNode_48zlf8_a0a3.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.math.structure.MatrixType");
           }
         }
         if (matches_48zlf8_a0a3) {
@@ -263,7 +263,7 @@ public class DimensionUtil {
           {
             SNode matchingNode_48zlf8_b0a3 = t;
             if (matchingNode_48zlf8_b0a3 != null) {
-              matches_48zlf8_b0a3 = SModelUtil_new.isAssignableConcept(matchingNode_48zlf8_b0a3.getConcept().getId(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
+              matches_48zlf8_b0a3 = SModelUtil_new.isAssignableConcept(matchingNode_48zlf8_b0a3.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.math.structure.VectorType");
             }
           }
           if (matches_48zlf8_b0a3) {

@@ -54,7 +54,7 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
       {
         SNode nodeToMatch_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a;
         nodeToMatch_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.collections.structure.SetType".equals(nodeToMatch_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.collections.structure.SetType".equals(nodeToMatch_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a.getConcept().getConceptId()))) {
           return false;
         }
         {

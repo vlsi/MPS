@@ -25,7 +25,7 @@ public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesy
         {
           SNode matchingNode_x4f43m_a0a = SNodeOperations.getParent(variableArityType);
           if (matchingNode_x4f43m_a0a != null) {
-            matches_x4f43m_a0a = SModelUtil_new.isAssignableConcept(matchingNode_x4f43m_a0a.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
+            matches_x4f43m_a0a = SModelUtil_new.isAssignableConcept(matchingNode_x4f43m_a0a.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.structure.ParameterDeclaration");
           }
         }
         if (matches_x4f43m_a0a) {
@@ -49,7 +49,7 @@ public class check_VariableArityType_NonTypesystemRule extends AbstractNonTypesy
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getId(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getConceptId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
