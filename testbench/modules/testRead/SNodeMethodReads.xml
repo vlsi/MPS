@@ -578,10 +578,6 @@
    <int>1</int>
   </void>
   <void method="put">
-   <string>public org.jetbrains.mps.openapi.model.SNodeId jetbrains.mps.smodel.SNode.getSNodeId()</string>
-   <int>1</int>
-  </void>
-  <void method="put">
    <string>public org.jetbrains.mps.openapi.model.SNodeId jetbrains.mps.smodel.SNode.getNodeId()</string>
    <int>1</int>
   </void>
