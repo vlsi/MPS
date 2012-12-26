@@ -358,7 +358,28 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * Deletes all nodes in subtree starting with current. Differs from {@link SNode#removeChild(org.jetbrains.mps.openapi.model.SNode)}.
    */
   public void delete() {
-    delete_internal();
+    //delete all children
+    List<SNode> children = new ArrayList<SNode>(getChildren());
+    for (SNode child : children) {
+      child.delete();
+    }
+
+    //remove all references
+    while (myReferences.length > 0) {
+      removeReferenceInternal(myReferences[0]);
+    }
+    myReferences = SReference.EMPTY_ARRAY;
+
+    //remove from parent
+    SNode parent1 = getParent();
+    if (parent1 != null) {
+      parent1.removeChild(this);
+    } else {
+      SModel model = getModel();
+      if (model != null && model.isRoot(this)) {
+        model.removeRoot(this);
+      }
+    }
   }
 
   public String getPresentation() {
@@ -817,31 +838,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
       System.err.println("CRITICAL: INVALID OPERATION DETECTED");
       System.err.println("model: " + modelName);
       new IllegalModelAccessError("Accessing disposed node").printStackTrace(System.err);
-    }
-  }
-
-  private void delete_internal() {
-    //delete all children
-    List<SNode> children = new ArrayList<SNode>(getChildren());
-    for (SNode child : children) {
-      child.delete_internal();
-    }
-
-    //remove all references
-    while (myReferences.length > 0) {
-      removeReferenceInternal(myReferences[0]);
-    }
-    myReferences = SReference.EMPTY_ARRAY;
-
-    //remove from parent
-    SNode parent = getParent();
-    if (parent != null) {
-      parent.removeChild(this);
-    } else {
-      SModel model = getModel();
-      if (model != null && model.isRoot(this)) {
-        model.removeRoot(this);
-      }
     }
   }
 
