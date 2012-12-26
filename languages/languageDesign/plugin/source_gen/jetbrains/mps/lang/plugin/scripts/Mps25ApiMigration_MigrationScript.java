@@ -1397,14 +1397,14 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return node.getChild("initBlock") != null;
+        return jetbrains.mps.util.SNodeOperations.getChild(node, "initBlock") != null;
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode init = node.getChild("initBlock");
+        SNode init = jetbrains.mps.util.SNodeOperations.getChild(node, "initBlock");
         if (init != null && SLinkOperations.getTarget(node, "toolInitBlock", true) == null) {
           SLinkOperations.setTarget(node, "toolInitBlock", SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.InitBlock", null), true);
-          SLinkOperations.setTarget(SLinkOperations.getTarget(node, "toolInitBlock", true), "body", (SNode) init.getChild("body"), true);
+          SLinkOperations.setTarget(SLinkOperations.getTarget(node, "toolInitBlock", true), "body", (SNode) jetbrains.mps.util.SNodeOperations.getChild(init, "body"), true);
           node.removeChild(init);
         }
       }
@@ -1427,14 +1427,14 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return node.getChild("disposeBlock") != null;
+        return jetbrains.mps.util.SNodeOperations.getChild(node, "disposeBlock") != null;
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode dispose = node.getChild("disposeBlock");
+        SNode dispose = jetbrains.mps.util.SNodeOperations.getChild(node, "disposeBlock");
         if (dispose != null && SLinkOperations.getTarget(node, "toolDisposeBlock", true) == null) {
           SLinkOperations.setTarget(node, "toolDisposeBlock", SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.DisposeBlock", null), true);
-          SLinkOperations.setTarget(SLinkOperations.getTarget(node, "toolDisposeBlock", true), "body", (SNode) dispose.getChild("body"), true);
+          SLinkOperations.setTarget(SLinkOperations.getTarget(node, "toolDisposeBlock", true), "body", (SNode) jetbrains.mps.util.SNodeOperations.getChild(dispose, "body"), true);
           node.removeChild(dispose);
         }
       }

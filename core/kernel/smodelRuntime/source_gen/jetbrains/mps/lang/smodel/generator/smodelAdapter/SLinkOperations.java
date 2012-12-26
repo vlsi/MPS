@@ -42,7 +42,7 @@ public class SLinkOperations {
   public static SNode setTarget(SNode node, String role, SNode targetNode, boolean child) {
     if (node != null) {
       if (child) {
-        SNode oldChild = node.getChild(role);
+        SNode oldChild = jetbrains.mps.util.SNodeOperations.getChild(node, role);
         if (oldChild != null) {
           node.removeChild(oldChild);
         }

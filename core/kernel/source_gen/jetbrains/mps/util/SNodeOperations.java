@@ -212,6 +212,13 @@ public class SNodeOperations {
     return augend;
   }
 
+  public static jetbrains.mps.smodel.SNode getChild(jetbrains.mps.smodel.SNode node,String role) {
+    List<jetbrains.mps.smodel.SNode> children = node.getChildren(role);
+    int size = children.size();
+    if (size == 0) return null;
+    return children.get(0);
+  }
+
   private static class DescendantsIterable implements Iterator<jetbrains.mps.smodel.SNode>, Iterable<jetbrains.mps.smodel.SNode> {
     private Condition<jetbrains.mps.smodel.SNode> condition;
     private Queue<SNode> queue = new LinkedList<SNode>();
