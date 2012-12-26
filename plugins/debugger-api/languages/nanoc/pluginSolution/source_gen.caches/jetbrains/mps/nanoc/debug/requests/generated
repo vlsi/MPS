@@ -11,7 +11,7 @@
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:6cbc34f0-fc44-4f49-8c51-c9b5f566fbee(jetbrains.mps.nanoc.debug.breakpoints)" hash="93m5xpxq7xsrv6u8vmeaqg9uw3lpz24" />
   <dep model="r:6e7f03a3-e6dc-4ddf-ac27-806bbfbdafcf(jetbrains.mps.nanoc.debug.answer)" hash="-4u80ogi4zypy2c0wm8d6ivi1u1w6q7b" />
-  <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" hash="-kugzdgos9h1280bqqmb5f6xjgqlcwz" />
+  <dep model="r:c02662c0-67c5-4c3a-8d3a-cd7ffe189340(jetbrains.mps.debug.api)" hash="-corqsow94aahn3kw052kgfmirv68drz" />
   <dep model="r:cd25c6e5-97ce-4a26-8b73-c9bb310649a3(jetbrains.mps.nanoc.debug.events)" hash="32o3h1z7xb08sh65cb2354gz1pv8lqn" />
   <common hash="62qu4x05yitmydtkzegfba1sr76buod" />
   <source id="3990508698139424666" name="RemoveBreakpointRequestor" hash="-7pis0ggn7jno6g6qa2hoz7bjeowvsw0">
