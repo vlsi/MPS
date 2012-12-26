@@ -307,7 +307,6 @@ public class ProjectStructureModule extends AbstractModule implements CoreCompon
       final SModel oldModel = mySModel;
       oldModel.setModelDescriptor(null);
       mySModel = null;
-
       if (ModelAccess.instance().canWrite()) {
         notifyModelReplaced(oldModel);
       } else {

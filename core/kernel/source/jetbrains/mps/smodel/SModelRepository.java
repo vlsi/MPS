@@ -106,7 +106,7 @@ public class SModelRepository implements CoreComponent {
       myModelOwner.put(modelDescriptor, container);
       modelDescriptor.setModule(container);
 
-      assert modelReference.getModelId() != null:"can't add model w/o model id";
+      assert modelReference.getModelId() != null : "can't add model w/o model id";
       myIdToModelDescriptorMap.put(modelReference.getModelId(), modelDescriptor);
 
       if (modelReference.getSModelFqName() != null) {
@@ -183,7 +183,7 @@ public class SModelRepository implements CoreComponent {
     return myIdToModelDescriptorMap.get(id);
   }
 
-    @Deprecated
+  @Deprecated
   public List<SModelDescriptor> getModelDescriptorsByModelName(String modelName) {
     List<SModelDescriptor> result = new ArrayList<SModelDescriptor>();
     for (SModelDescriptor d : getModelDescriptors()) {
@@ -270,12 +270,12 @@ public class SModelRepository implements CoreComponent {
 
   void notifyModelReplaced(BaseSModelDescriptor modelDescriptor, SModel oldSModel) {
     ModelAccess.assertLegalWrite();
-
-    if (myReloadingDescriptorMap.isEmpty()) {
-      notifyAfterReload();
-    }
-
     synchronized (myReloadingDescriptorMap) {
+
+      if (myReloadingDescriptorMap.isEmpty()) {
+        notifyAfterReload();
+      }
+
       myReloadingDescriptorMap.putValue(modelDescriptor, oldSModel);
     }
 
@@ -285,18 +285,20 @@ public class SModelRepository implements CoreComponent {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       @Override
       public void run() {
-        if (myReloadingDescriptorMap.isEmpty()) {
-          return;
-        }
-
-        fireModelReplaced(myReloadingDescriptorMap.keySet());
-        for (SModel oldModel : myReloadingDescriptorMap.values()) {
-          if (oldModel != null) {
-            oldModel.dispose();
+        synchronized (myReloadingDescriptorMap) {
+          if (myReloadingDescriptorMap.isEmpty()) {
+            return;
           }
-        }
 
-        myReloadingDescriptorMap.clear();
+          fireModelReplaced(myReloadingDescriptorMap.keySet());
+          for (SModel oldModel : myReloadingDescriptorMap.values()) {
+            if (oldModel != null) {
+              oldModel.dispose();
+            }
+          }
+
+          myReloadingDescriptorMap.clear();
+        }
       }
     });
   }
