@@ -9,6 +9,8 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.NameUtil;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;
@@ -35,7 +37,7 @@ public class HidingByNameScope extends Scope {
     Iterable<SNode> tmpResult = scope.getAvailableElements(null);
     this.names = new HashSet<String>(Sequence.fromIterable(tmpResult).count());
     for (SNode node : Sequence.fromIterable(tmpResult)) {
-      if (node.isInstanceOfConcept(hidingRootConceptFqName)) {
+      if (SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(hidingRootConceptFqName))) {
         SetSequence.fromSet(this.names).addElement(node.getName());
       }
     }
@@ -45,16 +47,16 @@ public class HidingByNameScope extends Scope {
     List<SNode> result = new ArrayList<SNode>();
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(scope.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it.isInstanceOfConcept(kindConceptFqName);
+        return SNodeUtil.isInstanceOf(it, SConceptRepository.getInstance().getConcept(kindConceptFqName));
       }
     }));
     ListSequence.fromList(result).addSequence(Sequence.fromIterable(parentScope.getAvailableElements(prefix)).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it.isInstanceOfConcept(kindConceptFqName);
+        return SNodeUtil.isInstanceOf(it, SConceptRepository.getInstance().getConcept(kindConceptFqName));
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return !(it.isInstanceOfConcept(hidingRootConceptFqName)) || !(SetSequence.fromSet(names).contains(it.getName()));
+        return !(SNodeUtil.isInstanceOf(it, SConceptRepository.getInstance().getConcept(hidingRootConceptFqName))) || !(SetSequence.fromSet(names).contains(it.getName()));
       }
     }));
     return result;
@@ -76,7 +78,7 @@ public class HidingByNameScope extends Scope {
 
   @Override
   public boolean contains(SNode node) {
-    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) || !(node.isInstanceOfConcept(kindConceptFqName))) {
+    if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.INamedConcept")) || !(SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(kindConceptFqName)))) {
       return false;
     }
     if (scope.contains(node)) {

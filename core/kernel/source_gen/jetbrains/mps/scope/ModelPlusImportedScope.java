@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Collections;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import java.util.ArrayList;
@@ -45,7 +47,7 @@ public class ModelPlusImportedScope extends Scope {
 
   @Override
   public boolean contains(SNode node) {
-    return node.isInstanceOfConcept(myTargetConcept) && (!(myRootsOnly) || SNodeOperations.isRoot(node)) && getModels().contains(node.getModel().getModelDescriptor());
+    return SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(myTargetConcept)) && (!(myRootsOnly) || SNodeOperations.isRoot(node)) && getModels().contains(node.getModel().getModelDescriptor());
   }
 
   public SNode resolve(SNode contextNode, String refText) {
@@ -70,7 +72,7 @@ public class ModelPlusImportedScope extends Scope {
       }
 
       for (SNode node : nodes) {
-        if (conceptToCheck != null && !(node.isInstanceOfConcept(conceptToCheck))) {
+        if (conceptToCheck != null && !(SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(conceptToCheck)))) {
           continue;
         }
         String nodeRefText = getReferenceText(null, node);
@@ -111,7 +113,7 @@ public class ModelPlusImportedScope extends Scope {
       }
 
       for (SNode node : nodes) {
-        if (conceptToCheck != null && !(node.isInstanceOfConcept(conceptToCheck))) {
+        if (conceptToCheck != null && !(SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(conceptToCheck)))) {
           continue;
         }
         if ((prefix != null && prefix.length() > 0)) {
