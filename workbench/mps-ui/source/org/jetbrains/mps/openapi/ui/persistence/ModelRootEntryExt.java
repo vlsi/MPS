@@ -16,24 +16,19 @@
 package org.jetbrains.mps.openapi.ui.persistence;
 
 import org.jetbrains.annotations.Nullable;
-import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import javax.swing.JComponent;
-import java.util.EventListener;
+import java.awt.Color;
 
-public interface ModelRootEntry {
-  public ModelRoot getModelRoot();
-  public void setModelRoot(ModelRoot modelRoot);
+public interface ModelRootEntryExt {
 
-  public String getDetailsText();
-
-  public boolean isValid();
-
-  public ModelRootEntryEditor getEditor();
-
-  public void addModelRootEntryListener(ModelRootEntryListener listener);
-
-  public interface ModelRootEntryListener extends EventListener {
-    public void fireDataChanged();
-  }
+  /**
+   * Implement this method if details component need to be more complicated than simple text
+   * Other wise just return null
+   * @return presentation of special component or null for default implementation
+   */
+  @Nullable
+  public JComponent getDetailsComponent();
+  void setForegroundColor(Color foregroundColor);
+  void resetForegroundColor();
 }

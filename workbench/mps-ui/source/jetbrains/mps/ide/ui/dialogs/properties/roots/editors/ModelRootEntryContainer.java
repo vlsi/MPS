@@ -15,17 +15,21 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.roots.editors;
 
+import com.intellij.ui.DarculaColors;
+import com.intellij.ui.Gray;
 import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.components.JBPanel;
 import com.intellij.ui.roots.IconActionComponent;
 import com.intellij.ui.roots.ResizingWrapper;
 import com.intellij.util.EventDispatcher;
 import com.intellij.util.ui.JBInsets;
+import com.intellij.util.ui.UIUtil;
 import jetbrains.mps.ide.icons.IdeIcons;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry.ModelRootEntryListener;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryEditor;
+import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryExt;
 
 import javax.swing.Box;
 import javax.swing.JComponent;
@@ -43,12 +47,14 @@ import java.util.EventListener;
 
 public class ModelRootEntryContainer implements ModelRootEntryListener {
 
-  protected static final Color SOURCES_COLOR = new Color(0x0A50A1);
-  private static final Color SELECTED_HEADER_COLOR = new Color(0xDEF2FF);
-  private static final Color HEADER_COLOR = new Color(0xF5F5F5);
-  private static final Color SELECTED_CONTENT_COLOR = new Color(0xF0F9FF);
-  private static final Color CONTENT_COLOR = Color.WHITE;
-  private static final Color UNSELECTED_TEXT_COLOR = new Color(0x333333);
+  public static final Color SOURCES_COLOR = UIUtil.isUnderDarcula() ? DarculaColors.BLUE : new Color(0x0A50A1);
+  public static final Color TESTS_COLOR = new Color(0x008C2E);
+  public static final Color EXCLUDED_COLOR = UIUtil.isUnderDarcula() ? DarculaColors.RED : new Color(0x992E00);
+  public static final Color SELECTED_HEADER_COLOR = UIUtil.isUnderDarcula() ? UIUtil.getPanelBackground().darker() : new Color(0xDEF2FF);
+  public static final Color HEADER_COLOR = UIUtil.isUnderDarcula() ? Gray._82 : new Color(0xF5F5F5);
+  public static final Color SELECTED_CONTENT_COLOR = new Color(0xF0F9FF);
+  public static final Color CONTENT_COLOR = UIUtil.isUnderDarcula() ? UIUtil.getPanelBackground() : Color.WHITE;
+  public static final Color UNSELECTED_TEXT_COLOR = new Color(0x333333);
 
   private ModelRootEntry myModelRootEntry;
   protected ModelRootEntryEditor myEditor;
@@ -66,6 +72,10 @@ public class ModelRootEntryContainer implements ModelRootEntryListener {
     myModelRootEntry = modelRootEntry;
     myModelRootEntry.addModelRootEntryListener(this);
     myEventDispatcher = EventDispatcher.create(ContentEntryEditorListener.class);
+  }
+
+  public ModelRootEntry getModelRootEntry() {
+    return myModelRootEntry;
   }
 
   public ModelRoot getModelRoot() {
@@ -143,13 +153,19 @@ public class ModelRootEntryContainer implements ModelRootEntryListener {
   protected void setSelected(boolean selected) {
     if (selected) {
       myHeader.setBackground(SELECTED_HEADER_COLOR);
-      myDetailsComponent.setBackground(SELECTED_CONTENT_COLOR);
+//      myMainPanel.setBackground(UIUtil.isUnderDarcula() ? UIUtil.getPanelBackground() : SELECTED_CONTENT_COLOR);
+      myDetailsComponent.setBackground(UIUtil.isUnderDarcula() ? UIUtil.getPanelBackground() : SELECTED_CONTENT_COLOR);
       myBottom.setBackground(SELECTED_HEADER_COLOR);
+      if(myModelRootEntry instanceof ModelRootEntryExt)
+        ((ModelRootEntryExt)myModelRootEntry).resetForegroundColor();
     }
     else {
       myHeader.setBackground(HEADER_COLOR);
+//      myMainPanel.setBackground(CONTENT_COLOR);
       myDetailsComponent.setBackground(CONTENT_COLOR);
       myBottom.setBackground(HEADER_COLOR);
+      if(myModelRootEntry instanceof ModelRootEntryExt)
+        ((ModelRootEntryExt)myModelRootEntry).setForegroundColor(UNSELECTED_TEXT_COLOR);
     }
     if(!myModelRootEntry.isValid())
       myHeader.setBackground(Color.PINK);
@@ -169,14 +185,32 @@ public class ModelRootEntryContainer implements ModelRootEntryListener {
 
   public void updateUI() {
     myHeaderLabel.setText(myModelRootEntry.getModelRoot().getPresentation());
-    myDetailsLabel.setText(myModelRootEntry.getDetailsText());
+    if(myDetailsLabel != null)
+      myDetailsLabel.setText(myModelRootEntry.getDetailsText());
+    else {
+      myMainPanel.remove(myDetailsComponent);
+      if(myModelRootEntry instanceof ModelRootEntryExt)
+        myDetailsComponent = ((ModelRootEntryExt)myModelRootEntry).getDetailsComponent();
+      myMainPanel.add(myDetailsComponent, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 0.0, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL, new JBInsets(0,2,0,2), 0, 0));
+      myMainPanel.revalidate();
+    }
   }
 
   protected JComponent createDetailsComponent() {
     JBPanel panel = new JBPanel(new GridBagLayout());
-    myDetailsLabel = new JBLabel(myModelRootEntry.getDetailsText());
-    myDetailsLabel.setOpaque(false);
-    panel.add(myDetailsLabel, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 2, 0, 0), 0, 0));
+
+    JComponent configurableComponent = null;
+    if(myModelRootEntry instanceof ModelRootEntryExt)
+      configurableComponent = ((ModelRootEntryExt)myModelRootEntry).getDetailsComponent();
+    if(configurableComponent == null) {
+      myDetailsLabel = new JBLabel(myModelRootEntry.getDetailsText());
+      myDetailsLabel.setOpaque(false);
+      panel.add(myDetailsLabel, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 2, 0, 0), 0, 0));
+    }
+    else {
+      panel.add(configurableComponent, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 1.0, GridBagConstraints.NORTHWEST, GridBagConstraints.BOTH, new Insets(0, 2, 0, 0), 0, 0));
+    }
+
     return panel;
   }
 

@@ -29,7 +29,6 @@ import com.intellij.util.EventDispatcher;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.util.FileUtil;
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
 import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntryEditor;
@@ -67,12 +66,6 @@ public class DefaultModelRootEntry implements ModelRootEntry {
     messageText.append("Type : ").append(myModelRoot.getType()).append("<br>");
     messageText.append("Path : ").append(myModelRoot.getContentRoot()).append("<br>");
     return messageText.toString();
-  }
-
-  @Nullable
-  @Override
-  public JComponent getDetailsComponent() {
-    return null;
   }
 
   @Override
