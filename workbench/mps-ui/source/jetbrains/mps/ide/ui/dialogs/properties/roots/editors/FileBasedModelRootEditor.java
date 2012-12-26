@@ -143,13 +143,11 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
     myTreePanel.setVisible(true);
     myFileBasedModelRootEntry = fileBasedModelRootEntry;
 
-//    final ContentEntry entry = fileBasedModelRootEntry.getContentEntry();
-//    assert entry != null : fileBasedModelRootEntry;
     String path = ((FileBasedModelRoot)myFileBasedModelRootEntry.getModelRoot()).getContentRoot();
 
     final VirtualFile file = VirtualFileManager.getInstance().findFileByUrl(
       VirtualFileManager.constructUrl("file", path)
-    ); //entry.getFile();
+    );
     setRoot(file);
 
     final Runnable init = new Runnable() {

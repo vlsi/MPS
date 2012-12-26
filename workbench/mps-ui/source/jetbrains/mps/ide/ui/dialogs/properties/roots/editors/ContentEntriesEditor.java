@@ -41,6 +41,7 @@ import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryContainer.ContentEntryEditorListener;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.model.SModelId;
@@ -61,7 +62,6 @@ import java.awt.GridBagLayout;
 import java.awt.Point;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 public class ContentEntriesEditor {
 
@@ -277,6 +277,11 @@ public class ContentEntriesEditor {
       else
         modelRoot = PersistenceRegistry.getInstance().getModelRootFactory(myType).create();
       ModelRootEntry entry = ModelRootEntryPersistence.getInstance().getModelRootEntry(modelRoot);
+      if(entry instanceof FileBasedModelRootEntry) {
+        ((FileBasedModelRoot)entry.getModelRoot()).setContentRoot(
+          MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId()).getBundleHome().getPath()
+        );
+      }
       ModelRootEntryContainer container = new ModelRootEntryContainer(entry);
       container.addContentEntryEditorListener(myEditorListener);
       myModelRootEntries.add(container);

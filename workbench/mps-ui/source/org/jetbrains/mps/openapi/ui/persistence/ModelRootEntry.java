@@ -15,10 +15,8 @@
  */
 package org.jetbrains.mps.openapi.ui.persistence;
 
-import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
-import javax.swing.JComponent;
 import java.util.EventListener;
 
 public interface ModelRootEntry {
