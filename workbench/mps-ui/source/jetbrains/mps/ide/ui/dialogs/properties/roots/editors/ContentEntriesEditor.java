@@ -261,7 +261,9 @@ public class ContentEntriesEditor {
           public SModel getModel(SModelId id) { return modelRootBase.getModel(id); }
 
           @Override
-          public Iterable<SModel> getModels() { return modelRootBase.getModels(); }
+          public Iterable<SModel> loadModels() {
+            return modelRootBase.getModels();
+          }
 
           @Override
           public boolean canCreateModel(String modelName) {
