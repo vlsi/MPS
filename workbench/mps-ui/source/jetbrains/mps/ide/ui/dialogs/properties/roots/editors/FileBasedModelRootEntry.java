@@ -20,6 +20,7 @@ import com.intellij.openapi.util.SystemInfo;
 import com.intellij.openapi.util.io.FileUtil;
 import com.intellij.ui.Gray;
 import com.intellij.ui.HoverHyperlinkLabel;
+import com.intellij.ui.components.JBLabel;
 import com.intellij.ui.components.JBPanel;
 import com.intellij.ui.roots.FilePathClipper;
 import com.intellij.ui.roots.IconActionComponent;
@@ -92,7 +93,7 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
 
       if(files.size() > 0){
         final JComponent kindComponent = createKindGroupComponent(
-          myFileBasedModelRoot.getKindText(kind), files, getKindColor(kind)
+          myFileBasedModelRoot.getKindText(kind), files, getKindColor(kind), kind
         );
         panel.add(kindComponent, new GridBagConstraints(0, GridBagConstraints.RELATIVE, 1, 1, 1.0, 0.0, GridBagConstraints.NORTH, GridBagConstraints.HORIZONTAL, new JBInsets(0, 0, 10, 0), 0, 0));
       }
@@ -135,7 +136,7 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
     throw new IllegalArgumentException("unknown kind");
   }
 
-  protected JComponent createKindGroupComponent(String title, Collection<String> files, Color foregroundColor) {
+  protected JComponent createKindGroupComponent(String title, Collection<String> files, Color foregroundColor, String kind)   {
     final JBPanel panel = new JBPanel(new GridLayoutManager(files.size(), 3, new JBInsets(1, 17, 0, 2), 0, 1));
     panel.setOpaque(false);
 
@@ -146,7 +147,7 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
       int column = 1;
       int colspan = 2;
 
-      panel.add(createKindFileDeleteComponent(file), new GridConstraints(idx, column, 1, colspan, GridConstraints.ANCHOR_EAST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, verticalPolicy, null, null, null));
+      panel.add(createKindFileDeleteComponent(file, kind), new GridConstraints(idx, column, 1, colspan, GridConstraints.ANCHOR_EAST, GridConstraints.FILL_NONE, GridConstraints.SIZEPOLICY_FIXED, verticalPolicy, null, null, null));
       idx++;
     }
 
@@ -166,45 +167,38 @@ public class FileBasedModelRootEntry implements ModelRootEntry, ModelRootEntryEx
   }
 
   private JComponent createKindFileComponent(final String file, Color foreground) {
+    String pathPresentation = file.replace(myFileBasedModelRoot.getContentRoot(),"").replaceFirst(File.separator,"");
+    if(pathPresentation.equals("")) pathPresentation = "./";
 
-    //if (folderFile != null && contentEntryFile != null) {
-    HoverHyperlinkLabel hyperlinkLabel = new HoverHyperlinkLabel(
-      file.replace(myFileBasedModelRoot.getContentRoot(),"").replaceFirst(File.separator,""), foreground
-    );
-    hyperlinkLabel.setMinimumSize(new Dimension(0, 0));
-    hyperlinkLabel.addHyperlinkListener(new HyperlinkListener() {
-      @Override
-      public void hyperlinkUpdate(HyperlinkEvent e) {
-        myFileBasedModelRootEditor.selectFile(file);
-      }
-    });
-    registerTextComponent(hyperlinkLabel, foreground);
-    return new UnderlinedPathLabel(hyperlinkLabel);
-    /*}
+    JLabel label2Return = new JLabel(pathPresentation);
+
+    if((new File(file)).exists()) {
+      HoverHyperlinkLabel hyperlinkLabel = new HoverHyperlinkLabel(pathPresentation, foreground);
+      hyperlinkLabel.setMinimumSize(new Dimension(0, 0));
+      hyperlinkLabel.addHyperlinkListener(new HyperlinkListener() {
+        @Override
+        public void hyperlinkUpdate(HyperlinkEvent e) {
+          myFileBasedModelRootEditor.selectFile(file);
+        }
+      });
+      registerTextComponent(hyperlinkLabel, foreground);
+      label2Return = hyperlinkLabel;
+    }
     else {
-      String path = toRelativeDisplayPath(file.getUrl(), getContentEntry().getUrl());
-      if (!packagePrefix.isEmpty()) {
-        path = path + " (" + packagePrefix + ")";
-      }
-      final JLabel pathLabel = new JLabel(path);
-      pathLabel.setOpaque(false);
-      pathLabel.setForeground(Color.RED);
+      label2Return.setOpaque(false);
+      label2Return.setForeground(Color.RED);
+    }
 
-      return new UnderlinedPathLabel(pathLabel);
-    }*/
-
-//    final JLabel pathLabel = new JLabel(file);
-//    pathLabel.setOpaque(false);
-//    registerTextComponent(pathLabel, foreground);
-//    return new UnderlinedPathLabel(pathLabel);
+    return new UnderlinedPathLabel(label2Return);
   }
 
-  private JComponent createKindFileDeleteComponent(final String file) {
+  private JComponent createKindFileDeleteComponent(final String file, final String kind) {
     final String tooltipText = "Remove";
     return new IconActionComponent(Modules.DeleteContentFolder, Modules.DeleteContentFolderRollover, tooltipText, new Runnable() {
       @Override
       public void run() {
-        //myCallback.deleteContentFolder(getContentEntry(), folder);
+        myFileBasedModelRoot.deleteFile(kind, file);
+        updateUI();
       }
     });
   }

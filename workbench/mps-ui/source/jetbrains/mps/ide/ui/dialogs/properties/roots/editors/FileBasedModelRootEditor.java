@@ -275,10 +275,11 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
       if(files.length != 1)
         return;
 
-      ((FileBasedModelRoot)FileBasedModelRootEditor.this.myFileBasedModelRootEntry.getModelRoot()).setContentRoot(files[0].getPath());
-      FileBasedModelRootEditor.this.setRoot(files[0]);
-      FileBasedModelRootEditor.this.myTree.updateUI();
-
+      FileBasedModelRootEntry fileBasedModelRootEntry = FileBasedModelRootEditor.this.myFileBasedModelRootEntry;
+      ((FileBasedModelRoot)fileBasedModelRootEntry.getModelRoot()).setContentRoot(files[0].getPath());
+      FileBasedModelRootEditor.this.myFileBasedModelRootEntry = null;
+      FileBasedModelRootEditor.this.setFileBasedModelRootEntry(fileBasedModelRootEntry);
+      FileBasedModelRootEditor.this.myFileBasedModelRootEntry.updateUI();
     }
   }
 }
