@@ -36,9 +36,10 @@ import org.jetbrains.mps.migration.annotations.ShortTermMigration;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
-import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -119,7 +120,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     fireNodeReadAccess();
 
-    if (myModel==null) return null;
+    if (myModel == null) return null;
 
     SModelDescriptor md = myModel.getModelDescriptor();
     return md != null ? md : new FakeModelDescriptor(myModel);
@@ -271,6 +272,21 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
+  /**
+   * Deletes all nodes in subtree starting with current. Differs from {@link SNode#removeChild(org.jetbrains.mps.openapi.model.SNode)}.
+   */
+  public void delete() {
+    ModelChange.assertLegalNodeChange(myModel, this);
+    assertDisposed();
+
+    SNode p = getParent();
+    if (p != null) {
+      p.removeChild(this);
+    } else if (myModel != null) {
+      myModel.removeRoot(this);
+    }
+  }
+
   public void setReferenceTarget(String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
     if (ourMemberAccessModifier != null) {
       role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
@@ -351,34 +367,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     if (reference != null) {
       assert reference.getSourceNode() == this;
       addReferenceInternal((SReference) reference);
-    }
-  }
-
-  /**
-   * Deletes all nodes in subtree starting with current. Differs from {@link SNode#removeChild(org.jetbrains.mps.openapi.model.SNode)}.
-   */
-  public void delete() {
-    //delete all children
-    List<SNode> children = new ArrayList<SNode>(getChildren());
-    for (SNode child : children) {
-      child.delete();
-    }
-
-    //remove all references
-    while (myReferences.length > 0) {
-      removeReferenceInternal(myReferences[0]);
-    }
-    myReferences = SReference.EMPTY_ARRAY;
-
-    //remove from parent
-    SNode parent1 = getParent();
-    if (parent1 != null) {
-      parent1.removeChild(this);
-    } else {
-      SModel model = getModel();
-      if (model != null && model.isRoot(this)) {
-        model.removeRoot(this);
-      }
     }
   }
 
