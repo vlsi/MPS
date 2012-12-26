@@ -171,8 +171,13 @@ public class ModelAssert {
   }
 
   private static void assertDeepChildrenEquals(SNode expectedNode, SNode actualNode) {
-    Set<String> roles = new HashSet<String>(expectedNode.getChildRoles());
-    roles.addAll(actualNode.getChildRoles());
+    Set<String> roles = new HashSet<String>();
+    for (SNode child : expectedNode.getChildren()) {
+      roles.add(child.getRoleInParent());
+    }
+    for (SNode child : actualNode.getChildren()) {
+      roles.add(child.getRoleInParent());
+    }
 
     for (String role : roles) {
       List<SNode> expectedChildren = expectedNode.getChildren(role);

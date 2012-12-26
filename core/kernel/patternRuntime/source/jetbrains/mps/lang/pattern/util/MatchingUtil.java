@@ -77,8 +77,8 @@ public class MatchingUtil {
     }
 
     // children
-    Set<String> childRoles = node1.getChildRoles(matchAttributes);
-    childRoles.addAll(node2.getChildRoles(matchAttributes));
+    Set<String> childRoles = jetbrains.mps.util.SNodeOperations.getChildRoles(node1, matchAttributes);
+    childRoles.addAll(jetbrains.mps.util.SNodeOperations.getChildRoles(node2, matchAttributes));
     for (String role : childRoles) {
       List<SNode> children1 = node1.getChildren(role);
       List<SNode> children2 = node2.getChildren(role);

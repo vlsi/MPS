@@ -196,6 +196,16 @@ public class SNodeOperations {
     }
   }
 
+  public static Set<String> getChildRoles(jetbrains.mps.smodel.SNode n,boolean includeAttributeRoles) {
+    final Set<String> augend = new HashSet<String>();
+    for (jetbrains.mps.smodel.SNode child : n.getChildren()) {
+      if (includeAttributeRoles || !(AttributeOperations.isAttribute(child))) {
+        augend.add(child.getRoleInParent());
+      }
+    }
+    return augend;
+  }
+
   private static class DescendantsIterable implements Iterator<jetbrains.mps.smodel.SNode>, Iterable<jetbrains.mps.smodel.SNode> {
     private Condition<jetbrains.mps.smodel.SNode> condition;
     private Queue<SNode> queue = new LinkedList<SNode>();
