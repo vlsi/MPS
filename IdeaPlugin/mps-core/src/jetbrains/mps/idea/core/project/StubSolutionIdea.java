@@ -24,6 +24,7 @@ import com.intellij.openapi.roots.RootProvider.RootSetChangedListener;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
@@ -36,10 +37,12 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Set;
+import java.util.UUID;
 
 public abstract class StubSolutionIdea extends StubSolution {
   private final RootSetChangedListener myRootSetChangedListener = new RootSetChangedListener() {
@@ -70,6 +73,27 @@ public abstract class StubSolutionIdea extends StubSolution {
     SolutionDescriptor descriptor = createDescriptor(sdk.getName(), ((SdkModificator) sdk).getRoots(OrderRootType.CLASSES));
     return register(descriptor, moduleOwner, new SdkStubSolution(descriptor, sdk));
   }
+
+  public static Solution newInstanceForJdk(Sdk sdk, MPSModuleOwner moduleOwner) {
+    SolutionDescriptor descriptor = createDescriptor(sdk.getName(), ((SdkModificator) sdk).getRoots(OrderRootType.CLASSES));
+
+    // HACK giving the SDK the hard-coded module id
+    ModuleId jdkId = ModuleId.regular(UUID.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065"));
+    MPSModuleRepository repo = MPSModuleRepository.getInstance();
+    SModule jdkMod = repo.getModule(jdkId);
+    if (jdkMod != null && jdkMod instanceof IModule) {
+      IModule imod = (IModule) jdkMod;
+      Set<MPSModuleOwner> owners = new HashSet<MPSModuleOwner>(repo.getOwners(imod));
+      for (MPSModuleOwner owner : owners) {
+        repo.unregisterModule(imod, owner);
+      }
+    }
+
+    descriptor.setId(jdkId);
+
+    return register(descriptor, moduleOwner, new SdkStubSolution(descriptor, sdk));
+  }
+
 
   @Nullable
   public static Library findLibrary(StubSolutionIdea solutionIdea) {
@@ -138,10 +162,10 @@ public abstract class StubSolutionIdea extends StubSolution {
 
       // explicitly add jdk
       // todo: remove when sdk are loaded correctly
-      Solution jdkSolutionReference = getJdkSolution();
-      if (jdkSolutionReference != null) {
-        modules.add(jdkSolutionReference);
-      }
+//      Solution jdkSolutionReference = getJdkSolution();
+//      if (jdkSolutionReference != null) {
+//        modules.add(jdkSolutionReference);
+//      }
 
       modules.addAll(ModuleRepositoryFacade.getInstance().getAllModules(StubSolutionIdea.class));
       return modules;
@@ -183,6 +207,11 @@ public abstract class StubSolutionIdea extends StubSolution {
     @Override
     protected RootProvider getRootProvider() {
       return mySdk.getRootProvider();
+    }
+
+    @Override
+    protected void updateBootstrapSolutionLibraries() {
+      // do nothing, to prevent spoiling our good jdk stub solution
     }
   }
 }

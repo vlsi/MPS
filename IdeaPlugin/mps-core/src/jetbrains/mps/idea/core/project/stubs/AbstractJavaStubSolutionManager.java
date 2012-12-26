@@ -74,6 +74,10 @@ public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner,
     return StubSolutionIdea.newInstance(sdk, this);
   }
 
+  protected Solution replaceJdkSolution(Sdk sdk) {
+    return StubSolutionIdea.newInstanceForJdk(sdk, this);
+  }
+
   protected void removeSolution(String name) {
     ModuleReference ref = new ModuleReference(null, ModuleId.foreign(name));
     MPSModuleRepository repository = MPSModuleRepository.getInstance();

@@ -126,7 +126,7 @@ public class Solution extends ClassLoadingModule {
     super.updateModelsSet();
   }
 
-  private void updateBootstrapSolutionLibraries() {
+  protected void updateBootstrapSolutionLibraries() {
     // temp HACK
 
     ModuleDescriptor descriptor = getModuleDescriptor();

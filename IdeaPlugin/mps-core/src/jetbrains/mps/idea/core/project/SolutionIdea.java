@@ -20,9 +20,12 @@ import com.intellij.ProjectTopics;
 import com.intellij.facet.Facet;
 import com.intellij.facet.FacetManager;
 import com.intellij.facet.FacetManagerAdapter;
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.roots.CompilerModuleExtension;
+import com.intellij.openapi.roots.JdkOrderEntry;
 import com.intellij.openapi.roots.LibraryOrderEntry;
 import com.intellij.openapi.roots.ModifiableRootModel;
 import com.intellij.openapi.roots.ModuleRootEvent;
@@ -44,6 +47,7 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.library.ModuleLibrariesUtil;
 import jetbrains.mps.idea.core.library.ModuleLibraryType;
+import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
 import jetbrains.mps.idea.core.project.stubs.SdkClassesImporter;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
@@ -104,7 +108,8 @@ public class SolutionIdea extends Solution {
   @Override
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
     newDescriptor.setNamespace(myModule.getName());
-//    addLibs(newDescriptor);
+    ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).claimSdk(myModule);
+    addLibs(newDescriptor);
     super.setSolutionDescriptor(newDescriptor, reloadClasses);
   }
 
@@ -127,6 +132,7 @@ public class SolutionIdea extends Solution {
       }
     });
     projectLibraryTable.removeListener(myLibrariesListener);
+    ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).releaseSdk(myModule);
     super.dispose();
     myConnection.disconnect();
   }
@@ -180,18 +186,18 @@ public class SolutionIdea extends Solution {
       // adding JDK module to a set of dependencies
       // why, oh, why are we doing it?
       // FIXME, PLEASE!
-      Solution jdkSolution = StubSolutionIdea.getJdkSolution();
-      if (jdkSolution != null) {
-        myDependencies.add(new Dependency(jdkSolution.getModuleReference(), false));
-      }
+//      Solution jdkSolution = StubSolutionIdea.getJdkSolution();
+//      if (jdkSolution != null) {
+//        myDependencies.add(new Dependency(jdkSolution.getModuleReference(), false));
+//      }
     }
     return myDependencies;
   }
 
   private void addUsedSdk(final List<Dependency> dependencies) {
-    Solution sdkSolution = myModule.getProject().getComponent(SdkClassesImporter.class).getModuleSdkSolution(myModule);
+    Solution sdkSolution = ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).getModuleSdkSolution(myModule);
     if (sdkSolution != null) {
-      myDependencies.add(new Dependency(sdkSolution.getModuleReference(), false));
+      dependencies.add(new Dependency(sdkSolution.getModuleReference(), false));
     }
   }
 
@@ -358,6 +364,7 @@ public class SolutionIdea extends Solution {
   private void reset() {
     ModelAccess.instance().runWriteInEDT(new Runnable() {
       public void run() {
+        ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).releaseSdk(myModule);
         // this is to prevent a delayed write to be executed after the module has already been disposed
         // TODO: find a better solution
         if (myModule.isDisposed()) return;
@@ -384,7 +391,8 @@ public class SolutionIdea extends Solution {
       FindProcessor<OrderEntry> processor = new FindProcessor<OrderEntry>() {
         @Override
         protected boolean accept(OrderEntry orderEntry) {
-          return orderEntry instanceof LibraryOrderEntry && ((LibraryOrderEntry) orderEntry).getLibrary().getRootProvider() == wrapper;
+          return orderEntry instanceof LibraryOrderEntry && ((LibraryOrderEntry) orderEntry).getLibrary().getRootProvider() == wrapper
+            || orderEntry instanceof JdkOrderEntry;
         }
       };
       ModuleRootManager.getInstance(myModule).orderEntries().forEach(processor);

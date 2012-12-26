@@ -49,11 +49,11 @@
 
       JdkStubSolutionManager was commented since we decided to use same logic as works in MPS with loading
       JDKclasses for now.In future should be uncommented and modified if necessary.
+    -->
 
         <component>
           <implementation-class>jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager</implementation-class>
         </component>
-    -->
   </application-components>
 
   <xi:include href="../../../workbench/mps-platform/source/META-INF/MPSCore.xml" xpointer="xpointer(/components/*)"/>
@@ -67,9 +67,11 @@
     <component>
       <implementation-class>jetbrains.mps.idea.core.project.stubs.MPSProjectLibImporter</implementation-class>
     </component>
+    <!--
     <component>
       <implementation-class>jetbrains.mps.idea.core.project.stubs.SdkClassesImporter</implementation-class>
     </component>
+    -->
     <component>
       <implementation-class>jetbrains.mps.project.MPSProject</implementation-class>
     </component>
