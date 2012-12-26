@@ -102,7 +102,7 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
             return (SLinkOperations.findLinkDeclaration(it) == null);
           }
         }).toGenericArray(SReference.class)) {
-          node.removeReference(ref);
+          node.setReference(ref.getRole(), null);
         }
       }
 

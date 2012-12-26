@@ -170,7 +170,7 @@ public class SNodeOperations {
    * this is an utility method common to all nodes but needed only for our debug purposes, so we don't put it into SNode
    */
   public static String getDebugText(SNode node) {
-    return ((jetbrains.mps.smodel.SNode) node).getDebugText();
+    return org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(((jetbrains.mps.smodel.SNode) node));
   }
 
   /**

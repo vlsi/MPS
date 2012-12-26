@@ -194,8 +194,8 @@ public class ModelAssert {
     propertes.addAll(expectedNode.getPropertyNames());
     propertes.addAll(actualNode.getPropertyNames());
     for (String key : propertes) {
-      String expectedProperty = expectedNode.getProperties().get(key);
-      String actualProperty = actualNode.getProperties().get(key);
+      String expectedProperty = jetbrains.mps.util.SNodeOperations.getProperties(expectedNode).get(key);
+      String actualProperty = jetbrains.mps.util.SNodeOperations.getProperties(actualNode).get(key);
       assertEquals(getErrorString("property", expectedNode, actualNode), expectedProperty, actualProperty);
     }
   }
@@ -206,8 +206,8 @@ public class ModelAssert {
 
   private static void assertReferenceEquals(SNode expectedNode, SNode actualNode) {
     Set<String> roles = new HashSet<String>();
-    roles.addAll(expectedNode.getReferenceRoles());
-    roles.addAll(actualNode.getReferenceRoles());
+    roles.addAll(jetbrains.mps.util.SNodeOperations.getReferenceRoles(expectedNode));
+    roles.addAll(jetbrains.mps.util.SNodeOperations.getReferenceRoles(actualNode));
     Map<String, Set<SReference>> expRoleToReferenceMap = createRoleToReferenceMap(expectedNode);
     Map<String, Set<SReference>> actRoleToReferenceMap = createRoleToReferenceMap(actualNode);
 

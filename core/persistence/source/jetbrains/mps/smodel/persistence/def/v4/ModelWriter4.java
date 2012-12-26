@@ -153,7 +153,7 @@ public class ModelWriter4 implements IModelWriter {
     element.setAttribute(ModelPersistence.ID, node.getNodeId().toString());
 
     // properties ...
-    Map<String, String> properties = node.getProperties();
+    Map<String, String> properties = jetbrains.mps.util.SNodeOperations.getProperties(node);
     Set<String> keys = properties.keySet();
     for (String propertyName : keys) {
       Element propertyElement = new Element(ModelPersistence.PROPERTY);

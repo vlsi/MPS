@@ -415,7 +415,7 @@ public class SNodeOperations {
     }
     String role = node.getRoleInParent();
     assert parent != null && role != null;
-    parent.insertChild(node, role, newChild);
+    parent.insertChild(role, newChild, node);
     return newChild;
   }
 

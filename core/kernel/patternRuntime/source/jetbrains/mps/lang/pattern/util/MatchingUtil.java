@@ -64,11 +64,11 @@ public class MatchingUtil {
     }
 
     //-- matching references
-    Set<String> referenceRoles = node1.getReferenceRoles();
-    referenceRoles.addAll(node2.getReferenceRoles());
+    Set<String> referenceRoles = jetbrains.mps.util.SNodeOperations.getReferenceRoles(node1);
+    referenceRoles.addAll(jetbrains.mps.util.SNodeOperations.getReferenceRoles(node2));
     for (String role : referenceRoles) {
-      SNode target1 = node1.getReferent(role);
-      SNode target2 = node2.getReferent(role);
+      SNode target1 = node1.getReferenceTarget(role);
+      SNode target2 = node2.getReferenceTarget(role);
       if (matchModifier.accept(target1, target2)) {
         matchModifier.performAction(target1, target2);
         continue;
@@ -118,7 +118,7 @@ public class MatchingUtil {
         result = 31 * result + targetNode.hashCode();
       }
     }
-    Map<String, String> properties = node.getProperties();
+    Map<String, String> properties = jetbrains.mps.util.SNodeOperations.getProperties(node);
     for (String propertyName : properties.keySet()) {
       result = 31 * result + propertyName.hashCode();
     }
