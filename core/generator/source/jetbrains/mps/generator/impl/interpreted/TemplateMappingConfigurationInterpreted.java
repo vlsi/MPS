@@ -71,7 +71,7 @@ public class TemplateMappingConfigurationInterpreted implements TemplateMappingC
         if (mappingScript == null) {
           continue;
         }
-        if (child.getRole_().equals(RuleUtil.link_MappingConfiguration_preMappingScript)) {
+        if (child.getRoleInParent().equals(RuleUtil.link_MappingConfiguration_preMappingScript)) {
           myPreScripts.add(new TemplateMappingScriptInterpreted(mappingScript));
         } else {
           myPostScripts.add(new TemplateMappingScriptInterpreted(mappingScript));

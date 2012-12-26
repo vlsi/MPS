@@ -37,7 +37,7 @@ public class MatchingUtil {
     if (node1 == node2) return true;
     if (node1 == null) return false;
     if (node2 == null) return false;
-    if (!node1.getConceptFqName().equals(node2.getConceptFqName())) return false;
+    if (!node1.getConcept().getId().equals(node2.getConcept().getId())) return false;
 
     //properties
     final Set<String> propertyNames = new HashSet<String>();
@@ -110,7 +110,7 @@ public class MatchingUtil {
   }
 
   public static int hash(SNode node) {
-    int result = node.getConceptFqName().hashCode();
+    int result = node.getConcept().getId().hashCode();
     for (SReference reference : node.getReferences()) {
       SNode targetNode = reference.getTargetNodeSilently();
       if (targetNode != null) {

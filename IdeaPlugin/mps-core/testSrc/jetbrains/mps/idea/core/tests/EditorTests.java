@@ -82,7 +82,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
         }
 
         for (SNode r : roots) {
-          if ("EditorTestCase".equals(r.getConceptShortName())) {
+          if ("EditorTestCase".equals(r.getConcept().getName())) {
             try {
               Class<?> cls = Class.forName(model.getLongName() + "." + r.getName() + "_Test");
               Method mth = cls.getMethod("test_" + r.getName());

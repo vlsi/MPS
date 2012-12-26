@@ -159,8 +159,8 @@ public class ModelAssert {
 
   public static void assertDeepNodeEquals(SNode expectedNode, SNode actualNode) {
     assertEquals(getErrorString("concept", expectedNode, actualNode),
-      expectedNode.getConceptFqName(),
-      actualNode.getConceptFqName());
+      expectedNode.getConcept().getId(),
+      actualNode.getConcept().getId());
 
     // match properties
     assertPropertyEquals(expectedNode, actualNode);

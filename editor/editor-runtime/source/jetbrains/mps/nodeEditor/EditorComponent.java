@@ -2957,7 +2957,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
             if (index >= childIndex) {
               break;
             }
-            if (role.equals(child.getRole_())) {
+            if (role.equals(child.getRoleInParent())) {
               target = child;
             }
             index++;

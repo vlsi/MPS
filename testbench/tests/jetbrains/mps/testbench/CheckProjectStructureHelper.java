@@ -376,9 +376,9 @@ public class CheckProjectStructureHelper {
 
     for (SNode node : sm.getSModel().nodes()) {
       Testbench.LOG.debug("Checking node " + node);
-      if (SModelUtil.findConceptDeclaration(node.getConceptFqName(), GlobalScope.getInstance()) == null) {
+      if (SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance()) == null) {
         errorMessages.append("Unknown concept ");
-        errorMessages.append(node.getConceptFqName());
+        errorMessages.append(node.getConcept().getId());
         errorMessages.append("\n");
       }
     }

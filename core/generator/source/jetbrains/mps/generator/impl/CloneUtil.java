@@ -91,7 +91,7 @@ public class CloneUtil {
     }
 
     for (SNode child : inputNode.getChildren()) {
-      String role = child.getRole_();
+      String role = child.getRoleInParent();
       assert role != null;
       outputNode.addChild(role, clone(child, outputModel, originalInput));
     }

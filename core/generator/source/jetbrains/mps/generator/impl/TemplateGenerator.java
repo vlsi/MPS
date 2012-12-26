@@ -580,7 +580,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     for (SNode inputChildNode : inputNode.getChildren()) {
-      String childRole = inputChildNode.getRole_();
+      String childRole = inputChildNode.getRoleInParent();
       assert childRole != null;
       myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputChildNode));
       try {

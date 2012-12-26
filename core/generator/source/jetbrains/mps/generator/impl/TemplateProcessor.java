@@ -703,7 +703,7 @@ public class TemplateProcessor {
           List<SNode> outputNodesToWeave = templateProcessor.apply(
             GeneratorUtilEx.getMappingName(templateFragment, null),
             templateFragmentNode, context);
-          String childRole = templateFragmentNode.getRole_();
+          String childRole = templateFragmentNode.getRoleInParent();
 
           TemplateExecutionEnvironment env = new TemplateExecutionEnvironmentImpl(myGenerator, myReductionContext, null, myTracer);
           for (SNode outputNodeToWeave : outputNodesToWeave) {

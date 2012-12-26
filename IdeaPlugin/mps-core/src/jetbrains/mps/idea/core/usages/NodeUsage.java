@@ -59,7 +59,7 @@ public class NodeUsage extends NodeNavigatable implements Usage, UsagePresentati
         SNode targetNode = myNode.getNode();
         if (targetNode != null) {
           myParentPresentation = targetNode.getParent().getPresentation();
-          myRole = targetNode.getRole_();
+          myRole = targetNode.getRoleInParent();
         }
       }
     });
