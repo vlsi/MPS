@@ -134,7 +134,7 @@ abstract class SReferenceBase extends SReference {
     myImmatureTargetNode = null;
     adjustMature(immatureNode);
     setTargetSModelReference(immatureNode.getModel().getSModelReference());
-    setResolveInfo(immatureNode.getResolveInfo());
+    setResolveInfo(jetbrains.mps.util.SNodeOperations.getResolveInfo(immatureNode));
   }
 
   protected void adjustMature(SNode immatureTarget) {
