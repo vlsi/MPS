@@ -103,7 +103,7 @@ abstract class SReferenceBase extends SReference {
             new ProblemDescription(new SNodePointer(myImmatureTargetNode),
               "ImmatureTargetNode(modelID: " +
                 (myImmatureTargetNode.getModel() == null ? "null" : myImmatureTargetNode.getModel().toString()) +
-                ", nodeID: " + myImmatureTargetNode.getSNodeId().toString() +
+                ", nodeID: " + myImmatureTargetNode.getNodeId().toString() +
                 "): isRegistered = " + (myImmatureTargetNode.getModel() != null) +
                 ", isDisposed = " + jetbrains.mps.util.SNodeOperations.isDisposed(myImmatureTargetNode) + dumpUnregisteredTrace()));
           myImmatureTargetNode = null;

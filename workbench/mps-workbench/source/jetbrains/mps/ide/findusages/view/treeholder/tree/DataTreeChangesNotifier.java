@@ -97,7 +97,7 @@ public class DataTreeChangesNotifier {
           }
         } else if (event instanceof SModelChildEvent) {
           SModelChildEvent modelChildEvent = (SModelChildEvent) event;
-          SNodePointer childPointer = new SNodePointer(modelChildEvent.getModel().getSModelReference(), modelChildEvent.getChild().getSNodeId());
+          SNodePointer childPointer = new SNodePointer(modelChildEvent.getModel().getSModelReference(), modelChildEvent.getChild().getNodeId());
           if (modelChildEvent.isRemoved() && myNodes.contains(childPointer)) {
             myChanged = true;
             return;

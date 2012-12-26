@@ -57,7 +57,7 @@ public class TransientModelWithMetainfo {
   }
 
   public MappingsMemento getMappingsMemento(SNode originalRoot, boolean create) {
-    SNodeId key = originalRoot == null ? null : originalRoot.getSNodeId();
+    SNodeId key = originalRoot == null ? null : originalRoot.getNodeId();
     MappingsMemento mappingsMemento = myMappingsMemento.get(key);
     if(mappingsMemento == null && create) {
       mappingsMemento = new MappingsMemento();
@@ -71,7 +71,7 @@ public class TransientModelWithMetainfo {
   }
 
   public String getOriginal(SNode root) {
-    SNodeId id = myRootToOriginal.get(root.getSNodeId());
+    SNodeId id = myRootToOriginal.get(root.getNodeId());
     if(id == null) {
       return CONDITIONALS_ID;
     }
@@ -140,7 +140,7 @@ public class TransientModelWithMetainfo {
     while (it.hasNext()) {
       SNode root = it.next();
       SNode node = builder.getOriginalForOutput(root);
-      metainfo.myRootToOriginal.put(root.getSNodeId(), node == null ? null: node.getSNodeId());
+      metainfo.myRootToOriginal.put(root.getNodeId(), node == null ? null: node.getNodeId());
     }
     builder.updateUnchanged(metainfo);
     return metainfo;

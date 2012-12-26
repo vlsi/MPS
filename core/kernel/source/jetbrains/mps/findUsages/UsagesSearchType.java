@@ -61,7 +61,7 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
       Set<StaticReferenceInfo> srefs = new THashSet<StaticReferenceInfo>();
       for (SNode n : nodes) {
         SModelReference mr = ((jetbrains.mps.smodel.SNode) n).getModel().getSModelReference();
-        srefs.add(new StaticReferenceInfo(SModelRepository.getInstance().getModelDescriptor(mr), ((SNodeId) n.getSNodeId())));
+        srefs.add(new StaticReferenceInfo(SModelRepository.getInstance().getModelDescriptor(mr), ((SNodeId) n.getNodeId())));
       }
 
       for (SNode root : model.getRootNodes()) {

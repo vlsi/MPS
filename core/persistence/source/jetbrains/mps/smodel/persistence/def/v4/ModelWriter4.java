@@ -150,7 +150,7 @@ public class ModelWriter4 implements IModelWriter {
     final String role = node.getRoleInParent();
     DocUtil.setNotNullAttribute(element, ModelPersistence.ROLE, VersionUtil.formVersionedString(role, VersionUtil.getRoleVersion(node)));
     element.setAttribute(ModelPersistence.TYPE, VersionUtil.formVersionedString(node.getConcept().getId(), modelVersion));
-    element.setAttribute(ModelPersistence.ID, node.getSNodeId().toString());
+    element.setAttribute(ModelPersistence.ID, node.getNodeId().toString());
 
     // properties ...
     Map<String, String> properties = node.getProperties();

@@ -3166,7 +3166,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         assertModelNotDisposed();
         if (myNode.getModel().getSModelReference().equals(sm.getSModelReference())) {
           clearModelDisposedTrace();
-          SNodeId oldId = myNode.getSNodeId();
+          SNodeId oldId = myNode.getNodeId();
           myNode = sm.getSModel().getNodeById(oldId);
         }
       }

@@ -53,7 +53,7 @@ public class NodesWriter {
 
   public void writeNode(SNode node, ModelOutputStream os) throws IOException {
     os.writeString(node.getConcept().getId());
-    os.writeNodeId(node.getSNodeId());
+    os.writeNodeId(node.getNodeId());
     os.writeString(node.getRole_());
     os.writeByte('{');
 

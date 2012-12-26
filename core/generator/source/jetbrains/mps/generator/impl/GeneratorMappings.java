@@ -224,7 +224,7 @@ public class GeneratorMappings {
         SNode inputNode = i.getKey();
         SNode originalRoot = inputNode == null ? null : builder.getOriginalForInput(inputNode.getTopmostAncestor());
         MappingsMemento mappingsMemento = model.getMappingsMemento(originalRoot, true);
-        mappingsMemento.addOutputNodeByInputNodeAndMappingName(inputNode == null ? null : inputNode.getSNodeId(), label, i.getValue());
+        mappingsMemento.addOutputNodeByInputNodeAndMappingName(inputNode == null ? null : inputNode.getNodeId(), label, i.getValue());
       }
     }
 
@@ -232,16 +232,16 @@ public class GeneratorMappings {
       SNode inputNode = o.getKey();
       Object value = o.getValue();
       if(value instanceof SNode) {
-        SNodeId targetId = ((SNode) value).getSNodeId();
-        if(inputNode.getSNodeId().equals(targetId)) {
+        SNodeId targetId = ((SNode) value).getNodeId();
+        if(inputNode.getNodeId().equals(targetId)) {
           continue; /* trivial */
         }
         MappingsMemento mappingsMemento = model.getMappingsMemento(builder.getOriginalForInput(inputNode.getTopmostAncestor()), true);
-        mappingsMemento.addOutputNodeByInputNode(inputNode.getSNodeId(), targetId, true);
+        mappingsMemento.addOutputNodeByInputNode(inputNode.getNodeId(), targetId, true);
       } else if(value instanceof List) {
-        SNodeId targetId = ((List<SNode>) value).get(0).getSNodeId();
+        SNodeId targetId = ((List<SNode>) value).get(0).getNodeId();
         MappingsMemento mappingsMemento = model.getMappingsMemento(builder.getOriginalForInput(inputNode.getTopmostAncestor()), true);
-        mappingsMemento.addOutputNodeByInputNode(inputNode.getSNodeId(), targetId, false);
+        mappingsMemento.addOutputNodeByInputNode(inputNode.getNodeId(), targetId, false);
       }
     }
   }

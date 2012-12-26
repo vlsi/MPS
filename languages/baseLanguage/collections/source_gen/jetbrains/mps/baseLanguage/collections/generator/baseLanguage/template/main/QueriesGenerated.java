@@ -1130,7 +1130,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1203340469437(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     if (false) {
-      _context.putSessionObject("switch_sequence_operation_toSequence_" + _context.getNode().getSNodeId().toString(), Boolean.TRUE);
+      _context.putSessionObject("switch_sequence_operation_toSequence_" + _context.getNode().getNodeId().toString(), Boolean.TRUE);
     }
     return _context.getNode();
   }
@@ -1650,7 +1650,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_1208440989711(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     if (false) {
-      _context.putSessionObject("switch_sequence_operation_toList_" + _context.getNode().getSNodeId().toString(), Boolean.TRUE);
+      _context.putSessionObject("switch_sequence_operation_toList_" + _context.getNode().getNodeId().toString(), Boolean.TRUE);
     }
     return _context.getNode();
   }

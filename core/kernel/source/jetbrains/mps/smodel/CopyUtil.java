@@ -119,7 +119,7 @@ public final class CopyUtil {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     SNode result = clone(node, mapping, true);
     for (SNode sourceNode : mapping.keySet()) {
-      mapping.get(sourceNode).setId(sourceNode.getSNodeId());
+      mapping.get(sourceNode).setId(sourceNode.getNodeId());
     }
     addReferences(node, mapping, cloneRefs);
     return result;

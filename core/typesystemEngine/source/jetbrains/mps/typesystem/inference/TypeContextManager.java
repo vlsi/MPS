@@ -22,7 +22,6 @@ import jetbrains.mps.newTypesystem.context.CachingTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.TargetTypecheckingContext_Tracer;
 import jetbrains.mps.newTypesystem.context.HoleTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.InferenceTypecheckingContext;
-import jetbrains.mps.newTypesystem.context.SimpleTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.TargetTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.TracingTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
@@ -44,13 +43,10 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Triplet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
@@ -77,7 +73,7 @@ public class TypeContextManager implements CoreComponent {
     @Override
     public void beforeRootRemoved(SModelRootEvent event) {
       synchronized (myLock) {
-        removeContextForNode(new SNodePointer(event.getModel().getSModelReference(), event.getRoot().getSNodeId()));
+        removeContextForNode(new SNodePointer(event.getModel().getSModelReference(), event.getRoot().getNodeId()));
       }
     }
 

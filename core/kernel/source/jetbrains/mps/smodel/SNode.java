@@ -1185,7 +1185,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     List<SNode> children = getChildren(role);
     int size = children.size();
     if (size > 1) {
-      String errorMessage = "ERROR: SNode.getChild() executed when there are " + size + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getSNodeId().toString() + "] " + getModel().getSModelReference() + "\n";
+      String errorMessage = "ERROR: SNode.getChild() executed when there are " + size + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getNodeId().toString() + "] " + getModel().getSModelReference() + "\n";
       errorMessage += "they are : " + getChildren(role);
       LOG.error(errorMessage, new Throwable(), this);
     }
@@ -1704,7 +1704,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public String getId() {
-    return getSNodeId().toString();
+    return getNodeId().toString();
   }
 
   @Deprecated
@@ -1713,7 +1713,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public boolean hasId() {
-    return getSNodeId() != null;
+    return getNodeId() != null;
   }
 
   @MigrationScript(script = "Tools/Migration 3.0/Migrate to new SNode methods")

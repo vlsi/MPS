@@ -108,9 +108,9 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
     SelectionInfo selectionInfo = new SelectionInfo(this.getClass().getName());
     selectionInfo.getPropertiesMap().put(ROLE_PROPERTY_NAME, myRole);
     selectionInfo.getPropertiesMap().put(MODEL_ID_PROPERTY_NAME, myParentNode.getModel().getSModelReference().toString());
-    selectionInfo.getPropertiesMap().put(FIRST_NODE_ID_PROPERTY_NAME, myFirstNode.getSNodeId().toString());
-    selectionInfo.getPropertiesMap().put(LAST_NODE_ID_PROPERTY_NAME, myLastNode.getSNodeId().toString());
-    selectionInfo.getPropertiesMap().put(PARENT_NODE_ID_PROPERTY_NAME, myParentNode.getSNodeId().toString());
+    selectionInfo.getPropertiesMap().put(FIRST_NODE_ID_PROPERTY_NAME, myFirstNode.getNodeId().toString());
+    selectionInfo.getPropertiesMap().put(LAST_NODE_ID_PROPERTY_NAME, myLastNode.getNodeId().toString());
+    selectionInfo.getPropertiesMap().put(PARENT_NODE_ID_PROPERTY_NAME, myParentNode.getNodeId().toString());
     return selectionInfo;
   }
 

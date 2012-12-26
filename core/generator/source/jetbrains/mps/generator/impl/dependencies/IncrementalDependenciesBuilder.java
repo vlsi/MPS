@@ -83,7 +83,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     int e = 0;
     myAllBuilders[e++] = myConditionalsBuilder;
     for (SNode root : roots) {
-      myAllBuilders[e] = new RootDependenciesBuilder(root, this, generationHashes != null ? generationHashes.get(root.getSNodeId().toString()) : null);
+      myAllBuilders[e] = new RootDependenciesBuilder(root, this, generationHashes != null ? generationHashes.get(root.getNodeId().toString()) : null);
       myRootBuilders.put(root, myAllBuilders[e++]);
       currentToOriginalMap.put(root, root);
     }
@@ -109,10 +109,10 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     myUnchangedSet = new HashMap<String, SNode>(unchangedRoots.size() + 1);
     myRequiredSet = new HashMap<String, SNode>(requiredRoots.size() + 1);
     for (SNode root : unchangedRoots) {
-      propagateDependencies(getRootBuilder(root), saved.getDependenciesFor(root.getSNodeId().toString()), false);
+      propagateDependencies(getRootBuilder(root), saved.getDependenciesFor(root.getNodeId().toString()), false);
     }
     for (SNode root : requiredRoots) {
-      propagateDependencies(getRootBuilder(root), saved.getDependenciesFor(root.getSNodeId().toString()), true);
+      propagateDependencies(getRootBuilder(root), saved.getDependenciesFor(root.getNodeId().toString()), true);
     }
     if (conditionalsUnchanged || conditionalsRequired) {
       propagateDependencies(getRootBuilder(null), saved.getDependenciesFor(ModelDigestHelper.HEADER), conditionalsRequired);
@@ -123,7 +123,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
     assert deps.getHash().equals(builder.getHash());
     builder.loadDependencies(deps);
     SNode root = builder.getOriginalRoot();
-    (isRequired ? myRequiredSet : myUnchangedSet).put(root != null ? root.getSNodeId().toString() : TransientModelWithMetainfo.CONDITIONALS_ID, root);
+    (isRequired ? myRequiredSet : myUnchangedSet).put(root != null ? root.getNodeId().toString() : TransientModelWithMetainfo.CONDITIONALS_ID, root);
   }
 
   private static SNode[] getRoots(SModel model) {
@@ -139,11 +139,11 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
   public void scriptApplied(SModel newmodel) {
     Map<SNodeId, SNode> oldidsToOriginal = new HashMap<SNodeId, SNode>();
     for (Map.Entry<SNode, SNode> entry : currentToOriginalMap.entrySet()) {
-      oldidsToOriginal.put(entry.getKey().getSNodeId(), entry.getValue());
+      oldidsToOriginal.put(entry.getKey().getNodeId(), entry.getValue());
     }
     currentToOriginalMap = new HashMap<SNode, SNode>();
     for (SNode root : newmodel.roots()) {
-      SNodeId id = root.getSNodeId();
+      SNodeId id = root.getNodeId();
       SNode original = oldidsToOriginal.get(id);
       if (original == null) {
         // TODO if original is null -> new root added, warning/error(strict)?
@@ -313,7 +313,7 @@ public class IncrementalDependenciesBuilder implements DependenciesBuilder {
       String originalId = myCachedModel.getOriginal(root);
       if (myUnchangedSet.containsKey(originalId)) {
         model.getRoots().add(root);
-        model.setOriginal(root.getSNodeId(), originalId);
+        model.setOriginal(root.getNodeId(), originalId);
         MappingsMemento mappingsMemento = myCachedModel.getMappingsMemento(originalId);
         if (mappingsMemento != null) {
           model.updateMappings(originalId, mappingsMemento);

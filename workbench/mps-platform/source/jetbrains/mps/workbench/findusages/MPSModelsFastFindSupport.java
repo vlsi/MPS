@@ -62,7 +62,7 @@ public class MPSModelsFastFindSupport implements ApplicationComponent, FastFindS
   public Map<SModel, Collection<org.jetbrains.mps.openapi.model.SNode>> findModelsWithPossibleUsages(Collection<SModel> models, Set<org.jetbrains.mps.openapi.model.SNode> nodes) {
     return findModels(models, nodes, new Mapper<org.jetbrains.mps.openapi.model.SNode, String>() {
       public String value(org.jetbrains.mps.openapi.model.SNode key) {
-        return key.getSNodeId().toString();
+        return key.getNodeId().toString();
       }
     });
   }

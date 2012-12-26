@@ -73,7 +73,7 @@ public class SNodeUtil {
         String name = SNodeAccessUtil.getProperty((jetbrains.mps.smodel.SNode) node,"role");;
         nameText = (name == null) ? "<no name>" : '"' + name + '"';
       }
-      nameText = nameText + "[" + node.getSNodeId() + "]";
+      nameText = nameText + "[" + node.getNodeId() + "]";
 
       SModel model = node.getContainingModel();
       modelName = model != null ? model.getModelName() : "<no model>";

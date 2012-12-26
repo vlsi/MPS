@@ -395,7 +395,7 @@ public class CheckProjectStructureHelper {
             append(node.getModel().getLongName()).
             append("}").
             append(" node ").
-            append(node.getSNodeId().toString()).
+            append(node.getNodeId().toString()).
             append("(").
             append(node).
             append(")\n");

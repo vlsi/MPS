@@ -86,7 +86,7 @@ public class TextGenerator {
 
       String name = getFileName(outputRootNode);
       if (name == null) {
-        Message m = new Message(MessageKind.ERROR, "Can't create file with no name. Root node [" + outputRootNode.getSNodeId() + "] in model " + outputRootNode.getModel().getSModelFqName());
+        Message m = new Message(MessageKind.ERROR, "Can't create file with no name. Root node [" + outputRootNode.getNodeId() + "] in model " + outputRootNode.getModel().getSModelFqName());
         m.setHintObject(new SNodePointer(outputRootNode));
         errors.add(m);
         continue;
