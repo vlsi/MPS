@@ -29,7 +29,7 @@ public class ConceptDeclaration_Constraints extends BaseConstraintsDescriptor {
   public String getAlternativeIcon(SNode node) {
     return (SPropertyOperations.getBoolean(node, "rootable") ?
       "${language_descriptor}/icons/rootableConcept.png" :
-      "${language_descriptor}/icons/nonRootableConcept.png"
+      "${language_descriptor}/icons/structure.png"
     );
   }
 

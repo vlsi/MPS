@@ -31,7 +31,8 @@ public class MPSIcons {
     public static final Icon GroupByRoot = IconLoader.getIcon("/actions/groupByRoot.png");
     public static final Icon GroupSearched = IconLoader.getIcon("/actions/groupSearched.png");
     public static final Icon ImportModulesFromFolder = IconLoader.getIcon("/actions/importModulesFromFolder.png");
-    public static final Icon SearchedNodes= IconLoader.getIcon("/actions/searchedNodes.png");
+    public static final Icon MigrationBulb = IconLoader.getIcon("/actions/migrationBulb.png");
+    public static final Icon SearchedNodes = IconLoader.getIcon("/actions/searchedNodes.png");
     public static final Icon ShowCellInExplorer = IconLoader.getIcon("/actions/showCellInExplorer.png");
     public static final Icon ShowOnlyStrongSubtypes = IconLoader.getIcon("/actions/showOnlyStrongSubtypes.png");
   }
@@ -58,10 +59,12 @@ public class MPSIcons {
   public static class General {
     public static final Icon Block = IconLoader.getIcon("/general/block.png");
     public static final Icon Dependencies = IconLoader.getIcon("/general/dependencies.png");
+    public static final Icon ErrorOk = IconLoader.getIcon("/general/errorsOK.png");
     public static final Icon ModelChecker = IconLoader.getIcon("/general/modelChecker.png");
     public static final Icon NewProject = IconLoader.getIcon("/general/newProject.png");
     public static final Icon OpenSample = IconLoader.getIcon("/general/openSample.png");
     public static final Icon Runtime = IconLoader.getIcon("/general/runtime.png");
+    public static final Icon WarningsFound = IconLoader.getIcon("/general/warningsFound.png");
   }
 
   public static class Generator {
