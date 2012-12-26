@@ -16,6 +16,8 @@
 package org.jetbrains.mps.openapi.model;
 
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
 
 /**
  * This class implement complex operations on the node structure.
@@ -23,6 +25,13 @@ import org.jetbrains.annotations.NotNull;
  * e.g. replacing a node with a root node from another model
  */
 public class SNodeUtil {
+  public static boolean isInstanceOf(@Nullable SNode node, @NotNull SConcept concept) {
+    if (node == null) return false;
+    SConcept c = node.getConcept();
+    if (c == null) return false;
+    return c.isSubConceptOf(concept);
+  }
+
   /**
    * Replaces a node with another, preserving attributes
    */
@@ -67,10 +76,11 @@ public class SNodeUtil {
     String modelName;
     try {
       if ("jetbrains.mps.bootstrap.structureLanguage.structure.LinkDeclaration".equals(node.getConcept().getId())) {
-        String role = SNodeAccessUtil.getProperty((jetbrains.mps.smodel.SNode) node,"role");
+        String role = SNodeAccessUtil.getProperty((jetbrains.mps.smodel.SNode) node, "role");
         nameText = (role == null) ? "<no role>" : '"' + role + '"';
       } else {
-        String name = SNodeAccessUtil.getProperty((jetbrains.mps.smodel.SNode) node,"role");;
+        String name = SNodeAccessUtil.getProperty((jetbrains.mps.smodel.SNode) node, "role");
+        ;
         nameText = (name == null) ? "<no name>" : '"' + name + '"';
       }
       nameText = nameText + "[" + node.getNodeId() + "]";
