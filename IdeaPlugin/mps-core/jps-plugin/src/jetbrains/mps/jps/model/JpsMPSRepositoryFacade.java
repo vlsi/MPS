@@ -32,6 +32,7 @@ import jetbrains.mps.jps.project.JpsMPSProject;
 import jetbrains.mps.jps.project.JpsSolutionIdea;
 import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.persistence.PersistenceRegistry;
+import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
@@ -72,6 +73,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.UUID;
 
 /**
  * evgeny, 12/3/12
@@ -216,7 +218,7 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
       JpsLibrary sdk = getModuleSdk(mod, context);
       if (sdk != null && !processedSdks.contains(sdk)) {
         MPSCompilerUtil.debug(context, "SDK name" + sdk.getName());
-        JpsLibSolution sdkSolution = createLibSolution(sdk, context);
+        JpsLibSolution sdkSolution = createLibSolution(sdk, true, context);
         JpsLibSolution regSolution = MPSModuleRepository.getInstance().registerModule(sdkSolution, myProject);
         MPSCompilerUtil.debug(context, "SDK " + regSolution.getModuleReference().toString());
         if (sdkSolution == regSolution) {
@@ -227,8 +229,12 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
       }
     }
 
+    if (processedSdks.size() > 1) {
+      context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.ERROR, "Different SDKs in modules with MPS facets are not supported"));
+    }
+
     for (JpsLibrary jpsLib : jpsProject.getLibraryCollection().getLibraries()) {
-      JpsLibSolution libSolution = createLibSolution(jpsLib, context);
+      JpsLibSolution libSolution = createLibSolution(jpsLib, false, context);
       JpsLibSolution regSolution = MPSModuleRepository.getInstance().registerModule(libSolution, myProject);
       MPSCompilerUtil.debug(context, "LIB " + regSolution.getModuleReference().toString());
       if (libSolution == regSolution) {
@@ -266,11 +272,28 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
     }
   }
 
-  private JpsLibSolution createLibSolution(JpsLibrary lib, CompileContext ctx) {
+  private JpsLibSolution createLibSolution(JpsLibrary lib, boolean sdkHack, CompileContext ctx) {
     String name = lib.getName();
     SolutionDescriptor desc = new SolutionDescriptor();
     desc.setNamespace(name);
-    desc.setId(ModuleId.foreign(name));
+
+    if (sdkHack) {
+      ModuleId jdkId = ModuleId.regular(UUID.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065"));
+      MPSModuleRepository repo = MPSModuleRepository.getInstance();
+      SModule jdkMod = repo.getModule(jdkId);
+      if (jdkMod != null && jdkMod instanceof IModule) {
+        IModule imod = (IModule) jdkMod;
+        Set<MPSModuleOwner> owners = new HashSet<MPSModuleOwner>(repo.getOwners(imod));
+        for (MPSModuleOwner owner : owners) {
+//          if (owner == this) continue;
+          repo.unregisterModule(imod, owner);
+        }
+      }
+      desc.setId(jdkId);
+
+    } else {
+      desc.setId(ModuleId.foreign(name));
+    }
     return new JpsLibSolution(desc, lib, ctx);
   }
 

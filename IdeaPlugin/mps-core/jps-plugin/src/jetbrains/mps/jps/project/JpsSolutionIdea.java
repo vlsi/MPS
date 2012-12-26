@@ -101,9 +101,7 @@ public class JpsSolutionIdea extends Solution {
 
         MPSCompilerUtil.debug(myCompileContext, "**** jdk dep: " + ((JpsSdkDependency) jpsDep).getSdkReference().getSdkName());
 
-        JpsLibrary lib = ((JpsSdkDependency) jpsDep).resolveSdk();
-        String name = lib.getName();
-        solution = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(name));
+        // do nothing, since we store SDK with a special module id (JDK module id, which is pulled in by use baseLanguage)
       }
 
       if (solution != null) {
