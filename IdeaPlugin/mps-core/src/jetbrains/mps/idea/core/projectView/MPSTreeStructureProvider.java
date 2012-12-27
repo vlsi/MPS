@@ -19,6 +19,7 @@ package jetbrains.mps.idea.core.projectView;
 import com.intellij.ide.DeleteProvider;
 import com.intellij.ide.projectView.SelectableTreeStructureProvider;
 import com.intellij.ide.projectView.ViewSettings;
+import com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode;
 import com.intellij.ide.projectView.impl.nodes.PsiFileNode;
 import com.intellij.ide.util.treeView.AbstractTreeNode;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
@@ -48,7 +49,27 @@ public class MPSTreeStructureProvider implements SelectableTreeStructureProvider
   @Override
   public Collection<AbstractTreeNode> modify(final AbstractTreeNode parent, final Collection<AbstractTreeNode> children, final ViewSettings settings) {
     final IFile modelFile = getModelFile(parent);
-    if (modelFile == null || !(parent instanceof PsiFileNode)) return children;
+
+    if (!(parent instanceof PsiFileNode || parent instanceof PsiDirectoryNode))
+      return children;
+
+    if (modelFile == null) {
+      final List<AbstractTreeNode> modifiedChildren = new ArrayList<AbstractTreeNode>();
+
+      for (AbstractTreeNode childNode : children) {
+        IFile childModelFile = getModelFile(childNode);
+
+        if (childModelFile != null && childNode instanceof PsiFileNode) {
+          modifiedChildren.add(
+            new MPSProjectViewModelPsiFile(
+              (PsiFileNode)childNode, SModelFileTracker.getInstance().findModel(childModelFile))
+          );
+          continue;
+        }
+        modifiedChildren.add(childNode);
+      }
+      return modifiedChildren;
+    }
 
     final List<AbstractTreeNode> newChildren = new ArrayList<AbstractTreeNode>(children);
     ModelAccess.instance().runReadAction(new Runnable() {
