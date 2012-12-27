@@ -14,7 +14,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1171931851043">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/test.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/testClass.png" />
       <property name="name" nameId="tpck.1169194664001" value="BTestCase" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpee.1068390468198" resolveInfo="ClassConcept" />
     </node>

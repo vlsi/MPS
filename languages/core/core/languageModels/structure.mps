@@ -77,7 +77,7 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="5169995583184591161">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${mps_home}/languages/languageDesign/structure/icons/annotationLink.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${module}/icons/annotationLink.png" />
       <property name="name" nameId="1169194664001" value="Attribute" />
       <property name="virtualPackage" nameId="1193676396447" value="attributes" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1133920641626" resolveInfo="BaseConcept" />

@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.workbench.findusages;
 
+import com.intellij.icons.AllIcons.Nodes;
 import com.intellij.openapi.fileTypes.FileType;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.project.MPSExtentions;
@@ -23,13 +24,12 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 
 /**
 * evgeny, 10/27/11
 */
 public class ClassFileType implements FileType {
-  public static final Icon CLASS_ICON = new ImageIcon(ClassFileType.class.getResource("icons/javaClass.png"));
+  public static final Icon CLASS_ICON = Nodes.Class;
 
   @NotNull
   @NonNls
