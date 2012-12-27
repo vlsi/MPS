@@ -192,6 +192,8 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     final Module module2 = addModuleAndSetupFixture(myProjectBuilder);
     MPSFacet mpsFacet2 = addMPSFacet(module2);
 
+    int originalDependCount = mpsFacet2.getSolution().getDependencies().size();
+
     ApplicationManager.getApplication().runWriteAction(new Runnable() {
       @Override
       public void run() {
@@ -203,7 +205,6 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     flushEDT();
 
     List<Dependency> solution2Dependencies = mpsFacet2.getSolution().getDependencies();
-    int originalDependCount = solution2Dependencies.size();
 
     assertEquals(originalDependCount + 1, solution2Dependencies.size());
     boolean found = false;
@@ -231,7 +232,8 @@ public class FacetTests extends AbstractMPSFixtureTestCase {
     flushEDT();
 
     assertEquals(originalDependCount, mpsFacet2.getSolution().getDependencies().size());
-    assertFalse(myFacet.getSolution().getModuleReference().equals(mpsFacet2.getSolution().getDependencies().get(0).getModuleRef()));
+    // commented out: we don't always depend on jdk any longer
+//    assertFalse(myFacet.getSolution().getModuleReference().equals(mpsFacet2.getSolution().getDependencies().get(0).getModuleRef()));
   }
 
   public void testUpdateNamespaceOnModuleRename() throws InterruptedException {

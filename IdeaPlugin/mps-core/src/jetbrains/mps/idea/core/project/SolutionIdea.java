@@ -110,12 +110,17 @@ public class SolutionIdea extends Solution {
 
   @Override
   public void setSolutionDescriptor(SolutionDescriptor newDescriptor, boolean reloadClasses) {
+
+    newDescriptor.setNamespace(myModule.getName());
+    addLibs(newDescriptor);
+    super.setSolutionDescriptor(newDescriptor, reloadClasses);
+
     try {
       ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).claimSdk(myModule);
     } catch (final DifferentSdkException e) {
 
-      StartupManager.getInstance(myModule.getProject()).runWhenProjectIsInitialized(
-      /*ModelAccess.instance().runReadInEDT(*/new Runnable() {
+      // TODO this seems to behave suspiciously in tests
+      StartupManager.getInstance(myModule.getProject()).runWhenProjectIsInitialized(new Runnable() {
         @Override
         public void run() {
           Messages.showErrorDialog(myModule.getProject(),
@@ -126,10 +131,6 @@ public class SolutionIdea extends Solution {
           );
         }
       });
-
-      newDescriptor.setNamespace(myModule.getName());
-      addLibs(newDescriptor);
-      super.setSolutionDescriptor(newDescriptor, reloadClasses);
     }
   }
 
