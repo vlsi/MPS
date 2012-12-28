@@ -18,6 +18,7 @@ import org.jetbrains.jps.incremental.CompileContext;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
 import org.jetbrains.jps.model.java.JpsJavaExtensionService;
+import org.jetbrains.jps.model.java.JpsJavaSdkType;
 import org.jetbrains.jps.model.library.JpsLibrary;
 import org.jetbrains.jps.model.module.JpsDependencyElement;
 import org.jetbrains.jps.model.module.JpsLibraryDependency;
@@ -101,7 +102,14 @@ public class JpsSolutionIdea extends Solution {
 
         MPSCompilerUtil.debug(myCompileContext, "**** jdk dep: " + ((JpsSdkDependency) jpsDep).getSdkReference().getSdkName());
 
-        // do nothing, since we store SDK with a special module id (JDK module id, which is pulled in by use baseLanguage)
+        if (((JpsSdkDependency) jpsDep).getSdkType().equals(JpsJavaSdkType.INSTANCE)) {
+          // do nothing, since we store SDK with a special module id (JDK module id, which is pulled in by use baseLanguage)
+          // FIXME OR put JDK module id?
+          continue;
+        }
+
+        String sdkName = ((JpsSdkDependency) jpsDep).getSdkReference().getSdkName();
+        solution = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(sdkName));
       }
 
       if (solution != null) {
