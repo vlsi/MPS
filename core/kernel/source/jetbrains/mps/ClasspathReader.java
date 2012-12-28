@@ -59,6 +59,7 @@ public class ClasspathReader {
     OPENAPI("openapi"),
     CORE("core"),
     EDITOR("editor"),
+    IDEA_PLATFORM("ideaPlatform"),
     PLATFORM("platform"),
     UI("ui"),
     WORKBENCH("workbench"),

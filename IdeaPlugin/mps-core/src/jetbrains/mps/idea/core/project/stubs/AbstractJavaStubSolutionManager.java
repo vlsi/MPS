@@ -71,7 +71,7 @@ public abstract class AbstractJavaStubSolutionManager implements MPSModuleOwner,
   }
 
   protected Solution addSolution(Sdk sdk) {
-    return StubSolutionIdea.newInstance(sdk, this);
+    return StubSolutionIdea.newInstance(sdk, null, this );
   }
 
   protected Solution replaceJdkSolution(Sdk sdk) {

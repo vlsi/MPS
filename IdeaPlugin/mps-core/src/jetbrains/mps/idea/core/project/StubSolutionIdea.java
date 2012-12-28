@@ -16,6 +16,8 @@
 
 package jetbrains.mps.idea.core.project;
 
+import com.intellij.openapi.application.Application;
+import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.projectRoots.SdkModificator;
 import com.intellij.openapi.roots.OrderRootType;
@@ -23,6 +25,7 @@ import com.intellij.openapi.roots.RootProvider;
 import com.intellij.openapi.roots.RootProvider.RootSetChangedListener;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.vfs.VirtualFile;
+import jetbrains.mps.idea.core.project.stubs.JdkStubSolutionManager;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.project.IModule;
@@ -30,6 +33,7 @@ import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.smodel.MPSModuleOwner;
@@ -40,8 +44,10 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModule;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -70,15 +76,15 @@ public abstract class StubSolutionIdea extends StubSolution {
     return register(descriptor, moduleOwner, new LibraryStubSolution(descriptor, library));
   }
 
-  public static Solution newInstance(Sdk sdk, MPSModuleOwner moduleOwner) {
+  public static Solution newInstance(Sdk sdk, Sdk baseJdk, MPSModuleOwner moduleOwner) {
     SolutionDescriptor descriptor = createDescriptor(sdk.getName(), ((SdkModificator) sdk).getRoots(OrderRootType.CLASSES));
-    return register(descriptor, moduleOwner, new SdkStubSolution(descriptor, sdk));
+    return register(descriptor, moduleOwner, new SdkStubSolution(descriptor, sdk, baseJdk));
   }
 
   public static Solution newInstanceForJdk(Sdk sdk, MPSModuleOwner moduleOwner) {
     SolutionDescriptor descriptor = createDescriptor(sdk.getName(), ((SdkModificator) sdk).getRoots(OrderRootType.CLASSES));
 
-    // HACK giving the SDK the hard-coded module id
+    // giving the SDK the hard-coded module id
     ModuleId jdkId = ModuleId.regular(UUID.fromString("6354ebe7-c22a-4a0f-ac54-50b52ab9b065"));
     MPSModuleRepository repo = MPSModuleRepository.getInstance();
     SModule jdkMod = repo.getModule(jdkId);
@@ -92,7 +98,12 @@ public abstract class StubSolutionIdea extends StubSolution {
 
     descriptor.setId(jdkId);
 
-    return register(descriptor, moduleOwner, new SdkStubSolution(descriptor, sdk));
+    return register(descriptor, moduleOwner, new SdkStubSolution(descriptor, sdk, null));
+  }
+
+  public static Solution newInstanceForRoots(Sdk sdk, Sdk baseJdk, VirtualFile[] roots, MPSModuleOwner moduleOwner) {
+    SolutionDescriptor descriptor = createDescriptor(sdk.getName(), roots);
+    return register(descriptor, moduleOwner, new SdkStubSolution(descriptor, sdk, baseJdk));
   }
 
 
@@ -198,10 +209,13 @@ public abstract class StubSolutionIdea extends StubSolution {
   private static class SdkStubSolution extends StubSolutionIdea {
     @NotNull
     private final Sdk mySdk;
+    private final Sdk myBaseJdk;
 
-    protected SdkStubSolution(SolutionDescriptor descriptor, @NotNull Sdk sdk) {
+    protected SdkStubSolution(SolutionDescriptor descriptor, @NotNull Sdk sdk, Sdk baseJdk) {
       super(descriptor);
       mySdk = sdk;
+      myBaseJdk = baseJdk;
+      setUpdateBootstrapSolutions(false);
       attachRootsListener();
     }
 
@@ -211,8 +225,17 @@ public abstract class StubSolutionIdea extends StubSolution {
     }
 
     @Override
-    protected void updateBootstrapSolutionLibraries() {
-      // do nothing, to prevent spoiling our good jdk stub solution
+    public List<Dependency> getDependencies() {
+      if (myBaseJdk == null) return new ArrayList<Dependency>();
+
+      Solution baseJdkSolution = ApplicationManager.getApplication().getComponent(JdkStubSolutionManager.class).getSdkSolution(myBaseJdk);
+      Dependency dep = new Dependency();
+      dep.setModuleRef(baseJdkSolution.getModuleReference());
+      dep.setReexport(true);
+
+      List<Dependency> deps = new ArrayList<Dependency>(1);
+      deps.add(dep);
+      return deps;
     }
   }
 }
