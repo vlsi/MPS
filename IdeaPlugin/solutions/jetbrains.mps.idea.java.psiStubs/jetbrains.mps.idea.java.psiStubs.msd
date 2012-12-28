@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.idea.java.psiStubs" uuid="011cb7ad-c094-4976-bcda-b85e5c162448" compileInMPS="false" generatorOutputPath="${module}/source_gen">
   <models>
-    <modelRoot path="${module}/models" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="models" />
+    </modelRoot>
   </models>
   <sourcePath />
   <dependencies>
