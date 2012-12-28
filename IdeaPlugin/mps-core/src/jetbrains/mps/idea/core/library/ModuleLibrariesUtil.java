@@ -33,6 +33,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.StubSolution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.vfs.IFile;
@@ -83,13 +84,16 @@ public class ModuleLibrariesUtil {
     for (VirtualFile file : library.getFiles(ModuleXmlRootDetector.MPS_MODULE_XML)) {
       moduleXmls.add(VirtualFileUtils.toIFile(file));
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
+      ModelAccess.instance().runReadAction(new Runnable() {
       @Override
       public void run() {
-        Collection<Solution> allSolutions = ModuleRepositoryFacade.getInstance().getAllModules(Solution.class);
-        for (Solution solution : allSolutions) {
-          if (moduleXmls.contains(solution.getDescriptorFile())) {
-            modules.add(solution.getModuleReference());
+        Collection<IModule> allModules = new HashSet<IModule>();
+        allModules.addAll(ModuleRepositoryFacade.getInstance().getAllModules(Solution.class));
+        allModules.addAll(ModuleRepositoryFacade.getInstance().getAllModules(Language.class));
+
+        for (IModule module : allModules) {
+          if (moduleXmls.contains(module.getDescriptorFile())) {
+            modules.add(module.getModuleReference());
           }
         }
       }

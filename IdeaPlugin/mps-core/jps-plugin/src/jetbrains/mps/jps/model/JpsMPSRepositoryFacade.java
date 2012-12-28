@@ -214,17 +214,20 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
 
       jpsToMpsModules.put(mod, solutionIdea);
 
-      // let's handle module sdk
+      // let's handle module sdkLib
       JpsLibrary sdk = getModuleSdk(mod, context);
       if (sdk != null && !processedSdks.contains(sdk)) {
-        MPSCompilerUtil.debug(context, "SDK name" + sdk.getName());
-        JpsLibSolution sdkSolution = createLibSolution(sdk, true, context);
+        MPSCompilerUtil.debug(context, "SDK name" + sdk.getName() + " type: " + sdk.getType());
+
+        boolean replaceJdk = sdk.getType() instanceof JpsJavaSdkType;
+        JpsLibSolution sdkSolution = createLibSolution(sdk, replaceJdk, context);
         JpsLibSolution regSolution = MPSModuleRepository.getInstance().registerModule(sdkSolution, myProject);
         MPSCompilerUtil.debug(context, "SDK " + regSolution.getModuleReference().toString());
         if (sdkSolution == regSolution) {
           MPSCompilerUtil.debug(context, "SDK updating model set for " + sdk.getName());
           sdkSolution.updateModelsSet();
         }
+
         processedSdks.add(sdk);
       }
     }
@@ -304,12 +307,12 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
       JpsLibrary lib = ((JpsSdkDependency) dep).resolveSdk();
       sdks.add(lib);
     }
-    if (sdks.size() > 1 && MPSCompilerUtil.isExtraTracingMode()) {
-      ctx.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "more than 1 sdk for module " + module.getName()));
-    }
-
     if (sdks.isEmpty()) return null;
-    else return sdks.get(0);
+
+    if (sdks.size() > 1 && MPSCompilerUtil.isTracingMode()) {
+      ctx.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "hmm, more than 1 sdk for module " + module.getName() + ", taking first"));
+    }
+    return sdks.get(0);
   }
 
   public void dispose() {
