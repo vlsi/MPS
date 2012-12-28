@@ -40,6 +40,7 @@ import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.io.File;
@@ -89,13 +90,22 @@ public class JdkStubSolutionManager extends AbstractJavaStubSolutionManager impl
     return getSdkSolution(sdk);
   }
 
-  public Solution getSdkSolution(Sdk sdk) {
+  public Solution getSdkSolution(final Sdk sdk) {
+    ModelAccess.assertLegalRead();
+
     synchronized (LOCK) {
       if (sdk.equals(myJavaSdk)) return myJavaSdkSolution;
       if (sdk.equals(myIdeaSdk)) return myIdeaSdkSolution;
     }
     // otherwise normal logic: by foreign id
-    return (Solution) MPSModuleRepository.getInstance().getModule(ModuleId.foreign(sdk.getName()));
+    return ModelAccess.instance().runReadAction(new Computable<Solution>() {
+      @Override
+      public Solution compute() {
+        return (Solution) MPSModuleRepository.getInstance().getModule(ModuleId.foreign(sdk.getName()));
+      }
+    });
+
+
   }
 
   public void claimSdk(Module module) throws DifferentSdkException {
