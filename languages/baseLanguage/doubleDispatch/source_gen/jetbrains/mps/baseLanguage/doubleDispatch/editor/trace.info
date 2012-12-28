@@ -1,28 +1,29 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="2403002034744698623" modelId="r:fc8d3ef4-4153-4861-a13a-e9c4b97a4b06(jetbrains.mps.baseLanguage.doubleDispatch.editor)">
-    <nodeInfo nodeId="4448365440073934747" fileName="DispatchModifier_Editor.java" startLine="19" startPosition="69" endLine="19" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2403002034744698623" fileName="DispatchModifier_Editor.java" startLine="13" startPosition="79" endLine="14" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4448365440073934747" fileName="DispatchModifier_Editor.java" startLine="17" startPosition="88" endLine="18" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4448365440073934747" fileName="DispatchModifier_Editor.java" startLine="18" startPosition="67" endLine="19" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4448365440073934747" fileName="DispatchModifier_Editor.java" startLine="19" startPosition="69" endLine="20" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2403002034744698623" fileName="DispatchModifier_Editor.java" startLine="13" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <nodeInfo nodeId="4448365440073934747" fileName="DispatchModifier_Editor.java" startLine="17" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_dp7njx_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
-    <scopeInfo nodeId="4448365440073934747" fileName="DispatchModifier_Editor.java" startLine="19" startPosition="69" endLine="19" endPosition="69" />
-    <scopeInfo nodeId="2403002034744698623" fileName="DispatchModifier_Editor.java" startLine="13" startPosition="79" endLine="14" endPosition="62" />
-    <scopeInfo nodeId="2403002034744698623" fileName="DispatchModifier_Editor.java" startLine="13" startPosition="0" endLine="16" endPosition="0">
+    <nodeInfo nodeId="2403002034744698623" fileName="DispatchModifier_Editor.java" startLine="14" startPosition="79" endLine="15" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4448365440073934747" fileName="DispatchModifier_Editor.java" startLine="18" startPosition="88" endLine="19" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4448365440073934747" fileName="DispatchModifier_Editor.java" startLine="19" startPosition="67" endLine="20" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4448365440073934747" fileName="DispatchModifier_Editor.java" startLine="20" startPosition="69" endLine="21" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="4448365440073934747" fileName="DispatchModifier_Editor.java" startLine="20" startPosition="69" endLine="21" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4448365440073934747" fileName="DispatchModifier_Editor.java" startLine="21" startPosition="74" endLine="22" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2403002034744698623" fileName="DispatchModifier_Editor.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createEditorCell#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <nodeInfo nodeId="4448365440073934747" fileName="DispatchModifier_Editor.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="createComponent_dp7njx_a#(Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/nodeEditor/cells/EditorCell;" />
+    <scopeInfo nodeId="2403002034744698623" fileName="DispatchModifier_Editor.java" startLine="14" startPosition="79" endLine="15" endPosition="62" />
+    <scopeInfo nodeId="4448365440073934747" fileName="DispatchModifier_Editor.java" startLine="20" startPosition="69" endLine="21" endPosition="74" />
+    <scopeInfo nodeId="2403002034744698623" fileName="DispatchModifier_Editor.java" startLine="14" startPosition="0" endLine="17" endPosition="0">
       <varInfo nodeId="2403002034744698623" varName="editorContext" />
       <varInfo nodeId="2403002034744698623" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="4448365440073934747" fileName="DispatchModifier_Editor.java" startLine="17" startPosition="88" endLine="20" endPosition="22">
+    <scopeInfo nodeId="4448365440073934747" fileName="DispatchModifier_Editor.java" startLine="18" startPosition="88" endLine="22" endPosition="22">
       <varInfo nodeId="4448365440073934747" varName="editorCell" />
       <varInfo nodeId="4448365440073934747" varName="provider" />
     </scopeInfo>
-    <scopeInfo nodeId="4448365440073934747" fileName="DispatchModifier_Editor.java" startLine="17" startPosition="0" endLine="22" endPosition="0">
+    <scopeInfo nodeId="4448365440073934747" fileName="DispatchModifier_Editor.java" startLine="18" startPosition="0" endLine="24" endPosition="0">
       <varInfo nodeId="4448365440073934747" varName="editorContext" />
       <varInfo nodeId="4448365440073934747" varName="node" />
     </scopeInfo>
-    <unitInfo nodeId="2403002034744698623" fileName="DispatchModifier_Editor.java" startLine="12" startPosition="0" endLine="23" endPosition="0" unitName="jetbrains.mps.baseLanguage.doubleDispatch.editor.DispatchModifier_Editor" />
+    <unitInfo nodeId="2403002034744698623" fileName="DispatchModifier_Editor.java" startLine="13" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.baseLanguage.doubleDispatch.editor.DispatchModifier_Editor" />
   </root>
 </debugInfo>
 
