@@ -12,6 +12,9 @@
   <root nodeId="2569834391839970845" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
     <unitInfo nodeId="2569834391839970845" fileName="buildWorkbench.xml" startLine="1" startPosition="0" endLine="753" endPosition="10" unitName="jetbrains.mps.ide.build.buildWorkbench" />
   </root>
+  <root nodeId="359586707446245098" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
+    <unitInfo nodeId="359586707446245098" fileName="buildAdditionalPluginsDist.xml" startLine="1" startPosition="0" endLine="31" endPosition="10" unitName="jetbrains.mps.ide.build.buildAdditionalPluginsDist" />
+  </root>
   <root nodeId="4061567211001166715" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
     <unitInfo nodeId="4061567211001166715" fileName="buildDates.xml" startLine="1" startPosition="0" endLine="276" endPosition="10" unitName="jetbrains.mps.ide.build.buildDates" />
   </root>
@@ -31,7 +34,7 @@
     <unitInfo nodeId="4416206207494300367" fileName="buildDeprecatedBuildlanguage.xml" startLine="1" startPosition="0" endLine="429" endPosition="10" unitName="jetbrains.mps.ide.build.buildDeprecatedBuildlanguage" />
   </root>
   <root nodeId="4416206207494713671" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="4416206207494713671" fileName="buildAdditionalPlugins.xml" startLine="1" startPosition="0" endLine="44" endPosition="10" unitName="jetbrains.mps.ide.build.buildAdditionalPlugins" />
+    <unitInfo nodeId="4416206207494713671" fileName="buildAdditionalPlugins.xml" startLine="1" startPosition="0" endLine="45" endPosition="10" unitName="jetbrains.mps.ide.build.buildAdditionalPlugins" />
   </root>
   <root nodeId="5148601452480491524" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
     <unitInfo nodeId="5148601452480491524" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="507" endPosition="10" unitName="jetbrains.mps.ide.build.buildPlugin" />
