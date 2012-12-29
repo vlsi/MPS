@@ -799,11 +799,28 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
 
     public boolean canExecute(EditorContext context) {
-      return !isFirstCaretPosition() && isFirstPositionAllowed();
+      return !isFirstCaretPosition() && (isFirstPositionAllowed() || getNextLocalHome() != 0);
     }
 
     public void execute(EditorContext context) {
-      setCaretPosition(0, mySelect);
+      setCaretPosition(getNextLocalHome(), mySelect);
+    }
+
+    private int getNextLocalHome() {
+      int length = getText().length();
+      assert getCaretPosition() >= 0;
+      boolean charSelected = false;
+      for (int i = getCaretPosition(); i >= 1; --i) {
+        char c = getText().charAt(i - 1);
+        if (Character.isWhitespace(c) && charSelected) {
+          return i;
+        }
+
+        if (!Character.isWhitespace(c)) {
+          charSelected = true;
+        }
+      }
+      return 0;
     }
   }
 
@@ -815,11 +832,26 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
 
     public boolean canExecute(EditorContext context) {
-      return !isLastCaretPosition() && isLastPositionAllowed();
+      return !isLastCaretPosition() && (isLastPositionAllowed() || getNextLocalEnd() != getText().length());
     }
 
     public void execute(EditorContext context) {
-      setCaretPosition(getText().length(), mySelect);
+      setCaretPosition(getNextLocalEnd(), mySelect);
+    }
+
+    private int getNextLocalEnd() {
+      int length = getText().length();
+      assert getCaretPosition() <= length;
+      for (int i = getCaretPosition(); i != length; ++i) {
+        if (i < length - 1 && Character.isWhitespace(getText().charAt(i + 1))) {
+          continue;
+        }
+
+        if (Character.isWhitespace(getText().charAt(i))) {
+          return i + 1;
+        }
+      }
+      return length;
     }
   }
 
