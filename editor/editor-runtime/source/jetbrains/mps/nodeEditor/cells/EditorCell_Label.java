@@ -637,6 +637,87 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return pattern;
   }
 
+  public void selectWordOrAll() {
+    if (getTextLine().getStartTextSelectionPosition() != getTextLine().getEndTextSelectionPosition()) {
+      selectAll();
+      return;
+    }
+
+    String text = getText();
+    int position = getCaretPosition();
+    int length = getText().length();
+
+    if (length == 0) {
+      return;
+    }
+    if (position == 0) {
+      if (Character.isWhitespace(text.charAt(position))) {
+        selectAll();
+      } else {
+        select(0, getNextLocalEnd(false));
+      }
+    } else if (position == getText().length()) {
+      if (Character.isWhitespace(text.charAt(position - 1))) {
+        selectAll();
+      } else {
+        select(getPrevLocalHome(), position);
+      }
+    } else {
+      if (Character.isWhitespace(text.charAt(position))) {
+        if (Character.isWhitespace(text.charAt(position - 1))) {
+          selectAll();
+        } else {
+          select(getPrevLocalHome(), position);
+        }
+      } else if (Character.isWhitespace(text.charAt(position - 1))){
+        select(position, getNextLocalEnd(false));
+      } else {
+        select(getPrevLocalHome(), getNextLocalEnd(false));
+      }
+    }
+
+  }
+
+  private void select(int start, int end) {
+    assert start <= end;
+    setSelectionStart(start);
+    setSelectionEnd(end);
+  }
+
+  private int getNextLocalEnd(boolean withSpaces) {
+    int length = getText().length();
+    assert getCaretPosition() <= length;
+    for (int i = getCaretPosition(); i != length; ++i) {
+
+      if (Character.isWhitespace(getText().charAt(i))) {
+        if (withSpaces) {
+          if (i == length - 1 || !Character.isWhitespace(getText().charAt(i + 1))) {
+            return i + 1;
+          }
+        } else {
+          return i;
+        }
+      }
+    }
+    return length;
+  }
+
+  private int getPrevLocalHome() {
+    assert getCaretPosition() >= 0;
+    boolean charSelected = false;
+    for (int i = getCaretPosition(); i >= 1; --i) {
+      char c = getText().charAt(i - 1);
+      if (Character.isWhitespace(c) && charSelected) {
+        return i;
+      }
+
+      if (!Character.isWhitespace(c)) {
+        charSelected = true;
+      }
+    }
+    return 0;
+  }
+
   public void selectAll() {
     getTextLine().selectAll();
   }
@@ -799,29 +880,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
 
     public boolean canExecute(EditorContext context) {
-      return !isFirstCaretPosition() && (isFirstPositionAllowed() || getNextLocalHome() != 0);
+      return !isFirstCaretPosition() && (isFirstPositionAllowed() || getPrevLocalHome() != 0);
     }
 
     public void execute(EditorContext context) {
-      setCaretPosition(getNextLocalHome(), mySelect);
+      setCaretPosition(getPrevLocalHome(), mySelect);
     }
 
-    private int getNextLocalHome() {
-      int length = getText().length();
-      assert getCaretPosition() >= 0;
-      boolean charSelected = false;
-      for (int i = getCaretPosition(); i >= 1; --i) {
-        char c = getText().charAt(i - 1);
-        if (Character.isWhitespace(c) && charSelected) {
-          return i;
-        }
-
-        if (!Character.isWhitespace(c)) {
-          charSelected = true;
-        }
-      }
-      return 0;
-    }
   }
 
   private class LocalEnd extends EditorCellAction {
@@ -832,26 +897,11 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
 
     public boolean canExecute(EditorContext context) {
-      return !isLastCaretPosition() && (isLastPositionAllowed() || getNextLocalEnd() != getText().length());
+      return !isLastCaretPosition() && (isLastPositionAllowed() || getNextLocalEnd(true) != getText().length());
     }
 
     public void execute(EditorContext context) {
-      setCaretPosition(getNextLocalEnd(), mySelect);
-    }
-
-    private int getNextLocalEnd() {
-      int length = getText().length();
-      assert getCaretPosition() <= length;
-      for (int i = getCaretPosition(); i != length; ++i) {
-        if (i < length - 1 && Character.isWhitespace(getText().charAt(i + 1))) {
-          continue;
-        }
-
-        if (Character.isWhitespace(getText().charAt(i))) {
-          return i + 1;
-        }
-      }
-      return length;
+      setCaretPosition(getNextLocalEnd(true), mySelect);
     }
   }
 
