@@ -36,10 +36,11 @@
     <!--
     Currently it won't work since contributor is assigned to model root type
     and we don't have any. We create modelRoots right away without modelRoot descriptors
+    -->
     <component>
       <implementation-class>jetbrains.mps.idea.java.fastFind.JavaPsiStubsNavigationContributor</implementation-class>
     </component>
-    -->
+
   </application-components>
 
   <project-components>

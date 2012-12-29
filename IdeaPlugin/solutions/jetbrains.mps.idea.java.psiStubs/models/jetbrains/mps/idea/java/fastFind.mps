@@ -461,7 +461,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3335509261455861034">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mb1b.~FastGoToRegistry%dsetNavigationContributor(java%dlang%dString,org%djetbrains%dmps%dopenapi%dpersistence%dindexing%dNodeNavigationContributor)%cvoid" resolveInfo="setNavigationContributor" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3335509261455861035">
-                <property name="value" nameId="tpee.1070475926801" value="java_source_stubs" />
+                <property name="value" nameId="tpee.1070475926801" value="JavaPsiStubs" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ThisExpression" typeId="tpee.1070475354124" id="3335509261455861036" />
             </node>
@@ -486,7 +486,7 @@
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3335509261455861044">
               <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="mb1b.~FastGoToRegistry%dsetNavigationContributor(java%dlang%dString,org%djetbrains%dmps%dopenapi%dpersistence%dindexing%dNodeNavigationContributor)%cvoid" resolveInfo="setNavigationContributor" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3335509261455861045">
-                <property name="value" nameId="tpee.1070475926801" value="java_source_stubs" />
+                <property name="value" nameId="tpee.1070475926801" value="JavaPsiStubs" />
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="3335509261455861046" />
             </node>
