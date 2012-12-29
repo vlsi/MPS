@@ -3,7 +3,6 @@
   <property name="build.dir" location="build" />
   <property name="build.tmp" location="${build.dir}/tmp/buildAdditionalPlugins" />
   <property name="build.layout" location="${build.dir}/artifacts/buildAdditionalPlugins" />
-  <property name="plugin.version" value="1.0.SNAPSHOT" />
   <property name="artifacts.buildDates" location="${build.dir}/artifacts/buildDates" />
   <property name="artifacts.buildDeprecatedBuildlanguage" location="${build.dir}/artifacts/buildDeprecatedBuildlanguage" />
   <property file="${artifacts.buildDates}/build.properties" prefix="import.buildDates" />
@@ -11,11 +10,13 @@
   
   <target name="assemble" depends="classes, fetchDependencies">
     <mkdir dir="${build.layout}" />
-    <zip destfile="${build.layout}/${plugin.version}-additional-plugin.zip">
+    <copy todir="${build.layout}">
       <fileset dir="${artifacts.buildDates}/plugins" />
+    </copy>
+    <copy todir="${build.layout}">
       <fileset dir="${artifacts.buildDeprecatedBuildlanguage}/plugins" />
-    </zip>
-    <echo file="${build.layout}/build.properties">buildAdditionalPlugins.plugin.version=${plugin.version}${line.separator}buildCore.version=${buildCore.version}</echo>
+    </copy>
+    <echo file="${build.layout}/build.properties">buildCore.version=${buildCore.version}</echo>
   </target>
   
   <target name="buildDependents">

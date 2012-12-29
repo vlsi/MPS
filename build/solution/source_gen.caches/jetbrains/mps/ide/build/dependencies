@@ -2,6 +2,7 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.build.Info.plist" file="Info.plist.xml" />
   <dependency className="jetbrains.mps.ide.build.buildAdditionalPlugins" file="buildAdditionalPlugins.xml" />
+  <dependency className="jetbrains.mps.ide.build.buildAdditionalPluginsDist" file="buildAdditionalPluginsDist.xml" />
   <dependency className="jetbrains.mps.ide.build.buildBuild" file="buildBuild.xml" />
   <dependency className="jetbrains.mps.ide.build.buildBuildUI" file="buildBuildUI.xml" />
   <dependency className="jetbrains.mps.ide.build.buildConnectorPlugin" file="buildConnectorPlugin.xml" />
