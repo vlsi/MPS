@@ -868,7 +868,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
     quotedNode_22.setReference("target", SReference.create("target", quotedNode_22, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("1392391688313033226")));
     quotedNode_12.addChild("children", quotedNode_22);
     quotedNode_23 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.structure.BuildLayout_Import", null, null, GlobalScope.getInstance(), false);
-    quotedNode_23.setReference("target", SReference.create("target", quotedNode_23, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("614687982853436655")));
+    quotedNode_23.setReference("target", SReference.create("target", quotedNode_23, SModelReference.fromString("r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)"), SNodeId.fromString("2298500495078516847")));
     quotedNode_12.addChild("children", quotedNode_23);
     quotedNode_24 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMpsLayout_Plugin", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setReferenceTarget(quotedNode_24, "plugin", (SNode) parameter_4);

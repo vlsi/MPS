@@ -56,11 +56,11 @@
     <delete dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib" flatten="true">
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCore/mps-core/lib"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCore/lib"/>
     </copy>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/languages">
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCore/mps-core/languages"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCore/languages"/>
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCoreEx/languages"/>
     </copy>
     <mkdir dir="build/tmp/prepare/java/out/mps-test-ex"/>
@@ -96,7 +96,15 @@
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
+    <ant antfile="../build/buildCorePlugin.xml" inheritAll="false" useNativeBasedir="true">
+      <property name="build.dir" location="${build.home}"/>
+      <property name="idea_home" location="${ideaPath}"/>
+    </ant>
     <ant antfile="../build/buildBuild.xml" inheritAll="false" useNativeBasedir="true">
+      <property name="build.dir" location="${build.home}"/>
+      <property name="idea_home" location="${ideaPath}"/>
+    </ant>
+    <ant antfile="../build/buildJava.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
@@ -174,7 +182,7 @@
   <target name="install-plugin" depends="build">
     <property name="pluginPath" value="${ideaPlugins}"/>
     <copy todir="${pluginPath}">
-      <fileset dir="${build.home}/artifacts/buildPlugin/plugins"/>
+      <fileset dir="${build.home}/artifacts/buildPlugin"/>
     </copy>
   </target>
 
