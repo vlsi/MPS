@@ -1738,7 +1738,7 @@ __switch__:
       for (IModule module : SetSequence.fromSet(MapSequence.fromMap(missing).keySet())) {
         String moduleFqName = module.getModuleFqName();
         for (IModule dependent : Sequence.fromIterable(MapSequence.fromMap(missing).get(module))) {
-          String errorText = "Required module " + dependent.getModuleFqName() + " is absent. Used by module " + moduleFqName + ".";
+          String errorText = "Required module " + dependent.getModuleFqName() + " is absent in packaging script model " + _context.getOriginalInputModel() + ". Used by module " + moduleFqName + ".";
           System.err.println(errorText);
           if (moduleFqName.startsWith("jetbrains.mps")) {
             _context.showErrorMessage(null, errorText);

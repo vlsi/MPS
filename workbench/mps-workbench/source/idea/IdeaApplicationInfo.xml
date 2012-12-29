@@ -1,8 +1,9 @@
 <component>
   <version codename="MPS" major="3" minor="0" eap="true" update-channel="MPS30"/>
   <build number="__BUILD_NUMBER__" date="__BUILD_DATE__"/>
-  <!--TODO: Revert-->
-  <logo url="/jetbrains/mps/workbench/icons/splash_maya_numbers.png" textcolor="002387"/>
+  <!--TODO: replace splash_new_year.png with splash.png after new year -->
+  <!--TODO: add and adjust progress bar? -->
+  <logo url="/jetbrains/mps/workbench/icons/splash_new_year.png" textcolor="002387" /><!--progressColor="f49514" progressY="298"-->
   <about url="/jetbrains/mps/workbench/icons/mpsAbout.png"/>
   <icon size32="/MPS_32.png" size16="/MPS_16.png" size32opaque="/MPS_32.png"/>
   <dialogs-image url="/jetbrains/mps/workbench/icons/dialogImage.png"/>

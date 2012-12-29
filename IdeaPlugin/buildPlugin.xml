@@ -292,6 +292,8 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-backend.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-icons.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-ui.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
