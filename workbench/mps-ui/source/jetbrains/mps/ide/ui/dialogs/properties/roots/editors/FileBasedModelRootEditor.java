@@ -177,7 +177,7 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
     mousePopupGroup.add(myEditingActionsGroup);
     mousePopupGroup.addSeparator();
     mousePopupGroup.add(newFolderAction);
-    mousePopupGroup.add(new ChooseModelRootContentFilder());
+    mousePopupGroup.add(new ChooseModelRootContentFolder());
     myFileSystemTree.registerMouseListener(mousePopupGroup);
 
     createEditingActions();
@@ -255,12 +255,12 @@ public class FileBasedModelRootEditor implements ModelRootEntryEditor {
     }
   }
 
-  private class ChooseModelRootContentFilder extends AnAction implements DumbAware {
+  private class ChooseModelRootContentFolder extends AnAction implements DumbAware {
     private final FileChooserDescriptor myDescriptor;
 
-    public ChooseModelRootContentFilder() {
+    public ChooseModelRootContentFolder() {
       super("Change Root Folder","", Nodes.HomeFolder);
-      myDescriptor = new FileChooserDescriptor(false, true, true, false, true, true);
+      myDescriptor = new FileChooserDescriptor(false, true, true, false, true, false);
       myDescriptor.setTitle("Select new content entry for model root");
     }
 
