@@ -113,11 +113,11 @@ public class JavaStubNavigationContributor implements NodeNavigationContributor,
   }
 
   public void initComponent() {
-    FastGoToRegistry.getInstance().setNavigationContributor("java_source_stubs", this);
+    FastGoToRegistry.getInstance().setNavigationContributor(PersistenceRegistry.JAVA_CLASSES_ROOT, this);
   }
 
   public void disposeComponent() {
-    FastGoToRegistry.getInstance().setNavigationContributor("java_source_stubs", null);
+    FastGoToRegistry.getInstance().setNavigationContributor(PersistenceRegistry.JAVA_CLASSES_ROOT, null);
   }
 
   @NonNls
