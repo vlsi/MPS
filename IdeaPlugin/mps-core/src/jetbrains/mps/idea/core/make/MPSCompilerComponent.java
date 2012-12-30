@@ -46,8 +46,8 @@ public class MPSCompilerComponent implements ProjectComponent {
       @Override
       public boolean execute(CompileContext compileContext) {
         if (!CompilerWorkspaceConfiguration.getInstance(project).USE_COMPILE_SERVER) return true;
-        compileContext.addMessage(CompilerMessageCategory.ERROR, "Compiler setting \"Use exernal build\" should be switched off to generate MPS code", null, -1, -1);
-        return false;
+        compileContext.addMessage(CompilerMessageCategory.ERROR, "Compiler setting \"Use external build\" should be switched off to generate MPS code", null, -1, -1);
+        return true;
       }
     });
     compilerManager.addCompilableFileType(MPSFileTypeFactory.MODEL_FILE_TYPE);
