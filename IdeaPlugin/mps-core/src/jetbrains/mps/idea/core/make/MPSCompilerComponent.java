@@ -17,12 +17,10 @@
 package jetbrains.mps.idea.core.make;
 
 import com.intellij.compiler.CompilerWorkspaceConfiguration;
-import com.intellij.openapi.compiler.CompileContext;
-import com.intellij.openapi.compiler.CompileTask;
-import com.intellij.openapi.compiler.CompilerManager;
-import com.intellij.openapi.compiler.CompilerMessageCategory;
+import com.intellij.openapi.compiler.*;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.project.Project;
+import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import org.jetbrains.annotations.NotNull;
 
@@ -46,7 +44,10 @@ public class MPSCompilerComponent implements ProjectComponent {
       @Override
       public boolean execute(CompileContext compileContext) {
         if (!CompilerWorkspaceConfiguration.getInstance(project).USE_COMPILE_SERVER) return true;
-        compileContext.addMessage(CompilerMessageCategory.ERROR, "Compiler setting \"Use external build\" should be switched off to generate MPS code", null, -1, -1);
+        CompileScope compileScope = compileContext.getCompileScope();
+        if (compileScope.getFiles(MPSFileTypeFactory.MODEL_FILE_TYPE, true).length > 0)  {
+          compileContext.addMessage(CompilerMessageCategory.WARNING, "Compiler setting \"Use external build\" should be switched off to generate MPS code", null, -1, -1);
+        }
         return true;
       }
     });
