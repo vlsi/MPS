@@ -63,7 +63,7 @@ public class IdeaPluginDependenciesHelper {
       buildVisible();
     }
     if (SNodeOperations.isInstanceOf(module, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
-      MPSModulesClosure runtimeDependencies = new MPSModulesClosure(null, SNodeOperations.cast(module, "jetbrains.mps.build.mps.structure.BuildMps_Module")).closure().runtimeDependencies();
+      MPSModulesClosure runtimeDependencies = new MPSModulesClosure(null, SNodeOperations.cast(module, "jetbrains.mps.build.mps.structure.BuildMps_Module")).runtimeClosure();
       Iterable<SNode> seq = Sequence.fromIterable(runtimeDependencies.getModules()).concat(Sequence.fromIterable(runtimeDependencies.getLanguagesWithRuntime())).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(visible.contains(it));
@@ -78,10 +78,10 @@ public class IdeaPluginDependenciesHelper {
     for (SNode uns : getUnsatisfiedDependencies(module)) {
       if (includeModuleName) {
         sb.append("unsatisfied dependency: module " + SPropertyOperations.getString(module, "name") + " requires " + SPropertyOperations.getString(uns, "name"));
-        sb.append('\n');
       } else {
         sb.append("unsatisfied dependency on " + SPropertyOperations.getString(uns, "name"));
       }
+      sb.append('\n');
     }
   }
 }

@@ -17,6 +17,8 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.iterable.RecursiveIterator;
 import java.util.Iterator;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
@@ -193,12 +195,12 @@ public class MPSModulesClosure {
     };
   }
 
-  private void collectAllCompileTimeDependencies(SNode module, boolean reexportOnly) {
+  private void collectAllDependencies(SNode module, boolean reexportOnly, boolean compileTimeOnly) {
     // copy of ModuleDependenciesManager.collectAllCompileTimeDependencies (ignoring "core" language) 
     modules.add(module);
     for (SNode m : getDependencies(module, reexportOnly)) {
       if (!(modules.contains(m))) {
-        collectAllCompileTimeDependencies(m, true);
+        collectAllDependencies(m, compileTimeOnly, compileTimeOnly);
       }
     }
 
@@ -217,7 +219,7 @@ public class MPSModulesClosure {
         }
         SNode runtimeSolution = SNodeOperations.as(toOriginal(SLinkOperations.getTarget(SNodeOperations.cast(rdep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime"), "solution", false)), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
         if (!(modules.contains(runtimeSolution))) {
-          collectAllCompileTimeDependencies(runtimeSolution, true);
+          collectAllDependencies(runtimeSolution, compileTimeOnly, compileTimeOnly);
         }
 
       }
@@ -228,7 +230,13 @@ public class MPSModulesClosure {
   }
 
   public MPSModulesClosure closure() {
-    collectAllCompileTimeDependencies(initial, false);
+    collectAllDependencies(initial, false, true);
+    modules.remove(initial);
+    return this;
+  }
+
+  public MPSModulesClosure runtimeClosure() {
+    collectAllDependencies(initial, false, false);
     modules.remove(initial);
     return this;
   }
@@ -250,8 +258,25 @@ public class MPSModulesClosure {
         languagesWithRuntime.add(language);
       }
     }
-
     modules.remove(initial);
+    return this;
+  }
+
+  public MPSModulesClosure generationDependencies() {
+    List<SNode> required = new ArrayList<SNode>();
+    for (SNode language : getUsedLanguages(initial)) {
+      ListSequence.fromList(required).addElement(language);
+      for (SNode rdep : SLinkOperations.getTargets(language, "runtime", true)) {
+        if (!(SNodeOperations.isInstanceOf(rdep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime"))) {
+          continue;
+        }
+        SNode runtimeSolution = SNodeOperations.as(toOriginal(SLinkOperations.getTarget(SNodeOperations.cast(rdep, "jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime"), "solution", false)), "jetbrains.mps.build.mps.structure.BuildMps_Solution");
+        required.add(runtimeSolution);
+      }
+    }
+    for (SNode m : required) {
+      collectAllDependencies(m, false, false);
+    }
     return this;
   }
 

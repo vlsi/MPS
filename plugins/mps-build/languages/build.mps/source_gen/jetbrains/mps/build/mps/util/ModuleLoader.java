@@ -12,6 +12,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.build.behavior.BuildSourcePath_Behavior;
 import jetbrains.mps.build.util.Context;
@@ -39,7 +41,6 @@ import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.model.ModelRoot;
 import jetbrains.mps.smodel.LanguageID;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
-import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.structure.modules.Dependency;
 import java.util.LinkedHashMap;
@@ -75,13 +76,19 @@ public class ModuleLoader {
       SPropertyOperations.set(myModule, "name", myModuleDescriptor.getModuleReference().getModuleFqName());
 
       if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
-        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).removeWhere(new IWhereFilter<SNode>() {
+        Iterable<SNode> toRemove = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
             return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency");
           }
         });
+        Iterable<SNode> removed = Sequence.fromIterable(toRemove).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency"), "dependency", true);
+          }
+        });
 
-        importDependencies();
+        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).removeSequence(Sequence.fromIterable(toRemove));
+        importDependencies(removed);
         collectSources(true, true);
         if (SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language") && myModuleDescriptor instanceof LanguageDescriptor) {
           ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language"), "runtime", true)).clear();
@@ -123,7 +130,7 @@ public class ModuleLoader {
     if (myModuleDescriptor != null) {
       loadModule();
     }
-    SPropertyOperations.set(myModule, "compact", "" + false);
+    SPropertyOperations.set(myModule, "compact", "" + (false));
   }
 
   private void loadFile() {
@@ -628,8 +635,8 @@ public class ModuleLoader {
         }
       }
 
-      if (reexport && !(extractedModules.contains(SPropertyOperations.getString(resolved, "uuid")))) {
-        report("reexport dependency should be extracted into build script: " + SPropertyOperations.getString(resolved, "name"), myOriginalModule);
+      if (!(extractedModules.contains(SPropertyOperations.getString(resolved, "uuid")))) {
+        report("dependencies should be extracted into build script: " + SPropertyOperations.getString(resolved, "name"), myOriginalModule);
       }
       if (!(found)) {
         if (checkOnly) {
@@ -638,7 +645,7 @@ public class ModuleLoader {
 
         SNode res = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", null);
         SLinkOperations.setTarget(res, "module", resolved, false);
-        SPropertyOperations.set(res, "reexport", "" + reexport);
+        SPropertyOperations.set(res, "reexport", "" + (reexport));
         ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(res);
       }
     }
@@ -675,7 +682,7 @@ public class ModuleLoader {
 
   }
 
-  private void importDependencies() {
+  private void importDependencies(Iterable<SNode> previous) {
     SNode module = SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module");
 
     Iterable<Dependency> dependencies = myModuleDescriptor.getDependencies();
@@ -689,12 +696,9 @@ public class ModuleLoader {
       }));
     }
 
-    Set<SNode> seen = new HashSet<SNode>();
+    Map<SNode, SNode> seen = new HashMap<SNode, SNode>();
     for (Dependency dep : dependencies) {
       boolean reexport = dep.isReexport();
-      if (!(reexport)) {
-        continue;
-      }
 
       ModuleReference moduleRef = dep.getModuleRef();
       SNode resolved;
@@ -714,13 +718,18 @@ public class ModuleLoader {
         }
       }
 
-      if (!(seen.add(resolved))) {
+      SNode prev = seen.get(resolved);
+      if (prev != null) {
+        if (reexport) {
+          SPropertyOperations.set(prev, "reexport", "" + (true));
+        }
         continue;
       }
 
       SNode res = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", null);
+      seen.put(resolved, res);
       SLinkOperations.setTarget(res, "module", resolved, false);
-      SPropertyOperations.set(res, "reexport", "" + reexport);
+      SPropertyOperations.set(res, "reexport", "" + (reexport));
       SNode extr = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency", null);
       SLinkOperations.setTarget(extr, "dependency", res, true);
       ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(extr);
@@ -733,7 +742,7 @@ public class ModuleLoader {
       }
 
       String path = entry.getPath();
-      SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
+      final SNode p = ListSequence.fromList(convertPath(path, myOriginalModule)).first();
       if (p == null) {
         continue;
       }
@@ -741,6 +750,19 @@ public class ModuleLoader {
       if (path.endsWith(".jar")) {
         SNode jar = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar", null);
         SLinkOperations.setTarget(jar, "path", p, true);
+        SNode oldJarRef = Sequence.fromIterable(previous).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar") && eq_a6ewnz_a0a0a0a0a0a0a0c0g0j0r(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "path", true)), BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(p));
+          }
+        }).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SLinkOperations.getTarget(SNodeOperations.cast(it, "jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar"), "customLocation", true);
+          }
+        }).first();
+        if (oldJarRef != null) {
+          SLinkOperations.setTarget(jar, "customLocation", SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef", null), true);
+          SLinkOperations.setTarget(SLinkOperations.getTarget(jar, "customLocation", true), "jar", SLinkOperations.getTarget(oldJarRef, "jar", false), false);
+        }
         SNode extr = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency", null);
         SLinkOperations.setTarget(extr, "dependency", jar, true);
         ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(extr);
@@ -793,7 +815,7 @@ public class ModuleLoader {
 
     boolean doNotCompile = myModuleDescriptor instanceof SolutionDescriptor && (!(((SolutionDescriptor) myModuleDescriptor).getCompileInMPS()) || res.isEmpty());
     if (checkOnly && importOnly) {
-      SPropertyOperations.set(module, "doNotCompile", "" + doNotCompile);
+      SPropertyOperations.set(module, "doNotCompile", "" + (doNotCompile));
 
     } else if (SPropertyOperations.getBoolean(module, "doNotCompile") != doNotCompile) {
       report("compile in MPS flag doesn't match file content " + SPropertyOperations.getString(myModule, "name") + ", should be: " + doNotCompile, myOriginalModule);
@@ -852,6 +874,13 @@ public class ModuleLoader {
   }
 
   private static boolean eq_a6ewnz_a0a1a0a0a0a0b0g0r0q(Object a, Object b) {
+    return (a != null ?
+      a.equals(b) :
+      a == b
+    );
+  }
+
+  private static boolean eq_a6ewnz_a0a0a0a0a0a0a0c0g0j0r(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
