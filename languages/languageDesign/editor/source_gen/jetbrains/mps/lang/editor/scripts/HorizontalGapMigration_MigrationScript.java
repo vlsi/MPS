@@ -86,7 +86,7 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
 
       public void doUpdateInstanceNode(SNode node) {
         SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem", null);
-        SPropertyOperations.set(newNode, "flag", "" + true);
+        SPropertyOperations.set(newNode, "flag", "" + (true));
         SNodeOperations.replaceWithAnother(node, newNode);
       }
 
@@ -114,7 +114,7 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
 
       public void doUpdateInstanceNode(SNode node) {
         SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem", null);
-        SPropertyOperations.set(newNode, "flag", "" + true);
+        SPropertyOperations.set(newNode, "flag", "" + (true));
         SNodeOperations.replaceWithAnother(node, newNode);
       }
 
@@ -143,11 +143,11 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
         List<SNode> paddingRigth = IStyleContainer_Behavior.call_getClassItems_1219419901278(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.lang.editor.structure.IStyleContainer"), SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.editor.structure.PaddingRightStyleClassItem"));
         if (ListSequence.fromList(paddingRigth).isNotEmpty()) {
           SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PunctuationRightStyleClassItem", null);
-          SPropertyOperations.set(newNode, "flag", "" + true);
+          SPropertyOperations.set(newNode, "flag", "" + (true));
           SNodeOperations.insertNextSiblingChild(node, newNode);
         }
         SNode newNode2 = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem", null);
-        SPropertyOperations.set(newNode2, "flag", "" + true);
+        SPropertyOperations.set(newNode2, "flag", "" + (true));
         SNodeOperations.insertNextSiblingChild(node, newNode2);
       }
 
@@ -185,7 +185,7 @@ public class HorizontalGapMigration_MigrationScript extends BaseMigrationScript 
 
       public void doUpdateInstanceNode(SNode node) {
         SNode newNode = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.PunctuationLeftStyleClassItem", null);
-        SPropertyOperations.set(newNode, "flag", "" + true);
+        SPropertyOperations.set(newNode, "flag", "" + (true));
         ListSequence.fromList(SLinkOperations.getTargets(node, "styleItem", true)).addElement(newNode);
       }
 

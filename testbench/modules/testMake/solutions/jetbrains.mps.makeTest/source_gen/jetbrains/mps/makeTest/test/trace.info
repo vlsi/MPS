@@ -21,11 +21,11 @@
   </root>
   <root nodeId="1957199320903967715" modelId="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)">
     <nodeInfo nodeId="1957199320903967738" fileName="CheckDependencies_Test.java" startLine="20" startPosition="40" endLine="21" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903967741" fileName="CheckDependencies_Test.java" startLine="21" startPosition="28" endLine="22" endPosition="373" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1957199320903967741" fileName="CheckDependencies_Test.java" startLine="21" startPosition="28" endLine="22" endPosition="375" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1957199320903967732" fileName="CheckDependencies_Test.java" startLine="18" startPosition="75" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="change#(Ljetbrains/mps/smodel/SModel;)V" />
     <nodeInfo nodeId="1957199320903967725" fileName="CheckDependencies_Test.java" startLine="17" startPosition="51" endLine="24" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1957199320903967722" fileName="CheckDependencies_Test.java" startLine="15" startPosition="54" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_staticConst#()V" />
-    <scopeInfo nodeId="1957199320903967737" fileName="CheckDependencies_Test.java" startLine="20" startPosition="40" endLine="22" endPosition="373" />
+    <scopeInfo nodeId="1957199320903967737" fileName="CheckDependencies_Test.java" startLine="20" startPosition="40" endLine="22" endPosition="375" />
     <scopeInfo nodeId="1957199320903967732" fileName="CheckDependencies_Test.java" startLine="18" startPosition="75" endLine="24" endPosition="0">
       <varInfo nodeId="1957199320903967735" varName="model" />
     </scopeInfo>
@@ -165,9 +165,9 @@
   </root>
   <root nodeId="1957199320903968411" modelId="r:7aeccf7b-2a92-4693-88a5-f2859521757a(jetbrains.mps.makeTest.test)">
     <nodeInfo nodeId="1957199320903968434" fileName="NotMake_Test.java" startLine="21" startPosition="40" endLine="22" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968437" fileName="NotMake_Test.java" startLine="22" startPosition="28" endLine="23" endPosition="248" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1957199320903968437" fileName="NotMake_Test.java" startLine="22" startPosition="28" endLine="23" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1957199320903968468" fileName="NotMake_Test.java" startLine="32" startPosition="40" endLine="33" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968471" fileName="NotMake_Test.java" startLine="33" startPosition="28" endLine="34" endPosition="172" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1957199320903968471" fileName="NotMake_Test.java" startLine="33" startPosition="28" endLine="34" endPosition="174" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1957199320903968498" fileName="NotMake_Test.java" startLine="43" startPosition="40" endLine="44" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1957199320903968508" fileName="NotMake_Test.java" startLine="45" startPosition="111" endLine="46" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1957199320903968514" fileName="NotMake_Test.java" startLine="46" startPosition="130" endLine="47" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -175,7 +175,7 @@
     <nodeInfo nodeId="1957199320903968526" fileName="NotMake_Test.java" startLine="48" startPosition="57" endLine="49" endPosition="74" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1957199320903968532" fileName="NotMake_Test.java" startLine="49" startPosition="74" endLine="50" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1957199320903968556" fileName="NotMake_Test.java" startLine="60" startPosition="40" endLine="61" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1957199320903968559" fileName="NotMake_Test.java" startLine="61" startPosition="28" endLine="62" endPosition="248" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1957199320903968559" fileName="NotMake_Test.java" startLine="61" startPosition="28" endLine="62" endPosition="250" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1957199320903968428" fileName="NotMake_Test.java" startLine="19" startPosition="78" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="change#(Ljetbrains/mps/smodel/SModel;)V" />
     <nodeInfo nodeId="1957199320903968462" fileName="NotMake_Test.java" startLine="30" startPosition="62" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="change#(Ljetbrains/mps/smodel/SModel;)V" />
     <nodeInfo nodeId="1957199320903968550" fileName="NotMake_Test.java" startLine="58" startPosition="66" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="change#(Ljetbrains/mps/smodel/SModel;)V" />
@@ -189,9 +189,9 @@
     <nodeInfo nodeId="1957199320903968492" fileName="NotMake_Test.java" startLine="41" startPosition="72" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="change#(Ljetbrains/mps/smodel/SModel;)V" />
     <nodeInfo nodeId="1957199320903968485" fileName="NotMake_Test.java" startLine="40" startPosition="60" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1957199320903968482" fileName="NotMake_Test.java" startLine="38" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="test_recursiveInHierarchy#()V" />
-    <scopeInfo nodeId="1957199320903968433" fileName="NotMake_Test.java" startLine="21" startPosition="40" endLine="23" endPosition="248" />
-    <scopeInfo nodeId="1957199320903968467" fileName="NotMake_Test.java" startLine="32" startPosition="40" endLine="34" endPosition="172" />
-    <scopeInfo nodeId="1957199320903968555" fileName="NotMake_Test.java" startLine="60" startPosition="40" endLine="62" endPosition="248" />
+    <scopeInfo nodeId="1957199320903968433" fileName="NotMake_Test.java" startLine="21" startPosition="40" endLine="23" endPosition="250" />
+    <scopeInfo nodeId="1957199320903968467" fileName="NotMake_Test.java" startLine="32" startPosition="40" endLine="34" endPosition="174" />
+    <scopeInfo nodeId="1957199320903968555" fileName="NotMake_Test.java" startLine="60" startPosition="40" endLine="62" endPosition="250" />
     <scopeInfo nodeId="1957199320903968507" fileName="NotMake_Test.java" startLine="45" startPosition="111" endLine="50" endPosition="101">
       <varInfo nodeId="1957199320903968509" varName="method" />
       <varInfo nodeId="1957199320903968515" varName="voidType" />

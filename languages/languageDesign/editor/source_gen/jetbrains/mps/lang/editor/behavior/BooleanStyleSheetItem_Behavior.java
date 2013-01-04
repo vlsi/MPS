@@ -21,7 +21,7 @@ public class BooleanStyleSheetItem_Behavior {
     IModule module = thisNode.getModel().getModelDescriptor().getModule();
     if (module != null && ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "attributeConstant")).isNotEmpty()) {
       Object attribute = Expression_Behavior.call_eval_1213877519769(ListSequence.fromList(SLinkOperations.getConceptLinkTargets(thisNode, "attributeConstant")).first(), module);
-      SPropertyOperations.set(thisNode, "flag", "" + !(((StyleAttribute<Boolean>) attribute).combine(null, null)));
+      SPropertyOperations.set(thisNode, "flag", "" + (!(((StyleAttribute<Boolean>) attribute).combine(null, null))));
     }
   }
 

@@ -26,7 +26,7 @@ public class delete_ModuleSources_modelsOnly {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, "modelsOnly", "" + false);
+      SPropertyOperations.set(node, "modelsOnly", "" + (false));
     }
   }
 }

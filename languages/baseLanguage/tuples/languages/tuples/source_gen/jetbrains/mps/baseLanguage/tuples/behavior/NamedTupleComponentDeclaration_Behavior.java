@@ -7,6 +7,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class NamedTupleComponentDeclaration_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "final", "" + false);
+    SPropertyOperations.set(thisNode, "final", "" + (false));
   }
 }

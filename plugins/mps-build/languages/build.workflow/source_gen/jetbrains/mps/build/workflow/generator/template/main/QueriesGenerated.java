@@ -372,12 +372,12 @@ public class QueriesGenerated {
 
   public static void mapSrcMacro_post_mapper_6647099934207045025(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
     if (ListSequence.fromList(SLinkOperations.getTargets(_context.getOutputNode(), "content", true)).isEmpty()) {
-      SPropertyOperations.set(_context.getOutputNode(), "shortEmptyNotation", "" + true);
+      SPropertyOperations.set(_context.getOutputNode(), "shortEmptyNotation", "" + (true));
     }
   }
 
   public static void mapSrcMacro_post_mapper_8654221991637436574(final IOperationContext operationContext, final MapSrcMacroPostProcContext _context) {
-    SPropertyOperations.set(_context.getOutputNode(), "shortEmptyNotation", "" + true);
+    SPropertyOperations.set(_context.getOutputNode(), "shortEmptyNotation", "" + (true));
   }
 
   public static void mappingScript_CodeBlock_4755209551904406821(final IOperationContext operationContext, final MappingScriptContext _context) {

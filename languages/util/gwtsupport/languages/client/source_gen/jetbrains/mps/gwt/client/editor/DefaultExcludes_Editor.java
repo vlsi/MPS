@@ -95,7 +95,7 @@ public class DefaultExcludes_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SPropertyOperations.set(node, "value", "" + true);
+      SPropertyOperations.set(node, "value", "" + (true));
     }
 
     public String getMatchingText() {
@@ -108,7 +108,7 @@ public class DefaultExcludes_Editor extends DefaultNodeEditor {
     }
 
     public void handleAction(SNode node, SModel model, IScope scope, IOperationContext operationContext) {
-      SPropertyOperations.set(node, "value", "" + false);
+      SPropertyOperations.set(node, "value", "" + (false));
     }
 
     public String getMatchingText() {

@@ -32,8 +32,8 @@ public class typeof_ConjugateOperation_InferenceRule extends AbstractInferenceRu
         public void run() {
           if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType")) {
             SNode result = new typeof_ConjugateOperation_InferenceRule.QuotationClass_2f5qmh_a0a0a0a0a0().createNode(MathTypeUtil.getElementType(typeCheckingContext.getExpandedNode(t)), typeCheckingContext);
-            SPropertyOperations.set(result, "columns", "" + SPropertyOperations.getInteger(SNodeOperations.cast(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), "rows"));
-            SPropertyOperations.set(result, "rows", "" + SPropertyOperations.getInteger(SNodeOperations.cast(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), "columns"));
+            SPropertyOperations.set(result, "columns", "" + (SPropertyOperations.getInteger(SNodeOperations.cast(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), "rows")));
+            SPropertyOperations.set(result, "rows", "" + (SPropertyOperations.getInteger(SNodeOperations.cast(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.MatrixType"), "columns")));
             {
               SNode _nodeToCheck_1029348928467 = operation;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229309", 0, null);
@@ -41,8 +41,8 @@ public class typeof_ConjugateOperation_InferenceRule extends AbstractInferenceRu
             }
           } else if (SNodeOperations.isInstanceOf(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.VectorType")) {
             SNode result = new typeof_ConjugateOperation_InferenceRule.QuotationClass_2f5qmh_a0a0a0a0a0a().createNode(MathTypeUtil.getElementType(typeCheckingContext.getExpandedNode(t)), typeCheckingContext);
-            SPropertyOperations.set(result, "columns", "" + SPropertyOperations.getInteger(SNodeOperations.cast(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.VectorType"), "height"));
-            SPropertyOperations.set(result, "rows", "" + 1);
+            SPropertyOperations.set(result, "columns", "" + (SPropertyOperations.getInteger(SNodeOperations.cast(typeCheckingContext.getExpandedNode(t), "jetbrains.mps.baseLanguage.math.structure.VectorType"), "height")));
+            SPropertyOperations.set(result, "rows", "" + (1));
             {
               SNode _nodeToCheck_1029348928467 = operation;
               EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:47d0f24b-df34-4ea0-aa7e-7c2eb0f88f31(jetbrains.mps.baseLanguage.math.typesystem)", "7388416617632229345", 0, null);

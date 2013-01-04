@@ -61,7 +61,7 @@ public class EnumerationDataTypeDeclaration_Constraints extends BaseConstraintsD
       @Override
       public void setValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "hasNoDefaultMember";
-        SPropertyOperations.set(node, "hasNoDefaultMember", "" + (SPropertyOperations.getBoolean(propertyValue)));
+        SPropertyOperations.set(node, "hasNoDefaultMember", "" + ((SPropertyOperations.getBoolean(propertyValue))));
         if ((SPropertyOperations.getBoolean(propertyValue)) == true) {
           SLinkOperations.setTarget(node, "defaultMember", null, false);
         }

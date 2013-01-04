@@ -41,7 +41,7 @@ public class Layout_Behavior {
       SPropertyOperations.set(var, "antName", MapSequence.fromMap(vars).get(s));
       SLinkOperations.addChild(thisNode, "builtInVariable", var);
     }
-    SPropertyOperations.set(thisNode, "compile", "" + true);
+    SPropertyOperations.set(thisNode, "compile", "" + (true));
     SLinkOperations.setTarget(thisNode, "deployDirectory", new Layout_Behavior.QuotationClass_g9j203_a2a01a0().createNode(Layout_Behavior.getBasedirName_1226509010730()), true);
     SLinkOperations.setTarget(thisNode, "scriptsDirectory", new Layout_Behavior.QuotationClass_g9j203_a2a11a0().createNode(Layout_Behavior.getBasedirName_1226509010730()), true);
   }

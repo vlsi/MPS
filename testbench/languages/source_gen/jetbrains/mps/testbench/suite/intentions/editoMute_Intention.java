@@ -36,7 +36,7 @@ public class editoMute_Intention extends BaseIntention implements Intention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "muted", "" + !(SPropertyOperations.getBoolean(node, "muted")));
+    SPropertyOperations.set(node, "muted", "" + (!(SPropertyOperations.getBoolean(node, "muted"))));
     editorContext.getNodeEditorComponent().rebuildEditorContent();
   }
 

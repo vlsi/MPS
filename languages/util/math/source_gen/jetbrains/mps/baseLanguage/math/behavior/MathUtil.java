@@ -183,7 +183,7 @@ public class MathUtil {
         return new MathUtil.QuotationClass_30uc9x_a0a0d2a3().createNode();
       default:
         SNode c = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
-        SPropertyOperations.set(c, "value", "" + SPropertyOperations.getInteger(mc, "precision"));
+        SPropertyOperations.set(c, "value", "" + (SPropertyOperations.getInteger(mc, "precision")));
         return new MathUtil.QuotationClass_30uc9x_a0c0c0d().createNode(c, MathUtil.getRoundingMode(SPropertyOperations.getInteger_def(mc, "roundingMode", "4")));
     }
   }

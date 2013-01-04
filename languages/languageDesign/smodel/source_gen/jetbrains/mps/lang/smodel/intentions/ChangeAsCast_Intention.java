@@ -37,7 +37,7 @@ public class ChangeAsCast_Intention extends BaseIntention implements Intention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "asCast", "" + !(SPropertyOperations.getBoolean(node, "asCast")));
+    SPropertyOperations.set(node, "asCast", "" + (!(SPropertyOperations.getBoolean(node, "asCast"))));
   }
 
   public String getLocationString() {

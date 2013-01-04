@@ -26,7 +26,7 @@ public class NTCD_delete_final {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, "final", "" + false);
+      SPropertyOperations.set(node, "final", "" + (false));
     }
   }
 }

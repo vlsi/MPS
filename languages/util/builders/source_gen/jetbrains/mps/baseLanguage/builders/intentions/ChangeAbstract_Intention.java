@@ -36,7 +36,7 @@ public class ChangeAbstract_Intention extends BaseIntention implements Intention
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "isAbstract", "" + !(SPropertyOperations.getBoolean(node, "isAbstract")));
+    SPropertyOperations.set(node, "isAbstract", "" + (!(SPropertyOperations.getBoolean(node, "isAbstract"))));
   }
 
   public String getLocationString() {

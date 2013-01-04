@@ -26,7 +26,7 @@ public class TargetDeclaration_makeRequired {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, "optional", "" + false);
+      SPropertyOperations.set(node, "optional", "" + (false));
     }
   }
 }

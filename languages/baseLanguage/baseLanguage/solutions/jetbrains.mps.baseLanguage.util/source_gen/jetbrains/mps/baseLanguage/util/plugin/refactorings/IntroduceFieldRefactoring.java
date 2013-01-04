@@ -34,7 +34,7 @@ public class IntroduceFieldRefactoring extends IntroduceVariableRefactoring {
       newDeclaration = new IntroduceFieldRefactoring.QuotationClass_baxqxe_a0a0a0c0b().createNode(myVisibilityLevel.getNode(), SNodeOperations.copyNode(this.getExpressionType()), this.getName());
     }
     if (myIsFinal) {
-      SPropertyOperations.set(newDeclaration, "isFinal", "" + true);
+      SPropertyOperations.set(newDeclaration, "isFinal", "" + (true));
     }
     SNode classConcept = SNodeOperations.getAncestor(this.getExpression(), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
     ListSequence.fromList(SLinkOperations.getTargets(classConcept, "field", true)).addElement(newDeclaration);

@@ -44,8 +44,8 @@ public class UsedefaultLayout_Intention extends BaseIntention implements Intenti
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "forceMultiLine", "" + false);
-    SPropertyOperations.set(node, "forceOneLine", "" + false);
+    SPropertyOperations.set(node, "forceMultiLine", "" + (false));
+    SPropertyOperations.set(node, "forceOneLine", "" + (false));
   }
 
   public String getLocationString() {

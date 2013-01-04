@@ -15,7 +15,7 @@ public class ExpectedOption_Behavior {
   private static Class[] PARAMETERS_8853708281362145858 = {SNode.class};
 
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "defaultOption", "" + -1);
+    SPropertyOperations.set(thisNode, "defaultOption", "" + (-1));
   }
 
   public static String virtual_classifierName_4609636120081351397(SNode thisNode) {

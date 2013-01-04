@@ -63,7 +63,7 @@ public class FindInstancesDialog extends BaseDialog {
         SNode statementList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
         SNode expressionStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
         SNode defaultCondition = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
-        SPropertyOperations.set(defaultCondition, "value", "" + true);
+        SPropertyOperations.set(defaultCondition, "value", "" + (true));
         SLinkOperations.setTarget(expressionStatement, "expression", defaultCondition, true);
         ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(expressionStatement);
         SLinkOperations.setTarget(SLinkOperations.getTarget(FindInstancesDialog.this.myNode, "condition", true), "body", statementList, true);

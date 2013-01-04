@@ -26,7 +26,7 @@ public class DeleteSynchronizedInBaseMethod {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, "isSynchronized", "" + false);
+      SPropertyOperations.set(node, "isSynchronized", "" + (false));
     }
   }
 }

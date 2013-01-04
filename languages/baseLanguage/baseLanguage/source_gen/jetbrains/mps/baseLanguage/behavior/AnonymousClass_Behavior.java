@@ -34,7 +34,7 @@ public class AnonymousClass_Behavior {
   private static Logger LOG = Logger.getLogger(AnonymousClass_Behavior.class);
 
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "nonStatic", "" + true);
+    SPropertyOperations.set(thisNode, "nonStatic", "" + (true));
   }
 
   public static String virtual_getUnitName_5067982036267369911(SNode thisNode) {

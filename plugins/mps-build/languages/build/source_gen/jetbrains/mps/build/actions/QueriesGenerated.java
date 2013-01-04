@@ -751,7 +751,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaDependencyModule");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "reexport", "" + true);
+          SPropertyOperations.set(_context.getSourceNode(), "reexport", "" + (true));
           return _context.getSourceNode();
         }
 
@@ -773,7 +773,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaDependencyLibrary");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "reexport", "" + true);
+          SPropertyOperations.set(_context.getSourceNode(), "reexport", "" + (true));
           return _context.getSourceNode();
         }
 
@@ -795,7 +795,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJar");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "reexport", "" + true);
+          SPropertyOperations.set(_context.getSourceNode(), "reexport", "" + (true));
           return _context.getSourceNode();
         }
 
@@ -817,7 +817,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaDependencyExternalJarInFolder");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "reexport", "" + true);
+          SPropertyOperations.set(_context.getSourceNode(), "reexport", "" + (true));
           return _context.getSourceNode();
         }
 
@@ -839,7 +839,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildSource_JavaDependencyJar");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "reexport", "" + true);
+          SPropertyOperations.set(_context.getSourceNode(), "reexport", "" + (true));
           return _context.getSourceNode();
         }
 

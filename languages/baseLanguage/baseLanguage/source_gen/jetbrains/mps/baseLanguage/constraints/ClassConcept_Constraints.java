@@ -83,7 +83,7 @@ public class ClassConcept_Constraints extends BaseConstraintsDescriptor {
       @Override
       public void setValue(SNode node, String propertyValue, IScope scope) {
         String propertyName = "isStatic";
-        SPropertyOperations.set(node, "nonStatic", "" + !((SPropertyOperations.getBoolean(propertyValue))));
+        SPropertyOperations.set(node, "nonStatic", "" + (!((SPropertyOperations.getBoolean(propertyValue)))));
       }
     });
     return properties;

@@ -41,7 +41,7 @@ public class Properties {
   }
 
   public void booleanProperty2(SNode node) {
-    SPropertyOperations.set(node, "value", "" + true);
+    SPropertyOperations.set(node, "value", "" + (true));
     SPropertyOperations.set(node, "value", null);
   }
 
@@ -54,7 +54,7 @@ public class Properties {
   }
 
   public void integerProperty2(SNode node) {
-    SPropertyOperations.set(node, "value", "" + 10);
+    SPropertyOperations.set(node, "value", "" + (10));
     SPropertyOperations.set(node, "value", null);
     SPropertyOperations.set(node, "value", "" + (SPropertyOperations.getInteger(node, "value") + 10));
     SPropertyOperations.set(node, "value", "" + (SPropertyOperations.getInteger(node, "value") - 10));
@@ -91,8 +91,8 @@ public class Properties {
   }
 
   public void enumProperty_integer2(SNode cellModel) {
-    SPropertyOperations.set(cellModel, "attractsFocus", "" + 1);
-    SPropertyOperations.set(cellModel, "attractsFocus", "" + SPropertyOperations.getInteger_def(cellModel, "attractsFocus", "0"));
+    SPropertyOperations.set(cellModel, "attractsFocus", "" + (1));
+    SPropertyOperations.set(cellModel, "attractsFocus", "" + (SPropertyOperations.getInteger_def(cellModel, "attractsFocus", "0")));
     SPropertyOperations.set(cellModel, "attractsFocus", "" + (SPropertyOperations.getInteger_def(cellModel, "attractsFocus", "0")));
     SPropertyOperations.set(cellModel, "attractsFocus", "" + (10));
   }

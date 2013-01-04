@@ -42,7 +42,7 @@ public class QueriesGenerated {
     for (SNode conceptDeclaration : allConcepts) {
       SNode concept = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.ConceptDeclaration", null);
       SPropertyOperations.set(concept, "name", SPropertyOperations.getString(conceptDeclaration, "name"));
-      SPropertyOperations.set(concept, "rootable", "" + IMPSLiteConcept_Behavior.call_isRootable_1239714833738(conceptDeclaration));
+      SPropertyOperations.set(concept, "rootable", "" + (IMPSLiteConcept_Behavior.call_isRootable_1239714833738(conceptDeclaration)));
       if (IMPSLiteConcept_Behavior.call_isAbstract_1239715026284(conceptDeclaration)) {
         SNode booleanConceptProperty = SLinkOperations.addNewChild(concept, "conceptProperty", "jetbrains.mps.lang.structure.structure.BooleanConceptProperty");
         SNode conceptProperty_Abstract = SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept"), "conceptPropertyDeclaration", true)).where(new IWhereFilter<SNode>() {

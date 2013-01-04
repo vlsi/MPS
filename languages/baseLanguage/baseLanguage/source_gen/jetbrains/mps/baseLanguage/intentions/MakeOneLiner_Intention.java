@@ -45,8 +45,8 @@ public class MakeOneLiner_Intention extends BaseIntention implements Intention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "forceMultiLine", "" + false);
-    SPropertyOperations.set(node, "forceOneLine", "" + true);
+    SPropertyOperations.set(node, "forceMultiLine", "" + (false));
+    SPropertyOperations.set(node, "forceOneLine", "" + (true));
   }
 
   public String getLocationString() {

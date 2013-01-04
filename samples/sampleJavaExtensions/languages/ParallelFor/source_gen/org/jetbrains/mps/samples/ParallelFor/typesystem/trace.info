@@ -893,13 +893,13 @@
   </root>
   <root nodeId="7793246093816040820" modelId="r:4c36f4b4-7816-4067-aa6e-a49c547265ed(org.jetbrains.mps.samples.ParallelFor.typesystem)">
     <nodeInfo nodeId="7793246093816040825" fileName="MakeDeclarationFinal_QuickFix.java" startLine="15" startPosition="44" endLine="16" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7793246093816040828" fileName="MakeDeclarationFinal_QuickFix.java" startLine="19" startPosition="35" endLine="20" endPosition="193" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7793246093816040828" fileName="MakeDeclarationFinal_QuickFix.java" startLine="19" startPosition="35" endLine="20" endPosition="195" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7793246093816040820" fileName="MakeDeclarationFinal_QuickFix.java" startLine="11" startPosition="69" endLine="13" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MakeDeclarationFinal_QuickFix#()V" />
     <nodeInfo nodeId="7793246093816040820" fileName="MakeDeclarationFinal_QuickFix.java" startLine="14" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="7793246093816040820" fileName="MakeDeclarationFinal_QuickFix.java" startLine="18" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;)V" />
     <scopeInfo nodeId="7793246093816040820" fileName="MakeDeclarationFinal_QuickFix.java" startLine="12" startPosition="42" endLine="12" endPosition="42" />
     <scopeInfo nodeId="7793246093816040824" fileName="MakeDeclarationFinal_QuickFix.java" startLine="15" startPosition="44" endLine="16" endPosition="36" />
-    <scopeInfo nodeId="7793246093816040822" fileName="MakeDeclarationFinal_QuickFix.java" startLine="19" startPosition="35" endLine="20" endPosition="193" />
+    <scopeInfo nodeId="7793246093816040822" fileName="MakeDeclarationFinal_QuickFix.java" startLine="19" startPosition="35" endLine="20" endPosition="195" />
     <scopeInfo nodeId="7793246093816040820" fileName="MakeDeclarationFinal_QuickFix.java" startLine="11" startPosition="69" endLine="13" endPosition="3" />
     <scopeInfo nodeId="7793246093816040820" fileName="MakeDeclarationFinal_QuickFix.java" startLine="14" startPosition="0" endLine="18" endPosition="0">
       <varInfo nodeId="7793246093816040820" varName="node" />

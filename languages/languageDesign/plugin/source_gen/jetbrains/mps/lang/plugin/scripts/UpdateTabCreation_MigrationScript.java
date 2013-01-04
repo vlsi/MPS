@@ -31,7 +31,7 @@ public class UpdateTabCreation_MigrationScript extends BaseMigrationScript {
 
       public void doUpdateInstanceNode(SNode node) {
         SNode cb = SLinkOperations.setNewChild(node, "createTabBlock", "jetbrains.mps.lang.plugin.structure.CreateTabBlock");
-        SPropertyOperations.set(cb, "commandOnCreate", "" + SPropertyOperations.getBoolean(node, "commandOnCreate"));
+        SPropertyOperations.set(cb, "commandOnCreate", "" + (SPropertyOperations.getBoolean(node, "commandOnCreate")));
         SLinkOperations.setTarget(cb, "conceptsBlock", SLinkOperations.getTarget(node, "conceptsBlock", true), true);
         SLinkOperations.setTarget(cb, "createBlock", SLinkOperations.getTarget(node, "createBlock", true), true);
       }
