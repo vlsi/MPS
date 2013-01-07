@@ -43,9 +43,6 @@
   <target name="assemble" depends="classes, fetchDependencies">
     <mkdir dir="${build.layout}/mps-core" />
     <copy todir="${build.layout}/mps-core">
-      <fileset dir="${artifacts.buildCoreEx}" />
-    </copy>
-    <copy todir="${build.layout}/mps-core">
       <fileset dir="${artifacts.buildCore}" />
     </copy>
     <mkdir dir="${build.layout}/mps-core/lib" />
@@ -89,6 +86,10 @@
       <fileset dir="${build.tmp}/default/mps-plugin.jar" />
     </jar>
     <echo file="${build.layout}/mps-core/build.number">version=${buildCore.version}${line.separator}plugin.version=${plugin.version}</echo>
+    <mkdir dir="${build.layout}/mps-core-ex" />
+    <copy todir="${build.layout}/mps-core-ex">
+      <fileset dir="${artifacts.buildCoreEx}/mps-core-ex" />
+    </copy>
     <mkdir dir="${build.layout}/mps-vcs" />
     <mkdir dir="${build.layout}/mps-vcs/lib" />
     <jar destfile="${build.layout}/mps-vcs/lib/mps-vcs-core.jar">
