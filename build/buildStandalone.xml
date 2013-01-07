@@ -6,7 +6,6 @@
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
   <property name="artifacts.buildCoreEx" location="${build.dir}/artifacts/buildCoreEx" />
-  <property name="artifacts.buildCorePlugin" location="${build.dir}/artifacts/buildCorePlugin" />
   <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
   <property name="artifacts.IDEA" location="${mps_home}" />
   <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
@@ -30,9 +29,6 @@
     <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildCore}/languages" />
     </copy>
-    <copy todir="${build.layout}/languages">
-      <fileset dir="${artifacts.buildCoreEx}/languages" />
-    </copy>
     <mkdir dir="${build.layout}/lib" />
     <copy todir="${build.layout}/lib">
       <fileset dir="${artifacts.IDEA}/lib">
@@ -52,8 +48,13 @@
     </copy>
     <mkdir dir="${build.layout}/plugins" />
     <mkdir dir="${build.layout}/plugins/mps-core" />
-    <copy todir="${build.layout}/plugins/mps-core">
-      <fileset dir="${artifacts.buildCorePlugin}/mps-core" />
+    <mkdir dir="${build.layout}/plugins/mps-core/META-INF" />
+    <copy todir="${build.layout}/plugins/mps-core/META-INF">
+      <fileset file="${mps_home}/plugins/mps-core/META-INF/plugin.xml" />
+    </copy>
+    <mkdir dir="${build.layout}/plugins/mps-core-ex" />
+    <copy todir="${build.layout}/plugins/mps-core-ex">
+      <fileset dir="${artifacts.buildCoreEx}/mps-core-ex" />
     </copy>
     <mkdir dir="${build.layout}/plugins/cvsIntegration" />
     <copy todir="${build.layout}/plugins/cvsIntegration">
@@ -77,7 +78,6 @@
   <target name="buildDependents">
     <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildCorePlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   

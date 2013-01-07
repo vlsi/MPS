@@ -7,11 +7,9 @@
     <unitInfo nodeId="1545517825663017278" fileName="buildVcs.xml" startLine="1" startPosition="0" endLine="229" endPosition="10" unitName="jetbrains.mps.ide.build.buildVcs" />
   </root>
   <root nodeId="2075442863766408895" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="2075442863766408895" fileName="buildExperimental.xml" startLine="1" startPosition="0" endLine="1997" endPosition="10" unitName="jetbrains.mps.ide.build.buildExperimental" />
+    <unitInfo nodeId="2075442863766408895" fileName="buildExperimental.xml" startLine="1" startPosition="0" endLine="1998" endPosition="10" unitName="jetbrains.mps.ide.build.buildExperimental" />
   </root>
-  <root nodeId="2298500495078476527" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="2298500495078476527" fileName="buildCorePlugin.xml" startLine="1" startPosition="0" endLine="108" endPosition="10" unitName="jetbrains.mps.ide.build.buildCorePlugin" />
-  </root>
+  <root nodeId="2298500495078476527" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
   <root nodeId="2569834391839970845" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
     <unitInfo nodeId="2569834391839970845" fileName="buildWorkbench.xml" startLine="1" startPosition="0" endLine="753" endPosition="10" unitName="jetbrains.mps.ide.build.buildWorkbench" />
   </root>
@@ -19,7 +17,7 @@
     <unitInfo nodeId="359586707446245098" fileName="buildAdditionalPluginsDist.xml" startLine="1" startPosition="0" endLine="34" endPosition="10" unitName="jetbrains.mps.ide.build.buildAdditionalPluginsDist" />
   </root>
   <root nodeId="4061567211001166715" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="4061567211001166715" fileName="buildDates.xml" startLine="1" startPosition="0" endLine="275" endPosition="10" unitName="jetbrains.mps.ide.build.buildDates" />
+    <unitInfo nodeId="4061567211001166715" fileName="buildDates.xml" startLine="1" startPosition="0" endLine="273" endPosition="10" unitName="jetbrains.mps.ide.build.buildDates" />
   </root>
   <root nodeId="4197214709894135186" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
     <unitInfo nodeId="4197214709894135186" fileName="buildObsolete.xml" startLine="1" startPosition="0" endLine="755" endPosition="10" unitName="jetbrains.mps.ide.build.buildObsolete" />
@@ -31,14 +29,14 @@
     <unitInfo nodeId="4301118715654497533" fileName="buildDistribution.xml" startLine="1" startPosition="0" endLine="186" endPosition="10" unitName="jetbrains.mps.ide.build.buildDistribution" />
   </root>
   <root nodeId="4301118715654819483" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="4301118715654819483" fileName="buildTroveCollections.xml" startLine="1" startPosition="0" endLine="200" endPosition="10" unitName="jetbrains.mps.ide.build.buildTroveCollections" />
+    <unitInfo nodeId="4301118715654819483" fileName="buildTroveCollections.xml" startLine="1" startPosition="0" endLine="198" endPosition="10" unitName="jetbrains.mps.ide.build.buildTroveCollections" />
   </root>
   <root nodeId="4416206207494300367" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="4416206207494300367" fileName="buildDeprecatedBuildlanguage.xml" startLine="1" startPosition="0" endLine="424" endPosition="10" unitName="jetbrains.mps.ide.build.buildDeprecatedBuildlanguage" />
+    <unitInfo nodeId="4416206207494300367" fileName="buildDeprecatedBuildlanguage.xml" startLine="1" startPosition="0" endLine="425" endPosition="10" unitName="jetbrains.mps.ide.build.buildDeprecatedBuildlanguage" />
   </root>
   <root nodeId="4416206207494713671" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)" />
   <root nodeId="5148601452480491524" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="5148601452480491524" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="502" endPosition="10" unitName="jetbrains.mps.ide.build.buildPlugin" />
+    <unitInfo nodeId="5148601452480491524" fileName="buildPlugin.xml" startLine="1" startPosition="0" endLine="496" endPosition="10" unitName="jetbrains.mps.ide.build.buildPlugin" />
   </root>
   <root nodeId="5548512857136492214" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
     <unitInfo nodeId="5548512857136492214" fileName="buildDevKit.xml" startLine="1" startPosition="0" endLine="1005" endPosition="10" unitName="jetbrains.mps.ide.build.buildDevKit" />
@@ -50,16 +48,16 @@
     <unitInfo nodeId="6164334420696839314" fileName="buildDebuggerPlugin.xml" startLine="1" startPosition="0" endLine="765" endPosition="10" unitName="jetbrains.mps.ide.build.buildDebuggerPlugin" />
   </root>
   <root nodeId="6265574260762011003" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="6265574260762011003" fileName="buildMakePlugin.xml" startLine="1" startPosition="0" endLine="104" endPosition="10" unitName="jetbrains.mps.ide.build.buildMakePlugin" />
+    <unitInfo nodeId="6265574260762011003" fileName="buildMakePlugin.xml" startLine="1" startPosition="0" endLine="102" endPosition="10" unitName="jetbrains.mps.ide.build.buildMakePlugin" />
   </root>
   <root nodeId="6361939271669846483" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
     <unitInfo nodeId="6361939271669846483" fileName="buildExecutionPlugin.xml" startLine="1" startPosition="0" endLine="925" endPosition="10" unitName="jetbrains.mps.ide.build.buildExecutionPlugin" />
   </root>
   <root nodeId="6391307088354381121" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="6391307088354381121" fileName="buildPlugins.xml" startLine="1" startPosition="0" endLine="416" endPosition="10" unitName="jetbrains.mps.ide.build.buildPlugins" />
+    <unitInfo nodeId="6391307088354381121" fileName="buildPlugins.xml" startLine="1" startPosition="0" endLine="414" endPosition="10" unitName="jetbrains.mps.ide.build.buildPlugins" />
   </root>
   <root nodeId="6503539749405386437" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="6503539749405386437" fileName="buildCoreEx.xml" startLine="1" startPosition="0" endLine="1315" endPosition="10" unitName="jetbrains.mps.ide.build.buildCoreEx" />
+    <unitInfo nodeId="6503539749405386437" fileName="buildCoreEx.xml" startLine="1" startPosition="0" endLine="1336" endPosition="10" unitName="jetbrains.mps.ide.build.buildCoreEx" />
   </root>
   <root nodeId="6977615362525216882" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
     <unitInfo nodeId="6977615362525216882" fileName="buildPluginTests.xml" startLine="1" startPosition="0" endLine="148" endPosition="10" unitName="jetbrains.mps.ide.build.buildPluginTests" />
@@ -1680,13 +1678,13 @@
     <unitInfo nodeId="7401958389406848608" fileName="buildJava.xml" startLine="1" startPosition="0" endLine="81" endPosition="10" unitName="jetbrains.mps.ide.build.buildJava" />
   </root>
   <root nodeId="7926701909975931624" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="7926701909975931624" fileName="buildCore.xml" startLine="1" startPosition="0" endLine="4775" endPosition="10" unitName="jetbrains.mps.ide.build.buildCore" />
+    <unitInfo nodeId="7926701909975931624" fileName="buildCore.xml" startLine="1" startPosition="0" endLine="4838" endPosition="10" unitName="jetbrains.mps.ide.build.buildCore" />
   </root>
   <root nodeId="8227093612176368028" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="8227093612176368028" fileName="buildBuildUI.xml" startLine="1" startPosition="0" endLine="232" endPosition="10" unitName="jetbrains.mps.ide.build.buildBuildUI" />
+    <unitInfo nodeId="8227093612176368028" fileName="buildBuildUI.xml" startLine="1" startPosition="0" endLine="228" endPosition="10" unitName="jetbrains.mps.ide.build.buildBuildUI" />
   </root>
   <root nodeId="8524659923334108558" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="8524659923334108558" fileName="buildBuild.xml" startLine="1" startPosition="0" endLine="436" endPosition="10" unitName="jetbrains.mps.ide.build.buildBuild" />
+    <unitInfo nodeId="8524659923334108558" fileName="buildBuild.xml" startLine="1" startPosition="0" endLine="434" endPosition="10" unitName="jetbrains.mps.ide.build.buildBuild" />
   </root>
   <root nodeId="8658995123701267517" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
     <unitInfo nodeId="8658995123701267517" fileName="buildPluginDist.xml" startLine="1" startPosition="0" endLine="32" endPosition="10" unitName="jetbrains.mps.ide.build.buildPluginDist" />

@@ -11,7 +11,6 @@
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
   <property name="artifacts.buildCoreEx" location="${build.dir}/artifacts/buildCoreEx" />
-  <property name="artifacts.buildCorePlugin" location="${build.dir}/artifacts/buildCorePlugin" />
   <property name="artifacts.buildJava" location="${build.dir}/artifacts/buildJava" />
   <property name="artifacts.buildBuild" location="${build.dir}/artifacts/buildBuild" />
   <property name="artifacts.IDEA" location="${idea_home}" />
@@ -48,10 +47,6 @@
     </copy>
     <copy todir="${build.layout}/mps-core">
       <fileset dir="${artifacts.buildCore}" />
-    </copy>
-    <mkdir dir="${build.layout}/mps-core/languages" />
-    <copy todir="${build.layout}/mps-core/languages">
-      <fileset dir="${artifacts.buildCorePlugin}/mps-core/languages" />
     </copy>
     <mkdir dir="${build.layout}/mps-core/lib" />
     <mkdir dir="${build.layout}/mps-core/lib/jps" />
@@ -182,7 +177,6 @@
   <target name="buildDependents">
     <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildCorePlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildJava.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildBuild.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
