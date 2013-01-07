@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.make.resources.IPropertiesPersistence;
 import jetbrains.mps.make.facet.ITargetEx2;
 import jetbrains.mps.make.resources.IResource;
-import jetbrains.mps.smodel.resources.IDeltaResource;
+import jetbrains.mps.smodel.resources.ITResource;
 import jetbrains.mps.make.script.IJob;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IJobMonitor;
@@ -19,19 +19,16 @@ import jetbrains.mps.make.resources.IPropertiesAccessor;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.internal.make.runtime.util.DeltaReconciler;
-import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.make.delta.IDelta;
-import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.make.delta.IInternalDelta;
 import jetbrains.mps.internal.make.runtime.util.FilesDelta;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import java.util.Map;
 import jetbrains.mps.make.script.IPropertiesPool;
-import jetbrains.mps.internal.collections.runtime.MapSequence;
 
 public class ReportFiles_Facet extends IFacet.Stub {
   private List<ITarget> targets = ListSequence.fromList(new ArrayList<ITarget>());
@@ -66,7 +63,7 @@ public class ReportFiles_Facet extends IFacet.Stub {
   }
 
   public static class Target_report implements ITargetEx2 {
-    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{IDeltaResource.class};
+    private static Class<? extends IResource>[] EXPECTED_INPUT = (Class<? extends IResource>[]) new Class[]{ITResource.class};
     private static Class<? extends IResource>[] EXPECTED_OUTPUT = (Class<? extends IResource>[]) new Class[]{};
     private ITarget.Name name = new ITarget.Name("jetbrains.mps.build.reduced.ReportFiles.report");
 
@@ -81,27 +78,32 @@ public class ReportFiles_Facet extends IFacet.Stub {
             case 0:
               ModelAccess.instance().requireWrite(new Runnable() {
                 public void run() {
-                  new DeltaReconciler(Sequence.fromIterable(input).translate(new ITranslator2<IResource, IDelta>() {
-                    public Iterable<IDelta> translate(IResource res) {
-                      return ((IDeltaResource) res).delta();
-                    }
-                  }).where(new IWhereFilter<IDelta>() {
-                    public boolean accept(IDelta d) {
-                      return !(d instanceof IInternalDelta);
-                    }
-                  })).visitAll(new FilesDelta.Visitor() {
-                    @Override
-                    public boolean acceptWritten(IFile file) {
-                      ListSequence.fromList(pa.global().properties(Target_report.this.getName(), ReportFiles_Facet.Target_report.Parameters.class).writtenFiles()).addElement(file.getPath());
-                      return true;
-                    }
+                  for (Object resource : input) {
+                    ITResource itr = (ITResource) resource;
+                    final SModelDescriptor md = itr.modelDescriptor();
+                    new DeltaReconciler(itr.delta()).visitAll(new FilesDelta.Visitor() {
+                      @Override
+                      public boolean acceptWritten(IFile file) {
+                        ListSequence.fromList(pa.global().properties(Target_report.this.getName(), ReportFiles_Facet.Target_report.Parameters.class).writtenFiles()).addElement(file.getPath());
+                        MapSequence.fromMap(pa.global().properties(Target_report.this.getName(), ReportFiles_Facet.Target_report.Parameters.class).sourceModels()).put(file.getPath(), md);
+                        return true;
+                      }
 
-                    @Override
-                    public boolean acceptDeleted(IFile file) {
-                      ListSequence.fromList(pa.global().properties(Target_report.this.getName(), ReportFiles_Facet.Target_report.Parameters.class).deletedFiles()).addElement(file.getPath());
-                      return true;
-                    }
-                  });
+                      @Override
+                      public boolean acceptKept(IFile file) {
+                        ListSequence.fromList(pa.global().properties(Target_report.this.getName(), ReportFiles_Facet.Target_report.Parameters.class).keptFiles()).addElement(file.getPath());
+                        MapSequence.fromMap(pa.global().properties(Target_report.this.getName(), ReportFiles_Facet.Target_report.Parameters.class).sourceModels()).put(file.getPath(), md);
+                        return true;
+                      }
+
+                      @Override
+                      public boolean acceptDeleted(IFile file) {
+                        ListSequence.fromList(pa.global().properties(Target_report.this.getName(), ReportFiles_Facet.Target_report.Parameters.class).deletedFiles()).addElement(file.getPath());
+                        MapSequence.fromMap(pa.global().properties(Target_report.this.getName(), ReportFiles_Facet.Target_report.Parameters.class).sourceModels()).put(file.getPath(), md);
+                        return true;
+                      }
+                    });
+                  }
                 }
               });
               _output_bk4wqp_a0a = Sequence.fromIterable(_output_bk4wqp_a0a).concat(Sequence.fromIterable(input));
@@ -163,7 +165,7 @@ public class ReportFiles_Facet extends IFacet.Stub {
     public <T> T createParameters(Class<T> cls, T copyFrom) {
       T t = createParameters(cls);
       if (t != null) {
-        ((Tuples._2) t).assign((Tuples._2) copyFrom);
+        ((Tuples._4) t).assign((Tuples._4) copyFrom);
       }
       return t;
     }
@@ -172,13 +174,13 @@ public class ReportFiles_Facet extends IFacet.Stub {
       return 100;
     }
 
-    public static class Parameters extends MultiTuple._2<List<String>, List<String>> {
+    public static class Parameters extends MultiTuple._4<List<String>, List<String>, List<String>, Map<String, SModelDescriptor>> {
       public Parameters() {
         super();
       }
 
-      public Parameters(List<String> writtenFiles, List<String> deletedFiles) {
-        super(writtenFiles, deletedFiles);
+      public Parameters(List<String> writtenFiles, List<String> deletedFiles, List<String> keptFiles, Map<String, SModelDescriptor> sourceModels) {
+        super(writtenFiles, deletedFiles, keptFiles, sourceModels);
       }
 
       public List<String> writtenFiles(List<String> value) {
@@ -189,6 +191,14 @@ public class ReportFiles_Facet extends IFacet.Stub {
         return super._1(value);
       }
 
+      public List<String> keptFiles(List<String> value) {
+        return super._2(value);
+      }
+
+      public Map<String, SModelDescriptor> sourceModels(Map<String, SModelDescriptor> value) {
+        return super._3(value);
+      }
+
       public List<String> writtenFiles() {
         return super._0();
       }
@@ -197,8 +207,16 @@ public class ReportFiles_Facet extends IFacet.Stub {
         return super._1();
       }
 
+      public List<String> keptFiles() {
+        return super._2();
+      }
+
+      public Map<String, SModelDescriptor> sourceModels() {
+        return super._3();
+      }
+
       @SuppressWarnings(value = "unchecked")
-      public ReportFiles_Facet.Target_report.Parameters assignFrom(Tuples._2<List<String>, List<String>> from) {
+      public ReportFiles_Facet.Target_report.Parameters assignFrom(Tuples._4<List<String>, List<String>, List<String>, Map<String, SModelDescriptor>> from) {
         return (ReportFiles_Facet.Target_report.Parameters) super.assign(from);
       }
     }
@@ -215,6 +233,8 @@ public class ReportFiles_Facet extends IFacet.Stub {
           ReportFiles_Facet.Target_report.Parameters props = properties.properties(name, ReportFiles_Facet.Target_report.Parameters.class);
           MapSequence.fromMap(store).put("jetbrains.mps.build.reduced.ReportFiles.report.writtenFiles", null);
           MapSequence.fromMap(store).put("jetbrains.mps.build.reduced.ReportFiles.report.deletedFiles", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.build.reduced.ReportFiles.report.keptFiles", null);
+          MapSequence.fromMap(store).put("jetbrains.mps.build.reduced.ReportFiles.report.sourceModels", null);
         }
       }
     }
@@ -229,6 +249,12 @@ public class ReportFiles_Facet extends IFacet.Stub {
           }
           if (MapSequence.fromMap(store).containsKey("jetbrains.mps.build.reduced.ReportFiles.report.deletedFiles")) {
             props.deletedFiles(null);
+          }
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.build.reduced.ReportFiles.report.keptFiles")) {
+            props.keptFiles(null);
+          }
+          if (MapSequence.fromMap(store).containsKey("jetbrains.mps.build.reduced.ReportFiles.report.sourceModels")) {
+            props.sourceModels(null);
           }
         }
       } catch (RuntimeException re) {

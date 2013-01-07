@@ -59,6 +59,7 @@
   <dependency className="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet" file="ReportFiles_Facet.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
     <classNode dependClassName="java.lang.Runnable" />
     <classNode dependClassName="java.lang.RuntimeException" />
@@ -70,15 +71,11 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.tuples.runtime.Tuples" />
     <classNode dependClassName="jetbrains.mps.build.reduced.plugin.ReportFiles_Facet.Target_report.Parameters" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ITranslator2" />
-    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IWhereFilter" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.DeltaReconciler" />
     <classNode dependClassName="jetbrains.mps.internal.make.runtime.util.FilesDelta" />
-    <classNode dependClassName="jetbrains.mps.make.delta.IDelta" />
-    <classNode dependClassName="jetbrains.mps.make.delta.IInternalDelta" />
     <classNode dependClassName="jetbrains.mps.make.facet.IFacet" />
     <classNode dependClassName="jetbrains.mps.make.facet.ITarget" />
     <classNode dependClassName="jetbrains.mps.make.resources.IPropertiesAccessor" />
@@ -90,10 +87,11 @@
     <classNode dependClassName="jetbrains.mps.make.script.IResult" />
     <classNode dependClassName="jetbrains.mps.progress.ProgressMonitor" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.resources.IDeltaResource" />
+    <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
+    <classNode dependClassName="jetbrains.mps.smodel.resources.ITResource" />
     <classNode dependClassName="jetbrains.mps.vfs.IFile" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
-    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._2" />
+    <classNode extendsClassName="jetbrains.mps.baseLanguage.tuples.runtime._4" />
     <classNode extendsClassName="jetbrains.mps.make.facet.ITargetEx2" />
     <classNode extendsClassName="jetbrains.mps.make.facet.Stub" />
     <classNode extendsClassName="jetbrains.mps.make.resources.IPropertiesPersistence" />
