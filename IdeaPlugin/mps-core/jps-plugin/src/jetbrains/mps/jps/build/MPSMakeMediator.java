@@ -16,6 +16,7 @@
 
 package jetbrains.mps.jps.build;
 
+import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.generator.DefaultModifiableGenerationSettings;
 import jetbrains.mps.generator.GenerationFacade;
 import jetbrains.mps.generator.GenerationSettingsProvider;
@@ -27,6 +28,8 @@ import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy;
+import jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy.Log;
 import jetbrains.mps.internal.make.runtime.util.DirUtil;
 import jetbrains.mps.jps.model.JpsMPSExtensionService;
 import jetbrains.mps.jps.model.JpsMPSModuleExtension;
@@ -35,15 +38,22 @@ import jetbrains.mps.jps.project.JpsSolutionIdea;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.resources.IResource;
+import jetbrains.mps.make.script.IConfigMonitor.Stub;
+import jetbrains.mps.make.script.IFeedback;
+import jetbrains.mps.make.script.IJobMonitor;
+import jetbrains.mps.make.script.IProgress;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
+import jetbrains.mps.messages.Message;
+import jetbrains.mps.messages.MessageKind;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.smodel.resources.ModelsToResources;
 import jetbrains.mps.tool.builder.MpsWorker;
@@ -55,17 +65,22 @@ import jetbrains.mps.tool.builder.paths.ModuleOutputPaths;
 import jetbrains.mps.tool.builder.paths.OutputPathRedirects;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.jps.builders.storage.BuildDataPaths;
+import org.jetbrains.jps.incremental.FSOperations;
 import org.jetbrains.jps.incremental.ModuleBuildTarget;
+import org.jetbrains.jps.incremental.ModuleLevelBuilder.OutputConsumer;
 import org.jetbrains.jps.incremental.messages.BuildMessage;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
+import org.jetbrains.jps.incremental.messages.FileGeneratedEvent;
 import org.jetbrains.jps.incremental.storage.BuildDataManager;
 import org.jetbrains.jps.model.module.JpsModule;
 import org.jetbrains.mps.openapi.model.SModel;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -85,17 +100,20 @@ public class MPSMakeMediator {
   private final JpsMPSProject myProject;
   private Map<SModel, ModuleBuildTarget> myToMake;
   private final MPSCompilerContext myContext;
+  private MPSIdeaRefreshComponent myRefreshComponent;
+  private OutputConsumer myOutputConsumer;
 
-  protected final List<String> myErrors = new ArrayList<String>();
   private MyMessageHandler myMessageHandler = new MyMessageHandler();
 
   private MyRedirects myRedirects;
   private MyForeignRootPaths myForeignRootPaths;
 
-  public MPSMakeMediator(JpsMPSProject project, Map<SModel, ModuleBuildTarget> toMake, MPSCompilerContext context) {
+  public MPSMakeMediator(JpsMPSProject project, Map<SModel, ModuleBuildTarget> toMake, MPSCompilerContext context, MPSIdeaRefreshComponent refreshComponent, OutputConsumer outputConsumer) {
     myProject = project;
     myToMake = toMake;
     myContext = context;
+    myRefreshComponent = refreshComponent;
+    myOutputConsumer = outputConsumer;
   }
 
   public boolean build() {
@@ -153,29 +171,83 @@ public class MPSMakeMediator {
       }
     };
 
-    ReducedMakeFacetConfiguration makeFacetConfiguration = new ReducedMakeFacetConfiguration(myRedirects);
+    ReducedMakeFacetConfiguration makeFacetConfiguration = new ReducedMakeFacetConfiguration(
+      myRedirects, !myContext.getCompileContext().isMake(), new Stub(), new IJobMonitor.Stub());
     IScriptController scriptCtl = makeFacetConfiguration.configureFacets();
+    boolean success;
 
     try {
       res = bms.make(ms, resources, null, scriptCtl);
-      if (!(res.get().isSucessful())) {
-        myContext.getCompileContext().processMessage(
-          new CompilerMessage(MPSMakeConstants.BUILDER_ID,
-            Kind.ERROR,
-            "Make was not successful"));
-      }
-      final List<String> writtenFiles = makeFacetConfiguration.getWrittenFiles();
-      final List<String> deletedFiles = makeFacetConfiguration.getDeletedFiles();
+      success = res.get().isSucessful();
+
+      success = processFiles(success, makeFacetConfiguration);
+
       final Map<String, String> fileHashes = makeFacetConfiguration.getFileHashes();
       // TODO do something with these
 
     } catch (InterruptedException e) {
-      myErrors.add(e.toString());
+      reportError(e);
+      success = false;
     } catch (ExecutionException e) {
-      myErrors.add(e.toString());
+      reportError(e);
+      success = false;
     }
 
-    return myErrors.isEmpty();
+    return success;
+  }
+
+  private boolean processFiles(boolean success, ReducedMakeFacetConfiguration makeFacetConfiguration) {
+    for (String writtenFile : makeFacetConfiguration.getWrittenFiles()) {
+      myContext.getCompileContext().processMessage(new FileGeneratedEvent());
+      try {
+        FSOperations.markDirty(myContext.getCompileContext(), new File(writtenFile));
+
+        myRefreshComponent.refresh(writtenFile);
+
+        SModelDescriptor source = makeFacetConfiguration.getSource(writtenFile);
+        if (source != null && source.getSource() instanceof FileDataSource) {
+            myOutputConsumer.registerOutputFile(
+              myToMake.get(source),
+              new File(writtenFile),
+              Collections.singletonList(((FileDataSource)source.getSource()).getLocation()));
+        }
+      } catch (IOException e) {
+        reportError(e);
+        success = false;
+      }
+    }
+    for (String keptFile : makeFacetConfiguration.getKeptFiles()) {
+      SModelDescriptor source = makeFacetConfiguration.getSource(keptFile);
+      if (source != null && source.getSource() instanceof FileDataSource) {
+        try {
+          myOutputConsumer.registerOutputFile(
+            myToMake.get(source),
+            new File(keptFile),
+            Collections.singletonList(((FileDataSource)source.getSource()).getLocation()));
+        }
+        catch (IOException e) {
+          reportError(e);
+          success = false;
+        }
+      }
+    }
+
+    for (String deletedFile : makeFacetConfiguration.getDeletedFiles()) {
+      try {
+        FSOperations.markDeleted(myContext.getCompileContext(), new File(deletedFile));
+      } catch (IOException e) {
+        reportError(e);
+        success = false;
+      }
+    }
+    myRefreshComponent.removed(makeFacetConfiguration.getDeletedFiles());
+    return success;
+  }
+
+  private void reportError(Throwable e) {
+    myContext.getCompileContext().processMessage(
+      new CompilerMessage(MPSMakeConstants.BUILDER_ID,
+        Kind.ERROR, e.getMessage()));
   }
 
   private File getOutputRoot (JpsModule module, final BuildDataManager buildDataManager) {
