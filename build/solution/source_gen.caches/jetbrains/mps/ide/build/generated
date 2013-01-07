@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-d5k3wpfmdmu0rff0fkabo1igdi10v21">
+<dependencies version="2" modelHash="dve7g77ncvasppxye0awmwkyppk0qej">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" hash="5evnomp6a0d9l6p0ghnuwh03hk54y5k" />
   <dep model="r:54537613-52b5-40a8-b223-e87f0960b04f(jetbrains.mps.build.mps.generator.template.main@generator)" hash="-knk8ncknhnsmbmjgf4t9man9splm22" />
@@ -222,7 +222,7 @@
   <source id="716066598061903449" name="installer" hash="665ri9lijze1ehchmjfu6qs91jv4sx4">
     <file name="installer.nsi" />
   </source>
-  <source id="4197214709894135186" name="buildObsolete" hash="4u69gbbou0r50ex5euf4rrmr6uik6z4">
+  <source id="4197214709894135186" name="buildObsolete" hash="3oyy7myjae9jqefobrg2ye5dagrmu84">
     <dep root="2569834391839970845" />
     <dep root="4301118715654819483" />
     <dep root="4416206207494300367" />
@@ -292,7 +292,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildAdditionalPlugins.xml" />
   </source>
-  <source id="4416206207494300367" name="buildDeprecatedBuildlanguage" hash="-emss02iwha82imyg7qtoqurwkozcu6s">
+  <source id="4416206207494300367" name="buildDeprecatedBuildlanguage" hash="a3bwn65vi82zgaadr9zurw51idaq2vo">
     <dep root="6503539749405386437" />
     <dep root="7181125477683264500" />
     <dep root="7926701909975931624" />

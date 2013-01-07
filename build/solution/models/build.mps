@@ -15793,6 +15793,9 @@
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4416206207494713693">
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="4416206207494753788">
             <link role="target" roleId="3ior.5610619299013057365" targetNodeId="4416206207494300591" resolveInfo="mps-build-deprecated" />
+            <node role="selectors" roleId="3ior.6789562173791401562" type="3ior.BuildFileExcludeSelector" typeId="3ior.5248329904288051111" id="516253629989336570">
+              <property name="pattern" nameId="3ior.5248329904288051112" value="**/plugin.xml" />
+            </node>
           </node>
           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Folder" typeId="3ior.7389400916848036984" id="4416206207494713697">
             <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Jar" typeId="3ior.7389400916848050074" id="4197214709894135574">
@@ -17147,7 +17150,7 @@
       <property name="id" nameId="kdzh.6592112598314498927" value="jetbrains.mps.build.deprecated" />
       <node role="name" roleId="kdzh.6592112598314499021" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4416206207494300371">
         <node role="parts" roleId="3ior.4903714810883783243" type="3ior.BuildTextStringPart" typeId="3ior.4903714810883702019" id="4416206207494300372">
-          <property name="text" nameId="3ior.4903714810883755350" value="MPS Depreacted XML and Build Languages" />
+          <property name="text" nameId="3ior.4903714810883755350" value="MPS Deprecated XML and Build Languages" />
         </node>
       </node>
       <node role="containerName" roleId="kdzh.6592112598314855574" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="4416206207494300373">
