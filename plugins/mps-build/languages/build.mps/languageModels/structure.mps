@@ -222,6 +222,11 @@
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_IdeaPluginVendor" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6503355885715333289">
+      <property name="name" nameId="tpck.1169194664001" value="BuildMpsAspect" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Aspect" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.3542413272732750877" resolveInfo="BuildAspect" />
+    </node>
   </roots>
   <root id="5253498789149381388">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1500819558096356884">
@@ -917,6 +922,16 @@
       <property name="role" nameId="tpce.1071599776563" value="icon16" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="3ior.7389400916848073790" resolveInfo="BuildSourcePath" />
+    </node>
+  </root>
+  <root id="6503355885715333289">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6503355885715353788">
+      <property name="name" nameId="tpck.1169194664001" value="bootstrap" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="6503355885715398680">
+      <property name="value" nameId="tpce.1105725733873" value="mps settings" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
 </model>

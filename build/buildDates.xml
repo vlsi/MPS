@@ -21,7 +21,16 @@
     </fileset>
   </path>
   
+  <path id="path.mps.ant.path">
+    <pathelement location="${mps_home}/lib/mps-backend.jar" />
+    <pathelement location="${mps_home}/lib/jdom.jar" />
+    <pathelement location="${mps_home}/lib/log4j.jar" />
+    <pathelement location="${mps_home}/lib/mps-core.jar" />
+  </path>
+  
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
+  
+  <taskdef name="mps.generate" classname="jetbrains.mps.build.ant.generation.GenerateTask" classpathref="path.mps.ant.path" />
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/plugins" />
@@ -83,7 +92,6 @@
           <module ref="1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)" />
           <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
-          <module ref="2ebbb458-8ebb-481e-a5d7-9e27903323d4(jetbrains.mps.baseLanguage.dates.runtime)" />
           <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="2af156ab-65c1-4a62-bd0d-ea734f71eab6(jetbrains.mps.dataFlow.runtime)" />
@@ -110,7 +118,6 @@
         <dependencies>
           <module ref="6354ebe7-c22a-4a0f-ac54-50b52ab9b065(JDK)" />
           <module ref="4c6a28d1-2c60-478d-b36e-db9b3cbb21fb(closures.runtime)" />
-          <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
         </dependencies>
         <library jar="joda-time-2.1.jar" />
         <sources jar="jetbrains.mps.baseLanguage.dates.runtime-src.jar" descriptor="jetbrains.mps.baseLanguage.dates.runtime.msd" />
@@ -170,8 +177,8 @@
       </src>
       <classpath>
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates.runtime" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
@@ -214,8 +221,8 @@
       </src>
       <classpath>
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates.runtime" />
+        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor-api.jar" />
@@ -254,12 +261,24 @@
       </src>
       <classpath>
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
-        <fileset file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
         <fileset file="${mps_home}/languages/util/dates/runtime/lib/joda-time-2.1.jar" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.baseLanguage.dates.runtime">
       <fileset dir="${mps_home}/languages/util/dates/runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
+  </target>
+  
+  <target name="generate">
+    <echo message="generating" />
+    <mps.generate parallelMode="true" fork="true">
+      <chunk>
+        <module file="${mps_home}/languages/util/dates/runtime/jetbrains.mps.baseLanguage.dates.runtime.msd" />
+        <module file="${mps_home}/languages/util/dates/internal/internal.mpl" />
+      </chunk>
+      <chunk>
+        <module file="${mps_home}/languages/util/dates/dates.mpl" />
+      </chunk>
+    </mps.generate>
   </target>
 </project>

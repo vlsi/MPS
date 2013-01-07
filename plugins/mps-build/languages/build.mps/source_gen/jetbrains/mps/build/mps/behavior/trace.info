@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="92" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="94" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BuildMPSPlugin_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMPSPlugin_BehaviorDescriptor" />
+  <unitInfo fileName="BuildMpsAspect_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMpsAspect_BehaviorDescriptor" />
   <unitInfo fileName="BuildMpsLayout_FolderWithSources_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_FolderWithSources_BehaviorDescriptor" />
   <unitInfo fileName="BuildMpsLayout_ModuleJars_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleJars_BehaviorDescriptor" />
   <unitInfo fileName="BuildMpsLayout_ModuleSources_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.mps.behavior.BuildMpsLayout_ModuleSources_BehaviorDescriptor" />

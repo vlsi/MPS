@@ -12,6 +12,15 @@
   <property name="buildMPS.idea.platform.build.number" value="${import.buildMPS.buildMPS.idea.platform.build.number}" />
   <property name="buildCore.version" value="${import.buildMPS.buildCore.version}" />
   
+  <path id="path.mps.ant.path">
+    <pathelement location="${mps_home}/lib/mps-backend.jar" />
+    <pathelement location="${mps_home}/lib/jdom.jar" />
+    <pathelement location="${mps_home}/lib/log4j.jar" />
+    <pathelement location="${mps_home}/lib/mps-core.jar" />
+  </path>
+  
+  <taskdef name="mps.generate" classname="jetbrains.mps.build.ant.generation.GenerateTask" classpathref="path.mps.ant.path" />
+  
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/sandbox" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.build.sandbox.jar" />
@@ -99,5 +108,14 @@
         <fileset file="${artifacts.buildMPS}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac>
+  </target>
+  
+  <target name="generate">
+    <echo message="generating" />
+    <mps.generate parallelMode="true" fork="true">
+      <chunk>
+        <module file="${basedir}/jetbrains.mps.build.sandbox/sandbox.msd" />
+      </chunk>
+    </mps.generate>
   </target>
 </project>

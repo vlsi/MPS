@@ -175,6 +175,9 @@
     </node>
   </roots>
   <root id="7926701909975931624">
+    <node role="aspects" roleId="3ior.3542413272732620719" type="kdzh.BuildMpsAspect" typeId="kdzh.6503355885715333289" id="5970181360960411032">
+      <property name="bootstrap" nameId="kdzh.6503355885715353788" value="true" />
+    </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="927724900262328564">
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
       <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
@@ -8577,6 +8580,9 @@
     </node>
   </root>
   <root id="2569834391839970845">
+    <node role="aspects" roleId="3ior.3542413272732620719" type="kdzh.BuildMpsAspect" typeId="kdzh.6503355885715333289" id="5970181360960453343">
+      <property name="bootstrap" nameId="kdzh.6503355885715353788" value="true" />
+    </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_IdeaPlugin" typeId="kdzh.6592112598314498932" id="4973949960459706697">
       <property name="id" nameId="kdzh.6592112598314498927" value="com.intellij.modules.mps" />
       <node role="dependencies" roleId="kdzh.6592112598314499028" type="kdzh.BuildMps_IdeaPluginDependency" typeId="kdzh.6592112598314499027" id="4973949960459706716">
@@ -12295,6 +12301,9 @@
     </node>
   </root>
   <root id="4301118715654819483">
+    <node role="aspects" roleId="3ior.3542413272732620719" type="kdzh.BuildMpsAspect" typeId="kdzh.6503355885715333289" id="5970181360960453341">
+      <property name="bootstrap" nameId="kdzh.6503355885715353788" value="true" />
+    </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_IdeaPlugin" typeId="kdzh.6592112598314498932" id="5548512857137206913">
       <property name="id" nameId="kdzh.6592112598314498927" value="jetbrains.mps.trove" />
       <node role="name" roleId="kdzh.6592112598314499021" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="5548512857137206914">
@@ -18590,6 +18599,9 @@
     </node>
     <node role="plugins" roleId="3ior.6647099934206700656" type="3ior.BuildJavaPlugin" typeId="3ior.6647099934206700647" id="2075442863766409210" />
     <node role="plugins" roleId="3ior.6647099934206700656" type="kdzh.BuildMPSPlugin" typeId="kdzh.868032131020265945" id="2075442863766409211" />
+    <node role="aspects" roleId="3ior.3542413272732620719" type="kdzh.BuildMpsAspect" typeId="kdzh.6503355885715333289" id="5970181360960453339">
+      <property name="bootstrap" nameId="kdzh.6503355885715353788" value="true" />
+    </node>
   </root>
   <root id="6503539749405386437">
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildExternalLayoutDependency" typeId="3ior.7181125477683417252" id="6503539749405386448">
@@ -20492,6 +20504,9 @@
     </node>
   </root>
   <root id="4197214709894135186">
+    <node role="aspects" roleId="3ior.3542413272732620719" type="kdzh.BuildMpsAspect" typeId="kdzh.6503355885715333289" id="5970181360960453338">
+      <property name="bootstrap" nameId="kdzh.6503355885715353788" value="true" />
+    </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="4197214709894135187">
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
       <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
@@ -23043,6 +23058,9 @@
     </node>
   </root>
   <root id="4416206207494300367">
+    <node role="aspects" roleId="3ior.3542413272732620719" type="kdzh.BuildMpsAspect" typeId="kdzh.6503355885715333289" id="5970181360960453336">
+      <property name="bootstrap" nameId="kdzh.6503355885715353788" value="true" />
+    </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="4416206207494300368">
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
       <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />

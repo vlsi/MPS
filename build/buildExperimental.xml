@@ -22,7 +22,16 @@
     </fileset>
   </path>
   
+  <path id="path.mps.ant.path">
+    <pathelement location="${mps_home}/lib/mps-backend.jar" />
+    <pathelement location="${mps_home}/lib/jdom.jar" />
+    <pathelement location="${mps_home}/lib/log4j.jar" />
+    <pathelement location="${mps_home}/lib/mps-core.jar" />
+  </path>
+  
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
+  
+  <taskdef name="mps.generate" classname="jetbrains.mps.build.ant.generation.GenerateTask" classpathref="path.mps.ant.path" />
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/plugins" />
@@ -1916,5 +1925,44 @@
     <copy todir="${build.tmp}/java/out/jetbrains.mps.platform.conf">
       <fileset dir="${mps_home}/languages/util/conf/languages/conf/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
+  </target>
+  
+  <target name="generate">
+    <echo message="generating" />
+    <mps.generate parallelMode="true" fork="true">
+      <chunk bootstrap="true">
+        <module file="${mps_home}/languages/util/contracts/languages/contracts/contracts.mpl" />
+        <module file="${mps_home}/languages/util/math/math.mpl" />
+        <module file="${mps_home}/languages/util/math/solutions/pluginSolution/pluginSolution.msd" />
+        <module file="${mps_home}/languages/util/math/runtimeSolution/jetbrains.mps.baseLanguage.math.runtime.msd" />
+        <module file="${mps_home}/languages/util/money/money.mpl" />
+        <module file="${mps_home}/languages/util/money/runtimeSolution/jetbrains.mps.baseLanguage.money.runtime.msd" />
+        <module file="${mps_home}/languages/util/gwtsupport/languages/client/client.mpl" />
+        <module file="${mps_home}/languages/util/conf/languages/conf/conf.mpl" />
+        <module file="${mps_home}/languages/util/ui/languages/gwt/solutions/pluginSolution/pluginSolution.msd" />
+        <module file="${mps_home}/languages/util/ui/languages/gwt/solutions/runtime/runtime.msd" />
+        <module file="${mps_home}/languages/util/ui/languages/meta/meta.mpl" />
+        <module file="${mps_home}/languages/util/ui/languages/meta/solutions/pluginSolution/pluginSolution.msd" />
+        <module file="${mps_home}/languages/util/ui/languages/ui/solutions/pluginSolution/pluginSolution.msd" />
+        <module file="${mps_home}/languages/util/ui/languages/swing/solutions/pluginSolution/pluginSolution.msd" />
+        <module file="${mps_home}/languages/util/ui/languages/swing/runtime/runtime.msd" />
+        <module file="${mps_home}/languages/util/ui/languages/swt/solutions/pluginSolution/pluginSolution.msd" />
+        <module file="${mps_home}/languages/util/ui/languages/swt/runtime/runtime.msd" />
+        <module file="${mps_home}/languages/util/ypath/ypath.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/util/ypath/solutions/pluginSolution/pluginSolution.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/util/ypath/solutions/jetbrains.mps.ypath.runtime/jetbrains.mps.ypath.runtime.msd" bootstrap="true" />
+      </chunk>
+      <chunk bootstrap="true">
+        <module file="${mps_home}/languages/util/ui/languages/ui/ui.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/util/ui/languages/internal/internal.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/util/ypath/solutions/main/main.msd" />
+        <module file="${mps_home}/languages/util/ypath/solutions/test/test.msd" />
+      </chunk>
+      <chunk>
+        <module file="${mps_home}/languages/util/ui/languages/gwt/gwt.mpl" />
+        <module file="${mps_home}/languages/util/ui/languages/swing/swing.mpl" />
+        <module file="${mps_home}/languages/util/ui/languages/swt/swt.mpl" />
+      </chunk>
+    </mps.generate>
   </target>
 </project>

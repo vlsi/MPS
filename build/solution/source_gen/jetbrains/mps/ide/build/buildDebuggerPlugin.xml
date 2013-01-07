@@ -25,7 +25,16 @@
     <fileset file="${mps_home}/lib/tools.jar" />
   </path>
   
+  <path id="path.mps.ant.path">
+    <pathelement location="${mps_home}/lib/mps-backend.jar" />
+    <pathelement location="${mps_home}/lib/jdom.jar" />
+    <pathelement location="${mps_home}/lib/log4j.jar" />
+    <pathelement location="${mps_home}/lib/mps-core.jar" />
+  </path>
+  
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
+  
+  <taskdef name="mps.generate" classname="jetbrains.mps.build.ant.generation.GenerateTask" classpathref="path.mps.ant.path" />
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/lib" />
@@ -525,5 +534,24 @@
     <copy todir="${build.tmp}/java/out/jetbrains.mps.debugger.java.evaluation">
       <fileset dir="${mps_home}/plugins/debugger-java/languages/evaluation/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
+  </target>
+  
+  <target name="generate">
+    <echo message="generating" />
+    <mps.generate parallelMode="true" fork="true">
+      <chunk>
+        <module file="${mps_home}/plugins/debugger-api/api/api.msd" />
+        <module file="${mps_home}/plugins/debugger-api/languages/jetbrains.mps.debugger.api.lang/api.mpl" />
+        <module file="${mps_home}/plugins/debugger-api/runtime/jetbrains.mps.debugger-api.msd" />
+        <module file="${mps_home}/plugins/debugger-java/api/jetbrains.mps.debugger.java.api.msd" />
+        <module file="${mps_home}/plugins/debugger-java/languages/customViewers/customViewers.mpl" />
+        <module file="${mps_home}/plugins/debugger-java/languages/evaluation/evaluation.mpl" />
+        <module file="${mps_home}/plugins/debugger-java/languages/privateMembers/privateMembers.mpl" />
+      </chunk>
+      <chunk>
+        <module file="${mps_home}/plugins/debugger-java-customViewers/plugin.msd" />
+        <module file="${mps_home}/plugins/debugger-java/runtime/jetbrains.mps.debugger.java.runtime.msd" />
+      </chunk>
+    </mps.generate>
   </target>
 </project>

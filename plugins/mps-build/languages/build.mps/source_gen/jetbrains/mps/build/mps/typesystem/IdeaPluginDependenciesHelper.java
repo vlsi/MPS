@@ -64,7 +64,7 @@ public class IdeaPluginDependenciesHelper {
     }
     if (SNodeOperations.isInstanceOf(module, "jetbrains.mps.build.mps.structure.BuildMps_Module")) {
       MPSModulesClosure runtimeDependencies = new MPSModulesClosure(null, SNodeOperations.cast(module, "jetbrains.mps.build.mps.structure.BuildMps_Module")).runtimeClosure();
-      Iterable<SNode> seq = Sequence.fromIterable(runtimeDependencies.getModules()).concat(Sequence.fromIterable(runtimeDependencies.getLanguagesWithRuntime())).where(new IWhereFilter<SNode>() {
+      Iterable<SNode> seq = Sequence.fromIterable(runtimeDependencies.getModulesIncludingLanguagesWithRuntime()).where(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return !(visible.contains(it));
         }

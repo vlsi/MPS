@@ -44,7 +44,16 @@
     <fileset file="${artifacts.IDEA}/lib/junit-4.10.jar" />
   </path>
   
+  <path id="path.mps.ant.path">
+    <pathelement location="${mps_home}/lib/mps-backend.jar" />
+    <pathelement location="${mps_home}/lib/jdom.jar" />
+    <pathelement location="${mps_home}/lib/log4j.jar" />
+    <pathelement location="${mps_home}/lib/mps-core.jar" />
+  </path>
+  
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
+  
+  <taskdef name="mps.generate" classname="jetbrains.mps.build.ant.generation.GenerateTask" classpathref="path.mps.ant.path" />
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/mps-core" />
@@ -4740,5 +4749,122 @@
     <copy todir="${build.tmp}/java/out/mps-java-platform">
       <fileset dir="${mps_home}/plugins/mpsjava/platform/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
+  </target>
+  
+  <target name="generate">
+    <echo message="generating" />
+    <mps.generate parallelMode="true" fork="true">
+      <chunk>
+        <module file="${mps_home}/languages/baseLanguage/logging/runtime/runtime.msd" />
+      </chunk>
+      <chunk bootstrap="true">
+        <module file="${mps_home}/languages/core/stub/JDK/JDK.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/core/stub/MPS.Core/Core.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/core/stub/MPS.Editor/Editor.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/core/stub/MPS.Platform/Platform.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/closures/runtime/closures.runtime.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/collections/runtime/collections.runtime.msd" bootstrap="true" />
+        <module file="${mps_home}/core/analyzers/solutions/jetbrains.mps.analyzers.runtime/jetbrains.mps.analyzers.runtime.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/baseLanguage/baseLanguage.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/blTypes/blTypes.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/util/builders/builders.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/checkDot/languages/checkedDots/checkedDots.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/classifiers/classifiers.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/closures/closures.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/collections/collections.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/util/extensionMethod/methodExtension.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/javadoc/javadoc.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/jdk7/languages/jdk7/jdk7.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/logging/logging.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/util/regexp/regexp.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/util/regexp/solutions/jetbrains.mps.baseLanguage.regexp.runtime/jetbrains.mps.baseLanguage.regexp.runtime.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.scopes/scopes.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.search/jetbrains.mps.baseLanguage.search.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/tuples/languages/tuples/tuples.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/tuples/runtime/jetbrains.mps.baseLanguage.tuples.runtime.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/baseLanguage/solutions/jetbrains.mps.baseLanguage.util/util.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/varVariable/varVariable.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpl" bootstrap="true" />
+        <module file="${mps_home}/core/kernel/dataFlowRuntime/jetbrains.mps.dataFlow.runtime.msd" bootstrap="true" />
+        <module file="${mps_home}/editor/editor-runtime/jetbrains.mps.editor.runtime.msd" bootstrap="true" />
+        <module file="${mps_home}/core/generator/solutions/generator/jetbrains.mps.generator.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/util/gtext/gtext.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/util/gtext/runtime/jetbrains.mps.gtext.runtime.msd" bootstrap="true" />
+        <module file="${mps_home}/workbench/mps-editor/jetbrains.mps.ide.editor.msd" bootstrap="true" />
+        <module file="${mps_home}/workbench/mps-platform/base.msd" bootstrap="true" />
+        <module file="${mps_home}/core/kernel/kernelSolution/jetbrains.mps.kernel.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/access/access.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/actions/languageDescriptor.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/behavior/languages/behavior/behavior.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/checkedName/checkedName.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/constraints/constraints.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/core/core/languageDescriptor.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/dataFlow/dataFlow.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/analyzers/analyzers.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/editor/editor.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/extension/extension.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/findUsages/findUsages.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/generator/languages/templateLanguage/templateLanguage.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/generator/languages/generationContext/generationContext.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/generator/languages/generationParameters/generationParameters.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/intentions/intentions.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/pattern/pattern.mpl" bootstrap="true" />
+        <module file="${mps_home}/core/kernel/patternRuntime/runtime.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/plugin/plugin.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/project/project.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/quotation/quotation.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/refactoring/refactoring.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/resources/resources.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/scopes/scopes.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/scopes/runtime/runtime.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/script/script.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/sharedConcepts/sharedConcepts.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/smodel/smodel.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/structure/languageDescriptor.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/stubs/stubs.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/textGen/textGen.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/traceable/traceable.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/typesystem/typesystem.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/make/languages/facet/facet.mpl" bootstrap="true" />
+        <module file="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make.runtime/jetbrains.mps.make.runtime.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/make/languages/script/script.mpl" bootstrap="true" />
+        <module file="${mps_home}/core/refactoring-runtime/jetbrains.mps.refactoring.runtime.msd" bootstrap="true" />
+        <module file="${mps_home}/core/kernel/smodelRuntime/smodelRuntime.msd" bootstrap="true" />
+        <module file="${mps_home}/core/kernel/resources/jetbrains.mps.smodel.resources.msd" bootstrap="true" />
+        <module file="${mps_home}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/jetbrains.mps.typesystemEngine.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/util/xml/xml/xml.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/util/xml/xmlInternal/xmlInternal.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/util/xml/xmlQuery/xmlQuery.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/util/xml/xmlSchema/xmlSchema.mpl" bootstrap="true" />
+        <module file="${mps_home}/core/kernel/stubUtils/stubUtils.msd" bootstrap="true" />
+      </chunk>
+      <chunk>
+        <module file="${mps_home}/languages/core/stub/Ant/Ant.msd" />
+        <module file="${mps_home}/languages/core/stub/Testbench/Testbench.msd" />
+        <module file="${mps_home}/core/ant/jetbrains.mps.build.antsupport.msd" />
+        <module file="${mps_home}/languages/baseLanguage/constructors/constructors.mpl" />
+        <module file="${mps_home}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/overloadedOperators.mpl" />
+        <module file="${mps_home}/languages/baseLanguage/unitTest/unitTest.mpl" />
+        <module file="${mps_home}/languages/baseLanguage/unitTest/solutions/lib/jetbrains.mps.baseLnaguage.unitTest.lib.msd" />
+        <module file="${mps_home}/languages/util/buildlanguage/languages/gentest/gentest.mpl" />
+        <module file="${mps_home}/languages/util/buildlanguage/languages/reduced/reduced.mpl" />
+        <module file="${mps_home}/core/findUsages-runtime/runtime.msd" />
+        <module file="${mps_home}/plugins/mpsjava/platform/platform.msd" />
+        <module file="${mps_home}/languages/languageDesign/generator/languages/descriptor/descriptor.mpl" />
+        <module file="${mps_home}/languages/languageDesign/smodel/languages/smodelTests/smodelTests.mpl" />
+        <module file="${mps_home}/languages/languageDesign/traceable.operations/operations.mpl" />
+        <module file="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" />
+        <module file="${mps_home}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/jetbrains.mps.debug.api.info.msd" />
+        <module file="${mps_home}/core/generator/solutions/traceInfo/util/cache.msd" />
+        <module file="${mps_home}/editor/typesystemIntegration/typesystemIntegration.msd" />
+      </chunk>
+      <chunk bootstrap="true">
+        <module file="${mps_home}/languages/languageDesign/test/test.mpl" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/jetbrains.mps.lang.test.runtime.msd" bootstrap="true" />
+      </chunk>
+      <chunk>
+        <module file="${mps_home}/languages/languageDesign/editor/languages/editorTest/editorTest.mpl" />
+      </chunk>
+    </mps.generate>
   </target>
 </project>

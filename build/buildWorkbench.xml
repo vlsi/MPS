@@ -21,7 +21,16 @@
     </fileset>
   </path>
   
+  <path id="path.mps.ant.path">
+    <pathelement location="${mps_home}/lib/mps-backend.jar" />
+    <pathelement location="${mps_home}/lib/jdom.jar" />
+    <pathelement location="${mps_home}/lib/log4j.jar" />
+    <pathelement location="${mps_home}/lib/mps-core.jar" />
+  </path>
+  
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
+  
+  <taskdef name="mps.generate" classname="jetbrains.mps.build.ant.generation.GenerateTask" classpathref="path.mps.ant.path" />
   
   <target name="assemble" depends="classes">
     <mkdir dir="${build.layout}/languages" />
@@ -755,5 +764,30 @@
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.typesystem.pluginSolution">
       <fileset dir="${mps_home}/languages/languageDesign/typesystem/solutions/pluginSolution/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
+  </target>
+  
+  <target name="generate">
+    <echo message="generating" />
+    <mps.generate parallelMode="true" fork="true">
+      <chunk>
+        <module file="${mps_home}/languages/core/stub/MPS.Workbench/Workbench.msd" />
+        <module file="${basedir}/languages/util/runConfigurations/solutions/jetbrains.mps.execution.api/jetbrains.mps.execution.api.msd" />
+        <module file="${mps_home}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" />
+        <module file="${mps_home}/languages/util/uiLanguage/uiLanguage.mpl" />
+      </chunk>
+      <chunk>
+        <module file="${mps_home}/languages/util/ideUiLanguage/uiLanguage.mpl" />
+      </chunk>
+      <chunk bootstrap="true">
+        <module file="${mps_home}/workbench/mps-workbench/jetbrains.mps.ide.msd" bootstrap="true" />
+        <module file="${mps_home}/languages/languageDesign/plugin-standalone/standalone.mpl" bootstrap="true" />
+      </chunk>
+      <chunk>
+        <module file="${mps_home}/languages/core/core/solutions/pluginSolution/pluginSolution.msd" />
+        <module file="${mps_home}/languages/languageDesign/script/solutions/pluginSolution/pluginSolution.msd" />
+        <module file="${mps_home}/languages/languageDesign/typesystem/solutions/pluginSolution/pluginSolution.msd" />
+        <module file="${mps_home}/languages/util/uiLanguage/solutions/pluginSolution/pluginSolution.msd" />
+      </chunk>
+    </mps.generate>
   </target>
 </project>
