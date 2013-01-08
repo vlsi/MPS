@@ -110,7 +110,7 @@ public class NodeGroupChange extends ModelChange {
   @Nullable
   @Override
   public SNodeId getRootId() {
-    return getChangeSet().getOldModel().getNodeById(myParentNodeId).getTopmostAncestor().getNodeId();
+    return getChangeSet().getOldModel().getNodeById(myParentNodeId).getContainingRoot().getNodeId();
   }
 
   @NotNull

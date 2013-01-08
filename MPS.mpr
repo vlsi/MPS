@@ -395,6 +395,9 @@
       <modulePath path="${project}/samples/generator_demo/languages/demoLang2/jetbrains.mps.samples.generator_demo.demoLang2.mpl" folder="samples" />
       <modulePath path="${project}/samples/generator_demo/languages/demoLang3/jetbrains.mps.samples.generator_demo.demoLang3.mpl" folder="samples" />
       <modulePath path="${project}/samples/generator_demo/languages/demoLang4/jetbrains.mps.samples.generator_demo.demoLang4.mpl" folder="samples" />
+      <modulePath path="${project}/samples/generator_demo/languages/demoLang5/jetbrains.mps.samples.generator_demo.demoLang5.mpl" folder="samples" />
+      <modulePath path="${project}/samples/generator_demo/languages/demoLang6/jetbrains.mps.samples.generator_demo.demoLang6.mpl" folder="samples" />
+      <modulePath path="${project}/samples/generator_demo/languages/demoLang7/jetbrains.mps.samples.generator_demo.demoLang7.mpl" folder="samples" />
       <modulePath path="${project}/samples/generator_demo/solutions/test_models/jetbrains.mps.samples.generator_demo.test_models.msd" folder="samples" />
       <modulePath path="${project}/samples/lambda/languages/lambdaCalculus/jetbrains.mps.samples.lambdaCalculus.mpl" folder="samples" />
       <modulePath path="${project}/samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/jetbrains.mps.samples.lambdaCalculus.runtime.msd" folder="samples" />

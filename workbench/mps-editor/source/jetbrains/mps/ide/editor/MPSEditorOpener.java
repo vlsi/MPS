@@ -125,7 +125,7 @@ public class MPSEditorOpener {
         (node.getModel() != null ? ", modelDisposed: " + node.getModel().isDisposed() : "");
     }
     // [--] for http://youtrack.jetbrains.net/issue/MPS-7663
-    final Editor nodeEditor = openEditor(node.getTopmostAncestor(), context, false);
+    final Editor nodeEditor = openEditor(node.getContainingRoot(), context, false);
 
     //restore inspector state for opened editor (if exists)
     if (!restorePrevSelectionInInspector(nodeEditor, nodeEditor.getOperationContext(), getInspector())) {

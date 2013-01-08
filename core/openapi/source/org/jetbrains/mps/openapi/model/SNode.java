@@ -51,8 +51,6 @@ public interface SNode {
    */
   SNodeId getNodeId();
 
-  SNodeId getSNodeId();
-
   /**
    * Uniquely identifies the node in a repository. Never changes between subsequent read and write actions and behaves as a "weak reference" for a node
    * Represents the only correct way to pass or store nodes between read/write actions.

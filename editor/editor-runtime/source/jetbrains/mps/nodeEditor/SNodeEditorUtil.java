@@ -56,7 +56,7 @@ public class SNodeEditorUtil {
   //---------------------
 
   public static void setSingleChild(SNode node,String role, org.jetbrains.mps.openapi.model.SNode childNode) {
-    SNode oldChild = node.getChild(role);
+    SNode oldChild = jetbrains.mps.util.SNodeOperations.getChild(node, role);
     if (oldChild != null) {
       node.removeChild(oldChild);
     }

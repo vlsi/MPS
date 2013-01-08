@@ -21,7 +21,6 @@ import jetbrains.mps.resolve.ResolverComponent;
 import jetbrains.mps.smodel.ModuleOperationContext;
 import jetbrains.mps.ide.navigation.NodeNavigatable;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -1383,66 +1382,6 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
         return false;
       }
     });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-      public String getName() {
-        return "ToolDeclaration init block rename";
-      }
-
-      public String getAdditionalInfo() {
-        return "ToolDeclaration init block rename";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.plugin.structure.ToolDeclaration";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        return node.getChild("initBlock") != null;
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SNode init = node.getChild("initBlock");
-        if (init != null && SLinkOperations.getTarget(node, "toolInitBlock", true) == null) {
-          SLinkOperations.setTarget(node, "toolInitBlock", SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.InitBlock", null), true);
-          SLinkOperations.setTarget(SLinkOperations.getTarget(node, "toolInitBlock", true), "body", (SNode) init.getChild("body"), true);
-          node.removeChild(init);
-        }
-      }
-
-      public boolean isShowAsIntention() {
-        return false;
-      }
-    });
-    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
-      public String getName() {
-        return "ToolDeclaration dispose block rename";
-      }
-
-      public String getAdditionalInfo() {
-        return "ToolDeclaration dispose block rename";
-      }
-
-      public String getFqNameOfConceptToSearchInstances() {
-        return "jetbrains.mps.lang.plugin.structure.ToolDeclaration";
-      }
-
-      public boolean isApplicableInstanceNode(SNode node) {
-        return node.getChild("disposeBlock") != null;
-      }
-
-      public void doUpdateInstanceNode(SNode node) {
-        SNode dispose = node.getChild("disposeBlock");
-        if (dispose != null && SLinkOperations.getTarget(node, "toolDisposeBlock", true) == null) {
-          SLinkOperations.setTarget(node, "toolDisposeBlock", SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.DisposeBlock", null), true);
-          SLinkOperations.setTarget(SLinkOperations.getTarget(node, "toolDisposeBlock", true), "body", (SNode) dispose.getChild("body"), true);
-          node.removeChild(dispose);
-        }
-      }
-
-      public boolean isShowAsIntention() {
-        return false;
-      }
-    });
   }
 
   private static String check_d0rs9v_a0a0a0a0a0a0(SModelReference checkedDotOperand) {
@@ -2258,7 +2197,7 @@ public class Mps25ApiMigration_MigrationScript extends BaseMigrationScript {
     SNode quotedNode_4 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.setReference("classConcept", SReference.create("classConcept", quotedNode_1, SModelReference.fromString("r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)"), SNodeId.fromString("7973955287399271868")));
-    quotedNode_1.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_1, SModelReference.fromString("r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)"), SNodeId.fromString("7973955287399271887")));
+    quotedNode_1.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", quotedNode_1, SModelReference.fromString("r:4e6037e6-9135-44f8-9403-04d79fc40f4a(jetbrains.mps.ide.editor.util)"), SNodeId.fromString("1684996642972608268")));
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);
     quotedNode_1.addChild("actualArgument", quotedNode_2);
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.NullLiteral", null, null, GlobalScope.getInstance(), false);

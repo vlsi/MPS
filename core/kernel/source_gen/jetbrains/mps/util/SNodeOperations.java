@@ -18,6 +18,7 @@ import java.util.HashSet;
 import jetbrains.mps.smodel.SReference;
 import java.util.LinkedList;
 import jetbrains.mps.smodel.SModel;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import java.util.Iterator;
@@ -170,14 +171,37 @@ public class SNodeOperations {
    * this is an utility method common to all nodes but needed only for our debug purposes, so we don't put it into SNode
    */
   public static String getDebugText(SNode node) {
-    return ((jetbrains.mps.smodel.SNode) node).getDebugText();
+    return SNodeUtil.getDebugText(((jetbrains.mps.smodel.SNode) node));
+  }
+
+  public static Set<String> getChildRoles(jetbrains.mps.smodel.SNode n, boolean includeAttributeRoles) {
+    final Set<String> augend = new HashSet();
+    for (jetbrains.mps.smodel.SNode child : n.getChildren()) {
+      if (includeAttributeRoles || !((AttributeOperations.isAttribute(child)))) {
+        augend.add(child.getRoleInParent());
+      }
+    }
+    return augend;
+  }
+
+  public static jetbrains.mps.smodel.SNode getChild(jetbrains.mps.smodel.SNode node, String role) {
+    List<jetbrains.mps.smodel.SNode> children = node.getChildren(role);
+    int size = children.size();
+    if (size == 0) {
+      return null;
+    }
+    return children.get(0);
   }
 
   /**
    * This will be replaced by getting resolve info from a reference in a context containing it
    */
   public static String getResolveInfo(SNode n) {
-    return ((jetbrains.mps.smodel.SNode) n).getResolveInfo();
+    String resolveInfo = jetbrains.mps.smodel.SNodeUtil.getResolveInfo(((jetbrains.mps.smodel.SNode) n));
+    if (resolveInfo != null) {
+      return resolveInfo;
+    }
+    return n.getProperty(jetbrains.mps.smodel.SNodeUtil.property_INamedConcept_name);
   }
 
   public static void copyProperties(SNode from, final SNode to) {

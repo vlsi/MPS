@@ -54,7 +54,7 @@ public class ModelContentUtil {
     }
     for (SNode root : model.roots()) {
       namespaces.add(NameUtil.namespaceFromConceptFQName(root.getConcept().getId()));
-      for (SNode child : root.getDescendants()) {
+      for (SNode child : jetbrains.mps.util.SNodeOperations.getDescendants(root, null)) {
         namespaces.add(NameUtil.namespaceFromConceptFQName(child.getConcept().getId()));
       }
     }

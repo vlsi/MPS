@@ -42,7 +42,7 @@ public class PathProvider {
         appendNodePathThroughNamedConcepts(res, node.getParent());
       }
 
-      SNode rootNode = node.getTopmostAncestor();
+      SNode rootNode = node.getContainingRoot();
       if (node != rootNode) {
         res.add(new PathItem(PathItemRole.ROLE_ROOT, rootNode));
       }
@@ -81,7 +81,7 @@ public class PathProvider {
       name = "<getName() caused an exception on this node>";
     }
     if (name != null) {
-      if (node != node.getTopmostAncestor()) {
+      if (node != node.getContainingRoot()) {
         path.add(new PathItem(PathItemRole.ROLE_ROOT_TO_TARGET_NODE, node));
       }
     }

@@ -57,7 +57,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_1225985087451(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "declaration", false)).getSNodeId().toString();
+    return SNodeOperations.getParent(SLinkOperations.getTarget(_context.getNode(), "declaration", false)).getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_1216995305411(final IOperationContext operationContext, final PropertyMacroContext _context) {

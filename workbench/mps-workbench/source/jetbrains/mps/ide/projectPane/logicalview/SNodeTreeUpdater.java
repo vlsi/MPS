@@ -70,7 +70,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
     if (getTree() == null) return;
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
     for (SNode removed : removedNodes) {
-      SNodeTreeNode node = (SNodeTreeNode) myTreeNode.findDescendantWith(removed.getSNodeId().toString());
+      SNodeTreeNode node = (SNodeTreeNode) myTreeNode.findDescendantWith(removed.getNodeId().toString());
       if (node == null) continue;
       treeModel.removeNodeFromParent(node);
     }
@@ -79,7 +79,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
     for (SNode added : addedNodes) {
       if (added.getModel() == null) continue;
       if (added.getParent() == null) continue;
-      SNodeTreeNode parent = (SNodeTreeNode) myTreeNode.findDescendantWith(added.getParent().getSNodeId().toString());
+      SNodeTreeNode parent = (SNodeTreeNode) myTreeNode.findDescendantWith(added.getParent().getNodeId().toString());
       if (parent == null) continue;
       if (!parent.isInitialized()) continue;
       SNode parentNode = parent.getSNode();
@@ -105,7 +105,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
     if (getTree() == null) return;
     DefaultTreeModel treeModel = (DefaultTreeModel) getTree().getModel();
     for (SNode node : nodesWithChangedPresentations) {
-      SNodeTreeNode treeNode = (SNodeTreeNode) myTreeNode.findDescendantWith(node.getSNodeId().toString());
+      SNodeTreeNode treeNode = (SNodeTreeNode) myTreeNode.findDescendantWith(node.getNodeId().toString());
       if (treeNode == null) continue;
 
       if (node.getModel() != null && node.getModel().isRoot(node)) {
@@ -152,7 +152,7 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
     if (!showPropertiesAndReferences()) return;
 
     for (SNode sourceNode : nodesWithChangedRefs) {
-      MPSTreeNode nodeTreeNode = myTreeNode.findDescendantWith(sourceNode.getSNodeId().toString());
+      MPSTreeNode nodeTreeNode = myTreeNode.findDescendantWith(sourceNode.getNodeId().toString());
       if (nodeTreeNode == null || !nodeTreeNode.isInitialized()) return;
 
       MPSTreeNodeEx refsNode = (MPSTreeNodeEx) nodeTreeNode.getChildAt(1);

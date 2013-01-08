@@ -26,7 +26,6 @@ import com.intellij.ui.LightColors;
 import jetbrains.mps.ide.bookmark.BookmarkManager.MyState;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -107,7 +106,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
       SNodePointer nodePointer = myBookmarks[i];
       if (nodePointer != null) {
         SNode node = nodePointer.getNode();
-        if (node != null && node.getTopmostAncestor() == root) {
+        if (node != null && node.getContainingRoot() == root) {
           result.add(new Pair<SNode, Integer>(node, i));
         }
       }
@@ -115,7 +114,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     for (SNodePointer nodePointer : myUnnumberedBookmarks) {
       if (nodePointer != null) {
         SNode node = nodePointer.getNode();
-        if (node != null && node.getTopmostAncestor() == root) {
+        if (node != null && node.getContainingRoot() == root) {
           result.add(new Pair<SNode, Integer>(node, -1));
         }
       }

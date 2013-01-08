@@ -62,7 +62,7 @@ public class NodeUsageTarget extends NodeNavigatable implements UsageTarget {
       @Override
       public Boolean compute() {
         SNode node = myNode.getNode();
-        return node != null && !node.isDetached();
+        return node != null && !(node.getModel() == null);
       }
     });
   }

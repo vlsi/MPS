@@ -64,7 +64,7 @@ public class DeleteReferenceAction_Action extends BaseAction {
       TreeNode parent = ((TreeNode) MapSequence.fromMap(_params).get("node")).getParent();
       ReferencesTreeNode refsNode = (ReferencesTreeNode) parent;
       ReferenceTreeNode refNode = (ReferenceTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
-      refsNode.getSNode().removeReference(refNode.getRef());
+      refsNode.getSNode().setReference(refNode.getRef().getRole(), null);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "DeleteReferenceAction", t);
     }

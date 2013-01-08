@@ -131,7 +131,7 @@ public class ModelLinkMap {
     });
     res |= delete(myRefRoleMap, ptr, new _FunctionTypes._void_P1_E0<SReference>() {
       public void invoke(SReference ref) {
-        ref.getSourceNode().removeReference(ref);
+        ref.getSourceNode().setReference(ref.getRole(), null);
       }
     });
     res |= delete(myPropNameMap, ptr, new _FunctionTypes._void_P1_E0<Pair<SNode, String>>() {

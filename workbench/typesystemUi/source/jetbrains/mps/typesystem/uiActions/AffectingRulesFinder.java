@@ -40,7 +40,7 @@ import java.util.Set;
 public class AffectingRulesFinder implements IFinder {
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
     SNode term = (SNode) query.getObjectHolder().getObject();
-    SNode root = term.getTopmostAncestor();
+    SNode root = term.getContainingRoot();
 
     ITypeContextOwner owner = new MyTypeContextOwner();
     TypeContextManager manager = TypeContextManager.getInstance();
