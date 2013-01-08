@@ -42,7 +42,9 @@
     <mkdir dir="${build.layout}/plugins" />
     <mkdir dir="${build.layout}/plugins/mps-obsolete" />
     <copy todir="${build.layout}/plugins/mps-obsolete">
-      <fileset dir="${artifacts.buildDeprecatedBuildlanguage}/plugins/mps-obsolete" />
+      <fileset dir="${artifacts.buildDeprecatedBuildlanguage}/plugins/mps-obsolete">
+        <exclude name="**/plugin.xml" />
+      </fileset>
     </copy>
     <mkdir dir="${build.layout}/plugins/mps-obsolete/lib" />
     <jar destfile="${build.layout}/plugins/mps-obsolete/lib/build-deprecated.jar">
