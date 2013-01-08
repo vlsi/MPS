@@ -433,7 +433,7 @@ public class SNodeOperations {
     }
     String role = node.getRoleInParent();
     assert role != null;
-    parent.insertChild(node, role, newChild, true);
+    parent.insertChild(role, newChild, parent.getPrevChild(node));
     return newChild;
   }
 
@@ -451,7 +451,7 @@ public class SNodeOperations {
     }
     String role = node.getRoleInParent();
     assert role != null;
-    nodeParent.insertChild(role, node, siblingNode);
+    nodeParent.insertChild(role, siblingNode, node);
     return siblingNode;
   }
 
@@ -469,7 +469,7 @@ public class SNodeOperations {
     }
     String role = node.getRoleInParent();
     assert role != null;
-    nodeParent.insertChild(node, role, siblingNode, true);
+    nodeParent.insertChild(role, siblingNode, nodeParent.getPrevChild(node));
     return siblingNode;
   }
 
