@@ -9,6 +9,22 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
+  <dependency className="jetbrains.mps.build.mps.editor.BuildMpsAspect_Editor" file="BuildMpsAspect_Editor.java">
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.style.Style" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.style.StyleAttributes" />
+    <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
+  </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMpsLayout_ModuleJars_Editor" file="BuildMpsLayout_ModuleJars_Editor.java">
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.String" />
@@ -663,13 +679,18 @@
   </dependency>
   <dependency className="jetbrains.mps.build.mps.editor.BuildMps_ModuleJavaSource_Editor" file="BuildMps_ModuleJavaSource_Editor.java">
     <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="jetbrains.mps.build.editor.buildStyles_StyleSheet" />
+    <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.PropertyCellProvider" />
     <classNode dependClassName="jetbrains.mps.lang.editor.cellProviders.RefNodeCellProvider" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorManager" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cellProviders.CellProviderWithRole" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
+    <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Constant" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
+    <classNode dependClassName="jetbrains.mps.smodel.IScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
@@ -725,7 +746,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultNodeEditor" />
   </dependency>
-  <dependency className="jetbrains.mps.build.mps.editor.BuildMps_Module_Editor" file="BuildMps_Module_Editor.java">
+  <dependency className="jetbrains.mps.build.mps.editor.BuildMps_Solution_Editor" file="BuildMps_Solution_Editor.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.Object" />

@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.baseLanguage.unitTest.libs" uuid="83f155ff-422c-4b5a-a2f2-b459302dd215" compileInMPS="false">
   <models>
-    <modelRoot contentPath="${module}" type="default">
-      <sourceRoot location="." />
-    </modelRoot>
     <modelRoot path="${module}/lib/jmock-2.5.1/bsh-core-2.0b4.jar" type="java_classes" />
     <modelRoot path="${module}/lib/jmock-2.5.1/cglib-nodep-2.1_3.jar" type="java_classes" />
     <modelRoot path="${module}/lib/jmock-2.5.1/hamcrest-core-1.1.jar" type="java_classes" />
