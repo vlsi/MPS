@@ -317,6 +317,9 @@
       <directory url="file://$PROJECT_DIR$/samples/theSimplestLanguage/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/xmlLiterals/languages/xmlLiterals/source_gen" includeSubdirectories="true" />
       <directory url="file://$PROJECT_DIR$/samples/xmlLiterals/solutions/jetbrains.mps.samples.xmlLiterals.sandbox/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/generator_demo/languages/demoLang5/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/generator_demo/languages/demoLang6/source_gen" includeSubdirectories="true" />
+      <directory url="file://$PROJECT_DIR$/samples/generator_demo/languages/demoLang7/source_gen" includeSubdirectories="true" />
     </excludeFromCompile>
     <resourceExtensions>
       <entry name=".+\.(properties|xml|html|dtd|tld)" />
