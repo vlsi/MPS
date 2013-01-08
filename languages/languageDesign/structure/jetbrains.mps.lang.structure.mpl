@@ -10,13 +10,12 @@
     <model modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
   </accessoryModels>
   <generators>
-    <generator generatorUID="jetbrains.mps.lang.structure#1170324972255" uuid="b8e4beec-8383-4fb9-b0bb-9d1c9c159cfc">
+    <generator name="main" generatorUID="jetbrains.mps.lang.structure#1170324972255" uuid="b8e4beec-8383-4fb9-b0bb-9d1c9c159cfc">
       <models>
         <modelRoot path="${module}/classes_gen" type="java_classes" />
         <modelRoot contentPath="${module}" type="default">
           <sourceRoot location="generator_new" />
         </modelRoot>
-        <modelRoot path="${mps_home}/lib/guava-11.0.1.jar" type="java_classes" />
       </models>
       <external-templates>
         <generator generatorUID="5f9babc9-8d5d-4825-8e61-17b241ee6272(jetbrains.mps.baseLanguage.collections#1151699677197)" />
