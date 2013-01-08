@@ -383,19 +383,19 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2436117033632111130(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((Object) _context.getVariable("var:mpsPath")) + "mps-backend.jar";
+    return ((String) _context.getVariable("var:mpsPath")) + "mps-backend.jar";
   }
 
   public static Object propertyMacro_GetPropertyValue_2436117033632111187(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((Object) _context.getVariable("var:mpsPath")) + "jdom.jar";
+    return ((String) _context.getVariable("var:mpsPath")) + "jdom.jar";
   }
 
   public static Object propertyMacro_GetPropertyValue_2436117033632111196(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((Object) _context.getVariable("var:mpsPath")) + "log4j.jar";
+    return ((String) _context.getVariable("var:mpsPath")) + "log4j.jar";
   }
 
   public static Object propertyMacro_GetPropertyValue_2436117033632111205(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((Object) _context.getVariable("var:mpsPath")) + "mps-core.jar";
+    return ((String) _context.getVariable("var:mpsPath")) + "mps-core.jar";
   }
 
   public static Object propertyMacro_GetPropertyValue_5970181360960745173(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1211,7 +1211,7 @@ public class QueriesGenerated {
     return MultiTuple.<SNode,Object>from(SNodeOperations.cast(layoutNode, "jetbrains.mps.build.structure.BuildLayout_File"), null);
   }
 
-  public static Object insertMacro_varValue_2436117033632016432(final IOperationContext operationContext, final TemplateQueryContext _context) {
+  public static Object insertMacro_varValue_2529023923283121095(final IOperationContext operationContext, final TemplateQueryContext _context) {
     DependenciesHelper helper = new DependenciesHelper(_context, _context.getNode());
     String artifact = "77c9a130-703f-4530-bf21-6580757768d0";
     SNode jmAntJar = helper.artifacts().get(artifact);

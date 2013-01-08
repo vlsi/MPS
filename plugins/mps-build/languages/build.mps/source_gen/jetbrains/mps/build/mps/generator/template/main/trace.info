@@ -234,7 +234,7 @@
       <varInfo nodeId="5970181360961717833" varName="module" />
     </scopeInfo>
     <scopeInfo nodeId="5970181360963002104" fileName="QueriesGenerated.java" startLine="1085" startPosition="155" endLine="1106" endPosition="7" />
-    <scopeInfo nodeId="2436117033632016433" fileName="QueriesGenerated.java" startLine="1214" startPosition="144" endLine="1235" endPosition="30">
+    <scopeInfo nodeId="2529023923283121096" fileName="QueriesGenerated.java" startLine="1214" startPosition="144" endLine="1235" endPosition="30">
       <varInfo nodeId="2436117033632111279" varName="artifact" />
       <varInfo nodeId="2436117033632029552" varName="helper" />
       <varInfo nodeId="2436117033632111082" varName="jmAntJar" />

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-ct28ply7vbiwguujdbc1vwgzyfm54vz">
+<dependencies version="2" modelHash="-2pxsrnwv67s8b507zhy1kwh19vrcag4">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="71pz9bhv9nuikz1h255dxx36syohziu" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="1h96jbg38xkez14vk73630sbzaefb2q" />
@@ -14,6 +14,8 @@
     <dep root="144710003695507915" />
     <dep root="2059109515400477499" />
     <dep root="244868996532667532" />
+    <dep root="2529023923283121115" />
+    <dep root="2529023923283158037" />
     <dep root="2769948622284546673" />
     <dep root="2769948622284546675" />
     <dep root="2769948622284546677" />
@@ -124,6 +126,12 @@
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
   <source id="244868996532667532" name="BwfCustomMacro" hash="8u08p6qb3l8fgrhyzdt3n7j6pgpzaj8">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2529023923283121115" name="BwfProjectPartStatement" hash="-6jfx60ndwojknku4q222nctgr5fzst0">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="2529023923283158037" name="BwfAntTaskBundleDeclaration" hash="-8ff6r64krsoflwcevlk9ns60w8zv1l1">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>
