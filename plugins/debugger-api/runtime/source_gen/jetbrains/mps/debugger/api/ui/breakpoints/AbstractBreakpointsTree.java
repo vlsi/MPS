@@ -237,7 +237,7 @@ import javax.swing.UIManager;
       if (breakpoint instanceof ILocationBreakpoint) {
         SNode node = ((ILocationBreakpoint) breakpoint).getLocation().getSNode();
         if (node != null) {
-          return new SNodePointer(node.getTopmostAncestor());
+          return new SNodePointer(node.getContainingRoot());
         }
       }
       return null;

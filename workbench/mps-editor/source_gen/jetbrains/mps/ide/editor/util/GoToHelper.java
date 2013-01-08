@@ -168,7 +168,7 @@ public class GoToHelper {
     }
 
     protected SNode getContainerNode(NodeNavigatable element) {
-      return getLabelNode(element).getTopmostAncestor();
+      return getLabelNode(element).getContainingRoot();
     }
   }
 

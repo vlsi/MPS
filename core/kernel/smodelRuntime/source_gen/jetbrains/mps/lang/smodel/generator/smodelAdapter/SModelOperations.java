@@ -138,7 +138,7 @@ public class SModelOperations {
     }
     SNode nodeConcept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
     if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(nodeConcept)) {
-      SNode node = new SNode(model, conceptFqName);
+      SNode node = new SNode(conceptFqName);
       if (id != null) {
         node.setId(id);
       }

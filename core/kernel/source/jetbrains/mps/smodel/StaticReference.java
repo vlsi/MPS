@@ -45,7 +45,7 @@ public final class StaticReference extends SReferenceBase {
   public SNodeId getTargetNodeId() {
     SNode immatureNode = myImmatureTargetNode;
     if (immatureNode == null || makeIndirect()) return myTargetNodeId;
-    return immatureNode.getSNodeId();
+    return immatureNode.getNodeId();
   }
 
   public synchronized void setTargetNodeId(SNodeId nodeId) {
@@ -89,7 +89,7 @@ public final class StaticReference extends SReferenceBase {
       sb.append(", model = ");
       sb.append(sourceNode.getModel());
       sb.append(", id = ");
-      sb.append(sourceNode.getSNodeId().toString());
+      sb.append(sourceNode.getNodeId().toString());
       sb.append("\ntarget node id = ");
       sb.append(targetNodeId);
       String canRead = ModelAccess.instance().canRead() ? "can read" : "can not read";
@@ -150,6 +150,6 @@ public final class StaticReference extends SReferenceBase {
 
   @Override
   protected void adjustMature(SNode immatureTarget) {
-    myTargetNodeId = immatureTarget.getSNodeId();
+    myTargetNodeId = immatureTarget.getNodeId();
   }
 }

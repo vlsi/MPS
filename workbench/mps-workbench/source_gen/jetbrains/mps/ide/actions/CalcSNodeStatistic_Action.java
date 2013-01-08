@@ -72,7 +72,7 @@ public class CalcSNodeStatistic_Action extends BaseAction {
             1
           ));
 
-          int childrenCount = node.getChildCount();
+          int childrenCount = SNodeOperations.getChildren(node).size();
           MapSequence.fromMap(childrenStatistic).put(childrenCount, (MapSequence.fromMap(childrenStatistic).containsKey(childrenCount) ?
             MapSequence.fromMap(childrenStatistic).get(childrenCount) + 1 :
             1

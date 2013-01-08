@@ -19,7 +19,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import javax.swing.tree.TreeSelectionModel;
 
-import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import java.util.ArrayList;
@@ -74,7 +73,7 @@ public class TypeSystemTraceTree extends MPSTree implements DataProvider {
 
   public TypeSystemTraceTree(IOperationContext operationContext, SNode node, TypeSystemTracePanel parent, EditorComponent editorComponent) {
     myOperationContext = operationContext;
-    myContextTracker = new TypecheckingContextTracker(node.getTopmostAncestor());
+    myContextTracker = new TypecheckingContextTracker(node.getContainingRoot());
     myParent = parent;
     myEditorComponent = editorComponent;
     mySelectedNode = node;

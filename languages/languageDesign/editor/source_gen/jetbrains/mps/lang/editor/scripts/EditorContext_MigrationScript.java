@@ -75,7 +75,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
         SNodeId oldNodeId = oldReference.getTargetNodeId();
         SNodeId newNodeId = SNodeId.fromString(oldNodeId.toString().replaceAll("jetbrains.mps.nodeEditor.EditorContext", "jetbrains.mps.openapi.editor.EditorContext"));
         SReference newReference = new StaticReference(oldReference.getRole(), node, oldReference.getTargetSModelReference(), newNodeId, oldReference.getResolveInfo());
-        node.removeReference(oldReference);
+        node.setReference(oldReference.getRole(), null);
         node.setReference("constructorDeclaration", newReference);
 
         node.getModel().addModelImport(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)"), false);
@@ -116,7 +116,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
         SNodeId oldNodeId = oldReference.getTargetNodeId();
         SNodeId newNodeId = SNodeId.fromString(oldNodeId.toString().replaceAll("jetbrains.mps.nodeEditor.EditorContext", "jetbrains.mps.openapi.editor.EditorContext"));
         SReference newReference = new StaticReference(oldReference.getRole(), node, oldReference.getTargetSModelReference(), newNodeId, oldReference.getResolveInfo());
-        node.removeReference(oldReference);
+        node.setReference(oldReference.getRole(), null);
         node.setReference("baseMethodDeclaration", newReference);
 
         node.getModel().addModelImport(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor(MPS.Editor/jetbrains.mps.openapi.editor@java_stub)"), false);
@@ -426,7 +426,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
         SNodeId oldNodeId = oldReference.getTargetNodeId();
         SNodeId newNodeId = SNodeId.fromString(oldNodeId.toString().replaceAll("jetbrains.mps.openapi.editor.EditorCell", "jetbrains.mps.openapi.editor.cells.EditorCell"));
         SReference newReference = new StaticReference(oldReference.getRole(), node, oldReference.getTargetSModelReference(), newNodeId, oldReference.getResolveInfo());
-        node.removeReference(oldReference);
+        node.setReference(oldReference.getRole(), null);
         node.setReference("constructorDeclaration", newReference);
 
         node.getModel().addModelImport(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)"), false);
@@ -467,7 +467,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
         SNodeId oldNodeId = oldReference.getTargetNodeId();
         SNodeId newNodeId = SNodeId.fromString(oldNodeId.toString().replaceAll("jetbrains.mps.openapi.editor.EditorCell", "jetbrains.mps.openapi.editor.cells.EditorCell"));
         SReference newReference = new StaticReference(oldReference.getRole(), node, oldReference.getTargetSModelReference(), newNodeId, oldReference.getResolveInfo());
-        node.removeReference(oldReference);
+        node.setReference(oldReference.getRole(), null);
         node.setReference("baseMethodDeclaration", newReference);
 
         node.getModel().addModelImport(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)"), false);
@@ -667,7 +667,7 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
       public void doUpdateInstanceNode(SNode node) {
         SReference oldReference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"));
         SReference newReference = new StaticReference(oldReference.getRole(), node, SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)"), oldReference.getTargetNodeId(), oldReference.getResolveInfo());
-        node.removeReference(oldReference);
+        node.setReference(oldReference.getRole(), null);
         node.setReference("baseMethodDeclaration", newReference);
 
         node.getModel().addModelImport(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)"), false);

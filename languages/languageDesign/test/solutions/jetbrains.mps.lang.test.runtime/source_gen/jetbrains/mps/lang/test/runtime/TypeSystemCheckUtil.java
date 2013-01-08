@@ -19,10 +19,10 @@ public class TypeSystemCheckUtil {
   }
 
   public static void checkGenerationMode(SNode node) {
-    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(node.getTopmostAncestor());
+    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTypeCheckingContext(node.getContainingRoot());
     typeCheckingContext.checkRoot(true);
     for (SNode child : SNodeOperations.getDescendants(node, "jetbrains.mps.lang.core.structure.BaseConcept", false, new String[]{})) {
-      TypeCheckingContext typeCheckingContext2 = TypeContextManager.getInstance().createTracingTypeCheckingContext(node.getTopmostAncestor());
+      TypeCheckingContext typeCheckingContext2 = TypeContextManager.getInstance().createTracingTypeCheckingContext(node.getContainingRoot());
       SNode type1 = typeCheckingContext.getTypeDontCheck(child);
       if (type1 == null) {
         continue;
@@ -33,7 +33,7 @@ public class TypeSystemCheckUtil {
   }
 
   public static void checkRollBacks(SNode node) {
-    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTracingTypeCheckingContext(node.getTopmostAncestor());
+    TypeCheckingContext typeCheckingContext = TypeContextManager.getInstance().createTracingTypeCheckingContext(node.getContainingRoot());
     State state = typeCheckingContext.getState();
     State state2 = new State(state.getTypeCheckingContext());
     AbstractOperation rootOperation = state.getOperation();

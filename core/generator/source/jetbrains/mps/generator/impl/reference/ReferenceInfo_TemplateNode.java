@@ -88,11 +88,11 @@ public class ReferenceInfo_TemplateNode extends ReferenceInfo_TemplateBase {
   }
 
   public String getResolveInfoForDynamicResolve() {
-    return myTemplateTargetNode.getResolveInfo();
+    return jetbrains.mps.util.SNodeOperations.getResolveInfo(myTemplateTargetNode);
   }
 
   public String getResolveInfoForNothing() {
-    return myTemplateTargetNode.getResolveInfo();
+    return jetbrains.mps.util.SNodeOperations.getResolveInfo(myTemplateTargetNode);
   }
 
   @Override

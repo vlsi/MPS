@@ -32,9 +32,9 @@
     <scopeInfo nodeId="5898974437025187004" fileName="QueriesGenerated.java" startLine="219" startPosition="155" endLine="220" endPosition="78" />
   </root>
   <root nodeId="1210689334611" modelId="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)">
-    <nodeInfo nodeId="1225985098391" fileName="QueriesGenerated.java" startLine="59" startPosition="148" endLine="60" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225985098391" fileName="QueriesGenerated.java" startLine="59" startPosition="148" endLine="60" endPosition="129" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225985298569" fileName="QueriesGenerated.java" startLine="183" startPosition="145" endLine="184" endPosition="145" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <scopeInfo nodeId="1225985087452" fileName="QueriesGenerated.java" startLine="59" startPosition="148" endLine="60" endPosition="130" />
+    <scopeInfo nodeId="1225985087452" fileName="QueriesGenerated.java" startLine="59" startPosition="148" endLine="60" endPosition="129" />
     <scopeInfo nodeId="1225985289630" fileName="QueriesGenerated.java" startLine="183" startPosition="145" endLine="184" endPosition="145" />
   </root>
   <root nodeId="1215702526483" modelId="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)">

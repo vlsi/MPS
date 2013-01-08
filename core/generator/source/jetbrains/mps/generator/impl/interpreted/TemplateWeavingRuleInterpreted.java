@@ -196,7 +196,7 @@ public class TemplateWeavingRuleInterpreted implements TemplateWeavingRule {
           List<SNode> outputNodesToWeave = templateProcessor.apply(
             GeneratorUtilEx.getMappingName(templateFragment, ruleMappingName),
             templateFragmentNode, context);
-          String childRole = templateFragmentNode.getRole_();
+          String childRole = templateFragmentNode.getRoleInParent();
           for (SNode outputNodeToWeave : outputNodesToWeave) {
             environment.weaveNode(contextParentNode, childRole, outputNodeToWeave, new SNodePointer(templateFragment), context.getInput());
           }

@@ -160,7 +160,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
 
     SNode outputNode = myMappings.findCopiedOutputNodeForInputNode(inputNode);
     if (outputNode == null) {
-      outputNode = findOutputNodeById(inputNode.getSNodeId());
+      outputNode = findOutputNodeById(inputNode.getNodeId());
     }
     return outputNode;
   }

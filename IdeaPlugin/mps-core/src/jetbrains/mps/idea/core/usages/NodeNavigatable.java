@@ -50,8 +50,8 @@ public abstract class NodeNavigatable implements Navigatable {
       @Override
       public void run() {
         SNode targetNode = myNode.getNode();
-        if(targetNode != null) {
-          myRootNode = new SNodePointer(targetNode.getTopmostAncestor());
+        if (targetNode != null) {
+          myRootNode = new SNodePointer(targetNode.getContainingRoot());
           myFile = MPSNodesVirtualFileSystem.getInstance().getFileFor(myRootNode);
         }
       }
@@ -84,7 +84,7 @@ public abstract class NodeNavigatable implements Navigatable {
     if (project == null) return;
 
     ModuleContext context = new ModuleContext(module, project);
-    NavigationSupport.getInstance().openNode(context, node, focus, !node.isRoot());
+    NavigationSupport.getInstance().openNode(context, node, focus, node.getParent() != null);
   }
 
   public abstract boolean isValid();

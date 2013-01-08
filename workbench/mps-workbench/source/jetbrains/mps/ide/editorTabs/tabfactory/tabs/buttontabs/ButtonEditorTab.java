@@ -81,7 +81,7 @@ class ButtonEditorTab {
         DefaultActionGroup result = new DefaultActionGroup();
         Set<SNode> added = new HashSet<SNode>();
         for (final SNode node : nodes) {
-            SNode root = node.getTopmostAncestor();
+          SNode root = node.getContainingRoot();
             if (added.contains(root)) continue;
             added.add(root);
             result.add(new NavigateNodeAction(node, getActionName(node)));
@@ -90,7 +90,7 @@ class ButtonEditorTab {
     }
 
     private String getActionName(SNode node) {
-        String rootName = node.getTopmostAncestor().getName();
+      String rootName = node.getContainingRoot().getName();
         if (rootName != null) {
             rootName = rootName.replaceFirst("_", "__");
         }
@@ -101,7 +101,7 @@ class ButtonEditorTab {
         private final SNode myNode;
 
         public NavigateNodeAction(SNode node, String name) {
-            super(name, "", IconManager.getIconFor(node.getTopmostAncestor()));
+          super(name, "", IconManager.getIconFor(node.getContainingRoot()));
             myNode = node;
         }
 
@@ -226,7 +226,7 @@ class ButtonEditorTab {
                 public void run() {
                     List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
                     if (nodes.size() == 1) {
-                        myCallback.changeNode(nodes.get(0).getTopmostAncestor());
+                      myCallback.changeNode(nodes.get(0).getContainingRoot());
                         return;
                     }
 

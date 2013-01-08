@@ -319,7 +319,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
       if (SModelUtil.isMultipleLinkDeclaration(childLinkDeclaration)) {
         contextParentNode.addChild(childRole, outputNodeToWeave);
       } else {
-        SNode oldChild = contextParentNode.getChild(childRole);
+        SNode oldChild = jetbrains.mps.util.SNodeOperations.getChild(contextParentNode, childRole);
         if (oldChild != null) {
           // if singular child then don't add more that 1 child
           contextParentNode.removeChild(oldChild);

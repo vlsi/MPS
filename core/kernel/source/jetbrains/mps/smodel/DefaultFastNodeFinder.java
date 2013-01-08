@@ -85,7 +85,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
 
       Collections.sort(result, new Comparator<SNode>() {
         public int compare(SNode o1, SNode o2) {
-          return o1.getSNodeId().compareTo(o2.getSNodeId());
+          return o1.getNodeId().compareTo(o2.getNodeId());
         }
       });
 

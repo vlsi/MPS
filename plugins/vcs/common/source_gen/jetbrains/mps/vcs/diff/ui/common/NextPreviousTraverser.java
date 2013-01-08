@@ -269,7 +269,7 @@ public class NextPreviousTraverser {
 
   private static String check_mf966z_a0a0a2a0a0b0t(SConcept checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getId();
+      return checkedDotOperand.getConceptId();
     }
     return null;
   }

@@ -103,7 +103,7 @@ public class WeavingProcessor {
     }
 
     // Additional check - context should be generated from the same root
-    SNode contextRoot = contextNode.getTopmostAncestor();
+    SNode contextRoot = contextNode.getContainingRoot();
     SModel model = contextRoot.getModel();
     if (model == null) {
       myGenerator.showErrorIfStrict(rule.getRuleNode().getNode(), "bad context for weaving rule: no root for context " + contextNode);
@@ -118,7 +118,7 @@ public class WeavingProcessor {
 
     if (applicableNode.getModel() == null) return true;
 
-    SNode inputRoot = applicableNode.getTopmostAncestor();
+    SNode inputRoot = applicableNode.getContainingRoot();
     if (originalContextRoot != inputRoot) {
       myGenerator.showErrorIfStrict(rule.getRuleNode().getNode(),
         "bad context for weaving rule: " + contextRoot.toString() + " is generated from " + originalContextRoot.toString()

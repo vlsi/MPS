@@ -21,7 +21,6 @@ import jetbrains.mps.newTypesystem.context.component.SimpleTypecheckingComponent
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.typesystem.inference.InequalitySystem;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
@@ -123,7 +122,7 @@ public class BaseTypechecking<STATE extends State, COMP extends SimpleTypechecki
     for (SNode key : keySet) {
       List<IErrorReporter> reporters = getErrors(key);
       if (!reporters.isEmpty()) {
-        if (key.getTopmostAncestor() == null) {
+        if (key.getContainingRoot() == null) {
           /*  LOG.warning("Type system reports error for node without containing root. Node: " + key);
                     for (IErrorReporter reporter : reporters) {
                       LOG.warning("This error was reported from: model: " + reporter.getRuleModel() + " id: " + reporter.getRuleId());

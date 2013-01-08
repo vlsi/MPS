@@ -84,7 +84,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   @Nullable
   public SNodeId getTargetNodeId() {
     SNode targetNode = getTargetNode();
-    return targetNode == null ? null : targetNode.getSNodeId();
+    return targetNode == null ? null : targetNode.getNodeId();
   }
 
   protected abstract SNode getTargetNode_internal(boolean silently);
@@ -99,7 +99,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   public static SReference create(String role, SNode sourceNode, SNode targetNode) {
     if (sourceNode.getModel() != null && targetNode.getModel() != null) {
       // 'mature' reference
-      return new StaticReference(role, sourceNode, targetNode.getModel().getSModelReference(), targetNode.getSNodeId(), targetNode.getName());
+      return new StaticReference(role, sourceNode, targetNode.getModel().getSModelReference(), targetNode.getNodeId(), targetNode.getName());
     }
     return new StaticReference(role, sourceNode, targetNode);
   }

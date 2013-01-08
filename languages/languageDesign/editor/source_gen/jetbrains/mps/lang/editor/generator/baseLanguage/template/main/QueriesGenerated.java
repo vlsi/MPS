@@ -240,7 +240,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "menuAlwaysShown");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1187029799032(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_4785871466714472426(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration"), "applicableConcept", false);
     return NameUtil.nodeFQName((applicableConcept != null ?
       applicableConcept :

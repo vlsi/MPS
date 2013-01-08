@@ -187,7 +187,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
       if (node.getParent() != null) {
         node.getParent().removeChild(node);
       }
-      myReferenceContainer.insertChild(anchorNode, myRole, node);
+      myReferenceContainer.insertChild(myRole, node, anchorNode);
     }
   }
 

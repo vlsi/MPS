@@ -37,7 +37,7 @@ public class MatchingUtil {
     if (node1 == node2) return true;
     if (node1 == null) return false;
     if (node2 == null) return false;
-    if (!node1.getConceptFqName().equals(node2.getConceptFqName())) return false;
+    if (!node1.getConcept().getId().equals(node2.getConcept().getId())) return false;
 
     //properties
     final Set<String> propertyNames = new HashSet<String>();
@@ -64,11 +64,11 @@ public class MatchingUtil {
     }
 
     //-- matching references
-    Set<String> referenceRoles = node1.getReferenceRoles();
-    referenceRoles.addAll(node2.getReferenceRoles());
+    Set<String> referenceRoles = jetbrains.mps.util.SNodeOperations.getReferenceRoles(node1);
+    referenceRoles.addAll(jetbrains.mps.util.SNodeOperations.getReferenceRoles(node2));
     for (String role : referenceRoles) {
-      SNode target1 = node1.getReferent(role);
-      SNode target2 = node2.getReferent(role);
+      SNode target1 = node1.getReferenceTarget(role);
+      SNode target2 = node2.getReferenceTarget(role);
       if (matchModifier.accept(target1, target2)) {
         matchModifier.performAction(target1, target2);
         continue;
@@ -77,8 +77,8 @@ public class MatchingUtil {
     }
 
     // children
-    Set<String> childRoles = node1.getChildRoles(matchAttributes);
-    childRoles.addAll(node2.getChildRoles(matchAttributes));
+    Set<String> childRoles = jetbrains.mps.util.SNodeOperations.getChildRoles(node1, matchAttributes);
+    childRoles.addAll(jetbrains.mps.util.SNodeOperations.getChildRoles(node2, matchAttributes));
     for (String role : childRoles) {
       List<SNode> children1 = node1.getChildren(role);
       List<SNode> children2 = node2.getChildren(role);
@@ -110,7 +110,7 @@ public class MatchingUtil {
   }
 
   public static int hash(SNode node) {
-    int result = node.getConceptFqName().hashCode();
+    int result = node.getConcept().getId().hashCode();
     for (SReference reference : node.getReferences()) {
       SNode targetNode = reference.getTargetNodeSilently();
       if (targetNode != null) {
@@ -118,7 +118,7 @@ public class MatchingUtil {
         result = 31 * result + targetNode.hashCode();
       }
     }
-    Map<String, String> properties = node.getProperties();
+    Map<String, String> properties = jetbrains.mps.util.SNodeOperations.getProperties(node);
     for (String propertyName : properties.keySet()) {
       result = 31 * result + propertyName.hashCode();
     }
