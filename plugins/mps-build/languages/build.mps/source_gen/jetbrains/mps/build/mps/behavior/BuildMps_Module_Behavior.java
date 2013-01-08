@@ -39,7 +39,7 @@ public class BuildMps_Module_Behavior {
     List<SNode> requiredJars = new ArrayList<SNode>();
     for (SNode m : Sequence.fromIterable(closure.getModules())) {
       SNode artifact;
-      if (SNodeOperations.getContainingRoot(m) != SNodeOperations.getContainingRoot(thisNode)) {
+      if (SNodeOperations.getContainingRoot(m) != SNodeOperations.getContainingRoot(thisNode) && BuildMps_Module_Behavior.call_isCompilable_7454762407073969360(m)) {
         artifact = SNodeOperations.as(artifacts.findArtifact(m), "jetbrains.mps.build.structure.BuildLayout_Node");
         if (artifact != null) {
           builder.add(artifact, m);
@@ -143,6 +143,18 @@ public class BuildMps_Module_Behavior {
         if (artifact != null) {
           needsFetch = true;
           builder.add(artifact, jm);
+        }
+      }
+    }
+
+    // fetch generation time dependencies 
+    MPSModulesClosure genClosure = new MPSModulesClosure(artifacts.getGenContext(), thisNode).runtimeClosure().generationDependenciesClosure();
+    for (SNode m : Sequence.fromIterable(genClosure.getModulesIncludingLanguagesWithRuntime())) {
+      SNode artifact;
+      if (SNodeOperations.getContainingRoot(m) != SNodeOperations.getContainingRoot(thisNode)) {
+        artifact = SNodeOperations.as(artifacts.findArtifact(m), "jetbrains.mps.build.structure.BuildLayout_Node");
+        if (artifact != null) {
+          builder.add(artifact, m);
         }
       }
     }

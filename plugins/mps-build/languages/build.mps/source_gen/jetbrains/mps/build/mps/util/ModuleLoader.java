@@ -806,10 +806,12 @@ public class ModuleLoader {
     for (String sp : myModuleDescriptor.getSourcePaths()) {
       res.add(sp);
     }
-    if (!(SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Solution")) || !(SPropertyOperations.getBoolean(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Solution"), "doNotCompile")) && hasModels) {
-      IFile genPath = ProjectPathUtil.getGeneratorOutputPath(myModuleFile, myModuleDescriptor);
-      if (genPath != null) {
-        res.add(genPath.getPath());
+    String genPath = null;
+    if (!(SNodeOperations.isInstanceOf(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Solution")) || hasModels) {
+      IFile genPathFile = ProjectPathUtil.getGeneratorOutputPath(myModuleFile, myModuleDescriptor);
+      if (genPathFile != null) {
+        genPath = genPathFile.getPath();
+        res.add(genPath);
       }
     }
 
@@ -834,6 +836,7 @@ public class ModuleLoader {
       SNode javaSource = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", null);
       SLinkOperations.setTarget(javaSource, "folder", SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildInputSingleFolder", null), true);
       SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(javaSource, "folder", true), "jetbrains.mps.build.structure.BuildInputSingleFolder"), "path", p, true);
+      SPropertyOperations.set(javaSource, "isGenerated", "" + (path.equals(genPath)));
       ListSequence.fromList(SLinkOperations.getTargets(module, "sources", true)).addElement(javaSource);
     }
   }

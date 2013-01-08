@@ -656,6 +656,10 @@
       <property name="name" nameId="tpck.1169194664001" value="GeneratorInternal_IWorkflowParticipantReference" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="5970181360961342215">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Layout.Java" />
+      <property name="name" nameId="tpck.1169194664001" value="BuildLayout_InJarNode" />
+    </node>
   </roots>
   <root id="5617550519002745363">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5204048710541015587">
@@ -2186,5 +2190,6 @@
       <link role="target" roleId="tpce.1071599976176" targetNodeId="6083230236994833215" resolveInfo="IWorkflowParticipant" />
     </node>
   </root>
+  <root id="5970181360961342215" />
 </model>
 

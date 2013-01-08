@@ -17,9 +17,9 @@ import jetbrains.mps.make.dependencies.graph.Graphs;
 import jetbrains.mps.util.GraphUtil;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import java.util.Set;
 import java.util.LinkedHashSet;
@@ -31,6 +31,7 @@ public class MPSModulesPartitioner {
   private final List<SNode> modules;
   private List<MPSModulesPartitioner.Chunk> chunks;
   private boolean useMeta;
+  private Iterable<SNode> external;
 
   public MPSModulesPartitioner(TemplateQueryContext genContext, SNode project) {
     this.genContext = genContext;
@@ -78,8 +79,20 @@ public class MPSModulesPartitioner {
     }
   }
 
+  public void buildExternalDependencies() {
+    this.external = Sequence.fromIterable(new MPSModulesClosure(genContext, modules).generationDependenciesClosure().runtimeClosure().getModulesIncludingLanguagesWithRuntime()).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.getContainingRoot(it) != SNodeOperations.getContainingRoot(MPSModulesPartitioner.this.project);
+      }
+    });
+  }
+
   public List<MPSModulesPartitioner.Chunk> getChunks() {
     return chunks;
+  }
+
+  public Iterable<SNode> getExternal() {
+    return external;
   }
 
   public static Iterable<SNode> getModules(SNode project) {

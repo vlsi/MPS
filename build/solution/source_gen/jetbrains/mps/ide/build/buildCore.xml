@@ -2164,7 +2164,6 @@
     </jar>
     <jar destfile="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs/jetbrains.mps.baseLanguage.unitTest.libs-src.jar">
       <zipfileset file="${mps_home}/languages/baseLanguage/unitTest/solutions/lib/jetbrains.mps.baseLnaguage.unitTest.lib.msd" prefix="module" />
-      <zipfileset dir="${mps_home}/languages/baseLanguage/unitTest/solutions/lib" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
     </jar>
     <copy todir="${build.layout}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.libs">
       <fileset file="${mps_home}/languages/baseLanguage/unitTest/solutions/lib/lib/jmock-2.5.1/bsh-core-2.0b4.jar" />
@@ -4866,5 +4865,24 @@
         <module file="${mps_home}/languages/languageDesign/editor/languages/editorTest/editorTest.mpl" />
       </chunk>
     </mps.generate>
+  </target>
+  
+  <target name="cleanSources">
+    <delete dir="${mps_home}/core/ant/source_gen" />
+    <delete dir="${mps_home}/languages/baseLanguage/constructors/source_gen" />
+    <delete dir="${mps_home}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/source_gen" />
+    <delete dir="${mps_home}/languages/baseLanguage/unitTest/source_gen" />
+    <delete dir="${mps_home}/languages/util/buildlanguage/languages/gentest/source_gen" />
+    <delete dir="${mps_home}/languages/util/buildlanguage/languages/reduced/source_gen" />
+    <delete dir="${mps_home}/core/findUsages-runtime/source_gen" />
+    <delete dir="${mps_home}/plugins/mpsjava/platform/source_gen" />
+    <delete dir="${mps_home}/languages/languageDesign/generator/languages/descriptor/source_gen" />
+    <delete dir="${mps_home}/languages/languageDesign/smodel/languages/smodelTests/source_gen" />
+    <delete dir="${mps_home}/languages/languageDesign/traceable.operations/source_gen" />
+    <delete dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/source_gen" />
+    <delete dir="${mps_home}/core/kernel/traceinfo/solutions/jetbrains.mps.debug.api.info/source_gen" />
+    <delete dir="${mps_home}/core/generator/solutions/traceInfo/util/source_gen" />
+    <delete dir="${mps_home}/editor/typesystemIntegration/source_gen" />
+    <delete dir="${mps_home}/languages/languageDesign/editor/languages/editorTest/source_gen" />
   </target>
 </project>
