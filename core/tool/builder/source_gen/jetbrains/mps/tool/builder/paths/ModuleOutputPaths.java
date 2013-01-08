@@ -11,6 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.extapi.persistence.FolderModelRootBase;
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.impl.JarEntryFile;
@@ -45,7 +46,7 @@ public class ModuleOutputPaths {
       }
     }));
 
-    this.sortedModelDirs = DirUtil.sortDirs(Sequence.fromIterable(modules).translate(new ITranslator2<IModule, ModelRoot>() {
+    Iterable<String> modelRootPaths = Sequence.fromIterable(modules).translate(new ITranslator2<IModule, ModelRoot>() {
       public Iterable<ModelRoot> translate(IModule mod) {
         return mod.getModelRoots();
       }
@@ -57,7 +58,22 @@ public class ModuleOutputPaths {
       public String select(ModelRoot smr) {
         return ((FolderModelRootBase) smr).getPath();
       }
-    }).select(new ISelector<String, IFile>() {
+    });
+    modelRootPaths = Sequence.fromIterable(modelRootPaths).concat(Sequence.fromIterable(modules).translate(new ITranslator2<IModule, ModelRoot>() {
+      public Iterable<ModelRoot> translate(IModule mod) {
+        return mod.getModelRoots();
+      }
+    }).where(new IWhereFilter<ModelRoot>() {
+      public boolean accept(ModelRoot it) {
+        return it instanceof FileBasedModelRoot;
+      }
+    }).select(new ISelector<ModelRoot, String>() {
+      public String select(ModelRoot smr) {
+        return ((FileBasedModelRoot) smr).getContentRoot();
+      }
+    }));
+
+    this.sortedModelDirs = DirUtil.sortDirs(Sequence.fromIterable(modelRootPaths).select(new ISelector<String, IFile>() {
       public IFile select(String path) {
         return FileSystem.getInstance().getFileByPath(path);
       }
