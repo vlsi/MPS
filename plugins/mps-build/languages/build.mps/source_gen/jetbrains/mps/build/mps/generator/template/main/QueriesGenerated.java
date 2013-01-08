@@ -382,6 +382,22 @@ public class QueriesGenerated {
     return SPropertyOperations.getString(SLinkOperations.getTarget(_context.getNode(), "target", false), "id");
   }
 
+  public static Object propertyMacro_GetPropertyValue_2436117033632111130(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((Object) _context.getVariable("var:mpsPath")) + "mps-backend.jar";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2436117033632111187(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((Object) _context.getVariable("var:mpsPath")) + "jdom.jar";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2436117033632111196(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((Object) _context.getVariable("var:mpsPath")) + "log4j.jar";
+  }
+
+  public static Object propertyMacro_GetPropertyValue_2436117033632111205(final IOperationContext operationContext, final PropertyMacroContext _context) {
+    return ((Object) _context.getVariable("var:mpsPath")) + "mps-core.jar";
+  }
+
   public static Object propertyMacro_GetPropertyValue_5970181360960745173(final IOperationContext operationContext, final PropertyMacroContext _context) {
     return _context.getNode().getProperty("path");
   }
@@ -535,11 +551,11 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1462305029084461806(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true) != null) && neq_x583g4_a0a0a49(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true)), BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32", true)));
+    return (SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true) != null) && neq_x583g4_a0a0a89(BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32opaque", true)), BuildSourcePath_Behavior.call_getRelativePath_5481553824944787371(SLinkOperations.getTarget(((SNode) _context.getVariable("branding")), "icon32", true)));
   }
 
   public static boolean ifMacro_Condition_7832771629085134029(final IOperationContext operationContext, final IfMacroContext _context) {
-    return isNotEmpty_x583g4_a0a0rd(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "plugin", false), "vendor", true), "url"));
+    return isNotEmpty_x583g4_a0a0vd(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "plugin", false), "vendor", true), "url"));
   }
 
   public static boolean ifMacro_Condition_7832771629085133811(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -547,12 +563,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_7832771629085133713(final IOperationContext operationContext, final IfMacroContext _context) {
-    return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "plugin", false), "vendor", true) != null) && isNotEmpty_x583g4_a0a0a79(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "plugin", false), "vendor", true), "name"));
-  }
-
-  public static boolean ifMacro_Condition_6503355885715290554(final IOperationContext operationContext, final IfMacroContext _context) {
-    // <node> 
-    return true;
+    return (SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "plugin", false), "vendor", true) != null) && isNotEmpty_x583g4_a0a0a101(SPropertyOperations.getString(SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "plugin", false), "vendor", true), "name"));
   }
 
   public static boolean ifMacro_Condition_8845345751178285144(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1200,6 +1211,30 @@ public class QueriesGenerated {
     return MultiTuple.<SNode,Object>from(SNodeOperations.cast(layoutNode, "jetbrains.mps.build.structure.BuildLayout_File"), null);
   }
 
+  public static Object insertMacro_varValue_2436117033632016432(final IOperationContext operationContext, final TemplateQueryContext _context) {
+    DependenciesHelper helper = new DependenciesHelper(_context, _context.getNode());
+    String artifact = "77c9a130-703f-4530-bf21-6580757768d0";
+    SNode jmAntJar = helper.artifacts().get(artifact);
+    if ((jmAntJar != null)) {
+      String val = BuildLayout_PathElement_Behavior.call_location_7117056644539862594(jmAntJar, helper, artifact);
+      if (val != null) {
+        int slash = val.lastIndexOf("/");
+        return (slash == -1 ?
+          val :
+          val.substring(0, slash + 1)
+        );
+      }
+    }
+    if (!(ListSequence.fromList(SLinkOperations.getTargets(_context.getNode(), "macros", true)).any(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.structure.BuildFolderMacro") && "mps_home".equals(SPropertyOperations.getString(SNodeOperations.cast(it, "jetbrains.mps.build.structure.BuildFolderMacro"), "name"));
+      }
+    }))) {
+      _context.showErrorMessage(null, "${mps_home} macro is required to create `generate' task");
+    }
+    return "${mps_home}/lib/";
+  }
+
   public static Object insertMacro_varValue_5970181360960164993(final IOperationContext operationContext, final TemplateQueryContext _context) {
     return (MPSModulesPartitioner.Chunk) _context.getNode().getUserObject("chunk");
   }
@@ -1244,18 +1279,18 @@ public class QueriesGenerated {
     );
   }
 
-  private static boolean neq_x583g4_a0a0a49(Object a, Object b) {
+  private static boolean neq_x583g4_a0a0a89(Object a, Object b) {
     return !((a != null ?
       a.equals(b) :
       a == b
     ));
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0rd(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0vd(String str) {
     return str != null && str.length() > 0;
   }
 
-  public static boolean isNotEmpty_x583g4_a0a0a79(String str) {
+  public static boolean isNotEmpty_x583g4_a0a0a101(String str) {
     return str != null && str.length() > 0;
   }
 }

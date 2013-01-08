@@ -16,7 +16,7 @@ public class StructureAspectDescriptor implements jetbrains.mps.smodel.runtime.S
   public ConceptDescriptor getDescriptor(String conceptFqName) {
     switch (Arrays.binarySearch(stringSwitchCases_1htk8d_a0a0a, conceptFqName)) {
       case 0:
-        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMPSPlugin", "jetbrains.mps.build.structure.BuildPlugin", false, new String[]{"jetbrains.mps.build.structure.BuildPlugin"}, new String[]{}, new String[]{});
+        return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMPSPlugin", "jetbrains.mps.build.structure.BuildPlugin", false, new String[]{"jetbrains.mps.build.structure.BuildPlugin", "jetbrains.mps.build.structure.BuildExternalDependency"}, new String[]{}, new String[]{});
       case 1:
         return new CompiledConceptDescriptor("jetbrains.mps.build.mps.structure.BuildMpsAspect", "jetbrains.mps.build.structure.BuildAspect", false, new String[]{"jetbrains.mps.build.structure.BuildAspect"}, new String[]{"bootstrap"}, new String[]{});
       case 2:
