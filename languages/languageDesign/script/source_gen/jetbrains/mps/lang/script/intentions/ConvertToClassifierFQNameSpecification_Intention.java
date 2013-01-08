@@ -14,13 +14,14 @@ import java.util.Collections;
 import jetbrains.mps.smodel.action.SNodeFactoryOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
-public class ConvertToFQNameSpecification_Intention implements IntentionFactory {
+public class ConvertToClassifierFQNameSpecification_Intention implements IntentionFactory {
   private Collection<IntentionExecutable> myCachedExecutable;
 
-  public ConvertToFQNameSpecification_Intention() {
+  public ConvertToClassifierFQNameSpecification_Intention() {
   }
 
   public String getConcept() {
@@ -28,11 +29,11 @@ public class ConvertToFQNameSpecification_Intention implements IntentionFactory 
   }
 
   public String getPresentation() {
-    return "ConvertToFQNameSpecification";
+    return "ConvertToClassifierFQNameSpecification";
   }
 
   public String getPersistentStateKey() {
-    return "jetbrains.mps.lang.script.intentions.ConvertToFQNameSpecification_Intention";
+    return "jetbrains.mps.lang.script.intentions.ConvertToClassifierFQNameSpecification_Intention";
   }
 
   public String getLanguageFqName() {
@@ -61,7 +62,7 @@ public class ConvertToFQNameSpecification_Intention implements IntentionFactory 
 
   public Collection<IntentionExecutable> instances(final SNode node, final EditorContext context) {
     if (myCachedExecutable == null) {
-      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertToFQNameSpecification_Intention.IntentionImplementation());
+      myCachedExecutable = Collections.<IntentionExecutable>singletonList(new ConvertToClassifierFQNameSpecification_Intention.IntentionImplementation());
     }
     return myCachedExecutable;
   }
@@ -78,12 +79,12 @@ public class ConvertToFQNameSpecification_Intention implements IntentionFactory 
       SNode classifierSpecification = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.script.structure.FQNameClassifierSpecification");
       SPropertyOperations.set(classifierSpecification, "classifierFQName", BehaviorReflection.invokeVirtual(String.class, node, "virtual_getClassifierFqName_5434557751112930827", new Object[]{}));
       SPropertyOperations.set(classifierSpecification, "smodelReference", BehaviorReflection.invokeVirtual(String.class, node, "virtual_getSModelReference_5434557751113441014", new Object[]{}));
-      SPropertyOperations.set(classifierSpecification, "snodeId", node.getSNodeId().toString());
+      SPropertyOperations.set(classifierSpecification, "snodeId", SLinkOperations.getTarget(node, "classifier", false).getSNodeId().toString());
       SNodeOperations.deleteNode(node);
     }
 
     public IntentionDescriptor getDescriptor() {
-      return ConvertToFQNameSpecification_Intention.this;
+      return ConvertToClassifierFQNameSpecification_Intention.this;
     }
   }
 }
