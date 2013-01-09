@@ -146,7 +146,8 @@ public class SModel {
     return myRoots.iterator();
   }
 
-  public void addRoot(@NotNull SNode node) {
+  public void addRoot(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+    assert node instanceof SNode;
     ModelChange.assertLegalNodeRegistration(this, node);
     enforceFullLoad();
     if (myRoots.contains(node)) return;
@@ -154,26 +155,29 @@ public class SModel {
     if (model != null && model != this && model.isRoot(node)) {
       model.removeRoot(node);
     } else {
-      SNode parent = node.getParent();
+      org.jetbrains.mps.openapi.model.SNode parent = node.getParent();
       if (parent != null) {
         parent.removeChild(node);
       }
     }
 
-    myRoots.add(node);
-    node.registerInModel(this);
+    SNode sn = (SNode) node;
+    myRoots.add(sn);
+    sn.registerInModel(this);
     performUndoableAction(new AddRootUndoableAction(node));
-    fireRootAddedEvent(node);
+    fireRootAddedEvent(sn);
   }
 
-  public void removeRoot(@NotNull SNode node) {
+  public void removeRoot(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
+    assert node instanceof SNode;
     ModelChange.assertLegalNodeUnRegistration(this, node);
     enforceFullLoad();
     if (myRoots.contains(node)) {
       myRoots.remove(node);
-      node.unRegisterFromModel();
+      SNode sn = (SNode) node;
+      sn.unRegisterFromModel();
       performUndoableAction(new RemoveRootUndoableAction(node));
-      fireRootRemovedEvent(node);
+      fireRootRemovedEvent(sn);
     }
   }
 
@@ -918,7 +922,7 @@ public class SModel {
   }
 
 
-  public boolean isRoot(@Nullable SNode node) {
+  public boolean isRoot(@Nullable org.jetbrains.mps.openapi.model.SNode node) {
     return myRoots.contains(node);
   }
 
