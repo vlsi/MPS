@@ -75,9 +75,9 @@ public class ConvertIfToMyIf_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode statement = SConceptOperations.createNewNode("org.jetbrains.mps.samples.IfAndUnless.structure.MyIfStatement", null);
+      jetbrains.mps.smodel.SNode statement = SConceptOperations.createNewNode("org.jetbrains.mps.samples.IfAndUnless.structure.MyIfStatement", null);
       SLinkOperations.setTarget(statement, "condition", SLinkOperations.getTarget(node, "condition", true), true);
-      SNode ifBody = SConceptOperations.createNewNode("org.jetbrains.mps.samples.IfAndUnless.structure.TrueFlow", null);
+      jetbrains.mps.smodel.SNode ifBody = SConceptOperations.createNewNode("org.jetbrains.mps.samples.IfAndUnless.structure.TrueFlow", null);
       ListSequence.fromList(SLinkOperations.getTargets(ifBody, "statement", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "ifTrue", true), "statement", true)));
       SLinkOperations.setTarget(statement, "body", ifBody, true);
 

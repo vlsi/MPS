@@ -22,13 +22,13 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
   }
 
   protected SNode createMethodBody() {
-    SNode body = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
+    jetbrains.mps.smodel.SNode body = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
     if (SNodeOperations.isInstanceOf(this.getMethodType(), "jetbrains.mps.baseLanguage.structure.VoidType")) {
-      SNode expressionStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+      jetbrains.mps.smodel.SNode expressionStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
       SLinkOperations.setTarget(expressionStatement, "expression", SNodeOperations.cast(CopyUtil.copy(this.myExpression), "jetbrains.mps.baseLanguage.structure.Expression"), true);
       ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addElement(expressionStatement);
     } else {
-      SNode ret = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
+      jetbrains.mps.smodel.SNode ret = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
       SLinkOperations.setTarget(ret, "expression", SNodeOperations.cast(CopyUtil.copy(this.myExpression), "jetbrains.mps.baseLanguage.structure.Expression"), true);
       ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addElement(ret);
     }

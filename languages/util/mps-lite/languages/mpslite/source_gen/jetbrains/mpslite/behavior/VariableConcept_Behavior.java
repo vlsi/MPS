@@ -48,7 +48,7 @@ public class VariableConcept_Behavior {
   }
 
   public static SNode virtual_createEditor_1239890004879(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    SNode editor = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
+    jetbrains.mps.smodel.SNode editor = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
     SNode lineList = SLinkOperations.getTarget(thisNode, "concreteSyntax", true);
     SNode contentCell = GenerationUtils.generateEditorCellModel(lineList, thisNode, partsToLinks);
     if (contentCell == null) {
@@ -59,7 +59,7 @@ public class VariableConcept_Behavior {
   }
 
   public static SNode virtual_createAdditionalConcept_1239817368042(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    SNode additionalConcept = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.ConceptDeclaration", null);
+    jetbrains.mps.smodel.SNode additionalConcept = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.ConceptDeclaration", null);
     SPropertyOperations.set(additionalConcept, "name", SPropertyOperations.getString(thisNode, "name") + "Reference");
     SNode referenceDeclaration = SLinkOperations.addNewChild(additionalConcept, "linkDeclaration", "jetbrains.mps.lang.structure.structure.LinkDeclaration");
     SPropertyOperations.set(referenceDeclaration, "metaClass", "reference");
@@ -72,8 +72,8 @@ public class VariableConcept_Behavior {
   }
 
   public static SNode virtual_createAdditionalEditor_1239891670850(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    SNode editor = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
-    SNode contentCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefCell", null);
+    jetbrains.mps.smodel.SNode editor = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
+    jetbrains.mps.smodel.SNode contentCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_RefCell", null);
     SLinkOperations.setTarget(editor, "cellModel", contentCell, true);
     SLinkOperations.setTarget(contentCell, "relationDeclaration", SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(SLinkOperations.getTarget(thisNode, "reference", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
     SNode editorComponent = SLinkOperations.setNewChild(contentCell, "editorComponent", "jetbrains.mps.lang.editor.structure.InlineEditorComponent");

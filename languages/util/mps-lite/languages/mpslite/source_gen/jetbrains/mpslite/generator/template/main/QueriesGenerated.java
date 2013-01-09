@@ -39,7 +39,7 @@ public class QueriesGenerated {
     SNode conceptContainer = ListSequence.fromList(SModelOperations.getRoots(_context.getModel(), "jetbrains.mpslite.structure.ConceptContainer")).first();
     List<SNode> allConcepts = ConceptContainer_Behavior.call_getAllConcepts_1239801518275(conceptContainer);
     for (SNode conceptDeclaration : allConcepts) {
-      SNode concept = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.ConceptDeclaration", null);
+      jetbrains.mps.smodel.SNode concept = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.ConceptDeclaration", null);
       SPropertyOperations.set(concept, "name", SPropertyOperations.getString(conceptDeclaration, "name"));
       SPropertyOperations.set(concept, "rootable", "" + (BehaviorReflection.invokeVirtual(Boolean.TYPE, conceptDeclaration, "virtual_isRootable_1239714833738", new Object[]{})));
       if (BehaviorReflection.invokeVirtual(Boolean.TYPE, conceptDeclaration, "virtual_isAbstract_1239715026284", new Object[]{})) {
@@ -90,7 +90,7 @@ public class QueriesGenerated {
       SLinkOperations.setTarget(editor, "conceptDeclaration", mpsConcept, false);
       MapSequence.fromMap(conceptsToEditors).put(mpsConcept, editor);
     }
-    SNode actions = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", null);
+    jetbrains.mps.smodel.SNode actions = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.SideTransformHintSubstituteActions", null);
     SPropertyOperations.set(actions, "name", "_BinaryOperations_SideTransform");
     for (SNode binaryOperationConcept : ConceptContainer_Behavior.call_getBinaryOperationConcepts_1239806149720(conceptContainer)) {
       GenerationUtils.fillBinarySideTransformActions(binaryOperationConcept, actions, conceptsToTargets, partsToLinkDeclarations);
@@ -98,7 +98,7 @@ public class QueriesGenerated {
     // constraints(scopes) 
     Map<SNode, SNode> conceptsToConstraints = MapSequence.fromMap(new HashMap<SNode, SNode>());
     for (SNode variableConcept : ConceptContainer_Behavior.call_getVariableConcepts_1239806150736(conceptContainer)) {
-      SNode conceptConstraint = SConceptOperations.createNewNode("jetbrains.mps.lang.constraints.structure.ConceptConstraints", null);
+      jetbrains.mps.smodel.SNode conceptConstraint = SConceptOperations.createNewNode("jetbrains.mps.lang.constraints.structure.ConceptConstraints", null);
       SLinkOperations.setTarget(conceptConstraint, "concept", MapSequence.fromMap(additionalConceptsToTargets).get(variableConcept), false);
       SNode varScope = VariableConcept_Behavior.call_createVariableScope_1239942296621(variableConcept, conceptsToTargets, partsToLinkDeclarations);
       ListSequence.fromList(SLinkOperations.getTargets(conceptConstraint, "referent", true)).addElement(varScope);

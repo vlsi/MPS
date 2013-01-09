@@ -24,7 +24,7 @@ public class ExtractMethodWithReturn extends ExtractMethodFromStatementsRefactor
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SNode methodCall = ExtractMethodWithReturn.this.createMethodCall(match, methodDeclaration);
-        SNode returnlStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
+        jetbrains.mps.smodel.SNode returnlStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
         SLinkOperations.setTarget(returnlStatement, "expression", methodCall, true);
         List<SNode> statements = match.getNodes();
         SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), returnlStatement);

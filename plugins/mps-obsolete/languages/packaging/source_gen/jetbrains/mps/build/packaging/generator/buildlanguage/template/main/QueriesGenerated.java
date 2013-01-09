@@ -1230,7 +1230,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_6278136257391529809(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode sourcePath = SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getNode(), "sourcePath", true));
-    SNode pathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
+    jetbrains.mps.smodel.SNode pathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
     SPropertyOperations.set(pathComponent, "path", "classes");
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(sourcePath, "compositePathComponent", true), "pathComponent", true)).addElement(pathComponent);
     return sourcePath;
@@ -1238,7 +1238,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_5147583081002814639(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode sourcePath = SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getNode(), "sourcePath", true));
-    SNode pathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
+    jetbrains.mps.smodel.SNode pathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
     SPropertyOperations.set(pathComponent, "path", "META-INF");
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(sourcePath, "compositePathComponent", true), "pathComponent", true)).addElement(pathComponent);
     pathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
@@ -1249,7 +1249,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_6278136257391573809(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode sourcePath = SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getNode(), "sourcePath", true));
-    SNode pathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
+    jetbrains.mps.smodel.SNode pathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
     SPropertyOperations.set(pathComponent, "path", "classes");
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(sourcePath, "compositePathComponent", true), "pathComponent", true)).addElement(pathComponent);
     return sourcePath;
@@ -1257,7 +1257,7 @@ public class QueriesGenerated {
 
   public static SNode sourceNodeQuery_5147583081002781267(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
     SNode sourcePath = SNodeOperations.copyNode(SLinkOperations.getTarget(_context.getNode(), "sourcePath", true));
-    SNode pathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
+    jetbrains.mps.smodel.SNode pathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
     SPropertyOperations.set(pathComponent, "path", "META-INF");
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(sourcePath, "compositePathComponent", true), "pathComponent", true)).addElement(pathComponent);
     pathComponent = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.PathComponent", null);
@@ -1330,7 +1330,7 @@ public class QueriesGenerated {
     final String MREF = "mref";
     List<SNode> res = new ArrayList<SNode>();
     for (IModule m : new GlobalModuleDependenciesManager(Module_Behavior.call_getModule_1213877515148(_context.getNode())).getModules(GlobalModuleDependenciesManager.Deptype.COMPILE)) {
-      SNode propertyNode = SConceptOperations.createNewNode("jetbrains.mps.lang.core.structure.BaseConcept", null);
+      jetbrains.mps.smodel.SNode propertyNode = SConceptOperations.createNewNode("jetbrains.mps.lang.core.structure.BaseConcept", null);
       propertyNode.setProperty(MREF, m.getModuleReference().toString());
       ListSequence.fromList(res).addElement(propertyNode);
     }
@@ -1675,11 +1675,11 @@ __switch__:
       SNode lastCycle = null;
       List<SNode> result = ListSequence.fromList(new ArrayList<SNode>(ListSequence.fromList(sm).count()));
       for (Set<IModule> moduleSet : ListSequence.fromList(sm)) {
-        SNode cycle = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.ModuleCycle", null);
+        jetbrains.mps.smodel.SNode cycle = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.ModuleCycle", null);
         ListSequence.fromList(result).addElement(cycle);
         // add dependency to the previous cycle so that compilation order would be preserved 
         if (lastCycle != null) {
-          SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.ModuleCycleReference", null);
+          jetbrains.mps.smodel.SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.ModuleCycleReference", null);
           SLinkOperations.setTarget(ref, "cycle", lastCycle, false);
           ListSequence.fromList(SLinkOperations.getTargets(cycle, "dependency", true)).addElement(ref);
         }
@@ -1693,7 +1693,7 @@ __switch__:
         for (IModule imodule : Sequence.fromIterable(sortedModuleSet)) {
           List<SNode> modulesForIModule = MapSequence.fromMap(map).get(imodule);
           for (SNode module : ListSequence.fromList(modulesForIModule)) {
-            SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.NewModuleReference", null);
+            jetbrains.mps.smodel.SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.NewModuleReference", null);
             SLinkOperations.setTarget(ref, "module", module, false);
             SLinkOperations.addChild(cycle, "moduleReference", ref);
           }

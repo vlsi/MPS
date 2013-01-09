@@ -25,7 +25,7 @@ public class TemplateSwitch_Behavior {
   }
 
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    SNode rule = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.Reduction_MappingRule", null);
+    jetbrains.mps.smodel.SNode rule = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.Reduction_MappingRule", null);
     SLinkOperations.setTarget(rule, "applicableConcept", baseConcept, false);
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "reductionMappingRule", true)).addElement(rule);
   }

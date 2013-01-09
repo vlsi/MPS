@@ -495,7 +495,7 @@ public class QueriesGenerated {
                   return eq_x583g4_a0a0a0a0a0a1a1a0a0a0a0a98(SLinkOperations.getTarget(it, "parameterDeclaration", false), calledDebuggerParameter);
                 }
               }) == null) {
-                SNode reference = SConceptOperations.createNewNode("jetbrains.mps.execution.commands.structure.CommandParameterReference", null);
+                jetbrains.mps.smodel.SNode reference = SConceptOperations.createNewNode("jetbrains.mps.execution.commands.structure.CommandParameterReference", null);
                 SLinkOperations.setTarget(reference, "parameter", SLinkOperations.getTarget(declaration, "debuggerParameter", true), false);
                 ListSequence.fromList(SLinkOperations.getTargets(commandBuilder, "argument", true)).addElement(_quotation_createNode_x583g4_a0a2a1a1a0a0a0a0a98(calledDebuggerParameter, reference));
               }

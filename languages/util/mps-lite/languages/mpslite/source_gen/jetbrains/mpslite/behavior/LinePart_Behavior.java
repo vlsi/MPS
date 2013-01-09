@@ -18,7 +18,7 @@ public class LinePart_Behavior {
   }
 
   public static SNode virtual_createCellModel_1238614099938(SNode thisNode, Map<SNode, SNode> partsToLinks) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Error", null);
+    jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Error", null);
     SPropertyOperations.set(result, "text", "not implemented");
     return result;
   }

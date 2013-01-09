@@ -34,7 +34,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapType", null);
+        jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapType", null);
         SLinkOperations.setTarget(result, "keyType", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).first()), true);
         SLinkOperations.setTarget(result, "valueType", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).last()), true);
         SNodeOperations.replaceWithAnother(node, result);
@@ -62,7 +62,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapElement", null);
+        jetbrains.mps.smodel.SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapElement", null);
         SLinkOperations.setTarget(operation, "key", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SLinkOperations.setTarget(operation, "map", SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), true);
         SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), operation);
@@ -90,8 +90,8 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode assignment = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
-        SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapElement", null);
+        jetbrains.mps.smodel.SNode assignment = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
+        jetbrains.mps.smodel.SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapElement", null);
         SLinkOperations.setTarget(operation, "key", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SLinkOperations.setTarget(operation, "map", SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), true);
         SLinkOperations.setTarget(assignment, "lValue", operation, true);
@@ -121,7 +121,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode values = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation", null);
+        jetbrains.mps.smodel.SNode values = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.GetValuesOperation", null);
         SNodeOperations.replaceWithAnother(node, values);
       }
 
@@ -147,7 +147,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode values = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation", null);
+        jetbrains.mps.smodel.SNode values = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.GetKeysOperation", null);
         SNodeOperations.replaceWithAnother(node, values);
       }
 
@@ -173,7 +173,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode values = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapClearOperation", null);
+        jetbrains.mps.smodel.SNode values = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.MapClearOperation", null);
         SNodeOperations.replaceWithAnother(node, values);
       }
 
@@ -199,7 +199,7 @@ public class MigrationFromMapsToCollections_MigrationScript extends BaseMigratio
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", null);
+        jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.HashMapCreator", null);
         SLinkOperations.setTarget(result, "keyType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
         SLinkOperations.setTarget(result, "valueType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).last(), true);
         SNodeOperations.replaceWithAnother(node, result);

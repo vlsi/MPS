@@ -24,7 +24,7 @@ public class ExtractMethodWithExitPoints extends ExtractMethodFromStatementsRefa
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SNode methodCall = ExtractMethodWithExitPoints.this.createMethodCall(match, methodDeclaration);
-        SNode ifNode = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
+        jetbrains.mps.smodel.SNode ifNode = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
         SLinkOperations.setTarget(ifNode, "condition", methodCall, true);
         SLinkOperations.setTarget(ifNode, "ifTrue", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);
         ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ifNode, "ifTrue", true), "statement", true)).addElement(ListSequence.fromList(ExtractMethodWithExitPoints.this.myAnalyzer.getIntenalExitPoints()).first());
@@ -37,8 +37,8 @@ public class ExtractMethodWithExitPoints extends ExtractMethodFromStatementsRefa
   }
 
   protected void modifyPartToExtract() {
-    SNode ret = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
-    SNode constant = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
+    jetbrains.mps.smodel.SNode ret = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
+    jetbrains.mps.smodel.SNode constant = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
     SPropertyOperations.set(constant, "value", "" + (false));
     SLinkOperations.setTarget(ret, "expression", constant, true);
     ListSequence.fromList(this.myStatements).addElement(SNodeOperations.copyNode(ret));

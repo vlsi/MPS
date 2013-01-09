@@ -60,7 +60,7 @@ public class QueriesGenerated {
   }
 
   public static SNode insertMacro_Query_7612440128092282150(final IOperationContext operationContext, final TemplateQueryContextWithMacro _context) {
-    SNode inode = SConceptOperations.createNewNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", null);
+    jetbrains.mps.smodel.SNode inode = SConceptOperations.createNewNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", null);
     SPropertyOperations.set(inode, "text", "Inserted node for input=" + SPropertyOperations.getString(_context.getNode(), "name"));
     return inode;
   }

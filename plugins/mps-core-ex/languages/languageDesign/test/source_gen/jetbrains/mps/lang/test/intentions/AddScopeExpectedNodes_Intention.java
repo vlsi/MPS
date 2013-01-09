@@ -86,7 +86,7 @@ public class AddScopeExpectedNodes_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       Scope scope = ModelConstraints.getScope(ScopesTest_Behavior.call_getCheckingReference_5449224527592367549(node));
       for (SNode avaliable : scope.getAvailableElements(null)) {
-        SNode expectedNode = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ScopesExpectedNode", null);
+        jetbrains.mps.smodel.SNode expectedNode = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ScopesExpectedNode", null);
         SLinkOperations.setTarget(expectedNode, "ref", avaliable, false);
         ListSequence.fromList(SLinkOperations.getTargets(node, "nodes", true)).addElement(expectedNode);
       }

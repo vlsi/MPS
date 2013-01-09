@@ -40,7 +40,7 @@ public class ArrayType_Behavior {
   }
 
   public static SNode virtual_getClassExpression_1213877337357(SNode thisNode) {
-    SNode expr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayClassExpression", null);
+    jetbrains.mps.smodel.SNode expr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayClassExpression", null);
     SLinkOperations.setTarget(expr, "arrayType", SNodeOperations.cast(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), thisNode, "virtual_getErasure_702942408396803226", new Object[]{}), "jetbrains.mps.baseLanguage.structure.ArrayType"), true);
     return expr;
   }
@@ -68,7 +68,7 @@ public class ArrayType_Behavior {
   }
 
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
-    SNode arrayCreator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayCreator", null);
+    jetbrains.mps.smodel.SNode arrayCreator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayCreator", null);
     SNode type = SLinkOperations.getTarget(thisNode, "componentType", true);
     while (SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ArrayType")) {
       type = SLinkOperations.getTarget(SNodeOperations.cast(type, "jetbrains.mps.baseLanguage.structure.ArrayType"), "componentType", true);

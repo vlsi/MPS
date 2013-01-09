@@ -12,12 +12,12 @@ public class StateMachine_Behavior {
   public static void init(SNode thisNode) {
     int count = 3;
     for (int i = 0; i < count; i++) {
-      SNode event = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Event", null);
+      jetbrains.mps.smodel.SNode event = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Event", null);
       SPropertyOperations.set(event, "name", "e_" + i);
       ListSequence.fromList(SLinkOperations.getTargets(thisNode, "events", true)).addElement(event);
     }
     for (int i = 0; i < count; i++) {
-      SNode state = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.State", null);
+      jetbrains.mps.smodel.SNode state = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.State", null);
       SPropertyOperations.set(state, "name", "s_" + i);
       ListSequence.fromList(SLinkOperations.getTargets(thisNode, "states", true)).addElement(state);
     }
@@ -29,7 +29,7 @@ public class StateMachine_Behavior {
       ));
       SNode event = ListSequence.fromList(SLinkOperations.getTargets(thisNode, "events", true)).getElement(i);
 
-      SNode transition = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Transition", null);
+      jetbrains.mps.smodel.SNode transition = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Transition", null);
       SLinkOperations.setTarget(transition, "fromState", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.StateReference", null), true);
       SLinkOperations.setTarget(SLinkOperations.getTarget(transition, "fromState", true), "state", sourceState, false);
       SLinkOperations.setTarget(transition, "toState", SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.StateReference", null), true);

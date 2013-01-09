@@ -76,7 +76,7 @@ public abstract class BaseLanguageTextGen {
         }
       }
       if (!(containsDeprecated)) {
-        SNode deprecated = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null);
+        jetbrains.mps.smodel.SNode deprecated = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null);
         SLinkOperations.setTarget(deprecated, "annotation", SNodeOperations.getNode("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)", "~Deprecated"), false);
         TextGenManager.instance().appendNodeText(textGen.getContext(), textGen.getBuffer(), deprecated, textGen.getSNode());
       }

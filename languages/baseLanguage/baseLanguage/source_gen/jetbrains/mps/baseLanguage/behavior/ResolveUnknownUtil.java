@@ -40,7 +40,7 @@ public class ResolveUnknownUtil {
       // change to something real as default, e.g. static field access expression without the field 
       return new _FunctionTypes._return_P0_E0<SNode>() {
         public SNode invoke() {
-          SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+          jetbrains.mps.smodel.SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
           SLinkOperations.setTarget(fieldRef, "classifier", SNodeOperations.cast(result, "jetbrains.mps.baseLanguage.structure.Classifier"), false);
           return fieldRef;
         }
@@ -98,13 +98,13 @@ public class ResolveUnknownUtil {
 
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
       SNode decl = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
-      SNode scall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
+      jetbrains.mps.smodel.SNode scall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
       SLinkOperations.setTarget(scall, "baseMethodDeclaration", decl, false);
       call.value = scall;
 
     } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
       SNode decl = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
-      SNode icall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", null);
+      jetbrains.mps.smodel.SNode icall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalInstanceMethodCall", null);
       SLinkOperations.setTarget(icall, "baseMethodDeclaration", decl, false);
       call.value = icall;
     }
@@ -137,8 +137,8 @@ public class ResolveUnknownUtil {
 
     return new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
-        SNode create = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassCreator", null);
+        jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression", null);
+        jetbrains.mps.smodel.SNode create = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassCreator", null);
 
         reattachMethodArguments(x, create);
         for (SNode arg : ListSequence.fromList(SLinkOperations.getTargets(x, "typeArgument", true))) {
@@ -188,7 +188,7 @@ public class ResolveUnknownUtil {
 
         if (lastUpperCase < ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).count() - 1) {
           // it's more than just a class name 
-          SNode fref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+          jetbrains.mps.smodel.SNode fref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
           fref.setReference(new DynamicReference("classifier", fref, null, className.value).getRole(), new DynamicReference("classifier", fref, null, className.value));
           SReference fieldRef = new DynamicReference("staticFieldDeclaration", fref, null, SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).getElement(lastUpperCase + 1), "value"));
           fref.setReference(fieldRef.getRole(), fieldRef);
@@ -227,7 +227,7 @@ public class ResolveUnknownUtil {
 
       return new _FunctionTypes._return_P0_E0<SNode>() {
         public SNode invoke() {
-          SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
+          jetbrains.mps.smodel.SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
           if ((target != null)) {
             SLinkOperations.setTarget(call, "classConcept", SNodeOperations.cast(target, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
           } else {
@@ -245,10 +245,10 @@ public class ResolveUnknownUtil {
 
       return new _FunctionTypes._return_P0_E0<SNode>() {
         public SNode invoke() {
-          SNode dotExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
+          jetbrains.mps.smodel.SNode dotExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
           SLinkOperations.setTarget(dotExpr, "operand", SNodeOperations.cast(operand.value, "jetbrains.mps.baseLanguage.structure.Expression"), true);
 
-          SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null);
+          jetbrains.mps.smodel.SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", null);
           SLinkOperations.setTarget(dotExpr, "operation", call, true);
 
           SReference sref = new DynamicReference("baseMethodDeclaration", call, null, SPropertyOperations.getString(x, "callee"));
@@ -299,7 +299,7 @@ public class ResolveUnknownUtil {
       } else {
         // there is at least one token that must represent a static field 
 
-        SNode statFieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
+        jetbrains.mps.smodel.SNode statFieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference", null);
         SLinkOperations.setTarget(statFieldRef, "classifier", cls, false);
 
         SReference fieldRef = new DynamicReference("staticFieldDeclaration", statFieldRef, null, SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(x, "token", true)).getElement(tokPos), "value"));
@@ -326,9 +326,9 @@ public class ResolveUnknownUtil {
   }
 
   public static SNode makeFieldDotExpression(SNode holder, String fieldName) {
-    SNode dotExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
+    jetbrains.mps.smodel.SNode dotExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
     SLinkOperations.setTarget(dotExpr, "operand", holder, true);
-    SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
+    jetbrains.mps.smodel.SNode fieldRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
     SLinkOperations.setTarget(dotExpr, "operation", fieldRef, true);
     SReference sref = new DynamicReference("fieldDeclaration", fieldRef, null, fieldName);
     fieldRef.setReference(sref.getRole(), sref);
@@ -350,7 +350,7 @@ public class ResolveUnknownUtil {
 
       System.err.println("First token is a variable: " + name + " " + SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(Sequence.fromIterable(scope.getAvailableElements(name)).first()), "name"));
 
-      SNode varRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
+      jetbrains.mps.smodel.SNode varRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
       SReference sref = new DynamicReference("variableDeclaration", varRef, null, name);
       varRef.setReference(sref.getRole(), sref);
 

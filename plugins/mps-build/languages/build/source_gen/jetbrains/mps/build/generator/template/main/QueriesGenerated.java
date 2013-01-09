@@ -1845,7 +1845,7 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(MapSequence.fromMap(participantForTask).get(targetTask), "for", targetTask, false);
         ListSequence.fromList(list).addElement(MapSequence.fromMap(participantForTask).get(targetTask));
       }
-      SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.structure.GeneratorInternal_IWorkflowParticipantReference", null);
+      jetbrains.mps.smodel.SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.structure.GeneratorInternal_IWorkflowParticipantReference", null);
       SLinkOperations.setTarget(ref, "participant", participant, false);
       ListSequence.fromList(SLinkOperations.getTargets(MapSequence.fromMap(participantForTask).get(targetTask), "participant", true)).addElement(ref);
     }

@@ -34,7 +34,7 @@ public class MetadataUtil {
   }
 
   public static SNode createModelRoot(SModel model) {
-    SNode root = SConceptOperations.createNewNode("jetbrains.mps.ide.vcs.modelmetadata.structure.Model", null);
+    jetbrains.mps.smodel.SNode root = SConceptOperations.createNewNode("jetbrains.mps.ide.vcs.modelmetadata.structure.Model", null);
     SPropertyOperations.set(root, "longname", model.getLongName());
     SPropertyOperations.set(root, "uuid", model.getSModelId() + "");
     SPropertyOperations.set(root, "version", "" + (model.getVersion()));
@@ -60,7 +60,7 @@ public class MetadataUtil {
   }
 
   public static SNode createModuleRefNode(ModuleReference module) {
-    SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModuleReference", null);
+    jetbrains.mps.smodel.SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModuleReference", null);
     SPropertyOperations.set(node, "qualifiedName", module.getModuleFqName());
     SPropertyOperations.set(node, "uuid", module.getModuleId().toString());
     node.setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, "uuid")));
@@ -68,7 +68,7 @@ public class MetadataUtil {
   }
 
   public static SNode createModelRefNode(SModel.ImportElement impModel) {
-    SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModelReference", null);
+    jetbrains.mps.smodel.SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModelReference", null);
     SPropertyOperations.set(node, "qualifiedName", impModel.getModelReference().getLongName());
     SPropertyOperations.set(node, "uuid", impModel.getModelReference().getModelId().toString());
     SPropertyOperations.set(node, "stereotype", impModel.getModelReference().getStereotype());

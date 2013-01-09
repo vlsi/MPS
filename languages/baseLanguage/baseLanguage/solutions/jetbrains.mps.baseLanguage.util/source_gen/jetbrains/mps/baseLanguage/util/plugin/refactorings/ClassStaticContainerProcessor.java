@@ -19,7 +19,7 @@ public class ClassStaticContainerProcessor extends AbstractStaticContainerProces
   }
 
   public SNode createMethodCall(SNode method, List<SNode> arguments) {
-    SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
+    jetbrains.mps.smodel.SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
     SLinkOperations.setTarget(call, "classConcept", SNodeOperations.cast(this.myStaticContainer, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
     SLinkOperations.setTarget(call, "baseMethodDeclaration", SNodeOperations.cast(method, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
     ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addSequence(ListSequence.fromList(arguments));

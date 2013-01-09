@@ -110,7 +110,7 @@ public class TurnToIfStatement_Intention implements IntentionFactory {
             condition = notExpression;
           }
         }
-        SNode ifStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
+        jetbrains.mps.smodel.SNode ifStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
         SLinkOperations.setTarget(ifStatement, "condition", condition, true);
         SLinkOperations.setTarget(ifStatement, "ifTrue", SLinkOperations.getTarget(node, "body", true), true);
         SNodeOperations.replaceWithAnother(node, ifStatement);

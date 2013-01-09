@@ -2966,7 +2966,7 @@ public class QueriesGenerated {
     if ((vardecl == null)) {
       _context.showErrorMessage(_context.getNode(), "unknown pattern reference");
     }
-    SNode res = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    jetbrains.mps.smodel.SNode res = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(res, "classifier", PatternVarsUtil.getFieldTypeReference(vardecl), false);
     return res;
   }
@@ -3905,7 +3905,7 @@ public class QueriesGenerated {
       }
     }));
     for (SNode node : nodes) {
-      SNode replacement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", null);
+      jetbrains.mps.smodel.SNode replacement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", null);
       SLinkOperations.setTarget(replacement, "typeHint", SNodeOperations.cast(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(node)), "jetbrains.mps.baseLanguage.structure.Type"), true);
       SNodeOperations.replaceWithAnother(node, replacement);
       SLinkOperations.setTarget(replacement, "expression", node, true);

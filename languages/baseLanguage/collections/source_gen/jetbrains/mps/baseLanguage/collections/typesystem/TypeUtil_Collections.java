@@ -45,10 +45,10 @@ public class TypeUtil_Collections {
     if (entity == null) {
       return null;
     }
-    SNode entityType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    jetbrains.mps.smodel.SNode entityType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(entityType, "classifier", entity, false);
     SNode javaIterable = SNodeOperations.cast(SModelUtil.findNodeByFQName("java.lang.Iterable", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), scope), "jetbrains.mps.baseLanguage.structure.Classifier");
-    SNode javaIterableType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    jetbrains.mps.smodel.SNode javaIterableType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(javaIterableType, "classifier", javaIterable, false);
     ListSequence.fromList(SLinkOperations.getTargets(javaIterableType, "parameter", true)).addElement(entityType);
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, javaIterableType)) {
@@ -56,7 +56,7 @@ public class TypeUtil_Collections {
     }
     // ========== 
     SNode entityIterable = SNodeOperations.cast(SModelUtil.findNodeByFQName("com.jetbrains.teamsys.database.EntityIterable", SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier"), scope), "jetbrains.mps.baseLanguage.structure.Classifier");
-    SNode entityIterableType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    jetbrains.mps.smodel.SNode entityIterableType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(entityIterableType, "classifier", entityIterable, false);
     if (TypeChecker.getInstance().getSubtypingManager().isSubtype(type, entityIterableType)) {
       return _quotation_createNode_kv7ms9_a0a72a1(SNodeOperations.copyNode(entity));

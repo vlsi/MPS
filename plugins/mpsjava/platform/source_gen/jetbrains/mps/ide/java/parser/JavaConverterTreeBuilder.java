@@ -647,7 +647,7 @@ public class JavaConverterTreeBuilder {
   /*package*/ SNode processExpression(FieldReference x) {
     FieldBinding fieldBinding = x.binding;
     if (fieldBinding == null) {
-      SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
+      jetbrains.mps.smodel.SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldReferenceOperation", null);
       ref.setReference(myTypesProvider.createErrorReference("fieldDeclaration", new String(x.token), ref).getRole(), myTypesProvider.createErrorReference("fieldDeclaration", new String(x.token), ref));
       return _quotation_createNode_m30mvz_a2a1a05(processExpressionRefl(x.receiver), ref);
     }

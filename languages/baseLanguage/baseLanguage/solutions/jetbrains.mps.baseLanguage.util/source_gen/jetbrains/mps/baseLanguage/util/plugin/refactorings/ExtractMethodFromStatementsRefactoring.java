@@ -21,7 +21,7 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
   }
 
   protected SNode createMethodBody() {
-    SNode body = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
+    jetbrains.mps.smodel.SNode body = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
     this.modifyPartToExtract();
     ListSequence.fromList(SLinkOperations.getTargets(body, "statement", true)).addSequence(ListSequence.fromList((List<SNode>) CopyUtil.copy(this.myStatements)));
     return body;
@@ -31,7 +31,7 @@ public class ExtractMethodFromStatementsRefactoring extends ExtractMethodRefacto
     ModelAccess.instance().runWriteActionInCommand(new Runnable() {
       public void run() {
         SNode methodCall = ExtractMethodFromStatementsRefactoring.this.createMethodCall(match, methodDeclaration);
-        SNode callStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+        jetbrains.mps.smodel.SNode callStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
         SLinkOperations.setTarget(callStatement, "expression", methodCall, true);
         List<SNode> statements = match.getNodes();
         SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), callStatement);

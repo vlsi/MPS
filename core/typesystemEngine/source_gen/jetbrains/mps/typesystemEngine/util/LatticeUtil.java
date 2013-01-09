@@ -57,7 +57,7 @@ public class LatticeUtil {
   }
 
   private static SNode join(SNode node1, SNode node2) {
-    SNode joinType = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
+    jetbrains.mps.smodel.SNode joinType = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
     if (SNodeOperations.isInstanceOf(node1, "jetbrains.mps.lang.typesystem.structure.JoinType")) {
       SNode joinWrapper1 = SNodeOperations.cast(node1, "jetbrains.mps.lang.typesystem.structure.JoinType");
       for (SNode bc : SLinkOperations.getTargets(joinWrapper1, "argument", true)) {
@@ -86,7 +86,7 @@ public class LatticeUtil {
   }
 
   private static SNode meet(SNode node1, SNode node2) {
-    SNode meetType = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.MeetType", null);
+    jetbrains.mps.smodel.SNode meetType = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.MeetType", null);
     if (SNodeOperations.isInstanceOf(node1, "jetbrains.mps.lang.typesystem.structure.MeetType")) {
       SNode meetWrapper1 = SNodeOperations.cast(node1, "jetbrains.mps.lang.typesystem.structure.MeetType");
       for (SNode bc : SLinkOperations.getTargets(meetWrapper1, "argument", true)) {

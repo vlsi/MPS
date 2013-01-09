@@ -324,7 +324,7 @@ public class TransformationUtil {
   }
 
   public static SNode createStringLiteral(String value) {
-    SNode stringLiteral = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
+    jetbrains.mps.smodel.SNode stringLiteral = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
     SPropertyOperations.set(stringLiteral, "value", value);
     return stringLiteral;
   }

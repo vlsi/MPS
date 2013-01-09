@@ -60,14 +60,14 @@ public class QueriesUtil {
     // --- in closure 
     if (SNodeOperations.isInstanceOf(enclosingMethodOrClosure, "jetbrains.mps.baseLanguage.structure.Closure")) {
       SNode fieldRef = _quotation_createNode_w9106s_a0a0h0d();
-      SNode typeOfField = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+      jetbrains.mps.smodel.SNode typeOfField = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
       SLinkOperations.setTarget(typeOfField, "classifier", enclosingClass, false);
       SLinkOperations.setTarget(fieldRef, "fieldType", typeOfField, true);
       return fieldRef;
     }
     // --- in instance method 
     if (SNodeOperations.isInstanceOf(enclosingMethodOrClosure, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration") || SNodeOperations.isInstanceOf(enclosingMethodOrClosure, "jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
-      SNode thisExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
+      jetbrains.mps.smodel.SNode thisExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
       SLinkOperations.setTarget(thisExpr, "classConcept", enclosingClass, false);
       return thisExpr;
     }

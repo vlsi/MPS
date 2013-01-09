@@ -30,7 +30,7 @@ public class ParenthesisUtil {
     SNode binOp = getBinOp(current, opening);
     // special cases 
     if (binOp == null) {
-      SNode parExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
+      jetbrains.mps.smodel.SNode parExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
       SNodeOperations.replaceWithAnother(current, parExpr);
       SLinkOperations.setTarget(parExpr, "expression", current, true);
       return parExpr;
@@ -38,7 +38,7 @@ public class ParenthesisUtil {
     boolean left = opening && SLinkOperations.getTarget(binOp, "leftExpression", true) == current;
     boolean right = !(opening) && SLinkOperations.getTarget(binOp, "rightExpression", true) == current;
     if (left || right) {
-      SNode parExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
+      jetbrains.mps.smodel.SNode parExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
       if (SNodeOperations.isInstanceOf(SNodeOperations.getParent(binOp), "jetbrains.mps.baseLanguage.structure.ParenthesizedExpression")) {
         SNodeOperations.replaceWithAnother(current, parExpr);
         SLinkOperations.setTarget(parExpr, "expression", current, true);
@@ -53,7 +53,7 @@ public class ParenthesisUtil {
       SLinkOperations.getTarget(binOp, "leftExpression", true) :
       SLinkOperations.getTarget(binOp, "rightExpression", true)
     );
-    SNode parExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
+    jetbrains.mps.smodel.SNode parExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParenthesizedExpression", null);
     SNodeOperations.replaceWithAnother(current, parExpr);
     SNodeOperations.replaceWithAnother(subtree, current);
     SNodeOperations.replaceWithAnother(binOp, subtree);

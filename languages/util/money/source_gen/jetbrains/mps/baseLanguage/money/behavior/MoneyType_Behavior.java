@@ -10,7 +10,7 @@ public class MoneyType_Behavior {
   }
 
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
-    SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.money.structure.MoneyCreator", null);
+    jetbrains.mps.smodel.SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.money.structure.MoneyCreator", null);
     return creator;
   }
 }

@@ -65,7 +65,7 @@ public class TestCollector {
         public void visit(final SNode itc) {
           into.invoke(new _FunctionTypes._return_P0_E0<SNode>() {
             public SNode invoke() {
-              SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.TestCaseRef", null);
+              jetbrains.mps.smodel.SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.TestCaseRef", null);
               SLinkOperations.setTarget(tref, "testCase", itc, false);
               return tref;
             }
@@ -120,7 +120,7 @@ public class TestCollector {
         public void visit(final SNode tc) {
           into.invoke(new _FunctionTypes._return_P0_E0<SNode>() {
             public SNode invoke() {
-              SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", null);
+              jetbrains.mps.smodel.SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.JUnit4TestCaseRef", null);
               SLinkOperations.setTarget(tref, "klass", SNodeOperations.cast(tc, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
               return tref;
             }
@@ -173,7 +173,7 @@ public class TestCollector {
         public void visit(final SNode tc) {
           into.invoke(new _FunctionTypes._return_P0_E0<SNode>() {
             public SNode invoke() {
-              SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", null);
+              jetbrains.mps.smodel.SNode tref = SConceptOperations.createNewNode("jetbrains.mps.testbench.suite.structure.JUnit3TestCaseRef", null);
               SLinkOperations.setTarget(tref, "klass", SNodeOperations.cast(tc, "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
               return tref;
             }

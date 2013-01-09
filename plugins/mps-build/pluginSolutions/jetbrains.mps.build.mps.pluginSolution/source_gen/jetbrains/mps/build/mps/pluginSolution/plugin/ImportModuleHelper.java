@@ -35,15 +35,15 @@ public class ImportModuleHelper {
   public void create() {
     try {
       if (moduleDescriptor instanceof LanguageDescriptor) {
-        SNode lang = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_Language", null);
+        jetbrains.mps.smodel.SNode lang = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_Language", null);
         initModule(lang);
         created = lang;
       } else if (moduleDescriptor instanceof SolutionDescriptor) {
-        SNode solution = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_Solution", null);
+        jetbrains.mps.smodel.SNode solution = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_Solution", null);
         initModule(solution);
         created = solution;
       } else if (moduleDescriptor instanceof DevkitDescriptor) {
-        SNode devkit = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_DevKit", null);
+        jetbrains.mps.smodel.SNode devkit = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_DevKit", null);
         initModule(devkit);
         created = devkit;
       }

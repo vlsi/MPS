@@ -125,11 +125,11 @@ public class SModelOperations {
     return result;
   }
 
-  public static SNode createNewNode(SModel model, String conceptFqName) {
+  public static jetbrains.mps.smodel.SNode createNewNode(SModel model, String conceptFqName) {
     return createNewNode(model, null, conceptFqName);
   }
 
-  public static SNode createNewNode(SModel model, SNodeId id, String conceptFqName) {
+  public static jetbrains.mps.smodel.SNode createNewNode(SModel model, SNodeId id, String conceptFqName) {
     if (conceptFqName == null) {
       return null;
     }
@@ -141,7 +141,7 @@ public class SModelOperations {
       }
       return node;
     }
-    SNode result = SModelUtil_new.instantiateConceptDeclaration(conceptFqName, model, id, GlobalScope.getInstance(), false);
+    jetbrains.mps.smodel.SNode result = SModelUtil_new.instantiateConceptDeclaration(conceptFqName, model, id, GlobalScope.getInstance(), false);
     if (result == null) {
       return null;
     }

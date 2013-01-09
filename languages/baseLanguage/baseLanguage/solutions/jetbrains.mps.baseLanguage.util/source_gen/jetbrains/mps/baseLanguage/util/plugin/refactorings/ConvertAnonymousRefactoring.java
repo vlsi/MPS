@@ -110,7 +110,7 @@ public class ConvertAnonymousRefactoring {
   }
 
   private SNode makeInnerClass() {
-    SNode innerClass = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null);
+    jetbrains.mps.smodel.SNode innerClass = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassConcept", null);
     ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.getAncestor(this.myClassToRefactor, "jetbrains.mps.baseLanguage.structure.Classifier", false, false), "member", true)).addElement(innerClass);
     SPropertyOperations.set(innerClass, "name", this.myNameForInnerClass);
     SLinkOperations.setTarget(innerClass, "visibility", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PrivateVisibility", null), true);

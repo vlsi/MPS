@@ -25,7 +25,7 @@ public class NodeFactories_Behavior {
   }
 
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    SNode nodeFactory = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.NodeFactory", null);
+    jetbrains.mps.smodel.SNode nodeFactory = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.NodeFactory", null);
     SLinkOperations.setTarget(nodeFactory, "applicableConcept", baseConcept, false);
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "nodeFactory", true)).addElement(nodeFactory);
   }

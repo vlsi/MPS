@@ -75,13 +75,13 @@ public class ConvertMyIfToIf_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode statement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
+      jetbrains.mps.smodel.SNode statement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
       SLinkOperations.setTarget(statement, "condition", SLinkOperations.getTarget(node, "condition", true), true);
-      SNode ifBody = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
+      jetbrains.mps.smodel.SNode ifBody = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
       ListSequence.fromList(SLinkOperations.getTargets(ifBody, "statement", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "body", true), "statement", true)));
       SLinkOperations.setTarget(statement, "ifTrue", ifBody, true);
 
-      SNode ifFalseBody = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
+      jetbrains.mps.smodel.SNode ifFalseBody = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
       ListSequence.fromList(SLinkOperations.getTargets(ifFalseBody, "statement", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "alternative", true), "statement", true)));
       SLinkOperations.setTarget(statement, "ifFalseStatement", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null), true);
       SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(statement, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", ifFalseBody, true);

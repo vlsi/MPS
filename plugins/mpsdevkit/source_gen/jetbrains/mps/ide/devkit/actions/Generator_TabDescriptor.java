@@ -184,7 +184,7 @@ public class Generator_TabDescriptor extends RelationDescriptor {
           }
           assert model != null : "model should have been already created";
 
-          SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.MappingConfiguration", null);
+          jetbrains.mps.smodel.SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.MappingConfiguration", null);
           SPropertyOperations.set(node, "name", "main");
           SModelOperations.addRootNode(model, node);
           ListSequence.fromList(mappings).addElement(node);

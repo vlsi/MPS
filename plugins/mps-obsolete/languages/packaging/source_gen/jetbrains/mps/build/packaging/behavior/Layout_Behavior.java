@@ -36,7 +36,7 @@ public class Layout_Behavior {
     }
     SPropertyOperations.set(ListSequence.fromList(SLinkOperations.getTargets(thisNode, "configuration", true)).first(), "name", "default");
     for (String s : SetSequence.fromSet(MapSequence.fromMap(vars).keySet())) {
-      SNode var = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Variable", null);
+      jetbrains.mps.smodel.SNode var = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Variable", null);
       SPropertyOperations.set(var, "name", s);
       SPropertyOperations.set(var, "antName", MapSequence.fromMap(vars).get(s));
       SLinkOperations.addChild(thisNode, "builtInVariable", var);

@@ -435,9 +435,9 @@ public class JavaCompiler {
             }
           }).count();
           for (String line : ListSequence.fromList(CommentHelper.processComment(CommentHelper.splitString(content, lineends, linestart, Math.abs(comment[1]))))) {
-            SNode commentText = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TextCommentPart", null);
+            jetbrains.mps.smodel.SNode commentText = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TextCommentPart", null);
             SPropertyOperations.set(commentText, "text", line);
-            SNode commentLine = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
+            jetbrains.mps.smodel.SNode commentLine = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
             ListSequence.fromList(SLinkOperations.getTargets(commentLine, "commentPart", true)).addElement(commentText);
             ListSequence.fromList(SLinkOperations.getTargets(block, "statement", true)).insertElement(pos++, commentLine);
           }

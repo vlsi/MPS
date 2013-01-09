@@ -35,13 +35,13 @@ public class Queries {
       SModel javaLang = javaLangJavaStubModelDescriptor.getSModel();
       SNode stringClass = SModelOperations.getRootByName(javaLang, "String");
       if (SNodeOperations.isInstanceOf(leftType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget((SNodeOperations.cast(leftType, "jetbrains.mps.baseLanguage.structure.ClassifierType")), "classifier", false) == stringClass || SNodeOperations.isInstanceOf(rightType, "jetbrains.mps.baseLanguage.structure.ClassifierType") && SLinkOperations.getTarget((SNodeOperations.cast(rightType, "jetbrains.mps.baseLanguage.structure.ClassifierType")), "classifier", false) == stringClass) {
-        SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+        jetbrains.mps.smodel.SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
         SLinkOperations.setTarget(classifierType, "classifier", SNodeOperations.cast(stringClass, "jetbrains.mps.baseLanguage.structure.Classifier"), false);
         return classifierType;
       }
     }
     if (leastCommonSupertypes.isEmpty()) {
-      SNode runtimeErrorType = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.RuntimeErrorType", null);
+      jetbrains.mps.smodel.SNode runtimeErrorType = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.RuntimeErrorType", null);
       SPropertyOperations.set(runtimeErrorType, "errorText", "incompatible types");
       return runtimeErrorType;
     }

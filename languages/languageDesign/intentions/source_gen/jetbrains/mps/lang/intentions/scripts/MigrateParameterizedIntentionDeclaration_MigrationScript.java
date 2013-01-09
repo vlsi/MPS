@@ -32,12 +32,12 @@ public class MigrateParameterizedIntentionDeclaration_MigrationScript extends Ba
 
       public void doUpdateInstanceNode(SNode node) {
         if ((SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "descriptionFunction", true) != null)) {
-          SNode descriptionBlock = SConceptOperations.createNewNode("jetbrains.mps.lang.intentions.structure.ParameterizedDescriptionBlock", null);
+          jetbrains.mps.smodel.SNode descriptionBlock = SConceptOperations.createNewNode("jetbrains.mps.lang.intentions.structure.ParameterizedDescriptionBlock", null);
           SLinkOperations.setTarget(descriptionBlock, "body", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "descriptionFunction", true), "body", true)), true);
           SLinkOperations.setTarget(node, "descriptionFunction", descriptionBlock, true);
         }
         if ((SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "executeFunction", true) != null)) {
-          SNode executeBlock = SConceptOperations.createNewNode("jetbrains.mps.lang.intentions.structure.ParameterizedExecuteBlock", null);
+          jetbrains.mps.smodel.SNode executeBlock = SConceptOperations.createNewNode("jetbrains.mps.lang.intentions.structure.ParameterizedExecuteBlock", null);
           SLinkOperations.setTarget(executeBlock, "body", SNodeOperations.copyNode(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.lang.intentions.structure.BaseIntentionDeclaration"), "executeFunction", true), "body", true)), true);
           SLinkOperations.setTarget(node, "executeFunction", executeBlock, true);
         }

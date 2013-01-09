@@ -39,7 +39,7 @@ public class MappingConfiguration_Behavior {
     } else if (SNodeOperations.isInstanceOf(newMember, "jetbrains.mps.lang.generator.structure.TemplateDeclaration")) {
       SNode mappingRule = SLinkOperations.addNewChild(thisNode, "reductionMappingRule", "jetbrains.mps.lang.generator.structure.Reduction_MappingRule");
       SLinkOperations.setTarget(mappingRule, "applicableConcept", SLinkOperations.getTarget(SNodeOperations.cast(newMember, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), "applicableConcept", false), false);
-      SNode templateRef = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", null);
+      jetbrains.mps.smodel.SNode templateRef = SConceptOperations.createNewNode("jetbrains.mps.lang.generator.structure.TemplateDeclarationReference", null);
       SLinkOperations.setTarget(templateRef, "template", SNodeOperations.cast(newMember, "jetbrains.mps.lang.generator.structure.TemplateDeclaration"), false);
       SLinkOperations.setTarget(mappingRule, "ruleConsequence", templateRef, true);
     }

@@ -21,7 +21,7 @@ public class ConvertCastToSModelCast_QuickFix extends QuickFix_Runtime {
     SNode blCast = SNodeOperations.cast(snode, "jetbrains.mps.baseLanguage.structure.CastExpression");
     SNode expr = SLinkOperations.getTarget(blCast, "expression", true);
     SNodeOperations.detachNode(SLinkOperations.getTarget(blCast, "expression", true));
-    SNode cast = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", null);
+    jetbrains.mps.smodel.SNode cast = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", null);
     SLinkOperations.setTarget(cast, "concept", SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(blCast, "type", true), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false), false);
     SNodeOperations.replaceWithAnother(snode, cast);
     SLinkOperations.setTarget(cast, "leftExpression", expr, true);

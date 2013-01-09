@@ -17,7 +17,7 @@ public class typeof_ExpressionWithUnit_InferenceRule extends AbstractInferenceRu
   }
 
   public void applyRule(final SNode ewu, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
-    SNode ut = SConceptOperations.createNewNode("jetbrains.mps.ui.modeling.structure.UnitType", null);
+    jetbrains.mps.smodel.SNode ut = SConceptOperations.createNewNode("jetbrains.mps.ui.modeling.structure.UnitType", null);
     SPropertyOperations.set(ut, "unit", SPropertyOperations.getString_def(ewu, "unit", "PIXEL"));
     {
       SNode _nodeToCheck_1029348928467 = ewu;

@@ -40,7 +40,7 @@ public class SNodeType_Behavior {
   }
 
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
-    SNode creator = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SNodeCreator", null);
+    jetbrains.mps.smodel.SNode creator = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SNodeCreator", null);
     SLinkOperations.setTarget(creator, "createdType", SNodeOperations.copyNode(thisNode), true);
     return creator;
   }

@@ -24,7 +24,7 @@ public class PreferencesComponentDeclaration_Behavior {
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.PreferencesComponentType", null);
+    jetbrains.mps.smodel.SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.PreferencesComponentType", null);
     SLinkOperations.setTarget(type, "componentDeclaration", thisNode, false);
     return type;
   }

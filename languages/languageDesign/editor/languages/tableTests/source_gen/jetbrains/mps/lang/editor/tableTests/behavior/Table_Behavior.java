@@ -16,9 +16,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class Table_Behavior {
   public static void init(SNode thisNode) {
     for (int i = 0; i < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getInitialRowCount_1262430001741498094", new Object[]{}); i++) {
-      SNode row = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Row", null);
+      jetbrains.mps.smodel.SNode row = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.Row", null);
       for (int j = 0; j < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getInitialColumnCount_1262430001741498026", new Object[]{}); j++) {
-        SNode dataCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null);
+        jetbrains.mps.smodel.SNode dataCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null);
         SPropertyOperations.set(dataCell, "value", "$" + i + " " + j + "$");
         ListSequence.fromList(SLinkOperations.getTargets(row, "cells", true)).addElement(dataCell);
       }

@@ -19,7 +19,7 @@ public class MakeStaticFieldNotStatic_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    SNode fieldDeclaration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
+    jetbrains.mps.smodel.SNode fieldDeclaration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
     SPropertyOperations.set(fieldDeclaration, "name", SPropertyOperations.getString(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("staticField")[0]), "name"));
     SLinkOperations.setTarget(fieldDeclaration, "type", SLinkOperations.getTarget(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("staticField")[0]), "type", true), true);
     SPropertyOperations.set(fieldDeclaration, "isFinal", "" + (SPropertyOperations.getBoolean(((SNode) MakeStaticFieldNotStatic_QuickFix.this.getField("staticField")[0]), "isFinal")));

@@ -82,7 +82,7 @@ public class ConvertCastToNodeCast_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", null);
+      jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.SNodeTypeCastExpression", null);
       SNode concept = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "type", true), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false);
       SLinkOperations.setTarget(result, "concept", concept, false);
       SLinkOperations.setTarget(result, "leftExpression", SLinkOperations.getTarget(node, "expression", true), true);

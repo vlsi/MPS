@@ -27,7 +27,7 @@ public class indexedTupleType_supertypeOf_namedTupleType_SubtypingRule extends S
     final List<SNode> pts = SLinkOperations.getTargets(ntt, "parameter", true);
     return _quotation_createNode_pquv4f_a2a1(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(ntt, "classifier", false), "component", true)).select(new ISelector<SNode, SNode>() {
       public SNode select(SNode cmp) {
-        SNode tmp = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayType", null);
+        jetbrains.mps.smodel.SNode tmp = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayType", null);
         SLinkOperations.setTarget(tmp, "componentType", SNodeOperations.copyNode(SLinkOperations.getTarget(cmp, "type", true)), true);
         ListSequence.fromList(queue).clear();
         ListSequence.fromList(queue).addElement(SLinkOperations.getTarget(tmp, "componentType", true));

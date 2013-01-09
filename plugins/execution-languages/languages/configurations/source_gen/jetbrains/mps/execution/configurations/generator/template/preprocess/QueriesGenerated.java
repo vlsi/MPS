@@ -39,7 +39,7 @@ public class QueriesGenerated {
         }
       })) {
         if (CommandDeclaration_Behavior.call_isDebuggable_856705193941282102(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(builder, "commandPart", false)))) {
-          SNode debuggerSettignsParameter = SConceptOperations.createNewNode("jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter", null);
+          jetbrains.mps.smodel.SNode debuggerSettignsParameter = SConceptOperations.createNewNode("jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter", null);
           SNode debuggerSettings = _quotation_createNode_x583g4_a0b0a0a0a0a(debuggerSettignsParameter);
           SLinkOperations.setNewChild(debuggerSettings, "operand", "jetbrains.mps.execution.configurations.structure.DebuggerSettings_Parameter");
           SNode debuggerAssignment = _quotation_createNode_x583g4_a0d0a0a0a0a(SLinkOperations.getTarget(ExecuteCommandPart_Behavior.call_getCommandDeclaration_6129022259108621200(SLinkOperations.getTarget(builder, "commandPart", false)), "debuggerParameter", true));

@@ -27,7 +27,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode attr = SConceptOperations.createNewNode("jetbrains.mps.sampleXML.structure.Attribute", null);
+            jetbrains.mps.smodel.SNode attr = SConceptOperations.createNewNode("jetbrains.mps.sampleXML.structure.Attribute", null);
             SPropertyOperations.set(attr, "name", ((pattern == null ?
               null :
               pattern.trim()
@@ -56,7 +56,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            SNode text = SConceptOperations.createNewNode("jetbrains.mps.sampleXML.structure.Text", null);
+            jetbrains.mps.smodel.SNode text = SConceptOperations.createNewNode("jetbrains.mps.sampleXML.structure.Text", null);
             SPropertyOperations.set(text, "name", pattern);
             return text;
           }
@@ -84,7 +84,7 @@ public class QueriesGenerated {
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
           //  add next attribute 
-          SNode nextAttr = SConceptOperations.createNewNode("jetbrains.mps.sampleXML.structure.Attribute", null);
+          jetbrains.mps.smodel.SNode nextAttr = SConceptOperations.createNewNode("jetbrains.mps.sampleXML.structure.Attribute", null);
           SPropertyOperations.set(nextAttr, "name", ((pattern == null ?
             null :
             pattern.trim()

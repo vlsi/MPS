@@ -44,7 +44,7 @@ public class MigrateClassifierMembersSModelUsages_MigrationScript extends BaseMi
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        SNode methodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
+        jetbrains.mps.smodel.SNode methodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
         SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", MapSequence.fromMap(MembersMigrationUtil.OLD_LINK_TO_NEW_BEHAVIOR_METHOD).get(SLinkOperations.getTarget(node, "link", false)), false);
         SNodeOperations.replaceWithAnother(node, methodCall);
       }

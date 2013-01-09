@@ -20,7 +20,7 @@ public class ClassCreator_Behavior {
 
   public static SNode virtual_getInstanceType_8008512149545154471(SNode thisNode) {
     SNode classConcept = SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.ClassConcept", false, false);
-    SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    jetbrains.mps.smodel.SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(classifierType, "classifier", classConcept, false);
     for (SNode typeParameter : SLinkOperations.getTargets(thisNode, "typeParameter", true)) {
       ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).addElement(SNodeOperations.copyNode(typeParameter));

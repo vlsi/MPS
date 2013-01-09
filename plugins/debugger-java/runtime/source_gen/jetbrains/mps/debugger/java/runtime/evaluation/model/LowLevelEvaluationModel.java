@@ -219,7 +219,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
           });
         }
         if (matchingVar != null) {
-          SNode newVariableReference = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference", null);
+          jetbrains.mps.smodel.SNode newVariableReference = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.LowLevelVariableReference", null);
           SLinkOperations.setTarget(newVariableReference, "baseVariableDeclaration", matchingVar, false);
           SNodeOperations.replaceWithAnother(node, newVariableReference);
         }
@@ -250,7 +250,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
     if (classifiers.isEmpty()) {
       return null;
     }
-    SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    jetbrains.mps.smodel.SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(classifierType, "classifier", SNodeOperations.cast(classifiers.get(0), "jetbrains.mps.baseLanguage.structure.Classifier"), false);
     return classifierType;
   }

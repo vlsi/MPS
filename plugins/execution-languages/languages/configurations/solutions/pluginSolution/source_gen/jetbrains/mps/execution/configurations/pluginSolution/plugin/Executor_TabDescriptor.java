@@ -64,7 +64,7 @@ public class Executor_TabDescriptor extends RelationDescriptor {
   }
 
   public SNode createNode(final SNode node, final SNode concept) {
-    SNode executor = SConceptOperations.createNewNode("jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", null);
+    jetbrains.mps.smodel.SNode executor = SConceptOperations.createNewNode("jetbrains.mps.execution.configurations.structure.RunConfigurationExecutor", null);
     SLinkOperations.setTarget(executor, "configuration", node, false);
     SModelOperations.addRootNode(SNodeOperations.getModel(node), executor);
     return executor;

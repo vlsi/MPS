@@ -38,10 +38,10 @@ public class ClosureLiteralAdapterBuilder {
     SNode adapterClass = findAdapterClassDeclaration(literal, annInst);
     SNode adapterClassFunctionType = getAdapterClassFunctionType(adapterClass);
 
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(result, "classifier", adapterClass, false);
     for (SNode tvd : SLinkOperations.getTargets(adapterClass, "typeVariableDeclaration", true)) {
-      SNode tvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
+      jetbrains.mps.smodel.SNode tvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
       SLinkOperations.setTarget(tvr, "typeVariableDeclaration", tvd, false);
       ListSequence.fromList(SLinkOperations.getTargets(result, "parameter", true)).addElement(tvr);
       replaceWithTarget(tvr, adapterClassFunctionType, targetFunType);

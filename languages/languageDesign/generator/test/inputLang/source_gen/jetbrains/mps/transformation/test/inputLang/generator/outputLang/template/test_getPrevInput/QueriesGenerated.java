@@ -79,7 +79,7 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_1202338546473(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", null);
+    jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", null);
     SNode node = _context.getPreviousInputNodeByMappingLabel("ROOT INPUT");
     String text = "ROOT INPUT: " + SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
     SPropertyOperations.set(result, "text", text);
@@ -87,7 +87,7 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_1202338683284(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", null);
+    jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", null);
     SNode node = _context.getPreviousInputNodeByMappingLabel("LEVEL 1");
     String text = "LEVEL 1: " + SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
     SPropertyOperations.set(result, "text", text);
@@ -95,7 +95,7 @@ public class QueriesGenerated {
   }
 
   public static SNode mapSrcMacro_mapper_1202338740199(final IOperationContext operationContext, final MapSrcMacroContext _context) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", null);
+    jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode", null);
     SNode node = _context.getPreviousInputNodeByMappingLabel("LEVEL 2");
     String text = "LEVEL 2: " + SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.INamedConcept"), "name");
     SPropertyOperations.set(result, "text", text);

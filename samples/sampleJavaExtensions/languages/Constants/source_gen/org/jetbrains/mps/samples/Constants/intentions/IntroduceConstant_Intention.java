@@ -81,9 +81,9 @@ public class IntroduceConstant_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      SNode constant = SConceptOperations.createNewNode("org.jetbrains.mps.samples.Constants.structure.Constant", null);
+      jetbrains.mps.smodel.SNode constant = SConceptOperations.createNewNode("org.jetbrains.mps.samples.Constants.structure.Constant", null);
       SNodeOperations.insertPrevSiblingChild(SNodeOperations.getAncestor(node, "org.jetbrains.mps.samples.Constants.structure.Constant", false, false), constant);
-      SNode constantReference = SConceptOperations.createNewNode("org.jetbrains.mps.samples.Constants.structure.ConstantReference", null);
+      jetbrains.mps.smodel.SNode constantReference = SConceptOperations.createNewNode("org.jetbrains.mps.samples.Constants.structure.ConstantReference", null);
       SLinkOperations.setTarget(constantReference, "original", constant, false);
       SNodeOperations.replaceWithAnother(node, constantReference);
       SLinkOperations.setTarget(constant, "initializer", node, true);

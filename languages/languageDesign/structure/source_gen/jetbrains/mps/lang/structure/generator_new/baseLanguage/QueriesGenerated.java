@@ -142,7 +142,7 @@ public class QueriesGenerated {
       if (superConcept == null) {
         superConcept = BehaviorReflection.invokeVirtual(String.class, SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1133920641626"), "virtual_getFqName_1213877404258", new Object[]{});
       }
-      SNode string = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
+      jetbrains.mps.smodel.SNode string = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
       SPropertyOperations.set(string, "value", superConcept);
       return string;
     } else {

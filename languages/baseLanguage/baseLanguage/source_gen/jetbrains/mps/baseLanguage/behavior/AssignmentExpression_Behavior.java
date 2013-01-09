@@ -47,7 +47,7 @@ public class AssignmentExpression_Behavior {
       valueType = _quotation_createNode_4cbll2_a0a0c0d();
     }
     SNode varType = TypeChecker.getInstance().getRuntimeSupport().coerce_(valueType, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.Type"), true);
-    SNode varDeclStmnt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
+    jetbrains.mps.smodel.SNode varDeclStmnt = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
     SLinkOperations.setNewChild(varDeclStmnt, "localVariableDeclaration", "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
     SNode ref = SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference");
     String name = (varName == null ?

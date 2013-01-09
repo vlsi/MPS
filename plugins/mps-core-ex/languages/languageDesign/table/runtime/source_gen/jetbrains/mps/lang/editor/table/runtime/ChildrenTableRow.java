@@ -30,7 +30,7 @@ public class ChildrenTableRow extends AbstractTableRow {
 
   public void createNewCell(int index) {
     assert index <= ListSequence.fromList(getChildren()).count();
-    SNode newCellNode = SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myChildLinkDeclaration, "target", false)), null);
+    jetbrains.mps.smodel.SNode newCellNode = SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myChildLinkDeclaration, "target", false)), null);
     insertNewCell(newCellNode, index);
   }
 

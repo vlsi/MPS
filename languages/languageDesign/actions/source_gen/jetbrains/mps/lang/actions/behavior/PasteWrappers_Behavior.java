@@ -25,7 +25,7 @@ public class PasteWrappers_Behavior {
   }
 
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    SNode pasteWrapper = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.PasteWrapper", null);
+    jetbrains.mps.smodel.SNode pasteWrapper = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.PasteWrapper", null);
     SLinkOperations.setTarget(pasteWrapper, "sourceConcept", baseConcept, false);
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "wrapper", true)).addElement(pasteWrapper);
   }

@@ -22,7 +22,7 @@ public class ProjectPluginDeclaration_Behavior {
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginType", null);
+    jetbrains.mps.smodel.SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.standalone.structure.ProjectPluginType", null);
     SLinkOperations.setTarget(type, "plugin", thisNode, false);
     return type;
   }

@@ -21,7 +21,7 @@ public class NamedTuple_subtypeOf_implemented_interfaces_SubtypingRule extends S
   public List<SNode> getSubOrSuperTypes(SNode ntt, TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     List<SNode> ifs = new ArrayList<SNode>();
     for (SNode i : SLinkOperations.getTargets(SLinkOperations.getTarget(ntt, "classifier", false), "implements", true)) {
-      SNode ct = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+      jetbrains.mps.smodel.SNode ct = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
       SLinkOperations.setTarget(ct, "classifier", SLinkOperations.getTarget(i, "classifier", false), false);
       ListSequence.fromList(ifs).addElement(ct);
     }

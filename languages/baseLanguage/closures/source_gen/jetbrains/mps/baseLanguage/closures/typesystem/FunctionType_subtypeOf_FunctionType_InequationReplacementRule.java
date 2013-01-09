@@ -84,7 +84,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
         }
       }
     }
-    SNode rightThrows = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
+    jetbrains.mps.smodel.SNode rightThrows = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
     ListSequence.fromList(SLinkOperations.getTargets(rightThrows, "argument", true)).addElement(_quotation_createNode_8k7qpx_a0a6a1());
     for (SNode thr : ListSequence.fromList(SLinkOperations.getTargets(supertype, "throwsType", true))) {
       ListSequence.fromList(SLinkOperations.getTargets(rightThrows, "argument", true)).addElement(SNodeOperations.copyNode(thr));
@@ -130,7 +130,7 @@ public class FunctionType_subtypeOf_FunctionType_InequationReplacementRule exten
           result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) paramTypeRight_var, (SNode) paramTypeLeft_var, true);
         }
       }
-      SNode rightThrows = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
+      jetbrains.mps.smodel.SNode rightThrows = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
       ListSequence.fromList(SLinkOperations.getTargets(rightThrows, "argument", true)).addElement(_quotation_createNode_8k7qpx_a0a6a1a2());
       for (SNode thr : ListSequence.fromList(SLinkOperations.getTargets(supertype, "throwsType", true))) {
         ListSequence.fromList(SLinkOperations.getTargets(rightThrows, "argument", true)).addElement(SNodeOperations.copyNode(thr));

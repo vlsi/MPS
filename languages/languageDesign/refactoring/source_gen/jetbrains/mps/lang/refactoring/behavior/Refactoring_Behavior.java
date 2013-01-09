@@ -21,7 +21,7 @@ public class Refactoring_Behavior {
   }
 
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    SNode nodeTarget = SConceptOperations.createNewNode("jetbrains.mps.lang.refactoring.structure.NodeTarget", null);
+    jetbrains.mps.smodel.SNode nodeTarget = SConceptOperations.createNewNode("jetbrains.mps.lang.refactoring.structure.NodeTarget", null);
     SLinkOperations.setTarget(nodeTarget, "concept", baseConcept, false);
     SLinkOperations.setTarget(thisNode, "target", nodeTarget, true);
   }

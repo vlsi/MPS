@@ -58,7 +58,7 @@ public class ConfStubSource extends FolderSetDataSource implements MultiRootMode
 
     String pkg = model.getSModelFqName().getLongName();
     List<Tuples._4<String, String, SNode, PathItem>> doclst = ListSequence.fromList(new ArrayList<Tuples._4<String, String, SNode, PathItem>>());
-    SNode sample = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument", null);
+    jetbrains.mps.smodel.SNode sample = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument", null);
     for (String path : roots) {
       PathItem pi = ConfPathItem.getPathItem(path);
       for (String docres : ListSequence.fromList(pi.resources(pkg))) {

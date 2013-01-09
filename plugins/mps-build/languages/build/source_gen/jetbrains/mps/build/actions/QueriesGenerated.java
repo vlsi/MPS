@@ -216,7 +216,7 @@ public class QueriesGenerated {
         SNode wrappedConcept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.structure.BuildStringPart");
         IChildNodeSetter setter = new AbstractChildNodeSetter() {
           public SNode wrapNode(SNode nodeToWrap, SModel model) {
-            SNode res = SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildString", null);
+            jetbrains.mps.smodel.SNode res = SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildString", null);
             ListSequence.fromList(SLinkOperations.getTargets(res, "parts", true)).addElement(nodeToWrap);
             return res;
           }

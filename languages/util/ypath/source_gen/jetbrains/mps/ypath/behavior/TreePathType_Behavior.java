@@ -17,7 +17,7 @@ public class TreePathType_Behavior {
   }
 
   public static SNode virtual_getAbstractCreator_1213877337340(SNode thisNode) {
-    SNode creator = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.TreePathCreator", null);
+    jetbrains.mps.smodel.SNode creator = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.TreePathCreator", null);
     SLinkOperations.setTarget(creator, "treePathType", SNodeOperations.copyNode(thisNode), true);
     return creator;
   }

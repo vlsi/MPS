@@ -16,7 +16,7 @@ public class IfStatement_Behavior {
   }
 
   public static void call_convertElseToElseIf_1217845914183(SNode thisNode) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ElsifClause", null);
+    jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ElsifClause", null);
     SNode ifFalseStatement = SLinkOperations.getTarget(thisNode, "ifFalseStatement", true);
     if (SNodeOperations.isInstanceOf(ifFalseStatement, "jetbrains.mps.baseLanguage.structure.BlockStatement")) {
       SLinkOperations.setTarget(result, "statementList", SNodeOperations.copyNode(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "ifFalseStatement", true), "jetbrains.mps.baseLanguage.structure.BlockStatement"), "statements", true)), true);

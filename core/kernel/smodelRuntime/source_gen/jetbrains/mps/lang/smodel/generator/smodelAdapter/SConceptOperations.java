@@ -139,12 +139,12 @@ public final class SConceptOperations {
     return ListSequence.fromListWithValues(new ArrayList<SNode>(), usages);
   }
 
-  public static SNode createNewNode(String conceptFqName) {
+  public static jetbrains.mps.smodel.SNode createNewNode(String conceptFqName) {
     return jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(null, conceptFqName);
   }
 
   @Deprecated
-  public static SNode createNewNode(String conceptFqName, SNode prototypeNode) {
+  public static jetbrains.mps.smodel.SNode createNewNode(String conceptFqName, SNode prototypeNode) {
     return jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(null, conceptFqName);
   }
 }

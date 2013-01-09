@@ -164,7 +164,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
     if (unitType == null) {
       return null;
     }
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.UnitNode", null);
+    jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.UnitNode", null);
     SNode lowLevelType = createClassifierType.invoke(unitType);
     SNode highLevelNode = getStaticContextNode();
     if ((highLevelNode != null) && SNodeOperations.isInstanceOf(highLevelNode, "jetbrains.mps.baseLanguage.structure.Classifier")) {

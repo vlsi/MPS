@@ -45,8 +45,8 @@ public class NotMake_Test extends TestCase {
       public void change(SModel model) {
         super.change(model);
         for (SNode root : SModelOperations.getRoots(model, "jetbrains.mps.baseLanguage.structure.Interface")) {
-          SNode method = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null);
-          SNode voidType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VoidType", null);
+          jetbrains.mps.smodel.SNode method = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null);
+          jetbrains.mps.smodel.SNode voidType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VoidType", null);
           SPropertyOperations.set(method, "name", "abc");
           SLinkOperations.setTarget(method, "returnType", voidType, true);
           ListSequence.fromList(SLinkOperations.getTargets(root, "member", true)).addElement(method);

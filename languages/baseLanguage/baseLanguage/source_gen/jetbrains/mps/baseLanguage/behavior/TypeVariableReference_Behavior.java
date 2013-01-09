@@ -49,7 +49,7 @@ public class TypeVariableReference_Behavior {
     SNode bound = SLinkOperations.getTarget(SLinkOperations.getTarget(thisNode, "typeVariableDeclaration", false), "bound", true);
     if ((bound != null) && !(SetSequence.fromSet(visitedTypeVariableReferences).contains(thisNode))) {
       SetSequence.fromSet(visitedTypeVariableReferences).addElement(thisNode);
-      SNode upperBoundType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UpperBoundType", null);
+      jetbrains.mps.smodel.SNode upperBoundType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.UpperBoundType", null);
       SLinkOperations.setTarget(upperBoundType, "bound", BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), bound, "virtual_getLooseType_5744862332972792015", new Object[]{visitedTypeVariableReferences}), true);
       SetSequence.fromSet(visitedTypeVariableReferences).removeElement(thisNode);
       return upperBoundType;
