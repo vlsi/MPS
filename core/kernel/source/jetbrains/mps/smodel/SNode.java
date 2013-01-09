@@ -496,7 +496,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return null;
   }
 
-  public SNodeReference getReference() {
+  public SNodePointer getReference() {
     return new SNodePointer(this);
   }
 
