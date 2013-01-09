@@ -4,6 +4,7 @@ package jetbrains.mps.vcs.diff.ui.common;
 
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -54,7 +55,7 @@ public class ChangeEditorMessageFactory {
       if (parentNode == null) {
         return null;
       }
-      List<SNode> changeChildren = parentNode.getChildren(role);
+      List<? extends SNode> changeChildren = IterableUtil.asList(parentNode.getChildren(role));
 
       int changeBegin = (reversed ?
         ngc.getBegin() :
@@ -75,7 +76,7 @@ public class ChangeEditorMessageFactory {
         changeChildren.get(changeEnd).getNodeId() :
         null
       );
-      int currentChildrenSize = parentNode.getChildren(role).size();
+      int currentChildrenSize = IterableUtil.asCollection(parentNode.getChildren(role)).size();
 
       int beginIndex = (beginId == null ?
         currentChildrenSize :
@@ -94,7 +95,7 @@ public class ChangeEditorMessageFactory {
         id = parentId;
         messageTarget = new DeletedNodeMessageTarget(role, beginIndex);
       } else {
-        List<SNode> editedChildren = editedModel.getNodeById(parentId).getChildren(role);
+        List<jetbrains.mps.smodel.SNode> editedChildren = IterableUtil.asList(editedModel.getNodeById(parentId).getChildren(role));
         for (int i = beginIndex; i < endIndex; i++) {
           ListSequence.fromList(messages).addElement(new ChangeEditorMessage(editedChildren.get(i), new NodeMessageTarget(), owner, change, conflictChecker, highlighted));
         }

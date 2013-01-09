@@ -7,6 +7,7 @@ import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.EventsCollector;
 import com.intellij.util.containers.BidirectionalMultiMap;
 import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -249,7 +250,7 @@ public class ChangesTracking {
   private void removeDescendantChanges(SNodeId parentId, String role) {
     SNode oldNode = getOldNode(parentId);
     assert oldNode != null;
-    List<SNode> children = oldNode.getChildren(role);
+    List<? extends SNode> children = IterableUtil.asList(oldNode.getChildren(role));
     ListSequence.fromList(children).visitAll(new IVisitor<SNode>() {
       public void visit(SNode c) {
         removeDescendantChanges(c.getNodeId());
@@ -326,7 +327,7 @@ public class ChangesTracking {
   private static Iterable<SNodeId> getNodeIdsForNodeGroupChange(@NotNull NodeGroupChange ngc, @Nullable Tuples._2<SNodeId, List<SNodeId>> lastParentAndNewChildrenIds) {
     List<SNodeId> childrenIds;
     if (lastParentAndNewChildrenIds == null || neq_5iuzi5_a0a1a72(lastParentAndNewChildrenIds._0(), ngc.getParentNodeId())) {
-      List<SNode> children = ngc.getChangeSet().getNewModel().getNodeById(ngc.getParentNodeId()).getChildren(ngc.getRole());
+      List<jetbrains.mps.smodel.SNode> children = IterableUtil.asList(ngc.getChangeSet().getNewModel().getNodeById(ngc.getParentNodeId()).getChildren(ngc.getRole()));
       childrenIds = ListSequence.fromList(children).select(new ISelector<SNode, SNodeId>() {
         public SNodeId select(SNode n) {
           return n.getNodeId();
@@ -443,7 +444,7 @@ public class ChangesTracking {
       }
       final SNodeId parentId = parent.getNodeId();
 
-      final Wrappers._T<List<SNode>> childrenRightAfterEvent = new Wrappers._T<List<SNode>>(parent.getChildren(childRole));
+      final Wrappers._T<List<? extends SNode>> childrenRightAfterEvent = new Wrappers._T<List<? extends SNode>>(IterableUtil.asList(parent.getChildren(childRole)));
       childrenRightAfterEvent.value = ListSequence.fromList(childrenRightAfterEvent.value).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode n) {
           return CopyUtil.copyAndPreserveId(n, false);
@@ -465,7 +466,7 @@ public class ChangesTracking {
           }).toListSequence());
           buildAndAddChanges(new _FunctionTypes._void_P1_E0<ChangeSetBuilder>() {
             public void invoke(ChangeSetBuilder b) {
-              b.buildForNodeRole(getOldNode(parentId).getChildren(childRole), childrenRightAfterEvent.value, parentId, childRole);
+              b.buildForNodeRole(IterableUtil.asList(getOldNode(parentId).getChildren(childRole)), childrenRightAfterEvent.value, parentId, childRole);
             }
           });
         }

@@ -94,7 +94,7 @@ public class DependencyTree extends MPSTree {
               }
             }
             if (node instanceof PackageNode) {
-              for (jetbrains.mps.smodel.SNode nodeUnder : ((PackageNode) node).getNodesUnderPackage()) {
+              for (SNode nodeUnder : ((PackageNode) node).getNodesUnderPackage()) {
                 scope.add(nodeUnder);
               }
             }

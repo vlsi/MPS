@@ -90,7 +90,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
 
   private void initSelectedCells() {
     List<EditorCell> selectedCells = new ArrayList<EditorCell>();
-    List<SNode> children = IterableUtil.asList(myParentNode.getChildren(myRole));
+    List<? extends SNode> children = IterableUtil.asList(myParentNode.getChildren(myRole));
     int i1 = children.indexOf(myFirstNode);
     assert i1 != -1;
     int i2 = children.indexOf(myLastNode);
