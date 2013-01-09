@@ -85,7 +85,7 @@ public class SNodeAccessUtil {
     }
   }
 
-  public static void setReferenceTarget(jetbrains.mps.smodel.SNode node, String role, @Nullable jetbrains.mps.smodel.SNode target) {
+  public static void setReferenceTarget(SNode node, String role, @Nullable SNode target) {
     SModel model = node.getModel();
     if (model == null || !model.canFireEvent()) {
       //todo[Mihail Muhin]: why?
@@ -111,7 +111,7 @@ public class SNodeAccessUtil {
     threadSet.add(pair);
 
     try {
-      jetbrains.mps.smodel.SNode oldReferent = node.getReferenceTarget(role);
+      SNode oldReferent = node.getReferenceTarget(role);
       if (descriptor.validate(node, oldReferent, target, GlobalScope.getInstance())) {
         node.setReferenceTarget(role, target);
         descriptor.onReferenceSet(node, oldReferent, target, GlobalScope.getInstance());
