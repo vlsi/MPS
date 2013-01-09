@@ -43,7 +43,7 @@ public class SNodeAccessUtil {
     return !SModelUtil_new.isEmptyPropertyValue(property_internal);
   }
 
-  public static String getProperty(jetbrains.mps.smodel.SNode node, String name) {
+  public static String getProperty(SNode node, String name) {
     if (MPSCore.getInstance().isMergeDriverMode()) return node.getProperty(name);
 
     Set<Pair<SNode, String>> getters = ourPropertyGettersInProgress.get();
