@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.lang.editor.table.tests" uuid="69de002c-bbba-40be-be5b-f3a6e61ea828" pluginKind="PLUGIN_OTHER" compileInMPS="true">
   <models>
-    <modelRoot path="${module}/" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="." />
+    </modelRoot>
   </models>
   <sourcePath />
   <dependencies>

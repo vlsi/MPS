@@ -313,7 +313,7 @@
     <nodeInfo nodeId="1217424543029" fileName="LanguageTestWrapper.java" startLine="130" startPosition="28" endLine="131" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6577506630067933939" fileName="LanguageTestWrapper.java" startLine="134" startPosition="5" endLine="135" endPosition="192" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7292080432684961352" fileName="LanguageTestWrapper.java" startLine="136" startPosition="112" endLine="137" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1937023808170650699" fileName="LanguageTestWrapper.java" startLine="138" startPosition="84" endLine="139" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1937023808170650699" fileName="LanguageTestWrapper.java" startLine="138" startPosition="94" endLine="139" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2937573621172211820" fileName="LanguageTestWrapper.java" startLine="141" startPosition="5" endLine="142" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1217424543043" fileName="LanguageTestWrapper.java" startLine="142" startPosition="91" endLine="143" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="2024340988248532394" fileName="LanguageTestWrapper.java" startLine="149" startPosition="23" endLine="150" endPosition="131" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
@@ -398,7 +398,7 @@
     <scopeInfo nodeId="6653480123301124799" fileName="LanguageTestWrapper.java" startLine="112" startPosition="20" endLine="113" endPosition="81" />
     <scopeInfo nodeId="2937573621172211793" fileName="LanguageTestWrapper.java" startLine="117" startPosition="14" endLine="118" endPosition="80" />
     <scopeInfo nodeId="1217424543028" fileName="LanguageTestWrapper.java" startLine="130" startPosition="28" endLine="131" endPosition="84" />
-    <scopeInfo nodeId="1937023808170650698" fileName="LanguageTestWrapper.java" startLine="138" startPosition="84" endLine="139" endPosition="55" />
+    <scopeInfo nodeId="1937023808170650698" fileName="LanguageTestWrapper.java" startLine="138" startPosition="94" endLine="139" endPosition="55" />
     <scopeInfo nodeId="2024340988248532393" fileName="LanguageTestWrapper.java" startLine="149" startPosition="23" endLine="150" endPosition="131" />
     <scopeInfo nodeId="2024340988248532409" fileName="LanguageTestWrapper.java" startLine="158" startPosition="25" endLine="159" endPosition="133" />
     <scopeInfo nodeId="2024340988248532300" fileName="LanguageTestWrapper.java" startLine="165" startPosition="36" endLine="166" endPosition="120" />

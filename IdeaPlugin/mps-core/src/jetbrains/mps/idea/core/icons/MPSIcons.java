@@ -16,7 +16,10 @@
 
 package jetbrains.mps.idea.core.icons;
 
-import com.intellij.openapi.util.IconLoader;
+import com.intellij.icons.AllIcons;
+import com.intellij.icons.AllIcons.Modules;
+import jetbrains.mps.icons.MPSIcons.General;
+import jetbrains.mps.icons.MPSIcons.Nodes;
 
 import javax.swing.*;
 
@@ -24,13 +27,14 @@ import javax.swing.*;
  * evgeny, 10/26/11
  */
 public class MPSIcons {
-    public static final Icon MPS_ICON = IconLoader.findIcon("/MPS_16.png");
-    public static final Icon ADD_MODEL_ROOT_ICON = IconLoader.findIcon("/icons/addModelRoot.png");
-    public static final Icon SOURCES_TAB_ICON = IconLoader.findIcon("/icons/sourcesTab.png");
-    public static final Icon PATHS_TAB_ICON = IconLoader.findIcon("/icons/pathsTab.png");
-    public static final Icon LANGUAGES_TAB_ICON = IconLoader.findIcon("/icons/languagesTab.png");
-    public static final Icon MODELS_TAB_ICON = IconLoader.findIcon("/icons/modelsTab.png");
-    public static final Icon DEVKITS_TAB_ICON = IconLoader.findIcon("/icons/devkitsTab.png");
-    public static final Icon LANGUAGE_ICON = IconLoader.findIcon("/icons/language.png");
-    public static final Icon JAVA_MODEL_ICON = IconLoader.findIcon("/icons/javaModel.png");
+    public static final Icon MPS_ICON = jetbrains.mps.icons.MPSIcons.MPS16x16;
+    public static final Icon ADD_MODEL_ROOT_ICON = Modules.AddContentEntry;
+    public static final Icon SOURCES_TAB_ICON = Modules.SourceRoot;
+    public static final Icon PATHS_TAB_ICON = General.Dependencies;
+    public static final Icon LANGUAGES_TAB_ICON = Nodes.Language;
+    public static final Icon MODELS_TAB_ICON = Nodes.Model;
+    public static final Icon DEVKITS_TAB_ICON = Nodes.DevKit;
+    public static final Icon LANGUAGE_ICON = Nodes.Language;
+    public static final Icon SOLUTION_ICON = Nodes.Solution;
+    public static final Icon JAVA_MODEL_ICON = AllIcons.General.Jdk;
 }

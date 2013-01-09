@@ -16,11 +16,18 @@
 package jetbrains.mps.findUsages;
 
 import gnu.trove.THashSet;
-import jetbrains.mps.findUsages.fastfind.FastFindSupport;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SReference;
+import org.jetbrains.mps.openapi.persistence.indexing.FastFindSupport;
 
 import java.util.Collection;
 import java.util.HashSet;
@@ -28,36 +35,36 @@ import java.util.Map.Entry;
 import java.util.Set;
 
 class UsagesSearchType extends SearchType<SReference, SNode> {
-  public MultiMap<SModelDescriptor, SNode> findMatchingModelsInCache(Set<SNode> nodes, Iterable<SModelDescriptor> models, @Nullable Computable<Boolean> callback) {
-    MultiMap<SModelDescriptor, SNode> result = new MultiMap<SModelDescriptor, SNode>();
-    MultiMap<FastFindSupport, SModelDescriptor> gm = groupModels(models);
-    for (Entry<FastFindSupport, Collection<SModelDescriptor>> e : gm.entrySet()) {
+  public MultiMap<SModel, SNode> findMatchingModelsInCache(Set<SNode> nodes, Iterable<SModelDescriptor> models, @Nullable Computable<Boolean> callback) {
+    MultiMap<SModel, SNode> result = new MultiMap<SModel, SNode>();
+    MultiMap<FastFindSupport, SModel> gm = groupModelByFastFindSupport(models);
+    for (Entry<FastFindSupport, Collection<SModel>> e : gm.entrySet()) {
       if (e.getKey() == null) {
-        for (SModelDescriptor model : e.getValue()) {
+        for (SModel model : e.getValue()) {
           result.putValues(model, nodes);
         }
         continue;
       }
 
-      result.putAllValues(e.getKey().findModelsWithPossibleUsages((Set<SModelDescriptor>) e.getValue(), nodes));
+      result.putAllValues(e.getKey().findModelsWithPossibleUsages(e.getValue(), nodes));
     }
     return result;
   }
 
-  public Set<SReference> findInModel(MultiMap<SModelDescriptor, SNode> models, @Nullable Computable<Boolean> callback) {
+  public Set<SReference> findInModel(MultiMap<org.jetbrains.mps.openapi.model.SModel, SNode> models, @Nullable Computable<Boolean> callback) {
     Set<SReference> result = new HashSet<SReference>();
-    for (Entry<SModelDescriptor, Collection<SNode>> e : models.entrySet()) {
-      SModel model = e.getKey().getSModel();
+    for (Entry<SModel, Collection<SNode>> e : models.entrySet()) {
+      SModel model = e.getKey();
       if (model == null) continue;
 
       Collection<SNode> nodes = e.getValue();
       Set<StaticReferenceInfo> srefs = new THashSet<StaticReferenceInfo>();
-      for (SNode n:nodes){
-        SModelReference mr = n.getModel().getSModelReference();
-        srefs.add(new StaticReferenceInfo(SModelRepository.getInstance().getModelDescriptor(mr), n.getSNodeId()));
+      for (SNode n : nodes) {
+        SModelReference mr = ((jetbrains.mps.smodel.SNode) n).getModel().getSModelReference();
+        srefs.add(new StaticReferenceInfo(SModelRepository.getInstance().getModelDescriptor(mr), ((SNodeId) n.getNodeId())));
       }
 
-      for (SNode root : model.roots()) {
+      for (SNode root : model.getRootNodes()) {
         addUsages(root, nodes, srefs, result);
       }
 
@@ -68,12 +75,12 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
 
   private void addUsages(SNode current, Collection<SNode> nodes, Set<StaticReferenceInfo> srefs, Set<SReference> result) {
     for (SReference ref : current.getReferences()) {
-      if (ref instanceof StaticReference){
-        SModelReference mr = ref.getTargetSModelReference();
-        if (srefs.contains(new StaticReferenceInfo(SModelRepository.getInstance().getModelDescriptor(mr),ref.getTargetNodeId()))){
+      if (ref instanceof StaticReference) {
+        SModelReference mr = ((StaticReference) ref).getTargetSModelReference();
+        if (srefs.contains(new StaticReferenceInfo(SModelRepository.getInstance().getModelDescriptor(mr), ((StaticReference) ref).getTargetNodeId()))) {
           result.add(ref);
         }
-      } else{
+      } else {
         if (nodes.contains(ref.getTargetNode())) {
           result.add(ref);
         }
@@ -84,11 +91,11 @@ class UsagesSearchType extends SearchType<SReference, SNode> {
     }
   }
 
-  private static class StaticReferenceInfo{
-    private SModelDescriptor myModelRef;
+  private static class StaticReferenceInfo {
+    private SModel myModelRef;
     private SNodeId myNodeId;
 
-    public StaticReferenceInfo(SModelDescriptor modelRef, SNodeId nodeId) {
+    public StaticReferenceInfo(SModel modelRef, SNodeId nodeId) {
       myModelRef = modelRef;
       myNodeId = nodeId;
     }

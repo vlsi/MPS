@@ -51,7 +51,7 @@ public class MatrixInitializerIndexReference_Constraints extends BaseConstraints
                   {
                     SNode matchingNode_5upoaw_a0a2a0a = n;
                     if (matchingNode_5upoaw_a0a2a0a != null) {
-                      matches_5upoaw_a0a2a0a = SModelUtil_new.isAssignableConcept(matchingNode_5upoaw_a0a2a0a.getConcept().getId(), "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer");
+                      matches_5upoaw_a0a2a0a = SModelUtil_new.isAssignableConcept(matchingNode_5upoaw_a0a2a0a.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.math.structure.MatrixInitializer");
                     }
                   }
                   if (matches_5upoaw_a0a2a0a) {
@@ -62,7 +62,7 @@ public class MatrixInitializerIndexReference_Constraints extends BaseConstraints
                     {
                       SNode matchingNode_5upoaw_b0a2a0a = n;
                       if (matchingNode_5upoaw_b0a2a0a != null) {
-                        matches_5upoaw_b0a2a0a = SModelUtil_new.isAssignableConcept(matchingNode_5upoaw_b0a2a0a.getConcept().getId(), "jetbrains.mps.baseLanguage.math.structure.VectorInitializer");
+                        matches_5upoaw_b0a2a0a = SModelUtil_new.isAssignableConcept(matchingNode_5upoaw_b0a2a0a.getConcept().getConceptId(), "jetbrains.mps.baseLanguage.math.structure.VectorInitializer");
                       }
                     }
                     if (matches_5upoaw_b0a2a0a) {

@@ -5,7 +5,7 @@ package jetbrains.mps.lang.smodel.generator.smodelAdapter;
 import jetbrains.mps.smodel.AttributesRolesUtil;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
@@ -28,11 +28,11 @@ public class AttributeOperations {
 
   private static String getOldRole(SNode node) {
     if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.PropertyAttribute")) {
-      return AttributesRolesUtil.childRoleFromPropertyAttributeRole(BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getRole_1262430001741497900", new Object[]{}), SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.PropertyAttribute"), "propertyName"));
+      return AttributesRolesUtil.childRoleFromPropertyAttributeRole(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getRole_1262430001741497900", new Object[]{}), SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.PropertyAttribute"), "propertyName"));
     } else if (SNodeOperations.isInstanceOf(node, "jetbrains.mps.lang.core.structure.LinkAttribute")) {
-      return AttributesRolesUtil.childRoleFromLinkAttributeRole(BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getRole_1262430001741497900", new Object[]{}), SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.LinkAttribute"), "linkRole"));
+      return AttributesRolesUtil.childRoleFromLinkAttributeRole(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getRole_1262430001741497900", new Object[]{}), SPropertyOperations.getString(SNodeOperations.cast(node, "jetbrains.mps.lang.core.structure.LinkAttribute"), "linkRole"));
     } else {
-      return AttributesRolesUtil.childRoleFromAttributeRole(BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getRole_1262430001741497900", new Object[]{}));
+      return AttributesRolesUtil.childRoleFromAttributeRole(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getRole_1262430001741497900", new Object[]{}));
     }
   }
 
@@ -64,7 +64,7 @@ public class AttributeOperations {
   }
 
   public static SNode insertAttribute(SNode node, SNode anchor, IAttributeDescriptor descriptor, SNode value) {
-    node.insertChild(anchor, "smodelAttribute", value);
+    node.insertChild("smodelAttribute", value, anchor);
     descriptor.update(value);
     return value;
   }

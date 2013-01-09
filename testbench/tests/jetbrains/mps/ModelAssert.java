@@ -37,11 +37,11 @@ public class ModelAssert {
   private static void assertSameNodesCollections(String objectName, Iterable<SNode> expected, Iterable<SNode> actual) {
     HashMap<SNodeId, SNode> actualIdToNodeMap = new HashMap<SNodeId, SNode>();
     for (SNode actualNode : actual) {
-      actualIdToNodeMap.put(actualNode.getSNodeId(), actualNode);
+      actualIdToNodeMap.put(actualNode.getNodeId(), actualNode);
     }
 
     for (SNode expectedNode : expected) {
-      SNodeId rootId = expectedNode.getSNodeId();
+      SNodeId rootId = expectedNode.getNodeId();
       SNode actualNode = actualIdToNodeMap.get(rootId);
       assertNotNull("Not found expected " + objectName + " " + expectedNode, actualNode);
       assertDeepNodeEquals(expectedNode, actualNode);
@@ -159,8 +159,8 @@ public class ModelAssert {
 
   public static void assertDeepNodeEquals(SNode expectedNode, SNode actualNode) {
     assertEquals(getErrorString("concept", expectedNode, actualNode),
-      expectedNode.getConceptFqName(),
-      actualNode.getConceptFqName());
+      expectedNode.getConcept().getId(),
+      actualNode.getConcept().getId());
 
     // match properties
     assertPropertyEquals(expectedNode, actualNode);
@@ -171,8 +171,13 @@ public class ModelAssert {
   }
 
   private static void assertDeepChildrenEquals(SNode expectedNode, SNode actualNode) {
-    Set<String> roles = new HashSet<String>(expectedNode.getChildRoles());
-    roles.addAll(actualNode.getChildRoles());
+    Set<String> roles = new HashSet<String>();
+    for (SNode child : expectedNode.getChildren()) {
+      roles.add(child.getRoleInParent());
+    }
+    for (SNode child : actualNode.getChildren()) {
+      roles.add(child.getRoleInParent());
+    }
 
     for (String role : roles) {
       List<SNode> expectedChildren = expectedNode.getChildren(role);
@@ -183,7 +188,7 @@ public class ModelAssert {
       Iterator<SNode> actualIterator = actualChildren.iterator();
       for (SNode expectedChild : expectedChildren) {
         SNode actualChild = actualIterator.next();
-        assertEquals(getErrorString("children in role " + role, expectedNode, actualNode), expectedChild.getSNodeId(), actualChild.getSNodeId());
+        assertEquals(getErrorString("children in role " + role, expectedNode, actualNode), expectedChild.getNodeId(), actualChild.getNodeId());
         assertDeepNodeEquals(expectedChild, actualChild);
       }
     }
@@ -194,8 +199,8 @@ public class ModelAssert {
     propertes.addAll(expectedNode.getPropertyNames());
     propertes.addAll(actualNode.getPropertyNames());
     for (String key : propertes) {
-      String expectedProperty = expectedNode.getProperties().get(key);
-      String actualProperty = actualNode.getProperties().get(key);
+      String expectedProperty = jetbrains.mps.util.SNodeOperations.getProperties(expectedNode).get(key);
+      String actualProperty = jetbrains.mps.util.SNodeOperations.getProperties(actualNode).get(key);
       assertEquals(getErrorString("property", expectedNode, actualNode), expectedProperty, actualProperty);
     }
   }
@@ -206,8 +211,8 @@ public class ModelAssert {
 
   private static void assertReferenceEquals(SNode expectedNode, SNode actualNode) {
     Set<String> roles = new HashSet<String>();
-    roles.addAll(expectedNode.getReferenceRoles());
-    roles.addAll(actualNode.getReferenceRoles());
+    roles.addAll(jetbrains.mps.util.SNodeOperations.getReferenceRoles(expectedNode));
+    roles.addAll(jetbrains.mps.util.SNodeOperations.getReferenceRoles(actualNode));
     Map<String, Set<SReference>> expRoleToReferenceMap = createRoleToReferenceMap(expectedNode);
     Map<String, Set<SReference>> actRoleToReferenceMap = createRoleToReferenceMap(actualNode);
 
@@ -254,6 +259,6 @@ public class ModelAssert {
       return;
     }
     assertNotNull(errorString, actualNode);
-    assertEquals(errorString, expectedNode.getSNodeId(), actualNode.getSNodeId());
+    assertEquals(errorString, expectedNode.getNodeId(), actualNode.getNodeId());
   }
 }

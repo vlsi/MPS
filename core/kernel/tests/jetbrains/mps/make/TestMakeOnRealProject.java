@@ -275,7 +275,8 @@ public class TestMakeOnRealProject {
     solutionDescriptor.setNamespace(name);
 
     DefaultModelRoot modelRoot = new DefaultModelRoot();
-    modelRoot.setPath(runtimeSolutionDescriptorFile.getParent().getPath());
+    modelRoot.setContentRoot(runtimeSolutionDescriptorFile.getParent().getPath());
+    modelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, runtimeSolutionDescriptorFile.getParent().getPath());
 
     solutionDescriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
     solutionDescriptor.getDependencies().add(new Dependency(new ModuleReference("JDK"), true));
@@ -295,7 +296,8 @@ public class TestMakeOnRealProject {
 
     DefaultModelRoot modelRoot = new DefaultModelRoot();
     IFile languageModels = descriptorFile.getParent().getDescendant(Language.LANGUAGE_MODELS);
-    modelRoot.setPath(languageModels.getPath());
+    modelRoot.setContentRoot(languageModels.getParent().getPath());
+    modelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, languageModels.getPath());
     d.getModelRootDescriptors().add(modelRoot.toDescriptor());
 
     LanguageDescriptorPersistence.saveLanguageDescriptor(descriptorFile, d, MacrosFactory.forModuleFile(descriptorFile));
@@ -316,7 +318,8 @@ public class TestMakeOnRealProject {
     solutionDescriptor.getUsedLanguages().add(myCreatedLanguage.getModuleReference());
 
     DefaultModelRoot modelRoot = new DefaultModelRoot();
-    modelRoot.setPath(descriptorFile.getParent().getPath());
+    modelRoot.setContentRoot(descriptorFile.getParent().getPath());
+    modelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, descriptorFile.getParent().getPath());
 
     solutionDescriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
     

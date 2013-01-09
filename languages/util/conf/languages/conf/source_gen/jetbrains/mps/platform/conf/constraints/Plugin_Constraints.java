@@ -57,7 +57,7 @@ public class Plugin_Constraints extends BaseConstraintsDescriptor {
             id
           );
           id = (id == null ?
-            node.getSNodeId().toString() :
+            node.getNodeId().toString() :
             id
           );
           return SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "conceptAlias") + "$" + (id).replace('.', '-');

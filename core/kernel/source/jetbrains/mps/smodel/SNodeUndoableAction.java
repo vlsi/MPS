@@ -27,7 +27,7 @@ public abstract class SNodeUndoableAction {
   }
 
   public SNode getRoot() {
-    return myAffectedNode.getTopmostAncestor();
+    return myAffectedNode.getContainingRoot();
   }
 
   protected abstract void doUndo();

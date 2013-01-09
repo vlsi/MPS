@@ -80,7 +80,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
         myAuxModule.setContextModule(myEvaluationContext.getLocationModule());
         ListSequence.fromList(myEvaluationContext.getClassPath()).union(ListSequence.fromList(getDebuggerStubPath())).visitAll(new IVisitor<String>() {
           public void visit(String it) {
-            myAuxModule.addStubPath(it);
+            myAuxModule.addClassPathItem(it);
           }
         });
         myAuxModule.updateModelsSet();
@@ -196,7 +196,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
           if ((resolveInfo == null || resolveInfo.length() == 0)) {
             resolveInfo = jetbrains.mps.util.SNodeOperations.getResolveInfo(SLinkOperations.getTargetNode(reference));
           }
-          node.setReference(new DynamicReference(SLinkOperations.getRole(reference), node, scopeModel.getSModelReference(), resolveInfo));
+          node.setReference(SLinkOperations.getRole(reference), new DynamicReference(SLinkOperations.getRole(reference), node, scopeModel.getSModelReference(), resolveInfo));
         }
       }
     }
@@ -208,7 +208,7 @@ public class LowLevelEvaluationModel extends AbstractEvaluationModel {
       if (neq_qkk2f2_a0a1a0a31(SNodeOperations.getModel(SLinkOperations.getTargetNode(reference)), myAuxModel.getSModel()) && SNodeOperations.isInstanceOf(SLinkOperations.getTargetNode(reference), "jetbrains.mps.lang.core.structure.INamedConcept")) {
         SNode matchingVar = ListSequence.fromList(SLinkOperations.getTargets(getNodeToShow(), "variables", true)).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode variable) {
-            return eq_qkk2f2_a0a0a0a0a0a0a1a0a31(SPropertyOperations.getString(variable, "highLevelNodeId"), SLinkOperations.getTargetNode(reference).getSNodeId().toString());
+            return eq_qkk2f2_a0a0a0a0a0a0a1a0a31(SPropertyOperations.getString(variable, "highLevelNodeId"), SLinkOperations.getTargetNode(reference).getNodeId().toString());
           }
         });
         if (matchingVar == null) {

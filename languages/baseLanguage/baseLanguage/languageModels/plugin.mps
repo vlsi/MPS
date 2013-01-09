@@ -22,6 +22,7 @@
   <import index="iqmz" modelUID="r:6bc4612e-813e-4efa-8244-77b9a4da8b36(jetbrains.mps.internal.make.runtime.java)" version="-1" />
   <import index="59et" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.vfs(MPS.Core/jetbrains.mps.vfs@java_stub)" version="-1" />
   <import index="uskx" modelUID="r:b63b6f93-e29a-4718-8cc3-affacae32340(jetbrains.mps.lang.resources.plugin)" version="-1" />
+  <import index="jehi" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.icons(MPS.Platform/com.intellij.icons@java_stub)" version="-1" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp2c" modelUID="r:00000000-0000-4000-0000-011c89590338(jetbrains.mps.baseLanguage.closures.structure)" version="3" implicit="yes" />
   <import index="cx9y" modelUID="r:309aeee7-bee8-445c-b31d-35928d1da75f(jetbrains.mps.baseLanguage.tuples.structure)" version="2" implicit="yes" />
@@ -1631,24 +1632,33 @@
     <node role="icons" roleId="1oap.8974276187400029886" type="1oap.IconResourceDeclaration" typeId="1oap.8974276187400029888" id="2990235398088186555">
       <property name="name" nameId="tpck.1169194664001" value="FINALMARK" />
       <node role="iconExpression" roleId="1oap.8974276187400029889" type="1oap.IconResourceExpression" typeId="1oap.8974276187400029891" id="2990235398088186556">
-        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="2990235398088186557">
-          <property name="path" nameId="1oap.8974276187400029899" value="${language_descriptor}/icons/finalMark.png" />
+        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4483014192701782225">
+          <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4483014192701782861">
+            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$Nodes" resolveInfo="AllIcons.Nodes" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$Nodes%dFinalMark" resolveInfo="FinalMark" />
+          </node>
         </node>
       </node>
     </node>
     <node role="icons" roleId="1oap.8974276187400029886" type="1oap.IconResourceDeclaration" typeId="1oap.8974276187400029888" id="2990235398088186559">
       <property name="name" nameId="tpck.1169194664001" value="STATICMARK" />
       <node role="iconExpression" roleId="1oap.8974276187400029889" type="1oap.IconResourceExpression" typeId="1oap.8974276187400029891" id="2990235398088186560">
-        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="2990235398088186561">
-          <property name="path" nameId="1oap.8974276187400029899" value="${language_descriptor}/icons/staticMark.png" />
+        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4483014192701783541">
+          <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4483014192701783757">
+            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$Nodes" resolveInfo="AllIcons.Nodes" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$Nodes%dStaticMark" resolveInfo="StaticMark" />
+          </node>
         </node>
       </node>
     </node>
     <node role="icons" roleId="1oap.8974276187400029886" type="1oap.IconResourceDeclaration" typeId="1oap.8974276187400029888" id="2990235398088186567">
       <property name="name" nameId="tpck.1169194664001" value="RUNNABLEMARK" />
       <node role="iconExpression" roleId="1oap.8974276187400029889" type="1oap.IconResourceExpression" typeId="1oap.8974276187400029891" id="2990235398088186568">
-        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="2990235398088186569">
-          <property name="path" nameId="1oap.8974276187400029899" value="${language_descriptor}/icons/runnableMark.png" />
+        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4483014192701784307">
+          <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4483014192701784322">
+            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$Nodes" resolveInfo="AllIcons.Nodes" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$Nodes%dRunnableMark" resolveInfo="RunnableMark" />
+          </node>
         </node>
       </node>
     </node>
@@ -1657,32 +1667,44 @@
     <node role="icons" roleId="1oap.8974276187400029886" type="1oap.IconResourceDeclaration" typeId="1oap.8974276187400029888" id="349375443596798662">
       <property name="name" nameId="tpck.1169194664001" value="PACKAGE_LOCAL" />
       <node role="iconExpression" roleId="1oap.8974276187400029889" type="1oap.IconResourceExpression" typeId="1oap.8974276187400029891" id="349375443596798663">
-        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="349375443596798664">
-          <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/languages/baseLanguage/baseLanguage/icons/packageLocal.png" />
+        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4483014192701790505">
+          <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4483014192701790506">
+            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$Nodes" resolveInfo="AllIcons.Nodes" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$Nodes%dC_plocal" resolveInfo="C_plocal" />
+          </node>
         </node>
       </node>
     </node>
     <node role="icons" roleId="1oap.8974276187400029886" type="1oap.IconResourceDeclaration" typeId="1oap.8974276187400029888" id="349375443596798665">
       <property name="name" nameId="tpck.1169194664001" value="PUBLIC" />
       <node role="iconExpression" roleId="1oap.8974276187400029889" type="1oap.IconResourceExpression" typeId="1oap.8974276187400029891" id="349375443596798666">
-        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="349375443596798667">
-          <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/languages/baseLanguage/baseLanguage/icons/public.png" />
+        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4483014192701785305">
+          <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4483014192701785323">
+            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$Nodes" resolveInfo="AllIcons.Nodes" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$Nodes%dC_public" resolveInfo="C_public" />
+          </node>
         </node>
       </node>
     </node>
     <node role="icons" roleId="1oap.8974276187400029886" type="1oap.IconResourceDeclaration" typeId="1oap.8974276187400029888" id="349375443596798668">
       <property name="name" nameId="tpck.1169194664001" value="PRIVATE" />
       <node role="iconExpression" roleId="1oap.8974276187400029889" type="1oap.IconResourceExpression" typeId="1oap.8974276187400029891" id="349375443596798669">
-        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="349375443596798670">
-          <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/languages/baseLanguage/baseLanguage/icons/private.png" />
+        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4483014192701788100">
+          <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4483014192701788101">
+            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$Nodes" resolveInfo="AllIcons.Nodes" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$Nodes%dC_private" resolveInfo="C_private" />
+          </node>
         </node>
       </node>
     </node>
     <node role="icons" roleId="1oap.8974276187400029886" type="1oap.IconResourceDeclaration" typeId="1oap.8974276187400029888" id="349375443596798671">
       <property name="name" nameId="tpck.1169194664001" value="PROTECTED" />
       <node role="iconExpression" roleId="1oap.8974276187400029889" type="1oap.IconResourceExpression" typeId="1oap.8974276187400029891" id="349375443596798672">
-        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="349375443596798673">
-          <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/languages/baseLanguage/baseLanguage/icons/protected.png" />
+        <node role="icon" roleId="1oap.8974276187400029893" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4483014192701789389">
+          <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4483014192701789390">
+            <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$Nodes" resolveInfo="AllIcons.Nodes" />
+            <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$Nodes%dC_protected" resolveInfo="C_protected" />
+          </node>
         </node>
       </node>
     </node>

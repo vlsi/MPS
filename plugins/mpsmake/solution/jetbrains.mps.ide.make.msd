@@ -4,7 +4,9 @@
     <modelRoot path="${mps_home}/plugins/mpsmake">
       <manager moduleId="32d0a39c-772f-4490-8142-e50f9a9f19d4" className="jetbrains.mps.platform.conf.stubs.ConfStubs" />
     </modelRoot>
-    <modelRoot path="${module}/" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="." />
+    </modelRoot>
     <modelRoot path="${mps_home}/plugins/mpsmake/classes" type="java_classes" />
   </models>
   <stubModelEntries>

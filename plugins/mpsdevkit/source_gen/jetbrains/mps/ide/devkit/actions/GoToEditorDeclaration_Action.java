@@ -4,7 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -29,7 +29,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.logging.Logger;
 
 public class GoToEditorDeclaration_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("editor.png");
+  private static final Icon ICON = MPSIcons.Nodes.Editor;
 
   public GoToEditorDeclaration_Action() {
     super("Editor Declaration", "", ICON);

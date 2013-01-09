@@ -79,7 +79,7 @@ public class ConvertToClassifierFQNameSpecification_Intention implements Intenti
       SNode classifierSpecification = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.script.structure.FQNameClassifierSpecification");
       SPropertyOperations.set(classifierSpecification, "classifierFQName", BehaviorReflection.invokeVirtual(String.class, node, "virtual_getClassifierFqName_5434557751112930827", new Object[]{}));
       SPropertyOperations.set(classifierSpecification, "smodelReference", BehaviorReflection.invokeVirtual(String.class, node, "virtual_getSModelReference_5434557751113441014", new Object[]{}));
-      SPropertyOperations.set(classifierSpecification, "snodeId", SLinkOperations.getTarget(node, "classifier", false).getSNodeId().toString());
+      SPropertyOperations.set(classifierSpecification, "snodeId", SLinkOperations.getTarget(node, "classifier", false).getNodeId().toString());
       SNodeOperations.deleteNode(node);
     }
 

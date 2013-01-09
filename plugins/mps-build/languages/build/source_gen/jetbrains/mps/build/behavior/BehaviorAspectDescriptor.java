@@ -162,6 +162,18 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new BuildLayout_War_BehaviorDescriptor();
       case 53:
         return new BuildSource_JavaDependencyExternalJarInFolder_BehaviorDescriptor();
+      case 37:
+        return new BuildLayout_JarManifest_BehaviorDescriptor();
+      case 38:
+        return new BuildLayout_JarManifest_Attribute_BehaviorDescriptor();
+      case 39:
+        return new BuildLayout_JarManifest_Section_BehaviorDescriptor();
+      case 46:
+        return new BuildSourceArchiveRelativePath_BehaviorDescriptor();
+      case 84:
+        return new GeneratorInternal_IWorkfowParticipants_BehaviorDescriptor();
+      case 83:
+        return new GeneratorInternal_IWorkflowParticipantReference_BehaviorDescriptor();
       case 81:
         return new GeneratorInternal_BuildSource_JavaModule_BehaviorDescriptor();
       case 82:
@@ -170,18 +182,6 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
         return new GeneratorInternal_BuildSource_JavaLibrary_BehaviorDescriptor();
       case 79:
         return new GeneratorInternal_BuildSource_JavaJar_BehaviorDescriptor();
-      case 37:
-        return new BuildLayout_JarManifest_BehaviorDescriptor();
-      case 38:
-        return new BuildLayout_JarManifest_Attribute_BehaviorDescriptor();
-      case 83:
-        return new GeneratorInternal_IWorkflowParticipantReference_BehaviorDescriptor();
-      case 46:
-        return new BuildSourceArchiveRelativePath_BehaviorDescriptor();
-      case 39:
-        return new BuildLayout_JarManifest_Section_BehaviorDescriptor();
-      case 84:
-        return new GeneratorInternal_IWorkfowParticipants_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }

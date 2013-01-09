@@ -19,12 +19,8 @@ import jetbrains.mps.make.dependencies.graph.Graph;
 import jetbrains.mps.make.dependencies.graph.Graphs;
 import jetbrains.mps.make.dependencies.graph.IVertex;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.project.ModuleUtil;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager.Deptype;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 

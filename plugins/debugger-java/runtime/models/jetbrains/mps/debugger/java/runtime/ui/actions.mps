@@ -26,6 +26,7 @@
   <import index="a3o9" modelUID="r:6c15a5c9-1bba-4ade-a066-13f2741b04fc(jetbrains.mps.debugger.java.api.state)" version="-1" />
   <import index="d822" modelUID="r:63e7a653-1334-49d4-8e81-fd72b84fb4ff(jetbrains.mps.debugger.java.runtime.state)" version="-1" />
   <import index="f5hh" modelUID="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)" version="-1" />
+  <import index="jehi" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.icons(MPS.Platform/com.intellij.icons@java_stub)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="35" implicit="yes" />
@@ -38,34 +39,34 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="watches" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8643693251546861633">
-      <property name="description" nameId="tp4k.1213273179528" value="New Watch..." />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
+      <property name="description" nameId="tp4k.1213273179528" value="New Watch..." />
       <property name="name" nameId="tpck.1169194664001" value="AddWatchAction" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="New Watch..." />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="watches" />
+      <property name="caption" nameId="tp4k.1205250923097" value="New Watch..." />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8643693251546861699">
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="RemoveWatchAction" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Remove Watch" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="watches" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Remove Watch" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8643693251546861757">
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="EditWatchAction" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Edit Watch" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="watches" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Edit Watch" />
     </node>
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="3585489156472415414">
       <property name="id" nameId="tp4k.5023285075122009366" value="just.a.mock.descriptor" />
-      <property name="descripttion" nameId="tp4k.5023285075122009368" value="description" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="url" />
+      <property name="descripttion" nameId="tp4k.5023285075122009368" value="description" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="vendor" />
-      <property name="name" nameId="tpck.1169194664001" value="name" />
       <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="mock" />
+      <property name="name" nameId="tpck.1169194664001" value="name" />
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="123.1" />
       <property name="version" nameId="tp4k.5023285075122009369" value="version" />
     </node>
@@ -101,6 +102,12 @@
     </node>
   </root>
   <root id="8643693251546861633">
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="8024349686103245099">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8024349686103257298">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$General" resolveInfo="AllIcons.General" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$General%dAdd" resolveInfo="Add" />
+      </node>
+    </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="8643693251546861634">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8643693251546861635">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2915139105446486188">
@@ -145,9 +152,6 @@
         </node>
       </node>
     </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="8643693251546861642">
-      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-workbench/source/jetbrains/mps/workbench/dialogs/project/components/parts/actions/icons/add.png" />
-    </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.DoUpdateBlock" typeId="tp4k.1203082695294" id="8643693251546861675">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8643693251546861676">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2915139105446486220">
@@ -175,6 +179,12 @@
     </node>
   </root>
   <root id="8643693251546861699">
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="8024349686103259448">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8024349686103261963">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$General" resolveInfo="AllIcons.General" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$General%dRemove" resolveInfo="Remove" />
+      </node>
+    </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="8643693251546861700">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8643693251546861701">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="2915139105446486231">
@@ -244,9 +254,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="8643693251546861709">
-      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-workbench/source/jetbrains/mps/workbench/dialogs/project/components/parts/actions/icons/remove.png" />
     </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.DoUpdateBlock" typeId="tp4k.1203082695294" id="8643693251546861732">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="8643693251546861733">

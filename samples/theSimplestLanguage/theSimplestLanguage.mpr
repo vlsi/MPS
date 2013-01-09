@@ -16,7 +16,7 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${project}/languages/theSimplestLanguage/theSimplestLanguage.mpl" />
+      <modulePath path="${project}/languages/theSimplestLanguage/jetbrains.mps.samples.theSimplestLanguage.mpl" />
       <modulePath path="${project}/solutions/jetbrains.mps.samples.theSimplestLanguage.sandbox/jetbrains.mps.samples.theSimplestLanguage.sandbox.msd" />
     </projectModules>
     <genConfs>

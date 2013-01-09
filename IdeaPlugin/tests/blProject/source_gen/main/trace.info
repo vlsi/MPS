@@ -1,37 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <root nodeId="7015818220060178316">
+  <root nodeId="7015818220060178316" modelId="r:cdf0e280-e3c2-44a8-9746-0304f21e463c(main)">
     <nodeInfo nodeId="8639875392258181209" fileName="MainClass.java" startLine="7" startPosition="22" endLine="8" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="7015818220060279068" fileName="MainClass.java" startLine="11" startPosition="42" endLine="12" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7015818220060178318" fileName="MainClass.java" startLine="6" startPosition="48" endLine="9" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MainClass#()V" />
-    <nodeInfo nodeId="7015818220060178411" fileName="MainClass.java" startLine="10" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7015818220060178318" fileName="MainClass.java" startLine="7" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="MainClass#()V" />
+    <nodeInfo nodeId="7015818220060178411" fileName="MainClass.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="main#([Ljava/lang/String;)V" />
     <scopeInfo nodeId="7015818220060178321" fileName="MainClass.java" startLine="7" startPosition="22" endLine="8" endPosition="0" />
     <scopeInfo nodeId="7015818220060178417" fileName="MainClass.java" startLine="11" startPosition="42" endLine="12" endPosition="30" />
-    <scopeInfo nodeId="7015818220060178318" fileName="MainClass.java" startLine="6" startPosition="48" endLine="9" endPosition="3" />
-    <scopeInfo nodeId="7015818220060178411" fileName="MainClass.java" startLine="10" startPosition="0" endLine="14" endPosition="0">
+    <scopeInfo nodeId="7015818220060178318" fileName="MainClass.java" startLine="7" startPosition="0" endLine="10" endPosition="0" />
+    <scopeInfo nodeId="7015818220060178411" fileName="MainClass.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
       <varInfo nodeId="7015818220060178412" varName="args" />
     </scopeInfo>
     <unitInfo nodeId="7015818220060178316" fileName="MainClass.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="main.MainClass" />
   </root>
-  <root nodeId="7015818220060279054">
+  <root nodeId="7015818220060279054" modelId="r:cdf0e280-e3c2-44a8-9746-0304f21e463c(main)">
     <nodeInfo nodeId="7015818220060279066" fileName="ConcoleUtil.java" startLine="10" startPosition="37" endLine="11" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7015818220060279056" fileName="ConcoleUtil.java" startLine="6" startPosition="26" endLine="8" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConcoleUtil#()V" />
-    <nodeInfo nodeId="7015818220060279060" fileName="ConcoleUtil.java" startLine="9" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="echo#(Ljava/lang/String;)V" />
+    <nodeInfo nodeId="7015818220060279056" fileName="ConcoleUtil.java" startLine="7" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ConcoleUtil#()V" />
+    <nodeInfo nodeId="7015818220060279060" fileName="ConcoleUtil.java" startLine="10" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="echo#(Ljava/lang/String;)V" />
     <scopeInfo nodeId="7015818220060279059" fileName="ConcoleUtil.java" startLine="7" startPosition="24" endLine="7" endPosition="24" />
     <scopeInfo nodeId="7015818220060279063" fileName="ConcoleUtil.java" startLine="10" startPosition="37" endLine="11" endPosition="85" />
-    <scopeInfo nodeId="7015818220060279056" fileName="ConcoleUtil.java" startLine="6" startPosition="26" endLine="8" endPosition="3" />
-    <scopeInfo nodeId="7015818220060279060" fileName="ConcoleUtil.java" startLine="9" startPosition="0" endLine="13" endPosition="0">
+    <scopeInfo nodeId="7015818220060279056" fileName="ConcoleUtil.java" startLine="7" startPosition="0" endLine="9" endPosition="0" />
+    <scopeInfo nodeId="7015818220060279060" fileName="ConcoleUtil.java" startLine="10" startPosition="0" endLine="13" endPosition="0">
       <varInfo nodeId="7015818220060279064" varName="s" />
     </scopeInfo>
     <unitInfo nodeId="7015818220060279054" fileName="ConcoleUtil.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="main.ConcoleUtil" />
   </root>
-  <root nodeId="7015818220060279072">
-    <nodeInfo nodeId="7015818220060279074" fileName="ProjectKind.java" startLine="10" startPosition="0" endLine="12" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectKind#()V" />
+  <root nodeId="7015818220060279072" modelId="r:cdf0e280-e3c2-44a8-9746-0304f21e463c(main)">
+    <nodeInfo nodeId="7015818220060279074" fileName="ProjectKind.java" startLine="11" startPosition="0" endLine="13" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ProjectKind#()V" />
     <scopeInfo nodeId="7015818220060279077" fileName="ProjectKind.java" startLine="11" startPosition="17" endLine="11" endPosition="17" />
-    <scopeInfo nodeId="7015818220060279074" fileName="ProjectKind.java" startLine="10" startPosition="0" endLine="12" endPosition="3" />
+    <scopeInfo nodeId="7015818220060279074" fileName="ProjectKind.java" startLine="11" startPosition="0" endLine="13" endPosition="0" />
     <unitInfo nodeId="7015818220060279072" fileName="ProjectKind.java" startLine="6" startPosition="0" endLine="14" endPosition="0" unitName="main.ProjectKind" />
   </root>
-  <root nodeId="7015818220060279086">
+  <root nodeId="7015818220060279086" modelId="r:cdf0e280-e3c2-44a8-9746-0304f21e463c(main)">
     <unitInfo nodeId="7015818220060279086" fileName="SimpleMarker.java" startLine="6" startPosition="0" endLine="8" endPosition="0" unitName="main.SimpleMarker" />
   </root>
 </debugInfo>

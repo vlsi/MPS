@@ -52,7 +52,7 @@ public class supertypesOf_ClassifierTypeList_ListType_SubtypingRule extends Subt
       {
         SNode nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a;
         nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_supertypesOf_ClassifierTypeList_ListType_h8kiwa_a0a.getConcept().getConceptId()))) {
           return false;
         }
         {

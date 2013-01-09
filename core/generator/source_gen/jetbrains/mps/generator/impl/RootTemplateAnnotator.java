@@ -9,11 +9,14 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class RootTemplateAnnotator implements CoreComponent {
   public RootTemplateAnnotator(GlobalSModelEventsManager dep) {
@@ -24,7 +27,7 @@ public class RootTemplateAnnotator implements CoreComponent {
       public void rootAdded(SModelRootEvent event) {
         SNode node = event.getRoot();
         if (SModelStereotype.isGeneratorModel(SNodeOperations.getModel(node))) {
-          if (node.getNodeLanguage() != BootstrapLanguages.generatorLanguage() && node.getNodeLanguage() != BootstrapLanguages.generatorParametersLanguage()) {
+          if ((Language) check_epzavk_a0a0a0b0a0a0a0a0b(SNodeOperations.getConceptDeclaration(((SNode) node)).getContainingModel()) != BootstrapLanguages.generatorLanguage() && (Language) check_epzavk_a0a0a0b0a0a0a0a0b_0(SNodeOperations.getConceptDeclaration(((SNode) node)).getContainingModel()) != BootstrapLanguages.generatorParametersLanguage()) {
             if ((AttributeOperations.getAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"))) == null)) {
               AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.RootTemplateAnnotation")), SModelOperations.createNewNode(SNodeOperations.getModel(node), null, "jetbrains.mps.lang.generator.structure.RootTemplateAnnotation"));
             }
@@ -35,5 +38,19 @@ public class RootTemplateAnnotator implements CoreComponent {
   }
 
   public void dispose() {
+  }
+
+  private static SModule check_epzavk_a0a0a0b0a0a0a0a0b(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+
+  private static SModule check_epzavk_a0a0a0b0a0a0a0a0b_0(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
   }
 }

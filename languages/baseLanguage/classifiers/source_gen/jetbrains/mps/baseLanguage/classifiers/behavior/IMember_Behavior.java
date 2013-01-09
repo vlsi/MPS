@@ -7,7 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -24,7 +24,7 @@ public class IMember_Behavior {
   }
 
   public static SNode virtual_getOperationConcept_1213877352972(SNode thisNode) {
-    SNode memberOperationConcept = ((SNode) ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getOperationConcept_3044950653914717125", new Object[]{})).first());
+    SNode memberOperationConcept = ((SNode) ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getOperationConcept_3044950653914717125", new Object[]{})).first());
     if (memberOperationConcept == null) {
       throw new RuntimeException("Please set operationConcept in " + SNodeOperations.getConceptDeclaration(thisNode) + " concept");
     }

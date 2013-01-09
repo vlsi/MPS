@@ -28,7 +28,7 @@ public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_Compa
 
   public IsApplicableStatus isApplicableFirst(SNode node) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getId(), this.getApplicableConceptFQName1());
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getConceptId(), this.getApplicableConceptFQName1());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -58,7 +58,7 @@ public class comparable_SEnumMemberType__node_EnumerationMemberDeclaration_Compa
       {
         SNode nodeToMatch_comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ityt7t_a0a;
         nodeToMatch_comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ityt7t_a0a = nodeToMatch;
-        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ityt7t_a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.lang.smodel.structure.SNodeType".equals(nodeToMatch_comparable_SEnumMemberType__node_EnumerationMemberDeclaration_ityt7t_a0a.getConcept().getConceptId()))) {
           return false;
         }
         {

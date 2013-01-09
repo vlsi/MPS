@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
-  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="74" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BehaviorAspectDescriptor" />
   <unitInfo fileName="BwfAntStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfAntStatement_BehaviorDescriptor" />
+  <unitInfo fileName="BwfAntTaskBundleDeclaration_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfAntTaskBundleDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="BwfAntTaskDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfAntTaskDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="BwfCustomMacro_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="20" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfCustomMacro_BehaviorDescriptor" />
   <unitInfo fileName="BwfDependency_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfDependency_BehaviorDescriptor" />
@@ -17,6 +18,7 @@
   <unitInfo fileName="BwfMacro_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfMacro_BehaviorDescriptor" />
   <unitInfo fileName="BwfPathDeclaration_BehaviorDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfPathDeclaration_BehaviorDescriptor" />
   <unitInfo fileName="BwfPathReference_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfPathReference_BehaviorDescriptor" />
+  <unitInfo fileName="BwfProjectPartStatement_BehaviorDescriptor.java" startLine="6" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfProjectPartStatement_BehaviorDescriptor" />
   <unitInfo fileName="BwfProjectPart_BehaviorDescriptor.java" startLine="8" startPosition="0" endLine="21" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfProjectPart_BehaviorDescriptor" />
   <unitInfo fileName="BwfProject_BehaviorDescriptor.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfProject_BehaviorDescriptor" />
   <unitInfo fileName="BwfStatement_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfStatement_BehaviorDescriptor" />
@@ -109,6 +111,20 @@
       <varInfo nodeId="244868996532667552" varName="thisNode" />
     </scopeInfo>
     <unitInfo nodeId="244868996532667552" fileName="BwfCustomMacro_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfCustomMacro_Behavior" />
+  </root>
+  <root nodeId="2529023923283158068" modelId="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
+    <nodeInfo nodeId="2529023923283158080" fileName="BwfAntTaskBundleDeclaration_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="14" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2529023923283158068" fileName="BwfAntTaskBundleDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2529023923283158068" fileName="BwfAntTaskBundleDeclaration_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getPriority_2059109515400548718#(Ljetbrains/mps/smodel/SNode;)I" />
+    <scopeInfo nodeId="2529023923283158070" fileName="BwfAntTaskBundleDeclaration_Behavior.java" startLine="8" startPosition="43" endLine="8" endPosition="43" />
+    <scopeInfo nodeId="2529023923283158073" fileName="BwfAntTaskBundleDeclaration_Behavior.java" startLine="11" startPosition="77" endLine="12" endPosition="14" />
+    <scopeInfo nodeId="2529023923283158068" fileName="BwfAntTaskBundleDeclaration_Behavior.java" startLine="8" startPosition="0" endLine="10" endPosition="0">
+      <varInfo nodeId="2529023923283158068" varName="thisNode" />
+    </scopeInfo>
+    <scopeInfo nodeId="2529023923283158068" fileName="BwfAntTaskBundleDeclaration_Behavior.java" startLine="11" startPosition="0" endLine="14" endPosition="0">
+      <varInfo nodeId="2529023923283158068" varName="thisNode" />
+    </scopeInfo>
+    <unitInfo nodeId="2529023923283158068" fileName="BwfAntTaskBundleDeclaration_Behavior.java" startLine="7" startPosition="0" endLine="15" endPosition="0" unitName="jetbrains.mps.build.workflow.behavior.BwfAntTaskBundleDeclaration_Behavior" />
   </root>
   <root nodeId="2769948622284605897" modelId="r:6da6c71a-0aac-4fb2-b0ad-1b3a207cc189(jetbrains.mps.build.workflow.behavior)">
     <nodeInfo nodeId="3961775458390497509" fileName="BwfTask_Behavior.java" startLine="18" startPosition="113" endLine="19" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />

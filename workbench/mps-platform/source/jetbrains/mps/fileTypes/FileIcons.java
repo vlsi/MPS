@@ -15,16 +15,18 @@
  */
 package jetbrains.mps.fileTypes;
 
+import com.intellij.icons.AllIcons;
+import jetbrains.mps.icons.MPSIcons.Nodes;
+
 import javax.swing.Icon;
-import javax.swing.ImageIcon;
 
 /**
  * evgeny, 10/27/11
  */
 public class FileIcons {
-  public static final Icon MODEL_ICON = new ImageIcon(FileIcons.class.getResource("icons/model.png"));
-  public static final Icon PROJECT_ICON = new ImageIcon(FileIcons.class.getResource("icons/project.png"));
-  public static final Icon SOLUTION_ICON = new ImageIcon(FileIcons.class.getResource("icons/solution.png"));
-  public static final Icon PROJECT_LANGUAGE_ICON = new ImageIcon(FileIcons.class.getResource("icons/projectLanguage.png"));
-  public static final Icon DEVKIT_ICON = new ImageIcon(FileIcons.class.getResource("icons/devkit.png"));
+  public static final Icon MODEL_ICON = Nodes.Model;
+  public static final Icon PROJECT_ICON = AllIcons.Nodes.Project;
+  public static final Icon SOLUTION_ICON = Nodes.Solution;
+  public static final Icon PROJECT_LANGUAGE_ICON = Nodes.Language;
+  public static final Icon DEVKIT_ICON = Nodes.DevKit;
 }

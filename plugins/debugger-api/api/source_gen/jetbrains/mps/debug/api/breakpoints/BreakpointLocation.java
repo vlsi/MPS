@@ -61,7 +61,7 @@ public class BreakpointLocation {
 
   @Nullable
   public String getTargetUnitName() {
-    return TraceInfoUtil.getUnitName(getFileName(), getLineIndexInFile(), myNodePointer.getModel());
+    return TraceInfoUtil.getUnitName(getTargetCodePosition(), myNodePointer.getModel());
   }
 
   public boolean isValid() {
@@ -91,7 +91,7 @@ public class BreakpointLocation {
       public String compute() {
         SNode node = myNodePointer.getNode();
         if (node != null) {
-          SNode root = node.getTopmostAncestor();
+          SNode root = node.getContainingRoot();
           return node + " in " + root + " (" + myNodePointer.getModel().getSModelReference().getSModelFqName() + ")";
         } else {
           return myNodePointer.getNodeId() + " (" + myNodePointer.getModel().getSModelReference().getSModelFqName() + ")";

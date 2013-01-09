@@ -64,7 +64,7 @@ public class VcsActionsUtil {
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
           newModel.value = node.getModel();
-          id.value = node.getSNodeId();
+          id.value = node.getNodeId();
         }
       });
       RootDifferenceDialog.invokeDialog(oldModel, newModel.value, id.value, project, contentTitles, bounds);

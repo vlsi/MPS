@@ -204,7 +204,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         myMethodDeclsToCheckedMethodCalls.put(newTargetPointer, nodeSet);
       }
       nodeSet.add(methodCallPointer);
-      Pair<String, String> key = new Pair<String, String>(newTarget.getConcept().getId(), methodName);
+      Pair<String, String> key = new Pair<String, String>(newTarget.getConcept().getConceptId(), methodName);
       Set<SNodePointer> nodesByNameAndConcept = myMethodConceptsAndNamesToCheckedMethodCalls.get(key);
       if (nodesByNameAndConcept == null) {
         nodesByNameAndConcept = new HashSet<SNodePointer>();
@@ -321,7 +321,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private void methodDeclarationSignatureChanged(SNode method, Map<SNode, SNode> resolveTargets) {
-    Set<SNodePointer> methodCallPointers = myMethodConceptsAndNamesToCheckedMethodCalls.get(new Pair<String, String>(method.getConcept().getId(), method.getName()));
+    Set<SNodePointer> methodCallPointers = myMethodConceptsAndNamesToCheckedMethodCalls.get(new Pair<String, String>(method.getConcept().getConceptId(), method.getName()));
     for (SNode methodCall : Sequence.fromIterable(getMethodCalls(methodCallPointers))) {
       testAndFixMethodCall(methodCall, resolveTargets);
     }
@@ -363,8 +363,8 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   }
 
   private void nodeRemoved(SNode child, SNode formerParent, SModel m, Map<SNode, SNode> resolveTargets) {
-    if (myCheckedMethodCalls.contains(new SNodePointer(m.getSModelReference(), formerParent.getSNodeId()))) {
-      myParametersToCheckedMethodCalls.remove(new SNodePointer(m.getSModelReference(), child.getSNodeId()));
+    if (myCheckedMethodCalls.contains(new SNodePointer(m.getSModelReference(), formerParent.getNodeId()))) {
+      myParametersToCheckedMethodCalls.remove(new SNodePointer(m.getSModelReference(), child.getNodeId()));
       testAndFixMethodCall(SNodeOperations.cast(formerParent, "jetbrains.mps.baseLanguage.structure.IMethodCall"), resolveTargets);
     }
     if (SNodeOperations.isInstanceOf(child, "jetbrains.mps.baseLanguage.structure.ParameterDeclaration")) {

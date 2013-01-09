@@ -41,6 +41,7 @@ import com.intellij.ui.table.JBTable;
 import com.intellij.uiDesigner.core.GridConstraints;
 import com.intellij.uiDesigner.core.GridLayoutManager;
 import com.intellij.util.ui.JBInsets;
+import jetbrains.mps.icons.MPSIcons.General;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.icons.IdeIcons;
 import jetbrains.mps.project.DevKit;
@@ -73,7 +74,6 @@ import javax.swing.table.TableCellRenderer;
 import javax.swing.table.TableColumn;
 import java.awt.Component;
 import java.awt.Dimension;
-import java.awt.FontMetrics;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -232,7 +232,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     protected JTextField myTextFieldName;
 
     public CommonTab() {
-      super(PropertiesBundle.message("mps.properties.configurable.common.commontab.title"), IdeIcons.ADD_MODEL_ROOT_ICON, PropertiesBundle.message("mps.properties.configurable.common.commontab.tip"));
+      super(PropertiesBundle.message("mps.properties.configurable.common.commontab.title"), null, PropertiesBundle.message("mps.properties.configurable.common.commontab.tip"));
       init();
     }
 
@@ -275,7 +275,7 @@ public abstract class MPSPropertiesConfigurable implements Configurable, Disposa
     protected DependTableModel myDependTableModel;
 
     public DependenciesTab() {
-      super(PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.title"), IdeIcons.DEPENDENCIES_ICON, PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.tip"));
+      super(PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.title"), General.Dependencies, PropertiesBundle.message("mps.properties.configurable.common.dependenciestab.tip"));
       init();
     }
 

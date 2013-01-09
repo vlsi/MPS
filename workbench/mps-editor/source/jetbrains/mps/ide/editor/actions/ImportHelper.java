@@ -22,7 +22,6 @@ import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.WindowManager;
 import jetbrains.mps.progress.EmptyProgressMonitor;
-import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.reloading.ClassLoaderManager;
@@ -31,11 +30,10 @@ import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.workbench.action.BaseAction;
-import jetbrains.mps.workbench.actions.goTo.index.MPSChooseSNodeDescriptor;
-import jetbrains.mps.workbench.actions.goTo.index.RootNodeElement;
-import jetbrains.mps.workbench.actions.goTo.index.RootNodeNameIndex;
-import jetbrains.mps.workbench.actions.goTo.index.descriptor.BaseSNodeDescriptor;
-import jetbrains.mps.workbench.actions.goTo.matcher.MpsPopupFactory;
+import jetbrains.mps.workbench.goTo.navigation.RootChooseModel;
+import jetbrains.mps.workbench.goTo.navigation.RootNodeElement;
+import jetbrains.mps.workbench.goTo.index.RootNodeNameIndex;
+import jetbrains.mps.workbench.goTo.ui.MpsPopupFactory;
 import jetbrains.mps.workbench.choose.base.BaseMPSChooseModel;
 import jetbrains.mps.workbench.choose.models.BaseModelItem;
 import jetbrains.mps.workbench.choose.models.BaseModelModel;
@@ -43,10 +41,12 @@ import jetbrains.mps.workbench.choose.modules.BaseLanguageModel;
 import jetbrains.mps.workbench.choose.modules.BaseModuleItem;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.module.SModuleReference;
+import org.jetbrains.mps.openapi.persistence.indexing.NodeDescriptor;
 
 import javax.swing.*;
 import java.awt.*;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -158,7 +158,8 @@ public class ImportHelper {
           langs.remove(ModuleRepositoryFacade.getInstance().getModule(BootstrapLanguages.CORE, Language.class));
 
           for (Language l : langs) {
-            if (myModel.getSModel().importedLanguages().contains(l.getModuleReference())) continue;
+            Collection<ModuleReference> impLangs = myModel.getSModel().getModelDepsManager().getAllImportedLanguages();
+            if (impLangs.contains(l.getModuleReference())) continue;
             importCandidates.add(l.getModuleReference());
           }
         }
@@ -202,19 +203,12 @@ public class ImportHelper {
 
   public static void addModelImportByRoot(final Project project, final IModule contextModule, final SModelDescriptor model,
                       String initialText, @Nullable BaseAction parentAction, final ModelImportByRootCallback callback) {
-    BaseMPSChooseModel goToNodeModel = new MPSChooseSNodeDescriptor(project, new RootNodeNameIndex()) {
-      public NavigationItem doGetNavigationItem(final BaseSNodeDescriptor object) {
+    BaseMPSChooseModel goToNodeModel = new RootChooseModel(project, new RootNodeNameIndex()) {
+      public NavigationItem doGetNavigationItem(final NodeDescriptor object) {
         return new RootNodeElement(object) {
           public void navigate(boolean requestFocus) {
             ModelAccess.assertLegalRead();
-            SModelDescriptor descriptor = SModelRepository.getInstance().getModelDescriptor(object.getModelReference());
-            LOG.assertLog(descriptor != null, "Caches seems to be corrupted or the model was removed: model " + object.getModelReference().getLongName() + " does not exist. Please check model existence manually and specify it in bug report");
-            SModel modelToImport = descriptor.getSModel();
-            SNodeId id = object.getId();
-            String idString = id == null ? "" : " (id:" + id.toString() + ")";
-            String nameString = object.getNodeName() == null ? "<no name>" : object.getNodeName();
-            LOG.assertLog(object.getNode(modelToImport) != null, "Caches seems to be corrupted or the node was removed: model " + modelToImport.getLongName() + " does not seem to contain node " + nameString + idString + ". Please check node existence manually and specify it in bug report");
-            new AddModelItem(project, model, modelToImport.getSModelReference(), contextModule).navigate(requestFocus);
+            new AddModelItem(project, model, ((SModelReference) object.getNodeReference().getModelReference()), contextModule).navigate(requestFocus);
           }
         };
       }

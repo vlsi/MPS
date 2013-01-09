@@ -17,7 +17,7 @@ public enum GWTTransientValues {
 
   public void put(TemplateQueryContext genContext, SNode node, SNode value) {
     if (node != null) {
-      genContext.putTransientObject(this.name + node.getSNodeId().toString(), value);
+      genContext.putTransientObject(this.name + node.getNodeId().toString(), value);
     }
   }
 
@@ -25,7 +25,7 @@ public enum GWTTransientValues {
     if (node == null) {
       return null;
     }
-    return (SNode) genContext.getTransientObject(this.name + node.getSNodeId().toString());
+    return (SNode) genContext.getTransientObject(this.name + node.getNodeId().toString());
   }
 
   private String prefix() {

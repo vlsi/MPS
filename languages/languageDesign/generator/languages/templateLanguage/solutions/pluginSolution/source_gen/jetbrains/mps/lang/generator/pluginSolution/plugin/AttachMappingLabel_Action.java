@@ -9,8 +9,9 @@ import java.util.Map;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.lang.core.behavior.BaseConcept_Behavior;
-import jetbrains.mps.smodel.BootstrapLanguages;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.BootstrapLanguages;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
@@ -33,6 +34,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.logging.Logger;
+import org.jetbrains.mps.openapi.module.SModule;
+import org.jetbrains.mps.openapi.model.SModel;
 
 public class AttachMappingLabel_Action extends BaseAction {
   private static final Icon ICON = null;
@@ -54,7 +57,7 @@ public class AttachMappingLabel_Action extends BaseAction {
       return false;
     }
     //  not an element form generator language 
-    if (node.getNodeLanguage() == BootstrapLanguages.generatorLanguage()) {
+    if ((Language) check_gwd6n9_a0a3a0(SNodeOperations.getConceptDeclaration(((SNode) node)).getContainingModel()) == BootstrapLanguages.generatorLanguage()) {
       return false;
     }
     //  not inside macro 
@@ -187,4 +190,11 @@ __switch__:
   }
 
   private static Logger LOG = Logger.getLogger(AttachMappingLabel_Action.class);
+
+  private static SModule check_gwd6n9_a0a3a0(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
 }

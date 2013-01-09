@@ -26,11 +26,10 @@ import jetbrains.mps.idea.core.projectView.MPSDataKeys;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelFileTracker;
-import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.vfs.IFile;
 
-import javax.swing.*;
+import javax.swing.SwingUtilities;
 import java.util.Set;
 
 public class OpenModelPropertiesAction extends AnAction {

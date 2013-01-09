@@ -284,7 +284,7 @@
     <nodeInfo nodeId="4183391441819864878" fileName="ClassifierSuccessorsIndexer.java" startLine="64" startPosition="84" endLine="65" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4183391441819864515" fileName="ClassifierSuccessorsIndexer.java" startLine="72" startPosition="50" endLine="73" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4183391441819864542" fileName="ClassifierSuccessorsIndexer.java" startLine="82" startPosition="85" endLine="83" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864564" fileName="ClassifierSuccessorsIndexer.java" startLine="85" startPosition="27" endLine="86" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4183391441819864564" fileName="ClassifierSuccessorsIndexer.java" startLine="85" startPosition="27" endLine="86" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4183391441819864579" fileName="ClassifierSuccessorsIndexer.java" startLine="88" startPosition="53" endLine="89" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4183391441819864587" fileName="ClassifierSuccessorsIndexer.java" startLine="90" startPosition="85" endLine="91" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4183391441819864604" fileName="ClassifierSuccessorsIndexer.java" startLine="93" startPosition="141" endLine="94" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -298,11 +298,11 @@
     <nodeInfo nodeId="4183391441819864691" fileName="ClassifierSuccessorsIndexer.java" startLine="118" startPosition="35" endLine="119" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4183391441819864697" fileName="ClassifierSuccessorsIndexer.java" startLine="119" startPosition="79" endLine="120" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4183391441819864703" fileName="ClassifierSuccessorsIndexer.java" startLine="121" startPosition="11" endLine="122" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4183391441819864715" fileName="ClassifierSuccessorsIndexer.java" startLine="125" startPosition="62" endLine="126" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864722" fileName="ClassifierSuccessorsIndexer.java" startLine="126" startPosition="59" endLine="127" endPosition="430" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864753" fileName="ClassifierSuccessorsIndexer.java" startLine="130" startPosition="71" endLine="131" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4183391441819864767" fileName="ClassifierSuccessorsIndexer.java" startLine="134" startPosition="66" endLine="135" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4183391441819864774" fileName="ClassifierSuccessorsIndexer.java" startLine="135" startPosition="59" endLine="136" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4183391441819864715" fileName="ClassifierSuccessorsIndexer.java" startLine="125" startPosition="62" endLine="126" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4183391441819864722" fileName="ClassifierSuccessorsIndexer.java" startLine="126" startPosition="66" endLine="127" endPosition="430" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4183391441819864753" fileName="ClassifierSuccessorsIndexer.java" startLine="130" startPosition="71" endLine="131" endPosition="112" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4183391441819864767" fileName="ClassifierSuccessorsIndexer.java" startLine="134" startPosition="66" endLine="135" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4183391441819864774" fileName="ClassifierSuccessorsIndexer.java" startLine="135" startPosition="66" endLine="136" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4183391441819864785" fileName="ClassifierSuccessorsIndexer.java" startLine="138" startPosition="9" endLine="139" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4183391441819864824" fileName="ClassifierSuccessorsIndexer.java" startLine="35" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ClassifierSuccessorsIndexer#()V" />
     <nodeInfo nodeId="4183391441819864505" fileName="ClassifierSuccessorsIndexer.java" startLine="69" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="InputFilter#()V" />
@@ -327,7 +327,7 @@
     <nodeInfo nodeId="4183391441819864762" fileName="ClassifierSuccessorsIndexer.java" startLine="134" startPosition="0" endLine="138" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isInstanceOfInterfaceConcept#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="4183391441819864660" fileName="ClassifierSuccessorsIndexer.java" startLine="112" startPosition="0" endLine="124" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="safeMap#(Ljetbrains/mps/smodel/SReference;Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="4183391441819864577" fileName="ClassifierSuccessorsIndexer.java" startLine="87" startPosition="55" endLine="104" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="4183391441819864569" fileName="ClassifierSuccessorsIndexer.java" startLine="86" startPosition="77" endLine="105" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="4183391441819864569" fileName="ClassifierSuccessorsIndexer.java" startLine="86" startPosition="70" endLine="105" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
     <nodeInfo nodeId="4183391441819864560" fileName="ClassifierSuccessorsIndexer.java" startLine="85" startPosition="0" endLine="107" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
     <nodeInfo nodeId="4183391441819864553" fileName="ClassifierSuccessorsIndexer.java" startLine="83" startPosition="132" endLine="138" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4183391441819864533" fileName="ClassifierSuccessorsIndexer.java" startLine="81" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="map#(Lcom/intellij/util/indexing/FileContent;)Ljava/util/Map;" />
@@ -348,7 +348,7 @@
     <scopeInfo nodeId="4183391441819864636" fileName="ClassifierSuccessorsIndexer.java" startLine="101" startPosition="139" endLine="102" endPosition="58" />
     <scopeInfo nodeId="4183391441819864651" fileName="ClassifierSuccessorsIndexer.java" startLine="108" startPosition="64" endLine="109" endPosition="67" />
     <scopeInfo nodeId="4183391441819864677" fileName="ClassifierSuccessorsIndexer.java" startLine="114" startPosition="28" endLine="115" endPosition="19" />
-    <scopeInfo nodeId="4183391441819864752" fileName="ClassifierSuccessorsIndexer.java" startLine="130" startPosition="71" endLine="131" endPosition="105" />
+    <scopeInfo nodeId="4183391441819864752" fileName="ClassifierSuccessorsIndexer.java" startLine="130" startPosition="71" endLine="131" endPosition="112" />
     <scopeInfo nodeId="4183391441819864824" fileName="ClassifierSuccessorsIndexer.java" startLine="35" startPosition="0" endLine="37" endPosition="0" />
     <scopeInfo nodeId="4183391441819864505" fileName="ClassifierSuccessorsIndexer.java" startLine="69" startPosition="0" endLine="71" endPosition="0" />
     <scopeInfo nodeId="4183391441819864529" fileName="ClassifierSuccessorsIndexer.java" startLine="78" startPosition="0" endLine="80" endPosition="0" />
@@ -403,7 +403,7 @@
       <varInfo nodeId="4183391441819864663" varName="reference" />
     </scopeInfo>
     <scopeInfo nodeId="4183391441819864576" fileName="ClassifierSuccessorsIndexer.java" startLine="87" startPosition="55" endLine="104" endPosition="13" />
-    <scopeInfo nodeId="4183391441819864569" fileName="ClassifierSuccessorsIndexer.java" startLine="86" startPosition="77" endLine="105" endPosition="11">
+    <scopeInfo nodeId="4183391441819864569" fileName="ClassifierSuccessorsIndexer.java" startLine="86" startPosition="70" endLine="105" endPosition="11">
       <varInfo nodeId="4183391441819864574" varName="nextNode" />
     </scopeInfo>
     <scopeInfo nodeId="4183391441819864563" fileName="ClassifierSuccessorsIndexer.java" startLine="85" startPosition="27" endLine="105" endPosition="11">
@@ -424,7 +424,7 @@
   <root nodeId="4183391441819864880" modelId="r:2ba45a7a-594f-4a4d-be5c-07edf2b58826(jetbrains.mps.ide.java.platform.index)">
     <nodeInfo nodeId="4183391441819864882" fileName="GlobalSNodeId.java" startLine="14" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModelReference" />
     <nodeInfo nodeId="4183391441819864885" fileName="GlobalSNodeId.java" startLine="15" startPosition="0" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNodeId" />
-    <nodeInfo nodeId="4183391441819864942" fileName="GlobalSNodeId.java" startLine="17" startPosition="36" endLine="18" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
+    <nodeInfo nodeId="4183391441819864942" fileName="GlobalSNodeId.java" startLine="17" startPosition="36" endLine="18" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ThisConstructorInvocation" />
     <nodeInfo nodeId="4183391441819864965" fileName="GlobalSNodeId.java" startLine="21" startPosition="62" endLine="22" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="4183391441819864969" fileName="GlobalSNodeId.java" startLine="22" startPosition="34" endLine="23" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.AssertStatement" />
     <nodeInfo nodeId="4183391441819864973" fileName="GlobalSNodeId.java" startLine="23" startPosition="26" endLine="24" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -452,7 +452,7 @@
     <nodeInfo nodeId="4183391441819864981" fileName="GlobalSNodeId.java" startLine="28" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNode#()Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="4183391441819865018" fileName="GlobalSNodeId.java" startLine="42" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="equals#(Ljava/lang/Object;)Z" />
     <nodeInfo nodeId="4183391441819864888" fileName="GlobalSNodeId.java" startLine="59" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="createSNodeId#(Ljetbrains/mps/smodel/SReference;)Ljetbrains/mps/ide/java/platform/index/GlobalSNodeId;" />
-    <scopeInfo nodeId="4183391441819864941" fileName="GlobalSNodeId.java" startLine="17" startPosition="36" endLine="18" endPosition="103" />
+    <scopeInfo nodeId="4183391441819864941" fileName="GlobalSNodeId.java" startLine="17" startPosition="36" endLine="18" endPosition="102" />
     <scopeInfo nodeId="4183391441819865012" fileName="GlobalSNodeId.java" startLine="38" startPosition="25" endLine="39" endPosition="34" />
     <scopeInfo nodeId="4183391441819865055" fileName="GlobalSNodeId.java" startLine="51" startPosition="43" endLine="52" endPosition="28" />
     <scopeInfo nodeId="4183391441819865061" fileName="GlobalSNodeId.java" startLine="55" startPosition="35" endLine="56" endPosition="20" />

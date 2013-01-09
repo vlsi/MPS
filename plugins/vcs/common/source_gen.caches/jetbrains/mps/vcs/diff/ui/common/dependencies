@@ -408,11 +408,11 @@
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.common.InvokeTextDiffAction" file="InvokeTextDiffAction.java">
+    <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.diff.DiffRequest" />
     <classNode dependClassName="com.intellij.openapi.diff.DiffTool" />
     <classNode dependClassName="com.intellij.openapi.ui.DialogWrapper" />
-    <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.Map" />
@@ -421,10 +421,10 @@
     <classNode extendsClassName="jetbrains.mps.workbench.action.BaseAction" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.diff.ui.common.NextPreviousTraverser" file="NextPreviousTraverser.java">
+    <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.ActionToolbar" />
     <classNode dependClassName="com.intellij.openapi.actionSystem.AnActionEvent" />
     <classNode dependClassName="com.intellij.openapi.application.ApplicationManager" />
-    <classNode dependClassName="com.intellij.openapi.util.IconLoader" />
     <classNode dependClassName="java.lang.AssertionError" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />

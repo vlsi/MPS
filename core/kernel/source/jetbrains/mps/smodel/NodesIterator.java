@@ -56,7 +56,7 @@ class NodesIterator implements Iterator<SNode> {
   private Iterator<SNode> getIterForNextRoot(Iterator<SNode> roots) {
     if (!roots.hasNext()) return new EmptyIterator<SNode>();
     SNode next = roots.next();
-    Iterable<SNode> thisAndDesc = IterableUtil.merge(Collections.singleton(next), next.getDescendants());
+    Iterable<SNode> thisAndDesc = IterableUtil.merge(Collections.singleton(next), jetbrains.mps.util.SNodeOperations.getDescendants(next, null));
     return thisAndDesc.iterator();
   }
 }

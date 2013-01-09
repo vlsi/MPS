@@ -55,7 +55,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
       {
         SNode nodeToMatch_ObjectArraySupertypes_mvbroc_a0a;
         nodeToMatch_ObjectArraySupertypes_mvbroc_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ArrayType".equals(nodeToMatch_ObjectArraySupertypes_mvbroc_a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ArrayType".equals(nodeToMatch_ObjectArraySupertypes_mvbroc_a0a.getConcept().getConceptId()))) {
           return false;
         }
         {
@@ -68,7 +68,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
             {
               SNode nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0;
               nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0 = childVar_ObjectArraySupertypes_mvbroc_a0a0;
-              if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0.getConcept().getId()))) {
+              if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0.getConcept().getConceptId()))) {
                 return false;
               }
               {

@@ -24,13 +24,10 @@
     </copy>
     <mkdir dir="${build.layout}/languages" />
     <copy todir="${build.layout}/languages">
-      <fileset dir="${artifacts.buildCore}/mps-core/languages" />
-    </copy>
-    <copy todir="${build.layout}/languages">
-      <fileset dir="${artifacts.buildCoreEx}/languages" />
-    </copy>
-    <copy todir="${build.layout}/languages">
       <fileset dir="${artifacts.buildWorkbench}/languages" />
+    </copy>
+    <copy todir="${build.layout}/languages">
+      <fileset dir="${artifacts.buildCore}/languages" />
     </copy>
     <mkdir dir="${build.layout}/lib" />
     <copy todir="${build.layout}/lib">
@@ -40,7 +37,7 @@
       </fileset>
     </copy>
     <copy todir="${build.layout}/lib">
-      <fileset dir="${artifacts.buildCore}/mps-core/lib" />
+      <fileset dir="${artifacts.buildCore}/lib" />
     </copy>
     <copy todir="${build.layout}/lib">
       <fileset dir="${artifacts.buildWorkbench}/lib" />
@@ -50,8 +47,14 @@
       <fileset dir="${basedir}/license" />
     </copy>
     <mkdir dir="${build.layout}/plugins" />
-    <copy todir="${build.layout}/plugins">
-      <fileset dir="${artifacts.buildCoreEx}/plugins" />
+    <mkdir dir="${build.layout}/plugins/mps-core" />
+    <mkdir dir="${build.layout}/plugins/mps-core/META-INF" />
+    <copy todir="${build.layout}/plugins/mps-core/META-INF">
+      <fileset file="${mps_home}/plugins/mps-core/META-INF/plugin.xml" />
+    </copy>
+    <mkdir dir="${build.layout}/plugins/mps-core-ex" />
+    <copy todir="${build.layout}/plugins/mps-core-ex">
+      <fileset dir="${artifacts.buildCoreEx}/mps-core-ex" />
     </copy>
     <mkdir dir="${build.layout}/plugins/cvsIntegration" />
     <copy todir="${build.layout}/plugins/cvsIntegration">

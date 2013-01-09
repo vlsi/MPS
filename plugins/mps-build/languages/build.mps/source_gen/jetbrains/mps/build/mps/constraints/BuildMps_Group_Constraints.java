@@ -39,7 +39,7 @@ public class BuildMps_Group_Constraints extends BaseConstraintsDescriptor {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMPSPlugin");
       }
-    }) || parentNode.getConcept().getId().startsWith("jetbrains.mps.lang.generator");
+    }) || parentNode.getConcept().getConceptId().startsWith("jetbrains.mps.lang.generator");
   }
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "7670275304420320782");

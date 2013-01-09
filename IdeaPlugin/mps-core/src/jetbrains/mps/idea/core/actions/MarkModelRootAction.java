@@ -50,13 +50,15 @@ public class MarkModelRootAction extends AnAction {
     assert mpsFacet != null;
 
     MPSConfigurationBean configurationBean = mpsFacet.getConfiguration().getBean();
-    List<ModelRoot> modelRootPaths = new ArrayList<ModelRoot>(configurationBean.getModelRoots());
+    List<ModelRoot> modelRoots = new ArrayList<ModelRoot>(configurationBean.getModelRoots());
     for (VirtualFile vFile : vFiles) {
       DefaultModelRoot root = new DefaultModelRoot();
-      root.setPath(VirtualFileManager.extractPath(vFile.getUrl()));
-      modelRootPaths.add(root);
+      String path = VirtualFileManager.extractPath(vFile.getUrl());
+      root.setContentRoot(path);
+      root.addFile(DefaultModelRoot.SOURCE_ROOTS, path);
+      modelRoots.add(root);
     }
-    configurationBean.setModelRoots(modelRootPaths);
+    configurationBean.setModelRoots(modelRoots);
     mpsFacet.setConfiguration(configurationBean);
   }
 
@@ -85,7 +87,9 @@ public class MarkModelRootAction extends AnAction {
       for (ModelRoot mr : mpsFacet.getConfiguration().getBean().getModelRoots()) {
         if (!(mr instanceof DefaultModelRoot)) continue;
         DefaultModelRoot root = (DefaultModelRoot) mr;
-        if (root.getPath().startsWith(path) || path.startsWith(root.getPath())) return false;
+        for (String sourceRoot : root.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
+          if (sourceRoot.startsWith(path) || path.startsWith(sourceRoot)) return false;
+        }
       }
     }
     return true;

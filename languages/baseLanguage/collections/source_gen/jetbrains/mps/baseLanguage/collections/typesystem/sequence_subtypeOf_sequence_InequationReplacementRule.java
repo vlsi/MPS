@@ -41,14 +41,14 @@ public class sequence_subtypeOf_sequence_InequationReplacementRule extends Abstr
 
   public IsApplicableStatus isApplicableSubtypeAndPattern(SNode node) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getId(), this.getApplicableSubtypeConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getConceptId(), this.getApplicableSubtypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
 
   public IsApplicableStatus isApplicableSupertypeAndPattern(SNode node) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getId(), this.getApplicableSupertypeConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getConceptId(), this.getApplicableSupertypeConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }

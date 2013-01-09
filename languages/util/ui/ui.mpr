@@ -26,17 +26,17 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${project}/languages/gwt/gwt.mpl" folder="" />
-      <modulePath path="${project}/languages/internal/internal.mpl" folder="" />
-      <modulePath path="${project}/languages/meta/meta.mpl" folder="" />
-      <modulePath path="${project}/languages/swing/runtime/runtime.msd" folder="" />
-      <modulePath path="${project}/languages/swing/swing.mpl" />
-      <modulePath path="${project}/languages/swt/runtime/runtime.msd" folder="" />
-      <modulePath path="${project}/languages/swt/swt.mpl" folder="" />
-      <modulePath path="${project}/languages/testdata/testdata.mpl" folder="" />
-      <modulePath path="${project}/languages/ui/ui.mpl" />
+      <modulePath path="${project}/languages/gwt/jetbrains.mps.ui.gwt.mpl" folder="" />
+      <modulePath path="${project}/languages/internal/jetbrains.mps.ui.internal.mpl" folder="" />
+      <modulePath path="${project}/languages/meta/jetbrains.mps.ui.modeling.mpl" folder="" />
+      <modulePath path="${project}/languages/swing/runtime/jetbrains.mps.ui.swing.runtime.msd" folder="" />
+      <modulePath path="${project}/languages/swing/jetbrains.mps.ui.swing.mpl" />
+      <modulePath path="${project}/languages/swt/runtime/jetbrains.mps.ui.swt.runtime.msd" folder="" />
+      <modulePath path="${project}/languages/swt/jetbrains.mps.ui.swt.mpl" folder="" />
+      <modulePath path="${project}/languages/testdata/jetbrains.mps.ui.internal.testdata.mpl" folder="" />
+      <modulePath path="${project}/languages/ui/jetbrains.mps.ui.mpl" />
       <modulePath path="${project}/solutions/jetbrains.mps.ui.unittest/jetbrains.mps.ui.unittest.msd" folder="" />
-      <modulePath path="${project}/solutions/ui.sandbox/ui.sandbox.msd" folder="" />
+      <modulePath path="${project}/solutions/ui.sandbox/jetbrains.mps.ui.sandbox.msd" folder="" />
     </projectModules>
     <genConfs>
       <genConfModule name="unittest" moduleRef="jetbrains.mps.ui.unittest" />

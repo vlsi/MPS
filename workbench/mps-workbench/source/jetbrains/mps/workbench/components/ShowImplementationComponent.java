@@ -16,6 +16,7 @@
 package jetbrains.mps.workbench.components;
 
 
+import com.intellij.icons.AllIcons.Actions;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.ui.popup.JBPopup;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
@@ -103,11 +104,11 @@ public class ShowImplementationComponent extends JPanel {
     forward.registerCustomShortcutSet(new CustomShortcutSet(KeyStroke.getKeyStroke(KeyEvent.VK_RIGHT, 0)), this);
     group.add(forward);
 
-    ShowSourceAction showSource = new ShowSourceAction("Show Source", Icons.SHOW_SOURCE_ICON, false);
+    ShowSourceAction showSource = new ShowSourceAction("Show Source", Actions.ShowSource, false);
     showSource.registerCustomShortcutSet(new CompositeShortcutSet(CommonShortcuts.getViewSource(), CommonShortcuts.CTRL_ENTER), this);
     group.add(showSource);
 
-    showSource = new ShowSourceAction("Edit Source", Icons.EDIT_SOURCE_ICON, true);
+    showSource = new ShowSourceAction("Edit Source", Actions.EditSource, true);
     showSource.registerCustomShortcutSet(new CustomShortcutSet(KeyStroke.getKeyStroke(KeyEvent.VK_F4, 0)), this);
     group.add(showSource);
 
@@ -164,7 +165,7 @@ public class ShowImplementationComponent extends JPanel {
 
   private class BackAction extends AnAction {
     public BackAction() {
-      super("Back", null, Icons.BACK_ICON);
+      super("Back", null, Actions.Back);
     }
 
     @Override
@@ -183,7 +184,7 @@ public class ShowImplementationComponent extends JPanel {
 
   private class ForwardAction extends AnAction {
     public ForwardAction() {
-      super("Forward", null, Icons.FORWARD_ICON);
+      super("Forward", null, Actions.Forward);
     }
 
     @Override

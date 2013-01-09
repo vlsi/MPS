@@ -18,16 +18,25 @@ package jetbrains.mps.idea.core.project.stubs;
 
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.roots.impl.libraries.ProjectLibraryTable;
+import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.idea.core.library.ModuleLibraryType;
 
 public class MPSProjectLibImporter extends BaseLibImporter implements ProjectComponent {
-  private ProjectLibraryTable myLibTable;
+  private final ProjectLibraryTable myLibTable;
 
-  //todo adding/removing libs
   @SuppressWarnings("UnusedParameters") //creation time dependency
   public MPSProjectLibImporter(MPSCoreComponents core, ProjectLibraryTable libTable) {
     myLibTable = libTable;
+  }
+
+  @Override
+  protected void addModuleForLibrary(Library l) {
+    if (ModuleLibraryType.isModuleLibrary(l)) {
+      return;
+    }
+    super.addModuleForLibrary(l);
   }
 
   @Override

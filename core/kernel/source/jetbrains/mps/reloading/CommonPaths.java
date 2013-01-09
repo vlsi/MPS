@@ -69,6 +69,8 @@ public class CommonPaths {
         addCoreJars(result);
       } else if (type == ClassType.EDITOR) {
         addEditorJars(result);
+      } else if (type == ClassType.IDEA_PLATFORM) {
+        addRepackedIdeaJars(result);
       } else if (type == ClassType.PLATFORM) {
         addIdeaJars(result);
       } else if (type == ClassType.UI) {
@@ -196,10 +198,14 @@ public class CommonPaths {
     addIfExists(result, "/lib/mps-editor-api.jar");
   }
 
-  private static void addIdeaJars(CompositeClassPathItem result) {
-    addIfExists(result, "/lib/mps-platform.jar");
+  private static void addRepackedIdeaJars(CompositeClassPathItem result) {
     addIfExists(result, "/lib/platform-api.jar");
     addIfExists(result, "/lib/platform.jar");
+  }
+
+  private static void addIdeaJars(CompositeClassPathItem result) {
+    addRepackedIdeaJars(result);
+    addIfExists(result, "/lib/mps-platform.jar");
     addIfExists(result, "/lib/sanselan-0.98-snapshot.jar");
     addIfExists(result, "/lib/util.jar");
     addIfExists(result, "/lib/extensions.jar");

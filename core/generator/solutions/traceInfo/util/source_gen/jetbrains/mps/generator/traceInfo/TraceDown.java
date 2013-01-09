@@ -59,7 +59,7 @@ public class TraceDown {
       if (positionMatcher.invoke(position)) {
         UnitPositionInfo unit = ListSequence.fromList(unitsForNode).findFirst(new IWhereFilter<UnitPositionInfo>() {
           public boolean accept(UnitPositionInfo it) {
-            return it.isPositionInside(position.getFileName(), position.getStartLine());
+            return it.contains(position.getFileName(), position.getStartLine());
           }
         });
         if (unit != null) {
@@ -77,7 +77,7 @@ public class TraceDown {
     }
     return SetSequence.fromSet(rootInfo.getPositions()).findFirst(new IWhereFilter<TraceablePositionInfo>() {
       public boolean accept(TraceablePositionInfo it) {
-        return eq_mk0t6b_a0a0a0a0a0a2a4(it.getNodeId(), node.getSNodeId().toString());
+        return eq_mk0t6b_a0a0a0a0a0a2a4(it.getNodeId(), node.getNodeId().toString());
       }
     }) != null;
   }

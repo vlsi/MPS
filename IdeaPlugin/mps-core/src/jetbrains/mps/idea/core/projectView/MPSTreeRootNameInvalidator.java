@@ -38,7 +38,7 @@ public class MPSTreeRootNameInvalidator extends AbstractProjectComponent {
       for (SModelEvent e : events) {
         if (!(e instanceof SModelPropertyEvent)) continue;
         SModelPropertyEvent event = (SModelPropertyEvent) e;
-        if (!event.getNode().isRoot()) continue;
+        if (event.getNode().getParent() != null) continue;
         if (!event.getPropertyName().equals(SNodeUtil.property_INamedConcept_name)) continue;
         VirtualFile file = ModelUtil.getFileByModel(e.getModel());
         if (file == null) continue;

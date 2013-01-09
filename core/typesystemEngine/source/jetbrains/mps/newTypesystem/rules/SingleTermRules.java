@@ -41,7 +41,7 @@ public abstract class SingleTermRules<K> {
   public Set<K> lookupRules(SNode term) {
     final LanguageScope langScope = LanguageScope.getCurrent();
 
-    final String conceptFQName = term.getConceptFqName();
+    final String conceptFQName = term.getConcept().getId();
     final Object compoundKey = new Pair<Object, String>(langScope, conceptFQName);
 
     Set<K> cachedRules = myCachedRules.get(compoundKey);

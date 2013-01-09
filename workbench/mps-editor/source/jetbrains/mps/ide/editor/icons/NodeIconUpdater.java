@@ -66,7 +66,7 @@ public class NodeIconUpdater extends AbstractProjectComponent {
       if (root == null) return;
       if (root.getModel() == null) return;
       synchronized (myUpdatedRoots) {
-        myUpdatedRoots.add(new SNodePointer(event.getModel().getSModelReference(), root.getSNodeId()));
+        myUpdatedRoots.add(new SNodePointer(event.getModel().getSModelReference(), root.getNodeId()));
       }
     }
   }

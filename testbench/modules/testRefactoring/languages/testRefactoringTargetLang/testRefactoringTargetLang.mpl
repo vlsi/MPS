@@ -1,8 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <language namespace="testRefactoringTargetLang" uuid="7bb4f305-7fb7-495b-be9c-5777cd6ab9d6">
   <models>
-    <modelRoot path="${module}/languageAccessories" />
-    <modelRoot path="${module}/languageModels" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="languageAccessories" />
+      <sourceRoot location="languageModels" />
+    </modelRoot>
   </models>
   <accessoryModels />
   <generators />

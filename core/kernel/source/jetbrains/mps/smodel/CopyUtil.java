@@ -119,7 +119,7 @@ public final class CopyUtil {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     SNode result = clone(node, mapping, true);
     for (SNode sourceNode : mapping.keySet()) {
-      mapping.get(sourceNode).setId(sourceNode.getSNodeId());
+      mapping.get(sourceNode).setId(sourceNode.getNodeId());
     }
     addReferences(node, mapping, cloneRefs);
     return result;
@@ -162,7 +162,7 @@ public final class CopyUtil {
 
   private static void addReferences(SNode root, Map<SNode, SNode> mapping, boolean forceCloneRefs) {
     if (root == null) return;
-    Iterable<SNode> thisAndDesc = IterableUtil.merge(Collections.singleton(root), root.getDescendants());
+    Iterable<SNode> thisAndDesc = IterableUtil.merge(Collections.singleton(root), jetbrains.mps.util.SNodeOperations.getDescendants(root, null));
     for (SNode inputNode : thisAndDesc) {
       SNode outputNode = mapping.get(inputNode);
       if (outputNode == null) continue;

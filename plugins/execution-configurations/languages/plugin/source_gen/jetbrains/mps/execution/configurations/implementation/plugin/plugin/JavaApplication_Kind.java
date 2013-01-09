@@ -8,8 +8,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.ide.icons.IconManager;
+import com.intellij.icons.AllIcons;
 import java.util.List;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -28,13 +27,7 @@ public class JavaApplication_Kind implements ConfigurationType {
         LOG.error("Can't find language jetbrains.mps.execution.configurations, turn on \"Execution Languages\" plugin.");
         return null;
       }
-      String shortPath = "${language_descriptor}/icons/runApp.png";
-      String path = MacrosFactory.forModuleFile(module.getDescriptorFile()).expandPath(shortPath);
-      if ((path == null || path.length() == 0)) {
-        LOG.error("Can't expand path " + shortPath + " with module " + module + ".");
-        return null;
-      }
-      return IconManager.loadIcon(path, true);
+      return AllIcons.RunConfigurations.Application;
     }
   }.invoke();
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());

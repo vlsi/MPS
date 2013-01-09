@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.findusages.view;
 
+import com.intellij.icons.AllIcons.Actions;
 import com.intellij.ide.OccurenceNavigator;
 import com.intellij.openapi.actionSystem.*;
 import com.intellij.openapi.progress.ProgressIndicator;
@@ -340,7 +341,7 @@ public abstract class UsagesView implements IExternalizeable {
     private void createButtons(ButtonConfiguration buttonConfiguration) {
       DefaultActionGroup actionGroup = new DefaultActionGroup();
       if (buttonConfiguration.isShowRerunButton()) {
-        actionGroup.addAction(new AnAction(getRerunSearchTooltip(), "", Icons.RERUN_ICON) {
+        actionGroup.addAction(new AnAction(getRerunSearchTooltip(), "", Actions.RefreshUsages) {
           public void actionPerformed(AnActionEvent e) {
             assert mySearchQuery != null;
             if (mySearchQuery.getScope() == null) return;
@@ -358,7 +359,7 @@ public abstract class UsagesView implements IExternalizeable {
         });
       }
       if (buttonConfiguration.isShowRegenerateButton()) {
-        actionGroup.addAction(new AnAction("Rebuild models", "", Icons.MAKE_ICON) {
+        actionGroup.addAction(new AnAction("Rebuild models", "", Actions.Compile) {
           public void actionPerformed(AnActionEvent e) {
             regenerate();
           }
@@ -373,7 +374,7 @@ public abstract class UsagesView implements IExternalizeable {
       actionGroup.addAll(myTreeComponent.getActionsToolbar());
 
       if (buttonConfiguration.isShowCloseButton()) {
-        AnAction action = new AnAction("Close", "", Icons.CLOSE_ICON) {
+        AnAction action = new AnAction("Close", "", Actions.Cancel) {
           public void actionPerformed(AnActionEvent e) {
             close();
           }

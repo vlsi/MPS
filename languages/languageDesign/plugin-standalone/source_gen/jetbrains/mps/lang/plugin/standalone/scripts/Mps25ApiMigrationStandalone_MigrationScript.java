@@ -35,7 +35,7 @@ public class Mps25ApiMigrationStandalone_MigrationScript extends BaseMigrationSc
 
       public boolean isApplicableInstanceNode(SNode node) {
         SNode operation = SLinkOperations.getTarget(node, "operation", true);
-        return SNodeOperations.getConceptDeclaration(operation) == null && "jetbrains.mps.lang.plugin.structure.GetToolOperation".equals(operation.getConcept().getId());
+        return SNodeOperations.getConceptDeclaration(operation) == null && "jetbrains.mps.lang.plugin.structure.GetToolOperation".equals(operation.getConcept().getConceptId());
       }
 
       public void doUpdateInstanceNode(SNode node) {

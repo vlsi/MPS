@@ -11,7 +11,6 @@
   <import index="mepa" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.application(MPS.Platform/com.intellij.openapi.application@java_stub)" version="-1" />
   <import index="h12" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.ui(MPS.Platform/com.intellij.openapi.ui@java_stub)" version="-1" />
   <import index="8bc5" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.choose.nodes(MPS.Platform/jetbrains.mps.workbench.choose.nodes@java_stub)" version="-1" />
-  <import index="7fxf" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.actions.goTo.matcher(MPS.Platform/jetbrains.mps.workbench.actions.goTo.matcher@java_stub)" version="-1" />
   <import index="ph2v" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.project(MPS.Platform/com.intellij.openapi.project@java_stub)" version="-1" />
   <import index="7st4" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.navigation(MPS.Platform/com.intellij.navigation@java_stub)" version="-1" />
   <import index="cmi1" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.ide.util.gotoByName(MPS.Platform/com.intellij.ide.util.gotoByName@java_stub)" version="-1" />
@@ -54,6 +53,7 @@
   <import index="msyo" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.util(MPS.Core/jetbrains.mps.util@java_stub)" version="-1" />
   <import index="5xh9" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.ide.actions(MPS.Platform/jetbrains.mps.ide.actions@java_stub)" version="-1" />
   <import index="as9o" modelUID="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" version="-1" />
+  <import index="4g50" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.workbench.goTo.ui(MPS.Platform/jetbrains.mps.workbench.goTo.ui@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" implicit="yes" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -86,10 +86,10 @@
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.FieldDeclaration" typeId="tpee.1068390468200" id="397101727194125937">
       <property name="name" nameId="tpck.1169194664001" value="myChooser" />
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="397101727194125938" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="397101727194125940">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="7fxf.~ChooseByNamePanel" resolveInfo="ChooseByNamePanel" />
+      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="6173883820013336572">
+        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="4g50.~ChooseByNamePanel" resolveInfo="ChooseByNamePanel" />
       </node>
+      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="397101727194125938" />
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="397101727194120961">
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="397101727194120973">
@@ -294,8 +294,8 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="397101727194125937" resolveInfo="myChooser" />
             </node>
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="397101727194124502">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="7fxf.~MpsPopupFactory" resolveInfo="MpsPopupFactory" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7fxf.~MpsPopupFactory%dcreatePanelForNode(com%dintellij%dide%dutil%dgotoByName%dChooseByNameModel,boolean)%cjetbrains%dmps%dworkbench%dactions%dgoTo%dmatcher%dChooseByNamePanel" resolveInfo="createPanelForNode" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="4g50.~MpsPopupFactory" resolveInfo="MpsPopupFactory" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4g50.~MpsPopupFactory%dcreatePanelForNode(com%dintellij%dide%dutil%dgotoByName%dChooseByNameModel,boolean)%cjetbrains%dmps%dworkbench%dgoTo%dui%dChooseByNamePanel" resolveInfo="createPanelForNode" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="5389053887021176529">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="5389053887021176525" resolveInfo="goToNodeModel" />
               </node>
@@ -434,7 +434,7 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="397101727194125937" resolveInfo="myChooser" />
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3475620386633472280">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7fxf.~ChooseByNamePanel%dgetPanel()%cjavax%dswing%dJPanel" resolveInfo="getPanel" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4g50.~ChooseByNamePanel%dgetPanel()%cjavax%dswing%dJPanel" resolveInfo="getPanel" />
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3475620386633490467">
@@ -459,7 +459,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="397101727194125937" resolveInfo="myChooser" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="659764060255483257">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7fxf.~ChooseByNamePanel%dgetPanel()%cjavax%dswing%dJPanel" resolveInfo="getPanel" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4g50.~ChooseByNamePanel%dgetPanel()%cjavax%dswing%dJPanel" resolveInfo="getPanel" />
             </node>
           </node>
         </node>
@@ -618,7 +618,7 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="397101727194125937" resolveInfo="myChooser" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2476433916569952404">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="7fxf.~ChooseByNamePanel%dgetPreferredFocusedComponent()%cjavax%dswing%dJComponent" resolveInfo="getPreferredFocusedComponent" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="4g50.~ChooseByNamePanel%dgetPreferredFocusedComponent()%cjavax%dswing%dJComponent" resolveInfo="getPreferredFocusedComponent" />
             </node>
           </node>
         </node>
@@ -8537,8 +8537,8 @@
                               <link role="classifier" roleId="tpee.1170346070688" targetNodeId="k7g3.~Hashtable" resolveInfo="Hashtable" />
                               <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceMethodDeclaration" typeId="tpee.1068580123165" id="121110127371513751">
                                 <property name="isAbstract" nameId="tpee.1178608670077" value="false" />
-                                <property name="name" nameId="tpck.1169194664001" value="get" />
                                 <property name="isSynchronized" nameId="tpee.4276006055363816570" value="true" />
+                                <property name="name" nameId="tpck.1169194664001" value="get" />
                                 <property name="isFinal" nameId="tpee.1181808852946" value="false" />
                                 <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="121110127371513752" />
                                 <node role="returnType" roleId="tpee.1068580123133" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="121110127371513753">

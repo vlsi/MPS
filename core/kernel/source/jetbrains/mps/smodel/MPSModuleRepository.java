@@ -27,6 +27,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.module.RepositoryAccess;
 import org.jetbrains.mps.openapi.module.SModelAccess;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.module.SModuleId;
@@ -219,14 +220,19 @@ public class MPSModuleRepository implements CoreComponent, SRepository {
   }
 
   @Override
-  public void applyChanges(Runnable r) {
-    //todo implement
-  }
+  public RepositoryAccess getRepositoryAccess() {
+    return new RepositoryAccess() {
+      @Override
+      public void applyChanges(Runnable r) {
+        //todo implement
+      }
 
-  @Override
-  public boolean isUpdating() {
-    //todo implement
-    return false;
+      @Override
+      public boolean isUpdating() {
+        //todo implement
+        return false;
+      }
+    };
   }
 
   @Override

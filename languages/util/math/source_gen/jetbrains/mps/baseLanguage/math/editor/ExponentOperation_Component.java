@@ -14,7 +14,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -63,7 +63,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
 
     public List<?> createParameterObjects(SNode node, IScope scope, IOperationContext operationContext, EditorContext editorContext) {
       List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
-      for (SNode a : ListSequence.fromList(SConceptOperations.getAllSubConcepts(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getAllowedSubstituends_3044950653914716992", new Object[]{})).first(), SNodeOperations.getModel(node), scope))) {
+      for (SNode a : ListSequence.fromList(SConceptOperations.getAllSubConcepts(ListSequence.fromList(BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getAllowedSubstituends_3044950653914716992", new Object[]{})).first(), SNodeOperations.getModel(node), scope))) {
         if (!(SPropertyOperations.getBoolean(a, "abstract")) && SConceptOperations.isSubConceptOf(a, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation")) {
           ListSequence.fromList(result).addElement(SNodeOperations.castConcept(a, "jetbrains.mps.baseLanguage.math.structure.ExponentialOperation"));
         }
@@ -88,7 +88,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
     }
 
     public String getMatchingText_internal(SNode parameterObject) {
-      return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(parameterObject)), "virtual_getOperationSymbol_1262430001741497831", new Object[]{});
+      return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(parameterObject)), "virtual_getOperationSymbol_1262430001741497831", new Object[]{});
     }
 
     public String getDescriptionText(Object parameterObject) {
@@ -112,7 +112,7 @@ public class ExponentOperation_Component extends AbstractCellProvider {
   private EditorCell createReadOnlyModelAccessor_spngij_b0(final EditorContext editorContext, final SNode node) {
     EditorCell_Property editorCell = EditorCell_Property.create(editorContext, new ModelAccessor() {
       public String getText() {
-        return BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getOperationSymbol_1262430001741497831", new Object[]{});
+        return BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(node))), "virtual_getOperationSymbol_1262430001741497831", new Object[]{});
       }
 
       public void setText(String s) {

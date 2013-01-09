@@ -152,8 +152,28 @@ public abstract class PositionInfo implements Comparable<PositionInfo> {
     return (eq_1myh1n_a0a0a0a0eb(myStartLine, p.myStartLine)) && (eq_1myh1n_a0a0a0a0eb_0(myEndLine, p.myEndLine)) && (eq_1myh1n_a0a0a0a03(myStartPosition, p.myStartPosition)) && (eq_1myh1n_a0a0a0eb(myEndPosition, p.myEndPosition));
   }
 
-  public boolean isPositionInside(String file, int line) {
+  public boolean contains(String file, int line) {
     return eq_1myh1n_a0a0a0fb(myFileName, file) && myStartLine <= line && line <= myEndLine;
+  }
+
+  public boolean contains(PositionInfo position) {
+    if (!(contains(position.getFileName(), position.getStartLine()))) {
+      return false;
+    }
+    if (!(contains(position.getFileName(), position.getEndLine()))) {
+      return false;
+    }
+    if (myStartLine == position.getStartLine()) {
+      if (myStartPosition > position.getStartPosition()) {
+        return false;
+      }
+    }
+    if (myEndLine == position.getEndLine()) {
+      if (myEndPosition > position.getEndPosition()) {
+        return false;
+      }
+    }
+    return true;
   }
 
   public void fillFrom(PositionInfo position) {

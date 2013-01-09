@@ -14,7 +14,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.runtime.IClassLoadingModule;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.project.ModuleId;
 import java.net.URL;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.io.File;
@@ -168,7 +167,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
 
     private static ClassLoader getTestClassLoaderForModule(IModule module) {
       List<String> paths = ListSequence.fromList(new ArrayList<String>());
-      ListSequence.fromList(paths).addSequence(ListSequence.fromList(getClasspathForModule(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("8b958198-128f-4136-80e5-ca9777caa869")))));
+      // <node> 
       ListSequence.fromList(paths).addSequence(ListSequence.fromList(getClasspathForModule(module)));
 
       URL[] urls = ListSequence.fromList(paths).select(new ISelector<String, URL>() {
@@ -190,7 +189,7 @@ public class ModuleSymbolicSuite extends ParentRunner<Runner> {
       module.getClassPathItem().accept(visitor);
       ModelAccess.instance().runReadAction(new Runnable() {
         public void run() {
-          for (IModule m : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.EXECUTE))) {
+          for (IModule m : CollectionSequence.fromCollection(new GlobalModuleDependenciesManager(module).getModules(GlobalModuleDependenciesManager.Deptype.COMPILE))) {
             m.getClassPathItem().accept(visitor);
           }
         }

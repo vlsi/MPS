@@ -31,7 +31,7 @@ public abstract class SimpleRoleScope extends Scope {
   public SNode resolve(SNode contextNode, String refText) {
     SNode result = null;
     for (SNode n : SNodeOperations.getChildren(myNode, myLink)) {
-      if (this.conceptFqName != null && !(SModelUtil.isAssignableConcept(n.getConcept().getId(), conceptFqName))) {
+      if (this.conceptFqName != null && !(SModelUtil.isAssignableConcept(n.getConcept().getConceptId(), conceptFqName))) {
         continue;
       }
       String name = getName(n);
@@ -49,7 +49,7 @@ public abstract class SimpleRoleScope extends Scope {
   public Iterable<SNode> getAvailableElements(@Nullable String prefix) {
     List<SNode> result = new ArrayList<SNode>();
     for (SNode n : SNodeOperations.getChildren(myNode, myLink)) {
-      if (this.conceptFqName != null && !(SModelUtil.isAssignableConcept(n.getConcept().getId(), conceptFqName))) {
+      if (this.conceptFqName != null && !(SModelUtil.isAssignableConcept(n.getConcept().getConceptId(), conceptFqName))) {
         continue;
       }
       String name = getName(n);
@@ -64,7 +64,7 @@ public abstract class SimpleRoleScope extends Scope {
     if (node == null || SNodeOperations.getParent(node) != myNode) {
       return null;
     }
-    if (this.conceptFqName != null && !(SModelUtil.isAssignableConcept(node.getConcept().getId(), conceptFqName))) {
+    if (this.conceptFqName != null && !(SModelUtil.isAssignableConcept(node.getConcept().getConceptId(), conceptFqName))) {
       return null;
     }
 
@@ -73,7 +73,7 @@ public abstract class SimpleRoleScope extends Scope {
       if (n == node) {
         continue;
       }
-      if (this.conceptFqName != null && !(SModelUtil.isAssignableConcept(n.getConcept().getId(), conceptFqName))) {
+      if (this.conceptFqName != null && !(SModelUtil.isAssignableConcept(n.getConcept().getConceptId(), conceptFqName))) {
         continue;
       }
       String name = getName(n);

@@ -21,7 +21,6 @@ import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.ScopeAdapter;
-import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.smodel.SReference;
@@ -44,7 +43,7 @@ public class SNodeOperations {
     if (node == null) {
       return null;
     }
-    return node.getTopmostAncestor();
+    return node.getContainingRoot();
   }
 
   @Deprecated
@@ -75,7 +74,7 @@ public class SNodeOperations {
 
     // look up for certain concept 
     if (root) {
-      SNode rootParent = node.getTopmostAncestor();
+      SNode rootParent = node.getContainingRoot();
       if (rootParent.getModel() != null && SNodeOperations.nullSafeInstanceOf(rootParent, ancestorConceptFqName)) {
         if (!(sameMetaLevel) || SModelUtil_new.getMetaLevel(rootParent) == metaLevel) {
           return rootParent;
@@ -132,7 +131,7 @@ public class SNodeOperations {
       return null;
     }
     if (root) {
-      SNode rootParent = node.getTopmostAncestor();
+      SNode rootParent = node.getContainingRoot();
       if (SNodeOperations._isInstanceOf(rootParent, ancestorConceptFqNames)) {
         if (!(sameMetaLevel) || SModelUtil_new.getMetaLevel(rootParent) == metaLevel) {
           return rootParent;
@@ -211,7 +210,7 @@ public class SNodeOperations {
     }
 
     if (childConceptFqName == null) {
-      result = (List<SNode>) node.getDescendants();
+      result = (List<SNode>) jetbrains.mps.util.SNodeOperations.getDescendants(node, null);
       if (inclusion) {
         result.add(0, node);
       }
@@ -416,7 +415,7 @@ public class SNodeOperations {
     }
     String role = node.getRoleInParent();
     assert parent != null && role != null;
-    parent.insertChild(node, role, newChild);
+    parent.insertChild(role, node, newChild);
     return newChild;
   }
 
@@ -434,7 +433,7 @@ public class SNodeOperations {
     }
     String role = node.getRoleInParent();
     assert role != null;
-    parent.insertChild(node, role, newChild, true);
+    parent.insertChild(role, newChild, parent.getPrevChild(node));
     return newChild;
   }
 
@@ -452,7 +451,7 @@ public class SNodeOperations {
     }
     String role = node.getRoleInParent();
     assert role != null;
-    nodeParent.insertChild(node, role, siblingNode, false);
+    nodeParent.insertChild(role, siblingNode, node);
     return siblingNode;
   }
 
@@ -470,14 +469,14 @@ public class SNodeOperations {
     }
     String role = node.getRoleInParent();
     assert role != null;
-    nodeParent.insertChild(node, role, siblingNode, true);
+    nodeParent.insertChild(role, siblingNode, nodeParent.getPrevChild(node));
     return siblingNode;
   }
 
   public static SNode replaceWithNewChild(SNode oldChild, String conceptFqName) {
     assert oldChild != null : "can't replace node. node is NULL";
     SNode oldChildParent = oldChild.getParent();
-    if (oldChildParent == null && !(oldChild.isRoot())) {
+    if (oldChildParent == null && (oldChild.getModel() == null || !(oldChild.getModel().isRoot(oldChild)))) {
       return null;
     }
     SModel model = oldChild.getModel();
@@ -564,7 +563,11 @@ public class SNodeOperations {
     if (node == null || node.getParent() == null) {
       return -1;
     }
-    return node.getParent().getIndexOfChild(node);
+    String role = node.getRoleInParent();
+    if (role == null) {
+      return -1;
+    }
+    return node.getParent().getChildren(role).indexOf(node);
   }
 
   public static List<SNode> getAllAttributes(SNode node) {
@@ -602,13 +605,10 @@ public class SNodeOperations {
       return null;
     }
     if (!(SNodeOperations.isInstanceOf(node, castTo))) {
-      // hack, remove? 
-      if (!(HUtil.isRuntimeTypeVariable(node))) {
-        if (ourCastsEnabled) {
-          throw new NodeCastException("Can't cast " + node.getConcept().getId() + " to " + castTo);
-        } else {
-          LOG.warning("Can't cast " + node.getConcept().getId() + " to " + castTo);
-        }
+      if (ourCastsEnabled) {
+        throw new NodeCastException("Can't cast " + node.getConcept().getId() + " to " + castTo);
+      } else {
+        LOG.warning("Can't cast " + node.getConcept().getId() + " to " + castTo);
       }
     }
     return node;

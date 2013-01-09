@@ -15,14 +15,17 @@
  */
 package jetbrains.mps.intentions.icons;
 
+import com.intellij.icons.AllIcons.Actions;
+import jetbrains.mps.icons.MPSIcons;
+
 import javax.swing.Icon;
 import javax.swing.ImageIcon;
 
 public class Icons {
-  public static final Icon INTENTION = new ImageIcon(Icons.class.getResource("intentionBulb.png"));
-  public static final Icon REAL_INTENTION = new ImageIcon(Icons.class.getResource("realIntentionBulb.png"));
-  public static final Icon ERROR_INTENTION = new ImageIcon(Icons.class.getResource("quickfixBulb.png"));
-  public static final Icon INTENTION_OFF = new ImageIcon(Icons.class.getResource("intentionOffBulb.png"));
-  public static final Icon MIGRATION = new ImageIcon(Icons.class.getResource("migrationBulb.png"));
+  public static final Icon INTENTION = Actions.IntentionBulb;
+  public static final Icon REAL_INTENTION = Actions.RealIntentionBulb;
+  public static final Icon ERROR_INTENTION = Actions.QuickfixBulb;
+  public static final Icon INTENTION_OFF = Actions.QuickfixOffBulb;
+  public static final Icon MIGRATION = MPSIcons.Actions.MigrationBulb;
   public static final Icon QUICKFIX = INTENTION;
 }

@@ -677,9 +677,9 @@
             <node role="rValue" roleId="tpee.1068498886297" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3541188775018171739">
               <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="3541188775018171748">
                 <node role="leftExpression" roleId="tp25.1145404616321" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="3541188775018171720">
-                  <property name="fqName" nameId="tp25.559557797393041554" value="no fqName&gt;" />
-                  <property name="name" nameId="tp25.559557797393017702" value="java.lang" />
                   <property name="stereotype" nameId="tp25.559557797393021807" value="java_stub" />
+                  <property name="name" nameId="tp25.559557797393017702" value="java.lang" />
+                  <property name="fqName" nameId="tp25.559557797393041554" value="no fqName&gt;" />
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3541188775018173152">
@@ -695,13 +695,13 @@
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3541188775018139672" resolveInfo="userObjects" />
               </node>
               <node role="key" roleId="tp2q.1197932525128" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3541188775018173156">
+                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2381446136244094325">
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetNodeId()%cjetbrains%dmps%dsmodel%dSNodeId" resolveInfo="getNodeId" />
+                </node>
                 <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="3541188775018173165">
                   <node role="leftExpression" roleId="tp25.1145404616321" type="tp5g.TestNodeReference" typeId="tp5g.1210674524691" id="3541188775018173153">
                     <link role="declaration" roleId="tp5g.1210674534086" targetNodeId="1732396662099564454" resolveInfo="testNode" />
                   </node>
-                </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3541188775018177592">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetSNodeId()%cjetbrains%dmps%dsmodel%dSNodeId" resolveInfo="getSNodeId" />
                 </node>
               </node>
             </node>
@@ -775,9 +775,9 @@
             <property name="name" nameId="tpck.1169194664001" value="sampleModel" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SModelType" typeId="tp25.1143226024141" id="1781648286300234887" />
             <node role="initializer" roleId="tpee.1068431790190" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="1781648286300234888">
-              <property name="fqName" nameId="tp25.559557797393041554" value="no fqName&gt;" />
-              <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.baseLanguage.structure" />
               <property name="stereotype" nameId="tp25.559557797393021807" value="" />
+              <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.baseLanguage.structure" />
+              <property name="fqName" nameId="tp25.559557797393041554" value="no fqName&gt;" />
             </node>
           </node>
         </node>
@@ -838,9 +838,9 @@
             <property name="name" nameId="tpck.1169194664001" value="sampleModel" />
             <node role="type" roleId="tpee.5680397130376446158" type="tp25.SModelType" typeId="tp25.1143226024141" id="759291420779681412" />
             <node role="initializer" roleId="tpee.1068431790190" type="tp25.ModelReferenceExpression" typeId="tp25.559557797393017698" id="759291420779681413">
-              <property name="fqName" nameId="tp25.559557797393041554" value="no fqName&gt;" />
-              <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test" />
               <property name="stereotype" nameId="tp25.559557797393021807" value="" />
+              <property name="name" nameId="tp25.559557797393017702" value="jetbrains.mps.baseLanguage.overloadedOerators.sandbox.test" />
+              <property name="fqName" nameId="tp25.559557797393041554" value="no fqName&gt;" />
             </node>
           </node>
         </node>

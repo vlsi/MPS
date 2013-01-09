@@ -344,7 +344,7 @@
     <unitInfo nodeId="1225194243289" fileName="ConceptBehavior_Behavior.java" startLine="38" startPosition="0" endLine="245" endPosition="0" unitName="jetbrains.mps.lang.behavior.behavior.ConceptBehavior_Behavior" />
   </root>
   <root nodeId="1225196403919" modelId="r:a91e42c5-728b-4866-86c4-d97454f4aee4(jetbrains.mps.lang.behavior.behavior)">
-    <nodeInfo nodeId="1225196403923" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="13" startPosition="76" endLine="14" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1225196403923" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="13" startPosition="76" endLine="14" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1233076518799" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="17" startPosition="78" endLine="18" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225196403938" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="21" startPosition="70" endLine="22" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1225196403919" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
@@ -352,7 +352,7 @@
     <nodeInfo nodeId="1225196403919" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="17" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_canBeAnnotated_1233076312117#(Ljetbrains/mps/smodel/SNode;)Z" />
     <nodeInfo nodeId="1225196403919" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getBehavior_1225196403935#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <scopeInfo nodeId="1225196403945" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="10" startPosition="43" endLine="10" endPosition="43" />
-    <scopeInfo nodeId="1225196403922" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="13" startPosition="76" endLine="14" endPosition="100" />
+    <scopeInfo nodeId="1225196403922" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="13" startPosition="76" endLine="14" endPosition="99" />
     <scopeInfo nodeId="1233076514718" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="17" startPosition="78" endLine="18" endPosition="16" />
     <scopeInfo nodeId="1225196403937" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="21" startPosition="70" endLine="22" endPosition="126" />
     <scopeInfo nodeId="1225196403919" fileName="StaticConceptMethodDeclaration_Behavior.java" startLine="10" startPosition="0" endLine="12" endPosition="0">
@@ -500,7 +500,7 @@
     <nodeInfo nodeId="4748945189161826939" fileName="BehaviorMethodNames.java" startLine="12" startPosition="57" endLine="13" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4748945189161499470" fileName="BehaviorMethodNames.java" startLine="25" startPosition="58" endLine="26" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4748945189161494398" fileName="BehaviorMethodNames.java" startLine="30" startPosition="63" endLine="31" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4748945189161809690" fileName="BehaviorMethodNames.java" startLine="34" startPosition="53" endLine="35" endPosition="96" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4748945189161809690" fileName="BehaviorMethodNames.java" startLine="34" startPosition="53" endLine="35" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4748945189161473167" fileName="BehaviorMethodNames.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="BehaviorMethodNames#()V" />
     <nodeInfo nodeId="4748945189161807765" fileName="BehaviorMethodNames.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="getMethodName#(Ljetbrains/mps/smodel/SNode;)Ljava/lang/String;" />
     <nodeInfo nodeId="5570334447679123868" fileName="BehaviorMethodNames.java" startLine="13" startPosition="103" endLine="17" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -511,7 +511,7 @@
     <scopeInfo nodeId="4748945189161473170" fileName="BehaviorMethodNames.java" startLine="9" startPosition="33" endLine="9" endPosition="33" />
     <scopeInfo nodeId="4748945189161484937" fileName="BehaviorMethodNames.java" startLine="25" startPosition="58" endLine="26" endPosition="43" />
     <scopeInfo nodeId="4748945189161488876" fileName="BehaviorMethodNames.java" startLine="30" startPosition="63" endLine="31" endPosition="48" />
-    <scopeInfo nodeId="4748945189161807768" fileName="BehaviorMethodNames.java" startLine="34" startPosition="53" endLine="35" endPosition="96" />
+    <scopeInfo nodeId="4748945189161807768" fileName="BehaviorMethodNames.java" startLine="34" startPosition="53" endLine="35" endPosition="95" />
     <scopeInfo nodeId="4748945189161473167" fileName="BehaviorMethodNames.java" startLine="9" startPosition="0" endLine="11" endPosition="0" />
     <scopeInfo nodeId="4748945189161807765" fileName="BehaviorMethodNames.java" startLine="34" startPosition="0" endLine="37" endPosition="0">
       <varInfo nodeId="4748945189161808420" varName="method" />

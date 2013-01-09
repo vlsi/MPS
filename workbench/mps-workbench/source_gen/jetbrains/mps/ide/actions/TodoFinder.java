@@ -10,7 +10,7 @@ import java.util.Set;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import java.util.Collections;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.ide.findusages.model.SearchResult;
@@ -20,7 +20,7 @@ public class TodoFinder implements IFinder {
   }
 
   public SearchResults find(SearchQuery query, ProgressMonitor monitor) {
-    Set<SNode> nodes = (Set<SNode>) FindUsagesManager.getInstance().findUsages(Collections.singleton(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.TextCommentPart")), SearchType.INSTANCES, query.getScope(), null);
+    Set<SNode> nodes = (Set) FindUsagesManager.getInstance().findUsages(Collections.singleton(SConceptRepository.getInstance().getConcept("jetbrains.mps.baseLanguage.structure.TextCommentPart")), SearchType.INSTANCES, query.getScope(), null);
     SearchResults<SNode> results = new SearchResults<SNode>();
     for (SNode node : nodes) {
       String text = SPropertyOperations.getString(node, "text");

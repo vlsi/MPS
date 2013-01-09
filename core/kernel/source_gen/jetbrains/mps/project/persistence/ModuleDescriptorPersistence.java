@@ -18,15 +18,17 @@ import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import java.util.Collection;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
-import jetbrains.mps.util.MacroHelper;
 import org.jetbrains.mps.openapi.persistence.Memento;
+import org.jetbrains.annotations.Nullable;
+import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.smodel.LanguageID;
+import jetbrains.mps.util.MacroHelper;
+import java.util.ArrayList;
 import org.jdom.Attribute;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vfs.IFile;
-import jetbrains.mps.util.FileUtil;
 import java.util.UUID;
 import java.io.InputStreamReader;
 import java.util.regex.Pattern;
@@ -127,34 +129,67 @@ public class ModuleDescriptorPersistence {
     }
   }
 
-  public static List<ModelRootDescriptor> loadModelRoots(Iterable<Element> modelRootElements, final MacroHelper macroHelper) {
-    return Sequence.fromIterable(modelRootElements).select(new ISelector<Element, ModelRootDescriptor>() {
-      public ModelRootDescriptor select(Element mre) {
-        return loadModelRoot(mre, macroHelper);
+  public static ModelRootDescriptor createDescriptor(String type, Memento m, @Nullable String moduleContentRoot, ModelRootDescriptor[] moduleDefaultRoot) {
+    if (type != null) {
+      return new ModelRootDescriptor(type, m);
+    }
+
+    // temporary code for migrating old model roots, type == null 
+    Memento manager = m.getChild("manager");
+    if (manager == null) {
+      String path = FileUtil.stripLastSlashes(m.get("path"));
+
+      if (moduleContentRoot != null && (path.startsWith(moduleContentRoot + "/") || path.equals(moduleContentRoot))) {
+        String relPath = path.substring(moduleContentRoot.length());
+        while (relPath.startsWith("/")) {
+          relPath = relPath.substring(1);
+        }
+        ModelRootDescriptor result = null;
+        if (moduleDefaultRoot[0] == null) {
+          m = new MementoImpl();
+          m.put("contentPath", moduleContentRoot);
+          moduleDefaultRoot[0] = new ModelRootDescriptor(PersistenceRegistry.DEFAULT_MODEL_ROOT, m);
+          result = moduleDefaultRoot[0];
+        } else {
+          m = moduleDefaultRoot[0].getMemento();
+        }
+        Memento sr = m.createChild("sourceRoot");
+        sr.put("location", (relPath.isEmpty() ?
+          "." :
+          relPath
+        ));
+        return result;
       }
-    }).toListSequence();
+
+      m = new MementoImpl();
+      m.put("contentPath", path);
+      Memento sourceRoot = m.createChild("sourceRoot");
+      sourceRoot.put("location", ".");
+      return new ModelRootDescriptor(PersistenceRegistry.DEFAULT_MODEL_ROOT, m);
+    } else if (matches(manager, LanguageID.JAVA_MANAGER)) {
+      // TODO use JavaClassStubConstants.STUB_TYPE 
+      String path = m.get("path");
+      m = new MementoImpl();
+      m.put("path", path);
+      return new ModelRootDescriptor(PersistenceRegistry.JAVA_CLASSES_ROOT, m);
+    } else {
+      return new ModelRootDescriptor(PersistenceRegistry.OBSOLETE_MODEL_ROOT, m);
+    }
   }
 
-  private static ModelRootDescriptor loadModelRoot(Element modelRootElement, final MacroHelper macroHelper) {
-    Memento m = new MementoImpl();
-    readMemento(m, modelRootElement, macroHelper);
-    String type = modelRootElement.getAttributeValue("type");
-    // temporary code for migrating old model roots 
-    if (type == null) {
-      Memento manager = m.getChild("manager");
-      if (manager == null) {
-        type = PersistenceRegistry.DEFAULT_MODEL_ROOT;
-      } else if (matches(manager, LanguageID.JAVA_MANAGER)) {
-        // TODO use JavaClassStubConstants.STUB_TYPE 
-        type = "java_classes";
-        String path = m.get("path");
-        m = new MementoImpl();
-        m.put("path", path);
-      } else {
-        type = PersistenceRegistry.OBSOLETE_MODEL_ROOT;
+  public static List<ModelRootDescriptor> loadModelRoots(Iterable<Element> modelRootElements, String moduleContentRoot, MacroHelper macroHelper) {
+    List<ModelRootDescriptor> result = ListSequence.fromList(new ArrayList<ModelRootDescriptor>());
+    ModelRootDescriptor[] moduleDefaultRoot = new ModelRootDescriptor[]{null};
+    for (Element element : modelRootElements) {
+      Memento m = new MementoImpl();
+      readMemento(m, element, macroHelper);
+      String type = element.getAttributeValue("type");
+      ModelRootDescriptor descriptor = createDescriptor(type, m, moduleContentRoot, moduleDefaultRoot);
+      if (descriptor != null) {
+        ListSequence.fromList(result).addElement(descriptor);
       }
     }
-    return new ModelRootDescriptor(type, m);
+    return result;
   }
 
   public static void readMemento(Memento memento, Element element, final MacroHelper macroHelper) {
@@ -218,7 +253,7 @@ public class ModuleDescriptorPersistence {
       Element modelRoot = new Element("modelRoot");
       writeMemento(memento, modelRoot, macroHelper);
       String type = root.getType();
-      if ((type != null && type.length() > 0) && !("default".equals(type) || "obsolete".equals(type))) {
+      if ((type != null && type.length() > 0) && !("obsolete".equals(type))) {
         modelRoot.setAttribute("type", type);
       } else {
         modelRoot.removeAttribute("type");

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="1145576838780" modelId="r:00000000-0000-4000-0000-011c895905e5(smodelLanguage.samples)">
-    <nodeInfo nodeId="1145576838787" fileName="SemanticDowncast.java" startLine="11" startPosition="56" endLine="12" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1145576838795" fileName="SemanticDowncast.java" startLine="12" startPosition="70" endLine="13" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1145576838807" fileName="SemanticDowncast.java" startLine="16" startPosition="56" endLine="17" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1171482174425" fileName="SemanticDowncast.java" startLine="17" startPosition="126" endLine="18" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1145576838787" fileName="SemanticDowncast.java" startLine="11" startPosition="56" endLine="12" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1145576838795" fileName="SemanticDowncast.java" startLine="12" startPosition="69" endLine="13" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1145576838807" fileName="SemanticDowncast.java" startLine="16" startPosition="56" endLine="17" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1171482174425" fileName="SemanticDowncast.java" startLine="17" startPosition="125" endLine="18" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1145576838835" fileName="SemanticDowncast.java" startLine="21" startPosition="47" endLine="22" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1206064836921" fileName="SemanticDowncast.java" startLine="22" startPosition="148" endLine="23" endPosition="124" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1145576838845" fileName="SemanticDowncast.java" startLine="23" startPosition="124" endLine="24" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -12,11 +12,11 @@
     <nodeInfo nodeId="1145576838781" fileName="SemanticDowncast.java" startLine="11" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke_getID_method_1#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1145576838801" fileName="SemanticDowncast.java" startLine="16" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="invoke_getID_method_2#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1145576838829" fileName="SemanticDowncast.java" startLine="21" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="countChildren#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="1145576838783" fileName="SemanticDowncast.java" startLine="11" startPosition="56" endLine="13" endPosition="60">
+    <scopeInfo nodeId="1145576838783" fileName="SemanticDowncast.java" startLine="11" startPosition="56" endLine="13" endPosition="59">
       <varInfo nodeId="1145576838796" varName="id_briefly" />
       <varInfo nodeId="1145576838788" varName="id_verbose" />
     </scopeInfo>
-    <scopeInfo nodeId="1145576838803" fileName="SemanticDowncast.java" startLine="16" startPosition="56" endLine="18" endPosition="105">
+    <scopeInfo nodeId="1145576838803" fileName="SemanticDowncast.java" startLine="16" startPosition="56" endLine="18" endPosition="104">
       <varInfo nodeId="1171482174426" varName="id_better" />
       <varInfo nodeId="1145576838808" varName="id_verbose" />
     </scopeInfo>
@@ -750,8 +750,8 @@
     <nodeInfo nodeId="1177034236531" fileName="ConceptRef.java" startLine="28" startPosition="105" endLine="29" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1177034263665" fileName="ConceptRef.java" startLine="29" startPosition="70" endLine="30" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1206660310271" fileName="ConceptRef.java" startLine="30" startPosition="70" endLine="31" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1180485643169" fileName="ConceptRef.java" startLine="34" startPosition="60" endLine="35" endPosition="182" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1180543578597" fileName="ConceptRef.java" startLine="38" startPosition="72" endLine="39" endPosition="274" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1180485643169" fileName="ConceptRef.java" startLine="34" startPosition="60" endLine="35" endPosition="202" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1180543578597" fileName="ConceptRef.java" startLine="38" startPosition="72" endLine="39" endPosition="294" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1180544050716" fileName="ConceptRef.java" startLine="42" startPosition="31" endLine="43" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1180543735907" fileName="ConceptRef.java" startLine="43" startPosition="117" endLine="44" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1180543816745" fileName="ConceptRef.java" startLine="44" startPosition="27" endLine="45" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -797,10 +797,10 @@
     <nodeInfo nodeId="1180456939140" fileName="ConceptRef.java" startLine="63" startPosition="0" endLine="80" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="concept_hierarchy1#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="1180543684770" fileName="ConceptRef.java" startLine="42" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="concept_types#()V" />
     <scopeInfo nodeId="1173133630405" fileName="ConceptRef.java" startLine="19" startPosition="87" endLine="19" endPosition="87" />
-    <scopeInfo nodeId="1180482960667" fileName="ConceptRef.java" startLine="34" startPosition="60" endLine="35" endPosition="182">
+    <scopeInfo nodeId="1180482960667" fileName="ConceptRef.java" startLine="34" startPosition="60" endLine="35" endPosition="202">
       <varInfo nodeId="1180485643170" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="1180542870139" fileName="ConceptRef.java" startLine="38" startPosition="72" endLine="39" endPosition="274">
+    <scopeInfo nodeId="1180542870139" fileName="ConceptRef.java" startLine="38" startPosition="72" endLine="39" endPosition="294">
       <varInfo nodeId="1180543578598" varName="applicableParams" />
     </scopeInfo>
     <scopeInfo nodeId="1180482960664" fileName="ConceptRef.java" startLine="34" startPosition="0" endLine="37" endPosition="0">

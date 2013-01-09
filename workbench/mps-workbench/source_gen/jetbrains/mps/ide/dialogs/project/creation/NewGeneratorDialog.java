@@ -162,7 +162,8 @@ public class NewGeneratorDialog extends DialogWrapper {
     generatorDescriptor.setGeneratorUID(Generator.generateGeneratorUID(language));
     generatorDescriptor.setNamespace(name);
     DefaultModelRoot templateModelsRoot = new DefaultModelRoot();
-    templateModelsRoot.setPath(templateModelsDir);
+    templateModelsRoot.setContentRoot(templateModelsDir);
+    templateModelsRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, templateModelsDir);
     generatorDescriptor.getModelRootDescriptors().add(templateModelsRoot.toDescriptor());
     generatorDescriptor.getUsedDevkits().add(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("fbc25dd2-5da4-483a-8b19-70928e1b62d7")).getModuleReference());
     generatorDescriptor.getUsedLanguages().add(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("b401a680-8325-4110-8fd3-84331ff25bef")).getModuleReference());

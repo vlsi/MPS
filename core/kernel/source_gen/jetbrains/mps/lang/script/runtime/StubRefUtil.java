@@ -123,14 +123,14 @@ public class StubRefUtil {
 
   public static void replaceRefs(SNode oldNode, SNode newNode) {
     for (SReference newRef : ListSequence.fromList(newNode.getReferences())) {
-      oldNode.removeReference(oldNode.getReference(newRef.getRole()));
+      oldNode.setReference(newRef.getRole(), null);
       oldNode.setReference(new StaticReference(newRef.getRole(), oldNode, newRef.getTargetSModelReference(), newRef.getTargetNodeId(), newRef.getResolveInfo()).getRole(), new StaticReference(newRef.getRole(), oldNode, newRef.getTargetSModelReference(), newRef.getTargetNodeId(), newRef.getResolveInfo()));
     }
     StubRefUtil.addRequiredImports(oldNode.getModel(), newNode);
   }
 
   public static void replaceReference(SNode oldNode, SReference reference) {
-    oldNode.removeReference(oldNode.getReference(reference.getRole()));
+    oldNode.setReference(reference.getRole(), null);
     oldNode.setReference(new StaticReference(reference.getRole(), oldNode, reference.getTargetSModelReference(), reference.getTargetNodeId(), reference.getResolveInfo()).getRole(), new StaticReference(reference.getRole(), oldNode, reference.getTargetSModelReference(), reference.getTargetNodeId(), reference.getResolveInfo()));
     StubRefUtil.addRequiredImports(oldNode.getModel(), reference.getSourceNode());
   }

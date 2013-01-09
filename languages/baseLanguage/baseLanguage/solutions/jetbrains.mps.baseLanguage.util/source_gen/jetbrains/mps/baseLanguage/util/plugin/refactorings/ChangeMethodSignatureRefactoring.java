@@ -41,7 +41,7 @@ public class ChangeMethodSignatureRefactoring {
       List<SNode> oldArgs = call.getMethodArguments();
       call.removeArguments();
       for (SNode parameter : ListSequence.fromList(SLinkOperations.getTargets(this.myParameters.getDeclaration(), "parameter", true))) {
-        int index = ListSequence.fromList(this.myParameters.getIdList()).indexOf(parameter.getSNodeId().toString());
+        int index = ListSequence.fromList(this.myParameters.getIdList()).indexOf(parameter.getNodeId().toString());
         if (index == -1) {
           call.addArgument(SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null));
         } else {
@@ -59,7 +59,7 @@ public class ChangeMethodSignatureRefactoring {
     List<SNode> oldParams = SLinkOperations.getTargets(this.myDeclaration, "parameter", true);
     ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).clear();
     for (SNode parameter : ListSequence.fromList(SLinkOperations.getTargets(this.myParameters.getDeclaration(), "parameter", true))) {
-      int index = ListSequence.fromList(this.myParameters.getIdList()).indexOf(parameter.getSNodeId().toString());
+      int index = ListSequence.fromList(this.myParameters.getIdList()).indexOf(parameter.getNodeId().toString());
       if (index == -1) {
         ListSequence.fromList(SLinkOperations.getTargets(this.myDeclaration, "parameter", true)).addElement(SNodeOperations.copyNode(parameter));
       } else {

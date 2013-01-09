@@ -179,7 +179,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_627956582045882902(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getNode().getSNodeId().toString();
+    return _context.getNode().getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_2037769997948064414(final IOperationContext operationContext, final PropertyMacroContext _context) {

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="stubUtils" uuid="b55d8dfc-0d9d-43d5-886d-c644e7083bff" pluginKind="PLUGIN_CORE" compileInMPS="false">
   <models>
-    <modelRoot path="${module}/" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="." />
+    </modelRoot>
   </models>
   <sourcePath />
   <dependencies>

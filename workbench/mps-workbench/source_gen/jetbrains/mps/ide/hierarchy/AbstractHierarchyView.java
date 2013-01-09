@@ -35,6 +35,7 @@ import jetbrains.mps.ide.hierarchy.toggle.ToggleActionGroup;
 import com.intellij.openapi.actionSystem.ToggleAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.workbench.action.BaseAction;
+import com.intellij.icons.AllIcons;
 import java.util.Map;
 import jetbrains.mps.workbench.action.ActionUtils;
 import com.intellij.ide.OccurenceNavigator;
@@ -160,17 +161,17 @@ public abstract class AbstractHierarchyView extends BaseProjectTool {
         myHierarchyTree.setShowGeneratorModels(mySelected);
       }
     };
-    BaseAction expandAllAction = new BaseAction("Expand all", "Expand all nodes", jetbrains.mps.ide.findusages.view.icons.Icons.EXPAND_ICON) {
+    BaseAction expandAllAction = new BaseAction("Expand all", "Expand all nodes", AllIcons.Actions.Expandall) {
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         myHierarchyTree.expandAll();
       }
     };
-    BaseAction collapseAllAction = new BaseAction("Collapse all", "Collapse all nodes", jetbrains.mps.ide.findusages.view.icons.Icons.COLLAPSE_ICON) {
+    BaseAction collapseAllAction = new BaseAction("Collapse all", "Collapse all nodes", AllIcons.Actions.Collapseall) {
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         myHierarchyTree.collapseAll();
       }
     };
-    BaseAction refreshAction = new BaseAction("Refresh", "Refresh", Icons.REFRESH_ICON) {
+    BaseAction refreshAction = new BaseAction("Refresh", "Refresh", AllIcons.Actions.Refresh) {
       protected void doExecute(AnActionEvent e, Map<String, Object> _params) {
         myHierarchyTree.rebuildNow();
       }

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.build.Info.plist" file="Info.plist.xml" />
+  <dependency className="jetbrains.mps.ide.build.buildAdditionalPluginsDist" file="buildAdditionalPluginsDist.xml" />
   <dependency className="jetbrains.mps.ide.build.buildBuild" file="buildBuild.xml" />
   <dependency className="jetbrains.mps.ide.build.buildBuildUI" file="buildBuildUI.xml" />
   <dependency className="jetbrains.mps.ide.build.buildConnectorPlugin" file="buildConnectorPlugin.xml" />
@@ -8,10 +9,12 @@
   <dependency className="jetbrains.mps.ide.build.buildCoreEx" file="buildCoreEx.xml" />
   <dependency className="jetbrains.mps.ide.build.buildDates" file="buildDates.xml" />
   <dependency className="jetbrains.mps.ide.build.buildDebuggerPlugin" file="buildDebuggerPlugin.xml" />
+  <dependency className="jetbrains.mps.ide.build.buildDeprecatedBuildlanguage" file="buildDeprecatedBuildlanguage.xml" />
   <dependency className="jetbrains.mps.ide.build.buildDevKit" file="buildDevKit.xml" />
   <dependency className="jetbrains.mps.ide.build.buildDistribution" file="buildDistribution.xml" />
   <dependency className="jetbrains.mps.ide.build.buildExecutionPlugin" file="buildExecutionPlugin.xml" />
   <dependency className="jetbrains.mps.ide.build.buildExperimental" file="buildExperimental.xml" />
+  <dependency className="jetbrains.mps.ide.build.buildJava" file="buildJava.xml" />
   <dependency className="jetbrains.mps.ide.build.buildMPS" file="buildMPS.xml" />
   <dependency className="jetbrains.mps.ide.build.buildMakePlugin" file="buildMakePlugin.xml" />
   <dependency className="jetbrains.mps.ide.build.buildObsolete" file="buildObsolete.xml" />

@@ -130,7 +130,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
     super(leftEditorHighlighter);
     Set<SNodeId> descendantIds = SetSequence.fromSetWithValues(new HashSet<SNodeId>(), ListSequence.fromList(SNodeOperations.getDescendants(root, null, true, new String[]{})).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
-        return n.getSNodeId();
+        return n.getNodeId();
       }
     }));
     SModel model = SNodeOperations.getModel(root);
@@ -229,7 +229,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
       List<SNode> newChildren = myModelDescriptor.getSModel().getNodeById(ngc.getParentNodeId()).getChildren(ngc.getRole());
       MapSequence.fromMap(myChangesToLineContents).put(ch, ListSequence.fromList(newChildren).page(ngc.getResultBegin(), ngc.getResultEnd()).select(new ISelector<SNode, NodeLineContent>() {
         public NodeLineContent select(SNode n) {
-          return new NodeLineContent(n.getSNodeId());
+          return new NodeLineContent(n.getNodeId());
         }
       }).toGenericArray(NodeLineContent.class));
     }
@@ -813,7 +813,7 @@ __switch__:
 
   private static SNodeId check_5mnya_a0d0a91a8a2a0a0a0a1a1a2vb(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getSNodeId();
+      return checkedDotOperand.getNodeId();
     }
     return null;
   }

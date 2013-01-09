@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<debugInfo>
+  <unitInfo fileName="BehaviorAspectDescriptor.java" startLine="9" startPosition="0" endLine="26" endPosition="0" unitName="jetbrains.mps.samples.generator_demo.demoLang6.behavior.BehaviorAspectDescriptor" />
+  <unitInfo fileName="Button_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.generator_demo.demoLang6.behavior.Button_BehaviorDescriptor" />
+  <unitInfo fileName="Label_BehaviorDescriptor.java" startLine="7" startPosition="0" endLine="16" endPosition="0" unitName="jetbrains.mps.samples.generator_demo.demoLang6.behavior.Label_BehaviorDescriptor" />
+</debugInfo>
+

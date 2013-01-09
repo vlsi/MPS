@@ -264,7 +264,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5248329904288131577(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "copy." + _context.getNode().getSNodeId().toString();
+    return "copy." + _context.getNode().getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_9184644532456968183(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -276,7 +276,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_9184644532456968281(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "copy." + _context.getNode().getSNodeId().toString();
+    return "copy." + _context.getNode().getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_9184644532456968460(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -330,7 +330,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4643216374596143015(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "copy." + _context.getNode().getSNodeId().toString();
+    return "copy." + _context.getNode().getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_202934866059116852(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -346,7 +346,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_202934866059116833(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "copy." + _context.getNode().getSNodeId().toString();
+    return "copy." + _context.getNode().getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_6547494638219491804(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -366,7 +366,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_4701820937132270643(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "copy.artifacts." + _context.getNode().getSNodeId().toString();
+    return "copy.artifacts." + _context.getNode().getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_5610619299013114623(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -382,7 +382,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5610619299013114851(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return "copy.artifacts." + _context.getNode().getSNodeId().toString();
+    return "copy.artifacts." + _context.getNode().getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_6921160174096729094(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -562,7 +562,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_6837653846148442043(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return _context.getTemplateValue() + "." + _context.getNode().getSNodeId().toString();
+    return _context.getTemplateValue() + "." + _context.getNode().getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_5368511706901764962(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -1322,7 +1322,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_6408167411310620878(final IOperationContext operationContext, final IfMacroContext _context) {
-    _context.showErrorMessage(_context.getNode(), "cannot reduce fileset, unknown concept: " + _context.getNode().getConcept().getId());
+    _context.showErrorMessage(_context.getNode(), "cannot reduce fileset, unknown concept: " + _context.getNode().getConcept().getConceptId());
     return false;
   }
 

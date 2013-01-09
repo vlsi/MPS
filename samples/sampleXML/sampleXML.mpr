@@ -19,7 +19,7 @@
   </component>
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${project}/languages/sampleXML/sampleXML.mpl" />
+      <modulePath path="${project}/languages/sampleXML/jetbrains.mps.sampleXML.mpl" />
       <modulePath path="${project}/solutions/sandbox/sampleXML.sandbox.msd" />
     </projectModules>
     <genConfs>

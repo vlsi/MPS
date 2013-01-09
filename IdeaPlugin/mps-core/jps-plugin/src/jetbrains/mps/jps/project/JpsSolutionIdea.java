@@ -4,10 +4,13 @@ import com.intellij.openapi.util.io.FileUtil;
 import jetbrains.mps.extapi.persistence.FileDataSource;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.idea.core.project.JpsModelRootContributor;
+import jetbrains.mps.jps.build.MPSCompilerUtil;
 import jetbrains.mps.jps.model.JpsMPSRepositoryFacade;
+import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.Dependency;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import org.jetbrains.annotations.NotNull;
@@ -15,8 +18,13 @@ import org.jetbrains.jps.incremental.CompileContext;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
 import org.jetbrains.jps.model.java.JpsJavaExtensionService;
+import org.jetbrains.jps.model.java.JpsJavaSdkType;
+import org.jetbrains.jps.model.library.JpsLibrary;
 import org.jetbrains.jps.model.module.JpsDependencyElement;
+import org.jetbrains.jps.model.module.JpsLibraryDependency;
 import org.jetbrains.jps.model.module.JpsModule;
+import org.jetbrains.jps.model.module.JpsModuleDependency;
+import org.jetbrains.jps.model.module.JpsSdkDependency;
 import org.jetbrains.jps.service.JpsServiceManager;
 import org.jetbrains.mps.openapi.model.SModel;
 import org.jetbrains.mps.openapi.persistence.DataSource;
@@ -32,104 +40,132 @@ import java.util.concurrent.atomic.AtomicReference;
 
 public class JpsSolutionIdea extends Solution {
 
-    private JpsModule myModule;
-    private Set<ModelRoot> myContributedModelRoots;
-    private CompileContext myCompileContext;
-    private AtomicReference<Map<String, SModel>> myPathToModel = new AtomicReference<Map<String, SModel>>();
+  private JpsModule myModule;
+  private Set<ModelRoot> myContributedModelRoots;
+  private CompileContext myCompileContext;
+  private AtomicReference<Map<String, SModel>> myPathToModel = new AtomicReference<Map<String, SModel>>();
 
-    public JpsSolutionIdea(@NotNull JpsModule module, SolutionDescriptor descriptor, CompileContext compileCtx) {
-        super(descriptor, null);
-        myModule = module;
-        myModule = module;
-        myCompileContext = compileCtx;
+  public JpsSolutionIdea(@NotNull JpsModule module, SolutionDescriptor descriptor, CompileContext compileCtx) {
+    super(descriptor, null);
+    myModule = module;
+    myModule = module;
+    myCompileContext = compileCtx;
+  }
+
+  public JpsModule getModule() {
+    return myModule;
+  }
+
+  public SModel getModelByPath(String path) {
+    Map<String, SModel> map = myPathToModel.get();
+    if (map != null) {
+      return map.get(path);
     }
 
-    public JpsModule getModule() {
-        return myModule;
+    map = new HashMap<String, SModel>();
+    for (SModel m : getModels()) {
+      DataSource source = m.getSource();
+      if (source instanceof FileDataSource) {
+        String p = ((FileDataSource) source).getFile().getPath();
+        p = FileUtil.toCanonicalPath(p);
+        map.put(p, m);
+      }
     }
 
-    public SModel getModelByPath(String path) {
-        Map<String, SModel> map = myPathToModel.get();
-        if (map != null) {
-            return map.get(path);
+    myPathToModel.compareAndSet(null, map);
+    return map.get(path);
+  }
+
+  @Override
+  public List<Dependency> getDependencies() {
+    List<Dependency> dependencies = new ArrayList<Dependency>();
+
+    MPSCompilerUtil.debug(myCompileContext, "^^^^ getDependencies for " + myModule.getName());
+
+    for (JpsDependencyElement jpsDep : myModule.getDependenciesList().getDependencies()) {
+
+      Solution solution = null;
+
+      if (jpsDep instanceof JpsModuleDependency) {
+        JpsModule jpsModule = ((JpsModuleDependency) jpsDep).getModule();
+        solution = JpsMPSRepositoryFacade.getInstance().getSolution(jpsModule);
+
+      } else if (jpsDep instanceof JpsLibraryDependency) {
+
+        MPSCompilerUtil.debug(myCompileContext, "**** lib dep: " + ((JpsLibraryDependency) jpsDep).getLibraryReference().getLibraryName());
+
+        JpsLibrary lib = ((JpsLibraryDependency) jpsDep).getLibrary();
+        String name = lib.getName();
+        solution = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(name));
+
+      } else if (jpsDep instanceof JpsSdkDependency) {
+
+        MPSCompilerUtil.debug(myCompileContext, "**** jdk dep: " + ((JpsSdkDependency) jpsDep).getSdkReference().getSdkName());
+
+        if (((JpsSdkDependency) jpsDep).getSdkType().equals(JpsJavaSdkType.INSTANCE)) {
+          // do nothing, since we store SDK with a special module id (JDK module id, which is pulled in by use baseLanguage)
+          // FIXME OR put JDK module id?
+          continue;
         }
 
-        map = new HashMap<String, SModel>();
-        for (SModel m : getModels()) {
-            DataSource source = m.getSource();
-            if (source instanceof FileDataSource) {
-                String p = ((FileDataSource) source).getFile().getPath();
-                p = FileUtil.toCanonicalPath(p);
-                map.put(p, m);
-            }
-        }
+        String sdkName = ((JpsSdkDependency) jpsDep).getSdkReference().getSdkName();
+        solution = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(sdkName));
+      }
 
-        myPathToModel.compareAndSet(null, map);
-        return map.get(path);
+      if (solution != null) {
+        Dependency dep = new Dependency();
+        dep.setModuleRef(solution.getModuleReference());
+        dep.setReexport(false);
+        dependencies.add(dep);
+      }
     }
 
-    @Override
-    public List<Dependency> getDependencies() {
-        List<Dependency> dependencies = new ArrayList<Dependency>();
+    return dependencies;
+  }
 
-        for (JpsDependencyElement jpsDep : myModule.getDependenciesList().getDependencies()) {
-            JpsModule jpsModule = jpsDep.getContainingModule();
-            Solution solution = JpsMPSRepositoryFacade.getInstance().getSolution(jpsModule);
-
-            if (solution != null) {
-                Dependency dep = new Dependency();
-                dep.setModuleRef(solution.getModuleReference());
-                dep.setReexport(false);
-                dependencies.add(dep);
-            }
-        }
-
-        return dependencies;
+  @Override
+  public IFile getClassesGen() {
+    IFile descriptorFile = getDescriptorFile();
+    if (descriptorFile != null && descriptorFile.isReadOnly()) {
+      myCompileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, " super.ClassesGen " + super.getClassesGen()));
+      return super.getClassesGen();
     }
 
-    @Override
-    public IFile getClassesGen() {
-        IFile descriptorFile = getDescriptorFile();
-        if (descriptorFile != null && descriptorFile.isReadOnly()) {
-            myCompileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, " super.ClassesGen " + super.getClassesGen()));
-            return super.getClassesGen();
-        }
+    // FIX hard-coded forTests=false
+    // TODO use ProjectPaths.getModuleOutputDir(myModule, false); (using JpsJavaExtensionService directly to be compatible with IDEA 12.0.0 release)
+    File outputDir = JpsJavaExtensionService.getInstance().getOutputDirectory(myModule, false);
+    MPSCompilerUtil.debug(myCompileContext, " ClassesGen from module " + FileSystem.getInstance().getFileByPath(outputDir.getPath()));
+    if (outputDir != null) return FileSystem.getInstance().getFileByPath(outputDir.getPath());
+    else return null;
+  }
 
-        // FIX hard-coded forTests=false
-        // TODO use ProjectPaths.getModuleOutputDir(myModule, false); (using JpsJavaExtensionService directly to be compatible with IDEA 12.0.0 release)
-        File outputDir = JpsJavaExtensionService.getInstance().getOutputDirectory(myModule, false);
-        myCompileContext.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, " ClassesGen from module " + FileSystem.getInstance().getFileByPath(outputDir.getPath())));
-        if (outputDir != null) return FileSystem.getInstance().getFileByPath(outputDir.getPath());
-        else return null;
+
+  // Needed only for ReducedGenerationWorker
+  @Override
+  public String getTestsGeneratorOutputPath() {
+    //return ""; // just not null
+    return getClassesGen().getPath();
+  }
+
+  @Override
+  protected Iterable<ModelRoot> loadRoots() {
+    if (myContributedModelRoots == null) {
+      myContributedModelRoots = new HashSet<ModelRoot>();
+      for (JpsModelRootContributor c : JpsServiceManager.getInstance().getExtensions(JpsModelRootContributor.class)) {
+        for (ModelRoot root : c.getModelRoots(myModule)) {
+          myContributedModelRoots.add(root);
+        }
+      }
     }
 
-
-    // Needed only for ReducedGenerationWorker
-    @Override
-    public String getTestsGeneratorOutputPath() {
-        //return ""; // just not null
-        return getClassesGen().getPath();
+    List<ModelRoot> sum = new ArrayList<ModelRoot>();
+    for (ModelRoot mr : super.loadRoots()) {
+      sum.add(mr);
     }
 
-    @Override
-    protected Iterable<ModelRoot> loadRoots() {
-        if (myContributedModelRoots == null) {
-            myContributedModelRoots = new HashSet<ModelRoot>();
-            for (JpsModelRootContributor c : JpsServiceManager.getInstance().getExtensions(JpsModelRootContributor.class)) {
-                for (ModelRoot root : c.getModelRoots(myModule)) {
-                    myContributedModelRoots.add(root);
-                }
-            }
-        }
+    sum.addAll(myContributedModelRoots);
 
-        List<ModelRoot> sum = new ArrayList<ModelRoot>();
-        for (ModelRoot mr : super.loadRoots()) {
-            sum.add(mr);
-        }
-
-        sum.addAll(myContributedModelRoots);
-
-        return sum;
-    }
+    return sum;
+  }
 
 }

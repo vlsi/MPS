@@ -41,7 +41,7 @@
    <string>public abstract java.lang.String org.jetbrains.mps.openapi.model.SNode.getRoleOf(org.jetbrains.mps.openapi.model.SNode)</string> 
   </void> 
   <void method="add"> 
-   <string>public abstract org.jetbrains.mps.openapi.model.SNode org.jetbrains.mps.openapi.model.SNode.getTopmostAncestor()</string> 
+   <string>public abstract org.jetbrains.mps.openapi.model.SNode org.jetbrains.mps.openapi.model.SNode.getContainingRoot()</string>
   </void> 
   <void method="add"> 
    <string>public abstract org.jetbrains.mps.openapi.model.SReference org.jetbrains.mps.openapi.model.SNode.getReference(java.lang.String)</string> 
@@ -83,7 +83,7 @@
    <string>public abstract java.lang.Iterable&lt;? extends org.jetbrains.mps.openapi.model.SReference&gt; org.jetbrains.mps.openapi.model.SNode.getReferences()</string>
   </void>
   <void method="add">
-   <string>public abstract org.jetbrains.mps.openapi.model.SNodeId org.jetbrains.mps.openapi.model.SNode.getSNodeId()</string>
+   <string>public abstract org.jetbrains.mps.openapi.model.SNodeId org.jetbrains.mps.openapi.model.SNode.getNodeId()</string>
   </void>
   <void method="add">
    <string>public abstract org.jetbrains.mps.openapi.model.SNodeReference org.jetbrains.mps.openapi.model.SNode.getReference()</string>

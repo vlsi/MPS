@@ -30,7 +30,6 @@ import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
-import jetbrains.mps.openapi.editor.*;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
@@ -428,7 +427,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       String groupId = ModelAccess.instance().runReadAction(new Computable<String>() {
         @Override
         public String compute() {
-          return getCellId() + "_" + getSNode().getSNodeId().toString();
+          return getCellId() + "_" + getSNode().getNodeId().toString();
         }
       });
       ModelAccess.instance().runWriteActionInCommand(new Runnable() {
@@ -610,7 +609,7 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
 
     if (node.getModel()==null) return;
 
-    MPSNodesVirtualFileSystem.getInstance().getFileFor(node.getTopmostAncestor()).setModificationStamp(LocalTimeCounter.currentTime());
+    MPSNodesVirtualFileSystem.getInstance().getFileFor(node.getContainingRoot()).setModificationStamp(LocalTimeCounter.currentTime());
   }
 
   public void insertText(String text) {

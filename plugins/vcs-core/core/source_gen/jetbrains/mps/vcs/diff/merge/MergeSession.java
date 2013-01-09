@@ -342,7 +342,7 @@ public class MergeSession {
 
     private void invalidateDeletedRoot(SModelEvent event) {
       assert event.getAffectedRoot() != null;
-      List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getAffectedRoot().getSNodeId());
+      List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getAffectedRoot().getNodeId());
       invalidateChanges(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
           return ch instanceof DeleteRootChange;
@@ -356,11 +356,11 @@ public class MergeSession {
       }
 
       // process child 
-      invalidateChanges(MapSequence.fromMap(myNodeToChanges).get(node.getSNodeId()));
+      invalidateChanges(MapSequence.fromMap(myNodeToChanges).get(node.getNodeId()));
     }
 
     private void referenceModified(final SModelReferenceEvent event) {
-      List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getReference().getSourceNode().getSNodeId());
+      List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getReference().getSourceNode().getNodeId());
       invalidateChanges(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
           return ch instanceof SetReferenceChange && eq_bow6nj_a0a0a0a0a0a0b0d64(((SetReferenceChange) ch).getRole(), event.getReference().getRole());
@@ -380,7 +380,7 @@ public class MergeSession {
     }
 
     private List<NodeGroupChange> getRelevantNodeGroupChanges(SNode parent, final String role) {
-      List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(parent.getSNodeId());
+      List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(parent.getNodeId());
       Iterable<NodeGroupChange> allNodeGroupChanges = ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange c) {
           return c instanceof NodeGroupChange;
@@ -405,7 +405,7 @@ public class MergeSession {
         return;
       }
 
-      SNode baseParent = myMineChangeSet.getOldModel().getNodeById(parent.getSNodeId());
+      SNode baseParent = myMineChangeSet.getOldModel().getNodeById(parent.getNodeId());
       if (baseParent == null) {
         return;
       }
@@ -413,10 +413,10 @@ public class MergeSession {
 
       final Wrappers._int baseIndex = new Wrappers._int();
       if (0 <= index && index < currentChildren.size()) {
-        final SNodeId currentChildId = currentChildren.get(index).getSNodeId();
+        final SNodeId currentChildId = currentChildren.get(index).getNodeId();
         SNode baseChild = ListSequence.fromList(baseChildren).findFirst(new IWhereFilter<SNode>() {
           public boolean accept(SNode c) {
-            return currentChildId.equals(c.getSNodeId());
+            return currentChildId.equals(c.getNodeId());
           }
         });
         if (baseChild == null) {
@@ -442,7 +442,7 @@ public class MergeSession {
     }
 
     private void invalidateChildrenChanges(SModelChildEvent event, int offset) {
-      int index = event.getParent().getIndexOfChild(event.getChild()) + offset;
+      int index = SNodeOperations.getIndexInParent(event.getChild()) + offset;
       int beginOffset = (offset == 1 ?
         0 :
         -1
@@ -470,7 +470,7 @@ public class MergeSession {
 
     @Override
     public void propertyChanged(final SModelPropertyEvent event) {
-      List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getNode().getSNodeId());
+      List<ModelChange> nodeChanges = MapSequence.fromMap(myNodeToChanges).get(event.getNode().getNodeId());
       invalidateChanges(ListSequence.fromList(nodeChanges).where(new IWhereFilter<ModelChange>() {
         public boolean accept(ModelChange ch) {
           return ch instanceof SetPropertyChange && eq_bow6nj_a0a0a0a0a0a0b0l64(((SetPropertyChange) ch).getPropertyName(), event.getPropertyName());

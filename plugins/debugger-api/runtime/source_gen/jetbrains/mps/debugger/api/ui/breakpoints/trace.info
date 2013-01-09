@@ -397,8 +397,8 @@
     <nodeInfo nodeId="4474271214083124428" fileName="BreakpointsUiComponent.java" startLine="167" startPosition="54" endLine="168" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214083124430" fileName="BreakpointsUiComponent.java" startLine="169" startPosition="7" endLine="170" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083124436" fileName="BreakpointsUiComponent.java" startLine="171" startPosition="5" endLine="172" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="4474271214083124511" fileName="BreakpointsUiComponent.java" startLine="175" startPosition="56" endLine="176" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083124523" fileName="BreakpointsUiComponent.java" startLine="176" startPosition="43" endLine="177" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083124511" fileName="BreakpointsUiComponent.java" startLine="175" startPosition="56" endLine="176" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4474271214083124523" fileName="BreakpointsUiComponent.java" startLine="176" startPosition="42" endLine="177" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4474271214083124527" fileName="BreakpointsUiComponent.java" startLine="177" startPosition="34" endLine="178" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4474271214083124559" fileName="BreakpointsUiComponent.java" startLine="181" startPosition="90" endLine="182" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083124563" fileName="BreakpointsUiComponent.java" startLine="182" startPosition="37" endLine="183" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.BreakStatement" />
@@ -1118,7 +1118,7 @@
     <nodeInfo nodeId="4474271214083119708" fileName="AbstractBreakpointsTree.java" startLine="225" startPosition="48" endLine="226" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214083119717" fileName="AbstractBreakpointsTree.java" startLine="235" startPosition="106" endLine="236" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="4474271214083119728" fileName="AbstractBreakpointsTree.java" startLine="237" startPosition="54" endLine="238" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="4474271214083119744" fileName="AbstractBreakpointsTree.java" startLine="239" startPosition="27" endLine="240" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4474271214083119744" fileName="AbstractBreakpointsTree.java" startLine="239" startPosition="27" endLine="240" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214083119750" fileName="AbstractBreakpointsTree.java" startLine="242" startPosition="7" endLine="243" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214083119755" fileName="AbstractBreakpointsTree.java" startLine="247" startPosition="45" endLine="248" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="4474271214083119763" fileName="AbstractBreakpointsTree.java" startLine="256" startPosition="64" endLine="257" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1229,7 +1229,7 @@
     <scopeInfo nodeId="4474271214083119696" fileName="AbstractBreakpointsTree.java" startLine="215" startPosition="52" endLine="216" endPosition="24" />
     <scopeInfo nodeId="4474271214083119700" fileName="AbstractBreakpointsTree.java" startLine="220" startPosition="59" endLine="221" endPosition="33" />
     <scopeInfo nodeId="4474271214083119707" fileName="AbstractBreakpointsTree.java" startLine="225" startPosition="48" endLine="226" endPosition="94" />
-    <scopeInfo nodeId="4474271214083119743" fileName="AbstractBreakpointsTree.java" startLine="239" startPosition="27" endLine="240" endPosition="61" />
+    <scopeInfo nodeId="4474271214083119743" fileName="AbstractBreakpointsTree.java" startLine="239" startPosition="27" endLine="240" endPosition="60" />
     <scopeInfo nodeId="4474271214083119754" fileName="AbstractBreakpointsTree.java" startLine="247" startPosition="45" endLine="248" endPosition="53" />
     <scopeInfo nodeId="4474271214083119762" fileName="AbstractBreakpointsTree.java" startLine="256" startPosition="64" endLine="257" endPosition="32" />
     <scopeInfo nodeId="4474271214083119768" fileName="AbstractBreakpointsTree.java" startLine="261" startPosition="43" endLine="262" endPosition="61" />
@@ -1502,7 +1502,7 @@
     <nodeInfo nodeId="4474271214083123482" fileName="BreakpointsBrowserDialog.java" startLine="270" startPosition="77" endLine="271" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4474271214083122841" fileName="BreakpointsBrowserDialog.java" startLine="273" startPosition="7" endLine="274" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="418270182880377872" fileName="BreakpointsBrowserDialog.java" startLine="280" startPosition="43" endLine="281" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="418270182880377875" fileName="BreakpointsBrowserDialog.java" startLine="281" startPosition="24" endLine="282" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="418270182880377875" fileName="BreakpointsBrowserDialog.java" startLine="281" startPosition="24" endLine="282" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="418270182880377891" fileName="BreakpointsBrowserDialog.java" startLine="285" startPosition="73" endLine="286" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="418270182880377907" fileName="BreakpointsBrowserDialog.java" startLine="287" startPosition="63" endLine="288" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
     <nodeInfo nodeId="418270182880377920" fileName="BreakpointsBrowserDialog.java" startLine="291" startPosition="56" endLine="292" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -1658,7 +1658,7 @@
     <scopeInfo nodeId="4474271214083123329" fileName="BreakpointsBrowserDialog.java" startLine="199" startPosition="43" endLine="201" endPosition="53" />
     <scopeInfo nodeId="4474271214083123380" fileName="BreakpointsBrowserDialog.java" startLine="222" startPosition="43" endLine="224" endPosition="53" />
     <scopeInfo nodeId="4474271214083123431" fileName="BreakpointsBrowserDialog.java" startLine="245" startPosition="43" endLine="247" endPosition="53" />
-    <scopeInfo nodeId="418270182880377871" fileName="BreakpointsBrowserDialog.java" startLine="280" startPosition="43" endLine="282" endPosition="118" />
+    <scopeInfo nodeId="418270182880377871" fileName="BreakpointsBrowserDialog.java" startLine="280" startPosition="43" endLine="282" endPosition="66" />
     <scopeInfo nodeId="4474271214083122389" fileName="BreakpointsBrowserDialog.java" startLine="104" startPosition="5" endLine="107" endPosition="5">
       <varInfo nodeId="4474271214083122391" varName="view" />
     </scopeInfo>

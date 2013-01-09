@@ -4,7 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
@@ -16,7 +16,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 
 public class Editor_TabDescriptor extends RelationDescriptor {
-  private static final Icon ICON = IconUtil.getIcon("editor.png");
+  private static final Icon ICON = MPSIcons.Nodes.Editor;
 
   public Editor_TabDescriptor() {
   }

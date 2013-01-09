@@ -64,7 +64,6 @@
         <patternset refid="excluded.modules"/>
       </modules>
       <!--<model file="${mps.home}/core/languageDesign/smodelTests/solutions/jetbrains.mps.smodel.test/jetbrains/mps/smodel/test/smodelOperations.mps"/>-->
-      <!--<project file="${mps.home}/languages/baseLanguage/baseLanguage/baseLanguage.mpr"/>-->
     </mps.test.generation>
   </target>
 
@@ -131,79 +130,7 @@
       <macro name="samples_home" path="${mps.home}/samples"/>
       <perfomancereport file="${mps.home}/generation.perfomance"/>
 
-      <!-- Bootstrap tests -->
-      <project file="${mps.home}/languages/baseLanguage/baseLanguage/baseLanguage.mpr"/>
-      <project file="${mps.home}/languages/baseLanguage/baseLanguageInternal/baseLanguageInternal.mpr"/>
-      <project file="${mps.home}/languages/baseLanguage/closures/closures.mpr"/>
-      <project file="${mps.home}/languages/baseLanguage/collections/collections.mpr"/>
-      <project file="${mps.home}/languages/baseLanguage/javadoc/javadoc.mpr"/>
-      <project file="${mps.home}/languages/baseLanguage/logging/logging.mpr"/>
-      <project file="${mps.home}/languages/baseLanguage/tuples/tuples.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/actions/actions.mpr"/>
-      <project file="${mps.home}/core/languageDesign/annotations/annotations.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/behavior/behavior.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/constraints/constraints.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/core/core.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/dataFlow/dataFlow.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/editor/editor.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/findUsages/findUsages.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/generator/generator.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/intentions/intentions.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/pattern/pattern.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/plugin/plugin.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/quotation/quotation.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/refactoring/refactoring.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/script/script.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/sharedConcepts/sharedConcepts.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/smodel/smodel.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/structure/structure.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/stubs/stubs.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/test/test.mpr"/>
-      <project file="${mps.home}/languages/languageDesign/typesystem/typesystem.mpr"/>
-      <project file="${mps.home}/languages/util/builders/builders.mpr"/>
-      <project file="${mps.home}/languages/util/buildlanguage/BuildLanguage.mpr"/>
-      <project file="${mps.home}/languages/util/gtext/gtext.mpr"/>
-      <project file="${mps.home}/languages/util/extensionMethod/MethodExtension.mpr"/>
-      <project file="${mps.home}/languages/util/regexp/regexp.mpr"/>
-      <project file="${mps.home}/languages/util/xml/xml/xml.mpr"/>
-      <project file="${mps.home}/languages/util/xmlDeprecated/xmlDeprecated.mpr"/>
-      <project file="${mps.home}/languages/util/xmlUnitTest/xmlUnitTest.mpr"/>
-
-      <!-- Applications tests -->
-      <project file="${mps.home}/core/kernel/kernelSolution/kernel.mpr"/>
-      <project file="${mps.home}/core/debug/debugProject/debugProject.mpr"/>
-      <project file="${mps.home}/core/kernel/traceinfo/traceInfo.mpr"/>
-      <project file="${mps.home}/core/tests/testMake/testMake.mpr"/>
-      <project file="${mps.home}/core/languageDesign/mps-lite/mps-lite.mpr"/>
-      <project file="${mps.home}/languages/util/quickQueryLanguage/quickQueryLanguage.mpr"/>
-      <project file="${mps.home}/languages/util/uiLanguage/uiLanguage.mpr"/>
-      <project file="${mps.home}/languages/util/ypath/YPath.mpr"/>
-      <project file="${mps.home}/languages/util/dates/dates.mpr"/>
-      <project file="${mps.home}/languages/baseLanguage/unitTest/unitTest.mpr"/>
-      <project file="${mps.home}/languages/util/math/mathLanguage.mpr"/>
-      <project file="${mps.home}/languages/util/money/MoneyLang.mpr"/>
-<!--
-      <project file="${mps.home}/languages/util/contracts/contracts.mpr"/>
--->
-      <project file="${mps.home}/workbench/ideSolution/ide.mpr"/>
-
-      <!-- Samples -->
-      <project file="${mps.home}/samples/complexLanguage/Complex.mpr"/>
-      <project file="${mps.home}/samples/matrixLanguage/jetbrains.mps.matrixLanguage.mpr"/>
-      <project file="${mps.home}/samples/xmlLiterals/jetbrains.mps.samples.xmlLiterals.mpr"/>
-      <project file="${mps.home}/samples/agreement/agreement.mpr"/>
-      <project file="${mps.home}/samples/calculator-tutorial/calculator-tutorial.mpr"/>
-      <project file="${mps.home}/samples/dslbook_example/dslbook_example.mpr"/>
-      <project file="${mps.home}/samples/fixedLengthReader/fixedLengthReader.mpr"/>
-      <project file="${mps.home}/samples/formulaLanguage/formulaLanguage.mpr"/>
-      <project file="${mps.home}/samples/generator_demo/generator_demo.mpr"/>
-      <project file="${mps.home}/samples/sampleXML/sampleXML.mpr"/>
-      <project file="${mps.home}/samples/theSimplestLanguage/theSimplestLanguage.mpr"/>
-    </mps.test.generation>
-    <mps.test.generation fork="true" compile="false" showdiff="false" invoketests="false" loglevel="info"
-                         useperrootgeneration="${per.root.generation}" saveondisk="${save.on.disk}">
-      <jvmargs refid="mps.args"/>
-      <model file="${mps.home}/languages/util/buildlanguage/solutions/jetbrains.mps.buildlangauge.mpsautobuild/jetbrains/mps/build/mpsautobuild.mps"/>
+      <project file="${mps.home}/MPS.mpr"/>
     </mps.test.generation>
   </target>
 

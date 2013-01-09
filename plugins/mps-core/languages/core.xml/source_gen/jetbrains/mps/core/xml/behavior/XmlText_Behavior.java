@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SConcept;
 
@@ -33,7 +33,7 @@ public class XmlText_Behavior {
     SNode left = SNodeOperations.getPrevSibling(thisNode);
     if (SNodeOperations.isInstanceOf(left, "jetbrains.mps.core.xml.structure.XmlContent")) {
       SNode leftContent = SNodeOperations.cast(left, "jetbrains.mps.core.xml.structure.XmlContent");
-      return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(leftContent))), "virtual_textLike_1262430001741498277", new Object[]{}) || isEmpty_95m3ba_a0a0b0b0e(SPropertyOperations.getString(thisNode, "value")) && (SNodeOperations.getNextSibling(thisNode) == null);
+      return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(leftContent))), "virtual_textLike_1262430001741498277", new Object[]{}) || isEmpty_95m3ba_a0a0b0b0e(SPropertyOperations.getString(thisNode, "value")) && (SNodeOperations.getNextSibling(thisNode) == null);
     }
     return false;
   }

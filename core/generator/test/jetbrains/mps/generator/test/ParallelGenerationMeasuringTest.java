@@ -30,7 +30,7 @@ public class ParallelGenerationMeasuringTest extends GenerationTestBase {
 
   @Test
   public void testParallelEditor() throws IOException {
-    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/languages/baseLanguage/baseLanguage/baseLanguage.mpr"));
+    final Project p = TestMain.loadProject(new File(System.getProperty("user.dir") + "/MPS.mpr"));
     final SModelDescriptor descr = findModel(p, "jetbrains.mps.baseLanguage.editor");
 
     doMeasureParallelGeneration(p, descr, 4);

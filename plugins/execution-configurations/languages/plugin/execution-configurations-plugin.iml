@@ -32,6 +32,7 @@
     <orderEntry type="module" module-name="execution-configurations-unitTests" />
     <orderEntry type="module" module-name="debugger-java-runtime" />
     <orderEntry type="module" module-name="execution-api" />
+    <orderEntry type="module" module-name="mps-icons" />
   </component>
 </module>
 

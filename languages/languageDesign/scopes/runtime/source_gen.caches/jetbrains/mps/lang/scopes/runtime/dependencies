@@ -39,6 +39,8 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeUtil" />
     <classNode extendsClassName="jetbrains.mps.scope.Scope" />
   </dependency>
   <dependency className="jetbrains.mps.lang.scopes.runtime.LazyParentScope" file="LazyParentScope.java">

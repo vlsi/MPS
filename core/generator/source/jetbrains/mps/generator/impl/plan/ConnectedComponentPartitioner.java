@@ -70,7 +70,7 @@ public class ConnectedComponentPartitioner {
       }
       SNode targetNode = ref.getTargetNode();
       if (targetNode != null) {
-        Integer targetIndex = rootIndex.get(targetNode.getTopmostAncestor());
+        Integer targetIndex = rootIndex.get(targetNode.getContainingRoot());
         if (targetIndex != null) {
           dependsOn[targetIndex] = 1;
         }

@@ -55,7 +55,6 @@ import jetbrains.mps.util.NameUtil;
 
 import java.awt.Color;
 import java.awt.Graphics;
-import java.awt.Rectangle;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -825,7 +824,7 @@ public abstract class EditorCell_Basic implements EditorCell {
         return null;
       }
 
-      assert anchorCell.getParent() != null : "No cell parent for node " + node.getSNodeId().toString() + " " + node.getModel();
+      assert anchorCell.getParent() != null : "No cell parent for node " + node.getNodeId().toString() + " " + node.getModel();
 
       jetbrains.mps.openapi.editor.cells.EditorCell nextSibling = APICellAdapter.getNextSibling(anchorCell);
       if (nextSibling instanceof EditorCell_STHint) {

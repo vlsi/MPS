@@ -49,7 +49,7 @@ public class int_unboxing_SubtypingRule extends SubtypingRule_Runtime implements
       {
         SNode nodeToMatch_int_unboxing_pyyrzk_a0a;
         nodeToMatch_int_unboxing_pyyrzk_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_int_unboxing_pyyrzk_a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_int_unboxing_pyyrzk_a0a.getConcept().getConceptId()))) {
           return false;
         }
         {

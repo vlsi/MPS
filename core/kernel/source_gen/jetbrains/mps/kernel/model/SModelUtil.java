@@ -225,7 +225,7 @@ public class SModelUtil {
 
   public static boolean isAcceptableTarget(SNode linkDeclaration, SNode referentNode) {
     SNode linkTargetConcept = SLinkOperations.getTarget(linkDeclaration, "target", false);
-    return isAssignableConcept(referentNode.getConcept().getId(), NameUtil.nodeFQName(linkTargetConcept));
+    return isAssignableConcept(referentNode.getConcept().getConceptId(), NameUtil.nodeFQName(linkTargetConcept));
   }
 
   public static boolean isMultipleLinkDeclaration(@NotNull SNode linkDeclaration) {

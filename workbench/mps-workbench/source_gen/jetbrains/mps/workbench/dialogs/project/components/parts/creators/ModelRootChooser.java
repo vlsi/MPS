@@ -51,7 +51,11 @@ public class ModelRootChooser implements Computable<ModelRootDescriptor> {
 
       if (PersistenceRegistry.DEFAULT_MODEL_ROOT.equals(selectedType)) {
         DefaultModelRoot result = new DefaultModelRoot();
-        result.setPath(dir.getPath());
+        result.setContentRoot((dir.isDirectory() ?
+          dir.getPath() :
+          dir.getParent().getPath()
+        ));
+        result.addFile(DefaultModelRoot.SOURCE_ROOTS, dir.getPath());
         return result.toDescriptor();
       } else {
         SModelRoot result = new SModelRoot();

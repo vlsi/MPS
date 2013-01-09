@@ -13,7 +13,7 @@
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1192794744107">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/intention.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/intentionBulb.png" />
       <property name="name" nameId="tpck.1169194664001" value="IntentionDeclaration" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Intention" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2522969319638091381" resolveInfo="BaseIntentionDeclaration" />
@@ -81,7 +81,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2522969319638198293">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/surround_with_intention.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/surroundWithIntention.png" />
       <property name="name" nameId="tpck.1169194664001" value="SurroundWithIntentionDeclaration" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="Surround-With Intention" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2522969319638091381" resolveInfo="BaseIntentionDeclaration" />

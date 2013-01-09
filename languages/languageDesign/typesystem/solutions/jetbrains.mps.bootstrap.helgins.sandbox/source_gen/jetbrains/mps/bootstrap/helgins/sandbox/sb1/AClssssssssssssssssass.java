@@ -41,7 +41,7 @@ public class AClssssssssssssssssass {
       {
         SNode nodeToMatch_AClssssssssssssssssass_axt657_a0a0a0a;
         nodeToMatch_AClssssssssssssssssass_axt657_a0a0a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_AClssssssssssssssssass_axt657_a0a0a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_AClssssssssssssssssass_axt657_a0a0a0a.getConcept().getConceptId()))) {
           return false;
         }
         patternVar_class = nodeToMatch_AClssssssssssssssssass_axt657_a0a0a0a.getReferenceTarget("classifier");

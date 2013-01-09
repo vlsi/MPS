@@ -7,7 +7,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import java.util.List;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
@@ -32,11 +32,11 @@ public class ConceptRef {
   }
 
   public void concept_conceptProperties(SNode exprConcept) {
-    boolean b = BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(exprConcept)), "virtual_lvalue_1262430001741497939", new Object[]{});
+    boolean b = BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(exprConcept)), "virtual_lvalue_1262430001741497939", new Object[]{});
   }
 
   public void concept_conceptLinkTargets(SNode conceptFunctionConcept) {
-    List<SNode> applicableParams = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), new SConceptNodeAdapter(NameUtil.nodeFQName(conceptFunctionConcept)), "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
+    List<SNode> applicableParams = BehaviorReflection.invokeVirtualStatic((Class<List<SNode>>) ((Class) Object.class), SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(conceptFunctionConcept)), "virtual_getApplicableConceptFunctionParameter_3044950653914717136", new Object[]{});
   }
 
   public void concept_types() {

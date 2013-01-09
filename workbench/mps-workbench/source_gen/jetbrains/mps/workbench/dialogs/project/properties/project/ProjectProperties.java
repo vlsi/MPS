@@ -66,5 +66,6 @@ public class ProjectProperties {
     myProjectDescriptor.getTestConfigurations().clear();
     myProjectDescriptor.getTestConfigurations().addAll(myTestConfigs);
     project.setProjectDescriptor(myProjectDescriptor);
+    myTestConfigsChanged = false;
   }
 }

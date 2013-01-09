@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="gwtsupport.buildtest" uuid="04462093-4c58-4a21-85b6-bef85bbb0577" compileInMPS="true">
   <models>
-    <modelRoot path="${module}/" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="." />
+    </modelRoot>
   </models>
   <sourcePath />
   <dependencies>

@@ -73,7 +73,7 @@ public class PackagedLanguageTest {
     Assert.assertEquals(1, structureModel.rootsCount());
     SNode root = structureModel.rootsIterator().next();
     Assert.assertEquals(PACKAGED_CONCEPT, SNodeAccessUtil.getProperty(root, "name"));
-    final SNode propertyDeclaration = root.getChild("propertyDeclaration");
+    final SNode propertyDeclaration = jetbrains.mps.util.SNodeOperations.getChild(root, "propertyDeclaration");
     Assert.assertNotNull(propertyDeclaration);
     Assert.assertEquals("someProperty", SNodeAccessUtil.getProperty(propertyDeclaration, "name"));
   }
@@ -87,8 +87,7 @@ public class PackagedLanguageTest {
   }
 
   private void checkIconsLoaded() {
-    final SModelDescriptor sandboxModelDescriptor = SModelRepository.getInstance().getModelDescriptor(SModelFqName.fromString("ProjectWithPackagedLanguage.sandbox.sandbox"));
-    final SNode packagedConceptInstance = new SNode(sandboxModelDescriptor.getSModel(), PACKAGED_LANGUAGE + ".structure." + PACKAGED_CONCEPT);
+    final SNode packagedConceptInstance = new SNode(PACKAGED_LANGUAGE + ".structure." + PACKAGED_CONCEPT);
     final Icon icon = IconManager.getIconFor(packagedConceptInstance);
     Assert.assertNotNull(icon);
     Assert.assertEquals(16, icon.getIconHeight());

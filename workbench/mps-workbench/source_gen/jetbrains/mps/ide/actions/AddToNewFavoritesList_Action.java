@@ -4,7 +4,7 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -22,7 +22,7 @@ import javax.swing.tree.TreeNode;
 import jetbrains.mps.logging.Logger;
 
 public class AddToNewFavoritesList_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("addFavoritesList.png");
+  private static final Icon ICON = AllIcons.General.AddFavoritesList;
 
   public AddToNewFavoritesList_Action() {
     super("Add to New Favorites List", "", ICON);

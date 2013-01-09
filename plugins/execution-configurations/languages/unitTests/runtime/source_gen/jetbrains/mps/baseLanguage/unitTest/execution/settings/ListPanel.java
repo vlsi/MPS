@@ -33,12 +33,16 @@ import javax.swing.JLabel;
 import com.intellij.openapi.progress.ProgressManager;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import jetbrains.mps.util.NameUtil;
+import java.util.Set;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import java.util.Collections;
 import jetbrains.mps.findUsages.SearchType;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.progress.ProgressMonitorAdapter;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import javax.swing.AbstractListModel;
@@ -163,7 +167,9 @@ public class ListPanel extends JPanel {
           ModelAccess.instance().runReadAction(new Runnable() {
             public void run() {
               for (SNode concept : Sequence.fromIterable(TestNodeWrapperFactory.getWrappedRootConcepts())) {
-                ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, GlobalScope.getInstance(), new ProgressMonitorAdapter(ProgressManager.getInstance().getProgressIndicator()))));
+                SConcept c = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(concept));
+                Set<SNode> usages = ((Set) FindUsagesManager.getInstance().findUsages(Collections.singleton(c), SearchType.INSTANCES, GlobalScope.getInstance(), new ProgressMonitorAdapter(ProgressManager.getInstance().getProgressIndicator())));
+                ListSequence.fromList(nodesList).addSequence(SetSequence.fromSet(usages));
               }
             }
           });

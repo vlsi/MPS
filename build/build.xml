@@ -1,10 +1,12 @@
 <project name="buildMPS" default="build">
+  <property name="mps.sign" location="sign"/>
 
   <property name="idea_home" location=".." />
 
   <target name="build">
     <ant antfile="buildCore.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildCoreEx.xml" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="buildJava.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildWorkbench.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildStandalone.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildDates.xml" inheritAll="true" useNativeBasedir="true" />
@@ -17,11 +19,13 @@
     <ant antfile="buildVcs.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildDebuggerPlugin.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildExecutionPlugin.xml" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="buildDeprecatedBuildlanguage.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildObsolete.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildBuildUI.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildMPS.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildDistribution.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildExe.xml" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="${mps.sign}/buildDmg.xml" inheritAll="true" useNativeBasedir="true" />
   </target>
   
   <target name="clean">

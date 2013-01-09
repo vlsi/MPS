@@ -20,16 +20,19 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.vfs.IFile;
+import org.jetbrains.annotations.Nullable;
 
 public class StubSolution extends Solution {
-  protected StubSolution(SolutionDescriptor descriptor, IFile file) {
+  protected StubSolution(SolutionDescriptor descriptor, @Nullable IFile file) {
     super(descriptor, file);
   }
 
   //this is for stubs framework & tests only. Can be later converted into subclass
   public static Solution newInstance(SolutionDescriptor descriptor, MPSModuleOwner moduleOwner) {
-    Solution solution = new StubSolution(descriptor, null);
+    return register(descriptor, moduleOwner, new StubSolution(descriptor, null));
+  }
 
+  protected static Solution register(SolutionDescriptor descriptor, MPSModuleOwner moduleOwner, Solution solution) {
     Solution registered = MPSModuleRepository.getInstance().registerModule(solution, moduleOwner);
     if (registered == solution) {
       solution.setSolutionDescriptor(descriptor, false);

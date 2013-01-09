@@ -77,8 +77,8 @@ public class SNodeCompare {
   }
 
   private static boolean nodeChildrenEquals(SNode a, SNode b) {
-    Set<String> roles = SetSequence.fromSetWithValues(new HashSet<String>(), a.getChildRoles(true));
-    SetSequence.fromSet(roles).addSequence(SetSequence.fromSet(b.getChildRoles(true)));
+    Set<String> roles = SetSequence.fromSetWithValues(new HashSet<String>(), SNodeOperations.getChildRoles(a, true));
+    SetSequence.fromSet(roles).addSequence(SetSequence.fromSet(SNodeOperations.getChildRoles(b, true)));
     for (String r : SetSequence.fromSet(roles)) {
       List<SNode> aChildren = a.getChildren(r);
       List<SNode> bChildren = b.getChildren(r);
@@ -95,7 +95,7 @@ public class SNodeCompare {
   }
 
   public static boolean nodeEquals(SNode a, SNode b) {
-    return eq_acety0_a0a0a0a0e(a.getConcept().getId(), b.getConcept().getId()) && eq_acety0_a0a0a0a0e_0(a.getSNodeId(), b.getSNodeId()) && nodePropertiesEquals(a, b) && nodeReferencesEquals(a, b) && nodeChildrenEquals(a, b);
+    return eq_acety0_a0a0a0a0e(a.getConcept().getConceptId(), b.getConcept().getConceptId()) && eq_acety0_a0a0a0a0e_0(a.getNodeId(), b.getNodeId()) && nodePropertiesEquals(a, b) && nodeReferencesEquals(a, b) && nodeChildrenEquals(a, b);
   }
 
   private static boolean neq_acety0_a0a0c0b(Object a, Object b) {

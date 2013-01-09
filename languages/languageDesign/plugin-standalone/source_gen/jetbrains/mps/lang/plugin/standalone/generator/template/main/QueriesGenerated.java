@@ -282,7 +282,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1228239043085(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.plugin.structure.InterfaceGroup")).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(it, "caption") + _context.getOriginalCopiedInputNode(it).getSNodeId().toString();
+        return SPropertyOperations.getString(it, "caption") + _context.getOriginalCopiedInputNode(it).getNodeId().toString();
       }
     }, true);
   }
@@ -302,7 +302,7 @@ public class QueriesGenerated {
       }
     }).sort(new ISelector<SNode, String>() {
       public String select(SNode it) {
-        return SPropertyOperations.getString(it, "caption") + _context.getOriginalCopiedInputNode(it).getSNodeId().toString();
+        return SPropertyOperations.getString(it, "caption") + _context.getOriginalCopiedInputNode(it).getNodeId().toString();
       }
     }, true);
   }

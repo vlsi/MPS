@@ -134,7 +134,7 @@
               <property name="value" nameId="tpee.1070475926801" value="${language_descriptor}/icons/rootableConcept.png" />
             </node>
             <node role="ifFalse" roleId="tpee.1163668934364" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="2098761829388425399">
-              <property name="value" nameId="tpee.1070475926801" value="${language_descriptor}/icons/nonRootableConcept.png" />
+              <property name="value" nameId="tpee.1070475926801" value="${language_descriptor}/icons/structure.png" />
             </node>
           </node>
         </node>

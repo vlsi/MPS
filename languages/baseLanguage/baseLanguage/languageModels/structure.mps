@@ -28,7 +28,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068390468198">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/classType.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/class.png" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Class declaration" />
       <property name="name" nameId="tpck.1169194664001" value="ClassConcept" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
@@ -51,7 +51,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068580123132">
       <property name="abstract" nameId="tpce.4628067390765956802" value="true" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/methodNew.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/method.png" />
       <property name="name" nameId="tpck.1169194664001" value="BaseMethodDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1109279851642" resolveInfo="GenericDeclaration" />
@@ -84,7 +84,7 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068580123157" resolveInfo="Statement" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068580123165">
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/methodNew.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/method.png" />
       <property name="name" nameId="tpck.1169194664001" value="InstanceMethodDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="method" />
@@ -157,7 +157,7 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1164118113764" resolveInfo="PrimitiveType" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1070462154015">
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/fieldNew.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/field.png" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="static field declaration" />
       <property name="name" nameId="tpck.1169194664001" value="StaticFieldDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
@@ -340,7 +340,7 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1083245097125">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/enumType.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/enum.png" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Enumeration class declaration" />
       <property name="name" nameId="tpck.1169194664001" value="EnumClass" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
@@ -1340,7 +1340,7 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="base/classifiers" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068390468200">
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/fieldNew.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/field.png" />
       <property name="name" nameId="tpck.1169194664001" value="FieldDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="field" />

@@ -17,13 +17,13 @@ package jetbrains.mps.persistence;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.project.SModelRoot;
-import jetbrains.mps.util.misc.hash.HashMap;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.persistence.ModelFactory;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 import org.jetbrains.mps.openapi.persistence.ModelRootFactory;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 /**
@@ -32,6 +32,7 @@ import java.util.Map;
 public class PersistenceRegistry extends org.jetbrains.mps.openapi.persistence.PersistenceFacade implements CoreComponent {
 
   public static final String DEFAULT_MODEL_ROOT = "default";
+  public static final String FILE_BASED_MODEL_ROOT = "file_based";
   public static final String OBSOLETE_MODEL_ROOT = "obsolete";
   public static final String JAVA_CLASSES_ROOT = "java_classes";
 

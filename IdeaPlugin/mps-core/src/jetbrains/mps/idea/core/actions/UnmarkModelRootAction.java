@@ -57,12 +57,17 @@ public class UnmarkModelRootAction extends AnAction {
     List<ModelRoot> modelRoots = new ArrayList<ModelRoot>(configurationBean.getModelRoots());
     Map<String, DefaultModelRoot> rootsMap = new HashMap<String, DefaultModelRoot>();
     for (ModelRoot modelRoot : modelRoots) {
-      if (modelRoot instanceof DefaultModelRoot) {
-        rootsMap.put(((DefaultModelRoot) modelRoot).getPath(), (DefaultModelRoot) modelRoot);
+      for (String sourceRoot : ((DefaultModelRoot) modelRoot).getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
+        rootsMap.put(sourceRoot, (DefaultModelRoot) modelRoot);
       }
     }
     for (VirtualFile vFile : vFiles) {
-      modelRoots.remove(rootsMap.get(VirtualFileManager.extractPath(vFile.getUrl())));
+      String path = VirtualFileManager.extractPath(vFile.getUrl());
+      DefaultModelRoot modelRoot = rootsMap.get(path);
+      modelRoot.deleteFile(DefaultModelRoot.SOURCE_ROOTS, path);
+      if (modelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS).isEmpty()) {
+        modelRoots.remove(modelRoot);
+      }
     }
     configurationBean.setModelRoots(modelRoots);
     mpsFacet.setConfiguration(configurationBean);
@@ -88,7 +93,9 @@ public class UnmarkModelRootAction extends AnAction {
     Map<String, DefaultModelRoot> rootsMap = new HashMap<String, DefaultModelRoot>();
     for (ModelRoot modelRoot : modelRoots) {
       if (modelRoot instanceof DefaultModelRoot) {
-        rootsMap.put(((DefaultModelRoot) modelRoot).getPath(), (DefaultModelRoot) modelRoot);
+        for (String sourceRoot : ((DefaultModelRoot) modelRoot).getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
+          rootsMap.put(sourceRoot, (DefaultModelRoot) modelRoot);
+        }
       }
     }
     for (VirtualFile vFile : vFiles) {

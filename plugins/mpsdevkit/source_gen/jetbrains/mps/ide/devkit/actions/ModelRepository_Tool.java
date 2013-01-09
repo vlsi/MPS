@@ -4,7 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.plugins.tool.GeneratedTool;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import jetbrains.mps.icons.MPSIcons;
 import jetbrains.mps.ide.modelRepositoryViewer.ModelRepositoryComponent;
 import javax.swing.JPanel;
 import com.intellij.openapi.project.Project;
@@ -17,7 +17,7 @@ import com.intellij.openapi.actionSystem.ActionManager;
 import com.intellij.openapi.actionSystem.ActionPlaces;
 
 public class ModelRepository_Tool extends GeneratedTool {
-  private static final Icon ICON = IconUtil.getIcon("model.png");
+  private static final Icon ICON = MPSIcons.ToolWindows.ModelRepositoryViewer;
   private ModelRepositoryComponent myComponent;
   private JPanel myPanel;
 

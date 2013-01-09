@@ -104,6 +104,8 @@
   <import index="u6hn" modelUID="f:java_stub#86441d7a-e194-42da-81a5-2161ec62a379#jetbrains.mps.ide.typesystem.trace(MPS.Workbench/jetbrains.mps.ide.typesystem.trace@java_stub)" version="-1" />
   <import index="as9o" modelUID="f:java_stub#3f233e7f-b8a6-46d2-a57f-795d56775243#org.jetbrains.annotations(Annotations/org.jetbrains.annotations@java_stub)" version="-1" />
   <import index="nu8v" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" version="-1" />
+  <import index="jehi" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.icons(MPS.Platform/com.intellij.icons@java_stub)" version="-1" />
+  <import index="c4ym" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#jetbrains.mps.icons(MPS.Platform/jetbrains.mps.icons@java_stub)" version="-1" />
   <import index="tp4f" modelUID="r:00000000-0000-4000-0000-011c89590373(jetbrains.mps.baseLanguage.classifiers.structure)" version="0" implicit="yes" />
   <import index="tp4k" modelUID="r:00000000-0000-4000-0000-011c89590368(jetbrains.mps.lang.plugin.structure)" version="35" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
@@ -736,6 +738,12 @@
     </node>
   </root>
   <root id="5883033498657845915">
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="7362911312202877334">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7362911312203015381">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4ym.~MPSIcons$Nodes" resolveInfo="MPSIcons.Nodes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4ym.~MPSIcons$Nodes%dDevKit" resolveInfo="DevKit" />
+      </node>
+    </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="5883033498657845916">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5883033498657845917">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="5883033498657845918">
@@ -925,11 +933,14 @@
       <property name="isOptional" nameId="tp4k.1221669969834" value="true" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="kt54.~MPSDataKeys%dNAMESPACE" resolveInfo="NAMESPACE" />
     </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="3273304147471139916">
-      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-platform/source/jetbrains/mps/fileTypes/icons/devkit.png" />
-    </node>
   </root>
   <root id="5883033498657845969">
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="7362911312203049827">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7362911312203049903">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4ym.~MPSIcons$Nodes" resolveInfo="MPSIcons.Nodes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4ym.~MPSIcons$Nodes%dLanguage" resolveInfo="Language" />
+      </node>
+    </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="5883033498657845970">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5883033498657845971">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="4023191336101502327">
@@ -1114,11 +1125,14 @@
       <property name="isOptional" nameId="tp4k.1221669969834" value="true" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="kt54.~MPSDataKeys%dNAMESPACE" resolveInfo="NAMESPACE" />
     </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="3273304147471066449">
-      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-platform/source/jetbrains/mps/fileTypes/icons/projectLanguage.png" />
-    </node>
   </root>
   <root id="1744445256079578595">
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="7362911312203040894">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7362911312203041054">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4ym.~MPSIcons$Nodes" resolveInfo="MPSIcons.Nodes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4ym.~MPSIcons$Nodes%dEditor" resolveInfo="Editor" />
+      </node>
+    </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="1744445256079578596">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1744445256079578597">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5624975557544115440">
@@ -1462,11 +1476,14 @@
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1744445256079578724" />
       <node role="type" roleId="tpee.5680397130376446158" type="tp25.SNodeType" typeId="tp25.1138055754698" id="1744445256079578725" />
     </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4470409037201091404">
-      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/solution/icons/editor.png" />
-    </node>
   </root>
   <root id="1744445256079578766">
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="7362911312203057612">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7362911312203057659">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4ym.~MPSIcons$Nodes" resolveInfo="MPSIcons.Nodes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4ym.~MPSIcons$Nodes%dStructure" resolveInfo="Structure" />
+      </node>
+    </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="1744445256079578767">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="1744445256079578768">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1744445256079578769">
@@ -1538,9 +1555,6 @@
       <property name="name" nameId="tpck.1169194664001" value="context" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xh9.~MPSCommonDataKeys%dOPERATION_CONTEXT" resolveInfo="OPERATION_CONTEXT" />
       <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="8898893144448210023" />
-    </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4470409037201091398">
-      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/solution/icons/structure.png" />
     </node>
     <node role="updateBlock" roleId="tp4k.1203083196627" type="tp4k.IsApplicableBlock" typeId="tp4k.1205681243813" id="5941876021112524081">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="5941876021112524082">
@@ -3528,14 +3542,14 @@
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="2662234144540708716">
                 <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6189792670245253235">
                   <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6189792670245253236">
+                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2381446136244094073">
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetNodeId()%cjetbrains%dmps%dsmodel%dSNodeId" resolveInfo="getNodeId" />
+                    </node>
                     <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6189792670245253237">
                       <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="6189792670245253238" />
                       <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="6189792670245253239">
                         <link role="member" roleId="tp4f.1205756909548" targetNodeId="2662234144540708723" resolveInfo="node" />
                       </node>
-                    </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6189792670245253240">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetSNodeId()%cjetbrains%dmps%dsmodel%dSNodeId" resolveInfo="getSNodeId" />
                     </node>
                   </node>
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6189792670245253241">
@@ -3558,6 +3572,12 @@
     </node>
   </root>
   <root id="2662234144540708724">
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="1827225101095238798">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1827225101095298385">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4ym.~MPSIcons$Actions" resolveInfo="MPSIcons.Actions" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4ym.~MPSIcons$Actions%dShowCellInExplorer" resolveInfo="ShowCellInExplorer" />
+      </node>
+    </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="2662234144540708725">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2662234144540708726">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2662234144540708727">
@@ -3598,9 +3618,6 @@
       <property name="name" nameId="tpck.1169194664001" value="cell" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="1d7m.~MPSEditorDataKeys%dEDITOR_CELL" resolveInfo="EDITOR_CELL" />
       <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="8898893144448210090" />
-    </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4470409037201091372">
-      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/solution/icons/cellExplorer.png" />
     </node>
   </root>
   <root id="1366781238034273697">
@@ -4383,6 +4400,12 @@
     </node>
   </root>
   <root id="8970236339104100153">
+    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="8024349686116723260">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8024349686116725318">
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ai1m.~IdeIcons%dDEFAULT_ICON" resolveInfo="DEFAULT_ICON" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="ai1m.~IdeIcons" resolveInfo="IdeIcons" />
+      </node>
+    </node>
     <node role="toolDisposeBlock" roleId="tp4k.8096638938275469615" type="tp4k.DisposeBlock" typeId="tp4k.1213888677711" id="6982149494251383317">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6982149494251383318">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6205303070091375769">
@@ -4509,9 +4532,6 @@
         </node>
       </node>
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="8970236339104100173" />
-    </node>
-    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="6791676465872322072">
-      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-platform/source/jetbrains/mps/ide/icons/nodes/default.png" />
     </node>
     <node role="toolInitBlock" roleId="tp4k.8096638938275469614" type="tp4k.InitBlock" typeId="tp4k.1213888653896" id="7779150961553183890">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7779150961553183891">
@@ -4809,6 +4829,12 @@
     </node>
   </root>
   <root id="1212767491070836979">
+    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="8024349686116685138">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8024349686116686527">
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$Toolwindows%dToolWindowProject" resolveInfo="ToolWindowProject" />
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$Toolwindows" resolveInfo="AllIcons.Toolwindows" />
+      </node>
+    </node>
     <node role="methodDeclaration" roleId="tp4k.6547237850567462848" type="tp4f.DefaultClassifierMethodDeclaration" typeId="tp4f.1205769003971" id="1212767491070836980">
       <property name="name" nameId="tpck.1169194664001" value="makeAvailable" />
       <node role="returnType" roleId="tpee.1068580123133" type="tpee.VoidType" typeId="tpee.1068581517677" id="1212767491070836981" />
@@ -4893,9 +4919,6 @@
       <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="1212767491070837020">
         <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~JPanel" resolveInfo="JPanel" />
       </node>
-    </node>
-    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="6791676465872322071">
-      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-platform/source/jetbrains/mps/fileTypes/icons/project.png" />
     </node>
     <node role="toolInitBlock" roleId="tp4k.8096638938275469614" type="tp4k.InitBlock" typeId="tp4k.1213888653896" id="7779150961553184039">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7779150961553184040">
@@ -5047,6 +5070,12 @@
     </node>
   </root>
   <root id="1212767491070837084">
+    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4556363388190283791">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="4556363388190352771">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4ym.~MPSIcons$ToolWindows" resolveInfo="MPSIcons.ToolWindows" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4ym.~MPSIcons$ToolWindows%dModelRepositoryViewer" resolveInfo="ModelRepositoryViewer" />
+      </node>
+    </node>
     <node role="fieldDeclaration" roleId="tp4k.6547237850567462849" type="tp4f.DefaultClassifierFieldDeclaration" typeId="tp4f.1213999088275" id="1212767491070837085">
       <property name="name" nameId="tpck.1169194664001" value="myComponent" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="1212767491070837086" />
@@ -5131,9 +5160,6 @@
       <node role="annotation" roleId="tpee.1188208488637" type="tpee.AnnotationInstance" typeId="tpee.1188207840427" id="1212767491070837186">
         <link role="annotation" roleId="tpee.1188208074048" targetNodeId="e2lb.~Override" resolveInfo="Override" />
       </node>
-    </node>
-    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="6791676465872322073">
-      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-platform/source/jetbrains/mps/fileTypes/icons/model.png" />
     </node>
     <node role="toolInitBlock" roleId="tp4k.8096638938275469614" type="tp4k.InitBlock" typeId="tp4k.1213888653896" id="7779150961553183974">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7779150961553183975">
@@ -5299,6 +5325,12 @@
     </node>
   </root>
   <root id="2191995028863072555">
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="8024349686105960523">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8024349686105967388">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$Actions" resolveInfo="AllIcons.Actions" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$Actions%dRefresh" resolveInfo="Refresh" />
+      </node>
+    </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="2191995028863072556">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2191995028863072557">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2191995028863072558">
@@ -5383,9 +5415,6 @@
       <property name="name" nameId="tpck.1169194664001" value="project" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="6tyf.~PlatformDataKeys%dPROJECT" resolveInfo="PROJECT" />
       <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="8898893144448209991" />
-    </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4470409037201091386">
-      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/solution/icons/reload.png" />
     </node>
   </root>
   <root id="2191995028863072592">
@@ -6516,6 +6545,12 @@
     </node>
   </root>
   <root id="8513716958726547050">
+    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="3666027594276947948">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="7398544034763914044">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4ym.~MPSIcons$ToolWindows" resolveInfo="MPSIcons.ToolWindows" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4ym.~MPSIcons$ToolWindows%dTypeTraceView" resolveInfo="TypeTraceView" />
+      </node>
+    </node>
     <node role="toolDisposeBlock" roleId="tp4k.8096638938275469615" type="tp4k.DisposeBlock" typeId="tp4k.1213888677711" id="7812713049443707299">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="7812713049443707300">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7812713049443707378">
@@ -6734,9 +6769,6 @@
         </node>
         <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="2537645168794098997" />
       </node>
-    </node>
-    <node role="toolIcon" roleId="tp4k.6791676465872004185" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="8513716958726547094">
-      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/languages/languageDesign/typesystem/icons/types.png" />
     </node>
   </root>
   <root id="8513716958726604212">
@@ -6983,6 +7015,9 @@
                                     <property name="value" nameId="tpee.1070475926801" value="Concept \&quot;" />
                                   </node>
                                   <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6283458501093398829">
+                                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="2381446136244094749">
+                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t3eg.~SAbstractConcept%dgetConceptId()%cjava%dlang%dString" resolveInfo="getConceptId" />
+                                    </node>
                                     <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6283458501093398830">
                                       <node role="operand" roleId="tpee.1197027771414" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="6283458501093398831">
                                         <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="8321617901826002798" resolveInfo="node" />
@@ -6990,9 +7025,6 @@
                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6283458501093398832">
                                         <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetConcept()%corg%djetbrains%dmps%dopenapi%dlanguage%dSConcept" resolveInfo="getConcept" />
                                       </node>
-                                    </node>
-                                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6283458501093398833">
-                                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="t3eg.~SAbstractConcept%dgetId()%cjava%dlang%dString" resolveInfo="getId" />
                                     </node>
                                   </node>
                                 </node>
@@ -7503,6 +7535,12 @@
     </node>
   </root>
   <root id="6252705307027051866">
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="8024349686105944716">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8024349686105946234">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$Actions" resolveInfo="AllIcons.Actions" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$Actions%dFind" resolveInfo="Find" />
+      </node>
+    </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="6252705307027051867">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6252705307027051868">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6252705307027051869">
@@ -7713,11 +7751,14 @@
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xh9.~MPSCommonDataKeys%dSCOPE" resolveInfo="SCOPE" />
       <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="6252705307027051951" />
     </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="6252705307027051952">
-      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-workbench/icons/find.png" />
-    </node>
   </root>
   <root id="6252705307027051953">
+    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="8024349686105870203">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8024349686105919565">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$Actions" resolveInfo="AllIcons.Actions" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$Actions%dFind" resolveInfo="Find" />
+      </node>
+    </node>
     <node role="executeFunction" roleId="tp4k.1203083461638" type="tp4k.ExecuteBlock" typeId="tp4k.1203083511112" id="6252705307027051954">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="6252705307027051955">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="6252705307027051956">
@@ -8018,9 +8059,6 @@
       <property name="name" nameId="tpck.1169194664001" value="scope" />
       <link role="key" roleId="tp4k.1217252646389" targetNodeId="5xh9.~MPSCommonDataKeys%dSCOPE" resolveInfo="SCOPE" />
       <node role="condition" roleId="tp4k.5538333046911298738" type="tp4k.RequiredCondition" typeId="tp4k.5538333046911348654" id="6252705307027052076" />
-    </node>
-    <node role="icon" roleId="tp4k.8976425910813834639" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="6252705307027052077">
-      <property name="path" nameId="1oap.8974276187400029899" value="${mps_home}/workbench/mps-workbench/icons/find.png" />
     </node>
   </root>
   <root id="2165106376654390214">
@@ -9092,6 +9130,12 @@
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="2970389781193035836" />
   </root>
   <root id="2970389781193170240">
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="4185256600224311726">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3147458557951000193">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4ym.~MPSIcons$Nodes" resolveInfo="MPSIcons.Nodes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4ym.~MPSIcons$Nodes%dAction" resolveInfo="Action" />
+      </node>
+    </node>
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="2970389781193170241">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2970389781193170242">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2970389781193170243">
@@ -9156,9 +9200,6 @@
         <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2970389781193170240" resolveInfo="Actions" />
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="2970389781193170269">
-      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/actions.png" />
-    </node>
     <node role="createTabBlock" roleId="tp4k.1640281869714699888" type="tp4k.CreateTabBlock" typeId="tp4k.1640281869714699879" id="2970389781193170270">
       <property name="commandOnCreate" nameId="tp4k.1640281869714699886" value="true" />
       <node role="conceptsBlock" roleId="tp4k.1640281869714699882" type="tp4k.GetConceptsBlock" typeId="tp4k.7692832593197705758" id="2970389781193170271">
@@ -9195,6 +9236,12 @@
     </node>
   </root>
   <root id="2565896126719552231">
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="3147458557951003377">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3147458557951003378">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4ym.~MPSIcons$Nodes" resolveInfo="MPSIcons.Nodes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4ym.~MPSIcons$Nodes%dBehavior" resolveInfo="Behavior" />
+      </node>
+    </node>
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="2565896126719552232">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2565896126719552233">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2565896126719552234">
@@ -9260,9 +9307,6 @@
         </node>
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="2565896126719552264">
-      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/behavior.png" />
-    </node>
     <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.Order" typeId="tp4k.2450897840534683975" id="2565896126719552265">
       <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="2565896126719552266">
         <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="9040118078822290721" resolveInfo="Structure" />
@@ -9314,6 +9358,12 @@
     </node>
   </root>
   <root id="2565896126719599486">
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="3147458557951153324">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3147458557951160172">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4ym.~MPSIcons$Nodes" resolveInfo="MPSIcons.Nodes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4ym.~MPSIcons$Nodes%dReduction" resolveInfo="Reduction" />
+      </node>
+    </node>
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="2565896126719599487">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2565896126719599488">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2565896126719599489">
@@ -9416,9 +9466,6 @@
       <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="2565896126719599532">
         <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2565896126719599486" resolveInfo="Generator" />
       </node>
-    </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="2565896126719599533">
-      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/reduction.png" />
     </node>
     <node role="createTabBlock" roleId="tp4k.1640281869714699888" type="tp4k.CreateTabBlock" typeId="tp4k.1640281869714699879" id="2565896126719599534">
       <property name="commandOnCreate" nameId="tp4k.1640281869714699886" value="false" />
@@ -10608,6 +10655,12 @@
     </node>
   </root>
   <root id="2565896126719631163">
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="3147458557951020362">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3147458557951020363">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4ym.~MPSIcons$Nodes" resolveInfo="MPSIcons.Nodes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4ym.~MPSIcons$Nodes%dEditor" resolveInfo="Editor" />
+      </node>
+    </node>
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="2565896126719631164">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2565896126719631165">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2565896126719631166">
@@ -10702,9 +10755,6 @@
         </node>
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="2565896126719631206">
-      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/editor.png" />
-    </node>
     <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.Order" typeId="tp4k.2450897840534683975" id="2565896126719631207">
       <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="2565896126719631208">
         <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="9040118078822290721" resolveInfo="Structure" />
@@ -10749,6 +10799,12 @@
     </node>
   </root>
   <root id="2565896126719631517">
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="3147458557951007640">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3147458557951007641">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4ym.~MPSIcons$Nodes" resolveInfo="MPSIcons.Nodes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4ym.~MPSIcons$Nodes%dConstraint" resolveInfo="Constraint" />
+      </node>
+    </node>
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="2565896126719631518">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2565896126719631519">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2565896126719631520">
@@ -10814,9 +10870,6 @@
         </node>
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="2565896126719631550">
-      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/constraints.png" />
-    </node>
     <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.Order" typeId="tp4k.2450897840534683975" id="2565896126719631551">
       <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="2565896126719631552">
         <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="9040118078822290721" resolveInfo="Structure" />
@@ -10865,6 +10918,12 @@
     </node>
   </root>
   <root id="2565896126719634090">
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="3147458557951011811">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3147458557951011812">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4ym.~MPSIcons$Nodes" resolveInfo="MPSIcons.Nodes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4ym.~MPSIcons$Nodes%dDataFlow" resolveInfo="DataFlow" />
+      </node>
+    </node>
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="2565896126719634091">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2565896126719634092">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2565896126719634093">
@@ -10962,9 +11021,6 @@
         <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2565896126719634090" resolveInfo="Data Flow" />
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="2565896126719634134">
-      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/goRound.png" />
-    </node>
     <node role="createTabBlock" roleId="tp4k.1640281869714699888" type="tp4k.CreateTabBlock" typeId="tp4k.1640281869714699879" id="2565896126719634135">
       <property name="commandOnCreate" nameId="tp4k.1640281869714699886" value="true" />
       <node role="conceptsBlock" roleId="tp4k.1640281869714699882" type="tp4k.GetConceptsBlock" typeId="tp4k.7692832593197705758" id="2565896126719634136">
@@ -11002,6 +11058,12 @@
     </node>
   </root>
   <root id="2565896126719635409">
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="3147458557951027206">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3147458557951027207">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4ym.~MPSIcons$Nodes" resolveInfo="MPSIcons.Nodes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4ym.~MPSIcons$Nodes%dUsagesFinder" resolveInfo="UsagesFinder" />
+      </node>
+    </node>
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="2565896126719635410">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2565896126719635411">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2565896126719635412">
@@ -11045,9 +11107,6 @@
           </node>
         </node>
       </node>
-    </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="2565896126719635431">
-      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/usagesFinder.png" />
     </node>
     <node role="order" roleId="tp4k.3743831881070613126" type="tp4k.Order" typeId="tp4k.2450897840534683975" id="2565896126719635432">
       <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="2565896126719635433">
@@ -11114,6 +11173,12 @@
     </node>
   </root>
   <root id="2565896126719641327">
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="8024349686117106200">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="8024349686117111369">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$Actions" resolveInfo="AllIcons.Actions" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$Actions%dIntentionBulb" resolveInfo="IntentionBulb" />
+      </node>
+    </node>
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="2565896126719641328">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="2565896126719641329">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="2565896126719641330">
@@ -11184,9 +11249,6 @@
         <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="2565896126719641327" resolveInfo="Intentions" />
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="2565896126719641358">
-      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/intention.png" />
-    </node>
     <node role="createTabBlock" roleId="tp4k.1640281869714699888" type="tp4k.CreateTabBlock" typeId="tp4k.1640281869714699879" id="2565896126719641359">
       <property name="commandOnCreate" nameId="tp4k.1640281869714699886" value="true" />
       <node role="conceptsBlock" roleId="tp4k.1640281869714699882" type="tp4k.GetConceptsBlock" typeId="tp4k.7692832593197705758" id="2565896126719641360">
@@ -11223,6 +11285,12 @@
     </node>
   </root>
   <root id="9040118078822013541">
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="3147458557951175897">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3147458557951175898">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4ym.~MPSIcons$Nodes" resolveInfo="MPSIcons.Nodes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4ym.~MPSIcons$Nodes%dRefactoring" resolveInfo="Refactoring" />
+      </node>
+    </node>
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="9040118078822013542">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="9040118078822013543">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9040118078822013544">
@@ -11290,9 +11358,6 @@
         <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="9040118078822013541" resolveInfo="Refactorings" />
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="9040118078822013571">
-      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/refactoring.png" />
-    </node>
     <node role="createTabBlock" roleId="tp4k.1640281869714699888" type="tp4k.CreateTabBlock" typeId="tp4k.1640281869714699879" id="9040118078822013572">
       <property name="commandOnCreate" nameId="tp4k.1640281869714699886" value="true" />
       <node role="conceptsBlock" roleId="tp4k.1640281869714699882" type="tp4k.GetConceptsBlock" typeId="tp4k.7692832593197705758" id="9040118078822013573">
@@ -11329,6 +11394,12 @@
     </node>
   </root>
   <root id="9040118078822014208">
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="3147458557951182436">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3147458557951182437">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4ym.~MPSIcons$Nodes" resolveInfo="MPSIcons.Nodes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4ym.~MPSIcons$Nodes%dTextGen" resolveInfo="TextGen" />
+      </node>
+    </node>
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="9040118078822014209">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="9040118078822014210">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9040118078822014211">
@@ -11432,9 +11503,6 @@
         <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="9040118078822014208" resolveInfo="Textgen" />
       </node>
     </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="9040118078822014254">
-      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/textGen.png" />
-    </node>
     <node role="createTabBlock" roleId="tp4k.1640281869714699888" type="tp4k.CreateTabBlock" typeId="tp4k.1640281869714699879" id="9040118078822014255">
       <property name="commandOnCreate" nameId="tp4k.1640281869714699886" value="true" />
       <node role="conceptsBlock" roleId="tp4k.1640281869714699882" type="tp4k.GetConceptsBlock" typeId="tp4k.7692832593197705758" id="9040118078822014256">
@@ -11472,6 +11540,12 @@
     </node>
   </root>
   <root id="9040118078822014309">
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="3147458557951192542">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3147458557951192543">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4ym.~MPSIcons$Nodes" resolveInfo="MPSIcons.Nodes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4ym.~MPSIcons$Nodes%dType" resolveInfo="Type" />
+      </node>
+    </node>
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="9040118078822014310">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="9040118078822014311">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9040118078822014312">
@@ -11763,9 +11837,6 @@
       <node role="tab" roleId="tp4k.2450897840534683977" type="tp4k.EditorTabReference" typeId="tp4k.2450897840534683979" id="9040118078822014436">
         <link role="editorTab" roleId="tp4k.2450897840534683980" targetNodeId="9040118078822014309" resolveInfo="Typesystem" />
       </node>
-    </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="9040118078822014437">
-      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/rule.png" />
     </node>
     <node role="createTabBlock" roleId="tp4k.1640281869714699888" type="tp4k.CreateTabBlock" typeId="tp4k.1640281869714699879" id="9040118078822014438">
       <property name="commandOnCreate" nameId="tp4k.1640281869714699886" value="true" />
@@ -12513,6 +12584,12 @@
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="9040118078822290409" />
   </root>
   <root id="9040118078822290721">
+    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="3147458557951178717">
+      <node role="iconExpression" roleId="1oap.6976585500156684809" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3147458557951178718">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="c4ym.~MPSIcons$Nodes" resolveInfo="MPSIcons.Nodes" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="c4ym.~MPSIcons$Nodes%dStructure" resolveInfo="Structure" />
+      </node>
+    </node>
     <node role="baseNodeBlock" roleId="tp4k.3743831881070611762" type="tp4k.BaseNodeBlock" typeId="tp4k.3743831881070657672" id="9040118078822290722">
       <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="9040118078822290723">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="9040118078822290724">
@@ -12547,9 +12624,6 @@
           <node role="expression" roleId="tpee.1068580123156" type="tp4k.ConceptFunctionParameter_node" typeId="tp4k.1203853034639" id="9040118078822290739" />
         </node>
       </node>
-    </node>
-    <node role="icon" roleId="tp4k.2386275659558598338" type="1oap.IconResource" typeId="1oap.8974276187400029883" id="9040118078822290740">
-      <property name="path" nameId="1oap.8974276187400029899" value="${solution_descriptor}/icons/structure.png" />
     </node>
   </root>
   <root id="1206195573853570544">

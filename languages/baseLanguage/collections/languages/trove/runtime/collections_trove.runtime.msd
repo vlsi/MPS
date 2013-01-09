@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="collections_trove.runtime" uuid="134ef213-c518-42b0-b12c-c109aa13d320" pluginKind="PLUGIN_CORE" compileInMPS="true">
   <models>
-    <modelRoot path="${module}/" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="." />
+    </modelRoot>
     <modelRoot path="${module}/classes_gen" type="java_classes" />
     <modelRoot path="${module}/lib/trove-2.1.0.jar" type="java_classes" />
   </models>

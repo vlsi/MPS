@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.platform.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -15,7 +15,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.logging.Logger;
 
 public class RollbackChanges_Action extends BaseAction {
-  private static final Icon ICON = IconUtil.getIcon("reset.png");
+  private static final Icon ICON = AllIcons.General.Reset;
 
   public RollbackChanges_Action() {
     super("Rollback", "", ICON);

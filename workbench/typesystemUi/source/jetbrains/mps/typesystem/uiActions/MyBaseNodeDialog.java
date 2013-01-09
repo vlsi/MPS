@@ -103,7 +103,7 @@ public class MyBaseNodeDialog extends BaseNodeDialog {
     ModelAccess.instance().runWriteAction(new Runnable() {
       public void run() {
         if (!myWasRegistered) {
-          myModel.removeRoot(myType.getTopmostAncestor());
+          myModel.removeRoot(myType.getContainingRoot());
           myWasRegistered = true;
         }
         MyBaseNodeDialog.super.dispose();

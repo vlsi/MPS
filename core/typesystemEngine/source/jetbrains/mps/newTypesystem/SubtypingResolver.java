@@ -198,7 +198,7 @@ public class SubtypingResolver {
       return mySuperType;
     }
     public String getConceptFQName() {
-      return mySuperType.getConceptFqName();
+      return mySuperType.getConcept().getId();
     }
   }
 

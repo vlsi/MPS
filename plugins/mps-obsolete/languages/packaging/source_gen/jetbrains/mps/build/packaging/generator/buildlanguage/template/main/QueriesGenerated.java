@@ -32,7 +32,7 @@ import java.util.List;
 import jetbrains.mps.buildlanguage.behavior.PropertyReference_Behavior;
 import jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.build.packaging.behavior.Path_Behavior;
 import jetbrains.mps.build.packaging.behavior.PluginModule_Behavior;
@@ -884,7 +884,7 @@ public class QueriesGenerated {
   }
 
   public static boolean ifMacro_Condition_1203619982544(final IOperationContext operationContext, final IfMacroContext _context) {
-    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_cleanAfterTheJob_1262430001741498148", new Object[]{});
+    return BehaviorReflection.invokeVirtualStatic(Boolean.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_cleanAfterTheJob_1262430001741498148", new Object[]{});
   }
 
   public static boolean ifMacro_Condition_1240398963466(final IOperationContext operationContext, final IfMacroContext _context) {
@@ -1664,7 +1664,7 @@ __switch__:
       }
       // calculate module cycles 
       Set<IModule> modulesToProcess = MapSequence.fromMap(map).keySet();
-      Set<IModule> modulesCopy = SetSequence.fromSet(new LinkedHashSet());
+      Set<IModule> modulesCopy = SetSequence.fromSet(new LinkedHashSet<IModule>());
       SetSequence.fromSet(modulesCopy).addSequence(SetSequence.fromSet(modulesToProcess).sort(new ISelector<IModule, String>() {
         public String select(IModule it) {
           return it.getModuleFqName();
@@ -1738,7 +1738,7 @@ __switch__:
       for (IModule module : SetSequence.fromSet(MapSequence.fromMap(missing).keySet())) {
         String moduleFqName = module.getModuleFqName();
         for (IModule dependent : Sequence.fromIterable(MapSequence.fromMap(missing).get(module))) {
-          String errorText = "Required module " + dependent.getModuleFqName() + " is absent. Used by module " + moduleFqName + ".";
+          String errorText = "Required module " + dependent.getModuleFqName() + " is absent in packaging script model " + _context.getOriginalInputModel() + ". Used by module " + moduleFqName + ".";
           System.err.println(errorText);
           if (moduleFqName.startsWith("jetbrains.mps")) {
             _context.showErrorMessage(null, errorText);

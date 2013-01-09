@@ -25,7 +25,7 @@ public class OverloadedBinaryOperator_Behavior {
     if (SNodeOperations.isInstanceOf(SLinkOperations.getTarget(thisNode, "operator", true), "jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference")) {
       operatorName = SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(thisNode, "operator", true), "jetbrains.mps.baseLanguage.overloadedOperators.structure.BinaryOperationReference"), "binaryOperation", false), "name");
     } else {
-      operatorName = "customOperator_" + SLinkOperations.getTarget(thisNode, "operator", true).getSNodeId().toString();
+      operatorName = "customOperator_" + SLinkOperations.getTarget(thisNode, "operator", true).getNodeId().toString();
     }
     return "apply_" + operatorName + "_" + NameUtil.toValidIdentifier(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "leftType", true), "virtual_getPresentation_1213877396640", new Object[]{})) + "_" + NameUtil.toValidIdentifier(BehaviorReflection.invokeVirtual(String.class, SLinkOperations.getTarget(thisNode, "rightType", true), "virtual_getPresentation_1213877396640", new Object[]{}));
   }

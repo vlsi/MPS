@@ -114,12 +114,12 @@ public class MergeConflictsBuilder {
       SNode node = myBaseModel.getNodeById(nodeId);
       while (node != null) {
         if (SNodeOperations.getParent(node) == null) {
-          DeleteRootChange conflicting = MapSequence.fromMap(deleteRootChanges).get(node.getSNodeId());
+          DeleteRootChange conflicting = MapSequence.fromMap(deleteRootChanges).get(node.getNodeId());
           if (conflicting != null) {
             addPossibleConflict(change, conflicting);
           }
         } else {
-          Tuples._2<SNodeId, String> nodeRole = MultiTuple.<SNodeId,String>from(SNodeOperations.getParent(node).getSNodeId(), SNodeOperations.getContainingLinkRole(node));
+          Tuples._2<SNodeId, String> nodeRole = MultiTuple.<SNodeId,String>from(SNodeOperations.getParent(node).getNodeId(), SNodeOperations.getContainingLinkRole(node));
           final int index = SNodeOperations.getIndexInParent(node);
           NodeGroupChange conflicting = ListSequence.fromList(MapSequence.fromMap(arrangedChanges).get(nodeRole)).findFirst(new IWhereFilter<NodeGroupChange>() {
             public boolean accept(NodeGroupChange ch) {

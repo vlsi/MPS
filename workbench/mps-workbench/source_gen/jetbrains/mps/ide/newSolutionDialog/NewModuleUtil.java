@@ -86,8 +86,7 @@ public class NewModuleUtil {
   }
 
   private static IFile getModuleFile(String namespace, String rootPath, String extension) {
-    String shortName = NameUtil.shortNameFromLongName(namespace);
-    String path = rootPath + File.separator + shortName + extension;
+    String path = rootPath + File.separator + namespace + extension;
     return FileSystem.getInstance().getFileByPath(path);
   }
 
@@ -130,7 +129,8 @@ public class NewModuleUtil {
 
     //  default descriptorModel roots 
     DefaultModelRoot modelRoot = new DefaultModelRoot();
-    modelRoot.setPath(modelsDir.getPath());
+    modelRoot.setContentRoot(modelsDir.getParent().getPath());
+    modelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, modelsDir.getPath());
     descriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
     return descriptor;
   }
@@ -152,7 +152,8 @@ public class NewModuleUtil {
     }
     //  default descriptorModel roots 
     DefaultModelRoot modelRoot = new DefaultModelRoot();
-    modelRoot.setPath(languageModels.getPath());
+    modelRoot.setContentRoot(languageModels.getParent().getPath());
+    modelRoot.addFile(DefaultModelRoot.SOURCE_ROOTS, languageModels.getPath());
     languageDescriptor.getModelRootDescriptors().add(modelRoot.toDescriptor());
     return languageDescriptor;
   }

@@ -41,7 +41,7 @@ public class TargetBlock extends Block {
   }
 
   private static String getNodeId(SNode originalNode) {
-    SNodeId nodeId = originalNode.getSNodeId();
+    SNodeId nodeId = originalNode.getNodeId();
     return nodeId == null ? "<unknown node>" : nodeId.toString();
   }
 

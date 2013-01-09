@@ -4,10 +4,10 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import com.intellij.icons.AllIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import com.intellij.openapi.vfs.VirtualFile;
@@ -23,7 +23,7 @@ import jetbrains.mps.ide.projectPane.fileSystem.FileViewProjectPane;
 import jetbrains.mps.logging.Logger;
 
 public class NewFile_Action extends BaseAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = AllIcons.FileTypes.Any_type;
 
   public NewFile_Action() {
     super("File", "", ICON);
@@ -38,7 +38,7 @@ public class NewFile_Action extends BaseAction {
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
     try {
-      event.getPresentation().setIcon(Icons.TEXT_ICON);
+      this.enable(event.getPresentation());
     } catch (Throwable t) {
       LOG.error("User's action doUpdate method failed. Action:" + "NewFile", t);
       this.disable(event.getPresentation());

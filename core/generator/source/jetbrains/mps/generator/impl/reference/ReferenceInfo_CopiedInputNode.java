@@ -59,11 +59,11 @@ public class ReferenceInfo_CopiedInputNode extends ReferenceInfo {
   }
 
   public String getResolveInfoForDynamicResolve() {
-    return myInputTargetNode == null ? null : myInputTargetNode.getResolveInfo();
+    return myInputTargetNode == null ? null : jetbrains.mps.util.SNodeOperations.getResolveInfo(myInputTargetNode);
   }
 
   public String getResolveInfoForNothing() {
-    return myInputTargetNode == null ? null : myInputTargetNode.getResolveInfo();
+    return myInputTargetNode == null ? null : jetbrains.mps.util.SNodeOperations.getResolveInfo(myInputTargetNode);
   }
 
   @Override

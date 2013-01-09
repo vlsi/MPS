@@ -17,6 +17,7 @@ package jetbrains.mps.smodel;
 
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
+import org.jetbrains.mps.openapi.module.SRepository;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -35,7 +36,7 @@ public class SNodePointer implements SNodeReference {
     if (node == null) return;
     SModel model = node.getModel();
     myModelReference = model.getSModelReference();
-    myNodeId = node.getSNodeId();
+    myNodeId = node.getNodeId();
     myTimestamp = createPointerTimestamp();
   }
 
@@ -66,6 +67,11 @@ public class SNodePointer implements SNodeReference {
     SModelReference modelReference = getCurrentSModelReference(myModelReference, myTimestamp);
     if (modelReference == null) return null;
     return getSModelRepository().getModelDescriptor(modelReference);
+  }
+
+  @Override
+  public org.jetbrains.mps.openapi.model.SNode resolve(SRepository repo) {
+    return getNode();
   }
 
   public SModelReference getModelReference() {

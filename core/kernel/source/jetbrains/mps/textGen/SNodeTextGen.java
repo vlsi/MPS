@@ -116,7 +116,7 @@ public abstract class SNodeTextGen {
         foundError("cannot resolve reference in role `" + role + "'");
         return "???";
       }
-      return targetNode.getResolveInfo();
+      return jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode);
     }
   }
 
@@ -161,7 +161,7 @@ public abstract class SNodeTextGen {
         foundError();
         return "???";
       }
-      shortName = targetNode.getResolveInfo();
+      shortName = jetbrains.mps.util.SNodeOperations.getResolveInfo(targetNode);
       packageName = targetNode.getModel().getSModelReference().getLongName();
     }
     if (uniq) {

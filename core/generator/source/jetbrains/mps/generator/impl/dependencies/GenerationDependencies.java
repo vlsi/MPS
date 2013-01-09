@@ -212,7 +212,7 @@ public class GenerationDependencies {
     Map<String, String> externalHashes = new HashMap<String, String>();
     for (RootDependenciesBuilder l : roots) {
       SNode originalRoot = l.getOriginalRoot();
-      List<String> files = generatedFiles.get(originalRoot != null ? originalRoot.getSNodeId().toString() : "");
+      List<String> files = generatedFiles.get(originalRoot != null ? originalRoot.getNodeId().toString() : "");
       if (files == null) {
         files = Collections.emptyList();
       }
@@ -247,7 +247,7 @@ public class GenerationDependencies {
     Map<String, List<String>> generatedFiles = new HashMap<String, List<String>>();
 
     for (Map.Entry<SNode, SNode> entry : currentToOriginalMap.entrySet()) {
-      String inputRootId = entry.getValue() != null ? entry.getValue().getSNodeId().toString() : "";
+      String inputRootId = entry.getValue() != null ? entry.getValue().getNodeId().toString() : "";
       SNode outputRoot = entry.getKey();
 
       List<String> filesList = generatedFiles.get(inputRootId);

@@ -16,25 +16,63 @@
 
 package jetbrains.mps.idea.core.project.stubs;
 
-import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.components.ApplicationComponent;
+import com.intellij.openapi.module.Module;
+import com.intellij.openapi.projectRoots.JavaSdk;
 import com.intellij.openapi.projectRoots.ProjectJdkTable;
 import com.intellij.openapi.projectRoots.ProjectJdkTable.Listener;
 import com.intellij.openapi.projectRoots.Sdk;
+import com.intellij.openapi.projectRoots.SdkAdditionalData;
 import com.intellij.openapi.projectRoots.SdkModificator;
+import com.intellij.openapi.projectRoots.SdkTypeId;
+import com.intellij.openapi.roots.ModuleRootManager;
 import com.intellij.openapi.roots.OrderRootType;
+import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.util.messages.MessageBusConnection;
+import jetbrains.mps.ClasspathReader.ClassType;
 import jetbrains.mps.ide.MPSCoreComponents;
+import jetbrains.mps.idea.core.project.StubSolutionIdea;
+import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.project.Solution;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.project.structure.modules.ModuleDescriptor;
+import jetbrains.mps.reloading.CommonPaths;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.util.Computable;
+import org.jetbrains.mps.openapi.module.SModule;
+
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.UUID;
 
 /**
  * User: shatalin
  * Date: 4/27/12
  */
 public class JdkStubSolutionManager extends AbstractJavaStubSolutionManager implements ApplicationComponent, Listener {
+  private final Object LOCK = new Object();
+
+  private static final String JAVA_SDK_TYPE = "JavaSDK";
+  private static final String IDEA_SDK_TYPE = "IDEA JDK";
+
   private ProjectJdkTable myTable;
   private MessageBusConnection myListenerConnection;
+
+  // idea modules that need stubs for their java or idea SDKs
+  // (only jdk or idea sdk, since we track them specifically)
+  private Set<Module> myModules = new HashSet<Module>();
+  private Sdk myJavaSdk;
+  private Solution myJavaSdkSolution;
+  private Sdk myIdeaSdk;
+  private Solution myIdeaSdkSolution;
+
 
   @Override
   public boolean isHidden() {
@@ -46,54 +84,205 @@ public class JdkStubSolutionManager extends AbstractJavaStubSolutionManager impl
     myTable = table;
   }
 
+  public Solution getModuleSdkSolution(Module module) {
+    Sdk sdk = ModuleRootManager.getInstance(module).getSdk();
+    if (sdk == null) return null;
+    return getSdkSolution(sdk);
+  }
+
+  public Solution getSdkSolution(final Sdk sdk) {
+    ModelAccess.assertLegalRead();
+
+    synchronized (LOCK) {
+      if (sdk.equals(myJavaSdk)) return myJavaSdkSolution;
+      if (sdk.equals(myIdeaSdk)) return myIdeaSdkSolution;
+    }
+    // otherwise normal logic: by foreign id
+    return ModelAccess.instance().runReadAction(new Computable<Solution>() {
+      @Override
+      public Solution compute() {
+        return (Solution) MPSModuleRepository.getInstance().getModule(ModuleId.foreign(sdk.getName()));
+      }
+    });
+
+
+  }
+
+  public void claimSdk(Module module) throws DifferentSdkException {
+    ModelAccess.assertLegalWrite();
+
+    Sdk sdk = ModuleRootManager.getInstance(module).getSdk();
+    // ?
+    if (!(sdk instanceof SdkModificator)) {
+      return;
+    }
+    String sdkType = sdk.getSdkType().getName();
+
+    synchronized (LOCK) {
+      if (JAVA_SDK_TYPE.equals(sdkType)) {
+
+        if (sdk.equals(myJavaSdk)) return; // nothing to do
+        dropSdksIfUnused();
+        // no sdks: we're free to set it up
+        if (myJavaSdk == null && myIdeaSdk == null) {
+          setUpJdk(sdk);
+          myModules.add(module);
+          return;
+        }
+        // we don't support multiple JDKs for now
+        throw new DifferentSdkException(myJavaSdk, sdk);
+
+      } else if (IDEA_SDK_TYPE.equals(sdkType)) {
+
+        if (sdk.equals(myIdeaSdk)) return; // do nothing
+        dropSdksIfUnused();
+        if (myIdeaSdk == null) {
+          setUpIdeaSdk(sdk);
+          myModules.add(module);
+          return;
+        }
+        // we don't support multiple Idea SDKs for now
+        throw new DifferentSdkException(myIdeaSdk, sdk);
+
+      } else {
+        // TODO pull out jdk that can be (or must be?) beneath this sdk
+        addSolution(sdk);
+      }
+    }
+
+  }
+
+  public void releaseSdk(Module module) {
+    ModelAccess.assertLegalWrite();
+    Sdk sdk = ModuleRootManager.getInstance(module).getSdk();
+    if (sdk == null) return;
+
+    synchronized (LOCK) {
+      if (sdk.equals(myJavaSdk) || sdk.equals(myIdeaSdk)) {
+        myModules.remove(module);
+      }
+    }
+  }
+
+  private void dropSdksIfUnused() {
+    // if no modules are left, we can throw our sdk solutions away and set up another one
+    if (myModules.isEmpty()) {
+      if (myJavaSdkSolution != null) {
+        MPSModuleRepository.getInstance().unregisterModule(myJavaSdkSolution, JdkStubSolutionManager.this);
+        myJavaSdk = null;
+        myJavaSdkSolution = null;
+      }
+      if (myIdeaSdkSolution != null) {
+        MPSModuleRepository.getInstance().unregisterModule(myIdeaSdkSolution, JdkStubSolutionManager.this);
+        myIdeaSdk = null;
+        myIdeaSdkSolution = null;
+      }
+    }
+  }
+
+  private void setUpJdk(Sdk sdk) {
+    myJavaSdkSolution = replaceJdkSolution(sdk);
+    myJavaSdk = sdk;
+  }
+
+  private void setUpIdeaSdk(Sdk sdk) throws DifferentSdkException {
+
+    // first we check that this idea sdk uses the right jdk
+    Sdk jdk = guessJdk(sdk);
+    assert jdk != null;
+    if (myJavaSdk != null && !myJavaSdk.equals(jdk)) {
+      // TODO specify that idea sdk didn't match jdk, not just difference
+      throw new DifferentSdkException(myJavaSdk, jdk);
+    }
+
+    if (myJavaSdk == null) setUpJdk(jdk);
+
+    // we exclude jdk roots
+    Set<VirtualFile> jdkRoots = new HashSet<VirtualFile>();
+    Collections.addAll(jdkRoots, jdk.getRootProvider().getFiles(OrderRootType.CLASSES));
+
+    // we exclude jars that are in MPS.Platform, they stay there
+    List<String> excludedPaths = new ArrayList<String>();
+    excludedPaths.addAll(CommonPaths.getMPSPaths(ClassType.PLATFORM));
+    excludedPaths.addAll(CommonPaths.getMPSPaths(ClassType.CORE));
+
+    // turn into short names
+    for (int i = 0; i < excludedPaths.size(); i++) {
+      String path = excludedPaths.get(i);
+      // using io.File, same as in CommonPaths
+      String shortName = new File(path).getName();
+      excludedPaths.set(i, shortName);
+    }
+    Set<String> excludedFiles = new HashSet<String>(excludedPaths);
+
+    // make the list of needed roots
+    VirtualFile[] allRoots = sdk.getRootProvider().getFiles(OrderRootType.CLASSES);
+    List<VirtualFile> remainingRoots = new ArrayList<VirtualFile>();
+    for (VirtualFile file : allRoots) {
+      if (jdkRoots.contains(file)) continue;
+      if (excludedFiles.contains(file.getName())) continue;
+      remainingRoots.add(file);
+    }
+
+    VirtualFile[] roots = remainingRoots.toArray(new VirtualFile[0]);
+
+    // remove from MPS.Platform 2 jars that contain idea classes but have different names,
+    // not like in idea sdk
+
+    SModule mpsPlatform = MPSModuleRepository.getInstance().getModule(ModuleId.regular(UUID.fromString("742f6602-5a2f-4313-aa6e-ae1cd4ffdc61")));
+    assert mpsPlatform instanceof Solution;
+
+    Set<String> ideaStuffPaths = new HashSet<String>(CommonPaths.getMPSPaths(ClassType.IDEA_PLATFORM));
+    ModuleDescriptor mpsPlatfromDesc = ((Solution) mpsPlatform).getModuleDescriptor();
+
+    Iterator<ModelRootDescriptor> platformModelRoots = mpsPlatfromDesc.getModelRootDescriptors().iterator();
+    boolean changed = false;
+    while (platformModelRoots.hasNext()) {
+      ModelRootDescriptor modelRoot = platformModelRoots.next();
+      if (ideaStuffPaths.contains(modelRoot.getMemento().get("path"))) {
+        platformModelRoots.remove();
+        changed = true;
+      }
+    }
+
+    if (changed) {
+      ((Solution) mpsPlatform).setUpdateBootstrapSolutions(false);
+      ((Solution) mpsPlatform).setModuleDescriptor(mpsPlatfromDesc, false); // reload classes == false?
+    }
+
+    myIdeaSdkSolution = StubSolutionIdea.newInstanceForRoots(sdk, jdk, roots, this);
+    myIdeaSdk = sdk;
+  }
+
+  private Sdk guessJdk(Sdk sdk) {
+    VirtualFile[] roots = sdk.getRootProvider().getFiles(OrderRootType.CLASSES);
+    SdkTypeId jdkTypeId = JavaSdk.getInstance();
+
+    for (Sdk jdk : myTable.getSdksOfType(jdkTypeId)) {
+      String homePath = jdk.getHomePath();
+      for (VirtualFile root : roots) {
+        if (root.getPath().startsWith(homePath)) return jdk;
+      }
+    }
+    return null;
+  }
+
+
   @Override
   protected void init() {
-    for (Sdk sdk : myTable.getAllJdks()) {
-      addModule(sdk);
-    }
-    myListenerConnection = ApplicationManager.getApplication().getMessageBus().connect();
-    myListenerConnection.subscribe(ProjectJdkTable.JDK_TABLE_TOPIC, this);
   }
 
   @Override
   protected void dispose() {
-    myListenerConnection.disconnect();
-    myListenerConnection = null;
     ModuleRepositoryFacade.getInstance().unregisterModules(JdkStubSolutionManager.this);
-  }
-
-  protected void addModule(Sdk sdk) {
-    if (!(sdk instanceof SdkModificator)) {
-      return;
-    }
-    addSolution(sdk.getName(), ((SdkModificator) sdk).getRoots(OrderRootType.CLASSES));
-  }
-
-  protected void removeModule(Sdk sdk) {
-    if (!(sdk instanceof SdkModificator)) {
-      return;
-    }
-    removeSolution(sdk.getName());
   }
 
   @Override
   public void jdkAdded(final Sdk jdk) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        addModule(jdk);
-      }
-    });
   }
 
   @Override
   public void jdkRemoved(final Sdk jdk) {
-    ModelAccess.instance().runWriteAction(new Runnable() {
-      @Override
-      public void run() {
-        removeModule(jdk);
-      }
-    });
   }
 
   @Override

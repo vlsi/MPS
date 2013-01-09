@@ -111,7 +111,7 @@ public class Generator extends AbstractModule {
   }
 
   @Override
-  public Collection<String> getStubPaths() {
+  public Collection<String> getAdditionalClassPath() {
     return Collections.emptyList();
   }
 

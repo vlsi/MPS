@@ -45,6 +45,8 @@ import java.util.*;
 public class Solution extends ClassLoadingModule {
   private SolutionDescriptor mySolutionDescriptor;
   public static final String SOLUTION_MODELS = "models";
+  // idea plugin wants to turn it off sometimes, when it knows better what jdk is and what platform is
+  private boolean myUpdateBootstrapSolutions = true;
 
   private static Map<ModuleReference, ClasspathReader.ClassType> bootstrapCP = initBootstrapSolutions();
 
@@ -111,6 +113,10 @@ public class Solution extends ClassLoadingModule {
     invalidateDependencies();
   }
 
+  public void setUpdateBootstrapSolutions(boolean b) {
+    myUpdateBootstrapSolutions = b;
+  }
+
   public void save() {
     super.save();
     //do not save stub solutions (otherwise build model generation fails)
@@ -122,7 +128,7 @@ public class Solution extends ClassLoadingModule {
 
   @Override
   public void updateModelsSet() {
-    updateBootstrapSolutionLibraries();
+    if (myUpdateBootstrapSolutions) updateBootstrapSolutionLibraries();
     super.updateModelsSet();
   }
 
@@ -154,7 +160,7 @@ public class Solution extends ClassLoadingModule {
   }
 
   @Override
-  public Collection<String> getOwnStubPaths() {
+  public Collection<String> getOwnClassPath() {
     if (isPackaged()) {
       return Collections.singletonList(FileSystem.getInstance().getBundleHome(getDescriptorFile()).getPath());
     }
@@ -167,7 +173,7 @@ public class Solution extends ClassLoadingModule {
       return Collections.emptyList();
     }
 
-    return super.getOwnStubPaths();
+    return super.getOwnClassPath();
   }
 
   @Override

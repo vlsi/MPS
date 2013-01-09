@@ -22,7 +22,6 @@ import com.intellij.openapi.diagnostic.Logger;
 import com.intellij.openapi.project.Project;
 import com.intellij.testFramework.TestLoggerFactory;
 import com.intellij.util.ui.UIUtil;
-import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.facet.MPSFacetConfiguration;
@@ -49,7 +48,8 @@ public class EditorTests extends DataMPSFixtureTestCase {
   protected void prepareTestData(MPSFacetConfiguration configuration) throws Exception {
     IFile test = copyResource("models", "test.mps", "test.mps", "/tests/editorTests/models/test.mps");
     DefaultModelRoot root = new DefaultModelRoot();
-    root.setPath(test.getParent().getPath());
+    root.setContentRoot(test.getParent().getPath());
+    root.addFile(DefaultModelRoot.SOURCE_ROOTS, test.getParent().getPath());
     configuration.getBean().setModelRoots(Arrays.<org.jetbrains.mps.openapi.persistence.ModelRoot>asList(root));
   }
 
@@ -59,8 +59,9 @@ public class EditorTests extends DataMPSFixtureTestCase {
     // this is to prevent exceptions in the project components that get "projectClosed" notifications
     ApplicationManagerEx.getApplicationEx().doNotSave();
 
-    FolderModelRootBase sModelRoot = (FolderModelRootBase) myFacet.getSolution().getModelRoots().iterator().next();
-    final IFile modelFile = FileSystem.getInstance().getFileByPath(sModelRoot.getPath() + "/test.mps");
+    DefaultModelRoot sModelRoot = (DefaultModelRoot) myFacet.getSolution().getModelRoots().iterator().next();
+    String path = sModelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS).iterator().next();
+    final IFile modelFile = FileSystem.getInstance().getFileByPath(path + "/test.mps");
     final List<SNode> roots = new ArrayList<SNode>();
 
     final Exception[] thrown = new Exception[1];
@@ -81,7 +82,7 @@ public class EditorTests extends DataMPSFixtureTestCase {
         }
 
         for (SNode r : roots) {
-          if ("EditorTestCase".equals(r.getConceptShortName())) {
+          if ("EditorTestCase".equals(r.getConcept().getName())) {
             try {
               Class<?> cls = Class.forName(model.getLongName() + "." + r.getName() + "_Test");
               Method mth = cls.getMethod("test_" + r.getName());

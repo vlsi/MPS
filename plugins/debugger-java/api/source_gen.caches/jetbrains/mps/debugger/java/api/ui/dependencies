@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.debugger.java.api.ui.IconContainer" file="IconContainer.java">
+    <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="javax.swing.Icon" />
-    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.api.ui.Icons" file="Icons.java">
     <classNode dependClassName="javax.swing.Icon" />

@@ -26,7 +26,7 @@ public class GeneratorDescriptorPersistence {
   private GeneratorDescriptorPersistence() {
   }
 
-  public static GeneratorDescriptor loadGeneratorDescriptor(final Element generatorElement, IFile file, final MacroHelper macroHelper) {
+  public static GeneratorDescriptor loadGeneratorDescriptor(final Element generatorElement, IFile file, final String contentRoot, final MacroHelper macroHelper) {
     GeneratorDescriptor descriptor = new _FunctionTypes._return_P0_E0<GeneratorDescriptor>() {
       public GeneratorDescriptor invoke() {
         final GeneratorDescriptor result_wk2vdq_a0a0a0b = new GeneratorDescriptor();
@@ -50,10 +50,10 @@ public class GeneratorDescriptorPersistence {
 
         Element models = XmlUtil.first(generatorElement, "models");
         if (models != null) {
-          result_wk2vdq_a0a0a0b.getModelRootDescriptors().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(models, "modelRoot"), macroHelper));
+          result_wk2vdq_a0a0a0b.getModelRootDescriptors().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(models, "modelRoot"), contentRoot, macroHelper));
         } else {
           // old - for backwards compatibility 
-          result_wk2vdq_a0a0a0b.getModelRootDescriptors().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(generatorElement, "modelRoot"), macroHelper));
+          result_wk2vdq_a0a0a0b.getModelRootDescriptors().addAll(ModuleDescriptorPersistence.loadModelRoots(XmlUtil.children(generatorElement, "modelRoot"), contentRoot, macroHelper));
         }
 
 

@@ -23,35 +23,35 @@ public class DebugInfoBuilder {
   }
 
   public void addTraceablePosition(SNode inputNode, SModelDescriptor inputModel, String fileName, TraceablePositionInfo positionInfo) {
-    positionInfo.setNodeId(inputNode.getSNodeId().toString());
+    positionInfo.setNodeId(inputNode.getNodeId().toString());
     positionInfo.setFileName(fileName);
-    SNode topmostAncestor = inputNode.getTopmostAncestor();
+    SNode topmostAncestor = inputNode.getContainingRoot();
     myDebugInfo.addPosition(positionInfo, topmostAncestor);
   }
 
   public void addScopePosition(SNode inputNode, SModelDescriptor inputModel, String fileName, ScopePositionInfo positionInfo) {
-    positionInfo.setNodeId(inputNode.getSNodeId().toString());
+    positionInfo.setNodeId(inputNode.getNodeId().toString());
     positionInfo.setFileName(fileName);
     Map<SNode, VarInfo> varMap = positionInfo.getTempVarInfoMap();
     for (SNode varNode : varMap.keySet()) {
       SNode originalVar = getOriginalInputNodeForNearestParent(varNode);
       VarInfo varInfo = varMap.get(varNode);
       if (originalVar != null && !((SNodeOperations.isDisposed(originalVar)))) {
-        varInfo.setNodeId(originalVar.getSNodeId().toString());
+        varInfo.setNodeId(originalVar.getNodeId().toString());
       } else {
         positionInfo.removeVarInfo(varInfo);
       }
     }
     positionInfo.clearTempVarInfoMap();
-    myDebugInfo.addScopePosition(positionInfo, inputNode.getTopmostAncestor());
+    myDebugInfo.addScopePosition(positionInfo, inputNode.getContainingRoot());
   }
 
   public void addUnitPosition(SNode inputNode, SModelDescriptor inputModel, String fileName, UnitPositionInfo positionInfo) {
     positionInfo.setFileName(fileName);
     SNode topmostAncestor = null;
     if (inputNode != null && !((SNodeOperations.isDisposed(inputNode)))) {
-      positionInfo.setNodeId(inputNode.getSNodeId().toString());
-      topmostAncestor = inputNode.getTopmostAncestor();
+      positionInfo.setNodeId(inputNode.getNodeId().toString());
+      topmostAncestor = inputNode.getContainingRoot();
     }
     myDebugInfo.addUnitPosition(positionInfo, topmostAncestor);
   }

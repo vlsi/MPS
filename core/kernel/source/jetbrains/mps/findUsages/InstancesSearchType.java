@@ -15,60 +15,66 @@
  */
 package jetbrains.mps.findUsages;
 
-import jetbrains.mps.findUsages.fastfind.FastFindSupport;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
-import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.NameUtil;
+import jetbrains.mps.util.Mapper;
 import jetbrains.mps.util.containers.MultiMap;
 import org.jetbrains.annotations.Nullable;
+import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
+import org.jetbrains.mps.openapi.model.SModel;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.persistence.indexing.FastFindSupport;
+import org.jetbrains.mps.openapi.persistence.indexing.FastFindUsagesRegistry;
 
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Map.Entry;
 import java.util.Set;
 
-class InstancesSearchType extends SearchType<SNode, String> {
+class InstancesSearchType extends SearchType<SNode, SConcept> {
   private final boolean myExact;
 
   InstancesSearchType(boolean exact) {
     myExact = exact;
   }
 
-  public MultiMap<SModelDescriptor, String> findMatchingModelsInCache(Set<SNode> nodes, Iterable<SModelDescriptor> models, @Nullable Computable<Boolean> callback) {
-    Set<String> conceptNames = new HashSet<String>();
-    for (SNode node : nodes) {
-      conceptNames.add(node.getName());
+  public MultiMap<SModel, SConcept> findMatchingModelsInCache(Set<SConcept> concepts, Iterable<SModelDescriptor> models, @Nullable Computable<Boolean> callback) {
+    Set<SConcept> queryConcepts = new HashSet<SConcept>();
+    for (SConcept concept : concepts) {
+      queryConcepts.add(concept);
       if (!myExact) {
-        conceptNames.addAll(LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(NameUtil.nodeFQName(node)));
+        Set<String> desc = LanguageHierarchyCache.getInstance().getAllDescendantsOfConcept(concept.getId());
+        for (String cName : desc) {
+          queryConcepts.add(SConceptRepository.getInstance().getConcept(cName));
+        }
       }
     }
 
-    MultiMap<SModelDescriptor, String> result = new MultiMap<SModelDescriptor, String>();
-    MultiMap<FastFindSupport, SModelDescriptor> gm = groupModels(models);
-    for (Entry<FastFindSupport, Collection<SModelDescriptor>> e : gm.entrySet()) {
+    MultiMap<SModel, SConcept> result = new MultiMap<SModel, SConcept>();
+    MultiMap<FastFindSupport, SModel> gm = groupModelByFastFindSupport(models);
+    for (Entry<FastFindSupport, Collection<SModel>> e : gm.entrySet()) {
       if (e.getKey() == null) {
-        for (SModelDescriptor model : e.getValue()) {
-          result.putValues(model, conceptNames);
+        for (SModel model : e.getValue()) {
+          result.putValues(model, queryConcepts);
         }
         continue;
       }
 
-      result.putAllValues(e.getKey().findModelsWithPossibleInstances((Set<SModelDescriptor>) e.getValue(), conceptNames));
+      result.putAllValues(e.getKey().findModelsWithPossibleInstances(e.getValue(), queryConcepts));
     }
     return result;
   }
 
-  public Set<SNode> findInModel(MultiMap<SModelDescriptor, String> models, @Nullable Computable<Boolean> callback) {
+  public Set<SNode> findInModel(MultiMap<SModel, SConcept> models, @Nullable Computable<Boolean> callback) {
     Set<SNode> result = new HashSet<SNode>();
-    for (Entry<SModelDescriptor, Collection<String>> e : models.entrySet()) {
-      SModel model = e.getKey().getSModel();
+    for (Entry<SModel, Collection<SConcept>> e : models.entrySet()) {
+      SModel model = e.getKey();
       if (model == null) continue;
 
-      for (String conceptName : e.getValue()) {
-        result.addAll(model.getFastNodeFinder().getNodes(conceptName, !myExact));
+      for (SConcept concept : e.getValue()) {
+        result.addAll(((SModelDescriptor) model).getSModel().getFastNodeFinder().getNodes(concept.getId(), !myExact));
       }
 
       if (callback != null && !callback.compute()) break;

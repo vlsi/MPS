@@ -112,8 +112,8 @@
       <link role="applicableConcept" roleId="tpf8.1168285871518" targetNodeId="tps4.1212485154251" resolveInfo="Replace" />
     </node>
     <node type="tpsj.ProjectDescription" typeId="tpsj.1216745453338" id="1216902420773">
-      <property name="name" nameId="tpck.1169194664001" value="compile.modules" />
       <property name="propertiesFile" nameId="tpsj.4738159245302261806" value="project.properties" />
+      <property name="name" nameId="tpck.1169194664001" value="compile.modules" />
       <property name="basedir" nameId="tpsj.7857794759871997326" value="." />
     </node>
     <node type="tpf8.MappingScript" typeId="tpf8.1195499912406" id="1217435006859">
@@ -505,8 +505,8 @@
       <link role="targetConcept" roleId="tpf8.1200913004646" targetNodeId="tpsk.1196851099544" resolveInfo="TargetDeclaration" />
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1234978497168">
-      <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="false" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="generate" />
+      <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="false" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tps4.1219228952036" resolveInfo="Macro" />
       <link role="labelDeclaration" roleId="tpf8.1200917515464" targetNodeId="1219167110931" resolveInfo="MacroToPropertyDeclaration" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1234978510166">
@@ -542,16 +542,16 @@
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1233308633767">
-      <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="projectComponents" />
+      <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tps4.1203598512427" resolveInfo="Folder" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1233308633768">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1203620846457" resolveInfo="reduce_Folder" />
       </node>
     </node>
     <node role="reductionMappingRule" roleId="tpf8.1167328349397" type="tpf8.Reduction_MappingRule" typeId="tpf8.1167327847730" id="1233308633769">
-      <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="projectComponents" />
+      <property name="applyToConceptInheritors" nameId="tpf8.1167272244852" value="true" />
       <link role="applicableConcept" roleId="tpf8.1167169349424" targetNodeId="tps4.1203599702327" resolveInfo="Module" />
       <node role="ruleConsequence" roleId="tpf8.1169672767469" type="tpf8.TemplateDeclarationReference" typeId="tpf8.1168559333462" id="1233308633770">
         <link role="template" roleId="tpf8.1722980698497626483" targetNodeId="1203621003012" resolveInfo="reduce_Module" />
@@ -7257,7 +7257,11 @@
                   </node>
                 </node>
                 <node role="initializer" roleId="tpee.1068431790190" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="8735618128970558497">
-                  <node role="creator" roleId="tpee.1145553007750" type="tp2q.LinkedHashSetCreator" typeId="tp2q.1240217271293" id="8735618128970576812" />
+                  <node role="creator" roleId="tpee.1145553007750" type="tp2q.LinkedHashSetCreator" typeId="tp2q.1240217271293" id="8735618128970576812">
+                    <node role="elementType" roleId="tp2q.1237721435807" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="4416206207494590607">
+                      <link role="classifier" roleId="tpee.1107535924139" targetNodeId="vsqj.~IModule" resolveInfo="IModule" />
+                    </node>
+                  </node>
                 </node>
               </node>
             </node>
@@ -9482,22 +9486,33 @@
                             <property name="value" nameId="tpee.1070475926801" value="." />
                           </node>
                           <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3033860308389939344">
-                            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3033860308389939345">
-                              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3033860308389939346">
-                                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3033860308389939347">
-                                  <property name="value" nameId="tpee.1070475926801" value="Required module " />
-                                </node>
-                                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3033860308389939348">
-                                  <node role="operand" roleId="tpee.1197027771414" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="3033860308389939386">
-                                    <link role="variable" roleId="tp2q.1153944258490" targetNodeId="3033860308389939378" resolveInfo="dependent" />
-                                  </node>
-                                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3033860308389939350">
-                                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~IModule%dgetModuleFqName()%cjava%dlang%dString" resolveInfo="getModuleFqName" />
-                                  </node>
-                                </node>
+                            <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3335957750827443729">
+                              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3335957750827445462">
+                                <property name="value" nameId="tpee.1070475926801" value=". Used by module " />
                               </node>
-                              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3033860308389939351">
-                                <property name="value" nameId="tpee.1070475926801" value=" is absent. Used by module " />
+                              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3335957750827415931">
+                                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3033860308389939345">
+                                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3033860308389939346">
+                                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3033860308389939347">
+                                      <property name="value" nameId="tpee.1070475926801" value="Required module " />
+                                    </node>
+                                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3033860308389939348">
+                                      <node role="operand" roleId="tpee.1197027771414" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="3033860308389939386">
+                                        <link role="variable" roleId="tp2q.1153944258490" targetNodeId="3033860308389939378" resolveInfo="dependent" />
+                                      </node>
+                                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="3033860308389939350">
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~IModule%dgetModuleFqName()%cjava%dlang%dString" resolveInfo="getModuleFqName" />
+                                      </node>
+                                    </node>
+                                  </node>
+                                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3033860308389939351">
+                                    <property name="value" nameId="tpee.1070475926801" value=" is absent in packaging script model " />
+                                  </node>
+                                </node>
+                                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3335957750827435381">
+                                  <node role="operation" roleId="tpee.1197027833540" type="tpf3.GenerationContextOp_GetOriginalInputModel" typeId="tpf3.1217026863835" id="3335957750827438691" />
+                                  <node role="operand" roleId="tpee.1197027771414" type="tpf3.TemplateFunctionParameter_generationContext" typeId="tpf3.1216860049635" id="3335957750827432202" />
+                                </node>
                               </node>
                             </node>
                             <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3033860308389939352">

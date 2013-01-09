@@ -18,20 +18,14 @@ package jetbrains.mps.idea.core.tests;
 
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ex.ApplicationManagerEx;
-import com.intellij.openapi.compiler.CompileContext;
-import com.intellij.openapi.compiler.CompileStatusNotification;
-import com.intellij.openapi.compiler.CompilerManager;
+import com.intellij.openapi.compiler.*;
 import com.intellij.openapi.components.impl.ComponentManagerImpl;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.projectRoots.ProjectJdkTable;
 import com.intellij.openapi.projectRoots.Sdk;
 import com.intellij.openapi.projectRoots.impl.JavaAwareProjectJdkTableImpl;
 import com.intellij.openapi.projectRoots.impl.ProjectJdkImpl;
-import com.intellij.openapi.roots.CompilerModuleExtension;
-import com.intellij.openapi.roots.ContentEntry;
-import com.intellij.openapi.roots.ModifiableRootModel;
-import com.intellij.openapi.roots.ModuleRootManager;
-import com.intellij.openapi.roots.ProjectRootManager;
+import com.intellij.openapi.roots.*;
 import com.intellij.openapi.util.Disposer;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
@@ -41,7 +35,7 @@ import jetbrains.mps.idea.core.make.MPSCompilerComponent;
 import jetbrains.mps.vfs.IFile;
 import junit.framework.AssertionFailedError;
 
-import javax.swing.SwingUtilities;
+import javax.swing.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -170,6 +164,7 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
       boolean aborted = true;
       int errors = -1;
       int warnings = -1;
+      String messages = "";
     }
     final Result res = new Result();
     final boolean[] compilationFinished = new boolean[]{false};
@@ -183,6 +178,14 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
             res.errors = errors;
             res.warnings = warnings;
             compilationFinished[0] = true;
+            StringBuilder sb = new StringBuilder();
+            for (CompilerMessage compilerMessage : compileContext.getMessages(CompilerMessageCategory.ERROR)) {
+              sb.append("ERR:  " + compilerMessage.getMessage() + "\n");
+            }
+            for (CompilerMessage compilerMessage : compileContext.getMessages(CompilerMessageCategory.WARNING)) {
+              sb.append("WARN:  " + compilerMessage.getMessage() + "\n");
+            }
+            res.messages = sb.toString();
           }
         });
       }
@@ -197,9 +200,13 @@ public abstract class AbstractMakeTest extends DataMPSFixtureTestCase {
     assertOnTeardown(new Asserter() {
       @Override
       public void doAssert() throws Exception {
+        if (res.aborted || errors != res.errors || warns != res.warnings) {
+          System.out.print(res.messages);
+        }
         assertFalse(res.aborted);
         assertSame(errors, res.errors);
         assertSame(warns, res.warnings);
+
       }
     });
   }

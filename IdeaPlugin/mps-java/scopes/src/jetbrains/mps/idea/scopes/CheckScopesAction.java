@@ -25,7 +25,7 @@ import com.intellij.psi.PsiFile;
 import jetbrains.mps.baseLanguage.search.MpsScopesUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.idea.core.projectView.MPSDataKeys;
-import jetbrains.mps.idea.debugger.GeneratedSourcePosition;
+import jetbrains.mps.idea.java.trace.GeneratedSourcePosition;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.UnitPositionInfo;
@@ -62,7 +62,7 @@ public class CheckScopesAction extends AnAction {
 
         SModelDescriptor descriptor = SModelFileTracker.getInstance().findModel(myModelFile);
         for (SNode root : descriptor.getSModel().roots()) {
-          if (LanguageHierarchyCache.isAssignable(root.getConceptFqName(), "jetbrains.mps.baseLanguage.structure.Classifier")) {
+          if (LanguageHierarchyCache.isAssignable(root.getConcept().getId(), "jetbrains.mps.baseLanguage.structure.Classifier")) {
             PsiClass clazz = getPsiClass(myProject, root);
             if (clazz == null) {
               LOG.warn("PsiClass is null for root node: " + root);

@@ -279,7 +279,7 @@ public class BreakpointsBrowserDialog extends DialogWrapper implements DataProvi
       @Override
       public void update(AnActionEvent e) {
         super.update(e);
-        e.getPresentation().setIcon(jetbrains.mps.workbench.dialogs.project.components.parts.actions.icons.Icons.ADD);
+        e.getPresentation().setIcon(Icons.BREAKPOINTS_DIALOG_ADD);
       }
     };
     for (final IBreakpointKind kind : myProvidersManager.getAllKinds()) {

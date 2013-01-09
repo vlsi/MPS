@@ -6,8 +6,8 @@
   <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" />
   <component name="MPSProject">
     <projectModules>
-      <modulePath path="${project}/plainText.mpl" />
-      <modulePath path="${project}/solutions/sample/sample.msd" folder="" />
+      <modulePath path="${project}/jetbrains.mps.samples.plainText.mpl" />
+      <modulePath path="${project}/solutions/sample/jetbrains.mps.samples.plainText.sample.msd" folder="" />
     </projectModules>
     <genConfs />
   </component>

@@ -296,7 +296,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
   private static SNodeId check_4zsmpx_a0a0g0g(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getSNodeId();
+      return checkedDotOperand.getNodeId();
     }
     return null;
   }

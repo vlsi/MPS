@@ -86,7 +86,7 @@ public class CreateActionAsPattern_Intention implements IntentionFactory {
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode currentNode = editorContext.getSelectedNode();
       SNodeFactoryOperations.setNewAttribute(currentNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.AsPattern")), "jetbrains.mps.lang.pattern.structure.ActionAsPattern");
-      SPropertyOperations.set(AttributeOperations.getAttribute(currentNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.AsPattern"))), "varName", "action_var_" + currentNode.getSNodeId().toString());
+      SPropertyOperations.set(AttributeOperations.getAttribute(currentNode, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.pattern.structure.AsPattern"))), "varName", "action_var_" + currentNode.getNodeId().toString());
     }
 
     public IntentionDescriptor getDescriptor() {

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.bash.sandbox" uuid="30d63749-55a4-4f9f-8c30-21a4c161e76c" compileInMPS="true">
   <models>
-    <modelRoot path="${module}/" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="." />
+    </modelRoot>
   </models>
   <sourcePath />
   <usedLanguages>

@@ -105,10 +105,8 @@
     <classNode extendsClassName="jetbrains.mps.plugins.projectplugins.BaseProjectPlugin" />
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.QueryFinder" file="QueryFinder.java">
+    <classNode dependClassName="java.lang.Exception" />
     <classNode dependClassName="java.lang.Object" />
-    <classNode dependClassName="java.lang.Throwable" />
-    <classNode dependClassName="java.util.Iterator" />
-    <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchQuery" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResult" />
     <classNode dependClassName="jetbrains.mps.ide.findusages.model.SearchResults" />
@@ -216,6 +214,7 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
   </dependency>
   <dependency className="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.RunReplacement_Tool" file="RunReplacement_Tool.java">
+    <classNode dependClassName="com.intellij.icons.AllIcons" />
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.wm.ToolWindowAnchor" />
     <classNode dependClassName="java.lang.Runnable" />
@@ -229,7 +228,6 @@
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.pluginSolution.plugin.ReplacementView" />
     <classNode dependClassName="jetbrains.mps.quickQueryLanguage.runtime.Query" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.util.IconUtil" />
     <classNode extendsClassName="jetbrains.mps.plugins.tool.GeneratedTabbedTool" />
   </dependency>
 </dependenciesRoot>

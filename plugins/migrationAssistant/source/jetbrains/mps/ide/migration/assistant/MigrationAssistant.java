@@ -15,6 +15,8 @@
  */
 package jetbrains.mps.ide.migration.assistant;
 
+import com.intellij.ide.RecentProjectsManagerBase;
+import com.intellij.ide.impl.ProjectUtil;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.application.ModalityState;
 import com.intellij.openapi.application.impl.LaterInvocator;
@@ -27,7 +29,9 @@ import com.intellij.openapi.util.AsyncResult;
 import com.intellij.openapi.util.AsyncResult.Handler;
 import com.intellij.openapi.wm.IdeFrame;
 import com.intellij.openapi.wm.WindowManager;
+import com.intellij.openapi.wm.impl.welcomeScreen.WelcomeFrame;
 import jetbrains.mps.project.MPSProjectMigrationState;
+import jetbrains.mps.project.ProjectManager;
 
 /**
  * Created by IntelliJ IDEA.
@@ -93,12 +97,9 @@ public class MigrationAssistant extends AbstractProjectComponent {
     StartupManager.getInstance(myProject).runWhenProjectIsInitialized(new Runnable() {
       @Override
       public void run() {
-        ApplicationManager.getApplication().invokeLater(new Runnable() {
-          @Override
-          public void run() {
-            ProjectManagerEx.getInstanceEx().closeAndDispose(myProject);
-          }
-        });
+        ProjectUtil.closeAndDispose(myProject);
+        RecentProjectsManagerBase.getInstance().updateLastProjectPath();
+        WelcomeFrame.showIfNoProjectOpened();
         }
       }
     );

@@ -46,7 +46,6 @@
   <import index="oex8" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi(MPS.Platform/com.intellij.openapi@java_stub)" version="-1" />
   <import index="iwpw" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.util(MPS.Platform/com.intellij.openapi.util@java_stub)" version="-1" />
   <import index="esue" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.util(MPS.Platform/com.intellij.util@java_stub)" version="-1" />
-  <import index="ppoy" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution.testframework(MPS.Platform/com.intellij.execution.testframework@java_stub)" version="-1" />
   <import index="vstq" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.execution.ui(MPS.Platform/com.intellij.execution.ui@java_stub)" version="-1" />
   <import index="q9wm" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.ide(MPS.Platform/com.intellij.ide@java_stub)" version="-1" />
   <import index="qfd6" modelUID="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.pom(MPS.Platform/com.intellij.pom@java_stub)" version="-1" />
@@ -3602,9 +3601,9 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3575782568432720734">
                   <property name="value" nameId="tpee.1070475926801" value="Navigate to the next occurrence" />
                 </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3575782568432720735">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="usxl.~Icons" resolveInfo="Icons" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="usxl.~Icons%dNEXT_ICON" resolveInfo="NEXT_ICON" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5652761227280176292">
+                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$Actions" resolveInfo="AllIcons.Actions" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$Actions%dNextOccurence" resolveInfo="NextOccurence" />
                 </node>
                 <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceInitializer" typeId="tpee.1206629501431" id="3575782568432720716">
                   <node role="statementList" roleId="tpee.1206629521979" type="tpee.StatementList" typeId="tpee.1068580123136" id="3575782568432720717">
@@ -3704,9 +3703,9 @@
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3575782568432720782">
                   <property name="value" nameId="tpee.1070475926801" value="Navigate to the previous occurrence" />
                 </node>
-                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="3575782568432720783">
-                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="usxl.~Icons" resolveInfo="Icons" />
-                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="usxl.~Icons%dPREVIOUS_ICON" resolveInfo="PREVIOUS_ICON" />
+                <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="5652761227280167934">
+                  <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$Actions" resolveInfo="AllIcons.Actions" />
+                  <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$Actions%dPreviousOccurence" resolveInfo="PreviousOccurence" />
                 </node>
                 <node role="member" roleId="tpee.5375687026011219971" type="tpee.InstanceInitializer" typeId="tpee.1206629501431" id="3575782568432720764">
                   <node role="statementList" roleId="tpee.1206629521979" type="tpee.StatementList" typeId="tpee.1068580123136" id="3575782568432720765">
@@ -13409,17 +13408,6 @@
         </node>
       </node>
     </node>
-    <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="3575782568432725248">
-      <property name="name" nameId="tpck.1169194664001" value="PAUSED_ICON" />
-      <node role="initializer" roleId="tpee.1068431790190" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="1462058189372043357">
-        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$RunConfigurations" resolveInfo="AllIcons.RunConfigurations" />
-        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$RunConfigurations%dTestPaused" resolveInfo="TestPaused" />
-      </node>
-      <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3575782568432725249" />
-      <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="3575782568432725250">
-        <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
-      </node>
-    </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.StaticFieldDeclaration" typeId="tpee.1070462154015" id="3575782568432725253">
       <property name="name" nameId="tpck.1169194664001" value="FRAMES" />
       <node role="visibility" roleId="tpee.1178549979242" type="tpee.PrivateVisibility" typeId="tpee.1146644623116" id="3575782568432725254" />
@@ -17720,57 +17708,65 @@
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3575782568432727331">
       <property name="name" nameId="tpck.1169194664001" value="NOT_RAN" />
       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3575782568432727295" resolveInfo="TestState" />
-      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3575782568432727332">
-        <property name="value" nameId="tpee.1070475926801" value="testNotRan.png" />
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2225816306716424189">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$RunConfigurations" resolveInfo="AllIcons.RunConfigurations" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$RunConfigurations%dTestNotRan" resolveInfo="TestNotRan" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3575782568432727333">
       <property name="name" nameId="tpck.1169194664001" value="IN_PROGRESS" />
       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3575782568432727295" resolveInfo="TestState" />
-      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3575782568432727334">
-        <property name="value" nameId="tpee.1070475926801" value="testInProgress1.png" />
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2225816306716436741">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$RunConfigurations" resolveInfo="AllIcons.RunConfigurations" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$RunConfigurations%dTestInProgress1" resolveInfo="TestInProgress1" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3575782568432727335">
       <property name="name" nameId="tpck.1169194664001" value="IGNORED" />
       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3575782568432727295" resolveInfo="TestState" />
-      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3575782568432727336">
-        <property name="value" nameId="tpee.1070475926801" value="testIgnored.png" />
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2225816306716441375">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$RunConfigurations" resolveInfo="AllIcons.RunConfigurations" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$RunConfigurations%dTestIgnored" resolveInfo="TestIgnored" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3575782568432727337">
       <property name="name" nameId="tpck.1169194664001" value="FAILED" />
       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3575782568432727295" resolveInfo="TestState" />
-      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3575782568432727338">
-        <property name="value" nameId="tpee.1070475926801" value="testFailed.png" />
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2225816306716450854">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$RunConfigurations" resolveInfo="AllIcons.RunConfigurations" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$RunConfigurations%dTestFailed" resolveInfo="TestFailed" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3575782568432727339">
       <property name="name" nameId="tpck.1169194664001" value="ERROR" />
       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3575782568432727295" resolveInfo="TestState" />
-      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3575782568432727340">
-        <property name="value" nameId="tpee.1070475926801" value="testError.png" />
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2225816306716452742">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$RunConfigurations" resolveInfo="AllIcons.RunConfigurations" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$RunConfigurations%dTestError" resolveInfo="TestError" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3575782568432727341">
       <property name="name" nameId="tpck.1169194664001" value="PASSED" />
       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3575782568432727295" resolveInfo="TestState" />
-      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3575782568432727342">
-        <property name="value" nameId="tpee.1070475926801" value="testPassed.png" />
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2225816306716457340">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$RunConfigurations" resolveInfo="AllIcons.RunConfigurations" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$RunConfigurations%dTestPassed" resolveInfo="TestPassed" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3575782568432727343">
       <property name="name" nameId="tpck.1169194664001" value="PAUSED" />
       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3575782568432727295" resolveInfo="TestState" />
-      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3575782568432727344">
-        <property name="value" nameId="tpee.1070475926801" value="testPaused.png" />
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2225816306716459162">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$RunConfigurations" resolveInfo="AllIcons.RunConfigurations" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$RunConfigurations%dTestPaused" resolveInfo="TestPaused" />
       </node>
     </node>
     <node role="enumConstant" roleId="tpee.1083245396908" type="tpee.EnumConstantDeclaration" typeId="tpee.1083245299891" id="3575782568432727345">
       <property name="name" nameId="tpck.1169194664001" value="TERMINATED" />
       <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="3575782568432727295" resolveInfo="TestState" />
-      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3575782568432727346">
-        <property name="value" nameId="tpee.1070475926801" value="testTerminated.png" />
+      <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="2225816306716465289">
+        <link role="classifier" roleId="tpee.1144433057691" targetNodeId="jehi.~AllIcons$RunConfigurations" resolveInfo="AllIcons.RunConfigurations" />
+        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="jehi.~AllIcons$RunConfigurations%dTestTerminated" resolveInfo="TestTerminated" />
       </node>
     </node>
     <node role="visibility" roleId="tpee.1178549979242" type="tpee.PublicVisibility" typeId="tpee.1146644602865" id="3575782568432727350" />
@@ -17784,8 +17780,10 @@
     </node>
     <node role="member" roleId="tpee.5375687026011219971" type="tpee.ConstructorDeclaration" typeId="tpee.1068580123140" id="3575782568432727295">
       <node role="parameter" roleId="tpee.1068580123134" type="tpee.ParameterDeclaration" typeId="tpee.1068498886292" id="3575782568432727296">
-        <property name="name" nameId="tpck.1169194664001" value="iconName" />
-        <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3575782568432727297" />
+        <property name="name" nameId="tpck.1169194664001" value="icon" />
+        <node role="type" roleId="tpee.5680397130376446158" type="tpee.ClassifierType" typeId="tpee.1107535904670" id="2225816306716358455">
+          <link role="classifier" roleId="tpee.1107535924139" targetNodeId="dbrf.~Icon" resolveInfo="Icon" />
+        </node>
       </node>
       <node role="body" roleId="tpee.1068580123135" type="tpee.StatementList" typeId="tpee.1068580123136" id="3575782568432727298">
         <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3575782568432727299">
@@ -17813,55 +17811,10 @@
             </node>
           </node>
         </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.LocalVariableDeclarationStatement" typeId="tpee.1068581242864" id="3575782568432727309">
-          <node role="localVariableDeclaration" roleId="tpee.1068581242865" type="tpee.LocalVariableDeclaration" typeId="tpee.1068581242863" id="3575782568432727310">
-            <property name="name" nameId="tpck.1169194664001" value="pathToIcon" />
-            <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7455211458022642332">
-              <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7455211458022642273">
-                <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7455211458022642242">
-                  <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="6331861638741574376">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="6331861638741574351">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432727300" resolveInfo="language" />
-                    </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="6331861638741574381">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="vsqj.~AbstractModule%dgetDescriptorFile()%cjetbrains%dmps%dvfs%dIFile" resolveInfo="getDescriptorFile" />
-                    </node>
-                  </node>
-                  <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7455211458022642248">
-                    <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="59et.~IFile%dgetParent()%cjetbrains%dmps%dvfs%dIFile" resolveInfo="getParent" />
-                  </node>
-                </node>
-                <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7455211458022642279">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="59et.~IFile%dgetDescendant(java%dlang%dString)%cjetbrains%dmps%dvfs%dIFile" resolveInfo="getDescendant" />
-                  <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="7455211458022642304">
-                    <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7455211458022642307">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432727296" resolveInfo="iconName" />
-                    </node>
-                    <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3575782568432727317">
-                      <property name="value" nameId="tpee.1070475926801" value="/icons/states/" />
-                    </node>
-                  </node>
-                </node>
-              </node>
-              <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7455211458022642338">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="59et.~IFile%dgetPath()%cjava%dlang%dString" resolveInfo="getPath" />
-              </node>
-            </node>
-            <node role="type" roleId="tpee.5680397130376446158" type="tpee.StringType" typeId="tpee.1225271177708" id="3575782568432727311" />
-          </node>
-        </node>
-        <node role="statement" roleId="tpee.1068581517665" type="tpee.Statement" typeId="tpee.1068580123157" id="7455211458022642216" />
         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3575782568432727321">
           <node role="expression" roleId="tpee.1068580123156" type="tpee.AssignmentExpression" typeId="tpee.1068498886294" id="3575782568432727322">
-            <node role="rValue" roleId="tpee.1068498886297" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="3575782568432727323">
-              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="ai1m.~IconManager" resolveInfo="IconManager" />
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ai1m.~IconManager%dloadIcon(java%dlang%dString,boolean)%cjavax%dswing%dIcon" resolveInfo="loadIcon" />
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="3575782568432727324">
-                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432727310" resolveInfo="pathToIcon" />
-              </node>
-              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.BooleanConstant" typeId="tpee.1068580123137" id="3575782568432727325">
-                <property name="value" nameId="tpee.1068580123138" value="true" />
-              </node>
+            <node role="rValue" roleId="tpee.1068498886297" type="tpee.VariableReference" typeId="tpee.1068498886296" id="2225816306716386007">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432727296" resolveInfo="icon" />
             </node>
             <node role="lValue" roleId="tpee.1068498886295" type="tpee.LocalInstanceFieldReference" typeId="tpee.7785501532031639928" id="3667367438338477886">
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="3575782568432727347" resolveInfo="myIcon" />

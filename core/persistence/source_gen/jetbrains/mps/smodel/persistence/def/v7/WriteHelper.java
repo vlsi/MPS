@@ -99,21 +99,21 @@ public class WriteHelper {
   private String genReferenceId(@Nullable SNode node) {
     return ((node == null) ?
       null :
-      genReferenceId(SNodeOperations.getModel(node).getSModelReference(), node.getSNodeId())
+      genReferenceId(SNodeOperations.getModel(node).getSModelReference(), node.getNodeId())
     );
   }
 
   public String genType(@NotNull SNode node) {
     if (RoleIdsComponent.isEnabled()) {
       // return fqName prefixed with "." if we can't find model or name of concept 
-      String fqName = node.getConcept().getId();
+      String fqName = node.getConcept().getConceptId();
       String index = MapSequence.fromMap(myModelIndex).get(RoleIdsComponent.getConceptPointer(node).getModelReference());
       if (index == null) {
         return MODEL_SEPARATOR_CHAR + fqName;
       }
       return index + MODEL_SEPARATOR_CHAR + node.getConcept().getName();
     }
-    return genConceptReferenceString(SNodeOperations.getConceptDeclaration(node), node.getConcept().getId());
+    return genConceptReferenceString(SNodeOperations.getConceptDeclaration(node), node.getConcept().getConceptId());
   }
 
   @Nullable

@@ -16,7 +16,6 @@
 
 package jetbrains.mps.idea.core.project.stubs;
 
-import com.intellij.openapi.roots.OrderRootType;
 import com.intellij.openapi.roots.libraries.Library;
 import com.intellij.openapi.roots.libraries.LibraryTable;
 import com.intellij.openapi.roots.libraries.LibraryTable.Listener;
@@ -43,7 +42,7 @@ public abstract class BaseLibImporter extends AbstractJavaStubSolutionManager {
   protected abstract LibraryTable getLibTable();
 
   protected void addModuleForLibrary(Library l) {
-    addSolution(l.getName(), l.getFiles(OrderRootType.CLASSES));
+    addSolution(l);
   }
 
   protected void removeModuleForLibrary(Library l) {

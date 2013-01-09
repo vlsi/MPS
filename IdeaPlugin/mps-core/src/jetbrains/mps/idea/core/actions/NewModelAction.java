@@ -26,7 +26,6 @@ import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.LocalFileSystem;
 import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileManager;
-import jetbrains.mps.extapi.persistence.FolderModelRootBase;
 import jetbrains.mps.fileTypes.FileIcons;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
@@ -34,6 +33,7 @@ import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.icons.MPSIcons;
 import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
+import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -43,7 +43,7 @@ import jetbrains.mps.util.Computable;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
 
 import javax.lang.model.SourceVersion;
-import javax.swing.Icon;
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -51,6 +51,7 @@ public class NewModelAction extends AnAction {
   private String myModelPrefix;
   private Project myProject;
   private ModelRoot myModelRoot;
+  private String mySourceRoot;
   private Solution mySolution;
 
   public NewModelAction() {
@@ -92,24 +93,27 @@ public class NewModelAction extends AnAction {
     }
     String path = VirtualFileManager.extractPath(url);
     for (ModelRoot root : mpsFacet.getSolution().getModelRoots()) {
-      if (!(root instanceof FolderModelRootBase)) continue;
-      FolderModelRootBase modelRoot = (FolderModelRootBase) root;
-      if (path.startsWith(modelRoot.getPath())) {
-        mySolution = mpsFacet.getSolution();
-        myModelRoot = modelRoot;
-        myModelPrefix = path.substring(modelRoot.getPath().length());
-        while (myModelPrefix.startsWith("/") || myModelPrefix.startsWith("\\")) {
-          myModelPrefix = myModelPrefix.substring(1);
+      if (!(root instanceof DefaultModelRoot)) continue;
+      DefaultModelRoot modelRoot = (DefaultModelRoot) root;
+      for (String sourceRoot : modelRoot.getFiles(DefaultModelRoot.SOURCE_ROOTS)) {
+        if (path.startsWith(sourceRoot)) {
+          mySolution = mpsFacet.getSolution();
+          myModelRoot = modelRoot;
+          mySourceRoot = sourceRoot;
+          myModelPrefix = path.substring(sourceRoot.length());
+          while (myModelPrefix.startsWith("/") || myModelPrefix.startsWith("\\")) {
+            myModelPrefix = myModelPrefix.substring(1);
+          }
+          while (myModelPrefix.endsWith("/") || myModelPrefix.endsWith("\\")) {
+            myModelPrefix = myModelPrefix.substring(0, myModelPrefix.length());
+          }
+          myModelPrefix = myModelPrefix.replaceAll("/", ".");
+          myModelPrefix = myModelPrefix.replaceAll("\\\\", ".");
+          if (!myModelPrefix.isEmpty()) {
+            myModelPrefix += ".";
+          }
+          return;
         }
-        while (myModelPrefix.endsWith("/") || myModelPrefix.endsWith("\\")) {
-          myModelPrefix = myModelPrefix.substring(0, myModelPrefix.length());
-        }
-        myModelPrefix = myModelPrefix.replaceAll("/", ".");
-        myModelPrefix = myModelPrefix.replaceAll("\\\\", ".");
-        if (!myModelPrefix.isEmpty()) {
-          myModelPrefix += ".";
-        }
-        return;
       }
     }
   }
@@ -128,6 +132,7 @@ public class NewModelAction extends AnAction {
         SModelDescriptor newModelDescriptor = ModelAccess.instance().runWriteActionInCommand(new Computable<SModelDescriptor>() {
           @Override
           public SModelDescriptor compute() {
+            // TODO create model in mySourceRoot
             EditableSModelDescriptor descriptor = mySolution.createModel(modelFqName.toString(), myModelRoot, null);
             template.preConfigure(descriptor.getSModel(), mySolution);
             descriptor.save();

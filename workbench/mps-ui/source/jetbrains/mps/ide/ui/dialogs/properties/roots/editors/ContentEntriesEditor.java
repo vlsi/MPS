@@ -15,9 +15,12 @@
  */
 package jetbrains.mps.ide.ui.dialogs.properties.roots.editors;
 
+import com.intellij.icons.AllIcons.Modules;
 import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
+import com.intellij.openapi.fileChooser.FileChooser;
+import com.intellij.openapi.fileChooser.FileChooserDescriptor;
 import com.intellij.openapi.project.DumbAware;
 import com.intellij.openapi.roots.ui.componentsList.components.ScrollablePanel;
 import com.intellij.openapi.roots.ui.componentsList.layout.VerticalStackLayout;
@@ -27,20 +30,25 @@ import com.intellij.openapi.ui.popup.JBPopup;
 import com.intellij.openapi.ui.popup.JBPopupFactory;
 import com.intellij.openapi.ui.popup.PopupStep;
 import com.intellij.openapi.ui.popup.util.BaseListPopupStep;
+import com.intellij.openapi.vfs.VirtualFile;
+import com.intellij.openapi.vfs.VirtualFileManager;
 import com.intellij.ui.ScrollPaneFactory;
 import com.intellij.ui.awt.RelativePoint;
 import com.intellij.ui.components.JBPanel;
 import com.intellij.ui.roots.ToolbarPanel;
 import com.intellij.util.ui.JBInsets;
 import com.intellij.util.ui.UIUtil;
-import jetbrains.mps.ide.icons.IdeIcons;
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import jetbrains.mps.persistence.MementoImpl;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
-import jetbrains.mps.util.misc.hash.HashSet;
 import jetbrains.mps.ide.ui.dialogs.properties.PropertiesBundle;
 import jetbrains.mps.ide.ui.dialogs.properties.roots.editors.ModelRootEntryContainer.ContentEntryEditorListener;
+import jetbrains.mps.smodel.Generator;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.Memento;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -49,6 +57,7 @@ import org.jetbrains.mps.openapi.ui.persistence.ModelRootEntry;
 import javax.swing.BorderFactory;
 import javax.swing.Icon;
 import javax.swing.JComponent;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import java.awt.BorderLayout;
@@ -94,7 +103,7 @@ public class ContentEntriesEditor {
     AnAction action = new IconWithTextAction(
       PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.title"),
       PropertiesBundle.message("mps.properties.configurable.roots.editor.contentenrieseditor.action.tip"),
-      IdeIcons.ADD_MODEL_ROOT_ICON) {
+      Modules.AddContentEntry) {
       @Override
       public void actionPerformed(AnActionEvent e) {
         final JBPopup popup = JBPopupFactory.getInstance().createListPopup(
@@ -216,7 +225,7 @@ public class ContentEntriesEditor {
   }
 
   public boolean isModified() {
-    Set<ModelRootDescriptor> newSet = getDescriptors();
+    List<ModelRootDescriptor> newSet = getDescriptors();
     return !(myModuleDescriptor.getModelRootDescriptors().containsAll(newSet) && newSet.containsAll(myModuleDescriptor.getModelRootDescriptors()));
   }
 
@@ -225,14 +234,14 @@ public class ContentEntriesEditor {
     myModuleDescriptor.getModelRootDescriptors().addAll(getDescriptors());
   }
 
-  private Set<ModelRootDescriptor> getDescriptors() {
-    Set<ModelRootDescriptor> descriptorSet = new HashSet<ModelRootDescriptor>();
+  private ArrayList<ModelRootDescriptor> getDescriptors() {
+    ArrayList<ModelRootDescriptor> descriptors = new ArrayList<ModelRootDescriptor>();
     for(ModelRootEntryContainer container : myModelRootEntries) {
       Memento memento = new MementoImpl();
       container.getModelRoot().save(memento);
-      descriptorSet.add(new ModelRootDescriptor(container.getModelRoot().getType(), memento));
+      descriptors.add(new ModelRootDescriptor(container.getModelRoot().getType(), memento));
     }
-    return descriptorSet;
+    return descriptors;
   }
 
   public JComponent getComponent() {
@@ -250,6 +259,11 @@ public class ContentEntriesEditor {
     public void actionPerformed(AnActionEvent e) {
       ModelRoot modelRoot = PersistenceRegistry.getInstance().getModelRootFactory(myType).create();
       ModelRootEntry entry = ModelRootEntryPersistence.getInstance().getModelRootEntry(modelRoot);
+      if(entry instanceof FileBasedModelRootEntry) {
+        if(!checkAndAddFBModelRoot(entry)) {
+          return;
+        }
+      }
       ModelRootEntryContainer container = new ModelRootEntryContainer(entry);
       container.addContentEntryEditorListener(myEditorListener);
       myModelRootEntries.add(container);
@@ -257,6 +271,57 @@ public class ContentEntriesEditor {
       selectEntry(container);
       myEditorsListPanel.revalidate();
       myEditorsListPanel.repaint();
+    }
+
+    private boolean checkAndAddFBModelRoot(ModelRootEntry entry) {
+      String contentRoot = "";
+      if(myModuleDescriptor instanceof GeneratorDescriptor) {
+        contentRoot = ((Generator)MPSModuleRepository.getInstance().getModuleById(myModuleDescriptor.getId())).getSourceLanguage().getBundleHome().getPath();
+      }
+      else {
+        contentRoot = MPSModuleRepository.getInstance().getModuleByFqName(myModuleDescriptor.getModuleReference().getModuleFqName()).getBundleHome().getPath();
+      }
+
+      Set<String> strings = new HashSet<String>();
+      for(ModelRootEntryContainer entryContainer : myModelRootEntries) {
+        if(entry.getClass().equals(entryContainer.getModelRootEntry().getClass())) {
+          strings.add(((FileBasedModelRoot)entryContainer.getModelRootEntry().getModelRoot()).getContentRoot());
+        }
+      }
+
+      if(!strings.isEmpty()) {
+        FileChooserDescriptor fileChooserDescriptor = new FileChooserDescriptor(false, true, true, false, true, false);
+        fileChooserDescriptor.setTitle("Choose root folder for new model root");
+
+        VirtualFile[] files = null;
+        while (files == null) {
+          files = FileChooser.chooseFiles(fileChooserDescriptor, null, null,
+            VirtualFileManager.getInstance().findFileByUrl(
+              VirtualFileManager.constructUrl("file", contentRoot)
+            )
+          );
+          if(files.length != 0) {
+            for (String s : strings) {
+              if(files[0].getPath().contains(s) || s.contains(files[0].getPath())) {
+                StringBuilder builder = new StringBuilder("Can't create new model root ");
+                builder.append(files[0].getPath().contains(s) ? "under" : "over");
+                builder.append(" existing model root!\nChoose another folder");
+                JOptionPane.showMessageDialog(myMainPanel, builder.toString());
+                files = null;
+                break;
+              }
+            }
+          }
+        }
+
+        if(files.length != 1)
+          return false;
+
+        contentRoot = files[0].getPath();
+      }
+
+      ((FileBasedModelRoot)entry.getModelRoot()).setContentRoot(contentRoot);
+      return true;
     }
   }
 

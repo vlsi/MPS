@@ -28,7 +28,7 @@ public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
 
   public IsApplicableStatus isApplicableFirst(SNode node) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getId(), this.getApplicableConceptFQName1());
+      boolean b = SModelUtil_new.isAssignableConcept(node.getConcept().getConceptId(), this.getApplicableConceptFQName1());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -60,7 +60,7 @@ public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
       {
         SNode nodeToMatch_deque_type_comparableWith_Deque_drfijn_a0a;
         nodeToMatch_deque_type_comparableWith_Deque_drfijn_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_deque_type_comparableWith_Deque_drfijn_a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_deque_type_comparableWith_Deque_drfijn_a0a.getConcept().getConceptId()))) {
           return false;
         }
         {

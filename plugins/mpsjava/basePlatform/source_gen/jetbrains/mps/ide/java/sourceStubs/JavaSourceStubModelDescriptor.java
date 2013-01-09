@@ -30,8 +30,8 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import java.io.IOException;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
+import java.util.List;
+import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
 
 public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor implements MultiStreamDataSourceListener {
 
@@ -133,11 +133,11 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
         JavaParser.JavaParseResult parseResult = parser.parse(code, myJavaPackage, FeatureKind.CLASS_STUB, true);
         if (ListSequence.fromList(parseResult.getNodes()).isNotEmpty()) {
           for (SNode newNode : ListSequence.fromList(parseResult.getNodes())) {
-            final org.jetbrains.mps.openapi.model.SNodeId newNodeId = newNode.getSNodeId();
+            final org.jetbrains.mps.openapi.model.SNodeId newNodeId = newNode.getNodeId();
             // oldNodes is usually very very small (number of root classes in java file) 
             SNode oldNode = SetSequence.fromSet(oldNodes).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {
-                return it.getSNodeId().equals(newNodeId);
+                return it.getNodeId().equals(newNodeId);
               }
             }).first();
             if (oldNode == null) {
@@ -146,7 +146,7 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
             } else {
               SNodeOperations.replaceWithAnother(oldNode, newNode);
             }
-            MapSequence.fromMap(myRootsById).put(newNode.getSNodeId(), newNode);
+            MapSequence.fromMap(myRootsById).put(newNode.getNodeId(), newNode);
           }
         }
 
@@ -165,19 +165,51 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
     }
   }
 
+  private static final int BUFSIZE = 65536;
+
   private String readInputStream(InputStream is) throws IOException {
-    BufferedReader br = null;
-    try {
-      br = new BufferedReader(new InputStreamReader(is));
-      StringBuilder sb = new StringBuilder();
-      while (br.ready()) {
-        sb.append(br.readLine());
+
+    List<byte[]> blocks = ListSequence.fromList(new LinkedList<byte[]>());
+
+    byte[] buffer = new byte[BUFSIZE];
+    int lastRead = -1;
+    int read = is.read(buffer);
+
+    while (read > 0) {
+      lastRead = read;
+      ListSequence.fromList(blocks).addElement(buffer);
+
+      buffer = new byte[BUFSIZE];
+      read = is.read(buffer);
+    }
+
+    if (lastRead > 0) {
+      int blks = ListSequence.fromList(blocks).count();
+      byte[] wholeBuffer;
+
+      if (blks == 1) {
+        wholeBuffer = ListSequence.fromList(blocks).getElement(0);
+      } else {
+        int size = (blks - 1) * BUFSIZE + lastRead;
+        wholeBuffer = new byte[size];
+        int c = 0;
+        int p = 0;
+        for (byte[] buf : ListSequence.fromList(blocks)) {
+          int n = (c == blks - 1 ?
+            lastRead :
+            BUFSIZE
+          );
+          System.arraycopy(buf, 0, wholeBuffer, p, n);
+          p = p + BUFSIZE;
+          c++;
+        }
       }
-      return sb.toString();
-    } finally {
-      if (br != null) {
-        br.close();
-      }
+
+      // Attention: default platform charset used. 
+      return new String(wholeBuffer);
+
+    } else {
+      return "";
     }
   }
 }

@@ -2661,10 +2661,27 @@
               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1613125646032873175" resolveInfo="templateModelsRoot" />
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1613125646032873187">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ep0o.~FolderModelRootBase%dsetPath(java%dlang%dString)%cvoid" resolveInfo="setPath" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ep0o.~FileBasedModelRoot%dsetContentRoot(java%dlang%dString)%cvoid" resolveInfo="setContentRoot" />
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="1613125646032873189">
                 <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1613125646032873142" resolveInfo="templateModelsDir" />
               </node>
+            </node>
+          </node>
+        </node>
+        <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="256092811604632855">
+          <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="256092811604633719">
+            <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="256092811604639208">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ep0o.~FileBasedModelRoot%daddFile(java%dlang%dString,java%dlang%dString)%cvoid" resolveInfo="addFile" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.StaticFieldReference" typeId="tpee.1070533707846" id="256092811604640470">
+                <link role="classifier" roleId="tpee.1144433057691" targetNodeId="d2v5.~DefaultModelRoot" resolveInfo="DefaultModelRoot" />
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="ep0o.~FileBasedModelRoot%dSOURCE_ROOTS" resolveInfo="SOURCE_ROOTS" />
+              </node>
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.VariableReference" typeId="tpee.1068498886296" id="256092811604640676">
+                <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1613125646032873142" resolveInfo="templateModelsDir" />
+              </node>
+            </node>
+            <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="256092811604632854">
+              <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1613125646032873175" resolveInfo="templateModelsRoot" />
             </node>
           </node>
         </node>

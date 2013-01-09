@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-2xgwavt0f1y0h56sycazqd9629v0npm">
+<dependencies version="2" modelHash="6onsmzg9u6uqn2bhrv29s38136bej3e">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(JDK/java.io@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang.reflect(JDK/java.lang.reflect@java_stub)" />
@@ -17,8 +17,8 @@
   <dep model="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" hash="-33tlavyfw081dpoo7kr33x973l53rit" />
   <dep model="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" hash="9s7tn7r6i6ppg130pq11m1usnjxibg4" />
   <dep model="r:00000000-0000-4000-0000-011c895902bc(jetbrains.mps.lang.sharedConcepts.structure)" hash="-70etqnpzu2kbei39q2pbbkqppl49jrv" />
-  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="-3v4ejb4k98ir6i9i0g2494nfx4kptsb" />
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-6xrt2chqmiyqnnzeq61xlti9gxqpo7q" />
+  <dep model="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" hash="cz8b7u83n257zisvdb8zfi0940h6ww3" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9fewwdo4hvsg0t5ahhqrttciuy5v4h" />
   <dep model="r:00000000-0000-4000-0000-011c895902cc(jetbrains.mps.baseLanguage.generator.java.conceptFunctionDefaults@generator)" hash="-mhq7bu6g8mtyvm09veubsafx9cdbe1" />
   <dep model="r:00000000-0000-4000-0000-011c895902de(jetbrains.mps.baseLanguage.blTypes.primitiveDescriptors)" />
   <dep model="r:00000000-0000-4000-0000-011c895902e1(jetbrains.mps.lang.generator.behavior)" hash="-5pa6th40xzdqzcx4tfr4lh4ev9cegd" />
@@ -28,18 +28,18 @@
   <dep model="r:00000000-0000-4000-0000-011c895902f3(jetbrains.mps.lang.generator.generationContext.structure)" hash="b6qwmon42e2m3ilphx1s2e0pt88dxyp" />
   <dep model="r:00000000-0000-4000-0000-011c895902f4(jetbrains.mps.lang.generator.generationContext.generator.baseLanguage.template.main@generator)" hash="-6zim42wfld6ley17umrlwzykg17uz0u" />
   <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="3d2lxr8unjxvzzi6xlbsruq2a8tb63l" />
-  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="7hgovcgxnd93npcwx1oymw5jxqdbypg" />
-  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="6f9jb5k2icdty624yqk3hbqvsk65dq5" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="egiwuzafx3tl3xpy2o3efqrip5u7wyl" />
+  <dep model="r:00000000-0000-4000-0000-011c8959033a(jetbrains.mps.baseLanguage.closures.generator.baseLanguage.template.main@generator)" hash="-7nop39x4mknbyxupta50fhxufijujq0" />
   <dep model="r:00000000-0000-4000-0000-011c8959033f(jetbrains.mps.lang.pattern.behavior)" hash="-15bq836w7m7b52p0crx8os5elipcgqc" />
   <dep model="r:00000000-0000-4000-0000-011c89590345(jetbrains.mps.lang.pattern.structure)" hash="-4nirrn23q5wrl0mme8ov8v7hn17c6ex" />
   <dep model="r:00000000-0000-4000-0000-011c895903ac(jetbrains.mps.baseLanguageInternal.structure)" hash="-5vfg2ib2be2yqaomu7cvgm97hdvh00d" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="72kgc0qxjq056elofa7a9i6ps9tz4n5" />
-  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-2yhg43klouti2zubafmgijugqt9ydej" />
+  <dep model="r:c3548bac-30eb-4a2a-937c-0111d5697309(jetbrains.mps.lang.smodel.generator.smodelAdapter)" hash="-58juhbzj5asfmsy8la3ajjgo19w2cqd" />
   <dep model="r:c71b740e-a20d-4190-9688-0f8df932da4d(jetbrains.mps.baseLanguage.tuples.generator.template.main@generator)" hash="2jj75ckcxs97yshd841onhq085nic5v" />
   <dep model="r:d1558b8f-fc9e-4ca7-bb90-70ac789f336e(jetbrains.mps.baseLanguage.collections.generator.baseLanguage.template.post@generator)" hash="-dtcjnjk6lww15wxj6oyv44k28fu5g1d" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3t350ymnztu1bi083p2mhorjil0w76j" />
   <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" hash="-42u6f9vbzpf201qzziwe8drcbr8ay4o" />
-  <common hash="vt92ens3ixg1ukl5kmrf2quhpk66or">
+  <common hash="-euk3o2out6xz1su3e8mjnc32h1nfpgj">
     <dep root="1147906725605225569" />
     <dep root="1167163214015" />
     <dep root="1167163229003" />
@@ -236,7 +236,7 @@
   <source id="5301578252490218394" name="reduce_LoopMacro" hash="zd23lq7robury8muw32n0lhscme4lz">
     <dep root="1167163238171" />
   </source>
-  <source id="8285036680620207023" name="reduce_TemplateNode" hash="-38bwjhyf0rhl7ss2mha0dm0whv4hl4o">
+  <source id="8285036680620207023" name="reduce_TemplateNode" hash="1sz52anhiy8k29bdfwt2bszk0u5mv3t">
     <dep root="1167163238171" />
   </source>
   <source id="8285036680620300245" name="reduce_IncludeMacro" hash="-b98r7g6cwyzqbsu5a9m49lkoi861sfs">
@@ -266,7 +266,7 @@
   <source id="344761564571002698" name="reduce_Call" hash="-2hy3pnz6uu6wpj2635ir0bv42vt31r5">
     <dep root="1167163238171" />
   </source>
-  <source id="344761564571002709" name="reduce_MapSrcL" hash="cx3k0qyw3785lo0m7d5xc8syj41xuvd">
+  <source id="344761564571002709" name="reduce_MapSrcL" hash="6rxcrtgrgtr0bd2jcsgbtxw0ndtoasp">
     <dep root="1167163238171" />
   </source>
   <source id="344761564571002720" name="reduce_Switch" hash="-901yd0spfrpcqjhec8zysa2gth5l4vo">
@@ -320,10 +320,10 @@
   <source id="8626372016104475434" name="reduce_TemplateNodeExpression" hash="-1izgwnh4ntdwsxg7xp803tooer9gjhf">
     <dep root="1167163238171" />
   </source>
-  <source id="2321430363679347640" name="reduce_MapSrc_helper" hash="yzxyfe6hq0ex4umhc16i6u8stbe5ng">
+  <source id="2321430363679347640" name="reduce_MapSrc_helper" hash="-brbvqp09au8lczv7mbnp0ns8da2n8g6">
     <dep root="1167163238171" />
   </source>
-  <source id="9071348379728451047" name="reduce_toSNodePointer" hash="1hib2il8n0sw7xvk6iro8m03bwyjgb0">
+  <source id="9071348379728451047" name="reduce_toSNodePointer" hash="-actuvml7pro4ql4x8f7hcpz1g65hl0q">
     <dep root="1167163238171" />
   </source>
   <source id="5659786285834775960" name="reduce_TemplateArgumentParameterExpr" hash="-14blsjc63dno9eg09qynkamuk4hfzii">
@@ -338,10 +338,10 @@
   <source id="330395710727988576" name="reduce_WeavingRule" hash="bb2w2mroa44x4u5y0eno19vu30o6nsh">
     <dep root="1167163238171" />
   </source>
-  <source id="330395710727988683" name="reduce_PatternRule" hash="bx75bgvqjn3bamti4zmswvlx4ihwv2o">
+  <source id="330395710727988683" name="reduce_PatternRule" hash="351e0plw512byz5mu52y9wcrzp5jq5r">
     <dep root="1167163238171" />
   </source>
-  <source id="3076445114127780885" name="TemplateModelImpl" hash="-bjuyou5m8egj75eljjv0xlcdua2crxo">
+  <source id="3076445114127780885" name="TemplateModelImpl" hash="-485gxxttvgd6esl2zgljudll3734tvt">
     <dep root="1167163238171" />
   </source>
   <source id="8371596541809191595" name="reduce_TemplateArgumentPatternRef" hash="cww0hxp808mkmel35liaczejo5caeom">

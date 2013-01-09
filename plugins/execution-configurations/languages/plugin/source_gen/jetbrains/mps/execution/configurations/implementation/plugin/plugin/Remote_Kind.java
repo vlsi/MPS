@@ -4,7 +4,7 @@ package jetbrains.mps.execution.configurations.implementation.plugin.plugin;
 
 import com.intellij.execution.configurations.ConfigurationType;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import com.intellij.icons.AllIcons;
 import java.util.List;
 import com.intellij.execution.configurations.ConfigurationFactory;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -15,7 +15,7 @@ import com.intellij.util.containers.ContainerUtil;
 import com.intellij.openapi.extensions.Extensions;
 
 public class Remote_Kind implements ConfigurationType {
-  private static final Icon ICON = IconUtil.getIcon("remote_run_configuration.png");
+  private static final Icon ICON = AllIcons.RunConfigurations.Remote;
   private final List<ConfigurationFactory> myForeignFactories = ListSequence.fromList(new ArrayList<ConfigurationFactory>());
 
   public Remote_Kind() {

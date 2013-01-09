@@ -82,7 +82,7 @@ public class FeatureForestMapSupport extends AbstractProjectComponent {
         List<SNode> changeChildren = change.getChangeSet().getNewModel().getNodeById(parentId).getChildren(role);
         for (int i = begin; i < end; i++) {
           if (i < ListSequence.fromList(changeChildren).count()) {
-            ListSequence.fromList(result).addElement(new NodeFeature(new SNodePointer(modelReference, ListSequence.fromList(changeChildren).getElement(i).getSNodeId())));
+            ListSequence.fromList(result).addElement(new NodeFeature(new SNodePointer(modelReference, ListSequence.fromList(changeChildren).getElement(i).getNodeId())));
           }
         }
       }

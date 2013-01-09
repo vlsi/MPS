@@ -9,10 +9,10 @@ public class BuildLayout_AbstractContainer_Behavior {
   }
 
   public static String virtual_getAssembleSubTaskId_4701820937132344052(SNode thisNode) {
-    return "assemble." + thisNode.getSNodeId().toString();
+    return "assemble." + thisNode.getNodeId().toString();
   }
 
   public static String virtual_getPrepareSubTaskId_4701820937132344041(SNode thisNode) {
-    return "prepare." + thisNode.getSNodeId().toString();
+    return "prepare." + thisNode.getNodeId().toString();
   }
 }

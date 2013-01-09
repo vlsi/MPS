@@ -17,7 +17,7 @@ import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.util.Set;
-import jetbrains.mps.smodel.SReference;
+import org.jetbrains.mps.openapi.model.SReference;
 import jetbrains.mps.findUsages.FindUsagesManager;
 import java.util.Collections;
 import jetbrains.mps.findUsages.SearchType;
@@ -79,9 +79,9 @@ public class HighlightUsages_Action extends BaseAction {
           NodeHighlightManager highlightManager = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightManager();
           EditorMessageOwner messageOwner = ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getHighlightMessagesOwner();
           SNode node = ((EditorCell) MapSequence.fromMap(_params).get("editorCell")).getSNodeWRTReference();
-          Set<SReference> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(node), SearchType.USAGES, new ModelsOnlyScope(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))), null);
+          Set<SReference> usages = FindUsagesManager.getInstance().findUsages(Collections.<org.jetbrains.mps.openapi.model.SNode>singleton(node), SearchType.USAGES, new ModelsOnlyScope(((SModelDescriptor) MapSequence.fromMap(_params).get("model"))), null);
           boolean highlight = highlightManager.getMessagesFor(node, messageOwner).isEmpty();
-          if (SNodeOperations.getContainingRoot(node) == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getTopmostAncestor()) {
+          if (SNodeOperations.getContainingRoot(node) == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
             if (highlight) {
               highlightManager.mark(node, HighlightConstants.NODE_COLOR, "source node", messageOwner);
             } else {
@@ -91,11 +91,11 @@ public class HighlightUsages_Action extends BaseAction {
             }
           }
           for (SReference ref : SetSequence.fromSet(usages)) {
-            if (ref.getSourceNode().getTopmostAncestor() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getTopmostAncestor()) {
+            if (ref.getSourceNode().getContainingRoot() == ((EditorComponent) MapSequence.fromMap(_params).get("editorComponent")).getRootCell().getSNode().getContainingRoot()) {
               if (highlight) {
-                highlightManager.mark(ref.getSourceNode(), HighlightConstants.USAGES_COLOR, "usage", messageOwner);
+                highlightManager.mark(((SNode) ref.getSourceNode()), HighlightConstants.USAGES_COLOR, "usage", messageOwner);
               } else {
-                for (EditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(ref.getSourceNode(), messageOwner))) {
+                for (EditorMessage message : ListSequence.fromList(highlightManager.getMessagesFor(((SNode) ref.getSourceNode()), messageOwner))) {
                   highlightManager.unmark(message);
                 }
               }

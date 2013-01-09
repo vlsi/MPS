@@ -49,7 +49,7 @@ public class short_unboxing_SubtypingRule extends SubtypingRule_Runtime implemen
       {
         SNode nodeToMatch_short_unboxing_l759a1_a0a;
         nodeToMatch_short_unboxing_l759a1_a0a = nodeToMatch;
-        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_short_unboxing_l759a1_a0a.getConcept().getId()))) {
+        if (!("jetbrains.mps.baseLanguage.structure.ClassifierType".equals(nodeToMatch_short_unboxing_l759a1_a0a.getConcept().getConceptId()))) {
           return false;
         }
         {

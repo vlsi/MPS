@@ -37,7 +37,7 @@ public class GeneratedQueriesOpener {
     }
 
     for (Method m : cls.getMethods()) {
-      if (m.getName().endsWith("_" + node.getSNodeId().toString())) {
+      if (m.getName().endsWith("_" + node.getNodeId().toString())) {
         for (NavigationProvider np : NavigationProvider.EP_NAME.getExtensions()) {
           if (np.openMethod(getProjectPath(context.getProject()), modelName + ".QueriesGenerated", m.getName(), m.getParameterTypes().length)) {
             return true;

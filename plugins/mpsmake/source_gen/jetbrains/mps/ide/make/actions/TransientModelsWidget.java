@@ -14,7 +14,6 @@ import jetbrains.mps.ide.generator.GenerationSettings;
 import java.awt.Dimension;
 import java.awt.Point;
 import com.intellij.ui.awt.RelativePoint;
-import javax.swing.UIManager;
 import javax.swing.JComponent;
 
 /*package*/ class TransientModelsWidget implements StatusBarWidget, CustomStatusBarWidget, StatusBarWidget.IconPresentation, StatusBarWidget.WidgetPresentation {
@@ -22,6 +21,7 @@ import javax.swing.JComponent;
   @NotNull
   private final StatusBar myStatusBar;
   private final Icon myIcon = IconContainer.ICON_a2;
+  private final Icon myIconDisable = IconContainer.ICON_a3;
   private CustomIconWrapper myComponent;
 
   public TransientModelsWidget(StatusBar bar) {
@@ -77,7 +77,9 @@ import javax.swing.JComponent;
     if (isSaveTransientModels()) {
       return myIcon;
     }
-    return UIManager.getLookAndFeel().getDisabledIcon(myStatusBar.getComponent(), myIcon);
+    // TODO: Use only one Icon. This hack helps to avoid tests fails 
+    // <node> 
+    return myIconDisable;
   }
 
   @NotNull

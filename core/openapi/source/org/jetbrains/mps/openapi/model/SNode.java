@@ -49,7 +49,7 @@ public interface SNode {
   /**
    * Uniquely identifies the node within its containing model. May also be null.
    */
-  SNodeId getSNodeId();
+  SNodeId getNodeId();
 
   /**
    * Uniquely identifies the node in a repository. Never changes between subsequent read and write actions and behaves as a "weak reference" for a node
@@ -110,7 +110,7 @@ public interface SNode {
   //complex queries
 
   @NotNull
-  SNode getTopmostAncestor();
+  SNode getContainingRoot();
 
   String getRoleInParent();
 

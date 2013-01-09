@@ -8,6 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.lang.core.editor.AliasEditorComponent;
+import jetbrains.mps.baseLanguage.editor.BaseLanguageStyle_StyleSheet;
 
 public class DispatchModifier_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -17,6 +18,7 @@ public class DispatchModifier_Editor extends DefaultNodeEditor {
   private EditorCell createComponent_dp7njx_a(EditorContext editorContext, SNode node) {
     AbstractCellProvider provider = new AliasEditorComponent(node);
     EditorCell editorCell = provider.createEditorCell(editorContext);
+    BaseLanguageStyle_StyleSheet.getKeyWord(editorCell).apply(editorCell);
     return editorCell;
   }
 }

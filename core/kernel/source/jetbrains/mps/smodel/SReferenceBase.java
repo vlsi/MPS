@@ -103,7 +103,7 @@ abstract class SReferenceBase extends SReference {
             new ProblemDescription(new SNodePointer(myImmatureTargetNode),
               "ImmatureTargetNode(modelID: " +
                 (myImmatureTargetNode.getModel() == null ? "null" : myImmatureTargetNode.getModel().toString()) +
-                ", nodeID: " + myImmatureTargetNode.getSNodeId().toString() +
+                ", nodeID: " + myImmatureTargetNode.getNodeId().toString() +
                 "): isRegistered = " + (myImmatureTargetNode.getModel() != null) +
                 ", isDisposed = " + jetbrains.mps.util.SNodeOperations.isDisposed(myImmatureTargetNode) + dumpUnregisteredTrace()));
           myImmatureTargetNode = null;
@@ -134,7 +134,7 @@ abstract class SReferenceBase extends SReference {
     myImmatureTargetNode = null;
     adjustMature(immatureNode);
     setTargetSModelReference(immatureNode.getModel().getSModelReference());
-    setResolveInfo(immatureNode.getResolveInfo());
+    setResolveInfo(jetbrains.mps.util.SNodeOperations.getResolveInfo(immatureNode));
   }
 
   protected void adjustMature(SNode immatureTarget) {

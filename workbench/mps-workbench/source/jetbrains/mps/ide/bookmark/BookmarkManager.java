@@ -15,15 +15,17 @@
  */
 package jetbrains.mps.ide.bookmark;
 
+import com.intellij.icons.AllIcons;
+import com.intellij.ide.bookmarks.Bookmark;
 import com.intellij.openapi.components.PersistentStateComponent;
 import com.intellij.openapi.components.ProjectComponent;
 import com.intellij.openapi.components.State;
 import com.intellij.openapi.components.Storage;
 import com.intellij.openapi.project.Project;
+import com.intellij.ui.LightColors;
 import jetbrains.mps.ide.bookmark.BookmarkManager.MyState;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.project.ProjectOperationContext;
@@ -36,6 +38,10 @@ import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 
 import javax.swing.Icon;
+import java.awt.Color;
+import java.awt.Component;
+import java.awt.Font;
+import java.awt.Graphics;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
@@ -54,20 +60,7 @@ import java.util.List;
 public class BookmarkManager implements ProjectComponent, PersistentStateComponent<MyState> {
   private static final Logger LOG = Logger.getLogger(BookmarkManager.class);
 
-  private static Icon[] myBookmarkIcons = new Icon[]{
-    Icons.BOOKMARK_0,
-    Icons.BOOKMARK_1,
-    Icons.BOOKMARK_2,
-    Icons.BOOKMARK_3,
-    Icons.BOOKMARK_4,
-    Icons.BOOKMARK_5,
-    Icons.BOOKMARK_6,
-    Icons.BOOKMARK_7,
-    Icons.BOOKMARK_8,
-    Icons.BOOKMARK_9
-  };
-
-  private static Icon myUnnumberedBookmarkIcon = Icons.BOOKMARK_UNNUMBERED;
+  private static Icon myUnnumberedBookmarkIcon = AllIcons.Actions.Checked;
 
   private List<BookmarkListener> myBookmarkListeners = new ArrayList<BookmarkListener>();
 
@@ -113,7 +106,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
       SNodePointer nodePointer = myBookmarks[i];
       if (nodePointer != null) {
         SNode node = nodePointer.getNode();
-        if (node != null && node.getTopmostAncestor() == root) {
+        if (node != null && node.getContainingRoot() == root) {
           result.add(new Pair<SNode, Integer>(node, i));
         }
       }
@@ -121,7 +114,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     for (SNodePointer nodePointer : myUnnumberedBookmarks) {
       if (nodePointer != null) {
         SNode node = nodePointer.getNode();
-        if (node != null && node.getTopmostAncestor() == root) {
+        if (node != null && node.getContainingRoot() == root) {
           result.add(new Pair<SNode, Integer>(node, -1));
         }
       }
@@ -240,7 +233,7 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     if (bookmarkNumber == -1) {
       return myUnnumberedBookmarkIcon;
     }
-    return myBookmarkIcons[bookmarkNumber];
+    return new MnemonicIcon(Character.forDigit(bookmarkNumber, 10));
   }
 
   public SNodePointer getBookmark(int number) {
@@ -355,5 +348,49 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     }
 
 
+  }
+
+  private static class MnemonicIcon implements Icon {
+    private final char myMnemonic;
+
+    private MnemonicIcon(char mnemonic) {
+      myMnemonic = mnemonic;
+    }
+
+    @Override
+    public void paintIcon(Component c, Graphics g, int x, int y) {
+      g.setColor(LightColors.YELLOW);
+      g.fillRect(x, y, getIconWidth(), getIconHeight());
+
+      g.setColor(Color.gray);
+      g.drawRect(x, y, getIconWidth(), getIconHeight());
+
+      g.setColor(Color.black);
+      final Font oldFont = g.getFont();
+      g.setFont(Bookmark.MNEMONIC_FONT);
+
+      g.drawString(Character.toString(myMnemonic), x + 2, y + getIconHeight() - 2);
+      g.setFont(oldFont);
+    }
+
+    @Override
+    public int getIconWidth() {
+      return 10;
+    }
+
+    @Override
+    public int getIconHeight() {
+      return 12;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+      if (this == o) return true;
+      if (o == null || getClass() != o.getClass()) return false;
+
+      MnemonicIcon that = (MnemonicIcon)o;
+
+      return myMnemonic == that.myMnemonic;
+    }
   }
 }

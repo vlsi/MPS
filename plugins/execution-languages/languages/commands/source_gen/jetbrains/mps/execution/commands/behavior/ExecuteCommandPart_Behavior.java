@@ -60,7 +60,7 @@ public class ExecuteCommandPart_Behavior {
   }
 
   public static String call_getSuffix_3754131050835940463(SNode thisNode) {
-    return "_" + IGeneratedToClass_Behavior.getValidClassName_3754131050835940481(thisNode.getSNodeId().toString());
+    return "_" + IGeneratedToClass_Behavior.getValidClassName_3754131050835940481(thisNode.getNodeId().toString());
   }
 
   @Deprecated

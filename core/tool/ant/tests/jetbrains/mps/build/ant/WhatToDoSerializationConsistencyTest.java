@@ -29,15 +29,15 @@ import java.util.LinkedHashMap;
 
 public class WhatToDoSerializationConsistencyTest extends TestCase {
 
-  public void testCloningConcistencyWithProjects() {
-    Script toDo = new Script();
-
-    toDo.addProjectFile(new File("languages/util/builders/builders.mpr").getAbsoluteFile(), "blahblahblah1", "blahblahblah2");
-    toDo.addProjectFile(new File("languages/util/dates/dates.mpr").getAbsoluteFile(), "blahblahblah1");
-    toDo.addProjectFile(new File("languages/util/regexp/regexp.mpr").getAbsoluteFile());
-
-    testToDoConsistency(toDo);
-  }
+//  public void testCloningConcistencyWithProjects() {
+//    Script toDo = new Script();
+//
+//    toDo.addProjectFile(new File("languages/util/builders/builders.mpr").getAbsoluteFile(), "blahblahblah1", "blahblahblah2");
+//    toDo.addProjectFile(new File("languages/util/dates/dates.mpr").getAbsoluteFile(), "blahblahblah1");
+//    toDo.addProjectFile(new File("languages/util/regexp/regexp.mpr").getAbsoluteFile());
+//
+//    testToDoConsistency(toDo);
+//  }
 
   public void testCloningConcistencyWithModels() {
     Script toDo = new Script();
@@ -52,9 +52,9 @@ public class WhatToDoSerializationConsistencyTest extends TestCase {
   public void testCloningConcistencyWithModules() {
     Script toDo = new Script();
 
-    toDo.addModuleFile(new File("languages/util/regexp/solutions/jetbrains.mps.regexp.examples/jetbrains.mps.regexp.examples.msd").getAbsoluteFile());
-    toDo.addModuleFile(new File("languages/util/regexp/solutions/jetbrains.mps.regexp.sandbox/jetbrains.mps.regexp.sandbox.msd").getAbsoluteFile());
-    toDo.addModuleFile(new File("languages/util/regexp/solutions/jetbrains.mps.regexp.unittest/jetbrains.mps.regexp.unittest.msd").getAbsoluteFile());
+    toDo.addModuleFile(new File("languages/util/regexp/solutions/jetbrains.mps.regexp.examples/jetbrains.mps.baseLanguage.regexp.examples.msd").getAbsoluteFile());
+    toDo.addModuleFile(new File("languages/util/regexp/solutions/jetbrains.mps.regexp.sandbox/jetbrains.mps.baseLanguage.regexp.sandbox.msd").getAbsoluteFile());
+    toDo.addModuleFile(new File("languages/util/regexp/solutions/jetbrains.mps.regexp.unittest/jetbrains.mps.baseLanguage.regexp.unittest.msd").getAbsoluteFile());
 
     testToDoConsistency(toDo);
   }

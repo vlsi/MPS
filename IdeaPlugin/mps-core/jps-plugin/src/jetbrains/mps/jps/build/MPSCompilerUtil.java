@@ -16,12 +16,27 @@
 
 package jetbrains.mps.jps.build;
 
+import jetbrains.mps.idea.core.make.MPSMakeConstants;
+import org.jetbrains.jps.incremental.CompileContext;
+import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
+import org.jetbrains.jps.incremental.messages.CompilerMessage;
+
 /**
  * evgeny, 12/15/12
  */
 public class MPSCompilerUtil {
 
-    public static boolean isTracingMode() {
-        return "true".equals(System.getProperty("mps.jps.debug"));
+  public static boolean isTracingMode() {
+    return isExtraTracingMode() || "true".equals(System.getProperty("mps.jps.debug"));
+  }
+
+  public static boolean isExtraTracingMode() {
+    return "true".equals(System.getProperty("mps.jps.debugExtra"));
+  }
+
+  public static void debug(CompileContext context, String msg) {
+    if (isExtraTracingMode()) {
+      context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, msg));
     }
+  }
 }

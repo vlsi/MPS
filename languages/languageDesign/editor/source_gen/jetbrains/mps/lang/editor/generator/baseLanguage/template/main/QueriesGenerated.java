@@ -29,7 +29,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.lang.editor.behavior.CellModel_ListWithRole_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 import jetbrains.mps.baseLanguage.behavior.Classifier_Behavior;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.generator.template.IfMacroContext;
@@ -240,7 +240,7 @@ public class QueriesGenerated {
     return SPropertyOperations.getBoolean(_context.getNode(), "menuAlwaysShown");
   }
 
-  public static Object propertyMacro_GetPropertyValue_1187029799032(final IOperationContext operationContext, final PropertyMacroContext _context) {
+  public static Object propertyMacro_GetPropertyValue_4785871466714472426(final IOperationContext operationContext, final PropertyMacroContext _context) {
     SNode applicableConcept = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(_context.getNode()), "jetbrains.mps.lang.editor.structure.CellKeyMapDeclaration"), "applicableConcept", false);
     return NameUtil.nodeFQName((applicableConcept != null ?
       applicableConcept :
@@ -976,7 +976,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_4531786690998911335(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    final String methodName = BehaviorReflection.invokeVirtualStatic(String.class, new SConceptNodeAdapter(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getMethodToGenerate_1262430001741492328", new Object[]{});
+    final String methodName = BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(_context.getNode()))), "virtual_getMethodToGenerate_1262430001741492328", new Object[]{});
     return Sequence.fromIterable(Classifier_Behavior.call_methods_5292274854859311639(SNodeOperations.getNode("r:2af017c2-293f-4ebb-99f3-81e353b3d6e6(jetbrains.mps.editor.runtime)", "8394433674396727873"))).findFirst(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
         return eq_x583g4_a0a0a0a0a0b0jh(SPropertyOperations.getString(it, "name"), methodName);

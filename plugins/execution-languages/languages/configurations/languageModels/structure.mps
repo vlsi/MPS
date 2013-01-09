@@ -22,7 +22,7 @@
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
       <property name="abstract" nameId="tpce.4628067390765956802" value="false" />
       <property name="final" nameId="tpce.4628067390765956807" value="false" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/runConfigurationDeclaration.png" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${module}/icons/runConfigurationDeclaration.png" />
       <property name="name" nameId="tpck.1169194664001" value="RunConfiguration" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="run configuration" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="fb9u.946964771156066336" resolveInfo="PersistentConfiguration" />

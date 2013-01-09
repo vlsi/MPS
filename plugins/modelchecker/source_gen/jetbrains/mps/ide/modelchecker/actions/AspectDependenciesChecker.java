@@ -159,7 +159,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
         return WORKBENCH;
       }
       if (moduleFqName.equals("MPS.Classpath")) {
-        SNode refTargetRoot = reference.getTargetNode().getTopmostAncestor();
+        SNode refTargetRoot = reference.getTargetNode().getContainingRoot();
         if (SNodeOperations.isInstanceOf(refTargetRoot, "jetbrains.mps.baseLanguage.structure.Classifier")) {
           String cName = SPropertyOperations.getString(SNodeOperations.cast(refTargetRoot, "jetbrains.mps.baseLanguage.structure.Classifier"), "name");
           String modelName = model.getModelDescriptor().getModelName();

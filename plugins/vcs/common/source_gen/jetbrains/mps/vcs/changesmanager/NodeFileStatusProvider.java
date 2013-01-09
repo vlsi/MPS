@@ -11,6 +11,7 @@ import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.ide.editor.MPSEditorUtil;
+import jetbrains.mps.util.SNodeOperations;
 import com.intellij.openapi.editor.Document;
 import com.intellij.util.ThreeState;
 
@@ -36,7 +37,7 @@ public class NodeFileStatusProvider implements FileStatusProvider {
     if (root == null) {
       return null;
     }
-    if (root.isDisposed()) {
+    if (SNodeOperations.isDisposed(root)) {
       return null;
     }
     return myMapping.getStatus(root);

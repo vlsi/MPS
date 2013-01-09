@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solution name="jetbrains.mps.baseLanguage.closures.unittest" uuid="fa54094d-fc7a-4393-885f-13866cecf3f3" pluginKind="PLUGIN_OTHER" compileInMPS="true" generatorOutputPath="${mps_home}/languages/baseLanguage/closures/tests_gen">
   <models>
-    <modelRoot path="${module}/" />
+    <modelRoot contentPath="${module}" type="default">
+      <sourceRoot location="." />
+    </modelRoot>
   </models>
   <sourcePath />
   <dependencies>

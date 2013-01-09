@@ -52,7 +52,7 @@ public class DiffEditorsGroup {
         }
 
         while (visibleNode != null) {
-          SNodeId id = visibleNode.getSNodeId();
+          SNodeId id = visibleNode.getNodeId();
           EditorCell thisCell = thisEditor.findNodeCell(visibleNode);
           if (thisCell != null) {
             int newRelativePos = viewY - thisCell.getY();
@@ -148,7 +148,7 @@ public class DiffEditorsGroup {
 
   private static SNodeId check_s6qw4f_a0a0a0a1g(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getSNodeId();
+      return checkedDotOperand.getNodeId();
     }
     return null;
   }

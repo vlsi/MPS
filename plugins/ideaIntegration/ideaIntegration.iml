@@ -24,6 +24,7 @@
     <orderEntry type="module" module-name="mps-platform" />
     <orderEntry type="module" module-name="mps-workbench" />
     <orderEntry type="module" module-name="editor-api" />
+    <orderEntry type="module" module-name="mps-icons" />
   </component>
 </module>
 

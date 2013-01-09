@@ -4,7 +4,7 @@ package jetbrains.mps.ide.modelchecker.actions;
 
 import jetbrains.mps.plugins.tool.GeneratedTabbedTool;
 import javax.swing.Icon;
-import jetbrains.mps.util.IconUtil;
+import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.wm.ToolWindowAnchor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
@@ -29,7 +29,7 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.plugins.tool.IComponentDisposer;
 
 public class ModelCheckerTool_Tool extends GeneratedTabbedTool {
-  private static final Icon ICON = IconUtil.getIcon("modelChecker.png");
+  private static final Icon ICON = MPSIcons.ToolWindows.ModelChecker;
   private Project myProject;
 
   public ModelCheckerTool_Tool(Project project) {

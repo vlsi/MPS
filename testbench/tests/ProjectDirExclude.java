@@ -29,13 +29,19 @@ import java.util.Set;
  * Provides globally excluded dirs for tests like CheckProjectStructure and Audit*
  */
 public class ProjectDirExclude {
-  private static String[] excludes = new String[] { "IdeaPlugin" };
-  public static Set<IFile> excludeSet = new HashSet<IFile>();
+  private static final String[] excludes = new String[] { "IdeaPlugin" };
+  private static final Set<IFile> excludeSet = new HashSet<IFile>();
 
   static {
     String mpsDir = System.getProperty("user.dir");
     for (String e: excludes) {
       excludeSet.add( FileSystem.getInstance().getFileByPath(mpsDir + File.separator + e) );
     }
+  }
+
+  public static Set<IFile> getExcludeSet() {
+    Set<IFile> copy = new HashSet<IFile>();
+    copy.addAll(excludeSet);
+    return copy;
   }
 }
