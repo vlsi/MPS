@@ -7,15 +7,19 @@ import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.util.*;
+import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import jetbrains.mps.util.SNodeOperations;
+import jetbrains.mps.util.ConditionalIterable;
 import jetbrains.mps.smodel.IScope;
 import java.util.Collections;
+import jetbrains.mps.kernel.model.SModelUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
+import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.project.IModule;
@@ -41,14 +45,10 @@ public class SModelOperations {
       return result;
     }
     GlobalScope scope = GlobalScope.getInstance();
-    SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, scope);
-    if (concept == null) {
-      return new ArrayList<SNode>();
-    }
     List<SNode> list = new ArrayList<SNode>();
     Condition<SNode> cond = new Condition<SNode>() {
       public boolean met(SNode node) {
-        return org.jetbrains.mps.openapi.model.SNodeUtil.isInstanceOf(node, jetbrains.mps.util.SNodeOperations.getConcept(conceptFqName));
+        return SNodeUtil.isInstanceOf(node, SNodeOperations.getConcept(conceptFqName));
       }
     };
     Iterable<SNode> iterable = new ConditionalIterable<SNode>(model.roots(), cond);
@@ -134,7 +134,7 @@ public class SModelOperations {
       return null;
     }
     SNode nodeConcept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
-    if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(nodeConcept)) {
+    if (jetbrains.mps.smodel.SNodeUtil.isInstanceOfInterfaceConceptDeclaration(nodeConcept)) {
       SNode node = new SNode(conceptFqName);
       if (id != null) {
         node.setId(id);
