@@ -3,6 +3,7 @@
   <dependency className="jetbrains.mps.ide.java.newparser.ASTConverter" file="ASTConverter.java">
     <classNode dependClassName="java.lang.IllegalArgumentException" />
     <classNode dependClassName="java.lang.Integer" />
+    <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.RuntimeException" />
     <classNode dependClassName="java.lang.String" />
@@ -10,14 +11,19 @@
     <classNode dependClassName="java.lang.StringBuilder" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
+    <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.Iterator" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
+    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.JavaParseException" />
     <classNode dependClassName="jetbrains.mps.ide.java.newparser.TypeNameResolver" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.IVisitor" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
@@ -32,6 +38,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
+    <classNode dependClassName="jetbrains.mps.smodel.StaticReference" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.ASTNode" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.ast.AllocationExpression" />
