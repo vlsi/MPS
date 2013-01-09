@@ -37,7 +37,7 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
 
   public EditorCellListHandler(SNode ownerNode, String childRole, jetbrains.mps.openapi.editor.EditorContext editorContext) {
     super(ownerNode, childRole, editorContext);
-    myLinkDeclaration = ownerNode.getLinkDeclaration(childRole);
+    myLinkDeclaration = ((jetbrains.mps.smodel.SNode) ownerNode).getLinkDeclaration(childRole);
     myChildConcept = SModelUtil.getLinkDeclarationTarget(myLinkDeclaration);
     SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
     if (SNodeUtil.getLinkDeclaration_IsReference(genuineLink)) {

@@ -556,7 +556,7 @@ public class NodeEditorActions {
     }
 
     private SNode findTopMostNodeWithSingularContainment(SNode childNode) {
-      while (childNode.getParent() != null && SNodeUtil.getLinkDeclaration_IsSingular(childNode.getRoleLink())) {
+      while (childNode.getParent() != null && SNodeUtil.getLinkDeclaration_IsSingular(((jetbrains.mps.smodel.SNode) childNode).getRoleLink())) {
         childNode = childNode.getParent();
       }
       return childNode;

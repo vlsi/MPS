@@ -432,7 +432,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   public SNode getLinkDeclaration() {
     String role = getStyle().get(StyleAttributes.NAVIGATABLE_REFERENCE);
     if (role != null) {
-      return getSNode().getLinkDeclaration(role);
+      return ((jetbrains.mps.smodel.SNode) getSNode()).getLinkDeclaration(role);
     }
     return myLinkDeclarationPointer != null ? myLinkDeclarationPointer.getNode() : null;
   }
@@ -554,7 +554,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     while (AttributeOperations.isAttribute(node)) {
       node = node.getParent();
     }
-    SNode link = node.getParent().getLinkDeclaration(node.getRoleInParent());
+    SNode link = ((jetbrains.mps.smodel.SNode) node.getParent()).getLinkDeclaration(node.getRoleInParent());
     SNode concept = CellUtil.getLinkDeclarationTarget(link);
     String concreteConceptFqName = ModelConstraints.getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept));
     if (node.getConcept().getId().equals(concreteConceptFqName)) {

@@ -39,7 +39,7 @@ public class NodeCopier {
       while (myModel.getNodeById(replacedId) != null) {
         replacedId = SModel.generateUniqueId();
       }
-      node.setId(replacedId);
+      ((jetbrains.mps.smodel.SNode) node).setId(replacedId);
       if (replacedId != nodeId && !(MapSequence.fromMap(myIdReplacementCache).containsKey(nodeId))) {
         MapSequence.fromMap(myIdReplacementCache).put(nodeId, replacedId);
       }
@@ -64,13 +64,13 @@ public class NodeCopier {
     SModel model = SNodeOperations.getModel(node);
     if (SNodeOperations.getParent(node) == null) {
       SNodeOperations.detachNode(node);
-      node.setId(id);
+      ((jetbrains.mps.smodel.SNode) node).setId(id);
       SModelOperations.addRootNode(model, node);
     } else {
       // hardcoded to get rid of dependency on core language 
       jetbrains.mps.smodel.SNode stubNode = new jetbrains.mps.smodel.SNode(InternUtil.intern("jetbrains.mps.lang.core.structure.BaseConcept"));
       SNodeOperations.replaceWithAnother(node, stubNode);
-      node.setId(id);
+      ((jetbrains.mps.smodel.SNode) node).setId(id);
       SNodeOperations.replaceWithAnother(stubNode, node);
     }
   }

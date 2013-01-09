@@ -4,6 +4,8 @@ package jetbrains.mps.vcs.diff.changes;
 
 import jetbrains.mps.smodel.SNodeId;
 import java.util.List;
+
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -67,7 +69,7 @@ public class NodeGroupChange extends ModelChange {
       SNode parent = getChangeSet().getOldModel().getNodeById(myParentNodeId);
       assert parent != null;
 
-      List<SNode> children = parent.getChildren(myRole);
+      List<? extends SNode> children = IterableUtil.asList(parent.getChildren(myRole));
       myPreparedIdsToDelete = ListSequence.fromList(new ArrayList<SNodeId>());
       for (int i = myBegin; i < myEnd; i++) {
         ListSequence.fromList(myPreparedIdsToDelete).addElement(children.get(i).getNodeId());
@@ -91,7 +93,7 @@ public class NodeGroupChange extends ModelChange {
 
     // copy nodes to insert 
     List<SNode> nodesToAdd = ListSequence.fromList(new ArrayList<SNode>());
-    List<SNode> newChildren = getChangeSet().getNewModel().getNodeById(myParentNodeId).getChildren(myRole);
+    List<jetbrains.mps.smodel.SNode> newChildren = IterableUtil.asList(getChangeSet().getNewModel().getNodeById(myParentNodeId).getChildren(myRole));
     for (int i = myResultBegin; i < myResultEnd; i++) {
       ListSequence.fromList(nodesToAdd).addElement(nodeCopier.copyNode(newChildren.get(i)));
     }
@@ -140,10 +142,10 @@ public class NodeGroupChange extends ModelChange {
   }
 
   public String getDescription(boolean verbose) {
-    List<SNode> newChildren = null;
+    List<jetbrains.mps.smodel.SNode> newChildren = null;
     String newIds = null;
     if (verbose) {
-      newChildren = getChangeSet().getNewModel().getNodeById(myParentNodeId).getChildren(myRole);
+      newChildren = IterableUtil.asList(getChangeSet().getNewModel().getNodeById(myParentNodeId).getChildren(myRole));
       newIds = IterableUtils.join(ListSequence.fromList(newChildren).page(myResultBegin, myResultEnd).select(new ISelector<SNode, String>() {
         public String select(SNode n) {
           return "#" + n.getNodeId();

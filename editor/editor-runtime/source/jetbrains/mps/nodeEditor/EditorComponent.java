@@ -101,6 +101,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
@@ -2933,7 +2934,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         String role = ce.getChildRole();
         SNode parent = ce.getParent();
 
-        List<SNode> siblings = parent.getChildren(role);
+        List<? extends SNode> siblings = IterableUtil.asList(parent.getChildren(role));
         if (siblings.isEmpty()) {
           EditorCell nullCell = findNodeCellWithRole(parent, role);
           if (nullCell == null) {

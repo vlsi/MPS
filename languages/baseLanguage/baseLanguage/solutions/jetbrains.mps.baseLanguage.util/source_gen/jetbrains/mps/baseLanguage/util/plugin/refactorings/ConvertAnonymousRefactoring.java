@@ -167,7 +167,7 @@ public class ConvertAnonymousRefactoring {
       if (SetSequence.fromSet(ROLES_NOT_TO_COPY).contains(role)) {
         continue;
       }
-      for (SNode child : ListSequence.fromList(from.getChildren(role))) {
+      for (SNode child : from.getChildren(role)) {
         to.addChild(role, SNodeOperations.detachNode(((SNode) child)));
       }
     }
