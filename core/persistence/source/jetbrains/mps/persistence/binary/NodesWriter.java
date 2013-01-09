@@ -70,7 +70,7 @@ public class NodesWriter {
   }
 
   protected void writeChildren(SNode node, ModelOutputStream os) throws IOException {
-    writeNodes(node.getChildren(), os);
+    writeNodes(((Collection) node.getChildren()), os);
   }
 
   protected void writeReferences(SNode node, ModelOutputStream os) throws IOException {

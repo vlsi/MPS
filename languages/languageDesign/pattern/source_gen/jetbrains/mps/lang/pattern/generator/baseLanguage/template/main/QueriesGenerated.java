@@ -659,7 +659,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_1190931378020(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     final List<SNode> result = new ArrayList<SNode>();
     final Set<String> processedRoles = SetSequence.fromSet(new HashSet<String>());
-    for (SNode child : ListSequence.fromList(_context.getNode().getChildren())) {
+    for (SNode child : _context.getNode().getChildren()) {
       if (AttributeOperations.isAttribute(child)) {
         continue;
       }

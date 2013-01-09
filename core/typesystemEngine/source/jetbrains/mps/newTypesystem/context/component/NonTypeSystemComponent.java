@@ -24,6 +24,7 @@ import jetbrains.mps.newTypesystem.context.typechecking.IncrementalTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.NodeReadEventsCaster;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -280,7 +281,7 @@ public class NonTypeSystemComponent extends IncrementalTypecheckingComponent<Sta
       while (!(frontier.isEmpty())) {
         SNode sNode = frontier.remove();
         applyNonTypesystemRulesToNode(sNode, typeCheckingContext);
-        frontier.addAll(sNode.getChildren());
+        frontier.addAll(IterableUtil.asCollection(sNode.getChildren()));
       }
       //all error reporters must be simple reporters, no error expansion needed
     } finally {
