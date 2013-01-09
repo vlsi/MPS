@@ -13,7 +13,7 @@ import java.awt.Rectangle;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Horizontal;
 import jetbrains.mps.util.Condition;
 
@@ -152,7 +152,7 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
       // whatever 
       return false;
     }
-    jetbrains.mps.openapi.editor.cells.EditorCell_Collection parent = nodeCell.getParent();
+    EditorCell_Collection parent = nodeCell.getParent();
     if (parent == null) {
       return false;
     }
@@ -160,8 +160,8 @@ public abstract class DebuggerCellPainter<E> extends AbstractAdditionalPainter<E
       // if immediate parent is a horisontal collection 
       return true;
     }
-    return nodeCell.findParent(new Condition<EditorCell_Collection>() {
-      public boolean met(EditorCell_Collection cellCollection) {
+    return nodeCell.findParent(new Condition<jetbrains.mps.nodeEditor.cells.EditorCell_Collection>() {
+      public boolean met(jetbrains.mps.nodeEditor.cells.EditorCell_Collection cellCollection) {
         // do not want an explicit dependency on table.runtime 
         return eq_mgy25g_a0b0a0a0a0a5a71(cellCollection.getClass().getSimpleName(), "EditorCell_Table");
       }

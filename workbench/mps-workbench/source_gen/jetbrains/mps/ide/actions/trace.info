@@ -13525,7 +13525,7 @@
     <nodeInfo nodeId="7240436440488934566" fileName="ShowParameters_Action.java" startLine="84" startPosition="44" endLine="85" endPosition="159" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7240436440488934573" fileName="ShowParameters_Action.java" startLine="85" startPosition="159" endLine="86" endPosition="148" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7240436440488934585" fileName="ShowParameters_Action.java" startLine="86" startPosition="148" endLine="87" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8315304769832105325" fileName="ShowParameters_Action.java" startLine="88" startPosition="9" endLine="89" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8315304769832105325" fileName="ShowParameters_Action.java" startLine="88" startPosition="9" endLine="89" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7889360268649608396" fileName="ShowParameters_Action.java" startLine="91" startPosition="27" endLine="92" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7889360268649608575" fileName="ShowParameters_Action.java" startLine="96" startPosition="68" endLine="97" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7889360268649608396" fileName="ShowParameters_Action.java" startLine="100" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
@@ -13585,7 +13585,7 @@
       <varInfo nodeId="7889360268649608396" varName="_params" />
       <varInfo nodeId="7889360268649608396" varName="event" />
     </scopeInfo>
-    <scopeInfo nodeId="8315304769832105319" fileName="ShowParameters_Action.java" startLine="82" startPosition="35" endLine="89" endPosition="46">
+    <scopeInfo nodeId="8315304769832105319" fileName="ShowParameters_Action.java" startLine="82" startPosition="35" endLine="89" endPosition="59">
       <varInfo nodeId="8315304769832106735" varName="parametersInformation" />
     </scopeInfo>
     <scopeInfo nodeId="7889360268649608396" fileName="ShowParameters_Action.java" startLine="46" startPosition="89" endLine="55" endPosition="5" />

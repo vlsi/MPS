@@ -7,7 +7,7 @@ import java.awt.Component;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import com.intellij.openapi.actionSystem.AnAction;
 import java.awt.Cursor;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.CellFinders;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 
@@ -44,7 +44,7 @@ public abstract class BreakpointIconRenderrerEx<B> implements EditorMessageIconR
   public static EditorCell getBreakpointIconAnchorCell(EditorCell bigCell) {
     if (bigCell instanceof EditorCell_Collection) {
       EditorCell_Collection collection = (EditorCell_Collection) bigCell;
-      return collection.findChild(CellFinders.byClass(EditorCell_Label.class, true));
+      return ((EditorCell) collection).findChild(CellFinders.byClass(EditorCell_Label.class, true));
     }
     return bigCell;
   }

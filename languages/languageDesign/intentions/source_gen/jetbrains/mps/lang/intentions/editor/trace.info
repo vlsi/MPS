@@ -45,8 +45,8 @@
     <nodeInfo nodeId="1240319707714" fileName="QueryBlock_Editor.java" startLine="86" startPosition="65" endLine="87" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240319707714" fileName="QueryBlock_Editor.java" startLine="88" startPosition="5" endLine="89" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240319707714" fileName="QueryBlock_Editor.java" startLine="89" startPosition="34" endLine="90" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1240319640319" fileName="QueryBlock_Editor.java" startLine="97" startPosition="75" endLine="98" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1240319640325" fileName="QueryBlock_Editor.java" startLine="98" startPosition="105" endLine="99" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1240319640319" fileName="QueryBlock_Editor.java" startLine="97" startPosition="75" endLine="98" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1240319640325" fileName="QueryBlock_Editor.java" startLine="98" startPosition="140" endLine="99" endPosition="109" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240319640336" fileName="QueryBlock_Editor.java" startLine="100" startPosition="121" endLine="101" endPosition="181" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240319640356" fileName="QueryBlock_Editor.java" startLine="102" startPosition="13" endLine="103" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240319640365" fileName="QueryBlock_Editor.java" startLine="103" startPosition="87" endLine="104" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -55,7 +55,7 @@
     <nodeInfo nodeId="1240319640390" fileName="QueryBlock_Editor.java" startLine="108" startPosition="40" endLine="109" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1240319640397" fileName="QueryBlock_Editor.java" startLine="110" startPosition="15" endLine="111" endPosition="118" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1240319640409" fileName="QueryBlock_Editor.java" startLine="111" startPosition="118" endLine="112" endPosition="48" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1240319640419" fileName="QueryBlock_Editor.java" startLine="113" startPosition="13" endLine="114" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1240319640419" fileName="QueryBlock_Editor.java" startLine="113" startPosition="13" endLine="114" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1240319640305" fileName="QueryBlock_Editor.java" startLine="118" startPosition="15" endLine="119" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1240319640305" fileName="QueryBlock_Editor.java" startLine="119" startPosition="69" endLine="120" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1240319640305" fileName="QueryBlock_Editor.java" startLine="119" startPosition="69" endLine="120" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -182,7 +182,7 @@
       <varInfo nodeId="1240319707714" varName="editorContext" />
       <varInfo nodeId="1240319707714" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="1240319640318" fileName="QueryBlock_Editor.java" startLine="97" startPosition="75" endLine="114" endPosition="30">
+    <scopeInfo nodeId="1240319640318" fileName="QueryBlock_Editor.java" startLine="97" startPosition="75" endLine="114" endPosition="43">
       <varInfo nodeId="1240319640320" varName="collection" />
     </scopeInfo>
     <scopeInfo nodeId="1240396299712" fileName="QueryBlock_Editor.java" startLine="124" startPosition="88" endLine="141" endPosition="22">
