@@ -43,6 +43,10 @@ public class IterableUtil {
 
   public static <T> List<T> asList(Iterable<T> iter) {
     if (iter instanceof List) return (List<T>) iter;
+    return copyToList(iter);
+  }
+
+  public static <T> List<T> copyToList(Iterable<T> iter) {
     List<T> result = new ArrayList<T>();
     for (T o : iter) {
       result.add(o);

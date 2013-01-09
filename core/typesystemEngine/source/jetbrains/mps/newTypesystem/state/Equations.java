@@ -22,6 +22,8 @@ import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.equation.AddEquationOperation;
 import jetbrains.mps.newTypesystem.operation.equation.SubstituteEquationOperation;
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.util.CollectionUtil;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -200,7 +202,7 @@ public class Equations {
   }
 
   private void replaceReferences(SNode node, Set<SNode> variablesMet, boolean finalExpansion) {
-    List<SReference> references = new ArrayList<SReference>(node.getReferences());
+    List<SReference> references = IterableUtil.copyToList(node.getReferences());
     for (SReference reference : references) {
       SNode oldNode = reference.getTargetNode();
       if (TypesUtil.isVariable(oldNode)) {

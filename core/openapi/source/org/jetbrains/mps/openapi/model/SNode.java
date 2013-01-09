@@ -185,7 +185,7 @@ public interface SNode {
    * <p/>
    * The returned collection is immutable.
    */
-  public Iterable<? extends jetbrains.mps.smodel.SReference> getReferences();
+  public Iterable<jetbrains.mps.smodel.SReference> getReferences();
 
   // props
 
