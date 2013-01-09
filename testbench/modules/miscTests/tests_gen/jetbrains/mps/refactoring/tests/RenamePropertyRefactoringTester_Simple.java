@@ -61,7 +61,7 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
               }
               SModel sModel = sandbox1.getSModel();
               SNode root = sModel.rootsIterator().next();
-              SNode firstChild = root.getChildren("anotherGoodConcept").get(0);
+              SNode firstChild = root.getChildren("anotherGoodConcept").iterator().next();
               String propertyValue = SNodeAccessUtil.getProperty(firstChild, newPropertyName);
               result[0] = "cat".equals(propertyValue);
             } catch (Throwable t) {

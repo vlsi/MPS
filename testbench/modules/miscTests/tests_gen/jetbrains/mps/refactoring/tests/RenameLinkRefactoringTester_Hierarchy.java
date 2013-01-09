@@ -14,6 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -60,7 +61,7 @@ public class RenameLinkRefactoringTester_Hierarchy implements IRefactoringTester
               }
               SModel sModel = sandbox1.getSModel();
               SNode root = sModel.rootsIterator().next();
-              result[0] = (root.getChildren(newLinkName).size() == 4);
+              result[0] = (IterableUtil.asCollection(root.getChildren(newLinkName)).size() == 4);
             } catch (Throwable t) {
               t.printStackTrace();
               result[0] = false;

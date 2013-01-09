@@ -590,7 +590,7 @@ public class ASTConverter {
     }
 
     if (idBuilder != null) {
-      result.setId(new SNodeId.Foreign(idBuilder.toString()));
+      ((jetbrains.mps.smodel.SNode) result).setId(new SNodeId.Foreign(idBuilder.toString()));
     }
 
     return result;
