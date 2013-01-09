@@ -41,7 +41,6 @@ import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -1303,8 +1302,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * Inline content in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  public List<SNode> getDescendants(Condition<SNode> condition) {
-    return jetbrains.mps.util.SNodeOperations.getDescendants(this, condition);
+  public List<SNode> getDescendants(final Condition<SNode> condition) {
+    return (List) jetbrains.mps.util.SNodeOperations.getDescendants(this, new MyTransformingCondition(condition));
   }
 
   @Deprecated
@@ -1614,7 +1613,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public Iterable<SNode> getDescendantsIterable(@Nullable final Condition<SNode> condition, final boolean includeFirst) {
-    return jetbrains.mps.util.SNodeOperations.getDescendants(this, condition, includeFirst);
+    return (Iterable) jetbrains.mps.util.SNodeOperations.getDescendants(this, new MyTransformingCondition(condition), includeFirst);
   }
 
   @Deprecated
@@ -2020,6 +2019,20 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     @Override
     public void unload() {
 
+    }
+  }
+
+  private static class MyTransformingCondition implements Condition<org.jetbrains.mps.openapi.model.SNode> {
+    private final Condition<SNode> myCondition;
+
+    public MyTransformingCondition(Condition<SNode> condition) {
+      myCondition = condition;
+    }
+
+    @Override
+    public boolean met(org.jetbrains.mps.openapi.model.SNode object) {
+      if (!(object instanceof SNode)) return false;
+      return myCondition.met((SNode) object);
     }
   }
 }

@@ -211,7 +211,7 @@ public class SNodeOperations {
     }
 
     if (childConceptFqName == null) {
-      result = (List<SNode>) jetbrains.mps.util.SNodeOperations.getDescendants(node, null);
+      result = jetbrains.mps.util.SNodeOperations.getDescendants(node, null);
       if (inclusion) {
         result.add(0, node);
       }
@@ -297,7 +297,7 @@ public class SNodeOperations {
     if (node == null) {
       return new ArrayList<SNode>();
     }
-    return jetbrains.mps.util.SNodeOperations.getChildren(node);
+    return (List)jetbrains.mps.util.SNodeOperations.getChildren(node);
   }
 
   public static List<SNode> getChildren(SNode node, SNode linkDeclaration) {
