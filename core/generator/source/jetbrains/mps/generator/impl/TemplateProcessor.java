@@ -229,7 +229,7 @@ public class TemplateProcessor {
       myTracer.pushOutputNode(GenerationTracerUtil.getSNodePointer(myOutputModel, outputNode));
       myTracer.closeTemplateNode(new SNodePointer(templateNode));
     }
-    return Collections.singletonList(outputNode);
+    return Collections.singletonList(((SNode) outputNode));
   }
 
   @Nullable

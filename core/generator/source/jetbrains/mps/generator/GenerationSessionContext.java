@@ -18,6 +18,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.generator.impl.plan.GenerationPlan;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.StandaloneMPSContext;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
 import org.jetbrains.annotations.NotNull;
@@ -152,7 +153,7 @@ public class GenerationSessionContext extends StandaloneMPSContext {
 
     boolean sym = true;
     while (parent != null) {
-      int index = parent.getChildren(node.getRoleInParent()).indexOf(node);
+      int index = IterableUtil.asList(parent.getChildren(node.getRoleInParent())).indexOf(node);
       if (index == 0) {
         sb.append(sym ? 'a' : '0');
       }

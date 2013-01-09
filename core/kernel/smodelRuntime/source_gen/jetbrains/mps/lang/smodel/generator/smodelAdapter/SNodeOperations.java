@@ -210,7 +210,7 @@ public class SNodeOperations {
     }
 
     if (childConceptFqName == null) {
-      result = (List<SNode>) jetbrains.mps.util.SNodeOperations.getDescendants(node, null);
+      result = (List) jetbrains.mps.util.SNodeOperations.getDescendants(node, null);
       if (inclusion) {
         result.add(0, node);
       }
