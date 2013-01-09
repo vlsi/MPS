@@ -17,7 +17,7 @@ package jetbrains.mps.generator.impl.plan;
 
 import jetbrains.mps.generator.impl.TemplateModelScanner;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.Collection;

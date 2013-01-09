@@ -18,7 +18,7 @@ package jetbrains.mps.generator.impl;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 

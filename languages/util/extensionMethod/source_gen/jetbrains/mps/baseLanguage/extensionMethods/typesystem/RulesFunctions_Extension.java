@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.extensionMethods.typesystem;
 
 import jetbrains.mps.lang.typesystem.dependencies.InferenceMethod;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import java.util.List;
 import jetbrains.mps.baseLanguage.typesystem.RulesFunctions_BaseLanguage;

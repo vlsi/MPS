@@ -10,7 +10,7 @@ import jetbrains.mps.findUsages.UsagesList;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.IOperationContext;

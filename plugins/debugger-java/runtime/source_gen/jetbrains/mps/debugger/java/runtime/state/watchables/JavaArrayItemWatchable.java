@@ -9,7 +9,7 @@ import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
 import javax.swing.Icon;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 
 public class JavaArrayItemWatchable extends JavaWatchable implements IWatchable {

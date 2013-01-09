@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.generator.runtime;
 
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * Evgeny Gryaznov, Nov 29, 2010

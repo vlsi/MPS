@@ -43,7 +43,7 @@ import com.intellij.ide.DataManager;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;

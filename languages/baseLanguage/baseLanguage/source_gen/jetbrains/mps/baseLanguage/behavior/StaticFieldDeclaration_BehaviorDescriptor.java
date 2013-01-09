@@ -6,7 +6,7 @@ import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import javax.swing.Icon;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.project.Project;
 import org.jetbrains.annotations.Nullable;

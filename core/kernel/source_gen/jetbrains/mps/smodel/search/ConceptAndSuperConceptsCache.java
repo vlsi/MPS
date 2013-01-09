@@ -6,7 +6,7 @@ import jetbrains.mps.cache.AbstractCache;
 import jetbrains.mps.cache.KeyProducer;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.cache.CachesManager;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelDescriptor;

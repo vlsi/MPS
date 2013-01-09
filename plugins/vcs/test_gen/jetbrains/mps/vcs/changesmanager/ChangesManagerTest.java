@@ -40,7 +40,7 @@ import java.util.List;
 import java.util.Arrays;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModel;

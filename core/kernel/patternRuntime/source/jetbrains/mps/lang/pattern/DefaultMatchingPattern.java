@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.lang.pattern;
 
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class DefaultMatchingPattern implements IMatchingPattern {
   public boolean match(SNode nodeToMatch) {

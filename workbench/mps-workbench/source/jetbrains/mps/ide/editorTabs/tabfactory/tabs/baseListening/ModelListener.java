@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening;
 
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 

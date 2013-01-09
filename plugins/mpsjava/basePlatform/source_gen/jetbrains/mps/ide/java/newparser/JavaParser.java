@@ -9,7 +9,7 @@ import java.util.Map;
 import java.util.HashMap;
 import org.eclipse.jdt.internal.compiler.impl.CompilerOptions;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.ASTNode;

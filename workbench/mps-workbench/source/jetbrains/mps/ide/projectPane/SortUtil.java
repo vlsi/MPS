@@ -18,7 +18,7 @@ package jetbrains.mps.ide.projectPane;
 import jetbrains.mps.generator.TransientModelsModule.TransientSModelDescriptor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Comparing;
 import jetbrains.mps.util.ToStringComparator;
 

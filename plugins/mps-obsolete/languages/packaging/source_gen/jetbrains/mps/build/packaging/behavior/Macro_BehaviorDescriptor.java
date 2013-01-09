@@ -4,7 +4,7 @@ package jetbrains.mps.build.packaging.behavior;
 
 import jetbrains.mps.buildlanguage.behavior.PropertyDeclaration_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class Macro_BehaviorDescriptor extends PropertyDeclaration_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {

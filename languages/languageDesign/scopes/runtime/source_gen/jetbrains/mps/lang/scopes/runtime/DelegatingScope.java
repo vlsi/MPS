@@ -4,7 +4,7 @@ package jetbrains.mps.lang.scopes.runtime;
 
 import jetbrains.mps.scope.Scope;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 
 public abstract class DelegatingScope extends Scope {

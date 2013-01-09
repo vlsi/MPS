@@ -14,7 +14,7 @@ import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debugger.java.runtime.state.values.FieldWatchpointValue;
 import javax.swing.Icon;
 import jetbrains.mps.debugger.java.api.ui.Icons;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /*package*/ class JavaWatchpointWatchable extends JavaWatchable {
   private final Field myField;

@@ -17,7 +17,7 @@ package jetbrains.mps.newTypesystem.context.typechecking;
 
 import jetbrains.mps.newTypesystem.context.component.TargetTypeheckingComponent;
 import jetbrains.mps.newTypesystem.state.TargetState;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * Created with IntelliJ IDEA.

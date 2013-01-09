@@ -5,7 +5,7 @@ package jetbrains.mps.ide.java.parser;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SModel;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;

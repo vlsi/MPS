@@ -24,7 +24,7 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.Set;
 import com.intellij.util.messages.MessageBusConnection;
 import jetbrains.mps.nodeEditor.leftHighlighter.LeftEditorHighlighter;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;

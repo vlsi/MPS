@@ -5,7 +5,7 @@ package jetbrains.mps.lang.refactoring.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class RemoveKeystrokes_MigrationScript extends BaseMigrationScript {
   public RemoveKeystrokes_MigrationScript(IOperationContext operationContext) {

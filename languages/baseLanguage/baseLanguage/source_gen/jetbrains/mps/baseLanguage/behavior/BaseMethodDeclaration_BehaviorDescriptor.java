@@ -6,7 +6,7 @@ import jetbrains.mps.lang.core.behavior.IContainer_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import javax.swing.Icon;
 import jetbrains.mps.scope.Scope;

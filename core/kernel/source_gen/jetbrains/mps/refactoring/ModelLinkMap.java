@@ -9,7 +9,7 @@ import java.util.List;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SModelReference;

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.dataFlow;
 
 import jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;

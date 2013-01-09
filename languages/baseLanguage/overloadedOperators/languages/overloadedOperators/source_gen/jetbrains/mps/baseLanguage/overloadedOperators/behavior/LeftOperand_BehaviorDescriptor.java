@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.overloadedOperators.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ConceptFunctionParameter_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class LeftOperand_BehaviorDescriptor extends ConceptFunctionParameter_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {

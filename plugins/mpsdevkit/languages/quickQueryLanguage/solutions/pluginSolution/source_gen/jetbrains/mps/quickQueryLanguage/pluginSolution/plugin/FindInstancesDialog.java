@@ -9,7 +9,7 @@ import java.awt.BorderLayout;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.kernel.model.TemporaryModelOwner;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.ide.project.ProjectHelper;

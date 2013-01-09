@@ -18,7 +18,7 @@ package jetbrains.mps.nodeEditor.style;
 import jetbrains.mps.editor.runtime.impl.CellUtil;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.CaretPosition;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.editor.runtime.ParametersInformation;
 
 import java.awt.Color;

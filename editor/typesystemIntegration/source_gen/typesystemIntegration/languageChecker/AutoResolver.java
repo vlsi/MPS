@@ -5,7 +5,7 @@ package typesystemIntegration.languageChecker;
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
 import java.util.Set;
 import jetbrains.mps.nodeEditor.EditorMessage;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.openapi.editor.EditorContext;

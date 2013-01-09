@@ -6,7 +6,7 @@ import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import org.jetbrains.mps.openapi.module.SModule;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ProjectModels;
 import jetbrains.mps.library.GeneralPurpose_DevKit;
 import jetbrains.mps.project.structure.modules.ModuleReference;

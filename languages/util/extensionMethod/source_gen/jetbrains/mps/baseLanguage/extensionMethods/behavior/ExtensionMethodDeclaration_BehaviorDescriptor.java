@@ -6,7 +6,7 @@ import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescrip
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 
 public class ExtensionMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements ClassifierMember_BehaviorDescriptor {

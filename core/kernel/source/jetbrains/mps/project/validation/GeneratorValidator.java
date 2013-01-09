@@ -17,7 +17,7 @@ package jetbrains.mps.project.validation;
 
 import jetbrains.mps.generator.impl.plan.ModelContentUtil;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 
 import java.util.*;
 

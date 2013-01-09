@@ -30,7 +30,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import jetbrains.mps.idea.core.project.SolutionIdea;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.workbench.action.BaseAction;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;

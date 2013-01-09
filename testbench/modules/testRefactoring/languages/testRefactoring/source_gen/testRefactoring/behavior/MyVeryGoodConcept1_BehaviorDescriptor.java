@@ -4,7 +4,7 @@ package testRefactoring.behavior;
 
 import testRefactoringTargetLang.behavior.AbstractGoodConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class MyVeryGoodConcept1_BehaviorDescriptor extends AbstractGoodConcept_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {

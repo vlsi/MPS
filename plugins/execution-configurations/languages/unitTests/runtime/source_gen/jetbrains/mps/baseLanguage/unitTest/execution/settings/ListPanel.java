@@ -31,7 +31,7 @@ import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.JLabel;
 import com.intellij.openapi.progress.ProgressManager;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;

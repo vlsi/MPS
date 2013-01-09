@@ -4,7 +4,7 @@ package jetbrains.mps.build.tests;
 
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.reloading.CommonPaths;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.Map;

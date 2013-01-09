@@ -10,7 +10,7 @@ import java.util.HashMap;
 import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.lang.dataFlow.framework.Program;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import jetbrains.mps.smodel.SModelDescriptor;

@@ -4,7 +4,7 @@ package jetbrains.mps.platform.conf.stubs;
 
 import org.jdom.Namespace;
 import java.util.regex.Pattern;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jdom.Document;
 import org.jdom.Element;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;

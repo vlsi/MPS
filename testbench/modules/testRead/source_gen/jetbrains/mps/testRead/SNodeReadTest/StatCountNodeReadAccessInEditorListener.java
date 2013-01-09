@@ -5,7 +5,7 @@ package jetbrains.mps.testRead.SNodeReadTest;
 import jetbrains.mps.smodel.NodeReadAccessInEditorListener;
 import java.util.Map;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.util.Pair;

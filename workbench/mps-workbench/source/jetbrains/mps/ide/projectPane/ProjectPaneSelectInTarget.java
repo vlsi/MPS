@@ -24,7 +24,7 @@ import jetbrains.mps.fileTypes.MPSFileTypesManager;
 import jetbrains.mps.ide.editor.MPSFileNodeEditor;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.vfs.FileSystem;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;

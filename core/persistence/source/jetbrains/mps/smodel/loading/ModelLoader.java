@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.loading;
 
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.UnregisteredNodes;
 
 import java.util.ArrayList;

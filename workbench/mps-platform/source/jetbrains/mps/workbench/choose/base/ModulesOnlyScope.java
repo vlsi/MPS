@@ -18,7 +18,7 @@ package jetbrains.mps.workbench.choose.base;
 import jetbrains.mps.project.DevKit;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import org.jetbrains.mps.openapi.module.SModuleReference;
 
 import java.util.ArrayList;

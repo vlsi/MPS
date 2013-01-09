@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.javastub;
 
 import jetbrains.mps.reloading.ClassBytesProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.reloading.AbstractClassPathItem;
 import org.jetbrains.asm4.ClassReader;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;

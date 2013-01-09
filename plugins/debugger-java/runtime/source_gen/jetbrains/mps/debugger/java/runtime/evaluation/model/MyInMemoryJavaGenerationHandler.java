@@ -5,7 +5,7 @@ package jetbrains.mps.debugger.java.runtime.evaluation.model;
 import jetbrains.mps.generator.generationTypes.InMemoryJavaGenerationHandler;
 import java.util.List;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;

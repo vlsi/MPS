@@ -10,7 +10,7 @@ import java.util.Set;
 import java.util.List;
 import jetbrains.mps.util.CollectionUtil;
 import junit.framework.Assert;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;

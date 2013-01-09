@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class ControlAbstractionContainer_BehaviorDescriptor extends Classifier_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {
   public ControlAbstractionContainer_BehaviorDescriptor() {

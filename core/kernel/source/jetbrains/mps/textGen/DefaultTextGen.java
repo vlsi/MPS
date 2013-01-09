@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.textGen;
 
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class DefaultTextGen extends SNodeTextGen {
   protected void doGenerateText(SNode node) {

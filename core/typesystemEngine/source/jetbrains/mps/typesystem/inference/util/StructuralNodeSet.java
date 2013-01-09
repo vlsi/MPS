@@ -18,7 +18,7 @@ package jetbrains.mps.typesystem.inference.util;
 import gnu.trove.THashSet;
 import jetbrains.mps.lang.pattern.util.IMatchModifier;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.*;
 

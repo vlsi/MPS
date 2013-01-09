@@ -5,7 +5,7 @@ package jetbrains.mps.ide.java.newparser;
 import jetbrains.mps.smodel.DynamicReference;
 import java.util.List;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;

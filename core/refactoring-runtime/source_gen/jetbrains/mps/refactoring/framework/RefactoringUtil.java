@@ -4,7 +4,7 @@ package jetbrains.mps.refactoring.framework;
 
 import jetbrains.mps.logging.Logger;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.language.SConcept;

@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.InternUtil;
 import org.jdom.Document;

@@ -7,7 +7,7 @@ import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.build.behavior.BuildStringContainer_BehaviorDescriptor;
 import org.jetbrains.annotations.Nullable;
 import java.awt.Color;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.build.behavior.BuildStringContainer_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;

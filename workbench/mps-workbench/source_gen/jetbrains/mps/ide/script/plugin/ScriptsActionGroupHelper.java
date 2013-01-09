@@ -5,7 +5,7 @@ package jetbrains.mps.ide.script.plugin;
 import java.util.Set;
 import java.util.HashSet;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Collections;
 import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;

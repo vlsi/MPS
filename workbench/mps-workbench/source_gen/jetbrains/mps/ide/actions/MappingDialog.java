@@ -7,7 +7,7 @@ import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import jetbrains.mps.smodel.Language;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import javax.swing.JScrollPane;

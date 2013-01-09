@@ -26,7 +26,7 @@ import jetbrains.mps.vcs.changesmanager.tree.features.ReferenceFeature;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.vcs.changesmanager.tree.features.DeletedChildFeature;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;

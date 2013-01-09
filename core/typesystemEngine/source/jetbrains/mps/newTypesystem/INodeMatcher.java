@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.newTypesystem;
 
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public interface INodeMatcher {
   public boolean matchesWith(SNode node);

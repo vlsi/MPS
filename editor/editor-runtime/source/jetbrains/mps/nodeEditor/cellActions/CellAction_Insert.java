@@ -18,7 +18,7 @@ package jetbrains.mps.nodeEditor.cellActions;
 import jetbrains.mps.nodeEditor.EditorCellAction;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.nodeEditor.SNodeEditorUtil;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 
 public class CellAction_Insert extends EditorCellAction {

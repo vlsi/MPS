@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.api.lang.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public class ConceptFunction_CreateBreakpoint_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {

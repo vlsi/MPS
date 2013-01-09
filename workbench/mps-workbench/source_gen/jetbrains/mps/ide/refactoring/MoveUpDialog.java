@@ -4,7 +4,7 @@ package jetbrains.mps.ide.refactoring;
 
 import jetbrains.mps.ide.platform.refactoring.RefactoringDialog;
 import com.intellij.refactoring.RefactoringBundle;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.hierarchy.ChildHierarchyTreeNode;

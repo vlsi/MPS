@@ -26,7 +26,7 @@ import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.project.MPSProject;
 import java.util.Collection;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.JOptionPane;
 import com.intellij.openapi.command.CommandProcessorEx;
 import com.intellij.openapi.command.CommandProcessor;

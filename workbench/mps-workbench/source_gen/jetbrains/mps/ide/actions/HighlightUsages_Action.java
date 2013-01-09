@@ -14,7 +14,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.nodeEditor.NodeHighlightManager;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.util.Set;
 import org.jetbrains.mps.openapi.model.SReference;

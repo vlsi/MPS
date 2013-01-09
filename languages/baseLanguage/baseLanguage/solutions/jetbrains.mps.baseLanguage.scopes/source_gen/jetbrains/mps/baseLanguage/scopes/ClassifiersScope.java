@@ -6,7 +6,7 @@ import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.scope.ModelPlusImportedScope;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class ClassifiersScope extends FilteringScope {

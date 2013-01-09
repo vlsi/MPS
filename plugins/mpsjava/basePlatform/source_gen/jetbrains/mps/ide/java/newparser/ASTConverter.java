@@ -5,7 +5,7 @@ package jetbrains.mps.ide.java.newparser;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.eclipse.jdt.internal.compiler.ast.ASTNode;

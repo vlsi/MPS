@@ -7,7 +7,7 @@ import jetbrains.mps.build.packaging.behavior.ICompositeComponent_BehaviorDescri
 import jetbrains.mps.build.packaging.behavior.INotBuildableComponent_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.build.packaging.behavior.ICompositeComponent_Behavior;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class MPSBuild_BehaviorDescriptor extends AbstractProjectComponent_BehaviorDescriptor implements ICompositeComponent_BehaviorDescriptor, INotBuildableComponent_BehaviorDescriptor {
   public MPSBuild_BehaviorDescriptor() {

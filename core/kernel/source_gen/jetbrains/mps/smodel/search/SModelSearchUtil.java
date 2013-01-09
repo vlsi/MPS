@@ -4,7 +4,7 @@ package jetbrains.mps.smodel.search;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SNodeUtil;

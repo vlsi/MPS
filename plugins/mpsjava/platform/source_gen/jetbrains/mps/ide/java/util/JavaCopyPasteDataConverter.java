@@ -8,7 +8,7 @@ import jetbrains.mps.ide.MPSCoreComponents;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.datatransfer.TextPasteUtil;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.java.newparser.FeatureKind;

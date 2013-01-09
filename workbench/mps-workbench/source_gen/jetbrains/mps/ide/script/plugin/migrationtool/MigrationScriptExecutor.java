@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NonNls;
 import java.util.Collections;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.ide.script.plugin.AbstractMigrationScriptHelper;
 import jetbrains.mps.smodel.SModelDescriptor;

@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ICanSuppressErrors_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior;

@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 
 public interface ICheckingRule_Runtime extends Rule_Runtime {

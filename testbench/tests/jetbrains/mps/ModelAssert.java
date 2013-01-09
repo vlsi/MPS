@@ -15,7 +15,7 @@
  */
 package jetbrains.mps;
 
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import org.junit.Assert;
 

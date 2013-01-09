@@ -4,7 +4,7 @@ package jetbrains.mps.debug.api.programState;
 
 import javax.swing.Icon;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public interface IWatchable {
   public String getName();

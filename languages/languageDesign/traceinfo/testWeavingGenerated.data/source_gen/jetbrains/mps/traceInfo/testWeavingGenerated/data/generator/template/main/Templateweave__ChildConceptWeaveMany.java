@@ -4,7 +4,7 @@ package jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.mai
 
 import jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;

@@ -5,7 +5,7 @@ package jetbrains.mps.lang.test.behavior;
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.unitTest.behavior.ITestMethod_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class NodesTestMethod_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor, ITestMethod_BehaviorDescriptor {
   public NodesTestMethod_BehaviorDescriptor() {

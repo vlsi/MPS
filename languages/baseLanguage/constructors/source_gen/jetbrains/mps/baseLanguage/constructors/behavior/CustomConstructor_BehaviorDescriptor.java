@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.constructors.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class CustomConstructor_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {

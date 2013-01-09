@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.selection.*;
 import jetbrains.mps.nodeEditor.selection.SingularSelection.SideSelectDirection;
 import jetbrains.mps.openapi.editor.*;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 
 import java.awt.*;

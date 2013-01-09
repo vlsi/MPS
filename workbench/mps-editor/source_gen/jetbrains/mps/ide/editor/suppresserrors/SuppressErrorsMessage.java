@@ -7,7 +7,7 @@ import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import javax.swing.Icon;
 import jetbrains.mps.ide.icons.IconManager;

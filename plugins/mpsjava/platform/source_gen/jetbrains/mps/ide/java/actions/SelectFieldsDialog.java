@@ -6,7 +6,7 @@ import jetbrains.mps.ide.util.GroupedNodesChooser;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 

@@ -36,7 +36,7 @@ import java.util.HashMap;
 import jetbrains.mps.smodel.SModelReference;
 import java.util.Map;
 import jetbrains.mps.smodel.resources.GResource;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;

@@ -27,7 +27,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.intellij.openapi.actionSystem.DefaultActionGroup;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.intentions.IntentionExecutable;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Comparator;
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.project.MPSProject;

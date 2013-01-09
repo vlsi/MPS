@@ -19,11 +19,10 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.TestMain.ProjectRunnable;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.FileUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.junit.Assert;
 import org.junit.Test;
 

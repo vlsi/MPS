@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.behavior;
 
 import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class SetBoldOperation_BehaviorDescriptor extends AbstractStyledTextOperation_BehaviorDescriptor {
   public SetBoldOperation_BehaviorDescriptor() {

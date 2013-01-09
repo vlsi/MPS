@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.java.customViewers.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public class GetHighLevelValuePresentation_ConceptFunction_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {

@@ -23,7 +23,7 @@ import javax.swing.JComponent;
 import javax.swing.JCheckBox;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.SNodeOperations;
 import javax.swing.SwingConstants;
 import javax.swing.JButton;

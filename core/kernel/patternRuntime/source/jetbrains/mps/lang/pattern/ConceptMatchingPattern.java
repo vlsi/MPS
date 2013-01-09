@@ -15,9 +15,7 @@
  */
 package jetbrains.mps.lang.pattern;
 
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.SNodeOperations;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class ConceptMatchingPattern implements IMatchingPattern {
   private String myConceptFQName;

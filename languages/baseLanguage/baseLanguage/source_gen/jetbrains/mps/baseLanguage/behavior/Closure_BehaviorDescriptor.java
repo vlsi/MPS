@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class Closure_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor implements Closureoid_BehaviorDescriptor, ScopeProvider_BehaviorDescriptor {
   public Closure_BehaviorDescriptor() {

@@ -5,7 +5,7 @@ package jetbrains.mps.ide.devkit.actions;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import javax.swing.Icon;
 import com.intellij.icons.AllIcons;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import java.util.List;

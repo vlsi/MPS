@@ -30,7 +30,7 @@ import gnu.trove.decorator.TObjectIntHashMapDecorator;
 import gnu.trove.TObjectIntHashMap;
 import java.util.Collection;
 import jetbrains.mps.internal.collections.runtime.CollectionSequence;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class Foo {
   public Foo() {

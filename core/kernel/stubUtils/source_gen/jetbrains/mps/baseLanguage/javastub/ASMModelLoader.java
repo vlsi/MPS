@@ -7,7 +7,7 @@ import jetbrains.mps.reloading.IClassPathItem;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class ASMModelLoader {
   private static final Logger LOG = Logger.getLogger(ASMModelLoader.class);
