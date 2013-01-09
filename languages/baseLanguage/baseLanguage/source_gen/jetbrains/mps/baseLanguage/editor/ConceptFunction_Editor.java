@@ -8,7 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.nodeEditor.AbstractCellProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
+import jetbrains.mps.openapi.editor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -35,7 +35,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
       public AbstractCellProvider invoke() {
         return new AbstractCellProvider() {
           public EditorCell createEditorCell(EditorContext context) {
-            EditorCell_Collection collection = EditorCell_Collection.createVertical(context, node);
+            EditorCell_Collection collection = jetbrains.mps.nodeEditor.cells.EditorCell_Collection.createVertical(context, node);
             collection.addEditorCell(new EditorCell_Constant(context, node, "Concept function help:"));
             if (SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription") != null) {
               collection.addEditorCell(new EditorCell_Constant(context, node, SPropertyOperations.getString(SNodeOperations.getConceptDeclaration(node), "shortDescription")));
@@ -51,7 +51,7 @@ public class ConceptFunction_Editor extends DefaultNodeEditor {
               EditorCell_Constant message = new EditorCell_Constant(context, node, alias + " : " + description);
               collection.addEditorCell(message);
             }
-            return collection;
+            return (EditorCell) collection;
           }
         };
       }
