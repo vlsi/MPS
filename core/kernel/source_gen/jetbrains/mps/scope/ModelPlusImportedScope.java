@@ -108,7 +108,7 @@ public class ModelPlusImportedScope extends Scope {
         nodes = model.getSModel().getFastNodeFinder().getNodes(myTargetConcept, true);
         conceptToCheck = null;
       } else {
-        nodes = model.getSModel().nodes();
+        nodes = ((Iterable) model.getSModel().nodes());
         conceptToCheck = null;
       }
 

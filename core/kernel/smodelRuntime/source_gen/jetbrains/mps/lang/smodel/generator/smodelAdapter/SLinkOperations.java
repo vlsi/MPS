@@ -28,7 +28,7 @@ public class SLinkOperations {
   public static SNode getTarget(SNode node, String role, boolean child) {
     if (node != null) {
       if (child) {
-        Iterator<SNode> it = node.getChildren(role).iterator();
+        Iterator<? extends SNode> it = node.getChildren(role).iterator();
         return (it.hasNext() ?
           it.next() :
           null
@@ -125,7 +125,7 @@ public class SLinkOperations {
     if (parent == null) {
       return null;
     }
-    Iterator<SNode> it = parent.getChildren(role).iterator();
+    Iterator<? extends SNode> it = parent.getChildren(role).iterator();
     SNode child = (it.hasNext() ?
       it.next() :
       null
@@ -141,11 +141,11 @@ public class SLinkOperations {
     if (parent == null) {
       return new ArrayList<SNode>(1);
     }
-    List<SNode> children = parent.getChildren(role);
+    Iterable<? extends SNode> children = parent.getChildren(role);
     for (SNode child : children) {
       parent.removeChild(child);
     }
-    return children;
+    return ((List) children);
   }
 
   public static List<SNode> getConceptLinkTargets(SNode node, String linkName) {

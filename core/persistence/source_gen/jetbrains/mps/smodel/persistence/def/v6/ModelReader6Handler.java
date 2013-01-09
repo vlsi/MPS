@@ -395,7 +395,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      SNode result = (SNode) resultObject;
+      jetbrains.mps.smodel.SNode result = (jetbrains.mps.smodel.SNode) resultObject;
       if ("type".equals(name)) {
         return;
       }

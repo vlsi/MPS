@@ -18,6 +18,7 @@ package jetbrains.mps.lang.pattern.util;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.PropertySupport;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
@@ -42,8 +43,8 @@ public class MatchingUtil {
     //properties
     final Set<String> propertyNames = new HashSet<String>();
 
-    propertyNames.addAll(node1.getPropertyNames());
-    propertyNames.addAll(node2.getPropertyNames());
+    propertyNames.addAll(IterableUtil.asCollection(node1.getPropertyNames()));
+    propertyNames.addAll(IterableUtil.asCollection(node2.getPropertyNames()));
 
     SNode typeDeclaration = node1.getConceptDeclarationNode();
 
@@ -80,13 +81,13 @@ public class MatchingUtil {
     Set<String> childRoles = jetbrains.mps.util.SNodeOperations.getChildRoles(node1, matchAttributes);
     childRoles.addAll(jetbrains.mps.util.SNodeOperations.getChildRoles(node2, matchAttributes));
     for (String role : childRoles) {
-      List<SNode> children1 = node1.getChildren(role);
-      List<SNode> children2 = node2.getChildren(role);
+      List<SNode> children1 = ((List) IterableUtil.asList(node1.getChildren(role)));
+      List<SNode> children2 = ((List) IterableUtil.asList(node2.getChildren(role)));
       if (matchModifier.acceptList(children1, children2)) {
         matchModifier.performGroupAction(children1, children2);
         continue;
       }
-      Iterator<SNode> childrenIterator = children1.iterator();
+      Iterator<? extends SNode> childrenIterator = children1.iterator();
       for (SNode child2 : children2.toArray(new SNode[children2.size()])) {
         SNode child1 = childrenIterator.hasNext() ? childrenIterator.next() : null;
         if (matchModifier.accept(child1, child2)) {

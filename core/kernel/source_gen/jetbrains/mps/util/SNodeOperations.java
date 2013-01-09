@@ -174,9 +174,9 @@ public class SNodeOperations {
     return SNodeUtil.getDebugText(((jetbrains.mps.smodel.SNode) node));
   }
 
-  public static Set<String> getChildRoles(jetbrains.mps.smodel.SNode n, boolean includeAttributeRoles) {
+  public static Set<String> getChildRoles(SNode n, boolean includeAttributeRoles) {
     final Set<String> augend = new HashSet();
-    for (jetbrains.mps.smodel.SNode child : n.getChildren()) {
+    for (SNode child : n.getChildren()) {
       if (includeAttributeRoles || !((AttributeOperations.isAttribute(child)))) {
         augend.add(child.getRoleInParent());
       }
@@ -184,8 +184,8 @@ public class SNodeOperations {
     return augend;
   }
 
-  public static jetbrains.mps.smodel.SNode getChild(jetbrains.mps.smodel.SNode node, String role) {
-    List<jetbrains.mps.smodel.SNode> children = node.getChildren(role);
+  public static SNode getChild(SNode node, String role) {
+    List<? extends SNode> children = IterableUtil.asList(node.getChildren(role));
     int size = children.size();
     if (size == 0) {
       return null;

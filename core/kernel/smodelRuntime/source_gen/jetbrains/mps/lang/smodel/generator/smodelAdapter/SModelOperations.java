@@ -96,7 +96,7 @@ public class SModelOperations {
     }
     List<SNode> resultNodes = new ArrayList<SNode>();
     for (SModel aModel : modelsList) {
-      Iterable<SNode> nodes = (roots ?
+      Iterable<? extends SNode> nodes = (roots ?
         aModel.roots() :
         aModel.nodes()
       );
