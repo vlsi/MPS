@@ -4,6 +4,8 @@ package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.smodel.SModel;
 import java.util.List;
+
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -69,7 +71,7 @@ public class ChangeSetBuilder {
   public void buildForProperty(SNode oldNode, SNode newNode, String name) {
     PropertySupport propertySupport = new ChangeSetBuilder.DefaultPropertySupport();
     if (!(MPSCore.getInstance().isMergeDriverMode())) {
-      SNode propertyDeclaration = oldNode.getPropertyDeclaration(name);
+      SNode propertyDeclaration = ((jetbrains.mps.smodel.SNode) oldNode).getPropertyDeclaration(name);
       if (propertyDeclaration != null) {
         propertySupport = PropertySupport.getPropertySupport(propertyDeclaration);
       }
@@ -143,10 +145,10 @@ public class ChangeSetBuilder {
   }
 
   private void buildForNodeRole(SNode oldNode, SNode newNode, String role) {
-    buildForNodeRole(oldNode.getChildren(role), newNode.getChildren(role), oldNode.getNodeId(), role);
+    buildForNodeRole(IterableUtil.asList(oldNode.getChildren(role)), IterableUtil.asList(newNode.getChildren(role)), oldNode.getNodeId(), role);
   }
 
-  public void buildForNodeRole(final List<SNode> oldChildren, List<SNode> newChildren, SNodeId parentId, String role) {
+  public void buildForNodeRole(final List<? extends SNode> oldChildren, List<? extends SNode> newChildren, SNodeId parentId, String role) {
     List<SNodeId> oldIds = ListSequence.fromList(oldChildren).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
         return n.getNodeId();
