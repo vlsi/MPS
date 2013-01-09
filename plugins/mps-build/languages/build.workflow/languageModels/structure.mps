@@ -5,6 +5,7 @@
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tpce" modelUID="r:00000000-0000-4000-0000-011c89590292(jetbrains.mps.lang.structure.structure)" version="0" implicit="yes" />
   <import index="iuxj" modelUID="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" version="2" implicit="yes" />
+  <import index="8xvf" modelUID="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" version="0" implicit="yes" />
   <roots>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2769948622284546673">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
@@ -160,11 +161,13 @@
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2529023923283158037">
       <property name="name" nameId="tpck.1169194664001" value="BwfAntTaskBundleDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Types" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="ant task bundle" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2769948622284546695" resolveInfo="BwfProjectPart" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2529023923283121115">
       <property name="name" nameId="tpck.1169194664001" value="BwfProjectPartStatement" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="Tasks" />
+      <property name="conceptAlias" nameId="tpce.5092175715804935370" value="project part" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="2769948622284605979" resolveInfo="BwfStatement" />
     </node>
   </roots>
@@ -503,10 +506,6 @@
       <property name="name" nameId="tpck.1169194664001" value="resource" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983041843" resolveInfo="string" />
     </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2529023923283158038">
-      <property name="value" nameId="tpce.1105725733873" value="ant task bundle" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
-    </node>
   </root>
   <root id="2529023923283121115">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2529023923283121117">
@@ -514,10 +513,6 @@
       <property name="role" nameId="tpce.1071599776563" value="part" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="2769948622284546695" resolveInfo="BwfProjectPart" />
-    </node>
-    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="2529023923283121116">
-      <property name="value" nameId="tpce.1105725733873" value="project part" />
-      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
 </model>

@@ -14,7 +14,6 @@ import jetbrains.mps.nodeEditor.EditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.lang.editor.cellProviders.RefCellCellProvider;
-import jetbrains.mps.lang.editor.cellProviders.ConceptPropertyCellProvider;
 
 public class BwfAntTaskBundleDeclaration_Editor extends DefaultNodeEditor {
   public EditorCell createEditorCell(EditorContext editorContext, SNode node) {
@@ -58,11 +57,19 @@ public class BwfAntTaskBundleDeclaration_Editor extends DefaultNodeEditor {
   private EditorCell createCollection_p1xf3r_a(EditorContext editorContext, SNode node) {
     EditorCell_Collection editorCell = EditorCell_Collection.createIndent2(editorContext, node);
     editorCell.setCellId("Collection_p1xf3r_a");
-    editorCell.addEditorCell(this.createConceptProperty_p1xf3r_a0(editorContext, node));
+    editorCell.addEditorCell(this.createConstant_p1xf3r_a0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_p1xf3r_b0(editorContext, node));
     editorCell.addEditorCell(this.createProperty_p1xf3r_c0(editorContext, node));
     editorCell.addEditorCell(this.createConstant_p1xf3r_d0(editorContext, node));
     editorCell.addEditorCell(this.createRefCell_p1xf3r_e0(editorContext, node));
+    return editorCell;
+  }
+
+  private EditorCell createConstant_p1xf3r_a0(EditorContext editorContext, SNode node) {
+    EditorCell_Constant editorCell = new EditorCell_Constant(editorContext, node, "ant task bundle");
+    editorCell.setCellId("Constant_p1xf3r_a0");
+    workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
+    editorCell.setDefaultText("");
     return editorCell;
   }
 
@@ -107,25 +114,6 @@ public class BwfAntTaskBundleDeclaration_Editor extends DefaultNodeEditor {
     EditorCell editorCell;
     editorCell = provider.createEditorCell(editorContext);
     editorCell.setCellId("property_resource");
-    editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
-    SNode attributeConcept = provider.getRoleAttribute();
-    Class attributeKind = provider.getRoleAttributeClass();
-    if (attributeConcept != null) {
-      IOperationContext opContext = editorContext.getOperationContext();
-      EditorManager manager = EditorManager.getInstanceFromContext(opContext);
-      return manager.createRoleAttributeCell(editorContext, attributeConcept, attributeKind, editorCell);
-    } else
-    return editorCell;
-  }
-
-  private EditorCell createConceptProperty_p1xf3r_a0(EditorContext editorContext, SNode node) {
-    CellProviderWithRole provider = new ConceptPropertyCellProvider(node, editorContext);
-    provider.setRole("alias");
-    provider.setNoTargetText("<no alias>");
-    EditorCell editorCell;
-    editorCell = provider.createEditorCell(editorContext);
-    editorCell.setCellId("conceptProperty_alias");
-    workflowStyles_StyleSheet.getKeyword(editorCell).apply(editorCell);
     editorCell.setSubstituteInfo(provider.createDefaultSubstituteInfo());
     SNode attributeConcept = provider.getRoleAttribute();
     Class attributeKind = provider.getRoleAttributeClass();

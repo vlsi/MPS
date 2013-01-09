@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="bbuvpb4y6flwzqg9fq8we8aau0ad0sd">
+<dependencies version="2" modelHash="dtt7wsqvomsqa4dnrx887ciou0ozjba">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
   <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="e9lxq5i5zn1iq6k6efgch87y45p0sqf" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-89hxj0ypb1mymp88cm6uftvxxpq6hll" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
   <dep model="r:64db3a92-5968-4a73-b456-34504a2d97a6(jetbrains.mps.core.xml.structure)" hash="59q62tq6g5cztm1y3dn5t4sjwkyyy97" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-3t350ymnztu1bi083p2mhorjil0w76j" />
-  <common hash="ej52nk9cz41nap7k55yw4wu6qk0mziu">
+  <common hash="784zwoltf7gh7btrmwjw1zh9hj04ipl">
     <dep root="144710003695346438" />
     <dep root="144710003695507915" />
     <dep root="2059109515400477499" />
@@ -122,10 +122,10 @@
   <source id="244868996532667532" name="BwfCustomMacro" hash="-9s2xyis61pngajmk5g39z824belqonr">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2529023923283158037" name="BwfAntTaskBundleDeclaration" hash="b4fcg130stzwbpjrxx8231qm54j2sh2">
+  <source id="2529023923283158037" name="BwfAntTaskBundleDeclaration" hash="dcwp1gjn0dddkrvzcty9u6d2sw9fno3">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
-  <source id="2529023923283121115" name="BwfProjectPartStatement" hash="5ivszsqt8znypubvg586sepy6o357tw">
+  <source id="2529023923283121115" name="BwfProjectPartStatement" hash="c1gkvwbnmfetu7rftpzkok4h7krpyqi">
     <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
   </source>
 </dependencies>
