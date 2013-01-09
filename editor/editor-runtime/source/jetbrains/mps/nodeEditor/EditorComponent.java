@@ -1316,7 +1316,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public boolean hasValidSelectedNode() {
     SNode selectedNode = getSelectedNode();
-    return selectedNode != null && !selectedNode.isDisposed() && selectedNode.getModel() != null;
+    return selectedNode != null && !((jetbrains.mps.smodel.SNode) selectedNode).isDisposed() && selectedNode.getModel() != null;
   }
 
   public boolean isDisposed() {
@@ -2703,7 +2703,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       EditorContext ec = getEditorContext();
 
       boolean needsSavingState = ec != null;
-      if (getRootCell() != null && getRootCell().getSNode() != null && getRootCell().getSNode().isDisposed()) {
+      if (getRootCell() != null && getRootCell().getSNode() != null && ((jetbrains.mps.smodel.SNode) getRootCell().getSNode()).isDisposed()) {
         needsSavingState = false;
       }
 

@@ -49,7 +49,7 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
   }
 
   public SNode getDeclarationNode() {
-    return myNode.getConceptDeclarationNode();
+    return ((jetbrains.mps.smodel.SNode) myNode).getConceptDeclarationNode();
   }
 
   public boolean isInitialized() {

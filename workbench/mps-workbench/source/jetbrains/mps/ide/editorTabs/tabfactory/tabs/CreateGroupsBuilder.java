@@ -109,8 +109,8 @@ public class CreateGroupsBuilder {
 
       final Runnable r2 = new Runnable() {
         public void run() {
-          String mainPack = SNodeAccessUtil.getProperty(myBaseNode.getNode(), SNode.PACK);
-          SNodeAccessUtil.setProperty(created[0], SNode.PACK, mainPack);
+          String mainPack = SNodeAccessUtil.getProperty(myBaseNode.getNode(), jetbrains.mps.smodel.SNode.PACK);
+          SNodeAccessUtil.setProperty(created[0], jetbrains.mps.smodel.SNode.PACK, mainPack);
           myCallback.changeNode(created[0]);
         }
       };

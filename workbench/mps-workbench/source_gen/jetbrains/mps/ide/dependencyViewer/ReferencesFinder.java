@@ -85,7 +85,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
             for (SReference ref : SNodeOperations.getReferences(((jetbrains.mps.smodel.SNode) node))) {
-              jetbrains.mps.smodel.SNode targetNode = ref.getTargetNodeSilently();
+              SNode targetNode = ref.getTargetNodeSilently();
               if (targetNode == null || !(targetScope.contains(targetNode)) || sourceScope.contains(targetNode)) {
                 continue;
               }

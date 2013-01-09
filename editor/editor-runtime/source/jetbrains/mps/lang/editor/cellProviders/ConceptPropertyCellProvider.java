@@ -43,7 +43,7 @@ public class ConceptPropertyCellProvider extends CellProviderWithRole {
   }
 
   public EditorCell createEditorCell(EditorContext editorContext) {
-    String text = getSNode().getConceptProperty(myConceptPropertyName);
+    String text = ((jetbrains.mps.smodel.SNode) getSNode()).getConceptProperty(myConceptPropertyName);
     EditorCell_Label editorCell;
     String errorText = myNoTargetText;
     if ((errorText == null) || (errorText.length() == 0)) {

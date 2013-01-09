@@ -42,7 +42,7 @@ import java.util.List;
     IScope scope = context.getScope();
 
     // proceed with custom builders
-    SNode referenceNodeConcept = referenceNode.getConceptDeclarationNode();
+    SNode referenceNodeConcept = ((jetbrains.mps.smodel.SNode) referenceNode).getConceptDeclarationNode();
     Language primaryLanguage = SModelUtil.getDeclaringLanguage(referenceNodeConcept);
     if (primaryLanguage == null) {
       LOG.error("Couldn't build actions : couldn't get declaring language for concept " + SNodeUtil.getDebugText(referenceNodeConcept));

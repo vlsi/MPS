@@ -53,9 +53,9 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
         }
 
         myParentNode = sourceNode;
-        SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(myParentNode.getConceptDeclarationNode(), SModelUtil.getLinkDeclarationRole(linkDeclaration));
+        SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(((jetbrains.mps.smodel.SNode) myParentNode).getConceptDeclarationNode(), SModelUtil.getLinkDeclarationRole(linkDeclaration));
         myLinkDeclaration = mostSpecificLinkDeclaration;
-        List<SNode> ch = sourceNode.getChildren(SModelUtil.getGenuineLinkRole(linkDeclaration));
+        Iterable<? extends SNode> ch = sourceNode.getChildren(SModelUtil.getGenuineLinkRole(linkDeclaration));
         myCurrentChild = ch.iterator().hasNext() ? ch.iterator().next() : null;
       }
     });
@@ -71,7 +71,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
           LOG.error("only aggregation links are allowed here", new RuntimeException("only aggregation links are allowed here"), linkDeclaration);
         }
         myParentNode = parentNode;
-        SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(myParentNode.getConceptDeclarationNode(), SModelUtil.getLinkDeclarationRole(linkDeclaration));
+        SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(((jetbrains.mps.smodel.SNode) myParentNode).getConceptDeclarationNode(), SModelUtil.getLinkDeclarationRole(linkDeclaration));
         myLinkDeclaration = mostSpecificLinkDeclaration;
         myCurrentChild = currChildNode;
       }

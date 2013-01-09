@@ -73,7 +73,7 @@ public class SNodeFactoryOperations {
 
   public static SNode setNewChild(SNode node, String role, String childConceptFQName) {
     if (node != null) {
-      List<SNode> ch = node.getChildren(role);
+      Iterable<? extends SNode> ch = node.getChildren(role);
       SNode prototypeNode = ch.iterator().hasNext() ? ch.iterator().next() : null;
       SNode newChild = NodeFactoryManager.createNode(childConceptFQName, prototypeNode, node, node.getModel());
       SNodeEditorUtil.setSingleChild(node,role,newChild);
@@ -116,7 +116,7 @@ public class SNodeFactoryOperations {
       String role = attribute.getRoleInParent();
       if (AttributesRolesUtil.isPropertyAttributeRole(role)) {
         String propertyName = AttributesRolesUtil.getPropertyNameFromPropertyAttributeRole(role);
-        if (SModelSearchUtil.findPropertyDeclaration(newChild.getConceptDeclarationNode(), propertyName) == null) {
+        if (SModelSearchUtil.findPropertyDeclaration(((jetbrains.mps.smodel.SNode) newChild).getConceptDeclarationNode(), propertyName) == null) {
           // no such property in new child : don't copy the attribute
           LOG.error("couldn't copy attribute " + NameUtil.shortNameFromLongName(attribute.getConcept().getId()) + " for property '" + propertyName + "' : so such property in concept " + NameUtil.shortNameFromLongName(newChild.getConcept().getId()), newChild);
           continue;
@@ -124,7 +124,7 @@ public class SNodeFactoryOperations {
       }
       if (AttributesRolesUtil.isLinkAttributeRole(role)) {
         String linkRole = AttributesRolesUtil.getLinkRoleFromLinkAttributeRole(role);
-        if (SModelSearchUtil.findLinkDeclaration(newChild.getConceptDeclarationNode(), linkRole) == null) {
+        if (SModelSearchUtil.findLinkDeclaration(((jetbrains.mps.smodel.SNode) newChild).getConceptDeclarationNode(), linkRole) == null) {
           // no such link in new child : don't copy the attribute
           LOG.error("couldn't copy attribute " + NameUtil.shortNameFromLongName(attribute.getConcept().getId()) + " for link '" + linkRole + "' : so such link in concept " + NameUtil.shortNameFromLongName(newChild.getConcept().getId()), newChild);
           continue;

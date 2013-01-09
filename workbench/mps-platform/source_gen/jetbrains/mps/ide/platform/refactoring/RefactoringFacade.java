@@ -286,7 +286,7 @@ public class RefactoringFacade {
     //  save all before launching make 
     context.setUpMembersAccessModifier(modifier);
     modifier.addModelsToModify(sourceModels);
-    SNode.setNodeMemberAccessModifier(modifier);
+    jetbrains.mps.smodel.SNode.setNodeMemberAccessModifier(modifier);
     for (SModel model : sourceModels) {
       if (!(model.isDisposed())) {
         descriptors.add(model.getModelDescriptor());
@@ -316,6 +316,6 @@ public class RefactoringFacade {
   }
 
   private void onGenerationFinished() {
-    SNode.setNodeMemberAccessModifier(null);
+    jetbrains.mps.smodel.SNode.setNodeMemberAccessModifier(null);
   }
 }

@@ -81,7 +81,7 @@ class IntelligentNodeMover {
     final String role = current.getRoleInParent();
     assert parent != null && role != null;
 
-    final SNode acd = parent.getConceptDeclarationNode();
+    final SNode acd = ((jetbrains.mps.smodel.SNode) parent).getConceptDeclarationNode();
     final SNode link = SModelSearchUtil.findLinkDeclaration(acd, role);
 
     if (link == null) {

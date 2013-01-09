@@ -42,12 +42,12 @@ public class PropertyCellProvider extends CellProviderWithRole {
 
   public void setRole(Object role) {
     myPropertyName = InternUtil.intern(role.toString());
-    myPropertyDeclaration = getSNode().getPropertyDeclaration(myPropertyName);
+    myPropertyDeclaration = ((jetbrains.mps.smodel.SNode) getSNode()).getPropertyDeclaration(myPropertyName);
     if (myPropertyDeclaration == null) {
       if (!SNodeOperations.isUnknown(getSNode())) {
         LOG.error("no property declaration could be found in NODE " + getSNode() + " for PROPERTY name " + myPropertyName);
       }
-      myPropertyDeclaration = getSNode().getPropertyDeclaration(myPropertyName);
+      myPropertyDeclaration = ((jetbrains.mps.smodel.SNode) getSNode()).getPropertyDeclaration(myPropertyName);
     }
   }
 

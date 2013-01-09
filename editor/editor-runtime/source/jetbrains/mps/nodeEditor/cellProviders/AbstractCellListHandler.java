@@ -171,7 +171,7 @@ public abstract class AbstractCellListHandler {
     myListEditorCell_Collection = EditorCell_Collection.create(editorContext, myOwnerNode, cellLayout, this);
     myListEditorCell_Collection.setSelectable(false);
 
-    Iterator<SNode> listNodes = getNodesForList().iterator();
+    Iterator<? extends SNode> listNodes = getNodesForList().iterator();
     if (!listNodes.hasNext()) {
       EditorCell emptyCell = createEmptyCell(editorContext);
       emptyCell.setRole(getElementRole());
@@ -193,7 +193,7 @@ public abstract class AbstractCellListHandler {
     return myListEditorCell_Collection;
   }
 
-  protected abstract List<SNode> getNodesForList();
+  protected abstract List<? extends SNode> getNodesForList();
 
   private void addSeparatorCell(EditorContext editorContext, SNode node) {
     if (node == null) {

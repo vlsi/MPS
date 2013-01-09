@@ -93,7 +93,7 @@ public class ChildrenCollectionFinder {
     if (current.getRole() != null) {
       String role = current.getRole();
       SNode currentNode = current.getSNode();
-      SNode linkDeclaration = currentNode.getLinkDeclaration(role);
+      SNode linkDeclaration = ((jetbrains.mps.smodel.SNode) currentNode).getLinkDeclaration(role);
       if (linkDeclaration != null &&
         !SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration) &&
         SModelUtil.isMultipleLinkDeclaration(linkDeclaration)) {

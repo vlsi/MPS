@@ -23,10 +23,12 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.Iterator;
 import java.util.List;
@@ -41,7 +43,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
     super(ownerNode, childRole, editorContext);
     NodeReadAccessCasterInEditor.runReadTransparentAction(new Runnable() {
       public void run() {
-        myLinkDeclaration = ownerNode.getLinkDeclaration(childRole);
+        myLinkDeclaration = ((jetbrains.mps.smodel.SNode) ownerNode).getLinkDeclaration(childRole);
         assert myLinkDeclaration != null : "link declaration was not found for role: \"" + childRole + "\" in concept: " + ownerNode.getConcept().getId();
         SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
         myChildConcept = SModelUtil.getLinkDeclarationTarget(myLinkDeclaration);
@@ -106,7 +108,7 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   protected SNode getAnchorNode(EditorCell anchorCell) {
     SNode anchorNode = (anchorCell != null ? anchorCell.getSNode() : null);
     if (anchorNode != null) {
-      List<SNode> listElements1 = getOwner().getChildren(getElementRole());
+      Collection<? extends SNode> listElements1 = IterableUtil.asCollection(getOwner().getChildren(getElementRole()));
       // anchor should be directly referenced from "list owner"
       while (anchorNode != null && !listElements1.contains(anchorNode)) {
         anchorNode = anchorNode.getParent();
@@ -127,9 +129,9 @@ public abstract class RefNodeListHandler extends AbstractCellListHandler {
   protected List<SNode> getNodesForList() {
     List<SNode> resultList = new ArrayList<SNode>();
     if (!myIsReverseOrder) {
-      resultList.addAll(myOwnerNode.getChildren(getElementRole()));
+      resultList.addAll(IterableUtil.asCollection(myOwnerNode.getChildren(getElementRole())));
     } else {
-      List<SNode> children = myOwnerNode.getChildren(getElementRole());
+      List<? extends SNode> children = IterableUtil.copyToList(myOwnerNode.getChildren(getElementRole()));
       Collections.reverse(children);
       resultList.addAll(children);
     }

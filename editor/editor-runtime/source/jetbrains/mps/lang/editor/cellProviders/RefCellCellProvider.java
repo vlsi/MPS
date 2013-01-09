@@ -64,7 +64,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     setSemanticNodeToCells(editorCell, node);
 
     if (myIsCardinality1) {
-      if (ReferenceConceptUtil.getCharacteristicReference(node.getConceptDeclarationNode()) != null) {
+      if (ReferenceConceptUtil.getCharacteristicReference(((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode()) != null) {
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node));
       } else {
         editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());

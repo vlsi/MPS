@@ -37,7 +37,7 @@ import java.util.*;
 
 public class SModelTreeNode extends MPSTreeNodeEx {
   @Deprecated
-  public static final String PACK = SNode.PACK;
+  public static final String PACK = jetbrains.mps.smodel.SNode.PACK;
 
   private SModelDescriptor myModelDescriptor;
   private List<SModelTreeNode> myChildModelTreeNodes = new ArrayList<SModelTreeNode>();
