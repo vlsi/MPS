@@ -740,7 +740,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   //--------------
 
   public boolean isInstanceOfConcept(String conceptFqName) {
-    return getConcept().isSubConceptOf(SConceptRepository.getInstance().getConcept(conceptFqName));
+    return jetbrains.mps.util.SNodeOperations.isInstanceOf(this,conceptFqName);
   }
 
   public SModel getModel() {

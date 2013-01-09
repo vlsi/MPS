@@ -29,6 +29,10 @@ public class SNodeOperations {
   public SNodeOperations() {
   }
 
+  public static boolean isInstanceOf(SNode node, String concept){
+    return SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(concept));
+  }
+
   public static boolean isAncestor(SNode ancestor, SNode node) {
     if (ancestor == node) {
       return true;
