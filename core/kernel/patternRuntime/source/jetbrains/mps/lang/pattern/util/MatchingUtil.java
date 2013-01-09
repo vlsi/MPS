@@ -46,7 +46,7 @@ public class MatchingUtil {
     propertyNames.addAll(IterableUtil.asCollection(node1.getPropertyNames()));
     propertyNames.addAll(IterableUtil.asCollection(node2.getPropertyNames()));
 
-    SNode typeDeclaration = node1.getConceptDeclarationNode();
+    SNode typeDeclaration = ((jetbrains.mps.smodel.SNode) node1).getConceptDeclarationNode();
 
     for (String propertyName : propertyNames) {
       SNode propertyDeclaration = SModelSearchUtil.findPropertyDeclaration(typeDeclaration, propertyName);

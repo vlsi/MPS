@@ -57,7 +57,7 @@ public class SNodeOperations {
   public static List<SNode> getConceptLinks(final SNode node, final String linkName, boolean lookupHierarchy) {
     SNode conceptDeclaration = node;
     if (!(SNodeUtil.isInstanceOfAbstractConceptDeclaration(conceptDeclaration))) {
-      conceptDeclaration = conceptDeclaration.getConceptDeclarationNode();
+      conceptDeclaration = ((jetbrains.mps.smodel.SNode) conceptDeclaration).getConceptDeclarationNode();
     }
 
     if (lookupHierarchy) {

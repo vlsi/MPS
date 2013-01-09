@@ -103,7 +103,7 @@ public class ReferenceConceptUtil {
   }
 
   public static String getPresentation(SNode node) {
-    SNode nodeConcept = node.getConceptDeclarationNode();
+    SNode nodeConcept = ((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode();
     SNode characteristicReference = getCharacteristicReference(nodeConcept);
     if (characteristicReference == null) return null;
     String genuineRole = SModelUtil.getGenuineLinkRole(characteristicReference);

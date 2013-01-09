@@ -87,7 +87,7 @@ public class PasteWrappersManager implements CoreComponent {
   private PasteWrapper getWrapperFor(SNode node, SNode targetConcept) {
     Map<String, PasteWrapper> wrappers = myWrappers.get(NameUtil.nodeFQName(targetConcept));
     if (wrappers == null) return null;
-    List<SNode> superConcepts = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationNode());
+    List<SNode> superConcepts = SModelUtil_new.getConceptAndSuperConcepts(((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode());
     for (SNode acd : superConcepts) {
       if (wrappers.containsKey(NameUtil.nodeFQName(acd))) {
         return wrappers.get(NameUtil.nodeFQName(acd));

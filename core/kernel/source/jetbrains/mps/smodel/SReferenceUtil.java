@@ -33,7 +33,7 @@ public class SReferenceUtil {
   public static boolean isDynamicResolve(String role, SNode sourceNode) {
 //     return false;  // disable dynamic references
 
-    SNode link = new ConceptAndSuperConceptsScope(sourceNode.getConceptDeclarationNode()).getMostSpecificLinkDeclarationByRole(role);
+    SNode link = new ConceptAndSuperConceptsScope(((jetbrains.mps.smodel.SNode) sourceNode).getConceptDeclarationNode()).getMostSpecificLinkDeclarationByRole(role);
     if (link == null) {
       LOG.error("couldn't find link declaration '" + role + "' in concept '" + sourceNode.getConcept().getId() + "'", sourceNode);
       return false;

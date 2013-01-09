@@ -83,7 +83,7 @@ public class ClassifierLoader {
   }
 
   private SNode createClassifierForClass(String fqName, ClassReader reader) {
-    SNode result = null;
+    jetbrains.mps.smodel.SNode result = null;
     ClassifierKind kind = ClassifierKind.getClassifierKind(reader);
     if (kind == null) {
       return null;

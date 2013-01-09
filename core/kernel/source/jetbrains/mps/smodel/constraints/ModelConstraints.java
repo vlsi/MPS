@@ -59,7 +59,7 @@ public class ModelConstraints {
     assert parent != null;
     SNode concept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
 
-    return canBeParent(parent, concept, node.getRoleLink(), null, null) && canBeAncestor(parent, null, concept, null);
+    return canBeParent(parent, concept, ((jetbrains.mps.smodel.SNode) node).getRoleLink(), null, null) && canBeAncestor(parent, null, concept, null);
   }
 
   // canBe* section
@@ -136,15 +136,15 @@ public class ModelConstraints {
 
   @NotNull
   private static ReferenceDescriptor getReferenceDescriptorForReferenceNode(@Nullable SReference reference, @NotNull SNode referenceNode, @NotNull String role) {
-    SNode scopeReference = referenceNode.getLinkDeclaration(role);
+    SNode scopeReference = ((jetbrains.mps.smodel.SNode) referenceNode).getLinkDeclaration(role);
     if (scopeReference == null) {
       return new ErrorReferenceDescriptor("can't find link for role '" + role + "' in '" + referenceNode.getConcept().getId() + "'");
     }
-    SNode concept = referenceNode.getConceptDeclarationNode();
+    SNode concept = ((jetbrains.mps.smodel.SNode) referenceNode).getConceptDeclarationNode();
 
     return new OkReferenceDescriptor(
       concept, SModelUtil.getGenuineLinkRole(scopeReference), // sourceNodeConcept, genuineRole
-      reference != null, role, 0, referenceNode, SModelUtil.getLinkDeclarationTarget(scopeReference), referenceNode.getParent(), referenceNode.getRoleLink(), // parameters
+      reference != null, role, 0, referenceNode, SModelUtil.getLinkDeclarationTarget(scopeReference), referenceNode.getParent(), ((jetbrains.mps.smodel.SNode) referenceNode).getRoleLink(), // parameters
       reference // reference
     );
   }
@@ -157,7 +157,7 @@ public class ModelConstraints {
     if (smartReference == null) {
       return new ErrorReferenceDescriptor("smartConcept has no characteristic reference: " + smartConcept.getName());
     }
-    SNode linkDeclaration = role != null ? enclosingNode.getLinkDeclaration(role) : null;
+    SNode linkDeclaration = role != null ? ((jetbrains.mps.smodel.SNode) enclosingNode).getLinkDeclaration(role) : null;
     if (linkDeclaration != null && SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration)) {
       return new ErrorReferenceDescriptor("for reference role smartConcept should be null");
     }
