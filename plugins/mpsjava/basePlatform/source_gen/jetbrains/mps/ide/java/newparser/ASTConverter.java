@@ -172,10 +172,10 @@ public class ASTConverter {
       SNode claz = cls;
       if (SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
         // we're either class or enum 
-        SLinkOperations.setTarget(claz, "superclass", SNodeOperations.cast(convertTypeRef(x.superclass), "jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
+        SLinkOperations.setTarget(claz, "superclass", SNodeOperations.cast(convertTypeReference(x.superclass), "jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
         if (x.superInterfaces != null) {
           for (TypeReference i : x.superInterfaces) {
-            ListSequence.fromList(SLinkOperations.getTargets(claz, "implementedInterface", true)).addElement(SNodeOperations.cast(convertTypeRef(i), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+            ListSequence.fromList(SLinkOperations.getTargets(claz, "implementedInterface", true)).addElement(SNodeOperations.cast(convertTypeReference(i), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
           }
         }
         SPropertyOperations.set(claz, "abstractClass", "" + (flagSet(x.modifiers, ClassFileConstants.AccAbstract)));
@@ -189,7 +189,7 @@ public class ASTConverter {
         // <node> 
         if (x.superInterfaces != null) {
           for (TypeReference i : x.superInterfaces) {
-            ListSequence.fromList(SLinkOperations.getTargets(iface, "extendedInterface", true)).addElement(SNodeOperations.cast(convertTypeRef(i), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+            ListSequence.fromList(SLinkOperations.getTargets(iface, "extendedInterface", true)).addElement(SNodeOperations.cast(convertTypeReference(i), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
           }
         }
       }
@@ -300,7 +300,7 @@ public class ASTConverter {
       convertAnnotations(f.annotations, fDecl);
 
       SPropertyOperations.set(fDecl, "name", new String(f.name));
-      SLinkOperations.setTarget(fDecl, "type", convertTypeRef(f.type), true);
+      SLinkOperations.setTarget(fDecl, "type", convertTypeReference(f.type), true);
 
       SLinkOperations.setTarget(SNodeOperations.cast(fDecl, "jetbrains.mps.baseLanguage.structure.IVisible"), "visibility", convertVisibility(f.modifiers), true);
       SPropertyOperations.set(fDecl, "isFinal", "" + (flagSet(f.modifiers, ClassFileConstants.AccFinal)));
@@ -424,12 +424,12 @@ public class ASTConverter {
     SPropertyOperations.set(tvar, "name", new String(par.name));
     // TODO constraints like extends, super ... 
     if (par.type != null) {
-      SLinkOperations.setTarget(tvar, "bound", convertTypeRef(par.type), true);
+      SLinkOperations.setTarget(tvar, "bound", convertTypeReference(par.type), true);
     }
     if (par.bounds != null) {
       for (TypeReference b : par.bounds) {
         // FIXME report or tolerate error if it's not a classifier type 
-        ListSequence.fromList(SLinkOperations.getTargets(tvar, "auxBounds", true)).addElement(SNodeOperations.cast(convertTypeRef(b), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
+        ListSequence.fromList(SLinkOperations.getTargets(tvar, "auxBounds", true)).addElement(SNodeOperations.cast(convertTypeReference(b), "jetbrains.mps.baseLanguage.structure.ClassifierType"));
       }
     }
     return tvar;
@@ -500,7 +500,7 @@ public class ASTConverter {
         SNode par = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
         convertAnnotations(arg.annotations, par);
         SPropertyOperations.set(par, "name", new String(arg.name));
-        SLinkOperations.setTarget(par, "type", convertTypeRef(arg.type), true);
+        SLinkOperations.setTarget(par, "type", convertTypeReference(arg.type), true);
         ListSequence.fromList(SLinkOperations.getTargets(result, "parameter", true)).addElement(par);
 
         // <node> 
@@ -516,7 +516,7 @@ public class ASTConverter {
 
     if (x.thrownExceptions != null) {
       for (TypeReference exc : x.thrownExceptions) {
-        ListSequence.fromList(SLinkOperations.getTargets(result, "throwsItem", true)).addElement(convertTypeRef(exc));
+        ListSequence.fromList(SLinkOperations.getTargets(result, "throwsItem", true)).addElement(convertTypeReference(exc));
       }
     }
 
@@ -546,7 +546,7 @@ public class ASTConverter {
       // Not a constructor 
 
       MethodDeclaration mDecl = (MethodDeclaration) x;
-      SLinkOperations.setTarget(result, "returnType", convertTypeRef(mDecl.returnType), true);
+      SLinkOperations.setTarget(result, "returnType", convertTypeReference(mDecl.returnType), true);
     }
 
     if (idBuilder != null) {
@@ -572,29 +572,15 @@ public class ASTConverter {
     );
   }
 
-  public SNode convertTypeRef(TypeReference typRef) throws JavaParseException {
-
-    if (typRef == null) {
-      return null;
-    }
-
-    SNode res;
-    if (typRef instanceof SingleTypeReference) {
-      res = convertUnqualTypeRef((SingleTypeReference) typRef);
-
-    } else if (typRef instanceof QualifiedTypeReference) {
-      res = convertQualifiedTypeRef((QualifiedTypeReference) typRef);
-
-    } else {
-      throw new JavaParseException("Unknown type reference kind in parsed java AST tree");
-    }
+  public SNode convertTypeReference(TypeReference typRef) {
+    SNode result = convertTypeRef(typRef);
 
     {
-      SNode cls = res;
+      SNode cls = result;
       if (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
         TypeReference[] typeArgs = null;
         if (typRef instanceof ParameterizedQualifiedTypeReference) {
-          // FIXME hack 
+          // FIXME hack: ignoring type args of intermediate classes; like A,B in Cl1.Cl2<A>.Cl3<B>.FinalClass<T> 
           ParameterizedQualifiedTypeReference parQRef = (ParameterizedQualifiedTypeReference) typRef;
           int last = parQRef.typeArguments.length - 1;
           typeArgs = parQRef.typeArguments[last];
@@ -602,36 +588,11 @@ public class ASTConverter {
         } else if (typRef instanceof ParameterizedSingleTypeReference) {
           typeArgs = ((ParameterizedSingleTypeReference) typRef).typeArguments;
         }
+
+        // handling type arguments 
         if (typeArgs != null) {
           for (TypeReference typArg : typeArgs) {
-            SNode argType = null;
-
-            if (typArg instanceof Wildcard) {
-              // it's a wildcard type of the form ? or ? extends ... or ? super ... 
-
-              Wildcard wc = ((Wildcard) typArg);
-              switch (wc.kind) {
-                case Wildcard.UNBOUND:
-                  argType = _quotation_createNode_rbndtb_a0a0a3a2a0a2a6a91();
-                  break;
-
-                case Wildcard.EXTENDS:
-                  SNode upperBound = convertTypeRef(wc.bound);
-                  argType = _quotation_createNode_rbndtb_a0b0b3a2a0a2a6a91(upperBound);
-                  break;
-
-                case Wildcard.SUPER:
-                  SNode lowerBound = convertTypeRef(wc.bound);
-                  argType = _quotation_createNode_rbndtb_a0b0c3a2a0a2a6a91(lowerBound);
-                  break;
-
-                default:
-              }
-            } else {
-              // it's a normal type reference 
-              argType = convertTypeRef(typArg);
-            }
-
+            SNode argType = convertTypeReference(typArg);
             if (argType != null) {
               ListSequence.fromList(SLinkOperations.getTargets(cls, "parameter", true)).addElement(argType);
             }
@@ -639,22 +600,66 @@ public class ASTConverter {
         }
       }
     }
-    return res;
+
+    return result;
   }
 
-  public SNode convertUnqualTypeRef(SingleTypeReference typRef) {
-    String unqualTyp = new String(typRef.token);
-    SNode base = myTypeResolver.resolveShortTypeName(unqualTyp);
-    if (typRef instanceof ArrayTypeReference && !(typRef instanceof ParameterizedSingleTypeReference)) {
-      // it turns out this is an array, wrap base type in arraytype 
-      // (in elicpse ParamSingleTypRef is subclass of ArrayTypRef) 
-      return _quotation_createNode_rbndtb_a2a2a02(base);
+  public SNode convertTypeRef(TypeReference typRef) {
+    if (typRef instanceof QualifiedTypeReference) {
+      return convertTypeRef((QualifiedTypeReference) typRef);
+    } else if (typRef instanceof SingleTypeReference) {
+      return convertTypeRef((SingleTypeReference) typRef);
     } else {
-      return base;
+      if (typRef != null) {
+        LOG.error("Unknown type reference kind in parsed java AST tree: " + typRef.getClass().getName());
+      }
+      return null;
+    }
+
+  }
+
+  public SNode convertTypeRef(SingleTypeReference typRef) {
+    if (typRef instanceof Wildcard) {
+      return convertTypeRef((Wildcard) typRef);
+    } else {
+      if (typRef == null) {
+        return null;
+      }
+      String unqualTyp = new String(typRef.token);
+      SNode base = myTypeResolver.resolveShortTypeName(unqualTyp);
+      if (typRef instanceof ArrayTypeReference && !(typRef instanceof ParameterizedSingleTypeReference)) {
+        // it turns out this is an array, wrap base type in arraytype 
+        // (in elicpse ParamSingleTypRef is subclass of ArrayTypRef) 
+        return _quotation_createNode_rbndtb_a2a3a12(base);
+      } else {
+        return base;
+      }
+    }
+
+  }
+
+  public SNode convertTypeRef(Wildcard typRef) {
+    // it's a wildcard type of the form ? or ? extends ... or ? super ... 
+
+    switch (typRef.kind) {
+      case Wildcard.UNBOUND:
+        return _quotation_createNode_rbndtb_a0a0c0w();
+
+      case Wildcard.EXTENDS:
+        SNode upperBound = convertTypeReference(typRef.bound);
+        return _quotation_createNode_rbndtb_a1a1c0w(upperBound);
+
+      case Wildcard.SUPER:
+        SNode lowerBound = convertTypeReference(typRef.bound);
+        return _quotation_createNode_rbndtb_a1a2c0w(lowerBound);
+
+      default:
+        LOG.error("Unknown wildcard kind");
+        return null;
     }
   }
 
-  public SNode convertQualifiedTypeRef(QualifiedTypeReference typRef) {
+  public SNode convertTypeRef(QualifiedTypeReference typRef) {
 
     StringBuilder sb = new StringBuilder();
     for (int i = 0; i < typRef.tokens.length; i++) {
@@ -667,7 +672,7 @@ public class ASTConverter {
 
     SNode base = myTypeResolver.resolveQualifiedTypeName(qname);
     if (typRef instanceof ArrayQualifiedTypeReference && !(typRef instanceof ParameterizedQualifiedTypeReference)) {
-      return _quotation_createNode_rbndtb_a0a6a12(base);
+      return _quotation_createNode_rbndtb_a0a6a32(base);
     } else {
       return base;
     }
@@ -699,7 +704,7 @@ public class ASTConverter {
       return;
     }
     for (TypeReference typeRef : from) {
-      ListSequence.fromList(into).addElement(convertTypeRef(typeRef));
+      ListSequence.fromList(into).addElement(convertTypeReference(typeRef));
     }
   }
 
@@ -761,14 +766,22 @@ public class ASTConverter {
   }
 
   protected static class State {
+    private ASTConverter.State parentState;
     private String myIdPrefix;
+    private Map<String, SNode> typeVars;
 
     public State(String idPrefix) {
       myIdPrefix = idPrefix;
+      typeVars = MapSequence.fromMap(new HashMap<String, SNode>());
     }
 
     public String getIdPrefix() {
       return myIdPrefix;
+    }
+
+    protected SNode resolveTypeVar(String name) {
+      // TEMP 
+      return null;
     }
   }
 
@@ -870,35 +883,7 @@ public class ASTConverter {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0a0a3a2a0a2a6a91() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_rbndtb_a0b0b3a2a0a2a6a91(Object parameter_1) {
-    SNode quotedNode_2 = null;
-    SNode quotedNode_3 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3 = (SNode) parameter_1;
-    if (quotedNode_3 != null) {
-      quotedNode_2.addChild("bound", HUtil.copyIfNecessary(quotedNode_3));
-    }
-    return quotedNode_2;
-  }
-
-  private static SNode _quotation_createNode_rbndtb_a0b0c3a2a0a2a6a91(Object parameter_1) {
-    SNode quotedNode_2 = null;
-    SNode quotedNode_3 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3 = (SNode) parameter_1;
-    if (quotedNode_3 != null) {
-      quotedNode_2.addChild("bound", HUtil.copyIfNecessary(quotedNode_3));
-    }
-    return quotedNode_2;
-  }
-
-  private static SNode _quotation_createNode_rbndtb_a2a2a02(Object parameter_1) {
+  private static SNode _quotation_createNode_rbndtb_a2a3a12(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);
@@ -909,7 +894,35 @@ public class ASTConverter {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0a6a12(Object parameter_1) {
+  private static SNode _quotation_createNode_rbndtb_a0a0c0w() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", null, null, GlobalScope.getInstance(), false);
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_rbndtb_a1a1c0w(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = (SNode) parameter_1;
+    if (quotedNode_3 != null) {
+      quotedNode_2.addChild("bound", HUtil.copyIfNecessary(quotedNode_3));
+    }
+    return quotedNode_2;
+  }
+
+  private static SNode _quotation_createNode_rbndtb_a1a2c0w(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    SNode quotedNode_3 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3 = (SNode) parameter_1;
+    if (quotedNode_3 != null) {
+      quotedNode_2.addChild("bound", HUtil.copyIfNecessary(quotedNode_3));
+    }
+    return quotedNode_2;
+  }
+
+  private static SNode _quotation_createNode_rbndtb_a0a6a32(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);

@@ -401,7 +401,7 @@ public class FullASTConverter extends ASTConverter {
     SLinkOperations.setTarget(result, "localVariableDeclaration", decl, true);
 
     SPropertyOperations.set(decl, "isFinal", "" + (flagSet(x.modifiers, ClassFileConstants.AccFinal)));
-    SLinkOperations.setTarget(decl, "type", convertTypeRef(x.type), true);
+    SLinkOperations.setTarget(decl, "type", convertTypeReference(x.type), true);
     SPropertyOperations.set(decl, "name", new String(x.name));
     SLinkOperations.setTarget(decl, "initializer", convertExpressionWrap(x.initialization), true);
 
@@ -698,10 +698,7 @@ public class FullASTConverter extends ASTConverter {
   }
 
   /*package*/ SNode convertExpression(ArrayAllocationExpression x) throws JavaParseException {
-    SNode compType = convertTypeRef(x.type);
-    // FIXME HERE ARRAY TYPE IS EXPECTED, NOT COMPONENT TYPE 
-    // <node> 
-    // <node> 
+    SNode compType = convertTypeReference(x.type);
     if (x.initializer != null) {
       List<SNode> initializers = new ArrayList<SNode>();
       if (x.initializer.expressions != null) {
@@ -921,7 +918,7 @@ public class FullASTConverter extends ASTConverter {
 
   /*package*/ SNode convertExpression(InstanceOfExpression x) throws JavaParseException {
     SNode expr = convertExpressionWrap(x.expression);
-    SNode testType = convertTypeRef(x.type);
+    SNode testType = convertTypeReference(x.type);
     SNode instanceOfExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceOfExpression", null);
     SLinkOperations.setTarget(instanceOfExpression, "leftExpression", expr, true);
     SLinkOperations.setTarget(instanceOfExpression, "classType", testType, true);
@@ -975,7 +972,7 @@ public class FullASTConverter extends ASTConverter {
       return null;
     }
 
-    SLinkOperations.setTarget(result, "type", convertTypeRef(x.type), true);
+    SLinkOperations.setTarget(result, "type", convertTypeReference(x.type), true);
     return result;
   }
 
@@ -1001,7 +998,7 @@ public class FullASTConverter extends ASTConverter {
 
   /*package*/ SNode convertExpression(QualifiedThisReference x) throws JavaParseException {
     SNode thisRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
-    SNode type = convertTypeRef(x.qualification);
+    SNode type = convertTypeReference(x.qualification);
     if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
       throw new JavaParseException("Type should be class in qualified this reference");
     }
@@ -1189,7 +1186,7 @@ public class FullASTConverter extends ASTConverter {
       SLinkOperations.setTarget(result, "creator", anonCreate, true);
       SNode cls = SNodeOperations.cast(convertTypeDecl(x.anonymousType), "jetbrains.mps.baseLanguage.structure.AnonymousClass");
       SLinkOperations.setTarget(anonCreate, "cls", cls, true);
-      SLinkOperations.setTarget(cls, "classifier", SLinkOperations.getTarget(SNodeOperations.cast(convertTypeRef(x.type), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), false);
+      SLinkOperations.setTarget(cls, "classifier", SLinkOperations.getTarget(SNodeOperations.cast(convertTypeReference(x.type), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), false);
       addCallArgs(cls, x.arguments);
       addTypeArgs(typeArguments(x.type), SLinkOperations.getTargets(cls, "typeParameter", true));
     } else {
@@ -1204,7 +1201,7 @@ public class FullASTConverter extends ASTConverter {
 
   /*package*/ SNode convertExpression(ClassLiteralAccess x) throws JavaParseException {
 
-    SNode argType = convertTypeRef(x.type);
+    SNode argType = convertTypeReference(x.type);
     if (!(SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
       throw new JavaParseException("Type in class literal access is expected to be classifier");
     }
