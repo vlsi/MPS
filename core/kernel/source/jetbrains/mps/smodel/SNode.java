@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -327,7 +327,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   public SNode getReferenceTarget(String role) {
     SReference reference = getReference(role);
-    SNode result = reference == null ? null : reference.getTargetNode();
+    SNode result = reference == null ? null : (SNode) reference.getTargetNode();
     if (result != null) {
       fireNodeReferentReadAccess(role, result);
     }
@@ -710,15 +710,15 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   //----------------------------------------------------------
 
   public SNode getConceptDeclarationNode() {
-    return SModelUtil.findConceptDeclaration(getConceptFqName(), GlobalScope.getInstance());
+    return (SNode) SModelUtil.findConceptDeclaration(getConceptFqName(), GlobalScope.getInstance());
   }
 
   public SNode getPropertyDeclaration(String propertyName) {
-    return SModelSearchUtil.findPropertyDeclaration(getConceptDeclarationNode(), propertyName);
+    return (SNode) SModelSearchUtil.findPropertyDeclaration(getConceptDeclarationNode(), propertyName);
   }
 
   public SNode getLinkDeclaration(String role) {
-    return SModelSearchUtil.findLinkDeclaration(getConceptDeclarationNode(), role);
+    return (SNode) SModelSearchUtil.findLinkDeclaration(getConceptDeclarationNode(), role);
   }
 
   public SNode getRoleLink() {
@@ -1261,9 +1261,9 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     if (myConceptFqName.equals(SNodeUtil.concept_ConceptDeclaration) || myConceptFqName.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
       conceptDeclaration = this;
     } else {
-      conceptDeclaration = SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
+      conceptDeclaration = (SNode) SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
     }
-    return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
+    return (SNode) SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
   }
 
   @Deprecated
@@ -1338,7 +1338,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public List<SNode> getReferents() {
     List<SNode> result = new ArrayList<SNode>();
     for (SReference reference : getReferences()) {
-      SNode targetNode = reference.getTargetNode();
+      SNode targetNode = (SNode) reference.getTargetNode();
       if (targetNode != null) result.add(targetNode);
     }
     return result;
