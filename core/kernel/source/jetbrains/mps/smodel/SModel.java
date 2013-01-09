@@ -133,17 +133,17 @@ public class SModel {
     NodeReadEventsCaster.fireModelNodesReadAccess(this);
   }
 
-  public final Iterable<SNode> roots() {
-    return new Iterable<SNode>() {
-      public Iterator<SNode> iterator() {
+  public final Iterable<org.jetbrains.mps.openapi.model.SNode> roots() {
+    return new Iterable<org.jetbrains.mps.openapi.model.SNode>() {
+      public Iterator<org.jetbrains.mps.openapi.model.SNode> iterator() {
         return rootsIterator();
       }
     };
   }
 
-  public Iterator<SNode> rootsIterator() {
+  public Iterator<org.jetbrains.mps.openapi.model.SNode> rootsIterator() {
     fireModelNodesReadAccess();
-    return myRoots.iterator();
+    return ((Iterator) myRoots.iterator());
   }
 
   public void addRoot(@NotNull org.jetbrains.mps.openapi.model.SNode node) {
@@ -197,7 +197,7 @@ public class SModel {
     return new NodesIterable(this);
   }
 
-  public Iterator<SNode> nodesIterator() {
+  public Iterator<org.jetbrains.mps.openapi.model.SNode> nodesIterator() {
     return new NodesIterator(rootsIterator());
   }
 
