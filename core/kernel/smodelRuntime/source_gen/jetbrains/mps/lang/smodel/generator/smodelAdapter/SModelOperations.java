@@ -8,15 +8,12 @@ import jetbrains.mps.smodel.SModel;
 import java.util.ArrayList;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.util.Condition;
-import jetbrains.mps.util.ConditionalIterable;
+import jetbrains.mps.util.*;
 import jetbrains.mps.smodel.IScope;
 import java.util.Collections;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -51,7 +48,7 @@ public class SModelOperations {
     List<SNode> list = new ArrayList<SNode>();
     Condition<SNode> cond = new Condition<SNode>() {
       public boolean met(SNode node) {
-        return node.isInstanceOfConcept(conceptFqName);
+        return org.jetbrains.mps.openapi.model.SNodeUtil.isInstanceOf(node, jetbrains.mps.util.SNodeOperations.getConcept(conceptFqName));
       }
     };
     Iterable<SNode> iterable = new ConditionalIterable<SNode>(model.roots(), cond);

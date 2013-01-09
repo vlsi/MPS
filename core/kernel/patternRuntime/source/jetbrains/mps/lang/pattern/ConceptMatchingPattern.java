@@ -16,6 +16,8 @@
 package jetbrains.mps.lang.pattern;
 
 import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.SNodeOperations;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class ConceptMatchingPattern implements IMatchingPattern {
   private String myConceptFQName;
@@ -26,7 +28,7 @@ public class ConceptMatchingPattern implements IMatchingPattern {
 
   public boolean match(SNode nodeToMatch) {
     if (nodeToMatch == null) return false;
-    return nodeToMatch.isInstanceOfConcept(myConceptFQName);
+    return SNodeUtil.isInstanceOf(nodeToMatch, SNodeOperations.getConcept(myConceptFQName));
   }
 
   public String getConceptFQName() {

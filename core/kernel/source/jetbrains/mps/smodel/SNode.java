@@ -739,10 +739,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   //--------------
 
-  public boolean isInstanceOfConcept(String conceptFqName) {
-    return jetbrains.mps.util.SNodeOperations.isInstanceOf(this,conceptFqName);
-  }
-
   public SModel getModel() {
     ModelAccess.assertLegalRead(this);
     assertDisposed();
@@ -983,6 +979,15 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * Inline content in java code, use migration in MPS
    * @Deprecated in 3.0
    */
+  public boolean isInstanceOfConcept(String conceptFqName) {
+    return org.jetbrains.mps.openapi.model.SNodeUtil.isInstanceOf(this, jetbrains.mps.util.SNodeOperations.getConcept(conceptFqName));
+  }
+
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public SNodeId getSNodeId() {
     return getNodeId();
   }
@@ -1139,7 +1144,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public boolean isInstanceOfConcept(SNode concept) {
-    return isInstanceOfConcept(NameUtil.nodeFQName(concept));
+    return org.jetbrains.mps.openapi.model.SNodeUtil.isInstanceOf(this, jetbrains.mps.util.SNodeOperations.getConcept(NameUtil.nodeFQName(concept)));
   }
 
   @Deprecated
