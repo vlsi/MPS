@@ -310,7 +310,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_1196351886876(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     final List<SNode> result = new ArrayList<SNode>();
-    for (SReference ref : ListSequence.fromList(_context.getNode().getReferences())) {
+    for (SReference ref : _context.getNode().getReferences()) {
       if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.LinkAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"), ref.getRole())) != null)) {
         continue;
       }

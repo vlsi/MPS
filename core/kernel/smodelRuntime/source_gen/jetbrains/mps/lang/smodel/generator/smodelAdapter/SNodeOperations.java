@@ -671,7 +671,7 @@ public class SNodeOperations {
     if (node == null) {
       return new ArrayList<SReference>(0);
     }
-    return node.getReferences();
+    return ((jetbrains.mps.smodel.SNode) node).getReferences();
   }
 
   public static SReference getReference(SNode node, SNode linkDeclaration) {

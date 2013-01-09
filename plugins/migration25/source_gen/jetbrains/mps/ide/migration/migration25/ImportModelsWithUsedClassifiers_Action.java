@@ -78,7 +78,7 @@ public class ImportModelsWithUsedClassifiers_Action extends BaseAction {
           SModel model = modelDescriptor.getSModel();
           Set<SModelReference> dependencies = SetSequence.fromSet(new HashSet<SModelReference>());
           for (SNode node : ListSequence.fromList(SModelOperations.getNodes(model, null))) {
-            for (SReference ref : ListSequence.fromList(node.getReferences())) {
+            for (SReference ref : node.getReferences()) {
               SModelReference mref = check_rft9c_a0a0a0e0d0c0a(check_rft9c_a0a0a0a4a3a2a0(ref.getTargetNodeSilently()));
               if (mref == null) {
                 continue;

@@ -119,8 +119,7 @@ public class CopyPasteUtil {
       targetNode.setProperty(name, sourceNode.getProperty(name));
     }
     sourceNodesToNewNodes.put(sourceNode, targetNode);
-    List<SReference> references = sourceNode.getReferences();
-    for (SReference reference : references) {
+    for (SReference reference : (List<SReference>)(List) sourceNode.getReferences()) {
       allReferences.add(reference);
     }
     List<SNode> children = SNodeOperations.getChildren(sourceNode);

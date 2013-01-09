@@ -371,7 +371,7 @@ public class State {
         if (!wCBlock.isSkipError()) {
           SNode node = myNodeMaps.getNode(wCBlock.getArgument());
           if (node != null) {
-            SNode concept = node.getConceptDeclarationNode();
+            SNode concept = ((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode();
             if (!SConceptPropertyOperations.getBoolean(concept, "abstract")) {
               myTypeCheckingContext.reportWarning(node, "argument of WHEN CONCRETE block is never concrete",
                 wCBlock.getNodeModel(), wCBlock.getNodeId(), null, new NodeMessageTarget());

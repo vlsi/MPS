@@ -5,6 +5,7 @@ package jetbrains.mps.lang.plugin.standalone.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -16,6 +17,8 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodeId;
+
+import java.util.Collection;
 
 public class Mps25ApiMigrationStandalone_MigrationScript extends BaseMigrationScript {
   public Mps25ApiMigrationStandalone_MigrationScript(IOperationContext operationContext) {
@@ -41,8 +44,9 @@ public class Mps25ApiMigrationStandalone_MigrationScript extends BaseMigrationSc
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SLinkOperations.getTarget(node, "operation", true);
         SNode tool = null;
-        if (operation.getReferences().size() > 0) {
-          SReference sref = operation.getReferences().get(0);
+        Collection<SReference> references = IterableUtil.asCollection(operation.getReferences());
+        if (references.size() > 0) {
+          SReference sref = references.iterator().next();
           tool = sref.getTargetNode();
         }
         StubRefUtil.replaceNode(node, _quotation_createNode_rdc33q_b0d0a0(tool, SLinkOperations.getTarget(node, "operand", true)));

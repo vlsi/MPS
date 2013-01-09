@@ -44,8 +44,7 @@ public class MappingConfigFinder implements IFinder {
       nodesToCheck.addAll(SLinkOperations.getTargets(mappingConfig, "createRootRule", true));
     }
     for (SNode node : nodesToCheck) {
-      List<SReference> references = node.getReferences();
-      for (SReference reference : references) {
+      for (SReference reference : node.getReferences()) {
         if (myNodeToFindUsages.getNodeId().equals(reference.getTargetNodeId())) {
           SearchResult<SNode> result = new SearchResult<SNode>(node, "");
           results.add(result);

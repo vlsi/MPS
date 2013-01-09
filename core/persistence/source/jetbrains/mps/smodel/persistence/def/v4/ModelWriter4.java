@@ -163,15 +163,13 @@ public class ModelWriter4 implements IModelWriter {
     }
 
     // references ...
-    List<SReference> references = node.getReferences();
     IReferencePersister referencePersister = getReferencePersister();
-    for (SReference reference : references) {
+    for (SReference reference : node.getReferences()) {
       referencePersister.saveReference(element, reference, useUIDs, visibleModelElements);
     }
 
     // children ...
-    List<SNode> children = node.getChildren();
-    for (SNode childNode : children) {
+    for (SNode childNode : node.getChildren()) {
       saveNode(element, null, childNode, useUIDs, visibleModelElements);
     }
 

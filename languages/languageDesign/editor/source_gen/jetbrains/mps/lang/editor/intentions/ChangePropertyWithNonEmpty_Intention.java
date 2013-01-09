@@ -98,7 +98,7 @@ public class ChangePropertyWithNonEmpty_Intention implements IntentionFactory {
       for (Map.Entry<String, String> propertyEntry : SetSequence.fromSet(jetbrains.mps.util.SNodeOperations.getProperties(node).entrySet())) {
         SNodeAccessUtil.setProperty(nonEmpty, propertyEntry.getKey(), propertyEntry.getValue());
       }
-      for (SReference reference : ListSequence.fromList(node.getReferences())) {
+      for (SReference reference : node.getReferences()) {
         nonEmpty.setReference(reference.getRole(), reference);
       }
       SNodeOperations.replaceWithAnother(node, nonEmpty);
