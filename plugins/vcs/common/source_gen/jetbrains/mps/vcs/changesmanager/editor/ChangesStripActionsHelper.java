@@ -134,8 +134,8 @@ public class ChangesStripActionsHelper {
           return Sequence.<SNode>singleton(oldModel.getNodeById(((NodeChange) ch).getAffectedNodeId()));
         } else if (ch instanceof NodeGroupChange) {
           NodeGroupChange ngc = (NodeGroupChange) ch;
-          List<SNode> changeChildren = IterableUtil.asList(oldModel.getNodeById(ngc.getParentNodeId()).getChildren(ngc.getRole()));
-          return ListSequence.fromList(changeChildren).page(ngc.getBegin(), ngc.getEnd());
+          List<? extends SNode> changeChildren = oldModel.getNodeById(ngc.getParentNodeId()).getChildren(ngc.getRole());
+          return (Iterable) ListSequence.fromList(changeChildren).page(ngc.getBegin(), ngc.getEnd());
         } else {
           return Sequence.fromIterable(Collections.<SNode>emptyList());
         }
@@ -204,7 +204,7 @@ public class ChangesStripActionsHelper {
         });
         ListSequence.fromList(nodesToCopy).clear();
         for (int i = min; i <= max; i++) {
-          ListSequence.fromList(nodesToCopy).addElement(commonNode.getChildren(commonRole).get(i));
+          ListSequence.fromList(nodesToCopy).addElement(IterableUtil.asList(commonNode.getChildren(commonRole)).get(i));
         }
       }
     }
