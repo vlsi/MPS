@@ -160,7 +160,7 @@ public class WriteHelper {
     if (RoleIdsComponent.isEnabled()) {
       return genReferenceId(RoleIdsComponent.getPropertyNamePointer(node, prop));
     }
-    return genReferenceId(node.getPropertyDeclaration(prop));
+    return genReferenceId(((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(prop));
   }
 
   public String genTarget(@NotNull SReference ref) {

@@ -62,7 +62,7 @@ public class ScopeResolver implements IResolver {
         if (result == null) {
           return false;
         }
-        sourceNode.setReferent(reference.getRole(), result, false);
+        ((jetbrains.mps.smodel.SNode) sourceNode).setReferent(reference.getRole(), ((jetbrains.mps.smodel.SNode) result), false);
         return true;
       }
     });

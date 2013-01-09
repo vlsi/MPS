@@ -57,7 +57,7 @@ public class ModelPlusImportedScope extends Scope {
       if (model == null) {
         continue;
       }
-      Iterable<SNode> nodes;
+      Iterable<? extends SNode> nodes;
       String conceptToCheck;
 
       if (myRootsOnly) {

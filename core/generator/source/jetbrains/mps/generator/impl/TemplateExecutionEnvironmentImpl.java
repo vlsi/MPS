@@ -311,7 +311,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     }
 
     // add
-    SNode/*LinkDeclaration*/ childLinkDeclaration = SModelSearchUtil.findLinkDeclaration(contextParentNode.getConceptDeclarationNode(), childRole);
+    SNode/*LinkDeclaration*/ childLinkDeclaration = SModelSearchUtil.findLinkDeclaration(((jetbrains.mps.smodel.SNode) contextParentNode).getConceptDeclarationNode(), childRole);
     if (childLinkDeclaration == null) {
       // there should have been warning about that
       contextParentNode.addChild(childRole, outputNodeToWeave);

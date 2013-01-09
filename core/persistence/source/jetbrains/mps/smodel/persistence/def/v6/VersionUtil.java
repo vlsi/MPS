@@ -90,19 +90,19 @@ public class VersionUtil {
   }
 
   public String genType(@NotNull SNode node) {
-    return genReferenceString(node.getConceptDeclarationNode(), node.getConcept().getId(), false);
+    return genReferenceString(((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode(), node.getConcept().getId(), false);
   }
 
   public String genRole(@NotNull SNode node) {
-    return node.getRoleInParent() == null ? null : genReferenceString(AttributeOperations.isAttribute(node) ? null : node.getRoleLink(), node.getRoleInParent(), true);
+    return node.getRoleInParent() == null ? null : genReferenceString(AttributeOperations.isAttribute(node) ? null : ((jetbrains.mps.smodel.SNode) node).getRoleLink(), node.getRoleInParent(), true);
   }
 
   public String genRole(@NotNull SReference ref) {
-    return genReferenceString(ref.getSourceNode().getLinkDeclaration(ref.getRole()), ref.getRole(), true);
+    return genReferenceString(((jetbrains.mps.smodel.SNode) ref.getSourceNode()).getLinkDeclaration(ref.getRole()), ref.getRole(), true);
   }
 
   public String genName(@NotNull SNode node, @NotNull String prop) {
-    return genReferenceString(node.getPropertyDeclaration(prop), prop, true);
+    return genReferenceString(((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(prop), prop, true);
   }
 
   public String genTarget(@NotNull SReference ref) {

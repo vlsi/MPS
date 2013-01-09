@@ -46,7 +46,7 @@ public class ModelLinkMap {
       addRoleLocation(ptr(SNodeOperations.getContainingLinkDeclaration(node)), node);
       addTypeLocation(ptr(SNodeOperations.getConceptDeclaration(node)), node);
       for (String prop : SetSequence.fromSet(jetbrains.mps.util.SNodeOperations.getProperties(node).keySet())) {
-        addNameLocation(ptr(node.getPropertyDeclaration(prop)), node, prop);
+        addNameLocation(ptr(((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(prop)), node, prop);
       }
       for (SReference ref : Sequence.fromIterable(SNodeOperations.getReferences(node))) {
         addRoleLocation(ptr(SLinkOperations.findLinkDeclaration(ref)), ref);
@@ -96,7 +96,7 @@ public class ModelLinkMap {
       public void invoke(SNode node) {
         String modelName = newPtr.getModelReference().getLongName();
         String name = NameUtil.shortNameFromLongName(node.getConcept().getConceptId());
-        node.setConceptFqName(NameUtil.longNameFromNamespaceAndShortName(modelName, name));
+        ((jetbrains.mps.smodel.SNode) node).setConceptFqName(NameUtil.longNameFromNamespaceAndShortName(modelName, name));
       }
     });
     move(myNodeRoleMap, oldPtr, newPtr, new _FunctionTypes._void_P1_E0<SNode>() {
@@ -147,7 +147,7 @@ public class ModelLinkMap {
     res |= setProp(myNodeTypeMap, ptr, new _FunctionTypes._void_P1_E0<SNode>() {
       public void invoke(SNode node) {
         String modelName = NameUtil.namespaceFromConceptFQName(node.getConcept().getConceptId());
-        node.setConceptFqName(NameUtil.conceptFQNameFromNamespaceAndShortName(modelName, name));
+        ((jetbrains.mps.smodel.SNode) node).setConceptFqName(NameUtil.conceptFQNameFromNamespaceAndShortName(modelName, name));
       }
     });
     res |= setProp(myPropNameMap, ptr, new _FunctionTypes._void_P1_E0<Pair<SNode, String>>() {
@@ -167,7 +167,7 @@ public class ModelLinkMap {
     boolean res = false;
     res |= setProp(myNodeRoleMap, ptr, new _FunctionTypes._void_P1_E0<SNode>() {
       public void invoke(SNode node) {
-        node.setRoleInParent(role);
+        ((jetbrains.mps.smodel.SNode) node).setRoleInParent(role);
       }
     });
     res |= setProp(myRefRoleMap, ptr, new _FunctionTypes._void_P1_E0<SReference>() {
@@ -220,7 +220,7 @@ public class ModelLinkMap {
         ListSequence.fromList(MapSequence.fromMap(myNodeTypeMap).get(ptr)).visitAll(new IVisitor<SNode>() {
           public void visit(SNode node) {
             String name = NameUtil.shortNameFromLongName(node.getConcept().getConceptId());
-            node.setConceptFqName(NameUtil.longNameFromNamespaceAndShortName(newModel.getLongName(), name));
+            ((jetbrains.mps.smodel.SNode) node).setConceptFqName(NameUtil.longNameFromNamespaceAndShortName(newModel.getLongName(), name));
           }
         });
       }
