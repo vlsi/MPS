@@ -297,6 +297,10 @@ public class TypeContextManager implements CoreComponent {
           }
           else {
             // reuse the typechecking context
+            if (!createIfAbsent) {
+              return contextHolder.get(node);
+            }
+
             final TypeCheckingContext ctx = contextHolder.acquire(node);
 
             // Dirty hack
@@ -456,6 +460,7 @@ public class TypeContextManager implements CoreComponent {
     void clear();
     void dispose();
     TypeCheckingContext acquire(SNode node);
+    TypeCheckingContext get(SNode node);
     void release();
     boolean isActive();
   }
@@ -493,6 +498,11 @@ public class TypeContextManager implements CoreComponent {
         myContext.dispose();
         myContext = null;
       }
+    }
+
+    @Override
+    public TypeCheckingContext get(SNode node) {
+      return myContext;
     }
 
     @Override
@@ -539,6 +549,12 @@ public class TypeContextManager implements CoreComponent {
         context.dispose();
       }
       myContexts.clear();
+    }
+
+    @Override
+    public TypeCheckingContext get(SNode node) {
+      assert false;
+      return null;
     }
 
     @Override
