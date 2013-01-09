@@ -47,6 +47,9 @@ public interface SNode {
 
   //common properties
 
+  //migration-time only
+  jetbrains.mps.smodel.SModel getModel();
+
   /**
    * Uniquely identifies the node within its containing model. May also be null.
    */
