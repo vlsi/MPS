@@ -38,13 +38,13 @@ public class TemplateconvertMult implements TemplateDeclarationWeavingAware {
   }
 
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new SNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+    final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
     try {
       environment.getTracer().pushTemplateNode(templateNode_eum2xg_a0a0a1a5);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992617074");
 
       {
-        final SNode tnode2 = new SNode("jetbrains.mps.baseLanguage.structure.MulAssignmentExpression");
+        final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.MulAssignmentExpression");
         try {
           environment.getTracer().pushTemplateNode(templateNode_eum2xg_a0a0a1a3a1a5);
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992617076");

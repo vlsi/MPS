@@ -201,7 +201,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
       //unnecessary warning removed
       return null; //todo maybe add check for attribule links
     }
-    SNode concept = sourceNode.getConceptDeclarationNode();
+    SNode concept = ((jetbrains.mps.smodel.SNode) sourceNode).getConceptDeclarationNode();
     if (concept == null) {
       return new RoleValidationStatus(sourceNode, "cannot find concept '" + sourceNode.getConcept().getId() + "'");
     }

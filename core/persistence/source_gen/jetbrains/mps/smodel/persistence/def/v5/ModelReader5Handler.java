@@ -439,7 +439,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     protected SNode createObject(Attributes attrs) {
       String rawFqName = attrs.getValue("type");
       String conceptFQName = VersionUtil.getConceptFQName(rawFqName);
-      SNode node = new SNode(InternUtil.intern(conceptFQName));
+      SNode node = new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFQName));
       VersionUtil.fetchConceptVersion(rawFqName, node, fieldversionsInfo);
       return node;
     }

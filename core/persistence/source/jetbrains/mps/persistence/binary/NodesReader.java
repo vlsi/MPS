@@ -52,7 +52,7 @@ public class NodesReader {
       throw new IOException("bad stream, no '{'");
     }
 
-    SNode node = new SNode(InternUtil.intern(conceptFqName));
+    SNode node = new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFqName));
     node.setId(nodeId);
 
     readProperties(is, node);

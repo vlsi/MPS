@@ -40,7 +40,7 @@ public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingA
             environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(itnode1));
           }
           TemplateContext context1 = context.subContext(null, itnode1);
-          final SNode tnode2 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
+          final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
           try {
             environment.getTracer().pushTemplateNode(templateNode_b8tv7e_a0a0a3a2a2a1a2);
             environment.nodeCopied(context1, tnode2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/3893401255414100171");
@@ -66,7 +66,7 @@ public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingA
   }
 
   protected SNode applyPart1(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode3 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
+    final SNode tnode3 = new jetbrains.mps.smodel.SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
     try {
       environment.getTracer().pushTemplateNode(templateNode_b8tv7e_a0a0a1a3);
       environment.nodeCopied(context, tnode3, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1391450457158185608");
@@ -104,7 +104,7 @@ public class Templatereduce__InputNode__A implements TemplateDeclarationWeavingA
         environment.getTracer().pushSwitch(templateSwitchNodeNoInput_b8tv7e_a0a0a1a1a5);
         tlist5 = environment.trySwitch(templateSwitchNodeNoInput_b8tv7e_a0a0a1a1a5, null, context);
         if (tlist5 == null) {
-          final SNode tnode6 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
+          final SNode tnode6 = new jetbrains.mps.smodel.SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
           try {
             environment.getTracer().pushTemplateNode(templateNode_b8tv7e_a0a0a1a2a1a1a5);
             environment.nodeCopied(context, tnode6, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480310362");

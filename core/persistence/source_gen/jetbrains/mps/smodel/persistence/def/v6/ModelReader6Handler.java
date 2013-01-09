@@ -385,7 +385,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected SNode createObject(Attributes attrs) {
-      return new SNode(InternUtil.intern(fieldhelper.readType(attrs.getValue("type"))));
+      return new jetbrains.mps.smodel.SNode(InternUtil.intern(fieldhelper.readType(attrs.getValue("type"))));
     }
 
     @Override

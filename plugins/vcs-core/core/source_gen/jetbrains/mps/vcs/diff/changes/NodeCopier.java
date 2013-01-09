@@ -68,7 +68,7 @@ public class NodeCopier {
       SModelOperations.addRootNode(model, node);
     } else {
       // hardcoded to get rid of dependency on core language 
-      SNode stubNode = new SNode(InternUtil.intern("jetbrains.mps.lang.core.structure.BaseConcept"));
+      SNode stubNode = new jetbrains.mps.smodel.SNode(InternUtil.intern("jetbrains.mps.lang.core.structure.BaseConcept"));
       SNodeOperations.replaceWithAnother(node, stubNode);
       node.setId(id);
       SNodeOperations.replaceWithAnother(stubNode, node);

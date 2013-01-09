@@ -560,7 +560,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (node.getConcept().getId().equals(concreteConceptFqName)) {
       return null;
     }
-    SNode newNode = new SNode(InternUtil.intern(concreteConceptFqName));
+    SNode newNode = new jetbrains.mps.smodel.SNode(InternUtil.intern(concreteConceptFqName));
     org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(node, newNode);
     getContext().flushEvents();
     return newNode;

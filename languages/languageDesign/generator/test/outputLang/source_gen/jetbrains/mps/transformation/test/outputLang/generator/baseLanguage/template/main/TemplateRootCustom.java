@@ -27,14 +27,14 @@ public class TemplateRootCustom implements TemplateDeclaration {
   }
 
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new SNode("jetbrains.mps.baseLanguage.structure.ClassConcept");
+    final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ClassConcept");
     try {
       environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412775");
       SNodeAccessUtil.setProperty(tnode1, "name", "RootCustom");
 
       {
-        final SNode tnode2 = new SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
+        final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
         try {
           environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a4a1a2);
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412776");
@@ -49,14 +49,14 @@ public class TemplateRootCustom implements TemplateDeclaration {
         // TODO validate child 
       }
       {
-        final SNode tnode3 = new SNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
+        final SNode tnode3 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration");
         try {
           environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a5a1a2);
           environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761135");
           SNodeAccessUtil.setProperty(tnode3, "name", "q");
 
           {
-            final SNode tnode4 = new SNode("jetbrains.mps.baseLanguage.structure.PrivateVisibility");
+            final SNode tnode4 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PrivateVisibility");
             try {
               environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a4a1a5a1a2);
               environment.nodeCopied(context, tnode4, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761136");
@@ -71,7 +71,7 @@ public class TemplateRootCustom implements TemplateDeclaration {
             // TODO validate child 
           }
           {
-            final SNode tnode5 = new SNode("jetbrains.mps.baseLanguage.structure.IntegerType");
+            final SNode tnode5 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.IntegerType");
             try {
               environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a5a1a5a1a2);
               environment.nodeCopied(context, tnode5, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761138");
@@ -95,13 +95,13 @@ public class TemplateRootCustom implements TemplateDeclaration {
         // TODO validate child 
       }
       {
-        final SNode tnode6 = new SNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+        final SNode tnode6 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
         try {
           environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a6a1a2);
           environment.nodeCopied(context, tnode6, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412777");
 
           {
-            final SNode tnode7 = new SNode("jetbrains.mps.baseLanguage.structure.VoidType");
+            final SNode tnode7 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.VoidType");
             try {
               environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a3a1a6a1a2);
               environment.nodeCopied(context, tnode7, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412778");
@@ -116,7 +116,7 @@ public class TemplateRootCustom implements TemplateDeclaration {
             // TODO validate child 
           }
           {
-            final SNode tnode8 = new SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
+            final SNode tnode8 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
             try {
               environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a4a1a6a1a2);
               environment.nodeCopied(context, tnode8, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412779");
@@ -131,13 +131,13 @@ public class TemplateRootCustom implements TemplateDeclaration {
             // TODO validate child 
           }
           {
-            final SNode tnode9 = new SNode("jetbrains.mps.baseLanguage.structure.StatementList");
+            final SNode tnode9 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StatementList");
             try {
               environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a5a1a6a1a2);
               environment.nodeCopied(context, tnode9, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412780");
 
               {
-                final SNode tnode10 = new SNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
+                final SNode tnode10 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement");
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a3a1a5a1a6a1a2);
                   environment.nodeCopied(context, tnode10, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761102");
@@ -148,14 +148,14 @@ public class TemplateRootCustom implements TemplateDeclaration {
                       environment.getTracer().pushMacro(varMacroRef_kyghau_a0a0a1a3a1a3a1a5a1a6a1a2);
                       final Object varValue11 = QueriesGenerated.insertMacro_varValue_5015072279636761109(environment.getOperationContext(), new TemplateVarContext(context.getInput(), varMacroRef_kyghau_a0a0a1a3a1a3a1a5a1a6a1a2, context, environment.getGenerator()));
                       TemplateContext context11 = context.subContext(Collections.<String,Object>singletonMap("var:var1", varValue11));
-                      final SNode tnode12 = new SNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
+                      final SNode tnode12 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
                       try {
                         environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a4a1a3a1a3a1a5a1a6a1a2);
                         environment.nodeCopied(context11, tnode12, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761103");
                         SNodeAccessUtil.setProperty(tnode12, "name", "i");
 
                         {
-                          final SNode tnode13 = new SNode("jetbrains.mps.baseLanguage.structure.IntegerType");
+                          final SNode tnode13 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.IntegerType");
                           try {
                             environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a4a4a1a3a1a3a1a5a1a6a1a2);
                             environment.nodeCopied(context11, tnode13, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761104");
@@ -170,7 +170,7 @@ public class TemplateRootCustom implements TemplateDeclaration {
                           // TODO validate child 
                         }
                         {
-                          final SNode tnode14 = new SNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
+                          final SNode tnode14 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                           try {
                             environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a5a4a1a3a1a3a1a5a1a6a1a2);
                             environment.nodeCopied(context11, tnode14, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761106");
@@ -208,19 +208,19 @@ public class TemplateRootCustom implements TemplateDeclaration {
                 // TODO validate child 
               }
               {
-                final SNode tnode16 = new SNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+                final SNode tnode16 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a4a1a5a1a6a1a2);
                   environment.nodeCopied(context, tnode16, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761140");
 
                   {
-                    final SNode tnode17 = new SNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression");
+                    final SNode tnode17 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression");
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a3a1a4a1a5a1a6a1a2);
                       environment.nodeCopied(context, tnode17, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761142");
 
                       {
-                        final SNode tnode18 = new SNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference");
+                        final SNode tnode18 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.LocalInstanceFieldReference");
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a3a1a3a1a4a1a5a1a6a1a2);
                           environment.nodeCopied(context, tnode18, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761141");
@@ -236,7 +236,7 @@ public class TemplateRootCustom implements TemplateDeclaration {
                         // TODO validate child 
                       }
                       {
-                        final SNode tnode19 = new SNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference");
+                        final SNode tnode19 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference");
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a4a1a3a1a4a1a5a1a6a1a2);
                           environment.nodeCopied(context, tnode19, "tpl/r:00000000-0000-4000-0000-011c89590606/5015072279636761145");
@@ -288,14 +288,14 @@ public class TemplateRootCustom implements TemplateDeclaration {
         // TODO validate child 
       }
       {
-        final SNode tnode20 = new SNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+        final SNode tnode20 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
         try {
           environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a7a1a2);
           environment.nodeCopied(context, tnode20, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412782");
           SNodeAccessUtil.setProperty(tnode20, "name", "main");
 
           {
-            final SNode tnode21 = new SNode("jetbrains.mps.baseLanguage.structure.VoidType");
+            final SNode tnode21 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.VoidType");
             try {
               environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a4a1a7a1a2);
               environment.nodeCopied(context, tnode21, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412783");
@@ -310,7 +310,7 @@ public class TemplateRootCustom implements TemplateDeclaration {
             // TODO validate child 
           }
           {
-            final SNode tnode22 = new SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
+            final SNode tnode22 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
             try {
               environment.getTracer().pushTemplateNode(templateNode_kyghau_a0a0a1a5a1a7a1a2);
               environment.nodeCopied(context, tnode22, "tpl/r:00000000-0000-4000-0000-011c89590606/4146564171992412784");

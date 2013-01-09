@@ -62,7 +62,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
 
   public static SNode createNode(@NotNull SNode nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model, IScope scope) {
     if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(nodeConcept)) {
-      return new SNode(NameUtil.nodeFQName(nodeConcept));
+      return new jetbrains.mps.smodel.SNode(NameUtil.nodeFQName(nodeConcept));
     }
     SNode newNode = SModelUtil_new.instantiateConceptDeclaration(nodeConcept, model, false);
     if (newNode == null) return null;

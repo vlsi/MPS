@@ -129,7 +129,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
       Collection<SNode> tlist1 = null;
       if (QueriesGenerated.baseMappingRule_Condition_1820665478710839841(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rule_417xrn_b0b0c0f71, environment.getGenerator()))) {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a2a5r);
-        final SNode tnode2 = new SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
+        final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
         try {
           environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a2a5r);
           environment.nodeCopied(context, tnode2, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710839872");
@@ -171,7 +171,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         tlist1 = TemplateUtil.singletonList(tnode2);
       } else if (QueriesGenerated.baseMappingRule_Condition_1820665478710839910(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rule_417xrn_b0b0c0f71, environment.getGenerator()))) {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a0c0f71);
-        final SNode tnode7 = new SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
+        final SNode tnode7 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
         try {
           environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a0c0f71);
           environment.nodeCopied(context, tnode7, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710839956");
@@ -213,7 +213,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         tlist1 = TemplateUtil.singletonList(tnode7);
       } else if (QueriesGenerated.baseMappingRule_Condition_2643213347103793267(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rule_417xrn_b0b0c0f71, environment.getGenerator()))) {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a1c0f71);
-        final SNode tnode12 = new SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
+        final SNode tnode12 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
         try {
           environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a1c0f71);
           environment.nodeCopied(context, tnode12, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2643213347103793322");
@@ -255,7 +255,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         tlist1 = TemplateUtil.singletonList(tnode12);
       } else if (QueriesGenerated.baseMappingRule_Condition_2643213347103793295(environment.getOperationContext(), new BaseMappingRuleContext(context.getInput(), rule_417xrn_b0b0c0f71, environment.getGenerator()))) {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a2c0f71);
-        final SNode tnode17 = new SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
+        final SNode tnode17 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
         try {
           environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a2c0f71);
           environment.nodeCopied(context, tnode17, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/2643213347103793339");
@@ -297,7 +297,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         tlist1 = TemplateUtil.singletonList(tnode17);
       } else {
         environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a0c0f71_0);
-        final SNode tnode22 = new SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
+        final SNode tnode22 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
         try {
           environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a0c0f71_0);
           environment.nodeCopied(context, tnode22, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710839973");
@@ -373,7 +373,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a5s);
-      final SNode tnode1 = new SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
+      final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
       try {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a5s);
         environment.nodeCopied(context, tnode1, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710840011");
@@ -381,7 +381,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         tnode1.setReference("classConcept", SReference.create("classConcept", tnode1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateUtil")));
 
         {
-          final SNode tnode2 = new SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
+          final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
           try {
             environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a5a2a5s);
             environment.nodeCopied(context, tnode2, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710840107");
@@ -449,7 +449,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a5t);
-      final SNode tnode1 = new SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
+      final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
       try {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a5t);
         environment.nodeCopied(context, tnode1, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710840040");
@@ -457,7 +457,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
         tnode1.setReference("classConcept", SReference.create("classConcept", tnode1, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.generator.runtime(MPS.Core/jetbrains.mps.generator.runtime@java_stub)"), SNodeId.fromString("~TemplateUtil")));
 
         {
-          final SNode tnode2 = new SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
+          final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
           try {
             environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a5a2a5t);
             environment.nodeCopied(context, tnode2, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710840066");
@@ -473,7 +473,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
           // TODO validate child 
         }
         {
-          final SNode tnode3 = new SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
+          final SNode tnode3 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
           try {
             environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a1a6a2a5t);
             environment.nodeCopied(context, tnode3, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710840068");
@@ -527,7 +527,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a5u);
-      final SNode tnode1 = new SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
+      final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
       try {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a5u);
         environment.nodeCopied(context, tnode1, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710840041");
@@ -573,7 +573,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a5v);
-      final SNode tnode1 = new SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
+      final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
       try {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a5v);
         environment.nodeCopied(context, tnode1, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710840042");
@@ -619,7 +619,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a5w);
-      final SNode tnode1 = new SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
+      final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
       try {
         environment.getTracer().pushTemplateNode(templateNode_417xrn_a0a0a2a5w);
         environment.nodeCopied(context, tnode1, "tpl/r:1dfaf07d-c77a-451e-91d3-b6f80f0f8508/1820665478710840043");

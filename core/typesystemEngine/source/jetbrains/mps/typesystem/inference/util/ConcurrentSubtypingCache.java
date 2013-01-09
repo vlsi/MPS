@@ -39,7 +39,7 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
   private ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<Class, Pair<SNode, GeneratedMatchingPattern>>> myCoerceToPatternsCacheWeak
     = new ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<Class, Pair<SNode, GeneratedMatchingPattern>>>();
 
-  private static final SNode NULL = new SNode("null");
+  private static final SNode NULL = new jetbrains.mps.smodel.SNode("null");
 
   private SNode preprocessPutNode(SNode node) {
     return node == null ? NULL : node;

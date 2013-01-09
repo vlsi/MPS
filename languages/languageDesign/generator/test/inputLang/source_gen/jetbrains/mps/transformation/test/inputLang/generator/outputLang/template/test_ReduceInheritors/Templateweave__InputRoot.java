@@ -23,7 +23,7 @@ public class Templateweave__InputRoot implements TemplateDeclarationWeavingAware
   }
 
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
+    final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
     try {
       environment.getTracer().pushTemplateNode(templateNode_ww46pe_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/8417539822878724216");
@@ -37,7 +37,7 @@ public class Templateweave__InputRoot implements TemplateDeclarationWeavingAware
   }
 
   protected SNode applyPart1(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode2 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
+    final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
     try {
       environment.getTracer().pushTemplateNode(templateNode_ww46pe_a0a0a1a3);
       environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c895905f9/8417539822878724215");

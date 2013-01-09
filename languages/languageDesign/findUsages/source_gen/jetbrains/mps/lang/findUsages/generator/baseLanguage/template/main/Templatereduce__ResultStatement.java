@@ -23,19 +23,19 @@ public class Templatereduce__ResultStatement implements TemplateDeclarationWeavi
   }
 
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new SNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+    final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
     try {
       environment.getTracer().pushTemplateNode(templateNode_xkd8dl_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206533844011");
 
       {
-        final SNode tnode2 = new SNode("jetbrains.mps.baseLanguage.structure.DotExpression");
+        final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.DotExpression");
         try {
           environment.getTracer().pushTemplateNode(templateNode_xkd8dl_a0a0a1a3a1a2);
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206533844012");
 
           {
-            final SNode tnode3 = new SNode("jetbrains.mps.baseLanguage.structure.ParameterReference");
+            final SNode tnode3 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ParameterReference");
             try {
               environment.getTracer().pushTemplateNode(templateNode_xkd8dl_a0a0a1a3a1a3a1a2);
               environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142331031");
@@ -51,7 +51,7 @@ public class Templatereduce__ResultStatement implements TemplateDeclarationWeavi
             // TODO validate child 
           }
           {
-            final SNode tnode4 = new SNode("jetbrains.mps.baseLanguage.collections.structure.AddElementOperation");
+            final SNode tnode4 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.collections.structure.AddElementOperation");
             try {
               environment.getTracer().pushTemplateNode(templateNode_xkd8dl_a0a0a1a4a1a3a1a2);
               environment.nodeCopied(context, tnode4, "tpl/r:00000000-0000-4000-0000-011c8959035c/1206533844014");

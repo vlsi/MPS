@@ -1089,7 +1089,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   @Deprecated
   /**
    * Use<br/>
-   * n = new SNode(concept);<br/>
+   * n = new jetbrains.mps.smodel.SNode(concept);<br/>
    * model.addNode(n)<br/>
    * or<br/>
    * n = model.newNode(concept)<br/>
@@ -1105,7 +1105,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   @Deprecated
   /**
    * Use<br/>
-   * n = new SNode(concept);<br/>
+   * n = new jetbrains.mps.smodel.SNode(concept);<br/>
    * model.addNode(n)<br/>
    * or<br/>
    * n = model.newNode(concept)<br/>

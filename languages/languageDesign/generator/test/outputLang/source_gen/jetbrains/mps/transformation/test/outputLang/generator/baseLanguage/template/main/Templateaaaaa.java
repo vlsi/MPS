@@ -34,13 +34,13 @@ public class Templateaaaaa implements TemplateDeclarationWeavingAware {
   }
 
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new SNode("jetbrains.mps.baseLanguage.structure.BlockStatement");
+    final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.BlockStatement");
     try {
       environment.getTracer().pushTemplateNode(templateNode_54ml0j_a0a0a1a4);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/7870321878389731890");
 
       {
-        final SNode tnode2 = new SNode("jetbrains.mps.baseLanguage.structure.StatementList");
+        final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StatementList");
         try {
           environment.getTracer().pushTemplateNode(templateNode_54ml0j_a0a0a1a3a1a4);
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/7870321878389731891");

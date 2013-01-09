@@ -92,7 +92,7 @@ public class ModelReader6 implements IModelReader {
   @Nullable
   protected SNode readNode(Element nodeElement, SModel model) {
     String conceptFqName = myHelper.readType(nodeElement.getAttributeValue(ModelPersistence.TYPE));
-    SNode node = new SNode(InternUtil.intern(conceptFqName));
+    jetbrains.mps.smodel.SNode node = new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFqName));
 
     String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);
     if (idValue != null) {

@@ -113,7 +113,7 @@ public class CopyPasteUtil {
   }
 
   private static SNode copyNode_internal(SNode sourceNode, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
-    SNode targetNode = new SNode(InternUtil.intern(sourceNode.getConcept().getConceptId()));
+    SNode targetNode = new jetbrains.mps.smodel.SNode(InternUtil.intern(sourceNode.getConcept().getConceptId()));
     targetNode.setId(SNodeId.fromString(sourceNode.getNodeId().toString()));
     for (String name : SetSequence.fromSet(sourceNode.getPropertyNames())) {
       targetNode.setProperty(name, sourceNode.getProperty(name));

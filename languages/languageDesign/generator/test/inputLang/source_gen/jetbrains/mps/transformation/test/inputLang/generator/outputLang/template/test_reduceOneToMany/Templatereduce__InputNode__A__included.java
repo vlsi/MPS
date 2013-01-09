@@ -23,7 +23,7 @@ public class Templatereduce__InputNode__A__included implements TemplateDeclarati
   }
 
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
+    final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
     try {
       environment.getTracer().pushTemplateNode(templateNode_11yy5k_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480251692");
@@ -37,7 +37,7 @@ public class Templatereduce__InputNode__A__included implements TemplateDeclarati
   }
 
   protected SNode applyPart1(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode2 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
+    final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
     try {
       environment.getTracer().pushTemplateNode(templateNode_11yy5k_a0a0a1a3);
       environment.nodeCopied(context, tnode2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480277769");
