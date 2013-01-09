@@ -63,7 +63,7 @@ public class SNodeAccessUtil {
     }
   }
 
-  public static void setProperty(jetbrains.mps.smodel.SNode node, String propertyName, String propertyValue) {
+  public static void setProperty(SNode node, String propertyName, String propertyValue) {
     Set<Pair<SNode, String>> threadSet = ourPropertySettersInProgress.get();
     Pair<SNode, String> pair = new Pair<SNode, String>(node, propertyName);
     SModel model = node.getModel();
