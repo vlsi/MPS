@@ -139,7 +139,7 @@ public class SModelUtil_new implements CoreComponent {
       conceptFqName = languageNamespace + ".structure." + conceptName;
     }
 
-    SNode newNode = new jetbrains.mps.smodel.SNode(conceptFqName);
+    jetbrains.mps.smodel.SNode newNode = new jetbrains.mps.smodel.SNode(conceptFqName);
     if (nodeId != null) {
       newNode.setId(nodeId);
     }

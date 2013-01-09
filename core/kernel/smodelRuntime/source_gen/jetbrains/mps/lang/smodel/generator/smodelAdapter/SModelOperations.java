@@ -135,7 +135,7 @@ public class SModelOperations {
     }
     SNode nodeConcept = SModelUtil.findConceptDeclaration(conceptFqName, GlobalScope.getInstance());
     if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(nodeConcept)) {
-      SNode node = new jetbrains.mps.smodel.SNode(conceptFqName);
+      jetbrains.mps.smodel.SNode node = new jetbrains.mps.smodel.SNode(conceptFqName);
       if (id != null) {
         node.setId(id);
       }

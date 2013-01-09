@@ -25,19 +25,19 @@ public class Templatereduce__CheckCancelledStatusStatement implements TemplateDe
   }
 
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.IfStatement");
+    final jetbrains.mps.smodel.SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.IfStatement");
     try {
       environment.getTracer().pushTemplateNode(templateNode_iimgyi_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142358592");
 
       {
-        final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.DotExpression");
+        final jetbrains.mps.smodel.SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.DotExpression");
         try {
           environment.getTracer().pushTemplateNode(templateNode_iimgyi_a0a0a1a3a1a2);
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142362377");
 
           {
-            final SNode tnode3 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ParameterReference");
+            final jetbrains.mps.smodel.SNode tnode3 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ParameterReference");
             try {
               environment.getTracer().pushTemplateNode(templateNode_iimgyi_a0a0a1a3a1a3a1a2);
               environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142361079");
@@ -53,7 +53,7 @@ public class Templatereduce__CheckCancelledStatusStatement implements TemplateDe
             // TODO validate child 
           }
           {
-            final SNode tnode4 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
+            final jetbrains.mps.smodel.SNode tnode4 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
             try {
               environment.getTracer().pushTemplateNode(templateNode_iimgyi_a0a0a1a4a1a3a1a2);
               environment.nodeCopied(context, tnode4, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142363739");
@@ -78,13 +78,13 @@ public class Templatereduce__CheckCancelledStatusStatement implements TemplateDe
         // TODO validate child 
       }
       {
-        final SNode tnode5 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StatementList");
+        final jetbrains.mps.smodel.SNode tnode5 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StatementList");
         try {
           environment.getTracer().pushTemplateNode(templateNode_iimgyi_a0a0a1a4a1a2);
           environment.nodeCopied(context, tnode5, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142358594");
 
           {
-            final SNode tnode6 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ReturnStatement");
+            final jetbrains.mps.smodel.SNode tnode6 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ReturnStatement");
             try {
               environment.getTracer().pushTemplateNode(templateNode_iimgyi_a0a0a1a3a1a4a1a2);
               environment.nodeCopied(context, tnode6, "tpl/r:00000000-0000-4000-0000-011c8959035c/1207142379490");

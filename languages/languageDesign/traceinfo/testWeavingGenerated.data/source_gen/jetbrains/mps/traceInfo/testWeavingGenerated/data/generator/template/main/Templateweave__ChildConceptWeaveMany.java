@@ -27,14 +27,14 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
   }
 
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+    final jetbrains.mps.smodel.SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
     try {
       environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533397");
       SNodeAccessUtil.setProperty(tnode1, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008533417(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "method", propertyMacro_es4xty_c0b0c0c0b0c, context, environment.getGenerator()))));
 
       {
-        final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.VoidType");
+        final jetbrains.mps.smodel.SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.VoidType");
         try {
           environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a2);
           environment.nodeCopied(context, tnode2, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533398");
@@ -49,7 +49,7 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
         // TODO validate child 
       }
       {
-        final SNode tnode3 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
+        final jetbrains.mps.smodel.SNode tnode3 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
         try {
           environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a5a1a2);
           environment.nodeCopied(context, tnode3, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533399");
@@ -64,25 +64,25 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
         // TODO validate child 
       }
       {
-        final SNode tnode4 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StatementList");
+        final jetbrains.mps.smodel.SNode tnode4 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StatementList");
         try {
           environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a6a1a2);
           environment.nodeCopied(context, tnode4, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533400");
 
           {
-            final SNode tnode5 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+            final jetbrains.mps.smodel.SNode tnode5 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
             try {
               environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3a1a6a1a2);
               environment.nodeCopied(context, tnode5, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533401");
 
               {
-                final SNode tnode6 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.DotExpression");
+                final jetbrains.mps.smodel.SNode tnode6 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.DotExpression");
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3a1a3a1a6a1a2);
                   environment.nodeCopied(context, tnode6, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533402");
 
                   {
-                    final SNode tnode7 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference");
+                    final jetbrains.mps.smodel.SNode tnode7 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference");
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3a1a3a1a3a1a6a1a2);
                       environment.nodeCopied(context, tnode7, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533403");
@@ -99,26 +99,26 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                     // TODO validate child 
                   }
                   {
-                    final SNode tnode8 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
+                    final jetbrains.mps.smodel.SNode tnode8 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a3a1a3a1a6a1a2);
                       environment.nodeCopied(context, tnode8, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533404");
                       tnode8.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode8, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)"), SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
 
                       {
-                        final SNode tnode9 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PlusExpression");
+                        final jetbrains.mps.smodel.SNode tnode9 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PlusExpression");
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a4a1a3a1a3a1a6a1a2);
                           environment.nodeCopied(context, tnode9, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533557");
 
                           {
-                            final SNode tnode10 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PlusExpression");
+                            final jetbrains.mps.smodel.SNode tnode10 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PlusExpression");
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3a1a4a1a4a1a3a1a3a1a6a1a2);
                               environment.nodeCopied(context, tnode10, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533405");
 
                               {
-                                final SNode tnode11 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
+                                final jetbrains.mps.smodel.SNode tnode11 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3a1a3a1a4a1a4a1a3a1a3a1a6a1a2);
                                   environment.nodeCopied(context, tnode11, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533414");
@@ -134,7 +134,7 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                                 // TODO validate child 
                               }
                               {
-                                final SNode tnode12 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
+                                final jetbrains.mps.smodel.SNode tnode12 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a3a1a4a1a4a1a3a1a3a1a6a1a2);
                                   environment.nodeCopied(context, tnode12, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533406");
@@ -159,7 +159,7 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                             // TODO validate child 
                           }
                           {
-                            final SNode tnode13 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
+                            final jetbrains.mps.smodel.SNode tnode13 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a4a1a4a1a3a1a3a1a6a1a2);
                               environment.nodeCopied(context, tnode13, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533563");
@@ -227,14 +227,14 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
   }
 
   protected SNode applyPart1(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode14 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+    final jetbrains.mps.smodel.SNode tnode14 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
     try {
       environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3);
       environment.nodeCopied(context, tnode14, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533438");
       SNodeAccessUtil.setProperty(tnode14, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008533458(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "method2", propertyMacro_es4xty_c0b0c0c0b0d, context, environment.getGenerator()))));
 
       {
-        final SNode tnode15 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.VoidType");
+        final jetbrains.mps.smodel.SNode tnode15 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.VoidType");
         try {
           environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a3);
           environment.nodeCopied(context, tnode15, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533439");
@@ -249,7 +249,7 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
         // TODO validate child 
       }
       {
-        final SNode tnode16 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
+        final jetbrains.mps.smodel.SNode tnode16 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
         try {
           environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a5a1a3);
           environment.nodeCopied(context, tnode16, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533440");
@@ -264,25 +264,25 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
         // TODO validate child 
       }
       {
-        final SNode tnode17 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StatementList");
+        final jetbrains.mps.smodel.SNode tnode17 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StatementList");
         try {
           environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a6a1a3);
           environment.nodeCopied(context, tnode17, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533441");
 
           {
-            final SNode tnode18 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+            final jetbrains.mps.smodel.SNode tnode18 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
             try {
               environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3a1a6a1a3);
               environment.nodeCopied(context, tnode18, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533442");
 
               {
-                final SNode tnode19 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.DotExpression");
+                final jetbrains.mps.smodel.SNode tnode19 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.DotExpression");
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3a1a3a1a6a1a3);
                   environment.nodeCopied(context, tnode19, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533443");
 
                   {
-                    final SNode tnode20 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference");
+                    final jetbrains.mps.smodel.SNode tnode20 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference");
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3a1a3a1a3a1a6a1a3);
                       environment.nodeCopied(context, tnode20, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533444");
@@ -299,20 +299,20 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                     // TODO validate child 
                   }
                   {
-                    final SNode tnode21 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
+                    final jetbrains.mps.smodel.SNode tnode21 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a3a1a3a1a6a1a3);
                       environment.nodeCopied(context, tnode21, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533445");
                       tnode21.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode21, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)"), SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
 
                       {
-                        final SNode tnode22 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PlusExpression");
+                        final jetbrains.mps.smodel.SNode tnode22 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PlusExpression");
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a4a1a3a1a3a1a6a1a3);
                           environment.nodeCopied(context, tnode22, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533514");
 
                           {
-                            final SNode tnode23 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
+                            final jetbrains.mps.smodel.SNode tnode23 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3a1a4a1a4a1a3a1a3a1a6a1a3);
                               environment.nodeCopied(context, tnode23, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533517");
@@ -328,13 +328,13 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                             // TODO validate child 
                           }
                           {
-                            final SNode tnode24 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PlusExpression");
+                            final jetbrains.mps.smodel.SNode tnode24 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PlusExpression");
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a4a1a4a1a3a1a3a1a6a1a3);
                               environment.nodeCopied(context, tnode24, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533446");
 
                               {
-                                final SNode tnode25 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
+                                final jetbrains.mps.smodel.SNode tnode25 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3a1a4a1a4a1a4a1a3a1a3a1a6a1a3);
                                   environment.nodeCopied(context, tnode25, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533455");
@@ -350,7 +350,7 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                                 // TODO validate child 
                               }
                               {
-                                final SNode tnode26 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
+                                final jetbrains.mps.smodel.SNode tnode26 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a4a1a4a1a4a1a3a1a3a1a6a1a3);
                                   environment.nodeCopied(context, tnode26, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533447");
@@ -427,14 +427,14 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
   }
 
   protected SNode applyPart2(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode27 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
+    final jetbrains.mps.smodel.SNode tnode27 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration");
     try {
       environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4);
       environment.nodeCopied(context, tnode27, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533471");
       SNodeAccessUtil.setProperty(tnode27, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008533491(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "method3", propertyMacro_es4xty_c0b0c0c0b0e, context, environment.getGenerator()))));
 
       {
-        final SNode tnode28 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.VoidType");
+        final jetbrains.mps.smodel.SNode tnode28 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.VoidType");
         try {
           environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a4);
           environment.nodeCopied(context, tnode28, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533472");
@@ -449,7 +449,7 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
         // TODO validate child 
       }
       {
-        final SNode tnode29 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
+        final jetbrains.mps.smodel.SNode tnode29 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
         try {
           environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a5a1a4);
           environment.nodeCopied(context, tnode29, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533473");
@@ -464,25 +464,25 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
         // TODO validate child 
       }
       {
-        final SNode tnode30 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StatementList");
+        final jetbrains.mps.smodel.SNode tnode30 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StatementList");
         try {
           environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a6a1a4);
           environment.nodeCopied(context, tnode30, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533474");
 
           {
-            final SNode tnode31 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
+            final jetbrains.mps.smodel.SNode tnode31 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement");
             try {
               environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3a1a6a1a4);
               environment.nodeCopied(context, tnode31, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533475");
 
               {
-                final SNode tnode32 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.DotExpression");
+                final jetbrains.mps.smodel.SNode tnode32 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.DotExpression");
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3a1a3a1a6a1a4);
                   environment.nodeCopied(context, tnode32, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533476");
 
                   {
-                    final SNode tnode33 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference");
+                    final jetbrains.mps.smodel.SNode tnode33 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticFieldReference");
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3a1a3a1a3a1a6a1a4);
                       environment.nodeCopied(context, tnode33, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533477");
@@ -499,26 +499,26 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                     // TODO validate child 
                   }
                   {
-                    final SNode tnode34 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
+                    final jetbrains.mps.smodel.SNode tnode34 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation");
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a3a1a3a1a6a1a4);
                       environment.nodeCopied(context, tnode34, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533478");
                       tnode34.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode34, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)"), SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
 
                       {
-                        final SNode tnode35 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PlusExpression");
+                        final jetbrains.mps.smodel.SNode tnode35 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PlusExpression");
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a4a1a3a1a3a1a6a1a4);
                           environment.nodeCopied(context, tnode35, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533533");
 
                           {
-                            final SNode tnode36 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PlusExpression");
+                            final jetbrains.mps.smodel.SNode tnode36 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PlusExpression");
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3a1a4a1a4a1a3a1a3a1a6a1a4);
                               environment.nodeCopied(context, tnode36, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533479");
 
                               {
-                                final SNode tnode37 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
+                                final jetbrains.mps.smodel.SNode tnode37 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3a1a3a1a4a1a4a1a3a1a3a1a6a1a4);
                                   environment.nodeCopied(context, tnode37, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533488");
@@ -534,7 +534,7 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                                 // TODO validate child 
                               }
                               {
-                                final SNode tnode38 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
+                                final jetbrains.mps.smodel.SNode tnode38 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a3a1a4a1a4a1a3a1a3a1a6a1a4);
                                   environment.nodeCopied(context, tnode38, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533480");
@@ -559,7 +559,7 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                             // TODO validate child 
                           }
                           {
-                            final SNode tnode39 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
+                            final jetbrains.mps.smodel.SNode tnode39 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");
                             try {
                               environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a4a1a4a1a3a1a3a1a6a1a4);
                               environment.nodeCopied(context, tnode39, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533547");

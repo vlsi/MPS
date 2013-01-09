@@ -25,14 +25,14 @@ public class Templateweave__Statement implements TemplateDeclarationWeavingAware
   }
 
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
+    final jetbrains.mps.smodel.SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
     try {
       environment.getTracer().pushTemplateNode(templateNode_1j9q6b_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c89590606/3571912445009934888");
       SNodeAccessUtil.setProperty(tnode1, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_3571912445009934894(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "statementX", propertyMacro_1j9q6b_c0b0c0c0b0c, context, environment.getGenerator()))));
 
       {
-        final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.VoidType");
+        final jetbrains.mps.smodel.SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.VoidType");
         try {
           environment.getTracer().pushTemplateNode(templateNode_1j9q6b_a0a0a1a4a1a2);
           environment.nodeCopied(context, tnode2, "tpl/r:00000000-0000-4000-0000-011c89590606/3571912445009934889");
@@ -47,7 +47,7 @@ public class Templateweave__Statement implements TemplateDeclarationWeavingAware
         // TODO validate child 
       }
       {
-        final SNode tnode3 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
+        final jetbrains.mps.smodel.SNode tnode3 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
         try {
           environment.getTracer().pushTemplateNode(templateNode_1j9q6b_a0a0a1a5a1a2);
           environment.nodeCopied(context, tnode3, "tpl/r:00000000-0000-4000-0000-011c89590606/3571912445009934890");
@@ -62,19 +62,19 @@ public class Templateweave__Statement implements TemplateDeclarationWeavingAware
         // TODO validate child 
       }
       {
-        final SNode tnode4 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StatementList");
+        final jetbrains.mps.smodel.SNode tnode4 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StatementList");
         try {
           environment.getTracer().pushTemplateNode(templateNode_1j9q6b_a0a0a1a6a1a2);
           environment.nodeCopied(context, tnode4, "tpl/r:00000000-0000-4000-0000-011c89590606/3571912445009934891");
 
           {
-            final SNode tnode5 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.SingleLineComment");
+            final jetbrains.mps.smodel.SNode tnode5 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.SingleLineComment");
             try {
               environment.getTracer().pushTemplateNode(templateNode_1j9q6b_a0a0a1a3a1a6a1a2);
               environment.nodeCopied(context, tnode5, "tpl/r:00000000-0000-4000-0000-011c89590606/3571912445009937372");
 
               {
-                final SNode tnode6 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.TextCommentPart");
+                final jetbrains.mps.smodel.SNode tnode6 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.TextCommentPart");
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_1j9q6b_a0a0a1a3a1a3a1a6a1a2);
                   environment.nodeCopied(context, tnode6, "tpl/r:00000000-0000-4000-0000-011c89590606/3571912445009937375");
@@ -115,13 +115,13 @@ public class Templateweave__Statement implements TemplateDeclarationWeavingAware
   }
 
   protected SNode applyPart1(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode7 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.SingleLineComment");
+    final jetbrains.mps.smodel.SNode tnode7 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.SingleLineComment");
     try {
       environment.getTracer().pushTemplateNode(templateNode_1j9q6b_a0a0a1a3);
       environment.nodeCopied(context, tnode7, "tpl/r:00000000-0000-4000-0000-011c89590606/3571912445009937422");
 
       {
-        final SNode tnode8 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.TextCommentPart");
+        final jetbrains.mps.smodel.SNode tnode8 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.TextCommentPart");
         try {
           environment.getTracer().pushTemplateNode(templateNode_1j9q6b_a0a0a1a3a1a3);
           environment.nodeCopied(context, tnode8, "tpl/r:00000000-0000-4000-0000-011c89590606/3571912445009937424");

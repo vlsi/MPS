@@ -40,7 +40,7 @@ public class DelayedChanges {
   private List<Change> myExecuteMapSrcNodeMacroChanges = new ArrayList<Change>();
   private List<Change> myExecuteMapSrcNodeMacroPostProcChanges = new ArrayList<Change>();
 
-  private SNode attrsHolder = new jetbrains.mps.smodel.SNode(SNodeUtil.concept_BaseConcept);
+  private jetbrains.mps.smodel.SNode attrsHolder = new jetbrains.mps.smodel.SNode(SNodeUtil.concept_BaseConcept);
 
   private IGeneratorLogger myLogger;
   private TemplateGenerator myGenerator;

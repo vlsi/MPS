@@ -24,14 +24,14 @@ public class Templatemap__RootConcept implements TemplateDeclaration {
   }
 
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ClassConcept");
+    final jetbrains.mps.smodel.SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ClassConcept");
     try {
       environment.getTracer().pushTemplateNode(templateNode_56x90y_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008490321");
       SNodeAccessUtil.setProperty(tnode1, "name", TemplateUtil.asString(QueriesGenerated.propertyMacro_GetPropertyValue_6186432342008490331(environment.getOperationContext(), new PropertyMacroContext(context.getInput(), "map_RootConcept", propertyMacro_56x90y_c0b0c0c0b0c, context, environment.getGenerator()))));
 
       {
-        final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
+        final jetbrains.mps.smodel.SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
         try {
           environment.getTracer().pushTemplateNode(templateNode_56x90y_a0a0a1a4a1a2);
           environment.nodeCopied(context, tnode2, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008490322");
@@ -46,13 +46,13 @@ public class Templatemap__RootConcept implements TemplateDeclaration {
         // TODO validate child 
       }
       {
-        final SNode tnode3 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
+        final jetbrains.mps.smodel.SNode tnode3 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration");
         try {
           environment.getTracer().pushTemplateNode(templateNode_56x90y_a0a0a1a5a1a2);
           environment.nodeCopied(context, tnode3, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008490323");
 
           {
-            final SNode tnode4 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.VoidType");
+            final jetbrains.mps.smodel.SNode tnode4 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.VoidType");
             try {
               environment.getTracer().pushTemplateNode(templateNode_56x90y_a0a0a1a3a1a5a1a2);
               environment.nodeCopied(context, tnode4, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008490324");
@@ -67,7 +67,7 @@ public class Templatemap__RootConcept implements TemplateDeclaration {
             // TODO validate child 
           }
           {
-            final SNode tnode5 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
+            final jetbrains.mps.smodel.SNode tnode5 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PublicVisibility");
             try {
               environment.getTracer().pushTemplateNode(templateNode_56x90y_a0a0a1a4a1a5a1a2);
               environment.nodeCopied(context, tnode5, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008490325");
@@ -82,7 +82,7 @@ public class Templatemap__RootConcept implements TemplateDeclaration {
             // TODO validate child 
           }
           {
-            final SNode tnode6 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StatementList");
+            final jetbrains.mps.smodel.SNode tnode6 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StatementList");
             try {
               environment.getTracer().pushTemplateNode(templateNode_56x90y_a0a0a1a5a1a5a1a2);
               environment.nodeCopied(context, tnode6, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008490326");

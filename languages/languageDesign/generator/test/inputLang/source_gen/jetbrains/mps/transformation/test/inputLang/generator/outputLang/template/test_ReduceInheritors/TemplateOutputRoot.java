@@ -26,7 +26,7 @@ public class TemplateOutputRoot implements TemplateDeclaration {
   }
 
   public Collection<SNode> apply(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
+    final jetbrains.mps.smodel.SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
     try {
       environment.getTracer().pushTemplateNode(templateNode_q702qm_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905f9/1206460153890");
@@ -98,7 +98,7 @@ public class TemplateOutputRoot implements TemplateDeclaration {
         // TODO validate child 
       }
       {
-        final SNode tnode7 = new jetbrains.mps.smodel.SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
+        final jetbrains.mps.smodel.SNode tnode7 = new jetbrains.mps.smodel.SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
         try {
           environment.getTracer().pushTemplateNode(templateNode_q702qm_a0a0a1a7a1a2);
           environment.nodeCopied(context, tnode7, "tpl/r:00000000-0000-4000-0000-011c895905f9/8014813979421777297");

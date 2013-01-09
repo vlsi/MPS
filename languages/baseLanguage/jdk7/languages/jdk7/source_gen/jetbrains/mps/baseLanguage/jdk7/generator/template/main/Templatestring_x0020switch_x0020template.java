@@ -31,7 +31,7 @@ public class Templatestring_x0020switch_x0020template implements TemplateDeclara
   }
 
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.SwitchStatement");
+    final jetbrains.mps.smodel.SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.SwitchStatement");
     try {
       environment.getTracer().pushTemplateNode(templateNode_wjpymb_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/400642802550422210");
@@ -51,13 +51,13 @@ public class Templatestring_x0020switch_x0020template implements TemplateDeclara
                 environment.getTracer().pushInputNode(GenerationTracerUtil.getSNodePointer(itnode2));
               }
               TemplateContext context2 = context.subContext(null, itnode2);
-              final SNode tnode3 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.SwitchCase");
+              final jetbrains.mps.smodel.SNode tnode3 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.SwitchCase");
               try {
                 environment.getTracer().pushTemplateNode(templateNode_wjpymb_a0a0a3a2a2a1a3a1a2);
                 environment.nodeCopied(context2, tnode3, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/400642802550422211");
 
                 {
-                  final SNode tnode4 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
+                  final jetbrains.mps.smodel.SNode tnode4 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.IntegerConstant");
                   try {
                     environment.getTracer().pushTemplateNode(templateNode_wjpymb_a0a0a1a3a3a2a2a1a3a1a2);
                     environment.nodeCopied(context2, tnode4, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/400642802550422212");
@@ -122,7 +122,7 @@ public class Templatestring_x0020switch_x0020template implements TemplateDeclara
         // TODO validate child 
       }
       {
-        final SNode tnode10 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
+        final jetbrains.mps.smodel.SNode tnode10 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall");
         try {
           environment.getTracer().pushTemplateNode(templateNode_wjpymb_a0a0a1a5a1a2);
           environment.nodeCopied(context, tnode10, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/3708576844065051160");
@@ -130,7 +130,7 @@ public class Templatestring_x0020switch_x0020template implements TemplateDeclara
           tnode10.setReference("classConcept", SReference.create("classConcept", tnode10, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.util(JDK/java.util@java_stub)"), SNodeId.fromString("~Arrays")));
 
           {
-            final SNode tnode11 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression");
+            final jetbrains.mps.smodel.SNode tnode11 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguageInternal.structure.ExtractToConstantExpression");
             try {
               environment.getTracer().pushTemplateNode(templateNode_wjpymb_a0a0a1a5a1a5a1a2);
               environment.nodeCopied(context, tnode11, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/3708576844065083856");
@@ -138,19 +138,19 @@ public class Templatestring_x0020switch_x0020template implements TemplateDeclara
               SNodeAccessUtil.setProperty(tnode11, "fieldName", "stringSwitchCases");
 
               {
-                final SNode tnode12 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression");
+                final jetbrains.mps.smodel.SNode tnode12 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.GenericNewExpression");
                 try {
                   environment.getTracer().pushTemplateNode(templateNode_wjpymb_a0a0a1a5a1a5a1a5a1a2);
                   environment.nodeCopied(context, tnode12, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/3708576844065083860");
 
                   {
-                    final SNode tnode13 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer");
+                    final jetbrains.mps.smodel.SNode tnode13 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.ArrayCreatorWithInitializer");
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_wjpymb_a0a0a1a3a1a5a1a5a1a5a1a2);
                       environment.nodeCopied(context, tnode13, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/3708576844065083861");
 
                       {
-                        final SNode tnode14 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringType");
+                        final jetbrains.mps.smodel.SNode tnode14 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringType");
                         try {
                           environment.getTracer().pushTemplateNode(templateNode_wjpymb_a0a0a1a3a1a3a1a5a1a5a1a5a1a2);
                           environment.nodeCopied(context, tnode14, "tpl/r:23911370-3645-4974-be70-79d5cfba7db1/3708576844065083897");

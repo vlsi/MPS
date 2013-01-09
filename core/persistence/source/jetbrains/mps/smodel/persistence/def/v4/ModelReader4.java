@@ -221,7 +221,7 @@ public class ModelReader4 implements IModelReader {
 
     String rawFqName = nodeElement.getAttributeValue(ModelPersistence.TYPE);
     String conceptFqName = VersionUtil.getConceptFQName(rawFqName);
-    SNode node = new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFqName));
+    jetbrains.mps.smodel.SNode node = new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFqName));
     VersionUtil.fetchConceptVersion(rawFqName, node, versionsInfo);
 
     String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);

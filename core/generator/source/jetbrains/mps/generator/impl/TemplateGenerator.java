@@ -505,7 +505,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private SNode copyInputNode(SNode inputNode, ReductionContext reductionContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
     // no reduction found - do node copying
     myGenerationTracer.pushCopyOperation();
-    SNode outputNode = new jetbrains.mps.smodel.SNode(inputNode.getConcept().getId());
+    jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(inputNode.getConcept().getId());
     if (inputNode.getNodeId() != null && inputNode.getModel() != null) {
       outputNode.setId(inputNode.getNodeId());
     }

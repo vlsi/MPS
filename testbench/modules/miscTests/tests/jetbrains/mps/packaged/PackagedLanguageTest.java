@@ -87,7 +87,7 @@ public class PackagedLanguageTest {
   }
 
   private void checkIconsLoaded() {
-    final SNode packagedConceptInstance = new jetbrains.mps.smodel.SNode(PACKAGED_LANGUAGE + ".structure." + PACKAGED_CONCEPT);
+    final jetbrains.mps.smodel.SNode packagedConceptInstance = new jetbrains.mps.smodel.SNode(PACKAGED_LANGUAGE + ".structure." + PACKAGED_CONCEPT);
     final Icon icon = IconManager.getIconFor(packagedConceptInstance);
     Assert.assertNotNull(icon);
     Assert.assertEquals(16, icon.getIconHeight());

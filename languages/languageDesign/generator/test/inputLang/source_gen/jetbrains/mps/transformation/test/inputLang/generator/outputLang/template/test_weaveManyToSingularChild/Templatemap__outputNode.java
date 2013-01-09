@@ -27,7 +27,7 @@ public class Templatemap__outputNode implements TemplateDeclaration {
     try {
       environment.getTracer().pushMacro(nodeMacroRef_wi2k8y_a0a0a1a2);
       TemplateContext context1 = context.subContext("generated_root");
-      final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
+      final jetbrains.mps.smodel.SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputRoot");
       try {
         environment.getTracer().pushTemplateNode(templateNode_wi2k8y_a0a0a3a1a2);
         environment.nodeCopied(context1, tnode2, "tpl/r:00000000-0000-4000-0000-011c895905fa/1218738789586");
@@ -35,7 +35,7 @@ public class Templatemap__outputNode implements TemplateDeclaration {
         SNodeAccessUtil.setProperty(tnode2, "text", "output root");
 
         {
-          final SNode tnode3 = new jetbrains.mps.smodel.SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
+          final jetbrains.mps.smodel.SNode tnode3 = new jetbrains.mps.smodel.SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
           try {
             environment.getTracer().pushTemplateNode(templateNode_wi2k8y_a0a0a1a5a3a1a2);
             environment.nodeCopied(context1, tnode3, "tpl/r:00000000-0000-4000-0000-011c895905fa/1218738814182");
