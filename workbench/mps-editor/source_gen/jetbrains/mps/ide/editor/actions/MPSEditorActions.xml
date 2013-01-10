@@ -3,14 +3,17 @@
     <action id="jetbrains.mps.ide.editor.actions.AddLanguageImport_Action" class="jetbrains.mps.ide.editor.actions.AddLanguageImport_Action">
       <keyboard-shortcut first-keystroke="ctrl L" keymap="$default" />
       <keyboard-shortcut first-keystroke="ctrl L" keymap="Mac OS X" />
+      <keyboard-shortcut first-keystroke="ctrl L" keymap="Mac OS X 10.5+" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.AddModelImportByRoot_Action" class="jetbrains.mps.ide.editor.actions.AddModelImportByRoot_Action">
       <keyboard-shortcut first-keystroke="ctrl R" keymap="$default" />
       <keyboard-shortcut first-keystroke="ctrl R" keymap="Mac OS X" />
+      <keyboard-shortcut first-keystroke="ctrl R" keymap="Mac OS X 10.5+" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.AddModelImport_Action" class="jetbrains.mps.ide.editor.actions.AddModelImport_Action">
       <keyboard-shortcut first-keystroke="ctrl M" keymap="$default" />
       <keyboard-shortcut first-keystroke="ctrl M" keymap="Mac OS X" />
+      <keyboard-shortcut first-keystroke="ctrl M" keymap="Mac OS X 10.5+" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.Backspace_Action" class="jetbrains.mps.ide.editor.actions.Backspace_Action">
       <keyboard-shortcut first-keystroke=" BACK_SPACE" keymap="$default" />
@@ -32,6 +35,7 @@
     <action id="jetbrains.mps.ide.editor.actions.DeleteToWordEnd_Action" class="jetbrains.mps.ide.editor.actions.DeleteToWordEnd_Action">
       <keyboard-shortcut first-keystroke="ctrl DELETE" keymap="$default" />
       <keyboard-shortcut first-keystroke="alt DELETE" keymap="Mac OS X" />
+      <keyboard-shortcut first-keystroke="alt DELETE" keymap="Mac OS X 10.5+" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.Delete_Action" class="jetbrains.mps.ide.editor.actions.Delete_Action">
       <keyboard-shortcut first-keystroke=" DELETE" keymap="$default" />
@@ -41,6 +45,8 @@
       <keyboard-shortcut first-keystroke=" END" keymap="$default" />
       <keyboard-shortcut first-keystroke=" END" keymap="Mac OS X" />
       <keyboard-shortcut first-keystroke="meta RIGHT" keymap="Mac OS X" />
+      <keyboard-shortcut first-keystroke=" END" keymap="Mac OS X 10.5+" />
+      <keyboard-shortcut first-keystroke="meta RIGHT" keymap="Mac OS X 10.5+" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.Escape_Action" class="jetbrains.mps.ide.editor.actions.Escape_Action">
       <keyboard-shortcut first-keystroke=" ESCAPE" keymap="$default" />
@@ -66,11 +72,14 @@
       <keyboard-shortcut first-keystroke=" HOME" keymap="$default" />
       <keyboard-shortcut first-keystroke=" HOME" keymap="Mac OS X" />
       <keyboard-shortcut first-keystroke="meta LEFT" keymap="Mac OS X" />
+      <keyboard-shortcut first-keystroke=" HOME" keymap="Mac OS X 10.5+" />
+      <keyboard-shortcut first-keystroke="meta LEFT" keymap="Mac OS X 10.5+" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.InsertBefore_Action" class="jetbrains.mps.ide.editor.actions.InsertBefore_Action">
       <keyboard-shortcut first-keystroke=" INSERT" keymap="$default" />
       <keyboard-shortcut first-keystroke="shift ENTER" keymap="$default" />
       <keyboard-shortcut first-keystroke="shift ENTER" keymap="Mac OS X" />
+      <keyboard-shortcut first-keystroke="shift ENTER" keymap="Mac OS X 10.5+" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.Insert_Action" class="jetbrains.mps.ide.editor.actions.Insert_Action">
       <keyboard-shortcut first-keystroke=" ENTER" keymap="$default" />
@@ -78,10 +87,12 @@
     <action id="jetbrains.mps.ide.editor.actions.LocalEnd_Action" class="jetbrains.mps.ide.editor.actions.LocalEnd_Action">
       <keyboard-shortcut first-keystroke="ctrl RIGHT" keymap="$default" />
       <keyboard-shortcut first-keystroke="alt RIGHT" keymap="Mac OS X" />
+      <keyboard-shortcut first-keystroke="alt RIGHT" keymap="Mac OS X 10.5+" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.LocalHome_Action" class="jetbrains.mps.ide.editor.actions.LocalHome_Action">
       <keyboard-shortcut first-keystroke="ctrl LEFT" keymap="$default" />
       <keyboard-shortcut first-keystroke="alt LEFT" keymap="Mac OS X" />
+      <keyboard-shortcut first-keystroke="alt LEFT" keymap="Mac OS X 10.5+" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.MoveDown_Action" class="jetbrains.mps.ide.editor.actions.MoveDown_Action">
       <keyboard-shortcut first-keystroke=" DOWN" keymap="$default" />
@@ -112,6 +123,8 @@
       <keyboard-shortcut first-keystroke="ctrl shift W" keymap="$default" />
       <keyboard-shortcut first-keystroke="ctrl DOWN" keymap="Mac OS X" />
       <keyboard-shortcut first-keystroke="ctrl shift W" keymap="Mac OS X" />
+      <keyboard-shortcut first-keystroke="ctrl DOWN" keymap="Mac OS X 10.5+" />
+      <keyboard-shortcut first-keystroke="ctrl shift W" keymap="Mac OS X 10.5+" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.SelectLeft_Action" class="jetbrains.mps.ide.editor.actions.SelectLeft_Action">
       <keyboard-shortcut first-keystroke="shift LEFT" keymap="$default" />
@@ -119,18 +132,22 @@
     <action id="jetbrains.mps.ide.editor.actions.SelectLocalEnd_Action" class="jetbrains.mps.ide.editor.actions.SelectLocalEnd_Action">
       <keyboard-shortcut first-keystroke="ctrl shift RIGHT" keymap="$default" />
       <keyboard-shortcut first-keystroke="alt shift RIGHT" keymap="Mac OS X" />
+      <keyboard-shortcut first-keystroke="alt shift RIGHT" keymap="Mac OS X 10.5+" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.SelectLocalHome_Action" class="jetbrains.mps.ide.editor.actions.SelectLocalHome_Action">
       <keyboard-shortcut first-keystroke="ctrl shift LEFT" keymap="$default" />
       <keyboard-shortcut first-keystroke="alt shift LEFT" keymap="Mac OS X" />
+      <keyboard-shortcut first-keystroke="alt shift LEFT" keymap="Mac OS X 10.5+" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.SelectNext_Action" class="jetbrains.mps.ide.editor.actions.SelectNext_Action">
       <keyboard-shortcut first-keystroke="shift DOWN" keymap="$default" />
       <keyboard-shortcut first-keystroke="shift DOWN" keymap="Mac OS X" />
+      <keyboard-shortcut first-keystroke="shift DOWN" keymap="Mac OS X 10.5+" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.SelectPrevious_Action" class="jetbrains.mps.ide.editor.actions.SelectPrevious_Action">
       <keyboard-shortcut first-keystroke="shift UP" keymap="$default" />
       <keyboard-shortcut first-keystroke="shift UP" keymap="Mac OS X" />
+      <keyboard-shortcut first-keystroke="shift UP" keymap="Mac OS X 10.5+" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.SelectRight_Action" class="jetbrains.mps.ide.editor.actions.SelectRight_Action">
       <keyboard-shortcut first-keystroke="shift RIGHT" keymap="$default" />
@@ -140,10 +157,13 @@
       <keyboard-shortcut first-keystroke="ctrl W" keymap="$default" />
       <keyboard-shortcut first-keystroke="ctrl UP" keymap="Mac OS X" />
       <keyboard-shortcut first-keystroke="ctrl W" keymap="Mac OS X" />
+      <keyboard-shortcut first-keystroke="ctrl UP" keymap="Mac OS X 10.5+" />
+      <keyboard-shortcut first-keystroke="ctrl W" keymap="Mac OS X 10.5+" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.ShowGenerationActions_Action" class="jetbrains.mps.ide.editor.actions.ShowGenerationActions_Action">
       <keyboard-shortcut first-keystroke="alt INSERT" keymap="$default" />
       <keyboard-shortcut first-keystroke="ctrl N" keymap="Mac OS X" />
+      <keyboard-shortcut first-keystroke="ctrl N" keymap="Mac OS X 10.5+" />
     </action>
     <action id="jetbrains.mps.ide.editor.actions.core.ShowNodeMessages_Action" class="jetbrains.mps.ide.editor.actions.core.ShowNodeMessages_Action">
       <keyboard-shortcut first-keystroke="alt shift M" keymap="$default" />
