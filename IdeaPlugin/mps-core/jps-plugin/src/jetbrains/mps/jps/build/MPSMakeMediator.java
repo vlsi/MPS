@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,42 +23,37 @@ import jetbrains.mps.generator.GenerationSettingsProvider;
 import jetbrains.mps.generator.impl.dependencies.GenerationDependenciesCache;
 import jetbrains.mps.generator.info.ForeignPathsProvider;
 import jetbrains.mps.generator.info.GeneratorPathsComponent;
+import jetbrains.mps.idea.core.make.MPSCustomMessages;
 import jetbrains.mps.idea.core.make.MPSMakeConstants;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.ISequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy;
-import jetbrains.mps.internal.make.runtime.script.LoggingProgressStrategy.Log;
 import jetbrains.mps.internal.make.runtime.util.DirUtil;
 import jetbrains.mps.jps.model.JpsMPSExtensionService;
 import jetbrains.mps.jps.model.JpsMPSModuleExtension;
 import jetbrains.mps.jps.project.JpsMPSProject;
-import jetbrains.mps.jps.project.JpsSolutionIdea;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.facet.IFacet;
 import jetbrains.mps.make.resources.IResource;
 import jetbrains.mps.make.script.IConfigMonitor.Stub;
-import jetbrains.mps.make.script.IFeedback;
 import jetbrains.mps.make.script.IJobMonitor;
-import jetbrains.mps.make.script.IProgress;
 import jetbrains.mps.make.script.IResult;
 import jetbrains.mps.make.script.IScript;
 import jetbrains.mps.make.script.IScriptController;
 import jetbrains.mps.make.script.ScriptBuilder;
 import jetbrains.mps.messages.IMessage;
 import jetbrains.mps.messages.IMessageHandler;
-import jetbrains.mps.messages.Message;
-import jetbrains.mps.messages.MessageKind;
+import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.resources.IMResource;
 import jetbrains.mps.smodel.resources.ModelsToResources;
-import jetbrains.mps.tool.builder.MpsWorker;
 import jetbrains.mps.tool.builder.make.BuildMakeService;
-import jetbrains.mps.tool.builder.make.GeneratorWorker;
 import jetbrains.mps.tool.builder.make.ReducedMakeFacetConfiguration;
 import jetbrains.mps.tool.builder.paths.IRedirects;
 import jetbrains.mps.tool.builder.paths.ModuleOutputPaths;
@@ -68,9 +63,9 @@ import org.jetbrains.jps.builders.storage.BuildDataPaths;
 import org.jetbrains.jps.incremental.FSOperations;
 import org.jetbrains.jps.incremental.ModuleBuildTarget;
 import org.jetbrains.jps.incremental.ModuleLevelBuilder.OutputConsumer;
-import org.jetbrains.jps.incremental.messages.BuildMessage;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
+import org.jetbrains.jps.incremental.messages.CustomBuilderMessage;
 import org.jetbrains.jps.incremental.messages.FileGeneratedEvent;
 import org.jetbrains.jps.incremental.storage.BuildDataManager;
 import org.jetbrains.jps.model.module.JpsModule;
@@ -284,8 +279,8 @@ public class MPSMakeMediator {
       switch (msg.getKind()) {
         case ERROR:
           myContext.getCompileContext().processMessage(
-            new CompilerMessage(MPSMakeConstants.BUILDER_ID,
-              Kind.ERROR,
+            new CustomBuilderMessage(MPSMakeConstants.BUILDER_ID,
+              MPSCustomMessages.MSG_ERROR,
               msg.getText()));
           break;
         case WARNING:

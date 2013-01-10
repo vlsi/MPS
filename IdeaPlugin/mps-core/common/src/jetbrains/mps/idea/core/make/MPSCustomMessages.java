@@ -26,4 +26,6 @@ public class MPSCustomMessages {
   public static final String MSG_GENERATED = "generated";
   @NonNls
   public static final String MSG_REFRESH = "refresh";
+  @NonNls
+  public static final String MSG_ERROR = "error";
 }

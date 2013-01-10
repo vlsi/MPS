@@ -16,20 +16,35 @@
 
 package jetbrains.mps.idea.core.make;
 
+import com.intellij.compiler.CompilerMessageImpl;
 import com.intellij.compiler.CompilerWorkspaceConfiguration;
+import com.intellij.compiler.ProblemsView;
 import com.intellij.compiler.impl.CompilerUtil;
 import com.intellij.compiler.server.CustomBuilderMessageHandler;
+import com.intellij.facet.FacetManager;
 import com.intellij.openapi.application.ApplicationManager;
 import com.intellij.openapi.compiler.*;
 import com.intellij.openapi.components.ProjectComponent;
+import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.util.io.FileUtil;
+import com.intellij.pom.Navigatable;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
+import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.idea.core.facet.MPSFacet;
+import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.idea.core.module.CachedRepositoryData;
 import jetbrains.mps.library.LibraryInitializer;
 import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
 import jetbrains.mps.library.contributor.PluginLibrariesContributor;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.project.ProjectOperationContext;
+import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
 
@@ -39,6 +54,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
+import java.util.regex.Matcher;
 
 /**
  * evgeny, 11/21/11
@@ -53,7 +69,11 @@ public class MPSCompilerComponent implements ProjectComponent {
 
     public void projectOpened() {
         CompilerManager compilerManager = CompilerManager.getInstance(project);
+
+        final List<String> errorMessages = new ArrayList<String>();
+
         project.getMessageBus().connect().subscribe(CustomBuilderMessageHandler.TOPIC, new RefreshFilesCompilationStatusListener());
+        project.getMessageBus().connect().subscribe(CustomBuilderMessageHandler.TOPIC, new NavigateToNodesWithErrors(errorMessages));
 
         compilerManager.addCompilableFileType(MPSFileTypeFactory.MODEL_FILE_TYPE);
 
@@ -105,6 +125,19 @@ public class MPSCompilerComponent implements ProjectComponent {
                 return true;
             }
         });
+
+        compilerManager.addAfterTask(new CompileTask() {
+          @Override
+          public boolean execute(CompileContext context) {
+            for (String errmsg : errorMessages) {
+              ModelNodeNavigatable navigatable = ModelNodeNavigatable.extractNavigatable(errmsg, context.getProject(), null);
+              context.addMessage(CompilerMessageCategory.ERROR, errmsg, null, -1, -1, navigatable);
+            }
+            boolean noErrors = errorMessages.isEmpty();
+            errorMessages.clear();
+            return noErrors;
+          }
+        });
     }
 
     public void projectClosed() {
@@ -146,5 +179,21 @@ public class MPSCompilerComponent implements ProjectComponent {
             }
         }
     }
+
+  private class NavigateToNodesWithErrors implements CustomBuilderMessageHandler {
+    private List<String> myErrorMessages;
+
+    public NavigateToNodesWithErrors(List<String> errorMessages) {
+      myErrorMessages = errorMessages;
+    }
+
+    @Override
+    public void messageReceived(String builderId, String messageType, final String messageText) {
+      if (!MPSMakeConstants.BUILDER_ID.equals(builderId)) return;
+      if (!MPSCustomMessages.MSG_ERROR.equals(messageType)) return;
+      myErrorMessages.add(messageText);
+    }
+  }
+
 }
 
