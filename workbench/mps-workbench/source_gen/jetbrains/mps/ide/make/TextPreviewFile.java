@@ -119,6 +119,12 @@ public class TextPreviewFile extends StubVirtualFile {
     return false;
   }
 
+  @Override
+  public long getLength() {
+    // TODO: override getFileType() to get right text highlighting 
+    return 0;
+  }
+
   private static class TextPreviewVirtualFileSystem extends NewVirtualFileSystem {
     private static String PROTOCOL = "preview";
 

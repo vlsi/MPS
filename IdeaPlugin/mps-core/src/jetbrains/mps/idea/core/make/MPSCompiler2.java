@@ -23,19 +23,14 @@ import com.intellij.openapi.compiler.*;
 import com.intellij.openapi.module.Module;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
-import com.intellij.pom.Navigatable;
 import jetbrains.mps.fileTypes.MPSFileTypeFactory;
 import jetbrains.mps.generator.GenerationFacade;
-import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.idea.core.MPSBundle;
 import jetbrains.mps.idea.core.facet.MPSFacet;
 import jetbrains.mps.idea.core.facet.MPSFacetType;
 import jetbrains.mps.library.contributor.LibraryContributor.LibDescriptor;
 import jetbrains.mps.library.contributor.PluginLibrariesContributor;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.JavaNameUtil;
 import jetbrains.mps.util.misc.hash.HashMap;
 import jetbrains.mps.vfs.FileSystem;
@@ -52,8 +47,6 @@ import java.util.regex.Pattern;
 
 public class MPSCompiler2 implements SourceGeneratingCompiler {
 
-  public static final Pattern TRANS_MODEL = Pattern.compile("\\[(\\d+)\\].*\\s([a-zA-Z_][a-zA-Z_0-9.]*)@(\\d+_\\d+)");
-  public static final Pattern SOURCE_MODEL = Pattern.compile("\\[(\\d+)\\].*\\sin\\s+([a-zA-Z_][a-zA-Z_0-9.]*)");
   private Project myProject;
 
   public MPSCompiler2(Project project) {
@@ -243,7 +236,7 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
         }
 
         private void addMessage(final String text, final CompilerMessageCategory category) {
-          final ModelNodeNavigatable navigatable = extractNavigatable(text, module);
+          final ModelNodeNavigatable navigatable = ModelNodeNavigatable.extractNavigatable(text, null, module);
           if (navigatable != null) {
             ModelAccess.instance().runReadAction(new Runnable() {
               @Override
@@ -275,20 +268,6 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
     }
   }
 
-  private ModelNodeNavigatable extractNavigatable (String errorMsg, Module module) {
-    if (errorMsg == null) return null;
-
-    Matcher matcher = TRANS_MODEL.matcher(errorMsg);
-    if (!matcher.find()) {
-      matcher = SOURCE_MODEL.matcher(errorMsg);
-      if (!matcher.find()) return null;
-    }
-
-    String nodeId = matcher.group(1);
-    String modelName = matcher.group(2);
-    return new ModelNodeNavigatable(modelName, nodeId, module);
-  }
-  
   @NotNull
   @Override
   public String getDescription() {
@@ -303,62 +282,6 @@ public class MPSCompiler2 implements SourceGeneratingCompiler {
   @Override
   public ValidityState createValidityState(DataInput in) throws IOException {
     return GeneratedValidityState.load(in);
-  }
-
-  private static class ModelNodeNavigatable implements Navigatable {
-
-    private String modelName;
-    private String nodeId;
-    private Module module;
-
-    public ModelNodeNavigatable(String modelName, String nodeId, Module module) {
-      this.modelName = modelName;
-      this.nodeId = nodeId;
-      this.module = module;
-    }
-
-    @Override
-    public void navigate(final boolean requestFocus) {
-      ModelAccess.instance().runWriteInEDT(new Runnable() {
-        @Override
-        public void run() {
-          SModel model = lookupModel();
-          if (model == null) return;
-          SNode node = model.getNodeById(nodeId);
-          if (node != null) {
-            ProjectOperationContext context = new ProjectOperationContext(ProjectHelper.toMPSProject(module.getProject()));
-            NavigationSupport.getInstance().openNode(context, node, requestFocus, true);
-          }
-        }
-      });
-    }
-
-    /**
-     * Requires read action.
-     * @return
-     */
-    public SModel lookupModel() {
-      ModelAccess.assertLegalRead();
-      SModel model = null;
-      MPSFacet facet = FacetManager.getInstance(module).getFacetByType(MPSFacetType.ID);
-      SModelRepository smrepo = SModelRepository.getInstance();
-      for (SModelDescriptor smd: smrepo.getModelDescriptors(facet.getSolution())) {
-        if (smd.getSModelReference().getLongName().equals(modelName)) {
-          model = smd.getSModel();
-        }
-      }
-      return model;
-    }
-
-    @Override
-    public boolean canNavigate() {
-      return true;
-    }
-
-    @Override
-    public boolean canNavigateToSource() {
-      return true;
-    }
   }
 
 

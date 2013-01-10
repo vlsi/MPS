@@ -41,23 +41,32 @@ public class JavaStreamHandler implements StreamHandler {
 
   public void saveStream(String name, String content, boolean isCache) {
     IFile file = getFile(name, isCache);
-    myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
-    getDelta(isCache).written(file);
+    if (myProcessor.saveContent(file, content)) {
+      getDelta(isCache).written(file);
+    } else {
+      getDelta(isCache).kept(file);
+    }
   }
 
   public void saveStream(String name, Element content, boolean isCache) {
     IFile file = getFile(name, isCache);
-    myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
-    getDelta(isCache).written(file);
+    if (myProcessor.saveContent(file, content)) {
+      getDelta(isCache).written(file);
+    } else {
+      getDelta(isCache).kept(file);
+    }
   }
 
   public void saveStream(String name, byte[] content, boolean isCache) {
     IFile file = getFile(name, isCache);
-    myProcessor.saveContent(file, content);
     mySavedFiles.add(file);
-    getDelta(isCache).written(file);
+    if (myProcessor.saveContent(file, content)) {
+      getDelta(isCache).written(file);
+    } else {
+      getDelta(isCache).kept(file);
+    }
   }
 
   public boolean touch(String name, boolean isCache) {

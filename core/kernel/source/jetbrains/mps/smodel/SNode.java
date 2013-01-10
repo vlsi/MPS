@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.AbstractImmutableList;
 import jetbrains.mps.util.Condition;
@@ -501,6 +503,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public SConcept getConcept() {
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
+
+    if (MPSCore.getInstance().isMergeDriverMode()) {
+      return new SConceptNodeAdapter(myConceptFqName);
+    }
 
     return SConceptRepository.getInstance().getConcept(myConceptFqName);
   }
