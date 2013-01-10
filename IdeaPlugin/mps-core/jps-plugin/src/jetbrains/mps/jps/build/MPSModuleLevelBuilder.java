@@ -136,8 +136,9 @@ public class MPSModuleLevelBuilder extends ModuleLevelBuilder {
                 }
             };
 
-            MPSCompiler compiler = new MPSCompiler(JpsMPSRepositoryFacade.getInstance().getProject(), sModels, context);
-            boolean success = compiler.build();
+//            MPSCompiler compiler = new MPSCompiler(JpsMPSRepositoryFacade.getInstance().getProject(), sModels, context);
+            MPSMakeMediator makeMediator = new MPSMakeMediator(JpsMPSRepositoryFacade.getInstance().getProject(), toMake, context, refreshComponent, outputConsumer);
+            boolean success = makeMediator.build();
             if (success) {
                 status = ExitCode.OK;
             }

@@ -38,20 +38,21 @@ import jetbrains.mps.util.JDOMUtil;
     }
   }
 
-  public void saveContent(IFile file, String content) {
-    saveContent(new FileProcessor.FileAndContent(file, new FileProcessor.StringFileContent(content)));
+  public boolean saveContent(IFile file, String content) {
+    return saveContent(new FileProcessor.FileAndContent(file, new FileProcessor.StringFileContent(content)));
   }
 
-  public void saveContent(IFile file, Element content) {
-    saveContent(new FileProcessor.FileAndContent(file, new FileProcessor.XMLFileContent(content)));
+  public boolean saveContent(IFile file, Element content) {
+    return saveContent(new FileProcessor.FileAndContent(file, new FileProcessor.XMLFileContent(content)));
   }
 
-  public void saveContent(IFile file, byte[] content) {
-    saveContent(new FileProcessor.FileAndContent(file, new FileProcessor.BinaryFileContent(content)));
+  public boolean saveContent(IFile file, byte[] content) {
+    return saveContent(new FileProcessor.FileAndContent(file, new FileProcessor.BinaryFileContent(content)));
   }
 
-  private void saveContent(FileProcessor.FileAndContent fileAndContent) {
+  private boolean saveContent(FileProcessor.FileAndContent fileAndContent) {
     myFilesAndContents.add(fileAndContent);
+    return !(fileAndContent.myContent.isUnchanged(fileAndContent.myFile));
   }
 
   public void filesToDelete(Collection<IFile> files) {
@@ -96,6 +97,7 @@ import jetbrains.mps.util.JDOMUtil;
   }
 
   private static interface FileContent {
+    public boolean isUnchanged(IFile file);
     public void saveToFile(IFile file);
     public int calcApproximateSize();
   }
@@ -108,10 +110,6 @@ import jetbrains.mps.util.JDOMUtil;
     }
 
     public void saveToFile(IFile file) {
-      if (file.exists() && isUnchanged(file)) {
-        return;
-      }
-
       OutputStreamWriter writer = null;
       try {
         writer = new OutputStreamWriter(new BufferedOutputStream(file.openOutputStream()), FileUtil.DEFAULT_CHARSET);
@@ -128,7 +126,10 @@ import jetbrains.mps.util.JDOMUtil;
       }
     }
 
-    private boolean isUnchanged(IFile file) {
+    public boolean isUnchanged(IFile file) {
+      if (!(file.exists())) {
+        return false;
+      }
       BufferedReader reader = null;
       StringBuilder res = new StringBuilder();
       try {
@@ -164,10 +165,6 @@ import jetbrains.mps.util.JDOMUtil;
     }
 
     public void saveToFile(IFile file) {
-      if (file.exists() && isUnchanged(file)) {
-        return;
-      }
-
       OutputStream stream = null;
       try {
         stream = file.openOutputStream();
@@ -184,7 +181,10 @@ import jetbrains.mps.util.JDOMUtil;
       }
     }
 
-    private boolean isUnchanged(IFile file) {
+    public boolean isUnchanged(IFile file) {
+      if (!(file.exists())) {
+        return false;
+      }
       long len = file.length();
       if (len != myContent.length) {
         return false;
@@ -231,12 +231,18 @@ import jetbrains.mps.util.JDOMUtil;
       }
     }
 
+
+
     public int calcApproximateSize() {
       try {
         return JDOMUtil.printDocument(myDocument).length;
       } catch (Exception e) {
         throw new RuntimeException(e);
       }
+    }
+
+    public boolean isUnchanged(IFile file) {
+      return false;
     }
   }
 }
