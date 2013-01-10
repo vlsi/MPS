@@ -190,8 +190,8 @@ public abstract class MPSTree extends DnDAwareTree implements Disposable {
             nodeToClick.autoscroll();
           } else if (e.getClickCount() == 2) {
             nodeToClick.doubleClick();
+            e.consume();
           }
-          e.consume();
         } else if (e.getButton() == MouseEvent.BUTTON3) {
           if (!isPathSelected(path)) {
             setSelectionPath(path);
