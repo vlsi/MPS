@@ -643,37 +643,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
       return;
     }
 
-    String text = getText();
-    int position = getCaretPosition();
-    int length = getText().length();
+    int start = getPrevLocalHome(false);
+    int end = getNextLocalEnd(false);
 
-    if (length == 0) {
-      return;
-    }
-    if (position == 0) {
-      if (Character.isWhitespace(text.charAt(position))) {
-        selectAll();
-      } else {
-        select(0, getNextLocalEnd(false));
-      }
-    } else if (position == getText().length()) {
-      if (Character.isWhitespace(text.charAt(position - 1))) {
-        selectAll();
-      } else {
-        select(getPrevLocalHome(), position);
-      }
+    if (start != end) {
+      select(start, end);
     } else {
-      if (Character.isWhitespace(text.charAt(position))) {
-        if (Character.isWhitespace(text.charAt(position - 1))) {
-          selectAll();
-        } else {
-          select(getPrevLocalHome(), position);
-        }
-      } else if (Character.isWhitespace(text.charAt(position - 1))){
-        select(position, getNextLocalEnd(false));
-      } else {
-        select(getPrevLocalHome(), getNextLocalEnd(false));
-      }
+      selectAll();
     }
 
   }
@@ -702,8 +678,15 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return length;
   }
 
-  private int getPrevLocalHome() {
+  private int getPrevLocalHome(boolean withSpaces) {
     assert getCaretPosition() >= 0;
+
+    if (!withSpaces) {
+      if (getCaretPosition() == 0 || Character.isWhitespace(getText().charAt(getCaretPosition() - 1))) {
+        return getCaretPosition();
+      }
+    }
+
     boolean charSelected = false;
     for (int i = getCaretPosition(); i >= 1; --i) {
       char c = getText().charAt(i - 1);
@@ -880,11 +863,11 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
 
     public boolean canExecute(EditorContext context) {
-      return !isFirstCaretPosition() && (isFirstPositionAllowed() || getPrevLocalHome() != 0);
+      return !isFirstCaretPosition() && (isFirstPositionAllowed() || getPrevLocalHome(true) != 0);
     }
 
     public void execute(EditorContext context) {
-      setCaretPosition(getPrevLocalHome(), mySelect);
+      setCaretPosition(getPrevLocalHome(true), mySelect);
     }
 
   }
