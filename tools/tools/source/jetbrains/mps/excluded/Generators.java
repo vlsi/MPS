@@ -68,6 +68,19 @@ public class Generators {
   }
 
   public static void updateGenSourcesIml(File genSourcesIml, File... sourceDirs) throws JDOMException, IOException {
+    Set<String> sourcesIncluded = new HashSet<String>();
+    for (File imlFile : Utils.withExtension(".iml", Utils.files(new File(".")))) {
+      if (imlFile.getCanonicalPath().equals(genSourcesIml.getCanonicalPath())) continue;
+      Document doc = JDOMUtil.loadDocument(imlFile);
+      Element rootManager = Utils.getComponentWithName(doc, MODULE_ROOT_MANAGER);
+      for (Element cRoot : (List<Element>) rootManager.getChildren(CONTENT)) {
+        for (Element sFolder : (List<Element>) cRoot.getChildren(SOURCE_FOLDER)) {
+          String imlFormattedRoot = sFolder.getAttributeValue(URL);
+          sourcesIncluded.add(new File(imlFormattedRoot.replace("file://$MODULE_DIR$", imlFile.getParent())).getCanonicalPath());
+        }
+      }
+    }
+
     Document doc = JDOMUtil.loadDocument(genSourcesIml);
     Element rootManager = Utils.getComponentWithName(doc, MODULE_ROOT_MANAGER);
 
@@ -88,7 +101,7 @@ public class Generators {
       List<String> sourceGenFolders = new ArrayList<String>();
       List<String> classesGenFolders = new ArrayList<String>();
       for (Pair<String, String> module : Utils.collectMPSCompiledModulesInfo(dir)) {
-        if (new File(module.o2).exists()) {
+        if (!sourcesIncluded.contains(new File(module.o2).getCanonicalPath())) {
           String sFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(module.o2);
           sourceGenFolders.add(sFolder);
         }
@@ -129,13 +142,19 @@ public class Generators {
   public static void updateGenSourcesImlNoIntersections(File genSourcesIml, File... sourceDirs) throws JDOMException, IOException {
     System.out.println("Analyzing existing imls...");
     Set<String> modelRoots = new HashSet<String>();
+    Set<String> sourcesIncluded = new HashSet<String>();
     for (File imlFile : Utils.withExtension(".iml", Utils.files(new File(".")))) {
       if (imlFile.getCanonicalPath().equals(genSourcesIml.getCanonicalPath())) continue;
       Document doc = JDOMUtil.loadDocument(imlFile);
       Element rootManager = Utils.getComponentWithName(doc, MODULE_ROOT_MANAGER);
-      for (Element e : (List<Element>) rootManager.getChildren(CONTENT)) {
-        String imlFormattedRoot = e.getAttributeValue(URL);
+      for (Element cRoot : (List<Element>) rootManager.getChildren(CONTENT)) {
+        String imlFormattedRoot = cRoot.getAttributeValue(URL);
         modelRoots.add(new File(imlFormattedRoot.replace("file://$MODULE_DIR$", imlFile.getParent())).getCanonicalPath());
+
+        for (Element sFolder : (List<Element>) cRoot.getChildren(SOURCE_FOLDER)) {
+          String imlFormattedSourceFolder = sFolder.getAttributeValue(URL);
+          sourcesIncluded.add(new File(imlFormattedSourceFolder.replace("file://$MODULE_DIR$", imlFile.getParent())).getCanonicalPath());
+        }
       }
     }
 
@@ -152,6 +171,7 @@ public class Generators {
     }
 
     System.out.println("Building model roots for gensources module...");
+    sourceGen.removeAll(sourcesIncluded);
     Collections.sort(sourceGen);
     Collections.sort(classesGen);
     rootManager.removeChildren(CONTENT);
