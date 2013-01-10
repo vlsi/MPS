@@ -26,7 +26,7 @@ public class GeneratorsRunner {
   public static final File COMPILER_XML_FILE = new File(".idea" + File.separatorChar + "compiler.xml");
 
   public static void generateGenSourcesIml() throws JDOMException, IOException {
-    Generators.updateGenSourcesIml(GEN_SOURCES_IML, Utils.files("languages", "samples", "core"));
+    Generators.updateGenSourcesIml(GEN_SOURCES_IML, Utils.files("languages", "samples", "core", "plugins"));
   }
 
   public static void generateCompilerXmlFile() throws JDOMException, IOException {

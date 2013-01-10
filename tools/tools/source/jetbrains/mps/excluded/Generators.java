@@ -125,4 +125,92 @@ public class Generators {
 
     JDOMUtil.writeDocument(doc, genSourcesIml);
   }
+
+  public static void updateGenSourcesImlNoIntersections(File genSourcesIml, File... sourceDirs) throws JDOMException, IOException {
+    System.out.println("Analyzing existing imls...");
+    Set<String> modelRoots = new HashSet<String>();
+    for (File imlFile : Utils.withExtension(".iml", Utils.files(new File(".")))) {
+      if (imlFile.getCanonicalPath().equals(genSourcesIml.getCanonicalPath())) continue;
+      Document doc = JDOMUtil.loadDocument(imlFile);
+      Element rootManager = Utils.getComponentWithName(doc, MODULE_ROOT_MANAGER);
+      for (Element e : (List<Element>) rootManager.getChildren(CONTENT)) {
+        String imlFormattedRoot = e.getAttributeValue(URL);
+        modelRoots.add(new File(imlFormattedRoot.replace("file://$MODULE_DIR$", imlFile.getParent())).getCanonicalPath());
+      }
+    }
+
+    System.out.println("Analyzing MPS modules...");
+    Document doc = JDOMUtil.loadDocument(genSourcesIml);
+    Element rootManager = Utils.getComponentWithName(doc, MODULE_ROOT_MANAGER);
+    List<String> sourceGen = new ArrayList<String>();
+    List<String> classesGen = new ArrayList<String>();
+    for (File dir : sourceDirs) {
+      for (Pair<String, String> moduleWithSourceGen : Utils.collectMPSCompiledModulesInfo(dir)) {
+        classesGen.add(moduleWithSourceGen.o1 + "/" + AbstractModule.CLASSES_GEN);
+        sourceGen.add(moduleWithSourceGen.o2);
+      }
+    }
+
+    System.out.println("Building model roots for gensources module...");
+    Collections.sort(sourceGen);
+    Collections.sort(classesGen);
+    rootManager.removeChildren(CONTENT);
+
+    Set<String> newRoots = new HashSet<String>();
+    for (String sGen : sourceGen) {
+      String root = null;
+
+      // find existing
+      for (String newRoot : newRoots) {
+        if (sGen.startsWith(newRoot)) {
+          root = newRoot;
+        }
+      }
+
+      //find outermost directory not intersecting with other model roots
+      if (root == null) {
+        root = sGen;
+        String parent = new File(root).getParent();
+        while (!intersects(modelRoots, parent)) {
+          root = parent;
+          parent = new File(root).getParent();
+        }
+        newRoots.add(root);
+
+        Element contentRoot = new Element(CONTENT);
+        contentRoot.setAttribute(URL, PATH_START_MODULE + Utils.getRelativeProjectPath(root));
+        rootManager.addContent(contentRoot);
+      }
+
+      String rootInImlFormat = PATH_START_MODULE + Utils.getRelativeProjectPath(root);
+      Element contentRoot = Utils.getChildByAttribute(rootManager, CONTENT, URL, rootInImlFormat);
+
+      Element sourceFolder = new Element(SOURCE_FOLDER);
+      sourceFolder.setAttribute(URL, sGen);
+      sourceFolder.setAttribute("isTestSource", "false");
+      contentRoot.addContent(sourceFolder);
+    }
+
+    for (String cGen : classesGen) {
+      String rootInImlFormat = PATH_START_MODULE + Utils.getRelativeProjectPath(cGen);
+      Element contentRoot = Utils.getChildByAttribute(rootManager, CONTENT, URL, rootInImlFormat);
+      assert contentRoot != null : "Classes gen folder which has no corresponding content root: " + cGen;
+
+      Element excludeFolder = new Element(EXCLUDE_FOLDER);
+      excludeFolder.setAttribute(URL, rootInImlFormat);
+      contentRoot.addContent(excludeFolder);
+    }
+
+    System.out.println("Saving...");
+    JDOMUtil.writeDocument(doc, genSourcesIml);
+
+    System.out.println("Done.");
+  }
+
+  private static boolean intersects(Set<String> existingRoots, String parent) {
+    for (String root : existingRoots) {
+      if (root.startsWith(parent)) return true;
+    }
+    return false;
+  }
 }
