@@ -1762,8 +1762,8 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                     try {
                                       environment.getTracer().pushTemplateNode(templateNode_swz52f_a0a0a1a4a1a3a1a3a1a3a1a5a1a3a1a1a1a6a1a1);
                                       environment.nodeCopied(context, tnode108, "tpl/r:00000000-0000-4000-0000-011c8959034c/473655348865089177");
-                                      tnode108.addReference(SReference.create("baseMethodDeclaration", tnode108, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)"), SNodeId.fromString("~HUtil.copyIfNecessary(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode")));
                                       tnode108.addReference(SReference.create("classConcept", tnode108, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)"), SNodeId.fromString("~HUtil")));
+                                      tnode108.addReference(SReference.create("baseMethodDeclaration", tnode108, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.lang.typesystem.runtime(MPS.Core/jetbrains.mps.lang.typesystem.runtime@java_stub)"), SNodeId.fromString("~HUtil.copyIfNecessary(jetbrains.mps.smodel.SNode):jetbrains.mps.smodel.SNode")));
 
                                       {
                                         final SNode tnode109 = new SNode(environment.getOutputModel(), "jetbrains.mps.baseLanguage.structure.LocalVariableReference", false);

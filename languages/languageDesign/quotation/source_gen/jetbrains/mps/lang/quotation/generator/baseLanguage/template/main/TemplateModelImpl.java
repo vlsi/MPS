@@ -80,6 +80,20 @@ public class TemplateModelImpl implements TemplateModel {
         }
         return new TemplateQuotedNode__to__statementList();
       }
+      if (idValue == 1006429225401295242L) {
+        if (arguments.length != 0) {
+          // TODO report `wrong arguments count` 
+          return null;
+        }
+        return new TemplateNodeBuilder__to__methodCall();
+      }
+      if (idValue == 429601079676709776L) {
+        if (arguments.length != 0) {
+          // TODO report `wrong arguments count` 
+          return null;
+        }
+        return new Templatereduce__NodeBuilderNode();
+      }
     }
     return null;
   }
