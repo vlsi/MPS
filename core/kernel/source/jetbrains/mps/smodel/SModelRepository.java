@@ -270,6 +270,12 @@ public class SModelRepository implements CoreComponent {
 
   void notifyModelReplaced(BaseSModelDescriptor modelDescriptor, SModel oldSModel) {
     ModelAccess.assertLegalWrite();
+
+    if (mySModelRepositoryListeners.isEmpty()){
+      oldSModel.dispose();
+      return;
+    }
+
     synchronized (myReloadingDescriptorMap) {
 
       if (myReloadingDescriptorMap.isEmpty()) {
@@ -291,16 +297,19 @@ public class SModelRepository implements CoreComponent {
           }
 
           fireModelReplaced(myReloadingDescriptorMap.keySet());
-          for (SModel oldModel : myReloadingDescriptorMap.values()) {
-            if (oldModel != null) {
-              oldModel.dispose();
-            }
-          }
-
+          disposeOldModels();
           myReloadingDescriptorMap.clear();
         }
       }
     });
+  }
+
+  private void disposeOldModels() {
+    for (SModel oldModel : myReloadingDescriptorMap.values()) {
+      if (oldModel != null) {
+        oldModel.dispose();
+      }
+    }
   }
 
 
