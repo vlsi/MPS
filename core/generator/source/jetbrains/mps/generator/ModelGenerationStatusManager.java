@@ -54,7 +54,7 @@ public class ModelGenerationStatusManager implements CoreComponent {
           registeredModels.add(modelDescriptor);
         }
       }
-      ModelGenerationStatusManager.this.invalidateData(replacedModels);
+      ModelGenerationStatusManager.this.invalidateData(registeredModels);
     }
   };
 
