@@ -41,18 +41,34 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.DynamicReference;
 import org.jetbrains.annotations.Nullable;
 import org.eclipse.jdt.internal.compiler.ast.Argument;
+import org.eclipse.jdt.internal.compiler.ast.Expression;
+import org.eclipse.jdt.internal.compiler.ast.AllocationExpression;
 import org.eclipse.jdt.internal.compiler.ast.ParameterizedQualifiedTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.ParameterizedSingleTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.Wildcard;
 import org.eclipse.jdt.internal.compiler.ast.ArrayTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.ArrayQualifiedTypeReference;
-import org.eclipse.jdt.internal.compiler.ast.AllocationExpression;
-import org.eclipse.jdt.internal.compiler.ast.Expression;
+import org.eclipse.jdt.internal.compiler.ast.Literal;
+import org.eclipse.jdt.internal.compiler.ast.QualifiedNameReference;
+import org.eclipse.jdt.internal.compiler.ast.SingleNameReference;
+import org.eclipse.jdt.internal.compiler.impl.Constant;
+import org.eclipse.jdt.internal.compiler.ast.NullLiteral;
+import jetbrains.mps.util.NameUtil;
+import org.eclipse.jdt.internal.compiler.impl.BooleanConstant;
+import org.eclipse.jdt.internal.compiler.impl.ByteConstant;
+import org.eclipse.jdt.internal.compiler.impl.CharConstant;
+import org.eclipse.jdt.internal.compiler.impl.DoubleConstant;
+import org.eclipse.jdt.internal.compiler.impl.FloatConstant;
+import org.eclipse.jdt.internal.compiler.impl.IntConstant;
+import org.eclipse.jdt.internal.compiler.impl.LongConstant;
+import org.eclipse.jdt.internal.compiler.impl.ShortConstant;
+import org.eclipse.jdt.internal.compiler.impl.StringConstant;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 /**
  * Convert eclipse AST into BaseLanguage nodes.
@@ -141,7 +157,7 @@ public class ASTConverter {
       if (myOnlyStubs) {
         String nodeId = getState().getIdPrefix() + SPropertyOperations.getString(cls, "name");
         cls.setId(new SNodeId.Foreign(nodeId));
-        prefixedConverter = this.withIdPrefix(nodeId + ".");
+        prefixedConverter = this.withIdPrefix(SPropertyOperations.getString(cls, "name") + ".");
       }
     }
 
@@ -209,12 +225,9 @@ public class ASTConverter {
             if (!(isEnumConstant(f))) {
               continue;
             }
-            SNode constr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", null);
-            // TODO 
-            SNode item = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", null);
-            SPropertyOperations.set(item, "name", enumConstantName(f));
-            // <node> 
-            SLinkOperations.getTargets(enm, "enumConstant", true).add(item);
+            SNode enumConst = convertEnumConst(f);
+            SLinkOperations.getTargets(enm, "enumConstant", true).add(enumConst);
+            MapSequence.fromMap(memberStartPositions).put(SNodeOperations.cast(enumConst, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), f.sourceStart);
           }
         }
       }
@@ -223,6 +236,9 @@ public class ASTConverter {
     // handle class fields 
     if (x.fields != null) {
       for (FieldDeclaration f : x.fields) {
+        if (isEnumConstant(f)) {
+          continue;
+        }
         SNode mem = childConverter.convertField(cls, f, true);
         MapSequence.fromMap(memberStartPositions).put(SNodeOperations.cast(mem, "jetbrains.mps.baseLanguage.structure.ClassifierMember"), f.sourceStart);
       }
@@ -487,7 +503,6 @@ public class ASTConverter {
       SNode val = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", null);
       SReference ref = new DynamicReference("key", val, null, new String(pair.name));
       val.setReference(ref.getRole(), ref);
-      // FIXME this will be convertExpressionRefl when I implement enum conversion there 
       SLinkOperations.setTarget(val, "value", convertExpression(pair.value), true);
       ListSequence.fromList(SLinkOperations.getTargets(node, "value", true)).addElement(val);
     }
@@ -581,13 +596,46 @@ public class ASTConverter {
     return result;
   }
 
+
+
+
+  protected SNode convertEnumConst(FieldDeclaration x) throws JavaParseException {
+    SNode constr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", null);
+    // TODO 
+    SNode enm = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", null);
+    SPropertyOperations.set(enm, "name", enumConstantName(x));
+    // <node> 
+
+    Expression[] args = ((AllocationExpression) x.initialization).arguments;
+    if (args != null) {
+      for (Expression arg : args) {
+        ListSequence.fromList(SLinkOperations.getTargets(enm, "actualArgument", true)).addElement(convertExpression(arg));
+      }
+    }
+
+    return enm;
+  }
+
+  protected boolean isEnumConstant(FieldDeclaration x) {
+    return x.initialization != null && x.initialization instanceof AllocationExpression && ((AllocationExpression) x.initialization).enumConstant != null;
+  }
+
+  protected String enumConstantName(FieldDeclaration x) {
+    // Unsafe. supposed to be used after isEnumConstant 
+    return new String(((AllocationExpression) x.initialization).enumConstant.name);
+  }
+
+
+
+
+
   public SNode convertVisibility(int astModifiers) {
     return (flagSet(astModifiers, ClassFileConstants.AccPublic) ?
-      _quotation_createNode_rbndtb_a0a0s() :
+      _quotation_createNode_rbndtb_a0a0ab() :
       (flagSet(astModifiers, ClassFileConstants.AccProtected) ?
-        _quotation_createNode_rbndtb_a0a0a81() :
+        _quotation_createNode_rbndtb_a0a0a62() :
         (flagSet(astModifiers, ClassFileConstants.AccPrivate) ?
-          _quotation_createNode_rbndtb_a0a0a0s() :
+          _quotation_createNode_rbndtb_a0a0a0ab() :
           null
         )
       )
@@ -659,7 +707,7 @@ public class ASTConverter {
       if (typRef instanceof ArrayTypeReference && !(typRef instanceof ParameterizedSingleTypeReference)) {
         // it turns out this is an array, wrap base type in arraytype 
         // (in elicpse ParamSingleTypRef is subclass of ArrayTypRef) 
-        return _quotation_createNode_rbndtb_a2a8a12(base);
+        return _quotation_createNode_rbndtb_a2a8a92(base);
       } else {
         return base;
       }
@@ -672,15 +720,15 @@ public class ASTConverter {
 
     switch (typRef.kind) {
       case Wildcard.UNBOUND:
-        return _quotation_createNode_rbndtb_a0a0c0w();
+        return _quotation_createNode_rbndtb_a0a0c0eb();
 
       case Wildcard.EXTENDS:
         SNode upperBound = convertTypeReference(typRef.bound);
-        return _quotation_createNode_rbndtb_a1a1c0w(upperBound);
+        return _quotation_createNode_rbndtb_a1a1c0eb(upperBound);
 
       case Wildcard.SUPER:
         SNode lowerBound = convertTypeReference(typRef.bound);
-        return _quotation_createNode_rbndtb_a1a2c0w(lowerBound);
+        return _quotation_createNode_rbndtb_a1a2c0eb(lowerBound);
 
       default:
         LOG.error("Unknown wildcard kind");
@@ -701,7 +749,7 @@ public class ASTConverter {
 
     SNode base = myTypeResolver.resolveQualifiedTypeName(qname);
     if (typRef instanceof ArrayQualifiedTypeReference && !(typRef instanceof ParameterizedQualifiedTypeReference)) {
-      return _quotation_createNode_rbndtb_a0a6a32(base);
+      return _quotation_createNode_rbndtb_a0a6a13(base);
     } else {
       return base;
     }
@@ -735,15 +783,6 @@ public class ASTConverter {
     for (TypeReference typeRef : from) {
       ListSequence.fromList(into).addElement(convertTypeReference(typeRef));
     }
-  }
-
-  private boolean isEnumConstant(FieldDeclaration x) {
-    return x.initialization != null && x.initialization instanceof AllocationExpression && ((AllocationExpression) x.initialization).enumConstant != null;
-  }
-
-  private String enumConstantName(FieldDeclaration x) {
-    // Unsafe. supposed to be used after isEnumConstant 
-    return new String(((AllocationExpression) x.initialization).enumConstant.name);
   }
 
   protected boolean flagSet(int bitmap, int flag) {
@@ -782,9 +821,156 @@ public class ASTConverter {
   }
 
   public SNode convertExpression(Expression x) throws JavaParseException {
-    // maybe only something for annotations 
-    return null;
+    if (x instanceof Literal) {
+      return convertExpression((Literal) x);
+    } else {
+      // FIXME do expressions in annotations properly 
+
+      if (1 < 0) {
+        return _quotation_createNode_rbndtb_a0a2a83();
+
+      } else if (x instanceof QualifiedNameReference) {
+
+        // FIXME HACK it can be static field ref as well, and maybe something else 
+        SNode enumRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
+        char[][] tokens = ((QualifiedNameReference) x).tokens;
+
+        String enumName = new String(tokens[0]);
+        for (int i = 1; i < tokens.length - 1; i++) {
+          enumName = enumName + "." + new String(tokens[i]);
+        }
+
+        String enumConstName = new String(tokens[tokens.length - 1]);
+
+        SReference enumClRef;
+        if (enumName.contains(".")) {
+          enumClRef = myTypeResolver.resolveQualifiedClassName(enumName, enumRef, "enumClass");
+        } else {
+          enumClRef = myTypeResolver.resolveShortClassName(enumName, enumRef, "enumClass");
+        }
+        SReference enumConstRef = new DynamicReference("enumConstantDeclaration", enumRef, null, enumConstName);
+
+        enumRef.setReference(enumClRef.getRole(), enumClRef);
+        enumRef.setReference(enumConstRef.getRole(), enumConstRef);
+        return enumRef;
+
+      } else if (x instanceof SingleNameReference) {
+        // FIXME 
+        return _quotation_createNode_rbndtb_a1a1c0mb();
+      } else {
+        LOG.error("This kind of expression is not supported yet: " + x.getClass().getName());
+        return null;
+      }
+    }
+
   }
+
+
+
+  /*package*/ SNode convertExpression(Literal x) {
+    x.computeConstant();
+    if (x.constant == null) {
+      return null;
+    }
+    if (x.constant != Constant.NotAConstant) {
+      return convertConstant(x.constant);
+    } else if (x instanceof NullLiteral) {
+      return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null);
+    } else {
+      // import token as string constant even if it was an error in literal 
+      return _quotation_createNode_rbndtb_a1a0c0ob(NameUtil.escapeString(new String(((Literal) x).source())));
+    }
+  }
+
+
+
+
+  /*package*/ SNode convertConstant(Constant x) {
+    if (x instanceof BooleanConstant) {
+      return convertConstant((BooleanConstant) x);
+    } else if (x instanceof ByteConstant) {
+      return convertConstant((ByteConstant) x);
+    } else if (x instanceof CharConstant) {
+      return convertConstant((CharConstant) x);
+    } else if (x instanceof DoubleConstant) {
+      return convertConstant((DoubleConstant) x);
+    } else if (x instanceof FloatConstant) {
+      return convertConstant((FloatConstant) x);
+    } else if (x instanceof IntConstant) {
+      return convertConstant((IntConstant) x);
+    } else if (x instanceof LongConstant) {
+      return convertConstant((LongConstant) x);
+    } else if (x instanceof ShortConstant) {
+      return convertConstant((ShortConstant) x);
+    } else if (x instanceof StringConstant) {
+      return convertConstant((StringConstant) x);
+    } else {
+      if (x == null) {
+        return null;
+      }
+      LOG.error("Unsupported type of constant: " + x.getClass().getName());
+      return null;
+    }
+
+  }
+
+  /*package*/ SNode convertConstant(BooleanConstant x) {
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
+    SPropertyOperations.set(result, "value", "" + (x.booleanValue()));
+    return result;
+  }
+
+  /*package*/ SNode convertConstant(ByteConstant x) {
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
+    SPropertyOperations.set(result, "value", "" + (x.byteValue()));
+    return result;
+  }
+
+  /*package*/ SNode convertConstant(CharConstant x) {
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CharConstant", null);
+    String value = NameUtil.escapeChar(x.charValue());
+    SPropertyOperations.set(result, "charConstant", value);
+    return result;
+  }
+
+  /*package*/ SNode convertConstant(DoubleConstant x) {
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FloatingPointConstant", null);
+    SPropertyOperations.set(result, "value", x.doubleValue() + "");
+    return result;
+  }
+
+  /*package*/ SNode convertConstant(FloatConstant x) {
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant", null);
+    SPropertyOperations.set(result, "value", x.floatValue() + "f");
+    return result;
+  }
+
+  /*package*/ SNode convertConstant(IntConstant x) {
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
+    SPropertyOperations.set(result, "value", "" + (x.intValue()));
+    return result;
+  }
+
+  /*package*/ SNode convertConstant(LongConstant x) {
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LongLiteral", null);
+    SPropertyOperations.set(result, "value", x.longValue() + "L");
+    return result;
+  }
+
+  /*package*/ SNode convertConstant(ShortConstant x) {
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
+    SPropertyOperations.set(result, "value", "" + (x.shortValue()));
+    return result;
+  }
+
+  /*package*/ SNode convertConstant(StringConstant x) {
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
+    SPropertyOperations.set(result, "value", NameUtil.escapeString(x.stringValue()));
+    return result;
+  }
+
+
+
 
   protected ASTConverter withNewState(ASTConverter.State state) {
     return new ASTConverter.ASTConverterWithState(this, state);
@@ -847,7 +1033,7 @@ public class ASTConverter {
     public String getIdPrefix() {
       // going up by parent states, and concatenating all id preifixes to build one final id prefix 
       // FIXME move it to constructor (since everything is immutable) 
-      StringBuilder sb = new StringBuilder(myIdPrefix);
+      StringBuilder sb = new StringBuilder();
       ASTConverter.State s = this;
       do {
         if (s.myIdPrefix != null) {
@@ -855,7 +1041,8 @@ public class ASTConverter {
         }
         s = s.parentState;
       } while (s != null);
-      return myIdPrefix;
+
+      return sb.toString();
     }
 
     protected SNode resolveTypeVar(String name) {
@@ -904,6 +1091,13 @@ public class ASTConverter {
 
     public ASTConverter.State getState() {
       return myState;
+    }
+  }
+
+  public static   enum Enm {
+    ONE(1);
+
+    Enm(int x) {
     }
   }
 
@@ -974,25 +1168,25 @@ public class ASTConverter {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0a0s() {
+  private static SNode _quotation_createNode_rbndtb_a0a0ab() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0a0a81() {
+  private static SNode _quotation_createNode_rbndtb_a0a0a62() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ProtectedVisibility", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0a0a0s() {
+  private static SNode _quotation_createNode_rbndtb_a0a0a0ab() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PrivateVisibility", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a2a8a12(Object parameter_1) {
+  private static SNode _quotation_createNode_rbndtb_a2a8a92(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);
@@ -1003,13 +1197,13 @@ public class ASTConverter {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0a0c0w() {
+  private static SNode _quotation_createNode_rbndtb_a0a0c0eb() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.WildCardType", null, null, GlobalScope.getInstance(), false);
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a1a1c0w(Object parameter_1) {
+  private static SNode _quotation_createNode_rbndtb_a1a1c0eb(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.UpperBoundType", null, null, GlobalScope.getInstance(), false);
@@ -1020,7 +1214,7 @@ public class ASTConverter {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a1a2c0w(Object parameter_1) {
+  private static SNode _quotation_createNode_rbndtb_a1a2c0eb(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.LowerBoundType", null, null, GlobalScope.getInstance(), false);
@@ -1031,7 +1225,7 @@ public class ASTConverter {
     return quotedNode_2;
   }
 
-  private static SNode _quotation_createNode_rbndtb_a0a6a32(Object parameter_1) {
+  private static SNode _quotation_createNode_rbndtb_a0a6a13(Object parameter_1) {
     SNode quotedNode_2 = null;
     SNode quotedNode_3 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayType", null, null, GlobalScope.getInstance(), false);
@@ -1039,6 +1233,27 @@ public class ASTConverter {
     if (quotedNode_3 != null) {
       quotedNode_2.addChild("componentType", HUtil.copyIfNecessary(quotedNode_3));
     }
+    return quotedNode_2;
+  }
+
+  private static SNode _quotation_createNode_rbndtb_a0a2a83() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setProperty(quotedNode_1, "value", "true");
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_rbndtb_a1a1c0mb() {
+    SNode quotedNode_1 = null;
+    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setProperty(quotedNode_1, "value", "NOT SUPPORTED YET");
+    return quotedNode_1;
+  }
+
+  private static SNode _quotation_createNode_rbndtb_a1a0c0ob(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
 }

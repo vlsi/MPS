@@ -28,6 +28,8 @@ import com.intellij.psi.PsiPrimitiveType;
 import com.intellij.psi.PsiTypeParameter;
 import jetbrains.mps.smodel.DynamicReference;
 import com.intellij.psi.PsiWildcardType;
+import com.intellij.psi.PsiExpression;
+import com.intellij.psi.PsiLiteralExpression;
 import com.intellij.psi.PsiElement;
 import com.intellij.psi.PsiFile;
 import com.intellij.psi.PsiJavaFile;
@@ -39,6 +41,7 @@ import com.intellij.psi.PsiNameValuePair;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class ASTConverter {
   public ASTConverter() {
@@ -102,7 +105,7 @@ public class ASTConverter {
       }
     }
 
-    // interaface's super intefaces 
+    // interface's super intefaces 
     {
       SNode iface = classifier.value;
       if (SNodeOperations.isInstanceOf(iface, "jetbrains.mps.baseLanguage.structure.Interface")) {
@@ -126,6 +129,8 @@ public class ASTConverter {
           if (needToSetId() && SPropertyOperations.getString(cnst, "name") != null) {
             cnst.setId(new SNodeId.Foreign(childConverter.value.getIdPrefix() + "." + SPropertyOperations.getString(cnst, "name")));
           }
+          // TODO maybe we must not touch expressions here (they may be not in the psi index) 
+          // <node> 
           ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(classifier.value, "jetbrains.mps.baseLanguage.structure.EnumClass"), "enumConstant", true)).addElement(cnst);
           return;
         }
@@ -400,6 +405,20 @@ public class ASTConverter {
     return typeVar;
   }
 
+  public SNode convertExpression(PsiExpression exp) {
+    if (exp instanceof PsiLiteralExpression) {
+      Object value = ((PsiLiteralExpression) exp).getValue();
+      if (value instanceof String) {
+        return _quotation_createNode_rbndtb_a0a1a0a8(value.toString());
+      } else if (value instanceof Integer) {
+        SNode c = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
+        SPropertyOperations.set(c, "value", "" + (((Integer) value).intValue()));
+        return c;
+      }
+    }
+    return null;
+  }
+
   public SNode resolveClass(PsiClassType t) {
     PsiClass cls = t.resolve();
 
@@ -544,6 +563,13 @@ public class ASTConverter {
     if (quotedNode_3 != null) {
       quotedNode_2.addChild("bound", HUtil.copyIfNecessary(quotedNode_3));
     }
+    return quotedNode_2;
+  }
+
+  private static SNode _quotation_createNode_rbndtb_a0a1a0a8(Object parameter_1) {
+    SNode quotedNode_2 = null;
+    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
+    SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
     return quotedNode_2;
   }
 
