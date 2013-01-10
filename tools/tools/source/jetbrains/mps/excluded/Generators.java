@@ -101,7 +101,9 @@ public class Generators {
       List<String> sourceGenFolders = new ArrayList<String>();
       List<String> classesGenFolders = new ArrayList<String>();
       for (Pair<String, String> module : Utils.collectMPSCompiledModulesInfo(dir)) {
-        if (!sourcesIncluded.contains(new File(module.o2).getCanonicalPath())) {
+        String sourceCanonical = new File(module.o2).getCanonicalPath();
+        if (!sourcesIncluded.contains(sourceCanonical)) {
+          assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.o1 + "\ngenerates into\n" + module.o2;
           String sFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(module.o2);
           sourceGenFolders.add(sFolder);
         }
@@ -166,6 +168,9 @@ public class Generators {
     for (File dir : sourceDirs) {
       for (Pair<String, String> moduleWithSourceGen : Utils.collectMPSCompiledModulesInfo(dir)) {
         classesGen.add(moduleWithSourceGen.o1 + "/" + AbstractModule.CLASSES_GEN);
+
+        String sourceCanonical = new File(moduleWithSourceGen.o2).getCanonicalPath();
+        assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + moduleWithSourceGen.o1 + "\ngenerates into\n" + moduleWithSourceGen.o2;
         sourceGen.add(moduleWithSourceGen.o2);
       }
     }
