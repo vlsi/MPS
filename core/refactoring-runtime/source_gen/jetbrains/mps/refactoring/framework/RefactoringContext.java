@@ -390,7 +390,7 @@ public class RefactoringContext {
           for (SReference reference : node.getReferences()) {
             if (reference.getRole().equals(oldRole)) {
               if (delete) {
-                node.removeReference(reference);
+                node.setReference(reference.getRole(), null);
               } else {
                 reference.setRole(newRole);
               }

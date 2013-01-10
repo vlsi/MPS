@@ -17,10 +17,7 @@ package jetbrains.mps.newTypesystem;
 
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.*;
-import jetbrains.mps.newTypesystem.rules.LanguageScope;
 import jetbrains.mps.newTypesystem.rules.LanguageScopeExecutor;
-import jetbrains.mps.newTypesystem.rules.LanguageScopeFactory;
-import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.typesystem.TypeSystemReporter;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -54,8 +51,8 @@ public class SubTypingManagerNew extends SubtypingManager {
     if (TypesUtil.isVariable(superType)) return false;
 
     return LanguageScopeExecutor.execWithTwoLanguageScope(
-      subType != null ? subType.getLanguage() : null,
-      superType != null ? superType.getLanguage() : null,
+      subType != null ? jetbrains.mps.util.SNodeOperations.getLanguage(subType) : null,
+      superType != null ? jetbrains.mps.util.SNodeOperations.getLanguage(superType) : null,
       new Computable<Boolean>() {
         @Override
         public Boolean compute() {
@@ -68,8 +65,8 @@ public class SubTypingManagerNew extends SubtypingManager {
   @Override
   public boolean isSubTypeByReplacementRules(final SNode subType, final SNode superType, final boolean isWeak) {
     return LanguageScopeExecutor.execWithTwoLanguageScope(
-      subType != null ? subType.getLanguage() : null,
-      superType != null ? superType.getLanguage() : null,
+      subType != null ? jetbrains.mps.util.SNodeOperations.getLanguage(subType) : null,
+      superType != null ? jetbrains.mps.util.SNodeOperations.getLanguage(superType) : null,
       new Computable<Boolean>() {
         @Override
         public Boolean compute() {

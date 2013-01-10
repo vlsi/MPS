@@ -36,7 +36,7 @@ public class SNodePointer implements SNodeReference {
     if (node == null) return;
     SModel model = node.getModel();
     myModelReference = model.getSModelReference();
-    myNodeId = node.getSNodeId();
+    myNodeId = node.getNodeId();
     myTimestamp = createPointerTimestamp();
   }
 

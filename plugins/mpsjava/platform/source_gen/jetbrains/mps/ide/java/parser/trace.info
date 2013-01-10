@@ -222,7 +222,6 @@
     </scopeInfo>
     <unitInfo nodeId="4223086795208731627" fileName="CommentRecorderParser.java" startLine="11" startPosition="0" endLine="175" endPosition="0" unitName="jetbrains.mps.ide.java.parser.CommentRecorderParser" />
   </root>
-  <root nodeId="4312510064178913419" modelId="r:04c99548-6fc3-4aa6-947d-2dc4e95a3572(jetbrains.mps.ide.java.parser)" />
   <root nodeId="5646944109420291028" modelId="r:04c99548-6fc3-4aa6-947d-2dc4e95a3572(jetbrains.mps.ide.java.parser)">
     <nodeInfo nodeId="5646944109420291102" fileName="ClasspathSelectionTree.java" startLine="28" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="5646944109420291107" fileName="ClasspathSelectionTree.java" startLine="29" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myClasspathObserver" />
@@ -4777,7 +4776,6 @@
     </scopeInfo>
     <unitInfo nodeId="5646944109420325155" fileName="ForeignReferencesConvertor.java" startLine="27" startPosition="0" endLine="213" endPosition="0" unitName="jetbrains.mps.ide.java.parser.ForeignReferencesConvertor" />
   </root>
-  <root nodeId="5646944109420325187" modelId="r:04c99548-6fc3-4aa6-947d-2dc4e95a3572(jetbrains.mps.ide.java.parser)" />
   <root nodeId="5646944109420325914" modelId="r:04c99548-6fc3-4aa6-947d-2dc4e95a3572(jetbrains.mps.ide.java.parser)">
     <nodeInfo nodeId="5646944109420325916" fileName="ClasspathObserver.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="classPathAdded#(Ljetbrains/mps/reloading/IClassPathItem;)V" />
     <nodeInfo nodeId="5646944109420325922" fileName="ClasspathObserver.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="classPathRemoved#(Ljetbrains/mps/reloading/IClassPathItem;)V" />

@@ -12684,8 +12684,11 @@
                           <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="3256085672520562291">
                             <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.1392391688313033226" />
                           </node>
-                          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="3256085672520562292">
-                            <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.614687982853436655" />
+                          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="2298500495078389394">
+                            <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.2298500495078516847" resolveInfo="mps-core" />
+                          </node>
+                          <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="2174034644395459467">
+                            <link role="target" roleId="3ior.841011766565753076" targetNodeId="ffeo.8457323038359664708" resolveInfo="mps-core-ex" />
                           </node>
                           <node role="children" roleId="3ior.7389400916848037006" type="kdzh.BuildMpsLayout_Plugin" typeId="kdzh.6592112598314498926" id="3256085672520562293">
                             <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp3r.ReferenceAntiquotation" typeId="tp3r.1196350785117" id="3256085672520562294">

@@ -46,12 +46,12 @@ public class MappingsMemento {
       currentMapping = myMappingNameAndInputNodeToOutputNodeMap.get(mappingName);
     }
     if (value instanceof SNode) {
-      currentMapping.put(inputNode, ((SNode) value).getSNodeId());
+      currentMapping.put(inputNode, ((SNode) value).getNodeId());
     } else if (value instanceof List) {
       List<SNode> n0 = (List<SNode>) value;
       List<SNodeId> v = new ArrayList<SNodeId>(n0.size());
       for (SNode n : n0) {
-        v.add(n.getSNodeId());
+        v.add(n.getNodeId());
       }
     }
   }

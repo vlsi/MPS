@@ -22,7 +22,6 @@ import jetbrains.mps.newTypesystem.context.CachingTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.TargetTypecheckingContext_Tracer;
 import jetbrains.mps.newTypesystem.context.HoleTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.InferenceTypecheckingContext;
-import jetbrains.mps.newTypesystem.context.SimpleTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.TargetTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.TracingTypecheckingContext;
 import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
@@ -44,13 +43,10 @@ import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.util.Triplet;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.ArrayList;
-import java.util.Collections;
-import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.ListIterator;
@@ -77,7 +73,7 @@ public class TypeContextManager implements CoreComponent {
     @Override
     public void beforeRootRemoved(SModelRootEvent event) {
       synchronized (myLock) {
-        removeContextForNode(new SNodePointer(event.getModel().getSModelReference(), event.getRoot().getSNodeId()));
+        removeContextForNode(new SNodePointer(event.getModel().getSModelReference(), event.getRoot().getNodeId()));
       }
     }
 
@@ -280,7 +276,7 @@ public class TypeContextManager implements CoreComponent {
   private TypeCheckingContext getOrCreateContext(SNode node, ITypeContextOwner owner, boolean createIfAbsent) {
     ModelAccess.assertLegalRead();
     if (node == null) return null;
-    final SNode rootNode = node.getTopmostAncestor();
+    final SNode rootNode = node.getContainingRoot();
     synchronized (myLock) {
       SNodePointer rootNodePointer = new SNodePointer(rootNode);
 
@@ -301,6 +297,10 @@ public class TypeContextManager implements CoreComponent {
           }
           else {
             // reuse the typechecking context
+            if (!createIfAbsent) {
+              return contextHolder.get(node);
+            }
+
             final TypeCheckingContext ctx = contextHolder.acquire(node);
 
             // Dirty hack
@@ -345,7 +345,7 @@ public class TypeContextManager implements CoreComponent {
   private void removeOwnerForRootNodeContext(final SNode node, final ITypeContextOwner owner) {
     ModelAccess.assertLegalRead();
     if (node == null || node.getModel() == null) return;
-    final SNode rootNode = node.getTopmostAncestor();
+    final SNode rootNode = node.getContainingRoot();
     //if node is disposed, then context was removed by beforeModelDisposed/beforeRootDeleted listener
     synchronized (myLock) {
       SNodePointer rootNodePointer = new SNodePointer(rootNode);
@@ -408,7 +408,7 @@ public class TypeContextManager implements CoreComponent {
   }
 
   public TypeCheckingContext createTypeCheckingContextForResolve(SNode node) {
-    SNode root = node.getTopmostAncestor();
+    SNode root = node.getContainingRoot();
     return new CachingTypecheckingContext(root, myTypeChecker);
   }
 
@@ -460,6 +460,7 @@ public class TypeContextManager implements CoreComponent {
     void clear();
     void dispose();
     TypeCheckingContext acquire(SNode node);
+    TypeCheckingContext get(SNode node);
     void release();
     boolean isActive();
   }
@@ -497,6 +498,11 @@ public class TypeContextManager implements CoreComponent {
         myContext.dispose();
         myContext = null;
       }
+    }
+
+    @Override
+    public TypeCheckingContext get(SNode node) {
+      return myContext;
     }
 
     @Override
@@ -543,6 +549,12 @@ public class TypeContextManager implements CoreComponent {
         context.dispose();
       }
       myContexts.clear();
+    }
+
+    @Override
+    public TypeCheckingContext get(SNode node) {
+      assert false;
+      return null;
     }
 
     @Override

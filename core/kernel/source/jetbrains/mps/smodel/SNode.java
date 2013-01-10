@@ -15,11 +15,13 @@
  */
 package jetbrains.mps.smodel;
 
+import jetbrains.mps.MPSCore;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.project.structure.modules.ModuleReference;
+import jetbrains.mps.smodel.adapter.SConceptNodeAdapter;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.AbstractImmutableList;
 import jetbrains.mps.util.Condition;
@@ -36,9 +38,10 @@ import org.jetbrains.mps.migration.annotations.ShortTermMigration;
 import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.language.SLink;
-import org.jetbrains.mps.openapi.model.*;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
+import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -119,7 +122,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
     fireNodeReadAccess();
 
-    if (myModel==null) return null;
+    if (myModel == null) return null;
 
     SModelDescriptor md = myModel.getModelDescriptor();
     return md != null ? md : new FakeModelDescriptor(myModel);
@@ -271,6 +274,21 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     }
   }
 
+  /**
+   * Deletes all nodes in subtree starting with current. Differs from {@link SNode#removeChild(org.jetbrains.mps.openapi.model.SNode)}.
+   */
+  public void delete() {
+    ModelChange.assertLegalNodeChange(myModel, this);
+    assertDisposed();
+
+    SNode p = getParent();
+    if (p != null) {
+      p.removeChild(this);
+    } else if (myModel != null) {
+      myModel.removeRoot(this);
+    }
+  }
+
   public void setReferenceTarget(String role, @Nullable org.jetbrains.mps.openapi.model.SNode target) {
     if (ourMemberAccessModifier != null) {
       role = ourMemberAccessModifier.getNewReferentRole(myModel, myConceptFqName, role);
@@ -351,34 +369,6 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     if (reference != null) {
       assert reference.getSourceNode() == this;
       addReferenceInternal((SReference) reference);
-    }
-  }
-
-  /**
-   * Deletes all nodes in subtree starting with current. Differs from {@link SNode#removeChild(org.jetbrains.mps.openapi.model.SNode)}.
-   */
-  public void delete() {
-    //delete all children
-    List<SNode> children = new ArrayList<SNode>(getChildren());
-    for (SNode child : children) {
-      child.delete();
-    }
-
-    //remove all references
-    while (myReferences.length > 0) {
-      removeReferenceInternal(myReferences[0]);
-    }
-    myReferences = SReference.EMPTY_ARRAY;
-
-    //remove from parent
-    SNode parent1 = getParent();
-    if (parent1 != null) {
-      parent1.removeChild(this);
-    } else {
-      SModel model = getModel();
-      if (model != null && model.isRoot(this)) {
-        model.removeRoot(this);
-      }
     }
   }
 
@@ -513,6 +503,10 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public SConcept getConcept() {
     fireNodeReadAccess();
     fireNodeUnclassifiedReadAccess();
+
+    if (MPSCore.getInstance().isMergeDriverMode()) {
+      return new SConceptNodeAdapter(myConceptFqName);
+    }
 
     return SConceptRepository.getInstance().getConcept(myConceptFqName);
   }
@@ -1197,7 +1191,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     List<SNode> children = getChildren(role);
     int size = children.size();
     if (size > 1) {
-      String errorMessage = "ERROR: SNode.getChild() executed when there are " + size + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getSNodeId().toString() + "] " + getModel().getSModelReference() + "\n";
+      String errorMessage = "ERROR: SNode.getChild() executed when there are " + size + " children for role " + role + " in " + NameUtil.shortNameFromLongName(getClass().getName()) + "[" + getNodeId().toString() + "] " + getModel().getSModelReference() + "\n";
       errorMessage += "they are : " + getChildren(role);
       LOG.error(errorMessage, new Throwable(), this);
     }
@@ -1716,7 +1710,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public String getId() {
-    return getSNodeId().toString();
+    return getNodeId().toString();
   }
 
   @Deprecated
@@ -1725,7 +1719,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public boolean hasId() {
-    return getSNodeId() != null;
+    return getNodeId() != null;
   }
 
   @MigrationScript(script = "Tools/Migration 3.0/Migrate to new SNode methods")

@@ -73,7 +73,7 @@ public class EditorManager {
       } else if (event instanceof SModelPropertyEvent) {
         eventNode = ((SModelPropertyEvent) event).getNode();
       } else continue;
-      result.add(new Pair<SNode, SNodePointer>(eventNode, new SNodePointer(event.getModel().getSModelReference(),eventNode.getSNodeId()) {
+      result.add(new Pair<SNode, SNodePointer>(eventNode, new SNodePointer(event.getModel().getSModelReference(),eventNode.getNodeId()) {
         int myHashCode = -1;
         @Override
         public int hashCode() {

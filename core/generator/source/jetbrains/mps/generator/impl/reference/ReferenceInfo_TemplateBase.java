@@ -36,8 +36,8 @@ public abstract class ReferenceInfo_TemplateBase extends ReferenceInfo {
     if (!generator.isStrict()/* || !generator.isIncremental()*/) return;
 
     // Additional check - reference target should be generated from the same root (required for incremental generation)
-    SNode outputTargetRoot = outputTarget.getTopmostAncestor();
-    SNode outputSourceRoot = myOutputSourceNode.getTopmostAncestor();
+    SNode outputTargetRoot = outputTarget.getContainingRoot();
+    SNode outputSourceRoot = myOutputSourceNode.getContainingRoot();
     SModel model = outputTargetRoot.getModel();
     if (model == null || !model.isRoot(outputTargetRoot)) {
       SNode inputSourceRoot = generator.getOriginalRootByGenerated(outputSourceRoot);

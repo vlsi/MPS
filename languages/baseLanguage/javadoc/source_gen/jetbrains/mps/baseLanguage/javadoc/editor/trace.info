@@ -1670,415 +1670,415 @@
     <unitInfo nodeId="2565027568480905752" fileName="CodeSnippet_Editor.java" startLine="24" startPosition="0" endLine="107" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.CodeSnippet_Editor" />
   </root>
   <root nodeId="2668265993332352057" modelId="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)">
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="23" startPosition="39" endLine="24" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="24" startPosition="42" endLine="25" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="25" startPosition="34" endLine="26" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="26" startPosition="81" endLine="27" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="27" startPosition="46" endLine="28" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="28" startPosition="81" endLine="29" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="29" startPosition="51" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="30" startPosition="81" endLine="31" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="35" startPosition="49" endLine="36" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="39" startPosition="40" endLine="40" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="43" startPosition="91" endLine="44" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="45" startPosition="34" endLine="46" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="47" startPosition="7" endLine="48" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="49" startPosition="32" endLine="50" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="52" startPosition="112" endLine="53" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="54" startPosition="7" endLine="55" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="58" startPosition="85" endLine="59" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="59" startPosition="62" endLine="60" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607848001777" fileName="TextCommentLinePart_KeyMap.java" startLine="63" startPosition="146" endLine="64" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="677166607848011994" fileName="TextCommentLinePart_KeyMap.java" startLine="64" startPosition="21" endLine="65" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7903528363752588029" fileName="TextCommentLinePart_KeyMap.java" startLine="65" startPosition="89" endLine="66" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="677166607848011572" fileName="TextCommentLinePart_KeyMap.java" startLine="66" startPosition="56" endLine="67" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607848013036" fileName="TextCommentLinePart_KeyMap.java" startLine="67" startPosition="134" endLine="68" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607848011585" fileName="TextCommentLinePart_KeyMap.java" startLine="68" startPosition="51" endLine="69" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="72" startPosition="34" endLine="73" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="78" startPosition="49" endLine="79" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="79" startPosition="75" endLine="80" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="83" startPosition="40" endLine="84" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="87" startPosition="91" endLine="88" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="89" startPosition="34" endLine="90" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="91" startPosition="7" endLine="92" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="93" startPosition="32" endLine="94" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="96" startPosition="112" endLine="97" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="98" startPosition="7" endLine="99" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="102" startPosition="85" endLine="103" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="103" startPosition="62" endLine="104" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332362571" fileName="TextCommentLinePart_KeyMap.java" startLine="107" startPosition="146" endLine="108" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2668265993332362573" fileName="TextCommentLinePart_KeyMap.java" startLine="108" startPosition="44" endLine="109" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668265993332362576" fileName="TextCommentLinePart_KeyMap.java" startLine="109" startPosition="26" endLine="110" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2835762905325592876" fileName="TextCommentLinePart_KeyMap.java" startLine="110" startPosition="26" endLine="111" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668265993332364350" fileName="TextCommentLinePart_KeyMap.java" startLine="111" startPosition="25" endLine="112" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668265993332377101" fileName="TextCommentLinePart_KeyMap.java" startLine="112" startPosition="16" endLine="113" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332377109" fileName="TextCommentLinePart_KeyMap.java" startLine="113" startPosition="67" endLine="114" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332362609" fileName="TextCommentLinePart_KeyMap.java" startLine="116" startPosition="26" endLine="117" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2668265993332363786" fileName="TextCommentLinePart_KeyMap.java" startLine="118" startPosition="168" endLine="119" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7412562200027821317" fileName="TextCommentLinePart_KeyMap.java" startLine="120" startPosition="176" endLine="121" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7412562200027821329" fileName="TextCommentLinePart_KeyMap.java" startLine="121" startPosition="301" endLine="122" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7412562200027821336" fileName="TextCommentLinePart_KeyMap.java" startLine="122" startPosition="65" endLine="123" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332362650" fileName="TextCommentLinePart_KeyMap.java" startLine="124" startPosition="11" endLine="125" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332362655" fileName="TextCommentLinePart_KeyMap.java" startLine="126" startPosition="16" endLine="127" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2668265993332376889" fileName="TextCommentLinePart_KeyMap.java" startLine="127" startPosition="44" endLine="128" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668265993332376896" fileName="TextCommentLinePart_KeyMap.java" startLine="128" startPosition="140" endLine="129" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668265993332376903" fileName="TextCommentLinePart_KeyMap.java" startLine="129" startPosition="149" endLine="130" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332376911" fileName="TextCommentLinePart_KeyMap.java" startLine="130" startPosition="106" endLine="131" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2835762905325592830" fileName="TextCommentLinePart_KeyMap.java" startLine="131" startPosition="108" endLine="132" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332376932" fileName="TextCommentLinePart_KeyMap.java" startLine="133" startPosition="304" endLine="134" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332376954" fileName="TextCommentLinePart_KeyMap.java" startLine="135" startPosition="18" endLine="136" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332376958" fileName="TextCommentLinePart_KeyMap.java" startLine="137" startPosition="11" endLine="138" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332376963" fileName="TextCommentLinePart_KeyMap.java" startLine="138" startPosition="88" endLine="139" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="2668265993332376964" fileName="TextCommentLinePart_KeyMap.java" startLine="139" startPosition="0" endLine="140" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332376968" fileName="TextCommentLinePart_KeyMap.java" startLine="140" startPosition="46" endLine="141" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332376973" fileName="TextCommentLinePart_KeyMap.java" startLine="141" startPosition="59" endLine="142" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332362748" fileName="TextCommentLinePart_KeyMap.java" startLine="142" startPosition="87" endLine="143" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332362752" fileName="TextCommentLinePart_KeyMap.java" startLine="145" startPosition="14" endLine="146" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="2668265993332376994" fileName="TextCommentLinePart_KeyMap.java" startLine="147" startPosition="149" endLine="148" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7689048275300270905" fileName="TextCommentLinePart_KeyMap.java" startLine="148" startPosition="62" endLine="149" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668265993332377002" fileName="TextCommentLinePart_KeyMap.java" startLine="150" startPosition="92" endLine="151" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332377006" fileName="TextCommentLinePart_KeyMap.java" startLine="151" startPosition="53" endLine="152" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332377018" fileName="TextCommentLinePart_KeyMap.java" startLine="153" startPosition="18" endLine="154" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332377039" fileName="TextCommentLinePart_KeyMap.java" startLine="155" startPosition="11" endLine="156" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332377056" fileName="TextCommentLinePart_KeyMap.java" startLine="157" startPosition="291" endLine="158" endPosition="278" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668265993332377066" fileName="TextCommentLinePart_KeyMap.java" startLine="158" startPosition="278" endLine="159" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332377071" fileName="TextCommentLinePart_KeyMap.java" startLine="159" startPosition="63" endLine="160" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332362860" fileName="TextCommentLinePart_KeyMap.java" startLine="161" startPosition="9" endLine="162" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="166" startPosition="34" endLine="167" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332376951" fileName="TextCommentLinePart_KeyMap.java" startLine="170" startPosition="70" endLine="171" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332377015" fileName="TextCommentLinePart_KeyMap.java" startLine="174" startPosition="66" endLine="175" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="180" startPosition="49" endLine="181" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="184" startPosition="40" endLine="185" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="188" startPosition="91" endLine="189" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="190" startPosition="34" endLine="191" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="192" startPosition="7" endLine="193" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="194" startPosition="32" endLine="195" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="197" startPosition="112" endLine="198" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="199" startPosition="7" endLine="200" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="203" startPosition="85" endLine="204" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="204" startPosition="62" endLine="205" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849361438" fileName="TextCommentLinePart_KeyMap.java" startLine="208" startPosition="146" endLine="209" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="677166607849361442" fileName="TextCommentLinePart_KeyMap.java" startLine="209" startPosition="75" endLine="210" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="677166607849363892" fileName="TextCommentLinePart_KeyMap.java" startLine="210" startPosition="56" endLine="211" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="677166607849364196" fileName="TextCommentLinePart_KeyMap.java" startLine="212" startPosition="69" endLine="213" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849364204" fileName="TextCommentLinePart_KeyMap.java" startLine="215" startPosition="63" endLine="216" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849364227" fileName="TextCommentLinePart_KeyMap.java" startLine="217" startPosition="18" endLine="218" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849364235" fileName="TextCommentLinePart_KeyMap.java" startLine="218" startPosition="70" endLine="219" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849364971" fileName="TextCommentLinePart_KeyMap.java" startLine="221" startPosition="9" endLine="222" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849361507" fileName="TextCommentLinePart_KeyMap.java" startLine="222" startPosition="63" endLine="223" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="677166607849361511" fileName="TextCommentLinePart_KeyMap.java" startLine="224" startPosition="86" endLine="225" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="677166607849361513" fileName="TextCommentLinePart_KeyMap.java" startLine="225" startPosition="40" endLine="226" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="677166607849361516" fileName="TextCommentLinePart_KeyMap.java" startLine="226" startPosition="69" endLine="227" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="677166607849361522" fileName="TextCommentLinePart_KeyMap.java" startLine="229" startPosition="29" endLine="230" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849361532" fileName="TextCommentLinePart_KeyMap.java" startLine="230" startPosition="78" endLine="231" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849361549" fileName="TextCommentLinePart_KeyMap.java" startLine="235" startPosition="33" endLine="236" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="677166607849366937" fileName="TextCommentLinePart_KeyMap.java" startLine="237" startPosition="170" endLine="238" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="7340996077143441481" fileName="TextCommentLinePart_KeyMap.java" startLine="239" startPosition="178" endLine="240" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="7340996077143441493" fileName="TextCommentLinePart_KeyMap.java" startLine="240" startPosition="304" endLine="241" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7340996077143441500" fileName="TextCommentLinePart_KeyMap.java" startLine="241" startPosition="67" endLine="242" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849361590" fileName="TextCommentLinePart_KeyMap.java" startLine="243" startPosition="13" endLine="244" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="677166607849361595" fileName="TextCommentLinePart_KeyMap.java" startLine="245" startPosition="18" endLine="246" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="677166607849361600" fileName="TextCommentLinePart_KeyMap.java" startLine="248" startPosition="33" endLine="249" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="677166607849361609" fileName="TextCommentLinePart_KeyMap.java" startLine="249" startPosition="146" endLine="250" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="677166607849361616" fileName="TextCommentLinePart_KeyMap.java" startLine="250" startPosition="155" endLine="251" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849361624" fileName="TextCommentLinePart_KeyMap.java" startLine="251" startPosition="117" endLine="252" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="677166607849367303" fileName="TextCommentLinePart_KeyMap.java" startLine="252" startPosition="67" endLine="253" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849361643" fileName="TextCommentLinePart_KeyMap.java" startLine="254" startPosition="333" endLine="255" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849361665" fileName="TextCommentLinePart_KeyMap.java" startLine="256" startPosition="24" endLine="257" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849361669" fileName="TextCommentLinePart_KeyMap.java" startLine="258" startPosition="17" endLine="259" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849361674" fileName="TextCommentLinePart_KeyMap.java" startLine="259" startPosition="93" endLine="260" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="677166607849361675" fileName="TextCommentLinePart_KeyMap.java" startLine="260" startPosition="0" endLine="261" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849367672" fileName="TextCommentLinePart_KeyMap.java" startLine="261" startPosition="53" endLine="262" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849367679" fileName="TextCommentLinePart_KeyMap.java" startLine="262" startPosition="71" endLine="263" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849361686" fileName="TextCommentLinePart_KeyMap.java" startLine="265" startPosition="15" endLine="266" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="677166607849361690" fileName="TextCommentLinePart_KeyMap.java" startLine="268" startPosition="16" endLine="269" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
-    <nodeInfo nodeId="677166607849369947" fileName="TextCommentLinePart_KeyMap.java" startLine="270" startPosition="151" endLine="271" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849369955" fileName="TextCommentLinePart_KeyMap.java" startLine="272" startPosition="197" endLine="273" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849369959" fileName="TextCommentLinePart_KeyMap.java" startLine="273" startPosition="61" endLine="274" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849369971" fileName="TextCommentLinePart_KeyMap.java" startLine="275" startPosition="20" endLine="276" endPosition="318" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849369984" fileName="TextCommentLinePart_KeyMap.java" startLine="277" startPosition="13" endLine="278" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849369989" fileName="TextCommentLinePart_KeyMap.java" startLine="278" startPosition="67" endLine="279" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849370001" fileName="TextCommentLinePart_KeyMap.java" startLine="280" startPosition="293" endLine="281" endPosition="279" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="677166607849370011" fileName="TextCommentLinePart_KeyMap.java" startLine="281" startPosition="279" endLine="282" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849370018" fileName="TextCommentLinePart_KeyMap.java" startLine="282" startPosition="65" endLine="283" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849361790" fileName="TextCommentLinePart_KeyMap.java" startLine="284" startPosition="11" endLine="285" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="677166607849370654" fileName="TextCommentLinePart_KeyMap.java" startLine="287" startPosition="14" endLine="288" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849361846" fileName="TextCommentLinePart_KeyMap.java" startLine="288" startPosition="230" endLine="289" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="293" startPosition="34" endLine="294" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="677166607849364245" fileName="TextCommentLinePart_KeyMap.java" startLine="297" startPosition="63" endLine="298" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="677166607849361662" fileName="TextCommentLinePart_KeyMap.java" startLine="301" startPosition="81" endLine="302" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="677166607849369968" fileName="TextCommentLinePart_KeyMap.java" startLine="305" startPosition="69" endLine="306" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="677166607849361805" fileName="TextCommentLinePart_KeyMap.java" startLine="309" startPosition="64" endLine="310" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="25" startPosition="34" endLine="27" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="27" startPosition="46" endLine="29" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="29" startPosition="51" endLine="31" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2668265993332376952" fileName="TextCommentLinePart_KeyMap.java" startLine="135" startPosition="16" endLine="137" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2668265993332377016" fileName="TextCommentLinePart_KeyMap.java" startLine="153" startPosition="16" endLine="155" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="677166607849361663" fileName="TextCommentLinePart_KeyMap.java" startLine="256" startPosition="22" endLine="258" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="677166607849369969" fileName="TextCommentLinePart_KeyMap.java" startLine="275" startPosition="18" endLine="277" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="35" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextCommentLinePart_KeyMap_Action0#()V" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="39" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="44" startPosition="62" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="48" startPosition="49" endLine="51" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="51" startPosition="7" endLine="54" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="72" startPosition="0" endLine="75" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="83" startPosition="0" endLine="86" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="88" startPosition="62" endLine="91" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="92" startPosition="49" endLine="95" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="95" startPosition="7" endLine="98" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="166" startPosition="0" endLine="169" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="2668265993332376951" fileName="TextCommentLinePart_KeyMap.java" startLine="170" startPosition="0" endLine="173" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_yh032p_a0a6a0a0h0e2#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="2668265993332377015" fileName="TextCommentLinePart_KeyMap.java" startLine="174" startPosition="0" endLine="177" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_yh032p_a0c0b0a7a4c#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="180" startPosition="0" endLine="183" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextCommentLinePart_KeyMap_Action2#()V" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="184" startPosition="0" endLine="187" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="189" startPosition="62" endLine="192" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="193" startPosition="49" endLine="196" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="196" startPosition="7" endLine="199" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="677166607849364225" fileName="TextCommentLinePart_KeyMap.java" startLine="217" startPosition="16" endLine="220" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="677166607849361806" fileName="TextCommentLinePart_KeyMap.java" startLine="287" startPosition="12" endLine="290" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="293" startPosition="0" endLine="296" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="677166607849364245" fileName="TextCommentLinePart_KeyMap.java" startLine="297" startPosition="0" endLine="300" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_yh032p_a0b0d0e3#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="677166607849361662" fileName="TextCommentLinePart_KeyMap.java" startLine="301" startPosition="0" endLine="304" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_yh032p_a0a5a0a0a0a1a0a0e0a3a4d#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="677166607849369968" fileName="TextCommentLinePart_KeyMap.java" startLine="305" startPosition="0" endLine="308" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_yh032p_a0b0b0a4a0d0e3#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="677166607849361805" fileName="TextCommentLinePart_KeyMap.java" startLine="309" startPosition="0" endLine="312" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_yh032p_a0d0e3#(Ljava/lang/String;)Z" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="51" startPosition="7" endLine="55" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="58" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="78" startPosition="0" endLine="82" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextCommentLinePart_KeyMap_Action1#()V" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="95" startPosition="7" endLine="99" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="102" startPosition="0" endLine="106" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="196" startPosition="7" endLine="200" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="203" startPosition="0" endLine="207" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="677166607849361520" fileName="TextCommentLinePart_KeyMap.java" startLine="229" startPosition="0" endLine="233" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2668265993332376930" fileName="TextCommentLinePart_KeyMap.java" startLine="132" startPosition="170" endLine="137" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="677166607849361641" fileName="TextCommentLinePart_KeyMap.java" startLine="253" startPosition="176" endLine="258" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668265993332377000" fileName="TextCommentLinePart_KeyMap.java" startLine="149" startPosition="130" endLine="155" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="677166607849364202" fileName="TextCommentLinePart_KeyMap.java" startLine="214" startPosition="62" endLine="220" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="677166607849361519" fileName="TextCommentLinePart_KeyMap.java" startLine="227" startPosition="69" endLine="233" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849369953" fileName="TextCommentLinePart_KeyMap.java" startLine="271" startPosition="70" endLine="277" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668265993332363784" fileName="TextCommentLinePart_KeyMap.java" startLine="117" startPosition="59" endLine="124" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="677166607849366935" fileName="TextCommentLinePart_KeyMap.java" startLine="236" startPosition="55" endLine="243" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="63" startPosition="0" endLine="71" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
-    <nodeInfo nodeId="677166607849364200" fileName="TextCommentLinePart_KeyMap.java" startLine="213" startPosition="39" endLine="221" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="23" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextCommentLinePart_KeyMap#()V" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="43" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="87" startPosition="0" endLine="101" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="188" startPosition="0" endLine="202" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <nodeInfo nodeId="2668265993332376986" fileName="TextCommentLinePart_KeyMap.java" startLine="146" startPosition="71" endLine="161" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="677166607849369939" fileName="TextCommentLinePart_KeyMap.java" startLine="269" startPosition="67" endLine="284" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="677166607849361598" fileName="TextCommentLinePart_KeyMap.java" startLine="248" startPosition="0" endLine="265" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
-    <nodeInfo nodeId="2668265993332362653" fileName="TextCommentLinePart_KeyMap.java" startLine="126" startPosition="14" endLine="144" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2668265993332362750" fileName="TextCommentLinePart_KeyMap.java" startLine="145" startPosition="12" endLine="163" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="677166607849361688" fileName="TextCommentLinePart_KeyMap.java" startLine="268" startPosition="14" endLine="286" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="677166607849361597" fileName="TextCommentLinePart_KeyMap.java" startLine="246" startPosition="40" endLine="265" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="677166607849361593" fileName="TextCommentLinePart_KeyMap.java" startLine="245" startPosition="16" endLine="267" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="2668265993332362607" fileName="TextCommentLinePart_KeyMap.java" startLine="115" startPosition="24" endLine="144" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="677166607849361547" fileName="TextCommentLinePart_KeyMap.java" startLine="234" startPosition="31" endLine="267" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668265993332362604" fileName="TextCommentLinePart_KeyMap.java" startLine="114" startPosition="94" endLine="163" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="677166607849361544" fileName="TextCommentLinePart_KeyMap.java" startLine="233" startPosition="11" endLine="286" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="107" startPosition="0" endLine="165" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
-    <nodeInfo nodeId="677166607849361446" fileName="TextCommentLinePart_KeyMap.java" startLine="211" startPosition="91" endLine="290" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="208" startPosition="0" endLine="292" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="35" startPosition="49" endLine="36" endPosition="38" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="39" startPosition="40" endLine="40" endPosition="19" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="45" startPosition="34" endLine="46" endPosition="21" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="49" startPosition="32" endLine="50" endPosition="21" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="52" startPosition="112" endLine="53" endPosition="20" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="72" startPosition="34" endLine="73" endPosition="22" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="83" startPosition="40" endLine="84" endPosition="19" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="89" startPosition="34" endLine="90" endPosition="21" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="93" startPosition="32" endLine="94" endPosition="21" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="96" startPosition="112" endLine="97" endPosition="20" />
-    <scopeInfo nodeId="2668265993332363785" fileName="TextCommentLinePart_KeyMap.java" startLine="118" startPosition="168" endLine="119" endPosition="55" />
-    <scopeInfo nodeId="2668265993332376931" fileName="TextCommentLinePart_KeyMap.java" startLine="133" startPosition="304" endLine="134" endPosition="171" />
-    <scopeInfo nodeId="2668265993332376953" fileName="TextCommentLinePart_KeyMap.java" startLine="135" startPosition="18" endLine="136" endPosition="22" />
-    <scopeInfo nodeId="2668265993332377017" fileName="TextCommentLinePart_KeyMap.java" startLine="153" startPosition="18" endLine="154" endPosition="178" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="166" startPosition="34" endLine="167" endPosition="27" />
-    <scopeInfo nodeId="2668265993332376951" fileName="TextCommentLinePart_KeyMap.java" startLine="170" startPosition="70" endLine="171" endPosition="45" />
-    <scopeInfo nodeId="2668265993332377015" fileName="TextCommentLinePart_KeyMap.java" startLine="174" startPosition="66" endLine="175" endPosition="46" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="180" startPosition="49" endLine="181" endPosition="38" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="184" startPosition="40" endLine="185" endPosition="19" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="190" startPosition="34" endLine="191" endPosition="21" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="194" startPosition="32" endLine="195" endPosition="21" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="197" startPosition="112" endLine="198" endPosition="20" />
-    <scopeInfo nodeId="677166607849364203" fileName="TextCommentLinePart_KeyMap.java" startLine="215" startPosition="63" endLine="216" endPosition="228" />
-    <scopeInfo nodeId="677166607849366936" fileName="TextCommentLinePart_KeyMap.java" startLine="237" startPosition="170" endLine="238" endPosition="57" />
-    <scopeInfo nodeId="677166607849361642" fileName="TextCommentLinePart_KeyMap.java" startLine="254" startPosition="333" endLine="255" endPosition="189" />
-    <scopeInfo nodeId="677166607849361664" fileName="TextCommentLinePart_KeyMap.java" startLine="256" startPosition="24" endLine="257" endPosition="34" />
-    <scopeInfo nodeId="677166607849369970" fileName="TextCommentLinePart_KeyMap.java" startLine="275" startPosition="20" endLine="276" endPosition="318" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="293" startPosition="34" endLine="294" endPosition="23" />
-    <scopeInfo nodeId="677166607849364245" fileName="TextCommentLinePart_KeyMap.java" startLine="297" startPosition="63" endLine="298" endPosition="46" />
-    <scopeInfo nodeId="677166607849361662" fileName="TextCommentLinePart_KeyMap.java" startLine="301" startPosition="81" endLine="302" endPosition="45" />
-    <scopeInfo nodeId="677166607849369968" fileName="TextCommentLinePart_KeyMap.java" startLine="305" startPosition="69" endLine="306" endPosition="46" />
-    <scopeInfo nodeId="677166607849361805" fileName="TextCommentLinePart_KeyMap.java" startLine="309" startPosition="64" endLine="310" endPosition="45" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="25" startPosition="34" endLine="27" endPosition="46" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="27" startPosition="46" endLine="29" endPosition="51" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="29" startPosition="51" endLine="31" endPosition="47" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="58" startPosition="85" endLine="60" endPosition="115">
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="25" startPosition="39" endLine="26" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="26" startPosition="42" endLine="27" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="27" startPosition="34" endLine="28" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="28" startPosition="81" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="29" startPosition="46" endLine="30" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="30" startPosition="81" endLine="31" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="31" startPosition="51" endLine="32" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="32" startPosition="81" endLine="33" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="37" startPosition="49" endLine="38" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="41" startPosition="40" endLine="42" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="45" startPosition="91" endLine="46" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="47" startPosition="34" endLine="48" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="49" startPosition="7" endLine="50" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="51" startPosition="32" endLine="52" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="54" startPosition="161" endLine="55" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="56" startPosition="7" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="60" startPosition="85" endLine="61" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="61" startPosition="62" endLine="62" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607848001777" fileName="TextCommentLinePart_KeyMap.java" startLine="65" startPosition="146" endLine="66" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="677166607848011994" fileName="TextCommentLinePart_KeyMap.java" startLine="66" startPosition="21" endLine="67" endPosition="89" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7903528363752588029" fileName="TextCommentLinePart_KeyMap.java" startLine="67" startPosition="89" endLine="68" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="677166607848011572" fileName="TextCommentLinePart_KeyMap.java" startLine="68" startPosition="56" endLine="69" endPosition="134" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607848013036" fileName="TextCommentLinePart_KeyMap.java" startLine="69" startPosition="134" endLine="70" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607848011585" fileName="TextCommentLinePart_KeyMap.java" startLine="70" startPosition="51" endLine="71" endPosition="79" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="74" startPosition="34" endLine="75" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="80" startPosition="49" endLine="81" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="81" startPosition="75" endLine="82" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="85" startPosition="40" endLine="86" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="89" startPosition="91" endLine="90" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="91" startPosition="34" endLine="92" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="93" startPosition="7" endLine="94" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="95" startPosition="32" endLine="96" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="98" startPosition="161" endLine="99" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="100" startPosition="7" endLine="101" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="104" startPosition="85" endLine="105" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="105" startPosition="62" endLine="106" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332362571" fileName="TextCommentLinePart_KeyMap.java" startLine="109" startPosition="146" endLine="110" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2668265993332362573" fileName="TextCommentLinePart_KeyMap.java" startLine="110" startPosition="44" endLine="111" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668265993332362576" fileName="TextCommentLinePart_KeyMap.java" startLine="111" startPosition="26" endLine="112" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2835762905325592876" fileName="TextCommentLinePart_KeyMap.java" startLine="112" startPosition="26" endLine="113" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668265993332364350" fileName="TextCommentLinePart_KeyMap.java" startLine="113" startPosition="25" endLine="114" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668265993332377101" fileName="TextCommentLinePart_KeyMap.java" startLine="114" startPosition="16" endLine="115" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332377109" fileName="TextCommentLinePart_KeyMap.java" startLine="115" startPosition="67" endLine="116" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332362609" fileName="TextCommentLinePart_KeyMap.java" startLine="118" startPosition="26" endLine="119" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2668265993332363786" fileName="TextCommentLinePart_KeyMap.java" startLine="120" startPosition="168" endLine="121" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7412562200027821317" fileName="TextCommentLinePart_KeyMap.java" startLine="122" startPosition="176" endLine="123" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7412562200027821329" fileName="TextCommentLinePart_KeyMap.java" startLine="123" startPosition="301" endLine="124" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7412562200027821336" fileName="TextCommentLinePart_KeyMap.java" startLine="124" startPosition="65" endLine="125" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332362650" fileName="TextCommentLinePart_KeyMap.java" startLine="126" startPosition="11" endLine="127" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332362655" fileName="TextCommentLinePart_KeyMap.java" startLine="128" startPosition="16" endLine="129" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2668265993332376889" fileName="TextCommentLinePart_KeyMap.java" startLine="129" startPosition="44" endLine="130" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668265993332376896" fileName="TextCommentLinePart_KeyMap.java" startLine="130" startPosition="140" endLine="131" endPosition="149" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668265993332376903" fileName="TextCommentLinePart_KeyMap.java" startLine="131" startPosition="149" endLine="132" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332376911" fileName="TextCommentLinePart_KeyMap.java" startLine="132" startPosition="106" endLine="133" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2835762905325592830" fileName="TextCommentLinePart_KeyMap.java" startLine="133" startPosition="108" endLine="134" endPosition="170" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332376932" fileName="TextCommentLinePart_KeyMap.java" startLine="135" startPosition="304" endLine="136" endPosition="171" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332376954" fileName="TextCommentLinePart_KeyMap.java" startLine="137" startPosition="18" endLine="138" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332376958" fileName="TextCommentLinePart_KeyMap.java" startLine="139" startPosition="11" endLine="140" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332376963" fileName="TextCommentLinePart_KeyMap.java" startLine="140" startPosition="88" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="2668265993332376964" fileName="TextCommentLinePart_KeyMap.java" startLine="141" startPosition="0" endLine="142" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332376968" fileName="TextCommentLinePart_KeyMap.java" startLine="142" startPosition="46" endLine="143" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332376973" fileName="TextCommentLinePart_KeyMap.java" startLine="143" startPosition="59" endLine="144" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332362748" fileName="TextCommentLinePart_KeyMap.java" startLine="144" startPosition="87" endLine="145" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332362752" fileName="TextCommentLinePart_KeyMap.java" startLine="147" startPosition="14" endLine="148" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="2668265993332376994" fileName="TextCommentLinePart_KeyMap.java" startLine="149" startPosition="149" endLine="150" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7689048275300270905" fileName="TextCommentLinePart_KeyMap.java" startLine="150" startPosition="62" endLine="151" endPosition="130" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668265993332377002" fileName="TextCommentLinePart_KeyMap.java" startLine="152" startPosition="92" endLine="153" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332377006" fileName="TextCommentLinePart_KeyMap.java" startLine="153" startPosition="53" endLine="154" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332377018" fileName="TextCommentLinePart_KeyMap.java" startLine="155" startPosition="18" endLine="156" endPosition="178" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332377039" fileName="TextCommentLinePart_KeyMap.java" startLine="157" startPosition="11" endLine="158" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332377056" fileName="TextCommentLinePart_KeyMap.java" startLine="159" startPosition="291" endLine="160" endPosition="278" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668265993332377066" fileName="TextCommentLinePart_KeyMap.java" startLine="160" startPosition="278" endLine="161" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332377071" fileName="TextCommentLinePart_KeyMap.java" startLine="161" startPosition="63" endLine="162" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332362860" fileName="TextCommentLinePart_KeyMap.java" startLine="163" startPosition="9" endLine="164" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="168" startPosition="34" endLine="169" endPosition="27" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332376951" fileName="TextCommentLinePart_KeyMap.java" startLine="172" startPosition="70" endLine="173" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332377015" fileName="TextCommentLinePart_KeyMap.java" startLine="176" startPosition="66" endLine="177" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="182" startPosition="49" endLine="183" endPosition="38" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="186" startPosition="40" endLine="187" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="190" startPosition="91" endLine="191" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="192" startPosition="34" endLine="193" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="194" startPosition="7" endLine="195" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="196" startPosition="32" endLine="197" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="199" startPosition="161" endLine="200" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="201" startPosition="7" endLine="202" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="205" startPosition="85" endLine="206" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="206" startPosition="62" endLine="207" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849361438" fileName="TextCommentLinePart_KeyMap.java" startLine="210" startPosition="146" endLine="211" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="677166607849361442" fileName="TextCommentLinePart_KeyMap.java" startLine="211" startPosition="75" endLine="212" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="677166607849363892" fileName="TextCommentLinePart_KeyMap.java" startLine="212" startPosition="56" endLine="213" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="677166607849364196" fileName="TextCommentLinePart_KeyMap.java" startLine="214" startPosition="69" endLine="215" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849364204" fileName="TextCommentLinePart_KeyMap.java" startLine="217" startPosition="63" endLine="218" endPosition="228" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849364227" fileName="TextCommentLinePart_KeyMap.java" startLine="219" startPosition="18" endLine="220" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849364235" fileName="TextCommentLinePart_KeyMap.java" startLine="220" startPosition="70" endLine="221" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849364971" fileName="TextCommentLinePart_KeyMap.java" startLine="223" startPosition="9" endLine="224" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849361507" fileName="TextCommentLinePart_KeyMap.java" startLine="224" startPosition="63" endLine="225" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="677166607849361511" fileName="TextCommentLinePart_KeyMap.java" startLine="226" startPosition="86" endLine="227" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="677166607849361513" fileName="TextCommentLinePart_KeyMap.java" startLine="227" startPosition="40" endLine="228" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="677166607849361516" fileName="TextCommentLinePart_KeyMap.java" startLine="228" startPosition="69" endLine="229" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="677166607849361522" fileName="TextCommentLinePart_KeyMap.java" startLine="231" startPosition="29" endLine="232" endPosition="78" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849361532" fileName="TextCommentLinePart_KeyMap.java" startLine="232" startPosition="78" endLine="233" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849361549" fileName="TextCommentLinePart_KeyMap.java" startLine="237" startPosition="33" endLine="238" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="677166607849366937" fileName="TextCommentLinePart_KeyMap.java" startLine="239" startPosition="170" endLine="240" endPosition="57" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="7340996077143441481" fileName="TextCommentLinePart_KeyMap.java" startLine="241" startPosition="178" endLine="242" endPosition="304" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="7340996077143441493" fileName="TextCommentLinePart_KeyMap.java" startLine="242" startPosition="304" endLine="243" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7340996077143441500" fileName="TextCommentLinePart_KeyMap.java" startLine="243" startPosition="67" endLine="244" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849361590" fileName="TextCommentLinePart_KeyMap.java" startLine="245" startPosition="13" endLine="246" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="677166607849361595" fileName="TextCommentLinePart_KeyMap.java" startLine="247" startPosition="18" endLine="248" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="677166607849361600" fileName="TextCommentLinePart_KeyMap.java" startLine="250" startPosition="33" endLine="251" endPosition="146" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="677166607849361609" fileName="TextCommentLinePart_KeyMap.java" startLine="251" startPosition="146" endLine="252" endPosition="155" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="677166607849361616" fileName="TextCommentLinePart_KeyMap.java" startLine="252" startPosition="155" endLine="253" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849361624" fileName="TextCommentLinePart_KeyMap.java" startLine="253" startPosition="117" endLine="254" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="677166607849367303" fileName="TextCommentLinePart_KeyMap.java" startLine="254" startPosition="67" endLine="255" endPosition="176" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849361643" fileName="TextCommentLinePart_KeyMap.java" startLine="256" startPosition="333" endLine="257" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849361665" fileName="TextCommentLinePart_KeyMap.java" startLine="258" startPosition="24" endLine="259" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849361669" fileName="TextCommentLinePart_KeyMap.java" startLine="260" startPosition="17" endLine="261" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849361674" fileName="TextCommentLinePart_KeyMap.java" startLine="261" startPosition="93" endLine="262" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="677166607849361675" fileName="TextCommentLinePart_KeyMap.java" startLine="262" startPosition="0" endLine="263" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849367672" fileName="TextCommentLinePart_KeyMap.java" startLine="263" startPosition="53" endLine="264" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849367679" fileName="TextCommentLinePart_KeyMap.java" startLine="264" startPosition="71" endLine="265" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849361686" fileName="TextCommentLinePart_KeyMap.java" startLine="267" startPosition="15" endLine="268" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="677166607849361690" fileName="TextCommentLinePart_KeyMap.java" startLine="270" startPosition="16" endLine="271" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="677166607849369947" fileName="TextCommentLinePart_KeyMap.java" startLine="272" startPosition="151" endLine="273" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849369955" fileName="TextCommentLinePart_KeyMap.java" startLine="274" startPosition="197" endLine="275" endPosition="61" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849369959" fileName="TextCommentLinePart_KeyMap.java" startLine="275" startPosition="61" endLine="276" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849369971" fileName="TextCommentLinePart_KeyMap.java" startLine="277" startPosition="20" endLine="278" endPosition="318" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849369984" fileName="TextCommentLinePart_KeyMap.java" startLine="279" startPosition="13" endLine="280" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849369989" fileName="TextCommentLinePart_KeyMap.java" startLine="280" startPosition="67" endLine="281" endPosition="95" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849370001" fileName="TextCommentLinePart_KeyMap.java" startLine="282" startPosition="293" endLine="283" endPosition="279" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="677166607849370011" fileName="TextCommentLinePart_KeyMap.java" startLine="283" startPosition="279" endLine="284" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849370018" fileName="TextCommentLinePart_KeyMap.java" startLine="284" startPosition="65" endLine="285" endPosition="101" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849361790" fileName="TextCommentLinePart_KeyMap.java" startLine="286" startPosition="11" endLine="287" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="677166607849370654" fileName="TextCommentLinePart_KeyMap.java" startLine="289" startPosition="14" endLine="290" endPosition="230" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849361846" fileName="TextCommentLinePart_KeyMap.java" startLine="290" startPosition="230" endLine="291" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="295" startPosition="34" endLine="296" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="677166607849364245" fileName="TextCommentLinePart_KeyMap.java" startLine="299" startPosition="63" endLine="300" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="677166607849361662" fileName="TextCommentLinePart_KeyMap.java" startLine="303" startPosition="81" endLine="304" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="677166607849369968" fileName="TextCommentLinePart_KeyMap.java" startLine="307" startPosition="69" endLine="308" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="677166607849361805" fileName="TextCommentLinePart_KeyMap.java" startLine="311" startPosition="64" endLine="312" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="27" startPosition="34" endLine="29" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="29" startPosition="46" endLine="31" endPosition="51" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="31" startPosition="51" endLine="33" endPosition="47" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2668265993332376952" fileName="TextCommentLinePart_KeyMap.java" startLine="137" startPosition="16" endLine="139" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2668265993332377016" fileName="TextCommentLinePart_KeyMap.java" startLine="155" startPosition="16" endLine="157" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="677166607849361663" fileName="TextCommentLinePart_KeyMap.java" startLine="258" startPosition="22" endLine="260" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="677166607849369969" fileName="TextCommentLinePart_KeyMap.java" startLine="277" startPosition="18" endLine="279" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextCommentLinePart_KeyMap_Action0#()V" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="46" startPosition="62" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="50" startPosition="49" endLine="53" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="53" startPosition="7" endLine="56" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="74" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="85" startPosition="0" endLine="88" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="90" startPosition="62" endLine="93" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="94" startPosition="49" endLine="97" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="97" startPosition="7" endLine="100" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="168" startPosition="0" endLine="171" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
+    <nodeInfo nodeId="2668265993332376951" fileName="TextCommentLinePart_KeyMap.java" startLine="172" startPosition="0" endLine="175" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_yh032p_a0a6a0a0h0e2#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="2668265993332377015" fileName="TextCommentLinePart_KeyMap.java" startLine="176" startPosition="0" endLine="179" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_yh032p_a0c0b0a7a4c#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="182" startPosition="0" endLine="185" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextCommentLinePart_KeyMap_Action2#()V" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="186" startPosition="0" endLine="189" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="191" startPosition="62" endLine="194" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="195" startPosition="49" endLine="198" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="198" startPosition="7" endLine="201" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="677166607849364225" fileName="TextCommentLinePart_KeyMap.java" startLine="219" startPosition="16" endLine="222" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="677166607849361806" fileName="TextCommentLinePart_KeyMap.java" startLine="289" startPosition="12" endLine="292" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="295" startPosition="0" endLine="298" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
+    <nodeInfo nodeId="677166607849364245" fileName="TextCommentLinePart_KeyMap.java" startLine="299" startPosition="0" endLine="302" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_yh032p_a0b0d0e3#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="677166607849361662" fileName="TextCommentLinePart_KeyMap.java" startLine="303" startPosition="0" endLine="306" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_yh032p_a0a5a0a0a0a1a0a0e0a3a4d#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="677166607849369968" fileName="TextCommentLinePart_KeyMap.java" startLine="307" startPosition="0" endLine="310" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isEmpty_yh032p_a0b0b0a4a0d0e3#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="677166607849361805" fileName="TextCommentLinePart_KeyMap.java" startLine="311" startPosition="0" endLine="314" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isNotEmpty_yh032p_a0d0e3#(Ljava/lang/String;)Z" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="53" startPosition="7" endLine="57" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="60" startPosition="0" endLine="64" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="80" startPosition="0" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextCommentLinePart_KeyMap_Action1#()V" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="97" startPosition="7" endLine="101" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="104" startPosition="0" endLine="108" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="198" startPosition="7" endLine="202" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="205" startPosition="0" endLine="209" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="677166607849361520" fileName="TextCommentLinePart_KeyMap.java" startLine="231" startPosition="0" endLine="235" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2668265993332376930" fileName="TextCommentLinePart_KeyMap.java" startLine="134" startPosition="170" endLine="139" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="677166607849361641" fileName="TextCommentLinePart_KeyMap.java" startLine="255" startPosition="176" endLine="260" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668265993332377000" fileName="TextCommentLinePart_KeyMap.java" startLine="151" startPosition="130" endLine="157" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="677166607849364202" fileName="TextCommentLinePart_KeyMap.java" startLine="216" startPosition="62" endLine="222" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="677166607849361519" fileName="TextCommentLinePart_KeyMap.java" startLine="229" startPosition="69" endLine="235" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849369953" fileName="TextCommentLinePart_KeyMap.java" startLine="273" startPosition="70" endLine="279" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668265993332363784" fileName="TextCommentLinePart_KeyMap.java" startLine="119" startPosition="59" endLine="126" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="677166607849366935" fileName="TextCommentLinePart_KeyMap.java" startLine="238" startPosition="55" endLine="245" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="65" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
+    <nodeInfo nodeId="677166607849364200" fileName="TextCommentLinePart_KeyMap.java" startLine="215" startPosition="39" endLine="223" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="25" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TextCommentLinePart_KeyMap#()V" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="45" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="89" startPosition="0" endLine="103" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="190" startPosition="0" endLine="204" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <nodeInfo nodeId="2668265993332376986" fileName="TextCommentLinePart_KeyMap.java" startLine="148" startPosition="71" endLine="163" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="677166607849369939" fileName="TextCommentLinePart_KeyMap.java" startLine="271" startPosition="67" endLine="286" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="677166607849361598" fileName="TextCommentLinePart_KeyMap.java" startLine="250" startPosition="0" endLine="267" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="run#()V" />
+    <nodeInfo nodeId="2668265993332362653" fileName="TextCommentLinePart_KeyMap.java" startLine="128" startPosition="14" endLine="146" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2668265993332362750" fileName="TextCommentLinePart_KeyMap.java" startLine="147" startPosition="12" endLine="165" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="677166607849361688" fileName="TextCommentLinePart_KeyMap.java" startLine="270" startPosition="14" endLine="288" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="677166607849361597" fileName="TextCommentLinePart_KeyMap.java" startLine="248" startPosition="40" endLine="267" endPosition="15" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="677166607849361593" fileName="TextCommentLinePart_KeyMap.java" startLine="247" startPosition="16" endLine="269" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="2668265993332362607" fileName="TextCommentLinePart_KeyMap.java" startLine="117" startPosition="24" endLine="146" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="677166607849361547" fileName="TextCommentLinePart_KeyMap.java" startLine="236" startPosition="31" endLine="269" endPosition="11" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668265993332362604" fileName="TextCommentLinePart_KeyMap.java" startLine="116" startPosition="94" endLine="165" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="677166607849361544" fileName="TextCommentLinePart_KeyMap.java" startLine="235" startPosition="11" endLine="288" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="109" startPosition="0" endLine="167" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
+    <nodeInfo nodeId="677166607849361446" fileName="TextCommentLinePart_KeyMap.java" startLine="213" startPosition="91" endLine="292" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="210" startPosition="0" endLine="294" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="37" startPosition="49" endLine="38" endPosition="38" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="41" startPosition="40" endLine="42" endPosition="19" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="47" startPosition="34" endLine="48" endPosition="21" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="51" startPosition="32" endLine="52" endPosition="21" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="54" startPosition="161" endLine="55" endPosition="20" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="74" startPosition="34" endLine="75" endPosition="22" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="85" startPosition="40" endLine="86" endPosition="19" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="91" startPosition="34" endLine="92" endPosition="21" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="95" startPosition="32" endLine="96" endPosition="21" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="98" startPosition="161" endLine="99" endPosition="20" />
+    <scopeInfo nodeId="2668265993332363785" fileName="TextCommentLinePart_KeyMap.java" startLine="120" startPosition="168" endLine="121" endPosition="55" />
+    <scopeInfo nodeId="2668265993332376931" fileName="TextCommentLinePart_KeyMap.java" startLine="135" startPosition="304" endLine="136" endPosition="171" />
+    <scopeInfo nodeId="2668265993332376953" fileName="TextCommentLinePart_KeyMap.java" startLine="137" startPosition="18" endLine="138" endPosition="22" />
+    <scopeInfo nodeId="2668265993332377017" fileName="TextCommentLinePart_KeyMap.java" startLine="155" startPosition="18" endLine="156" endPosition="178" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="168" startPosition="34" endLine="169" endPosition="27" />
+    <scopeInfo nodeId="2668265993332376951" fileName="TextCommentLinePart_KeyMap.java" startLine="172" startPosition="70" endLine="173" endPosition="45" />
+    <scopeInfo nodeId="2668265993332377015" fileName="TextCommentLinePart_KeyMap.java" startLine="176" startPosition="66" endLine="177" endPosition="46" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="182" startPosition="49" endLine="183" endPosition="38" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="186" startPosition="40" endLine="187" endPosition="19" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="192" startPosition="34" endLine="193" endPosition="21" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="196" startPosition="32" endLine="197" endPosition="21" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="199" startPosition="161" endLine="200" endPosition="20" />
+    <scopeInfo nodeId="677166607849364203" fileName="TextCommentLinePart_KeyMap.java" startLine="217" startPosition="63" endLine="218" endPosition="228" />
+    <scopeInfo nodeId="677166607849366936" fileName="TextCommentLinePart_KeyMap.java" startLine="239" startPosition="170" endLine="240" endPosition="57" />
+    <scopeInfo nodeId="677166607849361642" fileName="TextCommentLinePart_KeyMap.java" startLine="256" startPosition="333" endLine="257" endPosition="189" />
+    <scopeInfo nodeId="677166607849361664" fileName="TextCommentLinePart_KeyMap.java" startLine="258" startPosition="24" endLine="259" endPosition="34" />
+    <scopeInfo nodeId="677166607849369970" fileName="TextCommentLinePart_KeyMap.java" startLine="277" startPosition="20" endLine="278" endPosition="318" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="295" startPosition="34" endLine="296" endPosition="23" />
+    <scopeInfo nodeId="677166607849364245" fileName="TextCommentLinePart_KeyMap.java" startLine="299" startPosition="63" endLine="300" endPosition="46" />
+    <scopeInfo nodeId="677166607849361662" fileName="TextCommentLinePart_KeyMap.java" startLine="303" startPosition="81" endLine="304" endPosition="45" />
+    <scopeInfo nodeId="677166607849369968" fileName="TextCommentLinePart_KeyMap.java" startLine="307" startPosition="69" endLine="308" endPosition="46" />
+    <scopeInfo nodeId="677166607849361805" fileName="TextCommentLinePart_KeyMap.java" startLine="311" startPosition="64" endLine="312" endPosition="45" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="27" startPosition="34" endLine="29" endPosition="46" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="29" startPosition="46" endLine="31" endPosition="51" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="31" startPosition="51" endLine="33" endPosition="47" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="60" startPosition="85" endLine="62" endPosition="115">
       <varInfo nodeId="2668265993332352057" varName="contextCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="78" startPosition="49" endLine="80" endPosition="38" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="102" startPosition="85" endLine="104" endPosition="115">
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="80" startPosition="49" endLine="82" endPosition="38" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="104" startPosition="85" endLine="106" endPosition="115">
       <varInfo nodeId="2668265993332352057" varName="contextCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332377001" fileName="TextCommentLinePart_KeyMap.java" startLine="150" startPosition="92" endLine="152" endPosition="32" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="203" startPosition="85" endLine="205" endPosition="115">
+    <scopeInfo nodeId="2668265993332377001" fileName="TextCommentLinePart_KeyMap.java" startLine="152" startPosition="92" endLine="154" endPosition="32" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="205" startPosition="85" endLine="207" endPosition="115">
       <varInfo nodeId="2668265993332352057" varName="contextCell" />
     </scopeInfo>
-    <scopeInfo nodeId="677166607849364226" fileName="TextCommentLinePart_KeyMap.java" startLine="217" startPosition="18" endLine="219" endPosition="45" />
-    <scopeInfo nodeId="677166607849361521" fileName="TextCommentLinePart_KeyMap.java" startLine="229" startPosition="29" endLine="231" endPosition="105" />
-    <scopeInfo nodeId="677166607849369954" fileName="TextCommentLinePart_KeyMap.java" startLine="272" startPosition="197" endLine="274" endPosition="40" />
-    <scopeInfo nodeId="677166607849361807" fileName="TextCommentLinePart_KeyMap.java" startLine="287" startPosition="14" endLine="289" endPosition="15" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="35" startPosition="0" endLine="38" endPosition="0" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="39" startPosition="0" endLine="42" endPosition="0" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="72" startPosition="0" endLine="75" endPosition="0" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="83" startPosition="0" endLine="86" endPosition="0" />
-    <scopeInfo nodeId="7412562200027819030" fileName="TextCommentLinePart_KeyMap.java" startLine="120" startPosition="176" endLine="123" endPosition="101">
+    <scopeInfo nodeId="677166607849364226" fileName="TextCommentLinePart_KeyMap.java" startLine="219" startPosition="18" endLine="221" endPosition="45" />
+    <scopeInfo nodeId="677166607849361521" fileName="TextCommentLinePart_KeyMap.java" startLine="231" startPosition="29" endLine="233" endPosition="105" />
+    <scopeInfo nodeId="677166607849369954" fileName="TextCommentLinePart_KeyMap.java" startLine="274" startPosition="197" endLine="276" endPosition="40" />
+    <scopeInfo nodeId="677166607849361807" fileName="TextCommentLinePart_KeyMap.java" startLine="289" startPosition="14" endLine="291" endPosition="15" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="37" startPosition="0" endLine="40" endPosition="0" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="74" startPosition="0" endLine="77" endPosition="0" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="85" startPosition="0" endLine="88" endPosition="0" />
+    <scopeInfo nodeId="7412562200027819030" fileName="TextCommentLinePart_KeyMap.java" startLine="122" startPosition="176" endLine="125" endPosition="101">
       <varInfo nodeId="7412562200027821318" varName="nodeCaret" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332377055" fileName="TextCommentLinePart_KeyMap.java" startLine="157" startPosition="291" endLine="160" endPosition="99">
+    <scopeInfo nodeId="2668265993332377055" fileName="TextCommentLinePart_KeyMap.java" startLine="159" startPosition="291" endLine="162" endPosition="99">
       <varInfo nodeId="2668265993332377057" varName="nodeCaret" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="166" startPosition="0" endLine="169" endPosition="0" />
-    <scopeInfo nodeId="2668265993332376951" fileName="TextCommentLinePart_KeyMap.java" startLine="170" startPosition="0" endLine="173" endPosition="0">
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="168" startPosition="0" endLine="171" endPosition="0" />
+    <scopeInfo nodeId="2668265993332376951" fileName="TextCommentLinePart_KeyMap.java" startLine="172" startPosition="0" endLine="175" endPosition="0">
       <varInfo nodeId="2668265993332376951" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332377015" fileName="TextCommentLinePart_KeyMap.java" startLine="174" startPosition="0" endLine="177" endPosition="0">
+    <scopeInfo nodeId="2668265993332377015" fileName="TextCommentLinePart_KeyMap.java" startLine="176" startPosition="0" endLine="179" endPosition="0">
       <varInfo nodeId="2668265993332377015" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="180" startPosition="0" endLine="183" endPosition="0" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="184" startPosition="0" endLine="187" endPosition="0" />
-    <scopeInfo nodeId="7340996077143439194" fileName="TextCommentLinePart_KeyMap.java" startLine="239" startPosition="178" endLine="242" endPosition="103">
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="182" startPosition="0" endLine="185" endPosition="0" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="186" startPosition="0" endLine="189" endPosition="0" />
+    <scopeInfo nodeId="7340996077143439194" fileName="TextCommentLinePart_KeyMap.java" startLine="241" startPosition="178" endLine="244" endPosition="103">
       <varInfo nodeId="7340996077143441482" varName="nodeCaret" />
     </scopeInfo>
-    <scopeInfo nodeId="677166607849370000" fileName="TextCommentLinePart_KeyMap.java" startLine="280" startPosition="293" endLine="283" endPosition="101">
+    <scopeInfo nodeId="677166607849370000" fileName="TextCommentLinePart_KeyMap.java" startLine="282" startPosition="293" endLine="285" endPosition="101">
       <varInfo nodeId="677166607849370002" varName="nodeCaret" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="293" startPosition="0" endLine="296" endPosition="0" />
-    <scopeInfo nodeId="677166607849364245" fileName="TextCommentLinePart_KeyMap.java" startLine="297" startPosition="0" endLine="300" endPosition="0">
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="295" startPosition="0" endLine="298" endPosition="0" />
+    <scopeInfo nodeId="677166607849364245" fileName="TextCommentLinePart_KeyMap.java" startLine="299" startPosition="0" endLine="302" endPosition="0">
       <varInfo nodeId="677166607849364245" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="677166607849361662" fileName="TextCommentLinePart_KeyMap.java" startLine="301" startPosition="0" endLine="304" endPosition="0">
+    <scopeInfo nodeId="677166607849361662" fileName="TextCommentLinePart_KeyMap.java" startLine="303" startPosition="0" endLine="306" endPosition="0">
       <varInfo nodeId="677166607849361662" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="677166607849369968" fileName="TextCommentLinePart_KeyMap.java" startLine="305" startPosition="0" endLine="308" endPosition="0">
+    <scopeInfo nodeId="677166607849369968" fileName="TextCommentLinePart_KeyMap.java" startLine="307" startPosition="0" endLine="310" endPosition="0">
       <varInfo nodeId="677166607849369968" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="677166607849361805" fileName="TextCommentLinePart_KeyMap.java" startLine="309" startPosition="0" endLine="312" endPosition="0">
+    <scopeInfo nodeId="677166607849361805" fileName="TextCommentLinePart_KeyMap.java" startLine="311" startPosition="0" endLine="314" endPosition="0">
       <varInfo nodeId="677166607849361805" varName="str" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="51" startPosition="7" endLine="55" endPosition="19" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="58" startPosition="0" endLine="62" endPosition="0">
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="53" startPosition="7" endLine="57" endPosition="19" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="60" startPosition="0" endLine="64" endPosition="0">
       <varInfo nodeId="2668265993332352057" varName="editorContext" />
       <varInfo nodeId="2668265993332352057" varName="keyEvent" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="78" startPosition="0" endLine="82" endPosition="0" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="95" startPosition="7" endLine="99" endPosition="19" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="102" startPosition="0" endLine="106" endPosition="0">
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="80" startPosition="0" endLine="84" endPosition="0" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="97" startPosition="7" endLine="101" endPosition="19" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="104" startPosition="0" endLine="108" endPosition="0">
       <varInfo nodeId="2668265993332352057" varName="editorContext" />
       <varInfo nodeId="2668265993332352057" varName="keyEvent" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="196" startPosition="7" endLine="200" endPosition="19" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="203" startPosition="0" endLine="207" endPosition="0">
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="198" startPosition="7" endLine="202" endPosition="19" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="205" startPosition="0" endLine="209" endPosition="0">
       <varInfo nodeId="2668265993332352057" varName="editorContext" />
       <varInfo nodeId="2668265993332352057" varName="keyEvent" />
     </scopeInfo>
-    <scopeInfo nodeId="677166607849361520" fileName="TextCommentLinePart_KeyMap.java" startLine="229" startPosition="0" endLine="233" endPosition="0" />
-    <scopeInfo nodeId="677166607848001776" fileName="TextCommentLinePart_KeyMap.java" startLine="63" startPosition="146" endLine="69" endPosition="79">
+    <scopeInfo nodeId="677166607849361520" fileName="TextCommentLinePart_KeyMap.java" startLine="231" startPosition="0" endLine="235" endPosition="0" />
+    <scopeInfo nodeId="677166607848001776" fileName="TextCommentLinePart_KeyMap.java" startLine="65" startPosition="146" endLine="71" endPosition="79">
       <varInfo nodeId="7903528363752588030" varName="caretPosition" />
       <varInfo nodeId="677166607848011995" varName="editorCell" />
       <varInfo nodeId="677166607848001778" varName="nextLine" />
     </scopeInfo>
-    <scopeInfo nodeId="677166607849364201" fileName="TextCommentLinePart_KeyMap.java" startLine="214" startPosition="62" endLine="220" endPosition="11" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="23" startPosition="39" endLine="31" endPosition="47">
+    <scopeInfo nodeId="677166607849364201" fileName="TextCommentLinePart_KeyMap.java" startLine="216" startPosition="62" endLine="222" endPosition="11" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="25" startPosition="39" endLine="33" endPosition="47">
       <varInfo nodeId="2668265993332352057" varName="action" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="63" startPosition="0" endLine="71" endPosition="0">
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="65" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="2668265993332352057" varName="editorContext" />
       <varInfo nodeId="2668265993332352057" varName="keyEvent" />
       <varInfo nodeId="2668265993332352057" varName="node" />
       <varInfo nodeId="2668265993332352057" varName="selectedNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332362608" fileName="TextCommentLinePart_KeyMap.java" startLine="116" startPosition="26" endLine="125" endPosition="17" />
-    <scopeInfo nodeId="2668265993332376993" fileName="TextCommentLinePart_KeyMap.java" startLine="147" startPosition="149" endLine="156" endPosition="59">
+    <scopeInfo nodeId="2668265993332362608" fileName="TextCommentLinePart_KeyMap.java" startLine="118" startPosition="26" endLine="127" endPosition="17" />
+    <scopeInfo nodeId="2668265993332376993" fileName="TextCommentLinePart_KeyMap.java" startLine="149" startPosition="149" endLine="158" endPosition="59">
       <varInfo nodeId="7689048275300270906" varName="linePart" />
     </scopeInfo>
-    <scopeInfo nodeId="677166607849361548" fileName="TextCommentLinePart_KeyMap.java" startLine="235" startPosition="33" endLine="244" endPosition="19" />
-    <scopeInfo nodeId="677166607849369946" fileName="TextCommentLinePart_KeyMap.java" startLine="270" startPosition="151" endLine="279" endPosition="95" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="23" startPosition="0" endLine="33" endPosition="0" />
-    <scopeInfo nodeId="677166607849361447" fileName="TextCommentLinePart_KeyMap.java" startLine="212" startPosition="69" endLine="223" endPosition="15" />
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="43" startPosition="91" endLine="55" endPosition="19">
+    <scopeInfo nodeId="677166607849361548" fileName="TextCommentLinePart_KeyMap.java" startLine="237" startPosition="33" endLine="246" endPosition="19" />
+    <scopeInfo nodeId="677166607849369946" fileName="TextCommentLinePart_KeyMap.java" startLine="272" startPosition="151" endLine="281" endPosition="95" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="25" startPosition="0" endLine="35" endPosition="0" />
+    <scopeInfo nodeId="677166607849361447" fileName="TextCommentLinePart_KeyMap.java" startLine="214" startPosition="69" endLine="225" endPosition="15" />
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="45" startPosition="91" endLine="57" endPosition="19">
       <varInfo nodeId="2668265993332352057" varName="contextCell" />
       <varInfo nodeId="2668265993332352057" varName="contextNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="87" startPosition="91" endLine="99" endPosition="19">
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="89" startPosition="91" endLine="101" endPosition="19">
       <varInfo nodeId="2668265993332352057" varName="contextCell" />
       <varInfo nodeId="2668265993332352057" varName="contextNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="188" startPosition="91" endLine="200" endPosition="19">
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="190" startPosition="91" endLine="202" endPosition="19">
       <varInfo nodeId="2668265993332352057" varName="contextCell" />
       <varInfo nodeId="2668265993332352057" varName="contextNode" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="43" startPosition="0" endLine="57" endPosition="0">
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="45" startPosition="0" endLine="59" endPosition="0">
       <varInfo nodeId="2668265993332352057" varName="editorContext" />
       <varInfo nodeId="2668265993332352057" varName="keyEvent" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="87" startPosition="0" endLine="101" endPosition="0">
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="89" startPosition="0" endLine="103" endPosition="0">
       <varInfo nodeId="2668265993332352057" varName="editorContext" />
       <varInfo nodeId="2668265993332352057" varName="keyEvent" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="188" startPosition="0" endLine="202" endPosition="0">
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="190" startPosition="0" endLine="204" endPosition="0">
       <varInfo nodeId="2668265993332352057" varName="editorContext" />
       <varInfo nodeId="2668265993332352057" varName="keyEvent" />
     </scopeInfo>
-    <scopeInfo nodeId="677166607849361599" fileName="TextCommentLinePart_KeyMap.java" startLine="248" startPosition="33" endLine="263" endPosition="99">
+    <scopeInfo nodeId="677166607849361599" fileName="TextCommentLinePart_KeyMap.java" startLine="250" startPosition="33" endLine="265" endPosition="99">
       <varInfo nodeId="677166607849361601" varName="curLine" />
       <varInfo nodeId="677166607849361625" varName="index" />
       <varInfo nodeId="677166607849361610" varName="nextLine" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332362654" fileName="TextCommentLinePart_KeyMap.java" startLine="126" startPosition="16" endLine="143" endPosition="17">
+    <scopeInfo nodeId="2668265993332362654" fileName="TextCommentLinePart_KeyMap.java" startLine="128" startPosition="16" endLine="145" endPosition="17">
       <varInfo nodeId="2668265993332376890" varName="curLine" />
       <varInfo nodeId="2668265993332376912" varName="index" />
       <varInfo nodeId="2668265993332376897" varName="prevLine" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332362751" fileName="TextCommentLinePart_KeyMap.java" startLine="145" startPosition="14" endLine="162" endPosition="15" />
-    <scopeInfo nodeId="677166607849361598" fileName="TextCommentLinePart_KeyMap.java" startLine="248" startPosition="0" endLine="265" endPosition="0" />
-    <scopeInfo nodeId="677166607849361689" fileName="TextCommentLinePart_KeyMap.java" startLine="268" startPosition="16" endLine="285" endPosition="17" />
-    <scopeInfo nodeId="677166607849361594" fileName="TextCommentLinePart_KeyMap.java" startLine="245" startPosition="18" endLine="266" endPosition="19" />
-    <scopeInfo nodeId="2668265993332362606" fileName="TextCommentLinePart_KeyMap.java" startLine="115" startPosition="24" endLine="144" endPosition="9" />
-    <scopeInfo nodeId="677166607849361546" fileName="TextCommentLinePart_KeyMap.java" startLine="234" startPosition="31" endLine="267" endPosition="11" />
-    <scopeInfo nodeId="2668265993332352061" fileName="TextCommentLinePart_KeyMap.java" startLine="107" startPosition="146" endLine="163" endPosition="7">
+    <scopeInfo nodeId="2668265993332362751" fileName="TextCommentLinePart_KeyMap.java" startLine="147" startPosition="14" endLine="164" endPosition="15" />
+    <scopeInfo nodeId="677166607849361598" fileName="TextCommentLinePart_KeyMap.java" startLine="250" startPosition="0" endLine="267" endPosition="0" />
+    <scopeInfo nodeId="677166607849361689" fileName="TextCommentLinePart_KeyMap.java" startLine="270" startPosition="16" endLine="287" endPosition="17" />
+    <scopeInfo nodeId="677166607849361594" fileName="TextCommentLinePart_KeyMap.java" startLine="247" startPosition="18" endLine="268" endPosition="19" />
+    <scopeInfo nodeId="2668265993332362606" fileName="TextCommentLinePart_KeyMap.java" startLine="117" startPosition="24" endLine="146" endPosition="9" />
+    <scopeInfo nodeId="677166607849361546" fileName="TextCommentLinePart_KeyMap.java" startLine="236" startPosition="31" endLine="269" endPosition="11" />
+    <scopeInfo nodeId="2668265993332352061" fileName="TextCommentLinePart_KeyMap.java" startLine="109" startPosition="146" endLine="165" endPosition="7">
       <varInfo nodeId="2668265993332364351" varName="caret" />
       <varInfo nodeId="2668265993332362577" varName="isFirstLine" />
       <varInfo nodeId="2668265993332362574" varName="isFirstPart" />
       <varInfo nodeId="2835762905325592877" varName="nodeToSelect" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="107" startPosition="0" endLine="165" endPosition="0">
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="109" startPosition="0" endLine="167" endPosition="0">
       <varInfo nodeId="2668265993332352057" varName="editorContext" />
       <varInfo nodeId="2668265993332352057" varName="keyEvent" />
       <varInfo nodeId="2668265993332352057" varName="node" />
       <varInfo nodeId="2668265993332352057" varName="selectedNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="677166607849361510" fileName="TextCommentLinePart_KeyMap.java" startLine="224" startPosition="86" endLine="286" endPosition="9">
+    <scopeInfo nodeId="677166607849361510" fileName="TextCommentLinePart_KeyMap.java" startLine="226" startPosition="86" endLine="288" endPosition="9">
       <varInfo nodeId="677166607849361517" varName="isLastLine" />
       <varInfo nodeId="677166607849361514" varName="isLastPart" />
     </scopeInfo>
-    <scopeInfo nodeId="677166607849351213" fileName="TextCommentLinePart_KeyMap.java" startLine="208" startPosition="146" endLine="290" endPosition="7">
+    <scopeInfo nodeId="677166607849351213" fileName="TextCommentLinePart_KeyMap.java" startLine="210" startPosition="146" endLine="292" endPosition="7">
       <varInfo nodeId="677166607849361443" varName="caret" />
       <varInfo nodeId="677166607849361439" varName="nodeToSelect" />
       <varInfo nodeId="677166607849363893" varName="selectedCell" />
     </scopeInfo>
-    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="208" startPosition="0" endLine="292" endPosition="0">
+    <scopeInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="210" startPosition="0" endLine="294" endPosition="0">
       <varInfo nodeId="2668265993332352057" varName="editorContext" />
       <varInfo nodeId="2668265993332352057" varName="keyEvent" />
       <varInfo nodeId="2668265993332352057" varName="node" />
       <varInfo nodeId="2668265993332352057" varName="selectedNodes" />
     </scopeInfo>
-    <unitInfo nodeId="677166607849361520" fileName="TextCommentLinePart_KeyMap.java" startLine="228" startPosition="49" endLine="233" endPosition="9" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap$1" />
-    <unitInfo nodeId="677166607849361598" fileName="TextCommentLinePart_KeyMap.java" startLine="247" startPosition="63" endLine="265" endPosition="13" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap$2" />
-    <unitInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="34" startPosition="0" endLine="76" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap$TextCommentLinePart_KeyMap_Action0" />
-    <unitInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="77" startPosition="0" endLine="178" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap$TextCommentLinePart_KeyMap_Action1" />
-    <unitInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="179" startPosition="0" endLine="313" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap$TextCommentLinePart_KeyMap_Action2" />
-    <unitInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="22" startPosition="0" endLine="314" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap" />
+    <unitInfo nodeId="677166607849361520" fileName="TextCommentLinePart_KeyMap.java" startLine="230" startPosition="49" endLine="235" endPosition="9" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap$1" />
+    <unitInfo nodeId="677166607849361598" fileName="TextCommentLinePart_KeyMap.java" startLine="249" startPosition="63" endLine="267" endPosition="13" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap$2" />
+    <unitInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="36" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap$TextCommentLinePart_KeyMap_Action0" />
+    <unitInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="79" startPosition="0" endLine="180" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap$TextCommentLinePart_KeyMap_Action1" />
+    <unitInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="181" startPosition="0" endLine="315" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap$TextCommentLinePart_KeyMap_Action2" />
+    <unitInfo nodeId="2668265993332352057" fileName="TextCommentLinePart_KeyMap.java" startLine="24" startPosition="0" endLine="316" endPosition="0" unitName="jetbrains.mps.baseLanguage.javadoc.editor.TextCommentLinePart_KeyMap" />
   </root>
   <root nodeId="4021391592913766809" modelId="r:87ed07dc-bdb2-44c5-8db4-8d5a74e959ff(jetbrains.mps.baseLanguage.javadoc.editor)">
     <nodeInfo nodeId="4021391592913780803" fileName="StaticFieldDocReference_Editor.java" startLine="68" startPosition="58" endLine="68" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

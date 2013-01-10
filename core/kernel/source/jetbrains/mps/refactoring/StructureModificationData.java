@@ -45,7 +45,7 @@ public class StructureModificationData {
     }
 
     public FullNodeId(SNode node) {
-      this(node.getSNodeId(), node.getModel().getSModelReference());
+      this(node.getNodeId(), node.getModel().getSModelReference());
     }
 
     public int compareTo(FullNodeId o) {

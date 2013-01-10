@@ -4,10 +4,9 @@
     <modelRoot contentPath="${module}" type="default">
       <sourceRoot location="." />
     </modelRoot>
-    <modelRoot path="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" type="java_classes" />
   </models>
   <stubModelEntries>
-    <stubModelEntry path="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
+    <stubModelEntry path="${mps_home}/plugins/mps-core-ex/languages/util/xmlUnitTest/languages/xmlUnitTest/lib/xmlunit-1.3.jar" />
   </stubModelEntries>
   <sourcePath />
   <dependencies>

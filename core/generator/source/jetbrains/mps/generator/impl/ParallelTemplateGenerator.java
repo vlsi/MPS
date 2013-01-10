@@ -111,7 +111,7 @@ public class ParallelTemplateGenerator extends TemplateGenerator {
       if (inputNode == null || !(inputNode.getModel() != null)) {
         return super.getDefaultExecutionContext(null);
       }
-      inputNode = inputNode.getTopmostAncestor();
+      inputNode = inputNode.getContainingRoot();
       if (inputNode.getModel() == getInputModel()) {
         RootBasedQueryExectionContext context;
         if (myRootContext == null) {

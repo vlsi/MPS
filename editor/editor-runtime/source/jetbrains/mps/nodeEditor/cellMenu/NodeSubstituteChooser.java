@@ -27,7 +27,6 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.action.AbstractNodeSubstituteAction;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.typesystem.inference.ITypechecking;
 import jetbrains.mps.typesystem.inference.ITypechecking.Computation;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
@@ -280,7 +279,7 @@ public class NodeSubstituteChooser implements KeyboardHandler {
   }
 
   private void sortSmartActions(List<INodeSubstituteAction> matchingActions) {
-    Collections.sort(matchingActions, new NodeSubstituteActionsComparator(myContextCell.getSNode().getTopmostAncestor()));
+    Collections.sort(matchingActions, new NodeSubstituteActionsComparator(myContextCell.getSNode().getContainingRoot()));
   }
 
   private int getDescriptionLength(INodeSubstituteAction action, String pattern) {

@@ -11,6 +11,7 @@ import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -18,7 +19,6 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.build.behavior.BuildSource_JavaExternalJarRef_Behavior;
 import jetbrains.mps.build.util.JavaExportUtil;
-import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 
 public class BuildMps_Module_Behavior {
@@ -36,7 +36,7 @@ public class BuildMps_Module_Behavior {
     List<SNode> requiredJars = new ArrayList<SNode>();
     for (SNode m : Sequence.fromIterable(closure.getModules())) {
       SNode artifact;
-      if (SNodeOperations.getContainingRoot(m) != SNodeOperations.getContainingRoot(thisNode)) {
+      if (SNodeOperations.getContainingRoot(m) != SNodeOperations.getContainingRoot(thisNode) && BehaviorReflection.invokeVirtual(Boolean.TYPE, m, "virtual_isCompilable_7454762407073969360", new Object[]{})) {
         artifact = SNodeOperations.as(artifacts.findArtifact(m), "jetbrains.mps.build.structure.BuildLayout_Node");
         if (artifact != null) {
           builder.add(artifact, m);
@@ -140,6 +140,18 @@ public class BuildMps_Module_Behavior {
         if (artifact != null) {
           needsFetch = true;
           builder.add(artifact, jm);
+        }
+      }
+    }
+
+    // fetch generation time dependencies 
+    MPSModulesClosure genClosure = new MPSModulesClosure(artifacts.getGenContext(), thisNode).runtimeClosure().generationDependenciesClosure();
+    for (SNode m : Sequence.fromIterable(genClosure.getModulesIncludingLanguagesWithRuntime())) {
+      SNode artifact;
+      if (SNodeOperations.getContainingRoot(m) != SNodeOperations.getContainingRoot(thisNode)) {
+        artifact = SNodeOperations.as(artifacts.findArtifact(m), "jetbrains.mps.build.structure.BuildLayout_Node");
+        if (artifact != null) {
+          builder.add(artifact, m);
         }
       }
     }

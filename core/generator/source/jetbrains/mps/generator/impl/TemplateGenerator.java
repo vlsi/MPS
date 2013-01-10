@@ -475,7 +475,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       synchronized (myAdditionalInputNodes) {
         if (!myAdditionalInputNodes.containsKey(inputNode)) {
           myAdditionalInputNodes.put(inputNode, Boolean.TRUE);
-          for (SNode n : inputNode.getDescendants()) {
+          for (SNode n : jetbrains.mps.util.SNodeOperations.getDescendants(inputNode, null)) {
             myAdditionalInputNodes.put(n, Boolean.TRUE);
           }
         }
@@ -506,8 +506,8 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     // no reduction found - do node copying
     myGenerationTracer.pushCopyOperation();
     SNode outputNode = new SNode(inputNode.getConcept().getId());
-    if (inputNode.getSNodeId() != null && inputNode.getModel() != null) {
-      outputNode.setId(inputNode.getSNodeId());
+    if (inputNode.getNodeId() != null && inputNode.getModel() != null) {
+      outputNode.setId(inputNode.getNodeId());
     }
     blockReductionsForCopiedNode(inputNode, outputNode, reductionContext); // prevent infinite applying of the same reduction to the 'same' node.
 
@@ -580,7 +580,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     }
 
     for (SNode inputChildNode : inputNode.getChildren()) {
-      String childRole = inputChildNode.getRole_();
+      String childRole = inputChildNode.getRoleInParent();
       assert childRole != null;
       myGenerationTracer.pushInputNode(GenerationTracerUtil.getSNodePointer(inputChildNode));
       try {
@@ -703,7 +703,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     if (node == null) return null;
     if (node.getModel() == null) return null;
     if (node.getModel().isRoot(node)) return node;
-    return node.getTopmostAncestor();
+    return node.getContainingRoot();
   }
 
   public boolean isIncremental() {

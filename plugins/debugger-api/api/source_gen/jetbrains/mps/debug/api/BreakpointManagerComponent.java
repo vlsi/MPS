@@ -91,7 +91,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   private void addLocationBreakpoint(ILocationBreakpoint breakpoint) {
     SNode node = breakpoint.getLocation().getSNode();
     if (node != null) {
-      SNodePointer rootPointer = new SNodePointer(node.getTopmostAncestor());
+      SNodePointer rootPointer = new SNodePointer(node.getContainingRoot());
       Set<ILocationBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
       if (breakpointsForRoot == null) {
         breakpointsForRoot = new HashSet<ILocationBreakpoint>();
@@ -127,7 +127,7 @@ public class BreakpointManagerComponent implements ProjectComponent, PersistentS
   private void removeLocationBreakpoint(ILocationBreakpoint breakpoint) {
     SNode node = breakpoint.getLocation().getSNode();
     if (node != null) {
-      SNode root = node.getTopmostAncestor();
+      SNode root = node.getContainingRoot();
       SNodePointer rootPointer = new SNodePointer(root);
       Set<ILocationBreakpoint> breakpointsForRoot = myRootsToBreakpointsMap.get(rootPointer);
       if (breakpointsForRoot != null) {

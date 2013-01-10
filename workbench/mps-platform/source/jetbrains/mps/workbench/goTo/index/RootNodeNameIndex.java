@@ -111,7 +111,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
 
   private static class MyCondition implements Condition<SNode> {
     public boolean met(SNode node) {
-      return !node.getSNodeId().toString().contains("$");
+      return !node.getNodeId().toString().contains("$");
     }
   }
 
@@ -138,7 +138,7 @@ public class RootNodeNameIndex extends SingleEntryFileBasedIndexExtension<List<S
               String nodeName = (persistentName == null) ? "null" : persistentName;
               String conceptFqName = node.getConcept().getId();
               SModelReference modelRef = model.getSModelReference();
-              SNodeId id = node.getSNodeId();
+              SNodeId id = node.getNodeId();
               SNodeDescriptor value = SNodeDescriptor.fromModelReference(nodeName, conceptFqName, modelRef, id);
               descriptors.add(value);
             }

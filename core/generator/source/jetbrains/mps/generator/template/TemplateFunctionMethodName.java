@@ -23,74 +23,74 @@ import jetbrains.mps.smodel.SNode;
  */
 public class TemplateFunctionMethodName {
   public static String createRootRule_Condition(SNode function) {
-    return "createRootRule_Condition_" + function.getSNodeId().toString();
+    return "createRootRule_Condition_" + function.getNodeId().toString();
   }
 
   public static String ifMacro_Condition(SNode function) {
-    return "ifMacro_Condition_" + function.getSNodeId().toString();
+    return "ifMacro_Condition_" + function.getNodeId().toString();
   }
 
   public static String dropRootRule_Condition(SNode function) {
-    return "dropRootRule_Condition_" + function.getSNodeId().toString();
+    return "dropRootRule_Condition_" + function.getNodeId().toString();
   }
 
   public static String baseMappingRule_Condition(SNode function) {
-    return "baseMappingRule_Condition_" + function.getSNodeId().toString();
+    return "baseMappingRule_Condition_" + function.getNodeId().toString();
   }
 
   public static String propertyMacro_GetPropertyValue(SNode function) {
-    return "propertyMacro_GetPropertyValue_" + function.getSNodeId().toString();
+    return "propertyMacro_GetPropertyValue_" + function.getNodeId().toString();
   }
 
   public static String referenceMacro_GetReferent(SNode function) {
-    return "referenceMacro_GetReferent_" + function.getSNodeId().toString();
+    return "referenceMacro_GetReferent_" + function.getNodeId().toString();
   }
 
   public static String sourceSubstituteMacro_SourceNodesQuery(SNode function) {
-    return "sourceNodesQuery_" + function.getSNodeId().toString();
+    return "sourceNodesQuery_" + function.getNodeId().toString();
   }
 
   public static String sourceSubstituteMacro_SourceNodeQuery(SNode function) {
-    return "sourceNodeQuery_" + function.getSNodeId().toString();
+    return "sourceNodeQuery_" + function.getNodeId().toString();
   }
 
   public static String templateFragment_ContextNodeQuery(SNode function) {
-    return "templateFragment_ContextNodeQuery_" + function.getSNodeId().toString();
+    return "templateFragment_ContextNodeQuery_" + function.getNodeId().toString();
   }
 
   public static String weaving_MappingRule_ContextNodeQuery(SNode function) {
-    return "weaving_MappingRule_ContextNodeQuery_" + function.getSNodeId().toString();
+    return "weaving_MappingRule_ContextNodeQuery_" + function.getNodeId().toString();
   }
 
   public static String mapSrcMacro_MapperFunction(SNode function) {
-    return "mapSrcMacro_mapper_" + function.getSNodeId().toString();
+    return "mapSrcMacro_mapper_" + function.getNodeId().toString();
   }
 
   public static String mapSrcMacro_PostMapperFunction(SNode function) {
-    return "mapSrcMacro_post_mapper_" + function.getSNodeId().toString();
+    return "mapSrcMacro_post_mapper_" + function.getNodeId().toString();
   }
 
   public static String mappingScript_CodeBlock(SNode function) {
-    return "mappingScript_CodeBlock_" + function.getSNodeId().toString();
+    return "mappingScript_CodeBlock_" + function.getNodeId().toString();
   }
 
   public static String templateArgumentQuery(SNode function) {
-    return "templateArgumentQuery_" + function.getSNodeId().toString();
+    return "templateArgumentQuery_" + function.getNodeId().toString();
   }
 
   public static String patternRule_Condition(SNode pattern) {
-    return "patternRule_Condition_" + pattern.getSNodeId().toString();
+    return "patternRule_Condition_" + pattern.getNodeId().toString();
   }
 
   public static String mappingConfiguration_Condition(SNode function) {
-    return "mappingConfiguration_Condition_" + function.getSNodeId().toString();
+    return "mappingConfiguration_Condition_" + function.getNodeId().toString();
   }
 
   public static String insertMacro_Query(SNode function) {
-    return "insertMacro_Query_" + function.getSNodeId().toString();
+    return "insertMacro_Query_" + function.getNodeId().toString();
   }
 
   public static String varValue_Query(SNode function) {
-    return "insertMacro_varValue_" + function.getSNodeId().toString();
+    return "insertMacro_varValue_" + function.getNodeId().toString();
   }
 }

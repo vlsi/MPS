@@ -5,6 +5,8 @@ package jetbrains.mps.smodel.search;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.NameUtil;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
+import org.jetbrains.mps.openapi.language.SConceptRepository;
 
 public class IsInstanceCondition implements Condition<SNode> {
   private String myConceptFqName;
@@ -22,6 +24,6 @@ public class IsInstanceCondition implements Condition<SNode> {
   }
 
   public boolean met(SNode node) {
-    return node.isInstanceOfConcept(myConceptFqName);
+    return SNodeUtil.isInstanceOf(node, SConceptRepository.getInstance().getConcept(myConceptFqName));
   }
 }

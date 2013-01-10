@@ -343,7 +343,7 @@ public class CheckProjectStructureHelper {
                 SNode node = reporter.getSNode();
                 if (!CheckProjectStructureUtil.filterIssue(node)) continue;
                 myErrors++;
-                errors.add("Error message: " + reporter.reportError() + "   model: " + node.getModel().getLongName() + " root: " + node.getTopmostAncestor() + " node: " + node);
+                errors.add("Error message: " + reporter.reportError() + "   model: " + node.getModel().getLongName() + " root: " + node.getContainingRoot() + " node: " + node);
               }
               if (reporter.getMessageStatus().equals(MessageStatus.WARNING)) {
                 myWarnings++;
@@ -376,9 +376,9 @@ public class CheckProjectStructureHelper {
 
     for (SNode node : sm.getSModel().nodes()) {
       Testbench.LOG.debug("Checking node " + node);
-      if (SModelUtil.findConceptDeclaration(node.getConceptFqName(), GlobalScope.getInstance()) == null) {
+      if (SModelUtil.findConceptDeclaration(node.getConcept().getId(), GlobalScope.getInstance()) == null) {
         errorMessages.append("Unknown concept ");
-        errorMessages.append(node.getConceptFqName());
+        errorMessages.append(node.getConcept().getId());
         errorMessages.append("\n");
       }
     }
@@ -395,7 +395,7 @@ public class CheckProjectStructureHelper {
             append(node.getModel().getLongName()).
             append("}").
             append(" node ").
-            append(node.getSNodeId().toString()).
+            append(node.getNodeId().toString()).
             append("(").
             append(node).
             append(")\n");

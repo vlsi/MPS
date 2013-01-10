@@ -148,7 +148,7 @@ public class DiffEditorsGroup {
 
   private static SNodeId check_s6qw4f_a0a0a0a1g(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getSNodeId();
+      return checkedDotOperand.getNodeId();
     }
     return null;
   }

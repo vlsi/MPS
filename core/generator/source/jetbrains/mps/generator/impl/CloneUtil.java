@@ -55,7 +55,7 @@ public class CloneUtil {
     // is already interned. So we don't intern anything. DO NOT replace this stuff with instantiateStuff
     final SNode outputNode = new SNode(inputNode.getConcept().getId());
 
-    outputNode.setId(inputNode.getSNodeId());
+    outputNode.setId(inputNode.getNodeId());
     jetbrains.mps.util.SNodeOperations.copyProperties(inputNode, outputNode);
     jetbrains.mps.util.SNodeOperations.copyUserObjects(inputNode, outputNode);
     // keep track of 'original input node'
@@ -91,7 +91,7 @@ public class CloneUtil {
     }
 
     for (SNode child : inputNode.getChildren()) {
-      String role = child.getRole_();
+      String role = child.getRoleInParent();
       assert role != null;
       outputNode.addChild(role, clone(child, outputModel, originalInput));
     }

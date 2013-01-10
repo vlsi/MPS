@@ -83,9 +83,6 @@
    <string>public abstract java.lang.Iterable&lt;? extends org.jetbrains.mps.openapi.model.SReference&gt; org.jetbrains.mps.openapi.model.SNode.getReferences()</string>
   </void>
   <void method="add">
-   <string>public abstract org.jetbrains.mps.openapi.model.SNodeId org.jetbrains.mps.openapi.model.SNode.getSNodeId()</string>
-  </void>
-  <void method="add">
    <string>public abstract org.jetbrains.mps.openapi.model.SNodeId org.jetbrains.mps.openapi.model.SNode.getNodeId()</string>
   </void>
   <void method="add">

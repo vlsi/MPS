@@ -813,7 +813,7 @@ __switch__:
 
   private static SNodeId check_5mnya_a0d0a91a8a2a0a0a0a1a1a2vb(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getSNodeId();
+      return checkedDotOperand.getNodeId();
     }
     return null;
   }

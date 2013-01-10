@@ -5291,86 +5291,86 @@
     <unitInfo nodeId="1228229067051" fileName="DowncastExpression_DELETE.java" startLine="13" startPosition="0" endLine="34" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.DowncastExpression_DELETE" />
   </root>
   <root nodeId="1229428441559" modelId="r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)">
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="16" startPosition="44" endLine="17" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="17" startPosition="42" endLine="18" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="18" startPosition="34" endLine="19" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="19" startPosition="91" endLine="20" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="24" startPosition="54" endLine="25" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="28" startPosition="40" endLine="29" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="32" startPosition="40" endLine="33" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="36" startPosition="91" endLine="37" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="38" startPosition="34" endLine="39" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="40" startPosition="7" endLine="41" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="42" startPosition="32" endLine="43" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="45" startPosition="112" endLine="46" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="47" startPosition="7" endLine="48" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="51" startPosition="85" endLine="52" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="52" startPosition="62" endLine="53" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229428505812" fileName="SequenceCreator_add_initializer.java" startLine="56" startPosition="152" endLine="57" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1229428583478" fileName="SequenceCreator_add_initializer.java" startLine="60" startPosition="146" endLine="61" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="64" startPosition="34" endLine="65" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="18" startPosition="34" endLine="20" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SequenceCreator_add_initializer_Action0#()V" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="37" startPosition="62" endLine="40" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="41" startPosition="49" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="44" startPosition="7" endLine="47" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="56" startPosition="0" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Z" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="60" startPosition="0" endLine="63" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="64" startPosition="0" endLine="67" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="44" startPosition="7" endLine="48" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="51" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="16" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SequenceCreator_add_initializer#()V" />
-    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="36" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="24" startPosition="54" endLine="25" endPosition="37" />
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="28" startPosition="40" endLine="29" endPosition="31" />
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="32" startPosition="40" endLine="33" endPosition="19" />
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="38" startPosition="34" endLine="39" endPosition="21" />
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="42" startPosition="32" endLine="43" endPosition="21" />
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="45" startPosition="112" endLine="46" endPosition="116" />
-    <scopeInfo nodeId="1229428502688" fileName="SequenceCreator_add_initializer.java" startLine="56" startPosition="152" endLine="57" endPosition="76" />
-    <scopeInfo nodeId="1229428480520" fileName="SequenceCreator_add_initializer.java" startLine="60" startPosition="146" endLine="61" endPosition="126" />
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="64" startPosition="34" endLine="65" endPosition="22" />
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="18" startPosition="34" endLine="20" endPosition="46" />
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="51" startPosition="85" endLine="53" endPosition="115">
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="18" startPosition="44" endLine="19" endPosition="42" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="19" startPosition="42" endLine="20" endPosition="34" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="20" startPosition="34" endLine="21" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="21" startPosition="91" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="26" startPosition="54" endLine="27" endPosition="37" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="30" startPosition="40" endLine="31" endPosition="31" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="34" startPosition="40" endLine="35" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="38" startPosition="91" endLine="39" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="40" startPosition="34" endLine="41" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="42" startPosition="7" endLine="43" endPosition="49" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="44" startPosition="32" endLine="45" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="47" startPosition="161" endLine="48" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="49" startPosition="7" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="53" startPosition="85" endLine="54" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="54" startPosition="62" endLine="55" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229428505812" fileName="SequenceCreator_add_initializer.java" startLine="58" startPosition="152" endLine="59" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229428583478" fileName="SequenceCreator_add_initializer.java" startLine="62" startPosition="146" endLine="63" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="66" startPosition="34" endLine="67" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="20" startPosition="34" endLine="22" endPosition="46" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SequenceCreator_add_initializer_Action0#()V" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="30" startPosition="0" endLine="33" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="34" startPosition="0" endLine="37" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isMenuAlwaysShown#()Z" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="39" startPosition="62" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="43" startPosition="49" endLine="46" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="46" startPosition="7" endLine="49" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="58" startPosition="0" endLine="61" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)Z" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="62" startPosition="0" endLine="65" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute_internal#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;Ljetbrains/mps/smodel/SNode;Ljava/util/List;)V" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="66" startPosition="0" endLine="69" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getKeyStroke#()Ljava/lang/String;" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="46" startPosition="7" endLine="50" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)V" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="18" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="SequenceCreator_add_initializer#()V" />
+    <nodeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="38" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canExecute#(Ljava/awt/event/KeyEvent;Ljetbrains/mps/openapi/editor/EditorContext;)Z" />
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="26" startPosition="54" endLine="27" endPosition="37" />
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="30" startPosition="40" endLine="31" endPosition="31" />
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="34" startPosition="40" endLine="35" endPosition="19" />
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="40" startPosition="34" endLine="41" endPosition="21" />
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="44" startPosition="32" endLine="45" endPosition="21" />
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="47" startPosition="161" endLine="48" endPosition="116" />
+    <scopeInfo nodeId="1229428502688" fileName="SequenceCreator_add_initializer.java" startLine="58" startPosition="152" endLine="59" endPosition="76" />
+    <scopeInfo nodeId="1229428480520" fileName="SequenceCreator_add_initializer.java" startLine="62" startPosition="146" endLine="63" endPosition="126" />
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="66" startPosition="34" endLine="67" endPosition="22" />
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="20" startPosition="34" endLine="22" endPosition="46" />
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="53" startPosition="85" endLine="55" endPosition="115">
       <varInfo nodeId="1229428441559" varName="contextCell" />
     </scopeInfo>
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="28" startPosition="0" endLine="31" endPosition="0" />
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="32" startPosition="0" endLine="35" endPosition="0" />
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="56" startPosition="0" endLine="59" endPosition="0">
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="26" startPosition="0" endLine="29" endPosition="0" />
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="30" startPosition="0" endLine="33" endPosition="0" />
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="34" startPosition="0" endLine="37" endPosition="0" />
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="58" startPosition="0" endLine="61" endPosition="0">
       <varInfo nodeId="1229428441559" varName="editorContext" />
       <varInfo nodeId="1229428441559" varName="keyEvent" />
       <varInfo nodeId="1229428441559" varName="node" />
       <varInfo nodeId="1229428441559" varName="selectedNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="60" startPosition="0" endLine="63" endPosition="0">
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="62" startPosition="0" endLine="65" endPosition="0">
       <varInfo nodeId="1229428441559" varName="editorContext" />
       <varInfo nodeId="1229428441559" varName="keyEvent" />
       <varInfo nodeId="1229428441559" varName="node" />
       <varInfo nodeId="1229428441559" varName="selectedNodes" />
     </scopeInfo>
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="64" startPosition="0" endLine="67" endPosition="0" />
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="16" startPosition="44" endLine="20" endPosition="46">
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="66" startPosition="0" endLine="69" endPosition="0" />
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="18" startPosition="44" endLine="22" endPosition="46">
       <varInfo nodeId="1229428441559" varName="action" />
     </scopeInfo>
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="44" startPosition="7" endLine="48" endPosition="19" />
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="51" startPosition="0" endLine="55" endPosition="0">
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="46" startPosition="7" endLine="50" endPosition="19" />
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="53" startPosition="0" endLine="57" endPosition="0">
       <varInfo nodeId="1229428441559" varName="editorContext" />
       <varInfo nodeId="1229428441559" varName="keyEvent" />
     </scopeInfo>
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="16" startPosition="0" endLine="22" endPosition="0" />
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="36" startPosition="91" endLine="48" endPosition="19">
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="18" startPosition="0" endLine="24" endPosition="0" />
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="38" startPosition="91" endLine="50" endPosition="19">
       <varInfo nodeId="1229428441559" varName="contextCell" />
       <varInfo nodeId="1229428441559" varName="contextNode" />
     </scopeInfo>
-    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="36" startPosition="0" endLine="50" endPosition="0">
+    <scopeInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="38" startPosition="0" endLine="52" endPosition="0">
       <varInfo nodeId="1229428441559" varName="editorContext" />
       <varInfo nodeId="1229428441559" varName="keyEvent" />
     </scopeInfo>
-    <unitInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="23" startPosition="0" endLine="68" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.SequenceCreator_add_initializer$SequenceCreator_add_initializer_Action0" />
-    <unitInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="15" startPosition="0" endLine="69" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.SequenceCreator_add_initializer" />
+    <unitInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="25" startPosition="0" endLine="70" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.SequenceCreator_add_initializer$SequenceCreator_add_initializer_Action0" />
+    <unitInfo nodeId="1229428441559" fileName="SequenceCreator_add_initializer.java" startLine="17" startPosition="0" endLine="71" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.editor.SequenceCreator_add_initializer" />
   </root>
   <root nodeId="1235573413466" modelId="r:00000000-0000-4000-0000-011c8959032a(jetbrains.mps.baseLanguage.collections.editor)">
     <nodeInfo nodeId="1235573415083" fileName="SingletonSequenceCreator_Editor.java" startLine="96" startPosition="58" endLine="96" endPosition="58" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />

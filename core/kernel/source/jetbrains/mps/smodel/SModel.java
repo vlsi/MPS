@@ -458,7 +458,7 @@ public class SModel {
     if (myDisposed) return;
 
     enforceFullLoad();
-    SNodeId id = node.getSNodeId();
+    SNodeId id = node.getNodeId();
     if (id == null) {
       assignNewId(node);
       return;
@@ -466,7 +466,7 @@ public class SModel {
 
     org.jetbrains.mps.openapi.model.SNode existingNode = myIdToNodeMap.get(id);
     if (existingNode == null) {
-      myIdToNodeMap.put(node.getSNodeId(), node);
+      myIdToNodeMap.put(node.getNodeId(), node);
     }
 
     if (existingNode != null && existingNode != node) {
@@ -490,7 +490,7 @@ public class SModel {
     checkNotDisposed();
 
     enforceFullLoad();
-    SNodeId id = node.getSNodeId();
+    SNodeId id = node.getNodeId();
     if (myDisposed || id == null) return;
     myIdToNodeMap.remove(id);
   }
