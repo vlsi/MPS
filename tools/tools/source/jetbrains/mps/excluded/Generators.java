@@ -103,9 +103,14 @@ public class Generators {
       for (Pair<String, String> module : Utils.collectMPSCompiledModulesInfo(dir)) {
         String sourceCanonical = new File(module.o2).getCanonicalPath();
         if (!sourcesIncluded.contains(sourceCanonical)) {
-          assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.o1 + "\ngenerates into\n" + module.o2;
-          String sFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(module.o2);
-          sourceGenFolders.add(sFolder);
+          //todo dirty hack until Julia fixes packaging
+          if (!sourceCanonical.endsWith("languages/languageDesign/smodel/tests_gen")) {
+            assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.o1 + "\ngenerates into\n" + module.o2;
+            if (new File(module.o2).exists()) {
+              String sFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(module.o2);
+              sourceGenFolders.add(sFolder);
+            }
+          }
         }
         String cgFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(module.o1) + "/" + AbstractModule.CLASSES_GEN;
         classesGenFolders.add(cgFolder);
@@ -146,7 +151,7 @@ public class Generators {
     Set<String> modelRoots = new HashSet<String>();
     Set<String> sourcesIncluded = new HashSet<String>();
     for (File imlFile : Utils.withExtension(".iml", Utils.files(new File(".")))) {
-      if (imlFile.getCanonicalPath().equals(genSourcesIml.getCanonicalPath())) continue;
+      //if (imlFile.getCanonicalPath().equals(genSourcesIml.getCanonicalPath())) continue;
       Document doc = JDOMUtil.loadDocument(imlFile);
       Element rootManager = Utils.getComponentWithName(doc, MODULE_ROOT_MANAGER);
       for (Element cRoot : (List<Element>) rootManager.getChildren(CONTENT)) {
@@ -155,7 +160,8 @@ public class Generators {
 
         for (Element sFolder : (List<Element>) cRoot.getChildren(SOURCE_FOLDER)) {
           String imlFormattedSourceFolder = sFolder.getAttributeValue(URL);
-          sourcesIncluded.add(new File(imlFormattedSourceFolder.replace("file://$MODULE_DIR$", imlFile.getParent())).getCanonicalPath());
+          String sourcePath = new File(imlFormattedSourceFolder.replace("file://$MODULE_DIR$", imlFile.getParent())).getCanonicalPath();
+          sourcesIncluded.add(sourcePath);
         }
       }
     }
@@ -167,11 +173,16 @@ public class Generators {
     List<String> classesGen = new ArrayList<String>();
     for (File dir : sourceDirs) {
       for (Pair<String, String> moduleWithSourceGen : Utils.collectMPSCompiledModulesInfo(dir)) {
-        classesGen.add(moduleWithSourceGen.o1 + "/" + AbstractModule.CLASSES_GEN);
-
         String sourceCanonical = new File(moduleWithSourceGen.o2).getCanonicalPath();
-        assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + moduleWithSourceGen.o1 + "\ngenerates into\n" + moduleWithSourceGen.o2;
-        sourceGen.add(moduleWithSourceGen.o2);
+        //todo dirty hack until Julia fixes packaging
+        if (!sourceCanonical.endsWith("languages/languageDesign/smodel/tests_gen")) {
+          assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + moduleWithSourceGen.o1 + "\ngenerates into\n" + moduleWithSourceGen.o2;
+          if (new File(moduleWithSourceGen.o2).exists()) {
+            sourceGen.add(moduleWithSourceGen.o2);
+          }
+
+          classesGen.add(moduleWithSourceGen.o1 + "/" + AbstractModule.CLASSES_GEN);
+        }
       }
     }
 
@@ -179,7 +190,7 @@ public class Generators {
     sourceGen.removeAll(sourcesIncluded);
     Collections.sort(sourceGen);
     Collections.sort(classesGen);
-    rootManager.removeChildren(CONTENT);
+    //rootManager.removeChildren(CONTENT);
 
     Set<String> newRoots = new HashSet<String>();
     for (String sGen : sourceGen) {
@@ -211,18 +222,27 @@ public class Generators {
       Element contentRoot = Utils.getChildByAttribute(rootManager, CONTENT, URL, rootInImlFormat);
 
       Element sourceFolder = new Element(SOURCE_FOLDER);
-      sourceFolder.setAttribute(URL, sGen);
+      sourceFolder.setAttribute(URL, PATH_START_MODULE + Utils.getRelativeProjectPath(sGen));
       sourceFolder.setAttribute("isTestSource", "false");
       contentRoot.addContent(sourceFolder);
     }
 
     for (String cGen : classesGen) {
-      String rootInImlFormat = PATH_START_MODULE + Utils.getRelativeProjectPath(cGen);
+      String root = null;
+      for (String newRoot : newRoots) {
+        if (cGen.startsWith(newRoot)) {
+          root = newRoot;
+        }
+      }
+
+      //assert root != null : "Classes gen folder which has no corresponding content root: " + cGen;
+      if (root == null) continue;
+
+      String rootInImlFormat = PATH_START_MODULE + Utils.getRelativeProjectPath(root);
       Element contentRoot = Utils.getChildByAttribute(rootManager, CONTENT, URL, rootInImlFormat);
-      assert contentRoot != null : "Classes gen folder which has no corresponding content root: " + cGen;
 
       Element excludeFolder = new Element(EXCLUDE_FOLDER);
-      excludeFolder.setAttribute(URL, rootInImlFormat);
+      excludeFolder.setAttribute(URL, PATH_START_MODULE + Utils.getRelativeProjectPath(cGen));
       contentRoot.addContent(excludeFolder);
     }
 
@@ -234,7 +254,7 @@ public class Generators {
 
   private static boolean intersects(Set<String> existingRoots, String parent) {
     for (String root : existingRoots) {
-      if (root.startsWith(parent)) return true;
+      if (root.equals(parent) || root.startsWith(parent + File.separator)) return true;
     }
     return false;
   }

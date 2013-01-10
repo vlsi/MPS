@@ -94,7 +94,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/scopes/runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/scopes/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/script/solutions/pluginSolution/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/script/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/sharedConcepts/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/languageDesign/smodel/solutions/jetbrains.mps.lang.smodel.unittest/tests_gen" isTestSource="false" />
@@ -121,7 +120,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/buildlanguage/languages/reduced/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/conf/languages/conf/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/conf/solutions/jetbrains.mps.platform.conf.sandbox/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/contracts/languages/contracts/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/dates/internal/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/dates/runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/dates/source_gen" isTestSource="false" />
@@ -130,11 +128,8 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/extensionMethod/solutions/jetbrains.mps.baseLanguage.extensionMethods.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/extensionMethod/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.geom/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.graph/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.layeredLayout/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.orthogonalLayout/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.planarization/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/graphLayout/solutions/jetbrains.mps.graphLayout.test/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/gwtsupport/languages/client/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/gwtsupport/solutions/gwtsupport.buildtest/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/gwtsupport/solutions/gwtsupport.sandbox/source_gen" isTestSource="false" />
@@ -169,7 +164,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ui/languages/ui/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ui/languages/ui/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ui/solutions/jetbrains.mps.ui.unittest/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../languages/util/ui/solutions/ui.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/uiLanguage/solutions/jetbrains.mps.uiLanguage.samples/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/uiLanguage/solutions/pluginSolution/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../languages/util/uiLanguage/source_gen" isTestSource="false" />
@@ -363,7 +357,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/agreement/framework/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/agreement/sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/languages/calculator/solutions/pluginSolution/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/languages/calculator/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/calculator-tutorial/solutions/jetbrains.mps.calculator.sandbox/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/languages/complex/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/complexLanguage/solutions/jetbrains.mps.complex.runtime/source_gen" isTestSource="false" />
@@ -383,7 +376,6 @@
       <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang5/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang6/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/languages/demoLang7/source_gen" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../samples/generator_demo/solutions/test_models/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/lambda/languages/lambdaCalculus/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.runtime/source_gen" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/../../samples/lambda/solutions/jetbrains.mps.samples.lambdaCalculus.sandbox/source_gen" isTestSource="false" />
