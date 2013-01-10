@@ -81,7 +81,7 @@ public class NewAccessoryModel_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Language language = ((Language) ((IModule) MapSequence.fromMap(_params).get("module")));
-      NewModelDialog d = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), language.getModuleFqName() + ".", ((IOperationContext) MapSequence.fromMap(_params).get("context")), SModelStereotype.NONE, true);
+      NewModelDialog d = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), language.getModuleFqName(), ((IOperationContext) MapSequence.fromMap(_params).get("context")), SModelStereotype.NONE, true);
       d.show();
       final SModelDescriptor result = d.getResult();
 

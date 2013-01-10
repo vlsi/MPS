@@ -13,9 +13,12 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.project.Project;
 import java.awt.HeadlessException;
 import java.awt.GridLayout;
+import java.awt.Dimension;
 import javax.swing.JLabel;
 import javax.swing.DefaultComboBoxModel;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
+import jetbrains.mps.smodel.Language;
+import jetbrains.mps.extapi.persistence.FileBasedModelRoot;
 import javax.swing.DefaultListCellRenderer;
 import java.awt.Component;
 import javax.swing.JList;
@@ -24,7 +27,14 @@ import java.awt.event.ItemEvent;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
 import jetbrains.mps.smodel.SModelStereotype;
+import org.jetbrains.mps.openapi.persistence.Memento;
+import jetbrains.mps.persistence.MementoImpl;
+import jetbrains.mps.project.structure.model.ModelRootDescriptor;
+import jetbrains.mps.persistence.PersistenceRegistry;
+import java.io.File;
 import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import java.util.Iterator;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.ide.ui.dialogs.properties.MPSPropertiesConfigurable;
 import jetbrains.mps.ide.ui.dialogs.properties.ModelPropertiesConfigurable;
@@ -33,7 +43,6 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import javax.lang.model.SourceVersion;
 import org.jetbrains.annotations.Nullable;
@@ -73,13 +82,17 @@ public class NewModelDialog extends DialogWrapper {
   }
 
   private void initContentPane() {
-    JPanel mainPanel = new JPanel(new GridLayout(0, 1));
+    JPanel mainPanel = new JPanel(new GridLayout(6, 1));
+    mainPanel.setPreferredSize(new Dimension(300, 100));
 
     mainPanel.add(new JLabel("Model root:"));
     mainPanel.add(myModelRoots);
     DefaultComboBoxModel model = new DefaultComboBoxModel();
     for (ModelRoot root : myModule.getModelRoots()) {
       if (!(root.isReadOnly())) {
+        model.addElement(root);
+      } else if (myModule instanceof Language && root instanceof FileBasedModelRoot) {
+        // Can fix only FileBased model root (default for language) 
         model.addElement(root);
       }
     }
@@ -130,14 +143,55 @@ public class NewModelDialog extends DialogWrapper {
     });
     mainPanel.add(myModelStereotype);
 
-    myContentPane.add(mainPanel, BorderLayout.NORTH);
-    myContentPane.add(new JPanel(), BorderLayout.CENTER);
+    myContentPane.add(mainPanel, BorderLayout.CENTER);
   }
 
   @Override
   protected void doOKAction() {
     if (!(check())) {
       return;
+    }
+
+    if (((ModelRoot) myModelRoots.getSelectedItem()).isReadOnly()) {
+      final FileBasedModelRoot selectedModelRoot = (FileBasedModelRoot) myModelRoots.getSelectedItem();
+
+      Memento memento = new MementoImpl();
+      selectedModelRoot.save(memento);
+
+      final ModelRootDescriptor oldModelRootDescriptor = new ModelRootDescriptor(selectedModelRoot.getType(), memento);
+
+      final FileBasedModelRoot newModelRoot = (FileBasedModelRoot) PersistenceRegistry.getInstance().getModelRootFactory(selectedModelRoot.getType()).create();
+      newModelRoot.load(memento);
+      newModelRoot.addFile(FileBasedModelRoot.SOURCE_ROOTS, newModelRoot.getContentRoot() + File.separator + "languageAccessories");
+
+      memento = new MementoImpl();
+      newModelRoot.save(memento);
+      final ModelRootDescriptor newModelRootDescriptor = new ModelRootDescriptor(newModelRoot.getType(), memento);
+
+      ModelAccess.instance().runWriteAction(new Runnable() {
+        public void run() {
+          final LanguageDescriptor languageDescriptor = (LanguageDescriptor) myModule.getModuleDescriptor();
+          Iterator<ModelRootDescriptor> iterator = languageDescriptor.getModelRootDescriptors().iterator();
+          while (iterator.hasNext()) {
+            ModelRootDescriptor descriptor = iterator.next();
+            if (descriptor.getType().equals(oldModelRootDescriptor.getType()) && descriptor.getMemento().equals(oldModelRootDescriptor.getMemento())) {
+              iterator.remove();
+              break;
+            }
+          }
+          languageDescriptor.getModelRootDescriptors().add(newModelRootDescriptor);
+          myModule.setModuleDescriptor(languageDescriptor, true);
+          myModule.save();
+          myModule.reloadFromDisk(true);
+        }
+      });
+
+      for (ModelRoot modelRoot : myModule.getModelRoots()) {
+        if (modelRoot instanceof FileBasedModelRoot && ((FileBasedModelRoot) modelRoot).getContentRoot().equals((((FileBasedModelRoot) selectedModelRoot).getContentRoot()))) {
+          myModelRoots.addItem(modelRoot);
+          myModelRoots.setSelectedItem(modelRoot);
+        }
+      }
     }
 
     myResult = ModelAccess.instance().runWriteActionInCommand(new Computable<SModelDescriptor>() {
@@ -173,6 +227,7 @@ public class NewModelDialog extends DialogWrapper {
 
   private boolean check() {
     Object selected = myModelRoots.getSelectedItem();
+
     if (!((selected instanceof ModelRoot))) {
       setErrorText("Model root is not selected");
       return false;
@@ -212,7 +267,7 @@ public class NewModelDialog extends DialogWrapper {
       return false;
     }
 
-    if (!(mr.canCreateModel(getFqName()))) {
+    if (!(mr.isReadOnly()) && !(mr.canCreateModel(getFqName()))) {
       setErrorText("Can't create a model with this name under this model root");
       return false;
     }
