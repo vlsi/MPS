@@ -14,18 +14,21 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.idea.core.make;
-
-import org.jetbrains.annotations.NonNls;
+package jetbrains.mps.jps.build;
 
 /**
- * evgeny, 11/29/12
+ * Created with IntelliJ IDEA.
+ * User: fyodor
+ * Date: 12/21/12
+ * Time: 2:24 PM
+ * To change this template use File | Settings | File Templates.
  */
-public class MPSCustomMessages {
-  @NonNls
-  public static final String MSG_GENERATED = "generated";
-  @NonNls
-  public static final String MSG_REFRESH = "refresh";
-  @NonNls
-  public static final String MSG_ERROR = "error";
+public class MPSMakePaths {
+
+  public static final String MPS_MAKE = "mps-make";
+  public static final String SOURCE_GEN = "source_gen";
+  public static final String SOURCE_GEN_CACHES = "source_gen.caches";
+  public static final String TEST_GEN = "test_gen";
+  public static final String TEST_GEN_CACHES = "test_gen.caches";
+
 }

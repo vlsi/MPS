@@ -4,6 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import jetbrains.mps.icons.MPSIcons;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
@@ -25,7 +26,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.logging.Logger;
 
 public class NewAccessoryModel_Action extends BaseAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = MPSIcons.Nodes.Models.AccessoryModel;
 
   public NewAccessoryModel_Action() {
     super("New Accessory Model", "", ICON);
@@ -80,7 +81,7 @@ public class NewAccessoryModel_Action extends BaseAction {
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
       final Language language = ((Language) ((IModule) MapSequence.fromMap(_params).get("module")));
-      NewModelDialog d = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), language.getModuleFqName() + ".", ((IOperationContext) MapSequence.fromMap(_params).get("context")), SModelStereotype.NONE, true);
+      NewModelDialog d = new NewModelDialog(((Project) MapSequence.fromMap(_params).get("project")), ((IModule) MapSequence.fromMap(_params).get("module")), language.getModuleFqName(), ((IOperationContext) MapSequence.fromMap(_params).get("context")), SModelStereotype.NONE, true);
       d.show();
       final SModelDescriptor result = d.getResult();
 

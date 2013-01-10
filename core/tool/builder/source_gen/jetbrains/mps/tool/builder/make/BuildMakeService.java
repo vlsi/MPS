@@ -41,7 +41,7 @@ import jetbrains.mps.make.script.IProgress;
 public class BuildMakeService extends AbstractMakeService implements IMakeService {
   private static Logger LOG = Logger.getLogger(BuildMakeService.class);
 
-  /*package*/ BuildMakeService() {
+  public BuildMakeService() {
   }
 
   public Future<IResult> make(MakeSession session, Iterable<? extends IResource> resources, IScript script, IScriptController controller, @NotNull ProgressMonitor monitor) {

@@ -32,6 +32,7 @@ import com.intellij.ui.ColoredTableCellRenderer;
 import com.intellij.ui.FieldPanel;
 import com.intellij.ui.IdeBorderFactory;
 import com.intellij.ui.InsertPathAction;
+import com.intellij.ui.SimpleTextAttributes;
 import com.intellij.ui.TableUtil;
 import com.intellij.ui.ToolbarDecorator;
 import com.intellij.ui.components.JBCheckBox;
@@ -101,6 +102,7 @@ import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableColumn;
 import java.awt.Dimension;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.HashSet;
@@ -847,8 +849,13 @@ public class ModulePropertiesConfigurable extends MPSPropertiesConfigurable {
         setFocusBorderAroundIcon(true);
         setBorder(BorderFactory.createEmptyBorder(1,1,1,1));
         if (value != null) {
-          String path = (String) value;
-          append(FileUtil.getCanonicalPath(path));
+          String path = FileUtil.getCanonicalPath((String) value);
+          if(!(new File(path)).exists()) {
+            append(path,SimpleTextAttributes.ERROR_ATTRIBUTES);
+          }
+          else {
+            append(path);
+          }
         }
       }
     }

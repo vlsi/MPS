@@ -107,9 +107,9 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
           context.getBuilderParameter(MPSMakeConstants.MPS_LANGUAGES.toString()),
           context.getBuilderParameter(MPSMakeConstants.MPS_REPOSITORY.toString()));
 
+        ClassLoaderManager.getInstance().updateClassPath();
         LanguageRegistry.getInstance().loadLanguages();
         ExtensionRegistry.getInstance().loadExtensionDescriptors();
-        ClassLoaderManager.getInstance().updateClassPath();
 
         initProject(context);
 

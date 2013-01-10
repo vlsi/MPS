@@ -4,6 +4,7 @@ package jetbrains.mps.ide.devkit.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
+import jetbrains.mps.icons.MPSIcons;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.project.IModule;
@@ -20,7 +21,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.logging.Logger;
 
 public class NewGenerator_Action extends BaseAction {
-  private static final Icon ICON = null;
+  private static final Icon ICON = MPSIcons.Nodes.Generator;
 
   public NewGenerator_Action() {
     super("Generator", "", ICON);
