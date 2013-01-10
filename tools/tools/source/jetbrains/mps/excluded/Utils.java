@@ -16,16 +16,21 @@
 
 package jetbrains.mps.excluded;
 
-import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.project.MPSExtentions;
+import jetbrains.mps.project.ProjectPathUtil;
+import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
+import jetbrains.mps.project.persistence.SolutionDescriptorPersistence;
+import jetbrains.mps.project.structure.modules.LanguageDescriptor;
+import jetbrains.mps.project.structure.modules.SolutionDescriptor;
+import jetbrains.mps.util.MacroHelper;
+import jetbrains.mps.util.MacrosFactory;
+import jetbrains.mps.util.Pair;
+import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.impl.IoFileSystemProvider;
 import org.jdom.Document;
 import org.jdom.Element;
 
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -40,13 +45,12 @@ public class Utils {
     rootPath = rootPath.substring(0, rootPath.length() - 1);
   }
 
-  public static String getRelativeProjectPath(File file) {
+  public static String getRelativeProjectPath(String absolutePath) {
     // file should be under project
-    String modulePath = file.getAbsolutePath();
-    if (!modulePath.startsWith(rootPath)) {
-      throw new IllegalStateException("Module path: " + modulePath + "; root path: " + rootPath);
+    if (!absolutePath.startsWith(rootPath)) {
+      throw new IllegalStateException("Module path: " + absolutePath + "; root path: " + rootPath);
     }
-    return modulePath.substring(rootPath.length()).replace("\\", "/");
+    return absolutePath.substring(rootPath.length()).replace("\\", "/");
   }
 
   public static Element getComponentWithName(Document doc, String name) {
@@ -81,35 +85,41 @@ public class Utils {
     return files;
   }
 
-  public static List<File> collectGeneratedInMPSModules(File... dirs) {
-    List<File> result = new ArrayList<File>();
+  public static List<Pair<String, String>> collectMPSCompiledModulesInfo(File... dirs) {
+    List<Pair<String, String>> result = new ArrayList<Pair<String, String>>();
     for (File dir : dirs) {
-      addRecursively(dir, result);
+      collectMPSCompiledModulesInfoRecursively(dir, result);
     }
     return result;
   }
 
-  private static void addRecursively(File dir, List<File> result) {
+  private static void collectMPSCompiledModulesInfoRecursively(File dir, List<Pair<String, String>> result) {
     for (File child : dir.listFiles()) {
-      if (isMPSModuleFile(child)) {
-        if (isModuleCompileInMPS(child)) {
-          result.add(child.getParentFile());
-        }
+      if (child.isDirectory()) {
+        collectMPSCompiledModulesInfoRecursively(child, result);
+        continue;
+      }
+
+      boolean solution = child.getName().endsWith(MPSExtentions.DOT_SOLUTION);
+      boolean language = child.getName().endsWith(MPSExtentions.DOT_LANGUAGE);
+      if (!(solution || language)) continue;
+
+      IFile moduleIFile = new IoFileSystemProvider().getFile(child.getAbsolutePath());
+      IFile moduleDir = moduleIFile.getParent();
+      MacroHelper expander = MacrosFactory.forModuleFile(moduleIFile);
+
+      if (solution) {
+        SolutionDescriptor sd = SolutionDescriptorPersistence.loadSolutionDescriptor(moduleIFile, expander);
+        if (!sd.getCompileInMPS()) continue;
+
+        String srcPath = ProjectPathUtil.getGeneratorOutputPath(moduleIFile, sd).getPath();
+        result.add(new Pair<String, String>(moduleDir.getPath(), srcPath));
       } else {
-        if (child.isDirectory()) {
-          addRecursively(child, result);
-        }
+        LanguageDescriptor ld = LanguageDescriptorPersistence.loadLanguageDescriptor(moduleIFile, expander);
+        String srcPath = ProjectPathUtil.getGeneratorOutputPath(moduleIFile, ld).getPath();
+        result.add(new Pair<String, String>(moduleDir.getPath(), srcPath));
       }
     }
-  }
-
-  private static boolean isMPSModuleFile(File file) {
-    return file.isFile() && (file.getName().endsWith(".mpl") || file.getName().endsWith(".msd"));
-  }
-
-  private static boolean isModuleCompileInMPS(File moduleFile) {
-    String content = FileUtil.read(moduleFile);
-    return !(content.contains("compileInMPS=\"false\""));
   }
 
   public static File root() {
