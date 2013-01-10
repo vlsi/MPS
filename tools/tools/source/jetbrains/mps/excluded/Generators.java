@@ -68,6 +68,65 @@ public class Generators {
   }
 
   public static void updateGenSourcesIml(File genSourcesIml, File... sourceDirs) throws JDOMException, IOException {
+    Document doc = JDOMUtil.loadDocument(genSourcesIml);
+    Element rootManager = Utils.getComponentWithName(doc, MODULE_ROOT_MANAGER);
+
+    Set<String> contentRootUrls = new HashSet<String>();
+    for (File dir : sourceDirs) {
+      contentRootUrls.add(PATH_START_MODULE + dir);
+
+      // try to modify existing content roots
+      Element contentRoot = Utils.getChildByAttribute(rootManager, CONTENT, URL, PATH_START_MODULE + dir);
+      if (contentRoot == null) {
+        contentRoot = new Element(CONTENT);
+        contentRoot.setAttribute(URL, PATH_START_MODULE + dir);
+        rootManager.addContent(contentRoot);
+      }
+      contentRoot.removeContent();
+
+      // generate lists of source gen and classes gen folders and add as source and excluded to content root
+      List<String> sourceGenFolders = new ArrayList<String>();
+      List<String> classesGenFolders = new ArrayList<String>();
+      for (Pair<String, String> module : Utils.collectMPSCompiledModulesInfo(dir)) {
+        if (new File(module.o2).exists()) {
+          String sFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(module.o2);
+          sourceGenFolders.add(sFolder);
+        }
+        String cgFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(module.o1) + "/" + AbstractModule.CLASSES_GEN;
+        classesGenFolders.add(cgFolder);
+      }
+      Collections.sort(sourceGenFolders);
+      Collections.sort(classesGenFolders);
+
+      for (String sourceGenFolder : sourceGenFolders) {
+        Element sourceFolder = new Element(SOURCE_FOLDER);
+        sourceFolder.setAttribute(URL, sourceGenFolder);
+        sourceFolder.setAttribute("isTestSource", "false");
+        contentRoot.addContent(sourceFolder);
+      }
+      for (String classesGenFolder : classesGenFolders) {
+        Element excludeFolder = new Element(EXCLUDE_FOLDER);
+        excludeFolder.setAttribute(URL, classesGenFolder);
+        contentRoot.addContent(excludeFolder);
+      }
+    }
+
+    // remove unnecessary content roots
+    List<Element> toRemove = new ArrayList<Element>();
+    for (Object _contentRoot : rootManager.getChildren(CONTENT)) {
+      Element contentRoot = (Element) _contentRoot;
+      if (!contentRootUrls.contains(contentRoot.getAttributeValue(URL))) {
+        toRemove.add(contentRoot);
+      }
+    }
+    for (Element element : toRemove) {
+      element.detach();
+    }
+
+    JDOMUtil.writeDocument(doc, genSourcesIml);
+  }
+
+  public static void updateGenSourcesImlNoIntersections(File genSourcesIml, File... sourceDirs) throws JDOMException, IOException {
     System.out.println("Analyzing existing imls...");
     Set<String> modelRoots = new HashSet<String>();
     for (File imlFile : Utils.withExtension(".iml", Utils.files(new File(".")))) {
