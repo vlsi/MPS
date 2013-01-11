@@ -23,6 +23,7 @@
   <dependency className="jetbrains.mps.ide.build.buildPluginTests" file="buildPluginTests.xml" />
   <dependency className="jetbrains.mps.ide.build.buildPlugins" file="buildPlugins.xml" />
   <dependency className="jetbrains.mps.ide.build.buildStandalone" file="buildStandalone.xml" />
+  <dependency className="jetbrains.mps.ide.build.buildTesting" file="buildTesting.xml" />
   <dependency className="jetbrains.mps.ide.build.buildTroveCollections" file="buildTroveCollections.xml" />
   <dependency className="jetbrains.mps.ide.build.buildVcs" file="buildVcs.xml" />
   <dependency className="jetbrains.mps.ide.build.buildWorkbench" file="buildWorkbench.xml" />

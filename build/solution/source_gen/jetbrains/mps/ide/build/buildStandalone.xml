@@ -48,13 +48,8 @@
     </copy>
     <mkdir dir="${build.layout}/plugins" />
     <mkdir dir="${build.layout}/plugins/mps-core" />
-    <mkdir dir="${build.layout}/plugins/mps-core/META-INF" />
-    <copy todir="${build.layout}/plugins/mps-core/META-INF">
-      <fileset file="${mps_home}/plugins/mps-core/META-INF/plugin.xml" />
-    </copy>
-    <mkdir dir="${build.layout}/plugins/mps-core-ex" />
-    <copy todir="${build.layout}/plugins/mps-core-ex">
-      <fileset dir="${artifacts.buildCoreEx}/mps-core-ex" />
+    <copy todir="${build.layout}/plugins/mps-core">
+      <fileset dir="${artifacts.buildCoreEx}/mps-core" />
     </copy>
     <mkdir dir="${build.layout}/plugins/cvsIntegration" />
     <copy todir="${build.layout}/plugins/cvsIntegration">

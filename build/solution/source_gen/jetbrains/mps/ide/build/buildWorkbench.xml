@@ -7,6 +7,7 @@
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
   <property name="artifacts.buildCoreEx" location="${build.dir}/artifacts/buildCoreEx" />
+  <property name="artifacts.buildTesting" location="${build.dir}/artifacts/buildTesting" />
   <property name="artifacts.IDEA" location="${idea_home}" />
   <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
   <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
@@ -288,6 +289,7 @@
   <target name="buildDependents">
     <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="buildTesting.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />
@@ -765,7 +767,6 @@
   <target name="generate" depends="fetchDependencies, declare-mps-tasks">
     <echo message="generating" />
     <mps.generate parallelMode="true" fork="true">
-      <library file="${artifacts.buildCoreEx}/mps-core-ex/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <library file="${artifacts.buildCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.buildCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.builders.jar" />
       <library file="${artifacts.buildCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.checkedDots.jar" />
@@ -826,6 +827,7 @@
       <library file="${artifacts.buildCore}/lib/mps-test.jar" />
       <library file="${artifacts.buildCore}/lib/mps-tuples.jar" />
       <library file="${artifacts.buildCore}/lib/mps-ui.jar" />
+      <library file="${artifacts.buildTesting}/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <chunk>
         <module file="${mps_home}/languages/core/stub/MPS.Workbench/MPS.Workbench.msd" />
         <module file="${mps_home}/languages/util/uiLanguage/runtime/jetbrains.mps.ide.uiLanguage.runtime.msd" />

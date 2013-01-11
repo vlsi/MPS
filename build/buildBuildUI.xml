@@ -7,6 +7,7 @@
   <property name="mps_home" location="${basedir}" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
   <property name="artifacts.buildCoreEx" location="${build.dir}/artifacts/buildCoreEx" />
+  <property name="artifacts.buildTesting" location="${build.dir}/artifacts/buildTesting" />
   <property name="artifacts.buildBuild" location="${build.dir}/artifacts/buildBuild" />
   <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
   <property name="artifacts.buildExecutionPlugin" location="${build.dir}/artifacts/buildExecutionPlugin" />
@@ -116,6 +117,7 @@
   <target name="buildDependents">
     <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="buildTesting.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildBuild.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" />
@@ -246,7 +248,6 @@
       <library file="${artifacts.buildBuild}/mps-build/languages/build/jetbrains.mps.build.mps.jar" />
       <library file="${artifacts.buildBuild}/mps-build/languages/build/jetbrains.mps.build.workflow.jar" />
       <library file="${artifacts.buildBuild}/mps-build/languages/build/jetbrains.mps.ide.build.jar" />
-      <library file="${artifacts.buildCoreEx}/mps-core-ex/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <library file="${artifacts.buildCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.buildCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
       <library file="${artifacts.buildCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -323,6 +324,7 @@
       <library file="${artifacts.buildExecutionPlugin}/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.configurations.pluginSolution.jar" />
       <library file="${artifacts.buildExecutionPlugin}/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.impl.jar" />
       <library file="${artifacts.buildExecutionPlugin}/mps-execution-languages/languages/mps-execution-languages/jetbrains.mps.execution.library.jar" />
+      <library file="${artifacts.buildTesting}/mps-testing/languages/baseLanguage/jetbrains.mps.baseLanguage.unitTest.jar" />
       <library file="${artifacts.buildWorkbench}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar" />
       <library file="${artifacts.buildWorkbench}/languages/workbench/jetbrains.mps.uiLanguage.jar" />
       <library file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
