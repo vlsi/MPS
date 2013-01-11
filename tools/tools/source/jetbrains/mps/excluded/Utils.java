@@ -25,6 +25,7 @@ import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.impl.IoFileSystemProvider;
 import org.jdom.Document;
@@ -33,6 +34,7 @@ import org.jdom.Element;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 public class Utils {
   private static final String COMPONENT = "component";
@@ -85,15 +87,15 @@ public class Utils {
     return files;
   }
 
-  public static List<Pair<String, String>> collectMPSCompiledModulesInfo(File... dirs) {
-    List<Pair<String, String>> result = new ArrayList<Pair<String, String>>();
+  public static MultiMap<String, String> collectMPSCompiledModulesInfo(File... dirs) {
+    MultiMap<String, String> result = new MultiMap<String, String>();
     for (File dir : dirs) {
       collectMPSCompiledModulesInfoRecursively(dir, result);
     }
     return result;
   }
 
-  private static void collectMPSCompiledModulesInfoRecursively(File dir, List<Pair<String, String>> result) {
+  private static void collectMPSCompiledModulesInfoRecursively(File dir, MultiMap<String, String> result) {
     for (File child : dir.listFiles()) {
       if (child.isDirectory()) {
         collectMPSCompiledModulesInfoRecursively(child, result);
@@ -113,11 +115,13 @@ public class Utils {
         if (!sd.getCompileInMPS()) continue;
 
         String srcPath = ProjectPathUtil.getGeneratorOutputPath(moduleIFile, sd).getPath();
-        result.add(new Pair<String, String>(moduleDir.getPath(), srcPath));
+        result.putValue(moduleDir.getPath(), srcPath);
+        String testPath = ProjectPathUtil.getGeneratorTestsOutputPath(moduleIFile, sd).getPath();
+        result.putValue(moduleDir.getPath(), testPath);
       } else {
         LanguageDescriptor ld = LanguageDescriptorPersistence.loadLanguageDescriptor(moduleIFile, expander);
         String srcPath = ProjectPathUtil.getGeneratorOutputPath(moduleIFile, ld).getPath();
-        result.add(new Pair<String, String>(moduleDir.getPath(), srcPath));
+        result.putValue(moduleDir.getPath(), srcPath);
       }
     }
   }

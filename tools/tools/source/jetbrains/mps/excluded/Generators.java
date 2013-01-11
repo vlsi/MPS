@@ -18,7 +18,6 @@ package jetbrains.mps.excluded;
 
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.JDOMUtil;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.misc.hash.HashSet;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -27,8 +26,10 @@ import org.jdom.JDOMException;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
+import java.util.Map.Entry;
 import java.util.Set;
 
 public class Generators {
@@ -53,8 +54,10 @@ public class Generators {
     excludeXml.removeChildren(DIRECTORY);
 
     List<String> paths = new ArrayList<String>();
-    for (Pair<String, String> module : Utils.collectMPSCompiledModulesInfo(sourceDirs)) {
-      paths.add(PATH_START_PROJECT + Utils.getRelativeProjectPath(module.o2));
+    for (Entry<String, Collection<String>> module : Utils.collectMPSCompiledModulesInfo(sourceDirs).entrySet()) {
+      for (String sourcePath : module.getValue()) {
+        paths.add(PATH_START_PROJECT + Utils.getRelativeProjectPath(sourcePath));
+      }
     }
     Collections.sort(paths);
     for (String path : paths) {
@@ -100,19 +103,23 @@ public class Generators {
       // generate lists of source gen and classes gen folders and add as source and excluded to content root
       List<String> sourceGenFolders = new ArrayList<String>();
       List<String> classesGenFolders = new ArrayList<String>();
-      for (Pair<String, String> module : Utils.collectMPSCompiledModulesInfo(dir)) {
-        String sourceCanonical = new File(module.o2).getCanonicalPath();
-        if (!sourcesIncluded.contains(sourceCanonical)) {
-          //todo dirty hack until Julia fixes packaging
-          if (!sourceCanonical.endsWith("languages/languageDesign/smodel/tests_gen")) {
-            assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.o1 + "\ngenerates into\n" + module.o2;
-            if (new File(module.o2).exists()) {
-              String sFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(module.o2);
-              sourceGenFolders.add(sFolder);
+      for (Entry<String, Collection<String>> module : Utils.collectMPSCompiledModulesInfo(dir).entrySet()) {
+        for (String sourcePath : module.getValue()) {
+          String sourceCanonical = new File(sourcePath).getCanonicalPath();
+          if (!sourcesIncluded.contains(sourceCanonical)) {
+            //todo dirty hack until Julia fixes packaging
+            if (!sourceCanonical.endsWith("languages/languageDesign/smodel/tests_gen")) {
+              assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.getKey() + "\ngenerates into\n" + sourcePath;
+              if (new File(sourcePath).exists()) {
+                String sFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(sourcePath);
+                sourceGenFolders.add(sFolder);
+              }
             }
           }
         }
-        String cgFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(module.o1) + "/" + AbstractModule.CLASSES_GEN;
+      }
+      for (String modulePath : Utils.collectMPSCompiledModulesInfo(dir).keySet()) {
+        String cgFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(modulePath) + "/" + AbstractModule.CLASSES_GEN;
         classesGenFolders.add(cgFolder);
       }
       Collections.sort(sourceGenFolders);
@@ -172,17 +179,19 @@ public class Generators {
     List<String> sourceGen = new ArrayList<String>();
     List<String> classesGen = new ArrayList<String>();
     for (File dir : sourceDirs) {
-      for (Pair<String, String> moduleWithSourceGen : Utils.collectMPSCompiledModulesInfo(dir)) {
-        String sourceCanonical = new File(moduleWithSourceGen.o2).getCanonicalPath();
-        //todo dirty hack until Julia fixes packaging
-        if (!sourceCanonical.endsWith("languages/languageDesign/smodel/tests_gen")) {
-          assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + moduleWithSourceGen.o1 + "\ngenerates into\n" + moduleWithSourceGen.o2;
-          if (new File(moduleWithSourceGen.o2).exists()) {
-            sourceGen.add(moduleWithSourceGen.o2);
-          }
+      for (Entry<String, Collection<String>> module : Utils.collectMPSCompiledModulesInfo(dir).entrySet()) {
+        for (String sourcePath : module.getValue()) {
+          String sourceCanonical = new File(sourcePath).getCanonicalPath();
+          //todo dirty hack until Julia fixes packaging
+          if (!sourceCanonical.endsWith("languages/languageDesign/smodel/tests_gen")) {
+            assert sourceCanonical.startsWith(dir.getCanonicalPath()) : "module generates files to outside of 'root' folder for it:\n" + module.getKey() + "\ngenerates into\n" + sourcePath;
+            if (new File(sourcePath).exists()) {
+              sourceGen.add(sourcePath);
+            }
 
-          classesGen.add(moduleWithSourceGen.o1 + "/" + AbstractModule.CLASSES_GEN);
+          }
         }
+        classesGen.add(module.getKey() + "/" + AbstractModule.CLASSES_GEN);
       }
     }
 
