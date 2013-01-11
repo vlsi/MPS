@@ -17,11 +17,12 @@ import javax.swing.JPopupMenu;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.tree.TreePath;
+import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.projectPane.NamespaceTextNode;
 import jetbrains.mps.ide.ui.smodel.PackageNode;
 
 public class DependencyTree extends MPSTree {
-  private Scope myScope;
+  private DependencyViewerScope myScope;
   private MPSProject myProject;
   private DependenciesPanel myParent;
 
@@ -53,7 +54,7 @@ public class DependencyTree extends MPSTree {
     return null;
   }
 
-  public void setContent(Scope scope, MPSProject project) {
+  public void setContent(DependencyViewerScope scope, MPSProject project) {
     myScope = scope;
     myProject = project;
     rebuildLater();
@@ -64,37 +65,41 @@ public class DependencyTree extends MPSTree {
     }
 
     public void valueChanged(TreeSelectionEvent event) {
-      TreePath[] paths = getSelectionPaths();
+      final TreePath[] paths = getSelectionPaths();
       if (paths == null || paths.length == 0) {
         return;
       }
-      Scope scope = new Scope();
-      for (TreePath path : paths) {
-        MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
-        if (node instanceof SModelTreeNode) {
-          scope.add(((SModelTreeNode) node).getSModelDescriptor());
-        }
-        if (node instanceof ProjectModuleTreeNode) {
-          scope.add(((ProjectModuleTreeNode) node).getModule());
-        }
-        if (node instanceof SNodeTreeNode) {
-          scope.add(((SNodeTreeNode) node).getSNode());
-        }
-        if (node instanceof NamespaceTextNode) {
-          for (IModule module : ((NamespaceTextNode) node).getModulesUnder()) {
-            scope.add(module);
-          }
-          for (SModelDescriptor model : ((NamespaceTextNode) node).getModelsUnder()) {
-            scope.add(model);
-          }
-        }
-        if (node instanceof PackageNode) {
-          for (SNode nodeUnder : ((PackageNode) node).getNodesUnderPackage()) {
-            scope.add(nodeUnder);
-          }
-        }
+      final DependencyViewerScope scope = new DependencyViewerScope();
+      ModelAccess.instance().runReadAction(new Runnable() {
+        public void run() {
+          for (TreePath path : paths) {
+            MPSTreeNode node = (MPSTreeNode) path.getLastPathComponent();
+            if (node instanceof SModelTreeNode) {
+              scope.add(((SModelTreeNode) node).getSModelDescriptor());
+            }
+            if (node instanceof ProjectModuleTreeNode) {
+              scope.add(((ProjectModuleTreeNode) node).getModule());
+            }
+            if (node instanceof SNodeTreeNode) {
+              scope.add(((SNodeTreeNode) node).getSNode());
+            }
+            if (node instanceof NamespaceTextNode) {
+              for (IModule module : ((NamespaceTextNode) node).getModulesUnder()) {
+                scope.add(module);
+              }
+              for (SModelDescriptor model : ((NamespaceTextNode) node).getModelsUnder()) {
+                scope.add(model);
+              }
+            }
+            if (node instanceof PackageNode) {
+              for (SNode nodeUnder : ((PackageNode) node).getNodesUnderPackage()) {
+                scope.add(nodeUnder);
+              }
+            }
 
-      }
+          }
+        }
+      });
       myParent.updateTargetsView(scope);
     }
   }

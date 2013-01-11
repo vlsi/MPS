@@ -6,7 +6,7 @@ import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.project.IModule;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.ide.dependencyViewer.Scope;
+import jetbrains.mps.ide.dependencyViewer.DependencyViewerScope;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.ide.dependencyViewer.DependenciesPanel;
 
@@ -15,14 +15,14 @@ public class DependenciesUtil {
   }
 
   public static SearchResults analyzeDependencies(IModule from, IModule to, Project project, MPSProject mpsProject, boolean openTool) {
-    Scope fromScope = new Scope();
+    DependencyViewerScope fromScope = new DependencyViewerScope();
     fromScope.add(from);
-    Scope toScope = new Scope();
+    DependencyViewerScope toScope = new DependencyViewerScope();
     toScope.add(to);
 
     AnalyzeDependencies_Tool tool = project.getComponent(ProjectPluginManager.class).getTool(AnalyzeDependencies_Tool.class);
     DependenciesPanel panel = as_ehks51_a0a6a0(tool.getComponent(), DependenciesPanel.class);
-    panel.setContent(fromScope, mpsProject);
+    panel.resetContent(fromScope, mpsProject, false);
     panel.selectInTargetsView(to);
     if (openTool) {
       tool.openToolLater(true);
