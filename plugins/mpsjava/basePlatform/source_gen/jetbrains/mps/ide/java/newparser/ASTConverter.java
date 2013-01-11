@@ -600,12 +600,10 @@ public class ASTConverter {
 
 
   protected SNode convertEnumConst(FieldDeclaration x) throws JavaParseException {
-    SNode constr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", null);
-    // TODO 
     SNode enm = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", null);
     SPropertyOperations.set(enm, "name", enumConstantName(x));
-    // <node> 
-
+    // TODO state should have a flag: foreign ids needed or not 
+    enm.setId(new SNodeId.Foreign(getState().getIdPrefix() + SPropertyOperations.getString(enm, "name")));
     Expression[] args = ((AllocationExpression) x.initialization).arguments;
     if (args != null) {
       for (Expression arg : args) {
