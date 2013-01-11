@@ -194,14 +194,14 @@
     </echoxml>
     <jar destfile="${build.layout}/mps-devkit/languages/languageDesign/jetbrains.mps.lang.test.pluginSolution.jar">
       <fileset dir="${build.tmp}/java/out/jetbrains.mps.lang.test.pluginSolution" />
-      <fileset dir="${mps_home}/plugins/mps-core-ex/languages/languageDesign/test/solutions/pluginSolution" includes="icons/**, resources/**" />
+      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/pluginSolution" includes="icons/**, resources/**" />
       <fileset dir="${build.tmp}/default/jetbrains.mps.lang.test.pluginSolution.jar" />
     </jar>
     <jar destfile="${build.layout}/mps-devkit/languages/languageDesign/jetbrains.mps.lang.test.pluginSolution-src.jar">
-      <fileset dir="${mps_home}/plugins/mps-core-ex/languages/languageDesign/test/solutions/pluginSolution/source_gen" includes="**/*.java" />
-      <zipfileset file="${mps_home}/plugins/mps-core-ex/languages/languageDesign/test/solutions/pluginSolution/jetbrains.mps.lang.test.pluginSolution.msd" prefix="module" />
-      <zipfileset dir="${mps_home}/plugins/mps-core-ex/languages/languageDesign/test/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
-      <zipfileset dir="${mps_home}/plugins/mps-core-ex/languages/languageDesign/test/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
+      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/pluginSolution/source_gen" includes="**/*.java" />
+      <zipfileset file="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/pluginSolution/jetbrains.mps.lang.test.pluginSolution.msd" prefix="module" />
+      <zipfileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/pluginSolution" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/" />
+      <zipfileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/pluginSolution/models" includes="**/*.mps, **/*.metadata, **/*.history" prefix="module/models" />
     </jar>
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.structure.pluginSolution.jar" />
     <mkdir dir="${build.tmp}/default/jetbrains.mps.lang.structure.pluginSolution.jar/META-INF" />
@@ -766,7 +766,7 @@
     <javac2 destdir="${build.tmp}/java/out/jetbrains.mps.lang.test.pluginSolution" fork="true" memorymaximumsize="1024m" includeantruntime="false" debug="true">
       <compilerarg value="-Xlint:none" />
       <src>
-        <path location="${mps_home}/plugins/mps-core-ex/languages/languageDesign/test/solutions/pluginSolution/source_gen" />
+        <path location="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/pluginSolution/source_gen" />
       </src>
       <classpath>
         <fileset file="${artifacts.buildCore}/lib/mps-openapi.jar" />
@@ -819,7 +819,7 @@
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.lang.test.pluginSolution">
-      <fileset dir="${mps_home}/plugins/mps-core-ex/languages/languageDesign/test/solutions/pluginSolution/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+      <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/pluginSolution/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
   
@@ -1095,7 +1095,7 @@
         <module file="${mps_home}/languages/languageDesign/quotation/solutions/pluginSolution/jetbrains.mps.lang.quotation.pluginSolution.msd" />
         <module file="${mps_home}/languages/languageDesign/smodel/solutions/pluginSolution/jetbrains.mps.lang.smodel.pluginSolution.msd" />
         <module file="${mps_home}/languages/languageDesign/structure/solutions/pluginSolution/jetbrains.mps.lang.structure.pluginSolution.msd" />
-        <module file="${mps_home}/plugins/mps-core-ex/languages/languageDesign/test/solutions/pluginSolution/jetbrains.mps.lang.test.pluginSolution.msd" />
+        <module file="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/pluginSolution/jetbrains.mps.lang.test.pluginSolution.msd" />
         <module file="${mps_home}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.typesystem.devkit.pluginSolution/jetbrains.mps.lang.typesystem.devkit.pluginSolution.msd" />
         <module file="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/jetbrains.mps.quickQuery.runtime.msd" />
         <module file="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/jetbrains.mps.quickQueryLanguage.mpl" />
@@ -1113,7 +1113,7 @@
     <delete dir="${mps_home}/languages/languageDesign/quotation/solutions/pluginSolution/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/smodel/solutions/pluginSolution/source_gen" />
     <delete dir="${mps_home}/languages/languageDesign/structure/solutions/pluginSolution/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-core-ex/languages/languageDesign/test/solutions/pluginSolution/source_gen" />
+    <delete dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/pluginSolution/source_gen" />
     <delete dir="${mps_home}/plugins/mpsdevkit/languages/solutions/jetbrains.mps.lang.typesystem.devkit.pluginSolution/source_gen" />
     <delete dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/solutions/jetbrains.mps.quickQuery.runtime/source_gen" />
     <delete dir="${mps_home}/plugins/mpsdevkit/languages/quickQueryLanguage/source_gen" />
