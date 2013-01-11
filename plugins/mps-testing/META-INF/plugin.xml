@@ -15,8 +15,8 @@
   -->
 
 <idea-plugin version="2" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <id>jetbrains.mps.core.ex</id>
-  <name>MPS Core Extended</name>
+  <id>jetbrains.mps.testing</id>
+  <name>MPS Testing</name>
   <category>Custom Languages</category>
   <description>MPS Core</description>
   <version>3.0</version>
