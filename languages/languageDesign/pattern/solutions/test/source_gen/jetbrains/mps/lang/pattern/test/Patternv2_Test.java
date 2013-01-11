@@ -123,7 +123,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
                           return false;
                         }
                         {
-                          SNode childVar_v2_1fi_a0b0a_0 = nodeToMatch_v2_1fi_a1a0.getChildren(childRole_v2_1fi__2).get(0);
+                          SNode childVar_v2_1fi_a0b0a_0 = IterableUtil.asList(nodeToMatch_v2_1fi_a1a0.getChildren(childRole_v2_1fi__2)).get(0);
                           this.patternVar_p = childVar_v2_1fi_a0b0a_0;
                         }
                       }
@@ -143,7 +143,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
               }
             }
             {
-              SNode childVar_v2_1fi_c0a = nodeToMatch_v2_1fi_a0.getChildren(childRole_v2_1fi_).get(2);
+              SNode childVar_v2_1fi_c0a = IterableUtil.asList(nodeToMatch_v2_1fi_a0.getChildren(childRole_v2_1fi_)).get(2);
             }
           }
         }

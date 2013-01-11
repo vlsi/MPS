@@ -56,7 +56,7 @@ public class LinkInstances_Finder extends GeneratedFinder {
       for (SNode instance : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, monitor.subTask(1)))) {
         for (String role : SetSequence.fromSet(roles)) {
           if (isChild) {
-            for (SNode child : ListSequence.fromList(instance.getChildren(role))) {
+            for (SNode child : instance.getChildren(role)) {
               ListSequence.fromList(_results).addElement(child);
             }
           } else {

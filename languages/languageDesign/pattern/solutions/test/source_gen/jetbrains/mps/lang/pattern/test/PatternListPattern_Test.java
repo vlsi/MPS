@@ -89,7 +89,7 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
               return false;
             }
             {
-              SNode childVar_ListPattern_9twfax_a0a = nodeToMatch_ListPattern_9twfax_a0.getChildren(childRole_ListPattern_9twfax_).get(0);
+              SNode childVar_ListPattern_9twfax_a0a = IterableUtil.asList(nodeToMatch_ListPattern_9twfax_a0.getChildren(childRole_ListPattern_9twfax_)).get(0);
               {
                 SNode nodeToMatch_ListPattern_9twfax_a0a;
                 nodeToMatch_ListPattern_9twfax_a0a = childVar_ListPattern_9twfax_a0a;
@@ -107,7 +107,7 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
               return false;
             }
             {
-              SNode childVar_ListPattern_9twfax_a0a_0 = IterableUtil.asCollection(nodeToMatch_ListPattern_9twfax_a0.getChildren(childRole_ListPattern_9twfax__0)).get(0);
+              SNode childVar_ListPattern_9twfax_a0a_0 = IterableUtil.asList(IterableUtil.asCollection(nodeToMatch_ListPattern_9twfax_a0.getChildren(childRole_ListPattern_9twfax__0))).get(0);
               {
                 SNode nodeToMatch_ListPattern_9twfax_a0a_0;
                 nodeToMatch_ListPattern_9twfax_a0a_0 = childVar_ListPattern_9twfax_a0a_0;

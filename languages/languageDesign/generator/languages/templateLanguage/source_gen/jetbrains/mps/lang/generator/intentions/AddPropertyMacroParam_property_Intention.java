@@ -96,7 +96,7 @@ public class AddPropertyMacroParam_property_Intention implements IntentionFactor
     }
     List<SNode> result = ListSequence.fromList(new ArrayList<SNode>());
     for (SNode propertySource : AbstractConceptDeclaration_Behavior.call_getPropertyDeclarations_1213877394546(sourceNode)) {
-      SNode propertyDeclaration = SNodeOperations.cast(node.getPropertyDeclaration(propertyName), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
+      SNode propertyDeclaration = SNodeOperations.cast(((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propertyName), "jetbrains.mps.lang.structure.structure.PropertyDeclaration");
       if (propertyDeclaration == null) {
         continue;
       }

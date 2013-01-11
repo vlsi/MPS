@@ -31,7 +31,7 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
 
       public boolean isApplicableInstanceNode(SNode node) {
         for (String propname : SetSequence.fromSet(SNodeOperations.getProperties(node).keySet())) {
-          if (node.getPropertyDeclaration(propname) == null) {
+          if (((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propname) == null) {
             return true;
           }
         }
@@ -40,7 +40,7 @@ public class DeleteUndeclaredLinksAndProperties_MigrationScript extends BaseMigr
 
       public void doUpdateInstanceNode(SNode node) {
         for (String propname : SetSequence.fromSet(SNodeOperations.getProperties(node).keySet())) {
-          if (node.getPropertyDeclaration(propname) == null) {
+          if (((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propname) == null) {
             node.setProperty(propname, null);
           }
         }
