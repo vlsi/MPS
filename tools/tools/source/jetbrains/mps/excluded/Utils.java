@@ -26,7 +26,6 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.util.MacroHelper;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.vfs.IFileUtils;
@@ -35,9 +34,9 @@ import org.jdom.Document;
 import org.jdom.Element;
 
 import java.io.File;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 public class Utils {
   private static final String COMPONENT = "component";
@@ -168,14 +167,23 @@ public class Utils {
 
     @Override
     public String expandPath(@Nullable String path) {
-        if (path.startsWith(MacrosFactory.MODULE)) {
-          IFile anchorFolder = myModuleIFile.getParent();
-          if (myModuleIFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
-            anchorFolder = anchorFolder.getParent();
-          }
-          String modelRelativePath = removePrefix(path);
-          return IFileUtils.getCanonicalPath(anchorFolder.getDescendant(modelRelativePath));
+      if (path.startsWith(MacrosFactory.MODULE)) {
+        IFile anchorFolder = myModuleIFile.getParent();
+        if (myModuleIFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
+          anchorFolder = anchorFolder.getParent();
         }
+        String modelRelativePath = removePrefix(path);
+        return IFileUtils.getCanonicalPath(anchorFolder.getDescendant(modelRelativePath));
+      }
+      if (path.startsWith(MacrosFactory.MPS_HOME)) {
+        String relativePath = removePrefix(path);
+        try {
+          return new File("./" + relativePath).getCanonicalPath();
+        } catch (IOException e) {
+          e.printStackTrace();
+        }
+      }
+
 
       return path;
     }
