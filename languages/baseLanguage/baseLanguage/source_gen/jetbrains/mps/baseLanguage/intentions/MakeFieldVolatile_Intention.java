@@ -36,7 +36,7 @@ public class MakeFieldVolatile_Intention extends BaseIntention implements Intent
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "isVolatile", "" + !(SPropertyOperations.getBoolean(node, "isVolatile")));
+    SPropertyOperations.set(node, "isVolatile", "" + (!(SPropertyOperations.getBoolean(node, "isVolatile"))));
   }
 
   public String getLocationString() {

@@ -14,7 +14,7 @@
     <nodeInfo nodeId="8626841540115943116" fileName="Option_makeDefault_Intention.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isErrorIntention#()Z" />
     <nodeInfo nodeId="8626841540115943116" fileName="Option_makeDefault_Intention.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isAvailableInChildNodes#()Z" />
     <nodeInfo nodeId="8626841540116022203" fileName="Option_makeDefault_Intention.java" startLine="32" startPosition="85" endLine="36" endPosition="6" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8626841540116022224" fileName="Option_makeDefault_Intention.java" startLine="40" startPosition="223" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8626841540116022224" fileName="Option_makeDefault_Intention.java" startLine="40" startPosition="223" endLine="44" endPosition="8" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8626841540115943116" fileName="Option_makeDefault_Intention.java" startLine="46" startPosition="0" endLine="50" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getLocationString#()Ljava/lang/String;" />
     <nodeInfo nodeId="8626841540115943116" fileName="Option_makeDefault_Intention.java" startLine="31" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescription#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)Ljava/lang/String;" />
     <nodeInfo nodeId="8626841540115943116" fileName="Option_makeDefault_Intention.java" startLine="38" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
@@ -31,7 +31,7 @@
     <scopeInfo nodeId="8626841540115943116" fileName="Option_makeDefault_Intention.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="8626841540115943118" fileName="Option_makeDefault_Intention.java" startLine="32" startPosition="85" endLine="36" endPosition="6" />
     <scopeInfo nodeId="8626841540115943116" fileName="Option_makeDefault_Intention.java" startLine="46" startPosition="0" endLine="50" endPosition="0" />
-    <scopeInfo nodeId="8626841540115943120" fileName="Option_makeDefault_Intention.java" startLine="39" startPosition="76" endLine="44" endPosition="7">
+    <scopeInfo nodeId="8626841540115943120" fileName="Option_makeDefault_Intention.java" startLine="39" startPosition="76" endLine="44" endPosition="8">
       <varInfo nodeId="8626841540116025442" varName="makeDefault" />
     </scopeInfo>
     <scopeInfo nodeId="8626841540115943116" fileName="Option_makeDefault_Intention.java" startLine="31" startPosition="0" endLine="38" endPosition="0">

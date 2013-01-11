@@ -1296,7 +1296,7 @@ __switch__:
                 }
                 for (SNode method : ListSequence.fromList(methodsToImplement)) {
                   SNode method_copy = SNodeOperations.copyNode(method);
-                  SPropertyOperations.set(method_copy, "isAbstract", "" + false);
+                  SPropertyOperations.set(method_copy, "isAbstract", "" + (false));
                   SNodeFactoryOperations.setNewChild(method_copy, "body", "jetbrains.mps.baseLanguage.structure.StatementList");
                   ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(creator, "cls", true), "method", true)).addElement(method_copy);
                 }
@@ -3525,7 +3525,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "isAbstract", "" + true);
+          SPropertyOperations.set(SNodeOperations.cast(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), "isAbstract", "" + (true));
           return SNodeOperations.getParent(_context.getSourceNode());
         }
 

@@ -1253,9 +1253,9 @@
     <unitInfo nodeId="1237724603556" fileName="LinkedListCreator_Behavior.java" startLine="13" startPosition="0" endLine="52" endPosition="0" unitName="jetbrains.mps.baseLanguage.collections.behavior.LinkedListCreator_Behavior" />
   </root>
   <root nodeId="1237783270701" modelId="r:00000000-0000-4000-0000-011c89590327(jetbrains.mps.baseLanguage.collections.behavior)">
-    <nodeInfo nodeId="1237783279164" fileName="AllConstant_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="1237783279164" fileName="AllConstant_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1237783270701" fileName="AllConstant_Behavior.java" startLine="8" startPosition="35" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <scopeInfo nodeId="1237783270703" fileName="AllConstant_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="71" />
+    <scopeInfo nodeId="1237783270703" fileName="AllConstant_Behavior.java" startLine="9" startPosition="43" endLine="10" endPosition="73" />
     <scopeInfo nodeId="1237783270701" fileName="AllConstant_Behavior.java" startLine="8" startPosition="35" endLine="12" endPosition="0">
       <varInfo nodeId="1237783270701" varName="thisNode" />
     </scopeInfo>

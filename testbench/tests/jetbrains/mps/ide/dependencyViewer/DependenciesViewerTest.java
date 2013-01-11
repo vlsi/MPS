@@ -24,7 +24,7 @@ import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.testbench.TestOutputFilter;
 import jetbrains.mps.util.PathManager;
 
@@ -60,25 +60,26 @@ public class DependenciesViewerTest extends BaseMPSTest {
 
             ReferencesFinder finder = new ReferencesFinder();
 
-            Scope testScope = new Scope();
+            DependencyViewerScope testScope = new DependencyViewerScope();
             testScope.add(testModel);
-            Scope targetScope = new Scope();
+            DependencyViewerScope targetScope = new DependencyViewerScope();
             targetScope.add(targetModel);
-            List<SReference> references = finder.getReferences(testScope, new EmptyProgressMonitor());
 
-            if (references.size() != 15) {
-              System.out.println("References size " + references.size());
+            List<SNode> nodes = finder.getNodes(testScope, new EmptyProgressMonitor());
+
+            if (nodes.size() != 50) {
+              System.out.println("Nodes size " + nodes.size());
               res[0] = false;
             }
-            SearchResults targetSearchResults = finder.getTargetSearchResults(references, new EmptyProgressMonitor());
+            SearchResults targetSearchResults = finder.getTargetSearchResults(nodes, testScope, new EmptyProgressMonitor());
             int size = targetSearchResults.getSearchResults().size();
-            if (size != 15) {
+            if (size != 11) {
               System.out.println("Targets size " + size);
               res[0] = false;
             }
-            SearchResults refSearchResults = finder.getRefSearchResults(references, targetScope, new EmptyProgressMonitor());
+            SearchResults refSearchResults = finder.getUsagesSearchResults(nodes, testScope, targetScope, new EmptyProgressMonitor());
             size = refSearchResults.getSearchResults().size();
-            if (size != 5) {
+            if (size != 4) {
               System.out.println("Results size " + size);
               res[0] = false;
             }

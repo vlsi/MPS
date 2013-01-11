@@ -12,8 +12,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.lang.plugin.behavior.PluginDependency_Behavior;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -30,7 +28,7 @@ public class PluginModule_Behavior {
     if (macro == null) {
       return null;
     }
-    return new PluginModule_Behavior.QuotationClass_yq0j9l_a0c0c().createNode(SPropertyOperations.getString(macro, "name"));
+    return createMacroReference_yq0j9l_a2a1(SPropertyOperations.getString(macro, "name"));
   }
 
   public static List<String> call_getPathToPluginXml_989489456094444386(SNode thisNode) {
@@ -67,21 +65,9 @@ public class PluginModule_Behavior {
     }).toListSequence();
   }
 
-  public static class QuotationClass_yq0j9l_a0c0c {
-    public QuotationClass_yq0j9l_a0c0c() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setProperty("name", (String) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
+  private static SNode createMacroReference_yq0j9l_a2a1(Object p0) {
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.MacroReference", null, GlobalScope.getInstance(), false);
+    n1.setProperty("name", (String) p0);
+    return n1;
   }
 }

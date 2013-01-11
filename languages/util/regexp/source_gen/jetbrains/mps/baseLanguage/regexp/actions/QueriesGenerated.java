@@ -445,7 +445,7 @@ public class QueriesGenerated {
             Pattern _pattern_0 = REGEXP_x583g4_a0a0d0a0a0a0b0a0b0u;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if (_matcher_0.find()) {
-              SPropertyOperations.set(node, "n", "" + Integer.parseInt(_matcher_0.group(1)));
+              SPropertyOperations.set(node, "n", "" + (Integer.parseInt(_matcher_0.group(1))));
             }
           }
           return node;
@@ -478,7 +478,7 @@ public class QueriesGenerated {
             Pattern _pattern_0 = REGEXP_x583g4_a0a0d0a0a0a0b0a0c0u;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if (_matcher_0.find()) {
-              SPropertyOperations.set(node, "n", "" + Integer.parseInt(_matcher_0.group(1)));
+              SPropertyOperations.set(node, "n", "" + (Integer.parseInt(_matcher_0.group(1))));
             }
           }
           return node;
@@ -514,14 +514,14 @@ public class QueriesGenerated {
             Pattern _pattern_0 = REGEXP_x583g4_a0a0d0a0a0a0b0a0d0u;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if (_matcher_0.find()) {
-              SPropertyOperations.set(node, "m", "" + Integer.parseInt(_matcher_0.group(1)));
+              SPropertyOperations.set(node, "m", "" + (Integer.parseInt(_matcher_0.group(1))));
             }
           }
           {
             Pattern _pattern_0 = REGEXP_x583g4_a0a0e0a0a0a0b0a0d0u;
             Matcher _matcher_0 = _pattern_0.matcher(pattern);
             if (_matcher_0.find()) {
-              SPropertyOperations.set(node, "n", "" + Integer.parseInt(_matcher_0.group(1)));
+              SPropertyOperations.set(node, "n", "" + (Integer.parseInt(_matcher_0.group(1))));
             }
           }
           return node;
@@ -871,7 +871,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "multiLine", "" + true);
+          SPropertyOperations.set(_context.getSourceNode(), "multiLine", "" + (true));
           return _context.getSourceNode();
         }
 
@@ -897,7 +897,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "dotAll", "" + true);
+          SPropertyOperations.set(_context.getSourceNode(), "dotAll", "" + (true));
           return _context.getSourceNode();
         }
 
@@ -923,7 +923,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "caseInsensitive", "" + true);
+          SPropertyOperations.set(_context.getSourceNode(), "caseInsensitive", "" + (true));
           return _context.getSourceNode();
         }
 
@@ -949,7 +949,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "globalReplace", "" + true);
+          SPropertyOperations.set(_context.getSourceNode(), "globalReplace", "" + (true));
           return _context.getSourceNode();
         }
 
@@ -975,7 +975,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "multiLine", "" + true);
+          SPropertyOperations.set(_context.getSourceNode(), "multiLine", "" + (true));
           return _context.getSourceNode();
         }
 
@@ -1001,7 +1001,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "dotAll", "" + true);
+          SPropertyOperations.set(_context.getSourceNode(), "dotAll", "" + (true));
           return _context.getSourceNode();
         }
 
@@ -1027,7 +1027,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.regexp.structure.InlineRegexpExpression");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "caseInsensitive", "" + true);
+          SPropertyOperations.set(_context.getSourceNode(), "caseInsensitive", "" + (true));
           return _context.getSourceNode();
         }
 

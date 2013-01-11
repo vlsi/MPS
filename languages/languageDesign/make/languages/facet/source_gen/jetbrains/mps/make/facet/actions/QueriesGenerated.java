@@ -369,7 +369,7 @@ __switch__:
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.facet.structure.TargetDeclaration");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "optional", "" + true);
+          SPropertyOperations.set(_context.getSourceNode(), "optional", "" + (true));
           return _context.getSourceNode();
         }
 

@@ -17,6 +17,6 @@ public class MakeDeclarationFinal_QuickFix extends QuickFix_Runtime {
   }
 
   public void execute(SNode node) {
-    SPropertyOperations.set(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "isFinal", "" + true);
+    SPropertyOperations.set(SLinkOperations.getTarget(SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "isFinal", "" + (true));
   }
 }

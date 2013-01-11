@@ -36,7 +36,7 @@ public class ToggleCompactMpsModule_Intention extends BaseIntention implements I
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "compact", "" + !(SPropertyOperations.getBoolean(node, "compact")));
+    SPropertyOperations.set(node, "compact", "" + (!(SPropertyOperations.getBoolean(node, "compact"))));
   }
 
   public String getLocationString() {

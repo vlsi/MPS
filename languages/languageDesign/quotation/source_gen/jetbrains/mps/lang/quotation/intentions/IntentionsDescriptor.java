@@ -12,6 +12,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   }
 
   public void init() {
+    add(new ConvertToNodeBuilder_Intention(), "8182547171709991153");
     add(new CreateAntiquotation_Intention(), "1227885451240");
     add(new CreateListAntiquotation_Intention(), "1227886484790");
     add(new CreatePropertyAntiquotation_Intention(), "1227886844257");

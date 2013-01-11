@@ -29,7 +29,7 @@ public class ReplaceRegexpOperation_removeG {
     public void execute_internal(EditorContext editorContext, SNode node) {
       EditorCell current = editorContext.getSelectedCell();
       EditorCell toSelect = current.getPrevLeaf(CellConditions.SELECTABLE);
-      SPropertyOperations.set(node, "globalReplace", "" + false);
+      SPropertyOperations.set(node, "globalReplace", "" + (false));
       editorContext.getNodeEditorComponent().changeSelection(toSelect);
     }
   }

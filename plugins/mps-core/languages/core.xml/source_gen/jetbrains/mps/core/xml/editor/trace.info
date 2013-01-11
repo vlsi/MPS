@@ -6203,7 +6203,7 @@
     <nodeInfo nodeId="6999033275467594468" fileName="delete_XmlElement_shortNotation.java" startLine="20" startPosition="63" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6999033275467594468" fileName="delete_XmlElement_shortNotation.java" startLine="24" startPosition="40" endLine="25" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6999033275467594468" fileName="delete_XmlElement_shortNotation.java" startLine="28" startPosition="54" endLine="29" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6999033275467594472" fileName="delete_XmlElement_shortNotation.java" startLine="32" startPosition="75" endLine="33" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6999033275467594472" fileName="delete_XmlElement_shortNotation.java" startLine="32" startPosition="75" endLine="33" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6999033275467594468" fileName="delete_XmlElement_shortNotation.java" startLine="19" startPosition="0" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="delete_XmlElement_shortNotation_DELETE#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="6999033275467594468" fileName="delete_XmlElement_shortNotation.java" startLine="12" startPosition="46" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
     <nodeInfo nodeId="6999033275467594468" fileName="delete_XmlElement_shortNotation.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getDescriptionText#()Ljava/lang/String;" />
@@ -6213,7 +6213,7 @@
     <scopeInfo nodeId="6999033275467594468" fileName="delete_XmlElement_shortNotation.java" startLine="20" startPosition="63" endLine="21" endPosition="25" />
     <scopeInfo nodeId="6999033275467594468" fileName="delete_XmlElement_shortNotation.java" startLine="24" startPosition="40" endLine="25" endPosition="29" />
     <scopeInfo nodeId="6999033275467594468" fileName="delete_XmlElement_shortNotation.java" startLine="28" startPosition="54" endLine="29" endPosition="56" />
-    <scopeInfo nodeId="6999033275467594471" fileName="delete_XmlElement_shortNotation.java" startLine="32" startPosition="75" endLine="33" endPosition="70" />
+    <scopeInfo nodeId="6999033275467594471" fileName="delete_XmlElement_shortNotation.java" startLine="32" startPosition="75" endLine="33" endPosition="72" />
     <scopeInfo nodeId="6999033275467594468" fileName="delete_XmlElement_shortNotation.java" startLine="19" startPosition="0" endLine="22" endPosition="5">
       <varInfo nodeId="6999033275467594468" varName="node" />
     </scopeInfo>

@@ -49,6 +49,12 @@ public class GraphUtil {
     return merge(transpose(graph), graph);
   }
 
+  public static void sort(int[][] graph) {
+    for(int[] edges : graph) {
+      Arrays.sort(edges);
+    }
+  }
+
   public static int[][] transpose(int[][] graph) {
     int count = graph.length;
     int[] size = new int[count];
@@ -73,6 +79,7 @@ public class GraphUtil {
   }
 
   public static int[][] merge(int[][] graph1, int[][] graph2) {
+    assert graph1.length == graph2.length;
     int count = graph1.length;
     int[] data = new int[count];
     int[][] result = new int[count][];
@@ -218,6 +225,50 @@ public class GraphUtil {
 
   public static int[][] tarjan(int[][] graph) {
     return new Tarjan(graph).run();
+  }
+
+  /**
+   * Partitions vertices into several sets to satisfy given relations.
+   *
+   * @param graph  represents >= relation between vertices
+   * @param strict represents > relation between vertices
+   * @return partition index for each vertex, or -1-index in case of a conflict (ex: b >= a, a > b)
+   */
+  public static int[] partition(int[][] graph, int[][] strict) {
+    int[][] merged = merge(graph, strict);
+    int[][] scc = tarjan(merged);
+    int[] layer = new int[graph.length];
+    boolean[] conflicting = new boolean[graph.length];
+    Arrays.fill(layer, -1);
+    for (int[] c : scc) {
+      int cl = 0;
+      boolean hasConflict = false;
+      for (int i : c) {
+        for (int v : graph[i]) {
+          if (layer[v] >= 0) {
+            cl = Math.max(cl, conflicting[v] ? layer[v] + 1 : layer[v]);
+          }
+        }
+        for (int v : strict[i]) {
+          if (layer[v] >= 0) {
+            cl = Math.max(cl, layer[v] + 1);
+          } else {
+            hasConflict = true;
+          }
+        }
+      }
+      for (int i : c) {
+        layer[i] = cl;
+        conflicting[i] = hasConflict;
+      }
+    }
+    for (int i = 0; i < layer.length; i++) {
+      assert layer[i] >= 0;
+      if (conflicting[i]) {
+        layer[i] = -1 - layer[i];
+      }
+    }
+    return layer;
   }
 
   public static void printGraph(int[][] graph, Object[] associated) {

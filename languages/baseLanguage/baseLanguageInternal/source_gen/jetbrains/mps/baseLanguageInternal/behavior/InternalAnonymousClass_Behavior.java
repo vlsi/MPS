@@ -26,7 +26,7 @@ public class InternalAnonymousClass_Behavior {
   private static Class[] PARAMETERS_3421461530438560303 = {SNode.class};
 
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "nonStatic", "" + true);
+    SPropertyOperations.set(thisNode, "nonStatic", "" + (true));
   }
 
   public static String virtual_getUnitName_5067982036267369911(SNode thisNode) {

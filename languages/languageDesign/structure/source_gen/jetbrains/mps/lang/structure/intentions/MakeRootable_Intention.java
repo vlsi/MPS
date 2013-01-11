@@ -36,7 +36,7 @@ public class MakeRootable_Intention extends BaseIntention implements Intention {
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "rootable", "" + !(SPropertyOperations.getBoolean(node, "rootable")));
+    SPropertyOperations.set(node, "rootable", "" + (!(SPropertyOperations.getBoolean(node, "rootable"))));
   }
 
   public String getLocationString() {

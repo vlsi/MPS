@@ -17,7 +17,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 
 public class Event_Behavior {
   public static void init(SNode thisNode) {
-    SPropertyOperations.set(thisNode, "handleable", "" + true);
+    SPropertyOperations.set(thisNode, "handleable", "" + (true));
   }
 
   public static Iterable<SNode> call_allExtends_5224413709454845737(final SNode thisNode) {

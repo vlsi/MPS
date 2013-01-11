@@ -44,7 +44,7 @@ public class ChildAspectDefinition_makeOptional_Intention extends BaseIntention 
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "optional", "" + true);
+    SPropertyOperations.set(node, "optional", "" + (true));
   }
 
   public String getLocationString() {

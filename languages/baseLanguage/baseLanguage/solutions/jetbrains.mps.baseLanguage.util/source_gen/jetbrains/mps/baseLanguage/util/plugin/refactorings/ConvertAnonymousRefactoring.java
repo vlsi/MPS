@@ -172,7 +172,7 @@ public class ConvertAnonymousRefactoring {
   }
 
   private void chooseNonStaticForInnerClass(SNode innerClass) {
-    SPropertyOperations.set(innerClass, "nonStatic", "" + !(isStatic()));
+    SPropertyOperations.set(innerClass, "nonStatic", "" + (!(isStatic())));
   }
 
   private void addFieldsToInnerClass(SNode innerClass) {

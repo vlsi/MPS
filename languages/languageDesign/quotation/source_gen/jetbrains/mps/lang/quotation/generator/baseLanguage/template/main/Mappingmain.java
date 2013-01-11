@@ -24,13 +24,17 @@ import jetbrains.mps.generator.impl.AbandonRuleInputException;
 public class Mappingmain implements TemplateMappingConfiguration {
   private static SNodePointer reductionRule_417xrn_a0a2a = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887579");
   private static SNodePointer conseq_417xrn_a0a0a4a = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1196351887580");
+  private static SNodePointer reductionRule_417xrn_a0a2b = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1006429225401295240");
+  private static SNodePointer conseq_417xrn_a0a0a4b = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "1006429225401295799");
+  private static SNodePointer reductionRule_417xrn_a0a2c = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676709774");
+  private static SNodePointer conseq_417xrn_a0a0a4c = new SNodePointer("r:00000000-0000-4000-0000-011c8959034c(jetbrains.mps.lang.quotation.generator.baseLanguage.template.main@generator)", "429601079676709778");
 
   private final Collection<TemplateReductionRule> rules;
   private final TemplateModel myModel;
 
   public Mappingmain(TemplateModel model) {
     this.myModel = model;
-    rules = TemplateUtil.<TemplateReductionRule>asCollection(new Mappingmain.ReductionRule0());
+    rules = TemplateUtil.<TemplateReductionRule>asCollection(new Mappingmain.ReductionRule0(), new Mappingmain.ReductionRule1(), new Mappingmain.ReductionRule2());
   }
 
   public String getName() {
@@ -113,6 +117,78 @@ public class Mappingmain implements TemplateMappingConfiguration {
     private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a4a);
       Collection<SNode> tlist1 = new TemplateQuotation__to__methodCall().apply(environment, context);
+      return tlist1;
+    }
+  }
+
+  public class ReductionRule1 implements TemplateReductionRule {
+    public ReductionRule1() {
+    }
+
+    public boolean applyToInheritors() {
+      return false;
+    }
+
+    public String getApplicableConcept() {
+      return "jetbrains.mps.lang.quotation.structure.NodeBuilder";
+    }
+
+    public SNodePointer getRuleNode() {
+      return reductionRule_417xrn_a0a2b;
+    }
+
+    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+
+      environment.getTracer().pushRule(reductionRule_417xrn_a0a2b);
+      try {
+        return apply(context, environment.getEnvironment(context.getInput(), this));
+      } catch (AbandonRuleInputException e) {
+        return Collections.emptyList();
+      } finally {
+        environment.getTracer().closeRule(reductionRule_417xrn_a0a2b);
+      }
+
+    }
+
+    private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
+      environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a4b);
+      Collection<SNode> tlist1 = new TemplateNodeBuilder__to__methodCall().apply(environment, context);
+      return tlist1;
+    }
+  }
+
+  public class ReductionRule2 implements TemplateReductionRule {
+    public ReductionRule2() {
+    }
+
+    public boolean applyToInheritors() {
+      return false;
+    }
+
+    public String getApplicableConcept() {
+      return "jetbrains.mps.lang.quotation.structure.NodeBuilderNode";
+    }
+
+    public SNodePointer getRuleNode() {
+      return reductionRule_417xrn_a0a2c;
+    }
+
+    public Collection<SNode> tryToApply(final TemplateExecutionEnvironment environment, final TemplateContext context) throws GenerationException {
+
+      environment.getTracer().pushRule(reductionRule_417xrn_a0a2c);
+      try {
+        return apply(context, environment.getEnvironment(context.getInput(), this));
+      } catch (AbandonRuleInputException e) {
+        return Collections.emptyList();
+      } finally {
+        environment.getTracer().closeRule(reductionRule_417xrn_a0a2c);
+      }
+
+    }
+
+    private Collection<SNode> apply(final TemplateContext context, final TemplateExecutionEnvironment environment) throws GenerationException {
+      environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a4c);
+      Collection<SNode> tlist1 = new Templatereduce__NodeBuilderNode().apply(environment, context);
       return tlist1;
     }
   }

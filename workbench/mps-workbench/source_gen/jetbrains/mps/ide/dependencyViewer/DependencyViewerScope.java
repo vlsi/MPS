@@ -11,14 +11,15 @@ import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.ModelAccess;
+import java.util.Collection;
+import jetbrains.mps.internal.collections.runtime.CollectionSequence;
 
-public class Scope {
+public class DependencyViewerScope {
   private List<IModule> myModules;
   private List<SModelDescriptor> myModels;
   private List<SNode> myRoots;
 
-  public Scope() {
+  public DependencyViewerScope() {
     myModules = ListSequence.fromList(new ArrayList<IModule>());
     myModels = ListSequence.fromList(new ArrayList<SModelDescriptor>());
     myRoots = ListSequence.fromList(new ArrayList<SNode>());
@@ -32,11 +33,8 @@ public class Scope {
     if (node == null) {
       return false;
     }
-    SNode root = node.getContainingRoot();
-    if (ListSequence.fromList(myRoots).contains(root)) {
-      return true;
-    }
-    if (ListSequence.fromList(myRoots).contains(node)) {
+    SNode root = node.getTopmostAncestor();
+    if (ListSequence.fromList(myRoots).contains(root) || ListSequence.fromList(myRoots).contains(node)) {
       return true;
     }
     SModelDescriptor descriptor = root.getModel().getModelDescriptor();
@@ -56,10 +54,7 @@ public class Scope {
     if (ListSequence.fromList(myModels).contains(model)) {
       return true;
     }
-    if (ListSequence.fromList(myModules).contains(model.getModule())) {
-      return true;
-    }
-    return false;
+    return ListSequence.fromList(myModules).contains(model.getModule());
   }
 
   public void add(@Nullable IModule module) {
@@ -69,41 +64,33 @@ public class Scope {
     ListSequence.fromList(myModules).addElement(module);
   }
 
-  public void add(@Nullable final SModelDescriptor model) {
+  public void add(@Nullable SModelDescriptor model) {
     if (model == null) {
       return;
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        if (!(contains(model))) {
-          ListSequence.fromList(myModels).addElement(model);
-        }
-      }
-    });
+    if (!(contains(model))) {
+      ListSequence.fromList(myModels).addElement(model);
+    }
   }
 
-  public void add(@Nullable final SNode root) {
+  public void add(@Nullable SNode root) {
     if (root == null) {
       return;
     }
-    ModelAccess.instance().runReadAction(new Runnable() {
-      public void run() {
-        if (!(contains(root))) {
-          ListSequence.fromList(myRoots).addElement(root);
-        }
-      }
-    });
+    if (!(contains(root))) {
+      ListSequence.fromList(myRoots).addElement(root);
+    }
   }
 
-  public List<SModelDescriptor> getModels() {
+  public Collection<SModelDescriptor> getModels() {
     return myModels;
   }
 
-  public List<IModule> getModules() {
+  public Collection<IModule> getModules() {
     return myModules;
   }
 
-  public List<SNode> getRoots() {
+  public Collection<SNode> getRoots() {
     return myRoots;
   }
 
@@ -155,13 +142,13 @@ public class Scope {
     return sb.toString();
   }
 
-  private <T> String getPresentation(List<T> list, String elementType) {
-    if ((int) ListSequence.fromList(list).count() == 0) {
+  private <T> String getPresentation(Collection<T> list, String elementType) {
+    if ((int) CollectionSequence.fromCollection(list).count() == 0) {
       return "";
     }
-    if ((int) ListSequence.fromList(list).count() == 1) {
-      return elementType + " " + ListSequence.fromList(list).getElement(0);
+    if ((int) CollectionSequence.fromCollection(list).count() == 1) {
+      return elementType + " " + CollectionSequence.fromCollection(list).first();
     }
-    return ListSequence.fromList(list).count() + " " + elementType + "s";
+    return CollectionSequence.fromCollection(list).count() + " " + elementType + "s";
   }
 }

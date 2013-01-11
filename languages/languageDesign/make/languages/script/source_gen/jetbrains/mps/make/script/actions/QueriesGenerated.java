@@ -259,7 +259,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.make.script.structure.Option");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(SNodeOperations.as(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.make.script.structure.ExpectedOption"), "defaultOption", "" + SNodeOperations.getIndexInParent(_context.getSourceNode()));
+          SPropertyOperations.set(SNodeOperations.as(SNodeOperations.getParent(_context.getSourceNode()), "jetbrains.mps.make.script.structure.ExpectedOption"), "defaultOption", "" + (SNodeOperations.getIndexInParent(_context.getSourceNode())));
           return _context.getSourceNode();
         }
 

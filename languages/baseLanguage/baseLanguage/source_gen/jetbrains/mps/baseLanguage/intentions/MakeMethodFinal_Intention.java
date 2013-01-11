@@ -65,7 +65,7 @@ public class MakeMethodFinal_Intention extends BaseIntention implements Intentio
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "isFinal", "" + !(SPropertyOperations.getBoolean(node, "isFinal")));
+    SPropertyOperations.set(node, "isFinal", "" + (!(SPropertyOperations.getBoolean(node, "isFinal"))));
   }
 
   public String getLocationString() {

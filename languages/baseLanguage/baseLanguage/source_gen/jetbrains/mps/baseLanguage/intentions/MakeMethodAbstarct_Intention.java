@@ -67,7 +67,7 @@ public class MakeMethodAbstarct_Intention extends BaseIntention implements Inten
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "isAbstract", "" + !(SPropertyOperations.getBoolean(node, "isAbstract")));
+    SPropertyOperations.set(node, "isAbstract", "" + (!(SPropertyOperations.getBoolean(node, "isAbstract"))));
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(node, "body", true), "statement", true)).clear();
   }
 

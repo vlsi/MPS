@@ -65,21 +65,21 @@ public class AddCellAnnotation_Intention extends BaseIntention implements Intent
     SNode newAnnotation = SNodeFactoryOperations.createNewNode("jetbrains.mps.lang.test.structure.AnonymousCellAnnotation", null);
     EditorCell contextCell = editorContext.getContextCell();
     if (contextCell.getEditor() instanceof InspectorEditorComponent) {
-      SPropertyOperations.set(newAnnotation, "isInInspector", "" + true);
+      SPropertyOperations.set(newAnnotation, "isInInspector", "" + (true));
     }
     if (contextCell instanceof EditorCell_Label) {
       EditorCell_Label label = (EditorCell_Label) contextCell;
       int caretPosition = label.getCaretPosition();
       if (caretPosition == label.getText().length()) {
-        SPropertyOperations.set(newAnnotation, "isLastPosition", "" + true);
+        SPropertyOperations.set(newAnnotation, "isLastPosition", "" + (true));
       } else {
-        SPropertyOperations.set(newAnnotation, "caretPosition", "" + caretPosition);
+        SPropertyOperations.set(newAnnotation, "caretPosition", "" + (caretPosition));
       }
-      SPropertyOperations.set(newAnnotation, "useLabelSelection", "" + true);
-      SPropertyOperations.set(newAnnotation, "selectionStart", "" + label.getSelectionStart());
-      SPropertyOperations.set(newAnnotation, "selectionEnd", "" + label.getSelectionEnd());
+      SPropertyOperations.set(newAnnotation, "useLabelSelection", "" + (true));
+      SPropertyOperations.set(newAnnotation, "selectionStart", "" + (label.getSelectionStart()));
+      SPropertyOperations.set(newAnnotation, "selectionEnd", "" + (label.getSelectionEnd()));
     } else {
-      SPropertyOperations.set(newAnnotation, "caretPosition", "" + 0);
+      SPropertyOperations.set(newAnnotation, "caretPosition", "" + (0));
     }
     SPropertyOperations.set(newAnnotation, "cellId", contextCell.getCellId());
     Selection selection = editorContext.getNodeEditorComponent().getSelectionManager().getSelection();

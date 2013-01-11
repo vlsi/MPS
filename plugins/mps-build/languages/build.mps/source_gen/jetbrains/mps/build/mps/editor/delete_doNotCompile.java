@@ -26,7 +26,7 @@ public class delete_doNotCompile {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, "doNotCompile", "" + false);
+      SPropertyOperations.set(node, "doNotCompile", "" + (false));
     }
   }
 }

@@ -54,7 +54,7 @@ public class SConceptPropertyOperations {
     if (node != null) {
       SNode conceptProperty = (SNode) node.findConceptProperty(propertyName);
       if (SNodeOperations.isInstanceOf(conceptProperty, "jetbrains.mps.lang.structure.structure.IntegerConceptProperty")) {
-        SPropertyOperations.set(SNodeOperations.cast(conceptProperty, "jetbrains.mps.lang.structure.structure.IntegerConceptProperty"), "value", "" + value);
+        SPropertyOperations.set(SNodeOperations.cast(conceptProperty, "jetbrains.mps.lang.structure.structure.IntegerConceptProperty"), "value", "" + (value));
       }
     }
   }

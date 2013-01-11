@@ -68,9 +68,9 @@ public class ClassifierUpdater {
       updateAnnotations(ac, annotation);
     } else if (SNodeOperations.isInstanceOf(clsfr, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       SNode cls = SNodeOperations.cast(clsfr, "jetbrains.mps.baseLanguage.structure.ClassConcept");
-      SPropertyOperations.set(cls, "abstractClass", "" + ac.isAbstract());
-      SPropertyOperations.set(cls, "isDeprecated", "" + ac.isDeprecated());
-      SPropertyOperations.set(cls, "isFinal", "" + ac.isFinal());
+      SPropertyOperations.set(cls, "abstractClass", "" + (ac.isAbstract()));
+      SPropertyOperations.set(cls, "isDeprecated", "" + (ac.isDeprecated()));
+      SPropertyOperations.set(cls, "isFinal", "" + (ac.isFinal()));
 
       updateAnnotations(ac, cls);
       updateTypeVariables(ac, cls);
@@ -82,7 +82,7 @@ public class ClassifierUpdater {
       updateStaticMethods(ac, cls);
     } else if (SNodeOperations.isInstanceOf(clsfr, "jetbrains.mps.baseLanguage.structure.Interface")) {
       SNode intfc = SNodeOperations.cast(clsfr, "jetbrains.mps.baseLanguage.structure.Interface");
-      SPropertyOperations.set(intfc, "isDeprecated", "" + ac.isDeprecated());
+      SPropertyOperations.set(intfc, "isDeprecated", "" + (ac.isDeprecated()));
       updateAnnotations(ac, intfc);
       updateTypeVariables(ac, intfc);
       updateExtendsForInterface(ac, intfc);
@@ -181,7 +181,7 @@ public class ClassifierUpdater {
         continue;
       }
       SNode decl = new ClassifierUpdater.QuotationClass_ol94f8_a0a3a0a8().createNode(cm, createVisibility(field), getTypeByASMType(field.getGenericType(), null, cls), field.getName());
-      SPropertyOperations.set(decl, "isDeprecated", "" + field.isDeprecated());
+      SPropertyOperations.set(decl, "isDeprecated", "" + (field.isDeprecated()));
       for (ASMAnnotation annotation : field.getAnnotations()) {
         ListSequence.fromList(SLinkOperations.getTargets(decl, "annotation", true)).addElement(createAnnotation(annotation));
       }
@@ -210,12 +210,12 @@ public class ClassifierUpdater {
         ListSequence.fromList(SLinkOperations.getTargets(enumClass, "enumConstant", true)).addElement(ecd);
       } else {
         SNode decl = new ClassifierUpdater.QuotationClass_ol94f8_a0a0a0d0a0j().createNode(cm, createVisibility(field), getTypeByASMType(field.getGenericType(), null, cls), field.getName());
-        SPropertyOperations.set(decl, "isDeprecated", "" + field.isDeprecated());
+        SPropertyOperations.set(decl, "isDeprecated", "" + (field.isDeprecated()));
         for (ASMAnnotation annotation : field.getAnnotations()) {
           ListSequence.fromList(SLinkOperations.getTargets(decl, "annotation", true)).addElement(createAnnotation(annotation));
         }
         if (field.isFinal()) {
-          SPropertyOperations.set(decl, "isFinal", "" + true);
+          SPropertyOperations.set(decl, "isFinal", "" + (true));
           if (field.hasValue()) {
             Object value = field.getValue();
             if (value instanceof Integer) {
@@ -255,7 +255,7 @@ public class ClassifierUpdater {
       }
 
       SNode constructor = new ClassifierUpdater.QuotationClass_ol94f8_a0a3a0a11().createNode(cm, createVisibility(c), SModelOperations.createNewNode(cm, "jetbrains.mps.baseLanguage.structure.StubStatementList", null), SPropertyOperations.getString(cls, "name"));
-      SPropertyOperations.set(constructor, "isDeprecated", "" + c.isDeprecated());
+      SPropertyOperations.set(constructor, "isDeprecated", "" + (c.isDeprecated()));
       for (ASMTypeVariable tv : c.getTypeParameters()) {
         ListSequence.fromList(SLinkOperations.getTargets(constructor, "typeVariableDeclaration", true)).addElement(new ClassifierUpdater.QuotationClass_ol94f8_a0a0a0f0a0l().createNode(cm, tv.getName()));
       }
@@ -318,7 +318,7 @@ public class ClassifierUpdater {
       }
 
       SNode md = SModelOperations.createNewNode(cm, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration", null);
-      SPropertyOperations.set(md, "isAbstract", "" + m.isAbstract());
+      SPropertyOperations.set(md, "isAbstract", "" + (m.isAbstract()));
       SLinkOperations.setTarget(md, "visibility", createVisibility(m), true);
       this.updateBaseMethod(m, md, cls);
 
@@ -354,8 +354,8 @@ public class ClassifierUpdater {
   private void updateBaseMethod(ASMMethod m, SNode md, SNode cls) {
     SPropertyOperations.set(md, "name", m.getName());
     SLinkOperations.setTarget(md, "body", new ClassifierUpdater.QuotationClass_ol94f8_a0a1a41().createNode(cm), true);
-    SPropertyOperations.set(md, "isFinal", "" + m.isFinal());
-    SPropertyOperations.set(md, "isDeprecated", "" + m.isDeprecated());
+    SPropertyOperations.set(md, "isFinal", "" + (m.isFinal()));
+    SPropertyOperations.set(md, "isDeprecated", "" + (m.isDeprecated()));
     updateTypeVariables(m, md, cls);
     SLinkOperations.setTarget(md, "returnType", getTypeByASMType(m.getGenericReturnType(), md, cls), true);
     {

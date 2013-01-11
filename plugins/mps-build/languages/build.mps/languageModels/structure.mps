@@ -222,6 +222,11 @@
       <property name="name" nameId="tpck.1169194664001" value="BuildMps_IdeaPluginVendor" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="6503355885715333289">
+      <property name="name" nameId="tpck.1169194664001" value="BuildMpsAspect" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="Aspect" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="3ior.3542413272732750877" resolveInfo="BuildAspect" />
+    </node>
   </roots>
   <root id="5253498789149381388">
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="1500819558096356884">
@@ -285,6 +290,10 @@
     </node>
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.BooleanConceptProperty" typeId="tpce.1105725574259" id="3189788309731979678">
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473994950" resolveInfo="dontSubstituteByDefault" />
+    </node>
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="5970181360963003994">
+      <property name="name" nameId="tpck.1169194664001" value="isGenerated" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
     </node>
   </root>
   <root id="3189788309731840247">
@@ -519,6 +528,9 @@
       <property name="value" nameId="tpce.1105725733873" value="sources of" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5970181360961361214">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3ior.5970181360961342215" resolveInfo="BuildLayout_InJarNode" />
+    </node>
   </root>
   <root id="7259033139236285166">
     <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="7259033139236285167">
@@ -540,6 +552,9 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="7753544965996807220">
       <property name="value" nameId="tpce.1105725733873" value="MPS module" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="5970181360961361186">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3ior.5970181360961342215" resolveInfo="BuildLayout_InJarNode" />
     </node>
   </root>
   <root id="1265949165890536423">
@@ -568,6 +583,9 @@
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="6647099934206949389">
       <property name="value" nameId="tpce.1105725733873" value="adds MPS capabilities (packaging, generation) to the project" />
       <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473914776" resolveInfo="shortDescription" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="2436117033632110964">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="3ior.841011766566205091" resolveInfo="BuildExternalDependency" />
     </node>
   </root>
   <root id="7655580649838764660">
@@ -917,6 +935,16 @@
       <property name="role" nameId="tpce.1071599776563" value="icon16" />
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..1" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="3ior.7389400916848073790" resolveInfo="BuildSourcePath" />
+    </node>
+  </root>
+  <root id="6503355885715333289">
+    <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="6503355885715353788">
+      <property name="name" nameId="tpck.1169194664001" value="bootstrap" />
+      <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="6503355885715398680">
+      <property name="value" nameId="tpce.1105725733873" value="mps settings" />
+      <link role="conceptPropertyDeclaration" roleId="tpce.1105725439818" targetNodeId="tpck.1137473891462" resolveInfo="alias" />
     </node>
   </root>
 </model>

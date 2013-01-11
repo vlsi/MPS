@@ -2639,8 +2639,8 @@ public class QueriesGenerated {
     for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
       for (int exceps = 0; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS; exceps++) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
-        SPropertyOperations.set(poi, "first", "" + params);
-        SPropertyOperations.set(poi, "second", "" + exceps);
+        SPropertyOperations.set(poi, "first", "" + (params));
+        SPropertyOperations.set(poi, "second", "" + (exceps));
         ListSequence.fromList(result).addElement(poi);
       }
     }
@@ -2692,8 +2692,8 @@ public class QueriesGenerated {
     for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
       for (int exceps = 0; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS; exceps++) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
-        SPropertyOperations.set(poi, "first", "" + params);
-        SPropertyOperations.set(poi, "second", "" + exceps);
+        SPropertyOperations.set(poi, "first", "" + (params));
+        SPropertyOperations.set(poi, "second", "" + (exceps));
         ListSequence.fromList(result).addElement(poi);
       }
     }
@@ -2965,8 +2965,8 @@ public class QueriesGenerated {
     for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
       for (int exceps = 0; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS; exceps++) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
-        SPropertyOperations.set(poi, "first", "" + params);
-        SPropertyOperations.set(poi, "second", "" + exceps);
+        SPropertyOperations.set(poi, "first", "" + (params));
+        SPropertyOperations.set(poi, "second", "" + (exceps));
         ListSequence.fromList(result).addElement(poi);
       }
     }
@@ -3058,8 +3058,8 @@ public class QueriesGenerated {
     for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
       for (int exceps = 0; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS; exceps++) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
-        SPropertyOperations.set(poi, "first", "" + params);
-        SPropertyOperations.set(poi, "second", "" + exceps);
+        SPropertyOperations.set(poi, "first", "" + (params));
+        SPropertyOperations.set(poi, "second", "" + (exceps));
         ListSequence.fromList(result).addElement(poi);
       }
     }
@@ -3131,8 +3131,8 @@ public class QueriesGenerated {
     for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
       for (int exceps = 0; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS; exceps++) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
-        SPropertyOperations.set(poi, "first", "" + params);
-        SPropertyOperations.set(poi, "second", "" + exceps);
+        SPropertyOperations.set(poi, "first", "" + (params));
+        SPropertyOperations.set(poi, "second", "" + (exceps));
         ListSequence.fromList(result).addElement(poi);
       }
     }
@@ -3184,8 +3184,8 @@ public class QueriesGenerated {
     for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
       for (int exceps = 0; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS; exceps++) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
-        SPropertyOperations.set(poi, "first", "" + params);
-        SPropertyOperations.set(poi, "second", "" + exceps);
+        SPropertyOperations.set(poi, "first", "" + (params));
+        SPropertyOperations.set(poi, "second", "" + (exceps));
         ListSequence.fromList(result).addElement(poi);
       }
     }
@@ -3287,8 +3287,8 @@ public class QueriesGenerated {
     for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
       for (int exceps = 0; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS; exceps++) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
-        SPropertyOperations.set(poi, "first", "" + params);
-        SPropertyOperations.set(poi, "second", "" + exceps);
+        SPropertyOperations.set(poi, "first", "" + (params));
+        SPropertyOperations.set(poi, "second", "" + (exceps));
         ListSequence.fromList(result).addElement(poi);
       }
     }
@@ -3410,8 +3410,8 @@ public class QueriesGenerated {
     for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
       for (int exceps = 0; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS; exceps++) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
-        SPropertyOperations.set(poi, "first", "" + params);
-        SPropertyOperations.set(poi, "second", "" + exceps);
+        SPropertyOperations.set(poi, "first", "" + (params));
+        SPropertyOperations.set(poi, "second", "" + (exceps));
         ListSequence.fromList(result).addElement(poi);
       }
     }
@@ -3533,8 +3533,8 @@ public class QueriesGenerated {
     for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
       for (int exceps = 0; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS; exceps++) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
-        SPropertyOperations.set(poi, "first", "" + params);
-        SPropertyOperations.set(poi, "second", "" + exceps);
+        SPropertyOperations.set(poi, "first", "" + (params));
+        SPropertyOperations.set(poi, "second", "" + (exceps));
         ListSequence.fromList(result).addElement(poi);
       }
     }
@@ -3656,8 +3656,8 @@ public class QueriesGenerated {
     for (int params = 0; params <= Constants.MAX_CLOSURE_PARAMETERS; params++) {
       for (int exceps = 0; exceps <= Constants.MAX_CLOSURE_EXCEPTIONS; exceps++) {
         SNode poi = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.closures.structure.PairOfInts", null);
-        SPropertyOperations.set(poi, "first", "" + params);
-        SPropertyOperations.set(poi, "second", "" + exceps);
+        SPropertyOperations.set(poi, "first", "" + (params));
+        SPropertyOperations.set(poi, "second", "" + (exceps));
         ListSequence.fromList(result).addElement(poi);
       }
     }

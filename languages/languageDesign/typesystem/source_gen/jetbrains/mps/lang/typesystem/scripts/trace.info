@@ -43,7 +43,7 @@
     <nodeInfo nodeId="6587431012884633297" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="36" startPosition="93" endLine="37" endPosition="94" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6587431012884633310" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="37" startPosition="94" endLine="38" endPosition="93" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6587431012884633323" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="38" startPosition="93" endLine="39" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="6587431012884663059" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="39" startPosition="71" endLine="40" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6587431012884663059" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="39" startPosition="71" endLine="40" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="43" startPosition="42" endLine="44" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="16" startPosition="76" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getName#()Ljava/lang/String;" />
     <nodeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="20" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAdditionalInfo#()Ljava/lang/String;" />
@@ -65,7 +65,7 @@
       <varInfo nodeId="6587431012884472434" varName="node" />
     </scopeInfo>
     <scopeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="42" startPosition="0" endLine="46" endPosition="0" />
-    <scopeInfo nodeId="6587431012884472439" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="33" startPosition="52" endLine="40" endPosition="68" />
+    <scopeInfo nodeId="6587431012884472439" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="33" startPosition="52" endLine="40" endPosition="70" />
     <scopeInfo nodeId="6587431012884472434" fileName="RemoveInequalityPriorities_MigrationScript.java" startLine="32" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="6587431012884472434" varName="node" />
     </scopeInfo>

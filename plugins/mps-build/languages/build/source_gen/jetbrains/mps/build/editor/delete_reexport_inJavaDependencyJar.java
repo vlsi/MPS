@@ -26,7 +26,7 @@ public class delete_reexport_inJavaDependencyJar {
     }
 
     public void execute_internal(EditorContext editorContext, SNode node) {
-      SPropertyOperations.set(node, "reexport", "" + false);
+      SPropertyOperations.set(node, "reexport", "" + (false));
     }
   }
 }

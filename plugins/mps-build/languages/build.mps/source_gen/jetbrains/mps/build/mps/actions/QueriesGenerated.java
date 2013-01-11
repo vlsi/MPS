@@ -56,7 +56,7 @@ public class QueriesGenerated {
   }
 
   public static void nodeFactory_NodeSetup_BuildMps_AbstractModule_8369506495128727677(final IOperationContext operationContext, final NodeSetupContext _context) {
-    SPropertyOperations.set(_context.getNewNode(), "compact", "" + true);
+    SPropertyOperations.set(_context.getNewNode(), "compact", "" + (true));
     SNodeFactoryOperations.setNewChild(_context.getNewNode(), "path", "jetbrains.mps.build.structure.BuildSourcePath");
   }
 
@@ -106,7 +106,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "reexport", "" + true);
+          SPropertyOperations.set(_context.getSourceNode(), "reexport", "" + (true));
           return _context.getSourceNode();
         }
 
@@ -128,7 +128,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnJavaModule");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "reexport", "" + true);
+          SPropertyOperations.set(_context.getSourceNode(), "reexport", "" + (true));
           return _context.getSourceNode();
         }
 
@@ -150,7 +150,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_Module");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "doNotCompile", "" + true);
+          SPropertyOperations.set(_context.getSourceNode(), "doNotCompile", "" + (true));
           return _context.getSourceNode();
         }
 
@@ -215,7 +215,7 @@ public class QueriesGenerated {
       SNode concept = SConceptOperations.findConceptDeclaration("jetbrains.mps.build.mps.structure.BuildMps_IdeaPluginModule");
       ListSequence.fromList(result).addElement(new AbstractSideTransformHintSubstituteAction(concept, _context.getSourceNode()) {
         public SNode doSubstitute(String pattern) {
-          SPropertyOperations.set(_context.getSourceNode(), "customPackaging", "" + true);
+          SPropertyOperations.set(_context.getSourceNode(), "customPackaging", "" + (true));
           return _context.getSourceNode();
         }
 

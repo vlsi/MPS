@@ -12,8 +12,6 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import java.io.File;
-import java.util.Set;
-import java.util.HashSet;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 
@@ -61,9 +59,9 @@ public class PathHolder_Behavior {
     path = path.replace(File.separator, Util.SEPARATOR);
     SNode pathHolder;
     if ((module != null)) {
-      pathHolder = new PathHolder_Behavior.QuotationClass_ohoc40_a0a0a2a6().createNode(ModuleUtil.getRelativePath(path, homePath), module, ModuleUtil.getRelativePath(path, Module_Behavior.call_getModuleDescriptorPath_4777659345280330855(module)));
+      pathHolder = createPathHolder_ohoc40_a0a0c0b(ModuleUtil.getRelativePath(path, homePath), ModuleUtil.getRelativePath(path, Module_Behavior.call_getModuleDescriptorPath_4777659345280330855(module)), module);
     } else {
-      pathHolder = new PathHolder_Behavior.QuotationClass_ohoc40_a0a0a0c0g().createNode(ModuleUtil.getRelativePath(path, homePath));
+      pathHolder = createPathHolder_ohoc40_a0a0a2a1(ModuleUtil.getRelativePath(path, homePath));
     }
 
     if (SPropertyOperations.getString(pathHolder, "fullPath").equals(path)) {
@@ -88,48 +86,24 @@ public class PathHolder_Behavior {
     return pathHolder;
   }
 
+  private static SNode createPathHolder_ohoc40_a0a0c0b(Object p0, Object p1, Object p2) {
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathHolder", null, GlobalScope.getInstance(), false);
+    n1.setProperty("fullPath", (String) p0);
+    n1.setProperty("moduleRelativePath", (String) p1);
+    n1.setReferent("module", (SNode) p2);
+    return n1;
+  }
+
+  private static SNode createPathHolder_ohoc40_a0a0a2a1(Object p0) {
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathHolder", null, GlobalScope.getInstance(), false);
+    n1.setProperty("fullPath", (String) p0);
+    return n1;
+  }
+
   private static boolean eq_ohoc40_a0a0a0a0a2a0a0e0g(Object a, Object b) {
     return (a != null ?
       a.equals(b) :
       a == b
     );
-  }
-
-  public static class QuotationClass_ohoc40_a0a0a2a6 {
-    public QuotationClass_ohoc40_a0a0a2a6() {
-    }
-
-    public SNode createNode(Object parameter_3, Object parameter_4, Object parameter_5) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathHolder", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setProperty("fullPath", (String) parameter_3);
-        quotedNode1_2.setProperty("moduleRelativePath", (String) parameter_5);
-        quotedNode1_2.setReferent("module", (SNode) parameter_4);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
-  }
-
-  public static class QuotationClass_ohoc40_a0a0a0c0g {
-    public QuotationClass_ohoc40_a0a0a0c0g() {
-    }
-
-    public SNode createNode(Object parameter_3) {
-      SNode result = null;
-      Set<SNode> _parameterValues_129834374 = new HashSet<SNode>();
-      SNode quotedNode_1 = null;
-      {
-        quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathHolder", null, GlobalScope.getInstance(), false);
-        SNode quotedNode1_2 = quotedNode_1;
-        quotedNode1_2.setProperty("fullPath", (String) parameter_3);
-        result = quotedNode1_2;
-      }
-      return result;
-    }
   }
 }

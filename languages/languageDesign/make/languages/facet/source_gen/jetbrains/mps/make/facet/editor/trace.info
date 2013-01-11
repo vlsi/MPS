@@ -2869,7 +2869,7 @@
     <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="17" startPosition="86" endLine="18" endPosition="29" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myNode" />
     <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="20" startPosition="62" endLine="21" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="24" startPosition="54" endLine="25" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7219266275016613906" fileName="TargetDeclaration_makeRequired.java" startLine="28" startPosition="75" endLine="29" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="7219266275016613906" fileName="TargetDeclaration_makeRequired.java" startLine="28" startPosition="75" endLine="29" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="19" startPosition="0" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TargetDeclaration_makeRequired_DELETE#(Ljetbrains/mps/smodel/SNode;)V" />
     <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="12" startPosition="45" endLine="16" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="setCellActions#(Ljetbrains/mps/nodeEditor/cells/EditorCell;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/nodeEditor/EditorContext;)V" />
     <nodeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="23" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Ljetbrains/mps/nodeEditor/EditorContext;)V" />
@@ -2877,7 +2877,7 @@
     <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="13" startPosition="95" endLine="14" endPosition="128" />
     <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="20" startPosition="62" endLine="21" endPosition="25" />
     <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="24" startPosition="54" endLine="25" endPosition="56" />
-    <scopeInfo nodeId="7219266275016613905" fileName="TargetDeclaration_makeRequired.java" startLine="28" startPosition="75" endLine="29" endPosition="60" />
+    <scopeInfo nodeId="7219266275016613905" fileName="TargetDeclaration_makeRequired.java" startLine="28" startPosition="75" endLine="29" endPosition="62" />
     <scopeInfo nodeId="7219266275016613902" fileName="TargetDeclaration_makeRequired.java" startLine="19" startPosition="0" endLine="22" endPosition="5">
       <varInfo nodeId="7219266275016613902" varName="node" />
     </scopeInfo>

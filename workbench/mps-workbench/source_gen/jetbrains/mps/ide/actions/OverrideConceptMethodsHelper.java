@@ -39,10 +39,10 @@ public class OverrideConceptMethodsHelper {
     for (SNode m : baseMethods) {
       SNode baseMethod = SNodeOperations.cast(m, "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration");
       SNode method = SNodeOperations.cast(((SNode) BehaviorManager.getInstance().invoke(Object.class, baseMethod, "call_getMethodToImplement_69709522611978987", new Class[]{SNode.class, SNode.class}, myClassConcept)), "jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration");
-      SPropertyOperations.set(method, "isAbstract", "" + false);
+      SPropertyOperations.set(method, "isAbstract", "" + (false));
       SLinkOperations.setTarget(method, "body", SNodeFactoryOperations.createNewNode(SNodeOperations.getModel(myClassConcept), "jetbrains.mps.baseLanguage.structure.StatementList", null), true);
       SLinkOperations.setTarget(method, "overriddenMethod", ((SNode) BehaviorManager.getInstance().invoke(Object.class, baseMethod, "call_getOverridenMethod_1225196403956", new Class[]{SNode.class})), false);
-      SPropertyOperations.set(method, "isVirtual", "" + false);
+      SPropertyOperations.set(method, "isVirtual", "" + (false));
 
       if (insertion) {
         ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "method", true)).insertElement(ListSequence.fromList(SLinkOperations.getTargets(myClassConcept, "method", true)).indexOf(myContextMethod) + 1, method);

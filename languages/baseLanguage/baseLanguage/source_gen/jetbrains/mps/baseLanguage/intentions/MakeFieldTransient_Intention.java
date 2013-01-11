@@ -36,7 +36,7 @@ public class MakeFieldTransient_Intention extends BaseIntention implements Inten
   }
 
   public void execute(final SNode node, final EditorContext editorContext) {
-    SPropertyOperations.set(node, "isTransient", "" + !(SPropertyOperations.getBoolean(node, "isTransient")));
+    SPropertyOperations.set(node, "isTransient", "" + (!(SPropertyOperations.getBoolean(node, "isTransient"))));
   }
 
   public String getLocationString() {
