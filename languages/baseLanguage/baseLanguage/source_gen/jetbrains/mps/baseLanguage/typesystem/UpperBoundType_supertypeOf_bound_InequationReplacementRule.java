@@ -81,7 +81,7 @@ public class UpperBoundType_supertypeOf_bound_InequationReplacementRule extends 
             return false;
           }
           {
-            SNode childVar_UpperBoundType_supertypeOf_bound_y9xgfl_a0a0 = nodeToMatch_UpperBoundType_supertypeOf_bound_y9xgfl_a0a.getChildren(childRole_UpperBoundType_supertypeOf_bound_y9xgfl_).get(0);
+            SNode childVar_UpperBoundType_supertypeOf_bound_y9xgfl_a0a0 = nodeToMatch_UpperBoundType_supertypeOf_bound_y9xgfl_a0a.getChildren(childRole_UpperBoundType_supertypeOf_bound_y9xgfl_).iterator().next();
             this.patternVar_BOUND = childVar_UpperBoundType_supertypeOf_bound_y9xgfl_a0a0;
           }
         }

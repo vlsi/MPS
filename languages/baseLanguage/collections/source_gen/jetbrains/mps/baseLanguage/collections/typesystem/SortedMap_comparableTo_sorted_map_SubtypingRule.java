@@ -68,7 +68,7 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
             return false;
           }
           {
-            SNode childVar_SortedMap_comparableTo_sorted_map_1q5lf6_a0a0 = nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getChildren(childRole_SortedMap_comparableTo_sorted_map_1q5lf6_).get(0);
+            SNode childVar_SortedMap_comparableTo_sorted_map_1q5lf6_a0a0 = nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getChildren(childRole_SortedMap_comparableTo_sorted_map_1q5lf6_).iterator().next();
             this.patternVar_KEY = childVar_SortedMap_comparableTo_sorted_map_1q5lf6_a0a0;
           }
           {

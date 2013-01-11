@@ -45,7 +45,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
             return false;
           }
           {
-            SNode childVar_RuleAssertNotNull_7fbm30_a0a0 = nodeToMatch_RuleAssertNotNull_7fbm30_a0a.getChildren(childRole_RuleAssertNotNull_7fbm30_).get(0);
+            SNode childVar_RuleAssertNotNull_7fbm30_a0a0 = nodeToMatch_RuleAssertNotNull_7fbm30_a0a.getChildren(childRole_RuleAssertNotNull_7fbm30_).iterator().next();
             {
               SNode nodeToMatch_RuleAssertNotNull_7fbm30_a0a0;
               nodeToMatch_RuleAssertNotNull_7fbm30_a0a0 = childVar_RuleAssertNotNull_7fbm30_a0a0;
@@ -130,7 +130,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
               return false;
             }
             {
-              SNode childVar_RuleAssertNotNull_7fbm30_a0a0a0a = nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0.getChildren(childRole_RuleAssertNotNull_7fbm30__0).get(0);
+              SNode childVar_RuleAssertNotNull_7fbm30_a0a0a0a = nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0.getChildren(childRole_RuleAssertNotNull_7fbm30__0).iterator().next();
               {
                 SNode nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0a;
                 nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0a = childVar_RuleAssertNotNull_7fbm30_a0a0a0a;
@@ -144,7 +144,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
               return false;
             }
             {
-              SNode childVar_RuleAssertNotNull_7fbm30_a0a0a0a_0 = nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0.getChildren(childRole_RuleAssertNotNull_7fbm30__1).get(0);
+              SNode childVar_RuleAssertNotNull_7fbm30_a0a0a0a_0 = nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0.getChildren(childRole_RuleAssertNotNull_7fbm30__1).iterator().next();
               {
                 SNode nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0a_0;
                 nodeToMatch_RuleAssertNotNull_7fbm30_a0a0a0a_0 = childVar_RuleAssertNotNull_7fbm30_a0a0a0a_0;
@@ -190,7 +190,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
               return false;
             }
             {
-              SNode childVar_RuleAssertNotNull_7fbm30_a0b0a0a = nodeToMatch_RuleAssertNotNull_7fbm30_a1a0a0.getChildren(childRole_RuleAssertNotNull_7fbm30__2).get(0);
+              SNode childVar_RuleAssertNotNull_7fbm30_a0b0a0a = nodeToMatch_RuleAssertNotNull_7fbm30_a1a0a0.getChildren(childRole_RuleAssertNotNull_7fbm30__2).iterator().next();
               {
                 SNode nodeToMatch_RuleAssertNotNull_7fbm30_a0b0a0a;
                 nodeToMatch_RuleAssertNotNull_7fbm30_a0b0a0a = childVar_RuleAssertNotNull_7fbm30_a0b0a0a;
@@ -206,7 +206,7 @@ public class RuleAssertNotNull extends DataFlowConstructor {
               return false;
             }
             {
-              SNode childVar_RuleAssertNotNull_7fbm30_a0b0a0a_0 = nodeToMatch_RuleAssertNotNull_7fbm30_a1a0a0.getChildren(childRole_RuleAssertNotNull_7fbm30__3).get(0);
+              SNode childVar_RuleAssertNotNull_7fbm30_a0b0a0a_0 = nodeToMatch_RuleAssertNotNull_7fbm30_a1a0a0.getChildren(childRole_RuleAssertNotNull_7fbm30__3).iterator().next();
               {
                 SNode nodeToMatch_RuleAssertNotNull_7fbm30_a0b0a0a_0;
                 nodeToMatch_RuleAssertNotNull_7fbm30_a0b0a0a_0 = childVar_RuleAssertNotNull_7fbm30_a0b0a0a_0;

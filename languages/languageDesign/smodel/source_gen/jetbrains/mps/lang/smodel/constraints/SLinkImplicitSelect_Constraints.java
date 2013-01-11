@@ -95,7 +95,7 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
             return false;
           }
           {
-            SNode childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a = nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0.getChildren(childRole_SLinkImplicitSelect_Constraints_f4oi2a_).get(0);
+            SNode childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a = nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0.getChildren(childRole_SLinkImplicitSelect_Constraints_f4oi2a_).iterator().next();
             {
               SNode nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a;
               nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a = childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a;
@@ -150,7 +150,7 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
             return false;
           }
           {
-            SNode childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a = nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0.getChildren(childRole_SLinkImplicitSelect_Constraints_f4oi2a__0).get(0);
+            SNode childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a = nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0.getChildren(childRole_SLinkImplicitSelect_Constraints_f4oi2a__0).iterator().next();
             {
               SNode nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a;
               nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a = childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a;

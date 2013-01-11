@@ -24,11 +24,11 @@ public class RemoveKeystrokes_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return !(node.getChildren("keystroke").isEmpty());
+        return !(node.getChildren("keystroke").iterator().hasNext());
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        node.removeChild(node.getChildren("keystroke").get(0));
+        node.removeChild(node.getChildren("keystroke").iterator().next());
       }
 
       public boolean isShowAsIntention() {

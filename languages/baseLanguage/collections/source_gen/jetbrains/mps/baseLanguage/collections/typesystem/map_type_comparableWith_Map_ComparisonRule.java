@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
@@ -76,7 +77,7 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
             return false;
           }
           {
-            SNode childVar_map_type_comparableWith_Map_a1tqv3_a0a0 = nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getChildren(childRole_map_type_comparableWith_Map_a1tqv3_).get(0);
+            SNode childVar_map_type_comparableWith_Map_a1tqv3_a0a0 = IterableUtil.asList(nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getChildren(childRole_map_type_comparableWith_Map_a1tqv3_)).get(0);
             this.patternVar_KEY = childVar_map_type_comparableWith_Map_a1tqv3_a0a0;
           }
           {

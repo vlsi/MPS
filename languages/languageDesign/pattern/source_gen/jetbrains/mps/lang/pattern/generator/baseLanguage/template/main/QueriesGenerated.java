@@ -651,7 +651,7 @@ public class QueriesGenerated {
     List<SNode> result = new ArrayList<SNode>();
     SNode mainNode = SLinkOperations.getTarget(_context.getNode(), "mainNode", false);
     String role = SPropertyOperations.getString(_context.getNode(), "role");
-    SNode ch = mainNode.getChildren(role).get(0);
+    SNode ch = mainNode.getChildren(role).iterator().next();
     ListSequence.fromList(result).addElement(ch);
     return result;
   }

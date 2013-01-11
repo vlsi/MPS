@@ -6,6 +6,7 @@ import jetbrains.mps.intentions.IntentionFactory;
 import java.util.Collection;
 import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -134,7 +135,7 @@ public class IterateOverIterable_Intention implements IntentionFactory {
             return false;
           }
           {
-            SNode childVar_IterateOverIterable_6isygg_a0a0a0a0a = nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getChildren(childRole_IterateOverIterable_6isygg__0).get(0);
+            SNode childVar_IterateOverIterable_6isygg_a0a0a0a0a = IterableUtil.asList(nodeToMatch_IterateOverIterable_6isygg_a0a0a0a0.getChildren(childRole_IterateOverIterable_6isygg__0)).get(0);
             this.patternVar_elem = childVar_IterateOverIterable_6isygg_a0a0a0a0a;
           }
         }
@@ -188,7 +189,7 @@ public class IterateOverIterable_Intention implements IntentionFactory {
             return false;
           }
           {
-            SNode childVar_IterateOverIterable_6isygg_a0a0a0a = nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getChildren(childRole_IterateOverIterable_6isygg_).get(0);
+            SNode childVar_IterateOverIterable_6isygg_a0a0a0a = IterableUtil.asList(nodeToMatch_IterateOverIterable_6isygg_a0a0a0.getChildren(childRole_IterateOverIterable_6isygg_)).get(0);
             this.patternVar_elem = childVar_IterateOverIterable_6isygg_a0a0a0a;
           }
         }

@@ -20,7 +20,7 @@ public class ScopesTest_Behavior {
 
   public static SReference call_getCheckingReference_5449224527592367549(SNode thisNode) {
     if (SLinkOperations.getTarget(thisNode, "checkingReference", false) == null) {
-      return ((SNode) SNodeOperations.getParent(thisNode)).getReferences().get(0);
+      return ((SNode) SNodeOperations.getParent(thisNode)).getReferences().iterator().next();
     }
     for (SReference reference : ListSequence.fromList(SNodeOperations.getReferences(SNodeOperations.getParent(thisNode)))) {
       if (SLinkOperations.getTargetNode(reference) == SLinkOperations.getTarget(thisNode, "checkingReference", false)) {

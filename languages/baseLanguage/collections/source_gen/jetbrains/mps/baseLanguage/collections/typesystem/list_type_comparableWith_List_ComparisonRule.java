@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
@@ -75,7 +76,7 @@ public class list_type_comparableWith_List_ComparisonRule extends ComparisonRule
             return false;
           }
           {
-            SNode childVar_list_type_comparableWith_List_ho857w_a0a0 = nodeToMatch_list_type_comparableWith_List_ho857w_a0a.getChildren(childRole_list_type_comparableWith_List_ho857w_).get(0);
+            SNode childVar_list_type_comparableWith_List_ho857w_a0a0 = IterableUtil.asList(nodeToMatch_list_type_comparableWith_List_ho857w_a0a.getChildren(childRole_list_type_comparableWith_List_ho857w_)).get(0);
             this.patternVar_ELEMENT = childVar_list_type_comparableWith_List_ho857w_a0a0;
           }
         }

@@ -4,6 +4,7 @@ package jetbrains.mps.lang.pattern.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
+import jetbrains.mps.util.IterableUtil;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.TestCase;
@@ -77,10 +78,10 @@ public class Patternv2_Test extends BaseTransformationTest4 {
               return false;
             }
             {
-              SNode childVar_v2_1fi_a0a = nodeToMatch_v2_1fi_a0.getChildren(childRole_v2_1fi_).get(0);
+              SNode childVar_v2_1fi_a0a = IterableUtil.asList(nodeToMatch_v2_1fi_a0.getChildren(childRole_v2_1fi_)).get(0);
             }
             {
-              SNode childVar_v2_1fi_b0a = nodeToMatch_v2_1fi_a0.getChildren(childRole_v2_1fi_).get(1);
+              SNode childVar_v2_1fi_b0a = IterableUtil.asList(nodeToMatch_v2_1fi_a0.getChildren(childRole_v2_1fi_)).get(1);
               {
                 SNode nodeToMatch_v2_1fi_b0a;
                 nodeToMatch_v2_1fi_b0a = childVar_v2_1fi_b0a;
@@ -93,7 +94,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
                     return false;
                   }
                   {
-                    SNode childVar_v2_1fi_a1a0 = nodeToMatch_v2_1fi_b0a.getChildren(childRole_v2_1fi__0).get(0);
+                    SNode childVar_v2_1fi_a1a0 = IterableUtil.asList(nodeToMatch_v2_1fi_b0a.getChildren(childRole_v2_1fi__0)).get(0);
                     {
                       SNode nodeToMatch_v2_1fi_a1a0;
                       nodeToMatch_v2_1fi_a1a0 = childVar_v2_1fi_a1a0;
@@ -106,7 +107,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
                           return false;
                         }
                         {
-                          SNode childVar_v2_1fi_a0b0a = nodeToMatch_v2_1fi_a1a0.getChildren(childRole_v2_1fi__1).get(0);
+                          SNode childVar_v2_1fi_a0b0a = IterableUtil.asList(nodeToMatch_v2_1fi_a1a0.getChildren(childRole_v2_1fi__1)).get(0);
                           {
                             SNode nodeToMatch_v2_1fi_a0b0a;
                             nodeToMatch_v2_1fi_a0b0a = childVar_v2_1fi_a0b0a;
@@ -135,7 +136,7 @@ public class Patternv2_Test extends BaseTransformationTest4 {
                     return false;
                   }
                   {
-                    SNode childVar_v2_1fi_a1a0_0 = nodeToMatch_v2_1fi_b0a.getChildren(childRole_v2_1fi__3).get(0);
+                    SNode childVar_v2_1fi_a1a0_0 = IterableUtil.asList(nodeToMatch_v2_1fi_b0a.getChildren(childRole_v2_1fi__3)).get(0);
                     this.patternVar_ifbody = childVar_v2_1fi_a1a0_0;
                   }
                 }

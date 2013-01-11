@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -86,7 +87,7 @@ public class collection_covariant_extends_InequationReplacementRule extends Abst
             return false;
           }
           {
-            SNode childVar_collection_covariant_extends_otuqx5_a0a0 = nodeToMatch_collection_covariant_extends_otuqx5_a0a.getChildren(childRole_collection_covariant_extends_otuqx5_).get(0);
+            SNode childVar_collection_covariant_extends_otuqx5_a0a0 = IterableUtil.asList(nodeToMatch_collection_covariant_extends_otuqx5_a0a.getChildren(childRole_collection_covariant_extends_otuqx5_)).get(0);
             this.patternVar_SUB = childVar_collection_covariant_extends_otuqx5_a0a0;
           }
         }
@@ -134,7 +135,7 @@ public class collection_covariant_extends_InequationReplacementRule extends Abst
             return false;
           }
           {
-            SNode childVar_collection_covariant_extends_otuqx5_a0a0_0 = nodeToMatch_collection_covariant_extends_otuqx5_a0a_0.getChildren(childRole_collection_covariant_extends_otuqx5__0).get(0);
+            SNode childVar_collection_covariant_extends_otuqx5_a0a0_0 = IterableUtil.asList(nodeToMatch_collection_covariant_extends_otuqx5_a0a_0.getChildren(childRole_collection_covariant_extends_otuqx5__0)).get(0);
             this.patternVar_SUPER = childVar_collection_covariant_extends_otuqx5_a0a0_0;
           }
         }

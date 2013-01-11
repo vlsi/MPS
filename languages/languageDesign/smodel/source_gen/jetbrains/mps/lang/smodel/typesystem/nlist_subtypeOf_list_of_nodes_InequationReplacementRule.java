@@ -4,6 +4,7 @@ package jetbrains.mps.lang.smodel.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -126,7 +127,7 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
             return false;
           }
           {
-            SNode childVar_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a0 = nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a_0.getChildren(childRole_nlist_subtypeOf_list_of_nodes_3tjcdg_).get(0);
+            SNode childVar_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a0 = IterableUtil.asList(nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a_0.getChildren(childRole_nlist_subtypeOf_list_of_nodes_3tjcdg_)).get(0);
             this.patternVar_ELEMENT = childVar_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a0;
           }
         }

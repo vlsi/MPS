@@ -75,7 +75,7 @@ public class sequence_type_comparableWith_Iterable_ComparisonRule extends Compar
             return false;
           }
           {
-            SNode childVar_sequence_type_comparableWith_Iterable_wnlwmt_a0a0 = nodeToMatch_sequence_type_comparableWith_Iterable_wnlwmt_a0a.getChildren(childRole_sequence_type_comparableWith_Iterable_wnlwmt_).get(0);
+            SNode childVar_sequence_type_comparableWith_Iterable_wnlwmt_a0a0 = nodeToMatch_sequence_type_comparableWith_Iterable_wnlwmt_a0a.getChildren(childRole_sequence_type_comparableWith_Iterable_wnlwmt_).iterator().next();
             this.patternVar_ELEMENT = childVar_sequence_type_comparableWith_Iterable_wnlwmt_a0a0;
           }
         }

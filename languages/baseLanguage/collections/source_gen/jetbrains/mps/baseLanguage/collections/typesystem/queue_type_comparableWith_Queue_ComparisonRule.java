@@ -75,7 +75,7 @@ public class queue_type_comparableWith_Queue_ComparisonRule extends ComparisonRu
             return false;
           }
           {
-            SNode childVar_queue_type_comparableWith_Queue_jt8ol0_a0a0 = nodeToMatch_queue_type_comparableWith_Queue_jt8ol0_a0a.getChildren(childRole_queue_type_comparableWith_Queue_jt8ol0_).get(0);
+            SNode childVar_queue_type_comparableWith_Queue_jt8ol0_a0a0 = nodeToMatch_queue_type_comparableWith_Queue_jt8ol0_a0a.getChildren(childRole_queue_type_comparableWith_Queue_jt8ol0_).iterator().next();
             this.patternVar_ELEMENT_TYPE = childVar_queue_type_comparableWith_Queue_jt8ol0_a0a0;
           }
         }

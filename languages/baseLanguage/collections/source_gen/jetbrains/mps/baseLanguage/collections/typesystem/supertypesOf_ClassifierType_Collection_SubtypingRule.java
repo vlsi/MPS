@@ -67,7 +67,7 @@ public class supertypesOf_ClassifierType_Collection_SubtypingRule extends Subtyp
             return false;
           }
           {
-            SNode childVar_supertypesOf_ClassifierType_Collection_g8re64_a0a0 = nodeToMatch_supertypesOf_ClassifierType_Collection_g8re64_a0a.getChildren(childRole_supertypesOf_ClassifierType_Collection_g8re64_).get(0);
+            SNode childVar_supertypesOf_ClassifierType_Collection_g8re64_a0a0 = nodeToMatch_supertypesOf_ClassifierType_Collection_g8re64_a0a.getChildren(childRole_supertypesOf_ClassifierType_Collection_g8re64_).iterator().next();
             this.patternVar_ELEMENT = childVar_supertypesOf_ClassifierType_Collection_g8re64_a0a0;
           }
         }

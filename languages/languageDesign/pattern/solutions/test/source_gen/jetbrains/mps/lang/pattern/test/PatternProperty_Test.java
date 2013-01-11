@@ -4,6 +4,7 @@ package jetbrains.mps.lang.pattern.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
+import jetbrains.mps.util.IterableUtil;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.TestCase;
@@ -76,7 +77,7 @@ public class PatternProperty_Test extends BaseTransformationTest4 {
               return false;
             }
             {
-              SNode childVar_Property_ru5khm_a0a = nodeToMatch_Property_ru5khm_a0.getChildren(childRole_Property_ru5khm_).get(0);
+              SNode childVar_Property_ru5khm_a0a = IterableUtil.asList(nodeToMatch_Property_ru5khm_a0.getChildren(childRole_Property_ru5khm_)).get(0);
               {
                 SNode nodeToMatch_Property_ru5khm_a0a;
                 nodeToMatch_Property_ru5khm_a0a = childVar_Property_ru5khm_a0a;
@@ -94,7 +95,7 @@ public class PatternProperty_Test extends BaseTransformationTest4 {
               return false;
             }
             {
-              SNode childVar_Property_ru5khm_a0a_0 = nodeToMatch_Property_ru5khm_a0.getChildren(childRole_Property_ru5khm__0).get(0);
+              SNode childVar_Property_ru5khm_a0a_0 = IterableUtil.asList(nodeToMatch_Property_ru5khm_a0.getChildren(childRole_Property_ru5khm__0)).get(0);
               {
                 SNode nodeToMatch_Property_ru5khm_a0a_0;
                 nodeToMatch_Property_ru5khm_a0a_0 = childVar_Property_ru5khm_a0a_0;
@@ -108,7 +109,7 @@ public class PatternProperty_Test extends BaseTransformationTest4 {
                     return false;
                   }
                   {
-                    SNode childVar_Property_ru5khm_a0a0 = nodeToMatch_Property_ru5khm_a0a_0.getChildren(childRole_Property_ru5khm__1).get(0);
+                    SNode childVar_Property_ru5khm_a0a0 = IterableUtil.asList(nodeToMatch_Property_ru5khm_a0a_0.getChildren(childRole_Property_ru5khm__1)).get(0);
                     {
                       SNode nodeToMatch_Property_ru5khm_a0a0;
                       nodeToMatch_Property_ru5khm_a0a0 = childVar_Property_ru5khm_a0a0;

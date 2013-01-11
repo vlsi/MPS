@@ -4,6 +4,7 @@ package jetbrains.mps.baseLanguage.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
@@ -89,7 +90,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
             return false;
           }
           {
-            SNode childVar_check_ForeachWithErasure_gn1qzs_a0a0c0 = nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a.getChildren(childRole_check_ForeachWithErasure_gn1qzs_).get(0);
+            SNode childVar_check_ForeachWithErasure_gn1qzs_a0a0c0 = IterableUtil.asList(nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a.getChildren(childRole_check_ForeachWithErasure_gn1qzs_)).get(0);
             this.patternVar_p = childVar_check_ForeachWithErasure_gn1qzs_a0a0c0;
           }
         }

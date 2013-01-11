@@ -67,7 +67,7 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
             return false;
           }
           {
-            SNode childVar_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a0 = nodeToMatch_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a.getChildren(childRole_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_).get(0);
+            SNode childVar_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a0 = nodeToMatch_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a.getChildren(childRole_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_).iterator().next();
             this.patternVar_ELEMENT_TYPE = childVar_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a0;
           }
         }
