@@ -196,6 +196,7 @@ public class CommonPaths {
   private static void addEditorJars(CompositeClassPathItem result) {
     addIfExists(result, "/lib/mps-editor.jar");
     addIfExists(result, "/lib/mps-editor-api.jar");
+    addIfExists(result, "/lib/mps-editor-runtime.jar");
   }
 
   private static void addRepackedIdeaJars(CompositeClassPathItem result) {

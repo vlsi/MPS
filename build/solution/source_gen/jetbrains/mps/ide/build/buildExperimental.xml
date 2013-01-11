@@ -890,6 +890,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-icons.jar" />
@@ -937,6 +938,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-icons.jar" />
@@ -987,6 +989,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-ui.jar" />
@@ -1057,6 +1060,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.ypath" />
@@ -1099,6 +1103,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.ypath" />
@@ -1154,6 +1159,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-ui.jar" />
@@ -1198,6 +1204,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.ui.modeling" />
@@ -1248,6 +1255,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-icons.jar" />
@@ -1284,6 +1292,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
@@ -1326,6 +1335,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.ui.modeling" />
@@ -1373,6 +1383,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.ui.modeling" />
@@ -1418,6 +1429,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.gwt.client" />
@@ -1466,6 +1478,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-icons.jar" />
@@ -1518,6 +1531,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.ui" />
@@ -1565,6 +1579,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-icons.jar" />
@@ -1634,6 +1649,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.ui" />
@@ -1681,6 +1697,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-ui.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-icons.jar" />
@@ -1750,6 +1767,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <fileset file="${mps_home}/languages/util/gwtsupport/languages/client/redist/gwt-servlet.jar" />
@@ -1792,6 +1810,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
@@ -1831,6 +1850,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <pathelement path="${build.tmp}/java/out/jetbrains.mps.baseLanguage.math.pluginSolution" />
@@ -1891,6 +1911,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
@@ -1925,6 +1946,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
@@ -1978,6 +2000,7 @@
         <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildCore}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />

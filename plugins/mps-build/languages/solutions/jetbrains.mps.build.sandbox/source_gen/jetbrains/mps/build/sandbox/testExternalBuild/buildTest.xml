@@ -86,6 +86,7 @@
         <fileset file="${artifacts.buildMPS}/lib/mps-core.jar" />
         <fileset file="${artifacts.buildMPS}/lib/mps-platform.jar" />
         <fileset file="${artifacts.buildMPS}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildMPS}/lib/mps-editor-runtime.jar" />
         <fileset file="${artifacts.buildMPS}/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildMPS}/lib/mps-ui.jar" />
         <fileset file="${artifacts.buildMPS}/lib/mps-icons.jar" />
