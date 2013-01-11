@@ -660,13 +660,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     setSelectionEnd(end);
   }
 
-  private int getNextLocalEnd(boolean withSpaces) {
+  private int getNextLocalEnd(boolean skipLeadingSpaces) {
     int length = getText().length();
     assert getCaretPosition() <= length;
     for (int i = getCaretPosition(); i != length; ++i) {
 
       if (Character.isWhitespace(getText().charAt(i))) {
-        if (withSpaces) {
+        if (skipLeadingSpaces) {
           if (i == length - 1 || !Character.isWhitespace(getText().charAt(i + 1))) {
             return i + 1;
           }
@@ -678,24 +678,17 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return length;
   }
 
-  private int getPrevLocalHome(boolean withSpaces) {
+  private int getPrevLocalHome(boolean skipLeadingSpaces) {
     assert getCaretPosition() >= 0;
 
-    if (!withSpaces) {
-      if (getCaretPosition() == 0 || Character.isWhitespace(getText().charAt(getCaretPosition() - 1))) {
-        return getCaretPosition();
-      }
-    }
-
-    boolean charSelected = false;
     for (int i = getCaretPosition(); i >= 1; --i) {
       char c = getText().charAt(i - 1);
-      if (Character.isWhitespace(c) && charSelected) {
+      if (Character.isWhitespace(c) && !skipLeadingSpaces) {
         return i;
       }
 
       if (!Character.isWhitespace(c)) {
-        charSelected = true;
+        skipLeadingSpaces = false;
       }
     }
     return 0;
