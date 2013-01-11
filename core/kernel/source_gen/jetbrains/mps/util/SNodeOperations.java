@@ -54,7 +54,7 @@ public class SNodeOperations {
     return new SNodeOperations.DescendantsIterable(node, cond, includeFirst);
   }
 
-  public static SNode findParent(SNode node, Condition<jetbrains.mps.smodel.SNode> condition) {
+  public static SNode findParent(SNode node, Condition<SNode> condition) {
     jetbrains.mps.smodel.SNode parent = ((jetbrains.mps.smodel.SNode) node.getParent());
     while (parent != null) {
       if (condition.met(parent)) {
