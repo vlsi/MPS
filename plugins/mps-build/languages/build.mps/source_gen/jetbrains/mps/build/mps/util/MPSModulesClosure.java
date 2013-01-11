@@ -242,6 +242,11 @@ public class MPSModulesClosure {
     }
   }
 
+  public void reset() {
+    modules.clear();
+    languagesWithRuntime.clear();
+  }
+
   public MPSModulesClosure closure() {
     for (SNode m : Sequence.fromIterable(initialModules)) {
       collectAllDependencies(m, false, true);

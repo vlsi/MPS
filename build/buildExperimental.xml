@@ -1999,7 +1999,7 @@
         <module file="${mps_home}/languages/util/math/runtimeSolution/jetbrains.mps.baseLanguage.math.runtime.msd" />
         <module file="${mps_home}/languages/util/money/money.mpl" />
         <module file="${mps_home}/languages/util/money/runtimeSolution/jetbrains.mps.baseLanguage.money.runtime.msd" />
-        <module file="${mps_home}/languages/util/gwtsupport/languages/client/client.mpl" />
+        <module file="${mps_home}/languages/util/gwtsupport/languages/client/client.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/util/conf/languages/conf/conf.mpl" />
         <module file="${mps_home}/languages/util/ui/languages/gwt/solutions/pluginSolution/pluginSolution.msd" />
         <module file="${mps_home}/languages/util/ui/languages/gwt/solutions/runtime/runtime.msd" />

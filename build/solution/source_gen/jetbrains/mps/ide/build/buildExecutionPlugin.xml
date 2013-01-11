@@ -646,6 +646,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.pattern.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.plugin.jar" />
         <fileset file="${artifacts.buildWorkbench}/languages/workbench/jetbrains.mps.lang.plugin.standalone.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.resources.jar" />
@@ -653,6 +654,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
       </classpath>
     </javac2>
     <copy todir="${build.tmp}/java/out/jetbrains.mps.execution.configurations">
@@ -1022,13 +1024,11 @@
         <module file="${basedir}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/api.msd" />
         <module file="${basedir}/plugins/execution-configurations/languages/unitTests/runtime/jetbrains.mps.baseLanguage.unitTest.runtime.msd" />
         <module file="${basedir}/plugins/execution-configurations/languages/unitTests/startup/startup.msd" />
+        <module file="${mps_home}/plugins/execution-languages/languages/configurations/configurations.mpl" />
         <module file="${mps_home}/plugins/execution-languages/languages/deprecated/runConfigurations.mpl" />
         <module file="${mps_home}/plugins/execution-languages/languages/deprecated.runtime/runtime.msd" />
         <module file="${mps_home}/plugins/execution-languages/languages/library/jetbrains.mps.execution.lib.msd" />
         <module file="${basedir}/plugins/execution-configurations/languages/migration/migration.mpl" />
-      </chunk>
-      <chunk>
-        <module file="${mps_home}/plugins/execution-languages/languages/configurations/configurations.mpl" />
       </chunk>
       <chunk>
         <module file="${basedir}/plugins/execution-configurations/languages/plugin/plugin.msd" />
@@ -1048,11 +1048,11 @@
     <delete dir="${mps_home}/plugins/execution-configurations/languages/baseLanguage/jetbrains.mps.baseLanguage.execution.api/source_gen" />
     <delete dir="${mps_home}/plugins/execution-configurations/languages/unitTests/runtime/source_gen" />
     <delete dir="${mps_home}/plugins/execution-configurations/languages/unitTests/startup/source_gen" />
+    <delete dir="${mps_home}/plugins/execution-languages/languages/configurations/source_gen" />
     <delete dir="${mps_home}/plugins/execution-languages/languages/deprecated/source_gen" />
     <delete dir="${mps_home}/plugins/execution-languages/languages/deprecated.runtime/source_gen" />
     <delete dir="${mps_home}/plugins/execution-languages/languages/library/source_gen" />
     <delete dir="${mps_home}/plugins/execution-configurations/languages/migration/source_gen" />
-    <delete dir="${mps_home}/plugins/execution-languages/languages/configurations/source_gen" />
     <delete dir="${mps_home}/plugins/execution-configurations/languages/plugin/source_gen" />
     <delete dir="${mps_home}/plugins/execution-languages/languages/configurations/solutions/pluginSolution/source_gen" />
   </target>

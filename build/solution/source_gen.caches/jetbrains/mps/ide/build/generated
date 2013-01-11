@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-29xldnnubu24ksmw5659y7ibjmzene6">
+<dependencies version="2" modelHash="-5fxlumtrlxlbz6te4ykifunmpmt1jh9">
   <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="9ct9lck34q1x3n4q6gbk723j8ja9pb9" />
   <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-3ly9b43y4ggdaudn9vay3q69g1wsxcw" />
   <dep model="r:49b10014-fe6b-4682-a69d-1c3d6188eba3(jetbrains.mps.bash.structure)" hash="5evnomp6a0d9l6p0ghnuwh03hk54y5k" />
@@ -153,7 +153,7 @@
     <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" />
     <file name="buildDebuggerPlugin.xml" />
   </source>
-  <source id="6361939271669846483" name="buildExecutionPlugin" hash="9s95hzrx7io25dkfqlrwe9sozfswejf">
+  <source id="6361939271669846483" name="buildExecutionPlugin" hash="-69b7ipgw2pn8nx2n2iksp901xctdwko">
     <dep root="2569834391839970845" />
     <dep root="4301118715654819483" />
     <dep root="6164334420696839314" />

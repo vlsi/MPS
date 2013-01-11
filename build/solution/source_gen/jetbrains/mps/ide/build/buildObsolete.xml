@@ -824,8 +824,8 @@
         <module file="${mps_home}/languages/util/mps-lite/languages/mpslite/mpslite.mpl" />
         <module file="${mps_home}/languages/util/mps-lite/languages/mpslite/solutions/pluginSolution/pluginSolution.msd" />
       </chunk>
-      <chunk>
-        <module file="${mps_home}/plugins/mps-obsolete/languages/packaging/packaging.mpl" />
+      <chunk bootstrap="true">
+        <module file="${mps_home}/plugins/mps-obsolete/languages/packaging/packaging.mpl" bootstrap="true" />
       </chunk>
       <chunk bootstrap="true">
         <module file="${mps_home}/plugins/mps-obsolete/languages/custommps/custommps.mpl" bootstrap="true" />
@@ -844,7 +844,6 @@
     <delete dir="${mps_home}/plugins/mps-obsolete/languages/xmlDeprecated/solutions/pluginSolution/source_gen" />
     <delete dir="${mps_home}/languages/util/mps-lite/languages/mpslite/source_gen" />
     <delete dir="${mps_home}/languages/util/mps-lite/languages/mpslite/solutions/pluginSolution/source_gen" />
-    <delete dir="${mps_home}/plugins/mps-obsolete/languages/packaging/source_gen" />
     <delete dir="${mps_home}/plugins/mps-obsolete/languages/solutions/jetbrains.mps.buildlanguage.execution/source_gen" />
   </target>
 </project>

@@ -56,9 +56,9 @@ public class MPSModulesPartitioner {
     }
     IVertex[] vertices = graph.getData().toArray(new IVertex[graph.getNVertexes()]);
     useMeta = false;
-    int[][] greater_or_eq = Graphs.graphToIntInt(vertices);
+    int[][] greater_or_eq = Graphs.graphToIntInt(vertices, false, true);
     useMeta = true;
-    int[][] strictly_greater = Graphs.graphToIntInt(vertices);
+    int[][] strictly_greater = Graphs.graphToIntInt(vertices, true, true);
     int[] partition = GraphUtil.partition(greater_or_eq, strictly_greater);
 
     this.chunks = ListSequence.fromList(new ArrayList<MPSModulesPartitioner.Chunk>());
@@ -139,6 +139,7 @@ public class MPSModulesPartitioner {
           SetSequence.fromSet(metaDependencies).addElement(node);
         }
       }
+      closure.reset();
       closure.closure();
       for (SNode q : Sequence.fromIterable(closure.getModulesIncludingLanguagesWithRuntime())) {
         MPSModulesPartitioner.Node node = map.get(q);
