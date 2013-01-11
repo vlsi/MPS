@@ -58,6 +58,8 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
   public static final String MODULE_DIR = "module";
+  public static final String CLASSES_GEN = "classes_gen";
+  public static final String CLASSES = "classes";
 
   protected final IFile myDescriptorFile;
   private ModuleReference myModuleReference;
@@ -392,7 +394,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
       String path = mrd.getMemento().get("path");
       String canonicalPath = FileUtil.getCanonicalPath(path).toLowerCase();
 
-      String suffix = descriptor.getCompileInMPS() ? "classes_gen" : "classes";
+      String suffix = descriptor.getCompileInMPS() ? CLASSES_GEN : CLASSES;
       if (canonicalPath.endsWith(suffix)) {
         IFile parent = dd == null ? getDescriptorFile().getParent() : ModulesMiner.getRealDescriptorFile(getDescriptorFile().getPath(), dd);
         if (dd != null && parent != null) {

@@ -8,9 +8,11 @@
     <classNode dependClassName="com.intellij.psi.PsiClassType" />
     <classNode dependClassName="com.intellij.psi.PsiElement" />
     <classNode dependClassName="com.intellij.psi.PsiEnumConstant" />
+    <classNode dependClassName="com.intellij.psi.PsiExpression" />
     <classNode dependClassName="com.intellij.psi.PsiField" />
     <classNode dependClassName="com.intellij.psi.PsiFile" />
     <classNode dependClassName="com.intellij.psi.PsiJavaFile" />
+    <classNode dependClassName="com.intellij.psi.PsiLiteralExpression" />
     <classNode dependClassName="com.intellij.psi.PsiMethod" />
     <classNode dependClassName="com.intellij.psi.PsiModifier" />
     <classNode dependClassName="com.intellij.psi.PsiModifierListOwner" />
@@ -22,6 +24,7 @@
     <classNode dependClassName="com.intellij.psi.PsiTypeParameter" />
     <classNode dependClassName="com.intellij.psi.PsiTypeParameterListOwner" />
     <classNode dependClassName="com.intellij.psi.PsiWildcardType" />
+    <classNode dependClassName="java.lang.Integer" />
     <classNode dependClassName="java.lang.Iterable" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -43,6 +46,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
   </dependency>
   <dependency className="jetbrains.mps.idea.java.psiStubs.EclipseJavaStubDataSource" file="EclipseJavaStubDataSource.java">
     <classNode dependClassName="com.intellij.openapi.editor.Document" />
