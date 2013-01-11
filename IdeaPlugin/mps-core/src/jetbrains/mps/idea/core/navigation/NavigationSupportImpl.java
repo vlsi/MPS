@@ -30,7 +30,6 @@ import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 
