@@ -16,7 +16,9 @@
 
 package jetbrains.mps.excluded;
 
+import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.misc.hash.HashSet;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -38,9 +40,6 @@ public class Generators {
   private static final String SOURCE_FOLDER = "sourceFolder";
   private static final String EXCLUDE_FOLDER = "excludeFolder";
 
-  private static final String SOURCE_GEN_FOLDER = "source_gen";
-  private static final String CLASSES_GEN_FOLDER = "classes_gen";
-
   // compiler.xml constants
   private static final String PATH_START_PROJECT = "file://$PROJECT_DIR$/";
   private static final String COMPILER_CONFIGURATION = "CompilerConfiguration";
@@ -54,8 +53,8 @@ public class Generators {
     excludeXml.removeChildren(DIRECTORY);
 
     List<String> paths = new ArrayList<String>();
-    for (File module : Utils.collectGeneratedInMPSModules(sourceDirs)) {
-      paths.add(PATH_START_PROJECT + Utils.getRelativeProjectPath(module) + "/" + SOURCE_GEN_FOLDER);
+    for (Pair<String, String> module : Utils.collectMPSCompiledModulesInfo(sourceDirs)) {
+      paths.add(PATH_START_PROJECT + Utils.getRelativeProjectPath(module.o2));
     }
     Collections.sort(paths);
     for (String path : paths) {
@@ -88,9 +87,13 @@ public class Generators {
       // generate lists of source gen and classes gen folders and add as source and excluded to content root
       List<String> sourceGenFolders = new ArrayList<String>();
       List<String> classesGenFolders = new ArrayList<String>();
-      for (File module : Utils.collectGeneratedInMPSModules(dir)) {
-        sourceGenFolders.add(PATH_START_MODULE + Utils.getRelativeProjectPath(module) + "/" + SOURCE_GEN_FOLDER);
-        classesGenFolders.add(PATH_START_MODULE + Utils.getRelativeProjectPath(module) + "/" + CLASSES_GEN_FOLDER);
+      for (Pair<String, String> module : Utils.collectMPSCompiledModulesInfo(dir)) {
+        if (new File(module.o2).exists()) {
+          String sFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(module.o2);
+          sourceGenFolders.add(sFolder);
+        }
+        String cgFolder = PATH_START_MODULE + Utils.getRelativeProjectPath(module.o1) + "/" + AbstractModule.CLASSES_GEN;
+        classesGenFolders.add(cgFolder);
       }
       Collections.sort(sourceGenFolders);
       Collections.sort(classesGenFolders);
