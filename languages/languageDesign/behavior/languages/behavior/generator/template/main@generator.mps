@@ -911,8 +911,8 @@
               </node>
               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.GenericNewExpression" typeId="tpee.1145552977093" id="1902094167074040222">
                 <node role="creator" roleId="tpee.1145553007750" type="tpee.ArrayCreatorWithInitializer" typeId="tpee.1154542696413" id="1902094167074130530">
-                  <node role="initValue" roleId="tpee.1154542803372" type="tpee.ClassifierClassExpression" typeId="tpee.1116615150612" id="1902094167074138280">
-                    <link role="classifier" roleId="tpee.1116615189566" targetNodeId="cu2c.~SNode" resolveInfo="SNode" />
+                  <node role="initValue" roleId="tpee.1154542803372" type="tpee.AbstractClassifierReference" typeId="tpee.7812779912047922391" id="3765087453711457517">
+                    <link role="classifier" roleId="tpee.7812779912047934386" targetNodeId="ec5l.~SNode" resolveInfo="SNode" />
                   </node>
                   <node role="initValue" roleId="tpee.1154542803372" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="1902094167074144905">
                     <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tpf8.LoopMacro" typeId="tpf8.1118786554307" id="1902094167074144906">
