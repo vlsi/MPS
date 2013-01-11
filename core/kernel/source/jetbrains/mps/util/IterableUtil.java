@@ -61,4 +61,12 @@ public class IterableUtil {
       }
     };
   }
+
+  public static <T> T get(Iterable<T> data, int index){
+    Iterator<T> it = data.iterator();
+    for (int i = 0;i<index;i++){
+      it.next();
+    }
+    return it.next();
+  }
 }
