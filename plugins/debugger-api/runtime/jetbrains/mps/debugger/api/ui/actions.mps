@@ -54,63 +54,63 @@
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="EvaluateExpression" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Evaluate Expression" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="tool" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Evaluate Expression" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7064627997011532361">
       <property name="name" nameId="tpck.1169194664001" value="ExportThreads" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Export Threads" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="tool" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Export Threads" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7064627997011532536">
       <property name="name" nameId="tpck.1169194664001" value="ExportThreadsDialog" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7064627997011532643">
-      <property name="description" nameId="tp4k.1213273179528" value="Pause Execution" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
+      <property name="description" nameId="tp4k.1213273179528" value="Pause Execution" />
       <property name="name" nameId="tpck.1169194664001" value="Pause" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Pause" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Pause" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7064627997011532672">
-      <property name="description" nameId="tp4k.1213273179528" value="Resume Execution" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
+      <property name="description" nameId="tp4k.1213273179528" value="Resume Execution" />
       <property name="name" nameId="tpck.1169194664001" value="Resume" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Resume" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Resume" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7064627997011532701">
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="StepInto" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Step Into" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Step Into" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7064627997011532730">
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="StepOut" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Step Out" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Step Out" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7064627997011532759">
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
       <property name="name" nameId="tpck.1169194664001" value="StepOver" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Step Over" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="execution" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Step Over" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7064627997011532788">
       <property name="name" nameId="tpck.1169194664001" value="ToggleBreakpoint" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Toggle Breakpoint" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Toggle Breakpoint" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="7064627997011532825">
       <property name="name" nameId="tpck.1169194664001" value="ViewBreakpoints" />
       <property name="outsideCommandExecution" nameId="tp4k.1211298967294" value="true" />
-      <property name="caption" nameId="tp4k.1205250923097" value="View Breakpoints" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints" />
+      <property name="caption" nameId="tp4k.1205250923097" value="View Breakpoints" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="7064627997011532858">
       <property name="name" nameId="tpck.1169194664001" value="DebugRunMenu" />
@@ -132,11 +132,11 @@
     <node type="tp4k.IdeaInitializerDescriptor" typeId="tp4k.5023285075122009364" id="6762701973176605162">
       <property name="id" nameId="tp4k.5023285075122009366" value="jetbrains.mps.debugger-api" />
       <property name="handleErrors" nameId="tp4k.1573568368168371217" value="true" />
-      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Base debugging support for MPS" />
       <property name="vendorUrl" nameId="tp4k.5023285075122009372" value="http://www.jetbrains.com/mps/" />
+      <property name="descripttion" nameId="tp4k.5023285075122009368" value="Base debugging support for MPS" />
       <property name="vendor" nameId="tp4k.5023285075122009371" value="JetBrains" />
-      <property name="name" nameId="tpck.1169194664001" value="Debugger API for MPS" />
       <property name="vendorLogo" nameId="tp4k.4167053799973858143" value="/MPS_16.png" />
+      <property name="name" nameId="tpck.1169194664001" value="Debugger API for MPS" />
       <property name="ideaVersion" nameId="tp4k.5023285075122009373" value="123.1" />
       <property name="version" nameId="tp4k.5023285075122009369" value="3.0" />
     </node>
@@ -148,30 +148,30 @@
       <property name="name" nameId="tpck.1169194664001" value="DebugStepsMenu" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6515087165749899624">
-      <property name="description" nameId="tp4k.1213273179528" value="Go To Source" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
+      <property name="description" nameId="tp4k.1213273179528" value="Go To Source" />
       <property name="name" nameId="tpck.1169194664001" value="GoToBreakpointSourceAction" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints.dialog" />
       <property name="caption" nameId="tp4k.1205250923097" value="Go To" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints.dialog" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="6515087165749935206">
-      <property name="description" nameId="tp4k.1213273179528" value="View Source" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
+      <property name="description" nameId="tp4k.1213273179528" value="View Source" />
       <property name="name" nameId="tpck.1169194664001" value="ViewBreakpointSourceAction" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints.dialog" />
       <property name="caption" nameId="tp4k.1205250923097" value="View Source" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints.dialog" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="418270182880363898">
-      <property name="description" nameId="tp4k.1213273179528" value="Delete Breakpoint" />
       <property name="isAlwaysVisible" nameId="tp4k.1207149998849" value="true" />
+      <property name="description" nameId="tp4k.1213273179528" value="Delete Breakpoint" />
       <property name="name" nameId="tpck.1169194664001" value="DeleteBreakpointAction" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints.dialog" />
       <property name="caption" nameId="tp4k.1205250923097" value="Delete" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="breakpoints.dialog" />
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8643693251546857272">
       <property name="name" nameId="tpck.1169194664001" value="GoToSource" />
-      <property name="virtualPackage" nameId="tpck.1193676396447" value="tree" />
       <property name="caption" nameId="tp4k.1205250923097" value="Go To Source" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="tree" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="8643693251546855502">
       <property name="name" nameId="tpck.1169194664001" value="AbstractWatchableNodeActions" />
@@ -2552,7 +2552,7 @@
                         <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="1071422968910406735">
                           <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="1071422968910406739">
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1071422968910406743">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oobn.~NavigationSupport%dopenNode(jetbrains%dmps%dsmodel%dIOperationContext,jetbrains%dmps%dsmodel%dSNode,boolean,boolean)%cjetbrains%dmps%dopenapi%deditor%dEditor" resolveInfo="openNode" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="oobn.~NavigationSupport%dopenNode(jetbrains%dmps%dsmodel%dIOperationContext,org%djetbrains%dmps%dopenapi%dmodel%dSNode,boolean,boolean)%cjetbrains%dmps%dopenapi%deditor%dEditor" resolveInfo="openNode" />
                               <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8643693251546857306">
                                 <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="8643693251546857308">
                                   <link role="member" roleId="tp4f.1205756909548" targetNodeId="8643693251546857294" resolveInfo="context" />

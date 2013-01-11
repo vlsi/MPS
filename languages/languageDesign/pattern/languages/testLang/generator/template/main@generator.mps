@@ -368,7 +368,7 @@
                   <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1563914226484903658" resolveInfo="pattern" />
                 </node>
                 <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="1563914226484985620">
-                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="whpq.~DefaultMatchingPattern%dmatch(jetbrains%dmps%dsmodel%dSNode)%cboolean" resolveInfo="match" />
+                  <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="whpq.~DefaultMatchingPattern%dmatch(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cboolean" resolveInfo="match" />
                   <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="1563914226484985621">
                     <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="1563914226484903646" resolveInfo="nodeToMatch" />
                   </node>
