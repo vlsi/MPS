@@ -21348,7 +21348,7 @@
             <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6977615362525216930">
               <property name="head" nameId="3ior.8618885170173601779" value="plugins" />
               <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6977615362525216931">
-                <property name="head" nameId="3ior.8618885170173601779" value="mps-core-ex" />
+                <property name="head" nameId="3ior.8618885170173601779" value="mps-testing" />
                 <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6977615362525216932">
                   <property name="head" nameId="3ior.8618885170173601779" value="languages" />
                   <node role="tail" roleId="3ior.8618885170173601778" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="6977615362525216933">

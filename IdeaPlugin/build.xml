@@ -57,12 +57,13 @@
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib" flatten="true">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCore/lib"/>
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCoreEx/mps-core-ex/lib"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildTesting/mps-testing/lib"/>
     </copy>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/languages">
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCore/languages"/>
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCoreEx/mps-core-ex/languages"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCoreEx/mps-core/languages"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildTesting/mps-testing/languages"/>
     </copy>
     <mkdir dir="build/tmp/prepare/java/out/mps-test-ex"/>
     <javac destdir="build/tmp/prepare/java/out/mps-test-ex" fork="true" memorymaximumsize="256m"
@@ -71,7 +72,7 @@
       <src>
         <path location="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/testSrc"/>
         <path location="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen"/>
-        <path location="${base_dir}/plugins/mps-core-ex/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen"/>
+        <path location="${base_dir}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen"/>
       </src>
       <classpath>
         <fileset dir="${base_dir}/IdeaPlugin/mps-core/lib" includes="*.jar"/>
@@ -151,7 +152,7 @@
       <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
       <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>
       <sysproperty key="idea.plugins.path" value="${plugins.sandbox.dir}/plugins"/>
-      <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.core.ex"/>
+      <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.testing"/>
       <sysproperty key="idea.home.path" value="${ideaPath}"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
       <sysproperty key="file.encoding" value="UTF-8"/>

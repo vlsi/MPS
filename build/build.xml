@@ -6,6 +6,7 @@
   <target name="build">
     <ant antfile="buildCore.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildCoreEx.xml" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="buildTesting.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildJava.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildWorkbench.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildStandalone.xml" inheritAll="true" useNativeBasedir="true" />
