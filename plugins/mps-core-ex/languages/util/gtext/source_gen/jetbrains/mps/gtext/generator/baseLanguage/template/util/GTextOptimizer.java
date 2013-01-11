@@ -78,7 +78,7 @@ public class GTextOptimizer {
         t = null;
       }
     }
-    return n.getChildren("item").size();
+    return IterableUtil.asCollection(n.getChildren("item")).size();
   }
 
   public static SNode inlineChildren(SNode optChild, SNode nextChild) {
