@@ -34,9 +34,9 @@ public class QueriesGenerated {
     if ((SLinkOperations.getTarget(_context.getNode(), "condition", true) != null)) {
       return SLinkOperations.getTarget(SLinkOperations.getTarget(_context.getNode(), "condition", true), "body", true);
     }
-    jetbrains.mps.smodel.SNode statementList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
-    jetbrains.mps.smodel.SNode expressionStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
-    jetbrains.mps.smodel.SNode defaultCondition = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
+    SNode statementList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
+    SNode expressionStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+    SNode defaultCondition = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
     SPropertyOperations.set(defaultCondition, "value", "" + (false));
     SLinkOperations.setTarget(expressionStatement, "expression", defaultCondition, true);
     ListSequence.fromList(SLinkOperations.getTargets(statementList, "statement", true)).addElement(expressionStatement);

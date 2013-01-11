@@ -958,7 +958,7 @@ public class QueriesGenerated {
     if (param == null) {
       param = name;
     }
-    jetbrains.mps.smodel.SNode stringLiteral = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
+    SNode stringLiteral = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
     SPropertyOperations.set(stringLiteral, "value", "" + (param));
     return stringLiteral;
   }

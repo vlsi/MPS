@@ -13,7 +13,6 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_Behavior;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.ui.generator.template.helper.SessionObjects;
-import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ui.behavior.UIObjectStatement_Behavior;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -609,7 +608,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1251509410704218257(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IterableUtil.asList(SLinkOperations.getTarget(_context.getNode(), "template", false).getChildren(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role"))).get(0);
+    return SLinkOperations.getTarget(_context.getNode(), "template", false).getChildren(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role")).iterator().next();
   }
 
   public static SNode sourceNodeQuery_1251509410704218358(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
@@ -617,23 +616,23 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1251509410704218458(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IterableUtil.asList(SLinkOperations.getTarget(_context.getNode(), "template", false).getChildren(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role"))).get(0);
+    return SLinkOperations.getTarget(_context.getNode(), "template", false).getChildren(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role")).iterator().next();
   }
 
   public static SNode sourceNodeQuery_1251509410704218477(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IterableUtil.asList(SLinkOperations.getTarget(_context.getNode(), "template", false).getChildren(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role"))).get(0);
+    return SLinkOperations.getTarget(_context.getNode(), "template", false).getChildren(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role")).iterator().next();
   }
 
   public static SNode sourceNodeQuery_1251509410704218506(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IterableUtil.asList(SLinkOperations.getTarget(_context.getNode(), "template", false).getChildren(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role"))).get(0);
+    return SLinkOperations.getTarget(_context.getNode(), "template", false).getChildren(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role")).iterator().next();
   }
 
   public static SNode sourceNodeQuery_1251509410704218535(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IterableUtil.asList(SLinkOperations.getTarget(_context.getNode(), "template", false).getChildren(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role"))).get(0);
+    return SLinkOperations.getTarget(_context.getNode(), "template", false).getChildren(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role")).iterator().next();
   }
 
   public static SNode sourceNodeQuery_1251509410704218564(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    return IterableUtil.asList(SLinkOperations.getTarget(_context.getNode(), "template", false).getChildren(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role"))).get(0);
+    return SLinkOperations.getTarget(_context.getNode(), "template", false).getChildren(SPropertyOperations.getString(SNodeOperations.as(SLinkOperations.getTarget(_context.getNode(), "selector", false), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), "role")).iterator().next();
   }
 
   public static SNode sourceNodeQuery_6991444902044157789(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {

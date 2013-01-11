@@ -45,6 +45,8 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.Collection;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.build.generator.util.JavaExternalLibraryHelper;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.build.util.GenerationUtil;
@@ -1845,7 +1847,7 @@ public class QueriesGenerated {
         SLinkOperations.setTarget(MapSequence.fromMap(participantForTask).get(targetTask), "for", targetTask, false);
         ListSequence.fromList(list).addElement(MapSequence.fromMap(participantForTask).get(targetTask));
       }
-      jetbrains.mps.smodel.SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.structure.GeneratorInternal_IWorkflowParticipantReference", null);
+      SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.structure.GeneratorInternal_IWorkflowParticipantReference", null);
       SLinkOperations.setTarget(ref, "participant", participant, false);
       ListSequence.fromList(SLinkOperations.getTargets(MapSequence.fromMap(participantForTask).get(targetTask), "participant", true)).addElement(ref);
     }
@@ -1909,7 +1911,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_8775597636506088245(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return _context.getNode().getChildren("attrs");
+    return ((Collection) IterableUtil.asCollection(_context.getNode().getChildren("attrs")));
   }
 
   public static Iterable sourceNodesQuery_5979287180587467422(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

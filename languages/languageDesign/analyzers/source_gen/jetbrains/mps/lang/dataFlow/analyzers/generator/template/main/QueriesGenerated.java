@@ -265,7 +265,7 @@ public class QueriesGenerated {
     if (SLinkOperations.getTarget(_context.getNode(), "target", true) != null) {
       return SLinkOperations.getTarget(_context.getNode(), "target", true);
     }
-    jetbrains.mps.smodel.SNode reference = SConceptOperations.createNewNode("jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", null);
+    SNode reference = SConceptOperations.createNewNode("jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", null);
     SLinkOperations.setTarget(reference, "applicableNode", SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule", false, false), "condition", true), "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"), false);
     return reference;
   }
@@ -274,7 +274,7 @@ public class QueriesGenerated {
     if (SLinkOperations.getTarget(_context.getNode(), "target", true) != null) {
       return SLinkOperations.getTarget(_context.getNode(), "target", true);
     }
-    jetbrains.mps.smodel.SNode reference = SConceptOperations.createNewNode("jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", null);
+    SNode reference = SConceptOperations.createNewNode("jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", null);
     SLinkOperations.setTarget(reference, "applicableNode", SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule", false, false), "condition", true), "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"), false);
     return reference;
   }
@@ -284,7 +284,7 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_7962250936070468016(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    jetbrains.mps.smodel.SNode reference = SConceptOperations.createNewNode("jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", null);
+    SNode reference = SConceptOperations.createNewNode("jetbrains.mps.lang.dataFlow.analyzers.structure.ApplicableNodeReference", null);
     SLinkOperations.setTarget(reference, "applicableNode", SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.getAncestor(_context.getNode(), "jetbrains.mps.lang.dataFlow.analyzers.structure.Rule", false, false), "condition", true), "jetbrains.mps.lang.dataFlow.analyzers.structure.ConceptCondition"), false);
     return reference;
   }

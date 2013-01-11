@@ -333,7 +333,7 @@ public class QueriesGenerated {
       }
     }, true).select(new ISelector<String, SNode>() {
       public SNode select(String it) {
-        jetbrains.mps.smodel.SNode n = SConceptOperations.createNewNode("jetbrains.mps.lang.core.structure.BaseConcept", null);
+        SNode n = SConceptOperations.createNewNode("jetbrains.mps.lang.core.structure.BaseConcept", null);
         n.setProperty("aa", it);
         return n;
       }
