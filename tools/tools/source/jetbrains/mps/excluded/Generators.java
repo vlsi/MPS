@@ -18,6 +18,7 @@ package jetbrains.mps.excluded;
 
 import jetbrains.mps.project.AbstractModule;
 import jetbrains.mps.util.JDOMUtil;
+import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.util.misc.hash.HashSet;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -259,6 +260,22 @@ public class Generators {
     JDOMUtil.writeDocument(doc, genSourcesIml);
 
     System.out.println("Done.");
+  }
+
+  public static MultiMap<String, String> getSourceFolders(File root) throws JDOMException, IOException {
+    MultiMap<String, String> sourcesIncluded = new MultiMap<String, String>();
+    for (File imlFile : Utils.withExtension(".iml", Utils.files(new File(".")))) {
+      Document doc = JDOMUtil.loadDocument(imlFile);
+      Element rootManager = Utils.getComponentWithName(doc, MODULE_ROOT_MANAGER);
+      for (Element cRoot : (List<Element>) rootManager.getChildren(CONTENT)) {
+        for (Element sFolder : (List<Element>) cRoot.getChildren(SOURCE_FOLDER)) {
+          String imlFormattedRoot = sFolder.getAttributeValue(URL);
+          String sourcePath = new File(imlFormattedRoot.replace("file://$MODULE_DIR$", imlFile.getParent())).getCanonicalPath();
+          sourcesIncluded.putValue(imlFile.getCanonicalPath(), sourcePath);
+        }
+      }
+    }
+    return sourcesIncluded;
   }
 
   private static boolean intersects(Set<String> existingRoots, String parent) {

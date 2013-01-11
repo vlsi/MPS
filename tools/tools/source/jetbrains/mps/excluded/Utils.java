@@ -16,6 +16,8 @@
 
 package jetbrains.mps.excluded;
 
+import com.sun.istack.internal.Nullable;
+import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ProjectPathUtil;
 import jetbrains.mps.project.persistence.LanguageDescriptorPersistence;
@@ -27,6 +29,7 @@ import jetbrains.mps.util.MacrosFactory;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.vfs.IFile;
+import jetbrains.mps.vfs.IFileUtils;
 import jetbrains.mps.vfs.impl.IoFileSystemProvider;
 import org.jdom.Document;
 import org.jdom.Element;
@@ -106,9 +109,9 @@ public class Utils {
       boolean language = child.getName().endsWith(MPSExtentions.DOT_LANGUAGE);
       if (!(solution || language)) continue;
 
-      IFile moduleIFile = new IoFileSystemProvider().getFile(child.getAbsolutePath());
+      final IFile moduleIFile = new IoFileSystemProvider().getFile(child.getAbsolutePath());
       IFile moduleDir = moduleIFile.getParent();
-      MacroHelper expander = MacrosFactory.forModuleFile(moduleIFile);
+      MacroHelper expander = new MyMacroHelper(moduleIFile);
 
       if (solution) {
         SolutionDescriptor sd = SolutionDescriptorPersistence.loadSolutionDescriptor(moduleIFile, expander);
@@ -154,5 +157,38 @@ public class Utils {
       }
     }
     return result;
+  }
+
+  private static class MyMacroHelper implements MacroHelper {
+    private final IFile myModuleIFile;
+
+    public MyMacroHelper(IFile moduleIFile) {
+      myModuleIFile = moduleIFile;
+    }
+
+    @Override
+    public String expandPath(@Nullable String path) {
+        if (path.startsWith(MacrosFactory.MODULE)) {
+          IFile anchorFolder = myModuleIFile.getParent();
+          if (myModuleIFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
+            anchorFolder = anchorFolder.getParent();
+          }
+          String modelRelativePath = removePrefix(path);
+          return IFileUtils.getCanonicalPath(anchorFolder.getDescendant(modelRelativePath));
+        }
+
+      return path;
+    }
+
+    @Override
+    public String shrinkPath(@Nullable String absolutePath) {
+      throw new UnsupportedOperationException();
+    }
+
+    private String removePrefix(String path) {
+      String result = path.substring(path.indexOf("}") + 1);
+      if (result.startsWith(File.separator)) result = result.substring(1);
+      return result;
+    }
   }
 }

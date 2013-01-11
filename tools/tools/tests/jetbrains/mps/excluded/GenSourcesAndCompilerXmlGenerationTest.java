@@ -17,11 +17,15 @@
 package jetbrains.mps.excluded;
 
 import jetbrains.mps.util.FileUtil;
+import jetbrains.mps.util.containers.MultiMap;
+import jetbrains.mps.util.misc.hash.HashSet;
 import junit.framework.Assert;
 import org.jdom.JDOMException;
 import org.junit.Test;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.Set;
 
 public class GenSourcesAndCompilerXmlGenerationTest {
   @Test
@@ -38,5 +42,29 @@ public class GenSourcesAndCompilerXmlGenerationTest {
     GeneratorsRunner.generateCompilerXmlFile();
     Assert.assertEquals("Regenerate compiler.xml. Run GeneratorsRunner run configuration.", FileUtil.read(GeneratorsRunner.COMPILER_XML_FILE), previousCompilerXml);
     // todo: cleanup?
+  }
+
+  @Test
+  public void testEveryJavaFileIsCompiledInMPSOrInSourceFolder() throws JDOMException, IOException {
+    File root = new File(".");
+    MultiMap<String, String> sources = Generators.getSourceFolders(root);
+    MultiMap<String, String> mpsModules = Utils.collectMPSCompiledModulesInfo(root);
+
+    Set<String> allSources = new HashSet<String>();
+    allSources.addAll(sources.values());
+    allSources.addAll(mpsModules.values());
+
+    boolean error = false;
+    outer:
+    for (File jFile : Utils.withExtension(".java", Utils.files(root))) {
+      String cp = jFile.getCanonicalPath();
+      for (String sourcePath : allSources) {
+        if (cp.startsWith(sourcePath + File.separator)) continue outer;
+      }
+      error = true;
+      System.out.println("Java file " + cp + " is neither included in any MPS module, nor in any Idea source root");
+    }
+
+    Assert.assertFalse("failed, see log for details", error);
   }
 }
