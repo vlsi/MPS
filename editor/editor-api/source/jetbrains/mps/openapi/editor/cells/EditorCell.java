@@ -17,6 +17,7 @@ package jetbrains.mps.openapi.editor.cells;
 
 import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.openapi.editor.EditorContext;
+import jetbrains.mps.openapi.editor.style.Style;
 import jetbrains.mps.smodel.SNode;
 
 /**
@@ -120,4 +121,6 @@ public interface EditorCell {
   Object getUserObject(Object key);
 
   EditorComponent getEditorComponent();
+
+  Style getCellStyle();
 }

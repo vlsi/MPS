@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -15,23 +15,28 @@
  */
 package jetbrains.mps.openapi.editor.style;
 
-import jetbrains.mps.openapi.editor.cells.EditorCell;
-import org.jetbrains.annotations.NotNull;
+import java.util.Collections;
+import java.util.Set;
 
 /**
  * User: shatalin
- * Date: 12/17/12
+ * Date: 1/11/13
  */
-public interface Style {
-  void apply(@NotNull EditorCell cell);
+public class StyleChangeEvent {
 
-  void putAll(@NotNull Style style);
+  private Style myStyle;
+  private Set<StyleAttribute> myChangedAttributes;
 
-  <T> void set(StyleAttribute<T> attribute, T value);
+  public StyleChangeEvent(Style style, Set<StyleAttribute> changedAttributes) {
+    myStyle = style;
+    myChangedAttributes = changedAttributes;
+  }
 
-  <T> void set(StyleAttribute<T> attribute, AttributeCalculator<T> valueCalculator);
+  public Style getStyle() {
+    return myStyle;
+  }
 
-  void addListener(StyleListener l);
-
-  void removeListener(StyleListener l);
+  public Set<StyleAttribute> getChangedAttributes() {
+    return Collections.unmodifiableSet(myChangedAttributes);
+  }
 }
