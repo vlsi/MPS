@@ -646,7 +646,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_6283201779507549620(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     SNode mainNode = SLinkOperations.getTarget(_context.getNode(), "mainNode", false);
     String role = SPropertyOperations.getString(_context.getNode(), "role");
-    return mainNode.getChildren(role);
+    return IterableUtil.asList(mainNode.getChildren(role));
   }
 
   public static Iterable sourceNodesQuery_6283201779507549878(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

@@ -785,7 +785,7 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                     try {
                                       environment.getTracer().pushTemplateNode(templateNode_swz52f_a0a0a1a4a1a3a3a2a2a1a6a1a3a4a1a1a1a4a1a2);
                                       environment.nodeCopied(context48, tnode53, "tpl/r:00000000-0000-4000-0000-011c8959034c/1216933353893");
-                                      tnode53.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode53, SModelReference.fromString("f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel(MPS.Core/jetbrains.mps.smodel@java_stub)"), SNodeId.fromString("~SNode.setReference(java.lang.String,org.jetbrains.mps.openapi.model.SReference):void")));
+                                      tnode53.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode53, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode.setReference(java.lang.String,org.jetbrains.mps.openapi.model.SReference):void")));
 
                                       {
                                         final SNode tnode54 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.StringLiteral");

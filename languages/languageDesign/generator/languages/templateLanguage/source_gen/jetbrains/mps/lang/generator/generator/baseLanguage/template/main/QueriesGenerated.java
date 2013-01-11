@@ -39,7 +39,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.generator.impl.GeneratorUtilEx;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
@@ -2966,7 +2965,7 @@ public class QueriesGenerated {
     if ((vardecl == null)) {
       _context.showErrorMessage(_context.getNode(), "unknown pattern reference");
     }
-    jetbrains.mps.smodel.SNode res = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SNode res = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(res, "classifier", PatternVarsUtil.getFieldTypeReference(vardecl), false);
     return res;
   }
@@ -3566,7 +3565,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_4155486055398183512(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     final List<SNode> result = new ArrayList<SNode>();
-    for (String name : _context.getNode().getPropertyNames()) {
+    for (String name : Sequence.fromIterable(_context.getNode().getPropertyNames())) {
       if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.PropertyAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.PropertyMacro"), name)) != null)) {
         continue;
       }
@@ -3905,7 +3904,7 @@ public class QueriesGenerated {
       }
     }));
     for (SNode node : nodes) {
-      jetbrains.mps.smodel.SNode replacement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", null);
+      SNode replacement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguageInternal.structure.TypeHintExpression", null);
       SLinkOperations.setTarget(replacement, "typeHint", SNodeOperations.cast(SNodeOperations.copyNode(TypeChecker.getInstance().getTypeOf(node)), "jetbrains.mps.baseLanguage.structure.Type"), true);
       SNodeOperations.replaceWithAnother(node, replacement);
       SLinkOperations.setTarget(replacement, "expression", node, true);
