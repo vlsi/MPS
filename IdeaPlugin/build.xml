@@ -97,6 +97,10 @@
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
+    <ant antfile="../build/buildTesting.xml" inheritAll="false" useNativeBasedir="true">
+      <property name="build.dir" location="${build.home}"/>
+      <property name="idea_home" location="${ideaPath}"/>
+    </ant>
     <ant antfile="../build/buildBuild.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
