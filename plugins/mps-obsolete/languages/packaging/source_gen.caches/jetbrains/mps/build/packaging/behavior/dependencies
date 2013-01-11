@@ -530,10 +530,8 @@
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.HashMap" />
-    <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="java.util.Map" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IPath_Behavior" />
@@ -790,9 +788,7 @@
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.Layout_Behavior" />
@@ -847,9 +843,7 @@
   <dependency className="jetbrains.mps.build.packaging.behavior.PluginModule_Behavior" file="PluginModule_Behavior.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="java.util.HashSet" />
     <classNode dependClassName="java.util.List" />
-    <classNode dependClassName="java.util.Set" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.AbstractProjectComponent_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IMacroHolder_Behavior" />
     <classNode dependClassName="jetbrains.mps.build.packaging.behavior.IdeaInitializerReference_Behavior" />
