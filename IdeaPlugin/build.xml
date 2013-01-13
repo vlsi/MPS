@@ -130,8 +130,8 @@
     <delete dir="${plugins.sandbox.dir}"/>
     <mkdir dir="${plugins.sandbox.dir}/plugins"/>
     <copy todir="${plugins.sandbox.dir}/plugins">
-      <fileset dir="${build.home}/artifacts/buildPlugin"/>
-      <fileset dir="${build.home}/artifacts/buildPluginTests"/>
+      <fileset dir="${build.home}/artifacts/mpsPlugin"/>
+      <fileset dir="${build.home}/artifacts/mpsPluginTests"/>
     </copy>
     <copy todir="${plugins.sandbox.dir}/plugins/tests/projectView">
       <fileset dir="${base_dir}/IdeaPlugin/tests/projectView"/>
@@ -184,7 +184,7 @@
   <target name="install-plugin" depends="build">
     <property name="pluginPath" value="${ideaPlugins}"/>
     <copy todir="${pluginPath}">
-      <fileset dir="${build.home}/artifacts/buildPlugin"/>
+      <fileset dir="${build.home}/artifacts/mpsPlugin"/>
     </copy>
   </target>
 
