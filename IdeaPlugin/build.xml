@@ -56,14 +56,14 @@
     <delete dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib" flatten="true">
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildBootstrapCore/lib"/>
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildTesting/mps-testing/lib"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/lib"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/lib"/>
     </copy>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/languages">
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildBootstrapCore/languages"/>
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCore/mps-core/languages"/>
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildTesting/mps-testing/languages"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/languages"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsCore/mps-core/languages"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/languages"/>
     </copy>
     <mkdir dir="build/tmp/prepare/java/out/mps-test-ex"/>
     <javac destdir="build/tmp/prepare/java/out/mps-test-ex" fork="true" memorymaximumsize="256m"

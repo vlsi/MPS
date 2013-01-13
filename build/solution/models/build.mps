@@ -13,12 +13,12 @@
   <import index="tpih" modelUID="r:00000000-0000-4000-0000-011c89590575(jetbrains.mps.gtext.structure)" version="0" implicit="yes" />
   <roots>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="7926701909975931624">
-      <property name="name" nameId="tpck.1169194664001" value="buildBootstrapCore" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsBootstrapCore" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildBootstrapCore.xml" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="2569834391839970845">
-      <property name="name" nameId="tpck.1169194664001" value="buildWorkbench" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsWorkbench" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildWorkbench.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
@@ -27,90 +27,90 @@
       <property name="name" nameId="tpck.1169194664001" value="IDEA" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="5148601452480491524">
-      <property name="name" nameId="tpck.1169194664001" value="buildPlugin" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsPlugin" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildPlugin.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="plugin" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4301118715654497533">
-      <property name="name" nameId="tpck.1169194664001" value="buildDistribution" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsDistribution" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildDistribution.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4301118715654192646">
-      <property name="name" nameId="tpck.1169194664001" value="buildMPS" />
+      <property name="name" nameId="tpck.1169194664001" value="mps" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildMPS.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4301118715654819483">
-      <property name="name" nameId="tpck.1169194664001" value="buildTroveCollections" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsTroveCollections" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildTroveCollections.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6391307088354381121">
-      <property name="name" nameId="tpck.1169194664001" value="buildPlugins" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsPlugins" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildPlugins.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="8524659923334108558">
-      <property name="name" nameId="tpck.1169194664001" value="buildBuild" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsBuild" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildBuild.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="1545517825663017278">
-      <property name="name" nameId="tpck.1169194664001" value="buildVcs" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsVcs" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildVcs.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="8658995123701267517">
-      <property name="name" nameId="tpck.1169194664001" value="buildPluginDist" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsPluginDist" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildPluginDist.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="plugin" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6164334420696839314">
-      <property name="name" nameId="tpck.1169194664001" value="buildDebuggerPlugin" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsDebuggerPlugin" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildDebuggerPlugin.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6361939271669846483">
-      <property name="name" nameId="tpck.1169194664001" value="buildExecutionPlugin" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsExecutionPlugin" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildExecutionPlugin.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="2075442863766408895">
-      <property name="name" nameId="tpck.1169194664001" value="buildExperimental" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsExperimental" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildExperimental.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6503539749405386437">
-      <property name="name" nameId="tpck.1169194664001" value="buildCore" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsCore" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildCore.xml" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="8227093612176368028">
-      <property name="name" nameId="tpck.1169194664001" value="buildBuildUI" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsBuildUI" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildBuildUI.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6977615362525216882">
-      <property name="name" nameId="tpck.1169194664001" value="buildPluginTests" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsPluginTests" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildPluginTests.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="plugin" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="5970299968953452763">
-      <property name="name" nameId="tpck.1169194664001" value="buildConnectorPlugin" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsConnectorPlugin" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildConnectorPlugin.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
@@ -127,55 +127,55 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.data" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4197214709894135186">
-      <property name="name" nameId="tpck.1169194664001" value="buildObsolete" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsObsolete" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildObsolete.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4061567211001166715">
-      <property name="name" nameId="tpck.1169194664001" value="buildDates" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsDates" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildDates.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="5548512857136492214">
-      <property name="name" nameId="tpck.1169194664001" value="buildDevKit" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsDevKit" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildDevKit.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="1392391688312941958">
-      <property name="name" nameId="tpck.1169194664001" value="buildStandalone" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsStandalone" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildStandalone.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6265574260762011003">
-      <property name="name" nameId="tpck.1169194664001" value="buildMakePlugin" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsMakePlugin" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildMakePlugin.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4416206207494300367">
-      <property name="name" nameId="tpck.1169194664001" value="buildDeprecatedBuildlanguage" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsDeprecatedBuildlanguage" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildDeprecatedBuildlanguage.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="359586707446245098">
-      <property name="name" nameId="tpck.1169194664001" value="buildAdditionalPluginsDist" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsAdditionalPluginsDist" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildAdditionalPluginsDist.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="plugin" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="7401958389406848608">
-      <property name="name" nameId="tpck.1169194664001" value="buildJava" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsJava" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildJava.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="618786790401812237">
-      <property name="name" nameId="tpck.1169194664001" value="buildTesting" />
+      <property name="name" nameId="tpck.1169194664001" value="mpsTesting" />
       <property name="fileName" nameId="3ior.4915877860348071612" value="buildTesting.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
@@ -10357,13 +10357,13 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402968664">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildBootstrapCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="mpsBootstrapCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="1339710254216999728">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="buildCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="mpsCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402455083">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="618786790401812237" resolveInfo="buildTesting" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="618786790401812237" resolveInfo="mpsTesting" />
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="6853883513540239419">
       <property name="name" nameId="tpck.1169194664001" value="idea_home" />
@@ -10984,19 +10984,19 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="5148601452480491533">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildBootstrapCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="mpsBootstrapCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6592112598314058638">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="buildCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="mpsCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402196405">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="618786790401812237" resolveInfo="buildTesting" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="618786790401812237" resolveInfo="mpsTesting" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="7401958389406946985">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7401958389406848608" resolveInfo="buildJava" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7401958389406848608" resolveInfo="mpsJava" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6592112598314058640">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="8524659923334108558" resolveInfo="buildBuild" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="8524659923334108558" resolveInfo="mpsBuild" />
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildVariableMacro" typeId="3ior.3767587139141066978" id="1051774332673624330">
       <property name="name" nameId="tpck.1169194664001" value="plugin.version" />
@@ -12490,18 +12490,18 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4301118715654497536">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4301118715654192646" resolveInfo="buildMPS" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4301118715654192646" resolveInfo="mps" />
     </node>
   </root>
   <root id="4301118715654192646">
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6275906111973436107">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="8524659923334108558" resolveInfo="buildBuild" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="8524659923334108558" resolveInfo="mpsBuild" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4061567211001166763">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4061567211001166715" resolveInfo="buildDates" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4061567211001166715" resolveInfo="mpsDates" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="2794582399917638970">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4301118715654819483" resolveInfo="buildTroveCollections" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4301118715654819483" resolveInfo="mpsTroveCollections" />
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="kdzh.BuildMps_Branding" typeId="kdzh.7753544965996377997" id="7753544965996546378">
       <property name="minor" nameId="kdzh.3497141547781541445" value="0" />
@@ -13084,34 +13084,34 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="1392391688313556041">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="1392391688312941958" resolveInfo="buildStandalone" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="1392391688312941958" resolveInfo="mpsStandalone" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="5548512857136673487">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="5548512857136492214" resolveInfo="buildDevKit" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="5548512857136492214" resolveInfo="mpsDevKit" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="8019104635608853930">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2075442863766408895" resolveInfo="buildExperimental" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2075442863766408895" resolveInfo="mpsExperimental" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6391307088354381143">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6391307088354381121" resolveInfo="buildPlugins" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6391307088354381121" resolveInfo="mpsPlugins" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6265574260762011194">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6265574260762011003" resolveInfo="buildMakePlugin" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6265574260762011003" resolveInfo="mpsMakePlugin" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="8227093612176368123">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="8227093612176368028" resolveInfo="buildBuildUI" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="8227093612176368028" resolveInfo="mpsBuildUI" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="1545517825663028533">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="1545517825663017278" resolveInfo="buildVcs" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="1545517825663017278" resolveInfo="mpsVcs" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="5115063890373639741">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6164334420696839314" resolveInfo="buildDebuggerPlugin" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6164334420696839314" resolveInfo="mpsDebuggerPlugin" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="5115063890373639743">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6361939271669846483" resolveInfo="buildExecutionPlugin" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6361939271669846483" resolveInfo="mpsExecutionPlugin" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4197214709894300289">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4197214709894135186" resolveInfo="buildObsolete" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4197214709894135186" resolveInfo="mpsObsolete" />
     </node>
   </root>
   <root id="4301118715654819483">
@@ -13179,10 +13179,10 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402950410">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildBootstrapCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="mpsBootstrapCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402073843">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="buildCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="mpsCore" />
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="2794582399917560089">
       <property name="name" nameId="tpck.1169194664001" value="idea_home" />
@@ -14004,19 +14004,19 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402931630">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildBootstrapCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="mpsBootstrapCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402178312">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="buildCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="mpsCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="7401958389406953580">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7401958389406848608" resolveInfo="buildJava" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7401958389406848608" resolveInfo="mpsJava" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6391307088354381134">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="buildWorkbench" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="mpsWorkbench" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="1545517825662755207">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4301118715654819483" resolveInfo="buildTroveCollections" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4301118715654819483" resolveInfo="mpsTroveCollections" />
     </node>
   </root>
   <root id="8524659923334108558">
@@ -14085,10 +14085,10 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402818053">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildBootstrapCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="mpsBootstrapCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6503539749405386458">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="buildCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="mpsCore" />
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="5249031859942907433">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
@@ -14637,22 +14637,22 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402959392">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildBootstrapCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="mpsBootstrapCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402187246">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="buildCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="mpsCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="1545517825663017460">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="buildWorkbench" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="mpsWorkbench" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="1545517825663017461">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4301118715654819483" resolveInfo="buildTroveCollections" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4301118715654819483" resolveInfo="mpsTroveCollections" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="5115063890373406024">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6391307088354381121" resolveInfo="buildPlugins" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6391307088354381121" resolveInfo="mpsPlugins" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6265574260762017460">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6265574260762011003" resolveInfo="buildMakePlugin" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6265574260762011003" resolveInfo="mpsMakePlugin" />
     </node>
   </root>
   <root id="8658995123701267517">
@@ -14677,7 +14677,7 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="8658995123701267520">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="5148601452480491524" resolveInfo="buildPlugin" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="5148601452480491524" resolveInfo="mpsPlugin" />
     </node>
   </root>
   <root id="6164334420696839314">
@@ -14688,10 +14688,10 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402845394">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildBootstrapCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="mpsBootstrapCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402092000">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="buildCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="mpsCore" />
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="5249031859942907430">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
@@ -16209,7 +16209,7 @@
     <node role="plugins" roleId="3ior.6647099934206700656" type="3ior.BuildJavaPlugin" typeId="3ior.6647099934206700647" id="6164334420696839317" />
     <node role="plugins" roleId="3ior.6647099934206700656" type="kdzh.BuildMPSPlugin" typeId="kdzh.868032131020265945" id="6164334420696839319" />
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6361939271669400520">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="buildWorkbench" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="mpsWorkbench" />
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="6361939271669730824">
       <property name="name" nameId="tpck.1169194664001" value="idea_home" />
@@ -16227,7 +16227,7 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6361939271669846764">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildBootstrapCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="mpsBootstrapCore" />
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="5249031859942907427">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
@@ -18116,19 +18116,19 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="720322971883204452">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="buildCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="mpsCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402111216">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="618786790401812237" resolveInfo="buildTesting" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="618786790401812237" resolveInfo="mpsTesting" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="5115063890373735830">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4301118715654819483" resolveInfo="buildTroveCollections" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4301118715654819483" resolveInfo="mpsTroveCollections" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6361939271669846765">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="buildWorkbench" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="mpsWorkbench" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6361939271669846767">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6164334420696839314" resolveInfo="buildDebuggerPlugin" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6164334420696839314" resolveInfo="mpsDebuggerPlugin" />
     </node>
     <node role="plugins" roleId="3ior.6647099934206700656" type="3ior.BuildJavaPlugin" typeId="3ior.6647099934206700647" id="6361939271669846768" />
     <node role="plugins" roleId="3ior.6647099934206700656" type="kdzh.BuildMPSPlugin" typeId="kdzh.868032131020265945" id="6361939271669846769" />
@@ -19742,16 +19742,16 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="2075442863766409104">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildBootstrapCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="mpsBootstrapCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4973949960459706692">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="buildCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="mpsCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402139495">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="618786790401812237" resolveInfo="buildTesting" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="618786790401812237" resolveInfo="mpsTesting" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="2075442863766409105">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="buildWorkbench" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="mpsWorkbench" />
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="2075442863766409106">
       <property name="name" nameId="tpck.1169194664001" value="idea_home" />
@@ -20169,7 +20169,7 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6503539749405386451">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildBootstrapCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="mpsBootstrapCore" />
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="6503539749405386445">
       <property name="name" nameId="tpck.1169194664001" value="idea_home" />
@@ -20896,25 +20896,25 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402827022">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildBootstrapCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="mpsBootstrapCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="2488570609614225398">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="buildCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="mpsCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790403325866">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="618786790401812237" resolveInfo="buildTesting" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="618786790401812237" resolveInfo="mpsTesting" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="8227093612176368110">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="8524659923334108558" resolveInfo="buildBuild" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="8524659923334108558" resolveInfo="mpsBuild" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="8227093612176368114">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="buildWorkbench" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="mpsWorkbench" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="8227093612176693275">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6361939271669846483" resolveInfo="buildExecutionPlugin" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6361939271669846483" resolveInfo="mpsExecutionPlugin" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="8227093612176772385">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6164334420696839314" resolveInfo="buildDebuggerPlugin" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6164334420696839314" resolveInfo="mpsDebuggerPlugin" />
     </node>
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="8227093612176368070">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
@@ -21090,7 +21090,7 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6977615362525406319">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="5148601452480491524" resolveInfo="buildPlugin" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="5148601452480491524" resolveInfo="mpsPlugin" />
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="6977615362525216886">
       <property name="name" nameId="tpck.1169194664001" value="idea_home" />
@@ -22965,31 +22965,31 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4197214709894135607">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildBootstrapCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="mpsBootstrapCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="720322971881981184">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="buildCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="mpsCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790403533402">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="618786790401812237" resolveInfo="buildTesting" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="618786790401812237" resolveInfo="mpsTesting" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4197214709894135609">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="buildWorkbench" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="mpsWorkbench" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4197214709894135610">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4301118715654819483" resolveInfo="buildTroveCollections" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4301118715654819483" resolveInfo="mpsTroveCollections" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4197214709894135612">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6361939271669846483" resolveInfo="buildExecutionPlugin" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6361939271669846483" resolveInfo="mpsExecutionPlugin" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4197214709894209495">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6164334420696839314" resolveInfo="buildDebuggerPlugin" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6164334420696839314" resolveInfo="mpsDebuggerPlugin" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4197214709894135614">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="8524659923334108558" resolveInfo="buildBuild" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="8524659923334108558" resolveInfo="mpsBuild" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4416206207494713687">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4416206207494300367" resolveInfo="buildDeprecatedBuildlanguage" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4416206207494300367" resolveInfo="mpsDeprecatedBuildlanguage" />
     </node>
     <node role="aspects" roleId="3ior.3542413272732620719" type="kdzh.BuildMpsAspect" typeId="kdzh.6503355885715333289" id="2488570609614189848">
       <property name="bootstrap" nameId="kdzh.6503355885715353788" value="true" />
@@ -23251,10 +23251,10 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402836130">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildBootstrapCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="mpsBootstrapCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402045942">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="buildCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="mpsCore" />
     </node>
     <node role="scriptsDir" roleId="3ior.4796668409958418110" type="3ior.BuildSourceProjectRelativePath" typeId="3ior.5481553824944787378" id="4061567211001166716">
       <node role="compositePart" roleId="3ior.7321017245477039051" type="3ior.BuildCompositePath" typeId="3ior.8618885170173601777" id="4882587297989114615">
@@ -23307,16 +23307,16 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="5548512857136492225">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildBootstrapCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="mpsBootstrapCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="720322971882168685">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="buildCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="mpsCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402313371">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="618786790401812237" resolveInfo="buildTesting" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="618786790401812237" resolveInfo="mpsTesting" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="5548512857136492265">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="buildWorkbench" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="mpsWorkbench" />
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="5548512857136492220">
       <property name="name" nameId="tpck.1169194664001" value="idea_home" />
@@ -24531,13 +24531,13 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="1392391688312941968">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildBootstrapCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="mpsBootstrapCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="1392391688313033147">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="buildCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="mpsCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="1392391688312941970">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="buildWorkbench" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="mpsWorkbench" />
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="1392391688312941965">
       <property name="name" nameId="tpck.1169194664001" value="mps_home" />
@@ -24795,16 +24795,16 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402903328">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildBootstrapCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="mpsBootstrapCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402159606">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="buildCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="mpsCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6265574260762011190">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="buildWorkbench" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="2569834391839970845" resolveInfo="mpsWorkbench" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6265574260762011191">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4301118715654819483" resolveInfo="buildTroveCollections" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4301118715654819483" resolveInfo="mpsTroveCollections" />
     </node>
   </root>
   <root id="4416206207494300367">
@@ -25159,10 +25159,10 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4416206207494300617">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildBootstrapCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="mpsBootstrapCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4416206207494300618">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="buildCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="mpsCore" />
     </node>
   </root>
   <root id="359586707446245098">
@@ -25200,15 +25200,15 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="7401958389410679445">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4061567211001166715" resolveInfo="buildDates" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4061567211001166715" resolveInfo="mpsDates" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="7401958389410679450">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4416206207494300367" resolveInfo="buildDeprecatedBuildlanguage" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4416206207494300367" resolveInfo="mpsDeprecatedBuildlanguage" />
     </node>
   </root>
   <root id="7401958389406848608">
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402894423">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildBootstrapCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="mpsBootstrapCore" />
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="7401958389406903727">
       <property name="name" nameId="tpck.1169194664001" value="mps_home" />
@@ -26112,10 +26112,10 @@
       </node>
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402941201">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="buildBootstrapCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="7926701909975931624" resolveInfo="mpsBootstrapCore" />
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="618786790402016406">
-      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="buildCore" />
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="6503539749405386437" resolveInfo="mpsCore" />
     </node>
     <node role="macros" roleId="3ior.5617550519002745378" type="3ior.BuildFolderMacro" typeId="3ior.7389400916848136194" id="618786790401870514">
       <property name="name" nameId="tpck.1169194664001" value="idea_home" />
