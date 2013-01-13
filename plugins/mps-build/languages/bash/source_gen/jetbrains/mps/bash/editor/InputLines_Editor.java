@@ -37,7 +37,7 @@ public class InputLines_Editor extends DefaultNodeEditor {
     }
 
     public SNode nodeFactory(SNode node, EditorContext editorContext) {
-      jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.CommandList", null);
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.CommandList", null);
       SLinkOperations.setTarget(result, "head", SConceptOperations.createNewNode("jetbrains.mps.bash.structure.HeadCommandList", null), true);
       SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(result, "head", true), "jetbrains.mps.bash.structure.HeadCommandList"), "base", SConceptOperations.createNewNode("jetbrains.mps.bash.structure.HeadPipeline", null), true);
       SLinkOperations.setTarget(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(result, "head", true), "jetbrains.mps.bash.structure.HeadCommandList"), "base", true), "command", SConceptOperations.createNewNode("jetbrains.mps.bash.structure.Command", null), true);
