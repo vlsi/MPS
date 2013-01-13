@@ -263,7 +263,7 @@
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.regexp.runtime.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/languages/util/jetbrains.mps.core.properties.jar" />
+        <fileset file="${artifacts.mpsCore}/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/xml/jetbrains.mps.core.xml.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.runtime.jar" />
@@ -301,7 +301,7 @@
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/languages/util/jetbrains.mps.core.properties.jar" />
+        <fileset file="${artifacts.mpsCore}/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/xml/jetbrains.mps.core.xml.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.runtime.jar" />
@@ -341,7 +341,7 @@
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.mpsBootstrapCore}/languages/util/jetbrains.mps.core.properties.jar" />
+        <fileset file="${artifacts.mpsCore}/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/xml/jetbrains.mps.core.xml.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
         <fileset file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.runtime.jar" />
@@ -494,7 +494,6 @@
       <library file="${artifacts.mpsBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.make.facet.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/make/jetbrains.mps.make.script.jar" />
-      <library file="${artifacts.mpsBootstrapCore}/languages/util/jetbrains.mps.core.properties.jar" />
       <library file="${artifacts.mpsBootstrapCore}/languages/xml/jetbrains.mps.core.xml.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-closures.jar" />
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-collections.jar" />
@@ -505,6 +504,7 @@
       <library file="${artifacts.mpsBootstrapCore}/lib/mps-tuples.jar" />
       <library file="${artifacts.mpsCore}/mps-core/languages/gtext/jetbrains.mps.gtext.jar" />
       <library file="${artifacts.mpsCore}/mps-core/languages/gtext/jetbrains.mps.gtext.runtime.jar" />
+      <library file="${artifacts.mpsCore}/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
       <chunk>
         <module file="${mps_home}/plugins/mps-build/languages/bash/jetbrains.mps.bash.mpl" />
         <module file="${mps_home}/plugins/mps-build/languages/build.workflow/jetbrains.mps.build.workflow.mpl" />
