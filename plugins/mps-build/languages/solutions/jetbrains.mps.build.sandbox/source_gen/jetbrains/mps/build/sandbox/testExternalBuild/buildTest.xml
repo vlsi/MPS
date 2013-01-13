@@ -156,7 +156,6 @@
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       <library file="${artifacts.mps}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
-      <library file="${artifacts.mps}/languages/util/jetbrains.mps.core.properties.jar" />
       <library file="${artifacts.mps}/languages/xml/jetbrains.mps.core.xml.jar" />
       <library file="${artifacts.mps}/lib/mps-closures.jar" />
       <library file="${artifacts.mps}/lib/mps-collections.jar" />
@@ -170,6 +169,7 @@
       <library file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.build.mps.jar" />
       <library file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.build.workflow.jar" />
       <library file="${artifacts.mps}/plugins/mps-build/languages/build/jetbrains.mps.ide.build.jar" />
+      <library file="${artifacts.mps}/plugins/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
       <chunk>
         <module file="${basedir}/jetbrains.mps.build.sandbox/jetbrains.mps.build.sandbox.msd" />
       </chunk>
