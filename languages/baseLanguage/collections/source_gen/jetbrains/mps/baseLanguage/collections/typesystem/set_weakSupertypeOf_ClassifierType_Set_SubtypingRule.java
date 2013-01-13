@@ -11,6 +11,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -67,7 +68,7 @@ public class set_weakSupertypeOf_ClassifierType_Set_SubtypingRule extends Subtyp
             return false;
           }
           {
-            SNode childVar_set_weakSupertypeOf_ClassifierType_Set_n7314j_a0a0 = nodeToMatch_set_weakSupertypeOf_ClassifierType_Set_n7314j_a0a.getChildren(childRole_set_weakSupertypeOf_ClassifierType_Set_n7314j_).iterator().next();
+            SNode childVar_set_weakSupertypeOf_ClassifierType_Set_n7314j_a0a0 = IterableUtil.get(nodeToMatch_set_weakSupertypeOf_ClassifierType_Set_n7314j_a0a.getChildren(childRole_set_weakSupertypeOf_ClassifierType_Set_n7314j_), 0);
             this.patternVar_elementType = childVar_set_weakSupertypeOf_ClassifierType_Set_n7314j_a0a0;
           }
         }

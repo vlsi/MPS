@@ -6,14 +6,13 @@ import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import java.util.List;
-
-import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import java.util.Arrays;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -66,7 +65,7 @@ public class ObjectArraySupertypes_SubtypingRule extends SubtypingRule_Runtime i
             return false;
           }
           {
-            SNode childVar_ObjectArraySupertypes_mvbroc_a0a0 = IterableUtil.asList(nodeToMatch_ObjectArraySupertypes_mvbroc_a0a.getChildren(childRole_ObjectArraySupertypes_mvbroc_)).get(0);
+            SNode childVar_ObjectArraySupertypes_mvbroc_a0a0 = IterableUtil.get(nodeToMatch_ObjectArraySupertypes_mvbroc_a0a.getChildren(childRole_ObjectArraySupertypes_mvbroc_), 0);
             {
               SNode nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0;
               nodeToMatch_ObjectArraySupertypes_mvbroc_a0a0 = childVar_ObjectArraySupertypes_mvbroc_a0a0;

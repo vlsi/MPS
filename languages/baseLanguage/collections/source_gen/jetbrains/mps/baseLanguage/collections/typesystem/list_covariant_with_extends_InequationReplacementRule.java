@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
@@ -15,6 +14,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 
 public class list_covariant_with_extends_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern1;
@@ -87,7 +87,7 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
             return false;
           }
           {
-            SNode childVar_list_covariant_with_extends_l7cfoj_a0a0 = IterableUtil.asList(nodeToMatch_list_covariant_with_extends_l7cfoj_a0a.getChildren(childRole_list_covariant_with_extends_l7cfoj_)).get(0);
+            SNode childVar_list_covariant_with_extends_l7cfoj_a0a0 = IterableUtil.get(nodeToMatch_list_covariant_with_extends_l7cfoj_a0a.getChildren(childRole_list_covariant_with_extends_l7cfoj_), 0);
             this.patternVar_sub = childVar_list_covariant_with_extends_l7cfoj_a0a0;
           }
         }
@@ -135,7 +135,7 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
             return false;
           }
           {
-            SNode childVar_list_covariant_with_extends_l7cfoj_a0a0_0 = IterableUtil.asList(nodeToMatch_list_covariant_with_extends_l7cfoj_a0a_0.getChildren(childRole_list_covariant_with_extends_l7cfoj__0)).get(0);
+            SNode childVar_list_covariant_with_extends_l7cfoj_a0a0_0 = IterableUtil.get(nodeToMatch_list_covariant_with_extends_l7cfoj_a0a_0.getChildren(childRole_list_covariant_with_extends_l7cfoj__0), 0);
             {
               SNode nodeToMatch_list_covariant_with_extends_l7cfoj_a0a0;
               nodeToMatch_list_covariant_with_extends_l7cfoj_a0a0 = childVar_list_covariant_with_extends_l7cfoj_a0a0_0;
@@ -148,7 +148,7 @@ public class list_covariant_with_extends_InequationReplacementRule extends Abstr
                   return false;
                 }
                 {
-                  SNode childVar_list_covariant_with_extends_l7cfoj_a0a0a = IterableUtil.asList(nodeToMatch_list_covariant_with_extends_l7cfoj_a0a0.getChildren(childRole_list_covariant_with_extends_l7cfoj__1)).get(0);
+                  SNode childVar_list_covariant_with_extends_l7cfoj_a0a0a = IterableUtil.get(nodeToMatch_list_covariant_with_extends_l7cfoj_a0a0.getChildren(childRole_list_covariant_with_extends_l7cfoj__1), 0);
                   this.patternVar_super = childVar_list_covariant_with_extends_l7cfoj_a0a0a;
                 }
               }

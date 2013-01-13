@@ -5,13 +5,13 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -69,11 +69,11 @@ public class mappingType_sypertypeOf_IMapping_interface_SubtypingRule extends Su
             return false;
           }
           {
-            SNode childVar_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a0 = IterableUtil.asList(nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a.getChildren(childRole_mappingType_sypertypeOf_IMapping_interface_6v7ed2_)).get(0);
+            SNode childVar_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a0 = IterableUtil.get(nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a.getChildren(childRole_mappingType_sypertypeOf_IMapping_interface_6v7ed2_), 0);
             this.patternVar_KEY = childVar_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a0;
           }
           {
-            SNode childVar_mappingType_sypertypeOf_IMapping_interface_6v7ed2_b0a0 = IterableUtil.asList(nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a.getChildren(childRole_mappingType_sypertypeOf_IMapping_interface_6v7ed2_)).get(1);
+            SNode childVar_mappingType_sypertypeOf_IMapping_interface_6v7ed2_b0a0 = IterableUtil.get(nodeToMatch_mappingType_sypertypeOf_IMapping_interface_6v7ed2_a0a.getChildren(childRole_mappingType_sypertypeOf_IMapping_interface_6v7ed2_), 1);
             this.patternVar_VALUE = childVar_mappingType_sypertypeOf_IMapping_interface_6v7ed2_b0a0;
           }
         }

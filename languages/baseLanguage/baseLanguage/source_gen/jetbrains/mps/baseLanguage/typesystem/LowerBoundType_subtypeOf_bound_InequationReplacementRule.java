@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.AbstractInequationReplacementRule_Runtime;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.pattern.util.MatchingUtil;
@@ -14,6 +13,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 
 public class LowerBoundType_subtypeOf_bound_InequationReplacementRule extends AbstractInequationReplacementRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern1;
@@ -80,7 +80,7 @@ public class LowerBoundType_subtypeOf_bound_InequationReplacementRule extends Ab
             return false;
           }
           {
-            SNode childVar_LowerBoundType_subtypeOf_bound_4vpl4k_a0a0 = IterableUtil.asList(nodeToMatch_LowerBoundType_subtypeOf_bound_4vpl4k_a0a.getChildren(childRole_LowerBoundType_subtypeOf_bound_4vpl4k_)).get(0);
+            SNode childVar_LowerBoundType_subtypeOf_bound_4vpl4k_a0a0 = IterableUtil.get(nodeToMatch_LowerBoundType_subtypeOf_bound_4vpl4k_a0a.getChildren(childRole_LowerBoundType_subtypeOf_bound_4vpl4k_), 0);
             this.patternVar_BOUND = childVar_LowerBoundType_subtypeOf_bound_4vpl4k_a0a0;
           }
         }

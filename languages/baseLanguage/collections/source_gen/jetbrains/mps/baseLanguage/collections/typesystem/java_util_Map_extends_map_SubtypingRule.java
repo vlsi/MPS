@@ -5,13 +5,13 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -69,11 +69,11 @@ public class java_util_Map_extends_map_SubtypingRule extends SubtypingRule_Runti
             return false;
           }
           {
-            SNode childVar_java_util_Map_extends_map_4xhv5l_a0a0 = IterableUtil.asList(nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getChildren(childRole_java_util_Map_extends_map_4xhv5l_)).get(0);
+            SNode childVar_java_util_Map_extends_map_4xhv5l_a0a0 = IterableUtil.get(nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getChildren(childRole_java_util_Map_extends_map_4xhv5l_), 0);
             this.patternVar_keyType = childVar_java_util_Map_extends_map_4xhv5l_a0a0;
           }
           {
-            SNode childVar_java_util_Map_extends_map_4xhv5l_b0a0 = IterableUtil.asList(nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getChildren(childRole_java_util_Map_extends_map_4xhv5l_)).get(1);
+            SNode childVar_java_util_Map_extends_map_4xhv5l_b0a0 = IterableUtil.get(nodeToMatch_java_util_Map_extends_map_4xhv5l_a0a.getChildren(childRole_java_util_Map_extends_map_4xhv5l_), 1);
             this.patternVar_valueType = childVar_java_util_Map_extends_map_4xhv5l_b0a0;
           }
         }

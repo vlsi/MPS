@@ -21,7 +21,7 @@ public class typeof_InternalThisExpression_InferenceRule extends AbstractInferen
 
   public void applyRule(final SNode ite, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     SNode c = SNodeOperations.getAncestor(ite, "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
-    jetbrains.mps.smodel.SNode ct = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SNode ct = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(ct, "classifier", c, false);
     SLinkOperations.getTargets(c, "typeVariableDeclaration", true);
     {
@@ -33,7 +33,7 @@ public class typeof_InternalThisExpression_InferenceRule extends AbstractInferen
         }
         tvd = tvd_iterator.next();
         {
-          jetbrains.mps.smodel.SNode tvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
+          SNode tvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
           SLinkOperations.setTarget(tvr, "typeVariableDeclaration", tvd, false);
           ListSequence.fromList(SLinkOperations.getTargets(ct, "parameter", true)).addElement(tvr);
         }

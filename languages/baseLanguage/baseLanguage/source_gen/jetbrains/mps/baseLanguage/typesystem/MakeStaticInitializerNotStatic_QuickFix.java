@@ -21,7 +21,7 @@ public class MakeStaticInitializerNotStatic_QuickFix extends QuickFix_Runtime {
   public void execute(SNode node) {
     int index = ListSequence.fromList(SLinkOperations.getTargets(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("containingClass")[0]), "member", true)).indexOf(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]));
 
-    jetbrains.mps.smodel.SNode initializer = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceInitializer", null);
+    SNode initializer = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceInitializer", null);
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(initializer, "statementList", true), "statement", true)).addSequence(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]), "statementList", true), "statement", true)));
 
     SNodeOperations.detachNode(((SNode) MakeStaticInitializerNotStatic_QuickFix.this.getField("staticInitializer")[0]));

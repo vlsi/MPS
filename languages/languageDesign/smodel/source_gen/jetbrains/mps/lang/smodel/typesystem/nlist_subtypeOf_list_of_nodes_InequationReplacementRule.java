@@ -12,6 +12,7 @@ import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -28,13 +29,13 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
       SNode _nodeToCheck_1029348928467 = equationInfo.getNodeWithError();
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:00000000-0000-4000-0000-011c895902fe(jetbrains.mps.lang.smodel.typesystem)", "7668447476859461630", 0, null);
       _info_12389875345.getOuterRulesIdFromInfo(equationInfo);
-      typeCheckingContext.createLessThanInequality((SNode) _quotation_createNode_9szvhv_a0a0d(((jetbrains.mps.smodel.SNode) status.getPattern1().getFieldValue("patternVar_CONCEPT"))), (SNode) ((jetbrains.mps.smodel.SNode) status.getPattern2().getFieldValue("patternVar_ELEMENT")), false, true, _info_12389875345);
+      typeCheckingContext.createLessThanInequality((SNode) _quotation_createNode_9szvhv_a0a0d(((SNode) status.getPattern1().getFieldValue("patternVar_CONCEPT"))), (SNode) ((SNode) status.getPattern2().getFieldValue("patternVar_ELEMENT")), false, true, _info_12389875345);
     }
   }
 
   public boolean checkInequation(final SNode subtype, final SNode supertype, final EquationInfo equationInfo, IsApplicable2Status status, final boolean inequalityIsWeak, final boolean inequalityIsLessThan) {
     boolean result_14532009 = true;
-    result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) _quotation_createNode_9szvhv_a0a0b0e(((jetbrains.mps.smodel.SNode) status.getPattern1().getFieldValue("patternVar_CONCEPT"))), (SNode) ((jetbrains.mps.smodel.SNode) status.getPattern2().getFieldValue("patternVar_ELEMENT")), true);
+    result_14532009 = result_14532009 && TypeChecker.getInstance().getSubtypingManager().isSubtype((SNode) _quotation_createNode_9szvhv_a0a0b0e(((SNode) status.getPattern1().getFieldValue("patternVar_CONCEPT"))), (SNode) ((SNode) status.getPattern2().getFieldValue("patternVar_ELEMENT")), true);
     return result_14532009;
   }
 
@@ -126,7 +127,7 @@ public class nlist_subtypeOf_list_of_nodes_InequationReplacementRule extends Abs
             return false;
           }
           {
-            SNode childVar_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a0 = nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a_0.getChildren(childRole_nlist_subtypeOf_list_of_nodes_3tjcdg_).iterator().next();
+            SNode childVar_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a0 = IterableUtil.get(nodeToMatch_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a_0.getChildren(childRole_nlist_subtypeOf_list_of_nodes_3tjcdg_), 0);
             this.patternVar_ELEMENT = childVar_nlist_subtypeOf_list_of_nodes_3tjcdg_a0a0;
           }
         }

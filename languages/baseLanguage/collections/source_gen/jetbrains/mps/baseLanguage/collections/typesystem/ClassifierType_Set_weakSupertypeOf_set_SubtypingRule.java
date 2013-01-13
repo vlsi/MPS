@@ -5,12 +5,12 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -64,7 +64,7 @@ public class ClassifierType_Set_weakSupertypeOf_set_SubtypingRule extends Subtyp
             return false;
           }
           {
-            SNode childVar_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a0 = IterableUtil.asList(nodeToMatch_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a.getChildren(childRole_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_)).get(0);
+            SNode childVar_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a0 = IterableUtil.get(nodeToMatch_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a.getChildren(childRole_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_), 0);
             this.patternVar_elementType = childVar_ClassifierType_Set_weakSupertypeOf_set_nbr2nf_a0a0;
           }
         }

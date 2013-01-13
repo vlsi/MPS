@@ -11,6 +11,7 @@ import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -67,7 +68,7 @@ public class supertypesOf_ClassifierTypeIterable_SequenceType_SubtypingRule exte
             return false;
           }
           {
-            SNode childVar_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a0 = nodeToMatch_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a.getChildren(childRole_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_).iterator().next();
+            SNode childVar_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a0 = IterableUtil.get(nodeToMatch_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a.getChildren(childRole_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_), 0);
             this.patternVar_p = childVar_supertypesOf_ClassifierTypeIterable_SequenceType_z7dq1d_a0a0;
           }
         }

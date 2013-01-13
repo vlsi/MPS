@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
@@ -12,6 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 
 public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
@@ -76,7 +76,7 @@ public class deque_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
             return false;
           }
           {
-            SNode childVar_deque_type_comparableWith_Deque_drfijn_a0a0 = IterableUtil.asList(nodeToMatch_deque_type_comparableWith_Deque_drfijn_a0a.getChildren(childRole_deque_type_comparableWith_Deque_drfijn_)).get(0);
+            SNode childVar_deque_type_comparableWith_Deque_drfijn_a0a0 = IterableUtil.get(nodeToMatch_deque_type_comparableWith_Deque_drfijn_a0a.getChildren(childRole_deque_type_comparableWith_Deque_drfijn_), 0);
             this.patternVar_ELEMENT_TYPE = childVar_deque_type_comparableWith_Deque_drfijn_a0a0;
           }
         }

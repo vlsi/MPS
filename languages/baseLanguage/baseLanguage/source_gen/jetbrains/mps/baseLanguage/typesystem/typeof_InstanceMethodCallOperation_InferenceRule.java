@@ -68,7 +68,7 @@ public class typeof_InstanceMethodCallOperation_InferenceRule extends AbstractIn
           // ensure it's a classifier type 
           SNode ctype = typeCheckingContext.getExpandedNode(IT);
           if (!(SNodeOperations.isInstanceOf(ctype, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
-            ctype = TypeChecker.getInstance().getRuntimeSupport().coerce_(ctype, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true, typeCheckingContext);
+            ctype = TypeChecker.getInstance().getRuntimeSupport().coerce_(ctype, HUtil.createMatchingPatternByConceptFQName("jetbrains.mps.baseLanguage.structure.ClassifierType"), true);
           }
           final Map<SNode, SNode> subs = MapSequence.fromMap(new HashMap<SNode, SNode>());
           // check the inference context 

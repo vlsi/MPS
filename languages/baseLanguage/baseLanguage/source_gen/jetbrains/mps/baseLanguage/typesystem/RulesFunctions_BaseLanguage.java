@@ -240,7 +240,7 @@ __switch__:
     }
     SNode constructedType = _quotation_createNode_5ahx9e_a0f0g(parentIT);
     for (SNode tvd : SLinkOperations.getTargets(parentIT, "typeVariableDeclaration", true)) {
-      jetbrains.mps.smodel.SNode tvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
+      SNode tvr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
       SLinkOperations.setTarget(tvr, "typeVariableDeclaration", tvd, false);
       ListSequence.fromList(SLinkOperations.getTargets(constructedType, "parameter", true)).addElement(tvr);
     }

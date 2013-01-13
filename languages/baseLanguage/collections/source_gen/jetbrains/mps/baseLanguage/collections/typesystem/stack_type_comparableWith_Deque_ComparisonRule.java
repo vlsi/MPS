@@ -11,6 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 
 public class stack_type_comparableWith_Deque_ComparisonRule extends ComparisonRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
@@ -75,7 +76,7 @@ public class stack_type_comparableWith_Deque_ComparisonRule extends ComparisonRu
             return false;
           }
           {
-            SNode childVar_stack_type_comparableWith_Deque_h34l93_a0a0 = nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a.getChildren(childRole_stack_type_comparableWith_Deque_h34l93_).iterator().next();
+            SNode childVar_stack_type_comparableWith_Deque_h34l93_a0a0 = IterableUtil.get(nodeToMatch_stack_type_comparableWith_Deque_h34l93_a0a.getChildren(childRole_stack_type_comparableWith_Deque_h34l93_), 0);
             this.patternVar_ELEMENT_TYPE = childVar_stack_type_comparableWith_Deque_h34l93_a0a0;
           }
         }

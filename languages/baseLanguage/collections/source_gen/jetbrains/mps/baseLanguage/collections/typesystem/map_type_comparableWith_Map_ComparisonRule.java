@@ -4,7 +4,6 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
@@ -12,6 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 
 public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
@@ -77,11 +77,11 @@ public class map_type_comparableWith_Map_ComparisonRule extends ComparisonRule_R
             return false;
           }
           {
-            SNode childVar_map_type_comparableWith_Map_a1tqv3_a0a0 = IterableUtil.asList(nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getChildren(childRole_map_type_comparableWith_Map_a1tqv3_)).get(0);
+            SNode childVar_map_type_comparableWith_Map_a1tqv3_a0a0 = IterableUtil.get(nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getChildren(childRole_map_type_comparableWith_Map_a1tqv3_), 0);
             this.patternVar_KEY = childVar_map_type_comparableWith_Map_a1tqv3_a0a0;
           }
           {
-            SNode childVar_map_type_comparableWith_Map_a1tqv3_b0a0 = IterableUtil.asList(nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getChildren(childRole_map_type_comparableWith_Map_a1tqv3_)).get(1);
+            SNode childVar_map_type_comparableWith_Map_a1tqv3_b0a0 = IterableUtil.get(nodeToMatch_map_type_comparableWith_Map_a1tqv3_a0a.getChildren(childRole_map_type_comparableWith_Map_a1tqv3_), 1);
             this.patternVar_VALUE = childVar_map_type_comparableWith_Map_a1tqv3_b0a0;
           }
         }

@@ -5,13 +5,13 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -69,11 +69,11 @@ public class SortedMap_comparableTo_sorted_map_SubtypingRule extends SubtypingRu
             return false;
           }
           {
-            SNode childVar_SortedMap_comparableTo_sorted_map_1q5lf6_a0a0 = nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getChildren(childRole_SortedMap_comparableTo_sorted_map_1q5lf6_).iterator().next();
+            SNode childVar_SortedMap_comparableTo_sorted_map_1q5lf6_a0a0 = IterableUtil.get(nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getChildren(childRole_SortedMap_comparableTo_sorted_map_1q5lf6_), 0);
             this.patternVar_KEY = childVar_SortedMap_comparableTo_sorted_map_1q5lf6_a0a0;
           }
           {
-            SNode childVar_SortedMap_comparableTo_sorted_map_1q5lf6_b0a0 = IterableUtil.asList(nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getChildren(childRole_SortedMap_comparableTo_sorted_map_1q5lf6_)).get(1);
+            SNode childVar_SortedMap_comparableTo_sorted_map_1q5lf6_b0a0 = IterableUtil.get(nodeToMatch_SortedMap_comparableTo_sorted_map_1q5lf6_a0a.getChildren(childRole_SortedMap_comparableTo_sorted_map_1q5lf6_), 1);
             this.patternVar_VALUE = childVar_SortedMap_comparableTo_sorted_map_1q5lf6_b0a0;
           }
         }
