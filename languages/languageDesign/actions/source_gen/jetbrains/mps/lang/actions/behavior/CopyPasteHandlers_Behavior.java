@@ -36,7 +36,7 @@ public class CopyPasteHandlers_Behavior {
   }
 
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    jetbrains.mps.smodel.SNode pastePostProcessor = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.PastePostProcessor", null);
+    SNode pastePostProcessor = SConceptOperations.createNewNode("jetbrains.mps.lang.actions.structure.PastePostProcessor", null);
     SLinkOperations.setTarget(pastePostProcessor, "concept", baseConcept, false);
     ListSequence.fromList(SLinkOperations.getTargets(thisNode, "postProcessor", true)).addElement(pastePostProcessor);
     String name = SModelUtil.getDeclaringLanguage(baseConcept).getModuleFqName();

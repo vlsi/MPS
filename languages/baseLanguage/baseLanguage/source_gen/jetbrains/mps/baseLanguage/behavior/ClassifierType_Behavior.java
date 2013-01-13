@@ -116,7 +116,7 @@ public class ClassifierType_Behavior {
     SNode classifier = SLinkOperations.getTarget(thisNode, "classifier", false);
     if (SNodeOperations.isInstanceOf(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
       if (!(SPropertyOperations.getBoolean(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "abstractClass")) && Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).isNotEmpty()) {
-        jetbrains.mps.smodel.SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassCreator", null);
+        SNode creator = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassCreator", null);
         SLinkOperations.setTarget(creator, "baseMethodDeclaration", Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(SNodeOperations.cast(classifier, "jetbrains.mps.baseLanguage.structure.ClassConcept"))).first(), false);
         for (SNode typeParm : ListSequence.fromList(SLinkOperations.getTargets(thisNode, "parameter", true))) {
           ListSequence.fromList(SLinkOperations.getTargets(creator, "typeParameter", true)).addElement(SNodeOperations.copyNode(typeParm));
@@ -181,7 +181,7 @@ public class ClassifierType_Behavior {
   }
 
   public static SNode virtual_getLooseType_5744862332972792015(SNode thisNode, @NotNull Set<SNode> visitedTypes) {
-    jetbrains.mps.smodel.SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SNode classifierType = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(classifierType, "classifier", SLinkOperations.getTarget(thisNode, "classifier", false), false);
     for (SNode typeParam : SLinkOperations.getTargets(thisNode, "parameter", true)) {
       ListSequence.fromList(SLinkOperations.getTargets(classifierType, "parameter", true)).addElement(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), typeParam, "virtual_getLooseType_5744862332972792015", new Object[]{visitedTypes}));
@@ -277,7 +277,7 @@ public class ClassifierType_Behavior {
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, SLinkOperations.getTarget(thisNode, "classifier", false), "virtual_isStatic_8986964027630462944", new Object[]{}))) {
       SNode enclosing = SNodeOperations.getAncestor(SLinkOperations.getTarget(thisNode, "classifier", false), "jetbrains.mps.baseLanguage.structure.Classifier", false, false);
       if ((enclosing != null)) {
-        jetbrains.mps.smodel.SNode etype = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+        SNode etype = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
         SLinkOperations.setTarget(etype, "classifier", enclosing, false);
         for (SNode tvd : ListSequence.fromList(SLinkOperations.getTargets(enclosing, "typeVariableDeclaration", true))) {
           SNode tvr = SNodeFactoryOperations.addNewChild(etype, "parameter", "jetbrains.mps.baseLanguage.structure.TypeVariableReference");

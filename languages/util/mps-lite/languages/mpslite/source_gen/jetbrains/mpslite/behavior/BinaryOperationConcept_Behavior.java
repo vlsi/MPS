@@ -41,7 +41,7 @@ public class BinaryOperationConcept_Behavior {
   }
 
   public static SNode virtual_createEditor_1239890004879(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    jetbrains.mps.smodel.SNode contentCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
+    SNode contentCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Collection", null);
     SLinkOperations.setNewChild(contentCell, "cellLayout", "jetbrains.mps.lang.editor.structure.CellLayout_Indent");
     SNode leftCell = SLinkOperations.addNewChild(contentCell, "childCellModel", "jetbrains.mps.lang.editor.structure.CellModel_RefNode");
     SLinkOperations.setTarget(leftCell, "relationDeclaration", SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(SLinkOperations.getTarget(thisNode, "leftTarget", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
@@ -49,7 +49,7 @@ public class BinaryOperationConcept_Behavior {
     SPropertyOperations.set(signCell, "text", SPropertyOperations.getString(thisNode, "sign"));
     SNode rightCell = SLinkOperations.addNewChild(contentCell, "childCellModel", "jetbrains.mps.lang.editor.structure.CellModel_RefNode");
     SLinkOperations.setTarget(rightCell, "relationDeclaration", SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(SLinkOperations.getTarget(thisNode, "rightTarget", true)), "jetbrains.mps.lang.structure.structure.LinkDeclaration"), false);
-    jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
     SLinkOperations.setTarget(result, "cellModel", contentCell, true);
     return result;
   }

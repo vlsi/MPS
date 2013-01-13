@@ -21,7 +21,7 @@ public class AbstractRule_Behavior {
   }
 
   public static void virtual_setBaseConcept_6261424444345963020(SNode thisNode, SNode baseConcept) {
-    jetbrains.mps.smodel.SNode conceptReference = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.ConceptReference", null);
+    SNode conceptReference = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.ConceptReference", null);
     SLinkOperations.setTarget(conceptReference, "concept", baseConcept, false);
     SLinkOperations.setTarget(thisNode, "applicableNode", conceptReference, true);
   }

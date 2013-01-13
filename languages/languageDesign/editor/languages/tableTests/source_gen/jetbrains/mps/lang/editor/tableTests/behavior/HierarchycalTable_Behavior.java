@@ -16,7 +16,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public class HierarchycalTable_Behavior {
   public static void init(SNode thisNode) {
     for (int i = 0; i < BehaviorReflection.invokeVirtualStatic(Integer.TYPE, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(thisNode))), "virtual_getInitialColumnCount_1262430001741498026", new Object[]{}); i++) {
-      jetbrains.mps.smodel.SNode dataCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null);
+      SNode dataCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.tableTests.structure.DataCell", null);
       SPropertyOperations.set(dataCell, "value", "h-" + i);
       ListSequence.fromList(SLinkOperations.getTargets(thisNode, "headers", true)).addElement(dataCell);
     }

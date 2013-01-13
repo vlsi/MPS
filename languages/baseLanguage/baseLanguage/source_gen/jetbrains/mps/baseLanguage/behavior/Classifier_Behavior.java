@@ -258,10 +258,10 @@ public class Classifier_Behavior {
   }
 
   public static SNode virtual_getThisType_3305065273710880775(SNode thisNode) {
-    jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(result, "classifier", thisNode, false);
     for (SNode decl : SLinkOperations.getTargets(thisNode, "typeVariableDeclaration", true)) {
-      jetbrains.mps.smodel.SNode reference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
+      SNode reference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableReference", null);
       SLinkOperations.setTarget(reference, "typeVariableDeclaration", decl, false);
       ListSequence.fromList(SLinkOperations.getTargets(result, "parameter", true)).addElement(reference);
     }

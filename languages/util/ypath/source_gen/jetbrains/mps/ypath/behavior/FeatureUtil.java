@@ -81,7 +81,7 @@ public class FeatureUtil {
       if (Sequence.fromIterable(params).isNotEmpty()) {
         return Sequence.fromIterable(params).select(new ISelector<Object, SNode>() {
           public SNode select(Object it) {
-            jetbrains.mps.smodel.SNode param = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.ParameterWrapper", null);
+            SNode param = SConceptOperations.createNewNode("jetbrains.mps.ypath.structure.ParameterWrapper", null);
             if (it instanceof SNode) {
               SLinkOperations.setTarget(param, "paramRef", (SNode) it, false);
             } else

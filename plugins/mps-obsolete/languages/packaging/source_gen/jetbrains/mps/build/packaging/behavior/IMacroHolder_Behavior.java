@@ -61,7 +61,7 @@ public class IMacroHolder_Behavior {
     List<String> allMacroNames = IMacroHolder_Behavior.call_getAllMacroNames_1234975567387(thisNode, true);
     List<SNode> result = new ArrayList<SNode>();
     for (String macroName : ListSequence.fromList(allMacroNames)) {
-      jetbrains.mps.smodel.SNode macro = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Macro", null);
+      SNode macro = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.Macro", null);
       SPropertyOperations.set(macro, "name", macroName);
       SPropertyOperations.set(macro, "path", BehaviorReflection.invokeVirtual(String.class, thisNode, "virtual_evaluateMacro_1234975967990", new Object[]{macroName}).replace("\\", Util.SEPARATOR));
       ListSequence.fromList(result).addElement(macro);

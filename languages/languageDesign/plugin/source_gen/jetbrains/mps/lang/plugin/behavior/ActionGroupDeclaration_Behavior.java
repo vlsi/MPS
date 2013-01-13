@@ -32,7 +32,7 @@ public class ActionGroupDeclaration_Behavior {
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    jetbrains.mps.smodel.SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.GroupType", null);
+    SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.GroupType", null);
     SLinkOperations.setTarget(type, "actionGroup", thisNode, false);
     return type;
   }

@@ -23,7 +23,7 @@ public class CustomContainersUtil {
     return (Iterable<SNode>) (SConceptOperations.isSubConceptOf(SNodeOperations.getConceptDeclaration(type), "jetbrains.mps.baseLanguage.collections.structure.MapType") ?
       Sequence.fromIterable(containerDeclarations(model, type)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode ccd) {
-          jetbrains.mps.smodel.SNode cmc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator", null);
+          SNode cmc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.CustomMapCreator", null);
           SLinkOperations.setTarget(cmc, "containerDeclaration", ccd, false);
           List<SNode> tvds = SLinkOperations.getTargets(ccd, "typeVariableDeclaration", true);
           List<SNode> ctParams = ListSequence.fromListAndArray(new ArrayList<SNode>(), SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(ccd, "containerType", true), "jetbrains.mps.baseLanguage.collections.structure.MapType"), "keyType", true), SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(ccd, "containerType", true), "jetbrains.mps.baseLanguage.collections.structure.MapType"), "valueType", true));
@@ -53,7 +53,7 @@ with_ctParams:
       }) :
       Sequence.fromIterable(containerDeclarations(model, type)).select(new ISelector<SNode, SNode>() {
         public SNode select(SNode ccd) {
-          jetbrains.mps.smodel.SNode ccc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator", null);
+          SNode ccc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.CustomContainerCreator", null);
           SLinkOperations.setTarget(ccc, "containerDeclaration", ccd, false);
           if ((int) ListSequence.fromList(SLinkOperations.getTargets(ccd, "typeVariableDeclaration", true)).count() == 1) {
             SLinkOperations.setTarget(ccc, "elementType", SNodeOperations.as(ListSequence.fromList(SNodeOperations.getChildren(type)).first(), "jetbrains.mps.baseLanguage.structure.Type"), true);

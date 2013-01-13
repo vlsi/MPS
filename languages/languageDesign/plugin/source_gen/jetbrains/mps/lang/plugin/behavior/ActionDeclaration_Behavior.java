@@ -31,7 +31,7 @@ public class ActionDeclaration_Behavior {
   }
 
   public static SNode virtual_createType_1213877527970(SNode thisNode) {
-    jetbrains.mps.smodel.SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ActionType", null);
+    SNode type = SConceptOperations.createNewNode("jetbrains.mps.lang.plugin.structure.ActionType", null);
     SLinkOperations.setTarget(type, "action", thisNode, false);
     return type;
   }

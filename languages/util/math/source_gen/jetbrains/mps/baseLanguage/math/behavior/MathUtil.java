@@ -180,7 +180,7 @@ public class MathUtil {
       case 4:
         return _quotation_createNode_30uc9x_a0a3c0e();
       default:
-        jetbrains.mps.smodel.SNode c = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
+        SNode c = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
         SPropertyOperations.set(c, "value", "" + (SPropertyOperations.getInteger(mc, "precision")));
         return _quotation_createNode_30uc9x_a2a2a4(c, MathUtil.getRoundingMode(SPropertyOperations.getInteger_def(mc, "roundingMode", "4")));
     }

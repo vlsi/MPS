@@ -15,7 +15,7 @@ public class IContainerOperation_Behavior {
   }
 
   public static SNode virtual_expectedOperandType_2141797557973018589(SNode thisNode, SNode elementType) {
-    jetbrains.mps.smodel.SNode jt = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
+    SNode jt = SConceptOperations.createNewNode("jetbrains.mps.lang.typesystem.structure.JoinType", null);
     for (SNode et : SLinkOperations.getConceptLinkTargets(thisNode, "expectedOperandType")) {
       if ((et != null)) {
         SNode rt = SNodeOperations.copyNode(et);

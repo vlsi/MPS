@@ -14,7 +14,7 @@ public class NamePropertyNamePart_Behavior {
   }
 
   public static SNode virtual_createCellModel_1238614099938(SNode thisNode, Map<SNode, SNode> partsToLinks) {
-    jetbrains.mps.smodel.SNode propertyCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Property", null);
+    SNode propertyCell = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.CellModel_Property", null);
     SNode variableConcept = SNodeOperations.getAncestor(thisNode, "jetbrains.mpslite.structure.VariableConcept", false, false);
     SLinkOperations.setTarget(propertyCell, "relationDeclaration", SNodeOperations.cast(MapSequence.fromMap(partsToLinks).get(variableConcept), "jetbrains.mps.lang.structure.structure.PropertyDeclaration"), false);
     return propertyCell;

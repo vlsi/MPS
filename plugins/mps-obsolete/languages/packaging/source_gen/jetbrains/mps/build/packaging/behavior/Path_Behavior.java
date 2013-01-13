@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 
 public class Path_Behavior {
   public static void init(SNode thisNode) {
-    jetbrains.mps.smodel.SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.MacroReference", null);
+    SNode ref = SConceptOperations.createNewNode("jetbrains.mps.build.packaging.structure.MacroReference", null);
     SLinkOperations.setTarget(thisNode, "macro", ref, true);
   }
 

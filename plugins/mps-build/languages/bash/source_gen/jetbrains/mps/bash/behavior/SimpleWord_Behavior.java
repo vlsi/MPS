@@ -25,13 +25,13 @@ public class SimpleWord_Behavior {
       if (isNotEmpty_ur4wq2_a0a0c0b(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(unit)), "virtual_getPattern_1262430001741497918", new Object[]{}))) {
         int index = value.indexOf(BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(unit)), "virtual_getPattern_1262430001741497918", new Object[]{}));
         if (index != -1) {
-          jetbrains.mps.smodel.SNode endOfWord = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.SimpleWord", null);
+          SNode endOfWord = SConceptOperations.createNewNode("jetbrains.mps.bash.structure.SimpleWord", null);
           String dummy = value.substring(index + BehaviorReflection.invokeVirtualStatic(String.class, SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(unit)), "virtual_getPattern_1262430001741497918", new Object[]{}).length());
           if ((dummy != null && dummy.length() > 0)) {
             SPropertyOperations.set(endOfWord, "word", dummy);
             SNodeOperations.insertNextSiblingChild(thisNode, endOfWord);
           }
-          jetbrains.mps.smodel.SNode newUnit = SConceptOperations.createNewNode(NameUtil.nodeFQName(unit), null);
+          SNode newUnit = SConceptOperations.createNewNode(NameUtil.nodeFQName(unit), null);
           if (index == 0) {
             SNodeOperations.replaceWithAnother(thisNode, newUnit);
           } else {

@@ -17,7 +17,7 @@ public class MPSLiteConceptDeclaration_Behavior {
   }
 
   public static SNode virtual_createEditor_1239890004879(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    jetbrains.mps.smodel.SNode editor = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
+    SNode editor = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
     SNode lineList = SLinkOperations.getTarget(thisNode, "lineList", true);
     SNode contentCell = GenerationUtils.generateEditorCellModel(lineList, thisNode, partsToLinks);
     if (contentCell == null) {

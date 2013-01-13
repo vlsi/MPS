@@ -24,7 +24,7 @@ public class ExpressionConcept_Behavior {
   }
 
   public static SNode virtual_createEditor_1239890004879(SNode thisNode, Map<SNode, SNode> conceptsToTargets, Map<SNode, SNode> partsToLinks) {
-    jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptEditorDeclaration", null);
     SNode cellModelError = SLinkOperations.setNewChild(result, "cellModel", "jetbrains.mps.lang.editor.structure.CellModel_Error");
     SPropertyOperations.set(cellModelError, "text", "<abstract expression>");
     return result;

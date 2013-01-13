@@ -17,7 +17,7 @@ public class ElsifClause_Behavior {
 
   public static void call_convertToElseClause_1217846674032(SNode thisNode) {
     SNode ifStatement = ElsifClause_Behavior.call_getIfStatement_1213877360521(thisNode);
-    jetbrains.mps.smodel.SNode elseStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
+    SNode elseStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BlockStatement", null);
     SLinkOperations.setTarget(elseStatement, "statements", SNodeOperations.copyNode(SLinkOperations.getTarget(thisNode, "statementList", true)), true);
     SNodeOperations.deleteNode(thisNode);
     SLinkOperations.setTarget(ifStatement, "ifFalseStatement", elseStatement, true);

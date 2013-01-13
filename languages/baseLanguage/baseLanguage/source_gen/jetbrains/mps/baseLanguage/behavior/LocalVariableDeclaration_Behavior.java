@@ -28,7 +28,7 @@ public class LocalVariableDeclaration_Behavior {
   }
 
   public static SNode virtual_createReference_1213877517482(SNode thisNode) {
-    jetbrains.mps.smodel.SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
+    SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(ref, "variableDeclaration", thisNode, false);
     return ref;
   }

@@ -59,7 +59,7 @@ public class TypeVariableDeclaration_Behavior {
     }
     SNode javaType = BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), inputType, "virtual_getJavaType_1213877337345", new Object[]{});
     if (SNodeOperations.isInstanceOf(javaType, "jetbrains.mps.baseLanguage.structure.ClassifierType")) {
-      jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
       SLinkOperations.setTarget(result, "classifier", SLinkOperations.getTarget(SNodeOperations.cast(javaType, "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), false);
       return result;
     } else {
