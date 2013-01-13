@@ -4,12 +4,12 @@
   <property name="build.tmp" location="${build.dir}/tmp/buildStandalone" />
   <property name="build.layout" location="${build.dir}/artifacts/buildStandalone" />
   <property name="mps_home" location="${basedir}" />
+  <property name="artifacts.buildBootstrapCore" location="${build.dir}/artifacts/buildBootstrapCore" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
-  <property name="artifacts.buildCoreEx" location="${build.dir}/artifacts/buildCoreEx" />
   <property name="artifacts.buildWorkbench" location="${build.dir}/artifacts/buildWorkbench" />
   <property name="artifacts.IDEA" location="${mps_home}" />
-  <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
-  <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
+  <property file="${artifacts.buildBootstrapCore}/build.properties" prefix="import.buildBootstrapCore" />
+  <property name="buildBootstrapCore.version" value="${import.buildBootstrapCore.buildBootstrapCore.version}" />
   
   <target name="assemble" depends="classes, fetchDependencies">
     <mkdir dir="${build.layout}/bin" />
@@ -27,7 +27,7 @@
       <fileset dir="${artifacts.buildWorkbench}/languages" />
     </copy>
     <copy todir="${build.layout}/languages">
-      <fileset dir="${artifacts.buildCore}/languages" />
+      <fileset dir="${artifacts.buildBootstrapCore}/languages" />
     </copy>
     <mkdir dir="${build.layout}/lib" />
     <copy todir="${build.layout}/lib">
@@ -37,7 +37,7 @@
       </fileset>
     </copy>
     <copy todir="${build.layout}/lib">
-      <fileset dir="${artifacts.buildCore}/lib" />
+      <fileset dir="${artifacts.buildBootstrapCore}/lib" />
     </copy>
     <copy todir="${build.layout}/lib">
       <fileset dir="${artifacts.buildWorkbench}/lib" />
@@ -49,7 +49,7 @@
     <mkdir dir="${build.layout}/plugins" />
     <mkdir dir="${build.layout}/plugins/mps-core" />
     <copy todir="${build.layout}/plugins/mps-core">
-      <fileset dir="${artifacts.buildCoreEx}/mps-core" />
+      <fileset dir="${artifacts.buildCore}/mps-core" />
     </copy>
     <mkdir dir="${build.layout}/plugins/cvsIntegration" />
     <copy todir="${build.layout}/plugins/cvsIntegration">
@@ -67,12 +67,12 @@
         <exclude name="**/*.zip" />
       </fileset>
     </copy>
-    <echo file="${build.layout}/build.properties">buildCore.version=${buildCore.version}</echo>
+    <echo file="${build.layout}/build.properties">buildBootstrapCore.version=${buildBootstrapCore.version}</echo>
   </target>
   
   <target name="buildDependents">
+    <ant antfile="build/buildBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   

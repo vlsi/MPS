@@ -56,13 +56,13 @@
     <delete dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib" flatten="true">
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCore/lib"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildBootstrapCore/lib"/>
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildTesting/mps-testing/lib"/>
     </copy>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/languages">
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCore/languages"/>
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCoreEx/mps-core/languages"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildBootstrapCore/languages"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCore/mps-core/languages"/>
       <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildTesting/mps-testing/languages"/>
     </copy>
     <mkdir dir="build/tmp/prepare/java/out/mps-test-ex"/>
@@ -90,11 +90,11 @@
   </target>
 
   <target name="buildCore" depends="loadVars">
-    <ant antfile="../build/buildCore.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="../build/buildBootstrapCore.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
-    <ant antfile="../build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="../build/buildCore.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>

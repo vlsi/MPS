@@ -7,7 +7,7 @@
   <property name="artifacts.buildDates" location="${build.dir}/artifacts/buildDates" />
   <property name="artifacts.buildDeprecatedBuildlanguage" location="${build.dir}/artifacts/buildDeprecatedBuildlanguage" />
   <property file="${artifacts.buildDates}/build.properties" prefix="import.buildDates" />
-  <property name="buildCore.version" value="${import.buildDates.buildCore.version}" />
+  <property name="buildBootstrapCore.version" value="${import.buildDates.buildBootstrapCore.version}" />
   
   <target name="assemble" depends="fetchDependencies">
     <mkdir dir="${build.layout}" />
@@ -15,7 +15,7 @@
       <zipfileset dir="${artifacts.buildDates}/mps-dates" prefix="mps-dates" />
       <zipfileset dir="${artifacts.buildDeprecatedBuildlanguage}/mps-obsolete" prefix="mps-obsolete" />
     </zip>
-    <echo file="${build.layout}/build.properties">buildAdditionalPluginsDist.plugin.version=${plugin.version}${line.separator}buildCore.version=${buildCore.version}</echo>
+    <echo file="${build.layout}/build.properties">buildAdditionalPluginsDist.plugin.version=${plugin.version}${line.separator}buildBootstrapCore.version=${buildBootstrapCore.version}</echo>
   </target>
   
   <target name="buildDependents">

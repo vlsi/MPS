@@ -9,14 +9,14 @@
   </tstamp>
   <property name="idea_home" location="" />
   <property name="mps_home" location="${basedir}" />
+  <property name="artifacts.buildBootstrapCore" location="${build.dir}/artifacts/buildBootstrapCore" />
   <property name="artifacts.buildCore" location="${build.dir}/artifacts/buildCore" />
-  <property name="artifacts.buildCoreEx" location="${build.dir}/artifacts/buildCoreEx" />
   <property name="artifacts.buildTesting" location="${build.dir}/artifacts/buildTesting" />
   <property name="artifacts.buildJava" location="${build.dir}/artifacts/buildJava" />
   <property name="artifacts.buildBuild" location="${build.dir}/artifacts/buildBuild" />
   <property name="artifacts.IDEA" location="${idea_home}" />
-  <property file="${artifacts.buildCore}/build.properties" prefix="import.buildCore" />
-  <property name="buildCore.version" value="${import.buildCore.buildCore.version}" />
+  <property file="${artifacts.buildBootstrapCore}/build.properties" prefix="import.buildBootstrapCore" />
+  <property name="buildBootstrapCore.version" value="${import.buildBootstrapCore.buildBootstrapCore.version}" />
   
   <path id="path.javac2.classpath">
     <fileset dir="${idea_home}/lib">
@@ -40,10 +40,10 @@
   </path>
   
   <path id="path.mps.ant.path">
-    <pathelement location="${artifacts.buildCore}/lib/mps-backend.jar" />
-    <pathelement location="${artifacts.buildCore}/lib/jdom.jar" />
-    <pathelement location="${artifacts.buildCore}/lib/log4j.jar" />
-    <pathelement location="${artifacts.buildCore}/lib/mps-core.jar" />
+    <pathelement location="${artifacts.buildBootstrapCore}/lib/mps-backend.jar" />
+    <pathelement location="${artifacts.buildBootstrapCore}/lib/jdom.jar" />
+    <pathelement location="${artifacts.buildBootstrapCore}/lib/log4j.jar" />
+    <pathelement location="${artifacts.buildBootstrapCore}/lib/mps-core.jar" />
   </path>
   
   <taskdef name="javac2" classname="com.intellij.ant.Javac2" classpathref="path.javac2.classpath" />
@@ -52,15 +52,15 @@
     <mkdir dir="${build.layout}/mps-core" />
     <mkdir dir="${build.layout}/mps-core/languages" />
     <copy todir="${build.layout}/mps-core/languages">
-      <fileset dir="${artifacts.buildCoreEx}/mps-core/languages" />
+      <fileset dir="${artifacts.buildCore}/mps-core/languages" />
     </copy>
     <mkdir dir="${build.layout}/mps-core/languages" />
     <copy todir="${build.layout}/mps-core/languages">
-      <fileset dir="${artifacts.buildCore}/languages" />
+      <fileset dir="${artifacts.buildBootstrapCore}/languages" />
     </copy>
     <mkdir dir="${build.layout}/mps-core/lib" />
     <copy todir="${build.layout}/mps-core/lib">
-      <fileset dir="${artifacts.buildCore}/lib" />
+      <fileset dir="${artifacts.buildBootstrapCore}/lib" />
     </copy>
     <mkdir dir="${build.layout}/mps-core/lib" />
     <mkdir dir="${build.layout}/mps-core/lib/jps" />
@@ -102,7 +102,7 @@
       <zipfileset file="${mps_home}/workbench/mps-editor/source/META-INF/MPSEditor.xml" prefix="META-INF" />
       <fileset dir="${build.tmp}/default/mps-plugin.jar" />
     </jar>
-    <echo file="${build.layout}/mps-core/build.number">version=${buildCore.version}${line.separator}plugin.version=${plugin.version}</echo>
+    <echo file="${build.layout}/mps-core/build.number">version=${buildBootstrapCore.version}${line.separator}plugin.version=${plugin.version}</echo>
     <mkdir dir="${build.layout}/mps-testing" />
     <copy todir="${build.layout}/mps-testing">
       <fileset dir="${artifacts.buildTesting}/mps-testing" />
@@ -189,12 +189,12 @@
     <copy todir="${build.layout}/mps-build">
       <fileset dir="${artifacts.buildBuild}/mps-build" />
     </copy>
-    <echo file="${build.layout}/build.properties">buildPlugin.plugin.version=${plugin.version}${line.separator}buildPlugin.date=${date}${line.separator}buildCore.version=${buildCore.version}</echo>
+    <echo file="${build.layout}/build.properties">buildPlugin.plugin.version=${plugin.version}${line.separator}buildPlugin.date=${date}${line.separator}buildBootstrapCore.version=${buildBootstrapCore.version}</echo>
   </target>
   
   <target name="buildDependents">
+    <ant antfile="build/buildBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildTesting.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildJava.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildBuild.xml" inheritAll="false" useNativeBasedir="true" />
@@ -227,11 +227,11 @@
         <path location="${mps_home}/IdeaPlugin/mps-core/common/src" />
       </src>
       <classpath>
-        <fileset file="${artifacts.buildCore}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-core.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
@@ -240,7 +240,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
-        <fileset file="${artifacts.buildCore}/lib/diffutils-1.2.1.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
@@ -257,13 +257,13 @@
         <path location="${mps_home}/IdeaPlugin/mps-core/jps-plugin/src" />
       </src>
       <classpath>
-        <fileset file="${artifacts.buildCore}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-core.jar" />
         <pathelement path="${build.tmp}/java/out/mps-common" />
-        <fileset file="${artifacts.buildCore}/lib/mps-backend.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-backend.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
@@ -272,7 +272,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
-        <fileset file="${artifacts.buildCore}/lib/diffutils-1.2.1.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
@@ -290,18 +290,18 @@
         <path location="${mps_home}/IdeaPlugin/mps-core/src" />
       </src>
       <classpath>
-        <fileset file="${artifacts.buildCore}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-core.jar" />
         <pathelement path="${build.tmp}/java/out/mps-common" />
-        <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-backend.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-icons.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-ui.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-backend.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-icons.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-ui.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
@@ -310,7 +310,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
-        <fileset file="${artifacts.buildCore}/lib/diffutils-1.2.1.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
@@ -329,11 +329,11 @@
         <path location="${mps_home}/plugins/vcs-core/core/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.buildCore}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-core.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -341,7 +341,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
-        <fileset file="${artifacts.buildCore}/lib/diffutils-1.2.1.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <path refid="path.java.library.idea-vcs" />
         <path refid="path.jdk.classpath" />
       </classpath>
@@ -361,15 +361,15 @@
         <path location="${mps_home}/IdeaPlugin/mps-vcs/source" />
       </src>
       <classpath>
-        <fileset file="${artifacts.buildCore}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-core.jar" />
         <pathelement path="${build.tmp}/java/out/mps-vcs-core" />
-        <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-editor.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -377,7 +377,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
-        <fileset file="${artifacts.buildCore}/lib/diffutils-1.2.1.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <path refid="path.java.library.idea-vcs" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <path refid="path.jdk.classpath" />
@@ -404,18 +404,18 @@
       </src>
       <classpath>
         <pathelement path="${build.tmp}/java/out/mps-java-jps-plugin" />
-        <fileset file="${artifacts.buildCore}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-ui.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-core.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-ui.jar" />
         <pathelement path="${build.tmp}/java/out/mps-common" />
-        <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-editor.jar" />
         <pathelement path="${build.tmp}/java/out/mps-plugin" />
-        <fileset file="${artifacts.buildCore}/lib/mps-icons.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-icons.jar" />
         <fileset file="${artifacts.buildJava}/lib/mps-java-common.jar" />
         <fileset file="${mps_home}/lib/tools.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
@@ -425,7 +425,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
-        <fileset file="${artifacts.buildCore}/lib/diffutils-1.2.1.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
@@ -452,11 +452,11 @@
         <path location="${mps_home}/IdeaPlugin/mps-java/jps-plugin/src" />
       </src>
       <classpath>
-        <fileset file="${artifacts.buildCore}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-core.jar" />
         <pathelement path="${build.tmp}/java/out/mps-common" />
         <fileset file="${artifacts.buildJava}/lib/mps-java-common.jar" />
         <pathelement path="${build.tmp}/java/out/mps-jps-plugin" />
@@ -468,7 +468,7 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
-        <fileset file="${artifacts.buildCore}/lib/diffutils-1.2.1.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
@@ -485,14 +485,14 @@
         <path location="${mps_home}/plugins/vcs/languages/modelmetadata/source_gen" />
       </src>
       <classpath>
-        <fileset file="${artifacts.buildCore}/lib/mps-openapi.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-closures.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-collections.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-tuples.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-core.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-editor-api.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-editor.jar" />
-        <fileset file="${artifacts.buildCore}/lib/mps-platform.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-closures.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-collections.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-core.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-editor.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/mps-platform.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
         <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
@@ -500,11 +500,11 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
         <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
-        <fileset file="${artifacts.buildCore}/lib/diffutils-1.2.1.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
-        <fileset file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-        <fileset file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.project.jar" />
-        <fileset file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.smodel.runtime.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.project.jar" />
+        <fileset file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.runtime.jar" />
         <path refid="path.jdk.classpath" />
       </classpath>
     </javac2>
@@ -520,54 +520,54 @@
   <target name="generate" depends="fetchDependencies, declare-mps-tasks">
     <echo message="generating" />
     <mps.generate parallelMode="true" fork="true">
-      <library file="${artifacts.buildCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
-      <library file="${artifacts.buildCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
-      <library file="${artifacts.buildCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
-      <library file="${artifacts.buildCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
-      <library file="${artifacts.buildCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.extensionMethods.jar" />
-      <library file="${artifacts.buildCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
-      <library file="${artifacts.buildCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.javadoc.jar" />
-      <library file="${artifacts.buildCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
-      <library file="${artifacts.buildCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
-      <library file="${artifacts.buildCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
-      <library file="${artifacts.buildCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
-      <library file="${artifacts.buildCore}/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.behavior.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.generator.generationParameters.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.intentions.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.pattern.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.plugin.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.project.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.quotation.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.refactoring.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.resources.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.scopes.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.script.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.sharedConcepts.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.smodel.runtime.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.stubs.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
-      <library file="${artifacts.buildCore}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
-      <library file="${artifacts.buildCore}/lib/mps-closures.jar" />
-      <library file="${artifacts.buildCore}/lib/mps-collections.jar" />
-      <library file="${artifacts.buildCore}/lib/mps-core.jar" />
-      <library file="${artifacts.buildCore}/lib/mps-editor.jar" />
-      <library file="${artifacts.buildCore}/lib/mps-openapi.jar" />
-      <library file="${artifacts.buildCore}/lib/mps-platform.jar" />
-      <library file="${artifacts.buildCore}/lib/mps-tuples.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.collections.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.extensionMethods.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.javadoc.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.logging.runtime.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.scopes.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguage.tuples.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/baseLanguage/jetbrains.mps.baseLanguageInternal.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.actions.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.behavior.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.checkedName.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.constraints.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.core.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.dataFlow.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.editor.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.findUsages.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.generator.generationContext.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.generator.generationParameters.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.generator.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.intentions.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.pattern.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.plugin.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.project.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.quotation.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.refactoring.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.resources.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.scopes.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.scopes.runtime.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.script.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.sharedConcepts.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.smodel.runtime.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.structure.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.stubs.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.textGen.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
+      <library file="${artifacts.buildBootstrapCore}/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
+      <library file="${artifacts.buildBootstrapCore}/lib/mps-closures.jar" />
+      <library file="${artifacts.buildBootstrapCore}/lib/mps-collections.jar" />
+      <library file="${artifacts.buildBootstrapCore}/lib/mps-core.jar" />
+      <library file="${artifacts.buildBootstrapCore}/lib/mps-editor.jar" />
+      <library file="${artifacts.buildBootstrapCore}/lib/mps-openapi.jar" />
+      <library file="${artifacts.buildBootstrapCore}/lib/mps-platform.jar" />
+      <library file="${artifacts.buildBootstrapCore}/lib/mps-tuples.jar" />
       <chunk>
         <module file="${mps_home}/plugins/vcs/languages/modelmetadata/jetbrains.mps.ide.vcs.modelmetadata.mpl" />
       </chunk>

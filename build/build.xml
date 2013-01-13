@@ -4,8 +4,8 @@
   <property name="idea_home" location=".." />
 
   <target name="build">
+    <ant antfile="buildBootstrapCore.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildCore.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="buildCoreEx.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildTesting.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildJava.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildWorkbench.xml" inheritAll="true" useNativeBasedir="true" />

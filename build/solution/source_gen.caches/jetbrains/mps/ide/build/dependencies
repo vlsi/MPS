@@ -2,11 +2,11 @@
 <dependenciesRoot>
   <dependency className="jetbrains.mps.ide.build.Info.plist" file="Info.plist.xml" />
   <dependency className="jetbrains.mps.ide.build.buildAdditionalPluginsDist" file="buildAdditionalPluginsDist.xml" />
+  <dependency className="jetbrains.mps.ide.build.buildBootstrapCore" file="buildBootstrapCore.xml" />
   <dependency className="jetbrains.mps.ide.build.buildBuild" file="buildBuild.xml" />
   <dependency className="jetbrains.mps.ide.build.buildBuildUI" file="buildBuildUI.xml" />
   <dependency className="jetbrains.mps.ide.build.buildConnectorPlugin" file="buildConnectorPlugin.xml" />
   <dependency className="jetbrains.mps.ide.build.buildCore" file="buildCore.xml" />
-  <dependency className="jetbrains.mps.ide.build.buildCoreEx" file="buildCoreEx.xml" />
   <dependency className="jetbrains.mps.ide.build.buildDates" file="buildDates.xml" />
   <dependency className="jetbrains.mps.ide.build.buildDebuggerPlugin" file="buildDebuggerPlugin.xml" />
   <dependency className="jetbrains.mps.ide.build.buildDeprecatedBuildlanguage" file="buildDeprecatedBuildlanguage.xml" />

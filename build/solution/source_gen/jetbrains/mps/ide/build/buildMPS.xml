@@ -26,7 +26,7 @@
   <property name="artifacts.buildExecutionPlugin" location="${build.dir}/artifacts/buildExecutionPlugin" />
   <property name="artifacts.buildObsolete" location="${build.dir}/artifacts/buildObsolete" />
   <property file="${artifacts.buildBuild}/build.properties" prefix="import.buildBuild" />
-  <property name="buildCore.version" value="${import.buildBuild.buildCore.version}" />
+  <property name="buildBootstrapCore.version" value="${import.buildBuild.buildBootstrapCore.version}" />
   
   <target name="assemble" depends="fetchDependencies">
     <mkdir dir="${build.layout}/bin" />
@@ -145,7 +145,7 @@
     <zip destfile="${build.layout}/samples.zip">
       <zipfileset dir="${basedir}/samples" prefix="MPSSamples" />
     </zip>
-    <echo file="${build.layout}/build.number">build.number=${build.number}${line.separator}date=${date}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${buildCore.version}${line.separator}idea.platform.build.number=${idea.platform.build.number}</echo>
+    <echo file="${build.layout}/build.number">build.number=${build.number}${line.separator}date=${date}${line.separator}revision.number=${build.vcs.number}${line.separator}configuration.name=${teamcity.buildConfName}${line.separator}version=${buildBootstrapCore.version}${line.separator}idea.platform.build.number=${idea.platform.build.number}</echo>
     <copy todir="${build.layout}">
       <fileset file="${basedir}/about.txt" />
     </copy>
@@ -156,11 +156,11 @@
       <fileset file="${basedir}/readme.txt" />
       <filterchain>
         <tokenfilter>
-          <replaceregex pattern="\$version\$" replace="${buildCore.version}" flags="" />
+          <replaceregex pattern="\$version\$" replace="${buildBootstrapCore.version}" flags="" />
         </tokenfilter>
       </filterchain>
     </copy>
-    <echo file="${build.layout}/build.properties">buildMPS.build.number=${build.number}${line.separator}buildMPS.date=${date}${line.separator}buildMPS.build.vcs.number=${build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${teamcity.buildConfName}${line.separator}buildMPS.idea.platform.build.number=${idea.platform.build.number}${line.separator}buildCore.version=${buildCore.version}</echo>
+    <echo file="${build.layout}/build.properties">buildMPS.build.number=${build.number}${line.separator}buildMPS.date=${date}${line.separator}buildMPS.build.vcs.number=${build.vcs.number}${line.separator}buildMPS.teamcity.buildConfName=${teamcity.buildConfName}${line.separator}buildMPS.idea.platform.build.number=${idea.platform.build.number}${line.separator}buildBootstrapCore.version=${buildBootstrapCore.version}</echo>
   </target>
   
   <target name="buildDependents">
