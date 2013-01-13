@@ -15,7 +15,6 @@ import org.jetbrains.annotations.Nullable;
 import java.io.File;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
-import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class PathHolder_Behavior {
   public static void init(SNode thisNode) {
@@ -61,9 +60,9 @@ public class PathHolder_Behavior {
     path = path.replace(File.separator, Util.SEPARATOR);
     SNode pathHolder;
     if ((module != null)) {
-      pathHolder = _quotation_createNode_ohoc40_a0a0c0b(ModuleUtil.getRelativePath(path, homePath), module, ModuleUtil.getRelativePath(path, Module_Behavior.call_getModuleDescriptorPath_4777659345280330855(module)));
+      pathHolder = createPathHolder_ohoc40_a0a0c0b(ModuleUtil.getRelativePath(path, homePath), ModuleUtil.getRelativePath(path, Module_Behavior.call_getModuleDescriptorPath_4777659345280330855(module)), module);
     } else {
-      pathHolder = _quotation_createNode_ohoc40_a0a0a2a1(ModuleUtil.getRelativePath(path, homePath));
+      pathHolder = createPathHolder_ohoc40_a0a0a2a1(ModuleUtil.getRelativePath(path, homePath));
     }
 
     if (SPropertyOperations.getString(pathHolder, "fullPath").equals(path)) {
@@ -88,20 +87,18 @@ public class PathHolder_Behavior {
     return pathHolder;
   }
 
-  private static SNode _quotation_createNode_ohoc40_a0a0c0b(Object parameter_1, Object parameter_2, Object parameter_3) {
-    SNode quotedNode_4 = null;
-    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathHolder", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setProperty(quotedNode_4, "fullPath", (String) parameter_1);
-    SNodeAccessUtil.setProperty(quotedNode_4, "moduleRelativePath", (String) parameter_3);
-    SNodeAccessUtil.setReferenceTarget(quotedNode_4, "module", (SNode) parameter_2);
-    return quotedNode_4;
+  private static SNode createPathHolder_ohoc40_a0a0c0b(Object p0, Object p1, Object p2) {
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathHolder", null, GlobalScope.getInstance(), false);
+    n1.setProperty("fullPath", (String) p0);
+    n1.setProperty("moduleRelativePath", (String) p1);
+    n1.setReferent("module", (SNode) p2);
+    return n1;
   }
 
-  private static SNode _quotation_createNode_ohoc40_a0a0a2a1(Object parameter_1) {
-    SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathHolder", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setProperty(quotedNode_2, "fullPath", (String) parameter_1);
-    return quotedNode_2;
+  private static SNode createPathHolder_ohoc40_a0a0a2a1(Object p0) {
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathHolder", null, GlobalScope.getInstance(), false);
+    n1.setProperty("fullPath", (String) p0);
+    return n1;
   }
 
   private static boolean eq_ohoc40_a0a0a0a0a2a0a0e0g(Object a, Object b) {

@@ -428,8 +428,8 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_swz52f_a0a0a1a3a3a2a2a1a4a1a3a4a1a1a1a4a1a2);
                                   environment.nodeCopied(context30, tnode32, "tpl/r:00000000-0000-4000-0000-011c8959034c/6497389703574369323");
-                                  tnode32.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode32, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil.setProperty(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String):void")));
-                                  tnode32.setReference("classConcept", SReference.create("classConcept", tnode32, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil")));
+                                  tnode32.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode32, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil.setProperty(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String):void")));
+                                  tnode32.setReference("classConcept", SReference.create("classConcept", tnode32, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil")));
 
                                   {
                                     final SNode tnode33 = new SNode("jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression");
@@ -561,8 +561,8 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_swz52f_a0a0a1a3a3a2a2a1a5a1a3a4a1a1a1a4a1a2);
                                   environment.nodeCopied(context38, tnode40, "tpl/r:00000000-0000-4000-0000-011c8959034c/6497389703574369231");
-                                  tnode40.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode40, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil.setProperty(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String):void")));
-                                  tnode40.setReference("classConcept", SReference.create("classConcept", tnode40, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil")));
+                                  tnode40.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode40, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil.setProperty(jetbrains.mps.smodel.SNode,java.lang.String,java.lang.String):void")));
+                                  tnode40.setReference("classConcept", SReference.create("classConcept", tnode40, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil")));
 
                                   {
                                     final SNode tnode41 = new SNode("jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression");
@@ -1009,8 +1009,8 @@ public class TemplateQuotedNode__to__statementList implements TemplateDeclaratio
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_swz52f_a0a0a1a3a3a2a2a1a7a1a3a4a1a1a1a4a1a2);
                                   environment.nodeCopied(context64, tnode66, "tpl/r:00000000-0000-4000-0000-011c8959034c/6497389703574369497");
-                                  tnode66.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode66, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil.setReferenceTarget(jetbrains.mps.smodel.SNode,java.lang.String,jetbrains.mps.smodel.SNode):void")));
-                                  tnode66.setReference("classConcept", SReference.create("classConcept", tnode66, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil")));
+                                  tnode66.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode66, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil.setReferenceTarget(jetbrains.mps.smodel.SNode,java.lang.String,jetbrains.mps.smodel.SNode):void")));
+                                  tnode66.setReference("classConcept", SReference.create("classConcept", tnode66, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil")));
 
                                   {
                                     final SNode tnode67 = new SNode("jetbrains.mps.lang.smodel.structure.SemanticDowncastExpression");
