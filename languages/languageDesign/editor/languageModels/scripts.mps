@@ -30,14 +30,14 @@
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1234198385755">
-      <property name="title" nameId="tp33.1177457669450" value="Horizontal Gap Migration" />
       <property name="category" nameId="tp33.1206123296179" value="editor language" />
-      <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
+      <property name="title" nameId="tp33.1177457669450" value="Horizontal Gap Migration" />
       <property name="name" nameId="tpck.1169194664001" value="HorizontalGapMigration" />
+      <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1237726848485">
-      <property name="title" nameId="tp33.1177457669450" value="Migration to Indent Layout" />
       <property name="category" nameId="tp33.1206123296179" value="editor language" />
+      <property name="title" nameId="tp33.1177457669450" value="Migration to Indent Layout" />
       <property name="name" nameId="tpck.1169194664001" value="MigrationToIndentLayout" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="113254018726283913">
@@ -793,19 +793,19 @@
         <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dgetSelectedNodes()%cjava%dutil%dList" resolveInfo="getSelectedNodes" />
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="8543458906717841674">
-        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dselectWRTFocusPolicy(jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="selectWRTFocusPolicy" />
+        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dselectWRTFocusPolicy(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolveInfo="selectWRTFocusPolicy" />
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="8543458906717841676">
-        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dselectWRTFocusPolicy(jetbrains%dmps%dsmodel%dSNode,boolean)%cvoid" resolveInfo="selectWRTFocusPolicy" />
+        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dselectWRTFocusPolicy(org%djetbrains%dmps%dopenapi%dmodel%dSNode,boolean)%cvoid" resolveInfo="selectWRTFocusPolicy" />
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="8543458906717841678">
-        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dselect(jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="select" />
+        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dselect(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolveInfo="select" />
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="648724407925493129">
         <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dselectRange(org%djetbrains%dmps%dopenapi%dmodel%dSNode,org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolveInfo="selectRange" />
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="3123233722122453196">
-        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dselect(jetbrains%dmps%dsmodel%dSNode,java%dlang%dString)%cvoid" resolveInfo="select" />
+        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dselect(org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)%cvoid" resolveInfo="select" />
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="8543458906717841679">
         <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dselectBefore(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolveInfo="selectBefore" />
@@ -842,10 +842,10 @@
         <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dgetScope()%cjetbrains%dmps%dsmodel%dIScope" resolveInfo="getScope" />
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="8543458906717841690">
-        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dcreateNodeCell(jetbrains%dmps%dsmodel%dSNode)%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell" resolveInfo="createNodeCell" />
+        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dcreateNodeCell(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell" resolveInfo="createNodeCell" />
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="8543458906717841691">
-        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dcreateReferentCell(jetbrains%dmps%dsmodel%dSNode,jetbrains%dmps%dsmodel%dSNode,java%dlang%dString)%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell" resolveInfo="createReferentCell" />
+        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dcreateReferentCell(org%djetbrains%dmps%dopenapi%dmodel%dSNode,org%djetbrains%dmps%dopenapi%dmodel%dSNode,java%dlang%dString)%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell" resolveInfo="createReferentCell" />
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="3254845250973447377">
         <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorContext%dcreateRoleAttributeCell(java%dlang%dClass,jetbrains%dmps%dopenapi%deditor%dcells%dEditorCell,org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cjetbrains%dmps%dopenapi%deditor%dcells%dEditorCell" resolveInfo="createRoleAttributeCell" />
@@ -882,7 +882,7 @@
     <node role="part" roleId="tp33.1177458178889" type="tp33.ExtractInterfaceMigration" typeId="tp33.6655357163912246425" id="8543458906717841699">
       <link role="newClassifier" roleId="tp33.6655357163912246427" targetNodeId="srng.~EditorComponent" resolveInfo="EditorComponent" />
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="8543458906717841700">
-        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorComponent%dselectNode(jetbrains%dmps%dsmodel%dSNode)%cvoid" resolveInfo="selectNode" />
+        <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorComponent%dselectNode(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cvoid" resolveInfo="selectNode" />
       </node>
       <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="8543458906717851751">
         <link role="oldMethodDeclaration" roleId="tp33.4242940223545038297" targetNodeId="9a8.~EditorComponent%dgetDeepestSelectedCell()%cjetbrains%dmps%dnodeEditor%dcells%dEditorCell" resolveInfo="getDeepestSelectedCell" />
