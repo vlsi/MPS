@@ -23,7 +23,7 @@
     <ant antfile="mpsDeprecatedBuildlanguage.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="mpsObsolete.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="mpsBuildUI.xml" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="mpsMPS.xml" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="mps.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="mpsDistribution.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="mpsExe.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="${mps.sign}/mpsDmg.xml" inheritAll="true" useNativeBasedir="true" />
