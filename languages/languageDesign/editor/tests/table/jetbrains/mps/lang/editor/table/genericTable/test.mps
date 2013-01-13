@@ -414,7 +414,7 @@
           <property name="value" nameId="2qyu.2882388703616155301" value="$1 0$" />
         </node>
         <node role="cells" roleId="2qyu.2882388703616155303" type="2qyu.DataCell" typeId="2qyu.2882388703616155300" id="6170050146384276539">
-          <property name="value" nameId="2qyu.2882388703616155301" value="newValue" />
+          <property name="value" nameId="2qyu.2882388703616155301" value="newValue 1$" />
           <node role="smodelAttribute" roleId="tpck.5169995583184591170" type="tp5g.AnonymousCellAnnotation" typeId="tp5g.1229194968594" id="6170050146384276540">
             <property name="isLastPosition" nameId="tp5g.1229432188737" value="true" />
             <property name="useLabelSelection" nameId="tp5g.1932269937152561478" value="true" />
