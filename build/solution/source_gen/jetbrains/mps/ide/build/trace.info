@@ -23,7 +23,7 @@
     <unitInfo nodeId="4197214709894135186" fileName="mpsObsolete.xml" startLine="1" startPosition="0" endLine="902" endPosition="10" unitName="jetbrains.mps.ide.build.mpsObsolete" />
   </root>
   <root nodeId="4301118715654192646" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="4301118715654192646" fileName="mps.xml" startLine="1" startPosition="0" endLine="190" endPosition="10" unitName="jetbrains.mps.ide.build.mps" />
+    <unitInfo nodeId="4301118715654192646" fileName="mps.xml" startLine="1" startPosition="0" endLine="196" endPosition="10" unitName="jetbrains.mps.ide.build.mps" />
   </root>
   <root nodeId="4301118715654497533" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
     <unitInfo nodeId="4301118715654497533" fileName="mpsDistribution.xml" startLine="1" startPosition="0" endLine="186" endPosition="10" unitName="jetbrains.mps.ide.build.mpsDistribution" />

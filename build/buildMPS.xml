@@ -25,6 +25,7 @@
   <property name="artifacts.mpsDebuggerPlugin" location="${build.dir}/artifacts/mpsDebuggerPlugin" />
   <property name="artifacts.mpsExecutionPlugin" location="${build.dir}/artifacts/mpsExecutionPlugin" />
   <property name="artifacts.mpsObsolete" location="${build.dir}/artifacts/mpsObsolete" />
+  <property name="artifacts.mpsTesting" location="${build.dir}/artifacts/mpsTesting" />
   <property file="${artifacts.mpsBuild}/build.properties" prefix="import.mpsBuild" />
   <property name="mpsBootstrapCore.version" value="${import.mpsBuild.mpsBootstrapCore.version}" />
   
@@ -142,6 +143,10 @@
     <copy todir="${build.layout}/plugins">
       <fileset dir="${artifacts.mpsDebuggerPlugin}" />
     </copy>
+    <mkdir dir="${build.layout}/plugins/mps-testing" />
+    <copy todir="${build.layout}/plugins/mps-testing">
+      <fileset dir="${artifacts.mpsTesting}/mps-testing" />
+    </copy>
     <zip destfile="${build.layout}/samples.zip">
       <zipfileset dir="${basedir}/samples" prefix="MPSSamples" />
     </zip>
@@ -177,6 +182,7 @@
     <ant antfile="build/buildDebuggerPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" />
     <ant antfile="build/buildObsolete.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/buildTesting.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />

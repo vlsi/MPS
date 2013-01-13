@@ -12976,6 +12976,9 @@
         <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_ImportContent" typeId="3ior.5610619299013057363" id="2298500495070900792">
           <link role="target" roleId="3ior.5610619299013057365" targetNodeId="6164334420696839316" />
         </node>
+        <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Import" typeId="3ior.841011766565753074" id="6351096925857354050">
+          <link role="target" roleId="3ior.841011766565753076" targetNodeId="618786790401897005" resolveInfo="mps-testing" />
+        </node>
       </node>
       <node role="children" roleId="3ior.7389400916848037006" type="3ior.BuildLayout_Zip" typeId="3ior.7389400916848050071" id="1890976590445582744">
         <node role="containerName" roleId="3ior.4380385936562148502" type="3ior.BuildStringNotEmpty" typeId="3ior.841011766566059607" id="1890976590445582745">
@@ -13112,6 +13115,9 @@
     </node>
     <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="4197214709894300289">
       <link role="script" roleId="3ior.5617550519002745380" targetNodeId="4197214709894135186" resolveInfo="mpsObsolete" />
+    </node>
+    <node role="dependencies" roleId="3ior.5617550519002745381" type="3ior.BuildProjectDependency" typeId="3ior.4993211115183325728" id="6351096925857345116">
+      <link role="script" roleId="3ior.5617550519002745380" targetNodeId="618786790401812237" resolveInfo="mpsTesting" />
     </node>
   </root>
   <root id="4301118715654819483">
