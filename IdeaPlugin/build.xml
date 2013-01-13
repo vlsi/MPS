@@ -90,37 +90,37 @@
   </target>
 
   <target name="buildCore" depends="loadVars">
-    <ant antfile="../build/buildBootstrapCore.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="../build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
-    <ant antfile="../build/buildCore.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="../build/mpsCore.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
-    <ant antfile="../build/buildTesting.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="../build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
-    <ant antfile="../build/buildBuild.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="../build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
-    <ant antfile="../build/buildJava.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="../build/mpsJava.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
   </target>
 
   <target name="build" depends="buildCore">
-    <ant antfile="buildPlugin.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="mpsPlugin.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
   </target>
 
   <target name="buildTests" depends="build">
-    <ant antfile="buildPluginTests.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="mpsPluginTests.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
@@ -174,7 +174,7 @@
   </target>
 
   <target name="zip" depends="build">
-    <ant antfile="buildPluginDist.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="mpsPluginDist.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
       <property name="plugin.version" value="${plugin.version}"/>

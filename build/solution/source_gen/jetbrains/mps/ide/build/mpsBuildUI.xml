@@ -115,13 +115,13 @@
   </target>
   
   <target name="buildDependents">
-    <ant antfile="build/buildBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildTesting.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildBuild.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildDebuggerPlugin.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsExecutionPlugin.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsDebuggerPlugin.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />

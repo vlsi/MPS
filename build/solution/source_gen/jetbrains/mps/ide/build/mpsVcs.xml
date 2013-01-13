@@ -102,12 +102,12 @@
   </target>
   
   <target name="buildDependents">
-    <ant antfile="build/buildBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildPlugins.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildMakePlugin.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsPlugins.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsMakePlugin.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />

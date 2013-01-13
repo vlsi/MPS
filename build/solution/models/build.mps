@@ -14,12 +14,12 @@
   <roots>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="7926701909975931624">
       <property name="name" nameId="tpck.1169194664001" value="mpsBootstrapCore" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildBootstrapCore.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsBootstrapCore.xml" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="2569834391839970845">
       <property name="name" nameId="tpck.1169194664001" value="mpsWorkbench" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildWorkbench.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsWorkbench.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
@@ -28,90 +28,90 @@
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="5148601452480491524">
       <property name="name" nameId="tpck.1169194664001" value="mpsPlugin" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildPlugin.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsPlugin.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="plugin" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4301118715654497533">
       <property name="name" nameId="tpck.1169194664001" value="mpsDistribution" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildDistribution.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsDistribution.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4301118715654192646">
       <property name="name" nameId="tpck.1169194664001" value="mps" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildMPS.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mps.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4301118715654819483">
       <property name="name" nameId="tpck.1169194664001" value="mpsTroveCollections" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildTroveCollections.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsTroveCollections.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6391307088354381121">
       <property name="name" nameId="tpck.1169194664001" value="mpsPlugins" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildPlugins.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsPlugins.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="8524659923334108558">
       <property name="name" nameId="tpck.1169194664001" value="mpsBuild" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildBuild.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsBuild.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="1545517825663017278">
       <property name="name" nameId="tpck.1169194664001" value="mpsVcs" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildVcs.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsVcs.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="8658995123701267517">
       <property name="name" nameId="tpck.1169194664001" value="mpsPluginDist" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildPluginDist.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsPluginDist.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="plugin" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6164334420696839314">
       <property name="name" nameId="tpck.1169194664001" value="mpsDebuggerPlugin" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildDebuggerPlugin.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsDebuggerPlugin.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6361939271669846483">
       <property name="name" nameId="tpck.1169194664001" value="mpsExecutionPlugin" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildExecutionPlugin.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsExecutionPlugin.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="2075442863766408895">
       <property name="name" nameId="tpck.1169194664001" value="mpsExperimental" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildExperimental.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsExperimental.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6503539749405386437">
       <property name="name" nameId="tpck.1169194664001" value="mpsCore" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildCore.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsCore.xml" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="8227093612176368028">
       <property name="name" nameId="tpck.1169194664001" value="mpsBuildUI" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildBuildUI.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsBuildUI.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6977615362525216882">
       <property name="name" nameId="tpck.1169194664001" value="mpsPluginTests" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildPluginTests.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsPluginTests.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="plugin" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="5970299968953452763">
       <property name="name" nameId="tpck.1169194664001" value="mpsConnectorPlugin" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildConnectorPlugin.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsConnectorPlugin.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
@@ -123,60 +123,60 @@
     </node>
     <node type="tpih.GDocument" typeId="tpih.1184639540818" id="716066598061903449">
       <property name="extension" nameId="tpih.1184639664013" value="nsi" />
-      <property name="documentName" nameId="tpih.1184639635512" value="installer" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.data" />
+      <property name="documentName" nameId="tpih.1184639635512" value="installer" />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4197214709894135186">
       <property name="name" nameId="tpck.1169194664001" value="mpsObsolete" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildObsolete.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsObsolete.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4061567211001166715">
       <property name="name" nameId="tpck.1169194664001" value="mpsDates" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildDates.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsDates.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="5548512857136492214">
       <property name="name" nameId="tpck.1169194664001" value="mpsDevKit" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildDevKit.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsDevKit.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="1392391688312941958">
       <property name="name" nameId="tpck.1169194664001" value="mpsStandalone" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildStandalone.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsStandalone.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="6265574260762011003">
       <property name="name" nameId="tpck.1169194664001" value="mpsMakePlugin" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildMakePlugin.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsMakePlugin.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="ide.plugins" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="4416206207494300367">
       <property name="name" nameId="tpck.1169194664001" value="mpsDeprecatedBuildlanguage" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildDeprecatedBuildlanguage.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsDeprecatedBuildlanguage.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="359586707446245098">
       <property name="name" nameId="tpck.1169194664001" value="mpsAdditionalPluginsDist" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildAdditionalPluginsDist.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsAdditionalPluginsDist.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="plugin" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="7401958389406848608">
       <property name="name" nameId="tpck.1169194664001" value="mpsJava" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildJava.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsJava.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
     <node type="3ior.BuildProject" typeId="3ior.5617550519002745363" id="618786790401812237">
       <property name="name" nameId="tpck.1169194664001" value="mpsTesting" />
-      <property name="fileName" nameId="3ior.4915877860348071612" value="buildTesting.xml" />
+      <property name="fileName" nameId="3ior.4915877860348071612" value="mpsTesting.xml" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="common" />
       <property name="internalBaseDirectory" nameId="3ior.5204048710541015587" value="../.." />
     </node>
@@ -185,8 +185,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="927724900262328564">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="8055294676438936916">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -799,8 +799,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="1085569310939354355">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="optionsName" nameId="3ior.927724900262033859" value="withoutXmls" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="1085569310939354356">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
@@ -9054,8 +9054,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="1659807394255099741">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="8055294676438936914">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -9122,8 +9122,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="8241785156573698281">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="optionsName" nameId="3ior.927724900262033859" value="mps-workbench-specific" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="8241785156573698282">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
@@ -10540,8 +10540,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="1659807394255099739">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="8055294676438936915">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -13172,8 +13172,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="5875180246329088819">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="5875180246329088820">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -13373,8 +13373,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="6391307088354381144">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="6391307088354381145">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -14099,8 +14099,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="5249031859942907433">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="5249031859942907434">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -14416,8 +14416,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="1545517825663017279">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="1545517825663017280">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -14702,8 +14702,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="5249031859942907430">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="5249031859942907431">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -16238,8 +16238,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="5249031859942907427">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="5249031859942907428">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -18200,8 +18200,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="2075442863766408896">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="2075442863766408897">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -20280,8 +20280,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="1185869098826025451">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="1185869098826025452">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -20925,8 +20925,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="8227093612176368070">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="8227093612176368071">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -21083,8 +21083,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="6977615362525485149">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="256" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="256" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="6977615362525485150">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -21423,8 +21423,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="5970299968953452769">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="5970299968953452770">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -22220,8 +22220,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="4197214709894135187">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="4197214709894135188">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -23053,8 +23053,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="4061567211001166737">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="4061567211001166738">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -23492,8 +23492,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="7322192058491640277">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="7322192058491640278">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -24716,8 +24716,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="6265574260762011004">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="6265574260762011005">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>
@@ -24820,8 +24820,8 @@
     <node role="parts" roleId="3ior.7389400916848080626" type="3ior.BuildSource_JavaOptions" typeId="3ior.927724900262033858" id="4416206207494300368">
       <property name="generateDebugInfo" nameId="3ior.927724900262033861" value="true" />
       <property name="copyResources" nameId="3ior.927724900262033862" value="true" />
-      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <property name="compiler" nameId="3ior.2059109515400425365" value="IntelliJ" />
+      <property name="heapSize" nameId="3ior.927724900262398947" value="1024" />
       <node role="resourceSelectors" roleId="3ior.927724900262033863" type="3ior.BuildFileIncludesSelector" typeId="3ior.8654221991637384182" id="4416206207494300369">
         <property name="pattern" nameId="3ior.8654221991637384184" value="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       </node>

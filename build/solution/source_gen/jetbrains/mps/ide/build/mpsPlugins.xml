@@ -127,11 +127,11 @@
   </target>
   
   <target name="buildDependents">
-    <ant antfile="build/buildBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildCore.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildJava.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
-    <ant antfile="build/buildTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsCore.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsJava.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsWorkbench.xml" inheritAll="false" useNativeBasedir="true" />
+    <ant antfile="build/mpsTroveCollections.xml" inheritAll="false" useNativeBasedir="true" />
   </target>
   
   <target name="fetchDependencies" />
