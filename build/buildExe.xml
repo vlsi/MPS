@@ -1,8 +1,8 @@
-<project name="buildExe" default="assemble" basedir="../">
+<project name="mpsExe" default="assemble" basedir="../">
   <property name="build.dir" location="build"/>
-  <property name="build.tmp" location="${build.dir}/tmp/buildExe"/>
-  <property name="build.layout" location="${build.dir}/artifacts/buildExe"/>
-  <property name="artifacts.buildMPS" location="${build.dir}/artifacts/buildMPS"/>
+  <property name="build.tmp" location="${build.dir}/tmp/mpsExe"/>
+  <property name="build.layout" location="${build.dir}/artifacts/mpsExe"/>
+  <property name="artifacts.buildMPS" location="${build.dir}/artifacts/mps"/>
   <property name="mps.sign" location="${basedir}/build/sign"/>
 
   <property file="${artifacts.buildMPS}/build.properties" prefix="import.buildMPS" />
