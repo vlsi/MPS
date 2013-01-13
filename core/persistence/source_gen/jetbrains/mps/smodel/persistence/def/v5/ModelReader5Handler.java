@@ -439,7 +439,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     protected SNode createObject(Attributes attrs) {
       String rawFqName = attrs.getValue("type");
       String conceptFQName = VersionUtil.getConceptFQName(rawFqName);
-      jetbrains.mps.smodel.SNode node = new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFQName));
+      SNode node = new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFQName));
       VersionUtil.fetchConceptVersion(rawFqName, node, fieldversionsInfo);
       return node;
     }
@@ -451,7 +451,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
-      jetbrains.mps.smodel.SNode result = (jetbrains.mps.smodel.SNode) resultObject;
+      SNode result = (SNode) resultObject;
       if ("type".equals(name)) {
         return;
       }
@@ -465,7 +465,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
         if (id == null) {
           throw new SAXParseException("bad node ID", null);
         }
-        result.setId(id);
+        ((jetbrains.mps.smodel.SNode) result).setId(id);
         return;
       }
       super.handleAttribute(resultObject, name, value);

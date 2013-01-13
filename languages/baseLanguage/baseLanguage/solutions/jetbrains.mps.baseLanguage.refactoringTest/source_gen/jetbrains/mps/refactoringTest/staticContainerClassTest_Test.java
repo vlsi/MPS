@@ -33,7 +33,7 @@ public class staticContainerClassTest_Test extends BaseTransformationTest4 {
       this.addNodeById("1230052684697");
       this.addNodeById("1230052684705");
       this.addNodeById("1230052684709");
-      jetbrains.mps.smodel.SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
+      SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
       SLinkOperations.setTarget(call, "baseMethodDeclaration", SNodeOperations.cast(this.getNodeById("1230052684711"), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
       SLinkOperations.setTarget(call, "classConcept", SNodeOperations.cast(this.getNodeById("1230052684710"), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("1230052684702"), "jetbrains.mps.baseLanguage.structure.IntegerConstant"), call);

@@ -46,7 +46,7 @@ public class LocalMethodCallsMigration {
       }
 
       public SNode migrateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null);
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null);
         SLinkOperations.setTarget(result, "baseMethodDeclaration", SLinkOperations.getTarget(node, "baseMethodDeclaration", false), false);
 
         // todo: make it in right way 

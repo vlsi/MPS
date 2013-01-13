@@ -87,7 +87,7 @@ public class AddScopeTestAnnotation_Intention implements IntentionFactory {
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      jetbrains.mps.smodel.SNode newAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ScopesTest", null);
+      SNode newAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ScopesTest", null);
       AttributeOperations.setAttribute(node, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.test.structure.ScopesTest")), newAnnotation);
 
       if (ScopesTest_Behavior.isSimple_5449224527592395483(node)) {
@@ -95,7 +95,7 @@ public class AddScopeTestAnnotation_Intention implements IntentionFactory {
         Scope scope = ModelConstraints.getScope(ScopesTest_Behavior.call_getCheckingReference_5449224527592367549(newAnnotation));
 
         for (SNode avaliable : scope.getAvailableElements(null)) {
-          jetbrains.mps.smodel.SNode expectedNode = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ScopesExpectedNode", null);
+          SNode expectedNode = SConceptOperations.createNewNode("jetbrains.mps.lang.test.structure.ScopesExpectedNode", null);
           SLinkOperations.setTarget(expectedNode, "ref", avaliable, false);
           ListSequence.fromList(SLinkOperations.getTargets(newAnnotation, "nodes", true)).addElement(expectedNode);
         }

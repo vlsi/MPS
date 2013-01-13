@@ -4,8 +4,6 @@ package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.smodel.SModel;
 import java.util.List;
-
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
@@ -27,6 +25,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import java.util.HashSet;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.LongestCommonSubsequenceFinder;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;

@@ -40,7 +40,7 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.refactoring.framework.RefactoringNodeMembersAccessModifier;
-import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.make.MakeSession;
 import jetbrains.mps.make.IMakeService;
@@ -286,7 +286,7 @@ public class RefactoringFacade {
     //  save all before launching make 
     context.setUpMembersAccessModifier(modifier);
     modifier.addModelsToModify(sourceModels);
-    jetbrains.mps.smodel.SNode.setNodeMemberAccessModifier(modifier);
+    SNode.setNodeMemberAccessModifier(modifier);
     for (SModel model : sourceModels) {
       if (!(model.isDisposed())) {
         descriptors.add(model.getModelDescriptor());
@@ -316,6 +316,6 @@ public class RefactoringFacade {
   }
 
   private void onGenerationFinished() {
-    jetbrains.mps.smodel.SNode.setNodeMemberAccessModifier(null);
+    SNode.setNodeMemberAccessModifier(null);
   }
 }

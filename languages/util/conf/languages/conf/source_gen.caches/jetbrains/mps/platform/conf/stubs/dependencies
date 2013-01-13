@@ -37,6 +37,7 @@
     <classNode dependClassName="org.jdom.Namespace" />
     <classNode dependClassName="org.jdom.filter.AbstractFilter" />
     <classNode dependClassName="org.jdom.filter.ElementFilter" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.platform.conf.stubs.ConfStubSource" file="ConfStubSource.java">
     <classNode dependClassName="java.io.IOException" />
@@ -73,6 +74,7 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="org.jdom.input.SAXBuilder" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.extapi.persistence.FolderSetDataSource" />
     <classNode extendsClassName="jetbrains.mps.findUsages.fastfind.FastFindSupportProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.descriptor.source.StubModelDataSource" />

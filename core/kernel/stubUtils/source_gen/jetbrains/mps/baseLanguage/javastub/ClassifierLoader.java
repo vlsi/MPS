@@ -83,7 +83,7 @@ public class ClassifierLoader {
   }
 
   private SNode createClassifierForClass(String fqName, ClassReader reader) {
-    jetbrains.mps.smodel.SNode result = null;
+    SNode result = null;
     ClassifierKind kind = ClassifierKind.getClassifierKind(reader);
     if (kind == null) {
       return null;
@@ -100,7 +100,7 @@ public class ClassifierLoader {
       return null;
     }
     SPropertyOperations.set(result, "name", NameUtil.shortNameFromLongName(fqName.replace('$', '.')));
-    result.setId(ASMNodeId.createId(fqName));
+    ((jetbrains.mps.smodel.SNode) result).setId(ASMNodeId.createId(fqName));
     return result;
   }
 }

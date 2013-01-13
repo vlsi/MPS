@@ -34,11 +34,11 @@
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.IBreakpointPropertiesUi" />
     <classNode dependClassName="jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint" />
     <classNode dependClassName="jetbrains.mps.nanoc.debug.breakpoints.GDBBreakpoint" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider" />
   </dependency>
 </dependenciesRoot>

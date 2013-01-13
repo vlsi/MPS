@@ -4,7 +4,6 @@ package jetbrains.mps.lang.pattern.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
-import jetbrains.mps.util.IterableUtil;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.TestCase;
@@ -16,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -78,7 +78,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest4 {
               return false;
             }
             {
-              SNode childVar_OrPattern_7ozj7q_a0a = IterableUtil.asList(nodeToMatch_OrPattern_7ozj7q_a0.getChildren(childRole_OrPattern_7ozj7q_)).get(0);
+              SNode childVar_OrPattern_7ozj7q_a0a = IterableUtil.get(nodeToMatch_OrPattern_7ozj7q_a0.getChildren(childRole_OrPattern_7ozj7q_), 0);
               {
                 SNode nodeToMatch_OrPattern_7ozj7q_a0a;
                 nodeToMatch_OrPattern_7ozj7q_a0a = childVar_OrPattern_7ozj7q_a0a;
@@ -91,7 +91,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest4 {
                     return false;
                   }
                   {
-                    SNode childVar_OrPattern_7ozj7q_a0a0 = IterableUtil.asList(nodeToMatch_OrPattern_7ozj7q_a0a.getChildren(childRole_OrPattern_7ozj7q__0)).get(0);
+                    SNode childVar_OrPattern_7ozj7q_a0a0 = IterableUtil.get(nodeToMatch_OrPattern_7ozj7q_a0a.getChildren(childRole_OrPattern_7ozj7q__0), 0);
                     this.patternVar_body = childVar_OrPattern_7ozj7q_a0a0;
                   }
                 }
@@ -104,7 +104,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest4 {
               return false;
             }
             {
-              SNode childVar_OrPattern_7ozj7q_a0a_0 = IterableUtil.asList(nodeToMatch_OrPattern_7ozj7q_a0.getChildren(childRole_OrPattern_7ozj7q__1)).get(0);
+              SNode childVar_OrPattern_7ozj7q_a0a_0 = IterableUtil.get(nodeToMatch_OrPattern_7ozj7q_a0.getChildren(childRole_OrPattern_7ozj7q__1), 0);
               {
                 SNode nodeToMatch_OrPattern_7ozj7q_a0a_0;
                 nodeToMatch_OrPattern_7ozj7q_a0a_0 = childVar_OrPattern_7ozj7q_a0a_0;
@@ -173,7 +173,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest4 {
                 return false;
               }
               {
-                SNode childVar_OrPattern_7ozj7q_a0a0a0 = IterableUtil.asList(nodeToMatch_OrPattern_7ozj7q_a0a0a.getChildren(childRole_OrPattern_7ozj7q__2)).get(0);
+                SNode childVar_OrPattern_7ozj7q_a0a0a0 = IterableUtil.get(nodeToMatch_OrPattern_7ozj7q_a0a0a.getChildren(childRole_OrPattern_7ozj7q__2), 0);
                 {
                   SNode nodeToMatch_OrPattern_7ozj7q_a0a0a0;
                   nodeToMatch_OrPattern_7ozj7q_a0a0a0 = childVar_OrPattern_7ozj7q_a0a0a0;
@@ -187,7 +187,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest4 {
                 return false;
               }
               {
-                SNode childVar_OrPattern_7ozj7q_a0a0a0_0 = IterableUtil.asList(nodeToMatch_OrPattern_7ozj7q_a0a0a.getChildren(childRole_OrPattern_7ozj7q__3)).get(0);
+                SNode childVar_OrPattern_7ozj7q_a0a0a0_0 = IterableUtil.get(nodeToMatch_OrPattern_7ozj7q_a0a0a.getChildren(childRole_OrPattern_7ozj7q__3), 0);
                 {
                   SNode nodeToMatch_OrPattern_7ozj7q_a0a0a0_0;
                   nodeToMatch_OrPattern_7ozj7q_a0a0a0_0 = childVar_OrPattern_7ozj7q_a0a0a0_0;
@@ -233,7 +233,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest4 {
                 return false;
               }
               {
-                SNode childVar_OrPattern_7ozj7q_a0b0a0 = IterableUtil.asList(nodeToMatch_OrPattern_7ozj7q_a1a0a.getChildren(childRole_OrPattern_7ozj7q__4)).get(0);
+                SNode childVar_OrPattern_7ozj7q_a0b0a0 = IterableUtil.get(nodeToMatch_OrPattern_7ozj7q_a1a0a.getChildren(childRole_OrPattern_7ozj7q__4), 0);
                 {
                   SNode nodeToMatch_OrPattern_7ozj7q_a0b0a0;
                   nodeToMatch_OrPattern_7ozj7q_a0b0a0 = childVar_OrPattern_7ozj7q_a0b0a0;
@@ -249,7 +249,7 @@ public class PatternOrPattern_Test extends BaseTransformationTest4 {
                 return false;
               }
               {
-                SNode childVar_OrPattern_7ozj7q_a0b0a0_0 = IterableUtil.asList(nodeToMatch_OrPattern_7ozj7q_a1a0a.getChildren(childRole_OrPattern_7ozj7q__5)).get(0);
+                SNode childVar_OrPattern_7ozj7q_a0b0a0_0 = IterableUtil.get(nodeToMatch_OrPattern_7ozj7q_a1a0a.getChildren(childRole_OrPattern_7ozj7q__5), 0);
                 {
                   SNode nodeToMatch_OrPattern_7ozj7q_a0b0a0_0;
                   nodeToMatch_OrPattern_7ozj7q_a0b0a0_0 = childVar_OrPattern_7ozj7q_a0b0a0_0;

@@ -219,7 +219,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode newnode = SConceptOperations.createNewNode("jetbrains.mps.uiLanguage.structure.ComponentInstance", null);
+        SNode newnode = SConceptOperations.createNewNode("jetbrains.mps.uiLanguage.structure.ComponentInstance", null);
         SLinkOperations.setTarget(newnode, "componentDeclaration", SNodeOperations.getNode("r:68c7815b-65d3-4b04-9110-50fab74211e0(jetbrains.mps.execution.configurations.deprecated.runtime)", "3718417974957373200"), false);
         StubRefUtil.replaceReference(node, SNodeOperations.getReference(newnode, SLinkOperations.findLinkDeclaration("jetbrains.mps.uiLanguage.structure.ComponentInstance", "componentDeclaration")));
       }
@@ -296,7 +296,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode newnode = SConceptOperations.createNewNode("jetbrains.mps.uiLanguage.structure.ComponentInstance", null);
+        SNode newnode = SConceptOperations.createNewNode("jetbrains.mps.uiLanguage.structure.ComponentInstance", null);
         SLinkOperations.setTarget(newnode, "componentDeclaration", SNodeOperations.getNode("r:49e49752-a85e-4d81-811e-1dc850a8e4cd(jetbrains.mps.execution.lib.ui)", "1240470842553500411"), false);
         StubRefUtil.replaceReference(node, SNodeOperations.getReference(newnode, SLinkOperations.findLinkDeclaration("jetbrains.mps.uiLanguage.structure.ComponentInstance", "componentDeclaration")));
       }
@@ -1167,7 +1167,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode newnode = SConceptOperations.createNewNode("jetbrains.mps.uiLanguage.structure.ComponentInstance", null);
+        SNode newnode = SConceptOperations.createNewNode("jetbrains.mps.uiLanguage.structure.ComponentInstance", null);
         SLinkOperations.setTarget(newnode, "componentDeclaration", SNodeOperations.getNode("r:e12fc70b-3d1d-4dc2-9467-5147656e0455(jetbrains.mps.baseLanguage.unitTest.execution.settings)", "6062668769034852876"), false);
         StubRefUtil.replaceReference(node, SNodeOperations.getReference(newnode, SLinkOperations.findLinkDeclaration("jetbrains.mps.uiLanguage.structure.ComponentInstance", "componentDeclaration")));
       }
@@ -1194,7 +1194,7 @@ public class Mps25ExecutionApiMigration_MigrationScript extends BaseMigrationScr
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode newnode = SConceptOperations.createNewNode("jetbrains.mps.uiLanguage.structure.ComponentInstance", null);
+        SNode newnode = SConceptOperations.createNewNode("jetbrains.mps.uiLanguage.structure.ComponentInstance", null);
         SLinkOperations.setTarget(newnode, "componentDeclaration", SNodeOperations.getNode("r:e12fc70b-3d1d-4dc2-9467-5147656e0455(jetbrains.mps.baseLanguage.unitTest.execution.settings)", "6062668769034853016"), false);
         StubRefUtil.replaceReference(node, SNodeOperations.getReference(newnode, SLinkOperations.findLinkDeclaration("jetbrains.mps.uiLanguage.structure.ComponentInstance", "componentDeclaration")));
       }

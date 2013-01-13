@@ -18,7 +18,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.SetSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="org.jetbrains.mps.samples.DecisionTable.behavior.DecisionTable_BehaviorDescriptor" file="DecisionTable_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

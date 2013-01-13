@@ -4,7 +4,6 @@ package jetbrains.mps.lang.pattern.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
-import jetbrains.mps.util.IterableUtil;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.TestCase;
@@ -17,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -89,7 +89,7 @@ public class Patternv1_Test extends BaseTransformationTest4 {
               return false;
             }
             {
-              SNode childVar_v1_1fh_a0a = IterableUtil.asList(nodeToMatch_v1_1fh_a0.getChildren(childRole_v1_1fh_)).get(0);
+              SNode childVar_v1_1fh_a0a = IterableUtil.get(nodeToMatch_v1_1fh_a0.getChildren(childRole_v1_1fh_), 0);
               {
                 SNode nodeToMatch_v1_1fh_a0a;
                 nodeToMatch_v1_1fh_a0a = childVar_v1_1fh_a0a;
@@ -107,7 +107,7 @@ public class Patternv1_Test extends BaseTransformationTest4 {
               return false;
             }
             {
-              SNode childVar_v1_1fh_a0a_0 = IterableUtil.asList(nodeToMatch_v1_1fh_a0.getChildren(childRole_v1_1fh__0)).get(0);
+              SNode childVar_v1_1fh_a0a_0 = IterableUtil.get(nodeToMatch_v1_1fh_a0.getChildren(childRole_v1_1fh__0), 0);
               {
                 SNode nodeToMatch_v1_1fh_a0a_0;
                 nodeToMatch_v1_1fh_a0a_0 = childVar_v1_1fh_a0a_0;

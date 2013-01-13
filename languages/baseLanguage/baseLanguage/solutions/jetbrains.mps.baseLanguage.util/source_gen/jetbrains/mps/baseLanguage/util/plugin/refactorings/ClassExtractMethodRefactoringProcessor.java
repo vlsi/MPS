@@ -19,12 +19,12 @@ public class ClassExtractMethodRefactoringProcessor extends AbstractExtractMetho
 
   public SNode createMethodCall(SNode declaration, List<SNode> parameters) {
     if (SNodeOperations.isInstanceOf(declaration, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration")) {
-      jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null);
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalMethodCall", null);
       SLinkOperations.setTarget(result, "baseMethodDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration"), false);
       ListSequence.fromList(SLinkOperations.getTargets(result, "actualArgument", true)).addSequence(ListSequence.fromList(parameters));
       return result;
     } else {
-      jetbrains.mps.smodel.SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
+      SNode call = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
       SLinkOperations.setTarget(call, "classConcept", SNodeOperations.cast(SNodeOperations.getParent(declaration), "jetbrains.mps.baseLanguage.structure.ClassConcept"), false);
       SLinkOperations.setTarget(call, "baseMethodDeclaration", SNodeOperations.cast(declaration, "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
       ListSequence.fromList(SLinkOperations.getTargets(call, "actualArgument", true)).addSequence(ListSequence.fromList(parameters));

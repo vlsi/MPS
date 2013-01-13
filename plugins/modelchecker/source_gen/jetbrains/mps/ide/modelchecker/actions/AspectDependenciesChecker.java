@@ -193,7 +193,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
   public static boolean findInModule(SModule module, String modelName, String rootName) {
     for (org.jetbrains.mps.openapi.model.SModel d : module.getModels()) {
       if (d.getModelName().equals(modelName)) {
-        for (org.jetbrains.mps.openapi.model.SNode _n : d.getRootNodes()) {
+        for (SNode _n : d.getRootNodes()) {
           SNode n = (SNode) _n;
           if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.Classifier") && SPropertyOperations.getString(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.Classifier"), "name").equals(rootName)) {
             return true;

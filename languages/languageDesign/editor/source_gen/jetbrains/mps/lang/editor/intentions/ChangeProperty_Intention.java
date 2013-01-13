@@ -19,6 +19,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ChangeProperty_Intention implements IntentionFactory {
@@ -90,7 +91,7 @@ public class ChangeProperty_Intention implements IntentionFactory {
       for (Map.Entry<String, String> propertyEntry : SetSequence.fromSet(SNodeOperations.getProperties(node).entrySet())) {
         SNodeAccessUtil.setProperty(transactional, propertyEntry.getKey(), propertyEntry.getValue());
       }
-      for (SReference reference : node.getReferences()) {
+      for (SReference reference : Sequence.fromIterable(node.getReferences())) {
         transactional.setReference(reference.getRole(), reference);
       }
       jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations.replaceWithAnother(node, transactional);

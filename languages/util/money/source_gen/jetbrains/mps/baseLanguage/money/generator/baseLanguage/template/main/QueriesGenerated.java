@@ -34,13 +34,13 @@ public class QueriesGenerated {
   }
 
   public static SNode sourceNodeQuery_1187347202363(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    jetbrains.mps.smodel.SNode new_node = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
+    SNode new_node = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
     SPropertyOperations.set(new_node, "value", SPropertyOperations.getString(_context.getNode(), "amount"));
     return new_node;
   }
 
   public static SNode sourceNodeQuery_1187347224873(final IOperationContext operationContext, final SourceSubstituteMacroNodeContext _context) {
-    jetbrains.mps.smodel.SNode new_node = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
+    SNode new_node = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
     SPropertyOperations.set(new_node, "value", SPropertyOperations.getString(_context.getNode(), "currency"));
     return new_node;
   }

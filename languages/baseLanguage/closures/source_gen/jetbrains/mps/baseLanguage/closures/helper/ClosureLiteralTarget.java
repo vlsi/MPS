@@ -33,7 +33,7 @@ public class ClosureLiteralTarget {
   }
 
   public void setTarget(SNode literal, SNode targetIface) {
-    jetbrains.mps.smodel.SNode targetIfaceErase = SConceptOperations.createNewNode(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(targetIface)), null);
+    SNode targetIfaceErase = SConceptOperations.createNewNode(NameUtil.nodeFQName(SNodeOperations.getConceptDeclaration(targetIface)), null);
     SLinkOperations.setTarget(targetIfaceErase, "classifier", SLinkOperations.getTarget(targetIface, "classifier", false), false);
     matchTypeParameters(literal, targetIfaceErase, SLinkOperations.getTargets(targetIface, "parameter", true));
     Values.LITERAL.set(genContext, targetIfaceErase, literal);
@@ -54,7 +54,7 @@ public class ClosureLiteralTarget {
         String adapterName = JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(absRetCT, "classifier", false), "name")) + JavaNameUtil.shortName(SPropertyOperations.getString(SLinkOperations.getTarget(SNodeOperations.as(FunctionTypeUtil.unmeet(FunctionTypeUtil.unbound(ftResCT)), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), "name")) + "Adapter";
         for (SNode cls : SModelOperations.getNodes(SNodeOperations.getModel(SLinkOperations.getTarget(absRetCT, "classifier", false)), "jetbrains.mps.baseLanguage.structure.Classifier")) {
           if (adapterName.equals(JavaNameUtil.shortName(SPropertyOperations.getString(cls, "name")))) {
-            jetbrains.mps.smodel.SNode newRetCT = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+            SNode newRetCT = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
             SLinkOperations.setTarget(newRetCT, "classifier", cls, false);
             Values.RETURN_TYPE.set(genContext, targetIfaceErase, newRetCT);
             break;

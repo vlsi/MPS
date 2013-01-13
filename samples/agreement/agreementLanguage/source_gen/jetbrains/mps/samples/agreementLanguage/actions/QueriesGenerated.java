@@ -25,7 +25,7 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            jetbrains.mps.smodel.SNode fpConstant = SConceptOperations.createNewNode("jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", null);
+            SNode fpConstant = SConceptOperations.createNewNode("jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", null);
             SPropertyOperations.set(fpConstant, "value", "0.0");
             if (pattern.length() > 1) {
               if (pattern.endsWith(".")) {
@@ -34,7 +34,7 @@ public class QueriesGenerated {
                 SPropertyOperations.set(fpConstant, "value", pattern.substring(1));
               }
             }
-            jetbrains.mps.smodel.SNode quantity = SConceptOperations.createNewNode("jetbrains.mps.samples.agreementLanguage.structure.Quantity", null);
+            SNode quantity = SConceptOperations.createNewNode("jetbrains.mps.samples.agreementLanguage.structure.Quantity", null);
             SPropertyOperations.set(quantity, "unit", "USD");
             SLinkOperations.setTarget(quantity, "amount", fpConstant, true);
             return quantity;
@@ -68,13 +68,13 @@ public class QueriesGenerated {
       if (outputConcept == null || SConceptOperations.isSuperConceptOf(childConcept, NameUtil.nodeFQName(outputConcept))) {
         ListSequence.fromList(result).addElement(new DefaultSimpleSubstituteAction(outputConcept, _context.getParentNode(), _context.getCurrentTargetNode(), _context.getChildSetter(), operationContext.getScope()) {
           public SNode createChildNode(Object parameterObject, SModel model, String pattern) {
-            jetbrains.mps.smodel.SNode fpConstant = SConceptOperations.createNewNode("jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", null);
+            SNode fpConstant = SConceptOperations.createNewNode("jetbrains.mps.samples.formulaLanguage.structure.FloatingPointConstant", null);
             if (pattern.endsWith(".")) {
               SPropertyOperations.set(fpConstant, "value", pattern + 1);
             } else {
               SPropertyOperations.set(fpConstant, "value", pattern);
             }
-            jetbrains.mps.smodel.SNode quantity = SConceptOperations.createNewNode("jetbrains.mps.samples.agreementLanguage.structure.Quantity", null);
+            SNode quantity = SConceptOperations.createNewNode("jetbrains.mps.samples.agreementLanguage.structure.Quantity", null);
             SPropertyOperations.set(quantity, "unit", "USD_KWH");
             SLinkOperations.setTarget(quantity, "amount", fpConstant, true);
             return quantity;

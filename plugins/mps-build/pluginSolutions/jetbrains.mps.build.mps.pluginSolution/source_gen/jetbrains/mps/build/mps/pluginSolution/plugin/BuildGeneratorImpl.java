@@ -214,7 +214,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
 
   protected Iterable<SNode> createBuildScripts(SModelDescriptor targetModelDescriptor, String name, String basedir, List<NodeData> selectedData) {
     // setup build project 
-    jetbrains.mps.smodel.SNode buildProject = SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildProject", null);
+    SNode buildProject = SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildProject", null);
     SPropertyOperations.set(buildProject, "name", name);
     ListSequence.fromList(SLinkOperations.getTargets(buildProject, "plugins", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildJavaPlugin", null));
     ListSequence.fromList(SLinkOperations.getTargets(buildProject, "plugins", true)).addElement(SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMPSPlugin", null));
@@ -317,7 +317,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private SNode addStandaloneBuild(SModel targetSModel, SNode buildProject) {
-    jetbrains.mps.smodel.SNode buildStandalone = SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildProject", null);
+    SNode buildStandalone = SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildProject", null);
     SPropertyOperations.set(buildStandalone, "name", SPropertyOperations.getString(buildProject, "name") + "Distribution");
     SPropertyOperations.set(buildStandalone, "fileName", "buildDistribution.xml");
     ListSequence.fromList(SLinkOperations.getTargets(buildStandalone, "dependencies", true)).addElement(_quotation_createNode_un708i_a0a3a41(buildProject));
@@ -353,7 +353,7 @@ public class BuildGeneratorImpl extends AbstractBuildGenerator {
   }
 
   private SNode convertToMacroRelative(SNode projectRelative, SNode macro) {
-    jetbrains.mps.smodel.SNode macroRelative = SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null);
+    SNode macroRelative = SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildSourceMacroRelativePath", null);
     SLinkOperations.setTarget(macroRelative, "compositePart", CopyUtil.copy(SLinkOperations.getTarget(projectRelative, "compositePart", true)), true);
     SLinkOperations.setTarget(macroRelative, "macro", macro, false);
     return macroRelative;

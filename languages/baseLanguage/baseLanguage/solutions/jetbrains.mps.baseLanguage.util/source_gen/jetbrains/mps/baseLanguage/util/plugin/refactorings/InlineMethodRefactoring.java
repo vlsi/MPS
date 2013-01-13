@@ -62,7 +62,7 @@ public class InlineMethodRefactoring {
     }
     if (this.myHasManyReturns && !(SNodeOperations.isInstanceOf(this.myReturnType, "jetbrains.mps.baseLanguage.structure.VoidType"))) {
       returnVar = this.createLocalVariableDeclaration(callStatement, "result", this.myReturnType);
-      jetbrains.mps.smodel.SNode stat = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
+      SNode stat = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
       SLinkOperations.setTarget(stat, "localVariableDeclaration", returnVar, true);
       SNodeOperations.insertPrevSiblingChild(callStatement, stat);
     }
@@ -72,7 +72,7 @@ public class InlineMethodRefactoring {
     }
     this.replaceReturnSatements(body, returnVar, callStatement);
     if (returnVar != null) {
-      jetbrains.mps.smodel.SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
+      SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
       SLinkOperations.setTarget(ref, "variableDeclaration", returnVar, false);
       SNodeOperations.replaceWithAnother(this.myMethodCall, ref);
       SNodeOperations.insertNextSiblingChild(callStatement, SNodeOperations.copyNode(callStatement));
@@ -121,18 +121,18 @@ public class InlineMethodRefactoring {
   }
 
   private SNode getClassifierType(SNode c) {
-    jetbrains.mps.smodel.SNode type = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
+    SNode type = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ClassifierType", null);
     SLinkOperations.setTarget(type, "classifier", c, false);
     return type;
   }
 
   private SNode createAssignmentExpression(SNode returnVar, SNode returnExpression) {
-    jetbrains.mps.smodel.SNode expression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
-    jetbrains.mps.smodel.SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
+    SNode expression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AssignmentExpression", null);
+    SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(expression, "lValue", ref, true);
     SLinkOperations.setTarget(ref, "variableDeclaration", returnVar, false);
     SLinkOperations.setTarget(expression, "rValue", SNodeOperations.copyNode(returnExpression), true);
-    jetbrains.mps.smodel.SNode statement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+    SNode statement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
     SLinkOperations.setTarget(statement, "expression", expression, true);
     return statement;
   }
@@ -144,7 +144,7 @@ public class InlineMethodRefactoring {
         return SNodeOperations.isInstanceOf(SLinkOperations.getTarget(it, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration");
       }
     }).toListSequence()) {
-      jetbrains.mps.smodel.SNode newCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
+      SNode newCall = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticMethodCall", null);
       SLinkOperations.setTarget(newCall, "classConcept", c, false);
       SLinkOperations.setTarget(newCall, "baseMethodDeclaration", SNodeOperations.cast(SLinkOperations.getTarget(localCall, "baseMethodDeclaration", false), "jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"), false);
       SNodeOperations.replaceWithAnother(localCall, newCall);
@@ -232,17 +232,17 @@ public class InlineMethodRefactoring {
 
   private SNode createVariable(SNode statement, String name, SNode type, SNode argument) {
     SNode declaration = this.createLocalVariableDeclaration(statement, name, type);
-    jetbrains.mps.smodel.SNode stat = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
+    SNode stat = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement", null);
     SLinkOperations.setTarget(stat, "localVariableDeclaration", declaration, true);
     SLinkOperations.setTarget(declaration, "initializer", argument, true);
     SNodeOperations.insertPrevSiblingChild(statement, stat);
-    jetbrains.mps.smodel.SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
+    SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(ref, "variableDeclaration", declaration, false);
     return ref;
   }
 
   private SNode createLocalVariableDeclaration(SNode statement, String name, SNode type) {
-    jetbrains.mps.smodel.SNode declaration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
+    SNode declaration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration", null);
     SPropertyOperations.set(declaration, "name", this.findName(statement, name));
     SLinkOperations.setTarget(declaration, "type", SNodeOperations.copyNode(type), true);
     return declaration;

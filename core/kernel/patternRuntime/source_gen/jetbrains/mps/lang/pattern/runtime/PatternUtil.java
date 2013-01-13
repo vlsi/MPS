@@ -29,8 +29,8 @@ public class PatternUtil {
     return true;
   }
 
-  public static boolean hasNChildren(org.jetbrains.mps.openapi.model.SNode parent, String role, int num) {
-    Iterator<? extends org.jetbrains.mps.openapi.model.SNode> it = parent.getChildren(role).iterator();
+  public static boolean hasNChildren(SNode parent, String role, int num) {
+    Iterator<? extends SNode> it = parent.getChildren(role).iterator();
     for (int i = 0; i < num; i++) {
       if (!(it.hasNext())) {
         return false;

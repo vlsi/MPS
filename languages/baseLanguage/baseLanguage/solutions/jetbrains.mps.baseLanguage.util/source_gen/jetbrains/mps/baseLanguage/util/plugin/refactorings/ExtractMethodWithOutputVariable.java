@@ -35,7 +35,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
   }
 
   protected void modifyPartToExtract() {
-    jetbrains.mps.smodel.SNode returnStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
+    SNode returnStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ReturnStatement", null);
     SLinkOperations.setTarget(returnStatement, "expression", this.createReference(this.myOutputVariable), true);
     ListSequence.fromList(this.myStatements).addElement(returnStatement);
   }
@@ -53,7 +53,7 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
         if ((ExtractMethodWithOutputVariable.this.myDeclarationStatement != null)) {
           SLinkOperations.setTarget(SLinkOperations.getTarget(ExtractMethodWithOutputVariable.this.myDeclarationStatement, "localVariableDeclaration", true), "initializer", methodCall, true);
         } else {
-          jetbrains.mps.smodel.SNode newStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
+          SNode newStatement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ExpressionStatement", null);
           SLinkOperations.setTarget(newStatement, "expression", _quotation_createNode_n3576q_a0b0a2a0a0f(methodCall, BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), ExtractMethodWithOutputVariable.this.myOutputVariable, "virtual_createReference_1213877517482", new Object[]{})), true);
           SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(statements).first(), newStatement);
         }

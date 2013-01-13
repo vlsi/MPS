@@ -34,7 +34,7 @@ public class MetadataUtil {
   }
 
   public static SNode createModelRoot(SModel model) {
-    jetbrains.mps.smodel.SNode root = SConceptOperations.createNewNode("jetbrains.mps.ide.vcs.modelmetadata.structure.Model", null);
+    SNode root = SConceptOperations.createNewNode("jetbrains.mps.ide.vcs.modelmetadata.structure.Model", null);
     SPropertyOperations.set(root, "longname", model.getLongName());
     SPropertyOperations.set(root, "uuid", model.getSModelId() + "");
     SPropertyOperations.set(root, "version", "" + (model.getVersion()));
@@ -55,24 +55,24 @@ public class MetadataUtil {
     }
 
     SPropertyOperations.set(root, "name", "Model Properties");
-    root.setId(SNodeId.fromString("~root"));
+    ((jetbrains.mps.smodel.SNode) root).setId(SNodeId.fromString("~root"));
     return root;
   }
 
   public static SNode createModuleRefNode(ModuleReference module) {
-    jetbrains.mps.smodel.SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModuleReference", null);
+    SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModuleReference", null);
     SPropertyOperations.set(node, "qualifiedName", module.getModuleFqName());
     SPropertyOperations.set(node, "uuid", module.getModuleId().toString());
-    node.setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, "uuid")));
+    ((jetbrains.mps.smodel.SNode) node).setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, "uuid")));
     return node;
   }
 
   public static SNode createModelRefNode(SModel.ImportElement impModel) {
-    jetbrains.mps.smodel.SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModelReference", null);
+    SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModelReference", null);
     SPropertyOperations.set(node, "qualifiedName", impModel.getModelReference().getLongName());
     SPropertyOperations.set(node, "uuid", impModel.getModelReference().getModelId().toString());
     SPropertyOperations.set(node, "stereotype", impModel.getModelReference().getStereotype());
-    node.setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, "uuid")));
+    ((jetbrains.mps.smodel.SNode) node).setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, "uuid")));
     return node;
   }
 

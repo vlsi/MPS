@@ -39,8 +39,8 @@ public class ConceptInstances_Finder extends GeneratedFinder {
     monitor.start(getDescription(), 0);
     try {
       SConcept concept = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(node));
-      List<org.jetbrains.mps.openapi.model.SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<org.jetbrains.mps.openapi.model.SNode>(), FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, scope, monitor));
-      for (org.jetbrains.mps.openapi.model.SNode resNode : resNodes) {
+      List<SNode> resNodes = ListSequence.fromListWithValues(new ArrayList<SNode>(), FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, scope, monitor));
+      for (SNode resNode : resNodes) {
         ListSequence.fromList(_results).addElement(((SNode) resNode));
       }
     } finally {

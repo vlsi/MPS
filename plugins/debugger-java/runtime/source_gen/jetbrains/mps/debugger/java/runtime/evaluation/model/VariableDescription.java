@@ -65,7 +65,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
   }
 
   public static SNode createDebuggedType(SNode lowType, SNode highType) {
-    jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.DebuggedType", null);
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.debugger.java.evaluation.structure.DebuggedType", null);
     if ((highType != null)) {
       SLinkOperations.setTarget(result, "highType", highType, true);
     } else {

@@ -7,7 +7,6 @@ import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.EventsCollector;
 import com.intellij.util.containers.BidirectionalMultiMap;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -41,6 +40,7 @@ import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.event.SModelEvent;
@@ -327,7 +327,7 @@ public class ChangesTracking {
   private static Iterable<SNodeId> getNodeIdsForNodeGroupChange(@NotNull NodeGroupChange ngc, @Nullable Tuples._2<SNodeId, List<SNodeId>> lastParentAndNewChildrenIds) {
     List<SNodeId> childrenIds;
     if (lastParentAndNewChildrenIds == null || neq_5iuzi5_a0a1a72(lastParentAndNewChildrenIds._0(), ngc.getParentNodeId())) {
-      List<jetbrains.mps.smodel.SNode> children = IterableUtil.asList(ngc.getChangeSet().getNewModel().getNodeById(ngc.getParentNodeId()).getChildren(ngc.getRole()));
+      List<? extends SNode> children = IterableUtil.asList(ngc.getChangeSet().getNewModel().getNodeById(ngc.getParentNodeId()).getChildren(ngc.getRole()));
       childrenIds = ListSequence.fromList(children).select(new ISelector<SNode, SNodeId>() {
         public SNodeId select(SNode n) {
           return n.getNodeId();

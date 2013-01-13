@@ -34,7 +34,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ListType", null);
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ListType", null);
         SLinkOperations.setTarget(result, "elementType", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, result);
       }
@@ -86,7 +86,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode access = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression", null);
+        SNode access = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ListElementAccessExpression", null);
         SLinkOperations.setTarget(access, "list", SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(node), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true), true);
         SLinkOperations.setTarget(access, "index", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(SNodeOperations.getParent(node), access);
@@ -139,7 +139,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddElementOperation", null);
+        SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddElementOperation", null);
         SLinkOperations.setTarget(opration, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, opration);
       }
@@ -166,7 +166,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation", null);
+        SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.InsertElementOperation", null);
         SLinkOperations.setTarget(operation, "index", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SLinkOperations.setTarget(operation, "element", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).last()), true);
         SNodeOperations.replaceWithAnother(node, operation);
@@ -219,7 +219,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.SetElementOperation", null);
+        SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.SetElementOperation", null);
         SLinkOperations.setTarget(operation, "index", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SLinkOperations.setTarget(operation, "element", SNodeOperations.copyNode(ListSequence.fromList(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).toListSequence()).getElement(1)), true);
         SNodeOperations.replaceWithAnother(node, operation);
@@ -247,7 +247,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation", null);
+        SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.RemoveAtElementOperation", null);
         SLinkOperations.setTarget(operation, "index", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
@@ -274,7 +274,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation", null);
+        SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.RemoveElementOperation", null);
         SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
@@ -301,7 +301,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.RemoveAllElementsOperation", null);
+        SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.RemoveAllElementsOperation", null);
         SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
@@ -328,7 +328,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation", null);
+        SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.GetIndexOfOperation", null);
         SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
@@ -355,7 +355,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ContainsOperation", null);
+        SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ContainsOperation", null);
         SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
@@ -382,7 +382,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation", null);
+        SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddAllElementsOperation", null);
         SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
@@ -409,7 +409,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation", null);
+        SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddFirstElementOperation", null);
         SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
@@ -436,7 +436,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation", null);
+        SNode operation = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddLastElementOperation", null);
         SLinkOperations.setTarget(operation, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, operation);
       }
@@ -488,7 +488,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", null);
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.ListCreatorWithInit", null);
         SLinkOperations.setTarget(result, "elementType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
         if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
           SLinkOperations.setTarget(result, "copyFrom", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
@@ -518,7 +518,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator", null);
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.LinkedListCreator", null);
         SLinkOperations.setTarget(result, "elementType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
         SNodeOperations.replaceWithAnother(node, result);
       }
@@ -545,7 +545,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.SetType", null);
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.SetType", null);
         SLinkOperations.setTarget(result, "elementType", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, result);
       }
@@ -572,7 +572,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation", null);
+        SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddSetElementOperation", null);
         SLinkOperations.setTarget(opration, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, opration);
       }
@@ -599,7 +599,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation", null);
+        SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.AddAllSetElementsOperation", null);
         SLinkOperations.setTarget(opration, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, opration);
       }
@@ -626,7 +626,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation", null);
+        SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.RemoveAllSetElementsOperation", null);
         SLinkOperations.setTarget(opration, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, opration);
       }
@@ -653,7 +653,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation", null);
+        SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.RemoveSetElementOperation", null);
         SLinkOperations.setTarget(opration, "argument", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, opration);
       }
@@ -680,7 +680,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", null);
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.HashSetCreator", null);
         SLinkOperations.setTarget(result, "elementType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
         if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
           SLinkOperations.setTarget(result, "copyFrom", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
@@ -710,7 +710,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator", null);
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.LinkedHashSetCreator", null);
         SLinkOperations.setTarget(result, "elementType", ListSequence.fromList(SLinkOperations.getTargets(node, "typeParameter", true)).first(), true);
         if (ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).isNotEmpty()) {
           SLinkOperations.setTarget(result, "copyFrom", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "actualArgument", true)).first()), true);
@@ -740,7 +740,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.HasNextOperation", null);
+        SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.HasNextOperation", null);
         SNodeOperations.replaceWithAnother(node, opration);
       }
 
@@ -766,7 +766,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.GetNextOperation", null);
+        SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.GetNextOperation", null);
         SNodeOperations.replaceWithAnother(node, opration);
       }
 
@@ -792,7 +792,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.GetIteratorOperation", null);
+        SNode opration = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.GetIteratorOperation", null);
         SNodeOperations.replaceWithAnother(node, opration);
       }
 
@@ -818,7 +818,7 @@ public class MigrationToCollections_MigrationScript extends BaseMigrationScript 
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.IteratorType", null);
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.collections.structure.IteratorType", null);
         SLinkOperations.setTarget(result, "elementType", SNodeOperations.copyNode(ListSequence.fromList(SLinkOperations.getTargets(node, "parameter", true)).first()), true);
         SNodeOperations.replaceWithAnother(node, result);
       }

@@ -83,7 +83,7 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
     }
 
     protected Set<SNode> getDescendants(SNode node, Set<SNode> visited) {
-      Set<SReference> usages = ((Set) myUsagesManager.findUsages(Collections.<org.jetbrains.mps.openapi.model.SNode>singleton(node), SearchType.USAGES, GlobalScopeMinusTransient.getInstance(), null));
+      Set<SReference> usages = ((Set) myUsagesManager.findUsages(Collections.<SNode>singleton(node), SearchType.USAGES, GlobalScopeMinusTransient.getInstance(), null));
       Set<SNode> result = new HashSet<SNode>();
       for (SReference usage : usages) {
         SNode sourceNode = usage.getSourceNode();

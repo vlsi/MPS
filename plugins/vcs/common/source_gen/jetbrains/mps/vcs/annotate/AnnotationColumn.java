@@ -20,7 +20,6 @@ import com.intellij.openapi.vcs.AbstractVcs;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.persistence.lines.LineContent;
-import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.Set;
 import com.intellij.util.messages.MessageBusConnection;
@@ -52,6 +51,7 @@ import jetbrains.mps.smodel.persistence.lines.PropertyLineContent;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.smodel.persistence.lines.ReferenceLineContent;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.persistence.lines.NodeLineContent;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
@@ -227,7 +227,7 @@ public class AnnotationColumn extends AbstractLeftColumn {
       MapSequence.fromMap(myChangesToLineContents).put(ch, new LineContent[]{new ReferenceLineContent(src.getAffectedNodeId(), src.getRole())});
     } else if (ch instanceof NodeGroupChange) {
       NodeGroupChange ngc = (NodeGroupChange) ch;
-      List<jetbrains.mps.smodel.SNode> newChildren = IterableUtil.asList(myModelDescriptor.getSModel().getNodeById(ngc.getParentNodeId()).getChildren(ngc.getRole()));
+      List<? extends SNode> newChildren = IterableUtil.asList(myModelDescriptor.getSModel().getNodeById(ngc.getParentNodeId()).getChildren(ngc.getRole()));
       MapSequence.fromMap(myChangesToLineContents).put(ch, ListSequence.fromList(newChildren).page(ngc.getResultBegin(), ngc.getResultEnd()).select(new ISelector<SNode, NodeLineContent>() {
         public NodeLineContent select(SNode n) {
           return new NodeLineContent(n.getNodeId());

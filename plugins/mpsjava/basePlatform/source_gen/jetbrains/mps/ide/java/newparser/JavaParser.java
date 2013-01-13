@@ -122,7 +122,7 @@ public class JavaParser {
 
         if (stmts != null && stmts.length > 0) {
           // TODO construct typeResolver from parent node context 
-          jetbrains.mps.smodel.SNode stmtList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
+          SNode stmtList = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null);
           resultNodes = ((FullASTConverter) converter).convertStatementsOf(absMethod, stmtList);
         }
 
@@ -166,7 +166,7 @@ public class JavaParser {
 
         List<String> lines = CommentHelper.processJavadoc(CommentHelper.splitString(content, lineends, comment[0], comment[1] + 1));
         for (String text : ListSequence.fromList(lines)) {
-          jetbrains.mps.smodel.SNode commentLine = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", null);
+          SNode commentLine = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.CommentLine", null);
           SPropertyOperations.set(SNodeOperations.cast(ListSequence.fromList(SLinkOperations.getTargets(commentLine, "part", true)).getElement(0), "jetbrains.mps.baseLanguage.javadoc.structure.TextCommentLinePart"), "text", text);
           ListSequence.fromList(SLinkOperations.getTargets(doc, "body", true)).addElement(commentLine);
         }
@@ -190,9 +190,9 @@ public class JavaParser {
           }
         }).count();
         for (String line : ListSequence.fromList(CommentHelper.processComment(CommentHelper.splitString(content, lineends, linestart, Math.abs(comment[1]))))) {
-          jetbrains.mps.smodel.SNode commentText = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TextCommentPart", null);
+          SNode commentText = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TextCommentPart", null);
           SPropertyOperations.set(commentText, "text", line);
-          jetbrains.mps.smodel.SNode commentLine = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
+          SNode commentLine = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.SingleLineComment", null);
           ListSequence.fromList(SLinkOperations.getTargets(commentLine, "commentPart", true)).addElement(commentText);
           ListSequence.fromList(SLinkOperations.getTargets(block, "statement", true)).insertElement(pos++, commentLine);
         }

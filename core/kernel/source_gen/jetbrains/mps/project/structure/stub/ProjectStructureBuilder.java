@@ -53,8 +53,8 @@ public abstract class ProjectStructureBuilder {
   }
 
   private SNode convertLanguage(LanguageDescriptor source) {
-    jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.Language", null);
-    result.setId(SNodeId.fromString("~root"));
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.Language", null);
+    ((jetbrains.mps.smodel.SNode) result).setId(SNodeId.fromString("~root"));
     SModelOperations.addRootNode(myModel, result);
     fill(result, source);
     SPropertyOperations.set(result, "compileInMPS", "" + (true));
@@ -77,8 +77,8 @@ public abstract class ProjectStructureBuilder {
   }
 
   private SNode convertSolution(SolutionDescriptor source) {
-    jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.Solution", null);
-    result.setId(SNodeId.fromString("~root"));
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.Solution", null);
+    ((jetbrains.mps.smodel.SNode) result).setId(SNodeId.fromString("~root"));
     SModelOperations.addRootNode(myModel, result);
     fill(result, source);
     SPropertyOperations.set(result, "compileInMPS", "" + (source.getCompileInMPS()));
@@ -89,8 +89,8 @@ public abstract class ProjectStructureBuilder {
   }
 
   private SNode convertDevkit(DevkitDescriptor source) {
-    jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.DevKit", null);
-    result.setId(SNodeId.fromString("~root"));
+    SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.DevKit", null);
+    ((jetbrains.mps.smodel.SNode) result).setId(SNodeId.fromString("~root"));
     SModelOperations.addRootNode(myModel, result);
     fill(result, source);
     SPropertyOperations.set(result, "compileInMPS", "" + (false));
@@ -140,7 +140,7 @@ public abstract class ProjectStructureBuilder {
       SLinkOperations.getTargets(module, "usedLanguages", true).add(convert(ref));
     }
     for (String path : source.getAdditionalJavaStubPaths()) {
-      jetbrains.mps.smodel.SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.StubEntry", null);
+      SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.StubEntry", null);
       SPropertyOperations.set(node, "path", path);
       SLinkOperations.getTargets(module, "stubModels", true).add(node);
     }

@@ -272,8 +272,8 @@ public class ConceptPropertiesHelper {
 
     Map<SNode, SNode> cplToMethodMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
     for (SNode conceptPropertyDecl : SetSequence.fromSet(conceptPropertyDeclarations)) {
-      jetbrains.mps.smodel.SNode migratedToMethodAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation", null);
-      jetbrains.mps.smodel.SNode deprecatedNodeAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", null);
+      SNode migratedToMethodAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation", null);
+      SNode deprecatedNodeAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", null);
       SNode method = replaceConceptPropertyDeclarations(conceptPropertyDecl, conceptPropertyUsages);
       MapSequence.fromMap(cplToMethodMap).put(conceptPropertyDecl, method);
       SLinkOperations.setTarget(migratedToMethodAnnotation, "method", method, false);
@@ -286,8 +286,8 @@ public class ConceptPropertiesHelper {
     Map<SNode, List<SNode>> completedConceptsByDeclaration = MapSequence.fromMap(new HashMap<SNode, List<SNode>>());
 
     for (SNode conceptLinkDecl : SetSequence.fromSet(conceptLinkDeclarations)) {
-      jetbrains.mps.smodel.SNode migratedToMethodAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation", null);
-      jetbrains.mps.smodel.SNode deprecatedNodeAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", null);
+      SNode migratedToMethodAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.MigratedToMethodAnnotation", null);
+      SNode deprecatedNodeAnnotation = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.DeprecatedNodeAnnotation", null);
       SNode method = replaceConceptLinkDeclaration(SNodeOperations.cast(conceptLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), conceptLinkUsages);
       MapSequence.fromMap(cplToMethodMap).put(SNodeOperations.cast(conceptLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), method);
       MapSequence.fromMap(completedConceptsByDeclaration).put(SNodeOperations.cast(conceptLinkDecl, "jetbrains.mps.lang.structure.structure.ConceptLinkDeclaration"), ListSequence.fromList(new ArrayList<SNode>()));
@@ -349,11 +349,11 @@ public class ConceptPropertiesHelper {
       return method;
     }
     SNode declaration = _quotation_createNode_azpnkk_a0j0y(SLinkOperations.getTarget(conceptLinkDeclaration, "targetType", false), SLinkOperations.getTarget(conceptLinkDeclaration, "targetType", false));
-    jetbrains.mps.smodel.SNode reference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
+    SNode reference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
     SLinkOperations.setTarget(reference, "variableDeclaration", SLinkOperations.getTarget(declaration, "localVariableDeclaration", true), false);
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(declaration);
     for (SNode link : ListSequence.fromList(sameConceptLink)) {
-      jetbrains.mps.smodel.SNode refExpression = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.NodeRefExpression", null);
+      SNode refExpression = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.NodeRefExpression", null);
       SLinkOperations.setTarget(refExpression, "referentNode", SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"), "target", false), "jetbrains.mps.lang.core.structure.INamedConcept"), false);
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(_quotation_createNode_azpnkk_a0a2a31a42(reference, refExpression));
       SetSequence.fromSet(conceptLinks).removeElement(link);
@@ -388,7 +388,7 @@ public class ConceptPropertiesHelper {
     if (SNodeOperations.isInstanceOf(conceptPropertyDeclaration, "jetbrains.mps.lang.structure.structure.IntegerConceptPropertyDeclaration")) {
       returnType = _quotation_createNode_azpnkk_a0a0k0z();
       name = "get" + NameUtil.capitalize(conceptName);
-      jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       if (!(valueIsDefault)) {
         SPropertyOperations.set(result, "value", "" + (SPropertyOperations.getInteger(SNodeOperations.cast(sameConceptProperty, "jetbrains.mps.lang.structure.structure.IntegerConceptProperty"), "value")));
       } else {
@@ -408,7 +408,7 @@ public class ConceptPropertiesHelper {
       returnStatement = _quotation_createNode_azpnkk_a0e0a01a52(result);
     } else if (SNodeOperations.isInstanceOf(conceptPropertyDeclaration, "jetbrains.mps.lang.structure.structure.BooleanConceptPropertyDeclaration")) {
       returnType = _quotation_createNode_azpnkk_a0a0b01a52();
-      jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
       SPropertyOperations.set(result, "value", "" + (!(valueIsDefault)));
       returnStatement = _quotation_createNode_azpnkk_a0d0b01a52(result);
       name = conceptName;
@@ -469,16 +469,16 @@ public class ConceptPropertiesHelper {
       }
     }
     SNode declaration;
-    jetbrains.mps.smodel.SNode reference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
+    SNode reference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
 
     if (SetSequence.fromSet(superNodes).isEmpty()) {
       declaration = _quotation_createNode_azpnkk_a0a0o0ab(SLinkOperations.getTarget(SLinkOperations.getTarget(conceptLink, "conceptLinkDeclaration", false), "targetType", false), SLinkOperations.getTarget(SLinkOperations.getTarget(conceptLink, "conceptLinkDeclaration", false), "targetType", false));
       SLinkOperations.setTarget(reference, "variableDeclaration", SLinkOperations.getTarget(declaration, "localVariableDeclaration", true), false);
     } else {
 
-      jetbrains.mps.smodel.SNode methodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
+      SNode methodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
       SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", overridenMethod, false);
-      jetbrains.mps.smodel.SNode firstNodeExpression = SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.SuperNodeExpression", null);
+      SNode firstNodeExpression = SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.SuperNodeExpression", null);
       SLinkOperations.setTarget(firstNodeExpression, "superConcept", SetSequence.fromSet(superNodes).first(), false);
       declaration = _quotation_createNode_azpnkk_a0f0a41a62(SLinkOperations.getTarget(SLinkOperations.getTarget(conceptLink, "conceptLinkDeclaration", false), "targetType", false), firstNodeExpression, methodCall);
       SLinkOperations.setTarget(reference, "variableDeclaration", SLinkOperations.getTarget(declaration, "localVariableDeclaration", true), false);
@@ -488,9 +488,9 @@ public class ConceptPropertiesHelper {
           continue;
         }
 
-        jetbrains.mps.smodel.SNode superMethodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
+        SNode superMethodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
         SLinkOperations.setTarget(superMethodCall, "baseMethodDeclaration", overridenMethod, false);
-        jetbrains.mps.smodel.SNode superNodeExpression = SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.SuperNodeExpression", null);
+        SNode superNodeExpression = SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.SuperNodeExpression", null);
         SLinkOperations.setTarget(superNodeExpression, "superConcept", superNode, false);
         ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(_quotation_createNode_azpnkk_a0a6a8a0o0ab(superNodeExpression, superMethodCall, reference));
       }
@@ -500,7 +500,7 @@ public class ConceptPropertiesHelper {
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(declaration);
 
     for (SNode link : SetSequence.fromSet(allLinks)) {
-      jetbrains.mps.smodel.SNode refExpression = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.NodeRefExpression", null);
+      SNode refExpression = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.NodeRefExpression", null);
       SLinkOperations.setTarget(refExpression, "referentNode", SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(link, "jetbrains.mps.lang.structure.structure.ReferenceConceptLink"), "target", false), "jetbrains.mps.lang.core.structure.INamedConcept"), false);
       ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method, "body", true), "statement", true)).addElement(_quotation_createNode_azpnkk_a0a2a81a62(reference, refExpression));
     }
@@ -536,7 +536,7 @@ public class ConceptPropertiesHelper {
         SPropertyOperations.set(conceptNode, "final", "" + (SConceptPropertyOperations.getBoolean(conceptNode, "final")));
         return;
       } else if (eq_azpnkk_a0d1a4a72(name, dontSubstituteName)) {
-        jetbrains.mps.smodel.SNode reference = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.InterfaceConceptReference", null);
+        SNode reference = SConceptOperations.createNewNode("jetbrains.mps.lang.structure.structure.InterfaceConceptReference", null);
         SLinkOperations.setTarget(reference, "intfc", SNodeOperations.getNode("r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)", "1835621062190663819"), false);
         if (SNodeOperations.isInstanceOf(conceptNode, "jetbrains.mps.lang.structure.structure.ConceptDeclaration")) {
           ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(conceptNode, "jetbrains.mps.lang.structure.structure.ConceptDeclaration"), "implements", true)).addElement(reference);
@@ -552,11 +552,11 @@ public class ConceptPropertiesHelper {
     SNode method = createMethod(SPropertyOperations.getString(overridenMethod, "name"), false, overridenMethod, SNodeOperations.copyNode(SLinkOperations.getTarget(overridenMethod, "returnType", true)));
     SNode returnStatement;
     if (SNodeOperations.isInstanceOf(conceptProperty, "jetbrains.mps.lang.structure.structure.IntegerConceptProperty")) {
-      jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
       SPropertyOperations.set(result, "value", "" + (SPropertyOperations.getInteger(SNodeOperations.cast(conceptProperty, "jetbrains.mps.lang.structure.structure.IntegerConceptProperty"), "value")));
       returnStatement = _quotation_createNode_azpnkk_a0c0i0bb(result);
     } else if (SNodeOperations.isInstanceOf(conceptProperty, "jetbrains.mps.lang.structure.structure.StringConceptProperty")) {
-      jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
       SPropertyOperations.set(result, "value", SPropertyOperations.getString(SNodeOperations.cast(conceptProperty, "jetbrains.mps.lang.structure.structure.StringConceptProperty"), "value"));
       returnStatement = _quotation_createNode_azpnkk_a0c0a8a72(result);
     } else if (SNodeOperations.isInstanceOf(conceptProperty, "jetbrains.mps.lang.structure.structure.BooleanConceptProperty")) {
@@ -596,7 +596,7 @@ public class ConceptPropertiesHelper {
   }
 
   public SNode createMethod(String name, boolean isVirtual, SNode overridenMethod, SNode returnType) {
-    jetbrains.mps.smodel.SNode method = SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", null);
+    SNode method = SConceptOperations.createNewNode("jetbrains.mps.lang.behavior.structure.ConceptMethodDeclaration", null);
     SPropertyOperations.set(method, "name", name);
     SPropertyOperations.set(method, "isStatic", "" + (true));
     SPropertyOperations.set(method, "isVirtual", "" + (isVirtual));
@@ -651,7 +651,7 @@ public class ConceptPropertiesHelper {
   }
 
   private void createMethodCallAndMigrate(SNode method, SNode source, SNode operand) {
-    jetbrains.mps.smodel.SNode methodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
+    SNode methodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
     SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", method, false);
     migrateAccess(source, _quotation_createNode_azpnkk_b0c0hb(operand, methodCall), _quotation_createNode_azpnkk_c0c0hb(operand, methodCall));
   }
@@ -679,11 +679,11 @@ public class ConceptPropertiesHelper {
       return;
     }
     if (modelComponent == null) {
-      jetbrains.mps.smodel.SNode methodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
+      SNode methodCall = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_ConceptMethodCall", null);
       SLinkOperations.setTarget(methodCall, "baseMethodDeclaration", method, false);
 
       SNode cellModel_ReadOnlyModelAccessor = _quotation_createNode_azpnkk_a0d0e0jb();
-      jetbrains.mps.smodel.SNode conceptFunctionParameter_node = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node", null);
+      SNode conceptFunctionParameter_node = SConceptOperations.createNewNode("jetbrains.mps.lang.editor.structure.ConceptFunctionParameter_node", null);
       SNode returnStatement;
       if (conceptNode == SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.core.structure.BaseConcept") && eq_azpnkk_a0a6a4a53(SPropertyOperations.getString(SLinkOperations.getTarget(cell, "relationDeclaration", false), "name"), dontSubstituteName)) {
         returnStatement = _quotation_createNode_azpnkk_a0a0g0e0jb(conceptFunctionParameter_node);

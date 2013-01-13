@@ -4,7 +4,6 @@ package jetbrains.mps.lang.pattern.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
-import jetbrains.mps.util.IterableUtil;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.TestCase;
@@ -17,6 +16,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
@@ -89,7 +89,7 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
               return false;
             }
             {
-              SNode childVar_ListPattern_9twfax_a0a = IterableUtil.asList(nodeToMatch_ListPattern_9twfax_a0.getChildren(childRole_ListPattern_9twfax_)).get(0);
+              SNode childVar_ListPattern_9twfax_a0a = IterableUtil.get(nodeToMatch_ListPattern_9twfax_a0.getChildren(childRole_ListPattern_9twfax_), 0);
               {
                 SNode nodeToMatch_ListPattern_9twfax_a0a;
                 nodeToMatch_ListPattern_9twfax_a0a = childVar_ListPattern_9twfax_a0a;
@@ -107,7 +107,7 @@ public class PatternListPattern_Test extends BaseTransformationTest4 {
               return false;
             }
             {
-              SNode childVar_ListPattern_9twfax_a0a_0 = IterableUtil.asList(IterableUtil.asCollection(nodeToMatch_ListPattern_9twfax_a0.getChildren(childRole_ListPattern_9twfax__0))).get(0);
+              SNode childVar_ListPattern_9twfax_a0a_0 = IterableUtil.get(nodeToMatch_ListPattern_9twfax_a0.getChildren(childRole_ListPattern_9twfax__0), 0);
               {
                 SNode nodeToMatch_ListPattern_9twfax_a0a_0;
                 nodeToMatch_ListPattern_9twfax_a0a_0 = childVar_ListPattern_9twfax_a0a_0;

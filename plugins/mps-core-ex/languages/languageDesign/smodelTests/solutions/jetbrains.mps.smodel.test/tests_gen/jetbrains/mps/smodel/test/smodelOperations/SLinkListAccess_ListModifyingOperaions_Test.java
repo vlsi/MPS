@@ -115,7 +115,7 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
     public void test_add() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
-      jetbrains.mps.smodel.SNode newChild = SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null);
+      SNode newChild = SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null);
       Assert.assertNull(SNodeOperations.getParent(newChild));
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).addElement(newChild);
       Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).contains(newChild));
@@ -133,8 +133,8 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
     public void test_addAllWithIndex() throws Exception {
       this.addNodeById("2282909602806268543");
       this.addNodeById("2282909602806423211");
-      jetbrains.mps.smodel.SNode startNode = SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null);
-      jetbrains.mps.smodel.SNode endNode = SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null);
+      SNode startNode = SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null);
+      SNode endNode = SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null);
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).addElement(startNode);
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).addElement(endNode);
       Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_0_n", true)).contains(startNode));
@@ -247,7 +247,7 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
       this.addNodeById("2282909602806423211");
       Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 1);
       int initialSize = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count();
-      jetbrains.mps.smodel.SNode toInsert = SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null);
+      SNode toInsert = SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null);
       int index = 1;
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).insertElement(index, toInsert);
       Assert.assertEquals(initialSize + 1, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count());
@@ -261,7 +261,7 @@ public class SLinkListAccess_ListModifyingOperaions_Test extends BaseTransformat
       Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).count() > 1);
       int index = 1;
       SNode oldChild = ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).getElement(index);
-      jetbrains.mps.smodel.SNode newChild = SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null);
+      SNode newChild = SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.Child", null);
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).setElement(index, newChild);
       Assert.assertTrue(ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).contains(newChild));
       Assert.assertEquals(index, ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(this.getNodeById("2282909602806268544"), "jetbrains.mps.lang.smodelTests.structure.Root"), "child_1_n", true)).indexOf(newChild));

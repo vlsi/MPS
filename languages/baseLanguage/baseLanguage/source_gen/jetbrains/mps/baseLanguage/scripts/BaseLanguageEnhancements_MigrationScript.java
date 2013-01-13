@@ -58,9 +58,9 @@ public class BaseLanguageEnhancements_MigrationScript extends BaseMigrationScrip
 
       public void doUpdateInstanceNode(SNode node) {
         SNode declaration = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-        jetbrains.mps.smodel.SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
+        SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(ref, "variableDeclaration", declaration, false);
-        jetbrains.mps.smodel.SNode inc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", null);
+        SNode inc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PostfixIncrementExpression", null);
         SLinkOperations.setTarget(inc, "expression", ref, true);
         SNodeOperations.replaceWithAnother(node, inc);
       }
@@ -108,9 +108,9 @@ public class BaseLanguageEnhancements_MigrationScript extends BaseMigrationScrip
 
       public void doUpdateInstanceNode(SNode node) {
         SNode declaration = SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "lValue", true), "jetbrains.mps.baseLanguage.structure.VariableReference"), "variableDeclaration", false), "jetbrains.mps.baseLanguage.structure.LocalVariableDeclaration");
-        jetbrains.mps.smodel.SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
+        SNode ref = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(ref, "variableDeclaration", declaration, false);
-        jetbrains.mps.smodel.SNode dec = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", null);
+        SNode dec = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.PostfixDecrementExpression", null);
         SLinkOperations.setTarget(dec, "expression", ref, true);
         SNodeOperations.replaceWithAnother(node, dec);
       }

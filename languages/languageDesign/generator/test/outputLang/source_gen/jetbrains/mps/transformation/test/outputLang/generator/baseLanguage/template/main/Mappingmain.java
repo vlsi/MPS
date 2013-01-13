@@ -546,7 +546,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final GeneratedMatchingPattern pattern, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a5w);
-      Collection<SNode> tlist1 = new TemplateconvertMult(((jetbrains.mps.smodel.SNode) pattern.getFieldValue("patternVar_yy")), ((jetbrains.mps.smodel.SNode) pattern.getFieldValue("patternVar_right"))).apply(environment, context);
+      Collection<SNode> tlist1 = new TemplateconvertMult(((SNode) pattern.getFieldValue("patternVar_yy")), ((SNode) pattern.getFieldValue("patternVar_right"))).apply(environment, context);
       return tlist1;
     }
   }
@@ -780,7 +780,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final GeneratedMatchingPattern pattern, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a5z);
-      Collection<SNode> tlist1 = new TemplateprocessStatement(((String) QueriesGenerated.templateArgumentQuery_4816349095291000368(environment.getOperationContext(), new TemplateArgumentContext(context.getInput(), templArgCall_417xrn_b0b0a0a0a0b0f52, context, environment.getGenerator()))), ((String) pattern.getFieldValue("patternVar_jobName")), ((jetbrains.mps.smodel.SNode) pattern.getFieldValue("patternVar_myExpr")), 12, true).apply(environment, context);
+      Collection<SNode> tlist1 = new TemplateprocessStatement(((String) QueriesGenerated.templateArgumentQuery_4816349095291000368(environment.getOperationContext(), new TemplateArgumentContext(context.getInput(), templArgCall_417xrn_b0b0a0a0a0b0f52, context, environment.getGenerator()))), ((String) pattern.getFieldValue("patternVar_jobName")), ((SNode) pattern.getFieldValue("patternVar_myExpr")), 12, true).apply(environment, context);
       return tlist1;
     }
   }
@@ -944,7 +944,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
 
     private Collection<SNode> apply(final TemplateContext context, final GeneratedMatchingPattern pattern, final TemplateExecutionEnvironment environment) throws GenerationException {
       environment.getTracer().pushRuleConsequence(conseq_417xrn_a0a0a5bb);
-      Collection<SNode> tlist1 = new Templateprocess42(((jetbrains.mps.smodel.SNode) pattern.getFieldValue("patternVar_ref"))).apply(environment, context);
+      Collection<SNode> tlist1 = new Templateprocess42(((SNode) pattern.getFieldValue("patternVar_ref"))).apply(environment, context);
       return tlist1;
     }
   }
@@ -1017,7 +1017,7 @@ public class Mappingmain implements TemplateMappingConfiguration {
                 final SNodePointer templateNode4 = new SNodePointer("r:00000000-0000-4000-0000-011c89590606(jetbrains.mps.transformation.test.outputLang.generator.baseLanguage.template.main@generator)", "5857536350883030947");
                 try {
                   environment.getTracer().pushTemplateNode(templateNode4);
-                  tlist4 = new Templateprocess42(((jetbrains.mps.smodel.SNode) pattern.getFieldValue("patternVar_ref"))).apply(environment, context);
+                  tlist4 = new Templateprocess42(((SNode) pattern.getFieldValue("patternVar_ref"))).apply(environment, context);
                 } finally {
                   environment.getTracer().pushTemplateNode(templateNode4);
                 }

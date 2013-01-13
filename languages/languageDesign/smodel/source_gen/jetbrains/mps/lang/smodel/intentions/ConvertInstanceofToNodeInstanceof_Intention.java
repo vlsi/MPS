@@ -82,8 +82,8 @@ public class ConvertInstanceofToNodeInstanceof_Intention implements IntentionFac
     }
 
     public void execute(final SNode node, final EditorContext editorContext) {
-      jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
-      jetbrains.mps.smodel.SNode operation = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", null);
+      SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
+      SNode operation = SConceptOperations.createNewNode("jetbrains.mps.lang.smodel.structure.Node_IsInstanceOfOperation", null);
       SLinkOperations.setTarget(result, "operation", operation, true);
       SNode concept = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(node, "classType", true), "jetbrains.mps.lang.smodel.structure.SNodeType"), "concept", false);
       SNode conceptReference = SLinkOperations.setNewChild(operation, "conceptArgument", "jetbrains.mps.lang.smodel.structure.RefConcept_Reference");

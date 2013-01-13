@@ -46,7 +46,7 @@ public class VariableUnifyingMigration {
       }
 
       public SNode migrateInstanceNode(SNode node) {
-        jetbrains.mps.smodel.SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
+        SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
         SLinkOperations.setTarget(result, "variableDeclaration", SLinkOperations.getTarget(node, "variableDeclaration", false), false);
         // copy smodel attributes 
         for (SNode attribute : SLinkOperations.getTargets(node, "smodelAttribute", true)) {

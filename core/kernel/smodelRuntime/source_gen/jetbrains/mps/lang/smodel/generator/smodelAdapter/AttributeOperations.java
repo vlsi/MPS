@@ -129,7 +129,7 @@ public class AttributeOperations {
   public static void $$$$$$$$$$$$$$$$$$$$() {
   }
 
-  public static boolean isAttribute(org.jetbrains.mps.openapi.model.SNode node) {
+  public static boolean isAttribute(SNode node) {
     if (node == null) {
       return false;
     }
@@ -233,7 +233,7 @@ public class AttributeOperations {
     private IAttributeDescriptor myAttributeDescriptor;
 
     public AttributeList(SNode attributed, IAttributeDescriptor descriptor) {
-      super(attributed, "smodelAttribute", (List<SNode>) Sequence.fromIterable(AttributeOperations.getAttributes(SNodeOperations.cast(attributed, "jetbrains.mps.lang.core.structure.BaseConcept"), descriptor)).toListSequence());
+      super(attributed, "smodelAttribute", (List) Sequence.fromIterable(AttributeOperations.getAttributes(SNodeOperations.cast(attributed, "jetbrains.mps.lang.core.structure.BaseConcept"), descriptor)).toListSequence());
       myAttributeDescriptor = descriptor;
     }
 

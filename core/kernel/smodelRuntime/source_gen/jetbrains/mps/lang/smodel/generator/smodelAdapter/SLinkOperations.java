@@ -11,6 +11,7 @@ import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import java.util.List;
 import java.util.ArrayList;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SReference;
 
 @Deprecated
@@ -28,7 +29,7 @@ public class SLinkOperations {
   public static SNode getTarget(SNode node, String role, boolean child) {
     if (node != null) {
       if (child) {
-        Iterator<? extends SNode> it = node.getChildren(role).iterator();
+        Iterator<SNode> it = ((Iterator) node.getChildren(role).iterator());
         return (it.hasNext() ?
           it.next() :
           null
@@ -125,7 +126,7 @@ public class SLinkOperations {
     if (parent == null) {
       return null;
     }
-    Iterator<? extends SNode> it = parent.getChildren(role).iterator();
+    Iterator<SNode> it = ((Iterator) parent.getChildren(role).iterator());
     SNode child = (it.hasNext() ?
       it.next() :
       null
@@ -137,7 +138,7 @@ public class SLinkOperations {
     return null;
   }
 
-  public static List<SNode> removeAllChildren(SNode parent, String role) {
+  public static List removeAllChildren(SNode parent, String role) {
     if (parent == null) {
       return new ArrayList<SNode>(1);
     }
@@ -145,7 +146,7 @@ public class SLinkOperations {
     for (SNode child : children) {
       parent.removeChild(child);
     }
-    return ((List) children);
+    return IterableUtil.asList(children);
   }
 
   public static List<SNode> getConceptLinkTargets(SNode node, String linkName) {

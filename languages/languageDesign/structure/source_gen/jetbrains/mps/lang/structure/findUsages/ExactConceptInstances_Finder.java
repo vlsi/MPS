@@ -39,8 +39,8 @@ public class ExactConceptInstances_Finder extends GeneratedFinder {
     monitor.start(getDescription(), 0);
     try {
       SConcept concept = SConceptRepository.getInstance().getConcept(NameUtil.nodeFQName(node));
-      Set<org.jetbrains.mps.openapi.model.SNode> nodes = FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.EXACT_INSTANCES, scope, monitor);
-      for (org.jetbrains.mps.openapi.model.SNode resNode : nodes) {
+      Set<SNode> nodes = FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.EXACT_INSTANCES, scope, monitor);
+      for (SNode resNode : nodes) {
         ListSequence.fromList(_results).addElement(((SNode) resNode));
       }
     } finally {

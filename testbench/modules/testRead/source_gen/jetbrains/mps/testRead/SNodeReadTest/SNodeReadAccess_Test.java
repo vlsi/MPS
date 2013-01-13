@@ -420,7 +420,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
       Set<String> contractMethods = this.getISNodeMethodsNames(false);
 
       List<Method> methods = new ArrayList<Method>();
-      methods.addAll(Arrays.asList(SNode.class.getDeclaredMethods()));
+      methods.addAll(Arrays.asList(jetbrains.mps.smodel.SNode.class.getDeclaredMethods()));
       // 'delete' must be last checked method 
       for (int i = 0; i < methods.size(); i++) {
         if (methods.get(i).getName().equals("delete") && i != (methods.size() - 1)) {
@@ -496,7 +496,7 @@ public class SNodeReadAccess_Test extends BaseTransformationTest4 {
 
     public Set<String> getISNodeMethodsNames(boolean fullQualified) throws FileNotFoundException, IOException {
       Set<String> set = new HashSet<String>();
-      for (Method method : org.jetbrains.mps.openapi.model.SNode.class.getMethods()) {
+      for (Method method : SNode.class.getMethods()) {
         set.add((fullQualified ?
           method.toGenericString() :
           method.getName()

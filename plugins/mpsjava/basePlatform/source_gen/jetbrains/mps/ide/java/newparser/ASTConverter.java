@@ -303,12 +303,12 @@ public class ASTConverter {
 
     if (flagSet(f.modifiers, ClassFileConstants.AccStatic) || SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.Interface")) {
       // interfaces in java can have fields not declared as static, but they are static 
-      jetbrains.mps.smodel.SNode staticDecl = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", null);
+      SNode staticDecl = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration", null);
       fDecl = staticDecl;
     } else {
       assert SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.ClassConcept");
 
-      jetbrains.mps.smodel.SNode fieldDecl = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
+      SNode fieldDecl = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FieldDeclaration", null);
 
       SPropertyOperations.set(fieldDecl, "isVolatile", "" + (flagSet(f.modifiers, ClassFileConstants.AccVolatile)));
       SPropertyOperations.set(fieldDecl, "isTransient", "" + (flagSet(f.modifiers, ClassFileConstants.AccTransient)));
@@ -337,7 +337,7 @@ public class ASTConverter {
 
     if (f.javadoc != null) {
       int start = f.javadoc.sourceStart;
-      jetbrains.mps.smodel.SNode doc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", null);
+      SNode doc = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment", null);
       if (SNodeOperations.isInstanceOf(fDecl, "jetbrains.mps.baseLanguage.structure.FieldDeclaration")) {
         AttributeOperations.setAttribute(SNodeOperations.cast(fDecl, "jetbrains.mps.baseLanguage.structure.FieldDeclaration"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.javadoc.structure.FieldDocComment")), doc);
       } else if (SNodeOperations.isInstanceOf(fDecl, "jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")) {
@@ -456,7 +456,7 @@ public class ASTConverter {
   }
 
   public SNode convertTypeVar(TypeParameter par) throws JavaParseException {
-    jetbrains.mps.smodel.SNode tvar = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", null);
+    SNode tvar = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration", null);
     SPropertyOperations.set(tvar, "name", new String(par.name));
     if (par.type != null) {
       SLinkOperations.setTarget(tvar, "bound", convertTypeReference(par.type), true);
@@ -500,7 +500,7 @@ public class ASTConverter {
 
     SNode node = myTypeResolver.resolveAnnotaion(name);
     for (MemberValuePair pair : anno.memberValuePairs()) {
-      jetbrains.mps.smodel.SNode val = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", null);
+      SNode val = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", null);
       SReference ref = new DynamicReference("key", val, null, new String(pair.name));
       val.setReference(ref.getRole(), ref);
       SLinkOperations.setTarget(val, "value", convertExpression(pair.value), true);
@@ -537,7 +537,7 @@ public class ASTConverter {
 
     if (x.arguments != null) {
       for (Argument arg : x.arguments) {
-        jetbrains.mps.smodel.SNode par = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
+        SNode par = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ParameterDeclaration", null);
         convertAnnotations(arg.annotations, par);
         SPropertyOperations.set(par, "name", new String(arg.name));
         SLinkOperations.setTarget(par, "type", childConverter.convertTypeReference(arg.type), true);

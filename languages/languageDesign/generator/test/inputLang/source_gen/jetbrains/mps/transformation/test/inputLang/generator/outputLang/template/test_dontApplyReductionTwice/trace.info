@@ -110,13 +110,13 @@
   </root>
   <root nodeId="1209605205934" modelId="r:00000000-0000-4000-0000-011c895905f5(jetbrains.mps.transformation.test.inputLang.generator.outputLang.template.test_dontApplyReductionTwice@generator)">
     <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="21" startPosition="41" endLine="22" endPosition="32" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="25" startPosition="158" endLine="26" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="25" startPosition="158" endLine="26" endPosition="125" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="27" startPosition="9" endLine="28" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="28" startPosition="77" endLine="29" endPosition="106" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="29" startPosition="106" endLine="30" endPosition="64" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="30" startPosition="64" endLine="31" endPosition="104" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="31" startPosition="104" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
-    <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="33" startPosition="7" endLine="34" endPosition="140" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="33" startPosition="7" endLine="34" endPosition="161" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="35" startPosition="13" endLine="36" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="36" startPosition="85" endLine="37" endPosition="110" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="37" startPosition="110" endLine="38" endPosition="117" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -134,9 +134,9 @@
     <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="TemplateoutputRoot#()V" />
     <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="21" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getTemplateNode#()Ljetbrains/mps/smodel/SNodePointer;" />
     <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="43" startPosition="9" endLine="46" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="34" startPosition="140" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="34" startPosition="161" endLine="43" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="32" startPosition="0" endLine="48" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="26" startPosition="104" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
+    <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="26" startPosition="125" endLine="52" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryStatement" />
     <nodeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="25" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="apply#(Ljetbrains/mps/generator/runtime/TemplateExecutionEnvironment;Ljetbrains/mps/generator/runtime/TemplateContext;)Ljava/util/Collection;" />
     <scopeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="18" startPosition="31" endLine="18" endPosition="31" />
     <scopeInfo nodeId="1209605205934" fileName="TemplateoutputRoot.java" startLine="21" startPosition="41" endLine="22" endPosition="32" />

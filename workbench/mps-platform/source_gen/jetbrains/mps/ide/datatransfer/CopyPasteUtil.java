@@ -19,7 +19,7 @@ import jetbrains.mps.datatransfer.CopyPasteManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.StaticReference;
@@ -113,16 +113,17 @@ public class CopyPasteUtil {
   }
 
   private static SNode copyNode_internal(SNode sourceNode, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
-    jetbrains.mps.smodel.SNode targetNode = new jetbrains.mps.smodel.SNode(InternUtil.intern(sourceNode.getConcept().getConceptId()));
-    targetNode.setId(SNodeId.fromString(sourceNode.getNodeId().toString()));
-    for (String name : sourceNode.getPropertyNames()) {
+    SNode targetNode = new jetbrains.mps.smodel.SNode(InternUtil.intern(sourceNode.getConcept().getConceptId()));
+    ((jetbrains.mps.smodel.SNode) targetNode).setId(SNodeId.fromString(sourceNode.getNodeId().toString()));
+    for (String name : Sequence.fromIterable(sourceNode.getPropertyNames())) {
       targetNode.setProperty(name, sourceNode.getProperty(name));
     }
     sourceNodesToNewNodes.put(sourceNode, targetNode);
-    for (SReference reference : (List<SReference>)(List) sourceNode.getReferences()) {
+    for (SReference reference : sourceNode.getReferences()) {
       allReferences.add(reference);
     }
-    for (SNode sourceChild :  SNodeOperations.getChildren(sourceNode)) {
+    List<SNode> children = SNodeOperations.getChildren(sourceNode);
+    for (SNode sourceChild : children) {
       if (nodesAndAttributes != null) {
         if (AttributeOperations.isAttribute(sourceChild)) {
           Set<SNode> nodes = nodesAndAttributes.get(sourceNode);

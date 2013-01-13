@@ -92,7 +92,7 @@ public class ConvertClassConceptToExtract_Intention implements IntentionFactory 
       }
       HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
       mapping.put(node, newNode);
-      List<SNode> children = (List)jetbrains.mps.util.SNodeOperations.getChildren(node);
+      List<SNode> children = jetbrains.mps.util.SNodeOperations.getChildren(node);
       CopyUtil.copy(children, mapping);
       for (SNode child : children) {
         newNode.addChild(child.getRoleInParent(), mapping.get(child));

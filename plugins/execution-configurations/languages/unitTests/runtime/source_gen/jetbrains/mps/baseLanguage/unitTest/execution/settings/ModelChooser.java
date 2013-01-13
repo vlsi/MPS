@@ -46,7 +46,7 @@ public class ModelChooser extends BaseChooserComponent {
       public void run() {
         SConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
         Set<SNode> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, GlobalScope.getInstance(), null);
-        for (jetbrains.mps.smodel.SNode node : ((Set<jetbrains.mps.smodel.SNode>) ((Set) usages))) {
+        for (SNode node : ((Set<SNode>) ((Set) usages))) {
           SModel model = SNodeOperations.getModel(node);
           SModelReference md = model.getSModelReference();
           if (ListSequence.fromList(ModelChooser.this.myCheckedModels).contains(md)) {

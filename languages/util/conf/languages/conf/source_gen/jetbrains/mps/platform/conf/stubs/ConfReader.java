@@ -293,14 +293,14 @@ public class ConfReader {
           name = ep.getAttributeValue(QNAME);
         }
         if (bc != null) {
-          jetbrains.mps.smodel.SNode bep = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.BeanExtensionPoint", null);
-          bep.setId(createForeignId(resolveInfo(EXTENSION_POINT, name)));
+          SNode bep = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.BeanExtensionPoint", null);
+          ((jetbrains.mps.smodel.SNode) bep).setId(createForeignId(resolveInfo(EXTENSION_POINT, name)));
           ListSequence.fromList(SLinkOperations.getTargets(node, "fragment", true)).addElement(bep);
           setProperty("name", bep, name);
           addClassifierReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.BeanExtensionPoint", "beanClass"), bep, bc);
         } else if (ifc != null) {
-          jetbrains.mps.smodel.SNode iep = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint", null);
-          iep.setId(createForeignId(resolveInfo(EXTENSION_POINT, name)));
+          SNode iep = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint", null);
+          ((jetbrains.mps.smodel.SNode) iep).setId(createForeignId(resolveInfo(EXTENSION_POINT, name)));
           ListSequence.fromList(SLinkOperations.getTargets(node, "fragment", true)).addElement(iep);
           setProperty("name", iep, name);
           addClassifierReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint", "iface"), iep, ifc);

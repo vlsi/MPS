@@ -104,7 +104,7 @@ public class SNodeGetChildrenOperation_Test extends BaseTransformationTest4 {
       this.addNodeById("5815925154349132136");
       this.addNodeById("2166349271756548530");
       int initialSize = ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("2166349271756548531"), "jetbrains.mps.lang.smodelTests.structure.Root"))).count();
-      jetbrains.mps.smodel.SNode unspecifiedChild = SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.GrandChild", null);
+      SNode unspecifiedChild = SConceptOperations.createNewNode("jetbrains.mps.lang.smodelTests.structure.GrandChild", null);
       String unspecifiedChildRole = this.addUnspecifiedChild(SNodeOperations.cast(this.getNodeById("2166349271756548531"), "jetbrains.mps.lang.smodelTests.structure.Root"), unspecifiedChild);
       Assert.assertEquals(initialSize + 1, ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("2166349271756548531"), "jetbrains.mps.lang.smodelTests.structure.Root"))).count());
       Iterable<SNode> unspecifiedChildren = ListSequence.fromList(SNodeOperations.getChildren(SNodeOperations.cast(this.getNodeById("2166349271756548531"), "jetbrains.mps.lang.smodelTests.structure.Root"))).where(new IWhereFilter<SNode>() {

@@ -139,7 +139,7 @@ public final class SConceptOperations {
     return ListSequence.fromListWithValues(new ArrayList<SNode>(), usages);
   }
 
-  public static jetbrains.mps.smodel.SNode createNewNode(String conceptFqName) {
+  public static SNode createNewNode(String conceptFqName) {
     return jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations.createNewNode(null, conceptFqName);
   }
 

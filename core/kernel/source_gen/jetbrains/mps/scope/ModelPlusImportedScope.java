@@ -57,7 +57,7 @@ public class ModelPlusImportedScope extends Scope {
       if (model == null) {
         continue;
       }
-      Iterable<? extends SNode> nodes;
+      Iterable<SNode> nodes;
       String conceptToCheck;
 
       if (myRootsOnly) {
@@ -67,7 +67,7 @@ public class ModelPlusImportedScope extends Scope {
         nodes = model.getSModel().getFastNodeFinder().getNodes(myTargetConcept, true);
         conceptToCheck = null;
       } else {
-        nodes = model.getSModel().nodes();
+        nodes = ((Iterable) model.getSModel().nodes());
         conceptToCheck = null;
       }
 

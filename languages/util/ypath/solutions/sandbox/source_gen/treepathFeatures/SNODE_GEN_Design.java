@@ -38,7 +38,7 @@ public class SNODE_GEN_Design {
     }
 
     public SNode getterExpression(SNode expression, SNode param, ITemplateGenerator generator) {
-      jetbrains.mps.smodel.SNode opExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
+      SNode opExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
       SNode op;
       SLinkOperations.setTarget(opExpr, "operand", expression, true);
       if (SnodeGenUtil.singleCardinality(SPropertyOperations.getString_def(param, "sourceCardinality", "0..1"))) {
@@ -84,7 +84,7 @@ public class SNODE_GEN_Design {
     }
 
     public SNode getterExpression(SNode expression, SNode param, ITemplateGenerator generator) {
-      jetbrains.mps.smodel.SNode opExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
+      SNode opExpr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.DotExpression", null);
       SNode op;
       SLinkOperations.setTarget(opExpr, "operand", expression, true);
       if (SnodeGenUtil.singleCardinality(SPropertyOperations.getString_def(param, "sourceCardinality", "0..1"))) {

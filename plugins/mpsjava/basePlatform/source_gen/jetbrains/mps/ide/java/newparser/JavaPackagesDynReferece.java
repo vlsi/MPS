@@ -75,7 +75,7 @@ public class JavaPackagesDynReferece extends DynamicReference {
       SModel model_var;
       while (model_it.hasNext()) {
         model_var = model_it.next();
-        for (org.jetbrains.mps.openapi.model.SNode n : Sequence.fromIterable(model_var.getRootNodes())) {
+        for (SNode n : Sequence.fromIterable(model_var.getRootNodes())) {
           if (name.equals(n.getName())) {
             // <node> 
             return (SNode) n;

@@ -52,7 +52,7 @@ public abstract class ChildrenTableModel extends AbstractTableModel_optimized {
   public void createNewRow(int index) {
     int rowCount = getRowCount();
     assert index <= rowCount;
-    jetbrains.mps.smodel.SNode newRowNode = SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myChildLinkDeclaration, "target", false)), null);
+    SNode newRowNode = SConceptOperations.createNewNode(NameUtil.nodeFQName(SLinkOperations.getTarget(myChildLinkDeclaration, "target", false)), null);
     if (index == rowCount) {
       myParentNode.addChild(SPropertyOperations.getString(myChildLinkDeclaration, "role"), newRowNode);
     } else {

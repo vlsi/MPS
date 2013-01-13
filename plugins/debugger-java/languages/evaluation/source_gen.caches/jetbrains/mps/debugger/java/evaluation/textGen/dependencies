@@ -5,7 +5,7 @@
     <classNode extendsClassName="java.lang.Object" />
   </dependency>
   <dependency className="jetbrains.mps.debugger.java.evaluation.textGen.LowLevelVariable_TextGen" file="LowLevelVariable_TextGen.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.textGen.SNodeTextGen" />
   </dependency>
 </dependenciesRoot>

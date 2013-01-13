@@ -20,6 +20,7 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.intentions.IntentionDescriptor;
 
 public class ChangePropertyWithNonEmpty_Intention implements IntentionFactory {
@@ -98,7 +99,7 @@ public class ChangePropertyWithNonEmpty_Intention implements IntentionFactory {
       for (Map.Entry<String, String> propertyEntry : SetSequence.fromSet(jetbrains.mps.util.SNodeOperations.getProperties(node).entrySet())) {
         SNodeAccessUtil.setProperty(nonEmpty, propertyEntry.getKey(), propertyEntry.getValue());
       }
-      for (SReference reference : node.getReferences()) {
+      for (SReference reference : Sequence.fromIterable(node.getReferences())) {
         nonEmpty.setReference(reference.getRole(), reference);
       }
       SNodeOperations.replaceWithAnother(node, nonEmpty);

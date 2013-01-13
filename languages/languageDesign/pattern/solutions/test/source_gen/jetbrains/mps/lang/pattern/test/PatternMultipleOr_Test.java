@@ -4,7 +4,6 @@ package jetbrains.mps.lang.pattern.test;
 
 import jetbrains.mps.MPSLaunch;
 import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
-import jetbrains.mps.util.IterableUtil;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.TestCase;
@@ -16,6 +15,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -75,7 +75,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
               return false;
             }
             {
-              SNode childVar_MultipleOr_qy0uft_a0a = IterableUtil.asList(IterableUtil.asCollection(nodeToMatch_MultipleOr_qy0uft_a0.getChildren(childRole_MultipleOr_qy0uft_))).get(0);
+              SNode childVar_MultipleOr_qy0uft_a0a = IterableUtil.get(nodeToMatch_MultipleOr_qy0uft_a0.getChildren(childRole_MultipleOr_qy0uft_), 0);
               {
                 SNode nodeToMatch_MultipleOr_qy0uft_a0a;
                 nodeToMatch_MultipleOr_qy0uft_a0a = childVar_MultipleOr_qy0uft_a0a;
@@ -91,7 +91,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
               return false;
             }
             {
-              SNode childVar_MultipleOr_qy0uft_a0a_0 = IterableUtil.asList(IterableUtil.asList(nodeToMatch_MultipleOr_qy0uft_a0.getChildren(childRole_MultipleOr_qy0uft__0))).get(0);
+              SNode childVar_MultipleOr_qy0uft_a0a_0 = IterableUtil.get(nodeToMatch_MultipleOr_qy0uft_a0.getChildren(childRole_MultipleOr_qy0uft__0), 0);
               {
                 SNode nodeToMatch_MultipleOr_qy0uft_a0a_0;
                 nodeToMatch_MultipleOr_qy0uft_a0a_0 = childVar_MultipleOr_qy0uft_a0a_0;
@@ -166,7 +166,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                 return false;
               }
               {
-                SNode childVar_MultipleOr_qy0uft_a0a0a0 = IterableUtil.asList(IterableUtil.asList(nodeToMatch_MultipleOr_qy0uft_a0a0a.getChildren(childRole_MultipleOr_qy0uft__1))).get(0);
+                SNode childVar_MultipleOr_qy0uft_a0a0a0 = IterableUtil.get(nodeToMatch_MultipleOr_qy0uft_a0a0a.getChildren(childRole_MultipleOr_qy0uft__1), 0);
                 {
                   SNode nodeToMatch_MultipleOr_qy0uft_a0a0a0;
                   nodeToMatch_MultipleOr_qy0uft_a0a0a0 = childVar_MultipleOr_qy0uft_a0a0a0;
@@ -180,7 +180,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                 return false;
               }
               {
-                SNode childVar_MultipleOr_qy0uft_a0a0a0_0 = IterableUtil.asList(IterableUtil.asList(nodeToMatch_MultipleOr_qy0uft_a0a0a.getChildren(childRole_MultipleOr_qy0uft__2))).get(0);
+                SNode childVar_MultipleOr_qy0uft_a0a0a0_0 = IterableUtil.get(nodeToMatch_MultipleOr_qy0uft_a0a0a.getChildren(childRole_MultipleOr_qy0uft__2), 0);
                 {
                   SNode nodeToMatch_MultipleOr_qy0uft_a0a0a0_0;
                   nodeToMatch_MultipleOr_qy0uft_a0a0a0_0 = childVar_MultipleOr_qy0uft_a0a0a0_0;
@@ -226,7 +226,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                 return false;
               }
               {
-                SNode childVar_MultipleOr_qy0uft_a0b0a0 = IterableUtil.asList(nodeToMatch_MultipleOr_qy0uft_a1a0a.getChildren(childRole_MultipleOr_qy0uft__3)).get(0);
+                SNode childVar_MultipleOr_qy0uft_a0b0a0 = IterableUtil.get(nodeToMatch_MultipleOr_qy0uft_a1a0a.getChildren(childRole_MultipleOr_qy0uft__3), 0);
                 {
                   SNode nodeToMatch_MultipleOr_qy0uft_a0b0a0;
                   nodeToMatch_MultipleOr_qy0uft_a0b0a0 = childVar_MultipleOr_qy0uft_a0b0a0;
@@ -242,7 +242,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                 return false;
               }
               {
-                SNode childVar_MultipleOr_qy0uft_a0b0a0_0 = IterableUtil.asList(nodeToMatch_MultipleOr_qy0uft_a1a0a.getChildren(childRole_MultipleOr_qy0uft__4)).get(0);
+                SNode childVar_MultipleOr_qy0uft_a0b0a0_0 = IterableUtil.get(nodeToMatch_MultipleOr_qy0uft_a1a0a.getChildren(childRole_MultipleOr_qy0uft__4), 0);
                 {
                   SNode nodeToMatch_MultipleOr_qy0uft_a0b0a0_0;
                   nodeToMatch_MultipleOr_qy0uft_a0b0a0_0 = childVar_MultipleOr_qy0uft_a0b0a0_0;
@@ -286,7 +286,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                 return false;
               }
               {
-                SNode childVar_MultipleOr_qy0uft_a0c0a0 = IterableUtil.asList(nodeToMatch_MultipleOr_qy0uft_a2a0a.getChildren(childRole_MultipleOr_qy0uft__5)).get(0);
+                SNode childVar_MultipleOr_qy0uft_a0c0a0 = IterableUtil.get(nodeToMatch_MultipleOr_qy0uft_a2a0a.getChildren(childRole_MultipleOr_qy0uft__5), 0);
               }
             }
             {
@@ -295,7 +295,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                 return false;
               }
               {
-                SNode childVar_MultipleOr_qy0uft_a0c0a0_0 = IterableUtil.asList(nodeToMatch_MultipleOr_qy0uft_a2a0a.getChildren(childRole_MultipleOr_qy0uft__6)).get(0);
+                SNode childVar_MultipleOr_qy0uft_a0c0a0_0 = IterableUtil.get(nodeToMatch_MultipleOr_qy0uft_a2a0a.getChildren(childRole_MultipleOr_qy0uft__6), 0);
                 {
                   SNode nodeToMatch_MultipleOr_qy0uft_a0c0a0;
                   nodeToMatch_MultipleOr_qy0uft_a0c0a0 = childVar_MultipleOr_qy0uft_a0c0a0_0;
@@ -308,7 +308,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                       return false;
                     }
                     {
-                      SNode childVar_MultipleOr_qy0uft_a0a2a0a = IterableUtil.asList(nodeToMatch_MultipleOr_qy0uft_a0c0a0.getChildren(childRole_MultipleOr_qy0uft__7)).get(0);
+                      SNode childVar_MultipleOr_qy0uft_a0a2a0a = IterableUtil.get(nodeToMatch_MultipleOr_qy0uft_a0c0a0.getChildren(childRole_MultipleOr_qy0uft__7), 0);
                       {
                         SNode nodeToMatch_MultipleOr_qy0uft_a0a2a0a;
                         nodeToMatch_MultipleOr_qy0uft_a0a2a0a = childVar_MultipleOr_qy0uft_a0a2a0a;
@@ -324,7 +324,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                       return false;
                     }
                     {
-                      SNode childVar_MultipleOr_qy0uft_a0a2a0a_0 = IterableUtil.asList(nodeToMatch_MultipleOr_qy0uft_a0c0a0.getChildren(childRole_MultipleOr_qy0uft__8)).get(0);
+                      SNode childVar_MultipleOr_qy0uft_a0a2a0a_0 = IterableUtil.get(nodeToMatch_MultipleOr_qy0uft_a0c0a0.getChildren(childRole_MultipleOr_qy0uft__8), 0);
                       {
                         SNode nodeToMatch_MultipleOr_qy0uft_a0a2a0a_0;
                         nodeToMatch_MultipleOr_qy0uft_a0a2a0a_0 = childVar_MultipleOr_qy0uft_a0a2a0a_0;
@@ -371,7 +371,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                 return false;
               }
               {
-                SNode childVar_MultipleOr_qy0uft_a0d0a0 = IterableUtil.asList(nodeToMatch_MultipleOr_qy0uft_a3a0a.getChildren(childRole_MultipleOr_qy0uft__9)).get(0);
+                SNode childVar_MultipleOr_qy0uft_a0d0a0 = IterableUtil.get(nodeToMatch_MultipleOr_qy0uft_a3a0a.getChildren(childRole_MultipleOr_qy0uft__9), 0);
               }
             }
             {
@@ -380,7 +380,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                 return false;
               }
               {
-                SNode childVar_MultipleOr_qy0uft_a0d0a0_0 = IterableUtil.asList(nodeToMatch_MultipleOr_qy0uft_a3a0a.getChildren(childRole_MultipleOr_qy0uft__10)).get(0);
+                SNode childVar_MultipleOr_qy0uft_a0d0a0_0 = IterableUtil.get(nodeToMatch_MultipleOr_qy0uft_a3a0a.getChildren(childRole_MultipleOr_qy0uft__10), 0);
                 {
                   SNode nodeToMatch_MultipleOr_qy0uft_a0d0a0;
                   nodeToMatch_MultipleOr_qy0uft_a0d0a0 = childVar_MultipleOr_qy0uft_a0d0a0_0;
@@ -393,7 +393,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                       return false;
                     }
                     {
-                      SNode childVar_MultipleOr_qy0uft_a0a3a0a = IterableUtil.asList(nodeToMatch_MultipleOr_qy0uft_a0d0a0.getChildren(childRole_MultipleOr_qy0uft__11)).get(0);
+                      SNode childVar_MultipleOr_qy0uft_a0a3a0a = IterableUtil.get(nodeToMatch_MultipleOr_qy0uft_a0d0a0.getChildren(childRole_MultipleOr_qy0uft__11), 0);
                       {
                         SNode nodeToMatch_MultipleOr_qy0uft_a0a3a0a;
                         nodeToMatch_MultipleOr_qy0uft_a0a3a0a = childVar_MultipleOr_qy0uft_a0a3a0a;
@@ -409,7 +409,7 @@ public class PatternMultipleOr_Test extends BaseTransformationTest4 {
                       return false;
                     }
                     {
-                      SNode childVar_MultipleOr_qy0uft_a0a3a0a_0 = IterableUtil.asList(nodeToMatch_MultipleOr_qy0uft_a0d0a0.getChildren(childRole_MultipleOr_qy0uft__12)).get(0);
+                      SNode childVar_MultipleOr_qy0uft_a0a3a0a_0 = IterableUtil.get(nodeToMatch_MultipleOr_qy0uft_a0d0a0.getChildren(childRole_MultipleOr_qy0uft__12), 0);
                       {
                         SNode nodeToMatch_MultipleOr_qy0uft_a0a3a0a_0;
                         nodeToMatch_MultipleOr_qy0uft_a0a3a0a_0 = childVar_MultipleOr_qy0uft_a0a3a0a_0;

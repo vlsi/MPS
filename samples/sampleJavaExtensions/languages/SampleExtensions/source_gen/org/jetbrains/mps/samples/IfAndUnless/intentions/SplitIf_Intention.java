@@ -86,7 +86,7 @@ public class SplitIf_Intention implements IntentionFactory {
       SNode left = SLinkOperations.getTarget(andExpression, "leftExpression", true);
       SNode right = SLinkOperations.getTarget(andExpression, "rightExpression", true);
       SLinkOperations.setTarget(node, "condition", right, true);
-      jetbrains.mps.smodel.SNode statement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
+      SNode statement = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IfStatement", null);
       SLinkOperations.setTarget(statement, "condition", left, true);
       SNodeOperations.replaceWithAnother(node, statement);
       SLinkOperations.setTarget(statement, "ifTrue", SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StatementList", null), true);

@@ -627,7 +627,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       SNode fieldDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.cast(this.getNodeById("5543996881668550238"), "jetbrains.mps.baseLanguage.structure.DotExpression"), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operation", true), "jetbrains.mps.baseLanguage.structure.FieldReferenceOperation"), "fieldDeclaration", false);
-      jetbrains.mps.smodel.SNode instanceFieldReference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
+      SNode instanceFieldReference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
       SLinkOperations.setTarget(instanceFieldReference, "variableDeclaration", fieldDeclaration, false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("5543996881668550238"), "jetbrains.mps.baseLanguage.structure.DotExpression"), instanceFieldReference);
       TransformatorBuilder.getInstance().build(SNodeOperations.cast(this.getNodeById("5543996881668550236"), "jetbrains.mps.baseLanguage.structure.StatementList"), false).transformEvaluator();
@@ -814,7 +814,7 @@ public class TransformationUtil_Expressions_Test extends BaseTransformationTest4
       this.addNodeById("3619281710184383915");
       this.init();
       SNode fieldDeclaration = SLinkOperations.getTarget(SNodeOperations.cast(this.getNodeById("5543996881668550263"), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), "variableDeclaration", false);
-      jetbrains.mps.smodel.SNode staticFieldReference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
+      SNode staticFieldReference = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.VariableReference", null);
       SLinkOperations.setTarget(staticFieldReference, "variableDeclaration", fieldDeclaration, false);
       SNodeOperations.replaceWithAnother(SNodeOperations.cast(this.getNodeById("5543996881668550263"), "jetbrains.mps.baseLanguage.structure.StaticFieldReference"), staticFieldReference);
 

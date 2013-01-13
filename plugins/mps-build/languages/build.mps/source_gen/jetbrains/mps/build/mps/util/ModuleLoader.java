@@ -336,7 +336,7 @@ public class ModuleLoader {
         report("cannot find devkit in dependencies: " + module.getModuleFqName(), myModule);
         continue;
       }
-      jetbrains.mps.smodel.SNode ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_DevKitRef", null);
+      SNode ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_DevKitRef", null);
       SLinkOperations.setTarget(ul, "devkit", resolved, false);
       ListSequence.fromList(SLinkOperations.getTargets(devkit, "extends", true)).addElement(ul);
     }
@@ -346,7 +346,7 @@ public class ModuleLoader {
         report("cannot find exported languages in dependencies: " + module.getModuleFqName(), myModule);
         continue;
       }
-      jetbrains.mps.smodel.SNode ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage", null);
+      SNode ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_DevKitExportLanguage", null);
       SLinkOperations.setTarget(ul, "language", resolved, false);
       ListSequence.fromList(SLinkOperations.getTargets(devkit, "exports", true)).addElement(ul);
     }
@@ -356,7 +356,7 @@ public class ModuleLoader {
         report("cannot find exported solution in dependencies: " + module.getModuleFqName(), myModule);
         continue;
       }
-      jetbrains.mps.smodel.SNode ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution", null);
+      SNode ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_DevKitExportSolution", null);
       SLinkOperations.setTarget(ul, "solution", resolved, false);
       ListSequence.fromList(SLinkOperations.getTargets(devkit, "exports", true)).addElement(ul);
     }
@@ -370,9 +370,9 @@ public class ModuleLoader {
         report("cannot find extended language in dependencies: " + lang.getModuleFqName(), myModule);
         continue;
       }
-      jetbrains.mps.smodel.SNode ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage", null);
+      SNode ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage", null);
       SLinkOperations.setTarget(ul, "language", resolved, false);
-      jetbrains.mps.smodel.SNode res = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency", null);
+      SNode res = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency", null);
       SLinkOperations.setTarget(res, "dependency", ul, true);
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).addElement(res);
     }
@@ -405,7 +405,7 @@ public class ModuleLoader {
       if (resolved == null) {
         report("cannot find jetbrains.mps.lang.core language in dependencies for " + SPropertyOperations.getString(myModule, "name"), myModule);
       } else {
-        jetbrains.mps.smodel.SNode ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage", null);
+        SNode ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyExtendLanguage", null);
         SLinkOperations.setTarget(ul, "language", resolved, false);
         ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Module"), "dependencies", true)).addElement(ul);
       }
@@ -437,7 +437,7 @@ public class ModuleLoader {
         report("cannot find runtime solution in dependencies: " + module.getModuleFqName(), myModule);
         continue;
       }
-      jetbrains.mps.smodel.SNode ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime", null);
+      SNode ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleSolutionRuntime", null);
       SLinkOperations.setTarget(ul, "solution", resolved, false);
       ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(myModule, "jetbrains.mps.build.mps.structure.BuildMps_Language"), "runtime", true)).addElement(ul);
     }
@@ -487,7 +487,7 @@ public class ModuleLoader {
         report("cannot find used language in dependencies: " + lang.getModuleFqName(), myModule);
         continue;
       }
-      jetbrains.mps.smodel.SNode ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage", null);
+      SNode ul = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyUseLanguage", null);
       SLinkOperations.setTarget(ul, "language", resolved, false);
       ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(ul);
     }
@@ -497,7 +497,7 @@ public class ModuleLoader {
         report("cannot find used devkit in dependencies: " + devkit.getModuleFqName(), myModule);
         continue;
       }
-      jetbrains.mps.smodel.SNode ud = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnDevKit", null);
+      SNode ud = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnDevKit", null);
       SLinkOperations.setTarget(ud, "devkit", resolved, false);
       ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(ud);
     }
@@ -594,7 +594,7 @@ public class ModuleLoader {
           continue;
         }
 
-        jetbrains.mps.smodel.SNode res = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", null);
+        SNode res = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", null);
         SLinkOperations.setTarget(res, "module", resolved, false);
         SPropertyOperations.set(res, "reexport", "" + (reexport));
         ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(res);
@@ -672,11 +672,11 @@ public class ModuleLoader {
         continue;
       }
 
-      jetbrains.mps.smodel.SNode res = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", null);
+      SNode res = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyOnModule", null);
       seen.put(resolved, res);
       SLinkOperations.setTarget(res, "module", resolved, false);
       SPropertyOperations.set(res, "reexport", "" + (reexport));
-      jetbrains.mps.smodel.SNode extr = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency", null);
+      SNode extr = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency", null);
       SLinkOperations.setTarget(extr, "dependency", res, true);
       ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(extr);
     }
@@ -689,7 +689,7 @@ public class ModuleLoader {
       }
 
       if (path.endsWith(".jar")) {
-        jetbrains.mps.smodel.SNode jar = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar", null);
+        SNode jar = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleDependencyJar", null);
         SLinkOperations.setTarget(jar, "path", p, true);
         SNode oldJarRef = Sequence.fromIterable(previous).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {
@@ -704,7 +704,7 @@ public class ModuleLoader {
           SLinkOperations.setTarget(jar, "customLocation", SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildSource_JavaExternalJarRef", null), true);
           SLinkOperations.setTarget(SLinkOperations.getTarget(jar, "customLocation", true), "jar", SLinkOperations.getTarget(oldJarRef, "jar", false), false);
         }
-        jetbrains.mps.smodel.SNode extr = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency", null);
+        SNode extr = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ExtractedModuleDependency", null);
         SLinkOperations.setTarget(extr, "dependency", jar, true);
         ListSequence.fromList(SLinkOperations.getTargets(module, "dependencies", true)).addElement(extr);
       } else {
@@ -742,7 +742,7 @@ public class ModuleLoader {
         }
 
         if (!(checkOnly)) {
-          jetbrains.mps.smodel.SNode mroot = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot", null);
+          SNode mroot = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleModelRoot", null);
           SLinkOperations.setTarget(mroot, "folder", p, true);
           ListSequence.fromList(SLinkOperations.getTargets(module, "sources", true)).addElement(mroot);
         }
@@ -781,7 +781,7 @@ public class ModuleLoader {
       if (p == null) {
         continue;
       }
-      jetbrains.mps.smodel.SNode javaSource = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", null);
+      SNode javaSource = SConceptOperations.createNewNode("jetbrains.mps.build.mps.structure.BuildMps_ModuleJavaSource", null);
       SLinkOperations.setTarget(javaSource, "folder", SConceptOperations.createNewNode("jetbrains.mps.build.structure.BuildInputSingleFolder", null), true);
       SLinkOperations.setTarget(SNodeOperations.cast(SLinkOperations.getTarget(javaSource, "folder", true), "jetbrains.mps.build.structure.BuildInputSingleFolder"), "path", p, true);
       SPropertyOperations.set(javaSource, "isGenerated", "" + (path.equals(genPath)));

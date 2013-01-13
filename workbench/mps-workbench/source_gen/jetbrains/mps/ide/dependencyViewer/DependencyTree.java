@@ -43,7 +43,7 @@ public class DependencyTree extends MPSTree {
       root.add(node);
     }
     for (SNode node : myScope.getRoots()) {
-      SNodeTreeNode treeNode = new SNodeTreeNode((jetbrains.mps.smodel.SNode) node, null, new ModuleContext((IModule) ((jetbrains.mps.smodel.SNode) node).getModel().getModelDescriptor().getModule(), myProject));
+      SNodeTreeNode treeNode = new SNodeTreeNode((SNode) node, null, new ModuleContext((IModule) ((SNode) node).getModel().getModelDescriptor().getModule(), myProject));
       root.add(treeNode);
     }
     setRootVisible(false);

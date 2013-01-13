@@ -4,8 +4,6 @@ package jetbrains.mps.ui.swt.runtime.layout;
 
 import org.eclipse.swt.widgets.Layout;
 import org.eclipse.swt.graphics.Point;
-
-import java.awt.Point;
 import java.util.List;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Composite;
