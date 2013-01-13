@@ -16,7 +16,6 @@
 
 package jetbrains.mps.excluded;
 
-import com.sun.istack.internal.Nullable;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.MPSExtentions;
 import jetbrains.mps.project.ProjectPathUtil;
@@ -166,7 +165,7 @@ public class Utils {
     }
 
     @Override
-    public String expandPath(@Nullable String path) {
+    public String expandPath(String path) {
       if (path.startsWith(MacrosFactory.MODULE)) {
         IFile anchorFolder = myModuleIFile.getParent();
         if (myModuleIFile.getPath().endsWith(ModulesMiner.META_INF_MODULE_XML)) {
@@ -189,7 +188,7 @@ public class Utils {
     }
 
     @Override
-    public String shrinkPath(@Nullable String absolutePath) {
+    public String shrinkPath(String absolutePath) {
       throw new UnsupportedOperationException();
     }
 
