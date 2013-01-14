@@ -6,12 +6,12 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.smodel.SModel;
-import org.jetbrains.mps.openapi.model.SNodeUtil;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNodePointer;
@@ -112,7 +112,7 @@ public class SNodeOperations {
     if (conceptFQName == null) {
       return true;
     }
-    return node.isInstanceOfConcept(conceptFQName);
+    return SNodeUtil.isInstanceOf(node, jetbrains.mps.util.SNodeOperations.getConcept(conceptFQName));
   }
 
   public static SNode getAncestorWhereConceptInList(SNode node, String[] ancestorConceptFqNames, boolean inclusion, boolean root) {
@@ -174,7 +174,7 @@ public class SNodeOperations {
       node = node.getParent();
     }
     while (node != null) {
-      if (ancestorConceptFqName == null || node.isInstanceOfConcept(ancestorConceptFqName)) {
+      if (ancestorConceptFqName == null || SNodeUtil.isInstanceOf(node, jetbrains.mps.util.SNodeOperations.getConcept(ancestorConceptFqName))) {
         result.add(node);
       }
       node = node.getParent();
@@ -218,7 +218,7 @@ public class SNodeOperations {
     }
 
     if (inclusion) {
-      if (node.isInstanceOfConcept(childConceptFqName)) {
+      if (SNodeUtil.isInstanceOf(node, jetbrains.mps.util.SNodeOperations.getConcept(childConceptFqName))) {
         result.add(node);
       }
     }
@@ -232,7 +232,7 @@ public class SNodeOperations {
     );
     SNodeOperations._populateListOfDescendants(result, node, new Condition<SNode>() {
       public boolean met(SNode node) {
-        return node.isInstanceOfConcept(childConceptFqName);
+        return SNodeUtil.isInstanceOf(node, jetbrains.mps.util.SNodeOperations.getConcept(childConceptFqName));
       }
     }, stopCondition);
     return result;
@@ -285,7 +285,7 @@ public class SNodeOperations {
       if (conceptFqName == null) {
         continue;
       }
-      if (node.isInstanceOfConcept(conceptFqName)) {
+      if (SNodeUtil.isInstanceOf(node, jetbrains.mps.util.SNodeOperations.getConcept(conceptFqName))) {
         return true;
       }
     }
@@ -321,7 +321,7 @@ public class SNodeOperations {
     if (conceptFQName == null) {
       return false;
     }
-    return node.isInstanceOfConcept(conceptFQName);
+    return SNodeUtil.isInstanceOf(node, jetbrains.mps.util.SNodeOperations.getConcept(conceptFQName));
   }
 
   public static SNode getNextSibling(SNode node) {

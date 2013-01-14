@@ -24,7 +24,7 @@ import java.util.Map;
 
 public class Graphs {
 
-  public static int[][] graphToIntInt(IVertex[] vertices) {
+  public static int[][] graphToIntInt(IVertex[] vertices, boolean allowSelfLoops, boolean sorted) {
     int count = vertices.length;
     int[] temparray = new int[count];
     int[][] result = new int[count][];
@@ -39,7 +39,7 @@ public class Graphs {
       int tsize = 0;
       for (IVertex node : vertex.getNexts()) {
         Integer targetIndex = rootIndex.get(node);
-        if (targetIndex != null && targetIndex != index) {
+        if (targetIndex != null && (allowSelfLoops || targetIndex != index)) {
           temparray[tsize++] = targetIndex;
         }
       }
@@ -48,13 +48,16 @@ public class Graphs {
         System.arraycopy(temparray, 0, result[index], 0, tsize);
       }
     }
+    if (sorted) {
+      GraphUtil.sort(result);
+    }
     return result;
   }
 
 
   public static <V extends IVertex> List<List<V>> findStronglyConnectedComponents(Graph<V> graph0) {
     IVertex[] vertices = graph0.getData().toArray(new IVertex[graph0.getNVertexes()]);
-    int[][] graph = graphToIntInt(vertices);
+    int[][] graph = graphToIntInt(vertices, false, false);
     int[][] partitions = GraphUtil.tarjan(graph);
 
     List<List<V>> result = new ArrayList<List<V>>(partitions.length + 1);

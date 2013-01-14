@@ -111,7 +111,7 @@ public class SNodeOperations {
    */
   public static List<SReference> getReferences(SNode n) {
     List<SReference> res = new LinkedList<SReference>();
-    for (org.jetbrains.mps.openapi.model.SReference ref : Sequence.fromIterable(n.getReferences())) {
+    for (SReference ref : Sequence.fromIterable(n.getReferences())) {
       res.add(((SReference) ref));
     }
     return res;
@@ -133,7 +133,7 @@ public class SNodeOperations {
    */
   public static Set<String> getReferenceRoles(SNode n) {
     Set<String> res = SetSequence.fromSet(new HashSet<String>());
-    for (org.jetbrains.mps.openapi.model.SReference ref : Sequence.fromIterable(n.getReferences())) {
+    for (SReference ref : Sequence.fromIterable(n.getReferences())) {
       SetSequence.fromSet(res).addElement(ref.getRole());
     }
     return res;

@@ -12,15 +12,29 @@ public class ConstraintsAspectDescriptor implements jetbrains.mps.smodel.runtime
 
   public ConstraintsDescriptor getDescriptor(String fqName) {
     switch (Arrays.binarySearch(stringSwitchCases_2qnle6_a0a0b, fqName)) {
-      case 1:
+      case 8:
         return new Quotation_Constraints();
       case 0:
         return new AbstractAntiquotation_Constraints();
+      case 4:
+        return new NodeBuilderInitProperty_Constraints();
+      case 3:
+        return new NodeBuilderInitLink_Constraints();
+      case 6:
+        return new NodeBuilderNode_Constraints();
+      case 7:
+        return new NodeBuilderRef_Constraints();
+      case 5:
+        return new NodeBuilderList_Constraints();
+      case 2:
+        return new NodeBuilderExpression_Constraints();
+      case 1:
+        return new NodeBuilder_Constraints();
       default:
         // todo: illegal in some cases? 
         return new BaseConstraintsDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", "jetbrains.mps.lang.quotation.structure.Quotation"};
+  private static String[] stringSwitchCases_2qnle6_a0a0b = new String[]{"jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", "jetbrains.mps.lang.quotation.structure.NodeBuilder", "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty", "jetbrains.mps.lang.quotation.structure.NodeBuilderList", "jetbrains.mps.lang.quotation.structure.NodeBuilderNode", "jetbrains.mps.lang.quotation.structure.NodeBuilderRef", "jetbrains.mps.lang.quotation.structure.Quotation"};
 }
