@@ -91,7 +91,7 @@ public class PathHolder_Behavior {
     SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.packaging.structure.PathHolder", null, GlobalScope.getInstance(), false);
     n1.setProperty("fullPath", (String) p0);
     n1.setProperty("moduleRelativePath", (String) p1);
-    n1.setReferent("module", (SNode) p2);
+    n1.setReferenceTarget("module", (SNode) p2);
     return n1;
   }
 

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-d3g2syyr5z3nbvnfde9bjplump51zmt">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-89hxj0ypb1mymp88cm6uftvxxpq6hll" />
+  <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" hash="3d2lxr8unjxvzzi6xlbsruq2a8tb63l" />
+  <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" hash="-17gwu2l2sad2ltprziuwzdksaakhflb" />
+  <dep model="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" hash="-4b42jm5setauc1jgs0sk12290e8tx1e" />
+  <common hash="-31hqhs47qoyilrlmigb7qh365kliykd" />
+  <source id="7502385099314243444" name="QuotationUtil" hash="-ao4sqqkltow4ta3rtuuw8iggat3ovk1">
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590303(jetbrains.mps.lang.smodel.generator.baseLanguage.template.main@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" />
+    <file name="QuotationUtil.java" />
+  </source>
+</dependencies>
+
