@@ -163,7 +163,7 @@ public class SModelUtil_new implements CoreComponent {
 
         SNode targetConcept = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
         LOG.assertLog(targetConcept != null, "link target is null");
-        if (newNode.getChildren(role).iterator().hasNext()) {
+        if (!newNode.getChildren(role).iterator().hasNext()) {
           SNode childNode = instantiateConceptDeclaration(targetConcept, model);
           newNode.addChild(role, childNode);
         }

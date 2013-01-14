@@ -24,7 +24,7 @@ public class RemoveKeystrokes_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return !(node.getChildren("keystroke").iterator().hasNext());
+        return node.getChildren("keystroke").iterator().hasNext();
       }
 
       public void doUpdateInstanceNode(SNode node) {
