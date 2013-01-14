@@ -571,7 +571,7 @@
     <unitInfo nodeId="5916754392152656752" fileName="ToDoHighlighter.java" startLine="19" startPosition="0" endLine="54" endPosition="0" unitName="jetbrains.mps.ide.java.platform.highlighters.ToDoHighlighter" />
   </root>
   <root nodeId="5916754392152656888" modelId="r:fa4569a3-1bd4-4159-97bc-db03b3aeff88(jetbrains.mps.ide.java.platform.highlighters)">
-    <nodeInfo nodeId="5916754392152656893" fileName="ToDoMessage.java" startLine="14" startPosition="76" endLine="15" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
+    <nodeInfo nodeId="525317265757014267" fileName="ToDoMessage.java" startLine="14" startPosition="76" endLine="15" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.SuperConstructorInvocation" />
     <nodeInfo nodeId="5916754392152656906" fileName="ToDoMessage.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="paint#(Ljava/awt/Graphics;Ljetbrains/mps/nodeEditor/EditorComponent;Ljetbrains/mps/nodeEditor/cells/EditorCell;)V" />
     <nodeInfo nodeId="5916754392152656889" fileName="ToDoMessage.java" startLine="14" startPosition="0" endLine="17" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ToDoMessage#(Lorg/jetbrains/mps/openapi/model/SNode;Ljava/lang/String;Ljetbrains/mps/nodeEditor/EditorMessageOwner;)V" />
     <scopeInfo nodeId="5916754392152656915" fileName="ToDoMessage.java" startLine="18" startPosition="84" endLine="18" endPosition="84" />
