@@ -137,25 +137,25 @@ public class SModelOperations {
     if (jetbrains.mps.smodel.SNodeUtil.isInstanceOfInterfaceConceptDeclaration(nodeConcept)) {
       jetbrains.mps.smodel.SNode node = new jetbrains.mps.smodel.SNode(conceptFqName);
       if (id != null) {
-        node.setId(id);
+        ((jetbrains.mps.smodel.SNode) node).setId(id);
       }
       return node;
     }
-    jetbrains.mps.smodel.SNode result = SModelUtil_new.instantiateConceptDeclaration(conceptFqName, model, id, GlobalScope.getInstance(), false);
+    SNode result = SModelUtil_new.instantiateConceptDeclaration(conceptFqName, model, id, GlobalScope.getInstance(), false);
     if (result == null) {
       return null;
     }
     BehaviorManager.getInstance().initNode(result);
-    return result;
+    return ((jetbrains.mps.smodel.SNode) result);
   }
 
   @Deprecated
-  public static SNode createNewNode(SModel model, String conceptFqName, SNode prototypeNode) {
+  public static jetbrains.mps.smodel.SNode createNewNode(SModel model, String conceptFqName, SNode prototypeNode) {
     return createNewNode(model, conceptFqName);
   }
 
-  public static SNode createNewRootNode(SModel model, String conceptFqName, SNode prototypeNode) {
-    SNode newNode = createNewNode(model, conceptFqName);
+  public static jetbrains.mps.smodel.SNode createNewRootNode(SModel model, String conceptFqName, SNode prototypeNode) {
+    jetbrains.mps.smodel.SNode newNode = createNewNode(model, conceptFqName);
     model.addRoot(newNode);
     return newNode;
   }
