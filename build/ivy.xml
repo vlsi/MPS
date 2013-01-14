@@ -1,0 +1,698 @@
+<ivy-module version="2.0">
+  <info organisation="org.jetbrains.mps" module="idea-platform"/>
+  <dependencies>
+    <!--
+    lib
+      ant
+        lib-->
+    <dependency org="lib.ant.lib" name="README" rev="123.45">
+      <artifact name="README" ext="txt"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-antlr.jar" rev="123.45">
+      <artifact name="ant-antlr.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-antlr.pom" rev="123.45">
+      <artifact name="ant-antlr.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-apache-bcel.jar" rev="123.45">
+      <artifact name="ant-apache-bcel.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-apache-bcel.pom" rev="123.45">
+      <artifact name="ant-apache-bcel.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-apache-bsf.jar" rev="123.45">
+      <artifact name="ant-apache-bsf.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-apache-bsf.pom" rev="123.45">
+      <artifact name="ant-apache-bsf.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-apache-log4j.jar" rev="123.45">
+      <artifact name="ant-apache-log4j.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-apache-log4j.pom" rev="123.45">
+      <artifact name="ant-apache-log4j.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-apache-oro.jar" rev="123.45">
+      <artifact name="ant-apache-oro.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-apache-oro.pom" rev="123.45">
+      <artifact name="ant-apache-oro.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-apache-regexp.jar" rev="123.45">
+      <artifact name="ant-apache-regexp.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-apache-regexp.pom" rev="123.45">
+      <artifact name="ant-apache-regexp.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-apache-resolver.jar" rev="123.45">
+      <artifact name="ant-apache-resolver.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-apache-resolver.pom" rev="123.45">
+      <artifact name="ant-apache-resolver.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-apache-xalan2.jar" rev="123.45">
+      <artifact name="ant-apache-xalan2.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-apache-xalan2.pom" rev="123.45">
+      <artifact name="ant-apache-xalan2.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-commons-logging.jar" rev="123.45">
+      <artifact name="ant-commons-logging.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-commons-logging.pom" rev="123.45">
+      <artifact name="ant-commons-logging.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-commons-net.jar" rev="123.45">
+      <artifact name="ant-commons-net.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-commons-net.pom" rev="123.45">
+      <artifact name="ant-commons-net.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-jai.jar" rev="123.45">
+      <artifact name="ant-jai.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-jai.pom" rev="123.45">
+      <artifact name="ant-jai.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-javamail.jar" rev="123.45">
+      <artifact name="ant-javamail.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-javamail.pom" rev="123.45">
+      <artifact name="ant-javamail.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-jdepend.jar" rev="123.45">
+      <artifact name="ant-jdepend.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-jdepend.pom" rev="123.45">
+      <artifact name="ant-jdepend.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-jmf.jar" rev="123.45">
+      <artifact name="ant-jmf.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-jmf.pom" rev="123.45">
+      <artifact name="ant-jmf.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-jsch.jar" rev="123.45">
+      <artifact name="ant-jsch.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-jsch.pom" rev="123.45">
+      <artifact name="ant-jsch.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-junit.jar" rev="123.45">
+      <artifact name="ant-junit.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-junit.pom" rev="123.45">
+      <artifact name="ant-junit.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-launcher.jar" rev="123.45">
+      <artifact name="ant-launcher.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-launcher.pom" rev="123.45">
+      <artifact name="ant-launcher.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-netrexx.jar" rev="123.45">
+      <artifact name="ant-netrexx.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-netrexx.pom" rev="123.45">
+      <artifact name="ant-netrexx.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-parent.pom" rev="123.45">
+      <artifact name="ant-parent.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-swing.jar" rev="123.45">
+      <artifact name="ant-swing.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-swing.pom" rev="123.45">
+      <artifact name="ant-swing.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-testutil.jar" rev="123.45">
+      <artifact name="ant-testutil.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant-testutil.pom" rev="123.45">
+      <artifact name="ant-testutil.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant.jar" rev="123.45">
+      <artifact name="ant.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="ant.pom" rev="123.45">
+      <artifact name="ant.pom" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant.lib" name="libraries.properties" rev="123.45">
+      <artifact name="libraries.properties" ext="txt"/>
+    </dependency>
+
+    <!--
+    lib
+      ant
+        src-->
+    <dependency org="lib.ant.src" name="bundled_ant_src.zip" rev="123.45">
+      <artifact name="bundled_ant_src.zip" ext="zip"/>
+    </dependency>
+
+    <!--
+    lib
+      ant-->
+    <dependency org="lib.ant" name="INSTALL" rev="123.45">
+      <artifact name="INSTALL" ext="txt"/>
+    </dependency>
+    <dependency org="lib.ant" name="KEYS" rev="123.45">
+      <artifact name="KEYS" ext="txt"/>
+    </dependency>
+    <dependency org="lib.ant" name="LICENSE" rev="123.45">
+      <artifact name="LICENSE" ext="txt"/>
+    </dependency>
+    <dependency org="lib.ant" name="NOTICE" rev="123.45">
+      <artifact name="NOTICE" ext="txt"/>
+    </dependency>
+    <dependency org="lib.ant" name="README" rev="123.45">
+      <artifact name="README" ext="txt"/>
+    </dependency>
+    <dependency org="lib.ant" name="WHATSNEW" rev="123.45">
+      <artifact name="WHATSNEW" ext="txt"/>
+    </dependency>
+    <dependency org="lib.ant" name="docs.zip" rev="123.45">
+      <artifact name="docs.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.ant" name="fetch.xml" rev="123.45">
+      <artifact name="fetch.xml" ext="xml"/>
+    </dependency>
+    <dependency org="lib.ant" name="get-m2.xml" rev="123.45">
+      <artifact name="get-m2.xml" ext="xml"/>
+    </dependency>
+
+    <!--
+    lib
+      src-->
+    <dependency org="lib.src" name="Xerces-J-src.2.9.1.zip" rev="123.45">
+      <artifact name="Xerces-J-src.2.9.1.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="asm-src.zip" rev="123.45">
+      <artifact name="asm-src.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="cglib-src-2.2.2.jar" rev="123.45">
+      <artifact name="cglib-src-2.2.2.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.src" name="commons-collections-3.2.1-src.zip" rev="123.45">
+      <artifact name="commons-collections-3.2.1-src.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="commons-httpclient-3.1-src-patched.zip" rev="123.45">
+      <artifact name="commons-httpclient-3.1-src-patched.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="commons-lang-2.4-sources.jar" rev="123.45">
+      <artifact name="commons-lang-2.4-sources.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.src" name="commons-logging-1.1.1-src.zip" rev="123.45">
+      <artifact name="commons-logging-1.1.1-src.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="commons-net-3.1-sources.jar" rev="123.45">
+      <artifact name="commons-net-3.1-sources.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.src" name="ecjsrc-4.2.jar" rev="123.45">
+      <artifact name="ecjsrc-4.2.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.src" name="groovy-src-1.8.5.zip" rev="123.45">
+      <artifact name="groovy-src-1.8.5.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="gson-2.2.1-sources.jar" rev="123.45">
+      <artifact name="gson-2.2.1-sources.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.src" name="guava-12.0-sources.jar" rev="123.45">
+      <artifact name="guava-12.0-sources.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.src" name="jaxen-1.1.3-src.zip" rev="123.45">
+      <artifact name="jaxen-1.1.3-src.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="jdom.zip" rev="123.45">
+      <artifact name="jdom.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="jgoodies-forms-src.zip" rev="123.45">
+      <artifact name="jgoodies-forms-src.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="jhsrc.jar" rev="123.45">
+      <artifact name="jhsrc.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.src" name="jna-src.zip" rev="123.45">
+      <artifact name="jna-src.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="junit-4.10-src.jar" rev="123.45">
+      <artifact name="junit-4.10-src.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.src" name="log4j.zip" rev="123.45">
+      <artifact name="log4j.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="microba-src.zip" rev="123.45">
+      <artifact name="microba-src.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="miglayout-sources.jar" rev="123.45">
+      <artifact name="miglayout-sources.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.src" name="nanoxml.zip" rev="123.45">
+      <artifact name="nanoxml.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="netty-3.5.10.Final-sources.jar" rev="123.45">
+      <artifact name="netty-3.5.10.Final-sources.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.src" name="picocontainer-src.zip" rev="123.45">
+      <artifact name="picocontainer-src.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="platform.src.zip" rev="123.45">
+      <artifact name="platform.src.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="sanselan-0.98-snapshot-src.jar" rev="123.45">
+      <artifact name="sanselan-0.98-snapshot-src.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.src" name="serviceMessages_279xxx_src.jar" rev="123.45">
+      <artifact name="serviceMessages_279xxx_src.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.src" name="snappy-java-1.0.4.1-src.zip" rev="123.45">
+      <artifact name="snappy-java-1.0.4.1-src.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="trove4j_src.jar" rev="123.45">
+      <artifact name="trove4j_src.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.src" name="velocity-1.7-src.zip" rev="123.45">
+      <artifact name="velocity-1.7-src.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="winp-1.16-patched-src.zip" rev="123.45">
+      <artifact name="winp-1.16-patched-src.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="xmlrpc2.src.zip" rev="123.45">
+      <artifact name="xmlrpc2.src.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="xpp3-1.1.4-min-src.jar" rev="123.45">
+      <artifact name="xpp3-1.1.4-min-src.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib.src" name="xstream-1.4.3-src.zip" rev="123.45">
+      <artifact name="xstream-1.4.3-src.zip" ext="zip"/>
+    </dependency>
+
+    <!--
+    lib-->
+    <dependency org="lib" name="annotations.jar" rev="123.45">
+      <artifact name="annotations.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="asm-commons.jar" rev="123.45">
+      <artifact name="asm-commons.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="asm.jar" rev="123.45">
+      <artifact name="asm.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="asm4-all.jar" rev="123.45">
+      <artifact name="asm4-all.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="automaton.jar" rev="123.45">
+      <artifact name="automaton.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="boot.jar" rev="123.45">
+      <artifact name="boot.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="bootstrap.jar" rev="123.45">
+      <artifact name="bootstrap.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="cglib-2.2.2.jar" rev="123.45">
+      <artifact name="cglib-2.2.2.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="cli-parser-1.1.jar" rev="123.45">
+      <artifact name="cli-parser-1.1.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="commons-codec-1.3.jar" rev="123.45">
+      <artifact name="commons-codec-1.3.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="commons-httpclient-3.1-patched.jar" rev="123.45">
+      <artifact name="commons-httpclient-3.1-patched.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="commons-logging-1.1.1.jar" rev="123.45">
+      <artifact name="commons-logging-1.1.1.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="commons-net-3.1.jar" rev="123.45">
+      <artifact name="commons-net-3.1.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="dtdparser113.jar" rev="123.45">
+      <artifact name="dtdparser113.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="ecj-4.2.jar" rev="123.45">
+      <artifact name="ecj-4.2.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="extensions.jar" rev="123.45">
+      <artifact name="extensions.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="forms_rt.jar" rev="123.45">
+      <artifact name="forms_rt.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="groovy-all-1.8.5.jar" rev="123.45">
+      <artifact name="groovy-all-1.8.5.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="gson-2.2.1.jar" rev="123.45">
+      <artifact name="gson-2.2.1.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="guava-12.0.jar" rev="123.45">
+      <artifact name="guava-12.0.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="icons.jar" rev="123.45">
+      <artifact name="icons.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="javac2.jar" rev="123.45">
+      <artifact name="javac2.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="jaxen-1.1.3.jar" rev="123.45">
+      <artifact name="jaxen-1.1.3.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="jdom.jar" rev="123.45">
+      <artifact name="jdom.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="jgoodies-forms.jar" rev="123.45">
+      <artifact name="jgoodies-forms.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="jgoodies-looks-2.4.2.jar" rev="123.45">
+      <artifact name="jgoodies-looks-2.4.2.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="jh.jar" rev="123.45">
+      <artifact name="jh.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="jna-utils.jar" rev="123.45">
+      <artifact name="jna-utils.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="jna.jar" rev="123.45">
+      <artifact name="jna.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="jsr173_1.0_api.jar" rev="123.45">
+      <artifact name="jsr173_1.0_api.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="junit-4.10.jar" rev="123.45">
+      <artifact name="junit-4.10.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="junit.jar" rev="123.45">
+      <artifact name="junit.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="log4j.jar" rev="123.45">
+      <artifact name="log4j.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="microba.jar" rev="123.45">
+      <artifact name="microba.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="miglayout-swing.jar" rev="123.45">
+      <artifact name="miglayout-swing.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="nanoxml-2.2.3.jar" rev="123.45">
+      <artifact name="nanoxml-2.2.3.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="netty-3.5.10.Final.jar" rev="123.45">
+      <artifact name="netty-3.5.10.Final.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="oromatcher.jar" rev="123.45">
+      <artifact name="oromatcher.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="picocontainer.jar" rev="123.45">
+      <artifact name="picocontainer.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="platform-api.jar" rev="123.45">
+      <artifact name="platform-api.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="platform.jar" rev="123.45">
+      <artifact name="platform.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="proxy-vole_20120920.jar" rev="123.45">
+      <artifact name="proxy-vole_20120920.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="resolver.jar" rev="123.45">
+      <artifact name="resolver.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="resources.jar" rev="123.45">
+      <artifact name="resources.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="resources_en.jar" rev="123.45">
+      <artifact name="resources_en.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="sanselan-0.98-snapshot.jar" rev="123.45">
+      <artifact name="sanselan-0.98-snapshot.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="serviceMessages.jar" rev="123.45">
+      <artifact name="serviceMessages.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="snappy-java-1.0.4.1.jar" rev="123.45">
+      <artifact name="snappy-java-1.0.4.1.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="swingx-core-1.6.2.jar" rev="123.45">
+      <artifact name="swingx-core-1.6.2.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="trove4j.jar" rev="123.45">
+      <artifact name="trove4j.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="util.jar" rev="123.45">
+      <artifact name="util.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="velocity.jar" rev="123.45">
+      <artifact name="velocity.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="winp-1.16-patched.jar" rev="123.45">
+      <artifact name="winp-1.16-patched.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="xbean.jar" rev="123.45">
+      <artifact name="xbean.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="xerces.jar" rev="123.45">
+      <artifact name="xerces.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="xmlrpc-2.0.jar" rev="123.45">
+      <artifact name="xmlrpc-2.0.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="xpp3-1.1.4-min.jar" rev="123.45">
+      <artifact name="xpp3-1.1.4-min.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="xstream-1.4.3.jar" rev="123.45">
+      <artifact name="xstream-1.4.3.jar" ext="jar"/>
+    </dependency>
+
+    <!--
+    license-->
+    <dependency org="license" name="XStream_license.txt" rev="123.45">
+      <artifact name="XStream_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="ant_license.txt" rev="123.45">
+      <artifact name="ant_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="asm_license.txt" rev="123.45">
+      <artifact name="asm_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="growl.license" rev="123.45">
+      <artifact name="growl.license" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="gson_license.txt" rev="123.45">
+      <artifact name="gson_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="javahelp_license.html" rev="123.45">
+      <artifact name="javahelp_license.html" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="jaxb_license.txt" rev="123.45">
+      <artifact name="jaxb_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="jaxen_license.txt" rev="123.45">
+      <artifact name="jaxen_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="jdom_license.txt" rev="123.45">
+      <artifact name="jdom_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="jgoodies_forms_license.txt" rev="123.45">
+      <artifact name="jgoodies_forms_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="junit_license.txt" rev="123.45">
+      <artifact name="junit_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="kryo-license.txt" rev="123.45">
+      <artifact name="kryo-license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="log4j_license.txt" rev="123.45">
+      <artifact name="log4j_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="microba_license.txt" rev="123.45">
+      <artifact name="microba_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="miglayout_swing_license.txt" rev="123.45">
+      <artifact name="miglayout_swing_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="nanoxml_license.txt" rev="123.45">
+      <artifact name="nanoxml_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="oromatcher_license.txt" rev="123.45">
+      <artifact name="oromatcher_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="picoContainer_license.txt" rev="123.45">
+      <artifact name="picoContainer_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="sanselan_license.txt" rev="123.45">
+      <artifact name="sanselan_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="sqljet-license.txt" rev="123.45">
+      <artifact name="sqljet-license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="svnkit-license.txt" rev="123.45">
+      <artifact name="svnkit-license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="swingx_license.txt" rev="123.45">
+      <artifact name="swingx_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="winp_license.txt" rev="123.45">
+      <artifact name="winp_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="xerces_license.txt" rev="123.45">
+      <artifact name="xerces_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="xmlrpc_license.txt" rev="123.45">
+      <artifact name="xmlrpc_license.txt" ext="txt"/>
+    </dependency>
+    <dependency org="license" name="yourkit-license-redist.txt" rev="123.45">
+      <artifact name="yourkit-license-redist.txt" ext="txt"/>
+    </dependency>
+
+    <!--
+    plugins
+      cvsIntegration
+        lib-->
+    <dependency org="plugins.cvsIntegration.lib" name="cvsIntegration.jar" rev="123.45">
+      <artifact name="cvsIntegration.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.cvsIntegration.lib" name="cvs_util.jar" rev="123.45">
+      <artifact name="cvs_util.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.cvsIntegration.lib" name="javacvs-src.jar" rev="123.45">
+      <artifact name="javacvs-src.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.cvsIntegration.lib" name="resources_en.jar" rev="123.45">
+      <artifact name="resources_en.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.cvsIntegration.lib" name="smartcvs-src.jar" rev="123.45">
+      <artifact name="smartcvs-src.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.cvsIntegration.lib" name="trilead-ssh2-build213.jar" rev="123.45">
+      <artifact name="trilead-ssh2-build213.jar" ext="jar"/>
+    </dependency>
+
+    <!--
+    plugins
+      git4idea
+        lib-->
+    <dependency org="plugins.git4idea.lib" name="git4idea-rt.jar" rev="123.45">
+      <artifact name="git4idea-rt.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.git4idea.lib" name="git4idea.jar" rev="123.45">
+      <artifact name="git4idea.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.git4idea.lib" name="ini4j-0.5.2-patched.jar" rev="123.45">
+      <artifact name="ini4j-0.5.2-patched.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.git4idea.lib" name="jsch-0.1.44.jar" rev="123.45">
+      <artifact name="jsch-0.1.44.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.git4idea.lib" name="org.eclipse.jgit-2.1.0.201209190230-r.jar" rev="123.45">
+      <artifact name="org.eclipse.jgit-2.1.0.201209190230-r.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.git4idea.lib" name="resources_en.jar" rev="123.45">
+      <artifact name="resources_en.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.git4idea.lib" name="trilead-ssh2.jar" rev="123.45">
+      <artifact name="trilead-ssh2.jar" ext="jar"/>
+    </dependency>
+
+    <!--
+    plugins
+      svn4idea
+        lib-->
+    <dependency org="plugins.svn4idea.lib" name="ANTLR-LICENSE" rev="123.45">
+      <artifact name="ANTLR-LICENSE" ext="txt"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="CHANGES.txt" rev="123.45">
+      <artifact name="CHANGES.txt" ext="txt"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="COPYING" rev="123.45">
+      <artifact name="COPYING" ext="txt"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="GANYMED-LICENSE" rev="123.45">
+      <artifact name="GANYMED-LICENSE" ext="txt"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="JAVAHL-LICENSE" rev="123.45">
+      <artifact name="JAVAHL-LICENSE" ext="txt"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="LICENSE-ANTLR.txt" rev="123.45">
+      <artifact name="LICENSE-ANTLR.txt" ext="txt"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="LICENSE-JAVAHL.txt" rev="123.45">
+      <artifact name="LICENSE-JAVAHL.txt" ext="txt"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="LICENSE-JNA.txt" rev="123.45">
+      <artifact name="LICENSE-JNA.txt" ext="txt"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="LICENSE-SEQUENCE.txt" rev="123.45">
+      <artifact name="LICENSE-SEQUENCE.txt" ext="txt"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="LICENSE-SQLJET.txt" rev="123.45">
+      <artifact name="LICENSE-SQLJET.txt" ext="txt"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="LICENSE-TRILEAD.txt" rev="123.45">
+      <artifact name="LICENSE-TRILEAD.txt" ext="txt"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="LICENSE.txt" rev="123.45">
+      <artifact name="LICENSE.txt" ext="txt"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="README.txt" rev="123.45">
+      <artifact name="README.txt" ext="txt"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="SEQUENCE-LICENSE" rev="123.45">
+      <artifact name="SEQUENCE-LICENSE" ext="txt"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="SQLJET-LICENSE" rev="123.45">
+      <artifact name="SQLJET-LICENSE" ext="txt"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="SQLJET-README.txt" rev="123.45">
+      <artifact name="SQLJET-README.txt" ext="txt"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="TRILEAD-LICENSE" rev="123.45">
+      <artifact name="TRILEAD-LICENSE" ext="txt"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="antlr.jar" rev="123.45">
+      <artifact name="antlr.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="changelog.txt" rev="123.45">
+      <artifact name="changelog.txt" ext="txt"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="httpclient-4.1.1.jar" rev="123.45">
+      <artifact name="httpclient-4.1.1.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="httpcore-4.1.jar" rev="123.45">
+      <artifact name="httpcore-4.1.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="javahl.jar" rev="123.45">
+      <artifact name="javahl.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="javahlsrc.zip" rev="123.45">
+      <artifact name="javahlsrc.zip" ext="zip"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="resources_en.jar" rev="123.45">
+      <artifact name="resources_en.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="sequence-library.jar" rev="123.45">
+      <artifact name="sequence-library.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="sqljet.jar" rev="123.45">
+      <artifact name="sqljet.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="sqljetsrc.zip" rev="123.45">
+      <artifact name="sqljetsrc.zip" ext="zip"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="svn4idea.jar" rev="123.45">
+      <artifact name="svn4idea.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="svnkit-javahl.jar" rev="123.45">
+      <artifact name="svnkit-javahl.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="svnkit-javahl16.zip" rev="123.45">
+      <artifact name="svnkit-javahl16.zip" ext="zip"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="svnkit.jar" rev="123.45">
+      <artifact name="svnkit.jar" ext="jar"/>
+    </dependency>
+    <dependency org="plugins.svn4idea.lib" name="trilead.jar" rev="123.45">
+      <artifact name="trilead.jar" ext="jar"/>
+    </dependency>
+
+  </dependencies>
+</ivy-module>
