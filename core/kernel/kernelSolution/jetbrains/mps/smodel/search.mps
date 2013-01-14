@@ -2795,7 +2795,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5889278117585265546">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y36q.~ConceptAndSuperConceptsScope%dgetLinkDeclarationsExcludingOverridden()%cjava%dutil%dList" resolveInfo="getLinkDeclarationsExcludingOverridden" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8484262519286281271" resolveInfo="getLinkDeclarationsExcludingOverridden" />
             </node>
           </node>
         </node>
@@ -2839,7 +2839,7 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5889278117585265562">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y36q.~ConceptAndSuperConceptsScope%dgetLinkDeclarationsExcludingOverridden()%cjava%dutil%dList" resolveInfo="getLinkDeclarationsExcludingOverridden" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8484262519286281271" resolveInfo="getLinkDeclarationsExcludingOverridden" />
               </node>
             </node>
           </node>
@@ -2978,7 +2978,7 @@
                               </node>
                             </node>
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5889278117585265614">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y36q.~ConceptAndSuperConceptsScope%dgetLinkDeclarationsExcludingOverridden()%cjava%dutil%dList" resolveInfo="getLinkDeclarationsExcludingOverridden" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8484262519286281271" resolveInfo="getLinkDeclarationsExcludingOverridden" />
                             </node>
                           </node>
                         </node>
@@ -3084,7 +3084,7 @@
               </node>
             </node>
             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5889278117585265650">
-              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y36q.~ConceptAndSuperConceptsScope%dgetPropertyDeclarations()%cjava%dutil%dList" resolveInfo="getPropertyDeclarations" />
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8484262519286281184" resolveInfo="getPropertyDeclarations" />
             </node>
           </node>
         </node>
@@ -3214,7 +3214,7 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5889278117585265700">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y36q.~ConceptAndSuperConceptsScope%dgetConcepts()%cjava%dutil%dList" resolveInfo="getConcepts" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8484262519286281137" resolveInfo="getConcepts" />
               </node>
             </node>
           </node>
@@ -3395,7 +3395,7 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5889278117585265767">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="y36q.~ConceptAndSuperConceptsScope%dgetConcepts()%cjava%dutil%dList" resolveInfo="getConcepts" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="8484262519286281137" resolveInfo="getConcepts" />
               </node>
             </node>
           </node>

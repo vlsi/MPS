@@ -73,13 +73,13 @@
     <node type="tgbt.StandalonePluginDescriptor" typeId="tgbt.7520713872864775836" id="7162597690967691224" />
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="8418469470840880071">
       <property name="name" nameId="tpck.1169194664001" value="MigrateToOpenAPI" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Migrate to node/model/module OpenAPI" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Migrate to node/model/module OpenAPI" />
     </node>
     <node type="tp4k.ActionGroupDeclaration" typeId="tp4k.1203087890642" id="8418469470841235721">
       <property name="name" nameId="tpck.1169194664001" value="Migration30" />
-      <property name="caption" nameId="tp4k.1204991940915" value="Migration 3.0" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
+      <property name="caption" nameId="tp4k.1204991940915" value="Migration 3.0" />
       <property name="isPopup" nameId="tp4k.1213283637680" value="true" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7949796796600715200">
@@ -87,8 +87,8 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="1719872688913296344">
       <property name="name" nameId="tpck.1169194664001" value="MigrateToNewSNodeMethods" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Migrate to new SNode methods" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Migrate to new SNode methods" />
     </node>
     <node type="tpee.ClassConcept" typeId="tpee.1068390468198" id="7039601390004640869">
       <property name="name" nameId="tpck.1169194664001" value="ApiTransformations" />
@@ -98,8 +98,8 @@
     </node>
     <node type="tp4k.ActionDeclaration" typeId="tp4k.1203071646776" id="5636695426879360410">
       <property name="name" nameId="tpck.1169194664001" value="MigrateToNewSNodeAccess" />
-      <property name="caption" nameId="tp4k.1205250923097" value="Migrate to new SNodeAccess (one pass only!)" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="migration" />
+      <property name="caption" nameId="tp4k.1205250923097" value="Migrate to new SNodeAccess (one pass only!)" />
     </node>
   </roots>
   <root id="5487985028841902721">
@@ -1854,7 +1854,7 @@
                                         </node>
                                       </node>
                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5256703636345189950">
-                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dsetReference(java%dlang%dString,org%djetbrains%dmps%dopenapi%dmodel%dSReference)%cvoid" resolveInfo="setReference" />
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SNode%dsetReference(java%dlang%dString,org%djetbrains%dmps%dopenapi%dmodel%dSReference)%cvoid" resolveInfo="setReference" />
                                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8639362099075132511">
                                           <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="8639362099075132530">
                                             <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SReference%dgetRole()%cjava%dlang%dString" resolveInfo="getRole" />
@@ -1892,7 +1892,7 @@
                                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="5257939578590794618">
                                     <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="5257939578590794619">
                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="5257939578590794624">
-                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dsetReference(java%dlang%dString,org%djetbrains%dmps%dopenapi%dmodel%dSReference)%cvoid" resolveInfo="setReference" />
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SNode%dsetReference(java%dlang%dString,org%djetbrains%dmps%dopenapi%dmodel%dSReference)%cvoid" resolveInfo="setReference" />
                                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8639362099075132532">
                                           <node role="operand" roleId="tpee.1197027771414" type="cx9y.IndexedTupleMemberAccessExpression" typeId="cx9y.1238857743184" id="8639362099075132533">
                                             <node role="index" roleId="cx9y.1238857834412" type="tpee.IntegerConstant" typeId="tpee.1068580320020" id="8639362099075132534">
@@ -1937,7 +1937,7 @@
                                   <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="7949796796600715326">
                                     <node role="expression" roleId="tpee.1068580123156" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7949796796600715327">
                                       <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7949796796600715329">
-                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dsetReference(java%dlang%dString,org%djetbrains%dmps%dopenapi%dmodel%dSReference)%cvoid" resolveInfo="setReference" />
+                                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SNode%dsetReference(java%dlang%dString,org%djetbrains%dmps%dopenapi%dmodel%dSReference)%cvoid" resolveInfo="setReference" />
                                         <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="8639362099075132538">
                                           <node role="operand" roleId="tpee.1197027771414" type="cx9y.IndexedTupleMemberAccessExpression" typeId="cx9y.1238857743184" id="8639362099075132539">
                                             <node role="tuple" roleId="cx9y.1238857764950" type="tp2q.ForEachVariableReference" typeId="tp2q.1153944233411" id="8639362099075132543">
@@ -2132,7 +2132,7 @@
           <node role="condition" roleId="tpee.1068580123160" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7949796796600715411">
             <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7949796796600715412">
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7949796796600715414">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNode%dgetModel()%cjetbrains%dmps%dsmodel%dSModel" resolveInfo="getModel" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="ec5l.~SNode%dgetModel()%cjetbrains%dmps%dsmodel%dSModel" resolveInfo="getModel" />
               </node>
               <node role="operand" roleId="tpee.1197027771414" type="tp25.SemanticDowncastExpression" typeId="tp25.1145404486709" id="7742801207088883175">
                 <node role="leftExpression" roleId="tp25.1145404616321" type="tpee.ParameterReference" typeId="tpee.1068581242874" id="7742801207088883152">
