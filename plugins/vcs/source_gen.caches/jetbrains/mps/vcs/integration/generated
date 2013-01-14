@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="svojlj7j0sdw1vlffksbypkdvokgou">
+<dependencies version="2" modelHash="9njmujqw9hflgmq8nygy0lwylmltp1">
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.vcs(MPS.Platform/com.intellij.openapi.vcs@java_stub)" />
   <dep model="f:java_stub#742f6602-5a2f-4313-aa6e-ae1cd4ffdc61#com.intellij.openapi.vcs.merge(MPS.Platform/com.intellij.openapi.vcs.merge@java_stub)" />
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="1h96jbg38xkez14vk73630sbzaefb2q" />
@@ -8,7 +8,7 @@
   <dep model="r:b45707fc-ff12-4ef7-8bef-69287f7e33f2(jetbrains.mps.baseLanguage.checkedDots.generator.template.main@generator)" hash="hyjvlkq5vh5vsrgv95djdutex4f1b2" />
   <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" hash="a1zgrouzvocts8mn9z8xik6lpn0y8ga" />
   <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="-ewgblj5m32jyc5zc1n1eup4emffkdql" />
-  <common hash="-a52460cg4lzivl3a6ykklhnn71yq7qd">
+  <common hash="6wl3oszov8ls8emddcufm25uc7mezid">
     <dep model="r:b4d7d620-6723-4aa2-856b-118497e84e9e(jetbrains.mps.baseLanguage.generator.java.strings@generator)" />
   </common>
   <source id="3521790172251160903" name="ProjectCheckoutListener" hash="-11rdvdt4eqzcoks2co79yhsed3vy65q">
@@ -16,7 +16,7 @@
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="ProjectCheckoutListener.java" />
   </source>
-  <source id="3521790172251226878" name="ModuleVcsPathPresenter" hash="8pc3qfitnvyfq5majzws1xgfbt7hvph">
+  <source id="3521790172251226878" name="ModuleVcsPathPresenter" hash="6c2ra2hcv81wervilmxucqi8075wtvg">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <dep model="r:00000000-0000-4000-0000-011c895902cb(jetbrains.mps.baseLanguage.generator.java.closures@generator)" />
     <file name="ModuleVcsPathPresenter.java" />

@@ -13,6 +13,8 @@ import java.io.File;
 import com.intellij.openapi.vcs.VcsRoot;
 import com.intellij.openapi.vcs.changes.ContentRevision;
 import com.intellij.openapi.util.io.FileUtil;
+import java.lang.reflect.Method;
+import java.lang.reflect.InvocationTargetException;
 
 public class ModuleVcsPathPresenter extends VcsPathPresenter {
   private final Project myProject;
@@ -36,8 +38,8 @@ public class ModuleVcsPathPresenter extends VcsPathPresenter {
           }
         }
         for (VcsRoot root : myManager.getAllVcsRoots()) {
-          if (VfsUtil.isAncestor(root.path, file, true)) {
-            return "[" + root.path.getName() + "]" + File.separator + file.getPath();
+          if (VfsUtil.isAncestor(getPath(root), file, true)) {
+            return "[" + getPath(root).getName() + "]" + File.separator + file.getPath();
           }
         }
         return "[]" + File.separator + file.getPath();
@@ -47,5 +49,27 @@ public class ModuleVcsPathPresenter extends VcsPathPresenter {
 
   public String getPresentableRelativePath(final ContentRevision fromRevision, final ContentRevision toRevision) {
     return FileUtil.getRelativePath(toRevision.getFile().getIOFile(), fromRevision.getFile().getIOFile());
+  }
+
+  private static VirtualFile getPath(VcsRoot root) {
+    // was changed in IDEA12 from public field to get method: .path -> .getPath() 
+    try {
+      return root.path;
+
+    } catch (NoSuchFieldError e) {
+      try {
+        Method method = VcsRoot.class.getMethod("getPath", VirtualFile.class);
+        return (VirtualFile) method.invoke(root);
+      } catch (NoSuchMethodException ex) {
+        ex.printStackTrace();
+        return null;
+      } catch (InvocationTargetException ex) {
+        ex.printStackTrace();
+        return null;
+      } catch (IllegalAccessException ex) {
+        ex.printStackTrace();
+        return null;
+      }
+    }
   }
 }

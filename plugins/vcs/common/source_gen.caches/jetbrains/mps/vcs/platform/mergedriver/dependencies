@@ -60,12 +60,18 @@
   <dependency className="jetbrains.mps.vcs.platform.mergedriver.GitRepositoriesInstaller" file="GitRepositoriesInstaller.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
     <classNode dependClassName="com.intellij.openapi.ui.Messages" />
+    <classNode dependClassName="com.intellij.openapi.vcs.AbstractVcs" />
     <classNode dependClassName="com.intellij.openapi.vcs.ProjectLevelVcsManager" />
     <classNode dependClassName="com.intellij.openapi.vcs.VcsRoot" />
     <classNode dependClassName="com.intellij.openapi.vfs.VirtualFile" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.IllegalAccessException" />
     <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.NoSuchFieldError" />
+    <classNode dependClassName="java.lang.NoSuchMethodException" />
     <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.lang.reflect.InvocationTargetException" />
+    <classNode dependClassName="java.lang.reflect.Method" />
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ISelector" />

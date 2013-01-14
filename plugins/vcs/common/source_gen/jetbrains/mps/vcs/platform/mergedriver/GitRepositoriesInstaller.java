@@ -19,6 +19,9 @@ import jetbrains.mps.util.NameUtil;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.util.StringsIO;
 import java.io.IOException;
+import java.lang.reflect.Method;
+import java.lang.reflect.InvocationTargetException;
+import com.intellij.openapi.vcs.AbstractVcs;
 
 /*package*/ class GitRepositoriesInstaller extends AbstractInstaller {
   private static final String ATTRIBUTES_FILE = ".gitattributes";
@@ -39,7 +42,7 @@ import java.io.IOException;
     } else {
       List<AbstractInstaller.State> states = Sequence.fromIterable(gitRoots).select(new ISelector<VcsRoot, AbstractInstaller.State>() {
         public AbstractInstaller.State select(VcsRoot r) {
-          return installForRoot(r.path, dryRun);
+          return installForRoot(getPath(r), dryRun);
         }
       }).toListSequence();
       if (ListSequence.fromList(states).all(new IWhereFilter<AbstractInstaller.State>() {
@@ -68,7 +71,7 @@ import java.io.IOException;
   private int getRootsToInstall() {
     return Sequence.fromIterable(getGitRoots()).select(new ISelector<VcsRoot, AbstractInstaller.State>() {
       public AbstractInstaller.State select(VcsRoot r) {
-        return installForRoot(r.path, true);
+        return installForRoot(getPath(r), true);
       }
     }).where(new IWhereFilter<AbstractInstaller.State>() {
       public boolean accept(AbstractInstaller.State st) {
@@ -81,7 +84,7 @@ import java.io.IOException;
     VcsRoot[] allRoots = myProject.getComponent(ProjectLevelVcsManager.class).getAllVcsRoots();
     return Sequence.fromIterable(Sequence.fromArray(allRoots)).where(new IWhereFilter<VcsRoot>() {
       public boolean accept(VcsRoot root) {
-        return "Git".equals(root.vcs.getName());
+        return "Git".equals(getVcs(root).getName());
       }
     });
   }
@@ -90,7 +93,7 @@ import java.io.IOException;
     int updated = 0;
     int failed = 0;
     for (VcsRoot root : Sequence.fromIterable(roots)) {
-      if (installForRoot(root.path, false) == AbstractInstaller.State.INSTALLED) {
+      if (installForRoot(getPath(root), false) == AbstractInstaller.State.INSTALLED) {
         updated++;
       } else {
         failed++;
@@ -168,6 +171,50 @@ import java.io.IOException;
       return AbstractInstaller.State.INSTALLED;
     } catch (IOException e) {
       return AbstractInstaller.State.NOT_INSTALLED;
+    }
+  }
+
+  private static VirtualFile getPath(VcsRoot root) {
+    // was changed in IDEA12 from public field to get method: .path -> .getPath() 
+    try {
+      return root.path;
+
+    } catch (NoSuchFieldError e) {
+      try {
+        Method method = VcsRoot.class.getMethod("getPath", VirtualFile.class);
+        return (VirtualFile) method.invoke(root);
+      } catch (NoSuchMethodException ex) {
+        ex.printStackTrace();
+        return null;
+      } catch (InvocationTargetException ex) {
+        ex.printStackTrace();
+        return null;
+      } catch (IllegalAccessException ex) {
+        ex.printStackTrace();
+        return null;
+      }
+    }
+  }
+
+  private static AbstractVcs getVcs(VcsRoot root) {
+    // was changed in IDEA12 from public field to get method: .vcs -> .getVcs() 
+    try {
+      return root.vcs;
+
+    } catch (NoSuchFieldError e) {
+      try {
+        Method method = VcsRoot.class.getMethod("getVcs", AbstractVcs.class);
+        return (AbstractVcs) method.invoke(root);
+      } catch (NoSuchMethodException ex) {
+        ex.printStackTrace();
+        return null;
+      } catch (InvocationTargetException ex) {
+        ex.printStackTrace();
+        return null;
+      } catch (IllegalAccessException ex) {
+        ex.printStackTrace();
+        return null;
+      }
     }
   }
 }
