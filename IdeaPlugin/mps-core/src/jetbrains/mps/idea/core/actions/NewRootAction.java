@@ -73,7 +73,7 @@ public class NewRootAction extends AnAction {
             SNode concept = conceptPointer.getNode();
             SModel model = myModelDescriptor.getSModel();
             SNode newNode = NodeFactoryManager.createNode(concept, null, null, model, myOperationContext.getScope());
-            newNode.setName(getNameField().getText());
+            ((jetbrains.mps.smodel.SNode) newNode).setName(getNameField().getText());
             model.addRoot(newNode);
             myModelDescriptor.save();
           }
