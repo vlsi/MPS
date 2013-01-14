@@ -34,7 +34,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   public static final SReference[] EMPTY_ARRAY = new SReference[0];
 
   private String myRole;
-  private final SNode mySourceNode;
+  protected final SNode mySourceNode; // made protected only for assert in DynamicReference
 
   private volatile String myResolveInfo;
 

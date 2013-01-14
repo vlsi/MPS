@@ -2688,7 +2688,7 @@
     <nodeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="22" startPosition="62" endLine="23" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="23" startPosition="35" endLine="24" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="28" startPosition="32" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="919081871149427536" fileName="SelectLocalEnd_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="187" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="919081871149427536" fileName="SelectLocalEnd_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="38" startPosition="7" endLine="39" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="39" startPosition="60" endLine="40" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="42" startPosition="27" endLine="43" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2704,14 +2704,12 @@
     <nodeInfo nodeId="7791284463049069932" fileName="SelectLocalEnd_Action.java" startLine="68" startPosition="9" endLine="69" endPosition="115" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5353483617734085815" fileName="SelectLocalEnd_Action.java" startLine="69" startPosition="115" endLine="70" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="71" startPosition="27" endLine="72" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5353483617734085771" fileName="SelectLocalEnd_Action.java" startLine="76" startPosition="76" endLine="77" endPosition="301" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="80" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="76" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <nodeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="48" startPosition="95" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="52" startPosition="97" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="56" startPosition="107" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="60" startPosition="103" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5353483617734085766" fileName="SelectLocalEnd_Action.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canCallSelectLocalEnd#(Ljava/util/Map;)Z" />
     <nodeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
     <nodeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="37" startPosition="9" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="51" startPosition="5" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2724,7 +2722,7 @@
     <nodeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="36" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="48" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <scopeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="28" startPosition="32" endLine="29" endPosition="16" />
-    <scopeInfo nodeId="9216084166067831676" fileName="SelectLocalEnd_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="187" />
+    <scopeInfo nodeId="9216084166067831676" fileName="SelectLocalEnd_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="219" />
     <scopeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
     <scopeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="53" startPosition="65" endLine="54" endPosition="19" />
     <scopeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="57" startPosition="70" endLine="58" endPosition="19" />
@@ -2733,7 +2731,6 @@
       <varInfo nodeId="7791284463049069924" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="71" startPosition="27" endLine="72" endPosition="86" />
-    <scopeInfo nodeId="5353483617734085768" fileName="SelectLocalEnd_Action.java" startLine="76" startPosition="76" endLine="77" endPosition="301" />
     <scopeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="38" startPosition="7" endLine="40" endPosition="63">
       <varInfo nodeId="7791284463049069924" varName="enabled" />
     </scopeInfo>
@@ -2746,9 +2743,6 @@
     <scopeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="7791284463049069924" varName="_params" />
       <varInfo nodeId="7791284463049069924" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="5353483617734085766" fileName="SelectLocalEnd_Action.java" startLine="76" startPosition="0" endLine="79" endPosition="0">
-      <varInfo nodeId="5353483617734085766" varName="_params" />
     </scopeInfo>
     <scopeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="37" startPosition="9" endLine="41" endPosition="7" />
@@ -2771,7 +2765,7 @@
       <varInfo nodeId="7791284463049069924" varName="_params" />
       <varInfo nodeId="7791284463049069924" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.SelectLocalEnd_Action" />
+    <unitInfo nodeId="7791284463049069924" fileName="SelectLocalEnd_Action.java" startLine="18" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.SelectLocalEnd_Action" />
   </root>
   <root nodeId="7791284463049070003" modelId="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)">
     <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="19" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />
@@ -2779,7 +2773,7 @@
     <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="22" startPosition="66" endLine="23" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="23" startPosition="35" endLine="24" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="28" startPosition="32" endLine="29" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="919081871149427538" fileName="SelectLocalHome_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="189" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="919081871149427538" fileName="SelectLocalHome_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="219" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="38" startPosition="7" endLine="39" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="39" startPosition="60" endLine="40" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="42" startPosition="27" endLine="43" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -2795,14 +2789,12 @@
     <nodeInfo nodeId="7791284463049070011" fileName="SelectLocalHome_Action.java" startLine="68" startPosition="9" endLine="69" endPosition="116" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="5353483617734085929" fileName="SelectLocalHome_Action.java" startLine="69" startPosition="116" endLine="70" endPosition="154" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="71" startPosition="27" endLine="72" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5353483617734085847" fileName="SelectLocalHome_Action.java" startLine="76" startPosition="77" endLine="77" endPosition="303" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="80" startPosition="0" endLine="81" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
+    <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="76" startPosition="0" endLine="77" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="LOG" />
     <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="32" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicable#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="48" startPosition="95" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="52" startPosition="97" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="56" startPosition="107" endLine="59" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="60" startPosition="103" endLine="63" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="5353483617734085836" fileName="SelectLocalHome_Action.java" startLine="76" startPosition="0" endLine="79" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="canCallSelectLocalHome#(Ljava/util/Map;)Z" />
     <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="27" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isDumbAware#()Z" />
     <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="37" startPosition="9" endLine="41" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="51" startPosition="5" endLine="55" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -2815,7 +2807,7 @@
     <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="36" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doUpdate#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)V" />
     <nodeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="48" startPosition="0" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="collectActionData#(Lcom/intellij/openapi/actionSystem/AnActionEvent;Ljava/util/Map;)Z" />
     <scopeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="28" startPosition="32" endLine="29" endPosition="16" />
-    <scopeInfo nodeId="9216084166067831829" fileName="SelectLocalHome_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="189" />
+    <scopeInfo nodeId="9216084166067831829" fileName="SelectLocalHome_Action.java" startLine="32" startPosition="87" endLine="33" endPosition="219" />
     <scopeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="49" startPosition="53" endLine="50" endPosition="19" />
     <scopeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="53" startPosition="65" endLine="54" endPosition="19" />
     <scopeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="57" startPosition="70" endLine="58" endPosition="19" />
@@ -2824,7 +2816,6 @@
       <varInfo nodeId="7791284463049070003" varName="t" />
     </scopeInfo>
     <scopeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="71" startPosition="27" endLine="72" endPosition="87" />
-    <scopeInfo nodeId="5353483617734085838" fileName="SelectLocalHome_Action.java" startLine="76" startPosition="77" endLine="77" endPosition="303" />
     <scopeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="38" startPosition="7" endLine="40" endPosition="63">
       <varInfo nodeId="7791284463049070003" varName="enabled" />
     </scopeInfo>
@@ -2837,9 +2828,6 @@
     <scopeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="32" startPosition="0" endLine="35" endPosition="0">
       <varInfo nodeId="7791284463049070003" varName="_params" />
       <varInfo nodeId="7791284463049070003" varName="event" />
-    </scopeInfo>
-    <scopeInfo nodeId="5353483617734085836" fileName="SelectLocalHome_Action.java" startLine="76" startPosition="0" endLine="79" endPosition="0">
-      <varInfo nodeId="5353483617734085836" varName="_params" />
     </scopeInfo>
     <scopeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="27" startPosition="0" endLine="31" endPosition="0" />
     <scopeInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="37" startPosition="9" endLine="41" endPosition="7" />
@@ -2862,7 +2850,7 @@
       <varInfo nodeId="7791284463049070003" varName="_params" />
       <varInfo nodeId="7791284463049070003" varName="event" />
     </scopeInfo>
-    <unitInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="18" startPosition="0" endLine="82" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.SelectLocalHome_Action" />
+    <unitInfo nodeId="7791284463049070003" fileName="SelectLocalHome_Action.java" startLine="18" startPosition="0" endLine="78" endPosition="0" unitName="jetbrains.mps.ide.editor.actions.SelectLocalHome_Action" />
   </root>
   <root nodeId="7791284463049070082" modelId="r:9832fb5f-2578-4b58-8014-a5de79da988e(jetbrains.mps.ide.editor.actions)">
     <nodeInfo nodeId="7791284463049070082" fileName="SelectUp_Action.java" startLine="17" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="ICON" />

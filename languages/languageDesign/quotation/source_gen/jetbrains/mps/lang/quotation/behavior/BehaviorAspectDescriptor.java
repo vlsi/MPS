@@ -14,18 +14,34 @@ public class BehaviorAspectDescriptor implements jetbrains.mps.smodel.runtime.Be
     switch (Arrays.binarySearch(stringSwitchCases_846f5o_a0a0b, fqName)) {
       case 0:
         return new Antiquotation_BehaviorDescriptor();
-      case 3:
+      case 11:
         return new Quotation_BehaviorDescriptor();
-      case 4:
+      case 12:
         return new ReferenceAntiquotation_BehaviorDescriptor();
       case 1:
         return new ListAntiquotation_BehaviorDescriptor();
-      case 2:
+      case 10:
         return new PropertyAntiquotation_BehaviorDescriptor();
+      case 6:
+        return new NodeBuilderInitProperty_BehaviorDescriptor();
+      case 7:
+        return new NodeBuilderList_BehaviorDescriptor();
+      case 2:
+        return new NodeBuilder_BehaviorDescriptor();
+      case 4:
+        return new NodeBuilderInitLink_BehaviorDescriptor();
+      case 9:
+        return new NodeBuilderRef_BehaviorDescriptor();
+      case 3:
+        return new NodeBuilderExpression_BehaviorDescriptor();
+      case 8:
+        return new NodeBuilderNode_BehaviorDescriptor();
+      case 5:
+        return new NodeBuilderInitPart_BehaviorDescriptor();
       default:
         return BehaviorAspectInterpreted.getInstance().getDescriptor(fqName);
     }
   }
 
-  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.quotation.structure.Antiquotation", "jetbrains.mps.lang.quotation.structure.ListAntiquotation", "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", "jetbrains.mps.lang.quotation.structure.Quotation", "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"};
+  private static String[] stringSwitchCases_846f5o_a0a0b = new String[]{"jetbrains.mps.lang.quotation.structure.Antiquotation", "jetbrains.mps.lang.quotation.structure.ListAntiquotation", "jetbrains.mps.lang.quotation.structure.NodeBuilder", "jetbrains.mps.lang.quotation.structure.NodeBuilderExpression", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitLink", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitPart", "jetbrains.mps.lang.quotation.structure.NodeBuilderInitProperty", "jetbrains.mps.lang.quotation.structure.NodeBuilderList", "jetbrains.mps.lang.quotation.structure.NodeBuilderNode", "jetbrains.mps.lang.quotation.structure.NodeBuilderRef", "jetbrains.mps.lang.quotation.structure.PropertyAntiquotation", "jetbrains.mps.lang.quotation.structure.Quotation", "jetbrains.mps.lang.quotation.structure.ReferenceAntiquotation"};
 }

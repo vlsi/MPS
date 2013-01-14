@@ -63,6 +63,9 @@ public class DynamicReference extends SReferenceBase {
   }
 
   protected SNode getTargetNode_internal(boolean silently) {
+    // seems like getTargetNode() doesn't make sense if target node is detached
+    assert mySourceNode.getModel() != null;
+
     if (myImmatureTargetNode != null) {
       synchronized (this) {
         if (!makeIndirect()) {

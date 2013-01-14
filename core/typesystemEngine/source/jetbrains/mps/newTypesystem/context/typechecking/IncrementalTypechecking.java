@@ -128,10 +128,9 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
    */
   public boolean runApplyRulesTo(SNode node, Runnable run) {
     myNodeTypeAccess.pushNode(node);
-    try{
+    try {
       run.run();
-    }
-    finally {
+    } finally {
       return myNodeTypeAccess.popNode();
     }
   }
@@ -196,8 +195,7 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
     myTypeErrorComponent = myNonTypeSystemComponent;
     try {
       myNonTypeSystemComponent.applyNonTypeSystemRulesToRoot(typeCheckingContext, getNode());
-    }
-    finally {
+    } finally {
       myTypeErrorComponent = oldTypeErrorComponent;
     }
   }
@@ -306,6 +304,12 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
         }
       }
       for (SReference reference : references) {
+        if (reference instanceof DynamicReference) {
+          // the problem was in a more strict case:
+          // dynamic reference from a detached node (its getTargetNode() seems to be non-sensible)
+          // but I skip all DynamicReferences
+          continue;
+        }
         SNode targetNode = reference.getTargetNodeSilently();
         if (targetNode != null) {
           markDependentNodesForInvalidation(targetNode, myNonTypeSystemComponent);
@@ -407,19 +411,19 @@ public class IncrementalTypechecking extends BaseTypechecking<State, TypeSystemC
       myStack.push(new Pair<SNode, Boolean>(node, false));
     }
 
-    private boolean popNode () {
+    private boolean popNode() {
       return myStack.pop().o2;
     }
 
-    private void nodeTypeAccessed (SNode node) {
-      for (Pair<SNode, Boolean> p: myStack) {
+    private void nodeTypeAccessed(SNode node) {
+      for (Pair<SNode, Boolean> p : myStack) {
         if (p.o1 == node) {
           p.o2 = true;
         }
       }
     }
 
-    private SNode peekNode () {
+    private SNode peekNode() {
       if (myStack.isEmpty()) return null;
       return myStack.peek().o1;
     }
