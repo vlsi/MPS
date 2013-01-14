@@ -72,7 +72,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
         //  which is an error but none the less) 
         SModelOperations.addRootNode(myModel, node);
         SetSequence.fromSet(roots).addElement(node);
-        MapSequence.fromMap(myRootsById).put(node.getSNodeId(), node);
+        MapSequence.fromMap(myRootsById).put(node.getNodeId(), node);
       }
 
       if (SetSequence.fromSet(roots).isNotEmpty()) {
@@ -161,7 +161,7 @@ public class PsiJavaStubModelDescriptor extends BaseSpecialModelDescriptor imple
         if (e != null) {
 
           SNode node = converter.convertClass((PsiClass) e);
-          SNodeId id = node.getSNodeId();
+          SNodeId id = node.getNodeId();
           SNode oldNode = myModel.getNodeById(id);
 
           if ((oldNode != null)) {

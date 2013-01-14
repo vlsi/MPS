@@ -83,7 +83,7 @@ public class ASTConverter {
 
     if (needToSetId() && isNotEmpty_rbndtb_a0a41a2(SPropertyOperations.getString(classifier.value, "name"))) {
       String id = getIdPrefix() + SPropertyOperations.getString(classifier.value, "name");
-      classifier.value.setId(new SNodeId.Foreign(id));
+      ((jetbrains.mps.smodel.SNode) classifier.value).setId(new SNodeId.Foreign(id));
       childConverter.value = new ASTConverter.WithState(id + ".");
     }
 
@@ -188,7 +188,7 @@ public class ASTConverter {
 
     if (needToSetId() && SPropertyOperations.getString(field, "name") != null) {
       String id = getIdPrefix() + SPropertyOperations.getString(field, "name");
-      field.setId(new SNodeId.Foreign(id));
+      ((jetbrains.mps.smodel.SNode) field).setId(new SNodeId.Foreign(id));
     }
 
     return field;
@@ -275,7 +275,7 @@ public class ASTConverter {
       sb.append(')');
 
       String id = sb.toString();
-      method.setId(new SNodeId.Foreign(id));
+      ((jetbrains.mps.smodel.SNode) method).setId(new SNodeId.Foreign(id));
     }
 
 
