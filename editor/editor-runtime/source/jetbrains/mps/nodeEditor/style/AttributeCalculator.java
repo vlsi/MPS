@@ -18,7 +18,7 @@ package jetbrains.mps.nodeEditor.style;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 
 public abstract class AttributeCalculator<T> implements jetbrains.mps.openapi.editor.style.AttributeCalculator<T> {
-  abstract T calculate(EditorCell cell);
+  public abstract T calculate(EditorCell cell);
 
   @Override
   public T calculate(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
