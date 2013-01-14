@@ -502,7 +502,7 @@ public class SNodeOperations {
       }
       if (SNodeOperations.isInstanceOf(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute")) {
         String linkRole = AttributeOperations.getLinkRole(SNodeOperations.cast(attribute, "jetbrains.mps.lang.core.structure.LinkAttribute"));
-        if ((BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), ((jetbrains.mps.smodel.SNode) SNodeOperations.getConceptDeclaration(newChild)), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{linkRole}) == null)) {
+        if ((BehaviorReflection.invokeNonVirtual((Class<SNode>) ((Class) Object.class), SNodeOperations.getConceptDeclaration(newChild), "jetbrains.mps.lang.structure.structure.AbstractConceptDeclaration", "call_findLinkDeclaration_1213877394467", new Object[]{linkRole}) == null)) {
           // no such link in new child : don't copy the attribute 
           LOG.error("couldn't copy attribute " + attribute.getConcept().getName() + " for link '" + linkRole + "' : so such link in concept " + newChild.getConcept().getName(), newChild);
           continue;

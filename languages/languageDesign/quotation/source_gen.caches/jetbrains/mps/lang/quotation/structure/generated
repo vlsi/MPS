@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dependencies version="2" modelHash="-4b42jm5setauc1jgs0sk12290e8tx1e">
+  <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" hash="8v5mxg7faenizzqancdsnbkmkc74yqj" />
+  <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" hash="98k61qfedk3mo1qjg3v1au7xkjqpubq" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-89hxj0ypb1mymp88cm6uftvxxpq6hll" />
+  <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" hash="-1btmsuay4m0oifxjqd0wk9bex9z4aer" />
+  <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" hash="2nkg967gfmalhl29qke6mhw4pavbga4" />
+  <common hash="-7xndr45jx5nthk5ogq7pjwjfcrv3709">
+    <dep root="1196350785110" />
+    <dep root="1196350785112" />
+    <dep root="1196350785113" />
+    <dep root="1196350785117" />
+    <dep root="1196350785118" />
+    <dep root="1196866233735" />
+    <dep root="5455284157993863837" />
+    <dep root="5455284157993863840" />
+    <dep root="5455284157993911077" />
+    <dep root="5455284157993911097" />
+    <dep root="5455284157994012186" />
+    <dep root="8182547171709614739" />
+    <dep root="8182547171709738802" />
+    <dep root="8182547171709752110" />
+    <dep model="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
+    <dep model="r:00000000-0000-4000-0000-011c895902e8(jetbrains.mps.lang.generator.structure)" />
+    <dep model="r:f04c1476-2f91-4f59-be13-c8e009abebee(jetbrains.mps.baseLanguageInternal.generator.template.main@generator)" />
+    <file name="Quotation_Language.java" />
+    <file name="StructureAspectDescriptor.java" />
+  </common>
+  <source id="1196350785110" name="AbstractAntiquotation" hash="2i9b28e1krt8lnqdg05dudlm6yfw4lb">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1196350785112" name="Antiquotation" hash="-aahsmms1qqcnsb9pa4t1t2up6poihlt">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1196350785113" name="Quotation" hash="-o68qspx9tpm6zd5ou745n2hysaoswc">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1196350785117" name="ReferenceAntiquotation" hash="-5ql7aut200yckfcw2rh6k8sco0kldz7">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1196350785118" name="ListAntiquotation" hash="4qstujevp3tzzzfffddvy0plkjy0pqz">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="1196866233735" name="PropertyAntiquotation" hash="7m38oup5rsn191cvu84499oobuzn2fc">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5455284157993911077" name="NodeBuilderInitProperty" hash="1vte1dhvjri3efv9resp2vgf60h28fl">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="8182547171709738802" name="NodeBuilderList" hash="ekwfl506xbrswu37edcr5ngg7hwnxo1">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5455284157993863837" name="NodeBuilder" hash="-8myijv1kic7l32zmlsjzux3gsgdbs72">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5455284157994012186" name="NodeBuilderInitLink" hash="-138539wbnkambz08fihpe7ojqfun7dj">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="8182547171709614739" name="NodeBuilderRef" hash="-db4crz2tdtw4mcmlyutfi7wyshq0qd">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="8182547171709752110" name="NodeBuilderExpression" hash="f3l6zaqgrjendqjtnjj4hpif5mbzkg">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5455284157993863840" name="NodeBuilderNode" hash="25mrj3wilo41n0j8pv04j5mqf61c24d">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+  <source id="5455284157993911097" name="NodeBuilderInitPart" hash="2rjn7klxol827tp6lmu5c3nvxvsjvjs">
+    <dep model="r:00000000-0000-4000-0000-011c89590293(jetbrains.mps.lang.structure.generator_new.baseLanguage@generator)" />
+  </source>
+</dependencies>
+
