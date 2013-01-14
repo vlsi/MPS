@@ -784,7 +784,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_2401501559171673384(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "baseNodeConcept", false);
+    return SLinkOperations.getTarget(((SNode) _context.getNode()), "baseNodeConcept", false);
   }
 
   public static Object referenceMacro_GetReferent_8147690884614614125(final IOperationContext operationContext, final ReferenceMacroContext _context) {
