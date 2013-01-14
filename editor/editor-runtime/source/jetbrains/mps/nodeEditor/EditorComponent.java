@@ -532,7 +532,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         EditorCell selectedCell = getSelectedCell();
         if (e.getClickCount() == 2 && myRootCell.findLeaf(e.getX(), e.getY()) == selectedCell &&
           selectedCell instanceof EditorCell_Label) {
-          ((EditorCell_Label) selectedCell).selectAll();
+          ((EditorCell_Label) selectedCell).selectWordOrAll();
           repaint();
         }
       }

@@ -27,10 +27,10 @@ import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.mps.openapi.language.SConcept;
+import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 
 import java.util.ArrayList;
@@ -86,38 +86,44 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
       // jumping to code that has been loaded through java stubs, either binary or source
 
       // FIXME replace hard-coded strings
-      if (node.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Classifier")) {
+      if (SNodeUtil.isInstanceOf(node, SNodeOperations.getConcept("jetbrains.mps.baseLanguage.structure.Classifier"))) {
         PsiClass cls = findClass(node, project);
 
         if (cls != null) {
           cls.navigate(true);
           return true;
         }
-      } else if (node.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration")) {
+      } else {
+        if (SNodeUtil.isInstanceOf(node, SNodeOperations.getConcept("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration"))) {
 
-        PsiMethod constr = findConstructor(node, project);
-        if (constr != null) {
-          constr.navigate(true);
-          return true;
-        }
+          PsiMethod constr = findConstructor(node, project);
+          if (constr != null) {
+            constr.navigate(true);
+            return true;
+          }
 
-      } else if (node.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration")
-        && node.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Classifier")) {
+        } else {
+          if (SNodeUtil.isInstanceOf(node, SNodeOperations.getConcept("jetbrains.mps.baseLanguage.structure.BaseMethodDeclaration"))
+            && SNodeUtil.isInstanceOf(node.getParent(), SNodeOperations.getConcept("jetbrains.mps.baseLanguage.structure.Classifier"))) {
 
-        PsiMethod method = findMethod(node, project);
-        if (method != null) {
-          method.navigate(true);
-          return true;
-        }
+            PsiMethod method = findMethod(node, project);
+            if (method != null) {
+              method.navigate(true);
+              return true;
+            }
 
-      } else if ((node.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration")
-        || node.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration"))
-        && node.getParent().isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.Classifier")) {
+          } else {
+            if ((SNodeUtil.isInstanceOf(node, SNodeOperations.getConcept("jetbrains.mps.baseLanguage.structure.FieldDeclaration"))
+              || SNodeUtil.isInstanceOf(node, SNodeOperations.getConcept("jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration")))
+              && SNodeUtil.isInstanceOf(node.getParent(), jetbrains.mps.util.SNodeOperations.getConcept("jetbrains.mps.baseLanguage.structure.Classifier"))) {
 
-        PsiField field = findField(node, project);
-        if (field != null) {
-          field.navigate(true);
-          return true;
+              PsiField field = findField(node, project);
+              if (field != null) {
+                field.navigate(true);
+                return true;
+              }
+            }
+          }
         }
       }
     }

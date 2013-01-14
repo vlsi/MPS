@@ -326,6 +326,9 @@
         <link role="macro" roleId="3ior.7389400916848153130" targetNodeId="6863061700609073389" resolveInfo="idea_home" />
       </node>
     </node>
+    <node role="aspects" roleId="3ior.3542413272732620719" type="kdzh.BuildMpsAspect" typeId="kdzh.6503355885715333289" id="6394071101218252280">
+      <property name="bootstrap" nameId="kdzh.6503355885715353788" value="true" />
+    </node>
   </root>
 </model>
 

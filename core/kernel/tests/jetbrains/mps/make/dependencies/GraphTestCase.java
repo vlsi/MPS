@@ -105,7 +105,7 @@ public class GraphTestCase extends TestCase {
 
   public <V extends IVertex> Graph<VertexDecorator<V>> getTransposed(Graph<V> graph0) {
     IVertex[] vertices = graph0.getData().toArray(new IVertex[graph0.getNVertexes()]);
-    int[][] graph = Graphs.graphToIntInt(vertices);
+    int[][] graph = Graphs.graphToIntInt(vertices, false, false);
     int[][] transposed = GraphUtil.transpose(graph);
 
     Graph result = new Graph();

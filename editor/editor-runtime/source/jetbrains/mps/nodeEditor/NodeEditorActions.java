@@ -378,7 +378,7 @@ public class NodeEditorActions {
       EditorCell cell = findTarget(selectionManager);
       selectionManager.pushSelection(selectionManager.createSelection(cell));
       if (cell instanceof EditorCell_Label) {
-        ((EditorCell_Label) cell).selectAll();
+        ((EditorCell_Label) cell).selectWordOrAll();
       }
     }
 

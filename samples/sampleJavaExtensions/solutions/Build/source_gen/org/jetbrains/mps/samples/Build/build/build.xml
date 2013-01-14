@@ -464,8 +464,8 @@
         <module file="${basedir}/languages/ParallelFor/org.jetbrains.mps.samples.ParallelFor.mpl" />
         <module file="${basedir}/solutions/ParallelForUtils/org.jetbrains.mps.samples.ParallelForUtils.msd" />
       </chunk>
-      <chunk>
-        <module file="${basedir}/languages/Money/org.jetbrains.mps.samples.Money.mpl" />
+      <chunk bootstrap="true">
+        <module file="${basedir}/languages/Money/org.jetbrains.mps.samples.Money.mpl" bootstrap="true" />
       </chunk>
     </mps.generate>
   </target>
@@ -476,6 +476,5 @@
     <delete dir="${project_home}/solutions/MoneyRuntime/source_gen" />
     <delete dir="${project_home}/languages/ParallelFor/source_gen" />
     <delete dir="${project_home}/solutions/ParallelForUtils/source_gen" />
-    <delete dir="${project_home}/languages/Money/source_gen" />
   </target>
 </project>
