@@ -17,8 +17,14 @@ package jetbrains.mps.nodeEditor.style;
 
 import jetbrains.mps.editor.runtime.style.StyleImpl;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
 
 public class Style extends StyleImpl {
+  static {
+    // Just loading StyleAttributes class here to ensure all style attributes were initialized properly.
+    StyleAttribute<Boolean> autoDeletable = StyleAttributes.AUTO_DELETABLE;
+  }
+
   public Style() {
     super();
   }

@@ -26,24 +26,8 @@ import jetbrains.mps.smodel.SNode;
 
 import java.awt.Color;
 import java.awt.Font;
-import java.util.List;
 
 public class StyleAttributes extends jetbrains.mps.editor.runtime.style.StyleAttributes {
-  protected static int getAttributesCount() {
-    return jetbrains.mps.editor.runtime.style.StyleAttributes.getAttributesCount();
-  }
-
-  protected static StyleAttribute getAttribute(int index) {
-    return jetbrains.mps.editor.runtime.style.StyleAttributes.getAttribute(index);
-  }
-
-  protected static boolean isSimple(StyleAttribute a) {
-    return jetbrains.mps.editor.runtime.style.StyleAttributes.isSimple(a);
-  }
-
-  protected static List<StyleAttribute> getNotSimpleAttributes() {
-    return jetbrains.mps.editor.runtime.style.StyleAttributes.getNotSimpleAttributes();
-  }
 
   public static final StyleAttribute<Color> BACKGROUND_COLOR = new InheritableStyleAttribute<Color>("background-color"){};
   public static final StyleAttribute<Color> BRACKETS_COLOR = new InheritableStyleAttribute<Color>("bracket-color", Color.BLACK){};

@@ -260,8 +260,10 @@ public class StyleImpl implements Style {
     }
 
     if (!changedAttributes.isEmpty()) {
-      for (Style style : myChildren) {
-        style.setParent(this, changedAttributes);
+      if (myChildren != null) {
+        for (Style style : myChildren) {
+          style.setParent(this, changedAttributes);
+        }
       }
 
       fireStyleChanged(new StyleChangeEvent(this, changedAttributes));

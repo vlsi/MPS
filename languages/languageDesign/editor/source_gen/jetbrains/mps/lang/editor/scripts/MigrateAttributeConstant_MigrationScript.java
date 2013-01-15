@@ -77,19 +77,19 @@ public class MigrateAttributeConstant_MigrationScript extends BaseMigrationScrip
     SNodeAccessUtil.setProperty(quotedNode_3, "name", "getStyleAttribute");
     SNodeAccessUtil.setProperty(quotedNode_3, "isVirtual", "false");
     quotedNode_3.setReference("overriddenMethod", SReference.create("overriddenMethod", quotedNode_3, SModelReference.fromString("r:00000000-0000-4000-0000-011c89590297(jetbrains.mps.lang.editor.behavior)"), SNodeId.fromString("2554389230519612632")));
-    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.addChild("visibility", quotedNode_4);
-    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
+    quotedNode_4.setReference("classifier", SReference.create("classifier", quotedNode_4, SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.style(MPS.Editor/jetbrains.mps.openapi.editor.style@java_stub)"), SNodeId.fromString("~StyleAttribute")));
+    quotedNode_3.addChild("returnType", quotedNode_4);
+    quotedNode_5 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.PublicVisibility", null, null, GlobalScope.getInstance(), false);
+    quotedNode_3.addChild("visibility", quotedNode_5);
+    quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StatementList", null, null, GlobalScope.getInstance(), false);
     quotedNode_7 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ReturnStatement", null, null, GlobalScope.getInstance(), false);
     quotedNode_8 = (SNode) parameter_1;
     if (quotedNode_8 != null) {
       quotedNode_7.addChild("expression", HUtil.copyIfNecessary(quotedNode_8));
     }
-    quotedNode_5.addChild("statement", quotedNode_7);
-    quotedNode_3.addChild("body", quotedNode_5);
-    quotedNode_6 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_6.setReference("classifier", SReference.create("classifier", quotedNode_6, SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.style(MPS.Editor/jetbrains.mps.nodeEditor.style@java_stub)"), SNodeId.fromString("~StyleAttribute")));
-    quotedNode_3.addChild("returnType", quotedNode_6);
+    quotedNode_6.addChild("statement", quotedNode_7);
+    quotedNode_3.addChild("body", quotedNode_6);
     quotedNode_2.addChild("method", quotedNode_3);
     return quotedNode_2;
   }

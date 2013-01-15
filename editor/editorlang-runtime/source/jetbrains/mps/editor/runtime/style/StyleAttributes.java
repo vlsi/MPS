@@ -30,9 +30,8 @@ public class StyleAttributes {
   private static List<StyleAttribute> ourNotSimpleAttributes = new ArrayList<StyleAttribute>();
   private static boolean ourFrozen = false;
 
-  // In MPS 3.0 was modified to be protected.
-  // make is package-local after 3.0
-  protected static int getAttributesCount() {
+  static int getAttributesCount() {
+    ourFrozen = true;
     return ourAttributes.size();
   }
 
@@ -41,16 +40,12 @@ public class StyleAttributes {
     return Collections.unmodifiableList(ourAttributes);
   }
 
-  // In MPS 3.0 was modified to be protected.
-  // make is package-local after 3.0
-  protected static List<StyleAttribute> getNotSimpleAttributes() {
+  static List<StyleAttribute> getNotSimpleAttributes() {
     ourFrozen = true;
     return Collections.unmodifiableList(ourNotSimpleAttributes);
   }
 
-  // In MPS 3.0 was modified to be protected.
-  // make is package-local after 3.0
-  protected static StyleAttribute getAttribute(int index) {
+  static StyleAttribute getAttribute(int index) {
     ourFrozen = true;
     return ourAttributes.get(index);
   }
@@ -66,9 +61,7 @@ public class StyleAttributes {
     return ourAttributes.size() - 1;
   }
 
-  // In MPS 3.0 was modified to be protected.
-  // make is package-local after 3.0
-  protected static boolean isSimple(StyleAttribute a) {
+  static boolean isSimple(StyleAttribute a) {
     return a instanceof SimpleStyleAttribute;
   }
 }

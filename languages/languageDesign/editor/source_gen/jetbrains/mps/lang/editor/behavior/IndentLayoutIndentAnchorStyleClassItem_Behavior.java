@@ -5,7 +5,7 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import jetbrains.mps.nodeEditor.style.StyleAttribute;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 
 public class IndentLayoutIndentAnchorStyleClassItem_Behavior {
