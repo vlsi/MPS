@@ -19,9 +19,6 @@ import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class Queries {
-  public Queries() {
-  }
-
   public static SNode getBinaryOperationType(SNode leftType, SNode rightType) {
     return getBinaryOperationType(leftType, rightType, false);
   }
