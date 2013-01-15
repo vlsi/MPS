@@ -216,7 +216,7 @@
     <nodeInfo nodeId="3216977149571368223" fileName="EditorCell_Table.java" startLine="116" startPosition="47" endLine="117" endPosition="62" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="327003329629484044" fileName="EditorCell_Table.java" startLine="118" startPosition="11" endLine="119" endPosition="35" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="327003329629484150" fileName="EditorCell_Table.java" startLine="119" startPosition="35" endLine="120" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4550201027691224134" fileName="EditorCell_Table.java" startLine="121" startPosition="84" endLine="122" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="4550201027691224134" fileName="EditorCell_Table.java" startLine="121" startPosition="80" endLine="122" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="7406306075318050272" fileName="EditorCell_Table.java" startLine="127" startPosition="11" endLine="128" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="8514238689685500758" fileName="EditorCell_Table.java" startLine="128" startPosition="0" endLine="129" endPosition="44" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="9102817927790201355" fileName="EditorCell_Table.java" startLine="131" startPosition="7" endLine="132" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -436,7 +436,7 @@
     <scopeInfo nodeId="7541022036347910989" fileName="EditorCell_Table.java" startLine="62" startPosition="0" endLine="67" endPosition="0">
       <varInfo nodeId="7541022036347910992" varName="editorContext" />
     </scopeInfo>
-    <scopeInfo nodeId="2524830101155322335" fileName="EditorCell_Table.java" startLine="121" startPosition="84" endLine="126" endPosition="15">
+    <scopeInfo nodeId="2524830101155322335" fileName="EditorCell_Table.java" startLine="121" startPosition="80" endLine="126" endPosition="15">
       <varInfo nodeId="4550201027691224135" varName="maxColumnWidth" />
     </scopeInfo>
     <scopeInfo nodeId="4992257971070065772" fileName="EditorCell_Table.java" startLine="137" startPosition="0" endLine="142" endPosition="0" />

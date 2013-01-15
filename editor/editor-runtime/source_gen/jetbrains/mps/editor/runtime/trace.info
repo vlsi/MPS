@@ -243,9 +243,9 @@
     <nodeInfo nodeId="8313721352726362801" fileName="EditorCell_Empty.java" startLine="86" startPosition="45" endLine="87" endPosition="105" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8313721352726362810" fileName="EditorCell_Empty.java" startLine="88" startPosition="16" endLine="89" endPosition="22" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8313721352726362818" fileName="EditorCell_Empty.java" startLine="96" startPosition="30" endLine="97" endPosition="16" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8313721352726362835" fileName="EditorCell_Empty.java" startLine="101" startPosition="85" endLine="102" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8313721352726362835" fileName="EditorCell_Empty.java" startLine="101" startPosition="78" endLine="102" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8313721352726362842" fileName="EditorCell_Empty.java" startLine="103" startPosition="5" endLine="104" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8313721352726362864" fileName="EditorCell_Empty.java" startLine="108" startPosition="84" endLine="109" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8313721352726362864" fileName="EditorCell_Empty.java" startLine="108" startPosition="77" endLine="109" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8313721352726362871" fileName="EditorCell_Empty.java" startLine="110" startPosition="5" endLine="111" endPosition="69" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="8313721352726362889" fileName="EditorCell_Empty.java" startLine="114" startPosition="107" endLine="115" endPosition="102" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8313721352726362896" fileName="EditorCell_Empty.java" startLine="115" startPosition="102" endLine="116" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -294,8 +294,8 @@
     <scopeInfo nodeId="8313721352726362800" fileName="EditorCell_Empty.java" startLine="86" startPosition="45" endLine="87" endPosition="105" />
     <scopeInfo nodeId="8313721352726362809" fileName="EditorCell_Empty.java" startLine="88" startPosition="16" endLine="89" endPosition="22" />
     <scopeInfo nodeId="8313721352726362817" fileName="EditorCell_Empty.java" startLine="96" startPosition="30" endLine="97" endPosition="16" />
-    <scopeInfo nodeId="8313721352726362834" fileName="EditorCell_Empty.java" startLine="101" startPosition="85" endLine="102" endPosition="73" />
-    <scopeInfo nodeId="8313721352726362863" fileName="EditorCell_Empty.java" startLine="108" startPosition="84" endLine="109" endPosition="72" />
+    <scopeInfo nodeId="8313721352726362834" fileName="EditorCell_Empty.java" startLine="101" startPosition="78" endLine="102" endPosition="73" />
+    <scopeInfo nodeId="8313721352726362863" fileName="EditorCell_Empty.java" startLine="108" startPosition="77" endLine="109" endPosition="72" />
     <scopeInfo nodeId="8313721352726362956" fileName="EditorCell_Empty.java" startLine="131" startPosition="40" endLine="132" endPosition="76" />
     <scopeInfo nodeId="8313721352726362970" fileName="EditorCell_Empty.java" startLine="136" startPosition="41" endLine="137" endPosition="76" />
     <scopeInfo nodeId="8313721352726362550" fileName="EditorCell_Empty.java" startLine="25" startPosition="56" endLine="27" endPosition="42" />
