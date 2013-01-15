@@ -46,7 +46,8 @@ public class SNodePointer implements SNodeReference {
     myTimestamp = createPointerTimestamp();
   }
 
-  public SNode getNode() {
+  @Override
+  public org.jetbrains.mps.openapi.model.SNode resolve(SRepository repo) {
     if (myNodeId == null) return null;
     SModelDescriptor model = getModel();
     if (model != null) {
@@ -63,23 +64,8 @@ public class SNodePointer implements SNodeReference {
     return null;
   }
 
-  public SModelDescriptor getModel() {
-    SModelReference modelReference = getCurrentSModelReference(myModelReference, myTimestamp);
-    if (modelReference == null) return null;
-    return getSModelRepository().getModelDescriptor(modelReference);
-  }
-
-  @Override
-  public org.jetbrains.mps.openapi.model.SNode resolve(SRepository repo) {
-    return getNode();
-  }
-
   public SModelReference getModelReference() {
     return getCurrentSModelReference(myModelReference, myTimestamp);
-  }
-
-  public SNodeId getNodeId() {
-    return myNodeId;
   }
 
   public String toString() {
@@ -87,13 +73,6 @@ public class SNodePointer implements SNodeReference {
       return "[bad pointer] model=" + getCurrentSModelReference(myModelReference, myTimestamp) + " node id=" + myNodeId;
     }
     return getNode().toString();
-  }
-
-  public String getDebugText() {
-    if (getNode() == null) {
-      return "<unknown node> model=" + getCurrentSModelReference(myModelReference, myTimestamp) + " node id=" + myNodeId;
-    }
-    return org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(getNode());
   }
 
   public boolean equals(Object o) {
@@ -115,6 +94,31 @@ public class SNodePointer implements SNodeReference {
     return sum;
   }
 
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
+  public SNode getNode() {
+    return resolve(MPSModuleRepository.getInstance());
+  }
+
+  public SNodeId getNodeId() {
+    return myNodeId;
+  }
+
+  public SModelDescriptor getModel() {
+    SModelReference modelReference = getCurrentSModelReference(myModelReference, myTimestamp);
+    if (modelReference == null) return null;
+    return getSModelRepository().getModelDescriptor(modelReference);
+  }
+
+  public String getDebugText() {
+    if (getNode() == null) {
+      return "<unknown node> model=" + getCurrentSModelReference(myModelReference, myTimestamp) + " node id=" + myNodeId;
+    }
+    return org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(getNode());
+  }
 
   //----------------------
   // model rename support
@@ -122,9 +126,6 @@ public class SNodePointer implements SNodeReference {
   private static int ourPointersTimestamp = 0;
   private static int ourModelsTimestamp = 0;
   private static final Map<Integer, Map<SModelReference, SModelReference>> ourRenamedModelUIDsByTimestamp = new HashMap<Integer, Map<SModelReference, SModelReference>>();
-
-
-  /*package*/
 
   public static void changeSModelReference(SModelReference oldModelReference, SModelReference newModelReference) {
     if (!ourRenamedModelUIDsByTimestamp.containsKey(ourPointersTimestamp)) {
