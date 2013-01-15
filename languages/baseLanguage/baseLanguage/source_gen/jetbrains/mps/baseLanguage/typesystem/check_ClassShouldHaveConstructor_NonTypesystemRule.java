@@ -24,17 +24,14 @@ public class check_ClassShouldHaveConstructor_NonTypesystemRule extends Abstract
 
   public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(SNodeOperations.isInstanceOf(classConcept, "jetbrains.mps.baseLanguage.structure.IAnonymousClass"))) {
-      boolean hasInstances = ListSequence.fromList(SLinkOperations.getTargets(classConcept, "field", true)).isNotEmpty() || ListSequence.fromList(SLinkOperations.getTargets(classConcept, "method", true)).isNotEmpty() || ListSequence.fromList(SLinkOperations.getTargets(classConcept, "property", true)).isNotEmpty() || (SLinkOperations.getTarget(classConcept, "instanceInitializer", true) != null);
-      if (hasInstances) {
-        if (!(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "constructor", true)).isNotEmpty() || DefaultConstructorUtils.containsDefaultConstructor(classConcept))) {
-          MessageTarget errorTarget = new NodeMessageTarget();
-          errorTarget = new PropertyMessageTarget("name");
-          IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classConcept, "a class should have at least one constructor", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8974945326827961340", null, errorTarget);
-          {
-            BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.CreateDefaultConstructor_QuickFix", false);
-            intentionProvider.putArgument("classConcept", classConcept);
-            _reporter_2309309498.addIntentionProvider(intentionProvider);
-          }
+      if (!(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "constructor", true)).isNotEmpty() || DefaultConstructorUtils.containsDefaultConstructor(classConcept))) {
+        MessageTarget errorTarget = new NodeMessageTarget();
+        errorTarget = new PropertyMessageTarget("name");
+        IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classConcept, "There is no default constructor available in super class", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8974945326827961340", null, errorTarget);
+        {
+          BaseQuickFixProvider intentionProvider = new BaseQuickFixProvider("jetbrains.mps.baseLanguage.typesystem.CreateDefaultConstructor_QuickFix", false);
+          intentionProvider.putArgument("classConcept", classConcept);
+          _reporter_2309309498.addIntentionProvider(intentionProvider);
         }
       }
     }
