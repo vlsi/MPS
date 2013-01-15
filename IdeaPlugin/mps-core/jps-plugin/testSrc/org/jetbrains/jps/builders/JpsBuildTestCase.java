@@ -173,7 +173,7 @@ public abstract class JpsBuildTestCase extends UsefulTestCase {
   }
 
   protected void loadProject(String projectPath) {
-    loadProject(projectPath, Collections.<String, String>emptyMap());
+    loadProject(projectPath, getBuilderParams());
   }
 
   protected void loadProject(String projectPath,
@@ -258,7 +258,8 @@ public abstract class JpsBuildTestCase extends UsefulTestCase {
   }
 
   protected BuildResult doBuild(final ProjectDescriptor descriptor, CompileScopeTestBuilder scopeBuilder) {
-    IncProjectBuilder builder = new IncProjectBuilder(descriptor, BuilderRegistry.getInstance(), Collections.<String, String>emptyMap(), CanceledStatus.NULL, null);
+    Map<String, String> builderParams = getBuilderParams();
+    IncProjectBuilder builder = new IncProjectBuilder(descriptor, BuilderRegistry.getInstance(), builderParams, CanceledStatus.NULL, null);
     BuildResult result = new BuildResult();
     builder.addMessageHandler(result);
     try {
@@ -268,6 +269,10 @@ public abstract class JpsBuildTestCase extends UsefulTestCase {
       throw new RuntimeException(e);
     }
     return result;
+  }
+
+  protected Map<String, String> getBuilderParams() {
+    return Collections.<String, String>emptyMap();
   }
 
   protected String createFile(String relativePath) {
