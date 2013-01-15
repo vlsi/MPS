@@ -95,8 +95,13 @@ public class JpsSolutionIdea extends Solution {
         MPSCompilerUtil.debug(myCompileContext, "**** lib dep: " + ((JpsLibraryDependency) jpsDep).getLibraryReference().getLibraryName());
 
         JpsLibrary lib = ((JpsLibraryDependency) jpsDep).getLibrary();
-        String name = lib.getName();
-        solution = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(name));
+        if (lib == null) {
+          MPSCompilerUtil.debug(myCompileContext, "**** not found lib dep: " + ((JpsLibraryDependency) jpsDep).getLibraryReference().getLibraryName());
+        }
+        else {
+          String name = lib.getName();
+          solution = (Solution) MPSModuleRepository.getInstance().getModuleById(ModuleId.foreign(name));
+        }
 
       } else if (jpsDep instanceof JpsSdkDependency) {
 
