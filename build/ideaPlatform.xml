@@ -12,7 +12,7 @@
   </target>
 
   <target name="resolve" depends="install-ivy" description="--> retreive dependencies with ivy">
-    <ivy:retrieve pattern="./test/[orgPath]/[artifact]"/>
+    <ivy:retrieve pattern="../[orgPath]/[artifact]"/>
   </target>
 
 

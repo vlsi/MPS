@@ -464,7 +464,7 @@
     </dependency>
 
     <!--
-    license-->
+    license
     <dependency org="license" name="XStream_license.txt" rev="123.45">
       <artifact name="XStream_license.txt" ext="txt"/>
     </dependency>
@@ -543,6 +543,7 @@
     <dependency org="license" name="yourkit-license-redist.txt" rev="123.45">
       <artifact name="yourkit-license-redist.txt" ext="txt"/>
     </dependency>
+    -->
 
     <!--
     plugins
