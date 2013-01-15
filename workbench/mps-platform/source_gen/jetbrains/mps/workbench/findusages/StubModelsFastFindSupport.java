@@ -15,7 +15,7 @@ import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.containers.MultiMap;
 import jetbrains.mps.util.Mapper;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -62,7 +62,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
   public Map<SModel, Collection<SNode>> findModelsWithPossibleUsages(Collection<SModel> models, Set<SNode> nodes) {
     nodes = SetSequence.fromSetWithValues(new HashSet<SNode>(), SetSequence.fromSet(nodes).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it.getNodeId() instanceof jetbrains.mps.smodel.SNodeId.Foreign;
+        return it.getNodeId() instanceof SNodeId.Foreign;
       }
     }));
     MultiMap<SModel, SNode> result = findModels(models, nodes, new Mapper<SNode, String>() {

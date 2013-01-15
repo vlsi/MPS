@@ -32,6 +32,7 @@
     <classNode dependClassName="org.jdom.filter.AbstractFilter" />
     <classNode dependClassName="org.jdom.filter.ElementFilter" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
   </dependency>
   <dependency className="jetbrains.mps.gwt.client.stubs.GWTModuleStubs" file="GWTModuleStubs.java">
     <classNode dependClassName="java.lang.Override" />
@@ -81,7 +82,6 @@
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelStereotype" />
     <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap" />
     <classNode dependClassName="jetbrains.mps.stubs.util.JavaStubModelDataSource" />
     <classNode dependClassName="jetbrains.mps.stubs.util.PathItem" />
@@ -91,6 +91,7 @@
     <classNode dependClassName="org.jdom.JDOMException" />
     <classNode dependClassName="org.jdom.input.SAXBuilder" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="jetbrains.mps.extapi.persistence.FolderSetDataSource" />
     <classNode extendsClassName="jetbrains.mps.findUsages.fastfind.FastFindSupportProvider" />
     <classNode extendsClassName="jetbrains.mps.smodel.descriptor.source.StubModelDataSource" />

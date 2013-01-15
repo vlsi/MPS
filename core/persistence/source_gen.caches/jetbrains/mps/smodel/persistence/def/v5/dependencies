@@ -8,11 +8,11 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.Deque" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.backports.LinkedList" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.LineContent" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.NodeLineContent" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.PropertyLineContent" />
     <classNode dependClassName="jetbrains.mps.smodel.persistence.lines.ReferenceLineContent" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.xml.sax.Locator" />
   </dependency>
   <dependency className="jetbrains.mps.smodel.persistence.def.v5.LineToContentMapReader5Handler" file="LineToContentMapReader5Handler.java">
@@ -56,6 +56,7 @@
     <classNode dependClassName="jetbrains.mps.util.InternUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeAccessUtil" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode dependClassName="org.xml.sax.Attributes" />
     <classNode dependClassName="org.xml.sax.Locator" />
     <classNode dependClassName="org.xml.sax.SAXException" />

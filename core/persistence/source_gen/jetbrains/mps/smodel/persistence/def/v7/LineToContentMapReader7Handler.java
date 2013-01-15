@@ -12,7 +12,7 @@ import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import org.jetbrains.mps.openapi.model.SNode;
-import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SNodeId;
 
 public class LineToContentMapReader7Handler extends XMLSAXHandler<List<LineContent>> {
   private static String[] EMPTY_ARRAY = new String[0];
@@ -243,7 +243,7 @@ public class LineToContentMapReader7Handler extends XMLSAXHandler<List<LineConte
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       SNode result = (SNode) resultObject;
       if ("id".equals(name)) {
-        fieldaccumulator.pushNode(jetbrains.mps.smodel.SNodeId.fromString(value), myLocator);
+        fieldaccumulator.pushNode(SNodeId.fromString(value), myLocator);
         return;
       }
       super.handleAttribute(resultObject, name, value);
@@ -279,7 +279,7 @@ public class LineToContentMapReader7Handler extends XMLSAXHandler<List<LineConte
     protected void handleAttribute(Object resultObject, String name, String value) throws SAXException {
       SNode result = (SNode) resultObject;
       if ("id".equals(name)) {
-        fieldaccumulator.pushNode(jetbrains.mps.smodel.SNodeId.fromString(value), myLocator);
+        fieldaccumulator.pushNode(SNodeId.fromString(value), myLocator);
         return;
       }
       super.handleAttribute(resultObject, name, value);

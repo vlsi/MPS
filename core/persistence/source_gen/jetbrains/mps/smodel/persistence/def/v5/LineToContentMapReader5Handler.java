@@ -10,7 +10,7 @@ import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
-import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
 
 public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineContent>> {
@@ -236,7 +236,7 @@ public class LineToContentMapReader5Handler extends XMLSAXHandler<List<LineConte
         return;
       }
       if ("id".equals(name)) {
-        fieldaccumulator.pushNode(jetbrains.mps.smodel.SNodeId.fromString(value), myLocator);
+        fieldaccumulator.pushNode(SNodeId.fromString(value), myLocator);
         return;
       }
       super.handleAttribute(resultObject, name, value);

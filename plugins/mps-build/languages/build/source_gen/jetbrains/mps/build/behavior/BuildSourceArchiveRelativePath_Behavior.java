@@ -20,7 +20,7 @@ import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SNodeId;
 
 public class BuildSourceArchiveRelativePath_Behavior {
   public static void init(SNode thisNode) {
@@ -144,7 +144,7 @@ public class BuildSourceArchiveRelativePath_Behavior {
   private static SNode _quotation_createNode_ll2z5f_a0a0h() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.build.workflow.structure.BwfTaskDependency", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("target", SReference.create("target", quotedNode_1, SModelReference.fromString("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)"), jetbrains.mps.smodel.SNodeId.fromString("7128123785277844790")));
+    quotedNode_1.setReference("target", SReference.create("target", quotedNode_1, SModelReference.fromString("r:14f06230-41df-42af-9a25-81de46539bf1(jetbrains.mps.build.workflow.accessories)"), SNodeId.fromString("7128123785277844790")));
     return quotedNode_1;
   }
 }

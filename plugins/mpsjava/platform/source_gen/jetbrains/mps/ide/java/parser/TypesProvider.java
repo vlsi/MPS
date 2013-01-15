@@ -23,7 +23,7 @@ import org.eclipse.jdt.internal.compiler.lookup.ProblemReferenceBinding;
 import jetbrains.mps.smodel.SReference;
 import org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding;
 import org.eclipse.jdt.internal.compiler.lookup.TypeVariableBinding;
-import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.StaticReference;
 import org.eclipse.jdt.internal.compiler.lookup.MethodBinding;
@@ -178,8 +178,8 @@ public class TypesProvider {
     return null;
   }
 
-  private jetbrains.mps.smodel.SNodeId.Foreign getClassifierNodeId(BinaryTypeBinding binaryTypeBinding) {
-    return new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + NameUtil.shortNameFromLongName(TypesProvider.getClassifierIdPrefix(binaryTypeBinding)));
+  private SNodeId.Foreign getClassifierNodeId(BinaryTypeBinding binaryTypeBinding) {
+    return new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + NameUtil.shortNameFromLongName(TypesProvider.getClassifierIdPrefix(binaryTypeBinding)));
   }
 
   public SReference createErrorReference(String role, String resolveInfo, SNode sourceNode) {
@@ -210,7 +210,7 @@ public class TypesProvider {
     }
     if (binding.declaringClass instanceof BinaryTypeBinding) {
       BinaryTypeBinding binaryTypeBinding = (BinaryTypeBinding) binding.declaringClass;
-      SNodeId nodeId = createMethodId(binding, binaryTypeBinding);
+      org.jetbrains.mps.openapi.model.SNodeId nodeId = createMethodId(binding, binaryTypeBinding);
       SModelReference modelReference = modelReferenceFromBinaryClassBinding(binaryTypeBinding);
       SNodePointer pointer = getRegularMPSNodePointerFromForeignId(modelReference, nodeId, FeatureKind.METHOD);
       return SReference.create(role, sourceNode, pointer, new String((binding.isConstructor() ?
@@ -222,7 +222,7 @@ public class TypesProvider {
       ParameterizedTypeBinding parameterizedTypeBinding = (ParameterizedTypeBinding) binding.declaringClass;
       if (parameterizedTypeBinding.genericType() instanceof BinaryTypeBinding) {
         BinaryTypeBinding binaryTypeBinding = (BinaryTypeBinding) parameterizedTypeBinding.genericType();
-        SNodeId nodeId = createMethodId(binding, binaryTypeBinding);
+        org.jetbrains.mps.openapi.model.SNodeId nodeId = createMethodId(binding, binaryTypeBinding);
         SModelReference modelReference = modelReferenceFromBinaryClassBinding(binaryTypeBinding);
         SNodePointer pointer = getRegularMPSNodePointerFromForeignId(modelReference, nodeId, FeatureKind.METHOD);
         return SReference.create(role, sourceNode, pointer, new String((binding.isConstructor() ?
@@ -242,11 +242,11 @@ public class TypesProvider {
     return modelReference;
   }
 
-  private SNodePointer getRegularMPSNodePointerFromForeignId(SModelReference modelReference, SNodeId nodeId, FeatureKind targetKind) {
+  private SNodePointer getRegularMPSNodePointerFromForeignId(SModelReference modelReference, org.jetbrains.mps.openapi.model.SNodeId nodeId, FeatureKind targetKind) {
     return new SNodePointer(modelReference, nodeId);
   }
 
-  private SNodeId createMethodId(MethodBinding method, BinaryTypeBinding classBinding) {
+  private org.jetbrains.mps.openapi.model.SNodeId createMethodId(MethodBinding method, BinaryTypeBinding classBinding) {
     StringBuilder sb = new StringBuilder();
     sb.append(NameUtil.shortNameFromLongName(TypesProvider.getClassifierIdPrefix(classBinding)));
     sb.append('.');
@@ -262,11 +262,11 @@ public class TypesProvider {
       sb.append(':');
       sb.append(TypesProvider.asString(method.returnType));
     }
-    return new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + sb.toString());
+    return new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + sb.toString());
   }
 
-  private SNodeId createFieldId(FieldBinding field, BinaryTypeBinding classBinding) {
-    return new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + NameUtil.shortNameFromLongName(TypesProvider.getClassifierIdPrefix(classBinding)) + "." + new String(field.name));
+  private org.jetbrains.mps.openapi.model.SNodeId createFieldId(FieldBinding field, BinaryTypeBinding classBinding) {
+    return new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + NameUtil.shortNameFromLongName(TypesProvider.getClassifierIdPrefix(classBinding)) + "." + new String(field.name));
   }
 
   public SReference createClassifierReference(ReferenceBinding aClass, String role, SNode sourceNode) {
@@ -283,7 +283,7 @@ public class TypesProvider {
   public SNodePointer createClassifierPointer(ReferenceBinding aClass) {
     if (aClass instanceof BinaryTypeBinding) {
       SModelReference modelReference = modelReferenceFromBinaryClassBinding((BinaryTypeBinding) aClass);
-      SNodeId nodeId = getClassifierNodeId((BinaryTypeBinding) aClass);
+      org.jetbrains.mps.openapi.model.SNodeId nodeId = getClassifierNodeId((BinaryTypeBinding) aClass);
       return getRegularMPSNodePointerFromForeignId(modelReference, nodeId, FeatureKind.CLASS);
     }
     if (aClass instanceof SourceTypeBinding) {
@@ -313,7 +313,7 @@ public class TypesProvider {
     }
     if (binding.declaringClass instanceof BinaryTypeBinding) {
       BinaryTypeBinding binaryTypeBinding = (BinaryTypeBinding) binding.declaringClass;
-      SNodeId nodeId = createFieldId(binding, binaryTypeBinding);
+      org.jetbrains.mps.openapi.model.SNodeId nodeId = createFieldId(binding, binaryTypeBinding);
       SModelReference modelReference = modelReferenceFromBinaryClassBinding(binaryTypeBinding);
       SNodePointer pointer = getRegularMPSNodePointerFromForeignId(modelReference, nodeId, FeatureKind.FIELD);
       return SReference.create(role, sourceNode, pointer, new String(binding.name));

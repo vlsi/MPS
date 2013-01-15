@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SNodeId;
 
 public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
   public JUnit4MethodWrapper(SNode method) {
@@ -67,7 +67,7 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
   private static SNode _quotation_createNode_lclll2_a0a0a1a0a3() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), jetbrains.mps.smodel.SNodeId.fromString("~Ignore")));
+    quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), SNodeId.fromString("~Ignore")));
     return quotedNode_1;
   }
 
@@ -81,7 +81,7 @@ public class JUnit4MethodWrapper extends AbstractTestWrapper<SNode> {
   private static SNode _quotation_createNode_lclll2_a0a0b0b0a0d() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), jetbrains.mps.smodel.SNodeId.fromString("~Test")));
+    quotedNode_1.setReference("annotation", SReference.create("annotation", quotedNode_1, SModelReference.fromString("f:java_stub#83f155ff-422c-4b5a-a2f2-b459302dd215#org.junit(jetbrains.mps.baseLanguage.unitTest.libs/org.junit@java_stub)"), SNodeId.fromString("~Test")));
     return quotedNode_1;
   }
 

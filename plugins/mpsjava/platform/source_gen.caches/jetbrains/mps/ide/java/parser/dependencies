@@ -113,6 +113,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.parser.JavaCompiler" file="JavaCompiler.java">
     <classNode dependClassName="com.intellij.openapi.project.Project" />
@@ -455,6 +456,7 @@
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.lookup.TypeVariableBinding" />
     <classNode dependClassName="org.eclipse.jdt.internal.compiler.lookup.WildcardBinding" />
     <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
   </dependency>
 </dependenciesRoot>
 

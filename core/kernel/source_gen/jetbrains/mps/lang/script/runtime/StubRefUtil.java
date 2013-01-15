@@ -4,7 +4,7 @@ package jetbrains.mps.lang.script.runtime;
 
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SReference;
-import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.NameUtil;
@@ -25,7 +25,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 
 public class StubRefUtil {
   private static boolean isReferenceToJavaStub(@NotNull SReference reference) {
-    return reference.getTargetNodeId() instanceof jetbrains.mps.smodel.SNodeId.Foreign && check_4tnolf_a0a0a(check_4tnolf_a0a0a0(reference.getTargetSModelReference()), SModelStereotype.STUB_SUFFIX);
+    return reference.getTargetNodeId() instanceof SNodeId.Foreign && check_4tnolf_a0a0a(check_4tnolf_a0a0a0(reference.getTargetSModelReference()), SModelStereotype.STUB_SUFFIX);
   }
 
   private static String getTargetStringFromReference(@NotNull SReference reference) {
@@ -70,16 +70,16 @@ public class StubRefUtil {
     return isReferenceToClass(SNodeOperations.getReference(staticFieldRef, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "classifier")), classFqName) && isReferenceToField(SNodeOperations.getReference(staticFieldRef, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration")), field);
   }
 
-  public static boolean isReferenceTo(@Nullable SReference ref, @NotNull SModelReference targetModel, @NotNull SNodeId targetId) {
+  public static boolean isReferenceTo(@Nullable SReference ref, @NotNull SModelReference targetModel, @NotNull org.jetbrains.mps.openapi.model.SNodeId targetId) {
     return ref != null && targetId.equals(ref.getTargetNodeId()) && targetModel.equals(ref.getTargetSModelReference());
   }
 
   public static boolean isStaticMethodCall(SNode staticMethodCall, @NotNull SModelReference targetModel, @NotNull String classId, @NotNull String methodId) {
-    return isReferenceTo(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "classConcept")), targetModel, jetbrains.mps.smodel.SNodeId.fromString(classId)) && isReferenceTo(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "staticMethodDeclaration")), targetModel, jetbrains.mps.smodel.SNodeId.fromString(methodId));
+    return isReferenceTo(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "classConcept")), targetModel, SNodeId.fromString(classId)) && isReferenceTo(SNodeOperations.getReference(staticMethodCall, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticMethodCall", "staticMethodDeclaration")), targetModel, SNodeId.fromString(methodId));
   }
 
   public static boolean isClassifierType(SNode classifierType, @NotNull SModelReference targetModel, @NotNull String classId) {
-    return isReferenceTo(SNodeOperations.getReference(classifierType, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")), targetModel, jetbrains.mps.smodel.SNodeId.fromString(classId));
+    return isReferenceTo(SNodeOperations.getReference(classifierType, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", "classifier")), targetModel, SNodeId.fromString(classId));
   }
 
   public static boolean isInstanceMethodCall(SNode methodCallOperation, @NotNull String methodSignature) {
@@ -87,7 +87,7 @@ public class StubRefUtil {
   }
 
   public static boolean isInstanceMethodCall(SNode methodCallOperation, @NotNull SModelReference targetModel, @NotNull String methodId) {
-    return isReferenceTo(SNodeOperations.getReference(methodCallOperation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration")), targetModel, jetbrains.mps.smodel.SNodeId.fromString(methodId));
+    return isReferenceTo(SNodeOperations.getReference(methodCallOperation, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.InstanceMethodCallOperation", "instanceMethodDeclaration")), targetModel, SNodeId.fromString(methodId));
   }
 
   public static boolean isClassCreator(SNode creator, @NotNull String creatorSignature) {
@@ -95,7 +95,7 @@ public class StubRefUtil {
   }
 
   public static boolean isClassCreator(SNode creator, @NotNull SModelReference creatorModel, @NotNull String creatorId) {
-    return isReferenceTo(SNodeOperations.getReference(creator, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")), creatorModel, jetbrains.mps.smodel.SNodeId.fromString(creatorId));
+    return isReferenceTo(SNodeOperations.getReference(creator, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")), creatorModel, SNodeId.fromString(creatorId));
   }
 
   public static void addRequiredImports(SModel model, SNode newNode) {

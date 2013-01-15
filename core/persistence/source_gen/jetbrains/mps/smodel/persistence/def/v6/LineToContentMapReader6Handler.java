@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.persistence.def.v5.LineContentAccumulator;
 import org.xml.sax.SAXException;
 import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
-import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SNodeId;
 
 public class LineToContentMapReader6Handler extends XMLSAXHandler<List<LineContent>> {
   private static String[] EMPTY_ARRAY = new String[0];
@@ -225,7 +225,7 @@ public class LineToContentMapReader6Handler extends XMLSAXHandler<List<LineConte
         return;
       }
       if ("id".equals(name)) {
-        fieldaccumulator.pushNode(jetbrains.mps.smodel.SNodeId.fromString(value), myLocator);
+        fieldaccumulator.pushNode(SNodeId.fromString(value), myLocator);
         return;
       }
       super.handleAttribute(resultObject, name, value);

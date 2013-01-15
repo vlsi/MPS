@@ -29,7 +29,7 @@ import org.jdom.Element;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jdom.DataConversionException;
 import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SNodeId;
 
 public class DebugInfo {
   private static final String ROOT = "root";
@@ -315,7 +315,7 @@ public class DebugInfo {
     if (isEmpty_exfyrk_a0a0a03_0(tuple._0()) || isEmpty_exfyrk_a0a0a03(tuple._1())) {
       return null;
     }
-    return new SNodePointer(SModelReference.fromString(tuple._1()), jetbrains.mps.smodel.SNodeId.fromString(tuple._0()));
+    return new SNodePointer(SModelReference.fromString(tuple._1()), SNodeId.fromString(tuple._0()));
   }
 
   private static boolean eq_exfyrk_a0a0b0o(Object a, Object b) {

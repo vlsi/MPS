@@ -243,8 +243,8 @@
     <nodeInfo nodeId="303301571174689096" fileName="ClassifierCacher.java" startLine="34" startPosition="0" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myResult" />
     <nodeInfo nodeId="303301571174689387" fileName="ClassifierCacher.java" startLine="39" startPosition="49" endLine="40" endPosition="20" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="303301571174689335" fileName="ClassifierCacher.java" startLine="43" startPosition="41" endLine="44" endPosition="53" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="464017368378411566" fileName="ClassifierCacher.java" startLine="48" startPosition="43" endLine="49" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="464017368378409396" fileName="ClassifierCacher.java" startLine="50" startPosition="5" endLine="51" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="464017368378411566" fileName="ClassifierCacher.java" startLine="48" startPosition="64" endLine="49" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="464017368378409396" fileName="ClassifierCacher.java" startLine="50" startPosition="5" endLine="51" endPosition="97" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="303301571174689727" fileName="ClassifierCacher.java" startLine="55" startPosition="39" endLine="56" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2566197375814082241" fileName="ClassifierCacher.java" startLine="56" startPosition="68" endLine="57" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2566197375814082245" fileName="ClassifierCacher.java" startLine="57" startPosition="28" endLine="58" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -512,7 +512,7 @@
     <nodeInfo nodeId="303301571174692229" fileName="ClassifierCacher.java" startLine="412" startPosition="68" endLine="417" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="2566197375814064243" fileName="ClassifierCacher.java" startLine="489" startPosition="0" endLine="494" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addTypeParameters#(Ljava/util/List;)V" />
     <nodeInfo nodeId="2566197375814064396" fileName="ClassifierCacher.java" startLine="505" startPosition="0" endLine="510" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addEnumConstReference#(Ljetbrains/mps/baseLanguage/javastub/asm/ASMEnumValue;)V" />
-    <nodeInfo nodeId="303301571174689069" fileName="ClassifierCacher.java" startLine="47" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ref#(Ljetbrains/mps/smodel/SNodeId;)V" />
+    <nodeInfo nodeId="303301571174689069" fileName="ClassifierCacher.java" startLine="47" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="ref#(Lorg/jetbrains/mps/openapi/model/SNodeId;)V" />
     <nodeInfo nodeId="5122318299906065238" fileName="ClassifierCacher.java" startLine="242" startPosition="34" endLine="249" endPosition="40" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="2566197375814063344" fileName="ClassifierCacher.java" startLine="345" startPosition="48" endLine="352" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="303301571174692286" fileName="ClassifierCacher.java" startLine="355" startPosition="47" endLine="362" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -557,7 +557,7 @@
     <scopeInfo nodeId="3822554386093953486" fileName="ClassifierCacher.java" startLine="36" startPosition="29" endLine="36" endPosition="29" />
     <scopeInfo nodeId="303301571174689374" fileName="ClassifierCacher.java" startLine="39" startPosition="49" endLine="40" endPosition="20" />
     <scopeInfo nodeId="303301571174689318" fileName="ClassifierCacher.java" startLine="43" startPosition="41" endLine="44" endPosition="53" />
-    <scopeInfo nodeId="464017368378409429" fileName="ClassifierCacher.java" startLine="48" startPosition="43" endLine="49" endPosition="13" />
+    <scopeInfo nodeId="464017368378409429" fileName="ClassifierCacher.java" startLine="48" startPosition="64" endLine="49" endPosition="13" />
     <scopeInfo nodeId="4350187567640399862" fileName="ClassifierCacher.java" startLine="86" startPosition="48" endLine="87" endPosition="13" />
     <scopeInfo nodeId="303301571174689755" fileName="ClassifierCacher.java" startLine="89" startPosition="24" endLine="90" endPosition="72" />
     <scopeInfo nodeId="303301571174692370" fileName="ClassifierCacher.java" startLine="97" startPosition="52" endLine="98" endPosition="17" />
@@ -718,7 +718,7 @@
       <varInfo nodeId="2566197375814064417" varName="classType" />
       <varInfo nodeId="2566197375814064433" varName="nodeId" />
     </scopeInfo>
-    <scopeInfo nodeId="303301571174689072" fileName="ClassifierCacher.java" startLine="47" startPosition="32" endLine="51" endPosition="76" />
+    <scopeInfo nodeId="303301571174689072" fileName="ClassifierCacher.java" startLine="47" startPosition="32" endLine="51" endPosition="97" />
     <scopeInfo nodeId="2566197375814064304" fileName="ClassifierCacher.java" startLine="495" startPosition="0" endLine="499" endPosition="0">
       <varInfo nodeId="2566197375814064311" varName="clsType" />
     </scopeInfo>

@@ -38,6 +38,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.MapSequence" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.stubs.javastub.classpath.ClassifierKind" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
   </dependency>
   <dependency className="jetbrains.mps.workbench.findusages.StubModelsFastFindSupport" file="StubModelsFastFindSupport.java">
     <classNode dependClassName="com.intellij.openapi.vfs.VfsUtilCore" />
