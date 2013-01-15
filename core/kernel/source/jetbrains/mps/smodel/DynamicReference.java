@@ -13,7 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;
+
+import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -22,7 +24,6 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.scope.ErrorScope;
 import jetbrains.mps.scope.Scope;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
-import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -106,14 +107,20 @@ public class DynamicReference extends SReferenceBase {
     return targetNode;
   }
 
-  private final void reportErrorWithOrigin(String message) {
+  private void reportErrorWithOrigin(String message) {
     if (myOrigin != null) {
       List<ProblemDescription> result = new ArrayList<ProblemDescription>(2);
-      if (myOrigin.getInputNode() != null) {
-        result.add(new ProblemDescription(myOrigin.getInputNode(), " -- was input: " + myOrigin.getInputNode().getDebugText()));
+      SNodePointer inputNode = myOrigin.getInputNode();
+      if (inputNode != null) {
+        SNode node = inputNode.getNode();
+        String dt = node == null ? "<unknown node> model=" + inputNode.getModelReference() + " node id=" + inputNode.getNodeId() : org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node);
+        result.add(new ProblemDescription(inputNode, " -- was input: " + dt));
       }
-      if (myOrigin.getTemplate() != null) {
-        result.add(new ProblemDescription(myOrigin.getTemplate(), " -- was template: " + myOrigin.getTemplate().getDebugText()));
+      SNodePointer template = myOrigin.getTemplate();
+      if (template != null) {
+        SNode node = template.getNode();
+        String dt = node == null ? "<unknown node> model=" + template.getModelReference() + " node id=" + template.getNodeId() : org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node);
+        result.add(new ProblemDescription(template, " -- was template: " + dt));
       }
       if (result.size() > 0) {
         error(message, result.toArray(new ProblemDescription[result.size()]));
