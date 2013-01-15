@@ -130,7 +130,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
       style.set(StyleAttributes.SELECTABLE, true);
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.cyan);
       style.set(StyleAttributes.PADDING_RIGHT, new Padding(0.0, Measure.SPACES));
-      style.set(StyleAttributes.MATCHING_LABEL, (String) null);
+      style.set(StyleAttributes.MATCHING_LABEL, null);
     }
     editorCell.setDefaultText("");
     return editorCell;
@@ -144,7 +144,7 @@ public class Quotation_Editor extends DefaultNodeEditor {
       Style style = editorCell.getStyle();
       style.set(StyleAttributes.SELECTABLE, true);
       style.set(StyleAttributes.TEXT_BACKGROUND_COLOR, MPSColors.cyan);
-      style.set(StyleAttributes.MATCHING_LABEL, (String) null);
+      style.set(StyleAttributes.MATCHING_LABEL, null);
     }
     editorCell.addKeyMap(new _Quotation_createModel());
     editorCell.setDefaultText("");
