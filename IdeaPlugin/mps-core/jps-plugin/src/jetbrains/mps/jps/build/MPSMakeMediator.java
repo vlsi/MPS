@@ -279,6 +279,10 @@ public class MPSMakeMediator {
       switch (msg.getKind()) {
         case ERROR:
           myContext.getCompileContext().processMessage(
+            new CompilerMessage(MPSMakeConstants.BUILDER_ID,
+              Kind.ERROR,
+              msg.getText()));
+          myContext.getCompileContext().processMessage(
             new CustomBuilderMessage(MPSMakeConstants.BUILDER_ID,
               MPSCustomMessages.MSG_ERROR,
               msg.getText()));
