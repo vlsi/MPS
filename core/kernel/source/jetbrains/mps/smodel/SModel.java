@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;
+package jetbrains.mps.smodel;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
@@ -444,7 +444,7 @@ public class SModel {
    */
   @Deprecated
   @Nullable
-  public SNode getNodeById(@NotNull SNodeId nodeId) {
+  public SNode getNodeById(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
     checkNotDisposed();
     if (myDisposed) return null;
 
