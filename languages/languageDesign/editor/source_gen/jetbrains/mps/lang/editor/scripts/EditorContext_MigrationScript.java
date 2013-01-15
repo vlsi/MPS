@@ -1237,5 +1237,53 @@ public class EditorContext_MigrationScript extends BaseMigrationScript {
         return false;
       }
     });
+    // whitespace 
+    this.addRefactoring(new AbstractMigrationRefactoring(operationContext) {
+      public String getName() {
+        return "Pull up methods from jetbrains.mps.nodeEditor.style.Style to jetbrains.mps.editor.runtime.style.StyleImpl";
+      }
+
+      public String getAdditionalInfo() {
+        return "Pull up methods from jetbrains.mps.nodeEditor.style.Style to jetbrains.mps.editor.runtime.style.StyleImpl";
+      }
+
+      public String getFqNameOfConceptToSearchInstances() {
+        return "jetbrains.mps.baseLanguage.structure.IMethodCall";
+      }
+
+      public boolean isApplicableInstanceNode(SNode node) {
+        SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"));
+        if (reference == null || reference.getTargetNodeSilently() != null || !(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.nodeEditor.style(MPS.Editor/jetbrains.mps.nodeEditor.style@java_stub)").equals(reference.getTargetSModelReference()))) {
+          return false;
+        }
+        SNodeId targetNodeId = reference.getTargetNodeId();
+        if (SNodeId.fromString("~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,java.lang.Object):void").equals(targetNodeId)) {
+          return true;
+        }
+        if (SNodeId.fromString("~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,jetbrains.mps.nodeEditor.style.AttributeCalculator):void").equals(targetNodeId)) {
+          return true;
+        }
+        return false;
+      }
+
+      public void doUpdateInstanceNode(SNode node) {
+        node.getModel().addModelImport(SModelReference.fromString("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)"), false);
+        node.getModel().getModelDescriptor().getModule().addDependency(ModuleReference.fromString("1ed103c3-3aa6-49b7-9c21-6765ee11f224(MPS.Editor)"), false);
+        SReference reference = SNodeOperations.getReference(node, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.IMethodCall", "baseMethodDeclaration"));
+        SNodeId targetNodeId = reference.getTargetNodeId();
+        if (SNodeId.fromString("~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,java.lang.Object):void").equals(targetNodeId)) {
+          SLinkOperations.setTarget(node, "baseMethodDeclaration", SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)", "~StyleImpl.set(jetbrains.mps.openapi.editor.style.StyleAttribute,java.lang.Object):void"), false);
+          return;
+        }
+        if (SNodeId.fromString("~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,jetbrains.mps.nodeEditor.style.AttributeCalculator):void").equals(targetNodeId)) {
+          SLinkOperations.setTarget(node, "baseMethodDeclaration", SNodeOperations.getNode("f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)", "~StyleImpl.set(jetbrains.mps.openapi.editor.style.StyleAttribute,jetbrains.mps.openapi.editor.style.AttributeCalculator):void"), false);
+          return;
+        }
+      }
+
+      public boolean isShowAsIntention() {
+        return false;
+      }
+    });
   }
 }

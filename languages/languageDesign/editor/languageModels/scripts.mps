@@ -22,6 +22,7 @@
   <import index="ec5l" modelUID="f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)" version="-1" />
   <import index="nu8v" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.cells(MPS.Editor/jetbrains.mps.openapi.editor.cells@java_stub)" version="-1" />
   <import index="qe67" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.openapi.editor.style(MPS.Editor/jetbrains.mps.openapi.editor.style@java_stub)" version="-1" />
+  <import index="ejnv" modelUID="f:java_stub#1ed103c3-3aa6-49b7-9c21-6765ee11f224#jetbrains.mps.editor.runtime.style(MPS.Editor/jetbrains.mps.editor.runtime.style@java_stub)" version="-1" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp33" modelUID="r:00000000-0000-4000-0000-011c89590323(jetbrains.mps.lang.script.structure)" version="0" implicit="yes" />
@@ -31,14 +32,14 @@
   <import index="tpdg" modelUID="r:00000000-0000-4000-0000-011c895902a8(jetbrains.mps.lang.actions.structure)" version="23" implicit="yes" />
   <roots>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1234198385755">
-      <property name="category" nameId="tp33.1206123296179" value="editor language" />
       <property name="title" nameId="tp33.1177457669450" value="Horizontal Gap Migration" />
-      <property name="name" nameId="tpck.1169194664001" value="HorizontalGapMigration" />
+      <property name="category" nameId="tp33.1206123296179" value="editor language" />
       <property name="migrationFromBuild" nameId="tp33.1206123256132" value="5070" />
+      <property name="name" nameId="tpck.1169194664001" value="HorizontalGapMigration" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="1237726848485">
-      <property name="category" nameId="tp33.1206123296179" value="editor language" />
       <property name="title" nameId="tp33.1177457669450" value="Migration to Indent Layout" />
+      <property name="category" nameId="tp33.1206123296179" value="editor language" />
       <property name="name" nameId="tpck.1169194664001" value="MigrationToIndentLayout" />
     </node>
     <node type="tp33.MigrationScript" typeId="tp33.1177457067821" id="113254018726283913">
@@ -1232,6 +1233,25 @@
         <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="nu8v.~EditorCell_Collection%disTransparentCollection()%cboolean" resolveInfo="isTransparentCollection" />
         <node role="oldMethodSpecification" roleId="tp33.4774682482449846913" type="tp33.DirectMethodSpecification" typeId="tp33.2291767839159498115" id="7941431147613476930">
           <link role="methodDeclaration" roleId="tp33.2291767839159499865" targetNodeId="jsgz.~EditorCell_Collection%disTransparentCollection()%cboolean" resolveInfo="isTransparentCollection" />
+        </node>
+      </node>
+    </node>
+    <node role="part" roleId="tp33.1177458178889" type="tp33.WhitespaceMigrationScriptPart" typeId="tp33.2598676492883244606" id="2161378634484252704" />
+    <node role="part" roleId="tp33.1177458178889" type="tp33.ExtractInterfaceMigration" typeId="tp33.6655357163912246425" id="2161378634484258302">
+      <link role="newClassifier" roleId="tp33.6655357163912246427" targetNodeId="ejnv.~StyleImpl" resolveInfo="StyleImpl" />
+      <node role="oldClassifier" roleId="tp33.5434557751112108415" type="tp33.DirectClassifierSpecification" typeId="tp33.5434557751112207651" id="2161378634484271174">
+        <link role="classifier" roleId="tp33.5434557751112207965" targetNodeId="mceb.~Style" resolveInfo="Style" />
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2161378634484271176">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="ejnv.~StyleImpl%dset(jetbrains%dmps%dopenapi%deditor%dstyle%dStyleAttribute,java%dlang%dObject)%cvoid" resolveInfo="set" />
+        <node role="oldMethodSpecification" roleId="tp33.4774682482449846913" type="tp33.FQNameMethodSpecification" typeId="tp33.4774682482449847011" id="2161378634484481872">
+          <property name="snodeId" nameId="tp33.2291767839160466985" value="~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,java.lang.Object):void" />
+        </node>
+      </node>
+      <node role="pullUpMethods" roleId="tp33.849077997121893197" type="tp33.PullUpMethod" typeId="tp33.849077997121870276" id="2161378634484483223">
+        <link role="newMethodDeclaration" roleId="tp33.4242940223545038298" targetNodeId="ejnv.~StyleImpl%dset(jetbrains%dmps%dopenapi%deditor%dstyle%dStyleAttribute,jetbrains%dmps%dopenapi%deditor%dstyle%dAttributeCalculator)%cvoid" resolveInfo="set" />
+        <node role="oldMethodSpecification" roleId="tp33.4774682482449846913" type="tp33.FQNameMethodSpecification" typeId="tp33.4774682482449847011" id="2161378634484622256">
+          <property name="snodeId" nameId="tp33.2291767839160466985" value="~Style.set(jetbrains.mps.nodeEditor.style.StyleAttribute,jetbrains.mps.nodeEditor.style.AttributeCalculator):void" />
         </node>
       </node>
     </node>
