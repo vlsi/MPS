@@ -238,6 +238,10 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1083245299891" resolveInfo="EnumConstantDeclaration" />
     </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="517741769066354020">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="type" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.1107535904670" resolveInfo="ClassifierType" />
+    </node>
   </roots>
   <root id="1213104836688">
     <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="1213104836689">
@@ -2791,5 +2795,6 @@
       </node>
     </node>
   </root>
+  <root id="517741769066354020" />
 </model>
 

@@ -26,6 +26,7 @@ public class ClassifiersScope extends FilteringScope {
       return ClassifierResolveUtils.resolveSpecialSyntax(refText, contextNode);
     }
     // end of hack 
+    // <node> 
     return ClassifierResolveUtils.resolveNonSpecialSyntax(refText, contextNode);
   }
 }

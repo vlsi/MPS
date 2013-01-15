@@ -212,6 +212,9 @@
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
   </dependency>
+  <dependency className="jetbrains.mps.baseLanguage.constraints.ClassifierType_Constraints" file="ClassifierType_Constraints.java">
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor" />
+  </dependency>
   <dependency className="jetbrains.mps.baseLanguage.constraints.Classifier_Constraints" file="Classifier_Constraints.java">
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.Override" />
@@ -275,6 +278,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.ClassCreator_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.ClassifierClassExpression_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.ClassifierMember_Constraints" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.ClassifierType_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.Classifier_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.ClosureParameterReference_Constraints" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.constraints.ConstructorDeclaration_Constraints" />

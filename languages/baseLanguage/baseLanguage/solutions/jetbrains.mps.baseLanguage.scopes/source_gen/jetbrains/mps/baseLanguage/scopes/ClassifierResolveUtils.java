@@ -21,6 +21,14 @@ import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.smodel.LanguageID;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import java.util.StringTokenizer;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import java.util.ListIterator;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class ClassifierResolveUtils {
   private ClassifierResolveUtils() {
@@ -201,6 +209,159 @@ public class ClassifierResolveUtils {
     });
   }
 
+
+
+  public static SNode resolve(@NotNull String refText, @NotNull SNode contextNode) {
+    // The algororithm: 
+    // - split refText into tokens A.B.C (separated by dot) 
+    // - look for the first token A among the following classifiers and models, in this order: 
+    // ourselves 
+    // our immediate nested classes 
+    // nested classes of our enclosing classes (if we're not root) 
+    // foreach C in our hierarchy: 1) try C 2) try C's immediaate nested classes 
+    // walk up to our root and see if it has java import data attached 
+    //   if yes, use it 
+    //   if no, only then traverse all appropriate models 
+    //          and see if refText starts with a model (i.e. java package) name 
+
+
+    StringTokenizer tokenizer = new StringTokenizer(refText, ".");
+    if (!(tokenizer.hasMoreTokens())) {
+      return null;
+    }
+    String token = tokenizer.nextToken();
+
+    assert token != null;
+
+    if (token.equals(SPropertyOperations.getString(contextNode, "name"))) {
+      return contextNode;
+    }
+    for (SNode nestedClas : Sequence.fromIterable(getImmediateNestedClassifiers(contextNode))) {
+      if (token.equals(SPropertyOperations.getString(nestedClas, "name"))) {
+        return nestedClas;
+      }
+    }
+
+    for (SNode enclosingClass : Sequence.fromIterable(getPathToRoot(contextNode))) {
+      if (token.equals(SPropertyOperations.getString(enclosingClass, "name"))) {
+        return enclosingClass;
+      }
+      for (SNode nested : Sequence.fromIterable(getImmediateNestedClassifiers(enclosingClass))) {
+        if (token.equals(SPropertyOperations.getString(nested, "name"))) {
+          return nested;
+        }
+      }
+    }
+
+    for (SNode ancestor : Sequence.fromIterable(getAncestors(contextNode))) {
+      if (token.equals(SPropertyOperations.getString(ancestor, "name"))) {
+        return ancestor;
+      }
+      for (SNode nested : Sequence.fromIterable(getImmediateNestedClassifiers(ancestor))) {
+        if (token.equals(SPropertyOperations.getString(nested, "name"))) {
+          return nested;
+        }
+      }
+    }
+
+    SNode root = Sequence.fromIterable(getPathToRoot(contextNode)).last();
+    SNode javaImports = AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")));
+    if (javaImports != null && ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).isNotEmpty()) {
+      // TODO 
+    }
+
+    // now using old logic 
+
+    // try to resolve as fq name in current model 
+    Iterable<SNode> result;
+
+    result = resolveClassifierByFqName(check_8z6r2b_a0a53a31(SNodeOperations.getModel(contextNode)), refText);
+    if (Sequence.fromIterable(result).isNotEmpty()) {
+      return ((int) Sequence.fromIterable(result).count() == 1 ?
+        Sequence.fromIterable(result).first() :
+        null
+      );
+    }
+
+    // try to resolve as fq name in current scope 
+    Iterable<IModule> visibleModules = check_8z6r2b_a0a93a31(check_8z6r2b_a0a0nb0n(check_8z6r2b_a0a0a93a31(SNodeOperations.getModel(contextNode)))).getVisibleModules();
+    result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<IModule, SModelDescriptor>() {
+      public Iterable<SModelDescriptor> translate(IModule it) {
+        return it.getOwnModelDescriptors();
+      }
+    }), refText);
+    return ((int) Sequence.fromIterable(result).count() == 1 ?
+      Sequence.fromIterable(result).first() :
+      null
+    );
+
+  }
+
+  public static Iterable<SNode> getImmediateNestedClassifiers(SNode clas) {
+    // TODO are there other deprecated members 
+    return ListSequence.fromList(SLinkOperations.getTargets(clas, "member", true)).where(new IWhereFilter<SNode>() {
+      public boolean accept(SNode it) {
+        return SNodeOperations.getConceptDeclaration(it) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.Classifier");
+      }
+    }).select(new ISelector<SNode, SNode>() {
+      public SNode select(SNode it) {
+        return SNodeOperations.cast(it, "jetbrains.mps.baseLanguage.structure.Classifier");
+      }
+    }).concat(ListSequence.fromList(SLinkOperations.getTargets(clas, "staticInnerClassifiers", true)));
+  }
+
+  public static Iterable<SNode> getPathToRoot(SNode clas) {
+    // TODO make more precise: take role into consideration 
+    return SNodeOperations.getAncestors(clas, "jetbrains.mps.baseLanguage.structure.Classifier", false);
+  }
+
+  public static Iterable<SNode> getAncestors(SNode clas) {
+    List<SNode> classes = ListSequence.fromList(new ArrayList<SNode>());
+
+    ListSequence.fromList(classes).addElement(clas);
+
+    final ListIterator<SNode> iter = classes.listIterator();
+    while (iter.hasNext()) {
+
+      SNode claz = iter.next();
+
+      if (SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.ClassConcept")) {
+        iter.add(SLinkOperations.getTarget(SLinkOperations.getTarget(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "superclass", true), "classifier", false));
+        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.ClassConcept"), "implementedInterface", true)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return (SLinkOperations.getTarget(it, "classifier", false) != null);
+          }
+        }).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SLinkOperations.getTarget(it, "classifier", false);
+          }
+        }).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode it) {
+            iter.add(it);
+          }
+        });
+      }
+
+      if (SNodeOperations.isInstanceOf(claz, "jetbrains.mps.baseLanguage.structure.Interface")) {
+        ListSequence.fromList(SLinkOperations.getTargets(SNodeOperations.cast(claz, "jetbrains.mps.baseLanguage.structure.Interface"), "extendedInterface", true)).where(new IWhereFilter<SNode>() {
+          public boolean accept(SNode it) {
+            return (SLinkOperations.getTarget(it, "classifier", false) != null);
+          }
+        }).select(new ISelector<SNode, SNode>() {
+          public SNode select(SNode it) {
+            return SLinkOperations.getTarget(it, "classifier", false);
+          }
+        }).visitAll(new IVisitor<SNode>() {
+          public void visit(SNode it) {
+            iter.add(it);
+          }
+        });
+      }
+    }
+    // or just classes, doesn't really matter 
+    return ListSequence.fromList(classes).skip(1);
+  }
+
   private static SModelDescriptor check_8z6r2b_a0a1a2(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
@@ -258,6 +419,34 @@ public class ClassifierResolveUtils {
   }
 
   private static SModelDescriptor check_8z6r2b_a0a0d0d(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelDescriptor();
+    }
+    return null;
+  }
+
+  private static SModelDescriptor check_8z6r2b_a0a53a31(SModel checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModelDescriptor();
+    }
+    return null;
+  }
+
+  private static IScope check_8z6r2b_a0a93a31(IModule checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getScope();
+    }
+    return null;
+  }
+
+  private static IModule check_8z6r2b_a0a0nb0n(SModelDescriptor checkedDotOperand) {
+    if (null != checkedDotOperand) {
+      return checkedDotOperand.getModule();
+    }
+    return null;
+  }
+
+  private static SModelDescriptor check_8z6r2b_a0a0a93a31(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
