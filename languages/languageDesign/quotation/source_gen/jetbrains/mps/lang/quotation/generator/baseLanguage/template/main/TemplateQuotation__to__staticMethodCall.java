@@ -20,7 +20,7 @@ import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.SNodeId;
+import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.generator.runtime.ReferenceResolver;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
 
@@ -157,7 +157,7 @@ public class TemplateQuotation__to__staticMethodCall implements TemplateDeclarat
                       try {
                         environment.getTracer().pushTemplateNode(templateNode_3njegt_a0a0a1a4a3a2a2a1a6a1a4a1a2);
                         environment.nodeCopied(context9, tnode11, "tpl/r:00000000-0000-4000-0000-011c8959034c/1025590056396672111");
-                        tnode11.setReference("classifier", SReference.create("classifier", tnode11, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), jetbrains.mps.smodel.SNodeId.fromString("~Object")));
+                        tnode11.setReference("classifier", SReference.create("classifier", tnode11, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(JDK/java.lang@java_stub)"), SNodeId.fromString("~Object")));
 
                       } finally {
                         environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode11));
@@ -232,7 +232,7 @@ public class TemplateQuotation__to__staticMethodCall implements TemplateDeclarat
                                 try {
                                   environment.getTracer().pushTemplateNode(templateNode_3njegt_a0a0a1a4a3a1a3a3a2a2a1a3a1a7a1a4a1a2);
                                   environment.nodeCopied(context16, tnode18, "tpl/r:00000000-0000-4000-0000-011c8959034c/1025590056396681224");
-                                  tnode18.setReference("classifier", SReference.create("classifier", tnode18, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), jetbrains.mps.smodel.SNodeId.fromString("~SNode")));
+                                  tnode18.setReference("classifier", SReference.create("classifier", tnode18, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode")));
 
                                 } finally {
                                   environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode18));
@@ -365,8 +365,8 @@ public class TemplateQuotation__to__staticMethodCall implements TemplateDeclarat
                           try {
                             environment.getTracer().pushTemplateNode(templateNode_3njegt_a0a0a1a3a3a2a2a1a5a1a7a1a4a1a2);
                             environment.nodeCopied(context25, tnode27, "tpl/r:00000000-0000-4000-0000-011c8959034c/6497389703574369411");
-                            tnode27.setReference("classConcept", SReference.create("classConcept", tnode27, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), jetbrains.mps.smodel.SNodeId.fromString("~SNodeAccessUtil")));
-                            tnode27.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode27, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), jetbrains.mps.smodel.SNodeId.fromString("~SNodeAccessUtil.setReferenceTarget(org.jetbrains.mps.openapi.model.SNode,java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
+                            tnode27.setReference("classConcept", SReference.create("classConcept", tnode27, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil")));
+                            tnode27.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode27, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNodeAccessUtil.setReferenceTarget(org.jetbrains.mps.openapi.model.SNode,java.lang.String,org.jetbrains.mps.openapi.model.SNode):void")));
 
                             {
                               final SNode tnode28 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.LocalVariableReference");
