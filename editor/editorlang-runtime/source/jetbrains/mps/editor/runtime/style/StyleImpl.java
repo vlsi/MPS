@@ -47,7 +47,6 @@ public class StyleImpl implements Style {
   private List<StyleListener> myStyleListeners = null;
   private Object[] myAttributeValues = new Object[StyleAttributes.getAttributesCount()];
   private Object[] myCachedAttributeValues = new Object[StyleAttributes.getAttributesCount()];
-  private Iterable<StyleAttribute> mySpecifiedAttributes = null;
 
   private static Set<StyleAttribute> singletonSet(StyleAttribute sa) {
     return Collections.singleton(sa);
@@ -68,7 +67,6 @@ public class StyleImpl implements Style {
 
   @Override
   public void putAll(@NotNull Style style) {
-    mySpecifiedAttributes = null;
     Set<StyleAttribute> addedSimple = new StyleAttributeSet();
     Set<StyleAttribute> addedNotSimple = new StyleAttributeSet();
     for (StyleAttribute attribute : style.getSpecifiedAttributes()) {
@@ -86,7 +84,6 @@ public class StyleImpl implements Style {
 
   @Override
   public <T> void set(StyleAttribute<T> attribute, T value) {
-    mySpecifiedAttributes = null;
     myAttributeValues[attribute.getIndex()] = value;
     Set<StyleAttribute> attributeSet = StyleImpl.singletonSet(attribute);
     if (StyleAttributes.isSimple(attribute)) {
@@ -99,7 +96,6 @@ public class StyleImpl implements Style {
 
   @Override
   public <T> void set(StyleAttribute<T> attribute, AttributeCalculator<T> valueCalculator) {
-    mySpecifiedAttributes = null;
     myAttributeValues[attribute.getIndex()] = valueCalculator;
     Set<StyleAttribute> attributeSet = StyleImpl.singletonSet(attribute);
     if (StyleAttributes.isSimple(attribute)) {
@@ -145,17 +141,14 @@ public class StyleImpl implements Style {
 
   @Override
   public Iterable<StyleAttribute> getSpecifiedAttributes() {
-    if (mySpecifiedAttributes == null) {
-      ArrayList<StyleAttribute> result = new ArrayList<StyleAttribute>(myAttributeValues.length);
-      for (int i = 0; i < myAttributeValues.length; i++) {
-        if (myAttributeValues[i] == null) {
-          continue;
-        }
-        result.add(StyleAttributes.getAttribute(i));
+    ArrayList<StyleAttribute> result = new ArrayList<StyleAttribute>(myAttributeValues.length);
+    for (int i = 0; i < myAttributeValues.length; i++) {
+      if (myAttributeValues[i] == null) {
+        continue;
       }
-      mySpecifiedAttributes = result;
+      result.add(StyleAttributes.getAttribute(i));
     }
-    return mySpecifiedAttributes;
+    return result;
   }
 
   @Override
