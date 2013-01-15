@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import gnu.trove.THashMap;
 import gnu.trove.THashSet;
@@ -85,7 +85,7 @@ public class DefaultFastNodeFinder implements FastNodeFinder {
 
       Collections.sort(result, new Comparator<SNode>() {
         public int compare(SNode o1, SNode o2) {
-          return o1.getNodeId().compareTo(o2.getNodeId());
+          return ((jetbrains.mps.smodel.SNodeId) o1.getNodeId()).compareTo(((jetbrains.mps.smodel.SNodeId) o2.getNodeId()));
         }
       });
 

@@ -19,6 +19,7 @@ import jetbrains.mps.generator.impl.plan.GenerationPartitioner.CoherentSetData;
 import jetbrains.mps.generator.impl.plan.GenerationPartitioner.PriorityData;
 import jetbrains.mps.generator.runtime.TemplateMappingConfiguration;
 import jetbrains.mps.generator.runtime.TemplateMappingPriorityRule;
+import jetbrains.mps.smodel.SNodeId;
 
 import java.util.*;
 
@@ -159,7 +160,7 @@ public class PartitioningSolver {
     for (List<TemplateMappingConfiguration> mappingSet : mappingSets) {
       Collections.sort(mappingSet, new Comparator<TemplateMappingConfiguration>() {
         public int compare(TemplateMappingConfiguration o1, TemplateMappingConfiguration o2) {
-          return o1.getMappingNode().getNodeId().compareTo(o2.getMappingNode().getNodeId());
+          return ((SNodeId) o1.getMappingNode().getNodeId()).compareTo(((SNodeId) o2.getMappingNode().getNodeId()));
         }
       });
     }
