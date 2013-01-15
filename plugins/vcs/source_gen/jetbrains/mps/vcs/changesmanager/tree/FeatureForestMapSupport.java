@@ -24,7 +24,7 @@ import jetbrains.mps.vcs.changesmanager.tree.features.PropertyFeature;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.vcs.changesmanager.tree.features.ReferenceFeature;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.vcs.changesmanager.tree.features.DeletedChildFeature;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.IterableUtil;

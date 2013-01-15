@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -200,7 +200,7 @@ public class VersionUtil {
     } else if (target.text.equals("^")) {
       return new DynamicReference(role, node, modelRef, resolveInfo);
     } else {
-      return new StaticReference(role, node, modelRef, SNodeId.fromString(target.text), resolveInfo);
+      return new StaticReference(role, node, modelRef, jetbrains.mps.smodel.SNodeId.fromString(target.text), resolveInfo);
     }
   }
 

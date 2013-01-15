@@ -13,7 +13,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
@@ -89,7 +89,7 @@ public class NodePatcher {
         continue;
       }
 
-      SNodeId sourceConst = new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + "RetentionPolicy.SOURCE");
+      SNodeId sourceConst = new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + "RetentionPolicy.SOURCE");
       SNodeId nodeId = retensionExp.getReference("enumConstantDeclaration").getTargetNodeId();
 
       boolean isSourceRetention = sourceConst.equals(nodeId);

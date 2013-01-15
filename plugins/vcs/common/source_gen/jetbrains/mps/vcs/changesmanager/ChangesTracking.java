@@ -6,7 +6,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.smodel.EventsCollector;
 import com.intellij.util.containers.BidirectionalMultiMap;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;

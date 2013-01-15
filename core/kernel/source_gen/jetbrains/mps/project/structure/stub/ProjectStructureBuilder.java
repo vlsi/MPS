@@ -10,7 +10,7 @@ import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.SModelReference;
@@ -54,7 +54,7 @@ public abstract class ProjectStructureBuilder {
 
   private SNode convertLanguage(LanguageDescriptor source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.Language", null);
-    ((jetbrains.mps.smodel.SNode) result).setId(SNodeId.fromString("~root"));
+    ((jetbrains.mps.smodel.SNode) result).setId(jetbrains.mps.smodel.SNodeId.fromString("~root"));
     SModelOperations.addRootNode(myModel, result);
     fill(result, source);
     SPropertyOperations.set(result, "compileInMPS", "" + (true));
@@ -78,7 +78,7 @@ public abstract class ProjectStructureBuilder {
 
   private SNode convertSolution(SolutionDescriptor source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.Solution", null);
-    ((jetbrains.mps.smodel.SNode) result).setId(SNodeId.fromString("~root"));
+    ((jetbrains.mps.smodel.SNode) result).setId(jetbrains.mps.smodel.SNodeId.fromString("~root"));
     SModelOperations.addRootNode(myModel, result);
     fill(result, source);
     SPropertyOperations.set(result, "compileInMPS", "" + (source.getCompileInMPS()));
@@ -90,7 +90,7 @@ public abstract class ProjectStructureBuilder {
 
   private SNode convertDevkit(DevkitDescriptor source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.DevKit", null);
-    ((jetbrains.mps.smodel.SNode) result).setId(SNodeId.fromString("~root"));
+    ((jetbrains.mps.smodel.SNode) result).setId(jetbrains.mps.smodel.SNodeId.fromString("~root"));
     SModelOperations.addRootNode(myModel, result);
     fill(result, source);
     SPropertyOperations.set(result, "compileInMPS", "" + (false));

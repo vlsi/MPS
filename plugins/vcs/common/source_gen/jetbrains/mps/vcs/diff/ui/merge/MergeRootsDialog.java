@@ -6,7 +6,7 @@ import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.vcs.diff.merge.MergeSession;
 import jetbrains.mps.vcs.diff.ui.common.ChangeEditorMessage;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import java.awt.GridBagLayout;

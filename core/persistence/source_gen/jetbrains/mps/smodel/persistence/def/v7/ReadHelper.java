@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModel;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.logging.Logger;
 
 public class ReadHelper {
@@ -71,7 +71,7 @@ public class ReadHelper {
     ));
     SNodeId nodeId = (result.o1 ?
       null :
-      SNodeId.fromString(text)
+      jetbrains.mps.smodel.SNodeId.fromString(text)
     );
     result.o2 = new SNodePointer(modelRef, nodeId);
     return result;

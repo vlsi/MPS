@@ -23,7 +23,7 @@ import org.eclipse.jdt.internal.compiler.lookup.ProblemReferenceBinding;
 import jetbrains.mps.smodel.SReference;
 import org.eclipse.jdt.internal.compiler.lookup.BinaryTypeBinding;
 import org.eclipse.jdt.internal.compiler.lookup.TypeVariableBinding;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.StaticReference;
 import org.eclipse.jdt.internal.compiler.lookup.MethodBinding;
@@ -178,8 +178,8 @@ public class TypesProvider {
     return null;
   }
 
-  private SNodeId.Foreign getClassifierNodeId(BinaryTypeBinding binaryTypeBinding) {
-    return new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + NameUtil.shortNameFromLongName(TypesProvider.getClassifierIdPrefix(binaryTypeBinding)));
+  private jetbrains.mps.smodel.SNodeId.Foreign getClassifierNodeId(BinaryTypeBinding binaryTypeBinding) {
+    return new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + NameUtil.shortNameFromLongName(TypesProvider.getClassifierIdPrefix(binaryTypeBinding)));
   }
 
   public SReference createErrorReference(String role, String resolveInfo, SNode sourceNode) {
@@ -262,11 +262,11 @@ public class TypesProvider {
       sb.append(':');
       sb.append(TypesProvider.asString(method.returnType));
     }
-    return new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + sb.toString());
+    return new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + sb.toString());
   }
 
   private SNodeId createFieldId(FieldBinding field, BinaryTypeBinding classBinding) {
-    return new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + NameUtil.shortNameFromLongName(TypesProvider.getClassifierIdPrefix(classBinding)) + "." + new String(field.name));
+    return new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + NameUtil.shortNameFromLongName(TypesProvider.getClassifierIdPrefix(classBinding)) + "." + new String(field.name));
   }
 
   public SReference createClassifierReference(ReferenceBinding aClass, String role, SNode sourceNode) {

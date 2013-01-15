@@ -15,7 +15,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.generator.GenerationTracerUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import java.util.Collection;
 
 public class Templateweave__ChildConceptWeaveMany implements TemplateDeclarationWeavingAware {
@@ -86,8 +86,8 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3a1a3a1a3a1a6a1a2);
                       environment.nodeCopied(context, tnode7, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533403");
-                      tnode7.setReference("classifier", SReference.create("classifier", tnode7, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~System")));
-                      tnode7.setReference("variableDeclaration", SReference.create("variableDeclaration", tnode7, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~System.out")));
+                      tnode7.setReference("classifier", SReference.create("classifier", tnode7, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), jetbrains.mps.smodel.SNodeId.fromString("~System")));
+                      tnode7.setReference("variableDeclaration", SReference.create("variableDeclaration", tnode7, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), jetbrains.mps.smodel.SNodeId.fromString("~System.out")));
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode7));
@@ -103,7 +103,7 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a3a1a3a1a6a1a2);
                       environment.nodeCopied(context, tnode8, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533404");
-                      tnode8.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode8, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)"), SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
+                      tnode8.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode8, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)"), jetbrains.mps.smodel.SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
 
                       {
                         final SNode tnode9 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PlusExpression");
@@ -286,8 +286,8 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3a1a3a1a3a1a6a1a3);
                       environment.nodeCopied(context, tnode20, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533444");
-                      tnode20.setReference("classifier", SReference.create("classifier", tnode20, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~System")));
-                      tnode20.setReference("variableDeclaration", SReference.create("variableDeclaration", tnode20, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~System.out")));
+                      tnode20.setReference("classifier", SReference.create("classifier", tnode20, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), jetbrains.mps.smodel.SNodeId.fromString("~System")));
+                      tnode20.setReference("variableDeclaration", SReference.create("variableDeclaration", tnode20, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), jetbrains.mps.smodel.SNodeId.fromString("~System.out")));
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode20));
@@ -303,7 +303,7 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a3a1a3a1a6a1a3);
                       environment.nodeCopied(context, tnode21, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533445");
-                      tnode21.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode21, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)"), SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
+                      tnode21.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode21, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)"), jetbrains.mps.smodel.SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
 
                       {
                         final SNode tnode22 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PlusExpression");
@@ -486,8 +486,8 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a3a1a3a1a3a1a6a1a4);
                       environment.nodeCopied(context, tnode33, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533477");
-                      tnode33.setReference("classifier", SReference.create("classifier", tnode33, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~System")));
-                      tnode33.setReference("variableDeclaration", SReference.create("variableDeclaration", tnode33, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), SNodeId.fromString("~System.out")));
+                      tnode33.setReference("classifier", SReference.create("classifier", tnode33, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), jetbrains.mps.smodel.SNodeId.fromString("~System")));
+                      tnode33.setReference("variableDeclaration", SReference.create("variableDeclaration", tnode33, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.lang(java.lang@java_stub)"), jetbrains.mps.smodel.SNodeId.fromString("~System.out")));
 
                     } finally {
                       environment.getTracer().pushOutputNode(GenerationTracerUtil.getSNodePointer(environment.getOutputModel(), tnode33));
@@ -503,7 +503,7 @@ public class Templateweave__ChildConceptWeaveMany implements TemplateDeclaration
                     try {
                       environment.getTracer().pushTemplateNode(templateNode_es4xty_a0a0a1a4a1a3a1a3a1a6a1a4);
                       environment.nodeCopied(context, tnode34, "tpl/r:592e27b6-d258-4bf2-9e32-25019862e1f1/6186432342008533478");
-                      tnode34.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode34, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)"), SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
+                      tnode34.setReference("baseMethodDeclaration", SReference.create("baseMethodDeclaration", tnode34, SModelReference.fromString("f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.io(java.io@java_stub)"), jetbrains.mps.smodel.SNodeId.fromString("~PrintStream.println(java.lang.String):void")));
 
                       {
                         final SNode tnode35 = new jetbrains.mps.smodel.SNode("jetbrains.mps.baseLanguage.structure.PlusExpression");

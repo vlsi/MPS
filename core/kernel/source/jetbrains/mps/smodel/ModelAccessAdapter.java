@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 public class ModelAccessAdapter implements ModelAccessListener {
   public void commandStarted() {

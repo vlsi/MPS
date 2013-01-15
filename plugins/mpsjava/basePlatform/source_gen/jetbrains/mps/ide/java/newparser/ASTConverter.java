@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import org.eclipse.jdt.internal.compiler.ast.FieldDeclaration;
@@ -156,7 +156,7 @@ public class ASTConverter {
 
       if (myOnlyStubs) {
         String nodeId = getState().getIdPrefix() + SPropertyOperations.getString(cls, "name");
-        ((jetbrains.mps.smodel.SNode) cls).setId(new SNodeId.Foreign(nodeId));
+        ((jetbrains.mps.smodel.SNode) cls).setId(new jetbrains.mps.smodel.SNodeId.Foreign(nodeId));
         prefixedConverter = this.withIdPrefix(SPropertyOperations.getString(cls, "name") + ".");
       }
     }
@@ -326,7 +326,7 @@ public class ASTConverter {
       SPropertyOperations.set(fDecl, "isFinal", "" + (flagSet(f.modifiers, ClassFileConstants.AccFinal)));
 
       if (!(SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) && myOnlyStubs) {
-        SNodeId nodeId = new SNodeId.Foreign(getState().getIdPrefix() + SPropertyOperations.getString(fDecl, "name"));
+        SNodeId nodeId = new jetbrains.mps.smodel.SNodeId.Foreign(getState().getIdPrefix() + SPropertyOperations.getString(fDecl, "name"));
         ((jetbrains.mps.smodel.SNode) fDecl).setId(nodeId);
       }
 
@@ -360,7 +360,7 @@ public class ASTConverter {
 
     SNodeId sNodeId = cls.getNodeId();
     // FIXME 
-    String clsStringId = (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || sNodeId instanceof SNodeId.Regular ?
+    String clsStringId = (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || sNodeId instanceof jetbrains.mps.smodel.SNodeId.Regular ?
       null :
       cls.getNodeId().toString()
     );
@@ -590,7 +590,7 @@ public class ASTConverter {
     }
 
     if (idBuilder != null) {
-      ((jetbrains.mps.smodel.SNode) result).setId(new SNodeId.Foreign(idBuilder.toString()));
+      ((jetbrains.mps.smodel.SNode) result).setId(new jetbrains.mps.smodel.SNodeId.Foreign(idBuilder.toString()));
     }
 
     return result;
@@ -603,7 +603,7 @@ public class ASTConverter {
     SNode enm = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", null);
     SPropertyOperations.set(enm, "name", enumConstantName(x));
     // TODO state should have a flag: foreign ids needed or not 
-    ((jetbrains.mps.smodel.SNode) enm).setId(new SNodeId.Foreign(getState().getIdPrefix() + SPropertyOperations.getString(enm, "name")));
+    ((jetbrains.mps.smodel.SNode) enm).setId(new jetbrains.mps.smodel.SNodeId.Foreign(getState().getIdPrefix() + SPropertyOperations.getString(enm, "name")));
     Expression[] args = ((AllocationExpression) x.initialization).arguments;
     if (args != null) {
       for (Expression arg : args) {
@@ -990,7 +990,7 @@ public class ASTConverter {
 
   protected ASTConverter.State getState() {
     // default state 
-    return new ASTConverter.State(null, SNodeId.Foreign.ID_PREFIX);
+    return new ASTConverter.State(null, jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX);
   }
 
   /**

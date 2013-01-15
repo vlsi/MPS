@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.SModelId;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.lang.pattern.behavior.PatternVarsUtil;
 import jetbrains.mps.lang.generator.behavior.VarMacro_Behavior;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
@@ -754,7 +754,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5577795813925497656(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((SNodeId.Foreign) _context.getNode().getNodeId()).getId();
+    return ((jetbrains.mps.smodel.SNodeId.Foreign) _context.getNode().getNodeId()).getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_5577795813925496728(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -766,7 +766,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5289988192764625640(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return ((SNodeId.Foreign) _context.getNode().getNodeId()).getId();
+    return ((jetbrains.mps.smodel.SNodeId.Foreign) _context.getNode().getNodeId()).getId();
   }
 
   public static Object propertyMacro_GetPropertyValue_5577795813925496631(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -778,11 +778,11 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_5577795813925496601(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Long.toString(((SNodeId.Regular) _context.getNode().getNodeId()).getId()) + "L";
+    return Long.toString(((jetbrains.mps.smodel.SNodeId.Regular) _context.getNode().getNodeId()).getId()) + "L";
   }
 
   public static Object propertyMacro_GetPropertyValue_5289988192764625417(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return Long.toString(((SNodeId.Regular) _context.getNode().getNodeId()).getId()) + "L";
+    return Long.toString(((jetbrains.mps.smodel.SNodeId.Regular) _context.getNode().getNodeId()).getId()) + "L";
   }
 
   public static Object propertyMacro_GetPropertyValue_8371596541809419362(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -2518,7 +2518,7 @@ public class QueriesGenerated {
   public static boolean ifMacro_Condition_5577795813925497619(final IOperationContext operationContext, final IfMacroContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.generator.structure.TemplateDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it.getNodeId() instanceof SNodeId.Foreign;
+        return it.getNodeId() instanceof jetbrains.mps.smodel.SNodeId.Foreign;
       }
     }).isNotEmpty() || ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.core.structure.INamedConcept")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -2526,7 +2526,7 @@ public class QueriesGenerated {
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it.getNodeId() instanceof SNodeId.Foreign;
+        return it.getNodeId() instanceof jetbrains.mps.smodel.SNodeId.Foreign;
       }
     }).isNotEmpty();
   }
@@ -3780,7 +3780,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_5577795813925496807(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.generator.structure.TemplateDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it.getNodeId() instanceof SNodeId.Foreign;
+        return it.getNodeId() instanceof jetbrains.mps.smodel.SNodeId.Foreign;
       }
     });
   }
@@ -3796,7 +3796,7 @@ public class QueriesGenerated {
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it.getNodeId() instanceof SNodeId.Foreign;
+        return it.getNodeId() instanceof jetbrains.mps.smodel.SNodeId.Foreign;
       }
     });
   }
@@ -3808,7 +3808,7 @@ public class QueriesGenerated {
   public static Iterable sourceNodesQuery_5577795813925496540(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     return ListSequence.fromList(SModelOperations.getRoots(_context.getInputModel(), "jetbrains.mps.lang.generator.structure.TemplateDeclaration")).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it.getNodeId() instanceof SNodeId.Regular;
+        return it.getNodeId() instanceof jetbrains.mps.smodel.SNodeId.Regular;
       }
     });
   }
@@ -3820,7 +3820,7 @@ public class QueriesGenerated {
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
-        return it.getNodeId() instanceof SNodeId.Regular;
+        return it.getNodeId() instanceof jetbrains.mps.smodel.SNodeId.Regular;
       }
     });
   }

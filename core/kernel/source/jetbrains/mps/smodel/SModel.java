@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.logging.Logger;
@@ -425,7 +425,7 @@ public class SModel {
 
   public static SNodeId generateUniqueId() {
     long id = Math.abs(ourCounter.incrementAndGet());
-    return new SNodeId.Regular(id);
+    return new jetbrains.mps.smodel.SNodeId.Regular(id);
   }
 
   @Nullable
@@ -986,7 +986,7 @@ public class SModel {
 
   @Nullable
   public SNode getNodeById(String idString) {
-    SNodeId nodeId = SNodeId.fromString(idString);
+    SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(idString);
     assert nodeId != null : "wrong node id string";
     return getNodeById(nodeId);
   }

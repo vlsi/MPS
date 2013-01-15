@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 public class ConfReader {
   private static final Namespace XI = Namespace.getNamespace("xi", "http://www.w3.org/2001/XInclude");
@@ -499,7 +499,7 @@ public class ConfReader {
   }
 
   public static SNodeId createForeignId(String fqName) {
-    return new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + shortName(fqName));
+    return new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + shortName(fqName));
   }
 
   public static boolean canRead(Document doc) {

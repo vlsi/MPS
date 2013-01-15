@@ -8,7 +8,7 @@ import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.backports.LinkedList;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;

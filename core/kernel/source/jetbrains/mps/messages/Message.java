@@ -17,7 +17,7 @@ package jetbrains.mps.messages;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 

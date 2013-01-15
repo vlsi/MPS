@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.search.IsInstanceCondition;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.project.IModule;

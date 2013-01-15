@@ -6,7 +6,7 @@ import com.intellij.ui.treeStructure.SimpleTree;
 import com.intellij.openapi.actionSystem.DataProvider;
 import com.intellij.openapi.actionSystem.DataKey;
 import com.intellij.openapi.util.Ref;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import java.util.List;
 import jetbrains.mps.workbench.action.BaseAction;
 import jetbrains.mps.smodel.IOperationContext;

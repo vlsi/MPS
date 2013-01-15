@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 public class complex_extends_Complex_SubtypingRule extends SubtypingRule_Runtime implements ISubtypingRule_Runtime {
   public complex_extends_Complex_SubtypingRule() {
@@ -39,7 +39,7 @@ public class complex_extends_Complex_SubtypingRule extends SubtypingRule_Runtime
   private static SNode _quotation_createNode_jvezdz_a0a1() {
     SNode quotedNode_1 = null;
     quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), SNodeId.fromString("877422884702771039")));
+    quotedNode_1.setReference("classifier", SReference.create("classifier", quotedNode_1, SModelReference.fromString("r:b79696e4-f917-4b28-af17-40e382bc7b82(jetbrains.mps.baseLanguage.math.runtime)"), jetbrains.mps.smodel.SNodeId.fromString("877422884702771039")));
     return quotedNode_1;
   }
 }

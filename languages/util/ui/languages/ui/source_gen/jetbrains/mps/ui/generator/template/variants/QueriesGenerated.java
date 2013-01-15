@@ -28,7 +28,7 @@ import jetbrains.mps.project.GlobalScope;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class QueriesGenerated {
@@ -172,9 +172,9 @@ public class QueriesGenerated {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReference("annotation", SReference.create("annotation", quotedNode_2, SModelReference.fromString("r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)"), SNodeId.fromString("8590671622324574702")));
+    quotedNode_2.setReference("annotation", SReference.create("annotation", quotedNode_2, SModelReference.fromString("r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)"), jetbrains.mps.smodel.SNodeId.fromString("8590671622324574702")));
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReference("key", SReference.create("key", quotedNode_3, SModelReference.fromString("r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)"), SNodeId.fromString("8590671622324574704")));
+    quotedNode_3.setReference("key", SReference.create("key", quotedNode_3, SModelReference.fromString("r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)"), jetbrains.mps.smodel.SNodeId.fromString("8590671622324574704")));
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
     SNodeAccessUtil.setProperty(quotedNode_4, "value", (String) parameter_1);
     quotedNode_3.addChild("value", quotedNode_4);
@@ -195,9 +195,9 @@ public class QueriesGenerated {
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
     quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstance", null, null, GlobalScope.getInstance(), false);
-    quotedNode_2.setReference("annotation", SReference.create("annotation", quotedNode_2, SModelReference.fromString("r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)"), SNodeId.fromString("8590671622324268192")));
+    quotedNode_2.setReference("annotation", SReference.create("annotation", quotedNode_2, SModelReference.fromString("r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)"), jetbrains.mps.smodel.SNodeId.fromString("8590671622324268192")));
     quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.AnnotationInstanceValue", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3.setReference("key", SReference.create("key", quotedNode_3, SModelReference.fromString("r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)"), SNodeId.fromString("8590671622324287920")));
+    quotedNode_3.setReference("key", SReference.create("key", quotedNode_3, SModelReference.fromString("r:36693452-2637-4608-8caa-ab32ee7c1be3(jetbrains.mps.ui.multiplexing)"), jetbrains.mps.smodel.SNodeId.fromString("8590671622324287920")));
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ArrayLiteral", null, null, GlobalScope.getInstance(), false);
     {
       List<SNode> nodes = (List<SNode>) parameter_1;

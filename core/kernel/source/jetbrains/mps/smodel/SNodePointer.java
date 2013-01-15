@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.util.EqualUtil;
 import org.jetbrains.mps.openapi.model.SNodeReference;
@@ -29,7 +29,7 @@ public class SNodePointer implements SNodeReference {
   private int myTimestamp;
 
   public SNodePointer(String modelUID, String nodeId) {
-    this(SModelReference.fromString(modelUID), SNodeId.fromString(nodeId));
+    this(SModelReference.fromString(modelUID), jetbrains.mps.smodel.SNodeId.fromString(nodeId));
   }
 
   public SNodePointer(SNode node) {

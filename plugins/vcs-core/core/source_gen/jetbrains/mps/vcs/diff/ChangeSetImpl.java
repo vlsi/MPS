@@ -7,7 +7,7 @@ import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.Map;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
