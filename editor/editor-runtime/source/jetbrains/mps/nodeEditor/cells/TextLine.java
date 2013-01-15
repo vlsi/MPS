@@ -18,6 +18,10 @@ package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.style.*;
+import jetbrains.mps.nodeEditor.style.Style;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
+import jetbrains.mps.openapi.editor.style.StyleChangeEvent;
+import jetbrains.mps.openapi.editor.style.StyleListener;
 import org.jetbrains.annotations.NotNull;
 
 import java.awt.*;

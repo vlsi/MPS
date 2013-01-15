@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,30 +13,33 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.style;
+package jetbrains.mps.editor.runtime.style;
 
-class InheritableStyleAttribute<T> extends StyleAttribute<T> {
+/**
+ * User: shatalin
+ * Date: 1/14/13
+ */
+public class SimpleStyleAttribute<T> extends AbstractStyleAttribute<T> {
   private T myDefaultValue;
 
-  InheritableStyleAttribute(String name, T defaultValue) {
+  // In MPS 3.0 was modified to be protected.
+  // make is package-local after 3.0
+  protected SimpleStyleAttribute(String name, T defaultValue) {
     super(name);
     myDefaultValue = defaultValue;
   }
 
-  InheritableStyleAttribute(String name) {
+  // In MPS 3.0 was modified to be protected.
+  // make is package-local after 3.0
+  protected SimpleStyleAttribute(String name) {
     this(name, null);
   }
 
+  @Override
   public T combine(T parentValue, T currentValue) {
-    if (currentValue == null) {
-      if (parentValue != null) {
-        return parentValue;
-      } else {
-        return myDefaultValue;
-      }
-    } else {
+    if (currentValue != null) {
       return currentValue;
     }
+    return myDefaultValue;
   }
 }
-

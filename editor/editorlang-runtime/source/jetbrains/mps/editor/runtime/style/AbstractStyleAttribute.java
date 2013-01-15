@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,15 +13,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.style;
+package jetbrains.mps.editor.runtime.style;
 
-import java.util.*;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
 
-public abstract class StyleAttribute<T> {
+/**
+ * User: shatalin
+ * Date: 1/14/13
+ */
+public abstract class AbstractStyleAttribute<T> implements StyleAttribute<T> {
   private int myIndex;
   private String myName;
 
-  StyleAttribute(String name) {
+  AbstractStyleAttribute(String name) {
     myName = name;
     myIndex = StyleAttributes.register(this);
   }

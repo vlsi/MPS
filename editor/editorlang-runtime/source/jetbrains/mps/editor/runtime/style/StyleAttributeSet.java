@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2011 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,10 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.nodeEditor.style;
+package jetbrains.mps.editor.runtime.style;
 
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
 import jetbrains.mps.util.IndexableObjectSet;
 
+/**
+ * User: shatalin
+ * Date: 1/14/13
+ */
 public class StyleAttributeSet extends IndexableObjectSet<StyleAttribute> {
   public StyleAttributeSet(boolean full) {
     super(StyleAttributes.getAttributesCount(), full);

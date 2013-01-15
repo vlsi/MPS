@@ -1406,9 +1406,4 @@ public abstract class EditorCell_Basic implements EditorCell {
   public void unrequestLayout() {
     myIsNeedRelayout = false;
   }
-
-  @Override
-  public jetbrains.mps.openapi.editor.style.Style getCellStyle() {
-    return null;
-  }
 }

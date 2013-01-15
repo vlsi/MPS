@@ -151,8 +151,8 @@ public class CellLayout_Flow extends AbstractCellLayout {
       myX = editorCells.getX() + myWStart;
       myY = editorCells.getY();
       myMaxRightX = myX;
-      if (APIStyleAdapter.getCurrentStyleAttribute(editorCells, StyleAttributes.MAX_WIDTH) !=null ) {
-        myMaxX = editorCells.getX() + APIStyleAdapter.getCurrentStyleAttribute(editorCells, StyleAttributes.MAX_WIDTH);
+      if (editorCells.getStyle().isSpecified(StyleAttributes.MAX_WIDTH)) {
+        myMaxX = editorCells.getX() + editorCells.getStyle().get(StyleAttributes.MAX_WIDTH);
       } else {
         myMaxX = getMaxX();
       }

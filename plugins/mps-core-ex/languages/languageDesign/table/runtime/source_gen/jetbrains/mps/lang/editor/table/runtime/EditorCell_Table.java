@@ -118,7 +118,7 @@ public class EditorCell_Table extends EditorCell_Collection {
           }
           editorCell.setLeftGap(4);
           editorCell.setRightGap(4);
-          if (editorCell.getStyle().getCurrent(StyleAttributes.MAX_WIDTH) == null) {
+          if (!editorCell.getStyle().isSpecified(StyleAttributes.MAX_WIDTH)) {
             int maxColumnWidth = myModel.getMaxColumnWidth(column);
             editorCell.getStyle().set(StyleAttributes.MAX_WIDTH, (maxColumnWidth < 0 ?
               averageColumnWidth :

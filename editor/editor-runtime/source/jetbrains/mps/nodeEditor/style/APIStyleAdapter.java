@@ -16,6 +16,7 @@
 package jetbrains.mps.nodeEditor.style;
 
 import jetbrains.mps.openapi.editor.cells.EditorCell;
+import jetbrains.mps.openapi.editor.style.StyleAttribute;
 
 /**
  * User: shatalin
@@ -25,10 +26,6 @@ import jetbrains.mps.openapi.editor.cells.EditorCell;
 public class APIStyleAdapter {
   public static <T> T getStyleAttribute(EditorCell editorCell, StyleAttribute<T> attribute) {
     return ((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell).getStyle().get(attribute);
-  }
-
-  public static <T> T getCurrentStyleAttribute(EditorCell editorCell, StyleAttribute<T> attribute) {
-    return ((jetbrains.mps.nodeEditor.cells.EditorCell) editorCell).getStyle().getCurrent(attribute);
   }
 
   public static Style getStyle(EditorCell editorCell) {

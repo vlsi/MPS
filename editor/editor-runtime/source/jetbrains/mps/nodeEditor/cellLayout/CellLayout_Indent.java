@@ -125,8 +125,8 @@ public class CellLayout_Indent extends AbstractCellLayout {
   }
 
   private int getMaxWidth(EditorCell_Collection editorCells) {
-    if (APIStyleAdapter.getCurrentStyleAttribute(editorCells, StyleAttributes.MAX_WIDTH) != null) {
-      return editorCells.getX() + APIStyleAdapter.getCurrentStyleAttribute(editorCells, StyleAttributes.MAX_WIDTH);
+    if (editorCells.getStyle().isSpecified(StyleAttributes.MAX_WIDTH)) {
+      return editorCells.getX() + editorCells.getStyle().get(StyleAttributes.MAX_WIDTH);
     }
     return editorCells.getRootParent().getX() + EditorSettings.getInstance().getVerticalBoundWidth();
   }

@@ -150,14 +150,14 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
   }
 
   public boolean isFirstPositionAllowed() {
-    if (getStyle().getCurrent(StyleAttributes.FIRST_POSITION_ALLOWED) != null) {
+    if (getStyle().isSpecified(StyleAttributes.FIRST_POSITION_ALLOWED)) {
       return getStyle().get(StyleAttributes.FIRST_POSITION_ALLOWED);
     }
     return !getStyle().get(StyleAttributes.PUNCTUATION_LEFT);
   }
 
   public boolean isLastPositionAllowed() {
-    if (getStyle().getCurrent(StyleAttributes.LAST_POSITION_ALLOWED) != null) {
+    if (getStyle().isSpecified(StyleAttributes.LAST_POSITION_ALLOWED)) {
       return getStyle().get(StyleAttributes.LAST_POSITION_ALLOWED);
     }
     return !getStyle().get(StyleAttributes.PUNCTUATION_RIGHT);

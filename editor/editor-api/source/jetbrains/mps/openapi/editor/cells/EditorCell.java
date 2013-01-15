@@ -122,5 +122,5 @@ public interface EditorCell {
 
   EditorComponent getEditorComponent();
 
-  Style getCellStyle();
+  Style getStyle();
 }
