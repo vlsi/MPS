@@ -9,7 +9,7 @@ import jetbrains.mps.project.Project;
 import com.intellij.openapi.project.DumbService;
 import jetbrains.mps.ide.project.ProjectHelper;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 import java.util.Set;
 import com.intellij.openapi.vfs.VirtualFile;

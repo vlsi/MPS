@@ -12,7 +12,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.build.behavior.BuildLayout_File_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.build.behavior.BuildLayout_NamedContainer_Behavior;
@@ -45,6 +45,8 @@ import java.util.Map;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.LinkedHashMap;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import java.util.Collection;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.build.generator.util.JavaExternalLibraryHelper;
 import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.build.util.GenerationUtil;
@@ -1909,7 +1911,7 @@ public class QueriesGenerated {
   }
 
   public static Iterable sourceNodesQuery_8775597636506088245(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
-    return _context.getNode().getChildren("attrs");
+    return ((Collection) IterableUtil.asCollection(_context.getNode().getChildren("attrs")));
   }
 
   public static Iterable sourceNodesQuery_5979287180587467422(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {

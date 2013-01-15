@@ -7,7 +7,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.ViewOptions;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.UsagesTree;
 import jetbrains.mps.ide.findusages.view.treeholder.treeview.INodeRepresentator;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.ide.findusages.model.CategoryKind;
 import java.util.Collections;

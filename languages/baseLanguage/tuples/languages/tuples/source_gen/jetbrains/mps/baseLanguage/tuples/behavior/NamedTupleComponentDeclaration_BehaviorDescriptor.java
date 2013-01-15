@@ -8,7 +8,7 @@ import jetbrains.mps.baseLanguage.behavior.HasAnnotation_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.TypeDerivable_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.TypeAnnotable_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.HasAnnotation_Behavior;
 import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
 import java.util.List;

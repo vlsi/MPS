@@ -32,7 +32,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.smodel.SModelReference;
@@ -41,6 +41,7 @@ import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelReferenceEvent;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.event.SModelChildEvent;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
@@ -398,7 +399,7 @@ public class MergeSession {
     }
 
     private void invalidateChildrenChanges(SNode parent, String role, int index, final int beginOffset, final int endOffset) {
-      List<SNode> currentChildren = parent.getChildren(role);
+      List<? extends SNode> currentChildren = IterableUtil.asList(parent.getChildren(role));
 
       List<NodeGroupChange> relevantChanges = getRelevantNodeGroupChanges(parent, role);
       if (ListSequence.fromList(relevantChanges).isEmpty()) {
@@ -409,7 +410,7 @@ public class MergeSession {
       if (baseParent == null) {
         return;
       }
-      List<SNode> baseChildren = baseParent.getChildren(role);
+      List<? extends SNode> baseChildren = IterableUtil.asList(baseParent.getChildren(role));
 
       final Wrappers._int baseIndex = new Wrappers._int();
       if (0 <= index && index < currentChildren.size()) {

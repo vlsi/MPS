@@ -4,7 +4,7 @@ package jetbrains.mps.ide.hierarchy;
 
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import java.util.Set;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.util.NameUtil;
 import java.util.HashSet;

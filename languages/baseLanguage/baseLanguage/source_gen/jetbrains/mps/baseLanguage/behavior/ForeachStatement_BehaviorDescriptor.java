@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.traceable.behavior.ScopeConcept_BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class ForeachStatement_BehaviorDescriptor extends AbstractForStatement_BehaviorDescriptor implements ScopeConcept_BehaviorDescriptor {
   public ForeachStatement_BehaviorDescriptor() {

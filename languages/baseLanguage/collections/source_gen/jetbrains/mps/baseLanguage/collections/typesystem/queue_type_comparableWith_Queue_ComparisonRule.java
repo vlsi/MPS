@@ -4,13 +4,14 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.ComparisonRule_Runtime;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicable2Status;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 
 public class queue_type_comparableWith_Queue_ComparisonRule extends ComparisonRule_Runtime {
   /*package*/ GeneratedMatchingPattern myMatchingPattern2;
@@ -75,7 +76,7 @@ public class queue_type_comparableWith_Queue_ComparisonRule extends ComparisonRu
             return false;
           }
           {
-            SNode childVar_queue_type_comparableWith_Queue_jt8ol0_a0a0 = nodeToMatch_queue_type_comparableWith_Queue_jt8ol0_a0a.getChildren(childRole_queue_type_comparableWith_Queue_jt8ol0_).get(0);
+            SNode childVar_queue_type_comparableWith_Queue_jt8ol0_a0a0 = IterableUtil.get(nodeToMatch_queue_type_comparableWith_Queue_jt8ol0_a0a.getChildren(childRole_queue_type_comparableWith_Queue_jt8ol0_), 0);
             this.patternVar_ELEMENT_TYPE = childVar_queue_type_comparableWith_Queue_jt8ol0_a0a0;
           }
         }

@@ -38,7 +38,7 @@ import jetbrains.mps.idea.core.ui.CreateFromTemplateDialog;
 import jetbrains.mps.persistence.DefaultModelRoot;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraints;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -73,7 +73,7 @@ public class NewRootAction extends AnAction {
             SNode concept = conceptPointer.getNode();
             SModel model = myModelDescriptor.getSModel();
             SNode newNode = NodeFactoryManager.createNode(concept, null, null, model, myOperationContext.getScope());
-            newNode.setName(getNameField().getText());
+            ((jetbrains.mps.smodel.SNode) newNode).setName(getNameField().getText());
             model.addRoot(newNode);
             myModelDescriptor.save();
           }

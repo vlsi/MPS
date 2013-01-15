@@ -13,7 +13,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.BehaviorAspectDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.nanoj.behavior.MinusExpression_Behavior" file="MinusExpression_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.nanoj.behavior.MinusExpression_BehaviorDescriptor" file="MinusExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

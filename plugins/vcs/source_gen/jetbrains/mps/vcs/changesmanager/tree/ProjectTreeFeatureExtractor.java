@@ -6,7 +6,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.changesmanager.tree.features.Feature;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.ui.MPSTreeNode;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;

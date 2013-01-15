@@ -25,7 +25,8 @@ import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.DependencyRecorder;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.event.*;
 
 import javax.swing.tree.DefaultTreeModel;
@@ -83,14 +84,14 @@ public abstract class SNodeTreeUpdater<T extends MPSTreeNode> {
       if (parent == null) continue;
       if (!parent.isInitialized()) continue;
       SNode parentNode = parent.getSNode();
-      int indexof = parentNode.getChildren().indexOf(added);
+      int indexof = IterableUtil.asList(parentNode.getChildren()).indexOf(added);
       Enumeration children = parent.children();
 
       while(children.hasMoreElements()){
         Object child = children.nextElement();
         if (!(child instanceof SNodeTreeNode)) continue;
         SNodeTreeNode childNode = (SNodeTreeNode) child;
-        int index = parentNode.getChildren().indexOf(childNode.getSNode());
+        int index = IterableUtil.asList(parentNode.getChildren()).indexOf(childNode.getSNode());
         if (index <= indexof) continue;
         SNodeTreeNode newTreeNode = new SNodeTreeNode(added, added.getRoleInParent(), getOperationContext());
         treeModel.insertNodeInto(newTreeNode,

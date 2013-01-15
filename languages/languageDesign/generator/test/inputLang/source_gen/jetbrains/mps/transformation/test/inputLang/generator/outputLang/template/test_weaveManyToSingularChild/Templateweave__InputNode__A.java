@@ -4,7 +4,7 @@ package jetbrains.mps.transformation.test.inputLang.generator.outputLang.templat
 
 import jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -24,7 +24,7 @@ public class Templateweave__InputNode__A implements TemplateDeclarationWeavingAw
   }
 
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
+    final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
     try {
       environment.getTracer().pushTemplateNode(templateNode_nu2nvy_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:00000000-0000-4000-0000-011c895905fa/1218740073391");

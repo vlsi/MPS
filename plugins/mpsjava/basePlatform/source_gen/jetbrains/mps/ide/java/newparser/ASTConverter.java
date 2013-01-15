@@ -5,7 +5,7 @@ package jetbrains.mps.ide.java.newparser;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.eclipse.jdt.internal.compiler.ast.ASTNode;
@@ -156,7 +156,7 @@ public class ASTConverter {
 
       if (myOnlyStubs) {
         String nodeId = getState().getIdPrefix() + SPropertyOperations.getString(cls, "name");
-        cls.setId(new SNodeId.Foreign(nodeId));
+        ((jetbrains.mps.smodel.SNode) cls).setId(new SNodeId.Foreign(nodeId));
         prefixedConverter = this.withIdPrefix(SPropertyOperations.getString(cls, "name") + ".");
       }
     }
@@ -327,7 +327,7 @@ public class ASTConverter {
 
       if (!(SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) && myOnlyStubs) {
         SNodeId nodeId = new SNodeId.Foreign(getState().getIdPrefix() + SPropertyOperations.getString(fDecl, "name"));
-        fDecl.setId(nodeId);
+        ((jetbrains.mps.smodel.SNode) fDecl).setId(nodeId);
       }
 
       if (attach) {
@@ -590,7 +590,7 @@ public class ASTConverter {
     }
 
     if (idBuilder != null) {
-      result.setId(new SNodeId.Foreign(idBuilder.toString()));
+      ((jetbrains.mps.smodel.SNode) result).setId(new SNodeId.Foreign(idBuilder.toString()));
     }
 
     return result;
@@ -603,7 +603,7 @@ public class ASTConverter {
     SNode enm = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", null);
     SPropertyOperations.set(enm, "name", enumConstantName(x));
     // TODO state should have a flag: foreign ids needed or not 
-    enm.setId(new SNodeId.Foreign(getState().getIdPrefix() + SPropertyOperations.getString(enm, "name")));
+    ((jetbrains.mps.smodel.SNode) enm).setId(new SNodeId.Foreign(getState().getIdPrefix() + SPropertyOperations.getString(enm, "name")));
     Expression[] args = ((AllocationExpression) x.initialization).arguments;
     if (args != null) {
       for (Expression arg : args) {

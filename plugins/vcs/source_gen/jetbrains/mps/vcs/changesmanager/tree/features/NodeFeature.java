@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.changesmanager.tree.features;
 
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.jetbrains.annotations.NotNull;

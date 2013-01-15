@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.project;
 
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.model.SModel;

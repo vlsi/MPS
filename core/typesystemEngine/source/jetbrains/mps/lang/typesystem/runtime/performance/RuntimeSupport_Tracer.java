@@ -17,7 +17,7 @@ package jetbrains.mps.lang.typesystem.runtime.performance;
 
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.newTypesystem.RuntimeSupportNew;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.util.Computable;

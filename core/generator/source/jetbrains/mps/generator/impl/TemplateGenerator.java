@@ -32,7 +32,7 @@ import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -505,7 +505,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private SNode copyInputNode(SNode inputNode, ReductionContext reductionContext, boolean[] changed) throws GenerationFailureException, GenerationCanceledException {
     // no reduction found - do node copying
     myGenerationTracer.pushCopyOperation();
-    SNode outputNode = new SNode(inputNode.getConcept().getId());
+    jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(inputNode.getConcept().getId());
     if (inputNode.getNodeId() != null && inputNode.getModel() != null) {
       outputNode.setId(inputNode.getNodeId());
     }

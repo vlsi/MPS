@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.javastub;
 
 import jetbrains.mps.reloading.ClassBytesProvider;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.reloading.AbstractClassPathItem;
 import org.jetbrains.asm4.ClassReader;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
@@ -100,7 +100,7 @@ public class ClassifierLoader {
       return null;
     }
     SPropertyOperations.set(result, "name", NameUtil.shortNameFromLongName(fqName.replace('$', '.')));
-    result.setId(ASMNodeId.createId(fqName));
+    ((jetbrains.mps.smodel.SNode) result).setId(ASMNodeId.createId(fqName));
     return result;
   }
 }

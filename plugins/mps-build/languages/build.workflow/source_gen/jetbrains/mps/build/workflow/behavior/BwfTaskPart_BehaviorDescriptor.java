@@ -4,7 +4,7 @@ package jetbrains.mps.build.workflow.behavior;
 
 import jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior;
 
 public class BwfTaskPart_BehaviorDescriptor extends BwfProjectPart_BehaviorDescriptor implements ScopeProvider_BehaviorDescriptor {

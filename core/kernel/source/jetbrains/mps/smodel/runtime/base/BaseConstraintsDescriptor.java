@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.*;
 import jetbrains.mps.smodel.runtime.illegal.IllegalPropertyConstraintsDescriptor;

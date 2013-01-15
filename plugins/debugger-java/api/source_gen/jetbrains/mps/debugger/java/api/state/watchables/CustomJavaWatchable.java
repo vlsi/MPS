@@ -5,7 +5,7 @@ package jetbrains.mps.debugger.java.api.state.watchables;
 import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaValue;
 import jetbrains.mps.debug.api.programState.IValue;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import javax.swing.Icon;
 

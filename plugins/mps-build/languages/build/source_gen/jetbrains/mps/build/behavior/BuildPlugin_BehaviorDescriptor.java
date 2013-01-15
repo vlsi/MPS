@@ -4,7 +4,7 @@ package jetbrains.mps.build.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class BuildPlugin_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public BuildPlugin_BehaviorDescriptor() {

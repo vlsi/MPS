@@ -24,12 +24,17 @@ import com.intellij.psi.PsiField;
 import com.intellij.psi.PsiMethod;
 import com.intellij.psi.search.GlobalSearchScope;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
-import jetbrains.mps.openapi.navigation.NavigationSupport;
-import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.ide.project.ProjectHelper;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.openapi.editor.Editor;
+import jetbrains.mps.openapi.navigation.NavigationSupport;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 import org.jetbrains.mps.openapi.module.SModule;
 
@@ -41,7 +46,7 @@ import java.util.List;
 /**
  * evgeny, 11/21/11
  */
-public class NavigationSupportImpl extends NavigationSupport implements ApplicationComponent{
+public class NavigationSupportImpl extends NavigationSupport implements ApplicationComponent {
 
   @NotNull
   public String getComponentName() {
@@ -64,17 +69,17 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
 
   @Override
   public void selectInTree(@NotNull IOperationContext context, @NotNull SNode node, boolean focus) {
-      // TODO
+    // TODO
   }
 
   @Override
   public void selectInTree(@NotNull IOperationContext context, @NotNull SModelDescriptor model, boolean focus) {
-      // TODO
+    // TODO
   }
 
   @Override
   public void selectInTree(@NotNull IOperationContext context, @NotNull SModule module, boolean focus) {
-      // TODO
+    // TODO
   }
 
   private boolean navigatedToIdea(@NotNull IOperationContext context, @NotNull SNode node) {
@@ -147,7 +152,7 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
     PsiClass cls = findClass(field.getParent(), project);
     PsiField[] fields = cls.getFields();
     String name = field.getName();
-    for (PsiField f: fields) {
+    for (PsiField f : fields) {
       if (name.equals(f.getName())) {
         return f;
       }
@@ -160,9 +165,9 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
     PsiMethod[] cs = cls.getConstructors();
 
     // FIXME hard-coded child name
-    List<SNode> params = constr.getChildren("parameter");
+    List<? extends SNode> params = IterableUtil.asList(constr.getChildren("parameter"));
     int count = params.size();
-    for (PsiMethod c: cs) {
+    for (PsiMethod c : cs) {
       if (c.getParameterList().getParameters().length == count) return c;
     }
 
@@ -175,15 +180,15 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
     PsiClass cls = findClass(methodDecl.getParent(), project);
     String name = methodDecl.getName();
     List<PsiMethod> matching = new ArrayList<PsiMethod>();
-    for (PsiMethod m: cls.getAllMethods()) {
+    for (PsiMethod m : cls.getAllMethods()) {
       if (name.equals(m.getName())) matching.add(m);
     }
     if (matching.isEmpty()) return null;
-    if (matching.size()==1) return matching.get(0);
+    if (matching.size() == 1) return matching.get(0);
 
     // now take param count into account
     // FIXME hard-coded child name
-    List<SNode> params = methodDecl.getChildren("parameter");
+    List<? extends SNode> params = IterableUtil.asList(methodDecl.getChildren("parameter"));
     int count = params.size();
     Iterator<PsiMethod> iter = matching.iterator();
     while (iter.hasNext()) {
@@ -191,7 +196,7 @@ public class NavigationSupportImpl extends NavigationSupport implements Applicat
       if (m.getParameterList().getParameters().length != count) iter.remove();
     }
 
-    if (matching.size()>=1) return matching.get(0);
+    if (matching.size() >= 1) return matching.get(0);
 
     // TODO when param count is also the same, try to guess by param types and/or names
 

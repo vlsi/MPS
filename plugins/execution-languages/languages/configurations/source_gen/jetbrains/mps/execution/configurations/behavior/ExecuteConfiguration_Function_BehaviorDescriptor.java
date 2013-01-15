@@ -4,7 +4,7 @@ package jetbrains.mps.execution.configurations.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.ILocalVariableElementList_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;
 

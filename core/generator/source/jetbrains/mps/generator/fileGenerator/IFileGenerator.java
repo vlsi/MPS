@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.fileGenerator;
 
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.io.File;
 import java.io.IOException;

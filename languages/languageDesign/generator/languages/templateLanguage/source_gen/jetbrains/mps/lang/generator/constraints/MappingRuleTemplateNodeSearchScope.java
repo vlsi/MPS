@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.search.AbstractSearchScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.Condition;
 import java.util.ArrayList;

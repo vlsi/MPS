@@ -16,7 +16,7 @@
 package jetbrains.mps.reloading;
 
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.JavaNameUtil;
 
 import java.lang.reflect.Field;

@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor;
 
 import com.intellij.ui.ScrollPaneFactory;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.WindowsUtil;
 
 import javax.swing.JDialog;

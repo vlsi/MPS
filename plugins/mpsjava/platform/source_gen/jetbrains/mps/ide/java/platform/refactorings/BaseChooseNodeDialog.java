@@ -10,7 +10,7 @@ import com.intellij.ui.treeStructure.SimpleTree;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.project.Project;
 import java.awt.HeadlessException;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;

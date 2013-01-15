@@ -19,7 +19,7 @@ import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
 import java.util.ArrayList;

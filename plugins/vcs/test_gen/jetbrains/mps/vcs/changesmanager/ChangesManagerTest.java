@@ -40,7 +40,7 @@ import java.util.List;
 import java.util.Arrays;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SModel;
@@ -381,7 +381,7 @@ public class ChangesManagerTest {
   }
 
   private SNode createNewRoot(SModel modelContent) {
-    SNode root = (SNode) new SNode(InternUtil.intern("jetbrains.mps.baseLanguage.structure.ClassConcept"));
+    SNode root = (SNode) new jetbrains.mps.smodel.SNode(InternUtil.intern("jetbrains.mps.baseLanguage.structure.ClassConcept"));
     SPropertyOperations.set(root, "name", "NewRoot");
     SModelOperations.addRootNode(modelContent, root);
     return root;
@@ -707,7 +707,7 @@ public class ChangesManagerTest {
     });
     doSomethingAndUndo(myUiDiff, true, new _FunctionTypes._return_P0_E0<SNode>() {
       public SNode invoke() {
-        SNode ifBefore = (SNode) new SNode(InternUtil.intern("jetbrains.mps.baseLanguage.structure.IfStatement"));
+        SNode ifBefore = (SNode) new jetbrains.mps.smodel.SNode(InternUtil.intern("jetbrains.mps.baseLanguage.structure.IfStatement"));
         SNodeOperations.insertPrevSiblingChild(ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(method.value, "body", true), "statement", true)).first(), ifBefore);
         return root.value;
       }

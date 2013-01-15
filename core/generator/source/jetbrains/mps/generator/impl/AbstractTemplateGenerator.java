@@ -21,7 +21,7 @@ import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.progress.ProgressMonitor;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.util.containers.ConcurrentHashSet;
@@ -201,7 +201,7 @@ public abstract class AbstractTemplateGenerator implements ITemplateGenerator {
       //unnecessary warning removed
       return null; //todo maybe add check for attribule links
     }
-    SNode concept = sourceNode.getConceptDeclarationNode();
+    SNode concept = ((jetbrains.mps.smodel.SNode) sourceNode).getConceptDeclarationNode();
     if (concept == null) {
       return new RoleValidationStatus(sourceNode, "cannot find concept '" + sourceNode.getConcept().getId() + "'");
     }

@@ -18,7 +18,7 @@ package jetbrains.mps.generator;
 import jetbrains.mps.smodel.FastNodeFinder;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.*;
 

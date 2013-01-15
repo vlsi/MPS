@@ -4,7 +4,7 @@ package jetbrains.mps.lang.constraints.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public abstract class ConstraintFunction_ReferentSearchScope_AbstractBase_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {

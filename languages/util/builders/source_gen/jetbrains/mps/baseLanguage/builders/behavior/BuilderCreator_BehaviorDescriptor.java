@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.AbstractCreator_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IControlFlowInterrupter_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class BuilderCreator_BehaviorDescriptor extends AbstractCreator_BehaviorDescriptor implements BuilderContainer_BehaviorDescriptor, IControlFlowInterrupter_BehaviorDescriptor {
   public BuilderCreator_BehaviorDescriptor() {

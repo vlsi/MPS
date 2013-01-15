@@ -25,6 +25,6 @@ public class NodesIterable implements Iterable<SNode> {
   }
 
   public Iterator<SNode> iterator() {
-    return mySModel.nodesIterator();
+    return ((Iterator) mySModel.nodesIterator());
   }
 }

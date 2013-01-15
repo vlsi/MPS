@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.ISuppressErrors_Behavior;
 
 public abstract class CommentPart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements ISuppressErrors_BehaviorDescriptor {

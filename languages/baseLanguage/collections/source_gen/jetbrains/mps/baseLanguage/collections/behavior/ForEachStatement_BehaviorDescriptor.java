@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_BehaviorDescriptor;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class ForEachStatement_BehaviorDescriptor extends AbstractLoopStatement_BehaviorDescriptor {
   public ForEachStatement_BehaviorDescriptor() {

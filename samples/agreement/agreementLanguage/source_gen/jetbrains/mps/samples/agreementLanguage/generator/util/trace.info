@@ -16,8 +16,8 @@
     <nodeInfo nodeId="1197670629655" fileName="QueriesUtil.java" startLine="28" startPosition="48" endLine="31" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1197668912963" fileName="QueriesUtil.java" startLine="17" startPosition="5" endLine="21" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="1197670654152" fileName="QueriesUtil.java" startLine="31" startPosition="5" endLine="35" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="1197670595148" fileName="QueriesUtil.java" startLine="28" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isQuantity#(Ljetbrains/mps/smodel/SNode;)Z" />
-    <nodeInfo nodeId="1197668835374" fileName="QueriesUtil.java" startLine="14" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isMoney#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="1197670595148" fileName="QueriesUtil.java" startLine="28" startPosition="0" endLine="38" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isQuantity#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="1197668835374" fileName="QueriesUtil.java" startLine="14" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="isMoney#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <scopeInfo nodeId="7946777123643164203" fileName="QueriesUtil.java" startLine="11" startPosition="24" endLine="11" endPosition="24" />
     <scopeInfo nodeId="1197668860511" fileName="QueriesUtil.java" startLine="15" startPosition="106" endLine="16" endPosition="158" />
     <scopeInfo nodeId="1197669150056" fileName="QueriesUtil.java" startLine="22" startPosition="107" endLine="23" endPosition="158" />

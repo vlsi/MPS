@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime.illegal;
 
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.runtime.BehaviorDescriptor;
 import org.jetbrains.annotations.NotNull;

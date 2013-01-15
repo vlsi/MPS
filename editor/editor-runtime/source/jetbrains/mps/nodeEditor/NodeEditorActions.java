@@ -20,7 +20,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.selection.*;
 import jetbrains.mps.nodeEditor.selection.SingularSelection.SideSelectDirection;
 import jetbrains.mps.openapi.editor.*;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 
 import java.awt.*;
@@ -556,7 +556,7 @@ public class NodeEditorActions {
     }
 
     private SNode findTopMostNodeWithSingularContainment(SNode childNode) {
-      while (childNode.getParent() != null && SNodeUtil.getLinkDeclaration_IsSingular(childNode.getRoleLink())) {
+      while (childNode.getParent() != null && SNodeUtil.getLinkDeclaration_IsSingular(((jetbrains.mps.smodel.SNode) childNode).getRoleLink())) {
         childNode = childNode.getParent();
       }
       return childNode;

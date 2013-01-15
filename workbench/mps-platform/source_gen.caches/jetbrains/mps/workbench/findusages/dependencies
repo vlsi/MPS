@@ -63,7 +63,6 @@
     <classNode dependClassName="jetbrains.mps.persistence.java.library.JavaClassStubModelDescriptor" />
     <classNode dependClassName="jetbrains.mps.project.ModuleId" />
     <classNode dependClassName="jetbrains.mps.smodel.MPSModuleRepository" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.util.Mapper" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />

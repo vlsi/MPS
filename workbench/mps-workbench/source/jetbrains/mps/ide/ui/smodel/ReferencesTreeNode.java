@@ -18,7 +18,7 @@ package jetbrains.mps.ide.ui.smodel;
 import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SReference;
 
 public class ReferencesTreeNode extends MPSTreeNodeEx {

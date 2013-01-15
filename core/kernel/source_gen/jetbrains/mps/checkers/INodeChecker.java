@@ -4,7 +4,7 @@ package jetbrains.mps.checkers;
 
 import java.util.Set;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 
 public interface INodeChecker {

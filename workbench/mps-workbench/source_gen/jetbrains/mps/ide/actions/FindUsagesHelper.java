@@ -6,7 +6,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.findusages.view.optionseditor.DefaultSearchOptionsComponent;
 import jetbrains.mps.ide.findusages.view.UsagesViewTool;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Frame;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModelDescriptor;

@@ -35,7 +35,7 @@ public class JavaSourceStubNavigationContributor implements NodeNavigationContri
         if (name == null || "".equals(name)) {
           continue;
         }
-        if (!(root instanceof jetbrains.mps.smodel.SNode)) {
+        if (!(root instanceof SNode)) {
           continue;
         }
 
@@ -51,7 +51,7 @@ public class JavaSourceStubNavigationContributor implements NodeNavigationContri
           }
 
           public SNodeReference getNodeReference() {
-            return new SNodePointer((jetbrains.mps.smodel.SNode) rootNode);
+            return new SNodePointer((SNode) rootNode);
           }
         });
       }

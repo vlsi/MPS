@@ -4,7 +4,7 @@ package jetbrains.mps.editor.runtime;
 
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import jetbrains.mps.nodeEditor.EditorMessageIconRenderer;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.EditorMessageOwner;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;

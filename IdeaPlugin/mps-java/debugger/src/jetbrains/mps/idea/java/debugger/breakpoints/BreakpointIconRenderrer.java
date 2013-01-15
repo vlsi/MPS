@@ -38,7 +38,7 @@ import com.intellij.xdebugger.impl.ui.DebuggerUIUtil;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointIconRenderrerEx;
 import jetbrains.mps.idea.java.MpsJavaBundle;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 
 import javax.swing.Icon;

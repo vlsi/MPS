@@ -5,9 +5,10 @@ package jetbrains.mps.lang.plugin.standalone.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.lang.script.runtime.StubRefUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
@@ -41,8 +42,8 @@ public class Mps25ApiMigrationStandalone_MigrationScript extends BaseMigrationSc
       public void doUpdateInstanceNode(SNode node) {
         SNode operation = SLinkOperations.getTarget(node, "operation", true);
         SNode tool = null;
-        if (operation.getReferences().size() > 0) {
-          SReference sref = operation.getReferences().get(0);
+        if (IterableUtil.asCollection(operation.getReferences()).size() > 0) {
+          SReference sref = operation.getReferences().iterator().next();
           tool = sref.getTargetNode();
         }
         StubRefUtil.replaceNode(node, _quotation_createNode_rdc33q_b0d0a0(tool, SLinkOperations.getTarget(node, "operand", true)));

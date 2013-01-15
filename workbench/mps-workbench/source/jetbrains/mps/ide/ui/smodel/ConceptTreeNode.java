@@ -20,7 +20,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class ConceptTreeNode extends MPSTreeNodeEx {
   private SNode myNode;
@@ -49,7 +49,7 @@ public class ConceptTreeNode extends MPSTreeNodeEx {
   }
 
   public SNode getDeclarationNode() {
-    return myNode.getConceptDeclarationNode();
+    return ((jetbrains.mps.smodel.SNode) myNode).getConceptDeclarationNode();
   }
 
   public boolean isInitialized() {

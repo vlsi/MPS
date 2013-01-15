@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
   <dependency className="jetbrains.mps.bash.behavior.AbstractCommand_Behavior" file="AbstractCommand_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.AbstractCommand_BehaviorDescriptor" file="AbstractCommand_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -25,8 +25,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.AddExpression_Behavior" file="AddExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.AddExpression_BehaviorDescriptor" file="AddExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -38,8 +38,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.AndAssingmentExpression_Behavior" file="AndAssingmentExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.AndAssingmentExpression_BehaviorDescriptor" file="AndAssingmentExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -51,8 +51,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.AndCombiningComditionalExpression_Behavior" file="AndCombiningComditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.AndCombiningComditionalExpression_BehaviorDescriptor" file="AndCombiningComditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -64,8 +64,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.AndOperator_Behavior" file="AndOperator_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.AndOperator_BehaviorDescriptor" file="AndOperator_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -96,7 +96,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ArgumentList_Behavior" file="ArgumentList_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ArgumentList_BehaviorDescriptor" file="ArgumentList_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -117,7 +117,7 @@
     <classNode dependClassName="jetbrains.mps.bash.behavior.IDescribedConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -132,8 +132,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ArithmeticExpansion_Behavior" file="ArithmeticExpansion_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ArithmeticExpansion_BehaviorDescriptor" file="ArithmeticExpansion_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -155,8 +155,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.AssingmentExpression_Behavior" file="AssingmentExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.AssingmentExpression_BehaviorDescriptor" file="AssingmentExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -168,8 +168,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.AsyncOperator_Behavior" file="AsyncOperator_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.AsyncOperator_BehaviorDescriptor" file="AsyncOperator_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -181,8 +181,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.AsyncTerminator_Behavior" file="AsyncTerminator_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.AsyncTerminator_BehaviorDescriptor" file="AsyncTerminator_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -194,8 +194,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BaseAssingmentExpression_Behavior" file="BaseAssingmentExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BaseAssingmentExpression_BehaviorDescriptor" file="BaseAssingmentExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -207,8 +207,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BaseCommandSubstitution_Behavior" file="BaseCommandSubstitution_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BaseCommandSubstitution_BehaviorDescriptor" file="BaseCommandSubstitution_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -222,8 +222,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BaseVariableAssingment_Behavior" file="BaseVariableAssingment_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BaseVariableAssingment_BehaviorDescriptor" file="BaseVariableAssingment_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -241,8 +241,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BasicParameterExpansion_Behavior" file="BasicParameterExpansion_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BasicParameterExpansion_BehaviorDescriptor" file="BasicParameterExpansion_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -426,8 +426,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BinaryArithmeticExpression_Behavior" file="BinaryArithmeticExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BinaryArithmeticExpression_BehaviorDescriptor" file="BinaryArithmeticExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -442,8 +442,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BinaryConditionalExpression_Behavior" file="BinaryConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BinaryConditionalExpression_BehaviorDescriptor" file="BinaryConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -455,8 +455,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BitwiseAndExpression_Behavior" file="BitwiseAndExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BitwiseAndExpression_BehaviorDescriptor" file="BitwiseAndExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -468,8 +468,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BitwiseNegationExpression_Behavior" file="BitwiseNegationExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BitwiseNegationExpression_BehaviorDescriptor" file="BitwiseNegationExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -481,8 +481,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BitwiseOrExpression_Behavior" file="BitwiseOrExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BitwiseOrExpression_BehaviorDescriptor" file="BitwiseOrExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -494,8 +494,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BitwiseXorExpression_Behavior" file="BitwiseXorExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BitwiseXorExpression_BehaviorDescriptor" file="BitwiseXorExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -507,8 +507,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BlockFileConditionalExpression_Behavior" file="BlockFileConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BlockFileConditionalExpression_BehaviorDescriptor" file="BlockFileConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -520,8 +520,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BraceGrouping_Behavior" file="BraceGrouping_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BraceGrouping_BehaviorDescriptor" file="BraceGrouping_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -545,8 +545,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BracketGrouping_Behavior" file="BracketGrouping_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BracketGrouping_BehaviorDescriptor" file="BracketGrouping_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -558,8 +558,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BuckCommandSubstitution_Behavior" file="BuckCommandSubstitution_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.BuckCommandSubstitution_BehaviorDescriptor" file="BuckCommandSubstitution_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -585,8 +585,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.CaseTerminator_Behavior" file="CaseTerminator_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.CaseTerminator_BehaviorDescriptor" file="CaseTerminator_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -598,8 +598,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.CharFileConditionalExpression_Behavior" file="CharFileConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.CharFileConditionalExpression_BehaviorDescriptor" file="CharFileConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -611,8 +611,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.CombiningConditionalExpression_Behavior" file="CombiningConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.CombiningConditionalExpression_BehaviorDescriptor" file="CombiningConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -624,8 +624,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.CommaExpression_Behavior" file="CommaExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.CommaExpression_BehaviorDescriptor" file="CommaExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -638,7 +638,7 @@
   <dependency className="jetbrains.mps.bash.behavior.CommandList_Behavior" file="CommandList_Behavior.java">
     <classNode dependClassName="jetbrains.mps.bash.behavior.Command_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.CommandList_BehaviorDescriptor" file="CommandList_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -648,8 +648,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.CommandTerminator_Behavior" file="CommandTerminator_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.CommandTerminator_BehaviorDescriptor" file="CommandTerminator_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -662,7 +662,7 @@
   <dependency className="jetbrains.mps.bash.behavior.Command_Behavior" file="Command_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.Command_BehaviorDescriptor" file="Command_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -722,8 +722,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.DirectoryConditionalExpression_Behavior" file="DirectoryConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.DirectoryConditionalExpression_BehaviorDescriptor" file="DirectoryConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -735,8 +735,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.DivAssingmentExpression_Behavior" file="DivAssingmentExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.DivAssingmentExpression_BehaviorDescriptor" file="DivAssingmentExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -748,8 +748,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.DivExpression_Behavior" file="DivExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.DivExpression_BehaviorDescriptor" file="DivExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -761,8 +761,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.DoubleQuote_Behavior" file="DoubleQuote_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.DoubleQuote_BehaviorDescriptor" file="DoubleQuote_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -774,8 +774,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.DoubleSemicolonEt_Behavior" file="DoubleSemicolonEt_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.DoubleSemicolonEt_BehaviorDescriptor" file="DoubleSemicolonEt_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -787,8 +787,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.DoubleSemicolon_Behavior" file="DoubleSemicolon_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.DoubleSemicolon_BehaviorDescriptor" file="DoubleSemicolon_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -812,8 +812,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.EffectiveGroupIdConditionalExpression_Behavior" file="EffectiveGroupIdConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.EffectiveGroupIdConditionalExpression_BehaviorDescriptor" file="EffectiveGroupIdConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -825,8 +825,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.EffectiveUserIdConditionalExpression_Behavior" file="EffectiveUserIdConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.EffectiveUserIdConditionalExpression_BehaviorDescriptor" file="EffectiveUserIdConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -844,8 +844,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.EqualityExpression_Behavior" file="EqualityExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.EqualityExpression_BehaviorDescriptor" file="EqualityExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -857,8 +857,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.EqualityNumber_Behavior" file="EqualityNumber_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.EqualityNumber_BehaviorDescriptor" file="EqualityNumber_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -870,8 +870,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.EqualityStrings2_Behavior" file="EqualityStrings2_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.EqualityStrings2_BehaviorDescriptor" file="EqualityStrings2_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -883,8 +883,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.EqualityStrings_Behavior" file="EqualityStrings_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.EqualityStrings_BehaviorDescriptor" file="EqualityStrings_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -896,8 +896,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ExecTestConditionalExpression_Behavior" file="ExecTestConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ExecTestConditionalExpression_BehaviorDescriptor" file="ExecTestConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -909,8 +909,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ExistConditionalExpression_Behavior" file="ExistConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ExistConditionalExpression_BehaviorDescriptor" file="ExistConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -922,8 +922,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ExpExpression_Behavior" file="ExpExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ExpExpression_BehaviorDescriptor" file="ExpExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -941,7 +941,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ExternalCommandCall_BehaviorDescriptor" file="ExternalCommandCall_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -955,7 +955,7 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ExternalCommandDeclaration_BehaviorDescriptor" file="ExternalCommandDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -963,12 +963,12 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ExternalOptionDeclaration_Behavior" file="ExternalOptionDeclaration_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ExternalOptionDeclaration_BehaviorDescriptor" file="ExternalOptionDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -984,8 +984,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.FollowingCommandList_Behavior" file="FollowingCommandList_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.FollowingCommandList_BehaviorDescriptor" file="FollowingCommandList_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -997,8 +997,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.FollowingPipeline_Behavior" file="FollowingPipeline_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.FollowingPipeline_BehaviorDescriptor" file="FollowingPipeline_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1038,7 +1038,7 @@
     <classNode dependClassName="jetbrains.mps.bash.behavior.AbstractCommand_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -1050,8 +1050,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.GreaterThanExpression_Behavior" file="GreaterThanExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.GreaterThanExpression_BehaviorDescriptor" file="GreaterThanExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1063,8 +1063,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.GreaterThanNumber_Behavior" file="GreaterThanNumber_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.GreaterThanNumber_BehaviorDescriptor" file="GreaterThanNumber_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1076,8 +1076,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.GreaterThanOrEqualExpression_Behavior" file="GreaterThanOrEqualExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.GreaterThanOrEqualExpression_BehaviorDescriptor" file="GreaterThanOrEqualExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1089,8 +1089,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.GreaterThanOrEqual_Behavior" file="GreaterThanOrEqual_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.GreaterThanOrEqual_BehaviorDescriptor" file="GreaterThanOrEqual_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1102,8 +1102,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.GreaterThanString_Behavior" file="GreaterThanString_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.GreaterThanString_BehaviorDescriptor" file="GreaterThanString_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1115,8 +1115,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.GroupIdConditionalExpression_Behavior" file="GroupIdConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.GroupIdConditionalExpression_BehaviorDescriptor" file="GroupIdConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1128,8 +1128,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.GroupingCommand_Behavior" file="GroupingCommand_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.GroupingCommand_BehaviorDescriptor" file="GroupingCommand_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1168,7 +1168,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.HexIntegerLiteral_Behavior" file="HexIntegerLiteral_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.HexIntegerLiteral_BehaviorDescriptor" file="HexIntegerLiteral_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1178,7 +1178,7 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.IArithmeticHolder_BehaviorDescriptor" file="IArithmeticHolder_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.bash.behavior.ICommandParameter_Behavior" file="ICommandParameter_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ICommandParameter_BehaviorDescriptor" file="ICommandParameter_BehaviorDescriptor.java" />
   <dependency className="jetbrains.mps.bash.behavior.IComment_BehaviorDescriptor" file="IComment_BehaviorDescriptor.java" />
@@ -1187,11 +1187,11 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.IConcreteWordUnit_BehaviorDescriptor" file="IConcreteWordUnit_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.String" />
@@ -1208,8 +1208,8 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.IPriorityExpression_Behavior" file="IPriorityExpression_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.IPriorityExpression_BehaviorDescriptor" file="IPriorityExpression_BehaviorDescriptor.java">
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
@@ -1226,8 +1226,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.InequalityExpression_Behavior" file="InequalityExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.InequalityExpression_BehaviorDescriptor" file="InequalityExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1239,8 +1239,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.InequalityNumber_Behavior" file="InequalityNumber_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.InequalityNumber_BehaviorDescriptor" file="InequalityNumber_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1252,8 +1252,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.InequalityStrings_Behavior" file="InequalityStrings_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.InequalityStrings_BehaviorDescriptor" file="InequalityStrings_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1295,8 +1295,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LastReadConditionalExpression_Behavior" file="LastReadConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LastReadConditionalExpression_BehaviorDescriptor" file="LastReadConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1308,8 +1308,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LeftBitwiseShiftExpression_Behavior" file="LeftBitwiseShiftExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LeftBitwiseShiftExpression_BehaviorDescriptor" file="LeftBitwiseShiftExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1321,8 +1321,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LeftShiftAssingmentExpression_Behavior" file="LeftShiftAssingmentExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LeftShiftAssingmentExpression_BehaviorDescriptor" file="LeftShiftAssingmentExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1334,8 +1334,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LessThanExpression_Behavior" file="LessThanExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LessThanExpression_BehaviorDescriptor" file="LessThanExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1347,8 +1347,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LessThanNumber_Behavior" file="LessThanNumber_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LessThanNumber_BehaviorDescriptor" file="LessThanNumber_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1360,8 +1360,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LessThanOrEqualExpression_Behavior" file="LessThanOrEqualExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LessThanOrEqualExpression_BehaviorDescriptor" file="LessThanOrEqualExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1373,8 +1373,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LessThanOrEqualNumber_Behavior" file="LessThanOrEqualNumber_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LessThanOrEqualNumber_BehaviorDescriptor" file="LessThanOrEqualNumber_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1386,8 +1386,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LessThanString_Behavior" file="LessThanString_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LessThanString_BehaviorDescriptor" file="LessThanString_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1399,8 +1399,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LogicalAndExpression_Behavior" file="LogicalAndExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LogicalAndExpression_BehaviorDescriptor" file="LogicalAndExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1412,8 +1412,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LogicalNegationExpression_Behavior" file="LogicalNegationExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LogicalNegationExpression_BehaviorDescriptor" file="LogicalNegationExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1425,8 +1425,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LogicalOrExpression_Behavior" file="LogicalOrExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.LogicalOrExpression_BehaviorDescriptor" file="LogicalOrExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1438,8 +1438,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.MinusAssingmentExpression_Behavior" file="MinusAssingmentExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.MinusAssingmentExpression_BehaviorDescriptor" file="MinusAssingmentExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1451,8 +1451,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ModAssingmentExpression_Behavior" file="ModAssingmentExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ModAssingmentExpression_BehaviorDescriptor" file="ModAssingmentExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1464,8 +1464,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ModExpression_Behavior" file="ModExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ModExpression_BehaviorDescriptor" file="ModExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1477,8 +1477,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.MulExpression_Behavior" file="MulExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.MulExpression_BehaviorDescriptor" file="MulExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1490,8 +1490,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.MusAssingmentExpression_Behavior" file="MusAssingmentExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.MusAssingmentExpression_BehaviorDescriptor" file="MusAssingmentExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1503,8 +1503,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.NewerThan_Behavior" file="NewerThan_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.NewerThan_BehaviorDescriptor" file="NewerThan_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1516,8 +1516,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.NonZeroStringConditionalExpression_Behavior" file="NonZeroStringConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.NonZeroStringConditionalExpression_BehaviorDescriptor" file="NonZeroStringConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1535,8 +1535,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.OlderThan_Behavior" file="OlderThan_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.OlderThan_BehaviorDescriptor" file="OlderThan_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1557,7 +1557,7 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.OptionSetReference_BehaviorDescriptor" file="OptionSetReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1569,7 +1569,7 @@
     <classNode dependClassName="java.util.ArrayList" />
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.OptionSet_BehaviorDescriptor" file="OptionSet_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1591,14 +1591,14 @@
     <classNode dependClassName="jetbrains.mps.bash.behavior.ISymbolConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.Option_Behavior" file="Option_Behavior.java">
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.Option_BehaviorDescriptor" file="Option_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1607,14 +1607,14 @@
     <classNode dependClassName="jetbrains.mps.bash.behavior.ISymbolConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.bash.behavior.Option_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.OptnameStringConditionalExpression_Behavior" file="OptnameStringConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.OptnameStringConditionalExpression_BehaviorDescriptor" file="OptnameStringConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1626,8 +1626,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.OrAssingmentExpression_Behavior" file="OrAssingmentExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.OrAssingmentExpression_BehaviorDescriptor" file="OrAssingmentExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1639,8 +1639,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.OrCombiningConditionalExpression_Behavior" file="OrCombiningConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.OrCombiningConditionalExpression_BehaviorDescriptor" file="OrCombiningConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1652,8 +1652,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.OrOperator_Behavior" file="OrOperator_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.OrOperator_BehaviorDescriptor" file="OrOperator_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1665,8 +1665,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.OtherExistConditionalExpression_Behavior" file="OtherExistConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.OtherExistConditionalExpression_BehaviorDescriptor" file="OtherExistConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1678,8 +1678,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.OtherSymlinkConditionalExpression_Behavior" file="OtherSymlinkConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.OtherSymlinkConditionalExpression_BehaviorDescriptor" file="OtherSymlinkConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1705,8 +1705,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.PipeConditionalExpression_Behavior" file="PipeConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.PipeConditionalExpression_BehaviorDescriptor" file="PipeConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1718,8 +1718,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.PipelineOperatorConnection_Behavior" file="PipelineOperatorConnection_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.PipelineOperatorConnection_BehaviorDescriptor" file="PipelineOperatorConnection_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1731,8 +1731,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.PipelineOperatorErrorConnection_Behavior" file="PipelineOperatorErrorConnection_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.PipelineOperatorErrorConnection_BehaviorDescriptor" file="PipelineOperatorErrorConnection_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1744,8 +1744,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.PlusAssingmentExpression_Behavior" file="PlusAssingmentExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.PlusAssingmentExpression_BehaviorDescriptor" file="PlusAssingmentExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1757,8 +1757,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.PostDecExpression_Behavior" file="PostDecExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.PostDecExpression_BehaviorDescriptor" file="PostDecExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1770,8 +1770,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.PostIncExpression_Behavior" file="PostIncExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.PostIncExpression_BehaviorDescriptor" file="PostIncExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1789,8 +1789,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.PreDecExpression_Behavior" file="PreDecExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.PreDecExpression_BehaviorDescriptor" file="PreDecExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1802,8 +1802,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.PreIncExpression_Behavior" file="PreIncExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.PreIncExpression_BehaviorDescriptor" file="PreIncExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1821,8 +1821,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.QuotedWord_Behavior" file="QuotedWord_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.QuotedWord_BehaviorDescriptor" file="QuotedWord_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1838,8 +1838,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.QuotesCommandSubstitution_Behavior" file="QuotesCommandSubstitution_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.QuotesCommandSubstitution_BehaviorDescriptor" file="QuotesCommandSubstitution_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1853,8 +1853,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ReadTestConditionalExpression_Behavior" file="ReadTestConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ReadTestConditionalExpression_BehaviorDescriptor" file="ReadTestConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1884,8 +1884,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.RegularFileConditionalExpression_Behavior" file="RegularFileConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.RegularFileConditionalExpression_BehaviorDescriptor" file="RegularFileConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1897,8 +1897,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.RightBitwiseShiftExpression_Behavior" file="RightBitwiseShiftExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.RightBitwiseShiftExpression_BehaviorDescriptor" file="RightBitwiseShiftExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1910,8 +1910,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.RightShiftAssingmentExpression_Behavior" file="RightShiftAssingmentExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.RightShiftAssingmentExpression_BehaviorDescriptor" file="RightShiftAssingmentExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1923,8 +1923,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.SameReference_Behavior" file="SameReference_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.SameReference_BehaviorDescriptor" file="SameReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1944,8 +1944,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.SemicolonEt_Behavior" file="SemicolonEt_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.SemicolonEt_BehaviorDescriptor" file="SemicolonEt_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1957,8 +1957,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.SemicolonOperator_Behavior" file="SemicolonOperator_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.SemicolonOperator_BehaviorDescriptor" file="SemicolonOperator_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1970,8 +1970,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.SemicolonTerminator_Behavior" file="SemicolonTerminator_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.SemicolonTerminator_BehaviorDescriptor" file="SemicolonTerminator_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -1987,7 +1987,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -1997,7 +1997,7 @@
     <classNode dependClassName="jetbrains.mps.bash.behavior.AbstractCommand_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -2009,10 +2009,10 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConceptRepository" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.SimpleWord_BehaviorDescriptor" file="SimpleWord_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2024,8 +2024,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.SingleQuote_Behavior" file="SingleQuote_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.SingleQuote_BehaviorDescriptor" file="SingleQuote_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2037,8 +2037,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.SizeConditionalExpression_Behavior" file="SizeConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.SizeConditionalExpression_BehaviorDescriptor" file="SizeConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2050,8 +2050,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.SocketConditionalExpression_Behavior" file="SocketConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.SocketConditionalExpression_BehaviorDescriptor" file="SocketConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2063,8 +2063,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.StickyBitConditionalExpression_Behavior" file="StickyBitConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.StickyBitConditionalExpression_BehaviorDescriptor" file="StickyBitConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2082,8 +2082,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.SubExpression_Behavior" file="SubExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.SubExpression_BehaviorDescriptor" file="SubExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2095,8 +2095,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.SymlinkConditionalExpression_Behavior" file="SymlinkConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.SymlinkConditionalExpression_BehaviorDescriptor" file="SymlinkConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2108,8 +2108,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.TerminalConditionalExpression_Behavior" file="TerminalConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.TerminalConditionalExpression_BehaviorDescriptor" file="TerminalConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2121,8 +2121,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.TildeExpansion_Behavior" file="TildeExpansion_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.TildeExpansion_BehaviorDescriptor" file="TildeExpansion_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2137,8 +2137,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.UnaryArithmeticExpression_Behavior" file="UnaryArithmeticExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.UnaryArithmeticExpression_BehaviorDescriptor" file="UnaryArithmeticExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2150,8 +2150,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.UnaryConditionalExpression_Behavior" file="UnaryConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.UnaryConditionalExpression_BehaviorDescriptor" file="UnaryConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2163,8 +2163,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.UnaryMinusExpression_Behavior" file="UnaryMinusExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.UnaryMinusExpression_BehaviorDescriptor" file="UnaryMinusExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2176,8 +2176,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.UnaryPlusExpression_Behavior" file="UnaryPlusExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.UnaryPlusExpression_BehaviorDescriptor" file="UnaryPlusExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2195,8 +2195,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.UserIdConditionalExpression_Behavior" file="UserIdConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.UserIdConditionalExpression_BehaviorDescriptor" file="UserIdConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2208,8 +2208,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.VariableAddAssingment_Behavior" file="VariableAddAssingment_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.VariableAddAssingment_BehaviorDescriptor" file="VariableAddAssingment_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2221,8 +2221,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.VariableAssingment_Behavior" file="VariableAssingment_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.VariableAssingment_BehaviorDescriptor" file="VariableAssingment_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2240,7 +2240,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.VariableNameDeclaration_BehaviorDescriptor" file="VariableNameDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2248,12 +2248,12 @@
     <classNode dependClassName="jetbrains.mps.bash.behavior.LValue_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.VariableReference_Behavior" file="VariableReference_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.VariableReference_BehaviorDescriptor" file="VariableReference_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2271,8 +2271,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.WordExpression_Behavior" file="WordExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.WordExpression_BehaviorDescriptor" file="WordExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2290,8 +2290,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.WriteTestConditionalExpression_Behavior" file="WriteTestConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.WriteTestConditionalExpression_BehaviorDescriptor" file="WriteTestConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2303,8 +2303,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.XorAssingmentExpression_Behavior" file="XorAssingmentExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.XorAssingmentExpression_BehaviorDescriptor" file="XorAssingmentExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -2316,8 +2316,8 @@
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ZeroStringConditionalExpression_Behavior" file="ZeroStringConditionalExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.bash.behavior.ZeroStringConditionalExpression_BehaviorDescriptor" file="ZeroStringConditionalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

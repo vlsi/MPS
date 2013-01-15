@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependencies version="2" modelHash="4vubq6tv6otbiuyl5vdix9384h08d7n">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9fewwdo4hvsg0t5ahhqrttciuy5v4h" />
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-89hxj0ypb1mymp88cm6uftvxxpq6hll" />
   <common hash="73ipv6ebj2f21v2jcid9jvld0ch7lcc" />
   <source id="4727801710070560812" name="IValueProxy" hash="ab5qg6ipkv1mb6v65obfjb0k252hv2o">
     <file name="IValueProxy.java" />

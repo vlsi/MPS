@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.PropertySupport;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 
 public class PropertySubstituteAction extends AbstractNodeSubstituteAction {
@@ -26,7 +26,7 @@ public class PropertySubstituteAction extends AbstractNodeSubstituteAction {
 
   public PropertySubstituteAction(SNode sourceNode, String propertyName, String propertyValue) {
     super(null, null, sourceNode);
-    SNode propertyDeclaration = sourceNode.getPropertyDeclaration(propertyName);
+    SNode propertyDeclaration = ((jetbrains.mps.smodel.SNode) sourceNode).getPropertyDeclaration(propertyName);
     myPropertySupport = PropertySupport.getPropertySupport(propertyDeclaration);
     myPropertyName = propertyName;
     myPropertyValue = propertyValue;

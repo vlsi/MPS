@@ -28,7 +28,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.highlighter.EditorsHelper;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.typesystem.debug.EquationLogItem;
 import jetbrains.mps.util.Pair;
 

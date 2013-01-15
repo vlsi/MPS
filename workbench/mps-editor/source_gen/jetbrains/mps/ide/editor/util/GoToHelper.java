@@ -19,7 +19,7 @@ import jetbrains.mps.runtime.ModuleClassLoader;
 import javax.swing.JList;
 import com.intellij.ui.components.JBList;
 import com.intellij.openapi.ui.popup.PopupChooserBuilder;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.findusages.view.FindUtils;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;

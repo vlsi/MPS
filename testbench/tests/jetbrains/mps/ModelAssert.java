@@ -15,7 +15,8 @@
  */
 package jetbrains.mps;
 
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import org.junit.Assert;
 
@@ -180,12 +181,14 @@ public class ModelAssert {
     }
 
     for (String role : roles) {
-      List<SNode> expectedChildren = expectedNode.getChildren(role);
-      List<SNode> actualChildren = actualNode.getChildren(role);
+      Iterable<? extends SNode> expectedChildren = expectedNode.getChildren(role);
+      Iterable<? extends SNode> actualChildren = actualNode.getChildren(role);
 
-      assertEquals(getErrorString("child count in role " + role, expectedNode, actualNode), expectedChildren.size(), actualChildren.size());
+      int esize = IterableUtil.asCollection(expectedChildren).size();
+      int asize = IterableUtil.asCollection(actualChildren).size();
+      assertEquals(getErrorString("child count in role " + role, expectedNode, actualNode), esize, asize);
 
-      Iterator<SNode> actualIterator = actualChildren.iterator();
+      Iterator<? extends SNode> actualIterator = actualChildren.iterator();
       for (SNode expectedChild : expectedChildren) {
         SNode actualChild = actualIterator.next();
         assertEquals(getErrorString("children in role " + role, expectedNode, actualNode), expectedChild.getNodeId(), actualChild.getNodeId());
@@ -196,8 +199,8 @@ public class ModelAssert {
 
   private static void assertPropertyEquals(SNode expectedNode, SNode actualNode) {
     HashSet<String> propertes = new HashSet<String>();
-    propertes.addAll(expectedNode.getPropertyNames());
-    propertes.addAll(actualNode.getPropertyNames());
+    propertes.addAll(IterableUtil.asCollection(expectedNode.getPropertyNames()));
+    propertes.addAll(IterableUtil.asCollection(actualNode.getPropertyNames()));
     for (String key : propertes) {
       String expectedProperty = jetbrains.mps.util.SNodeOperations.getProperties(expectedNode).get(key);
       String actualProperty = jetbrains.mps.util.SNodeOperations.getProperties(actualNode).get(key);

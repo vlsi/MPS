@@ -4,7 +4,7 @@ package jetbrains.mps.lang.generator.behavior;
 
 import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public class RootTemplateAnnotation_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor {

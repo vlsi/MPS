@@ -4,7 +4,7 @@ package jetbrains.mps.build.behavior;
 
 import org.jetbrains.annotations.Nullable;
 import java.awt.Color;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NonNls;
 
 public class BuildLayout_EchoProperties_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor implements BuildStringContainer_BehaviorDescriptor {

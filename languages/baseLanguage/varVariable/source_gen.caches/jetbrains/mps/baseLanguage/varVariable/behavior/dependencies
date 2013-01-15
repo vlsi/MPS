@@ -10,7 +10,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.varVariable.behavior.VarVariableDeclaration_Behavior" file="VarVariableDeclaration_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.varVariable.behavior.VarVariableDeclaration_BehaviorDescriptor" file="VarVariableDeclaration_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

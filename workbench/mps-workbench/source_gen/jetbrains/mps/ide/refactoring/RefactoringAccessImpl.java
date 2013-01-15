@@ -10,7 +10,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.platform.refactoring.RefactoringViewAction;
 import jetbrains.mps.ide.findusages.model.SearchResults;
 import jetbrains.mps.refactoring.framework.RefactoringContext;

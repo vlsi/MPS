@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.typesystem.inference;
 
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 
 public interface ITypeContextOwner {

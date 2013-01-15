@@ -4,7 +4,7 @@ package jetbrains.mps.editor.runtime.impl;
 
 import java.util.Comparator;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
 

@@ -6,7 +6,7 @@ import jetbrains.mps.execution.api.settings.SettingsEditorEx;
 import jetbrains.mps.execution.lib.ui.MainNodeChooser;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.options.ConfigurationException;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import com.intellij.openapi.util.Factory;
 

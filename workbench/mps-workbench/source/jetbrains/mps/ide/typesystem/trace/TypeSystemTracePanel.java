@@ -22,7 +22,7 @@ import com.intellij.openapi.actionSystem.ActionPlaces;
 import java.awt.Color;
 
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.ui.components.JBScrollPane;
 import com.intellij.openapi.ui.Splitter;
 import com.intellij.util.ui.UIUtil;

@@ -29,7 +29,7 @@ import jetbrains.mps.ide.projectPane.ProjectPane;
 import jetbrains.mps.library.LanguageDesign_DevKit;
 import jetbrains.mps.project.*;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.vfs.FileSystem;

@@ -18,7 +18,7 @@ package jetbrains.mps.ide.projectPane.favorites.root;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.smodel.UpdatableSNodeTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
 import java.util.Collections;

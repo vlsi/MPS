@@ -5,7 +5,7 @@ package jetbrains.mps.lang.test.runtime;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.project.Project;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;

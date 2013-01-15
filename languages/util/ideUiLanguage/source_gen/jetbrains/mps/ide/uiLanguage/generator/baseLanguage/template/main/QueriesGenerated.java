@@ -11,7 +11,7 @@ import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.generator.template.ReferenceMacroContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.uiLanguage.constraints.DialogUtil;
 import jetbrains.mps.generator.template.IfMacroContext;
 import jetbrains.mps.uiLanguage.behavior.ComponentDeclaration_Behavior;

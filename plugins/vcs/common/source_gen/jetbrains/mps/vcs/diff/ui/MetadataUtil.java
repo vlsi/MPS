@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModelId;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.DefaultSModel;
@@ -55,7 +55,7 @@ public class MetadataUtil {
     }
 
     SPropertyOperations.set(root, "name", "Model Properties");
-    root.setId(SNodeId.fromString("~root"));
+    ((jetbrains.mps.smodel.SNode) root).setId(SNodeId.fromString("~root"));
     return root;
   }
 
@@ -63,7 +63,7 @@ public class MetadataUtil {
     SNode node = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.ModuleReference", null);
     SPropertyOperations.set(node, "qualifiedName", module.getModuleFqName());
     SPropertyOperations.set(node, "uuid", module.getModuleId().toString());
-    node.setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, "uuid")));
+    ((jetbrains.mps.smodel.SNode) node).setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, "uuid")));
     return node;
   }
 
@@ -72,7 +72,7 @@ public class MetadataUtil {
     SPropertyOperations.set(node, "qualifiedName", impModel.getModelReference().getLongName());
     SPropertyOperations.set(node, "uuid", impModel.getModelReference().getModelId().toString());
     SPropertyOperations.set(node, "stereotype", impModel.getModelReference().getStereotype());
-    node.setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, "uuid")));
+    ((jetbrains.mps.smodel.SNode) node).setId(SNodeId.fromString("~" + SPropertyOperations.getString(node, "uuid")));
     return node;
   }
 

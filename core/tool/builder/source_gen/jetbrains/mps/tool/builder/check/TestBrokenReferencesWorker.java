@@ -111,8 +111,8 @@ public class TestBrokenReferencesWorker extends MakeWorker {
       }
     }
     for (SNode node : sm.getRootNodes()) {
-      for (SReference ref : ((jetbrains.mps.smodel.SNode) node).getReferences()) {
-        if (SNodeUtil.hasReferenceMacro((jetbrains.mps.smodel.SNode) node, ref.getRole())) {
+      for (SReference ref : ((SNode) node).getReferences()) {
+        if (SNodeUtil.hasReferenceMacro((SNode) node, ref.getRole())) {
           continue;
         }
         if (ref.getTargetNode() == null) {

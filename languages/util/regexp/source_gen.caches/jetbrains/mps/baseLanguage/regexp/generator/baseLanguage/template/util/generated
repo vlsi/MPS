@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="c3avqk2ettovsmmpv6ijabdh5wywhau">
-  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-d9fewwdo4hvsg0t5ahhqrttciuy5v4h" />
-  <common hash="1mvxmsafn9563yko66sji6s9rue5k9q" />
-  <source id="7048923897762709721" name="Flags" hash="9lvkr60sen3vogk7u1xu6040635j3u">
+<dependencies version="2" modelHash="-d22t5cq2alaa0wd66vfi9aocyim6hbo">
+  <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-89hxj0ypb1mymp88cm6uftvxxpq6hll" />
+  <common hash="2llfn9icr405yf1k7khybiry3ir3mrz" />
+  <source id="7048923897762709721" name="Flags" hash="-d42u1uabsowo2l6347pe0b2db3xy0td">
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />
     <file name="Flags.java" />
   </source>

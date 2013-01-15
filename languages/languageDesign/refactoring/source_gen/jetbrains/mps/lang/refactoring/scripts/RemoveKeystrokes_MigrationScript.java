@@ -5,7 +5,7 @@ package jetbrains.mps.lang.refactoring.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class RemoveKeystrokes_MigrationScript extends BaseMigrationScript {
   public RemoveKeystrokes_MigrationScript(IOperationContext operationContext) {
@@ -24,11 +24,11 @@ public class RemoveKeystrokes_MigrationScript extends BaseMigrationScript {
       }
 
       public boolean isApplicableInstanceNode(SNode node) {
-        return !(node.getChildren("keystroke").isEmpty());
+        return node.getChildren("keystroke").iterator().hasNext();
       }
 
       public void doUpdateInstanceNode(SNode node) {
-        node.removeChild(node.getChildren("keystroke").get(0));
+        node.removeChild(node.getChildren("keystroke").iterator().next());
       }
 
       public boolean isShowAsIntention() {

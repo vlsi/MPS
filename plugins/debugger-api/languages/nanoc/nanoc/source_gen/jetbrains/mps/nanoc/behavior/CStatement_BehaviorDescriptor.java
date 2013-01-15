@@ -5,7 +5,7 @@ package jetbrains.mps.nanoc.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.traceable.behavior.TraceableConcept_BehaviorDescriptor;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.traceable.behavior.TraceableConcept_Behavior;
 
 public abstract class CStatement_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements TraceableConcept_BehaviorDescriptor {

@@ -21,9 +21,10 @@ import jetbrains.mps.internal.collections.runtime.IVisitor;
 import jetbrains.mps.vcs.diff.ui.common.Bounds;
 import jetbrains.mps.vcs.diff.changes.ChangeType;
 import jetbrains.mps.vcs.diff.ui.common.DiffTemporaryModule;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
+import jetbrains.mps.util.IterableUtil;
 import java.util.Collections;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -133,7 +134,7 @@ public class ChangesStripActionsHelper {
           return Sequence.<SNode>singleton(oldModel.getNodeById(((NodeChange) ch).getAffectedNodeId()));
         } else if (ch instanceof NodeGroupChange) {
           NodeGroupChange ngc = (NodeGroupChange) ch;
-          List<SNode> changeChildren = oldModel.getNodeById(ngc.getParentNodeId()).getChildren(ngc.getRole());
+          List<SNode> changeChildren = ((List) IterableUtil.asList(oldModel.getNodeById(ngc.getParentNodeId()).getChildren(ngc.getRole())));
           return ListSequence.fromList(changeChildren).page(ngc.getBegin(), ngc.getEnd());
         } else {
           return Sequence.fromIterable(Collections.<SNode>emptyList());
@@ -203,7 +204,7 @@ public class ChangesStripActionsHelper {
         });
         ListSequence.fromList(nodesToCopy).clear();
         for (int i = min; i <= max; i++) {
-          ListSequence.fromList(nodesToCopy).addElement(commonNode.getChildren(commonRole).get(i));
+          ListSequence.fromList(nodesToCopy).addElement(IterableUtil.get(commonNode.getChildren(commonRole), i));
         }
       }
     }

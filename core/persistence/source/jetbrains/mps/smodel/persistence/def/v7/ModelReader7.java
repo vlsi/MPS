@@ -19,7 +19,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.ModelLinkMap;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.IModelReader;
 import jetbrains.mps.smodel.persistence.def.ModelPersistence;
 import jetbrains.mps.util.InternUtil;
@@ -128,7 +128,7 @@ public class ModelReader7 implements IModelReader {
   @Nullable
   protected SNode readNode(Element nodeElement, SModel model, boolean isRootStub) {
     String conceptFqName = myHelper.readType(nodeElement.getAttributeValue(ModelPersistence.TYPE));
-    SNode node = new SNode(InternUtil.intern(conceptFqName));
+    jetbrains.mps.smodel.SNode node = new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFqName));
 
     String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);
     if (idValue != null) {

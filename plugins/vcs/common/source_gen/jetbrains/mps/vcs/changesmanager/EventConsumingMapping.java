@@ -6,7 +6,7 @@ import com.intellij.util.containers.BidirectionalMultiMap;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.event.SModelEvent;
 import com.intellij.util.containers.BidirectionalMap;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.event.SModelRootEvent;

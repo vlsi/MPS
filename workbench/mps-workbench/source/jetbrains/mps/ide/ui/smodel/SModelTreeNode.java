@@ -21,10 +21,10 @@ import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;
 import jetbrains.mps.ide.projectPane.SortUtil;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.ide.ui.MPSTreeNodeEx;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.*;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.workbench.actions.model.CreateRootNodeGroup;
@@ -37,7 +37,7 @@ import java.util.*;
 
 public class SModelTreeNode extends MPSTreeNodeEx {
   @Deprecated
-  public static final String PACK = SNode.PACK;
+  public static final String PACK = jetbrains.mps.smodel.SNode.PACK;
 
   private SModelDescriptor myModelDescriptor;
   private List<SModelTreeNode> myChildModelTreeNodes = new ArrayList<SModelTreeNode>();

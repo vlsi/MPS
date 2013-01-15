@@ -5,7 +5,7 @@ package jetbrains.mps.build.mps.editor;
 import jetbrains.mps.nodeEditor.DefaultNodeEditor;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 
 public class GeneratorInternal_BuildMps_Module_Editor extends DefaultNodeEditor {

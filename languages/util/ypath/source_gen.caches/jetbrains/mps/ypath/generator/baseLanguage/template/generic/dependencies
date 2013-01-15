@@ -25,7 +25,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="jetbrains.mps.ypath.actions.TraversalAxisUtil" />
@@ -35,6 +34,7 @@
     <classNode dependClassName="jetbrains.mps.ypath.behavior.TreePathOperationExpression_Behavior" />
     <classNode dependClassName="jetbrains.mps.ypath.generator.baseLanguage.template.helper.OperationsUtil" />
     <classNode dependClassName="jetbrains.mps.ypath.runtime.TraversalAxis" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
 </dependenciesRoot>
 

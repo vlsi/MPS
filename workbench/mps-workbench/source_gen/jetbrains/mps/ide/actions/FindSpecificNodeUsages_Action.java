@@ -12,7 +12,7 @@ import jetbrains.mps.internal.collections.runtime.MapSequence;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.featureStatistics.FeatureUsageTracker;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Frame;

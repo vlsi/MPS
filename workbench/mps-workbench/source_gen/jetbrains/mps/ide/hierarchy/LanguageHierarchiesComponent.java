@@ -25,7 +25,7 @@ import javax.swing.JCheckBox;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.border.LineBorder;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
 import jetbrains.mps.ide.projectPane.ProjectPaneActionGroups;

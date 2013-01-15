@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.errors;
 
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.HashMap;
 import java.util.Map;

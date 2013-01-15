@@ -16,7 +16,8 @@
 package jetbrains.mps.smodel.loading;
 
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.UnregisteredNodes;
 
 import java.util.ArrayList;
@@ -35,7 +36,7 @@ public class ModelLoader {
     for (SNode root : myModel.roots()) {
       SNode fullRoot = myFullModel.getNodeById(root.getNodeId());
       if (fullRoot == null) continue; //this can happen after model update if the
-      for (SNode child : new ArrayList<SNode>(fullRoot.getChildren())) {
+      for (SNode child : IterableUtil.copyToList(fullRoot.getChildren())) {
         String role = child.getRoleInParent();
         fullRoot.removeChild(child);
         root.addChild(role, child);

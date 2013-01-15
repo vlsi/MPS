@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.event;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelFqName;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class SModelRenamedEvent extends SModelEvent {
   private SModelFqName myOldName;

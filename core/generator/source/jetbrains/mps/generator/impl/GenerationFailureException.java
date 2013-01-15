@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.runtime.GenerationException;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class GenerationFailureException extends GenerationException {
 

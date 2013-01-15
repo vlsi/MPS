@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * Cyril.Konopko, 12.02.2010

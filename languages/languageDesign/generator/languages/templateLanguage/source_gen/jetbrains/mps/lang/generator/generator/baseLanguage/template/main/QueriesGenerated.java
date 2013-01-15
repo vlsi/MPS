@@ -15,7 +15,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.impl.GeneratorUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SReference;
@@ -39,7 +39,6 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodesContext;
 import java.util.ArrayList;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.generator.impl.GeneratorUtilEx;
 import jetbrains.mps.generator.template.MapSrcMacroPostProcContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
@@ -3566,7 +3565,7 @@ public class QueriesGenerated {
 
   public static Iterable sourceNodesQuery_4155486055398183512(final IOperationContext operationContext, final SourceSubstituteMacroNodesContext _context) {
     final List<SNode> result = new ArrayList<SNode>();
-    for (String name : SetSequence.fromSet(_context.getNode().getPropertyNames())) {
+    for (String name : Sequence.fromIterable(_context.getNode().getPropertyNames())) {
       if ((AttributeOperations.getAttribute(_context.getNode(), new IAttributeDescriptor.PropertyAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.lang.generator.structure.PropertyMacro"), name)) != null)) {
         continue;
       }
@@ -3617,7 +3616,7 @@ public class QueriesGenerated {
         }
         SNode referenceNode = SModelOperations.createNewNode(_context.getInputModel(), null, "jetbrains.mps.lang.core.structure.BaseConcept");
         referenceNode.setProperty("role", reference.getRole());
-        referenceNode.setReferent("originalNode", _context.getNode(), false);
+        referenceNode.setReferenceTarget("originalNode", _context.getNode());
         if (current != null) {
           // return parent N (counter) 
           referenceNode.setProperty("kind", "parentIndex");

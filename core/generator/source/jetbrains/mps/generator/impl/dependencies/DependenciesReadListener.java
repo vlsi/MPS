@@ -16,7 +16,7 @@
 package jetbrains.mps.generator.impl.dependencies;
 
 import jetbrains.mps.smodel.INodesReadListener;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * Evgeny Gryaznov, Jun 9, 2010

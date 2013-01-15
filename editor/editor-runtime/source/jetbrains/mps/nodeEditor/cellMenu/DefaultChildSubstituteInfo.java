@@ -20,7 +20,7 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
 import jetbrains.mps.smodel.action.ModelActions;
@@ -53,9 +53,9 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
         }
 
         myParentNode = sourceNode;
-        SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(myParentNode.getConceptDeclarationNode(), SModelUtil.getLinkDeclarationRole(linkDeclaration));
+        SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(((jetbrains.mps.smodel.SNode) myParentNode).getConceptDeclarationNode(), SModelUtil.getLinkDeclarationRole(linkDeclaration));
         myLinkDeclaration = mostSpecificLinkDeclaration;
-        List<SNode> ch = sourceNode.getChildren(SModelUtil.getGenuineLinkRole(linkDeclaration));
+        Iterable<? extends SNode> ch = sourceNode.getChildren(SModelUtil.getGenuineLinkRole(linkDeclaration));
         myCurrentChild = ch.iterator().hasNext() ? ch.iterator().next() : null;
       }
     });
@@ -71,7 +71,7 @@ public class DefaultChildSubstituteInfo extends AbstractNodeSubstituteInfo {
           LOG.error("only aggregation links are allowed here", new RuntimeException("only aggregation links are allowed here"), linkDeclaration);
         }
         myParentNode = parentNode;
-        SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(myParentNode.getConceptDeclarationNode(), SModelUtil.getLinkDeclarationRole(linkDeclaration));
+        SNode mostSpecificLinkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(((jetbrains.mps.smodel.SNode) myParentNode).getConceptDeclarationNode(), SModelUtil.getLinkDeclarationRole(linkDeclaration));
         myLinkDeclaration = mostSpecificLinkDeclaration;
         myCurrentChild = currChildNode;
       }

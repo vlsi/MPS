@@ -6,7 +6,7 @@ import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.checkers.INodeChecker;
 import java.util.Set;
 import jetbrains.mps.errors.IErrorReporter;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.HashSet;
 import jetbrains.mps.typesystem.inference.TypeContextManager;

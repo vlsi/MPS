@@ -5,7 +5,7 @@ package jetbrains.mps.ide.editor.util;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.fileEditor.FileEditorManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.util.List;

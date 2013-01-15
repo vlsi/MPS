@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.MPSCore;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
@@ -119,7 +119,7 @@ public final class CopyUtil {
     HashMap<SNode, SNode> mapping = new HashMap<SNode, SNode>();
     SNode result = clone(node, mapping, true);
     for (SNode sourceNode : mapping.keySet()) {
-      mapping.get(sourceNode).setId(sourceNode.getNodeId());
+      ((jetbrains.mps.smodel.SNode) mapping.get(sourceNode)).setId(sourceNode.getNodeId());
     }
     addReferences(node, mapping, cloneRefs);
     return result;
@@ -138,7 +138,7 @@ public final class CopyUtil {
   private static SNode clone(SNode node, Map<SNode, SNode> mapping, boolean copyAttributes) {
     if (node == null) return null;
 
-    SNode result = new SNode(node.getConcept().getId());
+    jetbrains.mps.smodel.SNode result = new jetbrains.mps.smodel.SNode(node.getConcept().getId());
     mapping.put(node, result);
     jetbrains.mps.util.SNodeOperations.copyProperties(node, result);
     jetbrains.mps.util.SNodeOperations.copyUserObjects(node, result);

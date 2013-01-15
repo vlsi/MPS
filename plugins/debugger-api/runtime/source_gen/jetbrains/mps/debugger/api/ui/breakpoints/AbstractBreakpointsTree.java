@@ -25,7 +25,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.platform.ui.CheckBoxNodeRenderer;
 import java.awt.Color;
 import javax.swing.UIManager;

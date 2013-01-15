@@ -25,7 +25,7 @@ import jetbrains.mps.nodeEditor.selection.MultipleSelection;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.logging.Logger;

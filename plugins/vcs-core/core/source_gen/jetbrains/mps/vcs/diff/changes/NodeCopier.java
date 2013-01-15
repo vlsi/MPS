@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -39,7 +39,7 @@ public class NodeCopier {
       while (myModel.getNodeById(replacedId) != null) {
         replacedId = SModel.generateUniqueId();
       }
-      node.setId(replacedId);
+      ((jetbrains.mps.smodel.SNode) node).setId(replacedId);
       if (replacedId != nodeId && !(MapSequence.fromMap(myIdReplacementCache).containsKey(nodeId))) {
         MapSequence.fromMap(myIdReplacementCache).put(nodeId, replacedId);
       }
@@ -64,13 +64,13 @@ public class NodeCopier {
     SModel model = SNodeOperations.getModel(node);
     if (SNodeOperations.getParent(node) == null) {
       SNodeOperations.detachNode(node);
-      node.setId(id);
+      ((jetbrains.mps.smodel.SNode) node).setId(id);
       SModelOperations.addRootNode(model, node);
     } else {
       // hardcoded to get rid of dependency on core language 
-      SNode stubNode = new SNode(InternUtil.intern("jetbrains.mps.lang.core.structure.BaseConcept"));
+      SNode stubNode = new jetbrains.mps.smodel.SNode(InternUtil.intern("jetbrains.mps.lang.core.structure.BaseConcept"));
       SNodeOperations.replaceWithAnother(node, stubNode);
-      node.setId(id);
+      ((jetbrains.mps.smodel.SNode) node).setId(id);
       SNodeOperations.replaceWithAnother(stubNode, node);
     }
   }

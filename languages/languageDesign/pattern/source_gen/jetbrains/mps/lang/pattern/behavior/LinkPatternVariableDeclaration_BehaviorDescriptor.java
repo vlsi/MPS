@@ -5,7 +5,7 @@ package jetbrains.mps.lang.pattern.behavior;
 import jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 

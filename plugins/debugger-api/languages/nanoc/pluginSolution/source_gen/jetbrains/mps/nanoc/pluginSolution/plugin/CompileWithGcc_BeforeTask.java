@@ -4,7 +4,7 @@ package jetbrains.mps.nanoc.pluginSolution.plugin;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider;
 import com.intellij.openapi.util.Key;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
 import com.intellij.execution.process.ProcessHandler;
 import jetbrains.mps.execution.api.commands.OutputRedirector;

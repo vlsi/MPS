@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.descriptor;
 
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 @Deprecated //use openapi. this does not work
 public interface NodeDescriptor {

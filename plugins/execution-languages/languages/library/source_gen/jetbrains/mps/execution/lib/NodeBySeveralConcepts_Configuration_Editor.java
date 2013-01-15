@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.util.Factory;
 
 public class NodeBySeveralConcepts_Configuration_Editor extends SettingsEditorEx<NodeBySeveralConcepts_Configuration> {

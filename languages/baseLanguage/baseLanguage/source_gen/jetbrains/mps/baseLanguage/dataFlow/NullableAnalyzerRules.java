@@ -7,7 +7,7 @@ import java.util.List;
 import jetbrains.mps.analyzers.runtime.framework.DataFlowConstructor;
 import java.util.HashMap;
 import java.util.LinkedList;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;

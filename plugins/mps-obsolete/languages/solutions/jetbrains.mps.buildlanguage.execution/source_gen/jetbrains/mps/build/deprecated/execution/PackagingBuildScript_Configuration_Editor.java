@@ -13,7 +13,7 @@ import java.awt.GridBagLayout;
 import javax.swing.JLabel;
 import jetbrains.mps.ide.common.LayoutUtil;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import com.intellij.openapi.options.ConfigurationException;
 

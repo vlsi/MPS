@@ -5,7 +5,7 @@ package jetbrains.mps.project.structure.stub;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.vfs.IFile;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
@@ -54,7 +54,7 @@ public abstract class ProjectStructureBuilder {
 
   private SNode convertLanguage(LanguageDescriptor source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.Language", null);
-    result.setId(SNodeId.fromString("~root"));
+    ((jetbrains.mps.smodel.SNode) result).setId(SNodeId.fromString("~root"));
     SModelOperations.addRootNode(myModel, result);
     fill(result, source);
     SPropertyOperations.set(result, "compileInMPS", "" + (true));
@@ -78,7 +78,7 @@ public abstract class ProjectStructureBuilder {
 
   private SNode convertSolution(SolutionDescriptor source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.Solution", null);
-    result.setId(SNodeId.fromString("~root"));
+    ((jetbrains.mps.smodel.SNode) result).setId(SNodeId.fromString("~root"));
     SModelOperations.addRootNode(myModel, result);
     fill(result, source);
     SPropertyOperations.set(result, "compileInMPS", "" + (source.getCompileInMPS()));
@@ -90,7 +90,7 @@ public abstract class ProjectStructureBuilder {
 
   private SNode convertDevkit(DevkitDescriptor source) {
     SNode result = SConceptOperations.createNewNode("jetbrains.mps.lang.project.structure.DevKit", null);
-    result.setId(SNodeId.fromString("~root"));
+    ((jetbrains.mps.smodel.SNode) result).setId(SNodeId.fromString("~root"));
     SModelOperations.addRootNode(myModel, result);
     fill(result, source);
     SPropertyOperations.set(result, "compileInMPS", "" + (false));

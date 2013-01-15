@@ -8,7 +8,7 @@ import jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry;
 import com.intellij.openapi.vcs.FileStatusManager;
 import jetbrains.mps.workbench.nodesFs.MPSNodesVirtualFileSystem;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;

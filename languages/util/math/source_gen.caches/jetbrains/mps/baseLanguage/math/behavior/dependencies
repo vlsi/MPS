@@ -12,7 +12,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.IValidIdentifier_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -97,8 +97,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.BigMaxExpression_Behavior" file="BigMaxExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.BigMaxExpression_BehaviorDescriptor" file="BigMaxExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -110,8 +110,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.BigMinExpression_Behavior" file="BigMinExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.BigMinExpression_BehaviorDescriptor" file="BigMinExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -123,8 +123,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.BigProdExpression_Behavior" file="BigProdExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.BigProdExpression_BehaviorDescriptor" file="BigProdExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -136,8 +136,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.BigSumExpression_Behavior" file="BigSumExpression_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.BigSumExpression_BehaviorDescriptor" file="BigSumExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -163,8 +163,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.ConjugateOperation_Behavior" file="ConjugateOperation_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.ConjugateOperation_BehaviorDescriptor" file="ConjugateOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -181,7 +181,7 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.DecimalBinaryOperation_Behavior" file="DecimalBinaryOperation_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.DecimalBinaryOperation_BehaviorDescriptor" file="DecimalBinaryOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -190,8 +190,8 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.DecimalDivExpression_Behavior" file="DecimalDivExpression_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.DecimalDivExpression_BehaviorDescriptor" file="DecimalDivExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -202,8 +202,8 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.DecimalMinusExpression_Behavior" file="DecimalMinusExpression_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.DecimalMinusExpression_BehaviorDescriptor" file="DecimalMinusExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -214,8 +214,8 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.DecimalMulExpression_Behavior" file="DecimalMulExpression_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.DecimalMulExpression_BehaviorDescriptor" file="DecimalMulExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -226,8 +226,8 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.DecimalPlusExpression_Behavior" file="DecimalPlusExpression_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.DecimalPlusExpression_BehaviorDescriptor" file="DecimalPlusExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -261,8 +261,8 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.ExponentialOperation_BehaviorDescriptor" file="ExponentialOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -271,8 +271,8 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.behavior.ExponentialOperation_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -283,8 +283,8 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.InIntervalExpression_Behavior" file="InIntervalExpression_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.InIntervalExpression_BehaviorDescriptor" file="InIntervalExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -295,8 +295,8 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.IntervalContainsExpression_Behavior" file="IntervalContainsExpression_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.IntervalContainsExpression_BehaviorDescriptor" file="IntervalContainsExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -338,7 +338,7 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.MathContext_Behavior" file="MathContext_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.MathContext_BehaviorDescriptor" file="MathContext_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -383,8 +383,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.MathSymbol_BehaviorDescriptor" file="MathSymbol_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -414,15 +414,15 @@
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelUtil_new" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.MatrixConstructor_Behavior" file="MatrixConstructor_Behavior.java">
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.MatrixConstructor_BehaviorDescriptor" file="MatrixConstructor_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -431,8 +431,8 @@
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.MatrixElementAccessExpression_Behavior" file="MatrixElementAccessExpression_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.MatrixElementAccessExpression_BehaviorDescriptor" file="MatrixElementAccessExpression_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -450,9 +450,9 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.MatrixExponentialOperation_BehaviorDescriptor" file="MatrixExponentialOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -460,8 +460,8 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.behavior.ExponentialOperation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.behavior.MatrixExponentialOperation_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.MatrixIndexWildcard_BehaviorDescriptor" file="MatrixIndexWildcard_BehaviorDescriptor.java">
@@ -483,7 +483,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -497,8 +497,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.MatrixInverseOperation_Behavior" file="MatrixInverseOperation_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.MatrixInverseOperation_BehaviorDescriptor" file="MatrixInverseOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -520,8 +520,8 @@
     <classNode dependClassName="java.lang.Object" />
     <classNode dependClassName="java.lang.String" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.MatrixType_BehaviorDescriptor" file="MatrixType_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -529,7 +529,7 @@
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.behavior.MathPrimitiveType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.behavior.MatrixOrVectorType_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.behavior.MatrixType_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -565,8 +565,8 @@
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.TransposeOperation_Behavior" file="TransposeOperation_Behavior.java">
     <classNode dependClassName="java.lang.String" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.behavior.TransposeOperation_BehaviorDescriptor" file="TransposeOperation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />

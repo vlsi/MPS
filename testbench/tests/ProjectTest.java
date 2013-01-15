@@ -21,7 +21,7 @@ import jetbrains.mps.internal.collections.runtime.IterableUtils;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.testbench.MpsMakeHelper;
 import jetbrains.mps.testbench.ProjectTestHelper;
 import jetbrains.mps.testbench.ProjectTestHelper.Token;

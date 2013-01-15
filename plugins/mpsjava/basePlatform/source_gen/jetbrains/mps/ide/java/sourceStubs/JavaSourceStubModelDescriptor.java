@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.persistence.MultiStreamDataSource;
 import java.util.Map;
 import java.util.Set;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SNodeId;

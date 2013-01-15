@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.lang.typesystem.runtime.incremental;
 
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class SNodeReadEvent {
   protected SNode myNode;

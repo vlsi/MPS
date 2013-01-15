@@ -67,10 +67,10 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.RequestManager" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint" />
   </dependency>
@@ -138,11 +138,11 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpointKind" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.breakpoints.LineBreakpoint" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.ui.breakpoints.ExceptionChooserDialog" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jdom.Element" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.debug.api.breakpoints.IBreakpointPropertiesUi" />
     <classNode extendsClassName="jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider" />
   </dependency>
@@ -165,9 +165,9 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.RequestManager" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint" />
   </dependency>
@@ -193,10 +193,10 @@
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventContext" />
     <classNode dependClassName="jetbrains.mps.debugger.java.runtime.engine.events.EventsProcessor" />
     <classNode dependClassName="jetbrains.mps.logging.Logger" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.traceInfo.TraceablePositionInfo" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint" />
     <classNode extendsClassName="jetbrains.mps.debugger.java.runtime.breakpoints.JavaBreakpoint" />
   </dependency>

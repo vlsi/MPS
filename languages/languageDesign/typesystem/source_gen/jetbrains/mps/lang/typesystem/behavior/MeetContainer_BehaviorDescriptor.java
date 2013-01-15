@@ -5,7 +5,7 @@ package jetbrains.mps.lang.typesystem.behavior;
 import jetbrains.mps.lang.core.behavior.NodeAttribute_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public class MeetContainer_BehaviorDescriptor extends NodeAttribute_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {

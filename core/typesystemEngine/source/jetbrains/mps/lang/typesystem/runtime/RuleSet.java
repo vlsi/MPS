@@ -19,7 +19,7 @@ import gnu.trove.THashSet;
 import jetbrains.mps.newTypesystem.rules.LanguageScope;
 import jetbrains.mps.newTypesystem.rules.SingleTermRules;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.ArrayList;
 import java.util.Collections;

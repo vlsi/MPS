@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.runtime.base;
 
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.*;
 import org.jetbrains.annotations.Nullable;

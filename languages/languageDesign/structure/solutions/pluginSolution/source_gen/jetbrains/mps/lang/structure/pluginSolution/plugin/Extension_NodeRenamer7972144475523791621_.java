@@ -5,7 +5,7 @@ package jetbrains.mps.lang.structure.pluginSolution.plugin;
 import jetbrains.mps.smodel.structure.Extension;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class Extension_NodeRenamer7972144475523791621_ extends Extension.Default<_FunctionTypes._return_P4_E0<? extends Boolean, ? super EditorContext, ? super SNode, ? super String, ? super String>> {
   public Extension_NodeRenamer7972144475523791621_() {

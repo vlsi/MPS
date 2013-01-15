@@ -6,7 +6,7 @@ import jetbrains.mps.debug.api.programState.IWatchable;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class SimpleVarWatchable implements IWatchable {
   public static final WatchablesCategory VARIABLES_CATEGORY = new WatchablesCategory("variables");

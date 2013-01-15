@@ -9,7 +9,7 @@ import java.util.Map;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import jetbrains.mps.ide.editor.MPSEditorDataKeys;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.hierarchy.BaseLanguageHierarchyViewTool;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.nodeEditor.cells.EditorCell;

@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class IndexedTupleLiteral_BehaviorDescriptor extends Expression_BehaviorDescriptor {
   public IndexedTupleLiteral_BehaviorDescriptor() {
