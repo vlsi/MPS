@@ -60,7 +60,7 @@
     <unitInfo nodeId="6503539749405386437" fileName="buildCoreEx.xml" startLine="1" startPosition="0" endLine="1429" endPosition="10" unitName="jetbrains.mps.ide.build.buildCoreEx" />
   </root>
   <root nodeId="6977615362525216882" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
-    <unitInfo nodeId="6977615362525216882" fileName="buildPluginTests.xml" startLine="1" startPosition="0" endLine="148" endPosition="10" unitName="jetbrains.mps.ide.build.buildPluginTests" />
+    <unitInfo nodeId="6977615362525216882" fileName="buildPluginTests.xml" startLine="1" startPosition="0" endLine="191" endPosition="10" unitName="jetbrains.mps.ide.build.buildPluginTests" />
   </root>
   <root nodeId="716066598061903449" modelId="r:874d959d-e3b4-4d04-b931-ca849af130dd(jetbrains.mps.ide.build)">
     <nodeInfo nodeId="716066598061903450" fileName="installer.nsi" startLine="1" startPosition="0" endLine="1" endPosition="0" conceptFqName="jetbrains.mps.gtext.structure.GIndent" />

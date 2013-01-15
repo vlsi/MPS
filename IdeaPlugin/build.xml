@@ -166,6 +166,43 @@
       </classpath>
       <test name="jetbrains.mps.idea.core.tests.AllTests"/>
     </junit>
+    <junit fork="true"
+           dir="."
+           haltonfailure="true"
+           showoutput="true"
+           enableTestListenerEvents="false">
+      <jvmarg value="-ea"/>
+      <jvmarg value="-Xss1024k"/>
+      <jvmarg value="-Xmx1024m"/>
+      <jvmarg value="-Xbootclasspath/a:${ideaPath}/lib/boot.jar"/>
+      <formatter type="xml"/>
+      <sysproperty key="idea.platform.prefix" value="Idea"/>
+      <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
+      <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>
+      <sysproperty key="idea.plugins.path" value="${plugins.sandbox.dir}/plugins"/>
+      <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.core.ex"/>
+      <sysproperty key="idea.home.path" value="${ideaPath}"/>
+      <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
+      <sysproperty key="file.encoding" value="UTF-8"/>
+      <classpath>
+        <fileset dir="${ideaPath}/lib">
+          <include name="**/*.jar"/>
+        </fileset>
+        <fileset dir="${ideaPath}/plugins/junit/lib">
+          <include name="junit-rt.jar"/>
+        </fileset>
+        <fileset dir="${ideaPath}/lib/ant/lib" includes="*.jar"/>
+        <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib">
+          <include name="*.jar"/>
+        </fileset>
+        <fileset dir="${plugins.sandbox.dir}/plugins/mps-core/lib/jps">
+          <include name="*.jar"/>
+        </fileset>
+        <pathelement path="${java.class.path}"/>
+      </classpath>
+      <test name="jetbrains.mps.jps.make.AllMakeTests"/>
+    </junit>
+
   </target>
 
   <target name="zip" depends="build">
