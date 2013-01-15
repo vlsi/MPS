@@ -20,7 +20,6 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.EditorSettings;
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
-import jetbrains.mps.nodeEditor.style.APIStyleAdapter;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.*;
@@ -186,7 +185,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
         }
 
         //if no flow
-        if (LayoutConstraints.NOFLOW_LAYOUT_CONSTRAINT.equals(APIStyleAdapter.getStyleAttribute(cell, StyleAttributes.LAYOUT_CONSTRAINT))) {
+        if (LayoutConstraints.NOFLOW_LAYOUT_CONSTRAINT.equals(cell.getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT))) {
           if (!getCurrentLine().isEmpty()) {
             alignLine();
             nextLine();
@@ -331,7 +330,7 @@ public class CellLayout_Flow extends AbstractCellLayout {
     TextBuilder result = TextBuilder.getEmptyTextBuilder();
     for (;it.hasNext();) {
       EditorCell editorCell = it.next();
-      if (LayoutConstraints.NOFLOW_LAYOUT_CONSTRAINT.equals(APIStyleAdapter.getStyleAttribute(editorCell, StyleAttributes.LAYOUT_CONSTRAINT))) {
+      if (LayoutConstraints.NOFLOW_LAYOUT_CONSTRAINT.equals(editorCell.getStyle().get(StyleAttributes.LAYOUT_CONSTRAINT))) {
         return result.appendToTheBottom(APICellAdapter.renderText(editorCell));
       }
       result = result.appendToTheRight(APICellAdapter.renderText(editorCell), !APICellAdapter.isPunctuationLayout(editorCell));

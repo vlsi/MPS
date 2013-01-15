@@ -36,7 +36,6 @@ import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.nodeEditor.cellLayout.CellLayout_Vertical;
-import jetbrains.mps.nodeEditor.style.APIStyleAdapter;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.logging.Logger;
@@ -393,7 +392,7 @@ __switch__:
   }
 
   private static boolean isVertical(jetbrains.mps.openapi.editor.cells.EditorCell cell) {
-    return cell instanceof EditorCell_Collection && (((EditorCell_Collection) cell).getCellLayout() instanceof CellLayout_Vertical || APIStyleAdapter.getStyleAttribute(cell, StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE));
+    return cell instanceof EditorCell_Collection && (((EditorCell_Collection) cell).getCellLayout() instanceof CellLayout_Vertical || cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE));
   }
 
   private static jetbrains.mps.openapi.editor.cells.EditorCell getChildCell(@NotNull EditorCell_Collection collectionCell, int nodeIndex) {

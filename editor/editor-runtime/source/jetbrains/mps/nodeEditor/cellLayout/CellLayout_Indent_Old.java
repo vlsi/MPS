@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.cellLayout;
 
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.nodeEditor.style.APIStyleAdapter;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
@@ -56,10 +55,10 @@ public class CellLayout_Indent_Old extends AbstractCellLayout {
     int totalWidth = 0;
     int totalHeight = 0;
     int currentLineHeight = 0;
-    String nextLineForChildren = APIStyleAdapter.getStyleAttribute(editorCells, StyleAttributes.POSITION_CHILDREN);
+    String nextLineForChildren = editorCells.getStyle().get(StyleAttributes.POSITION_CHILDREN);
 
     for (EditorCell editorCell : editorCells) {
-      String nextLine = APIStyleAdapter.getStyleAttribute(editorCell, StyleAttributes.POSITION);
+      String nextLine = editorCell.getStyle().get(StyleAttributes.POSITION);
       if(nextLine != null) {
         System.out.println("nextLine = "+nextLine);
       }

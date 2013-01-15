@@ -32,7 +32,6 @@ import jetbrains.mps.nodeEditor.cellMenu.NodeSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.selection.Selection;
 import jetbrains.mps.nodeEditor.selection.SelectionListener;
-import jetbrains.mps.nodeEditor.style.APIStyleAdapter;
 import jetbrains.mps.nodeEditor.style.Padding;
 import jetbrains.mps.nodeEditor.style.Style;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -720,7 +719,7 @@ public class EditorCell_Collection extends EditorCell_Basic implements jetbrains
     }
     ((EditorCell_Basic) cellToAdd).setParent(this);
     getEditorCells().add(j, cellToAdd);
-    getStyle().add(APIStyleAdapter.getStyle(cellToAdd));
+    getStyle().add(cellToAdd.getStyle());
 
     if (isInTree()) {
       ((EditorCell_Basic) cellToAdd).onAdd();

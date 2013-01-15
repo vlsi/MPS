@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.cellLayout;
 
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
-import jetbrains.mps.nodeEditor.style.APIStyleAdapter;
 import jetbrains.mps.nodeEditor.style.DefaultBaseLine;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.style.TableComponent;
@@ -50,7 +49,7 @@ public class CellLayout_Table extends AbstractCellLayout {
       EditorCell_Collection col = (EditorCell_Collection) cell;
       jetbrains.mps.openapi.editor.cells.CellLayout l = col.getCellLayout();
       if (l instanceof CellLayout_Table) {
-        TableComponent comp = APIStyleAdapter.getStyleAttribute(col, StyleAttributes.TABLE_COMPONENT);
+        TableComponent comp = col.getStyle().get(StyleAttributes.TABLE_COMPONENT);
         if (comp == tc) return col;
       }
       for (EditorCell c : col) {
@@ -63,7 +62,7 @@ public class CellLayout_Table extends AbstractCellLayout {
 
   public void findPairingCollections(EditorCell_Collection editorCells) {
     if (myParentCollection == null) {
-      TableComponent tc = APIStyleAdapter.getStyleAttribute(editorCells, StyleAttributes.TABLE_COMPONENT);
+      TableComponent tc = editorCells.getStyle().get(StyleAttributes.TABLE_COMPONENT);
       myDescendants = new EditorCell_Collection[editorCells.getCellsCount()];
       for (int i = 0; i < editorCells.getCellsCount(); i++) {
         EditorCell_Collection col = findCollection(editorCells.getCellAt(i), rotate(tc));
@@ -87,7 +86,7 @@ public class CellLayout_Table extends AbstractCellLayout {
       return;
     }
 
-    TableComponent tc = APIStyleAdapter.getStyleAttribute(editorCells, StyleAttributes.TABLE_COMPONENT);
+    TableComponent tc = editorCells.getStyle().get(StyleAttributes.TABLE_COMPONENT);
     findPairingCollections(editorCells);
 
     int cellCount = editorCells.getCellsCount();
@@ -234,12 +233,12 @@ public class CellLayout_Table extends AbstractCellLayout {
 
   public int getAscent(EditorCell_Collection editorCells) {
     for (EditorCell cell : editorCells) {
-      if (APIStyleAdapter.getStyleAttribute(cell, StyleAttributes.BASE_LINE_CELL)) {
+      if (cell.getStyle().get(StyleAttributes.BASE_LINE_CELL)) {
         return cell.getY() - editorCells.getY() + cell.getAscent();
       }
     }
 
-    DefaultBaseLine bL = APIStyleAdapter.getStyleAttribute(editorCells, StyleAttributes.DEFAULT_BASE_LINE);
+    DefaultBaseLine bL = editorCells.getStyle().get(StyleAttributes.DEFAULT_BASE_LINE);
 
     int result = 0;
     for (EditorCell cell : editorCells) {

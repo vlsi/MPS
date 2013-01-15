@@ -16,7 +16,6 @@
 package jetbrains.mps.nodeEditor.cellLayout;
 
 import jetbrains.mps.nodeEditor.cells.APICellAdapter;
-import jetbrains.mps.nodeEditor.style.APIStyleAdapter;
 import jetbrains.mps.nodeEditor.style.CellAlign;
 import jetbrains.mps.nodeEditor.style.DefaultBaseLine;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
@@ -80,7 +79,7 @@ public class CellLayout_Vertical extends AbstractCellLayout {
       int cellX = editorCell.getX();
       int cellY = editorCell.getY();
       int newCellX = cellX;
-      CellAlign cellAlign = APIStyleAdapter.getStyleAttribute(editorCells, StyleAttributes.HORIZONTAL_ALIGN);
+      CellAlign cellAlign = editorCells.getStyle().get(StyleAttributes.HORIZONTAL_ALIGN);
       if (cellAlign == CellAlign.CENTER && !myGridLayout) {
         newCellX = cellX + (width - editorCell.getWidth()) / 2;
       } else if (cellAlign == CellAlign.RIGHT && !myGridLayout) {
@@ -206,12 +205,12 @@ public class CellLayout_Vertical extends AbstractCellLayout {
 
   public int getAscent(EditorCell_Collection editorCells) {
     for (EditorCell cell : editorCells) {
-      if (APIStyleAdapter.getStyleAttribute(cell, StyleAttributes.BASE_LINE_CELL)) {
+      if (cell.getStyle().get(StyleAttributes.BASE_LINE_CELL)) {
         return cell.getY() - editorCells.getY() + cell.getAscent();
       }
     }
 
-    DefaultBaseLine bL = APIStyleAdapter.getStyleAttribute(editorCells, StyleAttributes.DEFAULT_BASE_LINE);
+    DefaultBaseLine bL = editorCells.getStyle().get(StyleAttributes.DEFAULT_BASE_LINE);
 
     int result = 0;
     for (EditorCell cell : editorCells) {

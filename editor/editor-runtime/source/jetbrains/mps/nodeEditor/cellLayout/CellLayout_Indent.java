@@ -20,7 +20,6 @@ import jetbrains.mps.nodeEditor.cells.APICellAdapter;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Indent;
 import jetbrains.mps.nodeEditor.cells.GeometryUtil;
-import jetbrains.mps.nodeEditor.style.APIStyleAdapter;
 import jetbrains.mps.nodeEditor.style.DefaultBaseLine;
 import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
@@ -38,7 +37,7 @@ import java.util.Stack;
 public class CellLayout_Indent extends AbstractCellLayout {
   static boolean isOnNewLine(EditorCell root, EditorCell cell) {
     for (EditorCell current = cell; current != root; current = current.getParent()) {
-      if (APIStyleAdapter.getStyleAttribute(current, StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) {
+      if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_ON_NEW_LINE)) {
         return true;
       }
       if (current.getParent() == null || current.getParent().firstCell() != current) {
@@ -56,7 +55,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
     }
 
     while (cell != root) {
-      if (APIStyleAdapter.getStyleAttribute(cell, StyleAttributes.INDENT_LAYOUT_INDENT)) {
+      if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
         result++;
       }
 
@@ -68,13 +67,12 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
   public static boolean isNewLineAfter(EditorCell root, EditorCell cell) {
     for (EditorCell current = cell; current != root; current = current.getParent()) {
-      if (APIStyleAdapter.getStyleAttribute(current, StyleAttributes.INDENT_LAYOUT_NEW_LINE)) {
+      if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_NEW_LINE)) {
         return true;
       }
       EditorCell_Collection parent = current.getParent();
 
-      if (parent != null &&
-        APIStyleAdapter.getStyleAttribute(parent, StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE)) {
+      if (parent != null && parent.getStyle().get(StyleAttributes.INDENT_LAYOUT_CHILDREN_NEWLINE)) {
         return true;
       }
       if (parent == null || parent.lastCell() != current) {
@@ -86,12 +84,12 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
   public int getAscent(EditorCell_Collection editorCells) {
     for (EditorCell cell : editorCells) {
-      if (APIStyleAdapter.getStyleAttribute(cell, StyleAttributes.BASE_LINE_CELL)) {
+      if (cell.getStyle().get(StyleAttributes.BASE_LINE_CELL)) {
         return cell.getY() - editorCells.getY() + cell.getAscent();
       }
     }
 
-    DefaultBaseLine bL = APIStyleAdapter.getStyleAttribute(editorCells, StyleAttributes.DEFAULT_BASE_LINE);
+    DefaultBaseLine bL = editorCells.getStyle().get(StyleAttributes.DEFAULT_BASE_LINE);
 
     int result = 0;
     for (EditorCell cell : editorCells) {
@@ -281,7 +279,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
         newLine(false);
       }
 
-      if (APIStyleAdapter.getStyleAttribute(cell, StyleAttributes.INDENT_LAYOUT_INDENT)) {
+      if (cell.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT)) {
         withIndent(myCurrentIndent + myIndentSize, myCurrentIndent + 3 * myIndentSize, new Runnable() {
           @Override
           public void run() {
@@ -315,9 +313,9 @@ public class CellLayout_Indent extends AbstractCellLayout {
     }
 
     private void layoutCollection(final EditorCell_Collection collection) {
-      boolean hasIndent = collection != myCell && APIStyleAdapter.getStyleAttribute(collection, StyleAttributes.INDENT_LAYOUT_INDENT);
-      boolean hasAnchor = collection != myCell && APIStyleAdapter.getStyleAttribute(collection, StyleAttributes.INDENT_LAYOUT_INDENT_ANCHOR);
-      boolean hasWrapAnchor = APIStyleAdapter.getStyleAttribute(collection, StyleAttributes.INDENT_LAYOUT_WRAP_ANCHOR);
+      boolean hasIndent = collection != myCell && collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT);
+      boolean hasAnchor = collection != myCell && collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_INDENT_ANCHOR);
+      boolean hasWrapAnchor = collection.getStyle().get(StyleAttributes.INDENT_LAYOUT_WRAP_ANCHOR);
 
       int indent = hasIndent && hasAnchor ? currentIndent() + myIndentSize :
         hasIndent ? myCurrentIndent + myIndentSize :
@@ -487,7 +485,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
         if (!myCell.isAncestorOf(prevLeaf)) break;
         if (!myLineContent.contains(prevLeaf)) break;
 
-        if (isNoWrap(result) || APIStyleAdapter.getStyleAttribute(result, StyleAttributes.PUNCTUATION_LEFT)) {
+        if (isNoWrap(result) || result.getStyle().get(StyleAttributes.PUNCTUATION_LEFT)) {
           result = prevLeaf;
         } else {
           break;
@@ -499,7 +497,7 @@ public class CellLayout_Indent extends AbstractCellLayout {
 
     private Boolean isNoWrap(EditorCell current) {
       while (current != null) {
-        if (APIStyleAdapter.getStyleAttribute(current, StyleAttributes.INDENT_LAYOUT_NO_WRAP)) {
+        if (current.getStyle().get(StyleAttributes.INDENT_LAYOUT_NO_WRAP)) {
           return true;
         }
         if (current.getParent().firstCell() == current) {
