@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 
 import java.util.List;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import java.util.Map;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;

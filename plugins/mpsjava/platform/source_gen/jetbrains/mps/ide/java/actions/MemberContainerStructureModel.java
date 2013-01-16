@@ -5,7 +5,7 @@ package jetbrains.mps.ide.java.actions;
 import jetbrains.mps.ide.platform.dialogs.choosers.NodeTreeModel;
 import com.intellij.ide.structureView.StructureViewModel;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;

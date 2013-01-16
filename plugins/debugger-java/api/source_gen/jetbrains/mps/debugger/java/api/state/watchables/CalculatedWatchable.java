@@ -11,7 +11,7 @@ import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class CalculatedWatchable extends JavaWatchable implements IWatchable {
   private final JavaValue myValue;

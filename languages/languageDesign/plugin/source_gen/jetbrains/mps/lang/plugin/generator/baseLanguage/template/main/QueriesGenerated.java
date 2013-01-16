@@ -15,7 +15,7 @@ import jetbrains.mps.lang.resources.behavior.IconResource_Behavior;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.lang.plugin.behavior.ActionDeclaration_Behavior;
@@ -784,7 +784,7 @@ public class QueriesGenerated {
   }
 
   public static Object referenceMacro_GetReferent_2401501559171673384(final IOperationContext operationContext, final ReferenceMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "baseNodeConcept", false);
+    return SLinkOperations.getTarget(((SNode) _context.getNode()), "baseNodeConcept", false);
   }
 
   public static Object referenceMacro_GetReferent_8147690884614614125(final IOperationContext operationContext, final ReferenceMacroContext _context) {

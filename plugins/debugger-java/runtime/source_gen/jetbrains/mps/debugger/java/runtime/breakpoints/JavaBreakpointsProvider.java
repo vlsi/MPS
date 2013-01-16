@@ -9,7 +9,7 @@ import java.util.Arrays;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.debugger.java.runtime.ui.breakpoints.ExceptionChooserDialog;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointPropertiesUi;
 import org.jetbrains.annotations.Nullable;
 import org.jdom.Element;

@@ -6,7 +6,7 @@ import jetbrains.mps.ide.dialogs.BaseDialog;
 import jetbrains.mps.ide.embeddableEditor.EmbeddableEditor;
 import jetbrains.mps.ide.findusages.view.optionseditor.components.ScopeEditor;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
 import jetbrains.mps.kernel.model.TemporaryModelOwner;

@@ -13,10 +13,9 @@ import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
-import java.util.List;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.extensions.PluginId;
 import jetbrains.mps.smodel.ModelAccess;
@@ -49,13 +48,13 @@ public class GoByReference_ActionGroup extends GeneratedActionGroup {
         return;
       }
 
-      List<SReference> refs = node.getReferences();
-      if (ListSequence.fromList(refs).isEmpty()) {
+      Iterable<SReference> refs = node.getReferences();
+      if (!(refs.iterator().hasNext())) {
         GoByReference_ActionGroup.this.disable(event.getPresentation());
         return;
       }
 
-      for (SReference ref : ListSequence.fromList(refs)) {
+      for (SReference ref : Sequence.fromIterable(refs)) {
         SNode targetNode = ref.getTargetNode();
         if (targetNode != null) {
           String text = "[" + ref.getRole() + "] -> " + ref.getResolveInfo();

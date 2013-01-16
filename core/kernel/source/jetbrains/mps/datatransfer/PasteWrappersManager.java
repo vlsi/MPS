@@ -19,7 +19,7 @@ import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.NameUtil;
 
 import java.util.HashMap;
@@ -87,7 +87,7 @@ public class PasteWrappersManager implements CoreComponent {
   private PasteWrapper getWrapperFor(SNode node, SNode targetConcept) {
     Map<String, PasteWrapper> wrappers = myWrappers.get(NameUtil.nodeFQName(targetConcept));
     if (wrappers == null) return null;
-    List<SNode> superConcepts = SModelUtil_new.getConceptAndSuperConcepts(node.getConceptDeclarationNode());
+    List<SNode> superConcepts = SModelUtil_new.getConceptAndSuperConcepts(((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode());
     for (SNode acd : superConcepts) {
       if (wrappers.containsKey(NameUtil.nodeFQName(acd))) {
         return wrappers.get(NameUtil.nodeFQName(acd));

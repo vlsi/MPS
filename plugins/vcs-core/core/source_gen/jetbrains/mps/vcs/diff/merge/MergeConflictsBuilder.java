@@ -19,7 +19,7 @@ import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.vcs.diff.changes.NodeChange;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
@@ -27,6 +27,7 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.util.SNodeCompare;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.vcs.diff.changes.ImportedModelChange;
 import jetbrains.mps.project.structure.modules.ModuleReference;
@@ -201,8 +202,8 @@ public class MergeConflictsBuilder {
   private boolean nodeGroupChangesSymmetric(NodeGroupChange mine, NodeGroupChange repository) {
     if (mine.getBegin() == repository.getBegin() && mine.getEnd() == repository.getEnd()) {
       if (mine.getResultEnd() - mine.getResultBegin() == repository.getResultEnd() - repository.getResultBegin()) {
-        List<SNode> myChildren = myMyModel.getNodeById(mine.getParentNodeId()).getChildren(mine.getRole());
-        List<SNode> repositoryChildren = myRepositoryModel.getNodeById(repository.getParentNodeId()).getChildren(repository.getRole());
+        List<? extends SNode> myChildren = IterableUtil.asList(myMyModel.getNodeById(mine.getParentNodeId()).getChildren(mine.getRole()));
+        List<? extends SNode> repositoryChildren = IterableUtil.asList(myRepositoryModel.getNodeById(repository.getParentNodeId()).getChildren(repository.getRole()));
         for (int o = 0; o < mine.getResultEnd() - mine.getResultBegin(); o++) {
           if (!(SNodeCompare.nodeEquals(myChildren.get(mine.getResultBegin() + o), repositoryChildren.get(repository.getResultBegin() + o)))) {
             return false;

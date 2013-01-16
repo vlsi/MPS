@@ -10,7 +10,7 @@ import java.util.Map;
 import java.util.HashMap;
 import com.intellij.openapi.util.Pair;
 import jetbrains.mps.typesystem.inference.TypeRecalculatedListener;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import java.util.List;

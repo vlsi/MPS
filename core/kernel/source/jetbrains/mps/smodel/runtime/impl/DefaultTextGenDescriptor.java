@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.runtime.impl;
 
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.runtime.TextGenDescriptor;
 import jetbrains.mps.textGen.TextGenBuffer;
 

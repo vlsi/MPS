@@ -23,7 +23,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.relations.RelationComparator;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.NameUtil;
@@ -109,8 +109,8 @@ public class CreateGroupsBuilder {
 
       final Runnable r2 = new Runnable() {
         public void run() {
-          String mainPack = SNodeAccessUtil.getProperty(myBaseNode.getNode(), SNode.PACK);
-          SNodeAccessUtil.setProperty(created[0], SNode.PACK, mainPack);
+          String mainPack = SNodeAccessUtil.getProperty(myBaseNode.getNode(), jetbrains.mps.smodel.SNode.PACK);
+          SNodeAccessUtil.setProperty(created[0], jetbrains.mps.smodel.SNode.PACK, mainPack);
           myCallback.changeNode(created[0]);
         }
       };

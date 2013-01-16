@@ -17,7 +17,7 @@ package jetbrains.mps.ide.ui;
 
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class SimpleSNodeTreeNode extends MPSTreeNodeEx {
   private SNode myNode;

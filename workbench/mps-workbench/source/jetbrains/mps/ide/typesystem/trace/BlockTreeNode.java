@@ -12,7 +12,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.newTypesystem.state.blocks.BlockKind;
 import jetbrains.mps.newTypesystem.state.blocks.InequalityBlock;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.HashMap;
 
 public class BlockTreeNode extends TypeSystemStateTreeNode {

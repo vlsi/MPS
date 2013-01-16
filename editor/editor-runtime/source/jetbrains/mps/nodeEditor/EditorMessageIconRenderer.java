@@ -17,7 +17,7 @@ package jetbrains.mps.nodeEditor;
 
 import com.intellij.openapi.actionSystem.AnAction;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
 import javax.swing.JPopupMenu;

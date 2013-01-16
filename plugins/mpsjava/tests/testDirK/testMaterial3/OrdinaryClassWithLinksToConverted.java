@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.java.testMaterial3;
 
 import jetbrains.mps.ide.java.testMaterial4.OrdinaryClassWithInnerClasses;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * Cyril.Konopko, 08.12.2009

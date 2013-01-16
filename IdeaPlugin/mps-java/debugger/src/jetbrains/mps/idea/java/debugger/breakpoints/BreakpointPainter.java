@@ -24,7 +24,7 @@ import com.intellij.psi.PsiClass;
 import com.intellij.psi.util.PsiUtil;
 import jetbrains.mps.debugger.core.breakpoints.BreakpointPainterEx;
 import jetbrains.mps.idea.java.trace.GeneratedSourcePosition;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 
 /*package private*/ class BreakpointPainter extends BreakpointPainterEx<BreakpointWithHighlighter> {

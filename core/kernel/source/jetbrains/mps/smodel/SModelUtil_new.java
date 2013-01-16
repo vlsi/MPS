@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.components.CoreComponent;
 import jetbrains.mps.kernel.model.SModelUtil;
@@ -107,23 +107,23 @@ public class SModelUtil_new implements CoreComponent {
     return new ConceptAndSuperConceptsScope(topConcept).getConcepts();
   }
 
-  public static SNode instantiateConceptDeclaration(String conceptFQName, SModel model, IScope scope) {
+  public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(String conceptFQName, SModel model, IScope scope) {
     return instantiateConceptDeclaration(conceptFQName, model, scope, true);
   }
 
-  public static SNode instantiateConceptDeclaration(SNode conceptDeclaration, SModel model) {
+  public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(SNode conceptDeclaration, SModel model) {
     return instantiateConceptDeclaration(NameUtil.nodeFQName(conceptDeclaration), model, GlobalScope.getInstance());
   }
 
-  public static SNode instantiateConceptDeclaration(SNode conceptDeclaration, SModel model, boolean fullNodeStructure) {
+  public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(SNode conceptDeclaration, SModel model, boolean fullNodeStructure) {
     return instantiateConceptDeclaration(NameUtil.nodeFQName(conceptDeclaration), model, GlobalScope.getInstance(), fullNodeStructure);
   }
 
-  public static SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, IScope scope, boolean fullNodeStructure) {
+  public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, IScope scope, boolean fullNodeStructure) {
     return instantiateConceptDeclaration(conceptFqName, model, null, scope, fullNodeStructure);
   }
 
-  public static SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, SNodeId nodeId, IScope scope, boolean fullNodeStructure) {
+  public static jetbrains.mps.smodel.SNode instantiateConceptDeclaration(@NotNull String conceptFqName, @Nullable SModel model, SNodeId nodeId, IScope scope, boolean fullNodeStructure) {
     boolean isNotProjectModel = model==null || !ProjectModels.isProjectModel(model.getSModelReference());
     if (isNotProjectModel) {
       String fqName = ModelConstraints.getDefaultConcreteConceptFqName(conceptFqName);
@@ -139,7 +139,7 @@ public class SModelUtil_new implements CoreComponent {
       conceptFqName = languageNamespace + ".structure." + conceptName;
     }
 
-    SNode newNode = new SNode(conceptFqName);
+    jetbrains.mps.smodel.SNode newNode = new jetbrains.mps.smodel.SNode(conceptFqName);
     if (nodeId != null) {
       newNode.setId(nodeId);
     }
@@ -163,7 +163,7 @@ public class SModelUtil_new implements CoreComponent {
 
         SNode targetConcept = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
         LOG.assertLog(targetConcept != null, "link target is null");
-        if (newNode.getChildren(role).isEmpty()) {
+        if (!newNode.getChildren(role).iterator().hasNext()) {
           SNode childNode = instantiateConceptDeclaration(targetConcept, model);
           newNode.addChild(role, childNode);
         }
@@ -172,7 +172,7 @@ public class SModelUtil_new implements CoreComponent {
   }
 
   public static boolean isAcceptableTarget(SNode sourceNode, String role, SNode targetNode) {
-    SNode conceptDeclaration = sourceNode.getConceptDeclarationNode();
+    SNode conceptDeclaration = ((jetbrains.mps.smodel.SNode) sourceNode).getConceptDeclarationNode();
     SNode linkDeclaration = SModelSearchUtil.findMostSpecificLinkDeclaration(conceptDeclaration, role);
     if (linkDeclaration == null) {
       LOG.error("couldn't find link declaration for role '" + role + "' in hierarchy of concept " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(conceptDeclaration), sourceNode);

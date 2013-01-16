@@ -17,7 +17,7 @@ package jetbrains.mps.generator.impl.dependencies;
 
 import jetbrains.mps.generator.IncrementalGenerationStrategy;
 import jetbrains.mps.generator.ModelDigestHelper;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.textGen.TextGenManager;
 import org.jdom.Element;
 

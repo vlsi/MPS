@@ -17,7 +17,7 @@ import jetbrains.mps.smodel.SModelReference;
 import java.util.Map;
 import jetbrains.mps.smodel.LanguageAspect;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.project.structure.modules.ModuleReference;

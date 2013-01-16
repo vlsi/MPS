@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import org.jetbrains.annotations.Nullable;
 import com.intellij.openapi.project.Project;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jdom.Element;
 import javax.swing.Icon;
 import jetbrains.mps.debug.api.AbstractDebugSession;

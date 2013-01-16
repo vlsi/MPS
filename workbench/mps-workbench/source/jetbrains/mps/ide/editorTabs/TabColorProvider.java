@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.editorTabs;
 
 import com.intellij.openapi.extensions.ExtensionPointName;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;

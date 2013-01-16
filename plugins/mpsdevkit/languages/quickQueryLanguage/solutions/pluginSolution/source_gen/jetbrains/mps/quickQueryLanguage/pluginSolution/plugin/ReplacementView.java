@@ -16,7 +16,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import com.intellij.openapi.progress.ProgressManager;

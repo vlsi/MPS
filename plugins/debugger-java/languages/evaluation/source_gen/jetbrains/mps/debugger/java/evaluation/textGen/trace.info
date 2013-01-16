@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="948722627350505706" modelId="r:377d10f7-3b25-4fc8-965d-ff71d05a8c05(jetbrains.mps.debugger.java.evaluation.textGen)">
-    <nodeInfo nodeId="948722627350505706" fileName="LowLevelVariable_TextGen.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="948722627350505706" fileName="LowLevelVariable_TextGen.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doGenerateText#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="948722627350505706" fileName="LowLevelVariable_TextGen.java" startLine="9" startPosition="42" endLine="9" endPosition="42" />
     <scopeInfo nodeId="948722627350505706" fileName="LowLevelVariable_TextGen.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
       <varInfo nodeId="948722627350505706" varName="node" />

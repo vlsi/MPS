@@ -8,6 +8,7 @@ import jetbrains.mps.lang.dataFlow.DataFlowManager;
 public class DFABuilders extends DataFlowBuilders {
   public void install(DataFlowManager manager) {
     manager.register("jetbrains.mps.lang.quotation.structure.AbstractAntiquotation", new AbstractAntiquotation_DataFlow());
+    manager.register("jetbrains.mps.lang.quotation.structure.NodeBuilder", new NodeBuilder_DataFlow());
     manager.register("jetbrains.mps.lang.quotation.structure.Quotation", new Quotation_DataFlow());
   }
 }

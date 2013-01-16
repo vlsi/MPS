@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -63,6 +63,9 @@ public class DynamicReference extends SReferenceBase {
   }
 
   protected SNode getTargetNode_internal(boolean silently) {
+    // seems like getTargetNode() doesn't make sense if target node is detached
+    assert mySourceNode.getModel() != null;
+
     if (myImmatureTargetNode != null) {
       synchronized (this) {
         if (!makeIndirect()) {

@@ -71,7 +71,7 @@ public class StubModelsFastFindSupport implements ApplicationComponent, FastFind
       }
     });
     for (SNode node : SetSequence.fromSet(nodes)) {
-      jetbrains.mps.smodel.SNode snode = ((jetbrains.mps.smodel.SNode) node);
+      SNode snode = ((SNode) node);
       if (!(SNodeOperations.isInstanceOf(snode, "jetbrains.mps.baseLanguage.structure.TypeVariableDeclaration"))) {
         continue;
       }

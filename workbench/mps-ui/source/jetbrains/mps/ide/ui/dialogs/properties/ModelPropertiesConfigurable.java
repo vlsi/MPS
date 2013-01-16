@@ -33,7 +33,8 @@ import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.ide.ui.dialogs.properties.creators.LanguageChooser;
 import jetbrains.mps.ide.ui.dialogs.properties.creators.ModelChooser;
@@ -227,7 +228,7 @@ public class ModelPropertiesConfigurable extends MPSPropertiesConfigurable {
           messageText.append("<html>");
           SModel model = myModelDescriptor.getSModel();
           for (SNode node : model.nodes()) {
-            references += node.getReferences().size();
+            references += IterableUtil.asCollection(node.getReferences()).size();
             properties += jetbrains.mps.util.SNodeOperations.getProperties(node).keySet().size();
           }
           messageText.append("Roots : ").append(model.rootsCount()).append("<br>");

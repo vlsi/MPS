@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.collections.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IVariableReference_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class ForEachVariableReference_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IVariableReference_BehaviorDescriptor {
   public ForEachVariableReference_BehaviorDescriptor() {

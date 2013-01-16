@@ -4,7 +4,7 @@ package jetbrains.mps.testbench.suite.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class SolutionRef_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IModuleRef_BehaviorDescriptor {
   public SolutionRef_BehaviorDescriptor() {

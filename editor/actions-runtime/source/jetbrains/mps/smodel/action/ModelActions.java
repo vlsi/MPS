@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.nodeEditor.CellSide;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 

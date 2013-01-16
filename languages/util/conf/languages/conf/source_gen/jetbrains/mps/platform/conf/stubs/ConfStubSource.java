@@ -17,7 +17,7 @@ import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.stubs.util.PathItem;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.smodel.SNodeId;
@@ -66,7 +66,7 @@ public class ConfStubSource extends FolderSetDataSource implements MultiRootMode
         SNode doc = (SNode) model.getNodeById(id);
         if ((doc == null)) {
           doc = SConceptOperations.createNewNode(NameUtil.nodeFQName(SConceptOperations.findConceptDeclaration("jetbrains.mps.platform.conf.structure.ConfigurationXmlDocument")), sample);
-          doc.setId(id);
+          ((jetbrains.mps.smodel.SNode) doc).setId(id);
           SPropertyOperations.set(doc, "name", pi.baseName(docres));
           SModelOperations.addRootNode(((SModel) model), doc);
           ListSequence.fromList(doclst).addElement(MultiTuple.<String,String,SNode,PathItem>from(pkg, docres, doc, pi));

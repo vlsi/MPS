@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.devkit.cellExplorer;
 
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 

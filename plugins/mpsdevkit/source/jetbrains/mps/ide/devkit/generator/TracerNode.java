@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.devkit.generator;
 
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.ArrayWrapper;
 
 import java.util.ArrayList;

@@ -7,7 +7,7 @@ import javax.swing.JCheckBox;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.project.Project;
 import com.intellij.ui.NonFocusableCheckBox;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.Map;
@@ -16,6 +16,7 @@ import java.util.HashMap;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Comparator;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 
 public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
@@ -128,7 +129,7 @@ public class OverrideImplementMethodsDialog extends GroupedNodesChooser {
             return aRole.compareTo(bRole);
           }
 
-          return new Integer(parentA.getChildren(aRole).indexOf(a)).compareTo(parentB.getChildren(bRole).indexOf(b));
+          return new Integer(IterableUtil.asList(parentA.getChildren(aRole)).indexOf(a)).compareTo(IterableUtil.asList(parentB.getChildren(bRole)).indexOf(b));
         }
         int iA = (parentA != null && MapSequence.fromMap(containerIndex).containsKey(parentA) ?
           MapSequence.fromMap(containerIndex).get(parentA) :

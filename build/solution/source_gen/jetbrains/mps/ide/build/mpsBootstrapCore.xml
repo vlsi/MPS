@@ -4868,7 +4868,7 @@
         <module file="${mps_home}/core/typesystemEngine/solutions/jetbrains.mps.typesystemEngine/jetbrains.mps.typesystemEngine.msd" bootstrap="true" />
         <module file="${mps_home}/core/kernel/stubUtils/stubUtils.msd" bootstrap="true" />
       </chunk>
-      <chunk>
+      <chunk bootstrap="true">
         <module file="${mps_home}/languages/core/stub/Ant/Ant.msd" />
         <module file="${mps_home}/languages/core/stub/Testbench/Testbench.msd" />
         <module file="${mps_home}/languages/baseLanguage/constructors/jetbrains.mps.baseLanguage.constructors.mpl" />
@@ -4880,7 +4880,7 @@
         <module file="${mps_home}/languages/util/execution/util/jetbrains.mps.execution.util.mpl" />
         <module file="${mps_home}/core/findUsages-runtime/jetbrains.mps.findUsages.runtime.msd" />
         <module file="${mps_home}/workbench/mps-ui/jetbrains.mps.ide.ui.msd" />
-        <module file="${mps_home}/languages/languageDesign/generator/languages/descriptor/jetbrains.mps.lang.descriptor.mpl" />
+        <module file="${mps_home}/languages/languageDesign/generator/languages/descriptor/jetbrains.mps.lang.descriptor.mpl" bootstrap="true" />
         <module file="${mps_home}/languages/languageDesign/traceable.operations/jetbrains.mps.lang.traceable.operations.mpl" />
         <module file="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/jetbrains.mps.make.msd" />
         <module file="${mps_home}/core/tool/ant/jetbrains.mps.tool.ant.msd" />
@@ -4893,23 +4893,5 @@
     </mps.generate>
   </target>
   
-  <target name="cleanSources">
-    <delete dir="${mps_home}/languages/baseLanguage/constructors/source_gen" />
-    <delete dir="${mps_home}/languages/baseLanguage/doubleDispatch/source_gen" />
-    <delete dir="${mps_home}/languages/baseLanguage/overloadedOperators/languages/overloadedOperators/source_gen" />
-    <delete dir="${mps_home}/languages/util/buildlanguage/languages/gentest/source_gen" />
-    <delete dir="${mps_home}/languages/util/buildlanguage/languages/reduced/source_gen" />
-    <delete dir="${mps_home}/languages/util/execution/util/source_gen" />
-    <delete dir="${mps_home}/core/findUsages-runtime/source_gen" />
-    <delete dir="${mps_home}/workbench/mps-ui/source_gen" />
-    <delete dir="${mps_home}/languages/languageDesign/generator/languages/descriptor/source_gen" />
-    <delete dir="${mps_home}/languages/languageDesign/traceable.operations/source_gen" />
-    <delete dir="${mps_home}/core/make-runtime/solutions/jetbrains.mps.make/source_gen" />
-    <delete dir="${mps_home}/core/tool/ant/source_gen" />
-    <delete dir="${mps_home}/core/tool/builder/source_gen" />
-    <delete dir="${mps_home}/core/tool/common/source_gen" />
-    <delete dir="${mps_home}/core/kernel/jetbrains.mps.debug.api.info/source_gen" />
-    <delete dir="${mps_home}/core/generator/solutions/traceInfo/util/source_gen" />
-    <delete dir="${mps_home}/editor/typesystemIntegration/source_gen" />
-  </target>
+  <target name="cleanSources" />
 </project>

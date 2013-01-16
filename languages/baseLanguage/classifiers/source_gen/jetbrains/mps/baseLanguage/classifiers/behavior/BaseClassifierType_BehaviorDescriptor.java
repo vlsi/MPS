@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class BaseClassifierType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public BaseClassifierType_BehaviorDescriptor() {

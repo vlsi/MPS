@@ -16,7 +16,7 @@
 package jetbrains.mps.project;
 
 import jetbrains.mps.project.structure.modules.*;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.*;
 
 import java.util.ArrayList;

@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
 import org.jdom.Document;
@@ -163,15 +163,13 @@ public class ModelWriter4 implements IModelWriter {
     }
 
     // references ...
-    List<SReference> references = node.getReferences();
     IReferencePersister referencePersister = getReferencePersister();
-    for (SReference reference : references) {
+    for (SReference reference : node.getReferences()) {
       referencePersister.saveReference(element, reference, useUIDs, visibleModelElements);
     }
 
     // children ...
-    List<SNode> children = node.getChildren();
-    for (SNode childNode : children) {
+    for (SNode childNode : node.getChildren()) {
       saveNode(element, null, childNode, useUIDs, visibleModelElements);
     }
 

@@ -4,7 +4,7 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class Concept_GetAllSuperConcepts_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Concept_GetAllSuperConcepts_BehaviorDescriptor() {

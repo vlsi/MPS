@@ -4,7 +4,7 @@ package jetbrains.mps.build.packaging.behavior;
 
 import jetbrains.mps.buildlanguage.behavior.PropertyValueExpression_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.io.File;
 
 public class Path_BehaviorDescriptor extends PropertyValueExpression_BehaviorDescriptor implements IPath_BehaviorDescriptor {

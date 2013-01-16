@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.java.runtime.evaluation.model;
 
 import jetbrains.mps.debugger.java.api.state.JavaUiState;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaStackFrame;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaLocation;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;

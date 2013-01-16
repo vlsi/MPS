@@ -9,7 +9,7 @@
     <nodeInfo nodeId="2050748146933619480" fileName="CheckProjectStructureUtil.java" startLine="17" startPosition="205" endLine="20" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2050748146933621405" fileName="CheckProjectStructureUtil.java" startLine="21" startPosition="86" endLine="24" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="2050748146933621392" fileName="CheckProjectStructureUtil.java" startLine="20" startPosition="5" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="2050748146933617499" fileName="CheckProjectStructureUtil.java" startLine="16" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="filterIssue#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="2050748146933617499" fileName="CheckProjectStructureUtil.java" startLine="16" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="filterIssue#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <scopeInfo nodeId="4421917191016660671" fileName="CheckProjectStructureUtil.java" startLine="13" startPosition="38" endLine="13" endPosition="38" />
     <scopeInfo nodeId="2050748146933619482" fileName="CheckProjectStructureUtil.java" startLine="18" startPosition="28" endLine="19" endPosition="18" />
     <scopeInfo nodeId="2050748146933621406" fileName="CheckProjectStructureUtil.java" startLine="22" startPosition="105" endLine="23" endPosition="21" />

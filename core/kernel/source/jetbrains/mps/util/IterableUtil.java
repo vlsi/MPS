@@ -43,6 +43,10 @@ public class IterableUtil {
 
   public static <T> List<T> asList(Iterable<T> iter) {
     if (iter instanceof List) return (List<T>) iter;
+    return copyToList(iter);
+  }
+
+  public static <T> List<T> copyToList(Iterable<T> iter) {
     List<T> result = new ArrayList<T>();
     for (T o : iter) {
       result.add(o);
@@ -56,5 +60,13 @@ public class IterableUtil {
         return i;
       }
     };
+  }
+
+  public static <T> T get(Iterable<T> data, int index){
+    Iterator<T> it = data.iterator();
+    for (int i = 0;i<index;i++){
+      it.next();
+    }
+    return it.next();
   }
 }

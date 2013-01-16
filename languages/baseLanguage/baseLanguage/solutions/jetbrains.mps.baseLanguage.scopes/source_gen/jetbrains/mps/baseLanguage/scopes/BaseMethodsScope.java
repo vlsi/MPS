@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.scopes;
 import jetbrains.mps.scope.Scope;
 import java.util.Map;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.util.NameUtil;

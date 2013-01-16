@@ -4,7 +4,7 @@ package jetbrains.mps.lang.stubs.behavior;
 
 import jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifier_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.classifiers.behavior.IClassifier_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class ModelManagerDeclaration_BehaviorDescriptor extends DefaultClassifier_BehaviorDescriptor implements IClassifier_BehaviorDescriptor {
   public ModelManagerDeclaration_BehaviorDescriptor() {

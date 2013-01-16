@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.ide.findusages.model.SearchResults;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;

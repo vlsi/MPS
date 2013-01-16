@@ -14,7 +14,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell;
 import javax.swing.SwingUtilities;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import java.awt.Frame;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.NodeInformationDialog;
 import jetbrains.mps.logging.Logger;
 

@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.model.SNodeUtil;
 
 public class DefaultAttributeNodeSetter extends DefaultChildNodeSetter {

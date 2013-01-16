@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.TypeChecker;
@@ -19,6 +19,7 @@ import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.SModelReference;
@@ -89,7 +90,7 @@ public class check_ForeachWithErasure_NonTypesystemRule extends AbstractNonTypes
             return false;
           }
           {
-            SNode childVar_check_ForeachWithErasure_gn1qzs_a0a0c0 = nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a.getChildren(childRole_check_ForeachWithErasure_gn1qzs_).get(0);
+            SNode childVar_check_ForeachWithErasure_gn1qzs_a0a0c0 = IterableUtil.get(nodeToMatch_check_ForeachWithErasure_gn1qzs_a0a2a.getChildren(childRole_check_ForeachWithErasure_gn1qzs_), 0);
             this.patternVar_p = childVar_check_ForeachWithErasure_gn1qzs_a0a0c0;
           }
         }

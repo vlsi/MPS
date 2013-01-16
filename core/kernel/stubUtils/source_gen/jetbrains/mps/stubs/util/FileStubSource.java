@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.nodeidmap.ForeignNodeIdMap;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.library.ModulesMiner;
 import jetbrains.mps.project.structure.stub.ProjectStructureBuilder;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.model.ModelRootDescriptor;
 import jetbrains.mps.internal.collections.runtime.ITranslator2;

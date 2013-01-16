@@ -49,6 +49,12 @@ public class GraphUtil {
     return merge(transpose(graph), graph);
   }
 
+  public static void sort(int[][] graph) {
+    for(int[] edges : graph) {
+      Arrays.sort(edges);
+    }
+  }
+
   public static int[][] transpose(int[][] graph) {
     int count = graph.length;
     int[] size = new int[count];
@@ -73,6 +79,7 @@ public class GraphUtil {
   }
 
   public static int[][] merge(int[][] graph1, int[][] graph2) {
+    assert graph1.length == graph2.length;
     int count = graph1.length;
     int[] data = new int[count];
     int[][] result = new int[count][];

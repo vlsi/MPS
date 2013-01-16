@@ -9,7 +9,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointsProvider;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public interface IDebugger<B extends IBreakpoint, K extends IBreakpointKind<B>> {
   @NotNull

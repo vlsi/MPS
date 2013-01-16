@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.table.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public class QueryFunction_TableModel_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {

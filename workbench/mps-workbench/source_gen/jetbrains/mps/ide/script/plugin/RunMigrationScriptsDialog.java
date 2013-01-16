@@ -4,7 +4,7 @@ package jetbrains.mps.ide.script.plugin;
 
 import javax.swing.JDialog;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import javax.swing.JTable;
 import javax.swing.JButton;

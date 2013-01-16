@@ -4,7 +4,7 @@ package jetbrains.mps.execution.settings.behavior;
 
 import jetbrains.mps.baseLanguage.classifiers.behavior.BaseClassifierType_BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class PersistentConfigurationType_BehaviorDescriptor extends BaseClassifierType_BehaviorDescriptor {
   public PersistentConfigurationType_BehaviorDescriptor() {

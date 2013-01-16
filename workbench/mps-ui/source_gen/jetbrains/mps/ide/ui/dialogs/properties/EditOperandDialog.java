@@ -16,7 +16,7 @@ import javax.swing.tree.DefaultTreeModel;
 import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.tree.TreePath;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SNodePointer;

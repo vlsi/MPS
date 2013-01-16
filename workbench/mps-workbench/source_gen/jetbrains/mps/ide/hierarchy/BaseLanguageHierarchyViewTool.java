@@ -5,7 +5,7 @@ package jetbrains.mps.ide.hierarchy;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.ide.ui.TreeHighlighterExtension;
 import java.util.Set;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.HashSet;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -83,7 +83,7 @@ public class BaseLanguageHierarchyViewTool extends AbstractHierarchyView {
     }
 
     protected Set<SNode> getDescendants(SNode node, Set<SNode> visited) {
-      Set<SReference> usages = ((Set) myUsagesManager.findUsages(Collections.<org.jetbrains.mps.openapi.model.SNode>singleton(node), SearchType.USAGES, GlobalScopeMinusTransient.getInstance(), null));
+      Set<SReference> usages = ((Set) myUsagesManager.findUsages(Collections.<SNode>singleton(node), SearchType.USAGES, GlobalScopeMinusTransient.getInstance(), null));
       Set<SNode> result = new HashSet<SNode>();
       for (SReference usage : usages) {
         SNode sourceNode = usage.getSourceNode();

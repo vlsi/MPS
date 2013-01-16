@@ -5,7 +5,7 @@ package jetbrains.mps.ypath.behavior;
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public class FeatureSizeFun_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor implements IDontSubstituteByDefault_BehaviorDescriptor {

@@ -5,7 +5,7 @@ package jetbrains.mps.lang.pattern.behavior;
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IMetaLevelChanger_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.ISuppressErrors_Behavior;
 
 public class PatternExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IMetaLevelChanger_BehaviorDescriptor, ISuppressErrors_BehaviorDescriptor {

@@ -13,6 +13,7 @@ public class IntentionsDescriptor extends BaseIntentionsDescriptor {
   }
 
   public void init() {
+    IntentionsManager.getInstance().registerIntentionFactory(new ConvertToNodeBuilder_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new CreateAntiquotation_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new CreateListAntiquotation_Intention());
     IntentionsManager.getInstance().registerIntentionFactory(new CreatePropertyAntiquotation_Intention());

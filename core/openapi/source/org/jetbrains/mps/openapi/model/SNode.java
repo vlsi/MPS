@@ -15,7 +15,7 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -46,6 +46,9 @@ import org.jetbrains.mps.openapi.language.SConcept;
 public interface SNode {
 
   //common properties
+
+  //migration-time only
+  jetbrains.mps.smodel.SModel getModel();
 
   /**
    * Uniquely identifies the node within its containing model. May also be null.
@@ -182,7 +185,7 @@ public interface SNode {
    * <p/>
    * The returned collection is immutable.
    */
-  public Iterable<? extends jetbrains.mps.smodel.SReference> getReferences();
+  public Iterable<jetbrains.mps.smodel.SReference> getReferences();
 
   // props
 

@@ -4,7 +4,7 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.IMethodCall_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.IMethodCall_Behavior;
 import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
 import java.util.Map;

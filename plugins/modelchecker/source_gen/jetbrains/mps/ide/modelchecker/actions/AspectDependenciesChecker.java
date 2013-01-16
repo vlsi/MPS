@@ -13,7 +13,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -193,7 +193,7 @@ public class AspectDependenciesChecker extends SpecificChecker {
   public static boolean findInModule(SModule module, String modelName, String rootName) {
     for (org.jetbrains.mps.openapi.model.SModel d : module.getModels()) {
       if (d.getModelName().equals(modelName)) {
-        for (org.jetbrains.mps.openapi.model.SNode _n : d.getRootNodes()) {
+        for (SNode _n : d.getRootNodes()) {
           SNode n = (SNode) _n;
           if (SNodeOperations.isInstanceOf(n, "jetbrains.mps.baseLanguage.structure.Classifier") && SPropertyOperations.getString(SNodeOperations.cast(n, "jetbrains.mps.baseLanguage.structure.Classifier"), "name").equals(rootName)) {
             return true;

@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.unitTest.scripts;
 import jetbrains.mps.lang.script.runtime.BaseMigrationScript;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.script.runtime.AbstractMigrationRefactoring;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.unitTest.typesystem.CheckUtils;
 
 public class FixPluginKindForMPSTestCases_MigrationScript extends BaseMigrationScript {

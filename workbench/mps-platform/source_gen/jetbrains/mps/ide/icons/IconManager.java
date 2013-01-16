@@ -11,7 +11,7 @@ import jetbrains.mps.smodel.LanguageAspect;
 import java.awt.Component;
 import java.awt.Graphics;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.smodel.SNodeOperations;

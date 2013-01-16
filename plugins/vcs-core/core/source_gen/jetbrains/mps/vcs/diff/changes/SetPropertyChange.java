@@ -6,7 +6,7 @@ import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class SetPropertyChange extends NodeChange {
   private String myPropertyName;

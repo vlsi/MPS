@@ -4,7 +4,7 @@ package jetbrains.mps.platform.conf.behavior;
 
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class Plugin_BehaviorDescriptor extends IdeaPluginRoot_BehaviorDescriptor implements IConfigurationFragment_BehaviorDescriptor, INamedConcept_BehaviorDescriptor, IResolveInfo_BehaviorDescriptor {

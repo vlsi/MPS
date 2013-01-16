@@ -19,7 +19,8 @@ import jetbrains.mps.errors.messageTargets.PropertyMessageTarget;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.errors.messageTargets.ReferenceMessageTarget;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.errors.messageTargets.DeletedNodeMessageTarget;
 
@@ -54,7 +55,7 @@ public class ChangeEditorMessageFactory {
       if (parentNode == null) {
         return null;
       }
-      List<SNode> changeChildren = parentNode.getChildren(role);
+      List<? extends SNode> changeChildren = IterableUtil.asList(parentNode.getChildren(role));
 
       int changeBegin = (reversed ?
         ngc.getBegin() :
@@ -75,7 +76,7 @@ public class ChangeEditorMessageFactory {
         changeChildren.get(changeEnd).getNodeId() :
         null
       );
-      int currentChildrenSize = parentNode.getChildren(role).size();
+      int currentChildrenSize = changeChildren.size();
 
       int beginIndex = (beginId == null ?
         currentChildrenSize :
@@ -94,7 +95,7 @@ public class ChangeEditorMessageFactory {
         id = parentId;
         messageTarget = new DeletedNodeMessageTarget(role, beginIndex);
       } else {
-        List<SNode> editedChildren = editedModel.getNodeById(parentId).getChildren(role);
+        List<? extends SNode> editedChildren = IterableUtil.asList(editedModel.getNodeById(parentId).getChildren(role));
         for (int i = beginIndex; i < endIndex; i++) {
           ListSequence.fromList(messages).addElement(new ChangeEditorMessage(editedChildren.get(i), new NodeMessageTarget(), owner, change, conflictChecker, highlighted));
         }

@@ -4,7 +4,7 @@ package jetbrains.mps.ide.java.parser;
 
 import jetbrains.mps.smodel.SModel;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.project.GlobalScope;

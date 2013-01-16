@@ -2,8 +2,8 @@
 <debugInfo>
   <root nodeId="3882421039144497491" modelId="r:95d22feb-0fb2-45bb-8dc4-fee131cf897f(jetbrains.mps.quickQueryLanguage.runtime)">
     <nodeInfo nodeId="3882421039144497493" fileName="Query.java" startLine="8" startPosition="0" endLine="9" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getConcept#()Ljava/lang/String;" />
-    <nodeInfo nodeId="3882421039144497497" fileName="Query.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doReplace#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="3882421039144497503" fileName="Query.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSatisfies#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="3882421039144497497" fileName="Query.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="doReplace#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="3882421039144497503" fileName="Query.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isSatisfies#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
     <scopeInfo nodeId="3882421039144497493" fileName="Query.java" startLine="8" startPosition="0" endLine="9" endPosition="0" />
     <scopeInfo nodeId="3882421039144497497" fileName="Query.java" startLine="9" startPosition="0" endLine="10" endPosition="0">
       <varInfo nodeId="3882421039144497500" varName="node" />
