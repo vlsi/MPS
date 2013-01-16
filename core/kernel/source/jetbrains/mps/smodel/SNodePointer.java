@@ -99,7 +99,7 @@ public class SNodePointer implements SNodeReference {
     return ref.toString() + "/" + id.toString();
   }
 
-  public SNodePointer deserialize(String from) {
+  public static SNodePointer deserialize(String from) {
     String[] split = from.split("/");
     assert split.length == 2;
     return new SNodePointer(split[0], split[1]);
