@@ -74,7 +74,7 @@ public class SNodePointer implements SNodeReference {
     if (node == null) {
       return "[bad pointer] model=" + myModelReference + " node id=" + myNodeId;
     }
-    return node.toString();
+    return org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(node);
   }
 
   public boolean equals(Object o) {
@@ -118,8 +118,12 @@ public class SNodePointer implements SNodeReference {
     return myNodeId;
   }
 
+  @Deprecated
+  /**
+   * Inline content in java code, use migration in MPS
+   * @Deprecated in 3.0
+   */
   public String getDebugText() {
-    if (getNode() == null) return "<unknown node> model=" + myModelReference + " node id=" + myNodeId;
-    return org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(getNode());
+    return toString();
   }
 }
