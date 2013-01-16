@@ -26,7 +26,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
   public void updateLowLevelVariable(SNode variable) {
     if (myIsHighLevelInfoAvailable) {
       SPropertyOperations.set(variable, "name", myHighLevelName);
-      SPropertyOperations.set(variable, "highLevelNodeId", myHighLevelNode.getNodeId().toString());
+      SPropertyOperations.set(variable, "highLevelNodeId", SNodePointer.serialize(myHighLevelNode));
     } else {
       SPropertyOperations.set(variable, "name", myLowLevelName);
     }
