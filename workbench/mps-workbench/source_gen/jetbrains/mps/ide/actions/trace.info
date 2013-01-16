@@ -9454,19 +9454,21 @@
     <nodeInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="13" startPosition="31" endLine="14" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="14" startPosition="30" endLine="15" endPosition="25" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="4053449317375481130" fileName="FlyingActions_ActionGroup.java" startLine="16" startPosition="9" endLine="17" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5152061616759032947" fileName="FlyingActions_ActionGroup.java" startLine="17" startPosition="108" endLine="18" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="5152061616759057020" fileName="FlyingActions_ActionGroup.java" startLine="18" startPosition="99" endLine="19" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="15" startPosition="25" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
-    <nodeInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="12" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FlyingActions_ActionGroup#()V" />
-    <scopeInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="20" startPosition="0" endLine="21" endPosition="39">
+    <nodeInfo nodeId="8685889515287057808" fileName="FlyingActions_ActionGroup.java" startLine="17" startPosition="108" endLine="18" endPosition="113" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8685889515287057819" fileName="FlyingActions_ActionGroup.java" startLine="18" startPosition="113" endLine="19" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5152061616759032947" fileName="FlyingActions_ActionGroup.java" startLine="19" startPosition="108" endLine="20" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5152061616759057020" fileName="FlyingActions_ActionGroup.java" startLine="20" startPosition="99" endLine="21" endPosition="108" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="22" startPosition="27" endLine="23" endPosition="39" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="15" startPosition="25" endLine="24" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.TryCatchStatement" />
+    <nodeInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="12" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="FlyingActions_ActionGroup#()V" />
+    <scopeInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="22" startPosition="0" endLine="23" endPosition="39">
       <varInfo nodeId="4053449317375378317" varName="t" />
     </scopeInfo>
-    <scopeInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="20" startPosition="27" endLine="21" endPosition="39" />
-    <scopeInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="16" startPosition="9" endLine="19" endPosition="108" />
-    <scopeInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="12" startPosition="38" endLine="22" endPosition="5" />
-    <scopeInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="12" startPosition="0" endLine="24" endPosition="0" />
-    <unitInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="8" startPosition="0" endLine="25" endPosition="0" unitName="jetbrains.mps.ide.actions.FlyingActions_ActionGroup" />
+    <scopeInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="22" startPosition="27" endLine="23" endPosition="39" />
+    <scopeInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="16" startPosition="9" endLine="21" endPosition="108" />
+    <scopeInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="12" startPosition="38" endLine="24" endPosition="5" />
+    <scopeInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="12" startPosition="0" endLine="26" endPosition="0" />
+    <unitInfo nodeId="4053449317375378317" fileName="FlyingActions_ActionGroup.java" startLine="8" startPosition="0" endLine="27" endPosition="0" unitName="jetbrains.mps.ide.actions.FlyingActions_ActionGroup" />
   </root>
   <root nodeId="4514830148568015579" modelId="r:00000000-0000-4000-0000-011c895904a4(jetbrains.mps.ide.actions)">
     <nodeInfo nodeId="4514830148568018450" fileName="SetNodePackageDialog.java" startLine="25" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myIsCancelled" />
