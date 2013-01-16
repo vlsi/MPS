@@ -15,5 +15,11 @@ do
      -e 's/\([^\.]\)SNodeId\.Foreign/\1jetbrains\.mps\.smodel\.SNodeId\.Foreign/g' \
      -e 's/SNodeId\.fromString(/jetbrains\.mps\.smodel\.SNodeId\.fromString(/g' \
      -e 's/SNodeId\.toString(/jetbrains\.mps\.smodel\.SNodeId\.toString(/g' \
+\
+     -e 's/import jetbrains\.mps\.smodel\.SNodePointer;/import org\.jetbrains\.mps\.openapi\.model\.SNodeReference;/g' \
+     -e 's/import jetbrains\.mps\.smodel\.\*;/import org\.jetbrains\.mps\.openapi\.model\.SNodeReference;import jetbrains\.mps\.smodel\.\*;/g' \
+     -e 's/package jetbrains\.mps\.smodel;/package jetbrains\.mps\.smodel;import org\.jetbrains\.mps\.openapi\.model\.SNodeReference;/g' \
+     -e 's/SNodePointer\.serialize(/jetbrains\.mps\.smodel\.SNodePointer\.serialize(/g' \
+     -e 's/SNodePointer\.deserialize(/jetbrains\.mps\.smodel\.SNodePointer\.deserialize(/g' \
 $fl
 done
