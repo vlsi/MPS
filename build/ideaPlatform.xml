@@ -37,6 +37,7 @@
   </target>
 
   <target name="force-resolve" depends="install-ivy">
+    <property name="mps.ivy.home" value="${user.home}"/>
     <ivy:retrieve pattern="../[orgPath]/[artifact]" overwritemode="different"/>
   </target>
 
