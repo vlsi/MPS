@@ -86,7 +86,7 @@ public class SafeDeleteModuleDependency_Action extends BaseAction {
     try {
       IModule from = check_bai5av_a0a0a(as_iuftgz_a0a0a0a0e(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
       IModule to = check_bai5av_a0b0a(as_iuftgz_a0a0b0a0e(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class));
-      SearchResults results = DependenciesUtil.analyzeDependencies(from, to, ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), false);
+      SearchResults results = DependenciesUtil.analyzeDependencies(from, to, ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), false, false);
       if (!(results.getSearchResults().isEmpty())) {
         int res = Messages.showDialog("Can't safe delete dependency", "Safe delete impossible", new String[]{"View dependencies", "Delete anyway", "Cancel"}, 0, null);
         if (res == 0) {

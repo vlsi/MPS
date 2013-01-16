@@ -39,6 +39,10 @@ public class ModuleDependenies_Tool extends GeneratedTool {
     ModuleDependenies_Tool.this.myComponent.showLoops(node);
   }
 
+  public void ShowBootstrapDep(ModuleDependencyNode.ULangDependencyNode node) {
+    ModuleDependenies_Tool.this.myComponent.showBootstrapLoop(node);
+  }
+
   public JComponent getComponent() {
     return ModuleDependenies_Tool.this.myComponent;
   }

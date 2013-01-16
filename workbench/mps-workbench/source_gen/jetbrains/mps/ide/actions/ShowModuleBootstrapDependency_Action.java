@@ -17,12 +17,12 @@ import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 
-public class ShowModuleDependencyLoop_Action extends BaseAction {
+public class ShowModuleBootstrapDependency_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowModuleDependencyLoop_Action.class);
+  protected static Log log = LogFactory.getLog(ShowModuleBootstrapDependency_Action.class);
 
-  public ShowModuleDependencyLoop_Action() {
-    super("Show Cycle Paths", "Show Cycle Paths for Selected Module", ICON);
+  public ShowModuleBootstrapDependency_Action() {
+    super("Show Bootstrap Dependency", "Show Bootstrap Dependency for Used Language", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -33,11 +33,11 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    ModuleDependencyNode node = as_hir9am_a0a0a1(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.class);
+    ModuleDependencyNode node = as_b70vs2_a0a0a1(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.ULangDependencyNode.class);
     if (node == null) {
       return false;
     }
-    return node.isCyclic() && !(node.isUsedLanguage());
+    return node.isCyclic();
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -48,7 +48,7 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
       }
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowModuleDependencyLoop", t);
+        log.error("User's action doUpdate method failed. Action:" + "ShowModuleBootstrapDependency", t);
       }
       this.disable(event.getPresentation());
     }
@@ -71,22 +71,22 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).ShowLoops(as_hir9am_a0a0a0a0e(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.class));
+      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).ShowBootstrapDep(as_b70vs2_a0a0a0a0e(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.ULangDependencyNode.class));
     } catch (Throwable t) {
       if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowModuleDependencyLoop", t);
+        log.error("User's action execute method failed. Action:" + "ShowModuleBootstrapDependency", t);
       }
     }
   }
 
-  private static <T> T as_hir9am_a0a0a1(Object o, Class<T> type) {
+  private static <T> T as_b70vs2_a0a0a1(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_hir9am_a0a0a0a0e(Object o, Class<T> type) {
+  private static <T> T as_b70vs2_a0a0a0a0e(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
