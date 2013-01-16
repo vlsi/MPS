@@ -4,7 +4,7 @@
   <property name="idea_home" location=".." />
 
   <target name="build">
-    <ant antfile="ideaPlatform.xml" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="ideaPlatform.xml" target="force-resolve" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildCore.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildCoreEx.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="buildJava.xml" inheritAll="true" useNativeBasedir="true" />

@@ -3,7 +3,7 @@
   <property name="idea.platform.version" value="123.45" />
   <property name="ivy.jar.dir" value="${basedir}/ivy" />
 
-  <target name="install-ivy" description="--> install ivy">
+  <target name="install-ivy">
     <path id="ivy.lib.path">
       <fileset dir="${ivy.jar.dir}" includes="*.jar"/>
     </path>
@@ -11,9 +11,37 @@
              uri="antlib:org.apache.ivy.ant" classpathref="ivy.lib.path"/>
   </target>
 
-  <target name="resolve" depends="install-ivy" description="--> retreive dependencies with ivy">
-    <ivy:retrieve pattern="../[orgPath]/[artifact]"/>
+  <target name="checkPlatformIsUpToDate" depends="readFile">
+    <condition property="platformNeedUpdate" value="true" else="false">
+      <not>
+        <and>
+          <equals arg1="${buildTxtExist}" arg2="true" />
+          <equals arg1="${idea.platform.version}" arg2="${currentVersion}" />
+        </and>
+      </not>
+    </condition>
   </target>
 
+  <target name="checkFileExist">
+    <condition property="buildTxtExist" value="true" else="false">
+      <available file="../lib/build.txt"/>
+    </condition>
+  </target>
+
+  <target name="readFile" depends="checkFileExist" if="${buildTxtExist}">
+    <loadfile property="currentVersion" srcfile="../lib/build.txt">
+      <filterchain>
+        <striplinebreaks/>
+      </filterchain>
+    </loadfile>
+  </target>
+
+  <target name="force-resolve" depends="install-ivy">
+    <ivy:retrieve pattern="../[orgPath]/[artifact]" overwritemode="different"/>
+  </target>
+
+  <target name="resolve" depends="checkPlatformIsUpToDate" description="--> Retreive dependencies with ivy if platform is changed" if="${platformNeedUpdate}">
+    <antcall target="force-resolve"/>
+  </target>
 
 </project>

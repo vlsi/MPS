@@ -1,6 +1,12 @@
 <ivy-module version="2.0">
   <info organisation="org.jetbrains.mps" module="idea-platform"/>
   <dependencies>
+
+    <!--version-->
+    <dependency org="lib" name="build.txt" rev="${idea.platform.version}">
+      <artifact name="build.txt" ext="txt"/>
+    </dependency>
+
     <!--
     lib
       ant
@@ -477,6 +483,20 @@
     </dependency>
     <dependency org="lib" name="tools.jar" rev="1.6">
       <artifact name="tools.jar" ext="jar"/>
+    </dependency>
+    <dependency org="lib" name="jgoodies-common-1.2.1.jar" rev="1.2.1">
+      <artifact name="jgoodies-common-1.2.1.jar" ext="jar"/>
+    </dependency>
+
+    <!--
+    lib
+      src
+    (Not IDEA platform libs)-->
+    <dependency org="lib.src" name="beansbinding-1.2.1-src.zip" rev="1.2.1">
+      <artifact name="beansbinding-1.2.1-src.zip" ext="zip"/>
+    </dependency>
+    <dependency org="lib.src" name="diffutils-1.2.1-sources.jar" rev="1.2.1">
+      <artifact name="diffutils-1.2.1-sources.jar" ext="jar"/>
     </dependency>
 
     <!--
