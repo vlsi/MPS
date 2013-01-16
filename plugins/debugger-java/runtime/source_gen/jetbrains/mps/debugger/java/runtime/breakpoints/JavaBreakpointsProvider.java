@@ -95,11 +95,10 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
       case LINE_BREAKPOINT:
         {
           final JavaBreakpointInfo breakpointInfo = XmlSerializer.deserialize(state, JavaBreakpointInfo.class);
-          if (!(breakpointInfo.isValid())) {
+          if (!(breakpointInfo.isInitialized())) {
             return null;
           }
-          SNodePointer pointer = new SNodePointer(breakpointInfo.myModelReference, breakpointInfo.myNodeId);
-          LineBreakpoint breakpoint = new LineBreakpoint(pointer, project);
+          LineBreakpoint breakpoint = new LineBreakpoint(breakpointInfo.location(), project);
           breakpointInfo.initBreakpoint(breakpoint);
           return breakpoint;
         }
@@ -115,21 +114,20 @@ public class JavaBreakpointsProvider implements IBreakpointsProvider<JavaBreakpo
           //  I am going to replace method breakpoints with a new ones, so I temporary read old method breakpoints into line breakpoints 
           //  todo new method breakpoints 
           final JavaBreakpointInfo lineBreakpointInfo = XmlSerializer.deserialize(state, JavaBreakpointInfo.class);
-          if (!(lineBreakpointInfo.isValid())) {
+          if (!(lineBreakpointInfo.isInitialized())) {
             return null;
           }
-          SNodePointer pointer = new SNodePointer(lineBreakpointInfo.myModelReference, lineBreakpointInfo.myNodeId);
-          LineBreakpoint lineBreakpoint = new LineBreakpoint(pointer, project);
+          LineBreakpoint lineBreakpoint = new LineBreakpoint(lineBreakpointInfo.location(), project);
           lineBreakpointInfo.initBreakpoint(lineBreakpoint);
           return lineBreakpoint;
         }
       case FIELD_BREAKPOINT:
         {
           final JavaBreakpointInfo fieldBreakpointInfo = XmlSerializer.deserialize(state, JavaBreakpointInfo.class);
-          if (!(fieldBreakpointInfo.isValid())) {
+          if (!(fieldBreakpointInfo.isInitialized())) {
             return null;
           }
-          SNodePointer pointer = new SNodePointer(fieldBreakpointInfo.myModelReference, fieldBreakpointInfo.myNodeId);
+          SNodePointer pointer = fieldBreakpointInfo.location();
           FieldBreakpoint fieldBreakpoint = new FieldBreakpoint(pointer, project);
           fieldBreakpointInfo.initBreakpoint(fieldBreakpoint);
           return fieldBreakpoint;
