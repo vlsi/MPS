@@ -56,13 +56,14 @@
     <delete dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/lib"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/lib" flatten="true">
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCore/lib"/>
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCoreEx/mps-core-ex/lib"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/lib"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/lib"/>
     </copy>
     <mkdir dir="${base_dir}/IdeaPlugin/mps-core/languages"/>
     <copy todir="${base_dir}/IdeaPlugin/mps-core/languages">
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCore/languages"/>
-      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/buildCoreEx/mps-core-ex/languages"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsBootstrapCore/languages"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsCore/mps-core/languages"/>
+      <fileset dir="${base_dir}/IdeaPlugin/build/artifacts/mpsTesting/mps-testing/languages"/>
     </copy>
     <mkdir dir="build/tmp/prepare/java/out/mps-test-ex"/>
     <javac destdir="build/tmp/prepare/java/out/mps-test-ex" fork="true" memorymaximumsize="256m"
@@ -71,7 +72,7 @@
       <src>
         <path location="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/testSrc"/>
         <path location="${base_dir}/languages/languageDesign/editor/tests/jetbrains.mps.lang.editor.tests/source_gen"/>
-        <path location="${base_dir}/plugins/mps-core-ex/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen"/>
+        <path location="${base_dir}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen"/>
       </src>
       <classpath>
         <fileset dir="${base_dir}/IdeaPlugin/mps-core/lib" includes="*.jar"/>
@@ -90,33 +91,37 @@
 
   <target name="buildCore" depends="loadVars">
     <ant antfile="${base_dir}/build/ideaPlatform.xml" target="force-resolve" inheritAll="true" useNativeBasedir="true" />
-    <ant antfile="${base_dir}/build/buildCore.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="${base_dir}/build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
-    <ant antfile="${base_dir}/build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="${base_dir}/build/mpsCore.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
-    <ant antfile="${base_dir}/build/buildBuild.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="${base_dir}/build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
-    <ant antfile="${base_dir}/build/buildJava.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="${base_dir}/build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true">
+      <property name="build.dir" location="${build.home}"/>
+      <property name="idea_home" location="${ideaPath}"/>
+    </ant>
+    <ant antfile="${base_dir}/build/mpsJava.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
   </target>
 
   <target name="build" depends="buildCore">
-    <ant antfile="buildPlugin.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="mpsPlugin.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
   </target>
 
   <target name="buildTests" depends="build">
-    <ant antfile="buildPluginTests.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="mpsPluginTests.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
@@ -126,8 +131,8 @@
     <delete dir="${plugins.sandbox.dir}"/>
     <mkdir dir="${plugins.sandbox.dir}/plugins"/>
     <copy todir="${plugins.sandbox.dir}/plugins">
-      <fileset dir="${build.home}/artifacts/buildPlugin"/>
-      <fileset dir="${build.home}/artifacts/buildPluginTests"/>
+      <fileset dir="${build.home}/artifacts/mpsPlugin"/>
+      <fileset dir="${build.home}/artifacts/mpsPluginTests"/>
     </copy>
     <copy todir="${plugins.sandbox.dir}/plugins/tests/projectView">
       <fileset dir="${base_dir}/IdeaPlugin/tests/projectView"/>
@@ -148,7 +153,7 @@
       <sysproperty key="idea.config.path" value="${plugins.sandbox.dir}/config"/>
       <sysproperty key="idea.system.path" value="${plugins.sandbox.dir}/system"/>
       <sysproperty key="idea.plugins.path" value="${plugins.sandbox.dir}/plugins"/>
-      <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.core.ex"/>
+      <sysproperty key="idea.load.plugins.id" value="jetbrains.mps.core,jetbrains.mps.testing"/>
       <sysproperty key="idea.home.path" value="${ideaPath}"/>
       <sysproperty key="idea.launcher.bin.path" value="${ideaPath}/bin"/>
       <sysproperty key="file.encoding" value="UTF-8"/>
@@ -207,7 +212,7 @@
   </target>
 
   <target name="zip" depends="build">
-    <ant antfile="buildPluginDist.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="mpsPluginDist.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
       <property name="plugin.version" value="${plugin.version}"/>
@@ -217,7 +222,7 @@
   <target name="install-plugin" depends="build">
     <property name="pluginPath" value="${ideaPlugins}"/>
     <copy todir="${pluginPath}">
-      <fileset dir="${build.home}/artifacts/buildPlugin"/>
+      <fileset dir="${build.home}/artifacts/mpsPlugin"/>
     </copy>
   </target>
 

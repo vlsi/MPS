@@ -1,0 +1,98 @@
+<project name="mpsExe" default="assemble" basedir="../">
+  <property name="build.dir" location="build"/>
+  <property name="build.tmp" location="${build.dir}/tmp/mpsExe"/>
+  <property name="build.layout" location="${build.dir}/artifacts/mpsExe"/>
+  <property name="artifacts.buildMPS" location="${build.dir}/artifacts/mps"/>
+  <property name="mps.sign" location="${basedir}/build/sign"/>
+
+  <property file="${artifacts.buildMPS}/build.properties" prefix="import.buildMPS" />
+  <property name="buildMPS.build.number" value="${import.buildMPS.buildMPS.build.number}"/>
+  <property name="buildMPS.version" value="${import.buildMPS.buildCore.version}"/>
+
+  <property name="mps.bat" value="mps.bat"/>
+  <property name="mps.vmoptions" value="mps.vmoptions"/>
+  <property name="mps.exe.vmoptions" value="mps.exe.vmoptions"/>
+  <property name="MPS" value="MPS"/>
+  <property name="mpshelp.jar" value="help/mpshelp.jar"/>
+
+  <condition property="windows">
+    <os family="windows"/>
+  </condition>
+
+  <target name="assemble" depends="buildExe"/>
+
+  <target name="buildExe" if="windows">
+    <copy todir="${build.tmp}/MPS/bin">
+      <fileset dir="${basedir}/bin/win" excludes="**/bin/linux/**, **/bin/mac/**, **/bin/nix/**, **/bin/win/**, "/>
+    </copy>
+    <copy todir="${build.tmp}/MPS">
+      <fileset dir="${artifacts.buildMPS}"
+               excludes="**/bin/linux/**, **/bin/mac/**, **/bin/nix/**, **/bin/win/**, "/>
+    </copy>
+    <copy file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.vmoptions" tofile="${build.tmp}/mps.exe.vmoptions"/>
+    <copy file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/mps.bat" tofile="${build.tmp}/mps.bat"/>
+    <copy todir="${build.tmp}/help">
+      <fileset dir="${basedir}/help"/>
+    </copy>
+    <copy file="${basedir}/build/resources/mps.ico" tofile="${build.tmp}/mps.ico"/>
+    <copy file="${basedir}/build/resources/mps.inst.ico" tofile="${build.tmp}/installer.ico"/>
+    <copy file="${basedir}/build/resources/mps.uninst.ico" tofile="${build.tmp}/uninstaller.ico"/>
+    <copy file="${basedir}/build/resources/homepage.ico" tofile="${build.tmp}/homepage.ico"/>
+    <copy file="${basedir}/build/tools/jre.zip" tofile="${build.tmp}/jre.zip"/>
+    <copy file="${basedir}/build/tools/nsis.zip" tofile="${build.tmp}/nsis.zip"/>
+    <copy file="${basedir}/build/solution/source_gen/jetbrains/mps/ide/build/installer.nsi" tofile="${build.tmp}/installer.nsi"/>
+    <copy file="${basedir}/license/mps_license.txt" tofile="${build.tmp}/license.txt"/>
+    <antcall target="exe" inheritall="true">
+      <param name="input.dir" value="${build.tmp}"/>
+      <param name="output.dir" value="${build.layout}/"/>
+    </antcall>
+    <antcall target="sign" inheritall="true">
+      <param name="input.dir" value="${build.tmp}"/>
+      <param name="output.dir" value="${build.layout}/"/>
+    </antcall>
+    <delete dir="${build.tmp}"/>
+  </target>
+
+  <target name="exe" if="windows">
+    <property name="installer.nsi" value="installer.nsi"/>
+    <property name="mps.ico" value="mps.ico"/>
+    <property name="homepage.ico" value="homepage.ico"/>
+    <fixcrlf file="${input.dir}/${mps.bat}" eol="dos" eof="asis"/>
+    <fixcrlf file="${input.dir}/${installer.nsi}" eol="dos" eof="asis"/>
+    <fixcrlf file="${input.dir}/${mps.exe.vmoptions}" eof="asis" eol="dos"/>
+    <copy file="${input.dir}/${mps.exe.vmoptions}" todir="${input.dir}/${MPS}/bin"/>
+    <unzip src="${input.dir}/jre.zip" dest="${input.dir}/jre"/>
+    <java classname="jetbrains.mps.build.GenerateNSI" fork="true" dir="${input.dir}" failonerror="true">
+      <arg file="${input.dir}/install.nsh"/>
+      <arg file="${input.dir}/uninstall.nsh"/>
+      <arg file="${input.dir}/${MPS}"/>
+      <arg file="${input.dir}/${mps.bat}"/>
+      <arg file="${input.dir}/${mps.ico}"/>
+      <arg file="${input.dir}/${homepage.ico}"/>
+      <arg file="${input.dir}/jre"/>
+      <arg file="${input.dir}/help"/>
+      <classpath>
+        <pathelement path="${input.dir}/${MPS}/lib/mps-workbench.jar"/>
+        <pathelement path="${input.dir}/${MPS}/lib/mps-core.jar"/>
+      </classpath>
+    </java>
+    <replace file="${input.dir}/${installer.nsi}" token="$version$" value="${buildMPS.version}"/>
+    <replace file="${input.dir}/${installer.nsi}" token="$build$" value="${buildMPS.build.number}"/>
+    <unzip src="${input.dir}/nsis.zip" dest="${input.dir}"/>
+    <exec executable="${input.dir}/nsis/makensis.exe" osfamily="windows" failonerror="true">
+      <arg file="${input.dir}/${installer.nsi}"/>
+    </exec>
+    <copy todir="${output.dir}">
+      <fileset dir="${input.dir}">
+        <include name="*.exe"/>
+      </fileset>
+    </copy>
+  </target>
+
+  <target name="sign" if="windows">
+    <exec executable="${mps.sign}/signtool.exe" osfamily="windows" failonerror="false" dir="${output.dir}">
+      <arg line="sign /f ${mps.sign}/cs_cert2011.pfx /ac ${mps.sign}/path.cer /p 123 ${output.dir}/${buildMPS.build.number}-windows.exe"/>
+    </exec>
+  </target>
+
+</project>
