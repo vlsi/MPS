@@ -126,6 +126,11 @@ public class SNodePointer implements SNodeReference {
     return SModelRepository.getInstance().getModelDescriptor(getModelReference());
   }
 
+  @Deprecated
+  /**
+   * Was mostly used for serialization and obtaining debug info. Use corresponding methods instead
+   * @Deprecated in 3.0
+   */
   public SNodeId getNodeId() {
     return myNodeId;
   }
