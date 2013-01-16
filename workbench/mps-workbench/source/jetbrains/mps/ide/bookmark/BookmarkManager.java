@@ -344,12 +344,14 @@ public class BookmarkManager implements ProjectComponent, PersistentStateCompone
     //for serialization/deserialization
     @SuppressWarnings("UnusedDeclaration")
     public String getNodeRef() {
+      if (myNodeRef==null) return "";
       return SNodePointer.serialize(myNodeRef);
     }
 
     //for serialization/deserialization
     @SuppressWarnings("UnusedDeclaration")
     public void setNodeRef(String nodeRef) {
+      if (nodeRef.equals("")) return;
       myNodeRef = SNodePointer.deserialize(nodeRef);
     }
   }
