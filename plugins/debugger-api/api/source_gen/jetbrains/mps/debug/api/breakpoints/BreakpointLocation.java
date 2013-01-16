@@ -24,7 +24,7 @@ public class BreakpointLocation {
 
   public BreakpointLocation(@NotNull SNodePointer nodePointer) {
     myNodePointer = nodePointer;
-    LOG.assertLog(nodePointer.getModelReference() != null && nodePointer.getNodeId() != null);
+    LOG.assertLog(nodePointer.getNode() != null);
   }
 
   public BreakpointLocation(@NotNull SNode node) {
@@ -94,7 +94,7 @@ public class BreakpointLocation {
           SNode root = node.getContainingRoot();
           return node + " in " + root + " (" + myNodePointer.getModel().getSModelReference().getSModelFqName() + ")";
         } else {
-          return myNodePointer.getNodeId() + " (" + myNodePointer.getModel().getSModelReference().getSModelFqName() + ")";
+          return myNodePointer.toString();
         }
       }
     });
