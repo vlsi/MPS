@@ -102,8 +102,9 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelAdapter;
 import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeId;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -1316,7 +1317,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
 
   public boolean hasValidSelectedNode() {
     SNode selectedNode = getSelectedNode();
-    return selectedNode != null && !selectedNode.isDisposed() && selectedNode.getModel() != null;
+    return selectedNode != null && !((jetbrains.mps.smodel.SNode) selectedNode).isDisposed() && selectedNode.getModel() != null;
   }
 
   public boolean isDisposed() {
@@ -2703,7 +2704,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
       EditorContext ec = getEditorContext();
 
       boolean needsSavingState = ec != null;
-      if (getRootCell() != null && getRootCell().getSNode() != null && getRootCell().getSNode().isDisposed()) {
+      if (getRootCell() != null && getRootCell().getSNode() != null && ((jetbrains.mps.smodel.SNode) getRootCell().getSNode()).isDisposed()) {
         needsSavingState = false;
       }
 
@@ -2934,7 +2935,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
         String role = ce.getChildRole();
         SNode parent = ce.getParent();
 
-        List<SNode> siblings = parent.getChildren(role);
+        List<? extends SNode> siblings = IterableUtil.asList(parent.getChildren(role));
         if (siblings.isEmpty()) {
           EditorCell nullCell = findNodeCellWithRole(parent, role);
           if (nullCell == null) {

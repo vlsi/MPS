@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class StyleClassItem_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public StyleClassItem_BehaviorDescriptor() {

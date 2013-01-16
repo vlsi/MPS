@@ -5,7 +5,7 @@ package jetbrains.mps.lang.generator.generationParameters.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.generator.behavior.IGeneratorParameter_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class DefaultGeneratorParameter_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IGeneratorParameter_BehaviorDescriptor, INamedConcept_BehaviorDescriptor {

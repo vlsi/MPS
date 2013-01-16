@@ -20,7 +20,8 @@ import jetbrains.mps.nodeEditor.cellMenu.DefaultChildSubstituteInfo;
 import jetbrains.mps.nodeEditor.cellProviders.AbstractCellListHandler;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.SNodeOperations;
 
@@ -37,7 +38,7 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
 
   public EditorCellListHandler(SNode ownerNode, String childRole, jetbrains.mps.openapi.editor.EditorContext editorContext) {
     super(ownerNode, childRole, editorContext);
-    myLinkDeclaration = ownerNode.getLinkDeclaration(childRole);
+    myLinkDeclaration = ((jetbrains.mps.smodel.SNode) ownerNode).getLinkDeclaration(childRole);
     myChildConcept = SModelUtil.getLinkDeclarationTarget(myLinkDeclaration);
     SNode genuineLink = SModelUtil.getGenuineLinkDeclaration(myLinkDeclaration);
     if (SNodeUtil.getLinkDeclaration_IsReference(genuineLink)) {
@@ -72,7 +73,7 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
   protected SNode getAnchorNode(EditorCell anchorCell) {
     SNode anchorNode = (anchorCell != null ? anchorCell.getSNode() : null);
     if (anchorNode != null) {
-      List<SNode> listElements = getOwner().getChildren(getElementRole());
+      List<? extends SNode> listElements = IterableUtil.asList(getOwner().getChildren(getElementRole()));
       // anchor should be directly referenced from "list owner"
       while (anchorNode != null && !listElements.contains(anchorNode)) {
         anchorNode = anchorNode.getParent();
@@ -85,8 +86,8 @@ public abstract class EditorCellListHandler extends AbstractCellListHandler {
     SNodeOperations.insertChild(getOwner(), getElementRole(), myInsertedNode, anchorNode, insertBefore);
   }
 
-  protected List<SNode> getNodesForList() {
-    return myOwnerNode.getChildren(getElementRole());
+  protected List<? extends SNode> getNodesForList() {
+    return IterableUtil.asList(myOwnerNode.getChildren(getElementRole()));
   }
 
 }

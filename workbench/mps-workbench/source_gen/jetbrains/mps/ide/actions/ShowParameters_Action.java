@@ -19,7 +19,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.ide.tooltips.MPSToolTipManager;
 import jetbrains.mps.ide.tooltips.ToolTipData;
 import jetbrains.mps.nodeEditor.EditorComponent;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.logging.Logger;
 
 public class ShowParameters_Action extends BaseAction {

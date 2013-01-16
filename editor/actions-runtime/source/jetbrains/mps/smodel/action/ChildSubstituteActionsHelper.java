@@ -22,7 +22,7 @@ import jetbrains.mps.lang.editor.generator.internal.AbstractCellMenuPart_Replace
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.constraints.IReferencePresentation;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsUtil;
@@ -140,7 +140,7 @@ public class ChildSubstituteActionsHelper {
       if(childSetter instanceof DefaultChildNodeSetter) {
         linkDeclaration = ((DefaultChildNodeSetter) childSetter).myLinkDeclaration;
       } else {
-        linkDeclaration = currentChild.getRoleLink();
+        linkDeclaration = ((jetbrains.mps.smodel.SNode) currentChild).getRoleLink();
       }
 
       Iterator<INodeSubstituteAction> it = resultActions.iterator();
@@ -238,8 +238,8 @@ public class ChildSubstituteActionsHelper {
     SNode linkDeclaration = null;
     int index = 0;
     if (currentChild != null) {
-      linkDeclaration = currentChild.getRoleLink();
-      index = parentNode.getChildren(currentChild.getRoleInParent()).indexOf(currentChild);
+      linkDeclaration = ((jetbrains.mps.smodel.SNode) currentChild).getRoleLink();
+      index = ((jetbrains.mps.smodel.SNode) parentNode).getChildren(currentChild.getRoleInParent()).indexOf(currentChild);
     }
 //    TODO generate wrapping setter to have access to original link
 //    if(childSetter instanceof WrappingSetter) {

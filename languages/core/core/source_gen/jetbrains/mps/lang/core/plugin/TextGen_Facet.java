@@ -51,7 +51,7 @@ import jetbrains.mps.cleanup.CleanupManager;
 import jetbrains.mps.make.script.IConfig;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TextGenerationUtil;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.smodel.resources.FResource;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <debugInfo>
   <root nodeId="3671170675134061846" modelId="r:f77c2bf1-6f5c-4cb2-b314-a84dd502542e(jetbrains.mps.resolve)">
-    <nodeInfo nodeId="3671170675134103978" fileName="IResolver.java" startLine="11" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljetbrains/mps/smodel/SReference;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+    <nodeInfo nodeId="3671170675134103978" fileName="IResolver.java" startLine="11" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljetbrains/mps/smodel/SReference;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
     <scopeInfo nodeId="3671170675134103978" fileName="IResolver.java" startLine="11" startPosition="0" endLine="20" endPosition="0">
       <varInfo nodeId="3671170675134103988" varName="operationContext" />
       <varInfo nodeId="3671170675134103985" varName="reference" />
@@ -41,7 +41,7 @@
     <nodeInfo nodeId="5969455427934195326" fileName="ScopeResolver.java" startLine="42" startPosition="56" endLine="61" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="3671170675134081221" fileName="ScopeResolver.java" startLine="34" startPosition="0" endLine="68" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljava/lang/Boolean;" />
     <nodeInfo nodeId="8342705757013350881" fileName="ScopeResolver.java" startLine="32" startPosition="94" endLine="68" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3671170675134081156" fileName="ScopeResolver.java" startLine="27" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljetbrains/mps/smodel/SReference;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
+    <nodeInfo nodeId="3671170675134081156" fileName="ScopeResolver.java" startLine="27" startPosition="0" endLine="70" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljetbrains/mps/smodel/SReference;Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/smodel/IOperationContext;)Z" />
     <scopeInfo nodeId="3671170675134061975" fileName="ScopeResolver.java" startLine="24" startPosition="26" endLine="24" endPosition="26" />
     <scopeInfo nodeId="3671170675134081203" fileName="ScopeResolver.java" startLine="29" startPosition="34" endLine="30" endPosition="19" />
     <scopeInfo nodeId="3671170675134081263" fileName="ScopeResolver.java" startLine="48" startPosition="96" endLine="49" endPosition="25" />

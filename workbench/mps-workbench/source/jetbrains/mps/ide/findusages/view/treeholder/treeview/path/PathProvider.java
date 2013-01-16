@@ -20,7 +20,7 @@ import jetbrains.mps.ide.findusages.model.SearchResult;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
 
 import java.util.ArrayList;

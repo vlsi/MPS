@@ -19,10 +19,10 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.loading.ModelLoadingState;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.persistence.def.v4.VersionUtil;
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.persistence.def.v4.ReferencePersister4;
 
@@ -439,7 +439,7 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
     protected SNode createObject(Attributes attrs) {
       String rawFqName = attrs.getValue("type");
       String conceptFQName = VersionUtil.getConceptFQName(rawFqName);
-      SNode node = new SNode(InternUtil.intern(conceptFQName));
+      SNode node = new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFQName));
       VersionUtil.fetchConceptVersion(rawFqName, node, fieldversionsInfo);
       return node;
     }
@@ -461,11 +461,11 @@ public class ModelReader5Handler extends XMLSAXHandler<ModelLoadResult> {
         return;
       }
       if ("id".equals(name)) {
-        SNodeId id = SNodeId.fromString(value);
+        SNodeId id = jetbrains.mps.smodel.SNodeId.fromString(value);
         if (id == null) {
           throw new SAXParseException("bad node ID", null);
         }
-        result.setId(id);
+        ((jetbrains.mps.smodel.SNode) result).setId(id);
         return;
       }
       super.handleAttribute(resultObject, name, value);

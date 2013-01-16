@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguageInternal.behavior;
 import jetbrains.mps.baseLanguage.behavior.ClassConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IAnonymousClass_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IControlFlowInterrupter_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class InternalAnonymousClass_BehaviorDescriptor extends ClassConcept_BehaviorDescriptor implements IAnonymousClass_BehaviorDescriptor, IControlFlowInterrupter_BehaviorDescriptor {
   public InternalAnonymousClass_BehaviorDescriptor() {

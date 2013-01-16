@@ -4,7 +4,7 @@ package jetbrains.mps.build.mps.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -39,7 +39,7 @@ public class BuildMpsAspect_Constraints extends BaseConstraintsDescriptor {
       public boolean accept(SNode it) {
         return SNodeOperations.isInstanceOf(it, "jetbrains.mps.build.mps.structure.BuildMPSPlugin");
       }
-    }) || parentNode.getConceptFqName().startsWith("jetbrains.mps.lang.generator");
+    }) || parentNode.getConcept().getQualifiedName().startsWith("jetbrains.mps.lang.generator");
   }
 
   private static SNodePointer canBeChildBreakingPoint = new SNodePointer("r:76dda237-5120-4688-b749-201ab5c5059d(jetbrains.mps.build.mps.constraints)", "6503355885715456080");

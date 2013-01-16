@@ -41,7 +41,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.action.INodeSubstituteAction;
@@ -432,7 +432,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   public SNode getLinkDeclaration() {
     String role = getStyle().get(StyleAttributes.NAVIGATABLE_REFERENCE);
     if (role != null) {
-      return getSNode().getLinkDeclaration(role);
+      return ((jetbrains.mps.smodel.SNode) getSNode()).getLinkDeclaration(role);
     }
     return myLinkDeclarationPointer != null ? myLinkDeclarationPointer.getNode() : null;
   }
@@ -554,13 +554,13 @@ public abstract class EditorCell_Basic implements EditorCell {
     while (AttributeOperations.isAttribute(node)) {
       node = node.getParent();
     }
-    SNode link = node.getParent().getLinkDeclaration(node.getRoleInParent());
+    SNode link = ((jetbrains.mps.smodel.SNode) node.getParent()).getLinkDeclaration(node.getRoleInParent());
     SNode concept = CellUtil.getLinkDeclarationTarget(link);
     String concreteConceptFqName = ModelConstraints.getDefaultConcreteConceptFqName(NameUtil.nodeFQName(concept));
     if (node.getConcept().getId().equals(concreteConceptFqName)) {
       return null;
     }
-    SNode newNode = new SNode(InternUtil.intern(concreteConceptFqName));
+    jetbrains.mps.smodel.SNode newNode = new jetbrains.mps.smodel.SNode(InternUtil.intern(concreteConceptFqName));
     org.jetbrains.mps.openapi.model.SNodeUtil.replaceWithAnother(node, newNode);
     getContext().flushEvents();
     return newNode;

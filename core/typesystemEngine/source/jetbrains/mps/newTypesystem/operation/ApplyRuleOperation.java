@@ -18,7 +18,7 @@ package jetbrains.mps.newTypesystem.operation;
 import jetbrains.mps.lang.typesystem.runtime.ICheckingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class ApplyRuleOperation extends AbstractOperation {
   private SNode myNode;

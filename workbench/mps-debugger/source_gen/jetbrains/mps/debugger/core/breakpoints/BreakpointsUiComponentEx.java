@@ -11,7 +11,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import java.util.Set;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;

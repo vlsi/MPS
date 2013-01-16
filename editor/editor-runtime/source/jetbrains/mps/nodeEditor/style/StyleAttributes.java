@@ -22,7 +22,7 @@ import jetbrains.mps.editor.runtime.style.SimpleStyleAttribute;
 import jetbrains.mps.nodeEditor.CaretPosition;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.openapi.editor.style.StyleAttribute;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.awt.Color;
 import java.awt.Font;

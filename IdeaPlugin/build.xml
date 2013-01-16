@@ -89,19 +89,20 @@
   </target>
 
   <target name="buildCore" depends="loadVars">
-    <ant antfile="../build/buildCore.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="${base_dir}/build/ideaPlatform.xml" target="force-resolve" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="${base_dir}/build/buildCore.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
-    <ant antfile="../build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="${base_dir}/build/buildCoreEx.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
-    <ant antfile="../build/buildBuild.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="${base_dir}/build/buildBuild.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
-    <ant antfile="../build/buildJava.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="${base_dir}/build/buildJava.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>

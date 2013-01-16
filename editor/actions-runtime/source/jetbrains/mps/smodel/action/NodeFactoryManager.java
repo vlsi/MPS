@@ -20,7 +20,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.behaviour.BehaviorManager;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
@@ -39,7 +39,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
   }
 
   public static SNode createNode(SNode enclosingNode, EditorContext editorContext, String linkRole) {
-    SNode concept = enclosingNode.getConceptDeclarationNode();
+    SNode concept = ((jetbrains.mps.smodel.SNode) enclosingNode).getConceptDeclarationNode();
     SNode linkDeclaration = getTopLinkDeclaration(concept, SModelSearchUtil.findLinkDeclaration(concept, linkRole));
     SNode targetConcept = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
     SModel model = enclosingNode.getModel();
@@ -62,7 +62,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
 
   public static SNode createNode(@NotNull SNode nodeConcept, SNode sampleNode, SNode enclosingNode, @Nullable SModel model, IScope scope) {
     if (SNodeUtil.isInstanceOfInterfaceConceptDeclaration(nodeConcept)) {
-      return new SNode(NameUtil.nodeFQName(nodeConcept));
+      return new jetbrains.mps.smodel.SNode(NameUtil.nodeFQName(nodeConcept));
     }
     SNode newNode = SModelUtil_new.instantiateConceptDeclaration(nodeConcept, model, false);
     if (newNode == null) return null;
@@ -70,7 +70,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
     if (sampleNode != null) {
       sampleNode = CopyUtil.copy(sampleNode);
     }
-    nodeConcept = newNode.getConceptDeclarationNode(); // default concrete concept could change nodeConcept
+    nodeConcept = ((jetbrains.mps.smodel.SNode) newNode).getConceptDeclarationNode(); // default concrete concept could change nodeConcept
     setupNode(nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
     createNodeStructure(nodeConcept, newNode, sampleNode, enclosingNode, model, scope);
     return newNode;
@@ -88,7 +88,7 @@ public class NodeFactoryManager extends NodeFactoryManager_deprecated {
 
         SNode targetConcept = SModelUtil.getLinkDeclarationTarget(linkDeclaration);
         LOG.assertLog(targetConcept != null, "link target is null");
-        if (newNode.getChildren(role).isEmpty()) {
+        if (!newNode.getChildren(role).iterator().hasNext()) {
           SNode childNode = createNode(targetConcept, sampleNode, enclosingNode, model, scope);
           newNode.addChild(role, childNode);
         }

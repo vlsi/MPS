@@ -16,7 +16,7 @@
 package jetbrains.mps.findUsages.fastfind;
 
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.containers.MultiMap;
 
 import java.util.Set;

@@ -18,7 +18,7 @@ package jetbrains.mps.typesystem.inference.util;
 import jetbrains.mps.lang.pattern.ConceptMatchingPattern;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.Nullable;
 
@@ -39,7 +39,7 @@ public class ConcurrentSubtypingCache implements SubtypingCache {
   private ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<Class, Pair<SNode, GeneratedMatchingPattern>>> myCoerceToPatternsCacheWeak
     = new ConcurrentHashMap<CacheNodeHandler, ConcurrentMap<Class, Pair<SNode, GeneratedMatchingPattern>>>();
 
-  private static final SNode NULL = new SNode("null");
+  private static final jetbrains.mps.smodel.SNode NULL = new jetbrains.mps.smodel.SNode("null");
 
   private SNode preprocessPutNode(SNode node) {
     return node == null ? NULL : node;

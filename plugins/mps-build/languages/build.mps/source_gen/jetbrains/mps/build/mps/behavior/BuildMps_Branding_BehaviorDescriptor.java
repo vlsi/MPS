@@ -4,7 +4,7 @@ package jetbrains.mps.build.mps.behavior;
 
 import jetbrains.mps.build.behavior.BuildProjectPart_BehaviorDescriptor;
 import jetbrains.mps.build.behavior.BuildSource_FilesetProjectPart_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class BuildMps_Branding_BehaviorDescriptor extends BuildProjectPart_BehaviorDescriptor implements BuildSource_FilesetProjectPart_BehaviorDescriptor {

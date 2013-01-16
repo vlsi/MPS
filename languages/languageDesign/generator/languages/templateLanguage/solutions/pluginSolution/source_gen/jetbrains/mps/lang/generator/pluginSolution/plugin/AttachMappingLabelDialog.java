@@ -5,7 +5,7 @@ package jetbrains.mps.lang.generator.pluginSolution.plugin;
 import com.intellij.openapi.ui.DialogWrapper;
 import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JPanel;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.ide.project.ProjectHelper;
 import java.awt.GridBagLayout;

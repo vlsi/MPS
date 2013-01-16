@@ -5,7 +5,7 @@ package jetbrains.mps.lang.smodel.behavior;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
 import jetbrains.mps.project.IModule;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 
 public class LanguageReferenceExpression_BehaviorDescriptor extends ModuleReferenceExpression_BehaviorDescriptor {

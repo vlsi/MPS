@@ -20,8 +20,8 @@ import jetbrains.mps.nodeEditor.EditorMessage;
 import jetbrains.mps.nodeEditor.FocusPolicy;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
-import jetbrains.mps.smodel.SNode;
 import jetbrains.mps.util.Condition;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 

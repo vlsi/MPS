@@ -5,7 +5,7 @@ package jetbrains.mps.closures.test.helper;
 import jetbrains.mps.generator.template.TemplateQueryContext;
 import java.util.Map;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class MockTemplateQueryContext extends TemplateQueryContext {
   public Map sessionObjects = new HashMap();

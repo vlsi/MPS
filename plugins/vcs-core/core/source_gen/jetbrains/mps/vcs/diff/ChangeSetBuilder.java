@@ -7,7 +7,7 @@ import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
@@ -17,7 +17,7 @@ import jetbrains.mps.util.EqualUtil;
 import jetbrains.mps.vcs.diff.changes.SetPropertyChange;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.DynamicReference;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
@@ -25,6 +25,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
 import jetbrains.mps.vcs.diff.changes.DeleteRootChange;
 import java.util.HashSet;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.util.LongestCommonSubsequenceFinder;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
@@ -69,7 +70,7 @@ public class ChangeSetBuilder {
   public void buildForProperty(SNode oldNode, SNode newNode, String name) {
     PropertySupport propertySupport = new ChangeSetBuilder.DefaultPropertySupport();
     if (!(MPSCore.getInstance().isMergeDriverMode())) {
-      SNode propertyDeclaration = oldNode.getPropertyDeclaration(name);
+      SNode propertyDeclaration = ((jetbrains.mps.smodel.SNode) oldNode).getPropertyDeclaration(name);
       if (propertyDeclaration != null) {
         propertySupport = PropertySupport.getPropertySupport(propertyDeclaration);
       }
@@ -143,10 +144,10 @@ public class ChangeSetBuilder {
   }
 
   private void buildForNodeRole(SNode oldNode, SNode newNode, String role) {
-    buildForNodeRole(oldNode.getChildren(role), newNode.getChildren(role), oldNode.getNodeId(), role);
+    buildForNodeRole(IterableUtil.asList(oldNode.getChildren(role)), IterableUtil.asList(newNode.getChildren(role)), oldNode.getNodeId(), role);
   }
 
-  public void buildForNodeRole(final List<SNode> oldChildren, List<SNode> newChildren, SNodeId parentId, String role) {
+  public void buildForNodeRole(final List<? extends SNode> oldChildren, List<? extends SNode> newChildren, SNodeId parentId, String role) {
     List<SNodeId> oldIds = ListSequence.fromList(oldChildren).select(new ISelector<SNode, SNodeId>() {
       public SNodeId select(SNode n) {
         return n.getNodeId();

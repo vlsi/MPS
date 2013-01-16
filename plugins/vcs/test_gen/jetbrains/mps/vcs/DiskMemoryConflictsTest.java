@@ -7,7 +7,7 @@ import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.Solution;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import org.junit.Test;
 import jetbrains.mps.TestMain;

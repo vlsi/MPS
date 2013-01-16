@@ -4,7 +4,7 @@ package jetbrains.mps.ide.script.plugin;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import com.intellij.openapi.project.DumbAware;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
 import jetbrains.mps.smodel.SModelDescriptor;

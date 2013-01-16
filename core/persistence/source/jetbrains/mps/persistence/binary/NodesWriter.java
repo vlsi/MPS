@@ -15,7 +15,8 @@
  */
 package jetbrains.mps.persistence.binary;
 
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import jetbrains.mps.util.io.ModelOutputStream;
 import org.jetbrains.annotations.NotNull;
@@ -69,11 +70,11 @@ public class NodesWriter {
   }
 
   protected void writeChildren(SNode node, ModelOutputStream os) throws IOException {
-    writeNodes(node.getChildren(), os);
+    writeNodes(((Collection) node.getChildren()), os);
   }
 
   protected void writeReferences(SNode node, ModelOutputStream os) throws IOException {
-    Collection<SReference> refs = node.getReferences();
+    Collection<SReference> refs = IterableUtil.asCollection(node.getReferences());
     os.writeInt(refs.size());
     for (SReference reference : refs) {
       SModelReference targetModelReference = reference.getTargetSModelReference();

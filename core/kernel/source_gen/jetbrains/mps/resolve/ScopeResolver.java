@@ -5,7 +5,7 @@ package jetbrains.mps.resolve;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -62,7 +62,7 @@ public class ScopeResolver implements IResolver {
         if (result == null) {
           return false;
         }
-        sourceNode.setReferent(reference.getRole(), result, false);
+        sourceNode.setReferenceTarget(reference.getRole(), result);
         return true;
       }
     });

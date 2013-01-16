@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.ide.editorTabs.tabfactory;
 
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public interface NodeChangeCallback {
   void changeNode(SNode newNode);

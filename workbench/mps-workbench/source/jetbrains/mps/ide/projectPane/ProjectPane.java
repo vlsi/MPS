@@ -55,7 +55,7 @@ import jetbrains.mps.openapi.editor.EditorComponent;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.annotation.Hack;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;

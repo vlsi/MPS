@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.javadoc.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.javadoc.editor.NodeCaretPair;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class CommentLinePart_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor {
   public CommentLinePart_BehaviorDescriptor() {

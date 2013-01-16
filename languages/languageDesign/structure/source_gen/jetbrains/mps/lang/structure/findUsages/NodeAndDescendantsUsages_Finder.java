@@ -4,7 +4,7 @@ package jetbrains.mps.lang.structure.findUsages;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.progress.ProgressMonitor;
@@ -38,7 +38,7 @@ public class NodeAndDescendantsUsages_Finder extends GeneratedFinder {
   protected void doFind(SNode node, IScope scope, List<SNode> _results, ProgressMonitor monitor) {
     monitor.start(getDescription(), 0);
     try {
-      Set<org.jetbrains.mps.openapi.model.SNode> nodes = SetSequence.fromSet(new HashSet<org.jetbrains.mps.openapi.model.SNode>());
+      Set<SNode> nodes = SetSequence.fromSet(new HashSet<SNode>());
       SetSequence.fromSet(nodes).addElement(node);
       for (SNode child : ListSequence.fromList(SNodeOperations.getDescendants(node, null, false, new String[]{}))) {
         SetSequence.fromSet(nodes).addElement(child);

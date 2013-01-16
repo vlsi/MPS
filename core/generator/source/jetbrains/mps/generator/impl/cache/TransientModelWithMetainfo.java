@@ -21,8 +21,8 @@ import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.io.IOException;
 import java.util.*;
@@ -53,7 +53,7 @@ public class TransientModelWithMetainfo {
   }
 
   public MappingsMemento getMappingsMemento(String originalId) {
-    return myMappingsMemento.get(SNodeId.fromString(originalId));
+    return myMappingsMemento.get(jetbrains.mps.smodel.SNodeId.fromString(originalId));
   }
 
   public MappingsMemento getMappingsMemento(SNode originalRoot, boolean create) {
@@ -67,7 +67,7 @@ public class TransientModelWithMetainfo {
   }
 
   public void updateMappings(String originalId, MappingsMemento mappingsMemento) {
-    myMappingsMemento.put(SNodeId.fromString(originalId), mappingsMemento);
+    myMappingsMemento.put(jetbrains.mps.smodel.SNodeId.fromString(originalId), mappingsMemento);
   }
 
   public String getOriginal(SNode root) {
@@ -79,7 +79,7 @@ public class TransientModelWithMetainfo {
   }
 
   public void setOriginal(SNodeId sNodeId, String originalId) {
-    myRootToOriginal.put(sNodeId, originalId.equals(CONDITIONALS_ID) ? null : SNodeId.fromString(originalId));
+    myRootToOriginal.put(sNodeId, originalId.equals(CONDITIONALS_ID) ? null : jetbrains.mps.smodel.SNodeId.fromString(originalId));
   }
 
   public void save(ModelOutputStream os) throws IOException {

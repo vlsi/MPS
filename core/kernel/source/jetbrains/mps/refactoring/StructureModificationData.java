@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.refactoring;
 
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.InternUtil;
 import org.jdom.Element;
 import org.jetbrains.annotations.Nullable;
@@ -81,7 +81,7 @@ public class StructureModificationData {
       if (value.equals(NULL)) {
         myNodeId = null;
       } else {
-        myNodeId = SNodeId.fromString(value);
+        myNodeId = jetbrains.mps.smodel.SNodeId.fromString(value);
       }
     }
 

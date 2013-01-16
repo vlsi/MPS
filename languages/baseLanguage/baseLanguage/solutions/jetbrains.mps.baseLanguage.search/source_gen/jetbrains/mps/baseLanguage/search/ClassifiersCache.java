@@ -6,7 +6,7 @@ import jetbrains.mps.cache.AbstractCache;
 import jetbrains.mps.cache.KeyProducer;
 import java.util.Map;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.smodel.SModelDescriptor;

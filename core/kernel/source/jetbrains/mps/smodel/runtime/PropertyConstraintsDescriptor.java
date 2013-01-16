@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.runtime;
 
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public interface PropertyConstraintsDescriptor {
   String getName();

@@ -4,7 +4,7 @@ package jetbrains.mps.ui.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.TypeDerivable_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.TypeDerivable_Behavior;
 
 public class Validator_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements TypeDerivable_BehaviorDescriptor {

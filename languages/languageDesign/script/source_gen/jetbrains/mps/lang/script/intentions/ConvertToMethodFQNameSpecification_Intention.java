@@ -6,7 +6,7 @@ import jetbrains.mps.intentions.IntentionFactory;
 import java.util.Collection;
 import jetbrains.mps.intentions.IntentionExecutable;
 import jetbrains.mps.intentions.IntentionType;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.editor.EditorContext;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
@@ -76,7 +76,7 @@ public class ConvertToMethodFQNameSpecification_Intention implements IntentionFa
 
     public void execute(final SNode node, final EditorContext editorContext) {
       SNode methodSpecification = SNodeFactoryOperations.replaceWithNewChild(node, "jetbrains.mps.lang.script.structure.FQNameMethodSpecification");
-      SPropertyOperations.set(methodSpecification, "snodeId", SLinkOperations.getTarget(node, "methodDeclaration", false).getSNodeId().toString());
+      SPropertyOperations.set(methodSpecification, "snodeId", SLinkOperations.getTarget(node, "methodDeclaration", false).getNodeId().toString());
       SNodeOperations.deleteNode(node);
     }
 

@@ -5,7 +5,7 @@ package jetbrains.mps.build.packaging.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
 import java.io.File;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class NonExistingPath_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IPath_BehaviorDescriptor {
   public NonExistingPath_BehaviorDescriptor() {

@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.search;
 import jetbrains.mps.smodel.search.ISearchScope;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 @Deprecated
 public interface IClassifiersSearchScope extends ISearchScope {

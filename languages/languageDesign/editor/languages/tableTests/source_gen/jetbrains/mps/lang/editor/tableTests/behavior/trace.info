@@ -30,7 +30,7 @@
     <nodeInfo nodeId="2882388703616228638" fileName="Table_Behavior.java" startLine="33" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getInitialRowCount_1262430001741498094#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
     <nodeInfo nodeId="2882388703616228655" fileName="Table_Behavior.java" startLine="19" startPosition="111" endLine="24" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="2882388703616228647" fileName="Table_Behavior.java" startLine="17" startPosition="43" endLine="26" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="2882388703616228638" fileName="Table_Behavior.java" startLine="17" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="2882388703616228638" fileName="Table_Behavior.java" startLine="17" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1262430001741498028" fileName="Table_Behavior.java" startLine="29" startPosition="93" endLine="30" endPosition="13" />
     <scopeInfo nodeId="1262430001741498096" fileName="Table_Behavior.java" startLine="33" startPosition="90" endLine="34" endPosition="13" />
     <scopeInfo nodeId="2882388703616228656" fileName="Table_Behavior.java" startLine="20" startPosition="270" endLine="23" endPosition="99">
@@ -81,7 +81,7 @@
     <nodeInfo nodeId="7483705179651302819" fileName="StateMachine_Behavior.java" startLine="13" startPosition="18" endLine="18" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="7483705179651319729" fileName="StateMachine_Behavior.java" startLine="18" startPosition="5" endLine="23" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
     <nodeInfo nodeId="4674252664726328818" fileName="StateMachine_Behavior.java" startLine="23" startPosition="5" endLine="41" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="7483705179651302808" fileName="StateMachine_Behavior.java" startLine="12" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7483705179651302808" fileName="StateMachine_Behavior.java" startLine="12" startPosition="0" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="7483705179651302820" fileName="StateMachine_Behavior.java" startLine="14" startPosition="37" endLine="17" endPosition="100">
       <varInfo nodeId="7483705179651319696" varName="event" />
     </scopeInfo>
@@ -120,7 +120,7 @@
     <nodeInfo nodeId="7651593722933755886" fileName="LightWeightDecisionTable_Behavior.java" startLine="14" startPosition="100" endLine="15" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7651593722933755893" fileName="LightWeightDecisionTable_Behavior.java" startLine="15" startPosition="100" endLine="16" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="7651593722933755900" fileName="LightWeightDecisionTable_Behavior.java" startLine="16" startPosition="100" endLine="17" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="7651593722933724230" fileName="LightWeightDecisionTable_Behavior.java" startLine="9" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="7651593722933724230" fileName="LightWeightDecisionTable_Behavior.java" startLine="9" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="7651593722933724232" fileName="LightWeightDecisionTable_Behavior.java" startLine="9" startPosition="43" endLine="17" endPosition="100" />
     <scopeInfo nodeId="7651593722933724230" fileName="LightWeightDecisionTable_Behavior.java" startLine="9" startPosition="0" endLine="19" endPosition="0">
       <varInfo nodeId="7651593722933724230" varName="thisNode" />
@@ -129,8 +129,8 @@
   </root>
   <root nodeId="7943979732673457913" modelId="r:cb137f7a-19a8-46b1-9384-6eb430e15f20(jetbrains.mps.lang.editor.tableTests.behavior)">
     <nodeInfo nodeId="7943979732673457921" fileName="AbstractStateMachineElement_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="132" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="7943979732673457913" fileName="AbstractStateMachineElement_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
-    <nodeInfo nodeId="7943979732673457913" fileName="AbstractStateMachineElement_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getStateMachine_7943979732673457916#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
+    <nodeInfo nodeId="7943979732673457913" fileName="AbstractStateMachineElement_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="7943979732673457913" fileName="AbstractStateMachineElement_Behavior.java" startLine="12" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="call_getStateMachine_7943979732673457916#(Lorg/jetbrains/mps/openapi/model/SNode;)Lorg/jetbrains/mps/openapi/model/SNode;" />
     <scopeInfo nodeId="7943979732673457915" fileName="AbstractStateMachineElement_Behavior.java" startLine="9" startPosition="43" endLine="9" endPosition="43" />
     <scopeInfo nodeId="7943979732673457919" fileName="AbstractStateMachineElement_Behavior.java" startLine="12" startPosition="80" endLine="13" endPosition="132" />
     <scopeInfo nodeId="7943979732673457913" fileName="AbstractStateMachineElement_Behavior.java" startLine="9" startPosition="0" endLine="11" endPosition="0">
@@ -150,7 +150,7 @@
     <nodeInfo nodeId="8506335436194799574" fileName="HierarchycalTable_Behavior.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getInitialColumnCount_1262430001741498026#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
     <nodeInfo nodeId="8506335436194799574" fileName="HierarchycalTable_Behavior.java" startLine="29" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="virtual_getInitialRowCount_1262430001741498094#(Lorg/jetbrains/mps/openapi/language/SConcept;)I" />
     <nodeInfo nodeId="2422839104779457219" fileName="HierarchycalTable_Behavior.java" startLine="17" startPosition="43" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForStatement" />
-    <nodeInfo nodeId="8506335436194799574" fileName="HierarchycalTable_Behavior.java" startLine="17" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Ljetbrains/mps/smodel/SNode;)V" />
+    <nodeInfo nodeId="8506335436194799574" fileName="HierarchycalTable_Behavior.java" startLine="17" startPosition="0" endLine="24" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="init#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
     <scopeInfo nodeId="1262430001741646991" fileName="HierarchycalTable_Behavior.java" startLine="25" startPosition="93" endLine="26" endPosition="13" />
     <scopeInfo nodeId="1262430001741720095" fileName="HierarchycalTable_Behavior.java" startLine="29" startPosition="90" endLine="30" endPosition="13" />
     <scopeInfo nodeId="2422839104779457220" fileName="HierarchycalTable_Behavior.java" startLine="18" startPosition="268" endLine="21" endPosition="104">

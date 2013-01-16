@@ -11,7 +11,7 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
 import java.util.UUID;
@@ -48,8 +48,8 @@ public class TemplateModelImpl implements TemplateModel {
       return null;
     }
     SNodeId id = template.getNodeId();
-    if (id instanceof SNodeId.Regular) {
-      long idValue = ((SNodeId.Regular) id).getId();
+    if (id instanceof jetbrains.mps.smodel.SNodeId.Regular) {
+      long idValue = ((jetbrains.mps.smodel.SNodeId.Regular) id).getId();
       if (idValue == 1196351886726L) {
         if (arguments.length != 0) {
           // TODO report `wrong arguments count` 
@@ -57,19 +57,19 @@ public class TemplateModelImpl implements TemplateModel {
         }
         return new TemplateQuotedNode__to__statementList();
       }
-      if (idValue == 1006429225401295242L) {
-        if (arguments.length != 0) {
-          // TODO report `wrong arguments count` 
-          return null;
-        }
-        return new TemplateNodeBuilder__to__methodCall();
-      }
       if (idValue == 1025590056396628814L) {
         if (arguments.length != 0) {
           // TODO report `wrong arguments count` 
           return null;
         }
         return new TemplateQuotation__to__staticMethodCall();
+      }
+      if (idValue == 1006429225401295242L) {
+        if (arguments.length != 0) {
+          // TODO report `wrong arguments count` 
+          return null;
+        }
+        return new TemplateNodeBuilder__to__methodCall();
       }
       if (idValue == 429601079676709776L) {
         if (arguments.length != 0) {

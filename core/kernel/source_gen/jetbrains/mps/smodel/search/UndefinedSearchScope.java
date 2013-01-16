@@ -4,7 +4,7 @@ package jetbrains.mps.smodel.search;
 
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Condition;
 
 public class UndefinedSearchScope implements ISearchScope {

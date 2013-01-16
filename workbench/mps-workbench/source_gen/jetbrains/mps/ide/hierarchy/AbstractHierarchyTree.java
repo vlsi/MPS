@@ -5,7 +5,7 @@ package jetbrains.mps.ide.hierarchy;
 import jetbrains.mps.ide.ui.MPSTree;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.findUsages.FindUsagesManager;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.ui.MPSTreeNode;
 import jetbrains.mps.smodel.ModelAccess;

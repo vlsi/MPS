@@ -4,7 +4,7 @@ package jetbrains.mps.lang.core.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -62,7 +62,7 @@ public class check_UnknownLinks_NonTypesystemRule extends AbstractNonTypesystemR
     }
 
     for (String propname : SetSequence.fromSet(jetbrains.mps.util.SNodeOperations.getProperties(node).keySet())) {
-      if (node.getPropertyDeclaration(propname) == null) {
+      if (((jetbrains.mps.smodel.SNode) node).getPropertyDeclaration(propname) == null) {
         {
           MessageTarget errorTarget = new NodeMessageTarget();
           IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(node, "Undeclared property \"" + propname + "\"", "r:cec599e3-51d2-48a7-af31-989e3cbd593c(jetbrains.mps.lang.core.typesystem)", "2889243336884177777", null, errorTarget);

@@ -4,7 +4,7 @@ package jetbrains.mps.lang.script.pluginSolution.plugin;
 
 import java.util.List;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import jetbrains.mps.project.GlobalScope;

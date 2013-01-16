@@ -7,11 +7,12 @@ import jetbrains.mps.lang.test.runtime.BaseTransformationTest4;
 import org.junit.Test;
 import jetbrains.mps.lang.test.runtime.BaseTestBody;
 import junit.framework.TestCase;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import junit.framework.Assert;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
@@ -76,7 +77,7 @@ public class PatternProperty_Test extends BaseTransformationTest4 {
               return false;
             }
             {
-              SNode childVar_Property_ru5khm_a0a = nodeToMatch_Property_ru5khm_a0.getChildren(childRole_Property_ru5khm_).get(0);
+              SNode childVar_Property_ru5khm_a0a = IterableUtil.get(nodeToMatch_Property_ru5khm_a0.getChildren(childRole_Property_ru5khm_), 0);
               {
                 SNode nodeToMatch_Property_ru5khm_a0a;
                 nodeToMatch_Property_ru5khm_a0a = childVar_Property_ru5khm_a0a;
@@ -94,7 +95,7 @@ public class PatternProperty_Test extends BaseTransformationTest4 {
               return false;
             }
             {
-              SNode childVar_Property_ru5khm_a0a_0 = nodeToMatch_Property_ru5khm_a0.getChildren(childRole_Property_ru5khm__0).get(0);
+              SNode childVar_Property_ru5khm_a0a_0 = IterableUtil.get(nodeToMatch_Property_ru5khm_a0.getChildren(childRole_Property_ru5khm__0), 0);
               {
                 SNode nodeToMatch_Property_ru5khm_a0a_0;
                 nodeToMatch_Property_ru5khm_a0a_0 = childVar_Property_ru5khm_a0a_0;
@@ -108,7 +109,7 @@ public class PatternProperty_Test extends BaseTransformationTest4 {
                     return false;
                   }
                   {
-                    SNode childVar_Property_ru5khm_a0a0 = nodeToMatch_Property_ru5khm_a0a_0.getChildren(childRole_Property_ru5khm__1).get(0);
+                    SNode childVar_Property_ru5khm_a0a0 = IterableUtil.get(nodeToMatch_Property_ru5khm_a0a_0.getChildren(childRole_Property_ru5khm__1), 0);
                     {
                       SNode nodeToMatch_Property_ru5khm_a0a0;
                       nodeToMatch_Property_ru5khm_a0a0 = childVar_Property_ru5khm_a0a0;

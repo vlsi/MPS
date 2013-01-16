@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.persistence.def.v6;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.InternUtil;
 import org.jdom.Document;
@@ -92,11 +92,11 @@ public class ModelReader6 implements IModelReader {
   @Nullable
   protected SNode readNode(Element nodeElement, SModel model) {
     String conceptFqName = myHelper.readType(nodeElement.getAttributeValue(ModelPersistence.TYPE));
-    SNode node = new SNode(InternUtil.intern(conceptFqName));
+    jetbrains.mps.smodel.SNode node = new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFqName));
 
     String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);
     if (idValue != null) {
-      SNodeId id = SNodeId.fromString(idValue);
+      SNodeId id = jetbrains.mps.smodel.SNodeId.fromString(idValue);
       if (id == null) {
         LOG.error("invalid id string");
         return null;

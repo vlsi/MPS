@@ -4,7 +4,7 @@ package jetbrains.mps.lang.core.behavior;
 
 import jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor;
 import javax.swing.Icon;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;
 

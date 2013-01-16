@@ -16,7 +16,7 @@
 package jetbrains.mps.typesystem.inference.util;
 
 import gnu.trove.THashSet;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.CollectionUtil;
 
 import java.util.Set;

@@ -28,7 +28,7 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Basic;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.presentation.ReferenceConceptUtil;
 
 import java.util.Iterator;
@@ -64,7 +64,7 @@ public class RefCellCellProvider extends AbstractReferentCellProvider {
     setSemanticNodeToCells(editorCell, node);
 
     if (myIsCardinality1) {
-      if (ReferenceConceptUtil.getCharacteristicReference(node.getConceptDeclarationNode()) != null) {
+      if (ReferenceConceptUtil.getCharacteristicReference(((jetbrains.mps.smodel.SNode) node).getConceptDeclarationNode()) != null) {
         editorCell.setAction(CellActionType.DELETE, new CellAction_DeleteNode(node));
       } else {
         editorCell.setAction(CellActionType.DELETE, new CellAction_Empty());

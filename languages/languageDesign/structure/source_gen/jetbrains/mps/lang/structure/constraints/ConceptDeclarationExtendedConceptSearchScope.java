@@ -4,7 +4,7 @@ package jetbrains.mps.lang.structure.constraints;
 
 import jetbrains.mps.scope.DelegatingScope;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.scope.EmptyScope;
 import jetbrains.mps.scope.FilteringScope;

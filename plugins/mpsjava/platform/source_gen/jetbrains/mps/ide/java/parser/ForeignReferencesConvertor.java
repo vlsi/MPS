@@ -5,10 +5,10 @@ package jetbrains.mps.ide.java.parser;
 import java.util.Set;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.ide.java.newparser.FeatureKind;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SModelOperations;
@@ -62,8 +62,8 @@ public class ForeignReferencesConvertor {
   }
 
   private SNode getMPSClassByIdString(SModel model, String idString) {
-    if (idString.startsWith(SNodeId.Foreign.ID_PREFIX)) {
-      idString = idString.substring(SNodeId.Foreign.ID_PREFIX.length());
+    if (idString.startsWith(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX)) {
+      idString = idString.substring(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX.length());
     }
     String className = idString;
     SNode node = SModelOperations.getRootByName(model, className);

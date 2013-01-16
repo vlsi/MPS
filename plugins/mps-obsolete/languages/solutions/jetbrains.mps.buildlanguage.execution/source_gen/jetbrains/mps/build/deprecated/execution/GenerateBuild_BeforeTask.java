@@ -4,7 +4,7 @@ package jetbrains.mps.build.deprecated.execution;
 
 import jetbrains.mps.execution.api.configurations.BaseMpsBeforeTaskProvider;
 import com.intellij.openapi.util.Key;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
 
 public class GenerateBuild_BeforeTask extends BaseMpsBeforeTaskProvider<GenerateBuild_BeforeTask.GenerateBuild_BeforeTask_RunTask> {

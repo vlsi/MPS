@@ -4,7 +4,7 @@ package jetbrains.mps.platform.conf.stubs;
 
 import org.jdom.Namespace;
 import java.util.regex.Pattern;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jdom.Document;
 import org.jdom.Element;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -22,7 +22,7 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 public class ConfReader {
   private static final Namespace XI = Namespace.getNamespace("xi", "http://www.w3.org/2001/XInclude");
@@ -294,13 +294,13 @@ public class ConfReader {
         }
         if (bc != null) {
           SNode bep = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.BeanExtensionPoint", null);
-          bep.setId(createForeignId(resolveInfo(EXTENSION_POINT, name)));
+          ((jetbrains.mps.smodel.SNode) bep).setId(createForeignId(resolveInfo(EXTENSION_POINT, name)));
           ListSequence.fromList(SLinkOperations.getTargets(node, "fragment", true)).addElement(bep);
           setProperty("name", bep, name);
           addClassifierReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.BeanExtensionPoint", "beanClass"), bep, bc);
         } else if (ifc != null) {
           SNode iep = SConceptOperations.createNewNode("jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint", null);
-          iep.setId(createForeignId(resolveInfo(EXTENSION_POINT, name)));
+          ((jetbrains.mps.smodel.SNode) iep).setId(createForeignId(resolveInfo(EXTENSION_POINT, name)));
           ListSequence.fromList(SLinkOperations.getTargets(node, "fragment", true)).addElement(iep);
           setProperty("name", iep, name);
           addClassifierReference(SLinkOperations.findLinkDeclaration("jetbrains.mps.platform.conf.structure.IntefaceExtensionPoint", "iface"), iep, ifc);
@@ -499,7 +499,7 @@ public class ConfReader {
   }
 
   public static SNodeId createForeignId(String fqName) {
-    return new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + shortName(fqName));
+    return new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + shortName(fqName));
   }
 
   public static boolean canRead(Document doc) {

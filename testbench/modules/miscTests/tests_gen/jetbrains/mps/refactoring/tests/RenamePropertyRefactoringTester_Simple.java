@@ -14,7 +14,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -61,7 +61,7 @@ public class RenamePropertyRefactoringTester_Simple implements IRefactoringTeste
               }
               SModel sModel = sandbox1.getSModel();
               SNode root = sModel.rootsIterator().next();
-              SNode firstChild = root.getChildren("anotherGoodConcept").get(0);
+              SNode firstChild = root.getChildren("anotherGoodConcept").iterator().next();
               String propertyValue = SNodeAccessUtil.getProperty(firstChild, newPropertyName);
               result[0] = "cat".equals(propertyValue);
             } catch (Throwable t) {

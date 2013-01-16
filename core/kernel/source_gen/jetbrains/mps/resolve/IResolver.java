@@ -4,7 +4,7 @@ package jetbrains.mps.resolve;
 
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 
 public interface IResolver {

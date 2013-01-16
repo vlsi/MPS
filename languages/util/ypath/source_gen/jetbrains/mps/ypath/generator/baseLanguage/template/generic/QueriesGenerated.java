@@ -15,7 +15,7 @@ import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.ypath.actions.TraversalAxisUtil;
 import jetbrains.mps.generator.template.IfMacroContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.template.SourceSubstituteMacroNodeContext;
 import jetbrains.mps.ypath.behavior.ITreePathExpression_Behavior;
 import jetbrains.mps.typesystem.inference.TypeChecker;

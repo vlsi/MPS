@@ -19,7 +19,7 @@ import jetbrains.mps.datatransfer.PasteNodeData;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.smodel.IOperationContext;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.ModelAccess;

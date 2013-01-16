@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.textGen;
 import jetbrains.mps.textGen.TextGenBuffer;
 import java.util.Set;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import java.util.HashMap;
 import java.util.HashSet;

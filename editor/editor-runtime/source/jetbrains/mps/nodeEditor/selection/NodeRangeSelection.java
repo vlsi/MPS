@@ -21,7 +21,8 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.CellInfo;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 
@@ -89,7 +90,7 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
 
   private void initSelectedCells() {
     List<EditorCell> selectedCells = new ArrayList<EditorCell>();
-    List<SNode> children = myParentNode.getChildren(myRole);
+    List<? extends SNode> children = IterableUtil.asList(myParentNode.getChildren(myRole));
     int i1 = children.indexOf(myFirstNode);
     assert i1 != -1;
     int i2 = children.indexOf(myLastNode);
@@ -200,10 +201,9 @@ public class NodeRangeSelection extends AbstractMultipleSelection implements Mul
 
   // TODO: enlargeSelection action should be handled specifically by executeAction() method
   public NodeRangeSelection enlargeSelection(boolean next) {
-    List<SNode> children = myParentNode.getChildren(myRole);
 
     SNode newLastNode = null;
-    for (Iterator<SNode> it = children.iterator(); it.hasNext(); ) {
+    for (Iterator<? extends SNode> it = myParentNode.getChildren(myRole).iterator(); it.hasNext(); ) {
       SNode semanticNode = it.next();
       if (semanticNode == myLastNode) {
         if (next) {

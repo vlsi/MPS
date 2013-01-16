@@ -31,7 +31,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.logging.Logger;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class NextPreviousTraverser {
   private static final Icon PREVIOUS_ICON = AllIcons.Actions.PreviousOccurence;

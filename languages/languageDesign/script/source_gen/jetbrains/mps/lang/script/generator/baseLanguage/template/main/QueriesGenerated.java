@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.PropertyMacroContext;
 import jetbrains.mps.lang.script.util.ScriptNameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -135,7 +135,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2037769997942619526(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "newMethodDeclaration", false).getSNodeId().toString();
+    return SLinkOperations.getTarget(_context.getNode(), "newMethodDeclaration", false).getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_2037769997942114638(final IOperationContext operationContext, final PropertyMacroContext _context) {
@@ -147,7 +147,7 @@ public class QueriesGenerated {
   }
 
   public static Object propertyMacro_GetPropertyValue_2037769997942335890(final IOperationContext operationContext, final PropertyMacroContext _context) {
-    return SLinkOperations.getTarget(_context.getNode(), "newMethodDeclaration", false).getSNodeId().toString();
+    return SLinkOperations.getTarget(_context.getNode(), "newMethodDeclaration", false).getNodeId().toString();
   }
 
   public static Object propertyMacro_GetPropertyValue_2037769997947335928(final IOperationContext operationContext, final PropertyMacroContext _context) {

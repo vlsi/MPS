@@ -17,7 +17,7 @@ package jetbrains.mps.nodeEditor.text;
 
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.MPSModuleRepository;
 
 import java.lang.reflect.Method;

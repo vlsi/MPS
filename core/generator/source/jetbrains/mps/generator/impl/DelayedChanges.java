@@ -23,7 +23,7 @@ import jetbrains.mps.generator.impl.reference.ReferenceInfo_CopiedInputNode;
 import jetbrains.mps.generator.runtime.NodeMapper;
 import jetbrains.mps.generator.runtime.PostProcessor;
 import jetbrains.mps.generator.runtime.TemplateContext;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
@@ -40,7 +40,7 @@ public class DelayedChanges {
   private List<Change> myExecuteMapSrcNodeMacroChanges = new ArrayList<Change>();
   private List<Change> myExecuteMapSrcNodeMacroPostProcChanges = new ArrayList<Change>();
 
-  private SNode attrsHolder = new SNode(SNodeUtil.concept_BaseConcept);
+  private jetbrains.mps.smodel.SNode attrsHolder = new jetbrains.mps.smodel.SNode(SNodeUtil.concept_BaseConcept);
 
   private IGeneratorLogger myLogger;
   private TemplateGenerator myGenerator;

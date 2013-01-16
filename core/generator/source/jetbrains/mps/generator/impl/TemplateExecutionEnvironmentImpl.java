@@ -23,7 +23,7 @@ import jetbrains.mps.generator.impl.reference.*;
 import jetbrains.mps.generator.runtime.*;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.kernel.model.SModelUtil;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import org.jetbrains.annotations.NotNull;
 
@@ -311,7 +311,7 @@ public class TemplateExecutionEnvironmentImpl implements TemplateExecutionEnviro
     }
 
     // add
-    SNode/*LinkDeclaration*/ childLinkDeclaration = SModelSearchUtil.findLinkDeclaration(contextParentNode.getConceptDeclarationNode(), childRole);
+    SNode/*LinkDeclaration*/ childLinkDeclaration = SModelSearchUtil.findLinkDeclaration(((jetbrains.mps.smodel.SNode) contextParentNode).getConceptDeclarationNode(), childRole);
     if (childLinkDeclaration == null) {
       // there should have been warning about that
       contextParentNode.addChild(childRole, outputNodeToWeave);

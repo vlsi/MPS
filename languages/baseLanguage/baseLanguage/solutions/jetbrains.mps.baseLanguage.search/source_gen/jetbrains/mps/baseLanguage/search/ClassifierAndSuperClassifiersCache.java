@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.search;
 import jetbrains.mps.cache.AbstractCache;
 import jetbrains.mps.cache.KeyProducer;
 import jetbrains.mps.cache.DataSet;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelDescriptor;
 import java.util.HashSet;

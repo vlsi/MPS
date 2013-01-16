@@ -10,7 +10,7 @@ import javax.swing.Icon;
 import jetbrains.mps.debugger.api.ui.DebugActionsUtil;
 import com.intellij.ide.DataManager;
 import jetbrains.mps.util.StringUtil;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import javax.swing.JPopupMenu;
 import javax.swing.AbstractAction;

@@ -18,7 +18,7 @@ package jetbrains.mps.nodeEditor.cellActions;
 import jetbrains.mps.baseLanguage.tuples.runtime.Tuples._3;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.List;
 import java.util.Map;

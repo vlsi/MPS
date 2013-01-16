@@ -17,7 +17,7 @@ package jetbrains.mps.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeOperations;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.NameUtil;

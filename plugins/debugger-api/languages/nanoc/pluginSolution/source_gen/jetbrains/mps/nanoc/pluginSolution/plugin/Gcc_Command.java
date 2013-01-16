@@ -4,7 +4,7 @@ package jetbrains.mps.nanoc.pluginSolution.plugin;
 
 import jetbrains.mps.nanoc.debug.ProgramsLocationUtil;
 import com.intellij.execution.process.ProcessHandler;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.execution.ExecutionException;
 import java.io.File;
 import jetbrains.mps.vfs.IFile;

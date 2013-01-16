@@ -18,7 +18,7 @@ package jetbrains.mps.newTypesystem.operation.block;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.blocks.Block;
 import jetbrains.mps.newTypesystem.state.blocks.ConditionKind;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class RemoveDependencyOperation extends AbstractBlockOperation {
   private final SNode myVar;

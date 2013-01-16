@@ -18,7 +18,7 @@ package jetbrains.mps.nodeEditor;
 import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.openapi.editor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.misc.hash.HashSet;
@@ -93,7 +93,7 @@ public class ChildrenCollectionFinder {
     if (current.getRole() != null) {
       String role = current.getRole();
       SNode currentNode = current.getSNode();
-      SNode linkDeclaration = currentNode.getLinkDeclaration(role);
+      SNode linkDeclaration = ((jetbrains.mps.smodel.SNode) currentNode).getLinkDeclaration(role);
       if (linkDeclaration != null &&
         !SNodeUtil.getLinkDeclaration_IsReference(linkDeclaration) &&
         SModelUtil.isMultipleLinkDeclaration(linkDeclaration)) {

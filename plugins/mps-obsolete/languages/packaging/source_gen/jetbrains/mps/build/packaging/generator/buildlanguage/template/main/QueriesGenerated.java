@@ -13,7 +13,7 @@ import jetbrains.mps.build.packaging.behavior.Configuration_Behavior;
 import jetbrains.mps.build.packaging.behavior.Util;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.io.File;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.packaging.behavior.Copy_Behavior;
 import jetbrains.mps.build.packaging.behavior.Module_Behavior;

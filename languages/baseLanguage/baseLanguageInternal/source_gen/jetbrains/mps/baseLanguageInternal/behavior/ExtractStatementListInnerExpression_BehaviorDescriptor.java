@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguageInternal.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.ILocalVariableElement_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.ILocalVariableElement_Behavior;
 
 public class ExtractStatementListInnerExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements ILocalVariableElement_BehaviorDescriptor {

@@ -5,7 +5,7 @@ package jetbrains.mps.lang.typesystem.behavior;
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IType_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IGenericType_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
 import java.util.List;

@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import java.util.Set;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import java.util.List;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
@@ -167,7 +167,7 @@ public class ConvertAnonymousRefactoring {
       if (SetSequence.fromSet(ROLES_NOT_TO_COPY).contains(role)) {
         continue;
       }
-      for (SNode child : ListSequence.fromList(from.getChildren(role))) {
+      for (SNode child : Sequence.fromIterable(from.getChildren(role))) {
         to.addChild(role, SNodeOperations.detachNode(((SNode) child)));
       }
     }

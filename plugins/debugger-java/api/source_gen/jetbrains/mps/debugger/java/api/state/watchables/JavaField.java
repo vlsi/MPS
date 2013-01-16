@@ -12,7 +12,7 @@ import com.sun.jdi.ThreadReference;
 import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 
 public class JavaField extends JavaWatchable implements IWatchable {

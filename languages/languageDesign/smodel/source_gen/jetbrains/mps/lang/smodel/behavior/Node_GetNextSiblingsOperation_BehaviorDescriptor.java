@@ -4,7 +4,7 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import org.jetbrains.mps.openapi.language.SConcept;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class Node_GetNextSiblingsOperation_BehaviorDescriptor extends SNodeOperation_BehaviorDescriptor {
   public Node_GetNextSiblingsOperation_BehaviorDescriptor() {

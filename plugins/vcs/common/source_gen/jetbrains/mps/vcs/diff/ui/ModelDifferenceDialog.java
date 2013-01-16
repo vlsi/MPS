@@ -7,7 +7,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.diff.ModelChangeSet;
 import javax.swing.JPanel;
 import java.awt.BorderLayout;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SModel;
 import com.intellij.openapi.diff.DiffRequest;
 import jetbrains.mps.ide.project.ProjectHelper;

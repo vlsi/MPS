@@ -6,7 +6,7 @@ import jetbrains.mps.baseLanguage.behavior.GenericDeclaration_BehaviorDescriptor
 import jetbrains.mps.baseLanguage.behavior.IVisible_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.IMemberContainer_Behavior;
 
 public abstract class BaseExtensionMethodContainer_BehaviorDescriptor extends GenericDeclaration_BehaviorDescriptor implements IVisible_BehaviorDescriptor, IMemberContainer_BehaviorDescriptor {

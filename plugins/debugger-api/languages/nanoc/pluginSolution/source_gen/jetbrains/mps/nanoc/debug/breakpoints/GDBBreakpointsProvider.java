@@ -13,7 +13,7 @@ import com.intellij.openapi.project.Project;
 import jetbrains.mps.debug.api.BreakpointInfo;
 import jetbrains.mps.debug.api.breakpoints.IBreakpointPropertiesUi;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.List;
 import java.util.Arrays;

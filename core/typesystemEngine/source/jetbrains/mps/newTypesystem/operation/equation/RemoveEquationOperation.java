@@ -16,7 +16,7 @@
 package jetbrains.mps.newTypesystem.operation.equation;
 
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class RemoveEquationOperation extends AbstractEquationOperation {
   public RemoveEquationOperation(SNode child, SNode parent, SNode source) {

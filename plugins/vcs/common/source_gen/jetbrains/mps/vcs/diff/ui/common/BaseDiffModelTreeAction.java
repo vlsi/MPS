@@ -7,7 +7,7 @@ import com.intellij.openapi.project.DumbAware;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import com.intellij.openapi.util.Ref;
 
 public abstract class BaseDiffModelTreeAction extends BaseAction implements DumbAware {

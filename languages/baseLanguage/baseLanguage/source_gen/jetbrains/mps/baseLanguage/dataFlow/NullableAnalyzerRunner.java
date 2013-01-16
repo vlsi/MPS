@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.dataFlow;
 
 import jetbrains.mps.analyzers.runtime.framework.CustomAnalyzerRunner;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.dataFlow.MPSProgramBuilder;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.lang.dataFlow.framework.DataFlowAnalyzer;

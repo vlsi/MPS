@@ -4,7 +4,7 @@ package jetbrains.mps.ide.uiLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor;
 import jetbrains.mps.uiLanguage.behavior.IComponentInstance_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.uiLanguage.behavior.IComponentInstance_Behavior;
 
 public class IDEDialog_BehaviorDescriptor extends BaseConcept_BehaviorDescriptor implements IComponentInstance_BehaviorDescriptor {

@@ -35,7 +35,7 @@ import jetbrains.mps.idea.core.usages.rules.UsageByCategory;
 import jetbrains.mps.idea.core.usages.rules.UsageInMPS;
 import jetbrains.mps.idea.core.usages.rules.UsageInModel;
 import jetbrains.mps.idea.core.usages.rules.UsageInRoot;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import org.jetbrains.annotations.NotNull;
 

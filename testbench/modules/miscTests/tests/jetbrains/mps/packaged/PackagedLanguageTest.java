@@ -19,11 +19,10 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.TestMain.ProjectRunnable;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.util.*;
-import org.jetbrains.mps.openapi.model.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.Computable;
+import jetbrains.mps.util.FileUtil;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -88,7 +87,7 @@ public class PackagedLanguageTest {
   }
 
   private void checkIconsLoaded() {
-    final SNode packagedConceptInstance = new SNode(PACKAGED_LANGUAGE + ".structure." + PACKAGED_CONCEPT);
+    final jetbrains.mps.smodel.SNode packagedConceptInstance = new jetbrains.mps.smodel.SNode(PACKAGED_LANGUAGE + ".structure." + PACKAGED_CONCEPT);
     final Icon icon = IconManager.getIconFor(packagedConceptInstance);
     Assert.assertNotNull(icon);
     Assert.assertEquals(16, icon.getIconHeight());

@@ -41,7 +41,6 @@ import org.jetbrains.mps.openapi.language.SLink;
 import org.jetbrains.mps.openapi.model.SModelId;
 import org.jetbrains.mps.openapi.model.SModelReference;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
-import org.jetbrains.mps.openapi.model.SNodeReference;
 import org.jetbrains.mps.openapi.module.SModule;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import org.jetbrains.mps.openapi.persistence.ModelRoot;
@@ -327,7 +326,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
 
   public SNode getReferenceTarget(String role) {
     SReference reference = getReference(role);
-    SNode result = reference == null ? null : reference.getTargetNode();
+    SNode result = reference == null ? null : (SNode) reference.getTargetNode();
     if (result != null) {
       fireNodeReferentReadAccess(role, result);
     }
@@ -657,11 +656,11 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myModel != null && myModel.isDisposed();
   }
 
-  public void setId(@Nullable SNodeId id) {
+  public void setId(@Nullable org.jetbrains.mps.openapi.model.SNodeId id) {
     if (EqualUtil.equals(id, myId)) return;
 
     if (myModel == null) {
-      myId = id;
+      myId = ((SNodeId) id);
     } else {
       LOG.error("can't set id to registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this), new Throwable());
     }
@@ -710,15 +709,15 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   //----------------------------------------------------------
 
   public SNode getConceptDeclarationNode() {
-    return SModelUtil.findConceptDeclaration(getConceptFqName(), GlobalScope.getInstance());
+    return (SNode) SModelUtil.findConceptDeclaration(getConceptFqName(), GlobalScope.getInstance());
   }
 
   public SNode getPropertyDeclaration(String propertyName) {
-    return SModelSearchUtil.findPropertyDeclaration(getConceptDeclarationNode(), propertyName);
+    return (SNode) SModelSearchUtil.findPropertyDeclaration(getConceptDeclarationNode(), propertyName);
   }
 
   public SNode getLinkDeclaration(String role) {
-    return SModelSearchUtil.findLinkDeclaration(getConceptDeclarationNode(), role);
+    return (SNode) SModelSearchUtil.findLinkDeclaration(getConceptDeclarationNode(), role);
   }
 
   public SNode getRoleLink() {
@@ -1089,7 +1088,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   @Deprecated
   /**
    * Use<br/>
-   * n = new SNode(concept);<br/>
+   * n = new jetbrains.mps.smodel.SNode(concept);<br/>
    * model.addNode(n)<br/>
    * or<br/>
    * n = model.newNode(concept)<br/>
@@ -1105,7 +1104,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   @Deprecated
   /**
    * Use<br/>
-   * n = new SNode(concept);<br/>
+   * n = new jetbrains.mps.smodel.SNode(concept);<br/>
    * model.addNode(n)<br/>
    * or<br/>
    * n = model.newNode(concept)<br/>
@@ -1261,9 +1260,9 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     if (myConceptFqName.equals(SNodeUtil.concept_ConceptDeclaration) || myConceptFqName.equals(SNodeUtil.concept_InterfaceConceptDeclaration)) {
       conceptDeclaration = this;
     } else {
-      conceptDeclaration = SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
+      conceptDeclaration = (SNode) SModelUtil.findConceptDeclaration(myConceptFqName, GlobalScope.getInstance());
     }
-    return SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
+    return (SNode) SModelSearchUtil.findConceptProperty(conceptDeclaration, propertyName);
   }
 
   @Deprecated
@@ -1303,8 +1302,8 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * Inline content in java code, use migration in MPS
    * @Deprecated in 3.0
    */
-  public List<SNode> getDescendants(Condition<SNode> condition) {
-    return jetbrains.mps.util.SNodeOperations.getDescendants(this, condition);
+  public List<SNode> getDescendants(final Condition<SNode> condition) {
+    return (List) jetbrains.mps.util.SNodeOperations.getDescendants(this, new MyTransformingCondition(condition));
   }
 
   @Deprecated
@@ -1338,7 +1337,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
   public List<SNode> getReferents() {
     List<SNode> result = new ArrayList<SNode>();
     for (SReference reference : getReferences()) {
-      SNode targetNode = reference.getTargetNode();
+      SNode targetNode = (SNode) reference.getTargetNode();
       if (targetNode != null) result.add(targetNode);
     }
     return result;
@@ -1391,7 +1390,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public SNode findParent(Condition<SNode> condition) {
-    return ((SNode) jetbrains.mps.util.SNodeOperations.findParent(this, condition));
+    return ((SNode) jetbrains.mps.util.SNodeOperations.findParent(this, new MyTransformingCondition(condition)));
   }
 
   @Deprecated
@@ -1614,7 +1613,7 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
    * @Deprecated in 3.0
    */
   public Iterable<SNode> getDescendantsIterable(@Nullable final Condition<SNode> condition, final boolean includeFirst) {
-    return jetbrains.mps.util.SNodeOperations.getDescendants(this, condition, includeFirst);
+    return (Iterable) jetbrains.mps.util.SNodeOperations.getDescendants(this, new MyTransformingCondition(condition), includeFirst);
   }
 
   @Deprecated
@@ -2020,6 +2019,20 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     @Override
     public void unload() {
 
+    }
+  }
+
+  private static class MyTransformingCondition implements Condition<org.jetbrains.mps.openapi.model.SNode> {
+    private final Condition<SNode> myCondition;
+
+    public MyTransformingCondition(Condition<SNode> condition) {
+      myCondition = condition;
+    }
+
+    @Override
+    public boolean met(org.jetbrains.mps.openapi.model.SNode object) {
+      if (!(object instanceof SNode)) return false;
+      return myCondition.met((SNode) object);
     }
   }
 }

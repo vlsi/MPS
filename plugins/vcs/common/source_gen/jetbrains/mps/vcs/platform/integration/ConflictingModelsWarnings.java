@@ -6,7 +6,7 @@ import jetbrains.mps.ide.editor.warningPanel.EditorWarningsProvider;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.ide.editor.warningPanel.WarningPanel;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.SModelDescriptor;
 import com.intellij.openapi.vfs.VirtualFile;

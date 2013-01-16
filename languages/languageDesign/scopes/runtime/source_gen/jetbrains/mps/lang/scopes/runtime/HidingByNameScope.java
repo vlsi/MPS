@@ -4,7 +4,7 @@ package jetbrains.mps.lang.scopes.runtime;
 
 import jetbrains.mps.scope.Scope;
 import java.util.Set;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.util.NameUtil;
 import java.util.HashSet;

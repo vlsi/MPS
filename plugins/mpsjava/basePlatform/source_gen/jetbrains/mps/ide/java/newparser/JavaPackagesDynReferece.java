@@ -5,7 +5,7 @@ package jetbrains.mps.ide.java.newparser;
 import jetbrains.mps.smodel.DynamicReference;
 import java.util.List;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -75,7 +75,7 @@ public class JavaPackagesDynReferece extends DynamicReference {
       SModel model_var;
       while (model_it.hasNext()) {
         model_var = model_it.next();
-        for (org.jetbrains.mps.openapi.model.SNode n : Sequence.fromIterable(model_var.getRootNodes())) {
+        for (SNode n : Sequence.fromIterable(model_var.getRootNodes())) {
           if (name.equals(n.getName())) {
             // <node> 
             return (SNode) n;

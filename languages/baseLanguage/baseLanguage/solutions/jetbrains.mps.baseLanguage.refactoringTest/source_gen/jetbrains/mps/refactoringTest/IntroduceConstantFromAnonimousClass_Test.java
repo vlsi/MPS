@@ -13,7 +13,7 @@ import junit.framework.Assert;
 import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 @MPSLaunch
 public class IntroduceConstantFromAnonimousClass_Test extends BaseTransformationTest4 {

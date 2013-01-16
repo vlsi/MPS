@@ -4,7 +4,7 @@ package jetbrains.mps.lang.smodel.constraints;
 
 import jetbrains.mps.smodel.runtime.base.BaseConstraintsDescriptor;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.runtime.CheckingNodeContext;
 import java.util.Map;
@@ -22,6 +22,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 
 public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
   public SLinkImplicitSelect_Constraints() {
@@ -95,7 +96,7 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
             return false;
           }
           {
-            SNode childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a = nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0.getChildren(childRole_SLinkImplicitSelect_Constraints_f4oi2a_).get(0);
+            SNode childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a = IterableUtil.get(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0.getChildren(childRole_SLinkImplicitSelect_Constraints_f4oi2a_), 0);
             {
               SNode nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a;
               nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a = childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a0a0a;
@@ -150,7 +151,7 @@ public class SLinkImplicitSelect_Constraints extends BaseConstraintsDescriptor {
             return false;
           }
           {
-            SNode childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a = nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0.getChildren(childRole_SLinkImplicitSelect_Constraints_f4oi2a__0).get(0);
+            SNode childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a = IterableUtil.get(nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0.getChildren(childRole_SLinkImplicitSelect_Constraints_f4oi2a__0), 0);
             {
               SNode nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a;
               nodeToMatch_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a = childVar_SLinkImplicitSelect_Constraints_f4oi2a_a0a0a0a0a;

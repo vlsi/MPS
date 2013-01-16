@@ -16,7 +16,7 @@
 package jetbrains.mps.lang.editor.cellProviders;
 
 import jetbrains.mps.nodeEditor.cellMenu.BasicCellContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /**
  * Igor Alshannikov

@@ -24,9 +24,10 @@ import jetbrains.mps.vcs.changesmanager.tree.features.PropertyFeature;
 import jetbrains.mps.vcs.diff.changes.SetReferenceChange;
 import jetbrains.mps.vcs.changesmanager.tree.features.ReferenceFeature;
 import jetbrains.mps.vcs.diff.changes.NodeGroupChange;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.vcs.changesmanager.tree.features.DeletedChildFeature;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
@@ -79,7 +80,7 @@ public class FeatureForestMapSupport extends AbstractProjectComponent {
       if (begin == end) {
         ListSequence.fromList(result).addElement(new DeletedChildFeature(new SNodePointer(modelReference, parentId), role, begin));
       } else {
-        List<SNode> changeChildren = change.getChangeSet().getNewModel().getNodeById(parentId).getChildren(role);
+        List<SNode> changeChildren = ((List) IterableUtil.asList(change.getChangeSet().getNewModel().getNodeById(parentId).getChildren(role)));
         for (int i = begin; i < end; i++) {
           if (i < ListSequence.fromList(changeChildren).count()) {
             ListSequence.fromList(result).addElement(new NodeFeature(new SNodePointer(modelReference, ListSequence.fromList(changeChildren).getElement(i).getNodeId())));

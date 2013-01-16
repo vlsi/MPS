@@ -17,7 +17,7 @@ import jetbrains.mps.nodeEditor.CellActionType;
 import com.intellij.ide.CopyPasteManagerEx;
 import jetbrains.mps.ide.datatransfer.SNodeTransferable;
 import java.util.Collections;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Collection;

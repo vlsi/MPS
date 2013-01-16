@@ -23,7 +23,6 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.smodel.IOperationContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.typesystem.inference.TypeChecker" />
     <classNode dependClassName="jetbrains.mps.util.JavaNameUtil" />
     <classNode dependClassName="jetbrains.mps.ypath.behavior.ChildrenBlock_Behavior" />
@@ -33,6 +32,7 @@
     <classNode dependClassName="jetbrains.mps.ypath.behavior.TreeNodeKindProperty_Behavior" />
     <classNode dependClassName="jetbrains.mps.ypath.behavior.TreeNodeKind_Behavior" />
     <classNode dependClassName="jetbrains.mps.ypath.behavior.TreePath_Behavior" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
 </dependenciesRoot>
 

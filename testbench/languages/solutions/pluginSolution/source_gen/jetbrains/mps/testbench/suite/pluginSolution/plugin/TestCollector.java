@@ -4,7 +4,7 @@ package jetbrains.mps.testbench.suite.pluginSolution.plugin;
 
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import java.util.List;
 import jetbrains.mps.smodel.ModelAccess;

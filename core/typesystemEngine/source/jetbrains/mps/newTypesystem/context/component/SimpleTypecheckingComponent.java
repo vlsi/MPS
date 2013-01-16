@@ -21,7 +21,8 @@ import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.newTypesystem.context.typechecking.BaseTypechecking;
 import jetbrains.mps.newTypesystem.state.State;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.util.Pair;
@@ -189,7 +190,7 @@ import java.util.Set;
       }
       Set<SNode> candidatesForFrontier = new LinkedHashSet<SNode>();
       if (forceChildrenCheck) {
-        candidatesForFrontier.addAll(sNode.getChildren());
+        candidatesForFrontier.addAll(IterableUtil.asCollection(sNode.getChildren()));
       }
       for (SNode candidate : candidatesForFrontier) {
         if (candidate == null || myFullyCheckedNodes.contains(candidate)) continue;

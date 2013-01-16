@@ -15,7 +15,7 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -47,10 +47,13 @@ public interface SNode {
 
   //common properties
 
+  //migration-time only
+  jetbrains.mps.smodel.SModel getModel();
+
   /**
    * Uniquely identifies the node within its containing model. May also be null.
    */
-  jetbrains.mps.smodel.SNodeId getNodeId();
+  SNodeId getNodeId();
 
   /**
    * Uniquely identifies the node in a repository. Never changes between subsequent read and write actions and behaves as a "weak reference" for a node
@@ -182,7 +185,7 @@ public interface SNode {
    * <p/>
    * The returned collection is immutable.
    */
-  public Iterable<? extends jetbrains.mps.smodel.SReference> getReferences();
+  public Iterable<jetbrains.mps.smodel.SReference> getReferences();
 
   // props
 
