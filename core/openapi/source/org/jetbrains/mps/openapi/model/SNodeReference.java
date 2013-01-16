@@ -25,7 +25,5 @@ import org.jetbrains.mps.openapi.module.SRepository;
 public interface SNodeReference {
   SNode resolve(SRepository repo);
 
-  SModel resolveModel(SRepository repo);
-
   SModelReference getModelReference();
 }
