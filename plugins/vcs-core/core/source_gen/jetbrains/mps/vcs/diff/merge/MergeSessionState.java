@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SModel;
 import java.util.Set;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import java.util.Map;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.CopyUtil;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.HashSet;

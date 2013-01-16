@@ -6,7 +6,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import java.util.Set;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.SetSequence;

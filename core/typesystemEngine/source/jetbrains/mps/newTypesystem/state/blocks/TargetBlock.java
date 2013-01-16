@@ -20,7 +20,7 @@ import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.TargetState;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Pair;
 

@@ -326,7 +326,7 @@ public class ASTConverter {
       SPropertyOperations.set(fDecl, "isFinal", "" + (flagSet(f.modifiers, ClassFileConstants.AccFinal)));
 
       if (!(SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) && myOnlyStubs) {
-        SNodeId nodeId = new SNodeId.Foreign(getState().getIdPrefix() + SPropertyOperations.getString(fDecl, "name"));
+        org.jetbrains.mps.openapi.model.SNodeId nodeId = new SNodeId.Foreign(getState().getIdPrefix() + SPropertyOperations.getString(fDecl, "name"));
         ((jetbrains.mps.smodel.SNode) fDecl).setId(nodeId);
       }
 
@@ -358,7 +358,7 @@ public class ASTConverter {
   private SNode convertMethod(SNode cls, AbstractMethodDeclaration method, boolean attach) throws JavaParseException {
     SNode result = null;
 
-    SNodeId sNodeId = cls.getNodeId();
+    org.jetbrains.mps.openapi.model.SNodeId sNodeId = cls.getNodeId();
     // FIXME 
     String clsStringId = (SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.AnonymousClass") || sNodeId instanceof SNodeId.Regular ?
       null :

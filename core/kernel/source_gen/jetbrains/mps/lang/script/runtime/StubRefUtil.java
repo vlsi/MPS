@@ -70,7 +70,7 @@ public class StubRefUtil {
     return isReferenceToClass(SNodeOperations.getReference(staticFieldRef, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "classifier")), classFqName) && isReferenceToField(SNodeOperations.getReference(staticFieldRef, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration")), field);
   }
 
-  public static boolean isReferenceTo(@Nullable SReference ref, @NotNull SModelReference targetModel, @NotNull SNodeId targetId) {
+  public static boolean isReferenceTo(@Nullable SReference ref, @NotNull SModelReference targetModel, @NotNull org.jetbrains.mps.openapi.model.SNodeId targetId) {
     return ref != null && targetId.equals(ref.getTargetNodeId()) && targetModel.equals(ref.getTargetSModelReference());
   }
 

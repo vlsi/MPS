@@ -11,7 +11,7 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
@@ -49,8 +49,8 @@ public class TemplateModelImpl implements TemplateModel {
       return null;
     }
     SNodeId id = template.getNodeId();
-    if (id instanceof SNodeId.Regular) {
-      long idValue = ((SNodeId.Regular) id).getId();
+    if (id instanceof jetbrains.mps.smodel.SNodeId.Regular) {
+      long idValue = ((jetbrains.mps.smodel.SNodeId.Regular) id).getId();
       if (idValue == 4146564171992617065L) {
         if (arguments.length != 2) {
           // TODO report `wrong arguments count` 

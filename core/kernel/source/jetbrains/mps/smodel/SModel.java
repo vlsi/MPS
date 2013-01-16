@@ -425,7 +425,7 @@ public class SModel {
 
   public static SNodeId generateUniqueId() {
     long id = Math.abs(ourCounter.incrementAndGet());
-    return new SNodeId.Regular(id);
+    return new jetbrains.mps.smodel.SNodeId.Regular(id);
   }
 
   @Nullable
@@ -444,7 +444,7 @@ public class SModel {
    */
   @Deprecated
   @Nullable
-  public SNode getNodeById(@NotNull SNodeId nodeId) {
+  public SNode getNodeById(@NotNull org.jetbrains.mps.openapi.model.SNodeId nodeId) {
     checkNotDisposed();
     if (myDisposed) return null;
 
@@ -986,7 +986,7 @@ public class SModel {
 
   @Nullable
   public SNode getNodeById(String idString) {
-    SNodeId nodeId = SNodeId.fromString(idString);
+    SNodeId nodeId = jetbrains.mps.smodel.SNodeId.fromString(idString);
     assert nodeId != null : "wrong node id string";
     return getNodeById(nodeId);
   }

@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.diff.ui;
 import com.intellij.openapi.ui.DialogWrapper;
 import com.intellij.openapi.actionSystem.DataProvider;
 import jetbrains.mps.vcs.diff.ModelChangeSet;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.vcs.diff.ui.common.DiffEditor;
 import java.util.List;

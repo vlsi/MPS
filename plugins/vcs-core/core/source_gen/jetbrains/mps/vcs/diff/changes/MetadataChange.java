@@ -5,7 +5,7 @@ package jetbrains.mps.vcs.diff.changes;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.vcs.diff.ChangeSet;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 public abstract class MetadataChange extends ModelChange {
   protected MetadataChange(@NotNull ChangeSet changeSet) {

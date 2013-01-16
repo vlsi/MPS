@@ -19,7 +19,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.smodel.DynamicReference;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 public class GWTModuleReader {
   private GWTModuleReader.Resolver gwtstubResolver;
@@ -191,7 +191,7 @@ public class GWTModuleReader {
   }
 
   public static SNodeId createId(String fqName) {
-    return new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + shortName(fqName));
+    return new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + shortName(fqName));
   }
 
   public static interface Resolver {

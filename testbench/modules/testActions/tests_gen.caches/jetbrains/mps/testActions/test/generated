@@ -2,7 +2,7 @@
 <dependencies version="2" modelHash="-bfwry8pt6ejlu2l9bj9l6xal4gphgme">
   <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" hash="-89hxj0ypb1mymp88cm6uftvxxpq6hll" />
   <dep model="r:00000000-0000-4000-0000-011c895902d8(jetbrains.mps.baseLanguage.unitTest.generator.baseLanguage.template.main@generator)" hash="-ctxvs1rpiiexlq8dltxstwmrdnqkuz7" />
-  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-ek9cwo63akkjaiynjhcowmj0i0e3tcu" />
+  <dep model="r:00000000-0000-4000-0000-011c89590389(jetbrains.mps.lang.test.generator.baseLanguage.template.main@generator)" hash="-1f4uv66dlny1z55uj7458b9x6e3c0t6" />
   <common hash="2sm4wp3ozcmhzqw2t9je7p8uxk8oxve" />
   <source id="3197704031717961581" name="ActionsTest" hash="-436h118lpjnva7r2bjl3dagq3awfyvw" dependsOnNodes="true">
     <dep root="4484885613884465103" />

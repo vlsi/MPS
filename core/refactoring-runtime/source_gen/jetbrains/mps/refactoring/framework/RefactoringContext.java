@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.StructureModificationData;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import java.util.Collection;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;

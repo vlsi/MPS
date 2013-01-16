@@ -11,7 +11,7 @@
   <dep model="r:dcaa78c3-0033-4464-8747-37a798d5e2e6(jetbrains.mps.bash.generator.template.main@generator)" hash="-b7r3b4cgril6sx37jph3jmc98p148at" />
   <dep model="r:e9081cad-d8c3-45f2-b4ad-1dabd5ff82af(jetbrains.mps.build.structure)" hash="-40yrzxmdvh2hf1t6r0um5ouo7m4d14f" />
   <dep model="r:ed179f4d-7cf2-479d-8348-50c1fc63b96a(jetbrains.mps.build.workflow.structure)" hash="dtt7wsqvomsqa4dnrx887ciou0ozjba" />
-  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="-bc8ij4nd6miq4cbzymn1owftl1oautk" />
+  <dep model="r:fdebfc98-bbd7-4c50-8a8d-eda16da9406e(jetbrains.mps.build.generator.template.main@generator)" hash="-4tjusgyibdyw7typ8jz07nx08e3iis1" />
   <common hash="-d2u3w504hf5qgdjqpcn14v564yxxte4" />
   <source id="7926701909975931624" name="mpsBootstrapCore" hash="dcs5w1zyzuzbw0r2i1v6rpapovapwc">
     <dep root="7181125477683264500" />

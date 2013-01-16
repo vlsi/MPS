@@ -19,7 +19,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SModelRepository;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.EqualUtil;

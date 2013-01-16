@@ -26,7 +26,7 @@ import jetbrains.mps.generator.fileGenerator.FileGenerationUtil;
 import jetbrains.mps.generator.traceInfo.TraceInfoCache;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.project.IModule;
-import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.traceInfo.DebugInfo;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.util.Computable;

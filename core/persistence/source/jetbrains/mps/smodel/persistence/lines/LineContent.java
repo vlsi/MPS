@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.persistence.lines;
 
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 /**
  * @author Evgeny Gerashchenko

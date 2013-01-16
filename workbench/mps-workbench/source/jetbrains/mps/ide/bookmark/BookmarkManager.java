@@ -31,7 +31,7 @@ import jetbrains.mps.nodeEditor.Highlighter;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.SModelReference;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NonNls;

@@ -13,7 +13,7 @@ import jetbrains.mps.ide.actions.MPSCommonDataKeys;
 import javax.swing.JOptionPane;
 import java.awt.Frame;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
@@ -76,7 +76,7 @@ public class GoToNodeById_Action extends BaseAction {
         null :
         value.trim()
       ));
-      final SNodeId id = SNodeId.fromString(value);
+      final SNodeId id = jetbrains.mps.smodel.SNodeId.fromString(value);
       if (id == null) {
         JOptionPane.showMessageDialog(((Frame) MapSequence.fromMap(_params).get("frame")), "Wrong node ID format " + value);
         return;

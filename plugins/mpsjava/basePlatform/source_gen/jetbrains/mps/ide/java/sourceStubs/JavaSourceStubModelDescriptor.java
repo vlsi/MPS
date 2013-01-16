@@ -13,7 +13,7 @@ import java.util.Set;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.persistence.DataSource;
 import jetbrains.mps.smodel.ModelAccess;
@@ -133,7 +133,7 @@ public class JavaSourceStubModelDescriptor extends BaseSpecialModelDescriptor im
         JavaParser.JavaParseResult parseResult = parser.parse(code, myJavaPackage, FeatureKind.CLASS_STUB, true);
         if (ListSequence.fromList(parseResult.getNodes()).isNotEmpty()) {
           for (SNode newNode : ListSequence.fromList(parseResult.getNodes())) {
-            final org.jetbrains.mps.openapi.model.SNodeId newNodeId = newNode.getNodeId();
+            final SNodeId newNodeId = newNode.getNodeId();
             // oldNodes is usually very very small (number of root classes in java file) 
             SNode oldNode = SetSequence.fromSet(oldNodes).where(new IWhereFilter<SNode>() {
               public boolean accept(SNode it) {

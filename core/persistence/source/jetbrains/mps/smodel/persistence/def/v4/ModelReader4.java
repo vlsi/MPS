@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.persistence.def.v4;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.SModel.ImportElement;
 import jetbrains.mps.smodel.persistence.def.*;
 import jetbrains.mps.util.InternUtil;
@@ -226,7 +226,7 @@ public class ModelReader4 implements IModelReader {
 
     String idValue = nodeElement.getAttributeValue(ModelPersistence.ID);
     if (idValue != null) {
-      SNodeId id = SNodeId.fromString(idValue);
+      SNodeId id = jetbrains.mps.smodel.SNodeId.fromString(idValue);
       if (id == null) {
         LOG.error("invalid id string");
         return null;

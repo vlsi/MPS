@@ -4,6 +4,7 @@
   <property name="idea_home" location=".." />
 
   <target name="build">
+    <ant antfile="ideaPlatform.xml" target="force-resolve" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="mpsBootstrapCore.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="mpsCore.xml" inheritAll="true" useNativeBasedir="true" />
     <ant antfile="mpsTesting.xml" inheritAll="true" useNativeBasedir="true" />

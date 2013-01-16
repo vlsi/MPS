@@ -10,7 +10,7 @@ import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Point;
 import java.awt.Rectangle;

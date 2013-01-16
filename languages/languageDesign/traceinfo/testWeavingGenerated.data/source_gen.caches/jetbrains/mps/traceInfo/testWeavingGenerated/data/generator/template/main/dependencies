@@ -65,6 +65,7 @@
     <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Templatemap__RootConcept" />
     <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Templateweave__ChildConceptWeave" />
     <classNode dependClassName="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Templateweave__ChildConceptWeaveMany" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="jetbrains.mps.generator.runtime.TemplateModel" />
   </dependency>
   <dependency className="jetbrains.mps.traceInfo.testWeavingGenerated.data.generator.template.main.Templatemap__RootConcept" file="Templatemap__RootConcept.java">

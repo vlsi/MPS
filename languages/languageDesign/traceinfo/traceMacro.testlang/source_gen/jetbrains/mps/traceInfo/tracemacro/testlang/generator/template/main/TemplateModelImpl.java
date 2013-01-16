@@ -11,7 +11,7 @@ import jetbrains.mps.generator.runtime.TemplateUtil;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.generator.runtime.TemplateDeclaration;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelId;
 import java.util.UUID;

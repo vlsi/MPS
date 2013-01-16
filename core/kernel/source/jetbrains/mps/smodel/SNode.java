@@ -656,11 +656,11 @@ public final class SNode implements org.jetbrains.mps.openapi.model.SNode {
     return myModel != null && myModel.isDisposed();
   }
 
-  public void setId(@Nullable SNodeId id) {
+  public void setId(@Nullable org.jetbrains.mps.openapi.model.SNodeId id) {
     if (EqualUtil.equals(id, myId)) return;
 
     if (myModel == null) {
-      myId = id;
+      myId = ((SNodeId) id);
     } else {
       LOG.error("can't set id to registered node " + org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(this), new Throwable());
     }

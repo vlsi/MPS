@@ -15,7 +15,7 @@
  */
 package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.openapi.model.SNode;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConcept;
@@ -53,7 +53,7 @@ public interface SNode {
   /**
    * Uniquely identifies the node within its containing model. May also be null.
    */
-  jetbrains.mps.smodel.SNodeId getNodeId();
+  SNodeId getNodeId();
 
   /**
    * Uniquely identifies the node in a repository. Never changes between subsequent read and write actions and behaves as a "weak reference" for a node

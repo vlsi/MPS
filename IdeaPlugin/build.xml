@@ -90,23 +90,24 @@
   </target>
 
   <target name="buildCore" depends="loadVars">
-    <ant antfile="../build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="${base_dir}/build/ideaPlatform.xml" target="force-resolve" inheritAll="true" useNativeBasedir="true" />
+    <ant antfile="${base_dir}/build/mpsBootstrapCore.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
-    <ant antfile="../build/mpsCore.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="${base_dir}/build/mpsCore.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
-    <ant antfile="../build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="${base_dir}/build/mpsTesting.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
-    <ant antfile="../build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="${base_dir}/build/mpsBuild.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>
-    <ant antfile="../build/mpsJava.xml" inheritAll="false" useNativeBasedir="true">
+    <ant antfile="${base_dir}/build/mpsJava.xml" inheritAll="false" useNativeBasedir="true">
       <property name="build.dir" location="${build.home}"/>
       <property name="idea_home" location="${ideaPath}"/>
     </ant>

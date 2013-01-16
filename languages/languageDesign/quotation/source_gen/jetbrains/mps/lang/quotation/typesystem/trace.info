@@ -26,15 +26,15 @@
     <nodeInfo nodeId="3180306201267183166" fileName="typeof_Quotation_InferenceRule.java" startLine="68" startPosition="264" endLine="69" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3180306201267192136" fileName="typeof_Quotation_InferenceRule.java" startLine="72" startPosition="61" endLine="73" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3180306201267192136" fileName="typeof_Quotation_InferenceRule.java" startLine="73" startPosition="30" endLine="74" endPosition="165" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3180306201267192136" fileName="typeof_Quotation_InferenceRule.java" startLine="74" startPosition="165" endLine="75" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="3180306201267192136" fileName="typeof_Quotation_InferenceRule.java" startLine="75" startPosition="265" endLine="76" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3180306201267192136" fileName="typeof_Quotation_InferenceRule.java" startLine="74" startPosition="165" endLine="75" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3180306201267192136" fileName="typeof_Quotation_InferenceRule.java" startLine="75" startPosition="290" endLine="76" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="1196352592946" fileName="typeof_Quotation_InferenceRule.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="typeof_Quotation_InferenceRule#()V" />
     <nodeInfo nodeId="1196858476564" fileName="typeof_Quotation_InferenceRule.java" startLine="59" startPosition="30" endLine="61" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1196858476564" fileName="typeof_Quotation_InferenceRule.java" startLine="59" startPosition="30" endLine="61" endPosition="85" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3180306201267183166" fileName="typeof_Quotation_InferenceRule.java" startLine="66" startPosition="30" endLine="68" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="3180306201267183166" fileName="typeof_Quotation_InferenceRule.java" startLine="66" startPosition="30" endLine="68" endPosition="264" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3180306201267192136" fileName="typeof_Quotation_InferenceRule.java" startLine="73" startPosition="30" endLine="75" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="3180306201267192136" fileName="typeof_Quotation_InferenceRule.java" startLine="73" startPosition="30" endLine="75" endPosition="265" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3180306201267192136" fileName="typeof_Quotation_InferenceRule.java" startLine="73" startPosition="30" endLine="75" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3180306201267192136" fileName="typeof_Quotation_InferenceRule.java" startLine="73" startPosition="30" endLine="75" endPosition="290" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
     <nodeInfo nodeId="1196352592946" fileName="typeof_Quotation_InferenceRule.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
     <nodeInfo nodeId="1196352592946" fileName="typeof_Quotation_InferenceRule.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
     <nodeInfo nodeId="1196352592946" fileName="typeof_Quotation_InferenceRule.java" startLine="47" startPosition="68" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
@@ -55,7 +55,7 @@
     </scopeInfo>
     <scopeInfo nodeId="1196858476564" fileName="typeof_Quotation_InferenceRule.java" startLine="59" startPosition="30" endLine="61" endPosition="85" />
     <scopeInfo nodeId="3180306201267183166" fileName="typeof_Quotation_InferenceRule.java" startLine="66" startPosition="30" endLine="68" endPosition="264" />
-    <scopeInfo nodeId="3180306201267192136" fileName="typeof_Quotation_InferenceRule.java" startLine="73" startPosition="30" endLine="75" endPosition="265" />
+    <scopeInfo nodeId="3180306201267192136" fileName="typeof_Quotation_InferenceRule.java" startLine="73" startPosition="30" endLine="75" endPosition="290" />
     <scopeInfo nodeId="1196858483110" fileName="typeof_Quotation_InferenceRule.java" startLine="26" startPosition="5" endLine="29" endPosition="375">
       <varInfo nodeId="1196858483110" varName="_info_12389875345" />
       <varInfo nodeId="1196858483110" varName="_nodeToCheck_1029348928467" />
