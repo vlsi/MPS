@@ -16,6 +16,7 @@
   <import index="fnmy" modelUID="r:89c0fb70-0977-4113-a076-5906f9d8630f(jetbrains.mps.baseLanguage.scopes)" version="-1" />
   <import index="o8zo" modelUID="r:314576fc-3aee-4386-a0a5-a38348ac317d(jetbrains.mps.scope)" version="-1" />
   <import index="6xgk" modelUID="r:6e9ad488-5df2-49e4-8c01-8a7f3812adf7(jetbrains.mps.lang.scopes.runtime)" version="-1" />
+  <import index="pz2c" modelUID="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)" version="-1" />
   <import index="tp1t" modelUID="r:00000000-0000-4000-0000-011c8959030d(jetbrains.mps.lang.constraints.structure)" version="9" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -208,6 +209,10 @@
     <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="5862977038373005231">
       <property name="virtualPackage" nameId="tpck.1193676396447" value="property" />
       <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.5862977038373003187" resolveInfo="LocalPropertyReference" />
+    </node>
+    <node type="tp1t.ConceptConstraints" typeId="tp1t.1213093968558" id="3155342362529537737">
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <link role="concept" roleId="tp1t.1213093996982" targetNodeId="tpee.2820489544401957797" resolveInfo="DefaultClassCreator" />
     </node>
   </roots>
   <root id="1213104836688">
@@ -2530,6 +2535,40 @@
       <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="tpee.5862977038373003188" />
       <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.InheritedNodeScopeFactory" typeId="tp1t.8401916545537438642" id="7898359107948137259">
         <link role="kind" roleId="tp1t.8401916545537438643" targetNodeId="tpee.1201370618622" resolveInfo="Property" />
+      </node>
+    </node>
+  </root>
+  <root id="3155342362529537737">
+    <node role="referent" roleId="tp1t.1213100494875" type="tp1t.NodeReferentConstraint" typeId="tp1t.1148687176410" id="3155342362529537738">
+      <link role="applicableLink" roleId="tp1t.1148687202698" targetNodeId="tpee.2820489544401957798" />
+      <node role="presentation" roleId="tp1t.3906442776579556548" type="tp1t.ConstraintFunction_ReferentSearchScope_Presentation" typeId="tp1t.3906442776579556545" id="3155342362529537739">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3155342362529537740">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="3155342362529537883">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.PlusExpression" typeId="tpee.1068581242875" id="3155342362529547905">
+              <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.StringLiteral" typeId="tpee.1070475926800" id="3155342362529547908">
+                <property name="value" nameId="tpee.1070475926801" value="()" />
+              </node>
+              <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="3155342362529537905">
+                <node role="operand" roleId="tpee.1197027771414" type="tp1t.ConstraintFunctionParameter_parameterNode" typeId="tp1t.3906442776579549644" id="3155342362529537884" />
+                <node role="operation" roleId="tpee.1197027833540" type="tp25.SPropertyAccess" typeId="tp25.1138056022639" id="3155342362529537911">
+                  <link role="property" roleId="tp25.1138056395725" targetNodeId="tpck.1169194664001" resolveInfo="name" />
+                </node>
+              </node>
+            </node>
+          </node>
+        </node>
+      </node>
+      <node role="searchScopeFactory" roleId="tp1t.1148687345559" type="tp1t.ConstraintFunction_ReferentSearchScope_Scope" typeId="tp1t.5676632058862809931" id="3155342362529553929">
+        <node role="body" roleId="tpee.1137022507850" type="tpee.StatementList" typeId="tpee.1068580123136" id="3155342362529553930">
+          <node role="statement" roleId="tpee.1068581517665" type="tpee.ExpressionStatement" typeId="tpee.1068580123155" id="8899076737759257934">
+            <node role="expression" roleId="tpee.1068580123156" type="tpee.StaticMethodCall" typeId="tpee.1081236700937" id="8899076737759257936">
+              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="fnmy.8899076737759257899" resolveInfo="getVisibleClassifiersWithDefaultConstructors" />
+              <link role="classConcept" roleId="tpee.1144433194310" targetNodeId="fnmy.8483743094179640481" resolveInfo="ClassifierScopes" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tp1t.ConstraintFunctionParameter_contextNode" typeId="tp1t.8966504967485224688" id="8899076737759257937" />
+              <node role="actualArgument" roleId="tpee.1068499141038" type="tpcw.ConceptFunctionParameter_scope" typeId="tpcw.1161622878565" id="8899076737759257939" />
+            </node>
+          </node>
+        </node>
       </node>
     </node>
   </root>

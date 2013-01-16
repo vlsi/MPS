@@ -1161,6 +1161,11 @@
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431790191" resolveInfo="Expression" />
     </node>
+    <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="2820489544401957797">
+      <property name="name" nameId="tpck.1169194664001" value="DefaultClassCreator" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="classifier" />
+      <link role="extends" roleId="tpce.1071489389519" targetNodeId="1145552809883" resolveInfo="AbstractCreator" />
+    </node>
   </roots>
   <root id="1068498886294">
     <node role="conceptProperty" roleId="tpce.1105725339613" type="tpce.StringConceptProperty" typeId="tpce.1105725638761" id="1107215415034">
@@ -4375,6 +4380,19 @@
       <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
       <property name="role" nameId="tpce.1071599776563" value="arrayType" />
       <link role="target" roleId="tpce.1071599976176" targetNodeId="1070534760951" resolveInfo="ArrayType" />
+    </node>
+  </root>
+  <root id="2820489544401957797">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2820489544402271667">
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="0..n" />
+      <property name="role" nameId="tpce.1071599776563" value="typeParameter" />
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1068431790189" resolveInfo="Type" />
+    </node>
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="2820489544401957798">
+      <property name="role" nameId="tpce.1071599776563" value="classifier" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="1107461130800" resolveInfo="Classifier" />
     </node>
   </root>
 </model>

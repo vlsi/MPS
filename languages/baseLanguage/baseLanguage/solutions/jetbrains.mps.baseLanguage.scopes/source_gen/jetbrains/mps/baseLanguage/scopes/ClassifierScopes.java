@@ -11,8 +11,9 @@ import jetbrains.mps.scope.FilteringScope;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
+import jetbrains.mps.baseLanguage.util.DefaultConstructorUtils;
+import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -55,6 +56,24 @@ public class ClassifierScopes {
 
   public static Scope getVisibleClassifiersScope(@NotNull final SNode contextNode, @NotNull IScope scope) {
     return filterVisibleClassifiersScope(contextNode, getReachableClassifiersScope(SNodeOperations.getModel(contextNode), scope));
+  }
+
+  public static Scope getVisibleClassifiersWithDefaultConstructors(@NotNull final SNode contextNode, @NotNull IScope scope) {
+    return new FilteringScope(ClassifierScopes.getVisibleClassifiersScope(contextNode, scope)) {
+      @Override
+      public boolean isExcluded(SNode node) {
+        if (!(SNodeOperations.isInstanceOf(node, "jetbrains.mps.baseLanguage.structure.ClassConcept"))) {
+          return true;
+        }
+        SNode clazz = SNodeOperations.cast(node, "jetbrains.mps.baseLanguage.structure.ClassConcept");
+        if (SPropertyOperations.getBoolean(clazz, "abstractClass")) {
+          return true;
+        }
+        // note: http://docs.oracle.com/javase/specs/jls/se5.0/html/classes.html#8.8.9 
+        // visibility of default constructor not implies by visibility of class 
+        return !(DefaultConstructorUtils.containsDefaultConstructor(clazz));
+      }
+    };
   }
 
   public static Scope getVisibleClassesScope(@NotNull final SNode contextNode, @NotNull IScope scope) {

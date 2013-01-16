@@ -109,6 +109,55 @@
     <scopeInfo nodeId="5036277047286161914" fileName="CodeStyleSettings.java" startLine="20" startPosition="0" endLine="28" endPosition="0" />
     <unitInfo nodeId="1650638035896359074" fileName="CodeStyleSettings.java" startLine="7" startPosition="0" endLine="101" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.CodeStyleSettings" />
   </root>
+  <root nodeId="3155342362529678200" modelId="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)">
+    <nodeInfo nodeId="3155342362529769218" fileName="DefaultConstructorUtils.java" startLine="17" startPosition="152" endLine="18" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3155342362529769362" fileName="DefaultConstructorUtils.java" startLine="20" startPosition="101" endLine="21" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3155342362529769452" fileName="DefaultConstructorUtils.java" startLine="23" startPosition="201" endLine="24" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3155342362529769231" fileName="DefaultConstructorUtils.java" startLine="25" startPosition="5" endLine="26" endPosition="313" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3155342362529769796" fileName="DefaultConstructorUtils.java" startLine="32" startPosition="41" endLine="33" endPosition="100" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3155342362529769837" fileName="DefaultConstructorUtils.java" startLine="36" startPosition="34" endLine="37" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3155342362529769841" fileName="DefaultConstructorUtils.java" startLine="38" startPosition="7" endLine="39" endPosition="209" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3155342362529769609" fileName="DefaultConstructorUtils.java" startLine="41" startPosition="210" endLine="42" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3155342362529769618" fileName="DefaultConstructorUtils.java" startLine="43" startPosition="7" endLine="44" endPosition="327" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3155342362529678202" fileName="DefaultConstructorUtils.java" startLine="12" startPosition="38" endLine="14" endPosition="3" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="DefaultConstructorUtils#()V" />
+    <nodeInfo nodeId="3155342362529768678" fileName="DefaultConstructorUtils.java" startLine="16" startPosition="65" endLine="19" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3155342362529769303" fileName="DefaultConstructorUtils.java" startLine="19" startPosition="5" endLine="22" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3155342362529769393" fileName="DefaultConstructorUtils.java" startLine="22" startPosition="5" endLine="25" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3155342362529769805" fileName="DefaultConstructorUtils.java" startLine="35" startPosition="9" endLine="38" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3155342362529769607" fileName="DefaultConstructorUtils.java" startLine="40" startPosition="12" endLine="43" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3155342362529769794" fileName="DefaultConstructorUtils.java" startLine="31" startPosition="148" endLine="35" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="3155342362529769788" fileName="DefaultConstructorUtils.java" startLine="30" startPosition="108" endLine="35" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="3155342362529769603" fileName="DefaultConstructorUtils.java" startLine="40" startPosition="10" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="3155342362529678206" fileName="DefaultConstructorUtils.java" startLine="15" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="containsDefaultConstructor#(Ljetbrains/mps/smodel/SNode;)Z" />
+    <nodeInfo nodeId="3155342362529769545" fileName="DefaultConstructorUtils.java" startLine="29" startPosition="102" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="3155342362529769223" fileName="DefaultConstructorUtils.java" startLine="28" startPosition="0" endLine="47" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="containsVisibleNoArgumentsConstructor#(Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Z" />
+    <scopeInfo nodeId="3155342362529678205" fileName="DefaultConstructorUtils.java" startLine="13" startPosition="36" endLine="13" endPosition="36" />
+    <scopeInfo nodeId="3155342362529768679" fileName="DefaultConstructorUtils.java" startLine="17" startPosition="152" endLine="18" endPosition="19" />
+    <scopeInfo nodeId="3155342362529769304" fileName="DefaultConstructorUtils.java" startLine="20" startPosition="101" endLine="21" endPosition="19" />
+    <scopeInfo nodeId="3155342362529769394" fileName="DefaultConstructorUtils.java" startLine="23" startPosition="201" endLine="24" endPosition="19" />
+    <scopeInfo nodeId="3155342362529769795" fileName="DefaultConstructorUtils.java" startLine="32" startPosition="41" endLine="33" endPosition="100" />
+    <scopeInfo nodeId="3155342362529769806" fileName="DefaultConstructorUtils.java" startLine="36" startPosition="34" endLine="37" endPosition="21" />
+    <scopeInfo nodeId="3155342362529769608" fileName="DefaultConstructorUtils.java" startLine="41" startPosition="210" endLine="42" endPosition="21" />
+    <scopeInfo nodeId="3155342362529678202" fileName="DefaultConstructorUtils.java" startLine="12" startPosition="38" endLine="14" endPosition="3" />
+    <scopeInfo nodeId="3155342362529769794" fileName="DefaultConstructorUtils.java" startLine="31" startPosition="148" endLine="35" endPosition="0">
+      <varInfo nodeId="3155342362529769794" varName="it" />
+    </scopeInfo>
+    <scopeInfo nodeId="3155342362529769604" fileName="DefaultConstructorUtils.java" startLine="40" startPosition="12" endLine="44" endPosition="327" />
+    <scopeInfo nodeId="3155342362529769547" fileName="DefaultConstructorUtils.java" startLine="30" startPosition="108" endLine="39" endPosition="209">
+      <varInfo nodeId="3155342362529769789" varName="constructor" />
+    </scopeInfo>
+    <scopeInfo nodeId="3155342362529678209" fileName="DefaultConstructorUtils.java" startLine="16" startPosition="65" endLine="26" endPosition="313" />
+    <scopeInfo nodeId="3155342362529678206" fileName="DefaultConstructorUtils.java" startLine="15" startPosition="0" endLine="28" endPosition="0">
+      <varInfo nodeId="3155342362529678210" varName="clazz" />
+    </scopeInfo>
+    <scopeInfo nodeId="3155342362529769226" fileName="DefaultConstructorUtils.java" startLine="29" startPosition="102" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="3155342362529769223" fileName="DefaultConstructorUtils.java" startLine="28" startPosition="0" endLine="47" endPosition="0">
+      <varInfo nodeId="3155342362529769229" varName="currentClass" />
+      <varInfo nodeId="3155342362529769626" varName="startClass" />
+    </scopeInfo>
+    <unitInfo nodeId="3155342362529769794" fileName="DefaultConstructorUtils.java" startLine="31" startPosition="125" endLine="35" endPosition="7" unitName="jetbrains.mps.baseLanguage.util.DefaultConstructorUtils$1" />
+    <unitInfo nodeId="3155342362529678200" fileName="DefaultConstructorUtils.java" startLine="12" startPosition="0" endLine="48" endPosition="0" unitName="jetbrains.mps.baseLanguage.util.DefaultConstructorUtils" />
+  </root>
   <root nodeId="644116965567343729" modelId="r:2a308ea0-c7e3-4fa5-a624-ad74ee5cfab5(jetbrains.mps.baseLanguage.util)">
     <nodeInfo nodeId="920705696368452801" fileName="CodeStyleSettingsRegistry.java" startLine="10" startPosition="40" endLine="11" endPosition="137" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticFieldDeclaration" propertyString="myProjectToSettingsMap" />
     <nodeInfo nodeId="1650638035896359059" fileName="CodeStyleSettingsRegistry.java" startLine="16" startPosition="64" endLine="17" endPosition="68" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
