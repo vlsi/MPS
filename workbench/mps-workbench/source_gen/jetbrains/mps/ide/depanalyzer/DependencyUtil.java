@@ -10,12 +10,12 @@ import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.LanguageDescriptor;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.project.ModuleId;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.project.structure.modules.GeneratorDescriptor;
+import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.Generator;
 import jetbrains.mps.project.structure.modules.DevkitDescriptor;
-import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.internal.collections.runtime.Sequence;
-import jetbrains.mps.internal.collections.runtime.ISelector;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.internal.collections.runtime.SetSequence;
 import java.util.Set;
@@ -41,8 +41,21 @@ public class DependencyUtil {
         addDeps(result, getReexportDeps(descr), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.ReexportsDep);
         addDeps(result, getNonreexportDeps(descr), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.Depends);
         if (descr instanceof LanguageDescriptor) {
-          addDeps(result, (as_he47wm_a0a1a0a5a0d0b(descr, LanguageDescriptor.class)).getExtendedLanguages(), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.ExtendsLanguage);
+          LanguageDescriptor lang = (LanguageDescriptor) descr;
+          addDeps(result, lang.getExtendedLanguages(), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.ExtendsLanguage);
           ListSequence.fromList(result).addElement(new DependencyUtil.Link(MPSModuleRepository.getInstance().getModuleById(ModuleId.fromString("ceab5195-25ea-4f22-9b92-103b95ca8c0c")), DependencyUtil.Role.DTDependency_, DependencyUtil.LinkType.LangCore));
+
+          // generators and generators dependencies are now also added to language dependencies (MPS-15883) 
+          addDeps(result, Sequence.fromIterable(((Iterable<GeneratorDescriptor>) lang.getGenerators())).select(new ISelector<GeneratorDescriptor, ModuleReference>() {
+            public ModuleReference select(GeneratorDescriptor it) {
+              return it.getModuleReference();
+            }
+          }), DependencyUtil.Role.None, DependencyUtil.LinkType.Generator);
+          addDeps(result, Sequence.fromIterable(((Iterable<GeneratorDescriptor>) lang.getGenerators())).select(new ISelector<GeneratorDescriptor, ModuleReference>() {
+            public ModuleReference select(GeneratorDescriptor it) {
+              return it.getModuleReference();
+            }
+          }), DependencyUtil.Role.DTDependency, DependencyUtil.LinkType.Generator);
         }
         if (descr instanceof GeneratorDescriptor) {
           GeneratorDescriptor gen = (GeneratorDescriptor) descr;
@@ -223,6 +236,7 @@ public class DependencyUtil {
     ExtendsDevkit("extends devkit"),
     GeneratorLanguage("generator language"),
     DependsOnGenerator("depends on generator"),
+    Generator("generator"),
     LangCore("");
 
     private String myText;
@@ -353,13 +367,6 @@ public class DependencyUtil {
       return checkedDotOperand.getRuntimeModules();
     }
     return null;
-  }
-
-  private static <T> T as_he47wm_a0a1a0a5a0d0b(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
   }
 
   private static <T> T as_he47wm_a0a0a0a0c0g0a3a1(Object o, Class<T> type) {

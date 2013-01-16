@@ -4,8 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import javax.swing.tree.TreeNode;
@@ -16,10 +14,10 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.project.MPSProject;
+import jetbrains.mps.logging.Logger;
 
 public class ShowDependenciesInViewer_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowDependenciesInViewer_Action.class);
 
   public ShowDependenciesInViewer_Action() {
     super("Show Usages", "Show Usages in Dependecies Viewer", ICON);
@@ -46,9 +44,7 @@ public class ShowDependenciesInViewer_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowDependenciesInViewer", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowDependenciesInViewer", t);
       this.disable(event.getPresentation());
     }
   }
@@ -77,9 +73,9 @@ public class ShowDependenciesInViewer_Action extends BaseAction {
       ModuleDependencyNode treeNode = (ModuleDependencyNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
       DependenciesUtil.analyzeDependencies(treeNode.getFromNode().getModules(), treeNode.getModules(), ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), treeNode.isUsedLanguage());
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowDependenciesInViewer", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowDependenciesInViewer", t);
     }
   }
+
+  private static Logger LOG = Logger.getLogger(ShowDependenciesInViewer_Action.class);
 }

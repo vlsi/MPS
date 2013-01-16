@@ -9,12 +9,15 @@ import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.ide.dependencyViewer.DependencyViewerScope;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.ide.dependencyViewer.DependenciesPanel;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.internal.collections.runtime.IVisitor;
 
 public class DependenciesUtil {
   public DependenciesUtil() {
   }
 
-  public static SearchResults analyzeDependencies(SModule from, SModule to, Project project, MPSProject mpsProject, boolean openTool) {
+  public static SearchResults analyzeDependencies(SModule from, SModule to, Project project, MPSProject mpsProject, boolean isMeta, boolean openTool) {
     DependencyViewerScope fromScope = new DependencyViewerScope();
     fromScope.add(from);
     DependencyViewerScope toScope = new DependencyViewerScope();
@@ -22,7 +25,7 @@ public class DependenciesUtil {
 
     AnalyzeDependencies_Tool tool = project.getComponent(ProjectPluginManager.class).getTool(AnalyzeDependencies_Tool.class);
     DependenciesPanel panel = as_ehks51_a0a6a1(tool.getComponent(), DependenciesPanel.class);
-    panel.resetContent(fromScope, mpsProject, false);
+    panel.resetContent(fromScope, mpsProject, isMeta);
     panel.selectInTargetsView(to);
     if (openTool) {
       tool.openToolLater(true);
@@ -30,7 +33,36 @@ public class DependenciesUtil {
     return panel.updateReferencesView(toScope);
   }
 
+  public static SearchResults analyzeDependencies(Iterable<IModule> from, Iterable<IModule> to, Project project, MPSProject mpsProject, boolean isMeta) {
+    final DependencyViewerScope fromScope = new DependencyViewerScope();
+    final DependencyViewerScope toScope = new DependencyViewerScope();
+    Sequence.fromIterable(from).visitAll(new IVisitor<IModule>() {
+      public void visit(IModule it) {
+        fromScope.add(it);
+      }
+    });
+    Sequence.fromIterable(to).visitAll(new IVisitor<IModule>() {
+      public void visit(IModule it) {
+        toScope.add(it);
+      }
+    });
+
+    AnalyzeDependencies_Tool tool = project.getComponent(ProjectPluginManager.class).getTool(AnalyzeDependencies_Tool.class);
+    DependenciesPanel panel = as_ehks51_a0a6a2(tool.getComponent(), DependenciesPanel.class);
+    panel.resetContent(fromScope, mpsProject, isMeta);
+    panel.selectInTargetsView(Sequence.fromIterable(to).first());
+    tool.openToolLater(true);
+    return panel.updateReferencesView(toScope);
+  }
+
   private static <T> T as_ehks51_a0a6a1(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_ehks51_a0a6a2(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

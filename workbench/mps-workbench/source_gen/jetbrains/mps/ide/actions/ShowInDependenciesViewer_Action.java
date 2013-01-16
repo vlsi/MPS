@@ -33,7 +33,11 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return check_hezs1a_a0a0a0(as_nkoo1o_a0a0a0a3(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class)).linktype == DependencyUtil.LinkType.Depends;
+    if (!(((TreeNode) MapSequence.fromMap(_params).get("node")) instanceof DependencyTreeNode)) {
+      return false;
+    }
+    DependencyUtil.LinkType linktype = ((DependencyTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"))).getLink().linktype;
+    return linktype == DependencyUtil.LinkType.Depends || linktype == DependencyUtil.LinkType.ReexportsDep || linktype == DependencyUtil.LinkType.ExtendsLanguage || linktype == DependencyUtil.LinkType.ExportsRuntime || linktype == DependencyUtil.LinkType.UsesLanguage;
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -69,9 +73,10 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      IModule from = check_hezs1a_a0a0a(as_nkoo1o_a0a0a0a0g(((TreeNode) MapSequence.fromMap(_params).get("node")).getParent(), DependencyTreeNode.class));
-      IModule to = check_hezs1a_a0b0a(as_nkoo1o_a0a0b0a0g(((TreeNode) MapSequence.fromMap(_params).get("node")), DependencyTreeNode.class));
-      DependenciesUtil.analyzeDependencies(from, to, ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), true);
+      DependencyTreeNode treeNode = (DependencyTreeNode) ((TreeNode) MapSequence.fromMap(_params).get("node"));
+      IModule from = check_hezs1a_a0b0a(as_nkoo1o_a0a0b0a0g(treeNode.getParent(), DependencyTreeNode.class));
+      IModule to = treeNode.getModule();
+      DependenciesUtil.analyzeDependencies(from, to, ((Project) MapSequence.fromMap(_params).get("project")), ((MPSProject) MapSequence.fromMap(_params).get("mpsProject")), treeNode.getLink().linktype == DependencyUtil.LinkType.UsesLanguage, true);
     } catch (Throwable t) {
       LOG.error("User's action execute method failed. Action:" + "ShowInDependenciesViewer", t);
     }
@@ -79,39 +84,11 @@ public class ShowInDependenciesViewer_Action extends BaseAction {
 
   private static Logger LOG = Logger.getLogger(ShowInDependenciesViewer_Action.class);
 
-  private static DependencyUtil.Link check_hezs1a_a0a0a0(DependencyTreeNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getLink();
-    }
-    return null;
-  }
-
-  private static IModule check_hezs1a_a0a0a(DependencyTreeNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.getModule();
-    }
-    return null;
-  }
-
   private static IModule check_hezs1a_a0b0a(DependencyTreeNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
-  }
-
-  private static <T> T as_nkoo1o_a0a0a0a3(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
-  }
-
-  private static <T> T as_nkoo1o_a0a0a0a0g(Object o, Class<T> type) {
-    return (type.isInstance(o) ?
-      (T) o :
-      null
-    );
   }
 
   private static <T> T as_nkoo1o_a0a0b0a0g(Object o, Class<T> type) {

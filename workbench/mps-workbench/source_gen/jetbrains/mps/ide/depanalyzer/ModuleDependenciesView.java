@@ -173,6 +173,31 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
     });
   }
 
+  public void showBootstrapLoop(final ModuleDependencyNode.ULangDependencyNode node) {
+    final MPSTree tree = node.getTree();
+    final ModuleDependencyNode parent = node.getFromNode();
+    if (ListSequence.fromList(parent.getModules()).isEmpty()) {
+      return;
+    }
+    // expand node and show dependencies on parent nodes 
+    ModelAccess.instance().runReadAction(new Runnable() {
+      public void run() {
+        // should we set "show runtime" option first? 
+        tree.expandPath(new TreePath(node.getPath()));
+        for (MPSTreeNode child : Sequence.fromIterable(node)) {
+          ModuleDependencyNode n = as_jxc64t_a0a0a2a0a0a0a4a11(child, ModuleDependencyNode.class);
+          if (n == null) {
+            continue;
+          }
+          if (ListSequence.fromList(parent.getModules()).contains(ListSequence.fromList(n.getModules()).first())) {
+            tree.selectNode(n);
+            break;
+          }
+        }
+      }
+    });
+  }
+
   @Nullable
   @Override
   public Object getData(@NonNls String dataId) {
@@ -215,6 +240,13 @@ public class ModuleDependenciesView extends JPanel implements DataProvider {
   }
 
   private static <T> T as_jxc64t_a0a0a1a0a0a0a6a01(Object o, Class<T> type) {
+    return (type.isInstance(o) ?
+      (T) o :
+      null
+    );
+  }
+
+  private static <T> T as_jxc64t_a0a0a2a0a0a0a4a11(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

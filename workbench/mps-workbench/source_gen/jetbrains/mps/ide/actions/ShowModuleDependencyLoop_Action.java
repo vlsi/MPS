@@ -6,9 +6,9 @@ import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
+import jetbrains.mps.ide.depanalyzer.ModuleDependencyNode;
 import javax.swing.tree.TreeNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.ide.depanalyzer.ModuleDependencyNode;
 import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
@@ -20,7 +20,7 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
   private static final Icon ICON = null;
 
   public ShowModuleDependencyLoop_Action() {
-    super("Show Cycle Paths", "Show All Cycle Paths for Selected Module", ICON);
+    super("Show Cycle Paths", "Show Cycle Paths for Selected Module", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -31,7 +31,11 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    return check_mdxcvg_a0a0((as_hir9am_a0a0a0d(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.class)));
+    ModuleDependencyNode node = as_hir9am_a0a0a3(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.class);
+    if (node == null) {
+      return false;
+    }
+    return node.isCyclic() && !(node.isUsedLanguage());
   }
 
   public void doUpdate(@NotNull AnActionEvent event, final Map<String, Object> _params) {
@@ -71,14 +75,7 @@ public class ShowModuleDependencyLoop_Action extends BaseAction {
 
   private static Logger LOG = Logger.getLogger(ShowModuleDependencyLoop_Action.class);
 
-  private static boolean check_mdxcvg_a0a0(ModuleDependencyNode checkedDotOperand) {
-    if (null != checkedDotOperand) {
-      return checkedDotOperand.isCyclic();
-    }
-    return false;
-  }
-
-  private static <T> T as_hir9am_a0a0a0d(Object o, Class<T> type) {
+  private static <T> T as_hir9am_a0a0a3(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null

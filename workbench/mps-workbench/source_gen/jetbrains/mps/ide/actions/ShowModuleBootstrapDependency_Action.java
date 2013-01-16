@@ -4,8 +4,6 @@ package jetbrains.mps.ide.actions;
 
 import jetbrains.mps.workbench.action.BaseAction;
 import javax.swing.Icon;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import jetbrains.mps.ide.depanalyzer.ModuleDependencyNode;
@@ -16,10 +14,10 @@ import com.intellij.openapi.actionSystem.PlatformDataKeys;
 import jetbrains.mps.workbench.MPSDataKeys;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
+import jetbrains.mps.logging.Logger;
 
 public class ShowModuleBootstrapDependency_Action extends BaseAction {
   private static final Icon ICON = null;
-  protected static Log log = LogFactory.getLog(ShowModuleBootstrapDependency_Action.class);
 
   public ShowModuleBootstrapDependency_Action() {
     super("Show Bootstrap Dependency", "Show Bootstrap Dependency for Used Language", ICON);
@@ -33,7 +31,7 @@ public class ShowModuleBootstrapDependency_Action extends BaseAction {
   }
 
   public boolean isApplicable(AnActionEvent event, final Map<String, Object> _params) {
-    ModuleDependencyNode node = as_b70vs2_a0a0a1(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.ULangDependencyNode.class);
+    ModuleDependencyNode node = as_b70vs2_a0a0a3(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.ULangDependencyNode.class);
     if (node == null) {
       return false;
     }
@@ -47,9 +45,7 @@ public class ShowModuleBootstrapDependency_Action extends BaseAction {
         this.setEnabledState(event.getPresentation(), enabled);
       }
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action doUpdate method failed. Action:" + "ShowModuleBootstrapDependency", t);
-      }
+      LOG.error("User's action doUpdate method failed. Action:" + "ShowModuleBootstrapDependency", t);
       this.disable(event.getPresentation());
     }
   }
@@ -71,22 +67,22 @@ public class ShowModuleBootstrapDependency_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).ShowBootstrapDep(as_b70vs2_a0a0a0a0e(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.ULangDependencyNode.class));
+      ((Project) MapSequence.fromMap(_params).get("project")).getComponent(ProjectPluginManager.class).getTool(ModuleDependenies_Tool.class).ShowBootstrapDep(as_b70vs2_a0a0a0a0g(((TreeNode) MapSequence.fromMap(_params).get("treenode")), ModuleDependencyNode.ULangDependencyNode.class));
     } catch (Throwable t) {
-      if (log.isErrorEnabled()) {
-        log.error("User's action execute method failed. Action:" + "ShowModuleBootstrapDependency", t);
-      }
+      LOG.error("User's action execute method failed. Action:" + "ShowModuleBootstrapDependency", t);
     }
   }
 
-  private static <T> T as_b70vs2_a0a0a1(Object o, Class<T> type) {
+  private static Logger LOG = Logger.getLogger(ShowModuleBootstrapDependency_Action.class);
+
+  private static <T> T as_b70vs2_a0a0a3(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
     );
   }
 
-  private static <T> T as_b70vs2_a0a0a0a0e(Object o, Class<T> type) {
+  private static <T> T as_b70vs2_a0a0a0a0g(Object o, Class<T> type) {
     return (type.isInstance(o) ?
       (T) o :
       null
