@@ -30,6 +30,8 @@ import jetbrains.mps.jps.persistence.CachedJavaClassStubsModelRoot;
 import jetbrains.mps.jps.project.JpsLibSolution;
 import jetbrains.mps.jps.project.JpsMPSProject;
 import jetbrains.mps.jps.project.JpsSolutionIdea;
+import jetbrains.mps.library.ModulesMiner;
+import jetbrains.mps.library.ModulesMiner.ModuleHandle;
 import jetbrains.mps.persistence.MPSPersistence;
 import jetbrains.mps.persistence.PersistenceRegistry;
 import jetbrains.mps.project.IModule;
@@ -38,6 +40,8 @@ import jetbrains.mps.project.Solution;
 import jetbrains.mps.project.structure.modules.ModuleDescriptor;
 import jetbrains.mps.project.structure.modules.SolutionDescriptor;
 import jetbrains.mps.reloading.ClassLoaderManager;
+import jetbrains.mps.smodel.BaseMPSModuleOwner;
+import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.MPSModuleOwner;
 import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
@@ -48,6 +52,8 @@ import jetbrains.mps.smodel.language.ExtensionRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.typesystem.MPSTypesystem;
 import jetbrains.mps.util.io.ModelInputStream;
+import jetbrains.mps.vfs.FileSystem;
+import jetbrains.mps.vfs.IFile;
 import org.jetbrains.jps.incremental.CompileContext;
 import org.jetbrains.jps.incremental.messages.BuildMessage.Kind;
 import org.jetbrains.jps.incremental.messages.CompilerMessage;
@@ -173,8 +179,30 @@ public class JpsMPSRepositoryFacade implements MPSModuleOwner {
         jetbrains.mps.util.FileUtil.closeFileSafe(mos);
       }
     } else if (languages != null) {
-
       // TODO split by semicolon, etc.
+
+      long start = System.nanoTime();
+      List<ModuleHandle> loadedModules = new ArrayList<ModuleHandle>();
+      BaseMPSModuleOwner owner = new BaseMPSModuleOwner() {};
+      for (String path: languages.split(";")) {
+        IFile ipath = FileSystem.getInstance().getFileByPath(path);
+        loadedModules.addAll(ModulesMiner.getInstance().collectModules(ipath, true));
+      }
+
+      if (MPSCompilerUtil.isTracingMode()) {
+        context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "loaded " + loadedModules.size() + " modules in " + (System.nanoTime() - start) / 1000000 + " ms"));
+      }
+
+      start = System.nanoTime();
+      for (ModuleHandle moduleHandle : loadedModules) {
+        IModule module = ModuleRepositoryFacade.createModule(moduleHandle, owner);
+      }
+
+      if (MPSCompilerUtil.isTracingMode()) {
+        context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.INFO, "instantiated " + loadedModules.size() + " modules in " + (System.nanoTime() - start) / 1000000 + " ms"));
+      }
+
+      return;
     }
 
     context.processMessage(new CompilerMessage(MPSMakeConstants.BUILDER_ID, Kind.WARNING, "cannot start MPS, no repository provided"));

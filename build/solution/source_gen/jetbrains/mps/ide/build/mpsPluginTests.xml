@@ -73,6 +73,11 @@
       <zipfileset file="${mps_home}/IdeaPlugin/tests/editorTests/models/test.mps" prefix="jetbrains/mps/idea/core/tests" />
       <fileset dir="${build.tmp}/default/mps-plugin-tests.jar" />
     </jar>
+    <mkdir dir="${build.layout}/mps-core/lib/jps" />
+    <jar destfile="${build.layout}/mps-core/lib/jps/mps-jps-plugin-tests.jar">
+      <fileset dir="${build.tmp}/java/out/mps-jps-plugin-tests" />
+      <zipfileset dir="${mps_home}/IdeaPlugin/mps-core/jps-plugin/META-INF" prefix="META-INF" />
+    </jar>
     <echo file="${build.layout}/build.properties">mpsPlugin.plugin.version=${mpsPlugin.plugin.version}${line.separator}mpsPlugin.date=${mpsPlugin.date}${line.separator}mpsBootstrapCore.version=${mpsBootstrapCore.version}</echo>
   </target>
   
@@ -89,7 +94,7 @@
     <delete dir="${build.layout}" />
   </target>
   
-  <target name="compileJava" depends="java.compile.mps-plugin-tests" />
+  <target name="compileJava" depends="java.compile.mps-plugin-tests, java.compile.mps-jps-plugin-tests" />
   
   <target name="processResources" />
   
@@ -143,6 +148,44 @@
       <fileset dir="${mps_home}/plugins/mps-testing/languages/languageDesign/test/solutions/jetbrains.mps.lang.test.runtime/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/testbench/source" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
       <fileset dir="${mps_home}/testbench/source_gen" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
+    </copy>
+  </target>
+  
+  <target name="java.compile.mps-jps-plugin-tests" depends="fetchDependencies">
+    <mkdir dir="${build.tmp}/java/out/mps-jps-plugin-tests" />
+    <javac2 destdir="${build.tmp}/java/out/mps-jps-plugin-tests" fork="true" memorymaximumsize="256m" includeantruntime="false" debug="true">
+      <compilerarg value="-Xlint:none" />
+      <src>
+        <path location="${mps_home}/IdeaPlugin/mps-core/jps-plugin/testSrc" />
+      </src>
+      <classpath>
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-openapi.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-closures.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-collections.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-tuples.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-core.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-common.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-platform.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor-api.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-editor.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-plugin.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/mps-backend.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/jps/mps-jps-plugin.jar" />
+        <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
+        <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
+        <fileset file="${artifacts.IDEA}/lib/ecj-4.2.jar" />
+        <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
+        <fileset file="${artifacts.IDEA}/lib/log4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
+        <fileset file="${artifacts.IDEA}/lib/xstream-1.4.3.jar" />
+        <fileset file="${artifacts.IDEA}/lib/asm4-all.jar" />
+        <fileset file="${artifacts.mpsPlugin}/mps-core/lib/diffutils-1.2.1.jar" />
+        <fileset dir="${artifacts.IDEA}/lib/ant/lib" includes="*.jar" />
+        <path refid="path.jdk.classpath" />
+      </classpath>
+    </javac2>
+    <copy todir="${build.tmp}/java/out/mps-jps-plugin-tests">
+      <fileset dir="${mps_home}/IdeaPlugin/mps-core/jps-plugin/testSrc" includes="**/*.properties, **/*.xml, **/*.html, **/*.png, **/*.txt, **/*.ico, **/*.zip, **/*.info" />
     </copy>
   </target>
 </project>

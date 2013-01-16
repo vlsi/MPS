@@ -1,5 +1,5 @@
 /*
- * Copyright 2003-2012 JetBrains s.r.o.
+ * Copyright 2003-2013 JetBrains s.r.o.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,17 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.jetbrains.mps.openapi.model;
 
-import org.jetbrains.mps.openapi.module.SRepository;
+package jetbrains.mps.jps.make;
+
+import org.junit.runner.RunWith;
+import org.junit.runners.Suite;
 
 /**
- * Represents a unique global reference to a node. SNodeReferences are the only recommended way to keep references
- * to nodes across subsequent read or write actions. While direct memory references get obsolete once an action finishes,
- * SNodeReferences will consistently retrieve the same node.
+ * Created with IntelliJ IDEA.
+ * User: fyodor
+ * Date: 1/15/13
+ * Time: 2:31 PM
+ * To change this template use File | Settings | File Templates.
  */
-public interface SNodeReference {
-  SNode resolve(SRepository repo);
-
-  SModelReference getModelReference();
+@RunWith(Suite.class)
+@Suite.SuiteClasses({RebuildProjectTest.class})
+public class AllMakeTests {
 }
