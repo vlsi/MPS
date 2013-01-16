@@ -4,8 +4,6 @@ package jetbrains.mps.lang.pattern.runtime;
 
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.SModelReference;
-import org.jetbrains.mps.openapi.model.SNodeId;
 import java.util.Iterator;
 
 public class PatternUtil {
@@ -16,14 +14,7 @@ public class PatternUtil {
     if (pointer == null || node == null || node.getModel() == null) {
       return false;
     }
-    SModelReference sModelReference1 = pointer.getModelReference();
-    SModelReference sModelReference2 = node.getModel().getSModelReference();
-    if (sModelReference1 == null || sModelReference2 == null || !(sModelReference1.equals(sModelReference2))) {
-      return false;
-    }
-    SNodeId id1 = pointer.getNodeId();
-    SNodeId id2 = node.getNodeId();
-    if (id1 == null || id2 == null || !(id1.equals(id2))) {
+    if (!(pointer.equals(node.getReference()))) {
       return false;
     }
     return true;
