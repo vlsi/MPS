@@ -4,7 +4,7 @@ package jetbrains.mps.lang.behavior.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IVisible_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class ConceptMethodDeclaration_BehaviorDescriptor extends BaseMethodDeclaration_BehaviorDescriptor implements IVisible_BehaviorDescriptor {
   public ConceptMethodDeclaration_BehaviorDescriptor() {

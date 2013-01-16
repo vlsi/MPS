@@ -5,7 +5,7 @@ package org.jetbrains.mps.samples.ParallelFor.behavior;
 import jetbrains.mps.baseLanguage.behavior.AbstractLoopStatement_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IStatementListContainer_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import jetbrains.mps.baseLanguage.behavior.IMethodLike_Behavior;
 import jetbrains.mps.scope.Scope;

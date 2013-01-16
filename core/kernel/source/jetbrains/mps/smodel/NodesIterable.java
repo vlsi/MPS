@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.util.Iterator;
 
@@ -25,6 +25,6 @@ public class NodesIterable implements Iterable<SNode> {
   }
 
   public Iterator<SNode> iterator() {
-    return mySModel.nodesIterator();
+    return ((Iterator) mySModel.nodesIterator());
   }
 }

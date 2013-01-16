@@ -16,7 +16,7 @@
 package jetbrains.mps.smodel.action;
 
 import jetbrains.mps.smodel.IScope;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class DefaultSimpleSubstituteAction extends DefaultChildNodeSubstituteAction {
   // since MPS 2.0

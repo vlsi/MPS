@@ -7,7 +7,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import java.util.Collections;
 import java.util.Collection;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.runtime.GenerationException;

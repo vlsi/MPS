@@ -11,7 +11,7 @@ import jetbrains.mps.debug.api.programState.IValue;
 import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
 import javax.swing.Icon;
 import jetbrains.mps.debugger.java.runtime.ui.Icons;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /*package*/ class JavaExceptionWatchable extends JavaWatchable {
   private final ObjectReference myException;

@@ -4,7 +4,7 @@ package jetbrains.mps.build.mps.behavior;
 
 import jetbrains.mps.build.behavior.BuildLayout_Node_BehaviorDescriptor;
 import jetbrains.mps.build.behavior.BuildLayout_InJarNode_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class BuildMpsLayout_ModuleSources_BehaviorDescriptor extends BuildLayout_Node_BehaviorDescriptor implements BuildLayout_InJarNode_BehaviorDescriptor {
   public BuildMpsLayout_ModuleSources_BehaviorDescriptor() {

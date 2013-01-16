@@ -4,7 +4,7 @@ package jetbrains.mps.lang.generator.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.ConceptFunction_BehaviorDescriptor;
 import jetbrains.mps.scope.Scope;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class TemplateQueryBase_BehaviorDescriptor extends ConceptFunction_BehaviorDescriptor {
   public TemplateQueryBase_BehaviorDescriptor() {

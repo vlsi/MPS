@@ -4,7 +4,7 @@ package jetbrains.mps.ypath.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class TreePathType_BehaviorDescriptor extends Type_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {

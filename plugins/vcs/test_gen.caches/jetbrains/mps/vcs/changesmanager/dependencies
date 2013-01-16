@@ -98,6 +98,7 @@
     <classNode dependClassName="jetbrains.mps.workbench.actions.model.DeleteModelHelper" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode dependClassName="org.junit.After" />
     <classNode dependClassName="org.junit.AfterClass" />
     <classNode dependClassName="org.junit.Assert" />

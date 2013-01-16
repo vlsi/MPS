@@ -5,7 +5,7 @@ package jetbrains.mps.debug.api.breakpoints;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.traceInfo.TraceablePositionInfo;
 import jetbrains.mps.smodel.SModelDescriptor;

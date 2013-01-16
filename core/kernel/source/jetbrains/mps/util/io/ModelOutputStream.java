@@ -21,7 +21,7 @@ import jetbrains.mps.smodel.SModelId;
 import jetbrains.mps.smodel.SModelId.ForeignSModelId;
 import jetbrains.mps.smodel.SModelId.RegularSModelId;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SNodeId.Foreign;
 import jetbrains.mps.smodel.SNodeId.Regular;
 import jetbrains.mps.smodel.SNodePointer;

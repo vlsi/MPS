@@ -6,7 +6,7 @@ import jetbrains.mps.debug.api.source.NodePositionProvider;
 import com.intellij.openapi.components.ProjectComponent;
 import jetbrains.mps.debug.api.source.PositionProvider;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.debug.api.source.NodeSourcePosition;

@@ -22,7 +22,7 @@ import org.jetbrains.mps.openapi.language.SConcept;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
 import org.jetbrains.mps.openapi.model.SNodeReference;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.persistence.indexing.FastGoToRegistry;
 import org.jetbrains.annotations.NonNls;
 import org.jetbrains.annotations.NotNull;
@@ -70,7 +70,7 @@ public class JavaPsiStubsNavigationContributor implements NodeNavigationContribu
             }
 
             public SNodeReference getNodeReference() {
-              return new SNodePointer((jetbrains.mps.smodel.SModelReference) modelRef, new SNodeId.Foreign(SNodeId.Foreign.ID_PREFIX + claz.getName()));
+              return new SNodePointer((jetbrains.mps.smodel.SModelReference) modelRef, new jetbrains.mps.smodel.SNodeId.Foreign(jetbrains.mps.smodel.SNodeId.Foreign.ID_PREFIX + claz.getName()));
 
             }
           });

@@ -11,7 +11,7 @@ import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.build.packaging.behavior.Variable_Behavior;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SModel;

@@ -4,7 +4,7 @@ package jetbrains.mps.execution.configurations.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 
 public class ConfigurationFromExecutorReference_BehaviorDescriptor extends Expression_BehaviorDescriptor implements INamedConcept_BehaviorDescriptor {

@@ -4,7 +4,7 @@ package jetbrains.mps.lang.smodel.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IInternalType_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class _LinkAccessT_BehaviorDescriptor extends Type_BehaviorDescriptor implements IInternalType_BehaviorDescriptor {
   public _LinkAccessT_BehaviorDescriptor() {

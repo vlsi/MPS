@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.refactorings;
 
 import jetbrains.mps.refactoring.framework.IRefactoringTarget;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class ConvertAnonymousClass_Target implements IRefactoringTarget {
   public ConvertAnonymousClass_Target() {

@@ -6,13 +6,13 @@
     <nodeInfo nodeId="3335509261455860961" fileName="JavaSourceStubNavigationContributor.java" startLine="32" startPosition="70" endLine="33" endPosition="43" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3335509261455860967" fileName="JavaSourceStubNavigationContributor.java" startLine="33" startPosition="43" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3335509261455860978" fileName="JavaSourceStubNavigationContributor.java" startLine="35" startPosition="46" endLine="36" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
-    <nodeInfo nodeId="3335509261455860985" fileName="JavaSourceStubNavigationContributor.java" startLine="38" startPosition="60" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
+    <nodeInfo nodeId="3335509261455860985" fileName="JavaSourceStubNavigationContributor.java" startLine="38" startPosition="39" endLine="39" endPosition="19" conceptFqName="jetbrains.mps.baseLanguage.structure.ContinueStatement" />
     <nodeInfo nodeId="3335509261455860986" fileName="JavaSourceStubNavigationContributor.java" startLine="40" startPosition="9" endLine="41" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3335509261455860987" fileName="JavaSourceStubNavigationContributor.java" startLine="41" startPosition="0" endLine="42" endPosition="36" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="3335509261455860991" fileName="JavaSourceStubNavigationContributor.java" startLine="42" startPosition="36" endLine="43" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3335509261455861003" fileName="JavaSourceStubNavigationContributor.java" startLine="45" startPosition="35" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3335509261455861009" fileName="JavaSourceStubNavigationContributor.java" startLine="49" startPosition="40" endLine="50" endPosition="41" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3335509261455861017" fileName="JavaSourceStubNavigationContributor.java" startLine="53" startPosition="52" endLine="54" endPosition="75" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3335509261455861017" fileName="JavaSourceStubNavigationContributor.java" startLine="53" startPosition="52" endLine="54" endPosition="54" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3335509261455861024" fileName="JavaSourceStubNavigationContributor.java" startLine="58" startPosition="5" endLine="59" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
     <nodeInfo nodeId="3335509261455861025" fileName="JavaSourceStubNavigationContributor.java" startLine="59" startPosition="0" endLine="60" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
     <nodeInfo nodeId="3335509261455861031" fileName="JavaSourceStubNavigationContributor.java" startLine="63" startPosition="31" endLine="64" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
@@ -33,10 +33,10 @@
     <nodeInfo nodeId="3335509261455860933" fileName="JavaSourceStubNavigationContributor.java" startLine="28" startPosition="0" endLine="62" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getNodeDescriptors#(Ljava/util/Collection;Ljetbrains/mps/project/Project;)Ljava/util/Collection;" />
     <scopeInfo nodeId="3335509261455860930" fileName="JavaSourceStubNavigationContributor.java" startLine="25" startPosition="48" endLine="25" endPosition="48" />
     <scopeInfo nodeId="3335509261455860977" fileName="JavaSourceStubNavigationContributor.java" startLine="35" startPosition="46" endLine="36" endPosition="19" />
-    <scopeInfo nodeId="3335509261455860984" fileName="JavaSourceStubNavigationContributor.java" startLine="38" startPosition="60" endLine="39" endPosition="19" />
+    <scopeInfo nodeId="3335509261455860984" fileName="JavaSourceStubNavigationContributor.java" startLine="38" startPosition="39" endLine="39" endPosition="19" />
     <scopeInfo nodeId="3335509261455861002" fileName="JavaSourceStubNavigationContributor.java" startLine="45" startPosition="35" endLine="46" endPosition="24" />
     <scopeInfo nodeId="3335509261455861008" fileName="JavaSourceStubNavigationContributor.java" startLine="49" startPosition="40" endLine="50" endPosition="41" />
-    <scopeInfo nodeId="3335509261455861016" fileName="JavaSourceStubNavigationContributor.java" startLine="53" startPosition="52" endLine="54" endPosition="75" />
+    <scopeInfo nodeId="3335509261455861016" fileName="JavaSourceStubNavigationContributor.java" startLine="53" startPosition="52" endLine="54" endPosition="54" />
     <scopeInfo nodeId="3335509261455861030" fileName="JavaSourceStubNavigationContributor.java" startLine="63" startPosition="31" endLine="64" endPosition="87" />
     <scopeInfo nodeId="3335509261455861040" fileName="JavaSourceStubNavigationContributor.java" startLine="67" startPosition="34" endLine="68" endPosition="87" />
     <scopeInfo nodeId="3335509261455861052" fileName="JavaSourceStubNavigationContributor.java" startLine="73" startPosition="36" endLine="74" endPosition="54" />

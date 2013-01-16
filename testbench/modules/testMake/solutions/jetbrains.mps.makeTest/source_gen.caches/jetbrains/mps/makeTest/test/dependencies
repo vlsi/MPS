@@ -80,9 +80,9 @@
     <classNode dependClassName="jetbrains.mps.project.MPSProject" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.NameUtil" />
     <classNode dependClassName="junit.framework.Assert" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.makeTest.test.NotMake_Test" file="NotMake_Test.java">
     <classNode dependClassName="java.lang.Exception" />
@@ -98,7 +98,7 @@
     <classNode dependClassName="jetbrains.mps.makeTest.test.ChangeModel" />
     <classNode dependClassName="jetbrains.mps.makeTest.test.MakeAssert" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="junit.framework.TestCase" />
   </dependency>
 </dependenciesRoot>

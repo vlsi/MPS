@@ -24,7 +24,7 @@ public class DependencyViewerScope {
   }
 
   private int getNumRoots(SModel model) {
-    return Sequence.fromIterable(((Iterable<jetbrains.mps.smodel.SNode>) model.getRootNodes())).count();
+    return Sequence.fromIterable(((Iterable<SNode>) model.getRootNodes())).count();
   }
 
   public boolean contains(SNode node) {
@@ -35,7 +35,7 @@ public class DependencyViewerScope {
     if (CollectionSequence.fromCollection(myRoots).contains(root) || CollectionSequence.fromCollection(myRoots).contains(node)) {
       return true;
     }
-    SModelDescriptor descriptor = ((jetbrains.mps.smodel.SNode) root).getModel().getModelDescriptor();
+    SModelDescriptor descriptor = ((SNode) root).getModel().getModelDescriptor();
     if (CollectionSequence.fromCollection(myModels).contains(descriptor)) {
       return true;
     }

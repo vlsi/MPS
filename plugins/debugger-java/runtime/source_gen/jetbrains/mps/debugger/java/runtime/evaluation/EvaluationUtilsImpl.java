@@ -45,7 +45,7 @@ import com.sun.jdi.IntegerValue;
 import com.sun.jdi.LongValue;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import com.sun.jdi.ObjectReference;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.SModelUtil_new;

@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.api.ui.breakpoints;
 
 import jetbrains.mps.debugger.core.breakpoints.BreakpointPainterEx;
 import jetbrains.mps.debug.api.breakpoints.ILocationBreakpoint;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 /*package*/ class BreakpointPainter extends BreakpointPainterEx<ILocationBreakpoint> {
   public BreakpointPainter(ILocationBreakpoint mpsBreakpoint) {

@@ -5,7 +5,7 @@ package jetbrains.mps.scope;
 import jetbrains.mps.smodel.search.ISearchScope;
 import org.jetbrains.annotations.NotNull;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Iterator;

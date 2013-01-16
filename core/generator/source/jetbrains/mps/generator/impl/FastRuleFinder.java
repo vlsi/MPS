@@ -17,7 +17,7 @@ package jetbrains.mps.generator.impl;
 
 import jetbrains.mps.generator.runtime.TemplateReductionRule;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.*;
 import java.util.Map.Entry;

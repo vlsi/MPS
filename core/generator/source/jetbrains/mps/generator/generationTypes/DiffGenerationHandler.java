@@ -23,7 +23,7 @@ import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.textGen.TextGenManager;
 import jetbrains.mps.util.*;
 import jetbrains.mps.vfs.FileSystem;

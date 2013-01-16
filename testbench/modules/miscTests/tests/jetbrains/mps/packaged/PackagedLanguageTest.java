@@ -19,7 +19,7 @@ import jetbrains.mps.TestMain;
 import jetbrains.mps.TestMain.ProjectRunnable;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.FileUtil;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -87,7 +87,7 @@ public class PackagedLanguageTest {
   }
 
   private void checkIconsLoaded() {
-    final SNode packagedConceptInstance = new SNode(PACKAGED_LANGUAGE + ".structure." + PACKAGED_CONCEPT);
+    final jetbrains.mps.smodel.SNode packagedConceptInstance = new jetbrains.mps.smodel.SNode(PACKAGED_LANGUAGE + ".structure." + PACKAGED_CONCEPT);
     final Icon icon = IconManager.getIconFor(packagedConceptInstance);
     Assert.assertNotNull(icon);
     Assert.assertEquals(16, icon.getIconHeight());
@@ -113,7 +113,7 @@ public class PackagedLanguageTest {
 
     SNode method = null;
     for (SNode child : root.getChildren("member")) {
-      if (child.isInstanceOfConcept("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration")) {
+      if (org.jetbrains.mps.openapi.model.SNodeUtil.isInstanceOf(child, jetbrains.mps.util.SNodeOperations.getConcept("jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration"))) {
         if (method == null) {
           method = child;
         } else {

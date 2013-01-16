@@ -15,7 +15,7 @@ import java.io.File;
 import jetbrains.mps.project.IModule;
 import java.util.Set;
 import java.util.HashSet;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.smodel.ModelAccess;

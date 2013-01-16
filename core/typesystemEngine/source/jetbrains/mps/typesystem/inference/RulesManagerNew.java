@@ -17,7 +17,7 @@ package jetbrains.mps.typesystem.inference;
 
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.misc.hash.HashMap;
 

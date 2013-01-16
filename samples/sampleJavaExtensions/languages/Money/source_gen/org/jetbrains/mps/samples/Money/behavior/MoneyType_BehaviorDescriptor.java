@@ -4,7 +4,7 @@ package org.jetbrains.mps.samples.Money.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class MoneyType_BehaviorDescriptor extends Type_BehaviorDescriptor {
   public MoneyType_BehaviorDescriptor() {

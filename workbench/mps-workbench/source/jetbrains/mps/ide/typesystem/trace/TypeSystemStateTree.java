@@ -21,7 +21,7 @@ import java.awt.Color;
 import java.util.Set;
 import jetbrains.mps.newTypesystem.state.blocks.Block;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.newTypesystem.state.blocks.InequalityBlock;
 import jetbrains.mps.newTypesystem.state.NodeMaps;
 import java.util.Collections;

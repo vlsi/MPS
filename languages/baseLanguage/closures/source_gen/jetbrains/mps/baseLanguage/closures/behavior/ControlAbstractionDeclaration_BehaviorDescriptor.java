@@ -6,7 +6,7 @@ import jetbrains.mps.baseLanguage.behavior.GenericDeclaration_BehaviorDescriptor
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IResolveInfo_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.HasAnnotation_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.HasAnnotation_Behavior;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.behavior.ClassifierMember_Behavior;

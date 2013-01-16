@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Type_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IGenericType_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Map;
 import jetbrains.mps.baseLanguage.behavior.IGenericType_Behavior;
 import java.util.List;

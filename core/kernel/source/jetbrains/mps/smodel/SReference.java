@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
@@ -34,7 +34,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
   public static final SReference[] EMPTY_ARRAY = new SReference[0];
 
   private String myRole;
-  private final SNode mySourceNode;
+  protected final SNode mySourceNode; // made protected only for assert in DynamicReference
 
   private volatile String myResolveInfo;
 

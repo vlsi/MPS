@@ -8,7 +8,7 @@ import jetbrains.mps.openapi.editor.EditorContext;
 import java.util.List;
 import jetbrains.mps.nodeEditor.EditorMessage;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.nodeEditor.DefaultEditorMessage;
 import java.awt.Color;

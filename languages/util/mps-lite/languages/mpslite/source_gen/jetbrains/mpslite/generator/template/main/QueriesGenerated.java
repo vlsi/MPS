@@ -7,7 +7,7 @@ import jetbrains.mps.generator.template.MappingScriptContext;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.SModel;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;

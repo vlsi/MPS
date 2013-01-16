@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.regexp.behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IVariableAssignment_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import java.util.List;
 import jetbrains.mps.baseLanguage.behavior.IVariableAssignment_Behavior;

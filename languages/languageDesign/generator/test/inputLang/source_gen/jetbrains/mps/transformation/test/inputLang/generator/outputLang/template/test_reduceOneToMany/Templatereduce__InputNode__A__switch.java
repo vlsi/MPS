@@ -4,7 +4,7 @@ package jetbrains.mps.transformation.test.inputLang.generator.outputLang.templat
 
 import jetbrains.mps.generator.runtime.TemplateDeclarationWeavingAware;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateContext;
@@ -23,7 +23,7 @@ public class Templatereduce__InputNode__A__switch implements TemplateDeclaration
   }
 
   protected SNode applyPart0(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode1 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
+    final SNode tnode1 = new jetbrains.mps.smodel.SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
     try {
       environment.getTracer().pushTemplateNode(templateNode_mkvwhw_a0a0a1a2);
       environment.nodeCopied(context, tnode1, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480311958");
@@ -37,7 +37,7 @@ public class Templatereduce__InputNode__A__switch implements TemplateDeclaration
   }
 
   protected SNode applyPart1(@NotNull final TemplateExecutionEnvironment environment, @NotNull final TemplateContext context) throws GenerationException {
-    final SNode tnode2 = new SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
+    final SNode tnode2 = new jetbrains.mps.smodel.SNode("jetbrains.mps.transformation.test.outputLang.structure.OutputNode");
     try {
       environment.getTracer().pushTemplateNode(templateNode_mkvwhw_a0a0a1a3);
       environment.nodeCopied(context, tnode2, "tpl/r:eca8e1c7-93fd-4ddf-9db6-91f9c2320691/1892993302480311960");

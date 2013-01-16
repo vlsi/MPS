@@ -14,10 +14,10 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXParseException;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.xml.BreakParseSAXException;
 import jetbrains.mps.util.InternUtil;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.logging.Logger;
@@ -385,7 +385,7 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected SNode createObject(Attributes attrs) {
-      return new SNode(InternUtil.intern(fieldhelper.readType(attrs.getValue("type"))));
+      return new jetbrains.mps.smodel.SNode(InternUtil.intern(fieldhelper.readType(attrs.getValue("type"))));
     }
 
     @Override
@@ -404,11 +404,11 @@ public class ModelReader6Handler extends XMLSAXHandler<ModelLoadResult> {
         return;
       }
       if ("id".equals(name)) {
-        SNodeId id = SNodeId.fromString(value);
+        SNodeId id = jetbrains.mps.smodel.SNodeId.fromString(value);
         if (id == null) {
           throw new SAXParseException("bad node ID", null);
         }
-        result.setId(id);
+        ((jetbrains.mps.smodel.SNode) result).setId(id);
         return;
       }
       super.handleAttribute(resultObject, name, value);

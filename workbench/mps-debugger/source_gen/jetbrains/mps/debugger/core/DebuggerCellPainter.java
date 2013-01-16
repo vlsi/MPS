@@ -5,7 +5,7 @@ package jetbrains.mps.debugger.core;
 import jetbrains.mps.nodeEditor.AbstractAdditionalPainter;
 import org.jetbrains.annotations.Nullable;
 import java.awt.Color;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.awt.Graphics;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;

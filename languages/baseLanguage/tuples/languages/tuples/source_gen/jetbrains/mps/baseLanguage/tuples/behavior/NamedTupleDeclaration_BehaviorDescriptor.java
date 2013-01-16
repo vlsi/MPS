@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.tuples.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Classifier_BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 import jetbrains.mps.baseLanguage.scopes.MembersPopulatingContext;
 

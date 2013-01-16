@@ -29,7 +29,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriority
 import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.workbench.output.OutputViewTool;
 

@@ -38,7 +38,7 @@ import jetbrains.mps.nodeEditor.AdditionalPainter;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.util.misc.hash.HashSet;
 import org.jetbrains.annotations.NotNull;

@@ -16,7 +16,7 @@
 package jetbrains.mps.nodeEditor.cellMenu;
 
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.action.DefaultAttributeNodeSetter;
 import jetbrains.mps.smodel.action.DefaultChildNodeSetter;
 

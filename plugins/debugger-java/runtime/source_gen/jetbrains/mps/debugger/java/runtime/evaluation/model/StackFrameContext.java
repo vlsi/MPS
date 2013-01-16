@@ -4,7 +4,7 @@ package jetbrains.mps.debugger.java.runtime.evaluation.model;
 
 import jetbrains.mps.debugger.java.api.state.JavaUiState;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaStackFrame;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaLocation;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
@@ -48,7 +48,7 @@ import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.debugger.java.api.evaluation.transform.TransformatorBuilder;
 import com.sun.jdi.ObjectReference;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;

@@ -26,7 +26,7 @@ import jetbrains.mps.ide.ui.MPSTreeNodeEx;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.CollectionUtil;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -163,9 +163,8 @@ public class SNodeTreeNode extends MPSTreeNodeEx {
       add(new ReferencesTreeNode(getOperationContext(), n));
     }
 
-    List<SNode> children = n.getChildren();
-    List<SNode> filteredChildren = CollectionUtil.filter(children, myCondition);
-    for (SNode childNode : filteredChildren) {
+    for (SNode childNode : n.getChildren()) {
+      if (!myCondition.met(childNode)) continue;
       SNodeTreeNode child = createChildTreeNode(childNode, childNode.getRoleInParent(), getOperationContext());
       child.myCondition = myCondition;
       add(child);

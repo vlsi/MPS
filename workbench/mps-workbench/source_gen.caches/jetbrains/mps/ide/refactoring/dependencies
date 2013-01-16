@@ -14,7 +14,7 @@
     <classNode dependClassName="jetbrains.mps.ide.ui.smodel.SNodeTreeNode" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="com.intellij.ui.components.JBScrollPane" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.ModelElementTargetChooser" />
   </dependency>
@@ -30,9 +30,9 @@
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.ChildHierarchyTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.refactoring.NodeHierarchyChooser" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringDialog" />
   </dependency>
   <dependency className="jetbrains.mps.ide.refactoring.NodeHierarchyChooser" file="NodeHierarchyChooser.java">
@@ -46,7 +46,7 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.ConceptAncestorsProvider" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="com.intellij.ui.components.JBScrollPane" />
     <classNode extendsClassName="jetbrains.mps.ide.hierarchy.AbstractHierarchyTree" />
   </dependency>
@@ -68,9 +68,9 @@
     <classNode dependClassName="jetbrains.mps.refactoring.framework.IRefactoring" />
     <classNode dependClassName="jetbrains.mps.refactoring.framework.RefactoringContext" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelDescriptor" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.NonNls" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="com.intellij.openapi.components.ApplicationComponent" />
     <classNode extendsClassName="jetbrains.mps.ide.platform.refactoring.RefactoringAccess" />
   </dependency>

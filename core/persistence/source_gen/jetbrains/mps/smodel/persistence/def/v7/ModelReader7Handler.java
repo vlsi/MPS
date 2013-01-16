@@ -17,8 +17,8 @@ import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.refactoring.StructureModificationProcessor;
 import jetbrains.mps.util.xml.BreakParseSAXException;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.StaticReference;
@@ -453,7 +453,7 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
 
     @Override
     protected SNode createObject(Attributes attrs) {
-      return new SNode(fieldhelper.readType(attrs.getValue("type")));
+      return new jetbrains.mps.smodel.SNode(fieldhelper.readType(attrs.getValue("type")));
     }
 
     @Override
@@ -480,11 +480,11 @@ public class ModelReader7Handler extends XMLSAXHandler<ModelLoadResult> {
         return;
       }
       if ("id".equals(name)) {
-        SNodeId id = SNodeId.fromString(value);
+        SNodeId id = jetbrains.mps.smodel.SNodeId.fromString(value);
         if (id == null) {
           throw new SAXParseException("bad node ID", null);
         }
-        result.setId(id);
+        ((jetbrains.mps.smodel.SNode) result).setId(id);
         return;
       }
       super.handleAttribute(resultObject, name, value);

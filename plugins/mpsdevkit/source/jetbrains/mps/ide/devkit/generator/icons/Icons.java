@@ -23,7 +23,7 @@ import jetbrains.mps.ide.devkit.generator.TracerNode;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.smodel.SNodePointer;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import javax.swing.Icon;
 import java.awt.Component;

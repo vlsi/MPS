@@ -6,7 +6,7 @@ import java.util.SortedMap;
 import jetbrains.mps.internal.collections.runtime.SortedMapSequence;
 import java.util.TreeMap;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;

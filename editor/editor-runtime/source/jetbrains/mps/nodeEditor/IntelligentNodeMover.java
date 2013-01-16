@@ -19,7 +19,8 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.search.SModelSearchUtil;
 import jetbrains.mps.util.NameUtil;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -80,7 +81,7 @@ class IntelligentNodeMover {
     final String role = current.getRoleInParent();
     assert parent != null && role != null;
 
-    final SNode acd = parent.getConceptDeclarationNode();
+    final SNode acd = ((jetbrains.mps.smodel.SNode) parent).getConceptDeclarationNode();
     final SNode link = SModelSearchUtil.findLinkDeclaration(acd, role);
 
     if (link == null) {
@@ -128,7 +129,8 @@ class IntelligentNodeMover {
 
     final SNode prevChild = siblingWithTheSameRole(current);
     if (prevChild == null) {
-      LOG.error("Prev. child is null. isForward = " + forward() + "; index = " + current.getParent().getChildren(role).indexOf(current));
+      List<? extends SNode> children = IterableUtil.asList(current.getParent().getChildren(role));
+      LOG.error("Prev. child is null. isForward = " + forward() + "; index = " + children.indexOf(current));
       return;
     }
 
@@ -166,7 +168,7 @@ class IntelligentNodeMover {
       return current;
     }
 
-    List<SNode> children = new ArrayList<SNode>(current.getChildren());
+    List<? extends SNode> children = IterableUtil.copyToList(current.getChildren());
     if (!forward()) {
       Collections.reverse(children);
     }
@@ -191,7 +193,7 @@ class IntelligentNodeMover {
   private boolean isBoundary(SNode node) {
     String role = node.getRoleInParent();
     assert role != null;
-    List<SNode> siblings = node.getParent().getChildren(role);
+    List<? extends SNode> siblings = IterableUtil.asList(node.getParent().getChildren(role));
     int index = siblings.indexOf(node);
     if (forward()) {
       return index == siblings.size() - 1;

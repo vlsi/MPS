@@ -27,8 +27,8 @@
       <property name="caption" nameId="tp4k.1205250923097" value="Show Node Messages" />
     </node>
     <node type="tp4k.KeymapChangesDeclaration" typeId="tp4k.1562714432501166197" id="7711023363876674141">
-      <property name="name" nameId="tpck.1169194664001" value="DefaultCore" />
       <property name="isPluginXmlKeymap" nameId="tp4k.8646726056720906098" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="DefaultCore" />
     </node>
   </roots>
   <root id="7711023363876674043">
@@ -65,7 +65,7 @@
                 </node>
               </node>
               <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7711023363876674060">
-                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~NodeHighlightManager%dgetMessagesFor(jetbrains%dmps%dsmodel%dSNode)%cjava%dutil%dList" resolveInfo="getMessagesFor" />
+                <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~NodeHighlightManager%dgetMessagesFor(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cjava%dutil%dList" resolveInfo="getMessagesFor" />
                 <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7711023363876674061">
                   <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="7711023363876674062" />
                   <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="7711023363876674063">
@@ -213,7 +213,7 @@
                       </node>
                     </node>
                     <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7711023363876674121">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~NodeHighlightManager%dgetMessagesFor(jetbrains%dmps%dsmodel%dSNode)%cjava%dutil%dList" resolveInfo="getMessagesFor" />
+                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="9a8.~NodeHighlightManager%dgetMessagesFor(org%djetbrains%dmps%dopenapi%dmodel%dSNode)%cjava%dutil%dList" resolveInfo="getMessagesFor" />
                       <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7711023363876674122">
                         <node role="operand" roleId="tpee.1197027771414" type="tp4f.ThisClassifierExpression" typeId="tp4f.1205752633985" id="7711023363876674123" />
                         <node role="operation" roleId="tpee.1197027833540" type="tp4k.ActionDataParameterReferenceOperation" typeId="tp4k.1217252428768" id="7711023363876674124">
@@ -260,8 +260,8 @@
     <node role="shortcutChange" roleId="tp4k.1562714432501166199" type="tp4k.SimpleShortcutChange" typeId="tp4k.1562714432501166198" id="7711023363876674142">
       <link role="action" roleId="tp4k.6193305307616734326" targetNodeId="7711023363876674047" resolveInfo="ShowNodeMessages" />
       <node role="keystroke" roleId="tp4k.1562714432501166206" type="tp4k.KeyMapKeystroke" typeId="tp4k.1207318242772" id="6573807532044017010">
-        <property name="modifiers" nameId="tp4k.1207318242773" value="alt+shift" />
         <property name="keycode" nameId="tp4k.1207318242774" value="VK_M" />
+        <property name="modifiers" nameId="tp4k.1207318242773" value="alt+shift" />
       </node>
     </node>
   </root>

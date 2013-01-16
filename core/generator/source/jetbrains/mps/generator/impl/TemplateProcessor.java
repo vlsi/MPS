@@ -30,7 +30,7 @@ import jetbrains.mps.generator.runtime.TemplateExecutionEnvironment;
 import jetbrains.mps.generator.runtime.TemplateSwitchMapping;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -144,7 +144,7 @@ public class TemplateProcessor {
 
     // templateNode has no unprocessed node-macros - create output instance for the tempate node
     myTracer.pushTemplateNode(new SNodePointer(templateNode));
-    SNode outputNode = new SNode(templateNode.getConcept().getId());
+    jetbrains.mps.smodel.SNode outputNode = new jetbrains.mps.smodel.SNode(templateNode.getConcept().getId());
     GeneratorMappings mappings = myGenerator.getMappings();
     mappings.addOutputNodeByInputAndTemplateNode(context.getInput(), templateNode, outputNode);
     for (SNode historyInputNode : context.getInputHistory()) {
@@ -229,7 +229,7 @@ public class TemplateProcessor {
       myTracer.pushOutputNode(GenerationTracerUtil.getSNodePointer(myOutputModel, outputNode));
       myTracer.closeTemplateNode(new SNodePointer(templateNode));
     }
-    return Collections.singletonList(outputNode);
+    return Collections.singletonList(((SNode) outputNode));
   }
 
   @Nullable

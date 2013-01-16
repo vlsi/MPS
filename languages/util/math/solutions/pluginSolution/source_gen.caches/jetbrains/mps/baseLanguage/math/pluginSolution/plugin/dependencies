@@ -6,7 +6,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Collection" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.ParentSettings" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Basic" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.HLineCellProvider" file="HLineCellProvider.java">
@@ -16,14 +16,14 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Basic" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.ParentSettings" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
   </dependency>
   <dependency className="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.VLineCellProvider" file="VLineCellProvider.java">
     <classNode dependClassName="jetbrains.mps.baseLanguage.math.pluginSolution.plugin.EditorCell_VerticalLine" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.AbstractCellProvider" />
   </dependency>
 </dependenciesRoot>

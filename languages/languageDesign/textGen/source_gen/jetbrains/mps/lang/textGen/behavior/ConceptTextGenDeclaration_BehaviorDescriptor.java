@@ -4,7 +4,7 @@ package jetbrains.mps.lang.textGen.behavior;
 
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
 
 public class ConceptTextGenDeclaration_BehaviorDescriptor extends AbstractTextGenDeclaration_BehaviorDescriptor implements IConceptAspect_BehaviorDescriptor {

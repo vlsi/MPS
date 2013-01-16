@@ -6,7 +6,7 @@ import java.util.Set;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.datatransfer.PasteNodeData;
 import java.util.List;
@@ -19,7 +19,7 @@ import jetbrains.mps.datatransfer.CopyPasteManager;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.smodel.SNodeId;
-import jetbrains.mps.internal.collections.runtime.SetSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.util.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.smodel.StaticReference;
@@ -113,14 +113,13 @@ public class CopyPasteUtil {
   }
 
   private static SNode copyNode_internal(SNode sourceNode, @Nullable Map<SNode, Set<SNode>> nodesAndAttributes, Map<SNode, SNode> sourceNodesToNewNodes, Set<SReference> allReferences) {
-    SNode targetNode = new SNode(InternUtil.intern(sourceNode.getConcept().getConceptId()));
-    targetNode.setId(SNodeId.fromString(sourceNode.getNodeId().toString()));
-    for (String name : SetSequence.fromSet(sourceNode.getPropertyNames())) {
+    SNode targetNode = new jetbrains.mps.smodel.SNode(InternUtil.intern(sourceNode.getConcept().getConceptId()));
+    ((jetbrains.mps.smodel.SNode) targetNode).setId(SNodeId.fromString(sourceNode.getNodeId().toString()));
+    for (String name : Sequence.fromIterable(sourceNode.getPropertyNames())) {
       targetNode.setProperty(name, sourceNode.getProperty(name));
     }
     sourceNodesToNewNodes.put(sourceNode, targetNode);
-    List<SReference> references = sourceNode.getReferences();
-    for (SReference reference : references) {
+    for (SReference reference : sourceNode.getReferences()) {
       allReferences.add(reference);
     }
     List<SNode> children = SNodeOperations.getChildren(sourceNode);

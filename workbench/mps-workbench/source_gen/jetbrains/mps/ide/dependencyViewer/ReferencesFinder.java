@@ -36,7 +36,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
     try {
       monitor.start("computing references' targets", ListSequence.fromList(nodes).count());
       for (SNode node : nodes) {
-        for (SReference ref : SNodeOperations.getReferences(((jetbrains.mps.smodel.SNode) node))) {
+        for (SReference ref : SNodeOperations.getReferences(((SNode) node))) {
           SNode target = ref.getTargetNodeSilently();
           if (target == null || scope.contains(target)) {
             continue;
@@ -84,8 +84,8 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
       for (final SNode node : ListSequence.fromList(references)) {
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            for (SReference ref : SNodeOperations.getReferences(((jetbrains.mps.smodel.SNode) node))) {
-              jetbrains.mps.smodel.SNode targetNode = ref.getTargetNodeSilently();
+            for (SReference ref : SNodeOperations.getReferences(((SNode) node))) {
+              SNode targetNode = ref.getTargetNodeSilently();
               if (targetNode == null || !(targetScope.contains(targetNode)) || sourceScope.contains(targetNode)) {
                 continue;
               }
@@ -144,7 +144,7 @@ import jetbrains.mps.internal.collections.runtime.Sequence;
       }).concat(CollectionSequence.fromCollection(scope.getRoots())).toListSequence();
       monitor.start("searching references in " + scope.getPresentation(), ListSequence.fromList(roots).count());
       for (SNode root : ListSequence.fromList(roots)) {
-        ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(((jetbrains.mps.smodel.SNode) root), null, true, new String[]{})));
+        ListSequence.fromList(result).addSequence(ListSequence.fromList(SNodeOperations.getDescendants(((SNode) root), null, true, new String[]{})));
         if (monitor.isCanceled()) {
           return result;
         }

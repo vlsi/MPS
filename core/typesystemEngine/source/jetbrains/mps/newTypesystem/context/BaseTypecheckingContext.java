@@ -24,7 +24,7 @@ import jetbrains.mps.newTypesystem.operation.TraceMessageOperation;
 import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.newTypesystem.state.blocks.MultipleWhenConcreteBlock;
 import jetbrains.mps.newTypesystem.state.blocks.WhenConcreteBlock;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;

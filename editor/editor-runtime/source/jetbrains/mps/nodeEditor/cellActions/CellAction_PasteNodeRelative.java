@@ -22,7 +22,7 @@ import jetbrains.mps.nodeEditor.datatransfer.NodePaster;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.resolve.ResolverComponent;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SReference;
 import jetbrains.mps.ide.datatransfer.CopyPasteUtil;
 import jetbrains.mps.datatransfer.PasteNodeData;

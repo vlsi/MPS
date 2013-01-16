@@ -4,7 +4,7 @@ package jetbrains.mps.vcs.diff;
 
 import jetbrains.mps.vcs.diff.changes.ModelChange;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 public interface ModelChangeSet extends ChangeSet {
   public Iterable<ModelChange> getChangesForRoot(@Nullable SNodeId rootId);

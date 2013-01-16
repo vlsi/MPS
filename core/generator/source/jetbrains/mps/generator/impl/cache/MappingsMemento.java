@@ -17,8 +17,8 @@ package jetbrains.mps.generator.impl.cache;
 
 import jetbrains.mps.util.io.ModelInputStream;
 import jetbrains.mps.util.io.ModelOutputStream;
-import jetbrains.mps.smodel.SNode;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNode;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 import java.io.IOException;
 import java.util.*;

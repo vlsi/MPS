@@ -4,7 +4,7 @@ package jetbrains.mps.execution.commands.behavior;
 
 import jetbrains.mps.baseLanguage.classifiers.behavior.DefaultClassifierType_BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class CommandType_BehaviorDescriptor extends DefaultClassifierType_BehaviorDescriptor {
   public CommandType_BehaviorDescriptor() {

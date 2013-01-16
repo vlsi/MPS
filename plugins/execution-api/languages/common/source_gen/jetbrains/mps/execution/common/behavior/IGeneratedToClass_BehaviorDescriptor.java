@@ -4,7 +4,7 @@ package jetbrains.mps.execution.common.behavior;
 
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import org.jetbrains.annotations.NonNls;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public interface IGeneratedToClass_BehaviorDescriptor extends INamedConcept_BehaviorDescriptor {
   @NonNls

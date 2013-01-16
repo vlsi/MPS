@@ -20,7 +20,7 @@ import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.ide.editor.util.EditorComponentUtil;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.Computable;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.ide.editor.MPSEditorOpener;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.ide.project.ProjectHelper;

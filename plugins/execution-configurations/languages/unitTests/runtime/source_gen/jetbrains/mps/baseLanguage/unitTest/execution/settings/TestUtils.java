@@ -7,7 +7,7 @@ import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nls;
 import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
@@ -18,7 +18,7 @@ import jetbrains.mps.internal.collections.runtime.ISequenceClosure;
 import java.util.Iterator;
 import jetbrains.mps.baseLanguage.closures.runtime.YieldingIterator;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.ISelector;
@@ -51,7 +51,7 @@ public class TestUtils {
     }
     String[] split = pointerString.split(POINTER_SEPARATOR);
     SModelReference smodelId = SModelReference.fromString(split[0]);
-    SNodeId id = SNodeId.fromString(split[1]);
+    SNodeId id = jetbrains.mps.smodel.SNodeId.fromString(split[1]);
     return new SNodePointer(smodelId, id);
   }
 

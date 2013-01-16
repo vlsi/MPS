@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.lang.typesystem.runtime;
 
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 

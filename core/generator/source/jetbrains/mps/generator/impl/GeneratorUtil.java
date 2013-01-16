@@ -22,8 +22,9 @@ import jetbrains.mps.generator.IGeneratorLogger.ProblemDescription;
 import jetbrains.mps.generator.runtime.TemplateContext;
 import jetbrains.mps.generator.template.ITemplateGenerator;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Pair;
+import jetbrains.mps.util.SNodeOperations;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.jetbrains.mps.openapi.language.SConceptRepository;
@@ -100,14 +101,16 @@ public class GeneratorUtil {
           // TODO FIXME using PatternVarsUtil directly, which is loaded by MPS
           value = outerContext.getPatternVariable(patternVar);
         }
-      } else if (exprNode.isInstanceOfConcept(RuleUtil.concept_TemplateArgumentQueryExpression)) {
-        SNode query = RuleUtil.getTemplateArgumentQueryExpression_Query(exprNode);
-        value = reductionContext.getQueryExecutor().evaluateArgumentQuery(inputNode, query, outerContext);
       } else {
-        try {
-          value = RuleUtil.evaluateBaseLanguageExpression(exprNode);
-        } catch(IllegalArgumentException ex) {
-          generator.showErrorMessage(inputNode, templateCall, "cannot evaluate template argument #" + (i + 1));
+        if (SNodeUtil.isInstanceOf(exprNode, SNodeOperations.getConcept(RuleUtil.concept_TemplateArgumentQueryExpression))) {
+          SNode query = RuleUtil.getTemplateArgumentQueryExpression_Query(exprNode);
+          value = reductionContext.getQueryExecutor().evaluateArgumentQuery(inputNode, query, outerContext);
+        } else {
+          try {
+            value = RuleUtil.evaluateBaseLanguageExpression(exprNode);
+          } catch(IllegalArgumentException ex) {
+            generator.showErrorMessage(inputNode, templateCall, "cannot evaluate template argument #" + (i + 1));
+          }
         }
       }
 

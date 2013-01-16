@@ -4,7 +4,7 @@ package jetbrains.mps.traceInfo.test;
 
 import org.junit.Test;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import junit.framework.Assert;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;

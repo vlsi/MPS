@@ -5,7 +5,7 @@ package jetbrains.mps.smodel.search;
 import jetbrains.mps.cache.AbstractCache;
 import jetbrains.mps.cache.DataSet;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.Set;
 import java.util.LinkedHashSet;
 import jetbrains.mps.smodel.SNodeUtil;

@@ -4,7 +4,7 @@ package jetbrains.mps.ide.script.plugin.migrationtool;
 
 import java.util.Collection;
 import jetbrains.mps.ide.findusages.model.SearchResult;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.ide.ThreadUtils;

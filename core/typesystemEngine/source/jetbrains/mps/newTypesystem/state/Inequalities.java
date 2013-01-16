@@ -23,7 +23,7 @@ import jetbrains.mps.newTypesystem.relations.AbstractRelation;
 import jetbrains.mps.newTypesystem.relations.ComparableRelation;
 import jetbrains.mps.newTypesystem.relations.SubTypingRelation;
 import jetbrains.mps.newTypesystem.state.blocks.*;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.containers.ManyToManyMap;
 import jetbrains.mps.util.Pair;
 

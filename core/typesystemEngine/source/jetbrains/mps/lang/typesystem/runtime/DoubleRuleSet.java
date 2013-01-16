@@ -20,7 +20,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.newTypesystem.rules.DoubleTermRules;
 import jetbrains.mps.newTypesystem.rules.LanguageScope;
 import jetbrains.mps.project.GlobalScope;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.language.ConceptRegistry;
 import jetbrains.mps.smodel.runtime.ConceptDescriptor;

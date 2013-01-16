@@ -4,7 +4,7 @@ package jetbrains.mps.scope;
 
 import java.util.Set;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;

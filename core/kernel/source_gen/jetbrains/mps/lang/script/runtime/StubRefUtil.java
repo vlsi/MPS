@@ -8,7 +8,7 @@ import jetbrains.mps.smodel.SNodeId;
 import jetbrains.mps.smodel.SModelStereotype;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.util.NameUtil;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.smodel.SModelReference;
@@ -18,6 +18,7 @@ import jetbrains.mps.internal.collections.runtime.ITranslator2;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.project.dependency.GlobalModuleDependenciesManager;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.StaticReference;
 import jetbrains.mps.smodel.SModelFqName;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -69,7 +70,7 @@ public class StubRefUtil {
     return isReferenceToClass(SNodeOperations.getReference(staticFieldRef, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "classifier")), classFqName) && isReferenceToField(SNodeOperations.getReference(staticFieldRef, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.StaticFieldReference", "staticFieldDeclaration")), field);
   }
 
-  public static boolean isReferenceTo(@Nullable SReference ref, @NotNull SModelReference targetModel, @NotNull SNodeId targetId) {
+  public static boolean isReferenceTo(@Nullable SReference ref, @NotNull SModelReference targetModel, @NotNull org.jetbrains.mps.openapi.model.SNodeId targetId) {
     return ref != null && targetId.equals(ref.getTargetNodeId()) && targetModel.equals(ref.getTargetSModelReference());
   }
 
@@ -122,7 +123,7 @@ public class StubRefUtil {
   }
 
   public static void replaceRefs(SNode oldNode, SNode newNode) {
-    for (SReference newRef : ListSequence.fromList(newNode.getReferences())) {
+    for (SReference newRef : Sequence.fromIterable(newNode.getReferences())) {
       oldNode.setReference(newRef.getRole(), null);
       oldNode.setReference(new StaticReference(newRef.getRole(), oldNode, newRef.getTargetSModelReference(), newRef.getTargetNodeId(), newRef.getResolveInfo()).getRole(), new StaticReference(newRef.getRole(), oldNode, newRef.getTargetSModelReference(), newRef.getTargetNodeId(), newRef.getResolveInfo()));
     }

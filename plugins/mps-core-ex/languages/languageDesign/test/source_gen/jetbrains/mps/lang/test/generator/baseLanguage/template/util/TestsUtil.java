@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.lang.test.behavior.TestInfo_Behavior;
 import jetbrains.mps.util.MacrosFactory;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.lang.test.behavior.NodesTestCase_Behavior;
 import java.io.File;

@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.closures.behavior;
 import jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDeprecatable_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.core.behavior.IDeprecatable_Behavior;
 
 public class InvokeFunctionExpression_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IDeprecatable_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {

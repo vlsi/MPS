@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.classifiers.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IVisible_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.Icon;
 import java.util.List;
 import org.jetbrains.mps.openapi.language.SConcept;

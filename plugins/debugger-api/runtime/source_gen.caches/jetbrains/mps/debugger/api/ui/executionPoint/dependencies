@@ -13,8 +13,8 @@
     <classNode dependClassName="jetbrains.mps.debug.api.source.NodeSourcePosition" />
     <classNode dependClassName="jetbrains.mps.debug.api.source.PositionProvider" />
     <classNode dependClassName="jetbrains.mps.debug.api.source.SourcePosition" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="com.intellij.openapi.components.ProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.debug.api.DebugSessionListener" />
     <classNode extendsClassName="jetbrains.mps.debug.api.SessionChangeAdapter" />

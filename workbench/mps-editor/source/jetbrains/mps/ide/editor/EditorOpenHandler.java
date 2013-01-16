@@ -18,7 +18,7 @@ package jetbrains.mps.ide.editor;
 import com.intellij.openapi.extensions.ExtensionPointName;
 import jetbrains.mps.openapi.editor.Editor;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public interface EditorOpenHandler {
 

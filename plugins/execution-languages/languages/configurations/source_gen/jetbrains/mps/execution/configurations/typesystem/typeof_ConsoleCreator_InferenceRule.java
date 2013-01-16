@@ -4,7 +4,7 @@ package jetbrains.mps.execution.configurations.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.AbstractInferenceRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.InferenceRule_Runtime;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.typesystem.inference.EquationInfo;
@@ -23,7 +23,7 @@ public class typeof_ConsoleCreator_InferenceRule extends AbstractInferenceRule_R
     {
       SNode _nodeToCheck_1029348928467 = consoleCreator;
       EquationInfo _info_12389875345 = new EquationInfo(_nodeToCheck_1029348928467, null, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "1594211126127774357", 0, null);
-      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "1594211126127774354", true), (SNode) _quotation_createNode_c6o0kc_a0a0b(), _info_12389875345);
+      typeCheckingContext.createEquation((SNode) typeCheckingContext.typeOf(_nodeToCheck_1029348928467, "r:8b43a830-217d-43d8-a0f8-6460c443f22d(jetbrains.mps.execution.configurations.typesystem)", "1594211126127774354", true), (SNode) createConsoleType_c6o0kc_a0a0b(), _info_12389875345);
     }
     {
       SNode _nodeToCheck_1029348928467 = SLinkOperations.getTarget(consoleCreator, "project", true);
@@ -52,10 +52,9 @@ public class typeof_ConsoleCreator_InferenceRule extends AbstractInferenceRule_R
     return false;
   }
 
-  private static SNode _quotation_createNode_c6o0kc_a0a0b() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.configurations.structure.ConsoleType", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
+  private static SNode createConsoleType_c6o0kc_a0a0b() {
+    SNode n1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.execution.configurations.structure.ConsoleType", null, GlobalScope.getInstance(), false);
+    return n1;
   }
 
   private static SNode _quotation_createNode_c6o0kc_a0b0b() {

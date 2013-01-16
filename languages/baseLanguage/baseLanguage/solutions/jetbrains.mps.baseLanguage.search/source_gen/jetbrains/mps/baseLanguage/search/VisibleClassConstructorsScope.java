@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.search;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.IScope;
 import org.jetbrains.annotations.NotNull;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;

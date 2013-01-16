@@ -4,7 +4,7 @@ package jetbrains.mps.lang.editor.editorTest.behavior;
 
 import jetbrains.mps.lang.core.behavior.LinkAttribute_BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.mps.openapi.language.SConcept;
 
 public class ReferenceAnnotataion_BehaviorDescriptor extends LinkAttribute_BehaviorDescriptor {

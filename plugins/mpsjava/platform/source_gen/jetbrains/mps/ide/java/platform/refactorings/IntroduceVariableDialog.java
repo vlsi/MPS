@@ -5,7 +5,7 @@ package jetbrains.mps.ide.java.platform.refactorings;
 import jetbrains.mps.ide.platform.refactoring.RefactoringDialog;
 import jetbrains.mps.openapi.editor.EditorContext;
 import javax.swing.JPanel;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import com.intellij.openapi.project.Project;

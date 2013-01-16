@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.persistence.binary;
 
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.DynamicReference.DynamicReferenceOrigin;
 import jetbrains.mps.util.InternUtil;
 import jetbrains.mps.util.Pair;
@@ -52,7 +52,7 @@ public class NodesReader {
       throw new IOException("bad stream, no '{'");
     }
 
-    SNode node = new SNode(InternUtil.intern(conceptFqName));
+    jetbrains.mps.smodel.SNode node = new jetbrains.mps.smodel.SNode(InternUtil.intern(conceptFqName));
     node.setId(nodeId);
 
     readProperties(is, node);

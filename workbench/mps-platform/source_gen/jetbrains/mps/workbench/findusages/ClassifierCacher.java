@@ -5,7 +5,7 @@ package jetbrains.mps.workbench.findusages;
 import java.util.Map;
 import com.intellij.psi.impl.cache.impl.id.IdIndexEntry;
 import gnu.trove.THashMap;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.stubs.javastub.classpath.ClassifierKind;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMClass;
 import jetbrains.mps.baseLanguage.javastub.asm.ASMTypeVariable;
@@ -45,10 +45,10 @@ public class ClassifierCacher {
   }
 
   private void ref(SNodeId id) {
-    if (!(id instanceof SNodeId.Foreign)) {
+    if (!(id instanceof jetbrains.mps.smodel.SNodeId.Foreign)) {
       return;
     }
-    myResult.put(new IdIndexEntry(((SNodeId.Foreign) id).getId(), true), 0);
+    myResult.put(new IdIndexEntry(((jetbrains.mps.smodel.SNodeId.Foreign) id).getId(), true), 0);
   }
 
   public void updateClassifier(ClassifierKind kind, ASMClass ac) {

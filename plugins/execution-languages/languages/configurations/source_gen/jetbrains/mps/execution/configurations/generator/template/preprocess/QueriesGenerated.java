@@ -4,7 +4,7 @@ package jetbrains.mps.execution.configurations.generator.template.preprocess;
 
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.generator.template.MappingScriptContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SModelOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;

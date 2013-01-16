@@ -47,8 +47,8 @@ public class ModuleChooser extends BaseChooserComponent {
       public void run() {
         SConcept concept = SConceptRepository.getInstance().getConcept("jetbrains.mps.baseLanguage.unitTest.structure.ITestCase");
         Set<SNode> usages = FindUsagesManager.getInstance().findUsages(Collections.singleton(concept), SearchType.INSTANCES, GlobalScope.getInstance(), null);
-        Set<jetbrains.mps.smodel.SNode> us = ((Set) usages);
-        for (jetbrains.mps.smodel.SNode node : us) {
+        Set<SNode> us = ((Set) usages);
+        for (SNode node : us) {
           SModel model = SNodeOperations.getModel(node);
           SModelDescriptor md = model.getModelDescriptor();
           ModuleReference module = md.getModule().getModuleReference();

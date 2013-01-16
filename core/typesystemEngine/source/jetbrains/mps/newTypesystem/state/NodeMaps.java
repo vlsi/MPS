@@ -25,7 +25,7 @@ import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.newTypesystem.operation.AddErrorOperation;
 import jetbrains.mps.newTypesystem.operation.AssignTypeOperation;
 import jetbrains.mps.newTypesystem.operation.ExpandTypeOperation;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.EquationInfo;
 import jetbrains.mps.validation.IModelValidationSettings;
 import jetbrains.mps.validation.ValidationSettings;

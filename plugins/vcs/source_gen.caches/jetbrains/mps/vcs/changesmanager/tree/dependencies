@@ -47,9 +47,8 @@
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.Sequence" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModelReference" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNodeId" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
+    <classNode dependClassName="jetbrains.mps.util.IterableUtil" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceRegistry" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.FeatureForestMap" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.DeletedChildFeature" />
@@ -63,18 +62,20 @@
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetPropertyChange" />
     <classNode dependClassName="jetbrains.mps.vcs.diff.changes.SetReferenceChange" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNodeId" />
     <classNode extendsClassName="com.intellij.openapi.components.AbstractProjectComponent" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.CurrentDifferenceAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.HierarchyFeatureExtractor" file="HierarchyFeatureExtractor.java">
     <classNode dependClassName="jetbrains.mps.ide.hierarchy.HierarchyTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.MPSTreeNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.NodeFeature" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.TreeNodeFeatureExtractor" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.ProjectTreeFeatureExtractor" file="ProjectTreeFeatureExtractor.java">
@@ -88,7 +89,6 @@
     <classNode dependClassName="jetbrains.mps.ide.ui.smodel.ReferencesTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.smodel.SModelTreeNode" />
     <classNode dependClassName="jetbrains.mps.ide.ui.smodel.SNodeTreeNode" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.Feature" />
@@ -100,6 +100,7 @@
     <classNode dependClassName="jetbrains.mps.vcs.changesmanager.tree.features.VirtualPackageFeature" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.vcs.changesmanager.tree.TreeNodeFeatureExtractor" />
   </dependency>
   <dependency className="jetbrains.mps.vcs.changesmanager.tree.TreeHighlighter" file="TreeHighlighter.java">

@@ -11,7 +11,7 @@ import com.sun.jdi.StackFrame;
 import jetbrains.mps.debugger.java.api.state.proxy.ValueUtil;
 import jetbrains.mps.debug.api.programState.IValue;
 import javax.swing.Icon;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.debugger.java.api.state.proxy.JavaLocation;
 import jetbrains.mps.generator.traceInfo.TraceInfoUtil;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;

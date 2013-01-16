@@ -10,7 +10,7 @@ import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.annotations.NotNull;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.SModelOperations;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Condition;
 import jetbrains.mps.util.ConditionalIterable;
 

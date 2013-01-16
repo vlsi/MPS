@@ -37,13 +37,13 @@ public class SNodeAccessUtil {
   private static ThreadLocal<Set<Pair<SNode, String>>> ourPropertyGettersInProgress = new InProgressThreadLocal();
   private static ThreadLocal<Set<Pair<SNode, String>>> ourSetReferentEventHandlersInProgress = new InProgressThreadLocal();
 
-  public static boolean hasProperty(jetbrains.mps.smodel.SNode node, String name) {
+  public static boolean hasProperty(SNode node, String name) {
     node.hasProperty(name); //todo this is to invoke corresponding read access. try to remove it by merging 2 types of access
     String property_internal = node.getProperty(name);
     return !SModelUtil_new.isEmptyPropertyValue(property_internal);
   }
 
-  public static String getProperty(jetbrains.mps.smodel.SNode node, String name) {
+  public static String getProperty(SNode node, String name) {
     if (MPSCore.getInstance().isMergeDriverMode()) return node.getProperty(name);
 
     Set<Pair<SNode, String>> getters = ourPropertyGettersInProgress.get();
@@ -63,7 +63,7 @@ public class SNodeAccessUtil {
     }
   }
 
-  public static void setProperty(jetbrains.mps.smodel.SNode node, String propertyName, String propertyValue) {
+  public static void setProperty(SNode node, String propertyName, String propertyValue) {
     Set<Pair<SNode, String>> threadSet = ourPropertySettersInProgress.get();
     Pair<SNode, String> pair = new Pair<SNode, String>(node, propertyName);
     SModel model = node.getModel();
@@ -85,7 +85,7 @@ public class SNodeAccessUtil {
     }
   }
 
-  public static void setReferenceTarget(jetbrains.mps.smodel.SNode node, String role, @Nullable jetbrains.mps.smodel.SNode target) {
+  public static void setReferenceTarget(SNode node, String role, @Nullable SNode target) {
     SModel model = node.getModel();
     if (model == null || !model.canFireEvent()) {
       //todo[Mihail Muhin]: why?
@@ -111,7 +111,7 @@ public class SNodeAccessUtil {
     threadSet.add(pair);
 
     try {
-      jetbrains.mps.smodel.SNode oldReferent = node.getReferenceTarget(role);
+      SNode oldReferent = node.getReferenceTarget(role);
       if (descriptor.validate(node, oldReferent, target, GlobalScope.getInstance())) {
         node.setReferenceTarget(role, target);
         descriptor.onReferenceSet(node, oldReferent, target, GlobalScope.getInstance());
@@ -122,7 +122,7 @@ public class SNodeAccessUtil {
   }
 
 
-  public void setReference(jetbrains.mps.smodel.SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
+  public void setReference(SNode node, String role, @Nullable org.jetbrains.mps.openapi.model.SReference reference) {
     //todo for symmetry
   }
 

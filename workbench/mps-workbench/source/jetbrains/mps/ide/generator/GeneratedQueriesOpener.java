@@ -18,7 +18,7 @@ package jetbrains.mps.ide.generator;
 import jetbrains.mps.ide.navigation.NavigationProvider;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.QueryMethodGenerated;
 
 import java.io.File;

@@ -32,7 +32,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUndoableAction;
 import jetbrains.mps.smodel.UndoHelper;
 import jetbrains.mps.util.Computable;
@@ -642,6 +642,63 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     return pattern;
   }
 
+  public void selectWordOrAll() {
+    if (getTextLine().getStartTextSelectionPosition() != getTextLine().getEndTextSelectionPosition()) {
+      selectAll();
+      return;
+    }
+
+    int start = getPrevLocalHome(false);
+    int end = getNextLocalEnd(false);
+
+    if (start != end) {
+      select(start, end);
+    } else {
+      selectAll();
+    }
+
+  }
+
+  private void select(int start, int end) {
+    assert start <= end;
+    setSelectionStart(start);
+    setSelectionEnd(end);
+  }
+
+  private int getNextLocalEnd(boolean skipLeadingSpaces) {
+    int length = getText().length();
+    assert getCaretPosition() <= length;
+    for (int i = getCaretPosition(); i != length; ++i) {
+
+      if (Character.isWhitespace(getText().charAt(i))) {
+        if (skipLeadingSpaces) {
+          if (i == length - 1 || !Character.isWhitespace(getText().charAt(i + 1))) {
+            return i + 1;
+          }
+        } else {
+          return i;
+        }
+      }
+    }
+    return length;
+  }
+
+  private int getPrevLocalHome(boolean skipLeadingSpaces) {
+    assert getCaretPosition() >= 0;
+
+    for (int i = getCaretPosition(); i >= 1; --i) {
+      char c = getText().charAt(i - 1);
+      if (Character.isWhitespace(c) && !skipLeadingSpaces) {
+        return i;
+      }
+
+      if (!Character.isWhitespace(c)) {
+        skipLeadingSpaces = false;
+      }
+    }
+    return 0;
+  }
+
   public void selectAll() {
     getTextLine().selectAll();
   }
@@ -804,12 +861,13 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
 
     public boolean canExecute(EditorContext context) {
-      return !isFirstCaretPosition() && isFirstPositionAllowed();
+      return !isFirstCaretPosition() && (isFirstPositionAllowed() || getPrevLocalHome(true) != 0);
     }
 
     public void execute(EditorContext context) {
-      setCaretPosition(0, mySelect);
+      setCaretPosition(getPrevLocalHome(true), mySelect);
     }
+
   }
 
   private class LocalEnd extends EditorCellAction {
@@ -820,11 +878,11 @@ public abstract class EditorCell_Label extends EditorCell_Basic {
     }
 
     public boolean canExecute(EditorContext context) {
-      return !isLastCaretPosition() && isLastPositionAllowed();
+      return !isLastCaretPosition() && (isLastPositionAllowed() || getNextLocalEnd(true) != getText().length());
     }
 
     public void execute(EditorContext context) {
-      setCaretPosition(getText().length(), mySelect);
+      setCaretPosition(getNextLocalEnd(true), mySelect);
     }
   }
 

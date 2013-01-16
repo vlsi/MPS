@@ -5,7 +5,7 @@ package jetbrains.mps.lang.editor.behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_BehaviorDescriptor;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.structure.behavior.IConceptAspect_Behavior;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 

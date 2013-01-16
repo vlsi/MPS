@@ -17,7 +17,7 @@ import com.intellij.execution.impl.RunManagerImpl;
 import jetbrains.mps.baseLanguage.unitTest.execution.settings.JUnitRunTypes2;
 import org.jetbrains.mps.openapi.module.SModule;
 import jetbrains.mps.project.MPSProject;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.TestNodeWrapperFactory;
 import jetbrains.mps.baseLanguage.unitTest.execution.client.ITestNodeWrapper;

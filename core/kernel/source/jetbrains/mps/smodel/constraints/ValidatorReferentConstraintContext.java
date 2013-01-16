@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.smodel.constraints;
 
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class ValidatorReferentConstraintContext extends ReferentConstraintContext {
   private SNode myParameterNode;

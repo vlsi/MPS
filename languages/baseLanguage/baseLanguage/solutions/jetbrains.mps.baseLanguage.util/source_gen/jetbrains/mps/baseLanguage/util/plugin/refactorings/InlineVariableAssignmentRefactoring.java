@@ -5,7 +5,7 @@ package jetbrains.mps.baseLanguage.util.plugin.refactorings;
 import jetbrains.mps.lang.dataFlow.framework.Program;
 import java.util.Set;
 import jetbrains.mps.lang.dataFlow.framework.instructions.ReadInstruction;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.lang.dataFlow.DataFlowManager;
 import jetbrains.mps.lang.dataFlow.framework.AnalysisResult;
 import jetbrains.mps.lang.dataFlow.framework.analyzers.ReachingReadsAnalyzer;

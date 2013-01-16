@@ -17,7 +17,7 @@ package jetbrains.mps.newTypesystem.rules;
 
 import gnu.trove.THashSet;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.Triplet;

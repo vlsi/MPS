@@ -15,7 +15,7 @@
  */
 package jetbrains.mps.typesystem.inference.util;
 
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 import java.util.Set;
 

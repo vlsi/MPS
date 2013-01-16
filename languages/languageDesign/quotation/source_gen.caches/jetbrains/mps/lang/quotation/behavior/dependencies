@@ -7,8 +7,8 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
     <classNode dependClassName="jetbrains.mps.scope.EmptyScope" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.behavior.AbstractAntiquotation_BehaviorDescriptor" file="AbstractAntiquotation_BehaviorDescriptor.java">
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.IAntisuppressErrors_BehaviorDescriptor" />
@@ -23,9 +23,9 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.behavior.Antiquotation_BehaviorDescriptor" file="Antiquotation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -36,8 +36,8 @@
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.AbstractAntiquotation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.Antiquotation_Behavior" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -46,6 +46,14 @@
     <classNode dependClassName="java.util.Arrays" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.Antiquotation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.ListAntiquotation_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.NodeBuilderExpression_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitLink_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitPart_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitProperty_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.NodeBuilderList_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.NodeBuilderNode_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.NodeBuilderRef_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.NodeBuilder_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.PropertyAntiquotation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.Quotation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.ReferenceAntiquotation_BehaviorDescriptor" />
@@ -60,9 +68,9 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.behavior.ListAntiquotation_BehaviorDescriptor" file="ListAntiquotation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -73,9 +81,79 @@
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.AbstractAntiquotation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.ListAntiquotation_Behavior" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilderExpression_BehaviorDescriptor" file="NodeBuilderExpression_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitLink_BehaviorDescriptor" file="NodeBuilderInitLink_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitPart_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitPart_BehaviorDescriptor" file="NodeBuilderInitPart_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.BaseConcept_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitProperty_BehaviorDescriptor" file="NodeBuilderInitProperty_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.NodeBuilderInitPart_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilderList_BehaviorDescriptor" file="NodeBuilderList_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilderNode_Behavior" file="NodeBuilderNode_Behavior.java">
+    <classNode dependClassName="java.lang.Iterable" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
+    <classNode dependClassName="jetbrains.mps.lang.structure.behavior.AbstractConceptDeclaration_Behavior" />
+    <classNode dependClassName="jetbrains.mps.scope.EmptyScope" />
+    <classNode dependClassName="jetbrains.mps.scope.ListScope" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilderNode_BehaviorDescriptor" file="NodeBuilderNode_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ScopeProvider_Behavior" />
+    <classNode dependClassName="jetbrains.mps.lang.core.behavior.ScopeProvider_BehaviorDescriptor" />
+    <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.NodeBuilderNode_Behavior" />
+    <classNode dependClassName="jetbrains.mps.scope.Scope" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
+    <classNode extendsClassName="java.lang.Cloneable" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilderRef_BehaviorDescriptor" file="NodeBuilderRef_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
+    <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
+  </dependency>
+  <dependency className="jetbrains.mps.lang.quotation.behavior.NodeBuilder_BehaviorDescriptor" file="NodeBuilder_BehaviorDescriptor.java">
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="jetbrains.mps.baseLanguage.behavior.Expression_BehaviorDescriptor" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.behavior.PropertyAntiquotation_Behavior" file="PropertyAntiquotation_Behavior.java">
@@ -85,9 +163,9 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.behavior.PropertyAntiquotation_BehaviorDescriptor" file="PropertyAntiquotation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -98,13 +176,13 @@
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.AbstractAntiquotation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.PropertyAntiquotation_Behavior" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.behavior.Quotation_Behavior" file="Quotation_Behavior.java">
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.behavior.Quotation_BehaviorDescriptor" file="Quotation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -114,7 +192,7 @@
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ISuppressErrors_Behavior" />
     <classNode dependClassName="jetbrains.mps.lang.core.behavior.ISuppressErrors_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.Quotation_Behavior" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>
@@ -125,9 +203,9 @@
     <classNode dependClassName="java.util.List" />
     <classNode dependClassName="jetbrains.mps.internal.collections.runtime.ListSequence" />
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
   </dependency>
   <dependency className="jetbrains.mps.lang.quotation.behavior.ReferenceAntiquotation_BehaviorDescriptor" file="ReferenceAntiquotation_BehaviorDescriptor.java">
     <classNode dependClassName="java.lang.Override" />
@@ -138,8 +216,8 @@
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.AbstractAntiquotation_BehaviorDescriptor" />
     <classNode dependClassName="jetbrains.mps.lang.quotation.behavior.ReferenceAntiquotation_Behavior" />
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="org.jetbrains.mps.openapi.language.SConcept" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="java.lang.Cloneable" />
     <classNode extendsClassName="jetbrains.mps.smodel.runtime.impl.CompiledBehaviorDescriptor" />
   </dependency>

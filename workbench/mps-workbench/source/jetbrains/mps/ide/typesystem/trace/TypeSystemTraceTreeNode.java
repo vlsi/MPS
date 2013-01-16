@@ -11,7 +11,7 @@ import jetbrains.mps.newTypesystem.state.State;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.ide.icons.IdeIcons;
 import java.util.List;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.HashMap;
 import jetbrains.mps.newTypesystem.operation.PresentationKind;
 

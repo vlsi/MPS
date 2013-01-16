@@ -34,7 +34,7 @@ import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ClassPathFactory;
 import jetbrains.mps.reloading.CompositeClassPathItem;
 import jetbrains.mps.reloading.IClassPathItem;
-import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
 import jetbrains.mps.util.*;
@@ -58,6 +58,8 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
   private static final Logger LOG = Logger.getLogger(AbstractModule.class);
 
   public static final String MODULE_DIR = "module";
+  public static final String CLASSES_GEN = "classes_gen";
+  public static final String CLASSES = "classes";
 
   protected final IFile myDescriptorFile;
   private ModuleReference myModuleReference;
@@ -392,7 +394,7 @@ public abstract class AbstractModule implements IModule, FileSystemListener {
       String path = mrd.getMemento().get("path");
       String canonicalPath = FileUtil.getCanonicalPath(path).toLowerCase();
 
-      String suffix = descriptor.getCompileInMPS() ? "classes_gen" : "classes";
+      String suffix = descriptor.getCompileInMPS() ? CLASSES_GEN : CLASSES;
       if (canonicalPath.endsWith(suffix)) {
         IFile parent = dd == null ? getDescriptorFile().getParent() : ModulesMiner.getRealDescriptorFile(getDescriptorFile().getPath(), dd);
         if (dd != null && parent != null) {

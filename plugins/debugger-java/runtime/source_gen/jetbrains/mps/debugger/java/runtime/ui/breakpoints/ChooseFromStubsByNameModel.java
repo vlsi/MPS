@@ -16,7 +16,7 @@ import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.smodel.SModelStereotype;
 import jetbrains.mps.workbench.goTo.navigation.GotoNavigationUtil;
 import java.util.ArrayList;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.generator.JavaModelUtil_new;
 import jetbrains.mps.smodel.SModelReference;

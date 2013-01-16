@@ -10,7 +10,7 @@ import jetbrains.mps.findUsages.UsagesList;
 import java.util.Set;
 import java.util.HashSet;
 import jetbrains.mps.smodel.SModelDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import java.util.ArrayList;
 import jetbrains.mps.smodel.IOperationContext;
@@ -18,7 +18,7 @@ import jetbrains.mps.smodel.IScope;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.refactoring.StructureModificationData;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import java.util.Collection;
 import java.util.Iterator;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -362,7 +362,7 @@ public class RefactoringContext {
               node.delete();
             } else {
               String newConceptFQName = newConceptFeature.getConceptFQName();
-              node.setConceptFqName(newConceptFQName);
+              ((jetbrains.mps.smodel.SNode) node).setConceptFqName(newConceptFQName);
             }
           }
         }
@@ -401,7 +401,7 @@ public class RefactoringContext {
               linkAttribute.delete();
             } else {
               String linkAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(linkAttribute.getRoleInParent());
-              linkAttribute.setRoleInParent(AttributesRolesUtil.childRoleFromLinkAttributeRole(linkAttributeRole, newRole));
+              ((jetbrains.mps.smodel.SNode) linkAttribute).setRoleInParent(AttributesRolesUtil.childRoleFromLinkAttributeRole(linkAttributeRole, newRole));
             }
           }
         }
@@ -417,7 +417,7 @@ public class RefactoringContext {
               if (delete) {
                 child.delete();
               } else {
-                child.setRoleInParent(newRole);
+                ((jetbrains.mps.smodel.SNode) child).setRoleInParent(newRole);
               }
             }
           }
@@ -438,7 +438,7 @@ public class RefactoringContext {
               propertyAttribute.delete();
             } else {
               String propertyAttributeRole = AttributesRolesUtil.getFeatureAttributeRoleFromChildRole(propertyAttribute.getRoleInParent());
-              propertyAttribute.setRoleInParent(AttributesRolesUtil.childRoleFromPropertyAttributeRole(propertyAttributeRole, newName));
+              ((jetbrains.mps.smodel.SNode) propertyAttribute).setRoleInParent(AttributesRolesUtil.childRoleFromPropertyAttributeRole(propertyAttributeRole, newName));
             }
           }
         }

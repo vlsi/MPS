@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.behavior;
 
 import jetbrains.mps.lang.core.behavior.IDontSubstituteByDefault_BehaviorDescriptor;
 import org.jetbrains.mps.openapi.language.SConcept;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public abstract class ConceptFunctionParameter_BehaviorDescriptor extends Expression_BehaviorDescriptor implements IParameter_BehaviorDescriptor, IDontSubstituteByDefault_BehaviorDescriptor {
   public ConceptFunctionParameter_BehaviorDescriptor() {

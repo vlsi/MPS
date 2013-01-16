@@ -5,7 +5,7 @@ package jetbrains.mps.execution.lib.ui;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import org.jetbrains.annotations.NonNls;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.smodel.ModelAccess;

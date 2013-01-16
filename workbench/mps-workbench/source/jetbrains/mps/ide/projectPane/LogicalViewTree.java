@@ -16,7 +16,7 @@
 package jetbrains.mps.ide.projectPane;
 
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 
 public interface LogicalViewTree {

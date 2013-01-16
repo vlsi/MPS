@@ -8,7 +8,7 @@ import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import java.util.ArrayList;
 import java.util.Map;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
 import org.jetbrains.annotations.NotNull;
@@ -35,9 +35,11 @@ import org.eclipse.jdt.internal.compiler.ast.TypeDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.WhileStatement;
 import org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
-import org.eclipse.jdt.internal.compiler.ast.ASTNode;
+import org.eclipse.jdt.internal.compiler.ast.FieldDeclaration;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.eclipse.jdt.internal.compiler.ast.AllocationExpression;
+import org.eclipse.jdt.internal.compiler.ast.ASTNode;
 import org.eclipse.jdt.internal.compiler.ast.ArrayAllocationExpression;
 import org.eclipse.jdt.internal.compiler.ast.ArrayInitializer;
 import org.eclipse.jdt.internal.compiler.ast.ArrayReference;
@@ -54,23 +56,10 @@ import org.eclipse.jdt.internal.compiler.ast.QualifiedNameReference;
 import org.eclipse.jdt.internal.compiler.ast.SingleNameReference;
 import org.eclipse.jdt.internal.compiler.ast.ThisReference;
 import org.eclipse.jdt.internal.compiler.ast.UnaryExpression;
-import org.eclipse.jdt.internal.compiler.ast.NullLiteral;
-import org.eclipse.jdt.internal.compiler.impl.Constant;
-import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import org.eclipse.jdt.internal.compiler.ast.CaseStatement;
 import org.eclipse.jdt.internal.compiler.classfmt.ClassFileConstants;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.eclipse.jdt.internal.compiler.impl.CharConstant;
-import org.eclipse.jdt.internal.compiler.impl.DoubleConstant;
-import org.eclipse.jdt.internal.compiler.impl.FloatConstant;
-import org.eclipse.jdt.internal.compiler.impl.IntConstant;
-import org.eclipse.jdt.internal.compiler.impl.LongConstant;
-import org.eclipse.jdt.internal.compiler.impl.ShortConstant;
-import org.eclipse.jdt.internal.compiler.impl.StringConstant;
-import org.eclipse.jdt.internal.compiler.impl.BooleanConstant;
-import org.eclipse.jdt.internal.compiler.impl.ByteConstant;
 import org.eclipse.jdt.internal.compiler.ast.AND_AND_Expression;
 import org.eclipse.jdt.internal.compiler.ast.OR_OR_Expression;
 import org.eclipse.jdt.internal.compiler.ast.CompoundAssignment;
@@ -79,6 +68,7 @@ import org.eclipse.jdt.internal.compiler.ast.OperatorIds;
 import org.eclipse.jdt.internal.compiler.ast.PostfixExpression;
 import org.eclipse.jdt.internal.compiler.ast.PrefixExpression;
 import org.eclipse.jdt.internal.compiler.ast.TypeReference;
+import org.eclipse.jdt.internal.compiler.ast.NullLiteral;
 import org.eclipse.jdt.internal.compiler.ast.SuperReference;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedThisReference;
 import jetbrains.mps.smodel.SReference;
@@ -87,9 +77,6 @@ import org.eclipse.jdt.internal.compiler.ast.NameReference;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedAllocationExpression;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.internal.collections.runtime.Sequence;
-import org.eclipse.jdt.internal.compiler.ast.TrueLiteral;
-import org.eclipse.jdt.internal.compiler.ast.FalseLiteral;
-import org.eclipse.jdt.internal.compiler.ast.StringLiteral;
 import jetbrains.mps.smodel.StaticReference;
 import org.eclipse.jdt.internal.compiler.ast.SingleTypeReference;
 import org.eclipse.jdt.internal.compiler.ast.QualifiedTypeReference;
@@ -117,11 +104,11 @@ public class FullASTConverter extends ASTConverter {
   }
 
   public SNode convertStatementWrap(Statement x) throws JavaParseException {
-    SNode s = convertStatement(x);
-    if ((s != null)) {
-      MapSequence.fromMap(myPositions).put(s, x.sourceEnd());
+    SNode stmt = convertStatement(x);
+    if ((stmt != null)) {
+      MapSequence.fromMap(myPositions).put(stmt, x.sourceEnd());
     }
-    return s;
+    return stmt;
   }
 
   public SNode convertStatement(Statement x) throws JavaParseException {
@@ -176,6 +163,27 @@ public class FullASTConverter extends ASTConverter {
     addBlock(SLinkOperations.getTarget(result, "body", true), x.declarationSourceStart, x.declarationSourceEnd);
     ListSequence.fromList(SLinkOperations.getTargets(SLinkOperations.getTarget(result, "body", true), "statement", true)).addSequence(ListSequence.fromList(convertStatements(x.statements)));
   }
+
+
+
+  protected SNode convertEnumConst(FieldDeclaration x) throws JavaParseException {
+    SNode constr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ConstructorDeclaration", null);
+    // TODO 
+    SNode enm = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantDeclaration", null);
+    SPropertyOperations.set(enm, "name", enumConstantName(x));
+    // <node> 
+    // arguments of enum constant 
+    Expression[] args = ((AllocationExpression) x.initialization).arguments;
+    if (args != null) {
+      for (Expression arg : args) {
+        ListSequence.fromList(SLinkOperations.getTargets(enm, "actualArgument", true)).addElement(convertExpression(arg));
+      }
+    }
+
+    return enm;
+  }
+
+
 
   public List<SNode> convertStatements(Statement[] ss) throws JavaParseException {
     List<SNode> result = new ArrayList<SNode>();
@@ -248,26 +256,6 @@ public class FullASTConverter extends ASTConverter {
         LOG.error("Unknown expression type: " + x.getClass().getName());
       }
       return null;
-    }
-
-  }
-
-  /*package*/ SNode convertExpression(Literal x) {
-    if (x instanceof NullLiteral) {
-      return convertExpression((NullLiteral) x);
-    } else {
-      x.computeConstant();
-      if (x.constant == null) {
-        return null;
-      }
-      if (x.constant != Constant.NotAConstant) {
-        return convertConstant(x.constant);
-      } else if (x instanceof NullLiteral) {
-        return SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.NullLiteral", null);
-      } else {
-        // import token as string constant even if it was an error in literal 
-        return _quotation_createNode_f46ocm_a1a0c0p(NameUtil.escapeString(new String(((Literal) x).source())));
-      }
     }
 
   }
@@ -401,7 +389,7 @@ public class FullASTConverter extends ASTConverter {
     SLinkOperations.setTarget(result, "localVariableDeclaration", decl, true);
 
     SPropertyOperations.set(decl, "isFinal", "" + (flagSet(x.modifiers, ClassFileConstants.AccFinal)));
-    SLinkOperations.setTarget(decl, "type", convertTypeRef(x.type), true);
+    SLinkOperations.setTarget(decl, "type", convertTypeReference(x.type), true);
     SPropertyOperations.set(decl, "name", new String(x.name));
     SLinkOperations.setTarget(decl, "initializer", convertExpressionWrap(x.initialization), true);
 
@@ -455,7 +443,7 @@ public class FullASTConverter extends ASTConverter {
       }
     })) {
       // we don't support for ( a=5, b=6; ...) {} in baseLanguage, workaround here 
-      result = _quotation_createNode_f46ocm_a0b0d0eb(init, forStatement);
+      result = _quotation_createNode_f46ocm_a0b0d0gb(init, forStatement);
     } else if (!(init.isEmpty())) {
       boolean first = true;
       for (SNode statement : init) {
@@ -601,86 +589,6 @@ public class FullASTConverter extends ASTConverter {
     return null;
   }
 
-  private SNode convertConstant(Constant x) {
-    if (x instanceof CharConstant) {
-      return convertConstant((CharConstant) x);
-    } else if (x instanceof DoubleConstant) {
-      return convertConstant((DoubleConstant) x);
-    } else if (x instanceof FloatConstant) {
-      return convertConstant((FloatConstant) x);
-    } else if (x instanceof IntConstant) {
-      return convertConstant((IntConstant) x);
-    } else if (x instanceof LongConstant) {
-      return convertConstant((LongConstant) x);
-    } else if (x instanceof ShortConstant) {
-      return convertConstant((ShortConstant) x);
-    } else if (x instanceof StringConstant) {
-      return convertConstant((StringConstant) x);
-    } else {
-      if (x == null) {
-        return null;
-      }
-      LOG.error("Unsupported type of constant: " + x.getClass().getName());
-      return null;
-    }
-
-  }
-
-  /*package*/ SNode convertConstant(BooleanConstant x) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.BooleanConstant", null);
-    SPropertyOperations.set(result, "value", "" + (x.booleanValue()));
-    return result;
-  }
-
-  /*package*/ SNode convertConstant(ByteConstant x) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
-    SPropertyOperations.set(result, "value", "" + (x.byteValue()));
-    return result;
-  }
-
-  /*package*/ SNode convertConstant(CharConstant x) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.CharConstant", null);
-    String value = NameUtil.escapeChar(x.charValue());
-    SPropertyOperations.set(result, "charConstant", value);
-    return result;
-  }
-
-  /*package*/ SNode convertConstant(DoubleConstant x) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FloatingPointConstant", null);
-    SPropertyOperations.set(result, "value", x.doubleValue() + "");
-    return result;
-  }
-
-  /*package*/ SNode convertConstant(FloatConstant x) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.FloatingPointFloatConstant", null);
-    SPropertyOperations.set(result, "value", x.floatValue() + "f");
-    return result;
-  }
-
-  /*package*/ SNode convertConstant(IntConstant x) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
-    SPropertyOperations.set(result, "value", "" + (x.intValue()));
-    return result;
-  }
-
-  /*package*/ SNode convertConstant(LongConstant x) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.LongLiteral", null);
-    SPropertyOperations.set(result, "value", x.longValue() + "L");
-    return result;
-  }
-
-  /*package*/ SNode convertConstant(ShortConstant x) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.IntegerConstant", null);
-    SPropertyOperations.set(result, "value", "" + (x.shortValue()));
-    return result;
-  }
-
-  /*package*/ SNode convertConstant(StringConstant x) {
-    SNode result = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringLiteral", null);
-    SPropertyOperations.set(result, "value", NameUtil.escapeString(x.stringValue()));
-    return result;
-  }
-
   /*package*/ SNode convertBinaryOperation(Expression left, Expression right, SNode binaryOperation) throws JavaParseException {
     SLinkOperations.setTarget(binaryOperation, "leftExpression", convertExpressionWrap(left), true);
     SLinkOperations.setTarget(binaryOperation, "rightExpression", convertExpressionWrap(right), true);
@@ -698,10 +606,7 @@ public class FullASTConverter extends ASTConverter {
   }
 
   /*package*/ SNode convertExpression(ArrayAllocationExpression x) throws JavaParseException {
-    SNode compType = convertTypeRef(x.type);
-    // FIXME HERE ARRAY TYPE IS EXPECTED, NOT COMPONENT TYPE 
-    // <node> 
-    // <node> 
+    SNode compType = convertTypeReference(x.type);
     if (x.initializer != null) {
       List<SNode> initializers = new ArrayList<SNode>();
       if (x.initializer.expressions != null) {
@@ -921,7 +826,7 @@ public class FullASTConverter extends ASTConverter {
 
   /*package*/ SNode convertExpression(InstanceOfExpression x) throws JavaParseException {
     SNode expr = convertExpressionWrap(x.expression);
-    SNode testType = convertTypeRef(x.type);
+    SNode testType = convertTypeReference(x.type);
     SNode instanceOfExpression = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.InstanceOfExpression", null);
     SLinkOperations.setTarget(instanceOfExpression, "leftExpression", expr, true);
     SLinkOperations.setTarget(instanceOfExpression, "classType", testType, true);
@@ -975,7 +880,7 @@ public class FullASTConverter extends ASTConverter {
       return null;
     }
 
-    SLinkOperations.setTarget(result, "type", convertTypeRef(x.type), true);
+    SLinkOperations.setTarget(result, "type", convertTypeReference(x.type), true);
     return result;
   }
 
@@ -1001,7 +906,7 @@ public class FullASTConverter extends ASTConverter {
 
   /*package*/ SNode convertExpression(QualifiedThisReference x) throws JavaParseException {
     SNode thisRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ThisExpression", null);
-    SNode type = convertTypeRef(x.qualification);
+    SNode type = convertTypeReference(x.qualification);
     if (!(SNodeOperations.isInstanceOf(type, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
       throw new JavaParseException("Type should be class in qualified this reference");
     }
@@ -1189,7 +1094,7 @@ public class FullASTConverter extends ASTConverter {
       SLinkOperations.setTarget(result, "creator", anonCreate, true);
       SNode cls = SNodeOperations.cast(convertTypeDecl(x.anonymousType), "jetbrains.mps.baseLanguage.structure.AnonymousClass");
       SLinkOperations.setTarget(anonCreate, "cls", cls, true);
-      SLinkOperations.setTarget(cls, "classifier", SLinkOperations.getTarget(SNodeOperations.cast(convertTypeRef(x.type), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), false);
+      SLinkOperations.setTarget(cls, "classifier", SLinkOperations.getTarget(SNodeOperations.cast(convertTypeReference(x.type), "jetbrains.mps.baseLanguage.structure.ClassifierType"), "classifier", false), false);
       addCallArgs(cls, x.arguments);
       addTypeArgs(typeArguments(x.type), SLinkOperations.getTargets(cls, "typeParameter", true));
     } else {
@@ -1204,7 +1109,7 @@ public class FullASTConverter extends ASTConverter {
 
   /*package*/ SNode convertExpression(ClassLiteralAccess x) throws JavaParseException {
 
-    SNode argType = convertTypeRef(x.type);
+    SNode argType = convertTypeReference(x.type);
     if (!(SNodeOperations.isInstanceOf(argType, "jetbrains.mps.baseLanguage.structure.ClassifierType"))) {
       throw new JavaParseException("Type in class literal access is expected to be classifier");
     }
@@ -1239,56 +1144,6 @@ public class FullASTConverter extends ASTConverter {
   }
 
 
-
-  /**
-   * Will go away in favor of all convertExpression(SomeParticularExp) methods
-   */
-  public SNode convertExpressionAdHoc(Expression exp) {
-    if (exp instanceof TrueLiteral) {
-      return _quotation_createNode_f46ocm_a0a0a97();
-    } else if (exp instanceof FalseLiteral) {
-      return _quotation_createNode_f46ocm_a0a0a0bd();
-    } else if (exp instanceof StringLiteral) {
-      return _quotation_createNode_f46ocm_a0a1a0bd(new String(((StringLiteral) exp).source()));
-    } else if (exp instanceof ArrayInitializer) {
-      SNode arr = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.ArrayLiteral", null);
-      for (Expression e : ((ArrayInitializer) exp).expressions) {
-        ListSequence.fromList(SLinkOperations.getTargets(arr, "item", true)).addElement(convertExpressionAdHoc(e));
-      }
-      return arr;
-    } else if (exp instanceof QualifiedNameReference) {
-
-      // FIXME HACK it can be static field ref as well, and maybe something else 
-      SNode enumRef = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.EnumConstantReference", null);
-      char[][] tokens = ((QualifiedNameReference) exp).tokens;
-
-      String enumName = new String(tokens[0]);
-      for (int i = 1; i < tokens.length - 1; i++) {
-        enumName = enumName + "." + new String(tokens[i]);
-      }
-
-      String enumConstName = new String(tokens[tokens.length - 1]);
-
-      SReference enumClRef;
-      if (enumName.contains(".")) {
-        enumClRef = myTypeResolver.resolveQualifiedClassName(enumName, enumRef, "enumClass");
-      } else {
-        enumClRef = myTypeResolver.resolveShortClassName(enumName, enumRef, "enumClass");
-      }
-      SReference enumConstRef = new DynamicReference("enumConstantDeclaration", enumRef, null, enumConstName);
-
-      enumRef.setReference(enumClRef.getRole(), enumClRef);
-      enumRef.setReference(enumConstRef.getRole(), enumConstRef);
-      return enumRef;
-
-    } else if (exp instanceof SingleNameReference) {
-      // FIXME 
-      return _quotation_createNode_f46ocm_a1a4a0bd();
-    } else {
-      throw new RuntimeException("This kind of expression is not supported yet: " + exp.getClass().getName());
-    }
-
-  }
 
   private SReference adjustClassReference(SNode clsType, SNode source, String role) {
     SReference sref = clsType.getReference("classifier");
@@ -1457,14 +1312,7 @@ public class FullASTConverter extends ASTConverter {
     }
   }
 
-  private static SNode _quotation_createNode_f46ocm_a1a0c0p(Object parameter_1) {
-    SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
-    return quotedNode_2;
-  }
-
-  private static SNode _quotation_createNode_f46ocm_a0b0d0eb(Object parameter_1, Object parameter_2) {
+  private static SNode _quotation_createNode_f46ocm_a0b0d0gb(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
     SNode quotedNode_5 = null;
@@ -1490,32 +1338,5 @@ public class FullASTConverter extends ASTConverter {
     }
     quotedNode_3.addChild("statements", quotedNode_4);
     return quotedNode_3;
-  }
-
-  private static SNode _quotation_createNode_f46ocm_a0a0a0bd() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_f46ocm_a0a1a0bd(Object parameter_1) {
-    SNode quotedNode_2 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setProperty(quotedNode_2, "value", (String) parameter_1);
-    return quotedNode_2;
-  }
-
-  private static SNode _quotation_createNode_f46ocm_a0a0a97() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.BooleanConstant", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setProperty(quotedNode_1, "value", "true");
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_f46ocm_a1a4a0bd() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.StringLiteral", null, null, GlobalScope.getInstance(), false);
-    SNodeAccessUtil.setProperty(quotedNode_1, "value", "NOT SUPPORTED YET");
-    return quotedNode_1;
   }
 }

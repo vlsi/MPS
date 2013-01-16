@@ -4,7 +4,7 @@ package jetbrains.mps.lang.structure.findUsages;
 
 import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.logging.Logger;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.IScope;
 import java.util.List;
 import jetbrains.mps.progress.ProgressMonitor;
@@ -16,6 +16,7 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.ide.findusages.view.FindUtils;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SReference;
 
 public class LinkInstances_Finder extends GeneratedFinder {
@@ -56,7 +57,7 @@ public class LinkInstances_Finder extends GeneratedFinder {
       for (SNode instance : ListSequence.fromList(FindUtils.executeFinder("jetbrains.mps.lang.structure.findUsages.ConceptInstances_Finder", conceptDeclaration, scope, monitor.subTask(1)))) {
         for (String role : SetSequence.fromSet(roles)) {
           if (isChild) {
-            for (SNode child : ListSequence.fromList(instance.getChildren(role))) {
+            for (SNode child : Sequence.fromIterable(instance.getChildren(role))) {
               ListSequence.fromList(_results).addElement(child);
             }
           } else {

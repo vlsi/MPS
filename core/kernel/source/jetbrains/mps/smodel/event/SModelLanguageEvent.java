@@ -17,7 +17,7 @@ package jetbrains.mps.smodel.event;
 
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 
 public class SModelLanguageEvent extends SModelEvent {
   private ModuleReference myLanguage;

@@ -18,9 +18,9 @@ import java.io.OutputStream;
 import jetbrains.mps.logging.Logger;
 
 public class SolutionDescriptorPersistence {
-  private static final String SOURCE_PATH = "sourcePath";
-  private static final String SOURCE_PATH_SOURCE = "source";
-  private static final String COMPILE_IN_MPS = "compileInMPS";
+  public static final String SOURCE_PATH = "sourcePath";
+  public static final String SOURCE_PATH_SOURCE = "source";
+  public static final String COMPILE_IN_MPS = "compileInMPS";
 
   private SolutionDescriptorPersistence() {
   }

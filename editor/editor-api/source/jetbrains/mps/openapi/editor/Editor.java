@@ -16,7 +16,7 @@
 package jetbrains.mps.openapi.editor;
 
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 

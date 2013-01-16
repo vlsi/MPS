@@ -5,7 +5,7 @@ package jetbrains.mps.resolve;
 import jetbrains.mps.components.CoreComponent;
 import java.util.Comparator;
 import jetbrains.mps.smodel.SReference;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.SNodeOperations;
 import java.util.List;
 import jetbrains.mps.internal.collections.runtime.ListSequence;

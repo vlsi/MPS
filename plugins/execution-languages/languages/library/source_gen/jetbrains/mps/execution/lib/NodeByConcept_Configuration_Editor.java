@@ -8,7 +8,7 @@ import org.jetbrains.annotations.NotNull;
 import com.intellij.openapi.options.ConfigurationException;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.util.Factory;
 
 public class NodeByConcept_Configuration_Editor extends SettingsEditorEx<NodeByConcept_Configuration> {

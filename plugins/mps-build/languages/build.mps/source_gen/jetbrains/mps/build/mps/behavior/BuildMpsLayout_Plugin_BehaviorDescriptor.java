@@ -5,7 +5,7 @@ package jetbrains.mps.build.mps.behavior;
 import jetbrains.mps.build.behavior.BuildLayout_AbstractContainer_BehaviorDescriptor;
 import jetbrains.mps.lang.core.behavior.INamedConcept_BehaviorDescriptor;
 import jetbrains.mps.build.behavior.BuildSource_SingleFolder_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.build.util.Context;
 import jetbrains.mps.lang.core.behavior.INamedConcept_Behavior;
 import jetbrains.mps.build.util.DependenciesHelper;

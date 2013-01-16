@@ -23,7 +23,7 @@ import jetbrains.mps.ide.projectPane.Icons;
 import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.smodel.IOperationContext;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SReference;
 
 public class ReferenceTreeNode extends TextTreeNode {

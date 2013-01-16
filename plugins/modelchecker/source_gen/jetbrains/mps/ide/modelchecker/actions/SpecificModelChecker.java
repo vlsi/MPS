@@ -8,7 +8,7 @@ import jetbrains.mps.checkers.INodeChecker;
 import jetbrains.mps.checkers.CheckersComponent;
 import jetbrains.mps.typesystem.inference.util.SubtypingCache;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeContextManager;
 import jetbrains.mps.typesystem.inference.DefaultTypecheckingContextOwner;
 import jetbrains.mps.ide.findusages.model.SearchResult;

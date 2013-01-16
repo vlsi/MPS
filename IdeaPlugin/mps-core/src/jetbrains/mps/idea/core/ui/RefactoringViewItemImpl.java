@@ -30,7 +30,7 @@ import jetbrains.mps.idea.core.usages.NodeUsage;
 import jetbrains.mps.idea.core.usages.NodeUsageTarget;
 import jetbrains.mps.refactoring.framework.ILoggableRefactoring;
 import jetbrains.mps.refactoring.framework.RefactoringContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 

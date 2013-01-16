@@ -6,7 +6,7 @@ import jetbrains.mps.smodel.SNodePointer;
 import java.awt.Color;
 import org.jetbrains.annotations.NotNull;
 import java.awt.Rectangle;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.nodeEditor.AdditionalPainter;

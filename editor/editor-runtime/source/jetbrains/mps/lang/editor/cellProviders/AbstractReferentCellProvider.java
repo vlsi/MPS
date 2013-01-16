@@ -33,7 +33,8 @@ import jetbrains.mps.nodeEditor.cells.EditorCell_Constant;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Error;
 import jetbrains.mps.nodeEditor.cells.EditorCell_Label;
 import jetbrains.mps.openapi.editor.EditorContext;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.util.IterableUtil;
+import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
 
 import java.util.List;
 
@@ -59,7 +60,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
 
   public void
   setRole(Object role) {
-    myLinkDeclaration = getSNode().getLinkDeclaration(role.toString());
+    myLinkDeclaration = ((jetbrains.mps.smodel.SNode) getSNode()).getLinkDeclaration(role.toString());
     if (myLinkDeclaration == null) {
       myErrorText = "?" + role.toString() + "?";
       LOG.error("can't find a link declaration '" + role.toString() + "' in " + getSNode(), getSNode());
@@ -109,7 +110,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
     }
     SNode referentNode = null;
     if (myIsAggregation) {
-      List<SNode> ch = node.getChildren(myGenuineRole);
+      List<? extends SNode> ch = IterableUtil.asList(node.getChildren(myGenuineRole));
       referentNode = ch.iterator().hasNext() ? ch.iterator().next() : null;
     } else {
       SReference reference = node.getReference(myGenuineRole);
@@ -166,7 +167,7 @@ public abstract class AbstractReferentCellProvider extends CellProviderWithRole 
   public CellContext getCellContext() {
     if (myIsAggregation) {
       SNode parentNode = getSNode();
-      List<SNode> ch = parentNode.getChildren(myGenuineRole);
+      List<? extends SNode> ch = IterableUtil.asList(parentNode.getChildren(myGenuineRole));
       SNode currentChild = ch.iterator().hasNext() ? ch.iterator().next() : null;
       return new AggregationCellContext(parentNode, currentChild, myLinkDeclaration);
     }

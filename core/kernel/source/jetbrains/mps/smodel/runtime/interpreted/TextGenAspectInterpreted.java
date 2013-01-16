@@ -19,7 +19,7 @@ import jetbrains.mps.kernel.model.SModelUtil;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.Language;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodeUtil;
 import jetbrains.mps.smodel.runtime.TextGenAspectDescriptor;
 import jetbrains.mps.smodel.runtime.TextGenDescriptor;

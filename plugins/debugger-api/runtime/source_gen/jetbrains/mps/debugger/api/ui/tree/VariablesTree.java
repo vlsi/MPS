@@ -25,7 +25,7 @@ import java.util.Map;
 import jetbrains.mps.debug.api.programState.WatchablesCategory;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
 import java.util.HashMap;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import java.util.LinkedHashMap;
 import jetbrains.mps.internal.collections.runtime.ListSequence;

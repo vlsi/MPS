@@ -10,7 +10,7 @@ import com.intellij.openapi.actionSystem.AnActionEvent;
 import java.util.Map;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 
 public abstract class GoToNeighbourRootActions {
   private static final Icon PREVIOUS_ROOT_ICON = IconLoader.getIcon("/actions/prevfile.png");

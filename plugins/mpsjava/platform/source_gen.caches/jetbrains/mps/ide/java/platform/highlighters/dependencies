@@ -8,8 +8,8 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellFinder" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellFinders" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.highlighters.IconContainer" file="IconContainer.java">
@@ -75,7 +75,6 @@
     <classNode dependClassName="jetbrains.mps.scope.Scope" />
     <classNode dependClassName="jetbrains.mps.smodel.ModelAccess" />
     <classNode dependClassName="jetbrains.mps.smodel.SModel" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SNodePointer" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
@@ -96,6 +95,7 @@
     <classNode dependClassName="jetbrains.mps.util.SNodeOperations" />
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode dependClassName="org.jetbrains.annotations.Nullable" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.highlighters.OverrideMethodsChecker" file="OverrideMethodsChecker.java">
@@ -131,7 +131,6 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessage" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
     <classNode dependClassName="jetbrains.mps.project.GlobalScope" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.SReference" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelChildEvent" />
@@ -140,6 +139,7 @@
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelPropertyEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelReferenceEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelRootEvent" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.highlighters.OverridenMethodEditorMessage" file="OverridenMethodEditorMessage.java">
@@ -150,8 +150,8 @@
     <classNode dependClassName="jetbrains.mps.ide.java.platform.highlighters.IconResourceBundle_OverrideImplements" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessageIconRenderer" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.java.platform.highlighters.AbstractOverrideEditorMessage" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.highlighters.OverridingMethodEditorMessage" file="OverridingMethodEditorMessage.java">
@@ -162,8 +162,8 @@
     <classNode dependClassName="jetbrains.mps.ide.java.platform.highlighters.IconResourceBundle_OverrideImplements" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessageIconRenderer" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.ide.java.platform.highlighters.AbstractOverrideEditorMessage" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.highlighters.SubclassedClassifierEditorMessage" file="SubclassedClassifierEditorMessage.java">
@@ -179,9 +179,9 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.CellFinders" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell_Label" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.util.Condition" />
     <classNode dependClassName="jetbrains.mps.workbench.action.BaseAction" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.editor.runtime.AbstractLeftEditorHighlighterMessage" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.highlighters.ToDoHighlighter" file="ToDoHighlighter.java">
@@ -197,10 +197,10 @@
     <classNode dependClassName="jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessage" />
     <classNode dependClassName="jetbrains.mps.openapi.editor.EditorContext" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
     <classNode dependClassName="jetbrains.mps.smodel.behaviour.BehaviorReflection" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelEvent" />
     <classNode dependClassName="jetbrains.mps.smodel.event.SModelPropertyEvent" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter" />
   </dependency>
   <dependency className="jetbrains.mps.ide.java.platform.highlighters.ToDoMessage" file="ToDoMessage.java">
@@ -210,7 +210,7 @@
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorComponent" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.EditorMessageOwner" />
     <classNode dependClassName="jetbrains.mps.nodeEditor.cells.EditorCell" />
-    <classNode dependClassName="jetbrains.mps.smodel.SNode" />
+    <classNode dependClassName="org.jetbrains.mps.openapi.model.SNode" />
     <classNode extendsClassName="jetbrains.mps.nodeEditor.DefaultEditorMessage" />
   </dependency>
 </dependenciesRoot>

@@ -8,9 +8,9 @@ import java.util.ArrayList;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.nodeEditor.EditorComponent;
 import jetbrains.mps.smodel.ModelAccess;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SModel;
-import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.nodeEditor.cells.EditorCell;
 import java.awt.Point;
 import java.awt.Rectangle;
@@ -160,7 +160,7 @@ public class DiffEditorsGroup {
     return null;
   }
 
-  private static SNode check_s6qw4f_a0a0a0a1a0a0b6(SModel checkedDotOperand, SNodeId selectionId) {
+  private static jetbrains.mps.smodel.SNode check_s6qw4f_a0a0a0a1a0a0b6(SModel checkedDotOperand, SNodeId selectionId) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getNodeById(selectionId);
     }

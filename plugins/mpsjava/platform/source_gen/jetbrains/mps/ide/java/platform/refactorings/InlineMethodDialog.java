@@ -5,7 +5,7 @@ package jetbrains.mps.ide.java.platform.refactorings;
 import jetbrains.mps.ide.platform.refactoring.RefactoringDialog;
 import jetbrains.mps.baseLanguage.util.plugin.refactorings.InlineMethodModel;
 import jetbrains.mps.smodel.IOperationContext;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import com.intellij.openapi.project.Project;
 import javax.swing.JPanel;
 import javax.swing.BoxLayout;

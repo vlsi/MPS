@@ -7,9 +7,9 @@
   <import index="v54s" modelUID="r:2a0fe383-d602-4f5b-813c-e41afdbbb97e(jetbrains.mps.lang.extension.structure)" version="-1" />
   <import index="bltl" modelUID="f:java_stub#6ed54515-acc8-4d1e-a16c-9fd6cfe951ea#jetbrains.mps.smodel.structure(MPS.Core/jetbrains.mps.smodel.structure@java_stub)" version="-1" />
   <import index="tpee" modelUID="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" version="4" />
+  <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" />
   <import index="tpck" modelUID="r:00000000-0000-4000-0000-011c89590288(jetbrains.mps.lang.core.structure)" version="0" implicit="yes" />
   <import index="tp25" modelUID="r:00000000-0000-4000-0000-011c89590301(jetbrains.mps.lang.smodel.structure)" version="16" implicit="yes" />
-  <import index="tpek" modelUID="r:00000000-0000-4000-0000-011c895902c0(jetbrains.mps.baseLanguage.behavior)" version="-1" implicit="yes" />
   <import index="tpd4" modelUID="r:00000000-0000-4000-0000-011c895902b4(jetbrains.mps.lang.typesystem.structure)" version="3" implicit="yes" />
   <import index="tp3r" modelUID="r:00000000-0000-4000-0000-011c8959034b(jetbrains.mps.lang.quotation.structure)" version="0" implicit="yes" />
   <import index="tp2q" modelUID="r:00000000-0000-4000-0000-011c8959032e(jetbrains.mps.baseLanguage.collections.structure)" version="7" implicit="yes" />
@@ -24,8 +24,8 @@
       <property name="name" nameId="tpck.1169194664001" value="typeof_ExtensionFieldReference" />
     </node>
     <node type="tpd4.SubtypingRule" typeId="tpd4.1175147670730" id="3175313036448550191">
-      <property name="name" nameId="tpck.1169194664001" value="ExtensionPointType_supertypes" />
       <property name="isWeak" nameId="tpd4.1175607673137" value="true" />
+      <property name="name" nameId="tpck.1169194664001" value="ExtensionPointType_supertypes" />
     </node>
     <node type="tpd4.InferenceRule" typeId="tpd4.1174643105530" id="3175313036448577254">
       <property name="name" nameId="tpck.1169194664001" value="typeof_GetExtensionObjectsOperation" />

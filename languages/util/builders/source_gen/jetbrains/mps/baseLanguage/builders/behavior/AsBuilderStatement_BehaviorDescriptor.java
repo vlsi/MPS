@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.builders.behavior;
 
 import jetbrains.mps.baseLanguage.behavior.Statement_BehaviorDescriptor;
 import jetbrains.mps.baseLanguage.behavior.IContainsStatementList_BehaviorDescriptor;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.baseLanguage.behavior.IContainsStatementList_Behavior;
 
 public class AsBuilderStatement_BehaviorDescriptor extends Statement_BehaviorDescriptor implements IContainsStatementList_BehaviorDescriptor, BuilderContainer_BehaviorDescriptor {

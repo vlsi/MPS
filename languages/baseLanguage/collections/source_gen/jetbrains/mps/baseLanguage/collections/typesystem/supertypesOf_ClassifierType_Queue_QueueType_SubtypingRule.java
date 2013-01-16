@@ -5,12 +5,13 @@ package jetbrains.mps.baseLanguage.collections.typesystem;
 import jetbrains.mps.lang.typesystem.runtime.SubtypingRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.ISubtypingRule_Runtime;
 import jetbrains.mps.lang.pattern.GeneratedMatchingPattern;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.pattern.IMatchingPattern;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.lang.pattern.runtime.PatternUtil;
+import jetbrains.mps.util.IterableUtil;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
@@ -67,7 +68,7 @@ public class supertypesOf_ClassifierType_Queue_QueueType_SubtypingRule extends S
             return false;
           }
           {
-            SNode childVar_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a0 = nodeToMatch_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a.getChildren(childRole_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_).get(0);
+            SNode childVar_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a0 = IterableUtil.get(nodeToMatch_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a.getChildren(childRole_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_), 0);
             this.patternVar_ELEMENT_TYPE = childVar_supertypesOf_ClassifierType_Queue_QueueType_jsixhd_a0a0;
           }
         }
