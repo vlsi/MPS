@@ -31,6 +31,7 @@ import java.util.ListIterator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SModuleScope;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 
 public class ClassifierResolveUtils {
   private ClassifierResolveUtils() {
@@ -400,19 +401,15 @@ public class ClassifierResolveUtils {
   }
 
   private static SNode construct(SNode base, StringTokenizer tokenizer) {
-    // <node> 
     SNode curr = base;
     while ((curr != null) && tokenizer.hasMoreTokens()) {
       final String tok = tokenizer.nextToken();
-      // <node> 
       curr = Sequence.fromIterable(getImmediateNestedClassifiers(curr)).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return tok.equals(SPropertyOperations.getString(it, "name"));
         }
       });
     }
-    // return last classifier that was successfully resolved (the one with the longest name) 
-    // <node> 
     return curr;
   }
 
@@ -428,37 +425,46 @@ public class ClassifierResolveUtils {
     }
 
     // try the longest name first, the shortest last 
-    for (int p = k; p >= 0; p--) {
+    // we start with x.y when refText is x.y.z 
+    for (int p = k - 1; p >= 0; p--) {
 
       String pkgName = refText.substring(0, dotPositions[p]);
       // FIXME java.lang isn't resolved this way 
       org.jetbrains.mps.openapi.model.SModel model = moduleScope.resolve(SModelReference.fromString(pkgName));
-      if (model == null) {
-        continue;
-      }
+      List<SModelDescriptor> models = null;
 
-      String refTextWithoutPackage = refText.substring(dotPositions[p] + 1);
-      StringTokenizer tokenizer = new StringTokenizer(refTextWithoutPackage, ".");
-      assert tokenizer.hasMoreTokens();
-      String className = tokenizer.nextToken();
-      SNode cls = null;
-      for (SNode r : model.getRootNodes()) {
-        if (!(SNodeOperations.isInstanceOf(r, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+      if (model == null) {
+        // FIXME it's wrong: deprecated and ignores module scope 
+        models = SModelRepository.getInstance().getModelDescriptorsByModelName(pkgName);
+        if (models.isEmpty()) {
           continue;
         }
-        if (className.equals(SPropertyOperations.getString(SNodeOperations.cast(r, "jetbrains.mps.baseLanguage.structure.Classifier"), "name"))) {
-          cls = SNodeOperations.cast(r, "jetbrains.mps.baseLanguage.structure.Classifier");
-        }
-      }
-      if ((cls == null)) {
-        continue;
-      }
-      cls = construct(cls, tokenizer);
-      if ((cls == null)) {
-        continue;
       }
 
-      return cls;
+      for (SModelDescriptor m : ListSequence.fromList(models)) {
+        String refTextWithoutPackage = refText.substring(dotPositions[p] + 1);
+        StringTokenizer tokenizer = new StringTokenizer(refTextWithoutPackage, ".");
+        assert tokenizer.hasMoreTokens();
+        String className = tokenizer.nextToken();
+        SNode cls = null;
+        for (SNode r : m.getRootNodes()) {
+          if (!(SNodeOperations.isInstanceOf(r, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+            continue;
+          }
+          if (className.equals(SPropertyOperations.getString(SNodeOperations.cast(r, "jetbrains.mps.baseLanguage.structure.Classifier"), "name"))) {
+            cls = SNodeOperations.cast(r, "jetbrains.mps.baseLanguage.structure.Classifier");
+          }
+        }
+        if ((cls == null)) {
+          continue;
+        }
+        cls = construct(cls, tokenizer);
+        if ((cls == null)) {
+          continue;
+        }
+
+        return cls;
+      }
     }
     return null;
   }
