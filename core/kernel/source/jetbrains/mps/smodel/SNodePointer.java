@@ -117,4 +117,9 @@ public class SNodePointer implements SNodeReference {
   public SNodeId getNodeId() {
     return myNodeId;
   }
+
+  public String getDebugText() {
+    if (getNode() == null) return "<unknown node> model=" + myModelReference + " node id=" + myNodeId;
+    return org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(getNode());
+  }
 }
