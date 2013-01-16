@@ -79,10 +79,11 @@ public class RebuildProjectTest extends MpsJpsBuildTestCase {
   }
 
   private String getLanguageLocations() {
+    String[] baseDirs = {System.getProperty("idea.plugins.path"), System.getProperty("user.dir")};
     StringBuilder sb = new StringBuilder();
     String sep = "";
     for(String loc: MPS_LANGUAGE_LOCATIONS) {
-      File locFile = findFileUnderUserDir(loc, getClass());
+      File locFile = findFileUnder(baseDirs, loc, getClass());
       sb.append(sep);
       sb.append(locFile.getAbsolutePath());
       sep = ";";

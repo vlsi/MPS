@@ -44,6 +44,16 @@ public class MpsJpsBuildTestCase extends JpsBuildTestCase {
     return file;
   }
 
+  protected static File findFileUnder(String [] baseDirs, String relativePath, Class<? extends TestCase> testClass) {
+    for (String baseDir : baseDirs) {
+      File file = new File(baseDir, toSystemDependentName(relativePath));
+      if (file.exists()) {
+        return file;
+      }
+    }
+    throw new IllegalArgumentException("Cannot find file '" + relativePath + "' under '" + baseDirs + "' directories");
+  }
+
   private static String getUserDir() {
     if (System.getProperty("user.dir") != null) {
       String path = System.getProperty("user.dir");
