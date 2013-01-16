@@ -60,16 +60,9 @@ public class RebuildProjectTest extends MpsJpsBuildTestCase {
     String srcgen = PathUtil.getParentPath(createFile("source_gen/empty.txt", ""));
     JpsModule main = addModule("main", models, srcgen);
 
-    MPSConfigurationBean configuration = new MPSConfigurationBean();
-    configuration.setGeneratorOutputPath(srcgen);
-    configuration.setUsedLanguages(
-      new String[] {"f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)",
-                    "f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)"});
+    MPSConfigurationBean configuration = createConfiguration(srcgen);
 
-    DefaultModelRoot dmr = new DefaultModelRoot();
-    dmr.setContentRoot(models);
-    dmr.addFile(DefaultModelRoot.SOURCE_ROOTS, models);
-
+    DefaultModelRoot dmr = createModelRoot(models);
     configuration.setModelRoots(Arrays.<ModelRoot>asList(dmr));
 
     JpsMPSExtensionService.getInstance().setExtension(main, new JpsMPSModuleExtensionImpl(configuration));
@@ -77,6 +70,40 @@ public class RebuildProjectTest extends MpsJpsBuildTestCase {
 
     rebuildAll();
   }
+
+  public void testBuild_blProject_noSave () {
+    String models = PathUtil.getParentPath(copyFromUserDirToProject("tests/blProject/models/main.mps", "models/main.mps"));
+    String srcgen = PathUtil.getParentPath(createFile("source_gen/empty.txt", ""));
+    JpsModule main = addModule("main", models, srcgen);
+
+    MPSConfigurationBean configuration = createConfiguration(srcgen);
+    configuration.setUseTransientOutputFolder(true);
+
+    DefaultModelRoot dmr = createModelRoot(models);
+    configuration.setModelRoots(Arrays.<ModelRoot>asList(dmr));
+
+    JpsMPSExtensionService.getInstance().setExtension(main, new JpsMPSModuleExtensionImpl(configuration));
+    buildParams.put(MPSMakeConstants.MPS_LANGUAGES.toString(), getLanguageLocations());
+
+    rebuildAll();
+  }
+
+  private MPSConfigurationBean createConfiguration(String srcgen) {
+    MPSConfigurationBean configuration = new MPSConfigurationBean();
+    configuration.setGeneratorOutputPath(srcgen);
+    configuration.setUsedLanguages(
+      new String[] {"f3061a53-9226-4cc5-a443-f952ceaf5816(jetbrains.mps.baseLanguage)",
+        "f61473f9-130f-42f6-b98d-6c438812c2f6(jetbrains.mps.baseLanguage.unitTest)"});
+    return configuration;
+  }
+
+  private DefaultModelRoot createModelRoot(String models) {
+    DefaultModelRoot dmr = new DefaultModelRoot();
+    dmr.setContentRoot(models);
+    dmr.addFile(DefaultModelRoot.SOURCE_ROOTS, models);
+    return dmr;
+  }
+
 
   private String getLanguageLocations() {
     String[] baseDirs = {System.getProperty("idea.plugins.path"), System.getProperty("user.dir")};
