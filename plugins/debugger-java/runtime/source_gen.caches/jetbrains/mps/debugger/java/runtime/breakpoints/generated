@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<dependencies version="2" modelHash="-awttz2ikeu7khgiglo4n2d2gdaj5oa2">
+<dependencies version="2" modelHash="8cw3hmsx9z2yqkqn1x3cxj3kpdzg3z7">
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi(JDK/com.sun.jdi@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi.event(JDK/com.sun.jdi.event@java_stub)" />
   <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi.request(JDK/com.sun.jdi.request@java_stub)" />
@@ -101,7 +101,7 @@
     <dep model="r:fc76aa36-3cff-41c7-b94b-eee0e8341932(jetbrains.mps.internal.collections.runtime)" />
     <file name="BreakpointsIconCache.java" />
   </source>
-  <source id="4352118152439827945" name="JavaBreakpointsProvider" hash="-8txo0hzhhloth2vl6tyiyyw7leg2m6h">
+  <source id="4352118152439827945" name="JavaBreakpointsProvider" hash="hlhmncqeoff3aqg6d7ffuyng6d7h6s">
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#com.sun.jdi.request(JDK/com.sun.jdi.request@java_stub)" />
     <dep model="f:java_stub#6354ebe7-c22a-4a0f-ac54-50b52ab9b065#java.awt(JDK/java.awt@java_stub)" />
     <dep model="r:00000000-0000-4000-0000-011c895902ca(jetbrains.mps.baseLanguage.structure)" />

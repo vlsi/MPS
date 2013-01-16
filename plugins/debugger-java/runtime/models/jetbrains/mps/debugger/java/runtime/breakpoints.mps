@@ -6293,7 +6293,7 @@
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2891782949125168612" resolveInfo="LineBreakpoint" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7897202388614362146">
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7897202388616189165">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1l1h.7897202388616021887" resolveInfo="realLocation" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1l1h.7897202388616021887" resolveInfo="location" />
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7897202388614362148">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4352118152439828425" resolveInfo="breakpointInfo" />
@@ -6468,7 +6468,7 @@
                           <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="2891782949125168612" resolveInfo="LineBreakpoint" />
                           <node role="actualArgument" roleId="tpee.1068499141038" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7897202388614656470">
                             <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7897202388616354711">
-                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1l1h.7897202388616021887" resolveInfo="realLocation" />
+                              <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1l1h.7897202388616021887" resolveInfo="location" />
                             </node>
                             <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7897202388614655376">
                               <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4352118152439828500" resolveInfo="lineBreakpointInfo" />
@@ -6553,7 +6553,7 @@
                       <property name="isFinal" nameId="tpee.1176718929932" value="false" />
                       <node role="initializer" roleId="tpee.1068431790190" type="tpee.DotExpression" typeId="tpee.1197027756228" id="7897202388614660527">
                         <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="7897202388616283050">
-                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1l1h.7897202388616021887" resolveInfo="realLocation" />
+                          <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="1l1h.7897202388616021887" resolveInfo="location" />
                         </node>
                         <node role="operand" roleId="tpee.1197027771414" type="tpee.VariableReference" typeId="tpee.1068498886296" id="7897202388614660170">
                           <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4352118152439828544" resolveInfo="fieldBreakpointInfo" />
@@ -6677,42 +6677,6 @@
                   <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4352118152439828609">
                     <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rw00.4474271214082913204" resolveInfo="getLocation" />
                   </node>
-                </node>
-              </node>
-            </node>
-            <node role="statement" roleId="tpee.1068581517665" type="tpee.IfStatement" typeId="tpee.1068580123159" id="4352118152439828610">
-              <node role="condition" roleId="tpee.1068580123160" type="tpee.OrExpression" typeId="tpee.1080223426719" id="4352118152439828611">
-                <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="4352118152439828612">
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4352118152439828613">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4352118152439828614">
-                      <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4352118152439828615">
-                        <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4352118152439828605" resolveInfo="location" />
-                      </node>
-                      <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4352118152439828616">
-                        <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rw00.4474271214082916114" resolveInfo="getNodePointer" />
-                      </node>
-                    </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4352118152439828617">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="cu2c.~SNodePointer%dgetNodeId()%corg%djetbrains%dmps%dopenapi%dmodel%dSNodeId" resolveInfo="getNodeId" />
-                    </node>
-                  </node>
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4352118152439828618" />
-                </node>
-                <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.EqualsExpression" typeId="tpee.1068580123152" id="4352118152439828619">
-                  <node role="leftExpression" roleId="tpee.1081773367580" type="tpee.DotExpression" typeId="tpee.1197027756228" id="4352118152439828620">
-                    <node role="operand" roleId="tpee.1197027771414" type="tpee.LocalVariableReference" typeId="tpee.1068581242866" id="4352118152439828621">
-                      <link role="variableDeclaration" roleId="tpee.1068581517664" targetNodeId="4352118152439828605" resolveInfo="location" />
-                    </node>
-                    <node role="operation" roleId="tpee.1197027833540" type="tpee.InstanceMethodCallOperation" typeId="tpee.1202948039474" id="4352118152439828622">
-                      <link role="baseMethodDeclaration" roleId="tpee.1068499141037" targetNodeId="rw00.4474271214082916260" resolveInfo="getModelReference" />
-                    </node>
-                  </node>
-                  <node role="rightExpression" roleId="tpee.1081773367579" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4352118152439828623" />
-                </node>
-              </node>
-              <node role="ifTrue" roleId="tpee.1068580123161" type="tpee.StatementList" typeId="tpee.1068580123136" id="4352118152439828624">
-                <node role="statement" roleId="tpee.1068581517665" type="tpee.ReturnStatement" typeId="tpee.1068581242878" id="4352118152439828625">
-                  <node role="expression" roleId="tpee.1068581517676" type="tpee.NullLiteral" typeId="tpee.1070534058343" id="4352118152439828626" />
                 </node>
               </node>
             </node>
