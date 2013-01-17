@@ -18898,115 +18898,115 @@
     <unitInfo nodeId="8695552310379793081" fileName="check_AnnotationTarget_NonTypesystemRule.java" startLine="19" startPosition="0" endLine="57" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_AnnotationTarget_NonTypesystemRule" />
   </root>
   <root nodeId="8899076737758799632" modelId="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)">
-    <nodeInfo nodeId="8899076737758859140" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="23" startPosition="39" endLine="24" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8899076737758875279" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="27" startPosition="32" endLine="28" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8899076737758859230" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="28" startPosition="214" endLine="29" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="33" startPosition="101" endLine="34" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="34" startPosition="30" endLine="35" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="35" startPosition="30" endLine="36" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="36" startPosition="163" endLine="37" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="38" startPosition="5" endLine="39" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="40" startPosition="33" endLine="41" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="43" startPosition="5" endLine="44" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8899076737758799632" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="18" startPosition="0" endLine="20" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuickFixForDefaultClassCreator_QuickFix#()V" />
-    <nodeInfo nodeId="8899076737758859136" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="39" startPosition="52" endLine="42" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="8899076737758859199" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="26" startPosition="7" endLine="30" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8899076737758859097" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="21" startPosition="35" endLine="26" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="37" startPosition="99" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="37" startPosition="99" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="35" startPosition="30" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="35" startPosition="30" endLine="43" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8899076737758799632" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="21" startPosition="0" endLine="32" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
-    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="33" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_za6z2i_a0a0b0a#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
-    <scopeInfo nodeId="8899076737758799632" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="18" startPosition="52" endLine="18" endPosition="52" />
-    <scopeInfo nodeId="8899076737758859137" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="23" startPosition="39" endLine="24" endPosition="98" />
-    <scopeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="40" startPosition="33" endLine="41" endPosition="77" />
-    <scopeInfo nodeId="8899076737758799632" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="18" startPosition="0" endLine="20" endPosition="0" />
-    <scopeInfo nodeId="8899076737758859200" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="27" startPosition="32" endLine="29" endPosition="59">
+    <nodeInfo nodeId="8899076737758859140" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="25" startPosition="39" endLine="26" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8899076737758875279" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="29" startPosition="32" endLine="30" endPosition="214" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8899076737758859230" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="30" startPosition="214" endLine="31" endPosition="59" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="35" startPosition="101" endLine="36" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="36" startPosition="30" endLine="37" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="37" startPosition="30" endLine="38" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="38" startPosition="163" endLine="39" endPosition="99" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="40" startPosition="5" endLine="41" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="42" startPosition="33" endLine="43" endPosition="77" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="45" startPosition="5" endLine="46" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8899076737758799632" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="20" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="QuickFixForDefaultClassCreator_QuickFix#()V" />
+    <nodeInfo nodeId="8899076737758859136" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="25" startPosition="0" endLine="28" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="41" startPosition="52" endLine="44" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
+    <nodeInfo nodeId="8899076737758859199" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="28" startPosition="7" endLine="32" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8899076737758859097" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="23" startPosition="35" endLine="28" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="39" startPosition="99" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="39" startPosition="99" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="37" startPosition="30" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="37" startPosition="30" endLine="45" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8899076737758799632" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="23" startPosition="0" endLine="34" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="execute#(Lorg/jetbrains/mps/openapi/model/SNode;)V" />
+    <nodeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="35" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="_quotation_createNode_za6z2i_a0a0b0a#(Ljava/lang/Object;Ljava/lang/Object;)Lorg/jetbrains/mps/openapi/model/SNode;" />
+    <scopeInfo nodeId="8899076737758799632" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="20" startPosition="52" endLine="20" endPosition="52" />
+    <scopeInfo nodeId="8899076737758859137" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="25" startPosition="39" endLine="26" endPosition="98" />
+    <scopeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="42" startPosition="33" endLine="43" endPosition="77" />
+    <scopeInfo nodeId="8899076737758799632" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="20" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="8899076737758859200" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="29" startPosition="32" endLine="31" endPosition="59">
       <varInfo nodeId="8899076737758875280" varName="newCreator" />
     </scopeInfo>
-    <scopeInfo nodeId="8899076737758859136" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+    <scopeInfo nodeId="8899076737758859136" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="25" startPosition="0" endLine="28" endPosition="0">
       <varInfo nodeId="8899076737758859136" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="39" startPosition="52" endLine="42" endPosition="7">
+    <scopeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="41" startPosition="52" endLine="44" endPosition="7">
       <varInfo nodeId="8899076737758859260" varName="child" />
     </scopeInfo>
-    <scopeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="38" startPosition="5" endLine="42" endPosition="7">
+    <scopeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="40" startPosition="5" endLine="44" endPosition="7">
       <varInfo nodeId="8899076737758859260" varName="nodes" />
     </scopeInfo>
-    <scopeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="37" startPosition="99" endLine="43" endPosition="5" />
-    <scopeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="35" startPosition="30" endLine="43" endPosition="5" />
-    <scopeInfo nodeId="8899076737758799634" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="21" startPosition="35" endLine="30" endPosition="5">
+    <scopeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="39" startPosition="99" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="37" startPosition="30" endLine="45" endPosition="5" />
+    <scopeInfo nodeId="8899076737758799634" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="23" startPosition="35" endLine="32" endPosition="5">
       <varInfo nodeId="8899076737758859098" varName="constructor" />
     </scopeInfo>
-    <scopeInfo nodeId="8899076737758799632" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="21" startPosition="0" endLine="32" endPosition="0">
+    <scopeInfo nodeId="8899076737758799632" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="23" startPosition="0" endLine="34" endPosition="0">
       <varInfo nodeId="8899076737758799632" varName="node" />
     </scopeInfo>
-    <scopeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="33" startPosition="101" endLine="44" endPosition="24">
+    <scopeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="35" startPosition="101" endLine="46" endPosition="24">
       <varInfo nodeId="8899076737758859260" varName="quotedNode_3" />
       <varInfo nodeId="8899076737758859260" varName="quotedNode_4" />
     </scopeInfo>
-    <scopeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="33" startPosition="0" endLine="46" endPosition="0">
+    <scopeInfo nodeId="8899076737758859260" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="35" startPosition="0" endLine="48" endPosition="0">
       <varInfo nodeId="8899076737758859260" varName="parameter_1" />
       <varInfo nodeId="8899076737758859260" varName="parameter_2" />
     </scopeInfo>
-    <unitInfo nodeId="8899076737758859136" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="22" startPosition="320" endLine="26" endPosition="5" unitName="jetbrains.mps.baseLanguage.typesystem.QuickFixForDefaultClassCreator_QuickFix$1" />
-    <unitInfo nodeId="8899076737758799632" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="17" startPosition="0" endLine="47" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.QuickFixForDefaultClassCreator_QuickFix" />
+    <unitInfo nodeId="8899076737758859136" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="24" startPosition="332" endLine="28" endPosition="5" unitName="jetbrains.mps.baseLanguage.typesystem.QuickFixForDefaultClassCreator_QuickFix$1" />
+    <unitInfo nodeId="8899076737758799632" fileName="QuickFixForDefaultClassCreator_QuickFix.java" startLine="19" startPosition="0" endLine="49" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.QuickFixForDefaultClassCreator_QuickFix" />
   </root>
   <root nodeId="8899076737758937250" modelId="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)">
-    <nodeInfo nodeId="8899076737758937323" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="26" startPosition="39" endLine="27" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8899076737758937409" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="30" startPosition="7" endLine="31" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8899076737758937409" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="31" startPosition="60" endLine="32" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8899076737758937409" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="33" startPosition="9" endLine="34" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8899076737758937409" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="34" startPosition="163" endLine="35" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
-    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="41" startPosition="46" endLine="42" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="46" startPosition="5" endLine="47" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
-    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="47" startPosition="126" endLine="48" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="52" startPosition="30" endLine="53" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_DefaultClassCreator_NonTypesystemRule#()V" />
-    <nodeInfo nodeId="8899076737758937321" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
-    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
-    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="52" startPosition="0" endLine="55" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
-    <nodeInfo nodeId="8899076737758937409" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="32" startPosition="266" endLine="36" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="45" startPosition="68" endLine="49" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="45" startPosition="0" endLine="51" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
-    <nodeInfo nodeId="8899076737758937409" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="29" startPosition="18" endLine="37" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
-    <nodeInfo nodeId="8899076737758937254" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="24" startPosition="125" endLine="38" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
-    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
-    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="21" startPosition="56" endLine="21" endPosition="56" />
-    <scopeInfo nodeId="8899076737758937322" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="26" startPosition="39" endLine="27" endPosition="98" />
-    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="41" startPosition="46" endLine="42" endPosition="70" />
-    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="52" startPosition="30" endLine="53" endPosition="17" />
-    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="21" startPosition="0" endLine="23" endPosition="0" />
-    <scopeInfo nodeId="8899076737758937409" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="33" startPosition="9" endLine="35" endPosition="71">
+    <nodeInfo nodeId="8899076737758937323" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="28" startPosition="39" endLine="29" endPosition="98" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8899076737758937409" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="32" startPosition="7" endLine="33" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8899076737758937409" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="33" startPosition="60" endLine="34" endPosition="266" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8899076737758937409" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="35" startPosition="9" endLine="36" endPosition="163" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8899076737758937409" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="36" startPosition="163" endLine="37" endPosition="71" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="43" startPosition="46" endLine="44" endPosition="70" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="48" startPosition="5" endLine="49" endPosition="126" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="49" startPosition="126" endLine="50" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="54" startPosition="30" endLine="55" endPosition="17" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="check_DefaultClassCreator_NonTypesystemRule#()V" />
+    <nodeInfo nodeId="8899076737758937321" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="accept#(Lorg/jetbrains/mps/openapi/model/SNode;)Z" />
+    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="43" startPosition="0" endLine="46" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getApplicableConceptFQName#()Ljava/lang/String;" />
+    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="54" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="overrides#()Z" />
+    <nodeInfo nodeId="8899076737758937409" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="34" startPosition="266" endLine="38" endPosition="9" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="47" startPosition="68" endLine="51" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="53" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="isApplicableAndPattern#(Lorg/jetbrains/mps/openapi/model/SNode;)Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;" />
+    <nodeInfo nodeId="8899076737758937409" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="31" startPosition="18" endLine="39" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="8899076737758937254" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="26" startPosition="125" endLine="40" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="42" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="applyRule#(Lorg/jetbrains/mps/openapi/model/SNode;Ljetbrains/mps/typesystem/inference/TypeCheckingContext;Ljetbrains/mps/lang/typesystem/runtime/IsApplicableStatus;)V" />
+    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="23" startPosition="56" endLine="23" endPosition="56" />
+    <scopeInfo nodeId="8899076737758937322" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="28" startPosition="39" endLine="29" endPosition="98" />
+    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="43" startPosition="46" endLine="44" endPosition="70" />
+    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="54" startPosition="30" endLine="55" endPosition="17" />
+    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="23" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="8899076737758937409" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="35" startPosition="9" endLine="37" endPosition="71">
       <varInfo nodeId="8899076737758937409" varName="intentionProvider" />
     </scopeInfo>
-    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="46" startPosition="5" endLine="48" endPosition="45">
+    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="48" startPosition="5" endLine="50" endPosition="45">
       <varInfo nodeId="8899076737758937250" varName="b" />
     </scopeInfo>
-    <scopeInfo nodeId="8899076737758937321" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+    <scopeInfo nodeId="8899076737758937321" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
       <varInfo nodeId="8899076737758937321" varName="it" />
     </scopeInfo>
-    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
-    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="52" startPosition="0" endLine="55" endPosition="0" />
-    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="45" startPosition="68" endLine="49" endPosition="5" />
-    <scopeInfo nodeId="8899076737758937409" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="30" startPosition="7" endLine="36" endPosition="9">
+    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="43" startPosition="0" endLine="46" endPosition="0" />
+    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="54" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="47" startPosition="68" endLine="51" endPosition="5" />
+    <scopeInfo nodeId="8899076737758937409" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="32" startPosition="7" endLine="38" endPosition="9">
       <varInfo nodeId="8899076737758937409" varName="_reporter_2309309498" />
       <varInfo nodeId="8899076737758937409" varName="errorTarget" />
     </scopeInfo>
-    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="45" startPosition="0" endLine="51" endPosition="0">
+    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="47" startPosition="0" endLine="53" endPosition="0">
       <varInfo nodeId="8899076737758937250" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="8899076737758937256" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="29" startPosition="18" endLine="37" endPosition="7" />
-    <scopeInfo nodeId="8899076737758937251" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="24" startPosition="125" endLine="38" endPosition="5" />
-    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="24" startPosition="0" endLine="40" endPosition="0">
+    <scopeInfo nodeId="8899076737758937256" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="31" startPosition="18" endLine="39" endPosition="7" />
+    <scopeInfo nodeId="8899076737758937251" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="26" startPosition="125" endLine="40" endPosition="5" />
+    <scopeInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="26" startPosition="0" endLine="42" endPosition="0">
       <varInfo nodeId="8899076737758937250" varName="classCreator" />
       <varInfo nodeId="8899076737758937250" varName="status" />
       <varInfo nodeId="8899076737758937250" varName="typeCheckingContext" />
     </scopeInfo>
-    <unitInfo nodeId="8899076737758937321" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="25" startPosition="231" endLine="29" endPosition="5" unitName="jetbrains.mps.baseLanguage.typesystem.check_DefaultClassCreator_NonTypesystemRule$1" />
-    <unitInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="56" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_DefaultClassCreator_NonTypesystemRule" />
+    <unitInfo nodeId="8899076737758937321" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="27" startPosition="243" endLine="31" endPosition="5" unitName="jetbrains.mps.baseLanguage.typesystem.check_DefaultClassCreator_NonTypesystemRule$1" />
+    <unitInfo nodeId="8899076737758937250" fileName="check_DefaultClassCreator_NonTypesystemRule.java" startLine="22" startPosition="0" endLine="58" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_DefaultClassCreator_NonTypesystemRule" />
   </root>
   <root nodeId="8899076737759282444" modelId="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)">
     <nodeInfo nodeId="8899076737759282551" fileName="QuickFixForClassCreator_QuickFix.java" startLine="25" startPosition="325" endLine="26" endPosition="281" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -19287,7 +19287,7 @@
     <unitInfo nodeId="8945315740752657245" fileName="check_EqualsMethodTypes_NonTypesystemRule.java" startLine="20" startPosition="0" endLine="50" endPosition="0" unitName="jetbrains.mps.baseLanguage.typesystem.check_EqualsMethodTypes_NonTypesystemRule" />
   </root>
   <root nodeId="8974945326827873994" modelId="r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)">
-    <nodeInfo nodeId="8974945326827961340" fileName="check_ClassShouldHaveConstructor_NonTypesystemRule.java" startLine="27" startPosition="181" endLine="28" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="8974945326827961340" fileName="check_ClassShouldHaveConstructor_NonTypesystemRule.java" startLine="27" startPosition="193" endLine="28" endPosition="60" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8974945326827961340" fileName="check_ClassShouldHaveConstructor_NonTypesystemRule.java" startLine="28" startPosition="60" endLine="29" endPosition="56" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
     <nodeInfo nodeId="8974945326827961340" fileName="check_ClassShouldHaveConstructor_NonTypesystemRule.java" startLine="29" startPosition="56" endLine="30" endPosition="279" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
     <nodeInfo nodeId="8974945326827961340" fileName="check_ClassShouldHaveConstructor_NonTypesystemRule.java" startLine="31" startPosition="9" endLine="32" endPosition="158" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
@@ -19322,7 +19322,7 @@
     <scopeInfo nodeId="8974945326827873994" fileName="check_ClassShouldHaveConstructor_NonTypesystemRule.java" startLine="44" startPosition="0" endLine="50" endPosition="0">
       <varInfo nodeId="8974945326827873994" varName="argument" />
     </scopeInfo>
-    <scopeInfo nodeId="8974945326827961340" fileName="check_ClassShouldHaveConstructor_NonTypesystemRule.java" startLine="27" startPosition="181" endLine="35" endPosition="9">
+    <scopeInfo nodeId="8974945326827961340" fileName="check_ClassShouldHaveConstructor_NonTypesystemRule.java" startLine="27" startPosition="193" endLine="35" endPosition="9">
       <varInfo nodeId="8974945326827961340" varName="_reporter_2309309498" />
       <varInfo nodeId="8974945326827961340" varName="errorTarget" />
     </scopeInfo>

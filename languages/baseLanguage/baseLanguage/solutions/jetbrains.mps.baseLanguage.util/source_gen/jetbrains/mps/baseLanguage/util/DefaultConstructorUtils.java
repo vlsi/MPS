@@ -4,10 +4,11 @@ package jetbrains.mps.baseLanguage.util;
 
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
+import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 
 public class DefaultConstructorUtils {
   public DefaultConstructorUtils() {
@@ -17,7 +18,7 @@ public class DefaultConstructorUtils {
     if (!(BehaviorReflection.invokeVirtual(Boolean.TYPE, clazz, "virtual_checkLoops_3980490811621705344", new Object[]{}))) {
       return false;
     }
-    if (ListSequence.fromList(SLinkOperations.getTargets(clazz, "constructor", true)).isNotEmpty()) {
+    if (Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), clazz, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).isNotEmpty()) {
       return false;
     }
     if ((SLinkOperations.getTarget(BehaviorReflection.invokeVirtual((Class<SNode>) ((Class) Object.class), clazz, "virtual_getSuperclass_1240936569950", new Object[]{}), "classifier", false) == null)) {
@@ -27,8 +28,8 @@ public class DefaultConstructorUtils {
   }
 
   private static boolean containsVisibleNoArgumentsConstructor(SNode currentClass, SNode startClass) {
-    if (ListSequence.fromList(SLinkOperations.getTargets(currentClass, "constructor", true)).isNotEmpty()) {
-      SNode constructor = ListSequence.fromList(SLinkOperations.getTargets(currentClass, "constructor", true)).findFirst(new IWhereFilter<SNode>() {
+    if (Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), currentClass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).isNotEmpty()) {
+      SNode constructor = Sequence.fromIterable(BehaviorReflection.invokeNonVirtual((Class<Iterable<SNode>>) ((Class) Object.class), currentClass, "jetbrains.mps.baseLanguage.structure.ClassConcept", "call_constructors_5292274854859503373", new Object[]{})).findFirst(new IWhereFilter<SNode>() {
         public boolean accept(SNode it) {
           return ListSequence.fromList(SLinkOperations.getTargets(it, "parameter", true)).isEmpty();
         }

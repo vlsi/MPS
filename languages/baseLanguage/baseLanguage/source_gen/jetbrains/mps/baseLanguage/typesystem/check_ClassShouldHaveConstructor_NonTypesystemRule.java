@@ -8,8 +8,8 @@ import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.internal.collections.runtime.Sequence;
+import jetbrains.mps.baseLanguage.behavior.ClassConcept_Behavior;
 import jetbrains.mps.baseLanguage.util.DefaultConstructorUtils;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
@@ -24,7 +24,7 @@ public class check_ClassShouldHaveConstructor_NonTypesystemRule extends Abstract
 
   public void applyRule(final SNode classConcept, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (!(SNodeOperations.isInstanceOf(classConcept, "jetbrains.mps.baseLanguage.structure.IAnonymousClass"))) {
-      if (!(ListSequence.fromList(SLinkOperations.getTargets(classConcept, "constructor", true)).isNotEmpty() || DefaultConstructorUtils.containsDefaultConstructor(classConcept))) {
+      if (!(Sequence.fromIterable(ClassConcept_Behavior.call_constructors_5292274854859503373(classConcept)).isNotEmpty() || DefaultConstructorUtils.containsDefaultConstructor(classConcept))) {
         MessageTarget errorTarget = new NodeMessageTarget();
         errorTarget = new PropertyMessageTarget("name");
         IErrorReporter _reporter_2309309498 = typeCheckingContext.reportTypeError(classConcept, "There is no default constructor available in super class", "r:00000000-0000-4000-0000-011c895902c5(jetbrains.mps.baseLanguage.typesystem)", "8974945326827961340", null, errorTarget);
