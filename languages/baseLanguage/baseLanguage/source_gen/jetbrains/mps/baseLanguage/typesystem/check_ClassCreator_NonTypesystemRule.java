@@ -4,7 +4,7 @@ package jetbrains.mps.baseLanguage.typesystem;
 
 import jetbrains.mps.lang.typesystem.runtime.AbstractNonTypesystemRule_Runtime;
 import jetbrains.mps.lang.typesystem.runtime.NonTypesystemRule_Runtime;
-import jetbrains.mps.smodel.SNode;
+import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.typesystem.inference.TypeCheckingContext;
 import jetbrains.mps.lang.typesystem.runtime.IsApplicableStatus;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
@@ -27,7 +27,7 @@ public class check_ClassCreator_NonTypesystemRule extends AbstractNonTypesystemR
   public void applyRule(final SNode classCreator, final TypeCheckingContext typeCheckingContext, IsApplicableStatus status) {
     if (SLinkOperations.getTarget(classCreator, "baseMethodDeclaration", false) == null && ListSequence.fromList(SLinkOperations.getTargets(classCreator, "actualArgument", true)).isEmpty()) {
       String refText = SLinkOperations.getResolveInfo(SNodeOperations.getReference(classCreator, SLinkOperations.findLinkDeclaration("jetbrains.mps.baseLanguage.structure.ClassCreator", "constructorDeclaration")));
-      IModule module = check_gfouwf_a0b0a0a(check_gfouwf_a0a1a0a0(check_gfouwf_a0a0b0a0a(classCreator)));
+      IModule module = check_gfouwf_a0b0a0b(check_gfouwf_a0a1a0a1(check_gfouwf_a0a0b0a0b(classCreator)));
 
       if ((refText != null && refText.length() > 0) && module != null) {
         SNode clazz = SNodeOperations.cast(ClassifierScopes.getVisibleClassifiersWithDefaultConstructors(classCreator, module.getScope()).resolve(classCreator, refText), "jetbrains.mps.baseLanguage.structure.ClassConcept");
@@ -51,7 +51,7 @@ public class check_ClassCreator_NonTypesystemRule extends AbstractNonTypesystemR
 
   public IsApplicableStatus isApplicableAndPattern(SNode argument) {
     {
-      boolean b = SModelUtil_new.isAssignableConcept(argument.getConceptFqName(), this.getApplicableConceptFQName());
+      boolean b = SModelUtil_new.isAssignableConcept(argument.getConcept().getConceptId(), this.getApplicableConceptFQName());
       return new IsApplicableStatus(b, null);
     }
   }
@@ -60,21 +60,21 @@ public class check_ClassCreator_NonTypesystemRule extends AbstractNonTypesystemR
     return false;
   }
 
-  private static IModule check_gfouwf_a0b0a0a(SModelDescriptor checkedDotOperand) {
+  private static IModule check_gfouwf_a0b0a0b(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_gfouwf_a0a1a0a0(SModel checkedDotOperand) {
+  private static SModelDescriptor check_gfouwf_a0a1a0a1(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static SModel check_gfouwf_a0a0b0a0a(SNode checkedDotOperand) {
+  private static SModel check_gfouwf_a0a0b0a0b(SNode checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModel();
     }

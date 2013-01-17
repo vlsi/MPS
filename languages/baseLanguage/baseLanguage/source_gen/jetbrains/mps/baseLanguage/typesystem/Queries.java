@@ -20,6 +20,9 @@ import jetbrains.mps.lang.typesystem.runtime.HUtil;
 import jetbrains.mps.typesystem.inference.TypeChecker;
 
 public class Queries {
+  public Queries() {
+  }
+
   public static SNode getBinaryOperationType(SNode leftType, SNode rightType) {
     return getBinaryOperationType(leftType, rightType, false);
   }
