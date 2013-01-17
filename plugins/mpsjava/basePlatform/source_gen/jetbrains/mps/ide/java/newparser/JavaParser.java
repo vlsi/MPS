@@ -13,13 +13,13 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.ASTNode;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.Statement;
 import org.eclipse.jdt.internal.core.util.RecordedParsingInformation;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
@@ -27,6 +27,8 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import org.eclipse.jdt.internal.compiler.ast.ImportReference;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.ModelAccess;
@@ -79,11 +81,10 @@ public class JavaParser {
         ASTNode[] astTypes = compRes.types;
 
         if (astTypes != null && astTypes.length > 0) {
-          typeResolver.addImports(extractImports(compRes));
-
           List<SNode> roots = new ArrayList<SNode>();
           for (ASTNode astNode : astTypes) {
-            ListSequence.fromList(roots).addElement(converter.convertRoot(astNode));
+            SNode root = converter.convertRoot(astNode);
+            annotateWithmports(compRes, root);
           }
           resultNodes = roots;
         }
@@ -203,19 +204,23 @@ public class JavaParser {
     }
   }
 
-  public List<TypeNameResolver.Import> extractImports(CompilationUnitDeclaration compResult) {
-    List<TypeNameResolver.Import> imps = ListSequence.fromList(new ArrayList<TypeNameResolver.Import>());
+  public void annotateWithmports(CompilationUnitDeclaration compResult, SNode clas) {
+    SNode imports = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.JavaImports", null);
     if (compResult.imports != null) {
       for (ImportReference imprt : compResult.imports) {
-        imps.add(makeImport(imprt));
+        ListSequence.fromList(SLinkOperations.getTargets(imports, "entries", true)).addElement(makeImport(imprt));
       }
     }
-    return imps;
+    AttributeOperations.setAttribute(clas, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")), imports);
   }
 
-  private TypeNameResolver.Import makeImport(ImportReference impRef) {
+  private SNode makeImport(ImportReference impRef) {
+    SNode imp = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.JavaImport", null);
+
     boolean onDemand = (impRef.bits & ASTNode.OnDemand) != 0;
     boolean isStatic = impRef.isStatic();
+
+    SPropertyOperations.set(imp, "onDemand", "" + (onDemand));
 
     char[][] toks = impRef.getImportName();
     StringBuffer sb = new StringBuffer();
@@ -224,20 +229,13 @@ public class JavaParser {
       toks.length - 1
     );
     for (int i = 0; i < until; i++) {
-      char[] tok = toks[i];
-      if (i > 0) {
-        sb.append('.');
-      }
-      sb.append(tok);
+      String tok = new String(toks[i]);
+      SNode token = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringToken", null);
+      SPropertyOperations.set(token, "value", tok);
+      ListSequence.fromList(SLinkOperations.getTargets(imp, "token", true)).addElement(token);
     }
 
-    String pkg = sb.toString();
-    String clas = (onDemand ?
-      null :
-      new String(toks[toks.length - 1])
-    );
-
-    return new TypeNameResolver.Import(pkg, clas, isStatic);
+    return imp;
   }
 
   public void tryResolveRoots(List<SNode> roots) {

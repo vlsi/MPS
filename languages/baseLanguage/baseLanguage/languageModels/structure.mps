@@ -28,16 +28,16 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068390468198">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/class.png" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Class declaration" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/class.png" />
       <property name="name" nameId="tpck.1169194664001" value="ClassConcept" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="class" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1107461130800" resolveInfo="Classifier" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068498886292">
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/parameter.png" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="parameter" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/parameter.png" />
       <property name="name" nameId="tpck.1169194664001" value="ParameterDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068431474542" resolveInfo="VariableDeclaration" />
@@ -98,8 +98,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1179362310214" resolveInfo="IntegerLiteral" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1068581242863">
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/variable.png" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="local variable declaration" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/variable.png" />
       <property name="name" nameId="tpck.1169194664001" value="LocalVariableDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="variables" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="&lt;type&gt; &lt;var&gt;" />
@@ -157,8 +157,8 @@
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1164118113764" resolveInfo="PrimitiveType" />
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1070462154015">
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/field.png" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="static field declaration" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/field.png" />
       <property name="name" nameId="tpck.1169194664001" value="StaticFieldDeclaration" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.members" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="static field" />
@@ -340,8 +340,8 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1083245097125">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/enum.png" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Enumeration class declaration" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/enum.png" />
       <property name="name" nameId="tpck.1169194664001" value="EnumClass" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="enum" />
@@ -394,8 +394,8 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1107796713796">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/interfaceType.png" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Interface declaration" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/interfaceType.png" />
       <property name="name" nameId="tpck.1169194664001" value="Interface" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="interface" />
@@ -593,8 +593,8 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1170345865475">
       <property name="rootable" nameId="tpce.1096454100552" value="false" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/anonymousClass.png" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="anonymous class" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/anonymousClass.png" />
       <property name="name" nameId="tpck.1169194664001" value="AnonymousClass" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="1068390468198" resolveInfo="ClassConcept" />
@@ -686,8 +686,8 @@
     </node>
     <node type="tpce.ConceptDeclaration" typeId="tpce.1071489090640" id="1188206331916">
       <property name="rootable" nameId="tpce.1096454100552" value="true" />
-      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/annotationtype.png" />
       <property name="conceptShortDescription" nameId="tpce.4628067390765907488" value="Annotation declaration" />
+      <property name="iconPath" nameId="tpce.1160488491229" value="${language_descriptor}/icons/annotationtype.png" />
       <property name="name" nameId="tpck.1169194664001" value="Annotation" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="classifiers.classifiers" />
       <property name="conceptAlias" nameId="tpce.5092175715804935370" value="@interface" />
@@ -1586,6 +1586,10 @@
       <property name="name" nameId="tpck.1169194664001" value="JavaImport" />
       <property name="virtualPackage" nameId="tpck.1193676396447" value="unresolved" />
       <link role="extends" roleId="tpce.1071489389519" targetNodeId="tpck.1133920641626" resolveInfo="BaseConcept" />
+    </node>
+    <node type="tpce.InterfaceConceptDeclaration" typeId="tpce.1169125989551" id="6528213125912070246">
+      <property name="name" nameId="tpck.1169194664001" value="Tokens" />
+      <property name="virtualPackage" nameId="tpck.1193676396447" value="unresolved" />
     </node>
   </roots>
   <root id="1068498886294">
@@ -3844,11 +3848,8 @@
     </node>
   </root>
   <root id="8473865358220097975">
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="8473865358220097979">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="token" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1..n" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="6823176311001356881" resolveInfo="StringToken" />
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6528213125912083226">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6528213125912070246" resolveInfo="Tokens" />
     </node>
     <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6072020170586016071">
       <link role="intfc" roleId="tpce.1169127628841" targetNodeId="8136348407761606757" resolveInfo="IYetUnresolved" />
@@ -3938,15 +3939,20 @@
     </node>
   </root>
   <root id="28358707492436943">
-    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="28358707492436947">
-      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
-      <property name="role" nameId="tpce.1071599776563" value="name" />
-      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1" />
-      <link role="target" roleId="tpce.1071599976176" targetNodeId="8473865358220097975" resolveInfo="UnknownNameRef" />
-    </node>
     <node role="propertyDeclaration" roleId="tpce.1071489727084" type="tpce.PropertyDeclaration" typeId="tpce.1071489288299" id="28358707492436944">
       <property name="name" nameId="tpck.1169194664001" value="onDemand" />
       <link role="dataType" roleId="tpce.1082985295845" targetNodeId="tpck.1082983657063" resolveInfo="boolean" />
+    </node>
+    <node role="implements" roleId="tpce.1169129564478" type="tpce.InterfaceConceptReference" typeId="tpce.1169127622168" id="6528213125912083987">
+      <link role="intfc" roleId="tpce.1169127628841" targetNodeId="6528213125912070246" resolveInfo="Tokens" />
+    </node>
+  </root>
+  <root id="6528213125912070246">
+    <node role="linkDeclaration" roleId="tpce.1071489727083" type="tpce.LinkDeclaration" typeId="tpce.1071489288298" id="6528213125912070253">
+      <property name="metaClass" nameId="tpce.1071599937831" value="aggregation" />
+      <property name="role" nameId="tpce.1071599776563" value="token" />
+      <property name="sourceCardinality" nameId="tpce.1071599893252" value="1..n" />
+      <link role="target" roleId="tpce.1071599976176" targetNodeId="6823176311001356881" resolveInfo="StringToken" />
     </node>
   </root>
 </model>
