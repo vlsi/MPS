@@ -46,6 +46,7 @@ import jetbrains.mps.baseLanguage.behavior.BaseMethodDeclaration_Behavior;
 import jetbrains.mps.smodel.SModelUtil_new;
 import jetbrains.mps.project.GlobalScope;
 import jetbrains.mps.smodel.SNodeId;
+import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
 import jetbrains.mps.lang.typesystem.runtime.HUtil;
 
 public class ApiMigrationHelper {
@@ -144,7 +145,7 @@ public class ApiMigrationHelper {
   }
 
   public void migrate() {
-    SNode oldSnodeNode = SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yke5lt_a0a0a0f(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
+    final SNode oldSnodeNode = SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yke5lt_a0a0a0f(), "classifier", false), "jetbrains.mps.baseLanguage.structure.ClassConcept");
     final SNode newSnodeNode = SNodeOperations.cast(SLinkOperations.getTarget(_quotation_createNode_yke5lt_a0a0b0f(), "classifier", false), "jetbrains.mps.baseLanguage.structure.Interface");
 
     Set<SNode> unknownUsages = SetSequence.fromSet(new HashSet<SNode>());
@@ -272,10 +273,10 @@ public class ApiMigrationHelper {
             }
             for (SNode occ : SetSequence.fromSet(castedMethodCalls)) {
               SNode operand = SLinkOperations.getTarget(SNodeOperations.cast(SNodeOperations.getParent(occ), "jetbrains.mps.baseLanguage.structure.DotExpression"), "operand", true);
-              if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), _quotation_createNode_yke5lt_b0a1a4a0c0a0a1a0lb0f())) {
+              if (TypeChecker.getInstance().getSubtypingManager().isSubtype(TypeChecker.getInstance().getTypeOf(operand), newSnodeNode)) {
                 continue;
               }
-              SNodeOperations.replaceWithAnother(operand, _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0lb0f(operand));
+              SNodeOperations.replaceWithAnother(operand, _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0lb0f(oldSnodeNode, operand));
             }
           }
         });
@@ -413,26 +414,19 @@ public class ApiMigrationHelper {
     return quotedNode_1;
   }
 
-  private static SNode _quotation_createNode_yke5lt_b0a1a4a0c0a0a1a0lb0f() {
-    SNode quotedNode_1 = null;
-    quotedNode_1 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_1.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_1, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode")));
-    return quotedNode_1;
-  }
-
-  private static SNode _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0lb0f(Object parameter_1) {
-    SNode quotedNode_2 = null;
+  private static SNode _quotation_createNode_yke5lt_a0a2a4a0c0a0a1a0lb0f(Object parameter_1, Object parameter_2) {
     SNode quotedNode_3 = null;
     SNode quotedNode_4 = null;
-    quotedNode_2 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", null, null, GlobalScope.getInstance(), false);
-    quotedNode_3 = (SNode) parameter_1;
-    if (quotedNode_3 != null) {
-      quotedNode_2.addChild("expression", HUtil.copyIfNecessary(quotedNode_3));
-    }
+    SNode quotedNode_5 = null;
+    quotedNode_3 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.CastExpression", null, null, GlobalScope.getInstance(), false);
     quotedNode_4 = SModelUtil_new.instantiateConceptDeclaration("jetbrains.mps.baseLanguage.structure.ClassifierType", null, null, GlobalScope.getInstance(), false);
-    quotedNode_4.setReference("classifier", jetbrains.mps.smodel.SReference.create("classifier", quotedNode_4, SModelReference.fromString("f:java_stub#8865b7a8-5271-43d3-884c-6fd1d9cfdd34#org.jetbrains.mps.openapi.model(MPS.OpenAPI/org.jetbrains.mps.openapi.model@java_stub)"), SNodeId.fromString("~SNode")));
-    quotedNode_2.addChild("type", quotedNode_4);
-    return quotedNode_2;
+    SNodeAccessUtil.setReferenceTarget(quotedNode_4, "classifier", (SNode) parameter_1);
+    quotedNode_3.addChild("type", quotedNode_4);
+    quotedNode_5 = (SNode) parameter_2;
+    if (quotedNode_5 != null) {
+      quotedNode_3.addChild("expression", HUtil.copyIfNecessary(quotedNode_5));
+    }
+    return quotedNode_3;
   }
 
   private static SNode _quotation_createNode_yke5lt_a0a0a0i() {
