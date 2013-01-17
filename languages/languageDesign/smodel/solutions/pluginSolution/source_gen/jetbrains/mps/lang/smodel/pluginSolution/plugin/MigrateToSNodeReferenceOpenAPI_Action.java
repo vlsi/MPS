@@ -14,11 +14,11 @@ import jetbrains.mps.project.MPSProject;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.logging.Logger;
 
-public class MigrateToSNodeOpenAPI_Action extends BaseAction {
+public class MigrateToSNodeReferenceOpenAPI_Action extends BaseAction {
   private static final Icon ICON = null;
 
-  public MigrateToSNodeOpenAPI_Action() {
-    super("Migrate to node OpenAPI", "", ICON);
+  public MigrateToSNodeReferenceOpenAPI_Action() {
+    super("Migrate to node id OpenAPI", "", ICON);
     this.setIsAlwaysVisible(false);
     this.setExecuteOutsideCommand(false);
   }
@@ -32,7 +32,7 @@ public class MigrateToSNodeOpenAPI_Action extends BaseAction {
     try {
       this.enable(event.getPresentation());
     } catch (Throwable t) {
-      LOG.error("User's action doUpdate method failed. Action:" + "MigrateToSNodeOpenAPI", t);
+      LOG.error("User's action doUpdate method failed. Action:" + "MigrateToSNodeReferenceOpenAPI", t);
       this.disable(event.getPresentation());
     }
   }
@@ -54,11 +54,11 @@ public class MigrateToSNodeOpenAPI_Action extends BaseAction {
 
   public void doExecute(@NotNull final AnActionEvent event, final Map<String, Object> _params) {
     try {
-      new ApiMigrationHelper(((MPSProject) MapSequence.fromMap(_params).get("project")), ((Project) MapSequence.fromMap(_params).get("iproject")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope()).migrateSNode();
+      new ApiMigrationHelper(((MPSProject) MapSequence.fromMap(_params).get("project")), ((Project) MapSequence.fromMap(_params).get("iproject")), ((MPSProject) MapSequence.fromMap(_params).get("project")).getScope()).migrateSNodeId();
     } catch (Throwable t) {
-      LOG.error("User's action execute method failed. Action:" + "MigrateToSNodeOpenAPI", t);
+      LOG.error("User's action execute method failed. Action:" + "MigrateToSNodeReferenceOpenAPI", t);
     }
   }
 
-  private static Logger LOG = Logger.getLogger(MigrateToSNodeOpenAPI_Action.class);
+  private static Logger LOG = Logger.getLogger(MigrateToSNodeReferenceOpenAPI_Action.class);
 }
