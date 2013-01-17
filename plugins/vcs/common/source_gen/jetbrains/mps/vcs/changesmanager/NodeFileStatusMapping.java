@@ -21,6 +21,7 @@ import jetbrains.mps.smodel.DefaultSModelDescriptor;
 import jetbrains.mps.vcs.platform.util.ConflictsUtil;
 import java.util.List;
 import jetbrains.mps.vcs.diff.changes.ModelChange;
+import org.jetbrains.mps.openapi.model.SNodeId;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.vcs.diff.changes.AddRootChange;
@@ -92,9 +93,10 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
           }
           CurrentDifference diff = myRegistry.getCurrentDifference(md);
           List<ModelChange> modelChanges = check_onkh7z_a0d0b0a0a0a0j(diff.getChangeSet());
+          final SNodeId rootId = root.getNodeId();
           List<ModelChange> rootChanges = ListSequence.fromList(modelChanges).where(new IWhereFilter<ModelChange>() {
             public boolean accept(ModelChange ch) {
-              return root.getNodeId().equals(ch.getRootId());
+              return rootId.equals(ch.getRootId());
             }
           }).toListSequence();
           if (ListSequence.fromList(rootChanges).count() != 0) {
