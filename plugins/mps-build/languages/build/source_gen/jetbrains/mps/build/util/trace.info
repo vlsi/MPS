@@ -725,8 +725,8 @@
     <nodeInfo nodeId="2867287323691293707" fileName="ScopeUtil.java" startLine="265" startPosition="0" endLine="277" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="unwrap#(Ljetbrains/mps/smodel/SNode;)Ljetbrains/mps/smodel/SNode;" />
     <nodeInfo nodeId="8401916545537277515" fileName="ScopeUtil.java" startLine="127" startPosition="0" endLine="141" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getAvailableElements#(Ljava/lang/String;)Ljava/lang/Iterable;" />
     <nodeInfo nodeId="8401916545537277507" fileName="ScopeUtil.java" startLine="141" startPosition="0" endLine="156" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="resolve#(Ljetbrains/mps/smodel/SNode;Ljava/lang/String;)Ljetbrains/mps/smodel/SNode;" />
-    <nodeInfo nodeId="3767587139141109804" fileName="ScopeUtil.java" startLine="51" startPosition="114" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
-    <nodeInfo nodeId="3767587139141109785" fileName="ScopeUtil.java" startLine="50" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="imported#(Ljava/util/List;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
+    <nodeInfo nodeId="3767587139141109804" fileName="ScopeUtil.java" startLine="51" startPosition="118" endLine="71" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="3767587139141109785" fileName="ScopeUtil.java" startLine="50" startPosition="0" endLine="73" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.StaticMethodDeclaration" propertyString="imported#(Ljava/lang/Iterable;Ljetbrains/mps/smodel/SNode;Ljetbrains/mps/smodel/SNode;)Ljava/lang/Iterable;" />
     <scopeInfo nodeId="3767587139141109584" fileName="ScopeUtil.java" startLine="28" startPosition="22" endLine="28" endPosition="22" />
     <scopeInfo nodeId="1545517825663225183" fileName="ScopeUtil.java" startLine="34" startPosition="104" endLine="35" endPosition="34" />
     <scopeInfo nodeId="1224588814561825185" fileName="ScopeUtil.java" startLine="45" startPosition="45" endLine="46" endPosition="38" />
@@ -933,7 +933,7 @@
       <varInfo nodeId="8401916545537277510" varName="contextNode" />
       <varInfo nodeId="8401916545537277512" varName="refText" />
     </scopeInfo>
-    <scopeInfo nodeId="3767587139141109788" fileName="ScopeUtil.java" startLine="51" startPosition="114" endLine="71" endPosition="7" />
+    <scopeInfo nodeId="3767587139141109788" fileName="ScopeUtil.java" startLine="51" startPosition="118" endLine="71" endPosition="7" />
     <scopeInfo nodeId="3767587139141109785" fileName="ScopeUtil.java" startLine="50" startPosition="0" endLine="73" endPosition="0">
       <varInfo nodeId="3767587139141109801" varName="child" />
       <varInfo nodeId="3767587139141109798" varName="concept" />
