@@ -313,7 +313,7 @@ public class ASTConverter {
       SPropertyOperations.set(fDecl, "isFinal", "" + (flagSet(f.modifiers, ClassFileConstants.AccFinal)));
 
       if (!(SNodeOperations.isInstanceOf(cls, "jetbrains.mps.baseLanguage.structure.AnonymousClass")) && myOnlyStubs) {
-        org.jetbrains.mps.openapi.model.SNodeId nodeId = new SNodeId.Foreign(getState().getIdPrefix() + SPropertyOperations.getString(fDecl, "name"));
+        SNodeId nodeId = new SNodeId.Foreign(getState().getIdPrefix() + SPropertyOperations.getString(fDecl, "name"));
         ((jetbrains.mps.smodel.SNode) fDecl).setId(nodeId);
       }
 
