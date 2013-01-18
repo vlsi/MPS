@@ -1474,7 +1474,7 @@ public abstract class EditorComponent extends JComponent implements Scrollable, 
     Set<SModelDescriptor> modelDescriptors = new HashSet<SModelDescriptor>();
     Set<SNodePointer> nodeProxiesToDelete = new HashSet<SNodePointer>();
     for (SNodePointer nodeProxy : nodePointers) {
-      SModelDescriptor model = nodeProxy.getModel();
+      SModelDescriptor model = nodeProxy.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(nodeProxy.getModelReference());
       if (model == null) {
         nodeProxiesToDelete.add(nodeProxy);
       } else {

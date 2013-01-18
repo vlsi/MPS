@@ -13,6 +13,7 @@ import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_R
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_RefAllGlobal;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingConfig_SimpleRef;
 import jetbrains.mps.smodel.SModelReference;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.util.NameUtil;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.ModelAccess;
@@ -54,7 +55,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
         final SNodePointer p = new SNodePointer(refC.getModelUID(), refC.getNodeID());
         nodeName = ModelAccess.instance().runReadAction(new Computable<String>() {
           public String compute() {
-            SModelDescriptor model = p.getModel();
+            SModelDescriptor model = p.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(p.getModelReference());
             SNode node = p.resolve(MPSModuleRepository.getInstance());
             if (model == null || node == null) {
               return null;

@@ -43,7 +43,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
 
   MPSNodeVirtualFile(@NotNull SNodePointer nodePointer) {
     myNode = nodePointer;
-    SModelDescriptor modelDescriptor = nodePointer.getModel();
+    SModelDescriptor modelDescriptor = nodePointer.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(nodePointer.getModelReference());
     if (modelDescriptor instanceof BaseSModelDescriptorWithSource) {
       myTimeStamp = ((BaseSModelDescriptorWithSource) modelDescriptor).getSourceTimestamp();
     }

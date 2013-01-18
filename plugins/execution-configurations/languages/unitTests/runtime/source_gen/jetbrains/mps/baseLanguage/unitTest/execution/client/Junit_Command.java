@@ -15,6 +15,8 @@ import jetbrains.mps.debug.api.IDebugger;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.smodel.ModelAccess;
 import java.util.ArrayList;
+
+import jetbrains.mps.smodel.SModelRepository;
 import org.jetbrains.annotations.NotNull;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
 import jetbrains.mps.baseLanguage.tuples.runtime.MultiTuple;
@@ -162,7 +164,7 @@ public class Junit_Command {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
         for (ITestNodeWrapper testable : tests) {
-          IModule module = testable.getNodePointer().getModel().getModule();
+          IModule module = (testable.getNodePointer().getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(testable.getNodePointer().getModelReference())).getModule();
           SetSequence.fromSet(uniqueModules).addElement(module);
         }
       }

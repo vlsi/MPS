@@ -114,7 +114,7 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
   }
 
   private ModuleReference getFinderModule(GeneratedFinder finder) {
-    SModelDescriptor finderModel = myNodesByFinder.get(finder).getModel();
+    SModelDescriptor finderModel = myNodesByFinder.get(finder).getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(myNodesByFinder.get(finder).getModelReference());
     Language finderLanguage = Language.getLanguageForLanguageAspect(finderModel);
     return finderLanguage.getModuleReference();
   }

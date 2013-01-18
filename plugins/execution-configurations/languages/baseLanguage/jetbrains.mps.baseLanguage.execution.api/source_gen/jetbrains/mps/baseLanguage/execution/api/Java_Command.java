@@ -15,6 +15,8 @@ import jetbrains.mps.execution.api.commands.ListCommandPart;
 import jetbrains.mps.execution.api.commands.ProcessHandlerBuilder;
 import jetbrains.mps.execution.api.commands.KeyValueCommandPart;
 import java.io.FileNotFoundException;
+
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
@@ -371,7 +373,7 @@ public class Java_Command {
 
   private static SModelDescriptor check_yvpt_a0a0a0d(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getModel();
+      return checkedDotOperand.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(checkedDotOperand.getModelReference());
     }
     return null;
   }

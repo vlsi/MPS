@@ -4,6 +4,7 @@ package jetbrains.mps.debug.api.breakpoints;
 
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.SModelRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -43,7 +44,7 @@ public class BreakpointLocation {
 
   @Nullable
   public TraceablePositionInfo getTargetCodePosition() {
-    SModelDescriptor model = myNodePointer.getModel();
+    SModelDescriptor model = myNodePointer.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(myNodePointer.getModelReference());
     if (model == null) {
       return null;
     }
@@ -62,7 +63,7 @@ public class BreakpointLocation {
 
   @Nullable
   public String getTargetUnitName() {
-    return TraceInfoUtil.getUnitName(getTargetCodePosition(), myNodePointer.getModel());
+    return TraceInfoUtil.getUnitName(getTargetCodePosition(), myNodePointer.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(myNodePointer.getModelReference()));
   }
 
   public boolean isValid() {
@@ -93,7 +94,7 @@ public class BreakpointLocation {
         SNode node = myNodePointer.resolve(MPSModuleRepository.getInstance());
         if (node != null) {
           SNode root = node.getContainingRoot();
-          return node + " in " + root + " (" + myNodePointer.getModel().getSModelReference().getSModelFqName() + ")";
+          return node + " in " + root + " (" + (myNodePointer.getModelReference() == null ? null : SModelRepository.getInstance().getModelDescriptor(myNodePointer.getModelReference())).getSModelReference().getSModelFqName() + ")";
         } else {
           return myNodePointer.toString();
         }
