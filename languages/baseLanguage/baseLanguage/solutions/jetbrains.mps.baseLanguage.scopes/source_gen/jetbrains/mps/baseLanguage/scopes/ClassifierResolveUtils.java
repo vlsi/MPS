@@ -346,11 +346,9 @@ public class ClassifierResolveUtils {
       }
     }
 
-    if (1 > 0) {
-      return null;
-    }
+    // <node> 
 
-    // now using old logic 
+    // try to use old logic 
 
     // try to resolve as fq name in current model 
     Iterable<SNode> result;
