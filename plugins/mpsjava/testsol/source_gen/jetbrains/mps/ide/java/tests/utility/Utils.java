@@ -30,6 +30,7 @@ import jetbrains.mps.lang.test.matcher.NodesMatcher;
 import jetbrains.mps.ide.java.newparser.JavaParseException;
 import jetbrains.mps.util.FileUtil;
 import jetbrains.mps.ide.java.sourceStubs.JavaSourceStubModelRoot;
+import java.util.Iterator;
 import java.util.ArrayList;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.smodel.SModelDescriptor;
@@ -72,6 +73,7 @@ public class Utils {
       NodePatcher.removeStatements(expected);
       NodePatcher.fixNonStatic(expected);
       NodePatcher.fixNonStatic(result);
+      NodePatcher.copyImportAttrs(result, expected);
 
       Map<SNode, SNode> nodeMap = MapSequence.fromMap(new HashMap<SNode, SNode>());
       buildClassifierNodeMap(result, expected, nodeMap);
@@ -95,11 +97,17 @@ public class Utils {
     mr.setModule(ourModule);
     mr.setPath(path);
 
-    SNode result = SNodeOperations.cast(((SNode) mr.loadModels().iterator().next().getRootNodes().iterator().next()), "jetbrains.mps.baseLanguage.structure.Classifier");
+    Iterator<org.jetbrains.mps.openapi.model.SModel> models = mr.loadModels().iterator();
+    Assert.assertTrue("No models returned from model root", models.hasNext());
+
+    Iterator<? extends SNode> roots = models.next().getRootNodes().iterator();
+    Assert.assertTrue("The model has no roots", roots.hasNext());
+    SNode result = SNodeOperations.cast((roots.next()), "jetbrains.mps.baseLanguage.structure.Classifier");
 
     NodePatcher.removeStatements(expected);
     NodePatcher.fixNonStatic(expected);
     NodePatcher.fixNonStatic(result);
+    NodePatcher.copyImportAttrs(result, expected);
     // <node> 
     // <node> 
 
@@ -294,6 +302,9 @@ public class Utils {
 
     for (SNode leftRoot : ListSequence.fromList(SModelOperations.getRoots(left, null))) {
       SNode rightBrother = MapSequence.fromMap(rightRootIndex).get(SPropertyOperations.getString(SNodeOperations.cast(leftRoot, "jetbrains.mps.baseLanguage.structure.IValidIdentifier"), "name"));
+      if ((rightBrother != null)) {
+        NodePatcher.copyImportAttrs(leftRoot, rightBrother);
+      }
       buildClassifierNodeMap(SNodeOperations.cast(leftRoot, "jetbrains.mps.baseLanguage.structure.Classifier"), SNodeOperations.cast(rightBrother, "jetbrains.mps.baseLanguage.structure.Classifier"), nodeMap);
       // <node> 
     }
