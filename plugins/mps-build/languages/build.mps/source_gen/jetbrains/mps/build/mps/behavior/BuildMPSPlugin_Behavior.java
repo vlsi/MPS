@@ -11,13 +11,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.build.util.VisibleArtifacts;
 import jetbrains.mps.build.util.RequiredDependenciesBuilder;
 import jetbrains.mps.build.mps.util.VisibleModules;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
-import jetbrains.mps.build.util.DependenciesHelper;
-import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.scope.CompositeScope;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import jetbrains.mps.build.behavior.BuildProject_Behavior;
 import jetbrains.mps.internal.collections.runtime.ISelector;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
+import jetbrains.mps.build.util.DependenciesHelper;
+import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 
 public class BuildMPSPlugin_Behavior {
   public static void init(SNode thisNode) {
@@ -36,17 +36,8 @@ public class BuildMPSPlugin_Behavior {
     // do we have jetbrains.mps.ant in dependencies? 
     VisibleModules visibleModules = new VisibleModules(artifacts.getProject(), artifacts.getGenContext());
     visibleModules.collect();
-    SNode jmAnt = visibleModules.resolve("jetbrains.mps.ant", "77c9a130-703f-4530-bf21-6580757768d0");
-    if ((jmAnt != null)) {
-      if (SNodeOperations.getContainingRoot(jmAnt) != SNodeOperations.getContainingRoot(thisNode)) {
-        SNode jmAntJar = SNodeOperations.as(artifacts.findArtifact(jmAnt), "jetbrains.mps.build.structure.BuildLayout_Jar");
-        if (jmAntJar != null) {
-          DependenciesHelper helper = new DependenciesHelper(artifacts.getGenContext(), artifacts.getProject());
-          helper.artifacts().put(SPropertyOperations.getString(jmAnt, "uuid"), jmAntJar);
-          builder.add(jmAntJar, jmAnt);
-        }
-      }
-    }
+    BuildMPSPlugin_Behavior.call_findModule_3643570831019325688(thisNode, visibleModules, "jetbrains.mps.ant", "77c9a130-703f-4530-bf21-6580757768d0", artifacts, builder);
+    BuildMPSPlugin_Behavior.call_findModule_3643570831019325688(thisNode, visibleModules, "jetbrains.mps.lang.descriptor", "f4ad079d-bc71-4ffb-9600-9328705cf998", artifacts, builder);
   }
 
   public static Scope virtual_getProjectStructureScope_3734116213129936182(SNode thisNode, final SNode kind) {
@@ -58,5 +49,19 @@ public class BuildMPSPlugin_Behavior {
       }).concat(Sequence.fromIterable(Sequence.<DescendantsScope>singleton(DescendantsScope.forNamedElements(BuildPlugin_Behavior.call_getProject_1224588814561866657(thisNode), SLinkOperations.findLinkDeclaration("jetbrains.mps.build.structure.BuildProject", "parts"), kind)))).toGenericArray(DescendantsScope.class));
     }
     return null;
+  }
+
+  public static void call_findModule_3643570831019325688(SNode thisNode, VisibleModules visibleModules, String fqName, String uid, VisibleArtifacts artifacts, RequiredDependenciesBuilder builder) {
+    SNode module = visibleModules.resolve(fqName, uid);
+    if ((module != null)) {
+      if (SNodeOperations.getContainingRoot(module) != SNodeOperations.getContainingRoot(thisNode)) {
+        SNode moduleJar = SNodeOperations.as(artifacts.findArtifact(module), "jetbrains.mps.build.structure.BuildLayout_Node");
+        if (moduleJar != null) {
+          DependenciesHelper helper = new DependenciesHelper(artifacts.getGenContext(), artifacts.getProject());
+          helper.artifacts().put(SPropertyOperations.getString(module, "uuid"), moduleJar);
+          builder.add(moduleJar, module);
+        }
+      }
+    }
   }
 }
