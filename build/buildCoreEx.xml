@@ -22,8 +22,8 @@
   
   <path id="path.mps.ant.path">
     <pathelement location="${artifacts.buildCore}/mps-core/lib/mps-backend.jar" />
-    <pathelement location="${artifacts.IDEA}/lib/jdom.jar" />
-    <pathelement location="${artifacts.IDEA}/lib/log4j.jar" />
+    <pathelement location="${artifacts.buildCore}/mps-core/lib/jdom.jar" />
+    <pathelement location="${artifacts.buildCore}/mps-core/lib/log4j.jar" />
     <pathelement location="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
   </path>
   

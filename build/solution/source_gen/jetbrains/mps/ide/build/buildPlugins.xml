@@ -442,6 +442,11 @@
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.stubs.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
+      <library file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.gtext.jar" />
+      <library file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.gtext.runtime.jar" />
+      <library file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.xml.jar" />
+      <library file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.xmlInternal.jar" />
+      <library file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.xmlSchema.jar" />
       <library file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
       <library file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
       <library file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />

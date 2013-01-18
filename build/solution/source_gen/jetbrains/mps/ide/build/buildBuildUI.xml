@@ -54,6 +54,7 @@
           <module ref="9b80526e-f0bf-4992-bdf5-cee39c1833f3(collections.runtime)" />
           <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
+          <module ref="34f23130-e35c-4795-a45a-85d828b16016(jetbrains.mps.gtext.runtime)" />
           <module ref="ceb47609-02c2-4927-bb6d-d58368388a62(jetbrains.mps.ide.uiLanguage.runtime)" />
           <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
         </dependencies>
@@ -83,6 +84,7 @@
           <module ref="a3e4657f-a76c-45bb-bbda-c764596ecc65(jetbrains.mps.baseLanguage.logging.runtime)" />
           <module ref="d44dab97-aaac-44cb-9745-8a14db674c03(jetbrains.mps.baseLanguage.tuples.runtime)" />
           <module ref="cc7da2f6-419f-4133-a811-31fcd3295a85(jetbrains.mps.debugger.api.api)" />
+          <module ref="34f23130-e35c-4795-a45a-85d828b16016(jetbrains.mps.gtext.runtime)" />
           <module ref="2d3c70e9-aab2-4870-8d8d-6036800e4103(jetbrains.mps.kernel)" />
         </dependencies>
         <sources jar="jetbrains.mps.build.pluginSolution-src.jar" descriptor="pluginSolution.msd" />
@@ -147,6 +149,7 @@
         <fileset file="${artifacts.buildWorkbench}/lib/mps-workbench.jar" />
         <fileset file="${artifacts.buildExecutionPlugin}/plugins/execution-languages/lib/execution-languages.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -154,7 +157,6 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
@@ -163,6 +165,7 @@
         <fileset file="${artifacts.buildBuild}/plugins/mps-build/languages/build/jetbrains.mps.build.workflow.jar" />
         <fileset file="${artifacts.buildCoreEx}/plugins/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
         <fileset file="${artifacts.buildCoreEx}/plugins/mps-core/languages/xml/jetbrains.mps.core.xml.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.gtext.runtime.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac2>
@@ -191,6 +194,7 @@
         <fileset file="${artifacts.buildCore}/mps-core/lib/mps-editor.jar" />
         <fileset file="${artifacts.buildDebuggerPlugin}/plugins/mps-debugger-api/lib/debugger-api.jar" />
         <fileset file="${artifacts.IDEA}/lib/commons-logging-1.1.1.jar" />
+        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
         <fileset file="${artifacts.IDEA}/lib/org.eclipse.jdt.core_3.5.2.v_981_R35x.jar" />
         <fileset file="${artifacts.IDEA}/lib/guava-11.0.1.jar" />
         <fileset file="${artifacts.IDEA}/lib/jdom.jar" />
@@ -198,7 +202,6 @@
         <fileset file="${artifacts.IDEA}/lib/trove4j.jar" />
         <fileset file="${artifacts.IDEA}/lib/xstream.jar" />
         <fileset file="${artifacts.IDEA}/lib/annotations.jar" />
-        <fileset file="${artifacts.IDEA}/lib/commons-lang-2.4.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/asm.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/lib/diffutils-1.2.1.jar" />
         <fileset dir="${artifacts.IDEA}/lib" includes="*.jar" />
@@ -207,6 +210,7 @@
         <fileset file="${artifacts.buildCoreEx}/plugins/mps-core/languages/util/jetbrains.mps.core.properties.jar" />
         <fileset file="${artifacts.buildCoreEx}/plugins/mps-core/languages/xml/jetbrains.mps.core.xml.jar" />
         <fileset file="${artifacts.buildExecutionPlugin}/plugins/execution-languages/languages/jetbrains.mps.execution.configurations.pluginSolution.jar" />
+        <fileset file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.gtext.runtime.jar" />
         <fileset file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       </classpath>
     </javac2>
@@ -272,6 +276,11 @@
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.stubs.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.traceable.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/languageDesign/jetbrains.mps.lang.typesystem.jar" />
+      <library file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.gtext.jar" />
+      <library file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.gtext.runtime.jar" />
+      <library file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.xml.jar" />
+      <library file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.xmlInternal.jar" />
+      <library file="${artifacts.buildCore}/mps-core/languages/xml/jetbrains.mps.xmlSchema.jar" />
       <library file="${artifacts.buildCore}/mps-core/lib/mps-closures.jar" />
       <library file="${artifacts.buildCore}/mps-core/lib/mps-collections.jar" />
       <library file="${artifacts.buildCore}/mps-core/lib/mps-core.jar" />
