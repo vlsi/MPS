@@ -501,7 +501,7 @@
     <nodeInfo nodeId="878521226300774213" fileName="MpsWorker.java" startLine="200" startPosition="0" endLine="203" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="includeModel#(Lorg/jetbrains/mps/openapi/model/SModel;)Z" />
     <nodeInfo nodeId="878521226300774241" fileName="MpsWorker.java" startLine="205" startPosition="36" endLine="208" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="878521226300774257" fileName="MpsWorker.java" startLine="212" startPosition="63" endLine="215" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.ForeachStatement" />
-    <nodeInfo nodeId="878521226300774277" fileName="MpsWorker.java" startLine="218" startPosition="85" endLine="221" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="878521226300774277" fileName="MpsWorker.java" startLine="218" startPosition="87" endLine="221" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="878521226300774301" fileName="MpsWorker.java" startLine="224" startPosition="0" endLine="227" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="compute#()Ljetbrains/mps/project/IModule;" />
     <nodeInfo nodeId="878521226300774364" fileName="MpsWorker.java" startLine="237" startPosition="86" endLine="240" endPosition="13" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
     <nodeInfo nodeId="878521226300774397" fileName="MpsWorker.java" startLine="248" startPosition="38" endLine="251" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
@@ -902,7 +902,7 @@
       <varInfo nodeId="878521226300774458" varName="f" />
       <varInfo nodeId="878521226300774455" varName="models" />
     </scopeInfo>
-    <scopeInfo nodeId="878521226300774276" fileName="MpsWorker.java" startLine="218" startPosition="85" endLine="258" endPosition="5">
+    <scopeInfo nodeId="878521226300774276" fileName="MpsWorker.java" startLine="218" startPosition="87" endLine="258" endPosition="5">
       <varInfo nodeId="878521226300774296" varName="moduleByFile" />
       <varInfo nodeId="878521226300774292" varName="tmpmodules" />
     </scopeInfo>

@@ -74,7 +74,7 @@ public class GeneratorWorker extends MpsWorker {
     }
   }
 
-  private void setGenerationProperties() {
+  protected void setGenerationProperties() {
     boolean strictMode = Boolean.parseBoolean(myWhatToDo.getProperty(ScriptProperties.STRICT_MODE));
     GenerationSettingsProvider.getInstance().getGenerationSettings().setStrictMode(strictMode);
     if (strictMode) {

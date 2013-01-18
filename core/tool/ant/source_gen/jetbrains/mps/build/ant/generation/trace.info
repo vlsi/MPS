@@ -159,5 +159,152 @@
     </scopeInfo>
     <unitInfo nodeId="4003657351907891908" fileName="TestGenerationOnTeamcity.java" startLine="13" startPosition="0" endLine="73" endPosition="0" unitName="jetbrains.mps.build.ant.generation.TestGenerationOnTeamcity" />
   </root>
+  <root nodeRef="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)/4263887295358464059">
+    <nodeInfo nodeId="3643570831018835018" fileName="GenerateChunksTask.java" startLine="14" startPosition="3" endLine="15" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="3643570831018835024" fileName="GenerateChunksTask.java" startLine="15" startPosition="81" endLine="16" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="6255157494753346969" fileName="GenerateChunksTask.java" startLine="22" startPosition="37" endLine="23" endPosition="67" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5682549678865142841" fileName="GenerateChunksTask.java" startLine="26" startPosition="47" endLine="27" endPosition="66" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5682549678865142881" fileName="GenerateChunksTask.java" startLine="30" startPosition="57" endLine="31" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5682549678865142889" fileName="GenerateChunksTask.java" startLine="32" startPosition="23" endLine="33" endPosition="55" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5682549678865142920" fileName="GenerateChunksTask.java" startLine="37" startPosition="49" endLine="38" endPosition="87" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5682549678865142940" fileName="GenerateChunksTask.java" startLine="41" startPosition="37" endLine="42" endPosition="86" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5682549678865142964" fileName="GenerateChunksTask.java" startLine="45" startPosition="53" endLine="46" endPosition="91" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5682549678865142984" fileName="GenerateChunksTask.java" startLine="49" startPosition="39" endLine="50" endPosition="88" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="5682549678865143000" fileName="GenerateChunksTask.java" startLine="54" startPosition="33" endLine="55" endPosition="50" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5682549678865143123" fileName="GenerateChunksTask.java" startLine="59" startPosition="44" endLine="60" endPosition="52" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5682549678865143130" fileName="GenerateChunksTask.java" startLine="60" startPosition="52" endLine="61" endPosition="63" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5682549678865143137" fileName="GenerateChunksTask.java" startLine="61" startPosition="63" endLine="62" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5682549678865143144" fileName="GenerateChunksTask.java" startLine="62" startPosition="72" endLine="63" endPosition="65" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5682549678865143151" fileName="GenerateChunksTask.java" startLine="63" startPosition="65" endLine="64" endPosition="80" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5682549678865269402" fileName="GenerateChunksTask.java" startLine="64" startPosition="80" endLine="65" endPosition="81" conceptFqName="jetbrains.mps.baseLanguage.structure.LocalVariableDeclarationStatement" />
+    <nodeInfo nodeId="5682549678865143158" fileName="GenerateChunksTask.java" startLine="65" startPosition="81" endLine="66" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5682549678865143161" fileName="GenerateChunksTask.java" startLine="67" startPosition="52" endLine="68" endPosition="18" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5682549678865143163" fileName="GenerateChunksTask.java" startLine="68" startPosition="18" endLine="69" endPosition="72" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5682549678865143182" fileName="GenerateChunksTask.java" startLine="70" startPosition="112" endLine="71" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5682549678865143184" fileName="GenerateChunksTask.java" startLine="71" startPosition="28" endLine="72" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5682549678865143191" fileName="GenerateChunksTask.java" startLine="72" startPosition="73" endLine="73" endPosition="84" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5682549678865143207" fileName="GenerateChunksTask.java" startLine="74" startPosition="114" endLine="75" endPosition="26" conceptFqName="jetbrains.mps.baseLanguage.structure.SingleLineComment" />
+    <nodeInfo nodeId="5682549678865143209" fileName="GenerateChunksTask.java" startLine="75" startPosition="26" endLine="76" endPosition="76" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5682549678865143216" fileName="GenerateChunksTask.java" startLine="76" startPosition="76" endLine="77" endPosition="73" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5682549678865465542" fileName="GenerateChunksTask.java" startLine="78" startPosition="72" endLine="79" endPosition="83" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="5682549678865143225" fileName="GenerateChunksTask.java" startLine="81" startPosition="12" endLine="82" endPosition="103" conceptFqName="jetbrains.mps.baseLanguage.structure.ThrowStatement" />
+    <nodeInfo nodeId="5682549678865143229" fileName="GenerateChunksTask.java" startLine="83" startPosition="5" endLine="84" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.Statement" />
+    <nodeInfo nodeId="5682549678865143230" fileName="GenerateChunksTask.java" startLine="84" startPosition="0" endLine="85" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="4263887295358464074" fileName="GenerateChunksTask.java" startLine="19" startPosition="0" endLine="21" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="GenerateChunksTask#()V" />
+    <nodeInfo nodeId="5682549678865143223" fileName="GenerateChunksTask.java" startLine="81" startPosition="10" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.BlockStatement" />
+    <nodeInfo nodeId="5682549678865142818" fileName="GenerateChunksTask.java" startLine="22" startPosition="0" endLine="25" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getWorkerClass#()Ljava/lang/String;" />
+    <nodeInfo nodeId="5682549678865142837" fileName="GenerateChunksTask.java" startLine="26" startPosition="0" endLine="29" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addConfiguredChunk#(Ljetbrains/mps/build/ant/generation/Chunk;)V" />
+    <nodeInfo nodeId="5682549678865142887" fileName="GenerateChunksTask.java" startLine="31" startPosition="30" endLine="34" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5682549678865142914" fileName="GenerateChunksTask.java" startLine="37" startPosition="0" endLine="40" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setStrictMode#(Z)V" />
+    <nodeInfo nodeId="5682549678865142936" fileName="GenerateChunksTask.java" startLine="41" startPosition="0" endLine="44" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getStrictMode#()Z" />
+    <nodeInfo nodeId="5682549678865142958" fileName="GenerateChunksTask.java" startLine="45" startPosition="0" endLine="48" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setParallelMode#(Z)V" />
+    <nodeInfo nodeId="5682549678865142980" fileName="GenerateChunksTask.java" startLine="49" startPosition="0" endLine="52" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getParallelMode#()Z" />
+    <nodeInfo nodeId="5682549678865431950" fileName="GenerateChunksTask.java" startLine="77" startPosition="73" endLine="80" endPosition="7" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5682549678865142996" fileName="GenerateChunksTask.java" startLine="53" startPosition="0" endLine="57" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="checkMpsHome#()V" />
+    <nodeInfo nodeId="5682549678865142877" fileName="GenerateChunksTask.java" startLine="30" startPosition="0" endLine="36" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addConfiguredLibrary#(Ljetbrains/mps/build/ant/LibraryDataType;)V" />
+    <nodeInfo nodeId="5682549678865143159" fileName="GenerateChunksTask.java" startLine="66" startPosition="0" endLine="83" endPosition="5" conceptFqName="jetbrains.mps.baseLanguage.structure.IfStatement" />
+    <nodeInfo nodeId="5682549678865143118" fileName="GenerateChunksTask.java" startLine="58" startPosition="0" endLine="87" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="calculateClassPath#()Ljava/util/Set;" />
+    <scopeInfo nodeId="4263887295358464077" fileName="GenerateChunksTask.java" startLine="19" startPosition="31" endLine="19" endPosition="31" />
+    <scopeInfo nodeId="5682549678865142820" fileName="GenerateChunksTask.java" startLine="22" startPosition="37" endLine="23" endPosition="67" />
+    <scopeInfo nodeId="5682549678865142840" fileName="GenerateChunksTask.java" startLine="26" startPosition="47" endLine="27" endPosition="66" />
+    <scopeInfo nodeId="5682549678865142888" fileName="GenerateChunksTask.java" startLine="32" startPosition="23" endLine="33" endPosition="55" />
+    <scopeInfo nodeId="5682549678865142919" fileName="GenerateChunksTask.java" startLine="37" startPosition="49" endLine="38" endPosition="87" />
+    <scopeInfo nodeId="5682549678865142939" fileName="GenerateChunksTask.java" startLine="41" startPosition="37" endLine="42" endPosition="86" />
+    <scopeInfo nodeId="5682549678865142963" fileName="GenerateChunksTask.java" startLine="45" startPosition="53" endLine="46" endPosition="91" />
+    <scopeInfo nodeId="5682549678865142983" fileName="GenerateChunksTask.java" startLine="49" startPosition="39" endLine="50" endPosition="88" />
+    <scopeInfo nodeId="5682549678865142999" fileName="GenerateChunksTask.java" startLine="54" startPosition="33" endLine="55" endPosition="50" />
+    <scopeInfo nodeId="5682549678865431952" fileName="GenerateChunksTask.java" startLine="78" startPosition="72" endLine="79" endPosition="83" />
+    <scopeInfo nodeId="5682549678865143224" fileName="GenerateChunksTask.java" startLine="81" startPosition="12" endLine="82" endPosition="103" />
+    <scopeInfo nodeId="3643570831018835011" fileName="GenerateChunksTask.java" startLine="14" startPosition="3" endLine="16" endPosition="84" />
+    <scopeInfo nodeId="4263887295358464074" fileName="GenerateChunksTask.java" startLine="19" startPosition="0" endLine="21" endPosition="0" />
+    <scopeInfo nodeId="5682549678865143160" fileName="GenerateChunksTask.java" startLine="67" startPosition="52" endLine="69" endPosition="72" />
+    <scopeInfo nodeId="5682549678865142818" fileName="GenerateChunksTask.java" startLine="22" startPosition="0" endLine="25" endPosition="0" />
+    <scopeInfo nodeId="5682549678865142837" fileName="GenerateChunksTask.java" startLine="26" startPosition="0" endLine="29" endPosition="0">
+      <varInfo nodeId="5682549678865142851" varName="chunk" />
+    </scopeInfo>
+    <scopeInfo nodeId="5682549678865142914" fileName="GenerateChunksTask.java" startLine="37" startPosition="0" endLine="40" endPosition="0">
+      <varInfo nodeId="5682549678865142917" varName="strictMode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5682549678865142936" fileName="GenerateChunksTask.java" startLine="41" startPosition="0" endLine="44" endPosition="0" />
+    <scopeInfo nodeId="5682549678865142958" fileName="GenerateChunksTask.java" startLine="45" startPosition="0" endLine="48" endPosition="0">
+      <varInfo nodeId="5682549678865142959" varName="parallelMode" />
+    </scopeInfo>
+    <scopeInfo nodeId="5682549678865142980" fileName="GenerateChunksTask.java" startLine="49" startPosition="0" endLine="52" endPosition="0" />
+    <scopeInfo nodeId="5682549678865143181" fileName="GenerateChunksTask.java" startLine="70" startPosition="112" endLine="73" endPosition="84" />
+    <scopeInfo nodeId="5682549678865142880" fileName="GenerateChunksTask.java" startLine="30" startPosition="57" endLine="34" endPosition="5">
+      <varInfo nodeId="5682549678865142882" varName="file" />
+    </scopeInfo>
+    <scopeInfo nodeId="5682549678865142996" fileName="GenerateChunksTask.java" startLine="53" startPosition="0" endLine="57" endPosition="0" />
+    <scopeInfo nodeId="5682549678865142877" fileName="GenerateChunksTask.java" startLine="30" startPosition="0" endLine="36" endPosition="0">
+      <varInfo nodeId="5682549678865142899" varName="jar" />
+    </scopeInfo>
+    <scopeInfo nodeId="5682549678865143206" fileName="GenerateChunksTask.java" startLine="74" startPosition="114" endLine="80" endPosition="7" />
+    <scopeInfo nodeId="5682549678865143122" fileName="GenerateChunksTask.java" startLine="59" startPosition="44" endLine="85" endPosition="21">
+      <varInfo nodeId="5682549678865143124" varName="classPath" />
+      <varInfo nodeId="5682549678865143145" varName="ideaHome" />
+      <varInfo nodeId="5682549678865143152" varName="mpsCoreHome" />
+      <varInfo nodeId="5682549678865143131" varName="mpsHome" />
+      <varInfo nodeId="5682549678865269405" varName="mpsWorkbenchHome" />
+      <varInfo nodeId="5682549678865143138" varName="pluginHome" />
+    </scopeInfo>
+    <scopeInfo nodeId="5682549678865143118" fileName="GenerateChunksTask.java" startLine="58" startPosition="0" endLine="87" endPosition="0" />
+    <unitInfo nodeId="4263887295358464059" fileName="GenerateChunksTask.java" startLine="13" startPosition="0" endLine="90" endPosition="0" unitName="jetbrains.mps.build.ant.generation.GenerateChunksTask" />
+  </root>
+  <root nodeRef="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)/9096318311151691260">
+    <nodeInfo nodeId="5922356631317911885" fileName="Chunk.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBootstrap" />
+    <nodeInfo nodeId="5922356631317911816" fileName="Chunk.java" startLine="11" startPosition="0" endLine="12" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModules" />
+    <nodeInfo nodeId="5922356631317911825" fileName="Chunk.java" startLine="16" startPosition="58" endLine="17" endPosition="45" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="4263887295358372890" fileName="Chunk.java" startLine="20" startPosition="36" endLine="21" endPosition="21" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9096318311151865526" fileName="Chunk.java" startLine="24" startPosition="33" endLine="25" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9096318311151865535" fileName="Chunk.java" startLine="28" startPosition="49" endLine="29" endPosition="30" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9096318311151691262" fileName="Chunk.java" startLine="13" startPosition="0" endLine="15" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="Chunk#()V" />
+    <nodeInfo nodeId="9096318311151865495" fileName="Chunk.java" startLine="16" startPosition="0" endLine="19" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="addConfiguredModule#(Ljetbrains/mps/build/ant/generation/ModuleChunkPart;)V" />
+    <nodeInfo nodeId="4263887295358372879" fileName="Chunk.java" startLine="20" startPosition="0" endLine="23" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getModules#()Ljava/util/List;" />
+    <nodeInfo nodeId="9096318311151865509" fileName="Chunk.java" startLine="24" startPosition="0" endLine="27" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBootstrap#()Z" />
+    <nodeInfo nodeId="9096318311151865528" fileName="Chunk.java" startLine="28" startPosition="0" endLine="31" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setBootstrap#(Z)V" />
+    <scopeInfo nodeId="9096318311151691265" fileName="Chunk.java" startLine="13" startPosition="18" endLine="13" endPosition="18" />
+    <scopeInfo nodeId="9096318311151865497" fileName="Chunk.java" startLine="16" startPosition="58" endLine="17" endPosition="45" />
+    <scopeInfo nodeId="4263887295358372882" fileName="Chunk.java" startLine="20" startPosition="36" endLine="21" endPosition="21" />
+    <scopeInfo nodeId="9096318311151865512" fileName="Chunk.java" startLine="24" startPosition="33" endLine="25" endPosition="23" />
+    <scopeInfo nodeId="9096318311151865531" fileName="Chunk.java" startLine="28" startPosition="49" endLine="29" endPosition="30" />
+    <scopeInfo nodeId="9096318311151691262" fileName="Chunk.java" startLine="13" startPosition="0" endLine="15" endPosition="0" />
+    <scopeInfo nodeId="9096318311151865495" fileName="Chunk.java" startLine="16" startPosition="0" endLine="19" endPosition="0">
+      <varInfo nodeId="9096318311151865499" varName="chunk" />
+    </scopeInfo>
+    <scopeInfo nodeId="4263887295358372879" fileName="Chunk.java" startLine="20" startPosition="0" endLine="23" endPosition="0" />
+    <scopeInfo nodeId="9096318311151865509" fileName="Chunk.java" startLine="24" startPosition="0" endLine="27" endPosition="0" />
+    <scopeInfo nodeId="9096318311151865528" fileName="Chunk.java" startLine="28" startPosition="0" endLine="31" endPosition="0">
+      <varInfo nodeId="9096318311151865532" varName="bootrastrap" />
+    </scopeInfo>
+    <unitInfo nodeId="9096318311151691260" fileName="Chunk.java" startLine="9" startPosition="0" endLine="32" endPosition="0" unitName="jetbrains.mps.build.ant.generation.Chunk" />
+  </root>
+  <root nodeRef="r:f80180a9-2bac-487b-83fc-3ef65f97aea3(jetbrains.mps.build.ant.generation)/9096318311151864960">
+    <nodeInfo nodeId="9096318311151865642" fileName="ModuleChunkPart.java" startLine="9" startPosition="0" endLine="10" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myModuleFile" />
+    <nodeInfo nodeId="9096318311151865672" fileName="ModuleChunkPart.java" startLine="10" startPosition="0" endLine="11" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.FieldDeclaration" propertyString="myBootstrap" />
+    <nodeInfo nodeId="9096318311151865653" fileName="ModuleChunkPart.java" startLine="15" startPosition="34" endLine="16" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9096318311151865670" fileName="ModuleChunkPart.java" startLine="19" startPosition="25" endLine="20" endPosition="24" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9096318311151865712" fileName="ModuleChunkPart.java" startLine="23" startPosition="47" endLine="24" endPosition="28" conceptFqName="jetbrains.mps.baseLanguage.structure.ExpressionStatement" />
+    <nodeInfo nodeId="9096318311151865729" fileName="ModuleChunkPart.java" startLine="27" startPosition="33" endLine="28" endPosition="23" conceptFqName="jetbrains.mps.baseLanguage.structure.ReturnStatement" />
+    <nodeInfo nodeId="9096318311151864962" fileName="ModuleChunkPart.java" startLine="12" startPosition="0" endLine="14" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.ConstructorDeclaration" propertyString="ModuleChunkPart#()V" />
+    <nodeInfo nodeId="9096318311151865647" fileName="ModuleChunkPart.java" startLine="15" startPosition="0" endLine="18" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setFile#(Ljava/io/File;)V" />
+    <nodeInfo nodeId="9096318311151865665" fileName="ModuleChunkPart.java" startLine="19" startPosition="0" endLine="22" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getFile#()Ljava/io/File;" />
+    <nodeInfo nodeId="9096318311151865706" fileName="ModuleChunkPart.java" startLine="23" startPosition="0" endLine="26" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="setBootstrap#(Z)V" />
+    <nodeInfo nodeId="9096318311151865724" fileName="ModuleChunkPart.java" startLine="27" startPosition="0" endLine="30" endPosition="0" conceptFqName="jetbrains.mps.baseLanguage.structure.InstanceMethodDeclaration" propertyString="getBootstrap#()Z" />
+    <scopeInfo nodeId="9096318311151864965" fileName="ModuleChunkPart.java" startLine="12" startPosition="28" endLine="12" endPosition="28" />
+    <scopeInfo nodeId="9096318311151865649" fileName="ModuleChunkPart.java" startLine="15" startPosition="34" endLine="16" endPosition="24" />
+    <scopeInfo nodeId="9096318311151865668" fileName="ModuleChunkPart.java" startLine="19" startPosition="25" endLine="20" endPosition="24" />
+    <scopeInfo nodeId="9096318311151865709" fileName="ModuleChunkPart.java" startLine="23" startPosition="47" endLine="24" endPosition="28" />
+    <scopeInfo nodeId="9096318311151865727" fileName="ModuleChunkPart.java" startLine="27" startPosition="33" endLine="28" endPosition="23" />
+    <scopeInfo nodeId="9096318311151864962" fileName="ModuleChunkPart.java" startLine="12" startPosition="0" endLine="14" endPosition="0" />
+    <scopeInfo nodeId="9096318311151865647" fileName="ModuleChunkPart.java" startLine="15" startPosition="0" endLine="18" endPosition="0">
+      <varInfo nodeId="9096318311151865651" varName="file" />
+    </scopeInfo>
+    <scopeInfo nodeId="9096318311151865665" fileName="ModuleChunkPart.java" startLine="19" startPosition="0" endLine="22" endPosition="0" />
+    <scopeInfo nodeId="9096318311151865706" fileName="ModuleChunkPart.java" startLine="23" startPosition="0" endLine="26" endPosition="0">
+      <varInfo nodeId="9096318311151865710" varName="bootstrap" />
+    </scopeInfo>
+    <scopeInfo nodeId="9096318311151865724" fileName="ModuleChunkPart.java" startLine="27" startPosition="0" endLine="30" endPosition="0" />
+    <unitInfo nodeId="9096318311151864960" fileName="ModuleChunkPart.java" startLine="8" startPosition="0" endLine="33" endPosition="0" unitName="jetbrains.mps.build.ant.generation.ModuleChunkPart" />
+  </root>
 </debugInfo>
 
