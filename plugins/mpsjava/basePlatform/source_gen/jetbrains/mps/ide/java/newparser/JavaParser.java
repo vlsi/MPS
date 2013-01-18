@@ -13,22 +13,22 @@ import org.jetbrains.mps.openapi.model.SNode;
 import java.util.ArrayList;
 import org.eclipse.jdt.internal.compiler.ast.CompilationUnitDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.ASTNode;
+import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import org.eclipse.jdt.internal.compiler.ast.AbstractMethodDeclaration;
 import org.eclipse.jdt.internal.compiler.ast.Statement;
 import org.eclipse.jdt.internal.core.util.RecordedParsingInformation;
 import jetbrains.mps.baseLanguage.closures.runtime.Wrappers;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
-import jetbrains.mps.internal.collections.runtime.ListSequence;
 import jetbrains.mps.internal.collections.runtime.Sequence;
 import java.util.Comparator;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SPropertyOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
 import jetbrains.mps.internal.collections.runtime.IWhereFilter;
-import org.eclipse.jdt.internal.compiler.ast.ImportReference;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
+import org.eclipse.jdt.internal.compiler.ast.ImportReference;
 import jetbrains.mps.baseLanguage.closures.runtime._FunctionTypes;
 import jetbrains.mps.smodel.behaviour.BehaviorReflection;
 import jetbrains.mps.smodel.ModelAccess;
@@ -85,6 +85,7 @@ public class JavaParser {
           for (ASTNode astNode : astTypes) {
             SNode root = converter.convertRoot(astNode);
             annotateWithmports(compRes, root);
+            ListSequence.fromList(roots).addElement(root);
           }
           resultNodes = roots;
         }
@@ -205,13 +206,15 @@ public class JavaParser {
   }
 
   public void annotateWithmports(CompilationUnitDeclaration compResult, SNode clas) {
-    SNode imports = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.JavaImports", null);
+    // <node> 
+    AttributeOperations.createAndSetAttrbiute(clas, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")), "jetbrains.mps.baseLanguage.structure.JavaImports");
     if (compResult.imports != null) {
       for (ImportReference imprt : compResult.imports) {
-        ListSequence.fromList(SLinkOperations.getTargets(imports, "entries", true)).addElement(makeImport(imprt));
+        // <node> 
+        ListSequence.fromList(SLinkOperations.getTargets(AttributeOperations.getAttribute(clas, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports"))), "entries", true)).addElement(makeImport(imprt));
       }
     }
-    AttributeOperations.setAttribute(clas, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")), imports);
+    // <node> 
   }
 
   private SNode makeImport(ImportReference impRef) {
@@ -224,11 +227,7 @@ public class JavaParser {
 
     char[][] toks = impRef.getImportName();
     StringBuffer sb = new StringBuffer();
-    int until = (onDemand ?
-      toks.length :
-      toks.length - 1
-    );
-    for (int i = 0; i < until; i++) {
+    for (int i = 0; i < toks.length; i++) {
       String tok = new String(toks[i]);
       SNode token = SConceptOperations.createNewNode("jetbrains.mps.baseLanguage.structure.StringToken", null);
       SPropertyOperations.set(token, "value", tok);

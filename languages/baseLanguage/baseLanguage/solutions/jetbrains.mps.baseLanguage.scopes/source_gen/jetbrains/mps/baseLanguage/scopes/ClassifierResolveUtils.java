@@ -26,12 +26,13 @@ import jetbrains.mps.lang.smodel.generator.smodelAdapter.AttributeOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.IAttributeDescriptor;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SConceptOperations;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SLinkOperations;
+import jetbrains.mps.baseLanguage.behavior.Tokens_Behavior;
+import jetbrains.mps.smodel.SModelRepository;
+import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.internal.collections.runtime.ISelector;
 import java.util.ListIterator;
 import jetbrains.mps.internal.collections.runtime.IVisitor;
 import org.jetbrains.mps.openapi.module.SModuleScope;
-import jetbrains.mps.smodel.SModelReference;
-import jetbrains.mps.smodel.SModelRepository;
 
 public class ClassifierResolveUtils {
   private ClassifierResolveUtils() {
@@ -225,7 +226,6 @@ public class ClassifierResolveUtils {
     // walk up to our root and see if it has java import data attached 
     //   if yes, use it 
     //   if no, only then traverse all appropriate models 
-    //          and see if refText starts with a model (i.e. java package) name 
 
 
     StringTokenizer tokenizer = new StringTokenizer(refText, ".");
@@ -271,12 +271,54 @@ public class ClassifierResolveUtils {
 
     SNode root = Sequence.fromIterable(getPathToRoot(contextNode)).last();
     SNode javaImports = AttributeOperations.getAttribute(root, new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")));
-    if (javaImports != null && ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).isNotEmpty()) {
-      // TODO walk thru single-type importrs 
-      // TODO put on-demand imports to models 
-      models = ListSequence.fromList(new ArrayList<org.jetbrains.mps.openapi.model.SModel>());
-    } else {
+    if (javaImports == null) {
       models = moduleScope.getModels();
+
+    } else {
+      // walk thru single-type importrs 
+      // TODO static imports are not handled yet 
+      for (SNode imp : ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return !(SPropertyOperations.getBoolean(it, "onDemand"));
+        }
+      })) {
+        if (!(token.equals(SPropertyOperations.getString(ListSequence.fromList(SLinkOperations.getTargets(imp, "token", true)).last(), "value")))) {
+          continue;
+        }
+        String pkgName = Tokens_Behavior.call_stringRep_6148840541591441572(imp, 1);
+        // FIXME this ignores scope 
+        List<SModelDescriptor> ms = SModelRepository.getInstance().getModelDescriptorsByModelName(pkgName);
+        for (org.jetbrains.mps.openapi.model.SModel model : ms) {
+          for (SNode r : model.getRootNodes()) {
+            if (!(SNodeOperations.isInstanceOf(r, "jetbrains.mps.baseLanguage.structure.Classifier"))) {
+              continue;
+            }
+            if (token.equals(SPropertyOperations.getString(SNodeOperations.cast(r, "jetbrains.mps.baseLanguage.structure.Classifier"), "name"))) {
+              return SNodeOperations.cast(r, "jetbrains.mps.baseLanguage.structure.Classifier");
+            }
+          }
+        }
+        // if there are single-type imports and we haven't found the type, then it's over 
+        return null;
+      }
+
+      // putting on-demand imports into model list 
+      List<org.jetbrains.mps.openapi.model.SModel> javaImportedModels = ListSequence.fromList(new ArrayList<org.jetbrains.mps.openapi.model.SModel>());
+      // Actually it must be wider than just this model. 
+      // It must be the current package, i.e. plus other models with the same name (?) 
+      ListSequence.fromList(javaImportedModels).addElement(SNodeOperations.getModel(contextNode).getModelDescriptor());
+      ListSequence.fromList(javaImportedModels).addElement(SModelRepository.getInstance().getModelDescriptor(new SModelReference("java.lang", "java_stub")).getSModel().getModelDescriptor());
+      for (SNode imp : ListSequence.fromList(SLinkOperations.getTargets(javaImports, "entries", true)).where(new IWhereFilter<SNode>() {
+        public boolean accept(SNode it) {
+          return SPropertyOperations.getBoolean(it, "onDemand");
+        }
+      })) {
+        String pkgName = Tokens_Behavior.call_stringRep_6148840541591415725(imp);
+        // FIXME this ignores scope 
+        List<SModelDescriptor> ms = SModelRepository.getInstance().getModelDescriptorsByModelName(pkgName);
+        ListSequence.fromList(javaImportedModels).addSequence(ListSequence.fromList(ms));
+      }
+      models = javaImportedModels;
     }
 
     // let's see if its an fqName (i.e. starting with a package name) 
@@ -313,7 +355,7 @@ public class ClassifierResolveUtils {
     // try to resolve as fq name in current model 
     Iterable<SNode> result;
 
-    result = resolveClassifierByFqName(check_8z6r2b_a0a74a31(SNodeOperations.getModel(contextNode)), refText);
+    result = resolveClassifierByFqName(check_8z6r2b_a0a64a31(SNodeOperations.getModel(contextNode)), refText);
     if (Sequence.fromIterable(result).isNotEmpty()) {
       return ((int) Sequence.fromIterable(result).count() == 1 ?
         Sequence.fromIterable(result).first() :
@@ -322,7 +364,7 @@ public class ClassifierResolveUtils {
     }
 
     // try to resolve as fq name in current scope 
-    Iterable<IModule> visibleModules = check_8z6r2b_a0a15a31(check_8z6r2b_a0a0zb0n(check_8z6r2b_a0a0a15a31(SNodeOperations.getModel(contextNode)))).getVisibleModules();
+    Iterable<IModule> visibleModules = check_8z6r2b_a0a05a31(check_8z6r2b_a0a0yb0n(check_8z6r2b_a0a0a05a31(SNodeOperations.getModel(contextNode)))).getVisibleModules();
     result = resolveClassifierByFqNameWithNonStubPriority(Sequence.fromIterable(visibleModules).translate(new ITranslator2<IModule, SModelDescriptor>() {
       public Iterable<SModelDescriptor> translate(IModule it) {
         return it.getOwnModelDescriptors();
@@ -532,28 +574,28 @@ public class ClassifierResolveUtils {
     return null;
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a74a31(SModel checkedDotOperand) {
+  private static SModelDescriptor check_8z6r2b_a0a64a31(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }
     return null;
   }
 
-  private static IScope check_8z6r2b_a0a15a31(IModule checkedDotOperand) {
+  private static IScope check_8z6r2b_a0a05a31(IModule checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getScope();
     }
     return null;
   }
 
-  private static IModule check_8z6r2b_a0a0zb0n(SModelDescriptor checkedDotOperand) {
+  private static IModule check_8z6r2b_a0a0yb0n(SModelDescriptor checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModule();
     }
     return null;
   }
 
-  private static SModelDescriptor check_8z6r2b_a0a0a15a31(SModel checkedDotOperand) {
+  private static SModelDescriptor check_8z6r2b_a0a0a05a31(SModel checkedDotOperand) {
     if (null != checkedDotOperand) {
       return checkedDotOperand.getModelDescriptor();
     }

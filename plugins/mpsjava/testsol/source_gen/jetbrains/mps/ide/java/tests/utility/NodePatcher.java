@@ -117,8 +117,17 @@ public class NodePatcher {
 
   public static void removeSModelAttrs(SNode node) {
     for (SNode attr : ListSequence.fromList(AttributeOperations.getAttributeList(node, new IAttributeDescriptor.AllAttributes()))) {
+      if (SNodeOperations.getConceptDeclaration(attr) == SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")) {
+        continue;
+      }
       SNodeOperations.detachNode(attr);
       SNodeOperations.deleteNode(attr);
+    }
+  }
+
+  public static void copyImportAttrs(SNode from, SNode to) {
+    if ((AttributeOperations.getAttribute(SNodeOperations.cast(from, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports"))) != null)) {
+      AttributeOperations.setAttribute(SNodeOperations.cast(to, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")), SNodeOperations.copyNode(AttributeOperations.getAttribute(SNodeOperations.cast(from, "jetbrains.mps.baseLanguage.structure.Classifier"), new IAttributeDescriptor.NodeAttribute(SConceptOperations.findConceptDeclaration("jetbrains.mps.baseLanguage.structure.JavaImports")))));
     }
   }
 }
