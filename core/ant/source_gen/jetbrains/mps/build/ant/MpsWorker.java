@@ -53,7 +53,7 @@ public abstract class MpsWorker {
   protected final List<String> myWarnings = new ArrayList<String>();
   protected final WhatToDo myWhatToDo;
   private final MpsWorker.AntLogger myLogger;
-  private Environment myEnvironment = new Environment();
+  protected Environment myEnvironment = new Environment();
 
   public MpsWorker(WhatToDo whatToDo) {
     this(whatToDo, new MpsWorker.LogLogger());
@@ -226,7 +226,7 @@ public abstract class MpsWorker {
     }
   }
 
-  private void processModuleFile(final File moduleFile, final Set<IModule> modules) {
+  protected void processModuleFile(final File moduleFile, final Set<IModule> modules) {
     if (DescriptorIOFacade.getInstance().fromFileType(FileSystem.getInstance().getFileByPath(moduleFile.getPath())) == null) {
       return;
     }

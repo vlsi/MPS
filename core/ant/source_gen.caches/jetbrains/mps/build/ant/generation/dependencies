@@ -1,5 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dependenciesRoot>
+  <dependency className="jetbrains.mps.build.ant.generation.Chunk" file="Chunk.java">
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.ArrayList" />
+    <classNode dependClassName="java.util.List" />
+    <classNode dependClassName="jetbrains.mps.build.ant.generation.ModuleChunkPart" />
+    <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
+  </dependency>
   <dependency className="jetbrains.mps.build.ant.generation.ConsoleMessageFormat" file="ConsoleMessageFormat.java">
     <classNode dependClassName="java.lang.CharSequence" />
     <classNode dependClassName="java.lang.Override" />
@@ -9,6 +16,21 @@
     <classNode dependClassName="org.jetbrains.annotations.NotNull" />
     <classNode extendsClassName="jetbrains.mps.build.ant.IBuildServerMessageFormat" />
   </dependency>
+  <dependency className="jetbrains.mps.build.ant.generation.GenerateChunksTask" file="GenerateChunksTask.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode dependClassName="java.lang.Boolean" />
+    <classNode dependClassName="java.lang.Class" />
+    <classNode dependClassName="java.lang.Override" />
+    <classNode dependClassName="java.lang.String" />
+    <classNode dependClassName="java.util.LinkedHashSet" />
+    <classNode dependClassName="java.util.Set" />
+    <classNode dependClassName="jetbrains.mps.build.ant.LibraryDataType" />
+    <classNode dependClassName="jetbrains.mps.build.ant.MpsWorker" />
+    <classNode dependClassName="jetbrains.mps.build.ant.generation.Chunk" />
+    <classNode dependClassName="jetbrains.mps.build.ant.generation.workers.ChunksGeneratorWorker" />
+    <classNode dependClassName="org.apache.tools.ant.BuildException" />
+    <classNode extendsClassName="jetbrains.mps.build.ant.MpsLoadTask" />
+  </dependency>
   <dependency className="jetbrains.mps.build.ant.generation.GenerateTask" file="GenerateTask.java">
     <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
@@ -16,6 +38,10 @@
     <classNode dependClassName="jetbrains.mps.build.ant.MpsWorker" />
     <classNode dependClassName="jetbrains.mps.build.ant.generation.workers.GeneratorWorker" />
     <classNode extendsClassName="jetbrains.mps.build.ant.MpsLoadTask" />
+  </dependency>
+  <dependency className="jetbrains.mps.build.ant.generation.ModuleChunkPart" file="ModuleChunkPart.java">
+    <classNode dependClassName="java.io.File" />
+    <classNode extendsClassName="org.apache.tools.ant.types.DataType" />
   </dependency>
   <dependency className="jetbrains.mps.build.ant.generation.PerfomanceReport" file="PerfomanceReport.java">
     <classNode dependClassName="java.io.File" />

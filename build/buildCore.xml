@@ -4754,7 +4754,7 @@
   
   <target name="generate" depends="declare-mps-tasks">
     <echo message="generating" />
-    <mps.generate parallelMode="true" fork="true">
+    <mps.generate.chunks parallelMode="true" fork="true">
       <chunk>
         <module file="${mps_home}/languages/baseLanguage/logging/runtime/runtime.msd" />
       </chunk>
@@ -4866,7 +4866,7 @@
       <chunk>
         <module file="${mps_home}/languages/languageDesign/editor/languages/editorTest/editorTest.mpl" />
       </chunk>
-    </mps.generate>
+    </mps.generate.chunks>
   </target>
   
   <target name="cleanSources">

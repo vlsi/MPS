@@ -294,6 +294,7 @@
     <classNode dependClassName="java.io.File" />
     <classNode dependClassName="java.io.FileNotFoundException" />
     <classNode dependClassName="java.io.IOException" />
+    <classNode dependClassName="java.lang.Boolean" />
     <classNode dependClassName="java.lang.Class" />
     <classNode dependClassName="java.lang.IllegalAccessException" />
     <classNode dependClassName="java.lang.NoSuchMethodException" />

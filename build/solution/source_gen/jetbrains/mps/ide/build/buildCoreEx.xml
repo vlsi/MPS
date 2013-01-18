@@ -444,7 +444,7 @@
   
   <target name="generate" depends="fetchDependencies, declare-mps-tasks">
     <echo message="generating" />
-    <mps.generate parallelMode="true" fork="true">
+    <mps.generate.chunks parallelMode="true" fork="true">
       <library file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.blTypes.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.classifiers.jar" />
       <library file="${artifacts.buildCore}/mps-core/languages/baseLanguage/jetbrains.mps.baseLanguage.closures.jar" />
@@ -506,7 +506,7 @@
         <module file="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/xmlUnitTest.mpl" />
         <module file="${mps_home}/languages/util/xmlUnitTest/languages/xmlUnitTest/solutions/runtime/runtime.msd" />
       </chunk>
-    </mps.generate>
+    </mps.generate.chunks>
   </target>
   
   <target name="cleanSources">

@@ -9137,7 +9137,7 @@
             </node>
             <node role="statements" roleId="8xvf.2769948622284606050" type="8xvf.BwfAntStatement" typeId="8xvf.2769948622284768359" id="6503355885715275745">
               <node role="element" roleId="8xvf.2769948622284768360" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="6503355885715275748">
-                <property name="tagName" nameId="iuxj.6666499814681415862" value="mps.generate" />
+                <property name="tagName" nameId="iuxj.6666499814681415862" value="mps.generate.chunks" />
                 <node role="content" roleId="iuxj.1622293396948928802" type="iuxj.XmlElement" typeId="iuxj.6666499814681415858" id="5970181360960745066">
                   <property name="tagName" nameId="iuxj.6666499814681415862" value="library" />
                   <property name="shortEmptyNotation" nameId="iuxj.6999033275467544021" value="true" />
