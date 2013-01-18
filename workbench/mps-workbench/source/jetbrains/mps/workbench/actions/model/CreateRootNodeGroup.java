@@ -33,7 +33,8 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.action.NodeFactoryManager;
 import jetbrains.mps.smodel.constraints.ModelConstraintsManager;
 import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
@@ -195,12 +196,12 @@ public class CreateRootNodeGroup extends BaseGroup {
     private final SModelDescriptor myModelDescriptor;
 
     public NewRootNodeAction(final SNodePointer nodeConcept, SModelDescriptor modelDescriptor) {
-      super(NodePresentationUtil.matchingText(nodeConcept.getNode()));
+      super(NodePresentationUtil.matchingText(nodeConcept.resolve(MPSModuleRepository.getInstance())));
       myNodeConcept = nodeConcept;
       myModelDescriptor = modelDescriptor;
       Icon icon = ModelAccess.instance().runReadAction(new Computable<Icon>() {
         public Icon compute() {
-          return IconManager.getIconForConceptFQName(NameUtil.nodeFQName(nodeConcept.getNode()));
+          return IconManager.getIconForConceptFQName(NameUtil.nodeFQName(nodeConcept.resolve(MPSModuleRepository.getInstance())));
         }
       });
       getTemplatePresentation().setIcon(icon);
@@ -221,7 +222,7 @@ public class CreateRootNodeGroup extends BaseGroup {
       ModelAccess.instance().runCommandInEDT(new Runnable() {
         @Override
         public void run() {
-          final SNode node = NodeFactoryManager.createNode(myNodeConcept.getNode(), null, null, myModelDescriptor.getSModel(), myScope);
+          final SNode node = NodeFactoryManager.createNode(myNodeConcept.resolve(MPSModuleRepository.getInstance()), null, null, myModelDescriptor.getSModel(), myScope);
           SNodeAccessUtil.setProperty(node, SModelTreeNode.PACK, myPackage);
           myModelDescriptor.getSModel().addRoot(node);
 

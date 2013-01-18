@@ -33,7 +33,7 @@ public abstract class AbstractTestWrapper<N extends SNode> implements ITestNodeW
 
   @Nullable
   public N getNode() {
-    return (N) myNodePointer.getNode();
+    return (N) myNodePointer.resolve(MPSModuleRepository.getInstance());
   }
 
   @NotNull

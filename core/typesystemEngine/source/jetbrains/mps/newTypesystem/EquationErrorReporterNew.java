@@ -20,6 +20,7 @@ import jetbrains.mps.errors.IErrorReporter;
 import jetbrains.mps.errors.MessageStatus;
 import jetbrains.mps.errors.messageTargets.MessageTarget;
 import jetbrains.mps.errors.messageTargets.NodeMessageTarget;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.typesystem.PresentationManager;
@@ -75,6 +76,6 @@ public class EquationErrorReporterNew extends AbstractErrorReporter implements I
   }
 
   public SNode getSNode() {
-    return mySNodePointer.getNode();
+    return mySNodePointer.resolve(MPSModuleRepository.getInstance());
   }
 }

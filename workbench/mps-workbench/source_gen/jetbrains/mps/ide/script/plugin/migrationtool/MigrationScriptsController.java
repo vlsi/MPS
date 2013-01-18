@@ -4,6 +4,7 @@ package jetbrains.mps.ide.script.plugin.migrationtool;
 
 import java.util.Collection;
 import jetbrains.mps.ide.findusages.model.SearchResult;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
 import jetbrains.mps.smodel.SNodePointer;
@@ -32,8 +33,8 @@ public abstract class MigrationScriptsController {
       public void run() {
         List<SNodePointer> includedNodes = includedResultNodes;
         for (SNodePointer includedNode : includedNodes) {
-          if (includedNode.getNode() != null) {
-            aliveIncludedNodes.add(includedNode.getNode());
+          if (includedNode.resolve(MPSModuleRepository.getInstance()) != null) {
+            aliveIncludedNodes.add(includedNode.resolve(MPSModuleRepository.getInstance()));
           }
         }
         List<SearchResult<SNode>> aliveResults = myFinder.getLastSearchResults().getAliveResults();

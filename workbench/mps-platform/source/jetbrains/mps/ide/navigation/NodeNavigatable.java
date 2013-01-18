@@ -20,6 +20,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -41,7 +42,7 @@ public class NodeNavigatable extends BaseNavigatable {
 
   @Override
   public void doNavigate(final boolean focus) {
-    SNode node = nodePointer.getNode();
+    SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
     if (node == null) {
       LOG.info("clicked node was deleted");
       return;

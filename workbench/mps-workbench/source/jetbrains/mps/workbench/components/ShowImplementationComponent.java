@@ -25,7 +25,8 @@ import jetbrains.mps.kernel.model.TemporaryModelOwner;
 import jetbrains.mps.lang.smodel.generator.smodelAdapter.SNodeOperations;
 import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.project.Project;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -219,7 +220,7 @@ public class ShowImplementationComponent extends JPanel {
             return;
           }
           IOperationContext operationContext = myEditor.getEditor().getOperationContext();
-          SNode selectedNode = myOriginalNodePointers.get(selectedIndex).getNode();
+          SNode selectedNode = myOriginalNodePointers.get(selectedIndex).resolve(MPSModuleRepository.getInstance());
           if (selectedNode == null) {
             return;
           }

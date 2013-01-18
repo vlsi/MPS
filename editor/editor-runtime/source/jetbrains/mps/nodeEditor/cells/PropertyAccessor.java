@@ -16,7 +16,8 @@
 package jetbrains.mps.nodeEditor.cells;
 
 import jetbrains.mps.openapi.editor.EditorContext;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.annotation.Hack;
 import org.jetbrains.mps.openapi.model.SNodeAccessUtil;
@@ -102,7 +103,7 @@ public class PropertyAccessor implements ModelAccessor {
       return (text == null && (propertyValue == null || propertyValue.isEmpty())) || (text != null && text.equals(propertyValue));
     }
 
-    SNode node = myPropertyDeclaration.getNode();
+    SNode node = myPropertyDeclaration.resolve(MPSModuleRepository.getInstance());
     if (node != null) {
       PropertySupport propertySupport = PropertySupport.getPropertySupport(node);
       return propertySupport.canSetValue(myNode, myPropertyName, text, myScope);
@@ -116,7 +117,7 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   private String fromInternal(String value) {
-    SNode node = myPropertyDeclaration.getNode();
+    SNode node = myPropertyDeclaration.resolve(MPSModuleRepository.getInstance());
     if (node != null) {
       PropertySupport propertySupport = PropertySupport.getPropertySupport(node);
       return propertySupport.fromInternalValue(value);
@@ -125,7 +126,7 @@ public class PropertyAccessor implements ModelAccessor {
   }
 
   private String toInternal(String value) {
-    SNode node = myPropertyDeclaration.getNode();
+    SNode node = myPropertyDeclaration.resolve(MPSModuleRepository.getInstance());
     if (node != null) {
       PropertySupport propertySupport = PropertySupport.getPropertySupport(node);
       return propertySupport.toInternalValue(value);

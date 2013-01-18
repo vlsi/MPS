@@ -21,6 +21,7 @@ import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.ide.editorTabs.TabColorProvider;
 import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -75,7 +76,7 @@ class ButtonEditorTab {
     }
 
     private DefaultActionGroup getGotoGroup() {
-        List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
+      List<SNode> nodes = myDescriptor.getNodes(myBaseNode.resolve(MPSModuleRepository.getInstance()));
         if (nodes.isEmpty()) return null;
 
         DefaultActionGroup result = new DefaultActionGroup();
@@ -120,7 +121,7 @@ class ButtonEditorTab {
             List<SNodePointer> nodePointers = ModelAccess.instance().runReadAction(new Computable<List<SNodePointer>>() {
                 @Override
                 public List<SNodePointer> compute() {
-                    List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
+                  List<SNode> nodes = myDescriptor.getNodes(myBaseNode.resolve(MPSModuleRepository.getInstance()));
                     List<SNodePointer> nodePointers = new ArrayList<SNodePointer>();
                     for (SNode n : nodes) {
                         nodePointers.add(new SNodePointer(n));
@@ -224,7 +225,7 @@ class ButtonEditorTab {
         public void setSelected(AnActionEvent e, boolean state) {
             ModelAccess.instance().runReadAction(new Runnable() {
                 public void run() {
-                    List<SNode> nodes = myDescriptor.getNodes(myBaseNode.getNode());
+                  List<SNode> nodes = myDescriptor.getNodes(myBaseNode.resolve(MPSModuleRepository.getInstance()));
                     if (nodes.size() == 1) {
                       myCallback.changeNode(nodes.get(0).getContainingRoot());
                         return;

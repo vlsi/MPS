@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.NotNull;
@@ -41,6 +42,6 @@ public class SourceSubstituteMacroNodesContext extends TemplateQueryContextWithM
 
   public SNode getRuleNodeForLogging() {
     return myRule != null ? myRule :
-      myRulePointer != null ? myRulePointer.getNode() : null;
+      myRulePointer != null ? myRulePointer.resolve(MPSModuleRepository.getInstance()) : null;
   }
 }

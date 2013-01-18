@@ -18,6 +18,7 @@ package jetbrains.mps.workbench.choose.nodes;
 import com.intellij.navigation.ItemPresentation;
 import com.intellij.navigation.NavigationItem;
 import com.intellij.openapi.vcs.FileStatus;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
@@ -36,7 +37,7 @@ public abstract class BaseNodePointerItem implements NavigationItem {
   }
 
   public SNode getNode() {
-    return myNode.getNode();
+    return myNode.resolve(MPSModuleRepository.getInstance());
   }
 
   public String getName() {

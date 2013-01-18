@@ -221,7 +221,7 @@ public class Java_Command {
     final Wrappers._T<String> className = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        className.value = Java_Command.getClassName(node.getNode());
+        className.value = Java_Command.getClassName(node.resolve(MPSModuleRepository.getInstance()));
       }
     });
     return className.value;

@@ -16,6 +16,7 @@
 
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening;
 
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelReference;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -25,7 +26,7 @@ import java.util.Set;
 
 class ImportantNodes extends HashMap<SModelReference, Set<SNodePointer>> {
   public void add(SNodePointer node) {
-    SModelReference modelRef = node.getNode().getModel().getSModelReference();
+    SModelReference modelRef = node.resolve(MPSModuleRepository.getInstance()).getModel().getSModelReference();
 
     Set<SNodePointer> nodes = get(modelRef);
     nodes.add(node);

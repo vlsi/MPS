@@ -59,7 +59,7 @@ public class TestUtils {
     final Wrappers._T<String> value = new Wrappers._T<String>();
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        value.value = pointer.getModel().getSModelReference().toString() + POINTER_SEPARATOR + pointer.getNode().getNodeId().toString();
+        value.value = pointer.getModel().getSModelReference().toString() + POINTER_SEPARATOR + pointer.resolve(MPSModuleRepository.getInstance()).getNodeId().toString();
       }
     });
     return value.value;
@@ -259,7 +259,7 @@ __switch__:
 
   private static SNode check_6qi07j_a0a0a0a0a1a5(SNodePointer checkedDotOperand) {
     if (null != checkedDotOperand) {
-      return checkedDotOperand.getNode();
+      return checkedDotOperand.resolve(MPSModuleRepository.getInstance());
     }
     return null;
   }

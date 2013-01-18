@@ -25,6 +25,8 @@ import javax.swing.JCheckBox;
 import javax.swing.JScrollPane;
 import com.intellij.ui.ScrollPaneFactory;
 import javax.swing.border.LineBorder;
+
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.workbench.action.BaseGroup;
 import jetbrains.mps.workbench.action.ActionUtils;
@@ -414,7 +416,7 @@ outer:
     }
 
     public SNode getNode() {
-      return SNodeOperations.cast(myNodePointer.getNode(), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
+      return SNodeOperations.cast(myNodePointer.resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.lang.structure.structure.ConceptDeclaration");
     }
 
     public void paint(Graphics graphics) {

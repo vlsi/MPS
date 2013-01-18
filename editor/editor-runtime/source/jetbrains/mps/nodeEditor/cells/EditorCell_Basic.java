@@ -39,6 +39,7 @@ import jetbrains.mps.nodeEditor.style.StyleAttributes;
 import jetbrains.mps.nodeEditor.text.TextBuilder;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.NodeReadAccessCasterInEditor;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -434,7 +435,7 @@ public abstract class EditorCell_Basic implements EditorCell {
     if (role != null) {
       return ((jetbrains.mps.smodel.SNode) getSNode()).getLinkDeclaration(role);
     }
-    return myLinkDeclarationPointer != null ? myLinkDeclarationPointer.getNode() : null;
+    return myLinkDeclarationPointer != null ? myLinkDeclarationPointer.resolve(MPSModuleRepository.getInstance()) : null;
   }
 
   public boolean isReferenceCell() {
@@ -442,7 +443,7 @@ public abstract class EditorCell_Basic implements EditorCell {
   }
 
   public SNode getRefNode() {
-    return myRefNodePointer != null ? myRefNodePointer.getNode() : null;
+    return myRefNodePointer != null ? myRefNodePointer.resolve(MPSModuleRepository.getInstance()) : null;
   }
 
   public void setRefNode(SNode refNode) {

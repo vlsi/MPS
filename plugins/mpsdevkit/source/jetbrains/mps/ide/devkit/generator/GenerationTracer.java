@@ -20,7 +20,8 @@ import jetbrains.mps.generator.IGenerationTracer;
 import jetbrains.mps.generator.runtime.TemplateMappingScript;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -247,7 +248,7 @@ public class GenerationTracer implements IGenerationTracer {
       checkNode = checkNode.getParent();
     }
 
-    LOG.errorWithTrace("tracer node not found. kind:" + kind + " node: " + SNodeUtil.getDebugText(node.getNode()));
+    LOG.errorWithTrace("tracer node not found. kind:" + kind + " node: " + SNodeUtil.getDebugText(node.resolve(MPSModuleRepository.getInstance())));
     myCurrentTraceNode = null; // reset branch
   }
 
@@ -269,7 +270,7 @@ public class GenerationTracer implements IGenerationTracer {
       checkNode = checkNode.getParent();
     }
 
-    LOG.errorWithTrace("tracer node not found. kind:" + kind + " node: " + SNodeUtil.getDebugText(node.getNode()));
+    LOG.errorWithTrace("tracer node not found. kind:" + kind + " node: " + SNodeUtil.getDebugText(node.resolve(MPSModuleRepository.getInstance())));
     myCurrentTraceNode = null; // reset branch
   }
 
@@ -487,7 +488,7 @@ public class GenerationTracer implements IGenerationTracer {
       while (inputNode != null && inputNode.getKind() != Kind.INPUT) {
         inputNode = inputNode.getParent();
       }
-      result.add(new Pair<SNode, SNode>(ruleNode.getNodePointer().getNode(), inputNode != null ? inputNode.getNodePointer().getNode() : null));
+      result.add(new Pair<SNode, SNode>(ruleNode.getNodePointer().resolve(MPSModuleRepository.getInstance()), inputNode != null ? inputNode.getNodePointer().resolve(MPSModuleRepository.getInstance()) : null));
     }
 
     return result;
@@ -503,7 +504,7 @@ public class GenerationTracer implements IGenerationTracer {
     while (currNode != null) {
       SNodePointer pointer = currNode.getNodePointer();
       if (pointer != null) {
-        result.add(new Pair<SNode, String>(pointer.getNode(), currNode.getKind().toString()));
+        result.add(new Pair<SNode, String>(pointer.resolve(MPSModuleRepository.getInstance()), currNode.getKind().toString()));
       } else {
         result.add(new Pair<SNode, String>(null, currNode.getKind().toString()));
       }

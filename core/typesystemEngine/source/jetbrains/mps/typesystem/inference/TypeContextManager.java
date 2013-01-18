@@ -28,6 +28,7 @@ import jetbrains.mps.newTypesystem.context.IncrementalTypecheckingContext;
 import jetbrains.mps.newTypesystem.TypesUtil;
 import jetbrains.mps.reloading.ClassLoaderManager;
 import jetbrains.mps.reloading.ReloadAdapter;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelAdapter;
@@ -91,8 +92,8 @@ public class TypeContextManager implements CoreComponent {
       SModelReference modelRef = md.getSModelReference();
       synchronized (myLock) {
         for (SNodePointer nodePointer : new ArrayList<SNodePointer>(myTypeCheckingContexts.keySet())) {
-          if (nodePointer == null || nodePointer.getNode() == null || nodePointer.getModel() == null ||
-            jetbrains.mps.util.SNodeOperations.isDisposed(nodePointer.getNode()) || modelRef.equals(nodePointer.getModelReference())) {
+          if (nodePointer == null || nodePointer.resolve(MPSModuleRepository.getInstance()) == null || nodePointer.getModel() == null ||
+            jetbrains.mps.util.SNodeOperations.isDisposed(nodePointer.resolve(MPSModuleRepository.getInstance())) || modelRef.equals(nodePointer.getModelReference())) {
             removeContextForNode(nodePointer);
           }
         }

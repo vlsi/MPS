@@ -13,6 +13,7 @@ import com.intellij.openapi.project.Project;
 import java.awt.BorderLayout;
 import com.intellij.ui.components.JBList;
 import com.intellij.openapi.actionSystem.AnAction;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.workbench.dialogs.project.components.parts.actions.ListAddAction;
 import com.intellij.openapi.actionSystem.AnActionEvent;
 import jetbrains.mps.smodel.SNodePointer;
@@ -98,7 +99,7 @@ public class ListPanel extends JPanel {
         final Wrappers._T<ITestNodeWrapper> wrapper = new Wrappers._T<ITestNodeWrapper>();
         ModelAccess.instance().runReadAction(new Runnable() {
           public void run() {
-            wrapper.value = TestNodeWrapperFactory.tryToWrap(resultNode.getNode());
+            wrapper.value = TestNodeWrapperFactory.tryToWrap(resultNode.resolve(MPSModuleRepository.getInstance()));
           }
         });
         if (wrapper.value == null) {

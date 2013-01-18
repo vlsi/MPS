@@ -8,6 +8,8 @@ import java.awt.event.InputEvent;
 import java.awt.event.MouseEvent;
 import java.awt.Point;
 import java.util.List;
+
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.project.Project;
 import jetbrains.mps.internal.collections.runtime.ListSequence;
@@ -164,7 +166,7 @@ public class GoToHelper {
     }
 
     protected SNode getLabelNode(NodeNavigatable element) {
-      return element.getNodePointer().getNode();
+      return element.getNodePointer().resolve(MPSModuleRepository.getInstance());
     }
 
     protected SNode getContainerNode(NodeNavigatable element) {
@@ -192,7 +194,7 @@ public class GoToHelper {
     }
 
     protected SNode getLabelNode(NodeNavigatable element) {
-      SNode node = element.getNodePointer().getNode();
+      SNode node = element.getNodePointer().resolve(MPSModuleRepository.getInstance());
       if (node == null) {
         return null;
       }

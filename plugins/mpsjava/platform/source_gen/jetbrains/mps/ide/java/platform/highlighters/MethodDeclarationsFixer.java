@@ -4,6 +4,8 @@ package jetbrains.mps.ide.java.platform.highlighters;
 
 import jetbrains.mps.nodeEditor.checking.EditorCheckerAdapter;
 import java.util.Set;
+
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import java.util.HashSet;
 import java.util.Map;
@@ -140,7 +142,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
         event.accept(visitor);
       }
       for (SNodePointer expressionWithChangedType : expressionsWithChangedTypes) {
-        expressionTypeChanged(expressionWithChangedType.getNode(), reResolvedTargets);
+        expressionTypeChanged(expressionWithChangedType.resolve(MPSModuleRepository.getInstance()), reResolvedTargets);
       }
     }
     ThreadUtils.runInUIThreadNoWait(new Runnable() {
@@ -311,7 +313,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
       }
     }).select(new ISelector<SNodePointer, SNode>() {
       public SNode select(SNodePointer it) {
-        return SNodeOperations.cast(it.getNode(), "jetbrains.mps.baseLanguage.structure.IMethodCall");
+        return SNodeOperations.cast(it.resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.IMethodCall");
       }
     }).where(new IWhereFilter<SNode>() {
       public boolean accept(SNode it) {
@@ -329,7 +331,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
 
   private void methodCallDeclarationChanged(SNode methodCall, Map<SNode, SNode> resolveTargets) {
     SNodePointer methodCallPointer = new SNodePointer(methodCall);
-    if (myCheckedMethodCalls.contains(methodCallPointer) && SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) == myMethodCallsToSetDecls.get(methodCallPointer).getNode()) {
+    if (myCheckedMethodCalls.contains(methodCallPointer) && SLinkOperations.getTarget(methodCall, "baseMethodDeclaration", false) == myMethodCallsToSetDecls.get(methodCallPointer).resolve(MPSModuleRepository.getInstance())) {
       return;
     }
     testAndFixMethodCall(methodCall, resolveTargets);
@@ -338,7 +340,7 @@ public class MethodDeclarationsFixer extends EditorCheckerAdapter {
   private void expressionTypeChanged(SNode expression, Map<SNode, SNode> resolveTargets) {
     SNodePointer methodCallPointer = myParametersToCheckedMethodCalls.get(new SNodePointer(expression));
     if (methodCallPointer != null) {
-      SNode methodCall = SNodeOperations.cast(methodCallPointer.getNode(), "jetbrains.mps.baseLanguage.structure.IMethodCall");
+      SNode methodCall = SNodeOperations.cast(methodCallPointer.resolve(MPSModuleRepository.getInstance()), "jetbrains.mps.baseLanguage.structure.IMethodCall");
       if (methodCall != null) {
         testAndFixMethodCall(methodCall, resolveTargets);
       }

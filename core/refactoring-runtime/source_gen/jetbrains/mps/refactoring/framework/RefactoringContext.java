@@ -9,6 +9,8 @@ import java.util.HashMap;
 import jetbrains.mps.findUsages.UsagesList;
 import java.util.Set;
 import java.util.HashSet;
+
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModelDescriptor;
 import org.jetbrains.mps.openapi.model.SNode;
 import java.util.List;
@@ -472,7 +474,7 @@ public class RefactoringContext {
       if (data.type == StructureModification.RenameNode.RenameType.CONCEPT) {
         continue;
       }
-      SNode oldNode = data.oldID.getNode();
+      SNode oldNode = data.oldID.resolve(MPSModuleRepository.getInstance());
       if (oldNode == null || oldNode.getParent() == null) {
         continue;
       }

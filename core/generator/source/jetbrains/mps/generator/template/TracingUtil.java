@@ -16,11 +16,11 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.smodel.CopyUtil;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
@@ -67,7 +67,7 @@ public class TracingUtil {
     if (inputNodePointer == null) {
       return null;
     }
-    return inputNodePointer.getNode();
+    return inputNodePointer.resolve(MPSModuleRepository.getInstance());
   }
 
   public static void putInputNode(SNode output, SNode input) {

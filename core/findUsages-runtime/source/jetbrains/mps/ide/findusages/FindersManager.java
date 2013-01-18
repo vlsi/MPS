@@ -20,7 +20,8 @@ import jetbrains.mps.ide.findusages.findalgorithm.finders.GeneratedFinder;
 import jetbrains.mps.ide.findusages.findalgorithm.finders.ReloadableFinder;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.language.LanguageRegistry;
 import jetbrains.mps.smodel.language.LanguageRegistryListener;
 import jetbrains.mps.smodel.language.LanguageRuntime;
@@ -104,12 +105,12 @@ public class FindersManager implements CoreComponent, LanguageRegistryListener {
 
   public SNode getNodeByFinder(ReloadableFinder finder) {
     checkLoaded();
-    return myNodesByFinder.get(finder.getFinder()).getNode();
+    return myNodesByFinder.get(finder.getFinder()).resolve(MPSModuleRepository.getInstance());
   }
 
   public SNode getNodeByFinder(GeneratedFinder finder) {
     checkLoaded();
-    return myNodesByFinder.get(finder).getNode();
+    return myNodesByFinder.get(finder).resolve(MPSModuleRepository.getInstance());
   }
 
   private ModuleReference getFinderModule(GeneratedFinder finder) {

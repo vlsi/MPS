@@ -38,7 +38,8 @@ import jetbrains.mps.openapi.editor.EditorState;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelListener;
 import jetbrains.mps.smodel.event.SModelPropertyEvent;
 import jetbrains.mps.util.EqualUtil;
@@ -87,7 +88,7 @@ public class TabbedEditor extends BaseNodeEditor{
 
     installTabsComponent();
 
-    showNode(myBaseNode.getNode(), false);
+    showNode(myBaseNode.resolve(MPSModuleRepository.getInstance()), false);
 
     myNextTabAction = new BaseNavigationAction(IdeActions.ACTION_NEXT_EDITOR_TAB, getComponent()) {
       public void actionPerformed(AnActionEvent e) {
@@ -175,7 +176,7 @@ public class TabbedEditor extends BaseNodeEditor{
       editor = getCurrentEditorComponent();
     }
 
-    boolean rootChange = getCurrentlyEditedNode() == null || (containingRoot != currentlyEditedNode.getNode());
+    boolean rootChange = getCurrentlyEditedNode() == null || (containingRoot != currentlyEditedNode.resolve(MPSModuleRepository.getInstance()));
 
     if (!fromTabs) {
       myTabsComponent.setLastNode(new SNodePointer(node));
@@ -284,13 +285,13 @@ public class TabbedEditor extends BaseNodeEditor{
       public void run() {
         if (state instanceof TabbedEditorState) {
           SNodePointer nodePointer = ((TabbedEditorState) state).myCurrentNode;
-          SNode node = nodePointer == null ? null : nodePointer.getNode();
+          SNode node = nodePointer == null ? null : nodePointer.resolve(MPSModuleRepository.getInstance());
           if (node != null) {
             showNode(node, false);
           }
         } else {
           //regular editor was shown for that node last time
-          showNode(myBaseNode.getNode(), false);
+          showNode(myBaseNode.resolve(MPSModuleRepository.getInstance()), false);
         }
       }
     });

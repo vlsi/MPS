@@ -21,6 +21,8 @@ import java.awt.Color;
 import java.util.Set;
 import jetbrains.mps.newTypesystem.state.blocks.Block;
 import java.util.Map;
+
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.newTypesystem.state.blocks.InequalityBlock;
 import jetbrains.mps.newTypesystem.state.NodeMaps;
@@ -271,7 +273,7 @@ public class TypeSystemStateTree extends MPSTree implements DataProvider {
               public void doExecute(AnActionEvent e, Map<String, Object> _params) {
                 ModelAccess.instance().runWriteInEDT(new Runnable() {
                   public void run() {
-                    SNode node = pointer.getNode();
+                    SNode node = pointer.resolve(MPSModuleRepository.getInstance());
                     if (node == null) {
                       return;
                     }

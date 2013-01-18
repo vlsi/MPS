@@ -16,6 +16,7 @@
 package jetbrains.mps.generator.template;
 
 import jetbrains.mps.generator.runtime.TemplateContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -48,6 +49,6 @@ public class TemplateQueryContextWithMacro extends TemplateQueryContext {
   @Override
   public SNode getTemplateNodeForLogging() {
     return myMacro != null ? myMacro :
-      myMacroPointer != null ? myMacroPointer.getNode() : null;
+      myMacroPointer != null ? myMacroPointer.resolve(MPSModuleRepository.getInstance()) : null;
   }
 }

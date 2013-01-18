@@ -17,11 +17,11 @@ package jetbrains.mps.ide.devkit.generator.icons;
 
 import com.intellij.icons.AllIcons.Actions;
 import com.intellij.icons.AllIcons.General;
-import com.intellij.openapi.util.IconLoader;
 import jetbrains.mps.icons.MPSIcons.Generator;
 import jetbrains.mps.ide.devkit.generator.TracerNode;
 import jetbrains.mps.ide.devkit.generator.TracerNode.Kind;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 
@@ -55,7 +55,7 @@ public class Icons {
   private static Icon getMainIcon(TracerNode tracerNode) {
     SNodePointer nodePointer = tracerNode.getNodePointer();
     if (nodePointer != null) {
-      SNode node = nodePointer.getNode();
+      SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
       if (node != null) {
         Icon icon = IconManager.getIconFor(node);
         if (icon != null) {

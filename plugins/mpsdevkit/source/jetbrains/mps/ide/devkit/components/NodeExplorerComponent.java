@@ -25,6 +25,7 @@ import jetbrains.mps.ide.ui.TextTreeNode;
 import jetbrains.mps.ide.ui.smodel.SNodeTreeNode;
 import jetbrains.mps.project.ProjectOperationContext;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SReference;
@@ -65,11 +66,11 @@ public class NodeExplorerComponent {
     private IOperationContext myOperationContext;
 
     protected MPSTreeNode rebuild() {
-      if (myNode == null || myNode.getNode() == null) {
+      if (myNode == null || myNode.resolve(MPSModuleRepository.getInstance()) == null) {
         return new TextTreeNode("no node");
       } else {
         TextTreeNode textTreeNode = new TextTreeNode("node");
-        SNodeTreeNode sNodeTreeNode = new MySNodeTreeNode(myNode.getNode(), myOperationContext);
+        SNodeTreeNode sNodeTreeNode = new MySNodeTreeNode(myNode.resolve(MPSModuleRepository.getInstance()), myOperationContext);
         textTreeNode.add(sNodeTreeNode);
         return textTreeNode;
       }
@@ -124,7 +125,7 @@ public class NodeExplorerComponent {
     }
 
     protected void doInit() {
-      for (SReference reference : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(myNode.getNode())) {
+      for (SReference reference : (List<SReference>) jetbrains.mps.util.SNodeOperations.getReferences(myNode.resolve(MPSModuleRepository.getInstance()))) {
         SNode referent = reference.getTargetNode();
         if (referent != null) {
           add(new MySNodeTreeNode(referent, reference.getRole(), getOperationContext()));
@@ -148,7 +149,7 @@ public class NodeExplorerComponent {
     }
 
     protected void doInit() {
-      SNode node = myNode.getNode();
+      SNode node = myNode.resolve(MPSModuleRepository.getInstance());
       for (String name : node.getPropertyNames()) {
         TextTreeNode tn = new TextTreeNode(name + " : " + SNodeAccessUtil.getProperty(node, name));
         tn.setIcon(Icons.DEFAULT_ICON);

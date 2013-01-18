@@ -126,7 +126,7 @@ public class InternalActionsUtils {
         SearchResults results = new SearchResults<SNode>();
         for (SNode node : ListSequence.fromList(nodes).select(new ISelector<SNodePointer, SNode>() {
           public SNode select(SNodePointer it) {
-            return it.getNode();
+            return it.resolve(MPSModuleRepository.getInstance());
           }
         }).where(new IWhereFilter<SNode>() {
           public boolean accept(SNode it) {

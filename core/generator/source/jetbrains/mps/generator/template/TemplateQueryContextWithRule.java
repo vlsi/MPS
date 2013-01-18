@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 
@@ -39,7 +40,7 @@ public class TemplateQueryContextWithRule extends TemplateQueryContext {
 
   public SNode getRuleNodeForLogging() {
     return myRule != null ? myRule :
-      myRulePointer != null ? myRulePointer.getNode() : null;
+      myRulePointer != null ? myRulePointer.resolve(MPSModuleRepository.getInstance()) : null;
   }
 
 }

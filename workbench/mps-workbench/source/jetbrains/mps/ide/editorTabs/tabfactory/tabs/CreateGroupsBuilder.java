@@ -22,6 +22,7 @@ import jetbrains.mps.ide.editorTabs.tabfactory.NodeChangeCallback;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.relations.RelationComparator;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -49,7 +50,7 @@ public class CreateGroupsBuilder {
     }
 
     for (final RelationDescriptor d : tabs) {
-      List<SNode> nodes = d.getNodes(baseNode.getNode());
+      List<SNode> nodes = d.getNodes(baseNode.resolve(MPSModuleRepository.getInstance()));
       if (!nodes.isEmpty() && d.isSingle()) continue;
 
       DefaultActionGroup group = getCreateGroup(baseNode, callback, d);
@@ -65,7 +66,7 @@ public class CreateGroupsBuilder {
   }
 
   public static DefaultActionGroup getCreateGroup(SNodePointer baseNode, NodeChangeCallback callback, RelationDescriptor d) {
-    List<SNode> concepts = d.getConcepts(baseNode.getNode());
+    List<SNode> concepts = d.getConcepts(baseNode.resolve(MPSModuleRepository.getInstance()));
     if (concepts.isEmpty()) return new DefaultActionGroup();
 
     DefaultActionGroup group = new DefaultActionGroup(d.getTitle(), true);
@@ -103,13 +104,13 @@ public class CreateGroupsBuilder {
 
       final Runnable r1 = new Runnable() {
         public void run() {
-          created[0] = myDescriptor.createNode(myBaseNode.getNode(), myConcept);
+          created[0] = myDescriptor.createNode(myBaseNode.resolve(MPSModuleRepository.getInstance()), myConcept);
         }
       };
 
       final Runnable r2 = new Runnable() {
         public void run() {
-          String mainPack = SNodeAccessUtil.getProperty(myBaseNode.getNode(), jetbrains.mps.smodel.SNode.PACK);
+          String mainPack = SNodeAccessUtil.getProperty(myBaseNode.resolve(MPSModuleRepository.getInstance()), jetbrains.mps.smodel.SNode.PACK);
           SNodeAccessUtil.setProperty(created[0], jetbrains.mps.smodel.SNode.PACK, mainPack);
           myCallback.changeNode(created[0]);
         }

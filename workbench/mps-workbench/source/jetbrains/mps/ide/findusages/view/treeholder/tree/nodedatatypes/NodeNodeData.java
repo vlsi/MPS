@@ -25,6 +25,7 @@ import jetbrains.mps.ide.findusages.view.treeholder.treeview.path.PathItemRole;
 import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.Project;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -80,12 +81,12 @@ public class NodeNodeData extends BaseNodeData {
   }
 
   public SNode getNode() {
-    return myNodePointer.getNode();
+    return myNodePointer.resolve(MPSModuleRepository.getInstance());
   }
 
   public Icon getIcon() {
-    if (myNodePointer.getNode() == null) return null;
-    return IconManager.getIconFor(myNodePointer.getNode());
+    if (myNodePointer.resolve(MPSModuleRepository.getInstance()) == null) return null;
+    return IconManager.getIconFor(myNodePointer.resolve(MPSModuleRepository.getInstance()));
   }
 
   public Object getIdObject() {
@@ -95,8 +96,8 @@ public class NodeNodeData extends BaseNodeData {
   public void write(Element element, Project project) throws CantSaveSomethingException {
     super.write(element, project);
     Element nodeXML = new Element(NODE);
-    if (myNodePointer.getNode() != null) {
-      nodeXML.addContent(ComponentsUtil.nodeToElement(myNodePointer.getNode()));
+    if (myNodePointer.resolve(MPSModuleRepository.getInstance()) != null) {
+      nodeXML.addContent(ComponentsUtil.nodeToElement(myNodePointer.resolve(MPSModuleRepository.getInstance())));
     }
     element.addContent(nodeXML);
   }

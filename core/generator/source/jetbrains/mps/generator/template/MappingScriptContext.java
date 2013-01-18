@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.generator.template;
 
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -59,6 +60,6 @@ public class MappingScriptContext extends TemplateQueryContext {
 
   public SNode getTemplateNodeForLogging() {
     return myScript != null ? myScript :
-      myScriptPointer != null ? myScriptPointer.getNode() : null;
+      myScriptPointer != null ? myScriptPointer.resolve(MPSModuleRepository.getInstance()) : null;
   }
 }

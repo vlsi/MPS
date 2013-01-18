@@ -21,6 +21,7 @@ import com.intellij.openapi.components.ApplicationComponent;
 import com.intellij.openapi.project.Project;
 import com.intellij.openapi.vfs.VirtualFile;
 import jetbrains.mps.ide.project.ProjectHelper;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -35,7 +36,7 @@ public class ProjectViewSelectInProvider implements ApplicationComponent {
     VirtualFile modelFile = ModelAccess.instance().runReadAction(new Computable<VirtualFile>() {
       public VirtualFile compute() {
         if (node == null) return null;
-        SNode n = node.getNode();
+        SNode n = node.resolve(MPSModuleRepository.getInstance());
         return n == null ? null : ModelUtil.getFileByModel(n.getModel());
       }
     });

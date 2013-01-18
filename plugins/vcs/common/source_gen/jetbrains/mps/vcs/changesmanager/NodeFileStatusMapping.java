@@ -4,6 +4,8 @@ package jetbrains.mps.vcs.changesmanager;
 
 import com.intellij.openapi.components.AbstractProjectComponent;
 import java.util.Map;
+
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import com.intellij.openapi.vcs.FileStatus;
 import jetbrains.mps.internal.collections.runtime.MapSequence;
@@ -58,7 +60,7 @@ public class NodeFileStatusMapping extends AbstractProjectComponent {
       public void run() {
         FileStatusManager fsm = FileStatusManager.getInstance(myProject);
         MPSNodesVirtualFileSystem nvfs = MPSNodesVirtualFileSystem.getInstance();
-        SNode currentNode = nodePointer.getNode();
+        SNode currentNode = nodePointer.resolve(MPSModuleRepository.getInstance());
         if (currentNode == null) {
           return;
         }

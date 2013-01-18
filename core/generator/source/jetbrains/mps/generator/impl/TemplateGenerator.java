@@ -32,7 +32,8 @@ import jetbrains.mps.generator.template.DefaultQueryExecutionContext;
 import jetbrains.mps.generator.template.QueryExecutionContext;
 import jetbrains.mps.generator.template.TracingUtil;
 import jetbrains.mps.progress.ProgressMonitor;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -196,14 +197,14 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     } catch (GenerationException e) {
       if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
       if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
-      showErrorMessage(null, rule.getRuleNode().getNode(), "internal error: " + e.toString());
+      showErrorMessage(null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "internal error: " + e.toString());
     }
   }
 
   private void applyRootRule(TemplateRootMappingRule rule, List<SNode> rootsToCopy) throws GenerationFailureException, GenerationCanceledException {
     String applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
-      showErrorMessage(null, null, rule.getRuleNode().getNode(), "rule has no applicable concept defined");
+      showErrorMessage(null, null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "rule has no applicable concept defined");
       return;
     }
     boolean includeInheritors = rule.applyToInheritors();
@@ -234,7 +235,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         } catch (GenerationException e) {
           if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
           if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
-          showErrorMessage(null, rule.getRuleNode().getNode(), "internal error: " + e.toString());
+          showErrorMessage(null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "internal error: " + e.toString());
         }
       }
     }
@@ -254,11 +255,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue
     } catch (TemplateProcessingFailureException e) {
-      showErrorMessage(null, rule.getRuleNode().getNode(), "couldn't create root node");
+      showErrorMessage(null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "couldn't create root node");
     } catch (GenerationException e) {
       if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
       if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
-      showErrorMessage(null, rule.getRuleNode().getNode(), "internal error: " + e.toString());
+      showErrorMessage(null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "internal error: " + e.toString());
     }
   }
 
@@ -289,11 +290,11 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
         copyRootInputNode(inputNode, environment);
       }
     } catch (TemplateProcessingFailureException e) {
-      showErrorMessage(inputNode, rule.getRuleNode().getNode(), "couldn't create root node");
+      showErrorMessage(inputNode, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "couldn't create root node");
     } catch (GenerationException e) {
       if (e instanceof GenerationCanceledException) throw (GenerationCanceledException) e;
       if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
-      showErrorMessage(inputNode, rule.getRuleNode().getNode(), "internal error: " + e.toString());
+      showErrorMessage(inputNode, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "internal error: " + e.toString());
     }
   }
 
@@ -330,7 +331,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
   private boolean isApplicableDropRootRule(SNode inputRootNode, TemplateDropRootRule rule, TemplateExecutionEnvironment environment) throws GenerationFailureException {
     String applicableConcept = rule.getApplicableConcept();
     if (applicableConcept == null) {
-      showErrorMessage(null, null, rule.getRuleNode().getNode(), "rule has no applicable concept defined");
+      showErrorMessage(null, null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "rule has no applicable concept defined");
       return false;
     }
 
@@ -345,7 +346,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       }
     } catch (GenerationException e) {
       if (e instanceof GenerationFailureException) throw (GenerationFailureException) e;
-      showErrorMessage(null, rule.getRuleNode().getNode(), "internal error: " + e.toString());
+      showErrorMessage(null, rule.getRuleNode().resolve(MPSModuleRepository.getInstance()), "internal error: " + e.toString());
     }
 
     return false;
@@ -438,7 +439,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
     } catch (DismissTopMappingRuleException ex) {
       // it's ok, just continue
       if (ex.isLoggingNeeded() && reductionRule != null) {
-        SNode ruleNode = reductionRule.getRuleNode().getNode();
+        SNode ruleNode = reductionRule.getRuleNode().resolve(MPSModuleRepository.getInstance());
         String messageText = "-- dismissed reduction rule: " + (ruleNode != null ? org.jetbrains.mps.openapi.model.SNodeUtil.getDebugText(ruleNode) : "unknown");
         if (ex.isInfo()) {
           myLogger.info(ruleNode, messageText);
@@ -493,7 +494,7 @@ public class TemplateGenerator extends AbstractTemplateGenerator {
       if (templateNodeId != null) {
         myMappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNodeId, copiedNode);
       } else if (templateNode != null) {
-        myMappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNode.getNode(), copiedNode);
+        myMappings.addOutputNodeByInputAndTemplateNode(inputNode, templateNode.resolve(MPSModuleRepository.getInstance()), copiedNode);
       }
       myMappings.addOutputNodeByInputNodeAndMappingName(inputNode, mappingName, copiedNode);
       return Collections.singletonList(copiedNode);

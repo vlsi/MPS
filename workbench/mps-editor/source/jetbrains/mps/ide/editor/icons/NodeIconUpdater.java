@@ -19,6 +19,7 @@ import com.intellij.openapi.components.AbstractProjectComponent;
 import com.intellij.openapi.fileEditor.ex.FileEditorManagerEx;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModelAdapter;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -79,7 +80,7 @@ public class NodeIconUpdater extends AbstractProjectComponent {
         public void run() {
           synchronized (myUpdatedRoots) {
             for (SNodePointer root : myUpdatedRoots) {
-              if (root.getNode() != null) {
+              if (root.resolve(MPSModuleRepository.getInstance()) != null) {
                 MPSNodesVirtualFileSystem nodeVfs = MPSNodesVirtualFileSystem.getInstance();
                 if (nodeVfs.hasVirtualFileFor(root)) {
                   myFileEditorManagerEx.updateFilePresentation(nodeVfs.getFileFor(root));

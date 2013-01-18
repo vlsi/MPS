@@ -19,6 +19,7 @@ import com.intellij.ide.util.treeView.smartTree.TreeElement;
 import com.intellij.openapi.project.Project;
 import jetbrains.mps.plugins.projectplugins.ProjectPluginManager;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -45,7 +46,7 @@ public class MainNodeTreeElement extends NodeTreeElement {
 
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SNode node = myNode.getNode();
+        SNode node = myNode.resolve(MPSModuleRepository.getInstance());
         for (RelationDescriptor tab : ProjectPluginManager.getApplicableTabs(myProject, node)) {
           for (SNode aspectNode : tab.getNodes(node)) {
             SNode baseNode = tab.getBaseNode(aspectNode);

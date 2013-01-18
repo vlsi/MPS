@@ -25,6 +25,7 @@ import jetbrains.mps.openapi.navigation.NavigationSupport;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.ModuleContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -70,7 +71,7 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
         ModelAccess.instance().runWriteInEDT(new Runnable() {
           @Override
           public void run() {
-            SNode node = myNode.getNode();
+            SNode node = myNode.resolve(MPSModuleRepository.getInstance());
             if (node == null) return;
             SModel model = node.getModel();
             if (model == null) return;
@@ -85,7 +86,7 @@ public abstract class NodeTreeElement implements StructureViewTreeElement {
 
   protected class NodeTreeElementPresentation extends NodePresentation {
     public NodeTreeElementPresentation() {
-      super(NodeTreeElement.this.myNode.getNode());
+      super(NodeTreeElement.this.myNode.resolve(MPSModuleRepository.getInstance()));
     }
 
     public String doGetLocationString() {

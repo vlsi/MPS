@@ -19,8 +19,8 @@ import com.intellij.openapi.vfs.VirtualFile;
 import com.intellij.openapi.vfs.VirtualFileSystem;
 import com.intellij.util.LocalTimeCounter;
 import jetbrains.mps.logging.Logger;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
-import jetbrains.mps.smodel.descriptor.EditableSModelDescriptor;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.ModelUtil;
 import org.jetbrains.annotations.NonNls;
@@ -53,7 +53,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
   void updateFields() {
     ModelAccess.instance().runReadAction(new Runnable() {
       public void run() {
-        SNode node = myNode.getNode();
+        SNode node = myNode.resolve(MPSModuleRepository.getInstance());
         if (node == null) {
           LOG.error(new Throwable("Cannot find node for passed SNodePointer: " + myNode.toString()));
           myName = "";
@@ -67,7 +67,7 @@ public class MPSNodeVirtualFile extends VirtualFile {
   }
 
   public SNode getNode() {
-    return myNode.getNode();
+    return myNode.resolve(MPSModuleRepository.getInstance());
   }
 
   public SNodePointer getSNodePointer() {

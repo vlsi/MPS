@@ -6,7 +6,8 @@ import jetbrains.mps.logging.Logger;
 import jetbrains.mps.project.IModule;
 import jetbrains.mps.project.MPSProject;
 import jetbrains.mps.project.structure.modules.ModuleReference;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.util.Mapper;
 import org.jetbrains.mps.openapi.model.SModel;
@@ -57,11 +58,11 @@ public class MPSPsiElement<T> extends FakePsiElement {
 
   public Object getMPSItem() {
     if (myItem instanceof SNodePointer) {
-      return ((SNodePointer) myItem).getNode();
+      return ((SNodePointer) myItem).resolve(MPSModuleRepository.getInstance());
     } else if (myItem instanceof List) {
       return map((List<SNodePointer>) myItem, new Mapper<SNodePointer, SNode>() {
         public SNode value(SNodePointer key) {
-          return key.getNode();
+          return key.resolve(MPSModuleRepository.getInstance());
         }
       });
     } else if (myItem instanceof SModelReference) {
@@ -89,7 +90,7 @@ public class MPSPsiElement<T> extends FakePsiElement {
     return ModelAccess.instance().runReadAction(new Computable<PsiElement>() {
       public PsiElement compute() {
         SNodePointer pointer = (SNodePointer) myItem;
-        SNode node = pointer.getNode();
+        SNode node = pointer.resolve(MPSModuleRepository.getInstance());
         if (node == null) {
           return null;
         }

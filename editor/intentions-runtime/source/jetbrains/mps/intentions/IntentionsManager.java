@@ -38,6 +38,7 @@ import jetbrains.mps.reloading.ReloadAdapter;
 import jetbrains.mps.smodel.Language;
 import jetbrains.mps.smodel.LanguageAspect;
 import jetbrains.mps.smodel.LanguageHierarchyCache;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.ModuleRepositoryFacade;
 import org.jetbrains.mps.openapi.model.SNode;
@@ -301,7 +302,7 @@ public class IntentionsManager implements ApplicationComponent, PersistentStateC
   public synchronized SNode getNodeByIntention(Intention intention) {
     checkLoaded();
     SNodePointer pointer = myNodesByIntentions.get(intention);
-    return pointer != null ? pointer.getNode() : null;
+    return pointer != null ? pointer.resolve(MPSModuleRepository.getInstance()) : null;
   }
 
   @NotNull

@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNode;
+package jetbrains.mps.smodel;import org.jetbrains.mps.openapi.model.SNodeId;import org.jetbrains.mps.openapi.model.SNode;
 
 import jetbrains.mps.generator.TransientModelsModule;
 import jetbrains.mps.logging.Logger;
@@ -152,7 +152,7 @@ public abstract class SReference implements org.jetbrains.mps.openapi.model.SRef
       if (message != null) log.error(" -- " + message);
       if (problems != null) {
         for (ProblemDescription pd : problems) {
-          log.error(pd.getMessage(), validNode(pd.getNode().getNode()));
+          log.error(pd.getMessage(), validNode(pd.getNode().resolve(MPSModuleRepository.getInstance())));
         }
       }
     }

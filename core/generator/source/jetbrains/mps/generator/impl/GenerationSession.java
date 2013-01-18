@@ -33,7 +33,8 @@ import jetbrains.mps.messages.NodeWithContext;
 import jetbrains.mps.progress.ProgressMonitor;
 import jetbrains.mps.project.structure.modules.ModuleReference;
 import jetbrains.mps.project.structure.modules.mappingpriorities.MappingPriorityRule;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.util.Pair;
 import jetbrains.mps.util.performance.IPerformanceTracer;
 import org.jetbrains.annotations.NotNull;
@@ -459,18 +460,18 @@ class GenerationSession {
     boolean preProcessed = false;
     for (TemplateMappingScript preMappingScript : preMappingScripts) {
       if (preMappingScript.getKind() != TemplateMappingScript.PREPROCESS) {
-        myLogger.warning(preMappingScript.getScriptNode().getNode(), "skip script " + preMappingScript.getLongName() + " - wrong script kind");
+        myLogger.warning(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "skip script " + preMappingScript.getLongName() + " - wrong script kind");
         continue;
       }
       if (myLogger.needsInfo()) {
-        myLogger.info(preMappingScript.getScriptNode().getNode(), "pre-process " + preMappingScript.getLongName());
+        myLogger.info(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "pre-process " + preMappingScript.getLongName());
       }
       TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentInputModel, currentInputModel, myGenerationOptions, myDependenciesBuilder, ttrace);
       try {
         templateGenerator.getDefaultExecutionContext(null).executeScript(preMappingScript, currentInputModel);
       } catch (Exception t) {
         myLogger.handleException(t);
-        myLogger.error(preMappingScript.getScriptNode().getNode(), "error executing script " + preMappingScript.getLongName() + " (see exception)");
+        myLogger.error(preMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "error executing script " + preMappingScript.getLongName() + " (see exception)");
         throw new GenerationFailureException(t);
       }
       preProcessed = true;
@@ -515,18 +516,18 @@ class GenerationSession {
     boolean postProcessed = false;
     for (TemplateMappingScript postMappingScript : postMappingScripts) {
       if (postMappingScript.getKind() != TemplateMappingScript.POSTPROCESS) {
-        myLogger.warning(postMappingScript.getScriptNode().getNode(), "skip script " + postMappingScript.getLongName() + " - wrong script kind");
+        myLogger.warning(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "skip script " + postMappingScript.getLongName() + " - wrong script kind");
         continue;
       }
       if (myLogger.needsInfo()) {
-        myLogger.info(postMappingScript.getScriptNode().getNode(), "post-process " + postMappingScript.getLongName());
+        myLogger.info(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "post-process " + postMappingScript.getLongName());
       }
       TemplateGenerator templateGenerator = new TemplateGenerator(mySessionContext, myProgressMonitor, myLogger, ruleManager, currentModel, currentModel, myGenerationOptions, myDependenciesBuilder, ttrace);
       try {
         templateGenerator.getDefaultExecutionContext(null).executeScript(postMappingScript, currentModel);
       } catch (Exception t) {
         myLogger.handleException(t);
-        myLogger.error(postMappingScript.getScriptNode().getNode(), "error executing script " + postMappingScript.getLongName() + " (see exception)");
+        myLogger.error(postMappingScript.getScriptNode().resolve(MPSModuleRepository.getInstance()), "error executing script " + postMappingScript.getLongName() + " (see exception)");
         throw new GenerationFailureException(t);
       }
       postProcessed = true;
@@ -639,7 +640,7 @@ class GenerationSession {
           if (o instanceof SNode) {
             mySessionContext.keepTransientModel(((SNode) o).getModel(), false);
           } else if (o instanceof NodeWithContext) {
-            SNode node = ((NodeWithContext) o).getNode().getNode();
+            SNode node = ((NodeWithContext) o).getNode().resolve(MPSModuleRepository.getInstance());
             if (node != null) {
               mySessionContext.keepTransientModel(node.getModel(), false);
             }

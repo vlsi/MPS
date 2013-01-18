@@ -30,7 +30,8 @@ import jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening.ModelListener;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import org.jetbrains.mps.openapi.model.SNode;import org.jetbrains.mps.openapi.model.SNodeId;import jetbrains.mps.smodel.*;
+import org.jetbrains.mps.openapi.model.SNode;
+import jetbrains.mps.smodel.*;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
@@ -150,7 +151,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
     Map<RelationDescriptor, List<SNode>> result = new THashMap<RelationDescriptor, List<SNode>>();
     getTabRemovalListener().clearAspects();
 
-    SNode baseNode = myBaseNode.getNode();
+    SNode baseNode = myBaseNode.resolve(MPSModuleRepository.getInstance());
     if (baseNode == null) return result;
 
     for (RelationDescriptor d : myPossibleTabs) {
@@ -210,7 +211,7 @@ public abstract class BaseTabsComponent implements TabsComponent {
 
   protected boolean isDisposedNode() {
     return
-      myBaseNode.getNode() == null ||
+      myBaseNode.resolve(MPSModuleRepository.getInstance()) == null ||
         myBaseNode.getModel() == null ||
         myBaseNode.getModel().getModule() == null ||
         ModuleRepositoryFacade.getInstance().getModule(myBaseNode.getModel().getModule().getModuleReference()) == null;

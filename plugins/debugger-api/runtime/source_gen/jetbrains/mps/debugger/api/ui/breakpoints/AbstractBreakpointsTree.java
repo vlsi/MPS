@@ -7,6 +7,8 @@ import java.util.Collection;
 import jetbrains.mps.debug.api.BreakpointManagerComponent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.event.TreeSelectionEvent;
+
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.annotations.Nullable;
 import jetbrains.mps.debug.api.breakpoints.IBreakpoint;
 import javax.swing.tree.TreePath;
@@ -245,7 +247,7 @@ import javax.swing.UIManager;
 
     @Override
     public Icon getIcon(SNodePointer group) {
-      return IconManager.getIconFor(group.getNode());
+      return IconManager.getIconFor(group.resolve(MPSModuleRepository.getInstance()));
     }
   }
 

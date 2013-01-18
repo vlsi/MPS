@@ -21,6 +21,7 @@ import jetbrains.mps.generator.impl.RuleUtil;
 import jetbrains.mps.generator.impl.TemplateProcessor;
 import jetbrains.mps.generator.impl.TemplateProcessor.TemplateProcessingFailureException;
 import jetbrains.mps.generator.runtime.*;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.SReference;
@@ -87,9 +88,9 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
 
     List<SNode> collection = new ArrayList<SNode>();
     try {
-      List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(defaultConsequence, context.getInput(), templateSwitch.getNode(), environment.getReductionContext(), environment.getGenerator());
+      List<Pair<SNode, String>> nodeAndMappingNamePairs = GeneratorUtilEx.getTemplateNodesFromRuleConsequence(defaultConsequence, context.getInput(), templateSwitch.resolve(MPSModuleRepository.getInstance()), environment.getReductionContext(), environment.getGenerator());
       if (nodeAndMappingNamePairs == null) {
-        environment.getGenerator().showErrorMessage(context.getInput(), templateSwitch.getNode(), defaultConsequence, "error processing $SWITCH$/default");
+        environment.getGenerator().showErrorMessage(context.getInput(), templateSwitch.resolve(MPSModuleRepository.getInstance()), defaultConsequence, "error processing $SWITCH$/default");
         return null;
       }
 
@@ -100,7 +101,7 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
           TemplateProcessor templateProcessor = new TemplateProcessor(environment.getGenerator(), environment.getReductionContext());
           collection.addAll(templateProcessor.apply(innerMappingName, altTemplateNode, context));
         } catch (TemplateProcessingFailureException e) {
-          environment.getGenerator().showErrorMessage(context.getInput(), templateSwitch.getNode(), "error processing template fragment");
+          environment.getGenerator().showErrorMessage(context.getInput(), templateSwitch.resolve(MPSModuleRepository.getInstance()), "error processing template fragment");
         }
       }
     } catch (AbandonRuleInputException e) {
@@ -114,7 +115,7 @@ public class TemplateSwitchMappingInterpreted implements TemplateSwitchMapping {
 
     SNode generatorMessage = RuleUtil.getSwitch_NullInputMessage(mySwitch);
     if (generatorMessage != null) {
-      GeneratorUtilEx.processGeneratorMessage(generatorMessage, context.getInput(), templateSwitch.getNode(), null, environment.getGenerator());
+      GeneratorUtilEx.processGeneratorMessage(generatorMessage, context.getInput(), templateSwitch.resolve(MPSModuleRepository.getInstance()), null, environment.getGenerator());
     }
   }
 }

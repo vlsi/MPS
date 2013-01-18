@@ -32,6 +32,7 @@ import jetbrains.mps.ide.icons.IconManager;
 import jetbrains.mps.ide.relations.RelationComparator;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
 import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -102,7 +103,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     SNodePointer np = tab.getNode();
     if (EqualUtil.equals(np, getLastNode())) return;
 
-    SNode node = np == null ? null : np.getNode();
+    SNode node = np == null ? null : np.resolve(MPSModuleRepository.getInstance());
 
     if (node != null) {
       myLastEmptyTab = null;
@@ -143,7 +144,7 @@ public class PlainTabsComponent extends BaseTabsComponent {
     for (int i = 0; i < myRealTabs.size(); i++) {
       SNodePointer nodePtr = myRealTabs.get(i).getNode();
       TabColorProvider colorProvider = getColorProvider();
-      SNode node = nodePtr != null ? nodePtr.getNode() : null;
+      SNode node = nodePtr != null ? nodePtr.resolve(MPSModuleRepository.getInstance()) : null;
       if (node != null && colorProvider != null) {
         Color color = colorProvider.getNodeColor(node);
         if (color != null) {

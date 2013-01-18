@@ -33,6 +33,7 @@ import jetbrains.mps.nodeEditor.datatransfer.NodePaster.NodeAndRole;
 import jetbrains.mps.nodeEditor.selection.SelectionManager;
 import jetbrains.mps.openapi.editor.EditorContext;
 import jetbrains.mps.resolve.ResolverComponent;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import jetbrains.mps.smodel.SModel;
 import jetbrains.mps.smodel.SModelRepository;
@@ -109,7 +110,7 @@ public class CellAction_PasteNode extends EditorCellAction {
             List<SNode> pasteNodes = pasteNodeData.getNodes();
 
             if (canPasteBefore(selectedCell, pasteNodes)) {
-              SNode selectedNode = inRepository ? selectedNodePointer.getNode() : nodeSelected;
+              SNode selectedNode = inRepository ? selectedNodePointer.resolve(MPSModuleRepository.getInstance()) : nodeSelected;
               if (jetbrains.mps.util.SNodeOperations.isDisposed(selectedNode)) {
                 LOG.error("Selected node is disposed: node = " + selectedNode.toString()+" ; node pointer = ("+ selectedNodePointer.toString()+")");
                 return;

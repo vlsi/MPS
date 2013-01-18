@@ -15,6 +15,7 @@
  */
 package jetbrains.mps.ide.devkit.generator;
 
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.SNodePointer;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.util.ArrayWrapper;
@@ -119,7 +120,7 @@ public class TracerNode {
   }
 
   /*package*/ TracerNode find(SNode node) {
-    if (myNodePointer.getNode() == node) return this;
+    if (myNodePointer.resolve(MPSModuleRepository.getInstance()) == node) return this;
     if (getDepth() > 1000) return null;
     for (TracerNode child : myChildren) {
       TracerNode tracerNode = child.find(node);

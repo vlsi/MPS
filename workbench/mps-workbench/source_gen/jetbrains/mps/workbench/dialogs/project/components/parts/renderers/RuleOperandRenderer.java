@@ -114,7 +114,7 @@ public class RuleOperandRenderer implements TableCellRenderer {
         nodeName = ModelAccess.instance().runReadAction(new Computable<String>() {
           public String compute() {
             SModelDescriptor model = p.getModel();
-            SNode node = p.getNode();
+            SNode node = p.resolve(MPSModuleRepository.getInstance());
             if (model == null || node == null) {
               return null;
             }

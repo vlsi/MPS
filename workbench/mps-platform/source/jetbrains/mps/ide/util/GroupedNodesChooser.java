@@ -35,6 +35,7 @@ import com.intellij.util.containers.HashMap;
 import com.intellij.util.ui.UIUtil;
 import com.intellij.util.ui.tree.TreeUtil;
 import jetbrains.mps.ide.icons.IconManager;
+import jetbrains.mps.smodel.MPSModuleRepository;
 import jetbrains.mps.smodel.ModelAccess;
 import org.jetbrains.mps.openapi.model.SNode;
 import jetbrains.mps.smodel.SNodePointer;
@@ -136,7 +137,7 @@ public class GroupedNodesChooser extends DialogWrapper {
     final FactoryMap<Object, ParentNode> map = new FactoryMap<Object, ParentNode>() {
       protected ParentNode create(final Object key) {
         if (key instanceof SNodePointer) {
-          SNode el = ((SNodePointer) key).getNode();
+          SNode el = ((SNodePointer) key).resolve(MPSModuleRepository.getInstance());
           if (el != null) {
             final ContainerNode containerNode = new ContainerNode(rootNode, (SNodePointer) key, getText(el), getIcon(el), count);
             myContainerNodes.add(containerNode);
@@ -152,7 +153,7 @@ public class GroupedNodesChooser extends DialogWrapper {
     };
 
     for (SNodePointer object : myElements) {
-      SNode node = object.getNode();
+      SNode node = object.resolve(MPSModuleRepository.getInstance());
       Object group = getGroupNode(node);
       if (group == null) group = getGroupTitle(node);
       final ParentNode parentNode = map.get(group);
