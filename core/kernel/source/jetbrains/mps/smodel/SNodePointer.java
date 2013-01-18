@@ -44,11 +44,14 @@ public class SNodePointer implements SNodeReference {
   @Override
   public org.jetbrains.mps.openapi.model.SNode resolve(SRepository repo) {
     if (myNodeId == null) return null;
-    SModelDescriptor model = getModel();
-    if (model != null) {
-      SNode node = model.getSModel().getNodeById(myNodeId);
-      if (node != null) {
-        return node;
+
+    if (myModelReference != null) {
+      SModelDescriptor model = SModelRepository.getInstance().getModelDescriptor(myModelReference);
+      if (model != null) {
+        SNode node = model.getSModel().getNodeById(myNodeId);
+        if (node != null) {
+          return node;
+        }
       }
     }
 

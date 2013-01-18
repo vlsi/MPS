@@ -257,7 +257,7 @@ public class MPSNodesVirtualFileSystem extends DeprecatedVirtualFileSystem imple
       Collection<Pair<MPSNodeVirtualFile, String>> renamedFiles = new ArrayList<Pair<MPSNodeVirtualFile, String>>();
       for (Iterator<Entry<SNodePointer, MPSNodeVirtualFile>> it = myVirtualFiles.entrySet().iterator(); it.hasNext(); ) {
         Entry<SNodePointer, MPSNodeVirtualFile> entry = it.next();
-        if (entry.getKey().getModel() != sm) continue;
+        if (!entry.getKey().getModelReference().equals(sm.getSModelReference())) continue;
 
         SNode node = entry.getKey().resolve(MPSModuleRepository.getInstance());
         MPSNodeVirtualFile file = entry.getValue();

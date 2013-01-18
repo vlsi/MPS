@@ -15,7 +15,11 @@
  */
 package jetbrains.mps.ide.editorTabs.tabfactory.tabs;
 
-import com.intellij.openapi.actionSystem.*;
+import com.intellij.openapi.actionSystem.ActionGroup;
+import com.intellij.openapi.actionSystem.ActionManager;
+import com.intellij.openapi.actionSystem.ActionPlaces;
+import com.intellij.openapi.actionSystem.ActionPopupMenu;
+import com.intellij.openapi.actionSystem.AnAction;
 import com.intellij.openapi.actionSystem.impl.ActionButton;
 import com.intellij.openapi.editor.Document;
 import com.intellij.openapi.extensions.Extensions;
@@ -30,16 +34,28 @@ import jetbrains.mps.ide.editorTabs.tabfactory.tabs.baseListening.ModelListener;
 import jetbrains.mps.ide.project.ProjectHelper;
 import jetbrains.mps.ide.undo.MPSUndoUtil;
 import jetbrains.mps.plugins.relations.RelationDescriptor;
-import org.jetbrains.mps.openapi.model.SNode;
-import jetbrains.mps.smodel.*;
+import jetbrains.mps.project.IModule;
+import jetbrains.mps.smodel.GlobalSModelEventsManager;
+import jetbrains.mps.smodel.IOperationContext;
+import jetbrains.mps.smodel.MPSModuleRepository;
+import jetbrains.mps.smodel.ModelAccess;
+import jetbrains.mps.smodel.ModuleRepositoryFacade;
+import jetbrains.mps.smodel.SModel;
+import jetbrains.mps.smodel.SModelDescriptor;
+import jetbrains.mps.smodel.SNodePointer;
 import jetbrains.mps.smodel.event.SModelCommandListener;
 import jetbrains.mps.smodel.event.SModelEvent;
 import jetbrains.mps.smodel.event.SModelRootEvent;
 import jetbrains.mps.util.Computable;
 import jetbrains.mps.workbench.nodesFs.MPSNodeVirtualFile;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.mps.openapi.model.SNode;
 
-import javax.swing.*;
+import javax.swing.JComponent;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JPopupMenu;
+import javax.swing.SwingConstants;
 import java.awt.BorderLayout;
 import java.awt.Dimension;
 import java.awt.event.MouseAdapter;
@@ -210,11 +226,15 @@ public abstract class BaseTabsComponent implements TabsComponent {
   }
 
   protected boolean isDisposedNode() {
-    return
-      myBaseNode.resolve(MPSModuleRepository.getInstance()) == null ||
-        myBaseNode.getModel() == null ||
-        myBaseNode.getModel().getModule() == null ||
-        ModuleRepositoryFacade.getInstance().getModule(myBaseNode.getModel().getModule().getModuleReference()) == null;
+    SNode node = myBaseNode.resolve(MPSModuleRepository.getInstance());
+    if (node == null) return true;
+    SModel model = node.getModel();
+    if (model == null) return true;
+    SModelDescriptor md = model.getModelDescriptor();
+    if (md == null) return true;
+    IModule module = md.getModule();
+    if (module == null) return true;
+    return ModuleRepositoryFacade.getInstance().getModule(module.getModuleReference()) == null;
   }
 
   protected abstract boolean isTabUpdateNeeded(SNodePointer node);

@@ -92,8 +92,10 @@ public class TypeContextManager implements CoreComponent {
       SModelReference modelRef = md.getSModelReference();
       synchronized (myLock) {
         for (SNodePointer nodePointer : new ArrayList<SNodePointer>(myTypeCheckingContexts.keySet())) {
-          if (nodePointer == null || nodePointer.resolve(MPSModuleRepository.getInstance()) == null || nodePointer.getModel() == null ||
-            jetbrains.mps.util.SNodeOperations.isDisposed(nodePointer.resolve(MPSModuleRepository.getInstance())) || modelRef.equals(nodePointer.getModelReference())) {
+          if (nodePointer == null)continue;
+          SNode node = nodePointer.resolve(MPSModuleRepository.getInstance());
+          if (node == null || node.getModel() == null || node.getModel().getModelDescriptor()==null ||
+            jetbrains.mps.util.SNodeOperations.isDisposed(node) || modelRef.equals(nodePointer.getModelReference())) {
             removeContextForNode(nodePointer);
           }
         }

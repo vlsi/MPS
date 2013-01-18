@@ -418,7 +418,7 @@ public class GenerationTracer implements IGenerationTracer {
 
   @NotNull
   private List<TracerNode> findAllTopmostTracerNodes(Kind kind, SNodePointer node) {
-    List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModel().getSModelReference());
+    List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModelReference());
     if (rootTracerNodes == null) return new ArrayList<TracerNode>();
 
     List<TracerNode> result = new ArrayList<TracerNode>();
@@ -445,7 +445,7 @@ public class GenerationTracer implements IGenerationTracer {
   }
 
   private TracerNode findTracerNode(Kind kind, SNodePointer node) {
-    List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModel().getSModelReference());
+    List<TracerNode> rootTracerNodes = getRootTracerNodes(kind, node.getModelReference());
     if (rootTracerNodes == null) return null;
 
     for (TracerNode rootTracerNode : rootTracerNodes) {

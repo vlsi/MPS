@@ -50,7 +50,7 @@ public class NodePointerPresentation extends BasePresentation {
     }
     return ModelAccess.instance().runReadAction(new Computable<String>() {
       public String compute() {
-        return myNode.getModel().getSModelReference().getSModelFqName().toString();
+        return myNode.getModelReference().getSModelFqName().toString();
       }
     });
   }
